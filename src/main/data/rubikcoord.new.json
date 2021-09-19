@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"13 September 2021"
+            "@content":"19 September 2021"
           },
           {
             "@name":"generator",
@@ -167,15 +167,7 @@
                                 },
                                 {
                                   "@name":"diffuseColor",
-                                  "@value":[1,0,0],
-                                  "IS": {
-                                      "connect": [
-                                        {
-                                          "@nodeField":"diffuseColor",
-                                          "@protoField":"diffuseColor"
-                                        }
-                                      ]
-                                  }
+                                  "@value":[1,0,0]
                                 }
                               ]
                             }
@@ -190,15 +182,7 @@
                                 },
                                 {
                                   "@name":"diffuseColor",
-                                  "@value":[1,0,0],
-                                  "IS": {
-                                      "connect": [
-                                        {
-                                          "@nodeField":"diffuseColor",
-                                          "@protoField":"diffuseColor"
-                                        }
-                                      ]
-                                  }
+                                  "@value":[1,0,0]
                                 }
                               ]
                             }
@@ -258,15 +242,7 @@
                                 },
                                 {
                                   "@name":"diffuseColor",
-                                  "@value":[1,0,0],
-                                  "IS": {
-                                      "connect": [
-                                        {
-                                          "@nodeField":"diffuseColor",
-                                          "@protoField":"x1diffuseColor"
-                                        }
-                                      ]
-                                  }
+                                  "@value":[1,0,0]
                                 }
                               ]
                             }
@@ -281,15 +257,7 @@
                                 },
                                 {
                                   "@name":"diffuseColor",
-                                  "@value":[0,1,0],
-                                  "IS": {
-                                      "connect": [
-                                        {
-                                          "@nodeField":"diffuseColor",
-                                          "@protoField":"x2diffuseColor"
-                                        }
-                                      ]
-                                  }
+                                  "@value":[0,1,0]
                                 }
                               ]
                             }

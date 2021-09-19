@@ -48,7 +48,7 @@ ProtoInstance ProtoInstance1 = null;
 ProtoInstance ProtoInstance2 = null;
 ProtoInstance ProtoInstance3 = null;
 ProtoInstance ProtoInstance4 = null;
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .addComments("x3dVersionComparisonTest for this model: supportsX3dVersion(X3D.VERSION_3_0)=true")
       .setHead(new head()
         .addComments("comment #1")

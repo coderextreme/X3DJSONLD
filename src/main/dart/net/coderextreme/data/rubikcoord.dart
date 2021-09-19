@@ -119,12 +119,12 @@ var X3D0 =  X3D(
                             fieldValue(
                               name_ : SFString('diffuseColor'),
                               value_ : SFString('1 0 0'),
-                              IS_ : 
+                              children_ : [
                                 IS(
                                   connect_ : [
                                     connect(
                                       nodeField_ : SFString('diffuseColor'),
-                                      protoField_ : SFString('diffuseColor'))]))]),
+                                      protoField_ : SFString('diffuseColor'))])])]),
 
                         ProtoInstance(
                           name_ : SFString('boxproto'),
@@ -136,12 +136,12 @@ var X3D0 =  X3D(
                             fieldValue(
                               name_ : SFString('diffuseColor'),
                               value_ : SFString('1 0 0'),
-                              IS_ : 
+                              children_ : [
                                 IS(
                                   connect_ : [
                                     connect(
                                       nodeField_ : SFString('diffuseColor'),
-                                      protoField_ : SFString('diffuseColor'))]))])])])),
+                                      protoField_ : SFString('diffuseColor'))])])])])])),
 
             ProtoDeclare(
               name_ : SFString('four'),
@@ -186,12 +186,12 @@ var X3D0 =  X3D(
                             fieldValue(
                               name_ : SFString('diffuseColor'),
                               value_ : SFString('1 0 0'),
-                              IS_ : 
+                              children_ : [
                                 IS(
                                   connect_ : [
                                     connect(
                                       nodeField_ : SFString('diffuseColor'),
-                                      protoField_ : SFString('x1diffuseColor'))]))]),
+                                      protoField_ : SFString('x1diffuseColor'))])])]),
 
                         ProtoInstance(
                           name_ : SFString('two'),
@@ -203,12 +203,12 @@ var X3D0 =  X3D(
                             fieldValue(
                               name_ : SFString('diffuseColor'),
                               value_ : SFString('0 1 0'),
-                              IS_ : 
+                              children_ : [
                                 IS(
                                   connect_ : [
                                     connect(
                                       nodeField_ : SFString('diffuseColor'),
-                                      protoField_ : SFString('x2diffuseColor'))]))])])])),
+                                      protoField_ : SFString('x2diffuseColor'))])])])])])),
 
             ProtoDeclare(
               name_ : SFString('eight'),

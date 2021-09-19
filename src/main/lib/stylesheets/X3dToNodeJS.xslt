@@ -2244,9 +2244,22 @@ process.exit(0);</xsl:text>
 				<xsl:if test="(local-name() = 'class')">
 					<xsl:text>Css</xsl:text><!-- method prefix -->
 				</xsl:if>
+				<xsl:if test="(local-name() = 'style')">
+					<xsl:text>Css</xsl:text><!-- method prefix -->
+				</xsl:if>
+				<xsl:if test="(local-name() = 'id')">
+					<xsl:text>Html</xsl:text><!-- method prefix -->
+				</xsl:if>
 				<!-- upper camel case -->
-				<xsl:value-of select="translate(substring(name(),1,1),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/>
-				<xsl:value-of select="substring(name(),2)"/>
+				<xsl:if test="(local-name() = 'id')">
+					<xsl:value-of select="translate(substring(name(),1,2),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/>
+				</xsl:if>
+
+				<xsl:if test="(local-name() != 'id')">
+					<xsl:value-of select="translate(substring(name(),1,1),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/>
+					<xsl:value-of select="substring(name(),2)"/>
+				</xsl:if>
+
 				<xsl:text>(</xsl:text>
 				
 				<xsl:variable name="nodeNumber"    select="count(../preceding::*) + 1"/>

@@ -139,7 +139,7 @@ Json.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
   .addComments(" x3dVersionComparisonTest for this model: supportsX3dVersion(X3D.VERSION_3_0)=true ")
   .setHead((new autoclass.head())
     .addComments(" comment #1 ")
@@ -421,7 +421,7 @@ Json.prototype = {
       .addChild((new autoclass.SignalPdu()))
       .addChild((new autoclass.TransmitterPdu()).setRelativeAntennaLocation(0.0,0.0,0.0).setTransmitFrequencyBandwidth(0.0))
       .addChild((new autoclass.DISEntityManager())
-        .setMapping((new autoclass.DISEntityTypeMapping())))));
+        .addChild((new autoclass.DISEntityTypeMapping())))));
   },
   // end of initialize() method
 

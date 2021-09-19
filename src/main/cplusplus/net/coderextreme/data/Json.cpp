@@ -12,7 +12,7 @@ CX3D* X3D0 = new CX3D();
 CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
 group->addChildren(X3D0);
 X3D0->setProfile("Immersive");
-X3D0->setVersion("3.3");
+X3D0->setVersion("4.0");
 //x3dVersionComparisonTest for this model: supportsX3dVersion(X3D.VERSION_3_0)=true
 Chead* head1 = new Chead();
 //comment #1
