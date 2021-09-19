@@ -35818,7 +35818,21 @@ import org.web3d.x3d.sai.X3DException;
                                                                        childElementName.equals("GeoMetadata")    || childElementName.equals("ImageCubeMapTexture") || childElementName.equals("ImageTexture3D") ||
                                                                        childElementName.equals("ImageTexture")   || childElementName.equals("Inline")              || childElementName.equals("MovieTexture") ||
                                                                        childElementName.equals("PackagedShader") || childElementName.equals("Script")              || childElementName.equals("ShaderPart") ||
-                                                                       childElementName.equals("ShaderProgram"))      
+                                                                       childElementName.equals("ShaderProgram")
+|| childElementName.equals("Anchor")
+|| childElementName.equals("Inline")
+|| childElementName.equals("DISEntityTypeMapping")
+|| childElementName.equals("GeoMetadata")
+|| childElementName.equals("AudioClip")
+|| childElementName.equals("ImageCubeMapTexture")
+|| childElementName.equals("ImageTexture3D")
+|| childElementName.equals("ImageTexture")
+|| childElementName.equals("MovieTexture")
+|| childElementName.equals("Script")
+|| childElementName.equals("PackagedShader")
+|| childElementName.equals("ShaderPart")
+|| childElementName.equals("ShaderProgram")
+)      
                                                                    && (containerField.equals("children") || containerField.equals("watchList") || containerField.equals("texture") || containerField.equals("programs") ||      
                                                                        containerField.equals("parts")    || containerField.equals("mapping")   || containerField.equals("shaders") || containerField.equals("source"))) // children is new name in X3D4, otherwise still a common, unambiguous error
 									((LoadSensor)elementObject).addChildren((X3DNode) childX3dElement); // formerly addWatchList in X3D3
