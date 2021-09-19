@@ -5,7 +5,7 @@ import { VRMLLoader } from '../../../node_modules/three/examples/jsm/loaders/VRM
 import { GUI } from '../../../node_modules/three/examples/jsm/libs/dat.gui.module.js';
 import { chevrotain } from '../../../node_modules/three/examples/jsm/libs/chevrotain.module.min.js';
 /// ORIGINAL code starts here
-var file = "../data/sphere.json";
+var file = "../personal/sphere.json";
 
 function empty(elem) {
     while (elem.lastChild) elem.removeChild(elem.lastChild);

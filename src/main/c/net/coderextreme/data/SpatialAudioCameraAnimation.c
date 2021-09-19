@@ -202,7 +202,6 @@ Appearance39.material = Material40;
 Shape38.appearance = Appearance39;
 
 Text Text41 = createNode("Text");
-Text41.ccw = "true";
 Text41.string = new MFString(new java.lang.String["Violin"]);
 FontStyle FontStyle42 = createNode("FontStyle");
 FontStyle42.style = "BOLD";
@@ -260,7 +259,6 @@ Appearance51.material = Material52;
 Shape50.appearance = Appearance51;
 
 Text Text53 = createNode("Text");
-Text53.ccw = "true";
 Text53.string = new MFString(new java.lang.String["Saxophone"]);
 FontStyle FontStyle54 = createNode("FontStyle");
 FontStyle54.family = new MFString(new java.lang.String["Times"]);

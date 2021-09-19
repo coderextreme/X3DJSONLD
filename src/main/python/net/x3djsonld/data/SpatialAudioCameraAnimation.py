@@ -69,7 +69,7 @@ newModel=X3D(profile='Full',version='4.0',
           Shape(
             appearance=Appearance(
               material=Material(ambientIntensity=0.0933,diffuseColor=(1,1,1),shininess=0.51,specularColor=(0.46,0.46,0.46))),
-            geometry=Text(ccw=True,string=["Violin"],
+            geometry=Text(string=["Violin"],
               fontStyle=FontStyle(style_='BOLD')))])])]),
     Transform(DEF='Audio2',translation=(933.475586,0.000000,924.423218),
       children=[
@@ -84,7 +84,7 @@ newModel=X3D(profile='Full',version='4.0',
           Shape(
             appearance=Appearance(
               material=Material(ambientIntensity=0.0933,diffuseColor=(1,1,1),shininess=0.51,specularColor=(0.46,0.46,0.46))),
-            geometry=Text(ccw=True,string=["Saxophone"],
+            geometry=Text(string=["Saxophone"],
               fontStyle=FontStyle(family=["Times"],style_='BOLD')))])])]),
     ListenerPointSource(id='ListenerPointSource',trackCurrentView=true),
     StreamAudioDestination(id='AudioDestination',

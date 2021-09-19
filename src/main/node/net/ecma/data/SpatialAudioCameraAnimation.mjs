@@ -33,7 +33,6 @@ import { Box } from './x3d.mjs';
 import { Sphere } from './x3d.mjs';
 import { Billboard } from './x3d.mjs';
 import { Text } from './x3d.mjs';
-import { undefined } from './x3d.mjs';
 import { FontStyle } from './x3d.mjs';
 import { ListenerPointSource } from './x3d.mjs';
 import { StreamAudioDestination } from './x3d.mjs';
@@ -206,7 +205,6 @@ var X3D0 =  new X3D({
                                   specularColor : new SFColor([0.46,0.46,0.46])}))})),
                           geometry : new SFNode(
                             new Text({
-                              ccw : new undefined("true"),
                               string : new MFString(["Violin"]),
                               fontStyle : new SFNode(
                                 new FontStyle({
@@ -246,7 +244,6 @@ var X3D0 =  new X3D({
                                   specularColor : new SFColor([0.46,0.46,0.46])}))})),
                           geometry : new SFNode(
                             new Text({
-                              ccw : new undefined("true"),
                               string : new MFString(["Saxophone"]),
                               fontStyle : new SFNode(
                                 new FontStyle({

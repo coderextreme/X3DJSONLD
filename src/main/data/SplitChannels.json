@@ -3,7 +3,7 @@
     "@profile":"Full",
     "@version":"4.0",
     "@xsd:noNamespaceSchemaLocation":"https://www.web3d.org/specifications/x3d-4.0.xsd",
-    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -195,24 +195,19 @@
                           "-geometry":
                             { "Text":
                               {
-                                "@ccw":true,
                                 "@lit":true,
                                 "@string":["Right Channel Volume"],
                                 "@usegeocache":true,
-                                "-IllegalChildNodeFieldNameNotFound":[
-                                  { "fontstyle":
+                                "-fontStyle":
+                                  { "FontStyle":
                                     {
-                                      "@family":"'Times'",
-                                      "@horizontal":true,
-                                      "@justify":"BEGIN",
+                                      "@family":["'Times'"],
+                                      "@justify":["BEGIN"],
                                       "@lefttoright":true,
-                                      "@size":1,
-                                      "@spacing":1,
                                       "@style":"BOLD",
                                       "@toptobottom":true
                                     }
                                   }
-                                ]
                               }
                             }
                         }
@@ -330,24 +325,19 @@
                           "-geometry":
                             { "Text":
                               {
-                                "@ccw":true,
                                 "@lit":true,
                                 "@string":["Left Channel Volume"],
                                 "@usegeocache":true,
-                                "-IllegalChildNodeFieldNameNotFound":[
-                                  { "fontstyle":
+                                "-fontStyle":
+                                  { "FontStyle":
                                     {
-                                      "@family":"'Times'",
-                                      "@horizontal":true,
-                                      "@justify":"BEGIN",
+                                      "@family":["'Times'"],
+                                      "@justify":["BEGIN"],
                                       "@lefttoright":true,
-                                      "@size":1,
-                                      "@spacing":1,
                                       "@style":"BOLD",
                                       "@toptobottom":true
                                     }
                                   }
-                                ]
                               }
                             }
                         }
