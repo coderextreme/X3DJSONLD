@@ -359,7 +359,7 @@ POSSIBILITY OF SUCH DAMAGE.
                                     <xsl:text>&#10;</xsl:text>
                                     <xsl:call-template name="print-indent"><xsl:with-param name="indent" select="$indent+4"/></xsl:call-template>
                                     <!-- TODO no guidance yet on how to properly mark the governing schema within a JSON file at http://json-schema.org -->
-                                    <xsl:text>"JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"</xsl:text>
+                                    <xsl:text>"JSON schema":"https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json"</xsl:text>
                                     <xsl:text>,</xsl:text>
                             </xsl:if>
 

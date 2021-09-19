@@ -43,8 +43,8 @@
             <Material diffuseColor='0.345 0.345 0.882' transparency='0'/>
             <Material ambientintensity='0.0933' diffusecolor='1 1 1' emissivecolor='0 0 0' shininess='0.51' specularcolor='0.46 0.46 0.46'/>
           </Appearance>
-          <Text ccw='true' lit='true' solid='false' string='Right Channel Volume' usegeocache='true'>
-            <fontstyle family='&apos;Times&apos;' horizontal='true' justify='BEGIN' lefttoright='true' size='1' spacing='1' style='BOLD' toptobottom='true'/>
+          <Text lit='true' solid='false' string='Right Channel Volume' usegeocache='true'>
+            <FontStyle family='&apos;Times&apos;' horizontal='true' justify='BEGIN' lefttoright='true' size='1' spacing='1' style='BOLD' toptobottom='true'/>
           </Text>
         </Shape>
       </Transform>
@@ -73,8 +73,8 @@
             <Material diffuseColor='0.345 0.345 0.882' transparency='0'/>
             <Material ambientintensity='0.0933' diffusecolor='1 1 1' emissivecolor='0 0 0' shininess='0.51' specularcolor='0.46 0.46 0.46'/>
           </Appearance>
-          <Text ccw='true' lit='true' solid='false' string='Left Channel Volume' usegeocache='true'>
-            <fontstyle family='&apos;Times&apos;' horizontal='true' justify='BEGIN' lefttoright='true' size='1' spacing='1' style='BOLD' toptobottom='true'/>
+          <Text lit='true' solid='false' string='Left Channel Volume' usegeocache='true'>
+            <FontStyle family='&apos;Times&apos;' horizontal='true' justify='BEGIN' lefttoright='true' size='1' spacing='1' style='BOLD' toptobottom='true'/>
           </Text>
         </Shape>
       </Transform>

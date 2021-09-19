@@ -142,25 +142,15 @@ public class SplitChannels
 ).setShininess(0.51).setSpecularcolor("0.46 0.46 0.46"
 // [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), Material specularcolor: $isNumeric=true, $attributeType=, value='0.46 0.46 0.46']
 )))
-          .setGeometry(new Text().setCcw(true).setLit("true"
+          .setGeometry(new Text().setLit("true"
 // [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), Text lit: $isNumeric=false, $attributeType=, value='true']
 ).setString(new String[] {"Right Channel Volume"}).setUsegeocache("true"
 // [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), Text usegeocache: $isNumeric=false, $attributeType=, value='true']
 )
-            .setFontstyle(new fontstyle().setFamily("'Times'"
-// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), fontstyle family: $isNumeric=false, $attributeType=, value=''Times'']
-).setHorizontal("true"
-// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), fontstyle horizontal: $isNumeric=false, $attributeType=, value='true']
-).setJustify("BEGIN"
-// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), fontstyle justify: $isNumeric=false, $attributeType=, value='BEGIN']
-).setLefttoright("true"
-// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), fontstyle lefttoright: $isNumeric=false, $attributeType=, value='true']
-).setSize("1"
-// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), fontstyle size: $isNumeric=true, $attributeType=, value='1']
-).setSpacing("1"
-// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), fontstyle spacing: $isNumeric=true, $attributeType=, value='1']
+            .setFontStyle(new FontStyle().setFamily(new String[] {"'Times'"}).setJustify(FontStyle.JUSTIFY_BEGIN).setLefttoright("true"
+// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), FontStyle lefttoright: $isNumeric=false, $attributeType=, value='true']
 ).setCssStyle("BOLD").setToptobottom("true"
-// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), fontstyle toptobottom: $isNumeric=false, $attributeType=, value='true']
+// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), FontStyle toptobottom: $isNumeric=false, $attributeType=, value='true']
 ))))))
     .addChild(new Transform("PowerL").setTranslation(-100.0,400.0,400.0)
       .addChild(new Transform().setHtmlID("pL").setRotation(1.0,0.0,0.0,-0.5).setTranslation(0.0,40.0,0.0)
@@ -187,25 +177,15 @@ public class SplitChannels
 ).setShininess(0.51).setSpecularcolor("0.46 0.46 0.46"
 // [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), Material specularcolor: $isNumeric=true, $attributeType=, value='0.46 0.46 0.46']
 )))
-          .setGeometry(new Text().setCcw(true).setLit("true"
+          .setGeometry(new Text().setLit("true"
 // [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), Text lit: $isNumeric=false, $attributeType=, value='true']
 ).setString(new String[] {"Left Channel Volume"}).setUsegeocache("true"
 // [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), Text usegeocache: $isNumeric=false, $attributeType=, value='true']
 )
-            .setFontstyle(new fontstyle().setFamily("'Times'"
-// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), fontstyle family: $isNumeric=false, $attributeType=, value=''Times'']
-).setHorizontal("true"
-// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), fontstyle horizontal: $isNumeric=false, $attributeType=, value='true']
-).setJustify("BEGIN"
-// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), fontstyle justify: $isNumeric=false, $attributeType=, value='BEGIN']
-).setLefttoright("true"
-// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), fontstyle lefttoright: $isNumeric=false, $attributeType=, value='true']
-).setSize("1"
-// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), fontstyle size: $isNumeric=true, $attributeType=, value='1']
-).setSpacing("1"
-// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), fontstyle spacing: $isNumeric=true, $attributeType=, value='1']
+            .setFontStyle(new FontStyle().setFamily(new String[] {"'Times'"}).setJustify(FontStyle.JUSTIFY_BEGIN).setLefttoright("true"
+// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), FontStyle lefttoright: $isNumeric=false, $attributeType=, value='true']
 ).setCssStyle("BOLD").setToptobottom("true"
-// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), fontstyle toptobottom: $isNumeric=false, $attributeType=, value='true']
+// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), FontStyle toptobottom: $isNumeric=false, $attributeType=, value='true']
 ))))))
     .addChild(new Transform()
       .addChild(new Shape()

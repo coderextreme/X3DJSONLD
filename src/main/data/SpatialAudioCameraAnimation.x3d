@@ -48,7 +48,7 @@
             <Appearance>
               <Material ambientIntensity='0.0933' diffuseColor='1 1 1' emissiveColor='0 0 0' shininess='0.51' specularColor='0.46 0.46 0.46'/>
             </Appearance>
-            <Text ccw='true' string='"Violin"'>
+            <Text string='"Violin"'>
               <FontStyle justify='"BEGIN"' leftToRight='true' style='BOLD' topToBottom='true'/>
             </Text>
           </Shape>
@@ -68,7 +68,7 @@
             <Appearance>
               <Material ambientIntensity='0.0933' diffuseColor='1 1 1' emissiveColor='0 0 0' shininess='0.51' specularColor='0.46 0.46 0.46'/>
             </Appearance>
-            <Text ccw='true' string='"Saxophone"'>
+            <Text string='"Saxophone"'>
               <FontStyle family='"Times"' justify='"BEGIN"' leftToRight='true' style='BOLD' topToBottom='true'/>
             </Text>
           </Shape>

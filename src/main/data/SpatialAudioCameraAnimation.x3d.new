@@ -35,7 +35,7 @@
 </Shape>
 <Billboard><Transform DEF="violin" rotation="1 0 0 -0.5" scale="100 100 100" translation="0 100 0"><Shape><Appearance><Material ambientIntensity="0.0933" diffuseColor="1 1 1" shininess="0.51" specularColor="0.46 0.46 0.46"></Material>
 </Appearance>
-<Text containerField="geometry" ccw="true" string="&quot;Violin&quot;"><FontStyle style="BOLD"></FontStyle>
+<Text containerField="geometry" string="&quot;Violin&quot;"><FontStyle style="BOLD"></FontStyle>
 </Text>
 </Shape>
 </Transform>
@@ -47,7 +47,7 @@
 </Shape>
 <Billboard><Transform DEF="saxophone" rotation="1 0 0 -0.5" scale="100 100 100" translation="0 100 0"><Shape><Appearance><Material ambientIntensity="0.0933" diffuseColor="1 1 1" shininess="0.51" specularColor="0.46 0.46 0.46"></Material>
 </Appearance>
-<Text containerField="geometry" ccw="true" string="&quot;Saxophone&quot;"><FontStyle family="&quot;Times&quot;" style="BOLD"></FontStyle>
+<Text containerField="geometry" string="&quot;Saxophone&quot;"><FontStyle family="&quot;Times&quot;" style="BOLD"></FontStyle>
 </Text>
 </Shape>
 </Transform>

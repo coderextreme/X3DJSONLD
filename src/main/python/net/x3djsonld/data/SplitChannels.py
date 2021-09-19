@@ -63,9 +63,8 @@ newModel=X3D(profile='Full',version='4.0',
           appearance=Appearance(
             material=Material(diffuseColor=(0.345,0.345,0.882)),
             Material(ambientintensity=0.0933,diffusecolor=1,1,1,emissivecolor=0,0,0,shininess=0.51,specularcolor=0.46,0.46,0.46)),
-          geometry=Text(ccw=True,lit=true,string=['Right Channel Volume'],usegeocache=true,
-            children=[
-            fontstyle(family='Times',horizontal=true,justify=BEGIN,lefttoright=true,size=1,spacing=1,style_='BOLD',toptobottom=true)]))])]),
+          geometry=Text(lit=true,string=['Right Channel Volume'],usegeocache=true,
+            fontStyle=FontStyle(family=['\'Times\''],justify=['BEGIN'],lefttoright=true,style_='BOLD',toptobottom=true)))])]),
     Transform(DEF='PowerL',translation=(-100,400,400),
       children=[
       Transform(id='pL',rotation=(1,0,0,-0.5),translation=(0,40,0),
@@ -87,9 +86,8 @@ newModel=X3D(profile='Full',version='4.0',
           appearance=Appearance(
             material=Material(diffuseColor=(0.345,0.345,0.882)),
             Material(ambientintensity=0.0933,diffusecolor=1,1,1,emissivecolor=0,0,0,shininess=0.51,specularcolor=0.46,0.46,0.46)),
-          geometry=Text(ccw=True,lit=true,string=['Left Channel Volume'],usegeocache=true,
-            children=[
-            fontstyle(family='Times',horizontal=true,justify=BEGIN,lefttoright=true,size=1,spacing=1,style_='BOLD',toptobottom=true)]))])]),
+          geometry=Text(lit=true,string=['Left Channel Volume'],usegeocache=true,
+            fontStyle=FontStyle(family=['\'Times\''],justify=['BEGIN'],lefttoright=true,style_='BOLD',toptobottom=true)))])]),
     Transform(
       children=[
       Shape(
