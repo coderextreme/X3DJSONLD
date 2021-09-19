@@ -17,7 +17,7 @@ var ProtoInstance1 = null;
 var ProtoInstance2 = null;
 var ProtoInstance3 = null;
 var ProtoInstance4 = null;
-      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
+      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
       .addComments((new autoclass.CommentsBlock("x3dVersionComparisonTest for this model: supportsX3dVersion(X3D.VERSION_3_0)=true")))
       .setHead((new autoclass.head())
         .addComments((new autoclass.CommentsBlock("comment #1")))
