@@ -54,8 +54,9 @@ popd
 npm install xml2js
 
 # maven build
-mvn clean install && bash FixNeedClassName.sh && mvn install
-
+mvn clean install
+bash FixNeedClassName.sh
+mvn install
 echo Press Return to Continue
 read
 

@@ -1,7 +1,7 @@
 from x3dpsail import *
 X3D0 = X3D()
 X3D0.setProfile("Immersive")
-X3D0.setVersion("3.3")
+X3D0.setVersion("4.0")
 #x3dVersionComparisonTest for this model: supportsX3dVersion(X3D.VERSION_3_0)=true
 head1 = head()
 #comment #1

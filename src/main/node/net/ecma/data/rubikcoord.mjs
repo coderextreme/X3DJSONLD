@@ -144,12 +144,12 @@ var X3D0 =  new X3D({
                             new fieldValue({
                               name : new SFString("diffuseColor"),
                               value : new SFString("1 0 0"),
-                              IS : new SFNode(
+                              children : new MFNode([
                                 new IS({
                                   connect : new MFNode([
                                     new connect({
                                       nodeField : new SFString("diffuseColor"),
-                                      protoField : new SFString("diffuseColor")})])}))})])}),
+                                      protoField : new SFString("diffuseColor")})])})])})])}),
 
                         new ProtoInstance({
                           name : new SFString("boxproto"),
@@ -161,12 +161,12 @@ var X3D0 =  new X3D({
                             new fieldValue({
                               name : new SFString("diffuseColor"),
                               value : new SFString("1 0 0"),
-                              IS : new SFNode(
+                              children : new MFNode([
                                 new IS({
                                   connect : new MFNode([
                                     new connect({
                                       nodeField : new SFString("diffuseColor"),
-                                      protoField : new SFString("diffuseColor")})])}))})])})])})])}))}),
+                                      protoField : new SFString("diffuseColor")})])})])})])})])})])}))}),
 
             new ProtoDeclare({
               name : new SFString("four"),
@@ -211,12 +211,12 @@ var X3D0 =  new X3D({
                             new fieldValue({
                               name : new SFString("diffuseColor"),
                               value : new SFString("1 0 0"),
-                              IS : new SFNode(
+                              children : new MFNode([
                                 new IS({
                                   connect : new MFNode([
                                     new connect({
                                       nodeField : new SFString("diffuseColor"),
-                                      protoField : new SFString("x1diffuseColor")})])}))})])}),
+                                      protoField : new SFString("x1diffuseColor")})])})])})])}),
 
                         new ProtoInstance({
                           name : new SFString("two"),
@@ -228,12 +228,12 @@ var X3D0 =  new X3D({
                             new fieldValue({
                               name : new SFString("diffuseColor"),
                               value : new SFString("0 1 0"),
-                              IS : new SFNode(
+                              children : new MFNode([
                                 new IS({
                                   connect : new MFNode([
                                     new connect({
                                       nodeField : new SFString("diffuseColor"),
-                                      protoField : new SFString("x2diffuseColor")})])}))})])})])})])}))}),
+                                      protoField : new SFString("x2diffuseColor")})])})])})])})])})])}))}),
 
             new ProtoDeclare({
               name : new SFString("eight"),

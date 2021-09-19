@@ -22,7 +22,7 @@ from x3d import *
 
 ###############################################
 
-newModel=X3D(profile='Immersive',version='3.3',
+newModel=X3D(profile='Immersive',version='4.0',
   #  x3dVersionComparisonTest for this model: supportsX3dVersion(X3D.VERSION_3_0)=true 
   head=head(
     children=[
@@ -310,7 +310,7 @@ newModel=X3D(profile='Immersive',version='3.3',
       SignalPdu(),
       TransmitterPdu(relativeAntennaLocation=(0,0,0),transmitFrequencyBandwidth=0.0),
       DISEntityManager(
-        mapping=[
+        children=[
         DISEntityTypeMapping(),])])])
 ) # X3D model complete
 

@@ -3,7 +3,7 @@ void main(int argc, char ** argv) {
 Browser browser = X3D.getBrowser();
 X3D X3D0;
 X3D0.profile = "Immersive";
-X3D0.version = "3.3";
+X3D0.version = "4.0";
 //x3dVersionComparisonTest for this model: supportsX3dVersion(X3D.VERSION_3_0)=true
 head head1 = createNode("head");
 //comment #1

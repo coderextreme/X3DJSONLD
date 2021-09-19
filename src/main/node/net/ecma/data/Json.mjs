@@ -87,7 +87,7 @@ import { DISEntityTypeMapping } from './x3d.mjs';
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
-      version : new SFString("3.3"),
+      version : new SFString("4.0"),
       /*x3dVersionComparisonTest for this model: supportsX3dVersion(X3D.VERSION_3_0)=true*/
       head : new SFNode(
         new head({
