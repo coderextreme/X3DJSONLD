@@ -167,7 +167,6 @@ var X3D0 =  X3D(
                                   specularColor_ : SFColor([SFDouble(0.46), SFDouble(0.46), SFDouble(0.46)]))),
                           geometry_ : 
                             Text(
-                              ccw_ : "true",
                               string_ : MFString([SFString("Violin")]),
                               fontStyle_ : 
                                 FontStyle(
@@ -207,7 +206,6 @@ var X3D0 =  X3D(
                                   specularColor_ : SFColor([SFDouble(0.46), SFDouble(0.46), SFDouble(0.46)]))),
                           geometry_ : 
                             Text(
-                              ccw_ : "true",
                               string_ : MFString([SFString("Saxophone")]),
                               fontStyle_ : 
                                 FontStyle(

@@ -25,6 +25,7 @@ var examples = config.examples;
 
 app.use(express.static('/'));
 app.use(express.static('src/main/data'));
+app.use(express.static('src/main/personal'));
 // app.use(express.static('src/main/node'));
 app.use(express.static('src/main/orig'));
 app.use(express.static('src/main/out'));
@@ -196,6 +197,15 @@ app.get("/files", function(req, res, next) {
 				console.error(file);
 			}
 		});
+	glob('src/main/personal/**', function( err, files ) {
+		if (err) return;
+		files.forEach(function(file) {
+			if (new RegExp(test).test(file)) {
+				file = file.replace(/src\/main/, '..');
+				json.push(file);
+				console.error(file);
+			}
+		});
 	glob('src/main/wrl/**', function( err, files ) {
 		if (err) return;
 		files.forEach(function(file) {
@@ -234,6 +244,7 @@ app.get("/files", function(req, res, next) {
 		});
 	console.log("Sending ", json.length, "files");
 	send(res, json, "text/json", next);
+	});
 	});
 	});
 	});
@@ -376,4 +387,3 @@ https.createServer({
 .listen(3000, 'localhost', function () {
   console.log('Example app listening on port 3000! Go to https://localhost:3000/')
 })
-

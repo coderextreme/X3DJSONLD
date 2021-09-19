@@ -204,7 +204,6 @@ Appearance39->setMaterial(*Material40);
 Shape38->setAppearance(*Appearance39);
 
 CText* Text41 = (CText *)(m_pScene.createNode("Text"));
-Text41->setCcw("true");
 Text41->setString(new CString[1]{"Violin"}, 1);
 CFontStyle* FontStyle42 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
 FontStyle42->setStyle("BOLD");
@@ -256,7 +255,6 @@ Appearance51->setMaterial(*Material52);
 Shape50->setAppearance(*Appearance51);
 
 CText* Text53 = (CText *)(m_pScene.createNode("Text"));
-Text53->setCcw("true");
 Text53->setString(new CString[1]{"Saxophone"}, 1);
 CFontStyle* FontStyle54 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
 FontStyle54->setFamily(new CString[1]{"Times"}, 1);

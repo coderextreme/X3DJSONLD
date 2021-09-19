@@ -200,7 +200,6 @@ Appearance39.material = Material40;
 Shape38.appearance = Appearance39;
 
 let Text41 = browser.currentScene.createNode("Text");
-Text41.ccw = "true";
 Text41.string = new MFString(new java.lang.String["Violin"]);
 let FontStyle42 = browser.currentScene.createNode("FontStyle");
 FontStyle42.style = "BOLD";
@@ -258,7 +257,6 @@ Appearance51.material = Material52;
 Shape50.appearance = Appearance51;
 
 let Text53 = browser.currentScene.createNode("Text");
-Text53.ccw = "true";
 Text53.string = new MFString(new java.lang.String["Saxophone"]);
 let FontStyle54 = browser.currentScene.createNode("FontStyle");
 FontStyle54.family = new MFString(new java.lang.String["Times"]);

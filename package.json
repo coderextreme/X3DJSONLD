@@ -9,7 +9,7 @@
     "axios": ">=0.21.2",
     "express": "*",
     "glob": "*",
-    "java": "^0.12.1",
+    "java": "^0.12.2",
     "jsonlint": "https://github.com/prantlf/jsonlint.git",
     "mutation-observer": "*",
     "node-mkdirp": "*",
@@ -21,7 +21,7 @@
   },
   "scripts": {
     "start": "node app.js",
-    "postinstall": "bash build.sh",
+    "postinstall": "# bash build.sh",
     "buildthreex3dloader": "browserify src/main/node/threeLoadFile.js > src/main/node/bundle.js"
   }
 }

@@ -47,19 +47,11 @@
           </IS>
           <ProtoInstance name='boxproto'>
             <fieldValue name='xtranslation' value='0 0 0'/>
-            <fieldValue name='diffuseColor' value='1 0 0'>
-              <IS>
-                <connect nodeField='diffuseColor' protoField='diffuseColor'/>
-              </IS>
-            </fieldValue>
+            <fieldValue name='diffuseColor' value='1 0 0'/>
           </ProtoInstance>
           <ProtoInstance name='boxproto'>
             <fieldValue name='xtranslation' value='2 0 0'/>
-            <fieldValue name='diffuseColor' value='1 0 0'>
-              <IS>
-                <connect nodeField='diffuseColor' protoField='diffuseColor'/>
-              </IS>
-            </fieldValue>
+            <fieldValue name='diffuseColor' value='1 0 0'/>
           </ProtoInstance>
         </Transform>
       </ProtoBody>
@@ -77,19 +69,11 @@
           </IS>
           <ProtoInstance name='two'>
             <fieldValue name='ytranslation' value='0 0 0'/>
-            <fieldValue name='diffuseColor' value='1 0 0'>
-              <IS>
-                <connect nodeField='diffuseColor' protoField='x1diffuseColor'/>
-              </IS>
-            </fieldValue>
+            <fieldValue name='diffuseColor' value='1 0 0'/>
           </ProtoInstance>
           <ProtoInstance name='two'>
             <fieldValue name='ytranslation' value='0 2 0'/>
-            <fieldValue name='diffuseColor' value='0 1 0'>
-              <IS>
-                <connect nodeField='diffuseColor' protoField='x2diffuseColor'/>
-              </IS>
-            </fieldValue>
+            <fieldValue name='diffuseColor' value='0 1 0'/>
           </ProtoInstance>
         </Transform>
       </ProtoBody>
