@@ -538,6 +538,17 @@ function getXmlString(xml) {
 }
 
 function convertXmlToJson(xmlString, path) {
+	output = SaxonJS.transform({
+		stylesheetLocation: "../lib/stylesheets/X3dToJson.sef.json",
+		sourceLocation: path,
+		destination: "serialized",
+		outputProperties: { method: "json" }
+	}, "sync");
+	let jsobj = output.principalResult;
+	jsobj = JSON.parse(jsobj);
+	console.log(jsobj);
+	return jsobj;
+
     if (typeof DOM2JSONSerializer !== 'undefined') {
 	try {
 		var doc = null;

@@ -26,6 +26,7 @@ var examples = config.examples;
 app.use(express.static('/'));
 app.use(express.static('src/main/data'));
 app.use(express.static('src/main/personal'));
+app.use(express.static('src/main/personal'));
 // app.use(express.static('src/main/node'));
 app.use(express.static('src/main/orig'));
 app.use(express.static('src/main/out'));
