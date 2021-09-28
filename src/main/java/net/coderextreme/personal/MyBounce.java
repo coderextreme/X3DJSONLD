@@ -43,7 +43,7 @@ public class MyBounce {
     new MyBounce().initialize().toFileJSON("../personal/MyBounce.new.json");
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
         .addComponent(new component().setName("Scripting").setLevel(1))
         .addMeta(new meta().setName("title").setContent("MyBounce.x3d"))

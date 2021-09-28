@@ -13,16 +13,16 @@
     "jsonlint": "https://github.com/prantlf/jsonlint.git",
     "mutation-observer": "*",
     "node-mkdirp": "*",
+    "saxon-js": "*",
     "three": "*",
     "xml2js": "^0.4.23",
     "xmldom": "git://github.com/xmldom/xmldom.git#v0.7.0",
     "xmlhttprequest": "*",
-    "saxon-js": "*",
     "xslt3": "*"
   },
   "scripts": {
     "start": "node app.js",
-    "postinstall": "# bash build.sh",
+    "postinstall": "bash build.sh",
     "buildthreex3dloader": "browserify src/main/node/threeLoadFile.js > src/main/node/bundle.js"
   }
 }

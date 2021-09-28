@@ -39,12 +39,12 @@ newModel=X3D(profile='Full',version='4.0',
     meta(content='../license.html',name='license')]),
   Scene=Scene(
     children=[
-    NavigationInfo(id='NAV',type=['NONE']),
+    NavigationInfo(id_='NAV',type=['NONE']),
     Background(skyColor=[(0.200,0.200,0.210)]),
     Viewpoint(bind=true,orientation=(1,0,0,-0.5),position=(0.0,500.0,600.0),retainUserOffsets=True),
     Transform(DEF='PowerR',translation=(100,400,400),
       children=[
-      Transform(id='pR',rotation=(1,0,0,-0.5),translation=(0,40,0),
+      Transform(id_='pR',rotation=(1,0,0,-0.5),translation=(0,40,0),
         children=[
         Shape(
           appearance=Appearance(DEF='audio_emit',
@@ -67,7 +67,7 @@ newModel=X3D(profile='Full',version='4.0',
             fontStyle=FontStyle(family=['\'Times\''],justify=['BEGIN'],lefttoright=true,style_='BOLD',toptobottom=true)))])]),
     Transform(DEF='PowerL',translation=(-100,400,400),
       children=[
-      Transform(id='pL',rotation=(1,0,0,-0.5),translation=(0,40,0),
+      Transform(id_='pL',rotation=(1,0,0,-0.5),translation=(0,40,0),
         children=[
         Shape(
           appearance=Appearance(DEF='audio_emit',
@@ -94,21 +94,21 @@ newModel=X3D(profile='Full',version='4.0',
         appearance=Appearance(DEF='floor',
           material=Material(diffuseColor=(0.1,0.1,0.1),shininess=0.8,specularColor=(0.5,0.6,0.7))),
         geometry=Box(size=(1500,10,500)))]),
-    ListenerPoint(id='ListenerPoint',trackCurrentView=true),
-    AudioDestination(id='AudioDestination',
+    ListenerPoint(id_='ListenerPoint',trackCurrentView=true),
+    AudioDestination(id_='AudioDestination',
       children=[
-      Gain(id='Gain3',
+      Gain(id_='Gain3',
         children=[
-        ChannelMerger(id='ChannelMerger',
+        ChannelMerger(id_='ChannelMerger',
           children=[
-          ChannelSelector(id='ChannelSelector0',
+          ChannelSelector(id_='ChannelSelector0',
             children=[
-            Gain(USE='ChannelSplitter',id='Gain0')]),
-          ChannelSelector(channelSelection=1,id='ChannelSelector1',
+            Gain(USE='ChannelSplitter',id_='Gain0')]),
+          ChannelSelector(channelSelection=1,id_='ChannelSelector1',
             children=[
-            Gain(USE='ChannelSplitter',id='Gain1')])])])]),
-    ChannelSplitter(DEF='ChannelSplitter',channelCountMode=explicit,id='ChannelSplitter',
-      source=AudioClip(USE='Audio3',id='AudioClip',loop=True,pauseTime=-1,resumeTime=-1,stopTime=-1,url=['sound/violin.mp3'])),
+            Gain(USE='ChannelSplitter',id_='Gain1')])])])]),
+    ChannelSplitter(DEF='ChannelSplitter',channelCountMode=explicit,id_='ChannelSplitter',
+      source=AudioClip(USE='Audio3',id_='AudioClip',loop=True,pauseTime=-1,resumeTime=-1,stopTime=-1,url=['sound/violin.mp3'])),
     Transform(DEF='Audio3',rotation=(1,0,0,-0.5),translation=(0,100,0),
       children=[
       Shape(

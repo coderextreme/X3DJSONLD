@@ -40,7 +40,7 @@ newModel=X3D(profile='Full',version='4.0',
   Scene=Scene(
     children=[
     WorldInfo(title='SpatialAudioCameraAnimation.x3d'),
-    NavigationInfo(id='NAV'),
+    NavigationInfo(id_='NAV'),
     Background(backUrl=["images/generic/BK1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png"],bottomUrl=["images/generic/DN1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png"],frontUrl=["images/generic/FR1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png"],leftUrl=["images/generic/LF1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/LF1.png"],rightUrl=["images/generic/RT1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/RT1.png"],topUrl=["images/generic/UP1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png"]),
     Viewpoint(DEF='Camera001',description='Viewpoint is like camera, prepositioned in locations (and directions) of interest. In this example the camera is the "ears of the user". So, if the trackCurrentView field from ListenerPointSource is TRUE then position and orientation matches the users current view',farDistance=0,nearDistance=1.000000,orientation=(1.000000,0.000000,-0.000000,-0.523599),position=(0.000000,2000.000000,3500.000000)),
     TimeSensor(DEF='TIMER',cycleInterval=33.333332,loop=True),
@@ -86,17 +86,17 @@ newModel=X3D(profile='Full',version='4.0',
               material=Material(ambientIntensity=0.0933,diffuseColor=(1,1,1),shininess=0.51,specularColor=(0.46,0.46,0.46))),
             geometry=Text(string=["Saxophone"],
               fontStyle=FontStyle(family=["Times"],style_='BOLD')))])])]),
-    ListenerPointSource(id='ListenerPointSource',trackCurrentView=true),
-    StreamAudioDestination(id='AudioDestination',
+    ListenerPointSource(id_='ListenerPointSource',trackCurrentView=true),
+    StreamAudioDestination(id_='AudioDestination',
       children=[
-      SpatialSound(DEF='Audio1',id='SpatialSound1',
+      SpatialSound(DEF='Audio1',id_='SpatialSound1',
         children=[
-        Gain(id='Gain1',
-          source=AudioClip(id='AudioClip1',loop=True,pauseTime=-1,resumeTime=-1,stopTime=-1,url=["sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"]))]),
-      SpatialSound(DEF='Audio2',id='SpatialSound2',
+        Gain(id_='Gain1',
+          source=AudioClip(id_='AudioClip1',loop=True,pauseTime=-1,resumeTime=-1,stopTime=-1,url=["sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"]))]),
+      SpatialSound(DEF='Audio2',id_='SpatialSound2',
         children=[
-        Gain(id='Gain2',
-          source=AudioClip(id='AudioClip2',loop=True,pauseTime=-1,resumeTime=-1,stopTime=-1,url=["sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"]))])])])
+        Gain(id_='Gain2',
+          source=AudioClip(id_='AudioClip2',loop=True,pauseTime=-1,resumeTime=-1,stopTime=-1,url=["sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"]))])])])
 ) # X3D model complete
 
 ###############################################

@@ -86,7 +86,7 @@
 <FloatVertexAttribute id='' name='' numComponents='4' style='' value='' containerField='attrib' class=''/>
 <Fog color='1 1 1' fogType='LINEAR' id='' style='' visibilityRange='0' containerField='children' class=''/>
 <FogCoordinate depth='' id='' style='' containerField='fogCoord' class=''/>
-<FontStyle family='"SERIF"' horizontal='true' id='' id='' justify='"BEGIN"' language='' leftToRight='true' size='1.0' spacing='1.0' style='' style='PLAIN' topToBottom='true' containerField='fontStyle' class='' class=''/>
+<FontStyle family='"SERIF"' horizontal='true' id='' justify='"BEGIN"' language='' leftToRight='true' size='1.0' spacing='1.0' style='PLAIN' topToBottom='true' containerField='fontStyle' class='' />
 <ForcePhysicsModel enabled='true' force='0 -9.8 0' id='' style='' containerField='physics' class=''/>
 <Gain channelCountMode='max' channelInterpretation='speakers' description='' enabled='true' gain='1' id='' pauseTime='0' resumeTime='0' startTime='0' stopTime='0' style='' tailTime='0' containerField='children' class=''/>
 <GeneratedCubeMapTexture description='' id='' size='128' style='' update='NONE' containerField='texture' class=''/>
@@ -213,7 +213,7 @@
 <ScalarDamper id='' initialDestination='0' initialValue='0' order='3' style='' tau='0.3' tolerance='-1' containerField='children' class=''/>
 <ScalarInterpolator id='' key='' keyValue='' style='' containerField='children' class=''/>
 <Scene id='' style='' class=''/>
-<ScreenFontStyle family='"SERIF"' horizontal='true' id='' id='' justify='"BEGIN"' language='' leftToRight='true' pointSize='12.0' spacing='1.0' style='' style='PLAIN' topToBottom='true' containerField='fontStyle' class='' class=''/>
+<ScreenFontStyle family='"SERIF"' horizontal='true' id='' justify='"BEGIN"' language='' leftToRight='true' pointSize='12.0' spacing='1.0' style='PLAIN' topToBottom='true' containerField='fontStyle' class=''/>
 <ScreenGroup bboxCenter='0 0 0' bboxDisplay='false' bboxSize='-1 -1 -1' id='' style='' visible='true' containerField='children' class=''/>
 <Script autoRefresh='0' autoRefreshTimeLimit='3600' description='' directOutput='false' id='' load='true' mustEvaluate='false' style='' url='' containerField='children' class=''/>
 <SegmentedVolumeData bboxCenter='0 0 0' bboxDisplay='false' bboxSize='-1 -1 -1' dimensions='1 1 1' id='' segmentEnabled='' style='' visible='true' containerField='children' class=''/>

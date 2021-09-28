@@ -53,7 +53,7 @@ ProtoInstance ProtoInstance6 = null;
 ProtoInstance ProtoInstance7 = null;
 ProtoInstance ProtoInstance8 = null;
 ProtoInstance ProtoInstance9 = null;
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("rubikOnFire.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))

@@ -43,7 +43,7 @@ public class gears {
     new gears().initialize().toFileJSON("../personal/gears.new.json");
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Interchange").setVersion("3.3")
+      X3D X3D0 =  new X3D().setProfile("Interchange").setVersion("4.0")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("gears.x3d"))
         .addMeta(new meta().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/template.json"))
