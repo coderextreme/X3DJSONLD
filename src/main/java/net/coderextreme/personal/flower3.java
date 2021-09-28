@@ -43,7 +43,7 @@ public class flower3 {
     new flower3().initialize().toFileJSON("../personal/flower3.new.json");
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("flower3.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))

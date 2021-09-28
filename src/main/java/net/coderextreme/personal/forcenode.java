@@ -50,7 +50,7 @@ ProtoInstance ProtoInstance3 = null;
 ProtoInstance ProtoInstance4 = null;
 ProtoInstance ProtoInstance5 = null;
 ProtoInstance ProtoInstance6 = null;
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
         .addMeta(new meta().setName("creator").setContent("John W Carlson"))
         .addMeta(new meta().setName("created").setContent("December 13 2015"))

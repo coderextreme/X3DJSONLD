@@ -1283,8 +1283,12 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 							<xsl:text>import java.io.File;</xsl:text>
 							<xsl:text>&#10;</xsl:text>
 						</xsl:when>
-						<xsl:when test="($name = 'IndexedFaceSet') or ($name = 'IndexedLineSet')">
+						<xsl:when test="($baseType = 'X3DComposedGeometryNode') or ($name = 'IndexedLineSet')">
 							<xsl:text>import org.web3d.x3d.jsail.NURBS.CoordinateDouble;</xsl:text>
+							<xsl:text>&#10;</xsl:text>
+							<xsl:text>import org.web3d.x3d.jsail.Texturing.MultiTextureCoordinate;</xsl:text>
+							<xsl:text>&#10;</xsl:text>
+							<xsl:text>import org.web3d.x3d.jsail.Texturing.TextureCoordinate;</xsl:text>
 							<xsl:text>&#10;</xsl:text>
 						</xsl:when>
 					</xsl:choose>
@@ -17408,7 +17412,8 @@ method invocations on the same node object).
 ]]></xsl:text>
 						
 					</xsl:if> <!-- end of field, fieldValue typed getValue methods -->
-								<xsl:if test="(($name='IndexedFaceSet') or ($name='IndexedLineSet')) and not($isInterface = 'true')">
+                                                                <!-- ($name='IndexedFaceSet') or ($name='IndexedLineSet') -->
+								<xsl:if test="(($baseType = 'X3DComposedGeometryNode') or ($name = 'IndexedLineSet')) and not($isInterface = 'true')">
 									<xsl:text disable-output-escaping="yes"><![CDATA[
 	/** 
 	 * Utility method to get number of coordinate 3-tuple values in contained Coordinate/CoordinateDouble or ProtoInstance node 
@@ -17468,7 +17473,8 @@ method invocations on the same node object).
 	}
 ]]></xsl:text>
 								</xsl:if>
-								<xsl:if test="($name='IndexedFaceSet') and not($isInterface = 'true')">
+                                                                <!-- not included: ($name='IndexedLineSet') -->
+								<xsl:if test="($baseType = 'X3DComposedGeometryNode') and not($isInterface = 'true')">
 									<xsl:text disable-output-escaping="yes"><![CDATA[
 	/** 
 	 * Utility method to get number of 3-tuple normal vectors in contained Normal or ProtoInstance node
@@ -17495,24 +17501,31 @@ method invocations on the same node object).
 	/** 
 	 * Utility method to get number of 2-tuple texture coordinate values in contained TextureCoordinate or ProtoInstance node
 	 * @see TextureCoordinate
+	 * @see MultiTextureCoordinate
 	 * @see ProtoInstance
 	 * @return number of color values
 	 */
 	public int getTexCoordCount()
 	{
-		if (getTexCoord() != null)
-		{
-			return (((TextureCoordinate)getTexCoord()).getPoint().length / SFVec2f.TUPLE_SIZE);
-		}
-		else if ((getTexCoordProtoInstance() != null) && getTexCoordProtoInstance().hasFieldValue())
-		{
-			for (fieldValue nextFieldValue : getTexCoordProtoInstance().getFieldValueList())
-			{
-				if      (nextFieldValue.getName().equals("texcoord"))
-					     return nextFieldValue.getValueMFVec2f().size();
-			}
-		}
-		return 0;
+            if ((texCoord != null) && (texCoord instanceof org.web3d.x3d.jsail.Texturing.TextureCoordinate))
+            {
+                return (((org.web3d.x3d.jsail.Texturing.TextureCoordinate)texCoord).getPoint().length / SFVec2f.TUPLE_SIZE);
+            }
+            else if ((texCoord != null) && (texCoord instanceof org.web3d.x3d.jsail.Texturing.MultiTextureCoordinate))
+            {
+                if (((org.web3d.x3d.jsail.Texturing.MultiTextureCoordinate)texCoord).getTexCoordList().isEmpty())
+                     return 0;
+                else return (((org.web3d.x3d.jsail.Texturing.TextureCoordinate)((org.web3d.x3d.jsail.Texturing.MultiTextureCoordinate)texCoord).getTexCoordList().get(1)).getPoint().length / SFVec2f.TUPLE_SIZE);
+            }
+            else if ((getTexCoordProtoInstance() != null) && getTexCoordProtoInstance().hasFieldValue())
+            {
+                for (fieldValue nextFieldValue : getTexCoordProtoInstance().getFieldValueList())
+                {
+                    if (nextFieldValue.getName().equals("texcoord"))
+                        return nextFieldValue.getValueMFVec2f().size();
+                }
+            }
+            return 0;
 	}
 ]]></xsl:text>
 								</xsl:if>
@@ -31437,9 +31450,9 @@ package org.web3d.x3d.jsail.fields;
  * </p>
  * @see <a href="http://openexi.sourceforge.net">Nagasena for EXI</a>
  * @see <a href="http://exificient.github.io">EXIficient for EXI</a>
- * @see World Wide Web Consortium (W3C) <a href="https://www.w3.org/standards/xml/exi">EFFICIENT INTERCHANGE</a>
- * @see World Wide Web Consortium (W3C) <a href="https://www.w3.org/TR/2014/REC-exi-20140211">Efficient XML Interchange (EXI) Format 1.0 (Second Edition)</a>
- * @see World Wide Web Consortium (W3C) <a href="https://www.w3.org/TR/exi-for-json">EXI for JSON (EXI4JSON)</a>
+ * @see <a href="https://www.w3.org/standards/xml/exi">World Wide Web Consortium (W3C) EFFICIENT INTERCHANGE</a>
+ * @see <a href="https://www.w3.org/TR/2014/REC-exi-20140211">World Wide Web Consortium (W3C) Efficient XML Interchange (EXI) Format 1.0 (Second Edition)</a>
+ * @see <a href="https://www.w3.org/TR/exi-for-json">World Wide Web Consortium (W3C) EXI for JSON (EXI4JSON)</a>
  * @see <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html">X3D Resources</a>
  * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html">X3D Scene Authoring Hints</a>
  * @see <a href="https://www.web3d.org/x3d/tooltips/X3dTooltips.html">X3D Tooltips</a>

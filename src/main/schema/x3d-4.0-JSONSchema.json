@@ -15876,7 +15876,7 @@
               "type": "boolean"
             },
             "-texCoord": {
-              "$ref": "#/definitions/-X3DSingleTextureCoordinateNodeSFNode"
+              "$ref": "#/definitions/-X3DSingleTextureCoordinateNode-MultiTextureCoordinateSFNode"
             },
             "@texCoordIndex": {
               "pattern": "^(\\s)*([+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?\\s*,?\\s*)*$",
@@ -16138,7 +16138,7 @@
               "type": "boolean"
             },
             "-texCoord": {
-              "$ref": "#/definitions/-X3DSingleTextureCoordinateNodeSFNode"
+              "$ref": "#/definitions/-X3DSingleTextureCoordinateNode-MultiTextureCoordinateSFNode"
             },
             "@DEF": {
               "pattern": "^(\\s|\\S)*$",
@@ -16266,7 +16266,7 @@
               "type": "boolean"
             },
             "-texCoord": {
-              "$ref": "#/definitions/-X3DSingleTextureCoordinateNodeSFNode"
+              "$ref": "#/definitions/-X3DSingleTextureCoordinateNode-MultiTextureCoordinateSFNode"
             },
             "@DEF": {
               "pattern": "^(\\s|\\S)*$",
@@ -16394,7 +16394,7 @@
               "type": "boolean"
             },
             "-texCoord": {
-              "$ref": "#/definitions/-X3DSingleTextureCoordinateNodeSFNode"
+              "$ref": "#/definitions/-X3DSingleTextureCoordinateNode-MultiTextureCoordinateSFNode"
             },
             "@DEF": {
               "pattern": "^(\\s|\\S)*$",
@@ -16522,7 +16522,7 @@
               "type": "boolean"
             },
             "-texCoord": {
-              "$ref": "#/definitions/-X3DSingleTextureCoordinateNodeSFNode"
+              "$ref": "#/definitions/-X3DSingleTextureCoordinateNode-MultiTextureCoordinateSFNode"
             },
             "@DEF": {
               "pattern": "^(\\s|\\S)*$",
@@ -26459,7 +26459,7 @@
               "type": "boolean"
             },
             "-texCoord": {
-              "$ref": "#/definitions/-X3DSingleTextureCoordinateNodeSFNode"
+              "$ref": "#/definitions/-X3DSingleTextureCoordinateNode-MultiTextureCoordinateSFNode"
             },
             "@DEF": {
               "pattern": "^(\\s|\\S)*$",
@@ -34512,7 +34512,7 @@
               "type": "boolean"
             },
             "-texCoord": {
-              "$ref": "#/definitions/-X3DSingleTextureCoordinateNodeSFNode"
+              "$ref": "#/definitions/-X3DSingleTextureCoordinateNode-MultiTextureCoordinateSFNode"
             },
             "@DEF": {
               "pattern": "^(\\s|\\S)*$",
@@ -34622,7 +34622,7 @@
               "type": "boolean"
             },
             "-texCoord": {
-              "$ref": "#/definitions/-X3DSingleTextureCoordinateNodeSFNode"
+              "$ref": "#/definitions/-X3DSingleTextureCoordinateNode-MultiTextureCoordinateSFNode"
             },
             "@DEF": {
               "pattern": "^(\\s|\\S)*$",
@@ -34824,7 +34824,7 @@
               }
             },
             "-texCoord": {
-              "$ref": "#/definitions/-X3DSingleTextureCoordinateNodeSFNode"
+              "$ref": "#/definitions/-X3DSingleTextureCoordinateNode-MultiTextureCoordinateSFNode"
             },
             "@DEF": {
               "pattern": "^(\\s|\\S)*$",
@@ -37050,9 +37050,6 @@
         "properties": {
           "-children": {
             "$ref": "#/definitions/-X3DNodeMFNode"
-          },
-          "IS": {
-            "$ref": "#/definitions/IS"
           },
           "@class": {
             "pattern": "^(\\s|\\S)*$",
@@ -40467,6 +40464,30 @@
         },
         "additionalProperties": false
       }
+    },
+    "-X3DSingleTextureCoordinateNode-MultiTextureCoordinateSFNode": {
+      "type": "object",
+      "properties": {
+        "TextureCoordinate": {
+          "$ref": "#/definitions/TextureCoordinate"
+        },
+        "TextureCoordinate3D": {
+          "$ref": "#/definitions/TextureCoordinate3D"
+        },
+        "TextureCoordinate4D": {
+          "$ref": "#/definitions/TextureCoordinate4D"
+        },
+        "TextureCoordinateGenerator": {
+          "$ref": "#/definitions/TextureCoordinateGenerator"
+        },
+        "MultiTextureCoordinate": {
+          "$ref": "#/definitions/MultiTextureCoordinate"
+        },
+        "ProtoInstance": {
+          "$ref": "#/definitions/ProtoInstance"
+        }
+      },
+      "additionalProperties": false
     },
     "-X3DVolumeRenderStyleNodeMFNode": {
       "$comment": "MFNode inputOutput",

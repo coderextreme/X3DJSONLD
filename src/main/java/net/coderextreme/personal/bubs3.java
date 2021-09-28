@@ -43,7 +43,7 @@ public class bubs3 {
     new bubs3().initialize().toFileJSON("../personal/bubs3.new.json");
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
+      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("bubs3.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))

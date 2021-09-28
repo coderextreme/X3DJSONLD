@@ -43,7 +43,7 @@ public class cube {
     new cube().initialize().toFileJSON("../personal/cube.new.json");
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Interchange").setVersion("3.3")
+      X3D X3D0 =  new X3D().setProfile("Interchange").setVersion("4.0")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("cube.x3d"))
         .addMeta(new meta().setName("description").setContent("Template for an Indexed Face Set"))

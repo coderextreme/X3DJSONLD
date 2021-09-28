@@ -43,7 +43,7 @@ public class ifscubeworks {
     new ifscubeworks().initialize().toFileJSON("../personal/ifscubeworks.new.json");
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Interchange").setVersion("3.3")
+      X3D X3D0 =  new X3D().setProfile("Interchange").setVersion("4.0")
       .setHead(new head()
         .addMeta(new meta().setName("title").setContent("ifscubeworks.x3d"))
         .addMeta(new meta().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/src/main/personal/ifscubeworks.x3d"))

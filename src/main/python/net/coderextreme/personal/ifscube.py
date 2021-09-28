@@ -1,7 +1,7 @@
 from x3dpsail import *
 X3D0 = X3D()
 X3D0.setProfile("Interchange")
-X3D0.setVersion("3.3")
+X3D0.setVersion("4.0")
 head1 = head()
 meta2 = meta()
 meta2.setName("title")

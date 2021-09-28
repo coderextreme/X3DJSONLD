@@ -1,7 +1,7 @@
 from x3dpsail import *
 X3D0 = X3D()
 X3D0.setProfile("Immersive")
-X3D0.setVersion("3.3")
+X3D0.setVersion("4.0")
 head1 = head()
 component2 = component()
 component2.setName("Scripting")
