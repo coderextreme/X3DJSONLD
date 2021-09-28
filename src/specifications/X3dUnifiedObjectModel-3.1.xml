@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-3.1.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-3.1.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 3.1 of X3D -->
-<!-- Generated 2021-07-31-07:00 18:09:27.462-07:00 -->
+<!-- Generated 2021-09-25-07:00 21:19:56.1257405-07:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                        version="3.1"
                        xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -2306,7 +2306,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
          </InterfaceDefinition>
       </AbstractObjectType>
       <AbstractObjectType name="X3DUrlObject">
@@ -2320,6 +2320,17 @@
       </AbstractObjectType>
    </AbstractObjectTypes>
    <AbstractNodeTypes>
+      <AbstractNodeType name="SceneGraphStructureStatement">
+         <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#scenegraph"
+                              appinfo="SceneGraphStructureStatement is a marker interface that identifies statements relating to nonrenderable scene graph structure. SceneGraphStructureStatement does not extend from any other node type since it is not an explicit part of the X3D node interface hierarchy, and DEF/USE is not appropriate for such statements.">
+            <componentInfo name="Core" level="1"/>
+            <field name="class"
+                   type="SFString"
+                   accessType="inputOutput"
+                   baseType="xs:NMTOKENS"
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+         </InterfaceDefinition>
+      </AbstractNodeType>
       <AbstractNodeType name="X3DAppearanceChildNode">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/shape.html#X3DAppearanceChildNode"
                               appinfo="Nodes of this type can be used as child nodes for Appearance.">
@@ -2354,7 +2365,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -2394,7 +2405,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="AppearanceChildContentModel"
                                   minOccurs="0"
@@ -2483,7 +2494,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -2526,7 +2537,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -2566,7 +2577,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -2606,7 +2617,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -2691,7 +2702,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ComposedGeometryContentModel"
                                   minOccurs="0"
@@ -2734,7 +2745,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -2796,7 +2807,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -2850,7 +2861,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -2890,11 +2901,15 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
          </InterfaceDefinition>
+      </AbstractNodeType>
+      <AbstractNodeType name="X3DField">
+         <InterfaceDefinition specificationUrl="https://www.web3d.org/technicalinfo/specifications/vrml97/part1/fieldsRef.html#5.1.2"
+                              appinfo="X3DField is equivalent to SF (Single Field) simple non-Node types in the VRML97 Specification."/>
       </AbstractNodeType>
       <AbstractNodeType name="X3DFontStyleNode">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/text.html#X3DFontStyleNode"
@@ -2930,7 +2945,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -2970,7 +2985,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -3010,7 +3025,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -3076,7 +3091,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -3117,7 +3132,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -3159,7 +3174,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -3208,7 +3223,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -3269,7 +3284,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -3309,7 +3324,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -3358,7 +3373,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -3434,7 +3449,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -3475,7 +3490,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -3571,7 +3586,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -3611,7 +3626,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -3662,7 +3677,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -3703,7 +3718,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -3765,7 +3780,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -3810,7 +3825,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -3854,7 +3869,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -3907,7 +3922,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -3967,7 +3982,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="ShapeChildContentModel" minOccurs="0"/>
@@ -4008,7 +4023,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -4102,7 +4117,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -4150,7 +4165,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -4202,7 +4217,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -4242,7 +4257,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -4282,7 +4297,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -4322,7 +4337,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -4394,7 +4409,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -4452,7 +4467,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -4492,7 +4507,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -4536,7 +4551,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -4628,7 +4643,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="containerFieldChoicesX3DUrlObject"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
@@ -4714,7 +4729,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="appearance" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="AppearanceChildContentModel"
@@ -4779,7 +4794,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="geometry" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -4859,7 +4874,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="geometry" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -4979,7 +4994,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="source" type="containerFieldChoicesAudioClip"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -5122,7 +5137,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -5202,7 +5217,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
@@ -5261,7 +5276,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -5331,7 +5346,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -5382,7 +5397,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -5432,7 +5447,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -5484,7 +5499,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="geometry" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -5565,7 +5580,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
@@ -5633,7 +5648,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -5720,7 +5735,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
@@ -5820,7 +5835,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -5870,7 +5885,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="geometry" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -5967,7 +5982,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
@@ -6016,7 +6031,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="color" type="containerFieldChoicesColor"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -6080,7 +6095,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -6130,7 +6145,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="color" type="containerFieldChoicesColor"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -6141,12 +6156,13 @@
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#Components"
                               appinfo="Functional summary: each added component statement indicates needed scene functionality support above the given X3D profile.">
             <componentInfo name="Core" level="1"/>
+            <Inheritance baseType="SceneGraphStructureStatement"/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <field name="level"
                    type="SFInt32"
                    accessType="inputOutput"
@@ -6315,7 +6331,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="texture" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -6397,7 +6413,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="shaders" type="xs:NMTOKEN"/>
             <ContentModel>
                <FieldDeclaration minOccurs="0" maxOccurs="unbounded"/>
@@ -6464,7 +6480,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="texture" type="containerFieldChoicesX3DTexture3DNode"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -6537,7 +6553,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="geometry" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -6548,12 +6564,13 @@
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/concepts.html#IS_ConnectStatementSyntax"
                               appinfo="Functional summary: connect statements define event-routing connections between node fields defined inside a ProtoBody declaration back to corresponding ProtoInterface fields.">
             <componentInfo name="Core" level="2"/>
+            <Inheritance baseType="SceneGraphStructureStatement"/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <field name="nodeField"
                    type="SFString"
                    accessType="inputOutput"
@@ -6616,7 +6633,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="trimmingContour" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -6666,7 +6683,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -6712,7 +6729,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="coord" type="containerFieldChoicesX3DCoordinateNode"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -6758,7 +6775,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="coord" type="containerFieldChoicesX3DCoordinateNode"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -6818,7 +6835,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -6878,7 +6895,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -6952,7 +6969,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="geometry" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -7061,7 +7078,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -7145,7 +7162,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -7204,7 +7221,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="geometry" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -7336,7 +7353,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="geometry" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -7830,7 +7847,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
@@ -7842,6 +7859,7 @@
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#EXPORTSemantics"
                               appinfo="Functional summary: EXPORT exposes a local node for ROUTE passing of event values when the current Scene is included via Inline by a parent external world. These connections allow event values to be exchanged via ROUTE statements between a parent model and a child Inline model.">
             <componentInfo name="Networking" level="3"/>
+            <Inheritance baseType="SceneGraphStructureStatement"/>
             <field name="AS"
                    type="SFString"
                    accessType="inputOutput"
@@ -7852,7 +7870,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <field name="localDEF"
                    type="SFString"
                    accessType="inputOutput"
@@ -7865,7 +7883,8 @@
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#Externalprototypesemantics"
                               appinfo="ExternProtoDeclare refers to a ProtoDeclare node declaration provided in another file. ExternProtoDeclare interfaces are defined by field statements (and without IS/connect statements).">
             <componentInfo name="Core" level="2"/>
-            <Inheritance baseType="X3DChildNode"/>
+            <Inheritance baseType="SceneGraphStructureStatement"/>
+            <AdditionalInheritance baseType="X3DChildNode"/>
             <field name="appinfo"
                    type="SFString"
                    accessType="inputOutput"
@@ -7875,7 +7894,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <field name="documentation"
                    type="SFString"
                    accessType="inputOutput"
@@ -8003,7 +8022,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="geometry" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -8014,6 +8033,7 @@
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/concepts.html#NodeAndFieldStatementSyntax"
                               appinfo="Functional summary: a field statement defines an interface attribute or node. Each field statement can contain either attribute-value or node content.">
             <componentInfo name="Core" level="1"/>
+            <Inheritance baseType="SceneGraphStructureStatement"/>
             <field name="accessType"
                    type="SFString"
                    accessType="inputOutput"
@@ -8044,7 +8064,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <field name="documentation"
                    type="SFString"
                    accessType="inputOutput"
@@ -8150,6 +8170,7 @@
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/concepts.html#ProtoInstanceAndFieldValueStatement"
                               appinfo="Functional summary: a fieldValue statement re-initializes the default value of a field in a ProtoInstance. Each fieldValue statement can contain either attribute-value or node content.">
             <componentInfo name="Core" level="2"/>
+            <Inheritance baseType="SceneGraphStructureStatement"/>
             <field name="children"
                    type="MFNode"
                    accessType="inputOutput"
@@ -8159,7 +8180,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <field name="name"
                    type="SFString"
                    accessType="inputOutput"
@@ -8232,7 +8253,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="fillProperties" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -8291,7 +8312,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="attrib" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -8377,7 +8398,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -8425,7 +8446,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="fogCoord" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -8555,7 +8576,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="fontStyle" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -8615,7 +8636,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="texture" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -8674,7 +8695,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="coord" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -8818,7 +8839,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="geometry" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -8913,7 +8934,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
@@ -9042,7 +9063,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -9103,7 +9124,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="containerFieldChoicesX3DUrlObject"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -9170,7 +9191,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="geoOrigin" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -9247,7 +9268,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -9345,7 +9366,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -9466,7 +9487,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -9542,7 +9563,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="containerFieldChoicesGroupLODShapeTransform"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
@@ -9751,7 +9772,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="displacers" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -9899,7 +9920,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -10149,7 +10170,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="containerFieldChoicesHAnimJoint"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -10368,7 +10389,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="containerFieldChoicesHAnimSegment"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
@@ -10623,7 +10644,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="containerFieldChoicesHAnimSite"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
@@ -10635,12 +10656,13 @@
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/concepts.html#Header"
                               appinfo="Functional summary: each X3D scene includes a head statement that can contain component, unit and meta statements.">
             <componentInfo name="Core" level="1"/>
+            <Inheritance baseType="SceneGraphStructureStatement"/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <field name="component"
                    type="MFNode"
                    accessType="inputOutput"
@@ -10700,7 +10722,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="texture" type="containerFieldChoicesX3DTexture2DNode"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -10762,7 +10784,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="texture" type="containerFieldChoicesX3dUrlObjectTexture"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -10830,7 +10852,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="texture" type="containerFieldChoicesX3DTexture3DNode"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -10841,6 +10863,7 @@
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#IMPORTSemantics"
                               appinfo="Functional summary: IMPORT provides ROUTE access to a node that has a corresponding EXPORT statement within an Inline scene. These connections allow event values to be exchanged via ROUTE statements between a parent model and a child Inline model.">
             <componentInfo name="Networking" level="3"/>
+            <Inheritance baseType="SceneGraphStructureStatement"/>
             <field name="AS"
                    type="SFString"
                    accessType="inputOutput"
@@ -10851,7 +10874,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <field name="importedDEF"
                    type="SFString"
                    accessType="inputOutput"
@@ -11027,7 +11050,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="geometry" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ComposedGeometryContentModel"
@@ -11124,7 +11147,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="geometry" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -11241,7 +11264,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="geometry" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ComposedGeometryContentModel"
@@ -11360,7 +11383,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="geometry" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ComposedGeometryContentModel"
@@ -11479,7 +11502,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="geometry" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ComposedGeometryContentModel"
@@ -11598,7 +11621,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="geometry" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ComposedGeometryContentModel"
@@ -11672,7 +11695,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="containerFieldChoicesX3DUrlObject"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -11742,7 +11765,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -11797,7 +11820,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -11808,12 +11831,13 @@
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#PROTOdefinitionsemantics"
                               appinfo="Functional summary: the IS statement connects node fields defined inside a ProtoBody declaration back to corresponding ProtoInterface fields. IS/connect statements can be added if the parent node is within a ProtoBody and connect statements define correspondences between prototype fields and built-in node fields.">
             <componentInfo name="Core" level="2"/>
+            <Inheritance baseType="SceneGraphStructureStatement"/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <field name="connect"
                    type="MFNode"
                    accessType="inputOutput"
@@ -11898,7 +11922,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -11956,7 +11980,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="lineProperties" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -12026,7 +12050,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="geometry" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -12102,7 +12126,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -12181,7 +12205,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -12275,7 +12299,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="containerFieldChoicesGroupLODShapeTransform"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
@@ -12373,7 +12397,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="material" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -12425,7 +12449,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="attrib" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -12477,7 +12501,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="attrib" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -12488,12 +12512,13 @@
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/concepts.html#Header"
                               appinfo="Functional summary: the meta statement provides metadata information about a scene, where name and content attributes provide attribute=value metadata pairs.">
             <componentInfo name="Core" level="1"/>
+            <Inheritance baseType="SceneGraphStructureStatement"/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <field name="content"
                    type="SFString"
                    accessType="inputOutput"
@@ -12689,7 +12714,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="metadata" type="containerFieldChoicesMetadata"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -12746,7 +12771,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="metadata" type="containerFieldChoicesMetadata"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -12803,7 +12828,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="metadata" type="containerFieldChoicesMetadata"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -12858,7 +12883,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="metadata" type="containerFieldChoicesMetadata"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0" maxOccurs="unbounded"/>
@@ -12916,7 +12941,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="metadata" type="containerFieldChoicesMetadata"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -13053,7 +13078,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="texture" type="containerFieldChoicesX3dUrlObjectTexture"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -13167,13 +13192,19 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="texture" type="containerFieldChoicesX3DTexture2DNode"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="ImageTexture"/>
                <NodeContentModel name="MovieTexture"/>
                <NodeContentModel name="PixelTexture"/>
+               <NodeContentModel name="ComposedCubeMapTexture"/>
+               <NodeContentModel name="GeneratedCubeMapTexture"/>
+               <NodeContentModel name="ImageCubeMapTexture"/>
+               <NodeContentModel name="ComposedTexture3D"/>
+               <NodeContentModel name="ImageTexture3D"/>
+               <NodeContentModel name="PixelTexture3D"/>
                <NodeContentModel name="ProtoInstance"/>
             </ContentModel>
          </InterfaceDefinition>
@@ -13218,7 +13249,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="texCoord" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -13268,7 +13299,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="textureTransform" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -13398,7 +13429,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -13446,7 +13477,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="normal" type="containerFieldChoicesX3DNormalNode"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -13506,7 +13537,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -13578,7 +13609,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="geometry" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -13653,7 +13684,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -13723,7 +13754,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -13856,7 +13887,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="geometry" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -13932,7 +13963,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -14010,7 +14041,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -14111,7 +14142,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -14176,7 +14207,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="geometry" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -14242,7 +14273,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="geometry" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -14328,7 +14359,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="texCoord" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -14471,7 +14502,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="geometry" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -14538,7 +14569,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -14619,7 +14650,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="shaders" type="containerFieldChoicesPackagedShader"/>
             <ContentModel>
                <FieldDeclaration minOccurs="0" maxOccurs="unbounded"/>
@@ -14679,7 +14710,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="texture" type="containerFieldChoicesX3DTexture2DNode"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -14744,7 +14775,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="texture" type="containerFieldChoicesX3DTexture3DNode"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -14842,7 +14873,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -14940,7 +14971,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -15005,7 +15036,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="geometry" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -15052,7 +15083,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="geometry" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -15098,7 +15129,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="geometry" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -15158,7 +15189,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -15218,7 +15249,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -15292,7 +15323,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="shaders" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -15304,6 +15335,7 @@
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/concepts.html#PrototypeAndFieldDeclarationSyntax"
                               appinfo="ProtoBody contains the definition nodes for new Prototype nodes.">
             <componentInfo name="Core" level="2"/>
+            <Inheritance baseType="SceneGraphStructureStatement"/>
             <field name="children"
                    type="MFNode"
                    accessType="inputOutput"
@@ -15313,7 +15345,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="SceneGraphFragmentWithPrototypeDeclarationsContentModel"
                                   maxOccurs="unbounded"/>
@@ -15324,7 +15356,8 @@
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/concepts.html#PrototypeAndFieldDeclarationSyntax"
                               appinfo="ProtoDeclare defines new Prototype nodes. Nested ProtoDeclares and ProtoInstances are allowed by the specification.">
             <componentInfo name="Core" level="2"/>
-            <Inheritance baseType="X3DChildNode"/>
+            <Inheritance baseType="SceneGraphStructureStatement"/>
+            <AdditionalInheritance baseType="X3DChildNode"/>
             <field name="appinfo"
                    type="SFString"
                    accessType="inputOutput"
@@ -15334,7 +15367,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <field name="documentation"
                    type="SFString"
                    accessType="inputOutput"
@@ -15408,7 +15441,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -15420,12 +15453,13 @@
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/concepts.html#PrototypeAndFieldDeclarationSyntax"
                               appinfo="ProtoInterface defines fields for new Prototype nodes.">
             <componentInfo name="Core" level="2"/>
+            <Inheritance baseType="SceneGraphStructureStatement"/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <field name="field"
                    type="MFNode"
                    accessType="inputOutput"
@@ -15518,7 +15552,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -15625,7 +15659,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="geometry" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ComposedGeometryContentModel"
@@ -15834,7 +15868,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -15887,7 +15921,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="geometry" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -15898,13 +15932,14 @@
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/concepts.html#ModifyingObjectsRoutes"
                               appinfo="ROUTE connects output fields of event-producing nodes to input fields of event-consuming nodes.">
             <componentInfo name="Core" level="1"/>
-            <Inheritance baseType="X3DChildNode"/>
+            <Inheritance baseType="SceneGraphStructureStatement"/>
+            <AdditionalInheritance baseType="X3DChildNode"/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <field name="fromField"
                    type="SFString"
                    accessType="inputOutput"
@@ -15984,7 +16019,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -15995,6 +16030,7 @@
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/concepts.html#Header"
                               appinfo="Scene is the implicit root node of the X3D scene graph.">
             <componentInfo name="Core" level="1"/>
+            <Inheritance baseType="SceneGraphStructureStatement"/>
             <field name="children"
                    type="MFNode"
                    accessType="inputOutput"
@@ -16004,7 +16040,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore"/>
                <GroupContentModel name="GroupingNodeChildContentModel"/>
@@ -16068,7 +16104,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="containerFieldChoicesX3DUrlObject"/>
             <ContentModel>
                <FieldDeclaration minOccurs="0" maxOccurs="unbounded"/>
@@ -16131,7 +16167,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="parts" type="containerFieldChoicesShaderPart"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -16199,7 +16235,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="programs" type="xs:NMTOKEN"/>
             <ContentModel>
                <FieldDeclaration minOccurs="0" maxOccurs="unbounded"/>
@@ -16270,7 +16306,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="containerFieldChoicesGroupLODShapeTransform"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -16476,7 +16512,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -16579,7 +16615,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -16633,7 +16669,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="geometry" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -16716,7 +16752,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -16835,7 +16871,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -16896,7 +16932,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -16963,7 +16999,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -17044,7 +17080,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
@@ -17113,7 +17149,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="geometry" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -17251,7 +17287,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -17300,7 +17336,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="texCoord" type="containerFieldChoicesTextureCoordinate"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -17346,7 +17382,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="texCoord" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -17392,7 +17428,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="texCoord" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -17467,7 +17503,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="texCoord" type="containerFieldChoicesTextureCoordinate"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -17529,7 +17565,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="textureTransform" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -17591,7 +17627,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="textureTransform" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -17638,7 +17674,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="textureTransform" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -17759,7 +17795,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -17809,7 +17845,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -17889,7 +17925,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -17989,7 +18025,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="containerFieldChoicesGroupLODShapeTransform"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
@@ -18276,7 +18312,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -18388,7 +18424,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="geometry" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ComposedGeometryContentModel"
@@ -18498,7 +18534,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="geometry" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ComposedGeometryContentModel"
@@ -18552,7 +18588,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="geometry" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -18664,7 +18700,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="geometry" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ComposedGeometryContentModel"
@@ -18757,7 +18793,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -18830,7 +18866,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -18880,7 +18916,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -18891,12 +18927,13 @@
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/concepts.html#Header"
                               appinfo="X3D is the root node for an Extensible 3D (X3D) Graphics model.">
             <componentInfo name="Core" level="1"/>
+            <Inheritance baseType="SceneGraphStructureStatement"/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:NMTOKENS"
-                   description="The class attribute is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
             <field name="head"
                    type="SFNode"
                    accessType="inputOutput"

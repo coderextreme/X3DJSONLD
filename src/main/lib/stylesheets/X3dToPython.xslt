@@ -674,7 +674,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
         <!-- PEP 8 - Style Guide for Python Code, Descriptive: Naming Styles -->
         <!-- https://www.python.org/dev/peps/pep-0008/#descriptive-naming-styles -->
         <xsl:choose>
-            <xsl:when test="(local-name() = 'class') or (local-name() = 'style') or (local-name() = 'global')">
+            <xsl:when test="(local-name() = 'id') or (local-name() = 'class') or (local-name() = 'style') or (local-name() = 'global')">
                 <xsl:value-of select="local-name()"/>
                 <xsl:text>_</xsl:text>
             </xsl:when>

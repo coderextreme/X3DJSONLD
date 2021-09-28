@@ -39,7 +39,7 @@ newModel=X3D(profile='Full',version='4.0',
     meta(content='../license.html',name='license')]),
   Scene=Scene(
     children=[
-    NavigationInfo(id='NAV'),
+    NavigationInfo(id_='NAV'),
     Background(skyColor=[(0.200,0.200,0.200)]),
     Viewpoint(orientation=(1,0,0,-0.5),position=(0.0,500.0,600.0),retainUserOffsets=True),
     Transform(DEF='Audio1',translation=(-200,50,0),
@@ -60,49 +60,49 @@ newModel=X3D(profile='Full',version='4.0',
         appearance=Appearance(DEF='audio_emit',
           material=Material(diffuseColor=(0.1,0.1,0.1),emissiveColor=(0.8,0.8,0.8),specularColor=(0.01,0.01,0.01))),
         geometry=Sphere(radius=30))]),
-    Transform(DEF='AnimData',id='AnimDataPoint',translation=(0,50,0)),
-    Transform(DEF='AnimDataBoxH',id='AnimDataBoxH',translation=(0,100,0)),
-    Transform(DEF='AnimDataBoxM',id='AnimDataBoxM',translation=(15,100,0)),
-    Transform(DEF='AnimDataBoxL',id='AnimDataBoxL',translation=(30,100,0)),
-    Transform(DEF='AnimDataBoxMM',id='AnimDataBoxMMirror',translation=(-15,100,0)),
-    Transform(DEF='AnimDataBoxLM',id='AnimDataBoxLMirror',translation=(-30,100,0)),
+    Transform(DEF='AnimData',id_='AnimDataPoint',translation=(0,50,0)),
+    Transform(DEF='AnimDataBoxH',id_='AnimDataBoxH',translation=(0,100,0)),
+    Transform(DEF='AnimDataBoxM',id_='AnimDataBoxM',translation=(15,100,0)),
+    Transform(DEF='AnimDataBoxL',id_='AnimDataBoxL',translation=(30,100,0)),
+    Transform(DEF='AnimDataBoxMM',id_='AnimDataBoxMMirror',translation=(-15,100,0)),
+    Transform(DEF='AnimDataBoxLM',id_='AnimDataBoxLMirror',translation=(-30,100,0)),
     Transform(
       children=[
       Shape(
         appearance=Appearance(DEF='floor',
           material=Material(diffuseColor=(0.1,0.1,0.1),shininess=0.8,specularColor=(0.5,0.6,0.7))),
         geometry=Cylinder(radius=500))]),
-    ListenerPoint(id='ListenerPoint',trackCurrentView=true),
-    AudioDestination(id='AudioDestination',
+    ListenerPoint(id_='ListenerPoint',trackCurrentView=true),
+    AudioDestination(id_='AudioDestination',
       children=[
-      DynamicsCompressor(id='DynamicsCompressor',
+      DynamicsCompressor(id_='DynamicsCompressor',
         children=[
-        Gain(id='Gain4',
+        Gain(id_='Gain4',
           children=[
-          SpatialSound(USE='Audio1',coneInnerAngle=360,coneOuterAngle=360,enableHRTF=true,id='SpatialSound1',
+          SpatialSound(USE='Audio1',coneInnerAngle=360,coneOuterAngle=360,enableHRTF=true,id_='SpatialSound1',
             children=[
-            Gain(id='Gain1',
+            Gain(id_='Gain1',
               children=[
-              Analyser(id='Analyser1',
+              Analyser(id_='Analyser1',
                 children=[
-                BiquadFilter(detune=50.0,frequency=600,id='BiquadFilter1',qualityFactor=30.0,type=allpass,
-                  source=AudioClip(id='AudioClip1',loop=True,pauseTime=-1,resumeTime=-1,stopTime=-1,url=['sound/techno_beat.mp3']))])])]),
-          SpatialSound(USE='Audio2',coneInnerAngle=360,coneOuterAngle=360,enableHRTF=true,id='SpatialSound2',
+                BiquadFilter(detune=50.0,frequency=600,id_='BiquadFilter1',qualityFactor=30.0,type=allpass,
+                  source=AudioClip(id_='AudioClip1',loop=True,pauseTime=-1,resumeTime=-1,stopTime=-1,url=['sound/techno_beat.mp3']))])])]),
+          SpatialSound(USE='Audio2',coneInnerAngle=360,coneOuterAngle=360,enableHRTF=true,id_='SpatialSound2',
             children=[
-            Gain(id='Gain2',
+            Gain(id_='Gain2',
               children=[
-              Analyser(id='Analyser2',
+              Analyser(id_='Analyser2',
                 children=[
-                BiquadFilter(detune=15.0,frequency=600,id='BiquadFilter2',qualityFactor=15.0,type=allpass,
-                  source=AudioClip(id='AudioClip2',loop=True,pauseTime=-1,resumeTime=-1,stopTime=-1,url=['sound/beat.mp3']))])])]),
-          SpatialSound(USE='Audio3',coneInnerAngle=360,coneOuterAngle=360,enableHRTF=true,id='SpatialSound3',
+                BiquadFilter(detune=15.0,frequency=600,id_='BiquadFilter2',qualityFactor=15.0,type=allpass,
+                  source=AudioClip(id_='AudioClip2',loop=True,pauseTime=-1,resumeTime=-1,stopTime=-1,url=['sound/beat.mp3']))])])]),
+          SpatialSound(USE='Audio3',coneInnerAngle=360,coneOuterAngle=360,enableHRTF=true,id_='SpatialSound3',
             children=[
-            Gain(id='Gain3',
+            Gain(id_='Gain3',
               children=[
-              Analyser(id='Analyser3',
+              Analyser(id_='Analyser3',
                 children=[
-                BiquadFilter(frequency=1000,id='BiquadFilter3',qualityFactor=0,type=allpass,
-                  source=AudioClip(id='AudioClip3',loop=True,pauseTime=-1,resumeTime=-1,stopTime=-1,url=['sound/wobble_loop.mp3']))])])])])])])])
+                BiquadFilter(frequency=1000,id_='BiquadFilter3',qualityFactor=0,type=allpass,
+                  source=AudioClip(id_='AudioClip3',loop=True,pauseTime=-1,resumeTime=-1,stopTime=-1,url=['sound/wobble_loop.mp3']))])])])])])])])
 ) # X3D model complete
 
 ###############################################

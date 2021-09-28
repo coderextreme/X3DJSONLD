@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-4.0.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-4.0.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 4.0 of X3D -->
-<!-- Generated 2021-08-02-07:00 17:52:30.34-07:00 -->
+<!-- Generated 2021-09-25-07:00 21:52:57.2221728-07:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                        version="4.0"
                        xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -218,8 +218,8 @@
                       appinfo="parent node is X3DSoundChannelNode, X3DSoundDestinationNode, or X3DSoundProcessingNode"/>
          <enumeration value="source"
                       appinfo="parent node is Sound node (legacy X3D3 SFNode source is allowed content model, prefer X3D4 MFNode children)"/>
-         <enumeration value="children"
-                      appinfo="this node is AudioClip, parent node is LoadSensor (formerly named watchList in X3D3)"/>
+         <enumeration value="watchList"
+                      appinfo="parent node is LoadSensor node (X3D3 only, validation allowed in X3D4 for backwards compatibility)"/>
       </SimpleType>
       <SimpleType name="containerFieldChoicesAudioGraph"
                   baseType="xs:NMTOKEN"
@@ -245,8 +245,10 @@
                   documentation="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField">
          <enumeration value="children"
                       appinfo="parent node is DISEntityManager (formerly mapping in X3D3) or LoadSensor (formerly watchList in X3D3)"/>
-         <enumeration value="mapping" appinfo="parent node is DISEntityManager node (X3D3)"/>
-         <enumeration value="watchList" appinfo="parent node is LoadSensor node (X3D3)"/>
+         <enumeration value="mapping"
+                      appinfo="parent node is DISEntityManager node (X3D3, validation allowed in X3D4 for backwards compatibility)"/>
+         <enumeration value="watchList"
+                      appinfo="parent node is LoadSensor node (X3D3 only, validation allowed in X3D4 for backwards compatibility)"/>
       </SimpleType>
       <SimpleType name="containerFieldChoicesGroupLODShapeTransform"
                   baseType="xs:NMTOKEN"
@@ -5389,7 +5391,7 @@
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
-                   acceptableNodeTypes="X3DSingleTextureCoordinateNode"/>
+                   acceptableNodeTypes="X3DSingleTextureCoordinateNode|MultiTextureCoordinate"/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
@@ -24235,7 +24237,7 @@
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
-                   acceptableNodeTypes="X3DSingleTextureCoordinateNode"
+                   acceptableNodeTypes="X3DSingleTextureCoordinateNode|MultiTextureCoordinate"
                    inheritedFrom="X3DComposedGeometryNode"
                    description="Single contained TextureCoordinate, TextureCoordinateGenerator or MultiTextureCoordinate node that specifies coordinates for texture mapping onto corresponding geometry."/>
             <field name="texCoordIndex"
@@ -24481,7 +24483,7 @@
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
-                   acceptableNodeTypes="X3DSingleTextureCoordinateNode"
+                   acceptableNodeTypes="X3DSingleTextureCoordinateNode|MultiTextureCoordinate"
                    inheritedFrom="X3DComposedGeometryNode"
                    description="Single contained TextureCoordinate, TextureCoordinateGenerator or MultiTextureCoordinate node that specifies coordinates for texture mapping onto corresponding geometry."/>
             <field name="DEF"
@@ -24611,7 +24613,7 @@
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
-                   acceptableNodeTypes="X3DSingleTextureCoordinateNode"
+                   acceptableNodeTypes="X3DSingleTextureCoordinateNode|MultiTextureCoordinate"
                    inheritedFrom="X3DComposedGeometryNode"
                    description="Single contained TextureCoordinate, TextureCoordinateGenerator or MultiTextureCoordinate node that specifies coordinates for texture mapping onto corresponding geometry."/>
             <field name="DEF"
@@ -24741,7 +24743,7 @@
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
-                   acceptableNodeTypes="X3DSingleTextureCoordinateNode"
+                   acceptableNodeTypes="X3DSingleTextureCoordinateNode|MultiTextureCoordinate"
                    inheritedFrom="X3DComposedGeometryNode"
                    description="Single contained TextureCoordinate, TextureCoordinateGenerator or MultiTextureCoordinate node that specifies coordinates for texture mapping onto corresponding geometry."/>
             <field name="DEF"
@@ -24871,7 +24873,7 @@
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
-                   acceptableNodeTypes="X3DSingleTextureCoordinateNode"
+                   acceptableNodeTypes="X3DSingleTextureCoordinateNode|MultiTextureCoordinate"
                    inheritedFrom="X3DComposedGeometryNode"
                    description="Single contained TextureCoordinate, TextureCoordinateGenerator or MultiTextureCoordinate node that specifies coordinates for texture mapping onto corresponding geometry."/>
             <field name="DEF"
@@ -32954,7 +32956,7 @@
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
-                   acceptableNodeTypes="X3DSingleTextureCoordinateNode"
+                   acceptableNodeTypes="X3DSingleTextureCoordinateNode|MultiTextureCoordinate"
                    inheritedFrom="X3DComposedGeometryNode"
                    description="Single contained TextureCoordinate, TextureCoordinateGenerator or MultiTextureCoordinate node that specifies coordinates for texture mapping onto corresponding geometry."/>
             <field name="DEF"
@@ -39242,7 +39244,7 @@
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
-                   acceptableNodeTypes="X3DSingleTextureCoordinateNode"
+                   acceptableNodeTypes="X3DSingleTextureCoordinateNode|MultiTextureCoordinate"
                    inheritedFrom="X3DComposedGeometryNode"
                    description="Single contained TextureCoordinate, TextureCoordinateGenerator or MultiTextureCoordinate node that specifies coordinates for texture mapping onto corresponding geometry."/>
             <field name="DEF"
@@ -39363,7 +39365,7 @@
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
-                   acceptableNodeTypes="X3DSingleTextureCoordinateNode"
+                   acceptableNodeTypes="X3DSingleTextureCoordinateNode|MultiTextureCoordinate"
                    inheritedFrom="X3DComposedGeometryNode"
                    description="Single contained TextureCoordinate, TextureCoordinateGenerator or MultiTextureCoordinate node that specifies coordinates for texture mapping onto corresponding geometry."/>
             <field name="DEF"
@@ -39551,7 +39553,7 @@
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
-                   acceptableNodeTypes="X3DSingleTextureCoordinateNode"
+                   acceptableNodeTypes="X3DSingleTextureCoordinateNode|MultiTextureCoordinate"
                    inheritedFrom="X3DComposedGeometryNode"
                    description="Single contained TextureCoordinate, TextureCoordinateGenerator or MultiTextureCoordinate node that specifies coordinates for texture mapping onto corresponding geometry."/>
             <field name="DEF"
@@ -41490,12 +41492,6 @@
                    type="MFNode"
                    accessType="inputOutput"
                    acceptableNodeTypes="X3DNode"/>
-            <field name="IS"
-                   type="SFNode"
-                   accessType="inputOutput"
-                   default="NULL"
-                   acceptableNodeTypes="IS"
-                   inheritedFrom="X3DNode"/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"

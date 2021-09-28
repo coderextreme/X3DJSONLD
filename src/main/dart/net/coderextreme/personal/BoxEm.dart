@@ -4,7 +4,7 @@ import '../x3d.dart';
 var X3D0 =  X3D(
 
       profile_ : SFString('Immersive'),
-      version_ : SFString('3.3'),
+      version_ : SFString('4.0'),
       head_ : 
         head(
           meta_ : [
