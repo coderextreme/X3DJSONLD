@@ -59,7 +59,7 @@ for version in versions:
     print(f"{version}")
     schemacodeversion = version.replace(".", "")
     # generate the version-based X3D JSON schema
-    os.system(f'python3 ../python/etgenerateJSONschema.py {version} < ../../specifications/X3dUnifiedObjectModel-{version}.xml | jsonlint > ../schema/x3d-{version}-JSONSchema.json')
+    os.system(f'python3 ../python/etgenerateJSONschema2020-12.py {version} < ../../specifications/X3dUnifiedObjectModel-{version}.xml | jsonlint > ../schema/x3d-{version}-JSONSchema.json')
     # generate the python code for version-based validation of X3D JSON
     os.system(f'python3 -m fastjsonschema > schemaparser{schemacodeversion}.py < ../schema/x3d-{version}-JSONSchema.json')
     # validate an X3D JSON schema version against draft07.py
@@ -68,16 +68,17 @@ for version in versions:
     os.system(f'echo "import sys\nimport json\nimport schemaparser{schemacodeversion}\n\ntry:\n\tschemaparser{schemacodeversion}.validate(json.loads(sys.stdin.read()))\nexcept:\n\tprint(\'Invalid\')" > validate{schemacodeversion}.py')
 
 # now try to validate some JSON examples
-print(f"3.3, HelloWorld.json")
-os.system(f'python3 validate.py < /c/x3d-code/www.web3d.org/x3d/content/examples/HelloWorld.json')
+os.system(f'python3 2020-12validate.py < /c/x3d-code/www.web3d.org/x3d/content/examples/HelloWorld.json')
+print(f"HelloWorld.json")
 
-print(f"3.3, KelpForestExhibit.json")
-os.system(f'python3 validate.py < /c/x3d-code/www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/KelpForestMain.json')
+os.system(f'python3 2020-12validate.py < /c/x3d-code/www.web3d.org/x3d/content/examples/X3dForWebAuthors/KelpForestExhibit/KelpForestMain.json')
+print(f"KelpForestExhibit.json")
 
-print(f"3.3, CADPartChildTransformationAlternativeB.json")
-os.system(f'python3 validate.py < /c/x3d-code/www.web3d.org/x3d/content/examples/Basic/CAD/CADPartChildTransformationAlternativeB.json')
+os.system(f'python3 2020-12validate.py < /c/x3d-code/www.web3d.org/x3d/content/examples/Basic/CAD/CADPartChildTransformationAlternativeB.json')
+print(f"CADPartChildTransformationAlternativeB.json")
 
-print(f"3.3, CADPartChildTransformationAlternativeC.json")
-os.system(f'python3 validate.py < /c/x3d-code/www.web3d.org/x3d/content/examples/Basic/CAD/CADPartChildTransformationAlternativeC.json')
-print(f"3.3, ball.json")
-os.system(f'python3 validate.py < ../data/ball.json')
+os.system(f'python3 2020-12validate.py < /c/x3d-code/www.web3d.org/x3d/content/examples/Basic/CAD/CADPartChildTransformationAlternativeC.json')
+print(f"CADPartChildTransformationAlternativeC.json")
+
+os.system(f'python3 2020-12validate.py < ../data/ball.json')
+print(f"ball.json")
