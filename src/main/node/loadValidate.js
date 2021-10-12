@@ -78,11 +78,11 @@ function addSchema(ajv, schemajson, version) {
 }
 
 function loadSchema(json, file, doValidate, X3DJSONLD, success, failure) {
-	var versions = { "3.0":true,"3.1":true,"3.2":true,"3.3":true,"4.0":true }
+	var versions = { "4.0":true }
 	var version = json.X3D["@version"];
 	if (!versions[version]) {
-		console.error("Can only validate version 3.0-4.0 presently. Switching version to 3.3.");
-		version = "3.3";
+		console.error("Can only validate version 4.0 presently. Switching version to 4.0.");
+		version = "4.0";
 	}
 	var validated_version = validate[version];
         if (typeof validated_version === 'undefined') {
