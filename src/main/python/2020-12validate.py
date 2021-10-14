@@ -2,10 +2,16 @@ from jsonschema import validate
 import json
 import sys
 
-# validate stdin against the X3D4 JSON schemas
 
 try:
     instance = json.loads(sys.stdin.read())
+    sys.stdout.write("jsonValid ")
+except:
+    sys.stdout.write("jsonInvalid ")
+
+# validate stdin against the X3D4 JSON schemas
+
+try:
     with open('../schema/x3d-4.0-JSONSchema.json', 'r') as schemafile:
         schema = json.load(schemafile)
         validate(instance=instance, schema=schema)
@@ -15,7 +21,6 @@ except:
 sys.stdout.flush()
 
 try:
-    instance = json.loads(sys.stdin.read())
     with open('../schema/X3dXml4.0SchemaConvertedToJson2020-12Schema.json', 'r') as schemafile:
         schema = json.load(schemafile)
         validate(instance=instance, schema=schema)
