@@ -116,6 +116,8 @@ class ClassPrinter:
         return str
 
     def printField(self, field, namesyn):
+        if field.get("accessType") == "inputOnly" or field.get("accessType") == "outputOnly":
+            return ""
         if field.get(namesyn) == "geoSystem":
             str = '''\
             "@geoSystem": {
@@ -438,36 +440,28 @@ class ClassPrinter:
                 if field.get("name") == "children":
                     foundChildren = True
         if foundUse:
-            # Not sure if #comment is allowed alongside @USE or not
+	    # #comment is allowed alongside @USE as a child
             str += '''\
 			"type": "object",
 			"oneOf": [
 				{
 					"type": "object",
 					"properties": {
-						"@class": {
-							"type": "string"
-						},
-						"@USE": {
-							"type": "string"
-						},
+						"@class": { "type": "string" },
+						"@USE": { "type": "string" },
                                                 "-children": {
                                                         "type": "array",
                                                         "minItems": 1,
                                                         "items": {
                                                                 "type": "object",
                                                                 "properties": {
-                                                                        "#comment": {
-                                                                                "type": "string"
-                                                                        }
+                                                                        "#comment": { "type": "string", "$comment": "#comment statements are the only allowed in -children node when using a USE field" } 
                                                                 },
                                                                 "additionalProperties": false
                                                         }
                                                 }
-					},
-                                        "required": [
-                                            "@USE"
-                                        ],
+                                        },
+                                        "required": [ "@USE" ],
 					"additionalProperties": false
 				},
 				{
