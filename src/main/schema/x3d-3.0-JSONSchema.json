@@ -971,7 +971,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -1067,7 +1068,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -1138,7 +1140,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -1209,7 +1212,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -1294,7 +1298,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -1318,22 +1323,6 @@
             "@description": {
               "$comment": "SFString inputOutput",
               "type": "string"
-            },
-            "@duration_changed": {
-              "$comment": "SFTime outputOnly",
-              "type": "number"
-            },
-            "@elapsedTime": {
-              "$comment": "SFTime outputOnly",
-              "type": "number"
-            },
-            "@isActive": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
-            "@isPaused": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
             },
             "@loop": {
               "default": false,
@@ -1409,7 +1398,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -1438,10 +1428,6 @@
                 "format": "uri-reference",
                 "type": "string"
               }
-            },
-            "@bindTime": {
-              "$comment": "SFTime outputOnly",
-              "type": "number"
             },
             "@bottomUrl": {
               "$comment": "MFString inputOutput",
@@ -1480,10 +1466,6 @@
                 "type": "number"
               }
             },
-            "@isBound": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
             "@leftUrl": {
               "$comment": "MFString inputOutput",
               "type": "array",
@@ -1504,10 +1486,6 @@
                 "format": "uri-reference",
                 "type": "string"
               }
-            },
-            "@set_bind": {
-              "$comment": "SFBool inputOnly",
-              "type": "boolean"
             },
             "@skyAngle": {
               "$comment": "MFFloat inputOutput",
@@ -1575,7 +1553,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -1672,7 +1651,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -1693,24 +1673,8 @@
             "IS": {
               "$ref": "#/$defs/IS"
             },
-            "@inputFalse": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
-            "@inputNegate": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
-            "@inputTrue": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
-            },
-            "@set_boolean": {
-              "$comment": "SFBool inputOnly",
-              "type": "boolean"
             },
             "@DEF": {
               "$comment": "SFString inputOutput",
@@ -1744,7 +1708,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -1782,22 +1747,6 @@
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
-            "@next": {
-              "$comment": "SFBool inputOnly",
-              "type": "boolean"
-            },
-            "@previous": {
-              "$comment": "SFBool inputOnly",
-              "type": "boolean"
-            },
-            "@set_fraction": {
-              "$comment": "SFFloat inputOnly",
-              "type": "number"
-            },
-            "@value_changed": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
             "@DEF": {
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -1830,7 +1779,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -1853,10 +1803,6 @@
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
-            },
-            "@set_boolean": {
-              "$comment": "SFBool inputOnly",
-              "type": "boolean"
             },
             "@toggle": {
               "default": false,
@@ -1895,7 +1841,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -1918,14 +1865,6 @@
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
-            },
-            "@set_triggerTime": {
-              "$comment": "SFTime inputOnly",
-              "type": "number"
-            },
-            "@triggerTrue": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
             },
             "@DEF": {
               "$comment": "SFString inputOutput",
@@ -1959,7 +1898,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -2030,7 +1970,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -2091,7 +2032,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -2132,17 +2074,9 @@
             "-children": {
               "$ref": "#/$defs/-X3DChildNodeMFNode"
             },
-            "@collideTime": {
-              "$comment": "SFTime outputOnly",
-              "type": "number"
-            },
             "@enabled": {
               "default": true,
               "$comment": "SFBool inputOutput",
-              "type": "boolean"
-            },
-            "@isActive": {
-              "$comment": "SFBool outputOnly",
               "type": "boolean"
             },
             "-metadata": {
@@ -2183,7 +2117,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -2249,7 +2184,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -2290,21 +2226,6 @@
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
-            "@set_fraction": {
-              "$comment": "SFFloat inputOnly",
-              "type": "number"
-            },
-            "@value_changed": {
-              "$comment": "SFColor outputOnly",
-              "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
-              "items": {
-                "maximum": 1,
-                "minimum": 0,
-                "type": "number"
-              }
-            },
             "@DEF": {
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -2337,7 +2258,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -2461,7 +2383,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -2573,7 +2496,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -2629,7 +2553,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -2693,7 +2618,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -2757,7 +2683,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -2821,7 +2748,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -2860,18 +2788,6 @@
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
-            "@set_fraction": {
-              "$comment": "SFFloat inputOnly",
-              "type": "number"
-            },
-            "@value_changed": {
-              "$comment": "MFVec3f outputOnly",
-              "type": "array",
-              "minItems": 3,
-              "items": {
-                "type": "number"
-              }
-            },
             "@DEF": {
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -2904,7 +2820,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -2943,18 +2860,6 @@
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
-            "@set_fraction": {
-              "$comment": "SFFloat inputOnly",
-              "type": "number"
-            },
-            "@value_changed": {
-              "$comment": "MFVec2f outputOnly",
-              "type": "array",
-              "minItems": 2,
-              "items": {
-                "type": "number"
-              }
-            },
             "@DEF": {
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -2987,7 +2892,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -3073,7 +2979,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -3138,14 +3045,6 @@
               "$comment": "SFBool inputOutput",
               "type": "boolean"
             },
-            "@isActive": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
-            "@isOver": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
             "@maxAngle": {
               "default": -1,
               "$comment": "SFFloat inputOutput",
@@ -3163,24 +3062,6 @@
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
-            },
-            "@rotation_changed": {
-              "$comment": "SFRotation outputOnly",
-              "type": "array",
-              "minItems": 4,
-              "maxItems": 4,
-              "items": {
-                "type": "number"
-              }
-            },
-            "@trackPoint_changed": {
-              "$comment": "SFVec3f outputOnly",
-              "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
-              "items": {
-                "type": "number"
-              }
             },
             "@DEF": {
               "$comment": "SFString inputOutput",
@@ -3214,7 +3095,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -3318,7 +3200,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -3389,7 +3272,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -3446,13 +3330,6 @@
               "default": true,
               "$comment": "SFBool initializeOnly",
               "type": "boolean"
-            },
-            "@set_height": {
-              "$comment": "MFFloat inputOnly",
-              "type": "array",
-              "items": {
-                "type": "number"
-              }
             },
             "@solid": {
               "default": true,
@@ -3514,7 +3391,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -3582,38 +3460,6 @@
                 "type": "integer"
               }
             },
-            "@articulationParameterValue0_changed": {
-              "$comment": "SFFloat outputOnly",
-              "type": "number"
-            },
-            "@articulationParameterValue1_changed": {
-              "$comment": "SFFloat outputOnly",
-              "type": "number"
-            },
-            "@articulationParameterValue2_changed": {
-              "$comment": "SFFloat outputOnly",
-              "type": "number"
-            },
-            "@articulationParameterValue3_changed": {
-              "$comment": "SFFloat outputOnly",
-              "type": "number"
-            },
-            "@articulationParameterValue4_changed": {
-              "$comment": "SFFloat outputOnly",
-              "type": "number"
-            },
-            "@articulationParameterValue5_changed": {
-              "$comment": "SFFloat outputOnly",
-              "type": "number"
-            },
-            "@articulationParameterValue6_changed": {
-              "$comment": "SFFloat outputOnly",
-              "type": "number"
-            },
-            "@articulationParameterValue7_changed": {
-              "$comment": "SFFloat outputOnly",
-              "type": "number"
-            },
             "@bboxCenter": {
               "$comment": "SFVec3f initializeOnly",
               "type": "array",
@@ -3647,10 +3493,6 @@
             "-children": {
               "$ref": "#/$defs/-X3DChildNodeMFNode"
             },
-            "@collideTime": {
-              "$comment": "SFTime outputOnly",
-              "type": "number"
-            },
             "@collisionType": {
               "default": 0,
               "$comment": "SFInt32 inputOutput",
@@ -3660,10 +3502,6 @@
               "default": 0,
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
-            },
-            "@detonateTime": {
-              "$comment": "SFTime outputOnly",
-              "type": "number"
             },
             "@detonationLocation": {
               "$comment": "SFVec3f inputOutput",
@@ -3765,10 +3603,6 @@
               "$comment": "SFBool inputOutput",
               "type": "boolean"
             },
-            "@firedTime": {
-              "$comment": "SFTime outputOnly",
-              "type": "number"
-            },
             "@fireMissionIndex": {
               "default": 0,
               "$comment": "SFInt32 inputOutput",
@@ -3806,34 +3640,6 @@
             },
             "@geoSystem": {
               "$ref": "#/$defs/@geoSystem"
-            },
-            "@isActive": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
-            "@isCollided": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
-            "@isDetonated": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
-            "@isNetworkReader": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
-            "@isNetworkWriter": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
-            "@isRtpHeaderHeard": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
-            "@isStandAlone": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
             },
             "@linearAcceleration": {
               "$comment": "SFVec3f inputOutput",
@@ -3996,46 +3802,10 @@
               ],
               "items": false
             },
-            "@set_articulationParameterValue0": {
-              "$comment": "SFFloat inputOnly",
-              "type": "number"
-            },
-            "@set_articulationParameterValue1": {
-              "$comment": "SFFloat inputOnly",
-              "type": "number"
-            },
-            "@set_articulationParameterValue2": {
-              "$comment": "SFFloat inputOnly",
-              "type": "number"
-            },
-            "@set_articulationParameterValue3": {
-              "$comment": "SFFloat inputOnly",
-              "type": "number"
-            },
-            "@set_articulationParameterValue4": {
-              "$comment": "SFFloat inputOnly",
-              "type": "number"
-            },
-            "@set_articulationParameterValue5": {
-              "$comment": "SFFloat inputOnly",
-              "type": "number"
-            },
-            "@set_articulationParameterValue6": {
-              "$comment": "SFFloat inputOnly",
-              "type": "number"
-            },
-            "@set_articulationParameterValue7": {
-              "$comment": "SFFloat inputOnly",
-              "type": "number"
-            },
             "@siteID": {
               "default": 0,
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
-            },
-            "@timestamp": {
-              "$comment": "SFTime outputOnly",
-              "type": "number"
             },
             "@translation": {
               "$comment": "SFVec3f inputOutput",
@@ -4160,7 +3930,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -4291,38 +4062,6 @@
               "minItems": 2,
               "items": {
                 "default": 1,
-                "type": "number"
-              }
-            },
-            "@set_crossSection": {
-              "$comment": "MFVec2f inputOnly",
-              "type": "array",
-              "minItems": 2,
-              "items": {
-                "type": "number"
-              }
-            },
-            "@set_orientation": {
-              "$comment": "MFRotation inputOnly",
-              "type": "array",
-              "minItems": 4,
-              "items": {
-                "type": "number"
-              }
-            },
-            "@set_scale": {
-              "$comment": "MFVec2f inputOnly",
-              "type": "array",
-              "minItems": 2,
-              "items": {
-                "type": "number"
-              }
-            },
-            "@set_spine": {
-              "$comment": "MFVec3f inputOnly",
-              "type": "array",
-              "minItems": 3,
-              "items": {
                 "type": "number"
               }
             },
@@ -4519,7 +4258,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -4602,7 +4342,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -4622,10 +4363,6 @@
             },
             "IS": {
               "$ref": "#/$defs/IS"
-            },
-            "@bindTime": {
-              "$comment": "SFTime outputOnly",
-              "type": "number"
             },
             "@color": {
               "$comment": "SFColor inputOutput",
@@ -4648,16 +4385,8 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
-            "@isBound": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
-            },
-            "@set_bind": {
-              "$comment": "SFBool inputOnly",
-              "type": "boolean"
             },
             "@visibilityRange": {
               "default": 0,
@@ -4696,7 +4425,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -4842,7 +4572,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -4912,7 +4643,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -4986,13 +4718,6 @@
               "$comment": "SFBool initializeOnly",
               "type": "boolean"
             },
-            "@set_height": {
-              "$comment": "MFFloat inputOnly",
-              "type": "array",
-              "items": {
-                "type": "number"
-              }
-            },
             "@solid": {
               "default": true,
               "$comment": "SFBool initializeOnly",
@@ -5058,7 +4783,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -5150,7 +4876,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -5243,10 +4970,6 @@
             "@geoSystem": {
               "$ref": "#/$defs/@geoSystem"
             },
-            "@level_changed": {
-              "$comment": "SFInt32 outputOnly",
-              "type": "integer"
-            },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
@@ -5299,7 +5022,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -5374,7 +5098,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -5448,7 +5173,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -5475,15 +5201,6 @@
             "@geoSystem": {
               "$ref": "#/$defs/@geoSystem"
             },
-            "@geovalue_changed": {
-              "$comment": "SFVec3d outputOnly",
-              "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
-              "items": {
-                "type": "number"
-              }
-            },
             "@key": {
               "$comment": "MFFloat inputOutput",
               "type": "array",
@@ -5501,19 +5218,6 @@
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
-            },
-            "@set_fraction": {
-              "$comment": "SFFloat inputOnly",
-              "type": "number"
-            },
-            "@value_changed": {
-              "$comment": "SFVec3f outputOnly",
-              "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
-              "items": {
-                "type": "number"
-              }
             },
             "@DEF": {
               "$comment": "SFString inputOutput",
@@ -5547,7 +5251,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -5583,56 +5288,8 @@
             "@geoSystem": {
               "$ref": "#/$defs/@geoSystem"
             },
-            "@hitGeoCoord_changed": {
-              "$comment": "SFVec3d outputOnly",
-              "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
-              "items": {
-                "type": "number"
-              }
-            },
-            "@hitNormal_changed": {
-              "$comment": "SFVec3f outputOnly",
-              "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
-              "items": {
-                "type": "number"
-              }
-            },
-            "@hitPoint_changed": {
-              "$comment": "SFVec3f outputOnly",
-              "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
-              "items": {
-                "type": "number"
-              }
-            },
-            "@hitTexCoord_changed": {
-              "$comment": "SFVec2f outputOnly",
-              "type": "array",
-              "minItems": 2,
-              "maxItems": 2,
-              "items": {
-                "type": "number"
-              }
-            },
-            "@isActive": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
-            "@isOver": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
-            },
-            "@touchTime": {
-              "$comment": "SFTime outputOnly",
-              "type": "number"
             },
             "@DEF": {
               "$comment": "SFString inputOutput",
@@ -5666,7 +5323,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -5687,10 +5345,6 @@
             "IS": {
               "$ref": "#/$defs/IS"
             },
-            "@bindTime": {
-              "$comment": "SFTime outputOnly",
-              "type": "number"
-            },
             "@description": {
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -5709,10 +5363,6 @@
             "@headlight": {
               "default": true,
               "$comment": "SFBool inputOutput",
-              "type": "boolean"
-            },
-            "@isBound": {
-              "$comment": "SFBool outputOnly",
               "type": "boolean"
             },
             "@jump": {
@@ -5786,10 +5436,6 @@
               ],
               "items": false
             },
-            "@set_bind": {
-              "$comment": "SFBool inputOnly",
-              "type": "boolean"
-            },
             "@speedFactor": {
               "default": 1,
               "$comment": "SFFloat initializeOnly",
@@ -5827,7 +5473,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -5903,7 +5550,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -6069,7 +5717,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -6270,7 +5919,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -6609,7 +6259,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -6822,7 +6473,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -7090,7 +6742,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -7197,7 +6850,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -7279,38 +6933,6 @@
               "$comment": "SFBool initializeOnly",
               "type": "boolean"
             },
-            "@set_colorIndex": {
-              "$comment": "MFInt32 inputOnly",
-              "type": "array",
-              "items": {
-                "minimum": -1,
-                "type": "integer"
-              }
-            },
-            "@set_coordIndex": {
-              "$comment": "MFInt32 inputOnly",
-              "type": "array",
-              "items": {
-                "minimum": -1,
-                "type": "integer"
-              }
-            },
-            "@set_normalIndex": {
-              "$comment": "MFInt32 inputOnly",
-              "type": "array",
-              "items": {
-                "minimum": -1,
-                "type": "integer"
-              }
-            },
-            "@set_texCoordIndex": {
-              "$comment": "MFInt32 inputOnly",
-              "type": "array",
-              "items": {
-                "minimum": -1,
-                "type": "integer"
-              }
-            },
             "@solid": {
               "default": true,
               "$comment": "SFBool initializeOnly",
@@ -7359,7 +6981,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -7410,22 +7033,6 @@
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
-            "@set_colorIndex": {
-              "$comment": "MFInt32 inputOnly",
-              "type": "array",
-              "items": {
-                "minimum": -1,
-                "type": "integer"
-              }
-            },
-            "@set_coordIndex": {
-              "$comment": "MFInt32 inputOnly",
-              "type": "array",
-              "items": {
-                "minimum": -1,
-                "type": "integer"
-              }
-            },
             "@DEF": {
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -7458,7 +7065,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -7513,14 +7121,6 @@
               "default": true,
               "$comment": "SFBool initializeOnly",
               "type": "boolean"
-            },
-            "@set_index": {
-              "$comment": "MFInt32 inputOnly",
-              "type": "array",
-              "items": {
-                "minimum": -1,
-                "type": "integer"
-              }
             },
             "@solid": {
               "default": true,
@@ -7562,7 +7162,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -7617,14 +7218,6 @@
               "default": true,
               "$comment": "SFBool initializeOnly",
               "type": "boolean"
-            },
-            "@set_index": {
-              "$comment": "MFInt32 inputOnly",
-              "type": "array",
-              "items": {
-                "minimum": 0,
-                "type": "integer"
-              }
             },
             "@solid": {
               "default": true,
@@ -7666,7 +7259,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -7722,14 +7316,6 @@
               "$comment": "SFBool initializeOnly",
               "type": "boolean"
             },
-            "@set_index": {
-              "$comment": "MFInt32 inputOnly",
-              "type": "array",
-              "items": {
-                "minimum": -1,
-                "type": "integer"
-              }
-            },
             "@solid": {
               "default": true,
               "$comment": "SFBool initializeOnly",
@@ -7770,7 +7356,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -7860,7 +7447,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -7898,22 +7486,6 @@
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
-            "@next": {
-              "$comment": "SFBool inputOnly",
-              "type": "boolean"
-            },
-            "@previous": {
-              "$comment": "SFBool inputOnly",
-              "type": "boolean"
-            },
-            "@set_fraction": {
-              "$comment": "SFFloat inputOnly",
-              "type": "number"
-            },
-            "@value_changed": {
-              "$comment": "SFInt32 outputOnly",
-              "type": "integer"
-            },
             "@DEF": {
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -7946,7 +7518,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -7974,14 +7547,6 @@
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
-            },
-            "@set_boolean": {
-              "$comment": "SFBool inputOnly",
-              "type": "boolean"
-            },
-            "@triggerValue": {
-              "$comment": "SFInt32 outputOnly",
-              "type": "integer"
             },
             "@DEF": {
               "$comment": "SFString inputOutput",
@@ -8034,7 +7599,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -8055,45 +7621,13 @@
             "IS": {
               "$ref": "#/$defs/IS"
             },
-            "@actionKeyPress": {
-              "$comment": "SFInt32 outputOnly",
-              "type": "integer"
-            },
-            "@actionKeyRelease": {
-              "$comment": "SFInt32 outputOnly",
-              "type": "integer"
-            },
-            "@altKey": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
-            "@controlKey": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
             "@enabled": {
               "default": true,
               "$comment": "SFBool inputOutput",
               "type": "boolean"
             },
-            "@isActive": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
-            "@keyPress": {
-              "$comment": "SFString outputOnly",
-              "type": "string"
-            },
-            "@keyRelease": {
-              "$comment": "SFString outputOnly",
-              "type": "string"
-            },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
-            },
-            "@shiftKey": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
             },
             "@DEF": {
               "$comment": "SFString inputOutput",
@@ -8127,7 +7661,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -8198,7 +7733,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -8268,7 +7804,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -8294,24 +7831,8 @@
               "$comment": "SFBool inputOutput",
               "type": "boolean"
             },
-            "@isActive": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
-            "@isLoaded": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
-            "@loadTime": {
-              "$comment": "SFTime outputOnly",
-              "type": "number"
-            },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
-            },
-            "@progress": {
-              "$comment": "SFFloat outputOnly",
-              "type": "number"
             },
             "@timeOut": {
               "default": 0,
@@ -8353,7 +7874,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -8446,7 +7968,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -8655,7 +8178,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -8726,7 +8250,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -8797,7 +8322,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -8868,7 +8394,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -8935,7 +8462,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -9006,7 +8534,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -9030,22 +8559,6 @@
             "@description": {
               "$comment": "SFString inputOutput",
               "type": "string"
-            },
-            "@duration_changed": {
-              "$comment": "SFTime outputOnly",
-              "type": "number"
-            },
-            "@elapsedTime": {
-              "$comment": "SFTime outputOnly",
-              "type": "number"
-            },
-            "@isActive": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
-            "@isPaused": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
             },
             "@loop": {
               "default": false,
@@ -9136,7 +8649,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -9287,7 +8801,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -9346,7 +8861,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -9405,7 +8921,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -9451,34 +8968,18 @@
                 "type": "number"
               }
             },
-            "@bindTime": {
-              "$comment": "SFTime outputOnly",
-              "type": "number"
-            },
             "@headlight": {
               "default": true,
               "$comment": "SFBool inputOutput",
               "type": "boolean"
             },
-            "@isBound": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
-            },
-            "@set_bind": {
-              "$comment": "SFBool inputOnly",
-              "type": "boolean"
             },
             "@speed": {
               "default": 1,
               "$comment": "SFFloat inputOutput",
               "type": "number"
-            },
-            "@transitionComplete": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
             },
             "@transitionTime": {
               "default": 1,
@@ -9577,7 +9078,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -9643,7 +9145,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -9682,18 +9185,6 @@
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
-            "@set_fraction": {
-              "$comment": "SFFloat inputOnly",
-              "type": "number"
-            },
-            "@value_changed": {
-              "$comment": "MFVec3f outputOnly",
-              "type": "array",
-              "minItems": 3,
-              "items": {
-                "type": "number"
-              }
-            },
             "@DEF": {
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -9726,7 +9217,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -9815,7 +9307,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -9909,7 +9402,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -9947,19 +9441,6 @@
               "default": 3,
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
-            },
-            "@set_fraction": {
-              "$comment": "SFFloat inputOnly",
-              "type": "number"
-            },
-            "@value_changed": {
-              "$comment": "SFRotation outputOnly",
-              "type": "array",
-              "minItems": 4,
-              "maxItems": 4,
-              "items": {
-                "type": "number"
-              }
             },
             "@weight": {
               "$comment": "MFDouble inputOutput",
@@ -10000,7 +9481,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -10129,7 +9611,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -10167,19 +9650,6 @@
               "default": 3,
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
-            },
-            "@set_fraction": {
-              "$comment": "SFFloat inputOnly",
-              "type": "number"
-            },
-            "@value_changed": {
-              "$comment": "SFVec3f outputOnly",
-              "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
-              "items": {
-                "type": "number"
-              }
             },
             "@weight": {
               "$comment": "MFDouble inputOutput",
@@ -10220,7 +9690,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -10304,7 +9775,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -10330,33 +9802,6 @@
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
-            },
-            "@normal_changed": {
-              "$comment": "SFVec3f outputOnly",
-              "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
-              "items": {
-                "type": "number"
-              }
-            },
-            "@position_changed": {
-              "$comment": "SFVec3f outputOnly",
-              "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
-              "items": {
-                "type": "number"
-              }
-            },
-            "@set_fraction": {
-              "$comment": "SFVec2f inputOnly",
-              "type": "array",
-              "minItems": 2,
-              "maxItems": 2,
-              "items": {
-                "type": "number"
-              }
             },
             "@uDimension": {
               "default": 0,
@@ -10431,7 +9876,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -10503,7 +9949,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -10575,7 +10022,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -10681,7 +10129,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -10813,7 +10262,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -10852,19 +10302,6 @@
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
-            "@set_fraction": {
-              "$comment": "SFFloat inputOnly",
-              "type": "number"
-            },
-            "@value_changed": {
-              "$comment": "SFRotation outputOnly",
-              "type": "array",
-              "minItems": 4,
-              "maxItems": 4,
-              "items": {
-                "type": "number"
-              }
-            },
             "@DEF": {
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -10897,7 +10334,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -10971,7 +10409,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -11031,14 +10470,6 @@
               "$comment": "SFBool inputOutput",
               "type": "boolean"
             },
-            "@isActive": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
-            "@isOver": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
             "@maxPosition": {
               "$comment": "SFVec2f inputOutput",
               "type": "array",
@@ -11069,24 +10500,6 @@
               "maxItems": 3,
               "items": {
                 "default": 0,
-                "type": "number"
-              }
-            },
-            "@trackPoint_changed": {
-              "$comment": "SFVec3f outputOnly",
-              "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
-              "items": {
-                "type": "number"
-              }
-            },
-            "@translation_changed": {
-              "$comment": "SFVec3f outputOnly",
-              "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
-              "items": {
                 "type": "number"
               }
             },
@@ -11122,7 +10535,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -11244,7 +10658,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -11306,7 +10721,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -11370,7 +10786,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -11434,7 +10851,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -11473,19 +10891,6 @@
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
-            "@set_fraction": {
-              "$comment": "SFFloat inputOnly",
-              "type": "number"
-            },
-            "@value_changed": {
-              "$comment": "SFVec3f outputOnly",
-              "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
-              "items": {
-                "type": "number"
-              }
-            },
             "@DEF": {
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -11518,7 +10923,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -11556,19 +10962,6 @@
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
-            },
-            "@set_fraction": {
-              "$comment": "SFFloat inputOnly",
-              "type": "number"
-            },
-            "@value_changed": {
-              "$comment": "SFVec2f outputOnly",
-              "type": "array",
-              "minItems": 2,
-              "maxItems": 2,
-              "items": {
-                "type": "number"
-              }
             },
             "@DEF": {
               "$comment": "SFString inputOutput",
@@ -11655,7 +11048,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -11747,7 +11141,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -11778,52 +11173,13 @@
                 "type": "number"
               }
             },
-            "@centerOfRotation_changed": {
-              "$comment": "SFVec3f outputOnly",
-              "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
-              "items": {
-                "type": "number"
-              }
-            },
             "@enabled": {
               "default": true,
               "$comment": "SFBool inputOutput",
               "type": "boolean"
             },
-            "@enterTime": {
-              "$comment": "SFTime outputOnly",
-              "type": "number"
-            },
-            "@exitTime": {
-              "$comment": "SFTime outputOnly",
-              "type": "number"
-            },
-            "@isActive": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
-            },
-            "@orientation_changed": {
-              "$comment": "SFRotation outputOnly",
-              "type": "array",
-              "minItems": 4,
-              "maxItems": 4,
-              "items": {
-                "type": "number"
-              }
-            },
-            "@position_changed": {
-              "$comment": "SFVec3f outputOnly",
-              "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
-              "items": {
-                "type": "number"
-              }
             },
             "@size": {
               "$comment": "SFVec3f initializeOnly",
@@ -11868,7 +11224,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -11942,26 +11299,6 @@
             "@geoSystem": {
               "$ref": "#/$defs/@geoSystem"
             },
-            "@isActive": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
-            "@isNetworkReader": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
-            "@isNetworkWriter": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
-            "@isRtpHeaderHeard": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
-            "@isStandAlone": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
@@ -12018,10 +11355,6 @@
               "default": 0,
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
-            },
-            "@timestamp": {
-              "$comment": "SFTime outputOnly",
-              "type": "number"
             },
             "@transmitterApplicationID": {
               "default": 0,
@@ -12085,7 +11418,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -12195,7 +11529,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -12232,14 +11567,6 @@
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
-            },
-            "@set_fraction": {
-              "$comment": "SFFloat inputOnly",
-              "type": "number"
-            },
-            "@value_changed": {
-              "$comment": "SFFloat outputOnly",
-              "type": "number"
             },
             "@DEF": {
               "$comment": "SFString inputOutput",
@@ -12289,7 +11616,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -12374,7 +11702,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -12456,7 +11785,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -12547,26 +11877,6 @@
             "@geoSystem": {
               "$ref": "#/$defs/@geoSystem"
             },
-            "@isActive": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
-            "@isNetworkReader": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
-            "@isNetworkWriter": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
-            "@isRtpHeaderHeard": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
-            "@isStandAlone": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
@@ -12629,10 +11939,6 @@
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
             },
-            "@timestamp": {
-              "$comment": "SFTime outputOnly",
-              "type": "number"
-            },
             "@whichGeometry": {
               "default": 1,
               "$comment": "SFInt32 inputOutput",
@@ -12675,7 +11981,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -12800,7 +12107,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -12866,7 +12174,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -12901,14 +12210,6 @@
               "$comment": "SFBool inputOutput",
               "type": "boolean"
             },
-            "@isActive": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
-            "@isOver": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
@@ -12936,24 +12237,6 @@
                 }
               ],
               "items": false
-            },
-            "@rotation_changed": {
-              "$comment": "SFRotation outputOnly",
-              "type": "array",
-              "minItems": 4,
-              "maxItems": 4,
-              "items": {
-                "type": "number"
-              }
-            },
-            "@trackPoint_changed": {
-              "$comment": "SFVec3f outputOnly",
-              "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
-              "items": {
-                "type": "number"
-              }
             },
             "@DEF": {
               "$comment": "SFString inputOutput",
@@ -12987,7 +12270,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -13140,7 +12424,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -13216,7 +12501,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -13245,18 +12531,6 @@
             "@enabled": {
               "default": true,
               "$comment": "SFBool inputOutput",
-              "type": "boolean"
-            },
-            "@enteredText": {
-              "$comment": "SFString outputOnly",
-              "type": "string"
-            },
-            "@finalText": {
-              "$comment": "SFString outputOnly",
-              "type": "string"
-            },
-            "@isActive": {
-              "$comment": "SFBool outputOnly",
               "type": "boolean"
             },
             "-metadata": {
@@ -13294,7 +12568,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -13375,7 +12650,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -13459,7 +12735,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -13482,10 +12759,6 @@
             },
             "-backTexture": {
               "$ref": "#/$defs/-X3DTexture2DNode-MultiTextureSFNode"
-            },
-            "@bindTime": {
-              "$comment": "SFTime outputOnly",
-              "type": "number"
             },
             "-bottomTexture": {
               "$ref": "#/$defs/-X3DTexture2DNode-MultiTextureSFNode"
@@ -13512,10 +12785,6 @@
                 "type": "number"
               }
             },
-            "@isBound": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
             "-leftTexture": {
               "$ref": "#/$defs/-X3DTexture2DNode-MultiTextureSFNode"
             },
@@ -13524,10 +12793,6 @@
             },
             "-rightTexture": {
               "$ref": "#/$defs/-X3DTexture2DNode-MultiTextureSFNode"
-            },
-            "@set_bind": {
-              "$comment": "SFBool inputOnly",
-              "type": "boolean"
             },
             "@skyAngle": {
               "$comment": "MFFloat inputOutput",
@@ -13589,7 +12854,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -13653,7 +12919,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -13734,7 +13001,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -13825,7 +13093,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -13851,29 +13120,9 @@
               "$comment": "SFTime inputOutput",
               "type": "number"
             },
-            "@cycleTime": {
-              "$comment": "SFTime outputOnly",
-              "type": "number"
-            },
-            "@elapsedTime": {
-              "$comment": "SFTime outputOnly",
-              "type": "number"
-            },
             "@enabled": {
               "default": true,
               "$comment": "SFBool inputOutput",
-              "type": "boolean"
-            },
-            "@fraction_changed": {
-              "$comment": "SFFloat outputOnly",
-              "type": "number"
-            },
-            "@isActive": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
-            "@isPaused": {
-              "$comment": "SFBool outputOnly",
               "type": "boolean"
             },
             "@loop": {
@@ -13902,10 +13151,6 @@
             "@stopTime": {
               "default": 0,
               "$comment": "SFTime inputOutput",
-              "type": "number"
-            },
-            "@time": {
-              "$comment": "SFTime outputOnly",
               "type": "number"
             },
             "@DEF": {
@@ -13940,7 +13185,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -13963,14 +13209,6 @@
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
-            },
-            "@set_boolean": {
-              "$comment": "SFBool inputOnly",
-              "type": "boolean"
-            },
-            "@triggerTime": {
-              "$comment": "SFTime outputOnly",
-              "type": "number"
             },
             "@DEF": {
               "$comment": "SFString inputOutput",
@@ -14004,7 +13242,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -14034,47 +13273,8 @@
               "$comment": "SFBool inputOutput",
               "type": "boolean"
             },
-            "@hitNormal_changed": {
-              "$comment": "SFVec3f outputOnly",
-              "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
-              "items": {
-                "type": "number"
-              }
-            },
-            "@hitPoint_changed": {
-              "$comment": "SFVec3f outputOnly",
-              "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
-              "items": {
-                "type": "number"
-              }
-            },
-            "@hitTexCoord_changed": {
-              "$comment": "SFVec2f outputOnly",
-              "type": "array",
-              "minItems": 2,
-              "maxItems": 2,
-              "items": {
-                "type": "number"
-              }
-            },
-            "@isActive": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
-            "@isOver": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
-            },
-            "@touchTime": {
-              "$comment": "SFTime outputOnly",
-              "type": "number"
             },
             "@DEF": {
               "$comment": "SFString inputOutput",
@@ -14108,7 +13308,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -14264,7 +13465,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -14377,26 +13579,6 @@
               "default": 0,
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
-            },
-            "@isActive": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
-            "@isNetworkReader": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
-            "@isNetworkWriter": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
-            "@isRtpHeaderHeard": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
-            },
-            "@isStandAlone": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
             },
             "@lengthOfModulationParameters": {
               "default": 0,
@@ -14515,10 +13697,6 @@
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
             },
-            "@timestamp": {
-              "$comment": "SFTime outputOnly",
-              "type": "number"
-            },
             "@transmitFrequencyBandwidth": {
               "default": 0,
               "$comment": "SFFloat inputOutput",
@@ -14571,7 +13749,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -14667,7 +13846,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -14755,7 +13935,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -14824,7 +14005,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -14920,7 +14102,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -14941,10 +14124,6 @@
             "IS": {
               "$ref": "#/$defs/IS"
             },
-            "@bindTime": {
-              "$comment": "SFTime outputOnly",
-              "type": "number"
-            },
             "@centerOfRotation": {
               "$comment": "SFVec3f inputOutput",
               "type": "array",
@@ -14963,10 +14142,6 @@
               "default": 0.7854,
               "$comment": "SFFloat inputOutput",
               "type": "number"
-            },
-            "@isBound": {
-              "$comment": "SFBool outputOnly",
-              "type": "boolean"
             },
             "@jump": {
               "default": true,
@@ -15022,10 +14197,6 @@
               ],
               "items": false
             },
-            "@set_bind": {
-              "$comment": "SFBool inputOnly",
-              "type": "boolean"
-            },
             "@DEF": {
               "$comment": "SFString inputOutput",
               "type": "string"
@@ -15058,7 +14229,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
@@ -15092,18 +14264,6 @@
             "@enabled": {
               "default": true,
               "$comment": "SFBool inputOutput",
-              "type": "boolean"
-            },
-            "@enterTime": {
-              "$comment": "SFTime outputOnly",
-              "type": "number"
-            },
-            "@exitTime": {
-              "$comment": "SFTime outputOnly",
-              "type": "number"
-            },
-            "@isActive": {
-              "$comment": "SFBool outputOnly",
               "type": "boolean"
             },
             "-metadata": {
@@ -15152,7 +14312,8 @@
                 "type": "object",
                 "properties": {
                   "#comment": {
-                    "type": "string"
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
                   }
                 },
                 "additionalProperties": false
