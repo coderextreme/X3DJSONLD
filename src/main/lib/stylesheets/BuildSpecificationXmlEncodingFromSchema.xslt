@@ -196,9 +196,10 @@ Invocation:
 		  <xsl:text>' has no type definition</xsl:text>
 		 </xsl:message>
 	</xsl:if>
-	<xsl:if test="(starts-with(@type,'SF') or (@type='xs:NMTOKEN')) and not($elementName='SFNode') and not(@type='SFString') and (not(@default) or (@default='')) and not((@fixed='inputOnlyField') or (@fixed='outputOnlyField'))
-					and not((@name='componentName') and (string-length(@fixed) > 0)) and not(@name='name') and 
-                    not(ends-with(@name,'Mapping')) and not(@name='synonym') and not(@name='id') and not(@name='mapping') and (string-length(@fixed) = 0)">
+	<xsl:if test="(starts-with(@type,'SF') or (@type='xs:NMTOKEN')) and not($elementName='SFNode') and not(@type='SFString') and (not(@default) or (@default='')) and not((@fixed='inputOnlyField') or (@fixed='outputOnlyField')) and
+			not((@name='componentName') and (string-length(@fixed) > 0)) and not(@name='name') and 
+                        not(ends-with(@name,'Mapping')) and not(@name='synonym') and not(@name='id') and not(@name='mapping') and (string-length(@fixed) = 0) and
+                        not(contains($elementName, 'xs:enumeration'))">
 		<xsl:message>
 		  <xsl:text>*** [Warning] </xsl:text>
 		  <xsl:value-of select="$elementName"/>
@@ -929,7 +930,8 @@ Invocation:
 					
       <xsl:if test="not(//xs:group[contains(@name,'ContentModel')]//xs:element[@ref=$nodeName]) and 
                     not(//xs:element[@name]//xs:element[@ref=$nodeName]) and
-                    not(//xs:complexType/xs:complexContent//xs:element[@ref=$nodeName])"> 
+                    not(//xs:complexType/xs:complexContent//xs:element[@ref=$nodeName]) and
+                    not($nodeName = 'X3D')"> 
         <xsl:message>
           <xsl:text>*** [Error]   </xsl:text>
           <xsl:value-of select="$nodeName"/>
@@ -1440,6 +1442,10 @@ Invocation:
 		    </xsl:when>
 		    <xsl:when test="//xs:simpleType[@name='initializeOnlyAccessTypes']//xs:enumeration[@value=$attributeName]">
 		      <xsl:text>[initializeOnly]</xsl:text>
+		    </xsl:when>
+		    <xsl:when test="($nodeName = 'EXPORT') or ($nodeName = 'IMPORT') or ($nodeName = 'ROUTE') or ($nodeName = 'X3D') or contains($nodeName, 'Proto') or
+                                    ($nodeName = 'component') or ($nodeName = 'IS') or ($nodeName = 'connect') or ($nodeName = 'head') or ($nodeName = 'meta') or starts-with($nodeName, 'field')">
+		      <!-- no accessType for statement attributes -->
 		    </xsl:when>
 		    <xsl:otherwise>
 		      <xsl:message>
@@ -2495,19 +2501,19 @@ Invocation:
 	<xsl:value-of select="//xs:schema/xs:complexType[@name=$greatGrandParentNodeType]/xs:complexContent/*[(local-name()='extension') or (local-name()='restriction')]/@base"/>
       </xsl:variable>
       <xsl:variable name="attributeNodeList" select="
-		      //xs:schema/xs:complexType[@name=$greatGreatGrandParentNodeType]/xs:complexContent/*[(local-name()='extension') or (local-name()='restriction')]/xs:attribute
-		    | //xs:schema/xs:complexType[@name=$greatGrandParentNodeType     ]/xs:complexContent/*[(local-name()='extension') or (local-name()='restriction')]/xs:attribute
-		    | //xs:schema/xs:complexType[@name=$grandParentNodeType          ]/xs:complexContent/*[(local-name()='extension') or (local-name()='restriction')]/xs:attribute
-		    | //xs:schema/xs:complexType[@name=$parentNodeType               ]/xs:complexContent/*[(local-name()='extension') or (local-name()='restriction')]/xs:attribute
-		    | //xs:schema/xs:complexType[@name=$nodeType                     ]/xs:complexContent/*[(local-name()='extension') or (local-name()='restriction')]/xs:attribute
-		    | //xs:schema/xs:complexType[@name=$greatGreatGrandParentNodeType]/xs:attribute
-		    | //xs:schema/xs:complexType[@name=$greatGrandParentNodeType     ]/xs:attribute
-		    | //xs:schema/xs:complexType[@name=$grandParentNodeType          ]/xs:attribute
-		    | //xs:schema/xs:complexType[@name=$parentNodeType               ]/xs:attribute
-		    | //xs:schema/xs:complexType[@name=$nodeType                     ]/xs:attribute
+		      //xs:schema/xs:complexType[@name=$greatGreatGrandParentNodeType]/xs:complexContent/*[(local-name()='extension') or (local-name()='restriction')]/xs:attribute[not(@name='id') and not(@name='class') and not(@name='style')]
+		    | //xs:schema/xs:complexType[@name=$greatGrandParentNodeType     ]/xs:complexContent/*[(local-name()='extension') or (local-name()='restriction')]/xs:attribute[not(@name='id') and not(@name='class') and not(@name='style')]
+		    | //xs:schema/xs:complexType[@name=$grandParentNodeType          ]/xs:complexContent/*[(local-name()='extension') or (local-name()='restriction')]/xs:attribute[not(@name='id') and not(@name='class') and not(@name='style')]
+		    | //xs:schema/xs:complexType[@name=$parentNodeType               ]/xs:complexContent/*[(local-name()='extension') or (local-name()='restriction')]/xs:attribute[not(@name='id') and not(@name='class') and not(@name='style')]
+		    | //xs:schema/xs:complexType[@name=$nodeType                     ]/xs:complexContent/*[(local-name()='extension') or (local-name()='restriction')]/xs:attribute[not(@name='id') and not(@name='class') and not(@name='style')]
+		    | //xs:schema/xs:complexType[@name=$greatGreatGrandParentNodeType]/xs:attribute[not(@name='id') and not(@name='class') and not(@name='style')]
+		    | //xs:schema/xs:complexType[@name=$greatGrandParentNodeType     ]/xs:attribute[not(@name='id') and not(@name='class') and not(@name='style')]
+		    | //xs:schema/xs:complexType[@name=$grandParentNodeType          ]/xs:attribute[not(@name='id') and not(@name='class') and not(@name='style')]
+		    | //xs:schema/xs:complexType[@name=$parentNodeType               ]/xs:attribute[not(@name='id') and not(@name='class') and not(@name='style')]
+		    | //xs:schema/xs:complexType[@name=$nodeType                     ]/xs:attribute[not(@name='id') and not(@name='class') and not(@name='style')]
 		    | xs:complexType/xs:complexContent/*[                                                  (local-name()='extension') or (local-name()='restriction')]/xs:attribute
 		    | xs:complexType/xs:attribute
-            | //xs:schema/xs:attributeGroup[@name='globalAttributes'         ]/xs:attribute">
+                    | //xs:schema/xs:attributeGroup[@name='globalAttributes'         ]/xs:attribute">
       </xsl:variable>
       <xsl:variable name="elementNodeList">
         <!-- choose only picks nearest one, rather than select which picks all -->
@@ -2554,19 +2560,17 @@ Invocation:
       <xsl:variable name='hasCDATA' select="(@name='Script') or (@name='ShaderPart') or (@name='ShaderProgram')"/>
       <xsl:variable name='hasContentModel' select="((count($contentModelGroups) + count ($contentModelElements)) gt 0) or $hasCDATA"/>
       
-		  <!-- Loop over attributes -->
-		  <xsl:for-each select="$attributeNodeList">
+            <!-- Loop over attributes -->
+            <xsl:for-each select="$attributeNodeList">
+                <xsl:sort select="@name[. ='style']"/>
+                <xsl:sort select="@name[. ='id']"/>
                 <xsl:sort select="@name[. ='class']"/>
                 <xsl:sort select="@name[. ='containerField']"/>
-                <xsl:sort select="@name[.!='containerField' and .!='class']"/>
-
+                <xsl:sort select="@name[.!='containerField' and .!='class' and .!='id' and .!='style']"/>
+                
                 <!-- avoid duplicates -->
                 <xsl:variable name="currentAttributeName" select="@name"/>
-                <xsl:if test="not(preceding-sibling::*[@name = $currentAttributeName])">
-                    <xsl:text> </xsl:text>
-                    <xsl:if test="not(starts-with(@name,'additionalInterface'))">
-                      <xsl:value-of select="@name"/>
-                      <xsl:text>='</xsl:text>
+                <xsl:variable name="currentAttributeValue">
                       <!-- default xor fixed value -->
                       <xsl:choose>
                         <!-- insert X3D version number to indicate source schema for this output -->
@@ -2588,10 +2592,18 @@ Invocation:
                           <xsl:value-of select="@fixed"/>
                         </xsl:when>
                       </xsl:choose>
+                </xsl:variable>
+                <xsl:if test="not(preceding-sibling::*[@name = $currentAttributeName])">
+                    <xsl:text> </xsl:text>
+                    <xsl:if test="not(starts-with(@name,'additionalInterface')) and
+                                  not(contains($nodeName,'FontStyle') and (@name = 'style') and (string-length($currentAttributeValue) = 0))">
+                      <xsl:value-of select="@name"/>
+                      <xsl:text>='</xsl:text>
+                      <xsl:value-of select="$currentAttributeValue"/>
                       <xsl:text>'</xsl:text>
                     </xsl:if>
                 </xsl:if>
-		  </xsl:for-each>
+            </xsl:for-each><!-- Loop over attributes -->
 
         <xsl:text disable-output-escaping="yes">/&gt;</xsl:text><!-- end element -->
         <xsl:text>&#10;</xsl:text>
