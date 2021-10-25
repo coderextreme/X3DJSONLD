@@ -21,7 +21,7 @@ class ValidateX3DJSON:
 
     # validate instance against two schemas
     def validate_with_schemas(self, entryPath, schemas, pres):
-        result = [ "", "", ""]
+        result = [ "jsonSkipped", "jwcSkipped", "dbSkipped"]
 
         try:
             result[0] = "jsonDidNotParse"
