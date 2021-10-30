@@ -47,11 +47,11 @@ import os
 #be sure to make backups, fork my repository, if you run the generateSchemas.py script.   The products are already checked in, so there's no real reason to run it!
 
 # create python script for validing draft-07 JSON schemas
-os.system(f'cat  ../schema/draft-07-JSONSchema.json | python3 -m fastjsonschema > draft07.py')
+# os.system(f'cat  ../schema/draft-07-JSONSchema.json | python3 -m fastjsonschema > draft07.py')
 # validate draft-07 schema against draft-07.py
-os.system(f'echo "import sys\nimport json\nimport draft07\n\ndraft07.validate_http___json_schema_org_draft_07_schema(json.loads(sys.stdin.read()))\n" > validate07.py')
+# os.system(f'echo "import sys\nimport json\nimport draft07\n\ndraft07.validate_http___json_schema_org_draft_07_schema(json.loads(sys.stdin.read()))\n" > validate07.py')
 # validate draft-07 against draft-07
-os.system(f'python3 validate07.py < ../schema/draft-07-JSONSchema.json')
+# os.system(f'python3 validate07.py < ../schema/draft-07-JSONSchema.json')
 
 # generates X3D JSON schema from 5 different versions of X3DUOM.
 versions = ['3.0', '3.1', '3.2', '3.3', '4.0']

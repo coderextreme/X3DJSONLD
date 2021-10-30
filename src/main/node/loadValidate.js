@@ -1,7 +1,10 @@
 if (typeof require === 'function') {
 	var fs = require('fs');
-	var Ajv = require('ajv');
-	var ajv = new Ajv();
+	// var Ajv = require('ajv');
+	var Ajv2020 = require('../../../node_modules/ajv/dist/2020');
+	addFormats = require("ajv-formats")
+	var ajv = new Ajv2020();
+	addFormats(ajv)
 	var localize = require('ajv-i18n');
 	var X3DJSONLD = require('./X3DJSONLD.js');
 }
@@ -86,7 +89,8 @@ function loadSchema(json, file, doValidate, X3DJSONLD, success, failure) {
 	}
 	var validated_version = validate[version];
         if (typeof validated_version === 'undefined') {
-		var ajv = new Ajv({allErrors:true, verbose:true});
+		var ajv = new Ajv2020({allErrors:true, verbose:true});
+		addFormats(ajv)
 		      if (typeof $ === 'function' && typeof $.getJSON === 'function') {
 			      $.getJSON("../schema/x3d-"+version+"-JSONSchema.json", function(schemajson) {
 				      validated_version = addSchema(ajv, schemajson, version);

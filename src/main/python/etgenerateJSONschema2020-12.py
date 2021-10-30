@@ -494,7 +494,7 @@ class ClassPrinter:
             str += '''\
                                 "@xsd:noNamespaceSchemaLocation": {
                                         "type": "string",
-                                        "format": "uri-reference"
+                                        "format": "uri"
                                 },
                                 "JSON schema": {
                                         "type": "string"
