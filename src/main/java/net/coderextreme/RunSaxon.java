@@ -66,7 +66,7 @@ protected static class ExitException extends SecurityException
 			boolean overwrite = false;
 			boolean silent = false;
 			String outdir = "./";
-			System.setSecurityManager(new NoExitSecurityManager());
+			// System.setSecurityManager(new NoExitSecurityManager());
 			for (int a = 0; a < args.length; a++) {
 				String source = args[a];
 				if (source.startsWith("---overwrite")) {
@@ -192,7 +192,7 @@ protected static class ExitException extends SecurityException
 					e.printStackTrace();
 				}
 			}
-			System.setSecurityManager(null); // or save and restore original
+			//System.setSecurityManager(null); // or save and restore original
 		} catch (ExitException ee) {
 			ee.printStackTrace();
 		}
