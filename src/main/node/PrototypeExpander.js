@@ -1,4 +1,3 @@
-var runAndSend;
 var fs;
 var http;
 var https;
@@ -7,7 +6,6 @@ var fieldTypes;
 var mapToMethod;
 var DOMParser;
 if (typeof require !== 'undefined') {
-	runAndSend = require("./runAndSend");
 	fs = require("fs");
 	http = require("http");
 	https = require("https");
