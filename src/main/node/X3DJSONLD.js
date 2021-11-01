@@ -9,7 +9,7 @@ if (typeof require === 'function' && typeof load !== 'function') {
 	var http = require("http");
 	var https = require("https");
 	// TODO this causes node-java 0.12.2 to hang
-	var runAndSend = require("./runAndSend");
+	// var runAndSend = require("./runAndSend");
 	var xmldom = require('xmldom');
 	var domserializer = new xmldom.XMLSerializer();
 	var DOMParser = xmldom.DOMParser;
