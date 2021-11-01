@@ -13,7 +13,7 @@ var X3DJSONLD = require('./src/main/node/X3DJSONLD.js');
 
 var PROTOS = require('./src/main/node/PrototypeExpander')
 ;
-var runAndSend = require('./src/main/node/runAndSend');
+// var runAndSend = require('./src/main/node/runAndSend');
 var DOM2JSONSerializer = require("./src/main/node/DOM2JSONSerializer");
 var mapToMethod = require("./src/main/node/mapToMethod");
 var fieldTypes = require("./src/main/node/fieldTypes");
