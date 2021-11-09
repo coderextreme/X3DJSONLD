@@ -24,6 +24,8 @@
   "scripts": {
     "start": "node app.js",
     "postinstall": "bash build.sh",
-    "buildthreex3dloader": "browserify src/main/node/threeLoadFile.js > src/main/node/bundle.js"
+    "buildthreex3dloader": "browserify src/main/node/threeLoadFile.js > src/main/node/bundle.js",
+    "buildajv": "browserify node_modules/ajv/dist/2020.js node_modules/ajv-formats/dist/index.js src/main/node/saxon-js/SaxonJS2.js src/main/node/JavaScriptSerializer.js src/main/node/DOM2JSONSerializer.js src/main/node/Three2Serializer.js src/main/node/X3DJSONLD.js src/main/node/PrototypeExpander.js src/main/node/Script.js src/main/node/mapToMethod.js src/main/node/mapToMethod2.js src/main/node/fieldTypes.js src/main/node/matrix.js src/main/node/convertPlyToJson.js src/main/node/convertStlToJson.js src/main/node/convertJsonToStl.js node_modules/three/build/three.js src/main/node/x3d-parser.js src/main/node/x3d-loader.js > src/main/node/ajvbundle.js"
   }
 }
+
