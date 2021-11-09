@@ -4,7 +4,7 @@
   "private": true,
   "main": "index.js",
   "dependencies": {
-    "ajv": "8.6.3",
+    "ajv": "*",
     "ajv-formats": "*",
     "ajv-i18n": "*",
     "axios": ">=0.21.2",
