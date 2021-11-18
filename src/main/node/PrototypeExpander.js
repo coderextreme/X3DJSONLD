@@ -13,6 +13,8 @@ if (typeof require !== 'undefined') {
 	fieldTypes = require('./fieldTypes');
 	mapToMethod = require('./mapToMethod');
 	DOMParser = require('xmldom').DOMParser;
+} else {
+	DOMParser = window.DOMParser;
 }
 
 if (typeof require !== 'undefined') {

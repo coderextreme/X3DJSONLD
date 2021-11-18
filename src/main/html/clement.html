@@ -30,12 +30,11 @@
     </X3D>
 </body>
     <script type="text/javascript" src="../node/X3DJSONLD.js"></script>
-    <script type="text/javascript" src="../node/loadValidate.js"></script>
-    <script type="text/javascript" src="../node/loaderJQuery.js"></script>
+    <script type="module" src="../node/loader-bundle.mjs"></script>
     <script type="text/javascript">
 	function loadX3DJSON(selector, url) {
 		$.getJSON(url, function(json) {
-			replaceX3DJSON(selector, json, url, "", function(element) {
+			window.replaceX3DJSON(selector, json, url, "", function(element) {
 				if (element === null) {
 					alert("failed to load", url);
 				}

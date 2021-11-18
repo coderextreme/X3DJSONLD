@@ -9,9 +9,9 @@ addFormats(ajv)
 
 X3DJSONLD = Object.assign(X3DJSONLD, { processURLs : function(urls) { return urls; }});
 var selectObjectFromJSObj = X3DJSONLD.selectObjectFromJSObj;
-var validate = { };
+window.validate = { };
 
-function doValidate(json, validated_version, file, X3DJSONLD, success, failure, e) {
+window.doValidate = function doValidate(json, validated_version, file, X3DJSONLD, success, failure, e) {
 	var retval = false;
 	if (e) {
 		if (typeof alert === 'function') {
@@ -69,23 +69,27 @@ function doValidate(json, validated_version, file, X3DJSONLD, success, failure, 
 }
 
 function addSchema(ajv, schemajson, version) {
-      ajv.addSchema(schemajson);
-      var validated_version = ajv.compile(schemajson);
-      validate[version] = validated_version;
+      var validated_version = window.validate[version];
+      if (typeof validated_version === 'undefined') {
+          console.log("Adding schema: ", version);
+          ajv.addSchema(schemajson);
+	  validated_version = ajv.compile(schemajson);
+      }
+      window.validate[version] = validated_version;
       if (typeof validated_version === 'undefined') {
 	      console.error("Schema not compiled");
       }
       return validated_version;
 }
 
-function loadSchema(json, file, doValidate, X3DJSONLD, success, failure) {
+window.loadSchema = function loadSchema(json, file, doValidate, X3DJSONLD, success, failure) {
 	var versions = { "4.0":true }
 	var version = json.X3D["@version"];
 	if (!versions[version]) {
-		console.error("Can only validate version 4.0 presently. Switching version to 4.0.");
+		console.info("Can only validate version 4.0 presently. Switching version to 4.0.");
 		version = "4.0";
 	}
-	var validated_version = validate[version];
+	var validated_version = window.validate[version];
         if (typeof validated_version === 'undefined') {
 		      if (typeof $ === 'function' && typeof $.getJSON === 'function') {
 			      $.getJSON("../schema/x3d-"+version+"-JSONSchema.json", function(schemajson) {
@@ -115,7 +119,7 @@ function loadSchema(json, file, doValidate, X3DJSONLD, success, failure) {
  * X3DJSONLD -- X3DJSONLD
  * callback -- returns the element whose scene children to append or insert into the DOM.
  */
-function loadX3DJS(DOMImplementation, jsobj, path, NS, loadSchema, doValidate, X3DJSONLD, callback) {
+window.loadX3DJS = function loadX3DJS(DOMImplementation, jsobj, path, NS, loadSchema, doValidate, X3DJSONLD, callback) {
 	X3DJSONLD.x3djsonNS = NS;
 	loadSchema(jsobj, path, doValidate, X3DJSONLD, function() {
 		var child, xml;
@@ -139,7 +143,7 @@ function loadX3DJS(DOMImplementation, jsobj, path, NS, loadSchema, doValidate, X
  * next -- to return the element or null
  * returns element loaded, followed by xml
  */
-function replaceX3DJSON(parent, json, url, NS, next) {
+window.replaceX3DJSON = function replaceX3DJSON(parent, json, url, NS, next) {
 
 	loadX3DJS(DOMImplementation, json, url, NS, loadSchema, doValidate, X3DJSONLD, function(child, xml) {
 		if (child != null) {
