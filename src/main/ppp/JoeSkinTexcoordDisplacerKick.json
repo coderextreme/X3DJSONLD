@@ -4,11 +4,11 @@
     "@profile": "Immersive",
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema": "https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
     "head": {
       "component": [
         {
-          "@name": "HAnim",
+          "@name": "H-Anim",
           "@level": 1
         }
       ],
@@ -79,7 +79,7 @@
         },
         {
           "@name": "translated",
-          "@content": "07 January 2021"
+          "@content": "18 November 2021"
         },
         {
           "@name": "generator",
@@ -281,6 +281,11 @@
                           0.875,
                           0
                         ],
+                        "@stiffness": [
+                          0,
+                          0,
+                          0
+                        ],
                         "-metadata": {
                           "MetadataSet": {
                             "@name": "warnings",
@@ -441,6 +446,11 @@
                                 0.35,
                                 1
                               ],
+                              "@stiffness": [
+                                0,
+                                0,
+                                0
+                              ],
                               "-children": [
                                 {
                                   "HAnimJoint": {
@@ -466,6 +476,11 @@
                                       1,
                                       1,
                                       1
+                                    ],
+                                    "@stiffness": [
+                                      0,
+                                      0,
+                                      0
                                     ],
                                     "-children": [
                                       {
@@ -497,6 +512,11 @@
                                             1,
                                             1
                                           ],
+                                          "@stiffness": [
+                                            0,
+                                            0,
+                                            0
+                                          ],
                                           "-children": [
                                             {
                                               "HAnimJoint": {
@@ -518,6 +538,11 @@
                                                   1,
                                                   1,
                                                   1
+                                                ],
+                                                "@stiffness": [
+                                                  0,
+                                                  0,
+                                                  0
                                                 ],
                                                 "-children": [
                                                   {
@@ -541,6 +566,11 @@
                                                         1,
                                                         1
                                                       ],
+                                                      "@stiffness": [
+                                                        0,
+                                                        0,
+                                                        0
+                                                      ],
                                                       "-children": [
                                                         {
                                                           "HAnimJoint": {
@@ -562,6 +592,11 @@
                                                               1,
                                                               1,
                                                               1
+                                                            ],
+                                                            "@stiffness": [
+                                                              0,
+                                                              0,
+                                                              0
                                                             ],
                                                             "-children": [
                                                               {
@@ -594,6 +629,11 @@
                                                                     1,
                                                                     1,
                                                                     1
+                                                                  ],
+                                                                  "@stiffness": [
+                                                                    0,
+                                                                    0,
+                                                                    0
                                                                   ]
                                                                 }
                                                               }
@@ -641,6 +681,11 @@
                                       0.4,
                                       0.8
                                     ],
+                                    "@stiffness": [
+                                      0,
+                                      0,
+                                      0
+                                    ],
                                     "-children": [
                                       {
                                         "HAnimJoint": {
@@ -673,6 +718,11 @@
                                             1,
                                             0.2
                                           ],
+                                          "@stiffness": [
+                                            0,
+                                            0,
+                                            0
+                                          ],
                                           "-children": [
                                             {
                                               "HAnimJoint": {
@@ -695,6 +745,11 @@
                                                   1,
                                                   1
                                                 ],
+                                                "@stiffness": [
+                                                  0,
+                                                  0,
+                                                  0
+                                                ],
                                                 "-children": [
                                                   {
                                                     "HAnimJoint": {
@@ -714,6 +769,11 @@
                                                         1,
                                                         1,
                                                         1
+                                                      ],
+                                                      "@stiffness": [
+                                                        0,
+                                                        0,
+                                                        0
                                                       ],
                                                       "-children": [
                                                         {
@@ -736,6 +796,11 @@
                                                               1,
                                                               1,
                                                               1
+                                                            ],
+                                                            "@stiffness": [
+                                                              0,
+                                                              0,
+                                                              0
                                                             ],
                                                             "-children": [
                                                               {
@@ -768,6 +833,11 @@
                                                                     1,
                                                                     1,
                                                                     1
+                                                                  ],
+                                                                  "@stiffness": [
+                                                                    0,
+                                                                    0,
+                                                                    0
                                                                   ]
                                                                 }
                                                               }
@@ -806,6 +876,11 @@
                                 1,
                                 1
                               ],
+                              "@stiffness": [
+                                0,
+                                0,
+                                0
+                              ],
                               "-children": [
                                 {
                                   "HAnimJoint": {
@@ -816,6 +891,11 @@
                                       1.068,
                                       -0.085
                                     ],
+                                    "@stiffness": [
+                                      0,
+                                      0,
+                                      0
+                                    ],
                                     "-children": [
                                       {
                                         "HAnimJoint": {
@@ -825,6 +905,11 @@
                                             0,
                                             1.092,
                                             -0.0725
+                                          ],
+                                          "@stiffness": [
+                                            0,
+                                            0,
+                                            0
                                           ],
                                           "-children": [
                                             {
@@ -858,6 +943,11 @@
                                                   1,
                                                   0.8
                                                 ],
+                                                "@stiffness": [
+                                                  0,
+                                                  0,
+                                                  0
+                                                ],
                                                 "-children": [
                                                   {
                                                     "HAnimJoint": {
@@ -867,6 +957,11 @@
                                                         0,
                                                         1.1459,
                                                         -0.0625
+                                                      ],
+                                                      "@stiffness": [
+                                                        0,
+                                                        0,
+                                                        0
                                                       ],
                                                       "-children": [
                                                         {
@@ -878,6 +973,11 @@
                                                               1.179,
                                                               -0.068
                                                             ],
+                                                            "@stiffness": [
+                                                              0,
+                                                              0,
+                                                              0
+                                                            ],
                                                             "-children": [
                                                               {
                                                                 "HAnimJoint": {
@@ -887,6 +987,11 @@
                                                                     0,
                                                                     1.2679,
                                                                     -0.081
+                                                                  ],
+                                                                  "@stiffness": [
+                                                                    0,
+                                                                    0,
+                                                                    0
                                                                   ],
                                                                   "-children": [
                                                                     {
@@ -903,6 +1008,11 @@
                                                                         ],
                                                                         "@skinCoordWeight": [
                                                                           1
+                                                                        ],
+                                                                        "@stiffness": [
+                                                                          0,
+                                                                          0,
+                                                                          0
                                                                         ],
                                                                         "-children": [
                                                                           {
@@ -922,6 +1032,11 @@
                                                                                 1,
                                                                                 1
                                                                               ],
+                                                                              "@stiffness": [
+                                                                                0,
+                                                                                0,
+                                                                                0
+                                                                              ],
                                                                               "-children": [
                                                                                 {
                                                                                   "HAnimJoint": {
@@ -931,6 +1046,11 @@
                                                                                       0,
                                                                                       1.294,
                                                                                       -0.11
+                                                                                    ],
+                                                                                    "@stiffness": [
+                                                                                      0,
+                                                                                      0,
+                                                                                      0
                                                                                     ],
                                                                                     "-children": [
                                                                                       {
@@ -942,6 +1062,11 @@
                                                                                             1.323,
                                                                                             -0.1155
                                                                                           ],
+                                                                                          "@stiffness": [
+                                                                                            0,
+                                                                                            0,
+                                                                                            0
+                                                                                          ],
                                                                                           "-children": [
                                                                                             {
                                                                                               "HAnimJoint": {
@@ -952,6 +1077,11 @@
                                                                                                   1.352,
                                                                                                   -0.12
                                                                                                 ],
+                                                                                                "@stiffness": [
+                                                                                                  0,
+                                                                                                  0,
+                                                                                                  0
+                                                                                                ],
                                                                                                 "-children": [
                                                                                                   {
                                                                                                     "HAnimJoint": {
@@ -961,6 +1091,11 @@
                                                                                                         0,
                                                                                                         1.381,
                                                                                                         -0.1235
+                                                                                                      ],
+                                                                                                      "@stiffness": [
+                                                                                                        0,
+                                                                                                        0,
+                                                                                                        0
                                                                                                       ],
                                                                                                       "-children": [
                                                                                                         {
@@ -978,6 +1113,11 @@
                                                                                                             "@skinCoordWeight": [
                                                                                                               1
                                                                                                             ],
+                                                                                                            "@stiffness": [
+                                                                                                              0,
+                                                                                                              0,
+                                                                                                              0
+                                                                                                            ],
                                                                                                             "-children": [
                                                                                                               {
                                                                                                                 "HAnimJoint": {
@@ -988,6 +1128,11 @@
                                                                                                                     1.438,
                                                                                                                     -0.12
                                                                                                                   ],
+                                                                                                                  "@stiffness": [
+                                                                                                                    0,
+                                                                                                                    0,
+                                                                                                                    0
+                                                                                                                  ],
                                                                                                                   "-children": [
                                                                                                                     {
                                                                                                                       "HAnimJoint": {
@@ -997,6 +1142,11 @@
                                                                                                                           0,
                                                                                                                           1.468,
                                                                                                                           -0.105
+                                                                                                                        ],
+                                                                                                                        "@stiffness": [
+                                                                                                                          0,
+                                                                                                                          0,
+                                                                                                                          0
                                                                                                                         ],
                                                                                                                         "-children": [
                                                                                                                           {
@@ -1016,6 +1166,11 @@
                                                                                                                                 1,
                                                                                                                                 1
                                                                                                                               ],
+                                                                                                                              "@stiffness": [
+                                                                                                                                0,
+                                                                                                                                0,
+                                                                                                                                0
+                                                                                                                              ],
                                                                                                                               "-children": [
                                                                                                                                 {
                                                                                                                                   "HAnimJoint": {
@@ -1034,6 +1189,11 @@
                                                                                                                                       1,
                                                                                                                                       1
                                                                                                                                     ],
+                                                                                                                                    "@stiffness": [
+                                                                                                                                      0,
+                                                                                                                                      0,
+                                                                                                                                      0
+                                                                                                                                    ],
                                                                                                                                     "-children": [
                                                                                                                                       {
                                                                                                                                         "HAnimJoint": {
@@ -1043,6 +1203,11 @@
                                                                                                                                             0,
                                                                                                                                             1.54,
                                                                                                                                             -0.05
+                                                                                                                                          ],
+                                                                                                                                          "@stiffness": [
+                                                                                                                                            0,
+                                                                                                                                            0,
+                                                                                                                                            0
                                                                                                                                           ],
                                                                                                                                           "-children": [
                                                                                                                                             {
@@ -1054,6 +1219,11 @@
                                                                                                                                                   1.552,
                                                                                                                                                   -0.035
                                                                                                                                                 ],
+                                                                                                                                                "@stiffness": [
+                                                                                                                                                  0,
+                                                                                                                                                  0,
+                                                                                                                                                  0
+                                                                                                                                                ],
                                                                                                                                                 "-children": [
                                                                                                                                                   {
                                                                                                                                                     "HAnimJoint": {
@@ -1063,6 +1233,11 @@
                                                                                                                                                         0,
                                                                                                                                                         1.5675,
                                                                                                                                                         -0.0256
+                                                                                                                                                      ],
+                                                                                                                                                      "@stiffness": [
+                                                                                                                                                        0,
+                                                                                                                                                        0,
+                                                                                                                                                        0
                                                                                                                                                       ],
                                                                                                                                                       "-children": [
                                                                                                                                                         {
@@ -1074,6 +1249,11 @@
                                                                                                                                                               1.58225,
                                                                                                                                                               -0.0185
                                                                                                                                                             ],
+                                                                                                                                                            "@stiffness": [
+                                                                                                                                                              0,
+                                                                                                                                                              0,
+                                                                                                                                                              0
+                                                                                                                                                            ],
                                                                                                                                                             "-children": [
                                                                                                                                                               {
                                                                                                                                                                 "HAnimJoint": {
@@ -1084,6 +1264,11 @@
                                                                                                                                                                     1.595,
                                                                                                                                                                     -0.0175
                                                                                                                                                                   ],
+                                                                                                                                                                  "@stiffness": [
+                                                                                                                                                                    0,
+                                                                                                                                                                    0,
+                                                                                                                                                                    0
+                                                                                                                                                                  ],
                                                                                                                                                                   "-children": [
                                                                                                                                                                     {
                                                                                                                                                                       "HAnimJoint": {
@@ -1093,6 +1278,11 @@
                                                                                                                                                                           0,
                                                                                                                                                                           1.61,
                                                                                                                                                                           -0.015
+                                                                                                                                                                        ],
+                                                                                                                                                                        "@stiffness": [
+                                                                                                                                                                          0,
+                                                                                                                                                                          0,
+                                                                                                                                                                          0
                                                                                                                                                                         ],
                                                                                                                                                                         "-children": [
                                                                                                                                                                           {
@@ -1127,6 +1317,11 @@
                                                                                                                                                                                 1,
                                                                                                                                                                                 1,
                                                                                                                                                                                 1
+                                                                                                                                                                              ],
+                                                                                                                                                                              "@stiffness": [
+                                                                                                                                                                                0,
+                                                                                                                                                                                0,
+                                                                                                                                                                                0
                                                                                                                                                                               ],
                                                                                                                                                                               "-displacers": [
                                                                                                                                                                                 {
@@ -1189,6 +1384,11 @@
                                                                                                                                                                                       0.034,
                                                                                                                                                                                       1.659,
                                                                                                                                                                                       0.06
+                                                                                                                                                                                    ],
+                                                                                                                                                                                    "@stiffness": [
+                                                                                                                                                                                      0,
+                                                                                                                                                                                      0,
+                                                                                                                                                                                      0
                                                                                                                                                                                     ]
                                                                                                                                                                                   }
                                                                                                                                                                                 },
@@ -1200,6 +1400,11 @@
                                                                                                                                                                                       0.034,
                                                                                                                                                                                       1.659,
                                                                                                                                                                                       0.06
+                                                                                                                                                                                    ],
+                                                                                                                                                                                    "@stiffness": [
+                                                                                                                                                                                      0,
+                                                                                                                                                                                      0,
+                                                                                                                                                                                      0
                                                                                                                                                                                     ]
                                                                                                                                                                                   }
                                                                                                                                                                                 },
@@ -1211,6 +1416,11 @@
                                                                                                                                                                                       0.034,
                                                                                                                                                                                       1.659,
                                                                                                                                                                                       0.06
+                                                                                                                                                                                    ],
+                                                                                                                                                                                    "@stiffness": [
+                                                                                                                                                                                      0,
+                                                                                                                                                                                      0,
+                                                                                                                                                                                      0
                                                                                                                                                                                     ]
                                                                                                                                                                                   }
                                                                                                                                                                                 },
@@ -1222,6 +1432,11 @@
                                                                                                                                                                                       -0.034,
                                                                                                                                                                                       1.659,
                                                                                                                                                                                       0.06
+                                                                                                                                                                                    ],
+                                                                                                                                                                                    "@stiffness": [
+                                                                                                                                                                                      0,
+                                                                                                                                                                                      0,
+                                                                                                                                                                                      0
                                                                                                                                                                                     ]
                                                                                                                                                                                   }
                                                                                                                                                                                 },
@@ -1233,6 +1448,11 @@
                                                                                                                                                                                       -0.034,
                                                                                                                                                                                       1.659,
                                                                                                                                                                                       0.06
+                                                                                                                                                                                    ],
+                                                                                                                                                                                    "@stiffness": [
+                                                                                                                                                                                      0,
+                                                                                                                                                                                      0,
+                                                                                                                                                                                      0
                                                                                                                                                                                     ]
                                                                                                                                                                                   }
                                                                                                                                                                                 },
@@ -1244,6 +1464,11 @@
                                                                                                                                                                                       -0.034,
                                                                                                                                                                                       1.659,
                                                                                                                                                                                       0.06
+                                                                                                                                                                                    ],
+                                                                                                                                                                                    "@stiffness": [
+                                                                                                                                                                                      0,
+                                                                                                                                                                                      0,
+                                                                                                                                                                                      0
                                                                                                                                                                                     ]
                                                                                                                                                                                   }
                                                                                                                                                                                 },
@@ -1255,6 +1480,11 @@
                                                                                                                                                                                       0.034,
                                                                                                                                                                                       1.659,
                                                                                                                                                                                       0.06
+                                                                                                                                                                                    ],
+                                                                                                                                                                                    "@stiffness": [
+                                                                                                                                                                                      0,
+                                                                                                                                                                                      0,
+                                                                                                                                                                                      0
                                                                                                                                                                                     ]
                                                                                                                                                                                   }
                                                                                                                                                                                 }
@@ -1294,6 +1524,11 @@
                                                                                                                                           "@skinCoordWeight": [
                                                                                                                                             1
                                                                                                                                           ],
+                                                                                                                                          "@stiffness": [
+                                                                                                                                            0,
+                                                                                                                                            0,
+                                                                                                                                            0
+                                                                                                                                          ],
                                                                                                                                           "-children": [
                                                                                                                                             {
                                                                                                                                               "HAnimJoint": {
@@ -1309,6 +1544,11 @@
                                                                                                                                                 ],
                                                                                                                                                 "@skinCoordWeight": [
                                                                                                                                                   1
+                                                                                                                                                ],
+                                                                                                                                                "@stiffness": [
+                                                                                                                                                  0,
+                                                                                                                                                  0,
+                                                                                                                                                  0
                                                                                                                                                 ],
                                                                                                                                                 "-children": [
                                                                                                                                                   {
@@ -1339,6 +1579,11 @@
                                                                                                                                                         1,
                                                                                                                                                         1,
                                                                                                                                                         1
+                                                                                                                                                      ],
+                                                                                                                                                      "@stiffness": [
+                                                                                                                                                        0,
+                                                                                                                                                        0,
+                                                                                                                                                        0
                                                                                                                                                       ],
                                                                                                                                                       "-children": [
                                                                                                                                                         {
@@ -1381,6 +1626,11 @@
                                                                                                                                                               1,
                                                                                                                                                               1
                                                                                                                                                             ],
+                                                                                                                                                            "@stiffness": [
+                                                                                                                                                              0,
+                                                                                                                                                              0,
+                                                                                                                                                              0
+                                                                                                                                                            ],
                                                                                                                                                             "-children": [
                                                                                                                                                               {
                                                                                                                                                                 "HAnimJoint": {
@@ -1411,6 +1661,11 @@
                                                                                                                                                                     1,
                                                                                                                                                                     1
                                                                                                                                                                   ],
+                                                                                                                                                                  "@stiffness": [
+                                                                                                                                                                    0,
+                                                                                                                                                                    0,
+                                                                                                                                                                    0
+                                                                                                                                                                  ],
                                                                                                                                                                   "-children": [
                                                                                                                                                                     {
                                                                                                                                                                       "HAnimJoint": {
@@ -1428,6 +1683,11 @@
                                                                                                                                                                         "@skinCoordWeight": [
                                                                                                                                                                           1,
                                                                                                                                                                           1
+                                                                                                                                                                        ],
+                                                                                                                                                                        "@stiffness": [
+                                                                                                                                                                          0,
+                                                                                                                                                                          0,
+                                                                                                                                                                          0
                                                                                                                                                                         ],
                                                                                                                                                                         "-children": [
                                                                                                                                                                           {
@@ -1454,6 +1714,11 @@
                                                                                                                                                                                 1,
                                                                                                                                                                                 1,
                                                                                                                                                                                 1
+                                                                                                                                                                              ],
+                                                                                                                                                                              "@stiffness": [
+                                                                                                                                                                                0,
+                                                                                                                                                                                0,
+                                                                                                                                                                                0
                                                                                                                                                                               ],
                                                                                                                                                                               "-children": [
                                                                                                                                                                                 {
@@ -1486,6 +1751,11 @@
                                                                                                                                                                                       1,
                                                                                                                                                                                       1,
                                                                                                                                                                                       1
+                                                                                                                                                                                    ],
+                                                                                                                                                                                    "@stiffness": [
+                                                                                                                                                                                      0,
+                                                                                                                                                                                      0,
+                                                                                                                                                                                      0
                                                                                                                                                                                     ]
                                                                                                                                                                                   }
                                                                                                                                                                                 }
@@ -1511,6 +1781,11 @@
                                                                                                                                                                         "@skinCoordWeight": [
                                                                                                                                                                           1,
                                                                                                                                                                           1
+                                                                                                                                                                        ],
+                                                                                                                                                                        "@stiffness": [
+                                                                                                                                                                          0,
+                                                                                                                                                                          0,
+                                                                                                                                                                          0
                                                                                                                                                                         ],
                                                                                                                                                                         "-children": [
                                                                                                                                                                           {
@@ -1540,6 +1815,11 @@
                                                                                                                                                                                 1,
                                                                                                                                                                                 0.5
                                                                                                                                                                               ],
+                                                                                                                                                                              "@stiffness": [
+                                                                                                                                                                                0,
+                                                                                                                                                                                0,
+                                                                                                                                                                                0
+                                                                                                                                                                              ],
                                                                                                                                                                               "-children": [
                                                                                                                                                                                 {
                                                                                                                                                                                   "HAnimJoint": {
@@ -1561,6 +1841,11 @@
                                                                                                                                                                                       1,
                                                                                                                                                                                       1,
                                                                                                                                                                                       1
+                                                                                                                                                                                    ],
+                                                                                                                                                                                    "@stiffness": [
+                                                                                                                                                                                      0,
+                                                                                                                                                                                      0,
+                                                                                                                                                                                      0
                                                                                                                                                                                     ],
                                                                                                                                                                                     "-children": [
                                                                                                                                                                                       {
@@ -1593,6 +1878,11 @@
                                                                                                                                                                                             1,
                                                                                                                                                                                             1,
                                                                                                                                                                                             1
+                                                                                                                                                                                          ],
+                                                                                                                                                                                          "@stiffness": [
+                                                                                                                                                                                            0,
+                                                                                                                                                                                            0,
+                                                                                                                                                                                            0
                                                                                                                                                                                           ]
                                                                                                                                                                                         }
                                                                                                                                                                                       }
@@ -1622,6 +1912,11 @@
                                                                                                                                                                           1,
                                                                                                                                                                           1
                                                                                                                                                                         ],
+                                                                                                                                                                        "@stiffness": [
+                                                                                                                                                                          0,
+                                                                                                                                                                          0,
+                                                                                                                                                                          0
+                                                                                                                                                                        ],
                                                                                                                                                                         "-children": [
                                                                                                                                                                           {
                                                                                                                                                                             "HAnimJoint": {
@@ -1644,6 +1939,11 @@
                                                                                                                                                                                 0.5,
                                                                                                                                                                                 0.5
                                                                                                                                                                               ],
+                                                                                                                                                                              "@stiffness": [
+                                                                                                                                                                                0,
+                                                                                                                                                                                0,
+                                                                                                                                                                                0
+                                                                                                                                                                              ],
                                                                                                                                                                               "-children": [
                                                                                                                                                                                 {
                                                                                                                                                                                   "HAnimJoint": {
@@ -1665,6 +1965,11 @@
                                                                                                                                                                                       1,
                                                                                                                                                                                       1,
                                                                                                                                                                                       1
+                                                                                                                                                                                    ],
+                                                                                                                                                                                    "@stiffness": [
+                                                                                                                                                                                      0,
+                                                                                                                                                                                      0,
+                                                                                                                                                                                      0
                                                                                                                                                                                     ],
                                                                                                                                                                                     "-children": [
                                                                                                                                                                                       {
@@ -1697,6 +2002,11 @@
                                                                                                                                                                                             1,
                                                                                                                                                                                             1,
                                                                                                                                                                                             1
+                                                                                                                                                                                          ],
+                                                                                                                                                                                          "@stiffness": [
+                                                                                                                                                                                            0,
+                                                                                                                                                                                            0,
+                                                                                                                                                                                            0
                                                                                                                                                                                           ]
                                                                                                                                                                                         }
                                                                                                                                                                                       }
@@ -1726,6 +2036,11 @@
                                                                                                                                                                           1,
                                                                                                                                                                           1
                                                                                                                                                                         ],
+                                                                                                                                                                        "@stiffness": [
+                                                                                                                                                                          0,
+                                                                                                                                                                          0,
+                                                                                                                                                                          0
+                                                                                                                                                                        ],
                                                                                                                                                                         "-children": [
                                                                                                                                                                           {
                                                                                                                                                                             "HAnimJoint": {
@@ -1748,6 +2063,11 @@
                                                                                                                                                                                 0.5,
                                                                                                                                                                                 0.5
                                                                                                                                                                               ],
+                                                                                                                                                                              "@stiffness": [
+                                                                                                                                                                                0,
+                                                                                                                                                                                0,
+                                                                                                                                                                                0
+                                                                                                                                                                              ],
                                                                                                                                                                               "-children": [
                                                                                                                                                                                 {
                                                                                                                                                                                   "HAnimJoint": {
@@ -1769,6 +2089,11 @@
                                                                                                                                                                                       1,
                                                                                                                                                                                       1,
                                                                                                                                                                                       1
+                                                                                                                                                                                    ],
+                                                                                                                                                                                    "@stiffness": [
+                                                                                                                                                                                      0,
+                                                                                                                                                                                      0,
+                                                                                                                                                                                      0
                                                                                                                                                                                     ],
                                                                                                                                                                                     "-children": [
                                                                                                                                                                                       {
@@ -1801,6 +2126,11 @@
                                                                                                                                                                                             1,
                                                                                                                                                                                             1,
                                                                                                                                                                                             1
+                                                                                                                                                                                          ],
+                                                                                                                                                                                          "@stiffness": [
+                                                                                                                                                                                            0,
+                                                                                                                                                                                            0,
+                                                                                                                                                                                            0
                                                                                                                                                                                           ]
                                                                                                                                                                                         }
                                                                                                                                                                                       }
@@ -1834,6 +2164,11 @@
                                                                                                                                                                           1,
                                                                                                                                                                           0.5
                                                                                                                                                                         ],
+                                                                                                                                                                        "@stiffness": [
+                                                                                                                                                                          0,
+                                                                                                                                                                          0,
+                                                                                                                                                                          0
+                                                                                                                                                                        ],
                                                                                                                                                                         "-children": [
                                                                                                                                                                           {
                                                                                                                                                                             "HAnimJoint": {
@@ -1853,6 +2188,11 @@
                                                                                                                                                                                 1,
                                                                                                                                                                                 1,
                                                                                                                                                                                 1
+                                                                                                                                                                              ],
+                                                                                                                                                                              "@stiffness": [
+                                                                                                                                                                                0,
+                                                                                                                                                                                0,
+                                                                                                                                                                                0
                                                                                                                                                                               ],
                                                                                                                                                                               "-children": [
                                                                                                                                                                                 {
@@ -1875,6 +2215,11 @@
                                                                                                                                                                                       1,
                                                                                                                                                                                       1,
                                                                                                                                                                                       1
+                                                                                                                                                                                    ],
+                                                                                                                                                                                    "@stiffness": [
+                                                                                                                                                                                      0,
+                                                                                                                                                                                      0,
+                                                                                                                                                                                      0
                                                                                                                                                                                     ],
                                                                                                                                                                                     "-children": [
                                                                                                                                                                                       {
@@ -1907,6 +2252,11 @@
                                                                                                                                                                                             1,
                                                                                                                                                                                             1,
                                                                                                                                                                                             1
+                                                                                                                                                                                          ],
+                                                                                                                                                                                          "@stiffness": [
+                                                                                                                                                                                            0,
+                                                                                                                                                                                            0,
+                                                                                                                                                                                            0
                                                                                                                                                                                           ]
                                                                                                                                                                                         }
                                                                                                                                                                                       }
@@ -1949,6 +2299,11 @@
                                                                                                                                           "@skinCoordWeight": [
                                                                                                                                             1
                                                                                                                                           ],
+                                                                                                                                          "@stiffness": [
+                                                                                                                                            0,
+                                                                                                                                            0,
+                                                                                                                                            0
+                                                                                                                                          ],
                                                                                                                                           "-children": [
                                                                                                                                             {
                                                                                                                                               "HAnimJoint": {
@@ -1966,6 +2321,11 @@
                                                                                                                                                 "@skinCoordWeight": [
                                                                                                                                                   1,
                                                                                                                                                   0.9
+                                                                                                                                                ],
+                                                                                                                                                "@stiffness": [
+                                                                                                                                                  0,
+                                                                                                                                                  0,
+                                                                                                                                                  0
                                                                                                                                                 ],
                                                                                                                                                 "-children": [
                                                                                                                                                   {
@@ -2000,6 +2360,11 @@
                                                                                                                                                         1,
                                                                                                                                                         0.3,
                                                                                                                                                         0.2
+                                                                                                                                                      ],
+                                                                                                                                                      "@stiffness": [
+                                                                                                                                                        0,
+                                                                                                                                                        0,
+                                                                                                                                                        0
                                                                                                                                                       ],
                                                                                                                                                       "-children": [
                                                                                                                                                         {
@@ -2039,6 +2404,11 @@
                                                                                                                                                               1,
                                                                                                                                                               1
                                                                                                                                                             ],
+                                                                                                                                                            "@stiffness": [
+                                                                                                                                                              0,
+                                                                                                                                                              0,
+                                                                                                                                                              0
+                                                                                                                                                            ],
                                                                                                                                                             "-children": [
                                                                                                                                                               {
                                                                                                                                                                 "HAnimJoint": {
@@ -2069,6 +2439,11 @@
                                                                                                                                                                     1,
                                                                                                                                                                     1
                                                                                                                                                                   ],
+                                                                                                                                                                  "@stiffness": [
+                                                                                                                                                                    0,
+                                                                                                                                                                    0,
+                                                                                                                                                                    0
+                                                                                                                                                                  ],
                                                                                                                                                                   "-children": [
                                                                                                                                                                     {
                                                                                                                                                                       "HAnimJoint": {
@@ -2086,6 +2461,11 @@
                                                                                                                                                                         "@skinCoordWeight": [
                                                                                                                                                                           1,
                                                                                                                                                                           1
+                                                                                                                                                                        ],
+                                                                                                                                                                        "@stiffness": [
+                                                                                                                                                                          0,
+                                                                                                                                                                          0,
+                                                                                                                                                                          0
                                                                                                                                                                         ],
                                                                                                                                                                         "-children": [
                                                                                                                                                                           {
@@ -2112,6 +2492,11 @@
                                                                                                                                                                                 1,
                                                                                                                                                                                 1,
                                                                                                                                                                                 1
+                                                                                                                                                                              ],
+                                                                                                                                                                              "@stiffness": [
+                                                                                                                                                                                0,
+                                                                                                                                                                                0,
+                                                                                                                                                                                0
                                                                                                                                                                               ],
                                                                                                                                                                               "-children": [
                                                                                                                                                                                 {
@@ -2144,6 +2529,11 @@
                                                                                                                                                                                       1,
                                                                                                                                                                                       1,
                                                                                                                                                                                       1
+                                                                                                                                                                                    ],
+                                                                                                                                                                                    "@stiffness": [
+                                                                                                                                                                                      0,
+                                                                                                                                                                                      0,
+                                                                                                                                                                                      0
                                                                                                                                                                                     ]
                                                                                                                                                                                   }
                                                                                                                                                                                 }
@@ -2169,6 +2559,11 @@
                                                                                                                                                                         "@skinCoordWeight": [
                                                                                                                                                                           1,
                                                                                                                                                                           1
+                                                                                                                                                                        ],
+                                                                                                                                                                        "@stiffness": [
+                                                                                                                                                                          0,
+                                                                                                                                                                          0,
+                                                                                                                                                                          0
                                                                                                                                                                         ],
                                                                                                                                                                         "-children": [
                                                                                                                                                                           {
@@ -2198,6 +2593,11 @@
                                                                                                                                                                                 1,
                                                                                                                                                                                 0.5
                                                                                                                                                                               ],
+                                                                                                                                                                              "@stiffness": [
+                                                                                                                                                                                0,
+                                                                                                                                                                                0,
+                                                                                                                                                                                0
+                                                                                                                                                                              ],
                                                                                                                                                                               "-children": [
                                                                                                                                                                                 {
                                                                                                                                                                                   "HAnimJoint": {
@@ -2219,6 +2619,11 @@
                                                                                                                                                                                       1,
                                                                                                                                                                                       1,
                                                                                                                                                                                       1
+                                                                                                                                                                                    ],
+                                                                                                                                                                                    "@stiffness": [
+                                                                                                                                                                                      0,
+                                                                                                                                                                                      0,
+                                                                                                                                                                                      0
                                                                                                                                                                                     ],
                                                                                                                                                                                     "-children": [
                                                                                                                                                                                       {
@@ -2251,6 +2656,11 @@
                                                                                                                                                                                             1,
                                                                                                                                                                                             1,
                                                                                                                                                                                             1
+                                                                                                                                                                                          ],
+                                                                                                                                                                                          "@stiffness": [
+                                                                                                                                                                                            0,
+                                                                                                                                                                                            0,
+                                                                                                                                                                                            0
                                                                                                                                                                                           ]
                                                                                                                                                                                         }
                                                                                                                                                                                       }
@@ -2280,6 +2690,11 @@
                                                                                                                                                                           1,
                                                                                                                                                                           1
                                                                                                                                                                         ],
+                                                                                                                                                                        "@stiffness": [
+                                                                                                                                                                          0,
+                                                                                                                                                                          0,
+                                                                                                                                                                          0
+                                                                                                                                                                        ],
                                                                                                                                                                         "-children": [
                                                                                                                                                                           {
                                                                                                                                                                             "HAnimJoint": {
@@ -2302,6 +2717,11 @@
                                                                                                                                                                                 0.5,
                                                                                                                                                                                 0.5
                                                                                                                                                                               ],
+                                                                                                                                                                              "@stiffness": [
+                                                                                                                                                                                0,
+                                                                                                                                                                                0,
+                                                                                                                                                                                0
+                                                                                                                                                                              ],
                                                                                                                                                                               "-children": [
                                                                                                                                                                                 {
                                                                                                                                                                                   "HAnimJoint": {
@@ -2323,6 +2743,11 @@
                                                                                                                                                                                       1,
                                                                                                                                                                                       1,
                                                                                                                                                                                       1
+                                                                                                                                                                                    ],
+                                                                                                                                                                                    "@stiffness": [
+                                                                                                                                                                                      0,
+                                                                                                                                                                                      0,
+                                                                                                                                                                                      0
                                                                                                                                                                                     ],
                                                                                                                                                                                     "-children": [
                                                                                                                                                                                       {
@@ -2355,6 +2780,11 @@
                                                                                                                                                                                             1,
                                                                                                                                                                                             1,
                                                                                                                                                                                             1
+                                                                                                                                                                                          ],
+                                                                                                                                                                                          "@stiffness": [
+                                                                                                                                                                                            0,
+                                                                                                                                                                                            0,
+                                                                                                                                                                                            0
                                                                                                                                                                                           ]
                                                                                                                                                                                         }
                                                                                                                                                                                       }
@@ -2384,6 +2814,11 @@
                                                                                                                                                                           1,
                                                                                                                                                                           1
                                                                                                                                                                         ],
+                                                                                                                                                                        "@stiffness": [
+                                                                                                                                                                          0,
+                                                                                                                                                                          0,
+                                                                                                                                                                          0
+                                                                                                                                                                        ],
                                                                                                                                                                         "-children": [
                                                                                                                                                                           {
                                                                                                                                                                             "HAnimJoint": {
@@ -2406,6 +2841,11 @@
                                                                                                                                                                                 0.5,
                                                                                                                                                                                 0.5
                                                                                                                                                                               ],
+                                                                                                                                                                              "@stiffness": [
+                                                                                                                                                                                0,
+                                                                                                                                                                                0,
+                                                                                                                                                                                0
+                                                                                                                                                                              ],
                                                                                                                                                                               "-children": [
                                                                                                                                                                                 {
                                                                                                                                                                                   "HAnimJoint": {
@@ -2427,6 +2867,11 @@
                                                                                                                                                                                       1,
                                                                                                                                                                                       1,
                                                                                                                                                                                       1
+                                                                                                                                                                                    ],
+                                                                                                                                                                                    "@stiffness": [
+                                                                                                                                                                                      0,
+                                                                                                                                                                                      0,
+                                                                                                                                                                                      0
                                                                                                                                                                                     ],
                                                                                                                                                                                     "-children": [
                                                                                                                                                                                       {
@@ -2459,6 +2904,11 @@
                                                                                                                                                                                             1,
                                                                                                                                                                                             1,
                                                                                                                                                                                             1
+                                                                                                                                                                                          ],
+                                                                                                                                                                                          "@stiffness": [
+                                                                                                                                                                                            0,
+                                                                                                                                                                                            0,
+                                                                                                                                                                                            0
                                                                                                                                                                                           ]
                                                                                                                                                                                         }
                                                                                                                                                                                       }
@@ -2492,6 +2942,11 @@
                                                                                                                                                                           1,
                                                                                                                                                                           0.5
                                                                                                                                                                         ],
+                                                                                                                                                                        "@stiffness": [
+                                                                                                                                                                          0,
+                                                                                                                                                                          0,
+                                                                                                                                                                          0
+                                                                                                                                                                        ],
                                                                                                                                                                         "-children": [
                                                                                                                                                                           {
                                                                                                                                                                             "HAnimJoint": {
@@ -2511,6 +2966,11 @@
                                                                                                                                                                                 1,
                                                                                                                                                                                 1,
                                                                                                                                                                                 1
+                                                                                                                                                                              ],
+                                                                                                                                                                              "@stiffness": [
+                                                                                                                                                                                0,
+                                                                                                                                                                                0,
+                                                                                                                                                                                0
                                                                                                                                                                               ],
                                                                                                                                                                               "-children": [
                                                                                                                                                                                 {
@@ -2533,6 +2993,11 @@
                                                                                                                                                                                       1,
                                                                                                                                                                                       1,
                                                                                                                                                                                       1
+                                                                                                                                                                                    ],
+                                                                                                                                                                                    "@stiffness": [
+                                                                                                                                                                                      0,
+                                                                                                                                                                                      0,
+                                                                                                                                                                                      0
                                                                                                                                                                                     ],
                                                                                                                                                                                     "-children": [
                                                                                                                                                                                       {
@@ -2565,6 +3030,11 @@
                                                                                                                                                                                             1,
                                                                                                                                                                                             1,
                                                                                                                                                                                             1
+                                                                                                                                                                                          ],
+                                                                                                                                                                                          "@stiffness": [
+                                                                                                                                                                                            0,
+                                                                                                                                                                                            0,
+                                                                                                                                                                                            0
                                                                                                                                                                                           ]
                                                                                                                                                                                         }
                                                                                                                                                                                       }

@@ -2,15 +2,16 @@
   "X3D": {
     "encoding": "UTF-8",
     "@profile": "Immersive",
-    "@version": "3.3",
-    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema": "https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
     "head": {
-      "component": [
+      "-children": [
         {
-          "@name": "EnvironmentalEffects",
-          "@level": 1
-        },
+          "#comment": "component name='EnvironmentalEffects' level='1'/"
+        }
+      ],
+      "component": [
         {
           "@name": "EnvironmentalEffects",
           "@level": 3
@@ -63,7 +64,7 @@
         },
         {
           "@name": "translated",
-          "@content": "07 January 2021"
+          "@content": "18 November 2021"
         },
         {
           "@name": "generator",
@@ -104,27 +105,27 @@
           "Background": {
             "@backUrl": [
               "../resources/images/all_probes/uffizi_cross/uffizi_back.png",
-              "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_back.png"
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_back.png"
             ],
             "@bottomUrl": [
               "../resources/images/all_probes/uffizi_cross/uffizi_bottom.png",
-              "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_bottom.png"
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_bottom.png"
             ],
             "@frontUrl": [
               "../resources/images/all_probes/uffizi_cross/uffizi_front.png",
-              "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_front.png"
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_front.png"
             ],
             "@leftUrl": [
               "../resources/images/all_probes/uffizi_cross/uffizi_left.png",
-              "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_left.png"
             ],
             "@rightUrl": [
               "../resources/images/all_probes/uffizi_cross/uffizi_right.png",
-              "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_right.png"
             ],
             "@topUrl": [
               "../resources/images/all_probes/uffizi_cross/uffizi_top.png",
-              "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"
+              "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_top.png"
             ]
           }
         },
@@ -160,7 +161,7 @@
                             "ImageTexture": {
                               "@url": [
                                 "../resources/images/all_probes/uffizi_cross/uffizi_back.png",
-                                "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_back.png"
+                                "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_back.png"
                               ]
                             }
                           },
@@ -168,7 +169,7 @@
                             "ImageTexture": {
                               "@url": [
                                 "../resources/images/all_probes/uffizi_cross/uffizi_bottom.png",
-                                "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_bottom.png"
+                                "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_bottom.png"
                               ]
                             }
                           },
@@ -176,7 +177,7 @@
                             "ImageTexture": {
                               "@url": [
                                 "../resources/images/all_probes/uffizi_cross/uffizi_front.png",
-                                "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_front.png"
+                                "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_front.png"
                               ]
                             }
                           },
@@ -184,7 +185,7 @@
                             "ImageTexture": {
                               "@url": [
                                 "../resources/images/all_probes/uffizi_cross/uffizi_left.png",
-                                "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_left.png"
+                                "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_left.png"
                               ]
                             }
                           },
@@ -192,7 +193,7 @@
                             "ImageTexture": {
                               "@url": [
                                 "../resources/images/all_probes/uffizi_cross/uffizi_right.png",
-                                "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_right.png"
+                                "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_right.png"
                               ]
                             }
                           },
@@ -200,7 +201,7 @@
                             "ImageTexture": {
                               "@url": [
                                 "../resources/images/all_probes/uffizi_cross/uffizi_top.png",
-                                "https://coderextreme.net/X3DJSONLD/images/all_probes/uffizi_cross/uffizi_top.png"
+                                "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_top.png"
                               ]
                             }
                           }
@@ -260,8 +261,8 @@
                               {
                                 "ShaderPart": {
                                   "@url": [
-                                    "../shaders/pc_bubbles.fs",
-                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"
+                                    "../shaders/x_itebubbles.fs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"
                                   ],
                                   "@type": "FRAGMENT"
                                 }
@@ -475,6 +476,11 @@
                 ]
               },
               {
+                "@name": "fraction_changed",
+                "@accessType": "outputOnly",
+                "@type": "SFFloat"
+              },
+              {
                 "@name": "position_changed",
                 "@accessType": "outputOnly",
                 "@type": "MFVec3f"
@@ -501,13 +507,13 @@
               "                        } while (lastKey === ov);",
               "                        var vc = lastKey;",
               "",
-              "                        position_changed = new MFVec3f();",
-              "                        position_changed[0] = new SFVec3f(positions[ov].x,positions[ov].y,positions[ov].z);",
-              "                        position_changed[1] = new SFVec3f(positions[vc].x,positions[vc].y,positions[vc].z);",
+              "                        position_changed[0] = positions[ov];",
+              "                        position_changed[1] = positions[vc];",
               "",
-              "                        orientation_changed = new MFRotation();",
-              "                        orientation_changed[0] = new SFRotation(orientations[ov].x, orientations[ov].y, orientations[ov].z, orientations[ov].w);",
-              "                        orientation_changed[1] = new SFRotation(orientations[vc].x, orientations[vc].y, orientations[vc].z, orientations[vc].w);",
+              "                        orientation_changed[0] = orientations[ov];",
+              "                        orientation_changed[1] = orientations[vc];",
+              "",
+              "                        fraction_changed = 0;",
               "\t\t   } catch (e) {",
               "\t\t   \tif (typeof console.log === 'function') {",
               "\t\t\t\tconsole.log(e);",
@@ -520,9 +526,25 @@
         {
           "ROUTE": {
             "@fromNode": "TourTime",
-            "@fromField": "cycleTime_changed",
+            "@fromField": "cycleTime",
             "@toNode": "RandomTourTime",
             "@toField": "set_cycle"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "RandomTourTime",
+            "@fromField": "fraction_changed",
+            "@toNode": "TourOrientation",
+            "@toField": "set_fraction"
+          }
+        },
+        {
+          "ROUTE": {
+            "@fromNode": "RandomTourTime",
+            "@fromField": "fraction_changed",
+            "@toNode": "TourPosition",
+            "@toField": "set_fraction"
           }
         },
         {

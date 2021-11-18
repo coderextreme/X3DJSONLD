@@ -221,6 +221,24 @@ X3DJSON['Script']['Scene']['../data/bubbles.json']['RandomTourTime'] = function(
 		console.log('Problems setting positions '+e);
 		console.error('Problems setting positions',e);
 	}
+	this.set_fraction = function (value) {
+		try {
+			this.proxy.fraction = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
+		} catch (e) {
+			console.log('Problems setting fraction '+e);
+			console.error('Problems setting fraction',e);
+		}
+	};
+	this.fraction_changed = function () {
+		var value = this.fraction;
+		return value;
+	};
+	try {
+		this.fraction = undefined;
+	} catch (e) {
+		console.log('Problems setting fraction '+e);
+		console.error('Problems setting fraction',e);
+	}
 	this.set_position = function (value) {
 		try {
 			this.proxy.position = (typeof value === 'string' && typeof value.indexOf === 'function' && value.indexOf(',') >= 0 ? value.split(/[ ,]+/) : value);
@@ -286,13 +304,13 @@ X3DJSON['Script']['Scene']['../data/bubbles.json']['RandomTourTime'] = function(
                         } while (this.proxy.lastKey === ov);
                         var vc = this.proxy.lastKey;
 
-                        this.proxy.position_changed = new MFVec3f();
-                        this.proxy.position_changed[0] = new SFVec3f(this.proxy.positions[ov].x,this.proxy.positions[ov].y,this.proxy.positions[ov].z);
-                        this.proxy.position_changed[1] = new SFVec3f(this.proxy.positions[vc].x,this.proxy.positions[vc].y,this.proxy.positions[vc].z);
+                        this.proxy.position_changed[0] = this.proxy.positions[ov];
+                        this.proxy.position_changed[1] = this.proxy.positions[vc];
 
-                        this.proxy.orientation_changed = new MFRotation();
-                        this.proxy.orientation_changed[0] = new SFRotation(this.proxy.orientations[ov].x, this.proxy.orientations[ov].y, this.proxy.orientations[ov].z, this.proxy.orientations[ov].w);
-                        this.proxy.orientation_changed[1] = new SFRotation(this.proxy.orientations[vc].x, this.proxy.orientations[vc].y, this.proxy.orientations[vc].z, this.proxy.orientations[vc].w);
+                        this.proxy.orientation_changed[0] = this.proxy.orientations[ov];
+                        this.proxy.orientation_changed[1] = this.proxy.orientations[vc];
+
+                        this.proxy.fraction_changed = 0;
 		   } catch (e) {
 		   	if (typeof console.log === 'function') {
 				console.log(e);
@@ -336,6 +354,50 @@ X3DJSON.nodeUtil('Scene','TourTime').addEventListener('outputchange', function(e
 }, false);
 }
 			X3DJSON['Obj']['Scene']['../data/bubbles.json']['RandomTourTime'].set_cycle(X3DJSON.nodeUtil('Scene','TourTime','cycleTime'), __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/bubbles.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/bubbles.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/bubbles.json']['RandomTourTime'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/bubbles.json']['RandomTourTime'] = {};
+}
+
+if (typeof X3DJSON['Obj']['Scene']['../data/bubbles.json']['RandomTourTime']['ACTION']['fraction'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/bubbles.json']['RandomTourTime']['ACTION']['fraction'] = [];
+}
+X3DJSON['Obj']['Scene']['../data/bubbles.json']['RandomTourTime']['ACTION']['fraction'].push(function(property, value) {
+		if (property === 'fraction') {
+			X3DJSON.nodeUtil('Scene','TourOrientation','fraction',typeof X3DJSON['Obj']['Scene']['../data/bubbles.json']['RandomTourTime'].fraction_changed === "function" ? X3DJSON['Obj']['Scene']['../data/bubbles.json']['RandomTourTime'].fraction_changed() : X3DJSON['Obj']['Scene']['../data/bubbles.json']['RandomTourTime'].fraction, __eventTime);
+		}
+});
+			X3DJSON.nodeUtil('Scene','TourOrientation','fraction',typeof X3DJSON['Obj']['Scene']['../data/bubbles.json']['RandomTourTime'].fraction_changed === "function" ? X3DJSON['Obj']['Scene']['../data/bubbles.json']['RandomTourTime'].fraction_changed() : X3DJSON['Obj']['Scene']['../data/bubbles.json']['RandomTourTime'].fraction, __eventTime);
+if (typeof X3DJSON['Obj'] === 'undefined') {
+X3DJSON['Obj'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene'] === 'undefined') {
+X3DJSON['Obj']['Scene'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/bubbles.json'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/bubbles.json'] = {};
+}
+if (typeof X3DJSON['Obj']['Scene']['../data/bubbles.json']['RandomTourTime'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/bubbles.json']['RandomTourTime'] = {};
+}
+
+if (typeof X3DJSON['Obj']['Scene']['../data/bubbles.json']['RandomTourTime']['ACTION']['fraction'] === 'undefined') {
+X3DJSON['Obj']['Scene']['../data/bubbles.json']['RandomTourTime']['ACTION']['fraction'] = [];
+}
+X3DJSON['Obj']['Scene']['../data/bubbles.json']['RandomTourTime']['ACTION']['fraction'].push(function(property, value) {
+		if (property === 'fraction') {
+			X3DJSON.nodeUtil('Scene','TourPosition','fraction',typeof X3DJSON['Obj']['Scene']['../data/bubbles.json']['RandomTourTime'].fraction_changed === "function" ? X3DJSON['Obj']['Scene']['../data/bubbles.json']['RandomTourTime'].fraction_changed() : X3DJSON['Obj']['Scene']['../data/bubbles.json']['RandomTourTime'].fraction, __eventTime);
+		}
+});
+			X3DJSON.nodeUtil('Scene','TourPosition','fraction',typeof X3DJSON['Obj']['Scene']['../data/bubbles.json']['RandomTourTime'].fraction_changed === "function" ? X3DJSON['Obj']['Scene']['../data/bubbles.json']['RandomTourTime'].fraction_changed() : X3DJSON['Obj']['Scene']['../data/bubbles.json']['RandomTourTime'].fraction, __eventTime);
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -397,5 +459,7 @@ X3DJSON.nodeUtil('Scene','TourPosition').addEventListener('outputchange', functi
 }, false);
 }
 			X3DJSON['Obj']['Scene']['../data/bubbles.json']['RandomTourTime'].set_cycle(X3DJSON.nodeUtil('Scene','TourTime','cycleTime'), __eventTime);
+			X3DJSON.nodeUtil('Scene','TourOrientation','fraction',typeof X3DJSON['Obj']['Scene']['../data/bubbles.json']['RandomTourTime'].fraction_changed === "function" ? X3DJSON['Obj']['Scene']['../data/bubbles.json']['RandomTourTime'].fraction_changed() : X3DJSON['Obj']['Scene']['../data/bubbles.json']['RandomTourTime'].fraction, __eventTime);
+			X3DJSON.nodeUtil('Scene','TourPosition','fraction',typeof X3DJSON['Obj']['Scene']['../data/bubbles.json']['RandomTourTime'].fraction_changed === "function" ? X3DJSON['Obj']['Scene']['../data/bubbles.json']['RandomTourTime'].fraction_changed() : X3DJSON['Obj']['Scene']['../data/bubbles.json']['RandomTourTime'].fraction, __eventTime);
 			X3DJSON.nodeUtil('Scene','TourOrientation','keyValue',typeof X3DJSON['Obj']['Scene']['../data/bubbles.json']['RandomTourTime'].orientation_changed === "function" ? X3DJSON['Obj']['Scene']['../data/bubbles.json']['RandomTourTime'].orientation_changed() : X3DJSON['Obj']['Scene']['../data/bubbles.json']['RandomTourTime'].orientation, __eventTime);
 			X3DJSON.nodeUtil('Scene','TourPosition','keyValue',typeof X3DJSON['Obj']['Scene']['../data/bubbles.json']['RandomTourTime'].position_changed === "function" ? X3DJSON['Obj']['Scene']['../data/bubbles.json']['RandomTourTime'].position_changed() : X3DJSON['Obj']['Scene']['../data/bubbles.json']['RandomTourTime'].position, __eventTime);
