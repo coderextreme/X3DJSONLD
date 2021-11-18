@@ -12,7 +12,7 @@
     <script type="text/javascript" language="javascript" src="Saxonce/Saxonce.nocache.js"></script>
     -->
    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ajv/6.12.6/ajv.min.js"></script>
+    <script type="text/javascript">var exports = {};</script>
     <script type="text/javascript" src="https://unpkg.com/exificient.js@0.0.5/dist/exificient.js"></script>
     <style type="text/css">
     X3DCanvas, X3D, #image {
@@ -166,13 +166,13 @@ Use Namespace: <select id="namespace">
 </tr>
 <tr>
 	<td>
-		Click <a onclick='updateFromJson(undefined, $("#file option:selected").text());encodeJSON(); return false;'>here</a> to load X3D JSON text into JSON X3DOM viewer, convert to STL,  convert to EXI, and convert to XML (and display).<br>
+		Click <a onclick='window.updateFromJson(undefined, $("#file option:selected").text());encodeJSON(); return false;'>here</a> to load X3D JSON text into JSON X3DOM viewer, convert to STL,  convert to EXI, and convert to XML (and display).<br>
 	</td>
 	<td>
 		Click <a onclick='updateFromXml($("#file option:selected").text()); return false;'>here</a> to load X3D XML into X_ITE and XML X3DOM viewer. Converts to JSON.<br>
 	</td>
 	<td>
-		Click <a onclick='decodeEXI4JSON();updateFromJson(undefined, $("#file option:selected").text()); return false;'>here</a> to convert EXI to JSON, load X3D JSON and Display.
+		Click <a onclick='decodeEXI4JSON();window.updateFromJson(undefined, $("#file option:selected").text()); return false;'>here</a> to convert EXI to JSON, load X3D JSON and Display.
 	</td>
 </tr>
 <tr>
@@ -241,12 +241,11 @@ Click <a onclick='updateFromPly($("#file option:selected").text());'>here</a> to
     <script type="text/javascript" src="../node/convertPlyToJson.js"></script>
     <script type="text/javascript" src="../node/convertStlToJson.js"></script>
     <script type="text/javascript" src="../node/convertJsonToStl.js"></script>
-    <script type="text/javascript" src="../node/loadValidate.js"></script>
-    <script type="text/javascript" src="../node/loaderJQuery.js"></script>
+    <script type="module" src="../node/loader-bundle.mjs"></script>
     <script type="text/javascript" src="../node/exi.js"></script>
     <script type="text/javascript">
 	$(document).ready(function() {
-		loadJson('../data/ball.json'); // does load ball.json
+		window.loadJson('../data/ball.json'); // does load ball.json
 	});
     </script>
 </html>

@@ -4,10 +4,7 @@
     <meta charset="utf-8"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="../node/X3DJSONLD.js"></script>
-    <script type="text/javascript" src="../node/loadValidate.js"></script>
-<!--
-    <script type="text/javascript" src="../node/loaderJQuery.js"></script>
--->
+    <script type="module" src="../node/loader-bundle.mjs"></script>
     <script type="text/javascript">
 var Browser = X3DJSONLD.Browser;
 //  X3DJSONLD.setProcessURLs(function() {}); // do modify URLs in GUI
@@ -207,7 +204,7 @@ function loadX3DJS_X_ITE(selector, DOMImplementation, jsobj, path, NS, loadSchem
 
 function convertJsonToXml(json, next, path) {
 	var NS = $('#namespace option:selected').text();
-	loadX3DJS(document.implementation, json, path, NS, loadSchema, doValidate, X3DJSONLD, function(element, xml) {
+	loadX3DJS(document.implementation, json, path, NS, window.loadSchema, window.doValidate, X3DJSONLD, function(element, xml) {
 		next(xml);
 	}); // does not load path
 }
@@ -296,7 +293,7 @@ function appendInline(element, url, xmlDoc, next) {
 			console.error("Perhaps you need to include the PrototypeExpander.js?");
 		}
 		// must validate here because we call an inner method.
-		loadSchema(json, url, doValidate, X3DJSONLD, function() {
+		window.loadSchema(json, url, window.doValidate, X3DJSONLD, function() {
 			X3DJSONLD.ConvertToX3DOM(xmlDoc, json["X3D"]["Scene"], "Scene", element, url);
 			next(element);
 		}, function(e) {
@@ -328,7 +325,7 @@ function loadInline(selector, url, xmlDoc) {
  * returns element loaded
  */
 function appendX3DJSON2Selector(x3dele, selector, json, url, NS, next) {
-	loadX3DJS_X3DOM(x3dele, document.implementation, json, url, NS, loadSchema, doValidate, X3DJSONLD, function(element, xml) {
+	loadX3DJS_X3DOM(x3dele, document.implementation, json, url, NS, window.loadSchema, window.doValidate, X3DJSONLD, function(element, xml) {
 		if (element != null) {
 			X3DJSONLD.elementSetAttribute(element, "xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
 			$(selector).append(element);
@@ -353,7 +350,7 @@ function appendX3DJSON2Selector(x3dele, selector, json, url, NS, next) {
  */
 function replaceX3DJSON(selector, json, url, NS, next) {
 
-	loadX3DJS_X3DOM(selector, document.implementation, json, url, NS, loadSchema, doValidate, X3DJSONLD, function(element, xml) {
+	loadX3DJS_X3DOM(selector, document.implementation, json, url, NS, window.loadSchema, window.doValidate, X3DJSONLD, function(element, xml) {
 		if (element != null) {
 			X3DJSONLD.elementSetAttribute(element, "xmlns:xsd", 'http://www.w3.org/2001/XMLSchema-instance');
 			// We have to do this stuff before the DOM hits X3DOM, or we get a mess.
@@ -395,7 +392,7 @@ function replaceX3DJSON(selector, json, url, NS, next) {
 	});
 }
 
-function updateFromJson(json, path) {
+window.updateFromJson = function updateFromJson(json, path) {
 	try {
 		if (typeof json === 'undefined') {
 				json = JSON.parse($("#json").val());
@@ -553,7 +550,7 @@ function convertXmlToJson(xmlString, path) {
 	try {
 		var doc = null;
 		try {  
-			var domParser = new DOMParser();
+			var domParser = new window.DOMParser();
 			doc = domParser.parseFromString (xmlString, 'application/xml');
 	
 		} catch (e) {
@@ -589,7 +586,7 @@ function convertXmlToJson(xmlString, path) {
 
 		// code for regular browsers
 		if (window.DOMParser) {
-		    var parser = new DOMParser();
+		    var parser = new window.DOMParser();
 		    demo.xml = parser.parseFromString(xmlString, "application/xml");
 		}
 		// code for IE

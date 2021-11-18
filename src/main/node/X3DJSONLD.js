@@ -20,7 +20,7 @@ if (typeof require === 'function' && typeof load !== 'function') {
 	var domParser = new DOMParser();
 } else {
 	var domserializer = new XMLSerializer();
-        var domParser = new DOMParser();
+        var domParser = new window.DOMParser();
 }
 	
 

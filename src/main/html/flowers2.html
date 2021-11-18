@@ -8,7 +8,6 @@
     <script type="text/javascript" src="https://www.x3dom.org/download/dev/x3dom-full.debug.js"></script>
    <link rel="stylesheet" type="text/css" href="https://create3000.github.io/code/x_ite/latest/dist/x_ite.css"/>
 <script type="text/javascript" src="https://create3000.github.io/code/x_ite/latest/dist/x_ite.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ajv/6.12.6/ajv.min.js"></script>
     <style type="text/css">
     X3DCanvas {
         background:#000;
@@ -39,8 +38,7 @@
     <script type="text/javascript" src="../node/X3DJSONLD.js"></script>
     <script type="text/javascript" src="../node/Script.js"></script>
     <script type="text/javascript" src="../node/PrototypeExpander.js"></script>
-    <script type="text/javascript" src="../node/loadValidate.js"></script>
-    <script type="text/javascript" src="../node/loaderJQuery.js"></script>
+    <script type="module" src="../node/loader-bundle.mjs"></script>
     <script type="text/javascript">
 // From: https://developers.google.com/web/fundamentals/getting-started/primers/promises
 function get(url) {
@@ -87,23 +85,23 @@ function getJSON(url) {
 	function load_X3DOM(selector, url) {
 		getJSON(url).then(function(json) {
 			json = protoExpander.prototypeExpander(url, json, "");
-		        replaceX3DJSON(selector, json, url, "", function(element) {
+		        window.replaceX3DJSON(selector, json, url, "", function(element) {
 				if ($('#scripting').is(':checked')) {
 					scripts.loadScripts(json, selector, url);
 				}
 			});
 		}).catch(function(err) {
-			alert("Scene Load failed");
+			alert("Scene Load failed: "+err);
 			console.log(err);
 		});
 	}
 	function load_X_ITE(selector, url) {
 		getJSON(url).then(function(json) {
-			loadX3DJS_X_ITE(selector, document.implementation, json, url, "", loadSchema, doValidate, X3DJSONLD, function(element) {
-				load_X_ITE_DOM(element, selector); // reloads X_ITE element on page.
+			window.loadX3DJS_X_ITE(selector, document.implementation, json, url, "", window.loadSchema, window.doValidate, X3DJSONLD, function(element) {
+				window.load_X_ITE_DOM(element, selector); // reloads X_ITE element on page.
 			});
 		}).catch(function(err) {
-			alert("Scene Load failed");
+			alert("Scene Load failed: "+err);
 			console.log(err);
 		});
 	}
