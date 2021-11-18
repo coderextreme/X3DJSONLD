@@ -3149,7 +3149,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:value-of select="local-name()" disable-output-escaping="yes"/><!-- I18N -->
                     </span>
                 </xsl:when>
-                <xsl:when test="(local-name(..)='X3D' and local-name()='noNamespaceSchemaLocation')">
+                <xsl:when test="(local-name(..)='X3D' and ends-with(local-name(),'noNamespaceSchemaLocation'))">
                     <!-- xmlns:xsd attribute typically not seen, so insert it into pretty-print HTML -->
                     <span title="XML namespace for XML Schema validation">
                         <xsl:if test="not(../@xsd)"> <!-- not(../@xmlns:xsd) and -->

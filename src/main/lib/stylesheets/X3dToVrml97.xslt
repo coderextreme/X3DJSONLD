@@ -6765,8 +6765,10 @@ EXTERNPROTO TransmitterPdu [
       </xsl:choose>
     </xsl:if>
     <xsl:choose>
-      <xsl:when test="local-name()='class'">
-        <xsl:text>### class='</xsl:text>
+      <xsl:when test="(local-name()='class') or (local-name()='id') or (local-name()='style') or (local-name()='xml:lang') or (local-name()='lang')">
+        <xsl:text>### </xsl:text>
+        <xsl:value-of select="local-name()"/>
+        <xsl:text>='</xsl:text>
         <xsl:value-of select="."/>
         <xsl:text>'&#10;</xsl:text>
       </xsl:when>

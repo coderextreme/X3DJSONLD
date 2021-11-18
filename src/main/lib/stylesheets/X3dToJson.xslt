@@ -477,7 +477,7 @@ POSSIBILITY OF SUCH DAMAGE.
                             <xsl:text>children</xsl:text>
                         </xsl:when>
                         <xsl:when test="($parentName = 'Scene')">
-                            <!-- Metadata* nodes are allowed children -->
+                            <!-- Metadata* nodes are allowed as children -->
                             <xsl:text>children</xsl:text>
                         </xsl:when>
                         <xsl:when test="($parentName = 'ProtoBody')">
