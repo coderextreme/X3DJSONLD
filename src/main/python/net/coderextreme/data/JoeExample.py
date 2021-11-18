@@ -76,7 +76,7 @@ AudioClip14 = AudioClip()
 AudioClip14.setDEF("Click")
 AudioClip14.setStopTime(1)
 AudioClip14.setDescription("clicking sound")
-AudioClip14.setUrl(["click.wav"])
+AudioClip14.setUrl(["../resources/chandubabamusic1.wav"])
 
 Sound13.setSource(AudioClip14)
 

@@ -23,7 +23,7 @@
 </Appearance>
 <Sphere containerField="geometry"></Sphere>
 </Shape>
-<Sound maxBack="1000" maxFront="1000" minBack="1000" minFront="1000"><AudioClip containerField="source" DEF="Click" stopTime="1" description="clicking sound" url="&quot;click.wav&quot;"></AudioClip>
+<Sound maxBack="1000" maxFront="1000" minBack="1000" minFront="1000"><AudioClip containerField="source" DEF="Click" stopTime="1" description="clicking sound" url="&quot;../resources/chandubabamusic1.wav&quot;"></AudioClip>
 </Sound>
 <TouchSensor DEF="TS"></TouchSensor>
 <ROUTE fromNode="TS" fromField="isOver" toNode="OpenVault" toField="combinationEntered"></ROUTE>

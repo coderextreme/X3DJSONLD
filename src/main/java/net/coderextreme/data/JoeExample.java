@@ -79,7 +79,7 @@ public class JoeExample {
     }
 protected class MFString0 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"click.wav"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../resources/chandubabamusic1.wav"});
   }
 }
 }

@@ -39,7 +39,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
             .setMaterial((new autoclass.Material()).setDiffuseColor(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0)]))))
           .setGeometry((new autoclass.Sphere())))
         .addChild((new autoclass.Sound()).setMaxBack(java.newFloat(1000)).setMaxFront(java.newFloat(1000)).setMinBack(java.newFloat(1000)).setMinFront(java.newFloat(1000))
-          .setSource((new autoclass.AudioClip()).setDEF("Click").setStopTime(1).setDescription("clicking sound").setUrl(java.newArray("java.lang.String", ["click.wav"]))))
+          .setSource((new autoclass.AudioClip()).setDEF("Click").setStopTime(1).setDescription("clicking sound").setUrl(java.newArray("java.lang.String", ["../resources/chandubabamusic1.wav"]))))
         .addChild((new autoclass.TouchSensor()).setDEF("TS"))
         .addChild((new autoclass.ROUTE()).setFromNode("TS").setFromField("isOver").setToNode("OpenVault").setToField("combinationEntered"))
         .addChild((new autoclass.ROUTE()).setFromNode("TS").setFromField("touchTime").setToNode("OpenVault").setToField("openVault"))

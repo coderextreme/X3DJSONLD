@@ -12,7 +12,7 @@
           },
           {
             "@name":"translated",
-            "@content":"01 November 2021"
+            "@content":"18 November 2021"
           },
           {
             "@name":"generator",
@@ -109,7 +109,7 @@
                     "@DEF":"Click",
                     "@stopTime":1,
                     "@description":"clicking sound",
-                    "@url":["click.wav"]
+                    "@url":["../resources/chandubabamusic1.wav"]
                   }
                 }
             }
