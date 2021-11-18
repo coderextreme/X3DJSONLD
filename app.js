@@ -325,6 +325,7 @@ magic("*.vs", "text/plain");//"x-shader/x-vertex");
 magic("*.fs", "text/plain");//"x-shader/x-fragment");
 magic("*.js", "text/javascript");
 magic("*.mjs", "text/javascript");
+magic("*.js.map", "application/json");
 magic("*.csv", "text/csv");
 magic("/*.xhtml", "application/xhtml+xml");
 magic("/*.html", "text/html");
@@ -385,6 +386,6 @@ https.createServer({
   key: fs.readFileSync('server.key'),
   cert: fs.readFileSync('server.cert')
 }, app)
-.listen(3000, 'localhost', function () {
-  console.log('Example app listening on port 3000! Go to https://localhost:3000/')
+.listen(3000, '192.168.0.43', function () {
+  console.log('Example app listening on port 3000! Go to https://192.168.0.43:3000/')
 })
