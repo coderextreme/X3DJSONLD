@@ -8,7 +8,7 @@ var mapToMethod2 = require('./mapToMethod2.js');
 var fieldTypes = require('./fieldTypes.js');
 var X3DJSONLD = require('./X3DJSONLD.js');
 var Script = require('./Script');
-var loadValidate = require("./loadValidate.js");
+var loadValidate = require("./loadValidate.mjs");
 var xmldom = require('xmldom');
 
 var replaceX3DJSON = loadValidate.replaceX3DJSON;

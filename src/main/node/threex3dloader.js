@@ -1,5 +1,5 @@
 import * as THREE from '../../../node_modules/three/build/three.module.js';
-import Stats from '../../../node_modules/three/examples/jsm/libs/stats.module.js';
+import { Stats } from '../../../node_modules/three/examples/jsm/libs/stats.module.js';
 import { OrbitControls } from '../../../node_modules/three/examples/jsm/controls/OrbitControls.js';
 import { VRMLLoader } from '../../../node_modules/three/examples/jsm/loaders/VRMLLoader.js';
 import { GUI } from '../../../node_modules/three/examples/jsm/libs/dat.gui.module.js';
