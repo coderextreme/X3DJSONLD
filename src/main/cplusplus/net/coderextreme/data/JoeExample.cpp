@@ -87,7 +87,7 @@ CAudioClip* AudioClip14 = (CAudioClip *)(m_pScene.createNode("AudioClip"));
 AudioClip14->setDEF("Click");
 AudioClip14->setStopTime(1);
 AudioClip14->setDescription("clicking sound");
-AudioClip14->setUrl(new CString[1]{"click.wav"}, 1);
+AudioClip14->setUrl(new CString[1]{"../resources/chandubabamusic1.wav"}, 1);
 Sound13->setSource(*AudioClip14);
 
 group->addChildren(*Sound13);
