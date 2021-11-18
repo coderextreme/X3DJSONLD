@@ -10,6 +10,7 @@ module.exports = {
   resolve: {
       fallback: {
         fs: false,
+	child_process: false,
         http: require.resolve("stream-http"),
         https: require.resolve("https-browserify")
       }

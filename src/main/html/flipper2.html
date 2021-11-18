@@ -12,7 +12,7 @@
    <!--
     <script type="text/javascript" language="javascript" src="Saxonce/Saxonce.nocache.js"></script>
     -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ajv/6.12.6/ajv.min.js"></script>
+    <script type="text/javascript">var exports = {};</script>
     <script type="text/javascript" src="https://unpkg.com/exificient.js@0.0.5/dist/exificient.js"></script>
     <style type="text/css">
     X3DCanvas {
@@ -128,7 +128,7 @@ function getJSON(url) {
 
 	function load(url) {
 		getJSON(url).then(function(json) {
-			loadX3D('#x3domjson', json, url);
+			window.loadX3D('#x3domjson', json, url);
 			var suburl = '../data/abox.json';
 			getJSON(suburl).then(function(subjson) {
                                 subjson = protoExpander.prototypeExpander(suburl, subjson, "");
@@ -136,7 +136,7 @@ function getJSON(url) {
 				for (var c in subjson["X3D"]["Scene"]["-children"]) {
 					json["X3D"]["Scene"]["-children"].push(subjson["X3D"]["Scene"]["-children"][c])
 				}
-				loadX3D('#x3domjson', json, url);
+				window.loadX3D('#x3domjson', json, url);
 			}).catch(function(err) {
 				alert("Subscene Load failed");
 				console.log(err);

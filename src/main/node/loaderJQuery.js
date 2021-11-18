@@ -1,4 +1,7 @@
 import { loadSchema, doValidate, loadX3DJS } from "./loadValidate"
+import { convertJsonToStl } from "./convertJsonToStl.mjs";
+
+var PROTOS = require('./PrototypeExpander')
 
 var Browser = X3DJSONLD.Browser;
 //  X3DJSONLD.setProcessURLs(function() {}); // do modify URLs in GUI
@@ -120,7 +123,7 @@ function load_X_ITE_XML(content, selector) {
 	});
 }
 
-function load_X_ITE_DOM(element, selector) {
+window.load_X_ITE_DOM = function load_X_ITE_DOM(element, selector) {
 	X3D(function() {
 		if (typeof X3D.getBrowser !== 'undefined') {
 			var browser = X3D.getBrowser(selector);
@@ -134,7 +137,7 @@ function load_X_ITE_DOM(element, selector) {
 	});
 }
 
-function load_X_ITE_JS(jsobj, selector) {
+window.load_X_ITE_JS = function load_X_ITE_JS(jsobj, selector) {
 	X3D(function() {
 		if (typeof X3D.getBrowser !== 'undefined') {
 			var browser = X3D.getBrowser(selector);
@@ -159,7 +162,7 @@ if (typeof mapToMethod !== 'undefined') {
 	}
 }
 
-function loadX3DJS_X3DOM(selector, DOMImplementation, jsobj, path, NS, loadSchema, doValidate, X3DJSONLD, callback) {
+window.loadX3DJS_X3DOM = function loadX3DJS_X3DOM(selector, DOMImplementation, jsobj, path, NS, loadSchema, doValidate, X3DJSONLD, callback) {
 	X3DJSONLD.x3djsonNS = NS;
 	loadSchema(jsobj, path, doValidate, X3DJSONLD, function() {
 		var doc = document.querySelector(selector);
@@ -174,7 +177,7 @@ function loadX3DJS_X3DOM(selector, DOMImplementation, jsobj, path, NS, loadSchem
 	});
 }
 
-function loadX3DJS_X_ITE(selector, DOMImplementation, jsobj, path, NS, loadSchema, doValidate, X3DJSONLD, callback) {
+window.loadX3DJS_X_ITE = function loadX3DJS_X_ITE(selector, DOMImplementation, jsobj, path, NS, loadSchema, doValidate, X3DJSONLD, callback) {
 	X3DJSONLD.x3djsonNS = NS;
 	loadSchema(jsobj, path, doValidate, X3DJSONLD, function() {
 		X3D(function() {
@@ -207,7 +210,7 @@ function loadProtoX3D(scripts, selector, json, url) {
     if ($('#prototype').is(':checked')) {
 	// Expand Protos
 	try {
-		json = protoExpander.prototypeExpander(url, json, "");
+		json = PROTOS.prototypeExpander(url, json, "");
 	} catch (e) {
 		alert("Problems with Proto Expander "+ e);
 		console.error(e);
@@ -259,7 +262,7 @@ function loadProtoX3D(scripts, selector, json, url) {
     return json;
 }
 
-function loadX3D(selector, json, url) {
+window.loadX3D = function loadX3D(selector, json, url) {
 	let scripts;
         if ($('#scripting').is(':checked')) {
 		scripts = new Scripts();
@@ -274,10 +277,10 @@ function loadX3D(selector, json, url) {
  */
 function appendInline(element, url, xmlDoc, next) {
 	$.getJSON(url, function(json) {
-		if (typeof protoExpander !== 'undefined' && typeof protoExpander.prototypeExpander === 'function') {
+		if (typeof PROTOS !== 'undefined' && typeof PROTOS.prototypeExpander === 'function') {
 			try {
 			    if ($('#prototype').is(':checked')) {
-				json = protoExpander.prototypeExpander(url, json, "");
+				json = PROTOS.prototypeExpander(url, json, "");
 			    }
 			} catch (e) {
 				alert("Problems with ProtoExpander in appendInline "+ e);
@@ -342,7 +345,7 @@ function appendX3DJSON2Selector(x3dele, selector, json, url, NS, next) {
  * next -- to return the element and xmlDoc or null, null
  * returns element loaded and xml
  */
-function replaceX3DJSON(selector, json, url, NS, next) {
+window.replaceX3DJSON = function replaceX3DJSON(selector, json, url, NS, next) {
 
 	loadX3DJS_X3DOM(selector, document.implementation, json, url, NS, loadSchema, doValidate, X3DJSONLD, function(element, xml) {
 		if (element != null) {
@@ -386,7 +389,7 @@ function replaceX3DJSON(selector, json, url, NS, next) {
 	});
 }
 
-function updateFromJson(json, path) {
+window.updateFromJson = function updateFromJson(json, path) {
 	try {
 		if (typeof json === 'undefined') {
 				json = JSON.parse($("#json").val());
@@ -479,7 +482,7 @@ function loadImage(url) {
 */
 	}
 }
-function loadJson(url) {
+window.loadJson = function loadJson(url) {
 	$.getJSON(url, function(json) {
 		updateFromJson(json, url);
 		updateXml(json, url);
@@ -555,7 +558,7 @@ function convertXmlToJson(xmlString, path) {
 	try {
 		var doc = null;
 		try {  
-			var domParser = new DOMParser();
+			var domParser = new window.DOMParser();
 			doc = domParser.parseFromString (xmlString, 'application/xml');
 	
 		} catch (e) {
@@ -591,7 +594,7 @@ function convertXmlToJson(xmlString, path) {
 
 		// code for regular browsers
 		if (window.DOMParser) {
-		    var parser = new DOMParser();
+		    var parser = new window.DOMParser();
 		    demo.xml = parser.parseFromString(xmlString, "application/xml");
 		}
 		// code for IE
