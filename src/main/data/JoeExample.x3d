@@ -70,7 +70,7 @@
 
       <AudioClip DEF='Click' stopTime='1' 
 
-        description='clicking sound' url='"click.wav"'/>
+        description='clicking sound' url='"../resources/chandubabamusic1.wav"'/>
 
     </Sound>
 

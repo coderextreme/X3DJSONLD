@@ -3,19 +3,27 @@
   "version": "9.0.1",
   "private": true,
   "main": "index.js",
+  "devDependencies": {
+    "webpack": "5.64.1",
+    "webpack-cli": "^4.9.1"
+  },
   "dependencies": {
-    "ajv": "*",
-    "ajv-formats": "*",
+    "ajv": "8.8.1",
+    "ajv-formats": "^2.1.1",
     "ajv-i18n": "*",
     "axios": ">=0.21.2",
+    "buffer": "^6.0.3",
     "express": "*",
     "glob": "*",
+    "https-browserify": "*",
     "java": "^0.12.2",
     "jsonlint": "https://github.com/prantlf/jsonlint.git",
     "mutation-observer": "*",
     "node-mkdirp": "*",
     "saxon-js": "*",
+    "stream-http": "*",
     "three": "*",
+    "url": "^0.11.0",
     "xml2js": "^0.4.23",
     "xmldom": "git://github.com/xmldom/xmldom.git#v0.7.0",
     "xmlhttprequest": "*",
@@ -23,9 +31,8 @@
   },
   "scripts": {
     "start": "node app.js",
-    "postinstall": "bash build.sh",
+    "postinstall": "# bash build.sh",
     "buildthreex3dloader": "browserify src/main/node/threeLoadFile.js > src/main/node/bundle.js",
-    "buildajv": "browserify node_modules/ajv/dist/2020.js node_modules/ajv-formats/dist/index.js src/main/node/saxon-js/SaxonJS2.js src/main/node/JavaScriptSerializer.js src/main/node/DOM2JSONSerializer.js src/main/node/Three2Serializer.js src/main/node/X3DJSONLD.js src/main/node/PrototypeExpander.js src/main/node/Script.js src/main/node/mapToMethod.js src/main/node/mapToMethod2.js src/main/node/fieldTypes.js src/main/node/matrix.js src/main/node/convertPlyToJson.js src/main/node/convertStlToJson.js src/main/node/convertJsonToStl.js node_modules/three/build/three.js src/main/node/x3d-parser.js src/main/node/x3d-loader.js > src/main/node/ajvbundle.js"
+    "buildloader": "./node_modules/.bin/webpack"
   }
 }
-

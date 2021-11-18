@@ -1,3 +1,5 @@
+import { loadSchema, doValidate, loadX3DJS } from "./loadValidate"
+
 var Browser = X3DJSONLD.Browser;
 //  X3DJSONLD.setProcessURLs(function() {}); // do modify URLs in GUI
 
@@ -632,4 +634,28 @@ function convertXmlToJson(xmlString, path) {
 	    });
 	    */
     });
+}
+
+window.validator = function validator() {
+	try {
+		var data = $("#json").val();
+		if (data.startsWith("http")) {
+			$.getJSON(data, function(json) {
+				loadSchema(json, "<unknown>", doValidate, X3DJSONLD, function() {
+					alert("Valid or user clicked OK");
+				}, function(e) {
+					alert(e);
+				});
+			});
+		} else {
+			var json = JSON.parse(data);
+			loadSchema(json, "<unknown>", doValidate, X3DJSONLD, function() {
+				alert("Valid or user clicked OK");
+			}, function(e) {
+				alert(e);
+			});
+		}
+	} catch (je) {
+		alert(je);
+	}
 }
