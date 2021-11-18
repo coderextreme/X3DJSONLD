@@ -1,4 +1,4 @@
-import { loadSchema, doValidate, loadX3DJS } from "./loadValidate"
+import { loadSchema, doValidate, loadX3DJS } from "./loadValidate.js"
 import { convertJsonToStl } from "./convertJsonToStl.mjs";
 
 var PROTOS = require('./PrototypeExpander')

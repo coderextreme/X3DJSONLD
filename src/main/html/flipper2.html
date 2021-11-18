@@ -138,11 +138,11 @@ function getJSON(url) {
 				}
 				window.loadX3D('#x3domjson', json, url);
 			}).catch(function(err) {
-				alert("Subscene Load failed");
+				alert("Subscene Load failed: "+err);
 				console.log(err);
 			});
 		}).catch(function(err) {
-			alert("Scene Load failed");
+			alert("Scene Load failed: "+err);
 			console.log(err);
 		});
 	}
