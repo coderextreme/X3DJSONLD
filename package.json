@@ -1,6 +1,6 @@
 {
   "name": "X3DJSONLD",
-  "version": "9.0.1",
+"version": "10.0.0",
   "private": true,
   "main": "index.js",
   "devDependencies": {
