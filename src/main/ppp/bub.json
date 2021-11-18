@@ -2,9 +2,9 @@
   "X3D": {
     "encoding": "UTF-8",
     "@profile": "Immersive",
-    "@version": "3.3",
-    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema": "https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
     "head": {
       "component": [
         {
@@ -55,7 +55,7 @@
         },
         {
           "@name": "translated",
-          "@content": "07 January 2021"
+          "@content": "18 November 2021"
         },
         {
           "@name": "generator",
@@ -309,7 +309,7 @@
                                 "ShaderPart": {
                                   "@url": [
                                     "../shaders/x_ite.vs",
-                                    "https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/x_ite.vs"
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"
                                   ],
                                   "@type": "VERTEX"
                                 }
@@ -317,8 +317,8 @@
                               {
                                 "ShaderPart": {
                                   "@url": [
-                                    "../shaders/pc_bubbles.fs",
-                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"
+                                    "../shaders/x_itebubbles.fs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"
                                   ],
                                   "@type": "FRAGMENT"
                                 }
@@ -620,7 +620,7 @@
                                 "ShaderPart": {
                                   "@url": [
                                     "../shaders/x_ite.vs",
-                                    "https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/x_ite.vs"
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"
                                   ],
                                   "@type": "VERTEX"
                                 }
@@ -628,8 +628,8 @@
                               {
                                 "ShaderPart": {
                                   "@url": [
-                                    "../shaders/pc_bubbles.fs",
-                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"
+                                    "../shaders/x_itebubbles.fs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"
                                   ],
                                   "@type": "FRAGMENT"
                                 }
@@ -931,7 +931,7 @@
                                 "ShaderPart": {
                                   "@url": [
                                     "../shaders/x_ite.vs",
-                                    "https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/x_ite.vs"
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"
                                   ],
                                   "@type": "VERTEX"
                                 }
@@ -939,8 +939,8 @@
                               {
                                 "ShaderPart": {
                                   "@url": [
-                                    "../shaders/pc_bubbles.fs",
-                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"
+                                    "../shaders/x_itebubbles.fs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"
                                   ],
                                   "@type": "FRAGMENT"
                                 }
