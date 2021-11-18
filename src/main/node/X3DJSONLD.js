@@ -1,13 +1,17 @@
 "use strict";
 
+var fs;
+var http;
+var https;
+
 if (typeof document === 'undefined') {
        var document = {};
 }
 
 if (typeof require === 'function' && typeof load !== 'function') {
-	var fs = require("fs");
-	var http = require("http");
-	var https = require("https");
+	fs = require("fs");
+	http = require("http");
+	https = require("https");
 	// TODO this causes node-java 0.12.2 to hang
 	// var runAndSend = require("./runAndSend");
 	var xmldom = require('xmldom');
