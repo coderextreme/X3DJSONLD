@@ -71,7 +71,7 @@ ecmascript:eval (0
                   DEF_ : SFString('Click'),
                   stopTime_ : 1,
                   description_ : SFString('clicking sound'),
-                  url_ : MFString([SFString("click.wav")]))),
+                  url_ : MFString([SFString("../resources/chandubabamusic1.wav")]))),
 
             TouchSensor(
               DEF_ : SFString('TS')),

@@ -83,7 +83,7 @@ AudioClip AudioClip14 = createNode("AudioClip");
 AudioClip14.DEF = "Click";
 AudioClip14.stopTime = 1;
 AudioClip14.description = "clicking sound";
-AudioClip14.url = new MFString(new java.lang.String["click.wav"]);
+AudioClip14.url = new MFString(new java.lang.String["../resources/chandubabamusic1.wav"]);
 Sound13.source = AudioClip14;
 
 children[2] = Sound13;
