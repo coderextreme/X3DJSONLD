@@ -1,0 +1,149 @@
+{
+  "X3D": {
+    "encoding": "UTF-8",
+    "@profile": "Immersive",
+    "@version": "3.3",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-3.3.xsd",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "LOA1_KneelAnimation.x3d"
+        },
+        {
+          "@name": "description",
+          "@content": "Humanoid animation prototype reusable by any Humanoid."
+        },
+        {
+          "@name": "creator",
+          "@content": "Tom Miller"
+        },
+        {
+          "@name": "translator",
+          "@content": "Curt Blais"
+        },
+        {
+          "@name": "translated",
+          "@content": "1 December 2001"
+        },
+        {
+          "@name": "modified",
+          "@content": "23 May 2020"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://www.ballreich.net/vrml/HAnim/nancy_HAnim.wrl"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://www.HAnim.org/Models/HAnim2001/boxman/protos/LOA1_WalkAnimation.wrl"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://www.HAnim.org"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://HAnim.org/Models"
+        },
+        {
+          "@name": "reference",
+          "@content": "http://HAnim.org/Nodes"
+        },
+        {
+          "@name": "subject",
+          "@content": "Nancy kneel Animation HAnim 2001"
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/LOA1_KneelAnimation.x3d"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+        },
+        {
+          "@name": "license",
+          "@content": "../license.html"
+        },
+        {
+          "@name": "translated",
+          "@content": "18 November 2021"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"
+        },
+        {
+          "@name": "reference",
+          "@content": "X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        {
+          "WorldInfo": {
+            "@title": "LOA1_KneelAnimation.x3d"
+          }
+        },
+        {},
+        {
+          "Anchor": {
+            "@description": "InterchangableActorsViaDynamicRouting",
+            "@parameter": [
+              "target=_blank"
+            ],
+            "@url": [
+              "InterchangableActorsViaDynamicRouting.x3d",
+              "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.x3d",
+              "InterchangableActorsViaDynamicRouting.wrl",
+              "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.wrl"
+            ],
+            "-children": [
+              {
+                "Shape": {
+                  "-geometry": {
+                    "Text": {
+                      "@string": [
+                        "LOA1_KneelAnimation.x3d",
+                        "defines a prototype",
+                        "for animating a humanoid.",
+                        "",
+                        "Click this text to see",
+                        "InterchangableActorsViaDynamicRouting example."
+                      ],
+                      "-fontStyle": {
+                        "FontStyle": {
+                          "@justify": [
+                            "MIDDLE",
+                            "MIDDLE"
+                          ],
+                          "@size": 0.8
+                        }
+                      }
+                    }
+                  },
+                  "-appearance": {
+                    "Appearance": {
+                      "-material": {
+                        "Material": {
+                          "@diffuseColor": [
+                            1,
+                            1,
+                            0.2
+                          ]
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

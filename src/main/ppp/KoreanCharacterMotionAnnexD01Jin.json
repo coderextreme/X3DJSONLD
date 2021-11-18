@@ -4,7 +4,7 @@
     "@profile": "Immersive",
     "@version": "4.0",
     "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-4.0.xsd",
-    "JSON schema": "https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
     "head": {
       "component": [
         {
@@ -35,7 +35,7 @@
         },
         {
           "@name": "modified",
-          "@content": "12 July 2020"
+          "@content": "8 March 2021"
         },
         {
           "@name": "description",
@@ -79,7 +79,7 @@
         },
         {
           "@name": "translated",
-          "@content": "07 January 2021"
+          "@content": "18 November 2021"
         },
         {
           "@name": "generator",
@@ -137,14 +137,16 @@
               "MetadataSet": {
                 "@name": "HAnimHumanoid.info",
                 "@reference": "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid",
-                "-metadata": {
-                  "MetadataString": {
-                    "@name": "humanoidVersion",
-                    "@value": [
-                      "2.0"
-                    ]
+                "-value": [
+                  {
+                    "MetadataString": {
+                      "@name": "humanoidVersion",
+                      "@value": [
+                        "2.0"
+                      ]
+                    }
                   }
-                }
+                ]
               }
             },
             "-skeleton": [
@@ -156,6 +158,11 @@
                     0,
                     30.53,
                     -0.7076
+                  ],
+                  "@stiffness": [
+                    0,
+                    0,
+                    0
                   ],
                   "-children": [
                     {
@@ -1503,6 +1510,11 @@
                           35.8,
                           -0.7076
                         ],
+                        "@stiffness": [
+                          0,
+                          0,
+                          0
+                        ],
                         "-children": [
                           {
                             "HAnimSegment": {
@@ -2844,6 +2856,11 @@
                                 4.207,
                                 32.02,
                                 -0.8155
+                              ],
+                              "@stiffness": [
+                                0,
+                                0,
+                                0
                               ],
                               "-children": [
                                 {
@@ -4222,6 +4239,11 @@
                                       17.26,
                                       -0.8639
                                     ],
+                                    "@stiffness": [
+                                      0,
+                                      0,
+                                      0
+                                    ],
                                     "-children": [
                                       {
                                         "HAnimSegment": {
@@ -5103,6 +5125,11 @@
                                             3.854,
                                             3.939,
                                             -0.7038
+                                          ],
+                                          "@stiffness": [
+                                            0,
+                                            0,
+                                            0
                                           ],
                                           "-children": [
                                             {
@@ -6282,12 +6309,17 @@
                                             },
                                             {
                                               "HAnimJoint": {
-                                                "@name": "l_metatarsophalangeal",
-                                                "@DEF": "hanim_l_metatarsophalangeal",
+                                                "@name": "l_metatarsophalangeal_2",
+                                                "@DEF": "hanim_l_metatarsophalangeal_2",
                                                 "@center": [
                                                   3.854,
                                                   3.64,
                                                   0.7402
+                                                ],
+                                                "@stiffness": [
+                                                  0,
+                                                  0,
+                                                  0
                                                 ],
                                                 "-children": [
                                                   {
@@ -7135,6 +7167,11 @@
                                 -4.207,
                                 32.02,
                                 -0.8155
+                              ],
+                              "@stiffness": [
+                                0,
+                                0,
+                                0
                               ],
                               "-children": [
                                 {
@@ -8513,6 +8550,11 @@
                                       17.26,
                                       -0.8639
                                     ],
+                                    "@stiffness": [
+                                      0,
+                                      0,
+                                      0
+                                    ],
                                     "-children": [
                                       {
                                         "HAnimSegment": {
@@ -9394,6 +9436,11 @@
                                             -3.854,
                                             3.939,
                                             -0.7038
+                                          ],
+                                          "@stiffness": [
+                                            0,
+                                            0,
+                                            0
                                           ],
                                           "-children": [
                                             {
@@ -10573,12 +10620,17 @@
                                             },
                                             {
                                               "HAnimJoint": {
-                                                "@name": "r_metatarsophalangeal",
-                                                "@DEF": "hanim_r_metatarsophalangeal",
+                                                "@name": "r_metatarsophalangeal_2",
+                                                "@DEF": "hanim_r_metatarsophalangeal_2",
                                                 "@center": [
                                                   -3.854,
                                                   3.64,
                                                   0.7402
+                                                ],
+                                                "@stiffness": [
+                                                  0,
+                                                  0,
+                                                  0
                                                 ],
                                                 "-children": [
                                                   {
@@ -11426,6 +11478,11 @@
                                 0,
                                 40.23,
                                 -0.8527
+                              ],
+                              "@stiffness": [
+                                0,
+                                0,
+                                0
                               ],
                               "-children": [
                                 {
@@ -15112,6 +15169,11 @@
                                       0,
                                       57.43,
                                       -0.6863
+                                    ],
+                                    "@stiffness": [
+                                      0,
+                                      0,
+                                      0
                                     ],
                                     "-children": [
                                       {
@@ -21764,6 +21826,11 @@
                                       52,
                                       -0.1452
                                     ],
+                                    "@stiffness": [
+                                      0,
+                                      0,
+                                      0
+                                    ],
                                     "-children": [
                                       {
                                         "HAnimSegment": {
@@ -22688,6 +22755,11 @@
                                             40.38,
                                             -0.2502
                                           ],
+                                          "@stiffness": [
+                                            0,
+                                            0,
+                                            0
+                                          ],
                                           "-children": [
                                             {
                                               "HAnimSegment": {
@@ -23277,6 +23349,11 @@
                                                   31.46,
                                                   -0.05849
                                                 ],
+                                                "@stiffness": [
+                                                  0,
+                                                  0,
+                                                  0
+                                                ],
                                                 "-children": [
                                                   {
                                                     "HAnimSegment": {
@@ -23849,6 +23926,11 @@
                                       -5.975,
                                       52,
                                       -0.1452
+                                    ],
+                                    "@stiffness": [
+                                      0,
+                                      0,
+                                      0
                                     ],
                                     "-children": [
                                       {
@@ -24774,6 +24856,11 @@
                                             40.38,
                                             -0.2502
                                           ],
+                                          "@stiffness": [
+                                            0,
+                                            0,
+                                            0
+                                          ],
                                           "-children": [
                                             {
                                               "HAnimSegment": {
@@ -25362,6 +25449,11 @@
                                                   -7.808,
                                                   31.46,
                                                   -0.05849
+                                                ],
+                                                "@stiffness": [
+                                                  0,
+                                                  0,
+                                                  0
                                                 ],
                                                 "-children": [
                                                   {
@@ -25990,12 +26082,12 @@
               },
               {
                 "HAnimJoint": {
-                  "@USE": "hanim_l_metatarsophalangeal"
+                  "@USE": "hanim_l_metatarsophalangeal_2"
                 }
               },
               {
                 "HAnimJoint": {
-                  "@USE": "hanim_r_metatarsophalangeal"
+                  "@USE": "hanim_r_metatarsophalangeal_2"
                 }
               },
               {

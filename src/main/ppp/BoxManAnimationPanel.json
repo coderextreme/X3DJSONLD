@@ -4,11 +4,11 @@
     "@profile": "Immersive",
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema": "https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
     "head": {
       "component": [
         {
-          "@name": "HAnim",
+          "@name": "H-Anim",
           "@level": 1
         }
       ],
@@ -139,7 +139,7 @@
         },
         {
           "@name": "translated",
-          "@content": "07 January 2021"
+          "@content": "18 November 2021"
         },
         {
           "@name": "generator",
@@ -225,6 +225,11 @@
                     1,
                     1,
                     1
+                  ],
+                  "@stiffness": [
+                    0,
+                    0,
+                    0
                   ],
                   "-children": [
                     {
@@ -346,6 +351,11 @@
                           0.5,
                           0.5
                         ],
+                        "@stiffness": [
+                          0,
+                          0,
+                          0
+                        ],
                         "-children": [
                           {
                             "HAnimSegment": {
@@ -440,6 +450,11 @@
                                 1,
                                 1
                               ],
+                              "@stiffness": [
+                                0,
+                                0,
+                                0
+                              ],
                               "-children": [
                                 {
                                   "HAnimSegment": {
@@ -494,6 +509,11 @@
                                       1,
                                       1
                                     ],
+                                    "@stiffness": [
+                                      0,
+                                      0,
+                                      0
+                                    ],
                                     "-children": [
                                       {
                                         "HAnimSegment": {
@@ -547,6 +567,11 @@
                                             1,
                                             1,
                                             1
+                                          ],
+                                          "@stiffness": [
+                                            0,
+                                            0,
+                                            0
                                           ],
                                           "-children": [
                                             {
@@ -698,6 +723,11 @@
                           0.5,
                           0.5
                         ],
+                        "@stiffness": [
+                          0,
+                          0,
+                          0
+                        ],
                         "-children": [
                           {
                             "HAnimSegment": {
@@ -792,6 +822,11 @@
                                 1,
                                 1
                               ],
+                              "@stiffness": [
+                                0,
+                                0,
+                                0
+                              ],
                               "-children": [
                                 {
                                   "HAnimSegment": {
@@ -846,6 +881,11 @@
                                       1,
                                       1
                                     ],
+                                    "@stiffness": [
+                                      0,
+                                      0,
+                                      0
+                                    ],
                                     "-children": [
                                       {
                                         "HAnimSegment": {
@@ -899,6 +939,11 @@
                                             1,
                                             1,
                                             1
+                                          ],
+                                          "@stiffness": [
+                                            0,
+                                            0,
+                                            0
                                           ],
                                           "-children": [
                                             {
@@ -1008,6 +1053,11 @@
                           1,
                           1
                         ],
+                        "@stiffness": [
+                          0,
+                          0,
+                          0
+                        ],
                         "-children": [
                           {
                             "HAnimSegment": {
@@ -1061,6 +1111,11 @@
                                 1,
                                 1,
                                 1
+                              ],
+                              "@stiffness": [
+                                0,
+                                0,
+                                0
                               ],
                               "-children": [
                                 {
@@ -1137,6 +1192,11 @@
                                 1,
                                 1
                               ],
+                              "@stiffness": [
+                                0,
+                                0,
+                                0
+                              ],
                               "-children": [
                                 {
                                   "HAnimSegment": {
@@ -1191,6 +1251,11 @@
                                       1,
                                       1
                                     ],
+                                    "@stiffness": [
+                                      0,
+                                      0,
+                                      0
+                                    ],
                                     "-children": [
                                       {
                                         "HAnimSegment": {
@@ -1244,6 +1309,11 @@
                                             1,
                                             1,
                                             1
+                                          ],
+                                          "@stiffness": [
+                                            0,
+                                            0,
+                                            0
                                           ],
                                           "-children": [
                                             {
@@ -1326,6 +1396,11 @@
                                 1,
                                 1
                               ],
+                              "@stiffness": [
+                                0,
+                                0,
+                                0
+                              ],
                               "-children": [
                                 {
                                   "HAnimSegment": {
@@ -1380,6 +1455,11 @@
                                       1,
                                       1
                                     ],
+                                    "@stiffness": [
+                                      0,
+                                      0,
+                                      0
+                                    ],
                                     "-children": [
                                       {
                                         "HAnimSegment": {
@@ -1433,6 +1513,11 @@
                                             1,
                                             1,
                                             1
+                                          ],
+                                          "@stiffness": [
+                                            0,
+                                            0,
+                                            0
                                           ],
                                           "-children": [
                                             {

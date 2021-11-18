@@ -2,9 +2,9 @@
   "X3D": {
     "encoding": "UTF-8",
     "@profile": "Immersive",
-    "@version": "3.3",
-    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema": "https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
     "head": {
       "component": [
         {
@@ -59,7 +59,7 @@
         },
         {
           "@name": "translated",
-          "@content": "07 January 2021"
+          "@content": "18 November 2021"
         },
         {
           "@name": "generator",
@@ -90,7 +90,7 @@
                 "@DEF": "leftBack",
                 "@url": [
                   "../resources/images/all_probes/beach_cross/beach_left.png",
-                  "https://coderextreme.net/images/all_probes/beach_cross/beach_left.png"
+                  "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"
                 ]
               }
             },
@@ -99,7 +99,7 @@
                 "@DEF": "rightBack",
                 "@url": [
                   "../resources/images/all_probes/beach_cross/beach_right.png",
-                  "https://coderextreme.net/images/all_probes/beach_cross/beach_right.png"
+                  "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"
                 ]
               }
             },
@@ -108,7 +108,7 @@
                 "@DEF": "frontBack",
                 "@url": [
                   "../resources/images/all_probes/beach_cross/beach_front.png",
-                  "https://coderextreme.net/images/all_probes/beach_cross/beach_front.png"
+                  "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"
                 ]
               }
             },
@@ -117,7 +117,7 @@
                 "@DEF": "backBack",
                 "@url": [
                   "../resources/images/all_probes/beach_cross/beach_back.png",
-                  "https://coderextreme.net/images/all_probes/beach_cross/beach_back.png"
+                  "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"
                 ]
               }
             },
@@ -126,7 +126,7 @@
                 "@DEF": "topBack",
                 "@url": [
                   "../resources/images/all_probes/beach_cross/beach_top.png",
-                  "https://coderextreme.net/images/all_probes/beach_cross/beach_top.png"
+                  "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"
                 ]
               }
             },
@@ -135,7 +135,7 @@
                 "@DEF": "bottomBack",
                 "@url": [
                   "../resources/images/all_probes/beach_cross/beach_bottom.png",
-                  "https://coderextreme.net/images/all_probes/beach_cross/beach_bottom.png"
+                  "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"
                 ]
               }
             }
@@ -169,7 +169,7 @@
                               "@DEF": "backShader",
                               "@url": [
                                 "../resources/images/all_probes/beach_cross/beach_back.png",
-                                "https://coderextreme.net/images/all_probes/beach_cross/beach_back.png"
+                                "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"
                               ]
                             }
                           },
@@ -178,7 +178,7 @@
                               "@DEF": "bottomShader",
                               "@url": [
                                 "../resources/images/all_probes/beach_cross/beach_bottom.png",
-                                "https://coderextreme.net/images/all_probes/beach_cross/beach_bottom.png"
+                                "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"
                               ]
                             }
                           },
@@ -187,7 +187,7 @@
                               "@DEF": "frontShader",
                               "@url": [
                                 "../resources/images/all_probes/beach_cross/beach_front.png",
-                                "https://coderextreme.net/images/all_probes/beach_cross/beach_front.png"
+                                "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"
                               ]
                             }
                           },
@@ -196,7 +196,7 @@
                               "@DEF": "leftShader",
                               "@url": [
                                 "../resources/images/all_probes/beach_cross/beach_left.png",
-                                "https://coderextreme.net/images/all_probes/beach_cross/beach_left.png"
+                                "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"
                               ]
                             }
                           },
@@ -205,7 +205,7 @@
                               "@DEF": "rightShader",
                               "@url": [
                                 "../resources/images/all_probes/beach_cross/beach_right.png",
-                                "https://coderextreme.net/images/all_probes/beach_cross/beach_right.png"
+                                "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"
                               ]
                             }
                           },
@@ -214,7 +214,7 @@
                               "@DEF": "topShader",
                               "@url": [
                                 "../resources/images/all_probes/beach_cross/beach_top.png",
-                                "https://coderextreme.net/images/all_probes/beach_cross/beach_top.png"
+                                "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"
                               ]
                             }
                           }
@@ -225,11 +225,6 @@
                           "ComposedShader": {
                             "@DEF": "x3dom",
                             "@language": "GLSL",
-                            "-children": [
-                              {
-                                "#comment": "http://hypertextbook.com/facts/2005/JustinChe.shtml"
-                              }
-                            ],
                             "field": [
                               {
                                 "@name": "chromaticDispertion",
@@ -338,7 +333,7 @@
                                 "ShaderPart": {
                                   "@url": [
                                     "../shaders/x_ite.vs",
-                                    "https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/x_ite.vs"
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"
                                   ],
                                   "@type": "VERTEX"
                                 }
@@ -346,8 +341,8 @@
                               {
                                 "ShaderPart": {
                                   "@url": [
-                                    "../shaders/mix.fs",
-                                    "https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/mix.fs"
+                                    "../shaders/x_itemix.fs",
+                                    "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itemix.fs"
                                   ],
                                   "@type": "FRAGMENT"
                                 }

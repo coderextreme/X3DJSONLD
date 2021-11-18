@@ -4,7 +4,7 @@
     "@profile": "Immersive",
     "@version": "4.0",
     "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-4.0.xsd",
-    "JSON schema": "https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
     "head": {
       "component": [
         {
@@ -31,7 +31,7 @@
         },
         {
           "@name": "modified",
-          "@content": "5 July 2020"
+          "@content": "8 March 2021"
         },
         {
           "@name": "warning",
@@ -103,7 +103,7 @@
         },
         {
           "@name": "translated",
-          "@content": "07 January 2021"
+          "@content": "18 November 2021"
         },
         {
           "@name": "generator",
@@ -126,6 +126,7 @@
           "HAnimHumanoid": {
             "@name": "Foot_Right",
             "@DEF": "hanim_Foot_Right",
+            "@loa": 4,
             "@version": "2.0",
             "-children": [
               {
@@ -136,14 +137,16 @@
               "MetadataSet": {
                 "@name": "HAnimHumanoid.info",
                 "@reference": "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid",
-                "-metadata": {
-                  "MetadataString": {
-                    "@name": "authorName",
-                    "@value": [
-                      "Kwan-Hee YOO, Don Brutzman and Joe Williams"
-                    ]
+                "-value": [
+                  {
+                    "MetadataString": {
+                      "@name": "authorName",
+                      "@value": [
+                        "Kwan-Hee YOO, Don Brutzman and Joe Williams"
+                      ]
+                    }
                   }
-                }
+                ]
               }
             },
             "-skeleton": [
@@ -151,6 +154,11 @@
                 "HAnimJoint": {
                   "@name": "humanoid_root",
                   "@DEF": "hanim_humanoid_root",
+                  "@stiffness": [
+                    0,
+                    0,
+                    0
+                  ],
                   "-children": [
                     {
                       "#comment": "Might consider putting a HAnimSegment here, but that doesn't help with re-use of this foot model"
@@ -160,6 +168,11 @@
                         "@name": "r_talocrural",
                         "@DEF": "hanim_r_talocrural",
                         "@description": "connection joint of foot to leg above",
+                        "@stiffness": [
+                          0,
+                          0,
+                          0
+                        ],
                         "-children": [
                           {
                             "HAnimSegment": {
@@ -201,7 +214,13 @@
                                     "-appearance": {
                                       "Appearance": {
                                         "-material": {
-                                          "Material": {}
+                                          "Material": {
+                                            "@emissiveColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
                                         }
                                       }
                                     },
@@ -233,7 +252,13 @@
                                     "-appearance": {
                                       "Appearance": {
                                         "-material": {
-                                          "Material": {}
+                                          "Material": {
+                                            "@emissiveColor": [
+                                              1,
+                                              1,
+                                              1
+                                            ]
+                                          }
                                         }
                                       }
                                     },
@@ -275,6 +300,11 @@
                                 -0.3,
                                 0
                               ],
+                              "@stiffness": [
+                                0,
+                                0,
+                                0
+                              ],
                               "-children": [
                                 {
                                   "HAnimSegment": {
@@ -302,7 +332,13 @@
                                           "-appearance": {
                                             "Appearance": {
                                               "-material": {
-                                                "Material": {}
+                                                "Material": {
+                                                  "@emissiveColor": [
+                                                    1,
+                                                    1,
+                                                    1
+                                                  ]
+                                                }
                                               }
                                             }
                                           },
@@ -334,7 +370,13 @@
                                           "-appearance": {
                                             "Appearance": {
                                               "-material": {
-                                                "Material": {}
+                                                "Material": {
+                                                  "@emissiveColor": [
+                                                    1,
+                                                    1,
+                                                    1
+                                                  ]
+                                                }
                                               }
                                             }
                                           },
@@ -366,7 +408,13 @@
                                           "-appearance": {
                                             "Appearance": {
                                               "-material": {
-                                                "Material": {}
+                                                "Material": {
+                                                  "@emissiveColor": [
+                                                    1,
+                                                    1,
+                                                    1
+                                                  ]
+                                                }
                                               }
                                             }
                                           },
@@ -408,6 +456,11 @@
                                       -0.45,
                                       0
                                     ],
+                                    "@stiffness": [
+                                      0,
+                                      0,
+                                      0
+                                    ],
                                     "-children": [
                                       {
                                         "HAnimSegment": {
@@ -435,7 +488,13 @@
                                                 "-appearance": {
                                                   "Appearance": {
                                                     "-material": {
-                                                      "Material": {}
+                                                      "Material": {
+                                                        "@emissiveColor": [
+                                                          1,
+                                                          1,
+                                                          1
+                                                        ]
+                                                      }
                                                     }
                                                   }
                                                 },
@@ -474,6 +533,11 @@
                                             -0.6,
                                             0
                                           ],
+                                          "@stiffness": [
+                                            0,
+                                            0,
+                                            0
+                                          ],
                                           "-children": [
                                             {
                                               "HAnimSegment": {
@@ -501,7 +565,13 @@
                                                       "-appearance": {
                                                         "Appearance": {
                                                           "-material": {
-                                                            "Material": {}
+                                                            "Material": {
+                                                              "@emissiveColor": [
+                                                                1,
+                                                                1,
+                                                                1
+                                                              ]
+                                                            }
                                                           }
                                                         }
                                                       },
@@ -540,6 +610,11 @@
                                                   -0.9,
                                                   0
                                                 ],
+                                                "@stiffness": [
+                                                  0,
+                                                  0,
+                                                  0
+                                                ],
                                                 "-children": [
                                                   {
                                                     "HAnimSegment": {
@@ -567,7 +642,13 @@
                                                             "-appearance": {
                                                               "Appearance": {
                                                                 "-material": {
-                                                                  "Material": {}
+                                                                  "Material": {
+                                                                    "@emissiveColor": [
+                                                                      1,
+                                                                      1,
+                                                                      1
+                                                                    ]
+                                                                  }
                                                                 }
                                                               }
                                                             },
@@ -606,6 +687,11 @@
                                                         -1.05,
                                                         0
                                                       ],
+                                                      "@stiffness": [
+                                                        0,
+                                                        0,
+                                                        0
+                                                      ],
                                                       "-children": [
                                                         {
                                                           "HAnimSegment": {
@@ -633,7 +719,13 @@
                                                                   "-appearance": {
                                                                     "Appearance": {
                                                                       "-material": {
-                                                                        "Material": {}
+                                                                        "Material": {
+                                                                          "@emissiveColor": [
+                                                                            1,
+                                                                            1,
+                                                                            1
+                                                                          ]
+                                                                        }
                                                                       }
                                                                     }
                                                                   },
@@ -687,6 +779,11 @@
                                       -0.45,
                                       0
                                     ],
+                                    "@stiffness": [
+                                      0,
+                                      0,
+                                      0
+                                    ],
                                     "-children": [
                                       {
                                         "HAnimSegment": {
@@ -714,7 +811,13 @@
                                                 "-appearance": {
                                                   "Appearance": {
                                                     "-material": {
-                                                      "Material": {}
+                                                      "Material": {
+                                                        "@emissiveColor": [
+                                                          1,
+                                                          1,
+                                                          1
+                                                        ]
+                                                      }
                                                     }
                                                   }
                                                 },
@@ -753,6 +856,11 @@
                                             -0.6,
                                             0
                                           ],
+                                          "@stiffness": [
+                                            0,
+                                            0,
+                                            0
+                                          ],
                                           "-children": [
                                             {
                                               "HAnimSegment": {
@@ -780,7 +888,13 @@
                                                       "-appearance": {
                                                         "Appearance": {
                                                           "-material": {
-                                                            "Material": {}
+                                                            "Material": {
+                                                              "@emissiveColor": [
+                                                                1,
+                                                                1,
+                                                                1
+                                                              ]
+                                                            }
                                                           }
                                                         }
                                                       },
@@ -819,6 +933,11 @@
                                                   -0.9,
                                                   0
                                                 ],
+                                                "@stiffness": [
+                                                  0,
+                                                  0,
+                                                  0
+                                                ],
                                                 "-children": [
                                                   {
                                                     "HAnimSegment": {
@@ -846,7 +965,13 @@
                                                             "-appearance": {
                                                               "Appearance": {
                                                                 "-material": {
-                                                                  "Material": {}
+                                                                  "Material": {
+                                                                    "@emissiveColor": [
+                                                                      1,
+                                                                      1,
+                                                                      1
+                                                                    ]
+                                                                  }
                                                                 }
                                                               }
                                                             },
@@ -885,6 +1010,11 @@
                                                         -1.05,
                                                         0
                                                       ],
+                                                      "@stiffness": [
+                                                        0,
+                                                        0,
+                                                        0
+                                                      ],
                                                       "-children": [
                                                         {
                                                           "HAnimSegment": {
@@ -912,7 +1042,13 @@
                                                                   "-appearance": {
                                                                     "Appearance": {
                                                                       "-material": {
-                                                                        "Material": {}
+                                                                        "Material": {
+                                                                          "@emissiveColor": [
+                                                                            1,
+                                                                            1,
+                                                                            1
+                                                                          ]
+                                                                        }
                                                                       }
                                                                     }
                                                                   },
@@ -951,6 +1087,11 @@
                                                               -1.12,
                                                               0
                                                             ],
+                                                            "@stiffness": [
+                                                              0,
+                                                              0,
+                                                              0
+                                                            ],
                                                             "-children": [
                                                               {
                                                                 "HAnimSegment": {
@@ -978,7 +1119,13 @@
                                                                         "-appearance": {
                                                                           "Appearance": {
                                                                             "-material": {
-                                                                              "Material": {}
+                                                                              "Material": {
+                                                                                "@emissiveColor": [
+                                                                                  1,
+                                                                                  1,
+                                                                                  1
+                                                                                ]
+                                                                              }
                                                                             }
                                                                           }
                                                                         },
@@ -1035,6 +1182,11 @@
                                       -0.4,
                                       0
                                     ],
+                                    "@stiffness": [
+                                      0,
+                                      0,
+                                      0
+                                    ],
                                     "-children": [
                                       {
                                         "HAnimSegment": {
@@ -1062,7 +1214,13 @@
                                                 "-appearance": {
                                                   "Appearance": {
                                                     "-material": {
-                                                      "Material": {}
+                                                      "Material": {
+                                                        "@emissiveColor": [
+                                                          1,
+                                                          1,
+                                                          1
+                                                        ]
+                                                      }
                                                     }
                                                   }
                                                 },
@@ -1101,6 +1259,11 @@
                                             -0.6,
                                             0
                                           ],
+                                          "@stiffness": [
+                                            0,
+                                            0,
+                                            0
+                                          ],
                                           "-children": [
                                             {
                                               "HAnimSegment": {
@@ -1128,7 +1291,13 @@
                                                       "-appearance": {
                                                         "Appearance": {
                                                           "-material": {
-                                                            "Material": {}
+                                                            "Material": {
+                                                              "@emissiveColor": [
+                                                                1,
+                                                                1,
+                                                                1
+                                                              ]
+                                                            }
                                                           }
                                                         }
                                                       },
@@ -1167,6 +1336,11 @@
                                                   -0.9,
                                                   0
                                                 ],
+                                                "@stiffness": [
+                                                  0,
+                                                  0,
+                                                  0
+                                                ],
                                                 "-children": [
                                                   {
                                                     "HAnimSegment": {
@@ -1194,7 +1368,13 @@
                                                             "-appearance": {
                                                               "Appearance": {
                                                                 "-material": {
-                                                                  "Material": {}
+                                                                  "Material": {
+                                                                    "@emissiveColor": [
+                                                                      1,
+                                                                      1,
+                                                                      1
+                                                                    ]
+                                                                  }
                                                                 }
                                                               }
                                                             },
@@ -1233,6 +1413,11 @@
                                                         -1.05,
                                                         0
                                                       ],
+                                                      "@stiffness": [
+                                                        0,
+                                                        0,
+                                                        0
+                                                      ],
                                                       "-children": [
                                                         {
                                                           "HAnimSegment": {
@@ -1260,7 +1445,13 @@
                                                                   "-appearance": {
                                                                     "Appearance": {
                                                                       "-material": {
-                                                                        "Material": {}
+                                                                        "Material": {
+                                                                          "@emissiveColor": [
+                                                                            1,
+                                                                            1,
+                                                                            1
+                                                                          ]
+                                                                        }
                                                                       }
                                                                     }
                                                                   },
@@ -1299,6 +1490,11 @@
                                                               -1.13,
                                                               0
                                                             ],
+                                                            "@stiffness": [
+                                                              0,
+                                                              0,
+                                                              0
+                                                            ],
                                                             "-children": [
                                                               {
                                                                 "HAnimSegment": {
@@ -1326,7 +1522,13 @@
                                                                         "-appearance": {
                                                                           "Appearance": {
                                                                             "-material": {
-                                                                              "Material": {}
+                                                                              "Material": {
+                                                                                "@emissiveColor": [
+                                                                                  1,
+                                                                                  1,
+                                                                                  1
+                                                                                ]
+                                                                              }
                                                                             }
                                                                           }
                                                                         },
@@ -1386,6 +1588,11 @@
                                 0.3,
                                 0
                               ],
+                              "@stiffness": [
+                                0,
+                                0,
+                                0
+                              ],
                               "-children": [
                                 {
                                   "HAnimSegment": {
@@ -1413,7 +1620,13 @@
                                           "-appearance": {
                                             "Appearance": {
                                               "-material": {
-                                                "Material": {}
+                                                "Material": {
+                                                  "@emissiveColor": [
+                                                    1,
+                                                    1,
+                                                    1
+                                                  ]
+                                                }
                                               }
                                             }
                                           },
@@ -1455,6 +1668,11 @@
                                       -0.3,
                                       0
                                     ],
+                                    "@stiffness": [
+                                      0,
+                                      0,
+                                      0
+                                    ],
                                     "-children": [
                                       {
                                         "HAnimSegment": {
@@ -1482,7 +1700,13 @@
                                                 "-appearance": {
                                                   "Appearance": {
                                                     "-material": {
-                                                      "Material": {}
+                                                      "Material": {
+                                                        "@emissiveColor": [
+                                                          1,
+                                                          1,
+                                                          1
+                                                        ]
+                                                      }
                                                     }
                                                   }
                                                 },
@@ -1514,7 +1738,13 @@
                                                 "-appearance": {
                                                   "Appearance": {
                                                     "-material": {
-                                                      "Material": {}
+                                                      "Material": {
+                                                        "@emissiveColor": [
+                                                          1,
+                                                          1,
+                                                          1
+                                                        ]
+                                                      }
                                                     }
                                                   }
                                                 },
@@ -1556,6 +1786,11 @@
                                             -0.58,
                                             0
                                           ],
+                                          "@stiffness": [
+                                            0,
+                                            0,
+                                            0
+                                          ],
                                           "-children": [
                                             {
                                               "HAnimSegment": {
@@ -1583,7 +1818,13 @@
                                                       "-appearance": {
                                                         "Appearance": {
                                                           "-material": {
-                                                            "Material": {}
+                                                            "Material": {
+                                                              "@emissiveColor": [
+                                                                1,
+                                                                1,
+                                                                1
+                                                              ]
+                                                            }
                                                           }
                                                         }
                                                       },
@@ -1622,6 +1863,11 @@
                                                   -0.87,
                                                   0
                                                 ],
+                                                "@stiffness": [
+                                                  0,
+                                                  0,
+                                                  0
+                                                ],
                                                 "-children": [
                                                   {
                                                     "HAnimSegment": {
@@ -1649,7 +1895,13 @@
                                                             "-appearance": {
                                                               "Appearance": {
                                                                 "-material": {
-                                                                  "Material": {}
+                                                                  "Material": {
+                                                                    "@emissiveColor": [
+                                                                      1,
+                                                                      1,
+                                                                      1
+                                                                    ]
+                                                                  }
                                                                 }
                                                               }
                                                             },
@@ -1688,6 +1940,11 @@
                                                         -1,
                                                         0
                                                       ],
+                                                      "@stiffness": [
+                                                        0,
+                                                        0,
+                                                        0
+                                                      ],
                                                       "-children": [
                                                         {
                                                           "HAnimSegment": {
@@ -1715,7 +1972,13 @@
                                                                   "-appearance": {
                                                                     "Appearance": {
                                                                       "-material": {
-                                                                        "Material": {}
+                                                                        "Material": {
+                                                                          "@emissiveColor": [
+                                                                            1,
+                                                                            1,
+                                                                            1
+                                                                          ]
+                                                                        }
                                                                       }
                                                                     }
                                                                   },
@@ -1754,6 +2017,11 @@
                                                               -1.1,
                                                               0
                                                             ],
+                                                            "@stiffness": [
+                                                              0,
+                                                              0,
+                                                              0
+                                                            ],
                                                             "-children": [
                                                               {
                                                                 "HAnimSegment": {
@@ -1781,7 +2049,13 @@
                                                                         "-appearance": {
                                                                           "Appearance": {
                                                                             "-material": {
-                                                                              "Material": {}
+                                                                              "Material": {
+                                                                                "@emissiveColor": [
+                                                                                  1,
+                                                                                  1,
+                                                                                  1
+                                                                                ]
+                                                                              }
                                                                             }
                                                                           }
                                                                         },
@@ -1835,6 +2109,11 @@
                                             -0.52,
                                             0
                                           ],
+                                          "@stiffness": [
+                                            0,
+                                            0,
+                                            0
+                                          ],
                                           "-children": [
                                             {
                                               "HAnimSegment": {
@@ -1862,7 +2141,13 @@
                                                       "-appearance": {
                                                         "Appearance": {
                                                           "-material": {
-                                                            "Material": {}
+                                                            "Material": {
+                                                              "@emissiveColor": [
+                                                                1,
+                                                                1,
+                                                                1
+                                                              ]
+                                                            }
                                                           }
                                                         }
                                                       },
@@ -1901,6 +2186,11 @@
                                                   -0.8,
                                                   0
                                                 ],
+                                                "@stiffness": [
+                                                  0,
+                                                  0,
+                                                  0
+                                                ],
                                                 "-children": [
                                                   {
                                                     "HAnimSegment": {
@@ -1928,7 +2218,13 @@
                                                             "-appearance": {
                                                               "Appearance": {
                                                                 "-material": {
-                                                                  "Material": {}
+                                                                  "Material": {
+                                                                    "@emissiveColor": [
+                                                                      1,
+                                                                      1,
+                                                                      1
+                                                                    ]
+                                                                  }
                                                                 }
                                                               }
                                                             },
@@ -1967,6 +2263,11 @@
                                                         -0.95,
                                                         0
                                                       ],
+                                                      "@stiffness": [
+                                                        0,
+                                                        0,
+                                                        0
+                                                      ],
                                                       "-children": [
                                                         {
                                                           "HAnimSegment": {
@@ -1994,7 +2295,13 @@
                                                                   "-appearance": {
                                                                     "Appearance": {
                                                                       "-material": {
-                                                                        "Material": {}
+                                                                        "Material": {
+                                                                          "@emissiveColor": [
+                                                                            1,
+                                                                            1,
+                                                                            1
+                                                                          ]
+                                                                        }
                                                                       }
                                                                     }
                                                                   },
@@ -2033,6 +2340,11 @@
                                                               -1.05,
                                                               0
                                                             ],
+                                                            "@stiffness": [
+                                                              0,
+                                                              0,
+                                                              0
+                                                            ],
                                                             "-children": [
                                                               {
                                                                 "HAnimSegment": {
@@ -2060,7 +2372,13 @@
                                                                         "-appearance": {
                                                                           "Appearance": {
                                                                             "-material": {
-                                                                              "Material": {}
+                                                                              "Material": {
+                                                                                "@emissiveColor": [
+                                                                                  1,
+                                                                                  1,
+                                                                                  1
+                                                                                ]
+                                                                              }
                                                                             }
                                                                           }
                                                                         },
