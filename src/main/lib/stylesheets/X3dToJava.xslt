@@ -1449,7 +1449,7 @@ POSSIBILITY OF SUCH DAMAGE.
 				<xsl:otherwise>
 					<xsl:choose>
 						<xsl:when test="(local-name() = 'component') or (local-name() = 'unit') or (local-name() = 'meta') or
-										($fieldName = 'trimmingContour')">
+								($fieldName = 'trimmingContour')">
 							<xsl:text>.add</xsl:text>
 						</xsl:when>
 						<xsl:when test="(local-name(..) = 'field') or (local-name(..) = 'fieldValue')">
@@ -2723,6 +2723,11 @@ POSSIBILITY OF SUCH DAMAGE.
 			<xsl:variable name="attributeArray" select="tokenize($normalizedAttribute,' ')"/>
 			
             <xsl:choose>
+                <xsl:when test="(local-name() = 'lang') or (local-name() = 'xml:lang')">
+                        <xsl:text>/* xml:lang='</xsl:text>
+                        <xsl:value-of select="."/><!-- handle this element -->
+                        <xsl:text>' */</xsl:text>
+                </xsl:when>
                 <xsl:when test="(name() = 'value') and contains($attributeType,'FNode')">
                     <!-- no entry for value attribute when type SF/MFNode -->
                     <xsl:choose>
@@ -3779,7 +3784,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     <xsl:text>*** Error: tuple-size not found for type </xsl:text>
                     <xsl:value-of select="$type"/>
                     <xsl:if test="(string-length($type) = 0)">
-                        <xsl:text> (type name incorrect or not found)</xsl:text>
+                        <xsl:text>(type name incorrect or not found)</xsl:text>
                     </xsl:if>
                     <xsl:text>, using tuple-size=1</xsl:text>
                 </xsl:message>
@@ -3886,26 +3891,27 @@ POSSIBILITY OF SUCH DAMAGE.
                           ($attributeName='oversample')         or
                           ($attributeName='reference')          or
                           ($attributeName='type')               or
-					      (starts-with($parentElementName,'field')         and (($attributeName='accessType') or ($attributeName='type')       or ($attributeName='appinfo') or ($attributeName='documentation'))) or
-					      (starts-with($parentElementName,'meta')          and (($attributeName='content')    or ($attributeName='http-equiv') or ($attributeName='scheme')  or ($attributeName='dir') or ($attributeName='lang') or ($attributeName='xml:lang'))) or
+                          ($attributeName='lang')               or ($attributeName='xml:lang') or
+			  (starts-with($parentElementName,'field')         and (($attributeName='accessType') or ($attributeName='type')       or ($attributeName='appinfo') or ($attributeName='documentation'))) or
+			  (starts-with($parentElementName,'meta')          and (($attributeName='content')    or ($attributeName='http-equiv') or ($attributeName='scheme')  or ($attributeName='dir') or ($attributeName='lang') or ($attributeName='xml:lang'))) or
                           (($parentElementName='component')                and not($attributeName='level')) or
                           (($parentElementName='unit')                     and not($attributeName='conversionFactor')) or
-					      ($parentElementName='Appearance'                 and $attributeName='alphaMode') or
-					      ($parentElementName='ArcClose2D'                 and $attributeName='closureType') or
-					      ($parentElementName='BlendedVolumeStyle'         and (starts-with($attributeName,'weightFunction') or ($attributeName='magnificationFilter') or ($attributeName='minificationFilter') or ($attributeName='textureCompression'))) or
+			  ($parentElementName='Appearance'                 and $attributeName='alphaMode') or
+			  ($parentElementName='ArcClose2D'                 and $attributeName='closureType') or
+			  ($parentElementName='BlendedVolumeStyle'         and (starts-with($attributeName,'weightFunction') or ($attributeName='magnificationFilter') or ($attributeName='minificationFilter') or ($attributeName='textureCompression'))) or
                           (ends-with($parentElementName,'Fog')             and $attributeName='fogType') or
                           ($parentElementName='HAnimHumanoid'              and (($attributeName='version') or ($attributeName='skeletalConfiguration'))) or
                           ($parentElementName='HAnimMotion'                and (($attributeName='channels') or ($attributeName='joints'))) or
-					      ($parentElementName='GeneratedCubeMapTexture'    and $attributeName='update') or
-                          (ends-with($parentElementName,'Material')	       and ends-with($attributeName,'Mapping')) or
+			  ($parentElementName='GeneratedCubeMapTexture'    and $attributeName='update') or
+                          (ends-with($parentElementName,'Material')	   and ends-with($attributeName,'Mapping')) or
                           ($parentElementName='ParticleSystem'             and $attributeName='geometryType') or
-						  (ends-with($parentElementName,'PickSensor')      and ($attributeName='intersectionType' or $attributeName='matchCriterion' or $attributeName='sortOrder')) or
-						  ($parentElementName='ProjectionVolumeStyle'      and $attributeName='type') or
-						  ($parentElementName='ShadedVolumeStyle'          and $attributeName='phaseFunction') or
-					      ($parentElementName='ShaderPart'                 and $attributeName='type') or
-					      ($parentElementName='ShaderProgram'              and $attributeName='type') or
-					      ($parentElementName='TextureCoordinateGenerator' and $attributeName='mode') or
-					      ($parentElementName='TextureProperties'          and (starts-with($attributeName,'boundaryMode') or ($attributeName='magnificationFilter') or ($attributeName='minificationFilter') or ($attributeName='textureCompression'))) or
+			  (ends-with($parentElementName,'PickSensor')      and ($attributeName='intersectionType' or $attributeName='matchCriterion' or $attributeName='sortOrder')) or  (ends-with($parentElementName,'PickSensor')      and ($attributeName='intersectionType' or $attributeName='matchCriterion' or $attributeName='sortOrder')) or
+			  ($parentElementName='ProjectionVolumeStyle'      and $attributeName='type') or
+			  ($parentElementName='ShadedVolumeStyle'          and $attributeName='phaseFunction') or
+			  ($parentElementName='ShaderPart'                 and $attributeName='type') or
+			  ($parentElementName='ShaderProgram'              and $attributeName='type') or
+			  ($parentElementName='TextureCoordinateGenerator' and $attributeName='mode') or
+			  ($parentElementName='TextureProperties'          and (starts-with($attributeName,'boundaryMode') or ($attributeName='magnificationFilter') or ($attributeName='minificationFilter') or ($attributeName='textureCompression'))) or
                           ($parentElementName='WorldInfo'                  and $attributeName='title') or
                           ($parentElementName='XvlShell'                   and $attributeName='shellType')">
 			  <xsl:text>SFString</xsl:text>
