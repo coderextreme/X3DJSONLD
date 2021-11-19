@@ -9,6 +9,9 @@ addFormats(ajv)
 
 X3DJSONLD = Object.assign(X3DJSONLD, { processURLs : function(urls) { return urls; }});
 var selectObjectFromJSObj = X3DJSONLD.selectObjectFromJSObj;
+if (typeof window === 'undefined') {
+	window = {};
+}
 window.validate = { };
 
 window.doValidate = function doValidate(json, validated_version, file, X3DJSONLD, success, failure, e) {
@@ -158,9 +161,9 @@ window.replaceX3DJSON = function replaceX3DJSON(parent, json, url, NS, next) {
 
 if (typeof module === 'object')  {
 	module.exports = {
-		replaceX3DJSON: replaceX3DJSON,
-		loadSchema: loadSchema,
-		loadX3DJS: loadX3DJS,
-		doValidate: doValidate
+		replaceX3DJSON: window.replaceX3DJSON,
+		loadSchema: window.loadSchema,
+		loadX3DJS: window.loadX3DJS,
+		doValidate: window.doValidate
 	};
 }
