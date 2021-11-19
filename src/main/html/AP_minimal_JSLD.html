@@ -26,22 +26,19 @@
 
 </body>
     <script type="text/javascript" src="../node/X3DJSONLD.js"></script>
-    <script type="module" src="../node/loader-bundle.mjs"></script>
+    <script type="module" src="../node/loader-bundle.js"></script>
     
     <script type="text/javascript">
 	    
     	var url = "../data/ArchHalf.json";
 	var selector = "#x_itedom";
 
-	function load() {
+	$(document).ready(function() {
 		$.getJSON(url, function (json) {
 			window.loadX3DJS_X_ITE(selector, document.implementation, json, url, "", window.loadSchema, window.doValidate, X3DJSONLD, function(jsDOM) {
 				window.load_X_ITE_DOM(jsDOM, selector);
 			});
 		});
-	}
-	$(document).ready(function() {
-		load();
 	});
     </script>
 </html>

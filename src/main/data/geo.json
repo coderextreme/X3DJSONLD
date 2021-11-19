@@ -116,37 +116,37 @@
                             { "ComposedCubeMapTexture":
                               {
                                 "@DEF":"texture",
-                                "-backTexture":
+                                "-back":
                                   { "ImageTexture":
                                     {
                                       "@url":["../resources/images/bBK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"]
                                     }
                                   },
-                                "-bottomTexture":
+                                "-bottom":
                                   { "ImageTexture":
                                     {
                                       "@url":["../resources/images/bBT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"]
                                     }
                                   },
-                                "-frontTexture":
+                                "-front":
                                   { "ImageTexture":
                                     {
                                       "@url":["../resources/images/bFR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"]
                                     }
                                   },
-                                "-leftTexture":
+                                "-left":
                                   { "ImageTexture":
                                     {
                                       "@url":["../resources/images/bLF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"]
                                     }
                                   },
-                                "-rightTexture":
+                                "-right":
                                   { "ImageTexture":
                                     {
                                       "@url":["../resources/images/bRT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"]
                                     }
                                   },
-                                "-topTexture":
+                                "-top":
                                   { "ImageTexture":
                                     {
                                       "@url":["../resources/images/bTP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"]
