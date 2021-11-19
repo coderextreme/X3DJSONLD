@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="../node/X3DJSONLD.js"></script>
-    <script type="module" src="../node/loader-bundle.mjs"></script>
+    <script type="module" src="../node/loader-bundle.js"></script>
     <script type="text/javascript">
 var Browser = X3DJSONLD.Browser;
 //  X3DJSONLD.setProcessURLs(function() {}); // do modify URLs in GUI
@@ -126,7 +126,7 @@ function load_X_ITE_XML(content, selector) {
 	});
 }
 
-function load_X_ITE_DOM(element, selector) {
+window.load_X_ITE_DOM = function load_X_ITE_DOM(element, selector) {
 	X3D(function() {
 		if (typeof X3D.getBrowser !== 'undefined') {
 			var browser = X3D.getBrowser(selector);
