@@ -86,27 +86,27 @@ ComposedCubeMapTexture20 = ComposedCubeMapTexture()
 ImageTexture21 = ImageTexture()
 ImageTexture21.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"])
 
-ComposedCubeMapTexture20.setBackTexture(ImageTexture21)
+ComposedCubeMapTexture20.setBack(ImageTexture21)
 ImageTexture22 = ImageTexture()
 ImageTexture22.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"])
 
-ComposedCubeMapTexture20.setBottomTexture(ImageTexture22)
+ComposedCubeMapTexture20.setBottom(ImageTexture22)
 ImageTexture23 = ImageTexture()
 ImageTexture23.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"])
 
-ComposedCubeMapTexture20.setFrontTexture(ImageTexture23)
+ComposedCubeMapTexture20.setFront(ImageTexture23)
 ImageTexture24 = ImageTexture()
 ImageTexture24.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"])
 
-ComposedCubeMapTexture20.setLeftTexture(ImageTexture24)
+ComposedCubeMapTexture20.setLeft(ImageTexture24)
 ImageTexture25 = ImageTexture()
 ImageTexture25.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"])
 
-ComposedCubeMapTexture20.setRightTexture(ImageTexture25)
+ComposedCubeMapTexture20.setRight(ImageTexture25)
 ImageTexture26 = ImageTexture()
 ImageTexture26.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"])
 
-ComposedCubeMapTexture20.setTopTexture(ImageTexture26)
+ComposedCubeMapTexture20.setTop(ImageTexture26)
 
 Appearance18.setTexture(ComposedCubeMapTexture20)
 ComposedShader27 = ComposedShader()

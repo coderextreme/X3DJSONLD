@@ -25,6 +25,7 @@ from x3d import *
 newModel=X3D(profile='Interchange',version='3.3',
   head=head(
     children=[
+    component(name='Scripting',level=1),
     meta(name='title',content='sphere.x3d'),
     meta(name='creator',content='John Carlson'),
     meta(name='generator',content='manual'),

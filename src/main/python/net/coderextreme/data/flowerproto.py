@@ -95,27 +95,27 @@ ComposedCubeMapTexture23.setDEF("texture")
 ImageTexture24 = ImageTexture()
 ImageTexture24.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"])
 
-ComposedCubeMapTexture23.setBackTexture(ImageTexture24)
+ComposedCubeMapTexture23.setBack(ImageTexture24)
 ImageTexture25 = ImageTexture()
 ImageTexture25.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"])
 
-ComposedCubeMapTexture23.setBottomTexture(ImageTexture25)
+ComposedCubeMapTexture23.setBottom(ImageTexture25)
 ImageTexture26 = ImageTexture()
 ImageTexture26.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"])
 
-ComposedCubeMapTexture23.setFrontTexture(ImageTexture26)
+ComposedCubeMapTexture23.setFront(ImageTexture26)
 ImageTexture27 = ImageTexture()
 ImageTexture27.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"])
 
-ComposedCubeMapTexture23.setLeftTexture(ImageTexture27)
+ComposedCubeMapTexture23.setLeft(ImageTexture27)
 ImageTexture28 = ImageTexture()
 ImageTexture28.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"])
 
-ComposedCubeMapTexture23.setRightTexture(ImageTexture28)
+ComposedCubeMapTexture23.setRight(ImageTexture28)
 ImageTexture29 = ImageTexture()
 ImageTexture29.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"])
 
-ComposedCubeMapTexture23.setTopTexture(ImageTexture29)
+ComposedCubeMapTexture23.setTop(ImageTexture29)
 
 Appearance21.setTexture(ComposedCubeMapTexture23)
 ComposedShader30 = ComposedShader()
