@@ -107,27 +107,27 @@ ComposedCubeMapTexture24 = ComposedCubeMapTexture()
 ImageTexture25 = ImageTexture()
 ImageTexture25.setUrl(["../resources/images/all_probes/uffizi_cross/uffizi_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_back.png"])
 
-ComposedCubeMapTexture24.setBackTexture(ImageTexture25)
+ComposedCubeMapTexture24.setBack(ImageTexture25)
 ImageTexture26 = ImageTexture()
 ImageTexture26.setUrl(["../resources/images/all_probes/uffizi_cross/uffizi_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_bottom.png"])
 
-ComposedCubeMapTexture24.setBottomTexture(ImageTexture26)
+ComposedCubeMapTexture24.setBottom(ImageTexture26)
 ImageTexture27 = ImageTexture()
 ImageTexture27.setUrl(["../resources/images/all_probes/uffizi_cross/uffizi_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_front.png"])
 
-ComposedCubeMapTexture24.setFrontTexture(ImageTexture27)
+ComposedCubeMapTexture24.setFront(ImageTexture27)
 ImageTexture28 = ImageTexture()
 ImageTexture28.setUrl(["../resources/images/all_probes/uffizi_cross/uffizi_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_left.png"])
 
-ComposedCubeMapTexture24.setLeftTexture(ImageTexture28)
+ComposedCubeMapTexture24.setLeft(ImageTexture28)
 ImageTexture29 = ImageTexture()
 ImageTexture29.setUrl(["../resources/images/all_probes/uffizi_cross/uffizi_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_right.png"])
 
-ComposedCubeMapTexture24.setRightTexture(ImageTexture29)
+ComposedCubeMapTexture24.setRight(ImageTexture29)
 ImageTexture30 = ImageTexture()
 ImageTexture30.setUrl(["../resources/images/all_probes/uffizi_cross/uffizi_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_top.png"])
 
-ComposedCubeMapTexture24.setTopTexture(ImageTexture30)
+ComposedCubeMapTexture24.setTop(ImageTexture30)
 
 Appearance22.setTexture(ComposedCubeMapTexture24)
 ComposedShader31 = ComposedShader()

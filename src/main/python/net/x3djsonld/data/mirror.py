@@ -41,12 +41,12 @@ newModel=X3D(profile='Immersive',version='4.0',
     children=[
     Viewpoint(position=(0,5,100),description='Switch background and images texture'),
     TextureBackground(
-      leftTexture=ImageTexture(DEF='leftBack',url=["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"]),
-      rightTexture=ImageTexture(DEF='rightBack',url=["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"]),
-      frontTexture=ImageTexture(DEF='frontBack',url=["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"]),
-      backTexture=ImageTexture(DEF='backBack',url=["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"]),
-      topTexture=ImageTexture(DEF='topBack',url=["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"]),
-      bottomTexture=ImageTexture(DEF='bottomBack',url=["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"])),
+      left=ImageTexture(DEF='leftBack',url=["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"]),
+      right=ImageTexture(DEF='rightBack',url=["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"]),
+      front=ImageTexture(DEF='frontBack',url=["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"]),
+      back=ImageTexture(DEF='backBack',url=["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"]),
+      top=ImageTexture(DEF='topBack',url=["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"]),
+      bottom=ImageTexture(DEF='bottomBack',url=["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"])),
     Transform(
       children=[
       Shape(
