@@ -4,6 +4,8 @@ import { X3D } from './x3d.mjs';
 import { SFString } from './x3d.mjs';
 import { SFNode } from './x3d.mjs';
 import { head } from './x3d.mjs';
+import { component } from './x3d.mjs';
+import { SFInt32 } from './x3d.mjs';
 import { MFNode } from './x3d.mjs';
 import { meta } from './x3d.mjs';
 import { Scene } from './x3d.mjs';
@@ -19,6 +21,10 @@ var X3D0 =  new X3D({
       version : new SFString("3.3"),
       head : new SFNode(
         new head({
+          component : new SFNode(
+            new component({
+              name : new SFString("Scripting"),
+              level : new SFInt32(1)})),
           meta : new MFNode([
             new meta({
               name : new SFString("title"),

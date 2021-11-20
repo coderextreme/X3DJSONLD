@@ -66,6 +66,7 @@ public class sphere
 	{
   x3dModel = new X3D().setProfile(X3D.PROFILE_INTERCHANGE).setVersion(X3D.VERSION_3_3)
   .setHead(new head()
+    .addComponent(new component().setName("Scripting").setLevel(1))
     .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("sphere.x3d"))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("John Carlson"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("manual"))
