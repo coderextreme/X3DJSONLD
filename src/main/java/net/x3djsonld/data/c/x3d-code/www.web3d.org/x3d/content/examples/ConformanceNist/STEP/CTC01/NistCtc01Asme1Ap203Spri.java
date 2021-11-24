@@ -1,0 +1,2812 @@
+package net.x3djsonld.data;
+
+import org.web3d.x3d.jsail.Core.*;
+import org.web3d.x3d.jsail.CADGeometry.*;
+import org.web3d.x3d.jsail.EnvironmentalEffects.*;
+import org.web3d.x3d.jsail.fields.*;
+import org.web3d.x3d.jsail.Lighting.*;
+import org.web3d.x3d.jsail.Navigation.*;
+import org.web3d.x3d.jsail.Rendering.*;
+import org.web3d.x3d.jsail.Shape.*;
+
+// Javadoc annotations follow, see below for source.
+/**
+ * <p> NIST Product and Manufacturing Information (PMI) Complex Test Case 1. </p>
+ <p> Related links: <a href="../../../../STEP/CTC01/NistCtc01Asme1Ap203Spri.java">NistCtc01Asme1Ap203Spri.java</a> source, <a href="../../../../STEP/CTC01/NistCtc01Asme1Ap203SpriIndex.html" target="_top">NistCtc01Asme1Ap203Spri catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
+        <caption>Scene Meta Information</caption>
+		<tr style="background-color:silver; border-color:silver;">
+			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
+			<td style="text-align:left;   padding:10px 0px;">&nbsp; Document Metadata </td>
+		</tr>
+
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
+			<td> <a href="../../../../STEP/CTC01/NistCtc01Asme1Ap203Spri.x3d">NistCtc01Asme1Ap203Spri.x3d</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> created </i> </td>
+			<td> 8 January 2018 </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
+			<td> 20 October 2019 </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> translator </i> </td>
+			<td> Vince Marchetti </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
+			<td> Robert Lipman </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
+			<td> NIST Product and Manufacturing Information (PMI) Complex Test Case 1. </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
+			<td> <a href="https://pages.nist.gov/CAD-PMI-Testing/models.html" target="_blank">https://pages.nist.gov/CAD-PMI-Testing/models.html</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
+			<td> <a href="https://en.wikipedia.org/wiki/Product_and_manufacturing_information" target="_blank">https://en.wikipedia.org/wiki/Product_and_manufacturing_information</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
+			<td> <a href="https://www.nist.gov/el/systems-integration-division-73400/mbe-pmi-validation-and-conformance-testing-project/download" target="_blank">https://www.nist.gov/el/systems-integration-division-73400/mbe-pmi-validation-and-conformance-testing-project/download</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
+			<td> <a href="https://s3.amazonaws.com/nist-el/mfg_digitalthread/nist_ftc_09_asme1_rd.pdf" target="_blank">https://s3.amazonaws.com/nist-el/mfg_digitalthread/nist_ftc_09_asme1_rd.pdf</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
+			<td> <a href="https://pages.nist.gov/CAD-PMI-Testing/tessellated-part-geometry.html" target="_blank">https://pages.nist.gov/CAD-PMI-Testing/tessellated-part-geometry.html</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
+			<td> <a href="https://pages.nist.gov/CAD-PMI-Testing/graphical-pmi-viewer.html" target="_blank">https://pages.nist.gov/CAD-PMI-Testing/graphical-pmi-viewer.html</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
+			<td> <a href="https://pages.nist.gov/CAD-PMI-Testing/ap209-viewer.html" target="_blank">https://pages.nist.gov/CAD-PMI-Testing/ap209-viewer.html</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
+			<td> <a href="https://www.nist.gov/services-resources/software/step-file-analyzer" target="_blank">https://www.nist.gov/services-resources/software/step-file-analyzer</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
+			<td> <a href="https://www.nist.gov/publications/guide-nist-pmi-cad-models-and-cad-system-pmi-modeling-capability-verification-testing" target="_blank">https://www.nist.gov/publications/guide-nist-pmi-cad-models-and-cad-system-pmi-modeling-capability-verification-testing</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
+			<td> <a href="https://www.nist.gov/el/systems-integration-division-73400/mbe-pmi-validation-and-conformance-testing-project" target="_blank">https://www.nist.gov/el/systems-integration-division-73400/mbe-pmi-validation-and-conformance-testing-project</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
+			<td> STEP AP242 Project, <a href="http://www.ap242.org" target="_blank">http://www.ap242.org</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
+			<td> ASME standard Y14.46-2017: Product Definition for Additive Manufacturing </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
+			<td> <a href="https://www.asme.org/products/codes-standards/y1446-2017-product-definition-additive" target="_blank">https://www.asme.org/products/codes-standards/y1446-2017-product-definition-additive</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
+			<td> STEP to X3D conversion code: kshell/step_x3d/branches/basic_cad </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
+			<td> <a href="https://spri.kshell.com" target="_blank">https://spri.kshell.com</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
+			<td> X3D-Edit 3.3, <a href="https://savage.nps.edu/X3D-Edit" target="_blank">https://savage.nps.edu/X3D-Edit</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> info </i> </td>
+			<td> Correct definition and compliance of this conformance scene is maintained by the Web3D Design Printing and Scanning Working Group, <a href="https://www.web3d.org/working-groups/cad" target="_blank">https://www.web3d.org/working-groups/cad</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/ConformanceNist/STEP/CTC01/NistCtc01Asme1Ap203Spri.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/ConformanceNist/STEP/CTC01/NistCtc01Asme1Ap203Spri.x3d</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
+			<td> <a href="../../../../STEP/CTC01/../../license.html">../../license.html</a> </td>
+		</tr>
+		<tr style="background-color:silver; border-color:silver;">
+			<td style="text-align:center;" colspan="2">  &nbsp; </td>
+		</tr>
+	</table>
+
+	<p>
+		This program uses the
+		<a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>.
+		It has been produced using the 
+		<a href="https://www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">X3dToJava.xslt</a>
+		stylesheet to create Java source code from an <code>.x3d</code> model.
+	</p>
+
+	* @author Robert Lipman
+ */
+
+public class NistCtc01Asme1Ap203Spri
+{
+	/** Default constructor to create this object. */
+	public NistCtc01Asme1Ap203Spri ()
+	{
+	  initialize();
+	}
+
+	/** Create and initialize the X3D model for this object. */
+	public final void initialize()
+	{
+  x3dModel = new X3D().setProfile(X3D.PROFILE_CADINTERCHANGE).setVersion(X3D.VERSION_3_3)
+  .setHead(new head()
+    .addComponent(new component().setName("EnvironmentalEffects").setLevel(1))
+    .addComponent(new component().setName("Navigation").setLevel(1))
+    .addUnit(new unit().setName("millimetre").setCategory("length").setConversionFactor(0.001))
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("NistCtc01Asme1Ap203Spri.x3d"))
+    .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("8 January 2018"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("20 October 2019"))
+    .addMeta(new meta().setName(meta.NAME_TRANSLATOR ).setContent("Vince Marchetti"))
+    .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Robert Lipman"))
+    .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("NIST Product and Manufacturing Information (PMI) Complex Test Case 1."))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://pages.nist.gov/CAD-PMI-Testing/models.html"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://en.wikipedia.org/wiki/Product_and_manufacturing_information"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://www.nist.gov/el/systems-integration-division-73400/mbe-pmi-validation-and-conformance-testing-project/download"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://s3.amazonaws.com/nist-el/mfg_digitalthread/nist_ftc_09_asme1_rd.pdf"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://pages.nist.gov/CAD-PMI-Testing/tessellated-part-geometry.html"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://pages.nist.gov/CAD-PMI-Testing/graphical-pmi-viewer.html"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://pages.nist.gov/CAD-PMI-Testing/ap209-viewer.html"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://www.nist.gov/services-resources/software/step-file-analyzer"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://www.nist.gov/publications/guide-nist-pmi-cad-models-and-cad-system-pmi-modeling-capability-verification-testing"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://www.nist.gov/el/systems-integration-division-73400/mbe-pmi-validation-and-conformance-testing-project"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("STEP AP242 Project, http://www.ap242.org"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("ASME standard Y14.46-2017: Product Definition for Additive Manufacturing"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://www.asme.org/products/codes-standards/y1446-2017-product-definition-additive"))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("STEP to X3D conversion code: kshell/step_x3d/branches/basic_cad"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://spri.kshell.com"))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+    .addMeta(new meta().setName(meta.NAME_INFO       ).setContent("Correct definition and compliance of this conformance scene is maintained by the Web3D Design Printing and Scanning Working Group, https://www.web3d.org/working-groups/cad"))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://www.web3d.org/x3d/content/examples/ConformanceNist/STEP/CTC01/NistCtc01Asme1Ap203Spri.x3d"))
+    .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../../license.html")))
+  .setScene(new Scene()
+    .addChild(new WorldInfo().setTitle("NistCtc01Asme1Ap203Spri.x3d"))
+    .addChild(new Background().setSkyColor(new MFColor(new double[] {0.094100,0.137300,0.498000}))
+      .setMetadata(new MetadataString().setName("color").setReference("http://www.colourlovers.com/color/18237F/tienen_miedo").setValue(new String[] {"tienen miedo"})))
+    .addChild(new DirectionalLight().setColor(1.000000,1.000000,1.000000).setDirection(-3.5355e-01,-3.5355e-01,-8.6603e-01))
+    .addChild(new Viewpoint().setDescription("Oblique view").setCenterOfRotation(0.0000e+00,0.0000e+00,-2.5000e+01).setFieldOfView(1.6628e-01).setOrientation(0.901,0.241,0.361,1.277).setPosition(4.2963e+03,-7.4414e+03,3.5342e+03))
+    .addChild(new Viewpoint().setDescription("Top").setCenterOfRotation(0.0000e+00,0.0000e+00,-2.5000e+01).setFieldOfView(1.6628e-01).setOrientation(1.000,0.000,0.000,0.000).setPosition(0.0000e+00,0.0000e+00,9.2755e+03))
+    .addChild(new Viewpoint().setDescription("Bottom").setCenterOfRotation(0.0000e+00,0.0000e+00,-2.5000e+01).setFieldOfView(1.6628e-01).setOrientation(1.000,0.000,0.000,3.142).setPosition(0.0000e+00,-1.1390e-12,-9.3255e+03))
+    .addChild(new Viewpoint().setDescription("Right side").setCenterOfRotation(0.0000e+00,0.0000e+00,-2.5000e+01).setFieldOfView(1.6628e-01).setOrientation(0.577,0.577,0.577,2.094).setPosition(9.3005e+03,-5.6949e-13,-2.5000e+01))
+    .addChild(new CADPart().setName("nist_ctc_01_asme1").setBboxCenter(0.000000,0.000000,-25.000000).setBboxSize(800.000000,450.000000,150.000000)
+      .setMetadata(new MetadataSet().setName("_collection")
+        .setMetadata(new MetadataString().setName("version").setValue(new String[] {"#293"}))
+        .setMetadata(new MetadataSet().setName("STEP:length_unit")
+          .setMetadata(new MetadataString().setName("name").setValue(new String[] {"millimetre"}))
+          .setMetadata(new MetadataFloat().setName("conversionFactor").setValue(new double[] {0.001}))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#531"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {20,41,42,20,42,43,20,43,44,20,44,45,20,45,46,20,46,47,20,47,48,20,48,49,49,50,31,31,32,33,31,33,34,31,34,35,31,35,36,31,36,37,31,37,38,31,38,39,31,39,40,31,40,41,41,20,21,41,21,22,41,22,23,41,23,24,41,24,25,41,25,26,31,41,26,31,26,27,31,27,28,31,28,29,31,29,30,31,30,0,31,0,1,31,1,2,31,2,3,31,3,4,31,4,5,31,5,6,31,6,7,31,7,8,49,31,8,49,8,9,49,9,10,49,10,11,49,11,12,49,12,13,49,13,14,49,14,15,49,15,16,49,16,17,49,17,18,49,18,19,20,49,19}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_44_point())))
+          .setAppearance(new Appearance("partcolor")
+            .setMaterial(new Material().setAmbientIntensity(0.5).setDiffuseColor(0.651000,0.654900,0.721600)
+              .setMetadata(new MetadataString().setName("color").setReference("http://www.colourlovers.com/color/A6A7B8/cool_silver").setValue(new String[] {"cool silver"}))))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#532"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {20,41,42,42,43,31,31,32,33,31,33,34,31,34,35,31,35,36,31,36,37,31,37,38,31,38,39,31,39,40,31,40,41,41,20,21,41,21,22,41,22,23,41,23,24,41,24,25,41,25,26,31,41,26,31,26,27,31,27,28,31,28,29,31,29,30,31,30,0,31,0,1,31,1,2,31,2,3,31,3,4,31,4,5,31,5,6,31,6,7,31,7,8,42,31,8,42,8,9,42,9,10,42,10,11,42,11,12,42,12,13,42,13,14,42,14,15,42,15,16,42,16,17,42,17,18,42,18,19,20,42,19}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_52_point())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#533"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {9,40,41,9,41,42,9,42,43,9,43,44,44,45,46,44,46,47,44,47,48,44,48,49,44,49,50,50,31,32,50,32,33,33,34,35,33,35,36,33,36,37,33,37,38,33,38,39,33,39,40,33,40,9,33,9,10,33,10,11,33,11,12,33,12,13,33,13,14,33,14,15,33,15,16,33,16,17,33,17,18,33,18,19,33,19,20,50,33,20,50,20,21,50,21,22,50,22,23,50,23,24,50,24,25,50,25,26,50,26,27,44,50,27,44,27,28,44,28,29,44,29,30,44,30,0,44,0,1,44,1,2,44,2,3,44,3,4,44,4,5,44,5,6,44,6,7,44,7,8,9,44,8}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_58_point())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#534"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(getIndexedTriangleSet_6_64_index()).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_64_point())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#535"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-3.2500e+02,2.0000e+01,-5.0000e+01,-2.4500e+02,2.0000e+01,-5.0000e+01,-2.4500e+02,2.0000e+01,0.0000e+00,-3.2500e+02,2.0000e+01,-5.0000e+01,-2.4500e+02,2.0000e+01,0.0000e+00,-3.2500e+02,2.0000e+01,0.0000e+00}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#536"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {1,0,2,3,1,2,3,2,4,5,3,4,5,4,6,7,5,6,7,6,8,9,7,8,9,8,10,11,9,10,11,10,12,13,11,12,13,12,14,15,13,14,15,14,16,17,15,16,17,16,18,19,17,18,19,18,20,21,19,20,21,20,22,23,21,22,23,22,24,25,23,24,25,24,26,27,25,26,27,26,28,29,27,28,29,28,30,31,29,30,31,30,32,33,31,32,33,32,34,35,33,34,35,34,36,37,35,36,37,36,38,39,37,38,39,38,40,41,39,40,41,40,42,43,41,42,43,42,44,45,43,44,45,44,46,47,45,46,47,46,48,49,47,48}).setNormalPerVertex(true).setSolid(false)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_76_point()))
+            .setNormal(new Normal().setVector(getNormal_7_77_vector())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#537"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-2.4500e+02,-2.0000e+01,-5.0000e+01,-3.2500e+02,-2.0000e+01,-5.0000e+01,-3.2500e+02,-2.0000e+01,0.0000e+00,-2.4500e+02,-2.0000e+01,-5.0000e+01,-3.2500e+02,-2.0000e+01,0.0000e+00,-2.4500e+02,-2.0000e+01,0.0000e+00}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#538"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {1,0,2,3,1,2,3,2,4,5,3,4,5,4,6,7,5,6,7,6,8,9,7,8,9,8,10,11,9,10,11,10,12,13,11,12,13,12,14,15,13,14,15,14,16,17,15,16,17,16,18,19,17,18,19,18,20,21,19,20,21,20,22,23,21,22,23,22,24,25,23,24}).setNormalPerVertex(true).setSolid(false)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {2.3500e+02,-1.5000e+01,0.0000e+00,2.3500e+02,-1.5000e+01,-5.0000e+01,2.3509e+02,-1.6305e+01,0.0000e+00,2.3509e+02,-1.6305e+01,-5.0000e+01,2.3534e+02,-1.7588e+01,0.0000e+00,2.3534e+02,-1.7588e+01,-5.0000e+01,2.3576e+02,-1.8827e+01,0.0000e+00,2.3576e+02,-1.8827e+01,-5.0000e+01,2.3634e+02,-2.0000e+01,0.0000e+00,2.3634e+02,-2.0000e+01,-5.0000e+01,2.3707e+02,-2.1088e+01,0.0000e+00,2.3707e+02,-2.1088e+01,-5.0000e+01,2.3793e+02,-2.2071e+01,0.0000e+00,2.3793e+02,-2.2071e+01,-5.0000e+01,2.3891e+02,-2.2934e+01,0.0000e+00,2.3891e+02,-2.2934e+01,-5.0000e+01,2.4000e+02,-2.3660e+01,0.0000e+00,2.4000e+02,-2.3660e+01,-5.0000e+01,2.4117e+02,-2.4239e+01,0.0000e+00,2.4117e+02,-2.4239e+01,-5.0000e+01,2.4241e+02,-2.4659e+01,0.0000e+00,2.4241e+02,-2.4659e+01,-5.0000e+01,2.4369e+02,-2.4914e+01,0.0000e+00,2.4369e+02,-2.4914e+01,-5.0000e+01,2.4500e+02,-2.5000e+01,0.0000e+00,2.4500e+02,-2.5000e+01,-5.0000e+01})))
+            .setNormal(new Normal().setVector(new MFVec3f(new double[] {1.0000e+00,-6.1232e-17,-0.0000e+00,1.0000e+00,-6.1232e-17,-0.0000e+00,9.9144e-01,1.3053e-01,-0.0000e+00,9.9144e-01,1.3053e-01,-0.0000e+00,9.6593e-01,2.5882e-01,-0.0000e+00,9.6593e-01,2.5882e-01,-0.0000e+00,9.2388e-01,3.8268e-01,-0.0000e+00,9.2388e-01,3.8268e-01,-0.0000e+00,8.6603e-01,5.0000e-01,-0.0000e+00,8.6603e-01,5.0000e-01,-0.0000e+00,7.9335e-01,6.0876e-01,-0.0000e+00,7.9335e-01,6.0876e-01,-0.0000e+00,7.0711e-01,7.0711e-01,-0.0000e+00,7.0711e-01,7.0711e-01,-0.0000e+00,6.0876e-01,7.9335e-01,-0.0000e+00,6.0876e-01,7.9335e-01,-0.0000e+00,5.0000e-01,8.6603e-01,-0.0000e+00,5.0000e-01,8.6603e-01,-0.0000e+00,3.8268e-01,9.2388e-01,-0.0000e+00,3.8268e-01,9.2388e-01,-0.0000e+00,2.5882e-01,9.6593e-01,-0.0000e+00,2.5882e-01,9.6593e-01,-0.0000e+00,1.3053e-01,9.9144e-01,-0.0000e+00,1.3053e-01,9.9144e-01,-0.0000e+00,1.2246e-16,1.0000e+00,-0.0000e+00,1.2246e-16,1.0000e+00,-0.0000e+00}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#539"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {2.3500e+02,-1.5000e+01,0.0000e+00,2.3500e+02,-1.5000e+01,-5.0000e+01,2.3500e+02,1.5000e+01,-5.0000e+01,2.3500e+02,-1.5000e+01,0.0000e+00,2.3500e+02,1.5000e+01,-5.0000e+01,2.3500e+02,1.5000e+01,0.0000e+00}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#540"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {1,0,2,3,1,2,3,2,4,5,3,4,5,4,6,7,5,6,7,6,8,9,7,8,9,8,10,11,9,10,11,10,12,13,11,12,13,12,14,15,13,14,15,14,16,17,15,16,17,16,18,19,17,18,19,18,20,21,19,20,21,20,22,23,21,22,23,22,24,25,23,24}).setNormalPerVertex(true).setSolid(false)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {2.4500e+02,2.5000e+01,0.0000e+00,2.4500e+02,2.5000e+01,-5.0000e+01,2.4369e+02,2.4914e+01,0.0000e+00,2.4369e+02,2.4914e+01,-5.0000e+01,2.4241e+02,2.4659e+01,0.0000e+00,2.4241e+02,2.4659e+01,-5.0000e+01,2.4117e+02,2.4239e+01,0.0000e+00,2.4117e+02,2.4239e+01,-5.0000e+01,2.4000e+02,2.3660e+01,0.0000e+00,2.4000e+02,2.3660e+01,-5.0000e+01,2.3891e+02,2.2934e+01,0.0000e+00,2.3891e+02,2.2934e+01,-5.0000e+01,2.3793e+02,2.2071e+01,0.0000e+00,2.3793e+02,2.2071e+01,-5.0000e+01,2.3707e+02,2.1088e+01,0.0000e+00,2.3707e+02,2.1088e+01,-5.0000e+01,2.3634e+02,2.0000e+01,0.0000e+00,2.3634e+02,2.0000e+01,-5.0000e+01,2.3576e+02,1.8827e+01,0.0000e+00,2.3576e+02,1.8827e+01,-5.0000e+01,2.3534e+02,1.7588e+01,0.0000e+00,2.3534e+02,1.7588e+01,-5.0000e+01,2.3509e+02,1.6305e+01,0.0000e+00,2.3509e+02,1.6305e+01,-5.0000e+01,2.3500e+02,1.5000e+01,0.0000e+00,2.3500e+02,1.5000e+01,-5.0000e+01})))
+            .setNormal(new Normal().setVector(new MFVec3f(new double[] {-0.0000e+00,-1.0000e+00,-0.0000e+00,-0.0000e+00,-1.0000e+00,-0.0000e+00,1.3053e-01,-9.9144e-01,-0.0000e+00,1.3053e-01,-9.9144e-01,-0.0000e+00,2.5882e-01,-9.6593e-01,-0.0000e+00,2.5882e-01,-9.6593e-01,-0.0000e+00,3.8268e-01,-9.2388e-01,-0.0000e+00,3.8268e-01,-9.2388e-01,-0.0000e+00,5.0000e-01,-8.6603e-01,-0.0000e+00,5.0000e-01,-8.6603e-01,-0.0000e+00,6.0876e-01,-7.9335e-01,-0.0000e+00,6.0876e-01,-7.9335e-01,-0.0000e+00,7.0711e-01,-7.0711e-01,-0.0000e+00,7.0711e-01,-7.0711e-01,-0.0000e+00,7.9335e-01,-6.0876e-01,-0.0000e+00,7.9335e-01,-6.0876e-01,-0.0000e+00,8.6603e-01,-5.0000e-01,-0.0000e+00,8.6603e-01,-5.0000e-01,-0.0000e+00,9.2388e-01,-3.8268e-01,-0.0000e+00,9.2388e-01,-3.8268e-01,-0.0000e+00,9.6593e-01,-2.5882e-01,-0.0000e+00,9.6593e-01,-2.5882e-01,-0.0000e+00,9.9144e-01,-1.3053e-01,-0.0000e+00,9.9144e-01,-1.3053e-01,-0.0000e+00,1.0000e+00,-6.1232e-17,-0.0000e+00,1.0000e+00,-6.1232e-17,-0.0000e+00}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#541"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {2.4500e+02,2.5000e+01,0.0000e+00,2.4500e+02,2.5000e+01,-5.0000e+01,3.2500e+02,2.5000e+01,-5.0000e+01,2.4500e+02,2.5000e+01,0.0000e+00,3.2500e+02,2.5000e+01,-5.0000e+01,3.2500e+02,2.5000e+01,0.0000e+00}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#542"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {1,0,2,3,1,2,3,2,4,5,3,4,5,4,6,7,5,6,7,6,8,9,7,8,9,8,10,11,9,10,11,10,12,13,11,12,13,12,14,15,13,14,15,14,16,17,15,16,17,16,18,19,17,18,19,18,20,21,19,20,21,20,22,23,21,22,23,22,24,25,23,24}).setNormalPerVertex(true).setSolid(false)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {3.3500e+02,1.5000e+01,0.0000e+00,3.3500e+02,1.5000e+01,-5.0000e+01,3.3491e+02,1.6305e+01,0.0000e+00,3.3491e+02,1.6305e+01,-5.0000e+01,3.3466e+02,1.7588e+01,0.0000e+00,3.3466e+02,1.7588e+01,-5.0000e+01,3.3424e+02,1.8827e+01,0.0000e+00,3.3424e+02,1.8827e+01,-5.0000e+01,3.3366e+02,2.0000e+01,0.0000e+00,3.3366e+02,2.0000e+01,-5.0000e+01,3.3293e+02,2.1088e+01,0.0000e+00,3.3293e+02,2.1088e+01,-5.0000e+01,3.3207e+02,2.2071e+01,0.0000e+00,3.3207e+02,2.2071e+01,-5.0000e+01,3.3109e+02,2.2934e+01,0.0000e+00,3.3109e+02,2.2934e+01,-5.0000e+01,3.3000e+02,2.3660e+01,0.0000e+00,3.3000e+02,2.3660e+01,-5.0000e+01,3.2883e+02,2.4239e+01,0.0000e+00,3.2883e+02,2.4239e+01,-5.0000e+01,3.2759e+02,2.4659e+01,0.0000e+00,3.2759e+02,2.4659e+01,-5.0000e+01,3.2631e+02,2.4914e+01,0.0000e+00,3.2631e+02,2.4914e+01,-5.0000e+01,3.2500e+02,2.5000e+01,0.0000e+00,3.2500e+02,2.5000e+01,-5.0000e+01})))
+            .setNormal(new Normal().setVector(new MFVec3f(new double[] {-1.0000e+00,-6.1232e-17,-0.0000e+00,-1.0000e+00,-6.1232e-17,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-0.0000e+00,-1.0000e+00,-0.0000e+00,-0.0000e+00,-1.0000e+00,-0.0000e+00}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#543"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {3.3500e+02,1.5000e+01,0.0000e+00,3.3500e+02,1.5000e+01,-5.0000e+01,3.3500e+02,-1.5000e+01,-5.0000e+01,3.3500e+02,1.5000e+01,0.0000e+00,3.3500e+02,-1.5000e+01,-5.0000e+01,3.3500e+02,-1.5000e+01,0.0000e+00}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#544"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {1,0,2,3,1,2,3,2,4,5,3,4,5,4,6,7,5,6,7,6,8,9,7,8,9,8,10,11,9,10,11,10,12,13,11,12,13,12,14,15,13,14,15,14,16,17,15,16,17,16,18,19,17,18,19,18,20,21,19,20,21,20,22,23,21,22,23,22,24,25,23,24}).setNormalPerVertex(true).setSolid(false)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {3.2500e+02,-2.5000e+01,0.0000e+00,3.2500e+02,-2.5000e+01,-5.0000e+01,3.2631e+02,-2.4914e+01,0.0000e+00,3.2631e+02,-2.4914e+01,-5.0000e+01,3.2759e+02,-2.4659e+01,0.0000e+00,3.2759e+02,-2.4659e+01,-5.0000e+01,3.2883e+02,-2.4239e+01,0.0000e+00,3.2883e+02,-2.4239e+01,-5.0000e+01,3.3000e+02,-2.3660e+01,0.0000e+00,3.3000e+02,-2.3660e+01,-5.0000e+01,3.3109e+02,-2.2934e+01,0.0000e+00,3.3109e+02,-2.2934e+01,-5.0000e+01,3.3207e+02,-2.2071e+01,0.0000e+00,3.3207e+02,-2.2071e+01,-5.0000e+01,3.3293e+02,-2.1088e+01,0.0000e+00,3.3293e+02,-2.1088e+01,-5.0000e+01,3.3366e+02,-2.0000e+01,0.0000e+00,3.3366e+02,-2.0000e+01,-5.0000e+01,3.3424e+02,-1.8827e+01,0.0000e+00,3.3424e+02,-1.8827e+01,-5.0000e+01,3.3466e+02,-1.7588e+01,0.0000e+00,3.3466e+02,-1.7588e+01,-5.0000e+01,3.3491e+02,-1.6305e+01,0.0000e+00,3.3491e+02,-1.6305e+01,-5.0000e+01,3.3500e+02,-1.5000e+01,0.0000e+00,3.3500e+02,-1.5000e+01,-5.0000e+01})))
+            .setNormal(new Normal().setVector(new MFVec3f(new double[] {1.2246e-16,1.0000e+00,-0.0000e+00,1.2246e-16,1.0000e+00,-0.0000e+00,-1.3053e-01,9.9144e-01,-0.0000e+00,-1.3053e-01,9.9144e-01,-0.0000e+00,-2.5882e-01,9.6593e-01,-0.0000e+00,-2.5882e-01,9.6593e-01,-0.0000e+00,-3.8268e-01,9.2388e-01,-0.0000e+00,-3.8268e-01,9.2388e-01,-0.0000e+00,-5.0000e-01,8.6603e-01,-0.0000e+00,-5.0000e-01,8.6603e-01,-0.0000e+00,-6.0876e-01,7.9335e-01,-0.0000e+00,-6.0876e-01,7.9335e-01,-0.0000e+00,-7.0711e-01,7.0711e-01,-0.0000e+00,-7.0711e-01,7.0711e-01,-0.0000e+00,-7.9335e-01,6.0876e-01,-0.0000e+00,-7.9335e-01,6.0876e-01,-0.0000e+00,-8.6603e-01,5.0000e-01,-0.0000e+00,-8.6603e-01,5.0000e-01,-0.0000e+00,-9.2388e-01,3.8268e-01,-0.0000e+00,-9.2388e-01,3.8268e-01,-0.0000e+00,-9.6593e-01,2.5882e-01,-0.0000e+00,-9.6593e-01,2.5882e-01,-0.0000e+00,-9.9144e-01,1.3053e-01,-0.0000e+00,-9.9144e-01,1.3053e-01,-0.0000e+00,-1.0000e+00,1.8370e-16,-0.0000e+00,-1.0000e+00,1.8370e-16,-0.0000e+00}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#545"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {65,51,52,65,52,53,65,53,54,65,54,55,65,55,56,65,56,57,65,57,58,37,38,22,36,37,22,35,36,22,34,35,22,33,34,22,32,33,22,31,32,22,31,22,23,31,23,24,31,24,25,61,31,25,61,25,26,61,26,27,61,27,28,61,28,29,61,29,30,21,22,38,20,21,38,19,20,38,18,19,38,17,18,38,16,17,38,15,16,38,15,38,39,15,39,40,15,40,41,15,41,42,15,42,43,15,43,44,15,44,45,50,51,65,49,50,65,48,49,65,47,48,65,46,47,65,14,46,65,14,65,62,13,14,62,12,13,62,11,12,62,10,11,62,9,10,62,8,9,62,7,8,62,6,7,62,5,6,62,4,5,62,3,4,62,2,3,62,2,62,63,1,2,63,0,1,63,30,0,63,61,30,63,60,61,63,60,63,64,59,60,64,58,59,64,65,58,64}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_135_point())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#546"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {8.1132e+01,-1.2500e+02,-5.0000e+01,1.0134e+02,-9.0000e+01,-5.0000e+01,1.0134e+02,-9.0000e+01,5.6843e-14,8.1132e+01,-1.2500e+02,-5.0000e+01,1.0134e+02,-9.0000e+01,5.6843e-14,8.1132e+01,-1.2500e+02,5.6843e-14}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#547"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {1,0,2,3,1,2,3,2,4,5,3,4,5,4,6,7,5,6,7,6,8,9,7,8,9,8,10,11,9,10,11,10,12,13,11,12,13,12,14,15,13,14,15,14,16,17,15,16,17,16,18,19,17,18,19,18,20,21,19,20,21,20,22,23,21,22,23,22,24,25,23,24,25,24,26,27,25,26,27,26,28,29,27,28,29,28,30,31,29,30,31,30,32,33,31,32}).setNormalPerVertex(true).setSolid(false)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_147_point()))
+            .setNormal(new Normal().setVector(getNormal_7_148_vector())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#548"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {1.1866e+02,-9.0000e+01,-5.0000e+01,1.3887e+02,-1.2500e+02,-5.0000e+01,1.3887e+02,-1.2500e+02,5.6843e-14,1.1866e+02,-9.0000e+01,-5.0000e+01,1.3887e+02,-1.2500e+02,5.6843e-14,1.1866e+02,-9.0000e+01,5.6843e-14}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#549"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {1.3887e+02,-1.2500e+02,-5.0000e+01,2.2500e+02,-1.2500e+02,-5.0000e+01,2.2500e+02,-1.2500e+02,0.0000e+00,1.3887e+02,-1.2500e+02,-5.0000e+01,2.2500e+02,-1.2500e+02,0.0000e+00,1.3887e+02,-1.2500e+02,0.0000e+00}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#550"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {4,3,7,6,5,4,6,4,7,8,11,14,13,12,8,13,8,14,15,18,21,20,19,15,20,15,21,22,25,29,27,26,22,28,27,22,28,22,29,30,33,36,35,34,30,35,30,36,37,40,44,42,41,37,43,42,37,43,37,44,45,48,52,50,49,45,51,50,45,51,45,52,57,53,56,58,57,56,59,58,56,64,60,63,65,64,63,70,66,69,71,70,69,76,72,75,77,76,75,82,78,84,83,82,84}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_166_point()))
+            .setNormal(new Normal().setVector(getNormal_7_167_vector())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#551"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5,6,7,8,9,10,11}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {2.5000e+02,-1.5000e+02,-6.0000e+01,2.5000e+02,-1.2500e+02,-6.0000e+01,2.5000e+02,-1.2500e+02,-1.0000e+02,2.5000e+02,-1.5000e+02,-6.0000e+01,2.5000e+02,-1.2500e+02,-1.0000e+02,2.5000e+02,-1.7500e+02,-1.0000e+02,2.5000e+02,-1.5000e+02,-6.0000e+01,2.5000e+02,-1.7500e+02,-1.0000e+02,2.5000e+02,-1.7500e+02,0.0000e+00,2.5000e+02,-1.5000e+02,-6.0000e+01,2.5000e+02,-1.7500e+02,0.0000e+00,2.5000e+02,-1.5000e+02,0.0000e+00}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#552"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {2,0,1,2,1,3,4,2,3,4,3,5,6,4,5,6,5,7,8,6,7,8,7,9,10,8,9,10,9,11,12,10,11,12,11,13,14,12,13,14,13,15,16,14,15,16,15,17,18,16,17,18,17,19,20,18,19,20,19,21,22,20,21,22,21,23,24,22,23,24,23,25}).setNormalPerVertex(true).setSolid(false)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {2.5000e+02,-1.7500e+02,0.0000e+00,2.5000e+02,-1.7500e+02,-1.0000e+02,2.5043e+02,-1.8153e+02,0.0000e+00,2.5043e+02,-1.8153e+02,-1.0000e+02,2.5170e+02,-1.8794e+02,0.0000e+00,2.5170e+02,-1.8794e+02,-1.0000e+02,2.5381e+02,-1.9413e+02,0.0000e+00,2.5381e+02,-1.9413e+02,-1.0000e+02,2.5670e+02,-2.0000e+02,0.0000e+00,2.5670e+02,-2.0000e+02,-1.0000e+02,2.6033e+02,-2.0544e+02,0.0000e+00,2.6033e+02,-2.0544e+02,-1.0000e+02,2.6464e+02,-2.1036e+02,0.0000e+00,2.6464e+02,-2.1036e+02,-1.0000e+02,2.6956e+02,-2.1467e+02,0.0000e+00,2.6956e+02,-2.1467e+02,-1.0000e+02,2.7500e+02,-2.1830e+02,0.0000e+00,2.7500e+02,-2.1830e+02,-1.0000e+02,2.8087e+02,-2.2119e+02,0.0000e+00,2.8087e+02,-2.2119e+02,-1.0000e+02,2.8706e+02,-2.2330e+02,0.0000e+00,2.8706e+02,-2.2330e+02,-1.0000e+02,2.9347e+02,-2.2457e+02,0.0000e+00,2.9347e+02,-2.2457e+02,-1.0000e+02,3.0000e+02,-2.2500e+02,0.0000e+00,3.0000e+02,-2.2500e+02,-1.0000e+02})))
+            .setNormal(new Normal().setVector(new MFVec3f(new double[] {-1.0000e+00,6.1232e-17,0.0000e+00,-1.0000e+00,6.1232e-17,0.0000e+00,-9.9144e-01,-1.3053e-01,0.0000e+00,-9.9144e-01,-1.3053e-01,0.0000e+00,-9.6593e-01,-2.5882e-01,0.0000e+00,-9.6593e-01,-2.5882e-01,0.0000e+00,-9.2388e-01,-3.8268e-01,0.0000e+00,-9.2388e-01,-3.8268e-01,0.0000e+00,-8.6603e-01,-5.0000e-01,0.0000e+00,-8.6603e-01,-5.0000e-01,0.0000e+00,-7.9335e-01,-6.0876e-01,0.0000e+00,-7.9335e-01,-6.0876e-01,0.0000e+00,-7.0711e-01,-7.0711e-01,0.0000e+00,-7.0711e-01,-7.0711e-01,0.0000e+00,-6.0876e-01,-7.9335e-01,0.0000e+00,-6.0876e-01,-7.9335e-01,0.0000e+00,-5.0000e-01,-8.6603e-01,0.0000e+00,-5.0000e-01,-8.6603e-01,0.0000e+00,-3.8268e-01,-9.2388e-01,0.0000e+00,-3.8268e-01,-9.2388e-01,0.0000e+00,-2.5882e-01,-9.6593e-01,0.0000e+00,-2.5882e-01,-9.6593e-01,0.0000e+00,-1.3053e-01,-9.9144e-01,0.0000e+00,-1.3053e-01,-9.9144e-01,0.0000e+00,-1.2246e-16,-1.0000e+00,0.0000e+00,-1.2246e-16,-1.0000e+00,0.0000e+00}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#553"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {3.5000e+02,-2.2500e+02,0.0000e+00,3.0000e+02,-2.2500e+02,0.0000e+00,3.0000e+02,-2.2500e+02,-1.0000e+02,3.5000e+02,-2.2500e+02,0.0000e+00,3.0000e+02,-2.2500e+02,-1.0000e+02,3.5000e+02,-2.2500e+02,-1.0000e+02}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#554"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {2,0,1,2,1,3,4,2,3,4,3,5,6,4,5,6,5,7,8,6,7,8,7,9,10,8,9,10,9,11,12,10,11,12,11,13,14,12,13,14,13,15,16,14,15,16,15,17,18,16,17,18,17,19,20,18,19,20,19,21,22,20,21,22,21,23,24,22,23,24,23,25}).setNormalPerVertex(true).setSolid(false)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {3.5000e+02,-2.2500e+02,0.0000e+00,3.5000e+02,-2.2500e+02,-1.0000e+02,3.5653e+02,-2.2457e+02,0.0000e+00,3.5653e+02,-2.2457e+02,-1.0000e+02,3.6294e+02,-2.2330e+02,0.0000e+00,3.6294e+02,-2.2330e+02,-1.0000e+02,3.6913e+02,-2.2119e+02,0.0000e+00,3.6913e+02,-2.2119e+02,-1.0000e+02,3.7500e+02,-2.1830e+02,0.0000e+00,3.7500e+02,-2.1830e+02,-1.0000e+02,3.8044e+02,-2.1467e+02,0.0000e+00,3.8044e+02,-2.1467e+02,-1.0000e+02,3.8536e+02,-2.1036e+02,0.0000e+00,3.8536e+02,-2.1036e+02,-1.0000e+02,3.8967e+02,-2.0544e+02,0.0000e+00,3.8967e+02,-2.0544e+02,-1.0000e+02,3.9330e+02,-2.0000e+02,0.0000e+00,3.9330e+02,-2.0000e+02,-1.0000e+02,3.9619e+02,-1.9413e+02,0.0000e+00,3.9619e+02,-1.9413e+02,-1.0000e+02,3.9830e+02,-1.8794e+02,0.0000e+00,3.9830e+02,-1.8794e+02,-1.0000e+02,3.9957e+02,-1.8153e+02,0.0000e+00,3.9957e+02,-1.8153e+02,-1.0000e+02,4.0000e+02,-1.7500e+02,0.0000e+00,4.0000e+02,-1.7500e+02,-1.0000e+02})))
+            .setNormal(new Normal().setVector(new MFVec3f(new double[] {-1.2246e-16,-1.0000e+00,0.0000e+00,-1.2246e-16,-1.0000e+00,0.0000e+00,1.3053e-01,-9.9144e-01,0.0000e+00,1.3053e-01,-9.9144e-01,0.0000e+00,2.5882e-01,-9.6593e-01,0.0000e+00,2.5882e-01,-9.6593e-01,0.0000e+00,3.8268e-01,-9.2388e-01,0.0000e+00,3.8268e-01,-9.2388e-01,0.0000e+00,5.0000e-01,-8.6603e-01,0.0000e+00,5.0000e-01,-8.6603e-01,0.0000e+00,6.0876e-01,-7.9335e-01,0.0000e+00,6.0876e-01,-7.9335e-01,0.0000e+00,7.0711e-01,-7.0711e-01,0.0000e+00,7.0711e-01,-7.0711e-01,0.0000e+00,7.9335e-01,-6.0876e-01,0.0000e+00,7.9335e-01,-6.0876e-01,0.0000e+00,8.6603e-01,-5.0000e-01,0.0000e+00,8.6603e-01,-5.0000e-01,0.0000e+00,9.2388e-01,-3.8268e-01,0.0000e+00,9.2388e-01,-3.8268e-01,0.0000e+00,9.6593e-01,-2.5882e-01,0.0000e+00,9.6593e-01,-2.5882e-01,0.0000e+00,9.9144e-01,-1.3053e-01,0.0000e+00,9.9144e-01,-1.3053e-01,0.0000e+00,1.0000e+00,-1.8370e-16,0.0000e+00,1.0000e+00,-1.8370e-16,0.0000e+00}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#555"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(getIndexedTriangleSet_6_199_index()).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_199_point())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#556"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {3.5000e+02,2.2500e+02,1.4211e-14,4.0000e+02,1.7500e+02,1.4211e-14,4.0000e+02,1.7500e+02,-1.0000e+02,3.5000e+02,2.2500e+02,1.4211e-14,4.0000e+02,1.7500e+02,-1.0000e+02,3.5000e+02,2.2500e+02,-1.0000e+02}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#557"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {3.0000e+02,2.2500e+02,0.0000e+00,3.5000e+02,2.2500e+02,0.0000e+00,3.5000e+02,2.2500e+02,-1.0000e+02,3.0000e+02,2.2500e+02,0.0000e+00,3.5000e+02,2.2500e+02,-1.0000e+02,3.0000e+02,2.2500e+02,-1.0000e+02}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#558"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {2,0,1,2,1,3,4,2,3,4,3,5,6,4,5,6,5,7,8,6,7,8,7,9,10,8,9,10,9,11,12,10,11,12,11,13,14,12,13,14,13,15,16,14,15,16,15,17,18,16,17,18,17,19,20,18,19,20,19,21,22,20,21,22,21,23,24,22,23,24,23,25}).setNormalPerVertex(true).setSolid(false)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {3.0000e+02,2.2500e+02,0.0000e+00,3.0000e+02,2.2500e+02,-1.0000e+02,2.9347e+02,2.2457e+02,0.0000e+00,2.9347e+02,2.2457e+02,-1.0000e+02,2.8706e+02,2.2330e+02,0.0000e+00,2.8706e+02,2.2330e+02,-1.0000e+02,2.8087e+02,2.2119e+02,0.0000e+00,2.8087e+02,2.2119e+02,-1.0000e+02,2.7500e+02,2.1830e+02,0.0000e+00,2.7500e+02,2.1830e+02,-1.0000e+02,2.6956e+02,2.1467e+02,0.0000e+00,2.6956e+02,2.1467e+02,-1.0000e+02,2.6464e+02,2.1036e+02,0.0000e+00,2.6464e+02,2.1036e+02,-1.0000e+02,2.6033e+02,2.0544e+02,0.0000e+00,2.6033e+02,2.0544e+02,-1.0000e+02,2.5670e+02,2.0000e+02,0.0000e+00,2.5670e+02,2.0000e+02,-1.0000e+02,2.5381e+02,1.9413e+02,0.0000e+00,2.5381e+02,1.9413e+02,-1.0000e+02,2.5170e+02,1.8794e+02,0.0000e+00,2.5170e+02,1.8794e+02,-1.0000e+02,2.5043e+02,1.8153e+02,0.0000e+00,2.5043e+02,1.8153e+02,-1.0000e+02,2.5000e+02,1.7500e+02,0.0000e+00,2.5000e+02,1.7500e+02,-1.0000e+02})))
+            .setNormal(new Normal().setVector(new MFVec3f(new double[] {0.0000e+00,1.0000e+00,0.0000e+00,0.0000e+00,1.0000e+00,0.0000e+00,-1.3053e-01,9.9144e-01,0.0000e+00,-1.3053e-01,9.9144e-01,0.0000e+00,-2.5882e-01,9.6593e-01,0.0000e+00,-2.5882e-01,9.6593e-01,0.0000e+00,-3.8268e-01,9.2388e-01,0.0000e+00,-3.8268e-01,9.2388e-01,0.0000e+00,-5.0000e-01,8.6603e-01,0.0000e+00,-5.0000e-01,8.6603e-01,0.0000e+00,-6.0876e-01,7.9335e-01,0.0000e+00,-6.0876e-01,7.9335e-01,0.0000e+00,-7.0711e-01,7.0711e-01,0.0000e+00,-7.0711e-01,7.0711e-01,0.0000e+00,-7.9335e-01,6.0876e-01,0.0000e+00,-7.9335e-01,6.0876e-01,0.0000e+00,-8.6603e-01,5.0000e-01,0.0000e+00,-8.6603e-01,5.0000e-01,0.0000e+00,-9.2388e-01,3.8268e-01,0.0000e+00,-9.2388e-01,3.8268e-01,0.0000e+00,-9.6593e-01,2.5882e-01,0.0000e+00,-9.6593e-01,2.5882e-01,0.0000e+00,-9.9144e-01,1.3053e-01,0.0000e+00,-9.9144e-01,1.3053e-01,0.0000e+00,-1.0000e+00,6.1232e-17,0.0000e+00,-1.0000e+00,6.1232e-17,0.0000e+00}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#559"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5,6,7,8,9,10,11}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {2.5000e+02,1.2500e+02,-1.0000e+02,2.5000e+02,1.2500e+02,-6.0000e+01,2.5000e+02,1.5000e+02,-6.0000e+01,2.5000e+02,1.5000e+02,-6.0000e+01,2.5000e+02,1.5000e+02,0.0000e+00,2.5000e+02,1.7500e+02,0.0000e+00,2.5000e+02,1.5000e+02,-6.0000e+01,2.5000e+02,1.7500e+02,0.0000e+00,2.5000e+02,1.7500e+02,-1.0000e+02,2.5000e+02,1.5000e+02,-6.0000e+01,2.5000e+02,1.7500e+02,-1.0000e+02,2.5000e+02,1.2500e+02,-1.0000e+02}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#560"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {4,3,6,5,4,6,11,7,10,12,11,10,17,13,16,18,17,16,23,19,22,24,23,22,29,25,28,30,29,28,31,30,28,36,32,35,37,36,35,38,37,35,39,38,35,44,40,43,45,44,43,46,45,43,47,46,43,52,48,51,53,52,51,54,53,51,59,55,58,60,59,58,61,60,58,62,61,58,67,63,66,68,67,66,69,68,66,74,70,73,75,74,73,76,75,73,81,77,84,82,81,84,83,82,84}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_230_point()))
+            .setNormal(new Normal().setVector(getNormal_7_231_vector())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#561"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {2.2500e+02,1.2500e+02,-5.0000e+01,1.9250e+02,1.2500e+02,-5.0000e+01,1.9250e+02,1.2500e+02,0.0000e+00,2.2500e+02,1.2500e+02,-5.0000e+01,1.9250e+02,1.2500e+02,0.0000e+00,2.2500e+02,1.2500e+02,0.0000e+00}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#562"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {1.9250e+02,1.2500e+02,-5.0000e+01,1.9250e+02,1.1000e+02,-5.0000e+01,1.9250e+02,1.1000e+02,0.0000e+00,1.9250e+02,1.2500e+02,-5.0000e+01,1.9250e+02,1.1000e+02,0.0000e+00,1.9250e+02,1.2500e+02,0.0000e+00}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#563"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {1,0,2,3,1,2,3,2,4,5,3,4,5,4,6,7,5,6,7,6,8,9,7,8,9,8,10,11,9,10,11,10,12,13,11,12,13,12,14,15,13,14,15,14,16,17,15,16,17,16,18,19,17,18,19,18,20,21,19,20,21,20,22,23,21,22,23,22,24,25,23,24}).setNormalPerVertex(true).setSolid(false)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {1.8250e+02,1.0000e+02,0.0000e+00,1.8250e+02,1.0000e+02,-5.0000e+01,1.8381e+02,1.0009e+02,0.0000e+00,1.8381e+02,1.0009e+02,-5.0000e+01,1.8509e+02,1.0034e+02,0.0000e+00,1.8509e+02,1.0034e+02,-5.0000e+01,1.8633e+02,1.0076e+02,0.0000e+00,1.8633e+02,1.0076e+02,-5.0000e+01,1.8750e+02,1.0134e+02,0.0000e+00,1.8750e+02,1.0134e+02,-5.0000e+01,1.8859e+02,1.0207e+02,0.0000e+00,1.8859e+02,1.0207e+02,-5.0000e+01,1.8957e+02,1.0293e+02,0.0000e+00,1.8957e+02,1.0293e+02,-5.0000e+01,1.9043e+02,1.0391e+02,0.0000e+00,1.9043e+02,1.0391e+02,-5.0000e+01,1.9116e+02,1.0500e+02,0.0000e+00,1.9116e+02,1.0500e+02,-5.0000e+01,1.9174e+02,1.0617e+02,0.0000e+00,1.9174e+02,1.0617e+02,-5.0000e+01,1.9216e+02,1.0741e+02,0.0000e+00,1.9216e+02,1.0741e+02,-5.0000e+01,1.9241e+02,1.0869e+02,0.0000e+00,1.9241e+02,1.0869e+02,-5.0000e+01,1.9250e+02,1.1000e+02,0.0000e+00,1.9250e+02,1.1000e+02,-5.0000e+01})))
+            .setNormal(new Normal().setVector(new MFVec3f(new double[] {1.2246e-16,1.0000e+00,-0.0000e+00,1.2246e-16,1.0000e+00,-0.0000e+00,-1.3053e-01,9.9144e-01,-0.0000e+00,-1.3053e-01,9.9144e-01,-0.0000e+00,-2.5882e-01,9.6593e-01,-0.0000e+00,-2.5882e-01,9.6593e-01,-0.0000e+00,-3.8268e-01,9.2388e-01,-0.0000e+00,-3.8268e-01,9.2388e-01,-0.0000e+00,-5.0000e-01,8.6603e-01,-0.0000e+00,-5.0000e-01,8.6603e-01,-0.0000e+00,-6.0876e-01,7.9335e-01,-0.0000e+00,-6.0876e-01,7.9335e-01,-0.0000e+00,-7.0711e-01,7.0711e-01,-0.0000e+00,-7.0711e-01,7.0711e-01,-0.0000e+00,-7.9335e-01,6.0876e-01,-0.0000e+00,-7.9335e-01,6.0876e-01,-0.0000e+00,-8.6603e-01,5.0000e-01,-0.0000e+00,-8.6603e-01,5.0000e-01,-0.0000e+00,-9.2388e-01,3.8268e-01,-0.0000e+00,-9.2388e-01,3.8268e-01,-0.0000e+00,-9.6593e-01,2.5882e-01,-0.0000e+00,-9.6593e-01,2.5882e-01,-0.0000e+00,-9.9144e-01,1.3053e-01,-0.0000e+00,-9.9144e-01,1.3053e-01,-0.0000e+00,-1.0000e+00,1.8370e-16,-0.0000e+00,-1.0000e+00,1.8370e-16,-0.0000e+00}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#564"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {1.8250e+02,1.0000e+02,-5.0000e+01,1.1750e+02,1.0000e+02,-5.0000e+01,1.1750e+02,1.0000e+02,0.0000e+00,1.8250e+02,1.0000e+02,-5.0000e+01,1.1750e+02,1.0000e+02,0.0000e+00,1.8250e+02,1.0000e+02,0.0000e+00}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#565"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {1,0,2,3,1,2,3,2,4,5,3,4,5,4,6,7,5,6,7,6,8,9,7,8,9,8,10,11,9,10,11,10,12,13,11,12,13,12,14,15,13,14,15,14,16,17,15,16,17,16,18,19,17,18,19,18,20,21,19,20,21,20,22,23,21,22,23,22,24,25,23,24}).setNormalPerVertex(true).setSolid(false)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {1.0750e+02,1.1000e+02,0.0000e+00,1.0750e+02,1.1000e+02,-5.0000e+01,1.0759e+02,1.0869e+02,0.0000e+00,1.0759e+02,1.0869e+02,-5.0000e+01,1.0784e+02,1.0741e+02,0.0000e+00,1.0784e+02,1.0741e+02,-5.0000e+01,1.0826e+02,1.0617e+02,0.0000e+00,1.0826e+02,1.0617e+02,-5.0000e+01,1.0884e+02,1.0500e+02,0.0000e+00,1.0884e+02,1.0500e+02,-5.0000e+01,1.0957e+02,1.0391e+02,0.0000e+00,1.0957e+02,1.0391e+02,-5.0000e+01,1.1043e+02,1.0293e+02,0.0000e+00,1.1043e+02,1.0293e+02,-5.0000e+01,1.1141e+02,1.0207e+02,0.0000e+00,1.1141e+02,1.0207e+02,-5.0000e+01,1.1250e+02,1.0134e+02,0.0000e+00,1.1250e+02,1.0134e+02,-5.0000e+01,1.1367e+02,1.0076e+02,0.0000e+00,1.1367e+02,1.0076e+02,-5.0000e+01,1.1491e+02,1.0034e+02,0.0000e+00,1.1491e+02,1.0034e+02,-5.0000e+01,1.1619e+02,1.0009e+02,0.0000e+00,1.1619e+02,1.0009e+02,-5.0000e+01,1.1750e+02,1.0000e+02,0.0000e+00,1.1750e+02,1.0000e+02,-5.0000e+01})))
+            .setNormal(new Normal().setVector(new MFVec3f(new double[] {1.0000e+00,-6.1232e-17,-0.0000e+00,1.0000e+00,-6.1232e-17,-0.0000e+00,9.9144e-01,1.3053e-01,-0.0000e+00,9.9144e-01,1.3053e-01,-0.0000e+00,9.6593e-01,2.5882e-01,-0.0000e+00,9.6593e-01,2.5882e-01,-0.0000e+00,9.2388e-01,3.8268e-01,-0.0000e+00,9.2388e-01,3.8268e-01,-0.0000e+00,8.6603e-01,5.0000e-01,-0.0000e+00,8.6603e-01,5.0000e-01,-0.0000e+00,7.9335e-01,6.0876e-01,-0.0000e+00,7.9335e-01,6.0876e-01,-0.0000e+00,7.0711e-01,7.0711e-01,-0.0000e+00,7.0711e-01,7.0711e-01,-0.0000e+00,6.0876e-01,7.9335e-01,-0.0000e+00,6.0876e-01,7.9335e-01,-0.0000e+00,5.0000e-01,8.6603e-01,-0.0000e+00,5.0000e-01,8.6603e-01,-0.0000e+00,3.8268e-01,9.2388e-01,-0.0000e+00,3.8268e-01,9.2388e-01,-0.0000e+00,2.5882e-01,9.6593e-01,-0.0000e+00,2.5882e-01,9.6593e-01,-0.0000e+00,1.3053e-01,9.9144e-01,-0.0000e+00,1.3053e-01,9.9144e-01,-0.0000e+00,1.2246e-16,1.0000e+00,-0.0000e+00,1.2246e-16,1.0000e+00,-0.0000e+00}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#566"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {1.0750e+02,1.1000e+02,-5.0000e+01,1.0750e+02,1.2500e+02,-5.0000e+01,1.0750e+02,1.2500e+02,0.0000e+00,1.0750e+02,1.1000e+02,-5.0000e+01,1.0750e+02,1.2500e+02,0.0000e+00,1.0750e+02,1.1000e+02,0.0000e+00}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#567"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {1.0750e+02,1.2500e+02,-5.0000e+01,-1.0750e+02,1.2500e+02,-5.0000e+01,-1.0750e+02,1.2500e+02,0.0000e+00,1.0750e+02,1.2500e+02,-5.0000e+01,-1.0750e+02,1.2500e+02,0.0000e+00,1.0750e+02,1.2500e+02,0.0000e+00}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#568"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-1.0750e+02,1.2500e+02,-5.0000e+01,-1.0750e+02,1.1000e+02,-5.0000e+01,-1.0750e+02,1.1000e+02,0.0000e+00,-1.0750e+02,1.2500e+02,-5.0000e+01,-1.0750e+02,1.1000e+02,0.0000e+00,-1.0750e+02,1.2500e+02,0.0000e+00}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#569"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {1,0,2,3,1,2,3,2,4,5,3,4,5,4,6,7,5,6,7,6,8,9,7,8,9,8,10,11,9,10,11,10,12,13,11,12,13,12,14,15,13,14,15,14,16,17,15,16,17,16,18,19,17,18,19,18,20,21,19,20,21,20,22,23,21,22,23,22,24,25,23,24}).setNormalPerVertex(true).setSolid(false)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-1.1750e+02,1.0000e+02,0.0000e+00,-1.1750e+02,1.0000e+02,-5.0000e+01,-1.1619e+02,1.0009e+02,0.0000e+00,-1.1619e+02,1.0009e+02,-5.0000e+01,-1.1491e+02,1.0034e+02,0.0000e+00,-1.1491e+02,1.0034e+02,-5.0000e+01,-1.1367e+02,1.0076e+02,0.0000e+00,-1.1367e+02,1.0076e+02,-5.0000e+01,-1.1250e+02,1.0134e+02,0.0000e+00,-1.1250e+02,1.0134e+02,-5.0000e+01,-1.1141e+02,1.0207e+02,0.0000e+00,-1.1141e+02,1.0207e+02,-5.0000e+01,-1.1043e+02,1.0293e+02,0.0000e+00,-1.1043e+02,1.0293e+02,-5.0000e+01,-1.0957e+02,1.0391e+02,0.0000e+00,-1.0957e+02,1.0391e+02,-5.0000e+01,-1.0884e+02,1.0500e+02,0.0000e+00,-1.0884e+02,1.0500e+02,-5.0000e+01,-1.0826e+02,1.0617e+02,0.0000e+00,-1.0826e+02,1.0617e+02,-5.0000e+01,-1.0784e+02,1.0741e+02,0.0000e+00,-1.0784e+02,1.0741e+02,-5.0000e+01,-1.0759e+02,1.0869e+02,0.0000e+00,-1.0759e+02,1.0869e+02,-5.0000e+01,-1.0750e+02,1.1000e+02,0.0000e+00,-1.0750e+02,1.1000e+02,-5.0000e+01})))
+            .setNormal(new Normal().setVector(new MFVec3f(new double[] {1.2246e-16,1.0000e+00,-0.0000e+00,1.2246e-16,1.0000e+00,-0.0000e+00,-1.3053e-01,9.9144e-01,-0.0000e+00,-1.3053e-01,9.9144e-01,-0.0000e+00,-2.5882e-01,9.6593e-01,-0.0000e+00,-2.5882e-01,9.6593e-01,-0.0000e+00,-3.8268e-01,9.2388e-01,-0.0000e+00,-3.8268e-01,9.2388e-01,-0.0000e+00,-5.0000e-01,8.6603e-01,-0.0000e+00,-5.0000e-01,8.6603e-01,-0.0000e+00,-6.0876e-01,7.9335e-01,-0.0000e+00,-6.0876e-01,7.9335e-01,-0.0000e+00,-7.0711e-01,7.0711e-01,-0.0000e+00,-7.0711e-01,7.0711e-01,-0.0000e+00,-7.9335e-01,6.0876e-01,-0.0000e+00,-7.9335e-01,6.0876e-01,-0.0000e+00,-8.6603e-01,5.0000e-01,-0.0000e+00,-8.6603e-01,5.0000e-01,-0.0000e+00,-9.2388e-01,3.8268e-01,-0.0000e+00,-9.2388e-01,3.8268e-01,-0.0000e+00,-9.6593e-01,2.5882e-01,-0.0000e+00,-9.6593e-01,2.5882e-01,-0.0000e+00,-9.9144e-01,1.3053e-01,-0.0000e+00,-9.9144e-01,1.3053e-01,-0.0000e+00,-1.0000e+00,1.8370e-16,-0.0000e+00,-1.0000e+00,1.8370e-16,-0.0000e+00}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#570"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-1.1750e+02,1.0000e+02,-5.0000e+01,-1.8250e+02,1.0000e+02,-5.0000e+01,-1.8250e+02,1.0000e+02,0.0000e+00,-1.1750e+02,1.0000e+02,-5.0000e+01,-1.8250e+02,1.0000e+02,0.0000e+00,-1.1750e+02,1.0000e+02,0.0000e+00}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#571"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {1,0,2,3,1,2,3,2,4,5,3,4,5,4,6,7,5,6,7,6,8,9,7,8,9,8,10,11,9,10,11,10,12,13,11,12,13,12,14,15,13,14,15,14,16,17,15,16,17,16,18,19,17,18,19,18,20,21,19,20,21,20,22,23,21,22,23,22,24,25,23,24}).setNormalPerVertex(true).setSolid(false)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-1.9250e+02,1.1000e+02,0.0000e+00,-1.9250e+02,1.1000e+02,-5.0000e+01,-1.9241e+02,1.0869e+02,0.0000e+00,-1.9241e+02,1.0869e+02,-5.0000e+01,-1.9216e+02,1.0741e+02,0.0000e+00,-1.9216e+02,1.0741e+02,-5.0000e+01,-1.9174e+02,1.0617e+02,0.0000e+00,-1.9174e+02,1.0617e+02,-5.0000e+01,-1.9116e+02,1.0500e+02,0.0000e+00,-1.9116e+02,1.0500e+02,-5.0000e+01,-1.9043e+02,1.0391e+02,0.0000e+00,-1.9043e+02,1.0391e+02,-5.0000e+01,-1.8957e+02,1.0293e+02,0.0000e+00,-1.8957e+02,1.0293e+02,-5.0000e+01,-1.8859e+02,1.0207e+02,0.0000e+00,-1.8859e+02,1.0207e+02,-5.0000e+01,-1.8750e+02,1.0134e+02,0.0000e+00,-1.8750e+02,1.0134e+02,-5.0000e+01,-1.8633e+02,1.0076e+02,0.0000e+00,-1.8633e+02,1.0076e+02,-5.0000e+01,-1.8509e+02,1.0034e+02,0.0000e+00,-1.8509e+02,1.0034e+02,-5.0000e+01,-1.8381e+02,1.0009e+02,0.0000e+00,-1.8381e+02,1.0009e+02,-5.0000e+01,-1.8250e+02,1.0000e+02,0.0000e+00,-1.8250e+02,1.0000e+02,-5.0000e+01})))
+            .setNormal(new Normal().setVector(new MFVec3f(new double[] {1.0000e+00,-6.1232e-17,-0.0000e+00,1.0000e+00,-6.1232e-17,-0.0000e+00,9.9144e-01,1.3053e-01,-0.0000e+00,9.9144e-01,1.3053e-01,-0.0000e+00,9.6593e-01,2.5882e-01,-0.0000e+00,9.6593e-01,2.5882e-01,-0.0000e+00,9.2388e-01,3.8268e-01,-0.0000e+00,9.2388e-01,3.8268e-01,-0.0000e+00,8.6603e-01,5.0000e-01,-0.0000e+00,8.6603e-01,5.0000e-01,-0.0000e+00,7.9335e-01,6.0876e-01,-0.0000e+00,7.9335e-01,6.0876e-01,-0.0000e+00,7.0711e-01,7.0711e-01,-0.0000e+00,7.0711e-01,7.0711e-01,-0.0000e+00,6.0876e-01,7.9335e-01,-0.0000e+00,6.0876e-01,7.9335e-01,-0.0000e+00,5.0000e-01,8.6603e-01,-0.0000e+00,5.0000e-01,8.6603e-01,-0.0000e+00,3.8268e-01,9.2388e-01,-0.0000e+00,3.8268e-01,9.2388e-01,-0.0000e+00,2.5882e-01,9.6593e-01,-0.0000e+00,2.5882e-01,9.6593e-01,-0.0000e+00,1.3053e-01,9.9144e-01,-0.0000e+00,1.3053e-01,9.9144e-01,-0.0000e+00,1.2246e-16,1.0000e+00,-0.0000e+00,1.2246e-16,1.0000e+00,-0.0000e+00}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#572"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-1.9250e+02,1.1000e+02,-5.0000e+01,-1.9250e+02,1.2500e+02,-5.0000e+01,-1.9250e+02,1.2500e+02,0.0000e+00,-1.9250e+02,1.1000e+02,-5.0000e+01,-1.9250e+02,1.2500e+02,0.0000e+00,-1.9250e+02,1.1000e+02,0.0000e+00}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#573"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-1.9250e+02,1.2500e+02,-5.0000e+01,-2.2500e+02,1.2500e+02,-5.0000e+01,-2.2500e+02,1.2500e+02,0.0000e+00,-1.9250e+02,1.2500e+02,-5.0000e+01,-2.2500e+02,1.2500e+02,0.0000e+00,-1.9250e+02,1.2500e+02,0.0000e+00}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#574"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {4,3,7,6,5,4,6,4,7,8,11,14,13,12,8,13,8,14,15,18,21,20,19,15,20,15,21,22,25,29,27,26,22,28,27,22,28,22,29,30,33,36,35,34,30,35,30,36,37,40,44,42,41,37,43,42,37,43,37,44,45,48,52,50,49,45,51,50,45,51,45,52,57,53,56,58,57,56,59,58,56,64,60,63,65,64,63,70,66,69,71,70,69,76,72,75,77,76,75,82,78,84,83,82,84}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_319_point()))
+            .setNormal(new Normal().setVector(getNormal_7_320_vector())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#575"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5,6,7,8,9,10,11}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-2.5000e+02,1.5000e+02,-6.0000e+01,-2.5000e+02,1.2500e+02,-6.0000e+01,-2.5000e+02,1.2500e+02,-1.0000e+02,-2.5000e+02,1.5000e+02,-6.0000e+01,-2.5000e+02,1.2500e+02,-1.0000e+02,-2.5000e+02,1.7500e+02,-1.0000e+02,-2.5000e+02,1.5000e+02,-6.0000e+01,-2.5000e+02,1.7500e+02,-1.0000e+02,-2.5000e+02,1.7500e+02,0.0000e+00,-2.5000e+02,1.5000e+02,-6.0000e+01,-2.5000e+02,1.7500e+02,0.0000e+00,-2.5000e+02,1.5000e+02,0.0000e+00}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#576"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {2,0,1,2,1,3,4,2,3,4,3,5,6,4,5,6,5,7,8,6,7,8,7,9,10,8,9,10,9,11,12,10,11,12,11,13,14,12,13,14,13,15,16,14,15,16,15,17,18,16,17,18,17,19,20,18,19,20,19,21,22,20,21,22,21,23,24,22,23,24,23,25}).setNormalPerVertex(true).setSolid(false)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-2.5000e+02,1.7500e+02,0.0000e+00,-2.5000e+02,1.7500e+02,-1.0000e+02,-2.5043e+02,1.8153e+02,0.0000e+00,-2.5043e+02,1.8153e+02,-1.0000e+02,-2.5170e+02,1.8794e+02,0.0000e+00,-2.5170e+02,1.8794e+02,-1.0000e+02,-2.5381e+02,1.9413e+02,0.0000e+00,-2.5381e+02,1.9413e+02,-1.0000e+02,-2.5670e+02,2.0000e+02,0.0000e+00,-2.5670e+02,2.0000e+02,-1.0000e+02,-2.6033e+02,2.0544e+02,0.0000e+00,-2.6033e+02,2.0544e+02,-1.0000e+02,-2.6464e+02,2.1036e+02,0.0000e+00,-2.6464e+02,2.1036e+02,-1.0000e+02,-2.6956e+02,2.1467e+02,0.0000e+00,-2.6956e+02,2.1467e+02,-1.0000e+02,-2.7500e+02,2.1830e+02,0.0000e+00,-2.7500e+02,2.1830e+02,-1.0000e+02,-2.8087e+02,2.2119e+02,0.0000e+00,-2.8087e+02,2.2119e+02,-1.0000e+02,-2.8706e+02,2.2330e+02,0.0000e+00,-2.8706e+02,2.2330e+02,-1.0000e+02,-2.9347e+02,2.2457e+02,0.0000e+00,-2.9347e+02,2.2457e+02,-1.0000e+02,-3.0000e+02,2.2500e+02,0.0000e+00,-3.0000e+02,2.2500e+02,-1.0000e+02})))
+            .setNormal(new Normal().setVector(new MFVec3f(new double[] {1.0000e+00,6.1232e-17,0.0000e+00,1.0000e+00,6.1232e-17,0.0000e+00,9.9144e-01,1.3053e-01,0.0000e+00,9.9144e-01,1.3053e-01,0.0000e+00,9.6593e-01,2.5882e-01,0.0000e+00,9.6593e-01,2.5882e-01,0.0000e+00,9.2388e-01,3.8268e-01,0.0000e+00,9.2388e-01,3.8268e-01,0.0000e+00,8.6603e-01,5.0000e-01,0.0000e+00,8.6603e-01,5.0000e-01,0.0000e+00,7.9335e-01,6.0876e-01,0.0000e+00,7.9335e-01,6.0876e-01,0.0000e+00,7.0711e-01,7.0711e-01,0.0000e+00,7.0711e-01,7.0711e-01,0.0000e+00,6.0876e-01,7.9335e-01,0.0000e+00,6.0876e-01,7.9335e-01,0.0000e+00,5.0000e-01,8.6603e-01,0.0000e+00,5.0000e-01,8.6603e-01,0.0000e+00,3.8268e-01,9.2388e-01,0.0000e+00,3.8268e-01,9.2388e-01,0.0000e+00,2.5882e-01,9.6593e-01,0.0000e+00,2.5882e-01,9.6593e-01,0.0000e+00,1.3053e-01,9.9144e-01,0.0000e+00,1.3053e-01,9.9144e-01,0.0000e+00,0.0000e+00,1.0000e+00,0.0000e+00,0.0000e+00,1.0000e+00,0.0000e+00}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#577"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-3.5000e+02,2.2500e+02,0.0000e+00,-3.0000e+02,2.2500e+02,0.0000e+00,-3.0000e+02,2.2500e+02,-1.0000e+02,-3.5000e+02,2.2500e+02,0.0000e+00,-3.0000e+02,2.2500e+02,-1.0000e+02,-3.5000e+02,2.2500e+02,-1.0000e+02}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#578"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {2,0,1,2,1,3,4,2,3,4,3,5,6,4,5,6,5,7,8,6,7,8,7,9,10,8,9,10,9,11,12,10,11,12,11,13,14,12,13,14,13,15,16,14,15,16,15,17,18,16,17,18,17,19,20,18,19,20,19,21,22,20,21,22,21,23,24,22,23,24,23,25}).setNormalPerVertex(true).setSolid(false)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-3.5000e+02,2.2500e+02,0.0000e+00,-3.5000e+02,2.2500e+02,-1.0000e+02,-3.5653e+02,2.2457e+02,0.0000e+00,-3.5653e+02,2.2457e+02,-1.0000e+02,-3.6294e+02,2.2330e+02,0.0000e+00,-3.6294e+02,2.2330e+02,-1.0000e+02,-3.6913e+02,2.2119e+02,0.0000e+00,-3.6913e+02,2.2119e+02,-1.0000e+02,-3.7500e+02,2.1830e+02,0.0000e+00,-3.7500e+02,2.1830e+02,-1.0000e+02,-3.8044e+02,2.1467e+02,0.0000e+00,-3.8044e+02,2.1467e+02,-1.0000e+02,-3.8536e+02,2.1036e+02,0.0000e+00,-3.8536e+02,2.1036e+02,-1.0000e+02,-3.8967e+02,2.0544e+02,0.0000e+00,-3.8967e+02,2.0544e+02,-1.0000e+02,-3.9330e+02,2.0000e+02,0.0000e+00,-3.9330e+02,2.0000e+02,-1.0000e+02,-3.9619e+02,1.9413e+02,0.0000e+00,-3.9619e+02,1.9413e+02,-1.0000e+02,-3.9830e+02,1.8794e+02,0.0000e+00,-3.9830e+02,1.8794e+02,-1.0000e+02,-3.9957e+02,1.8153e+02,0.0000e+00,-3.9957e+02,1.8153e+02,-1.0000e+02,-4.0000e+02,1.7500e+02,0.0000e+00,-4.0000e+02,1.7500e+02,-1.0000e+02})))
+            .setNormal(new Normal().setVector(new MFVec3f(new double[] {0.0000e+00,1.0000e+00,0.0000e+00,0.0000e+00,1.0000e+00,0.0000e+00,-1.3053e-01,9.9144e-01,0.0000e+00,-1.3053e-01,9.9144e-01,0.0000e+00,-2.5882e-01,9.6593e-01,0.0000e+00,-2.5882e-01,9.6593e-01,0.0000e+00,-3.8268e-01,9.2388e-01,0.0000e+00,-3.8268e-01,9.2388e-01,0.0000e+00,-5.0000e-01,8.6603e-01,0.0000e+00,-5.0000e-01,8.6603e-01,0.0000e+00,-6.0876e-01,7.9335e-01,0.0000e+00,-6.0876e-01,7.9335e-01,0.0000e+00,-7.0711e-01,7.0711e-01,0.0000e+00,-7.0711e-01,7.0711e-01,0.0000e+00,-7.9335e-01,6.0876e-01,0.0000e+00,-7.9335e-01,6.0876e-01,0.0000e+00,-8.6603e-01,5.0000e-01,0.0000e+00,-8.6603e-01,5.0000e-01,0.0000e+00,-9.2388e-01,3.8268e-01,0.0000e+00,-9.2388e-01,3.8268e-01,0.0000e+00,-9.6593e-01,2.5882e-01,0.0000e+00,-9.6593e-01,2.5882e-01,0.0000e+00,-9.9144e-01,1.3053e-01,0.0000e+00,-9.9144e-01,1.3053e-01,0.0000e+00,-1.0000e+00,6.1232e-17,0.0000e+00,-1.0000e+00,6.1232e-17,0.0000e+00}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#579"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {17,18,19,16,17,19,15,16,19,14,15,19,13,14,19,13,19,20,12,13,20,11,12,20,10,11,20,9,10,20,8,9,20,7,8,20,7,20,21,6,7,21,5,6,21,4,5,21,3,4,21,2,3,21,1,2,21,0,1,21,23,0,21,23,21,22}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-4.0000e+02,1.2500e+02,-6.0000e+01,-4.0000e+02,1.2481e+02,-5.8049e+01,-4.0000e+02,1.2424e+02,-5.6173e+01,-4.0000e+02,1.2331e+02,-5.4444e+01,-4.0000e+02,1.2207e+02,-5.2929e+01,-4.0000e+02,1.2056e+02,-5.1685e+01,-4.0000e+02,1.1883e+02,-5.0761e+01,-4.0000e+02,1.1695e+02,-5.0192e+01,-4.0000e+02,1.1500e+02,-5.0000e+01,-4.0000e+02,-1.1500e+02,-5.0000e+01,-4.0000e+02,-1.1695e+02,-5.0192e+01,-4.0000e+02,-1.1883e+02,-5.0761e+01,-4.0000e+02,-1.2056e+02,-5.1685e+01,-4.0000e+02,-1.2207e+02,-5.2929e+01,-4.0000e+02,-1.2331e+02,-5.4444e+01,-4.0000e+02,-1.2424e+02,-5.6173e+01,-4.0000e+02,-1.2481e+02,-5.8049e+01,-4.0000e+02,-1.2500e+02,-6.0000e+01,-4.0000e+02,-1.2500e+02,-1.0000e+02,-4.0000e+02,-1.7500e+02,-1.0000e+02,-4.0000e+02,-1.7500e+02,0.0000e+00,-4.0000e+02,1.7500e+02,0.0000e+00,-4.0000e+02,1.7500e+02,-1.0000e+02,-4.0000e+02,1.2500e+02,-1.0000e+02}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#580"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {2,0,1,2,1,3,4,2,3,4,3,5,6,4,5,6,5,7,8,6,7,8,7,9,10,8,9,10,9,11,12,10,11,12,11,13,14,12,13,14,13,15,16,14,15,16,15,17,18,16,17,18,17,19,20,18,19,20,19,21,22,20,21,22,21,23,24,22,23,24,23,25}).setNormalPerVertex(true).setSolid(false)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-4.0000e+02,-1.7500e+02,0.0000e+00,-4.0000e+02,-1.7500e+02,-1.0000e+02,-3.9957e+02,-1.8153e+02,0.0000e+00,-3.9957e+02,-1.8153e+02,-1.0000e+02,-3.9830e+02,-1.8794e+02,0.0000e+00,-3.9830e+02,-1.8794e+02,-1.0000e+02,-3.9619e+02,-1.9413e+02,0.0000e+00,-3.9619e+02,-1.9413e+02,-1.0000e+02,-3.9330e+02,-2.0000e+02,0.0000e+00,-3.9330e+02,-2.0000e+02,-1.0000e+02,-3.8967e+02,-2.0544e+02,0.0000e+00,-3.8967e+02,-2.0544e+02,-1.0000e+02,-3.8536e+02,-2.1036e+02,0.0000e+00,-3.8536e+02,-2.1036e+02,-1.0000e+02,-3.8044e+02,-2.1467e+02,0.0000e+00,-3.8044e+02,-2.1467e+02,-1.0000e+02,-3.7500e+02,-2.1830e+02,0.0000e+00,-3.7500e+02,-2.1830e+02,-1.0000e+02,-3.6913e+02,-2.2119e+02,0.0000e+00,-3.6913e+02,-2.2119e+02,-1.0000e+02,-3.6294e+02,-2.2330e+02,0.0000e+00,-3.6294e+02,-2.2330e+02,-1.0000e+02,-3.5653e+02,-2.2457e+02,0.0000e+00,-3.5653e+02,-2.2457e+02,-1.0000e+02,-3.5000e+02,-2.2500e+02,0.0000e+00,-3.5000e+02,-2.2500e+02,-1.0000e+02})))
+            .setNormal(new Normal().setVector(new MFVec3f(new double[] {-1.0000e+00,6.1232e-17,0.0000e+00,-1.0000e+00,6.1232e-17,0.0000e+00,-9.9144e-01,-1.3053e-01,0.0000e+00,-9.9144e-01,-1.3053e-01,0.0000e+00,-9.6593e-01,-2.5882e-01,0.0000e+00,-9.6593e-01,-2.5882e-01,0.0000e+00,-9.2388e-01,-3.8268e-01,0.0000e+00,-9.2388e-01,-3.8268e-01,0.0000e+00,-8.6603e-01,-5.0000e-01,0.0000e+00,-8.6603e-01,-5.0000e-01,0.0000e+00,-7.9335e-01,-6.0876e-01,0.0000e+00,-7.9335e-01,-6.0876e-01,0.0000e+00,-7.0711e-01,-7.0711e-01,0.0000e+00,-7.0711e-01,-7.0711e-01,0.0000e+00,-6.0876e-01,-7.9335e-01,0.0000e+00,-6.0876e-01,-7.9335e-01,0.0000e+00,-5.0000e-01,-8.6603e-01,0.0000e+00,-5.0000e-01,-8.6603e-01,0.0000e+00,-3.8268e-01,-9.2388e-01,0.0000e+00,-3.8268e-01,-9.2388e-01,0.0000e+00,-2.5882e-01,-9.6593e-01,0.0000e+00,-2.5882e-01,-9.6593e-01,0.0000e+00,-1.3053e-01,-9.9144e-01,0.0000e+00,-1.3053e-01,-9.9144e-01,0.0000e+00,-1.2246e-16,-1.0000e+00,0.0000e+00,-1.2246e-16,-1.0000e+00,0.0000e+00}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#581"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-3.0000e+02,-2.2500e+02,0.0000e+00,-3.5000e+02,-2.2500e+02,0.0000e+00,-3.5000e+02,-2.2500e+02,-1.0000e+02,-3.0000e+02,-2.2500e+02,0.0000e+00,-3.5000e+02,-2.2500e+02,-1.0000e+02,-3.0000e+02,-2.2500e+02,-1.0000e+02}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#582"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {2,0,1,2,1,3,4,2,3,4,3,5,6,4,5,6,5,7,8,6,7,8,7,9,10,8,9,10,9,11,12,10,11,12,11,13,14,12,13,14,13,15,16,14,15,16,15,17,18,16,17,18,17,19,20,18,19,20,19,21,22,20,21,22,21,23,24,22,23,24,23,25}).setNormalPerVertex(true).setSolid(false)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-3.0000e+02,-2.2500e+02,0.0000e+00,-3.0000e+02,-2.2500e+02,-1.0000e+02,-2.9347e+02,-2.2457e+02,0.0000e+00,-2.9347e+02,-2.2457e+02,-1.0000e+02,-2.8706e+02,-2.2330e+02,0.0000e+00,-2.8706e+02,-2.2330e+02,-1.0000e+02,-2.8087e+02,-2.2119e+02,0.0000e+00,-2.8087e+02,-2.2119e+02,-1.0000e+02,-2.7500e+02,-2.1830e+02,0.0000e+00,-2.7500e+02,-2.1830e+02,-1.0000e+02,-2.6956e+02,-2.1467e+02,0.0000e+00,-2.6956e+02,-2.1467e+02,-1.0000e+02,-2.6464e+02,-2.1036e+02,0.0000e+00,-2.6464e+02,-2.1036e+02,-1.0000e+02,-2.6033e+02,-2.0544e+02,0.0000e+00,-2.6033e+02,-2.0544e+02,-1.0000e+02,-2.5670e+02,-2.0000e+02,0.0000e+00,-2.5670e+02,-2.0000e+02,-1.0000e+02,-2.5381e+02,-1.9413e+02,0.0000e+00,-2.5381e+02,-1.9413e+02,-1.0000e+02,-2.5170e+02,-1.8794e+02,0.0000e+00,-2.5170e+02,-1.8794e+02,-1.0000e+02,-2.5043e+02,-1.8153e+02,0.0000e+00,-2.5043e+02,-1.8153e+02,-1.0000e+02,-2.5000e+02,-1.7500e+02,0.0000e+00,-2.5000e+02,-1.7500e+02,-1.0000e+02})))
+            .setNormal(new Normal().setVector(new MFVec3f(new double[] {-1.2246e-16,-1.0000e+00,0.0000e+00,-1.2246e-16,-1.0000e+00,0.0000e+00,1.3053e-01,-9.9144e-01,0.0000e+00,1.3053e-01,-9.9144e-01,0.0000e+00,2.5882e-01,-9.6593e-01,0.0000e+00,2.5882e-01,-9.6593e-01,0.0000e+00,3.8268e-01,-9.2388e-01,0.0000e+00,3.8268e-01,-9.2388e-01,0.0000e+00,5.0000e-01,-8.6603e-01,0.0000e+00,5.0000e-01,-8.6603e-01,0.0000e+00,6.0876e-01,-7.9335e-01,0.0000e+00,6.0876e-01,-7.9335e-01,0.0000e+00,7.0711e-01,-7.0711e-01,0.0000e+00,7.0711e-01,-7.0711e-01,0.0000e+00,7.9335e-01,-6.0876e-01,0.0000e+00,7.9335e-01,-6.0876e-01,0.0000e+00,8.6603e-01,-5.0000e-01,0.0000e+00,8.6603e-01,-5.0000e-01,0.0000e+00,9.2388e-01,-3.8268e-01,0.0000e+00,9.2388e-01,-3.8268e-01,0.0000e+00,9.6593e-01,-2.5882e-01,0.0000e+00,9.6593e-01,-2.5882e-01,0.0000e+00,9.9144e-01,-1.3053e-01,0.0000e+00,9.9144e-01,-1.3053e-01,0.0000e+00,1.0000e+00,-1.8370e-16,0.0000e+00,1.0000e+00,-1.8370e-16,0.0000e+00}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#583"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5,6,7,8,9,10,11}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-2.5000e+02,-1.2500e+02,-1.0000e+02,-2.5000e+02,-1.2500e+02,-6.0000e+01,-2.5000e+02,-1.5000e+02,-6.0000e+01,-2.5000e+02,-1.5000e+02,-6.0000e+01,-2.5000e+02,-1.5000e+02,0.0000e+00,-2.5000e+02,-1.7500e+02,0.0000e+00,-2.5000e+02,-1.5000e+02,-6.0000e+01,-2.5000e+02,-1.7500e+02,0.0000e+00,-2.5000e+02,-1.7500e+02,-1.0000e+02,-2.5000e+02,-1.5000e+02,-6.0000e+01,-2.5000e+02,-1.7500e+02,-1.0000e+02,-2.5000e+02,-1.2500e+02,-1.0000e+02}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#584"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {4,3,6,5,4,6,11,7,10,12,11,10,17,13,16,18,17,16,23,19,22,24,23,22,29,25,28,30,29,28,31,30,28,36,32,35,37,36,35,38,37,35,39,38,35,44,40,43,45,44,43,46,45,43,47,46,43,52,48,51,53,52,51,54,53,51,59,55,58,60,59,58,61,60,58,62,61,58,67,63,66,68,67,66,69,68,66,74,70,73,75,74,73,76,75,73,81,77,84,82,81,84,83,82,84}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_384_point()))
+            .setNormal(new Normal().setVector(getNormal_7_385_vector())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#585"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-2.2500e+02,-1.2500e+02,-5.0000e+01,-1.3887e+02,-1.2500e+02,-5.0000e+01,-1.3887e+02,-1.2500e+02,0.0000e+00,-2.2500e+02,-1.2500e+02,-5.0000e+01,-1.3887e+02,-1.2500e+02,0.0000e+00,-2.2500e+02,-1.2500e+02,0.0000e+00}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#586"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-1.3887e+02,-1.2500e+02,-5.0000e+01,-1.1866e+02,-9.0000e+01,-5.0000e+01,-1.1866e+02,-9.0000e+01,7.1054e-14,-1.3887e+02,-1.2500e+02,-5.0000e+01,-1.1866e+02,-9.0000e+01,7.1054e-14,-1.3887e+02,-1.2500e+02,5.6843e-14}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#587"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {1,0,2,3,1,2,3,2,4,5,3,4,5,4,6,7,5,6,7,6,8,9,7,8,9,8,10,11,9,10,11,10,12,13,11,12,13,12,14,15,13,14,15,14,16,17,15,16,17,16,18,19,17,18,19,18,20,21,19,20,21,20,22,23,21,22,23,22,24,25,23,24,25,24,26,27,25,26,27,26,28,29,27,28,29,28,30,31,29,30,31,30,32,33,31,32}).setNormalPerVertex(true).setSolid(false)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_403_point()))
+            .setNormal(new Normal().setVector(getNormal_7_404_vector())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#588"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {3.2500e+02,-2.5000e+01,0.0000e+00,3.2500e+02,-2.5000e+01,-5.0000e+01,2.4500e+02,-2.5000e+01,-5.0000e+01,3.2500e+02,-2.5000e+01,0.0000e+00,2.4500e+02,-2.5000e+01,-5.0000e+01,2.4500e+02,-2.5000e+01,0.0000e+00}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#589"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-1.0134e+02,-9.0000e+01,-5.0000e+01,-8.1132e+01,-1.2500e+02,-5.0000e+01,-8.1132e+01,-1.2500e+02,7.1054e-14,-1.0134e+02,-9.0000e+01,-5.0000e+01,-8.1132e+01,-1.2500e+02,7.1054e-14,-1.0134e+02,-9.0000e+01,5.6843e-14}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#590"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {1,0,2,3,1,2,3,2,4,5,3,4,5,4,6,7,5,6,7,6,8,9,7,8,9,8,10,11,9,10,11,10,12,13,11,12,13,12,14,15,13,14,15,14,16,17,15,16,17,16,18,19,17,18,19,18,20,21,19,20,21,20,22,23,21,22,23,22,24,25,23,24,25,24,26,27,25,26,27,26,28,29,27,28,29,28,30,31,29,30,31,30,32,33,31,32,33,32,34,35,33,34,35,34,36,37,35,36,37,36,38,39,37,38,39,38,40,41,39,40,41,40,42,43,41,42,43,42,44,45,43,44,45,44,46,47,45,46,47,46,48,49,47,48}).setNormalPerVertex(true).setSolid(false)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_422_point()))
+            .setNormal(new Normal().setVector(getNormal_7_423_vector())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#591"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {9,40,41,9,41,42,9,42,43,9,43,44,44,45,46,44,46,47,44,47,48,44,48,49,44,49,50,50,31,32,50,32,33,33,34,35,33,35,36,33,36,37,33,37,38,33,38,39,33,39,40,33,40,9,33,9,10,33,10,11,33,11,12,33,12,13,33,13,14,33,14,15,33,15,16,33,16,17,33,17,18,33,18,19,33,19,20,50,33,20,50,20,21,50,21,22,50,22,23,50,23,24,50,24,25,50,25,26,50,26,27,44,50,27,44,27,28,44,28,29,44,29,30,44,30,0,44,0,1,44,1,2,44,2,3,44,3,4,44,4,5,44,5,6,44,6,7,44,7,8,9,44,8}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_429_point())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#592"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-5.0000e+01,-2.8868e+01,5.0000e+00,-5.0000e+01,-2.8868e+01,4.5000e+01,-5.0000e+01,2.8868e+01,4.5000e+01,-5.0000e+01,-2.8868e+01,5.0000e+00,-5.0000e+01,2.8868e+01,4.5000e+01,-5.0000e+01,2.8868e+01,5.0000e+00}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#593"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-2.2645e-08,-5.7735e+01,5.0000e+00,-2.2645e-08,-5.7735e+01,4.5000e+01,-5.0000e+01,-2.8868e+01,4.5000e+01,-2.2645e-08,-5.7735e+01,5.0000e+00,-5.0000e+01,-2.8868e+01,4.5000e+01,-5.0000e+01,-2.8868e+01,5.0000e+00}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#594"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {5.0000e+01,-2.8868e+01,5.0000e+00,5.0000e+01,-2.8868e+01,4.5000e+01,-2.4647e-14,-5.7735e+01,4.5000e+01,5.0000e+01,-2.8868e+01,5.0000e+00,-2.4647e-14,-5.7735e+01,4.5000e+01,-2.4869e-14,-5.7735e+01,5.0000e+00}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#595"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {5.0000e+01,2.8868e+01,5.0000e+00,5.0000e+01,2.8868e+01,4.5000e+01,5.0000e+01,-2.8868e+01,4.5000e+01,5.0000e+01,2.8868e+01,5.0000e+00,5.0000e+01,-2.8868e+01,4.5000e+01,5.0000e+01,-2.8868e+01,5.0000e+00}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#596"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {2.2645e-08,5.7735e+01,5.0000e+00,2.2645e-08,5.7735e+01,4.5000e+01,5.0000e+01,2.8868e+01,4.5000e+01,2.2645e-08,5.7735e+01,5.0000e+00,5.0000e+01,2.8868e+01,4.5000e+01,5.0000e+01,2.8868e+01,5.0000e+00}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#597"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-5.0000e+01,2.8868e+01,5.0000e+00,-5.0000e+01,2.8868e+01,4.5000e+01,-8.6597e-15,5.7735e+01,4.5000e+01,-5.0000e+01,2.8868e+01,5.0000e+00,-8.6597e-15,5.7735e+01,4.5000e+01,-1.0658e-14,5.7735e+01,5.0000e+00}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#598"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5,6,7,8,9,10,11}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {4.5000e+01,-2.5981e+01,5.0000e+01,4.5000e+01,2.5981e+01,5.0000e+01,-3.5331e-15,5.1962e+01,5.0000e+01,4.5000e+01,-2.5981e+01,5.0000e+01,-3.5331e-15,5.1962e+01,5.0000e+01,-4.5000e+01,2.5981e+01,5.0000e+01,4.5000e+01,-2.5981e+01,5.0000e+01,-4.5000e+01,2.5981e+01,5.0000e+01,-4.5000e+01,-2.5981e+01,5.0000e+01,4.5000e+01,-2.5981e+01,5.0000e+01,-4.5000e+01,-2.5981e+01,5.0000e+01,-2.3890e-14,-5.1962e+01,5.0000e+01}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#599"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(getIndexedTriangleSet_6_477_index()).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_477_point())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#600"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-2.5000e+02,1.2500e+02,-1.0000e+02,-2.5000e+02,1.2500e+02,-6.0000e+01,-4.0000e+02,1.2500e+02,-6.0000e+01,-2.5000e+02,1.2500e+02,-1.0000e+02,-4.0000e+02,1.2500e+02,-6.0000e+01,-4.0000e+02,1.2500e+02,-1.0000e+02}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#601"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {4.0000e+02,1.2500e+02,-1.0000e+02,4.0000e+02,1.2500e+02,-6.0000e+01,2.5000e+02,1.2500e+02,-6.0000e+01,4.0000e+02,1.2500e+02,-1.0000e+02,2.5000e+02,1.2500e+02,-6.0000e+01,2.5000e+02,1.2500e+02,-1.0000e+02}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#602"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {2.5000e+02,-1.2500e+02,-1.0000e+02,2.5000e+02,-1.2500e+02,-6.0000e+01,4.0000e+02,-1.2500e+02,-6.0000e+01,2.5000e+02,-1.2500e+02,-1.0000e+02,4.0000e+02,-1.2500e+02,-6.0000e+01,4.0000e+02,-1.2500e+02,-1.0000e+02}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#603"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-4.0000e+02,-1.2500e+02,-1.0000e+02,-4.0000e+02,-1.2500e+02,-6.0000e+01,-2.5000e+02,-1.2500e+02,-6.0000e+01,-4.0000e+02,-1.2500e+02,-1.0000e+02,-2.5000e+02,-1.2500e+02,-6.0000e+01,-2.5000e+02,-1.2500e+02,-1.0000e+02}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#604"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {48,0,1,49,1,2,50,2,3,51,3,4,52,4,5,53,5,6,54,6,7,55,7,8,56,8,9,57,9,10,58,10,11,59,11,12,60,12,13,61,13,14,62,14,15,63,15,16,64,16,17,65,17,18,66,18,19,67,19,20,68,20,21,69,21,22,70,22,23,71,23,24,72,24,25,73,25,26,74,26,27,75,27,28,76,28,29,77,29,30,78,30,31,79,31,32,80,32,33,81,33,34,82,34,35,83,35,36,84,36,37,85,37,38,86,38,39,87,39,40,88,40,41,89,41,42,90,42,43,91,43,44,92,44,45,93,45,46,94,46,47,95,47,0}).setNormalPerVertex(true).setSolid(false)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_507_point()))
+            .setNormal(new Normal().setVector(getNormal_7_508_vector())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#605"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {1,0,2,3,1,2,3,2,4,5,3,4,5,4,6,7,5,6,7,6,8,9,7,8,9,8,10,11,9,10,11,10,12,13,11,12,13,12,14,15,13,14,15,14,16,17,15,16,17,16,18,19,17,18,19,18,20,21,19,20,21,20,22,23,21,22,23,22,24,25,23,24,25,24,26,27,25,26,27,26,28,29,27,28,29,28,30,31,29,30,31,30,32,33,31,32,33,32,34,35,33,34,35,34,36,37,35,36,37,36,38,39,37,38,39,38,40,41,39,40,41,40,42,43,41,42,43,42,44,45,43,44,45,44,46,47,45,46,47,46,48,49,47,48,49,48,50,51,49,50,51,50,52,53,51,52,53,52,54,55,53,54,55,54,56,57,55,56,57,56,58,59,57,58,59,58,60,61,59,60,61,60,62,63,61,62,63,62,64,65,63,64,65,64,66,67,65,66,67,66,68,69,67,68,69,68,70,71,69,70,71,70,72,73,71,72,73,72,74,75,73,74,75,74,76,77,75,76,77,76,78,79,77,78,79,78,80,81,79,80,81,80,82,83,81,82,83,82,84,85,83,84,85,84,86,87,85,86,87,86,88,89,87,88,89,88,90,91,89,90,91,90,92,93,91,92,93,92,94,95,93,94,95,94,0,1,95,0}).setNormalPerVertex(true).setSolid(false)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_514_point()))
+            .setNormal(new Normal().setVector(getNormal_7_515_vector())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#606"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {48,0,1,49,1,2,50,2,3,51,3,4,52,4,5,53,5,6,54,6,7,55,7,8,56,8,9,57,9,10,58,10,11,59,11,12,60,12,13,61,13,14,62,14,15,63,15,16,64,16,17,65,17,18,66,18,19,67,19,20,68,20,21,69,21,22,70,22,23,71,23,24,72,24,25,73,25,26,74,26,27,75,27,28,76,28,29,77,29,30,78,30,31,79,31,32,80,32,33,81,33,34,82,34,35,83,35,36,84,36,37,85,37,38,86,38,39,87,39,40,88,40,41,89,41,42,90,42,43,91,43,44,92,44,45,93,45,46,94,46,47,95,47,0}).setNormalPerVertex(true).setSolid(false)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_521_point()))
+            .setNormal(new Normal().setVector(getNormal_7_522_vector())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#607"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {1,0,2,3,1,2,3,2,4,5,3,4,5,4,6,7,5,6,7,6,8,9,7,8,9,8,10,11,9,10,11,10,12,13,11,12,13,12,14,15,13,14,15,14,16,17,15,16,17,16,18,19,17,18,19,18,20,21,19,20,21,20,22,23,21,22,23,22,24,25,23,24,25,24,26,27,25,26,27,26,28,29,27,28,29,28,30,31,29,30,31,30,32,33,31,32,33,32,34,35,33,34,35,34,36,37,35,36,37,36,38,39,37,38,39,38,40,41,39,40,41,40,42,43,41,42,43,42,44,45,43,44,45,44,46,47,45,46,47,46,48,49,47,48,49,48,50,51,49,50,51,50,52,53,51,52,53,52,54,55,53,54,55,54,56,57,55,56,57,56,58,59,57,58,59,58,60,61,59,60,61,60,62,63,61,62,63,62,64,65,63,64,65,64,66,67,65,66,67,66,68,69,67,68,69,68,70,71,69,70,71,70,72,73,71,72,73,72,74,75,73,74,75,74,76,77,75,76,77,76,78,79,77,78,79,78,80,81,79,80,81,80,82,83,81,82,83,82,84,85,83,84,85,84,86,87,85,86,87,86,88,89,87,88,89,88,90,91,89,90,91,90,92,93,91,92,93,92,94,95,93,94,95,94,0,1,95,0}).setNormalPerVertex(true).setSolid(false)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_528_point()))
+            .setNormal(new Normal().setVector(getNormal_7_529_vector())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#608"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {1,0,2,3,1,2,3,2,4,5,3,4,5,4,6,7,5,6,7,6,8,9,7,8,9,8,10,11,9,10,11,10,12,13,11,12,13,12,14,15,13,14,15,14,16,17,15,16,17,16,18,19,17,18,19,18,20,21,19,20,21,20,22,23,21,22,23,22,24,25,23,24,25,24,26,27,25,26,27,26,28,29,27,28,29,28,30,31,29,30,31,30,32,33,31,32,33,32,34,35,33,34,35,34,36,37,35,36,37,36,38,39,37,38,39,38,40,41,39,40,41,40,42,43,41,42,43,42,44,45,43,44,45,44,46,47,45,46,47,46,48,49,47,48,49,48,50,51,49,50,51,50,52,53,51,52,53,52,54,55,53,54,55,54,56,57,55,56,57,56,58,59,57,58,59,58,60,61,59,60,61,60,62,63,61,62,63,62,64,65,63,64,65,64,66,67,65,66,67,66,68,69,67,68,69,68,70,71,69,70,71,70,72,73,71,72,73,72,74,75,73,74,75,74,76,77,75,76,77,76,78,79,77,78,79,78,80,81,79,80,81,80,82,83,81,82,83,82,84,85,83,84,85,84,86,87,85,86,87,86,88,89,87,88,89,88,90,91,89,90,91,90,92,93,91,92,93,92,94,95,93,94,95,94,0,1,95,0}).setNormalPerVertex(true).setSolid(false)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_535_point()))
+            .setNormal(new Normal().setVector(getNormal_7_536_vector())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#609"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {1,0,2,3,1,2,3,2,4,5,3,4,5,4,6,7,5,6,7,6,8,9,7,8,9,8,10,11,9,10,11,10,12,13,11,12,13,12,14,15,13,14,15,14,16,17,15,16,17,16,18,19,17,18,19,18,20,21,19,20,21,20,22,23,21,22,23,22,24,25,23,24,25,24,26,27,25,26,27,26,28,29,27,28,29,28,30,31,29,30,31,30,32,33,31,32,33,32,34,35,33,34,35,34,36,37,35,36,37,36,38,39,37,38,39,38,40,41,39,40,41,40,42,43,41,42,43,42,44,45,43,44,45,44,46,47,45,46,47,46,48,49,47,48,49,48,50,51,49,50,51,50,52,53,51,52,53,52,54,55,53,54,55,54,56,57,55,56,57,56,58,59,57,58,59,58,60,61,59,60,61,60,62,63,61,62,63,62,64,65,63,64,65,64,66,67,65,66,67,66,68,69,67,68,69,68,70,71,69,70,71,70,72,73,71,72,73,72,74,75,73,74,75,74,76,77,75,76,77,76,78,79,77,78,79,78,80,81,79,80,81,80,82,83,81,82,83,82,84,85,83,84,85,84,86,87,85,86,87,86,88,89,87,88,89,88,90,91,89,90,91,90,92,93,91,92,93,92,94,95,93,94,95,94,0,1,95,0}).setNormalPerVertex(true).setSolid(false)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_542_point()))
+            .setNormal(new Normal().setVector(getNormal_7_543_vector())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#610"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {1,0,2,3,1,2,3,2,4,5,3,4,5,4,6,7,5,6,7,6,8,9,7,8,9,8,10,11,9,10,11,10,12,13,11,12,13,12,14,15,13,14,15,14,16,17,15,16,17,16,18,19,17,18,19,18,20,21,19,20,21,20,22,23,21,22,23,22,24,25,23,24,25,24,26,27,25,26,27,26,28,29,27,28,29,28,30,31,29,30,31,30,32,33,31,32,33,32,34,35,33,34,35,34,36,37,35,36,37,36,38,39,37,38,39,38,40,41,39,40,41,40,42,43,41,42,43,42,44,45,43,44,45,44,46,47,45,46,47,46,48,49,47,48,49,48,50,51,49,50,51,50,52,53,51,52,53,52,54,55,53,54,55,54,56,57,55,56,57,56,58,59,57,58,59,58,60,61,59,60,61,60,62,63,61,62,63,62,64,65,63,64,65,64,66,67,65,66,67,66,68,69,67,68,69,68,70,71,69,70,71,70,72,73,71,72,73,72,74,75,73,74,75,74,76,77,75,76,77,76,78,79,77,78,79,78,80,81,79,80,81,80,82,83,81,82,83,82,84,85,83,84,85,84,86,87,85,86,87,86,88,89,87,88,89,88,90,91,89,90,91,90,92,93,91,92,93,92,94,95,93,94,95,94,0,1,95,0}).setNormalPerVertex(true).setSolid(false)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_549_point()))
+            .setNormal(new Normal().setVector(getNormal_7_550_vector())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#611"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {1,0,2,3,1,2,3,2,4,5,3,4,5,4,6,7,5,6,7,6,8,9,7,8,9,8,10,11,9,10,11,10,12,13,11,12,13,12,14,15,13,14,15,14,16,17,15,16,17,16,18,19,17,18,19,18,20,21,19,20,21,20,22,23,21,22,23,22,24,25,23,24,25,24,26,27,25,26,27,26,28,29,27,28,29,28,30,31,29,30,31,30,32,33,31,32,33,32,34,35,33,34,35,34,36,37,35,36,37,36,38,39,37,38,39,38,40,41,39,40,41,40,42,43,41,42,43,42,44,45,43,44,45,44,46,47,45,46,47,46,48,49,47,48,49,48,50,51,49,50,51,50,52,53,51,52,53,52,54,55,53,54,55,54,56,57,55,56,57,56,58,59,57,58,59,58,60,61,59,60,61,60,62,63,61,62,63,62,64,65,63,64,65,64,66,67,65,66,67,66,68,69,67,68,69,68,70,71,69,70,71,70,72,73,71,72,73,72,74,75,73,74,75,74,76,77,75,76,77,76,78,79,77,78,79,78,80,81,79,80,81,80,82,83,81,82,83,82,84,85,83,84,85,84,86,87,85,86,87,86,88,89,87,88,89,88,90,91,89,90,91,90,92,93,91,92,93,92,94,95,93,94,95,94,0,1,95,0}).setNormalPerVertex(true).setSolid(false)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_556_point()))
+            .setNormal(new Normal().setVector(getNormal_7_557_vector())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#612"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {1,0,2,3,1,2,3,2,4,5,3,4,5,4,6,7,5,6,7,6,8,9,7,8,9,8,10,11,9,10,11,10,12,13,11,12,13,12,14,15,13,14,15,14,16,17,15,16,17,16,18,19,17,18,19,18,20,21,19,20,21,20,22,23,21,22,23,22,24,25,23,24,25,24,26,27,25,26,27,26,28,29,27,28,29,28,30,31,29,30,31,30,32,33,31,32,33,32,34,35,33,34,35,34,36,37,35,36,37,36,38,39,37,38,39,38,40,41,39,40,41,40,42,43,41,42,43,42,44,45,43,44,45,44,46,47,45,46,47,46,48,49,47,48,49,48,50,51,49,50,51,50,52,53,51,52,53,52,54,55,53,54,55,54,56,57,55,56,57,56,58,59,57,58,59,58,60,61,59,60,61,60,62,63,61,62,63,62,64,65,63,64,65,64,66,67,65,66,67,66,68,69,67,68,69,68,70,71,69,70,71,70,72,73,71,72,73,72,74,75,73,74,75,74,76,77,75,76,77,76,78,79,77,78,79,78,80,81,79,80,81,80,82,83,81,82,83,82,84,85,83,84,85,84,86,87,85,86,87,86,88,89,87,88,89,88,90,91,89,90,91,90,92,93,91,92,93,92,94,95,93,94,95,94,0,1,95,0}).setNormalPerVertex(true).setSolid(false)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_563_point()))
+            .setNormal(new Normal().setVector(getNormal_7_564_vector())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#613"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {1,0,2,3,1,2,3,2,4,5,3,4,5,4,6,7,5,6,7,6,8,9,7,8,9,8,10,11,9,10,11,10,12,13,11,12,13,12,14,15,13,14,15,14,16,17,15,16,17,16,18,19,17,18,19,18,20,21,19,20,21,20,22,23,21,22,23,22,24,25,23,24,25,24,26,27,25,26,27,26,28,29,27,28,29,28,30,31,29,30,31,30,32,33,31,32,33,32,34,35,33,34,35,34,36,37,35,36,37,36,38,39,37,38,39,38,40,41,39,40,41,40,42,43,41,42,43,42,44,45,43,44,45,44,46,47,45,46,47,46,48,49,47,48,49,48,50,51,49,50,51,50,52,53,51,52,53,52,54,55,53,54,55,54,56,57,55,56,57,56,58,59,57,58,59,58,60,61,59,60,61,60,62,63,61,62,63,62,64,65,63,64,65,64,66,67,65,66,67,66,68,69,67,68,69,68,70,71,69,70,71,70,72,73,71,72,73,72,74,75,73,74,75,74,76,77,75,76,77,76,78,79,77,78,79,78,80,81,79,80,81,80,82,83,81,82,83,82,84,85,83,84,85,84,86,87,85,86,87,86,88,89,87,88,89,88,90,91,89,90,91,90,92,93,91,92,93,92,94,95,93,94,95,94,0,1,95,0}).setNormalPerVertex(true).setSolid(false)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_570_point()))
+            .setNormal(new Normal().setVector(getNormal_7_571_vector())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#614"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {1,0,2,3,1,2,3,2,4,5,3,4,5,4,6,7,5,6,7,6,8,9,7,8,9,8,10,11,9,10,11,10,12,13,11,12,13,12,14,15,13,14,15,14,16,17,15,16,17,16,18,19,17,18,19,18,20,21,19,20,21,20,22,23,21,22,23,22,24,25,23,24,25,24,26,27,25,26,27,26,28,29,27,28,29,28,30,31,29,30,31,30,32,33,31,32,33,32,34,35,33,34,35,34,36,37,35,36,37,36,38,39,37,38,39,38,40,41,39,40,41,40,42,43,41,42,43,42,44,45,43,44,45,44,46,47,45,46,47,46,48,49,47,48,49,48,50,51,49,50,51,50,52,53,51,52,53,52,54,55,53,54,55,54,56,57,55,56,57,56,58,59,57,58,59,58,60,61,59,60,61,60,62,63,61,62,63,62,64,65,63,64,65,64,66,67,65,66,67,66,68,69,67,68,69,68,70,71,69,70,71,70,72,73,71,72,73,72,74,75,73,74,75,74,76,77,75,76,77,76,78,79,77,78,79,78,80,81,79,80,81,80,82,83,81,82,83,82,84,85,83,84,85,84,86,87,85,86,87,86,88,89,87,88,89,88,90,91,89,90,91,90,92,93,91,92,93,92,94,95,93,94,95,94,0,1,95,0}).setNormalPerVertex(true).setSolid(false)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_577_point()))
+            .setNormal(new Normal().setVector(getNormal_7_578_vector())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#615"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {1,0,2,3,1,2,3,2,4,5,3,4,5,4,6,7,5,6,7,6,8,9,7,8,9,8,10,11,9,10,11,10,12,13,11,12,13,12,14,15,13,14,15,14,16,17,15,16,17,16,18,19,17,18,19,18,20,21,19,20,21,20,22,23,21,22,23,22,24,25,23,24,25,24,26,27,25,26,27,26,28,29,27,28,29,28,30,31,29,30,31,30,32,33,31,32,33,32,34,35,33,34,35,34,36,37,35,36,37,36,38,39,37,38,39,38,40,41,39,40,41,40,42,43,41,42,43,42,44,45,43,44,45,44,46,47,45,46,47,46,48,49,47,48,49,48,50,51,49,50,51,50,52,53,51,52,53,52,54,55,53,54,55,54,56,57,55,56,57,56,58,59,57,58,59,58,60,61,59,60,61,60,62,63,61,62,63,62,64,65,63,64,65,64,66,67,65,66,67,66,68,69,67,68,69,68,70,71,69,70,71,70,72,73,71,72,73,72,74,75,73,74,75,74,76,77,75,76,77,76,78,79,77,78,79,78,80,81,79,80,81,80,82,83,81,82,83,82,84,85,83,84,85,84,86,87,85,86,87,86,88,89,87,88,89,88,90,91,89,90,91,90,92,93,91,92,93,92,94,95,93,94,95,94,0,1,95,0}).setNormalPerVertex(true).setSolid(false)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_584_point()))
+            .setNormal(new Normal().setVector(getNormal_7_585_vector())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#616"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {4,2,7,5,4,7,6,5,7,10,9,14,13,12,10,13,10,14,17,16,21,20,19,17,20,17,21,24,23,28,27,26,24,27,24,28,31,30,36,34,33,31,35,34,31,35,31,36,39,38,43,42,41,39,42,39,43,46,45,50,49,48,46,49,46,50,53,52,57,56,55,53,56,53,57,60,59,63,62,60,63,66,65,70,69,68,66,69,66,70,73,72,77,76,75,73,76,73,77,80,79,84,83,82,80,83,80,84,89,86,91,90,89,91}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_591_point()))
+            .setNormal(new Normal().setVector(getNormal_7_592_vector())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#617"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {5,4,8,7,6,5,7,5,8,14,13,18,15,14,18,17,16,15,17,15,18,24,23,28,25,24,28,27,26,25,27,25,28,34,33,38,35,34,38,37,36,35,37,35,38,44,43,47,46,45,44,46,44,47,53,52,57,54,53,57,56,55,54,56,54,57,63,62,66,64,63,66,65,64,66,72,71,76,73,72,76,75,74,73,75,73,76,82,81,86,83,82,86,85,84,83,85,83,86,92,91,96,93,92,96,95,94,93,95,93,96,102,101,106,103,102,106,105,104,103,105,103,106,112,111,115,114,113,112,114,112,115}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_598_point()))
+            .setNormal(new Normal().setVector(getNormal_7_599_vector())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#618"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {4,3,7,6,5,4,6,4,7,8,11,14,13,12,8,13,8,14,15,18,21,20,19,15,20,15,21,22,25,28,27,26,22,27,22,28,29,32,35,34,33,29,34,29,35,36,39,42,41,40,36,41,36,42,43,46,48,47,43,48,49,52,55,54,53,49,54,49,55,56,59,62,61,60,56,61,56,62,63,66,69,68,67,63,68,63,69,70,73,76,75,74,70,75,70,76,81,77,83,82,81,83}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_605_point()))
+            .setNormal(new Normal().setVector(getNormal_7_606_vector())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#619"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {5,4,8,6,5,8,7,6,8,14,13,18,15,14,18,17,16,15,17,15,18,24,23,28,25,24,28,27,26,25,27,25,28,34,33,38,35,34,38,37,36,35,37,35,38,44,43,47,45,44,47,46,45,47,53,52,57,54,53,57,56,55,54,56,54,57,63,62,66,65,64,63,65,63,66,72,71,76,73,72,76,75,74,73,75,73,76,82,81,86,83,82,86,85,84,83,85,83,86,92,91,96,93,92,96,95,94,93,95,93,96,102,101,106,103,102,106,105,104,103,105,103,106,112,111,115,113,112,115,114,113,115}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_612_point()))
+            .setNormal(new Normal().setVector(getNormal_7_613_vector())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#620"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {4,3,7,6,5,4,6,4,7,8,11,14,13,12,8,13,8,14,15,18,21,20,19,15,20,15,21,22,25,28,27,26,22,27,22,28,29,32,36,34,33,29,35,34,29,35,29,36,37,40,43,42,41,37,42,37,43,44,47,50,49,48,44,49,44,50,51,54,57,56,55,51,56,51,57,58,61,63,62,58,63,64,67,70,69,68,64,69,64,70,71,74,77,76,75,71,76,71,77,78,81,84,83,82,78,83,78,84,89,85,91,90,89,91}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_619_point()))
+            .setNormal(new Normal().setVector(getNormal_7_620_vector())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#621"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {5,4,8,6,5,8,7,6,8,14,13,18,15,14,18,17,16,15,17,15,18,24,23,28,25,24,28,27,26,25,27,25,28,34,33,38,35,34,38,37,36,35,37,35,38,44,43,47,45,44,47,46,45,47,53,52,57,54,53,57,56,55,54,56,54,57,63,62,66,65,64,63,65,63,66,72,71,76,73,72,76,75,74,73,75,73,76,82,81,86,83,82,86,85,84,83,85,83,86,92,91,96,93,92,96,95,94,93,95,93,96,102,101,106,103,102,106,105,104,103,105,103,106,112,111,115,113,112,115,114,113,115}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_626_point()))
+            .setNormal(new Normal().setVector(getNormal_7_627_vector())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#622"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {4,2,7,5,4,7,6,5,7,10,9,14,13,12,10,13,10,14,17,16,21,20,19,17,20,17,21,24,23,28,27,26,24,27,24,28,31,30,35,34,33,31,34,31,35,38,37,42,41,40,38,41,38,42,45,44,48,47,45,48,51,50,55,54,53,51,54,51,55,58,57,62,61,60,58,61,58,62,65,64,69,68,67,65,68,65,69,72,71,76,75,74,72,75,72,76,81,78,83,82,81,83}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_633_point()))
+            .setNormal(new Normal().setVector(getNormal_7_634_vector())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#623"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {5,4,8,7,6,5,7,5,8,14,13,18,15,14,18,17,16,15,17,15,18,24,23,28,25,24,28,27,26,25,27,25,28,34,33,37,36,35,34,36,34,37,43,42,48,44,43,48,46,45,44,47,46,44,47,44,48,54,53,58,55,54,58,57,56,55,57,55,58,64,63,68,65,64,68,67,66,65,67,65,68,74,73,78,75,74,78,77,76,75,77,75,78,84,83,86,85,84,86,92,91,96,93,92,96,95,94,93,95,93,96,102,101,107,103,102,107,104,103,107,106,105,104,106,104,107,113,112,117,114,113,117,116,115,114,116,114,117,123,122,125,124,123,125}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_640_point()))
+            .setNormal(new Normal().setVector(getNormal_7_641_vector())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#624"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {5,4,9,6,5,9,8,7,6,8,6,9,15,14,19,16,15,19,18,17,16,18,16,19,25,24,29,26,25,29,28,27,26,28,26,29,35,34,39,36,35,39,38,37,36,38,36,39,45,44,49,46,45,49,48,47,46,48,46,49,55,54,59,56,55,59,58,57,56,58,56,59,65,64,69,66,65,69,68,67,66,68,66,69,75,74,79,76,75,79,78,77,76,78,76,79,85,84,87,86,85,87,93,92,95,94,93,95,101,100,105,102,101,105,104,103,102,104,102,105,111,110,115,112,111,115,114,113,112,114,112,115}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_647_point()))
+            .setNormal(new Normal().setVector(getNormal_7_648_vector())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#625"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {5,4,9,6,5,9,8,7,6,8,6,9,15,14,19,16,15,19,18,17,16,18,16,19,25,24,29,26,25,29,28,27,26,28,26,29,35,34,39,36,35,39,38,37,36,38,36,39,45,44,49,46,45,49,48,47,46,48,46,49,55,54,59,56,55,59,58,57,56,58,56,59,65,64,69,66,65,69,68,67,66,68,66,69,75,74,79,76,75,79,78,77,76,78,76,79,85,84,87,86,85,87,93,92,95,94,93,95,101,100,105,102,101,105,104,103,102,104,102,105,111,110,115,112,111,115,114,113,112,114,112,115}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_654_point()))
+            .setNormal(new Normal().setVector(getNormal_7_655_vector())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#626"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {5,4,9,6,5,9,8,7,6,8,6,9,15,14,19,16,15,19,18,17,16,18,16,19,25,24,29,26,25,29,28,27,26,28,26,29,35,34,39,36,35,39,38,37,36,38,36,39,45,44,49,46,45,49,48,47,46,48,46,49,55,54,59,56,55,59,58,57,56,58,56,59,65,64,69,66,65,69,68,67,66,68,66,69,75,74,79,76,75,79,78,77,76,78,76,79,85,84,89,86,85,89,88,87,86,88,86,89,95,94,99,96,95,99,98,97,96,98,96,99,105,104,109,106,105,109,108,107,106,108,106,109,115,114,119,116,115,119,118,117,116,118,116,119,125,124,127,126,125,127}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_661_point()))
+            .setNormal(new Normal().setVector(getNormal_7_662_vector())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#627"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {5,4,9,6,5,9,8,7,6,8,6,9,15,14,19,16,15,19,18,17,16,18,16,19,25,24,29,26,25,29,28,27,26,28,26,29,35,34,39,36,35,39,38,37,36,38,36,39,45,44,49,46,45,49,48,47,46,48,46,49,55,54,59,56,55,59,58,57,56,58,56,59,65,64,69,66,65,69,68,67,66,68,66,69,75,74,79,76,75,79,78,77,76,78,76,79,85,84,89,86,85,89,88,87,86,88,86,89,95,94,99,96,95,99,98,97,96,98,96,99,105,104,109,106,105,109,108,107,106,108,106,109,115,114,119,116,115,119,118,117,116,118,116,119,125,124,127,126,125,127}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_668_point()))
+            .setNormal(new Normal().setVector(getNormal_7_669_vector())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#628"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {5,4,9,6,5,9,8,7,6,8,6,9,15,14,19,16,15,19,18,17,16,18,16,19,25,24,29,26,25,29,28,27,26,28,26,29,35,34,39,36,35,39,38,37,36,38,36,39,45,44,49,46,45,49,48,47,46,48,46,49,55,54,59,56,55,59,58,57,56,58,56,59,65,64,69,66,65,69,68,67,66,68,66,69,75,74,79,76,75,79,78,77,76,78,76,79,85,84,87,86,85,87,93,92,95,94,93,95,101,100,105,102,101,105,104,103,102,104,102,105,111,110,115,112,111,115,114,113,112,114,112,115}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_675_point()))
+            .setNormal(new Normal().setVector(getNormal_7_676_vector())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#629"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {5,4,9,6,5,9,8,7,6,8,6,9,15,14,19,16,15,19,18,17,16,18,16,19,25,24,29,26,25,29,28,27,26,28,26,29,35,34,39,36,35,39,38,37,36,38,36,39,45,44,49,46,45,49,48,47,46,48,46,49,55,54,59,56,55,59,58,57,56,58,56,59,65,64,69,66,65,69,68,67,66,68,66,69,75,74,79,76,75,79,78,77,76,78,76,79,85,84,87,86,85,87,93,92,95,94,93,95,101,100,105,102,101,105,104,103,102,104,102,105,111,110,115,112,111,115,114,113,112,114,112,115}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_682_point()))
+            .setNormal(new Normal().setVector(getNormal_7_683_vector())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#630"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-4.5000e+01,-2.5981e+01,5.0000e+01,-5.0000e+01,-2.8868e+01,4.5000e+01,-1.1423e-08,-5.7735e+01,4.5000e+01,-4.5000e+01,-2.5981e+01,5.0000e+01,-1.1423e-08,-5.7735e+01,4.5000e+01,-1.4129e-08,-5.1962e+01,5.0000e+01}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#631"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {1.4129e-08,-5.1962e+01,5.0000e+01,1.1423e-08,-5.7735e+01,4.5000e+01,5.0000e+01,-2.8868e+01,4.5000e+01,1.4129e-08,-5.1962e+01,5.0000e+01,5.0000e+01,-2.8868e+01,4.5000e+01,4.5000e+01,-2.5981e+01,5.0000e+01}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#632"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-5.0000e+01,-2.8868e+01,4.5000e+01,-4.5000e+01,-2.5981e+01,5.0000e+01,-4.5000e+01,2.5981e+01,5.0000e+01,-5.0000e+01,-2.8868e+01,4.5000e+01,-4.5000e+01,2.5981e+01,5.0000e+01,-5.0000e+01,2.8868e+01,4.5000e+01}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#633"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {4.5000e+01,-2.5981e+01,5.0000e+01,5.0000e+01,-2.8868e+01,4.5000e+01,5.0000e+01,2.8868e+01,4.5000e+01,4.5000e+01,-2.5981e+01,5.0000e+01,5.0000e+01,2.8868e+01,4.5000e+01,4.5000e+01,2.5981e+01,5.0000e+01}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#634"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-5.0000e+01,2.8868e+01,4.5000e+01,-4.5000e+01,2.5981e+01,5.0000e+01,-1.4129e-08,5.1962e+01,5.0000e+01,-5.0000e+01,2.8868e+01,4.5000e+01,-1.4129e-08,5.1962e+01,5.0000e+01,-1.1423e-08,5.7735e+01,4.5000e+01}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#635"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {4.5000e+01,2.5981e+01,5.0000e+01,5.0000e+01,2.8868e+01,4.5000e+01,1.1423e-08,5.7735e+01,4.5000e+01,4.5000e+01,2.5981e+01,5.0000e+01,1.1423e-08,5.7735e+01,4.5000e+01,1.4129e-08,5.1962e+01,5.0000e+01}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#636"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {4.0000e+02,-8.2328e+01,-1.3750e+01,4.0000e+02,-8.2328e+01,-2.9956e+01,3.9800e+02,-8.2328e+01,-2.9956e+01,4.0000e+02,-8.2328e+01,-1.3750e+01,3.9800e+02,-8.2328e+01,-2.9956e+01,3.9800e+02,-8.2328e+01,-1.3750e+01}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#637"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {1,0,2,3,1,2,3,2,4,5,3,4,5,4,6,7,5,6,7,6,8,9,7,8,9,8,10,11,9,10,11,10,12,13,11,12,13,12,14,15,13,14,15,14,16,17,15,16,17,16,18,19,17,18,19,18,20,21,19,20,21,20,22,23,21,22,23,22,24,25,23,24}).setNormalPerVertex(true).setSolid(false)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {4.0000e+02,-8.2328e+01,-2.9956e+01,3.9800e+02,-8.2328e+01,-2.9956e+01,4.0000e+02,-8.2275e+01,-3.0778e+01,3.9800e+02,-8.2275e+01,-3.0778e+01,4.0000e+02,-8.2114e+01,-3.1585e+01,3.9800e+02,-8.2114e+01,-3.1585e+01,4.0000e+02,-8.1849e+01,-3.2365e+01,3.9800e+02,-8.1849e+01,-3.2365e+01,4.0000e+02,-8.1485e+01,-3.3103e+01,3.9800e+02,-8.1485e+01,-3.3103e+01,4.0000e+02,-8.1028e+01,-3.3788e+01,3.9800e+02,-8.1028e+01,-3.3788e+01,4.0000e+02,-8.0485e+01,-3.4407e+01,3.9800e+02,-8.0485e+01,-3.4407e+01,4.0000e+02,-7.9866e+01,-3.4949e+01,3.9800e+02,-7.9866e+01,-3.4949e+01,4.0000e+02,-7.9182e+01,-3.5407e+01,3.9800e+02,-7.9182e+01,-3.5407e+01,4.0000e+02,-7.8443e+01,-3.5771e+01,3.9800e+02,-7.8443e+01,-3.5771e+01,4.0000e+02,-7.7664e+01,-3.6036e+01,3.9800e+02,-7.7664e+01,-3.6036e+01,4.0000e+02,-7.6856e+01,-3.6196e+01,3.9800e+02,-7.6856e+01,-3.6196e+01,4.0000e+02,-7.6035e+01,-3.6250e+01,3.9800e+02,-7.6035e+01,-3.6250e+01})))
+            .setNormal(new Normal().setVector(new MFVec3f(new double[] {-0.0000e+00,1.0000e+00,-6.1232e-17,-0.0000e+00,1.0000e+00,-6.1232e-17,-0.0000e+00,9.9144e-01,1.3053e-01,-0.0000e+00,9.9144e-01,1.3053e-01,-0.0000e+00,9.6593e-01,2.5882e-01,-0.0000e+00,9.6593e-01,2.5882e-01,-0.0000e+00,9.2388e-01,3.8268e-01,-0.0000e+00,9.2388e-01,3.8268e-01,-0.0000e+00,8.6603e-01,5.0000e-01,-0.0000e+00,8.6603e-01,5.0000e-01,-0.0000e+00,7.9335e-01,6.0876e-01,-0.0000e+00,7.9335e-01,6.0876e-01,-0.0000e+00,7.0711e-01,7.0711e-01,-0.0000e+00,7.0711e-01,7.0711e-01,-0.0000e+00,6.0876e-01,7.9335e-01,-0.0000e+00,6.0876e-01,7.9335e-01,-0.0000e+00,5.0000e-01,8.6603e-01,-0.0000e+00,5.0000e-01,8.6603e-01,-0.0000e+00,3.8268e-01,9.2388e-01,-0.0000e+00,3.8268e-01,9.2388e-01,-0.0000e+00,2.5882e-01,9.6593e-01,-0.0000e+00,2.5882e-01,9.6593e-01,-0.0000e+00,1.3053e-01,9.9144e-01,-0.0000e+00,1.3053e-01,9.9144e-01,-0.0000e+00,1.2246e-16,1.0000e+00,-0.0000e+00,1.2246e-16,1.0000e+00}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#638"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {4.0000e+02,-7.6035e+01,-3.6250e+01,4.0000e+02,-5.3234e+01,-3.6250e+01,3.9800e+02,-5.3234e+01,-3.6250e+01,4.0000e+02,-7.6035e+01,-3.6250e+01,3.9800e+02,-5.3234e+01,-3.6250e+01,3.9800e+02,-7.6035e+01,-3.6250e+01}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#639"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {1,0,2,3,1,2,3,2,4,5,3,4,5,4,6,7,5,6,7,6,8,9,7,8,9,8,10,11,9,10,11,10,12,13,11,12,13,12,14,15,13,14,15,14,16,17,15,16,17,16,18,19,17,18,19,18,20,21,19,20,21,20,22,23,21,22,23,22,24,25,23,24,25,24,26,27,25,26,27,26,28,29,27,28,29,28,30,31,29,30,31,30,32,33,31,32,33,32,34,35,33,34,35,34,36,37,35,36,37,36,38,39,37,38,39,38,40,41,39,40,41,40,42,43,41,42,43,42,44,45,43,44}).setNormalPerVertex(true).setSolid(false)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_744_point()))
+            .setNormal(new Normal().setVector(getNormal_7_745_vector())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#640"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {4.0000e+02,-5.3234e+01,-2.2716e+01,4.0000e+02,-6.7674e+01,-2.2716e+01,3.9800e+02,-6.7674e+01,-2.2716e+01,4.0000e+02,-5.3234e+01,-2.2716e+01,3.9800e+02,-6.7674e+01,-2.2716e+01,3.9800e+02,-5.3234e+01,-2.2716e+01}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#641"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {2,0,1,2,1,3,4,2,3,4,3,5,6,4,5,6,5,7,8,6,7,8,7,9,10,8,9,10,9,11,12,10,11,12,11,13,14,12,13,14,13,15,16,14,15,16,15,17,18,16,17,18,17,19,20,18,19,20,19,21,22,20,21,22,21,23,24,22,23,24,23,25,26,24,25,26,25,27,28,26,27,28,27,29,30,28,29,30,29,31,32,30,31,32,31,33,34,32,33,34,33,35,36,34,35,36,35,37,38,36,37,38,37,39,40,38,39,40,39,41,42,40,41,42,41,43,44,42,43,44,43,45,46,44,45,46,45,47,48,46,47,48,47,49,50,48,49,50,49,51}).setNormalPerVertex(true).setSolid(false)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_757_point()))
+            .setNormal(new Normal().setVector(getNormal_7_758_vector())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#642"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {4.0000e+02,-6.7502e+01,-1.8492e+01,4.0000e+02,-4.3967e+01,-1.8492e+01,3.9800e+02,-4.3967e+01,-1.8492e+01,4.0000e+02,-6.7502e+01,-1.8492e+01,3.9800e+02,-4.3967e+01,-1.8492e+01,3.9800e+02,-6.7502e+01,-1.8492e+01}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#643"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {4.0000e+02,-4.3967e+01,-1.8492e+01,4.0000e+02,-4.3967e+01,-3.6250e+01,3.9800e+02,-4.3967e+01,-3.6250e+01,4.0000e+02,-4.3967e+01,-1.8492e+01,3.9800e+02,-4.3967e+01,-3.6250e+01,3.9800e+02,-4.3967e+01,-1.8492e+01}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#644"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {4.0000e+02,-4.3967e+01,-3.6250e+01,4.0000e+02,-3.9313e+01,-3.6250e+01,3.9800e+02,-3.9313e+01,-3.6250e+01,4.0000e+02,-4.3967e+01,-3.6250e+01,3.9800e+02,-3.9313e+01,-3.6250e+01,3.9800e+02,-4.3967e+01,-3.6250e+01}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#645"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {4.0000e+02,-3.9313e+01,-3.6250e+01,4.0000e+02,-3.9313e+01,-1.8492e+01,3.9800e+02,-3.9313e+01,-1.8492e+01,4.0000e+02,-3.9313e+01,-3.6250e+01,3.9800e+02,-3.9313e+01,-1.8492e+01,3.9800e+02,-3.9313e+01,-3.6250e+01}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#646"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {4.0000e+02,-3.9313e+01,-1.8492e+01,4.0000e+02,-2.9699e+01,-1.8492e+01,3.9800e+02,-2.9699e+01,-1.8492e+01,4.0000e+02,-3.9313e+01,-1.8492e+01,3.9800e+02,-2.9699e+01,-1.8492e+01,3.9800e+02,-3.9313e+01,-1.8492e+01}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#647"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {4.0000e+02,-2.9699e+01,-1.8492e+01,4.0000e+02,-2.9699e+01,-1.3750e+01,3.9800e+02,-2.9699e+01,-1.3750e+01,4.0000e+02,-2.9699e+01,-1.8492e+01,3.9800e+02,-2.9699e+01,-1.3750e+01,3.9800e+02,-2.9699e+01,-1.8492e+01}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#648"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {4.0000e+02,-2.9699e+01,-1.3750e+01,4.0000e+02,-6.8104e+01,-1.3750e+01,3.9800e+02,-6.8104e+01,-1.3750e+01,4.0000e+02,-2.9699e+01,-1.3750e+01,3.9800e+02,-6.8104e+01,-1.3750e+01,3.9800e+02,-2.9699e+01,-1.3750e+01}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#649"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {1,0,2,3,1,2,3,2,4,5,3,4,5,4,6,7,5,6,7,6,8,9,7,8,9,8,10,11,9,10,11,10,12,13,11,12,13,12,14,15,13,14,15,14,16,17,15,16,17,16,18,19,17,18,19,18,20,21,19,20,21,20,22,23,21,22,23,22,24,25,23,24,25,24,26,27,25,26,27,26,28,29,27,28,29,28,30,31,29,30,31,30,32,33,31,32,33,32,34,35,33,34,35,34,36,37,35,36,37,36,38,39,37,38,39,38,40,41,39,40,41,40,42,43,41,42,43,42,44,45,43,44,45,44,46,47,45,46,47,46,48,49,47,48,49,48,50,51,49,50}).setNormalPerVertex(true).setSolid(false)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_806_point()))
+            .setNormal(new Normal().setVector(getNormal_7_807_vector())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#650"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {4.0000e+02,-6.7588e+01,-2.7371e+01,4.0000e+02,-5.4010e+01,-2.7371e+01,3.9800e+02,-5.4010e+01,-2.7371e+01,4.0000e+02,-6.7588e+01,-2.7371e+01,3.9800e+02,-5.4010e+01,-2.7371e+01,3.9800e+02,-6.7588e+01,-2.7371e+01}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#651"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {2,0,1,2,1,3,4,2,3,4,3,5,6,4,5,6,5,7,8,6,7,8,7,9,10,8,9,10,9,11,12,10,11,12,11,13,14,12,13,14,13,15,16,14,15,16,15,17,18,16,17,18,17,19,20,18,19,20,19,21,22,20,21,22,21,23,24,22,23,24,23,25,26,24,25,26,25,27,28,26,27,28,27,29,30,28,29,30,29,31,32,30,31,32,31,33,34,32,33,34,33,35,36,34,35,36,35,37,38,36,37,38,37,39,40,38,39,40,39,41,42,40,41,42,41,43,44,42,43,44,43,45,46,44,45,46,45,47}).setNormalPerVertex(true).setSolid(false)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_819_point()))
+            .setNormal(new Normal().setVector(getNormal_7_820_vector())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#652"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {4.0000e+02,-5.3924e+01,-3.1595e+01,4.0000e+02,-7.5991e+01,-3.1595e+01,3.9800e+02,-7.5991e+01,-3.1595e+01,4.0000e+02,-5.3924e+01,-3.1595e+01,3.9800e+02,-7.5991e+01,-3.1595e+01,3.9800e+02,-5.3924e+01,-3.1595e+01}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#653"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {2,0,1,2,1,3,4,2,3,4,3,5,6,4,5,6,5,7,8,6,7,8,7,9,10,8,9,10,9,11,12,10,11,12,11,13,14,12,13,14,13,15,16,14,15,16,15,17,18,16,17,18,17,19,20,18,19,20,19,21,22,20,21,22,21,23,24,22,23,24,23,25}).setNormalPerVertex(true).setSolid(false)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {4.0000e+02,-7.7630e+01,-2.9956e+01,3.9800e+02,-7.7630e+01,-2.9956e+01,4.0000e+02,-7.7616e+01,-3.0170e+01,3.9800e+02,-7.7616e+01,-3.0170e+01,4.0000e+02,-7.7574e+01,-3.0381e+01,3.9800e+02,-7.7574e+01,-3.0381e+01,4.0000e+02,-7.7505e+01,-3.0584e+01,3.9800e+02,-7.7505e+01,-3.0584e+01,4.0000e+02,-7.7410e+01,-3.0776e+01,3.9800e+02,-7.7410e+01,-3.0776e+01,4.0000e+02,-7.7291e+01,-3.0954e+01,3.9800e+02,-7.7291e+01,-3.0954e+01,4.0000e+02,-7.7150e+01,-3.1115e+01,3.9800e+02,-7.7150e+01,-3.1115e+01,4.0000e+02,-7.6989e+01,-3.1257e+01,3.9800e+02,-7.6989e+01,-3.1257e+01,4.0000e+02,-7.6811e+01,-3.1376e+01,3.9800e+02,-7.6811e+01,-3.1376e+01,4.0000e+02,-7.6618e+01,-3.1470e+01,3.9800e+02,-7.6618e+01,-3.1470e+01,4.0000e+02,-7.6415e+01,-3.1539e+01,3.9800e+02,-7.6415e+01,-3.1539e+01,4.0000e+02,-7.6205e+01,-3.1581e+01,3.9800e+02,-7.6205e+01,-3.1581e+01,4.0000e+02,-7.5991e+01,-3.1595e+01,3.9800e+02,-7.5991e+01,-3.1595e+01})))
+            .setNormal(new Normal().setVector(new MFVec3f(new double[] {0.0000e+00,-1.0000e+00,6.1232e-17,0.0000e+00,-1.0000e+00,6.1232e-17,0.0000e+00,-9.9144e-01,-1.3053e-01,0.0000e+00,-9.9144e-01,-1.3053e-01,0.0000e+00,-9.6593e-01,-2.5882e-01,0.0000e+00,-9.6593e-01,-2.5882e-01,0.0000e+00,-9.2388e-01,-3.8268e-01,0.0000e+00,-9.2388e-01,-3.8268e-01,0.0000e+00,-8.6603e-01,-5.0000e-01,0.0000e+00,-8.6603e-01,-5.0000e-01,0.0000e+00,-7.9335e-01,-6.0876e-01,0.0000e+00,-7.9335e-01,-6.0876e-01,0.0000e+00,-7.0711e-01,-7.0711e-01,0.0000e+00,-7.0711e-01,-7.0711e-01,0.0000e+00,-6.0876e-01,-7.9335e-01,0.0000e+00,-6.0876e-01,-7.9335e-01,0.0000e+00,-5.0000e-01,-8.6603e-01,0.0000e+00,-5.0000e-01,-8.6603e-01,0.0000e+00,-3.8268e-01,-9.2388e-01,0.0000e+00,-3.8268e-01,-9.2388e-01,0.0000e+00,-2.5882e-01,-9.6593e-01,0.0000e+00,-2.5882e-01,-9.6593e-01,0.0000e+00,-1.3053e-01,-9.9144e-01,0.0000e+00,-1.3053e-01,-9.9144e-01,0.0000e+00,-1.2246e-16,-1.0000e+00,0.0000e+00,-1.2246e-16,-1.0000e+00}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#654"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {4.0000e+02,-7.7630e+01,-2.9956e+01,4.0000e+02,-7.7630e+01,-1.3750e+01,3.9800e+02,-7.7630e+01,-1.3750e+01,4.0000e+02,-7.7630e+01,-2.9956e+01,3.9800e+02,-7.7630e+01,-1.3750e+01,3.9800e+02,-7.7630e+01,-2.9956e+01}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#655"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {4.0000e+02,-7.7630e+01,-1.3750e+01,4.0000e+02,-8.2328e+01,-1.3750e+01,3.9800e+02,-8.2328e+01,-1.3750e+01,4.0000e+02,-7.7630e+01,-1.3750e+01,3.9800e+02,-8.2328e+01,-1.3750e+01,3.9800e+02,-7.7630e+01,-1.3750e+01}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#656"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {90,0,1,90,1,2,90,2,3,90,3,4,90,4,5,90,5,6,90,6,7,90,7,8,8,9,10,8,10,11,8,11,12,8,12,13,8,13,14,8,14,15,15,16,17,15,17,18,15,18,19,15,19,20,15,20,21,15,21,22,15,22,23,41,42,43,41,43,44,41,45,46,40,41,46,39,40,46,39,46,47,38,39,47,37,38,47,36,37,47,35,36,47,34,35,47,33,34,47,33,47,48,32,33,48,32,48,49,31,32,49,31,49,50,30,31,50,30,50,51,29,30,51,29,51,52,28,29,52,28,52,53,27,28,53,27,53,54,26,27,54,26,54,55,25,26,55,25,55,56,24,25,56,24,56,57,23,24,57,23,57,58,23,58,59,23,59,60,23,60,61,23,61,62,23,62,63,23,63,64,23,64,65,23,65,66,15,23,66,15,66,67,15,67,68,15,68,69,15,69,70,15,70,71,15,71,72,15,72,73,15,73,74,15,74,75,15,75,76,15,76,77,15,77,78,15,78,79,8,15,79,8,79,80,8,80,81,8,81,82,8,82,83,8,83,84,8,84,85,8,85,86,8,86,87,90,8,87,90,87,88,90,88,89}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_851_point())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#657"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {4.0000e+02,-1.1500e+02,-1.8007e+01,4.0000e+02,-1.1500e+02,-3.6250e+01,3.9800e+02,-1.1500e+02,-3.6250e+01,4.0000e+02,-1.1500e+02,-1.8007e+01,3.9800e+02,-1.1500e+02,-3.6250e+01,3.9800e+02,-1.1500e+02,-1.8007e+01}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#658"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {4.0000e+02,-1.1500e+02,-3.6250e+01,4.0000e+02,-1.1035e+02,-3.6250e+01,3.9800e+02,-1.1035e+02,-3.6250e+01,4.0000e+02,-1.1500e+02,-3.6250e+01,3.9800e+02,-1.1035e+02,-3.6250e+01,3.9800e+02,-1.1500e+02,-3.6250e+01}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#659"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {4.0000e+02,-1.1035e+02,-3.6250e+01,4.0000e+02,-1.1035e+02,-1.9385e+01,3.9800e+02,-1.1035e+02,-1.9385e+01,4.0000e+02,-1.1035e+02,-3.6250e+01,3.9800e+02,-1.1035e+02,-1.9385e+01,3.9800e+02,-1.1035e+02,-3.6250e+01}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#660"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {2,0,1,2,1,3,4,2,3,4,3,5,6,4,5,6,5,7,8,6,7,8,7,9,10,8,9,10,9,11,12,10,11,12,11,13,14,12,13,14,13,15,16,14,15,16,15,17,18,16,17,18,17,19,20,18,19,20,19,21,22,20,21,22,21,23,24,22,23,24,23,25,26,24,25,26,25,27,28,26,27,28,27,29,30,28,29,30,29,31,32,30,31,32,31,33,34,32,33,34,33,35,36,34,35,36,35,37,38,36,37,38,37,39}).setNormalPerVertex(true).setSolid(false)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_875_point()))
+            .setNormal(new Normal().setVector(getNormal_7_876_vector())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#661"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {4.0000e+02,-1.0894e+02,-1.8836e+01,4.0000e+02,-9.4740e+01,-3.4271e+01,3.9800e+02,-9.4740e+01,-3.4271e+01,4.0000e+02,-1.0894e+02,-1.8836e+01,3.9800e+02,-9.4740e+01,-3.4271e+01,3.9800e+02,-1.0894e+02,-1.8836e+01}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#662"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {1,0,2,3,1,2,3,2,4,5,3,4,5,4,6,7,5,6,7,6,8,9,7,8,9,8,10,11,9,10,11,10,12,13,11,12,13,12,14,15,13,14,15,14,16,17,15,16,17,16,18,19,17,18,19,18,20,21,19,20,21,20,22,23,21,22,23,22,24,25,23,24,25,24,26,27,25,26,27,26,28,29,27,28,29,28,30,31,29,30,31,30,32,33,31,32,33,32,34,35,33,34,35,34,36,37,35,36,37,36,38,39,37,38}).setNormalPerVertex(true).setSolid(false)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_888_point()))
+            .setNormal(new Normal().setVector(getNormal_7_889_vector())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#663"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {4.0000e+02,-8.5345e+01,-3.0974e+01,4.0000e+02,-8.5345e+01,-1.3750e+01,3.9800e+02,-8.5345e+01,-1.3750e+01,4.0000e+02,-8.5345e+01,-3.0974e+01,3.9800e+02,-8.5345e+01,-1.3750e+01,3.9800e+02,-8.5345e+01,-3.0974e+01}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#664"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {4.0000e+02,-8.5345e+01,-1.3750e+01,4.0000e+02,-9.0044e+01,-1.3750e+01,3.9800e+02,-9.0044e+01,-1.3750e+01,4.0000e+02,-8.5345e+01,-1.3750e+01,3.9800e+02,-9.0044e+01,-1.3750e+01,3.9800e+02,-8.5345e+01,-1.3750e+01}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#665"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {4.0000e+02,-9.0044e+01,-1.3750e+01,4.0000e+02,-9.0044e+01,-3.0862e+01,3.9800e+02,-9.0044e+01,-3.0862e+01,4.0000e+02,-9.0044e+01,-1.3750e+01,3.9800e+02,-9.0044e+01,-3.0862e+01,3.9800e+02,-9.0044e+01,-1.3750e+01}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#666"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {2,0,1,2,1,3,4,2,3,4,3,5,6,4,5,6,5,7,8,6,7,8,7,9,10,8,9,10,9,11,12,10,11,12,11,13,14,12,13,14,13,15,16,14,15,16,15,17,18,16,17,18,17,19,20,18,19,20,19,21,22,20,21,22,21,23,24,22,23,24,23,25,26,24,25,26,25,27,28,26,27,28,27,29,30,28,29,30,29,31,32,30,31,32,31,33,34,32,33,34,33,35,36,34,35,36,35,37,38,36,37,38,37,39}).setNormalPerVertex(true).setSolid(false)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_913_point()))
+            .setNormal(new Normal().setVector(getNormal_7_914_vector())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#667"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {0,1,2,3,4,5}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {4.0000e+02,-9.1120e+01,-3.1337e+01,4.0000e+02,-1.0652e+02,-1.4686e+01,3.9800e+02,-1.0652e+02,-1.4686e+01,4.0000e+02,-9.1120e+01,-3.1337e+01,3.9800e+02,-1.0652e+02,-1.4686e+01,3.9800e+02,-9.1120e+01,-3.1337e+01}))))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#668"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {1,0,2,3,1,2,3,2,4,5,3,4,5,4,6,7,5,6,7,6,8,9,7,8,9,8,10,11,9,10,11,10,12,13,11,12,13,12,14,15,13,14,15,14,16,17,15,16,17,16,18,19,17,18,19,18,20,21,19,20,21,20,22,23,21,22,23,22,24,25,23,24,25,24,26,27,25,26,27,26,28,29,27,28,29,28,30,31,29,30,31,30,32,33,31,32,33,32,34,35,33,34,35,34,36,37,35,36,37,36,38,39,37,38}).setNormalPerVertex(true).setSolid(false)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_926_point()))
+            .setNormal(new Normal().setVector(getNormal_7_927_vector())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))
+      .addChild(new CADFace()
+        .setShape(new Shape()
+          .setMetadata(new MetadataString().setName("instance").setValue(new String[] {"#669"}))
+          .setGeometry(new IndexedTriangleSet().setCcw(true).setColorPerVertex(true).setIndex(new int[] {57,0,1,57,1,2,57,2,3,57,3,4,57,4,5,57,5,6,57,6,7,57,7,8,57,8,9,57,9,10,14,15,16,14,16,17,14,17,18,14,18,19,14,19,20,14,20,21,13,14,21,13,21,22,13,22,23,13,23,24,24,25,26,24,26,27,24,27,28,24,28,29,24,29,30,24,30,31,24,31,32,24,32,33,24,33,34,24,34,35,24,35,36,24,36,37,24,37,38,24,38,39,24,39,40,24,40,41,24,41,42,24,42,43,13,24,43,13,43,44,13,44,45,12,13,45,11,12,45,10,11,45,57,10,45,57,45,46,57,46,47,57,47,48,57,48,49,57,49,50,57,50,51,57,51,52,57,52,53,57,53,54,57,54,55,57,55,56}).setNormalPerVertex(true).setSolid(true)
+            .setCoord(new Coordinate().setPoint(getCoordinate_7_933_point())))
+          .setAppearance(new Appearance().setUSE("partcolor"))))));
+    }
+	// end of initialize() method
+
+
+
+
+		/** Define subarrays using type int[] */
+		private int[] getIndexedTriangleSet_6_64_index_1()
+		{
+			int[] value = {95,39,40,95,40,41,95,41,42,95,42,43,95,43,44,95,44,45,95,45,46,50,51,52,50,52,53,50,53,54,49,50,54,49,54,55,49,55,56,48,49,56,48,56,57,48,57,58,48,58,59,47,48,59,47,59,60,46,47,60,60,120,121,60,121,122,60,122,123,60,123,124,60,124,125,60,125,126,46,60,126,95,46,126,95,126,127,95,127,128,95,128,129,95,129,130,119,120,60,118,119,60,117,118,60,116,117,60,115,116,60,114,115,60,114,60,61,113,114,61,113,61,62,112,113,62,112,62,63,111,112,63,111,63,64,111,64,65,110,111,65,110,65,66,109,110,66,109,66,67,109,67,68,108,109,68,108,68,1,107,108,1,106,107,1,105,106,1,104,105,1,103,104,1,102,103,1,101,102,1,1,7,8,1,8,9,101,1,9,100,101,9,100,9,10,100,10,11,100,11,12,100,12,13,100,13,14,100,14,15,100,15,16,100,16,17,130,100,17,130,17,18,130,18,19,130,19,20,130,20,21,130,21,22,130,22,23,25,26,4,24,25,4,23,24,4,23,4,5,5,6,27,5,27,28,5,28,29,5,29,30,5,30,31,5,31,32,5,32,33,5,33,34,5,34,35,5,35,36,5,36,37,5,37,38,38,39,95,5,38,95,5,95,96,5,96,97,5,97,98,5,98,99,5,99,69,5,69,70,5,70,71,5,71,72,5,72,73,5,73,74,5,74,75,23,5,75,23,75,76,23,76,77,23,77,78,23,78,79,23,79,80,130,23,80,130,80,81,130,81,82,130,82,83,130,83,84,130,84,85,130,85,86,130,86,87,130,87,88,130,88,89,130,89,90,130,90,91,130,91,92,130,92,93,130,93,94,95,130,94,216,185,186,216,186,187,216,187,188,216,188,189,216,189,190,216,190,191,216,191,192,216,192,193,195,196,197,194,195,197,193,194,197,216,193,197,216,197,135,216,135,136,216,136,137,137,138,139,137,139,140,137,140,141,137,141,142,137,142,143,137,143,144,137,144,145,154,155,133,153,154,133,152,153,133,151,152,133,150,151,133,149,150,133,148,149,133,148,133,156,147,148,156,146,147,156,145,146,156,145,156,157,145,157,158,145,158,159,145,159,160,145,160,161,161,162,163,161,163,164,161,164,165,161,165,249,161,249,250,161,250,251,161,251,252,161,252,253,161,253,254,161,254,255,161,255,256,161,256,257,161,257,258,161,258,259,161,259,229,161,229,230,161,230,231,145,161,231,145,231,232,145,232,233,145,233,234,145,234,235,145,235,236,145,236,237,145,237,238,145,238,239,145,239,240,145,240,241,145,241,242,145,242,243,145,243,244,145,244,245,248,249,165,247,248,165,246,247,165,245,246,165,145,245,165,145,165,166,145,166,167,145,167,168,145,168,169,145,169,170,145,170,171,171,172,173,171,173,174,145,171,174,145,174,175,145,175,176,145,176,177,145,177,178,145,178,179,145,179,180,145,180,181,145,181,182,145,182,183,145,183,184,145,184,185,185,216,217,185,217,218,185,218,219,185,219,220,185,220,221,185,221,222,145,185,222,145,222,223,145,223,224,145,224,225,145,225,226,145,226,227,145,227,228,145,228,198,145,198,199,145,199,200,145,200,201,145,201,202,145,202,203,137,145,203,137,203,204,137,204,205,137,205,206,137,206,207,137,207,208,137,208,209,137,209,210,137,210,211,137,211,212,137,212,213,137,213,214,137,214,215,216,137,215,337,316,317,337,317,318,337,318,319,337,319,320,337,320,321,325,326,327,324,325,327,323,324,327,322,323,327,321,322,327,337,321,327,327,264,265,265,266,267,265,267,268,265,268,269,265,269,270,265,270,271,265,271,272,265,272,273,265,273,274,265,274,275,265,275,276,265,276,277,285,286,260,284,285,260,283,284,260,282,283,260,281,282,260,280,281,260,279,280,260,279,260,287,278,279,287,277,278,287,277,287,288,288,368,369,288,369,370,288,370,371,288,371,372,288,372,373,288,373,374,277,288,374,277,374,375,277,375,376,277,376,377,277,377,378,277,378,379,277,379,380,277,380,381,277,381,382,277,382,383,277,383,384,277,384,385,277,385,386,277,386,387,277,387,388,367,368,288,366,367,288,365,366,288,364,365,288,363,364,288,362,363,288,362,288,289,361,362,289,360,361,289,359,360,289,389,359,289,388,389,289,277,388,289,277,289,290,277,290,291,277,291,292,277,292,293,277,293,294,277,294,295,277,295,296,277};
+			return value;
+		}
+		private int[] getIndexedTriangleSet_6_64_index_2()
+		{
+			int[] value = {296,297,277,297,298,277,298,299,277,299,300,277,300,301,277,301,302,277,302,303,277,303,304,277,304,305,277,305,306,277,306,307,277,307,308,277,308,309,277,309,310,277,310,311,277,311,312,277,312,313,277,313,314,277,314,315,277,315,316,277,316,337,277,337,338,277,338,339,277,339,340,277,340,341,277,341,342,277,342,343,277,343,344,277,344,345,277,345,346,277,346,347,277,347,348,277,348,349,277,349,350,265,277,350,265,350,351,265,351,352,265,352,353,327,265,353,327,353,354,327,354,355,327,355,356,327,356,357,327,357,358,327,358,328,327,328,329,327,329,330,327,330,331,327,331,332,327,332,333,327,333,334,327,334,335,327,335,336,337,327,336,468,426,427,468,427,428,468,428,429,468,429,430,468,430,431,434,435,436,433,434,436,432,433,436,431,432,436,468,431,436,468,436,437,468,437,438,468,438,439,468,439,440,444,445,446,444,446,447,444,447,448,443,444,448,443,448,449,443,449,450,442,443,450,442,450,451,442,451,452,442,452,453,441,442,453,453,503,504,441,453,504,440,441,504,468,440,504,468,504,505,468,505,506,468,506,507,468,507,508,468,508,509,468,509,510,468,510,511,468,511,512,468,512,513,468,513,514,468,514,515,468,515,516,468,516,517,468,517,518,468,518,519,502,503,453,501,502,453,500,501,453,499,500,453,498,499,453,497,498,453,497,453,454,496,497,454,495,496,454,494,495,454,524,494,454,523,524,454,523,454,455,522,523,455,522,455,456,522,456,457,521,522,457,521,457,458,520,521,458,520,458,459,519,520,459,519,459,460,468,519,460,468,460,461,468,461,462,462,393,397,462,397,398,462,398,399,462,399,400,462,400,401,462,401,402,462,402,403,462,403,404,468,462,404,468,404,405,468,405,406,468,406,407,413,414,394,412,413,394,411,412,394,410,411,394,409,410,394,408,409,394,407,408,394,407,394,395,395,396,415,395,415,416,395,416,417,395,417,418,395,418,419,395,419,420,395,420,421,395,421,422,395,422,423,395,423,424,395,424,425,395,425,426,426,468,469,426,469,470,426,470,471,395,426,471,395,471,472,395,472,473,395,473,474,395,474,475,395,475,476,395,476,477,395,477,478,395,478,479,395,479,480,395,480,481,395,481,482,395,482,483,395,483,484,407,395,484,407,484,485,407,485,486,407,486,487,407,487,488,407,488,489,407,489,490,407,490,491,407,491,492,407,492,493,407,493,463,407,463,464,407,464,465,407,465,466,407,466,467,468,407,467};
+			return value;
+		}
+
+
+		/** Define subarrays using type double[] */
+		private double[] getCoordinate_7_64_point_1()
+		{
+			double[] value = {4.0000e+02,-2.2500e+02,0.0000e+00,4.0000e+02,0.0000e+00,0.0000e+00,0.0000e+00,0.0000e+00,0.0000e+00,0.0000e+00,-2.2500e+02,0.0000e+00,5.5000e+01,0.0000e+00,0.0000e+00,5.5000e+01,-3.1754e+01,0.0000e+00,0.0000e+00,-6.3509e+01,0.0000e+00,3.3500e+02,0.0000e+00,0.0000e+00,3.3500e+02,-1.5000e+01,0.0000e+00,3.3481e+02,-1.6951e+01,0.0000e+00,3.3424e+02,-1.8827e+01,0.0000e+00,3.3331e+02,-2.0556e+01,0.0000e+00,3.3207e+02,-2.2071e+01,0.0000e+00,3.3056e+02,-2.3315e+01,0.0000e+00,3.2883e+02,-2.4239e+01,0.0000e+00,3.2695e+02,-2.4808e+01,0.0000e+00,3.2500e+02,-2.5000e+01,0.0000e+00,2.4500e+02,-2.5000e+01,0.0000e+00,2.4305e+02,-2.4808e+01,0.0000e+00,2.4117e+02,-2.4239e+01,0.0000e+00,2.3944e+02,-2.3315e+01,0.0000e+00,2.3793e+02,-2.2071e+01,0.0000e+00,2.3669e+02,-2.0556e+01,0.0000e+00,2.3576e+02,-1.8827e+01,0.0000e+00,2.3519e+02,-1.6951e+01,0.0000e+00,2.3500e+02,-1.5000e+01,0.0000e+00,2.3500e+02,0.0000e+00,0.0000e+00,0.0000e+00,-1.2500e+02,0.0000e+00,8.1132e+01,-1.2500e+02,0.0000e+00,1.0134e+02,-9.0000e+01,0.0000e+00,1.0244e+02,-8.8451e+01,0.0000e+00,1.0382e+02,-8.7139e+01,0.0000e+00,1.0542e+02,-8.6112e+01,0.0000e+00,1.0718e+02,-8.5405e+01,0.0000e+00,1.0905e+02,-8.5045e+01,0.0000e+00,1.1095e+02,-8.5045e+01,0.0000e+00,1.1282e+02,-8.5405e+01,0.0000e+00,1.1458e+02,-8.6112e+01,0.0000e+00,1.1618e+02,-8.7139e+01,0.0000e+00,1.1756e+02,-8.8451e+01,0.0000e+00,1.1866e+02,-9.0000e+01,0.0000e+00,1.3887e+02,-1.2500e+02,0.0000e+00,2.2500e+02,-1.2500e+02,0.0000e+00,2.2988e+02,-1.2548e+02,0.0000e+00,2.3457e+02,-1.2690e+02,0.0000e+00,2.3889e+02,-1.2921e+02,0.0000e+00,2.4268e+02,-1.3232e+02,0.0000e+00,2.4579e+02,-1.3611e+02,0.0000e+00,2.4810e+02,-1.4043e+02,0.0000e+00,2.4952e+02,-1.4512e+02,0.0000e+00,2.5000e+02,-1.5000e+02,0.0000e+00,2.5000e+02,-1.7500e+02,0.0000e+00,2.5096e+02,-1.8475e+02,0.0000e+00,2.5381e+02,-1.9413e+02,0.0000e+00,2.5843e+02,-2.0278e+02,0.0000e+00,2.6464e+02,-2.1036e+02,0.0000e+00,2.7222e+02,-2.1657e+02,0.0000e+00,2.8087e+02,-2.2119e+02,0.0000e+00,2.9025e+02,-2.2404e+02,0.0000e+00,3.0000e+02,-2.2500e+02,0.0000e+00,3.5000e+02,-2.2500e+02,0.0000e+00,3.5975e+02,-2.2404e+02,0.0000e+00,3.6913e+02,-2.2119e+02,0.0000e+00,3.7778e+02,-2.1657e+02,0.0000e+00,3.8536e+02,-2.1036e+02,0.0000e+00,3.9157e+02,-2.0278e+02,0.0000e+00,3.9619e+02,-1.9413e+02,0.0000e+00,3.9904e+02,-1.8475e+02,0.0000e+00,4.0000e+02,-1.7500e+02,0.0000e+00,1.4776e+02,-4.2484e+01,0.0000e+00,1.4851e+02,-4.0071e+01,0.0000e+00,1.4974e+02,-3.7859e+01,0.0000e+00,1.5139e+02,-3.5940e+01,0.0000e+00,1.5339e+02,-3.4392e+01,0.0000e+00,1.5566e+02,-3.3278e+01,0.0000e+00,1.5811e+02,-3.2644e+01,0.0000e+00,1.6063e+02,-3.2516e+01,0.0000e+00,1.6313e+02,-3.2899e+01,0.0000e+00,1.6550e+02,-3.3777e+01,0.0000e+00,1.6765e+02,-3.5115e+01,0.0000e+00,1.6948e+02,-3.6858e+01,0.0000e+00,1.7093e+02,-3.8934e+01,0.0000e+00,1.7193e+02,-4.1258e+01,0.0000e+00,1.7244e+02,-4.3735e+01,0.0000e+00,1.7244e+02,-4.6265e+01,0.0000e+00,1.7193e+02,-4.8742e+01,0.0000e+00,1.7093e+02,-5.1066e+01,0.0000e+00,1.6948e+02,-5.3142e+01,0.0000e+00,1.6765e+02,-5.4885e+01,0.0000e+00,1.6550e+02,-5.6223e+01,0.0000e+00,1.6313e+02,-5.7101e+01,0.0000e+00,1.6063e+02,-5.7484e+01,0.0000e+00,1.5811e+02,-5.7356e+01,0.0000e+00,1.5566e+02,-5.6722e+01,0.0000e+00,1.5339e+02,-5.5608e+01,0.0000e+00,1.5139e+02,-5.4060e+01,0.0000e+00,1.4974e+02,-5.2141e+01,0.0000e+00,1.4851e+02,-4.9929e+01,0.0000e+00,1.4776e+02,-4.7516e+01,0.0000e+00,1.4750e+02,-4.5000e+01,0.0000e+00};
+			return value;
+		}
+		private double[] getCoordinate_7_64_point_2()
+		{
+			double[] value = {3.0786e+02,-1.7148e+02,0.0000e+00,3.0892e+02,-1.6810e+02,0.0000e+00,3.1064e+02,-1.6500e+02,0.0000e+00,3.1294e+02,-1.6232e+02,0.0000e+00,3.1574e+02,-1.6015e+02,0.0000e+00,3.1892e+02,-1.5859e+02,0.0000e+00,3.2235e+02,-1.5770e+02,0.0000e+00,3.2589e+02,-1.5752e+02,0.0000e+00,3.2939e+02,-1.5806e+02,0.0000e+00,3.3271e+02,-1.5929e+02,0.0000e+00,3.3571e+02,-1.6116e+02,0.0000e+00,3.3828e+02,-1.6360e+02,0.0000e+00,3.4030e+02,-1.6651e+02,0.0000e+00,3.4170e+02,-1.6976e+02,0.0000e+00,3.4241e+02,-1.7323e+02,0.0000e+00,3.4241e+02,-1.7677e+02,0.0000e+00,3.4170e+02,-1.8024e+02,0.0000e+00,3.4030e+02,-1.8349e+02,0.0000e+00,3.3828e+02,-1.8640e+02,0.0000e+00,3.3571e+02,-1.8884e+02,0.0000e+00,3.3271e+02,-1.9071e+02,0.0000e+00,3.2939e+02,-1.9194e+02,0.0000e+00,3.2589e+02,-1.9248e+02,0.0000e+00,3.2235e+02,-1.9230e+02,0.0000e+00,3.1892e+02,-1.9141e+02,0.0000e+00,3.1574e+02,-1.8985e+02,0.0000e+00,3.1294e+02,-1.8768e+02,0.0000e+00,3.1064e+02,-1.8500e+02,0.0000e+00,3.0892e+02,-1.8190e+02,0.0000e+00,3.0786e+02,-1.7852e+02,0.0000e+00,3.0750e+02,-1.7500e+02,0.0000e+00,0.0000e+00,-2.2500e+02,0.0000e+00,0.0000e+00,0.0000e+00,0.0000e+00,-4.0000e+02,0.0000e+00,0.0000e+00,-4.0000e+02,-2.2500e+02,0.0000e+00,0.0000e+00,-6.3509e+01,0.0000e+00,-5.5000e+01,-3.1754e+01,0.0000e+00,-5.5000e+01,0.0000e+00,0.0000e+00,-2.2500e+02,0.0000e+00,0.0000e+00,-2.2538e+02,-3.9018e+00,0.0000e+00,-2.2652e+02,-7.6537e+00,0.0000e+00,-2.2837e+02,-1.1111e+01,0.0000e+00,-2.3086e+02,-1.4142e+01,0.0000e+00,-2.3389e+02,-1.6629e+01,0.0000e+00,-2.3735e+02,-1.8478e+01,0.0000e+00,-2.4110e+02,-1.9616e+01,0.0000e+00,-2.4500e+02,-2.0000e+01,0.0000e+00,-3.2500e+02,-2.0000e+01,0.0000e+00,-3.2890e+02,-1.9616e+01,0.0000e+00,-3.3265e+02,-1.8478e+01,0.0000e+00,-3.3611e+02,-1.6629e+01,0.0000e+00,-3.3914e+02,-1.4142e+01,0.0000e+00,-3.4163e+02,-1.1111e+01,0.0000e+00,-3.4348e+02,-7.6537e+00,0.0000e+00,-3.4462e+02,-3.9018e+00,0.0000e+00,-3.4500e+02,0.0000e+00,0.0000e+00,-4.0000e+02,-1.7500e+02,0.0000e+00,-3.9904e+02,-1.8475e+02,0.0000e+00,-3.9619e+02,-1.9413e+02,0.0000e+00,-3.9157e+02,-2.0278e+02,0.0000e+00,-3.8536e+02,-2.1036e+02,0.0000e+00,-3.7778e+02,-2.1657e+02,0.0000e+00,-3.6913e+02,-2.2119e+02,0.0000e+00,-3.5975e+02,-2.2404e+02,0.0000e+00,-3.5000e+02,-2.2500e+02,0.0000e+00,-3.0000e+02,-2.2500e+02,0.0000e+00,-2.9025e+02,-2.2404e+02,0.0000e+00,-2.8087e+02,-2.2119e+02,0.0000e+00,-2.7222e+02,-2.1657e+02,0.0000e+00,-2.6464e+02,-2.1036e+02,0.0000e+00,-2.5843e+02,-2.0278e+02,0.0000e+00,-2.5381e+02,-1.9413e+02,0.0000e+00,-2.5096e+02,-1.8475e+02,0.0000e+00,-2.5000e+02,-1.7500e+02,0.0000e+00,-2.5000e+02,-1.5000e+02,0.0000e+00,-2.4952e+02,-1.4512e+02,0.0000e+00,-2.4810e+02,-1.4043e+02,0.0000e+00,-2.4579e+02,-1.3611e+02,0.0000e+00,-2.4268e+02,-1.3232e+02,0.0000e+00,-2.3889e+02,-1.2921e+02,0.0000e+00,-2.3457e+02,-1.2690e+02,0.0000e+00,-2.2988e+02,-1.2548e+02,0.0000e+00,-2.2500e+02,-1.2500e+02,0.0000e+00,-1.3887e+02,-1.2500e+02,0.0000e+00,-1.1866e+02,-9.0000e+01,0.0000e+00,-1.1756e+02,-8.8451e+01,0.0000e+00,-1.1618e+02,-8.7139e+01,0.0000e+00,-1.1458e+02,-8.6112e+01,0.0000e+00,-1.1282e+02,-8.5405e+01,0.0000e+00,-1.1095e+02,-8.5045e+01,0.0000e+00,-1.0905e+02,-8.5045e+01,0.0000e+00,-1.0718e+02,-8.5405e+01,0.0000e+00,-1.0542e+02,-8.6112e+01,0.0000e+00,-1.0382e+02,-8.7139e+01,0.0000e+00,-1.0244e+02,-8.8451e+01,0.0000e+00,-1.0134e+02,-9.0000e+01,0.0000e+00,-8.1132e+01,-1.2500e+02,0.0000e+00,0.0000e+00,-1.2500e+02,0.0000e+00,-1.7224e+02,-4.2484e+01,0.0000e+00,-1.7149e+02,-4.0071e+01,0.0000e+00};
+			return value;
+		}
+		private double[] getCoordinate_7_64_point_3()
+		{
+			double[] value = {-1.7026e+02,-3.7859e+01,0.0000e+00,-1.6861e+02,-3.5940e+01,0.0000e+00,-1.6661e+02,-3.4392e+01,0.0000e+00,-1.6434e+02,-3.3278e+01,0.0000e+00,-1.6189e+02,-3.2644e+01,0.0000e+00,-1.5937e+02,-3.2516e+01,0.0000e+00,-1.5687e+02,-3.2899e+01,0.0000e+00,-1.5450e+02,-3.3777e+01,0.0000e+00,-1.5235e+02,-3.5115e+01,0.0000e+00,-1.5052e+02,-3.6858e+01,0.0000e+00,-1.4907e+02,-3.8934e+01,0.0000e+00,-1.4807e+02,-4.1258e+01,0.0000e+00,-1.4756e+02,-4.3735e+01,0.0000e+00,-1.4756e+02,-4.6265e+01,0.0000e+00,-1.4807e+02,-4.8742e+01,0.0000e+00,-1.4907e+02,-5.1066e+01,0.0000e+00,-1.5052e+02,-5.3142e+01,0.0000e+00,-1.5235e+02,-5.4885e+01,0.0000e+00,-1.5450e+02,-5.6223e+01,0.0000e+00,-1.5687e+02,-5.7101e+01,0.0000e+00,-1.5937e+02,-5.7484e+01,0.0000e+00,-1.6189e+02,-5.7356e+01,0.0000e+00,-1.6434e+02,-5.6722e+01,0.0000e+00,-1.6661e+02,-5.5608e+01,0.0000e+00,-1.6861e+02,-5.4060e+01,0.0000e+00,-1.7026e+02,-5.2141e+01,0.0000e+00,-1.7149e+02,-4.9929e+01,0.0000e+00,-1.7224e+02,-4.7516e+01,0.0000e+00,-1.7250e+02,-4.5000e+01,0.0000e+00,-3.4214e+02,-1.7148e+02,0.0000e+00,-3.4108e+02,-1.6810e+02,0.0000e+00,-3.3936e+02,-1.6500e+02,0.0000e+00,-3.3706e+02,-1.6232e+02,0.0000e+00,-3.3426e+02,-1.6015e+02,0.0000e+00,-3.3108e+02,-1.5859e+02,0.0000e+00,-3.2765e+02,-1.5770e+02,0.0000e+00,-3.2411e+02,-1.5752e+02,0.0000e+00,-3.2061e+02,-1.5806e+02,0.0000e+00,-3.1729e+02,-1.5929e+02,0.0000e+00,-3.1429e+02,-1.6116e+02,0.0000e+00,-3.1172e+02,-1.6360e+02,0.0000e+00,-3.0970e+02,-1.6651e+02,0.0000e+00,-3.0830e+02,-1.6976e+02,0.0000e+00,-3.0759e+02,-1.7323e+02,0.0000e+00,-3.0759e+02,-1.7677e+02,0.0000e+00,-3.0830e+02,-1.8024e+02,0.0000e+00,-3.0970e+02,-1.8349e+02,0.0000e+00,-3.1172e+02,-1.8640e+02,0.0000e+00,-3.1429e+02,-1.8884e+02,0.0000e+00,-3.1729e+02,-1.9071e+02,0.0000e+00,-3.2061e+02,-1.9194e+02,0.0000e+00,-3.2411e+02,-1.9248e+02,0.0000e+00,-3.2765e+02,-1.9230e+02,0.0000e+00,-3.3108e+02,-1.9141e+02,0.0000e+00,-3.3426e+02,-1.8985e+02,0.0000e+00,-3.3706e+02,-1.8768e+02,0.0000e+00,-3.3936e+02,-1.8500e+02,0.0000e+00,-3.4108e+02,-1.8190e+02,0.0000e+00,-3.4214e+02,-1.7852e+02,0.0000e+00,-3.4250e+02,-1.7500e+02,0.0000e+00,4.0000e+02,0.0000e+00,0.0000e+00,4.0000e+02,2.2500e+02,0.0000e+00,0.0000e+00,2.2500e+02,0.0000e+00,0.0000e+00,0.0000e+00,0.0000e+00,0.0000e+00,6.3509e+01,0.0000e+00,5.5000e+01,3.1754e+01,0.0000e+00,5.5000e+01,0.0000e+00,0.0000e+00,2.3500e+02,0.0000e+00,0.0000e+00,2.3500e+02,1.5000e+01,0.0000e+00,2.3519e+02,1.6951e+01,0.0000e+00,2.3576e+02,1.8827e+01,0.0000e+00,2.3669e+02,2.0556e+01,0.0000e+00,2.3793e+02,2.2071e+01,0.0000e+00,2.3944e+02,2.3315e+01,0.0000e+00,2.4117e+02,2.4239e+01,0.0000e+00,2.4305e+02,2.4808e+01,0.0000e+00,2.4500e+02,2.5000e+01,0.0000e+00,3.2500e+02,2.5000e+01,0.0000e+00,3.2695e+02,2.4808e+01,0.0000e+00,3.2883e+02,2.4239e+01,0.0000e+00,3.3056e+02,2.3315e+01,0.0000e+00,3.3207e+02,2.2071e+01,0.0000e+00,3.3331e+02,2.0556e+01,0.0000e+00,3.3424e+02,1.8827e+01,0.0000e+00,3.3481e+02,1.6951e+01,0.0000e+00,3.3500e+02,1.5000e+01,0.0000e+00,3.3500e+02,0.0000e+00,0.0000e+00,4.0000e+02,1.7500e+02,0.0000e+00,3.5000e+02,2.2500e+02,0.0000e+00,3.0000e+02,2.2500e+02,0.0000e+00,2.9025e+02,2.2404e+02,0.0000e+00,2.8087e+02,2.2119e+02,0.0000e+00,2.7222e+02,2.1657e+02,0.0000e+00,2.6464e+02,2.1036e+02,0.0000e+00,2.5843e+02,2.0278e+02,0.0000e+00,2.5381e+02,1.9413e+02,0.0000e+00,2.5096e+02,1.8475e+02,0.0000e+00,2.5000e+02,1.7500e+02,0.0000e+00,2.5000e+02,1.5000e+02,0.0000e+00,2.4952e+02,1.4512e+02,0.0000e+00};
+			return value;
+		}
+		private double[] getCoordinate_7_64_point_4()
+		{
+			double[] value = {2.4810e+02,1.4043e+02,0.0000e+00,2.4579e+02,1.3611e+02,0.0000e+00,2.4268e+02,1.3232e+02,0.0000e+00,2.3889e+02,1.2921e+02,0.0000e+00,2.3457e+02,1.2690e+02,0.0000e+00,2.2988e+02,1.2548e+02,0.0000e+00,2.2500e+02,1.2500e+02,0.0000e+00,1.9250e+02,1.2500e+02,0.0000e+00,1.9250e+02,1.1000e+02,0.0000e+00,1.9231e+02,1.0805e+02,0.0000e+00,1.9174e+02,1.0617e+02,0.0000e+00,1.9081e+02,1.0444e+02,0.0000e+00,1.8957e+02,1.0293e+02,0.0000e+00,1.8806e+02,1.0169e+02,0.0000e+00,1.8633e+02,1.0076e+02,0.0000e+00,1.8445e+02,1.0019e+02,0.0000e+00,1.8250e+02,1.0000e+02,0.0000e+00,1.1750e+02,1.0000e+02,0.0000e+00,1.1555e+02,1.0019e+02,0.0000e+00,1.1367e+02,1.0076e+02,0.0000e+00,1.1194e+02,1.0169e+02,0.0000e+00,1.1043e+02,1.0293e+02,0.0000e+00,1.0919e+02,1.0444e+02,0.0000e+00,1.0826e+02,1.0617e+02,0.0000e+00,1.0769e+02,1.0805e+02,0.0000e+00,1.0750e+02,1.1000e+02,0.0000e+00,1.0750e+02,1.2500e+02,0.0000e+00,0.0000e+00,1.2500e+02,0.0000e+00,1.4776e+02,4.7516e+01,0.0000e+00,1.4851e+02,4.9929e+01,0.0000e+00,1.4974e+02,5.2141e+01,0.0000e+00,1.5139e+02,5.4060e+01,0.0000e+00,1.5339e+02,5.5608e+01,0.0000e+00,1.5566e+02,5.6722e+01,0.0000e+00,1.5811e+02,5.7356e+01,0.0000e+00,1.6063e+02,5.7484e+01,0.0000e+00,1.6313e+02,5.7101e+01,0.0000e+00,1.6550e+02,5.6223e+01,0.0000e+00,1.6765e+02,5.4885e+01,0.0000e+00,1.6948e+02,5.3142e+01,0.0000e+00,1.7093e+02,5.1066e+01,0.0000e+00,1.7193e+02,4.8742e+01,0.0000e+00,1.7244e+02,4.6265e+01,0.0000e+00,1.7244e+02,4.3735e+01,0.0000e+00,1.7193e+02,4.1258e+01,0.0000e+00,1.7093e+02,3.8934e+01,0.0000e+00,1.6948e+02,3.6858e+01,0.0000e+00,1.6765e+02,3.5115e+01,0.0000e+00,1.6550e+02,3.3777e+01,0.0000e+00,1.6313e+02,3.2899e+01,0.0000e+00,1.6063e+02,3.2516e+01,0.0000e+00,1.5811e+02,3.2644e+01,0.0000e+00,1.5566e+02,3.3278e+01,0.0000e+00,1.5339e+02,3.4392e+01,0.0000e+00,1.5139e+02,3.5940e+01,0.0000e+00,1.4974e+02,3.7859e+01,0.0000e+00,1.4851e+02,4.0071e+01,0.0000e+00,1.4776e+02,4.2484e+01,0.0000e+00,1.4750e+02,4.5000e+01,0.0000e+00,3.0786e+02,1.7852e+02,0.0000e+00,3.0892e+02,1.8190e+02,0.0000e+00,3.1064e+02,1.8500e+02,0.0000e+00,3.1294e+02,1.8768e+02,0.0000e+00,3.1574e+02,1.8985e+02,0.0000e+00,3.1892e+02,1.9141e+02,0.0000e+00,3.2235e+02,1.9230e+02,0.0000e+00,3.2589e+02,1.9248e+02,0.0000e+00,3.2939e+02,1.9194e+02,0.0000e+00,3.3271e+02,1.9071e+02,0.0000e+00,3.3571e+02,1.8884e+02,0.0000e+00,3.3828e+02,1.8640e+02,0.0000e+00,3.4030e+02,1.8349e+02,0.0000e+00,3.4170e+02,1.8024e+02,0.0000e+00,3.4241e+02,1.7677e+02,0.0000e+00,3.4241e+02,1.7323e+02,0.0000e+00,3.4170e+02,1.6976e+02,0.0000e+00,3.4030e+02,1.6651e+02,0.0000e+00,3.3828e+02,1.6360e+02,0.0000e+00,3.3571e+02,1.6116e+02,0.0000e+00,3.3271e+02,1.5929e+02,0.0000e+00,3.2939e+02,1.5806e+02,0.0000e+00,3.2589e+02,1.5752e+02,0.0000e+00,3.2235e+02,1.5770e+02,0.0000e+00,3.1892e+02,1.5859e+02,0.0000e+00,3.1574e+02,1.6015e+02,0.0000e+00,3.1294e+02,1.6232e+02,0.0000e+00,3.1064e+02,1.6500e+02,0.0000e+00,3.0892e+02,1.6810e+02,0.0000e+00,3.0786e+02,1.7148e+02,0.0000e+00,3.0750e+02,1.7500e+02,0.0000e+00,0.0000e+00,0.0000e+00,0.0000e+00,0.0000e+00,2.2500e+02,0.0000e+00,-4.0000e+02,2.2500e+02,0.0000e+00,-4.0000e+02,0.0000e+00,0.0000e+00,-5.5000e+01,0.0000e+00,0.0000e+00,-5.5000e+01,3.1754e+01,0.0000e+00,0.0000e+00,6.3509e+01,0.0000e+00,-3.4500e+02,0.0000e+00,0.0000e+00,-3.4462e+02,3.9018e+00,0.0000e+00,-3.4348e+02,7.6537e+00,0.0000e+00};
+			return value;
+		}
+		private double[] getCoordinate_7_64_point_5()
+		{
+			double[] value = {-3.4163e+02,1.1111e+01,0.0000e+00,-3.3914e+02,1.4142e+01,0.0000e+00,-3.3611e+02,1.6629e+01,0.0000e+00,-3.3265e+02,1.8478e+01,0.0000e+00,-3.2890e+02,1.9616e+01,0.0000e+00,-3.2500e+02,2.0000e+01,0.0000e+00,-2.4500e+02,2.0000e+01,0.0000e+00,-2.4110e+02,1.9616e+01,0.0000e+00,-2.3735e+02,1.8478e+01,0.0000e+00,-2.3389e+02,1.6629e+01,0.0000e+00,-2.3086e+02,1.4142e+01,0.0000e+00,-2.2837e+02,1.1111e+01,0.0000e+00,-2.2652e+02,7.6537e+00,0.0000e+00,-2.2538e+02,3.9018e+00,0.0000e+00,-2.2500e+02,0.0000e+00,0.0000e+00,0.0000e+00,1.2500e+02,0.0000e+00,-1.0750e+02,1.2500e+02,0.0000e+00,-1.0750e+02,1.1000e+02,0.0000e+00,-1.0769e+02,1.0805e+02,0.0000e+00,-1.0826e+02,1.0617e+02,0.0000e+00,-1.0919e+02,1.0444e+02,0.0000e+00,-1.1043e+02,1.0293e+02,0.0000e+00,-1.1194e+02,1.0169e+02,0.0000e+00,-1.1367e+02,1.0076e+02,0.0000e+00,-1.1555e+02,1.0019e+02,0.0000e+00,-1.1750e+02,1.0000e+02,0.0000e+00,-1.8250e+02,1.0000e+02,0.0000e+00,-1.8445e+02,1.0019e+02,0.0000e+00,-1.8633e+02,1.0076e+02,0.0000e+00,-1.8806e+02,1.0169e+02,0.0000e+00,-1.8957e+02,1.0293e+02,0.0000e+00,-1.9081e+02,1.0444e+02,0.0000e+00,-1.9174e+02,1.0617e+02,0.0000e+00,-1.9231e+02,1.0805e+02,0.0000e+00,-1.9250e+02,1.1000e+02,0.0000e+00,-1.9250e+02,1.2500e+02,0.0000e+00,-2.2500e+02,1.2500e+02,0.0000e+00,-2.2988e+02,1.2548e+02,0.0000e+00,-2.3457e+02,1.2690e+02,0.0000e+00,-2.3889e+02,1.2921e+02,0.0000e+00,-2.4268e+02,1.3232e+02,0.0000e+00,-2.4579e+02,1.3611e+02,0.0000e+00,-2.4810e+02,1.4043e+02,0.0000e+00,-2.4952e+02,1.4512e+02,0.0000e+00,-2.5000e+02,1.5000e+02,0.0000e+00,-2.5000e+02,1.7500e+02,0.0000e+00,-2.5096e+02,1.8475e+02,0.0000e+00,-2.5381e+02,1.9413e+02,0.0000e+00,-2.5843e+02,2.0278e+02,0.0000e+00,-2.6464e+02,2.1036e+02,0.0000e+00,-2.7222e+02,2.1657e+02,0.0000e+00,-2.8087e+02,2.2119e+02,0.0000e+00,-2.9025e+02,2.2404e+02,0.0000e+00,-3.0000e+02,2.2500e+02,0.0000e+00,-3.5000e+02,2.2500e+02,0.0000e+00,-3.5975e+02,2.2404e+02,0.0000e+00,-3.6913e+02,2.2119e+02,0.0000e+00,-3.7778e+02,2.1657e+02,0.0000e+00,-3.8536e+02,2.1036e+02,0.0000e+00,-3.9157e+02,2.0278e+02,0.0000e+00,-3.9619e+02,1.9413e+02,0.0000e+00,-3.9904e+02,1.8475e+02,0.0000e+00,-4.0000e+02,1.7500e+02,0.0000e+00,-1.7224e+02,4.7516e+01,0.0000e+00,-1.7149e+02,4.9929e+01,0.0000e+00,-1.7026e+02,5.2141e+01,0.0000e+00,-1.6861e+02,5.4060e+01,0.0000e+00,-1.6661e+02,5.5608e+01,0.0000e+00,-1.6434e+02,5.6722e+01,0.0000e+00,-1.6189e+02,5.7356e+01,0.0000e+00,-1.5937e+02,5.7484e+01,0.0000e+00,-1.5687e+02,5.7101e+01,0.0000e+00,-1.5450e+02,5.6223e+01,0.0000e+00,-1.5235e+02,5.4885e+01,0.0000e+00,-1.5052e+02,5.3142e+01,0.0000e+00,-1.4907e+02,5.1066e+01,0.0000e+00,-1.4807e+02,4.8742e+01,0.0000e+00,-1.4756e+02,4.6265e+01,0.0000e+00,-1.4756e+02,4.3735e+01,0.0000e+00,-1.4807e+02,4.1258e+01,0.0000e+00,-1.4907e+02,3.8934e+01,0.0000e+00,-1.5052e+02,3.6858e+01,0.0000e+00,-1.5235e+02,3.5115e+01,0.0000e+00,-1.5450e+02,3.3777e+01,0.0000e+00,-1.5687e+02,3.2899e+01,0.0000e+00,-1.5937e+02,3.2516e+01,0.0000e+00,-1.6189e+02,3.2644e+01,0.0000e+00,-1.6434e+02,3.3278e+01,0.0000e+00,-1.6661e+02,3.4392e+01,0.0000e+00,-1.6861e+02,3.5940e+01,0.0000e+00,-1.7026e+02,3.7859e+01,0.0000e+00,-1.7149e+02,4.0071e+01,0.0000e+00,-1.7224e+02,4.2484e+01,0.0000e+00,-1.7250e+02,4.5000e+01,0.0000e+00,-3.4214e+02,1.7852e+02,0.0000e+00,-3.4108e+02,1.8190e+02,0.0000e+00,-3.3936e+02,1.8500e+02,0.0000e+00,-3.3706e+02,1.8768e+02,0.0000e+00,-3.3426e+02,1.8985e+02,0.0000e+00,-3.3108e+02,1.9141e+02,0.0000e+00};
+			return value;
+		}
+		private double[] getCoordinate_7_64_point_6()
+		{
+			double[] value = {-3.2765e+02,1.9230e+02,0.0000e+00,-3.2411e+02,1.9248e+02,0.0000e+00,-3.2061e+02,1.9194e+02,0.0000e+00,-3.1729e+02,1.9071e+02,0.0000e+00,-3.1429e+02,1.8884e+02,0.0000e+00,-3.1172e+02,1.8640e+02,0.0000e+00,-3.0970e+02,1.8349e+02,0.0000e+00,-3.0830e+02,1.8024e+02,0.0000e+00,-3.0759e+02,1.7677e+02,0.0000e+00,-3.0759e+02,1.7323e+02,0.0000e+00,-3.0830e+02,1.6976e+02,0.0000e+00,-3.0970e+02,1.6651e+02,0.0000e+00,-3.1172e+02,1.6360e+02,0.0000e+00,-3.1429e+02,1.6116e+02,0.0000e+00,-3.1729e+02,1.5929e+02,0.0000e+00,-3.2061e+02,1.5806e+02,0.0000e+00,-3.2411e+02,1.5752e+02,0.0000e+00,-3.2765e+02,1.5770e+02,0.0000e+00,-3.3108e+02,1.5859e+02,0.0000e+00,-3.3426e+02,1.6015e+02,0.0000e+00,-3.3706e+02,1.6232e+02,0.0000e+00,-3.3936e+02,1.6500e+02,0.0000e+00,-3.4108e+02,1.6810e+02,0.0000e+00,-3.4214e+02,1.7148e+02,0.0000e+00,-3.4250e+02,1.7500e+02,0.0000e+00};
+			return value;
+		}
+
+
+
+
+
+
+
+
+
+		/** Define subarrays using type int[] */
+		private int[] getIndexedTriangleSet_6_199_index_1()
+		{
+			int[] value = {12,13,14,12,14,15,12,15,16,12,16,17,12,17,18,12,18,19,12,19,20,12,20,21,12,21,22,12,22,23,12,23,24,12,24,25,12,25,26,12,26,27,11,12,27,10,11,27,9,10,27,8,9,27,8,27,28,8,28,59,8,59,60,60,61,62,60,62,63,60,63,64,60,64,65,60,65,66,60,66,67,60,67,68,60,68,69,69,70,71,69,71,72,69,72,73,69,73,74,69,74,75,69,75,76,69,76,77,69,77,78,69,78,79,69,79,80,69,80,81,69,81,82,69,82,83,69,83,84,69,84,85,69,85,86,69,86,87,69,87,88,69,88,89,69,89,90,69,90,91,69,91,92,69,92,93,60,69,93,60,93,94,60,94,95,60,95,96,60,96,97,60,97,98,60,98,99,60,99,100,60,100,101,8,60,101,8,101,102,8,102,103,104,105,106,108,109,110,108,110,111,108,111,112,108,112,113,108,113,114,108,114,115,108,115,116,108,116,117,108,117,118,108,118,119,108,119,120,108,120,121,108,121,122,108,122,123,108,123,124,108,124,125,108,125,126,108,126,127,108,127,128,108,128,129,108,129,130,108,130,131,107,108,131,107,131,132,107,132,133,107,133,134,107,134,135,107,135,136,107,136,137,107,137,138,107,138,139,107,139,140,106,107,140,58,59,28,148,58,28,148,28,29,147,148,29,146,147,29,145,146,29,144,145,29,144,29,30,144,30,31,143,144,31,143,31,32,142,143,32,142,32,33,142,33,34,141,142,34,141,34,35,141,35,36,141,36,37,42,43,44,42,44,45,42,45,46,42,46,47,42,47,48,42,48,49,42,49,50,41,42,50,41,50,51,41,51,52,41,52,53,41,53,54,41,54,55,41,55,56,40,41,56,39,40,56,38,39,56,37,38,56,141,37,56,140,141,56,140,56,57,140,57,164,106,140,164,106,164,165,104,106,165,103,104,165,103,165,166,173,150,151,172,173,151,171,172,151,170,171,151,169,170,151,169,151,152,168,169,152,167,168,152,166,167,152,103,166,152,8,103,152,8,152,153,7,8,153,6,7,153,5,6,153,4,5,153,3,4,153,2,3,153,1,2,153,0,1,153,164,0,153,153,154,155,153,155,156,153,156,157,153,157,158,153,158,159,153,159,160,153,160,161,153,161,162,153,162,163,164,153,163};
+			return value;
+		}
+
+
+		/** Define subarrays using type double[] */
+		private double[] getCoordinate_7_199_point_1()
+		{
+			double[] value = {4.0000e+02,-1.1500e+02,-1.8007e+01,4.0000e+02,-1.1490e+02,-1.7037e+01,4.0000e+02,-1.1462e+02,-1.6106e+01,4.0000e+02,-1.1415e+02,-1.5250e+01,4.0000e+02,-1.1352e+02,-1.4503e+01,4.0000e+02,-1.1276e+02,-1.3896e+01,4.0000e+02,-1.1189e+02,-1.3452e+01,4.0000e+02,-1.1095e+02,-1.3189e+01,4.0000e+02,-1.0998e+02,-1.3117e+01,4.0000e+02,-1.0901e+02,-1.3239e+01,4.0000e+02,-1.0809e+02,-1.3551e+01,4.0000e+02,-1.0725e+02,-1.4040e+01,4.0000e+02,-1.0652e+02,-1.4686e+01,4.0000e+02,-9.1120e+01,-3.1337e+01,4.0000e+02,-9.1032e+01,-3.1415e+01,4.0000e+02,-9.0930e+01,-3.1476e+01,4.0000e+02,-9.0819e+01,-3.1517e+01,4.0000e+02,-9.0702e+01,-3.1535e+01,4.0000e+02,-9.0583e+01,-3.1531e+01,4.0000e+02,-9.0468e+01,-3.1505e+01,4.0000e+02,-9.0359e+01,-3.1457e+01,4.0000e+02,-9.0262e+01,-3.1390e+01,4.0000e+02,-9.0179e+01,-3.1305e+01,4.0000e+02,-9.0114e+01,-3.1206e+01,4.0000e+02,-9.0069e+01,-3.1097e+01,4.0000e+02,-9.0045e+01,-3.0981e+01,4.0000e+02,-9.0044e+01,-3.0862e+01,4.0000e+02,-9.0044e+01,-1.3750e+01,4.0000e+02,-8.5345e+01,-1.3750e+01,4.0000e+02,-8.5345e+01,-3.0974e+01,4.0000e+02,-8.5440e+01,-3.1969e+01,4.0000e+02,-8.5720e+01,-3.2929e+01,4.0000e+02,-8.6177e+01,-3.3818e+01,4.0000e+02,-8.6793e+01,-3.4605e+01,4.0000e+02,-8.7547e+01,-3.5262e+01,4.0000e+02,-8.8410e+01,-3.5765e+01,4.0000e+02,-8.9353e+01,-3.6096e+01,4.0000e+02,-9.0342e+01,-3.6243e+01,4.0000e+02,-9.1341e+01,-3.6201e+01,4.0000e+02,-9.2314e+01,-3.5971e+01,4.0000e+02,-9.3226e+01,-3.5562e+01,4.0000e+02,-9.4044e+01,-3.4989e+01,4.0000e+02,-9.4740e+01,-3.4271e+01,4.0000e+02,-1.0894e+02,-1.8836e+01,4.0000e+02,-1.0906e+02,-1.8729e+01,4.0000e+02,-1.0920e+02,-1.8648e+01,4.0000e+02,-1.0935e+02,-1.8596e+01,4.0000e+02,-1.0951e+02,-1.8575e+01,4.0000e+02,-1.0968e+02,-1.8587e+01,4.0000e+02,-1.0983e+02,-1.8630e+01,4.0000e+02,-1.0997e+02,-1.8704e+01,4.0000e+02,-1.1010e+02,-1.8804e+01,4.0000e+02,-1.1021e+02,-1.8928e+01,4.0000e+02,-1.1028e+02,-1.9070e+01,4.0000e+02,-1.1033e+02,-1.9224e+01,4.0000e+02,-1.1035e+02,-1.9385e+01,4.0000e+02,-1.1035e+02,-3.6250e+01,4.0000e+02,-1.1500e+02,-3.6250e+01,4.0000e+02,-8.2328e+01,-2.9956e+01,4.0000e+02,-8.2328e+01,-1.3750e+01,4.0000e+02,-7.7630e+01,-1.3750e+01,4.0000e+02,-7.7630e+01,-2.9956e+01,4.0000e+02,-7.7598e+01,-3.0276e+01,4.0000e+02,-7.7505e+01,-3.0584e+01,4.0000e+02,-7.7354e+01,-3.0867e+01,4.0000e+02,-7.7150e+01,-3.1115e+01,4.0000e+02,-7.6902e+01,-3.1319e+01,4.0000e+02,-7.6618e+01,-3.1470e+01,4.0000e+02,-7.6311e+01,-3.1564e+01,4.0000e+02,-7.5991e+01,-3.1595e+01,4.0000e+02,-5.3924e+01,-3.1595e+01,4.0000e+02,-5.3520e+01,-3.1503e+01,4.0000e+02,-5.3142e+01,-3.1334e+01,4.0000e+02,-5.2804e+01,-3.1095e+01,4.0000e+02,-5.2519e+01,-3.0795e+01,4.0000e+02,-5.2297e+01,-3.0445e+01,4.0000e+02,-5.2148e+01,-3.0059e+01,4.0000e+02,-5.2076e+01,-2.9651e+01,4.0000e+02,-5.2084e+01,-2.9237e+01,4.0000e+02,-5.2173e+01,-2.8833e+01,4.0000e+02,-5.2338e+01,-2.8453e+01,4.0000e+02,-5.2574e+01,-2.8113e+01,4.0000e+02,-5.2871e+01,-2.7825e+01,4.0000e+02,-5.3219e+01,-2.7600e+01,4.0000e+02,-5.3603e+01,-2.7447e+01,4.0000e+02,-5.4010e+01,-2.7371e+01,4.0000e+02,-6.7588e+01,-2.7371e+01,4.0000e+02,-6.8957e+01,-2.7337e+01,4.0000e+02,-7.0291e+01,-2.7030e+01,4.0000e+02,-7.1537e+01,-2.6463e+01,4.0000e+02,-7.2645e+01,-2.5659e+01,4.0000e+02,-7.3570e+01,-2.4649e+01,4.0000e+02,-7.4274e+01,-2.3475e+01,4.0000e+02,-7.4730e+01,-2.2184e+01,4.0000e+02,-7.4919e+01,-2.0828e+01,4.0000e+02,-7.4833e+01,-1.9462e+01,4.0000e+02,-7.4476e+01,-1.8140e+01,4.0000e+02,-7.3863e+01,-1.6916e+01,4.0000e+02,-7.3017e+01,-1.5840e+01,4.0000e+02,-7.1973e+01,-1.4954e+01};
+			return value;
+		}
+		private double[] getCoordinate_7_199_point_2()
+		{
+			double[] value = {4.0000e+02,-7.0773e+01,-1.4294e+01,4.0000e+02,-6.9466e+01,-1.3887e+01,4.0000e+02,-6.8104e+01,-1.3750e+01,4.0000e+02,-2.9699e+01,-1.3750e+01,4.0000e+02,-2.9699e+01,-1.8492e+01,4.0000e+02,-3.9313e+01,-1.8492e+01,4.0000e+02,-3.9313e+01,-3.6250e+01,4.0000e+02,-4.3967e+01,-3.6250e+01,4.0000e+02,-4.3967e+01,-1.8492e+01,4.0000e+02,-6.7502e+01,-1.8492e+01,4.0000e+02,-6.7927e+01,-1.8500e+01,4.0000e+02,-6.8342e+01,-1.8593e+01,4.0000e+02,-6.8730e+01,-1.8767e+01,4.0000e+02,-6.9076e+01,-1.9015e+01,4.0000e+02,-6.9365e+01,-1.9328e+01,4.0000e+02,-6.9585e+01,-1.9692e+01,4.0000e+02,-6.9728e+01,-2.0093e+01,4.0000e+02,-6.9788e+01,-2.0514e+01,4.0000e+02,-6.9762e+01,-2.0938e+01,4.0000e+02,-6.9653e+01,-2.1349e+01,4.0000e+02,-6.9463e+01,-2.1730e+01,4.0000e+02,-6.9200e+01,-2.2065e+01,4.0000e+02,-6.8876e+01,-2.2341e+01,4.0000e+02,-6.8504e+01,-2.2546e+01,4.0000e+02,-6.8097e+01,-2.2673e+01,4.0000e+02,-6.7674e+01,-2.2716e+01,4.0000e+02,-5.3234e+01,-2.2716e+01,4.0000e+02,-5.1899e+01,-2.3069e+01,4.0000e+02,-5.0662e+01,-2.3683e+01,4.0000e+02,-4.9574e+01,-2.4532e+01,4.0000e+02,-4.8678e+01,-2.5582e+01,4.0000e+02,-4.8010e+01,-2.6791e+01,4.0000e+02,-4.7598e+01,-2.8109e+01,4.0000e+02,-4.7459e+01,-2.9483e+01,4.0000e+02,-4.7598e+01,-3.0857e+01,4.0000e+02,-4.8010e+01,-3.2174e+01,4.0000e+02,-4.8678e+01,-3.3383e+01,4.0000e+02,-4.9574e+01,-3.4433e+01,4.0000e+02,-5.0662e+01,-3.5283e+01,4.0000e+02,-5.1899e+01,-3.5897e+01,4.0000e+02,-5.3234e+01,-3.6250e+01,4.0000e+02,-7.6035e+01,-3.6250e+01,4.0000e+02,-7.7263e+01,-3.6129e+01,4.0000e+02,-7.8443e+01,-3.5771e+01,4.0000e+02,-7.9531e+01,-3.5189e+01,4.0000e+02,-8.0485e+01,-3.4407e+01,4.0000e+02,-8.1268e+01,-3.3453e+01,4.0000e+02,-8.1849e+01,-3.2365e+01,4.0000e+02,-8.2207e+01,-3.1184e+01,4.0000e+02,-8.2328e+01,-2.9956e+01,4.0000e+02,1.2500e+02,-1.0000e+02,4.0000e+02,1.7500e+02,-1.0000e+02,4.0000e+02,1.7500e+02,0.0000e+00,4.0000e+02,-1.7500e+02,0.0000e+00,4.0000e+02,-1.7500e+02,-1.0000e+02,4.0000e+02,-1.2500e+02,-1.0000e+02,4.0000e+02,-1.2500e+02,-6.0000e+01,4.0000e+02,-1.2481e+02,-5.8049e+01,4.0000e+02,-1.2424e+02,-5.6173e+01,4.0000e+02,-1.2331e+02,-5.4444e+01,4.0000e+02,-1.2207e+02,-5.2929e+01,4.0000e+02,-1.2056e+02,-5.1685e+01,4.0000e+02,-1.1883e+02,-5.0761e+01,4.0000e+02,-1.1695e+02,-5.0192e+01,4.0000e+02,-1.1500e+02,-5.0000e+01,4.0000e+02,1.1500e+02,-5.0000e+01,4.0000e+02,1.1695e+02,-5.0192e+01,4.0000e+02,1.1883e+02,-5.0761e+01,4.0000e+02,1.2056e+02,-5.1685e+01,4.0000e+02,1.2207e+02,-5.2929e+01,4.0000e+02,1.2331e+02,-5.4444e+01,4.0000e+02,1.2424e+02,-5.6173e+01,4.0000e+02,1.2481e+02,-5.8049e+01,4.0000e+02,1.2500e+02,-6.0000e+01};
+			return value;
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+		/** Define subarrays using type int[] */
+		private int[] getIndexedTriangleSet_6_477_index_1()
+		{
+			int[] value = {295,28,29,295,29,30,295,30,0,295,0,1,295,1,2,295,2,3,295,3,4,4,5,225,295,4,225,295,225,226,295,226,227,295,227,228,295,228,229,295,229,230,295,230,231,295,231,232,295,232,233,295,233,234,295,234,235,295,235,124,295,124,125,295,125,126,295,126,127,295,127,128,295,128,129,295,129,130,295,130,131,295,131,132,135,136,137,135,137,138,135,138,139,135,139,140,135,140,141,135,141,142,135,142,143,135,143,144,135,144,145,135,145,146,134,135,146,134,146,147,147,49,50,147,50,51,147,51,52,134,147,52,134,52,53,134,53,54,134,54,55,134,55,56,134,56,57,134,57,58,134,58,59,134,59,60,134,60,61,134,61,31,134,31,32,134,32,33,134,33,34,134,34,35,134,35,36,48,49,147,47,48,147,46,47,147,45,46,147,44,45,147,43,44,147,43,147,148,43,148,149,42,43,149,42,149,150,42,150,151,42,151,152,42,152,153,42,153,154,42,154,155,42,155,156,157,158,159,156,157,159,42,156,159,41,42,159,40,41,159,40,159,160,39,40,160,39,160,161,39,161,162,39,162,163,39,163,164,39,164,165,39,165,166,39,166,167,169,170,119,168,169,119,167,168,119,39,167,119,38,39,119,38,119,120,38,120,121,38,121,122,38,122,123,38,123,93,38,93,94,38,94,95,38,95,96,38,96,97,38,97,98,38,98,99,38,99,100,118,119,170,117,118,170,116,117,170,115,116,170,114,115,170,113,114,170,112,113,170,112,170,171,112,171,172,111,112,172,110,111,172,110,172,173,109,110,173,108,109,173,107,108,173,106,107,173,105,106,173,105,173,174,105,174,175,105,175,176,105,176,177,104,105,177,104,177,178,104,178,179,104,179,180,104,180,181,104,181,182,104,182,183,103,104,183,102,103,183,101,102,183,185,186,187,185,187,188,185,188,189,185,189,190,185,190,191,185,191,192,185,192,193,185,193,194,185,194,195,185,195,196,184,185,196,184,196,197,184,197,198,184,198,199,184,199,200,184,200,201,184,201,202,184,202,203,184,203,204,184,204,71,184,71,72,184,72,73,184,73,74,184,74,75,184,75,76,184,76,77,184,77,78,184,78,79,79,264,265,79,265,266,79,266,267,184,79,267,184,267,268,184,268,269,184,269,236,184,236,237,184,237,238,184,238,239,184,239,240,184,240,241,184,241,242,184,242,243,183,184,243,183,243,244,183,244,245,183,245,246,183,246,247,183,247,248,183,248,249,183,249,250,183,250,251,183,251,252,183,252,253,101,183,253,100,101,253,38,100,253,38,253,254,38,254,255,38,255,256,38,256,257,38,257,258,38,258,259,37,38,259,37,259,260,37,260,261,37,261,262,37,262,263,37,263,264,264,79,80,264,80,81,264,81,82,264,82,83,37,264,83,37,83,84,37,84,85,37,85,86,37,86,87,37,87,88,37,88,89,37,89,90,37,90,91,37,91,92,37,92,62,37,62,63,36,37,63,36,63,64,36,64,65,36,65,66,36,66,67,70,71,204,69,70,204,68,69,204,67,68,204,36,67,204,134,36,204,134,204,205,134,205,206,134,206,207,134,207,208,134,208,209,134,209,210,134,210,211,134,211,212,134,212,213,134,213,214,214,215,216,214,216,217,214,217,218,214,218,219,214,219,220,214,220,221,214,221,222,214,222,223,224,225,5,223,224,5,223,5,6,214,223,6,214,6,7,214,7,8,214,8,9,214,9,10,214,10,11,214,11,12,214,12,13,214,13,14,214,14,15,214,15,16,214,16,17,214,17,18,214,18,19,214,19,20,214,20,21,27,28,295,26,27,295,25,26,295,24,25,295,23,24,295,22,23,295,21,22,295,21,295,296,21,296,297,21,297,298,214,21,298,214,298,299,214,299,300,214,300,301,214,301,302,214,302,303,134,214,303,134,303,304,134,304,305,134,305,306,134,306,271,134,271,272,134,272,273,134,273,274,134,274,275,134,275,276,134,276,277,133,134,277,133,277,278,133,278,279,133,279,280,133,280,281,133,281,282,133,282,283,133,283,284,132,133,284,132,284,285,132,285,286,132,286,287,132,287,288,132,288,289,132,289,290,132,290,291,132,291,292,132,292,293,132,293,294,295,132,294};
+			return value;
+		}
+
+
+		/** Define subarrays using type double[] */
+		private double[] getCoordinate_7_477_point_1()
+		{
+			double[] value = {1.7224e+02,4.7516e+01,-5.0000e+01,1.7149e+02,4.9929e+01,-5.0000e+01,1.7026e+02,5.2141e+01,-5.0000e+01,1.6861e+02,5.4060e+01,-5.0000e+01,1.6661e+02,5.5608e+01,-5.0000e+01,1.6434e+02,5.6722e+01,-5.0000e+01,1.6189e+02,5.7356e+01,-5.0000e+01,1.5937e+02,5.7484e+01,-5.0000e+01,1.5687e+02,5.7101e+01,-5.0000e+01,1.5450e+02,5.6223e+01,-5.0000e+01,1.5235e+02,5.4885e+01,-5.0000e+01,1.5052e+02,5.3142e+01,-5.0000e+01,1.4907e+02,5.1066e+01,-5.0000e+01,1.4807e+02,4.8742e+01,-5.0000e+01,1.4756e+02,4.6265e+01,-5.0000e+01,1.4756e+02,4.3735e+01,-5.0000e+01,1.4807e+02,4.1258e+01,-5.0000e+01,1.4907e+02,3.8934e+01,-5.0000e+01,1.5052e+02,3.6858e+01,-5.0000e+01,1.5235e+02,3.5115e+01,-5.0000e+01,1.5450e+02,3.3777e+01,-5.0000e+01,1.5687e+02,3.2899e+01,-5.0000e+01,1.5937e+02,3.2516e+01,-5.0000e+01,1.6189e+02,3.2644e+01,-5.0000e+01,1.6434e+02,3.3278e+01,-5.0000e+01,1.6661e+02,3.4392e+01,-5.0000e+01,1.6861e+02,3.5940e+01,-5.0000e+01,1.7026e+02,3.7859e+01,-5.0000e+01,1.7149e+02,4.0071e+01,-5.0000e+01,1.7224e+02,4.2484e+01,-5.0000e+01,1.7250e+02,4.5000e+01,-5.0000e+01,1.7224e+02,-4.2484e+01,-5.0000e+01,1.7149e+02,-4.0071e+01,-5.0000e+01,1.7026e+02,-3.7859e+01,-5.0000e+01,1.6861e+02,-3.5940e+01,-5.0000e+01,1.6661e+02,-3.4392e+01,-5.0000e+01,1.6434e+02,-3.3278e+01,-5.0000e+01,1.6189e+02,-3.2644e+01,-5.0000e+01,1.5937e+02,-3.2516e+01,-5.0000e+01,1.5687e+02,-3.2899e+01,-5.0000e+01,1.5450e+02,-3.3777e+01,-5.0000e+01,1.5235e+02,-3.5115e+01,-5.0000e+01,1.5052e+02,-3.6858e+01,-5.0000e+01,1.4907e+02,-3.8934e+01,-5.0000e+01,1.4807e+02,-4.1258e+01,-5.0000e+01,1.4756e+02,-4.3735e+01,-5.0000e+01,1.4756e+02,-4.6265e+01,-5.0000e+01,1.4807e+02,-4.8742e+01,-5.0000e+01,1.4907e+02,-5.1066e+01,-5.0000e+01,1.5052e+02,-5.3142e+01,-5.0000e+01,1.5235e+02,-5.4885e+01,-5.0000e+01,1.5450e+02,-5.6223e+01,-5.0000e+01,1.5687e+02,-5.7101e+01,-5.0000e+01,1.5937e+02,-5.7484e+01,-5.0000e+01,1.6189e+02,-5.7356e+01,-5.0000e+01,1.6434e+02,-5.6722e+01,-5.0000e+01,1.6661e+02,-5.5608e+01,-5.0000e+01,1.6861e+02,-5.4060e+01,-5.0000e+01,1.7026e+02,-5.2141e+01,-5.0000e+01,1.7149e+02,-4.9929e+01,-5.0000e+01,1.7224e+02,-4.7516e+01,-5.0000e+01,1.7250e+02,-4.5000e+01,-5.0000e+01,-1.4776e+02,4.7516e+01,-5.0000e+01,-1.4851e+02,4.9929e+01,-5.0000e+01,-1.4974e+02,5.2141e+01,-5.0000e+01,-1.5139e+02,5.4060e+01,-5.0000e+01,-1.5339e+02,5.5608e+01,-5.0000e+01,-1.5566e+02,5.6722e+01,-5.0000e+01,-1.5811e+02,5.7356e+01,-5.0000e+01,-1.6063e+02,5.7484e+01,-5.0000e+01,-1.6313e+02,5.7101e+01,-5.0000e+01,-1.6550e+02,5.6223e+01,-5.0000e+01,-1.6765e+02,5.4885e+01,-5.0000e+01,-1.6948e+02,5.3142e+01,-5.0000e+01,-1.7093e+02,5.1066e+01,-5.0000e+01,-1.7193e+02,4.8742e+01,-5.0000e+01,-1.7244e+02,4.6265e+01,-5.0000e+01,-1.7244e+02,4.3735e+01,-5.0000e+01,-1.7193e+02,4.1258e+01,-5.0000e+01,-1.7093e+02,3.8934e+01,-5.0000e+01,-1.6948e+02,3.6858e+01,-5.0000e+01,-1.6765e+02,3.5115e+01,-5.0000e+01,-1.6550e+02,3.3777e+01,-5.0000e+01,-1.6313e+02,3.2899e+01,-5.0000e+01,-1.6063e+02,3.2516e+01,-5.0000e+01,-1.5811e+02,3.2644e+01,-5.0000e+01,-1.5566e+02,3.3278e+01,-5.0000e+01,-1.5339e+02,3.4392e+01,-5.0000e+01,-1.5139e+02,3.5940e+01,-5.0000e+01,-1.4974e+02,3.7859e+01,-5.0000e+01,-1.4851e+02,4.0071e+01,-5.0000e+01,-1.4776e+02,4.2484e+01,-5.0000e+01,-1.4750e+02,4.5000e+01,-5.0000e+01,-1.4776e+02,-4.2484e+01,-5.0000e+01,-1.4851e+02,-4.0071e+01,-5.0000e+01,-1.4974e+02,-3.7859e+01,-5.0000e+01,-1.5139e+02,-3.5940e+01,-5.0000e+01,-1.5339e+02,-3.4392e+01,-5.0000e+01,-1.5566e+02,-3.3278e+01,-5.0000e+01,-1.5811e+02,-3.2644e+01,-5.0000e+01};
+			return value;
+		}
+		private double[] getCoordinate_7_477_point_2()
+		{
+			double[] value = {-1.6063e+02,-3.2516e+01,-5.0000e+01,-1.6313e+02,-3.2899e+01,-5.0000e+01,-1.6550e+02,-3.3777e+01,-5.0000e+01,-1.6765e+02,-3.5115e+01,-5.0000e+01,-1.6948e+02,-3.6858e+01,-5.0000e+01,-1.7093e+02,-3.8934e+01,-5.0000e+01,-1.7193e+02,-4.1258e+01,-5.0000e+01,-1.7244e+02,-4.3735e+01,-5.0000e+01,-1.7244e+02,-4.6265e+01,-5.0000e+01,-1.7193e+02,-4.8742e+01,-5.0000e+01,-1.7093e+02,-5.1066e+01,-5.0000e+01,-1.6948e+02,-5.3142e+01,-5.0000e+01,-1.6765e+02,-5.4885e+01,-5.0000e+01,-1.6550e+02,-5.6223e+01,-5.0000e+01,-1.6313e+02,-5.7101e+01,-5.0000e+01,-1.6063e+02,-5.7484e+01,-5.0000e+01,-1.5811e+02,-5.7356e+01,-5.0000e+01,-1.5566e+02,-5.6722e+01,-5.0000e+01,-1.5339e+02,-5.5608e+01,-5.0000e+01,-1.5139e+02,-5.4060e+01,-5.0000e+01,-1.4974e+02,-5.2141e+01,-5.0000e+01,-1.4851e+02,-4.9929e+01,-5.0000e+01,-1.4776e+02,-4.7516e+01,-5.0000e+01,-1.4750e+02,-4.5000e+01,-5.0000e+01,2.2701e+02,1.2508e+02,-5.0000e+01,2.2900e+02,1.2532e+02,-5.0000e+01,2.3097e+02,1.2572e+02,-5.0000e+01,2.3291e+02,1.2628e+02,-5.0000e+01,2.3479e+02,1.2699e+02,-5.0000e+01,2.3660e+02,1.2786e+02,-5.0000e+01,2.3834e+02,1.2886e+02,-5.0000e+01,2.4000e+02,1.3000e+02,-5.0000e+01,2.4000e+02,1.1500e+02,-5.0000e+01,4.0000e+02,1.1500e+02,-5.0000e+01,4.0000e+02,-1.1500e+02,-5.0000e+01,2.4000e+02,-1.1500e+02,-5.0000e+01,2.4000e+02,-1.3000e+02,-5.0000e+01,2.3834e+02,-1.2886e+02,-5.0000e+01,2.3660e+02,-1.2786e+02,-5.0000e+01,2.3479e+02,-1.2699e+02,-5.0000e+01,2.3291e+02,-1.2628e+02,-5.0000e+01,2.3097e+02,-1.2572e+02,-5.0000e+01,2.2900e+02,-1.2532e+02,-5.0000e+01,2.2701e+02,-1.2508e+02,-5.0000e+01,2.2500e+02,-1.2500e+02,-5.0000e+01,1.3887e+02,-1.2500e+02,-5.0000e+01,1.1866e+02,-9.0000e+01,-5.0000e+01,1.1756e+02,-8.8451e+01,-5.0000e+01,1.1618e+02,-8.7139e+01,-5.0000e+01,1.1458e+02,-8.6112e+01,-5.0000e+01,1.1282e+02,-8.5405e+01,-5.0000e+01,1.1095e+02,-8.5045e+01,-5.0000e+01,1.0905e+02,-8.5045e+01,-5.0000e+01,1.0718e+02,-8.5405e+01,-5.0000e+01,1.0542e+02,-8.6112e+01,-5.0000e+01,1.0382e+02,-8.7139e+01,-5.0000e+01,1.0244e+02,-8.8451e+01,-5.0000e+01,1.0134e+02,-9.0000e+01,-5.0000e+01,8.1132e+01,-1.2500e+02,-5.0000e+01,-8.1132e+01,-1.2500e+02,-5.0000e+01,-1.0134e+02,-9.0000e+01,-5.0000e+01,-1.0244e+02,-8.8451e+01,-5.0000e+01,-1.0382e+02,-8.7139e+01,-5.0000e+01,-1.0542e+02,-8.6112e+01,-5.0000e+01,-1.0718e+02,-8.5405e+01,-5.0000e+01,-1.0905e+02,-8.5045e+01,-5.0000e+01,-1.1095e+02,-8.5045e+01,-5.0000e+01,-1.1282e+02,-8.5405e+01,-5.0000e+01,-1.1458e+02,-8.6112e+01,-5.0000e+01,-1.1618e+02,-8.7139e+01,-5.0000e+01,-1.1756e+02,-8.8451e+01,-5.0000e+01,-1.1866e+02,-9.0000e+01,-5.0000e+01,-1.3887e+02,-1.2500e+02,-5.0000e+01,-2.2500e+02,-1.2500e+02,-5.0000e+01,-2.2701e+02,-1.2508e+02,-5.0000e+01,-2.2900e+02,-1.2532e+02,-5.0000e+01,-2.3097e+02,-1.2572e+02,-5.0000e+01,-2.3291e+02,-1.2628e+02,-5.0000e+01,-2.3479e+02,-1.2699e+02,-5.0000e+01,-2.3660e+02,-1.2786e+02,-5.0000e+01,-2.3834e+02,-1.2886e+02,-5.0000e+01,-2.4000e+02,-1.3000e+02,-5.0000e+01,-2.4000e+02,-1.1500e+02,-5.0000e+01,-4.0000e+02,-1.1500e+02,-5.0000e+01,-4.0000e+02,1.1500e+02,-5.0000e+01,-2.4000e+02,1.1500e+02,-5.0000e+01,-2.4000e+02,1.3000e+02,-5.0000e+01,-2.3834e+02,1.2886e+02,-5.0000e+01,-2.3660e+02,1.2786e+02,-5.0000e+01,-2.3479e+02,1.2699e+02,-5.0000e+01,-2.3291e+02,1.2628e+02,-5.0000e+01,-2.3097e+02,1.2572e+02,-5.0000e+01,-2.2900e+02,1.2532e+02,-5.0000e+01,-2.2701e+02,1.2508e+02,-5.0000e+01,-2.2500e+02,1.2500e+02,-5.0000e+01,-1.9250e+02,1.2500e+02,-5.0000e+01,-1.9250e+02,1.1000e+02,-5.0000e+01,-1.9231e+02,1.0805e+02,-5.0000e+01,-1.9174e+02,1.0617e+02,-5.0000e+01,-1.9081e+02,1.0444e+02,-5.0000e+01};
+			return value;
+		}
+		private double[] getCoordinate_7_477_point_3()
+		{
+			double[] value = {-1.8957e+02,1.0293e+02,-5.0000e+01,-1.8806e+02,1.0169e+02,-5.0000e+01,-1.8633e+02,1.0076e+02,-5.0000e+01,-1.8445e+02,1.0019e+02,-5.0000e+01,-1.8250e+02,1.0000e+02,-5.0000e+01,-1.1750e+02,1.0000e+02,-5.0000e+01,-1.1555e+02,1.0019e+02,-5.0000e+01,-1.1367e+02,1.0076e+02,-5.0000e+01,-1.1194e+02,1.0169e+02,-5.0000e+01,-1.1043e+02,1.0293e+02,-5.0000e+01,-1.0919e+02,1.0444e+02,-5.0000e+01,-1.0826e+02,1.0617e+02,-5.0000e+01,-1.0769e+02,1.0805e+02,-5.0000e+01,-1.0750e+02,1.1000e+02,-5.0000e+01,-1.0750e+02,1.2500e+02,-5.0000e+01,1.0750e+02,1.2500e+02,-5.0000e+01,1.0750e+02,1.1000e+02,-5.0000e+01,1.0769e+02,1.0805e+02,-5.0000e+01,1.0826e+02,1.0617e+02,-5.0000e+01,1.0919e+02,1.0444e+02,-5.0000e+01,1.1043e+02,1.0293e+02,-5.0000e+01,1.1194e+02,1.0169e+02,-5.0000e+01,1.1367e+02,1.0076e+02,-5.0000e+01,1.1555e+02,1.0019e+02,-5.0000e+01,1.1750e+02,1.0000e+02,-5.0000e+01,1.8250e+02,1.0000e+02,-5.0000e+01,1.8445e+02,1.0019e+02,-5.0000e+01,1.8633e+02,1.0076e+02,-5.0000e+01,1.8806e+02,1.0169e+02,-5.0000e+01,1.8957e+02,1.0293e+02,-5.0000e+01,1.9081e+02,1.0444e+02,-5.0000e+01,1.9174e+02,1.0617e+02,-5.0000e+01,1.9231e+02,1.0805e+02,-5.0000e+01,1.9250e+02,1.1000e+02,-5.0000e+01,1.9250e+02,1.2500e+02,-5.0000e+01,2.2500e+02,1.2500e+02,-5.0000e+01,-2.4500e+02,2.0000e+01,-5.0000e+01,-3.2500e+02,2.0000e+01,-5.0000e+01,-3.2890e+02,1.9616e+01,-5.0000e+01,-3.3265e+02,1.8478e+01,-5.0000e+01,-3.3611e+02,1.6629e+01,-5.0000e+01,-3.3914e+02,1.4142e+01,-5.0000e+01,-3.4163e+02,1.1111e+01,-5.0000e+01,-3.4348e+02,7.6537e+00,-5.0000e+01,-3.4462e+02,3.9018e+00,-5.0000e+01,-3.4500e+02,-3.4302e-14,-5.0000e+01,-3.4462e+02,-3.9018e+00,-5.0000e+01,-3.4348e+02,-7.6537e+00,-5.0000e+01,-3.4163e+02,-1.1111e+01,-5.0000e+01,-3.3914e+02,-1.4142e+01,-5.0000e+01,-3.3611e+02,-1.6629e+01,-5.0000e+01,-3.3265e+02,-1.8478e+01,-5.0000e+01,-3.2890e+02,-1.9616e+01,-5.0000e+01,-3.2500e+02,-2.0000e+01,-5.0000e+01,-2.4500e+02,-2.0000e+01,-5.0000e+01,-2.4110e+02,-1.9616e+01,-5.0000e+01,-2.3735e+02,-1.8478e+01,-5.0000e+01,-2.3389e+02,-1.6629e+01,-5.0000e+01,-2.3086e+02,-1.4142e+01,-5.0000e+01,-2.2837e+02,-1.1111e+01,-5.0000e+01,-2.2652e+02,-7.6537e+00,-5.0000e+01,-2.2538e+02,-3.9018e+00,-5.0000e+01,-2.2500e+02,-8.3301e-15,-5.0000e+01,-2.2538e+02,3.9018e+00,-5.0000e+01,-2.2652e+02,7.6537e+00,-5.0000e+01,-2.2837e+02,1.1111e+01,-5.0000e+01,-2.3086e+02,1.4142e+01,-5.0000e+01,-2.3389e+02,1.6629e+01,-5.0000e+01,-2.3735e+02,1.8478e+01,-5.0000e+01,-2.4110e+02,1.9616e+01,-5.0000e+01,-2.4500e+02,2.0000e+01,-5.0000e+01,3.2500e+02,-2.5000e+01,-5.0000e+01,3.2695e+02,-2.4808e+01,-5.0000e+01,3.2883e+02,-2.4239e+01,-5.0000e+01,3.3056e+02,-2.3315e+01,-5.0000e+01,3.3207e+02,-2.2071e+01,-5.0000e+01,3.3331e+02,-2.0556e+01,-5.0000e+01,3.3424e+02,-1.8827e+01,-5.0000e+01,3.3481e+02,-1.6951e+01,-5.0000e+01,3.3500e+02,-1.5000e+01,-5.0000e+01,3.3500e+02,1.5000e+01,-5.0000e+01,3.3481e+02,1.6951e+01,-5.0000e+01,3.3424e+02,1.8827e+01,-5.0000e+01,3.3331e+02,2.0556e+01,-5.0000e+01,3.3207e+02,2.2071e+01,-5.0000e+01,3.3056e+02,2.3315e+01,-5.0000e+01,3.2883e+02,2.4239e+01,-5.0000e+01,3.2695e+02,2.4808e+01,-5.0000e+01,3.2500e+02,2.5000e+01,-5.0000e+01,2.4500e+02,2.5000e+01,-5.0000e+01,2.4305e+02,2.4808e+01,-5.0000e+01,2.4117e+02,2.4239e+01,-5.0000e+01,2.3944e+02,2.3315e+01,-5.0000e+01,2.3793e+02,2.2071e+01,-5.0000e+01,2.3669e+02,2.0556e+01,-5.0000e+01,2.3576e+02,1.8827e+01,-5.0000e+01,2.3519e+02,1.6951e+01,-5.0000e+01,2.3500e+02,1.5000e+01,-5.0000e+01,2.3500e+02,-1.5000e+01,-5.0000e+01,2.3519e+02,-1.6951e+01,-5.0000e+01};
+			return value;
+		}
+		private double[] getCoordinate_7_477_point_4()
+		{
+			double[] value = {2.3576e+02,-1.8827e+01,-5.0000e+01,2.3669e+02,-2.0556e+01,-5.0000e+01,2.3793e+02,-2.2071e+01,-5.0000e+01,2.3944e+02,-2.3315e+01,-5.0000e+01,2.4117e+02,-2.4239e+01,-5.0000e+01,2.4305e+02,-2.4808e+01,-5.0000e+01,2.4500e+02,-2.5000e+01,-5.0000e+01};
+			return value;
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		/** Define subarrays using type double[] */
+		private double[] getCoordinate_7_598_point_1()
+		{
+			double[] value = {2.5000e+02,-1.5000e+02,-6.0000e+01,2.5000e+02,-1.1500e+02,-6.0000e+01,2.4991e+02,-1.1500e+02,-5.8695e+01,2.4991e+02,-1.5000e+02,-5.8695e+01,2.4991e+02,-1.4794e+02,-5.8695e+01,2.5000e+02,-1.5000e+02,-6.0000e+01,2.5000e+02,-1.2500e+02,-6.0000e+01,2.4995e+02,-1.2495e+02,-5.9036e+01,2.4991e+02,-1.2490e+02,-5.8695e+01,2.4991e+02,-1.5000e+02,-5.8695e+01,2.4991e+02,-1.1500e+02,-5.8695e+01,2.4966e+02,-1.1500e+02,-5.7412e+01,2.4966e+02,-1.5000e+02,-5.7412e+01,2.4966e+02,-1.4590e+02,-5.7412e+01,2.4985e+02,-1.4731e+02,-5.8299e+01,2.4991e+02,-1.4794e+02,-5.8695e+01,2.4991e+02,-1.2490e+02,-5.8695e+01,2.4981e+02,-1.2481e+02,-5.8068e+01,2.4966e+02,-1.2465e+02,-5.7412e+01,2.4966e+02,-1.5000e+02,-5.7412e+01,2.4966e+02,-1.1500e+02,-5.7412e+01,2.4924e+02,-1.1500e+02,-5.6173e+01,2.4924e+02,-1.5000e+02,-5.6173e+01,2.4924e+02,-1.4389e+02,-5.6173e+01,2.4942e+02,-1.4463e+02,-5.6632e+01,2.4966e+02,-1.4590e+02,-5.7412e+01,2.4966e+02,-1.2465e+02,-5.7412e+01,2.4957e+02,-1.2457e+02,-5.7109e+01,2.4924e+02,-1.2424e+02,-5.6173e+01,2.4924e+02,-1.5000e+02,-5.6173e+01,2.4924e+02,-1.1500e+02,-5.6173e+01,2.4866e+02,-1.1500e+02,-5.5000e+01,2.4866e+02,-1.5000e+02,-5.5000e+01,2.4866e+02,-1.4193e+02,-5.5000e+01,2.4868e+02,-1.4198e+02,-5.5029e+01,2.4924e+02,-1.4389e+02,-5.6173e+01,2.4924e+02,-1.2424e+02,-5.6173e+01,2.4881e+02,-1.2381e+02,-5.5275e+01,2.4866e+02,-1.2365e+02,-5.5000e+01,2.4866e+02,-1.5000e+02,-5.5000e+01,2.4866e+02,-1.1500e+02,-5.5000e+01,2.4793e+02,-1.1500e+02,-5.3912e+01,2.4793e+02,-1.5000e+02,-5.3912e+01,2.4793e+02,-1.4006e+02,-5.3912e+01,2.4866e+02,-1.4193e+02,-5.5000e+01,2.4866e+02,-1.2365e+02,-5.5000e+01,2.4830e+02,-1.2330e+02,-5.4428e+01,2.4793e+02,-1.2292e+02,-5.3912e+01,2.4793e+02,-1.5000e+02,-5.3912e+01,2.4793e+02,-1.1500e+02,-5.3912e+01,2.4707e+02,-1.1500e+02,-5.2929e+01,2.4707e+02,-1.5000e+02,-5.2929e+01,2.4707e+02,-1.3827e+02,-5.2929e+01,2.4762e+02,-1.3936e+02,-5.3527e+01,2.4793e+02,-1.4006e+02,-5.3912e+01,2.4793e+02,-1.2292e+02,-5.3912e+01,2.4772e+02,-1.2272e+02,-5.3643e+01,2.4707e+02,-1.2207e+02,-5.2929e+01,2.4707e+02,-1.5000e+02,-5.2929e+01,2.4707e+02,-1.1500e+02,-5.2929e+01,2.4609e+02,-1.1500e+02,-5.2066e+01,2.4609e+02,-1.5000e+02,-5.2066e+01,2.4609e+02,-1.3659e+02,-5.2066e+01,2.4674e+02,-1.3765e+02,-5.2609e+01,2.4707e+02,-1.3827e+02,-5.2929e+01,2.4707e+02,-1.2207e+02,-5.2929e+01,2.4609e+02,-1.2108e+02,-5.2066e+01,2.4609e+02,-1.5000e+02,-5.2066e+01,2.4609e+02,-1.1500e+02,-5.2066e+01,2.4500e+02,-1.1500e+02,-5.1340e+01,2.4500e+02,-1.5000e+02,-5.1340e+01,2.4500e+02,-1.3502e+02,-5.1340e+01,2.4570e+02,-1.3598e+02,-5.1785e+01,2.4609e+02,-1.3659e+02,-5.2066e+01,2.4609e+02,-1.2108e+02,-5.2066e+01,2.4589e+02,-1.2089e+02,-5.1921e+01,2.4500e+02,-1.1999e+02,-5.1340e+01,2.4500e+02,-1.5000e+02,-5.1340e+01,2.4500e+02,-1.1500e+02,-5.1340e+01,2.4383e+02,-1.1500e+02,-5.0761e+01,2.4383e+02,-1.5000e+02,-5.0761e+01,2.4383e+02,-1.3356e+02,-5.0761e+01,2.4451e+02,-1.3437e+02,-5.1076e+01,2.4500e+02,-1.3502e+02,-5.1340e+01,2.4500e+02,-1.1999e+02,-5.1340e+01,2.4455e+02,-1.1955e+02,-5.1094e+01,2.4383e+02,-1.1881e+02,-5.0761e+01,2.4383e+02,-1.5000e+02,-5.0761e+01,2.4383e+02,-1.1500e+02,-5.0761e+01,2.4259e+02,-1.1500e+02,-5.0341e+01,2.4259e+02,-1.5000e+02,-5.0341e+01,2.4259e+02,-1.3224e+02,-5.0341e+01,2.4351e+02,-1.3320e+02,-5.0637e+01,2.4383e+02,-1.3356e+02,-5.0761e+01,2.4383e+02,-1.1881e+02,-5.0761e+01,2.4308e+02,-1.1808e+02,-5.0486e+01,2.4259e+02,-1.1758e+02,-5.0341e+01,2.4259e+02,-1.5000e+02,-5.0341e+01,2.4259e+02,-1.1500e+02,-5.0341e+01,2.4131e+02,-1.1500e+02,-5.0086e+01};
+			return value;
+		}
+		private double[] getCoordinate_7_598_point_2()
+		{
+			double[] value = {2.4131e+02,-1.5000e+02,-5.0086e+01,2.4131e+02,-1.3105e+02,-5.0086e+01,2.4243e+02,-1.3208e+02,-5.0299e+01,2.4259e+02,-1.3224e+02,-5.0341e+01,2.4259e+02,-1.1758e+02,-5.0341e+01,2.4155e+02,-1.1655e+02,-5.0120e+01,2.4131e+02,-1.1630e+02,-5.0086e+01,2.4131e+02,-1.5000e+02,-5.0086e+01,2.4131e+02,-1.1500e+02,-5.0086e+01,2.4000e+02,-1.1500e+02,-5.0000e+01,2.4000e+02,-1.5000e+02,-5.0000e+01,2.4131e+02,-1.1630e+02,-5.0086e+01,2.4000e+02,-1.1500e+02,-5.0000e+01,2.4000e+02,-1.3000e+02,-5.0000e+01,2.4125e+02,-1.3101e+02,-5.0079e+01,2.4131e+02,-1.3105e+02,-5.0086e+01};
+			return value;
+		}
+
+
+		/** Define subarrays using type double[] */
+		private double[] getNormal_7_599_vector_1()
+		{
+			double[] value = {-1.0000e+00,-0.0000e+00,-6.1232e-17,-1.0000e+00,-0.0000e+00,-6.1232e-17,-9.9144e-01,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-1.3053e-01,-1.0000e+00,-0.0000e+00,-6.1232e-17,-1.0000e+00,-0.0000e+00,-6.1232e-17,-9.9535e-01,-0.0000e+00,-9.6365e-02,-9.9144e-01,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-1.3053e-01,-9.6593e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-2.5882e-01,-9.8543e-01,-0.0000e+00,-1.7008e-01,-9.9144e-01,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-1.3053e-01,-9.8116e-01,-0.0000e+00,-1.9322e-01,-9.6593e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-2.5882e-01,-9.2388e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-3.8268e-01,-9.4157e-01,-0.0000e+00,-3.3683e-01,-9.6593e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-2.5882e-01,-9.5729e-01,-0.0000e+00,-2.8914e-01,-9.2388e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-3.8268e-01,-8.6603e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-5.0000e-01,-8.6771e-01,-0.0000e+00,-4.9707e-01,-9.2388e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-3.8268e-01,-8.8136e-01,-0.0000e+00,-4.7245e-01,-8.6603e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-5.0000e-01,-7.9335e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-6.0876e-01,-8.6603e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-5.0000e-01,-8.3041e-01,-0.0000e+00,-5.5716e-01,-7.9335e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-6.0876e-01,-7.0711e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-7.0711e-01,-7.6220e-01,-0.0000e+00,-6.4734e-01,-7.9335e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-6.0876e-01,-7.7196e-01,-0.0000e+00,-6.3568e-01,-7.0711e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-7.0711e-01,-6.0876e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-7.9335e-01,-6.7355e-01,-0.0000e+00,-7.3914e-01,-7.0711e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-7.0711e-01,-6.0876e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-7.9335e-01,-5.0000e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-8.6603e-01,-5.7015e-01,-0.0000e+00,-8.2154e-01,-6.0876e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-7.9335e-01,-5.8936e-01,-0.0000e+00,-8.0787e-01,-5.0000e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-8.6603e-01,-3.8268e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-9.2388e-01,-4.5117e-01,-0.0000e+00,-8.9244e-01,-5.0000e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-8.6603e-01,-4.5487e-01,-0.0000e+00,-8.9056e-01,-3.8268e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-9.2388e-01,-2.5882e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.6593e-01,-3.5129e-01,-0.0000e+00,-9.3627e-01,-3.8268e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-9.2388e-01,-3.0808e-01,-0.0000e+00,-9.5136e-01,-2.5882e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.6593e-01,-1.3053e-01,-0.0000e+00,-9.9144e-01};
+			return value;
+		}
+		private double[] getNormal_7_599_vector_2()
+		{
+			double[] value = {-1.3053e-01,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-9.9144e-01,-2.4264e-01,-0.0000e+00,-9.7012e-01,-2.5882e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.6593e-01,-1.5451e-01,-0.0000e+00,-9.8799e-01,-1.3053e-01,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-9.9144e-01,-0.0000e+00,-0.0000e+00,-1.0000e+00,-0.0000e+00,-0.0000e+00,-1.0000e+00,-1.3053e-01,-0.0000e+00,-9.9144e-01,-0.0000e+00,-0.0000e+00,-1.0000e+00,-0.0000e+00,-0.0000e+00,-1.0000e+00,-1.2548e-01,-0.0000e+00,-9.9210e-01,-1.3053e-01,-0.0000e+00,-9.9144e-01};
+			return value;
+		}
+
+
+
+
+		/** Define subarrays using type double[] */
+		private double[] getCoordinate_7_612_point_1()
+		{
+			double[] value = {2.5000e+02,1.1500e+02,-6.0000e+01,2.5000e+02,1.5000e+02,-6.0000e+01,2.4991e+02,1.5000e+02,-5.8695e+01,2.4991e+02,1.1500e+02,-5.8695e+01,2.4991e+02,1.2490e+02,-5.8695e+01,2.4995e+02,1.2495e+02,-5.9036e+01,2.5000e+02,1.2500e+02,-6.0000e+01,2.5000e+02,1.5000e+02,-6.0000e+01,2.4991e+02,1.4794e+02,-5.8695e+01,2.4991e+02,1.1500e+02,-5.8695e+01,2.4991e+02,1.5000e+02,-5.8695e+01,2.4966e+02,1.5000e+02,-5.7412e+01,2.4966e+02,1.1500e+02,-5.7412e+01,2.4966e+02,1.2465e+02,-5.7412e+01,2.4981e+02,1.2481e+02,-5.8068e+01,2.4991e+02,1.2490e+02,-5.8695e+01,2.4991e+02,1.4794e+02,-5.8695e+01,2.4985e+02,1.4731e+02,-5.8299e+01,2.4966e+02,1.4590e+02,-5.7412e+01,2.4966e+02,1.1500e+02,-5.7412e+01,2.4966e+02,1.5000e+02,-5.7412e+01,2.4924e+02,1.5000e+02,-5.6173e+01,2.4924e+02,1.1500e+02,-5.6173e+01,2.4924e+02,1.2424e+02,-5.6173e+01,2.4957e+02,1.2457e+02,-5.7109e+01,2.4966e+02,1.2465e+02,-5.7412e+01,2.4966e+02,1.4590e+02,-5.7412e+01,2.4942e+02,1.4463e+02,-5.6632e+01,2.4924e+02,1.4389e+02,-5.6173e+01,2.4924e+02,1.1500e+02,-5.6173e+01,2.4924e+02,1.5000e+02,-5.6173e+01,2.4866e+02,1.5000e+02,-5.5000e+01,2.4866e+02,1.1500e+02,-5.5000e+01,2.4866e+02,1.2365e+02,-5.5000e+01,2.4881e+02,1.2381e+02,-5.5275e+01,2.4924e+02,1.2424e+02,-5.6173e+01,2.4924e+02,1.4389e+02,-5.6173e+01,2.4868e+02,1.4198e+02,-5.5029e+01,2.4866e+02,1.4193e+02,-5.5000e+01,2.4866e+02,1.1500e+02,-5.5000e+01,2.4866e+02,1.5000e+02,-5.5000e+01,2.4793e+02,1.5000e+02,-5.3912e+01,2.4793e+02,1.1500e+02,-5.3912e+01,2.4793e+02,1.2292e+02,-5.3912e+01,2.4830e+02,1.2330e+02,-5.4428e+01,2.4866e+02,1.2365e+02,-5.5000e+01,2.4866e+02,1.4193e+02,-5.5000e+01,2.4793e+02,1.4006e+02,-5.3912e+01,2.4793e+02,1.1500e+02,-5.3912e+01,2.4793e+02,1.5000e+02,-5.3912e+01,2.4707e+02,1.5000e+02,-5.2929e+01,2.4707e+02,1.1500e+02,-5.2929e+01,2.4707e+02,1.2207e+02,-5.2929e+01,2.4772e+02,1.2272e+02,-5.3643e+01,2.4793e+02,1.2292e+02,-5.3912e+01,2.4793e+02,1.4006e+02,-5.3912e+01,2.4762e+02,1.3936e+02,-5.3527e+01,2.4707e+02,1.3827e+02,-5.2929e+01,2.4707e+02,1.1500e+02,-5.2929e+01,2.4707e+02,1.5000e+02,-5.2929e+01,2.4609e+02,1.5000e+02,-5.2066e+01,2.4609e+02,1.1500e+02,-5.2066e+01,2.4609e+02,1.2108e+02,-5.2066e+01,2.4707e+02,1.2207e+02,-5.2929e+01,2.4707e+02,1.3827e+02,-5.2929e+01,2.4674e+02,1.3765e+02,-5.2609e+01,2.4609e+02,1.3659e+02,-5.2066e+01,2.4609e+02,1.1500e+02,-5.2066e+01,2.4609e+02,1.5000e+02,-5.2066e+01,2.4500e+02,1.5000e+02,-5.1340e+01,2.4500e+02,1.1500e+02,-5.1340e+01,2.4500e+02,1.1999e+02,-5.1340e+01,2.4589e+02,1.2089e+02,-5.1921e+01,2.4609e+02,1.2108e+02,-5.2066e+01,2.4609e+02,1.3659e+02,-5.2066e+01,2.4570e+02,1.3598e+02,-5.1785e+01,2.4500e+02,1.3502e+02,-5.1340e+01,2.4500e+02,1.1500e+02,-5.1340e+01,2.4500e+02,1.5000e+02,-5.1340e+01,2.4383e+02,1.5000e+02,-5.0761e+01,2.4383e+02,1.1500e+02,-5.0761e+01,2.4383e+02,1.1881e+02,-5.0761e+01,2.4455e+02,1.1955e+02,-5.1094e+01,2.4500e+02,1.1999e+02,-5.1340e+01,2.4500e+02,1.3502e+02,-5.1340e+01,2.4451e+02,1.3437e+02,-5.1076e+01,2.4383e+02,1.3356e+02,-5.0761e+01,2.4383e+02,1.1500e+02,-5.0761e+01,2.4383e+02,1.5000e+02,-5.0761e+01,2.4259e+02,1.5000e+02,-5.0341e+01,2.4259e+02,1.1500e+02,-5.0341e+01,2.4259e+02,1.1758e+02,-5.0341e+01,2.4308e+02,1.1808e+02,-5.0486e+01,2.4383e+02,1.1881e+02,-5.0761e+01,2.4383e+02,1.3356e+02,-5.0761e+01,2.4351e+02,1.3320e+02,-5.0637e+01,2.4259e+02,1.3224e+02,-5.0341e+01,2.4259e+02,1.1500e+02,-5.0341e+01,2.4259e+02,1.5000e+02,-5.0341e+01,2.4131e+02,1.5000e+02,-5.0086e+01};
+			return value;
+		}
+		private double[] getCoordinate_7_612_point_2()
+		{
+			double[] value = {2.4131e+02,1.1500e+02,-5.0086e+01,2.4131e+02,1.1630e+02,-5.0086e+01,2.4155e+02,1.1655e+02,-5.0120e+01,2.4259e+02,1.1758e+02,-5.0341e+01,2.4259e+02,1.3224e+02,-5.0341e+01,2.4243e+02,1.3208e+02,-5.0299e+01,2.4131e+02,1.3105e+02,-5.0086e+01,2.4131e+02,1.1500e+02,-5.0086e+01,2.4131e+02,1.5000e+02,-5.0086e+01,2.4000e+02,1.5000e+02,-5.0000e+01,2.4000e+02,1.1500e+02,-5.0000e+01,2.4131e+02,1.3105e+02,-5.0086e+01,2.4125e+02,1.3101e+02,-5.0079e+01,2.4000e+02,1.3000e+02,-5.0000e+01,2.4000e+02,1.1500e+02,-5.0000e+01,2.4131e+02,1.1630e+02,-5.0086e+01};
+			return value;
+		}
+
+
+		/** Define subarrays using type double[] */
+		private double[] getNormal_7_613_vector_1()
+		{
+			double[] value = {-1.0000e+00,-1.1102e-15,-1.2246e-16,-1.0000e+00,-1.1102e-15,-1.2246e-16,-9.9144e-01,-1.1007e-15,-1.3053e-01,-9.9144e-01,-1.1007e-15,-1.3053e-01,-9.9144e-01,-1.1007e-15,-1.3053e-01,-9.9535e-01,-1.1051e-15,-9.6365e-02,-1.0000e+00,-1.1102e-15,-1.2246e-16,-1.0000e+00,-1.1102e-15,-1.2246e-16,-9.9144e-01,-1.1007e-15,-1.3053e-01,-9.9144e-01,-1.1007e-15,-1.3053e-01,-9.9144e-01,-1.1007e-15,-1.3053e-01,-9.6593e-01,-1.0724e-15,-2.5882e-01,-9.6593e-01,-1.0724e-15,-2.5882e-01,-9.6593e-01,-1.0724e-15,-2.5882e-01,-9.8116e-01,-1.0893e-15,-1.9322e-01,-9.9144e-01,-1.1007e-15,-1.3053e-01,-9.9144e-01,-1.1007e-15,-1.3053e-01,-9.8543e-01,-1.0940e-15,-1.7008e-01,-9.6593e-01,-1.0724e-15,-2.5882e-01,-9.6593e-01,-1.0724e-15,-2.5882e-01,-9.6593e-01,-1.0724e-15,-2.5882e-01,-9.2388e-01,-1.0257e-15,-3.8268e-01,-9.2388e-01,-1.0257e-15,-3.8268e-01,-9.2388e-01,-1.0257e-15,-3.8268e-01,-9.5729e-01,-1.0628e-15,-2.8914e-01,-9.6593e-01,-1.0724e-15,-2.5882e-01,-9.6593e-01,-1.0724e-15,-2.5882e-01,-9.4157e-01,-1.0453e-15,-3.3683e-01,-9.2388e-01,-1.0257e-15,-3.8268e-01,-9.2388e-01,-1.0257e-15,-3.8268e-01,-9.2388e-01,-1.0257e-15,-3.8268e-01,-8.6603e-01,-9.6148e-16,-5.0000e-01,-8.6603e-01,-9.6148e-16,-5.0000e-01,-8.6603e-01,-9.6148e-16,-5.0000e-01,-8.8136e-01,-9.7850e-16,-4.7245e-01,-9.2388e-01,-1.0257e-15,-3.8268e-01,-9.2388e-01,-1.0257e-15,-3.8268e-01,-8.6771e-01,-9.6335e-16,-4.9707e-01,-8.6603e-01,-9.6148e-16,-5.0000e-01,-8.6603e-01,-9.6148e-16,-5.0000e-01,-8.6603e-01,-9.6148e-16,-5.0000e-01,-7.9335e-01,-8.8080e-16,-6.0876e-01,-7.9335e-01,-8.8080e-16,-6.0876e-01,-7.9335e-01,-8.8080e-16,-6.0876e-01,-8.3041e-01,-9.2194e-16,-5.5716e-01,-8.6603e-01,-9.6148e-16,-5.0000e-01,-8.6603e-01,-9.6148e-16,-5.0000e-01,-7.9335e-01,-8.8080e-16,-6.0876e-01,-7.9335e-01,-8.8080e-16,-6.0876e-01,-7.9335e-01,-8.8080e-16,-6.0876e-01,-7.0711e-01,-7.8505e-16,-7.0711e-01,-7.0711e-01,-7.8505e-16,-7.0711e-01,-7.0711e-01,-7.8505e-16,-7.0711e-01,-7.7196e-01,-8.5704e-16,-6.3568e-01,-7.9335e-01,-8.8080e-16,-6.0876e-01,-7.9335e-01,-8.8080e-16,-6.0876e-01,-7.6220e-01,-8.4621e-16,-6.4734e-01,-7.0711e-01,-7.8505e-16,-7.0711e-01,-7.0711e-01,-7.8505e-16,-7.0711e-01,-7.0711e-01,-7.8505e-16,-7.0711e-01,-6.0876e-01,-6.7586e-16,-7.9335e-01,-6.0876e-01,-6.7586e-16,-7.9335e-01,-6.0876e-01,-6.7586e-16,-7.9335e-01,-7.0711e-01,-7.8505e-16,-7.0711e-01,-7.0711e-01,-7.8505e-16,-7.0711e-01,-6.7355e-01,-7.4779e-16,-7.3914e-01,-6.0876e-01,-6.7586e-16,-7.9335e-01,-6.0876e-01,-6.7586e-16,-7.9335e-01,-6.0876e-01,-6.7586e-16,-7.9335e-01,-5.0000e-01,-5.5511e-16,-8.6603e-01,-5.0000e-01,-5.5511e-16,-8.6603e-01,-5.0000e-01,-5.5511e-16,-8.6603e-01,-5.8936e-01,-6.5432e-16,-8.0787e-01,-6.0876e-01,-6.7586e-16,-7.9335e-01,-6.0876e-01,-6.7586e-16,-7.9335e-01,-5.7015e-01,-6.3300e-16,-8.2154e-01,-5.0000e-01,-5.5511e-16,-8.6603e-01,-5.0000e-01,-5.5511e-16,-8.6603e-01,-5.0000e-01,-5.5511e-16,-8.6603e-01,-3.8268e-01,-4.2486e-16,-9.2388e-01,-3.8268e-01,-4.2486e-16,-9.2388e-01,-3.8268e-01,-4.2486e-16,-9.2388e-01,-4.5487e-01,-5.0500e-16,-8.9056e-01,-5.0000e-01,-5.5511e-16,-8.6603e-01,-5.0000e-01,-5.5511e-16,-8.6603e-01,-4.5117e-01,-5.0090e-16,-8.9244e-01,-3.8268e-01,-4.2486e-16,-9.2388e-01,-3.8268e-01,-4.2486e-16,-9.2388e-01,-3.8268e-01,-4.2486e-16,-9.2388e-01,-2.5882e-01,-2.8735e-16,-9.6593e-01,-2.5882e-01,-2.8735e-16,-9.6593e-01,-2.5882e-01,-2.8735e-16,-9.6593e-01,-3.0808e-01,-3.4204e-16,-9.5136e-01,-3.8268e-01,-4.2486e-16,-9.2388e-01,-3.8268e-01,-4.2486e-16,-9.2388e-01,-3.5129e-01,-3.9001e-16,-9.3627e-01,-2.5882e-01,-2.8735e-16,-9.6593e-01,-2.5882e-01,-2.8735e-16,-9.6593e-01,-2.5882e-01,-2.8735e-16,-9.6593e-01,-1.3053e-01,-1.4491e-16,-9.9144e-01};
+			return value;
+		}
+		private double[] getNormal_7_613_vector_2()
+		{
+			double[] value = {-1.3053e-01,-1.4491e-16,-9.9144e-01,-1.3053e-01,-1.4491e-16,-9.9144e-01,-1.5451e-01,-1.7154e-16,-9.8799e-01,-2.5882e-01,-2.8735e-16,-9.6593e-01,-2.5882e-01,-2.8735e-16,-9.6593e-01,-2.4264e-01,-2.6938e-16,-9.7012e-01,-1.3053e-01,-1.4491e-16,-9.9144e-01,-1.3053e-01,-1.4491e-16,-9.9144e-01,-1.3053e-01,-1.4491e-16,-9.9144e-01,-1.2595e-14,-1.3984e-29,-1.0000e+00,-1.2595e-14,-1.3984e-29,-1.0000e+00,-1.3053e-01,-1.4491e-16,-9.9144e-01,-1.2548e-01,-1.3931e-16,-9.9210e-01,-1.2595e-14,-1.3984e-29,-1.0000e+00,-1.2595e-14,-1.3984e-29,-1.0000e+00,-1.3053e-01,-1.4491e-16,-9.9144e-01};
+			return value;
+		}
+
+
+
+
+		/** Define subarrays using type double[] */
+		private double[] getCoordinate_7_626_point_1()
+		{
+			double[] value = {-2.5000e+02,-1.1500e+02,-6.0000e+01,-2.5000e+02,-1.5000e+02,-6.0000e+01,-2.4991e+02,-1.5000e+02,-5.8695e+01,-2.4991e+02,-1.1500e+02,-5.8695e+01,-2.4991e+02,-1.2490e+02,-5.8695e+01,-2.4995e+02,-1.2495e+02,-5.9036e+01,-2.5000e+02,-1.2500e+02,-6.0000e+01,-2.5000e+02,-1.5000e+02,-6.0000e+01,-2.4991e+02,-1.4794e+02,-5.8695e+01,-2.4991e+02,-1.1500e+02,-5.8695e+01,-2.4991e+02,-1.5000e+02,-5.8695e+01,-2.4966e+02,-1.5000e+02,-5.7412e+01,-2.4966e+02,-1.1500e+02,-5.7412e+01,-2.4966e+02,-1.2465e+02,-5.7412e+01,-2.4981e+02,-1.2481e+02,-5.8068e+01,-2.4991e+02,-1.2490e+02,-5.8695e+01,-2.4991e+02,-1.4794e+02,-5.8695e+01,-2.4985e+02,-1.4731e+02,-5.8299e+01,-2.4966e+02,-1.4590e+02,-5.7412e+01,-2.4966e+02,-1.1500e+02,-5.7412e+01,-2.4966e+02,-1.5000e+02,-5.7412e+01,-2.4924e+02,-1.5000e+02,-5.6173e+01,-2.4924e+02,-1.1500e+02,-5.6173e+01,-2.4924e+02,-1.2424e+02,-5.6173e+01,-2.4957e+02,-1.2457e+02,-5.7109e+01,-2.4966e+02,-1.2465e+02,-5.7412e+01,-2.4966e+02,-1.4590e+02,-5.7412e+01,-2.4942e+02,-1.4463e+02,-5.6632e+01,-2.4924e+02,-1.4389e+02,-5.6173e+01,-2.4924e+02,-1.1500e+02,-5.6173e+01,-2.4924e+02,-1.5000e+02,-5.6173e+01,-2.4866e+02,-1.5000e+02,-5.5000e+01,-2.4866e+02,-1.1500e+02,-5.5000e+01,-2.4866e+02,-1.2365e+02,-5.5000e+01,-2.4881e+02,-1.2381e+02,-5.5275e+01,-2.4924e+02,-1.2424e+02,-5.6173e+01,-2.4924e+02,-1.4389e+02,-5.6173e+01,-2.4868e+02,-1.4198e+02,-5.5029e+01,-2.4866e+02,-1.4193e+02,-5.5000e+01,-2.4866e+02,-1.1500e+02,-5.5000e+01,-2.4866e+02,-1.5000e+02,-5.5000e+01,-2.4793e+02,-1.5000e+02,-5.3912e+01,-2.4793e+02,-1.1500e+02,-5.3912e+01,-2.4793e+02,-1.2292e+02,-5.3912e+01,-2.4830e+02,-1.2330e+02,-5.4428e+01,-2.4866e+02,-1.2365e+02,-5.5000e+01,-2.4866e+02,-1.4193e+02,-5.5000e+01,-2.4793e+02,-1.4006e+02,-5.3912e+01,-2.4793e+02,-1.1500e+02,-5.3912e+01,-2.4793e+02,-1.5000e+02,-5.3912e+01,-2.4707e+02,-1.5000e+02,-5.2929e+01,-2.4707e+02,-1.1500e+02,-5.2929e+01,-2.4707e+02,-1.2207e+02,-5.2929e+01,-2.4772e+02,-1.2272e+02,-5.3643e+01,-2.4793e+02,-1.2292e+02,-5.3912e+01,-2.4793e+02,-1.4006e+02,-5.3912e+01,-2.4762e+02,-1.3936e+02,-5.3527e+01,-2.4707e+02,-1.3827e+02,-5.2929e+01,-2.4707e+02,-1.1500e+02,-5.2929e+01,-2.4707e+02,-1.5000e+02,-5.2929e+01,-2.4609e+02,-1.5000e+02,-5.2066e+01,-2.4609e+02,-1.1500e+02,-5.2066e+01,-2.4609e+02,-1.2108e+02,-5.2066e+01,-2.4707e+02,-1.2207e+02,-5.2929e+01,-2.4707e+02,-1.3827e+02,-5.2929e+01,-2.4674e+02,-1.3765e+02,-5.2609e+01,-2.4609e+02,-1.3659e+02,-5.2066e+01,-2.4609e+02,-1.1500e+02,-5.2066e+01,-2.4609e+02,-1.5000e+02,-5.2066e+01,-2.4500e+02,-1.5000e+02,-5.1340e+01,-2.4500e+02,-1.1500e+02,-5.1340e+01,-2.4500e+02,-1.1999e+02,-5.1340e+01,-2.4589e+02,-1.2089e+02,-5.1921e+01,-2.4609e+02,-1.2108e+02,-5.2066e+01,-2.4609e+02,-1.3659e+02,-5.2066e+01,-2.4570e+02,-1.3598e+02,-5.1785e+01,-2.4500e+02,-1.3502e+02,-5.1340e+01,-2.4500e+02,-1.1500e+02,-5.1340e+01,-2.4500e+02,-1.5000e+02,-5.1340e+01,-2.4383e+02,-1.5000e+02,-5.0761e+01,-2.4383e+02,-1.1500e+02,-5.0761e+01,-2.4383e+02,-1.1881e+02,-5.0761e+01,-2.4455e+02,-1.1955e+02,-5.1094e+01,-2.4500e+02,-1.1999e+02,-5.1340e+01,-2.4500e+02,-1.3502e+02,-5.1340e+01,-2.4451e+02,-1.3437e+02,-5.1076e+01,-2.4383e+02,-1.3356e+02,-5.0761e+01,-2.4383e+02,-1.1500e+02,-5.0761e+01,-2.4383e+02,-1.5000e+02,-5.0761e+01,-2.4259e+02,-1.5000e+02,-5.0341e+01,-2.4259e+02,-1.1500e+02,-5.0341e+01,-2.4259e+02,-1.1758e+02,-5.0341e+01,-2.4308e+02,-1.1808e+02,-5.0486e+01,-2.4383e+02,-1.1881e+02,-5.0761e+01,-2.4383e+02,-1.3356e+02,-5.0761e+01,-2.4351e+02,-1.3320e+02,-5.0637e+01,-2.4259e+02,-1.3224e+02,-5.0341e+01,-2.4259e+02,-1.1500e+02,-5.0341e+01,-2.4259e+02,-1.5000e+02,-5.0341e+01,-2.4131e+02,-1.5000e+02,-5.0086e+01};
+			return value;
+		}
+		private double[] getCoordinate_7_626_point_2()
+		{
+			double[] value = {-2.4131e+02,-1.1500e+02,-5.0086e+01,-2.4131e+02,-1.1630e+02,-5.0086e+01,-2.4155e+02,-1.1655e+02,-5.0120e+01,-2.4259e+02,-1.1758e+02,-5.0341e+01,-2.4259e+02,-1.3224e+02,-5.0341e+01,-2.4243e+02,-1.3208e+02,-5.0299e+01,-2.4131e+02,-1.3105e+02,-5.0086e+01,-2.4131e+02,-1.1500e+02,-5.0086e+01,-2.4131e+02,-1.5000e+02,-5.0086e+01,-2.4000e+02,-1.5000e+02,-5.0000e+01,-2.4000e+02,-1.1500e+02,-5.0000e+01,-2.4131e+02,-1.3105e+02,-5.0086e+01,-2.4125e+02,-1.3101e+02,-5.0079e+01,-2.4000e+02,-1.3000e+02,-5.0000e+01,-2.4000e+02,-1.1500e+02,-5.0000e+01,-2.4131e+02,-1.1630e+02,-5.0086e+01};
+			return value;
+		}
+
+
+		/** Define subarrays using type double[] */
+		private double[] getNormal_7_627_vector_1()
+		{
+			double[] value = {1.0000e+00,1.1102e-15,-1.2246e-16,1.0000e+00,1.1102e-15,-1.2246e-16,9.9144e-01,1.1007e-15,-1.3053e-01,9.9144e-01,1.1007e-15,-1.3053e-01,9.9144e-01,1.1007e-15,-1.3053e-01,9.9535e-01,1.1051e-15,-9.6365e-02,1.0000e+00,1.1102e-15,-1.2246e-16,1.0000e+00,1.1102e-15,-1.2246e-16,9.9144e-01,1.1007e-15,-1.3053e-01,9.9144e-01,1.1007e-15,-1.3053e-01,9.9144e-01,1.1007e-15,-1.3053e-01,9.6593e-01,1.0724e-15,-2.5882e-01,9.6593e-01,1.0724e-15,-2.5882e-01,9.6593e-01,1.0724e-15,-2.5882e-01,9.8116e-01,1.0893e-15,-1.9322e-01,9.9144e-01,1.1007e-15,-1.3053e-01,9.9144e-01,1.1007e-15,-1.3053e-01,9.8543e-01,1.0940e-15,-1.7008e-01,9.6593e-01,1.0724e-15,-2.5882e-01,9.6593e-01,1.0724e-15,-2.5882e-01,9.6593e-01,1.0724e-15,-2.5882e-01,9.2388e-01,1.0257e-15,-3.8268e-01,9.2388e-01,1.0257e-15,-3.8268e-01,9.2388e-01,1.0257e-15,-3.8268e-01,9.5729e-01,1.0628e-15,-2.8914e-01,9.6593e-01,1.0724e-15,-2.5882e-01,9.6593e-01,1.0724e-15,-2.5882e-01,9.4157e-01,1.0453e-15,-3.3683e-01,9.2388e-01,1.0257e-15,-3.8268e-01,9.2388e-01,1.0257e-15,-3.8268e-01,9.2388e-01,1.0257e-15,-3.8268e-01,8.6603e-01,9.6148e-16,-5.0000e-01,8.6603e-01,9.6148e-16,-5.0000e-01,8.6603e-01,9.6148e-16,-5.0000e-01,8.8136e-01,9.7850e-16,-4.7245e-01,9.2388e-01,1.0257e-15,-3.8268e-01,9.2388e-01,1.0257e-15,-3.8268e-01,8.6771e-01,9.6335e-16,-4.9707e-01,8.6603e-01,9.6148e-16,-5.0000e-01,8.6603e-01,9.6148e-16,-5.0000e-01,8.6603e-01,9.6148e-16,-5.0000e-01,7.9335e-01,8.8080e-16,-6.0876e-01,7.9335e-01,8.8080e-16,-6.0876e-01,7.9335e-01,8.8080e-16,-6.0876e-01,8.3041e-01,9.2194e-16,-5.5716e-01,8.6603e-01,9.6148e-16,-5.0000e-01,8.6603e-01,9.6148e-16,-5.0000e-01,7.9335e-01,8.8080e-16,-6.0876e-01,7.9335e-01,8.8080e-16,-6.0876e-01,7.9335e-01,8.8080e-16,-6.0876e-01,7.0711e-01,7.8505e-16,-7.0711e-01,7.0711e-01,7.8505e-16,-7.0711e-01,7.0711e-01,7.8505e-16,-7.0711e-01,7.7196e-01,8.5704e-16,-6.3568e-01,7.9335e-01,8.8080e-16,-6.0876e-01,7.9335e-01,8.8080e-16,-6.0876e-01,7.6220e-01,8.4621e-16,-6.4734e-01,7.0711e-01,7.8505e-16,-7.0711e-01,7.0711e-01,7.8505e-16,-7.0711e-01,7.0711e-01,7.8505e-16,-7.0711e-01,6.0876e-01,6.7586e-16,-7.9335e-01,6.0876e-01,6.7586e-16,-7.9335e-01,6.0876e-01,6.7586e-16,-7.9335e-01,7.0711e-01,7.8505e-16,-7.0711e-01,7.0711e-01,7.8505e-16,-7.0711e-01,6.7355e-01,7.4779e-16,-7.3914e-01,6.0876e-01,6.7586e-16,-7.9335e-01,6.0876e-01,6.7586e-16,-7.9335e-01,6.0876e-01,6.7586e-16,-7.9335e-01,5.0000e-01,5.5511e-16,-8.6603e-01,5.0000e-01,5.5511e-16,-8.6603e-01,5.0000e-01,5.5511e-16,-8.6603e-01,5.8936e-01,6.5432e-16,-8.0787e-01,6.0876e-01,6.7586e-16,-7.9335e-01,6.0876e-01,6.7586e-16,-7.9335e-01,5.7015e-01,6.3300e-16,-8.2154e-01,5.0000e-01,5.5511e-16,-8.6603e-01,5.0000e-01,5.5511e-16,-8.6603e-01,5.0000e-01,5.5511e-16,-8.6603e-01,3.8268e-01,4.2486e-16,-9.2388e-01,3.8268e-01,4.2486e-16,-9.2388e-01,3.8268e-01,4.2486e-16,-9.2388e-01,4.5487e-01,5.0500e-16,-8.9056e-01,5.0000e-01,5.5511e-16,-8.6603e-01,5.0000e-01,5.5511e-16,-8.6603e-01,4.5117e-01,5.0090e-16,-8.9244e-01,3.8268e-01,4.2486e-16,-9.2388e-01,3.8268e-01,4.2486e-16,-9.2388e-01,3.8268e-01,4.2486e-16,-9.2388e-01,2.5882e-01,2.8735e-16,-9.6593e-01,2.5882e-01,2.8735e-16,-9.6593e-01,2.5882e-01,2.8735e-16,-9.6593e-01,3.0808e-01,3.4204e-16,-9.5136e-01,3.8268e-01,4.2486e-16,-9.2388e-01,3.8268e-01,4.2486e-16,-9.2388e-01,3.5129e-01,3.9001e-16,-9.3627e-01,2.5882e-01,2.8735e-16,-9.6593e-01,2.5882e-01,2.8735e-16,-9.6593e-01,2.5882e-01,2.8735e-16,-9.6593e-01,1.3053e-01,1.4491e-16,-9.9144e-01};
+			return value;
+		}
+		private double[] getNormal_7_627_vector_2()
+		{
+			double[] value = {1.3053e-01,1.4491e-16,-9.9144e-01,1.3053e-01,1.4491e-16,-9.9144e-01,1.5451e-01,1.7154e-16,-9.8799e-01,2.5882e-01,2.8735e-16,-9.6593e-01,2.5882e-01,2.8735e-16,-9.6593e-01,2.4264e-01,2.6938e-16,-9.7012e-01,1.3053e-01,1.4491e-16,-9.9144e-01,1.3053e-01,1.4491e-16,-9.9144e-01,1.3053e-01,1.4491e-16,-9.9144e-01,1.2595e-14,1.3984e-29,-1.0000e+00,1.2595e-14,1.3984e-29,-1.0000e+00,1.3053e-01,1.4491e-16,-9.9144e-01,1.2548e-01,1.3931e-16,-9.9210e-01,1.2595e-14,1.3984e-29,-1.0000e+00,1.2595e-14,1.3984e-29,-1.0000e+00,1.3053e-01,1.4491e-16,-9.9144e-01};
+			return value;
+		}
+
+
+
+
+		/** Define subarrays using type double[] */
+		private double[] getCoordinate_7_640_point_1()
+		{
+			double[] value = {-2.5000e+02,1.5000e+02,-6.0000e+01,-2.5000e+02,1.1500e+02,-6.0000e+01,-2.4993e+02,1.1500e+02,-5.8795e+01,-2.4993e+02,1.5000e+02,-5.8795e+01,-2.4993e+02,1.4810e+02,-5.8795e+01,-2.5000e+02,1.5000e+02,-6.0000e+01,-2.5000e+02,1.2500e+02,-6.0000e+01,-2.4995e+02,1.2495e+02,-5.9036e+01,-2.4993e+02,1.2492e+02,-5.8795e+01,-2.4993e+02,1.5000e+02,-5.8795e+01,-2.4993e+02,1.1500e+02,-5.8795e+01,-2.4971e+02,1.1500e+02,-5.7607e+01,-2.4971e+02,1.5000e+02,-5.7607e+01,-2.4971e+02,1.4621e+02,-5.7607e+01,-2.4985e+02,1.4731e+02,-5.8299e+01,-2.4993e+02,1.4810e+02,-5.8795e+01,-2.4993e+02,1.2492e+02,-5.8795e+01,-2.4981e+02,1.2481e+02,-5.8068e+01,-2.4971e+02,1.2470e+02,-5.7607e+01,-2.4971e+02,1.5000e+02,-5.7607e+01,-2.4971e+02,1.1500e+02,-5.7607e+01,-2.4935e+02,1.1500e+02,-5.6454e+01,-2.4935e+02,1.5000e+02,-5.6454e+01,-2.4935e+02,1.4434e+02,-5.6454e+01,-2.4942e+02,1.4463e+02,-5.6632e+01,-2.4971e+02,1.4621e+02,-5.7607e+01,-2.4971e+02,1.2470e+02,-5.7607e+01,-2.4957e+02,1.2457e+02,-5.7109e+01,-2.4935e+02,1.2434e+02,-5.6454e+01,-2.4935e+02,1.5000e+02,-5.6454e+01,-2.4935e+02,1.1500e+02,-5.6454e+01,-2.4885e+02,1.1500e+02,-5.5353e+01,-2.4885e+02,1.5000e+02,-5.5353e+01,-2.4885e+02,1.4253e+02,-5.5353e+01,-2.4935e+02,1.4434e+02,-5.6454e+01,-2.4935e+02,1.2434e+02,-5.6454e+01,-2.4924e+02,1.2424e+02,-5.6173e+01,-2.4885e+02,1.2385e+02,-5.5353e+01,-2.4885e+02,1.5000e+02,-5.5353e+01,-2.4885e+02,1.1500e+02,-5.5353e+01,-2.4823e+02,1.1500e+02,-5.4319e+01,-2.4823e+02,1.5000e+02,-5.4319e+01,-2.4823e+02,1.4078e+02,-5.4319e+01,-2.4868e+02,1.4198e+02,-5.5029e+01,-2.4885e+02,1.4253e+02,-5.5353e+01,-2.4885e+02,1.2385e+02,-5.5353e+01,-2.4881e+02,1.2381e+02,-5.5275e+01,-2.4830e+02,1.2330e+02,-5.4428e+01,-2.4823e+02,1.2323e+02,-5.4319e+01,-2.4823e+02,1.5000e+02,-5.4319e+01,-2.4823e+02,1.1500e+02,-5.4319e+01,-2.4749e+02,1.1500e+02,-5.3369e+01,-2.4749e+02,1.5000e+02,-5.3369e+01,-2.4749e+02,1.3908e+02,-5.3369e+01,-2.4762e+02,1.3936e+02,-5.3527e+01,-2.4823e+02,1.4078e+02,-5.4319e+01,-2.4823e+02,1.2323e+02,-5.4319e+01,-2.4772e+02,1.2272e+02,-5.3643e+01,-2.4749e+02,1.2248e+02,-5.3369e+01,-2.4749e+02,1.5000e+02,-5.3369e+01,-2.4749e+02,1.1500e+02,-5.3369e+01,-2.4663e+02,1.1500e+02,-5.2515e+01,-2.4663e+02,1.5000e+02,-5.2515e+01,-2.4663e+02,1.3747e+02,-5.2515e+01,-2.4674e+02,1.3765e+02,-5.2609e+01,-2.4749e+02,1.3908e+02,-5.3369e+01,-2.4749e+02,1.2248e+02,-5.3369e+01,-2.4707e+02,1.2207e+02,-5.2929e+01,-2.4663e+02,1.2161e+02,-5.2515e+01,-2.4663e+02,1.5000e+02,-5.2515e+01,-2.4663e+02,1.1500e+02,-5.2515e+01,-2.4568e+02,1.1500e+02,-5.1770e+01,-2.4568e+02,1.5000e+02,-5.1770e+01,-2.4568e+02,1.3595e+02,-5.1770e+01,-2.4570e+02,1.3598e+02,-5.1785e+01,-2.4663e+02,1.3747e+02,-5.2515e+01,-2.4663e+02,1.2161e+02,-5.2515e+01,-2.4589e+02,1.2089e+02,-5.1921e+01,-2.4568e+02,1.2067e+02,-5.1770e+01,-2.4568e+02,1.5000e+02,-5.1770e+01,-2.4568e+02,1.1500e+02,-5.1770e+01,-2.4465e+02,1.1500e+02,-5.1145e+01,-2.4465e+02,1.5000e+02,-5.1145e+01,-2.4465e+02,1.3455e+02,-5.1145e+01,-2.4568e+02,1.3595e+02,-5.1770e+01,-2.4568e+02,1.2067e+02,-5.1770e+01,-2.4465e+02,1.1964e+02,-5.1145e+01,-2.4465e+02,1.5000e+02,-5.1145e+01,-2.4465e+02,1.1500e+02,-5.1145e+01,-2.4355e+02,1.1500e+02,-5.0650e+01,-2.4355e+02,1.5000e+02,-5.0650e+01,-2.4355e+02,1.3324e+02,-5.0650e+01,-2.4451e+02,1.3437e+02,-5.1076e+01,-2.4465e+02,1.3455e+02,-5.1145e+01,-2.4465e+02,1.1964e+02,-5.1145e+01,-2.4455e+02,1.1955e+02,-5.1094e+01,-2.4355e+02,1.1854e+02,-5.0650e+01,-2.4355e+02,1.5000e+02,-5.0650e+01,-2.4355e+02,1.1500e+02,-5.0650e+01,-2.4239e+02,1.1500e+02,-5.0291e+01};
+			return value;
+		}
+		private double[] getCoordinate_7_640_point_2()
+		{
+			double[] value = {-2.4239e+02,1.5000e+02,-5.0291e+01,-2.4239e+02,1.3205e+02,-5.0291e+01,-2.4243e+02,1.3208e+02,-5.0299e+01,-2.4351e+02,1.3320e+02,-5.0637e+01,-2.4355e+02,1.3324e+02,-5.0650e+01,-2.4355e+02,1.1854e+02,-5.0650e+01,-2.4308e+02,1.1808e+02,-5.0486e+01,-2.4239e+02,1.1739e+02,-5.0291e+01,-2.4239e+02,1.5000e+02,-5.0291e+01,-2.4239e+02,1.1500e+02,-5.0291e+01,-2.4121e+02,1.1500e+02,-5.0073e+01,-2.4121e+02,1.5000e+02,-5.0073e+01,-2.4121e+02,1.3097e+02,-5.0073e+01,-2.4125e+02,1.3101e+02,-5.0079e+01,-2.4239e+02,1.3205e+02,-5.0291e+01,-2.4239e+02,1.1739e+02,-5.0291e+01,-2.4155e+02,1.1655e+02,-5.0120e+01,-2.4121e+02,1.1620e+02,-5.0073e+01,-2.4121e+02,1.5000e+02,-5.0073e+01,-2.4121e+02,1.1500e+02,-5.0073e+01,-2.4000e+02,1.1500e+02,-5.0000e+01,-2.4000e+02,1.5000e+02,-5.0000e+01,-2.4121e+02,1.1620e+02,-5.0073e+01,-2.4000e+02,1.1500e+02,-5.0000e+01,-2.4000e+02,1.3000e+02,-5.0000e+01,-2.4121e+02,1.3097e+02,-5.0073e+01};
+			return value;
+		}
+
+
+		/** Define subarrays using type double[] */
+		private double[] getNormal_7_641_vector_1()
+		{
+			double[] value = {1.0000e+00,1.1102e-15,-1.2246e-16,1.0000e+00,1.1102e-15,-1.2246e-16,9.9271e-01,1.1021e-15,-1.2054e-01,9.9271e-01,1.1021e-15,-1.2054e-01,9.9271e-01,1.1021e-15,-1.2054e-01,1.0000e+00,1.1102e-15,-1.2246e-16,1.0000e+00,1.1102e-15,-1.2246e-16,9.9535e-01,1.1051e-15,-9.6365e-02,9.9271e-01,1.1021e-15,-1.2054e-01,9.9271e-01,1.1021e-15,-1.2054e-01,9.9271e-01,1.1021e-15,-1.2054e-01,9.7094e-01,1.0780e-15,-2.3932e-01,9.7094e-01,1.0780e-15,-2.3932e-01,9.7094e-01,1.0780e-15,-2.3932e-01,9.8543e-01,1.0940e-15,-1.7008e-01,9.9271e-01,1.1021e-15,-1.2054e-01,9.9271e-01,1.1021e-15,-1.2054e-01,9.8116e-01,1.0893e-15,-1.9322e-01,9.7094e-01,1.0780e-15,-2.3932e-01,9.7094e-01,1.0780e-15,-2.3932e-01,9.7094e-01,1.0780e-15,-2.3932e-01,9.3502e-01,1.0381e-15,-3.5460e-01,9.3502e-01,1.0381e-15,-3.5460e-01,9.3502e-01,1.0381e-15,-3.5460e-01,9.4157e-01,1.0453e-15,-3.3683e-01,9.7094e-01,1.0780e-15,-2.3932e-01,9.7094e-01,1.0780e-15,-2.3932e-01,9.5729e-01,1.0628e-15,-2.8914e-01,9.3502e-01,1.0381e-15,-3.5460e-01,9.3502e-01,1.0381e-15,-3.5460e-01,9.3502e-01,1.0381e-15,-3.5460e-01,8.8546e-01,9.8305e-16,-4.6472e-01,8.8546e-01,9.8305e-16,-4.6472e-01,8.8546e-01,9.8305e-16,-4.6472e-01,9.3502e-01,1.0381e-15,-3.5460e-01,9.3502e-01,1.0381e-15,-3.5460e-01,9.2388e-01,1.0257e-15,-3.8268e-01,8.8546e-01,9.8305e-16,-4.6472e-01,8.8546e-01,9.8305e-16,-4.6472e-01,8.8546e-01,9.8305e-16,-4.6472e-01,8.2298e-01,9.1370e-16,-5.6806e-01,8.2298e-01,9.1370e-16,-5.6806e-01,8.2298e-01,9.1370e-16,-5.6806e-01,8.6771e-01,9.6335e-16,-4.9707e-01,8.8546e-01,9.8305e-16,-4.6472e-01,8.8546e-01,9.8305e-16,-4.6472e-01,8.8136e-01,9.7850e-16,-4.7245e-01,8.3041e-01,9.2194e-16,-5.5716e-01,8.2298e-01,9.1370e-16,-5.6806e-01,8.2298e-01,9.1370e-16,-5.6806e-01,8.2298e-01,9.1370e-16,-5.6806e-01,7.4851e-01,8.3101e-16,-6.6312e-01,7.4851e-01,8.3101e-16,-6.6312e-01,7.4851e-01,8.3101e-16,-6.6312e-01,7.6220e-01,8.4621e-16,-6.4734e-01,8.2298e-01,9.1370e-16,-5.6806e-01,8.2298e-01,9.1370e-16,-5.6806e-01,7.7196e-01,8.5704e-16,-6.3568e-01,7.4851e-01,8.3101e-16,-6.6312e-01,7.4851e-01,8.3101e-16,-6.6312e-01,7.4851e-01,8.3101e-16,-6.6312e-01,6.6312e-01,7.3621e-16,-7.4851e-01,6.6312e-01,7.3621e-16,-7.4851e-01,6.6312e-01,7.3621e-16,-7.4851e-01,6.7355e-01,7.4779e-16,-7.3914e-01,7.4851e-01,8.3101e-16,-6.6312e-01,7.4851e-01,8.3101e-16,-6.6312e-01,7.0711e-01,7.8505e-16,-7.0711e-01,6.6312e-01,7.3621e-16,-7.4851e-01,6.6312e-01,7.3621e-16,-7.4851e-01,6.6312e-01,7.3621e-16,-7.4851e-01,5.6806e-01,6.3068e-16,-8.2298e-01,5.6806e-01,6.3068e-16,-8.2298e-01,5.6806e-01,6.3068e-16,-8.2298e-01,5.7015e-01,6.3300e-16,-8.2154e-01,6.6312e-01,7.3621e-16,-7.4851e-01,6.6312e-01,7.3621e-16,-7.4851e-01,5.8936e-01,6.5432e-16,-8.0787e-01,5.6806e-01,6.3068e-16,-8.2298e-01,5.6806e-01,6.3068e-16,-8.2298e-01,5.6806e-01,6.3068e-16,-8.2298e-01,4.6472e-01,5.1595e-16,-8.8546e-01,4.6472e-01,5.1595e-16,-8.8546e-01,4.6472e-01,5.1595e-16,-8.8546e-01,5.6806e-01,6.3068e-16,-8.2298e-01,5.6806e-01,6.3068e-16,-8.2298e-01,4.6472e-01,5.1595e-16,-8.8546e-01,4.6472e-01,5.1595e-16,-8.8546e-01,4.6472e-01,5.1595e-16,-8.8546e-01,3.5460e-01,3.9369e-16,-9.3502e-01,3.5460e-01,3.9369e-16,-9.3502e-01,3.5460e-01,3.9369e-16,-9.3502e-01,4.5117e-01,5.0090e-16,-8.9244e-01,4.6472e-01,5.1595e-16,-8.8546e-01,4.6472e-01,5.1595e-16,-8.8546e-01,4.5487e-01,5.0500e-16,-8.9056e-01,3.5460e-01,3.9369e-16,-9.3502e-01,3.5460e-01,3.9369e-16,-9.3502e-01,3.5460e-01,3.9369e-16,-9.3502e-01,2.3932e-01,2.6569e-16,-9.7094e-01};
+			return value;
+		}
+		private double[] getNormal_7_641_vector_2()
+		{
+			double[] value = {2.3932e-01,2.6569e-16,-9.7094e-01,2.3932e-01,2.6569e-16,-9.7094e-01,2.4264e-01,2.6938e-16,-9.7012e-01,3.5129e-01,3.9001e-16,-9.3627e-01,3.5460e-01,3.9369e-16,-9.3502e-01,3.5460e-01,3.9369e-16,-9.3502e-01,3.0808e-01,3.4204e-16,-9.5136e-01,2.3932e-01,2.6569e-16,-9.7094e-01,2.3932e-01,2.6569e-16,-9.7094e-01,2.3932e-01,2.6569e-16,-9.7094e-01,1.2054e-01,1.3382e-16,-9.9271e-01,1.2054e-01,1.3382e-16,-9.9271e-01,1.2054e-01,1.3382e-16,-9.9271e-01,1.2548e-01,1.3931e-16,-9.9210e-01,2.3932e-01,2.6569e-16,-9.7094e-01,2.3932e-01,2.6569e-16,-9.7094e-01,1.5451e-01,1.7154e-16,-9.8799e-01,1.2054e-01,1.3382e-16,-9.9271e-01,1.2054e-01,1.3382e-16,-9.9271e-01,1.2054e-01,1.3382e-16,-9.9271e-01,-1.4272e-14,-1.5845e-29,-1.0000e+00,-1.4272e-14,-1.5845e-29,-1.0000e+00,1.2054e-01,1.3382e-16,-9.9271e-01,-1.4272e-14,-1.5845e-29,-1.0000e+00,-1.4272e-14,-1.5845e-29,-1.0000e+00,1.2054e-01,1.3382e-16,-9.9271e-01};
+			return value;
+		}
+
+
+		/** Define subarrays using type double[] */
+		private double[] getCoordinate_7_647_point_1()
+		{
+			double[] value = {5.0000e+01,-3.1754e+01,5.0000e+00,5.0000e+01,3.1754e+01,5.0000e+00,5.0043e+01,3.1754e+01,4.3474e+00,5.0043e+01,-3.1754e+01,4.3474e+00,5.0043e+01,-2.8895e+01,4.3474e+00,5.0030e+01,-2.8885e+01,4.4490e+00,5.0000e+01,-2.8868e+01,5.0000e+00,5.0000e+01,2.8868e+01,5.0000e+00,5.0030e+01,2.8885e+01,4.4490e+00,5.0043e+01,2.8895e+01,4.3474e+00,5.0043e+01,-3.1754e+01,4.3474e+00,5.0043e+01,3.1754e+01,4.3474e+00,5.0170e+01,3.1754e+01,3.7059e+00,5.0170e+01,-3.1754e+01,3.7059e+00,5.0043e+01,2.8895e+01,4.3474e+00,5.0123e+01,2.8939e+01,3.8961e+00,5.0170e+01,2.8970e+01,3.7059e+00,5.0170e+01,-2.8970e+01,3.7059e+00,5.0123e+01,-2.8939e+01,3.8961e+00,5.0043e+01,-2.8895e+01,4.3474e+00,5.0170e+01,-3.1754e+01,3.7059e+00,5.0170e+01,3.1754e+01,3.7059e+00,5.0381e+01,3.1754e+01,3.0866e+00,5.0381e+01,-3.1754e+01,3.0866e+00,5.0170e+01,2.8970e+01,3.7059e+00,5.0279e+01,2.9029e+01,3.3520e+00,5.0381e+01,2.9092e+01,3.0866e+00,5.0381e+01,-2.9092e+01,3.0866e+00,5.0279e+01,-2.9029e+01,3.3520e+00,5.0170e+01,-2.8970e+01,3.7059e+00,5.0381e+01,-3.1754e+01,3.0866e+00,5.0381e+01,3.1754e+01,3.0866e+00,5.0670e+01,3.1754e+01,2.5000e+00,5.0670e+01,-3.1754e+01,2.5000e+00,5.0381e+01,2.9092e+01,3.0866e+00,5.0497e+01,2.9154e+01,2.8274e+00,5.0670e+01,2.9258e+01,2.5000e+00,5.0670e+01,-2.9258e+01,2.5000e+00,5.0497e+01,-2.9154e+01,2.8274e+00,5.0381e+01,-2.9092e+01,3.0866e+00,5.0670e+01,-3.1754e+01,2.5000e+00,5.0670e+01,3.1754e+01,2.5000e+00,5.1033e+01,3.1754e+01,1.9562e+00,5.1033e+01,-3.1754e+01,1.9562e+00,5.0670e+01,2.9258e+01,2.5000e+00,5.0771e+01,2.9313e+01,2.3323e+00,5.1033e+01,2.9466e+01,1.9562e+00,5.1033e+01,-2.9466e+01,1.9562e+00,5.0771e+01,-2.9313e+01,2.3323e+00,5.0670e+01,-2.9258e+01,2.5000e+00,5.1033e+01,-3.1754e+01,1.9562e+00,5.1033e+01,3.1754e+01,1.9562e+00,5.1464e+01,3.1754e+01,1.4645e+00,5.1464e+01,-3.1754e+01,1.4645e+00,5.1033e+01,2.9466e+01,1.9562e+00,5.1096e+01,2.9501e+01,1.8756e+00,5.1464e+01,2.9713e+01,1.4645e+00,5.1464e+01,-2.9713e+01,1.4645e+00,5.1096e+01,-2.9501e+01,1.8756e+00,5.1033e+01,-2.9466e+01,1.9562e+00,5.1464e+01,-3.1754e+01,1.4645e+00,5.1464e+01,3.1754e+01,1.4645e+00,5.1956e+01,3.1754e+01,1.0332e+00,5.1956e+01,-3.1754e+01,1.0332e+00,5.1464e+01,2.9713e+01,1.4645e+00,5.1949e+01,2.9993e+01,1.0390e+00,5.1956e+01,2.9997e+01,1.0332e+00,5.1956e+01,-2.9997e+01,1.0332e+00,5.1949e+01,-2.9993e+01,1.0390e+00,5.1464e+01,-2.9713e+01,1.4645e+00,5.1956e+01,-3.1754e+01,1.0332e+00,5.1956e+01,3.1754e+01,1.0332e+00,5.2500e+01,3.1754e+01,6.6987e-01,5.2500e+01,-3.1754e+01,6.6987e-01,5.1956e+01,2.9997e+01,1.0332e+00,5.2493e+01,3.0307e+01,6.7366e-01,5.2500e+01,3.0311e+01,6.6987e-01,5.2500e+01,-3.0311e+01,6.6987e-01,5.2493e+01,-3.0307e+01,6.7366e-01,5.1956e+01,-2.9997e+01,1.0332e+00,5.2500e+01,-3.1754e+01,6.6987e-01,5.2500e+01,3.1754e+01,6.6987e-01,5.3087e+01,3.1754e+01,3.8060e-01,5.3087e+01,-3.1754e+01,3.8060e-01,5.2500e+01,3.0311e+01,6.6987e-01,5.3087e+01,3.0650e+01,3.8060e-01,5.3087e+01,-3.0650e+01,3.8060e-01,5.2500e+01,-3.0311e+01,6.6987e-01,5.3087e+01,-3.1754e+01,3.8060e-01,5.3087e+01,3.1754e+01,3.8060e-01,5.3706e+01,3.1754e+01,1.7037e-01,5.3706e+01,-3.1754e+01,1.7037e-01,5.3087e+01,3.0650e+01,3.8060e-01,5.3706e+01,3.1007e+01,1.7037e-01,5.3706e+01,-3.1007e+01,1.7037e-01,5.3087e+01,-3.0650e+01,3.8060e-01,5.3706e+01,-3.1754e+01,1.7037e-01,5.3706e+01,3.1754e+01,1.7037e-01,5.4347e+01,3.1754e+01,4.2776e-02,5.4347e+01,-3.1754e+01,4.2776e-02};
+			return value;
+		}
+		private double[] getCoordinate_7_647_point_2()
+		{
+			double[] value = {5.3706e+01,3.1007e+01,1.7037e-01,5.3713e+01,3.1011e+01,1.6842e-01,5.4347e+01,3.1378e+01,4.2776e-02,5.4347e+01,-3.1378e+01,4.2776e-02,5.3713e+01,-3.1011e+01,1.6842e-01,5.3706e+01,-3.1007e+01,1.7037e-01,5.4347e+01,-3.1754e+01,4.2776e-02,5.4347e+01,3.1754e+01,4.2776e-02,5.5000e+01,3.1754e+01,0.0000e+00,5.5000e+01,-3.1754e+01,0.0000e+00,5.4347e+01,3.1378e+01,4.2776e-02,5.4357e+01,3.1383e+01,4.1558e-02,5.5000e+01,3.1754e+01,0.0000e+00,5.5000e+01,-3.1754e+01,0.0000e+00,5.4357e+01,-3.1383e+01,4.1558e-02,5.4347e+01,-3.1378e+01,4.2776e-02};
+			return value;
+		}
+
+
+		/** Define subarrays using type double[] */
+		private double[] getNormal_7_648_vector_1()
+		{
+			double[] value = {1.0000e+00,1.2019e-16,-0.0000e+00,1.0000e+00,1.2019e-16,-0.0000e+00,9.9144e-01,1.1916e-16,1.3053e-01,9.9144e-01,1.1916e-16,1.3053e-01,9.9144e-01,1.1916e-16,1.3053e-01,9.9391e-01,1.1945e-16,1.1020e-01,1.0000e+00,1.2019e-16,-0.0000e+00,1.0000e+00,1.2019e-16,-0.0000e+00,9.9391e-01,1.1945e-16,1.1020e-01,9.9144e-01,1.1916e-16,1.3053e-01,9.9144e-01,1.1916e-16,1.3053e-01,9.9144e-01,1.1916e-16,1.3053e-01,9.6593e-01,1.1609e-16,2.5882e-01,9.6593e-01,1.1609e-16,2.5882e-01,9.9144e-01,1.1916e-16,1.3053e-01,9.7532e-01,1.1722e-16,2.2078e-01,9.6593e-01,1.1609e-16,2.5882e-01,9.6593e-01,1.1609e-16,2.5882e-01,9.7532e-01,1.1722e-16,2.2078e-01,9.9144e-01,1.1916e-16,1.3053e-01,9.6593e-01,1.1609e-16,2.5882e-01,9.6593e-01,1.1609e-16,2.5882e-01,9.2388e-01,1.1104e-16,3.8268e-01,9.2388e-01,1.1104e-16,3.8268e-01,9.6593e-01,1.1609e-16,2.5882e-01,9.4412e-01,1.1347e-16,3.2960e-01,9.2388e-01,1.1104e-16,3.8268e-01,9.2388e-01,1.1104e-16,3.8268e-01,9.4412e-01,1.1347e-16,3.2960e-01,9.6593e-01,1.1609e-16,2.5882e-01,9.2388e-01,1.1104e-16,3.8268e-01,9.2388e-01,1.1104e-16,3.8268e-01,8.6603e-01,1.0408e-16,5.0000e-01,8.6603e-01,1.0408e-16,5.0000e-01,9.2388e-01,1.1104e-16,3.8268e-01,9.0066e-01,1.0825e-16,4.3453e-01,8.6603e-01,1.0408e-16,5.0000e-01,8.6603e-01,1.0408e-16,5.0000e-01,9.0066e-01,1.0825e-16,4.3453e-01,9.2388e-01,1.1104e-16,3.8268e-01,8.6603e-01,1.0408e-16,5.0000e-01,8.6603e-01,1.0408e-16,5.0000e-01,7.9335e-01,9.5349e-17,6.0876e-01,7.9335e-01,9.5349e-17,6.0876e-01,8.6603e-01,1.0408e-16,5.0000e-01,8.4577e-01,1.0165e-16,5.3354e-01,7.9335e-01,9.5349e-17,6.0876e-01,7.9335e-01,9.5349e-17,6.0876e-01,8.4577e-01,1.0165e-16,5.3354e-01,8.6603e-01,1.0408e-16,5.0000e-01,7.9335e-01,9.5349e-17,6.0876e-01,7.9335e-01,9.5349e-17,6.0876e-01,7.0711e-01,8.4984e-17,7.0711e-01,7.0711e-01,8.4984e-17,7.0711e-01,7.9335e-01,9.5349e-17,6.0876e-01,7.8073e-01,9.3832e-17,6.2487e-01,7.0711e-01,8.4984e-17,7.0711e-01,7.0711e-01,8.4984e-17,7.0711e-01,7.8073e-01,9.3832e-17,6.2487e-01,7.9335e-01,9.5349e-17,6.0876e-01,7.0711e-01,8.4984e-17,7.0711e-01,7.0711e-01,8.4984e-17,7.0711e-01,6.0876e-01,7.3164e-17,7.9335e-01,6.0876e-01,7.3164e-17,7.9335e-01,7.0711e-01,8.4984e-17,7.0711e-01,6.1025e-01,7.3343e-17,7.9221e-01,6.0876e-01,7.3164e-17,7.9335e-01,6.0876e-01,7.3164e-17,7.9335e-01,6.1025e-01,7.3343e-17,7.9221e-01,7.0711e-01,8.4984e-17,7.0711e-01,6.0876e-01,7.3164e-17,7.9335e-01,6.0876e-01,7.3164e-17,7.9335e-01,5.0000e-01,6.0093e-17,8.6603e-01,5.0000e-01,6.0093e-17,8.6603e-01,6.0876e-01,7.3164e-17,7.9335e-01,5.0131e-01,6.0250e-17,8.6527e-01,5.0000e-01,6.0093e-17,8.6603e-01,5.0000e-01,6.0093e-17,8.6603e-01,5.0131e-01,6.0250e-17,8.6527e-01,6.0876e-01,7.3164e-17,7.9335e-01,5.0000e-01,6.0093e-17,8.6603e-01,5.0000e-01,6.0093e-17,8.6603e-01,3.8268e-01,4.5993e-17,9.2388e-01,3.8268e-01,4.5993e-17,9.2388e-01,5.0000e-01,6.0093e-17,8.6603e-01,3.8268e-01,4.5993e-17,9.2388e-01,3.8268e-01,4.5993e-17,9.2388e-01,5.0000e-01,6.0093e-17,8.6603e-01,3.8268e-01,4.5993e-17,9.2388e-01,3.8268e-01,4.5993e-17,9.2388e-01,2.5882e-01,3.1106e-17,9.6593e-01,2.5882e-01,3.1106e-17,9.6593e-01,3.8268e-01,4.5993e-17,9.2388e-01,2.5882e-01,3.1106e-17,9.6593e-01,2.5882e-01,3.1106e-17,9.6593e-01,3.8268e-01,4.5993e-17,9.2388e-01,2.5882e-01,3.1106e-17,9.6593e-01,2.5882e-01,3.1106e-17,9.6593e-01,1.3053e-01,1.5687e-17,9.9144e-01,1.3053e-01,1.5687e-17,9.9144e-01};
+			return value;
+		}
+		private double[] getNormal_7_648_vector_2()
+		{
+			double[] value = {2.5882e-01,3.1106e-17,9.6593e-01,2.5736e-01,3.0930e-17,9.6632e-01,1.3053e-01,1.5687e-17,9.9144e-01,1.3053e-01,1.5687e-17,9.9144e-01,2.5736e-01,3.0930e-17,9.6632e-01,2.5882e-01,3.1106e-17,9.6593e-01,1.3053e-01,1.5687e-17,9.9144e-01,1.3053e-01,1.5687e-17,9.9144e-01,6.1232e-17,7.3592e-33,1.0000e+00,6.1232e-17,7.3592e-33,1.0000e+00,1.3053e-01,1.5687e-17,9.9144e-01,1.2866e-01,1.5463e-17,9.9169e-01,6.1232e-17,7.3592e-33,1.0000e+00,6.1232e-17,7.3592e-33,1.0000e+00,1.2866e-01,1.5463e-17,9.9169e-01,1.3053e-01,1.5687e-17,9.9144e-01};
+			return value;
+		}
+
+
+		/** Define subarrays using type double[] */
+		private double[] getCoordinate_7_654_point_1()
+		{
+			double[] value = {5.2500e+01,2.7424e+01,5.0000e+00,-2.5000e+00,5.9178e+01,5.0000e+00,-2.4786e+00,5.9215e+01,4.3474e+00,5.2521e+01,2.7461e+01,4.3474e+00,5.0045e+01,2.8891e+01,4.3474e+00,5.0030e+01,2.8885e+01,4.4490e+00,5.0000e+01,2.8868e+01,5.0000e+00,1.0121e-08,5.7735e+01,5.0000e+00,1.0002e-08,5.7770e+01,4.4490e+00,-2.3182e-03,5.7786e+01,4.3474e+00,5.2521e+01,2.7461e+01,4.3474e+00,-2.4786e+00,5.9215e+01,4.3474e+00,-2.4148e+00,5.9326e+01,3.7059e+00,5.2585e+01,2.7572e+01,3.7059e+00,-2.3182e-03,5.7786e+01,4.3474e+00,9.6434e-09,5.7877e+01,3.8961e+00,-3.4929e-03,5.7934e+01,3.7059e+00,5.0174e+01,2.8964e+01,3.7059e+00,5.0123e+01,2.8939e+01,3.8961e+00,5.0045e+01,2.8891e+01,4.3474e+00,5.2585e+01,2.7572e+01,3.7059e+00,-2.4148e+00,5.9326e+01,3.7059e+00,-2.3097e+00,5.9508e+01,3.0866e+00,5.2690e+01,2.7754e+01,3.0866e+00,-3.4929e-03,5.7934e+01,3.7059e+00,9.0547e-09,5.8058e+01,3.3520e+00,-3.7270e-03,5.8177e+01,3.0866e+00,5.0384e+01,2.9085e+01,3.0866e+00,5.0279e+01,2.9029e+01,3.3520e+00,5.0174e+01,2.8964e+01,3.7059e+00,5.2690e+01,2.7754e+01,3.0866e+00,-2.3097e+00,5.9508e+01,3.0866e+00,-2.1651e+00,5.9759e+01,2.5000e+00,5.2835e+01,2.8004e+01,2.5000e+00,-3.7270e-03,5.8177e+01,3.0866e+00,8.2637e-09,5.8309e+01,2.8274e+00,-3.1626e-03,5.8510e+01,2.5000e+00,5.0673e+01,2.9252e+01,2.5000e+00,5.0497e+01,2.9154e+01,2.8274e+00,5.0384e+01,2.9085e+01,3.0866e+00,5.2835e+01,2.8004e+01,2.5000e+00,-2.1651e+00,5.9759e+01,2.5000e+00,-1.9834e+00,6.0073e+01,1.9562e+00,5.3017e+01,2.8319e+01,1.9562e+00,-3.1626e-03,5.8510e+01,2.5000e+00,7.3134e-09,5.8625e+01,2.3323e+00,-1.8948e-03,5.8929e+01,1.9562e+00,5.1035e+01,2.9463e+01,1.9562e+00,5.0771e+01,2.9313e+01,2.3323e+00,5.0673e+01,2.9252e+01,2.5000e+00,5.3017e+01,2.8319e+01,1.9562e+00,-1.9834e+00,6.0073e+01,1.9562e+00,-1.7678e+00,6.0447e+01,1.4645e+00,5.3232e+01,2.8692e+01,1.4645e+00,-1.8948e-03,5.8929e+01,1.9562e+00,6.2581e-09,5.9001e+01,1.8756e+00,6.1236e-09,5.9426e+01,1.4645e+00,5.1464e+01,2.9713e+01,1.4645e+00,5.1096e+01,2.9501e+01,1.8756e+00,5.1035e+01,2.9463e+01,1.9562e+00,5.3232e+01,2.8692e+01,1.4645e+00,-1.7678e+00,6.0447e+01,1.4645e+00,-1.5219e+00,6.0873e+01,1.0332e+00,5.3478e+01,2.9118e+01,1.0332e+00,6.1236e-09,5.9426e+01,1.4645e+00,3.8658e-09,5.9985e+01,1.0390e+00,-1.7447e-04,5.9994e+01,1.0332e+00,5.1956e+01,2.9997e+01,1.0332e+00,5.1949e+01,2.9993e+01,1.0390e+00,5.1464e+01,2.9713e+01,1.4645e+00,5.3478e+01,2.9118e+01,1.0332e+00,-1.5219e+00,6.0873e+01,1.0332e+00,-1.2500e+00,6.1343e+01,6.6987e-01,5.3750e+01,2.9589e+01,6.6987e-01,-1.7447e-04,5.9994e+01,1.0332e+00,2.6270e-09,6.0614e+01,6.7366e-01,-1.1450e-04,6.0622e+01,6.6987e-01,5.2500e+01,3.0311e+01,6.6987e-01,5.2493e+01,3.0307e+01,6.7366e-01,5.1956e+01,2.9997e+01,1.0332e+00,5.3750e+01,2.9589e+01,6.6987e-01,-1.2500e+00,6.1343e+01,6.6987e-01,-9.5671e-01,6.1851e+01,3.8060e-01,5.4043e+01,3.0097e+01,3.8060e-01,-1.1450e-04,6.0622e+01,6.6987e-01,2.3153e-09,6.1299e+01,3.8060e-01,5.3087e+01,3.0650e+01,3.8060e-01,5.2500e+01,3.0311e+01,6.6987e-01,5.4043e+01,3.0097e+01,3.8060e-01,-9.5671e-01,6.1851e+01,3.8060e-01,-6.4705e-01,6.2388e+01,1.7037e-01,5.4353e+01,3.0634e+01,1.7037e-01,2.3153e-09,6.1299e+01,3.8060e-01,-7.4373e-05,6.2014e+01,1.7037e-01,5.3706e+01,3.1007e+01,1.7037e-01,5.3087e+01,3.0650e+01,3.8060e-01,5.4353e+01,3.0634e+01,1.7037e-01,-6.4705e-01,6.2388e+01,1.7037e-01,-3.2632e-01,6.2943e+01,4.2776e-02,5.4674e+01,3.1189e+01,4.2776e-02};
+			return value;
+		}
+		private double[] getCoordinate_7_654_point_2()
+		{
+			double[] value = {-7.4373e-05,6.2014e+01,1.7037e-01,7.0309e-10,6.2023e+01,1.6842e-01,-5.2398e-05,6.2755e+01,4.2776e-02,5.4347e+01,3.1377e+01,4.2776e-02,5.3713e+01,3.1011e+01,1.6842e-01,5.3706e+01,3.1007e+01,1.7037e-01,5.4674e+01,3.1189e+01,4.2776e-02,-3.2632e-01,6.2943e+01,4.2776e-02,-1.0715e-09,6.3509e+01,-8.8818e-16,5.5000e+01,3.1754e+01,-8.8818e-16,-5.2398e-05,6.2755e+01,4.2776e-02,1.7715e-10,6.2766e+01,4.1558e-02,-1.0715e-09,6.3509e+01,-8.8818e-16,5.5000e+01,3.1754e+01,-8.8818e-16,5.4357e+01,3.1383e+01,4.1558e-02,5.4347e+01,3.1377e+01,4.2776e-02};
+			return value;
+		}
+
+
+		/** Define subarrays using type double[] */
+		private double[] getNormal_7_655_vector_1()
+		{
+			double[] value = {5.0000e-01,8.6603e-01,-0.0000e+00,5.0000e-01,8.6603e-01,-0.0000e+00,4.9572e-01,8.5862e-01,1.3053e-01,4.9572e-01,8.5862e-01,1.3053e-01,4.9572e-01,8.5862e-01,1.3053e-01,4.9695e-01,8.6075e-01,1.1020e-01,5.0000e-01,8.6603e-01,-0.0000e+00,5.0000e-01,8.6603e-01,-0.0000e+00,4.9695e-01,8.6075e-01,1.1020e-01,4.9572e-01,8.5862e-01,1.3053e-01,4.9572e-01,8.5862e-01,1.3053e-01,4.9572e-01,8.5862e-01,1.3053e-01,4.8296e-01,8.3652e-01,2.5882e-01,4.8296e-01,8.3652e-01,2.5882e-01,4.9572e-01,8.5862e-01,1.3053e-01,4.8766e-01,8.4466e-01,2.2078e-01,4.8296e-01,8.3652e-01,2.5882e-01,4.8296e-01,8.3652e-01,2.5882e-01,4.8766e-01,8.4466e-01,2.2078e-01,4.9572e-01,8.5862e-01,1.3053e-01,4.8296e-01,8.3652e-01,2.5882e-01,4.8296e-01,8.3652e-01,2.5882e-01,4.6194e-01,8.0010e-01,3.8268e-01,4.6194e-01,8.0010e-01,3.8268e-01,4.8296e-01,8.3652e-01,2.5882e-01,4.7206e-01,8.1763e-01,3.2960e-01,4.6194e-01,8.0010e-01,3.8268e-01,4.6194e-01,8.0010e-01,3.8268e-01,4.7206e-01,8.1763e-01,3.2960e-01,4.8296e-01,8.3652e-01,2.5882e-01,4.6194e-01,8.0010e-01,3.8268e-01,4.6194e-01,8.0010e-01,3.8268e-01,4.3301e-01,7.5000e-01,5.0000e-01,4.3301e-01,7.5000e-01,5.0000e-01,4.6194e-01,8.0010e-01,3.8268e-01,4.5033e-01,7.7999e-01,4.3453e-01,4.3301e-01,7.5000e-01,5.0000e-01,4.3301e-01,7.5000e-01,5.0000e-01,4.5033e-01,7.7999e-01,4.3453e-01,4.6194e-01,8.0010e-01,3.8268e-01,4.3301e-01,7.5000e-01,5.0000e-01,4.3301e-01,7.5000e-01,5.0000e-01,3.9668e-01,6.8706e-01,6.0876e-01,3.9668e-01,6.8706e-01,6.0876e-01,4.3301e-01,7.5000e-01,5.0000e-01,4.2289e-01,7.3246e-01,5.3354e-01,3.9668e-01,6.8706e-01,6.0876e-01,3.9668e-01,6.8706e-01,6.0876e-01,4.2289e-01,7.3246e-01,5.3354e-01,4.3301e-01,7.5000e-01,5.0000e-01,3.9668e-01,6.8706e-01,6.0876e-01,3.9668e-01,6.8706e-01,6.0876e-01,3.5355e-01,6.1237e-01,7.0711e-01,3.5355e-01,6.1237e-01,7.0711e-01,3.9668e-01,6.8706e-01,6.0876e-01,3.9036e-01,6.7613e-01,6.2487e-01,3.5355e-01,6.1237e-01,7.0711e-01,3.5355e-01,6.1237e-01,7.0711e-01,3.9036e-01,6.7613e-01,6.2487e-01,3.9668e-01,6.8706e-01,6.0876e-01,3.5355e-01,6.1237e-01,7.0711e-01,3.5355e-01,6.1237e-01,7.0711e-01,3.0438e-01,5.2720e-01,7.9335e-01,3.0438e-01,5.2720e-01,7.9335e-01,3.5355e-01,6.1237e-01,7.0711e-01,3.0513e-01,5.2849e-01,7.9221e-01,3.0438e-01,5.2720e-01,7.9335e-01,3.0438e-01,5.2720e-01,7.9335e-01,3.0513e-01,5.2849e-01,7.9221e-01,3.5355e-01,6.1237e-01,7.0711e-01,3.0438e-01,5.2720e-01,7.9335e-01,3.0438e-01,5.2720e-01,7.9335e-01,2.5000e-01,4.3301e-01,8.6603e-01,2.5000e-01,4.3301e-01,8.6603e-01,3.0438e-01,5.2720e-01,7.9335e-01,2.5066e-01,4.3415e-01,8.6527e-01,2.5000e-01,4.3301e-01,8.6603e-01,2.5000e-01,4.3301e-01,8.6603e-01,2.5066e-01,4.3415e-01,8.6527e-01,3.0438e-01,5.2720e-01,7.9335e-01,2.5000e-01,4.3301e-01,8.6603e-01,2.5000e-01,4.3301e-01,8.6603e-01,1.9134e-01,3.3141e-01,9.2388e-01,1.9134e-01,3.3141e-01,9.2388e-01,2.5000e-01,4.3301e-01,8.6603e-01,1.9134e-01,3.3141e-01,9.2388e-01,1.9134e-01,3.3141e-01,9.2388e-01,2.5000e-01,4.3301e-01,8.6603e-01,1.9134e-01,3.3141e-01,9.2388e-01,1.9134e-01,3.3141e-01,9.2388e-01,1.2941e-01,2.2414e-01,9.6593e-01,1.2941e-01,2.2414e-01,9.6593e-01,1.9134e-01,3.3141e-01,9.2388e-01,1.2941e-01,2.2414e-01,9.6593e-01,1.2941e-01,2.2414e-01,9.6593e-01,1.9134e-01,3.3141e-01,9.2388e-01,1.2941e-01,2.2414e-01,9.6593e-01,1.2941e-01,2.2414e-01,9.6593e-01,6.5263e-02,1.1304e-01,9.9144e-01,6.5263e-02,1.1304e-01,9.9144e-01};
+			return value;
+		}
+		private double[] getNormal_7_655_vector_2()
+		{
+			double[] value = {1.2941e-01,2.2414e-01,9.6593e-01,1.2868e-01,2.2288e-01,9.6632e-01,6.5263e-02,1.1304e-01,9.9144e-01,6.5263e-02,1.1304e-01,9.9144e-01,1.2868e-01,2.2288e-01,9.6632e-01,1.2941e-01,2.2414e-01,9.6593e-01,6.5263e-02,1.1304e-01,9.9144e-01,6.5263e-02,1.1304e-01,9.9144e-01,2.3716e-09,4.1078e-09,1.0000e+00,2.3716e-09,4.1078e-09,1.0000e+00,6.5263e-02,1.1304e-01,9.9144e-01,6.4332e-02,1.1143e-01,9.9169e-01,2.3716e-09,4.1078e-09,1.0000e+00,2.3716e-09,4.1078e-09,1.0000e+00,6.4332e-02,1.1143e-01,9.9169e-01,6.5263e-02,1.1304e-01,9.9144e-01};
+			return value;
+		}
+
+
+		/** Define subarrays using type double[] */
+		private double[] getCoordinate_7_661_point_1()
+		{
+			double[] value = {-2.5000e+00,-5.9178e+01,5.0000e+00,5.2500e+01,-2.7424e+01,5.0000e+00,5.2518e+01,-2.7456e+01,4.3973e+00,-2.4818e+00,-5.9210e+01,4.3973e+00,-1.3080e-03,-5.7778e+01,4.3973e+00,-1.2368e-08,-5.7770e+01,4.4490e+00,-8.1936e-09,-5.7735e+01,5.0000e+00,5.0000e+01,-2.8868e+01,5.0000e+00,5.0030e+01,-2.8885e+01,4.4490e+00,5.0038e+01,-2.8888e+01,4.3973e+00,-2.4818e+00,-5.9210e+01,4.3973e+00,5.2518e+01,-2.7456e+01,4.3973e+00,5.2573e+01,-2.7550e+01,3.8034e+00,-2.4274e+00,-5.9304e+01,3.8034e+00,-2.1633e-03,-5.7904e+01,3.8034e+00,-1.1898e-08,-5.7877e+01,3.8961e+00,-1.3080e-03,-5.7778e+01,4.3973e+00,5.0038e+01,-2.8888e+01,4.3973e+00,5.0123e+01,-2.8939e+01,3.8961e+00,5.0147e+01,-2.8950e+01,3.8034e+00,-2.4274e+00,-5.9304e+01,3.8034e+00,5.2573e+01,-2.7550e+01,3.8034e+00,5.2662e+01,-2.7706e+01,3.2270e+00,-2.3375e+00,-5.9460e+01,3.2270e+00,-2.6845e-03,-5.8112e+01,3.2270e+00,-1.1130e-08,-5.8058e+01,3.3520e+00,-2.1633e-03,-5.7904e+01,3.8034e+00,5.0147e+01,-2.8950e+01,3.8034e+00,5.0279e+01,-2.9029e+01,3.3520e+00,5.0328e+01,-2.9054e+01,3.2270e+00,-2.3375e+00,-5.9460e+01,3.2270e+00,5.2662e+01,-2.7706e+01,3.2270e+00,5.2786e+01,-2.7920e+01,2.6764e+00,-2.2136e+00,-5.9674e+01,2.6764e+00,-2.9483e-03,-5.8398e+01,2.6764e+00,-1.0105e-08,-5.8309e+01,2.8274e+00,-2.6845e-03,-5.8112e+01,3.2270e+00,5.0328e+01,-2.9054e+01,3.2270e+00,5.0497e+01,-2.9154e+01,2.8274e+00,5.0576e+01,-2.9196e+01,2.6764e+00,-2.2136e+00,-5.9674e+01,2.6764e+00,5.2786e+01,-2.7920e+01,2.6764e+00,5.2943e+01,-2.8191e+01,2.1597e+00,-2.0575e+00,-5.9945e+01,2.1597e+00,-2.9924e-03,-5.8759e+01,2.1597e+00,-8.8852e-09,-5.8625e+01,2.3323e+00,-2.9483e-03,-5.8398e+01,2.6764e+00,5.0576e+01,-2.9196e+01,2.6764e+00,5.0771e+01,-2.9313e+01,2.3323e+00,5.0888e+01,-2.9377e+01,2.1597e+00,-2.0575e+00,-5.9945e+01,2.1597e+00,5.2943e+01,-2.8191e+01,2.1597e+00,5.3129e+01,-2.8513e+01,1.6844e+00,-1.8713e+00,-6.0267e+01,1.6844e+00,-2.8176e-03,-5.9189e+01,1.6844e+00,-7.5446e-09,-5.9001e+01,1.8756e+00,-2.9924e-03,-5.8759e+01,2.1597e+00,5.0888e+01,-2.9377e+01,2.1597e+00,5.1096e+01,-2.9501e+01,1.8756e+00,5.1260e+01,-2.9592e+01,1.6844e+00,-1.8713e+00,-6.0267e+01,1.6844e+00,5.3129e+01,-2.8513e+01,1.6844e+00,5.3342e+01,-2.8883e+01,1.2574e+00,-1.6578e+00,-6.0637e+01,1.2574e+00,-3.4239e-03,-5.9682e+01,1.2574e+00,-6.1644e-09,-5.9426e+01,1.4645e+00,-2.8176e-03,-5.9189e+01,1.6844e+00,5.1260e+01,-2.9592e+01,1.6844e+00,5.1464e+01,-2.9713e+01,1.4645e+00,5.1688e+01,-2.9838e+01,1.2574e+00,-1.6578e+00,-6.0637e+01,1.2574e+00,5.3342e+01,-2.8883e+01,1.2574e+00,5.3580e+01,-2.9294e+01,8.8508e-01,-1.4202e+00,-6.1049e+01,8.8508e-01,-2.8919e-03,-6.0230e+01,8.8508e-01,-4.5673e-09,-5.9985e+01,1.0390e+00,-3.4239e-03,-5.9682e+01,1.2574e+00,5.1688e+01,-2.9838e+01,1.2574e+00,5.1949e+01,-2.9993e+01,1.0390e+00,5.2163e+01,-3.0113e+01,8.8508e-01,-1.4202e+00,-6.1049e+01,8.8508e-01,5.3580e+01,-2.9294e+01,8.8508e-01,5.3838e+01,-2.9742e+01,5.7272e-01,-1.1618e+00,-6.1496e+01,5.7272e-01,-2.1307e-03,-6.0827e+01,5.7272e-01,-3.0640e-09,-6.0614e+01,6.7366e-01,-2.8919e-03,-6.0230e+01,8.8508e-01,5.2163e+01,-3.0113e+01,8.8508e-01,5.2493e+01,-3.0307e+01,6.7366e-01,5.2679e+01,-3.0411e+01,5.7272e-01,-1.1618e+00,-6.1496e+01,5.7272e-01,5.3838e+01,-2.9742e+01,5.7272e-01,5.4113e+01,-3.0219e+01,3.2492e-01,-8.8651e-01,-6.1973e+01,3.2492e-01,-1.2810e-03,-6.1462e+01,3.2492e-01,-1.7739e-09,-6.1299e+01,3.8060e-01,-2.1307e-03,-6.0827e+01,5.7272e-01,5.2679e+01,-3.0411e+01,5.7272e-01,5.3087e+01,-3.0650e+01,3.8060e-01,5.3228e+01,-3.0730e+01,3.2492e-01};
+			return value;
+		}
+		private double[] getCoordinate_7_661_point_2()
+		{
+			double[] value = {-8.8651e-01,-6.1973e+01,3.2492e-01,5.4113e+01,-3.0219e+01,3.2492e-01,5.4402e+01,-3.0718e+01,1.4529e-01,-5.9829e-01,-6.2472e+01,1.4529e-01,-5.4723e-04,-6.2127e+01,1.4529e-01,-7.9674e-10,-6.2023e+01,1.6842e-01,-1.2810e-03,-6.1462e+01,3.2492e-01,5.3228e+01,-3.0730e+01,3.2492e-01,5.3713e+01,-3.1011e+01,1.6842e-01,5.3804e+01,-3.1063e+01,1.4529e-01,-5.9829e-01,-6.2472e+01,1.4529e-01,5.4402e+01,-3.0718e+01,1.4529e-01,5.4699e+01,-3.1232e+01,3.6456e-02,-3.0134e-01,-6.2987e+01,3.6456e-02,-1.0287e-04,-6.2813e+01,3.6456e-02,-1.9772e-10,-6.2766e+01,4.1558e-02,-5.4723e-04,-6.2127e+01,1.4529e-01,5.3804e+01,-3.1063e+01,1.4529e-01,5.4357e+01,-3.1383e+01,4.1558e-02,5.4397e+01,-3.1406e+01,3.6456e-02,-3.0134e-01,-6.2987e+01,3.6456e-02,5.4699e+01,-3.1232e+01,3.6456e-02,5.5000e+01,-3.1754e+01,-8.8818e-16,-4.4409e-15,-6.3509e+01,-8.8818e-16,5.4397e+01,-3.1406e+01,3.6456e-02,5.5000e+01,-3.1754e+01,-8.8818e-16,-4.4409e-15,-6.3509e+01,-8.8818e-16,-1.0287e-04,-6.2813e+01,3.6456e-02};
+			return value;
+		}
+
+
+		/** Define subarrays using type double[] */
+		private double[] getNormal_7_662_vector_1()
+		{
+			double[] value = {5.0000e-01,-8.6603e-01,-0.0000e+00,5.0000e-01,-8.6603e-01,-0.0000e+00,4.9635e-01,-8.5971e-01,1.2054e-01,4.9635e-01,-8.5971e-01,1.2054e-01,4.9635e-01,-8.5971e-01,1.2054e-01,4.9695e-01,-8.6075e-01,1.1020e-01,5.0000e-01,-8.6603e-01,-0.0000e+00,5.0000e-01,-8.6603e-01,-0.0000e+00,4.9695e-01,-8.6075e-01,1.1020e-01,4.9635e-01,-8.5971e-01,1.2054e-01,4.9635e-01,-8.5971e-01,1.2054e-01,4.9635e-01,-8.5971e-01,1.2054e-01,4.8547e-01,-8.4086e-01,2.3932e-01,4.8547e-01,-8.4086e-01,2.3932e-01,4.8547e-01,-8.4086e-01,2.3932e-01,4.8766e-01,-8.4466e-01,2.2078e-01,4.9635e-01,-8.5971e-01,1.2054e-01,4.9635e-01,-8.5971e-01,1.2054e-01,4.8766e-01,-8.4466e-01,2.2078e-01,4.8547e-01,-8.4086e-01,2.3932e-01,4.8547e-01,-8.4086e-01,2.3932e-01,4.8547e-01,-8.4086e-01,2.3932e-01,4.6751e-01,-8.0975e-01,3.5460e-01,4.6751e-01,-8.0975e-01,3.5460e-01,4.6751e-01,-8.0975e-01,3.5460e-01,4.7206e-01,-8.1763e-01,3.2960e-01,4.8547e-01,-8.4086e-01,2.3932e-01,4.8547e-01,-8.4086e-01,2.3932e-01,4.7206e-01,-8.1763e-01,3.2960e-01,4.6751e-01,-8.0975e-01,3.5460e-01,4.6751e-01,-8.0975e-01,3.5460e-01,4.6751e-01,-8.0975e-01,3.5460e-01,4.4273e-01,-7.6683e-01,4.6472e-01,4.4273e-01,-7.6683e-01,4.6472e-01,4.4273e-01,-7.6683e-01,4.6472e-01,4.5033e-01,-7.7999e-01,4.3453e-01,4.6751e-01,-8.0975e-01,3.5460e-01,4.6751e-01,-8.0975e-01,3.5460e-01,4.5033e-01,-7.7999e-01,4.3453e-01,4.4273e-01,-7.6683e-01,4.6472e-01,4.4273e-01,-7.6683e-01,4.6472e-01,4.4273e-01,-7.6683e-01,4.6472e-01,4.1149e-01,-7.1272e-01,5.6806e-01,4.1149e-01,-7.1272e-01,5.6806e-01,4.1149e-01,-7.1272e-01,5.6806e-01,4.2289e-01,-7.3246e-01,5.3354e-01,4.4273e-01,-7.6683e-01,4.6472e-01,4.4273e-01,-7.6683e-01,4.6472e-01,4.2289e-01,-7.3246e-01,5.3354e-01,4.1149e-01,-7.1272e-01,5.6806e-01,4.1149e-01,-7.1272e-01,5.6806e-01,4.1149e-01,-7.1272e-01,5.6806e-01,3.7426e-01,-6.4823e-01,6.6312e-01,3.7426e-01,-6.4823e-01,6.6312e-01,3.7426e-01,-6.4823e-01,6.6312e-01,3.9036e-01,-6.7613e-01,6.2487e-01,4.1149e-01,-7.1272e-01,5.6806e-01,4.1149e-01,-7.1272e-01,5.6806e-01,3.9036e-01,-6.7613e-01,6.2487e-01,3.7426e-01,-6.4823e-01,6.6312e-01,3.7426e-01,-6.4823e-01,6.6312e-01,3.7426e-01,-6.4823e-01,6.6312e-01,3.3156e-01,-5.7428e-01,7.4851e-01,3.3156e-01,-5.7428e-01,7.4851e-01,3.3156e-01,-5.7428e-01,7.4851e-01,3.5355e-01,-6.1237e-01,7.0711e-01,3.7426e-01,-6.4823e-01,6.6312e-01,3.7426e-01,-6.4823e-01,6.6312e-01,3.5355e-01,-6.1237e-01,7.0711e-01,3.3156e-01,-5.7428e-01,7.4851e-01,3.3156e-01,-5.7428e-01,7.4851e-01,3.3156e-01,-5.7428e-01,7.4851e-01,2.8403e-01,-4.9196e-01,8.2298e-01,2.8403e-01,-4.9196e-01,8.2298e-01,2.8403e-01,-4.9196e-01,8.2298e-01,3.0513e-01,-5.2849e-01,7.9221e-01,3.3156e-01,-5.7428e-01,7.4851e-01,3.3156e-01,-5.7428e-01,7.4851e-01,3.0513e-01,-5.2849e-01,7.9221e-01,2.8403e-01,-4.9196e-01,8.2298e-01,2.8403e-01,-4.9196e-01,8.2298e-01,2.8403e-01,-4.9196e-01,8.2298e-01,2.3236e-01,-4.0246e-01,8.8546e-01,2.3236e-01,-4.0246e-01,8.8546e-01,2.3236e-01,-4.0246e-01,8.8546e-01,2.5066e-01,-4.3415e-01,8.6527e-01,2.8403e-01,-4.9196e-01,8.2298e-01,2.8403e-01,-4.9196e-01,8.2298e-01,2.5066e-01,-4.3415e-01,8.6527e-01,2.3236e-01,-4.0246e-01,8.8546e-01,2.3236e-01,-4.0246e-01,8.8546e-01,2.3236e-01,-4.0246e-01,8.8546e-01,1.7730e-01,-3.0710e-01,9.3502e-01,1.7730e-01,-3.0710e-01,9.3502e-01,1.7730e-01,-3.0710e-01,9.3502e-01,1.9134e-01,-3.3141e-01,9.2388e-01,2.3236e-01,-4.0246e-01,8.8546e-01,2.3236e-01,-4.0246e-01,8.8546e-01,1.9134e-01,-3.3141e-01,9.2388e-01,1.7730e-01,-3.0710e-01,9.3502e-01};
+			return value;
+		}
+		private double[] getNormal_7_662_vector_2()
+		{
+			double[] value = {1.7730e-01,-3.0710e-01,9.3502e-01,1.7730e-01,-3.0710e-01,9.3502e-01,1.1966e-01,-2.0725e-01,9.7094e-01,1.1966e-01,-2.0725e-01,9.7094e-01,1.1966e-01,-2.0725e-01,9.7094e-01,1.2868e-01,-2.2288e-01,9.6632e-01,1.7730e-01,-3.0710e-01,9.3502e-01,1.7730e-01,-3.0710e-01,9.3502e-01,1.2868e-01,-2.2288e-01,9.6632e-01,1.1966e-01,-2.0725e-01,9.7094e-01,1.1966e-01,-2.0725e-01,9.7094e-01,1.1966e-01,-2.0725e-01,9.7094e-01,6.0268e-02,-1.0439e-01,9.9271e-01,6.0268e-02,-1.0439e-01,9.9271e-01,6.0268e-02,-1.0439e-01,9.9271e-01,6.4332e-02,-1.1143e-01,9.9169e-01,1.1966e-01,-2.0725e-01,9.7094e-01,1.1966e-01,-2.0725e-01,9.7094e-01,6.4332e-02,-1.1143e-01,9.9169e-01,6.0268e-02,-1.0439e-01,9.9271e-01,6.0268e-02,-1.0439e-01,9.9271e-01,6.0268e-02,-1.0439e-01,9.9271e-01,-2.3716e-09,4.1078e-09,1.0000e+00,-2.3716e-09,4.1078e-09,1.0000e+00,6.0268e-02,-1.0439e-01,9.9271e-01,-2.3716e-09,4.1078e-09,1.0000e+00,-2.3716e-09,4.1078e-09,1.0000e+00,6.0268e-02,-1.0439e-01,9.9271e-01};
+			return value;
+		}
+
+
+		/** Define subarrays using type double[] */
+		private double[] getCoordinate_7_668_point_1()
+		{
+			double[] value = {2.5000e+00,5.9178e+01,5.0000e+00,-5.2500e+01,2.7424e+01,5.0000e+00,-5.2518e+01,2.7456e+01,4.3973e+00,2.4818e+00,5.9210e+01,4.3973e+00,1.3080e-03,5.7778e+01,4.3973e+00,1.2368e-08,5.7770e+01,4.4490e+00,8.1935e-09,5.7735e+01,5.0000e+00,-5.0000e+01,2.8868e+01,5.0000e+00,-5.0030e+01,2.8885e+01,4.4490e+00,-5.0038e+01,2.8888e+01,4.3973e+00,2.4818e+00,5.9210e+01,4.3973e+00,-5.2518e+01,2.7456e+01,4.3973e+00,-5.2573e+01,2.7550e+01,3.8034e+00,2.4274e+00,5.9304e+01,3.8034e+00,-5.0038e+01,2.8888e+01,4.3973e+00,-5.0123e+01,2.8939e+01,3.8961e+00,-5.0147e+01,2.8950e+01,3.8034e+00,2.1633e-03,5.7904e+01,3.8034e+00,1.1898e-08,5.7877e+01,3.8961e+00,1.3080e-03,5.7778e+01,4.3973e+00,2.4274e+00,5.9304e+01,3.8034e+00,-5.2573e+01,2.7550e+01,3.8034e+00,-5.2662e+01,2.7706e+01,3.2270e+00,2.3375e+00,5.9460e+01,3.2270e+00,-5.0147e+01,2.8950e+01,3.8034e+00,-5.0279e+01,2.9029e+01,3.3520e+00,-5.0328e+01,2.9054e+01,3.2270e+00,2.6845e-03,5.8112e+01,3.2270e+00,1.1130e-08,5.8058e+01,3.3520e+00,2.1633e-03,5.7904e+01,3.8034e+00,2.3375e+00,5.9460e+01,3.2270e+00,-5.2662e+01,2.7706e+01,3.2270e+00,-5.2786e+01,2.7920e+01,2.6764e+00,2.2136e+00,5.9674e+01,2.6764e+00,-5.0328e+01,2.9054e+01,3.2270e+00,-5.0497e+01,2.9154e+01,2.8274e+00,-5.0576e+01,2.9196e+01,2.6764e+00,2.9483e-03,5.8398e+01,2.6764e+00,1.0105e-08,5.8309e+01,2.8274e+00,2.6845e-03,5.8112e+01,3.2270e+00,2.2136e+00,5.9674e+01,2.6764e+00,-5.2786e+01,2.7920e+01,2.6764e+00,-5.2943e+01,2.8191e+01,2.1597e+00,2.0575e+00,5.9945e+01,2.1597e+00,-5.0576e+01,2.9196e+01,2.6764e+00,-5.0771e+01,2.9313e+01,2.3323e+00,-5.0888e+01,2.9377e+01,2.1597e+00,2.9924e-03,5.8759e+01,2.1597e+00,8.8852e-09,5.8625e+01,2.3323e+00,2.9483e-03,5.8398e+01,2.6764e+00,2.0575e+00,5.9945e+01,2.1597e+00,-5.2943e+01,2.8191e+01,2.1597e+00,-5.3129e+01,2.8513e+01,1.6844e+00,1.8713e+00,6.0267e+01,1.6844e+00,-5.0888e+01,2.9377e+01,2.1597e+00,-5.1096e+01,2.9501e+01,1.8756e+00,-5.1260e+01,2.9592e+01,1.6844e+00,2.8176e-03,5.9189e+01,1.6844e+00,7.5446e-09,5.9001e+01,1.8756e+00,2.9924e-03,5.8759e+01,2.1597e+00,1.8713e+00,6.0267e+01,1.6844e+00,-5.3129e+01,2.8513e+01,1.6844e+00,-5.3342e+01,2.8883e+01,1.2574e+00,1.6578e+00,6.0637e+01,1.2574e+00,-5.1260e+01,2.9592e+01,1.6844e+00,-5.1464e+01,2.9713e+01,1.4645e+00,-5.1688e+01,2.9838e+01,1.2574e+00,3.4239e-03,5.9682e+01,1.2574e+00,6.1644e-09,5.9426e+01,1.4645e+00,2.8176e-03,5.9189e+01,1.6844e+00,1.6578e+00,6.0637e+01,1.2574e+00,-5.3342e+01,2.8883e+01,1.2574e+00,-5.3580e+01,2.9294e+01,8.8508e-01,1.4202e+00,6.1049e+01,8.8508e-01,-5.1688e+01,2.9838e+01,1.2574e+00,-5.1949e+01,2.9993e+01,1.0390e+00,-5.2163e+01,3.0113e+01,8.8508e-01,2.8919e-03,6.0230e+01,8.8508e-01,4.5673e-09,5.9985e+01,1.0390e+00,3.4239e-03,5.9682e+01,1.2574e+00,1.4202e+00,6.1049e+01,8.8508e-01,-5.3580e+01,2.9294e+01,8.8508e-01,-5.3838e+01,2.9742e+01,5.7272e-01,1.1618e+00,6.1496e+01,5.7272e-01,-5.2163e+01,3.0113e+01,8.8508e-01,-5.2493e+01,3.0307e+01,6.7366e-01,-5.2679e+01,3.0411e+01,5.7272e-01,2.1307e-03,6.0827e+01,5.7272e-01,3.0640e-09,6.0614e+01,6.7366e-01,2.8919e-03,6.0230e+01,8.8508e-01,1.1618e+00,6.1496e+01,5.7272e-01,-5.3838e+01,2.9742e+01,5.7272e-01,-5.4113e+01,3.0219e+01,3.2492e-01,8.8651e-01,6.1973e+01,3.2492e-01,-5.2679e+01,3.0411e+01,5.7272e-01,-5.3087e+01,3.0650e+01,3.8060e-01,-5.3228e+01,3.0730e+01,3.2492e-01,1.2810e-03,6.1462e+01,3.2492e-01,1.7739e-09,6.1299e+01,3.8060e-01,2.1307e-03,6.0827e+01,5.7272e-01};
+			return value;
+		}
+		private double[] getCoordinate_7_668_point_2()
+		{
+			double[] value = {8.8651e-01,6.1973e+01,3.2492e-01,-5.4113e+01,3.0219e+01,3.2492e-01,-5.4402e+01,3.0718e+01,1.4529e-01,5.9829e-01,6.2472e+01,1.4529e-01,-5.3228e+01,3.0730e+01,3.2492e-01,-5.3713e+01,3.1011e+01,1.6842e-01,-5.3804e+01,3.1063e+01,1.4529e-01,5.4723e-04,6.2127e+01,1.4529e-01,7.9675e-10,6.2023e+01,1.6842e-01,1.2810e-03,6.1462e+01,3.2492e-01,5.9829e-01,6.2472e+01,1.4529e-01,-5.4402e+01,3.0718e+01,1.4529e-01,-5.4699e+01,3.1232e+01,3.6456e-02,3.0134e-01,6.2987e+01,3.6456e-02,-5.3804e+01,3.1063e+01,1.4529e-01,-5.4357e+01,3.1383e+01,4.1558e-02,-5.4397e+01,3.1406e+01,3.6456e-02,1.0287e-04,6.2813e+01,3.6456e-02,1.9774e-10,6.2766e+01,4.1558e-02,5.4723e-04,6.2127e+01,1.4529e-01,3.0134e-01,6.2987e+01,3.6456e-02,-5.4699e+01,3.1232e+01,3.6456e-02,-5.5000e+01,3.1754e+01,-8.8818e-16,1.1546e-14,6.3509e+01,-8.8818e-16,-5.4397e+01,3.1406e+01,3.6456e-02,-5.5000e+01,3.1754e+01,-8.8818e-16,1.1546e-14,6.3509e+01,-8.8818e-16,1.0287e-04,6.2813e+01,3.6456e-02};
+			return value;
+		}
+
+
+		/** Define subarrays using type double[] */
+		private double[] getNormal_7_669_vector_1()
+		{
+			double[] value = {-5.0000e-01,8.6603e-01,-0.0000e+00,-5.0000e-01,8.6603e-01,-0.0000e+00,-4.9635e-01,8.5971e-01,1.2054e-01,-4.9635e-01,8.5971e-01,1.2054e-01,-4.9635e-01,8.5971e-01,1.2054e-01,-4.9695e-01,8.6075e-01,1.1020e-01,-5.0000e-01,8.6603e-01,-0.0000e+00,-5.0000e-01,8.6603e-01,-0.0000e+00,-4.9695e-01,8.6075e-01,1.1020e-01,-4.9635e-01,8.5971e-01,1.2054e-01,-4.9635e-01,8.5971e-01,1.2054e-01,-4.9635e-01,8.5971e-01,1.2054e-01,-4.8547e-01,8.4086e-01,2.3932e-01,-4.8547e-01,8.4086e-01,2.3932e-01,-4.9635e-01,8.5971e-01,1.2054e-01,-4.8766e-01,8.4466e-01,2.2078e-01,-4.8547e-01,8.4086e-01,2.3932e-01,-4.8547e-01,8.4086e-01,2.3932e-01,-4.8766e-01,8.4466e-01,2.2078e-01,-4.9635e-01,8.5971e-01,1.2054e-01,-4.8547e-01,8.4086e-01,2.3932e-01,-4.8547e-01,8.4086e-01,2.3932e-01,-4.6751e-01,8.0975e-01,3.5460e-01,-4.6751e-01,8.0975e-01,3.5460e-01,-4.8547e-01,8.4086e-01,2.3932e-01,-4.7206e-01,8.1763e-01,3.2960e-01,-4.6751e-01,8.0975e-01,3.5460e-01,-4.6751e-01,8.0975e-01,3.5460e-01,-4.7206e-01,8.1763e-01,3.2960e-01,-4.8547e-01,8.4086e-01,2.3932e-01,-4.6751e-01,8.0975e-01,3.5460e-01,-4.6751e-01,8.0975e-01,3.5460e-01,-4.4273e-01,7.6683e-01,4.6472e-01,-4.4273e-01,7.6683e-01,4.6472e-01,-4.6751e-01,8.0975e-01,3.5460e-01,-4.5033e-01,7.7999e-01,4.3453e-01,-4.4273e-01,7.6683e-01,4.6472e-01,-4.4273e-01,7.6683e-01,4.6472e-01,-4.5033e-01,7.7999e-01,4.3453e-01,-4.6751e-01,8.0975e-01,3.5460e-01,-4.4273e-01,7.6683e-01,4.6472e-01,-4.4273e-01,7.6683e-01,4.6472e-01,-4.1149e-01,7.1272e-01,5.6806e-01,-4.1149e-01,7.1272e-01,5.6806e-01,-4.4273e-01,7.6683e-01,4.6472e-01,-4.2289e-01,7.3246e-01,5.3354e-01,-4.1149e-01,7.1272e-01,5.6806e-01,-4.1149e-01,7.1272e-01,5.6806e-01,-4.2289e-01,7.3246e-01,5.3354e-01,-4.4273e-01,7.6683e-01,4.6472e-01,-4.1149e-01,7.1272e-01,5.6806e-01,-4.1149e-01,7.1272e-01,5.6806e-01,-3.7426e-01,6.4823e-01,6.6312e-01,-3.7426e-01,6.4823e-01,6.6312e-01,-4.1149e-01,7.1272e-01,5.6806e-01,-3.9036e-01,6.7613e-01,6.2487e-01,-3.7426e-01,6.4823e-01,6.6312e-01,-3.7426e-01,6.4823e-01,6.6312e-01,-3.9036e-01,6.7613e-01,6.2487e-01,-4.1149e-01,7.1272e-01,5.6806e-01,-3.7426e-01,6.4823e-01,6.6312e-01,-3.7426e-01,6.4823e-01,6.6312e-01,-3.3156e-01,5.7428e-01,7.4851e-01,-3.3156e-01,5.7428e-01,7.4851e-01,-3.7426e-01,6.4823e-01,6.6312e-01,-3.5355e-01,6.1237e-01,7.0711e-01,-3.3156e-01,5.7428e-01,7.4851e-01,-3.3156e-01,5.7428e-01,7.4851e-01,-3.5355e-01,6.1237e-01,7.0711e-01,-3.7426e-01,6.4823e-01,6.6312e-01,-3.3156e-01,5.7428e-01,7.4851e-01,-3.3156e-01,5.7428e-01,7.4851e-01,-2.8403e-01,4.9196e-01,8.2298e-01,-2.8403e-01,4.9196e-01,8.2298e-01,-3.3156e-01,5.7428e-01,7.4851e-01,-3.0513e-01,5.2849e-01,7.9221e-01,-2.8403e-01,4.9196e-01,8.2298e-01,-2.8403e-01,4.9196e-01,8.2298e-01,-3.0513e-01,5.2849e-01,7.9221e-01,-3.3156e-01,5.7428e-01,7.4851e-01,-2.8403e-01,4.9196e-01,8.2298e-01,-2.8403e-01,4.9196e-01,8.2298e-01,-2.3236e-01,4.0246e-01,8.8546e-01,-2.3236e-01,4.0246e-01,8.8546e-01,-2.8403e-01,4.9196e-01,8.2298e-01,-2.5066e-01,4.3415e-01,8.6527e-01,-2.3236e-01,4.0246e-01,8.8546e-01,-2.3236e-01,4.0246e-01,8.8546e-01,-2.5066e-01,4.3415e-01,8.6527e-01,-2.8403e-01,4.9196e-01,8.2298e-01,-2.3236e-01,4.0246e-01,8.8546e-01,-2.3236e-01,4.0246e-01,8.8546e-01,-1.7730e-01,3.0710e-01,9.3502e-01,-1.7730e-01,3.0710e-01,9.3502e-01,-2.3236e-01,4.0246e-01,8.8546e-01,-1.9134e-01,3.3141e-01,9.2388e-01,-1.7730e-01,3.0710e-01,9.3502e-01,-1.7730e-01,3.0710e-01,9.3502e-01,-1.9134e-01,3.3141e-01,9.2388e-01,-2.3236e-01,4.0246e-01,8.8546e-01};
+			return value;
+		}
+		private double[] getNormal_7_669_vector_2()
+		{
+			double[] value = {-1.7730e-01,3.0710e-01,9.3502e-01,-1.7730e-01,3.0710e-01,9.3502e-01,-1.1966e-01,2.0725e-01,9.7094e-01,-1.1966e-01,2.0725e-01,9.7094e-01,-1.7730e-01,3.0710e-01,9.3502e-01,-1.2868e-01,2.2288e-01,9.6632e-01,-1.1966e-01,2.0725e-01,9.7094e-01,-1.1966e-01,2.0725e-01,9.7094e-01,-1.2868e-01,2.2288e-01,9.6632e-01,-1.7730e-01,3.0710e-01,9.3502e-01,-1.1966e-01,2.0725e-01,9.7094e-01,-1.1966e-01,2.0725e-01,9.7094e-01,-6.0268e-02,1.0439e-01,9.9271e-01,-6.0268e-02,1.0439e-01,9.9271e-01,-1.1966e-01,2.0725e-01,9.7094e-01,-6.4332e-02,1.1143e-01,9.9169e-01,-6.0268e-02,1.0439e-01,9.9271e-01,-6.0268e-02,1.0439e-01,9.9271e-01,-6.4332e-02,1.1143e-01,9.9169e-01,-1.1966e-01,2.0725e-01,9.7094e-01,-6.0268e-02,1.0439e-01,9.9271e-01,-6.0268e-02,1.0439e-01,9.9271e-01,2.3716e-09,-4.1078e-09,1.0000e+00,2.3716e-09,-4.1078e-09,1.0000e+00,-6.0268e-02,1.0439e-01,9.9271e-01,2.3716e-09,-4.1078e-09,1.0000e+00,2.3716e-09,-4.1078e-09,1.0000e+00,-6.0268e-02,1.0439e-01,9.9271e-01};
+			return value;
+		}
+
+
+		/** Define subarrays using type double[] */
+		private double[] getCoordinate_7_675_point_1()
+		{
+			double[] value = {-5.2500e+01,-2.7424e+01,5.0000e+00,2.5000e+00,-5.9178e+01,5.0000e+00,2.4786e+00,-5.9215e+01,4.3474e+00,-5.2521e+01,-2.7461e+01,4.3474e+00,-5.0045e+01,-2.8891e+01,4.3474e+00,-5.0030e+01,-2.8885e+01,4.4490e+00,-5.0000e+01,-2.8868e+01,5.0000e+00,-1.0121e-08,-5.7735e+01,5.0000e+00,-1.0002e-08,-5.7770e+01,4.4490e+00,2.3182e-03,-5.7786e+01,4.3474e+00,-5.2521e+01,-2.7461e+01,4.3474e+00,2.4786e+00,-5.9215e+01,4.3474e+00,2.4148e+00,-5.9326e+01,3.7059e+00,-5.2585e+01,-2.7572e+01,3.7059e+00,-5.0174e+01,-2.8964e+01,3.7059e+00,-5.0123e+01,-2.8939e+01,3.8961e+00,-5.0045e+01,-2.8891e+01,4.3474e+00,2.3182e-03,-5.7786e+01,4.3474e+00,-9.6434e-09,-5.7877e+01,3.8961e+00,3.4929e-03,-5.7934e+01,3.7059e+00,-5.2585e+01,-2.7572e+01,3.7059e+00,2.4148e+00,-5.9326e+01,3.7059e+00,2.3097e+00,-5.9508e+01,3.0866e+00,-5.2690e+01,-2.7754e+01,3.0866e+00,-5.0384e+01,-2.9085e+01,3.0866e+00,-5.0279e+01,-2.9029e+01,3.3520e+00,-5.0174e+01,-2.8964e+01,3.7059e+00,3.4929e-03,-5.7934e+01,3.7059e+00,-9.0547e-09,-5.8058e+01,3.3520e+00,3.7270e-03,-5.8177e+01,3.0866e+00,-5.2690e+01,-2.7754e+01,3.0866e+00,2.3097e+00,-5.9508e+01,3.0866e+00,2.1651e+00,-5.9759e+01,2.5000e+00,-5.2835e+01,-2.8004e+01,2.5000e+00,-5.0673e+01,-2.9252e+01,2.5000e+00,-5.0497e+01,-2.9154e+01,2.8274e+00,-5.0384e+01,-2.9085e+01,3.0866e+00,3.7270e-03,-5.8177e+01,3.0866e+00,-8.2637e-09,-5.8309e+01,2.8274e+00,3.1626e-03,-5.8510e+01,2.5000e+00,-5.2835e+01,-2.8004e+01,2.5000e+00,2.1651e+00,-5.9759e+01,2.5000e+00,1.9834e+00,-6.0073e+01,1.9562e+00,-5.3017e+01,-2.8319e+01,1.9562e+00,-5.1035e+01,-2.9463e+01,1.9562e+00,-5.0771e+01,-2.9313e+01,2.3323e+00,-5.0673e+01,-2.9252e+01,2.5000e+00,3.1626e-03,-5.8510e+01,2.5000e+00,-7.3134e-09,-5.8625e+01,2.3323e+00,1.8948e-03,-5.8929e+01,1.9562e+00,-5.3017e+01,-2.8319e+01,1.9562e+00,1.9834e+00,-6.0073e+01,1.9562e+00,1.7678e+00,-6.0447e+01,1.4645e+00,-5.3232e+01,-2.8692e+01,1.4645e+00,-5.1464e+01,-2.9713e+01,1.4645e+00,-5.1096e+01,-2.9501e+01,1.8756e+00,-5.1035e+01,-2.9463e+01,1.9562e+00,1.8948e-03,-5.8929e+01,1.9562e+00,-6.2581e-09,-5.9001e+01,1.8756e+00,-6.1235e-09,-5.9426e+01,1.4645e+00,-5.3232e+01,-2.8692e+01,1.4645e+00,1.7678e+00,-6.0447e+01,1.4645e+00,1.5219e+00,-6.0873e+01,1.0332e+00,-5.3478e+01,-2.9118e+01,1.0332e+00,-5.1956e+01,-2.9997e+01,1.0332e+00,-5.1949e+01,-2.9993e+01,1.0390e+00,-5.1464e+01,-2.9713e+01,1.4645e+00,-6.1235e-09,-5.9426e+01,1.4645e+00,-3.8658e-09,-5.9985e+01,1.0390e+00,1.7447e-04,-5.9994e+01,1.0332e+00,-5.3478e+01,-2.9118e+01,1.0332e+00,1.5219e+00,-6.0873e+01,1.0332e+00,1.2500e+00,-6.1343e+01,6.6987e-01,-5.3750e+01,-2.9589e+01,6.6987e-01,-5.2500e+01,-3.0311e+01,6.6987e-01,-5.2493e+01,-3.0307e+01,6.7366e-01,-5.1956e+01,-2.9997e+01,1.0332e+00,1.7447e-04,-5.9994e+01,1.0332e+00,-2.6270e-09,-6.0614e+01,6.7366e-01,1.1450e-04,-6.0622e+01,6.6987e-01,-5.3750e+01,-2.9589e+01,6.6987e-01,1.2500e+00,-6.1343e+01,6.6987e-01,9.5671e-01,-6.1851e+01,3.8060e-01,-5.4043e+01,-3.0097e+01,3.8060e-01,-5.3087e+01,-3.0650e+01,3.8060e-01,-5.2500e+01,-3.0311e+01,6.6987e-01,1.1450e-04,-6.0622e+01,6.6987e-01,-2.3153e-09,-6.1299e+01,3.8060e-01,-5.4043e+01,-3.0097e+01,3.8060e-01,9.5671e-01,-6.1851e+01,3.8060e-01,6.4705e-01,-6.2388e+01,1.7037e-01,-5.4353e+01,-3.0634e+01,1.7037e-01,-5.3706e+01,-3.1007e+01,1.7037e-01,-5.3087e+01,-3.0650e+01,3.8060e-01,-2.3153e-09,-6.1299e+01,3.8060e-01,7.4373e-05,-6.2014e+01,1.7037e-01,-5.4353e+01,-3.0634e+01,1.7037e-01,6.4705e-01,-6.2388e+01,1.7037e-01,3.2632e-01,-6.2943e+01,4.2776e-02,-5.4674e+01,-3.1189e+01,4.2776e-02};
+			return value;
+		}
+		private double[] getCoordinate_7_675_point_2()
+		{
+			double[] value = {-5.4347e+01,-3.1377e+01,4.2776e-02,-5.3713e+01,-3.1011e+01,1.6842e-01,-5.3706e+01,-3.1007e+01,1.7037e-01,7.4373e-05,-6.2014e+01,1.7037e-01,-7.0307e-10,-6.2023e+01,1.6842e-01,5.2398e-05,-6.2755e+01,4.2776e-02,-5.4674e+01,-3.1189e+01,4.2776e-02,3.2632e-01,-6.2943e+01,4.2776e-02,1.0715e-09,-6.3509e+01,-8.8818e-16,-5.5000e+01,-3.1754e+01,-8.8818e-16,5.2398e-05,-6.2755e+01,4.2776e-02,-1.7715e-10,-6.2766e+01,4.1558e-02,1.0715e-09,-6.3509e+01,-8.8818e-16,-5.5000e+01,-3.1754e+01,-8.8818e-16,-5.4357e+01,-3.1383e+01,4.1558e-02,-5.4347e+01,-3.1377e+01,4.2776e-02};
+			return value;
+		}
+
+
+		/** Define subarrays using type double[] */
+		private double[] getNormal_7_676_vector_1()
+		{
+			double[] value = {-5.0000e-01,-8.6603e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-4.9572e-01,-8.5862e-01,1.3053e-01,-4.9572e-01,-8.5862e-01,1.3053e-01,-4.9572e-01,-8.5862e-01,1.3053e-01,-4.9695e-01,-8.6075e-01,1.1020e-01,-5.0000e-01,-8.6603e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-4.9695e-01,-8.6075e-01,1.1020e-01,-4.9572e-01,-8.5862e-01,1.3053e-01,-4.9572e-01,-8.5862e-01,1.3053e-01,-4.9572e-01,-8.5862e-01,1.3053e-01,-4.8296e-01,-8.3652e-01,2.5882e-01,-4.8296e-01,-8.3652e-01,2.5882e-01,-4.8296e-01,-8.3652e-01,2.5882e-01,-4.8766e-01,-8.4466e-01,2.2078e-01,-4.9572e-01,-8.5862e-01,1.3053e-01,-4.9572e-01,-8.5862e-01,1.3053e-01,-4.8766e-01,-8.4466e-01,2.2078e-01,-4.8296e-01,-8.3652e-01,2.5882e-01,-4.8296e-01,-8.3652e-01,2.5882e-01,-4.8296e-01,-8.3652e-01,2.5882e-01,-4.6194e-01,-8.0010e-01,3.8268e-01,-4.6194e-01,-8.0010e-01,3.8268e-01,-4.6194e-01,-8.0010e-01,3.8268e-01,-4.7206e-01,-8.1763e-01,3.2960e-01,-4.8296e-01,-8.3652e-01,2.5882e-01,-4.8296e-01,-8.3652e-01,2.5882e-01,-4.7206e-01,-8.1763e-01,3.2960e-01,-4.6194e-01,-8.0010e-01,3.8268e-01,-4.6194e-01,-8.0010e-01,3.8268e-01,-4.6194e-01,-8.0010e-01,3.8268e-01,-4.3301e-01,-7.5000e-01,5.0000e-01,-4.3301e-01,-7.5000e-01,5.0000e-01,-4.3301e-01,-7.5000e-01,5.0000e-01,-4.5033e-01,-7.7999e-01,4.3453e-01,-4.6194e-01,-8.0010e-01,3.8268e-01,-4.6194e-01,-8.0010e-01,3.8268e-01,-4.5033e-01,-7.7999e-01,4.3453e-01,-4.3301e-01,-7.5000e-01,5.0000e-01,-4.3301e-01,-7.5000e-01,5.0000e-01,-4.3301e-01,-7.5000e-01,5.0000e-01,-3.9668e-01,-6.8706e-01,6.0876e-01,-3.9668e-01,-6.8706e-01,6.0876e-01,-3.9668e-01,-6.8706e-01,6.0876e-01,-4.2289e-01,-7.3246e-01,5.3354e-01,-4.3301e-01,-7.5000e-01,5.0000e-01,-4.3301e-01,-7.5000e-01,5.0000e-01,-4.2289e-01,-7.3246e-01,5.3354e-01,-3.9668e-01,-6.8706e-01,6.0876e-01,-3.9668e-01,-6.8706e-01,6.0876e-01,-3.9668e-01,-6.8706e-01,6.0876e-01,-3.5355e-01,-6.1237e-01,7.0711e-01,-3.5355e-01,-6.1237e-01,7.0711e-01,-3.5355e-01,-6.1237e-01,7.0711e-01,-3.9036e-01,-6.7613e-01,6.2487e-01,-3.9668e-01,-6.8706e-01,6.0876e-01,-3.9668e-01,-6.8706e-01,6.0876e-01,-3.9036e-01,-6.7613e-01,6.2487e-01,-3.5355e-01,-6.1237e-01,7.0711e-01,-3.5355e-01,-6.1237e-01,7.0711e-01,-3.5355e-01,-6.1237e-01,7.0711e-01,-3.0438e-01,-5.2720e-01,7.9335e-01,-3.0438e-01,-5.2720e-01,7.9335e-01,-3.0438e-01,-5.2720e-01,7.9335e-01,-3.0513e-01,-5.2849e-01,7.9221e-01,-3.5355e-01,-6.1237e-01,7.0711e-01,-3.5355e-01,-6.1237e-01,7.0711e-01,-3.0513e-01,-5.2849e-01,7.9221e-01,-3.0438e-01,-5.2720e-01,7.9335e-01,-3.0438e-01,-5.2720e-01,7.9335e-01,-3.0438e-01,-5.2720e-01,7.9335e-01,-2.5000e-01,-4.3301e-01,8.6603e-01,-2.5000e-01,-4.3301e-01,8.6603e-01,-2.5000e-01,-4.3301e-01,8.6603e-01,-2.5066e-01,-4.3415e-01,8.6527e-01,-3.0438e-01,-5.2720e-01,7.9335e-01,-3.0438e-01,-5.2720e-01,7.9335e-01,-2.5066e-01,-4.3415e-01,8.6527e-01,-2.5000e-01,-4.3301e-01,8.6603e-01,-2.5000e-01,-4.3301e-01,8.6603e-01,-2.5000e-01,-4.3301e-01,8.6603e-01,-1.9134e-01,-3.3141e-01,9.2388e-01,-1.9134e-01,-3.3141e-01,9.2388e-01,-1.9134e-01,-3.3141e-01,9.2388e-01,-2.5000e-01,-4.3301e-01,8.6603e-01,-2.5000e-01,-4.3301e-01,8.6603e-01,-1.9134e-01,-3.3141e-01,9.2388e-01,-1.9134e-01,-3.3141e-01,9.2388e-01,-1.9134e-01,-3.3141e-01,9.2388e-01,-1.2941e-01,-2.2414e-01,9.6593e-01,-1.2941e-01,-2.2414e-01,9.6593e-01,-1.2941e-01,-2.2414e-01,9.6593e-01,-1.9134e-01,-3.3141e-01,9.2388e-01,-1.9134e-01,-3.3141e-01,9.2388e-01,-1.2941e-01,-2.2414e-01,9.6593e-01,-1.2941e-01,-2.2414e-01,9.6593e-01,-1.2941e-01,-2.2414e-01,9.6593e-01,-6.5263e-02,-1.1304e-01,9.9144e-01,-6.5263e-02,-1.1304e-01,9.9144e-01};
+			return value;
+		}
+		private double[] getNormal_7_676_vector_2()
+		{
+			double[] value = {-6.5263e-02,-1.1304e-01,9.9144e-01,-1.2868e-01,-2.2288e-01,9.6632e-01,-1.2941e-01,-2.2414e-01,9.6593e-01,-1.2941e-01,-2.2414e-01,9.6593e-01,-1.2868e-01,-2.2288e-01,9.6632e-01,-6.5263e-02,-1.1304e-01,9.9144e-01,-6.5263e-02,-1.1304e-01,9.9144e-01,-6.5263e-02,-1.1304e-01,9.9144e-01,-2.3716e-09,-4.1078e-09,1.0000e+00,-2.3716e-09,-4.1078e-09,1.0000e+00,-6.5263e-02,-1.1304e-01,9.9144e-01,-6.4332e-02,-1.1143e-01,9.9169e-01,-2.3716e-09,-4.1078e-09,1.0000e+00,-2.3716e-09,-4.1078e-09,1.0000e+00,-6.4332e-02,-1.1143e-01,9.9169e-01,-6.5263e-02,-1.1304e-01,9.9144e-01};
+			return value;
+		}
+
+
+		/** Define subarrays using type double[] */
+		private double[] getCoordinate_7_682_point_1()
+		{
+			double[] value = {-5.0000e+01,3.1754e+01,5.0000e+00,-5.0000e+01,-3.1754e+01,5.0000e+00,-5.0043e+01,-3.1754e+01,4.3474e+00,-5.0043e+01,3.1754e+01,4.3474e+00,-5.0043e+01,2.8895e+01,4.3474e+00,-5.0030e+01,2.8885e+01,4.4490e+00,-5.0000e+01,2.8868e+01,5.0000e+00,-5.0000e+01,-2.8868e+01,5.0000e+00,-5.0030e+01,-2.8885e+01,4.4490e+00,-5.0043e+01,-2.8895e+01,4.3474e+00,-5.0043e+01,3.1754e+01,4.3474e+00,-5.0043e+01,-3.1754e+01,4.3474e+00,-5.0170e+01,-3.1754e+01,3.7059e+00,-5.0170e+01,3.1754e+01,3.7059e+00,-5.0043e+01,-2.8895e+01,4.3474e+00,-5.0123e+01,-2.8939e+01,3.8961e+00,-5.0170e+01,-2.8970e+01,3.7059e+00,-5.0170e+01,2.8970e+01,3.7059e+00,-5.0123e+01,2.8939e+01,3.8961e+00,-5.0043e+01,2.8895e+01,4.3474e+00,-5.0170e+01,3.1754e+01,3.7059e+00,-5.0170e+01,-3.1754e+01,3.7059e+00,-5.0381e+01,-3.1754e+01,3.0866e+00,-5.0381e+01,3.1754e+01,3.0866e+00,-5.0170e+01,-2.8970e+01,3.7059e+00,-5.0279e+01,-2.9029e+01,3.3520e+00,-5.0381e+01,-2.9092e+01,3.0866e+00,-5.0381e+01,2.9092e+01,3.0866e+00,-5.0279e+01,2.9029e+01,3.3520e+00,-5.0170e+01,2.8970e+01,3.7059e+00,-5.0381e+01,3.1754e+01,3.0866e+00,-5.0381e+01,-3.1754e+01,3.0866e+00,-5.0670e+01,-3.1754e+01,2.5000e+00,-5.0670e+01,3.1754e+01,2.5000e+00,-5.0381e+01,-2.9092e+01,3.0866e+00,-5.0497e+01,-2.9154e+01,2.8274e+00,-5.0670e+01,-2.9258e+01,2.5000e+00,-5.0670e+01,2.9258e+01,2.5000e+00,-5.0497e+01,2.9154e+01,2.8274e+00,-5.0381e+01,2.9092e+01,3.0866e+00,-5.0670e+01,3.1754e+01,2.5000e+00,-5.0670e+01,-3.1754e+01,2.5000e+00,-5.1033e+01,-3.1754e+01,1.9562e+00,-5.1033e+01,3.1754e+01,1.9562e+00,-5.0670e+01,-2.9258e+01,2.5000e+00,-5.0771e+01,-2.9313e+01,2.3323e+00,-5.1033e+01,-2.9466e+01,1.9562e+00,-5.1033e+01,2.9466e+01,1.9562e+00,-5.0771e+01,2.9313e+01,2.3323e+00,-5.0670e+01,2.9258e+01,2.5000e+00,-5.1033e+01,3.1754e+01,1.9562e+00,-5.1033e+01,-3.1754e+01,1.9562e+00,-5.1464e+01,-3.1754e+01,1.4645e+00,-5.1464e+01,3.1754e+01,1.4645e+00,-5.1033e+01,-2.9466e+01,1.9562e+00,-5.1096e+01,-2.9501e+01,1.8756e+00,-5.1464e+01,-2.9713e+01,1.4645e+00,-5.1464e+01,2.9713e+01,1.4645e+00,-5.1096e+01,2.9501e+01,1.8756e+00,-5.1033e+01,2.9466e+01,1.9562e+00,-5.1464e+01,3.1754e+01,1.4645e+00,-5.1464e+01,-3.1754e+01,1.4645e+00,-5.1956e+01,-3.1754e+01,1.0332e+00,-5.1956e+01,3.1754e+01,1.0332e+00,-5.1464e+01,-2.9713e+01,1.4645e+00,-5.1949e+01,-2.9993e+01,1.0390e+00,-5.1956e+01,-2.9997e+01,1.0332e+00,-5.1956e+01,2.9997e+01,1.0332e+00,-5.1949e+01,2.9993e+01,1.0390e+00,-5.1464e+01,2.9713e+01,1.4645e+00,-5.1956e+01,3.1754e+01,1.0332e+00,-5.1956e+01,-3.1754e+01,1.0332e+00,-5.2500e+01,-3.1754e+01,6.6987e-01,-5.2500e+01,3.1754e+01,6.6987e-01,-5.1956e+01,-2.9997e+01,1.0332e+00,-5.2493e+01,-3.0307e+01,6.7366e-01,-5.2500e+01,-3.0311e+01,6.6987e-01,-5.2500e+01,3.0311e+01,6.6987e-01,-5.2493e+01,3.0307e+01,6.7366e-01,-5.1956e+01,2.9997e+01,1.0332e+00,-5.2500e+01,3.1754e+01,6.6987e-01,-5.2500e+01,-3.1754e+01,6.6987e-01,-5.3087e+01,-3.1754e+01,3.8060e-01,-5.3087e+01,3.1754e+01,3.8060e-01,-5.2500e+01,-3.0311e+01,6.6987e-01,-5.3087e+01,-3.0650e+01,3.8060e-01,-5.3087e+01,3.0650e+01,3.8060e-01,-5.2500e+01,3.0311e+01,6.6987e-01,-5.3087e+01,3.1754e+01,3.8060e-01,-5.3087e+01,-3.1754e+01,3.8060e-01,-5.3706e+01,-3.1754e+01,1.7037e-01,-5.3706e+01,3.1754e+01,1.7037e-01,-5.3087e+01,-3.0650e+01,3.8060e-01,-5.3706e+01,-3.1007e+01,1.7037e-01,-5.3706e+01,3.1007e+01,1.7037e-01,-5.3087e+01,3.0650e+01,3.8060e-01,-5.3706e+01,3.1754e+01,1.7037e-01,-5.3706e+01,-3.1754e+01,1.7037e-01,-5.4347e+01,-3.1754e+01,4.2776e-02,-5.4347e+01,3.1754e+01,4.2776e-02};
+			return value;
+		}
+		private double[] getCoordinate_7_682_point_2()
+		{
+			double[] value = {-5.3706e+01,-3.1007e+01,1.7037e-01,-5.3713e+01,-3.1011e+01,1.6842e-01,-5.4347e+01,-3.1378e+01,4.2776e-02,-5.4347e+01,3.1378e+01,4.2776e-02,-5.3713e+01,3.1011e+01,1.6842e-01,-5.3706e+01,3.1007e+01,1.7037e-01,-5.4347e+01,3.1754e+01,4.2776e-02,-5.4347e+01,-3.1754e+01,4.2776e-02,-5.5000e+01,-3.1754e+01,0.0000e+00,-5.5000e+01,3.1754e+01,0.0000e+00,-5.4347e+01,-3.1378e+01,4.2776e-02,-5.4357e+01,-3.1383e+01,4.1558e-02,-5.5000e+01,-3.1754e+01,0.0000e+00,-5.5000e+01,3.1754e+01,0.0000e+00,-5.4357e+01,3.1383e+01,4.1558e-02,-5.4347e+01,3.1378e+01,4.2776e-02};
+			return value;
+		}
+
+
+		/** Define subarrays using type double[] */
+		private double[] getNormal_7_683_vector_1()
+		{
+			double[] value = {-1.0000e+00,-4.8074e-16,-0.0000e+00,-1.0000e+00,-4.8074e-16,-0.0000e+00,-9.9144e-01,-4.7663e-16,1.3053e-01,-9.9144e-01,-4.7663e-16,1.3053e-01,-9.9144e-01,-4.7663e-16,1.3053e-01,-9.9391e-01,-4.7781e-16,1.1020e-01,-1.0000e+00,-4.8074e-16,-0.0000e+00,-1.0000e+00,-4.8074e-16,-0.0000e+00,-9.9391e-01,-4.7781e-16,1.1020e-01,-9.9144e-01,-4.7663e-16,1.3053e-01,-9.9144e-01,-4.7663e-16,1.3053e-01,-9.9144e-01,-4.7663e-16,1.3053e-01,-9.6593e-01,-4.6436e-16,2.5882e-01,-9.6593e-01,-4.6436e-16,2.5882e-01,-9.9144e-01,-4.7663e-16,1.3053e-01,-9.7532e-01,-4.6888e-16,2.2078e-01,-9.6593e-01,-4.6436e-16,2.5882e-01,-9.6593e-01,-4.6436e-16,2.5882e-01,-9.7532e-01,-4.6888e-16,2.2078e-01,-9.9144e-01,-4.7663e-16,1.3053e-01,-9.6593e-01,-4.6436e-16,2.5882e-01,-9.6593e-01,-4.6436e-16,2.5882e-01,-9.2388e-01,-4.4415e-16,3.8268e-01,-9.2388e-01,-4.4415e-16,3.8268e-01,-9.6593e-01,-4.6436e-16,2.5882e-01,-9.4412e-01,-4.5388e-16,3.2960e-01,-9.2388e-01,-4.4415e-16,3.8268e-01,-9.2388e-01,-4.4415e-16,3.8268e-01,-9.4412e-01,-4.5388e-16,3.2960e-01,-9.6593e-01,-4.6436e-16,2.5882e-01,-9.2388e-01,-4.4415e-16,3.8268e-01,-9.2388e-01,-4.4415e-16,3.8268e-01,-8.6603e-01,-4.1633e-16,5.0000e-01,-8.6603e-01,-4.1633e-16,5.0000e-01,-9.2388e-01,-4.4415e-16,3.8268e-01,-9.0066e-01,-4.3298e-16,4.3453e-01,-8.6603e-01,-4.1633e-16,5.0000e-01,-8.6603e-01,-4.1633e-16,5.0000e-01,-9.0066e-01,-4.3298e-16,4.3453e-01,-9.2388e-01,-4.4415e-16,3.8268e-01,-8.6603e-01,-4.1633e-16,5.0000e-01,-8.6603e-01,-4.1633e-16,5.0000e-01,-7.9335e-01,-3.8140e-16,6.0876e-01,-7.9335e-01,-3.8140e-16,6.0876e-01,-8.6603e-01,-4.1633e-16,5.0000e-01,-8.4577e-01,-4.0660e-16,5.3354e-01,-7.9335e-01,-3.8140e-16,6.0876e-01,-7.9335e-01,-3.8140e-16,6.0876e-01,-8.4577e-01,-4.0660e-16,5.3354e-01,-8.6603e-01,-4.1633e-16,5.0000e-01,-7.9335e-01,-3.8140e-16,6.0876e-01,-7.9335e-01,-3.8140e-16,6.0876e-01,-7.0711e-01,-3.3993e-16,7.0711e-01,-7.0711e-01,-3.3993e-16,7.0711e-01,-7.9335e-01,-3.8140e-16,6.0876e-01,-7.8073e-01,-3.7533e-16,6.2487e-01,-7.0711e-01,-3.3993e-16,7.0711e-01,-7.0711e-01,-3.3993e-16,7.0711e-01,-7.8073e-01,-3.7533e-16,6.2487e-01,-7.9335e-01,-3.8140e-16,6.0876e-01,-7.0711e-01,-3.3993e-16,7.0711e-01,-7.0711e-01,-3.3993e-16,7.0711e-01,-6.0876e-01,-2.9266e-16,7.9335e-01,-6.0876e-01,-2.9266e-16,7.9335e-01,-7.0711e-01,-3.3993e-16,7.0711e-01,-6.1025e-01,-2.9337e-16,7.9221e-01,-6.0876e-01,-2.9266e-16,7.9335e-01,-6.0876e-01,-2.9266e-16,7.9335e-01,-6.1025e-01,-2.9337e-16,7.9221e-01,-7.0711e-01,-3.3993e-16,7.0711e-01,-6.0876e-01,-2.9266e-16,7.9335e-01,-6.0876e-01,-2.9266e-16,7.9335e-01,-5.0000e-01,-2.4037e-16,8.6603e-01,-5.0000e-01,-2.4037e-16,8.6603e-01,-6.0876e-01,-2.9266e-16,7.9335e-01,-5.0131e-01,-2.4100e-16,8.6527e-01,-5.0000e-01,-2.4037e-16,8.6603e-01,-5.0000e-01,-2.4037e-16,8.6603e-01,-5.0131e-01,-2.4100e-16,8.6527e-01,-6.0876e-01,-2.9266e-16,7.9335e-01,-5.0000e-01,-2.4037e-16,8.6603e-01,-5.0000e-01,-2.4037e-16,8.6603e-01,-3.8268e-01,-1.8397e-16,9.2388e-01,-3.8268e-01,-1.8397e-16,9.2388e-01,-5.0000e-01,-2.4037e-16,8.6603e-01,-3.8268e-01,-1.8397e-16,9.2388e-01,-3.8268e-01,-1.8397e-16,9.2388e-01,-5.0000e-01,-2.4037e-16,8.6603e-01,-3.8268e-01,-1.8397e-16,9.2388e-01,-3.8268e-01,-1.8397e-16,9.2388e-01,-2.5882e-01,-1.2442e-16,9.6593e-01,-2.5882e-01,-1.2442e-16,9.6593e-01,-3.8268e-01,-1.8397e-16,9.2388e-01,-2.5882e-01,-1.2442e-16,9.6593e-01,-2.5882e-01,-1.2442e-16,9.6593e-01,-3.8268e-01,-1.8397e-16,9.2388e-01,-2.5882e-01,-1.2442e-16,9.6593e-01,-2.5882e-01,-1.2442e-16,9.6593e-01,-1.3053e-01,-6.2749e-17,9.9144e-01,-1.3053e-01,-6.2749e-17,9.9144e-01};
+			return value;
+		}
+		private double[] getNormal_7_683_vector_2()
+		{
+			double[] value = {-2.5882e-01,-1.2442e-16,9.6593e-01,-2.5736e-01,-1.2372e-16,9.6632e-01,-1.3053e-01,-6.2749e-17,9.9144e-01,-1.3053e-01,-6.2749e-17,9.9144e-01,-2.5736e-01,-1.2372e-16,9.6632e-01,-2.5882e-01,-1.2442e-16,9.6593e-01,-1.3053e-01,-6.2749e-17,9.9144e-01,-1.3053e-01,-6.2749e-17,9.9144e-01,-6.1232e-17,-2.9437e-32,1.0000e+00,-6.1232e-17,-2.9437e-32,1.0000e+00,-1.3053e-01,-6.2749e-17,9.9144e-01,-1.2866e-01,-6.1854e-17,9.9169e-01,-6.1232e-17,-2.9437e-32,1.0000e+00,-6.1232e-17,-2.9437e-32,1.0000e+00,-1.2866e-01,-6.1854e-17,9.9169e-01,-1.3053e-01,-6.2749e-17,9.9144e-01};
+			return value;
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #44, 153 total numbers made up of 51 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_44_point()
+		{
+			MFVec3f Coordinate_7_44_point = new MFVec3f(new double[] {-3.4214e+02,1.7148e+02,-1.0000e+02,-3.4108e+02,1.6810e+02,-1.0000e+02,-3.3936e+02,1.6500e+02,-1.0000e+02,-3.3706e+02,1.6232e+02,-1.0000e+02,-3.3426e+02,1.6015e+02,-1.0000e+02,-3.3108e+02,1.5859e+02,-1.0000e+02,-3.2765e+02,1.5770e+02,-1.0000e+02,-3.2411e+02,1.5752e+02,-1.0000e+02,-3.2061e+02,1.5806e+02,-1.0000e+02,-3.1729e+02,1.5929e+02,-1.0000e+02,-3.1429e+02,1.6116e+02,-1.0000e+02,-3.1172e+02,1.6360e+02,-1.0000e+02,-3.0970e+02,1.6651e+02,-1.0000e+02,-3.0830e+02,1.6976e+02,-1.0000e+02,-3.0759e+02,1.7323e+02,-1.0000e+02,-3.0759e+02,1.7677e+02,-1.0000e+02,-3.0830e+02,1.8024e+02,-1.0000e+02,-3.0970e+02,1.8349e+02,-1.0000e+02,-3.1172e+02,1.8640e+02,-1.0000e+02,-3.1429e+02,1.8884e+02,-1.0000e+02,-3.1729e+02,1.9071e+02,-1.0000e+02,-3.2061e+02,1.9194e+02,-1.0000e+02,-3.2411e+02,1.9248e+02,-1.0000e+02,-3.2765e+02,1.9230e+02,-1.0000e+02,-3.3108e+02,1.9141e+02,-1.0000e+02,-3.3426e+02,1.8985e+02,-1.0000e+02,-3.3706e+02,1.8768e+02,-1.0000e+02,-3.3936e+02,1.8500e+02,-1.0000e+02,-3.4108e+02,1.8190e+02,-1.0000e+02,-3.4214e+02,1.7852e+02,-1.0000e+02,-3.4250e+02,1.7500e+02,-1.0000e+02,-4.0000e+02,1.2500e+02,-1.0000e+02,-4.0000e+02,1.7500e+02,-1.0000e+02,-3.9904e+02,1.8475e+02,-1.0000e+02,-3.9619e+02,1.9413e+02,-1.0000e+02,-3.9157e+02,2.0278e+02,-1.0000e+02,-3.8536e+02,2.1036e+02,-1.0000e+02,-3.7778e+02,2.1657e+02,-1.0000e+02,-3.6913e+02,2.2119e+02,-1.0000e+02,-3.5975e+02,2.2404e+02,-1.0000e+02,-3.5000e+02,2.2500e+02,-1.0000e+02,-3.0000e+02,2.2500e+02,-1.0000e+02,-2.9025e+02,2.2404e+02,-1.0000e+02,-2.8087e+02,2.2119e+02,-1.0000e+02,-2.7222e+02,2.1657e+02,-1.0000e+02,-2.6464e+02,2.1036e+02,-1.0000e+02,-2.5843e+02,2.0278e+02,-1.0000e+02,-2.5381e+02,1.9413e+02,-1.0000e+02,-2.5096e+02,1.8475e+02,-1.0000e+02,-2.5000e+02,1.7500e+02,-1.0000e+02,-2.5000e+02,1.2500e+02,-1.0000e+02});
+			return Coordinate_7_44_point;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #52, 132 total numbers made up of 44 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_52_point()
+		{
+			MFVec3f Coordinate_7_52_point = new MFVec3f(new double[] {3.0786e+02,1.7148e+02,-1.0000e+02,3.0892e+02,1.6810e+02,-1.0000e+02,3.1064e+02,1.6500e+02,-1.0000e+02,3.1294e+02,1.6232e+02,-1.0000e+02,3.1574e+02,1.6015e+02,-1.0000e+02,3.1892e+02,1.5859e+02,-1.0000e+02,3.2235e+02,1.5770e+02,-1.0000e+02,3.2589e+02,1.5752e+02,-1.0000e+02,3.2939e+02,1.5806e+02,-1.0000e+02,3.3271e+02,1.5929e+02,-1.0000e+02,3.3571e+02,1.6116e+02,-1.0000e+02,3.3828e+02,1.6360e+02,-1.0000e+02,3.4030e+02,1.6651e+02,-1.0000e+02,3.4170e+02,1.6976e+02,-1.0000e+02,3.4241e+02,1.7323e+02,-1.0000e+02,3.4241e+02,1.7677e+02,-1.0000e+02,3.4170e+02,1.8024e+02,-1.0000e+02,3.4030e+02,1.8349e+02,-1.0000e+02,3.3828e+02,1.8640e+02,-1.0000e+02,3.3571e+02,1.8884e+02,-1.0000e+02,3.3271e+02,1.9071e+02,-1.0000e+02,3.2939e+02,1.9194e+02,-1.0000e+02,3.2589e+02,1.9248e+02,-1.0000e+02,3.2235e+02,1.9230e+02,-1.0000e+02,3.1892e+02,1.9141e+02,-1.0000e+02,3.1574e+02,1.8985e+02,-1.0000e+02,3.1294e+02,1.8768e+02,-1.0000e+02,3.1064e+02,1.8500e+02,-1.0000e+02,3.0892e+02,1.8190e+02,-1.0000e+02,3.0786e+02,1.7852e+02,-1.0000e+02,3.0750e+02,1.7500e+02,-1.0000e+02,2.5000e+02,1.2500e+02,-1.0000e+02,2.5000e+02,1.7500e+02,-1.0000e+02,2.5096e+02,1.8475e+02,-1.0000e+02,2.5381e+02,1.9413e+02,-1.0000e+02,2.5843e+02,2.0278e+02,-1.0000e+02,2.6464e+02,2.1036e+02,-1.0000e+02,2.7222e+02,2.1657e+02,-1.0000e+02,2.8087e+02,2.2119e+02,-1.0000e+02,2.9025e+02,2.2404e+02,-1.0000e+02,3.0000e+02,2.2500e+02,-1.0000e+02,3.5000e+02,2.2500e+02,-1.0000e+02,4.0000e+02,1.7500e+02,-1.0000e+02,4.0000e+02,1.2500e+02,-1.0000e+02});
+			return Coordinate_7_52_point;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #58, 153 total numbers made up of 51 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_58_point()
+		{
+			MFVec3f Coordinate_7_58_point = new MFVec3f(new double[] {3.0786e+02,-1.7852e+02,-1.0000e+02,3.0892e+02,-1.8190e+02,-1.0000e+02,3.1064e+02,-1.8500e+02,-1.0000e+02,3.1294e+02,-1.8768e+02,-1.0000e+02,3.1574e+02,-1.8985e+02,-1.0000e+02,3.1892e+02,-1.9141e+02,-1.0000e+02,3.2235e+02,-1.9230e+02,-1.0000e+02,3.2589e+02,-1.9248e+02,-1.0000e+02,3.2939e+02,-1.9194e+02,-1.0000e+02,3.3271e+02,-1.9071e+02,-1.0000e+02,3.3571e+02,-1.8884e+02,-1.0000e+02,3.3828e+02,-1.8640e+02,-1.0000e+02,3.4030e+02,-1.8349e+02,-1.0000e+02,3.4170e+02,-1.8024e+02,-1.0000e+02,3.4241e+02,-1.7677e+02,-1.0000e+02,3.4241e+02,-1.7323e+02,-1.0000e+02,3.4170e+02,-1.6976e+02,-1.0000e+02,3.4030e+02,-1.6651e+02,-1.0000e+02,3.3828e+02,-1.6360e+02,-1.0000e+02,3.3571e+02,-1.6116e+02,-1.0000e+02,3.3271e+02,-1.5929e+02,-1.0000e+02,3.2939e+02,-1.5806e+02,-1.0000e+02,3.2589e+02,-1.5752e+02,-1.0000e+02,3.2235e+02,-1.5770e+02,-1.0000e+02,3.1892e+02,-1.5859e+02,-1.0000e+02,3.1574e+02,-1.6015e+02,-1.0000e+02,3.1294e+02,-1.6232e+02,-1.0000e+02,3.1064e+02,-1.6500e+02,-1.0000e+02,3.0892e+02,-1.6810e+02,-1.0000e+02,3.0786e+02,-1.7148e+02,-1.0000e+02,3.0750e+02,-1.7500e+02,-1.0000e+02,4.0000e+02,-1.2500e+02,-1.0000e+02,4.0000e+02,-1.7500e+02,-1.0000e+02,3.9904e+02,-1.8475e+02,-1.0000e+02,3.9619e+02,-1.9413e+02,-1.0000e+02,3.9157e+02,-2.0278e+02,-1.0000e+02,3.8536e+02,-2.1036e+02,-1.0000e+02,3.7778e+02,-2.1657e+02,-1.0000e+02,3.6913e+02,-2.2119e+02,-1.0000e+02,3.5975e+02,-2.2404e+02,-1.0000e+02,3.5000e+02,-2.2500e+02,-1.0000e+02,3.0000e+02,-2.2500e+02,-1.0000e+02,2.9025e+02,-2.2404e+02,-1.0000e+02,2.8087e+02,-2.2119e+02,-1.0000e+02,2.7222e+02,-2.1657e+02,-1.0000e+02,2.6464e+02,-2.1036e+02,-1.0000e+02,2.5843e+02,-2.0278e+02,-1.0000e+02,2.5381e+02,-1.9413e+02,-1.0000e+02,2.5096e+02,-1.8475e+02,-1.0000e+02,2.5000e+02,-1.7500e+02,-1.0000e+02,2.5000e+02,-1.2500e+02,-1.0000e+02});
+			return Coordinate_7_58_point;
+		}
+		/** Large attribute array: IndexedTriangleSet index field, scene-graph level=6, element #64, 1563 total numbers.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFInt32 getIndexedTriangleSet_6_64_index()
+		{
+			MFInt32 IndexedTriangleSet_6_64_index = new MFInt32()/*2.finalize*/
+				.append(new MFInt32(getIndexedTriangleSet_6_64_index_1()))
+				.append(new MFInt32(getIndexedTriangleSet_6_64_index_2()));
+			return IndexedTriangleSet_6_64_index;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #64, 1575 total numbers made up of 525 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_64_point()
+		{
+			MFVec3f Coordinate_7_64_point = new MFVec3f()/*2.finalize*/
+				.append(new MFVec3f(getCoordinate_7_64_point_1()))
+				.append(new MFVec3f(getCoordinate_7_64_point_2()))
+				.append(new MFVec3f(getCoordinate_7_64_point_3()))
+				.append(new MFVec3f(getCoordinate_7_64_point_4()))
+				.append(new MFVec3f(getCoordinate_7_64_point_5()))
+				.append(new MFVec3f(getCoordinate_7_64_point_6()));
+			return Coordinate_7_64_point;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #76, 150 total numbers made up of 50 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_76_point()
+		{
+			MFVec3f Coordinate_7_76_point = new MFVec3f(new double[] {-2.4500e+02,-2.0000e+01,0.0000e+00,-2.4500e+02,-2.0000e+01,-5.0000e+01,-2.4239e+02,-1.9829e+01,0.0000e+00,-2.4239e+02,-1.9829e+01,-5.0000e+01,-2.3982e+02,-1.9319e+01,0.0000e+00,-2.3982e+02,-1.9319e+01,-5.0000e+01,-2.3735e+02,-1.8478e+01,0.0000e+00,-2.3735e+02,-1.8478e+01,-5.0000e+01,-2.3500e+02,-1.7321e+01,0.0000e+00,-2.3500e+02,-1.7321e+01,-5.0000e+01,-2.3282e+02,-1.5867e+01,0.0000e+00,-2.3282e+02,-1.5867e+01,-5.0000e+01,-2.3086e+02,-1.4142e+01,0.0000e+00,-2.3086e+02,-1.4142e+01,-5.0000e+01,-2.2913e+02,-1.2175e+01,0.0000e+00,-2.2913e+02,-1.2175e+01,-5.0000e+01,-2.2768e+02,-1.0000e+01,0.0000e+00,-2.2768e+02,-1.0000e+01,-5.0000e+01,-2.2652e+02,-7.6537e+00,0.0000e+00,-2.2652e+02,-7.6537e+00,-5.0000e+01,-2.2568e+02,-5.1764e+00,0.0000e+00,-2.2568e+02,-5.1764e+00,-5.0000e+01,-2.2517e+02,-2.6105e+00,0.0000e+00,-2.2517e+02,-2.6105e+00,-5.0000e+01,-2.2500e+02,-1.0779e-14,0.0000e+00,-2.2500e+02,-1.0779e-14,-5.0000e+01,-2.2517e+02,2.6105e+00,0.0000e+00,-2.2517e+02,2.6105e+00,-5.0000e+01,-2.2568e+02,5.1764e+00,0.0000e+00,-2.2568e+02,5.1764e+00,-5.0000e+01,-2.2652e+02,7.6537e+00,0.0000e+00,-2.2652e+02,7.6537e+00,-5.0000e+01,-2.2768e+02,1.0000e+01,0.0000e+00,-2.2768e+02,1.0000e+01,-5.0000e+01,-2.2913e+02,1.2175e+01,0.0000e+00,-2.2913e+02,1.2175e+01,-5.0000e+01,-2.3086e+02,1.4142e+01,0.0000e+00,-2.3086e+02,1.4142e+01,-5.0000e+01,-2.3282e+02,1.5867e+01,0.0000e+00,-2.3282e+02,1.5867e+01,-5.0000e+01,-2.3500e+02,1.7321e+01,0.0000e+00,-2.3500e+02,1.7321e+01,-5.0000e+01,-2.3735e+02,1.8478e+01,0.0000e+00,-2.3735e+02,1.8478e+01,-5.0000e+01,-2.3982e+02,1.9319e+01,0.0000e+00,-2.3982e+02,1.9319e+01,-5.0000e+01,-2.4239e+02,1.9829e+01,0.0000e+00,-2.4239e+02,1.9829e+01,-5.0000e+01,-2.4500e+02,2.0000e+01,0.0000e+00,-2.4500e+02,2.0000e+01,-5.0000e+01});
+			return Coordinate_7_76_point;
+		}
+		/** Large attribute array: Normal vector field, scene-graph level=7, element #77, 150 total numbers made up of 50 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getNormal_7_77_vector()
+		{
+			MFVec3f Normal_7_77_vector = new MFVec3f(new double[] {1.2246e-16,1.0000e+00,-0.0000e+00,1.2246e-16,1.0000e+00,-0.0000e+00,-1.3053e-01,9.9144e-01,-0.0000e+00,-1.3053e-01,9.9144e-01,-0.0000e+00,-2.5882e-01,9.6593e-01,-0.0000e+00,-2.5882e-01,9.6593e-01,-0.0000e+00,-3.8268e-01,9.2388e-01,-0.0000e+00,-3.8268e-01,9.2388e-01,-0.0000e+00,-5.0000e-01,8.6603e-01,-0.0000e+00,-5.0000e-01,8.6603e-01,-0.0000e+00,-6.0876e-01,7.9335e-01,-0.0000e+00,-6.0876e-01,7.9335e-01,-0.0000e+00,-7.0711e-01,7.0711e-01,-0.0000e+00,-7.0711e-01,7.0711e-01,-0.0000e+00,-7.9335e-01,6.0876e-01,-0.0000e+00,-7.9335e-01,6.0876e-01,-0.0000e+00,-8.6603e-01,5.0000e-01,-0.0000e+00,-8.6603e-01,5.0000e-01,-0.0000e+00,-9.2388e-01,3.8268e-01,-0.0000e+00,-9.2388e-01,3.8268e-01,-0.0000e+00,-9.6593e-01,2.5882e-01,-0.0000e+00,-9.6593e-01,2.5882e-01,-0.0000e+00,-9.9144e-01,1.3053e-01,-0.0000e+00,-9.9144e-01,1.3053e-01,-0.0000e+00,-1.0000e+00,1.8370e-16,-0.0000e+00,-1.0000e+00,1.8370e-16,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-2.4493e-16,-1.0000e+00,-0.0000e+00,-2.4493e-16,-1.0000e+00,-0.0000e+00});
+			return Normal_7_77_vector;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #135, 198 total numbers made up of 66 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_135_point()
+		{
+			MFVec3f Coordinate_7_135_point = new MFVec3f(new double[] {3.2013e+01,-1.2500e+02,-1.5205e+01,3.3944e+01,-1.2500e+02,-1.5810e+01,3.5713e+01,-1.2500e+02,-1.6792e+01,3.7248e+01,-1.2500e+02,-1.8110e+01,3.8486e+01,-1.2500e+02,-1.9710e+01,3.9378e+01,-1.2500e+02,-2.1527e+01,3.9885e+01,-1.2500e+02,-2.3486e+01,3.9987e+01,-1.2500e+02,-2.5506e+01,3.9681e+01,-1.2500e+02,-2.7507e+01,3.8978e+01,-1.2500e+02,-2.9404e+01,3.7908e+01,-1.2500e+02,-3.1121e+01,3.6514e+01,-1.2500e+02,-3.2588e+01,3.4853e+01,-1.2500e+02,-3.3743e+01,3.2994e+01,-1.2500e+02,-3.4541e+01,3.1012e+01,-1.2500e+02,-3.4949e+01,2.8988e+01,-1.2500e+02,-3.4949e+01,2.7006e+01,-1.2500e+02,-3.4541e+01,2.5147e+01,-1.2500e+02,-3.3743e+01,2.3486e+01,-1.2500e+02,-3.2588e+01,2.2092e+01,-1.2500e+02,-3.1121e+01,2.1022e+01,-1.2500e+02,-2.9404e+01,2.0319e+01,-1.2500e+02,-2.7507e+01,2.0013e+01,-1.2500e+02,-2.5506e+01,2.0115e+01,-1.2500e+02,-2.3486e+01,2.0622e+01,-1.2500e+02,-2.1527e+01,2.1514e+01,-1.2500e+02,-1.9710e+01,2.2752e+01,-1.2500e+02,-1.8110e+01,2.4287e+01,-1.2500e+02,-1.6792e+01,2.6056e+01,-1.2500e+02,-1.5810e+01,2.7987e+01,-1.2500e+02,-1.5205e+01,3.0000e+01,-1.2500e+02,-1.5000e+01,-2.7987e+01,-1.2500e+02,-1.5205e+01,-2.6056e+01,-1.2500e+02,-1.5810e+01,-2.4287e+01,-1.2500e+02,-1.6792e+01,-2.2752e+01,-1.2500e+02,-1.8110e+01,-2.1514e+01,-1.2500e+02,-1.9710e+01,-2.0622e+01,-1.2500e+02,-2.1527e+01,-2.0115e+01,-1.2500e+02,-2.3486e+01,-2.0013e+01,-1.2500e+02,-2.5506e+01,-2.0319e+01,-1.2500e+02,-2.7507e+01,-2.1022e+01,-1.2500e+02,-2.9404e+01,-2.2092e+01,-1.2500e+02,-3.1121e+01,-2.3486e+01,-1.2500e+02,-3.2588e+01,-2.5147e+01,-1.2500e+02,-3.3743e+01,-2.7006e+01,-1.2500e+02,-3.4541e+01,-2.8988e+01,-1.2500e+02,-3.4949e+01,-3.1012e+01,-1.2500e+02,-3.4949e+01,-3.2994e+01,-1.2500e+02,-3.4541e+01,-3.4853e+01,-1.2500e+02,-3.3743e+01,-3.6514e+01,-1.2500e+02,-3.2588e+01,-3.7908e+01,-1.2500e+02,-3.1121e+01,-3.8978e+01,-1.2500e+02,-2.9404e+01,-3.9681e+01,-1.2500e+02,-2.7507e+01,-3.9987e+01,-1.2500e+02,-2.5506e+01,-3.9885e+01,-1.2500e+02,-2.3486e+01,-3.9378e+01,-1.2500e+02,-2.1527e+01,-3.8486e+01,-1.2500e+02,-1.9710e+01,-3.7248e+01,-1.2500e+02,-1.8110e+01,-3.5713e+01,-1.2500e+02,-1.6792e+01,-3.3944e+01,-1.2500e+02,-1.5810e+01,-3.2013e+01,-1.2500e+02,-1.5205e+01,-3.0000e+01,-1.2500e+02,-1.5000e+01,8.1132e+01,-1.2500e+02,-5.0000e+01,8.1132e+01,-1.2500e+02,0.0000e+00,-8.1132e+01,-1.2500e+02,0.0000e+00,-8.1132e+01,-1.2500e+02,-5.0000e+01});
+			return Coordinate_7_135_point;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #147, 102 total numbers made up of 34 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_147_point()
+		{
+			MFVec3f Coordinate_7_147_point = new MFVec3f(new double[] {1.1866e+02,-9.0000e+01,0.0000e+00,1.1866e+02,-9.0000e+01,-5.0000e+01,1.1793e+02,-8.8912e+01,0.0000e+00,1.1793e+02,-8.8912e+01,-5.0000e+01,1.1707e+02,-8.7929e+01,0.0000e+00,1.1707e+02,-8.7929e+01,-5.0000e+01,1.1609e+02,-8.7066e+01,0.0000e+00,1.1609e+02,-8.7066e+01,-5.0000e+01,1.1500e+02,-8.6340e+01,0.0000e+00,1.1500e+02,-8.6340e+01,-5.0000e+01,1.1383e+02,-8.5761e+01,0.0000e+00,1.1383e+02,-8.5761e+01,-5.0000e+01,1.1259e+02,-8.5341e+01,0.0000e+00,1.1259e+02,-8.5341e+01,-5.0000e+01,1.1131e+02,-8.5086e+01,0.0000e+00,1.1131e+02,-8.5086e+01,-5.0000e+01,1.1000e+02,-8.5000e+01,0.0000e+00,1.1000e+02,-8.5000e+01,-5.0000e+01,1.0869e+02,-8.5086e+01,0.0000e+00,1.0869e+02,-8.5086e+01,-5.0000e+01,1.0741e+02,-8.5341e+01,0.0000e+00,1.0741e+02,-8.5341e+01,-5.0000e+01,1.0617e+02,-8.5761e+01,0.0000e+00,1.0617e+02,-8.5761e+01,-5.0000e+01,1.0500e+02,-8.6340e+01,0.0000e+00,1.0500e+02,-8.6340e+01,-5.0000e+01,1.0391e+02,-8.7066e+01,0.0000e+00,1.0391e+02,-8.7066e+01,-5.0000e+01,1.0293e+02,-8.7929e+01,0.0000e+00,1.0293e+02,-8.7929e+01,-5.0000e+01,1.0207e+02,-8.8912e+01,0.0000e+00,1.0207e+02,-8.8912e+01,-5.0000e+01,1.0134e+02,-9.0000e+01,0.0000e+00,1.0134e+02,-9.0000e+01,-5.0000e+01});
+			return Coordinate_7_147_point;
+		}
+		/** Large attribute array: Normal vector field, scene-graph level=7, element #148, 102 total numbers made up of 34 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getNormal_7_148_vector()
+		{
+			MFVec3f Normal_7_148_vector = new MFVec3f(new double[] {-8.6603e-01,-5.0000e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-0.0000e+00,-1.0000e+00,-0.0000e+00,-0.0000e+00,-1.0000e+00,-0.0000e+00,1.3053e-01,-9.9144e-01,-0.0000e+00,1.3053e-01,-9.9144e-01,-0.0000e+00,2.5882e-01,-9.6593e-01,-0.0000e+00,2.5882e-01,-9.6593e-01,-0.0000e+00,3.8268e-01,-9.2388e-01,-0.0000e+00,3.8268e-01,-9.2388e-01,-0.0000e+00,5.0000e-01,-8.6603e-01,-0.0000e+00,5.0000e-01,-8.6603e-01,-0.0000e+00,6.0876e-01,-7.9335e-01,-0.0000e+00,6.0876e-01,-7.9335e-01,-0.0000e+00,7.0711e-01,-7.0711e-01,-0.0000e+00,7.0711e-01,-7.0711e-01,-0.0000e+00,7.9335e-01,-6.0876e-01,-0.0000e+00,7.9335e-01,-6.0876e-01,-0.0000e+00,8.6603e-01,-5.0000e-01,-0.0000e+00,8.6603e-01,-5.0000e-01,-0.0000e+00});
+			return Normal_7_148_vector;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #166, 255 total numbers made up of 85 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_166_point()
+		{
+			MFVec3f Coordinate_7_166_point = new MFVec3f(new double[] {2.5000e+02,-1.5000e+02,0.0000e+00,2.5000e+02,-1.5000e+02,-6.0000e+01,2.4979e+02,-1.4674e+02,-6.0000e+01,2.4979e+02,-1.4674e+02,0.0000e+00,2.5000e+02,-1.5000e+02,0.0000e+00,2.5000e+02,-1.5000e+02,-6.0000e+01,2.4985e+02,-1.4731e+02,-5.8299e+01,2.4979e+02,-1.4674e+02,-5.7945e+01,2.4979e+02,-1.4674e+02,0.0000e+00,2.4979e+02,-1.4674e+02,-6.0000e+01,2.4915e+02,-1.4353e+02,-6.0000e+01,2.4915e+02,-1.4353e+02,0.0000e+00,2.4979e+02,-1.4674e+02,-5.7945e+01,2.4942e+02,-1.4463e+02,-5.6630e+01,2.4915e+02,-1.4353e+02,-5.5971e+01,2.4915e+02,-1.4353e+02,0.0000e+00,2.4915e+02,-1.4353e+02,-6.0000e+01,2.4810e+02,-1.4043e+02,-6.0000e+01,2.4810e+02,-1.4043e+02,0.0000e+00,2.4915e+02,-1.4353e+02,-5.5971e+01,2.4868e+02,-1.4198e+02,-5.5027e+01,2.4810e+02,-1.4043e+02,-5.4151e+01,2.4810e+02,-1.4043e+02,0.0000e+00,2.4810e+02,-1.4043e+02,-6.0000e+01,2.4665e+02,-1.3750e+02,-6.0000e+01,2.4665e+02,-1.3750e+02,0.0000e+00,2.4810e+02,-1.4043e+02,-5.4151e+01,2.4762e+02,-1.3936e+02,-5.3527e+01,2.4674e+02,-1.3765e+02,-5.2608e+01,2.4665e+02,-1.3750e+02,-5.2536e+01,2.4665e+02,-1.3750e+02,0.0000e+00,2.4665e+02,-1.3750e+02,-6.0000e+01,2.4483e+02,-1.3478e+02,-6.0000e+01,2.4483e+02,-1.3478e+02,0.0000e+00,2.4665e+02,-1.3750e+02,-5.2536e+01,2.4570e+02,-1.3598e+02,-5.1784e+01,2.4483e+02,-1.3478e+02,-5.1260e+01,2.4483e+02,-1.3478e+02,0.0000e+00,2.4483e+02,-1.3478e+02,-6.0000e+01,2.4268e+02,-1.3232e+02,-6.0000e+01,2.4268e+02,-1.3232e+02,0.0000e+00,2.4483e+02,-1.3478e+02,-5.1260e+01,2.4451e+02,-1.3437e+02,-5.1076e+01,2.4351e+02,-1.3320e+02,-5.0636e+01,2.4268e+02,-1.3232e+02,-5.0373e+01,2.4268e+02,-1.3232e+02,0.0000e+00,2.4268e+02,-1.3232e+02,-6.0000e+01,2.4022e+02,-1.3017e+02,-6.0000e+01,2.4022e+02,-1.3017e+02,0.0000e+00,2.4268e+02,-1.3232e+02,-5.0373e+01,2.4243e+02,-1.3208e+02,-5.0297e+01,2.4126e+02,-1.3101e+02,-5.0078e+01,2.4022e+02,-1.3017e+02,-5.0013e+01,2.4022e+02,-1.3017e+02,0.0000e+00,2.4022e+02,-1.3017e+02,-6.0000e+01,2.3750e+02,-1.2835e+02,-6.0000e+01,2.3750e+02,-1.2835e+02,0.0000e+00,2.4022e+02,-1.3017e+02,-5.0013e+01,2.4000e+02,-1.3000e+02,-5.0000e+01,2.3750e+02,-1.2835e+02,-5.0000e+01,2.3750e+02,-1.2835e+02,0.0000e+00,2.3750e+02,-1.2835e+02,-6.0000e+01,2.3457e+02,-1.2690e+02,-6.0000e+01,2.3457e+02,-1.2690e+02,0.0000e+00,2.3750e+02,-1.2835e+02,-5.0000e+01,2.3457e+02,-1.2690e+02,-5.0000e+01,2.3457e+02,-1.2690e+02,0.0000e+00,2.3457e+02,-1.2690e+02,-6.0000e+01,2.3147e+02,-1.2585e+02,-6.0000e+01,2.3147e+02,-1.2585e+02,0.0000e+00,2.3457e+02,-1.2690e+02,-5.0000e+01,2.3147e+02,-1.2585e+02,-5.0000e+01,2.3147e+02,-1.2585e+02,0.0000e+00,2.3147e+02,-1.2585e+02,-6.0000e+01,2.2826e+02,-1.2521e+02,-6.0000e+01,2.2826e+02,-1.2521e+02,0.0000e+00,2.3147e+02,-1.2585e+02,-5.0000e+01,2.2826e+02,-1.2521e+02,-5.0000e+01,2.2826e+02,-1.2521e+02,0.0000e+00,2.2826e+02,-1.2521e+02,-6.0000e+01,2.2500e+02,-1.2500e+02,-6.0000e+01,2.2500e+02,-1.2500e+02,0.0000e+00,2.2826e+02,-1.2521e+02,-5.0000e+01,2.2500e+02,-1.2500e+02,-5.0000e+01,2.2500e+02,-1.2500e+02,0.0000e+00});
+			return Coordinate_7_166_point;
+		}
+		/** Large attribute array: Normal vector field, scene-graph level=7, element #167, 255 total numbers made up of 85 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getNormal_7_167_vector()
+		{
+			MFVec3f Normal_7_167_vector = new MFVec3f(new double[] {-1.0000e+00,-6.1232e-17,-0.0000e+00,-1.0000e+00,-6.1232e-17,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-1.0000e+00,-6.1232e-17,-0.0000e+00,-1.0000e+00,-6.1232e-17,-0.0000e+00,-9.9418e-01,-1.0771e-01,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-9.7666e-01,-2.1479e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.4711e-01,-3.2092e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-9.0488e-01,-4.2567e-01,-0.0000e+00,-8.6943e-01,-4.9406e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-8.2807e-01,-5.6062e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-7.8047e-01,-6.2519e-01,-0.0000e+00,-7.4054e-01,-6.7201e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-6.9709e-01,-7.1698e-01,-0.0000e+00,-6.5021e-01,-7.5976e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-6.0000e-01,-8.0000e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-0.0000e+00,-1.0000e+00,-0.0000e+00,-0.0000e+00,-1.0000e+00,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-0.0000e+00,-1.0000e+00,-0.0000e+00,-0.0000e+00,-1.0000e+00,-0.0000e+00});
+			return Normal_7_167_vector;
+		}
+		/** Large attribute array: IndexedTriangleSet index field, scene-graph level=6, element #199, 522 total numbers.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFInt32 getIndexedTriangleSet_6_199_index()
+		{
+			MFInt32 IndexedTriangleSet_6_199_index = new MFInt32()/*2.finalize*/
+				.append(new MFInt32(getIndexedTriangleSet_6_199_index_1()));
+			return IndexedTriangleSet_6_199_index;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #199, 522 total numbers made up of 174 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_199_point()
+		{
+			MFVec3f Coordinate_7_199_point = new MFVec3f()/*2.finalize*/
+				.append(new MFVec3f(getCoordinate_7_199_point_1()))
+				.append(new MFVec3f(getCoordinate_7_199_point_2()));
+			return Coordinate_7_199_point;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #230, 255 total numbers made up of 85 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_230_point()
+		{
+			MFVec3f Coordinate_7_230_point = new MFVec3f(new double[] {2.2500e+02,1.2500e+02,0.0000e+00,2.2500e+02,1.2500e+02,-6.0000e+01,2.2826e+02,1.2521e+02,-6.0000e+01,2.2826e+02,1.2521e+02,0.0000e+00,2.2500e+02,1.2500e+02,0.0000e+00,2.2500e+02,1.2500e+02,-5.0000e+01,2.2826e+02,1.2521e+02,-5.0000e+01,2.2826e+02,1.2521e+02,0.0000e+00,2.2826e+02,1.2521e+02,-6.0000e+01,2.3147e+02,1.2585e+02,-6.0000e+01,2.3147e+02,1.2585e+02,0.0000e+00,2.2826e+02,1.2521e+02,-5.0000e+01,2.3147e+02,1.2585e+02,-5.0000e+01,2.3147e+02,1.2585e+02,0.0000e+00,2.3147e+02,1.2585e+02,-6.0000e+01,2.3457e+02,1.2690e+02,-6.0000e+01,2.3457e+02,1.2690e+02,0.0000e+00,2.3147e+02,1.2585e+02,-5.0000e+01,2.3457e+02,1.2690e+02,-5.0000e+01,2.3457e+02,1.2690e+02,0.0000e+00,2.3457e+02,1.2690e+02,-6.0000e+01,2.3750e+02,1.2835e+02,-6.0000e+01,2.3750e+02,1.2835e+02,0.0000e+00,2.3457e+02,1.2690e+02,-5.0000e+01,2.3750e+02,1.2835e+02,-5.0000e+01,2.3750e+02,1.2835e+02,0.0000e+00,2.3750e+02,1.2835e+02,-6.0000e+01,2.4022e+02,1.3017e+02,-6.0000e+01,2.4022e+02,1.3017e+02,0.0000e+00,2.3750e+02,1.2835e+02,-5.0000e+01,2.4000e+02,1.3000e+02,-5.0000e+01,2.4022e+02,1.3017e+02,-5.0013e+01,2.4022e+02,1.3017e+02,0.0000e+00,2.4022e+02,1.3017e+02,-6.0000e+01,2.4268e+02,1.3232e+02,-6.0000e+01,2.4268e+02,1.3232e+02,0.0000e+00,2.4022e+02,1.3017e+02,-5.0013e+01,2.4126e+02,1.3101e+02,-5.0078e+01,2.4243e+02,1.3208e+02,-5.0297e+01,2.4268e+02,1.3232e+02,-5.0373e+01,2.4268e+02,1.3232e+02,0.0000e+00,2.4268e+02,1.3232e+02,-6.0000e+01,2.4483e+02,1.3478e+02,-6.0000e+01,2.4483e+02,1.3478e+02,0.0000e+00,2.4268e+02,1.3232e+02,-5.0373e+01,2.4351e+02,1.3320e+02,-5.0636e+01,2.4451e+02,1.3437e+02,-5.1076e+01,2.4483e+02,1.3478e+02,-5.1260e+01,2.4483e+02,1.3478e+02,0.0000e+00,2.4483e+02,1.3478e+02,-6.0000e+01,2.4665e+02,1.3750e+02,-6.0000e+01,2.4665e+02,1.3750e+02,0.0000e+00,2.4483e+02,1.3478e+02,-5.1260e+01,2.4570e+02,1.3598e+02,-5.1784e+01,2.4665e+02,1.3750e+02,-5.2536e+01,2.4665e+02,1.3750e+02,0.0000e+00,2.4665e+02,1.3750e+02,-6.0000e+01,2.4810e+02,1.4043e+02,-6.0000e+01,2.4810e+02,1.4043e+02,0.0000e+00,2.4665e+02,1.3750e+02,-5.2536e+01,2.4674e+02,1.3765e+02,-5.2608e+01,2.4762e+02,1.3936e+02,-5.3527e+01,2.4810e+02,1.4043e+02,-5.4151e+01,2.4810e+02,1.4043e+02,0.0000e+00,2.4810e+02,1.4043e+02,-6.0000e+01,2.4915e+02,1.4353e+02,-6.0000e+01,2.4915e+02,1.4353e+02,0.0000e+00,2.4810e+02,1.4043e+02,-5.4151e+01,2.4868e+02,1.4198e+02,-5.5027e+01,2.4915e+02,1.4353e+02,-5.5971e+01,2.4915e+02,1.4353e+02,0.0000e+00,2.4915e+02,1.4353e+02,-6.0000e+01,2.4979e+02,1.4674e+02,-6.0000e+01,2.4979e+02,1.4674e+02,0.0000e+00,2.4915e+02,1.4353e+02,-5.5971e+01,2.4942e+02,1.4463e+02,-5.6630e+01,2.4979e+02,1.4674e+02,-5.7945e+01,2.4979e+02,1.4674e+02,0.0000e+00,2.4979e+02,1.4674e+02,-6.0000e+01,2.5000e+02,1.5000e+02,-6.0000e+01,2.5000e+02,1.5000e+02,0.0000e+00,2.4979e+02,1.4674e+02,-5.7945e+01,2.4985e+02,1.4731e+02,-5.8299e+01,2.5000e+02,1.5000e+02,-6.0000e+01,2.5000e+02,1.5000e+02,0.0000e+00});
+			return Coordinate_7_230_point;
+		}
+		/** Large attribute array: Normal vector field, scene-graph level=7, element #231, 255 total numbers made up of 85 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getNormal_7_231_vector()
+		{
+			MFVec3f Normal_7_231_vector = new MFVec3f(new double[] {-1.2246e-16,1.0000e+00,-0.0000e+00,-1.2246e-16,1.0000e+00,-0.0000e+00,-1.3053e-01,9.9144e-01,-0.0000e+00,-1.3053e-01,9.9144e-01,-0.0000e+00,-1.2246e-16,1.0000e+00,-0.0000e+00,-1.2246e-16,1.0000e+00,-0.0000e+00,-1.3053e-01,9.9144e-01,-0.0000e+00,-1.3053e-01,9.9144e-01,-0.0000e+00,-1.3053e-01,9.9144e-01,-0.0000e+00,-2.5882e-01,9.6593e-01,-0.0000e+00,-2.5882e-01,9.6593e-01,-0.0000e+00,-1.3053e-01,9.9144e-01,-0.0000e+00,-2.5882e-01,9.6593e-01,-0.0000e+00,-2.5882e-01,9.6593e-01,-0.0000e+00,-2.5882e-01,9.6593e-01,-0.0000e+00,-3.8268e-01,9.2388e-01,-0.0000e+00,-3.8268e-01,9.2388e-01,-0.0000e+00,-2.5882e-01,9.6593e-01,-0.0000e+00,-3.8268e-01,9.2388e-01,-0.0000e+00,-3.8268e-01,9.2388e-01,-0.0000e+00,-3.8268e-01,9.2388e-01,-0.0000e+00,-5.0000e-01,8.6603e-01,-0.0000e+00,-5.0000e-01,8.6603e-01,-0.0000e+00,-3.8268e-01,9.2388e-01,-0.0000e+00,-5.0000e-01,8.6603e-01,-0.0000e+00,-5.0000e-01,8.6603e-01,-0.0000e+00,-5.0000e-01,8.6603e-01,-0.0000e+00,-6.0876e-01,7.9335e-01,-0.0000e+00,-6.0876e-01,7.9335e-01,-0.0000e+00,-5.0000e-01,8.6603e-01,-0.0000e+00,-6.0000e-01,8.0000e-01,-0.0000e+00,-6.0876e-01,7.9335e-01,-0.0000e+00,-6.0876e-01,7.9335e-01,-0.0000e+00,-6.0876e-01,7.9335e-01,-0.0000e+00,-7.0711e-01,7.0711e-01,-0.0000e+00,-7.0711e-01,7.0711e-01,-0.0000e+00,-6.0876e-01,7.9335e-01,-0.0000e+00,-6.5021e-01,7.5976e-01,-0.0000e+00,-6.9709e-01,7.1698e-01,-0.0000e+00,-7.0711e-01,7.0711e-01,-0.0000e+00,-7.0711e-01,7.0711e-01,-0.0000e+00,-7.0711e-01,7.0711e-01,-0.0000e+00,-7.9335e-01,6.0876e-01,-0.0000e+00,-7.9335e-01,6.0876e-01,-0.0000e+00,-7.0711e-01,7.0711e-01,-0.0000e+00,-7.4054e-01,6.7201e-01,-0.0000e+00,-7.8047e-01,6.2519e-01,-0.0000e+00,-7.9335e-01,6.0876e-01,-0.0000e+00,-7.9335e-01,6.0876e-01,-0.0000e+00,-7.9335e-01,6.0876e-01,-0.0000e+00,-8.6603e-01,5.0000e-01,-0.0000e+00,-8.6603e-01,5.0000e-01,-0.0000e+00,-7.9335e-01,6.0876e-01,-0.0000e+00,-8.2807e-01,5.6062e-01,-0.0000e+00,-8.6603e-01,5.0000e-01,-0.0000e+00,-8.6603e-01,5.0000e-01,-0.0000e+00,-8.6603e-01,5.0000e-01,-0.0000e+00,-9.2388e-01,3.8268e-01,-0.0000e+00,-9.2388e-01,3.8268e-01,-0.0000e+00,-8.6603e-01,5.0000e-01,-0.0000e+00,-8.6943e-01,4.9406e-01,-0.0000e+00,-9.0488e-01,4.2567e-01,-0.0000e+00,-9.2388e-01,3.8268e-01,-0.0000e+00,-9.2388e-01,3.8268e-01,-0.0000e+00,-9.2388e-01,3.8268e-01,-0.0000e+00,-9.6593e-01,2.5882e-01,-0.0000e+00,-9.6593e-01,2.5882e-01,-0.0000e+00,-9.2388e-01,3.8268e-01,-0.0000e+00,-9.4711e-01,3.2092e-01,-0.0000e+00,-9.6593e-01,2.5882e-01,-0.0000e+00,-9.6593e-01,2.5882e-01,-0.0000e+00,-9.6593e-01,2.5882e-01,-0.0000e+00,-9.9144e-01,1.3053e-01,-0.0000e+00,-9.9144e-01,1.3053e-01,-0.0000e+00,-9.6593e-01,2.5882e-01,-0.0000e+00,-9.7666e-01,2.1479e-01,-0.0000e+00,-9.9144e-01,1.3053e-01,-0.0000e+00,-9.9144e-01,1.3053e-01,-0.0000e+00,-9.9144e-01,1.3053e-01,-0.0000e+00,-1.0000e+00,-6.1232e-17,-0.0000e+00,-1.0000e+00,-6.1232e-17,-0.0000e+00,-9.9144e-01,1.3053e-01,-0.0000e+00,-9.9418e-01,1.0771e-01,-0.0000e+00,-1.0000e+00,-6.1232e-17,-0.0000e+00,-1.0000e+00,-6.1232e-17,-0.0000e+00});
+			return Normal_7_231_vector;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #319, 255 total numbers made up of 85 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_319_point()
+		{
+			MFVec3f Coordinate_7_319_point = new MFVec3f(new double[] {-2.5000e+02,1.5000e+02,0.0000e+00,-2.5000e+02,1.5000e+02,-6.0000e+01,-2.4979e+02,1.4674e+02,-6.0000e+01,-2.4979e+02,1.4674e+02,0.0000e+00,-2.5000e+02,1.5000e+02,0.0000e+00,-2.5000e+02,1.5000e+02,-6.0000e+01,-2.4985e+02,1.4731e+02,-5.8299e+01,-2.4979e+02,1.4674e+02,-5.7945e+01,-2.4979e+02,1.4674e+02,0.0000e+00,-2.4979e+02,1.4674e+02,-6.0000e+01,-2.4915e+02,1.4353e+02,-6.0000e+01,-2.4915e+02,1.4353e+02,0.0000e+00,-2.4979e+02,1.4674e+02,-5.7945e+01,-2.4942e+02,1.4463e+02,-5.6630e+01,-2.4915e+02,1.4353e+02,-5.5971e+01,-2.4915e+02,1.4353e+02,0.0000e+00,-2.4915e+02,1.4353e+02,-6.0000e+01,-2.4810e+02,1.4043e+02,-6.0000e+01,-2.4810e+02,1.4043e+02,0.0000e+00,-2.4915e+02,1.4353e+02,-5.5971e+01,-2.4868e+02,1.4198e+02,-5.5027e+01,-2.4810e+02,1.4043e+02,-5.4151e+01,-2.4810e+02,1.4043e+02,0.0000e+00,-2.4810e+02,1.4043e+02,-6.0000e+01,-2.4665e+02,1.3750e+02,-6.0000e+01,-2.4665e+02,1.3750e+02,0.0000e+00,-2.4810e+02,1.4043e+02,-5.4151e+01,-2.4762e+02,1.3936e+02,-5.3527e+01,-2.4674e+02,1.3765e+02,-5.2608e+01,-2.4665e+02,1.3750e+02,-5.2536e+01,-2.4665e+02,1.3750e+02,0.0000e+00,-2.4665e+02,1.3750e+02,-6.0000e+01,-2.4483e+02,1.3478e+02,-6.0000e+01,-2.4483e+02,1.3478e+02,0.0000e+00,-2.4665e+02,1.3750e+02,-5.2536e+01,-2.4570e+02,1.3598e+02,-5.1784e+01,-2.4483e+02,1.3478e+02,-5.1260e+01,-2.4483e+02,1.3478e+02,0.0000e+00,-2.4483e+02,1.3478e+02,-6.0000e+01,-2.4268e+02,1.3232e+02,-6.0000e+01,-2.4268e+02,1.3232e+02,0.0000e+00,-2.4483e+02,1.3478e+02,-5.1260e+01,-2.4451e+02,1.3437e+02,-5.1076e+01,-2.4351e+02,1.3320e+02,-5.0636e+01,-2.4268e+02,1.3232e+02,-5.0373e+01,-2.4268e+02,1.3232e+02,0.0000e+00,-2.4268e+02,1.3232e+02,-6.0000e+01,-2.4022e+02,1.3017e+02,-6.0000e+01,-2.4022e+02,1.3017e+02,0.0000e+00,-2.4268e+02,1.3232e+02,-5.0373e+01,-2.4243e+02,1.3208e+02,-5.0297e+01,-2.4126e+02,1.3101e+02,-5.0078e+01,-2.4022e+02,1.3017e+02,-5.0013e+01,-2.4022e+02,1.3017e+02,0.0000e+00,-2.4022e+02,1.3017e+02,-6.0000e+01,-2.3750e+02,1.2835e+02,-6.0000e+01,-2.3750e+02,1.2835e+02,0.0000e+00,-2.4022e+02,1.3017e+02,-5.0013e+01,-2.4000e+02,1.3000e+02,-5.0000e+01,-2.3750e+02,1.2835e+02,-5.0000e+01,-2.3750e+02,1.2835e+02,0.0000e+00,-2.3750e+02,1.2835e+02,-6.0000e+01,-2.3457e+02,1.2690e+02,-6.0000e+01,-2.3457e+02,1.2690e+02,0.0000e+00,-2.3750e+02,1.2835e+02,-5.0000e+01,-2.3457e+02,1.2690e+02,-5.0000e+01,-2.3457e+02,1.2690e+02,0.0000e+00,-2.3457e+02,1.2690e+02,-6.0000e+01,-2.3147e+02,1.2585e+02,-6.0000e+01,-2.3147e+02,1.2585e+02,0.0000e+00,-2.3457e+02,1.2690e+02,-5.0000e+01,-2.3147e+02,1.2585e+02,-5.0000e+01,-2.3147e+02,1.2585e+02,0.0000e+00,-2.3147e+02,1.2585e+02,-6.0000e+01,-2.2826e+02,1.2521e+02,-6.0000e+01,-2.2826e+02,1.2521e+02,0.0000e+00,-2.3147e+02,1.2585e+02,-5.0000e+01,-2.2826e+02,1.2521e+02,-5.0000e+01,-2.2826e+02,1.2521e+02,0.0000e+00,-2.2826e+02,1.2521e+02,-6.0000e+01,-2.2500e+02,1.2500e+02,-6.0000e+01,-2.2500e+02,1.2500e+02,0.0000e+00,-2.2826e+02,1.2521e+02,-5.0000e+01,-2.2500e+02,1.2500e+02,-5.0000e+01,-2.2500e+02,1.2500e+02,0.0000e+00});
+			return Coordinate_7_319_point;
+		}
+		/** Large attribute array: Normal vector field, scene-graph level=7, element #320, 255 total numbers made up of 85 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getNormal_7_320_vector()
+		{
+			MFVec3f Normal_7_320_vector = new MFVec3f(new double[] {1.0000e+00,-6.1232e-17,-0.0000e+00,1.0000e+00,-6.1232e-17,-0.0000e+00,9.9144e-01,1.3053e-01,-0.0000e+00,9.9144e-01,1.3053e-01,-0.0000e+00,1.0000e+00,-6.1232e-17,-0.0000e+00,1.0000e+00,-6.1232e-17,-0.0000e+00,9.9418e-01,1.0771e-01,-0.0000e+00,9.9144e-01,1.3053e-01,-0.0000e+00,9.9144e-01,1.3053e-01,-0.0000e+00,9.9144e-01,1.3053e-01,-0.0000e+00,9.6593e-01,2.5882e-01,-0.0000e+00,9.6593e-01,2.5882e-01,-0.0000e+00,9.9144e-01,1.3053e-01,-0.0000e+00,9.7666e-01,2.1479e-01,-0.0000e+00,9.6593e-01,2.5882e-01,-0.0000e+00,9.6593e-01,2.5882e-01,-0.0000e+00,9.6593e-01,2.5882e-01,-0.0000e+00,9.2388e-01,3.8268e-01,-0.0000e+00,9.2388e-01,3.8268e-01,-0.0000e+00,9.6593e-01,2.5882e-01,-0.0000e+00,9.4711e-01,3.2092e-01,-0.0000e+00,9.2388e-01,3.8268e-01,-0.0000e+00,9.2388e-01,3.8268e-01,-0.0000e+00,9.2388e-01,3.8268e-01,-0.0000e+00,8.6603e-01,5.0000e-01,-0.0000e+00,8.6603e-01,5.0000e-01,-0.0000e+00,9.2388e-01,3.8268e-01,-0.0000e+00,9.0488e-01,4.2567e-01,-0.0000e+00,8.6943e-01,4.9406e-01,-0.0000e+00,8.6603e-01,5.0000e-01,-0.0000e+00,8.6603e-01,5.0000e-01,-0.0000e+00,8.6603e-01,5.0000e-01,-0.0000e+00,7.9335e-01,6.0876e-01,-0.0000e+00,7.9335e-01,6.0876e-01,-0.0000e+00,8.6603e-01,5.0000e-01,-0.0000e+00,8.2807e-01,5.6062e-01,-0.0000e+00,7.9335e-01,6.0876e-01,-0.0000e+00,7.9335e-01,6.0876e-01,-0.0000e+00,7.9335e-01,6.0876e-01,-0.0000e+00,7.0711e-01,7.0711e-01,-0.0000e+00,7.0711e-01,7.0711e-01,-0.0000e+00,7.9335e-01,6.0876e-01,-0.0000e+00,7.8047e-01,6.2519e-01,-0.0000e+00,7.4054e-01,6.7201e-01,-0.0000e+00,7.0711e-01,7.0711e-01,-0.0000e+00,7.0711e-01,7.0711e-01,-0.0000e+00,7.0711e-01,7.0711e-01,-0.0000e+00,6.0876e-01,7.9335e-01,-0.0000e+00,6.0876e-01,7.9335e-01,-0.0000e+00,7.0711e-01,7.0711e-01,-0.0000e+00,6.9709e-01,7.1698e-01,-0.0000e+00,6.5021e-01,7.5976e-01,-0.0000e+00,6.0876e-01,7.9335e-01,-0.0000e+00,6.0876e-01,7.9335e-01,-0.0000e+00,6.0876e-01,7.9335e-01,-0.0000e+00,5.0000e-01,8.6603e-01,-0.0000e+00,5.0000e-01,8.6603e-01,-0.0000e+00,6.0876e-01,7.9335e-01,-0.0000e+00,6.0000e-01,8.0000e-01,-0.0000e+00,5.0000e-01,8.6603e-01,-0.0000e+00,5.0000e-01,8.6603e-01,-0.0000e+00,5.0000e-01,8.6603e-01,-0.0000e+00,3.8268e-01,9.2388e-01,-0.0000e+00,3.8268e-01,9.2388e-01,-0.0000e+00,5.0000e-01,8.6603e-01,-0.0000e+00,3.8268e-01,9.2388e-01,-0.0000e+00,3.8268e-01,9.2388e-01,-0.0000e+00,3.8268e-01,9.2388e-01,-0.0000e+00,2.5882e-01,9.6593e-01,-0.0000e+00,2.5882e-01,9.6593e-01,-0.0000e+00,3.8268e-01,9.2388e-01,-0.0000e+00,2.5882e-01,9.6593e-01,-0.0000e+00,2.5882e-01,9.6593e-01,-0.0000e+00,2.5882e-01,9.6593e-01,-0.0000e+00,1.3053e-01,9.9144e-01,-0.0000e+00,1.3053e-01,9.9144e-01,-0.0000e+00,2.5882e-01,9.6593e-01,-0.0000e+00,1.3053e-01,9.9144e-01,-0.0000e+00,1.3053e-01,9.9144e-01,-0.0000e+00,1.3053e-01,9.9144e-01,-0.0000e+00,1.2246e-16,1.0000e+00,-0.0000e+00,1.2246e-16,1.0000e+00,-0.0000e+00,1.3053e-01,9.9144e-01,-0.0000e+00,1.2246e-16,1.0000e+00,-0.0000e+00,1.2246e-16,1.0000e+00,-0.0000e+00});
+			return Normal_7_320_vector;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #384, 255 total numbers made up of 85 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_384_point()
+		{
+			MFVec3f Coordinate_7_384_point = new MFVec3f(new double[] {-2.2500e+02,-1.2500e+02,0.0000e+00,-2.2500e+02,-1.2500e+02,-6.0000e+01,-2.2826e+02,-1.2521e+02,-6.0000e+01,-2.2826e+02,-1.2521e+02,0.0000e+00,-2.2500e+02,-1.2500e+02,0.0000e+00,-2.2500e+02,-1.2500e+02,-5.0000e+01,-2.2826e+02,-1.2521e+02,-5.0000e+01,-2.2826e+02,-1.2521e+02,0.0000e+00,-2.2826e+02,-1.2521e+02,-6.0000e+01,-2.3147e+02,-1.2585e+02,-6.0000e+01,-2.3147e+02,-1.2585e+02,0.0000e+00,-2.2826e+02,-1.2521e+02,-5.0000e+01,-2.3147e+02,-1.2585e+02,-5.0000e+01,-2.3147e+02,-1.2585e+02,0.0000e+00,-2.3147e+02,-1.2585e+02,-6.0000e+01,-2.3457e+02,-1.2690e+02,-6.0000e+01,-2.3457e+02,-1.2690e+02,0.0000e+00,-2.3147e+02,-1.2585e+02,-5.0000e+01,-2.3457e+02,-1.2690e+02,-5.0000e+01,-2.3457e+02,-1.2690e+02,0.0000e+00,-2.3457e+02,-1.2690e+02,-6.0000e+01,-2.3750e+02,-1.2835e+02,-6.0000e+01,-2.3750e+02,-1.2835e+02,0.0000e+00,-2.3457e+02,-1.2690e+02,-5.0000e+01,-2.3750e+02,-1.2835e+02,-5.0000e+01,-2.3750e+02,-1.2835e+02,0.0000e+00,-2.3750e+02,-1.2835e+02,-6.0000e+01,-2.4022e+02,-1.3017e+02,-6.0000e+01,-2.4022e+02,-1.3017e+02,0.0000e+00,-2.3750e+02,-1.2835e+02,-5.0000e+01,-2.4000e+02,-1.3000e+02,-5.0000e+01,-2.4022e+02,-1.3017e+02,-5.0013e+01,-2.4022e+02,-1.3017e+02,0.0000e+00,-2.4022e+02,-1.3017e+02,-6.0000e+01,-2.4268e+02,-1.3232e+02,-6.0000e+01,-2.4268e+02,-1.3232e+02,0.0000e+00,-2.4022e+02,-1.3017e+02,-5.0013e+01,-2.4126e+02,-1.3101e+02,-5.0078e+01,-2.4243e+02,-1.3208e+02,-5.0297e+01,-2.4268e+02,-1.3232e+02,-5.0373e+01,-2.4268e+02,-1.3232e+02,0.0000e+00,-2.4268e+02,-1.3232e+02,-6.0000e+01,-2.4483e+02,-1.3478e+02,-6.0000e+01,-2.4483e+02,-1.3478e+02,0.0000e+00,-2.4268e+02,-1.3232e+02,-5.0373e+01,-2.4351e+02,-1.3320e+02,-5.0636e+01,-2.4451e+02,-1.3437e+02,-5.1076e+01,-2.4483e+02,-1.3478e+02,-5.1260e+01,-2.4483e+02,-1.3478e+02,0.0000e+00,-2.4483e+02,-1.3478e+02,-6.0000e+01,-2.4665e+02,-1.3750e+02,-6.0000e+01,-2.4665e+02,-1.3750e+02,0.0000e+00,-2.4483e+02,-1.3478e+02,-5.1260e+01,-2.4570e+02,-1.3598e+02,-5.1784e+01,-2.4665e+02,-1.3750e+02,-5.2536e+01,-2.4665e+02,-1.3750e+02,0.0000e+00,-2.4665e+02,-1.3750e+02,-6.0000e+01,-2.4810e+02,-1.4043e+02,-6.0000e+01,-2.4810e+02,-1.4043e+02,0.0000e+00,-2.4665e+02,-1.3750e+02,-5.2536e+01,-2.4674e+02,-1.3765e+02,-5.2608e+01,-2.4762e+02,-1.3936e+02,-5.3527e+01,-2.4810e+02,-1.4043e+02,-5.4151e+01,-2.4810e+02,-1.4043e+02,0.0000e+00,-2.4810e+02,-1.4043e+02,-6.0000e+01,-2.4915e+02,-1.4353e+02,-6.0000e+01,-2.4915e+02,-1.4353e+02,0.0000e+00,-2.4810e+02,-1.4043e+02,-5.4151e+01,-2.4868e+02,-1.4198e+02,-5.5027e+01,-2.4915e+02,-1.4353e+02,-5.5971e+01,-2.4915e+02,-1.4353e+02,0.0000e+00,-2.4915e+02,-1.4353e+02,-6.0000e+01,-2.4979e+02,-1.4674e+02,-6.0000e+01,-2.4979e+02,-1.4674e+02,0.0000e+00,-2.4915e+02,-1.4353e+02,-5.5971e+01,-2.4942e+02,-1.4463e+02,-5.6630e+01,-2.4979e+02,-1.4674e+02,-5.7945e+01,-2.4979e+02,-1.4674e+02,0.0000e+00,-2.4979e+02,-1.4674e+02,-6.0000e+01,-2.5000e+02,-1.5000e+02,-6.0000e+01,-2.5000e+02,-1.5000e+02,0.0000e+00,-2.4979e+02,-1.4674e+02,-5.7945e+01,-2.4985e+02,-1.4731e+02,-5.8299e+01,-2.5000e+02,-1.5000e+02,-6.0000e+01,-2.5000e+02,-1.5000e+02,0.0000e+00});
+			return Coordinate_7_384_point;
+		}
+		/** Large attribute array: Normal vector field, scene-graph level=7, element #385, 255 total numbers made up of 85 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getNormal_7_385_vector()
+		{
+			MFVec3f Normal_7_385_vector = new MFVec3f(new double[] {-0.0000e+00,-1.0000e+00,-0.0000e+00,-0.0000e+00,-1.0000e+00,-0.0000e+00,1.3053e-01,-9.9144e-01,-0.0000e+00,1.3053e-01,-9.9144e-01,-0.0000e+00,-0.0000e+00,-1.0000e+00,-0.0000e+00,-0.0000e+00,-1.0000e+00,-0.0000e+00,1.3053e-01,-9.9144e-01,-0.0000e+00,1.3053e-01,-9.9144e-01,-0.0000e+00,1.3053e-01,-9.9144e-01,-0.0000e+00,2.5882e-01,-9.6593e-01,-0.0000e+00,2.5882e-01,-9.6593e-01,-0.0000e+00,1.3053e-01,-9.9144e-01,-0.0000e+00,2.5882e-01,-9.6593e-01,-0.0000e+00,2.5882e-01,-9.6593e-01,-0.0000e+00,2.5882e-01,-9.6593e-01,-0.0000e+00,3.8268e-01,-9.2388e-01,-0.0000e+00,3.8268e-01,-9.2388e-01,-0.0000e+00,2.5882e-01,-9.6593e-01,-0.0000e+00,3.8268e-01,-9.2388e-01,-0.0000e+00,3.8268e-01,-9.2388e-01,-0.0000e+00,3.8268e-01,-9.2388e-01,-0.0000e+00,5.0000e-01,-8.6603e-01,-0.0000e+00,5.0000e-01,-8.6603e-01,-0.0000e+00,3.8268e-01,-9.2388e-01,-0.0000e+00,5.0000e-01,-8.6603e-01,-0.0000e+00,5.0000e-01,-8.6603e-01,-0.0000e+00,5.0000e-01,-8.6603e-01,-0.0000e+00,6.0876e-01,-7.9335e-01,-0.0000e+00,6.0876e-01,-7.9335e-01,-0.0000e+00,5.0000e-01,-8.6603e-01,-0.0000e+00,6.0000e-01,-8.0000e-01,-0.0000e+00,6.0876e-01,-7.9335e-01,-0.0000e+00,6.0876e-01,-7.9335e-01,-0.0000e+00,6.0876e-01,-7.9335e-01,-0.0000e+00,7.0711e-01,-7.0711e-01,-0.0000e+00,7.0711e-01,-7.0711e-01,-0.0000e+00,6.0876e-01,-7.9335e-01,-0.0000e+00,6.5021e-01,-7.5976e-01,-0.0000e+00,6.9709e-01,-7.1698e-01,-0.0000e+00,7.0711e-01,-7.0711e-01,-0.0000e+00,7.0711e-01,-7.0711e-01,-0.0000e+00,7.0711e-01,-7.0711e-01,-0.0000e+00,7.9335e-01,-6.0876e-01,-0.0000e+00,7.9335e-01,-6.0876e-01,-0.0000e+00,7.0711e-01,-7.0711e-01,-0.0000e+00,7.4054e-01,-6.7201e-01,-0.0000e+00,7.8047e-01,-6.2519e-01,-0.0000e+00,7.9335e-01,-6.0876e-01,-0.0000e+00,7.9335e-01,-6.0876e-01,-0.0000e+00,7.9335e-01,-6.0876e-01,-0.0000e+00,8.6603e-01,-5.0000e-01,-0.0000e+00,8.6603e-01,-5.0000e-01,-0.0000e+00,7.9335e-01,-6.0876e-01,-0.0000e+00,8.2807e-01,-5.6062e-01,-0.0000e+00,8.6603e-01,-5.0000e-01,-0.0000e+00,8.6603e-01,-5.0000e-01,-0.0000e+00,8.6603e-01,-5.0000e-01,-0.0000e+00,9.2388e-01,-3.8268e-01,-0.0000e+00,9.2388e-01,-3.8268e-01,-0.0000e+00,8.6603e-01,-5.0000e-01,-0.0000e+00,8.6943e-01,-4.9406e-01,-0.0000e+00,9.0488e-01,-4.2567e-01,-0.0000e+00,9.2388e-01,-3.8268e-01,-0.0000e+00,9.2388e-01,-3.8268e-01,-0.0000e+00,9.2388e-01,-3.8268e-01,-0.0000e+00,9.6593e-01,-2.5882e-01,-0.0000e+00,9.6593e-01,-2.5882e-01,-0.0000e+00,9.2388e-01,-3.8268e-01,-0.0000e+00,9.4711e-01,-3.2092e-01,-0.0000e+00,9.6593e-01,-2.5882e-01,-0.0000e+00,9.6593e-01,-2.5882e-01,-0.0000e+00,9.6593e-01,-2.5882e-01,-0.0000e+00,9.9144e-01,-1.3053e-01,-0.0000e+00,9.9144e-01,-1.3053e-01,-0.0000e+00,9.6593e-01,-2.5882e-01,-0.0000e+00,9.7666e-01,-2.1479e-01,-0.0000e+00,9.9144e-01,-1.3053e-01,-0.0000e+00,9.9144e-01,-1.3053e-01,-0.0000e+00,9.9144e-01,-1.3053e-01,-0.0000e+00,1.0000e+00,-6.1232e-17,-0.0000e+00,1.0000e+00,-6.1232e-17,-0.0000e+00,9.9144e-01,-1.3053e-01,-0.0000e+00,9.9418e-01,-1.0771e-01,-0.0000e+00,1.0000e+00,-6.1232e-17,-0.0000e+00,1.0000e+00,-6.1232e-17,-0.0000e+00});
+			return Normal_7_385_vector;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #403, 102 total numbers made up of 34 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_403_point()
+		{
+			MFVec3f Coordinate_7_403_point = new MFVec3f(new double[] {-1.0134e+02,-9.0000e+01,0.0000e+00,-1.0134e+02,-9.0000e+01,-5.0000e+01,-1.0207e+02,-8.8912e+01,0.0000e+00,-1.0207e+02,-8.8912e+01,-5.0000e+01,-1.0293e+02,-8.7929e+01,0.0000e+00,-1.0293e+02,-8.7929e+01,-5.0000e+01,-1.0391e+02,-8.7066e+01,0.0000e+00,-1.0391e+02,-8.7066e+01,-5.0000e+01,-1.0500e+02,-8.6340e+01,0.0000e+00,-1.0500e+02,-8.6340e+01,-5.0000e+01,-1.0617e+02,-8.5761e+01,0.0000e+00,-1.0617e+02,-8.5761e+01,-5.0000e+01,-1.0741e+02,-8.5341e+01,0.0000e+00,-1.0741e+02,-8.5341e+01,-5.0000e+01,-1.0869e+02,-8.5086e+01,0.0000e+00,-1.0869e+02,-8.5086e+01,-5.0000e+01,-1.1000e+02,-8.5000e+01,0.0000e+00,-1.1000e+02,-8.5000e+01,-5.0000e+01,-1.1131e+02,-8.5086e+01,0.0000e+00,-1.1131e+02,-8.5086e+01,-5.0000e+01,-1.1259e+02,-8.5341e+01,0.0000e+00,-1.1259e+02,-8.5341e+01,-5.0000e+01,-1.1383e+02,-8.5761e+01,0.0000e+00,-1.1383e+02,-8.5761e+01,-5.0000e+01,-1.1500e+02,-8.6340e+01,0.0000e+00,-1.1500e+02,-8.6340e+01,-5.0000e+01,-1.1609e+02,-8.7066e+01,0.0000e+00,-1.1609e+02,-8.7066e+01,-5.0000e+01,-1.1707e+02,-8.7929e+01,0.0000e+00,-1.1707e+02,-8.7929e+01,-5.0000e+01,-1.1793e+02,-8.8912e+01,0.0000e+00,-1.1793e+02,-8.8912e+01,-5.0000e+01,-1.1866e+02,-9.0000e+01,0.0000e+00,-1.1866e+02,-9.0000e+01,-5.0000e+01});
+			return Coordinate_7_403_point;
+		}
+		/** Large attribute array: Normal vector field, scene-graph level=7, element #404, 102 total numbers made up of 34 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getNormal_7_404_vector()
+		{
+			MFVec3f Normal_7_404_vector = new MFVec3f(new double[] {-8.6603e-01,-5.0000e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-0.0000e+00,-1.0000e+00,-0.0000e+00,-0.0000e+00,-1.0000e+00,-0.0000e+00,1.3053e-01,-9.9144e-01,-0.0000e+00,1.3053e-01,-9.9144e-01,-0.0000e+00,2.5882e-01,-9.6593e-01,-0.0000e+00,2.5882e-01,-9.6593e-01,-0.0000e+00,3.8268e-01,-9.2388e-01,-0.0000e+00,3.8268e-01,-9.2388e-01,-0.0000e+00,5.0000e-01,-8.6603e-01,-0.0000e+00,5.0000e-01,-8.6603e-01,-0.0000e+00,6.0876e-01,-7.9335e-01,-0.0000e+00,6.0876e-01,-7.9335e-01,-0.0000e+00,7.0711e-01,-7.0711e-01,-0.0000e+00,7.0711e-01,-7.0711e-01,-0.0000e+00,7.9335e-01,-6.0876e-01,-0.0000e+00,7.9335e-01,-6.0876e-01,-0.0000e+00,8.6603e-01,-5.0000e-01,-0.0000e+00,8.6603e-01,-5.0000e-01,-0.0000e+00});
+			return Normal_7_404_vector;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #422, 150 total numbers made up of 50 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_422_point()
+		{
+			MFVec3f Coordinate_7_422_point = new MFVec3f(new double[] {-3.2500e+02,2.0000e+01,0.0000e+00,-3.2500e+02,2.0000e+01,-5.0000e+01,-3.2761e+02,1.9829e+01,0.0000e+00,-3.2761e+02,1.9829e+01,-5.0000e+01,-3.3018e+02,1.9319e+01,0.0000e+00,-3.3018e+02,1.9319e+01,-5.0000e+01,-3.3265e+02,1.8478e+01,0.0000e+00,-3.3265e+02,1.8478e+01,-5.0000e+01,-3.3500e+02,1.7321e+01,0.0000e+00,-3.3500e+02,1.7321e+01,-5.0000e+01,-3.3718e+02,1.5867e+01,0.0000e+00,-3.3718e+02,1.5867e+01,-5.0000e+01,-3.3914e+02,1.4142e+01,0.0000e+00,-3.3914e+02,1.4142e+01,-5.0000e+01,-3.4087e+02,1.2175e+01,0.0000e+00,-3.4087e+02,1.2175e+01,-5.0000e+01,-3.4232e+02,1.0000e+01,0.0000e+00,-3.4232e+02,1.0000e+01,-5.0000e+01,-3.4348e+02,7.6537e+00,0.0000e+00,-3.4348e+02,7.6537e+00,-5.0000e+01,-3.4432e+02,5.1764e+00,0.0000e+00,-3.4432e+02,5.1764e+00,-5.0000e+01,-3.4483e+02,2.6105e+00,0.0000e+00,-3.4483e+02,2.6105e+00,-5.0000e+01,-3.4500e+02,-3.4302e-14,0.0000e+00,-3.4500e+02,-3.4302e-14,-5.0000e+01,-3.4483e+02,-2.6105e+00,0.0000e+00,-3.4483e+02,-2.6105e+00,-5.0000e+01,-3.4432e+02,-5.1764e+00,0.0000e+00,-3.4432e+02,-5.1764e+00,-5.0000e+01,-3.4348e+02,-7.6537e+00,0.0000e+00,-3.4348e+02,-7.6537e+00,-5.0000e+01,-3.4232e+02,-1.0000e+01,0.0000e+00,-3.4232e+02,-1.0000e+01,-5.0000e+01,-3.4087e+02,-1.2175e+01,0.0000e+00,-3.4087e+02,-1.2175e+01,-5.0000e+01,-3.3914e+02,-1.4142e+01,0.0000e+00,-3.3914e+02,-1.4142e+01,-5.0000e+01,-3.3718e+02,-1.5867e+01,0.0000e+00,-3.3718e+02,-1.5867e+01,-5.0000e+01,-3.3500e+02,-1.7321e+01,0.0000e+00,-3.3500e+02,-1.7321e+01,-5.0000e+01,-3.3265e+02,-1.8478e+01,0.0000e+00,-3.3265e+02,-1.8478e+01,-5.0000e+01,-3.3018e+02,-1.9319e+01,0.0000e+00,-3.3018e+02,-1.9319e+01,-5.0000e+01,-3.2761e+02,-1.9829e+01,0.0000e+00,-3.2761e+02,-1.9829e+01,-5.0000e+01,-3.2500e+02,-2.0000e+01,0.0000e+00,-3.2500e+02,-2.0000e+01,-5.0000e+01});
+			return Coordinate_7_422_point;
+		}
+		/** Large attribute array: Normal vector field, scene-graph level=7, element #423, 150 total numbers made up of 50 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getNormal_7_423_vector()
+		{
+			MFVec3f Normal_7_423_vector = new MFVec3f(new double[] {-0.0000e+00,-1.0000e+00,-0.0000e+00,-0.0000e+00,-1.0000e+00,-0.0000e+00,1.3053e-01,-9.9144e-01,-0.0000e+00,1.3053e-01,-9.9144e-01,-0.0000e+00,2.5882e-01,-9.6593e-01,-0.0000e+00,2.5882e-01,-9.6593e-01,-0.0000e+00,3.8268e-01,-9.2388e-01,-0.0000e+00,3.8268e-01,-9.2388e-01,-0.0000e+00,5.0000e-01,-8.6603e-01,-0.0000e+00,5.0000e-01,-8.6603e-01,-0.0000e+00,6.0876e-01,-7.9335e-01,-0.0000e+00,6.0876e-01,-7.9335e-01,-0.0000e+00,7.0711e-01,-7.0711e-01,-0.0000e+00,7.0711e-01,-7.0711e-01,-0.0000e+00,7.9335e-01,-6.0876e-01,-0.0000e+00,7.9335e-01,-6.0876e-01,-0.0000e+00,8.6603e-01,-5.0000e-01,-0.0000e+00,8.6603e-01,-5.0000e-01,-0.0000e+00,9.2388e-01,-3.8268e-01,-0.0000e+00,9.2388e-01,-3.8268e-01,-0.0000e+00,9.6593e-01,-2.5882e-01,-0.0000e+00,9.6593e-01,-2.5882e-01,-0.0000e+00,9.9144e-01,-1.3053e-01,-0.0000e+00,9.9144e-01,-1.3053e-01,-0.0000e+00,1.0000e+00,-6.1232e-17,-0.0000e+00,1.0000e+00,-6.1232e-17,-0.0000e+00,9.9144e-01,1.3053e-01,-0.0000e+00,9.9144e-01,1.3053e-01,-0.0000e+00,9.6593e-01,2.5882e-01,-0.0000e+00,9.6593e-01,2.5882e-01,-0.0000e+00,9.2388e-01,3.8268e-01,-0.0000e+00,9.2388e-01,3.8268e-01,-0.0000e+00,8.6603e-01,5.0000e-01,-0.0000e+00,8.6603e-01,5.0000e-01,-0.0000e+00,7.9335e-01,6.0876e-01,-0.0000e+00,7.9335e-01,6.0876e-01,-0.0000e+00,7.0711e-01,7.0711e-01,-0.0000e+00,7.0711e-01,7.0711e-01,-0.0000e+00,6.0876e-01,7.9335e-01,-0.0000e+00,6.0876e-01,7.9335e-01,-0.0000e+00,5.0000e-01,8.6603e-01,-0.0000e+00,5.0000e-01,8.6603e-01,-0.0000e+00,3.8268e-01,9.2388e-01,-0.0000e+00,3.8268e-01,9.2388e-01,-0.0000e+00,2.5882e-01,9.6593e-01,-0.0000e+00,2.5882e-01,9.6593e-01,-0.0000e+00,1.3053e-01,9.9144e-01,-0.0000e+00,1.3053e-01,9.9144e-01,-0.0000e+00,1.2246e-16,1.0000e+00,-0.0000e+00,1.2246e-16,1.0000e+00,-0.0000e+00});
+			return Normal_7_423_vector;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #429, 153 total numbers made up of 51 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_429_point()
+		{
+			MFVec3f Coordinate_7_429_point = new MFVec3f(new double[] {-3.4214e+02,-1.7852e+02,-1.0000e+02,-3.4108e+02,-1.8190e+02,-1.0000e+02,-3.3936e+02,-1.8500e+02,-1.0000e+02,-3.3706e+02,-1.8768e+02,-1.0000e+02,-3.3426e+02,-1.8985e+02,-1.0000e+02,-3.3108e+02,-1.9141e+02,-1.0000e+02,-3.2765e+02,-1.9230e+02,-1.0000e+02,-3.2411e+02,-1.9248e+02,-1.0000e+02,-3.2061e+02,-1.9194e+02,-1.0000e+02,-3.1729e+02,-1.9071e+02,-1.0000e+02,-3.1429e+02,-1.8884e+02,-1.0000e+02,-3.1172e+02,-1.8640e+02,-1.0000e+02,-3.0970e+02,-1.8349e+02,-1.0000e+02,-3.0830e+02,-1.8024e+02,-1.0000e+02,-3.0759e+02,-1.7677e+02,-1.0000e+02,-3.0759e+02,-1.7323e+02,-1.0000e+02,-3.0830e+02,-1.6976e+02,-1.0000e+02,-3.0970e+02,-1.6651e+02,-1.0000e+02,-3.1172e+02,-1.6360e+02,-1.0000e+02,-3.1429e+02,-1.6116e+02,-1.0000e+02,-3.1729e+02,-1.5929e+02,-1.0000e+02,-3.2061e+02,-1.5806e+02,-1.0000e+02,-3.2411e+02,-1.5752e+02,-1.0000e+02,-3.2765e+02,-1.5770e+02,-1.0000e+02,-3.3108e+02,-1.5859e+02,-1.0000e+02,-3.3426e+02,-1.6015e+02,-1.0000e+02,-3.3706e+02,-1.6232e+02,-1.0000e+02,-3.3936e+02,-1.6500e+02,-1.0000e+02,-3.4108e+02,-1.6810e+02,-1.0000e+02,-3.4214e+02,-1.7148e+02,-1.0000e+02,-3.4250e+02,-1.7500e+02,-1.0000e+02,-2.5000e+02,-1.2500e+02,-1.0000e+02,-2.5000e+02,-1.7500e+02,-1.0000e+02,-2.5096e+02,-1.8475e+02,-1.0000e+02,-2.5381e+02,-1.9413e+02,-1.0000e+02,-2.5843e+02,-2.0278e+02,-1.0000e+02,-2.6464e+02,-2.1036e+02,-1.0000e+02,-2.7222e+02,-2.1657e+02,-1.0000e+02,-2.8087e+02,-2.2119e+02,-1.0000e+02,-2.9025e+02,-2.2404e+02,-1.0000e+02,-3.0000e+02,-2.2500e+02,-1.0000e+02,-3.5000e+02,-2.2500e+02,-1.0000e+02,-3.5975e+02,-2.2404e+02,-1.0000e+02,-3.6913e+02,-2.2119e+02,-1.0000e+02,-3.7778e+02,-2.1657e+02,-1.0000e+02,-3.8536e+02,-2.1036e+02,-1.0000e+02,-3.9157e+02,-2.0278e+02,-1.0000e+02,-3.9619e+02,-1.9413e+02,-1.0000e+02,-3.9904e+02,-1.8475e+02,-1.0000e+02,-4.0000e+02,-1.7500e+02,-1.0000e+02,-4.0000e+02,-1.2500e+02,-1.0000e+02});
+			return Coordinate_7_429_point;
+		}
+		/** Large attribute array: IndexedTriangleSet index field, scene-graph level=6, element #477, 948 total numbers.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFInt32 getIndexedTriangleSet_6_477_index()
+		{
+			MFInt32 IndexedTriangleSet_6_477_index = new MFInt32()/*2.finalize*/
+				.append(new MFInt32(getIndexedTriangleSet_6_477_index_1()));
+			return IndexedTriangleSet_6_477_index;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #477, 921 total numbers made up of 307 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_477_point()
+		{
+			MFVec3f Coordinate_7_477_point = new MFVec3f()/*2.finalize*/
+				.append(new MFVec3f(getCoordinate_7_477_point_1()))
+				.append(new MFVec3f(getCoordinate_7_477_point_2()))
+				.append(new MFVec3f(getCoordinate_7_477_point_3()))
+				.append(new MFVec3f(getCoordinate_7_477_point_4()));
+			return Coordinate_7_477_point;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #507, 288 total numbers made up of 96 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_507_point()
+		{
+			MFVec3f Coordinate_7_507_point = new MFVec3f(new double[] {-3.0000e+01,-8.0000e+01,-1.5000e+01,-3.1305e+01,-8.0000e+01,-1.5086e+01,-3.2588e+01,-8.0000e+01,-1.5341e+01,-3.3827e+01,-8.0000e+01,-1.5761e+01,-3.5000e+01,-8.0000e+01,-1.6340e+01,-3.6088e+01,-8.0000e+01,-1.7066e+01,-3.7071e+01,-8.0000e+01,-1.7929e+01,-3.7934e+01,-8.0000e+01,-1.8912e+01,-3.8660e+01,-8.0000e+01,-2.0000e+01,-3.9239e+01,-8.0000e+01,-2.1173e+01,-3.9659e+01,-8.0000e+01,-2.2412e+01,-3.9914e+01,-8.0000e+01,-2.3695e+01,-4.0000e+01,-8.0000e+01,-2.5000e+01,-3.9914e+01,-8.0000e+01,-2.6305e+01,-3.9659e+01,-8.0000e+01,-2.7588e+01,-3.9239e+01,-8.0000e+01,-2.8827e+01,-3.8660e+01,-8.0000e+01,-3.0000e+01,-3.7934e+01,-8.0000e+01,-3.1088e+01,-3.7071e+01,-8.0000e+01,-3.2071e+01,-3.6088e+01,-8.0000e+01,-3.2934e+01,-3.5000e+01,-8.0000e+01,-3.3660e+01,-3.3827e+01,-8.0000e+01,-3.4239e+01,-3.2588e+01,-8.0000e+01,-3.4659e+01,-3.1305e+01,-8.0000e+01,-3.4914e+01,-3.0000e+01,-8.0000e+01,-3.5000e+01,-2.8695e+01,-8.0000e+01,-3.4914e+01,-2.7412e+01,-8.0000e+01,-3.4659e+01,-2.6173e+01,-8.0000e+01,-3.4239e+01,-2.5000e+01,-8.0000e+01,-3.3660e+01,-2.3912e+01,-8.0000e+01,-3.2934e+01,-2.2929e+01,-8.0000e+01,-3.2071e+01,-2.2066e+01,-8.0000e+01,-3.1088e+01,-2.1340e+01,-8.0000e+01,-3.0000e+01,-2.0761e+01,-8.0000e+01,-2.8827e+01,-2.0341e+01,-8.0000e+01,-2.7588e+01,-2.0086e+01,-8.0000e+01,-2.6305e+01,-2.0000e+01,-8.0000e+01,-2.5000e+01,-2.0086e+01,-8.0000e+01,-2.3695e+01,-2.0341e+01,-8.0000e+01,-2.2412e+01,-2.0761e+01,-8.0000e+01,-2.1173e+01,-2.1340e+01,-8.0000e+01,-2.0000e+01,-2.2066e+01,-8.0000e+01,-1.8912e+01,-2.2929e+01,-8.0000e+01,-1.7929e+01,-2.3912e+01,-8.0000e+01,-1.7066e+01,-2.5000e+01,-8.0000e+01,-1.6340e+01,-2.6173e+01,-8.0000e+01,-1.5761e+01,-2.7412e+01,-8.0000e+01,-1.5341e+01,-2.8695e+01,-8.0000e+01,-1.5086e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01,-3.0000e+01,-7.3991e+01,-2.5000e+01});
+			return Coordinate_7_507_point;
+		}
+		/** Large attribute array: Normal vector field, scene-graph level=7, element #508, 288 total numbers made up of 96 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getNormal_7_508_vector()
+		{
+			MFVec3f Normal_7_508_vector = new MFVec3f(new double[] {-0.0000e+00,-8.5717e-01,-5.1504e-01,6.7226e-02,-8.5717e-01,-5.1063e-01,1.3330e-01,-8.5717e-01,-4.9749e-01,1.9710e-01,-8.5717e-01,-4.7583e-01,2.5752e-01,-8.5717e-01,-4.4604e-01,3.1354e-01,-8.5717e-01,-4.0861e-01,3.6419e-01,-8.5717e-01,-3.6419e-01,4.0861e-01,-8.5717e-01,-3.1354e-01,4.4604e-01,-8.5717e-01,-2.5752e-01,4.7583e-01,-8.5717e-01,-1.9710e-01,4.9749e-01,-8.5717e-01,-1.3330e-01,5.1063e-01,-8.5717e-01,-6.7226e-02,5.1504e-01,-8.5717e-01,-3.1537e-17,5.1063e-01,-8.5717e-01,6.7226e-02,4.9749e-01,-8.5717e-01,1.3330e-01,4.7583e-01,-8.5717e-01,1.9710e-01,4.4604e-01,-8.5717e-01,2.5752e-01,4.0861e-01,-8.5717e-01,3.1354e-01,3.6419e-01,-8.5717e-01,3.6419e-01,3.1354e-01,-8.5717e-01,4.0861e-01,2.5752e-01,-8.5717e-01,4.4604e-01,1.9710e-01,-8.5717e-01,4.7583e-01,1.3330e-01,-8.5717e-01,4.9749e-01,6.7226e-02,-8.5717e-01,5.1063e-01,6.3074e-17,-8.5717e-01,5.1504e-01,-6.7226e-02,-8.5717e-01,5.1063e-01,-1.3330e-01,-8.5717e-01,4.9749e-01,-1.9710e-01,-8.5717e-01,4.7583e-01,-2.5752e-01,-8.5717e-01,4.4604e-01,-3.1354e-01,-8.5717e-01,4.0861e-01,-3.6419e-01,-8.5717e-01,3.6419e-01,-4.0861e-01,-8.5717e-01,3.1354e-01,-4.4604e-01,-8.5717e-01,2.5752e-01,-4.7583e-01,-8.5717e-01,1.9710e-01,-4.9749e-01,-8.5717e-01,1.3330e-01,-5.1063e-01,-8.5717e-01,6.7226e-02,-5.1504e-01,-8.5717e-01,9.4611e-17,-5.1063e-01,-8.5717e-01,-6.7226e-02,-4.9749e-01,-8.5717e-01,-1.3330e-01,-4.7583e-01,-8.5717e-01,-1.9710e-01,-4.4604e-01,-8.5717e-01,-2.5752e-01,-4.0861e-01,-8.5717e-01,-3.1354e-01,-3.6419e-01,-8.5717e-01,-3.6419e-01,-3.1354e-01,-8.5717e-01,-4.0861e-01,-2.5752e-01,-8.5717e-01,-4.4604e-01,-1.9710e-01,-8.5717e-01,-4.7583e-01,-1.3330e-01,-8.5717e-01,-4.9749e-01,-6.7226e-02,-8.5717e-01,-5.1063e-01,3.3685e-02,-8.5717e-01,-5.1394e-01,1.0048e-01,-8.5717e-01,-5.0514e-01,1.6555e-01,-8.5717e-01,-4.8771e-01,2.2780e-01,-8.5717e-01,-4.6192e-01,2.8614e-01,-8.5717e-01,-4.2824e-01,3.3959e-01,-8.5717e-01,-3.8723e-01,3.8723e-01,-8.5717e-01,-3.3959e-01,4.2824e-01,-8.5717e-01,-2.8614e-01,4.6192e-01,-8.5717e-01,-2.2780e-01,4.8771e-01,-8.5717e-01,-1.6555e-01,5.0514e-01,-8.5717e-01,-1.0048e-01,5.1394e-01,-8.5717e-01,-3.3685e-02,5.1394e-01,-8.5717e-01,3.3685e-02,5.0514e-01,-8.5717e-01,1.0048e-01,4.8771e-01,-8.5717e-01,1.6555e-01,4.6192e-01,-8.5717e-01,2.2780e-01,4.2824e-01,-8.5717e-01,2.8614e-01,3.8723e-01,-8.5717e-01,3.3959e-01,3.3959e-01,-8.5717e-01,3.8723e-01,2.8614e-01,-8.5717e-01,4.2824e-01,2.2780e-01,-8.5717e-01,4.6192e-01,1.6555e-01,-8.5717e-01,4.8771e-01,1.0048e-01,-8.5717e-01,5.0514e-01,3.3685e-02,-8.5717e-01,5.1394e-01,-3.3685e-02,-8.5717e-01,5.1394e-01,-1.0048e-01,-8.5717e-01,5.0514e-01,-1.6555e-01,-8.5717e-01,4.8771e-01,-2.2780e-01,-8.5717e-01,4.6192e-01,-2.8614e-01,-8.5717e-01,4.2824e-01,-3.3959e-01,-8.5717e-01,3.8723e-01,-3.8723e-01,-8.5717e-01,3.3959e-01,-4.2824e-01,-8.5717e-01,2.8614e-01,-4.6192e-01,-8.5717e-01,2.2780e-01,-4.8771e-01,-8.5717e-01,1.6555e-01,-5.0514e-01,-8.5717e-01,1.0048e-01,-5.1394e-01,-8.5717e-01,3.3685e-02,-5.1394e-01,-8.5717e-01,-3.3685e-02,-5.0514e-01,-8.5717e-01,-1.0048e-01,-4.8771e-01,-8.5717e-01,-1.6555e-01,-4.6192e-01,-8.5717e-01,-2.2780e-01,-4.2824e-01,-8.5717e-01,-2.8614e-01,-3.8723e-01,-8.5717e-01,-3.3959e-01,-3.3959e-01,-8.5717e-01,-3.8723e-01,-2.8614e-01,-8.5717e-01,-4.2824e-01,-2.2780e-01,-8.5717e-01,-4.6192e-01,-1.6555e-01,-8.5717e-01,-4.8771e-01,-1.0048e-01,-8.5717e-01,-5.0514e-01,-3.3685e-02,-8.5717e-01,-5.1394e-01});
+			return Normal_7_508_vector;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #514, 288 total numbers made up of 96 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_514_point()
+		{
+			MFVec3f Coordinate_7_514_point = new MFVec3f(new double[] {-3.0000e+01,-8.0000e+01,-3.5000e+01,-3.0000e+01,-1.2500e+02,-3.5000e+01,-3.1305e+01,-8.0000e+01,-3.4914e+01,-3.1305e+01,-1.2500e+02,-3.4914e+01,-3.2588e+01,-8.0000e+01,-3.4659e+01,-3.2588e+01,-1.2500e+02,-3.4659e+01,-3.3827e+01,-8.0000e+01,-3.4239e+01,-3.3827e+01,-1.2500e+02,-3.4239e+01,-3.5000e+01,-8.0000e+01,-3.3660e+01,-3.5000e+01,-1.2500e+02,-3.3660e+01,-3.6088e+01,-8.0000e+01,-3.2934e+01,-3.6088e+01,-1.2500e+02,-3.2934e+01,-3.7071e+01,-8.0000e+01,-3.2071e+01,-3.7071e+01,-1.2500e+02,-3.2071e+01,-3.7934e+01,-8.0000e+01,-3.1088e+01,-3.7934e+01,-1.2500e+02,-3.1088e+01,-3.8660e+01,-8.0000e+01,-3.0000e+01,-3.8660e+01,-1.2500e+02,-3.0000e+01,-3.9239e+01,-8.0000e+01,-2.8827e+01,-3.9239e+01,-1.2500e+02,-2.8827e+01,-3.9659e+01,-8.0000e+01,-2.7588e+01,-3.9659e+01,-1.2500e+02,-2.7588e+01,-3.9914e+01,-8.0000e+01,-2.6305e+01,-3.9914e+01,-1.2500e+02,-2.6305e+01,-4.0000e+01,-8.0000e+01,-2.5000e+01,-4.0000e+01,-1.2500e+02,-2.5000e+01,-3.9914e+01,-8.0000e+01,-2.3695e+01,-3.9914e+01,-1.2500e+02,-2.3695e+01,-3.9659e+01,-8.0000e+01,-2.2412e+01,-3.9659e+01,-1.2500e+02,-2.2412e+01,-3.9239e+01,-8.0000e+01,-2.1173e+01,-3.9239e+01,-1.2500e+02,-2.1173e+01,-3.8660e+01,-8.0000e+01,-2.0000e+01,-3.8660e+01,-1.2500e+02,-2.0000e+01,-3.7934e+01,-8.0000e+01,-1.8912e+01,-3.7934e+01,-1.2500e+02,-1.8912e+01,-3.7071e+01,-8.0000e+01,-1.7929e+01,-3.7071e+01,-1.2500e+02,-1.7929e+01,-3.6088e+01,-8.0000e+01,-1.7066e+01,-3.6088e+01,-1.2500e+02,-1.7066e+01,-3.5000e+01,-8.0000e+01,-1.6340e+01,-3.5000e+01,-1.2500e+02,-1.6340e+01,-3.3827e+01,-8.0000e+01,-1.5761e+01,-3.3827e+01,-1.2500e+02,-1.5761e+01,-3.2588e+01,-8.0000e+01,-1.5341e+01,-3.2588e+01,-1.2500e+02,-1.5341e+01,-3.1305e+01,-8.0000e+01,-1.5086e+01,-3.1305e+01,-1.2500e+02,-1.5086e+01,-3.0000e+01,-8.0000e+01,-1.5000e+01,-3.0000e+01,-1.2500e+02,-1.5000e+01,-2.8695e+01,-8.0000e+01,-1.5086e+01,-2.8695e+01,-1.2500e+02,-1.5086e+01,-2.7412e+01,-8.0000e+01,-1.5341e+01,-2.7412e+01,-1.2500e+02,-1.5341e+01,-2.6173e+01,-8.0000e+01,-1.5761e+01,-2.6173e+01,-1.2500e+02,-1.5761e+01,-2.5000e+01,-8.0000e+01,-1.6340e+01,-2.5000e+01,-1.2500e+02,-1.6340e+01,-2.3912e+01,-8.0000e+01,-1.7066e+01,-2.3912e+01,-1.2500e+02,-1.7066e+01,-2.2929e+01,-8.0000e+01,-1.7929e+01,-2.2929e+01,-1.2500e+02,-1.7929e+01,-2.2066e+01,-8.0000e+01,-1.8912e+01,-2.2066e+01,-1.2500e+02,-1.8912e+01,-2.1340e+01,-8.0000e+01,-2.0000e+01,-2.1340e+01,-1.2500e+02,-2.0000e+01,-2.0761e+01,-8.0000e+01,-2.1173e+01,-2.0761e+01,-1.2500e+02,-2.1173e+01,-2.0341e+01,-8.0000e+01,-2.2412e+01,-2.0341e+01,-1.2500e+02,-2.2412e+01,-2.0086e+01,-8.0000e+01,-2.3695e+01,-2.0086e+01,-1.2500e+02,-2.3695e+01,-2.0000e+01,-8.0000e+01,-2.5000e+01,-2.0000e+01,-1.2500e+02,-2.5000e+01,-2.0086e+01,-8.0000e+01,-2.6305e+01,-2.0086e+01,-1.2500e+02,-2.6305e+01,-2.0341e+01,-8.0000e+01,-2.7588e+01,-2.0341e+01,-1.2500e+02,-2.7588e+01,-2.0761e+01,-8.0000e+01,-2.8827e+01,-2.0761e+01,-1.2500e+02,-2.8827e+01,-2.1340e+01,-8.0000e+01,-3.0000e+01,-2.1340e+01,-1.2500e+02,-3.0000e+01,-2.2066e+01,-8.0000e+01,-3.1088e+01,-2.2066e+01,-1.2500e+02,-3.1088e+01,-2.2929e+01,-8.0000e+01,-3.2071e+01,-2.2929e+01,-1.2500e+02,-3.2071e+01,-2.3912e+01,-8.0000e+01,-3.2934e+01,-2.3912e+01,-1.2500e+02,-3.2934e+01,-2.5000e+01,-8.0000e+01,-3.3660e+01,-2.5000e+01,-1.2500e+02,-3.3660e+01,-2.6173e+01,-8.0000e+01,-3.4239e+01,-2.6173e+01,-1.2500e+02,-3.4239e+01,-2.7412e+01,-8.0000e+01,-3.4659e+01,-2.7412e+01,-1.2500e+02,-3.4659e+01,-2.8695e+01,-8.0000e+01,-3.4914e+01,-2.8695e+01,-1.2500e+02,-3.4914e+01});
+			return Coordinate_7_514_point;
+		}
+		/** Large attribute array: Normal vector field, scene-graph level=7, element #515, 288 total numbers made up of 96 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getNormal_7_515_vector()
+		{
+			MFVec3f Normal_7_515_vector = new MFVec3f(new double[] {-0.0000e+00,-0.0000e+00,1.0000e+00,-0.0000e+00,-0.0000e+00,1.0000e+00,1.3053e-01,-0.0000e+00,9.9144e-01,1.3053e-01,-0.0000e+00,9.9144e-01,2.5882e-01,-0.0000e+00,9.6593e-01,2.5882e-01,-0.0000e+00,9.6593e-01,3.8268e-01,-0.0000e+00,9.2388e-01,3.8268e-01,-0.0000e+00,9.2388e-01,5.0000e-01,-0.0000e+00,8.6603e-01,5.0000e-01,-0.0000e+00,8.6603e-01,6.0876e-01,-0.0000e+00,7.9335e-01,6.0876e-01,-0.0000e+00,7.9335e-01,7.0711e-01,-0.0000e+00,7.0711e-01,7.0711e-01,-0.0000e+00,7.0711e-01,7.9335e-01,-0.0000e+00,6.0876e-01,7.9335e-01,-0.0000e+00,6.0876e-01,8.6603e-01,-0.0000e+00,5.0000e-01,8.6603e-01,-0.0000e+00,5.0000e-01,9.2388e-01,-0.0000e+00,3.8268e-01,9.2388e-01,-0.0000e+00,3.8268e-01,9.6593e-01,-0.0000e+00,2.5882e-01,9.6593e-01,-0.0000e+00,2.5882e-01,9.9144e-01,-0.0000e+00,1.3053e-01,9.9144e-01,-0.0000e+00,1.3053e-01,1.0000e+00,-0.0000e+00,6.1232e-17,1.0000e+00,-0.0000e+00,6.1232e-17,9.9144e-01,-0.0000e+00,-1.3053e-01,9.9144e-01,-0.0000e+00,-1.3053e-01,9.6593e-01,-0.0000e+00,-2.5882e-01,9.6593e-01,-0.0000e+00,-2.5882e-01,9.2388e-01,-0.0000e+00,-3.8268e-01,9.2388e-01,-0.0000e+00,-3.8268e-01,8.6603e-01,-0.0000e+00,-5.0000e-01,8.6603e-01,-0.0000e+00,-5.0000e-01,7.9335e-01,-0.0000e+00,-6.0876e-01,7.9335e-01,-0.0000e+00,-6.0876e-01,7.0711e-01,-0.0000e+00,-7.0711e-01,7.0711e-01,-0.0000e+00,-7.0711e-01,6.0876e-01,-0.0000e+00,-7.9335e-01,6.0876e-01,-0.0000e+00,-7.9335e-01,5.0000e-01,-0.0000e+00,-8.6603e-01,5.0000e-01,-0.0000e+00,-8.6603e-01,3.8268e-01,-0.0000e+00,-9.2388e-01,3.8268e-01,-0.0000e+00,-9.2388e-01,2.5882e-01,-0.0000e+00,-9.6593e-01,2.5882e-01,-0.0000e+00,-9.6593e-01,1.3053e-01,-0.0000e+00,-9.9144e-01,1.3053e-01,-0.0000e+00,-9.9144e-01,1.2246e-16,-0.0000e+00,-1.0000e+00,1.2246e-16,-0.0000e+00,-1.0000e+00,-1.3053e-01,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-9.9144e-01,-2.5882e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.6593e-01,-3.8268e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-9.2388e-01,-5.0000e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-8.6603e-01,-6.0876e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-7.9335e-01,-7.0711e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-7.0711e-01,-7.9335e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-6.0876e-01,-8.6603e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-5.0000e-01,-9.2388e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-3.8268e-01,-9.6593e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-2.5882e-01,-9.9144e-01,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-1.3053e-01,-1.0000e+00,-0.0000e+00,-1.8370e-16,-1.0000e+00,-0.0000e+00,-1.8370e-16,-9.9144e-01,-0.0000e+00,1.3053e-01,-9.9144e-01,-0.0000e+00,1.3053e-01,-9.6593e-01,-0.0000e+00,2.5882e-01,-9.6593e-01,-0.0000e+00,2.5882e-01,-9.2388e-01,-0.0000e+00,3.8268e-01,-9.2388e-01,-0.0000e+00,3.8268e-01,-8.6603e-01,-0.0000e+00,5.0000e-01,-8.6603e-01,-0.0000e+00,5.0000e-01,-7.9335e-01,-0.0000e+00,6.0876e-01,-7.9335e-01,-0.0000e+00,6.0876e-01,-7.0711e-01,-0.0000e+00,7.0711e-01,-7.0711e-01,-0.0000e+00,7.0711e-01,-6.0876e-01,-0.0000e+00,7.9335e-01,-6.0876e-01,-0.0000e+00,7.9335e-01,-5.0000e-01,-0.0000e+00,8.6603e-01,-5.0000e-01,-0.0000e+00,8.6603e-01,-3.8268e-01,-0.0000e+00,9.2388e-01,-3.8268e-01,-0.0000e+00,9.2388e-01,-2.5882e-01,-0.0000e+00,9.6593e-01,-2.5882e-01,-0.0000e+00,9.6593e-01,-1.3053e-01,-0.0000e+00,9.9144e-01,-1.3053e-01,-0.0000e+00,9.9144e-01});
+			return Normal_7_515_vector;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #521, 288 total numbers made up of 96 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_521_point()
+		{
+			MFVec3f Coordinate_7_521_point = new MFVec3f(new double[] {3.0000e+01,-8.0000e+01,-1.5000e+01,2.8695e+01,-8.0000e+01,-1.5086e+01,2.7412e+01,-8.0000e+01,-1.5341e+01,2.6173e+01,-8.0000e+01,-1.5761e+01,2.5000e+01,-8.0000e+01,-1.6340e+01,2.3912e+01,-8.0000e+01,-1.7066e+01,2.2929e+01,-8.0000e+01,-1.7929e+01,2.2066e+01,-8.0000e+01,-1.8912e+01,2.1340e+01,-8.0000e+01,-2.0000e+01,2.0761e+01,-8.0000e+01,-2.1173e+01,2.0341e+01,-8.0000e+01,-2.2412e+01,2.0086e+01,-8.0000e+01,-2.3695e+01,2.0000e+01,-8.0000e+01,-2.5000e+01,2.0086e+01,-8.0000e+01,-2.6305e+01,2.0341e+01,-8.0000e+01,-2.7588e+01,2.0761e+01,-8.0000e+01,-2.8827e+01,2.1340e+01,-8.0000e+01,-3.0000e+01,2.2066e+01,-8.0000e+01,-3.1088e+01,2.2929e+01,-8.0000e+01,-3.2071e+01,2.3912e+01,-8.0000e+01,-3.2934e+01,2.5000e+01,-8.0000e+01,-3.3660e+01,2.6173e+01,-8.0000e+01,-3.4239e+01,2.7412e+01,-8.0000e+01,-3.4659e+01,2.8695e+01,-8.0000e+01,-3.4914e+01,3.0000e+01,-8.0000e+01,-3.5000e+01,3.1305e+01,-8.0000e+01,-3.4914e+01,3.2588e+01,-8.0000e+01,-3.4659e+01,3.3827e+01,-8.0000e+01,-3.4239e+01,3.5000e+01,-8.0000e+01,-3.3660e+01,3.6088e+01,-8.0000e+01,-3.2934e+01,3.7071e+01,-8.0000e+01,-3.2071e+01,3.7934e+01,-8.0000e+01,-3.1088e+01,3.8660e+01,-8.0000e+01,-3.0000e+01,3.9239e+01,-8.0000e+01,-2.8827e+01,3.9659e+01,-8.0000e+01,-2.7588e+01,3.9914e+01,-8.0000e+01,-2.6305e+01,4.0000e+01,-8.0000e+01,-2.5000e+01,3.9914e+01,-8.0000e+01,-2.3695e+01,3.9659e+01,-8.0000e+01,-2.2412e+01,3.9239e+01,-8.0000e+01,-2.1173e+01,3.8660e+01,-8.0000e+01,-2.0000e+01,3.7934e+01,-8.0000e+01,-1.8912e+01,3.7071e+01,-8.0000e+01,-1.7929e+01,3.6088e+01,-8.0000e+01,-1.7066e+01,3.5000e+01,-8.0000e+01,-1.6340e+01,3.3827e+01,-8.0000e+01,-1.5761e+01,3.2588e+01,-8.0000e+01,-1.5341e+01,3.1305e+01,-8.0000e+01,-1.5086e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01,3.0000e+01,-7.3991e+01,-2.5000e+01});
+			return Coordinate_7_521_point;
+		}
+		/** Large attribute array: Normal vector field, scene-graph level=7, element #522, 288 total numbers made up of 96 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getNormal_7_522_vector()
+		{
+			MFVec3f Normal_7_522_vector = new MFVec3f(new double[] {-0.0000e+00,-8.5717e-01,-5.1504e-01,6.7226e-02,-8.5717e-01,-5.1063e-01,1.3330e-01,-8.5717e-01,-4.9749e-01,1.9710e-01,-8.5717e-01,-4.7583e-01,2.5752e-01,-8.5717e-01,-4.4604e-01,3.1354e-01,-8.5717e-01,-4.0861e-01,3.6419e-01,-8.5717e-01,-3.6419e-01,4.0861e-01,-8.5717e-01,-3.1354e-01,4.4604e-01,-8.5717e-01,-2.5752e-01,4.7583e-01,-8.5717e-01,-1.9710e-01,4.9749e-01,-8.5717e-01,-1.3330e-01,5.1063e-01,-8.5717e-01,-6.7226e-02,5.1504e-01,-8.5717e-01,-3.1537e-17,5.1063e-01,-8.5717e-01,6.7226e-02,4.9749e-01,-8.5717e-01,1.3330e-01,4.7583e-01,-8.5717e-01,1.9710e-01,4.4604e-01,-8.5717e-01,2.5752e-01,4.0861e-01,-8.5717e-01,3.1354e-01,3.6419e-01,-8.5717e-01,3.6419e-01,3.1354e-01,-8.5717e-01,4.0861e-01,2.5752e-01,-8.5717e-01,4.4604e-01,1.9710e-01,-8.5717e-01,4.7583e-01,1.3330e-01,-8.5717e-01,4.9749e-01,6.7226e-02,-8.5717e-01,5.1063e-01,6.3074e-17,-8.5717e-01,5.1504e-01,-6.7226e-02,-8.5717e-01,5.1063e-01,-1.3330e-01,-8.5717e-01,4.9749e-01,-1.9710e-01,-8.5717e-01,4.7583e-01,-2.5752e-01,-8.5717e-01,4.4604e-01,-3.1354e-01,-8.5717e-01,4.0861e-01,-3.6419e-01,-8.5717e-01,3.6419e-01,-4.0861e-01,-8.5717e-01,3.1354e-01,-4.4604e-01,-8.5717e-01,2.5752e-01,-4.7583e-01,-8.5717e-01,1.9710e-01,-4.9749e-01,-8.5717e-01,1.3330e-01,-5.1063e-01,-8.5717e-01,6.7226e-02,-5.1504e-01,-8.5717e-01,9.4611e-17,-5.1063e-01,-8.5717e-01,-6.7226e-02,-4.9749e-01,-8.5717e-01,-1.3330e-01,-4.7583e-01,-8.5717e-01,-1.9710e-01,-4.4604e-01,-8.5717e-01,-2.5752e-01,-4.0861e-01,-8.5717e-01,-3.1354e-01,-3.6419e-01,-8.5717e-01,-3.6419e-01,-3.1354e-01,-8.5717e-01,-4.0861e-01,-2.5752e-01,-8.5717e-01,-4.4604e-01,-1.9710e-01,-8.5717e-01,-4.7583e-01,-1.3330e-01,-8.5717e-01,-4.9749e-01,-6.7226e-02,-8.5717e-01,-5.1063e-01,3.3685e-02,-8.5717e-01,-5.1394e-01,1.0048e-01,-8.5717e-01,-5.0514e-01,1.6555e-01,-8.5717e-01,-4.8771e-01,2.2780e-01,-8.5717e-01,-4.6192e-01,2.8614e-01,-8.5717e-01,-4.2824e-01,3.3959e-01,-8.5717e-01,-3.8723e-01,3.8723e-01,-8.5717e-01,-3.3959e-01,4.2824e-01,-8.5717e-01,-2.8614e-01,4.6192e-01,-8.5717e-01,-2.2780e-01,4.8771e-01,-8.5717e-01,-1.6555e-01,5.0514e-01,-8.5717e-01,-1.0048e-01,5.1394e-01,-8.5717e-01,-3.3685e-02,5.1394e-01,-8.5717e-01,3.3685e-02,5.0514e-01,-8.5717e-01,1.0048e-01,4.8771e-01,-8.5717e-01,1.6555e-01,4.6192e-01,-8.5717e-01,2.2780e-01,4.2824e-01,-8.5717e-01,2.8614e-01,3.8723e-01,-8.5717e-01,3.3959e-01,3.3959e-01,-8.5717e-01,3.8723e-01,2.8614e-01,-8.5717e-01,4.2824e-01,2.2780e-01,-8.5717e-01,4.6192e-01,1.6555e-01,-8.5717e-01,4.8771e-01,1.0048e-01,-8.5717e-01,5.0514e-01,3.3685e-02,-8.5717e-01,5.1394e-01,-3.3685e-02,-8.5717e-01,5.1394e-01,-1.0048e-01,-8.5717e-01,5.0514e-01,-1.6555e-01,-8.5717e-01,4.8771e-01,-2.2780e-01,-8.5717e-01,4.6192e-01,-2.8614e-01,-8.5717e-01,4.2824e-01,-3.3959e-01,-8.5717e-01,3.8723e-01,-3.8723e-01,-8.5717e-01,3.3959e-01,-4.2824e-01,-8.5717e-01,2.8614e-01,-4.6192e-01,-8.5717e-01,2.2780e-01,-4.8771e-01,-8.5717e-01,1.6555e-01,-5.0514e-01,-8.5717e-01,1.0048e-01,-5.1394e-01,-8.5717e-01,3.3685e-02,-5.1394e-01,-8.5717e-01,-3.3685e-02,-5.0514e-01,-8.5717e-01,-1.0048e-01,-4.8771e-01,-8.5717e-01,-1.6555e-01,-4.6192e-01,-8.5717e-01,-2.2780e-01,-4.2824e-01,-8.5717e-01,-2.8614e-01,-3.8723e-01,-8.5717e-01,-3.3959e-01,-3.3959e-01,-8.5717e-01,-3.8723e-01,-2.8614e-01,-8.5717e-01,-4.2824e-01,-2.2780e-01,-8.5717e-01,-4.6192e-01,-1.6555e-01,-8.5717e-01,-4.8771e-01,-1.0048e-01,-8.5717e-01,-5.0514e-01,-3.3685e-02,-8.5717e-01,-5.1394e-01});
+			return Normal_7_522_vector;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #528, 288 total numbers made up of 96 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_528_point()
+		{
+			MFVec3f Coordinate_7_528_point = new MFVec3f(new double[] {3.0000e+01,-8.0000e+01,-3.5000e+01,3.0000e+01,-1.2500e+02,-3.5000e+01,2.8695e+01,-8.0000e+01,-3.4914e+01,2.8695e+01,-1.2500e+02,-3.4914e+01,2.7412e+01,-8.0000e+01,-3.4659e+01,2.7412e+01,-1.2500e+02,-3.4659e+01,2.6173e+01,-8.0000e+01,-3.4239e+01,2.6173e+01,-1.2500e+02,-3.4239e+01,2.5000e+01,-8.0000e+01,-3.3660e+01,2.5000e+01,-1.2500e+02,-3.3660e+01,2.3912e+01,-8.0000e+01,-3.2934e+01,2.3912e+01,-1.2500e+02,-3.2934e+01,2.2929e+01,-8.0000e+01,-3.2071e+01,2.2929e+01,-1.2500e+02,-3.2071e+01,2.2066e+01,-8.0000e+01,-3.1088e+01,2.2066e+01,-1.2500e+02,-3.1088e+01,2.1340e+01,-8.0000e+01,-3.0000e+01,2.1340e+01,-1.2500e+02,-3.0000e+01,2.0761e+01,-8.0000e+01,-2.8827e+01,2.0761e+01,-1.2500e+02,-2.8827e+01,2.0341e+01,-8.0000e+01,-2.7588e+01,2.0341e+01,-1.2500e+02,-2.7588e+01,2.0086e+01,-8.0000e+01,-2.6305e+01,2.0086e+01,-1.2500e+02,-2.6305e+01,2.0000e+01,-8.0000e+01,-2.5000e+01,2.0000e+01,-1.2500e+02,-2.5000e+01,2.0086e+01,-8.0000e+01,-2.3695e+01,2.0086e+01,-1.2500e+02,-2.3695e+01,2.0341e+01,-8.0000e+01,-2.2412e+01,2.0341e+01,-1.2500e+02,-2.2412e+01,2.0761e+01,-8.0000e+01,-2.1173e+01,2.0761e+01,-1.2500e+02,-2.1173e+01,2.1340e+01,-8.0000e+01,-2.0000e+01,2.1340e+01,-1.2500e+02,-2.0000e+01,2.2066e+01,-8.0000e+01,-1.8912e+01,2.2066e+01,-1.2500e+02,-1.8912e+01,2.2929e+01,-8.0000e+01,-1.7929e+01,2.2929e+01,-1.2500e+02,-1.7929e+01,2.3912e+01,-8.0000e+01,-1.7066e+01,2.3912e+01,-1.2500e+02,-1.7066e+01,2.5000e+01,-8.0000e+01,-1.6340e+01,2.5000e+01,-1.2500e+02,-1.6340e+01,2.6173e+01,-8.0000e+01,-1.5761e+01,2.6173e+01,-1.2500e+02,-1.5761e+01,2.7412e+01,-8.0000e+01,-1.5341e+01,2.7412e+01,-1.2500e+02,-1.5341e+01,2.8695e+01,-8.0000e+01,-1.5086e+01,2.8695e+01,-1.2500e+02,-1.5086e+01,3.0000e+01,-8.0000e+01,-1.5000e+01,3.0000e+01,-1.2500e+02,-1.5000e+01,3.1305e+01,-8.0000e+01,-1.5086e+01,3.1305e+01,-1.2500e+02,-1.5086e+01,3.2588e+01,-8.0000e+01,-1.5341e+01,3.2588e+01,-1.2500e+02,-1.5341e+01,3.3827e+01,-8.0000e+01,-1.5761e+01,3.3827e+01,-1.2500e+02,-1.5761e+01,3.5000e+01,-8.0000e+01,-1.6340e+01,3.5000e+01,-1.2500e+02,-1.6340e+01,3.6088e+01,-8.0000e+01,-1.7066e+01,3.6088e+01,-1.2500e+02,-1.7066e+01,3.7071e+01,-8.0000e+01,-1.7929e+01,3.7071e+01,-1.2500e+02,-1.7929e+01,3.7934e+01,-8.0000e+01,-1.8912e+01,3.7934e+01,-1.2500e+02,-1.8912e+01,3.8660e+01,-8.0000e+01,-2.0000e+01,3.8660e+01,-1.2500e+02,-2.0000e+01,3.9239e+01,-8.0000e+01,-2.1173e+01,3.9239e+01,-1.2500e+02,-2.1173e+01,3.9659e+01,-8.0000e+01,-2.2412e+01,3.9659e+01,-1.2500e+02,-2.2412e+01,3.9914e+01,-8.0000e+01,-2.3695e+01,3.9914e+01,-1.2500e+02,-2.3695e+01,4.0000e+01,-8.0000e+01,-2.5000e+01,4.0000e+01,-1.2500e+02,-2.5000e+01,3.9914e+01,-8.0000e+01,-2.6305e+01,3.9914e+01,-1.2500e+02,-2.6305e+01,3.9659e+01,-8.0000e+01,-2.7588e+01,3.9659e+01,-1.2500e+02,-2.7588e+01,3.9239e+01,-8.0000e+01,-2.8827e+01,3.9239e+01,-1.2500e+02,-2.8827e+01,3.8660e+01,-8.0000e+01,-3.0000e+01,3.8660e+01,-1.2500e+02,-3.0000e+01,3.7934e+01,-8.0000e+01,-3.1088e+01,3.7934e+01,-1.2500e+02,-3.1088e+01,3.7071e+01,-8.0000e+01,-3.2071e+01,3.7071e+01,-1.2500e+02,-3.2071e+01,3.6088e+01,-8.0000e+01,-3.2934e+01,3.6088e+01,-1.2500e+02,-3.2934e+01,3.5000e+01,-8.0000e+01,-3.3660e+01,3.5000e+01,-1.2500e+02,-3.3660e+01,3.3827e+01,-8.0000e+01,-3.4239e+01,3.3827e+01,-1.2500e+02,-3.4239e+01,3.2588e+01,-8.0000e+01,-3.4659e+01,3.2588e+01,-1.2500e+02,-3.4659e+01,3.1305e+01,-8.0000e+01,-3.4914e+01,3.1305e+01,-1.2500e+02,-3.4914e+01});
+			return Coordinate_7_528_point;
+		}
+		/** Large attribute array: Normal vector field, scene-graph level=7, element #529, 288 total numbers made up of 96 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getNormal_7_529_vector()
+		{
+			MFVec3f Normal_7_529_vector = new MFVec3f(new double[] {-0.0000e+00,-0.0000e+00,1.0000e+00,-0.0000e+00,-0.0000e+00,1.0000e+00,1.3053e-01,-0.0000e+00,9.9144e-01,1.3053e-01,-0.0000e+00,9.9144e-01,2.5882e-01,-0.0000e+00,9.6593e-01,2.5882e-01,-0.0000e+00,9.6593e-01,3.8268e-01,-0.0000e+00,9.2388e-01,3.8268e-01,-0.0000e+00,9.2388e-01,5.0000e-01,-0.0000e+00,8.6603e-01,5.0000e-01,-0.0000e+00,8.6603e-01,6.0876e-01,-0.0000e+00,7.9335e-01,6.0876e-01,-0.0000e+00,7.9335e-01,7.0711e-01,-0.0000e+00,7.0711e-01,7.0711e-01,-0.0000e+00,7.0711e-01,7.9335e-01,-0.0000e+00,6.0876e-01,7.9335e-01,-0.0000e+00,6.0876e-01,8.6603e-01,-0.0000e+00,5.0000e-01,8.6603e-01,-0.0000e+00,5.0000e-01,9.2388e-01,-0.0000e+00,3.8268e-01,9.2388e-01,-0.0000e+00,3.8268e-01,9.6593e-01,-0.0000e+00,2.5882e-01,9.6593e-01,-0.0000e+00,2.5882e-01,9.9144e-01,-0.0000e+00,1.3053e-01,9.9144e-01,-0.0000e+00,1.3053e-01,1.0000e+00,-0.0000e+00,6.1232e-17,1.0000e+00,-0.0000e+00,6.1232e-17,9.9144e-01,-0.0000e+00,-1.3053e-01,9.9144e-01,-0.0000e+00,-1.3053e-01,9.6593e-01,-0.0000e+00,-2.5882e-01,9.6593e-01,-0.0000e+00,-2.5882e-01,9.2388e-01,-0.0000e+00,-3.8268e-01,9.2388e-01,-0.0000e+00,-3.8268e-01,8.6603e-01,-0.0000e+00,-5.0000e-01,8.6603e-01,-0.0000e+00,-5.0000e-01,7.9335e-01,-0.0000e+00,-6.0876e-01,7.9335e-01,-0.0000e+00,-6.0876e-01,7.0711e-01,-0.0000e+00,-7.0711e-01,7.0711e-01,-0.0000e+00,-7.0711e-01,6.0876e-01,-0.0000e+00,-7.9335e-01,6.0876e-01,-0.0000e+00,-7.9335e-01,5.0000e-01,-0.0000e+00,-8.6603e-01,5.0000e-01,-0.0000e+00,-8.6603e-01,3.8268e-01,-0.0000e+00,-9.2388e-01,3.8268e-01,-0.0000e+00,-9.2388e-01,2.5882e-01,-0.0000e+00,-9.6593e-01,2.5882e-01,-0.0000e+00,-9.6593e-01,1.3053e-01,-0.0000e+00,-9.9144e-01,1.3053e-01,-0.0000e+00,-9.9144e-01,1.2246e-16,-0.0000e+00,-1.0000e+00,1.2246e-16,-0.0000e+00,-1.0000e+00,-1.3053e-01,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-9.9144e-01,-2.5882e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.6593e-01,-3.8268e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-9.2388e-01,-5.0000e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-8.6603e-01,-6.0876e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-7.9335e-01,-7.0711e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-7.0711e-01,-7.9335e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-6.0876e-01,-8.6603e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-5.0000e-01,-9.2388e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-3.8268e-01,-9.6593e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-2.5882e-01,-9.9144e-01,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-1.3053e-01,-1.0000e+00,-0.0000e+00,-1.8370e-16,-1.0000e+00,-0.0000e+00,-1.8370e-16,-9.9144e-01,-0.0000e+00,1.3053e-01,-9.9144e-01,-0.0000e+00,1.3053e-01,-9.6593e-01,-0.0000e+00,2.5882e-01,-9.6593e-01,-0.0000e+00,2.5882e-01,-9.2388e-01,-0.0000e+00,3.8268e-01,-9.2388e-01,-0.0000e+00,3.8268e-01,-8.6603e-01,-0.0000e+00,5.0000e-01,-8.6603e-01,-0.0000e+00,5.0000e-01,-7.9335e-01,-0.0000e+00,6.0876e-01,-7.9335e-01,-0.0000e+00,6.0876e-01,-7.0711e-01,-0.0000e+00,7.0711e-01,-7.0711e-01,-0.0000e+00,7.0711e-01,-6.0876e-01,-0.0000e+00,7.9335e-01,-6.0876e-01,-0.0000e+00,7.9335e-01,-5.0000e-01,-0.0000e+00,8.6603e-01,-5.0000e-01,-0.0000e+00,8.6603e-01,-3.8268e-01,-0.0000e+00,9.2388e-01,-3.8268e-01,-0.0000e+00,9.2388e-01,-2.5882e-01,-0.0000e+00,9.6593e-01,-2.5882e-01,-0.0000e+00,9.6593e-01,-1.3053e-01,-0.0000e+00,9.9144e-01,-1.3053e-01,-0.0000e+00,9.9144e-01});
+			return Normal_7_529_vector;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #535, 288 total numbers made up of 96 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_535_point()
+		{
+			MFVec3f Coordinate_7_535_point = new MFVec3f(new double[] {-3.2500e+02,-1.9250e+02,-1.0000e+02,-3.2500e+02,-1.9250e+02,0.0000e+00,-3.2728e+02,-1.9235e+02,-1.0000e+02,-3.2728e+02,-1.9235e+02,0.0000e+00,-3.2953e+02,-1.9190e+02,-1.0000e+02,-3.2953e+02,-1.9190e+02,0.0000e+00,-3.3170e+02,-1.9117e+02,-1.0000e+02,-3.3170e+02,-1.9117e+02,0.0000e+00,-3.3375e+02,-1.9016e+02,-1.0000e+02,-3.3375e+02,-1.9016e+02,0.0000e+00,-3.3565e+02,-1.8888e+02,-1.0000e+02,-3.3565e+02,-1.8888e+02,0.0000e+00,-3.3737e+02,-1.8737e+02,-1.0000e+02,-3.3737e+02,-1.8737e+02,0.0000e+00,-3.3888e+02,-1.8565e+02,-1.0000e+02,-3.3888e+02,-1.8565e+02,0.0000e+00,-3.4016e+02,-1.8375e+02,-1.0000e+02,-3.4016e+02,-1.8375e+02,0.0000e+00,-3.4117e+02,-1.8170e+02,-1.0000e+02,-3.4117e+02,-1.8170e+02,0.0000e+00,-3.4190e+02,-1.7953e+02,-1.0000e+02,-3.4190e+02,-1.7953e+02,0.0000e+00,-3.4235e+02,-1.7728e+02,-1.0000e+02,-3.4235e+02,-1.7728e+02,0.0000e+00,-3.4250e+02,-1.7500e+02,-1.0000e+02,-3.4250e+02,-1.7500e+02,0.0000e+00,-3.4235e+02,-1.7272e+02,-1.0000e+02,-3.4235e+02,-1.7272e+02,0.0000e+00,-3.4190e+02,-1.7047e+02,-1.0000e+02,-3.4190e+02,-1.7047e+02,0.0000e+00,-3.4117e+02,-1.6830e+02,-1.0000e+02,-3.4117e+02,-1.6830e+02,0.0000e+00,-3.4016e+02,-1.6625e+02,-1.0000e+02,-3.4016e+02,-1.6625e+02,0.0000e+00,-3.3888e+02,-1.6435e+02,-1.0000e+02,-3.3888e+02,-1.6435e+02,0.0000e+00,-3.3737e+02,-1.6263e+02,-1.0000e+02,-3.3737e+02,-1.6263e+02,0.0000e+00,-3.3565e+02,-1.6112e+02,-1.0000e+02,-3.3565e+02,-1.6112e+02,0.0000e+00,-3.3375e+02,-1.5984e+02,-1.0000e+02,-3.3375e+02,-1.5984e+02,0.0000e+00,-3.3170e+02,-1.5883e+02,-1.0000e+02,-3.3170e+02,-1.5883e+02,0.0000e+00,-3.2953e+02,-1.5810e+02,-1.0000e+02,-3.2953e+02,-1.5810e+02,0.0000e+00,-3.2728e+02,-1.5765e+02,-1.0000e+02,-3.2728e+02,-1.5765e+02,0.0000e+00,-3.2500e+02,-1.5750e+02,-1.0000e+02,-3.2500e+02,-1.5750e+02,0.0000e+00,-3.2272e+02,-1.5765e+02,-1.0000e+02,-3.2272e+02,-1.5765e+02,0.0000e+00,-3.2047e+02,-1.5810e+02,-1.0000e+02,-3.2047e+02,-1.5810e+02,0.0000e+00,-3.1830e+02,-1.5883e+02,-1.0000e+02,-3.1830e+02,-1.5883e+02,0.0000e+00,-3.1625e+02,-1.5984e+02,-1.0000e+02,-3.1625e+02,-1.5984e+02,0.0000e+00,-3.1435e+02,-1.6112e+02,-1.0000e+02,-3.1435e+02,-1.6112e+02,0.0000e+00,-3.1263e+02,-1.6263e+02,-1.0000e+02,-3.1263e+02,-1.6263e+02,0.0000e+00,-3.1112e+02,-1.6435e+02,-1.0000e+02,-3.1112e+02,-1.6435e+02,0.0000e+00,-3.0984e+02,-1.6625e+02,-1.0000e+02,-3.0984e+02,-1.6625e+02,0.0000e+00,-3.0883e+02,-1.6830e+02,-1.0000e+02,-3.0883e+02,-1.6830e+02,0.0000e+00,-3.0810e+02,-1.7047e+02,-1.0000e+02,-3.0810e+02,-1.7047e+02,0.0000e+00,-3.0765e+02,-1.7272e+02,-1.0000e+02,-3.0765e+02,-1.7272e+02,0.0000e+00,-3.0750e+02,-1.7500e+02,-1.0000e+02,-3.0750e+02,-1.7500e+02,0.0000e+00,-3.0765e+02,-1.7728e+02,-1.0000e+02,-3.0765e+02,-1.7728e+02,0.0000e+00,-3.0810e+02,-1.7953e+02,-1.0000e+02,-3.0810e+02,-1.7953e+02,0.0000e+00,-3.0883e+02,-1.8170e+02,-1.0000e+02,-3.0883e+02,-1.8170e+02,0.0000e+00,-3.0984e+02,-1.8375e+02,-1.0000e+02,-3.0984e+02,-1.8375e+02,0.0000e+00,-3.1112e+02,-1.8565e+02,-1.0000e+02,-3.1112e+02,-1.8565e+02,0.0000e+00,-3.1263e+02,-1.8737e+02,-1.0000e+02,-3.1263e+02,-1.8737e+02,0.0000e+00,-3.1435e+02,-1.8888e+02,-1.0000e+02,-3.1435e+02,-1.8888e+02,0.0000e+00,-3.1625e+02,-1.9016e+02,-1.0000e+02,-3.1625e+02,-1.9016e+02,0.0000e+00,-3.1830e+02,-1.9117e+02,-1.0000e+02,-3.1830e+02,-1.9117e+02,0.0000e+00,-3.2047e+02,-1.9190e+02,-1.0000e+02,-3.2047e+02,-1.9190e+02,0.0000e+00,-3.2272e+02,-1.9235e+02,-1.0000e+02,-3.2272e+02,-1.9235e+02,0.0000e+00});
+			return Coordinate_7_535_point;
+		}
+		/** Large attribute array: Normal vector field, scene-graph level=7, element #536, 288 total numbers made up of 96 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getNormal_7_536_vector()
+		{
+			MFVec3f Normal_7_536_vector = new MFVec3f(new double[] {-0.0000e+00,1.0000e+00,-0.0000e+00,-0.0000e+00,1.0000e+00,-0.0000e+00,1.3053e-01,9.9144e-01,-0.0000e+00,1.3053e-01,9.9144e-01,-0.0000e+00,2.5882e-01,9.6593e-01,-0.0000e+00,2.5882e-01,9.6593e-01,-0.0000e+00,3.8268e-01,9.2388e-01,-0.0000e+00,3.8268e-01,9.2388e-01,-0.0000e+00,5.0000e-01,8.6603e-01,-0.0000e+00,5.0000e-01,8.6603e-01,-0.0000e+00,6.0876e-01,7.9335e-01,-0.0000e+00,6.0876e-01,7.9335e-01,-0.0000e+00,7.0711e-01,7.0711e-01,-0.0000e+00,7.0711e-01,7.0711e-01,-0.0000e+00,7.9335e-01,6.0876e-01,-0.0000e+00,7.9335e-01,6.0876e-01,-0.0000e+00,8.6603e-01,5.0000e-01,-0.0000e+00,8.6603e-01,5.0000e-01,-0.0000e+00,9.2388e-01,3.8268e-01,-0.0000e+00,9.2388e-01,3.8268e-01,-0.0000e+00,9.6593e-01,2.5882e-01,-0.0000e+00,9.6593e-01,2.5882e-01,-0.0000e+00,9.9144e-01,1.3053e-01,-0.0000e+00,9.9144e-01,1.3053e-01,-0.0000e+00,1.0000e+00,6.1232e-17,-0.0000e+00,1.0000e+00,6.1232e-17,-0.0000e+00,9.9144e-01,-1.3053e-01,-0.0000e+00,9.9144e-01,-1.3053e-01,-0.0000e+00,9.6593e-01,-2.5882e-01,-0.0000e+00,9.6593e-01,-2.5882e-01,-0.0000e+00,9.2388e-01,-3.8268e-01,-0.0000e+00,9.2388e-01,-3.8268e-01,-0.0000e+00,8.6603e-01,-5.0000e-01,-0.0000e+00,8.6603e-01,-5.0000e-01,-0.0000e+00,7.9335e-01,-6.0876e-01,-0.0000e+00,7.9335e-01,-6.0876e-01,-0.0000e+00,7.0711e-01,-7.0711e-01,-0.0000e+00,7.0711e-01,-7.0711e-01,-0.0000e+00,6.0876e-01,-7.9335e-01,-0.0000e+00,6.0876e-01,-7.9335e-01,-0.0000e+00,5.0000e-01,-8.6603e-01,-0.0000e+00,5.0000e-01,-8.6603e-01,-0.0000e+00,3.8268e-01,-9.2388e-01,-0.0000e+00,3.8268e-01,-9.2388e-01,-0.0000e+00,2.5882e-01,-9.6593e-01,-0.0000e+00,2.5882e-01,-9.6593e-01,-0.0000e+00,1.3053e-01,-9.9144e-01,-0.0000e+00,1.3053e-01,-9.9144e-01,-0.0000e+00,1.2246e-16,-1.0000e+00,-0.0000e+00,1.2246e-16,-1.0000e+00,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-1.0000e+00,-1.8370e-16,-0.0000e+00,-1.0000e+00,-1.8370e-16,-0.0000e+00,-9.9144e-01,1.3053e-01,-0.0000e+00,-9.9144e-01,1.3053e-01,-0.0000e+00,-9.6593e-01,2.5882e-01,-0.0000e+00,-9.6593e-01,2.5882e-01,-0.0000e+00,-9.2388e-01,3.8268e-01,-0.0000e+00,-9.2388e-01,3.8268e-01,-0.0000e+00,-8.6603e-01,5.0000e-01,-0.0000e+00,-8.6603e-01,5.0000e-01,-0.0000e+00,-7.9335e-01,6.0876e-01,-0.0000e+00,-7.9335e-01,6.0876e-01,-0.0000e+00,-7.0711e-01,7.0711e-01,-0.0000e+00,-7.0711e-01,7.0711e-01,-0.0000e+00,-6.0876e-01,7.9335e-01,-0.0000e+00,-6.0876e-01,7.9335e-01,-0.0000e+00,-5.0000e-01,8.6603e-01,-0.0000e+00,-5.0000e-01,8.6603e-01,-0.0000e+00,-3.8268e-01,9.2388e-01,-0.0000e+00,-3.8268e-01,9.2388e-01,-0.0000e+00,-2.5882e-01,9.6593e-01,-0.0000e+00,-2.5882e-01,9.6593e-01,-0.0000e+00,-1.3053e-01,9.9144e-01,-0.0000e+00,-1.3053e-01,9.9144e-01,-0.0000e+00});
+			return Normal_7_536_vector;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #542, 288 total numbers made up of 96 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_542_point()
+		{
+			MFVec3f Coordinate_7_542_point = new MFVec3f(new double[] {-3.2500e+02,1.5750e+02,-1.0000e+02,-3.2500e+02,1.5750e+02,0.0000e+00,-3.2728e+02,1.5765e+02,-1.0000e+02,-3.2728e+02,1.5765e+02,0.0000e+00,-3.2953e+02,1.5810e+02,-1.0000e+02,-3.2953e+02,1.5810e+02,0.0000e+00,-3.3170e+02,1.5883e+02,-1.0000e+02,-3.3170e+02,1.5883e+02,0.0000e+00,-3.3375e+02,1.5984e+02,-1.0000e+02,-3.3375e+02,1.5984e+02,0.0000e+00,-3.3565e+02,1.6112e+02,-1.0000e+02,-3.3565e+02,1.6112e+02,0.0000e+00,-3.3737e+02,1.6263e+02,-1.0000e+02,-3.3737e+02,1.6263e+02,0.0000e+00,-3.3888e+02,1.6435e+02,-1.0000e+02,-3.3888e+02,1.6435e+02,0.0000e+00,-3.4016e+02,1.6625e+02,-1.0000e+02,-3.4016e+02,1.6625e+02,0.0000e+00,-3.4117e+02,1.6830e+02,-1.0000e+02,-3.4117e+02,1.6830e+02,0.0000e+00,-3.4190e+02,1.7047e+02,-1.0000e+02,-3.4190e+02,1.7047e+02,0.0000e+00,-3.4235e+02,1.7272e+02,-1.0000e+02,-3.4235e+02,1.7272e+02,0.0000e+00,-3.4250e+02,1.7500e+02,-1.0000e+02,-3.4250e+02,1.7500e+02,0.0000e+00,-3.4235e+02,1.7728e+02,-1.0000e+02,-3.4235e+02,1.7728e+02,0.0000e+00,-3.4190e+02,1.7953e+02,-1.0000e+02,-3.4190e+02,1.7953e+02,0.0000e+00,-3.4117e+02,1.8170e+02,-1.0000e+02,-3.4117e+02,1.8170e+02,0.0000e+00,-3.4016e+02,1.8375e+02,-1.0000e+02,-3.4016e+02,1.8375e+02,0.0000e+00,-3.3888e+02,1.8565e+02,-1.0000e+02,-3.3888e+02,1.8565e+02,0.0000e+00,-3.3737e+02,1.8737e+02,-1.0000e+02,-3.3737e+02,1.8737e+02,0.0000e+00,-3.3565e+02,1.8888e+02,-1.0000e+02,-3.3565e+02,1.8888e+02,0.0000e+00,-3.3375e+02,1.9016e+02,-1.0000e+02,-3.3375e+02,1.9016e+02,0.0000e+00,-3.3170e+02,1.9117e+02,-1.0000e+02,-3.3170e+02,1.9117e+02,0.0000e+00,-3.2953e+02,1.9190e+02,-1.0000e+02,-3.2953e+02,1.9190e+02,0.0000e+00,-3.2728e+02,1.9235e+02,-1.0000e+02,-3.2728e+02,1.9235e+02,0.0000e+00,-3.2500e+02,1.9250e+02,-1.0000e+02,-3.2500e+02,1.9250e+02,0.0000e+00,-3.2272e+02,1.9235e+02,-1.0000e+02,-3.2272e+02,1.9235e+02,0.0000e+00,-3.2047e+02,1.9190e+02,-1.0000e+02,-3.2047e+02,1.9190e+02,0.0000e+00,-3.1830e+02,1.9117e+02,-1.0000e+02,-3.1830e+02,1.9117e+02,0.0000e+00,-3.1625e+02,1.9016e+02,-1.0000e+02,-3.1625e+02,1.9016e+02,0.0000e+00,-3.1435e+02,1.8888e+02,-1.0000e+02,-3.1435e+02,1.8888e+02,0.0000e+00,-3.1263e+02,1.8737e+02,-1.0000e+02,-3.1263e+02,1.8737e+02,0.0000e+00,-3.1112e+02,1.8565e+02,-1.0000e+02,-3.1112e+02,1.8565e+02,0.0000e+00,-3.0984e+02,1.8375e+02,-1.0000e+02,-3.0984e+02,1.8375e+02,0.0000e+00,-3.0883e+02,1.8170e+02,-1.0000e+02,-3.0883e+02,1.8170e+02,0.0000e+00,-3.0810e+02,1.7953e+02,-1.0000e+02,-3.0810e+02,1.7953e+02,0.0000e+00,-3.0765e+02,1.7728e+02,-1.0000e+02,-3.0765e+02,1.7728e+02,0.0000e+00,-3.0750e+02,1.7500e+02,-1.0000e+02,-3.0750e+02,1.7500e+02,0.0000e+00,-3.0765e+02,1.7272e+02,-1.0000e+02,-3.0765e+02,1.7272e+02,0.0000e+00,-3.0810e+02,1.7047e+02,-1.0000e+02,-3.0810e+02,1.7047e+02,0.0000e+00,-3.0883e+02,1.6830e+02,-1.0000e+02,-3.0883e+02,1.6830e+02,0.0000e+00,-3.0984e+02,1.6625e+02,-1.0000e+02,-3.0984e+02,1.6625e+02,0.0000e+00,-3.1112e+02,1.6435e+02,-1.0000e+02,-3.1112e+02,1.6435e+02,0.0000e+00,-3.1263e+02,1.6263e+02,-1.0000e+02,-3.1263e+02,1.6263e+02,0.0000e+00,-3.1435e+02,1.6112e+02,-1.0000e+02,-3.1435e+02,1.6112e+02,0.0000e+00,-3.1625e+02,1.5984e+02,-1.0000e+02,-3.1625e+02,1.5984e+02,0.0000e+00,-3.1830e+02,1.5883e+02,-1.0000e+02,-3.1830e+02,1.5883e+02,0.0000e+00,-3.2047e+02,1.5810e+02,-1.0000e+02,-3.2047e+02,1.5810e+02,0.0000e+00,-3.2272e+02,1.5765e+02,-1.0000e+02,-3.2272e+02,1.5765e+02,0.0000e+00});
+			return Coordinate_7_542_point;
+		}
+		/** Large attribute array: Normal vector field, scene-graph level=7, element #543, 288 total numbers made up of 96 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getNormal_7_543_vector()
+		{
+			MFVec3f Normal_7_543_vector = new MFVec3f(new double[] {-0.0000e+00,1.0000e+00,-0.0000e+00,-0.0000e+00,1.0000e+00,-0.0000e+00,1.3053e-01,9.9144e-01,-0.0000e+00,1.3053e-01,9.9144e-01,-0.0000e+00,2.5882e-01,9.6593e-01,-0.0000e+00,2.5882e-01,9.6593e-01,-0.0000e+00,3.8268e-01,9.2388e-01,-0.0000e+00,3.8268e-01,9.2388e-01,-0.0000e+00,5.0000e-01,8.6603e-01,-0.0000e+00,5.0000e-01,8.6603e-01,-0.0000e+00,6.0876e-01,7.9335e-01,-0.0000e+00,6.0876e-01,7.9335e-01,-0.0000e+00,7.0711e-01,7.0711e-01,-0.0000e+00,7.0711e-01,7.0711e-01,-0.0000e+00,7.9335e-01,6.0876e-01,-0.0000e+00,7.9335e-01,6.0876e-01,-0.0000e+00,8.6603e-01,5.0000e-01,-0.0000e+00,8.6603e-01,5.0000e-01,-0.0000e+00,9.2388e-01,3.8268e-01,-0.0000e+00,9.2388e-01,3.8268e-01,-0.0000e+00,9.6593e-01,2.5882e-01,-0.0000e+00,9.6593e-01,2.5882e-01,-0.0000e+00,9.9144e-01,1.3053e-01,-0.0000e+00,9.9144e-01,1.3053e-01,-0.0000e+00,1.0000e+00,6.1232e-17,-0.0000e+00,1.0000e+00,6.1232e-17,-0.0000e+00,9.9144e-01,-1.3053e-01,-0.0000e+00,9.9144e-01,-1.3053e-01,-0.0000e+00,9.6593e-01,-2.5882e-01,-0.0000e+00,9.6593e-01,-2.5882e-01,-0.0000e+00,9.2388e-01,-3.8268e-01,-0.0000e+00,9.2388e-01,-3.8268e-01,-0.0000e+00,8.6603e-01,-5.0000e-01,-0.0000e+00,8.6603e-01,-5.0000e-01,-0.0000e+00,7.9335e-01,-6.0876e-01,-0.0000e+00,7.9335e-01,-6.0876e-01,-0.0000e+00,7.0711e-01,-7.0711e-01,-0.0000e+00,7.0711e-01,-7.0711e-01,-0.0000e+00,6.0876e-01,-7.9335e-01,-0.0000e+00,6.0876e-01,-7.9335e-01,-0.0000e+00,5.0000e-01,-8.6603e-01,-0.0000e+00,5.0000e-01,-8.6603e-01,-0.0000e+00,3.8268e-01,-9.2388e-01,-0.0000e+00,3.8268e-01,-9.2388e-01,-0.0000e+00,2.5882e-01,-9.6593e-01,-0.0000e+00,2.5882e-01,-9.6593e-01,-0.0000e+00,1.3053e-01,-9.9144e-01,-0.0000e+00,1.3053e-01,-9.9144e-01,-0.0000e+00,1.2246e-16,-1.0000e+00,-0.0000e+00,1.2246e-16,-1.0000e+00,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-1.0000e+00,-1.8370e-16,-0.0000e+00,-1.0000e+00,-1.8370e-16,-0.0000e+00,-9.9144e-01,1.3053e-01,-0.0000e+00,-9.9144e-01,1.3053e-01,-0.0000e+00,-9.6593e-01,2.5882e-01,-0.0000e+00,-9.6593e-01,2.5882e-01,-0.0000e+00,-9.2388e-01,3.8268e-01,-0.0000e+00,-9.2388e-01,3.8268e-01,-0.0000e+00,-8.6603e-01,5.0000e-01,-0.0000e+00,-8.6603e-01,5.0000e-01,-0.0000e+00,-7.9335e-01,6.0876e-01,-0.0000e+00,-7.9335e-01,6.0876e-01,-0.0000e+00,-7.0711e-01,7.0711e-01,-0.0000e+00,-7.0711e-01,7.0711e-01,-0.0000e+00,-6.0876e-01,7.9335e-01,-0.0000e+00,-6.0876e-01,7.9335e-01,-0.0000e+00,-5.0000e-01,8.6603e-01,-0.0000e+00,-5.0000e-01,8.6603e-01,-0.0000e+00,-3.8268e-01,9.2388e-01,-0.0000e+00,-3.8268e-01,9.2388e-01,-0.0000e+00,-2.5882e-01,9.6593e-01,-0.0000e+00,-2.5882e-01,9.6593e-01,-0.0000e+00,-1.3053e-01,9.9144e-01,-0.0000e+00,-1.3053e-01,9.9144e-01,-0.0000e+00});
+			return Normal_7_543_vector;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #549, 288 total numbers made up of 96 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_549_point()
+		{
+			MFVec3f Coordinate_7_549_point = new MFVec3f(new double[] {3.2500e+02,-1.9250e+02,-1.0000e+02,3.2500e+02,-1.9250e+02,0.0000e+00,3.2272e+02,-1.9235e+02,-1.0000e+02,3.2272e+02,-1.9235e+02,0.0000e+00,3.2047e+02,-1.9190e+02,-1.0000e+02,3.2047e+02,-1.9190e+02,0.0000e+00,3.1830e+02,-1.9117e+02,-1.0000e+02,3.1830e+02,-1.9117e+02,0.0000e+00,3.1625e+02,-1.9016e+02,-1.0000e+02,3.1625e+02,-1.9016e+02,0.0000e+00,3.1435e+02,-1.8888e+02,-1.0000e+02,3.1435e+02,-1.8888e+02,0.0000e+00,3.1263e+02,-1.8737e+02,-1.0000e+02,3.1263e+02,-1.8737e+02,0.0000e+00,3.1112e+02,-1.8565e+02,-1.0000e+02,3.1112e+02,-1.8565e+02,0.0000e+00,3.0984e+02,-1.8375e+02,-1.0000e+02,3.0984e+02,-1.8375e+02,0.0000e+00,3.0883e+02,-1.8170e+02,-1.0000e+02,3.0883e+02,-1.8170e+02,0.0000e+00,3.0810e+02,-1.7953e+02,-1.0000e+02,3.0810e+02,-1.7953e+02,0.0000e+00,3.0765e+02,-1.7728e+02,-1.0000e+02,3.0765e+02,-1.7728e+02,0.0000e+00,3.0750e+02,-1.7500e+02,-1.0000e+02,3.0750e+02,-1.7500e+02,0.0000e+00,3.0765e+02,-1.7272e+02,-1.0000e+02,3.0765e+02,-1.7272e+02,0.0000e+00,3.0810e+02,-1.7047e+02,-1.0000e+02,3.0810e+02,-1.7047e+02,0.0000e+00,3.0883e+02,-1.6830e+02,-1.0000e+02,3.0883e+02,-1.6830e+02,0.0000e+00,3.0984e+02,-1.6625e+02,-1.0000e+02,3.0984e+02,-1.6625e+02,0.0000e+00,3.1112e+02,-1.6435e+02,-1.0000e+02,3.1112e+02,-1.6435e+02,0.0000e+00,3.1263e+02,-1.6263e+02,-1.0000e+02,3.1263e+02,-1.6263e+02,0.0000e+00,3.1435e+02,-1.6112e+02,-1.0000e+02,3.1435e+02,-1.6112e+02,0.0000e+00,3.1625e+02,-1.5984e+02,-1.0000e+02,3.1625e+02,-1.5984e+02,0.0000e+00,3.1830e+02,-1.5883e+02,-1.0000e+02,3.1830e+02,-1.5883e+02,0.0000e+00,3.2047e+02,-1.5810e+02,-1.0000e+02,3.2047e+02,-1.5810e+02,0.0000e+00,3.2272e+02,-1.5765e+02,-1.0000e+02,3.2272e+02,-1.5765e+02,0.0000e+00,3.2500e+02,-1.5750e+02,-1.0000e+02,3.2500e+02,-1.5750e+02,0.0000e+00,3.2728e+02,-1.5765e+02,-1.0000e+02,3.2728e+02,-1.5765e+02,0.0000e+00,3.2953e+02,-1.5810e+02,-1.0000e+02,3.2953e+02,-1.5810e+02,0.0000e+00,3.3170e+02,-1.5883e+02,-1.0000e+02,3.3170e+02,-1.5883e+02,0.0000e+00,3.3375e+02,-1.5984e+02,-1.0000e+02,3.3375e+02,-1.5984e+02,0.0000e+00,3.3565e+02,-1.6112e+02,-1.0000e+02,3.3565e+02,-1.6112e+02,0.0000e+00,3.3737e+02,-1.6263e+02,-1.0000e+02,3.3737e+02,-1.6263e+02,0.0000e+00,3.3888e+02,-1.6435e+02,-1.0000e+02,3.3888e+02,-1.6435e+02,0.0000e+00,3.4016e+02,-1.6625e+02,-1.0000e+02,3.4016e+02,-1.6625e+02,0.0000e+00,3.4117e+02,-1.6830e+02,-1.0000e+02,3.4117e+02,-1.6830e+02,0.0000e+00,3.4190e+02,-1.7047e+02,-1.0000e+02,3.4190e+02,-1.7047e+02,0.0000e+00,3.4235e+02,-1.7272e+02,-1.0000e+02,3.4235e+02,-1.7272e+02,0.0000e+00,3.4250e+02,-1.7500e+02,-1.0000e+02,3.4250e+02,-1.7500e+02,0.0000e+00,3.4235e+02,-1.7728e+02,-1.0000e+02,3.4235e+02,-1.7728e+02,0.0000e+00,3.4190e+02,-1.7953e+02,-1.0000e+02,3.4190e+02,-1.7953e+02,0.0000e+00,3.4117e+02,-1.8170e+02,-1.0000e+02,3.4117e+02,-1.8170e+02,0.0000e+00,3.4016e+02,-1.8375e+02,-1.0000e+02,3.4016e+02,-1.8375e+02,0.0000e+00,3.3888e+02,-1.8565e+02,-1.0000e+02,3.3888e+02,-1.8565e+02,0.0000e+00,3.3737e+02,-1.8737e+02,-1.0000e+02,3.3737e+02,-1.8737e+02,0.0000e+00,3.3565e+02,-1.8888e+02,-1.0000e+02,3.3565e+02,-1.8888e+02,0.0000e+00,3.3375e+02,-1.9016e+02,-1.0000e+02,3.3375e+02,-1.9016e+02,0.0000e+00,3.3170e+02,-1.9117e+02,-1.0000e+02,3.3170e+02,-1.9117e+02,0.0000e+00,3.2953e+02,-1.9190e+02,-1.0000e+02,3.2953e+02,-1.9190e+02,0.0000e+00,3.2728e+02,-1.9235e+02,-1.0000e+02,3.2728e+02,-1.9235e+02,0.0000e+00});
+			return Coordinate_7_549_point;
+		}
+		/** Large attribute array: Normal vector field, scene-graph level=7, element #550, 288 total numbers made up of 96 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getNormal_7_550_vector()
+		{
+			MFVec3f Normal_7_550_vector = new MFVec3f(new double[] {-0.0000e+00,1.0000e+00,-0.0000e+00,-0.0000e+00,1.0000e+00,-0.0000e+00,1.3053e-01,9.9144e-01,-0.0000e+00,1.3053e-01,9.9144e-01,-0.0000e+00,2.5882e-01,9.6593e-01,-0.0000e+00,2.5882e-01,9.6593e-01,-0.0000e+00,3.8268e-01,9.2388e-01,-0.0000e+00,3.8268e-01,9.2388e-01,-0.0000e+00,5.0000e-01,8.6603e-01,-0.0000e+00,5.0000e-01,8.6603e-01,-0.0000e+00,6.0876e-01,7.9335e-01,-0.0000e+00,6.0876e-01,7.9335e-01,-0.0000e+00,7.0711e-01,7.0711e-01,-0.0000e+00,7.0711e-01,7.0711e-01,-0.0000e+00,7.9335e-01,6.0876e-01,-0.0000e+00,7.9335e-01,6.0876e-01,-0.0000e+00,8.6603e-01,5.0000e-01,-0.0000e+00,8.6603e-01,5.0000e-01,-0.0000e+00,9.2388e-01,3.8268e-01,-0.0000e+00,9.2388e-01,3.8268e-01,-0.0000e+00,9.6593e-01,2.5882e-01,-0.0000e+00,9.6593e-01,2.5882e-01,-0.0000e+00,9.9144e-01,1.3053e-01,-0.0000e+00,9.9144e-01,1.3053e-01,-0.0000e+00,1.0000e+00,6.1232e-17,-0.0000e+00,1.0000e+00,6.1232e-17,-0.0000e+00,9.9144e-01,-1.3053e-01,-0.0000e+00,9.9144e-01,-1.3053e-01,-0.0000e+00,9.6593e-01,-2.5882e-01,-0.0000e+00,9.6593e-01,-2.5882e-01,-0.0000e+00,9.2388e-01,-3.8268e-01,-0.0000e+00,9.2388e-01,-3.8268e-01,-0.0000e+00,8.6603e-01,-5.0000e-01,-0.0000e+00,8.6603e-01,-5.0000e-01,-0.0000e+00,7.9335e-01,-6.0876e-01,-0.0000e+00,7.9335e-01,-6.0876e-01,-0.0000e+00,7.0711e-01,-7.0711e-01,-0.0000e+00,7.0711e-01,-7.0711e-01,-0.0000e+00,6.0876e-01,-7.9335e-01,-0.0000e+00,6.0876e-01,-7.9335e-01,-0.0000e+00,5.0000e-01,-8.6603e-01,-0.0000e+00,5.0000e-01,-8.6603e-01,-0.0000e+00,3.8268e-01,-9.2388e-01,-0.0000e+00,3.8268e-01,-9.2388e-01,-0.0000e+00,2.5882e-01,-9.6593e-01,-0.0000e+00,2.5882e-01,-9.6593e-01,-0.0000e+00,1.3053e-01,-9.9144e-01,-0.0000e+00,1.3053e-01,-9.9144e-01,-0.0000e+00,1.2246e-16,-1.0000e+00,-0.0000e+00,1.2246e-16,-1.0000e+00,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-1.0000e+00,-1.8370e-16,-0.0000e+00,-1.0000e+00,-1.8370e-16,-0.0000e+00,-9.9144e-01,1.3053e-01,-0.0000e+00,-9.9144e-01,1.3053e-01,-0.0000e+00,-9.6593e-01,2.5882e-01,-0.0000e+00,-9.6593e-01,2.5882e-01,-0.0000e+00,-9.2388e-01,3.8268e-01,-0.0000e+00,-9.2388e-01,3.8268e-01,-0.0000e+00,-8.6603e-01,5.0000e-01,-0.0000e+00,-8.6603e-01,5.0000e-01,-0.0000e+00,-7.9335e-01,6.0876e-01,-0.0000e+00,-7.9335e-01,6.0876e-01,-0.0000e+00,-7.0711e-01,7.0711e-01,-0.0000e+00,-7.0711e-01,7.0711e-01,-0.0000e+00,-6.0876e-01,7.9335e-01,-0.0000e+00,-6.0876e-01,7.9335e-01,-0.0000e+00,-5.0000e-01,8.6603e-01,-0.0000e+00,-5.0000e-01,8.6603e-01,-0.0000e+00,-3.8268e-01,9.2388e-01,-0.0000e+00,-3.8268e-01,9.2388e-01,-0.0000e+00,-2.5882e-01,9.6593e-01,-0.0000e+00,-2.5882e-01,9.6593e-01,-0.0000e+00,-1.3053e-01,9.9144e-01,-0.0000e+00,-1.3053e-01,9.9144e-01,-0.0000e+00});
+			return Normal_7_550_vector;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #556, 288 total numbers made up of 96 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_556_point()
+		{
+			MFVec3f Coordinate_7_556_point = new MFVec3f(new double[] {3.2500e+02,1.5750e+02,-1.0000e+02,3.2500e+02,1.5750e+02,0.0000e+00,3.2272e+02,1.5765e+02,-1.0000e+02,3.2272e+02,1.5765e+02,0.0000e+00,3.2047e+02,1.5810e+02,-1.0000e+02,3.2047e+02,1.5810e+02,0.0000e+00,3.1830e+02,1.5883e+02,-1.0000e+02,3.1830e+02,1.5883e+02,0.0000e+00,3.1625e+02,1.5984e+02,-1.0000e+02,3.1625e+02,1.5984e+02,0.0000e+00,3.1435e+02,1.6112e+02,-1.0000e+02,3.1435e+02,1.6112e+02,0.0000e+00,3.1263e+02,1.6263e+02,-1.0000e+02,3.1263e+02,1.6263e+02,0.0000e+00,3.1112e+02,1.6435e+02,-1.0000e+02,3.1112e+02,1.6435e+02,0.0000e+00,3.0984e+02,1.6625e+02,-1.0000e+02,3.0984e+02,1.6625e+02,0.0000e+00,3.0883e+02,1.6830e+02,-1.0000e+02,3.0883e+02,1.6830e+02,0.0000e+00,3.0810e+02,1.7047e+02,-1.0000e+02,3.0810e+02,1.7047e+02,0.0000e+00,3.0765e+02,1.7272e+02,-1.0000e+02,3.0765e+02,1.7272e+02,0.0000e+00,3.0750e+02,1.7500e+02,-1.0000e+02,3.0750e+02,1.7500e+02,0.0000e+00,3.0765e+02,1.7728e+02,-1.0000e+02,3.0765e+02,1.7728e+02,0.0000e+00,3.0810e+02,1.7953e+02,-1.0000e+02,3.0810e+02,1.7953e+02,0.0000e+00,3.0883e+02,1.8170e+02,-1.0000e+02,3.0883e+02,1.8170e+02,0.0000e+00,3.0984e+02,1.8375e+02,-1.0000e+02,3.0984e+02,1.8375e+02,0.0000e+00,3.1112e+02,1.8565e+02,-1.0000e+02,3.1112e+02,1.8565e+02,0.0000e+00,3.1263e+02,1.8737e+02,-1.0000e+02,3.1263e+02,1.8737e+02,0.0000e+00,3.1435e+02,1.8888e+02,-1.0000e+02,3.1435e+02,1.8888e+02,0.0000e+00,3.1625e+02,1.9016e+02,-1.0000e+02,3.1625e+02,1.9016e+02,0.0000e+00,3.1830e+02,1.9117e+02,-1.0000e+02,3.1830e+02,1.9117e+02,0.0000e+00,3.2047e+02,1.9190e+02,-1.0000e+02,3.2047e+02,1.9190e+02,0.0000e+00,3.2272e+02,1.9235e+02,-1.0000e+02,3.2272e+02,1.9235e+02,0.0000e+00,3.2500e+02,1.9250e+02,-1.0000e+02,3.2500e+02,1.9250e+02,0.0000e+00,3.2728e+02,1.9235e+02,-1.0000e+02,3.2728e+02,1.9235e+02,0.0000e+00,3.2953e+02,1.9190e+02,-1.0000e+02,3.2953e+02,1.9190e+02,0.0000e+00,3.3170e+02,1.9117e+02,-1.0000e+02,3.3170e+02,1.9117e+02,0.0000e+00,3.3375e+02,1.9016e+02,-1.0000e+02,3.3375e+02,1.9016e+02,0.0000e+00,3.3565e+02,1.8888e+02,-1.0000e+02,3.3565e+02,1.8888e+02,0.0000e+00,3.3737e+02,1.8737e+02,-1.0000e+02,3.3737e+02,1.8737e+02,0.0000e+00,3.3888e+02,1.8565e+02,-1.0000e+02,3.3888e+02,1.8565e+02,0.0000e+00,3.4016e+02,1.8375e+02,-1.0000e+02,3.4016e+02,1.8375e+02,0.0000e+00,3.4117e+02,1.8170e+02,-1.0000e+02,3.4117e+02,1.8170e+02,0.0000e+00,3.4190e+02,1.7953e+02,-1.0000e+02,3.4190e+02,1.7953e+02,0.0000e+00,3.4235e+02,1.7728e+02,-1.0000e+02,3.4235e+02,1.7728e+02,0.0000e+00,3.4250e+02,1.7500e+02,-1.0000e+02,3.4250e+02,1.7500e+02,0.0000e+00,3.4235e+02,1.7272e+02,-1.0000e+02,3.4235e+02,1.7272e+02,0.0000e+00,3.4190e+02,1.7047e+02,-1.0000e+02,3.4190e+02,1.7047e+02,0.0000e+00,3.4117e+02,1.6830e+02,-1.0000e+02,3.4117e+02,1.6830e+02,0.0000e+00,3.4016e+02,1.6625e+02,-1.0000e+02,3.4016e+02,1.6625e+02,0.0000e+00,3.3888e+02,1.6435e+02,-1.0000e+02,3.3888e+02,1.6435e+02,0.0000e+00,3.3737e+02,1.6263e+02,-1.0000e+02,3.3737e+02,1.6263e+02,0.0000e+00,3.3565e+02,1.6112e+02,-1.0000e+02,3.3565e+02,1.6112e+02,0.0000e+00,3.3375e+02,1.5984e+02,-1.0000e+02,3.3375e+02,1.5984e+02,0.0000e+00,3.3170e+02,1.5883e+02,-1.0000e+02,3.3170e+02,1.5883e+02,0.0000e+00,3.2953e+02,1.5810e+02,-1.0000e+02,3.2953e+02,1.5810e+02,0.0000e+00,3.2728e+02,1.5765e+02,-1.0000e+02,3.2728e+02,1.5765e+02,0.0000e+00});
+			return Coordinate_7_556_point;
+		}
+		/** Large attribute array: Normal vector field, scene-graph level=7, element #557, 288 total numbers made up of 96 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getNormal_7_557_vector()
+		{
+			MFVec3f Normal_7_557_vector = new MFVec3f(new double[] {-0.0000e+00,1.0000e+00,-0.0000e+00,-0.0000e+00,1.0000e+00,-0.0000e+00,1.3053e-01,9.9144e-01,-0.0000e+00,1.3053e-01,9.9144e-01,-0.0000e+00,2.5882e-01,9.6593e-01,-0.0000e+00,2.5882e-01,9.6593e-01,-0.0000e+00,3.8268e-01,9.2388e-01,-0.0000e+00,3.8268e-01,9.2388e-01,-0.0000e+00,5.0000e-01,8.6603e-01,-0.0000e+00,5.0000e-01,8.6603e-01,-0.0000e+00,6.0876e-01,7.9335e-01,-0.0000e+00,6.0876e-01,7.9335e-01,-0.0000e+00,7.0711e-01,7.0711e-01,-0.0000e+00,7.0711e-01,7.0711e-01,-0.0000e+00,7.9335e-01,6.0876e-01,-0.0000e+00,7.9335e-01,6.0876e-01,-0.0000e+00,8.6603e-01,5.0000e-01,-0.0000e+00,8.6603e-01,5.0000e-01,-0.0000e+00,9.2388e-01,3.8268e-01,-0.0000e+00,9.2388e-01,3.8268e-01,-0.0000e+00,9.6593e-01,2.5882e-01,-0.0000e+00,9.6593e-01,2.5882e-01,-0.0000e+00,9.9144e-01,1.3053e-01,-0.0000e+00,9.9144e-01,1.3053e-01,-0.0000e+00,1.0000e+00,6.1232e-17,-0.0000e+00,1.0000e+00,6.1232e-17,-0.0000e+00,9.9144e-01,-1.3053e-01,-0.0000e+00,9.9144e-01,-1.3053e-01,-0.0000e+00,9.6593e-01,-2.5882e-01,-0.0000e+00,9.6593e-01,-2.5882e-01,-0.0000e+00,9.2388e-01,-3.8268e-01,-0.0000e+00,9.2388e-01,-3.8268e-01,-0.0000e+00,8.6603e-01,-5.0000e-01,-0.0000e+00,8.6603e-01,-5.0000e-01,-0.0000e+00,7.9335e-01,-6.0876e-01,-0.0000e+00,7.9335e-01,-6.0876e-01,-0.0000e+00,7.0711e-01,-7.0711e-01,-0.0000e+00,7.0711e-01,-7.0711e-01,-0.0000e+00,6.0876e-01,-7.9335e-01,-0.0000e+00,6.0876e-01,-7.9335e-01,-0.0000e+00,5.0000e-01,-8.6603e-01,-0.0000e+00,5.0000e-01,-8.6603e-01,-0.0000e+00,3.8268e-01,-9.2388e-01,-0.0000e+00,3.8268e-01,-9.2388e-01,-0.0000e+00,2.5882e-01,-9.6593e-01,-0.0000e+00,2.5882e-01,-9.6593e-01,-0.0000e+00,1.3053e-01,-9.9144e-01,-0.0000e+00,1.3053e-01,-9.9144e-01,-0.0000e+00,1.2246e-16,-1.0000e+00,-0.0000e+00,1.2246e-16,-1.0000e+00,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-1.0000e+00,-1.8370e-16,-0.0000e+00,-1.0000e+00,-1.8370e-16,-0.0000e+00,-9.9144e-01,1.3053e-01,-0.0000e+00,-9.9144e-01,1.3053e-01,-0.0000e+00,-9.6593e-01,2.5882e-01,-0.0000e+00,-9.6593e-01,2.5882e-01,-0.0000e+00,-9.2388e-01,3.8268e-01,-0.0000e+00,-9.2388e-01,3.8268e-01,-0.0000e+00,-8.6603e-01,5.0000e-01,-0.0000e+00,-8.6603e-01,5.0000e-01,-0.0000e+00,-7.9335e-01,6.0876e-01,-0.0000e+00,-7.9335e-01,6.0876e-01,-0.0000e+00,-7.0711e-01,7.0711e-01,-0.0000e+00,-7.0711e-01,7.0711e-01,-0.0000e+00,-6.0876e-01,7.9335e-01,-0.0000e+00,-6.0876e-01,7.9335e-01,-0.0000e+00,-5.0000e-01,8.6603e-01,-0.0000e+00,-5.0000e-01,8.6603e-01,-0.0000e+00,-3.8268e-01,9.2388e-01,-0.0000e+00,-3.8268e-01,9.2388e-01,-0.0000e+00,-2.5882e-01,9.6593e-01,-0.0000e+00,-2.5882e-01,9.6593e-01,-0.0000e+00,-1.3053e-01,9.9144e-01,-0.0000e+00,-1.3053e-01,9.9144e-01,-0.0000e+00});
+			return Normal_7_557_vector;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #563, 288 total numbers made up of 96 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_563_point()
+		{
+			MFVec3f Coordinate_7_563_point = new MFVec3f(new double[] {-1.6000e+02,-5.7500e+01,-5.0000e+01,-1.6000e+02,-5.7500e+01,0.0000e+00,-1.6163e+02,-5.7393e+01,-5.0000e+01,-1.6163e+02,-5.7393e+01,0.0000e+00,-1.6324e+02,-5.7074e+01,-5.0000e+01,-1.6324e+02,-5.7074e+01,0.0000e+00,-1.6478e+02,-5.6548e+01,-5.0000e+01,-1.6478e+02,-5.6548e+01,0.0000e+00,-1.6625e+02,-5.5825e+01,-5.0000e+01,-1.6625e+02,-5.5825e+01,0.0000e+00,-1.6761e+02,-5.4917e+01,-5.0000e+01,-1.6761e+02,-5.4917e+01,0.0000e+00,-1.6884e+02,-5.3839e+01,-5.0000e+01,-1.6884e+02,-5.3839e+01,0.0000e+00,-1.6992e+02,-5.2610e+01,-5.0000e+01,-1.6992e+02,-5.2610e+01,0.0000e+00,-1.7083e+02,-5.1250e+01,-5.0000e+01,-1.7083e+02,-5.1250e+01,0.0000e+00,-1.7155e+02,-4.9784e+01,-5.0000e+01,-1.7155e+02,-4.9784e+01,0.0000e+00,-1.7207e+02,-4.8235e+01,-5.0000e+01,-1.7207e+02,-4.8235e+01,0.0000e+00,-1.7239e+02,-4.6632e+01,-5.0000e+01,-1.7239e+02,-4.6632e+01,0.0000e+00,-1.7250e+02,-4.5000e+01,-5.0000e+01,-1.7250e+02,-4.5000e+01,0.0000e+00,-1.7239e+02,-4.3368e+01,-5.0000e+01,-1.7239e+02,-4.3368e+01,0.0000e+00,-1.7207e+02,-4.1765e+01,-5.0000e+01,-1.7207e+02,-4.1765e+01,0.0000e+00,-1.7155e+02,-4.0216e+01,-5.0000e+01,-1.7155e+02,-4.0216e+01,0.0000e+00,-1.7083e+02,-3.8750e+01,-5.0000e+01,-1.7083e+02,-3.8750e+01,0.0000e+00,-1.6992e+02,-3.7390e+01,-5.0000e+01,-1.6992e+02,-3.7390e+01,0.0000e+00,-1.6884e+02,-3.6161e+01,-5.0000e+01,-1.6884e+02,-3.6161e+01,0.0000e+00,-1.6761e+02,-3.5083e+01,-5.0000e+01,-1.6761e+02,-3.5083e+01,0.0000e+00,-1.6625e+02,-3.4175e+01,-5.0000e+01,-1.6625e+02,-3.4175e+01,0.0000e+00,-1.6478e+02,-3.3452e+01,-5.0000e+01,-1.6478e+02,-3.3452e+01,0.0000e+00,-1.6324e+02,-3.2926e+01,-5.0000e+01,-1.6324e+02,-3.2926e+01,0.0000e+00,-1.6163e+02,-3.2607e+01,-5.0000e+01,-1.6163e+02,-3.2607e+01,0.0000e+00,-1.6000e+02,-3.2500e+01,-5.0000e+01,-1.6000e+02,-3.2500e+01,0.0000e+00,-1.5837e+02,-3.2607e+01,-5.0000e+01,-1.5837e+02,-3.2607e+01,0.0000e+00,-1.5676e+02,-3.2926e+01,-5.0000e+01,-1.5676e+02,-3.2926e+01,0.0000e+00,-1.5522e+02,-3.3452e+01,-5.0000e+01,-1.5522e+02,-3.3452e+01,0.0000e+00,-1.5375e+02,-3.4175e+01,-5.0000e+01,-1.5375e+02,-3.4175e+01,0.0000e+00,-1.5239e+02,-3.5083e+01,-5.0000e+01,-1.5239e+02,-3.5083e+01,0.0000e+00,-1.5116e+02,-3.6161e+01,-5.0000e+01,-1.5116e+02,-3.6161e+01,0.0000e+00,-1.5008e+02,-3.7390e+01,-5.0000e+01,-1.5008e+02,-3.7390e+01,0.0000e+00,-1.4917e+02,-3.8750e+01,-5.0000e+01,-1.4917e+02,-3.8750e+01,0.0000e+00,-1.4845e+02,-4.0216e+01,-5.0000e+01,-1.4845e+02,-4.0216e+01,0.0000e+00,-1.4793e+02,-4.1765e+01,-5.0000e+01,-1.4793e+02,-4.1765e+01,0.0000e+00,-1.4761e+02,-4.3368e+01,-5.0000e+01,-1.4761e+02,-4.3368e+01,0.0000e+00,-1.4750e+02,-4.5000e+01,-5.0000e+01,-1.4750e+02,-4.5000e+01,0.0000e+00,-1.4761e+02,-4.6632e+01,-5.0000e+01,-1.4761e+02,-4.6632e+01,0.0000e+00,-1.4793e+02,-4.8235e+01,-5.0000e+01,-1.4793e+02,-4.8235e+01,0.0000e+00,-1.4845e+02,-4.9784e+01,-5.0000e+01,-1.4845e+02,-4.9784e+01,0.0000e+00,-1.4917e+02,-5.1250e+01,-5.0000e+01,-1.4917e+02,-5.1250e+01,0.0000e+00,-1.5008e+02,-5.2610e+01,-5.0000e+01,-1.5008e+02,-5.2610e+01,0.0000e+00,-1.5116e+02,-5.3839e+01,-5.0000e+01,-1.5116e+02,-5.3839e+01,0.0000e+00,-1.5239e+02,-5.4917e+01,-5.0000e+01,-1.5239e+02,-5.4917e+01,0.0000e+00,-1.5375e+02,-5.5825e+01,-5.0000e+01,-1.5375e+02,-5.5825e+01,0.0000e+00,-1.5522e+02,-5.6548e+01,-5.0000e+01,-1.5522e+02,-5.6548e+01,0.0000e+00,-1.5676e+02,-5.7074e+01,-5.0000e+01,-1.5676e+02,-5.7074e+01,0.0000e+00,-1.5837e+02,-5.7393e+01,-5.0000e+01,-1.5837e+02,-5.7393e+01,0.0000e+00});
+			return Coordinate_7_563_point;
+		}
+		/** Large attribute array: Normal vector field, scene-graph level=7, element #564, 288 total numbers made up of 96 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getNormal_7_564_vector()
+		{
+			MFVec3f Normal_7_564_vector = new MFVec3f(new double[] {-0.0000e+00,1.0000e+00,-0.0000e+00,-0.0000e+00,1.0000e+00,-0.0000e+00,1.3053e-01,9.9144e-01,-0.0000e+00,1.3053e-01,9.9144e-01,-0.0000e+00,2.5882e-01,9.6593e-01,-0.0000e+00,2.5882e-01,9.6593e-01,-0.0000e+00,3.8268e-01,9.2388e-01,-0.0000e+00,3.8268e-01,9.2388e-01,-0.0000e+00,5.0000e-01,8.6603e-01,-0.0000e+00,5.0000e-01,8.6603e-01,-0.0000e+00,6.0876e-01,7.9335e-01,-0.0000e+00,6.0876e-01,7.9335e-01,-0.0000e+00,7.0711e-01,7.0711e-01,-0.0000e+00,7.0711e-01,7.0711e-01,-0.0000e+00,7.9335e-01,6.0876e-01,-0.0000e+00,7.9335e-01,6.0876e-01,-0.0000e+00,8.6603e-01,5.0000e-01,-0.0000e+00,8.6603e-01,5.0000e-01,-0.0000e+00,9.2388e-01,3.8268e-01,-0.0000e+00,9.2388e-01,3.8268e-01,-0.0000e+00,9.6593e-01,2.5882e-01,-0.0000e+00,9.6593e-01,2.5882e-01,-0.0000e+00,9.9144e-01,1.3053e-01,-0.0000e+00,9.9144e-01,1.3053e-01,-0.0000e+00,1.0000e+00,6.1232e-17,-0.0000e+00,1.0000e+00,6.1232e-17,-0.0000e+00,9.9144e-01,-1.3053e-01,-0.0000e+00,9.9144e-01,-1.3053e-01,-0.0000e+00,9.6593e-01,-2.5882e-01,-0.0000e+00,9.6593e-01,-2.5882e-01,-0.0000e+00,9.2388e-01,-3.8268e-01,-0.0000e+00,9.2388e-01,-3.8268e-01,-0.0000e+00,8.6603e-01,-5.0000e-01,-0.0000e+00,8.6603e-01,-5.0000e-01,-0.0000e+00,7.9335e-01,-6.0876e-01,-0.0000e+00,7.9335e-01,-6.0876e-01,-0.0000e+00,7.0711e-01,-7.0711e-01,-0.0000e+00,7.0711e-01,-7.0711e-01,-0.0000e+00,6.0876e-01,-7.9335e-01,-0.0000e+00,6.0876e-01,-7.9335e-01,-0.0000e+00,5.0000e-01,-8.6603e-01,-0.0000e+00,5.0000e-01,-8.6603e-01,-0.0000e+00,3.8268e-01,-9.2388e-01,-0.0000e+00,3.8268e-01,-9.2388e-01,-0.0000e+00,2.5882e-01,-9.6593e-01,-0.0000e+00,2.5882e-01,-9.6593e-01,-0.0000e+00,1.3053e-01,-9.9144e-01,-0.0000e+00,1.3053e-01,-9.9144e-01,-0.0000e+00,1.2246e-16,-1.0000e+00,-0.0000e+00,1.2246e-16,-1.0000e+00,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-1.0000e+00,-1.8370e-16,-0.0000e+00,-1.0000e+00,-1.8370e-16,-0.0000e+00,-9.9144e-01,1.3053e-01,-0.0000e+00,-9.9144e-01,1.3053e-01,-0.0000e+00,-9.6593e-01,2.5882e-01,-0.0000e+00,-9.6593e-01,2.5882e-01,-0.0000e+00,-9.2388e-01,3.8268e-01,-0.0000e+00,-9.2388e-01,3.8268e-01,-0.0000e+00,-8.6603e-01,5.0000e-01,-0.0000e+00,-8.6603e-01,5.0000e-01,-0.0000e+00,-7.9335e-01,6.0876e-01,-0.0000e+00,-7.9335e-01,6.0876e-01,-0.0000e+00,-7.0711e-01,7.0711e-01,-0.0000e+00,-7.0711e-01,7.0711e-01,-0.0000e+00,-6.0876e-01,7.9335e-01,-0.0000e+00,-6.0876e-01,7.9335e-01,-0.0000e+00,-5.0000e-01,8.6603e-01,-0.0000e+00,-5.0000e-01,8.6603e-01,-0.0000e+00,-3.8268e-01,9.2388e-01,-0.0000e+00,-3.8268e-01,9.2388e-01,-0.0000e+00,-2.5882e-01,9.6593e-01,-0.0000e+00,-2.5882e-01,9.6593e-01,-0.0000e+00,-1.3053e-01,9.9144e-01,-0.0000e+00,-1.3053e-01,9.9144e-01,-0.0000e+00});
+			return Normal_7_564_vector;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #570, 288 total numbers made up of 96 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_570_point()
+		{
+			MFVec3f Coordinate_7_570_point = new MFVec3f(new double[] {-1.6000e+02,3.2500e+01,-5.0000e+01,-1.6000e+02,3.2500e+01,0.0000e+00,-1.6163e+02,3.2607e+01,-5.0000e+01,-1.6163e+02,3.2607e+01,0.0000e+00,-1.6324e+02,3.2926e+01,-5.0000e+01,-1.6324e+02,3.2926e+01,0.0000e+00,-1.6478e+02,3.3452e+01,-5.0000e+01,-1.6478e+02,3.3452e+01,0.0000e+00,-1.6625e+02,3.4175e+01,-5.0000e+01,-1.6625e+02,3.4175e+01,0.0000e+00,-1.6761e+02,3.5083e+01,-5.0000e+01,-1.6761e+02,3.5083e+01,0.0000e+00,-1.6884e+02,3.6161e+01,-5.0000e+01,-1.6884e+02,3.6161e+01,0.0000e+00,-1.6992e+02,3.7390e+01,-5.0000e+01,-1.6992e+02,3.7390e+01,0.0000e+00,-1.7083e+02,3.8750e+01,-5.0000e+01,-1.7083e+02,3.8750e+01,0.0000e+00,-1.7155e+02,4.0216e+01,-5.0000e+01,-1.7155e+02,4.0216e+01,0.0000e+00,-1.7207e+02,4.1765e+01,-5.0000e+01,-1.7207e+02,4.1765e+01,0.0000e+00,-1.7239e+02,4.3368e+01,-5.0000e+01,-1.7239e+02,4.3368e+01,0.0000e+00,-1.7250e+02,4.5000e+01,-5.0000e+01,-1.7250e+02,4.5000e+01,0.0000e+00,-1.7239e+02,4.6632e+01,-5.0000e+01,-1.7239e+02,4.6632e+01,0.0000e+00,-1.7207e+02,4.8235e+01,-5.0000e+01,-1.7207e+02,4.8235e+01,0.0000e+00,-1.7155e+02,4.9784e+01,-5.0000e+01,-1.7155e+02,4.9784e+01,0.0000e+00,-1.7083e+02,5.1250e+01,-5.0000e+01,-1.7083e+02,5.1250e+01,0.0000e+00,-1.6992e+02,5.2610e+01,-5.0000e+01,-1.6992e+02,5.2610e+01,0.0000e+00,-1.6884e+02,5.3839e+01,-5.0000e+01,-1.6884e+02,5.3839e+01,0.0000e+00,-1.6761e+02,5.4917e+01,-5.0000e+01,-1.6761e+02,5.4917e+01,0.0000e+00,-1.6625e+02,5.5825e+01,-5.0000e+01,-1.6625e+02,5.5825e+01,0.0000e+00,-1.6478e+02,5.6548e+01,-5.0000e+01,-1.6478e+02,5.6548e+01,0.0000e+00,-1.6324e+02,5.7074e+01,-5.0000e+01,-1.6324e+02,5.7074e+01,0.0000e+00,-1.6163e+02,5.7393e+01,-5.0000e+01,-1.6163e+02,5.7393e+01,0.0000e+00,-1.6000e+02,5.7500e+01,-5.0000e+01,-1.6000e+02,5.7500e+01,0.0000e+00,-1.5837e+02,5.7393e+01,-5.0000e+01,-1.5837e+02,5.7393e+01,0.0000e+00,-1.5676e+02,5.7074e+01,-5.0000e+01,-1.5676e+02,5.7074e+01,0.0000e+00,-1.5522e+02,5.6548e+01,-5.0000e+01,-1.5522e+02,5.6548e+01,0.0000e+00,-1.5375e+02,5.5825e+01,-5.0000e+01,-1.5375e+02,5.5825e+01,0.0000e+00,-1.5239e+02,5.4917e+01,-5.0000e+01,-1.5239e+02,5.4917e+01,0.0000e+00,-1.5116e+02,5.3839e+01,-5.0000e+01,-1.5116e+02,5.3839e+01,0.0000e+00,-1.5008e+02,5.2610e+01,-5.0000e+01,-1.5008e+02,5.2610e+01,0.0000e+00,-1.4917e+02,5.1250e+01,-5.0000e+01,-1.4917e+02,5.1250e+01,0.0000e+00,-1.4845e+02,4.9784e+01,-5.0000e+01,-1.4845e+02,4.9784e+01,0.0000e+00,-1.4793e+02,4.8235e+01,-5.0000e+01,-1.4793e+02,4.8235e+01,0.0000e+00,-1.4761e+02,4.6632e+01,-5.0000e+01,-1.4761e+02,4.6632e+01,0.0000e+00,-1.4750e+02,4.5000e+01,-5.0000e+01,-1.4750e+02,4.5000e+01,0.0000e+00,-1.4761e+02,4.3368e+01,-5.0000e+01,-1.4761e+02,4.3368e+01,0.0000e+00,-1.4793e+02,4.1765e+01,-5.0000e+01,-1.4793e+02,4.1765e+01,0.0000e+00,-1.4845e+02,4.0216e+01,-5.0000e+01,-1.4845e+02,4.0216e+01,0.0000e+00,-1.4917e+02,3.8750e+01,-5.0000e+01,-1.4917e+02,3.8750e+01,0.0000e+00,-1.5008e+02,3.7390e+01,-5.0000e+01,-1.5008e+02,3.7390e+01,0.0000e+00,-1.5116e+02,3.6161e+01,-5.0000e+01,-1.5116e+02,3.6161e+01,0.0000e+00,-1.5239e+02,3.5083e+01,-5.0000e+01,-1.5239e+02,3.5083e+01,0.0000e+00,-1.5375e+02,3.4175e+01,-5.0000e+01,-1.5375e+02,3.4175e+01,0.0000e+00,-1.5522e+02,3.3452e+01,-5.0000e+01,-1.5522e+02,3.3452e+01,0.0000e+00,-1.5676e+02,3.2926e+01,-5.0000e+01,-1.5676e+02,3.2926e+01,0.0000e+00,-1.5837e+02,3.2607e+01,-5.0000e+01,-1.5837e+02,3.2607e+01,0.0000e+00});
+			return Coordinate_7_570_point;
+		}
+		/** Large attribute array: Normal vector field, scene-graph level=7, element #571, 288 total numbers made up of 96 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getNormal_7_571_vector()
+		{
+			MFVec3f Normal_7_571_vector = new MFVec3f(new double[] {-0.0000e+00,1.0000e+00,-0.0000e+00,-0.0000e+00,1.0000e+00,-0.0000e+00,1.3053e-01,9.9144e-01,-0.0000e+00,1.3053e-01,9.9144e-01,-0.0000e+00,2.5882e-01,9.6593e-01,-0.0000e+00,2.5882e-01,9.6593e-01,-0.0000e+00,3.8268e-01,9.2388e-01,-0.0000e+00,3.8268e-01,9.2388e-01,-0.0000e+00,5.0000e-01,8.6603e-01,-0.0000e+00,5.0000e-01,8.6603e-01,-0.0000e+00,6.0876e-01,7.9335e-01,-0.0000e+00,6.0876e-01,7.9335e-01,-0.0000e+00,7.0711e-01,7.0711e-01,-0.0000e+00,7.0711e-01,7.0711e-01,-0.0000e+00,7.9335e-01,6.0876e-01,-0.0000e+00,7.9335e-01,6.0876e-01,-0.0000e+00,8.6603e-01,5.0000e-01,-0.0000e+00,8.6603e-01,5.0000e-01,-0.0000e+00,9.2388e-01,3.8268e-01,-0.0000e+00,9.2388e-01,3.8268e-01,-0.0000e+00,9.6593e-01,2.5882e-01,-0.0000e+00,9.6593e-01,2.5882e-01,-0.0000e+00,9.9144e-01,1.3053e-01,-0.0000e+00,9.9144e-01,1.3053e-01,-0.0000e+00,1.0000e+00,6.1232e-17,-0.0000e+00,1.0000e+00,6.1232e-17,-0.0000e+00,9.9144e-01,-1.3053e-01,-0.0000e+00,9.9144e-01,-1.3053e-01,-0.0000e+00,9.6593e-01,-2.5882e-01,-0.0000e+00,9.6593e-01,-2.5882e-01,-0.0000e+00,9.2388e-01,-3.8268e-01,-0.0000e+00,9.2388e-01,-3.8268e-01,-0.0000e+00,8.6603e-01,-5.0000e-01,-0.0000e+00,8.6603e-01,-5.0000e-01,-0.0000e+00,7.9335e-01,-6.0876e-01,-0.0000e+00,7.9335e-01,-6.0876e-01,-0.0000e+00,7.0711e-01,-7.0711e-01,-0.0000e+00,7.0711e-01,-7.0711e-01,-0.0000e+00,6.0876e-01,-7.9335e-01,-0.0000e+00,6.0876e-01,-7.9335e-01,-0.0000e+00,5.0000e-01,-8.6603e-01,-0.0000e+00,5.0000e-01,-8.6603e-01,-0.0000e+00,3.8268e-01,-9.2388e-01,-0.0000e+00,3.8268e-01,-9.2388e-01,-0.0000e+00,2.5882e-01,-9.6593e-01,-0.0000e+00,2.5882e-01,-9.6593e-01,-0.0000e+00,1.3053e-01,-9.9144e-01,-0.0000e+00,1.3053e-01,-9.9144e-01,-0.0000e+00,1.2246e-16,-1.0000e+00,-0.0000e+00,1.2246e-16,-1.0000e+00,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-1.0000e+00,-1.8370e-16,-0.0000e+00,-1.0000e+00,-1.8370e-16,-0.0000e+00,-9.9144e-01,1.3053e-01,-0.0000e+00,-9.9144e-01,1.3053e-01,-0.0000e+00,-9.6593e-01,2.5882e-01,-0.0000e+00,-9.6593e-01,2.5882e-01,-0.0000e+00,-9.2388e-01,3.8268e-01,-0.0000e+00,-9.2388e-01,3.8268e-01,-0.0000e+00,-8.6603e-01,5.0000e-01,-0.0000e+00,-8.6603e-01,5.0000e-01,-0.0000e+00,-7.9335e-01,6.0876e-01,-0.0000e+00,-7.9335e-01,6.0876e-01,-0.0000e+00,-7.0711e-01,7.0711e-01,-0.0000e+00,-7.0711e-01,7.0711e-01,-0.0000e+00,-6.0876e-01,7.9335e-01,-0.0000e+00,-6.0876e-01,7.9335e-01,-0.0000e+00,-5.0000e-01,8.6603e-01,-0.0000e+00,-5.0000e-01,8.6603e-01,-0.0000e+00,-3.8268e-01,9.2388e-01,-0.0000e+00,-3.8268e-01,9.2388e-01,-0.0000e+00,-2.5882e-01,9.6593e-01,-0.0000e+00,-2.5882e-01,9.6593e-01,-0.0000e+00,-1.3053e-01,9.9144e-01,-0.0000e+00,-1.3053e-01,9.9144e-01,-0.0000e+00});
+			return Normal_7_571_vector;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #577, 288 total numbers made up of 96 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_577_point()
+		{
+			MFVec3f Coordinate_7_577_point = new MFVec3f(new double[] {1.6000e+02,-5.7500e+01,-5.0000e+01,1.6000e+02,-5.7500e+01,0.0000e+00,1.5837e+02,-5.7393e+01,-5.0000e+01,1.5837e+02,-5.7393e+01,0.0000e+00,1.5676e+02,-5.7074e+01,-5.0000e+01,1.5676e+02,-5.7074e+01,0.0000e+00,1.5522e+02,-5.6548e+01,-5.0000e+01,1.5522e+02,-5.6548e+01,0.0000e+00,1.5375e+02,-5.5825e+01,-5.0000e+01,1.5375e+02,-5.5825e+01,0.0000e+00,1.5239e+02,-5.4917e+01,-5.0000e+01,1.5239e+02,-5.4917e+01,0.0000e+00,1.5116e+02,-5.3839e+01,-5.0000e+01,1.5116e+02,-5.3839e+01,0.0000e+00,1.5008e+02,-5.2610e+01,-5.0000e+01,1.5008e+02,-5.2610e+01,0.0000e+00,1.4917e+02,-5.1250e+01,-5.0000e+01,1.4917e+02,-5.1250e+01,0.0000e+00,1.4845e+02,-4.9784e+01,-5.0000e+01,1.4845e+02,-4.9784e+01,0.0000e+00,1.4793e+02,-4.8235e+01,-5.0000e+01,1.4793e+02,-4.8235e+01,0.0000e+00,1.4761e+02,-4.6632e+01,-5.0000e+01,1.4761e+02,-4.6632e+01,0.0000e+00,1.4750e+02,-4.5000e+01,-5.0000e+01,1.4750e+02,-4.5000e+01,0.0000e+00,1.4761e+02,-4.3368e+01,-5.0000e+01,1.4761e+02,-4.3368e+01,0.0000e+00,1.4793e+02,-4.1765e+01,-5.0000e+01,1.4793e+02,-4.1765e+01,0.0000e+00,1.4845e+02,-4.0216e+01,-5.0000e+01,1.4845e+02,-4.0216e+01,0.0000e+00,1.4917e+02,-3.8750e+01,-5.0000e+01,1.4917e+02,-3.8750e+01,0.0000e+00,1.5008e+02,-3.7390e+01,-5.0000e+01,1.5008e+02,-3.7390e+01,0.0000e+00,1.5116e+02,-3.6161e+01,-5.0000e+01,1.5116e+02,-3.6161e+01,0.0000e+00,1.5239e+02,-3.5083e+01,-5.0000e+01,1.5239e+02,-3.5083e+01,0.0000e+00,1.5375e+02,-3.4175e+01,-5.0000e+01,1.5375e+02,-3.4175e+01,0.0000e+00,1.5522e+02,-3.3452e+01,-5.0000e+01,1.5522e+02,-3.3452e+01,0.0000e+00,1.5676e+02,-3.2926e+01,-5.0000e+01,1.5676e+02,-3.2926e+01,0.0000e+00,1.5837e+02,-3.2607e+01,-5.0000e+01,1.5837e+02,-3.2607e+01,0.0000e+00,1.6000e+02,-3.2500e+01,-5.0000e+01,1.6000e+02,-3.2500e+01,0.0000e+00,1.6163e+02,-3.2607e+01,-5.0000e+01,1.6163e+02,-3.2607e+01,0.0000e+00,1.6324e+02,-3.2926e+01,-5.0000e+01,1.6324e+02,-3.2926e+01,0.0000e+00,1.6478e+02,-3.3452e+01,-5.0000e+01,1.6478e+02,-3.3452e+01,0.0000e+00,1.6625e+02,-3.4175e+01,-5.0000e+01,1.6625e+02,-3.4175e+01,0.0000e+00,1.6761e+02,-3.5083e+01,-5.0000e+01,1.6761e+02,-3.5083e+01,0.0000e+00,1.6884e+02,-3.6161e+01,-5.0000e+01,1.6884e+02,-3.6161e+01,0.0000e+00,1.6992e+02,-3.7390e+01,-5.0000e+01,1.6992e+02,-3.7390e+01,0.0000e+00,1.7083e+02,-3.8750e+01,-5.0000e+01,1.7083e+02,-3.8750e+01,0.0000e+00,1.7155e+02,-4.0216e+01,-5.0000e+01,1.7155e+02,-4.0216e+01,0.0000e+00,1.7207e+02,-4.1765e+01,-5.0000e+01,1.7207e+02,-4.1765e+01,0.0000e+00,1.7239e+02,-4.3368e+01,-5.0000e+01,1.7239e+02,-4.3368e+01,0.0000e+00,1.7250e+02,-4.5000e+01,-5.0000e+01,1.7250e+02,-4.5000e+01,0.0000e+00,1.7239e+02,-4.6632e+01,-5.0000e+01,1.7239e+02,-4.6632e+01,0.0000e+00,1.7207e+02,-4.8235e+01,-5.0000e+01,1.7207e+02,-4.8235e+01,0.0000e+00,1.7155e+02,-4.9784e+01,-5.0000e+01,1.7155e+02,-4.9784e+01,0.0000e+00,1.7083e+02,-5.1250e+01,-5.0000e+01,1.7083e+02,-5.1250e+01,0.0000e+00,1.6992e+02,-5.2610e+01,-5.0000e+01,1.6992e+02,-5.2610e+01,0.0000e+00,1.6884e+02,-5.3839e+01,-5.0000e+01,1.6884e+02,-5.3839e+01,0.0000e+00,1.6761e+02,-5.4917e+01,-5.0000e+01,1.6761e+02,-5.4917e+01,0.0000e+00,1.6625e+02,-5.5825e+01,-5.0000e+01,1.6625e+02,-5.5825e+01,0.0000e+00,1.6478e+02,-5.6548e+01,-5.0000e+01,1.6478e+02,-5.6548e+01,0.0000e+00,1.6324e+02,-5.7074e+01,-5.0000e+01,1.6324e+02,-5.7074e+01,0.0000e+00,1.6163e+02,-5.7393e+01,-5.0000e+01,1.6163e+02,-5.7393e+01,0.0000e+00});
+			return Coordinate_7_577_point;
+		}
+		/** Large attribute array: Normal vector field, scene-graph level=7, element #578, 288 total numbers made up of 96 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getNormal_7_578_vector()
+		{
+			MFVec3f Normal_7_578_vector = new MFVec3f(new double[] {-0.0000e+00,1.0000e+00,-0.0000e+00,-0.0000e+00,1.0000e+00,-0.0000e+00,1.3053e-01,9.9144e-01,-0.0000e+00,1.3053e-01,9.9144e-01,-0.0000e+00,2.5882e-01,9.6593e-01,-0.0000e+00,2.5882e-01,9.6593e-01,-0.0000e+00,3.8268e-01,9.2388e-01,-0.0000e+00,3.8268e-01,9.2388e-01,-0.0000e+00,5.0000e-01,8.6603e-01,-0.0000e+00,5.0000e-01,8.6603e-01,-0.0000e+00,6.0876e-01,7.9335e-01,-0.0000e+00,6.0876e-01,7.9335e-01,-0.0000e+00,7.0711e-01,7.0711e-01,-0.0000e+00,7.0711e-01,7.0711e-01,-0.0000e+00,7.9335e-01,6.0876e-01,-0.0000e+00,7.9335e-01,6.0876e-01,-0.0000e+00,8.6603e-01,5.0000e-01,-0.0000e+00,8.6603e-01,5.0000e-01,-0.0000e+00,9.2388e-01,3.8268e-01,-0.0000e+00,9.2388e-01,3.8268e-01,-0.0000e+00,9.6593e-01,2.5882e-01,-0.0000e+00,9.6593e-01,2.5882e-01,-0.0000e+00,9.9144e-01,1.3053e-01,-0.0000e+00,9.9144e-01,1.3053e-01,-0.0000e+00,1.0000e+00,6.1232e-17,-0.0000e+00,1.0000e+00,6.1232e-17,-0.0000e+00,9.9144e-01,-1.3053e-01,-0.0000e+00,9.9144e-01,-1.3053e-01,-0.0000e+00,9.6593e-01,-2.5882e-01,-0.0000e+00,9.6593e-01,-2.5882e-01,-0.0000e+00,9.2388e-01,-3.8268e-01,-0.0000e+00,9.2388e-01,-3.8268e-01,-0.0000e+00,8.6603e-01,-5.0000e-01,-0.0000e+00,8.6603e-01,-5.0000e-01,-0.0000e+00,7.9335e-01,-6.0876e-01,-0.0000e+00,7.9335e-01,-6.0876e-01,-0.0000e+00,7.0711e-01,-7.0711e-01,-0.0000e+00,7.0711e-01,-7.0711e-01,-0.0000e+00,6.0876e-01,-7.9335e-01,-0.0000e+00,6.0876e-01,-7.9335e-01,-0.0000e+00,5.0000e-01,-8.6603e-01,-0.0000e+00,5.0000e-01,-8.6603e-01,-0.0000e+00,3.8268e-01,-9.2388e-01,-0.0000e+00,3.8268e-01,-9.2388e-01,-0.0000e+00,2.5882e-01,-9.6593e-01,-0.0000e+00,2.5882e-01,-9.6593e-01,-0.0000e+00,1.3053e-01,-9.9144e-01,-0.0000e+00,1.3053e-01,-9.9144e-01,-0.0000e+00,1.2246e-16,-1.0000e+00,-0.0000e+00,1.2246e-16,-1.0000e+00,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-1.0000e+00,-1.8370e-16,-0.0000e+00,-1.0000e+00,-1.8370e-16,-0.0000e+00,-9.9144e-01,1.3053e-01,-0.0000e+00,-9.9144e-01,1.3053e-01,-0.0000e+00,-9.6593e-01,2.5882e-01,-0.0000e+00,-9.6593e-01,2.5882e-01,-0.0000e+00,-9.2388e-01,3.8268e-01,-0.0000e+00,-9.2388e-01,3.8268e-01,-0.0000e+00,-8.6603e-01,5.0000e-01,-0.0000e+00,-8.6603e-01,5.0000e-01,-0.0000e+00,-7.9335e-01,6.0876e-01,-0.0000e+00,-7.9335e-01,6.0876e-01,-0.0000e+00,-7.0711e-01,7.0711e-01,-0.0000e+00,-7.0711e-01,7.0711e-01,-0.0000e+00,-6.0876e-01,7.9335e-01,-0.0000e+00,-6.0876e-01,7.9335e-01,-0.0000e+00,-5.0000e-01,8.6603e-01,-0.0000e+00,-5.0000e-01,8.6603e-01,-0.0000e+00,-3.8268e-01,9.2388e-01,-0.0000e+00,-3.8268e-01,9.2388e-01,-0.0000e+00,-2.5882e-01,9.6593e-01,-0.0000e+00,-2.5882e-01,9.6593e-01,-0.0000e+00,-1.3053e-01,9.9144e-01,-0.0000e+00,-1.3053e-01,9.9144e-01,-0.0000e+00});
+			return Normal_7_578_vector;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #584, 288 total numbers made up of 96 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_584_point()
+		{
+			MFVec3f Coordinate_7_584_point = new MFVec3f(new double[] {1.6000e+02,3.2500e+01,-5.0000e+01,1.6000e+02,3.2500e+01,0.0000e+00,1.5837e+02,3.2607e+01,-5.0000e+01,1.5837e+02,3.2607e+01,0.0000e+00,1.5676e+02,3.2926e+01,-5.0000e+01,1.5676e+02,3.2926e+01,0.0000e+00,1.5522e+02,3.3452e+01,-5.0000e+01,1.5522e+02,3.3452e+01,0.0000e+00,1.5375e+02,3.4175e+01,-5.0000e+01,1.5375e+02,3.4175e+01,0.0000e+00,1.5239e+02,3.5083e+01,-5.0000e+01,1.5239e+02,3.5083e+01,0.0000e+00,1.5116e+02,3.6161e+01,-5.0000e+01,1.5116e+02,3.6161e+01,0.0000e+00,1.5008e+02,3.7390e+01,-5.0000e+01,1.5008e+02,3.7390e+01,0.0000e+00,1.4917e+02,3.8750e+01,-5.0000e+01,1.4917e+02,3.8750e+01,0.0000e+00,1.4845e+02,4.0216e+01,-5.0000e+01,1.4845e+02,4.0216e+01,0.0000e+00,1.4793e+02,4.1765e+01,-5.0000e+01,1.4793e+02,4.1765e+01,0.0000e+00,1.4761e+02,4.3368e+01,-5.0000e+01,1.4761e+02,4.3368e+01,0.0000e+00,1.4750e+02,4.5000e+01,-5.0000e+01,1.4750e+02,4.5000e+01,0.0000e+00,1.4761e+02,4.6632e+01,-5.0000e+01,1.4761e+02,4.6632e+01,0.0000e+00,1.4793e+02,4.8235e+01,-5.0000e+01,1.4793e+02,4.8235e+01,0.0000e+00,1.4845e+02,4.9784e+01,-5.0000e+01,1.4845e+02,4.9784e+01,0.0000e+00,1.4917e+02,5.1250e+01,-5.0000e+01,1.4917e+02,5.1250e+01,0.0000e+00,1.5008e+02,5.2610e+01,-5.0000e+01,1.5008e+02,5.2610e+01,0.0000e+00,1.5116e+02,5.3839e+01,-5.0000e+01,1.5116e+02,5.3839e+01,0.0000e+00,1.5239e+02,5.4917e+01,-5.0000e+01,1.5239e+02,5.4917e+01,0.0000e+00,1.5375e+02,5.5825e+01,-5.0000e+01,1.5375e+02,5.5825e+01,0.0000e+00,1.5522e+02,5.6548e+01,-5.0000e+01,1.5522e+02,5.6548e+01,0.0000e+00,1.5676e+02,5.7074e+01,-5.0000e+01,1.5676e+02,5.7074e+01,0.0000e+00,1.5837e+02,5.7393e+01,-5.0000e+01,1.5837e+02,5.7393e+01,0.0000e+00,1.6000e+02,5.7500e+01,-5.0000e+01,1.6000e+02,5.7500e+01,0.0000e+00,1.6163e+02,5.7393e+01,-5.0000e+01,1.6163e+02,5.7393e+01,0.0000e+00,1.6324e+02,5.7074e+01,-5.0000e+01,1.6324e+02,5.7074e+01,0.0000e+00,1.6478e+02,5.6548e+01,-5.0000e+01,1.6478e+02,5.6548e+01,0.0000e+00,1.6625e+02,5.5825e+01,-5.0000e+01,1.6625e+02,5.5825e+01,0.0000e+00,1.6761e+02,5.4917e+01,-5.0000e+01,1.6761e+02,5.4917e+01,0.0000e+00,1.6884e+02,5.3839e+01,-5.0000e+01,1.6884e+02,5.3839e+01,0.0000e+00,1.6992e+02,5.2610e+01,-5.0000e+01,1.6992e+02,5.2610e+01,0.0000e+00,1.7083e+02,5.1250e+01,-5.0000e+01,1.7083e+02,5.1250e+01,0.0000e+00,1.7155e+02,4.9784e+01,-5.0000e+01,1.7155e+02,4.9784e+01,0.0000e+00,1.7207e+02,4.8235e+01,-5.0000e+01,1.7207e+02,4.8235e+01,0.0000e+00,1.7239e+02,4.6632e+01,-5.0000e+01,1.7239e+02,4.6632e+01,0.0000e+00,1.7250e+02,4.5000e+01,-5.0000e+01,1.7250e+02,4.5000e+01,0.0000e+00,1.7239e+02,4.3368e+01,-5.0000e+01,1.7239e+02,4.3368e+01,0.0000e+00,1.7207e+02,4.1765e+01,-5.0000e+01,1.7207e+02,4.1765e+01,0.0000e+00,1.7155e+02,4.0216e+01,-5.0000e+01,1.7155e+02,4.0216e+01,0.0000e+00,1.7083e+02,3.8750e+01,-5.0000e+01,1.7083e+02,3.8750e+01,0.0000e+00,1.6992e+02,3.7390e+01,-5.0000e+01,1.6992e+02,3.7390e+01,0.0000e+00,1.6884e+02,3.6161e+01,-5.0000e+01,1.6884e+02,3.6161e+01,0.0000e+00,1.6761e+02,3.5083e+01,-5.0000e+01,1.6761e+02,3.5083e+01,0.0000e+00,1.6625e+02,3.4175e+01,-5.0000e+01,1.6625e+02,3.4175e+01,0.0000e+00,1.6478e+02,3.3452e+01,-5.0000e+01,1.6478e+02,3.3452e+01,0.0000e+00,1.6324e+02,3.2926e+01,-5.0000e+01,1.6324e+02,3.2926e+01,0.0000e+00,1.6163e+02,3.2607e+01,-5.0000e+01,1.6163e+02,3.2607e+01,0.0000e+00});
+			return Coordinate_7_584_point;
+		}
+		/** Large attribute array: Normal vector field, scene-graph level=7, element #585, 288 total numbers made up of 96 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getNormal_7_585_vector()
+		{
+			MFVec3f Normal_7_585_vector = new MFVec3f(new double[] {-0.0000e+00,1.0000e+00,-0.0000e+00,-0.0000e+00,1.0000e+00,-0.0000e+00,1.3053e-01,9.9144e-01,-0.0000e+00,1.3053e-01,9.9144e-01,-0.0000e+00,2.5882e-01,9.6593e-01,-0.0000e+00,2.5882e-01,9.6593e-01,-0.0000e+00,3.8268e-01,9.2388e-01,-0.0000e+00,3.8268e-01,9.2388e-01,-0.0000e+00,5.0000e-01,8.6603e-01,-0.0000e+00,5.0000e-01,8.6603e-01,-0.0000e+00,6.0876e-01,7.9335e-01,-0.0000e+00,6.0876e-01,7.9335e-01,-0.0000e+00,7.0711e-01,7.0711e-01,-0.0000e+00,7.0711e-01,7.0711e-01,-0.0000e+00,7.9335e-01,6.0876e-01,-0.0000e+00,7.9335e-01,6.0876e-01,-0.0000e+00,8.6603e-01,5.0000e-01,-0.0000e+00,8.6603e-01,5.0000e-01,-0.0000e+00,9.2388e-01,3.8268e-01,-0.0000e+00,9.2388e-01,3.8268e-01,-0.0000e+00,9.6593e-01,2.5882e-01,-0.0000e+00,9.6593e-01,2.5882e-01,-0.0000e+00,9.9144e-01,1.3053e-01,-0.0000e+00,9.9144e-01,1.3053e-01,-0.0000e+00,1.0000e+00,6.1232e-17,-0.0000e+00,1.0000e+00,6.1232e-17,-0.0000e+00,9.9144e-01,-1.3053e-01,-0.0000e+00,9.9144e-01,-1.3053e-01,-0.0000e+00,9.6593e-01,-2.5882e-01,-0.0000e+00,9.6593e-01,-2.5882e-01,-0.0000e+00,9.2388e-01,-3.8268e-01,-0.0000e+00,9.2388e-01,-3.8268e-01,-0.0000e+00,8.6603e-01,-5.0000e-01,-0.0000e+00,8.6603e-01,-5.0000e-01,-0.0000e+00,7.9335e-01,-6.0876e-01,-0.0000e+00,7.9335e-01,-6.0876e-01,-0.0000e+00,7.0711e-01,-7.0711e-01,-0.0000e+00,7.0711e-01,-7.0711e-01,-0.0000e+00,6.0876e-01,-7.9335e-01,-0.0000e+00,6.0876e-01,-7.9335e-01,-0.0000e+00,5.0000e-01,-8.6603e-01,-0.0000e+00,5.0000e-01,-8.6603e-01,-0.0000e+00,3.8268e-01,-9.2388e-01,-0.0000e+00,3.8268e-01,-9.2388e-01,-0.0000e+00,2.5882e-01,-9.6593e-01,-0.0000e+00,2.5882e-01,-9.6593e-01,-0.0000e+00,1.3053e-01,-9.9144e-01,-0.0000e+00,1.3053e-01,-9.9144e-01,-0.0000e+00,1.2246e-16,-1.0000e+00,-0.0000e+00,1.2246e-16,-1.0000e+00,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-1.0000e+00,-1.8370e-16,-0.0000e+00,-1.0000e+00,-1.8370e-16,-0.0000e+00,-9.9144e-01,1.3053e-01,-0.0000e+00,-9.9144e-01,1.3053e-01,-0.0000e+00,-9.6593e-01,2.5882e-01,-0.0000e+00,-9.6593e-01,2.5882e-01,-0.0000e+00,-9.2388e-01,3.8268e-01,-0.0000e+00,-9.2388e-01,3.8268e-01,-0.0000e+00,-8.6603e-01,5.0000e-01,-0.0000e+00,-8.6603e-01,5.0000e-01,-0.0000e+00,-7.9335e-01,6.0876e-01,-0.0000e+00,-7.9335e-01,6.0876e-01,-0.0000e+00,-7.0711e-01,7.0711e-01,-0.0000e+00,-7.0711e-01,7.0711e-01,-0.0000e+00,-6.0876e-01,7.9335e-01,-0.0000e+00,-6.0876e-01,7.9335e-01,-0.0000e+00,-5.0000e-01,8.6603e-01,-0.0000e+00,-5.0000e-01,8.6603e-01,-0.0000e+00,-3.8268e-01,9.2388e-01,-0.0000e+00,-3.8268e-01,9.2388e-01,-0.0000e+00,-2.5882e-01,9.6593e-01,-0.0000e+00,-2.5882e-01,9.6593e-01,-0.0000e+00,-1.3053e-01,9.9144e-01,-0.0000e+00,-1.3053e-01,9.9144e-01,-0.0000e+00});
+			return Normal_7_585_vector;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #591, 276 total numbers made up of 92 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_591_point()
+		{
+			MFVec3f Coordinate_7_591_point = new MFVec3f(new double[] {2.4000e+02,-1.2500e+02,-6.0000e+01,4.0000e+02,-1.2500e+02,-6.0000e+01,4.0000e+02,-1.2493e+02,-5.8795e+01,2.4000e+02,-1.2493e+02,-5.8795e+01,2.4992e+02,-1.2493e+02,-5.8795e+01,2.4995e+02,-1.2495e+02,-5.9036e+01,2.5000e+02,-1.2500e+02,-6.0000e+01,4.0000e+02,-1.2500e+02,-6.0000e+01,2.4000e+02,-1.2493e+02,-5.8795e+01,4.0000e+02,-1.2493e+02,-5.8795e+01,4.0000e+02,-1.2471e+02,-5.7607e+01,2.4000e+02,-1.2471e+02,-5.7607e+01,2.4970e+02,-1.2471e+02,-5.7607e+01,2.4981e+02,-1.2481e+02,-5.8068e+01,2.4992e+02,-1.2493e+02,-5.8795e+01,2.4000e+02,-1.2471e+02,-5.7607e+01,4.0000e+02,-1.2471e+02,-5.7607e+01,4.0000e+02,-1.2435e+02,-5.6454e+01,2.4000e+02,-1.2435e+02,-5.6454e+01,2.4934e+02,-1.2435e+02,-5.6454e+01,2.4957e+02,-1.2457e+02,-5.7109e+01,2.4970e+02,-1.2471e+02,-5.7607e+01,2.4000e+02,-1.2435e+02,-5.6454e+01,4.0000e+02,-1.2435e+02,-5.6454e+01,4.0000e+02,-1.2385e+02,-5.5353e+01,2.4000e+02,-1.2385e+02,-5.5353e+01,2.4885e+02,-1.2385e+02,-5.5353e+01,2.4924e+02,-1.2424e+02,-5.6173e+01,2.4934e+02,-1.2435e+02,-5.6454e+01,2.4000e+02,-1.2385e+02,-5.5353e+01,4.0000e+02,-1.2385e+02,-5.5353e+01,4.0000e+02,-1.2323e+02,-5.4319e+01,2.4000e+02,-1.2323e+02,-5.4319e+01,2.4823e+02,-1.2323e+02,-5.4319e+01,2.4830e+02,-1.2330e+02,-5.4428e+01,2.4881e+02,-1.2381e+02,-5.5275e+01,2.4885e+02,-1.2385e+02,-5.5353e+01,2.4000e+02,-1.2323e+02,-5.4319e+01,4.0000e+02,-1.2323e+02,-5.4319e+01,4.0000e+02,-1.2249e+02,-5.3369e+01,2.4000e+02,-1.2249e+02,-5.3369e+01,2.4748e+02,-1.2249e+02,-5.3369e+01,2.4772e+02,-1.2272e+02,-5.3643e+01,2.4823e+02,-1.2323e+02,-5.4319e+01,2.4000e+02,-1.2249e+02,-5.3369e+01,4.0000e+02,-1.2249e+02,-5.3369e+01,4.0000e+02,-1.2163e+02,-5.2515e+01,2.4000e+02,-1.2163e+02,-5.2515e+01,2.4661e+02,-1.2163e+02,-5.2515e+01,2.4707e+02,-1.2207e+02,-5.2929e+01,2.4748e+02,-1.2249e+02,-5.3369e+01,2.4000e+02,-1.2163e+02,-5.2515e+01,4.0000e+02,-1.2163e+02,-5.2515e+01,4.0000e+02,-1.2068e+02,-5.1770e+01,2.4000e+02,-1.2068e+02,-5.1770e+01,2.4567e+02,-1.2068e+02,-5.1770e+01,2.4589e+02,-1.2089e+02,-5.1921e+01,2.4661e+02,-1.2163e+02,-5.2515e+01,2.4000e+02,-1.2068e+02,-5.1770e+01,4.0000e+02,-1.2068e+02,-5.1770e+01,4.0000e+02,-1.1965e+02,-5.1145e+01,2.4000e+02,-1.1965e+02,-5.1145e+01,2.4464e+02,-1.1965e+02,-5.1145e+01,2.4567e+02,-1.2068e+02,-5.1770e+01,2.4000e+02,-1.1965e+02,-5.1145e+01,4.0000e+02,-1.1965e+02,-5.1145e+01,4.0000e+02,-1.1855e+02,-5.0650e+01,2.4000e+02,-1.1855e+02,-5.0650e+01,2.4354e+02,-1.1855e+02,-5.0650e+01,2.4455e+02,-1.1955e+02,-5.1094e+01,2.4464e+02,-1.1965e+02,-5.1145e+01,2.4000e+02,-1.1855e+02,-5.0650e+01,4.0000e+02,-1.1855e+02,-5.0650e+01,4.0000e+02,-1.1739e+02,-5.0291e+01,2.4000e+02,-1.1739e+02,-5.0291e+01,2.4239e+02,-1.1739e+02,-5.0291e+01,2.4308e+02,-1.1808e+02,-5.0486e+01,2.4354e+02,-1.1855e+02,-5.0650e+01,2.4000e+02,-1.1739e+02,-5.0291e+01,4.0000e+02,-1.1739e+02,-5.0291e+01,4.0000e+02,-1.1621e+02,-5.0073e+01,2.4000e+02,-1.1621e+02,-5.0073e+01,2.4120e+02,-1.1621e+02,-5.0073e+01,2.4155e+02,-1.1655e+02,-5.0120e+01,2.4239e+02,-1.1739e+02,-5.0291e+01,2.4000e+02,-1.1621e+02,-5.0073e+01,4.0000e+02,-1.1621e+02,-5.0073e+01,4.0000e+02,-1.1500e+02,-5.0000e+01,2.4000e+02,-1.1500e+02,-5.0000e+01,4.0000e+02,-1.1500e+02,-5.0000e+01,2.4000e+02,-1.1500e+02,-5.0000e+01,2.4120e+02,-1.1621e+02,-5.0073e+01});
+			return Coordinate_7_591_point;
+		}
+		/** Large attribute array: Normal vector field, scene-graph level=7, element #592, 276 total numbers made up of 92 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getNormal_7_592_vector()
+		{
+			MFVec3f Normal_7_592_vector = new MFVec3f(new double[] {-8.4108e-17,1.0000e+00,-1.2246e-16,-8.4108e-17,1.0000e+00,-1.2246e-16,-8.3495e-17,9.9271e-01,-1.2054e-01,-8.3495e-17,9.9271e-01,-1.2054e-01,-8.3495e-17,9.9271e-01,-1.2054e-01,-8.3716e-17,9.9535e-01,-9.6365e-02,-8.4108e-17,1.0000e+00,-1.2246e-16,-8.4108e-17,1.0000e+00,-1.2246e-16,-8.3495e-17,9.9271e-01,-1.2054e-01,-8.3495e-17,9.9271e-01,-1.2054e-01,-8.1664e-17,9.7094e-01,-2.3932e-01,-8.1664e-17,9.7094e-01,-2.3932e-01,-8.1664e-17,9.7094e-01,-2.3932e-01,-8.2523e-17,9.8116e-01,-1.9322e-01,-8.3495e-17,9.9271e-01,-1.2054e-01,-8.1664e-17,9.7094e-01,-2.3932e-01,-8.1664e-17,9.7094e-01,-2.3932e-01,-7.8642e-17,9.3502e-01,-3.5460e-01,-7.8642e-17,9.3502e-01,-3.5460e-01,-7.8642e-17,9.3502e-01,-3.5460e-01,-8.0515e-17,9.5729e-01,-2.8914e-01,-8.1664e-17,9.7094e-01,-2.3932e-01,-7.8642e-17,9.3502e-01,-3.5460e-01,-7.8642e-17,9.3502e-01,-3.5460e-01,-7.4474e-17,8.8546e-01,-4.6472e-01,-7.4474e-17,8.8546e-01,-4.6472e-01,-7.4474e-17,8.8546e-01,-4.6472e-01,-7.7705e-17,9.2388e-01,-3.8268e-01,-7.8642e-17,9.3502e-01,-3.5460e-01,-7.4474e-17,8.8546e-01,-4.6472e-01,-7.4474e-17,8.8546e-01,-4.6472e-01,-6.9219e-17,8.2298e-01,-5.6806e-01,-6.9219e-17,8.2298e-01,-5.6806e-01,-6.9219e-17,8.2298e-01,-5.6806e-01,-6.9844e-17,8.3041e-01,-5.5716e-01,-7.4129e-17,8.8136e-01,-4.7245e-01,-7.4474e-17,8.8546e-01,-4.6472e-01,-6.9219e-17,8.2298e-01,-5.6806e-01,-6.9219e-17,8.2298e-01,-5.6806e-01,-6.2956e-17,7.4851e-01,-6.6312e-01,-6.2956e-17,7.4851e-01,-6.6312e-01,-6.2956e-17,7.4851e-01,-6.6312e-01,-6.4928e-17,7.7196e-01,-6.3568e-01,-6.9219e-17,8.2298e-01,-5.6806e-01,-6.2956e-17,7.4851e-01,-6.6312e-01,-6.2956e-17,7.4851e-01,-6.6312e-01,-5.5774e-17,6.6312e-01,-7.4851e-01,-5.5774e-17,6.6312e-01,-7.4851e-01,-5.5774e-17,6.6312e-01,-7.4851e-01,-5.9473e-17,7.0711e-01,-7.0711e-01,-6.2956e-17,7.4851e-01,-6.6312e-01,-5.5774e-17,6.6312e-01,-7.4851e-01,-5.5774e-17,6.6312e-01,-7.4851e-01,-4.7779e-17,5.6806e-01,-8.2298e-01,-4.7779e-17,5.6806e-01,-8.2298e-01,-4.7779e-17,5.6806e-01,-8.2298e-01,-4.9570e-17,5.8936e-01,-8.0787e-01,-5.5774e-17,6.6312e-01,-7.4851e-01,-4.7779e-17,5.6806e-01,-8.2298e-01,-4.7779e-17,5.6806e-01,-8.2298e-01,-3.9087e-17,4.6472e-01,-8.8546e-01,-3.9087e-17,4.6472e-01,-8.8546e-01,-3.9087e-17,4.6472e-01,-8.8546e-01,-4.7779e-17,5.6806e-01,-8.2298e-01,-3.9087e-17,4.6472e-01,-8.8546e-01,-3.9087e-17,4.6472e-01,-8.8546e-01,-2.9825e-17,3.5460e-01,-9.3502e-01,-2.9825e-17,3.5460e-01,-9.3502e-01,-2.9825e-17,3.5460e-01,-9.3502e-01,-3.8258e-17,4.5487e-01,-8.9056e-01,-3.9087e-17,4.6472e-01,-8.8546e-01,-2.9825e-17,3.5460e-01,-9.3502e-01,-2.9825e-17,3.5460e-01,-9.3502e-01,-2.0128e-17,2.3932e-01,-9.7094e-01,-2.0128e-17,2.3932e-01,-9.7094e-01,-2.0128e-17,2.3932e-01,-9.7094e-01,-2.5912e-17,3.0808e-01,-9.5136e-01,-2.9825e-17,3.5460e-01,-9.3502e-01,-2.0128e-17,2.3932e-01,-9.7094e-01,-2.0128e-17,2.3932e-01,-9.7094e-01,-1.0138e-17,1.2054e-01,-9.9271e-01,-1.0138e-17,1.2054e-01,-9.9271e-01,-1.0138e-17,1.2054e-01,-9.9271e-01,-1.2995e-17,1.5451e-01,-9.8799e-01,-2.0128e-17,2.3932e-01,-9.7094e-01,-1.0138e-17,1.2054e-01,-9.9271e-01,-1.0138e-17,1.2054e-01,-9.9271e-01,2.2926e-31,-2.7258e-15,-1.0000e+00,2.2926e-31,-2.7258e-15,-1.0000e+00,2.2926e-31,-2.7258e-15,-1.0000e+00,2.2926e-31,-2.7258e-15,-1.0000e+00,-1.0138e-17,1.2054e-01,-9.9271e-01});
+			return Normal_7_592_vector;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #598, 348 total numbers made up of 116 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_598_point()
+		{
+			MFVec3f Coordinate_7_598_point = new MFVec3f()/*2.finalize*/
+				.append(new MFVec3f(getCoordinate_7_598_point_1()))
+				.append(new MFVec3f(getCoordinate_7_598_point_2()));
+			return Coordinate_7_598_point;
+		}
+		/** Large attribute array: Normal vector field, scene-graph level=7, element #599, 348 total numbers made up of 116 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getNormal_7_599_vector()
+		{
+			MFVec3f Normal_7_599_vector = new MFVec3f()/*2.finalize*/
+				.append(new MFVec3f(getNormal_7_599_vector_1()))
+				.append(new MFVec3f(getNormal_7_599_vector_2()));
+			return Normal_7_599_vector;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #605, 252 total numbers made up of 84 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_605_point()
+		{
+			MFVec3f Coordinate_7_605_point = new MFVec3f(new double[] {4.0000e+02,1.2500e+02,-6.0000e+01,2.4000e+02,1.2500e+02,-6.0000e+01,2.4000e+02,1.2491e+02,-5.8695e+01,4.0000e+02,1.2491e+02,-5.8695e+01,4.0000e+02,1.2500e+02,-6.0000e+01,2.5000e+02,1.2500e+02,-6.0000e+01,2.4995e+02,1.2495e+02,-5.9036e+01,2.4990e+02,1.2491e+02,-5.8695e+01,4.0000e+02,1.2491e+02,-5.8695e+01,2.4000e+02,1.2491e+02,-5.8695e+01,2.4000e+02,1.2466e+02,-5.7412e+01,4.0000e+02,1.2466e+02,-5.7412e+01,2.4990e+02,1.2491e+02,-5.8695e+01,2.4981e+02,1.2481e+02,-5.8068e+01,2.4965e+02,1.2466e+02,-5.7412e+01,4.0000e+02,1.2466e+02,-5.7412e+01,2.4000e+02,1.2466e+02,-5.7412e+01,2.4000e+02,1.2424e+02,-5.6173e+01,4.0000e+02,1.2424e+02,-5.6173e+01,2.4965e+02,1.2466e+02,-5.7412e+01,2.4957e+02,1.2457e+02,-5.7109e+01,2.4924e+02,1.2424e+02,-5.6173e+01,4.0000e+02,1.2424e+02,-5.6173e+01,2.4000e+02,1.2424e+02,-5.6173e+01,2.4000e+02,1.2366e+02,-5.5000e+01,4.0000e+02,1.2366e+02,-5.5000e+01,2.4924e+02,1.2424e+02,-5.6173e+01,2.4881e+02,1.2381e+02,-5.5275e+01,2.4865e+02,1.2366e+02,-5.5000e+01,4.0000e+02,1.2366e+02,-5.5000e+01,2.4000e+02,1.2366e+02,-5.5000e+01,2.4000e+02,1.2293e+02,-5.3912e+01,4.0000e+02,1.2293e+02,-5.3912e+01,2.4865e+02,1.2366e+02,-5.5000e+01,2.4830e+02,1.2330e+02,-5.4428e+01,2.4792e+02,1.2293e+02,-5.3912e+01,4.0000e+02,1.2293e+02,-5.3912e+01,2.4000e+02,1.2293e+02,-5.3912e+01,2.4000e+02,1.2207e+02,-5.2929e+01,4.0000e+02,1.2207e+02,-5.2929e+01,2.4792e+02,1.2293e+02,-5.3912e+01,2.4772e+02,1.2272e+02,-5.3643e+01,2.4707e+02,1.2207e+02,-5.2929e+01,4.0000e+02,1.2207e+02,-5.2929e+01,2.4000e+02,1.2207e+02,-5.2929e+01,2.4000e+02,1.2109e+02,-5.2066e+01,4.0000e+02,1.2109e+02,-5.2066e+01,2.4707e+02,1.2207e+02,-5.2929e+01,2.4608e+02,1.2109e+02,-5.2066e+01,4.0000e+02,1.2109e+02,-5.2066e+01,2.4000e+02,1.2109e+02,-5.2066e+01,2.4000e+02,1.2000e+02,-5.1340e+01,4.0000e+02,1.2000e+02,-5.1340e+01,2.4608e+02,1.2109e+02,-5.2066e+01,2.4589e+02,1.2089e+02,-5.1921e+01,2.4499e+02,1.2000e+02,-5.1340e+01,4.0000e+02,1.2000e+02,-5.1340e+01,2.4000e+02,1.2000e+02,-5.1340e+01,2.4000e+02,1.1883e+02,-5.0761e+01,4.0000e+02,1.1883e+02,-5.0761e+01,2.4499e+02,1.2000e+02,-5.1340e+01,2.4455e+02,1.1955e+02,-5.1094e+01,2.4381e+02,1.1883e+02,-5.0761e+01,4.0000e+02,1.1883e+02,-5.0761e+01,2.4000e+02,1.1883e+02,-5.0761e+01,2.4000e+02,1.1759e+02,-5.0341e+01,4.0000e+02,1.1759e+02,-5.0341e+01,2.4381e+02,1.1883e+02,-5.0761e+01,2.4308e+02,1.1808e+02,-5.0486e+01,2.4258e+02,1.1759e+02,-5.0341e+01,4.0000e+02,1.1759e+02,-5.0341e+01,2.4000e+02,1.1759e+02,-5.0341e+01,2.4000e+02,1.1631e+02,-5.0086e+01,4.0000e+02,1.1631e+02,-5.0086e+01,2.4258e+02,1.1759e+02,-5.0341e+01,2.4155e+02,1.1655e+02,-5.0120e+01,2.4130e+02,1.1631e+02,-5.0086e+01,4.0000e+02,1.1631e+02,-5.0086e+01,2.4000e+02,1.1631e+02,-5.0086e+01,2.4000e+02,1.1500e+02,-5.0000e+01,4.0000e+02,1.1500e+02,-5.0000e+01,2.4130e+02,1.1631e+02,-5.0086e+01,2.4000e+02,1.1500e+02,-5.0000e+01,4.0000e+02,1.1500e+02,-5.0000e+01});
+			return Coordinate_7_605_point;
+		}
+		/** Large attribute array: Normal vector field, scene-graph level=7, element #606, 252 total numbers made up of 84 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getNormal_7_606_vector()
+		{
+			MFVec3f Normal_7_606_vector = new MFVec3f(new double[] {-0.0000e+00,-1.0000e+00,-6.1232e-17,-0.0000e+00,-1.0000e+00,-6.1232e-17,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-1.0000e+00,-6.1232e-17,-0.0000e+00,-1.0000e+00,-6.1232e-17,-0.0000e+00,-9.9535e-01,-9.6365e-02,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-9.8116e-01,-1.9322e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.5729e-01,-2.8914e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-8.8136e-01,-4.7245e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-8.3041e-01,-5.5716e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-7.7196e-01,-6.3568e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-5.8936e-01,-8.0787e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-4.5487e-01,-8.9056e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-3.0808e-01,-9.5136e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-1.5451e-01,-9.8799e-01,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-0.0000e+00,-1.0000e+00,-0.0000e+00,-0.0000e+00,-1.0000e+00,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-0.0000e+00,-1.0000e+00,-0.0000e+00,-0.0000e+00,-1.0000e+00});
+			return Normal_7_606_vector;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #612, 348 total numbers made up of 116 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_612_point()
+		{
+			MFVec3f Coordinate_7_612_point = new MFVec3f()/*2.finalize*/
+				.append(new MFVec3f(getCoordinate_7_612_point_1()))
+				.append(new MFVec3f(getCoordinate_7_612_point_2()));
+			return Coordinate_7_612_point;
+		}
+		/** Large attribute array: Normal vector field, scene-graph level=7, element #613, 348 total numbers made up of 116 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getNormal_7_613_vector()
+		{
+			MFVec3f Normal_7_613_vector = new MFVec3f()/*2.finalize*/
+				.append(new MFVec3f(getNormal_7_613_vector_1()))
+				.append(new MFVec3f(getNormal_7_613_vector_2()));
+			return Normal_7_613_vector;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #619, 276 total numbers made up of 92 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_619_point()
+		{
+			MFVec3f Coordinate_7_619_point = new MFVec3f(new double[] {-4.0000e+02,-1.2500e+02,-6.0000e+01,-2.4000e+02,-1.2500e+02,-6.0000e+01,-2.4000e+02,-1.2493e+02,-5.8795e+01,-4.0000e+02,-1.2493e+02,-5.8795e+01,-4.0000e+02,-1.2500e+02,-6.0000e+01,-2.5000e+02,-1.2500e+02,-6.0000e+01,-2.4995e+02,-1.2495e+02,-5.9036e+01,-2.4992e+02,-1.2493e+02,-5.8795e+01,-4.0000e+02,-1.2493e+02,-5.8795e+01,-2.4000e+02,-1.2493e+02,-5.8795e+01,-2.4000e+02,-1.2471e+02,-5.7607e+01,-4.0000e+02,-1.2471e+02,-5.7607e+01,-2.4992e+02,-1.2493e+02,-5.8795e+01,-2.4981e+02,-1.2481e+02,-5.8068e+01,-2.4970e+02,-1.2471e+02,-5.7607e+01,-4.0000e+02,-1.2471e+02,-5.7607e+01,-2.4000e+02,-1.2471e+02,-5.7607e+01,-2.4000e+02,-1.2435e+02,-5.6454e+01,-4.0000e+02,-1.2435e+02,-5.6454e+01,-2.4970e+02,-1.2471e+02,-5.7607e+01,-2.4957e+02,-1.2457e+02,-5.7109e+01,-2.4934e+02,-1.2435e+02,-5.6454e+01,-4.0000e+02,-1.2435e+02,-5.6454e+01,-2.4000e+02,-1.2435e+02,-5.6454e+01,-2.4000e+02,-1.2385e+02,-5.5353e+01,-4.0000e+02,-1.2385e+02,-5.5353e+01,-2.4934e+02,-1.2435e+02,-5.6454e+01,-2.4924e+02,-1.2424e+02,-5.6173e+01,-2.4885e+02,-1.2385e+02,-5.5353e+01,-4.0000e+02,-1.2385e+02,-5.5353e+01,-2.4000e+02,-1.2385e+02,-5.5353e+01,-2.4000e+02,-1.2323e+02,-5.4319e+01,-4.0000e+02,-1.2323e+02,-5.4319e+01,-2.4885e+02,-1.2385e+02,-5.5353e+01,-2.4881e+02,-1.2381e+02,-5.5275e+01,-2.4830e+02,-1.2330e+02,-5.4428e+01,-2.4823e+02,-1.2323e+02,-5.4319e+01,-4.0000e+02,-1.2323e+02,-5.4319e+01,-2.4000e+02,-1.2323e+02,-5.4319e+01,-2.4000e+02,-1.2249e+02,-5.3369e+01,-4.0000e+02,-1.2249e+02,-5.3369e+01,-2.4823e+02,-1.2323e+02,-5.4319e+01,-2.4772e+02,-1.2272e+02,-5.3643e+01,-2.4748e+02,-1.2249e+02,-5.3369e+01,-4.0000e+02,-1.2249e+02,-5.3369e+01,-2.4000e+02,-1.2249e+02,-5.3369e+01,-2.4000e+02,-1.2163e+02,-5.2515e+01,-4.0000e+02,-1.2163e+02,-5.2515e+01,-2.4748e+02,-1.2249e+02,-5.3369e+01,-2.4707e+02,-1.2207e+02,-5.2929e+01,-2.4661e+02,-1.2163e+02,-5.2515e+01,-4.0000e+02,-1.2163e+02,-5.2515e+01,-2.4000e+02,-1.2163e+02,-5.2515e+01,-2.4000e+02,-1.2068e+02,-5.1770e+01,-4.0000e+02,-1.2068e+02,-5.1770e+01,-2.4661e+02,-1.2163e+02,-5.2515e+01,-2.4589e+02,-1.2089e+02,-5.1921e+01,-2.4567e+02,-1.2068e+02,-5.1770e+01,-4.0000e+02,-1.2068e+02,-5.1770e+01,-2.4000e+02,-1.2068e+02,-5.1770e+01,-2.4000e+02,-1.1965e+02,-5.1145e+01,-4.0000e+02,-1.1965e+02,-5.1145e+01,-2.4567e+02,-1.2068e+02,-5.1770e+01,-2.4464e+02,-1.1965e+02,-5.1145e+01,-4.0000e+02,-1.1965e+02,-5.1145e+01,-2.4000e+02,-1.1965e+02,-5.1145e+01,-2.4000e+02,-1.1855e+02,-5.0650e+01,-4.0000e+02,-1.1855e+02,-5.0650e+01,-2.4464e+02,-1.1965e+02,-5.1145e+01,-2.4455e+02,-1.1955e+02,-5.1094e+01,-2.4354e+02,-1.1855e+02,-5.0650e+01,-4.0000e+02,-1.1855e+02,-5.0650e+01,-2.4000e+02,-1.1855e+02,-5.0650e+01,-2.4000e+02,-1.1739e+02,-5.0291e+01,-4.0000e+02,-1.1739e+02,-5.0291e+01,-2.4354e+02,-1.1855e+02,-5.0650e+01,-2.4308e+02,-1.1808e+02,-5.0486e+01,-2.4239e+02,-1.1739e+02,-5.0291e+01,-4.0000e+02,-1.1739e+02,-5.0291e+01,-2.4000e+02,-1.1739e+02,-5.0291e+01,-2.4000e+02,-1.1621e+02,-5.0073e+01,-4.0000e+02,-1.1621e+02,-5.0073e+01,-2.4239e+02,-1.1739e+02,-5.0291e+01,-2.4155e+02,-1.1655e+02,-5.0120e+01,-2.4120e+02,-1.1621e+02,-5.0073e+01,-4.0000e+02,-1.1621e+02,-5.0073e+01,-2.4000e+02,-1.1621e+02,-5.0073e+01,-2.4000e+02,-1.1500e+02,-5.0000e+01,-4.0000e+02,-1.1500e+02,-5.0000e+01,-2.4120e+02,-1.1621e+02,-5.0073e+01,-2.4000e+02,-1.1500e+02,-5.0000e+01,-4.0000e+02,-1.1500e+02,-5.0000e+01});
+			return Coordinate_7_619_point;
+		}
+		/** Large attribute array: Normal vector field, scene-graph level=7, element #620, 276 total numbers made up of 92 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getNormal_7_620_vector()
+		{
+			MFVec3f Normal_7_620_vector = new MFVec3f(new double[] {-8.1634e-17,1.0000e+00,-1.2246e-16,-8.1634e-17,1.0000e+00,-1.2246e-16,-8.1039e-17,9.9271e-01,-1.2054e-01,-8.1039e-17,9.9271e-01,-1.2054e-01,-8.1634e-17,1.0000e+00,-1.2246e-16,-8.1634e-17,1.0000e+00,-1.2246e-16,-8.1254e-17,9.9535e-01,-9.6365e-02,-8.1039e-17,9.9271e-01,-1.2054e-01,-8.1039e-17,9.9271e-01,-1.2054e-01,-8.1039e-17,9.9271e-01,-1.2054e-01,-7.9262e-17,9.7094e-01,-2.3932e-01,-7.9262e-17,9.7094e-01,-2.3932e-01,-8.1039e-17,9.9271e-01,-1.2054e-01,-8.0096e-17,9.8116e-01,-1.9322e-01,-7.9262e-17,9.7094e-01,-2.3932e-01,-7.9262e-17,9.7094e-01,-2.3932e-01,-7.9262e-17,9.7094e-01,-2.3932e-01,-7.6329e-17,9.3502e-01,-3.5460e-01,-7.6329e-17,9.3502e-01,-3.5460e-01,-7.9262e-17,9.7094e-01,-2.3932e-01,-7.8147e-17,9.5729e-01,-2.8914e-01,-7.6329e-17,9.3502e-01,-3.5460e-01,-7.6329e-17,9.3502e-01,-3.5460e-01,-7.6329e-17,9.3502e-01,-3.5460e-01,-7.2283e-17,8.8546e-01,-4.6472e-01,-7.2283e-17,8.8546e-01,-4.6472e-01,-7.6329e-17,9.3502e-01,-3.5460e-01,-7.5420e-17,9.2388e-01,-3.8268e-01,-7.2283e-17,8.8546e-01,-4.6472e-01,-7.2283e-17,8.8546e-01,-4.6472e-01,-7.2283e-17,8.8546e-01,-4.6472e-01,-6.7184e-17,8.2298e-01,-5.6806e-01,-6.7184e-17,8.2298e-01,-5.6806e-01,-7.2283e-17,8.8546e-01,-4.6472e-01,-7.1949e-17,8.8136e-01,-4.7245e-01,-6.7789e-17,8.3041e-01,-5.5716e-01,-6.7184e-17,8.2298e-01,-5.6806e-01,-6.7184e-17,8.2298e-01,-5.6806e-01,-6.7184e-17,8.2298e-01,-5.6806e-01,-6.1104e-17,7.4851e-01,-6.6312e-01,-6.1104e-17,7.4851e-01,-6.6312e-01,-6.7184e-17,8.2298e-01,-5.6806e-01,-6.3018e-17,7.7196e-01,-6.3568e-01,-6.1104e-17,7.4851e-01,-6.6312e-01,-6.1104e-17,7.4851e-01,-6.6312e-01,-6.1104e-17,7.4851e-01,-6.6312e-01,-5.4133e-17,6.6312e-01,-7.4851e-01,-5.4133e-17,6.6312e-01,-7.4851e-01,-6.1104e-17,7.4851e-01,-6.6312e-01,-5.7724e-17,7.0711e-01,-7.0711e-01,-5.4133e-17,6.6312e-01,-7.4851e-01,-5.4133e-17,6.6312e-01,-7.4851e-01,-5.4133e-17,6.6312e-01,-7.4851e-01,-4.6373e-17,5.6806e-01,-8.2298e-01,-4.6373e-17,5.6806e-01,-8.2298e-01,-5.4133e-17,6.6312e-01,-7.4851e-01,-4.8112e-17,5.8936e-01,-8.0787e-01,-4.6373e-17,5.6806e-01,-8.2298e-01,-4.6373e-17,5.6806e-01,-8.2298e-01,-4.6373e-17,5.6806e-01,-8.2298e-01,-3.7937e-17,4.6472e-01,-8.8546e-01,-3.7937e-17,4.6472e-01,-8.8546e-01,-4.6373e-17,5.6806e-01,-8.2298e-01,-3.7937e-17,4.6472e-01,-8.8546e-01,-3.7937e-17,4.6472e-01,-8.8546e-01,-3.7937e-17,4.6472e-01,-8.8546e-01,-2.8948e-17,3.5460e-01,-9.3502e-01,-2.8948e-17,3.5460e-01,-9.3502e-01,-3.7937e-17,4.6472e-01,-8.8546e-01,-3.7133e-17,4.5487e-01,-8.9056e-01,-2.8948e-17,3.5460e-01,-9.3502e-01,-2.8948e-17,3.5460e-01,-9.3502e-01,-2.8948e-17,3.5460e-01,-9.3502e-01,-1.9536e-17,2.3932e-01,-9.7094e-01,-1.9536e-17,2.3932e-01,-9.7094e-01,-2.8948e-17,3.5460e-01,-9.3502e-01,-2.5150e-17,3.0808e-01,-9.5136e-01,-1.9536e-17,2.3932e-01,-9.7094e-01,-1.9536e-17,2.3932e-01,-9.7094e-01,-1.9536e-17,2.3932e-01,-9.7094e-01,-9.8399e-18,1.2054e-01,-9.9271e-01,-9.8399e-18,1.2054e-01,-9.9271e-01,-1.9536e-17,2.3932e-01,-9.7094e-01,-1.2613e-17,1.5451e-01,-9.8799e-01,-9.8399e-18,1.2054e-01,-9.9271e-01,-9.8399e-18,1.2054e-01,-9.9271e-01,-9.8399e-18,1.2054e-01,-9.9271e-01,1.5001e-31,-1.8376e-15,-1.0000e+00,1.5001e-31,-1.8376e-15,-1.0000e+00,-9.8399e-18,1.2054e-01,-9.9271e-01,1.5001e-31,-1.8376e-15,-1.0000e+00,1.5001e-31,-1.8376e-15,-1.0000e+00});
+			return Normal_7_620_vector;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #626, 348 total numbers made up of 116 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_626_point()
+		{
+			MFVec3f Coordinate_7_626_point = new MFVec3f()/*2.finalize*/
+				.append(new MFVec3f(getCoordinate_7_626_point_1()))
+				.append(new MFVec3f(getCoordinate_7_626_point_2()));
+			return Coordinate_7_626_point;
+		}
+		/** Large attribute array: Normal vector field, scene-graph level=7, element #627, 348 total numbers made up of 116 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getNormal_7_627_vector()
+		{
+			MFVec3f Normal_7_627_vector = new MFVec3f()/*2.finalize*/
+				.append(new MFVec3f(getNormal_7_627_vector_1()))
+				.append(new MFVec3f(getNormal_7_627_vector_2()));
+			return Normal_7_627_vector;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #633, 252 total numbers made up of 84 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_633_point()
+		{
+			MFVec3f Coordinate_7_633_point = new MFVec3f(new double[] {-2.4000e+02,1.2500e+02,-6.0000e+01,-4.0000e+02,1.2500e+02,-6.0000e+01,-4.0000e+02,1.2491e+02,-5.8695e+01,-2.4000e+02,1.2491e+02,-5.8695e+01,-2.4990e+02,1.2491e+02,-5.8695e+01,-2.4995e+02,1.2495e+02,-5.9036e+01,-2.5000e+02,1.2500e+02,-6.0000e+01,-4.0000e+02,1.2500e+02,-6.0000e+01,-2.4000e+02,1.2491e+02,-5.8695e+01,-4.0000e+02,1.2491e+02,-5.8695e+01,-4.0000e+02,1.2466e+02,-5.7412e+01,-2.4000e+02,1.2466e+02,-5.7412e+01,-2.4965e+02,1.2466e+02,-5.7412e+01,-2.4981e+02,1.2481e+02,-5.8068e+01,-2.4990e+02,1.2491e+02,-5.8695e+01,-2.4000e+02,1.2466e+02,-5.7412e+01,-4.0000e+02,1.2466e+02,-5.7412e+01,-4.0000e+02,1.2424e+02,-5.6173e+01,-2.4000e+02,1.2424e+02,-5.6173e+01,-2.4924e+02,1.2424e+02,-5.6173e+01,-2.4957e+02,1.2457e+02,-5.7109e+01,-2.4965e+02,1.2466e+02,-5.7412e+01,-2.4000e+02,1.2424e+02,-5.6173e+01,-4.0000e+02,1.2424e+02,-5.6173e+01,-4.0000e+02,1.2366e+02,-5.5000e+01,-2.4000e+02,1.2366e+02,-5.5000e+01,-2.4865e+02,1.2366e+02,-5.5000e+01,-2.4881e+02,1.2381e+02,-5.5275e+01,-2.4924e+02,1.2424e+02,-5.6173e+01,-2.4000e+02,1.2366e+02,-5.5000e+01,-4.0000e+02,1.2366e+02,-5.5000e+01,-4.0000e+02,1.2293e+02,-5.3912e+01,-2.4000e+02,1.2293e+02,-5.3912e+01,-2.4792e+02,1.2293e+02,-5.3912e+01,-2.4830e+02,1.2330e+02,-5.4428e+01,-2.4865e+02,1.2366e+02,-5.5000e+01,-2.4000e+02,1.2293e+02,-5.3912e+01,-4.0000e+02,1.2293e+02,-5.3912e+01,-4.0000e+02,1.2207e+02,-5.2929e+01,-2.4000e+02,1.2207e+02,-5.2929e+01,-2.4707e+02,1.2207e+02,-5.2929e+01,-2.4772e+02,1.2272e+02,-5.3643e+01,-2.4792e+02,1.2293e+02,-5.3912e+01,-2.4000e+02,1.2207e+02,-5.2929e+01,-4.0000e+02,1.2207e+02,-5.2929e+01,-4.0000e+02,1.2109e+02,-5.2066e+01,-2.4000e+02,1.2109e+02,-5.2066e+01,-2.4608e+02,1.2109e+02,-5.2066e+01,-2.4707e+02,1.2207e+02,-5.2929e+01,-2.4000e+02,1.2109e+02,-5.2066e+01,-4.0000e+02,1.2109e+02,-5.2066e+01,-4.0000e+02,1.2000e+02,-5.1340e+01,-2.4000e+02,1.2000e+02,-5.1340e+01,-2.4499e+02,1.2000e+02,-5.1340e+01,-2.4589e+02,1.2089e+02,-5.1921e+01,-2.4608e+02,1.2109e+02,-5.2066e+01,-2.4000e+02,1.2000e+02,-5.1340e+01,-4.0000e+02,1.2000e+02,-5.1340e+01,-4.0000e+02,1.1883e+02,-5.0761e+01,-2.4000e+02,1.1883e+02,-5.0761e+01,-2.4381e+02,1.1883e+02,-5.0761e+01,-2.4455e+02,1.1955e+02,-5.1094e+01,-2.4499e+02,1.2000e+02,-5.1340e+01,-2.4000e+02,1.1883e+02,-5.0761e+01,-4.0000e+02,1.1883e+02,-5.0761e+01,-4.0000e+02,1.1759e+02,-5.0341e+01,-2.4000e+02,1.1759e+02,-5.0341e+01,-2.4258e+02,1.1759e+02,-5.0341e+01,-2.4308e+02,1.1808e+02,-5.0486e+01,-2.4381e+02,1.1883e+02,-5.0761e+01,-2.4000e+02,1.1759e+02,-5.0341e+01,-4.0000e+02,1.1759e+02,-5.0341e+01,-4.0000e+02,1.1631e+02,-5.0086e+01,-2.4000e+02,1.1631e+02,-5.0086e+01,-2.4130e+02,1.1631e+02,-5.0086e+01,-2.4155e+02,1.1655e+02,-5.0120e+01,-2.4258e+02,1.1759e+02,-5.0341e+01,-2.4000e+02,1.1631e+02,-5.0086e+01,-4.0000e+02,1.1631e+02,-5.0086e+01,-4.0000e+02,1.1500e+02,-5.0000e+01,-2.4000e+02,1.1500e+02,-5.0000e+01,-4.0000e+02,1.1500e+02,-5.0000e+01,-2.4000e+02,1.1500e+02,-5.0000e+01,-2.4130e+02,1.1631e+02,-5.0086e+01});
+			return Coordinate_7_633_point;
+		}
+		/** Large attribute array: Normal vector field, scene-graph level=7, element #634, 252 total numbers made up of 84 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getNormal_7_634_vector()
+		{
+			MFVec3f Normal_7_634_vector = new MFVec3f(new double[] {-0.0000e+00,-1.0000e+00,-6.1232e-17,-0.0000e+00,-1.0000e+00,-6.1232e-17,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-9.9535e-01,-9.6365e-02,-0.0000e+00,-1.0000e+00,-6.1232e-17,-0.0000e+00,-1.0000e+00,-6.1232e-17,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.8116e-01,-1.9322e-01,-0.0000e+00,-9.9144e-01,-1.3053e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-9.5729e-01,-2.8914e-01,-0.0000e+00,-9.6593e-01,-2.5882e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-8.8136e-01,-4.7245e-01,-0.0000e+00,-9.2388e-01,-3.8268e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-8.3041e-01,-5.5716e-01,-0.0000e+00,-8.6603e-01,-5.0000e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-7.7196e-01,-6.3568e-01,-0.0000e+00,-7.9335e-01,-6.0876e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-7.0711e-01,-7.0711e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-5.8936e-01,-8.0787e-01,-0.0000e+00,-6.0876e-01,-7.9335e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-4.5487e-01,-8.9056e-01,-0.0000e+00,-5.0000e-01,-8.6603e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-3.0808e-01,-9.5136e-01,-0.0000e+00,-3.8268e-01,-9.2388e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-1.5451e-01,-9.8799e-01,-0.0000e+00,-2.5882e-01,-9.6593e-01,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-1.3053e-01,-9.9144e-01,-0.0000e+00,-0.0000e+00,-1.0000e+00,-0.0000e+00,-0.0000e+00,-1.0000e+00,-0.0000e+00,-0.0000e+00,-1.0000e+00,-0.0000e+00,-0.0000e+00,-1.0000e+00,-0.0000e+00,-1.3053e-01,-9.9144e-01});
+			return Normal_7_634_vector;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #640, 378 total numbers made up of 126 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_640_point()
+		{
+			MFVec3f Coordinate_7_640_point = new MFVec3f()/*2.finalize*/
+				.append(new MFVec3f(getCoordinate_7_640_point_1()))
+				.append(new MFVec3f(getCoordinate_7_640_point_2()));
+			return Coordinate_7_640_point;
+		}
+		/** Large attribute array: Normal vector field, scene-graph level=7, element #641, 378 total numbers made up of 126 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getNormal_7_641_vector()
+		{
+			MFVec3f Normal_7_641_vector = new MFVec3f()/*2.finalize*/
+				.append(new MFVec3f(getNormal_7_641_vector_1()))
+				.append(new MFVec3f(getNormal_7_641_vector_2()));
+			return Normal_7_641_vector;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #647, 348 total numbers made up of 116 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_647_point()
+		{
+			MFVec3f Coordinate_7_647_point = new MFVec3f()/*2.finalize*/
+				.append(new MFVec3f(getCoordinate_7_647_point_1()))
+				.append(new MFVec3f(getCoordinate_7_647_point_2()));
+			return Coordinate_7_647_point;
+		}
+		/** Large attribute array: Normal vector field, scene-graph level=7, element #648, 348 total numbers made up of 116 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getNormal_7_648_vector()
+		{
+			MFVec3f Normal_7_648_vector = new MFVec3f()/*2.finalize*/
+				.append(new MFVec3f(getNormal_7_648_vector_1()))
+				.append(new MFVec3f(getNormal_7_648_vector_2()));
+			return Normal_7_648_vector;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #654, 348 total numbers made up of 116 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_654_point()
+		{
+			MFVec3f Coordinate_7_654_point = new MFVec3f()/*2.finalize*/
+				.append(new MFVec3f(getCoordinate_7_654_point_1()))
+				.append(new MFVec3f(getCoordinate_7_654_point_2()));
+			return Coordinate_7_654_point;
+		}
+		/** Large attribute array: Normal vector field, scene-graph level=7, element #655, 348 total numbers made up of 116 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getNormal_7_655_vector()
+		{
+			MFVec3f Normal_7_655_vector = new MFVec3f()/*2.finalize*/
+				.append(new MFVec3f(getNormal_7_655_vector_1()))
+				.append(new MFVec3f(getNormal_7_655_vector_2()));
+			return Normal_7_655_vector;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #661, 384 total numbers made up of 128 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_661_point()
+		{
+			MFVec3f Coordinate_7_661_point = new MFVec3f()/*2.finalize*/
+				.append(new MFVec3f(getCoordinate_7_661_point_1()))
+				.append(new MFVec3f(getCoordinate_7_661_point_2()));
+			return Coordinate_7_661_point;
+		}
+		/** Large attribute array: Normal vector field, scene-graph level=7, element #662, 384 total numbers made up of 128 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getNormal_7_662_vector()
+		{
+			MFVec3f Normal_7_662_vector = new MFVec3f()/*2.finalize*/
+				.append(new MFVec3f(getNormal_7_662_vector_1()))
+				.append(new MFVec3f(getNormal_7_662_vector_2()));
+			return Normal_7_662_vector;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #668, 384 total numbers made up of 128 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_668_point()
+		{
+			MFVec3f Coordinate_7_668_point = new MFVec3f()/*2.finalize*/
+				.append(new MFVec3f(getCoordinate_7_668_point_1()))
+				.append(new MFVec3f(getCoordinate_7_668_point_2()));
+			return Coordinate_7_668_point;
+		}
+		/** Large attribute array: Normal vector field, scene-graph level=7, element #669, 384 total numbers made up of 128 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getNormal_7_669_vector()
+		{
+			MFVec3f Normal_7_669_vector = new MFVec3f()/*2.finalize*/
+				.append(new MFVec3f(getNormal_7_669_vector_1()))
+				.append(new MFVec3f(getNormal_7_669_vector_2()));
+			return Normal_7_669_vector;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #675, 348 total numbers made up of 116 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_675_point()
+		{
+			MFVec3f Coordinate_7_675_point = new MFVec3f()/*2.finalize*/
+				.append(new MFVec3f(getCoordinate_7_675_point_1()))
+				.append(new MFVec3f(getCoordinate_7_675_point_2()));
+			return Coordinate_7_675_point;
+		}
+		/** Large attribute array: Normal vector field, scene-graph level=7, element #676, 348 total numbers made up of 116 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getNormal_7_676_vector()
+		{
+			MFVec3f Normal_7_676_vector = new MFVec3f()/*2.finalize*/
+				.append(new MFVec3f(getNormal_7_676_vector_1()))
+				.append(new MFVec3f(getNormal_7_676_vector_2()));
+			return Normal_7_676_vector;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #682, 348 total numbers made up of 116 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_682_point()
+		{
+			MFVec3f Coordinate_7_682_point = new MFVec3f()/*2.finalize*/
+				.append(new MFVec3f(getCoordinate_7_682_point_1()))
+				.append(new MFVec3f(getCoordinate_7_682_point_2()));
+			return Coordinate_7_682_point;
+		}
+		/** Large attribute array: Normal vector field, scene-graph level=7, element #683, 348 total numbers made up of 116 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getNormal_7_683_vector()
+		{
+			MFVec3f Normal_7_683_vector = new MFVec3f()/*2.finalize*/
+				.append(new MFVec3f(getNormal_7_683_vector_1()))
+				.append(new MFVec3f(getNormal_7_683_vector_2()));
+			return Normal_7_683_vector;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #744, 138 total numbers made up of 46 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_744_point()
+		{
+			MFVec3f Coordinate_7_744_point = new MFVec3f(new double[] {4.0000e+02,-5.3234e+01,-3.6250e+01,3.9800e+02,-5.3234e+01,-3.6250e+01,4.0000e+02,-5.2376e+01,-3.6056e+01,3.9800e+02,-5.2376e+01,-3.6056e+01,4.0000e+02,-5.1550e+01,-3.5754e+01,3.9800e+02,-5.1550e+01,-3.5754e+01,4.0000e+02,-5.0769e+01,-3.5349e+01,3.9800e+02,-5.0769e+01,-3.5349e+01,4.0000e+02,-5.0047e+01,-3.4847e+01,3.9800e+02,-5.0047e+01,-3.4847e+01,4.0000e+02,-4.9395e+01,-3.4256e+01,3.9800e+02,-4.9395e+01,-3.4256e+01,4.0000e+02,-4.8824e+01,-3.3587e+01,3.9800e+02,-4.8824e+01,-3.3587e+01,4.0000e+02,-4.8344e+01,-3.2851e+01,3.9800e+02,-4.8344e+01,-3.2851e+01,4.0000e+02,-4.7962e+01,-3.2058e+01,3.9800e+02,-4.7962e+01,-3.2058e+01,4.0000e+02,-4.7684e+01,-3.1224e+01,3.9800e+02,-4.7684e+01,-3.1224e+01,4.0000e+02,-4.7516e+01,-3.0361e+01,3.9800e+02,-4.7516e+01,-3.0361e+01,4.0000e+02,-4.7459e+01,-2.9483e+01,3.9800e+02,-4.7459e+01,-2.9483e+01,4.0000e+02,-4.7516e+01,-2.8605e+01,3.9800e+02,-4.7516e+01,-2.8605e+01,4.0000e+02,-4.7684e+01,-2.7742e+01,3.9800e+02,-4.7684e+01,-2.7742e+01,4.0000e+02,-4.7962e+01,-2.6907e+01,3.9800e+02,-4.7962e+01,-2.6907e+01,4.0000e+02,-4.8344e+01,-2.6115e+01,3.9800e+02,-4.8344e+01,-2.6115e+01,4.0000e+02,-4.8824e+01,-2.5378e+01,3.9800e+02,-4.8824e+01,-2.5378e+01,4.0000e+02,-4.9395e+01,-2.4709e+01,3.9800e+02,-4.9395e+01,-2.4709e+01,4.0000e+02,-5.0047e+01,-2.4119e+01,3.9800e+02,-5.0047e+01,-2.4119e+01,4.0000e+02,-5.0769e+01,-2.3617e+01,3.9800e+02,-5.0769e+01,-2.3617e+01,4.0000e+02,-5.1550e+01,-2.3211e+01,3.9800e+02,-5.1550e+01,-2.3211e+01,4.0000e+02,-5.2376e+01,-2.2909e+01,3.9800e+02,-5.2376e+01,-2.2909e+01,4.0000e+02,-5.3234e+01,-2.2716e+01,3.9800e+02,-5.3234e+01,-2.2716e+01});
+			return Coordinate_7_744_point;
+		}
+		/** Large attribute array: Normal vector field, scene-graph level=7, element #745, 138 total numbers made up of 46 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getNormal_7_745_vector()
+		{
+			MFVec3f Normal_7_745_vector = new MFVec3f(new double[] {-0.0000e+00,-1.5726e-01,9.8756e-01,-0.0000e+00,-1.5726e-01,9.8756e-01,-0.0000e+00,-2.8246e-01,9.5928e-01,-0.0000e+00,-2.8246e-01,9.5928e-01,-0.0000e+00,-4.0301e-01,9.1519e-01,-0.0000e+00,-4.0301e-01,9.1519e-01,-0.0000e+00,-5.1692e-01,8.5603e-01,-0.0000e+00,-5.1692e-01,8.5603e-01,-0.0000e+00,-6.2231e-01,7.8277e-01,-0.0000e+00,-6.2231e-01,7.8277e-01,-0.0000e+00,-7.1745e-01,6.9661e-01,-0.0000e+00,-7.1745e-01,6.9661e-01,-0.0000e+00,-8.0077e-01,5.9897e-01,-0.0000e+00,-8.0077e-01,5.9897e-01,-0.0000e+00,-8.7090e-01,4.9147e-01,-0.0000e+00,-8.7090e-01,4.9147e-01,-0.0000e+00,-9.2667e-01,3.7587e-01,-0.0000e+00,-9.2667e-01,3.7587e-01,-0.0000e+00,-9.6719e-01,2.5407e-01,-0.0000e+00,-9.6719e-01,2.5407e-01,-0.0000e+00,-9.9176e-01,1.2809e-01,-0.0000e+00,-9.9176e-01,1.2809e-01,-0.0000e+00,-1.0000e+00,-1.1475e-09,-0.0000e+00,-1.0000e+00,-1.1475e-09,-0.0000e+00,-9.9176e-01,-1.2809e-01,-0.0000e+00,-9.9176e-01,-1.2809e-01,-0.0000e+00,-9.6719e-01,-2.5407e-01,-0.0000e+00,-9.6719e-01,-2.5407e-01,-0.0000e+00,-9.2667e-01,-3.7587e-01,-0.0000e+00,-9.2667e-01,-3.7587e-01,-0.0000e+00,-8.7090e-01,-4.9147e-01,-0.0000e+00,-8.7090e-01,-4.9147e-01,-0.0000e+00,-8.0077e-01,-5.9897e-01,-0.0000e+00,-8.0077e-01,-5.9897e-01,-0.0000e+00,-7.1745e-01,-6.9661e-01,-0.0000e+00,-7.1745e-01,-6.9661e-01,-0.0000e+00,-6.2231e-01,-7.8277e-01,-0.0000e+00,-6.2231e-01,-7.8277e-01,-0.0000e+00,-5.1692e-01,-8.5603e-01,-0.0000e+00,-5.1692e-01,-8.5603e-01,-0.0000e+00,-4.0301e-01,-9.1519e-01,-0.0000e+00,-4.0301e-01,-9.1519e-01,-0.0000e+00,-2.8246e-01,-9.5928e-01,-0.0000e+00,-2.8246e-01,-9.5928e-01,-0.0000e+00,-1.5726e-01,-9.8756e-01,-0.0000e+00,-1.5726e-01,-9.8756e-01});
+			return Normal_7_745_vector;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #757, 156 total numbers made up of 52 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_757_point()
+		{
+			MFVec3f Coordinate_7_757_point = new MFVec3f(new double[] {4.0000e+02,-6.7502e+01,-1.8492e+01,3.9800e+02,-6.7502e+01,-1.8492e+01,4.0000e+02,-6.7774e+01,-1.8487e+01,3.9800e+02,-6.7774e+01,-1.8487e+01,4.0000e+02,-6.8045e+01,-1.8517e+01,3.9800e+02,-6.8045e+01,-1.8517e+01,4.0000e+02,-6.8310e+01,-1.8582e+01,3.9800e+02,-6.8310e+01,-1.8582e+01,4.0000e+02,-6.8564e+01,-1.8681e+01,3.9800e+02,-6.8564e+01,-1.8681e+01,4.0000e+02,-6.8803e+01,-1.8811e+01,3.9800e+02,-6.8803e+01,-1.8811e+01,4.0000e+02,-6.9024e+01,-1.8971e+01,3.9800e+02,-6.9024e+01,-1.8971e+01,4.0000e+02,-6.9222e+01,-1.9158e+01,3.9800e+02,-6.9222e+01,-1.9158e+01,4.0000e+02,-6.9395e+01,-1.9369e+01,3.9800e+02,-6.9395e+01,-1.9369e+01,4.0000e+02,-6.9539e+01,-1.9601e+01,3.9800e+02,-6.9539e+01,-1.9601e+01,4.0000e+02,-6.9652e+01,-1.9849e+01,3.9800e+02,-6.9652e+01,-1.9849e+01,4.0000e+02,-6.9732e+01,-2.0109e+01,3.9800e+02,-6.9732e+01,-2.0109e+01,4.0000e+02,-6.9778e+01,-2.0378e+01,3.9800e+02,-6.9778e+01,-2.0378e+01,4.0000e+02,-6.9789e+01,-2.0650e+01,3.9800e+02,-6.9789e+01,-2.0650e+01,4.0000e+02,-6.9765e+01,-2.0922e+01,3.9800e+02,-6.9765e+01,-2.0922e+01,4.0000e+02,-6.9706e+01,-2.1188e+01,3.9800e+02,-6.9706e+01,-2.1188e+01,4.0000e+02,-6.9614e+01,-2.1444e+01,3.9800e+02,-6.9614e+01,-2.1444e+01,4.0000e+02,-6.9489e+01,-2.1687e+01,3.9800e+02,-6.9489e+01,-2.1687e+01,4.0000e+02,-6.9335e+01,-2.1911e+01,3.9800e+02,-6.9335e+01,-2.1911e+01,4.0000e+02,-6.9152e+01,-2.2114e+01,3.9800e+02,-6.9152e+01,-2.2114e+01,4.0000e+02,-6.8945e+01,-2.2291e+01,3.9800e+02,-6.8945e+01,-2.2291e+01,4.0000e+02,-6.8717e+01,-2.2440e+01,3.9800e+02,-6.8717e+01,-2.2440e+01,4.0000e+02,-6.8472e+01,-2.2559e+01,3.9800e+02,-6.8472e+01,-2.2559e+01,4.0000e+02,-6.8214e+01,-2.2646e+01,3.9800e+02,-6.8214e+01,-2.2646e+01,4.0000e+02,-6.7946e+01,-2.2698e+01,3.9800e+02,-6.7946e+01,-2.2698e+01,4.0000e+02,-6.7674e+01,-2.2716e+01,3.9800e+02,-6.7674e+01,-2.2716e+01});
+			return Coordinate_7_757_point;
+		}
+		/** Large attribute array: Normal vector field, scene-graph level=7, element #758, 156 total numbers made up of 52 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getNormal_7_758_vector()
+		{
+			MFVec3f Normal_7_758_vector = new MFVec3f(new double[] {0.0000e+00,8.1527e-02,9.9667e-01,0.0000e+00,8.1527e-02,9.9667e-01,0.0000e+00,-4.7294e-02,9.9888e-01,0.0000e+00,-4.7294e-02,9.9888e-01,0.0000e+00,-1.7533e-01,9.8451e-01,0.0000e+00,-1.7533e-01,9.8451e-01,0.0000e+00,-3.0045e-01,9.5380e-01,0.0000e+00,-3.0045e-01,9.5380e-01,0.0000e+00,-4.2059e-01,9.0725e-01,0.0000e+00,-4.2059e-01,9.0725e-01,0.0000e+00,-5.3375e-01,8.4564e-01,0.0000e+00,-5.3375e-01,8.4564e-01,0.0000e+00,-6.3804e-01,7.7000e-01,0.0000e+00,-6.3804e-01,7.7000e-01,0.0000e+00,-7.3175e-01,6.8158e-01,0.0000e+00,-7.3175e-01,6.8158e-01,0.0000e+00,-8.1330e-01,5.8184e-01,0.0000e+00,-8.1330e-01,5.8184e-01,0.0000e+00,-8.8136e-01,4.7244e-01,0.0000e+00,-8.8136e-01,4.7244e-01,0.0000e+00,-9.3479e-01,3.5520e-01,0.0000e+00,-9.3479e-01,3.5520e-01,0.0000e+00,-9.7270e-01,2.3207e-01,0.0000e+00,-9.7270e-01,2.3207e-01,0.0000e+00,-9.9446e-01,1.0508e-01,0.0000e+00,-9.9446e-01,1.0508e-01,0.0000e+00,-9.9972e-01,-2.3653e-02,0.0000e+00,-9.9972e-01,-2.3653e-02,0.0000e+00,-9.8838e-01,-1.5199e-01,0.0000e+00,-9.8838e-01,-1.5199e-01,0.0000e+00,-9.6064e-01,-2.7781e-01,0.0000e+00,-9.6064e-01,-2.7781e-01,0.0000e+00,-9.1695e-01,-3.9901e-01,0.0000e+00,-9.1695e-01,-3.9901e-01,0.0000e+00,-8.5803e-01,-5.1359e-01,0.0000e+00,-8.5803e-01,-5.1359e-01,0.0000e+00,-7.8488e-01,-6.1965e-01,0.0000e+00,-7.8488e-01,-6.1965e-01,0.0000e+00,-6.9869e-01,-7.1542e-01,0.0000e+00,-6.9869e-01,-7.1542e-01,0.0000e+00,-6.0091e-01,-7.9931e-01,0.0000e+00,-6.0091e-01,-7.9931e-01,0.0000e+00,-4.9316e-01,-8.6994e-01,0.0000e+00,-4.9316e-01,-8.6994e-01,0.0000e+00,-3.7721e-01,-9.2613e-01,0.0000e+00,-3.7721e-01,-9.2613e-01,0.0000e+00,-2.5501e-01,-9.6694e-01,0.0000e+00,-2.5501e-01,-9.6694e-01,0.0000e+00,-1.2857e-01,-9.9170e-01,0.0000e+00,-1.2857e-01,-9.9170e-01,0.0000e+00,-1.2246e-16,-1.0000e+00,0.0000e+00,-1.2246e-16,-1.0000e+00});
+			return Normal_7_758_vector;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #806, 156 total numbers made up of 52 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_806_point()
+		{
+			MFVec3f Coordinate_7_806_point = new MFVec3f(new double[] {4.0000e+02,-6.8104e+01,-1.3750e+01,3.9800e+02,-6.8104e+01,-1.3750e+01,4.0000e+02,-6.8979e+01,-1.3806e+01,3.9800e+02,-6.8979e+01,-1.3806e+01,4.0000e+02,-6.9840e+01,-1.3975e+01,3.9800e+02,-6.9840e+01,-1.3975e+01,4.0000e+02,-7.0672e+01,-1.4252e+01,3.9800e+02,-7.0672e+01,-1.4252e+01,4.0000e+02,-7.1462e+01,-1.4634e+01,3.9800e+02,-7.1462e+01,-1.4634e+01,4.0000e+02,-7.2196e+01,-1.5114e+01,3.9800e+02,-7.2196e+01,-1.5114e+01,4.0000e+02,-7.2862e+01,-1.5684e+01,3.9800e+02,-7.2862e+01,-1.5684e+01,4.0000e+02,-7.3450e+01,-1.6335e+01,3.9800e+02,-7.3450e+01,-1.6335e+01,4.0000e+02,-7.3949e+01,-1.7056e+01,3.9800e+02,-7.3949e+01,-1.7056e+01,4.0000e+02,-7.4352e+01,-1.7835e+01,3.9800e+02,-7.4352e+01,-1.7835e+01,4.0000e+02,-7.4651e+01,-1.8660e+01,3.9800e+02,-7.4651e+01,-1.8660e+01,4.0000e+02,-7.4842e+01,-1.9516e+01,3.9800e+02,-7.4842e+01,-1.9516e+01,4.0000e+02,-7.4921e+01,-2.0389e+01,3.9800e+02,-7.4921e+01,-2.0389e+01,4.0000e+02,-7.4888e+01,-2.1266e+01,3.9800e+02,-7.4888e+01,-2.1266e+01,4.0000e+02,-7.4743e+01,-2.2131e+01,3.9800e+02,-7.4743e+01,-2.2131e+01,4.0000e+02,-7.4488e+01,-2.2970e+01,3.9800e+02,-7.4488e+01,-2.2970e+01,4.0000e+02,-7.4127e+01,-2.3769e+01,3.9800e+02,-7.4127e+01,-2.3769e+01,4.0000e+02,-7.3666e+01,-2.4516e+01,3.9800e+02,-7.3666e+01,-2.4516e+01,4.0000e+02,-7.3114e+01,-2.5197e+01,3.9800e+02,-7.3114e+01,-2.5197e+01,4.0000e+02,-7.2479e+01,-2.5802e+01,3.9800e+02,-7.2479e+01,-2.5802e+01,4.0000e+02,-7.1771e+01,-2.6320e+01,3.9800e+02,-7.1771e+01,-2.6320e+01,4.0000e+02,-7.1003e+01,-2.6743e+01,3.9800e+02,-7.1003e+01,-2.6743e+01,4.0000e+02,-7.0187e+01,-2.7064e+01,3.9800e+02,-7.0187e+01,-2.7064e+01,4.0000e+02,-6.9336e+01,-2.7278e+01,3.9800e+02,-6.9336e+01,-2.7278e+01,4.0000e+02,-6.8465e+01,-2.7381e+01,3.9800e+02,-6.8465e+01,-2.7381e+01,4.0000e+02,-6.7588e+01,-2.7371e+01,3.9800e+02,-6.7588e+01,-2.7371e+01});
+			return Coordinate_7_806_point;
+		}
+		/** Large attribute array: Normal vector field, scene-graph level=7, element #807, 156 total numbers made up of 52 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getNormal_7_807_vector()
+		{
+			MFVec3f Normal_7_807_vector = new MFVec3f(new double[] {-0.0000e+00,2.4493e-16,-1.0000e+00,-0.0000e+00,2.4493e-16,-1.0000e+00,-0.0000e+00,1.2834e-01,-9.9173e-01,-0.0000e+00,1.2834e-01,-9.9173e-01,-0.0000e+00,2.5455e-01,-9.6706e-01,-0.0000e+00,2.5455e-01,-9.6706e-01,-0.0000e+00,3.7656e-01,-9.2639e-01,-0.0000e+00,3.7656e-01,-9.2639e-01,-0.0000e+00,4.9233e-01,-8.7041e-01,-0.0000e+00,4.9233e-01,-8.7041e-01,-0.0000e+00,5.9997e-01,-8.0002e-01,-0.0000e+00,5.9997e-01,-8.0002e-01,-0.0000e+00,6.9768e-01,-7.1641e-01,-0.0000e+00,6.9768e-01,-7.1641e-01,-0.0000e+00,7.8385e-01,-6.2095e-01,-0.0000e+00,7.8385e-01,-6.2095e-01,-0.0000e+00,8.5706e-01,-5.1521e-01,-0.0000e+00,8.5706e-01,-5.1521e-01,-0.0000e+00,9.1610e-01,-4.0096e-01,-0.0000e+00,9.1610e-01,-4.0096e-01,-0.0000e+00,9.5998e-01,-2.8008e-01,-0.0000e+00,9.5998e-01,-2.8008e-01,-0.0000e+00,9.8798e-01,-1.5456e-01,-0.0000e+00,9.8798e-01,-1.5456e-01,-0.0000e+00,9.9965e-01,-2.6486e-02,-0.0000e+00,9.9965e-01,-2.6486e-02,-0.0000e+00,9.9478e-01,1.0203e-01,-0.0000e+00,9.9478e-01,1.0203e-01,-0.0000e+00,9.7346e-01,2.2885e-01,-0.0000e+00,9.7346e-01,2.2885e-01,-0.0000e+00,9.3604e-01,3.5189e-01,-0.0000e+00,9.3604e-01,3.5189e-01,-0.0000e+00,8.8314e-01,4.6911e-01,-0.0000e+00,8.8314e-01,4.6911e-01,-0.0000e+00,8.1563e-01,5.7857e-01,-0.0000e+00,8.1563e-01,5.7857e-01,-0.0000e+00,7.3464e-01,6.7846e-01,-0.0000e+00,7.3464e-01,6.7846e-01,-0.0000e+00,6.4149e-01,7.6713e-01,-0.0000e+00,6.4149e-01,7.6713e-01,-0.0000e+00,5.3773e-01,8.4311e-01,-0.0000e+00,5.3773e-01,8.4311e-01,-0.0000e+00,4.2508e-01,9.0515e-01,-0.0000e+00,4.2508e-01,9.0515e-01,-0.0000e+00,3.0540e-01,9.5222e-01,-0.0000e+00,3.0540e-01,9.5222e-01,-0.0000e+00,1.8067e-01,9.8354e-01,-0.0000e+00,1.8067e-01,9.8354e-01,-0.0000e+00,5.2953e-02,9.9860e-01,-0.0000e+00,5.2953e-02,9.9860e-01,-0.0000e+00,-7.5642e-02,9.9714e-01,-0.0000e+00,-7.5642e-02,9.9714e-01});
+			return Normal_7_807_vector;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #819, 144 total numbers made up of 48 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_819_point()
+		{
+			MFVec3f Coordinate_7_819_point = new MFVec3f(new double[] {4.0000e+02,-5.3924e+01,-3.1595e+01,3.9800e+02,-5.3924e+01,-3.1595e+01,4.0000e+02,-5.3659e+01,-3.1544e+01,3.9800e+02,-5.3659e+01,-3.1544e+01,4.0000e+02,-5.3402e+01,-3.1459e+01,3.9800e+02,-5.3402e+01,-3.1459e+01,4.0000e+02,-5.3158e+01,-3.1343e+01,3.9800e+02,-5.3158e+01,-3.1343e+01,4.0000e+02,-5.2931e+01,-3.1196e+01,3.9800e+02,-5.2931e+01,-3.1196e+01,4.0000e+02,-5.2724e+01,-3.1022e+01,3.9800e+02,-5.2724e+01,-3.1022e+01,4.0000e+02,-5.2541e+01,-3.0823e+01,3.9800e+02,-5.2541e+01,-3.0823e+01,4.0000e+02,-5.2385e+01,-3.0602e+01,3.9800e+02,-5.2385e+01,-3.0602e+01,4.0000e+02,-5.2258e+01,-3.0364e+01,3.9800e+02,-5.2258e+01,-3.0364e+01,4.0000e+02,-5.2163e+01,-3.0111e+01,3.9800e+02,-5.2163e+01,-3.0111e+01,4.0000e+02,-5.2100e+01,-2.9848e+01,3.9800e+02,-5.2100e+01,-2.9848e+01,4.0000e+02,-5.2071e+01,-2.9579e+01,3.9800e+02,-5.2071e+01,-2.9579e+01,4.0000e+02,-5.2077e+01,-2.9309e+01,3.9800e+02,-5.2077e+01,-2.9309e+01,4.0000e+02,-5.2117e+01,-2.9042e+01,3.9800e+02,-5.2117e+01,-2.9042e+01,4.0000e+02,-5.2190e+01,-2.8782e+01,3.9800e+02,-5.2190e+01,-2.8782e+01,4.0000e+02,-5.2296e+01,-2.8533e+01,3.9800e+02,-5.2296e+01,-2.8533e+01,4.0000e+02,-5.2432e+01,-2.8300e+01,3.9800e+02,-5.2432e+01,-2.8300e+01,4.0000e+02,-5.2597e+01,-2.8086e+01,3.9800e+02,-5.2597e+01,-2.8086e+01,4.0000e+02,-5.2788e+01,-2.7894e+01,3.9800e+02,-5.2788e+01,-2.7894e+01,4.0000e+02,-5.3002e+01,-2.7729e+01,3.9800e+02,-5.3002e+01,-2.7729e+01,4.0000e+02,-5.3235e+01,-2.7592e+01,3.9800e+02,-5.3235e+01,-2.7592e+01,4.0000e+02,-5.3483e+01,-2.7485e+01,3.9800e+02,-5.3483e+01,-2.7485e+01,4.0000e+02,-5.3743e+01,-2.7411e+01,3.9800e+02,-5.3743e+01,-2.7411e+01,4.0000e+02,-5.4010e+01,-2.7371e+01,3.9800e+02,-5.4010e+01,-2.7371e+01});
+			return Coordinate_7_819_point;
+		}
+		/** Large attribute array: Normal vector field, scene-graph level=7, element #820, 144 total numbers made up of 48 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getNormal_7_820_vector()
+		{
+			MFVec3f Normal_7_820_vector = new MFVec3f(new double[] {0.0000e+00,1.2721e-01,-9.9188e-01,0.0000e+00,1.2721e-01,-9.9188e-01,0.0000e+00,2.5208e-01,-9.6771e-01,0.0000e+00,2.5208e-01,-9.6771e-01,0.0000e+00,3.7287e-01,-9.2788e-01,0.0000e+00,3.7287e-01,-9.2788e-01,0.0000e+00,4.8763e-01,-8.7305e-01,0.0000e+00,4.8763e-01,-8.7305e-01,0.0000e+00,5.9450e-01,-8.0409e-01,0.0000e+00,5.9450e-01,-8.0409e-01,0.0000e+00,6.9176e-01,-7.2213e-01,0.0000e+00,6.9176e-01,-7.2213e-01,0.0000e+00,7.7783e-01,-6.2848e-01,0.0000e+00,7.7783e-01,-6.2848e-01,0.0000e+00,8.5131e-01,-5.2467e-01,0.0000e+00,8.5131e-01,-5.2467e-01,0.0000e+00,9.1102e-01,-4.1237e-01,0.0000e+00,9.1102e-01,-4.1237e-01,0.0000e+00,9.5599e-01,-2.9339e-01,0.0000e+00,9.5599e-01,-2.9339e-01,0.0000e+00,9.8550e-01,-1.6968e-01,0.0000e+00,9.8550e-01,-1.6968e-01,0.0000e+00,9.9907e-01,-4.3213e-02,0.0000e+00,9.9907e-01,-4.3213e-02,0.0000e+00,9.9647e-01,8.3948e-02,0.0000e+00,9.9647e-01,8.3948e-02,0.0000e+00,9.7775e-01,2.0975e-01,0.0000e+00,9.7775e-01,2.0975e-01,0.0000e+00,9.4322e-01,3.3216e-01,0.0000e+00,9.4322e-01,3.3216e-01,0.0000e+00,8.9343e-01,4.4920e-01,0.0000e+00,8.9343e-01,4.4920e-01,0.0000e+00,8.2919e-01,5.5897e-01,0.0000e+00,8.2919e-01,5.5897e-01,0.0000e+00,7.5153e-01,6.5970e-01,0.0000e+00,7.5153e-01,6.5970e-01,0.0000e+00,6.6171e-01,7.4976e-01,0.0000e+00,6.6171e-01,7.4976e-01,0.0000e+00,5.6120e-01,8.2768e-01,0.0000e+00,5.6120e-01,8.2768e-01,0.0000e+00,4.5160e-01,8.9222e-01,0.0000e+00,4.5160e-01,8.9222e-01,0.0000e+00,3.3469e-01,9.4233e-01,0.0000e+00,3.3469e-01,9.4233e-01,0.0000e+00,2.1238e-01,9.7719e-01,0.0000e+00,2.1238e-01,9.7719e-01,0.0000e+00,8.6624e-02,9.9624e-01,0.0000e+00,8.6624e-02,9.9624e-01});
+			return Normal_7_820_vector;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #851, 273 total numbers made up of 91 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_851_point()
+		{
+			MFVec3f Coordinate_7_851_point = new MFVec3f(new double[] {3.9800e+02,-8.2328e+01,-2.9956e+01,3.9800e+02,-8.2207e+01,-3.1184e+01,3.9800e+02,-8.1849e+01,-3.2365e+01,3.9800e+02,-8.1268e+01,-3.3453e+01,3.9800e+02,-8.0485e+01,-3.4407e+01,3.9800e+02,-7.9531e+01,-3.5189e+01,3.9800e+02,-7.8443e+01,-3.5771e+01,3.9800e+02,-7.7263e+01,-3.6129e+01,3.9800e+02,-7.6035e+01,-3.6250e+01,3.9800e+02,-5.3234e+01,-3.6250e+01,3.9800e+02,-5.1899e+01,-3.5897e+01,3.9800e+02,-5.0662e+01,-3.5283e+01,3.9800e+02,-4.9574e+01,-3.4433e+01,3.9800e+02,-4.8678e+01,-3.3383e+01,3.9800e+02,-4.8010e+01,-3.2174e+01,3.9800e+02,-4.7598e+01,-3.0857e+01,3.9800e+02,-4.7459e+01,-2.9483e+01,3.9800e+02,-4.7598e+01,-2.8109e+01,3.9800e+02,-4.8010e+01,-2.6791e+01,3.9800e+02,-4.8678e+01,-2.5582e+01,3.9800e+02,-4.9574e+01,-2.4532e+01,3.9800e+02,-5.0662e+01,-2.3683e+01,3.9800e+02,-5.1899e+01,-2.3069e+01,3.9800e+02,-5.3234e+01,-2.2716e+01,3.9800e+02,-6.7674e+01,-2.2716e+01,3.9800e+02,-6.8097e+01,-2.2673e+01,3.9800e+02,-6.8504e+01,-2.2546e+01,3.9800e+02,-6.8876e+01,-2.2341e+01,3.9800e+02,-6.9200e+01,-2.2065e+01,3.9800e+02,-6.9463e+01,-2.1730e+01,3.9800e+02,-6.9653e+01,-2.1349e+01,3.9800e+02,-6.9762e+01,-2.0938e+01,3.9800e+02,-6.9788e+01,-2.0514e+01,3.9800e+02,-6.9728e+01,-2.0093e+01,3.9800e+02,-6.9585e+01,-1.9692e+01,3.9800e+02,-6.9365e+01,-1.9328e+01,3.9800e+02,-6.9076e+01,-1.9015e+01,3.9800e+02,-6.8730e+01,-1.8767e+01,3.9800e+02,-6.8342e+01,-1.8593e+01,3.9800e+02,-6.7927e+01,-1.8500e+01,3.9800e+02,-6.7502e+01,-1.8492e+01,3.9800e+02,-4.3967e+01,-1.8492e+01,3.9800e+02,-4.3967e+01,-3.6250e+01,3.9800e+02,-3.9313e+01,-3.6250e+01,3.9800e+02,-3.9313e+01,-1.8492e+01,3.9800e+02,-2.9699e+01,-1.8492e+01,3.9800e+02,-2.9699e+01,-1.3750e+01,3.9800e+02,-6.8104e+01,-1.3750e+01,3.9800e+02,-6.9466e+01,-1.3887e+01,3.9800e+02,-7.0773e+01,-1.4294e+01,3.9800e+02,-7.1973e+01,-1.4954e+01,3.9800e+02,-7.3017e+01,-1.5840e+01,3.9800e+02,-7.3863e+01,-1.6916e+01,3.9800e+02,-7.4476e+01,-1.8140e+01,3.9800e+02,-7.4833e+01,-1.9462e+01,3.9800e+02,-7.4919e+01,-2.0828e+01,3.9800e+02,-7.4730e+01,-2.2184e+01,3.9800e+02,-7.4274e+01,-2.3475e+01,3.9800e+02,-7.3570e+01,-2.4649e+01,3.9800e+02,-7.2645e+01,-2.5659e+01,3.9800e+02,-7.1537e+01,-2.6463e+01,3.9800e+02,-7.0291e+01,-2.7030e+01,3.9800e+02,-6.8957e+01,-2.7337e+01,3.9800e+02,-6.7588e+01,-2.7371e+01,3.9800e+02,-5.4010e+01,-2.7371e+01,3.9800e+02,-5.3603e+01,-2.7447e+01,3.9800e+02,-5.3219e+01,-2.7600e+01,3.9800e+02,-5.2871e+01,-2.7825e+01,3.9800e+02,-5.2574e+01,-2.8113e+01,3.9800e+02,-5.2338e+01,-2.8453e+01,3.9800e+02,-5.2173e+01,-2.8833e+01,3.9800e+02,-5.2084e+01,-2.9237e+01,3.9800e+02,-5.2076e+01,-2.9651e+01,3.9800e+02,-5.2148e+01,-3.0059e+01,3.9800e+02,-5.2297e+01,-3.0445e+01,3.9800e+02,-5.2519e+01,-3.0795e+01,3.9800e+02,-5.2804e+01,-3.1095e+01,3.9800e+02,-5.3142e+01,-3.1334e+01,3.9800e+02,-5.3520e+01,-3.1503e+01,3.9800e+02,-5.3924e+01,-3.1595e+01,3.9800e+02,-7.5991e+01,-3.1595e+01,3.9800e+02,-7.6311e+01,-3.1564e+01,3.9800e+02,-7.6618e+01,-3.1470e+01,3.9800e+02,-7.6902e+01,-3.1319e+01,3.9800e+02,-7.7150e+01,-3.1115e+01,3.9800e+02,-7.7354e+01,-3.0867e+01,3.9800e+02,-7.7505e+01,-3.0584e+01,3.9800e+02,-7.7598e+01,-3.0276e+01,3.9800e+02,-7.7630e+01,-2.9956e+01,3.9800e+02,-7.7630e+01,-1.3750e+01,3.9800e+02,-8.2328e+01,-1.3750e+01});
+			return Coordinate_7_851_point;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #875, 120 total numbers made up of 40 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_875_point()
+		{
+			MFVec3f Coordinate_7_875_point = new MFVec3f(new double[] {4.0000e+02,-1.0894e+02,-1.8836e+01,3.9800e+02,-1.0894e+02,-1.8836e+01,4.0000e+02,-1.0901e+02,-1.8766e+01,3.9800e+02,-1.0901e+02,-1.8766e+01,4.0000e+02,-1.0910e+02,-1.8705e+01,3.9800e+02,-1.0910e+02,-1.8705e+01,4.0000e+02,-1.0919e+02,-1.8655e+01,3.9800e+02,-1.0919e+02,-1.8655e+01,4.0000e+02,-1.0928e+02,-1.8617e+01,3.9800e+02,-1.0928e+02,-1.8617e+01,4.0000e+02,-1.0938e+02,-1.8590e+01,3.9800e+02,-1.0938e+02,-1.8590e+01,4.0000e+02,-1.0948e+02,-1.8577e+01,3.9800e+02,-1.0948e+02,-1.8577e+01,4.0000e+02,-1.0958e+02,-1.8576e+01,3.9800e+02,-1.0958e+02,-1.8576e+01,4.0000e+02,-1.0968e+02,-1.8588e+01,3.9800e+02,-1.0968e+02,-1.8588e+01,4.0000e+02,-1.0978e+02,-1.8613e+01,3.9800e+02,-1.0978e+02,-1.8613e+01,4.0000e+02,-1.0988e+02,-1.8650e+01,3.9800e+02,-1.0988e+02,-1.8650e+01,4.0000e+02,-1.0997e+02,-1.8699e+01,3.9800e+02,-1.0997e+02,-1.8699e+01,4.0000e+02,-1.1005e+02,-1.8759e+01,3.9800e+02,-1.1005e+02,-1.8759e+01,4.0000e+02,-1.1012e+02,-1.8829e+01,3.9800e+02,-1.1012e+02,-1.8829e+01,4.0000e+02,-1.1019e+02,-1.8907e+01,3.9800e+02,-1.1019e+02,-1.8907e+01,4.0000e+02,-1.1025e+02,-1.8993e+01,3.9800e+02,-1.1025e+02,-1.8993e+01,4.0000e+02,-1.1029e+02,-1.9085e+01,3.9800e+02,-1.1029e+02,-1.9085e+01,4.0000e+02,-1.1032e+02,-1.9183e+01,3.9800e+02,-1.1032e+02,-1.9183e+01,4.0000e+02,-1.1034e+02,-1.9283e+01,3.9800e+02,-1.1034e+02,-1.9283e+01,4.0000e+02,-1.1035e+02,-1.9385e+01,3.9800e+02,-1.1035e+02,-1.9385e+01});
+			return Coordinate_7_875_point;
+		}
+		/** Large attribute array: Normal vector field, scene-graph level=7, element #876, 120 total numbers made up of 40 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getNormal_7_876_vector()
+		{
+			MFVec3f Normal_7_876_vector = new MFVec3f(new double[] {0.0000e+00,7.3591e-01,6.7708e-01,0.0000e+00,7.3591e-01,6.7708e-01,0.0000e+00,6.4483e-01,7.6432e-01,0.0000e+00,6.4483e-01,7.6432e-01,0.0000e+00,5.4350e-01,8.3941e-01,0.0000e+00,5.4350e-01,8.3941e-01,0.0000e+00,4.3353e-01,9.0114e-01,0.0000e+00,4.3353e-01,9.0114e-01,0.0000e+00,3.1666e-01,9.4854e-01,0.0000e+00,3.1666e-01,9.4854e-01,0.0000e+00,1.9475e-01,9.8085e-01,0.0000e+00,1.9475e-01,9.8085e-01,0.0000e+00,6.9746e-02,9.9756e-01,0.0000e+00,6.9746e-02,9.9756e-01,0.0000e+00,-5.6367e-02,9.9841e-01,0.0000e+00,-5.6367e-02,9.9841e-01,0.0000e+00,-1.8158e-01,9.8338e-01,0.0000e+00,-1.8158e-01,9.8338e-01,0.0000e+00,-3.0391e-01,9.5270e-01,0.0000e+00,-3.0391e-01,9.5270e-01,0.0000e+00,-4.2141e-01,9.0687e-01,0.0000e+00,-4.2141e-01,9.0687e-01,0.0000e+00,-5.3220e-01,8.4662e-01,0.0000e+00,-5.3220e-01,8.4662e-01,0.0000e+00,-6.3453e-01,7.7290e-01,0.0000e+00,-6.3453e-01,7.7290e-01,0.0000e+00,-7.2676e-01,6.8689e-01,0.0000e+00,-7.2676e-01,6.8689e-01,0.0000e+00,-8.0744e-01,5.8995e-01,0.0000e+00,-8.0744e-01,5.8995e-01,0.0000e+00,-8.7527e-01,4.8363e-01,0.0000e+00,-8.7527e-01,4.8363e-01,0.0000e+00,-9.2918e-01,3.6962e-01,0.0000e+00,-9.2918e-01,3.6962e-01,0.0000e+00,-9.6832e-01,2.4973e-01,0.0000e+00,-9.6832e-01,2.4973e-01,0.0000e+00,-9.9205e-01,1.2587e-01,0.0000e+00,-9.9205e-01,1.2587e-01,0.0000e+00,-1.0000e+00,6.1232e-17,0.0000e+00,-1.0000e+00,6.1232e-17});
+			return Normal_7_876_vector;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #888, 120 total numbers made up of 40 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_888_point()
+		{
+			MFVec3f Coordinate_7_888_point = new MFVec3f(new double[] {4.0000e+02,-9.4740e+01,-3.4271e+01,3.9800e+02,-9.4740e+01,-3.4271e+01,4.0000e+02,-9.4278e+01,-3.4776e+01,3.9800e+02,-9.4278e+01,-3.4776e+01,4.0000e+02,-9.3755e+01,-3.5218e+01,3.9800e+02,-9.3755e+01,-3.5218e+01,4.0000e+02,-9.3180e+01,-3.5588e+01,3.9800e+02,-9.3180e+01,-3.5588e+01,4.0000e+02,-9.2561e+01,-3.5880e+01,3.9800e+02,-9.2561e+01,-3.5880e+01,4.0000e+02,-9.1909e+01,-3.6090e+01,3.9800e+02,-9.1909e+01,-3.6090e+01,4.0000e+02,-9.1236e+01,-3.6214e+01,3.9800e+02,-9.1236e+01,-3.6214e+01,4.0000e+02,-9.0553e+01,-3.6250e+01,3.9800e+02,-9.0553e+01,-3.6250e+01,4.0000e+02,-8.9870e+01,-3.6196e+01,3.9800e+02,-8.9870e+01,-3.6196e+01,4.0000e+02,-8.9201e+01,-3.6055e+01,3.9800e+02,-8.9201e+01,-3.6055e+01,4.0000e+02,-8.8555e+01,-3.5829e+01,3.9800e+02,-8.8555e+01,-3.5829e+01,4.0000e+02,-8.7944e+01,-3.5520e+01,3.9800e+02,-8.7944e+01,-3.5520e+01,4.0000e+02,-8.7378e+01,-3.5135e+01,3.9800e+02,-8.7378e+01,-3.5135e+01,4.0000e+02,-8.6866e+01,-3.4681e+01,3.9800e+02,-8.6866e+01,-3.4681e+01,4.0000e+02,-8.6418e+01,-3.4163e+01,3.9800e+02,-8.6418e+01,-3.4163e+01,4.0000e+02,-8.6041e+01,-3.3592e+01,3.9800e+02,-8.6041e+01,-3.3592e+01,4.0000e+02,-8.5740e+01,-3.2977e+01,3.9800e+02,-8.5740e+01,-3.2977e+01,4.0000e+02,-8.5522e+01,-3.2329e+01,3.9800e+02,-8.5522e+01,-3.2329e+01,4.0000e+02,-8.5390e+01,-3.1657e+01,3.9800e+02,-8.5390e+01,-3.1657e+01,4.0000e+02,-8.5345e+01,-3.0974e+01,3.9800e+02,-8.5345e+01,-3.0974e+01});
+			return Coordinate_7_888_point;
+		}
+		/** Large attribute array: Normal vector field, scene-graph level=7, element #889, 120 total numbers made up of 40 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getNormal_7_889_vector()
+		{
+			MFVec3f Normal_7_889_vector = new MFVec3f(new double[] {-0.0000e+00,7.8074e-01,6.2486e-01,-0.0000e+00,7.8074e-01,6.2486e-01,-0.0000e+00,6.9327e-01,7.2067e-01,-0.0000e+00,6.9327e-01,7.2067e-01,-0.0000e+00,5.9414e-01,8.0436e-01,-0.0000e+00,5.9414e-01,8.0436e-01,-0.0000e+00,4.8501e-01,8.7451e-01,-0.0000e+00,4.8501e-01,8.7451e-01,-0.0000e+00,3.6772e-01,9.2994e-01,-0.0000e+00,3.6772e-01,9.2994e-01,-0.0000e+00,2.4423e-01,9.6972e-01,-0.0000e+00,2.4423e-01,9.6972e-01,-0.0000e+00,1.1664e-01,9.9317e-01,-0.0000e+00,1.1664e-01,9.9317e-01,-0.0000e+00,-1.2917e-02,9.9992e-01,-0.0000e+00,-1.2917e-02,9.9992e-01,-0.0000e+00,-1.4226e-01,9.8983e-01,-0.0000e+00,-1.4226e-01,9.8983e-01,-0.0000e+00,-2.6920e-01,9.6308e-01,-0.0000e+00,-2.6920e-01,9.6308e-01,-0.0000e+00,-3.9162e-01,9.2013e-01,-0.0000e+00,-3.9162e-01,9.2013e-01,-0.0000e+00,-5.0744e-01,8.6169e-01,-0.0000e+00,-5.0744e-01,8.6169e-01,-0.0000e+00,-6.1472e-01,7.8874e-01,-0.0000e+00,-6.1472e-01,7.8874e-01,-0.0000e+00,-7.1166e-01,7.0253e-01,-0.0000e+00,-7.1166e-01,7.0253e-01,-0.0000e+00,-7.9662e-01,6.0448e-01,-0.0000e+00,-7.9662e-01,6.0448e-01,-0.0000e+00,-8.6817e-01,4.9627e-01,-0.0000e+00,-8.6817e-01,4.9627e-01,-0.0000e+00,-9.2511e-01,3.7970e-01,-0.0000e+00,-9.2511e-01,3.7970e-01,-0.0000e+00,-9.6648e-01,2.5674e-01,-0.0000e+00,-9.6648e-01,2.5674e-01,-0.0000e+00,-9.9158e-01,1.2946e-01,-0.0000e+00,-9.9158e-01,1.2946e-01,-0.0000e+00,-1.0000e+00,-6.1232e-17,-0.0000e+00,-1.0000e+00,-6.1232e-17});
+			return Normal_7_889_vector;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #913, 120 total numbers made up of 40 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_913_point()
+		{
+			MFVec3f Coordinate_7_913_point = new MFVec3f(new double[] {4.0000e+02,-9.1120e+01,-3.1337e+01,3.9800e+02,-9.1120e+01,-3.1337e+01,4.0000e+02,-9.1061e+01,-3.1392e+01,3.9800e+02,-9.1061e+01,-3.1392e+01,4.0000e+02,-9.0996e+01,-3.1440e+01,3.9800e+02,-9.0996e+01,-3.1440e+01,4.0000e+02,-9.0924e+01,-3.1479e+01,3.9800e+02,-9.0924e+01,-3.1479e+01,4.0000e+02,-9.0849e+01,-3.1508e+01,3.9800e+02,-9.0849e+01,-3.1508e+01,4.0000e+02,-9.0770e+01,-3.1527e+01,3.9800e+02,-9.0770e+01,-3.1527e+01,4.0000e+02,-9.0689e+01,-3.1536e+01,3.9800e+02,-9.0689e+01,-3.1536e+01,4.0000e+02,-9.0608e+01,-3.1534e+01,3.9800e+02,-9.0608e+01,-3.1534e+01,4.0000e+02,-9.0528e+01,-3.1521e+01,3.9800e+02,-9.0528e+01,-3.1521e+01,4.0000e+02,-9.0450e+01,-3.1499e+01,3.9800e+02,-9.0450e+01,-3.1499e+01,4.0000e+02,-9.0376e+01,-3.1466e+01,3.9800e+02,-9.0376e+01,-3.1466e+01,4.0000e+02,-9.0307e+01,-3.1424e+01,3.9800e+02,-9.0307e+01,-3.1424e+01,4.0000e+02,-9.0243e+01,-3.1373e+01,3.9800e+02,-9.0243e+01,-3.1373e+01,4.0000e+02,-9.0187e+01,-3.1315e+01,3.9800e+02,-9.0187e+01,-3.1315e+01,4.0000e+02,-9.0139e+01,-3.1249e+01,3.9800e+02,-9.0139e+01,-3.1249e+01,4.0000e+02,-9.0100e+01,-3.1178e+01,3.9800e+02,-9.0100e+01,-3.1178e+01,4.0000e+02,-9.0071e+01,-3.1103e+01,3.9800e+02,-9.0071e+01,-3.1103e+01,4.0000e+02,-9.0051e+01,-3.1024e+01,3.9800e+02,-9.0051e+01,-3.1024e+01,4.0000e+02,-9.0042e+01,-3.0943e+01,3.9800e+02,-9.0042e+01,-3.0943e+01,4.0000e+02,-9.0044e+01,-3.0862e+01,3.9800e+02,-9.0044e+01,-3.0862e+01});
+			return Coordinate_7_913_point;
+		}
+		/** Large attribute array: Normal vector field, scene-graph level=7, element #914, 120 total numbers made up of 40 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getNormal_7_914_vector()
+		{
+			MFVec3f Normal_7_914_vector = new MFVec3f(new double[] {0.0000e+00,-7.3420e-01,-6.7893e-01,0.0000e+00,-7.3420e-01,-6.7893e-01,0.0000e+00,-6.3963e-01,-7.6869e-01,0.0000e+00,-6.3963e-01,-7.6869e-01,0.0000e+00,-5.3418e-01,-8.4537e-01,0.0000e+00,-5.3418e-01,-8.4537e-01,0.0000e+00,-4.1965e-01,-9.0769e-01,0.0000e+00,-4.1965e-01,-9.0769e-01,0.0000e+00,-2.9799e-01,-9.5457e-01,0.0000e+00,-2.9799e-01,-9.5457e-01,0.0000e+00,-1.7126e-01,-9.8523e-01,0.0000e+00,-1.7126e-01,-9.8523e-01,0.0000e+00,-4.1620e-02,-9.9913e-01,0.0000e+00,-4.1620e-02,-9.9913e-01,0.0000e+00,8.8727e-02,-9.9606e-01,0.0000e+00,8.8727e-02,-9.9606e-01,0.0000e+00,2.1757e-01,-9.7605e-01,0.0000e+00,2.1757e-01,-9.7605e-01,0.0000e+00,3.4271e-01,-9.3944e-01,0.0000e+00,3.4271e-01,-9.3944e-01,0.0000e+00,4.6202e-01,-8.8687e-01,0.0000e+00,4.6202e-01,-8.8687e-01,0.0000e+00,5.7348e-01,-8.1922e-01,0.0000e+00,5.7348e-01,-8.1922e-01,0.0000e+00,6.7519e-01,-7.3764e-01,0.0000e+00,6.7519e-01,-7.3764e-01,0.0000e+00,7.6542e-01,-6.4353e-01,0.0000e+00,7.6542e-01,-6.4353e-01,0.0000e+00,8.4264e-01,-5.3847e-01,0.0000e+00,8.4264e-01,-5.3847e-01,0.0000e+00,9.0554e-01,-4.2426e-01,0.0000e+00,9.0554e-01,-4.2426e-01,0.0000e+00,9.5304e-01,-3.0284e-01,0.0000e+00,9.5304e-01,-3.0284e-01,0.0000e+00,9.8434e-01,-1.7627e-01,0.0000e+00,9.8434e-01,-1.7627e-01,0.0000e+00,9.9891e-01,-4.6700e-02,0.0000e+00,9.9891e-01,-4.6700e-02,0.0000e+00,9.9649e-01,8.3661e-02,0.0000e+00,9.9649e-01,8.3661e-02});
+			return Normal_7_914_vector;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #926, 120 total numbers made up of 40 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_926_point()
+		{
+			MFVec3f Coordinate_7_926_point = new MFVec3f(new double[] {4.0000e+02,-1.0652e+02,-1.4686e+01,3.9800e+02,-1.0652e+02,-1.4686e+01,4.0000e+02,-1.0696e+02,-1.4261e+01,3.9800e+02,-1.0696e+02,-1.4261e+01,4.0000e+02,-1.0746e+02,-1.3895e+01,3.9800e+02,-1.0746e+02,-1.3895e+01,4.0000e+02,-1.0800e+02,-1.3594e+01,3.9800e+02,-1.0800e+02,-1.3594e+01,4.0000e+02,-1.0857e+02,-1.3364e+01,3.9800e+02,-1.0857e+02,-1.3364e+01,4.0000e+02,-1.0916e+02,-1.3207e+01,3.9800e+02,-1.0916e+02,-1.3207e+01,4.0000e+02,-1.0978e+02,-1.3127e+01,3.9800e+02,-1.0978e+02,-1.3127e+01,4.0000e+02,-1.1039e+02,-1.3124e+01,3.9800e+02,-1.1039e+02,-1.3124e+01,4.0000e+02,-1.1100e+02,-1.3198e+01,3.9800e+02,-1.1100e+02,-1.3198e+01,4.0000e+02,-1.1160e+02,-1.3349e+01,3.9800e+02,-1.1160e+02,-1.3349e+01,4.0000e+02,-1.1218e+02,-1.3573e+01,3.9800e+02,-1.1218e+02,-1.3573e+01,4.0000e+02,-1.1272e+02,-1.3868e+01,3.9800e+02,-1.1272e+02,-1.3868e+01,4.0000e+02,-1.1322e+02,-1.4229e+01,3.9800e+02,-1.1322e+02,-1.4229e+01,4.0000e+02,-1.1367e+02,-1.4650e+01,3.9800e+02,-1.1367e+02,-1.4650e+01,4.0000e+02,-1.1406e+02,-1.5124e+01,3.9800e+02,-1.1406e+02,-1.5124e+01,4.0000e+02,-1.1439e+02,-1.5643e+01,3.9800e+02,-1.1439e+02,-1.5643e+01,4.0000e+02,-1.1465e+02,-1.6201e+01,3.9800e+02,-1.1465e+02,-1.6201e+01,4.0000e+02,-1.1485e+02,-1.6787e+01,3.9800e+02,-1.1485e+02,-1.6787e+01,4.0000e+02,-1.1496e+02,-1.7392e+01,3.9800e+02,-1.1496e+02,-1.7392e+01,4.0000e+02,-1.1500e+02,-1.8007e+01,3.9800e+02,-1.1500e+02,-1.8007e+01});
+			return Coordinate_7_926_point;
+		}
+		/** Large attribute array: Normal vector field, scene-graph level=7, element #927, 120 total numbers made up of 40 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getNormal_7_927_vector()
+		{
+			MFVec3f Normal_7_927_vector = new MFVec3f(new double[] {-0.0000e+00,-7.3420e-01,-6.7893e-01,-0.0000e+00,-7.3420e-01,-6.7893e-01,-0.0000e+00,-6.4301e-01,-7.6586e-01,-0.0000e+00,-6.4301e-01,-7.6586e-01,-0.0000e+00,-5.4161e-01,-8.4063e-01,-0.0000e+00,-5.4161e-01,-8.4063e-01,-0.0000e+00,-4.3162e-01,-9.0206e-01,-0.0000e+00,-4.3162e-01,-9.0206e-01,-0.0000e+00,-3.1477e-01,-9.4917e-01,-0.0000e+00,-3.1477e-01,-9.4917e-01,-0.0000e+00,-1.9293e-01,-9.8121e-01,-0.0000e+00,-1.9293e-01,-9.8121e-01,-0.0000e+00,-6.8029e-02,-9.9768e-01,-0.0000e+00,-6.8029e-02,-9.9768e-01,-0.0000e+00,5.7953e-02,-9.9832e-01,-0.0000e+00,5.7953e-02,-9.9832e-01,-0.0000e+00,1.8302e-01,-9.8311e-01,-0.0000e+00,1.8302e-01,-9.8311e-01,-0.0000e+00,3.0517e-01,-9.5230e-01,-0.0000e+00,3.0517e-01,-9.5230e-01,-0.0000e+00,4.2249e-01,-9.0637e-01,-0.0000e+00,4.2249e-01,-9.0637e-01,-0.0000e+00,5.3310e-01,-8.4605e-01,-0.0000e+00,5.3310e-01,-8.4605e-01,-0.0000e+00,6.3524e-01,-7.7231e-01,-0.0000e+00,6.3524e-01,-7.7231e-01,-0.0000e+00,7.2731e-01,-6.8631e-01,-0.0000e+00,7.2731e-01,-6.8631e-01,-0.0000e+00,8.0783e-01,-5.8942e-01,-0.0000e+00,8.0783e-01,-5.8942e-01,-0.0000e+00,8.7553e-01,-4.8317e-01,-0.0000e+00,8.7553e-01,-4.8317e-01,-0.0000e+00,9.2933e-01,-3.6925e-01,-0.0000e+00,9.2933e-01,-3.6925e-01,-0.0000e+00,9.6838e-01,-2.4947e-01,-0.0000e+00,9.6838e-01,-2.4947e-01,-0.0000e+00,9.9206e-01,-1.2573e-01,-0.0000e+00,9.9206e-01,-1.2573e-01,-0.0000e+00,1.0000e+00,-6.1232e-17,-0.0000e+00,1.0000e+00,-6.1232e-17});
+			return Normal_7_927_vector;
+		}
+		/** Large attribute array: Coordinate point field, scene-graph level=7, element #933, 174 total numbers made up of 58 3-tuple values.
+		 * Reassemble split array as single method to improve readability and runnability.
+		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
+		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
+		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
+		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
+		 */
+		private MFVec3f getCoordinate_7_933_point()
+		{
+			MFVec3f Coordinate_7_933_point = new MFVec3f(new double[] {3.9800e+02,-1.1500e+02,-3.6250e+01,3.9800e+02,-1.1035e+02,-3.6250e+01,3.9800e+02,-1.1035e+02,-1.9385e+01,3.9800e+02,-1.1033e+02,-1.9224e+01,3.9800e+02,-1.1028e+02,-1.9070e+01,3.9800e+02,-1.1021e+02,-1.8928e+01,3.9800e+02,-1.1010e+02,-1.8804e+01,3.9800e+02,-1.0997e+02,-1.8704e+01,3.9800e+02,-1.0983e+02,-1.8630e+01,3.9800e+02,-1.0968e+02,-1.8587e+01,3.9800e+02,-1.0951e+02,-1.8575e+01,3.9800e+02,-1.0935e+02,-1.8596e+01,3.9800e+02,-1.0920e+02,-1.8648e+01,3.9800e+02,-1.0906e+02,-1.8729e+01,3.9800e+02,-1.0894e+02,-1.8836e+01,3.9800e+02,-9.4740e+01,-3.4271e+01,3.9800e+02,-9.4044e+01,-3.4989e+01,3.9800e+02,-9.3226e+01,-3.5562e+01,3.9800e+02,-9.2314e+01,-3.5971e+01,3.9800e+02,-9.1341e+01,-3.6201e+01,3.9800e+02,-9.0342e+01,-3.6243e+01,3.9800e+02,-8.9353e+01,-3.6096e+01,3.9800e+02,-8.8410e+01,-3.5765e+01,3.9800e+02,-8.7547e+01,-3.5262e+01,3.9800e+02,-8.6793e+01,-3.4605e+01,3.9800e+02,-8.6177e+01,-3.3818e+01,3.9800e+02,-8.5720e+01,-3.2929e+01,3.9800e+02,-8.5440e+01,-3.1969e+01,3.9800e+02,-8.5345e+01,-3.0974e+01,3.9800e+02,-8.5345e+01,-1.3750e+01,3.9800e+02,-9.0044e+01,-1.3750e+01,3.9800e+02,-9.0044e+01,-3.0862e+01,3.9800e+02,-9.0045e+01,-3.0981e+01,3.9800e+02,-9.0069e+01,-3.1097e+01,3.9800e+02,-9.0114e+01,-3.1206e+01,3.9800e+02,-9.0179e+01,-3.1305e+01,3.9800e+02,-9.0262e+01,-3.1390e+01,3.9800e+02,-9.0359e+01,-3.1457e+01,3.9800e+02,-9.0468e+01,-3.1505e+01,3.9800e+02,-9.0583e+01,-3.1531e+01,3.9800e+02,-9.0702e+01,-3.1535e+01,3.9800e+02,-9.0819e+01,-3.1517e+01,3.9800e+02,-9.0930e+01,-3.1476e+01,3.9800e+02,-9.1032e+01,-3.1415e+01,3.9800e+02,-9.1120e+01,-3.1337e+01,3.9800e+02,-1.0652e+02,-1.4686e+01,3.9800e+02,-1.0725e+02,-1.4040e+01,3.9800e+02,-1.0809e+02,-1.3551e+01,3.9800e+02,-1.0901e+02,-1.3239e+01,3.9800e+02,-1.0998e+02,-1.3117e+01,3.9800e+02,-1.1095e+02,-1.3189e+01,3.9800e+02,-1.1189e+02,-1.3452e+01,3.9800e+02,-1.1276e+02,-1.3896e+01,3.9800e+02,-1.1352e+02,-1.4503e+01,3.9800e+02,-1.1415e+02,-1.5250e+01,3.9800e+02,-1.1462e+02,-1.6106e+01,3.9800e+02,-1.1490e+02,-1.7037e+01,3.9800e+02,-1.1500e+02,-1.8007e+01});
+			return Coordinate_7_933_point;
+		}
+
+	/** The initialized model object, created within initialize() method. */
+	private X3D x3dModel;
+
+	/** 
+	 * Provide a 
+	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
+	 * of the X3D model.
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
+	 * @return NistCtc01Asme1Ap203Spri model
+	 */
+	public X3D getX3dModel()
+	{	  
+		return x3dModel;
+	}
+	   
+    /** 
+	 * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+     * @param args array of input parameters, provided as arguments
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
+     * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
+     * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
+     * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
+     */
+    public static void main(String args[])
+    {
+        X3D thisExampleX3dModel = new NistCtc01Asme1Ap203Spri().getX3dModel();
+
+		boolean hasArguments = (args != null) && (args.length > 0);
+		boolean validate = true; // default
+		boolean argumentsLoadNewModel = false;
+		String  fileName = new String();
+
+		if (args != null)
+		{
+			for (String arg : args)
+			{
+				if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+				{
+					validate = true; // making sure
+				}
+				if (arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_XHTML))
+				{
+					argumentsLoadNewModel = true;
+					fileName = arg;
+				}
+			}
+		}
+		if      (argumentsLoadNewModel)
+			System.out.println("WARNING: \"net.x3djsonld.data.NistCtc01Asme1Ap203Spri\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+		else if (hasArguments) // if no arguments provided, this method produces usage warning
+			thisExampleX3dModel.handleArguments(args);
+
+		if (validate)
+		{
+			System.out.print("Java program \"net.x3djsonld.data.NistCtc01Asme1Ap203Spri\" self-validation test results: ");
+			String validationResults = thisExampleX3dModel.validationReport();
+            if (validationResults.startsWith("\n"))
+                System.out.println();
+			System.out.println(validationResults.trim());
+		}
+    }
+}

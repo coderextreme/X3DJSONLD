@@ -1,0 +1,413 @@
+###############################################
+#
+# Now available: developmental python x3d.py package on PyPi for import.
+#   This approach greatly simplifies Python X3D deployment and use.
+#   https://pypi.org/project/x3d
+#
+# Installation:
+#       pip install x3d
+# or
+#       python -m pip install x3d
+#
+# Developer options for loading x3d package:
+#
+#    from x3d import *  # preferred approach, terser source that avoids x3d.* class prefixes
+#
+# or
+#    import x3d         # traditional way to subclass x3d package, all classes require x3d.* prefix
+#                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
+#                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
+
+from x3d import *
+
+###############################################
+
+newModel=X3D(profile='Immersive',version='3.0',
+  head=head(
+    children=[
+    meta(content='SweetHomeFullDetail.x3d',name='title'),
+    meta(content='La Mesa Military Housing Model, Engin UZUNCAOVA [August, 2001]',name='creator'),
+    meta(content='Engin UZUNCAOVA',name='translator'),
+    meta(content='16 September 2001',name='created'),
+    meta(content='20 October 2019',name='modified'),
+    meta(content='Model of one of the housing types in La Mesa Housing Area. The model is mostly in scale.this file contains the detailed version of the model.',name='description'),
+    meta(content='https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/SweetHomeFullDetail.x3d',name='identifier'),
+    meta(content='https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/SweetHome.x3d',name='reference'),
+    meta(content='https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/SweetHomeLowDetail.x3d',name='reference'),
+    meta(content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit',name='generator'),
+    meta(content='../license.html',name='license')]),
+  Scene=Scene(
+    children=[
+    WorldInfo(title='SweetHomeFullDetail.x3d'),
+    NavigationInfo(avatarSize=[0.01,1.7,0.2],headlight=False,speed=2,type=["EXAMINE"]),
+    Group(DEF='FLOOR',
+      children=[
+      Shape(DEF='Floor',
+        appearance=Appearance(DEF='WALL',
+          texture=ImageTexture(url=["WallColorTexture.jpg","https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/WallColorTexture.jpg"])),
+        geometry=Extrusion(convex=False,crossSection=[(-6.225,4.8),(-6.225,-4.8),(6.225,-4.8),(6.225,2.1),(1.425,2.1),(1.425,4.8),(-6.225,4.8)],solid=False,spine=[(0,0.1,0),(0,0.15,0)])),
+      Shape(DEF='FLOOR_FACESET',
+        appearance=Appearance(
+          texture=ImageTexture(url=["FloorTexture.jpg","https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/FloorTexture.jpg"])),
+        geometry=IndexedFaceSet(ccw=False,convex=False,coordIndex=[0,1,2,3,4,5,6],
+          coord=Coordinate(point=[(-6.2,0.56,4.7),(-6.2,0.16,-4.7),(6.2,0.16,-4.7),(6.2,0.16,2.0),(1.4,0.16,2.0),(1.4,0.16,4.7),(-6.2,0.16,4.7)])))]),
+    Group(DEF='FRONT_SIDE',
+      children=[
+      Transform(DEF='BABY_STUDY_ROOM',translation=(-2.4,0.15,4.725),
+        children=[
+        Group(DEF='FRONT_WALLS',
+          children=[
+          Transform(DEF='FRONT_LOWER',translation=(0,0.4,0),
+            children=[
+            Shape(
+              appearance=Appearance(USE='WALL'),
+              geometry=Box(size=(7.65,0.80,0.15)))]),
+          Transform(DEF='FRONT_LEFT',translation=(-3.2,1.45,0),
+            children=[
+            Shape(
+              appearance=Appearance(USE='WALL'),
+              geometry=Box(size=(1.25,1.3,0.15)))]),
+          Transform(DEF='FRONT_UPPER',translation=(0,2.3,0),
+            children=[
+            Shape(
+              appearance=Appearance(USE='WALL'),
+              geometry=Box(size=(7.65,0.4,0.15)))]),
+          Transform(DEF='FRONT_MIDDLE',translation=(0.125,1.45,0),
+            children=[
+            Shape(
+              appearance=Appearance(USE='WALL'),
+              geometry=Box(size=(1.70,1.3,0.15)))]),
+          Transform(DEF='FRONT_RIGHT',translation=(3.325,1.45,0),
+            children=[
+            Shape(
+              appearance=Appearance(USE='WALL'),
+              geometry=Box(size=(1,1.3,0.15)))])]),
+        Transform(translation=(-1.65,0.83,0),
+          children=[
+          Group(DEF='WINDOW',
+            children=[
+            Shape(
+              appearance=Appearance(DEF='WINDOWFRAME',
+                material=Material(diffuseColor=(.2,.2,.2))),
+              geometry=Box(size=(1.85,0.06,0.06))),
+            Transform(translation=(0,1.24,0),
+              children=[
+              Shape(
+                appearance=Appearance(USE='WINDOWFRAME'),
+                geometry=Box(size=(1.85,0.06,0.06)))]),
+            Transform(translation=(-0.895,0.62,0),
+              children=[
+              Shape(
+                appearance=Appearance(USE='WINDOWFRAME'),
+                geometry=Box(size=(0.06,1.18,0.06)))]),
+            Transform(translation=(0.895,0.62,0),
+              children=[
+              Shape(
+                appearance=Appearance(USE='WINDOWFRAME'),
+                geometry=Box(size=(0.06,1.18,0.06)))]),
+            Transform(translation=(0,0.62,0),
+              children=[
+              Shape(
+                appearance=Appearance(USE='WINDOWFRAME'),
+                geometry=Box(size=(0.06,1.18,0.06)))]),
+            Transform(DEF='WINDOWGLASS',translation=(0,0.62,0),
+              children=[
+              Shape(
+                appearance=Appearance(DEF='GLASS',
+                  material=Material(emissiveColor=(0.757,0.804,0.804),shininess=0.5,transparency=0.5)),
+                geometry=Box(size=(1.73,1.18,0.005)))])])]),
+        Transform(translation=(1.9,0.83,0),
+          children=[
+          Group(USE='WINDOW')])]),
+      Transform(DEF='DOOR_SIDEWALL',translation=(1.35,1.4,3.25),
+        children=[
+        Shape(
+          appearance=Appearance(USE='WALL'),
+          geometry=Box(size=(0.15,2.5,2.82)))]),
+      Transform(DEF='KITCHEN_FRONT',translation=(4.65,0.85,2.025),
+        children=[
+        Group(DEF='KITCHEN_WALLS',
+          children=[
+          Shape(DEF='UNDER_WINDOW',
+            appearance=Appearance(USE='WALL'),
+            geometry=Box(size=(3.15,1.4,0.15))),
+          Transform(DEF='LEFTOFWINDOW',translation=(-1.175,1.25,0),
+            children=[
+            Shape(
+              appearance=Appearance(USE='WALL'),
+              geometry=Box(size=(0.8,1.1,0.15)))]),
+          Transform(DEF='RIGHTOFWINDOW',translation=(1.325,1.25,0),
+            children=[
+            Shape(
+              appearance=Appearance(USE='WALL'),
+              geometry=Box(size=(0.5,1.1,0.15)))]),
+          Transform(DEF='UPPEROFWINDOW',translation=(0.15,1.6,0),
+            children=[
+            Shape(
+              appearance=Appearance(USE='WALL'),
+              geometry=Box(size=(1.85,0.4,0.15)))]),
+          Transform(DEF='LEFTOFDOOR',translation=(-3.2,0.55,0),
+            children=[
+            Shape(
+              appearance=Appearance(USE='WALL'),
+              geometry=Box(size=(0.05,2.5,0.15)))]),
+          Transform(DEF='UPPEROFDOOR',translation=(-2.4,1.6,0),
+            children=[
+            Shape(
+              appearance=Appearance(USE='WALL'),
+              geometry=Box(size=(1.65,0.4,0.15)))])]),
+        Transform(DEF='FRONT_DOOR',translation=(-2.725,0.35,0),
+          children=[
+          Transform(DEF='FrontDoor',center=(-0.45,0,0),
+            children=[
+            Shape(
+              geometry=Box(size=(0.9,2.1,0.1)),
+              appearance=Appearance(DEF='DOOR_COLOR',
+                texture=ImageTexture(url=["DoorColor.jpg","https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/DoorColor.jpg"]))),
+            Transform(DEF='DOOR_KNOP1',translation=(0.2,0,0.08),
+              children=[
+              Shape(DEF='DOOR_LOCK',
+                geometry=Sphere(radius=0.05),
+                appearance=Appearance(DEF='DOOR_LOCK_COLOR',
+                  texture=ImageTexture(DEF='DoorKnobColor',url=["DoorKnobColor.jpg","https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/DoorKnobColor.jpg"])))]),
+            Transform(DEF='DOOR_KNOP2',translation=(0.2,0,-0.08),
+              children=[
+              Shape(USE='DOOR_LOCK')]),
+            CylinderSensor(DEF='DoorSensorFront',description='front door',maxAngle=1.57)])]),
+        Transform(DEF='KITCHEN_WINDOW',scale=(1,0.54,1),translation=(0.15,0.72,0),
+          children=[
+          Group(USE='WINDOW')]),
+        Transform(DEF='DOORSIDE',translation=(-2.225,0.35,0),
+          children=[
+          Transform(DEF='LEFTBAR',translation=(0.01,0,0),
+            children=[
+            Shape(
+              appearance=Appearance(USE='DOOR_COLOR'),
+              geometry=Box(size=(0.1,2.1,0.1)))]),
+          Transform(DEF='RIGHTBAR',translation=(0.6,0,0),
+            children=[
+            Shape(
+              appearance=Appearance(USE='DOOR_COLOR'),
+              geometry=Box(size=(0.1,2.1,0.1)))]),
+          Transform(DEF='UPPERBAR',translation=(0.325,1.0,0),
+            children=[
+            Shape(
+              appearance=Appearance(USE='DOOR_COLOR'),
+              geometry=Box(size=(0.55,0.1,0.1)))]),
+          Transform(DEF='LOWERBAR',translation=(0.325,-1.0,0),
+            children=[
+            Shape(
+              appearance=Appearance(USE='DOOR_COLOR'),
+              geometry=Box(size=(0.55,0.1,0.1)))]),
+          Transform(DEF='MIDDLE1BAR',translation=(0.325,0.325,0),
+            children=[
+            Shape(
+              appearance=Appearance(USE='DOOR_COLOR'),
+              geometry=Box(size=(0.55,0.05,0.1)))]),
+          Transform(DEF='MIDDLE2BAR',translation=(0.325,-0.325,0),
+            children=[
+            Shape(
+              appearance=Appearance(USE='DOOR_COLOR'),
+              geometry=Box(size=(0.55,0.05,0.1)))]),
+          Group(DEF='SIDEGLASS',
+            children=[
+            Transform(translation=(0.325,0.65,0),
+              children=[
+              Shape(
+                appearance=Appearance(USE='GLASS'),
+                geometry=Box(size=(0.5,0.6,0.005)))]),
+            Transform(translation=(0.325,0,0),
+              children=[
+              Shape(
+                appearance=Appearance(USE='GLASS'),
+                geometry=Box(size=(0.5,0.6,0.005)))]),
+            Transform(translation=(0.325,-0.65,0),
+              children=[
+              Shape(
+                appearance=Appearance(USE='GLASS'),
+                geometry=Box(size=(0.5,0.6,0.005)))])])])])]),
+    Transform(DEF='RIGHT_SIDE',rotation=(0,1,0,1.57),translation=(6.15,1.4,0.95),
+      children=[
+      Shape(DEF='WALLBEFOREDOOR',
+        appearance=Appearance(USE='WALL'),
+        geometry=Box(size=(2.32,2.5,0.15))),
+      Transform(DEF='WALLAFTERDOOR',translation=(3.86,0,0),
+        children=[
+        Shape(
+          appearance=Appearance(USE='WALL'),
+          geometry=Box(size=(3.8,2.5,0.15)))]),
+      Transform(DEF='WALLOVERDOOR',translation=(1.56,1.05,0),
+        children=[
+        Shape(
+          appearance=Appearance(USE='WALL'),
+          geometry=Box(size=(0.84,0.4,0.15)))]),
+      Transform(DEF='KITCHEN_DOOR',translation=(1.56,-0.85,0),
+        children=[
+        Transform(DEF='KitchenDoor',center=(0.4,0,0),
+          children=[
+          Shape(
+            geometry=Box(size=(0.8,0.8,0.1)),
+            appearance=Appearance(USE='DOOR_COLOR')),
+          Transform(translation=(-0.325,1.05,0),
+            children=[
+            Shape(DEF='BAR',
+              geometry=Box(size=(0.15,1.3,0.1)),
+              appearance=Appearance(USE='DOOR_COLOR'))]),
+          Transform(translation=(0.325,1.05,0),
+            children=[
+            Shape(USE='BAR')]),
+          Transform(translation=(0,1.625,0),
+            children=[
+            Shape(
+              geometry=Box(size=(0.5,0.15,0.1)),
+              appearance=Appearance(USE='DOOR_COLOR'))]),
+          Transform(DEF='DOORGLASS',translation=(0,0.975,0),
+            children=[
+            Shape(
+              geometry=Box(size=(0.5,1.15,0.005)),
+              appearance=Appearance(USE='GLASS'))]),
+          Transform(translation=(-0.25,0.3,0.08),
+            children=[
+            Shape(USE='DOOR_LOCK')]),
+          Transform(translation=(-0.25,0.3,-0.08),
+            children=[
+            Shape(USE='DOOR_LOCK')]),
+          CylinderSensor(DEF='DoorSensorKitchen',description='kitchen door',maxAngle=0,minAngle=-1.57)])])]),
+    Transform(DEF='LEFTSIDE',rotation=(0,1,0,-1.57),translation=(-6.15,1.4,2.675),
+      children=[
+      Shape(DEF='RIGHT_OF_WINDOW',
+        appearance=Appearance(USE='WALL'),
+        geometry=Box(size=(3.95,2.5,0.15))),
+      Transform(DEF='UPPER_OF_WINDOW',translation=(-4.725,1.05,0),
+        children=[
+        Shape(
+          appearance=Appearance(USE='WALL'),
+          geometry=Box(size=(5.5,0.4,0.15)))]),
+      Transform(DEF='UNDERWINDOW',translation=(-4.725,-0.55,0),
+        children=[
+        Shape(
+          appearance=Appearance(USE='WALL'),
+          geometry=Box(size=(5.5,1.4,0.15)))]),
+      Transform(DEF='LEFT_OF_WINDOW',translation=(-5.225,0.5,0),
+        children=[
+        Shape(
+          appearance=Appearance(USE='WALL'),
+          geometry=Box(size=(4.5,0.7,0.15)))]),
+      Transform(DEF='BATHROOM_WINDOW',scale=(0.54,0.54,1),translation=(-2.475,0.16,0),
+        children=[
+        Group(USE='WINDOW')])]),
+    Transform(DEF='BACKSIDE',rotation=(0,1,0,3.14),translation=(-0.675,1.4,-4.725),
+      children=[
+      Transform(DEF='RIGHTMOSTWALL',translation=(5,0,0),
+        children=[
+        Shape(
+          appearance=Appearance(USE='WALL'),
+          geometry=Box(size=(1.1,2.5,0.15)))]),
+      Transform(DEF='RIGHTWINDOW',translation=(3.525,-0.42,0),
+        children=[
+        Group(USE='WINDOW')]),
+      Transform(DEF='RIGHTUPPERWALL',translation=(0.775,1.05,0),
+        children=[
+        Shape(
+          appearance=Appearance(USE='WALL'),
+          geometry=Box(size=(7.35,0.4,0.15)))]),
+      Transform(DEF='RIGHTLOWERWALL',translation=(0.775,-0.85,0),
+        children=[
+        Shape(
+          appearance=Appearance(USE='WALL'),
+          geometry=Box(size=(7.35,0.8,0.15)))]),
+      Transform(DEF='RIGHTMIDDLEWALL',translation=(1.55,0.2,0),
+        children=[
+        Shape(
+          appearance=Appearance(USE='WALL'),
+          geometry=Box(size=(2.1,1.3,0.15)))]),
+      Transform(DEF='MIDDLEWINDOW',scale=(1.297,1,1),translation=(-0.7,-0.42,0),
+        children=[
+        Group(USE='WINDOW')]),
+      Transform(DEF='MIDDLEWALL',translation=(-2.4,0.2,0),
+        children=[
+        Shape(
+          appearance=Appearance(USE='WALL'),
+          geometry=Box(size=(1,1.3,0.15)))]),
+      Transform(DEF='BACK_DOOR',translation=(-3.35,-0.2,0),
+        children=[
+        Transform(DEF='BackDoor',center=(-0.45,0,0),
+          children=[
+          Shape(
+            geometry=Box(size=(0.9,2.1,0.1)),
+            appearance=Appearance(USE='DOOR_COLOR')),
+          Transform(DEF='DOORKNOP1',translation=(0.2,0,0.08),
+            children=[
+            Shape(USE='DOOR_LOCK')]),
+          Transform(DEF='DOORKNOP2',translation=(0.2,0,-0.08),
+            children=[
+            Shape(USE='DOOR_LOCK')]),
+          CylinderSensor(DEF='DoorSensorBack',description='back door',maxAngle=1.57)])]),
+      Transform(DEF='LEFTUPPERWALL',translation=(-4.825,1.05,0),
+        children=[
+        Shape(
+          appearance=Appearance(USE='WALL'),
+          geometry=Box(size=(3.85,0.4,0.15)))]),
+      Transform(DEF='LEFT_OF_DOOR',translation=(-4.075,-0.2,0),
+        children=[
+        Shape(
+          appearance=Appearance(USE='WALL'),
+          geometry=Box(size=(0.55,2.1,0.15)))]),
+      Transform(DEF='LEFTLOWERWALL',translation=(-5.55,-0.85,0),
+        children=[
+        Shape(
+          appearance=Appearance(USE='WALL'),
+          geometry=Box(size=(2.4,0.8,0.15)))]),
+      Transform(DEF='LEFTWINDOW',translation=(-5.275,-0.42,0),
+        children=[
+        Group(USE='WINDOW')]),
+      Transform(DEF='LEFTMOSTWALL',translation=(-6.475,0.2,0),
+        children=[
+        Shape(
+          appearance=Appearance(USE='WALL'),
+          geometry=Box(size=(0.55,1.3,0.15)))])]),
+    Transform(DEF='INSIDE_WALLS',translation=(0,0.01,0),
+      children=[
+      Shape(DEF='BEDROOM_CORIDOR',
+        appearance=Appearance(USE='WALL'),
+        geometry=Extrusion(convex=False,crossSection=[(-2.075,-4.650),(-1.925,-4.650),(-1.925,-0.600),(1.425,-0.600),(1.425,-0.250),(1.275,-0.250),(1.275,-0.450),(-2.200,-0.450),(-2.200,-0.600),(-2.075,-0.600),(-2.075,-4.650)],solid=False,spine=[(0.0,0.14,0.0),(0.0,2.65,0.0)])),
+      Shape(DEF='BATHROOM_BEDROOM',
+        appearance=Appearance(USE='WALL'),
+        geometry=Extrusion(convex=False,crossSection=[(-6.075,-0.600),(-4.175,-0.600),(-4.175,-1.300),(-3.125,-1.300),(-3.125,-0.600),(-3.0,-0.600),(-3.0,-0.450),(-3.225,-0.450),(-3.225,-1.200),(-4.075,-1.200),(-4.075,-0.600),(-3.775,-0.600),(-3.775,-0.450),(-3.875,-0.450),(-3.875,-0.375),(-4.025,-0.375),(-4.025,-0.450),(-6.075,-0.450),(-6.075,-0.600)],solid=False,spine=[(0.0,0.14,0.0),(0.0,2.65,0.0)])),
+      Shape(DEF='BATHROOM_BABYROOM',
+        appearance=Appearance(USE='WALL'),
+        geometry=Extrusion(convex=False,crossSection=[(-6.075,1.550),(-4.475,1.550),(-4.475,0.550),(-4.025,0.550),(-4.025,0.425),(-3.875,0.425),(-3.875,0.550),(-3.0,0.550),(-3.0,0.700),(-3.125,0.700),(-3.125,1.700),(-3.225,1.700),(-3.225,0.700),(-4.325,0.700),(-4.325,1.700),(-6.075,1.700),(-6.075,1.550)],solid=False,spine=[(0.0,0.14,0.0),(0.0,2.65,0.0)])),
+      Shape(DEF='BABYROOM_STUDYROOM',
+        appearance=Appearance(USE='WALL'),
+        geometry=Extrusion(convex=False,crossSection=[(-2.075,0.550),(-1.800,0.550),(-1.800,0.700),(-1.925,0.700),(-1.925,4.650),(-2.075,4.650),(-2.075,0.700),(-2.200,0.700),(-2.200,0.550),(-2.075,0.550)],solid=False,spine=[(0.0,0.14,0.0),(0.0,2.65,0.0)])),
+      Shape(DEF='STUDYROOM_CORIDOR',
+        appearance=Appearance(USE='WALL'),
+        geometry=Extrusion(convex=False,crossSection=[(-1.100,0.550),(0.675,0.550),(0.675,1.250),(1.275,1.250),(1.275,0.550),(1.425,0.550),(1.425,1.850),(1.275,1.850),(1.275,1.350),(0.575,1.350),(0.575,0.650),(-0.875,0.650),(-0.875,1.350),(-0.975,1.350),(-0.975,0.700),(-1.100,0.700),(-1.100,0.550)],solid=False,spine=[(0.0,0.14,0.0),(0.0,2.65,0.0)]))]),
+    Group(DEF='ROOF',
+      children=[
+      Transform(DEF='ROOF_TRANSFORM',translation=(0,2.64,0),
+        children=[
+        Shape(
+          appearance=Appearance(
+            texture=ImageTexture(url=["RoofTexture.jpg","https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/RoofTexture.jpg"])),
+          geometry=Extrusion(convex=False,creaseAngle=0.785,crossSection=[(-6.525,5.1),(-6.525,-5.1),(6.525,-5.1),(6.525,2.4),(3.225,2.4),(3.225,5.1),(-6.525,5.1)],scale=[(1.0,1.0),(1.01,1.01),(0.01,0.01)],solid=False,spine=[(0,0,0),(0,0.2,0),(0,0.8,0)]))]),
+      Shape(DEF='CEILING_FACESET',
+        appearance=Appearance(USE='WALL'),
+        geometry=IndexedFaceSet(ccw=False,convex=False,coordIndex=[0,1,2,3,4,5,6],solid=False,
+          coord=Coordinate(point=[(-6.2,2.63,4.7),(-6.2,2.63,-4.7),(6.2,2.63,-4.7),(6.2,2.63,2.0),(1.4,2.63,2.0),(1.4,2.63,4.7),(-6.2,2.63,4.7)])))]),
+    ROUTE(fromField='rotation_changed',fromNode='DoorSensorFront',toField='set_rotation',toNode='FrontDoor'),
+    ROUTE(fromField='rotation_changed',fromNode='DoorSensorKitchen',toField='set_rotation',toNode='KitchenDoor'),
+    ROUTE(fromField='rotation_changed',fromNode='DoorSensorBack',toField='set_rotation',toNode='BackDoor')])
+) # X3D model complete
+
+###############################################
+# Self-test diagnostics
+###############################################
+
+if        metaDiagnostics(newModel): # built-in utility method in X3D class
+    print(metaDiagnostics(newModel))
+print('check  newModel.XML() serialization...')
+newModelXML = newModel.XML() # test export method XML() for exceptions
+# print(newModelXML) # debug
+
+print ("python x3d.py load successful for SweetHomeFullDetail.py")
