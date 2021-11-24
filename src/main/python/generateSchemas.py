@@ -67,6 +67,6 @@ for version in versions:
     # create a python script for validating this version
     #os.system(f'echo "import sys\nimport json\nimport schemaparser{schemacodeversion}\n\ntry:\n\tschemaparser{schemacodeversion}.validate(json.loads(sys.stdin.read()))\nexcept:\n\tprint(\'Invalid\')" > validate{schemacodeversion}.py')
 
-# run test.py
-print("test.py")
-os.system(f'python3 test.py')
+# run testjschon.py
+print("testjschon.py")
+os.system(f'python3 testjschon.py')
