@@ -1,0 +1,695 @@
+var java = require('java');
+java.asyncOptions = {
+  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
+  syncSuffix: "",              // Sync methods use the base name(!!)
+  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.
+  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
+  ifReadOnlySuffix: "_alt"
+};
+var autoclass = require('./X3Dautoclass');
+
+// Javadoc annotations follow, see below for source.
+/**
+ * <p> Provide a Disc with holes part for use by CatiaHubAssemblyInline using CADAssembly and Inline nodes. </p>
+ <p> Related links: <a href="../../../CAD/CatiaHubDiscWithHoles.java">CatiaHubDiscWithHoles.java</a> source, <a href="../../../CAD/CatiaHubDiscWithHolesIndex.html" target="_top">CatiaHubDiscWithHoles catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
+		<tr style="background-color:silver; border-color:silver;">
+			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
+			<td style="text-align:left;   padding:10px 0px;">&nbsp; Document Metadata </td>
+		</tr>
+
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
+			<td> <a href="../../../CAD/CatiaHubDiscWithHoles.x3d">CatiaHubDiscWithHoles.x3d</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
+			<td> Provide a Disc with holes part for use by CatiaHubAssemblyInline using CADAssembly and Inline nodes. </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
+			<td> Hyokwang Lee, PartDB Co., Ltd. </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> created </i> </td>
+			<td> 25 July 2012 </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
+			<td> 28 November 2019 </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
+			<td> <a href="https://www.web3d.org/x3d/specifications/ISO-IEC-19775-Amendment1-X3DAbstractSpecification/Part01/components/CADGeometry.html" target="_blank">https://www.web3d.org/x3d/specifications/ISO-IEC-19775-Amendment1-X3DAbstractSpecification/Part01/components/CADGeometry.html</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> subject </i> </td>
+			<td> X3D CAD CADInterchange profile </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
+			<td> CATIA V5 R18 and PartDB Converter with Xj3D </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
+			<td> Xj3D, <a href="http://www.xj3d.org" target="_blank">http://www.xj3d.org</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
+			<td> X3D-Edit 3.3, <a href="https://savage.nps.edu/X3D-Edit" target="_blank">https://savage.nps.edu/X3D-Edit</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/Basic/CAD/CatiaHubDiscWithHoles.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/Basic/CAD/CatiaHubDiscWithHoles.x3d</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
+			<td> <a href="../../../CAD/../license.html">../license.html</a> </td>
+		</tr>
+		<tr style="background-color:silver; border-color:silver;">
+			<td style="text-align:center;" colspan="2">  &nbsp; </td>
+		</tr>
+	</table>
+
+	<p>
+		This program uses the
+		<a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>.
+		It has been produced using the 
+		<a href="https://www.web3d.org/x3d/stylesheets/X3dToNodeJS.xslt" target="_blank">X3dToNodeJS.xslt</a>
+		stylesheet to create NodeJS source code from an <code>.x3d</code> scene.
+	</p>
+
+	* @author Hyokwang Lee, PartDB Co., Ltd.
+ */
+
+function CatiaHubDiscWithHoles
+  /** Default constructor to create this object. */
+  ()
+  {
+    /** The initialized model object, created within initialize() method. */
+    this.x3dModel = {};
+    this.initialize();
+    return this;
+  }
+CatiaHubDiscWithHoles.prototype = {
+  /** Create and initialize the X3D model. */
+  initialize : function ()
+  {
+
+	/** Large attribute array: IndexedFaceSet coordIndex field, scene-graph level=9, element #27, 248 total numbers */
+	this.IndexedFaceSet_9_27_coordIndex = new autoclass.MFInt32(java.newArray("int", [0,1,2,-1,1,3,2,-1,2,3,4,-1,3,5,4,-1,4,5,6,-1,5,7,6,-1,6,7,8,-1,7,9,8,-1,8,9,10,-1,9,11,10,-1,10,11,12,-1,11,13,12,-1,12,13,14,-1,13,15,14,-1,14,15,16,-1,15,17,16,-1,16,17,18,-1,17,19,18,-1,18,19,20,-1,19,21,20,-1,20,21,22,-1,21,23,22,-1,22,23,24,-1,23,25,24,-1,24,25,26,-1,25,27,26,-1,26,27,28,-1,27,29,28,-1,28,29,30,-1,29,31,30,-1,30,31,32,-1,31,33,32,-1,32,33,34,-1,33,35,34,-1,34,35,36,-1,35,37,36,-1,36,37,38,-1,37,39,38,-1,38,39,40,-1,39,41,40,-1,40,41,42,-1,41,43,42,-1,42,43,44,-1,43,45,44,-1,44,45,46,-1,45,47,46,-1,46,47,48,-1,47,49,48,-1,48,49,50,-1,49,51,50,-1,50,51,52,-1,51,53,52,-1,52,53,54,-1,53,55,54,-1,54,55,56,-1,55,57,56,-1,56,57,58,-1,57,59,58,-1,58,59,60,-1,59,61,60,-1,60,61,62,-1,61,63,62,-1]));
+
+	/** Large attribute array: Coordinate point field, scene-graph level=10, element #27, 192 total numbers made up of 64 3-tuple values */
+	this.Coordinate_10_27_point = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	.append(new autoclass.MFVec3f(java.newArray("float", [-150.0,0.0,0.0,-150.0,0.0,30.0,-149.23,15.1752,0.0,-149.23,15.1752,30.0,-146.929,30.1948,0.0,-146.929,30.1948,30.0,-143.121,44.9045,0.0,-143.121,44.9045,30.0,-137.844,59.1534,0.0,-137.844,59.1534,30.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-131.152,72.7953,0.0,-131.152,72.7953,30.0,-123.115,85.6902,0.0,-123.115,85.6902,30.0,-113.814,97.7059,0.0,-113.814,97.7059,30.0,-103.345,108.719,0.0,-103.345,108.719,30.0,-91.8159,118.616,0.0,-91.8159,118.616,30.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-79.3446,127.297,0.0,-79.3446,127.297,30.0,-66.0591,134.671,0.0,-66.0591,134.671,30.0,-52.0958,140.663,0.0,-52.0958,140.663,30.0,-37.5979,145.212,0.0,-37.5979,145.212,30.0,-22.7142,148.27,0.0,-22.7142,148.27,30.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-7.59738,149.807,0.0,-7.59738,149.807,30.0,7.59738,149.807,0.0,7.59738,149.807,30.0,22.7142,148.27,0.0,22.7142,148.27,30.0,37.5979,145.212,0.0,37.5979,145.212,30.0,52.0958,140.663,0.0,52.0958,140.663,30.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [66.0591,134.671,0.0,66.0591,134.671,30.0,79.3446,127.297,0.0,79.3446,127.297,30.0,91.8159,118.616,0.0,91.8159,118.616,30.0,103.345,108.719,0.0,103.345,108.719,30.0,113.814,97.7059,0.0,113.814,97.7059,30.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [123.115,85.6902,0.0,123.115,85.6902,30.0,131.152,72.7953,0.0,131.152,72.7953,30.0,137.844,59.1534,0.0,137.844,59.1534,30.0,143.121,44.9045,0.0,143.121,44.9045,30.0,146.929,30.1948,0.0,146.929,30.1948,30.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [149.23,15.1752,0.0,149.23,15.1752,30.0,150.0,0.0,0.0,150.0,0.0,30.0])));
+
+	/** Large attribute array: Normal vector field, scene-graph level=10, element #28, 192 total numbers made up of 64 3-tuple values */
+	this.Normal_10_28_vector = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	.append(new autoclass.MFVec3f(java.newArray("float", [-1.0,0.0,0.0,-1.0,0.0,0.0,-0.994872,0.101138,0.0,-0.994872,0.101138,0.0,-0.979536,0.20127,0.0,-0.979536,0.20127,0.0,-0.954141,0.299356,0.0,-0.954141,0.299356,0.0,-0.918969,0.39433,0.0,-0.918969,0.39433,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-0.874362,0.485275,0.0,-0.874362,0.485275,0.0,-0.820779,0.571245,0.0,-0.820779,0.571245,0.0,-0.758772,0.651357,0.0,-0.758772,0.651357,0.0,-0.688955,0.724804,0.0,-0.688955,0.724804,0.0,-0.612079,0.790796,0.0,-0.612079,0.790796,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-0.528947,0.848655,0.0,-0.528947,0.848655,0.0,-0.440382,0.89781,0.0,-0.440382,0.89781,0.0,-0.347301,0.937754,0.0,-0.347301,0.937754,0.0,-0.250649,0.968078,0.0,-0.250649,0.968078,0.0,-0.151402,0.988472,0.0,-0.151402,0.988472,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-0.0506302,0.998717,0.0,-0.0506302,0.998717,0.0,0.0506302,0.998717,0.0,0.0506302,0.998717,0.0,0.151402,0.988472,0.0,0.151402,0.988472,0.0,0.250649,0.968078,0.0,0.250649,0.968078,0.0,0.347301,0.937754,0.0,0.347301,0.937754,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [0.440382,0.89781,0.0,0.440382,0.89781,0.0,0.528947,0.848655,0.0,0.528947,0.848655,0.0,0.612079,0.790796,0.0,0.612079,0.790796,0.0,0.688955,0.724804,0.0,0.688955,0.724804,0.0,0.758772,0.651357,0.0,0.758772,0.651357,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [0.820779,0.571245,0.0,0.820779,0.571245,0.0,0.874362,0.485275,0.0,0.874362,0.485275,0.0,0.918969,0.39433,0.0,0.918969,0.39433,0.0,0.954141,0.299356,0.0,0.954141,0.299356,0.0,0.979536,0.20127,0.0,0.979536,0.20127,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [0.994872,0.101138,0.0,0.994872,0.101138,0.0,1.0,0.0,0.0,1.0,0.0,0.0])));
+
+	/** Large attribute array: IndexedFaceSet coordIndex field, scene-graph level=9, element #33, 248 total numbers */
+	this.IndexedFaceSet_9_33_coordIndex = new autoclass.MFInt32(java.newArray("int", [0,1,2,-1,1,3,2,-1,2,3,4,-1,3,5,4,-1,4,5,6,-1,5,7,6,-1,6,7,8,-1,7,9,8,-1,8,9,10,-1,9,11,10,-1,10,11,12,-1,11,13,12,-1,12,13,14,-1,13,15,14,-1,14,15,16,-1,15,17,16,-1,16,17,18,-1,17,19,18,-1,18,19,20,-1,19,21,20,-1,20,21,22,-1,21,23,22,-1,22,23,24,-1,23,25,24,-1,24,25,26,-1,25,27,26,-1,26,27,28,-1,27,29,28,-1,28,29,30,-1,29,31,30,-1,30,31,32,-1,31,33,32,-1,32,33,34,-1,33,35,34,-1,34,35,36,-1,35,37,36,-1,36,37,38,-1,37,39,38,-1,38,39,40,-1,39,41,40,-1,40,41,42,-1,41,43,42,-1,42,43,44,-1,43,45,44,-1,44,45,46,-1,45,47,46,-1,46,47,48,-1,47,49,48,-1,48,49,50,-1,49,51,50,-1,50,51,52,-1,51,53,52,-1,52,53,54,-1,53,55,54,-1,54,55,56,-1,55,57,56,-1,56,57,58,-1,57,59,58,-1,58,59,60,-1,59,61,60,-1,60,61,62,-1,61,63,62,-1]));
+
+	/** Large attribute array: Coordinate point field, scene-graph level=10, element #33, 192 total numbers made up of 64 3-tuple values */
+	this.Coordinate_10_33_point = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	.append(new autoclass.MFVec3f(java.newArray("float", [150.0,0.0,0.0,150.0,0.0,30.0,149.23,-15.1752,0.0,149.23,-15.1752,30.0,146.929,-30.1948,0.0,146.929,-30.1948,30.0,143.121,-44.9045,0.0,143.121,-44.9045,30.0,137.844,-59.1534,0.0,137.844,-59.1534,30.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [131.152,-72.7953,0.0,131.152,-72.7953,30.0,123.115,-85.6902,0.0,123.115,-85.6902,30.0,113.814,-97.7059,0.0,113.814,-97.7059,30.0,103.345,-108.719,0.0,103.345,-108.719,30.0,91.8159,-118.616,0.0,91.8159,-118.616,30.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [79.3446,-127.297,0.0,79.3446,-127.297,30.0,66.0591,-134.671,0.0,66.0591,-134.671,30.0,52.0958,-140.663,0.0,52.0958,-140.663,30.0,37.5979,-145.212,0.0,37.5979,-145.212,30.0,22.7142,-148.27,0.0,22.7142,-148.27,30.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [7.59738,-149.807,0.0,7.59738,-149.807,30.0,-7.59738,-149.807,0.0,-7.59738,-149.807,30.0,-22.7142,-148.27,0.0,-22.7142,-148.27,30.0,-37.5979,-145.212,0.0,-37.5979,-145.212,30.0,-52.0958,-140.663,0.0,-52.0958,-140.663,30.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-66.0591,-134.671,0.0,-66.0591,-134.671,30.0,-79.3446,-127.297,0.0,-79.3446,-127.297,30.0,-91.8159,-118.616,0.0,-91.8159,-118.616,30.0,-103.345,-108.719,0.0,-103.345,-108.719,30.0,-113.814,-97.7059,0.0,-113.814,-97.7059,30.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-123.115,-85.6902,0.0,-123.115,-85.6902,30.0,-131.152,-72.7953,0.0,-131.152,-72.7953,30.0,-137.844,-59.1534,0.0,-137.844,-59.1534,30.0,-143.121,-44.9045,0.0,-143.121,-44.9045,30.0,-146.929,-30.1948,0.0,-146.929,-30.1948,30.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-149.23,-15.1752,0.0,-149.23,-15.1752,30.0,-150.0,0.0,0.0,-150.0,0.0,30.0])));
+
+	/** Large attribute array: Normal vector field, scene-graph level=10, element #34, 192 total numbers made up of 64 3-tuple values */
+	this.Normal_10_34_vector = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	.append(new autoclass.MFVec3f(java.newArray("float", [1.0,0.0,0.0,1.0,0.0,0.0,0.994872,-0.101138,0.0,0.994872,-0.101138,0.0,0.979536,-0.20127,0.0,0.979536,-0.20127,0.0,0.954141,-0.299356,0.0,0.954141,-0.299356,0.0,0.918969,-0.39433,0.0,0.918969,-0.39433,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [0.874362,-0.485275,0.0,0.874362,-0.485275,0.0,0.820779,-0.571245,0.0,0.820779,-0.571245,0.0,0.758772,-0.651357,0.0,0.758772,-0.651357,0.0,0.688955,-0.724804,0.0,0.688955,-0.724804,0.0,0.612079,-0.790796,0.0,0.612079,-0.790796,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [0.528947,-0.848655,0.0,0.528947,-0.848655,0.0,0.440382,-0.89781,0.0,0.440382,-0.89781,0.0,0.347301,-0.937754,0.0,0.347301,-0.937754,0.0,0.250649,-0.968078,0.0,0.250649,-0.968078,0.0,0.151402,-0.988472,0.0,0.151402,-0.988472,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [0.0506302,-0.998717,0.0,0.0506302,-0.998717,0.0,-0.0506302,-0.998717,0.0,-0.0506302,-0.998717,0.0,-0.151402,-0.988472,0.0,-0.151402,-0.988472,0.0,-0.250649,-0.968078,0.0,-0.250649,-0.968078,0.0,-0.347301,-0.937754,0.0,-0.347301,-0.937754,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-0.440382,-0.89781,0.0,-0.440382,-0.89781,0.0,-0.528947,-0.848655,0.0,-0.528947,-0.848655,0.0,-0.612079,-0.790796,0.0,-0.612079,-0.790796,0.0,-0.688955,-0.724804,0.0,-0.688955,-0.724804,0.0,-0.758772,-0.651357,0.0,-0.758772,-0.651357,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-0.820779,-0.571245,0.0,-0.820779,-0.571245,0.0,-0.874362,-0.485275,0.0,-0.874362,-0.485275,0.0,-0.918969,-0.39433,0.0,-0.918969,-0.39433,0.0,-0.954141,-0.299356,0.0,-0.954141,-0.299356,0.0,-0.979536,-0.20127,0.0,-0.979536,-0.20127,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-0.994872,-0.101138,0.0,-0.994872,-0.101138,0.0,-1.0,0.0,0.0,-1.0,0.0,0.0])));
+
+	/** Large attribute array: IndexedFaceSet coordIndex field, scene-graph level=9, element #39, 80 total numbers */
+	this.IndexedFaceSet_9_39_coordIndex = new autoclass.MFInt32(java.newArray("int", [0,1,2,-1,1,3,2,-1,2,3,4,-1,3,5,4,-1,4,5,6,-1,5,7,6,-1,6,7,8,-1,7,9,8,-1,8,9,10,-1,9,11,10,-1,10,11,12,-1,11,13,12,-1,12,13,14,-1,13,15,14,-1,14,15,16,-1,15,17,16,-1,16,17,18,-1,17,19,18,-1,18,19,20,-1,19,21,20,-1]));
+
+	/** Large attribute array: Coordinate point field, scene-graph level=10, element #39, 66 total numbers made up of 22 3-tuple values */
+	this.Coordinate_10_39_point = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	.append(new autoclass.MFVec3f(java.newArray("float", [15.0,120.0,30.0,15.0,120.0,0.0,14.2658,115.365,30.0,14.2658,115.365,0.0,12.1353,111.183,30.0,12.1353,111.183,0.0,8.81678,107.865,30.0,8.81678,107.865,0.0,4.63525,105.734,30.0,4.63525,105.734,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [0.0,105.0,30.0,0.0,105.0,0.0,-4.63525,105.734,30.0,-4.63525,105.734,0.0,-8.81678,107.865,30.0,-8.81678,107.865,0.0,-12.1353,111.183,30.0,-12.1353,111.183,0.0,-14.2658,115.365,30.0,-14.2658,115.365,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-15.0,120.0,30.0,-15.0,120.0,0.0])));
+
+	/** Large attribute array: Normal vector field, scene-graph level=10, element #40, 66 total numbers made up of 22 3-tuple values */
+	this.Normal_10_40_vector = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	.append(new autoclass.MFVec3f(java.newArray("float", [-1.0,0.0,0.0,-1.0,0.0,0.0,-0.951062,0.309,0.0,-0.951062,0.309,0.0,-0.809038,0.587756,0.0,-0.809038,0.587756,0.0,-0.587756,0.809038,0.0,-0.587756,0.809038,0.0,-0.309,0.951062,0.0,-0.309,0.951062,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [0.0,1.0,0.0,0.0,1.0,0.0,0.309,0.951062,0.0,0.309,0.951062,0.0,0.587756,0.809038,0.0,0.587756,0.809038,0.0,0.809038,0.587756,0.0,0.809038,0.587756,0.0,0.951062,0.309,0.0,0.951062,0.309,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [1.0,0.0,0.0,1.0,0.0,0.0])));
+
+	/** Large attribute array: IndexedFaceSet coordIndex field, scene-graph level=9, element #45, 80 total numbers */
+	this.IndexedFaceSet_9_45_coordIndex = new autoclass.MFInt32(java.newArray("int", [0,1,2,-1,1,3,2,-1,2,3,4,-1,3,5,4,-1,4,5,6,-1,5,7,6,-1,6,7,8,-1,7,9,8,-1,8,9,10,-1,9,11,10,-1,10,11,12,-1,11,13,12,-1,12,13,14,-1,13,15,14,-1,14,15,16,-1,15,17,16,-1,16,17,18,-1,17,19,18,-1,18,19,20,-1,19,21,20,-1]));
+
+	/** Large attribute array: Coordinate point field, scene-graph level=10, element #45, 66 total numbers made up of 22 3-tuple values */
+	this.Coordinate_10_45_point = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	.append(new autoclass.MFVec3f(java.newArray("float", [-15.0,120.0,30.0,-15.0,120.0,0.0,-14.2658,124.635,30.0,-14.2658,124.635,0.0,-12.1353,128.817,30.0,-12.1353,128.817,0.0,-8.81678,132.135,30.0,-8.81678,132.135,0.0,-4.63525,134.266,30.0,-4.63525,134.266,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [0.0,135.0,30.0,0.0,135.0,0.0,4.63525,134.266,30.0,4.63525,134.266,0.0,8.81678,132.135,30.0,8.81678,132.135,0.0,12.1353,128.817,30.0,12.1353,128.817,0.0,14.2658,124.635,30.0,14.2658,124.635,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [15.0,120.0,30.0,15.0,120.0,0.0])));
+
+	/** Large attribute array: Normal vector field, scene-graph level=10, element #46, 66 total numbers made up of 22 3-tuple values */
+	this.Normal_10_46_vector = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	.append(new autoclass.MFVec3f(java.newArray("float", [1.0,0.0,0.0,1.0,0.0,0.0,0.951062,-0.309,0.0,0.951062,-0.309,0.0,0.809038,-0.587756,0.0,0.809038,-0.587756,0.0,0.587756,-0.809038,0.0,0.587756,-0.809038,0.0,0.309,-0.951062,0.0,0.309,-0.951062,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [0.0,-1.0,0.0,0.0,-1.0,0.0,-0.309,-0.951062,0.0,-0.309,-0.951062,0.0,-0.587756,-0.809038,0.0,-0.587756,-0.809038,0.0,-0.809038,-0.587756,0.0,-0.809038,-0.587756,0.0,-0.951062,-0.309,0.0,-0.951062,-0.309,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-1.0,0.0,0.0,-1.0,0.0,0.0])));
+
+	/** Large attribute array: IndexedFaceSet coordIndex field, scene-graph level=9, element #51, 80 total numbers */
+	this.IndexedFaceSet_9_51_coordIndex = new autoclass.MFInt32(java.newArray("int", [0,1,2,-1,1,3,2,-1,2,3,4,-1,3,5,4,-1,4,5,6,-1,5,7,6,-1,6,7,8,-1,7,9,8,-1,8,9,10,-1,9,11,10,-1,10,11,12,-1,11,13,12,-1,12,13,14,-1,13,15,14,-1,14,15,16,-1,15,17,16,-1,16,17,18,-1,17,19,18,-1,18,19,20,-1,19,21,20,-1]));
+
+	/** Large attribute array: Coordinate point field, scene-graph level=10, element #51, 66 total numbers made up of 22 3-tuple values */
+	this.Coordinate_10_51_point = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	.append(new autoclass.MFVec3f(java.newArray("float", [92.1345,91.9253,30.0,92.1345,91.9253,0.0,91.4004,87.2901,30.0,91.4004,87.2901,0.0,89.2698,83.1086,30.0,89.2698,83.1086,0.0,85.9513,79.7901,30.0,85.9513,79.7901,0.0,81.7698,77.6595,30.0,81.7698,77.6595,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [77.1345,76.9253,30.0,77.1345,76.9253,0.0,72.4993,77.6595,30.0,72.4993,77.6595,0.0,68.3177,79.7901,30.0,68.3177,79.7901,0.0,64.9993,83.1086,30.0,64.9993,83.1086,0.0,62.8687,87.2901,30.0,62.8687,87.2901,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [62.1345,91.9253,30.0,62.1345,91.9253,0.0])));
+
+	/** Large attribute array: Normal vector field, scene-graph level=10, element #52, 66 total numbers made up of 22 3-tuple values */
+	this.Normal_10_52_vector = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	.append(new autoclass.MFVec3f(java.newArray("float", [-1.0,0.0,0.0,-1.0,0.0,0.0,-0.951062,0.309,0.0,-0.951062,0.309,0.0,-0.809038,0.587756,0.0,-0.809038,0.587756,0.0,-0.587756,0.809038,0.0,-0.587756,0.809038,0.0,-0.309,0.951062,0.0,-0.309,0.951062,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [0.0,1.0,0.0,0.0,1.0,0.0,0.309,0.951062,0.0,0.309,0.951062,0.0,0.587756,0.809038,0.0,0.587756,0.809038,0.0,0.809038,0.587756,0.0,0.809038,0.587756,0.0,0.951062,0.309,0.0,0.951062,0.309,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [1.0,0.0,0.0,1.0,0.0,0.0])));
+
+	/** Large attribute array: IndexedFaceSet coordIndex field, scene-graph level=9, element #57, 80 total numbers */
+	this.IndexedFaceSet_9_57_coordIndex = new autoclass.MFInt32(java.newArray("int", [0,1,2,-1,1,3,2,-1,2,3,4,-1,3,5,4,-1,4,5,6,-1,5,7,6,-1,6,7,8,-1,7,9,8,-1,8,9,10,-1,9,11,10,-1,10,11,12,-1,11,13,12,-1,12,13,14,-1,13,15,14,-1,14,15,16,-1,15,17,16,-1,16,17,18,-1,17,19,18,-1,18,19,20,-1,19,21,20,-1]));
+
+	/** Large attribute array: Coordinate point field, scene-graph level=10, element #57, 66 total numbers made up of 22 3-tuple values */
+	this.Coordinate_10_57_point = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	.append(new autoclass.MFVec3f(java.newArray("float", [62.1345,91.9253,30.0,62.1345,91.9253,0.0,62.8687,96.5606,30.0,62.8687,96.5606,0.0,64.9993,100.742,30.0,64.9993,100.742,0.0,68.3177,104.061,30.0,68.3177,104.061,0.0,72.4993,106.191,30.0,72.4993,106.191,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [77.1345,106.925,30.0,77.1345,106.925,0.0,81.7698,106.191,30.0,81.7698,106.191,0.0,85.9513,104.061,30.0,85.9513,104.061,0.0,89.2698,100.742,30.0,89.2698,100.742,0.0,91.4004,96.5606,30.0,91.4004,96.5606,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [92.1345,91.9253,30.0,92.1345,91.9253,0.0])));
+
+	/** Large attribute array: Normal vector field, scene-graph level=10, element #58, 66 total numbers made up of 22 3-tuple values */
+	this.Normal_10_58_vector = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	.append(new autoclass.MFVec3f(java.newArray("float", [1.0,0.0,0.0,1.0,0.0,0.0,0.951062,-0.309,0.0,0.951062,-0.309,0.0,0.809038,-0.587756,0.0,0.809038,-0.587756,0.0,0.587756,-0.809038,0.0,0.587756,-0.809038,0.0,0.309,-0.951062,0.0,0.309,-0.951062,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [0.0,-1.0,0.0,0.0,-1.0,0.0,-0.309,-0.951062,0.0,-0.309,-0.951062,0.0,-0.587756,-0.809038,0.0,-0.587756,-0.809038,0.0,-0.809038,-0.587756,0.0,-0.809038,-0.587756,0.0,-0.951062,-0.309,0.0,-0.951062,-0.309,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-1.0,0.0,0.0,-1.0,0.0,0.0])));
+
+	/** Large attribute array: IndexedFaceSet coordIndex field, scene-graph level=9, element #63, 80 total numbers */
+	this.IndexedFaceSet_9_63_coordIndex = new autoclass.MFInt32(java.newArray("int", [0,1,2,-1,1,3,2,-1,2,3,4,-1,3,5,4,-1,4,5,6,-1,5,7,6,-1,6,7,8,-1,7,9,8,-1,8,9,10,-1,9,11,10,-1,10,11,12,-1,11,13,12,-1,12,13,14,-1,13,15,14,-1,14,15,16,-1,15,17,16,-1,16,17,18,-1,17,19,18,-1,18,19,20,-1,19,21,20,-1]));
+
+	/** Large attribute array: Coordinate point field, scene-graph level=10, element #63, 66 total numbers made up of 22 3-tuple values */
+	this.Coordinate_10_63_point = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	.append(new autoclass.MFVec3f(java.newArray("float", [133.177,20.8378,30.0,133.177,20.8378,0.0,132.443,16.2025,30.0,132.443,16.2025,0.0,130.312,12.021,30.0,130.312,12.021,0.0,126.994,8.70253,30.0,126.994,8.70253,0.0,122.812,6.57193,30.0,122.812,6.57193,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [118.177,5.83778,30.0,118.177,5.83778,0.0,113.542,6.57193,30.0,113.542,6.57193,0.0,109.36,8.70253,30.0,109.36,8.70253,0.0,106.042,12.021,30.0,106.042,12.021,0.0,103.911,16.2025,30.0,103.911,16.2025,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [103.177,20.8378,30.0,103.177,20.8378,0.0])));
+
+	/** Large attribute array: Normal vector field, scene-graph level=10, element #64, 66 total numbers made up of 22 3-tuple values */
+	this.Normal_10_64_vector = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	.append(new autoclass.MFVec3f(java.newArray("float", [-1.0,0.0,0.0,-1.0,0.0,0.0,-0.951062,0.309,0.0,-0.951062,0.309,0.0,-0.809038,0.587756,0.0,-0.809038,0.587756,0.0,-0.587756,0.809038,0.0,-0.587756,0.809038,0.0,-0.309,0.951062,0.0,-0.309,0.951062,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [0.0,1.0,0.0,0.0,1.0,0.0,0.309,0.951062,0.0,0.309,0.951062,0.0,0.587756,0.809038,0.0,0.587756,0.809038,0.0,0.809038,0.587756,0.0,0.809038,0.587756,0.0,0.951062,0.309,0.0,0.951062,0.309,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [1.0,0.0,0.0,1.0,0.0,0.0])));
+
+	/** Large attribute array: IndexedFaceSet coordIndex field, scene-graph level=9, element #69, 80 total numbers */
+	this.IndexedFaceSet_9_69_coordIndex = new autoclass.MFInt32(java.newArray("int", [0,1,2,-1,1,3,2,-1,2,3,4,-1,3,5,4,-1,4,5,6,-1,5,7,6,-1,6,7,8,-1,7,9,8,-1,8,9,10,-1,9,11,10,-1,10,11,12,-1,11,13,12,-1,12,13,14,-1,13,15,14,-1,14,15,16,-1,15,17,16,-1,16,17,18,-1,17,19,18,-1,18,19,20,-1,19,21,20,-1]));
+
+	/** Large attribute array: Coordinate point field, scene-graph level=10, element #69, 66 total numbers made up of 22 3-tuple values */
+	this.Coordinate_10_69_point = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	.append(new autoclass.MFVec3f(java.newArray("float", [103.177,20.8378,30.0,103.177,20.8378,0.0,103.911,25.473,30.0,103.911,25.473,0.0,106.042,29.6546,30.0,106.042,29.6546,0.0,109.36,32.973,30.0,109.36,32.973,0.0,113.542,35.1036,30.0,113.542,35.1036,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [118.177,35.8378,30.0,118.177,35.8378,0.0,122.812,35.1036,30.0,122.812,35.1036,0.0,126.994,32.973,30.0,126.994,32.973,0.0,130.312,29.6546,30.0,130.312,29.6546,0.0,132.443,25.473,30.0,132.443,25.473,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [133.177,20.8378,30.0,133.177,20.8378,0.0])));
+
+	/** Large attribute array: Normal vector field, scene-graph level=10, element #70, 66 total numbers made up of 22 3-tuple values */
+	this.Normal_10_70_vector = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	.append(new autoclass.MFVec3f(java.newArray("float", [1.0,0.0,0.0,1.0,0.0,0.0,0.951062,-0.309,0.0,0.951062,-0.309,0.0,0.809038,-0.587756,0.0,0.809038,-0.587756,0.0,0.587756,-0.809038,0.0,0.587756,-0.809038,0.0,0.309,-0.951062,0.0,0.309,-0.951062,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [0.0,-1.0,0.0,0.0,-1.0,0.0,-0.309,-0.951062,0.0,-0.309,-0.951062,0.0,-0.587756,-0.809038,0.0,-0.587756,-0.809038,0.0,-0.809038,-0.587756,0.0,-0.809038,-0.587756,0.0,-0.951062,-0.309,0.0,-0.951062,-0.309,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-1.0,0.0,0.0,-1.0,0.0,0.0])));
+
+	/** Large attribute array: IndexedFaceSet coordIndex field, scene-graph level=9, element #75, 80 total numbers */
+	this.IndexedFaceSet_9_75_coordIndex = new autoclass.MFInt32(java.newArray("int", [0,1,2,-1,1,3,2,-1,2,3,4,-1,3,5,4,-1,4,5,6,-1,5,7,6,-1,6,7,8,-1,7,9,8,-1,8,9,10,-1,9,11,10,-1,10,11,12,-1,11,13,12,-1,12,13,14,-1,13,15,14,-1,14,15,16,-1,15,17,16,-1,16,17,18,-1,17,19,18,-1,18,19,20,-1,19,21,20,-1]));
+
+	/** Large attribute array: Coordinate point field, scene-graph level=10, element #75, 66 total numbers made up of 22 3-tuple values */
+	this.Coordinate_10_75_point = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	.append(new autoclass.MFVec3f(java.newArray("float", [118.923,-60.0,30.0,118.923,-60.0,0.0,118.189,-64.6353,30.0,118.189,-64.6353,0.0,116.058,-68.8168,30.0,116.058,-68.8168,0.0,112.74,-72.1353,30.0,112.74,-72.1353,0.0,108.558,-74.2658,30.0,108.558,-74.2658,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [103.923,-75.0,30.0,103.923,-75.0,0.0,99.2878,-74.2658,30.0,99.2878,-74.2658,0.0,95.1063,-72.1353,30.0,95.1063,-72.1353,0.0,91.7878,-68.8168,30.0,91.7878,-68.8168,0.0,89.6572,-64.6353,30.0,89.6572,-64.6353,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [88.923,-60.0,30.0,88.923,-60.0,0.0])));
+
+	/** Large attribute array: Normal vector field, scene-graph level=10, element #76, 66 total numbers made up of 22 3-tuple values */
+	this.Normal_10_76_vector = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	.append(new autoclass.MFVec3f(java.newArray("float", [-1.0,0.0,0.0,-1.0,0.0,0.0,-0.951062,0.309,0.0,-0.951062,0.309,0.0,-0.809038,0.587756,0.0,-0.809038,0.587756,0.0,-0.587756,0.809038,0.0,-0.587756,0.809038,0.0,-0.309,0.951062,0.0,-0.309,0.951062,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [0.0,1.0,0.0,0.0,1.0,0.0,0.309,0.951062,0.0,0.309,0.951062,0.0,0.587756,0.809038,0.0,0.587756,0.809038,0.0,0.809038,0.587756,0.0,0.809038,0.587756,0.0,0.951062,0.309,0.0,0.951062,0.309,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [1.0,0.0,0.0,1.0,0.0,0.0])));
+
+	/** Large attribute array: IndexedFaceSet coordIndex field, scene-graph level=9, element #81, 80 total numbers */
+	this.IndexedFaceSet_9_81_coordIndex = new autoclass.MFInt32(java.newArray("int", [0,1,2,-1,1,3,2,-1,2,3,4,-1,3,5,4,-1,4,5,6,-1,5,7,6,-1,6,7,8,-1,7,9,8,-1,8,9,10,-1,9,11,10,-1,10,11,12,-1,11,13,12,-1,12,13,14,-1,13,15,14,-1,14,15,16,-1,15,17,16,-1,16,17,18,-1,17,19,18,-1,18,19,20,-1,19,21,20,-1]));
+
+	/** Large attribute array: Coordinate point field, scene-graph level=10, element #81, 66 total numbers made up of 22 3-tuple values */
+	this.Coordinate_10_81_point = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	.append(new autoclass.MFVec3f(java.newArray("float", [88.923,-60.0,30.0,88.923,-60.0,0.0,89.6572,-55.3647,30.0,89.6572,-55.3647,0.0,91.7878,-51.1832,30.0,91.7878,-51.1832,0.0,95.1063,-47.8647,30.0,95.1063,-47.8647,0.0,99.2878,-45.7342,30.0,99.2878,-45.7342,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [103.923,-45.0,30.0,103.923,-45.0,0.0,108.558,-45.7342,30.0,108.558,-45.7342,0.0,112.74,-47.8647,30.0,112.74,-47.8647,0.0,116.058,-51.1832,30.0,116.058,-51.1832,0.0,118.189,-55.3647,30.0,118.189,-55.3647,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [118.923,-60.0,30.0,118.923,-60.0,0.0])));
+
+	/** Large attribute array: Normal vector field, scene-graph level=10, element #82, 66 total numbers made up of 22 3-tuple values */
+	this.Normal_10_82_vector = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	.append(new autoclass.MFVec3f(java.newArray("float", [1.0,0.0,0.0,1.0,0.0,0.0,0.951062,-0.309,0.0,0.951062,-0.309,0.0,0.809038,-0.587756,0.0,0.809038,-0.587756,0.0,0.587756,-0.809038,0.0,0.587756,-0.809038,0.0,0.309,-0.951062,0.0,0.309,-0.951062,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [0.0,-1.0,0.0,0.0,-1.0,0.0,-0.309,-0.951062,0.0,-0.309,-0.951062,0.0,-0.587756,-0.809038,0.0,-0.587756,-0.809038,0.0,-0.809038,-0.587756,0.0,-0.809038,-0.587756,0.0,-0.951062,-0.309,0.0,-0.951062,-0.309,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-1.0,0.0,0.0,-1.0,0.0,0.0])));
+
+	/** Large attribute array: IndexedFaceSet coordIndex field, scene-graph level=9, element #87, 80 total numbers */
+	this.IndexedFaceSet_9_87_coordIndex = new autoclass.MFInt32(java.newArray("int", [0,1,2,-1,1,3,2,-1,2,3,4,-1,3,5,4,-1,4,5,6,-1,5,7,6,-1,6,7,8,-1,7,9,8,-1,8,9,10,-1,9,11,10,-1,10,11,12,-1,11,13,12,-1,12,13,14,-1,13,15,14,-1,14,15,16,-1,15,17,16,-1,16,17,18,-1,17,19,18,-1,18,19,20,-1,19,21,20,-1]));
+
+	/** Large attribute array: Coordinate point field, scene-graph level=10, element #87, 66 total numbers made up of 22 3-tuple values */
+	this.Coordinate_10_87_point = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	.append(new autoclass.MFVec3f(java.newArray("float", [56.0424,-112.763,30.0,56.0424,-112.763,0.0,55.3083,-117.398,30.0,55.3083,-117.398,0.0,53.1777,-121.58,30.0,53.1777,-121.58,0.0,49.8592,-124.898,30.0,49.8592,-124.898,0.0,45.6777,-127.029,30.0,45.6777,-127.029,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [41.0424,-127.763,30.0,41.0424,-127.763,0.0,36.4072,-127.029,30.0,36.4072,-127.029,0.0,32.2256,-124.898,30.0,32.2256,-124.898,0.0,28.9072,-121.58,30.0,28.9072,-121.58,0.0,26.7766,-117.398,30.0,26.7766,-117.398,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [26.0424,-112.763,30.0,26.0424,-112.763,0.0])));
+
+	/** Large attribute array: Normal vector field, scene-graph level=10, element #88, 66 total numbers made up of 22 3-tuple values */
+	this.Normal_10_88_vector = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	.append(new autoclass.MFVec3f(java.newArray("float", [-1.0,0.0,0.0,-1.0,0.0,0.0,-0.951062,0.309,0.0,-0.951062,0.309,0.0,-0.809038,0.587756,0.0,-0.809038,0.587756,0.0,-0.587756,0.809038,0.0,-0.587756,0.809038,0.0,-0.309,0.951062,0.0,-0.309,0.951062,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [0.0,1.0,0.0,0.0,1.0,0.0,0.309,0.951062,0.0,0.309,0.951062,0.0,0.587756,0.809038,0.0,0.587756,0.809038,0.0,0.809038,0.587756,0.0,0.809038,0.587756,0.0,0.951062,0.309,0.0,0.951062,0.309,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [1.0,0.0,0.0,1.0,0.0,0.0])));
+
+	/** Large attribute array: IndexedFaceSet coordIndex field, scene-graph level=9, element #93, 80 total numbers */
+	this.IndexedFaceSet_9_93_coordIndex = new autoclass.MFInt32(java.newArray("int", [0,1,2,-1,1,3,2,-1,2,3,4,-1,3,5,4,-1,4,5,6,-1,5,7,6,-1,6,7,8,-1,7,9,8,-1,8,9,10,-1,9,11,10,-1,10,11,12,-1,11,13,12,-1,12,13,14,-1,13,15,14,-1,14,15,16,-1,15,17,16,-1,16,17,18,-1,17,19,18,-1,18,19,20,-1,19,21,20,-1]));
+
+	/** Large attribute array: Coordinate point field, scene-graph level=10, element #93, 66 total numbers made up of 22 3-tuple values */
+	this.Coordinate_10_93_point = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	.append(new autoclass.MFVec3f(java.newArray("float", [26.0424,-112.763,30.0,26.0424,-112.763,0.0,26.7766,-108.128,30.0,26.7766,-108.128,0.0,28.9072,-103.946,30.0,28.9072,-103.946,0.0,32.2256,-100.628,30.0,32.2256,-100.628,0.0,36.4072,-98.4973,30.0,36.4072,-98.4973,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [41.0424,-97.7631,30.0,41.0424,-97.7631,0.0,45.6777,-98.4973,30.0,45.6777,-98.4973,0.0,49.8592,-100.628,30.0,49.8592,-100.628,0.0,53.1777,-103.946,30.0,53.1777,-103.946,0.0,55.3083,-108.128,30.0,55.3083,-108.128,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [56.0424,-112.763,30.0,56.0424,-112.763,0.0])));
+
+	/** Large attribute array: Normal vector field, scene-graph level=10, element #94, 66 total numbers made up of 22 3-tuple values */
+	this.Normal_10_94_vector = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	.append(new autoclass.MFVec3f(java.newArray("float", [1.0,0.0,0.0,1.0,0.0,0.0,0.951062,-0.309,0.0,0.951062,-0.309,0.0,0.809038,-0.587756,0.0,0.809038,-0.587756,0.0,0.587756,-0.809038,0.0,0.587756,-0.809038,0.0,0.309,-0.951062,0.0,0.309,-0.951062,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [0.0,-1.0,0.0,0.0,-1.0,0.0,-0.309,-0.951062,0.0,-0.309,-0.951062,0.0,-0.587756,-0.809038,0.0,-0.587756,-0.809038,0.0,-0.809038,-0.587756,0.0,-0.809038,-0.587756,0.0,-0.951062,-0.309,0.0,-0.951062,-0.309,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-1.0,0.0,0.0,-1.0,0.0,0.0])));
+
+	/** Large attribute array: IndexedFaceSet coordIndex field, scene-graph level=9, element #99, 80 total numbers */
+	this.IndexedFaceSet_9_99_coordIndex = new autoclass.MFInt32(java.newArray("int", [0,1,2,-1,1,3,2,-1,2,3,4,-1,3,5,4,-1,4,5,6,-1,5,7,6,-1,6,7,8,-1,7,9,8,-1,8,9,10,-1,9,11,10,-1,10,11,12,-1,11,13,12,-1,12,13,14,-1,13,15,14,-1,14,15,16,-1,15,17,16,-1,16,17,18,-1,17,19,18,-1,18,19,20,-1,19,21,20,-1]));
+
+	/** Large attribute array: Coordinate point field, scene-graph level=10, element #99, 66 total numbers made up of 22 3-tuple values */
+	this.Coordinate_10_99_point = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	.append(new autoclass.MFVec3f(java.newArray("float", [-26.0424,-112.763,30.0,-26.0424,-112.763,0.0,-26.7766,-117.398,30.0,-26.7766,-117.398,0.0,-28.9072,-121.58,30.0,-28.9072,-121.58,0.0,-32.2256,-124.898,30.0,-32.2256,-124.898,0.0,-36.4072,-127.029,30.0,-36.4072,-127.029,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-41.0424,-127.763,30.0,-41.0424,-127.763,0.0,-45.6777,-127.029,30.0,-45.6777,-127.029,0.0,-49.8592,-124.898,30.0,-49.8592,-124.898,0.0,-53.1777,-121.58,30.0,-53.1777,-121.58,0.0,-55.3083,-117.398,30.0,-55.3083,-117.398,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-56.0424,-112.763,30.0,-56.0424,-112.763,0.0])));
+
+	/** Large attribute array: Normal vector field, scene-graph level=10, element #100, 66 total numbers made up of 22 3-tuple values */
+	this.Normal_10_100_vector = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	.append(new autoclass.MFVec3f(java.newArray("float", [-1.0,0.0,0.0,-1.0,0.0,0.0,-0.951062,0.309,0.0,-0.951062,0.309,0.0,-0.809038,0.587756,0.0,-0.809038,0.587756,0.0,-0.587756,0.809038,0.0,-0.587756,0.809038,0.0,-0.309,0.951062,0.0,-0.309,0.951062,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [0.0,1.0,0.0,0.0,1.0,0.0,0.309,0.951062,0.0,0.309,0.951062,0.0,0.587756,0.809038,0.0,0.587756,0.809038,0.0,0.809038,0.587756,0.0,0.809038,0.587756,0.0,0.951062,0.309,0.0,0.951062,0.309,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [1.0,0.0,0.0,1.0,0.0,0.0])));
+
+	/** Large attribute array: IndexedFaceSet coordIndex field, scene-graph level=9, element #105, 80 total numbers */
+	this.IndexedFaceSet_9_105_coordIndex = new autoclass.MFInt32(java.newArray("int", [0,1,2,-1,1,3,2,-1,2,3,4,-1,3,5,4,-1,4,5,6,-1,5,7,6,-1,6,7,8,-1,7,9,8,-1,8,9,10,-1,9,11,10,-1,10,11,12,-1,11,13,12,-1,12,13,14,-1,13,15,14,-1,14,15,16,-1,15,17,16,-1,16,17,18,-1,17,19,18,-1,18,19,20,-1,19,21,20,-1]));
+
+	/** Large attribute array: Coordinate point field, scene-graph level=10, element #105, 66 total numbers made up of 22 3-tuple values */
+	this.Coordinate_10_105_point = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	.append(new autoclass.MFVec3f(java.newArray("float", [-56.0424,-112.763,30.0,-56.0424,-112.763,0.0,-55.3083,-108.128,30.0,-55.3083,-108.128,0.0,-53.1777,-103.946,30.0,-53.1777,-103.946,0.0,-49.8592,-100.628,30.0,-49.8592,-100.628,0.0,-45.6777,-98.4973,30.0,-45.6777,-98.4973,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-41.0424,-97.7631,30.0,-41.0424,-97.7631,0.0,-36.4072,-98.4973,30.0,-36.4072,-98.4973,0.0,-32.2256,-100.628,30.0,-32.2256,-100.628,0.0,-28.9072,-103.946,30.0,-28.9072,-103.946,0.0,-26.7766,-108.128,30.0,-26.7766,-108.128,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-26.0424,-112.763,30.0,-26.0424,-112.763,0.0])));
+
+	/** Large attribute array: Normal vector field, scene-graph level=10, element #106, 66 total numbers made up of 22 3-tuple values */
+	this.Normal_10_106_vector = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	.append(new autoclass.MFVec3f(java.newArray("float", [1.0,0.0,0.0,1.0,0.0,0.0,0.951062,-0.309,0.0,0.951062,-0.309,0.0,0.809038,-0.587756,0.0,0.809038,-0.587756,0.0,0.587756,-0.809038,0.0,0.587756,-0.809038,0.0,0.309,-0.951062,0.0,0.309,-0.951062,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [0.0,-1.0,0.0,0.0,-1.0,0.0,-0.309,-0.951062,0.0,-0.309,-0.951062,0.0,-0.587756,-0.809038,0.0,-0.587756,-0.809038,0.0,-0.809038,-0.587756,0.0,-0.809038,-0.587756,0.0,-0.951062,-0.309,0.0,-0.951062,-0.309,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-1.0,0.0,0.0,-1.0,0.0,0.0])));
+
+	/** Large attribute array: IndexedFaceSet coordIndex field, scene-graph level=9, element #111, 80 total numbers */
+	this.IndexedFaceSet_9_111_coordIndex = new autoclass.MFInt32(java.newArray("int", [0,1,2,-1,1,3,2,-1,2,3,4,-1,3,5,4,-1,4,5,6,-1,5,7,6,-1,6,7,8,-1,7,9,8,-1,8,9,10,-1,9,11,10,-1,10,11,12,-1,11,13,12,-1,12,13,14,-1,13,15,14,-1,14,15,16,-1,15,17,16,-1,16,17,18,-1,17,19,18,-1,18,19,20,-1,19,21,20,-1]));
+
+	/** Large attribute array: Coordinate point field, scene-graph level=10, element #111, 66 total numbers made up of 22 3-tuple values */
+	this.Coordinate_10_111_point = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	.append(new autoclass.MFVec3f(java.newArray("float", [-88.923,-60.0,30.0,-88.923,-60.0,0.0,-89.6572,-64.6353,30.0,-89.6572,-64.6353,0.0,-91.7878,-68.8168,30.0,-91.7878,-68.8168,0.0,-95.1063,-72.1353,30.0,-95.1063,-72.1353,0.0,-99.2878,-74.2658,30.0,-99.2878,-74.2658,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-103.923,-75.0,30.0,-103.923,-75.0,0.0,-108.558,-74.2658,30.0,-108.558,-74.2658,0.0,-112.74,-72.1353,30.0,-112.74,-72.1353,0.0,-116.058,-68.8168,30.0,-116.058,-68.8168,0.0,-118.189,-64.6353,30.0,-118.189,-64.6353,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-118.923,-60.0,30.0,-118.923,-60.0,0.0])));
+
+	/** Large attribute array: Normal vector field, scene-graph level=10, element #112, 66 total numbers made up of 22 3-tuple values */
+	this.Normal_10_112_vector = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	.append(new autoclass.MFVec3f(java.newArray("float", [-1.0,0.0,0.0,-1.0,0.0,0.0,-0.951062,0.309,0.0,-0.951062,0.309,0.0,-0.809038,0.587756,0.0,-0.809038,0.587756,0.0,-0.587756,0.809038,0.0,-0.587756,0.809038,0.0,-0.309,0.951062,0.0,-0.309,0.951062,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [0.0,1.0,0.0,0.0,1.0,0.0,0.309,0.951062,0.0,0.309,0.951062,0.0,0.587756,0.809038,0.0,0.587756,0.809038,0.0,0.809038,0.587756,0.0,0.809038,0.587756,0.0,0.951062,0.309,0.0,0.951062,0.309,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [1.0,0.0,0.0,1.0,0.0,0.0])));
+
+	/** Large attribute array: IndexedFaceSet coordIndex field, scene-graph level=9, element #117, 80 total numbers */
+	this.IndexedFaceSet_9_117_coordIndex = new autoclass.MFInt32(java.newArray("int", [0,1,2,-1,1,3,2,-1,2,3,4,-1,3,5,4,-1,4,5,6,-1,5,7,6,-1,6,7,8,-1,7,9,8,-1,8,9,10,-1,9,11,10,-1,10,11,12,-1,11,13,12,-1,12,13,14,-1,13,15,14,-1,14,15,16,-1,15,17,16,-1,16,17,18,-1,17,19,18,-1,18,19,20,-1,19,21,20,-1]));
+
+	/** Large attribute array: Coordinate point field, scene-graph level=10, element #117, 66 total numbers made up of 22 3-tuple values */
+	this.Coordinate_10_117_point = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	.append(new autoclass.MFVec3f(java.newArray("float", [-118.923,-60.0,30.0,-118.923,-60.0,0.0,-118.189,-55.3647,30.0,-118.189,-55.3647,0.0,-116.058,-51.1832,30.0,-116.058,-51.1832,0.0,-112.74,-47.8647,30.0,-112.74,-47.8647,0.0,-108.558,-45.7342,30.0,-108.558,-45.7342,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-103.923,-45.0,30.0,-103.923,-45.0,0.0,-99.2878,-45.7342,30.0,-99.2878,-45.7342,0.0,-95.1063,-47.8647,30.0,-95.1063,-47.8647,0.0,-91.7878,-51.1832,30.0,-91.7878,-51.1832,0.0,-89.6572,-55.3647,30.0,-89.6572,-55.3647,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-88.923,-60.0,30.0,-88.923,-60.0,0.0])));
+
+	/** Large attribute array: Normal vector field, scene-graph level=10, element #118, 66 total numbers made up of 22 3-tuple values */
+	this.Normal_10_118_vector = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	.append(new autoclass.MFVec3f(java.newArray("float", [1.0,0.0,0.0,1.0,0.0,0.0,0.951062,-0.309,0.0,0.951062,-0.309,0.0,0.809038,-0.587756,0.0,0.809038,-0.587756,0.0,0.587756,-0.809038,0.0,0.587756,-0.809038,0.0,0.309,-0.951062,0.0,0.309,-0.951062,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [0.0,-1.0,0.0,0.0,-1.0,0.0,-0.309,-0.951062,0.0,-0.309,-0.951062,0.0,-0.587756,-0.809038,0.0,-0.587756,-0.809038,0.0,-0.809038,-0.587756,0.0,-0.809038,-0.587756,0.0,-0.951062,-0.309,0.0,-0.951062,-0.309,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-1.0,0.0,0.0,-1.0,0.0,0.0])));
+
+	/** Large attribute array: IndexedFaceSet coordIndex field, scene-graph level=9, element #123, 80 total numbers */
+	this.IndexedFaceSet_9_123_coordIndex = new autoclass.MFInt32(java.newArray("int", [0,1,2,-1,1,3,2,-1,2,3,4,-1,3,5,4,-1,4,5,6,-1,5,7,6,-1,6,7,8,-1,7,9,8,-1,8,9,10,-1,9,11,10,-1,10,11,12,-1,11,13,12,-1,12,13,14,-1,13,15,14,-1,14,15,16,-1,15,17,16,-1,16,17,18,-1,17,19,18,-1,18,19,20,-1,19,21,20,-1]));
+
+	/** Large attribute array: Coordinate point field, scene-graph level=10, element #123, 66 total numbers made up of 22 3-tuple values */
+	this.Coordinate_10_123_point = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	.append(new autoclass.MFVec3f(java.newArray("float", [-103.177,20.8378,30.0,-103.177,20.8378,0.0,-103.911,16.2025,30.0,-103.911,16.2025,0.0,-106.042,12.021,30.0,-106.042,12.021,0.0,-109.36,8.70253,30.0,-109.36,8.70253,0.0,-113.542,6.57193,30.0,-113.542,6.57193,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-118.177,5.83778,30.0,-118.177,5.83778,0.0,-122.812,6.57193,30.0,-122.812,6.57193,0.0,-126.994,8.70253,30.0,-126.994,8.70253,0.0,-130.312,12.021,30.0,-130.312,12.021,0.0,-132.443,16.2025,30.0,-132.443,16.2025,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-133.177,20.8378,30.0,-133.177,20.8378,0.0])));
+
+	/** Large attribute array: Normal vector field, scene-graph level=10, element #124, 66 total numbers made up of 22 3-tuple values */
+	this.Normal_10_124_vector = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	.append(new autoclass.MFVec3f(java.newArray("float", [-1.0,0.0,0.0,-1.0,0.0,0.0,-0.951062,0.309,0.0,-0.951062,0.309,0.0,-0.809038,0.587756,0.0,-0.809038,0.587756,0.0,-0.587756,0.809038,0.0,-0.587756,0.809038,0.0,-0.309,0.951062,0.0,-0.309,0.951062,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [0.0,1.0,0.0,0.0,1.0,0.0,0.309,0.951062,0.0,0.309,0.951062,0.0,0.587756,0.809038,0.0,0.587756,0.809038,0.0,0.809038,0.587756,0.0,0.809038,0.587756,0.0,0.951062,0.309,0.0,0.951062,0.309,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [1.0,0.0,0.0,1.0,0.0,0.0])));
+
+	/** Large attribute array: IndexedFaceSet coordIndex field, scene-graph level=9, element #129, 80 total numbers */
+	this.IndexedFaceSet_9_129_coordIndex = new autoclass.MFInt32(java.newArray("int", [0,1,2,-1,1,3,2,-1,2,3,4,-1,3,5,4,-1,4,5,6,-1,5,7,6,-1,6,7,8,-1,7,9,8,-1,8,9,10,-1,9,11,10,-1,10,11,12,-1,11,13,12,-1,12,13,14,-1,13,15,14,-1,14,15,16,-1,15,17,16,-1,16,17,18,-1,17,19,18,-1,18,19,20,-1,19,21,20,-1]));
+
+	/** Large attribute array: Coordinate point field, scene-graph level=10, element #129, 66 total numbers made up of 22 3-tuple values */
+	this.Coordinate_10_129_point = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	.append(new autoclass.MFVec3f(java.newArray("float", [-133.177,20.8378,30.0,-133.177,20.8378,0.0,-132.443,25.473,30.0,-132.443,25.473,0.0,-130.312,29.6546,30.0,-130.312,29.6546,0.0,-126.994,32.973,30.0,-126.994,32.973,0.0,-122.812,35.1036,30.0,-122.812,35.1036,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-118.177,35.8378,30.0,-118.177,35.8378,0.0,-113.542,35.1036,30.0,-113.542,35.1036,0.0,-109.36,32.973,30.0,-109.36,32.973,0.0,-106.042,29.6546,30.0,-106.042,29.6546,0.0,-103.911,25.473,30.0,-103.911,25.473,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-103.177,20.8378,30.0,-103.177,20.8378,0.0])));
+
+	/** Large attribute array: Normal vector field, scene-graph level=10, element #130, 66 total numbers made up of 22 3-tuple values */
+	this.Normal_10_130_vector = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	.append(new autoclass.MFVec3f(java.newArray("float", [1.0,0.0,0.0,1.0,0.0,0.0,0.951062,-0.309,0.0,0.951062,-0.309,0.0,0.809038,-0.587756,0.0,0.809038,-0.587756,0.0,0.587756,-0.809038,0.0,0.587756,-0.809038,0.0,0.309,-0.951062,0.0,0.309,-0.951062,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [0.0,-1.0,0.0,0.0,-1.0,0.0,-0.309,-0.951062,0.0,-0.309,-0.951062,0.0,-0.587756,-0.809038,0.0,-0.587756,-0.809038,0.0,-0.809038,-0.587756,0.0,-0.809038,-0.587756,0.0,-0.951062,-0.309,0.0,-0.951062,-0.309,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-1.0,0.0,0.0,-1.0,0.0,0.0])));
+
+	/** Large attribute array: IndexedFaceSet coordIndex field, scene-graph level=9, element #135, 80 total numbers */
+	this.IndexedFaceSet_9_135_coordIndex = new autoclass.MFInt32(java.newArray("int", [0,1,2,-1,1,3,2,-1,2,3,4,-1,3,5,4,-1,4,5,6,-1,5,7,6,-1,6,7,8,-1,7,9,8,-1,8,9,10,-1,9,11,10,-1,10,11,12,-1,11,13,12,-1,12,13,14,-1,13,15,14,-1,14,15,16,-1,15,17,16,-1,16,17,18,-1,17,19,18,-1,18,19,20,-1,19,21,20,-1]));
+
+	/** Large attribute array: Coordinate point field, scene-graph level=10, element #135, 66 total numbers made up of 22 3-tuple values */
+	this.Coordinate_10_135_point = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	.append(new autoclass.MFVec3f(java.newArray("float", [-62.1345,91.9253,30.0,-62.1345,91.9253,0.0,-62.8687,87.2901,30.0,-62.8687,87.2901,0.0,-64.9993,83.1086,30.0,-64.9993,83.1086,0.0,-68.3177,79.7901,30.0,-68.3177,79.7901,0.0,-72.4993,77.6595,30.0,-72.4993,77.6595,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-77.1345,76.9253,30.0,-77.1345,76.9253,0.0,-81.7698,77.6595,30.0,-81.7698,77.6595,0.0,-85.9513,79.7901,30.0,-85.9513,79.7901,0.0,-89.2698,83.1086,30.0,-89.2698,83.1086,0.0,-91.4004,87.2901,30.0,-91.4004,87.2901,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-92.1345,91.9253,30.0,-92.1345,91.9253,0.0])));
+
+	/** Large attribute array: Normal vector field, scene-graph level=10, element #136, 66 total numbers made up of 22 3-tuple values */
+	this.Normal_10_136_vector = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	.append(new autoclass.MFVec3f(java.newArray("float", [-1.0,0.0,0.0,-1.0,0.0,0.0,-0.951062,0.309,0.0,-0.951062,0.309,0.0,-0.809038,0.587756,0.0,-0.809038,0.587756,0.0,-0.587756,0.809038,0.0,-0.587756,0.809038,0.0,-0.309,0.951062,0.0,-0.309,0.951062,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [0.0,1.0,0.0,0.0,1.0,0.0,0.309,0.951062,0.0,0.309,0.951062,0.0,0.587756,0.809038,0.0,0.587756,0.809038,0.0,0.809038,0.587756,0.0,0.809038,0.587756,0.0,0.951062,0.309,0.0,0.951062,0.309,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [1.0,0.0,0.0,1.0,0.0,0.0])));
+
+	/** Large attribute array: IndexedFaceSet coordIndex field, scene-graph level=9, element #141, 80 total numbers */
+	this.IndexedFaceSet_9_141_coordIndex = new autoclass.MFInt32(java.newArray("int", [0,1,2,-1,1,3,2,-1,2,3,4,-1,3,5,4,-1,4,5,6,-1,5,7,6,-1,6,7,8,-1,7,9,8,-1,8,9,10,-1,9,11,10,-1,10,11,12,-1,11,13,12,-1,12,13,14,-1,13,15,14,-1,14,15,16,-1,15,17,16,-1,16,17,18,-1,17,19,18,-1,18,19,20,-1,19,21,20,-1]));
+
+	/** Large attribute array: Coordinate point field, scene-graph level=10, element #141, 66 total numbers made up of 22 3-tuple values */
+	this.Coordinate_10_141_point = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	.append(new autoclass.MFVec3f(java.newArray("float", [-92.1345,91.9253,30.0,-92.1345,91.9253,0.0,-91.4004,96.5606,30.0,-91.4004,96.5606,0.0,-89.2698,100.742,30.0,-89.2698,100.742,0.0,-85.9513,104.061,30.0,-85.9513,104.061,0.0,-81.7698,106.191,30.0,-81.7698,106.191,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-77.1345,106.925,30.0,-77.1345,106.925,0.0,-72.4993,106.191,30.0,-72.4993,106.191,0.0,-68.3177,104.061,30.0,-68.3177,104.061,0.0,-64.9993,100.742,30.0,-64.9993,100.742,0.0,-62.8687,96.5606,30.0,-62.8687,96.5606,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-62.1345,91.9253,30.0,-62.1345,91.9253,0.0])));
+
+	/** Large attribute array: Normal vector field, scene-graph level=10, element #142, 66 total numbers made up of 22 3-tuple values */
+	this.Normal_10_142_vector = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	.append(new autoclass.MFVec3f(java.newArray("float", [1.0,0.0,0.0,1.0,0.0,0.0,0.951062,-0.309,0.0,0.951062,-0.309,0.0,0.809038,-0.587756,0.0,0.809038,-0.587756,0.0,0.587756,-0.809038,0.0,0.587756,-0.809038,0.0,0.309,-0.951062,0.0,0.309,-0.951062,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [0.0,-1.0,0.0,0.0,-1.0,0.0,-0.309,-0.951062,0.0,-0.309,-0.951062,0.0,-0.587756,-0.809038,0.0,-0.587756,-0.809038,0.0,-0.809038,-0.587756,0.0,-0.809038,-0.587756,0.0,-0.951062,-0.309,0.0,-0.951062,-0.309,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-1.0,0.0,0.0,-1.0,0.0,0.0])));
+
+	/** Large attribute array: IndexedFaceSet coordIndex field, scene-graph level=9, element #147, 1032 total numbers */
+	this.IndexedFaceSet_9_147_coordIndex = new autoclass.MFInt32(java.newArray("int", [40,41,42,-1,41,43,42,-1,44,45,46,-1,45,47,46,-1,15,14,12,-1,14,48,12,-1,12,48,10,-1,19,18,49,-1,18,50,49,-1,49,50,51,-1,51,52,49,-1,52,53,49,-1,23,22,54,-1,22,38,54,-1,54,38,37,-1,33,3,55,-1,3,56,55,-1,55,56,57,-1,56,24,57,-1,57,24,26,-1,58,27,59,-1,27,29,59,-1,59,29,60,-1,43,61,62,-1,61,63,62,-1,62,63,64,-1,63,65,64,-1,64,65,66,-1,65,67,66,-1,66,67,68,-1,67,69,68,-1,68,69,70,-1,28,27,71,-1,27,72,71,-1,71,72,73,-1,72,31,73,-1,73,31,30,-1,19,74,20,-1,74,75,20,-1,20,75,76,-1,36,35,77,-1,35,78,77,-1,77,78,79,-1,79,78,80,-1,78,81,80,-1,80,81,82,-1,81,83,82,-1,82,83,84,-1,83,85,84,-1,84,85,86,-1,70,69,87,-1,69,88,87,-1,87,88,89,-1,90,91,92,-1,90,92,93,-1,90,93,94,-1,95,96,97,-1,95,97,98,-1,95,98,99,-1,95,99,100,-1,95,100,16,-1,95,16,15,-1,95,15,53,-1,95,53,52,-1,95,52,8,-1,95,8,7,-1,95,7,101,-1,102,103,44,-1,102,44,46,-1,102,46,104,-1,102,104,105,-1,102,105,106,-1,102,106,107,-1,102,107,108,-1,102,108,96,-1,102,96,109,-1,47,110,111,-1,47,111,112,-1,47,112,113,-1,47,113,114,-1,47,114,115,-1,47,115,116,-1,47,116,46,-1,117,118,119,-1,117,119,120,-1,117,120,121,-1,117,121,122,-1,117,122,0,-1,117,0,2,-1,1,123,124,-1,1,124,125,-1,1,125,126,-1,1,126,43,-1,1,43,62,-1,43,126,127,-1,43,127,128,-1,43,128,129,-1,43,129,130,-1,43,130,131,-1,43,131,132,-1,43,132,42,-1,133,40,42,-1,133,42,134,-1,133,134,135,-1,133,135,136,-1,133,136,137,-1,133,137,138,-1,133,138,111,-1,133,111,110,-1,139,140,141,-1,139,141,142,-1,139,142,143,-1,139,143,25,-1,139,25,24,-1,144,111,145,-1,144,145,146,-1,144,146,147,-1,144,147,148,-1,144,148,140,-1,144,140,139,-1,144,139,149,-1,144,149,92,-1,144,92,91,-1,144,91,150,-1,144,150,151,-1,144,151,152,-1,144,152,96,-1,153,12,11,-1,153,11,154,-1,153,154,155,-1,153,155,156,-1,153,156,94,-1,153,94,93,-1,157,9,8,-1,157,8,158,-1,157,158,159,-1,157,159,160,-1,157,160,161,-1,157,161,162,-1,7,84,86,-1,7,86,163,-1,7,163,164,-1,7,164,165,-1,7,165,166,-1,7,166,167,-1,7,167,101,-1,163,168,169,-1,163,169,170,-1,163,170,171,-1,163,171,172,-1,163,172,164,-1,161,173,174,-1,161,174,175,-1,161,175,176,-1,161,176,177,-1,161,177,178,-1,161,178,179,-1,161,179,180,-1,161,180,162,-1,181,174,173,-1,181,173,182,-1,181,182,183,-1,181,183,184,-1,181,184,185,-1,186,181,185,-1,186,185,187,-1,186,187,188,-1,186,188,189,-1,186,189,76,-1,186,76,75,-1,190,35,34,-1,190,34,191,-1,190,191,192,-1,190,192,193,-1,190,193,194,-1,190,194,177,-1,177,194,195,-1,177,195,196,-1,177,196,178,-1,168,163,197,-1,168,197,22,-1,168,22,21,-1,96,95,198,-1,96,198,199,-1,96,199,200,-1,96,200,201,-1,96,201,39,-1,96,39,38,-1,96,38,202,-1,96,202,109,-1,96,108,203,-1,96,203,204,-1,96,204,205,-1,96,205,206,-1,96,206,144,-1,111,144,207,-1,111,207,208,-1,111,208,209,-1,111,209,210,-1,111,210,112,-1,123,1,0,-1,123,0,32,-1,123,32,31,-1,123,31,3,-1,123,3,6,-1,123,6,211,-1,123,211,212,-1,123,212,213,-1,123,213,111,-1,111,138,214,-1,111,214,215,-1,111,215,216,-1,111,216,217,-1,111,217,123,-1,218,219,220,-1,218,220,221,-1,218,221,222,-1,218,222,223,-1,218,223,89,-1,218,89,88,-1,219,224,225,-1,219,225,226,-1,219,226,220,-1,119,118,227,-1,119,227,228,-1,119,228,224,-1,119,224,219,-1,119,219,229,-1,119,229,230,-1,119,230,231,-1,119,231,232,-1,233,234,235,-1,233,235,236,-1,233,236,237,-1,233,237,238,-1,233,238,232,-1,233,232,231,-1,234,59,60,-1,234,60,239,-1,234,239,240,-1,234,240,241,-1,234,241,235,-1,0,1,2,-1,3,4,5,-1,6,3,5,-1,7,8,9,-1,10,11,12,-1,13,14,15,-1,13,15,16,-1,17,18,19,-1,19,20,17,-1,21,22,23,-1,24,25,26,-1,27,28,29,-1,30,31,32,-1,33,4,3,-1,34,35,36,-1,37,38,39,-1]));
+
+	/** Large attribute array: Coordinate point field, scene-graph level=10, element #147, 726 total numbers made up of 242 3-tuple values */
+	this.Coordinate_10_147_point = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	.append(new autoclass.MFVec3f(java.newArray("float", [89.6572,-55.3647,0.0,103.911,25.473,0.0,103.177,20.8378,0.0,66.0591,-134.671,0.0,55.3083,-117.398,0.0,56.0424,-112.763,0.0,55.3083,-108.128,0.0,-103.911,25.473,0.0,-89.6572,-55.3647,0.0,-103.177,20.8378,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-45.6777,-127.029,0.0,-41.0424,-127.763,0.0,-52.0958,-140.663,0.0,-55.3083,-117.398,0.0,-53.1777,-121.58,0.0,-66.0591,-134.671,0.0,-56.0424,-112.763,0.0,-99.2878,-74.2658,0.0,-95.1063,-72.1353,0.0,-103.345,-108.719,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-103.923,-75.0,0.0,-72.4993,106.191,0.0,-79.3446,127.297,0.0,-68.3177,104.061,0.0,37.5979,-145.212,0.0,36.4072,-127.029,0.0,41.0424,-127.763,0.0,103.345,-108.719,0.0,99.2878,-74.2658,0.0,103.923,-75.0,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [89.6572,-64.6353,0.0,79.3446,-127.297,0.0,88.923,-60.0,0.0,53.1777,-121.58,0.0,-130.312,29.6546,0.0,-146.929,30.1948,0.0,-126.994,32.973,0.0,-62.8687,96.5606,0.0,-66.0591,134.671,0.0,-62.1345,91.9253,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [79.3446,127.297,0.0,91.8159,118.616,0.0,77.1345,106.925,0.0,103.345,108.719,0.0,7.59738,149.807,0.0,22.7142,148.27,0.0,0.0,135.0,0.0,37.5979,145.212,0.0,-49.8592,-124.898,0.0,-91.8159,-118.616,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-91.7878,-68.8168,0.0,-89.6572,-64.6353,0.0,-88.923,-60.0,0.0,-79.3446,-127.297,0.0,-64.9993,100.742,0.0,49.8592,-124.898,0.0,52.0958,-140.663,0.0,45.6777,-127.029,0.0,113.814,-97.7059,0.0,123.115,-85.6902,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [108.558,-74.2658,0.0,113.814,97.7059,0.0,106.042,29.6546,0.0,123.115,85.6902,0.0,109.36,32.973,0.0,131.152,72.7953,0.0,113.542,35.1036,0.0,137.844,59.1534,0.0,118.177,35.8378,0.0,143.121,44.9045,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [122.812,35.1036,0.0,95.1063,-72.1353,0.0,91.8159,-118.616,0.0,91.7878,-68.8168,0.0,-113.814,-97.7059,0.0,-123.115,-85.6902,0.0,-108.558,-74.2658,0.0,-122.812,35.1036,0.0,-143.121,44.9045,0.0,-118.177,35.8378,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-113.542,35.1036,0.0,-137.844,59.1534,0.0,-109.36,32.973,0.0,-131.152,72.7953,0.0,-106.042,29.6546,0.0,-123.115,85.6902,0.0,-113.814,97.7059,0.0,126.994,32.973,0.0,146.929,30.1948,0.0,130.312,29.6546,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-26.0424,-112.763,0.0,-26.7766,-108.128,0.0,-7.59738,-149.807,0.0,-22.7142,-148.27,0.0,-26.7766,-117.398,0.0,-77.1345,76.9253,0.0,-41.0424,-97.7631,0.0,-45.6777,-98.4973,0.0,-49.8592,-100.628,0.0,-53.1777,-103.946,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-55.3083,-108.128,0.0,-81.7698,77.6595,0.0,-22.7142,148.27,0.0,-7.59738,149.807,0.0,-4.63525,134.266,0.0,-8.81678,132.135,0.0,-12.1353,128.817,0.0,-14.2658,124.635,0.0,-15.0,120.0,0.0,-37.5979,145.212,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [52.0958,140.663,0.0,41.0424,-97.7631,0.0,15.0,120.0,0.0,14.2658,124.635,0.0,12.1353,128.817,0.0,8.81678,132.135,0.0,4.63525,134.266,0.0,103.911,16.2025,0.0,106.042,12.021,0.0,103.923,-45.0,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [99.2878,-45.7342,0.0,95.1063,-47.8647,0.0,91.7878,-51.1832,0.0,77.1345,76.9253,0.0,81.7698,77.6595,0.0,85.9513,79.7901,0.0,89.2698,83.1086,0.0,91.4004,87.2901,0.0,92.1345,91.9253,0.0,91.4004,96.5606,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [89.2698,100.742,0.0,85.9513,104.061,0.0,81.7698,106.191,0.0,66.0591,134.671,0.0,72.4993,106.191,0.0,68.3177,104.061,0.0,64.9993,100.742,0.0,62.8687,96.5606,0.0,62.1345,91.9253,0.0,22.7142,-148.27,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [26.0424,-112.763,0.0,26.7766,-117.398,0.0,28.9072,-121.58,0.0,32.2256,-124.898,0.0,0.0,105.0,0.0,36.4072,-98.4973,0.0,32.2256,-100.628,0.0,28.9072,-103.946,0.0,26.7766,-108.128,0.0,7.59738,-149.807,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-28.9072,-103.946,0.0,-32.2256,-100.628,0.0,-36.4072,-98.4973,0.0,-37.5979,-145.212,0.0,-36.4072,-127.029,0.0,-32.2256,-124.898,0.0,-28.9072,-121.58,0.0,-103.911,16.2025,0.0,-91.7878,-51.1832,0.0,-95.1063,-47.8647,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-99.2878,-45.7342,0.0,-103.923,-45.0,0.0,-106.042,12.021,0.0,-103.345,108.719,0.0,-92.1345,91.9253,0.0,-91.4004,87.2901,0.0,-89.2698,83.1086,0.0,-85.9513,79.7901,0.0,-77.1345,106.925,0.0,-81.7698,106.191,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-85.9513,104.061,0.0,-89.2698,100.742,0.0,-91.4004,96.5606,0.0,-108.558,-45.7342,0.0,-143.121,-44.9045,0.0,-146.929,-30.1948,0.0,-149.23,-15.1752,0.0,-150.0,0.0,0.0,-118.177,5.83778,0.0,-113.542,6.57193,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-109.36,8.70253,0.0,-137.844,-59.1534,0.0,-112.74,-47.8647,0.0,-116.058,-51.1832,0.0,-118.189,-55.3647,0.0,-118.923,-60.0,0.0,-131.152,-72.7953,0.0,-118.189,-64.6353,0.0,-116.058,-68.8168,0.0,-112.74,-72.1353,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-149.23,15.1752,0.0,-132.443,25.473,0.0,-133.177,20.8378,0.0,-132.443,16.2025,0.0,-130.312,12.021,0.0,-126.994,8.70253,0.0,-122.812,6.57193,0.0,-91.8159,118.616,0.0,-72.4993,77.6595,0.0,-68.3177,79.7901,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-64.9993,83.1086,0.0,-62.8687,87.2901,0.0,-52.0958,140.663,0.0,-14.2658,115.365,0.0,-12.1353,111.183,0.0,-8.81678,107.865,0.0,-4.63525,105.734,0.0,4.63525,105.734,0.0,8.81678,107.865,0.0,12.1353,111.183,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [14.2658,115.365,0.0,53.1777,-103.946,0.0,49.8592,-100.628,0.0,45.6777,-98.4973,0.0,62.8687,87.2901,0.0,64.9993,83.1086,0.0,68.3177,79.7901,0.0,72.4993,77.6595,0.0,149.23,15.1752,0.0,150.0,0.0,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [130.312,12.021,0.0,132.443,16.2025,0.0,133.177,20.8378,0.0,132.443,25.473,0.0,118.177,5.83778,0.0,122.812,6.57193,0.0,126.994,8.70253,0.0,109.36,8.70253,0.0,113.542,6.57193,0.0,149.23,-15.1752,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [146.929,-30.1948,0.0,143.121,-44.9045,0.0,108.558,-45.7342,0.0,137.844,-59.1534,0.0,131.152,-72.7953,0.0,118.923,-60.0,0.0,118.189,-55.3647,0.0,116.058,-51.1832,0.0,112.74,-47.8647,0.0,112.74,-72.1353,0.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [116.058,-68.8168,0.0,118.189,-64.6353,0.0])));
+
+	/** Large attribute array: IndexedFaceSet coordIndex field, scene-graph level=9, element #152, 1032 total numbers */
+	this.IndexedFaceSet_9_152_coordIndex = new autoclass.MFInt32(java.newArray("int", [40,41,42,-1,41,43,42,-1,44,45,46,-1,45,47,46,-1,14,13,48,-1,13,10,48,-1,48,10,12,-1,18,17,49,-1,17,50,49,-1,49,50,51,-1,52,51,53,-1,51,50,53,-1,22,21,38,-1,21,54,38,-1,38,54,39,-1,5,33,55,-1,33,56,55,-1,55,56,26,-1,56,57,26,-1,26,57,24,-1,29,58,27,-1,58,59,27,-1,27,59,60,-1,61,42,62,-1,42,63,62,-1,62,63,64,-1,63,65,64,-1,64,65,66,-1,65,67,66,-1,66,67,68,-1,67,69,68,-1,68,69,70,-1,29,28,71,-1,28,72,71,-1,71,72,31,-1,72,73,31,-1,31,73,32,-1,74,17,75,-1,17,20,75,-1,75,20,76,-1,35,34,77,-1,34,78,77,-1,77,78,79,-1,77,79,80,-1,79,81,80,-1,80,81,82,-1,81,83,82,-1,82,83,84,-1,83,85,84,-1,84,85,86,-1,68,70,87,-1,70,88,87,-1,87,88,89,-1,90,91,92,-1,90,92,93,-1,90,93,94,-1,95,96,9,-1,95,9,8,-1,95,8,52,-1,95,52,53,-1,95,53,13,-1,95,13,16,-1,95,16,97,-1,95,97,98,-1,95,98,99,-1,95,99,100,-1,95,100,101,-1,102,103,101,-1,102,101,104,-1,102,104,105,-1,102,105,106,-1,102,106,107,-1,102,107,108,-1,102,108,47,-1,102,47,45,-1,102,45,109,-1,46,47,110,-1,46,110,111,-1,46,111,112,-1,46,112,113,-1,46,113,114,-1,46,114,115,-1,46,115,116,-1,117,0,2,-1,117,2,118,-1,117,118,119,-1,117,119,120,-1,117,120,121,-1,117,121,122,-1,1,63,42,-1,1,42,123,-1,1,123,124,-1,1,124,125,-1,1,125,126,-1,42,43,127,-1,42,127,128,-1,42,128,129,-1,42,129,130,-1,42,130,131,-1,42,131,132,-1,42,132,123,-1,133,116,115,-1,133,115,134,-1,133,134,135,-1,133,135,136,-1,133,136,137,-1,133,137,138,-1,133,138,43,-1,133,43,41,-1,139,26,25,-1,139,25,140,-1,139,140,141,-1,139,141,142,-1,139,142,143,-1,144,101,145,-1,144,145,146,-1,144,146,147,-1,144,147,94,-1,144,94,93,-1,144,93,148,-1,144,148,139,-1,144,139,143,-1,144,143,149,-1,144,149,150,-1,144,150,151,-1,144,151,152,-1,144,152,115,-1,153,92,91,-1,153,91,154,-1,153,154,155,-1,153,155,156,-1,153,156,11,-1,153,11,10,-1,157,158,159,-1,157,159,160,-1,157,160,161,-1,157,161,162,-1,157,162,8,-1,157,8,7,-1,9,96,163,-1,9,163,164,-1,9,164,165,-1,9,165,166,-1,9,166,167,-1,9,167,86,-1,9,86,85,-1,167,166,168,-1,167,168,169,-1,167,169,170,-1,167,170,171,-1,167,171,172,-1,159,158,173,-1,159,173,174,-1,159,174,175,-1,159,175,176,-1,159,176,177,-1,159,177,178,-1,159,178,179,-1,159,179,180,-1,181,182,183,-1,181,183,184,-1,181,184,185,-1,181,185,180,-1,181,180,179,-1,186,75,76,-1,186,76,187,-1,186,187,188,-1,186,188,189,-1,186,189,182,-1,186,182,181,-1,190,176,191,-1,190,191,192,-1,190,192,193,-1,190,193,194,-1,190,194,36,-1,190,36,35,-1,176,175,195,-1,176,195,196,-1,176,196,191,-1,172,23,22,-1,172,22,197,-1,172,197,167,-1,101,103,198,-1,101,198,38,-1,101,38,37,-1,101,37,199,-1,101,199,200,-1,101,200,201,-1,101,201,202,-1,101,202,95,-1,101,144,203,-1,101,203,204,-1,101,204,205,-1,101,205,206,-1,101,206,104,-1,115,114,207,-1,115,207,208,-1,115,208,209,-1,115,209,210,-1,115,210,144,-1,126,115,211,-1,126,211,212,-1,126,212,213,-1,126,213,6,-1,126,6,5,-1,126,5,31,-1,126,31,30,-1,126,30,2,-1,126,2,1,-1,115,126,214,-1,115,214,215,-1,115,215,216,-1,115,216,217,-1,115,217,134,-1,218,87,89,-1,218,89,219,-1,218,219,220,-1,218,220,221,-1,218,221,222,-1,218,222,223,-1,223,222,224,-1,223,224,225,-1,223,225,226,-1,121,227,228,-1,121,228,229,-1,121,229,230,-1,121,230,223,-1,121,223,226,-1,121,226,231,-1,121,231,232,-1,121,232,122,-1,233,228,227,-1,233,227,234,-1,233,234,235,-1,233,235,236,-1,233,236,237,-1,233,237,238,-1,238,237,239,-1,238,239,240,-1,238,240,241,-1,238,241,60,-1,238,60,59,-1,0,1,2,-1,3,4,5,-1,3,5,6,-1,7,8,9,-1,10,11,12,-1,13,14,15,-1,16,13,15,-1,17,18,19,-1,19,20,17,-1,21,22,23,-1,24,25,26,-1,27,28,29,-1,30,31,32,-1,5,4,33,-1,34,35,36,-1,37,38,39,-1]));
+
+	/** Large attribute array: Coordinate point field, scene-graph level=10, element #152, 726 total numbers made up of 242 3-tuple values */
+	this.Coordinate_10_152_point = new autoclass.MFVec3f() /* splitting up long array to improve readability */
+	.append(new autoclass.MFVec3f(java.newArray("float", [103.177,20.8378,30.0,103.911,25.473,30.0,89.6572,-55.3647,30.0,56.0424,-112.763,30.0,55.3083,-117.398,30.0,66.0591,-134.671,30.0,55.3083,-108.128,30.0,-103.177,20.8378,30.0,-89.6572,-55.3647,30.0,-103.911,25.473,30.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-52.0958,-140.663,30.0,-41.0424,-127.763,30.0,-45.6777,-127.029,30.0,-66.0591,-134.671,30.0,-53.1777,-121.58,30.0,-55.3083,-117.398,30.0,-56.0424,-112.763,30.0,-103.345,-108.719,30.0,-95.1063,-72.1353,30.0,-99.2878,-74.2658,30.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-103.923,-75.0,30.0,-68.3177,104.061,30.0,-79.3446,127.297,30.0,-72.4993,106.191,30.0,41.0424,-127.763,30.0,36.4072,-127.029,30.0,37.5979,-145.212,30.0,103.923,-75.0,30.0,99.2878,-74.2658,30.0,103.345,-108.719,30.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [88.923,-60.0,30.0,79.3446,-127.297,30.0,89.6572,-64.6353,30.0,53.1777,-121.58,30.0,-126.994,32.973,30.0,-146.929,30.1948,30.0,-130.312,29.6546,30.0,-62.1345,91.9253,30.0,-66.0591,134.671,30.0,-62.8687,96.5606,30.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [91.8159,118.616,30.0,79.3446,127.297,30.0,103.345,108.719,30.0,77.1345,106.925,30.0,22.7142,148.27,30.0,7.59738,149.807,30.0,37.5979,145.212,30.0,0.0,135.0,30.0,-49.8592,-124.898,30.0,-91.7878,-68.8168,30.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-91.8159,-118.616,30.0,-89.6572,-64.6353,30.0,-88.923,-60.0,30.0,-79.3446,-127.297,30.0,-64.9993,100.742,30.0,52.0958,-140.663,30.0,49.8592,-124.898,30.0,45.6777,-127.029,30.0,113.814,-97.7059,30.0,123.115,-85.6902,30.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [108.558,-74.2658,30.0,113.814,97.7059,30.0,123.115,85.6902,30.0,106.042,29.6546,30.0,131.152,72.7953,30.0,109.36,32.973,30.0,137.844,59.1534,30.0,113.542,35.1036,30.0,143.121,44.9045,30.0,118.177,35.8378,30.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [122.812,35.1036,30.0,91.8159,-118.616,30.0,95.1063,-72.1353,30.0,91.7878,-68.8168,30.0,-113.814,-97.7059,30.0,-123.115,-85.6902,30.0,-108.558,-74.2658,30.0,-143.121,44.9045,30.0,-122.812,35.1036,30.0,-118.177,35.8378,30.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-137.844,59.1534,30.0,-113.542,35.1036,30.0,-131.152,72.7953,30.0,-109.36,32.973,30.0,-123.115,85.6902,30.0,-106.042,29.6546,30.0,-113.814,97.7059,30.0,146.929,30.1948,30.0,126.994,32.973,30.0,130.312,29.6546,30.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-26.0424,-112.763,30.0,-26.7766,-117.398,30.0,-22.7142,-148.27,30.0,-7.59738,-149.807,30.0,-26.7766,-108.128,30.0,-77.1345,76.9253,30.0,-81.7698,77.6595,30.0,-55.3083,-108.128,30.0,-53.1777,-103.946,30.0,-49.8592,-100.628,30.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-45.6777,-98.4973,30.0,-41.0424,-97.7631,30.0,-22.7142,148.27,30.0,-37.5979,145.212,30.0,-15.0,120.0,30.0,-14.2658,124.635,30.0,-12.1353,128.817,30.0,-8.81678,132.135,30.0,-4.63525,134.266,30.0,-7.59738,149.807,30.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [4.63525,134.266,30.0,8.81678,132.135,30.0,12.1353,128.817,30.0,14.2658,124.635,30.0,15.0,120.0,30.0,41.0424,-97.7631,30.0,52.0958,140.663,30.0,103.911,16.2025,30.0,91.7878,-51.1832,30.0,95.1063,-47.8647,30.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [99.2878,-45.7342,30.0,103.923,-45.0,30.0,106.042,12.021,30.0,89.2698,83.1086,30.0,85.9513,79.7901,30.0,81.7698,77.6595,30.0,77.1345,76.9253,30.0,81.7698,106.191,30.0,85.9513,104.061,30.0,89.2698,100.742,30.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [91.4004,96.5606,30.0,92.1345,91.9253,30.0,91.4004,87.2901,30.0,66.0591,134.671,30.0,62.1345,91.9253,30.0,62.8687,96.5606,30.0,64.9993,100.742,30.0,68.3177,104.061,30.0,72.4993,106.191,30.0,22.7142,-148.27,30.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [32.2256,-124.898,30.0,28.9072,-121.58,30.0,26.7766,-117.398,30.0,26.0424,-112.763,30.0,0.0,105.0,30.0,-36.4072,-98.4973,30.0,-32.2256,-100.628,30.0,-28.9072,-103.946,30.0,7.59738,-149.807,30.0,26.7766,-108.128,30.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [28.9072,-103.946,30.0,32.2256,-100.628,30.0,36.4072,-98.4973,30.0,-37.5979,-145.212,30.0,-28.9072,-121.58,30.0,-32.2256,-124.898,30.0,-36.4072,-127.029,30.0,-103.911,16.2025,30.0,-106.042,12.021,30.0,-103.923,-45.0,30.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-99.2878,-45.7342,30.0,-95.1063,-47.8647,30.0,-91.7878,-51.1832,30.0,-85.9513,79.7901,30.0,-89.2698,83.1086,30.0,-91.4004,87.2901,30.0,-92.1345,91.9253,30.0,-103.345,108.719,30.0,-91.4004,96.5606,30.0,-89.2698,100.742,30.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-85.9513,104.061,30.0,-81.7698,106.191,30.0,-77.1345,106.925,30.0,-109.36,8.70253,30.0,-113.542,6.57193,30.0,-118.177,5.83778,30.0,-150.0,0.0,30.0,-149.23,-15.1752,30.0,-146.929,-30.1948,30.0,-143.121,-44.9045,30.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-108.558,-45.7342,30.0,-137.844,-59.1534,30.0,-118.923,-60.0,30.0,-118.189,-55.3647,30.0,-116.058,-51.1832,30.0,-112.74,-47.8647,30.0,-131.152,-72.7953,30.0,-112.74,-72.1353,30.0,-116.058,-68.8168,30.0,-118.189,-64.6353,30.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-149.23,15.1752,30.0,-130.312,12.021,30.0,-132.443,16.2025,30.0,-133.177,20.8378,30.0,-132.443,25.473,30.0,-122.812,6.57193,30.0,-126.994,8.70253,30.0,-91.8159,118.616,30.0,-52.0958,140.663,30.0,-62.8687,87.2901,30.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [-64.9993,83.1086,30.0,-68.3177,79.7901,30.0,-72.4993,77.6595,30.0,-4.63525,105.734,30.0,-8.81678,107.865,30.0,-12.1353,111.183,30.0,-14.2658,115.365,30.0,14.2658,115.365,30.0,12.1353,111.183,30.0,8.81678,107.865,30.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [4.63525,105.734,30.0,45.6777,-98.4973,30.0,49.8592,-100.628,30.0,53.1777,-103.946,30.0,72.4993,77.6595,30.0,68.3177,79.7901,30.0,64.9993,83.1086,30.0,62.8687,87.2901,30.0,149.23,15.1752,30.0,132.443,25.473,30.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [133.177,20.8378,30.0,132.443,16.2025,30.0,130.312,12.021,30.0,150.0,0.0,30.0,126.994,8.70253,30.0,122.812,6.57193,30.0,118.177,5.83778,30.0,108.558,-45.7342,30.0,143.121,-44.9045,30.0,146.929,-30.1948,30.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [149.23,-15.1752,30.0,113.542,6.57193,30.0,109.36,8.70253,30.0,137.844,-59.1534,30.0,112.74,-47.8647,30.0,116.058,-51.1832,30.0,118.189,-55.3647,30.0,118.923,-60.0,30.0,131.152,-72.7953,30.0,118.189,-64.6353,30.0])))
+	.append(new autoclass.MFVec3f(java.newArray("float", [116.058,-68.8168,30.0,112.74,-72.1353,30.0])));
+  this.x3dModel = (new autoclass.X3D()).setProfile("Interchange").setVersion("3.3")
+  .setHead((new autoclass.head())
+    .addMeta((new autoclass.meta()).setName("title").setContent("CatiaHubDiscWithHoles.x3d"))
+    .addMeta((new autoclass.meta()).setName("description").setContent("Provide a Disc with holes part for use by CatiaHubAssemblyInline using CADAssembly and Inline nodes."))
+    .addMeta((new autoclass.meta()).setName("creator").setContent("Hyokwang Lee, PartDB Co., Ltd."))
+    .addMeta((new autoclass.meta()).setName("created").setContent("25 July 2012"))
+    .addMeta((new autoclass.meta()).setName("modified").setContent("28 November 2019"))
+    .addMeta((new autoclass.meta()).setName("reference").setContent("https://www.web3d.org/x3d/specifications/ISO-IEC-19775-Amendment1-X3DAbstractSpecification/Part01/components/CADGeometry.html"))
+    .addMeta((new autoclass.meta()).setName("subject").setContent("X3D CAD CADInterchange profile"))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("CATIA V5 R18 and PartDB Converter with Xj3D"))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("Xj3D, http://www.xj3d.org"))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/Basic/CAD/CatiaHubDiscWithHoles.x3d"))
+    .addMeta((new autoclass.meta()).setName("license").setContent("../license.html")))
+  .setScene((new autoclass.Scene())
+    .addChild((new autoclass.WorldInfo()).setInfo(new autoclass.MFString("\"File created using CATIA\"")).setTitle("CatiaHubDiscWithHoles.x3d"))
+    .addChild((new autoclass.NavigationInfo()).setType(new autoclass.MFString("\"EXAMINE\" \"WALK\" \"FLY\"")))
+    .addChild((new autoclass.Background()).setSkyColor(new autoclass.MFColor(java.newArray("float", [1.0,1.0,1.0]))))
+    .addChild((new autoclass.Viewpoint()).setDescription("Main Viewpoint").setOrientation(0.326678,0.502925,0.800218,2.185925).setPosition(0.411502,0.183945,0.216403).setFieldOfView(0.471225))
+    .addChild((new autoclass.Viewpoint()).setDescription("Iso View").setOrientation(0.187053,0.451587,0.872399,2.448076).setPosition(0.288675,0.288675,0.288675).setFieldOfView(0.471225))
+    .addChild((new autoclass.Viewpoint()).setDescription("Front View").setFieldOfView(0.471225).setPosition(0.5,0.0,0.0).setOrientation(0.57735,0.57735,0.57735,2.094395))
+    .addChild((new autoclass.Viewpoint()).setDescription("Back View").setPosition(-0.5,0.0,0.0).setFieldOfView(0.471225).setOrientation(0.57735,-0.57735,-0.57735,2.094395))
+    .addChild((new autoclass.Viewpoint()).setDescription("Left View").setPosition(0.0,-0.5,0.0).setFieldOfView(0.471225).setOrientation(1.0,-1.73E-4,1.73E-4,1.570796))
+    .addChild((new autoclass.Viewpoint()).setDescription("Right View").setOrientation(-1.22E-4,-0.707107,-0.707107,3.141348).setPosition(0.0,0.5,0.0).setFieldOfView(0.471225))
+    .addChild((new autoclass.Viewpoint()).setDescription("Top View").setPosition(0.0,0.0,0.5).setOrientation(0.0,0.0,1.0,1.570796).setFieldOfView(0.471225))
+    .addChild((new autoclass.Viewpoint()).setDescription("Bottom View").setPosition(0.0,0.0,-0.5).setFieldOfView(0.471225).setOrientation(0.707107,0.707107,0.0,3.141593))
+    .addChild((new autoclass.Transform()).setScale(0.001,0.001,0.001)
+      .addChild((new autoclass.Group())
+        .addChild((new autoclass.Group())
+          .addChild((new autoclass.Group())
+            .addChild((new autoclass.Group("_03E91BA8"))
+              .addChild((new autoclass.Shape())
+                .setAppearance((new autoclass.Appearance())
+                  .setMaterial((new autoclass.Material("_material0")).setDiffuseColor(1.0,0.745098,0.278431)))
+                .setGeometry((new autoclass.IndexedFaceSet()).setSolid(false).setCoordIndex(this.IndexedFaceSet_9_27_coordIndex)
+                  .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_10_27_point))
+                  .setNormal((new autoclass.Normal()).setVector(this.Normal_10_28_vector))))
+              .addChild((new autoclass.Shape())
+                .setAppearance((new autoclass.Appearance())
+                  .setMaterial((new autoclass.Material()).setUSE("_material0")))
+                .setGeometry((new autoclass.IndexedFaceSet()).setSolid(false).setCoordIndex(this.IndexedFaceSet_9_33_coordIndex)
+                  .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_10_33_point))
+                  .setNormal((new autoclass.Normal()).setVector(this.Normal_10_34_vector))))
+              .addChild((new autoclass.Shape())
+                .setAppearance((new autoclass.Appearance())
+                  .setMaterial((new autoclass.Material()).setUSE("_material0")))
+                .setGeometry((new autoclass.IndexedFaceSet()).setSolid(false).setCoordIndex(this.IndexedFaceSet_9_39_coordIndex)
+                  .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_10_39_point))
+                  .setNormal((new autoclass.Normal()).setVector(this.Normal_10_40_vector))))
+              .addChild((new autoclass.Shape())
+                .setAppearance((new autoclass.Appearance())
+                  .setMaterial((new autoclass.Material()).setUSE("_material0")))
+                .setGeometry((new autoclass.IndexedFaceSet()).setSolid(false).setCoordIndex(this.IndexedFaceSet_9_45_coordIndex)
+                  .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_10_45_point))
+                  .setNormal((new autoclass.Normal()).setVector(this.Normal_10_46_vector))))
+              .addChild((new autoclass.Shape())
+                .setAppearance((new autoclass.Appearance())
+                  .setMaterial((new autoclass.Material()).setUSE("_material0")))
+                .setGeometry((new autoclass.IndexedFaceSet()).setSolid(false).setCoordIndex(this.IndexedFaceSet_9_51_coordIndex)
+                  .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_10_51_point))
+                  .setNormal((new autoclass.Normal()).setVector(this.Normal_10_52_vector))))
+              .addChild((new autoclass.Shape())
+                .setAppearance((new autoclass.Appearance())
+                  .setMaterial((new autoclass.Material()).setUSE("_material0")))
+                .setGeometry((new autoclass.IndexedFaceSet()).setSolid(false).setCoordIndex(this.IndexedFaceSet_9_57_coordIndex)
+                  .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_10_57_point))
+                  .setNormal((new autoclass.Normal()).setVector(this.Normal_10_58_vector))))
+              .addChild((new autoclass.Shape())
+                .setAppearance((new autoclass.Appearance())
+                  .setMaterial((new autoclass.Material()).setUSE("_material0")))
+                .setGeometry((new autoclass.IndexedFaceSet()).setSolid(false).setCoordIndex(this.IndexedFaceSet_9_63_coordIndex)
+                  .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_10_63_point))
+                  .setNormal((new autoclass.Normal()).setVector(this.Normal_10_64_vector))))
+              .addChild((new autoclass.Shape())
+                .setAppearance((new autoclass.Appearance())
+                  .setMaterial((new autoclass.Material()).setUSE("_material0")))
+                .setGeometry((new autoclass.IndexedFaceSet()).setSolid(false).setCoordIndex(this.IndexedFaceSet_9_69_coordIndex)
+                  .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_10_69_point))
+                  .setNormal((new autoclass.Normal()).setVector(this.Normal_10_70_vector))))
+              .addChild((new autoclass.Shape())
+                .setAppearance((new autoclass.Appearance())
+                  .setMaterial((new autoclass.Material()).setUSE("_material0")))
+                .setGeometry((new autoclass.IndexedFaceSet()).setSolid(false).setCoordIndex(this.IndexedFaceSet_9_75_coordIndex)
+                  .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_10_75_point))
+                  .setNormal((new autoclass.Normal()).setVector(this.Normal_10_76_vector))))
+              .addChild((new autoclass.Shape())
+                .setAppearance((new autoclass.Appearance())
+                  .setMaterial((new autoclass.Material()).setUSE("_material0")))
+                .setGeometry((new autoclass.IndexedFaceSet()).setSolid(false).setCoordIndex(this.IndexedFaceSet_9_81_coordIndex)
+                  .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_10_81_point))
+                  .setNormal((new autoclass.Normal()).setVector(this.Normal_10_82_vector))))
+              .addChild((new autoclass.Shape())
+                .setAppearance((new autoclass.Appearance())
+                  .setMaterial((new autoclass.Material()).setUSE("_material0")))
+                .setGeometry((new autoclass.IndexedFaceSet()).setSolid(false).setCoordIndex(this.IndexedFaceSet_9_87_coordIndex)
+                  .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_10_87_point))
+                  .setNormal((new autoclass.Normal()).setVector(this.Normal_10_88_vector))))
+              .addChild((new autoclass.Shape())
+                .setAppearance((new autoclass.Appearance())
+                  .setMaterial((new autoclass.Material()).setUSE("_material0")))
+                .setGeometry((new autoclass.IndexedFaceSet()).setSolid(false).setCoordIndex(this.IndexedFaceSet_9_93_coordIndex)
+                  .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_10_93_point))
+                  .setNormal((new autoclass.Normal()).setVector(this.Normal_10_94_vector))))
+              .addChild((new autoclass.Shape())
+                .setAppearance((new autoclass.Appearance())
+                  .setMaterial((new autoclass.Material()).setUSE("_material0")))
+                .setGeometry((new autoclass.IndexedFaceSet()).setSolid(false).setCoordIndex(this.IndexedFaceSet_9_99_coordIndex)
+                  .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_10_99_point))
+                  .setNormal((new autoclass.Normal()).setVector(this.Normal_10_100_vector))))
+              .addChild((new autoclass.Shape())
+                .setAppearance((new autoclass.Appearance())
+                  .setMaterial((new autoclass.Material()).setUSE("_material0")))
+                .setGeometry((new autoclass.IndexedFaceSet()).setSolid(false).setCoordIndex(this.IndexedFaceSet_9_105_coordIndex)
+                  .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_10_105_point))
+                  .setNormal((new autoclass.Normal()).setVector(this.Normal_10_106_vector))))
+              .addChild((new autoclass.Shape())
+                .setAppearance((new autoclass.Appearance())
+                  .setMaterial((new autoclass.Material()).setUSE("_material0")))
+                .setGeometry((new autoclass.IndexedFaceSet()).setSolid(false).setCoordIndex(this.IndexedFaceSet_9_111_coordIndex)
+                  .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_10_111_point))
+                  .setNormal((new autoclass.Normal()).setVector(this.Normal_10_112_vector))))
+              .addChild((new autoclass.Shape())
+                .setAppearance((new autoclass.Appearance())
+                  .setMaterial((new autoclass.Material()).setUSE("_material0")))
+                .setGeometry((new autoclass.IndexedFaceSet()).setSolid(false).setCoordIndex(this.IndexedFaceSet_9_117_coordIndex)
+                  .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_10_117_point))
+                  .setNormal((new autoclass.Normal()).setVector(this.Normal_10_118_vector))))
+              .addChild((new autoclass.Shape())
+                .setAppearance((new autoclass.Appearance())
+                  .setMaterial((new autoclass.Material()).setUSE("_material0")))
+                .setGeometry((new autoclass.IndexedFaceSet()).setSolid(false).setCoordIndex(this.IndexedFaceSet_9_123_coordIndex)
+                  .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_10_123_point))
+                  .setNormal((new autoclass.Normal()).setVector(this.Normal_10_124_vector))))
+              .addChild((new autoclass.Shape())
+                .setAppearance((new autoclass.Appearance())
+                  .setMaterial((new autoclass.Material()).setUSE("_material0")))
+                .setGeometry((new autoclass.IndexedFaceSet()).setSolid(false).setCoordIndex(this.IndexedFaceSet_9_129_coordIndex)
+                  .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_10_129_point))
+                  .setNormal((new autoclass.Normal()).setVector(this.Normal_10_130_vector))))
+              .addChild((new autoclass.Shape())
+                .setAppearance((new autoclass.Appearance())
+                  .setMaterial((new autoclass.Material()).setUSE("_material0")))
+                .setGeometry((new autoclass.IndexedFaceSet()).setSolid(false).setCoordIndex(this.IndexedFaceSet_9_135_coordIndex)
+                  .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_10_135_point))
+                  .setNormal((new autoclass.Normal()).setVector(this.Normal_10_136_vector))))
+              .addChild((new autoclass.Shape())
+                .setAppearance((new autoclass.Appearance())
+                  .setMaterial((new autoclass.Material()).setUSE("_material0")))
+                .setGeometry((new autoclass.IndexedFaceSet()).setSolid(false).setCoordIndex(this.IndexedFaceSet_9_141_coordIndex)
+                  .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_10_141_point))
+                  .setNormal((new autoclass.Normal()).setVector(this.Normal_10_142_vector))))
+              .addChild((new autoclass.Shape())
+                .setAppearance((new autoclass.Appearance())
+                  .setMaterial((new autoclass.Material()).setUSE("_material0")))
+                .setGeometry((new autoclass.IndexedFaceSet()).setSolid(false).setCoordIndex(this.IndexedFaceSet_9_147_coordIndex)
+                  .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_10_147_point))))
+              .addChild((new autoclass.Shape())
+                .setAppearance((new autoclass.Appearance())
+                  .setMaterial((new autoclass.Material()).setUSE("_material0")))
+                .setGeometry((new autoclass.IndexedFaceSet()).setSolid(false).setCoordIndex(this.IndexedFaceSet_9_152_coordIndex)
+                  .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_10_152_point))))))))));
+  },
+  // end of initialize() method
+
+
+  /** Provide a shallow copy of the X3D model.
+   * @return CatiaHubDiscWithHoles model
+   */
+  getX3dModel : function()
+  {	  
+	  return this.x3dModel;
+  },
+  
+  /** Indicate X3DJSAIL validation results for this X3D model.
+   * @return validation results plus exception information, if any
+   */
+  validateSelf : function()
+  {
+	var validationResult = "";
+	var  exceptionResult = "";
+	try
+	{
+		this.initialize();
+		
+		if ((this.getX3dModel() == null) || (this.getX3dModel().getHead() == null))
+		{
+			validationResult = "empty scene, nothing to validate. " + this.x3dModel.validate();
+			return validationResult;
+		}
+		validationResult += this.x3dModel.validate(); // walk entire tree to validate correctness
+	}
+	catch (e)
+	{
+		exceptionResult = e; // report exception failures, if any
+	}
+	if  (exceptionResult === "" && validationResult === "")
+	     return "success";
+	else
+	{
+		var returnMessage = "";
+		if  (exceptionResult !== "" && validationResult !== "")
+			returnMessage += "\n*** ";
+		returnMessage += exceptionResult;
+		if  (exceptionResult === "" && validationResult !== "")
+			returnMessage = "\n" + returnMessage; // skip line before meta tags, etc.
+		returnMessage += validationResult;
+		return returnMessage;
+	}
+  },
+    /** Default main() method provided for test purposes.
+     * @param argv input parameters
+     */
+    main : function (argv)
+    {
+		var testObject = new CatiaHubDiscWithHoles();
+		console.log ("CatiaHubDiscWithHoles execution self-validation test results: " + testObject.validateSelf());
+	}
+}
+new CatiaHubDiscWithHoles().main();
+process.exit(0);
