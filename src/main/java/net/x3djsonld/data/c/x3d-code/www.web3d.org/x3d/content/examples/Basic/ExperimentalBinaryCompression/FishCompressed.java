@@ -1,0 +1,272 @@
+package net.x3djsonld.data;
+
+import org.web3d.x3d.jsail.Core.*;
+import org.web3d.x3d.jsail.EnvironmentalEffects.*;
+import org.web3d.x3d.jsail.fields.*;
+import org.web3d.x3d.jsail.Grouping.*;
+import org.web3d.x3d.jsail.Navigation.*;
+import org.web3d.x3d.jsail.Shape.*;
+import org.web3d.x3d.jsail.Texturing.*;
+
+// Javadoc annotations follow, see below for source.
+/**
+ * <p> Fish example with IndexedFaceSet compression. </p>
+ <p> Related links: <a href="../../../ExperimentalBinaryCompression/FishCompressed.java">FishCompressed.java</a> source, <a href="../../../ExperimentalBinaryCompression/FishCompressedIndex.html" target="_top">FishCompressed catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
+        <caption>Scene Meta Information</caption>
+		<tr style="background-color:silver; border-color:silver;">
+			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
+			<td style="text-align:left;   padding:10px 0px;">&nbsp; Document Metadata </td>
+		</tr>
+
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
+			<td> <a href="../../../ExperimentalBinaryCompression/FishCompressed.x3d">FishCompressed.x3d</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
+			<td> Fish example with IndexedFaceSet compression. </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
+			<td> Martin Isenburg </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> translator </i> </td>
+			<td> X3D-Edit VRML importer </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> translator </i> </td>
+			<td> Don Brutzman </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> created </i> </td>
+			<td> 26-Sep-2002 </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> translated </i> </td>
+			<td> 28 April 2003 </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
+			<td> 20 October 2019 </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
+			<td> <a href="http://www.cs.unc.edu/~isenburg/ac/models" target="_blank">http://www.cs.unc.edu/~isenburg/ac/models</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
+			<td> <a href="http://www.cs.unc.edu/~isenburg/research/pmc" target="_blank">http://www.cs.unc.edu/~isenburg/research/pmc</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
+			<td> <a href="http://www.cs.unc.edu/~isenburg/pmc/pmc.html" target="_blank">http://www.cs.unc.edu/~isenburg/pmc/pmc.html</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
+			<td> Martin Isenburg, Jack Snoeyink Binary Compression Rates for ASCII Formats, accepted for Web3D'03, March 2003 </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
+			<td> <a href="../../../ExperimentalBinaryCompression/isenburg/is-bcraf-03.pdf">isenburg/is-bcraf-03.pdf</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
+			<td> <a href="http://www.cs.unc.edu/~isenburg/research/papers/is-bcraf-03.pdf" target="_blank">http://www.cs.unc.edu/~isenburg/research/papers/is-bcraf-03.pdf</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
+			<td> Martin Isenburg, Jack Snoeyink, Coding with ASCII: compact, yet text-based 3D content, Proceedings of the 1st International Symposium on 3D Data Processing, Visualization and Transmission'02 (Invited Paper), pages 609 - 616, June 2002. </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
+			<td> <a href="../../../ExperimentalBinaryCompression/isenburg/is-cwa-02.pdf">isenburg/is-cwa-02.pdf</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
+			<td> <a href="http://www.cs.unc.edu/~isenburg/papers/is-cwa-02.pdf" target="_blank">http://www.cs.unc.edu/~isenburg/papers/is-cwa-02.pdf</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
+			<td> Martin Isenburg, Jack Snoeyink Coding Polygon Meshes as Compressable ASCII, Proceedings of Web3D Symposium'02 (Best Paper), pages 1 - 10, February 2002 </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
+			<td> <a href="../../../ExperimentalBinaryCompression/isenburg/is-cpmca-02.pdf">isenburg/is-cpmca-02.pdf</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
+			<td> <a href="http://www.cs.unc.edu/~isenburg/papers/is-cpmca-02.pdf" target="_blank">http://www.cs.unc.edu/~isenburg/papers/is-cpmca-02.pdf</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> subject </i> </td>
+			<td> X3D VRML binary compression </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/Basic/ExperimentalBinaryCompression/FishCompressed.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/Basic/ExperimentalBinaryCompression/FishCompressed.x3d</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
+			<td> X3D-Edit 3.3, <a href="https://savage.nps.edu/X3D-Edit" target="_blank">https://savage.nps.edu/X3D-Edit</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
+			<td> Vrml97ToX3dNist, <a href="http://ovrt.nist.gov/v2_x3d.html" target="_blank">http://ovrt.nist.gov/v2_x3d.html</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
+			<td> <a href="../../../ExperimentalBinaryCompression/../license.html">../license.html</a> </td>
+		</tr>
+		<tr style="background-color:silver; border-color:silver;">
+			<td style="text-align:center;" colspan="2">  &nbsp; </td>
+		</tr>
+	</table>
+
+	<p>
+		This program uses the
+		<a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>.
+		It has been produced using the 
+		<a href="https://www.web3d.org/x3d/stylesheets/X3dToJava.xslt" target="_blank">X3dToJava.xslt</a>
+		stylesheet to create Java source code from an <code>.x3d</code> model.
+	</p>
+
+	* @author Martin Isenburg
+ */
+
+public class FishCompressed
+{
+	/** Default constructor to create this object. */
+	public FishCompressed ()
+	{
+	  initialize();
+	}
+
+	/** Create and initialize the X3D model for this object. */
+	public final void initialize()
+	{
+  x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_3_0)
+  .setHead(new head()
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("FishCompressed.x3d"))
+    .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Fish example with IndexedFaceSet compression."))
+    .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Martin Isenburg"))
+    .addMeta(new meta().setName(meta.NAME_TRANSLATOR ).setContent("X3D-Edit VRML importer"))
+    .addMeta(new meta().setName(meta.NAME_TRANSLATOR ).setContent("Don Brutzman"))
+    .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("26-Sep-2002"))
+    .addMeta(new meta().setName(meta.NAME_TRANSLATED ).setContent("28 April 2003"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("20 October 2019"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://www.cs.unc.edu/~isenburg/ac/models"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://www.cs.unc.edu/~isenburg/research/pmc"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://www.cs.unc.edu/~isenburg/pmc/pmc.html"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("Martin Isenburg, Jack Snoeyink Binary Compression Rates for ASCII Formats, accepted for Web3D'03, March 2003"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("isenburg/is-bcraf-03.pdf"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://www.cs.unc.edu/~isenburg/research/papers/is-bcraf-03.pdf"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("Martin Isenburg, Jack Snoeyink, Coding with ASCII: compact, yet text-based 3D content, Proceedings of the 1st International Symposium on 3D Data Processing, Visualization and Transmission'02 (Invited Paper), pages 609 - 616, June 2002."))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("isenburg/is-cwa-02.pdf"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://www.cs.unc.edu/~isenburg/papers/is-cwa-02.pdf"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("Martin Isenburg, Jack Snoeyink Coding Polygon Meshes as Compressable ASCII, Proceedings of Web3D Symposium'02 (Best Paper), pages 1 - 10, February 2002"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("isenburg/is-cpmca-02.pdf"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://www.cs.unc.edu/~isenburg/papers/is-cpmca-02.pdf"))
+    .addMeta(new meta().setName(meta.NAME_SUBJECT    ).setContent("X3D VRML binary compression"))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://www.web3d.org/x3d/content/examples/Basic/ExperimentalBinaryCompression/FishCompressed.x3d"))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"))
+    .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html")))
+  .setScene(new Scene()
+    .addChild(new WorldInfo().setTitle("FishCompressed.x3d"))
+    .addChild(new ExternProtoDeclare("CompressedIndexedFaceSet").setName("CompressedIndexedFaceSet").setAppinfo("An ASCII-compressed IndexedFaceSet").setUrl(new String[] {"CodedCompressedPrototypes.x3d#CompressedIndexedFaceSet","https://www.web3d.org/x3d/content/examples/Basic/ExperimentalBinaryCompression/CodedCompressedPrototypes.x3d#CompressedIndexedFaceSet","CodedCompressedPrototypes.wrl#CompressedIndexedFaceSet","https://www.web3d.org/x3d/content/examples/Basic/ExperimentalBinaryCompression/CodedCompressedPrototypes.wrl#CompressedIndexedFaceSet"})
+      .addField(new field().setName("code").setType(field.TYPE_SFSTRING).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("ASCII-compressed coordIndex and texCoordIndex values"))
+      .addField(new field().setName("box_tex").setType(field.TYPE_MFFLOAT).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("bounding box of texture coordinates (always 4 values minU minV maxU maxV)"))
+      .addField(new field().setName("bits_tex").setType(field.TYPE_SFINT32).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("number of quantization bits for texture coordinates"))
+      .addField(new field().setName("box").setType(field.TYPE_MFFLOAT).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("bounding box of coordinates (always 6 values minX minY minZ maxX maxY maxZ)"))
+      .addField(new field().setName("bits").setType(field.TYPE_SFINT32).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("number of quantization bits for coordinates")))
+    .addComments(" ==================== ")
+    .addChild(new Viewpoint().setDescription("1M view").setPosition(0.0,0.0,1.0))
+    .addChild(new Background().setGroundColor(new MFColor(new double[] {0.05,0.1,0.3})).setSkyColor(new MFColor(new double[] {0.05,0.1,0.3})))
+    .addChild(new Transform().setRotation(0.0,1.0,0.0,1.57).setScale(0.025,0.025,0.025)
+      .addChild(new Shape()
+        .setAppearance(new Appearance()
+          .setMaterial(new Material().setDiffuseColor(1.0,1.0,1.0))
+          .addComments(" modulateTextureWithDiffuse=true by retaining Material and diffuseColor ")
+          .setTexture(new ImageTexture().setUrl(new String[] {"fish.jpg","https://www.web3d.org/x3d/content/examples/Basic/ExperimentalBinaryCompression/fish.jpg"})))
+        .setGeometry(new ProtoInstance("CompressedIndexedFaceSet").setContainerField("geometry")
+          .addFieldValue(new fieldValue().setName("code").setValue("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"))
+          .addFieldValue(new fieldValue().setName("box_tex").setValue(new double[] {.0146,.0749,.9896,.9834}))
+          .addFieldValue(new fieldValue().setName("bits_tex").setValue(10))
+          .addFieldValue(new fieldValue().setName("box").setValue(new double[] {-1.9725,-7.6861,-10.0,1.9725,7.6861,10.0}))
+          .addFieldValue(new fieldValue().setName("bits").setValue(12))))));
+    }
+	// end of initialize() method
+
+	/** The initialized model object, created within initialize() method. */
+	private X3D x3dModel;
+
+	/** 
+	 * Provide a 
+	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
+	 * of the X3D model.
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
+	 * @return FishCompressed model
+	 */
+	public X3D getX3dModel()
+	{	  
+		return x3dModel;
+	}
+	   
+    /** 
+	 * Default main() method provided for test purposes, uses CommandLine to set global ConfigurationProperties for this object.
+     * @param args array of input parameters, provided as arguments
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#handleArguments-java.lang.String:A-">X3D.handleArguments(args)</a>
+	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html#validationReport--">X3D.validationReport()</a>
+     * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html">CommandLine</a>
+     * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/CommandLine.html#USAGE">CommandLine.USAGE</a>
+     * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/ConfigurationProperties.html">ConfigurationProperties</a>
+     */
+    public static void main(String args[])
+    {
+        X3D thisExampleX3dModel = new FishCompressed().getX3dModel();
+
+		boolean hasArguments = (args != null) && (args.length > 0);
+		boolean validate = true; // default
+		boolean argumentsLoadNewModel = false;
+		String  fileName = new String();
+
+		if (args != null)
+		{
+			for (String arg : args)
+			{
+				if (arg.toLowerCase().startsWith("-v") || arg.toLowerCase().contains("validate"))
+				{
+					validate = true; // making sure
+				}
+				if (arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3D) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_CLASSICVRML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_X3DB) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_VRML97) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_EXI) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_GZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_ZIP) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_HTML) ||
+					arg.toLowerCase().endsWith(X3D.FILE_EXTENSION_XHTML))
+				{
+					argumentsLoadNewModel = true;
+					fileName = arg;
+				}
+			}
+		}
+		if      (argumentsLoadNewModel)
+			System.out.println("WARNING: \"net.x3djsonld.data.FishCompressed\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+		else if (hasArguments) // if no arguments provided, this method produces usage warning
+			thisExampleX3dModel.handleArguments(args);
+
+		if (validate)
+		{
+			System.out.print("Java program \"net.x3djsonld.data.FishCompressed\" self-validation test results: ");
+			String validationResults = thisExampleX3dModel.validationReport();
+            if (validationResults.startsWith("\n"))
+                System.out.println();
+			System.out.println(validationResults.trim());
+		}
+    }
+}
