@@ -649,7 +649,7 @@ class ClassPrinter:
 
 code = '''{
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "$id": "src/main/schema/x3d-'''+sys.argv[1]+'''-JSONSchema.json",
+        "$id": "https://www.web3d.org/specifications/x3d-'''+sys.argv[1]+'''-JSONSchema.json",
         "title": "JSON Schema X3D V'''+sys.argv[1]+'''",
         "description": "Experimental JSON Schema for X3D V'''+sys.argv[1]+'''",
         "type": "object",
