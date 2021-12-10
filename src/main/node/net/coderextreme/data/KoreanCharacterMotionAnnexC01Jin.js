@@ -37,7 +37,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild((new autoclass.Viewpoint()).setCenterOfRotation(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(0)])).setDescription("AnnexC01Jin").setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(3)])))
         .addChild((new autoclass.HAnimHumanoid()).setName("AnnexC01Jin").setDEF("hanim_AnnexC01Jin").setScale(java.newArray("float", [java.newFloat(0.0225), java.newFloat(0.0225), java.newFloat(0.0225)])).setVersion("2.0")
           .addComments((new autoclass.CommentsBlock("HAnimHumanoid original info='\"humanoidVersion=2.0\"'")))
-          .setMetadata((new autoclass.MetadataSet()).setName("HAnimHumanoid.info").setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid")
+          .setValue((new autoclass.MetadataSet()).setName("HAnimHumanoid.info").setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid")
             .addValue((new autoclass.MetadataString()).setName("humanoidVersion").setValue(java.newArray("java.lang.String", ["2.0"]))))
           .addSkeleton((new autoclass.HAnimJoint()).setName("humanoid_root").setDEF("hanim_humanoid_root").setCenter(java.newArray("float", [java.newFloat(0), java.newFloat(30.53), java.newFloat(-0.7076)])).setStiffness(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)]))
             .addChild((new autoclass.HAnimSegment()).setName("sacrum").setDEF("hanim_sacrum")

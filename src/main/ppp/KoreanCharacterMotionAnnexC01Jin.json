@@ -79,7 +79,7 @@
         },
         {
           "@name": "translated",
-          "@content": "18 November 2021"
+          "@content": "09 December 2021"
         },
         {
           "@name": "generator",
@@ -133,22 +133,24 @@
                 "#comment": "HAnimHumanoid original info='\"humanoidVersion=2.0\"'"
               }
             ],
-            "-metadata": {
-              "MetadataSet": {
-                "@name": "HAnimHumanoid.info",
-                "@reference": "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid",
-                "-value": [
-                  {
-                    "MetadataString": {
-                      "@name": "humanoidVersion",
-                      "@value": [
-                        "2.0"
-                      ]
+            "-value": [
+              {
+                "MetadataSet": {
+                  "@name": "HAnimHumanoid.info",
+                  "@reference": "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid",
+                  "-value": [
+                    {
+                      "MetadataString": {
+                        "@name": "humanoidVersion",
+                        "@value": [
+                          "2.0"
+                        ]
+                      }
                     }
-                  }
-                ]
+                  ]
+                }
               }
-            },
+            ],
             "-skeleton": [
               {
                 "HAnimJoint": {

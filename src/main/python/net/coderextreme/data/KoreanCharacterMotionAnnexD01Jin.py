@@ -120,7 +120,7 @@ MetadataString25.setValue(["2.0"])
 
 MetadataSet24.setValue(MetadataString25)
 
-HAnimHumanoid23.setMetadata(MetadataSet24)
+HAnimHumanoid23.setValue(MetadataSet24)
 HAnimJoint26 = HAnimJoint()
 HAnimJoint26.setName("humanoid_root")
 HAnimJoint26.setDEF("hanim_humanoid_root")

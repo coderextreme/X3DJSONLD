@@ -1,6 +1,6 @@
 "use strict";
 
-var xmldom = require('xmldom');
+var xmldom = require('@xmldom/xmldom');
 var DOMImplementation = new xmldom.DOMImplementation();
 var XMLSerializer = new xmldom.XMLSerializer();
 

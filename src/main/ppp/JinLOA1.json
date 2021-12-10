@@ -83,7 +83,7 @@
         },
         {
           "@name": "translated",
-          "@content": "18 November 2021"
+          "@content": "09 December 2021"
         },
         {
           "@name": "generator",
@@ -133,70 +133,72 @@
               0.0225
             ],
             "@version": "2.0",
-            "-metadata": {
-              "MetadataSet": {
-                "@name": "HAnimHumanoid.info",
-                "@reference": "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid",
-                "-value": [
-                  {
-                    "MetadataString": {
-                      "@name": "authorName",
-                      "@value": [
-                        "Jin Hoon Lee and Min Joo Lee, Chul Hee Jung and Myeong Won Lee"
-                      ]
+            "-value": [
+              {
+                "MetadataSet": {
+                  "@name": "HAnimHumanoid.info",
+                  "@reference": "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid",
+                  "-value": [
+                    {
+                      "MetadataString": {
+                        "@name": "authorName",
+                        "@value": [
+                          "Jin Hoon Lee and Min Joo Lee, Chul Hee Jung and Myeong Won Lee"
+                        ]
+                      }
+                    },
+                    {
+                      "MetadataString": {
+                        "@name": "authorEmail",
+                        "@value": [
+                          "myeongwonlee@gmail.com"
+                        ]
+                      }
+                    },
+                    {
+                      "MetadataString": {
+                        "@name": "creationDate",
+                        "@value": [
+                          "31 March 2011"
+                        ]
+                      }
+                    },
+                    {
+                      "MetadataString": {
+                        "@name": "gender",
+                        "@value": [
+                          "female"
+                        ]
+                      }
+                    },
+                    {
+                      "MetadataFloat": {
+                        "@name": "height",
+                        "@value": [
+                          1.5
+                        ]
+                      }
+                    },
+                    {
+                      "MetadataFloat": {
+                        "@name": "weight",
+                        "@value": [
+                          50
+                        ]
+                      }
+                    },
+                    {
+                      "MetadataString": {
+                        "@name": "humanoidVersion",
+                        "@value": [
+                          "validation testing"
+                        ]
+                      }
                     }
-                  },
-                  {
-                    "MetadataString": {
-                      "@name": "authorEmail",
-                      "@value": [
-                        "myeongwonlee@gmail.com"
-                      ]
-                    }
-                  },
-                  {
-                    "MetadataString": {
-                      "@name": "creationDate",
-                      "@value": [
-                        "31 March 2011"
-                      ]
-                    }
-                  },
-                  {
-                    "MetadataString": {
-                      "@name": "gender",
-                      "@value": [
-                        "female"
-                      ]
-                    }
-                  },
-                  {
-                    "MetadataFloat": {
-                      "@name": "height",
-                      "@value": [
-                        1.5
-                      ]
-                    }
-                  },
-                  {
-                    "MetadataFloat": {
-                      "@name": "weight",
-                      "@value": [
-                        50
-                      ]
-                    }
-                  },
-                  {
-                    "MetadataString": {
-                      "@name": "humanoidVersion",
-                      "@value": [
-                        "validation testing"
-                      ]
-                    }
-                  }
-                ]
+                  ]
+                }
               }
-            },
+            ],
             "-skeleton": [
               {
                 "HAnimJoint": {

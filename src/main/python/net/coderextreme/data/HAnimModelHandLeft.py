@@ -135,7 +135,7 @@ MetadataString28.setValue(["Kwan-Hee YOO, Don Brutzman and Joe Williams"])
 
 MetadataSet27.setValue(MetadataString28)
 
-HAnimHumanoid26.setMetadata(MetadataSet27)
+HAnimHumanoid26.setValue(MetadataSet27)
 HAnimJoint29 = HAnimJoint()
 HAnimJoint29.setName("humanoid_root")
 HAnimJoint29.setDEF("hanim_humanoid_root")

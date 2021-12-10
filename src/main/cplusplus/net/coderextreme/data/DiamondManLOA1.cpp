@@ -186,7 +186,7 @@ MetadataString36->setName("usageRestrictions");
 MetadataString36->setValue(new CString[1]{"PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose."}, 1);
 MetadataSet31->addValue(*MetadataString36);
 
-HAnimHumanoid30->setMetadata(*MetadataSet31);
+HAnimHumanoid30->setValue(*MetadataSet31);
 
 CHAnimJoint* HAnimJoint37 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint37->setName("humanoid_root");

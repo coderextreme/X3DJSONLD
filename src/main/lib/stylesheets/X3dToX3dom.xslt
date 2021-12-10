@@ -1520,7 +1520,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                       ((local-name()='containerField' and .='children'))) and
                       not( local-name(..)='ListenerPointSource' and
                       ((local-name()='containerField' and .='children') or
-                      (local-name()='enableDoppler' and (.='false')) or
+                      (local-name()='dopplerEnabled' and (.='false')) or
                       (local-name()='interauralDistance' and (.='0' or .='0.0')) or
                       (local-name()='orientation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
                       (local-name()='position' and (.='0 0 0' or .='0.0 0.0 0.0')) or
@@ -1540,7 +1540,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                       (local-name()='coneOuterGain' and (.='0' or .='0.0')) or
                       (local-name()='direction' and (.='0 0 1' or .='0.0 0.0 1.0')) or
                       (local-name()='distanceModel' and (.='inverse')) or
-                      (local-name()='enableDoppler' and (.='false')) or
+                      (local-name()='dopplerEnabled' and (.='false')) or
                       (local-name()='enableHRTF' and (.='false')) or
                       (local-name()='intensity' and (.='1' or .='1.0')) or
                       (local-name()='location' and (.='0 0 0' or .='0.0 0.0 0.0')) or

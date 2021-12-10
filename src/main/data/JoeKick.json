@@ -66,7 +66,7 @@
           },
           {
             "@name":"translated",
-            "@content":"23 November 2021"
+            "@content":"09 December 2021"
           },
           {
             "@name":"generator",
@@ -175,7 +175,7 @@
                     "@DEF":"Joe_Human",
                     "@loa":3,
                     "@version":"2.0",
-                    "-metadata":
+                    "-value":[
                       { "MetadataSet":
                         {
                           "@name":"warnings",
@@ -190,7 +190,8 @@
                             }
                           ]
                         }
-                      },
+                      }
+                    ],
                     "-skeleton":[
                       { "HAnimJoint":
                         {

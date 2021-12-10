@@ -132,7 +132,8 @@ sys.exit()
             <xsl:when test="($insertPackagePrefix = 'true')">
                 <xsl:text>
 if        x3d.metaDiagnostics(newModel): # built-in utility method in X3D class
-    print(x3d.metaDiagnostics(newModel))</xsl:text>
+    print(x3d.metaDiagnostics(newModel))
+</xsl:text>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:text>
@@ -141,11 +142,64 @@ if        metaDiagnostics(newModel): # built-in utility method in X3D class
             </xsl:otherwise>
         </xsl:choose>
         <xsl:text>
-print('check  newModel.XML() serialization...')
-newModelXML = newModel.XML() # test export method XML() for exceptions
-# print(newModelXML) # debug
+# print('check newModel.XML() serialization...')
+newModelXML= newModel.XML() # test export method XML() for exceptions during export</xsl:text>
+   <!--<xsl:text>
+debug ============
+print(prependLineNumbers(newModelVRML))
+x3dfile = open("</xsl:text>
+<xsl:value-of select="substring-before($modelFileName,'.')"/>
+<xsl:text>PythonToX3d.x3d","wt")
+x3dfile.write(newModelXML)
+x3dfile.close()
+==================
+        </xsl:text>-->
+        <xsl:text>
+newModel.XMLvalidate()
 
-print ("python x3d.py load successful</xsl:text>
+try:
+#   print('check newModel.VRML() serialization...')
+    newModelVRML=newModel.VRML() # test export method VRML() for exceptions during export
+    # print(prependLineNumbers(newModelVRML)) # debug</xsl:text>
+   <!--<xsl:text>
+# debug ============
+#   print(prependLineNumbers(newModelVRML)) # debug
+#   vrmlfile = open("</xsl:text>
+#     <xsl:value-of select="substring-before($modelFileName,'.')"/>
+#     <xsl:text>PythonToJSON.wrl","wt")
+#   vrmlfile.write(newModelVRML)
+#   vrmlfile.close()
+# ==================
+        </xsl:text>-->
+        <xsl:text>
+    print("Python-to-VRML export of VRML output successful (still testing)")
+except BaseException as err:
+    print("*** Python-to-VRML export of VRML output failed:", err)
+    if newModelVRML: # may have failed to generate
+        print(prependLineNumbers(newModelVRML, err.lineno))
+
+try:
+#   print('check newModel.JSON() serialization...')
+    newModelJSON=newModel.JSON() # test export method JSON() for exceptions during export
+#   print(prependLineNumbers(newModelJSON)) # debug</xsl:text>
+   <!--<xsl:text>
+# debug ============
+#   print(prependLineNumbers(newModelJSON)) # debug
+#   jsonfile = open("</xsl:text>
+#     <xsl:value-of select="substring-before($modelFileName,'.')"/>
+#     <xsl:text>PythonToJSON.json","wt")
+#   jsonfile.write(newModelJSON)
+#   jsonfile.close()
+# ==================
+        </xsl:text>-->
+        <xsl:text>
+    print("Python-to-JSON export of JSON output successful (still testing)")
+except SyntaxError as err:
+    print("*** Python-to-JSON export of JSON output failed:", err)
+    if newModelJSON: # may have failed to generate
+        print(prependLineNumbers(newModelJSON,err.lineno))
+
+print("python x3d.py load and self-test complete</xsl:text>
         <xsl:if test="(string-length($modelFileName) > 0)">
             <xsl:text> for </xsl:text>
             <xsl:value-of select="$modelFileName"/>
@@ -253,6 +307,19 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                 <xsl:when test="contains(local-name(), 'Texture')">
                     <!-- TextureBackground may contain multiple ImageTexture nodes, each with different containerField -->
                     <xsl:value-of select="@containerField"/>
+                </xsl:when>
+                <xsl:when test="((local-name() = 'AudioClip') or (local-name() = 'MovieTexture')) and
+                                ((local-name(..) = 'Analyser') or (local-name(..) = 'AudioDestination') or (local-name(..) = 'BiquadFilter') or (local-name(..) = 'BufferAudioSource') or (local-name(..) = 'ChannelMerger') or (local-name(..) = 'ChannelSelector') or (local-name(..) = 'ChannelSplitter') or (local-name(..) = 'Convolver') or (local-name(..) = 'Delay') or (local-name(..) = 'DynamicsCompressor') or (local-name(..) = 'Gain') or (local-name(..) = 'ListenerPointSource') or (local-name(..) = 'MicrophoneSource') or (local-name(..) = 'OscillatorSource') or (local-name(..) = 'SpatialSound') or (local-name(..) = 'StreamAudioDestination') or (local-name(..) = 'StreamAudioSource') or (local-name(..) = 'WaveShaper'))">
+                    <xsl:text>children</xsl:text>
+                    <xsl:if test="(@containerField = 'source') or (string-length(@containerField) = 0)">
+                        <xsl:message>
+                            <xsl:text>*** containerField incorrect for </xsl:text>
+                            <xsl:value-of select="local-name()"/>
+                            <xsl:text> with parent </xsl:text>
+                            <xsl:value-of select="local-name(..)"/>
+                            <xsl:text>, reset to children</xsl:text>
+                        </xsl:message>
+                    </xsl:if>
                 </xsl:when>
                 <xsl:when test="(string-length(@containerField) > 0)">
                     <xsl:value-of select="@containerField"/>
@@ -538,6 +605,17 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                 <xsl:apply-templates select="* | comment()">
                     <!-- <xsl:sort select="@containerField" order="ascending"/> avoid sorting, some nodes have empty containerField -->
                 </xsl:apply-templates>
+                <xsl:variable name="hasCDATA">
+                    <xsl:value-of select="(string-length(normalize-space(text())) > 1)" disable-output-escaping="yes"/>
+                </xsl:variable>       
+                <xsl:if test="(local-name() = 'Script') and $hasCDATA">
+                    <xsl:text>&#10;</xsl:text>
+                    <xsl:text>*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script</xsl:text> 
+                    <xsl:text>&#10;</xsl:text>
+                    <xsl:message>
+                        <xsl:text>*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script</xsl:text> 
+                    </xsl:message>
+                </xsl:if>
                 
                 <!-- alternative attempt: sorting alike fields together, which can reorder scene graph and lead to other problems>
                 <xsl:apply-templates select="*[not(@containerField = 'children') and (string-length(@containerField) > 0)]">  
@@ -1175,7 +1253,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                       ((local-name()='containerField' and .='children'))) and
                       not( local-name(..)='ListenerPointSource' and
                       ((local-name()='containerField' and .='children') or
-                      (local-name()='enableDoppler' and (.='false')) or
+                      (local-name()='dopplerEnabled' and (.='false')) or
                       (local-name()='interauralDistance' and (.='0' or .='0.0')) or
                       (local-name()='orientation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
                       (local-name()='position' and (.='0 0 0' or .='0.0 0.0 0.0')) or
@@ -1195,7 +1273,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                       (local-name()='coneOuterGain' and (.='0' or .='0.0')) or
                       (local-name()='direction' and (.='0 0 1' or .='0.0 0.0 1.0')) or
                       (local-name()='distanceModel' and (.='inverse')) or
-                      (local-name()='enableDoppler' and (.='false')) or
+                      (local-name()='dopplerEnabled' and (.='false')) or
                       (local-name()='enableHRTF' and (.='false')) or
                       (local-name()='intensity' and (.='1' or .='1.0')) or
                       (local-name()='location' and (.='0 0 0' or .='0.0 0.0 0.0')) or
@@ -1874,42 +1952,53 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                local (Extern)ProtoDeclare/field type definition, not X3D Schema:
                (starts-with($parentElementName,'field') and ($attributeName='value'))      or -->
 		  <xsl:when test="($localFieldType='SFString')          or
-                          ($attributeName='DEF')                or
-                          ($attributeName='USE')                or
-                          ($attributeName='containerField')     or
-                          ($attributeName='appinfo')            or
-                          ($attributeName='documentation')      or
-                          ($attributeName='name')               or
-                          ($attributeName='class')              or
-                          ($attributeName='id')                 or
-                          ($attributeName='style')              or
-                          ($attributeName='description')        or
-                          ($attributeName='address')            or
-                          ($attributeName='language')           or
-                          ($attributeName='marking')            or
-                          ($attributeName='multicastAddress')   or
-                          ($attributeName='networkMode')        or
-                          ($attributeName='reference')          or
-					      (starts-with($parentElementName,'field')         and (($attributeName='accessType') or ($attributeName='type')       or ($attributeName='appinfo') or ($attributeName='documentation'))) or
-					      (starts-with($parentElementName,'meta')          and (($attributeName='content')    or ($attributeName='http-equiv') or ($attributeName='scheme')  or ($attributeName='dir') or ($attributeName='lang') or ($attributeName='xml:lang'))) or
-                          (($parentElementName='component')                and not($attributeName='level')) or
-                          (($parentElementName='unit')                     and not($attributeName='conversionFactor')) or
-					      ($parentElementName='ArcClose2D'                 and $attributeName='closureType') or
-					      ($parentElementName='BlendedVolumeStyle'         and (starts-with($attributeName,'weightFunction') or ($attributeName='magnificationFilter') or ($attributeName='minificationFilter') or ($attributeName='textureCompression'))) or
-                          (ends-with($parentElementName,'Fog')             and $attributeName='fogType') or
-                          ($parentElementName='HAnimHumanoid'              and (($attributeName='version') or ($attributeName='skeletalConfiguration'))) or
-                          ($parentElementName='HAnimMotion'                and (($attributeName='channels') or ($attributeName='joints'))) or
-					      ($parentElementName='GeneratedCubeMapTexture'    and $attributeName='update') or
-						  ($parentElementName='ParticleSystem'             and $attributeName='geometryType') or
-						  (ends-with($parentElementName,'PickSensor')      and ($attributeName='intersectionType' or $attributeName='matchCriterion' or $attributeName='sortOrder')) or
-						  ($parentElementName='ProjectionVolumeStyle'      and $attributeName='type') or
-						  ($parentElementName='ShadedVolumeStyle'          and $attributeName='phaseFunction') or
-					      ($parentElementName='ShaderPart'                 and $attributeName='type') or
-					      ($parentElementName='ShaderProgram'              and $attributeName='type') or
-					      ($parentElementName='TextureCoordinateGenerator' and $attributeName='mode') or
-					      ($parentElementName='TextureProperties'          and (starts-with($attributeName,'boundaryMode') or ($attributeName='magnificationFilter') or ($attributeName='minificationFilter') or ($attributeName='textureCompression'))) or
-                          ($parentElementName='WorldInfo'                  and $attributeName='title') or
-                          ($parentElementName='XvlShell'                   and $attributeName='shellType')">
+                            ($attributeName='DEF')                or
+                            ($attributeName='USE')                or
+                            ($attributeName='containerField')     or
+                            ($attributeName='appinfo')            or
+                            ($attributeName='channelCountMode')   or ($attributeName='channelInterpretation')   or
+                            ($attributeName='documentation')      or
+                            ($attributeName='name')               or
+                            ($attributeName='class')              or
+                            ($attributeName='id')                 or
+                            ($attributeName='style')              or
+                            ($attributeName='description')        or
+                            ($attributeName='distanceModel')      or
+                            ($attributeName='address')            or
+                            ($attributeName='language')           or
+                            ($attributeName='mapping')            or
+                            ($attributeName='marking')            or
+                            ($attributeName='multicastAddress')   or
+                            ($attributeName='networkMode')        or
+                            ($attributeName='oversample')         or
+                            ($attributeName='reference')          or
+                            ($attributeName='type')               or
+                            ($attributeName='lang')               or ($attributeName='xml:lang') or
+                            (starts-with($parentElementName,'field')         and (($attributeName='accessType') or ($attributeName='type')       or ($attributeName='appinfo') or ($attributeName='documentation'))) or
+                            (starts-with($parentElementName,'meta')          and (($attributeName='content')    or ($attributeName='http-equiv') or ($attributeName='scheme')  or ($attributeName='dir') or ($attributeName='lang') or ($attributeName='xml:lang'))) or
+                            (($parentElementName='component')                and not($attributeName='level')) or
+                            (($parentElementName='unit')                     and not($attributeName='conversionFactor')) or
+			    ($parentElementName='Appearance'                 and $attributeName='alphaMode') or
+                            ($parentElementName='ArcClose2D'                 and $attributeName='closureType') or
+                            ($parentElementName='BiquadFilter'               and $attributeName='type') or
+                            ($parentElementName='BlendedVolumeStyle'         and (starts-with($attributeName,'weightFunction') or ($attributeName='magnificationFilter') or ($attributeName='minificationFilter') or ($attributeName='textureCompression'))) or
+                            (ends-with($parentElementName,'Fog')             and $attributeName='fogType') or
+                            ($parentElementName='GeneratedCubeMapTexture'    and $attributeName='update') or
+                            ($parentElementName='HAnimHumanoid'              and (($attributeName='version') or ($attributeName='skeletalConfiguration'))) or
+                            ($parentElementName='HAnimMotion'                and (($attributeName='channels') or ($attributeName='joints'))) or
+                            ($parentElementName='IMPORT'                     and (($attributeName='AS') or ($attributeName='importedDEF') or ($attributeName='inlineDEF'))) or
+                            (ends-with($parentElementName,'Material')	   and ends-with($attributeName,'Mapping')) or
+                            ($parentElementName='ParticleSystem'             and $attributeName='geometryType') or
+                            (ends-with($parentElementName,'PickSensor')      and ($attributeName='intersectionType' or $attributeName='matchCriterion' or $attributeName='sortOrder')) or
+                            ($parentElementName='ProjectionVolumeStyle'      and $attributeName='type') or
+                            ($parentElementName='ShadedVolumeStyle'          and $attributeName='phaseFunction') or
+                            ($parentElementName='ShaderPart'                 and $attributeName='type') or
+                            ($parentElementName='ShaderProgram'              and $attributeName='type') or
+                            ($parentElementName='TextureCoordinateGenerator' and $attributeName='mode') or
+                            ($parentElementName='TextureProperties'          and (starts-with($attributeName,'boundaryMode') or ($attributeName='magnificationFilter') or ($attributeName='minificationFilter') or ($attributeName='textureCompression'))) or
+                            ($parentElementName='WorldInfo'                  and $attributeName='title') or
+                            ($parentElementName='X3D'                        and (($attributeName='profile') or ($attributeName='version') or ($attributeName='noNamespaceSchemaLocation'))) or
+                            ($parentElementName='XvlShell'                   and $attributeName='shellType')">
 			  <xsl:text>SFString</xsl:text>
 		  </xsl:when>
 		  <!-- SFDouble -->
@@ -1956,6 +2045,8 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
 					($attributeName='convex')   or
 					($attributeName='colorPerVertex') or
 					($attributeName='enabled')  or
+					($attributeName='dopplerEnabled')  or
+					($attributeName='enableHRTF')  or
 					($attributeName='global')   or
 					($attributeName='normalPerVertex') or
 					($attributeName='on')       or
@@ -1966,6 +2057,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
 					($attributeName='normalizeVelocity') or
 					($attributeName='rtpHeaderExpected') or
 					($attributeName='solid') or
+					($attributeName='trackCurrentView') or
 					($attributeName='uClosed') or ($attributeName='vClosed') or
 					($attributeName='visible') or
 					($attributeName='viewAll') or
@@ -1988,6 +2080,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
 					($parentElementName='Inline' and ($attributeName='load')) or
 					(ends-with($parentElementName,'Layer') and ($attributeName='isPickable')) or
 					($parentElementName='LineProperties' and ($attributeName='applied')) or
+					($parentElementName='ListenerPointSource' and $attributeName='trackCurrentView')  or
 					($parentElementName='LOD' and ($attributeName='forceTransitions')) or
 					($parentElementName='MotorJoint' and $attributeName='autoCalc') or
 					($parentElementName='MovieTexture' and ($attributeName='repeatS' or $attributeName='repeatT' or $attributeName='loop')) or
@@ -2015,7 +2108,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
 		  <!-- MFBool -->
 		  <xsl:when test="
 					($localFieldType='MFBool')  or 
-                    (contains($parentElementName,'BooleanSequencer') and $attributeName='keyValue') or
+                                        (contains($parentElementName,'BooleanSequencer') and $attributeName='keyValue') or
 					($parentElementName='CADLayer'                   and ($attributeName='visible') and starts-with(//X3D/@version,'3')) or
 					($parentElementName='HAnimHumanoid'              and $attributeName='motionsEnabled') or
 					($parentElementName='HAnimMotion'                and $attributeName='channelsEnabled') or
@@ -2027,7 +2120,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
 		  <!-- SFColor -->
 		  <xsl:when test="
 					($localFieldType='SFColor')  or 
-                    ($parentElementName='CartoonVolumeStyle' and ($attributeName='orthogonalColor' or $attributeName='parallelColor')) or
+                                        ($parentElementName='CartoonVolumeStyle' and ($attributeName='orthogonalColor' or $attributeName='parallelColor')) or
 					($parentElementName='ColorChaser' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
 					($parentElementName='ColorDamper' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
 					(contains($parentElementName,'Light') and $attributeName='color') or
@@ -2040,7 +2133,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
 		  <!-- SFColorRGBA -->
 		  <xsl:when test="
 					($localFieldType='SFColorRGBA')  or 
-                    ($parentElementName='EdgeEnhancementVolumeStyle' and $attributeName='edgeColor') or
+                                        ($parentElementName='EdgeEnhancementVolumeStyle' and $attributeName='edgeColor') or
 					($parentElementName='TextureProperties' and $attributeName='borderColor') or
 					($parentElementName='ToneMappedVolumeStyle' and ($attributeName='coolColor' or $attributeName='warmColor'))">
 			  <xsl:text>SFColorRGBA</xsl:text>
@@ -2048,7 +2141,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
 		  <!-- MFColor -->
 		  <xsl:when test="
 					($localFieldType='MFColor')  or 
-                    ($parentElementName='Color' and $attributeName='color') or
+                                        ($parentElementName='Color' and $attributeName='color') or
 					($parentElementName='ColorInterpolator' and $attributeName='keyValue') or
 					(ends-with($parentElementName,'Background') and ($attributeName='groundColor' or $attributeName='skyColor'))">
 			  <xsl:text>MFColor</xsl:text>
@@ -2069,13 +2162,13 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
 		  <!-- SFDouble --> <!-- precedes SFFloat since some fields are different than usual -->
 		  <xsl:when test="
 					($localFieldType='SFDouble')  or 
-                    ($parentElementName='GeoElevationGrid' and (($attributeName='creaseAngle') or ($attributeName='xSpacing') or ($attributeName='zSpacing')))">
+                                        ($parentElementName='GeoElevationGrid' and (($attributeName='creaseAngle') or ($attributeName='xSpacing') or ($attributeName='zSpacing')))">
 			  <xsl:text>SFDouble</xsl:text>
 		  </xsl:when>
 		  <!-- MFDouble -->
 		  <xsl:when test="
 					($localFieldType='MFDouble')  or 
-                    ($parentElementName='GeoElevationGrid'   and $attributeName='height') or
+                                        ($parentElementName='GeoElevationGrid'   and $attributeName='height') or
 					($parentElementName='MetadataDouble'     and $attributeName='value')  or
 					(starts-with($parentElementName,'Nurbs') and (($attributeName='knot') or ($attributeName='weight') or contains($attributeName,'Knot')))">
 			  <xsl:text>MFDouble</xsl:text>
@@ -2083,14 +2176,39 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
 		  <!-- SFFloat -->
 		  <xsl:when test="
 					($localFieldType='SFFloat')  or 
-                    ($attributeName='ambientIntensity') or
+                                        ($attributeName='absorption')       or
+                                        ($attributeName='ambientIntensity') or
+					($attributeName='attack')           or
+                                        ($attributeName='coneInnerAngle')   or ($attributeName='coneOuterAngle')  or ($attributeName='coneOuterGain')    or
 					($attributeName='creaseAngle')      or
+					($attributeName='detune')           or
+                                        ($attributeName='diffuse')          or
+					($attributeName='farDistance')      or ($attributeName='nearDistance')    or
+					($attributeName='frequency')        or
+					($attributeName='gain')             or
 					($attributeName='intensity')        or
-                    ($attributeName='radius')           or ($attributeName='innerRadius') or ($attributeName='outerRadius') or
-                    ($attributeName='startAngle')       or ($attributeName='endAngle') or
-                    ($attributeName='tolerance')        or
+					($attributeName='interauralDistance') or
+					($attributeName='knee')             or
+					($attributeName='maxDistance')      or
+					($attributeName='minDecibels')      or ($attributeName='maxDecibels')     or
+                                        starts-with($attributeName,'pointSize') or
+					($attributeName='priority')         or
+					($attributeName='qualityFactor')    or
+                                        ($attributeName='radius')           or ($attributeName='innerRadius') or ($attributeName='outerRadius') or
+					($attributeName='ratio')            or
+					($attributeName='referenceDistance') or
+                                        ($attributeName='refraction')       or
+                                        ($attributeName='rolloffFactor')    or
+					($attributeName='shadowIntensity')  or
+					($attributeName='smoothingTimeConstant')  or
+                                        ($attributeName='specular')         or
+                                        ($attributeName='startAngle')       or ($attributeName='endAngle') or
+					($attributeName='threshold')        or
+                                        ($attributeName='tolerance')        or
 					($attributeName='transparency')     or
 					(starts-with($parentElementName,'Arc') and (contains($attributeName,'Angle') or $attributeName='radius')) or
+					($parentElementName='AcousticProperties' and ($attributeName='absorption' or $attributeName='diffuse' or $attributeName='refraction' or $attributeName='specular')) or
+					($parentElementName='Appearance'       and $attributeName='alphaCutoff') or
 					($parentElementName='AudioClip' and $attributeName='pitch') or
 					($parentElementName='BlendedVolumeStyle' and starts-with($attributeName,'weightConstant')) or
 					($parentElementName='BoundaryEnhancementVolumeStyle' and (($attributeName='boundaryOpacity') or ($attributeName='opacityFactor') or ($attributeName='retainedOpacity'))) or
@@ -2134,13 +2252,14 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
 					($parentElementName='SilhouetteEnhancementVolumeStyle' and starts-with($attributeName,'silhouette')) or
 					($parentElementName='SingleAxisHingeJoint' and ($attributeName='maxAngle' or $attributeName='minAngle' or $attributeName='stopBounce' or $attributeName='stopErrorCorrection')) or
 					($parentElementName='SliderJoint' and ($attributeName='maxSeparation' or $attributeName='minSeparation' or $attributeName='sliderForce' or $attributeName='stopBounce' or $attributeName='stopErrorCorrection')) or
-					($parentElementName='SpotLight' and ($attributeName='radius' or $attributeName='cutOffAngle' or $attributeName='beamWidth')) or
 					($parentElementName='Sound' and ($attributeName='maxBack' or $attributeName='minBack' or $attributeName='maxFront' or $attributeName='minFront' or $attributeName='priority')) or
+					($parentElementName='SpatialSound' and ($attributeName='coneInnerAngle' or $attributeName='coneOuterAngle' or $attributeName='coneOuterGain' or $attributeName='maxDistance' or $attributeName='priority' or $attributeName='referenceDistance' or $attributeName='rolloffFactor')) or
 					($parentElementName='Sphere' and $attributeName='radius') or
+					($parentElementName='SpotLight' and ($attributeName='radius' or $attributeName='cutOffAngle' or $attributeName='beamWidth')) or
 					($parentElementName='Text' and $attributeName='maxExtent') or
 					($parentElementName='TextureProperties' and ($attributeName='anisotropicDegree' or $attributeName='texturePriority')) or
 					(starts-with($parentElementName,'TextureProjector') and ($attributeName='farDistance' or $attributeName='nearDistance')) or
-                    ($parentElementName='TextureProjectorPerspective' and $attributeName='fieldOfView') or
+                                        ($parentElementName='TextureProjectorPerspective' and $attributeName='fieldOfView') or
 					($parentElementName='TextureTransform' and $attributeName='rotation') or
 					($parentElementName='TransmitterPdu' and ($attributeName='power' or $attributeName='transmitFrequencyBandwidth')) or
 					($parentElementName='UniversalJoint' and starts-with($attributeName,'stop')) or
@@ -2179,11 +2298,17 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
 		  </xsl:when>
 		  <!-- SFTime -->
 		  <xsl:when test="
-					($localFieldType='SFTime')        or 
+                    ($localFieldType='SFTime')          or 
+                    contains($attributeName,'Time')     or
+                    contains($attributeName,'Duration') or
                     ($parentElementName='TimeSensor') or
-					($attributeName='cycleTime')      or
+                    ($attributeName='cycleTime')      or
+                    ($attributeName='pauseTime')      or
+                    ($attributeName='resumeTime')     or
+                    ($attributeName='startTime')      or
+                    ($attributeName='stopTime')       or
                     ($attributeName='duration')       or
-					($attributeName='elapsedTime')    or
+                    ($attributeName='elapsedTime')    or
                     ($attributeName='autoRefresh')    or
                     ($attributeName='autoRefreshTimeLimit') or
                     ($attributeName='tau')            or
@@ -2193,9 +2318,10 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                     ($parentElementName='LoadSensor'     and $attributeName='timeOut')  or
                     ($parentElementName='AudioClip'      and ends-with($attributeName,'Time'))  or
                     ($parentElementName='EspduTransform' and ends-with($attributeName,'Time'))  or
-					($parentElementName='HAnimMotion'    and $attributeName='frameDuration') or
-                    ($parentElementName='MovieTexture'   and ends-with($attributeName,'Time'))"> 
-			  <!-- TimeSensor loop & enabled are caught by SFBool tests, all other TimeSensorfields are SFTime -->
+                    ($parentElementName='HAnimMotion'    and $attributeName='frameDuration') or
+                    ($parentElementName='MovieTexture'   and ends-with($attributeName,'Time')) or
+                    ($parentElementName='TimeSensor')"> 
+                    <!-- TimeSensor loop & enabled are caught by SFBool tests, all other TimeSensor fields are SFTime -->
 			  <xsl:text>SFTime</xsl:text>
 		  </xsl:when>
 		  <!-- no MFTime -->
@@ -2409,6 +2535,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                     ($attributeName='farClippingPlane')         or
                     ($attributeName='nearClippingPlane')        or
                     ($attributeName='order')                    or
+					($attributeName='channelSelection')         or
 					($attributeName='uOrder')                   or
 					($attributeName='vOrder')                   or
 					($attributeName='uDimension')               or

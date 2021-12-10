@@ -29,7 +29,7 @@
         },
         {
           "@name": "translated",
-          "@content": "18 November 2021"
+          "@content": "09 December 2021"
         },
         {
           "@name": "generator",
@@ -45,9 +45,7 @@
       "-children": [
         {
           "NavigationInfo": {
-            "@type": [
-              "EXAMINE"
-            ]
+            "@type": "\"EXAMINE\""
           }
         },
         {

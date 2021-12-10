@@ -166,7 +166,7 @@ MetadataString30.setValue(["ignore"])
 
 MetadataSet29.setValue(MetadataString30)
 
-HAnimHumanoid28.setMetadata(MetadataSet29)
+HAnimHumanoid28.setValue(MetadataSet29)
 HAnimJoint31 = HAnimJoint()
 HAnimJoint31.setName("humanoid_root")
 HAnimJoint31.setDEF("Joe_humanoid_root")

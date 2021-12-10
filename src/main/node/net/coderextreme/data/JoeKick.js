@@ -42,7 +42,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild((new autoclass.Viewpoint()).setDEF("Scene_TopView").setCenterOfRotation(java.newArray("float", [java.newFloat(0), java.newFloat(1.5), java.newFloat(0)])).setDescription("Scene_Top View").setOrientation(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(-1.5708)])).setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(3.5), java.newFloat(0)])))
         .addChild((new autoclass.Group()).setDEF("Joe_Humanoid")
           .addChild((new autoclass.HAnimHumanoid()).setName("Human").setDEF("Joe_Human").setLoa(3).setVersion("2.0")
-            .setMetadata((new autoclass.MetadataSet()).setName("warnings").setReference("HAnim")
+            .setValue((new autoclass.MetadataSet()).setName("warnings").setReference("HAnim")
               .addValue((new autoclass.MetadataString()).setName("SymmetricalLeftRight").setReference("correction options: ignore, warn, average, left, right, largest, smallest").setValue(java.newArray("java.lang.String", ["ignore"]))))
             .addSkeleton((new autoclass.HAnimJoint()).setName("humanoid_root").setDEF("Joe_humanoid_root").setCenter(java.newArray("float", [java.newFloat(0), java.newFloat(0.875), java.newFloat(0)])).setStiffness(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)]))
               .addChild((new autoclass.HAnimSegment()).setName("sacrum").setDEF("Joe_sacrum")

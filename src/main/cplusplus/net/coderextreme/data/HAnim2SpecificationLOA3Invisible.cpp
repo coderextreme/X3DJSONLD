@@ -278,7 +278,7 @@ MetadataString51->setName("usageRestrictions");
 MetadataString51->setValue(new CString[1]{"none"}, 1);
 MetadataSet44->addValue(*MetadataString51);
 
-HAnimHumanoid43->setMetadata(*MetadataSet44);
+HAnimHumanoid43->setValue(*MetadataSet44);
 
 CHAnimJoint* HAnimJoint52 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint52->setName("humanoid_root");

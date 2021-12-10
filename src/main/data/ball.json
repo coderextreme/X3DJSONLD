@@ -71,7 +71,7 @@
           },
           {
             "@name":"translated",
-            "@content":"23 November 2021"
+            "@content":"09 December 2021"
           },
           {
             "@name":"generator",
@@ -92,7 +92,7 @@
           },
           { "NavigationInfo":
             {
-              "@type":["ANY","EXAMINE","FLY","LOOKAT"]
+              "@type":"\"ANY\" \"EXAMINE\" \"FLY\" \"LOOKAT\""
             }
           },
           { "Viewpoint":

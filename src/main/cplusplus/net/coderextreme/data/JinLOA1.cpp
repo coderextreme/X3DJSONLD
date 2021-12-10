@@ -165,7 +165,7 @@ MetadataString32->setName("humanoidVersion");
 MetadataString32->setValue(new CString[1]{"validation testing"}, 1);
 MetadataSet25->addValue(*MetadataString32);
 
-HAnimHumanoid24->setMetadata(*MetadataSet25);
+HAnimHumanoid24->setValue(*MetadataSet25);
 
 CHAnimJoint* HAnimJoint33 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint33->setName("humanoid_root");

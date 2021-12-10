@@ -155,7 +155,7 @@ MetadataString30->setName("humanoidVersion");
 MetadataString30->setValue(new CString[1]{"2.0"}, 1);
 MetadataSet24->addValue(*MetadataString30);
 
-HAnimHumanoid23->setMetadata(*MetadataSet24);
+HAnimHumanoid23->setValue(*MetadataSet24);
 
 CHAnimJoint* HAnimJoint31 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint31->setName("humanoid_root");
