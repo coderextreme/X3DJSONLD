@@ -7,7 +7,7 @@ var Browser = X3DJSONLD.Browser;
 
 var PROTOS = require('./PrototypeExpander')
 
-var xmldom = require('xmldom');
+var xmldom = require('@xmldom/xmldom');
 var DOMImplementation = new xmldom.DOMImplementation();
 
 var convertJSON = require('./convertJSON.js');

@@ -25,7 +25,7 @@
 <meta name="license" content="../license.html"></meta>
 </head>
 <Scene><WorldInfo title="HAnimModelFootRight.x3d"></WorldInfo>
-<HAnimHumanoid name="Foot_Right" DEF="hanim_Foot_Right" loa="4" version="2.0"><!--HAnimHumanoid original info='"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams"'--><MetadataSet containerField="metadata" name="HAnimHumanoid.info" reference="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid"><MetadataString name="authorName" value="&quot;Kwan-Hee YOO, Don Brutzman and Joe Williams&quot;" containerField="value"></MetadataString>
+<HAnimHumanoid name="Foot_Right" DEF="hanim_Foot_Right" loa="4" version="2.0"><!--HAnimHumanoid original info='"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams"'--><MetadataSet name="HAnimHumanoid.info" reference="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid" containerField="value"><MetadataString name="authorName" value="&quot;Kwan-Hee YOO, Don Brutzman and Joe Williams&quot;" containerField="value"></MetadataString>
 </MetadataSet>
 <HAnimJoint name="humanoid_root" DEF="hanim_humanoid_root" stiffness="0 0 0" containerField="skeleton"><!--Might consider putting a HAnimSegment here, but that doesn't help with re-use of this foot model--><HAnimJoint name="r_talocrural" DEF="hanim_r_talocrural" description="connection joint of foot to leg above" stiffness="0 0 0"><HAnimSegment name="r_talus" DEF="hanim_r_talus"><Transform><Shape DEF="HAnimJointShape"><Sphere containerField="geometry" radius="0.025"></Sphere>
 <Appearance DEF="HAnimJointAppearance"><Material diffuseColor="0 0 1"></Material>

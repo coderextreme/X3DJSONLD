@@ -75,7 +75,7 @@ public class DiamondManLOA1 {
         .addChild(new Viewpoint().setCenterOfRotation(new float[] {0f,1f,0f}).setDescription("Diamond Man, LOA 1").setPosition(new float[] {0f,1f,3f}))
         .addChild(new HAnimHumanoid().setName("humanoid").setDEF("hanim_humanoid").setLoa(1).setVersion("2.0")
           .addComments("HAnimHumanoid original info='\"authorEmail=beitler@graphics.cis.upenn.edu beitler@acm.org\" \"authorName=Matthew T. Beitler\" \"copyright=Copyright 1999 Matthew T. Beitler\" \"humanoidVersion=JointCenters 1.1 LOA1\" \"usageRestrictions=PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose.\"'")
-          .setMetadata(new MetadataSet().setName("HAnimHumanoid.info").setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid")
+          .addValue(new MetadataSet().setName("HAnimHumanoid.info").setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid")
             .addValue(new MetadataString().setName("authorEmail").setValue(new MFString1().getArray()))
             .addValue(new MetadataString().setName("authorName").setValue(new MFString2().getArray()))
             .addValue(new MetadataString().setName("copyright").setValue(new MFString3().getArray()))

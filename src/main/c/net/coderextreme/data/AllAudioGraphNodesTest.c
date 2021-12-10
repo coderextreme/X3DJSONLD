@@ -76,6 +76,7 @@ Shape13.appearance = Appearance15;
 children[1] = Shape13;
 
 SpatialSound SpatialSound18 = createNode("SpatialSound");
+SpatialSound18.dopplerEnabled = "false";
 Analyser Analyser19 = createNode("Analyser");
 AudioDestination AudioDestination20 = createNode("AudioDestination");
 BiquadFilter BiquadFilter21 = createNode("BiquadFilter");
@@ -95,6 +96,7 @@ WaveShaper30.children = new MFNode();
 WaveShaper30.children[0] = BufferAudioSource31;
 
 ListenerPointSource ListenerPointSource32 = createNode("ListenerPointSource");
+ListenerPointSource32.dopplerEnabled = "false";
 WaveShaper30.children[1] = ListenerPointSource32;
 
 MicrophoneSource MicrophoneSource33 = createNode("MicrophoneSource");

@@ -64,7 +64,7 @@
           },
           {
             "@name":"translated",
-            "@content":"23 November 2021"
+            "@content":"09 December 2021"
           },
           {
             "@name":"generator",
@@ -301,7 +301,7 @@
                     { "NavigationInfo":
                       {
                         "@DEF":"CameraNavInfo",
-                        "@type":["EXAMINE","FLY","ANY"],
+                        "@type":"\"EXAMINE\" \"FLY\" \"ANY\"",
                         "IS": {
                             "-children":[
                               {

@@ -181,7 +181,7 @@ MetadataString37.setValue(["PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED 
 
 MetadataSet31.addValue(MetadataString37)
 
-HAnimHumanoid30.setMetadata(MetadataSet31)
+HAnimHumanoid30.setValue(MetadataSet31)
 HAnimJoint38 = HAnimJoint()
 HAnimJoint38.setName("humanoid_root")
 HAnimJoint38.setDEF("hanim_humanoid_root")

@@ -73,7 +73,7 @@ public class JoeKick {
         .addChild(new Viewpoint().setDEF("Scene_TopView").setCenterOfRotation(new float[] {0f,1.5f,0f}).setDescription("Scene_Top View").setOrientation(new float[] {1f,0f,0f,-1.5708f}).setPosition(new float[] {0f,3.5f,0f}))
         .addChild(new Group().setDEF("Joe_Humanoid")
           .addChild(new HAnimHumanoid().setName("Human").setDEF("Joe_Human").setLoa(3).setVersion("2.0")
-            .setMetadata(new MetadataSet().setName("warnings").setReference("HAnim")
+            .addValue(new MetadataSet().setName("warnings").setReference("HAnim")
               .addValue(new MetadataString().setName("SymmetricalLeftRight").setReference("correction options: ignore, warn, average, left, right, largest, smallest").setValue(new MFString1().getArray())))
             .addSkeleton(new HAnimJoint().setName("humanoid_root").setDEF("Joe_humanoid_root").setCenter(new float[] {0f,0.875f,0f}).setStiffness(new float[] {0f,0f,0f})
               .addChild(new HAnimSegment().setName("sacrum").setDEF("Joe_sacrum")

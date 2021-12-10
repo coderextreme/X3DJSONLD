@@ -139,7 +139,9 @@ public class Filters
         .setAppearance(new Appearance("floor")
           .setMaterial(new Material().setDiffuseColor(0.1,0.1,0.1).setShininess(0.8).setSpecularColor(0.5,0.6,0.7)))
         .setGeometry(new Cylinder().setRadius(500))))
-    .addChild(new ListenerPoint().setHtmlID("ListenerPoint").setTrackCurrentView(true))
+    .addChild(new ListenerPoint().setHtmlID("ListenerPoint").setTrackCurrentView("true"
+// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), ListenerPoint trackCurrentView: $isNumeric=false, $attributeType=, value='true']
+))
     .addChild(new AudioDestination().setHtmlID("AudioDestination")
       .addChild(new DynamicsCompressor().setHtmlID("DynamicsCompressor")
         .addChild(new Gain().setHtmlID("Gain4")

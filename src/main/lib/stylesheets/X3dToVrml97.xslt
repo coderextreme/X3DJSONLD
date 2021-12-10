@@ -6068,7 +6068,7 @@ EXTERNPROTO TransmitterPdu [
                       ((local-name()='containerField' and .='children'))) and
                       not( local-name(..)='ListenerPointSource' and
                       ((local-name()='containerField' and .='children') or
-                      (local-name()='enableDoppler' and (.='false')) or
+                      (local-name()='dopplerEnabled' and (.='false')) or
                       (local-name()='interauralDistance' and (.='0' or .='0.0')) or
                       (local-name()='orientation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
                       (local-name()='position' and (.='0 0 0' or .='0.0 0.0 0.0')) or
@@ -6088,7 +6088,7 @@ EXTERNPROTO TransmitterPdu [
                       (local-name()='coneOuterGain' and (.='0' or .='0.0')) or
                       (local-name()='direction' and (.='0 0 1' or .='0.0 0.0 1.0')) or
                       (local-name()='distanceModel' and (.='inverse')) or
-                      (local-name()='enableDoppler' and (.='false')) or
+                      (local-name()='dopplerEnabled' and (.='false')) or
                       (local-name()='enableHRTF' and (.='false')) or
                       (local-name()='intensity' and (.='1' or .='1.0')) or
                       (local-name()='location' and (.='0 0 0' or .='0.0 0.0 0.0')) or
@@ -7277,16 +7277,18 @@ EXTERNPROTO TransmitterPdu [
       <xsl:when test="	($attributeName='ccw') or
       			($attributeName='convex') or
       			($attributeName='colorPerVertex') or
-                ($attributeName='bboxDisplay')  or
+                        ($attributeName='bboxDisplay')  or
       			($attributeName='enabled') or
+			($attributeName='dopplerEnabled')  or
+			($attributeName='enableHRTF')  or
       			($attributeName='global') or
       			($attributeName='normalPerVertex') or
       			($attributeName='on') or
-					($attributeName='load')     or
-				($attributeName='loop') or
+			($attributeName='load')     or
+			($attributeName='loop') or
       			($attributeName='solid') or
       			($parentElementName='AudioClip' and $attributeName='loop') or
-				($parentElementName='BooleanToggle' and $attributeName='toggle') or
+			($parentElementName='BooleanToggle' and $attributeName='toggle') or
       			($parentElementName='Collision' and $attributeName='enabled') or
       			($parentElementName='Cone' and ($attributeName='side' or $attributeName='bottom')) or
       			($parentElementName='Cylinder' and ($attributeName='side' or $attributeName='bottom' or $attributeName='top')) or
@@ -7294,8 +7296,9 @@ EXTERNPROTO TransmitterPdu [
       			($parentElementName='Extrusion' and ($attributeName='beginCap' or $attributeName='endCap')) or
       			($parentElementName='FontStyle' and ($attributeName='horizontal' or $attributeName='leftToRight' or $attributeName='topToBottom')) or
       			($parentElementName='ImageTexture' and ($attributeName='repeatS' or $attributeName='repeatT')) or
-				(contains($parentElementName,'Texture3D') and starts-with($attributeName,'repeat')) or
-      			($parentElementName='LOD' and ($attributeName='forceTransitions')) or
+			(contains($parentElementName,'Texture3D') and starts-with($attributeName,'repeat')) or
+      			($parentElementName='ListenerPointSource' and $attributeName='trackCurrentView')  or
+			($parentElementName='LOD' and ($attributeName='forceTransitions')) or
       			($parentElementName='MovieTexture' and ($attributeName='repeatS' or $attributeName='repeatT' or $attributeName='loop')) or
       			($parentElementName='PixelTexture' and ($attributeName='repeatS' or $attributeName='repeatT')) or
       			($parentElementName='NavigationInfo' and $attributeName='headlight') or
@@ -7591,7 +7594,8 @@ EXTERNPROTO TransmitterPdu [
         </xsl:call-template>
       </xsl:when>
       <!-- SFInt32 -->
-      <xsl:when test="	($parentElementName='IntegerTrigger' and $attributeName='integerKey') or
+      <xsl:when test=" 		($attributeName='channelSelection')         or
+                                ($parentElementName='IntegerTrigger' and $attributeName='integerKey') or
 				($parentElementName='MetadataInteger' and $attributeName='value') or
 				($parentElementName='Switch' and $attributeName='whichChoice') or
       			(contains($parentElementName,'ElevationGrid') and ($attributeName='xDimension' or $attributeName='zDimension')) or
@@ -7719,11 +7723,40 @@ EXTERNPROTO TransmitterPdu [
         </xsl:if>
       </xsl:when>
       <!-- SFFloat -->
-      <xsl:when test="	($attributeName='ambientIntensity') or
-      			($attributeName='intensity') or
-      			($attributeName='creaseAngle') or
-      			($attributeName='transparency') or
-      			($parentElementName='AudioClip' and $attributeName='pitch') or
+      <xsl:when test="
+                                        ($attributeName='absorption')       or
+                                        ($attributeName='ambientIntensity') or
+					($attributeName='attack')           or
+                                        ($attributeName='coneInnerAngle')   or ($attributeName='coneOuterAngle')  or ($attributeName='coneOuterGain')    or
+					($attributeName='creaseAngle')      or
+					($attributeName='detune')           or
+                                        ($attributeName='diffuse')          or
+					($attributeName='farDistance')      or ($attributeName='nearDistance')    or
+					($attributeName='frequency')        or
+					($attributeName='gain')             or
+					($attributeName='intensity')        or
+					($attributeName='interauralDistance') or
+					($attributeName='knee')             or
+					($attributeName='maxDistance')      or
+					($attributeName='minDecibels')      or ($attributeName='maxDecibels')     or
+                                        starts-with($attributeName,'pointSize') or
+					($attributeName='priority')         or
+					($attributeName='qualityFactor')    or
+                                        ($attributeName='radius')           or ($attributeName='innerRadius') or ($attributeName='outerRadius') or
+					($attributeName='ratio')            or
+					($attributeName='referenceDistance') or
+                                        ($attributeName='refraction')       or
+                                        ($attributeName='rolloffFactor')    or
+					($attributeName='shadowIntensity')  or
+					($attributeName='smoothingTimeConstant')  or
+                                        ($attributeName='specular')         or
+                                        ($attributeName='startAngle')       or ($attributeName='endAngle') or
+					($attributeName='threshold')        or
+                                        ($attributeName='tolerance')        or
+					($attributeName='transparency')     or
+			($parentElementName='AcousticProperties' and ($attributeName='absorption' or $attributeName='diffuse' or $attributeName='refraction' or $attributeName='specular')) or
+			($parentElementName='Appearance'       and $attributeName='alphaCutoff') or
+			($parentElementName='AudioClip' and $attributeName='pitch') or
       			($parentElementName='Cone' and ($attributeName='bottomRadius' or $attributeName='height')) or
       			($parentElementName='Cylinder' and ($attributeName='radius' or $attributeName='height')) or
       			($parentElementName='CylinderSensor' and ($attributeName='diskAngle' or $attributeName='maxAngle' or $attributeName='minAngle' or $attributeName='offset')) or
@@ -7732,17 +7765,18 @@ EXTERNPROTO TransmitterPdu [
       			($parentElementName='FontStyle' and ($attributeName='size' or $attributeName='spacing')) or
       			(ends-with($parentElementName,'Material') and ($attributeName='ambientIntensity' or $attributeName='shininess' or $attributeName='transparency')) or
       			($parentElementName='MovieTexture' and $attributeName='speed') or
-				($parentElementName='MultiTexture' and $attributeName='alpha') or
+			($parentElementName='MultiTexture' and $attributeName='alpha') or
       			($parentElementName='NavigationInfo' and ($attributeName='speed' or $attributeName='visibilityLimit' or $attributeName='transitionTime')) or
       			($parentElementName='GeoViewpoint' and $attributeName='speedFactor') or
       			($parentElementName='PointLight' and $attributeName='radius') or
-      			($parentElementName='SpotLight' and ($attributeName='radius' or $attributeName='cutOffAngle' or $attributeName='beamWidth') or
-      			($parentElementName='Sound' and ($attributeName='maxBack' or $attributeName='minBack' or $attributeName='maxFront' or $attributeName='minFront') or $attributeName='priority')) or
-      			($parentElementName='Sphere' and $attributeName='radius') or
+      			($parentElementName='Sound' and ($attributeName='maxBack' or $attributeName='minBack' or $attributeName='maxFront' or $attributeName='minFront' or $attributeName='priority')) or
+      			($parentElementName='SpatialSound' and ($attributeName='coneInnerAngle' or $attributeName='coneOuterAngle' or $attributeName='coneOuterGain' or $attributeName='maxDistance' or $attributeName='priority' or $attributeName='referenceDistance' or $attributeName='rolloffFactor')) or
+			($parentElementName='Sphere' and $attributeName='radius') or
+      			($parentElementName='SpotLight' and ($attributeName='radius' or $attributeName='cutOffAngle' or $attributeName='beamWidth')) or
       			($parentElementName='Text' and $attributeName='maxExtent') or
       			(starts-with($parentElementName,'TextureProjector') and ($attributeName='farDistance' or $attributeName='nearDistance')) or
-                ($parentElementName='TextureProjectorPerspective' and $attributeName='fieldOfView') or
-				($parentElementName='TextureTransform' and $attributeName='rotation') or
+                        ($parentElementName='TextureProjectorPerspective' and $attributeName='fieldOfView') or
+			($parentElementName='TextureTransform' and $attributeName='rotation') or
       			(contains($parentElementName,'Viewpoint') and $attributeName='fieldOfView') or
       			(starts-with($parentElementName,'Arc') and (contains($attributeName,'Angle') or $attributeName='radius')) or
       			($parentElementName='Circle2D' and $attributeName='radius') or

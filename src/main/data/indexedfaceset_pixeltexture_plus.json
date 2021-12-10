@@ -88,7 +88,7 @@
           },
           {
             "@name":"translated",
-            "@content":"23 November 2021"
+            "@content":"09 December 2021"
           },
           {
             "@name":"generator",
@@ -144,7 +144,7 @@
           },
           { "NavigationInfo":
             {
-              "@type":["EXAMINE","WALK","FLY","ANY"]
+              "@type":"\"EXAMINE\" \"WALK\" \"FLY\" \"ANY\""
             }
           },
           { "Shape":

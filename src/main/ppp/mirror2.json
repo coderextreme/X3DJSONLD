@@ -55,7 +55,7 @@
         },
         {
           "@name": "translated",
-          "@content": "18 November 2021"
+          "@content": "09 December 2021"
         },
         {
           "@name": "generator",
@@ -131,7 +131,7 @@
                       },
                       "-texture": {
                         "ComposedCubeMapTexture": {
-                          "-backTexture": {
+                          "-back": {
                             "ImageTexture": {
                               "@DEF": "backShader",
                               "@url": [
@@ -140,7 +140,7 @@
                               ]
                             }
                           },
-                          "-bottomTexture": {
+                          "-bottom": {
                             "ImageTexture": {
                               "@DEF": "bottomShader",
                               "@url": [
@@ -149,7 +149,7 @@
                               ]
                             }
                           },
-                          "-frontTexture": {
+                          "-front": {
                             "ImageTexture": {
                               "@DEF": "frontShader",
                               "@url": [
@@ -158,7 +158,7 @@
                               ]
                             }
                           },
-                          "-leftTexture": {
+                          "-left": {
                             "ImageTexture": {
                               "@DEF": "leftShader",
                               "@url": [
@@ -167,7 +167,7 @@
                               ]
                             }
                           },
-                          "-rightTexture": {
+                          "-right": {
                             "ImageTexture": {
                               "@DEF": "rightShader",
                               "@url": [
@@ -176,7 +176,7 @@
                               ]
                             }
                           },
-                          "-topTexture": {
+                          "-top": {
                             "ImageTexture": {
                               "@DEF": "topShader",
                               "@url": [

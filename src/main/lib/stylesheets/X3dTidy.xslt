@@ -868,6 +868,7 @@ Recommended tools:
                     <xsl:text>Source</xsl:text>
                     <xsl:message>
                         <xsl:text>*** corrected element naming </xsl:text>
+                        <xsl:text>&lt;</xsl:text>
                         <xsl:value-of select="local-name()"/>
                         <xsl:if test="(string-length(@DEF) > 0)">
                             <xsl:text> DEF='</xsl:text>
@@ -890,11 +891,12 @@ Recommended tools:
                         <xsl:text>Source</xsl:text>
                     </xsl:message>
                 </xsl:when>
-                <xsl:when test="(local-name() = 'AudioDestination') or (local-name() = 'AudioSource')">
-                    <xsl:text>Stream</xsl:text>
+                <xsl:when test="(local-name() = 'AudioSource')">
+                    <xsl:text>BufferOrStream?</xsl:text>
                     <xsl:value-of select="local-name()"/>
                     <xsl:message>
-                        <xsl:text>*** corrected element naming </xsl:text>
+                        <xsl:text>*** corrected element naming needed: </xsl:text>
+                        <xsl:text>&lt;</xsl:text>
                         <xsl:value-of select="local-name()"/>
                         <xsl:if test="(string-length(@DEF) > 0)">
                             <xsl:text> DEF='</xsl:text>
@@ -906,15 +908,29 @@ Recommended tools:
                             <xsl:value-of select="@USE"/>
                             <xsl:text>'</xsl:text>
                         </xsl:if>
-                        <xsl:if test="(string-length(@name) > 0)">
-                            <xsl:text> name='</xsl:text>
-                            <xsl:value-of select="@name"/>
+                        <xsl:text>/&gt;</xsl:text>
+                        <xsl:text> change to BufferAudioSource or StreamAudioSource </xsl:text>
+                    </xsl:message>
+                </xsl:when>
+                <xsl:when test="(local-name() = 'StreamAudio')">
+                    <xsl:value-of select="local-name()"/>
+                    <xsl:text>DestinationOrSource?</xsl:text>
+                    <xsl:message>
+                        <xsl:text>*** corrected element naming needed: </xsl:text>
+                        <xsl:text>&lt;</xsl:text>
+                        <xsl:value-of select="local-name()"/>
+                        <xsl:if test="(string-length(@DEF) > 0)">
+                            <xsl:text> DEF='</xsl:text>
+                            <xsl:value-of select="@DEF"/>
+                            <xsl:text>'</xsl:text>
+                        </xsl:if>
+                        <xsl:if test="(string-length(@USE) > 0)">
+                            <xsl:text> USE='</xsl:text>
+                            <xsl:value-of select="@USE"/>
                             <xsl:text>'</xsl:text>
                         </xsl:if>
                         <xsl:text>/&gt;</xsl:text>
-                        <xsl:text> element naming mismatch, correct CamelCase naming is </xsl:text>
-                        <xsl:text>Stream</xsl:text>
-                        <xsl:value-of select="local-name()"/>
+                        <xsl:text> change to StreamAudioDestination or StreamAudioSource </xsl:text>
                     </xsl:message>
                 </xsl:when>
                 <xsl:otherwise>
@@ -1395,6 +1411,22 @@ Recommended tools:
                                                     <xsl:when test="(local-name() = 'HAnimSite')">
                                                         <xsl:text>sites</xsl:text>
                                                     </xsl:when>
+                                                    <xsl:when test="(local-name() = 'Analyser') or (local-name() = 'AudioDestination') or (local-name() = 'BiquadFilter') or (local-name() = 'BufferAudioSource') or (local-name() = 'ChannelMerger') or (local-name() = 'ChannelSelector') or (local-name() = 'ChannelSplitter') or (local-name() = 'Convolver') or (local-name() = 'Delay') or (local-name() = 'DynamicsCompressor') or (local-name() = 'Gain') or (local-name() = 'ListenerPointSource') or (local-name() = 'MicrophoneSource') or (local-name() = 'OscillatorSource') or (local-name() = 'SpatialSound') or (local-name() = 'StreamAudioDestination') or (local-name() = 'StreamAudioSource') or (local-name() = 'WaveShaper')">
+                                                        <xsl:text>children</xsl:text>
+                                                    </xsl:when>
+                                                    <xsl:when test="((local-name() = 'AudioClip') or (local-name() = 'MovieTexture')) and
+                                                                    ((local-name(..) = 'Analyser') or (local-name(..) = 'AudioDestination') or (local-name(..) = 'BiquadFilter') or (local-name(..) = 'BufferAudioSource') or (local-name(..) = 'ChannelMerger') or (local-name(..) = 'ChannelSelector') or (local-name(..) = 'ChannelSplitter') or (local-name(..) = 'Convolver') or (local-name(..) = 'Delay') or (local-name(..) = 'DynamicsCompressor') or (local-name(..) = 'Gain') or (local-name(..) = 'ListenerPointSource') or (local-name(..) = 'MicrophoneSource') or (local-name(..) = 'OscillatorSource') or (local-name(..) = 'SpatialSound') or (local-name(..) = 'StreamAudioDestination') or (local-name(..) = 'StreamAudioSource') or (local-name(..) = 'WaveShaper'))">
+                                                        <xsl:text>children</xsl:text>
+                                                        <xsl:if test="(@containerField = 'source') or (@containerField = 'texture') or (string-length(@containerField) = 0)">
+                                                            <xsl:message>
+                                                                <xsl:text>*** containerField incorrect #1 for </xsl:text>
+                                                                <xsl:value-of select="local-name()"/>
+                                                                <xsl:text> with parent </xsl:text>
+                                                                <xsl:value-of select="local-name(..)"/>
+                                                                <xsl:text>, reset to children</xsl:text>
+                                                            </xsl:message>
+                                                        </xsl:if>
+                                                    </xsl:when>
                                                     <!-- HAnimHumanoid can contain HAnimJoint with containerField = joints or skeleton -->
                                                     <!-- HAnimHumanoid can contain HAnimSite  with containerField = sites, skeleton or viewpoints -->
                                                     <!-- HAnimHumanoid can contain X3DCoordinateNode with containerField = skinCoord or skinBindingCoord -->
@@ -1403,7 +1435,20 @@ Recommended tools:
                                                         <xsl:call-template name="fieldNameChanges"/>
                                                     </xsl:otherwise>
                                                 </xsl:choose>
-                                            </xsl:variable><!-- [@containerField = $expectedContainerField] -->
+                                            </xsl:variable>
+                                            <xsl:if test="(string-length($expectedContainerField) > 0) and not($expectedContainerField = @containerField)">
+                                                <!-- debug
+                                                -->
+                                                <xsl:message>
+                                                    <xsl:text>*** containerField mismatch - found it #1 </xsl:text>
+                                                    <xsl:text>containerField='</xsl:text>
+                                                    <xsl:value-of select="@containerField"/>
+                                                    <xsl:text>'</xsl:text>
+                                                    <xsl:text> expectedContainerField='</xsl:text>
+                                                    <xsl:value-of select="$expectedContainerField"/>
+                                                    <xsl:text>'</xsl:text>
+                                                </xsl:message>
+                                            </xsl:if>
                                             <xsl:if test="not(ancestor::*[local-name() = 'HAnimHumanoid']/*[local-name() = $nodeType][@USE = $nodeDEF])">
                                                 <!-- not corresponding USE node found under ancestor HAnimHumanoid -->
                                                 <xsl:choose>
@@ -1878,11 +1923,14 @@ Recommended tools:
 
     <xsl:template name="process-attributes-in-order">
         <!-- debug
+        <xsl:if test="(local-name() = 'AudioClip')">
             <xsl:message>
-                    <xsl:text disable-output-escaping="yes"> * process-attributes-in-order </xsl:text>
-                    <xsl:value-of select="local-name()"/>
+                <xsl:text disable-output-escaping="yes"> * process-attributes-in-order </xsl:text>
+                <xsl:value-of select="local-name()"/>
             </xsl:message>
+        </xsl:if>
         -->
+        
         <xsl:variable name="isHAnim"  select="starts-with(local-name(),'HAnim')"/>
         <xsl:variable name="isHAnim1" select="$isX3D3 and (ancestor-or-self::*[local-name() = 'HAnimHumanoid'][starts-with(@version,'1') or (string-length(@version) = 0)] or
                                                                                              //HAnimHumanoid  [starts-with(@version,'1') or (string-length(@version) = 0)])"/>
@@ -2323,14 +2371,22 @@ Recommended tools:
             </xsl:otherwise>
         </xsl:choose>
         <!-- debug
-        <xsl:message>
-                <xsl:text>*** made it to test for containerField missing... @containerField='</xsl:text>
-                <xsl:value-of select="@containerField"/>
-                <xsl:text>' and string-length(@containerField)=</xsl:text>
-                <xsl:value-of select="string-length(@containerField)"/>
-        </xsl:message>
+        <xsl:if test="(local-name() = 'AudioClip')">
+            <xsl:message>
+                    <xsl:text>*** made it to test for containerField missing... </xsl:text>
+                    <xsl:value-of select="local-name(..)"/>
+                    <xsl:text>/</xsl:text>
+                    <xsl:value-of select="local-name()"/>
+                    <xsl:text> @containerField='</xsl:text>
+                    <xsl:value-of select="@containerField"/>
+                    <xsl:text>' and string-length(@containerField)=</xsl:text>
+                    <xsl:value-of select="string-length(@containerField)"/>
+            </xsl:message>
+        </xsl:if>
         -->
-        <xsl:if test="(string-length(@containerField) = 0)">
+        <!-- AudioClip requires special detection since incorrect default containerField='source' may be filled in by XML processor and we need to fix it -->
+        <xsl:if test="(not(@containerField) or (string-length(@containerField) = 0) or (local-name() = 'AudioClip')) 
+                       and not(local-name() = 'X3D') and not(local-name() = 'meta') and not(local-name() = 'Scene') and not(local-name() = 'ROUTE')">
             <!-- since Saxon is expanding containerField values from DTD, this branch is likely not reached by relevant nodes -->
             <!-- debug
             <xsl:message>
@@ -2356,14 +2412,30 @@ Recommended tools:
                     <!-- HAnimHumanoid can contain HAnimSite  with containerField = sites, skeleton or viewpoints -->
                     <!-- HAnimHumanoid can contain X3DCoordinateNode with containerField = skinCoord or skinBindingCoord -->
                     <!-- HAnimHumanoid can contain X3DNormalNode with containerField = skinNormal or skinBindingNormal -->
+                    <xsl:when test="(local-name() = 'Analyser') or (local-name() = 'AudioDestination') or (local-name() = 'BiquadFilter') or (local-name() = 'BufferAudioSource') or (local-name() = 'ChannelMerger') or (local-name() = 'ChannelSelector') or (local-name() = 'ChannelSplitter') or (local-name() = 'Convolver') or (local-name() = 'Delay') or (local-name() = 'DynamicsCompressor') or (local-name() = 'Gain') or (local-name() = 'ListenerPointSource') or (local-name() = 'MicrophoneSource') or (local-name() = 'OscillatorSource') or (local-name() = 'SpatialSound') or (local-name() = 'StreamAudioDestination') or (local-name() = 'StreamAudioSource') or (local-name() = 'WaveShaper')">
+                        <xsl:text>children</xsl:text>
+                    </xsl:when>
+                    <xsl:when test="((local-name() = 'AudioClip') or (local-name() = 'MovieTexture')) and
+                                    ((local-name(..) = 'Analyser') or (local-name(..) = 'AudioDestination') or (local-name(..) = 'BiquadFilter') or (local-name(..) = 'BufferAudioSource') or (local-name(..) = 'ChannelMerger') or (local-name(..) = 'ChannelSelector') or (local-name(..) = 'ChannelSplitter') or (local-name(..) = 'Convolver') or (local-name(..) = 'Delay') or (local-name(..) = 'DynamicsCompressor') or (local-name(..) = 'Gain') or (local-name(..) = 'ListenerPointSource') or (local-name(..) = 'MicrophoneSource') or (local-name(..) = 'OscillatorSource') or (local-name(..) = 'SpatialSound') or (local-name(..) = 'StreamAudioDestination') or (local-name(..) = 'StreamAudioSource') or (local-name(..) = 'WaveShaper'))">
+                            <xsl:text>children</xsl:text>
+                            <xsl:if test="(@containerField = 'source') or (@containerField = 'texture') or (string-length(@containerField) = 0)">
+                                <xsl:message>
+                                    <xsl:text>*** containerField incorrect #2 for </xsl:text>
+                                    <xsl:value-of select="local-name(..)"/>
+                                    <xsl:text>/</xsl:text>
+                                    <xsl:value-of select="local-name()"/>
+                                    <xsl:text>, reset to children</xsl:text>
+                                </xsl:message>
+                            </xsl:if>
+                        </xsl:when>
                     <xsl:otherwise>
                         <xsl:call-template name="fieldNameChanges"/>
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:variable>
-            <xsl:if test="(string-length($expectedContainerField) > 0)">
+            <xsl:if test="(string-length($expectedContainerField) > 0) and not($expectedContainerField = @containerField)">
                     <xsl:message>
-                        <xsl:text>*** containerField mismatch for </xsl:text>
+                        <xsl:text>*** containerField mismatch  #2 for </xsl:text>
                         <xsl:value-of select="local-name(..)"/>
                         <xsl:text>/</xsl:text>
                         <xsl:value-of select="local-name()"/>
@@ -3337,7 +3409,7 @@ Recommended tools:
                       ((local-name()='containerField' and .='children'))) and
                       not( local-name(..)='ListenerPointSource' and
                       ((local-name()='containerField' and .='children') or
-                      (local-name()='enableDoppler' and (.='false')) or
+                      (local-name()='dopplerEnabled' and (.='false')) or
                       (local-name()='interauralDistance' and (.='0' or .='0.0')) or
                       (local-name()='orientation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
                       (local-name()='position' and (.='0 0 0' or .='0.0 0.0 0.0')) or
@@ -3357,7 +3429,7 @@ Recommended tools:
                       (local-name()='coneOuterGain' and (.='0' or .='0.0')) or
                       (local-name()='direction' and (.='0 0 1' or .='0.0 0.0 1.0')) or
                       (local-name()='distanceModel' and (.='inverse')) or
-                      (local-name()='enableDoppler' and (.='false')) or
+                      (local-name()='dopplerEnabled' and (.='false')) or
                       (local-name()='enableHRTF' and (.='false')) or
                       (local-name()='intensity' and (.='1' or .='1.0')) or
                       (local-name()='location' and (.='0 0 0' or .='0.0 0.0 0.0')) or
@@ -3843,8 +3915,8 @@ Recommended tools:
                 .)" >
             
             <xsl:choose>
-                <!-- check if this is disallowed nonempty attribute within a USE node -->
-                <xsl:when test="(local-name() = 'id') and (string-length(../@USE) > 0)">
+                <!-- TODO confirm, allow id as disallowed nonempty attribute within a USE node -->
+                <xsl:when test="false() and (local-name() = 'id') and (string-length(../@USE) > 0)">
                     <xsl:message>
                         <xsl:text>*** </xsl:text>
                         <xsl:value-of select="local-name(..)"/><!-- element name -->
@@ -4344,7 +4416,7 @@ Recommended tools:
                 <xsl:when test="(lower-case(local-name()) = 'emissivetexturemapping') and not(local-name() = 'emissiveTextureMapping')"><xsl:text>emissiveTextureMapping</xsl:text><xsl:message><xsl:text>*** fix attribute capitalization, change </xsl:text><xsl:value-of select="local-name(.)"/><xsl:text> to emissiveTextureMapping</xsl:text></xsl:message></xsl:when>
                 <xsl:when test="(lower-case(local-name()) = 'enabled') and not(local-name() = 'enabled')"><xsl:text>enabled</xsl:text><xsl:message><xsl:text>*** fix attribute capitalization, change </xsl:text><xsl:value-of select="local-name(.)"/><xsl:text> to enabled</xsl:text></xsl:message></xsl:when>
                 <xsl:when test="(lower-case(local-name()) = 'enabledaxes') and not(local-name() = 'enabledAxes')"><xsl:text>enabledAxes</xsl:text><xsl:message><xsl:text>*** fix attribute capitalization, change </xsl:text><xsl:value-of select="local-name(.)"/><xsl:text> to enabledAxes</xsl:text></xsl:message></xsl:when>
-                <xsl:when test="(lower-case(local-name()) = 'enabledoppler') and not(local-name() = 'enableDoppler')"><xsl:text>enableDoppler</xsl:text><xsl:message><xsl:text>*** fix attribute capitalization, change </xsl:text><xsl:value-of select="local-name(.)"/><xsl:text> to enableDoppler</xsl:text></xsl:message></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'dopplerEnabled') and not(local-name() = 'dopplerEnabled')"><xsl:text>dopplerEnabled</xsl:text><xsl:message><xsl:text>*** fix attribute capitalization, change </xsl:text><xsl:value-of select="local-name(.)"/><xsl:text> to dopplerEnabled</xsl:text></xsl:message></xsl:when>
                 <xsl:when test="(lower-case(local-name()) = 'enablehrtf') and not(local-name() = 'enableHRTF')"><xsl:text>enableHRTF</xsl:text><xsl:message><xsl:text>*** fix attribute capitalization, change </xsl:text><xsl:value-of select="local-name(.)"/><xsl:text> to enableHRTF</xsl:text></xsl:message></xsl:when>
                 <xsl:when test="(lower-case(local-name()) = 'encodingscheme') and not(local-name() = 'encodingScheme')"><xsl:text>encodingScheme</xsl:text><xsl:message><xsl:text>*** fix attribute capitalization, change </xsl:text><xsl:value-of select="local-name(.)"/><xsl:text> to encodingScheme</xsl:text></xsl:message></xsl:when>
                 <xsl:when test="(lower-case(local-name()) = 'endframe') and not(local-name() = 'endFrame')"><xsl:text>endFrame</xsl:text><xsl:message><xsl:text>*** fix attribute capitalization, change </xsl:text><xsl:value-of select="local-name(.)"/><xsl:text> to endFrame</xsl:text></xsl:message></xsl:when>
@@ -5605,6 +5677,22 @@ Recommended tools:
                         <!-- HAnimHumanoid can contain HAnimSite  with containerField = sites, skeleton or viewpoints -->
                         <!-- HAnimHumanoid can contain X3DCoordinateNode with containerField = skinCoord or skinBindingCoord -->
                         <!-- HAnimHumanoid can contain X3DNormalNode with containerField = skinNormal or skinBindingNormal -->
+                        <xsl:when test="(local-name() = 'Analyser') or (local-name() = 'AudioDestination') or (local-name() = 'BiquadFilter') or (local-name() = 'BufferAudioSource') or (local-name() = 'ChannelMerger') or (local-name() = 'ChannelSelector') or (local-name() = 'ChannelSplitter') or (local-name() = 'Convolver') or (local-name() = 'Delay') or (local-name() = 'DynamicsCompressor') or (local-name() = 'Gain') or (local-name() = 'ListenerPointSource') or (local-name() = 'MicrophoneSource') or (local-name() = 'OscillatorSource') or (local-name() = 'SpatialSound') or (local-name() = 'StreamAudioDestination') or (local-name() = 'StreamAudioSource') or (local-name() = 'WaveShaper')">
+                            <xsl:text>children</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="((local-name() = 'AudioClip') or (local-name() = 'MovieTexture')) and
+                                        ((local-name(..) = 'Analyser') or (local-name(..) = 'AudioDestination') or (local-name(..) = 'BiquadFilter') or (local-name(..) = 'BufferAudioSource') or (local-name(..) = 'ChannelMerger') or (local-name(..) = 'ChannelSelector') or (local-name(..) = 'ChannelSplitter') or (local-name(..) = 'Convolver') or (local-name(..) = 'Delay') or (local-name(..) = 'DynamicsCompressor') or (local-name(..) = 'Gain') or (local-name(..) = 'ListenerPointSource') or (local-name(..) = 'MicrophoneSource') or (local-name(..) = 'OscillatorSource') or (local-name(..) = 'SpatialSound') or (local-name(..) = 'StreamAudioDestination') or (local-name(..) = 'StreamAudioSource') or (local-name(..) = 'WaveShaper'))">
+                            <xsl:text>children</xsl:text>
+                            <xsl:if test="(@containerField = 'source') or (@containerField = 'texture') or (string-length(@containerField) = 0)">
+                                <xsl:message>
+                                    <xsl:text>*** containerField incorrect #3 for </xsl:text>
+                                    <xsl:value-of select="local-name()"/>
+                                    <xsl:text> with parent </xsl:text>
+                                    <xsl:value-of select="local-name(..)"/>
+                                    <xsl:text>, reset to children</xsl:text>
+                                </xsl:message>
+                            </xsl:if>
+                        </xsl:when>
                         <xsl:otherwise>
                             <xsl:call-template name="fieldNameChanges"/>
                         </xsl:otherwise>
@@ -5612,16 +5700,16 @@ Recommended tools:
                 </xsl:variable>
                 <xsl:if test="(string-length($expectedContainerField) > 0)">
                     <!-- debug
+                    -->
                     <xsl:message>
                         <xsl:text>*** containerField mismatch - found it #3 </xsl:text>
                         <xsl:text>containerField='</xsl:text>
-                        <xsl:value-of select="$containerField"/>
+                        <xsl:value-of select="@containerField"/>
                         <xsl:text>'</xsl:text>
                         <xsl:text> expectedContainerField='</xsl:text>
                         <xsl:value-of select="$expectedContainerField"/>
                         <xsl:text>'</xsl:text>
                     </xsl:message>
-                    -->
                 </xsl:if>
                 <xsl:choose> 
                     <xsl:when test="(string-length($expectedContainerField) > 0) and not($containerField = $expectedContainerField)">

@@ -22,7 +22,7 @@
           },
           {
             "@name":"translated",
-            "@content":"23 November 2021"
+            "@content":"09 December 2021"
           },
           {
             "@name":"generator",
@@ -38,7 +38,7 @@
         "-children":[
           { "NavigationInfo":
             {
-              "@type":["EXAMINE","FLY","WALK"],
+              "@type":"\"EXAMINE\" \"FLY\" \"WALK\"",
               "@speed":3,
               "@avatarSize":[200,200,120]
             }

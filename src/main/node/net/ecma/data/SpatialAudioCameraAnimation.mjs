@@ -35,6 +35,7 @@ import { Billboard } from './x3d.mjs';
 import { Text } from './x3d.mjs';
 import { FontStyle } from './x3d.mjs';
 import { ListenerPointSource } from './x3d.mjs';
+import { undefined } from './x3d.mjs';
 import { StreamAudioDestination } from './x3d.mjs';
 import { SpatialSound } from './x3d.mjs';
 import { Gain } from './x3d.mjs';
@@ -251,12 +252,14 @@ var X3D0 =  new X3D({
                                   style : new SFString("BOLD")}))}))})])})])})])}),
 
             new ListenerPointSource({
-              trackCurrentView : new SFBool(true)}),
+              trackCurrentView : new SFBool(true),
+              dopplerEnabled : new undefined("false")}),
 
             new StreamAudioDestination({
               children : new MFNode([
                 new SpatialSound({
                   DEF : new SFString("Audio1"),
+                  dopplerEnabled : new undefined("false"),
                   children : new MFNode([
                     new Gain({
                       children : new MFNode([
@@ -269,6 +272,7 @@ var X3D0 =  new X3D({
 
                 new SpatialSound({
                   DEF : new SFString("Audio2"),
+                  dopplerEnabled : new undefined("false"),
                   children : new MFNode([
                     new Gain({
                       children : new MFNode([

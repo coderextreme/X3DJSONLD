@@ -14,7 +14,7 @@ var LOG = Scripts.LOG;
 var scripts = new Scripts.Scripts();
 var processScripts = Scripts.processScripts;
 
-var xmldom = require('xmldom');
+var xmldom = require('@xmldom/xmldom');
 var DOMImplementation = new xmldom.DOMImplementation();
 
 var convertJSON = require('./convertJSON.js');

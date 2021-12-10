@@ -5,7 +5,7 @@ var mkdirp = require('node-mkdirp');
 var mapToMethod = require('./mapToMethod.js');
 var mapToMethod2 = require('./mapToMethod2.js');
 var fieldTypes = require('./fieldTypes.js');
-var DOMParser = require('xmldom').DOMParser;
+var DOMParser = require('@xmldom/xmldom').DOMParser;
 
 if (typeof mapToMethod2 !== 'undefined') {
 	for (var map in mapToMethod2) {

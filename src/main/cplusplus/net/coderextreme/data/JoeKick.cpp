@@ -176,7 +176,7 @@ MetadataString30->setReference("correction options: ignore, warn, average, left,
 MetadataString30->setValue(new CString[1]{"ignore"}, 1);
 MetadataSet29->setValue(*MetadataString30);
 
-HAnimHumanoid28->setMetadata(*MetadataSet29);
+HAnimHumanoid28->setValue(*MetadataSet29);
 
 CHAnimJoint* HAnimJoint31 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint31->setName("humanoid_root");

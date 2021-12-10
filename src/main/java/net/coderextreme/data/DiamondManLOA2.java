@@ -139,7 +139,7 @@ public class DiamondManLOA2 {
                     .setMaterial(new Material().setUSE("TextMaterial"))))))))
         .addChild(new HAnimHumanoid().setName("humanoid").setDEF("hanim_humanoid").setLoa(2).setVersion("2.0")
           .addComments("HAnimHumanoid original info='\"humanoidVersion=Nancy V1.2b\" \"authorName=Cindy Ballreich\" \"authorEmail=cindy@ballreich.net\" \"copyright=1997 3Name3D / Yglesias Wallock Divekar Inc. all rights reserved.\" \"creationDate=Tue Dec 30 08:30:08 PST 1997\" \"usageRestrictions=Noncommercial usage is ok if 3Name3D name and logo <www.ballreich.net/vrml/HAnim/small_logo.gif> is present and proper credit is given.\"'")
-          .setMetadata(new MetadataSet().setName("HAnimHumanoid.info").setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid")
+          .addValue(new MetadataSet().setName("HAnimHumanoid.info").setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid")
             .addValue(new MetadataString().setName("humanoidVersion").setValue(new MFString15().getArray()))
             .addValue(new MetadataString().setName("authorEmail").setValue(new MFString16().getArray()))
             .addValue(new MetadataString().setName("authorName").setValue(new MFString17().getArray()))

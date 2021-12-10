@@ -119,7 +119,7 @@
         },
         {
           "@name": "translated",
-          "@content": "18 November 2021"
+          "@content": "09 December 2021"
         },
         {
           "@name": "generator",
@@ -540,70 +540,72 @@
                 "#comment": "right between the eyes, stationary position not animating except with body itself"
               }
             ],
-            "-metadata": {
-              "MetadataSet": {
-                "@name": "HAnimHumanoid.info",
-                "@reference": "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid",
-                "-value": [
-                  {
-                    "MetadataString": {
-                      "@name": "authorName",
-                      "@value": [
-                        "Matthew T. Beitler Joe D. Williams Don Brutzman"
-                      ]
+            "-value": [
+              {
+                "MetadataSet": {
+                  "@name": "HAnimHumanoid.info",
+                  "@reference": "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid",
+                  "-value": [
+                    {
+                      "MetadataString": {
+                        "@name": "authorName",
+                        "@value": [
+                          "Matthew T. Beitler Joe D. Williams Don Brutzman"
+                        ]
+                      }
+                    },
+                    {
+                      "MetadataString": {
+                        "@name": "authorEmail",
+                        "@value": [
+                          "HAnim@web3D.org"
+                        ]
+                      }
+                    },
+                    {
+                      "MetadataString": {
+                        "@name": "copyright",
+                        "@value": [
+                          "none"
+                        ]
+                      }
+                    },
+                    {
+                      "MetadataString": {
+                        "@name": "creationDate",
+                        "@value": [
+                          "12 May 1999"
+                        ]
+                      }
+                    },
+                    {
+                      "MetadataFloat": {
+                        "@name": "height",
+                        "@value": [
+                          1.7504
+                        ]
+                      }
+                    },
+                    {
+                      "MetadataString": {
+                        "@name": "humanoidVersion",
+                        "@value": [
+                          "2.0"
+                        ]
+                      }
+                    },
+                    {
+                      "MetadataString": {
+                        "@name": "usageRestrictions",
+                        "@value": [
+                          "none"
+                        ]
+                      }
                     }
-                  },
-                  {
-                    "MetadataString": {
-                      "@name": "authorEmail",
-                      "@value": [
-                        "HAnim@web3D.org"
-                      ]
-                    }
-                  },
-                  {
-                    "MetadataString": {
-                      "@name": "copyright",
-                      "@value": [
-                        "none"
-                      ]
-                    }
-                  },
-                  {
-                    "MetadataString": {
-                      "@name": "creationDate",
-                      "@value": [
-                        "12 May 1999"
-                      ]
-                    }
-                  },
-                  {
-                    "MetadataFloat": {
-                      "@name": "height",
-                      "@value": [
-                        1.7504
-                      ]
-                    }
-                  },
-                  {
-                    "MetadataString": {
-                      "@name": "humanoidVersion",
-                      "@value": [
-                        "2.0"
-                      ]
-                    }
-                  },
-                  {
-                    "MetadataString": {
-                      "@name": "usageRestrictions",
-                      "@value": [
-                        "none"
-                      ]
-                    }
-                  }
-                ]
+                  ]
+                }
               }
-            },
+            ],
             "-skeleton": [
               {
                 "HAnimJoint": {

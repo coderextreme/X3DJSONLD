@@ -1,5 +1,5 @@
 var fs = require("fs");
-var xmldom = require('xmldom');
+var xmldom = require('@xmldom/xmldom');
 var DOMImplementation = new xmldom.DOMImplementation();
 var XMLSerializer = new xmldom.XMLSerializer();
 var docType = DOMImplementation.createDocumentType("gltf", 'ISO//Web3D//DTD gltf 3.3//EN" "http://www.web3d.org/specifications/gltf-3.3.dtd', null);

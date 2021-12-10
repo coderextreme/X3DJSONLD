@@ -59,7 +59,7 @@
         },
         {
           "@name": "translated",
-          "@content": "18 November 2021"
+          "@content": "09 December 2021"
         },
         {
           "@name": "generator",
@@ -85,7 +85,7 @@
         },
         {
           "TextureBackground": {
-            "-leftTexture": {
+            "-left": {
               "ImageTexture": {
                 "@DEF": "leftBack",
                 "@url": [
@@ -94,7 +94,7 @@
                 ]
               }
             },
-            "-rightTexture": {
+            "-right": {
               "ImageTexture": {
                 "@DEF": "rightBack",
                 "@url": [
@@ -103,7 +103,7 @@
                 ]
               }
             },
-            "-frontTexture": {
+            "-front": {
               "ImageTexture": {
                 "@DEF": "frontBack",
                 "@url": [
@@ -112,7 +112,7 @@
                 ]
               }
             },
-            "-backTexture": {
+            "-back": {
               "ImageTexture": {
                 "@DEF": "backBack",
                 "@url": [
@@ -121,7 +121,7 @@
                 ]
               }
             },
-            "-topTexture": {
+            "-top": {
               "ImageTexture": {
                 "@DEF": "topBack",
                 "@url": [
@@ -130,7 +130,7 @@
                 ]
               }
             },
-            "-bottomTexture": {
+            "-bottom": {
               "ImageTexture": {
                 "@DEF": "bottomBack",
                 "@url": [
@@ -164,7 +164,7 @@
                       },
                       "-texture": {
                         "ComposedCubeMapTexture": {
-                          "-backTexture": {
+                          "-back": {
                             "ImageTexture": {
                               "@DEF": "backShader",
                               "@url": [
@@ -173,7 +173,7 @@
                               ]
                             }
                           },
-                          "-bottomTexture": {
+                          "-bottom": {
                             "ImageTexture": {
                               "@DEF": "bottomShader",
                               "@url": [
@@ -182,7 +182,7 @@
                               ]
                             }
                           },
-                          "-frontTexture": {
+                          "-front": {
                             "ImageTexture": {
                               "@DEF": "frontShader",
                               "@url": [
@@ -191,7 +191,7 @@
                               ]
                             }
                           },
-                          "-leftTexture": {
+                          "-left": {
                             "ImageTexture": {
                               "@DEF": "leftShader",
                               "@url": [
@@ -200,7 +200,7 @@
                               ]
                             }
                           },
-                          "-rightTexture": {
+                          "-right": {
                             "ImageTexture": {
                               "@DEF": "rightShader",
                               "@url": [
@@ -209,7 +209,7 @@
                               ]
                             }
                           },
-                          "-topTexture": {
+                          "-top": {
                             "ImageTexture": {
                               "@DEF": "topShader",
                               "@url": [
