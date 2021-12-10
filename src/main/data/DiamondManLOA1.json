@@ -106,7 +106,7 @@
           },
           {
             "@name":"translated",
-            "@content":"23 November 2021"
+            "@content":"09 December 2021"
           },
           {
             "@name":"generator",
@@ -149,7 +149,7 @@
                   "#comment":"HAnimHumanoid original info='\"authorEmail=beitler@graphics.cis.upenn.edu beitler@acm.org\" \"authorName=Matthew T. Beitler\" \"copyright=Copyright 1999 Matthew T. Beitler\" \"humanoidVersion=JointCenters 1.1 LOA1\" \"usageRestrictions=PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose.\"'"
                 }
               ],
-              "-metadata":
+              "-value":[
                 { "MetadataSet":
                   {
                     "@name":"HAnimHumanoid.info",
@@ -187,7 +187,8 @@
                       }
                     ]
                   }
-                },
+                }
+              ],
               "-skeleton":[
                 { "HAnimJoint":
                   {

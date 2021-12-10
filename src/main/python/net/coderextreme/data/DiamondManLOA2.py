@@ -415,7 +415,7 @@ MetadataString101.setValue(["Noncommercial usage is ok if 3Name3D name and logo 
 
 MetadataSet95.addValue(MetadataString101)
 
-HAnimHumanoid94.setMetadata(MetadataSet95)
+HAnimHumanoid94.setValue(MetadataSet95)
 HAnimJoint102 = HAnimJoint()
 HAnimJoint102.setName("humanoid_root")
 HAnimJoint102.setDEF("hanim_humanoid_root")

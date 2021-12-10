@@ -213,12 +213,14 @@ var X3D0 =  X3D(
                                   style_ : SFString('BOLD'))))])])]),
 
             ListenerPointSource(
-              trackCurrentView_ : true),
+              trackCurrentView_ : true,
+              dopplerEnabled_ : "false"),
 
             StreamAudioDestination(
               children_ : [
                 SpatialSound(
                   DEF_ : SFString('Audio1'),
+                  dopplerEnabled_ : "false",
                   children_ : [
                     Gain(
                       children_ : [
@@ -231,6 +233,7 @@ var X3D0 =  X3D(
 
                 SpatialSound(
                   DEF_ : SFString('Audio2'),
+                  dopplerEnabled_ : "false",
                   children_ : [
                     Gain(
                       children_ : [

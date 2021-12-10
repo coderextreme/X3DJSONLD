@@ -135,7 +135,7 @@ MetadataString26->setName("authorName");
 MetadataString26->setValue(new CString[1]{"Kwan-Hee YOO, Don Brutzman and Joe Williams"}, 1);
 MetadataSet25->setValue(*MetadataString26);
 
-HAnimHumanoid24->setMetadata(*MetadataSet25);
+HAnimHumanoid24->setValue(*MetadataSet25);
 
 CHAnimJoint* HAnimJoint27 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint27->setName("humanoid_root");

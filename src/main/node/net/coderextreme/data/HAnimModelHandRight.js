@@ -40,7 +40,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
         .addChild((new autoclass.WorldInfo()).setTitle("HAnimModelHandRight.x3d"))
         .addChild((new autoclass.HAnimHumanoid()).setName("Hand_Right").setDEF("hanim_Hand_Right").setLoa(4).setVersion("2.0")
           .addComments((new autoclass.CommentsBlock("HAnimHumanoid original info='\"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams\"'")))
-          .setMetadata((new autoclass.MetadataSet()).setName("HAnimHumanoid.info").setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid")
+          .setValue((new autoclass.MetadataSet()).setName("HAnimHumanoid.info").setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid")
             .addValue((new autoclass.MetadataString()).setName("authorName").setValue(java.newArray("java.lang.String", ["Kwan-Hee YOO, Don Brutzman and Joe Williams"]))))
           .addSkeleton((new autoclass.HAnimJoint()).setName("humanoid_root").setDEF("hanim_humanoid_root").setStiffness(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)]))
             .addComments((new autoclass.CommentsBlock("Might consider putting a HAnimSegment here, but that doesn't help with re-use of this hand model")))

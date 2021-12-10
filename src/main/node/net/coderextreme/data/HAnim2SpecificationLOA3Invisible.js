@@ -64,7 +64,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
           .addComments((new autoclass.CommentsBlock("Top-level HAnimSite/Viewpoint nodes that move with the human center but are unaffected by body animation")))
           .addComments((new autoclass.CommentsBlock("TODO move relevant HAnimSite/Viewpoint pairs into skeleton at appropriate locations, if so also revert containerField to default")))
           .addComments((new autoclass.CommentsBlock("right between the eyes, stationary position not animating except with body itself")))
-          .setMetadata((new autoclass.MetadataSet()).setName("HAnimHumanoid.info").setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid")
+          .setValue((new autoclass.MetadataSet()).setName("HAnimHumanoid.info").setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid")
             .addValue((new autoclass.MetadataString()).setName("authorName").setValue(java.newArray("java.lang.String", ["Matthew T. Beitler Joe D. Williams Don Brutzman"])))
             .addValue((new autoclass.MetadataString()).setName("authorEmail").setValue(java.newArray("java.lang.String", ["HAnim@web3D.org"])))
             .addValue((new autoclass.MetadataString()).setName("copyright").setValue(java.newArray("java.lang.String", ["none"])))

@@ -155,7 +155,7 @@ MetadataString32.setValue(["validation testing"])
 
 MetadataSet25.addValue(MetadataString32)
 
-HAnimHumanoid24.setMetadata(MetadataSet25)
+HAnimHumanoid24.setValue(MetadataSet25)
 HAnimJoint33 = HAnimJoint()
 HAnimJoint33.setName("humanoid_root")
 HAnimJoint33.setDEF("hanim_humanoid_root")

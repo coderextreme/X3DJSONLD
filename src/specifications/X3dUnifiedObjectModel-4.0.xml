@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-4.0.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-4.0.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 4.0 of X3D -->
-<!-- Generated 2021-09-25-07:00 21:52:57.2221728-07:00 -->
+<!-- Generated 2021-12-07-08:00 17:12:43.244082-08:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                        version="4.0"
                        xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -369,6 +369,21 @@
                       appinfo="parent node is TextureBackground or ComposedCubeMapTexture"/>
          <enumeration value="children"
                       appinfo="parent node is LoadSensor (formerly watchList in X3D3)"/>
+         <enumeration value="baseTexture"
+                      appinfo="X3D4 Physically Based Rendering (PBR) capability, parent node is PhysicalMaterial"
+                      documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/shape.html#PhysicalMaterial"/>
+         <enumeration value="emissiveTexture"
+                      appinfo="X3D4 Physically Based Rendering (PBR) capability, parent node is PhysicalMaterial or UnlitMaterial"
+                      documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/shape.html#UnlitMaterial"/>
+         <enumeration value="metallicRoughnessTexture"
+                      appinfo="X3D4 Physically Based Rendering (PBR) capability, parent node is PhysicalMaterial"
+                      documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/shape.html#PhysicalMaterial"/>
+         <enumeration value="normalTexture"
+                      appinfo="X3D4 Physically Based Rendering (PBR) capability, parent node is PhysicalMaterial or UnlitMaterial"
+                      documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/shape.html#UnlitMaterial"/>
+         <enumeration value="occlusionTexture"
+                      appinfo="X3D4 Physically Based Rendering (PBR) capability, parent node is PhysicalMaterial"
+                      documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/shape.html#PhysicalMaterial"/>
       </SimpleType>
       <SimpleType name="containerFieldChoicesX3DTexture3DNode"
                   baseType="xs:NMTOKEN"
@@ -415,6 +430,21 @@
                       appinfo="parent node is TextureBackground or ComposedCubeMapTexture"/>
          <enumeration value="topTexture"
                       appinfo="parent node is TextureBackground or ComposedCubeMapTexture"/>
+         <enumeration value="baseTexture"
+                      appinfo="X3D4 Physically Based Rendering (PBR) capability, parent node is PhysicalMaterial"
+                      documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/shape.html#PhysicalMaterial"/>
+         <enumeration value="emissiveTexture"
+                      appinfo="X3D4 Physically Based Rendering (PBR) capability, parent node is PhysicalMaterial or UnlitMaterial"
+                      documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/shape.html#UnlitMaterial"/>
+         <enumeration value="metallicRoughnessTexture"
+                      appinfo="X3D4 Physically Based Rendering (PBR) capability, parent node is PhysicalMaterial"
+                      documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/shape.html#PhysicalMaterial"/>
+         <enumeration value="normalTexture"
+                      appinfo="X3D4 Physically Based Rendering (PBR) capability, parent node is PhysicalMaterial or UnlitMaterial"
+                      documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/shape.html#UnlitMaterial"/>
+         <enumeration value="occlusionTexture"
+                      appinfo="X3D4 Physically Based Rendering (PBR) capability, parent node is PhysicalMaterial"
+                      documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/shape.html#PhysicalMaterial"/>
       </SimpleType>
       <SimpleType name="distanceModelChoices"
                   baseType="SFString"
@@ -3328,7 +3358,7 @@
          <enumeration value="emissiveTextureMapping"/>
          <enumeration value="enabled"/>
          <enumeration value="enabledAxes"/>
-         <enumeration value="enableDoppler"/>
+         <enumeration value="dopplerEnabled"/>
          <enumeration value="enableHRTF"/>
          <enumeration value="encodingScheme"/>
          <enumeration value="endFrame"/>
@@ -4317,7 +4347,7 @@
                  regex="\s*(true|false)\s*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFBoolAndMFBool"
                               appinfo="SFBool is a logical type with possible values (true|false) to match the XML boolean type. Hint: XML boolean values are lower case (true|false) in order to maintain compatibility with HTML and other XML documents.">
-            <Inheritance baseType="xs:boolean"/>
+            <Inheritance baseType="xs:boolean" x3dType="X3DField"/>
          </InterfaceDefinition>
       </FieldType>
       <FieldType type="MFBool"
@@ -4327,7 +4357,7 @@
                  regex="\s*((true|false)\s*,?\s*)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFBoolAndMFBool"
                               appinfo="MFBool is an array of boolean values. Type MFBool was previously undefined in the VRML97 Specification, but nevertheless needed for event utilities and scripting. Example use: MFBool is useful for defining a series of behavior states using a BooleanSequencer prototype. Hint: XML boolean values are lower case (true|false) in order to maintain compatibility with HTML and other XML documents.">
-            <Inheritance baseType="xs:string"/>
+            <Inheritance baseType="xs:string" x3dType="X3DArrayField"/>
          </InterfaceDefinition>
       </FieldType>
       <FieldType type="SFColor"
@@ -4337,7 +4367,7 @@
                  regex="(\s)*(([+]?((0(\.[0-9]*)?|\.[0-9]+)|1(\.0*)?)([Ee][+-]?[0-9]+)?)(\s)+){2}([+]?((0(\.[0-9]*)?|\.[0-9]+)|1(\.0*)?)([Ee][+-]?[0-9]+)?)(\s)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFColorAndMFColor"
                               appinfo="SFColor specifies one RGB (red-green-blue) color triple, where each color value is an RGB triple of floating point numbers in range [0,1]. The default value of an uninitialized SFColor field is (0 0 0). Warning: comma characters within singleton values do not pass strict XML validation.">
-            <Inheritance baseType="xs:string"/>
+            <Inheritance baseType="xs:string" x3dType="X3DField"/>
          </InterfaceDefinition>
       </FieldType>
       <FieldType type="MFColor"
@@ -4347,7 +4377,7 @@
                  regex="(\s)*((([+-]?((0(\.[0-9]*)?|\.[0-9]+)|1(\.0*)?)([Ee][+-]?[0-9]+)?)(\s)+){2}([+-]?((0(\.[0-9]*)?|\.[0-9]+)|1(\.0*)?)([Ee][+-]?[0-9]+)?)\s*,?\s*)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFColorAndMFColor"
                               appinfo="MFColor specifies zero or more SFColor RGB triples, where each color value is an RGB triple of floating point numbers in range [0,1]. The default value of an uninitialized MFColor field is the empty list. Individual SFColor array values are optionally separated by commas in XML syntax.">
-            <Inheritance baseType="xs:string"/>
+            <Inheritance baseType="xs:string" x3dType="X3DArrayField"/>
          </InterfaceDefinition>
       </FieldType>
       <FieldType type="SFColorRGBA"
@@ -4357,7 +4387,7 @@
                  regex="(\s)*(([+-]?((0(\.[0-9]*)?|\.[0-9]+)|1(\.0*)?)([Ee][+-]?[0-9]+)?)(\s)+){3}([+-]?((0(\.[0-9]*)?|\.[0-9]+)|1(\.0*)?)([Ee][+-]?[0-9]+)?)(\s)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFColorRGBAAndMFColorRGBA"
                               appinfo="SFColorRGBA specifies one RGBA (red-green-blue-alpha) color 4-tuple, where each color value is an RGBA 4-tuple of floating point numbers in range [0,1]. Alpha (opacity) values = (1 - transparency). The default value of an uninitialized SFColorRGBA field is (0 0 0 0). Warning: comma characters within singleton values do not pass strict XML validation.">
-            <Inheritance baseType="xs:string"/>
+            <Inheritance baseType="xs:string" x3dType="X3DField"/>
          </InterfaceDefinition>
       </FieldType>
       <FieldType type="MFColorRGBA"
@@ -4367,7 +4397,7 @@
                  regex="(\s)*((([+-]?((0(\.[0-9]*)?|\.[0-9]+)|1(\.0*)?)([Ee][+-]?[0-9]+)?)(\s)+){3}([+-]?((0(\.[0-9]*)?|\.[0-9]+)|1(\.0*)?)([Ee][+-]?[0-9]+)?)\s*,?\s*)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFColorRGBAAndMFColorRGBA"
                               appinfo="MFColorRGBA specifies zero or more SFColorRGBA 4-tuples, where each color value is an RGBA 4-tuple of floating point numbers in range [0,1]. Alpha (opacity) values = (1 - transparency). The default value of an uninitialized MFColor field is the empty list. Individual SFColorRGBA array values are optionally separated by commas in XML syntax.">
-            <Inheritance baseType="xs:string"/>
+            <Inheritance baseType="xs:string" x3dType="X3DArrayField"/>
          </InterfaceDefinition>
       </FieldType>
       <FieldType type="SFDouble"
@@ -4377,7 +4407,7 @@
                  regex="(\s)*([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)(\s)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFDoubleAndMFDouble"
                               appinfo="SFDouble is a double-precision floating-point type. Array values are optionally separated by commas in XML syntax. See GeoVRML 1.0 Recommended Practice, Section 2.3, Limitations of Single Precision for rationale.">
-            <Inheritance baseType="xs:double"/>
+            <Inheritance baseType="xs:double" x3dType="X3DField"/>
          </InterfaceDefinition>
       </FieldType>
       <FieldType type="MFDouble"
@@ -4387,7 +4417,7 @@
                  regex="(\s)*(([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*,?\s*)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFDoubleAndMFDouble"
                               appinfo="MFDouble is an array of Double values, meaning a double-precision floating-point array type. See GeoVRML 1.0 Recommended Practice, Section 2.3, Limitations of Single Precision for rationale. Array values are optionally separated by commas in XML syntax.">
-            <Inheritance baseType="xs:string"/>
+            <Inheritance baseType="xs:string" x3dType="X3DArrayField"/>
          </InterfaceDefinition>
       </FieldType>
       <FieldType type="SFFloat"
@@ -4397,7 +4427,7 @@
                  regex="(\s)*([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)(\s)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFFloatAndMFFloat"
                               appinfo="SFFloat is a single-precision floating-point type.">
-            <Inheritance baseType="xs:float"/>
+            <Inheritance baseType="xs:float" x3dType="X3DField"/>
          </InterfaceDefinition>
       </FieldType>
       <FieldType type="MFFloat"
@@ -4407,7 +4437,7 @@
                  regex="(\s)*(([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*,?\s*)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFFloatAndMFFloat"
                               appinfo="MFFloat is an array of SFFloat values, meaning a single-precision floating-point array type. Array values are optionally separated by commas in XML syntax.">
-            <Inheritance baseType="xs:string"/>
+            <Inheritance baseType="xs:string" x3dType="X3DArrayField"/>
          </InterfaceDefinition>
       </FieldType>
       <FieldType type="SFImage"
@@ -4417,7 +4447,7 @@
                  regex="\s*([+]?(0|[1-9][0-9]*)([Ee][+]?[0-9]+)?\s+){2}[+]?[0-4](\s+(0x[0-9a-fA-F]{1,16}|[+]?(0|[1-9][0-9]*)([Ee][+]?[0-9]+)?))*\s*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFImageAndMFImage"
                               appinfo="SFImage specifies a single uncompressed 2-dimensional pixel image. SFImage fields contain three integers representing the width, height and number of components in the image, followed by (width x height) hexadecimal or integer values representing the pixels in the image.">
-            <Inheritance baseType="xs:string"/>
+            <Inheritance baseType="xs:string" x3dType="X3DField"/>
          </InterfaceDefinition>
       </FieldType>
       <FieldType type="MFImage"
@@ -4427,7 +4457,7 @@
                  regex="\s*(([+]?(0|[1-9][0-9]*)([Ee][+]?[0-9]+)?\s+){2}[+]?[0-4](\s+(0x[0-9a-fA-F]{1,16}|[+]?(0|[1-9][0-9]*)([Ee][+]?[0-9]+)?))*\s*,?\s*)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFImageAndMFImage"
                               appinfo="MFImage is an array of SFImage values.">
-            <Inheritance baseType="xs:string"/>
+            <Inheritance baseType="xs:string" x3dType="X3DArrayField"/>
          </InterfaceDefinition>
       </FieldType>
       <FieldType type="SFInt32"
@@ -4437,7 +4467,7 @@
                  regex="(\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\s)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFInt32AndMFInt32"
                               appinfo="SFInt32 specifies one 32-bit signed integer.">
-            <Inheritance baseType="xs:integer"/>
+            <Inheritance baseType="xs:integer" x3dType="X3DField"/>
          </InterfaceDefinition>
       </FieldType>
       <FieldType type="MFInt32"
@@ -4447,7 +4477,7 @@
                  regex="(\s)*([+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?\s*,?\s*)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFInt32AndMFInt32"
                               appinfo="MFInt32 defines an array of 32-bit signed integers. Array values are optionally separated by commas in XML syntax.">
-            <Inheritance baseType="xs:string"/>
+            <Inheritance baseType="xs:string" x3dType="X3DArrayField"/>
          </InterfaceDefinition>
       </FieldType>
       <FieldType type="SFMatrix3d"
@@ -4457,7 +4487,7 @@
                  regex="\s*(([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){8}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFMatrix3dAndMFMatrix3d"
                               appinfo="SFMatrix3d specifies a 3x3 matrix of double-precision floating point numbers, organized in row-major fashion. Warning: comma characters within singleton values do not pass strict XML validation.">
-            <Inheritance baseType="xs:string"/>
+            <Inheritance baseType="xs:string" x3dType="X3DField"/>
          </InterfaceDefinition>
       </FieldType>
       <FieldType type="MFMatrix3d"
@@ -4467,7 +4497,7 @@
                  regex="\s*((([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){8}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*,?\s*)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFMatrix3dAndMFMatrix3d"
                               appinfo="MFMatrix3d specifies zero or more 3x3 matrices of double-precision floating point numbers, organized in row-major fashion. Warning: comma characters can only appear between singleton 9-tuple values.">
-            <Inheritance baseType="xs:string"/>
+            <Inheritance baseType="xs:string" x3dType="X3DArrayField"/>
          </InterfaceDefinition>
       </FieldType>
       <FieldType type="SFMatrix3f"
@@ -4477,7 +4507,7 @@
                  regex="\s*(([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){8}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFMatrix3fAndMFMatrix3f"
                               appinfo="SFMatrix3f specifies a 3x3 matrix of single-precision floating point numbers, organized in row-major fashion. Warning: comma characters within singleton values do not pass strict XML validation.">
-            <Inheritance baseType="xs:string"/>
+            <Inheritance baseType="xs:string" x3dType="X3DField"/>
          </InterfaceDefinition>
       </FieldType>
       <FieldType type="MFMatrix3f"
@@ -4487,7 +4517,7 @@
                  regex="\s*((([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){8}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*,?\s*)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFMatrix3fAndMFMatrix3f"
                               appinfo="MFMatrix3f specifies zero or more 3x3 matrices of single-precision floating point numbers, organized in row-major fashion. Warning: comma characters can only appear between singleton 9-tuple values.">
-            <Inheritance baseType="xs:string"/>
+            <Inheritance baseType="xs:string" x3dType="X3DArrayField"/>
          </InterfaceDefinition>
       </FieldType>
       <FieldType type="SFMatrix4d"
@@ -4497,7 +4527,7 @@
                  regex="\s*(([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){15}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFMatrix4dAndMFMatrix4d"
                               appinfo="SFMatrix4d specifies a 4x4 matrix of double-precision floating point numbers, organized in row-major fashion. Warning: comma characters within singleton values do not pass strict XML validation.">
-            <Inheritance baseType="xs:string"/>
+            <Inheritance baseType="xs:string" x3dType="X3DField"/>
          </InterfaceDefinition>
       </FieldType>
       <FieldType type="MFMatrix4d"
@@ -4507,7 +4537,7 @@
                  regex="\s*((([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){15}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*,?\s*)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFMatrix4dAndMFMatrix4d"
                               appinfo="MFMatrix4d specifies zero or more 4x4 matrices of double-precision floating point numbers, organized in row-major fashion. Warning: comma characters can only appear between singleton 16-tuple values.">
-            <Inheritance baseType="xs:string"/>
+            <Inheritance baseType="xs:string" x3dType="X3DArrayField"/>
          </InterfaceDefinition>
       </FieldType>
       <FieldType type="SFMatrix4f"
@@ -4517,7 +4547,7 @@
                  regex="\s*(([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){15}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFMatrix4fAndMFMatrix4f"
                               appinfo="SFMatrix4f specifies a 4x4 matrix of single-precision floating point numbers, organized in row-major fashion. Warning: comma characters within singleton values do not pass strict XML validation.">
-            <Inheritance baseType="xs:string"/>
+            <Inheritance baseType="xs:string" x3dType="X3DField"/>
          </InterfaceDefinition>
       </FieldType>
       <FieldType type="MFMatrix4f"
@@ -4527,19 +4557,19 @@
                  regex="\s*((([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){15}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*,?\s*)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFMatrix4fAndMFMatrix4f"
                               appinfo="MFMatrix4f specifies zero or more 4x4 matrices of single-precision floating point numbers, organized in row-major fashion. Warning: comma characters can only appear between singleton 16-tuple values.">
-            <Inheritance baseType="xs:string"/>
+            <Inheritance baseType="xs:string" x3dType="X3DArrayField"/>
          </InterfaceDefinition>
       </FieldType>
       <FieldType type="SFNode" tupleSize="1" isArray="false" defaultValue="">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFNodeAndMFNode"
                               appinfo="SFNode specifies an X3D node; the default empty value of an uninitialized SFNode field is sometimes described as NULL.">
-            <Inheritance baseType="SFString"/>
+            <Inheritance baseType="SFString" x3dType="X3DField"/>
          </InterfaceDefinition>
       </FieldType>
       <FieldType type="MFNode" tupleSize="1" isArray="true" defaultValue="">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFNodeAndMFNode"
                               appinfo="MFNode specifies zero or more nodes; the default value of an MFNode field is the empty list.">
-            <Inheritance baseType="SFString"/>
+            <Inheritance baseType="SFString" x3dType="X3DArrayField"/>
          </InterfaceDefinition>
       </FieldType>
       <FieldType type="SFRotation"
@@ -4549,7 +4579,7 @@
                  regex="\s*(([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){3}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFRotationAndMFRotation"
                               appinfo="SFRotation is an axis-angle 4-tuple, indicating X-Y-Z direction axis plus angle orientation about that axis. The first three values specify a normalized axis vector about which the rotation takes place, so the first three values shall be within the range [-1..+1] in order to represent a normalized unit vector. The fourth value specifies the amount of right-handed rotation about that axis in radians. Warning: comma characters within singleton values do not pass strict XML validation.">
-            <Inheritance baseType="xs:string"/>
+            <Inheritance baseType="xs:string" x3dType="X3DField"/>
          </InterfaceDefinition>
       </FieldType>
       <FieldType type="MFRotation"
@@ -4559,7 +4589,7 @@
                  regex="\s*((([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){3}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*,?\s*)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFRotationAndMFRotation"
                               appinfo="MFRotation is an array of SFRotation values. Individual singleton SFRotation array values are optionally separated by commas in XML syntax.">
-            <Inheritance baseType="xs:string"/>
+            <Inheritance baseType="xs:string" x3dType="X3DArrayField"/>
          </InterfaceDefinition>
       </FieldType>
       <FieldType type="SFString"
@@ -4569,7 +4599,7 @@
                  regex="(\s|\S)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFStringAndMFString"
                               appinfo="SFString defines a single string encoded with the UTF-8 universal character set.">
-            <Inheritance baseType="xs:string"/>
+            <Inheritance baseType="xs:string" x3dType="X3DField"/>
          </InterfaceDefinition>
       </FieldType>
       <FieldType type="MFString"
@@ -4587,7 +4617,7 @@
                  regex="(\s)*([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)(\s)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFTimeAndMFTime"
                               appinfo="SFTime specifies a single time value, expressed as a double-precision floating point number. Typically, SFTime fields represent the number of seconds since Jan 1, 1970, 00:00:00 GMT.">
-            <Inheritance baseType="xs:double"/>
+            <Inheritance baseType="xs:double" x3dType="X3DField"/>
          </InterfaceDefinition>
       </FieldType>
       <FieldType type="MFTime"
@@ -4597,7 +4627,7 @@
                  regex="(\s)*(([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*,?\s*)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFTimeAndMFTime"
                               appinfo="MFTime is an array of SFTime values. Array values are optionally separated by commas in XML syntax.">
-            <Inheritance baseType="xs:string"/>
+            <Inheritance baseType="xs:string" x3dType="X3DArrayField"/>
          </InterfaceDefinition>
       </FieldType>
       <FieldType type="SFVec2d"
@@ -4607,7 +4637,7 @@
                  regex="\s*(([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){1}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFVec2dAndMFVec2d"
                               appinfo="SFVec2d is a 2-tuple pair of SFDouble values. Hint: SFVec2d can be used to specify a 2D double-precision coordinate. Warning: comma characters within singleton values do not pass strict XML validation.">
-            <Inheritance baseType="xs:string"/>
+            <Inheritance baseType="xs:string" x3dType="X3DField"/>
          </InterfaceDefinition>
       </FieldType>
       <FieldType type="MFVec2d"
@@ -4617,7 +4647,7 @@
                  regex="\s*((([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){1}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*,?\s*)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFVec2dAndMFVec2d"
                               appinfo="MFVec2d is an array of SFVec2d values. Individual singleton SFVec2d array values are optionally separated by commas in XML syntax.">
-            <Inheritance baseType="xs:string"/>
+            <Inheritance baseType="xs:string" x3dType="X3DArrayField"/>
          </InterfaceDefinition>
       </FieldType>
       <FieldType type="SFVec2f"
@@ -4627,7 +4657,7 @@
                  regex="\s*(([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){1}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFVec2fAndMFVec2f"
                               appinfo="SFVec2f is a 2-tuple pair of SFFloat values. Hint: SFVec2f can be used to specify a 2D single-precision coordinate. Warning: comma characters within singleton values do not pass strict XML validation.">
-            <Inheritance baseType="xs:string"/>
+            <Inheritance baseType="xs:string" x3dType="X3DField"/>
          </InterfaceDefinition>
       </FieldType>
       <FieldType type="MFVec2f"
@@ -4637,7 +4667,7 @@
                  regex="\s*((([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){1}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*,?\s*)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFVec2fAndMFVec2f"
                               appinfo="MFVec2f is an array of SFVec2f values. Individual singleton SFVec2f array values are optionally separated by commas in XML syntax.">
-            <Inheritance baseType="xs:string"/>
+            <Inheritance baseType="xs:string" x3dType="X3DArrayField"/>
          </InterfaceDefinition>
       </FieldType>
       <FieldType type="SFVec3d"
@@ -4647,7 +4677,7 @@
                  regex="\s*(([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){2}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFVec3dAndMFVec3d"
                               appinfo="SFVec3d is a 3-tuple triplet of SFDouble values. See GeoVRML 1.0 Recommended Practice, Section 2.3, Limitations of Single Precision. Hint: SFVec3d can be used to specify a georeferenced 3D coordinate. Warning: comma characters within singleton values do not pass strict XML validation.">
-            <Inheritance baseType="xs:string"/>
+            <Inheritance baseType="xs:string" x3dType="X3DField"/>
          </InterfaceDefinition>
       </FieldType>
       <FieldType type="MFVec3d"
@@ -4657,7 +4687,7 @@
                  regex="\s*((([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){2}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*,?\s*)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFVec3dAndMFVec3d"
                               appinfo="MFVec3d is an array of SFVec3d values. Individual singleton SFVec3d array values are optionally separated by commas in XML syntax. Original rationale for inclusion: GeoVRML 1.0 Recommended Practice, Section 2.3, Limitations of Single Precision. Hint: MFVec3d can be used to specify a list of georeferenced 3D coordinates.">
-            <Inheritance baseType="xs:string"/>
+            <Inheritance baseType="xs:string" x3dType="X3DArrayField"/>
          </InterfaceDefinition>
       </FieldType>
       <FieldType type="SFVec3f"
@@ -4667,7 +4697,7 @@
                  regex="\s*(([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){2}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFVec3fAndMFVec3f"
                               appinfo="SFVec3f is a 3-tuple triplet of SFFloat values. Hint: SFVec3f can be used to specify a 3D coordinate or a 3D scale value. Warning: comma characters within singleton values do not pass strict XML validation.">
-            <Inheritance baseType="xs:string"/>
+            <Inheritance baseType="xs:string" x3dType="X3DField"/>
          </InterfaceDefinition>
       </FieldType>
       <FieldType type="MFVec3f"
@@ -4677,7 +4707,7 @@
                  regex="\s*((([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){2}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*,?\s*)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFVec3fAndMFVec3f"
                               appinfo="MFVec3f is an array of SFVec3f values. Individual singleton SFVec3f array values are optionally separated by commas in XML syntax.">
-            <Inheritance baseType="xs:string"/>
+            <Inheritance baseType="xs:string" x3dType="X3DArrayField"/>
          </InterfaceDefinition>
       </FieldType>
       <FieldType type="SFVec4d"
@@ -4687,7 +4717,7 @@
                  regex="\s*(([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){3}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFVec4dAndMFVec4d"
                               appinfo="SFVec4d is a 4-tuple set of double-precision floating-point values, specifying a 3D homogeneous vector. Warning: comma characters within singleton values do not pass strict XML validation.">
-            <Inheritance baseType="xs:string"/>
+            <Inheritance baseType="xs:string" x3dType="X3DField"/>
          </InterfaceDefinition>
       </FieldType>
       <FieldType type="MFVec4d"
@@ -4697,7 +4727,7 @@
                  regex="\s*((([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){3}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*,?\s*)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFVec4dAndMFVec4d"
                               appinfo="MFVec4d is zero or more SFVec4d values. Individual singleton SFVec4d array values are optionally separated by commas in XML syntax.">
-            <Inheritance baseType="xs:string"/>
+            <Inheritance baseType="xs:string" x3dType="X3DArrayField"/>
          </InterfaceDefinition>
       </FieldType>
       <FieldType type="SFVec4f"
@@ -4707,7 +4737,7 @@
                  regex="\s*(([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){3}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFVec4fAndMFVec4f"
                               appinfo="SFVec4f is a 4-tuple set of single-precision floating-point values, specifying a 3D homogeneous vector. Warning: comma characters within singleton values do not pass strict XML validation.">
-            <Inheritance baseType="xs:string"/>
+            <Inheritance baseType="xs:string" x3dType="X3DField"/>
          </InterfaceDefinition>
       </FieldType>
       <FieldType type="MFVec4f"
@@ -4717,7 +4747,7 @@
                  regex="\s*((([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){3}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*,?\s*)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFVec4fAndMFVec4f"
                               appinfo="MFVec4f is zero or more SFVec4f values. Individual singleton SFVec4f array values are optionally separated by commas in XML syntax.">
-            <Inheritance baseType="xs:string"/>
+            <Inheritance baseType="xs:string" x3dType="X3DArrayField"/>
          </InterfaceDefinition>
       </FieldType>
    </FieldTypes>
@@ -4959,7 +4989,9 @@
       </AbstractNodeType>
       <AbstractNodeType name="X3DArrayField">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldTypes.html#X3DArrayField"
-                              appinfo="X3DArrayField is the abstract field type from which all field types that can contain multiple values are derived. All fields derived from X3DArrayField have names beginning with MF (multiple-valued field). MF fields may zero or more values, each of which shall be of the type indicated by the corresponding SF field type. It is illegal for any MF field to mix values of different SF field types."/>
+                              appinfo="X3DArrayField is the abstract field type from which all field types that can contain multiple values are derived, implementing the X3DField interface. All fields derived from X3DArrayField have names beginning with MF (multiple-valued field). MF fields may zero or more values, each of which shall be of the type indicated by the corresponding SF field type. It is illegal for any MF field to mix values of different SF field types.">
+            <Inheritance x3dType="X3DField"/>
+         </InterfaceDefinition>
       </AbstractNodeType>
       <AbstractNodeType name="X3DBackgroundNode">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/environmentalEffects.html#X3DBackgroundNode"
@@ -6670,7 +6702,7 @@
       </AbstractNodeType>
       <AbstractNodeType name="X3DNode">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/core.html#X3DNode"
-                              appinfo="All instantiable nodes implement X3DNode, which corresponds to SFNode in the X3D specification.">
+                              appinfo="All instantiable nodes implement X3DNode, which corresponds to SFNode type in the X3D specification.">
             <componentInfo name="Core" level="1"/>
             <field name="IS"
                    type="SFNode"
@@ -10828,7 +10860,7 @@
       </ConcreteNode>
       <ConcreteNode name="BiquadFilter">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/sound.html#BiquadFilter"
-                              appinfo="BiquadFilter node.">
+                              appinfo="BiquadFilter node is an AudioNode processor implementing common low-order filters.">
             <componentInfo name="Sound" level="2"/>
             <Inheritance baseType="X3DSoundProcessingNode"/>
             <field name="channelCount"
@@ -19569,7 +19601,8 @@
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="NavigationInfo"
-                   inheritedFrom="X3DViewpointNode"/>
+                   inheritedFrom="X3DViewpointNode"
+                   description="The navigationInfo field defines a dedicated NavigationInfo node for this X3DViewpointNode."/>
             <field name="nearDistance"
                    type="SFFloat"
                    accessType="inputOutput"
@@ -19610,7 +19643,8 @@
                    type="SFBool"
                    accessType="inputOutput"
                    default="false"
-                   inheritedFrom="X3DViewpointNode"/>
+                   inheritedFrom="X3DViewpointNode"
+                   description="Viewpoint is automatically adjusted to view all visible geometry."/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
@@ -26252,6 +26286,11 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DTimeDependentNode"
                    description="Author-provided prose that describes intended purpose of the url asset."/>
+            <field name="dopplerEnabled"
+                   type="SFBool"
+                   accessType="inputOutput"
+                   default="false"
+                   description="dopplerEnabled enables/disables whether real-time Doppler effects (due to relation motion between sources and listeners) are computed by browser between virtual sound sources and active listening locations, then applied to received frequency at active listening locations."/>
             <field name="elapsedTime"
                    type="SFTime"
                    accessType="outputOnly"
@@ -26264,11 +26303,6 @@
                    default="true"
                    inheritedFrom="X3DSoundSourceNode"
                    description="Enables/disables node operation."/>
-            <field name="enableDoppler"
-                   type="SFBool"
-                   accessType="inputOutput"
-                   default="false"
-                   description="enableDoppler enables/disables whether real-time Doppler effects (due to relation motion between sources and listeners) are computed by browser between virtual sound sources and active listening locations, then applied to received frequency at active listening locations."/>
             <field name="gain"
                    type="SFFloat"
                    accessType="inputOutput"
@@ -27075,7 +27109,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    description="The style attribute on each X3D node and statement provides an inline block of CSS source for element styling, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
-            <containerField default="metadata" type="containerFieldChoicesMetadata"/>
+            <containerField default="value" type="containerFieldChoicesMetadata"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -27143,7 +27177,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    description="The style attribute on each X3D node and statement provides an inline block of CSS source for element styling, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
-            <containerField default="metadata" type="containerFieldChoicesMetadata"/>
+            <containerField default="value" type="containerFieldChoicesMetadata"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -27211,7 +27245,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    description="The style attribute on each X3D node and statement provides an inline block of CSS source for element styling, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
-            <containerField default="metadata" type="containerFieldChoicesMetadata"/>
+            <containerField default="value" type="containerFieldChoicesMetadata"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -27279,7 +27313,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    description="The style attribute on each X3D node and statement provides an inline block of CSS source for element styling, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
-            <containerField default="metadata" type="containerFieldChoicesMetadata"/>
+            <containerField default="value" type="containerFieldChoicesMetadata"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -27345,7 +27379,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    description="The style attribute on each X3D node and statement provides an inline block of CSS source for element styling, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
-            <containerField default="metadata" type="containerFieldChoicesMetadata"/>
+            <containerField default="value" type="containerFieldChoicesMetadata"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0" maxOccurs="unbounded"/>
                <NodeContentModel name="ProtoInstance" minOccurs="0" maxOccurs="unbounded"/>
@@ -27414,7 +27448,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    description="The style attribute on each X3D node and statement provides an inline block of CSS source for element styling, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
-            <containerField default="metadata" type="containerFieldChoicesMetadata"/>
+            <containerField default="value" type="containerFieldChoicesMetadata"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -29938,7 +29972,8 @@
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="NavigationInfo"
-                   inheritedFrom="X3DViewpointNode"/>
+                   inheritedFrom="X3DViewpointNode"
+                   description="The navigationInfo field defines a dedicated NavigationInfo node for this X3DViewpointNode."/>
             <field name="nearDistance"
                    type="SFFloat"
                    accessType="inputOutput"
@@ -29973,7 +30008,8 @@
                    type="SFBool"
                    accessType="inputOutput"
                    default="false"
-                   inheritedFrom="X3DViewpointNode"/>
+                   inheritedFrom="X3DViewpointNode"
+                   description="Viewpoint is automatically adjusted to view all visible geometry."/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
@@ -34258,7 +34294,10 @@
                    accessType="inputOutput"
                    acceptableNodeTypes="X3DVolumeRenderStyleNode"
                    description="Multiple contained X3DVolumeRenderStyleNode nodes corresponding to each isosurface that define specific rendering technique for this volumetric object."/>
-            <field name="segmentEnabled" type="MFBool" accessType="inputOutput"/>
+            <field name="segmentEnabled"
+                   type="MFBool"
+                   accessType="inputOutput"
+                   description="Array of boolean values that indicates whether to draw each segment, with indices corresponding to the segment identifier."/>
             <field name="segmentIdentifiers"
                    type="SFNode"
                    accessType="inputOutput"
@@ -35428,17 +35467,17 @@
                <enumeration value="inverse"/>
                <enumeration value="exponential"/>
             </field>
+            <field name="dopplerEnabled"
+                   type="SFBool"
+                   accessType="inputOutput"
+                   default="false"
+                   description="dopplerEnabled enables/disables whether real-time Doppler effects (due to relation motion between sources and listeners) are computed by browser between virtual sound sources and active listening locations, then applied to received frequency at active listening locations."/>
             <field name="enabled"
                    type="SFBool"
                    accessType="inputOutput"
                    default="true"
                    inheritedFrom="X3DSoundNode"
                    description="Enables/disables node operation."/>
-            <field name="enableDoppler"
-                   type="SFBool"
-                   accessType="inputOutput"
-                   default="false"
-                   description="enableDoppler enables/disables whether real-time Doppler effects (due to relation motion between sources and listeners) are computed by browser between virtual sound sources and active listening locations, then applied to received frequency at active listening locations."/>
             <field name="enableHRTF"
                    type="SFBool"
                    accessType="inputOutput"
@@ -40039,7 +40078,8 @@
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="NavigationInfo"
-                   inheritedFrom="X3DViewpointNode"/>
+                   inheritedFrom="X3DViewpointNode"
+                   description="The navigationInfo field defines a dedicated NavigationInfo node for this X3DViewpointNode."/>
             <field name="nearDistance"
                    type="SFFloat"
                    accessType="inputOutput"
@@ -40074,7 +40114,8 @@
                    type="SFBool"
                    accessType="inputOutput"
                    default="false"
-                   inheritedFrom="X3DViewpointNode"/>
+                   inheritedFrom="X3DViewpointNode"
+                   description="Viewpoint is automatically adjusted to view all visible geometry."/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
@@ -41676,7 +41717,7 @@
             <field name="lang"
                    type="SFString"
                    accessType="inputOutput"
-                   description="Language code, as per [IETF BCP47/RFC5646] https://www."/>
+                   description="Language code, as per [IETF BCP47/RFC5646]."/>
             <field name="name"
                    type="SFString"
                    accessType="inputOutput"

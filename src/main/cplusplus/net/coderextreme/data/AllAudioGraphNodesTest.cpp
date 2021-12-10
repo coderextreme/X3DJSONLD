@@ -82,6 +82,7 @@ Shape13->setAppearance(*Appearance15);
 group->addChildren(*Shape13);
 
 CSpatialSound* SpatialSound18 = (CSpatialSound *)(m_pScene.createNode("SpatialSound"));
+SpatialSound18->setDopplerEnabled("false");
 CAnalyser* Analyser19 = (CAnalyser *)(m_pScene.createNode("Analyser"));
 CAudioDestination* AudioDestination20 = (CAudioDestination *)(m_pScene.createNode("AudioDestination"));
 CBiquadFilter* BiquadFilter21 = (CBiquadFilter *)(m_pScene.createNode("BiquadFilter"));
@@ -99,6 +100,7 @@ CBufferAudioSource* BufferAudioSource31 = (CBufferAudioSource *)(m_pScene.create
 WaveShaper30->addChildren(*BufferAudioSource31);
 
 CListenerPointSource* ListenerPointSource32 = (CListenerPointSource *)(m_pScene.createNode("ListenerPointSource"));
+ListenerPointSource32->setDopplerEnabled("false");
 WaveShaper30->addChildren(*ListenerPointSource32);
 
 CMicrophoneSource* MicrophoneSource33 = (CMicrophoneSource *)(m_pScene.createNode("MicrophoneSource"));

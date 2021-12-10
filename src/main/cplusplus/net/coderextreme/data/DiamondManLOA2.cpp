@@ -425,7 +425,7 @@ MetadataString101->setName("usageRestrictions");
 MetadataString101->setValue(new CString[1]{"Noncommercial usage is ok if 3Name3D name and logo <www.ballreich.net/vrml/HAnim/small_logo.gif> is present and proper credit is given."}, 1);
 MetadataSet95->addValue(*MetadataString101);
 
-HAnimHumanoid94->setMetadata(*MetadataSet95);
+HAnimHumanoid94->setValue(*MetadataSet95);
 
 CHAnimJoint* HAnimJoint102 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint102->setName("humanoid_root");

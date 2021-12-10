@@ -12,7 +12,7 @@ if (typeof require !== 'undefined') {
 	DOM2JSONSerializer = require('./DOM2JSONSerializer');
 	fieldTypes = require('./fieldTypes');
 	mapToMethod = require('./mapToMethod');
-	DOMParser = require('xmldom').DOMParser;
+	DOMParser = require('@xmldom/xmldom').DOMParser;
 } else {
 	DOMParser = window.DOMParser;
 }

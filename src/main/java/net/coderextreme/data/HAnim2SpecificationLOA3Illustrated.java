@@ -156,7 +156,7 @@ public class HAnim2SpecificationLOA3Illustrated {
           .addComments("Top-level HAnimSite/Viewpoint nodes that move with the human center but are unaffected by body animation")
           .addComments("TODO move relevant HAnimSite/Viewpoint pairs into skeleton at appropriate locations, if so also revert containerField to default")
           .addComments("right between the eyes, stationary position not animating except with body itself")
-          .setMetadata(new MetadataSet().setName("HAnimHumanoid.info").setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid")
+          .addValue(new MetadataSet().setName("HAnimHumanoid.info").setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid")
             .addValue(new MetadataString().setName("authorName").setValue(new MFString2().getArray()))
             .addValue(new MetadataString().setName("authorEmail").setValue(new MFString3().getArray()))
             .addValue(new MetadataString().setName("copyright").setValue(new MFString4().getArray()))

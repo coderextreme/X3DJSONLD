@@ -71,6 +71,7 @@ Shape13.setAppearance(Appearance15)
 
 Scene11.addChildren(Shape13)
 SpatialSound18 = SpatialSound()
+SpatialSound18.setDopplerEnabled("false")
 Analyser19 = Analyser()
 AudioDestination20 = AudioDestination()
 BiquadFilter21 = BiquadFilter()
@@ -88,6 +89,7 @@ BufferAudioSource31 = BufferAudioSource()
 
 WaveShaper30.addChildren(BufferAudioSource31)
 ListenerPointSource32 = ListenerPointSource()
+ListenerPointSource32.setDopplerEnabled("false")
 
 WaveShaper30.addChildren(ListenerPointSource32)
 MicrophoneSource33 = MicrophoneSource()

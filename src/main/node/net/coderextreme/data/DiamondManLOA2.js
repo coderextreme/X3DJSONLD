@@ -108,7 +108,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                     .setMaterial((new autoclass.Material()).setUSE("TextMaterial"))))))))
         .addChild((new autoclass.HAnimHumanoid()).setName("humanoid").setDEF("hanim_humanoid").setLoa(2).setVersion("2.0")
           .addComments((new autoclass.CommentsBlock("HAnimHumanoid original info='\"humanoidVersion=Nancy V1.2b\" \"authorName=Cindy Ballreich\" \"authorEmail=cindy@ballreich.net\" \"copyright=1997 3Name3D / Yglesias Wallock Divekar Inc. all rights reserved.\" \"creationDate=Tue Dec 30 08:30:08 PST 1997\" \"usageRestrictions=Noncommercial usage is ok if 3Name3D name and logo <www.ballreich.net/vrml/HAnim/small_logo.gif> is present and proper credit is given.\"'")))
-          .setMetadata((new autoclass.MetadataSet()).setName("HAnimHumanoid.info").setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid")
+          .setValue((new autoclass.MetadataSet()).setName("HAnimHumanoid.info").setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid")
             .addValue((new autoclass.MetadataString()).setName("humanoidVersion").setValue(java.newArray("java.lang.String", ["Nancy V1.2b"])))
             .addValue((new autoclass.MetadataString()).setName("authorEmail").setValue(java.newArray("java.lang.String", ["cindy@ballreich.net"])))
             .addValue((new autoclass.MetadataString()).setName("authorName").setValue(java.newArray("java.lang.String", ["Cindy Ballreich"])))

@@ -102,7 +102,7 @@
           },
           {
             "@name":"translated",
-            "@content":"23 November 2021"
+            "@content":"09 December 2021"
           },
           {
             "@name":"generator",
@@ -132,7 +132,7 @@
                   "#comment":"HAnimHumanoid original info='\"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams\"'"
                 }
               ],
-              "-metadata":
+              "-value":[
                 { "MetadataSet":
                   {
                     "@name":"HAnimHumanoid.info",
@@ -146,7 +146,8 @@
                       }
                     ]
                   }
-                },
+                }
+              ],
               "-skeleton":[
                 { "HAnimJoint":
                   {

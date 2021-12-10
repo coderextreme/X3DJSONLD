@@ -68,7 +68,7 @@ public class KoreanCharacterMotionAnnexD01Jin {
         .addChild(new Viewpoint().setCenterOfRotation(new float[] {0f,1f,0f}).setDescription("AnnexD01Jin").setPosition(new float[] {0f,1f,3f}))
         .addChild(new HAnimHumanoid().setName("AnnexD01Jin").setDEF("hanim_AnnexD01Jin").setScale(new float[] {0.0225f,0.0225f,0.0225f}).setVersion("2.0")
           .addComments("HAnimHumanoid original info='\"humanoidVersion=2.0\"'")
-          .setMetadata(new MetadataSet().setName("HAnimHumanoid.info").setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid")
+          .addValue(new MetadataSet().setName("HAnimHumanoid.info").setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid")
             .addValue(new MetadataString().setName("humanoidVersion").setValue(new MFString0().getArray())))
           .addSkeleton(new HAnimJoint().setName("humanoid_root").setDEF("hanim_humanoid_root").setCenter(new float[] {0f,30.53f,-0.7076f}).setStiffness(new float[] {0f,0f,0f})
             .addChild(new HAnimSegment().setName("sacrum").setDEF("hanim_sacrum")

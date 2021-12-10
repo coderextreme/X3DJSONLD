@@ -118,7 +118,7 @@
           },
           {
             "@name":"translated",
-            "@content":"23 November 2021"
+            "@content":"09 December 2021"
           },
           {
             "@name":"generator",
@@ -437,7 +437,7 @@
                   "#comment":"right between the eyes, stationary position not animating except with body itself"
                 }
               ],
-              "-metadata":
+              "-value":[
                 { "MetadataSet":
                   {
                     "@name":"HAnimHumanoid.info",
@@ -487,7 +487,8 @@
                       }
                     ]
                   }
-                },
+                }
+              ],
               "-skeleton":[
                 { "HAnimJoint":
                   {

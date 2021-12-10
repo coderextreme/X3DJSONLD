@@ -167,7 +167,7 @@
         },
         {
           "@name": "translated",
-          "@content": "18 November 2021"
+          "@content": "09 December 2021"
         },
         {
           "@name": "generator",
@@ -213,11 +213,7 @@
         },
         {
           "NavigationInfo": {
-            "@type": [
-              "EXAMINE",
-              "FLY",
-              "ANY"
-            ]
+            "@type": "\"EXAMINE\" \"FLY\" \"ANY\""
           }
         },
         {
@@ -462,29 +458,31 @@
                           "#comment": "Comment example B, XML character entities: He said, &quot;Immel did it!&quot;"
                         }
                       ],
-                      "-metadata": {
-                        "MetadataSet": {
-                          "@name": "EscapedQuotationMarksMetadataSet",
-                          "-value": [
-                            {
-                              "MetadataString": {
-                                "@name": "quotesTestC",
-                                "@value": [
-                                  "MFString example C, backslash-escaped quotes: He said, \"Immel did it!\""
-                                ]
+                      "-value": [
+                        {
+                          "MetadataSet": {
+                            "@name": "EscapedQuotationMarksMetadataSet",
+                            "-value": [
+                              {
+                                "MetadataString": {
+                                  "@name": "quotesTestC",
+                                  "@value": [
+                                    "MFString example C, backslash-escaped quotes: He said, \"Immel did it!\""
+                                  ]
+                                }
+                              },
+                              {
+                                "MetadataString": {
+                                  "@name": "extraChildTest",
+                                  "@value": [
+                                    "checks MetadataSetObject addValue() method"
+                                  ]
+                                }
                               }
-                            },
-                            {
-                              "MetadataString": {
-                                "@name": "extraChildTest",
-                                "@value": [
-                                  "checks MetadataSetObject addValue() method"
-                                ]
-                              }
-                            }
-                          ]
+                            ]
+                          }
                         }
-                      },
+                      ],
                       "-fontStyle": {
                         "FontStyle": {
                           "@justify": [
@@ -803,15 +801,17 @@
             "-children": [
               {
                 "Shape": {
-                  "-metadata": {
-                    "MetadataString": {
-                      "@name": "findThisNameValue",
-                      "@DEF": "FindableMetadataStringTest",
-                      "@value": [
-                        "test case"
-                      ]
+                  "-value": [
+                    {
+                      "MetadataString": {
+                        "@name": "findThisNameValue",
+                        "@DEF": "FindableMetadataStringTest",
+                        "@value": [
+                          "test case"
+                        ]
+                      }
                     }
-                  },
+                  ],
                   "-appearance": {
                     "Appearance": {
                       "@DEF": "DeclarativeAppearanceExample",

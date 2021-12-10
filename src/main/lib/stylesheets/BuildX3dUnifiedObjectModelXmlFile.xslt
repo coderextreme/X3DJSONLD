@@ -700,6 +700,14 @@ Recommended tool:
                         <xsl:if test="(string-length($baseType) > 0)"> <!--  and ($baseType != 'xs:string') -->
                             <xsl:element name="Inheritance">
                                 <xsl:attribute name="baseType" select="$baseType"/>
+                                <xsl:choose>
+                                    <xsl:when test="starts-with($fieldType,'MF')">
+                                        <xsl:attribute name="x3dType"><xsl:text>X3DArrayField</xsl:text></xsl:attribute>
+                                    </xsl:when>
+                                    <xsl:when test="starts-with($fieldType,'SF')">
+                                        <xsl:attribute name="x3dType"><xsl:text>X3DField</xsl:text></xsl:attribute>
+                                    </xsl:when>
+                                </xsl:choose>
                             </xsl:element>
                         </xsl:if>
                     </xsl:element>
@@ -973,9 +981,16 @@ Recommended tool:
                                 </xsl:for-each>
                             </xsl:element>
                         </xsl:if>
+                        <xsl:if test="($abstractNodeTypeName = 'X3DArrayField')">
+                            <xsl:element name="Inheritance">
+                                <xsl:attribute name="x3dType">
+                                    <xsl:text>X3DField</xsl:text>
+                                </xsl:attribute>
+                            </xsl:element>
+                        </xsl:if>
                     </xsl:element>
                 </xsl:element>
-            </xsl:for-each>           
+            </xsl:for-each>
         </xsl:element>
         
         <xsl:element name="ConcreteNodes">
