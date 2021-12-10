@@ -15584,13 +15584,13 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
-            "@enabled": {
-              "default": true,
+            "@dopplerEnabled": {
+              "default": false,
               "$comment": "SFBool inputOutput",
               "type": "boolean"
             },
-            "@enableDoppler": {
-              "default": false,
+            "@enabled": {
+              "default": true,
               "$comment": "SFBool inputOutput",
               "type": "boolean"
             },
@@ -25376,13 +25376,13 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
-            "@enabled": {
-              "default": true,
+            "@dopplerEnabled": {
+              "default": false,
               "$comment": "SFBool inputOutput",
               "type": "boolean"
             },
-            "@enableDoppler": {
-              "default": false,
+            "@enabled": {
+              "default": true,
               "$comment": "SFBool inputOutput",
               "type": "boolean"
             },
