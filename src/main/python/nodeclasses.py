@@ -67,9 +67,11 @@ code += 'java.classpath.push("../jars/X3DJSAIL.4.0.full.jar");\n'
 code += 'java.classpath.push("../../jars/X3DJSAIL.4.0.full.jar");\n'
 
 
-soup = BeautifulSoup(open("../../specifications/X3dUnifiedObjectModel-4.0.xml"), "xml")
-
 classes = {}
+
+with open("../../specifications/X3dUnifiedObjectModel-4.0.xml") as fp:
+    soup = BeautifulSoup(fp, 'html.parser')
+
 
 # ants = soup.find_all("AbstractNodeType")
 # for ant in ants:
@@ -79,21 +81,21 @@ classes = {}
 # for aot in aots:
 #     classes[aot['name']] = ClassPrinter(aot, "")
 
-cns = soup.find_all("ConcreteNode")
-for cn in cns:
-    classes[cn['name']] = ClassPrinter(cn, "")
+    cns = soup.find_all("ConcreteNode")
+    for cn in cns:
+        classes[cn['name']] = ClassPrinter(cn, "")
 
-sts = soup.find_all("Statement")
-for st in sts:
-    classes[st['name']] = ClassPrinter(st, "")
+    sts = soup.find_all("Statement")
+    for st in sts:
+        classes[st['name']] = ClassPrinter(st, "")
 
-fts = soup.find_all("FieldType")
-for ft in fts:
-    classes[ft['type']] = ClassPrinter(ft, "")
+    fts = soup.find_all("FieldType")
+    for ft in fts:
+        classes[ft['type']] = ClassPrinter(ft, "")
 
-code += 'module.exports = {\n';
-for k,v in classes.items():
-    code += v.printClass()
+    code += 'module.exports = {\n';
+    for k,v in classes.items():
+        code += v.printClass()
 
 code += 'ConfigurationProperties : java.import("org.web3d.x3d.jsail.ConfigurationProperties"),\n'
 code += 'CommentsBlock : java.import("org.web3d.x3d.jsail.Core.CommentsBlock")\n'

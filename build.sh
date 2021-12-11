@@ -23,9 +23,11 @@ popd
 cp /c/x3d-code/www.web3d.org/x3d/stylesheets/*.xslt src/main/lib/stylesheets
 
 # install python3 packages
-pip3 install beautifulsoup4
-pip3 install lxml
-pip3 install jnius
+sudo apt-get install python3-bs4
+sudo apt-get install python3-lxml
+# pip3 install bs4
+# pip3 install lxml
+pip3 install pyjnius
 pip3 install fastjsonschema
 pip3 install jsonschema
 pip3 install jschon
