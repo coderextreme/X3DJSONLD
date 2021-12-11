@@ -33,8 +33,9 @@ class ClassPrinter:
 
             inhers = self.node.iter("Inheritance")
             for inher in inhers:
-                self.parents.update({ inher.get('baseType') : 1} )
-                self.parents.update(classes[inher.get('baseType')].findParents())
+                if inher.get('baseType') is not None:
+                    self.parents.update({ inher.get('baseType') : 1} )
+                    self.parents.update(classes[inher.get('baseType')].findParents())
     
             return self.parents;
 
@@ -46,7 +47,8 @@ class ClassPrinter:
 
             inhers = self.node.iter("Inheritance")
             for inher in inhers:
-                classes[inher.get('baseType')].children.append(self.name)
+                if inher.get('baseType') is not None:
+                    classes[inher.get('baseType')].children.append(self.name)
     
             return self.children;
 
