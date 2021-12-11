@@ -46,7 +46,7 @@
           },
           {
             "@name":"translated",
-            "@content":"23 November 2021"
+            "@content":"11 December 2021"
           },
           {
             "@name":"generator",
@@ -64,7 +64,7 @@
             {
               "@avatarSize":[200,200,120],
               "@speed":3.0,
-              "@type":["EXAMINE","FLY","WALK"]
+              "@type":"\"EXAMINE\" \"FLY\" \"WALK\""
             }
           },
           { "WorldInfo":

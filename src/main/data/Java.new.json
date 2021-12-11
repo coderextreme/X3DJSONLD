@@ -136,7 +136,7 @@
           },
           {
             "@name":"translated",
-            "@content":"23 November 2021"
+            "@content":"11 December 2021"
           },
           {
             "@name":"generator",
@@ -328,7 +328,7 @@
                             { "MetadataSet":
                               {
                                 "@name":"EscapedQuotationMarksMetadataSet",
-                                "-value":[
+                                "-metadata":
                                   { "MetadataString":
                                     {
                                       "@name":"quotesTestC",
@@ -341,7 +341,6 @@
                                       "@value":["checks MetadataSetObject addValue() method"]
                                     }
                                   }
-                                ]
                               }
                             },
                           "-fontStyle":
