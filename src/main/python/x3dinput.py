@@ -229,10 +229,12 @@ class JSON_MFNode(MFNode):
 
 with open('../data/HelloWorld.json', encoding="utf-8") as json_file:
     data = json.load(json_file)
-    # print(data)
     newscene = JSON_X3D()
     scene = newscene.parseJSON(data["X3D"])
-    # print("")
-    # print(scene)
-    # print(scene.JSON(indentLevel=0, syntax="JSON"))
+    print(scene.JSON(indentLevel=0, syntax="XML"))
+
+with open('../personal/rubik.json', encoding="utf-8") as json_file:
+    data = json.load(json_file)
+    newscene = JSON_X3D()
+    scene = newscene.parseJSON(data["X3D"])
     print(scene.JSON(indentLevel=0, syntax="XML"))
