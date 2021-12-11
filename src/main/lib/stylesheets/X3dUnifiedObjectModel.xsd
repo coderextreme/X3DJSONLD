@@ -329,6 +329,7 @@ Design summary:
 		</xs:annotation>
 		<xs:complexType>
 			<xs:attribute name="baseType" type="xs:token" default=""/>
+			<xs:attribute name="x3dType" type="xs:token" default=""/>
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="InterfaceDefinition">
