@@ -49,30 +49,31 @@ class ClassPrinter:
 code = ""
 code += "CommentsBlock = autoclass('org.web3d.x3d.jsail.Core.CommentsBlock')\n"
 
-soup = BeautifulSoup(open("../../specifications/X3dUnifiedObjectModel-4.0.xml"), "xml")
-
-
 classes = {}
 
-ants = soup.find_all("AbstractNodeType")
-for ant in ants:
-    classes[ant['name']] = ClassPrinter(ant, "")
+with open("../../specifications/X3dUnifiedObjectModel-4.0.xml") as fp:
+    soup = BeautifulSoup(fp, 'html.parser')
 
-aots = soup.find_all("AbstractObjectType")
-for aot in aots:
-    classes[aot['name']] = ClassPrinter(aot, "")
 
-cns = soup.find_all("ConcreteNode")
-for cn in cns:
-    classes[cn['name']] = ClassPrinter(cn, "")
+    ants = soup.find_all("AbstractNodeType")
+    for ant in ants:
+        classes[ant['name']] = ClassPrinter(ant, "")
 
-sts = soup.find_all("Statement")
-for st in sts:
-    classes[st['name']] = ClassPrinter(st, "")
+    aots = soup.find_all("AbstractObjectType")
+    for aot in aots:
+        classes[aot['name']] = ClassPrinter(aot, "")
 
-fts = soup.find_all("FieldType")
-for ft in fts:
-    classes[ft['type']] = ClassPrinter(ft, "")
+    cns = soup.find_all("ConcreteNode")
+    for cn in cns:
+        classes[cn['name']] = ClassPrinter(cn, "")
+
+    sts = soup.find_all("Statement")
+    for st in sts:
+        classes[st['name']] = ClassPrinter(st, "")
+
+    fts = soup.find_all("FieldType")
+    for ft in fts:
+        classes[ft['type']] = ClassPrinter(ft, "")
 
 for k,v in classes.items():
     cls = v.printClass()
