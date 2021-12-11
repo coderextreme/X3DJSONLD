@@ -95,7 +95,7 @@
           },
           {
             "@name":"translated",
-            "@content":"23 November 2021"
+            "@content":"11 December 2021"
           },
           {
             "@name":"generator",
@@ -226,13 +226,13 @@
                     "@name":"Titania",
                     "@DEF":"Titania",
                     "@reference":"http://titania.create3000.de",
-                    "-value":[
+                    "-metadata":
                       { "MetadataSet":
                         {
                           "@name":"Selection",
                           "@DEF":"Selection",
                           "@reference":"http://titania.create3000.de",
-                          "-value":[
+                          "-metadata":
                             { "MetadataSet":
                               {
                                 "@name":"nodes",
@@ -245,7 +245,6 @@
                                 ]
                               }
                             }
-                          ]
                         }
                       },
                       { "MetadataSet":
@@ -253,7 +252,7 @@
                           "@name":"NavigationInfo",
                           "@DEF":"NavigationInfo",
                           "@reference":"http://titania.create3000.de",
-                          "-value":[
+                          "-metadata":
                             { "MetadataString":
                               {
                                 "@name":"type",
@@ -262,7 +261,6 @@
                                 "@value":["EXAMINE"]
                               }
                             }
-                          ]
                         }
                       },
                       { "MetadataSet":
@@ -270,7 +268,7 @@
                           "@name":"Viewpoint",
                           "@DEF":"Viewpoint",
                           "@reference":"http://titania.create3000.de",
-                          "-value":[
+                          "-metadata":
                             { "MetadataDouble":
                               {
                                 "@name":"position",
@@ -295,10 +293,8 @@
                                 "@value":[-0.808320198626341,-0.358072370409949,0.22817191560906]
                               }
                             }
-                          ]
                         }
                       }
-                    ]
                   }
                 }
             }
