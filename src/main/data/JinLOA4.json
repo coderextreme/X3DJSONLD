@@ -78,7 +78,7 @@
           },
           {
             "@name":"translated",
-            "@content":"11 December 2021"
+            "@content":"14 October 2021"
           },
           {
             "@name":"generator",
@@ -116,7 +116,7 @@
               "@loa":4,
               "@scale":[0.0225,0.0225,0.0225],
               "@version":"2.0",
-              "-value":[
+              "-metadata":
                 { "MetadataSet":
                   {
                     "@name":"HAnimHumanoid.info",
@@ -160,8 +160,7 @@
                       }
                     ]
                   }
-                }
-              ],
+                },
               "-skeleton":[
                 { "HAnimJoint":
                   {
