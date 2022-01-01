@@ -30,7 +30,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('modified'),
-              content_ : SFString('7 August 2021')),
+              content_ : SFString('5 December 2021')),
 
             meta(
               name_ : SFString('reference'),
@@ -74,8 +74,6 @@ var X3D0 =  X3D(
             Viewpoint(
               DEF_ : SFString('Camera001'),
               description_ : SFString('Viewpoint is like camera, prepositioned in locations (and directions) of interest. In this example the camera is the \"ears of the user\". So, if the trackCurrentView field from ListenerPointSource is TRUE then position and orientation matches the users current view'),
-              farDistance_ : 0,
-              nearDistance_ : 1,
               orientation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-0.523599)]),
               position_ : SFVec3f([SFDouble(0), SFDouble(2000), SFDouble(3500)])),
 
@@ -134,7 +132,7 @@ var X3D0 =  X3D(
                       size_ : SFVec3f([SFDouble(2000), SFDouble(1), SFDouble(2000)])))]),
 
             Transform(
-              DEF_ : SFString('Audio1Transform'),
+              DEF_ : SFString('TransformAudio1'),
               translation_ : SFVec3f([SFDouble(-933.123474), SFDouble(0), SFDouble(-926.253235)]),
               children_ : [
                 Shape(
@@ -170,10 +168,12 @@ var X3D0 =  X3D(
                               string_ : MFString([SFString("Violin")]),
                               fontStyle_ : 
                                 FontStyle(
+                                  DEF_ : SFString('ModelFontStyle'),
+                                  family_ : MFString([SFString("Times"), SFString("SERIF")]),
                                   style_ : SFString('BOLD'))))])])]),
 
             Transform(
-              DEF_ : SFString('Audio2'),
+              DEF_ : SFString('TransformAudio2'),
               translation_ : SFVec3f([SFDouble(933.475586), SFDouble(0), SFDouble(924.423218)]),
               children_ : [
                 Shape(
@@ -209,38 +209,30 @@ var X3D0 =  X3D(
                               string_ : MFString([SFString("Saxophone")]),
                               fontStyle_ : 
                                 FontStyle(
-                                  family_ : MFString([SFString("Times")]),
-                                  style_ : SFString('BOLD'))))])])]),
+                                  USE_ : SFString('ModelFontStyle'))))])])]),
 
             ListenerPointSource(
-              trackCurrentView_ : true,
-              dopplerEnabled_ : "false"),
+              trackCurrentView_ : true),
 
             StreamAudioDestination(
               children_ : [
                 SpatialSound(
                   DEF_ : SFString('Audio1'),
-                  dopplerEnabled_ : "false",
                   children_ : [
                     Gain(
                       children_ : [
                         AudioClip(
+                          description_ : SFString('Violin'),
                           loop_ : true,
-                          pauseTime_ : -1,
-                          resumeTime_ : -1,
-                          stopTime_ : -1,
                           url_ : MFString([SFString("sound/violin.mp3"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3")]))])]),
 
                 SpatialSound(
                   DEF_ : SFString('Audio2'),
-                  dopplerEnabled_ : "false",
                   children_ : [
                     Gain(
                       children_ : [
                         AudioClip(
+                          description_ : SFString('Saxophone'),
                           loop_ : true,
-                          pauseTime_ : -1,
-                          resumeTime_ : -1,
-                          stopTime_ : -1,
                           url_ : MFString([SFString("sound/saxophone.mp3"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3")]))])])])]));
 void main() { exit(0); }

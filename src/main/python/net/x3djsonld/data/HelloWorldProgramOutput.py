@@ -67,7 +67,7 @@ newModel=X3D(profile='Full',version='4.0',
       children=[
       Viewpoint(DEF='DefaultView',description='Hello X3DJSAIL'),
       Viewpoint(DEF='TopDownView',description='top-down view from above',orientation=(1,0,0,-1.570796),position=(0,100,0))]),
-    NavigationInfo(type=["EXAMINE","FLY","ANY"]),
+    NavigationInfo(type='"EXAMINE" "FLY" "ANY"'),
     WorldInfo(DEF='WorldInfoDEF',title='HelloWorldProgram produced by X3D Java SAI Library (X3DJSAIL)'),
     WorldInfo(USE='WorldInfoDEF'),
     WorldInfo(USE='WorldInfoDEF'),
@@ -100,7 +100,7 @@ newModel=X3D(profile='Full',version='4.0',
         geometry=Text(string=["X3D Java","SAI Library","X3DJSAIL"],
           #  Comment example A, plain quotation marks: He said, "Immel did it!" 
           #  Comment example B, XML character entities: He said, &quot;Immel did it!&quot; 
-          metadata=MetadataSet(name='EscapedQuotationMarksMetadataSet',
+          value=MetadataSet(name='EscapedQuotationMarksMetadataSet',
             value=[
             MetadataString(name='quotesTestC',value=["MFString example C, backslash-escaped quotes: He said, \"Immel did it!\""]),
             MetadataString(name='extraChildTest',value=["checks MetadataSet addValue() method"])]),
@@ -128,7 +128,9 @@ newModel=X3D(profile='Full',version='4.0',
       Script(DEF='colorTypeConversionScript',
         field=[
         field(name='colorInput',accessType='inputOnly',type='SFColor'),
-        field(name='colorsOutput',accessType='outputOnly',type='MFColor')]),
+        field(name='colorsOutput',accessType='outputOnly',type='MFColor')]
+*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+),
       ColorInterpolator(DEF='ColorAnimator',key=[0,0.5,1],keyValue=[(0.9411765,1,1),(0.29411766,0,0.50980395),(0.9411765,1,1)],
         #  AZURE to INDIGO and back again 
         ),
@@ -212,12 +214,14 @@ newModel=X3D(profile='Full',version='4.0',
           IS=IS(
             connect=[
             connect(nodeField='enabled',protoField='enabled'),
-            connect(nodeField='diffuseColor',protoField='diffuseColor')]))])),
+            connect(nodeField='diffuseColor',protoField='diffuseColor')])
+*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+)])),
     #  Test success: declarative statement createDeclarativeShapeTests() 
     Group(DEF='DeclarativeGroupExample',
       children=[
       Shape(
-        metadata=MetadataString(DEF='FindableMetadataStringTest',name='findThisNameValue',value=["test case"]),
+        value=MetadataString(DEF='FindableMetadataStringTest',name='findThisNameValue',value=["test case"]),
         appearance=Appearance(DEF='DeclarativeAppearanceExample',
           #  DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance 
           material=ProtoInstance(DEF='MyMaterialModulator',name='MaterialModulator')),
@@ -348,8 +352,28 @@ newModel=X3D(profile='Full',version='4.0',
 
 if        metaDiagnostics(newModel): # built-in utility method in X3D class
     print(metaDiagnostics(newModel))
-print('check  newModel.XML() serialization...')
-newModelXML = newModel.XML() # test export method XML() for exceptions
-# print(newModelXML) # debug
+# print('check newModel.XML() serialization...')
+newModelXML= newModel.XML() # test export method XML() for exceptions during export
+newModel.XMLvalidate()
 
-print ("python x3d.py load successful for HelloWorldProgramOutput.py")
+try:
+#   print('check newModel.VRML() serialization...')
+    newModelVRML=newModel.VRML() # test export method VRML() for exceptions during export
+    # print(prependLineNumbers(newModelVRML)) # debug
+    print("Python-to-VRML export of VRML output successful (still testing)")
+except BaseException as err:
+    print("*** Python-to-VRML export of VRML output failed:", err)
+    if newModelVRML: # may have failed to generate
+        print(prependLineNumbers(newModelVRML, err.lineno))
+
+try:
+#   print('check newModel.JSON() serialization...')
+    newModelJSON=newModel.JSON() # test export method JSON() for exceptions during export
+#   print(prependLineNumbers(newModelJSON)) # debug
+    print("Python-to-JSON export of JSON output successful (still testing)")
+except SyntaxError as err:
+    print("*** Python-to-JSON export of JSON output failed:", err)
+    if newModelJSON: # may have failed to generate
+        print(prependLineNumbers(newModelJSON,err.lineno))
+
+print("python x3d.py load and self-test complete for HelloWorldProgramOutput.py")

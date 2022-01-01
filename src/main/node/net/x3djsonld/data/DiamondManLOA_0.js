@@ -40,7 +40,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 9 March 2021 </td>
+			<td> 23 December 2021 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> motto </i> </td>
@@ -156,7 +156,7 @@ DiamondManLOA_0.prototype = {
     .addMeta((new autoclass.meta()).setName("creator").setContent("Matthew T. Beitler"))
     .addMeta((new autoclass.meta()).setName("translator").setContent("Joel S. Pawloski"))
     .addMeta((new autoclass.meta()).setName("created").setContent("12 November 2001"))
-    .addMeta((new autoclass.meta()).setName("modified").setContent("9 March 2021"))
+    .addMeta((new autoclass.meta()).setName("modified").setContent("23 December 2021"))
     .addMeta((new autoclass.meta()).setName("motto").setContent("(a) \"Diamonds are a girl's best friend.\" (b) \"Gosh, it sure is chilly in here.\""))
     .addMeta((new autoclass.meta()).setName("reference").setContent("HAnim 2.0 specification, Appendix A: Nominal human body dimensions and levels of articulation (LOAs)"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("https://www.web3d.org/documents/specifications/19774-1/V2.0/HAnim/BodyDimensionsAndLOAs.html"))
@@ -179,7 +179,7 @@ DiamondManLOA_0.prototype = {
     .addChild((new autoclass.NavigationInfo()).setSpeed(1.5))
     .addChild((new autoclass.Viewpoint()).setDescription("Diamond Man, LOA 0").setCenterOfRotation(0.0,1.0,0.0).setPosition(0.0,1.0,3.0))
     .addChild((new autoclass.HAnimHumanoid("hanim_humanoid")).setName("humanoid").setVersion("1.0")
-      .addComments(" HAnimHumanoid original info='\"authorEmail=beitler@graphics.cis.upenn.edu beitler@acm.org\" \"authorName=Matthew T. Beitler\" \"copyright=Copyright 1999 Matthew T. Beitler\" \"creationDate=05/12/99\" \"humanoidVersion=JointCenters 1.1 LOA0\" \"usageRestrictions=PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose.\"' ")
+      .addComments(" original HAnimHumanoid info='\"authorEmail=beitler@graphics.cis.upenn.edu beitler@acm.org\" \"authorName=Matthew T. Beitler\" \"copyright=Copyright 1999 Matthew T. Beitler\" \"creationDate=05/12/99\" \"humanoidVersion=JointCenters 1.1 LOA0\" \"usageRestrictions=PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose.\"' ")
       .addChild((new autoclass.MetadataSet()).setName("HAnimHumanoid.info").setReference(this.MetadataSet_HAnimHumanoid.info_4_29_reference)
         .addValue((new autoclass.MetadataString()).setName("authorEmail").setValue(new autoclass.MFString("\"beitler@graphics.cis.upenn.edu beitler@acm.org\"")))
         .addValue((new autoclass.MetadataString()).setName("authorName").setValue(new autoclass.MFString("\"Matthew T. Beitler\"")))
@@ -187,8 +187,8 @@ DiamondManLOA_0.prototype = {
         .addValue((new autoclass.MetadataString()).setName("creationDate").setValue(new autoclass.MFString("\"05/12/99\"")))
         .addValue((new autoclass.MetadataString()).setName("humanoidVersion").setValue(new autoclass.MFString("\"JointCenters 1.1 LOA0\"")))
         .addValue((new autoclass.MetadataString()).setName("usageRestrictions").setValue(this.MetadataString_usageRestrictions_5_34_value)))
-      .addSkeleton((new autoclass.HAnimJoint("hanim_HumanoidRoot")).setName("HumanoidRoot").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.0,0.8240,0.0277)
-        .addChild((new autoclass.HAnimJoint("hanim_sacroiliac")).setName("sacroiliac").setStiffness(java.newArray("float", [0.0,0.0,0.0])).setCenter(0.0,0.9149,0.0016)
+      .addSkeleton((new autoclass.HAnimJoint("hanim_HumanoidRoot")).setName("HumanoidRoot").setCenter(0.0,0.8240,0.0277)
+        .addChild((new autoclass.HAnimJoint("hanim_sacroiliac")).setName("sacroiliac").setCenter(0.0,0.9149,0.0016)
           .addChild((new autoclass.HAnimSegment("hanim_pelvis")).setName("pelvis")
             .addChild((new autoclass.Transform()).setTranslation(0.0,0.9149,0.0016)
               .addChild((new autoclass.Shape("DiamondShape"))
@@ -200,10 +200,10 @@ DiamondManLOA_0.prototype = {
         .addChild((new autoclass.Viewpoint("InclinedView")).setDescription("Inclined View").setOrientation(-0.113,0.993,0.0347,0.671).setPosition(1.62,1.05,2.06))
         .addChild((new autoclass.Viewpoint("FrontView")).setDescription("Front View").setPosition(0.0,0.854,2.57665))
         .addChild((new autoclass.Viewpoint("SideView")).setDescription("Side View").setOrientation(0.0,1.0,0.0,1.57079).setPosition(2.5929,0.854,0.0))
-        .addChild((new autoclass.Viewpoint("TopView")).setDescription("Top View").setPosition(0.0,3.4495,0.0).setOrientation(1.0,0.0,0.0,-1.57079)))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_HumanoidRoot").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
-      .addJoints((new autoclass.HAnimJoint()).setUSE("hanim_sacroiliac").setStiffness(java.newArray("float", [0.0,0.0,0.0])))
-      .addSegments((new autoclass.HAnimSegment()).setUSE("hanim_pelvis"))));
+        .addChild((new autoclass.Viewpoint("TopView")).setDescription("Top View").setOrientation(1.0,0.0,0.0,-1.57079).setPosition(0.0,3.4495,0.0)))
+      .addJoints((new autoclass.HAnimJoint()))
+      .addJoints((new autoclass.HAnimJoint()))
+      .addSegments((new autoclass.HAnimSegment()))));
   },
   // end of initialize() method
 

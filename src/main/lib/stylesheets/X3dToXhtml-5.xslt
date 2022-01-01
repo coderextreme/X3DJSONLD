@@ -162,7 +162,7 @@ b.error {color: #CC0000}]]>
 				<div class="indent">
 					<xsl:apply-templates select="* | comment()" />
 					<!-- Script node:  preserve CDATA delimiters around contained code -->
-					<xsl:if test="local-name()='Script' and text() and not (normalize-space(.)='' or normalize-space(.)=' ')">
+					<xsl:if test="local-name()='Script' and text() and not (normalize-space(string(.))='' or normalize-space(string(.))=' ')">
 						<xsl:text>&#10;</xsl:text>
 						<br />
 						<code><b><xsl:text>&lt;![CDATA[</xsl:text></b></code>
@@ -170,12 +170,12 @@ b.error {color: #CC0000}]]>
 						<pre>
 							<xsl:for-each select="text()">
 								<xsl:choose>
-									<xsl:when test="(normalize-space(.)='' or normalize-space(.)=' ') and preceding::field"></xsl:when><!--<xsl:text>// stripped LF before field&#10;</xsl:text> -->
-									<xsl:when test="(normalize-space(.)='' or normalize-space(.)=' ') and following::field"></xsl:when><!--<xsl:text>// stripped LF after  field&#10;</xsl:text> -->
+									<xsl:when test="(normalize-space(string(.))='' or normalize-space(string(.))=' ') and preceding::field"></xsl:when><!--<xsl:text>// stripped LF before field&#10;</xsl:text> -->
+									<xsl:when test="(normalize-space(string(.))='' or normalize-space(string(.))=' ') and following::field"></xsl:when><!--<xsl:text>// stripped LF after  field&#10;</xsl:text> -->
 									<!-- usable text found, need to convert '<' to &lt; -->
 									<xsl:otherwise>
 										<xsl:call-template name="escape-lessthan-characters">
-											<xsl:with-param name="inputString" select="."/>
+											<xsl:with-param name="inputValue" select="."/>
 										</xsl:call-template>
 									</xsl:otherwise>
 								</xsl:choose>
@@ -216,7 +216,7 @@ b.error {color: #CC0000}]]>
 				<xsl:value-of select="substring-before($inputString,'&#60;')"/>
 				<xsl:text>&amp;lt;</xsl:text>
 				<xsl:call-template name="escape-lessthan-characters">
-					<xsl:with-param name="inputString" select="substring-after($inputString,'&#60;')"/>
+					<xsl:with-param name="inputValue" select="substring-after($inputString,'&#60;')"/>
 				</xsl:call-template>
 			</xsl:when>
 			<xsl:otherwise>
@@ -358,7 +358,7 @@ b.error {color: #CC0000}]]>
 		<br />
 		<xsl:text>&#10; </xsl:text>
 		<!-- wrap comment in blanks in case it ends with hyphen, since - is not a valid comment terminator -->
-		<xsl:text>&lt;!-- </xsl:text><xsl:value-of select="normalize-space(.)"/><xsl:text> --&gt;</xsl:text>
+		<xsl:text>&lt;!-- </xsl:text><xsl:value-of select="normalize-space(string(.))"/><xsl:text> --&gt;</xsl:text>
 	</xsl:template>
 
 	<!-- ****** XML processing-instruction ****** -->

@@ -72,7 +72,7 @@ app.prototype = {
         .setAppearance((new autoclass.Appearance())
           .setMaterial((new autoclass.Material()).setDiffuseColor(1.0,0.0,0.0)))
         .setGeometry((new autoclass.Box()))))
-    .addChild((new autoclass.Transform()).setTranslation(1.0,2.0,3.0).setScale(4.0,5.0,6.0).setRotation(7.0,8.0,9.0,3.14)));
+    .addChild((new autoclass.Transform()).setRotation(7.0,8.0,9.0,3.14).setScale(4.0,5.0,6.0).setTranslation(1.0,2.0,3.0)));
   },
   // end of initialize() method
 

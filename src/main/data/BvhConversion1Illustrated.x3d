@@ -9,7 +9,7 @@
     <meta content='Don Brutzman' name='translator'/>
     <meta content='1 January 2016' name='created'/>
     <meta content='1 January 2018' name='translated'/>
-    <meta content='20 February 2021' name='modified'/>
+    <meta content='23 December 2021' name='modified'/>
     <meta content='under development, TODO fix transcription of HAnimSite nodes. A few further improvements needed in X3dToXhhtml.xslt HAnim report stylesheet' name='warning'/>
     <meta content='BvhConversion1Illustrated.png' name='Image'/>
     <meta content='BvhConversion1Invisible.html#HumanoidRootHAnimHumanoidReport' name='reference'/>
@@ -36,7 +36,7 @@
       <!-- BVH HIERARCHY model size computations: minX=0.0, maxX=0.0, width=0.0; minY=-17.78, maxY=10.16, height=27.94; minZ=0.0, maxZ=15.24, depth=15.24 -->
       <!-- Estimated rescaling to meters based on height: scaleFactor=0.0254 for modified height of 0.710m -->
       <!-- Vertical offset to move bottom of BVH figure to ground plane (adjusted in HAnimJoint containerField='skeleton'): heightOffset=0.451612m -->
-      <MetadataSet name='BvhToHAnimConversionNameTable'>
+      <MetadataSet containerField='metadata' name='BvhToHAnimConversionNameTable'>
         <!-- <MetadataString name='bvhName' reference='bvhType' value='"name" "segmentName"'/> -->
         <MetadataString containerField='value' name='Hips' reference='ROOT' value='"HumanoidRoot" "sacrum"'/>
         <MetadataString containerField='value' name='LeftHip' reference='JOINT' value='"l_hip" "l_thigh"'/>
@@ -74,7 +74,7 @@
     </Transform>
     <HAnimHumanoid DEF='Bvh1_Hips' name='Hips' version='1.0'>
       <!-- HAnimHumanoid original info='"authorEmail=*TODO*" "authorName=*TODO*" "copyright=Copyright 2017" "humanoidVersion=*TODO*" "usageRestrictions=*TODO*"' -->
-      <MetadataSet name='HAnimHumanoid.info' reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid'>
+      <MetadataSet containerField='metadata' name='HAnimHumanoid.info' reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid'>
         <MetadataString containerField='value' name='authorEmail' value='*TODO*'/>
         <MetadataString containerField='value' name='authorName' value='*TODO*'/>
         <MetadataString containerField='value' name='copyright' value='Copyright 2017'/>

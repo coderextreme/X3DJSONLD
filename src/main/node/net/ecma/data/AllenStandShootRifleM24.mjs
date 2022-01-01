@@ -302,13 +302,15 @@ var X3D0 =  new X3D({
                                   name : new SFString("humanoid_root"),
                                   DEF : new SFString("hanim_humanoid_root"),
                                   center : new SFVec3f([-0.00405,0.855,-0.000113]),
-                                  stiffness : new SFVec3f([0,0,0]),
+                                  ulimit : new SFVec3f([0,0,0]),
+                                  llimit : new SFVec3f([0,0,0]),
                                   children : new MFNode([
                                     new HAnimJoint({
                                       name : new SFString("sacroiliac"),
                                       DEF : new SFString("hanim_sacroiliac"),
                                       center : new SFVec3f([0,1.01,-0.0204]),
-                                      stiffness : new SFVec3f([0,0,0]),
+                                      ulimit : new SFVec3f([0,0,0]),
+                                      llimit : new SFVec3f([0,0,0]),
                                       children : new MFNode([
                                         new HAnimSegment({
                                           name : new SFString("pelvis"),
@@ -345,7 +347,8 @@ var X3D0 =  new X3D({
                                           name : new SFString("l_hip"),
                                           DEF : new SFString("hanim_l_hip"),
                                           center : new SFVec3f([0.122,0.888271,-0.0693267]),
-                                          stiffness : new SFVec3f([0,0,0]),
+                                          ulimit : new SFVec3f([0,0,0]),
+                                          llimit : new SFVec3f([0,0,0]),
                                           children : new MFNode([
                                             new HAnimSegment({
                                               name : new SFString("l_thigh"),
@@ -378,7 +381,8 @@ var X3D0 =  new X3D({
                                               name : new SFString("l_knee"),
                                               DEF : new SFString("hanim_l_knee"),
                                               center : new SFVec3f([0.0738,0.517,-0.0284]),
-                                              stiffness : new SFVec3f([0,0,0]),
+                                              ulimit : new SFVec3f([0,0,0]),
+                                              llimit : new SFVec3f([0,0,0]),
                                               children : new MFNode([
                                                 new HAnimSegment({
                                                   name : new SFString("l_calf"),
@@ -411,7 +415,8 @@ var X3D0 =  new X3D({
                                                   name : new SFString("l_ankle"),
                                                   DEF : new SFString("hanim_l_ankle"),
                                                   center : new SFVec3f([0.0645,0.0719,-0.048]),
-                                                  stiffness : new SFVec3f([0,0,0]),
+                                                  ulimit : new SFVec3f([0,0,0]),
+                                                  llimit : new SFVec3f([0,0,0]),
                                                   children : new MFNode([
                                                     new HAnimSegment({
                                                       name : new SFString("l_hindfoot"),
@@ -442,7 +447,8 @@ var X3D0 =  new X3D({
                                           name : new SFString("r_hip"),
                                           DEF : new SFString("hanim_r_hip"),
                                           center : new SFVec3f([-0.11,0.892362,-0.0732533]),
-                                          stiffness : new SFVec3f([0,0,0]),
+                                          ulimit : new SFVec3f([0,0,0]),
+                                          llimit : new SFVec3f([0,0,0]),
                                           children : new MFNode([
                                             new HAnimSegment({
                                               name : new SFString("r_thigh"),
@@ -475,7 +481,8 @@ var X3D0 =  new X3D({
                                               name : new SFString("r_knee"),
                                               DEF : new SFString("hanim_r_knee"),
                                               center : new SFVec3f([-0.0699,0.51,-0.0166]),
-                                              stiffness : new SFVec3f([0,0,0]),
+                                              ulimit : new SFVec3f([0,0,0]),
+                                              llimit : new SFVec3f([0,0,0]),
                                               children : new MFNode([
                                                 new HAnimSegment({
                                                   name : new SFString("r_calf"),
@@ -508,7 +515,8 @@ var X3D0 =  new X3D({
                                                   name : new SFString("r_ankle"),
                                                   DEF : new SFString("hanim_r_ankle"),
                                                   center : new SFVec3f([-0.064,0.0753,-0.0412]),
-                                                  stiffness : new SFVec3f([0,0,0]),
+                                                  ulimit : new SFVec3f([0,0,0]),
+                                                  llimit : new SFVec3f([0,0,0]),
                                                   children : new MFNode([
                                                     new HAnimSegment({
                                                       name : new SFString("r_hindfoot"),
@@ -538,7 +546,8 @@ var X3D0 =  new X3D({
                                       name : new SFString("vl1"),
                                       DEF : new SFString("hanim_vl1"),
                                       center : new SFVec3f([-0.00405,1.07,-0.0275]),
-                                      stiffness : new SFVec3f([0,0,0]),
+                                      ulimit : new SFVec3f([0,0,0]),
+                                      llimit : new SFVec3f([0,0,0]),
                                       children : new MFNode([
                                         new HAnimSegment({
                                           name : new SFString("l1"),
@@ -573,7 +582,8 @@ var X3D0 =  new X3D({
                                           name : new SFString("l_shoulder"),
                                           DEF : new SFString("hanim_l_shoulder"),
                                           center : new SFVec3f([0.167,1.36,-0.0518]),
-                                          stiffness : new SFVec3f([0,0,0]),
+                                          ulimit : new SFVec3f([0,0,0]),
+                                          llimit : new SFVec3f([0,0,0]),
                                           children : new MFNode([
                                             new HAnimSegment({
                                               name : new SFString("l_upperarm"),
@@ -608,7 +618,8 @@ var X3D0 =  new X3D({
                                               name : new SFString("l_elbow"),
                                               DEF : new SFString("hanim_l_elbow"),
                                               center : new SFVec3f([0.196,1.07,-0.0518]),
-                                              stiffness : new SFVec3f([0,0,0]),
+                                              ulimit : new SFVec3f([0,0,0]),
+                                              llimit : new SFVec3f([0,0,0]),
                                               children : new MFNode([
                                                 new HAnimSegment({
                                                   name : new SFString("l_forearm"),
@@ -641,7 +652,8 @@ var X3D0 =  new X3D({
                                                   name : new SFString("l_wrist"),
                                                   DEF : new SFString("hanim_l_wrist"),
                                                   center : new SFVec3f([0.213,0.811,-0.0338]),
-                                                  stiffness : new SFVec3f([0,0,0]),
+                                                  ulimit : new SFVec3f([0,0,0]),
+                                                  llimit : new SFVec3f([0,0,0]),
                                                   children : new MFNode([
                                                     new HAnimSegment({
                                                       name : new SFString("l_hand"),
@@ -671,7 +683,8 @@ var X3D0 =  new X3D({
                                           name : new SFString("r_shoulder"),
                                           DEF : new SFString("hanim_r_shoulder"),
                                           center : new SFVec3f([-0.167,1.36,-0.0458]),
-                                          stiffness : new SFVec3f([0,0,0]),
+                                          ulimit : new SFVec3f([0,0,0]),
+                                          llimit : new SFVec3f([0,0,0]),
                                           children : new MFNode([
                                             new HAnimSegment({
                                               name : new SFString("r_upperarm"),
@@ -704,7 +717,8 @@ var X3D0 =  new X3D({
                                               name : new SFString("r_elbow"),
                                               DEF : new SFString("hanim_r_elbow"),
                                               center : new SFVec3f([-0.192,1.07,-0.0498]),
-                                              stiffness : new SFVec3f([0,0,0]),
+                                              ulimit : new SFVec3f([0,0,0]),
+                                              llimit : new SFVec3f([0,0,0]),
                                               children : new MFNode([
                                                 new HAnimSegment({
                                                   name : new SFString("r_forearm"),
@@ -737,7 +751,8 @@ var X3D0 =  new X3D({
                                                   name : new SFString("r_wrist"),
                                                   DEF : new SFString("hanim_r_wrist"),
                                                   center : new SFVec3f([-0.217,0.811,-0.0338]),
-                                                  stiffness : new SFVec3f([0,0,0]),
+                                                  ulimit : new SFVec3f([0,0,0]),
+                                                  llimit : new SFVec3f([0,0,0]),
                                                   children : new MFNode([
                                                     new HAnimSegment({
                                                       name : new SFString("r_hand"),
@@ -825,7 +840,8 @@ ecmascript:eval (0
                                           name : new SFString("vc4"),
                                           DEF : new SFString("hanim_vc4"),
                                           center : new SFVec3f([0,1.43,-0.0458]),
-                                          stiffness : new SFVec3f([0,0,0]),
+                                          ulimit : new SFVec3f([0,0,0]),
+                                          llimit : new SFVec3f([0,0,0]),
                                           children : new MFNode([
                                             new HAnimSegment({
                                               name : new SFString("c4"),
@@ -859,7 +875,8 @@ ecmascript:eval (0
                                               name : new SFString("skullbase"),
                                               DEF : new SFString("hanim_skullbase"),
                                               center : new SFVec3f([0,1.54,-0.0409]),
-                                              stiffness : new SFVec3f([0,0,0]),
+                                              ulimit : new SFVec3f([0,0,0]),
+                                              llimit : new SFVec3f([0,0,0]),
                                               children : new MFNode([
                                                 new HAnimSegment({
                                                   name : new SFString("skull"),

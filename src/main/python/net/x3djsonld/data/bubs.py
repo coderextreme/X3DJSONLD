@@ -33,7 +33,7 @@ newModel=X3D(profile='Immersive',version='3.3',
     meta(name='identifier',content='https://coderextreme.net/X3DJSONLD/bubs.x3d')]),
   Scene=Scene(
     children=[
-    NavigationInfo(type=["EXAMINE"]),
+    NavigationInfo(type='"EXAMINE"'),
     Viewpoint(position=(0,0,4),orientation=(1,0,0,0),description='Bubbles in action'),
     Background(backUrl=["../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/images/BK.png"],bottomUrl=["../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/images/BT.png"],frontUrl=["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/images/FR.png"],leftUrl=["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/images/LF.png"],rightUrl=["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/images/RT.png"],topUrl=["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/images/TP.png"]),
     ProtoDeclare(name='Bubble',
@@ -51,7 +51,9 @@ newModel=X3D(profile='Immersive',version='3.3',
             field(name='translation',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
             field(name='velocity',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
             field(name='scalvel',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
-            field(name='set_fraction',accessType='inputOnly',type='SFFloat')]),
+            field(name='set_fraction',accessType='inputOnly',type='SFFloat')]
+*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+),
           TimeSensor(DEF='bubbleClock',cycleInterval=10,loop=True),
           ROUTE(fromNode='bounce1',fromField='translation_changed',toNode='body_trans',toField='set_translation'),
           ROUTE(fromNode='bounce1',fromField='scale_changed',toNode='body_trans',toField='set_scale'),
@@ -68,8 +70,28 @@ newModel=X3D(profile='Immersive',version='3.3',
 
 if        metaDiagnostics(newModel): # built-in utility method in X3D class
     print(metaDiagnostics(newModel))
-print('check  newModel.XML() serialization...')
-newModelXML = newModel.XML() # test export method XML() for exceptions
-# print(newModelXML) # debug
+# print('check newModel.XML() serialization...')
+newModelXML= newModel.XML() # test export method XML() for exceptions during export
+newModel.XMLvalidate()
 
-print ("python x3d.py load successful for bubs.py")
+try:
+#   print('check newModel.VRML() serialization...')
+    newModelVRML=newModel.VRML() # test export method VRML() for exceptions during export
+    # print(prependLineNumbers(newModelVRML)) # debug
+    print("Python-to-VRML export of VRML output successful (still testing)")
+except BaseException as err:
+    print("*** Python-to-VRML export of VRML output failed:", err)
+    if newModelVRML: # may have failed to generate
+        print(prependLineNumbers(newModelVRML, err.lineno))
+
+try:
+#   print('check newModel.JSON() serialization...')
+    newModelJSON=newModel.JSON() # test export method JSON() for exceptions during export
+#   print(prependLineNumbers(newModelJSON)) # debug
+    print("Python-to-JSON export of JSON output successful (still testing)")
+except SyntaxError as err:
+    print("*** Python-to-JSON export of JSON output failed:", err)
+    if newModelJSON: # may have failed to generate
+        print(prependLineNumbers(newModelJSON,err.lineno))
+
+print("python x3d.py load and self-test complete for bubs.py")

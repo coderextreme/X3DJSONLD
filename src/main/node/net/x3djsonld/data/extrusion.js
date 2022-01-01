@@ -87,7 +87,7 @@ extrusion.prototype = {
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.Group())
       .addChild((new autoclass.Shape())
-        .setGeometry((new autoclass.Extrusion("extrusion")).setSpine(new autoclass.MFVec3f(java.newArray("float", [-50.0,-50.0,0.0,50.0,50.0,0.0]))).setCreaseAngle(0.785).setCrossSection(this.extrusion_5_8_crossSection))
+        .setGeometry((new autoclass.Extrusion("extrusion")).setCreaseAngle(0.785).setCrossSection(this.extrusion_5_8_crossSection).setSpine(new autoclass.MFVec3f(java.newArray("float", [-50.0,-50.0,0.0,50.0,50.0,0.0]))))
         .setAppearance((new autoclass.Appearance())
           .setMaterial((new autoclass.Material()).setDiffuseColor(0.0,1.0,0.0))))
       .addChild((new autoclass.TimeSensor("TourTime")).setLoop(true))
@@ -101,8 +101,8 @@ extrusion.prototype = {
 "                        var endB = new SFVec3f(spine[1].x*Math.random()*2, spine[1].y*Math.random()*2, spine[1].z*Math.random()*2);" + "\n" + 
 "		        spine = new MFVec3f([endA, endB]);" + "\n" + 
 "                }" + "\n")
-        .addField((new autoclass.field()).setAccessType("inputOnly").setName("set_cycle").setType("SFTime"))
-        .addField((new autoclass.field()).setAccessType("inputOutput").setName("spine").setType("MFVec3f").setValue("-50 -50 0 50 50 0")))
+        .addField((new autoclass.field()).setName("set_cycle").setType("SFTime").setAccessType("inputOnly"))
+        .addField((new autoclass.field()).setName("spine").setType("MFVec3f").setAccessType("inputOutput").setValue("-50 -50 0 50 50 0")))
       .addChild((new autoclass.ROUTE()).setFromNode("TourTime").setFromField("cycleTime").setToNode("MoveCylinder").setToField("set_cycle"))
       .addChild((new autoclass.ROUTE()).setFromNode("MoveCylinder").setFromField("spine_changed").setToNode("extrusion").setToField("set_spine"))));
   },

@@ -37,7 +37,7 @@ head1.meta[5] = meta7;
 
 let meta8 = browser.currentScene.createNode("meta");
 meta8.name = "modified";
-meta8.content = "8 March 2021";
+meta8.content = "23 December 2021";
 head1.meta[6] = meta8;
 
 let meta9 = browser.currentScene.createNode("meta");
@@ -149,7 +149,7 @@ HAnimHumanoid30.name = "humanoid";
 HAnimHumanoid30.DEF = "hanim_humanoid";
 HAnimHumanoid30.loa = 0;
 HAnimHumanoid30.version = "2.0";
-//HAnimHumanoid original info='\"authorEmail=beitler@graphics.cis.upenn.edu beitler@acm.org\" \"authorName=Matthew T. Beitler\" \"copyright=Copyright 1999 Matthew T. Beitler\" \"creationDate=05/12/99\" \"humanoidVersion=JointCenters 1.1 LOA0\" \"usageRestrictions=PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose.\"'
+//original HAnimHumanoid info='\"authorEmail=beitler@graphics.cis.upenn.edu beitler@acm.org\" \"authorName=Matthew T. Beitler\" \"copyright=Copyright 1999 Matthew T. Beitler\" \"creationDate=05/12/99\" \"humanoidVersion=JointCenters 1.1 LOA0\" \"usageRestrictions=PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose.\"'
 let MetadataSet31 = browser.currentScene.createNode("MetadataSet");
 MetadataSet31.name = "HAnimHumanoid.info";
 MetadataSet31.reference = "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid";
@@ -191,12 +191,14 @@ let HAnimJoint38 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint38.name = "humanoid_root";
 HAnimJoint38.DEF = "hanim_humanoid_root";
 HAnimJoint38.center = new SFVec3f(new float[0,0.824,0.0277]);
-HAnimJoint38.stiffness = new SFVec3f(new float[0,0,0]);
+HAnimJoint38.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint38.llimit = new SFVec3f(new float[0,0,0]);
 let HAnimJoint39 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint39.name = "sacroiliac";
 HAnimJoint39.DEF = "hanim_sacroiliac";
 HAnimJoint39.center = new SFVec3f(new float[0,0.9149,0.0016]);
-HAnimJoint39.stiffness = new SFVec3f(new float[0,0,0]);
+HAnimJoint39.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint39.llimit = new SFVec3f(new float[0,0,0]);
 let HAnimSegment40 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment40.name = "pelvis";
 HAnimSegment40.DEF = "hanim_pelvis";

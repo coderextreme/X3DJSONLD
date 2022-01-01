@@ -30,7 +30,7 @@ newModel=X3D(profile='Interchange',version='3.0',
     meta(name='source',content='t1.wrl')]),
   Scene=Scene(
     children=[
-    NavigationInfo(type=["EXAMINE","FLY","WALK"],speed=3,avatarSize=[200,200,120]),
+    NavigationInfo(type='"EXAMINE" "FLY" "WALK"',speed=3,avatarSize=[200,200,120]),
     WorldInfo(title='Arts Mapper'),
     Viewpoint(description='looking North',position=(0,60,110),orientation=(1,0,0,-0.699999988079071),fieldOfView=0.785398125648499),
     Viewpoint(description='looking East',position=(-140,30,0),orientation=(0,0.400000005960464,0,-1.39999997615814),fieldOfView=0.785398125648499),
@@ -80,8 +80,28 @@ newModel=X3D(profile='Interchange',version='3.0',
 
 if        metaDiagnostics(newModel): # built-in utility method in X3D class
     print(metaDiagnostics(newModel))
-print('check  newModel.XML() serialization...')
-newModelXML = newModel.XML() # test export method XML() for exceptions
-# print(newModelXML) # debug
+# print('check newModel.XML() serialization...')
+newModelXML= newModel.XML() # test export method XML() for exceptions during export
+newModel.XMLvalidate()
 
-print ("python x3d.py load successful")
+try:
+#   print('check newModel.VRML() serialization...')
+    newModelVRML=newModel.VRML() # test export method VRML() for exceptions during export
+    # print(prependLineNumbers(newModelVRML)) # debug
+    print("Python-to-VRML export of VRML output successful (still testing)")
+except BaseException as err:
+    print("*** Python-to-VRML export of VRML output failed:", err)
+    if newModelVRML: # may have failed to generate
+        print(prependLineNumbers(newModelVRML, err.lineno))
+
+try:
+#   print('check newModel.JSON() serialization...')
+    newModelJSON=newModel.JSON() # test export method JSON() for exceptions during export
+#   print(prependLineNumbers(newModelJSON)) # debug
+    print("Python-to-JSON export of JSON output successful (still testing)")
+except SyntaxError as err:
+    print("*** Python-to-JSON export of JSON output failed:", err)
+    if newModelJSON: # may have failed to generate
+        print(prependLineNumbers(newModelJSON,err.lineno))
+
+print("python x3d.py load and self-test complete")

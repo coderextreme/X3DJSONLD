@@ -277,7 +277,7 @@ b.error {color: #CC0000}]]>
 		<br />
 		<xsl:text>&#10; </xsl:text>
 		<!-- wrap comment in blanks in case it ends with hyphen, since - is not a valid comment terminator -->
-		<xsl:text>&lt;!-- </xsl:text><xsl:value-of select="normalize-space(.)"/><xsl:text> --&gt;</xsl:text>
+		<xsl:text>&lt;!-- </xsl:text><xsl:value-of select="normalize-space(string(.))"/><xsl:text> --&gt;</xsl:text>
 	</xsl:template>
 
 </xsl:stylesheet>

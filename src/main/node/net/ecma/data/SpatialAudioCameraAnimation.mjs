@@ -12,7 +12,6 @@ import { NavigationInfo } from './x3d.mjs';
 import { Background } from './x3d.mjs';
 import { MFString } from './x3d.mjs';
 import { Viewpoint } from './x3d.mjs';
-import { SFFloat } from './x3d.mjs';
 import { SFRotation } from './x3d.mjs';
 import { SFVec3f } from './x3d.mjs';
 import { TimeSensor } from './x3d.mjs';
@@ -31,11 +30,11 @@ import { Material } from './x3d.mjs';
 import { SFColor } from './x3d.mjs';
 import { Box } from './x3d.mjs';
 import { Sphere } from './x3d.mjs';
+import { SFFloat } from './x3d.mjs';
 import { Billboard } from './x3d.mjs';
 import { Text } from './x3d.mjs';
 import { FontStyle } from './x3d.mjs';
 import { ListenerPointSource } from './x3d.mjs';
-import { undefined } from './x3d.mjs';
 import { StreamAudioDestination } from './x3d.mjs';
 import { SpatialSound } from './x3d.mjs';
 import { Gain } from './x3d.mjs';
@@ -69,7 +68,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("7 August 2021")}),
+              content : new SFString("5 December 2021")}),
 
             new meta({
               name : new SFString("reference"),
@@ -113,8 +112,6 @@ var X3D0 =  new X3D({
             new Viewpoint({
               DEF : new SFString("Camera001"),
               description : new SFString("Viewpoint is like camera, prepositioned in locations (and directions) of interest. In this example the camera is the \"ears of the user\". So, if the trackCurrentView field from ListenerPointSource is TRUE then position and orientation matches the users current view"),
-              farDistance : new SFFloat(0),
-              nearDistance : new SFFloat(1),
               orientation : new SFRotation([1,0,0,-0.523599]),
               position : new SFVec3f([0,2000,3500])}),
 
@@ -173,7 +170,7 @@ var X3D0 =  new X3D({
                       size : new SFVec3f([2000,1,2000])}))})])}),
 
             new Transform({
-              DEF : new SFString("Audio1Transform"),
+              DEF : new SFString("TransformAudio1"),
               translation : new SFVec3f([-933.123474,0,-926.253235]),
               children : new MFNode([
                 new Shape({
@@ -209,10 +206,12 @@ var X3D0 =  new X3D({
                               string : new MFString(["Violin"]),
                               fontStyle : new SFNode(
                                 new FontStyle({
+                                  DEF : new SFString("ModelFontStyle"),
+                                  family : new MFString(["Times","SERIF"]),
                                   style : new SFString("BOLD")}))}))})])})])})])}),
 
             new Transform({
-              DEF : new SFString("Audio2"),
+              DEF : new SFString("TransformAudio2"),
               translation : new SFVec3f([933.475586,0,924.423218]),
               children : new MFNode([
                 new Shape({
@@ -248,38 +247,30 @@ var X3D0 =  new X3D({
                               string : new MFString(["Saxophone"]),
                               fontStyle : new SFNode(
                                 new FontStyle({
-                                  family : new MFString(["Times"]),
-                                  style : new SFString("BOLD")}))}))})])})])})])}),
+                                  USE : new SFString("ModelFontStyle")}))}))})])})])})])}),
 
             new ListenerPointSource({
-              trackCurrentView : new SFBool(true),
-              dopplerEnabled : new undefined("false")}),
+              trackCurrentView : new SFBool(true)}),
 
             new StreamAudioDestination({
               children : new MFNode([
                 new SpatialSound({
                   DEF : new SFString("Audio1"),
-                  dopplerEnabled : new undefined("false"),
                   children : new MFNode([
                     new Gain({
                       children : new MFNode([
                         new AudioClip({
+                          description : new SFString("Violin"),
                           loop : new SFBool(true),
-                          pauseTime : new SFTime(-1),
-                          resumeTime : new SFTime(-1),
-                          stopTime : new SFTime(-1),
                           url : new MFString(["sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"])})])})])}),
 
                 new SpatialSound({
                   DEF : new SFString("Audio2"),
-                  dopplerEnabled : new undefined("false"),
                   children : new MFNode([
                     new Gain({
                       children : new MFNode([
                         new AudioClip({
+                          description : new SFString("Saxophone"),
                           loop : new SFBool(true),
-                          pauseTime : new SFTime(-1),
-                          resumeTime : new SFTime(-1),
-                          stopTime : new SFTime(-1),
                           url : new MFString(["sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"])})])})])})])})])}))});
 console.log(X3D0.toXMLNode());

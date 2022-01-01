@@ -32,7 +32,7 @@ newModel=X3D(profile='Immersive',version='3.3',
     meta(content='Don Brutzman',name='translator'),
     meta(content='1 January 2016',name='created'),
     meta(content='1 January 2018',name='translated'),
-    meta(content='20 February 2021',name='modified'),
+    meta(content='23 December 2021',name='modified'),
     meta(content='under development, TODO fix transcription of HAnimSite nodes. A few further improvements needed in X3dToXhhtml.xslt HAnim report stylesheet',name='warning'),
     meta(content='BvhConversion1Illustrated.png',name='Image'),
     meta(content='BvhConversion1Invisible.html#HumanoidRootHAnimHumanoidReport',name='reference'),
@@ -103,7 +103,7 @@ newModel=X3D(profile='Immersive',version='3.3',
         MetadataString(name='humanoidVersion',value=["*TODO*"]),
         MetadataString(name='usageRestrictions',value=['*TODO*'])]),
       skeleton=[
-      HAnimJoint(DEF='Bvh1_HumanoidRoot',name='HumanoidRoot',scale=(0.0254,0.0254,0.0254),translation=(0.000,0.806,0.194),stiffness=[0,0,0],
+      HAnimJoint(DEF='Bvh1_HumanoidRoot',name='HumanoidRoot',scale=(0.0254,0.0254,0.0254),translation=(0.000,0.806,0.194),
         #  BVH ROOT Hips, OFFSET 7.62 0.0 0.0, CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation 
         children=[
         HAnimSegment(DEF='Bvh1_sacrum',name='sacrum',
@@ -149,7 +149,7 @@ newModel=X3D(profile='Immersive',version='3.3',
             geometry=LineSet(vertexCount=[2],
               coord=Coordinate(point=[(0,0,0),(0.0,7.62,-2.54)]),
               color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-        HAnimJoint(DEF='Bvh1_l_hip',center=(7.62,0.0,0.0),name='l_hip',stiffness=[0,0,0],
+        HAnimJoint(DEF='Bvh1_l_hip',center=(7.62,0.0,0.0),name='l_hip',
           #  BVH JOINT LeftHip, OFFSET 7.62 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation 
           children=[
           HAnimSegment(DEF='Bvh1_l_thigh',name='l_thigh',
@@ -167,7 +167,7 @@ newModel=X3D(profile='Immersive',version='3.3',
             Transform(translation=(7.62,0.0,0.0),
               #  insert Shape geometry here 
               )]),
-          HAnimJoint(DEF='Bvh1_l_knee',center=(7.62,-44.449999,0.0),name='l_knee',stiffness=[0,0,0],
+          HAnimJoint(DEF='Bvh1_l_knee',center=(7.62,-44.449999,0.0),name='l_knee',
             #  BVH JOINT LeftKnee, OFFSET 0.0 -44.449999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation 
             children=[
             HAnimSegment(DEF='Bvh1_l_calf',name='l_calf',
@@ -185,7 +185,7 @@ newModel=X3D(profile='Immersive',version='3.3',
               Transform(translation=(7.62,-44.449999,0.0),
                 #  insert Shape geometry here 
                 )]),
-            HAnimJoint(DEF='Bvh1_l_ankle',center=(7.62,-83.819998,0.0),name='l_ankle',stiffness=[0,0,0],
+            HAnimJoint(DEF='Bvh1_l_ankle',center=(7.62,-83.819998,0.0),name='l_ankle',
               #  BVH JOINT LeftAnkle, OFFSET 0.0 -39.369999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation 
               children=[
               HAnimSegment(DEF='Bvh1_l_hindfoot',name='l_hindfoot',
@@ -203,7 +203,7 @@ newModel=X3D(profile='Immersive',version='3.3',
                 Transform(translation=(7.62,-83.819998,0.0),
                   #  insert Shape geometry here 
                   )]),
-              HAnimJoint(DEF='Bvh1_l_midtarsal',center=(7.62,-92.709998,-3.81),name='l_midtarsal',stiffness=[0,0,0],
+              HAnimJoint(DEF='Bvh1_l_midtarsal',center=(7.62,-92.709998,-3.81),name='l_midtarsal',
                 #  BVH JOINT LeftAnkleEnd, OFFSET 0.0 -8.89 -3.81, CHANNELS 3 Zrotation Xrotation Yrotation 
                 children=[
                 HAnimSegment(DEF='Bvh1_l_middistal',name='l_middistal',
@@ -221,7 +221,7 @@ newModel=X3D(profile='Immersive',version='3.3',
                       children=[
                       TouchSensor(description='HAnimSite l_middistal_tip'),
                       Shape(USE='HAnimSiteShape')])])])])])])]),
-        HAnimJoint(DEF='Bvh1_r_hip',center=(-7.62,0.0,0.0),name='r_hip',stiffness=[0,0,0],
+        HAnimJoint(DEF='Bvh1_r_hip',center=(-7.62,0.0,0.0),name='r_hip',
           #  BVH JOINT RightHip, OFFSET -7.62 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation 
           children=[
           HAnimSegment(DEF='Bvh1_r_thigh',name='r_thigh',
@@ -239,7 +239,7 @@ newModel=X3D(profile='Immersive',version='3.3',
             Transform(translation=(-7.62,0.0,0.0),
               #  insert Shape geometry here 
               )]),
-          HAnimJoint(DEF='Bvh1_r_knee',center=(-7.62,-44.449999,0.0),name='r_knee',stiffness=[0,0,0],
+          HAnimJoint(DEF='Bvh1_r_knee',center=(-7.62,-44.449999,0.0),name='r_knee',
             #  BVH JOINT RightKnee, OFFSET 0.0 -44.449999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation 
             children=[
             HAnimSegment(DEF='Bvh1_r_calf',name='r_calf',
@@ -257,7 +257,7 @@ newModel=X3D(profile='Immersive',version='3.3',
               Transform(translation=(-7.62,-44.449999,0.0),
                 #  insert Shape geometry here 
                 )]),
-            HAnimJoint(DEF='Bvh1_r_ankle',center=(-7.62,-83.819998,0.0),name='r_ankle',stiffness=[0,0,0],
+            HAnimJoint(DEF='Bvh1_r_ankle',center=(-7.62,-83.819998,0.0),name='r_ankle',
               #  BVH JOINT RightAnkle, OFFSET 0.0 -39.369999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation 
               children=[
               HAnimSegment(DEF='Bvh1_r_hindfoot',name='r_hindfoot',
@@ -275,7 +275,7 @@ newModel=X3D(profile='Immersive',version='3.3',
                 Transform(translation=(-7.62,-83.819998,0.0),
                   #  insert Shape geometry here 
                   )]),
-              HAnimJoint(DEF='Bvh1_r_midtarsal',center=(-7.62,-92.709998,-3.81),name='r_midtarsal',stiffness=[0,0,0],
+              HAnimJoint(DEF='Bvh1_r_midtarsal',center=(-7.62,-92.709998,-3.81),name='r_midtarsal',
                 #  BVH JOINT RightAnkleEnd, OFFSET 0.0 -8.89 -3.81, CHANNELS 3 Zrotation Xrotation Yrotation 
                 children=[
                 HAnimSegment(DEF='Bvh1_r_middistal',name='r_middistal',
@@ -293,7 +293,7 @@ newModel=X3D(profile='Immersive',version='3.3',
                       children=[
                       TouchSensor(description='HAnimSite r_middistal_tip'),
                       Shape(USE='HAnimSiteShape')])])])])])])]),
-        HAnimJoint(DEF='Bvh1_vl5',center=(0.0,7.62,-2.54),name='vl5',stiffness=[0,0,0],
+        HAnimJoint(DEF='Bvh1_vl5',center=(0.0,7.62,-2.54),name='vl5',
           #  BVH JOINT Chest, OFFSET 0.0 7.62 -2.54, CHANNELS 3 Zrotation Xrotation Yrotation 
           children=[
           HAnimSegment(DEF='Bvh1_l5',name='l5',
@@ -311,7 +311,7 @@ newModel=X3D(profile='Immersive',version='3.3',
             Transform(translation=(0.0,7.62,-2.54),
               #  insert Shape geometry here 
               )]),
-          HAnimJoint(DEF='Bvh1_Chest2',center=(0.0,15.24,-2.54),name='Chest2',stiffness=[0,0,0],
+          HAnimJoint(DEF='Bvh1_Chest2',center=(0.0,15.24,-2.54),name='Chest2',
             #  BVH JOINT Chest2, OFFSET 0.0 7.62 0.0, CHANNELS 3 Zrotation Xrotation Yrotation 
             children=[
             HAnimSegment(DEF='Bvh1_vl5_to_Chest2',name='vl5_to_Chest2',
@@ -339,7 +339,7 @@ newModel=X3D(profile='Immersive',version='3.3',
               Transform(translation=(0.0,15.24,-2.54),
                 #  insert Shape geometry here 
                 )]),
-            HAnimJoint(DEF='Bvh1_LeftCollar',center=(7.62,48.260000000000005,0.0),name='LeftCollar',stiffness=[0,0,0],
+            HAnimJoint(DEF='Bvh1_LeftCollar',center=(7.62,48.260000000000005,0.0),name='LeftCollar',
               #  BVH JOINT LeftCollar, OFFSET 7.62 33.02 2.54, CHANNELS 3 Zrotation Xrotation Yrotation 
               children=[
               HAnimSegment(DEF='Bvh1_Chest2_to_LeftCollar',name='Chest2_to_LeftCollar',
@@ -357,7 +357,7 @@ newModel=X3D(profile='Immersive',version='3.3',
                 Transform(translation=(7.62,48.260000000000005,0.0),
                   #  insert Shape geometry here 
                   )]),
-              HAnimJoint(DEF='Bvh1_l_shoulder',center=(20.32,48.260000000000005,0.0),name='l_shoulder',stiffness=[0,0,0],
+              HAnimJoint(DEF='Bvh1_l_shoulder',center=(20.32,48.260000000000005,0.0),name='l_shoulder',
                 #  BVH JOINT LeftShoulder, OFFSET 12.7 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation 
                 children=[
                 HAnimSegment(DEF='Bvh1_l_upperarm',name='l_upperarm',
@@ -375,7 +375,7 @@ newModel=X3D(profile='Immersive',version='3.3',
                   Transform(translation=(20.32,48.260000000000005,0.0),
                     #  insert Shape geometry here 
                     )]),
-                HAnimJoint(DEF='Bvh1_l_elbow',center=(20.32,17.780000000000005,0.0),name='l_elbow',stiffness=[0,0,0],
+                HAnimJoint(DEF='Bvh1_l_elbow',center=(20.32,17.780000000000005,0.0),name='l_elbow',
                   #  BVH JOINT LeftElbow, OFFSET 0.0 -30.48 0.0, CHANNELS 3 Zrotation Xrotation Yrotation 
                   children=[
                   HAnimSegment(DEF='Bvh1_l_forearm',name='l_forearm',
@@ -393,7 +393,7 @@ newModel=X3D(profile='Immersive',version='3.3',
                     Transform(translation=(20.32,17.780000000000005,0.0),
                       #  insert Shape geometry here 
                       )]),
-                  HAnimJoint(DEF='Bvh1_l_wrist',center=(20.32,-6.349999999999994,0.0),name='l_wrist',stiffness=[0,0,0],
+                  HAnimJoint(DEF='Bvh1_l_wrist',center=(20.32,-6.349999999999994,0.0),name='l_wrist',
                     #  BVH JOINT LeftWrist, OFFSET 0.0 -24.13 0.0, CHANNELS 3 Zrotation Xrotation Yrotation 
                     children=[
                     HAnimSegment(DEF='Bvh1_l_hand',name='l_hand',
@@ -411,7 +411,7 @@ newModel=X3D(profile='Immersive',version='3.3',
                           children=[
                           TouchSensor(description='HAnimSite l_hand_tip'),
                           Shape(USE='HAnimSiteShape')])])])])])])]),
-            HAnimJoint(DEF='Bvh1_RightCollar',center=(-7.62,48.260000000000005,0.0),name='RightCollar',stiffness=[0,0,0],
+            HAnimJoint(DEF='Bvh1_RightCollar',center=(-7.62,48.260000000000005,0.0),name='RightCollar',
               #  BVH JOINT RightCollar, OFFSET -7.62 33.02 2.54, CHANNELS 3 Zrotation Xrotation Yrotation 
               children=[
               HAnimSegment(DEF='Bvh1_Chest2_to_RightCollar',name='Chest2_to_RightCollar',
@@ -429,7 +429,7 @@ newModel=X3D(profile='Immersive',version='3.3',
                 Transform(translation=(-7.62,48.260000000000005,0.0),
                   #  insert Shape geometry here 
                   )]),
-              HAnimJoint(DEF='Bvh1_r_shoulder',center=(-20.32,48.260000000000005,0.0),name='r_shoulder',stiffness=[0,0,0],
+              HAnimJoint(DEF='Bvh1_r_shoulder',center=(-20.32,48.260000000000005,0.0),name='r_shoulder',
                 #  BVH JOINT RightShoulder, OFFSET -12.7 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation 
                 children=[
                 HAnimSegment(DEF='Bvh1_r_upperarm',name='r_upperarm',
@@ -447,7 +447,7 @@ newModel=X3D(profile='Immersive',version='3.3',
                   Transform(translation=(-20.32,48.260000000000005,0.0),
                     #  insert Shape geometry here 
                     )]),
-                HAnimJoint(DEF='Bvh1_r_elbow',center=(-20.32,17.780000000000005,0.0),name='r_elbow',stiffness=[0,0,0],
+                HAnimJoint(DEF='Bvh1_r_elbow',center=(-20.32,17.780000000000005,0.0),name='r_elbow',
                   #  BVH JOINT RightElbow, OFFSET 0.0 -30.48 0.0, CHANNELS 3 Zrotation Xrotation Yrotation 
                   children=[
                   HAnimSegment(DEF='Bvh1_r_forearm',name='r_forearm',
@@ -465,7 +465,7 @@ newModel=X3D(profile='Immersive',version='3.3',
                     Transform(translation=(-20.32,17.780000000000005,0.0),
                       #  insert Shape geometry here 
                       )]),
-                  HAnimJoint(DEF='Bvh1_r_wrist',center=(-20.32,-6.349999999999994,0.0),name='r_wrist',stiffness=[0,0,0],
+                  HAnimJoint(DEF='Bvh1_r_wrist',center=(-20.32,-6.349999999999994,0.0),name='r_wrist',
                     #  BVH JOINT RightWrist, OFFSET 0.0 -24.13 0.0, CHANNELS 3 Zrotation Xrotation Yrotation 
                     children=[
                     HAnimSegment(DEF='Bvh1_r_hand',name='r_hand',
@@ -483,7 +483,7 @@ newModel=X3D(profile='Immersive',version='3.3',
                           children=[
                           TouchSensor(description='HAnimSite r_hand_tip'),
                           Shape(USE='HAnimSiteShape')])])])])])])]),
-            HAnimJoint(DEF='Bvh1_Neck',center=(0.0,53.339999,0.0),name='Neck',stiffness=[0,0,0],
+            HAnimJoint(DEF='Bvh1_Neck',center=(0.0,53.339999,0.0),name='Neck',
               #  BVH JOINT Neck, OFFSET 0.0 38.099999 2.54, CHANNELS 3 Zrotation Xrotation Yrotation 
               children=[
               HAnimSegment(DEF='Bvh1_Chest2_to_Neck',name='Chest2_to_Neck',
@@ -501,7 +501,7 @@ newModel=X3D(profile='Immersive',version='3.3',
                 Transform(translation=(0.0,53.339999,0.0),
                   #  insert Shape geometry here 
                   )]),
-              HAnimJoint(DEF='Bvh1_skullbase',center=(0.0,69.849999,0.0),name='skullbase',stiffness=[0,0,0],
+              HAnimJoint(DEF='Bvh1_skullbase',center=(0.0,69.849999,0.0),name='skullbase',
                 #  BVH JOINT Head, OFFSET 0.0 16.51 0.0, CHANNELS 3 Zrotation Xrotation Yrotation 
                 children=[
                 HAnimSegment(DEF='Bvh1_skull',name='skull',
@@ -548,27 +548,27 @@ newModel=X3D(profile='Immersive',version='3.3',
       #  Top-level HAnimSite/Viewpoint attached to HAnimHumanoid is unaffected by motion animation 
       #  top-level USE nodes follow DEF declarations and can be employed by inverse-kinematics (IK) engines or other HAnim tools 
       joints=[
-      HAnimJoint(USE='Bvh1_HumanoidRoot',stiffness=[0,0,0]),
-      HAnimJoint(USE='Bvh1_vl5',stiffness=[0,0,0]),
-      HAnimJoint(USE='Bvh1_Chest2',stiffness=[0,0,0]),
-      HAnimJoint(USE='Bvh1_LeftCollar',stiffness=[0,0,0]),
-      HAnimJoint(USE='Bvh1_RightCollar',stiffness=[0,0,0]),
-      HAnimJoint(USE='Bvh1_Neck',stiffness=[0,0,0]),
-      HAnimJoint(USE='Bvh1_skullbase',stiffness=[0,0,0]),
-      HAnimJoint(USE='Bvh1_l_ankle',stiffness=[0,0,0]),
-      HAnimJoint(USE='Bvh1_r_ankle',stiffness=[0,0,0]),
-      HAnimJoint(USE='Bvh1_l_elbow',stiffness=[0,0,0]),
-      HAnimJoint(USE='Bvh1_r_elbow',stiffness=[0,0,0]),
-      HAnimJoint(USE='Bvh1_l_hip',stiffness=[0,0,0]),
-      HAnimJoint(USE='Bvh1_r_hip',stiffness=[0,0,0]),
-      HAnimJoint(USE='Bvh1_l_knee',stiffness=[0,0,0]),
-      HAnimJoint(USE='Bvh1_r_knee',stiffness=[0,0,0]),
-      HAnimJoint(USE='Bvh1_l_midtarsal',stiffness=[0,0,0]),
-      HAnimJoint(USE='Bvh1_r_midtarsal',stiffness=[0,0,0]),
-      HAnimJoint(USE='Bvh1_l_shoulder',stiffness=[0,0,0]),
-      HAnimJoint(USE='Bvh1_r_shoulder',stiffness=[0,0,0]),
-      HAnimJoint(USE='Bvh1_l_wrist',stiffness=[0,0,0]),
-      HAnimJoint(USE='Bvh1_r_wrist',stiffness=[0,0,0])],
+      HAnimJoint(USE='Bvh1_HumanoidRoot'),
+      HAnimJoint(USE='Bvh1_vl5'),
+      HAnimJoint(USE='Bvh1_Chest2'),
+      HAnimJoint(USE='Bvh1_LeftCollar'),
+      HAnimJoint(USE='Bvh1_RightCollar'),
+      HAnimJoint(USE='Bvh1_Neck'),
+      HAnimJoint(USE='Bvh1_skullbase'),
+      HAnimJoint(USE='Bvh1_l_ankle'),
+      HAnimJoint(USE='Bvh1_r_ankle'),
+      HAnimJoint(USE='Bvh1_l_elbow'),
+      HAnimJoint(USE='Bvh1_r_elbow'),
+      HAnimJoint(USE='Bvh1_l_hip'),
+      HAnimJoint(USE='Bvh1_r_hip'),
+      HAnimJoint(USE='Bvh1_l_knee'),
+      HAnimJoint(USE='Bvh1_r_knee'),
+      HAnimJoint(USE='Bvh1_l_midtarsal'),
+      HAnimJoint(USE='Bvh1_r_midtarsal'),
+      HAnimJoint(USE='Bvh1_l_shoulder'),
+      HAnimJoint(USE='Bvh1_r_shoulder'),
+      HAnimJoint(USE='Bvh1_l_wrist'),
+      HAnimJoint(USE='Bvh1_r_wrist')],
       segments=[
       HAnimSegment(USE='Bvh1_sacrum'),
       HAnimSegment(USE='Bvh1_l5'),
@@ -775,8 +775,28 @@ newModel=X3D(profile='Immersive',version='3.3',
 
 if        metaDiagnostics(newModel): # built-in utility method in X3D class
     print(metaDiagnostics(newModel))
-print('check  newModel.XML() serialization...')
-newModelXML = newModel.XML() # test export method XML() for exceptions
-# print(newModelXML) # debug
+# print('check newModel.XML() serialization...')
+newModelXML= newModel.XML() # test export method XML() for exceptions during export
+newModel.XMLvalidate()
 
-print ("python x3d.py load successful for BvhConversion1Illustrated.py")
+try:
+#   print('check newModel.VRML() serialization...')
+    newModelVRML=newModel.VRML() # test export method VRML() for exceptions during export
+    # print(prependLineNumbers(newModelVRML)) # debug
+    print("Python-to-VRML export of VRML output successful (still testing)")
+except BaseException as err:
+    print("*** Python-to-VRML export of VRML output failed:", err)
+    if newModelVRML: # may have failed to generate
+        print(prependLineNumbers(newModelVRML, err.lineno))
+
+try:
+#   print('check newModel.JSON() serialization...')
+    newModelJSON=newModel.JSON() # test export method JSON() for exceptions during export
+#   print(prependLineNumbers(newModelJSON)) # debug
+    print("Python-to-JSON export of JSON output successful (still testing)")
+except SyntaxError as err:
+    print("*** Python-to-JSON export of JSON output failed:", err)
+    if newModelJSON: # may have failed to generate
+        print(prependLineNumbers(newModelJSON,err.lineno))
+
+print("python x3d.py load and self-test complete for BvhConversion1Illustrated.py")

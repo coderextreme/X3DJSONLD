@@ -39,7 +39,7 @@ newModel=X3D(profile='Full',version='4.0',
     meta(content='../license.html',name='license')]),
   Scene=Scene(
     children=[
-    NavigationInfo(id_='NAV',type=['NONE']),
+    NavigationInfo(id_='NAV',type='NONE'),
     Background(skyColor=[(0.200,0.200,0.210)]),
     Viewpoint(bind=true,orientation=(1,0,0,-0.5),position=(0.0,500.0,600.0),retainUserOffsets=True),
     Transform(DEF='PowerR',translation=(100,400,400),
@@ -94,7 +94,7 @@ newModel=X3D(profile='Full',version='4.0',
         appearance=Appearance(DEF='floor',
           material=Material(diffuseColor=(0.1,0.1,0.1),shininess=0.8,specularColor=(0.5,0.6,0.7))),
         geometry=Box(size=(1500,10,500)))]),
-    ListenerPoint(id_='ListenerPoint',trackCurrentView=true),
+    ListenerPoint(id_='ListenerPoint',trackCurrentView=True),
     AudioDestination(id_='AudioDestination',
       children=[
       Gain(id_='Gain3',
@@ -107,8 +107,9 @@ newModel=X3D(profile='Full',version='4.0',
           ChannelSelector(channelSelection=1,id_='ChannelSelector1',
             children=[
             Gain(USE='ChannelSplitter',id_='Gain1')])])])]),
-    ChannelSplitter(DEF='ChannelSplitter',channelCountMode=explicit,id_='ChannelSplitter',
-      source=AudioClip(USE='Audio3',id_='AudioClip',loop=True,pauseTime=-1,resumeTime=-1,stopTime=-1,url=['sound/violin.mp3'])),
+    ChannelSplitter(DEF='ChannelSplitter',channelCountMode='explicit',id_='ChannelSplitter',
+      children=[
+      AudioClip(USE='Audio3',id_='AudioClip',loop=True,pauseTime=-1,resumeTime=-1,stopTime=-1,url=['sound/violin.mp3'])]),
     Transform(DEF='Audio3',rotation=(1,0,0,-0.5),translation=(0,100,0),
       children=[
       Shape(
@@ -124,8 +125,28 @@ newModel=X3D(profile='Full',version='4.0',
 
 if        metaDiagnostics(newModel): # built-in utility method in X3D class
     print(metaDiagnostics(newModel))
-print('check  newModel.XML() serialization...')
-newModelXML = newModel.XML() # test export method XML() for exceptions
-# print(newModelXML) # debug
+# print('check newModel.XML() serialization...')
+newModelXML= newModel.XML() # test export method XML() for exceptions during export
+newModel.XMLvalidate()
 
-print ("python x3d.py load successful for SplitChannels.py")
+try:
+#   print('check newModel.VRML() serialization...')
+    newModelVRML=newModel.VRML() # test export method VRML() for exceptions during export
+    # print(prependLineNumbers(newModelVRML)) # debug
+    print("Python-to-VRML export of VRML output successful (still testing)")
+except BaseException as err:
+    print("*** Python-to-VRML export of VRML output failed:", err)
+    if newModelVRML: # may have failed to generate
+        print(prependLineNumbers(newModelVRML, err.lineno))
+
+try:
+#   print('check newModel.JSON() serialization...')
+    newModelJSON=newModel.JSON() # test export method JSON() for exceptions during export
+#   print(prependLineNumbers(newModelJSON)) # debug
+    print("Python-to-JSON export of JSON output successful (still testing)")
+except SyntaxError as err:
+    print("*** Python-to-JSON export of JSON output failed:", err)
+    if newModelJSON: # may have failed to generate
+        print(prependLineNumbers(newModelJSON,err.lineno))
+
+print("python x3d.py load and self-test complete for SplitChannels.py")

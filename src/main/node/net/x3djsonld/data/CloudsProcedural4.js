@@ -96,13 +96,13 @@ CloudsProcedural4.prototype = {
     .addMeta((new autoclass.meta()).setName("TODO").setContent("fix links")))
   .setScene((new autoclass.Scene())
     .addComments(" A png image file for the cloud texture must be designated in the ecmascript node. ")
-    .addChild((new autoclass.Viewpoint()).setDescription("Main").setOrientation(0.0,1.0,0.0,1.57).setPosition(50000.0,1000.0,42000.0).setJump(false))
-    .addChild((new autoclass.Viewpoint()).setDescription("Light House Tower").setOrientation(0.0,1.0,0.0,1.3).setPosition(45000.0,1290.0,44000.0).setJump(false))
-    .addChild((new autoclass.Viewpoint()).setDescription("centerWest").setOrientation(0.0,1.0,0.0,2.5).setPosition(48000.0,1000.0,20000.0).setJump(false))
+    .addChild((new autoclass.Viewpoint()).setDescription("Main").setJump(false).setOrientation(0.0,1.0,0.0,1.57).setPosition(50000.0,1000.0,42000.0))
+    .addChild((new autoclass.Viewpoint()).setDescription("Light House Tower").setJump(false).setOrientation(0.0,1.0,0.0,1.3).setPosition(45000.0,1290.0,44000.0))
+    .addChild((new autoclass.Viewpoint()).setDescription("centerWest").setJump(false).setOrientation(0.0,1.0,0.0,2.5).setPosition(48000.0,1000.0,20000.0))
     .addChild((new autoclass.Background()).setGroundColor(new autoclass.MFColor(java.newArray("float", [0.0,0.0,1.0]))).setSkyColor(new autoclass.MFColor(java.newArray("float", [0.0,0.0,1.0]))))
-    .addChild((new autoclass.DirectionalLight()).setDirection(-1.0,0.0,0.0).setAmbientIntensity(1).setGlobal(true))
+    .addChild((new autoclass.DirectionalLight()).setAmbientIntensity(1).setDirection(-1.0,0.0,0.0).setGlobal(true))
     .addChild((new autoclass.Group("Terrain"))
-      .addChild((new autoclass.Transform()).setTranslation(25000.0,0.0,25000.0).setScale(50.0,50.0,50.0)
+      .addChild((new autoclass.Transform()).setScale(50.0,50.0,50.0).setTranslation(25000.0,0.0,25000.0)
         .addChild((new autoclass.Inline()).setUrl(new autoclass.MFString("\"MontereyBayLargeMesh.x3d\" \"https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.x3d\" \"MontereyBayLargeMesh.wrl\" \"https://savage.nps.edu/Savage/Environment/Atmosphere/MontereyBayLargeMesh.wrl\""))))
       .addChild((new autoclass.Transform()).setRotation(1.0,0.0,0.0,1.57).setTranslation(25000.0,0.0,25000.0)
         .addChild((new autoclass.Shape())
@@ -110,7 +110,7 @@ CloudsProcedural4.prototype = {
           .setAppearance((new autoclass.Appearance())
             .setTexture((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"ocean.png\" \"https://savage.nps.edu/Savage/Environment/Atmosphere/ocean.png\"")))))))
     .addChild((new autoclass.Group("Placemarks"))
-      .addChild((new autoclass.Transform()).setTranslation(45000.0,30.0,44000.0).setScale(50.0,50.0,50.0)
+      .addChild((new autoclass.Transform()).setScale(50.0,50.0,50.0).setTranslation(45000.0,30.0,44000.0)
         .addChild((new autoclass.Inline()).setUrl(new autoclass.MFString("\"Lighthouse.x3d\" \"https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.x3d\" \"Lighthouse.wrl\" \"https://savage.nps.edu/Savage/Environment/Atmosphere/Lighthouse.wrl\"")))))
     .addChild((new autoclass.Group("Clouds"))
       .addChild((new autoclass.Transform("Cumulus")))
@@ -499,12 +499,12 @@ CloudsProcedural4.prototype = {
 "\n" + 
 "cirrus();" + "\n" + 
 "}" + "\n")
-        .addField((new autoclass.field()).setAccessType("initializeOnly").setName("Cumulus").setType("SFNode")
-          .addChild((new autoclass.Transform()).setUSE("Cumulus")))
-        .addField((new autoclass.field()).setAccessType("initializeOnly").setName("Cirrus").setType("SFNode")
-          .addChild((new autoclass.Transform()).setUSE("Cirrus")))
-        .addField((new autoclass.field()).setAccessType("initializeOnly").setName("Fog").setType("SFNode")))
-      .addChild((new autoclass.DirectionalLight()).setDirection(-1.0,-1.0,0.0).setAmbientIntensity(1).setColor(1.0,0.0,0.0).setGlobal(true))));
+        .addField((new autoclass.field()).setName("Cumulus").setType("SFNode").setAccessType("initializeOnly")
+          .addChild((new autoclass.Transform())))
+        .addField((new autoclass.field()).setName("Cirrus").setType("SFNode").setAccessType("initializeOnly")
+          .addChild((new autoclass.Transform())))
+        .addField((new autoclass.field()).setName("Fog").setType("SFNode").setAccessType("initializeOnly")))
+      .addChild((new autoclass.DirectionalLight()).setAmbientIntensity(1).setColor(1.0,0.0,0.0).setDirection(-1.0,-1.0,0.0).setGlobal(true))));
   },
   // end of initialize() method
 

@@ -34,7 +34,7 @@ head1.meta[4] = meta6;
 
 meta meta7 = createNode("meta");
 meta7.name = "modified";
-meta7.content = "4 August 2021";
+meta7.content = "5 December 2021";
 head1.meta[5] = meta7;
 
 meta meta8 = createNode("meta");
@@ -69,256 +69,259 @@ head1.meta[11] = meta13;
 
 head = head1;
 
-NavigationInfo NavigationInfo15 = createNode("NavigationInfo");
+WorldInfo WorldInfo15 = createNode("WorldInfo");
+WorldInfo15.title = "Filters.x3d";
 children = new MFNode();
 
-children[0] = NavigationInfo15;
+children[0] = WorldInfo15;
 
-Background Background16 = createNode("Background");
-Background16.skyColor = new MFColor(new float[0.2,0.2,0.2]);
-children[1] = Background16;
+NavigationInfo NavigationInfo16 = createNode("NavigationInfo");
+children[1] = NavigationInfo16;
 
-Viewpoint Viewpoint17 = createNode("Viewpoint");
-Viewpoint17.orientation = new SFRotation(new float[1,0,0,-0.5]);
-Viewpoint17.position = new SFVec3f(new float[0,500,600]);
-Viewpoint17.retainUserOffsets = True;
-children[2] = Viewpoint17;
+Background Background17 = createNode("Background");
+Background17.skyColor = new MFColor(new float[0.2,0.2,0.2]);
+children[2] = Background17;
 
-Transform Transform18 = createNode("Transform");
-Transform18.DEF = "Audio1";
-Transform18.translation = new SFVec3f(new float[-200,50,0]);
-Shape Shape19 = createNode("Shape");
-Appearance Appearance20 = createNode("Appearance");
-Appearance20.DEF = "audio_emit";
-Material Material21 = createNode("Material");
-Material21.diffuseColor = new SFColor(new float[0.1,0.1,0.1]);
-Material21.emissiveColor = new SFColor(new float[0.8,0.8,0.8]);
-Material21.specularColor = new SFColor(new float[0.01,0.01,0.01]);
-Appearance20.material = Material21;
+Viewpoint Viewpoint18 = createNode("Viewpoint");
+Viewpoint18.description = "View entire audio model";
+Viewpoint18.orientation = new SFRotation(new float[1,0,0,-0.5]);
+Viewpoint18.position = new SFVec3f(new float[0,500,600]);
+Viewpoint18.retainUserOffsets = True;
+children[3] = Viewpoint18;
 
-Shape19.appearance = Appearance20;
+Transform Transform19 = createNode("Transform");
+Transform19.DEF = "TransformAudio1";
+Transform19.translation = new SFVec3f(new float[-200,50,0]);
+Shape Shape20 = createNode("Shape");
+Appearance Appearance21 = createNode("Appearance");
+Appearance21.DEF = "audio_emit";
+Material Material22 = createNode("Material");
+Material22.diffuseColor = new SFColor(new float[0.1,0.1,0.1]);
+Material22.emissiveColor = new SFColor(new float[0.8,0.8,0.8]);
+Material22.specularColor = new SFColor(new float[0.01,0.01,0.01]);
+Appearance21.material = Material22;
 
-Sphere Sphere22 = createNode("Sphere");
-Sphere22.radius = 30;
-Shape19.geometry = Sphere22;
+Shape20.appearance = Appearance21;
 
-Transform18.children = new MFNode();
+Sphere Sphere23 = createNode("Sphere");
+Sphere23.radius = 30;
+Shape20.geometry = Sphere23;
 
-Transform18.children[0] = Shape19;
+Transform19.children = new MFNode();
 
-children[3] = Transform18;
+Transform19.children[0] = Shape20;
 
-Transform Transform23 = createNode("Transform");
-Transform23.DEF = "Audio2";
-Transform23.translation = new SFVec3f(new float[0,50,0]);
-Shape Shape24 = createNode("Shape");
-Appearance Appearance25 = createNode("Appearance");
-Appearance25.DEF = "audio_emit";
-Material Material26 = createNode("Material");
-Material26.diffuseColor = new SFColor(new float[0.1,0.1,0.1]);
-Material26.emissiveColor = new SFColor(new float[0.8,0.8,0.8]);
-Material26.specularColor = new SFColor(new float[0.01,0.01,0.01]);
-Appearance25.material = Material26;
+children[4] = Transform19;
 
-Shape24.appearance = Appearance25;
+Transform Transform24 = createNode("Transform");
+Transform24.DEF = "TransformAudio2";
+Transform24.translation = new SFVec3f(new float[0,50,0]);
+Shape Shape25 = createNode("Shape");
+Appearance Appearance26 = createNode("Appearance");
+Appearance26.DEF = "audio_emit2";
+Material Material27 = createNode("Material");
+Material27.diffuseColor = new SFColor(new float[0.1,0.1,0.1]);
+Material27.emissiveColor = new SFColor(new float[0.8,0.8,0.8]);
+Material27.specularColor = new SFColor(new float[0.01,0.01,0.01]);
+Appearance26.material = Material27;
 
-Sphere Sphere27 = createNode("Sphere");
-Sphere27.radius = 30;
-Shape24.geometry = Sphere27;
+Shape25.appearance = Appearance26;
 
-Transform23.children = new MFNode();
+Sphere Sphere28 = createNode("Sphere");
+Sphere28.radius = 30;
+Shape25.geometry = Sphere28;
 
-Transform23.children[0] = Shape24;
+Transform24.children = new MFNode();
 
-children[4] = Transform23;
+Transform24.children[0] = Shape25;
 
-Transform Transform28 = createNode("Transform");
-Transform28.DEF = "Audio3";
-Transform28.translation = new SFVec3f(new float[200,50,0]);
-Shape Shape29 = createNode("Shape");
-Appearance Appearance30 = createNode("Appearance");
-Appearance30.DEF = "audio_emit";
-Material Material31 = createNode("Material");
-Material31.diffuseColor = new SFColor(new float[0.1,0.1,0.1]);
-Material31.emissiveColor = new SFColor(new float[0.8,0.8,0.8]);
-Material31.specularColor = new SFColor(new float[0.01,0.01,0.01]);
-Appearance30.material = Material31;
+children[5] = Transform24;
 
-Shape29.appearance = Appearance30;
+Transform Transform29 = createNode("Transform");
+Transform29.DEF = "TransformAudio3";
+Transform29.translation = new SFVec3f(new float[200,50,0]);
+Shape Shape30 = createNode("Shape");
+Appearance Appearance31 = createNode("Appearance");
+Appearance31.DEF = "audio_emit3";
+Material Material32 = createNode("Material");
+Material32.diffuseColor = new SFColor(new float[0.1,0.1,0.1]);
+Material32.emissiveColor = new SFColor(new float[0.8,0.8,0.8]);
+Material32.specularColor = new SFColor(new float[0.01,0.01,0.01]);
+Appearance31.material = Material32;
 
-Sphere Sphere32 = createNode("Sphere");
-Sphere32.radius = 30;
-Shape29.geometry = Sphere32;
+Shape30.appearance = Appearance31;
 
-Transform28.children = new MFNode();
+Sphere Sphere33 = createNode("Sphere");
+Sphere33.radius = 30;
+Shape30.geometry = Sphere33;
 
-Transform28.children[0] = Shape29;
+Transform29.children = new MFNode();
 
-children[5] = Transform28;
+Transform29.children[0] = Shape30;
 
-Transform Transform33 = createNode("Transform");
-Transform33.DEF = "AnimData";
-Transform33.translation = new SFVec3f(new float[0,50,0]);
-children[6] = Transform33;
+children[6] = Transform29;
 
 Transform Transform34 = createNode("Transform");
-Transform34.DEF = "AnimDataBoxH";
-Transform34.translation = new SFVec3f(new float[0,100,0]);
+Transform34.DEF = "AnimData";
+Transform34.translation = new SFVec3f(new float[0,50,0]);
 children[7] = Transform34;
 
 Transform Transform35 = createNode("Transform");
-Transform35.DEF = "AnimDataBoxM";
-Transform35.translation = new SFVec3f(new float[15,100,0]);
+Transform35.DEF = "AnimDataBoxH";
+Transform35.translation = new SFVec3f(new float[0,100,0]);
 children[8] = Transform35;
 
 Transform Transform36 = createNode("Transform");
-Transform36.DEF = "AnimDataBoxL";
-Transform36.translation = new SFVec3f(new float[30,100,0]);
+Transform36.DEF = "AnimDataBoxM";
+Transform36.translation = new SFVec3f(new float[15,100,0]);
 children[9] = Transform36;
 
 Transform Transform37 = createNode("Transform");
-Transform37.DEF = "AnimDataBoxMM";
-Transform37.translation = new SFVec3f(new float[-15,100,0]);
+Transform37.DEF = "AnimDataBoxL";
+Transform37.translation = new SFVec3f(new float[30,100,0]);
 children[10] = Transform37;
 
 Transform Transform38 = createNode("Transform");
-Transform38.DEF = "AnimDataBoxLM";
-Transform38.translation = new SFVec3f(new float[-30,100,0]);
+Transform38.DEF = "AnimDataBoxMM";
+Transform38.translation = new SFVec3f(new float[-15,100,0]);
 children[11] = Transform38;
 
 Transform Transform39 = createNode("Transform");
-Shape Shape40 = createNode("Shape");
-Appearance Appearance41 = createNode("Appearance");
-Appearance41.DEF = "floor";
-Material Material42 = createNode("Material");
-Material42.diffuseColor = new SFColor(new float[0.1,0.1,0.1]);
-Material42.shininess = 0.8;
-Material42.specularColor = new SFColor(new float[0.5,0.6,0.7]);
-Appearance41.material = Material42;
-
-Shape40.appearance = Appearance41;
-
-Cylinder Cylinder43 = createNode("Cylinder");
-Cylinder43.radius = 500;
-Shape40.geometry = Cylinder43;
-
-Transform39.children = new MFNode();
-
-Transform39.children[0] = Shape40;
-
+Transform39.DEF = "AnimDataBoxLM";
+Transform39.translation = new SFVec3f(new float[-30,100,0]);
 children[12] = Transform39;
 
-AudioDestination AudioDestination44 = createNode("AudioDestination");
-DynamicsCompressor DynamicsCompressor45 = createNode("DynamicsCompressor");
-Gain Gain46 = createNode("Gain");
-SpatialSound SpatialSound47 = createNode("SpatialSound");
-SpatialSound47.USE = "Audio1";
+Transform Transform40 = createNode("Transform");
+Shape Shape41 = createNode("Shape");
+Appearance Appearance42 = createNode("Appearance");
+Appearance42.DEF = "floor";
+Material Material43 = createNode("Material");
+Material43.diffuseColor = new SFColor(new float[0.1,0.1,0.1]);
+Material43.shininess = 0.8;
+Material43.specularColor = new SFColor(new float[0.5,0.6,0.7]);
+Appearance42.material = Material43;
+
+Shape41.appearance = Appearance42;
+
+Cylinder Cylinder44 = createNode("Cylinder");
+Cylinder44.radius = 500;
+Shape41.geometry = Cylinder44;
+
+Transform40.children = new MFNode();
+
+Transform40.children[0] = Shape41;
+
+children[13] = Transform40;
+
+ListenerPointSource ListenerPointSource45 = createNode("ListenerPointSource");
+ListenerPointSource45.trackCurrentView = True;
+children[14] = ListenerPointSource45;
+
+StreamAudioDestination StreamAudioDestination46 = createNode("StreamAudioDestination");
+DynamicsCompressor DynamicsCompressor47 = createNode("DynamicsCompressor");
 Gain Gain48 = createNode("Gain");
-Analyser Analyser49 = createNode("Analyser");
-BiquadFilter BiquadFilter50 = createNode("BiquadFilter");
-BiquadFilter50.detune = 50;
-BiquadFilter50.frequency = 600;
-BiquadFilter50.qualityFactor = 30;
-BiquadFilter50.type = "allpass";
-AudioClip AudioClip51 = createNode("AudioClip");
-AudioClip51.loop = True;
-AudioClip51.pauseTime = -1;
-AudioClip51.resumeTime = -1;
-AudioClip51.stopTime = -1;
-AudioClip51.url = new MFString(new java.lang.String["sound/techno_beat.mp3"]);
-BiquadFilter50.children = new MFNode();
+SpatialSound SpatialSound49 = createNode("SpatialSound");
+SpatialSound49.DEF = "Audio1";
+Gain Gain50 = createNode("Gain");
+Analyser Analyser51 = createNode("Analyser");
+BiquadFilter BiquadFilter52 = createNode("BiquadFilter");
+BiquadFilter52.detune = 50;
+BiquadFilter52.frequency = 600;
+BiquadFilter52.qualityFactor = 30;
+BiquadFilter52.type = "allpass";
+AudioClip AudioClip53 = createNode("AudioClip");
+AudioClip53.description = "Techno beat";
+AudioClip53.loop = True;
+AudioClip53.url = new MFString(new java.lang.String["sound/techno_beat.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/techno_beat.mp3"]);
+BiquadFilter52.children = new MFNode();
 
-BiquadFilter50.children[0] = AudioClip51;
+BiquadFilter52.children[0] = AudioClip53;
 
-Analyser49.children = new MFNode();
+Analyser51.children = new MFNode();
 
-Analyser49.children[0] = BiquadFilter50;
+Analyser51.children[0] = BiquadFilter52;
+
+Gain50.children = new MFNode();
+
+Gain50.children[0] = Analyser51;
+
+SpatialSound49.children = new MFNode();
+
+SpatialSound49.children[0] = Gain50;
 
 Gain48.children = new MFNode();
 
-Gain48.children[0] = Analyser49;
+Gain48.children[0] = SpatialSound49;
 
-SpatialSound47.children = new MFNode();
+SpatialSound SpatialSound54 = createNode("SpatialSound");
+SpatialSound54.DEF = "Audio2";
+Gain Gain55 = createNode("Gain");
+Analyser Analyser56 = createNode("Analyser");
+BiquadFilter BiquadFilter57 = createNode("BiquadFilter");
+BiquadFilter57.detune = 15;
+BiquadFilter57.frequency = 600;
+BiquadFilter57.qualityFactor = 15;
+BiquadFilter57.type = "allpass";
+AudioClip AudioClip58 = createNode("AudioClip");
+AudioClip58.description = "Simple beat";
+AudioClip58.loop = True;
+AudioClip58.url = new MFString(new java.lang.String["sound/beat.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/beat.mp3"]);
+BiquadFilter57.children = new MFNode();
 
-SpatialSound47.children[0] = Gain48;
+BiquadFilter57.children[0] = AudioClip58;
 
-Gain46.children = new MFNode();
+Analyser56.children = new MFNode();
 
-Gain46.children[0] = SpatialSound47;
+Analyser56.children[0] = BiquadFilter57;
 
-SpatialSound SpatialSound52 = createNode("SpatialSound");
-SpatialSound52.USE = "Audio2";
-Gain Gain53 = createNode("Gain");
-Analyser Analyser54 = createNode("Analyser");
-BiquadFilter BiquadFilter55 = createNode("BiquadFilter");
-BiquadFilter55.detune = 15;
-BiquadFilter55.frequency = 600;
-BiquadFilter55.qualityFactor = 15;
-BiquadFilter55.type = "allpass";
-AudioClip AudioClip56 = createNode("AudioClip");
-AudioClip56.loop = True;
-AudioClip56.pauseTime = -1;
-AudioClip56.resumeTime = -1;
-AudioClip56.stopTime = -1;
-AudioClip56.url = new MFString(new java.lang.String["sound/beat.mp3"]);
-BiquadFilter55.children = new MFNode();
+Gain55.children = new MFNode();
 
-BiquadFilter55.children[0] = AudioClip56;
+Gain55.children[0] = Analyser56;
 
-Analyser54.children = new MFNode();
+SpatialSound54.children = new MFNode();
 
-Analyser54.children[0] = BiquadFilter55;
+SpatialSound54.children[0] = Gain55;
 
-Gain53.children = new MFNode();
+Gain48.children[1] = SpatialSound54;
 
-Gain53.children[0] = Analyser54;
+SpatialSound SpatialSound59 = createNode("SpatialSound");
+SpatialSound59.DEF = "Audio3";
+Gain Gain60 = createNode("Gain");
+Analyser Analyser61 = createNode("Analyser");
+BiquadFilter BiquadFilter62 = createNode("BiquadFilter");
+BiquadFilter62.frequency = 1000;
+BiquadFilter62.qualityFactor = 0;
+BiquadFilter62.type = "allpass";
+AudioClip AudioClip63 = createNode("AudioClip");
+AudioClip63.description = "Wobble loop";
+AudioClip63.loop = True;
+AudioClip63.url = new MFString(new java.lang.String["sound/wobble_loop.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/wobble_loop.mp3"]);
+BiquadFilter62.children = new MFNode();
 
-SpatialSound52.children = new MFNode();
+BiquadFilter62.children[0] = AudioClip63;
 
-SpatialSound52.children[0] = Gain53;
+Analyser61.children = new MFNode();
 
-Gain46.children[1] = SpatialSound52;
+Analyser61.children[0] = BiquadFilter62;
 
-SpatialSound SpatialSound57 = createNode("SpatialSound");
-SpatialSound57.USE = "Audio3";
-Gain Gain58 = createNode("Gain");
-Analyser Analyser59 = createNode("Analyser");
-BiquadFilter BiquadFilter60 = createNode("BiquadFilter");
-BiquadFilter60.frequency = 1000;
-BiquadFilter60.qualityFactor = 0;
-BiquadFilter60.type = "allpass";
-AudioClip AudioClip61 = createNode("AudioClip");
-AudioClip61.loop = True;
-AudioClip61.pauseTime = -1;
-AudioClip61.resumeTime = -1;
-AudioClip61.stopTime = -1;
-AudioClip61.url = new MFString(new java.lang.String["sound/wobble_loop.mp3"]);
-BiquadFilter60.children = new MFNode();
+Gain60.children = new MFNode();
 
-BiquadFilter60.children[0] = AudioClip61;
+Gain60.children[0] = Analyser61;
 
-Analyser59.children = new MFNode();
+SpatialSound59.children = new MFNode();
 
-Analyser59.children[0] = BiquadFilter60;
+SpatialSound59.children[0] = Gain60;
 
-Gain58.children = new MFNode();
+Gain48.children[2] = SpatialSound59;
 
-Gain58.children[0] = Analyser59;
+DynamicsCompressor47.children = new MFNode();
 
-SpatialSound57.children = new MFNode();
+DynamicsCompressor47.children[0] = Gain48;
 
-SpatialSound57.children[0] = Gain58;
+StreamAudioDestination46.children = new MFNode();
 
-Gain46.children[2] = SpatialSound57;
+StreamAudioDestination46.children[0] = DynamicsCompressor47;
 
-DynamicsCompressor45.children = new MFNode();
-
-DynamicsCompressor45.children[0] = Gain46;
-
-AudioDestination44.children = new MFNode();
-
-AudioDestination44.children[0] = DynamicsCompressor45;
-
-children[13] = AudioDestination44;
+children[15] = StreamAudioDestination46;
 
 }

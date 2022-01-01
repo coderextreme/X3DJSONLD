@@ -7,6 +7,7 @@ import { head } from './x3d.mjs';
 import { MFNode } from './x3d.mjs';
 import { meta } from './x3d.mjs';
 import { Scene } from './x3d.mjs';
+import { WorldInfo } from './x3d.mjs';
 import { NavigationInfo } from './x3d.mjs';
 import { Background } from './x3d.mjs';
 import { MFColor } from './x3d.mjs';
@@ -22,14 +23,14 @@ import { SFColor } from './x3d.mjs';
 import { Sphere } from './x3d.mjs';
 import { SFFloat } from './x3d.mjs';
 import { Cylinder } from './x3d.mjs';
-import { AudioDestination } from './x3d.mjs';
+import { ListenerPointSource } from './x3d.mjs';
+import { StreamAudioDestination } from './x3d.mjs';
 import { DynamicsCompressor } from './x3d.mjs';
 import { Gain } from './x3d.mjs';
 import { SpatialSound } from './x3d.mjs';
 import { Analyser } from './x3d.mjs';
 import { BiquadFilter } from './x3d.mjs';
 import { AudioClip } from './x3d.mjs';
-import { SFTime } from './x3d.mjs';
 import { MFString } from './x3d.mjs';
 var X3D0 =  new X3D({
 
@@ -60,7 +61,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("4 August 2021")}),
+              content : new SFString("5 December 2021")}),
 
             new meta({
               name : new SFString("reference"),
@@ -88,18 +89,22 @@ var X3D0 =  new X3D({
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
+            new WorldInfo({
+              title : new SFString("Filters.x3d")}),
+
             new NavigationInfo({}),
 
             new Background({
               skyColor : new MFColor([0.2,0.2,0.2])}),
 
             new Viewpoint({
+              description : new SFString("View entire audio model"),
               orientation : new SFRotation([1,0,0,-0.5]),
               position : new SFVec3f([0,500,600]),
               retainUserOffsets : new SFBool(true)}),
 
             new Transform({
-              DEF : new SFString("Audio1"),
+              DEF : new SFString("TransformAudio1"),
               translation : new SFVec3f([-200,50,0]),
               children : new MFNode([
                 new Shape({
@@ -116,13 +121,13 @@ var X3D0 =  new X3D({
                       radius : new SFFloat(30)}))})])}),
 
             new Transform({
-              DEF : new SFString("Audio2"),
+              DEF : new SFString("TransformAudio2"),
               translation : new SFVec3f([0,50,0]),
               children : new MFNode([
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
-                      DEF : new SFString("audio_emit"),
+                      DEF : new SFString("audio_emit2"),
                       material : new SFNode(
                         new Material({
                           diffuseColor : new SFColor([0.1,0.1,0.1]),
@@ -133,13 +138,13 @@ var X3D0 =  new X3D({
                       radius : new SFFloat(30)}))})])}),
 
             new Transform({
-              DEF : new SFString("Audio3"),
+              DEF : new SFString("TransformAudio3"),
               translation : new SFVec3f([200,50,0]),
               children : new MFNode([
                 new Shape({
                   appearance : new SFNode(
                     new Appearance({
-                      DEF : new SFString("audio_emit"),
+                      DEF : new SFString("audio_emit3"),
                       material : new SFNode(
                         new Material({
                           diffuseColor : new SFColor([0.1,0.1,0.1]),
@@ -188,14 +193,17 @@ var X3D0 =  new X3D({
                     new Cylinder({
                       radius : new SFFloat(500)}))})])}),
 
-            new AudioDestination({
+            new ListenerPointSource({
+              trackCurrentView : new SFBool(true)}),
+
+            new StreamAudioDestination({
               children : new MFNode([
                 new DynamicsCompressor({
                   children : new MFNode([
                     new Gain({
                       children : new MFNode([
                         new SpatialSound({
-                          USE : new SFString("Audio1"),
+                          DEF : new SFString("Audio1"),
                           children : new MFNode([
                             new Gain({
                               children : new MFNode([
@@ -208,14 +216,12 @@ var X3D0 =  new X3D({
                                       qualityFactor : new SFFloat(30),
                                       children : new MFNode([
                                         new AudioClip({
+                                          description : new SFString("Techno beat"),
                                           loop : new SFBool(true),
-                                          pauseTime : new SFTime(-1),
-                                          resumeTime : new SFTime(-1),
-                                          stopTime : new SFTime(-1),
-                                          url : new MFString(["sound/techno_beat.mp3"])})])})])})])})])}),
+                                          url : new MFString(["sound/techno_beat.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/techno_beat.mp3"])})])})])})])})])}),
 
                         new SpatialSound({
-                          USE : new SFString("Audio2"),
+                          DEF : new SFString("Audio2"),
                           children : new MFNode([
                             new Gain({
                               children : new MFNode([
@@ -228,14 +234,12 @@ var X3D0 =  new X3D({
                                       qualityFactor : new SFFloat(15),
                                       children : new MFNode([
                                         new AudioClip({
+                                          description : new SFString("Simple beat"),
                                           loop : new SFBool(true),
-                                          pauseTime : new SFTime(-1),
-                                          resumeTime : new SFTime(-1),
-                                          stopTime : new SFTime(-1),
-                                          url : new MFString(["sound/beat.mp3"])})])})])})])})])}),
+                                          url : new MFString(["sound/beat.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/beat.mp3"])})])})])})])})])}),
 
                         new SpatialSound({
-                          USE : new SFString("Audio3"),
+                          DEF : new SFString("Audio3"),
                           children : new MFNode([
                             new Gain({
                               children : new MFNode([
@@ -247,9 +251,7 @@ var X3D0 =  new X3D({
                                       qualityFactor : new SFFloat(0),
                                       children : new MFNode([
                                         new AudioClip({
+                                          description : new SFString("Wobble loop"),
                                           loop : new SFBool(true),
-                                          pauseTime : new SFTime(-1),
-                                          resumeTime : new SFTime(-1),
-                                          stopTime : new SFTime(-1),
-                                          url : new MFString(["sound/wobble_loop.mp3"])})])})])})])})])})])})])})])})])}))});
+                                          url : new MFString(["sound/wobble_loop.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/wobble_loop.mp3"])})])})])})])})])})])})])})])})])}))});
 console.log(X3D0.toXMLNode());

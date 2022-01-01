@@ -40,7 +40,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     meta(name='description',content='not sure what this is')]),
   Scene=Scene(
     children=[
-    NavigationInfo(type=["EXAMINE"]),
+    NavigationInfo(type='"EXAMINE"'),
     Viewpoint(DEF='Tour',description='Tour Views'),
     Viewpoint(position=(0,0,4),description='sphere in road'),
     Background(backUrl=["../resources/images/all_probes/uffizi_cross/uffizi_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_back.png"],bottomUrl=["../resources/images/all_probes/uffizi_cross/uffizi_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_bottom.png"],frontUrl=["../resources/images/all_probes/uffizi_cross/uffizi_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_front.png"],leftUrl=["../resources/images/all_probes/uffizi_cross/uffizi_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_left.png"],rightUrl=["../resources/images/all_probes/uffizi_cross/uffizi_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_right.png"],topUrl=["../resources/images/all_probes/uffizi_cross/uffizi_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_top.png"]),
@@ -87,7 +87,9 @@ newModel=X3D(profile='Immersive',version='4.0',
       field(name='fraction_changed',accessType='outputOnly',type='SFFloat'),
       field(name='position_changed',accessType='outputOnly',type='MFVec3f'),
       field(name='set_orientation',accessType='inputOnly',type='MFRotation'),
-      field(name='orientation_changed',accessType='outputOnly',type='MFRotation')]),
+      field(name='orientation_changed',accessType='outputOnly',type='MFRotation')]
+*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+),
     ROUTE(fromNode='TourTime',fromField='cycleTime',toNode='RandomTourTime',toField='set_cycle'),
     ROUTE(fromNode='RandomTourTime',fromField='fraction_changed',toNode='TourOrientation',toField='set_fraction'),
     ROUTE(fromNode='RandomTourTime',fromField='fraction_changed',toNode='TourPosition',toField='set_fraction'),
@@ -105,8 +107,28 @@ newModel=X3D(profile='Immersive',version='4.0',
 
 if        metaDiagnostics(newModel): # built-in utility method in X3D class
     print(metaDiagnostics(newModel))
-print('check  newModel.XML() serialization...')
-newModelXML = newModel.XML() # test export method XML() for exceptions
-# print(newModelXML) # debug
+# print('check newModel.XML() serialization...')
+newModelXML= newModel.XML() # test export method XML() for exceptions during export
+newModel.XMLvalidate()
 
-print ("python x3d.py load successful for bubbles.py")
+try:
+#   print('check newModel.VRML() serialization...')
+    newModelVRML=newModel.VRML() # test export method VRML() for exceptions during export
+    # print(prependLineNumbers(newModelVRML)) # debug
+    print("Python-to-VRML export of VRML output successful (still testing)")
+except BaseException as err:
+    print("*** Python-to-VRML export of VRML output failed:", err)
+    if newModelVRML: # may have failed to generate
+        print(prependLineNumbers(newModelVRML, err.lineno))
+
+try:
+#   print('check newModel.JSON() serialization...')
+    newModelJSON=newModel.JSON() # test export method JSON() for exceptions during export
+#   print(prependLineNumbers(newModelJSON)) # debug
+    print("Python-to-JSON export of JSON output successful (still testing)")
+except SyntaxError as err:
+    print("*** Python-to-JSON export of JSON output failed:", err)
+    if newModelJSON: # may have failed to generate
+        print(prependLineNumbers(newModelJSON,err.lineno))
+
+print("python x3d.py load and self-test complete for bubbles.py")
