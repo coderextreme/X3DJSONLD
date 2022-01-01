@@ -31,7 +31,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     meta(content='Matthew T. Beitler',name='creator'),
     meta(content='Joel S. Pawloski',name='translator'),
     meta(content='12 November 2001',name='created'),
-    meta(content='8 March 2021',name='modified'),
+    meta(content='23 December 2021',name='modified'),
     meta(content='(a) "Diamonds are a girl\'s best friend." (b) "Gosh, it sure is chilly in here."',name='motto'),
     meta(content='HAnim 2.0 specification, Appendix A: Nominal human body dimensions and levels of articulation (LOAs)',name='reference'),
     meta(content='https://www.web3d.org/documents/specifications/19774-1/V2.0/HAnim/BodyDimensionsAndLOAs.html',name='reference'),
@@ -64,9 +64,9 @@ newModel=X3D(profile='Immersive',version='4.0',
         MetadataString(name='humanoidVersion',value=['JointCenters 1.1 LOA0']),
         MetadataString(name='usageRestrictions',value=['PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose.'])]),
       skeleton=[
-      HAnimJoint(DEF='hanim_humanoid_root',center=(0.0,0.8240,0.0277),name='humanoid_root',stiffness=[0,0,0],
+      HAnimJoint(DEF='hanim_humanoid_root',center=(0.0,0.8240,0.0277),name='humanoid_root',
         children=[
-        HAnimJoint(DEF='hanim_sacroiliac',center=(0.0,0.9149,0.0016),name='sacroiliac',stiffness=[0,0,0],
+        HAnimJoint(DEF='hanim_sacroiliac',center=(0.0,0.9149,0.0016),name='sacroiliac',
           children=[
           HAnimSegment(DEF='hanim_pelvis',name='pelvis',
             children=[
@@ -84,10 +84,10 @@ newModel=X3D(profile='Immersive',version='4.0',
         Viewpoint(DEF='FrontView',description='Front View',position=(0,0.854,2.57665)),
         Viewpoint(DEF='SideView',description='Side View',orientation=(0,1,0,1.57079),position=(2.5929,0.854,0)),
         Viewpoint(DEF='TopView',description='Top View',orientation=(1,0,0,-1.57079),position=(0,3.4495,0))]),],
-      #  HAnimHumanoid original info='"authorEmail=beitler@graphics.cis.upenn.edu beitler@acm.org" "authorName=Matthew T. Beitler" "copyright=Copyright 1999 Matthew T. Beitler" "creationDate=05/12/99" "humanoidVersion=JointCenters 1.1 LOA0" "usageRestrictions=PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose."' 
+      #  original HAnimHumanoid info='"authorEmail=beitler@graphics.cis.upenn.edu beitler@acm.org" "authorName=Matthew T. Beitler" "copyright=Copyright 1999 Matthew T. Beitler" "creationDate=05/12/99" "humanoidVersion=JointCenters 1.1 LOA0" "usageRestrictions=PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose."' 
       joints=[
-      HAnimJoint(USE='hanim_humanoid_root',stiffness=[0,0,0]),
-      HAnimJoint(USE='hanim_sacroiliac',stiffness=[0,0,0])],
+      HAnimJoint(USE='hanim_humanoid_root'),
+      HAnimJoint(USE='hanim_sacroiliac')],
       segments=[
       HAnimSegment(USE='hanim_pelvis')],)])
 ) # X3D model complete
@@ -98,8 +98,28 @@ newModel=X3D(profile='Immersive',version='4.0',
 
 if        metaDiagnostics(newModel): # built-in utility method in X3D class
     print(metaDiagnostics(newModel))
-print('check  newModel.XML() serialization...')
-newModelXML = newModel.XML() # test export method XML() for exceptions
-# print(newModelXML) # debug
+# print('check newModel.XML() serialization...')
+newModelXML= newModel.XML() # test export method XML() for exceptions during export
+newModel.XMLvalidate()
 
-print ("python x3d.py load successful for DiamondManLOA0.py")
+try:
+#   print('check newModel.VRML() serialization...')
+    newModelVRML=newModel.VRML() # test export method VRML() for exceptions during export
+    # print(prependLineNumbers(newModelVRML)) # debug
+    print("Python-to-VRML export of VRML output successful (still testing)")
+except BaseException as err:
+    print("*** Python-to-VRML export of VRML output failed:", err)
+    if newModelVRML: # may have failed to generate
+        print(prependLineNumbers(newModelVRML, err.lineno))
+
+try:
+#   print('check newModel.JSON() serialization...')
+    newModelJSON=newModel.JSON() # test export method JSON() for exceptions during export
+#   print(prependLineNumbers(newModelJSON)) # debug
+    print("Python-to-JSON export of JSON output successful (still testing)")
+except SyntaxError as err:
+    print("*** Python-to-JSON export of JSON output failed:", err)
+    if newModelJSON: # may have failed to generate
+        print(prependLineNumbers(newModelJSON,err.lineno))
+
+print("python x3d.py load and self-test complete for DiamondManLOA0.py")

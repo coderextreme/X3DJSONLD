@@ -14,7 +14,6 @@ import { Appearance } from './x3d.mjs';
 import { AcousticProperties } from './x3d.mjs';
 import { Material } from './x3d.mjs';
 import { SpatialSound } from './x3d.mjs';
-import { undefined } from './x3d.mjs';
 import { Analyser } from './x3d.mjs';
 import { AudioDestination } from './x3d.mjs';
 import { BiquadFilter } from './x3d.mjs';
@@ -96,7 +95,6 @@ var X3D0 =  new X3D({
                     new Material({}))}))}),
 
             new SpatialSound({
-              dopplerEnabled : new undefined("false"),
               children : new MFNode([
                 new Analyser({
                   children : new MFNode([
@@ -125,8 +123,7 @@ var X3D0 =  new X3D({
                                                               children : new MFNode([
                                                                 new BufferAudioSource({}),
 
-                                                                new ListenerPointSource({
-                                                                  dopplerEnabled : new undefined("false")}),
+                                                                new ListenerPointSource({}),
 
                                                                 new MicrophoneSource({}),
 

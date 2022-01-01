@@ -28,7 +28,7 @@
           },
           {
             "@name":"modified",
-            "@content":"4 August 2021"
+            "@content":"5 December 2021"
           },
           {
             "@name":"reference",
@@ -56,7 +56,7 @@
           },
           {
             "@name":"translated",
-            "@content":"11 December 2021"
+            "@content":"01 January 2022"
           },
           {
             "@name":"generator",
@@ -70,6 +70,11 @@
     },
     "Scene": {
         "-children":[
+          { "WorldInfo":
+            {
+              "@title":"Filters.x3d"
+            }
+          },
           { "NavigationInfo":
             {
             }
@@ -81,6 +86,7 @@
           },
           { "Viewpoint":
             {
+              "@description":"View entire audio model",
               "@orientation":[1,0,0,-0.5],
               "@position":[0.0,500.0,600.0],
               "@retainUserOffsets":true
@@ -88,7 +94,7 @@
           },
           { "Transform":
             {
-              "@DEF":"Audio1",
+              "@DEF":"TransformAudio1",
               "@translation":[-200,50,0],
               "-children":[
                 { "Shape":
@@ -120,7 +126,7 @@
           },
           { "Transform":
             {
-              "@DEF":"Audio2",
+              "@DEF":"TransformAudio2",
               "@translation":[0,50,0],
               "-children":[
                 { "Shape":
@@ -128,7 +134,7 @@
                     "-appearance":
                       { "Appearance":
                         {
-                          "@DEF":"audio_emit",
+                          "@DEF":"audio_emit2",
                           "-material":
                             { "Material":
                               {
@@ -152,7 +158,7 @@
           },
           { "Transform":
             {
-              "@DEF":"Audio3",
+              "@DEF":"TransformAudio3",
               "@translation":[200,50,0],
               "-children":[
                 { "Shape":
@@ -160,7 +166,7 @@
                     "-appearance":
                       { "Appearance":
                         {
-                          "@DEF":"audio_emit",
+                          "@DEF":"audio_emit3",
                           "-material":
                             { "Material":
                               {
@@ -248,7 +254,12 @@
               ]
             }
           },
-          { "AudioDestination":
+          { "ListenerPointSource":
+            {
+              "@trackCurrentView":true
+            }
+          },
+          { "StreamAudioDestination":
             {
               "-children":[
                 { "DynamicsCompressor":
@@ -259,7 +270,7 @@
                           "-children":[
                             { "SpatialSound":
                               {
-                                "@USE":"Audio1",
+                                "@DEF":"Audio1",
                                 "-children":[
                                   { "Gain":
                                     {
@@ -273,14 +284,12 @@
                                                   "@frequency":600,
                                                   "@qualityFactor":30.0,
                                                   "@type":"allpass",
-                                                  "-source":[
+                                                  "-children":[
                                                     { "AudioClip":
                                                       {
+                                                        "@description":"Techno beat",
                                                         "@loop":true,
-                                                        "@pauseTime":-1,
-                                                        "@resumeTime":-1,
-                                                        "@stopTime":-1,
-                                                        "@url":["sound/techno_beat.mp3"]
+                                                        "@url":["sound/techno_beat.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/techno_beat.mp3"]
                                                       }
                                                     }
                                                   ]
@@ -297,7 +306,7 @@
                             },
                             { "SpatialSound":
                               {
-                                "@USE":"Audio2",
+                                "@DEF":"Audio2",
                                 "-children":[
                                   { "Gain":
                                     {
@@ -311,14 +320,12 @@
                                                   "@frequency":600,
                                                   "@qualityFactor":15.0,
                                                   "@type":"allpass",
-                                                  "-source":[
+                                                  "-children":[
                                                     { "AudioClip":
                                                       {
+                                                        "@description":"Simple beat",
                                                         "@loop":true,
-                                                        "@pauseTime":-1,
-                                                        "@resumeTime":-1,
-                                                        "@stopTime":-1,
-                                                        "@url":["sound/beat.mp3"]
+                                                        "@url":["sound/beat.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/beat.mp3"]
                                                       }
                                                     }
                                                   ]
@@ -335,7 +342,7 @@
                             },
                             { "SpatialSound":
                               {
-                                "@USE":"Audio3",
+                                "@DEF":"Audio3",
                                 "-children":[
                                   { "Gain":
                                     {
@@ -348,14 +355,12 @@
                                                   "@frequency":1000,
                                                   "@qualityFactor":0,
                                                   "@type":"allpass",
-                                                  "-source":[
+                                                  "-children":[
                                                     { "AudioClip":
                                                       {
+                                                        "@description":"Wobble loop",
                                                         "@loop":true,
-                                                        "@pauseTime":-1,
-                                                        "@resumeTime":-1,
-                                                        "@stopTime":-1,
-                                                        "@url":["sound/wobble_loop.mp3"]
+                                                        "@url":["sound/wobble_loop.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/wobble_loop.mp3"]
                                                       }
                                                     }
                                                   ]

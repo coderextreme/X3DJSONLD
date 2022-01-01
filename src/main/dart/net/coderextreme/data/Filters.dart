@@ -30,7 +30,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('modified'),
-              content_ : SFString('4 August 2021')),
+              content_ : SFString('5 December 2021')),
 
             meta(
               name_ : SFString('reference'),
@@ -58,18 +58,22 @@ var X3D0 =  X3D(
       Scene_ : 
         Scene(
           children_ : [
+            WorldInfo(
+              title_ : SFString('Filters.x3d')),
+
             NavigationInfo(),
 
             Background(
               skyColor_ : MFColor([SFColor(0.2), SFColor(0.2), SFColor(0.2)])),
 
             Viewpoint(
+              description_ : SFString('View entire audio model'),
               orientation_ : SFRotation([SFDouble(1), SFDouble(0), SFDouble(0), SFDouble(-0.5)]),
               position_ : SFVec3f([SFDouble(0), SFDouble(500), SFDouble(600)]),
               retainUserOffsets_ : true),
 
             Transform(
-              DEF_ : SFString('Audio1'),
+              DEF_ : SFString('TransformAudio1'),
               translation_ : SFVec3f([SFDouble(-200), SFDouble(50), SFDouble(0)]),
               children_ : [
                 Shape(
@@ -86,13 +90,13 @@ var X3D0 =  X3D(
                       radius_ : 30))]),
 
             Transform(
-              DEF_ : SFString('Audio2'),
+              DEF_ : SFString('TransformAudio2'),
               translation_ : SFVec3f([SFDouble(0), SFDouble(50), SFDouble(0)]),
               children_ : [
                 Shape(
                   appearance_ : 
                     Appearance(
-                      DEF_ : SFString('audio_emit'),
+                      DEF_ : SFString('audio_emit2'),
                       material_ : 
                         Material(
                           diffuseColor_ : SFColor([SFDouble(0.1), SFDouble(0.1), SFDouble(0.1)]),
@@ -103,13 +107,13 @@ var X3D0 =  X3D(
                       radius_ : 30))]),
 
             Transform(
-              DEF_ : SFString('Audio3'),
+              DEF_ : SFString('TransformAudio3'),
               translation_ : SFVec3f([SFDouble(200), SFDouble(50), SFDouble(0)]),
               children_ : [
                 Shape(
                   appearance_ : 
                     Appearance(
-                      DEF_ : SFString('audio_emit'),
+                      DEF_ : SFString('audio_emit3'),
                       material_ : 
                         Material(
                           diffuseColor_ : SFColor([SFDouble(0.1), SFDouble(0.1), SFDouble(0.1)]),
@@ -158,14 +162,17 @@ var X3D0 =  X3D(
                     Cylinder(
                       radius_ : 500))]),
 
-            AudioDestination(
+            ListenerPointSource(
+              trackCurrentView_ : true),
+
+            StreamAudioDestination(
               children_ : [
                 DynamicsCompressor(
                   children_ : [
                     Gain(
                       children_ : [
                         SpatialSound(
-                          USE_ : SFString('Audio1'),
+                          DEF_ : SFString('Audio1'),
                           children_ : [
                             Gain(
                               children_ : [
@@ -178,14 +185,12 @@ var X3D0 =  X3D(
                                       qualityFactor_ : 30,
                                       children_ : [
                                         AudioClip(
+                                          description_ : SFString('Techno beat'),
                                           loop_ : true,
-                                          pauseTime_ : -1,
-                                          resumeTime_ : -1,
-                                          stopTime_ : -1,
-                                          url_ : MFString([SFString("sound/techno_beat.mp3")]))])])])]),
+                                          url_ : MFString([SFString("sound/techno_beat.mp3"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/techno_beat.mp3")]))])])])]),
 
                         SpatialSound(
-                          USE_ : SFString('Audio2'),
+                          DEF_ : SFString('Audio2'),
                           children_ : [
                             Gain(
                               children_ : [
@@ -198,14 +203,12 @@ var X3D0 =  X3D(
                                       qualityFactor_ : 15,
                                       children_ : [
                                         AudioClip(
+                                          description_ : SFString('Simple beat'),
                                           loop_ : true,
-                                          pauseTime_ : -1,
-                                          resumeTime_ : -1,
-                                          stopTime_ : -1,
-                                          url_ : MFString([SFString("sound/beat.mp3")]))])])])]),
+                                          url_ : MFString([SFString("sound/beat.mp3"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/beat.mp3")]))])])])]),
 
                         SpatialSound(
-                          USE_ : SFString('Audio3'),
+                          DEF_ : SFString('Audio3'),
                           children_ : [
                             Gain(
                               children_ : [
@@ -217,9 +220,7 @@ var X3D0 =  X3D(
                                       qualityFactor_ : 0,
                                       children_ : [
                                         AudioClip(
+                                          description_ : SFString('Wobble loop'),
                                           loop_ : true,
-                                          pauseTime_ : -1,
-                                          resumeTime_ : -1,
-                                          stopTime_ : -1,
-                                          url_ : MFString([SFString("sound/wobble_loop.mp3")]))])])])])])])])]));
+                                          url_ : MFString([SFString("sound/wobble_loop.mp3"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/wobble_loop.mp3")]))])])])])])])])]));
 void main() { exit(0); }

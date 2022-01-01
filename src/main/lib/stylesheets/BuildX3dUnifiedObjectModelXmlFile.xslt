@@ -1539,7 +1539,7 @@ Recommended tool:
         <xsl:variable name="intermediateResult">
             <xsl:for-each select="ancestor::xs:element/xs:annotation/xs:appinfo/xs:attribute[@name = 'additionalInterface']/@default
                                 | ancestor::xs:element/xs:complexType/xs:complexContent/*/@base">
-                <xsl:sort select="."/>
+                <xsl:sort select="local-name(.)"/>
                 
                 <xsl:variable name="thisAdditionalInterface" select="."/>
                 <!-- filter out thisAdditionalInterface if it does not include current field -->

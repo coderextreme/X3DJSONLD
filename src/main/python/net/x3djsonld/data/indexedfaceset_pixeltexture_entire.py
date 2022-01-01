@@ -47,7 +47,7 @@ newModel=X3D(profile='Interchange',version='3.0',
     Viewpoint(description='Bottom View',orientation=(1,0,0,1.57),position=(0,-10,0)),
     Viewpoint(description='Right View',orientation=(0,1,0,1.57),position=(10,0,0)),
     Viewpoint(description='Left View',orientation=(0,1,0,-1.57),position=(-10,0,0)),
-    NavigationInfo(type=["EXAMINE","WALK","FLY","ANY"]),
+    NavigationInfo(type='"EXAMINE" "WALK" "FLY" "ANY"'),
     Shape(
       appearance=Appearance(
         material=Material(),
@@ -62,8 +62,28 @@ newModel=X3D(profile='Interchange',version='3.0',
 
 if        metaDiagnostics(newModel): # built-in utility method in X3D class
     print(metaDiagnostics(newModel))
-print('check  newModel.XML() serialization...')
-newModelXML = newModel.XML() # test export method XML() for exceptions
-# print(newModelXML) # debug
+# print('check newModel.XML() serialization...')
+newModelXML= newModel.XML() # test export method XML() for exceptions during export
+newModel.XMLvalidate()
 
-print ("python x3d.py load successful for indexedfaceset_pixeltexture_entire.py")
+try:
+#   print('check newModel.VRML() serialization...')
+    newModelVRML=newModel.VRML() # test export method VRML() for exceptions during export
+    # print(prependLineNumbers(newModelVRML)) # debug
+    print("Python-to-VRML export of VRML output successful (still testing)")
+except BaseException as err:
+    print("*** Python-to-VRML export of VRML output failed:", err)
+    if newModelVRML: # may have failed to generate
+        print(prependLineNumbers(newModelVRML, err.lineno))
+
+try:
+#   print('check newModel.JSON() serialization...')
+    newModelJSON=newModel.JSON() # test export method JSON() for exceptions during export
+#   print(prependLineNumbers(newModelJSON)) # debug
+    print("Python-to-JSON export of JSON output successful (still testing)")
+except SyntaxError as err:
+    print("*** Python-to-JSON export of JSON output failed:", err)
+    if newModelJSON: # may have failed to generate
+        print(prependLineNumbers(newModelJSON,err.lineno))
+
+print("python x3d.py load and self-test complete for indexedfaceset_pixeltexture_entire.py")

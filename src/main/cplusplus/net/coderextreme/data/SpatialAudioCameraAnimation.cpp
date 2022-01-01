@@ -41,7 +41,7 @@ head1->addMeta(*meta6);
 
 Cmeta* meta7 = new Cmeta();
 meta7->setName("modified");
-meta7->setContent("7 August 2021");
+meta7->setContent("5 December 2021");
 head1->addMeta(*meta7);
 
 Cmeta* meta8 = new Cmeta();
@@ -96,8 +96,6 @@ group->addChildren(*Background17);
 CViewpoint* Viewpoint18 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
 Viewpoint18->setDEF("Camera001");
 Viewpoint18->setDescription("Viewpoint is like camera, prepositioned in locations (and directions) of interest. In this example the camera is the \"ears of the user\". So, if the trackCurrentView field from ListenerPointSource is TRUE then position and orientation matches the users current view");
-Viewpoint18->setFarDistance(0);
-Viewpoint18->setNearDistance(1);
 Viewpoint18->setOrientation(new float[4]{1,0,0,-0.523599});
 Viewpoint18->setPosition(new float[3]{0,2000,3500});
 group->addChildren(*Viewpoint18);
@@ -169,7 +167,7 @@ Transform26->addChildren(*Shape27);
 group->addChildren(*Transform26);
 
 CTransform* Transform31 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform31->setDEF("Audio1Transform");
+Transform31->setDEF("TransformAudio1");
 Transform31->setTranslation(new float[3]{-933.123474,0,-926.253235});
 CShape* Shape32 = (CShape *)(m_pScene.createNode("Shape"));
 CAppearance* Appearance33 = (CAppearance *)(m_pScene.createNode("Appearance"));
@@ -206,6 +204,8 @@ Shape38->setAppearance(*Appearance39);
 CText* Text41 = (CText *)(m_pScene.createNode("Text"));
 Text41->setString(new CString[1]{"Violin"}, 1);
 CFontStyle* FontStyle42 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
+FontStyle42->setDEF("ModelFontStyle");
+FontStyle42->setFamily(new CString[2]{"Times","SERIF"}, 2);
 FontStyle42->setStyle("BOLD");
 Text41->setFontStyle(*FontStyle42);
 
@@ -220,7 +220,7 @@ Transform31->addChildren(*Billboard36);
 group->addChildren(*Transform31);
 
 CTransform* Transform43 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform43->setDEF("Audio2");
+Transform43->setDEF("TransformAudio2");
 Transform43->setTranslation(new float[3]{933.475586,0,924.423218});
 CShape* Shape44 = (CShape *)(m_pScene.createNode("Shape"));
 CAppearance* Appearance45 = (CAppearance *)(m_pScene.createNode("Appearance"));
@@ -257,8 +257,7 @@ Shape50->setAppearance(*Appearance51);
 CText* Text53 = (CText *)(m_pScene.createNode("Text"));
 Text53->setString(new CString[1]{"Saxophone"}, 1);
 CFontStyle* FontStyle54 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
-FontStyle54->setFamily(new CString[1]{"Times"}, 1);
-FontStyle54->setStyle("BOLD");
+FontStyle54->setUSE("ModelFontStyle");
 Text53->setFontStyle(*FontStyle54);
 
 Shape50->setGeometry(Text53);
@@ -273,19 +272,15 @@ group->addChildren(*Transform43);
 
 CListenerPointSource* ListenerPointSource55 = (CListenerPointSource *)(m_pScene.createNode("ListenerPointSource"));
 ListenerPointSource55->setTrackCurrentView(True);
-ListenerPointSource55->setDopplerEnabled("false");
 group->addChildren(*ListenerPointSource55);
 
 CStreamAudioDestination* StreamAudioDestination56 = (CStreamAudioDestination *)(m_pScene.createNode("StreamAudioDestination"));
 CSpatialSound* SpatialSound57 = (CSpatialSound *)(m_pScene.createNode("SpatialSound"));
 SpatialSound57->setDEF("Audio1");
-SpatialSound57->setDopplerEnabled("false");
 CGain* Gain58 = (CGain *)(m_pScene.createNode("Gain"));
 CAudioClip* AudioClip59 = (CAudioClip *)(m_pScene.createNode("AudioClip"));
+AudioClip59->setDescription("Violin");
 AudioClip59->setLoop(True);
-AudioClip59->setPauseTime(-1);
-AudioClip59->setResumeTime(-1);
-AudioClip59->setStopTime(-1);
 AudioClip59->setUrl(new CString[2]{"sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"}, 2);
 Gain58->addChildren(*AudioClip59);
 
@@ -295,13 +290,10 @@ StreamAudioDestination56->addChildren(*SpatialSound57);
 
 CSpatialSound* SpatialSound60 = (CSpatialSound *)(m_pScene.createNode("SpatialSound"));
 SpatialSound60->setDEF("Audio2");
-SpatialSound60->setDopplerEnabled("false");
 CGain* Gain61 = (CGain *)(m_pScene.createNode("Gain"));
 CAudioClip* AudioClip62 = (CAudioClip *)(m_pScene.createNode("AudioClip"));
+AudioClip62->setDescription("Saxophone");
 AudioClip62->setLoop(True);
-AudioClip62->setPauseTime(-1);
-AudioClip62->setResumeTime(-1);
-AudioClip62->setStopTime(-1);
 AudioClip62->setUrl(new CString[2]{"sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"}, 2);
 Gain61->addChildren(*AudioClip62);
 

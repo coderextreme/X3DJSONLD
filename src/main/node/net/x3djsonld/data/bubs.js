@@ -76,8 +76,8 @@ bubs.prototype = {
     .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
     .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/bubs.x3d")))
   .setScene((new autoclass.Scene())
-    .addChild((new autoclass.NavigationInfo()).setType(new autoclass.MFString("\"EXAMINE\"")))
-    .addChild((new autoclass.Viewpoint()).setDescription("Bubbles in action").setPosition(0.0,0.0,4.0).setOrientation(1.0,0.0,0.0,0.0))
+    .addChild((new autoclass.NavigationInfo()).setType("\"EXAMINE\""))
+    .addChild((new autoclass.Viewpoint()).setDescription("Bubbles in action").setOrientation(1.0,0.0,0.0,0.0).setPosition(0.0,0.0,4.0))
     .addChild((new autoclass.Background()).setBackUrl(new autoclass.MFString("\"../resources/images/BK.png\" \"https://coderextreme.net/X3DJSONLD/images/BK.png\"")).setBottomUrl(new autoclass.MFString("\"../resources/images/BT.png\" \"https://coderextreme.net/X3DJSONLD/images/BT.png\"")).setFrontUrl(new autoclass.MFString("\"../resources/images/FR.png\" \"https://coderextreme.net/X3DJSONLD/images/FR.png\"")).setLeftUrl(new autoclass.MFString("\"../resources/images/LF.png\" \"https://coderextreme.net/X3DJSONLD/images/LF.png\"")).setRightUrl(new autoclass.MFString("\"../resources/images/RT.png\" \"https://coderextreme.net/X3DJSONLD/images/RT.png\"")).setTopUrl(new autoclass.MFString("\"../resources/images/TP.png\" \"https://coderextreme.net/X3DJSONLD/images/TP.png\"")))
     .addChild((new autoclass.ProtoDeclare()).setName("Bubble")
       .setProtoBody((new autoclass.ProtoBody())
@@ -85,7 +85,7 @@ bubs.prototype = {
           .addChild((new autoclass.Shape())
             .setGeometry((new autoclass.Sphere()).setRadius(0.25))
             .setAppearance((new autoclass.Appearance())
-              .setMaterial((new autoclass.Material()).setTransparency(0.2).setDiffuseColor(1.0,0.0,0.0))))
+              .setMaterial((new autoclass.Material()).setDiffuseColor(1.0,0.0,0.0).setTransparency(0.2))))
           .addChild((new autoclass.Script("bounce1")).setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
 "function initialize() {" + "\n" + 
@@ -126,19 +126,19 @@ bubs.prototype = {
 "	initialize();" + "\n" + 
 "    }" + "\n" + 
 "}" + "\n")
-            .addField((new autoclass.field()).setAccessType("inputOutput").setName("scale").setType("SFVec3f").setValue("1 1 1"))
-            .addField((new autoclass.field()).setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
-            .addField((new autoclass.field()).setAccessType("inputOutput").setName("velocity").setType("SFVec3f").setValue("0 0 0"))
-            .addField((new autoclass.field()).setAccessType("inputOutput").setName("scalvel").setType("SFVec3f").setValue("0 0 0"))
-            .addField((new autoclass.field()).setAccessType("inputOnly").setName("set_fraction").setType("SFFloat")))
+            .addField((new autoclass.field()).setName("scale").setType("SFVec3f").setAccessType("inputOutput").setValue("1 1 1"))
+            .addField((new autoclass.field()).setName("translation").setType("SFVec3f").setAccessType("inputOutput").setValue("0 0 0"))
+            .addField((new autoclass.field()).setName("velocity").setType("SFVec3f").setAccessType("inputOutput").setValue("0 0 0"))
+            .addField((new autoclass.field()).setName("scalvel").setType("SFVec3f").setAccessType("inputOutput").setValue("0 0 0"))
+            .addField((new autoclass.field()).setName("set_fraction").setType("SFFloat").setAccessType("inputOnly")))
           .addChild((new autoclass.TimeSensor("bubbleClock")).setCycleInterval(10).setLoop(true))
           .addChild((new autoclass.ROUTE()).setFromNode("bounce1").setFromField("translation_changed").setToNode("body_trans").setToField("set_translation"))
           .addChild((new autoclass.ROUTE()).setFromNode("bounce1").setFromField("scale_changed").setToNode("body_trans").setToField("set_scale"))
           .addChild((new autoclass.ROUTE()).setFromNode("bubbleClock").setFromField("fraction_changed").setToNode("bounce1").setToField("set_fraction")))))
-    .addChild((new autoclass.ProtoInstance("bubbleA", "Bubble")).setDEF("bubbleA").setName("Bubble"))
-    .addChild((new autoclass.ProtoInstance("bubbleB", "Bubble")).setDEF("bubbleB").setName("Bubble"))
-    .addChild((new autoclass.ProtoInstance("bubbleC", "Bubble")).setDEF("bubbleC").setName("Bubble"))
-    .addChild((new autoclass.ProtoInstance("bubbleD", "Bubble")).setDEF("bubbleD").setName("Bubble")));
+    .addChild((new autoclass.ProtoInstance("bubbleA", "Bubble")))
+    .addChild((new autoclass.ProtoInstance("bubbleB", "Bubble")))
+    .addChild((new autoclass.ProtoInstance("bubbleC", "Bubble")))
+    .addChild((new autoclass.ProtoInstance("bubbleD", "Bubble"))));
   },
   // end of initialize() method
 

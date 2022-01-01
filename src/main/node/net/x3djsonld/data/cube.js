@@ -188,7 +188,7 @@ cube.prototype = {
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.Group())
       .addChild((new autoclass.Shape())
-        .setGeometry((new autoclass.IndexedFaceSet("IndexedFaceSet")).setDEF("IndexedFaceSet").setNormalPerVertex(false).setNormalIndex(this.IndexedFaceSet_5_9_normalIndex).setColorIndex(this.IndexedFaceSet_5_9_colorIndex).setCoordIndex(this.IndexedFaceSet_5_9_coordIndex)
+        .setGeometry((new autoclass.IndexedFaceSet("IndexedFaceSet")).setDEF("IndexedFaceSet").setNormalPerVertex(false).setColorIndex(this.IndexedFaceSet_5_9_colorIndex).setCoordIndex(this.IndexedFaceSet_5_9_coordIndex).setNormalIndex(this.IndexedFaceSet_5_9_normalIndex)
           .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_6_9_point))
           .setNormal((new autoclass.Normal()).setVector(this.Normal_6_10_vector))
           .setColor((new autoclass.Color()).setColor(new autoclass.MFColor(java.newArray("float", [0.0,1.0,0.0]))))))));

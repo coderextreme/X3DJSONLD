@@ -77,14 +77,14 @@ asteroids.prototype = {
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.ProtoDeclare()).setName("anyShape")
       .setProtoInterface((new autoclass.ProtoInterface())
-        .addField((new autoclass.field()).setAccessType("inputOutput").setName("myShape").setType("MFNode")
+        .addField((new autoclass.field()).setName("myShape").setType("MFNode").setAccessType("inputOutput")
           .addChild((new autoclass.Shape())
             .setGeometry((new autoclass.Sphere())))))
       .setProtoBody((new autoclass.ProtoBody())
         .addChild((new autoclass.Transform())
           .setIS((new autoclass.IS())
             .addConnect((new autoclass.connect()).setNodeField("children").setProtoField("myShape"))))))
-    .addChild((new autoclass.ProtoInstance()).setName("anyShape")));
+    .addChild((new autoclass.ProtoInstance())));
   },
   // end of initialize() method
 

@@ -46,7 +46,7 @@ head1->addMeta(*meta7);
 
 Cmeta* meta8 = new Cmeta();
 meta8->setName("modified");
-meta8->setContent("8 March 2021");
+meta8->setContent("23 December 2021");
 head1->addMeta(*meta8);
 
 Cmeta* meta9 = new Cmeta();
@@ -157,7 +157,7 @@ HAnimHumanoid30->setName("humanoid");
 HAnimHumanoid30->setDEF("hanim_humanoid");
 HAnimHumanoid30->setLoa(0);
 HAnimHumanoid30->setVersion("2.0");
-//HAnimHumanoid original info='\"authorEmail=beitler@graphics.cis.upenn.edu beitler@acm.org\" \"authorName=Matthew T. Beitler\" \"copyright=Copyright 1999 Matthew T. Beitler\" \"creationDate=05/12/99\" \"humanoidVersion=JointCenters 1.1 LOA0\" \"usageRestrictions=PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose.\"'
+//original HAnimHumanoid info='\"authorEmail=beitler@graphics.cis.upenn.edu beitler@acm.org\" \"authorName=Matthew T. Beitler\" \"copyright=Copyright 1999 Matthew T. Beitler\" \"creationDate=05/12/99\" \"humanoidVersion=JointCenters 1.1 LOA0\" \"usageRestrictions=PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose.\"'
 CMetadataSet* MetadataSet31 = (CMetadataSet *)(m_pScene.createNode("MetadataSet"));
 MetadataSet31->setName("HAnimHumanoid.info");
 MetadataSet31->setReference("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid");
@@ -191,18 +191,20 @@ MetadataString37->setName("usageRestrictions");
 MetadataString37->setValue(new CString[1]{"PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose."}, 1);
 MetadataSet31->addValue(*MetadataString37);
 
-HAnimHumanoid30->setValue(*MetadataSet31);
+HAnimHumanoid30->setMetadata(*MetadataSet31);
 
 CHAnimJoint* HAnimJoint38 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint38->setName("humanoid_root");
 HAnimJoint38->setDEF("hanim_humanoid_root");
 HAnimJoint38->setCenter(new float[3]{0,0.824,0.0277});
-HAnimJoint38->setStiffness(new float[3]{0,0,0});
+HAnimJoint38->setUlimit(new float[3]{0,0,0});
+HAnimJoint38->setLlimit(new float[3]{0,0,0});
 CHAnimJoint* HAnimJoint39 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint39->setName("sacroiliac");
 HAnimJoint39->setDEF("hanim_sacroiliac");
 HAnimJoint39->setCenter(new float[3]{0,0.9149,0.0016});
-HAnimJoint39->setStiffness(new float[3]{0,0,0});
+HAnimJoint39->setUlimit(new float[3]{0,0,0});
+HAnimJoint39->setLlimit(new float[3]{0,0,0});
 CHAnimSegment* HAnimSegment40 = (CHAnimSegment *)(m_pScene.createNode("HAnimSegment"));
 HAnimSegment40->setName("pelvis");
 HAnimSegment40->setDEF("hanim_pelvis");

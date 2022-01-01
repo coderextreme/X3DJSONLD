@@ -7,7 +7,7 @@
     <meta content='Right hand using high-fidelity definitions for HAnim version 2.0' name='description'/>
     <meta content='Kwan-Hee YOO, Don Brutzman and Joe Williams' name='creator'/>
     <meta content='26 January 2015' name='created'/>
-    <meta content='14 March 2021' name='modified'/>
+    <meta content='23 December 2021' name='modified'/>
     <meta content='fix visible geometry for thumb and index finger, midcarpal_1 and midcarpal_2' name='TODO'/>
     <meta content='HAnimModelHandRightSegmentVisualizationError.png' name='Image'/>
     <meta content='not yet to scale, also relatively flat' name='error'/>
@@ -28,9 +28,9 @@
   <Scene>
     <WorldInfo title='HAnimModelHandRight.x3d'/>
     <HAnimHumanoid DEF='hanim_Hand_Right' loa='4' name='Hand_Right' version='2.0'>
-      <!-- HAnimHumanoid original info='"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams"' -->
-      <MetadataSet name='HAnimHumanoid.info' reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid'>
-        <MetadataString containerField='value' name='authorName' value='Kwan-Hee YOO, Don Brutzman and Joe Williams'/>
+      <!-- original HAnimHumanoid info='"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams"' -->
+      <MetadataSet containerField='metadata' name='HAnimHumanoid.info' reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid'>
+        <MetadataString name='authorName' value='Kwan-Hee YOO, Don Brutzman and Joe Williams'/>
       </MetadataSet>
       <HAnimJoint DEF='hanim_humanoid_root' containerField='skeleton' name='humanoid_root'>
         <!-- Might consider putting a HAnimSegment here, but that doesn't help with re-use of this hand model -->

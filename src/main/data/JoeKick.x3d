@@ -8,7 +8,7 @@
     <meta content='Joe Williams' name='creator'/>
     <meta content='9 January 2004' name='created'/>
     <meta content='12 January 2017' name='translated'/>
-    <meta content='5 July 2020' name='modified'/>
+    <meta content='23 December 2021' name='modified'/>
     <meta content='Record information about skin coordinates (found in comment at end of scene) as a structured MetadataSet containing MetadataString nodes' name='TODO'/>
     <meta content='Roy Walmsley, Don Brutzman, John Carlson' name='translators'/>
     <meta content='../Characters/JoeSkinTexcoordDisplacerKick.x3d' name='reference'/>
@@ -31,8 +31,8 @@
     <Viewpoint DEF='Scene_TopView' centerOfRotation='0 1.5 0' description='Scene_Top View' orientation='1 0 0 -1.5708' position='0 3.5 0'/>
     <Group DEF='Joe_Humanoid'>
       <HAnimHumanoid DEF='Joe_Human' loa='3' name='Human' version='2.0'>
-        <MetadataSet name='warnings' reference='HAnim'>
-          <MetadataString containerField='value' name='SymmetricalLeftRight' reference='correction options: ignore, warn, average, left, right, largest, smallest' value='"ignore"'/>
+        <MetadataSet containerField='metadata' name='warnings' reference='HAnim'>
+          <MetadataString name='SymmetricalLeftRight' reference='correction options: ignore, warn, average, left, right, largest, smallest' value='"ignore"'/>
         </MetadataSet>
         <HAnimJoint DEF='Joe_humanoid_root' center='0 0.875 0' containerField='skeleton' name='humanoid_root'>
           <HAnimSegment DEF='Joe_sacrum' name='sacrum'>

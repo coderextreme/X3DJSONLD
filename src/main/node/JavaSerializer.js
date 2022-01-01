@@ -253,6 +253,10 @@ JavaSerializer.prototype = {
 			method = "Metadata"
 			addpre = "add";
 		}
+		if (element.nodeName === 'HAnimHumanoid' && addpre+method === "addValue") {
+			method = "Metadata"
+			addpre = "set";
+		}
 		if (node.nodeName === 'LayerSet' && addpre+method === "addChild") {
 			method = "LayerSet"
 			addpre = "add";

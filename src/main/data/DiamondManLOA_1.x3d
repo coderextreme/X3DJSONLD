@@ -8,7 +8,7 @@
     <meta content='Matthew T. Beitler' name='creator'/>
     <meta content='Joel S. Pawloski' name='translator'/>
     <meta content='12 November 2001' name='created'/>
-    <meta content='13 March 2021' name='modified'/>
+    <meta content='23 December 2021' name='modified'/>
     <meta content='images/BonesAllSkeletonFrontViewLOA1.png' name='Image'/>
     <meta content='(a) "Diamonds are a girl&apos;s best friend." (b) "Gosh, it sure is chilly in here."' name='motto'/>
     <meta content='Still needs comments on CAESAR feature points inserted' name='warning'/>
@@ -32,8 +32,8 @@
     <NavigationInfo speed='1.5'/>
     <Viewpoint centerOfRotation='0 1 0' description='Diamond Man, LOA 1' position='0 1 3'/>
     <HAnimHumanoid DEF='hanim_humanoid' name='humanoid' version='1.0'>
-      <!-- HAnimHumanoid original info='"authorEmail=beitler@graphics.cis.upenn.edu beitler@acm.org" "authorName=Matthew T. Beitler" "copyright=Copyright 1999 Matthew T. Beitler" "humanoidVersion=JointCenters 1.1 LOA1" "usageRestrictions=PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose."' -->
-      <MetadataSet name='HAnimHumanoid.info' reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid'>
+      <!-- original HAnimHumanoid info='"authorEmail=beitler@graphics.cis.upenn.edu beitler@acm.org" "authorName=Matthew T. Beitler" "copyright=Copyright 1999 Matthew T. Beitler" "humanoidVersion=JointCenters 1.1 LOA1" "usageRestrictions=PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose."' -->
+      <MetadataSet containerField='metadata' name='HAnimHumanoid.info' reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid'>
         <MetadataString containerField='value' name='authorEmail' value='beitler@graphics.cis.upenn.edu beitler@acm.org'/>
         <MetadataString containerField='value' name='authorName' value='Matthew T. Beitler'/>
         <MetadataString containerField='value' name='copyright' value='Copyright 1999 Matthew T. Beitler'/>

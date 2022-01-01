@@ -61,7 +61,9 @@ newModel=X3D(profile='Immersive',version='3.3',
           field(name='translation',accessType='inputOutput',type='SFVec3f',value=(50,50,0)),
           field(name='old',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
           field(name='set_cycle',accessType='inputOnly',type='SFTime'),
-          field(name='keyValue',accessType='outputOnly',type='MFVec3f')]),
+          field(name='keyValue',accessType='outputOnly',type='MFVec3f')]
+*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+),
         TimeSensor(DEF='nodeClock',cycleInterval=3,loop=True),
         ROUTE(fromNode='nodeClock',fromField='cycleTime',toNode='MoveBall',toField='set_cycle'),
         ROUTE(fromNode='nodeClock',fromField='fraction_changed',toNode='NodePosition',toField='set_fraction'),
@@ -86,7 +88,9 @@ newModel=X3D(profile='Immersive',version='3.3',
           IS=IS(
             connect=[
             connect(nodeField='set_endA',protoField='set_positionA'),
-            connect(nodeField='set_endB',protoField='set_positionB')])),
+            connect(nodeField='set_endB',protoField='set_positionB')])
+*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+),
         ROUTE(fromNode='MoveCylinder',fromField='spine',toNode='extrusion',toField='set_spine')])),
     Transform(DEF='HoldsContent',scale=(0.1,0.1,0.1),
       children=[
@@ -111,8 +115,28 @@ newModel=X3D(profile='Immersive',version='3.3',
 
 if        metaDiagnostics(newModel): # built-in utility method in X3D class
     print(metaDiagnostics(newModel))
-print('check  newModel.XML() serialization...')
-newModelXML = newModel.XML() # test export method XML() for exceptions
-# print(newModelXML) # debug
+# print('check newModel.XML() serialization...')
+newModelXML= newModel.XML() # test export method XML() for exceptions during export
+newModel.XMLvalidate()
 
-print ("python x3d.py load successful for fors.py")
+try:
+#   print('check newModel.VRML() serialization...')
+    newModelVRML=newModel.VRML() # test export method VRML() for exceptions during export
+    # print(prependLineNumbers(newModelVRML)) # debug
+    print("Python-to-VRML export of VRML output successful (still testing)")
+except BaseException as err:
+    print("*** Python-to-VRML export of VRML output failed:", err)
+    if newModelVRML: # may have failed to generate
+        print(prependLineNumbers(newModelVRML, err.lineno))
+
+try:
+#   print('check newModel.JSON() serialization...')
+    newModelJSON=newModel.JSON() # test export method JSON() for exceptions during export
+#   print(prependLineNumbers(newModelJSON)) # debug
+    print("Python-to-JSON export of JSON output successful (still testing)")
+except SyntaxError as err:
+    print("*** Python-to-JSON export of JSON output failed:", err)
+    if newModelJSON: # may have failed to generate
+        print(prependLineNumbers(newModelJSON,err.lineno))
+
+print("python x3d.py load and self-test complete for fors.py")

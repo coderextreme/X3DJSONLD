@@ -8,7 +8,7 @@
     <meta content='Matthew T. Beitler' name='creator'/>
     <meta content='Joel S. Pawloski' name='translator'/>
     <meta content='12 November 2001' name='created'/>
-    <meta content='8 March 2021' name='modified'/>
+    <meta content='23 December 2021' name='modified'/>
     <meta content='DiamondManLOA2.png' name='Image'/>
     <meta content='images/BonesAllSkeletonFrontViewLOA2.png' name='Image'/>
     <meta content='(a) "Diamonds are a girl&apos;s best friend." (b) "Gosh, it sure is chilly in here."' name='motto'/>
@@ -143,14 +143,14 @@
       </Billboard>
     </Transform>
     <HAnimHumanoid DEF='hanim_humanoid' loa='2' name='humanoid' version='2.0'>
-      <!-- HAnimHumanoid original info='"humanoidVersion=Nancy V1.2b" "authorName=Cindy Ballreich" "authorEmail=cindy@ballreich.net" "copyright=1997 3Name3D / Yglesias Wallock Divekar Inc. all rights reserved." "creationDate=Tue Dec 30 08:30:08 PST 1997" "usageRestrictions=Noncommercial usage is ok if 3Name3D name and logo <www.ballreich.net/vrml/HAnim/small_logo.gif> is present and proper credit is given."' -->
-      <MetadataSet name='HAnimHumanoid.info' reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid'>
-        <MetadataString containerField='value' name='humanoidVersion' value='Nancy V1.2b'/>
-        <MetadataString containerField='value' name='authorEmail' value='cindy@ballreich.net'/>
-        <MetadataString containerField='value' name='authorName' value='Cindy Ballreich'/>
-        <MetadataString containerField='value' name='copyright' value='1997 3Name3D / Yglesias Wallock Divekar Inc. all rights reserved.'/>
-        <MetadataString containerField='value' name='creationDate' value='Tue Dec 30 08:30:08 PST 1997'/>
-        <MetadataString containerField='value' name='usageRestrictions' value='Noncommercial usage is ok if 3Name3D name and logo &lt;www.ballreich.net/vrml/HAnim/small_logo.gif> is present and proper credit is given.'/>
+      <!-- original HAnimHumanoid info='"humanoidVersion=Nancy V1.2b" "authorName=Cindy Ballreich" "authorEmail=cindy@ballreich.net" "copyright=1997 3Name3D / Yglesias Wallock Divekar Inc. all rights reserved." "creationDate=Tue Dec 30 08:30:08 PST 1997" "usageRestrictions=Noncommercial usage is ok if 3Name3D name and logo <www.ballreich.net/vrml/HAnim/small_logo.gif> is present and proper credit is given."' -->
+      <MetadataSet containerField='metadata' name='HAnimHumanoid.info' reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid'>
+        <MetadataString name='humanoidVersion' value='Nancy V1.2b'/>
+        <MetadataString name='authorEmail' value='cindy@ballreich.net'/>
+        <MetadataString name='authorName' value='Cindy Ballreich'/>
+        <MetadataString name='copyright' value='1997 3Name3D / Yglesias Wallock Divekar Inc. all rights reserved.'/>
+        <MetadataString name='creationDate' value='Tue Dec 30 08:30:08 PST 1997'/>
+        <MetadataString name='usageRestrictions' value='Noncommercial usage is ok if 3Name3D name and logo &lt;www.ballreich.net/vrml/HAnim/small_logo.gif> is present and proper credit is given.'/>
       </MetadataSet>
       <HAnimJoint DEF='hanim_humanoid_root' center='0.0 0.8240 0.0277' containerField='skeleton' name='humanoid_root'>
         <HAnimSegment DEF='hanim_sacrum' name='sacrum'>
