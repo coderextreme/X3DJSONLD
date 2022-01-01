@@ -313,50 +313,50 @@ Recommended tool:
                       not(local-name(..)='IntegerTrigger'	and	(local-name()='set_boolean' or local-name()='triggerValue'))
                       " />
         <xsl:variable name="notDefaultFieldValue1"
-                      select="not( local-name()='bboxCenter'	and	(.='0 0 0' or .='0.0 0.0 0.0')) and
-                      not( local-name()='bboxSize'	and	(.='-1 -1 -1' or .='-1.0 -1.0 -1.0')) and
-                      not( local-name()='bboxDisplay' and .='false') and
-                      not( local-name()='castShadow' and .='true') and
-                      not( local-name()='channelCountMode' and .='max') and
-                      not( local-name()='channelInterpretation' and .='speakers') and
-                      not( local-name()='detune' and (.='0' or .='0.0')) and
-                      not( local-name()='enabled' and .='true') and
-                      not( local-name()='gain' and (.='1' or .='1.0')) and
-                      not( local-name()='load' and .='true') and
-                      not( local-name()='loop' and .='false') and
+                      select="not( local-name()='bboxCenter'	and	(string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) and
+                      not( local-name()='bboxSize'	and	(string(.)='-1 -1 -1' or string(.)='-1.0 -1.0 -1.0')) and
+                      not( local-name()='bboxDisplay' and string(.)='false') and
+                      not( local-name()='castShadow' and string(.)='true') and
+                      not( local-name()='channelCountMode' and string(.)='max') and
+                      not( local-name()='channelInterpretation' and string(.)='speakers') and
+                      not( local-name()='detune' and (string(.)='0' or string(.)='0.0')) and
+                      not( local-name()='enabled' and string(.)='true') and
+                      not( local-name()='gain' and (string(.)='1' or string(.)='1.0')) and
+                      not( local-name()='load' and string(.)='true') and
+                      not( local-name()='loop' and string(.)='false') and
                       not( local-name()='farDistance'  and (string(.)='-1' or string(.)='-1.0')) and
                       not( local-name()='nearDistance' and (string(.)='-1' or string(.)='-1.0')) and
-                      not( local-name()='pitch' and (.='1' or .='1.0')) and
-                      not( local-name()='startTime' and (.='0' or .='0.0')) and
-                      not( local-name()='stopTime' and (.='0' or .='0.0')) and
-                      not( local-name()='pauseTime' and (.='0' or .='0.0')) and
-                      not( local-name()='resumeTime'  and (.='0' or .='0.0')) and
-                      not( local-name()='qualityFactor'  and (.='1' or .='1.0')) and
-                      not( local-name()='autoRefresh' and (.='0' or .='0.0')) and
-                      not( local-name()='autoRefreshTimeLimit' and (.='3600' or .='3600.0')) and
-                      not( local-name()='tailTime' and (.='0' or .='0.0')) and
-                      not( local-name()='shadows' and .='false') and
-                      not( local-name()='shadowIntensity' and (.='1' or .='1.0')) and
-                      not( local-name()='visible' and .='true') and
+                      not( local-name()='pitch' and (string(.)='1' or string(.)='1.0')) and
+                      not( local-name()='startTime' and (string(.)='0' or string(.)='0.0')) and
+                      not( local-name()='stopTime' and (string(.)='0' or string(.)='0.0')) and
+                      not( local-name()='pauseTime' and (string(.)='0' or string(.)='0.0')) and
+                      not( local-name()='resumeTime'  and (string(.)='0' or string(.)='0.0')) and
+                      not( local-name()='qualityFactor'  and (string(.)='1' or string(.)='1.0')) and
+                      not( local-name()='autoRefresh' and (string(.)='0' or string(.)='0.0')) and
+                      not( local-name()='autoRefreshTimeLimit' and (string(.)='3600' or string(.)='3600.0')) and
+                      not( local-name()='tailTime' and (string(.)='0' or string(.)='0.0')) and
+                      not( local-name()='shadows' and string(.)='false') and
+                      not( local-name()='shadowIntensity' and (string(.)='1' or string(.)='1.0')) and
+                      not( local-name()='visible' and string(.)='true') and
                       not( local-name(..)='AudioClip'	and
-                      ((local-name()='loop' and .='false') or
-                      (local-name()='pitch' and (.='1' or .='1.0')) or
-                      (local-name()='startTime' and (.='0' or .='0.0')) or
-                      (local-name()='stopTime' and (.='0' or .='0.0')) or
-                      (local-name()='pauseTime' and (.='0' or .='0.0')) or
-                      (local-name()='resumeTime'  and (.='0' or .='0.0')))) and
-                      not( (local-name(..)='Appearance') and ((local-name()='alphaMode' and (.='AUTO')) or (local-name()='alphaCutoff' and (.='0.5' or .='.5')))) and
-                      not( ((local-name(..)='Background') or (local-name(..)='TextureBackground')) and ((local-name()='skyColor' and (.='0 0 0' or .='0.0 0.0 0.0')) or (local-name()='transparency' and (.='0' or .='0.0')))) and
-                      not( local-name(..)='Billboard'	and local-name()='axisOfRotation' and (.='0 1 0' or .='0.0 1.0 0.0')) and
-                      not( local-name(..)='BooleanToggle' and local-name()='toggle' and .='false') and
-                      not( local-name(..)='Box'	and ((local-name()='size' and (.='2 2 2' or .='2.0 2.0 2.0')) or (local-name()='solid' and .='true'))) and
-                      not( local-name(..)='Collision'	and local-name()='enabled' and .='true') and
+                      ((local-name()='loop' and string(.)='false') or
+                      (local-name()='pitch' and (string(.)='1' or string(.)='1.0')) or
+                      (local-name()='startTime' and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='stopTime' and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='pauseTime' and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='resumeTime'  and (string(.)='0' or string(.)='0.0')))) and
+                      not( (local-name(..)='Appearance') and ((local-name()='alphaMode' and (string(.)='AUTO')) or (local-name()='alphaCutoff' and (string(.)='0.5' or string(.)='.5')))) and
+                      not( ((local-name(..)='Background') or (local-name(..)='TextureBackground')) and ((local-name()='skyColor' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or (local-name()='transparency' and (string(.)='0' or string(.)='0.0')))) and
+                      not( local-name(..)='Billboard'	and local-name()='axisOfRotation' and (string(.)='0 1 0' or string(.)='0.0 1.0 0.0')) and
+                      not( local-name(..)='BooleanToggle' and local-name()='toggle' and string(.)='false') and
+                      not( local-name(..)='Box'	and ((local-name()='size' and (string(.)='2 2 2' or string(.)='2.0 2.0 2.0')) or (local-name()='solid' and string(.)='true'))) and
+                      not( local-name(..)='Collision'	and local-name()='enabled' and string(.)='true') and
                       not( local-name(..)='Cone' and	
-                      ((local-name()='bottomRadius' and (.='1' or .='1.0')) or
-                      (local-name()='height' and (.='2' or .='2.0')) or
-                      (local-name()='side' and .='true') or
-                      (local-name()='solid' and .='true') or
-                      (local-name()='bottom' and .='true')))"/>
+                      ((local-name()='bottomRadius' and (string(.)='1' or string(.)='1.0')) or
+                      (local-name()='height' and (string(.)='2' or string(.)='2.0')) or
+                      (local-name()='side' and string(.)='true') or
+                      (local-name()='solid' and string(.)='true') or
+                      (local-name()='bottom' and string(.)='true')))"/>
         <xsl:variable name="notDefaultFieldValue1a"
                       select="not( local-name(..)='Cylinder' and
                       ((local-name()='height' and (string(.)='2' or string(.)='2.0')) or
@@ -433,7 +433,7 @@ Recommended tool:
                       (local-name()='solid' and string(.)='true') or
                       (local-name()='creaseAngle' and (string(.)='0' or string(.)='0.0')))) and
                       not( local-name(..)='IndexedLineSet' and local-name()='colorPerVertex' and string(.)='true') and
-                      not( local-name(..)='Inline' and ((local-name()='load' and .='true') or (local-name()='global' and .='false'))) and
+                      not( local-name(..)='Inline' and ((local-name()='load' and string(.)='true') or (local-name()='global' and string(.)='false'))) and
                       not( local-name(..)='LoadSensor' and
                       ((local-name()='enabled' and string(.)='true') or
                       (local-name()='timeOut' and (string(.)='0' or string(.)='0.0')))) and
@@ -458,10 +458,10 @@ Recommended tool:
                       (local-name()='backSpecularColor' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                       (local-name()='backTransparency' and (string(.)='0' or string(.)='0.0')))) and
                       not(ends-with(local-name(..),'Material')	and
-                      ((ends-with(local-name(),'Mapping') and (string-length(.) = 0)) or
+                      ((ends-with(local-name(),'Mapping') and (string-length(string(.)) = 0)) or
                       (local-name()='baseColor' and ((string(.)='1 1 1') or (string(.)='1. 1. 1.') or (string(.)='1.0 1.0 1.0'))) or
-                      (ends-with(local-name(),'Mapping') and (string-length(.) = 0)) or
-                      (local-name()='emissiveColor' and (.='0 0 0' or .='0.0 0.0 0.0')) or
+                      (ends-with(local-name(),'Mapping') and (string-length(string(.)) = 0)) or
+                      (local-name()='emissiveColor' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                       (local-name()='metallic' and ((string(.)='1') or (string(.)='1.') or (string(.)='1.0'))) or
                       (local-name()='normalScale' and ((string(.)='1') or (string(.)='1.') or (string(.)='1.0'))) or
                       (local-name()='occlusionStrength' and ((string(.)='1') or (string(.)='1.') or (string(.)='1.0'))) or
@@ -580,8 +580,8 @@ Recommended tool:
                       ((local-name()='centerOfRotation' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                       (local-name()='fieldOfView' and ((string(.)='0.785398') or (string(.)='0.7854') or (string(.)='.785398') or (string(.)='.7854'))) or
                       (local-name()='jump' and string(.)='true') or
-                      (local-name()='viewAll' and .='false') or
-                      ((local-name()='nearClippingPlane' or local-name()='farClippingPlane') and ((.='-1') or (.='-1.') or (.='-1.0'))) or
+                      (local-name()='viewAll' and string(.)='false') or
+                      ((local-name()='nearClippingPlane' or local-name()='farClippingPlane') and ((string(.)='-1') or (string(.)='-1.') or (string(.)='-1.0'))) or
                       (local-name()='orientation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
                       (local-name()='retainUserOffsets' and (string(.)='false')) or
                       (local-name()='position' and (string(.)='0 0 10' or string(.)='0.0 0.0 10.0')))) and
@@ -594,10 +594,10 @@ Recommended tool:
                       (local-name()='isActive' and string(.)='false')))" />
         <xsl:variable name="notDefaultFieldValue8"
                       select="not( local-name(..)='FillProperties' and
-                      ((local-name()='filled' and .='true') or
-                      (local-name()='hatched' and .='true') or
-                      (local-name()='hatchStyle' and (.='1' or .='1.0')) or
-                      (local-name()='hatchColor' and (.='1 1 1' or .='1.0 1.0 1.0')))) and
+                      ((local-name()='filled' and string(.)='true') or
+                      (local-name()='hatched' and string(.)='true') or
+                      (local-name()='hatchStyle' and (string(.)='1' or string(.)='1.0')) or
+                      (local-name()='hatchColor' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')))) and
                       not( local-name(..)='LineProperties' and
                       ((local-name()='applied' and string(.)='true') or
                       (local-name()='linetype' and (string(.)='1')) or
@@ -618,9 +618,9 @@ Recommended tool:
                       ((local-name()='alpha' and (string(.)='1' or string(.)='1.0')) or
                       (local-name()='color' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')))) and
                       not( contains(local-name(..),'Texture') and
-                      ((local-name() = 'mapping') and (string-length(.) = 0))) and
+                      ((local-name() = 'mapping') and (string-length(string(.)) = 0))) and
                       not( contains(local-name(..),'Texture') and
-                      ((local-name() = 'mapping') and (string-length(.) = 0))) and
+                      ((local-name() = 'mapping') and (string-length(string(.)) = 0))) and
                       not( local-name(..)='TextureCoordinateGenerator' and
                       ((local-name()='mode' and string(.)='SPHERE'))) and
                       not((local-name(..)='ComposedTexture3D' or local-name(..)='ImageTexture3D' or local-name(..)='PixelTexture3D') and
@@ -710,97 +710,97 @@ Recommended tool:
                         (local-name()='fieldOfView' and ((string(.)='0.785398') or (string(.)='0.7854') or (string(.)='.785398') or (string(.)='.7854')))))" />
         <xsl:variable name="notDefaultFieldValue10"
                       select="not( local-name(..)='AcousticProperties' and
-                      ((local-name()='containerField' and .='acousticProperties') or
-                      (local-name()='absorption' and (.='0' or .='0.0')) or
-                      (local-name()='diffuse' and (.='0' or .='0.0')) or
-                      (local-name()='refraction' and (.='0' or .='0.0')) or
-                      (local-name()='specular' and (.='0' or .='0.0')))) and
+                      ((local-name()='containerField' and string(.)='acousticProperties') or
+                      (local-name()='absorption' and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='diffuse' and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='refraction' and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='specular' and (string(.)='0' or string(.)='0.0')))) and
                       not( local-name(..)='Analyser' and
-                      ((local-name()='containerField' and .='children') or
-                      (local-name()='frequencyBinCount' and (.='1024' or .='1024.0')) or
-                      (local-name()='fftSize' and (.='2048' or .='2048.0')) or
-                      (local-name()='minDecibels' and (.='-100' or .='-100.0')) or
-                      (local-name()='maxDecibels' and (.='-30' or .='-30.0')) or
-                      (local-name()='smoothingTimeConstant' and (.='.8' or .='0.8')))) and
+                      ((local-name()='containerField' and string(.)='children') or
+                      (local-name()='frequencyBinCount' and (string(.)='1024' or string(.)='1024.0')) or
+                      (local-name()='fftSize' and (string(.)='2048' or string(.)='2048.0')) or
+                      (local-name()='minDecibels' and (string(.)='-100' or string(.)='-100.0')) or
+                      (local-name()='maxDecibels' and (string(.)='-30' or string(.)='-30.0')) or
+                      (local-name()='smoothingTimeConstant' and (string(.)='.8' or string(.)='0.8')))) and
                       not( local-name(..)='BufferAudioSource' and
-                      ((local-name()='containerField' and .='children') or
-                      (local-name()='bufferDuration' and (.='0' or .='0.0')) or
-                      (local-name()='type' and (.='lowpass')) or
-                      (local-name()='loopStart' and (.='0' or .='0.0')) or
-                      (local-name()='loopEnd' and (.='0' or .='0.0')) or
-                      (local-name()='numberOfChannels' and .='0') or
-                      (local-name()='playbackRate' and (.='1' or .='1.0')) or
-                      (local-name()='sampleRate' and (.='0' or .='0.0')))) and
+                      ((local-name()='containerField' and string(.)='children') or
+                      (local-name()='bufferDuration' and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='type' and (string(.)='lowpass')) or
+                      (local-name()='loopStart' and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='loopEnd' and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='numberOfChannels' and string(.)='0') or
+                      (local-name()='playbackRate' and (string(.)='1' or string(.)='1.0')) or
+                      (local-name()='sampleRate' and (string(.)='0' or string(.)='0.0')))) and
                       not( local-name(..)='AudioDestination' and
-                      ((local-name()='containerField' and .='children') or
-                      (local-name()='maxChannelCount' and (.='2')))) and   
+                      ((local-name()='containerField' and string(.)='children') or
+                      (local-name()='maxChannelCount' and (string(.)='2')))) and   
                       not( local-name(..)='BiquadFilter' and
-                      ((local-name()='containerField' and .='children') or
-                      (local-name()='frequency' and (.='350' or .='350.0')) or
-                      (local-name()='qualityFactor' and (.='1' or .='1.0')) or
-                      (local-name()='type' and (.='lowpass')))) and
+                      ((local-name()='containerField' and string(.)='children') or
+                      (local-name()='frequency' and (string(.)='350' or string(.)='350.0')) or
+                      (local-name()='qualityFactor' and (string(.)='1' or string(.)='1.0')) or
+                      (local-name()='type' and (string(.)='lowpass')))) and
                       not( local-name(..)='ChannelMerger' and
-                      ((local-name()='containerField' and .='children'))) and
+                      ((local-name()='containerField' and string(.)='children'))) and
                       not( local-name(..)='ChannelSelector' and
-                      ((local-name()='containerField' and .='children') or
-                      (local-name()='channelSelection' and (.='0')))) and
+                      ((local-name()='containerField' and string(.)='children') or
+                      (local-name()='channelSelection' and (string(.)='0')))) and
                       not( local-name(..)='ChannelSplitter' and
-                      ((local-name()='containerField' and .='children'))) and
+                      ((local-name()='containerField' and string(.)='children'))) and
                       not( local-name(..)='Convolver' and
-                      ((local-name()='containerField' and .='children') or
-                      (local-name()='normalize' and (.='false')))) and
+                      ((local-name()='containerField' and string(.)='children') or
+                      (local-name()='normalize' and (string(.)='false')))) and
                       not( local-name(..)='Delay' and
-                      ((local-name()='containerField' and .='children') or
-                      (local-name()='delayTime' and (.='0' or .='0.0')) or
-                      (local-name()='maxDelayTime' and (.='1' or .='1.0')))) and
+                      ((local-name()='containerField' and string(.)='children') or
+                      (local-name()='delayTime' and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='maxDelayTime' and (string(.)='1' or string(.)='1.0')))) and
                       not( local-name(..)='DynamicsCompressor' and
-                      ((local-name()='containerField' and .='children') or
-                      (local-name()='attack' and (.='0.003' or .='.003')) or
-                      (local-name()='gain' and (.='1' or .='1.0')) or
-                      (local-name()='knee' and (.='30' or .='30.0')) or
-                      (local-name()='ratio' and (.='12' or .='12.0')) or
-                      (local-name()='release' and (.='.25' or .='0.25')) or
-                      (local-name()='threshold' and (.='-24' or .='-24.0')))) and
+                      ((local-name()='containerField' and string(.)='children') or
+                      (local-name()='attack' and (string(.)='0.003' or string(.)='.003')) or
+                      (local-name()='gain' and (string(.)='1' or string(.)='1.0')) or
+                      (local-name()='knee' and (string(.)='30' or string(.)='30.0')) or
+                      (local-name()='ratio' and (string(.)='12' or string(.)='12.0')) or
+                      (local-name()='release' and (string(.)='.25' or string(.)='0.25')) or
+                      (local-name()='threshold' and (string(.)='-24' or string(.)='-24.0')))) and
                       not( local-name(..)='Gain' and
-                      ((local-name()='containerField' and .='children'))) and
+                      ((local-name()='containerField' and string(.)='children'))) and
                       not( local-name(..)='ListenerPointSource' and
-                      ((local-name()='containerField' and .='children') or
-                      (local-name()='dopplerEnabled' and (.='false')) or
-                      (local-name()='interauralDistance' and (.='0' or .='0.0')) or
-                      (local-name()='orientation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
-                      (local-name()='position' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                      (local-name()='trackCurrentView' and (.='false')))) and
+                      ((local-name()='containerField' and string(.)='children') or
+                      (local-name()='dopplerEnabled' and (string(.)='false')) or
+                      (local-name()='interauralDistance' and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='orientation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
+                      (local-name()='position' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                      (local-name()='trackCurrentView' and (string(.)='false')))) and
                       not( local-name(..)='MicrophoneSource' and
-                      ((local-name()='containerField' and .='children'))) and
+                      ((local-name()='containerField' and string(.)='children'))) and
                       not( local-name(..)='OscillatorSource' and
-                      ((local-name()='containerField' and .='children') or
-                      (local-name()='frequency' and (.='0' or .='0.0')))) and
+                      ((local-name()='containerField' and string(.)='children') or
+                      (local-name()='frequency' and (string(.)='0' or string(.)='0.0')))) and
                       not( local-name(..)='PeriodicWave' and
-                      ((local-name()='containerField' and .='children') or
-                      (local-name()='type' and (.='square')))) and
+                      ((local-name()='containerField' and string(.)='children') or
+                      (local-name()='type' and (string(.)='square')))) and
                       not( local-name(..)='SpatialSound' and
-                      ((local-name()='containerField' and .='children') or
-                      (local-name()='coneInnerAngle' and (.='6.2832')) or
-                      (local-name()='coneOuterAngle' and (.='6.2832')) or
-                      (local-name()='coneOuterGain' and (.='0' or .='0.0')) or
-                      (local-name()='direction' and (.='0 0 1' or .='0.0 0.0 1.0')) or
-                      (local-name()='distanceModel' and (.='inverse')) or
-                      (local-name()='dopplerEnabled' and (.='false')) or
-                      (local-name()='enableHRTF' and (.='false')) or
-                      (local-name()='intensity' and (.='1' or .='1.0')) or
-                      (local-name()='location' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                      (local-name()='maxDistance' and (.='10000' or .='10000.0')) or
-                      (local-name()='priority' and (.='0' or .='0.0')) or
-                      (local-name()='referenceDistance' and (.='1' or .='1.0')) or
-                      (local-name()='rolloffFactor' and (.='1' or .='1.0')) or
-                      (local-name()='spatialize' and (.='true')))) and
+                      ((local-name()='containerField' and string(.)='children') or
+                      (local-name()='coneInnerAngle' and (string(.)='6.2832')) or
+                      (local-name()='coneOuterAngle' and (string(.)='6.2832')) or
+                      (local-name()='coneOuterGain' and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='direction' and (string(.)='0 0 1' or string(.)='0.0 0.0 1.0')) or
+                      (local-name()='distanceModel' and (string(.)='inverse')) or
+                      (local-name()='dopplerEnabled' and (string(.)='false')) or
+                      (local-name()='enableHRTF' and (string(.)='false')) or
+                      (local-name()='intensity' and (string(.)='1' or string(.)='1.0')) or
+                      (local-name()='location' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                      (local-name()='maxDistance' and (string(.)='10000' or string(.)='10000.0')) or
+                      (local-name()='priority' and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='referenceDistance' and (string(.)='1' or string(.)='1.0')) or
+                      (local-name()='rolloffFactor' and (string(.)='1' or string(.)='1.0')) or
+                      (local-name()='spatialize' and (string(.)='true')))) and
                       not( local-name(..)='StreamAudioDestination' and
-                      ((local-name()='containerField' and .='children'))) and
+                      ((local-name()='containerField' and string(.)='children'))) and
                       not( local-name(..)='StreamAudioSource' and
-                      ((local-name()='containerField' and .='children'))) and
+                      ((local-name()='containerField' and string(.)='children'))) and
                       not( local-name(..)='WaveShaper' and
-                      ((local-name()='containerField' and .='children') or
-                      (local-name()='oversample' and (.='none'))))" />
+                      ((local-name()='containerField' and string(.)='children') or
+                      (local-name()='oversample' and (string(.)='none'))))" />
         <xsl:variable name="notDefaultContainerField1"
                       select="not((local-name()='containerField' and string(.)='children')	and
                       (contains(local-name(..),'Interpolator') or
@@ -916,7 +916,7 @@ Recommended tool:
                       select="not((starts-with(local-name(..),'Geo') or (local-name(..)='EspduTransform') or contains(local-name(..),'Pdu')) and 
                       ((local-name()='geoCenter' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                        (local-name()='geoCoords' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
-                       (local-name()='geoSystem' and (translate(.,',','')='&quot;GD&quot; &quot;WE&quot;')))) and
+                       (local-name()='geoSystem' and (translate(string(.),',','')='&quot;GD&quot; &quot;WE&quot;')))) and
                       not(local-name(..)='GeoLOD' 	  and 
                       ((local-name()='range' and (string(.)='10' or string(.)='10.0')) or
                        (local-name()='center' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')))) and
@@ -924,17 +924,17 @@ Recommended tool:
                       ((local-name()='speedFactor' and (string(.)='1' or string(.)='1.0')) or
 						(local-name()='headlight' and (string(.)='true')) or
 						(local-name()='jump' and (string(.)='true')) or
-                        (local-name()='viewAll' and .='false') or
-                        ((local-name()='nearClippingPlane' or local-name()='farClippingPlane') and ((.='-1') or (.='-1.') or (.='-1.0'))) or
+                        (local-name()='viewAll' and string(.)='false') or
+                        ((local-name()='nearClippingPlane' or local-name()='farClippingPlane') and ((string(.)='-1') or (string(.)='-1.') or (string(.)='-1.0'))) or
 						(local-name()='navType' and (string(.)='&quot;EXAMINE&quot; &quot;ANY&quot;')) or
 						(local-name()='orientation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
 						(local-name()='position' and (string(.)='0 0 100000' or string(.)='0.0 0.0 100000.0')) or
                         (local-name()='fieldOfView' and (string(.)='0.785398' or string(.)='.785398' or string(.)='0.7854' or string(.)='.7854')) or
-                        (local-name()='geoSystem' and (translate(.,',','')='&quot;GD&quot; &quot;WE&quot;')))) and
+                        (local-name()='geoSystem' and (translate(string(.),',','')='&quot;GD&quot; &quot;WE&quot;')))) and
                       not((local-name(..)='GeoCoordinate' or local-name(..)='GeoOrigin') and
                       ((local-name()='rotateYUp' and (string(.)='false')) or
                       (local-name()='containerField' and (string(.)='geoOrigin')) or
-                      (local-name()='geoSystem' and (translate(.,',','')='&quot;GD&quot; &quot;WE&quot;'))))" />
+                      (local-name()='geoSystem' and (translate(string(.),',','')='&quot;GD&quot; &quot;WE&quot;'))))" />
         <xsl:variable name="isHAnim1" select="$isX3D3 and ancestor-or-self::*[local-name() = 'HAnimHumanoid'][starts-with(@version,'1') or (string-length(@version) = 0)]"/>
         <xsl:variable name="isHAnim2" select="$isX3D4 and ancestor-or-self::*[local-name() = 'HAnimHumanoid'][starts-with(@version,'2')] and not($isHAnim1 = true())"/>
         <xsl:variable name="notDefaultHAnim1"
@@ -964,23 +964,23 @@ Recommended tool:
                        (local-name()='translation' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0'))))" />
         <xsl:variable name="notDefaultHAnim2"
                       select="not( local-name(..)='HAnimHumanoid' and
-                      ((local-name()='containerField' and (.='children')) or
-                       (local-name()='bboxCenter' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                       (local-name()='bboxSize' and (.='-1 -1 -1' or .='-1.0 -1.0 -1.0')) or
-                       (local-name()='center' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                       (local-name()='jointBindingPositions' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                       (local-name()='jointBindingRotations' and (.='0 0 1 0' or .='0 1 0 0' or .='0.0 0.0 1.0 0.0' or .='0.0 1.0 0.0 0.0')) or
-                       (local-name()='jointBindingScales' and (.='1 1 1' or .='1.0 1.0 1.0')) or
+                      ((local-name()='containerField' and (string(.)='children')) or
+                       (local-name()='bboxCenter' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                       (local-name()='bboxSize' and (string(.)='-1 -1 -1' or string(.)='-1.0 -1.0 -1.0')) or
+                       (local-name()='center' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                       (local-name()='jointBindingPositions' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                       (local-name()='jointBindingRotations' and (string(.)='0 0 1 0' or string(.)='0 1 0 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0.0 1.0 0.0 0.0')) or
+                       (local-name()='jointBindingScales' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')) or
                        (local-name()='loa' and (string(.)='-1')) or
-                       (local-name()='version' and (($isHAnim1 = true() and (string(.)='1.0' or (string-length(.) = 0))) or ($isHAnim2 = true() and string(.)='2.0'))) or
+                       (local-name()='version' and (($isHAnim1 = true() and (string(.)='1.0' or (string-length(string(.)) = 0))) or ($isHAnim2 = true() and string(.)='2.0'))) or
                        (local-name()='skeletalConfiguration' and (string(.)='BASIC')) or
-                       (local-name()='rotation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
-                       (local-name()='scale' and (.='1 1 1' or .='1.0 1.0 1.0')) or
-                       (local-name()='scaleOrientation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
-                       (local-name()='translation' and (.='0 0 0' or .='0.0 0.0 0.0')))) and
+                       (local-name()='rotation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
+                       (local-name()='scale' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')) or
+                       (local-name()='scaleOrientation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
+                       (local-name()='translation' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')))) and
                       not( local-name(..)='HAnimDisplacer' and
-                      ((local-name()='containerField' and (.='displacers')) or
-                       (local-name()='weight' and (.='0' or .='0.0')))) and
+                      ((local-name()='containerField' and (string(.)='displacers')) or
+                       (local-name()='weight' and (string(.)='0' or string(.)='0.0')))) and
                       not( local-name(..)='HAnimMotion' and
                       ((local-name()='containerField' and (string(.)='motions')) or
                        (local-name()='frameDuration' and (string(.)='0.1' or string(.)='.1')) or
@@ -1225,8 +1225,8 @@ Recommended tool:
                 $notDefaultContainerField1  and
                 $notDefaultContainerField2  and
                 $notDefaultContainerField3  and
-                not(local-name()='containerField' and .='') and
-                not(local-name()='class' and .='') and
+                not(local-name()='containerField' and string(.)='') and
+                not(local-name()='class' and string(.)='') and
                 $notFieldSpace and
                 ." >
         	<!--and not((local-name(../..)='Script' and local-name(..)='field') and (local-name()='xml:space' or local-name()='space')) -->
@@ -1267,75 +1267,75 @@ Recommended tool:
       <xsl:value-of select="."/>
       <xsl:text>"&gt;</xsl:text>
       <xsl:text>&lt;font color=&quot;purple&quot;&gt;</xsl:text>
-      <xsl:value-of select="normalize-space(.)" disable-output-escaping="yes"/>
+      <xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/>
       <xsl:text>&lt;/font&gt;</xsl:text>
       <xsl:text>&lt;/a&gt;</xsl:text>
     </xsl:when>
     <xsl:when test="local-name()='protoField' and (local-name(..)='connect')">
-      <xsl:text>&lt;font color=&quot;purple&quot;&gt;</xsl:text><xsl:value-of select="normalize-space(.)" disable-output-escaping="yes"/><xsl:text>&lt;/font&gt;</xsl:text>
+      <xsl:text>&lt;font color=&quot;purple&quot;&gt;</xsl:text><xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/><xsl:text>&lt;/font&gt;</xsl:text>
     </xsl:when>
     <xsl:when test="(local-name()='nodeField' and local-name(..)='connect' and local-name(../..)='IS' and local-name(../../..)='Script') or (local-name()='name' and local-name(..)='field' and local-name(../..)='Script')">
-      <xsl:text>&lt;font color=&quot;black&quot;&gt;</xsl:text><xsl:value-of select="normalize-space(.)" disable-output-escaping="yes"/><xsl:text>&lt;/font&gt;</xsl:text>
+      <xsl:text>&lt;font color=&quot;black&quot;&gt;</xsl:text><xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/><xsl:text>&lt;/font&gt;</xsl:text>
     </xsl:when>
     <!-- print out urls containing javascript source without further ado -->
-    <xsl:when test="(local-name()='url' and starts-with(normalize-space(.),'javascript:'))">
+    <xsl:when test="(local-name()='url' and starts-with(normalize-space(string(.)),'javascript:'))">
       <xsl:text>&lt;PRE&gt;</xsl:text>
-      <xsl:value-of select="normalize-space(.)" disable-output-escaping="yes"/>
+      <xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/>
       <xsl:text>&lt;/PRE&gt;</xsl:text> blah 
     </xsl:when>
     <!-- protect simple text references as is -->
-    <xsl:when test="(local-name(..)='meta') and (../@name='reference') and not(contains(.,'http://')) and not(contains(.,'https://')) and not(contains(.,'file:')) and contains(normalize-space(.),' ')">
-      <xsl:value-of select="normalize-space(.)" disable-output-escaping="yes"/></xsl:when>
+    <xsl:when test="(local-name(..)='meta') and (../@name='reference') and not(contains(string(.),'http://')) and not(contains(string(.),'https://')) and not(contains(string(.),'file:')) and contains(normalize-space(string(.)),' ')">
+      <xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/></xsl:when>
     <!-- make single url reference into actual A HREF= link -->
-    <xsl:when test="(local-name(..)='meta' and (../@name='url' or ../@name='filename' or ../@name='reference' or ../@name='drawing' or ../@name='image' or ../@name='map' or ../@name='chart' or ../@name='movie' or ../@name='photo' or ../@name='photograph' or ../@name='diagram' or ../@name='source' or contains(../@name,'permission')) and local-name()='content') and not(contains(normalize-space(.),' '))">
-      <xsl:text>&lt;a href=</xsl:text><xsl:value-of select="normalize-space(.)" disable-output-escaping="yes"/><xsl:text>&gt;</xsl:text><xsl:value-of select="normalize-space(.)" disable-output-escaping="yes"/><xsl:text>&lt;/a&gt;</xsl:text></xsl:when>
-<!-- <xsl:when test="(local-name(..)='meta' and (../@name='url' or ../@name='filename' or ../@name='reference' or ../@name='drawing' or ../@name='image' or ../@name='map' or ../@name='chart' or ../@name='movie' or ../@name='photo' or ../@name='photograph' or ../@name='diagram' or contains(../@name,'permission')) and local-name()='content') and starts-with(normalize-space(.),'&quot;') and not(contains(normalize-space(.),'&quot; &quot;')) and (contains(.,'.') or starts-with(normalize-space(.),'Makefile')) and not(substring(normalize-space(.),string-length(normalize-space(.))) = '.')">
-      <xsl:text>&lt;a href=</xsl:text><xsl:value-of select="normalize-space(.)" disable-output-escaping="yes"/><xsl:text>&gt;</xsl:text><xsl:value-of select="substring-before(substring-after(normalize-space(.),'&quot;'),'&quot;')" disable-output-escaping="yes"/><xsl:text>&lt;/a&gt;</xsl:text></xsl:when> -->
+    <xsl:when test="(local-name(..)='meta' and (../@name='url' or ../@name='filename' or ../@name='reference' or ../@name='drawing' or ../@name='image' or ../@name='map' or ../@name='chart' or ../@name='movie' or ../@name='photo' or ../@name='photograph' or ../@name='diagram' or ../@name='source' or contains(../@name,'permission')) and local-name()='content') and not(contains(normalize-space(string(.)),' '))">
+      <xsl:text>&lt;a href=</xsl:text><xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/><xsl:text>&gt;</xsl:text><xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/><xsl:text>&lt;/a&gt;</xsl:text></xsl:when>
+<!-- <xsl:when test="(local-name(..)='meta' and (../@name='url' or ../@name='filename' or ../@name='reference' or ../@name='drawing' or ../@name='image' or ../@name='map' or ../@name='chart' or ../@name='movie' or ../@name='photo' or ../@name='photograph' or ../@name='diagram' or contains(../@name,'permission')) and local-name()='content') and starts-with(normalize-space(string(.)),'&quot;') and not(contains(normalize-space(string(.)),'&quot; &quot;')) and (contains(string(.),'.') or starts-with(normalize-space(string(.)),'Makefile')) and not(substring(normalize-space(string(.)),string-length(normalize-space(string(.)))) = '.')">
+      <xsl:text>&lt;a href=</xsl:text><xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/><xsl:text>&gt;</xsl:text><xsl:value-of select="substring-before(substring-after(normalize-space(string(.)),'&quot;'),'&quot;')" disable-output-escaping="yes"/><xsl:text>&lt;/a&gt;</xsl:text></xsl:when> -->
     <!-- break and make multiple url references into actual A HREF= links -->
     <xsl:when test="(local-name()='url' or contains(local-name(), 'Url'))">
       <xsl:call-template name="URL-ize-MFString-elements">
-        <xsl:with-param name="list" select="normalize-space(.)"/>
+        <xsl:with-param name="list" select="normalize-space(string(.))"/>
       </xsl:call-template>
     </xsl:when>
     <xsl:when test="(local-name(..)='field' or local-name(..)='fieldValue') and (contains(../@name, 'Url') or contains(../@name, 'url')) and (local-name() = 'value')">
       <xsl:call-template name="URL-ize-MFString-elements">
-        <xsl:with-param name="list" select="normalize-space(.)"/>
+        <xsl:with-param name="list" select="normalize-space(string(.))"/>
       </xsl:call-template>
     </xsl:when>
-    <xsl:when test="(local-name(..)='meta' and (../@name='url' or ../@name='filename' or ../@name='reference' or ../@name='drawing' or ../@name='image' or ../@name='map' or ../@name='chart' or ../@name='movie' or ../@name='photo' or ../@name='photograph' or ../@name='diagram' or contains(../@name,'permission')) and local-name()='content') and starts-with(normalize-space(.),'&quot;') and contains(normalize-space(.),'&quot; &quot;')">
+    <xsl:when test="(local-name(..)='meta' and (../@name='url' or ../@name='filename' or ../@name='reference' or ../@name='drawing' or ../@name='image' or ../@name='map' or ../@name='chart' or ../@name='movie' or ../@name='photo' or ../@name='photograph' or ../@name='diagram' or contains(../@name,'permission')) and local-name()='content') and starts-with(normalize-space(string(.)),'&quot;') and contains(normalize-space(string(.)),'&quot; &quot;')">
       <xsl:call-template name="URL-ize-MFString-elements">
-        <xsl:with-param name="list" select="normalize-space(.)"/>
+        <xsl:with-param name="list" select="normalize-space(string(.))"/>
       </xsl:call-template>
     </xsl:when>
     <xsl:when test="(local-name(..)='field' or local-name(..)='ProtoDeclare' or local-name(..)='ExternProtoDeclare') and (local-name()='documentation')">
-      <xsl:text>&lt;a href="</xsl:text><xsl:value-of select="normalize-space(.)" disable-output-escaping="yes"/><xsl:text>"&gt;</xsl:text><xsl:value-of select="normalize-space(.)" disable-output-escaping="yes"/><xsl:text>&lt;/a&gt;</xsl:text>
+      <xsl:text>&lt;a href="</xsl:text><xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/><xsl:text>"&gt;</xsl:text><xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/><xsl:text>&lt;/a&gt;</xsl:text>
     </xsl:when>
-    <xsl:when test="starts-with(normalize-space(.),'http://') or starts-with(normalize-space(.),'https://')">
-      <xsl:text>&lt;a href="</xsl:text><xsl:value-of select="normalize-space(.)" disable-output-escaping="yes"/><xsl:text>"&gt;</xsl:text><xsl:value-of select="normalize-space(.)" disable-output-escaping="yes"/><xsl:text>&lt;/a&gt;</xsl:text>
+    <xsl:when test="starts-with(normalize-space(string(.)),'http://') or starts-with(normalize-space(string(.)),'https://')">
+      <xsl:text>&lt;a href="</xsl:text><xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/><xsl:text>"&gt;</xsl:text><xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/><xsl:text>&lt;/a&gt;</xsl:text>
     </xsl:when>
     <xsl:when test="(local-name(..)='meta' and local-name()='content') and (../@name='mail' or ../@name='email' or ../@name='e-mail' or ../@name='contact')">
       <xsl:text>&lt;a href="</xsl:text>
-      <xsl:if test="contains(.,'@') and not(contains(.,'mailto:'))">
+      <xsl:if test="contains(string(.),'@') and not(contains(string(.),'mailto:'))">
         <xsl:text>mailto:</xsl:text>
       </xsl:if>
-      <xsl:value-of select="normalize-space(.)" disable-output-escaping="yes"/>
+      <xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/>
       <xsl:text>"&gt;</xsl:text>
-      <xsl:value-of select="normalize-space(.)" disable-output-escaping="yes"/>
+      <xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/>
       <xsl:text>&lt;/a&gt;</xsl:text>
     </xsl:when>
-    <xsl:when test="(local-name(..)='meta' and local-name()='content') and (../@name='drawing' or ../@name='image' or ../@name='map' or ../@name='chart' or ../@name='movie' or ../@name='photo' or ../@name='photograph') and (contains(.,'http://') or contains(.,'https://') or contains(.,'file://') or not(contains(.,' ')))">
-      <xsl:text>&lt;a href="</xsl:text><xsl:value-of select="normalize-space(.)" disable-output-escaping="yes"/><xsl:text>"&gt;</xsl:text><xsl:value-of select="normalize-space(.)" disable-output-escaping="yes"/><xsl:text>&lt;/a&gt;</xsl:text>
+    <xsl:when test="(local-name(..)='meta' and local-name()='content') and (../@name='drawing' or ../@name='image' or ../@name='map' or ../@name='chart' or ../@name='movie' or ../@name='photo' or ../@name='photograph') and (contains(string(.),'http://') or contains(string(.),'https://') or contains(string(.),'file://') or not(contains(string(.),' ')))">
+      <xsl:text>&lt;a href="</xsl:text><xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/><xsl:text>"&gt;</xsl:text><xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/><xsl:text>&lt;/a&gt;</xsl:text>
     </xsl:when>
     <xsl:when test="(local-name(..)='meta' and local-name()='generator') and starts-with(.,'Xvl3ToX3d, ')">
       <xsl:variable name="containedUrl" select="substring-after(.,'Xvl3ToX3d, ')"/>
       <xsl:text>Xvl3ToX3d, </xsl:text>
       <xsl:text>&lt;a href="</xsl:text><xsl:value-of select="$containedUrl" disable-output-escaping="yes"/><xsl:text>" target="_blank"&gt;</xsl:text><xsl:value-of select="$containedUrl" disable-output-escaping="yes"/><xsl:text>&lt;/a&gt;</xsl:text>
     </xsl:when>
-    <xsl:when test="(local-name(..)='meta' and local-name()='content' and ../@name='generator') and (contains(.,'.') and (not(contains(.,' '))))">
-      <xsl:text>&lt;a href="</xsl:text><xsl:value-of select="normalize-space(.)" disable-output-escaping="yes"/><xsl:text>"&gt;</xsl:text><xsl:value-of select="normalize-space(.)" disable-output-escaping="yes"/><xsl:text>&lt;/a&gt;</xsl:text>
+    <xsl:when test="(local-name(..)='meta' and local-name()='content' and ../@name='generator') and (contains(string(.),'.') and (not(contains(string(.),' '))))">
+      <xsl:text>&lt;a href="</xsl:text><xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/><xsl:text>"&gt;</xsl:text><xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/><xsl:text>&lt;/a&gt;</xsl:text>
     </xsl:when>
     <xsl:when test="local-name()='url'">
-      <xsl:text>&lt;font color=&quot;black&quot;&gt;</xsl:text><xsl:value-of select="normalize-space(.)" disable-output-escaping="yes"/><xsl:text>&lt;/font&gt;</xsl:text>
+      <xsl:text>&lt;font color=&quot;black&quot;&gt;</xsl:text><xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/><xsl:text>&lt;/font&gt;</xsl:text>
     </xsl:when>
     <xsl:when test="local-name()='name' and (local-name(..)='field' or local-name(..)='fieldValue' or local-name(..)='ProtoDeclare' or local-name(..)='ExternProtoDeclare' or local-name(..)='ProtoInstance')">
       <xsl:if test="(local-name()='name') and (local-name(..)='ProtoDeclare')">
@@ -1344,7 +1344,7 @@ Recommended tool:
       <xsl:if test="(local-name()='name') and (local-name(..)='ExternProtoDeclare')">
          <xsl:text>&lt;a name=&quot;ExternProtoDeclare_</xsl:text><xsl:value-of select="."/><xsl:text>"&gt;</xsl:text>
       </xsl:if>
-      <xsl:text>&lt;font color=&quot;purple&quot;&gt;</xsl:text><xsl:value-of select="normalize-space(.)" disable-output-escaping="yes"/><xsl:text>&lt;/font&gt;</xsl:text>
+      <xsl:text>&lt;font color=&quot;purple&quot;&gt;</xsl:text><xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/><xsl:text>&lt;/font&gt;</xsl:text>
       <xsl:if test="(local-name()='name') and (local-name(..)='ProtoDeclare' or local-name(..)='ExternProtoDeclare')">
          <xsl:text>&lt;/a&gt;</xsl:text>
       </xsl:if>
@@ -1352,32 +1352,32 @@ Recommended tool:
     <xsl:when test="local-name()='DEF'">
       <xsl:text>&lt;a name=&quot;</xsl:text><xsl:value-of select="."/><xsl:text>"&gt;</xsl:text>
       <xsl:text>&lt;font color=&quot;maroon&quot;&gt;</xsl:text>
-      <xsl:value-of select="normalize-space(.)" disable-output-escaping="yes"/>
+      <xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/>
       <xsl:text>&lt;/font&gt;</xsl:text>
       <xsl:text>&lt;/a&gt;</xsl:text>
     </xsl:when>
     <xsl:when test="local-name()='USE' or (local-name(..)='ROUTE' and contains(local-name(),'Node')) or (local-name(..)='USE' and local-name()='node')">
       <xsl:text>&lt;a href=&quot;#</xsl:text><xsl:value-of select="."/><xsl:text>"&gt;</xsl:text>
       <xsl:text>&lt;font color=&quot;maroon&quot;&gt;</xsl:text>
-      <xsl:value-of select="normalize-space(.)" disable-output-escaping="yes"/>
+      <xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/>
       <xsl:text>&lt;/font&gt;</xsl:text>
       <xsl:text>&lt;/a&gt;</xsl:text>
     </xsl:when>    
     <xsl:when test="local-name()='IS'">
       <xsl:call-template name="format-IS-pairs">
-        <xsl:with-param name="list" select="normalize-space(.)"/>
+        <xsl:with-param name="list" select="normalize-space(string(.))"/>
       </xsl:call-template>
     </xsl:when>
     <!-- meta warning -->
-    <xsl:when test="local-name(..)='meta' and (local-name()='name' and .='warning') or (../@*[local-name()='name' and .='warning'])">
+    <xsl:when test="local-name(..)='meta' and (local-name()='name' and string(.)='warning') or (../@*[local-name()='name' and string(.)='warning'])">
       <!-- remove extraneous space for better formatting, even though this might obscure some content problems/preferences. -->
-      <xsl:text>&lt;b&gt;&lt;font color=&quot;#cc5500&quot;&gt;</xsl:text><xsl:value-of select="normalize-space(.)"/><xsl:text>&lt;/font&gt;&lt;/b&gt;</xsl:text>
+      <xsl:text>&lt;b&gt;&lt;font color=&quot;#cc5500&quot;&gt;</xsl:text><xsl:value-of select="normalize-space(string(.))"/><xsl:text>&lt;/font&gt;&lt;/b&gt;</xsl:text>
     </xsl:when>
     <xsl:otherwise>
       <!-- remove extraneous space for better formatting, even though this might obscure some content problems/preferences. -->
-      <xsl:text>&lt;font color=&quot;teal&quot;&gt;</xsl:text><xsl:value-of select="normalize-space(.)"/><xsl:text>&lt;/font&gt;</xsl:text>
+      <xsl:text>&lt;font color=&quot;teal&quot;&gt;</xsl:text><xsl:value-of select="normalize-space(string(.))"/><xsl:text>&lt;/font&gt;</xsl:text>
     </xsl:otherwise>
- <!-- <xsl:text></xsl:text><xsl:value-of select="normalize-space(.)"/></xsl:otherwise> -->
+ <!-- <xsl:text></xsl:text><xsl:value-of select="normalize-space(string(.))"/></xsl:otherwise> -->
   </xsl:choose>
   <xsl:text>&lt;b&gt;&apos;&lt;/b&gt;</xsl:text>
   <xsl:if test="contains(local-name(), 'Url')"><xsl:text>&lt;br /&gt;&#10;</xsl:text></xsl:if><!--  -->
@@ -1473,7 +1473,7 @@ Recommended tool:
 <!-- ****** XML comments ****** -->
 <xsl:template match="comment()">
 <!-- wrap comment in blanks in case it ends with hyphen, since - is not a valid comment terminator -->
-<xsl:text>&amp;lt;!-- </xsl:text><xsl:value-of select="normalize-space(.)"/><xsl:text> --&amp;gt;</xsl:text>
+<xsl:text>&amp;lt;!-- </xsl:text><xsl:value-of select="normalize-space(string(.))"/><xsl:text> --&amp;gt;</xsl:text>
 <xsl:text>&#10;</xsl:text><xsl:text> </xsl:text>
 <!-- *** need test for last -->
 <xsl:text>&lt;br /&gt;&#10;</xsl:text>
@@ -1489,7 +1489,7 @@ Recommended tool:
 
 
 <!-- ****** Script node:  preserve CDATA delimiters ****** -->
-<xsl:template match="Script[text() and not (normalize-space(.)='' or normalize-space(.)=' ')]">
+<xsl:template match="Script[text() and not (normalize-space(string(.))='' or normalize-space(string(.))=' ')]">
   <!-- first tag name -->
   <xsl:text>&amp;lt;&lt;font color=&quot;navy&quot;&gt;</xsl:text><xsl:value-of select="local-name()"/><xsl:text>&lt;/font&gt;</xsl:text>
   <!-- next attributes, if any -->
@@ -1500,12 +1500,12 @@ Recommended tool:
   <xsl:text>&lt;b&gt;&amp;lt;![CDATA[&lt;/b&gt;&#10;</xsl:text>
       <xsl:for-each select="text()">
         <xsl:choose>
-           <xsl:when test="(normalize-space(.)='' or normalize-space(.)=' ') and preceding::field"></xsl:when><!--<xsl:text>// stripped LF before field&#10;</xsl:text> -->
-           <xsl:when test="(normalize-space(.)='' or normalize-space(.)=' ') and following::field"></xsl:when><!--<xsl:text>// stripped LF after  field&#10;</xsl:text> -->
+           <xsl:when test="(normalize-space(string(.))='' or normalize-space(string(.))=' ') and preceding::field"></xsl:when><!--<xsl:text>// stripped LF before field&#10;</xsl:text> -->
+           <xsl:when test="(normalize-space(string(.))='' or normalize-space(string(.))=' ') and following::field"></xsl:when><!--<xsl:text>// stripped LF after  field&#10;</xsl:text> -->
            <!-- *** need to convert '<' to &lt; -->
            <xsl:otherwise>
            	<xsl:call-template name="escape-lessthan-characters">
-           	  <xsl:with-param name="inputString" select="."/>
+           	  <xsl:with-param name="inputValue" select="string(.)"/>
 		</xsl:call-template>
            </xsl:otherwise><!--translate(,'javascript:','')-->
         </xsl:choose>
@@ -1520,7 +1520,8 @@ Recommended tool:
 </xsl:template>
 
 <xsl:template name="escape-lessthan-characters"> <!-- &#60; is &lt; -->
-  <xsl:param name="inputString" select="0"/>
+        <xsl:param name="inputValue"><xsl:text><!-- default value is empty --></xsl:text></xsl:param>
+        <xsl:variable name="inputString" select="string($inputValue)"/>
   <!-- <xsl:text>//######&#10;</xsl:text> -->
   <!-- <xsl:text>### inputString received: </xsl:text><xsl:value-of select="$inputString"/><xsl:text>&#10;</xsl:text> -->
   <xsl:choose>
@@ -1528,7 +1529,7 @@ Recommended tool:
       <xsl:value-of select="substring-before($inputString,'&#60;')"/>
         <xsl:text>&amp;lt;</xsl:text>
         <xsl:call-template name="escape-lessthan-characters">
-          <xsl:with-param name="inputString" select="substring-after($inputString,'&#60;')"/>
+          <xsl:with-param name="inputValue" select="substring-after($inputString,'&#60;')"/>
         </xsl:call-template>
     </xsl:when>
     <xsl:otherwise>
@@ -1546,7 +1547,7 @@ Recommended tool:
     <xsl:value-of select="substring-before($inputString,'&#38;&#38;')"/>
     <xsl:text>&amp;amp;&amp;amp;</xsl:text>
       <xsl:call-template name="escape-lessthan-characters">
-        <xsl:with-param name="inputString" select="substring-after($inputString,'&#38;&#38;')"/>
+        <xsl:with-param name="inputValue" select="substring-after($inputString,'&#38;&#38;')"/>
       </xsl:call-template>
     <xsl:if test="substring-after($inputString,'&#38;&#38;')">
     </xsl:if>

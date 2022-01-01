@@ -74,7 +74,6 @@ Shape13.appearance = Appearance15;
 browser.currentScene.children[1] = Shape13;
 
 let SpatialSound18 = browser.currentScene.createNode("SpatialSound");
-SpatialSound18.dopplerEnabled = "false";
 let Analyser19 = browser.currentScene.createNode("Analyser");
 let AudioDestination20 = browser.currentScene.createNode("AudioDestination");
 let BiquadFilter21 = browser.currentScene.createNode("BiquadFilter");
@@ -94,7 +93,6 @@ WaveShaper30.children = new MFNode();
 WaveShaper30.children[0] = BufferAudioSource31;
 
 let ListenerPointSource32 = browser.currentScene.createNode("ListenerPointSource");
-ListenerPointSource32.dopplerEnabled = "false";
 WaveShaper30.children[1] = ListenerPointSource32;
 
 let MicrophoneSource33 = browser.currentScene.createNode("MicrophoneSource");

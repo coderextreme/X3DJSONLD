@@ -16,8 +16,8 @@
 <Material></Material>
 </Appearance>
 </Shape>
-<SpatialSound dopplerEnabled="false"><Analyser><AudioDestination><BiquadFilter><ChannelMerger><ChannelSelector><ChannelSplitter><Convolver><Delay><DynamicsCompressor><Gain><StreamAudioDestination><WaveShaper><!--The following X3DSoundSourceNode nodes have no audio-graph children--><BufferAudioSource></BufferAudioSource>
-<ListenerPointSource dopplerEnabled="false"></ListenerPointSource>
+<SpatialSound><Analyser><AudioDestination><BiquadFilter><ChannelMerger><ChannelSelector><ChannelSplitter><Convolver><Delay><DynamicsCompressor><Gain><StreamAudioDestination><WaveShaper><!--The following X3DSoundSourceNode nodes have no audio-graph children--><BufferAudioSource></BufferAudioSource>
+<ListenerPointSource></ListenerPointSource>
 <MicrophoneSource></MicrophoneSource>
 <OscillatorSource></OscillatorSource>
 <StreamAudioSource></StreamAudioSource>

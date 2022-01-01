@@ -107,7 +107,9 @@ newModel=X3D(profile='Immersive',version='4.0',
       field(name='top',type='MFString',accessType='inputOutput'),
       field(name='bottom',type='MFString',accessType='inputOutput'),
       field(name='set_fraction',type='SFFloat',accessType='inputOnly'),
-      field(name='old',type='SFInt32',accessType='inputOutput',value=-1)]),
+      field(name='old',type='SFInt32',accessType='inputOutput',value=-1)]
+*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+),
     # 
             <TimeSensor DEF="Clock" cycleInterval="45" loop='true'/>
             <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/>
@@ -132,7 +134,9 @@ newModel=X3D(profile='Immersive',version='4.0',
       field(name='c',type='SFFloat',accessType='inputOutput',value=20),
       field(name='d',type='SFFloat',accessType='inputOutput',value=20),
       field(name='tdelta',type='SFFloat',accessType='inputOutput',value=0),
-      field(name='pdelta',type='SFFloat',accessType='inputOutput',value=0)]),
+      field(name='pdelta',type='SFFloat',accessType='inputOutput',value=0)]
+*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+),
     TimeSensor(DEF='TourTime',cycleInterval=5,loop=True),
     ROUTE(fromNode='TourTime',fromField='fraction_changed',toNode='Animate',toField='set_fraction'),
     ROUTE(fromNode='Animate',fromField='a',toNode='x_ite',toField='a'),
@@ -155,8 +159,28 @@ newModel=X3D(profile='Immersive',version='4.0',
 
 if        metaDiagnostics(newModel): # built-in utility method in X3D class
     print(metaDiagnostics(newModel))
-print('check  newModel.XML() serialization...')
-newModelXML = newModel.XML() # test export method XML() for exceptions
-# print(newModelXML) # debug
+# print('check newModel.XML() serialization...')
+newModelXML= newModel.XML() # test export method XML() for exceptions during export
+newModel.XMLvalidate()
 
-print ("python x3d.py load successful for flowers7.py")
+try:
+#   print('check newModel.VRML() serialization...')
+    newModelVRML=newModel.VRML() # test export method VRML() for exceptions during export
+    # print(prependLineNumbers(newModelVRML)) # debug
+    print("Python-to-VRML export of VRML output successful (still testing)")
+except BaseException as err:
+    print("*** Python-to-VRML export of VRML output failed:", err)
+    if newModelVRML: # may have failed to generate
+        print(prependLineNumbers(newModelVRML, err.lineno))
+
+try:
+#   print('check newModel.JSON() serialization...')
+    newModelJSON=newModel.JSON() # test export method JSON() for exceptions during export
+#   print(prependLineNumbers(newModelJSON)) # debug
+    print("Python-to-JSON export of JSON output successful (still testing)")
+except SyntaxError as err:
+    print("*** Python-to-JSON export of JSON output failed:", err)
+    if newModelJSON: # may have failed to generate
+        print(prependLineNumbers(newModelJSON,err.lineno))
+
+print("python x3d.py load and self-test complete for flowers7.py")

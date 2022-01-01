@@ -35,7 +35,7 @@
     <Group DEF='Joe_Humanoid'>
       <HAnimHumanoid DEF='Joe_Human' name='Human' version='1.0'>
         <HAnimJoint DEF='Joe_HumanoidRoot' center='0 0.875 0' containerField='skeleton' name='HumanoidRoot'>
-          <MetadataSet name='warnings' reference='HAnim'>
+          <MetadataSet containerField='metadata' name='warnings' reference='HAnim'>
             <!-- TODO experimental -->
             <MetadataString containerField='value' name='SymmetricalLeftRight' reference='correction options: ignore, warn, average, left, right, largest, smallest' value='"ignore"'/>
           </MetadataSet>

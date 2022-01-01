@@ -394,7 +394,7 @@ Additional references of interest:
 				<xsl:text>"</xsl:text>
 				<!-- enumeration value: escape each quote character as \" -->
 				<xsl:call-template name="escape-quotes-recurse">
-					<xsl:with-param name="inputString" select="$xmlValue"/>
+					<xsl:with-param name="inputValue" select="$xmlValue"/>
 				</xsl:call-template>
 				<xsl:text>"</xsl:text>
 			</xsl:when>
@@ -403,7 +403,7 @@ Additional references of interest:
 				<!-- enumeration value: escape each quote character as \" -->
 				<xsl:text>"</xsl:text>
 				<xsl:call-template name="escape-quotes-recurse">
-					<xsl:with-param name="inputString" select="$xmlValue"/>
+					<xsl:with-param name="inputValue" select="$xmlValue"/>
 				</xsl:call-template>
 				<xsl:text>"</xsl:text>
 			</xsl:when>
@@ -468,7 +468,7 @@ Additional references of interest:
 			<xsl:when test="($x3dType = 'SFFloat')">
 				<!-- Java float constants have 'f' appended, e.g. 1.0f -->
 				<xsl:call-template name="append-f-to-float-values-recurse">
-					<xsl:with-param name="inputString" select="normalize-space($xmlValue)"/>
+					<xsl:with-param name="inputValue" select="normalize-space($xmlValue)"/>
 				</xsl:call-template>
 			</xsl:when>
 			 <!-- ======================================== -->
@@ -489,12 +489,12 @@ Additional references of interest:
 				<xsl:choose>
 					<xsl:when test="($x3dType = 'MFFloat')">
 						<xsl:call-template name="append-f-to-float-values-recurse">
-							<xsl:with-param name="inputString" select="normalize-space($xmlValue)"/>
+							<xsl:with-param name="inputValue" select="normalize-space($xmlValue)"/>
 						</xsl:call-template>
 					</xsl:when>
 					<xsl:otherwise>
 						<xsl:call-template name="append-zero-to-double-values-recurse">
-							<xsl:with-param name="inputString" select="normalize-space($xmlValue)"/>
+							<xsl:with-param name="inputValue" select="normalize-space($xmlValue)"/>
 						</xsl:call-template>
 					</xsl:otherwise>
 				</xsl:choose>
@@ -518,7 +518,7 @@ Additional references of interest:
 				<xsl:text>{</xsl:text>
 				<!-- Java float constants have 'f' appended, e.g. 1.0f -->
 				<xsl:call-template name="append-f-to-float-values-recurse">
-					<xsl:with-param name="inputString" select="normalize-space($xmlValue)"/>
+					<xsl:with-param name="inputValue" select="normalize-space($xmlValue)"/>
 				</xsl:call-template>
 				<xsl:text>}</xsl:text>
 			</xsl:when>
@@ -527,7 +527,7 @@ Additional references of interest:
 				<xsl:text>{</xsl:text>
 				<!-- Java float constants have 'f' appended, e.g. 1.0f -->
 				<xsl:call-template name="append-f-to-float-values-recurse">
-					<xsl:with-param name="inputString" select="normalize-space($xmlValue)"/>
+					<xsl:with-param name="inputValue" select="normalize-space($xmlValue)"/>
 				</xsl:call-template>
 				<xsl:text>}</xsl:text>
 			</xsl:when>
@@ -1400,7 +1400,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 									<xsl:with-param name="string">
 										<!-- xsl:text> debug: escape-javadoc-characters6 </xsl:text -->
 										<xsl:call-template name="escape-javadoc-characters">
-											<xsl:with-param name="inputString">
+											<xsl:with-param name="inputValue">
 												<xsl:value-of select="$tooltipText" disable-output-escaping="yes"/>
 											</xsl:with-param>
 										</xsl:call-template>
@@ -2457,7 +2457,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 													</xsl:if>
 													<xsl:text>&quot;</xsl:text>
 													<xsl:call-template name="escape-quote-characters"> <!-- tail recursion -->
-														<xsl:with-param name="inputString" select="@value"/>
+														<xsl:with-param name="inputValue" select="@value"/>
 													</xsl:call-template>
 													<xsl:text>&quot;</xsl:text>
 												</xsl:for-each>
@@ -2477,7 +2477,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 														<xsl:with-param name="string">
 															<!-- xsl:text> debug: escape-javadoc-characters0 </xsl:text -->
 															<xsl:call-template name="escape-javadoc-characters">
-																<xsl:with-param name="inputString">
+																<xsl:with-param name="inputValue">
 																	<xsl:value-of select="normalize-space(//SimpleType[@name = $currentBaseType]/@documentation)" disable-output-escaping="yes"/>
 																</xsl:with-param>
 															</xsl:call-template>
@@ -2495,7 +2495,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 													</xsl:if>
 													<xsl:text>&quot;</xsl:text>
 													<xsl:call-template name="escape-quotes-recurse"> <!-- tail recursion -->
-														<xsl:with-param name="inputString" select="@value"/>
+														<xsl:with-param name="inputValue" select="@value"/>
 													</xsl:call-template>
 													<xsl:text>&quot;</xsl:text>
 												</xsl:for-each>
@@ -2624,7 +2624,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 													<xsl:with-param name="string">
 														<!-- xsl:text> debug: escape-javadoc-characters0 </xsl:text -->
 														<xsl:call-template name="escape-javadoc-characters">
-															<xsl:with-param name="inputString">
+															<xsl:with-param name="inputValue">
 																<xsl:value-of select="normalize-space(@documentation)" disable-output-escaping="yes"/>
 															</xsl:with-param>
 														</xsl:call-template>
@@ -7059,7 +7059,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 												<xsl:with-param name="string">
 													<!-- xsl:text> debug: escape-javadoc-characters1 </xsl:text -->
 													<xsl:call-template name="escape-javadoc-characters">
-														<xsl:with-param name="inputString">
+														<xsl:with-param name="inputValue">
 															<xsl:value-of select="normalize-space(substring-after($fieldTooltip,']'))" disable-output-escaping="yes"/>
 														</xsl:with-param>
 													</xsl:call-template>
@@ -7876,7 +7876,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 												<xsl:with-param name="string">
 													<!-- xsl:text> debug: escape-javadoc-characters3 </xsl:text -->
 													<xsl:call-template name="escape-javadoc-characters">
-														<xsl:with-param name="inputString">
+														<xsl:with-param name="inputValue">
 															<xsl:value-of select="normalize-space(substring-after($fieldTooltip,']'))" disable-output-escaping="yes"/>
 														</xsl:with-param>
 													</xsl:call-template>
@@ -18817,9 +18817,9 @@ shall not include the underlying field's values at that point in time.
 			<xsl:variable name="fieldName" select="@type"/>
 			<xsl:variable name="regexEscaped">
                 <xsl:call-template name="escape-quote-characters"> <!-- tail recursion -->
-                    <xsl:with-param name="inputString">
+                    <xsl:with-param name="inputValue">
 						<xsl:call-template name="escape-backslash-characters"> <!-- tail recursion -->
-							<xsl:with-param name="inputString" select="@regex"/>
+							<xsl:with-param name="inputValue" select="@regex"/>
 						</xsl:call-template>
 					</xsl:with-param>
 				</xsl:call-template>
@@ -19311,9 +19311,9 @@ shall not include the underlying field's values at that point in time.
                     </xsl:variable>
                     <xsl:variable name="specialRegexEscaped">
                         <xsl:call-template name="escape-quote-characters"> <!-- tail recursion -->
-                            <xsl:with-param name="inputString">
+                            <xsl:with-param name="inputValue">
                                 <xsl:call-template name="escape-backslash-characters"> <!-- tail recursion -->
-                                    <xsl:with-param name="inputString" select="@regex"/>
+                                    <xsl:with-param name="inputValue" select="@regex"/>
                                 </xsl:call-template>
                             </xsl:with-param>
                         </xsl:call-template>
@@ -39891,9 +39891,10 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
 
 <!-- from BuildSpecificationLanguageBindingJava.xslt -->
 
-<xsl:template name="escape-quotes-recurse">
-  <xsl:param name="inputString"><xsl:text></xsl:text></xsl:param>
-  <xsl:param name="indent"><xsl:text></xsl:text></xsl:param>
+    <xsl:template name="escape-quotes-recurse">
+        <xsl:param name="indent"><xsl:text></xsl:text></xsl:param>
+        <xsl:param name="inputValue"><xsl:text><!-- default value is empty --></xsl:text></xsl:param>
+        <xsl:variable name="inputString" select="string($inputValue)"/>
   <xsl:choose>
     <xsl:when test="not(contains($inputString,'&quot;'))">
       <xsl:value-of select="$inputString"/>
@@ -39903,22 +39904,23 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
       <xsl:value-of select="substring-before($inputString,'&quot;')"/>
       <xsl:text>\&quot;</xsl:text>
       <xsl:call-template name="escape-quotes-recurse">
-        <xsl:with-param name="inputString" select="substring-after($inputString,'&quot;')"/>
+        <xsl:with-param name="inputValue" select="substring-after($inputString,'&quot;')"/>
       </xsl:call-template>
     </xsl:when>
     <xsl:otherwise>
       <xsl:value-of select="substring-before($inputString,'\&quot;')"/>
       <xsl:text>\&quot;</xsl:text>
       <xsl:call-template name="escape-quotes-recurse">
-        <xsl:with-param name="inputString" select="substring-after($inputString,'\&quot;')"/>
+        <xsl:with-param name="inputValue" select="substring-after($inputString,'\&quot;')"/>
       </xsl:call-template>
     </xsl:otherwise>
   </xsl:choose>
 </xsl:template>
 
 <xsl:template name="append-f-to-float-values-recurse">
-  <xsl:param name="inputString"><xsl:text></xsl:text></xsl:param>
   <xsl:param name="indent"><xsl:text></xsl:text></xsl:param>
+  <xsl:param name="inputValue"><xsl:text><!-- default value is empty --></xsl:text></xsl:param>
+ <xsl:variable name="inputString" select="string($inputValue)"/>
   <xsl:choose>
     <xsl:when test="not(string-length(normalize-space($inputString)) > 0)">
       <!-- empty value -->
@@ -39935,7 +39937,7 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
      <xsl:value-of select="substring-before($inputString,' ')"/>
       <xsl:text>f,</xsl:text>
       <xsl:call-template name="append-f-to-float-values-recurse">
-        <xsl:with-param name="inputString" select="normalize-space(substring-after($inputString,' '))"/>
+        <xsl:with-param name="inputValue" select="normalize-space(substring-after($inputString,' '))"/>
       </xsl:call-template>
     </xsl:when>
     <!-- comma precedes space -->
@@ -39943,7 +39945,7 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
       <xsl:value-of select="substring-before($inputString,',')"/>
       <xsl:text>f,</xsl:text>
       <xsl:call-template name="append-f-to-float-values-recurse">
-        <xsl:with-param name="inputString" select="normalize-space(substring-after($inputString,','))"/>
+        <xsl:with-param name="inputValue" select="normalize-space(substring-after($inputString,','))"/>
       </xsl:call-template>
     </xsl:otherwise>
   </xsl:choose>
@@ -39951,8 +39953,9 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
 
 <xsl:template name="append-zero-to-double-values-recurse">
   <!-- boxing of generics requires that double values be in double form, e.g. 0.0 vice 0 -->
-  <xsl:param name="inputString"><xsl:text></xsl:text></xsl:param>
   <xsl:param name="indent"><xsl:text></xsl:text></xsl:param>
+  <xsl:param name="inputValue"><xsl:text><!-- default value is empty --></xsl:text></xsl:param>
+ <xsl:variable name="inputString" select="string($inputValue)"/>
   <xsl:choose>
     <xsl:when test="not(string-length(normalize-space($inputString)) > 0)">
       <!-- empty value -->
@@ -39977,7 +39980,7 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
 	  </xsl:if>
 	  <xsl:text>,</xsl:text>
       <xsl:call-template name="append-zero-to-double-values-recurse">
-        <xsl:with-param name="inputString" select="normalize-space(substring-after($inputString,' '))"/>
+        <xsl:with-param name="inputValue" select="normalize-space(substring-after($inputString,' '))"/>
       </xsl:call-template>
     </xsl:when>
     <!-- comma precedes space -->
@@ -39991,7 +39994,7 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
 	  </xsl:if>
 	  <xsl:text>,</xsl:text>
       <xsl:call-template name="append-zero-to-double-values-recurse">
-        <xsl:with-param name="inputString" select="normalize-space(substring-after($inputString,','))"/>
+        <xsl:with-param name="inputValue" select="normalize-space(substring-after($inputString,','))"/>
       </xsl:call-template>
     </xsl:otherwise>
   </xsl:choose>
@@ -39999,9 +40002,10 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
 
 <xsl:template name="insert-javadoc-line-breaks-recurse">
   <!-- boxing of generics requires that double values be in double form, e.g. 0.0 vice 0 -->
-  <xsl:param name="inputString"><xsl:text></xsl:text></xsl:param>
   <xsl:param name="breakText1"><xsl:text></xsl:text></xsl:param>
   <xsl:param name="breakText2"><xsl:text></xsl:text></xsl:param>
+  <xsl:param name="inputValue"><xsl:text><!-- default value is empty --></xsl:text></xsl:param>
+ <xsl:variable name="inputString" select="string($inputValue)"/>
   <xsl:choose>
     <xsl:when test="not(string-length(normalize-space($inputString)) > 0)">
       <!-- empty string -->
@@ -40046,7 +40050,7 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
 				<xsl:value-of select="$preambleHint" disable-output-escaping="yes"/>
 				<xsl:text disable-output-escaping="yes"> &lt;/li&gt; </xsl:text>
 				<xsl:call-template name="insert-javadoc-line-breaks-recurse">
-				  <xsl:with-param name="inputString" select="normalize-space(substring-after($inputString,$preambleHint))"/>
+				  <xsl:with-param name="inputValue" select="normalize-space(substring-after($inputString,$preambleHint))"/>
 				  <xsl:with-param name="breakText1"  select="$breakText1"/>
 				  <xsl:with-param name="breakText2"  select="$breakText2"/>
 				</xsl:call-template>
@@ -40060,7 +40064,7 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
 				<xsl:value-of select="$preambleWarning" disable-output-escaping="yes"/>
 				<xsl:text disable-output-escaping="yes"> &lt;/li&gt; </xsl:text>
 				<xsl:call-template name="insert-javadoc-line-breaks-recurse">
-				  <xsl:with-param name="inputString" select="normalize-space(substring-after($inputString,$preambleWarning))"/>
+				  <xsl:with-param name="inputValue" select="normalize-space(substring-after($inputString,$preambleWarning))"/>
 				  <xsl:with-param name="breakText1"  select="$breakText1"/>
 				  <xsl:with-param name="breakText2"  select="$breakText2"/>
 				</xsl:call-template>
@@ -40095,7 +40099,7 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
 				<xsl:value-of select="$preambleHint" disable-output-escaping="yes"/>
 				<xsl:text disable-output-escaping="yes"> &lt;/li&gt; </xsl:text>
 				<xsl:call-template name="insert-javadoc-line-breaks-recurse">
-				  <xsl:with-param name="inputString" select="normalize-space(substring-after($inputString,$preambleHint))"/>
+				  <xsl:with-param name="inputValue" select="normalize-space(substring-after($inputString,$preambleHint))"/>
 				  <xsl:with-param name="breakText1"   select="$breakText1"/>
 				  <xsl:with-param name="breakText2"   select="$breakText2"/>
 				</xsl:call-template>
@@ -40109,7 +40113,7 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
 				<xsl:value-of select="$preambleWarning" disable-output-escaping="yes"/>
 				<xsl:text disable-output-escaping="yes"> &lt;/li&gt; </xsl:text>
 				<xsl:call-template name="insert-javadoc-line-breaks-recurse">
-				  <xsl:with-param name="inputString" select="normalize-space(substring-after($inputString,$preambleWarning))"/>
+				  <xsl:with-param name="inputValue" select="normalize-space(substring-after($inputString,$preambleWarning))"/>
 				  <xsl:with-param name="breakText1"   select="$breakText1"/>
 				  <xsl:with-param name="breakText2"   select="$breakText2"/>
 				</xsl:call-template>
@@ -40214,7 +40218,7 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
                     <xsl:when test="string-length(normalize-space(.)) > 0">
 						<!-- xsl:text> debug: escape-javadoc-characters4 </xsl:text -->
 						<xsl:call-template name="escape-javadoc-characters">
-							<xsl:with-param name="inputString">
+							<xsl:with-param name="inputValue">
 								<xsl:value-of select="." disable-output-escaping="yes"/>
 							</xsl:with-param>
 						</xsl:call-template>
@@ -40225,23 +40229,24 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
     </xsl:template>
 
     <xsl:template name="escape-javadoc-characters">
-        <xsl:param name="inputString"><xsl:text></xsl:text><!-- default value is empty --></xsl:param>
+        <xsl:param name="inputValue"><xsl:text><!-- default value is empty --></xsl:text></xsl:param>
+        <xsl:variable name="inputString" select="string($inputValue)"/>
 		<!-- don't escape apostrophes, that makes javadoc unhappy -->
 		<xsl:call-template name="escape-greaterthan-characters">
-			<xsl:with-param name="inputString">
+			<xsl:with-param name="inputValue">
 				<xsl:call-template name="escape-lessthan-characters">
-					<xsl:with-param name="inputString">
+					<xsl:with-param name="inputValue">
 						<!-- do not escape-quote-characters!
 						<xsl:call-template name="escape-quote-characters">
-								<xsl:with-param name="inputString">
+								<xsl:with-param name="inputValue">
 								</xsl:with-param>
 						</xsl:call-template>
 						-->
                             <xsl:call-template name="escape-tilde-characters">
-                                <xsl:with-param name="inputString">
+                                <xsl:with-param name="inputValue">
 									<!-- NOTE keep escape-ampersand-characters innermost so it doesn't get overzealous about escaped apostrophes or less-than characters -->
 									<xsl:call-template name="escape-ampersand-characters">
-										<xsl:with-param name="inputString" select="$inputString"/>
+										<xsl:with-param name="inputValue" select="$inputString"/>
 									</xsl:call-template>
 								</xsl:with-param>
                             </xsl:call-template>
@@ -40252,7 +40257,8 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
     </xsl:template>
 
     <xsl:template name="escape-lessthan-characters">
-        <xsl:param name="inputString"><xsl:text></xsl:text><!-- default value is empty --></xsl:param>
+        <xsl:param name="inputValue"><xsl:text><!-- default value is empty --></xsl:text></xsl:param>
+        <xsl:variable name="inputString" select="string($inputValue)"/>
         <!-- debug:  <xsl:text>//######&#10;</xsl:text> -->
         <!-- debug:  <xsl:message><xsl:text>### inputString received: </xsl:text><xsl:value-of select="$inputString"/></xsl:message> -->
         <xsl:choose>
@@ -40262,7 +40268,7 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
                 <xsl:text disable-output-escaping="no">&amp;</xsl:text>
                 <xsl:text disable-output-escaping="no">lt;</xsl:text>
                 <xsl:call-template name="escape-lessthan-characters"> <!-- tail recursion -->
-                    <xsl:with-param name="inputString" select="substring-after($inputString,'&#60;')"/>
+                    <xsl:with-param name="inputValue" select="substring-after($inputString,'&#60;')"/>
                 </xsl:call-template>
             </xsl:when>
             <xsl:otherwise>
@@ -40272,7 +40278,8 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
     </xsl:template>
 
     <xsl:template name="escape-greaterthan-characters">
-        <xsl:param name="inputString"><xsl:text></xsl:text><!-- default value is empty --></xsl:param>
+        <xsl:param name="inputValue"><xsl:text><!-- default value is empty --></xsl:text></xsl:param>
+        <xsl:variable name="inputString" select="string($inputValue)"/>
         <!-- debug:  <xsl:text>//######&#10;</xsl:text> -->
         <!-- debug:  <xsl:message><xsl:text>### inputString received: </xsl:text><xsl:value-of select="$inputString"/></xsl:message> -->
         <xsl:choose>
@@ -40282,7 +40289,7 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
                 <xsl:text disable-output-escaping="no">&amp;</xsl:text>
                 <xsl:text disable-output-escaping="no">gt;</xsl:text>
                 <xsl:call-template name="escape-greaterthan-characters"> <!-- tail recursion -->
-                    <xsl:with-param name="inputString" select="substring-after($inputString,'&#62;')"/>
+                    <xsl:with-param name="inputValue" select="substring-after($inputString,'&#62;')"/>
                 </xsl:call-template>
             </xsl:when>
             <xsl:otherwise>
@@ -40292,7 +40299,8 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
     </xsl:template>
 
     <xsl:template name="escape-quote-characters">
-        <xsl:param name="inputString"><xsl:text></xsl:text><!-- default value is empty --></xsl:param>
+        <xsl:param name="inputValue"><xsl:text><!-- default value is empty --></xsl:text></xsl:param>
+        <xsl:variable name="inputString" select="string($inputValue)"/>
         <!-- debug:  <xsl:text>//######&#10;</xsl:text> -->
         <!-- debug:  <xsl:message><xsl:text>### inputString received: </xsl:text><xsl:value-of select="$inputString"/></xsl:message> -->
         <xsl:choose>
@@ -40302,7 +40310,7 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
                 <xsl:text disable-output-escaping="no">&amp;</xsl:text>
                 <xsl:text disable-output-escaping="no">#34;</xsl:text>
                 <xsl:call-template name="escape-quote-characters"> <!-- tail recursion -->
-                    <xsl:with-param name="inputString" select="substring-after($inputString,'&#34;')"/>
+                    <xsl:with-param name="inputValue" select="substring-after($inputString,'&#34;')"/>
                 </xsl:call-template>
             </xsl:when>
             <xsl:otherwise>
@@ -40312,7 +40320,8 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
     </xsl:template>
 
     <xsl:template name="escape-backslash-characters">
-        <xsl:param name="inputString"><xsl:text></xsl:text><!-- default value is empty --></xsl:param>
+        <xsl:param name="inputValue"><xsl:text><!-- default value is empty --></xsl:text></xsl:param>
+        <xsl:variable name="inputString" select="string($inputValue)"/>
         <!-- debug:  <xsl:text>//######&#10;</xsl:text> -->
         <!-- debug:  <xsl:message><xsl:text>### inputString received: </xsl:text><xsl:value-of select="$inputString"/></xsl:message> -->
         <xsl:choose>
@@ -40320,7 +40329,7 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
                 <xsl:value-of select="substring-before($inputString,'\')" disable-output-escaping="yes"/>
                 <xsl:text disable-output-escaping="no">\\</xsl:text>
                 <xsl:call-template name="escape-backslash-characters"> <!-- tail recursion -->
-                    <xsl:with-param name="inputString" select="substring-after($inputString,'\')"/>
+                    <xsl:with-param name="inputValue" select="substring-after($inputString,'\')"/>
                 </xsl:call-template>
             </xsl:when>
             <xsl:otherwise>
@@ -40331,7 +40340,8 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
 
 
     <xsl:template name="escape-tilde-characters">
-        <xsl:param name="inputString"><xsl:text></xsl:text><!-- default value is empty --></xsl:param>
+        <xsl:param name="inputValue"><xsl:text><!-- default value is empty --></xsl:text></xsl:param>
+        <xsl:variable name="inputString" select="string($inputValue)"/>
         <!-- debug:  <xsl:text>//######&#10;</xsl:text> -->
         <!-- debug:  <xsl:message><xsl:text>### inputString received: </xsl:text><xsl:value-of select="$inputString"/></xsl:message> -->
         <xsl:choose>
@@ -40340,7 +40350,7 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
                 <xsl:text disable-output-escaping="yes">&amp;</xsl:text>
                 <xsl:text disable-output-escaping="no">#732;</xsl:text>
                 <xsl:call-template name="escape-backslash-characters"> <!-- tail recursion -->
-                    <xsl:with-param name="inputString" select="substring-after($inputString,'~')"/>
+                    <xsl:with-param name="inputValue" select="substring-after($inputString,'~')"/>
                 </xsl:call-template>
             </xsl:when>
             <xsl:otherwise>
@@ -40350,7 +40360,8 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
     </xsl:template>
 
     <xsl:template name="escape-ampersand-characters">
-        <xsl:param name="inputString"><xsl:text></xsl:text><!-- default value is empty --></xsl:param>
+        <xsl:param name="inputValue"><xsl:text><!-- default value is empty --></xsl:text></xsl:param>
+        <xsl:variable name="inputString" select="string($inputValue)"/>
         <!-- debug:  <xsl:text>//######&#10;</xsl:text> -->
         <!-- debug:  <xsl:text>### inputString received: </xsl:text><xsl:value-of select="$inputString"/><xsl:text>&#10;</xsl:text> -->
         <xsl:choose>
@@ -40363,7 +40374,7 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
                 <xsl:text disable-output-escaping="yes">amp;</xsl:text>
                <!-- <xsl:text disable-output-escaping="yes">amp;</xsl:text>-->
                 <xsl:call-template name="escape-ampersand-characters"> <!-- tail recursion -->
-                    <xsl:with-param name="inputString" select="substring-after($inputString,'&amp;amp;')"/>
+                    <xsl:with-param name="inputValue" select="substring-after($inputString,'&amp;amp;')"/>
                 </xsl:call-template>
             </xsl:when>
             <xsl:when test="contains($inputString,'&amp;')">
@@ -40371,7 +40382,7 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
                 <xsl:text disable-output-escaping="yes">&amp;</xsl:text>
                 <xsl:text disable-output-escaping="yes">amp;</xsl:text> 
                 <xsl:call-template name="escape-ampersand-characters"> <!-- tail recursion -->
-                    <xsl:with-param name="inputString" select="substring-after($inputString,'&amp;')"/>
+                    <xsl:with-param name="inputValue" select="substring-after($inputString,'&amp;')"/>
                 </xsl:call-template>
             </xsl:when>
 			<!-- enable to support debugging
@@ -40385,7 +40396,7 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
                 <xsl:text disable-output-escaping="yes">&amp;</xsl:text>
                 <xsl:text disable-output-escaping="yes">#38;</xsl:text>
                 <xsl:call-template name="escape-ampersand-characters">
-                    <xsl:with-param name="inputString" select="substring-after($inputString,'&amp;amp;')"/>
+                    <xsl:with-param name="inputValue" select="substring-after($inputString,'&amp;amp;')"/>
                 </xsl:call-template>
             </xsl:when>
             <xsl:when test="contains($inputString,'&amp;#') and not(contains(substring-before($inputString,'&amp;#'),'&amp;'))">
@@ -40393,7 +40404,7 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
                 <xsl:text disable-output-escaping="yes">&amp;</xsl:text>
                 <xsl:text disable-output-escaping="yes">amp;#</xsl:text>
                 <xsl:call-template name="escape-ampersand-characters">
-                    <xsl:with-param name="inputString" select="substring-after($inputString,'&amp;#')"/>
+                    <xsl:with-param name="inputValue" select="substring-after($inputString,'&amp;#')"/>
                 </xsl:call-template>
             </xsl:when> -->
             <xsl:otherwise>
@@ -40419,7 +40430,7 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
 							<xsl:text> * </xsl:text>
 							<xsl:text disable-output-escaping="yes">&lt;ul&gt;</xsl:text>
 							<xsl:call-template name="insert-javadoc-line-breaks-recurse">
-								<xsl:with-param name="inputString">
+								<xsl:with-param name="inputValue">
 									<xsl:value-of select="substring-after(normalize-space($tooltipText),$preambleHint)" disable-output-escaping="yes"/>
 								</xsl:with-param>
 								<xsl:with-param name="breakText1"><xsl:text>Hint:</xsl:text></xsl:with-param>
@@ -40435,7 +40446,7 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
 							<xsl:text> * </xsl:text>
 							<xsl:text disable-output-escaping="yes">&lt;ul&gt;</xsl:text>
 							<xsl:call-template name="insert-javadoc-line-breaks-recurse">
-								<xsl:with-param name="inputString">
+								<xsl:with-param name="inputValue">
 									<xsl:value-of select="substring-after(normalize-space($tooltipText),$preambleWarning)" disable-output-escaping="yes"/>
 								</xsl:with-param>
 								<xsl:with-param name="breakText1"><xsl:text>Hint:</xsl:text></xsl:with-param>
@@ -40450,7 +40461,7 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
 				<xsl:otherwise>
 					<!-- xsl:text> debug: escape-javadoc-characters5 </xsl:text -->
 					<xsl:call-template name="escape-javadoc-characters">
-						<xsl:with-param name="inputString">
+						<xsl:with-param name="inputValue">
 							<xsl:value-of select="$tooltipText" disable-output-escaping="yes"/>
 						</xsl:with-param>
 					</xsl:call-template>

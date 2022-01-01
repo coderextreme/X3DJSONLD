@@ -34,7 +34,7 @@ head1.meta[4] = meta6;
 
 meta meta7 = createNode("meta");
 meta7.name = "modified";
-meta7.content = "7 August 2021";
+meta7.content = "5 December 2021";
 head1.meta[5] = meta7;
 
 meta meta8 = createNode("meta");
@@ -90,8 +90,6 @@ children[2] = Background17;
 Viewpoint Viewpoint18 = createNode("Viewpoint");
 Viewpoint18.DEF = "Camera001";
 Viewpoint18.description = "Viewpoint is like camera, prepositioned in locations (and directions) of interest. In this example the camera is the \"ears of the user\". So, if the trackCurrentView field from ListenerPointSource is TRUE then position and orientation matches the users current view";
-Viewpoint18.farDistance = 0;
-Viewpoint18.nearDistance = 1;
 Viewpoint18.orientation = new SFRotation(new float[1,0,0,-0.523599]);
 Viewpoint18.position = new SFVec3f(new float[0,2000,3500]);
 children[3] = Viewpoint18;
@@ -165,7 +163,7 @@ Transform26.children[0] = Shape27;
 children[11] = Transform26;
 
 Transform Transform31 = createNode("Transform");
-Transform31.DEF = "Audio1Transform";
+Transform31.DEF = "TransformAudio1";
 Transform31.translation = new SFVec3f(new float[-933.123474,0,-926.253235]);
 Shape Shape32 = createNode("Shape");
 Appearance Appearance33 = createNode("Appearance");
@@ -204,6 +202,8 @@ Shape38.appearance = Appearance39;
 Text Text41 = createNode("Text");
 Text41.string = new MFString(new java.lang.String["Violin"]);
 FontStyle FontStyle42 = createNode("FontStyle");
+FontStyle42.DEF = "ModelFontStyle";
+FontStyle42.family = new MFString(new java.lang.String["Times","SERIF"]);
 FontStyle42.style = "BOLD";
 Text41.fontStyle = FontStyle42;
 
@@ -222,7 +222,7 @@ Transform31.children[1] = Billboard36;
 children[12] = Transform31;
 
 Transform Transform43 = createNode("Transform");
-Transform43.DEF = "Audio2";
+Transform43.DEF = "TransformAudio2";
 Transform43.translation = new SFVec3f(new float[933.475586,0,924.423218]);
 Shape Shape44 = createNode("Shape");
 Appearance Appearance45 = createNode("Appearance");
@@ -261,8 +261,7 @@ Shape50.appearance = Appearance51;
 Text Text53 = createNode("Text");
 Text53.string = new MFString(new java.lang.String["Saxophone"]);
 FontStyle FontStyle54 = createNode("FontStyle");
-FontStyle54.family = new MFString(new java.lang.String["Times"]);
-FontStyle54.style = "BOLD";
+FontStyle54.USE = "ModelFontStyle";
 Text53.fontStyle = FontStyle54;
 
 Shape50.geometry = Text53;
@@ -281,19 +280,15 @@ children[13] = Transform43;
 
 ListenerPointSource ListenerPointSource55 = createNode("ListenerPointSource");
 ListenerPointSource55.trackCurrentView = True;
-ListenerPointSource55.dopplerEnabled = "false";
 children[14] = ListenerPointSource55;
 
 StreamAudioDestination StreamAudioDestination56 = createNode("StreamAudioDestination");
 SpatialSound SpatialSound57 = createNode("SpatialSound");
 SpatialSound57.DEF = "Audio1";
-SpatialSound57.dopplerEnabled = "false";
 Gain Gain58 = createNode("Gain");
 AudioClip AudioClip59 = createNode("AudioClip");
+AudioClip59.description = "Violin";
 AudioClip59.loop = True;
-AudioClip59.pauseTime = -1;
-AudioClip59.resumeTime = -1;
-AudioClip59.stopTime = -1;
 AudioClip59.url = new MFString(new java.lang.String["sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"]);
 Gain58.children = new MFNode();
 
@@ -309,13 +304,10 @@ StreamAudioDestination56.children[0] = SpatialSound57;
 
 SpatialSound SpatialSound60 = createNode("SpatialSound");
 SpatialSound60.DEF = "Audio2";
-SpatialSound60.dopplerEnabled = "false";
 Gain Gain61 = createNode("Gain");
 AudioClip AudioClip62 = createNode("AudioClip");
+AudioClip62.description = "Saxophone";
 AudioClip62.loop = True;
-AudioClip62.pauseTime = -1;
-AudioClip62.resumeTime = -1;
-AudioClip62.stopTime = -1;
 AudioClip62.url = new MFString(new java.lang.String["sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"]);
 Gain61.children = new MFNode();
 

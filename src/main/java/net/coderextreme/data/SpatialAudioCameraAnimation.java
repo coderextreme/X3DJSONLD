@@ -50,7 +50,7 @@ public class SpatialAudioCameraAnimation {
         .addMeta(new meta().setName("info").setContent("This work presents an innovative solution of the spatial sound in X3DOM framework, that based on a combinational methodology. Specifically, we suggested the enrichment of X3DOM with spatial sound features, using both the X3D sound nodes and the structure of Web Audio API."))
         .addMeta(new meta().setName("creator").setContent("Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman"))
         .addMeta(new meta().setName("created").setContent("28 October 2020"))
-        .addMeta(new meta().setName("modified").setContent("7 August 2021"))
+        .addMeta(new meta().setName("modified").setContent("5 December 2021"))
         .addMeta(new meta().setName("reference").setContent("CHANGELOG.txt"))
         .addMeta(new meta().setName("TODO").setContent("credit for audio files"))
         .addMeta(new meta().setName("reference").setContent("https://www.medialab.hmu.gr/minipages/x3domAudio"))
@@ -61,7 +61,7 @@ public class SpatialAudioCameraAnimation {
         .addChild(new WorldInfo().setTitle("SpatialAudioCameraAnimation.x3d"))
         .addChild(new NavigationInfo())
         .addChild(new Background().setBackUrl(new MFString0().getArray()).setBottomUrl(new MFString1().getArray()).setFrontUrl(new MFString2().getArray()).setLeftUrl(new MFString3().getArray()).setRightUrl(new MFString4().getArray()).setTopUrl(new MFString5().getArray()))
-        .addChild(new Viewpoint().setDEF("Camera001").setDescription("Viewpoint is like camera, prepositioned in locations (and directions) of interest. In this example the camera is the \"ears of the user\". So, if the trackCurrentView field from ListenerPointSource is TRUE then position and orientation matches the users current view").setFarDistance(0f).setNearDistance(1f).setOrientation(new float[] {1f,0f,0f,-0.523599f}).setPosition(new float[] {0f,2000f,3500f}))
+        .addChild(new Viewpoint().setDEF("Camera001").setDescription("Viewpoint is like camera, prepositioned in locations (and directions) of interest. In this example the camera is the \"ears of the user\". So, if the trackCurrentView field from ListenerPointSource is TRUE then position and orientation matches the users current view").setOrientation(new float[] {1f,0f,0f,-0.523599f}).setPosition(new float[] {0f,2000f,3500f}))
         .addChild(new TimeSensor().setDEF("TIMER").setCycleInterval(33.333332d).setLoop(true))
         .addChild(new PositionInterpolator().setDEF("Camera001-POS-INTERP").setKey(new MFFloat6().getArray()).setKeyValue(new MFVec3f7().getArray()))
         .addChild(new OrientationInterpolator().setDEF("Camera001-ROT-INTERP").setKey(new MFFloat8().getArray()).setKeyValue(new MFRotation9().getArray()))
@@ -74,7 +74,7 @@ public class SpatialAudioCameraAnimation {
             .setAppearance(new Appearance().setDEF("WireColor")
               .setMaterial(new Material().setDiffuseColor(new float[] {0.122f,0.114f,0.125f})))
             .setGeometry(new Box().setSize(new float[] {2000f,1f,2000f}))))
-        .addChild(new Transform().setDEF("Audio1Transform").setTranslation(new float[] {-933.123474f,0f,-926.253235f})
+        .addChild(new Transform().setDEF("TransformAudio1").setTranslation(new float[] {-933.123474f,0f,-926.253235f})
           .addChild(new Shape()
             .setAppearance(new Appearance().setDEF("WireColor_1")
               .setMaterial(new Material().setDiffuseColor(new float[] {0.690196f,0.101961f,0.101961f})))
@@ -85,8 +85,8 @@ public class SpatialAudioCameraAnimation {
                 .setAppearance(new Appearance()
                   .setMaterial(new Material().setAmbientIntensity(0.0933f).setDiffuseColor(new float[] {1f,1f,1f}).setShininess(0.51f).setSpecularColor(new float[] {0.46f,0.46f,0.46f})))
                 .setGeometry(new Text().setString(new MFString10().getArray())
-                  .setFontStyle(new FontStyle().setStyle("BOLD")))))))
-        .addChild(new Transform().setDEF("Audio2").setTranslation(new float[] {933.475586f,0f,924.423218f})
+                  .setFontStyle(new FontStyle().setDEF("ModelFontStyle").setFamily(new MFString11().getArray()).setStyle("BOLD")))))))
+        .addChild(new Transform().setDEF("TransformAudio2").setTranslation(new float[] {933.475586f,0f,924.423218f})
           .addChild(new Shape()
             .setAppearance(new Appearance().setDEF("WireColor_2")
               .setMaterial(new Material().setDiffuseColor(new float[] {0.105882f,0.694118f,0.580392f})))
@@ -96,16 +96,16 @@ public class SpatialAudioCameraAnimation {
               .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(new Material().setAmbientIntensity(0.0933f).setDiffuseColor(new float[] {1f,1f,1f}).setShininess(0.51f).setSpecularColor(new float[] {0.46f,0.46f,0.46f})))
-                .setGeometry(new Text().setString(new MFString11().getArray())
-                  .setFontStyle(new FontStyle().setFamily(new MFString12().getArray()).setStyle("BOLD")))))))
+                .setGeometry(new Text().setString(new MFString12().getArray())
+                  .setFontStyle(new FontStyle().setUSE("ModelFontStyle")))))))
         .addChild(new ListenerPointSource().setTrackCurrentView(true))
         .addChild(new StreamAudioDestination()
           .addChild(new SpatialSound().setDEF("Audio1")
             .addChild(new Gain()
-              .addChild(new AudioClip().setLoop(true).setPauseTime(-1d).setResumeTime(-1d).setStopTime(-1d).setUrl(new MFString13().getArray()))))
+              .addChild(new AudioClip().setDescription("Violin").setLoop(true).setUrl(new MFString13().getArray()))))
           .addChild(new SpatialSound().setDEF("Audio2")
             .addChild(new Gain()
-              .addChild(new AudioClip().setLoop(true).setPauseTime(-1d).setResumeTime(-1d).setStopTime(-1d).setUrl(new MFString14().getArray()))))))      ;
+              .addChild(new AudioClip().setDescription("Saxophone").setLoop(true).setUrl(new MFString14().getArray()))))))      ;
     return X3D0;
     }
 protected class MFString0 {
@@ -165,12 +165,12 @@ protected class MFString10 {
 }
 protected class MFString11 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Saxophone"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Times","SERIF"});
   }
 }
 protected class MFString12 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Times"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Saxophone"});
   }
 }
 protected class MFString13 {

@@ -45,7 +45,9 @@ newModel=X3D(profile='Immersive',version='3.3',
       field(name='translation_changed',accessType='outputOnly',type='SFVec3f',value=(0,0,0)),
       field(name='translation',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
       field(name='velocity',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
-      field(name='set_fraction',accessType='inputOnly',type='SFTime')]),
+      field(name='set_fraction',accessType='inputOnly',type='SFTime')]
+*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+),
     TimeSensor(DEF='TourTime',cycleInterval=0.150,loop=True),
     ROUTE(fromNode='TourTime',fromField='cycleTime',toNode='Bounce2',toField='set_fraction'),
     ROUTE(fromNode='Bounce2',fromField='translation_changed',toNode='transform',toField='set_translation')])
@@ -57,8 +59,28 @@ newModel=X3D(profile='Immersive',version='3.3',
 
 if        metaDiagnostics(newModel): # built-in utility method in X3D class
     print(metaDiagnostics(newModel))
-print('check  newModel.XML() serialization...')
-newModelXML = newModel.XML() # test export method XML() for exceptions
-# print(newModelXML) # debug
+# print('check newModel.XML() serialization...')
+newModelXML= newModel.XML() # test export method XML() for exceptions during export
+newModel.XMLvalidate()
 
-print ("python x3d.py load successful for MyBounce.py")
+try:
+#   print('check newModel.VRML() serialization...')
+    newModelVRML=newModel.VRML() # test export method VRML() for exceptions during export
+    # print(prependLineNumbers(newModelVRML)) # debug
+    print("Python-to-VRML export of VRML output successful (still testing)")
+except BaseException as err:
+    print("*** Python-to-VRML export of VRML output failed:", err)
+    if newModelVRML: # may have failed to generate
+        print(prependLineNumbers(newModelVRML, err.lineno))
+
+try:
+#   print('check newModel.JSON() serialization...')
+    newModelJSON=newModel.JSON() # test export method JSON() for exceptions during export
+#   print(prependLineNumbers(newModelJSON)) # debug
+    print("Python-to-JSON export of JSON output successful (still testing)")
+except SyntaxError as err:
+    print("*** Python-to-JSON export of JSON output failed:", err)
+    if newModelJSON: # may have failed to generate
+        print(prependLineNumbers(newModelJSON,err.lineno))
+
+print("python x3d.py load and self-test complete for MyBounce.py")

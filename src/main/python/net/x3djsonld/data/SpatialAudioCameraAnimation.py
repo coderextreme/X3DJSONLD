@@ -86,17 +86,19 @@ newModel=X3D(profile='Full',version='4.0',
               material=Material(ambientIntensity=0.0933,diffuseColor=(1,1,1),shininess=0.51,specularColor=(0.46,0.46,0.46))),
             geometry=Text(string=["Saxophone"],
               fontStyle=FontStyle(family=["Times"],style_='BOLD')))])])]),
-    ListenerPointSource(id_='ListenerPointSource',trackCurrentView=true),
+    ListenerPointSource(id_='ListenerPointSource',trackCurrentView=True),
     StreamAudioDestination(id_='AudioDestination',
       children=[
       SpatialSound(DEF='Audio1',id_='SpatialSound1',
         children=[
         Gain(id_='Gain1',
-          source=AudioClip(id_='AudioClip1',loop=True,pauseTime=-1,resumeTime=-1,stopTime=-1,url=["sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"]))]),
+          children=[
+          AudioClip(id_='AudioClip1',loop=True,pauseTime=-1,resumeTime=-1,stopTime=-1,url=["sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"])])]),
       SpatialSound(DEF='Audio2',id_='SpatialSound2',
         children=[
         Gain(id_='Gain2',
-          source=AudioClip(id_='AudioClip2',loop=True,pauseTime=-1,resumeTime=-1,stopTime=-1,url=["sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"]))])])])
+          children=[
+          AudioClip(id_='AudioClip2',loop=True,pauseTime=-1,resumeTime=-1,stopTime=-1,url=["sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"])])])])])
 ) # X3D model complete
 
 ###############################################
@@ -105,8 +107,28 @@ newModel=X3D(profile='Full',version='4.0',
 
 if        metaDiagnostics(newModel): # built-in utility method in X3D class
     print(metaDiagnostics(newModel))
-print('check  newModel.XML() serialization...')
-newModelXML = newModel.XML() # test export method XML() for exceptions
-# print(newModelXML) # debug
+# print('check newModel.XML() serialization...')
+newModelXML= newModel.XML() # test export method XML() for exceptions during export
+newModel.XMLvalidate()
 
-print ("python x3d.py load successful for SpatialAudioCameraAnimation.py")
+try:
+#   print('check newModel.VRML() serialization...')
+    newModelVRML=newModel.VRML() # test export method VRML() for exceptions during export
+    # print(prependLineNumbers(newModelVRML)) # debug
+    print("Python-to-VRML export of VRML output successful (still testing)")
+except BaseException as err:
+    print("*** Python-to-VRML export of VRML output failed:", err)
+    if newModelVRML: # may have failed to generate
+        print(prependLineNumbers(newModelVRML, err.lineno))
+
+try:
+#   print('check newModel.JSON() serialization...')
+    newModelJSON=newModel.JSON() # test export method JSON() for exceptions during export
+#   print(prependLineNumbers(newModelJSON)) # debug
+    print("Python-to-JSON export of JSON output successful (still testing)")
+except SyntaxError as err:
+    print("*** Python-to-JSON export of JSON output failed:", err)
+    if newModelJSON: # may have failed to generate
+        print(prependLineNumbers(newModelJSON,err.lineno))
+
+print("python x3d.py load and self-test complete for SpatialAudioCameraAnimation.py")

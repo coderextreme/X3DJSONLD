@@ -86,7 +86,7 @@ newModel=X3D(profile='Immersive',version='3.2',
             connect(nodeField='bindTime',protoField='bindTime'),
             connect(nodeField='isBound',protoField='isBound')])),
         #  NavInfo EXAMINE used since some browsers (InstantReality) try to lock view to vertical when flying to avoid disorientation 
-        NavigationInfo(DEF='CameraNavInfo',type=["EXAMINE","FLY","ANY"],
+        NavigationInfo(DEF='CameraNavInfo',type='"EXAMINE" "FLY" "ANY"',
           IS=IS(
             connect=[
             connect(nodeField='set_bind',protoField='set_bind'),
@@ -177,7 +177,9 @@ newModel=X3D(profile='Immersive',version='3.2',
             connect(nodeField='isActive',protoField='isActive'),
             connect(nodeField='totalDuration',protoField='totalDuration'),
             connect(nodeField='offlineRender',protoField='offlineRender'),
-            connect(nodeField='traceEnabled',protoField='traceEnabled')])),
+            connect(nodeField='traceEnabled',protoField='traceEnabled')])
+*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+),
         ROUTE(fromField='position',fromNode='CameraScript',toField='position',toNode='CameraViewpoint'),
         ROUTE(fromField='orientation',fromNode='CameraScript',toField='orientation',toNode='CameraViewpoint'),
         ROUTE(fromField='isActive',fromNode='CameraScript',toField='set_bind',toNode='CameraViewpoint'),
@@ -235,7 +237,9 @@ newModel=X3D(profile='Immersive',version='3.2',
             connect(nodeField='initialFocusDistance',protoField='initialFocusDistance'),
             connect(nodeField='shotDuration',protoField='shotDuration'),
             connect(nodeField='isActive',protoField='isActive'),
-            connect(nodeField='traceEnabled',protoField='traceEnabled')]))]
+            connect(nodeField='traceEnabled',protoField='traceEnabled')])
+*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+)]
         #  Add any ROUTEs here, going from Script to other nodes within ProtoBody 
         )),
     #  =============== CameraMovement ============== 
@@ -286,7 +290,9 @@ newModel=X3D(profile='Immersive',version='3.2',
             connect(nodeField='goalFStop',protoField='goalFStop'),
             connect(nodeField='goalFocusDistance',protoField='goalFocusDistance'),
             connect(nodeField='isActive',protoField='isActive'),
-            connect(nodeField='traceEnabled',protoField='traceEnabled')]))]
+            connect(nodeField='traceEnabled',protoField='traceEnabled')])
+*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+)]
         #  Add any ROUTEs here, going from Script to other nodes within ProtoBody 
         )),
     #  =============== OfflineRender ============== 
@@ -334,7 +340,9 @@ newModel=X3D(profile='Immersive',version='3.2',
             connect(nodeField='renderCompleteTime',protoField='renderCompleteTime'),
             connect(nodeField='movieFormat',protoField='movieFormat'),
             connect(nodeField='imageFormat',protoField='imageFormat'),
-            connect(nodeField='traceEnabled',protoField='traceEnabled')]))]
+            connect(nodeField='traceEnabled',protoField='traceEnabled')])
+*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+)]
         #  Add any ROUTEs here, going from Script to other nodes within ProtoBody 
         )),
     #  =============== Launch Prototype Example ============== 
@@ -356,8 +364,28 @@ newModel=X3D(profile='Immersive',version='3.2',
 
 if        metaDiagnostics(newModel): # built-in utility method in X3D class
     print(metaDiagnostics(newModel))
-print('check  newModel.XML() serialization...')
-newModelXML = newModel.XML() # test export method XML() for exceptions
-# print(newModelXML) # debug
+# print('check newModel.XML() serialization...')
+newModelXML= newModel.XML() # test export method XML() for exceptions during export
+newModel.XMLvalidate()
 
-print ("python x3d.py load successful for CameraPrototypes.py")
+try:
+#   print('check newModel.VRML() serialization...')
+    newModelVRML=newModel.VRML() # test export method VRML() for exceptions during export
+    # print(prependLineNumbers(newModelVRML)) # debug
+    print("Python-to-VRML export of VRML output successful (still testing)")
+except BaseException as err:
+    print("*** Python-to-VRML export of VRML output failed:", err)
+    if newModelVRML: # may have failed to generate
+        print(prependLineNumbers(newModelVRML, err.lineno))
+
+try:
+#   print('check newModel.JSON() serialization...')
+    newModelJSON=newModel.JSON() # test export method JSON() for exceptions during export
+#   print(prependLineNumbers(newModelJSON)) # debug
+    print("Python-to-JSON export of JSON output successful (still testing)")
+except SyntaxError as err:
+    print("*** Python-to-JSON export of JSON output failed:", err)
+    if newModelJSON: # may have failed to generate
+        print(prependLineNumbers(newModelJSON,err.lineno))
+
+print("python x3d.py load and self-test complete for CameraPrototypes.py")

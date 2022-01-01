@@ -90,12 +90,12 @@ ExtrusionHeart.prototype = {
     .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
     .addMeta((new autoclass.meta()).setName("license").setContent("../license.html")))
   .setScene((new autoclass.Scene())
-    .addChild((new autoclass.Viewpoint()).setDescription("Extrusion Heart").setPosition(0.0,-4.0,0.0).setOrientation(1.0,0.0,0.0,1.57))
+    .addChild((new autoclass.Viewpoint()).setDescription("Extrusion Heart").setOrientation(1.0,0.0,0.0,1.57).setPosition(0.0,-4.0,0.0))
     .addChild((new autoclass.Transform()).setTranslation(0.0,-0.5,0.0)
       .addChild((new autoclass.Shape())
-        .setGeometry((new autoclass.Extrusion()).setSpine(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0,0.0,0.1,0.0,0.0,0.5,0.0,0.0,0.9,0.0,0.0,1.0,0.0]))).setCrossSection(new autoclass.MFVec2f() /* splitting up long array to improve readability */
+        .setGeometry((new autoclass.Extrusion()).setCreaseAngle(3.14159).setCrossSection(new autoclass.MFVec2f() /* splitting up long array to improve readability */
 .append(new autoclass.MFVec2f(java.newArray("float", [0.0,0.8,0.2,1.0,0.7,0.95,1.0,0.5,0.8,0.0,0.5,-0.3,0.0,-0.7,-0.5,-0.3,-0.8,0.0,-1.0,0.5])))
-.append(new autoclass.MFVec2f(java.newArray("float", [-0.7,0.95,-0.2,1.0,0.0,0.8])))).setScale(new autoclass.MFVec2f(java.newArray("float", [0.01,0.01,0.8,0.8,1.0,1.0,0.8,0.8,0.01,0.01]))).setCreaseAngle(3.14159).setSolid(false))
+.append(new autoclass.MFVec2f(java.newArray("float", [-0.7,0.95,-0.2,1.0,0.0,0.8])))).setScale(new autoclass.MFVec2f(java.newArray("float", [0.01,0.01,0.8,0.8,1.0,1.0,0.8,0.8,0.01,0.01]))).setSolid(false).setSpine(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0,0.0,0.1,0.0,0.0,0.5,0.0,0.0,0.9,0.0,0.0,1.0,0.0]))))
         .setAppearance((new autoclass.Appearance())
           .setMaterial((new autoclass.Material()).setDiffuseColor(0.8,0.3,0.3))))));
   },

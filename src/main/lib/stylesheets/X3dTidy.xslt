@@ -151,10 +151,10 @@ Recommended tools:
     </xsl:variable> 
     <!-- not used:  
     <xsl:variable name="fixableUrlFound"
-                  select="count(//*[(string-length(.) > 0) and 
-                                    ((not(contains(.,'&quot;'))) or 
-                                     (not(contains(.,'http') or contains(.,'https') or
-                                          contains(.,'ftp')  or contains(.,'sftp'))))]) > 0"/>
+                  select="count(//*[(string-length(string(.)) > 0) and 
+                                    ((not(contains(string(.),'&quot;'))) or 
+                                     (not(contains(string(.),'http') or contains(string(.),'https') or
+                                          contains(string(.),'ftp')  or contains(string(.),'sftp'))))]) > 0"/>
                                           
     and ($fixableUrlFound='true')-->
     <xsl:variable name="performUrlModifications"
@@ -939,7 +939,7 @@ Recommended tools:
             </xsl:choose>
         </xsl:variable>
         <xsl:choose>
-            <xsl:when test="(count(* | comment() | text()[string-length(normalize-space(.)) > 0]) > 0) or 
+            <xsl:when test="(count(* | comment() | text()[string-length(normalize-space(string(.))) > 0]) > 0) or 
                             (((local-name()='HAnimSegment') or (local-name()='HAnimSite')) and not(string-length(@USE) > 0) and 
                              (($HAnimSkeletonIllustrate='true') or ($HAnimSiteIllustrate='true')))">
                 <xsl:choose>
@@ -974,9 +974,9 @@ Recommended tools:
                             <!-- <xsl:attribute name="containerField"><xsl:text>metadata</xsl:text></xsl:attribute> Mantis -->
                                 
                                 <xsl:for-each select="tokenize(@info, '&quot;\s*(,)?\s*&quot;')">
-                                    <xsl:sort select="normalize-space(.)" order="ascending"/>
+                                    <xsl:sort select="normalize-space(string(.))" order="ascending"/>
                                     
-                                    <xsl:variable name="infoNameValuePair"  select="normalize-space(.)"/>
+                                    <xsl:variable name="infoNameValuePair"  select="normalize-space(string(.))"/>
                                     <!-- debug
                                     <xsl:message>
                                         <xsl:text>*** found info token...</xsl:text>
@@ -1066,9 +1066,9 @@ Recommended tools:
                             <!-- <xsl:attribute name="containerField"><xsl:text>metadata</xsl:text></xsl:attribute> Mantis -->
                                 
                                 <xsl:for-each select="tokenize(@summary, '&quot;\s*(,)?\s*&quot;')">
-                                    <xsl:sort select="normalize-space(.)" order="ascending"/>
+                                    <xsl:sort select="normalize-space(string(.))" order="ascending"/>
                                     
-                                    <xsl:variable name="summaryNameValuePair"  select="normalize-space(.)"/>
+                                    <xsl:variable name="summaryNameValuePair"  select="normalize-space(string(.))"/>
                                     <!-- debug
                                     <xsl:message>
                                         <xsl:text>*** found info token...</xsl:text>
@@ -1190,19 +1190,19 @@ Recommended tools:
 
                                 <xsl:for-each select="text()">
                                     <xsl:choose>
-                                        <xsl:when test="(normalize-space(.)='' or normalize-space(.)=' ') and preceding::field"></xsl:when><!--<xsl:text>// stripped LF before field&#10;</xsl:text> -->
-                                        <xsl:when test="(normalize-space(.)='' or normalize-space(.)=' ') and following::field"></xsl:when><!--<xsl:text>// stripped LF after  field&#10;</xsl:text> -->
-                                        <xsl:when test="starts-with(normalize-space(.),'ecmascript') or 
-                                                        starts-with(normalize-space(.),'javascript') or 
-                                                     (string-length(normalize-space(.)) > 1)">
+                                        <xsl:when test="(normalize-space(string(.))='' or normalize-space(string(.))=' ') and preceding::field"></xsl:when><!--<xsl:text>// stripped LF before field&#10;</xsl:text> -->
+                                        <xsl:when test="(normalize-space(string(.))='' or normalize-space(string(.))=' ') and following::field"></xsl:when><!--<xsl:text>// stripped LF after  field&#10;</xsl:text> -->
+                                        <xsl:when test="starts-with(normalize-space(string(.)),'ecmascript') or 
+                                                        starts-with(normalize-space(string(.)),'javascript') or 
+                                                     (string-length(normalize-space(string(.))) > 1)">
                                             <!-- avoid adding an additional line feed each time this code block is processed -->
                                             <xsl:choose>
-                                                <xsl:when test="starts-with(normalize-space(.),'ecmascript:')">
+                                                <xsl:when test="starts-with(normalize-space(string(.)),'ecmascript:')">
                                                     <xsl:text>ecmascript:</xsl:text>
                                                     <xsl:value-of select="substring-after(substring(.,1,$scriptLength),'ecmascript:')" disable-output-escaping="yes"/>
                                                 </xsl:when>
                                                 <!-- append missing colon -->
-                                                <xsl:when test="starts-with(normalize-space(.),'ecmascript ')">
+                                                <xsl:when test="starts-with(normalize-space(string(.)),'ecmascript ')">
                                                     <xsl:text>ecmascript:</xsl:text>
                                                     <xsl:value-of select="substring-after(substring(.,1,$scriptLength),'ecmascript')" disable-output-escaping="yes"/>
                                                     <xsl:message>
@@ -1211,11 +1211,11 @@ Recommended tools:
                                                         <xsl:text> CDATA prefix from 'ecmascript' to 'ecmascript:' </xsl:text>
                                                     </xsl:message>
                                                 </xsl:when>
-                                                <xsl:when test="(starts-with(normalize-space(.),'javascript') and ($changeJavascriptEcmascript = 'true')) and
+                                                <xsl:when test="(starts-with(normalize-space(string(.)),'javascript') and ($changeJavascriptEcmascript = 'true')) and
                                                                 (not(//meta[contains(@name,'Tidy')][contains(@content,'changeJavascriptEcmascript=false')]))">
                                                     <xsl:text>ecmascript:</xsl:text>
                                                     <xsl:choose>
-                                                        <xsl:when test="starts-with(normalize-space(.),'javascript:')">
+                                                        <xsl:when test="starts-with(normalize-space(string(.)),'javascript:')">
                                                             <xsl:value-of select="substring-after(substring(.,1,$scriptLength),'javascript:')" disable-output-escaping="yes"/>
                                                         </xsl:when>
                                                         <!-- otherwise started with javascript but no colon -->
@@ -1229,7 +1229,7 @@ Recommended tools:
                                                         <xsl:text> CDATA prefix from 'javascript:' to 'ecmascript:' </xsl:text>
                                                     </xsl:message>
                                                 </xsl:when>
-                                                <xsl:when test="not(starts-with(normalize-space(.),'ecmascript:') and ($insertMissingEcmascript = 'true')) and
+                                                <xsl:when test="not(starts-with(normalize-space(string(.)),'ecmascript:') and ($insertMissingEcmascript = 'true')) and
                                                                 (not(//meta[contains(@name,'Tidy')][contains(@content,'insertMissingEcmascript=false')]))">
                                                     <xsl:text>ecmascript:</xsl:text>
 
@@ -1242,7 +1242,7 @@ Recommended tools:
                                                 </xsl:when>
                                                 <xsl:otherwise>
                                                     <xsl:value-of select="." disable-output-escaping="yes"/>
-                                                    <xsl:if test="string-length(normalize-space(.)) > 0">
+                                                    <xsl:if test="string-length(normalize-space(string(.))) > 0">
                                                         <xsl:message>
                                                             <xsl:text>*** warning, </xsl:text>
                                                             <xsl:value-of select="$ScriptReference" disable-output-escaping="yes"/>
@@ -1253,14 +1253,14 @@ Recommended tools:
                                             </xsl:choose>
                                             <!--
                                             <xsl:call-template name="escape-lessthan-characters">
-                                                <xsl:with-param name="inputString" select=""/>
+                                                <xsl:with-param name="inputValue" select=""/>
                                             </xsl:call-template>
                                             -->
                                         </xsl:when>
                                         <!-- usable text found, need to convert '<' to &lt; -->
                                         <xsl:otherwise>
                                             <xsl:call-template name="escape-lessthan-characters">
-                                                <xsl:with-param name="inputString" select="."/>
+                                                <xsl:with-param name="inputValue" select="."/>
                                             </xsl:call-template>
                                         </xsl:otherwise>
                                     </xsl:choose>
@@ -1541,7 +1541,7 @@ Recommended tools:
                                     <xsl:when test="ancestor::HAnimHumanoid">
                                         <!-- handle only HAnim children of current node (including USE node), stripping Shape and Grouping nodes, etc. -->
                                         <xsl:apply-templates select="*[starts-with(local-name(),'HAnim')] | Viewpoint |
-                                                                     comment()[not(contains(.,'visualization shape')) and not(contains(.,'visualization sphere')) and not(contains(.,'visualization line segment'))]"/> <!--  | text() -->
+                                                                     comment()[not(contains(string(.),'visualization shape')) and not(contains(string(.),'visualization sphere')) and not(contains(string(.),'visualization line segment'))]"/> <!--  | text() -->
                                     </xsl:when>
                                     <xsl:otherwise>
                                         <!-- handle children of current node (including USE node) without special treatment -->
@@ -2467,8 +2467,8 @@ Recommended tools:
 
     <xsl:template match="@url | @backUrl | @frontUrl | @leftUrl | @rightUrl | @topUrl | @bottomUrl " >
         <xsl:variable name="result">
-            <xsl:variable name="containsQuote" select="contains(.,'&quot;')"/>
-            <xsl:variable name="quoteCount"    select="string-length(.) - string-length(translate(., '&quot;', ''))"/>
+            <xsl:variable name="containsQuote" select="contains(string(.),'&quot;')"/>
+            <xsl:variable name="quoteCount"    select="string-length(string(.)) - string-length(translate(string(.), '&quot;', ''))"/>
             <!-- debug
             <xsl:message>
                 <xsl:text>@</xsl:text>
@@ -2481,16 +2481,16 @@ Recommended tools:
                 <xsl:value-of select="$quoteCount"/>
             </xsl:message>
             -->
-            <xsl:variable name="isX3D" select="contains(.,'.x3d')  or contains(.,'.wrl') or contains(.,'.x3dv') or contains(.,'.x3db') or contains(.,'.json') or contains(.,'.x3de') or
-                                               contains(.,'.x3dz') or contains(.,'.wrz') or contains(.,'.x3d.gz') or contains(.,'.wrl.gz')"/>
+            <xsl:variable name="isX3D" select="contains(string(.),'.x3d')  or contains(string(.),'.wrl') or contains(string(.),'.x3dv') or contains(string(.),'.x3db') or contains(string(.),'.json') or contains(string(.),'.x3de') or
+                                               contains(string(.),'.x3dz') or contains(string(.),'.wrz') or contains(string(.),'.x3d.gz') or contains(string(.),'.wrl.gz')"/>
             <xsl:variable name="basepathname">
                 <xsl:choose>
                     <xsl:when test="not($isX3D)">
-                        <xsl:value-of select="translate(.,'&quot;','')"/>
+                        <xsl:value-of select="translate(string(.),'&quot;','')"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:call-template name="find-pathname-without-extension-if-x3d">
-                            <xsl:with-param name="pathname" select="translate(.,'&quot;','')"/>
+                            <xsl:with-param name="pathname" select="translate(string(.),'&quot;','')"/>
                         </xsl:call-template>
                     </xsl:otherwise>
                 </xsl:choose>
@@ -2500,15 +2500,15 @@ Recommended tools:
                 <xsl:text>$basepathname=</xsl:text>
                 <xsl:value-of select="$basepathname"/>
             </xsl:message> -->
-            <xsl:variable name="containsSimpleX3dBookmark" select="starts-with(normalize-space(.),'#') or starts-with(normalize-space(.),'&quot;#')"/>
+            <xsl:variable name="containsSimpleX3dBookmark" select="starts-with(normalize-space(string(.)),'#') or starts-with(normalize-space(string(.)),'&quot;#')"/>
             <xsl:variable name="X3dBookmark">
                 <xsl:choose>
-                    <xsl:when test="not(contains(.,'#'))">
+                    <xsl:when test="not(contains(string(.),'#'))">
                         <xsl:text></xsl:text><!-- default value is empty -->
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:text>#</xsl:text>
-                        <xsl:value-of select="substring-after(translate(., '&quot;', ''),'#')"/>
+                        <xsl:value-of select="substring-after(translate(string(.), '&quot;', ''),'#')"/>
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:variable>
@@ -2519,7 +2519,7 @@ Recommended tools:
             </xsl:message> -->
             <!-- X3dTidy fixUrlAdditionHttpAddresses -->
             <xsl:choose>
-                <xsl:when test="(string-length(normalize-space(.)) = 0)">
+                <xsl:when test="(string-length(normalize-space(string(.))) = 0)">
                     <!-- empty string: ignore attribute and return without creating output (thus matching canonical form) -->
                 </xsl:when>
                 <xsl:when test="(//meta[contains(@name,'Tidy')][contains(@content,'fixUrlAdditionHttpAddresses=false')])">
@@ -2527,14 +2527,14 @@ Recommended tools:
                 </xsl:when>
                 <xsl:when test="not($performUrlModifications) or not($fixUrlAdditionHttpAddresses='true') or
                                 (string-length($basepathname) = 0) or (string-length($defaultUrlLocation) = 0) or
-                                contains(.,'ecmascript:') or contains(.,'javascript:') or contains(.,'vrmlscript:') or
-                                contains(.,'http://') or contains(.,'https://') or contains(.,'ftp://') or contains(.,'sftp://') or contains(.,'mailto:')">
+                                contains(string(.),'ecmascript:') or contains(string(.),'javascript:') or contains(string(.),'vrmlscript:') or
+                                contains(string(.),'http://') or contains(string(.),'https://') or contains(string(.),'ftp://') or contains(string(.),'sftp://') or contains(string(.),'mailto:')">
                     <!-- this covers several base cases: no change in url -->
                     <xsl:text> </xsl:text>
                     <xsl:value-of select="local-name()"/>
                     <xsl:text>='</xsl:text>
                     <xsl:call-template name="escape-special-characters">
-                        <xsl:with-param name="inputString" select="."/>
+                        <xsl:with-param name="inputValue" select="."/>
                     </xsl:call-template>
                     <xsl:text>'</xsl:text>
                 </xsl:when>
@@ -2545,7 +2545,7 @@ Recommended tools:
                     <xsl:value-of select="local-name()"/>
                     <xsl:text>='</xsl:text>
                     <xsl:call-template name="escape-special-characters">
-                        <xsl:with-param name="inputString" select="."/>
+                        <xsl:with-param name="inputValue" select="."/>
                     </xsl:call-template>
                     <xsl:text>'</xsl:text>
                 </xsl:when>
@@ -2557,7 +2557,7 @@ Recommended tools:
                        <xsl:text>"</xsl:text>
                     </xsl:if>
                     <xsl:call-template name="escape-special-characters">
-                        <xsl:with-param name="inputString" select="."/>
+                        <xsl:with-param name="inputValue" select="."/>
                     </xsl:call-template>
                     <xsl:if test="not($containsQuote)">
                         <xsl:text>"</xsl:text>
@@ -2571,21 +2571,21 @@ Recommended tools:
                     <!-- similar output blocks found in @url, @* -->
                     <xsl:choose>
                         <!-- TODO test if this case is malformed, then maybe do not touch? -->
-                        <xsl:when test='contains(.,"&apos;") and not($containsQuote)'>
+                        <xsl:when test='contains(string(.),"&apos;") and not($containsQuote)'>
                             <xsl:text>" </xsl:text>
                             <xsl:call-template name="escape-special-characters">
-                                <xsl:with-param name="inputString" select="$basepathname"/>
+                                <xsl:with-param name="inputValue" select="$basepathname"/>
                             </xsl:call-template>
                             <xsl:text>"</xsl:text>
                         </xsl:when>
                         <!-- image, sound, movie or other non-X3D asset -->
-                        <xsl:when test="not(contains(.,'.wrl')) and not(contains(.,'.x3d'))">
+                        <xsl:when test="not(contains(string(.),'.wrl')) and not(contains(string(.),'.x3d'))">
                             <xsl:text>"</xsl:text>
                             <xsl:call-template name="escape-special-characters">
-                                <xsl:with-param name="inputString" select="$basepathname"/>
+                                <xsl:with-param name="inputValue" select="$basepathname"/>
                             </xsl:call-template>
                             <xsl:text>"</xsl:text>
-                            <xsl:if test="not(contains(.,'http://') or contains(.,'https://') or contains(.,'ftp://') or contains(.,'sftp://'))">
+                            <xsl:if test="not(contains(string(.),'http://') or contains(string(.),'https://') or contains(string(.),'ftp://') or contains(string(.),'sftp://'))">
                                 <xsl:text> "</xsl:text>
                                 <xsl:value-of select="$defaultUrlLocation"/>
                                 <xsl:value-of select="$basepathname"/>
@@ -2594,7 +2594,7 @@ Recommended tools:
                             <xsl:text>'</xsl:text>
                         </xsl:when>
                         <xsl:when test="not($containsQuote)">
-                            <xsl:if test="(substring(.,string-length(.)-3,4) = '.wrl') or (contains(.,'.wrl#')) and not(contains(.,'.x3d')) and 
+                            <xsl:if test="(substring(.,string-length(string(.))-3,4) = '.wrl') or (contains(string(.),'.wrl#')) and not(contains(string(.),'.x3d')) and 
                                           ($prependX3dBeforeWrlAddresses='true') and
                                           (not(//meta[contains(@name,'Tidy')][contains(@content,'prependX3dBeforeWrlAddresses=false')]))">
                                 <xsl:text>"</xsl:text>
@@ -2602,7 +2602,7 @@ Recommended tools:
                                 <xsl:text>.x3d</xsl:text>
                                 <xsl:value-of select="$X3dBookmark"/><!-- if any -->
                                 <xsl:text>"</xsl:text>
-                                <xsl:if test="($fixUrlAdditionHttpAddresses = 'true') and (string-length($defaultUrlLocation) > 0) and not(contains(.,':/'))">
+                                <xsl:if test="($fixUrlAdditionHttpAddresses = 'true') and (string-length($defaultUrlLocation) > 0) and not(contains(string(.),':/'))">
                                     <!-- append online address -->
                                     <xsl:text> "</xsl:text>
                                     <xsl:value-of select="$defaultUrlLocation"/>
@@ -2614,33 +2614,33 @@ Recommended tools:
                             </xsl:if>
                             <xsl:text>"</xsl:text>
                             <xsl:call-template name="escape-special-characters">
-                                <xsl:with-param name="inputString" select="$basepathname"/>
+                                <xsl:with-param name="inputValue" select="$basepathname"/>
                             </xsl:call-template>
                             <xsl:if test="$isX3D">
                                 <xsl:choose>
-                                    <xsl:when test="contains(.,'.x3d')">
+                                    <xsl:when test="contains(string(.),'.x3d')">
                                         <xsl:text>.x3d</xsl:text>
                                     </xsl:when>
-                                    <xsl:when test="contains(.,'.wrl')">
+                                    <xsl:when test="contains(string(.),'.wrl')">
                                         <xsl:text>.wrl</xsl:text>
                                     </xsl:when>
                                 </xsl:choose>
                                 <xsl:value-of select="$X3dBookmark"/><!-- if any -->
                             </xsl:if>
                             <xsl:text>"</xsl:text>
-                            <xsl:if test="($fixUrlAdditionHttpAddresses = 'true') and (string-length($defaultUrlLocation) > 0) and not(contains(.,':/'))">
+                            <xsl:if test="($fixUrlAdditionHttpAddresses = 'true') and (string-length($defaultUrlLocation) > 0) and not(contains(string(.),':/'))">
                                 <!-- append online address -->
                                 <xsl:text> "</xsl:text>
                                 <xsl:value-of select="$defaultUrlLocation"/>
                                 <xsl:call-template name="escape-special-characters">
-                                    <xsl:with-param name="inputString" select="$basepathname"/>
+                                    <xsl:with-param name="inputValue" select="$basepathname"/>
                                 </xsl:call-template>
                                 <xsl:if test="$isX3D">
                                     <xsl:choose>
-                                        <xsl:when test="contains(.,'.x3d')">
+                                        <xsl:when test="contains(string(.),'.x3d')">
                                             <xsl:text>.x3d</xsl:text>
                                         </xsl:when>
-                                        <xsl:when test="contains(.,'.wrl')">
+                                        <xsl:when test="contains(string(.),'.wrl')">
                                             <xsl:text>.wrl</xsl:text>
                                         </xsl:when>
                                     </xsl:choose>
@@ -2648,7 +2648,7 @@ Recommended tools:
                                 </xsl:if>
                                 <xsl:text>"</xsl:text>
                             </xsl:if>
-                            <xsl:if test="(substring(.,string-length(.)-3,4) = '.x3d') or (contains(.,'.x3d#')) and not(contains(.,'.wrl')) and 
+                            <xsl:if test="(substring(.,string-length(string(.))-3,4) = '.x3d') or (contains(string(.),'.x3d#')) and not(contains(string(.),'.wrl')) and 
                                           ($appendWrlAfterX3dAddresses='true') and
                                           (not(//meta[contains(@name,'Tidy')][contains(@content,'appendWrlAfterX3dAddresses=false')]))">
                                 <xsl:text> "</xsl:text>
@@ -2656,7 +2656,7 @@ Recommended tools:
                                 <xsl:text>.wrl</xsl:text>
                                 <xsl:value-of select="$X3dBookmark"/><!-- if any -->
                                 <xsl:text>"</xsl:text>
-                                <xsl:if test="($fixUrlAdditionHttpAddresses = 'true') and (string-length($defaultUrlLocation) > 0) and not(contains(.,':/'))">
+                                <xsl:if test="($fixUrlAdditionHttpAddresses = 'true') and (string-length($defaultUrlLocation) > 0) and not(contains(string(.),':/'))">
                                     <!-- append online address -->
                                     <xsl:text> "</xsl:text>
                                     <xsl:value-of select="$defaultUrlLocation"/>
@@ -2668,8 +2668,8 @@ Recommended tools:
                             </xsl:if>
                             <xsl:text>'</xsl:text>
                         </xsl:when>
-                        <xsl:when test="$containsQuote and not(contains(.,':/'))">
-                            <xsl:if test="((substring(translate(., '&quot;', ''),string-length(translate(., '&quot;', ''))-3,4) = '.wrl') or (contains(.,'.wrl#'))) and not(contains(.,'.x3d')) and 
+                        <xsl:when test="$containsQuote and not(contains(string(.),':/'))">
+                            <xsl:if test="((substring(translate(string(.), '&quot;', ''),string-length(translate(string(.), '&quot;', ''))-3,4) = '.wrl') or (contains(string(.),'.wrl#'))) and not(contains(string(.),'.x3d')) and 
                                           ($prependX3dBeforeWrlAddresses='true') and
                                           (not(//meta[contains(@name,'Tidy')][contains(@content,'prependX3dBeforeWrlAddresses=false')]))">
                                 <xsl:text>"</xsl:text>
@@ -2677,7 +2677,7 @@ Recommended tools:
                                 <xsl:text>.x3d</xsl:text>
                                 <xsl:value-of select="$X3dBookmark"/><!-- if any -->
                                 <xsl:text>"</xsl:text>
-                                <xsl:if test="($fixUrlAdditionHttpAddresses = 'true') and (string-length($defaultUrlLocation) > 0) and not(contains(.,':/'))">
+                                <xsl:if test="($fixUrlAdditionHttpAddresses = 'true') and (string-length($defaultUrlLocation) > 0) and not(contains(string(.),':/'))">
                                     <!-- append online address -->
                                     <xsl:text> "</xsl:text>
                                     <xsl:value-of select="$defaultUrlLocation"/>
@@ -2689,35 +2689,35 @@ Recommended tools:
                             </xsl:if>
                             <xsl:text>"</xsl:text>
                             <xsl:call-template name="escape-special-characters">
-                                <xsl:with-param name="inputString" select="$basepathname"/>
+                                <xsl:with-param name="inputValue" select="$basepathname"/>
                             </xsl:call-template>
                             <xsl:if test="$isX3D">
                                 <xsl:choose>
-                                    <xsl:when test="contains(.,'.x3d')">
+                                    <xsl:when test="contains(string(.),'.x3d')">
                                         <xsl:text>.x3d</xsl:text>
                                     </xsl:when>
-                                    <xsl:when test="contains(.,'.wrl')">
+                                    <xsl:when test="contains(string(.),'.wrl')">
                                         <xsl:text>.wrl</xsl:text>
                                     </xsl:when>
                                 </xsl:choose>
                                 <xsl:value-of select="$X3dBookmark"/><!-- if any -->
                             </xsl:if>
                             <xsl:text>"</xsl:text>
-                            <xsl:if test="($fixUrlAdditionHttpAddresses = 'true') and (string-length($defaultUrlLocation) > 0) and not(contains(.,':/'))">
+                            <xsl:if test="($fixUrlAdditionHttpAddresses = 'true') and (string-length($defaultUrlLocation) > 0) and not(contains(string(.),':/'))">
                                 <xsl:text> "</xsl:text>
                                 <xsl:value-of select="$defaultUrlLocation"/>
-                                    <!-- assumes a well-quoted string, omit leading quote substring(normalize-space(.),2)-->
+                                    <!-- assumes a well-quoted string, omit leading quote substring(normalize-space(string(.)),2)-->
                                <!--  <xsl:call-template name="escape-special-characters">
-                                    <xsl:with-param name="inputString" select="translate(.,'&quot;','')"/>
+                                    <xsl:with-param name="inputValue" select="translate(string(.),'&quot;','')"/>
                                 </xsl:call-template>
                                 no close quote needed since provided url has them -->
                                 <xsl:value-of select="translate($basepathname,'&quot;','')"/>
                                 <xsl:if test="$isX3D">
                                     <xsl:choose>
-                                        <xsl:when test="contains(.,'.x3d')">
+                                        <xsl:when test="contains(string(.),'.x3d')">
                                             <xsl:text>.x3d</xsl:text>
                                         </xsl:when>
-                                        <xsl:when test="contains(.,'.wrl')">
+                                        <xsl:when test="contains(string(.),'.wrl')">
                                             <xsl:text>.wrl</xsl:text>
                                         </xsl:when>
                                     </xsl:choose>
@@ -2726,7 +2726,7 @@ Recommended tools:
                                 <xsl:value-of select="$X3dBookmark"/><!-- if any -->
                                 <xsl:text>"</xsl:text>
                             </xsl:if>
-                            <xsl:if test="(substring(.,string-length(.)-4,4) = '.x3d') or (contains(.,'.x3d#')) and 
+                            <xsl:if test="(substring(.,string-length(string(.))-4,4) = '.x3d') or (contains(string(.),'.x3d#')) and 
                                           ($appendWrlAfterX3dAddresses='true') and
                                           (not(//meta[contains(@name,'Tidy')][contains(@content,'appendWrlAfterX3dAddresses=false')]))">
                                 <xsl:text> "</xsl:text>
@@ -2734,7 +2734,7 @@ Recommended tools:
                                 <xsl:text>.wrl</xsl:text>
                                 <xsl:value-of select="$X3dBookmark"/><!-- if any -->
                                 <xsl:text>"</xsl:text>
-                                <xsl:if test="($fixUrlAdditionHttpAddresses = 'true') and (string-length($defaultUrlLocation) > 0) and not(contains(.,':/'))">
+                                <xsl:if test="($fixUrlAdditionHttpAddresses = 'true') and (string-length($defaultUrlLocation) > 0) and not(contains(string(.),':/'))">
                                     <!-- append online address -->
                                     <xsl:text> "</xsl:text>
                                     <xsl:value-of select="$defaultUrlLocation"/>
@@ -2748,7 +2748,7 @@ Recommended tools:
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:call-template name="escape-special-characters">
-                                <xsl:with-param name="inputString" select="."/>
+                                <xsl:with-param name="inputValue" select="."/>
                             </xsl:call-template>
                             <xsl:text>'</xsl:text>
                         </xsl:otherwise>
@@ -2769,7 +2769,7 @@ Recommended tools:
             <xsl:value-of select="."/>
             <xsl:text>'</xsl:text>
         </xsl:variable>
-        <xsl:if test="(string-length(.) > 0) and (. != substring($result,7,string-length($result)-7)) and not($result = $originalConstruct)">
+        <xsl:if test="(string-length(string(.)) > 0) and (. != substring($result,7,string-length($result)-7)) and not($result = $originalConstruct)">
             <xsl:message>
                 <xsl:text>*** </xsl:text>
                 <xsl:text disable-output-escaping="yes">&lt;</xsl:text>
@@ -2925,7 +2925,7 @@ Recommended tools:
 			<xsl:otherwise>
                 
         <!-- eliminate default attribute values, otherwise they will all appear in output  -->
-        <!-- this block of tests is used identically in X3dToXhtml.xslt X3dToHtml.xslt X3dToVrml97.xslt X3dTidy.xslt X3dToX3dom.xslt X3dUnwrap.xslt X3dWrap.xslt and X3dToJson.xslt -->
+        <!-- this block of tests is used identically in X3dToXhtml.xslt X3dToHtml.xslt X3dToVrml97.xslt X3dTidy.xslt X3dToX3dom.xslt X3dUnwrap.xslt X3dWrap.xslt X3dToJson.xslt X3dToPython.xslt and X3dToTurtle.xslt -->
         <!-- check values with/without .0 suffix since these are string checks and autogenerated/DOM output might have either -->
         <!-- do not check ProtoInstance fields or natively defined nodes, since they might have different user-defined defaults -->
         <!-- tool-bug workaround:  split big boolean queries into pieces to avoid overloading the Xalan/lotusxml query buffer -->
@@ -2961,155 +2961,155 @@ Recommended tools:
                       not(local-name(..)='IntegerTrigger'	and	(local-name()='set_boolean' or local-name()='triggerValue'))
                       " />
         <xsl:variable name="notDefaultFieldValue1"
-                      select="not( local-name()='bboxCenter'	and	(.='0 0 0' or .='0.0 0.0 0.0')) and
-                      not( local-name()='bboxSize'	and	(.='-1 -1 -1' or .='-1.0 -1.0 -1.0')) and
-                      not( local-name()='bboxDisplay' and .='false') and
-                      not( local-name()='castShadow' and .='true') and
-                      not( local-name()='channelCountMode' and .='max') and
-                      not( local-name()='channelInterpretation' and .='speakers') and
-                      not( local-name()='detune' and (.='0' or .='0.0')) and
-                      not( local-name()='enabled' and .='true') and
-                      not( local-name()='gain' and (.='1' or .='1.0')) and
-                      not( local-name()='load' and .='true') and
-                      not( local-name()='loop' and .='false') and
+                      select="not( local-name()='bboxCenter'	and	(string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) and
+                      not( local-name()='bboxSize'	and	(string(.)='-1 -1 -1' or string(.)='-1.0 -1.0 -1.0')) and
+                      not( local-name()='bboxDisplay' and string(.)='false') and
+                      not( local-name()='castShadow' and string(.)='true') and
+                      not( local-name()='channelCountMode' and string(.)='max') and
+                      not( local-name()='channelInterpretation' and string(.)='speakers') and
+                      not( local-name()='detune' and (string(.)='0' or string(.)='0.0')) and
+                      not( local-name()='enabled' and string(.)='true') and
+                      not( local-name()='gain' and (string(.)='1' or string(.)='1.0')) and
+                      not( local-name()='load' and string(.)='true') and
+                      not( local-name()='loop' and string(.)='false') and
                       not( local-name()='farDistance'  and (string(.)='-1' or string(.)='-1.0')) and
                       not( local-name()='nearDistance' and (string(.)='-1' or string(.)='-1.0')) and
-                      not( local-name()='pitch' and (.='1' or .='1.0')) and
-                      not( local-name()='startTime' and (.='0' or .='0.0')) and
-                      not( local-name()='stopTime' and (.='0' or .='0.0')) and
-                      not( local-name()='pauseTime' and (.='0' or .='0.0')) and
-                      not( local-name()='resumeTime'  and (.='0' or .='0.0')) and
-                      not( local-name()='qualityFactor'  and (.='1' or .='1.0')) and
-                      not( local-name()='autoRefresh' and (.='0' or .='0.0')) and
-                      not( local-name()='autoRefreshTimeLimit' and (.='3600' or .='3600.0')) and
-                      not( local-name()='tailTime' and (.='0' or .='0.0')) and
-                      not( local-name()='shadows' and .='false') and
-                      not( local-name()='shadowIntensity' and (.='1' or .='1.0')) and
-                      not( local-name()='visible' and .='true') and
+                      not( local-name()='pitch' and (string(.)='1' or string(.)='1.0')) and
+                      not( local-name()='startTime' and (string(.)='0' or string(.)='0.0')) and
+                      not( local-name()='stopTime' and (string(.)='0' or string(.)='0.0')) and
+                      not( local-name()='pauseTime' and (string(.)='0' or string(.)='0.0')) and
+                      not( local-name()='resumeTime'  and (string(.)='0' or string(.)='0.0')) and
+                      not( local-name()='qualityFactor'  and (string(.)='1' or string(.)='1.0')) and
+                      not( local-name()='autoRefresh' and (string(.)='0' or string(.)='0.0')) and
+                      not( local-name()='autoRefreshTimeLimit' and (string(.)='3600' or string(.)='3600.0')) and
+                      not( local-name()='tailTime' and (string(.)='0' or string(.)='0.0')) and
+                      not( local-name()='shadows' and string(.)='false') and
+                      not( local-name()='shadowIntensity' and (string(.)='1' or string(.)='1.0')) and
+                      not( local-name()='visible' and string(.)='true') and
                       not( local-name(..)='AudioClip'	and
-                      ((local-name()='loop' and .='false') or
-                      (local-name()='pitch' and (.='1' or .='1.0')) or
-                      (local-name()='startTime' and (.='0' or .='0.0')) or
-                      (local-name()='stopTime' and (.='0' or .='0.0')) or
-                      (local-name()='pauseTime' and (.='0' or .='0.0')) or
-                      (local-name()='resumeTime'  and (.='0' or .='0.0')))) and
-                      not( (local-name(..)='Appearance') and ((local-name()='alphaMode' and (.='AUTO')) or (local-name()='alphaCutoff' and (.='0.5' or .='.5')))) and
-                      not( ((local-name(..)='Background') or (local-name(..)='TextureBackground')) and ((local-name()='skyColor' and (.='0 0 0' or .='0.0 0.0 0.0')) or (local-name()='transparency' and (.='0' or .='0.0')))) and
-                      not( local-name(..)='Billboard'	and local-name()='axisOfRotation' and (.='0 1 0' or .='0.0 1.0 0.0')) and
-                      not( local-name(..)='BooleanToggle' and local-name()='toggle' and .='false') and
-                      not( local-name(..)='Box'	and ((local-name()='size' and (.='2 2 2' or .='2.0 2.0 2.0')) or (local-name()='solid' and .='true'))) and
-                      not( local-name(..)='Collision'	and local-name()='enabled' and .='true') and
+                      ((local-name()='loop' and string(.)='false') or
+                      (local-name()='pitch' and (string(.)='1' or string(.)='1.0')) or
+                      (local-name()='startTime' and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='stopTime' and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='pauseTime' and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='resumeTime'  and (string(.)='0' or string(.)='0.0')))) and
+                      not( (local-name(..)='Appearance') and ((local-name()='alphaMode' and (string(.)='AUTO')) or (local-name()='alphaCutoff' and (string(.)='0.5' or string(.)='.5')))) and
+                      not( ((local-name(..)='Background') or (local-name(..)='TextureBackground')) and ((local-name()='skyColor' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or (local-name()='transparency' and (string(.)='0' or string(.)='0.0')))) and
+                      not( local-name(..)='Billboard'	and local-name()='axisOfRotation' and (string(.)='0 1 0' or string(.)='0.0 1.0 0.0')) and
+                      not( local-name(..)='BooleanToggle' and local-name()='toggle' and string(.)='false') and
+                      not( local-name(..)='Box'	and ((local-name()='size' and (string(.)='2 2 2' or string(.)='2.0 2.0 2.0')) or (local-name()='solid' and string(.)='true'))) and
+                      not( local-name(..)='Collision'	and local-name()='enabled' and string(.)='true') and
                       not( local-name(..)='Cone' and	
-                      ((local-name()='bottomRadius' and (.='1' or .='1.0')) or
-                      (local-name()='height' and (.='2' or .='2.0')) or
-                      (local-name()='side' and .='true') or
-                      (local-name()='solid' and .='true') or
-                      (local-name()='bottom' and .='true')))"/>
+                      ((local-name()='bottomRadius' and (string(.)='1' or string(.)='1.0')) or
+                      (local-name()='height' and (string(.)='2' or string(.)='2.0')) or
+                      (local-name()='side' and string(.)='true') or
+                      (local-name()='solid' and string(.)='true') or
+                      (local-name()='bottom' and string(.)='true')))"/>
         <xsl:variable name="notDefaultFieldValue1a"
                       select="not( local-name(..)='Cylinder' and
-                      ((local-name()='height' and (.='2' or .='2.0')) or
-                      (local-name()='radius' and (.='1' or .='1.0')) or
-                      (local-name()='bottom' and .='true') or
-                      (local-name()='side' and .='true') or
-                      (local-name()='solid' and .='true') or
-                      (local-name()='top' and .='true'))) and
+                      ((local-name()='height' and (string(.)='2' or string(.)='2.0')) or
+                      (local-name()='radius' and (string(.)='1' or string(.)='1.0')) or
+                      (local-name()='bottom' and string(.)='true') or
+                      (local-name()='side' and string(.)='true') or
+                      (local-name()='solid' and string(.)='true') or
+                      (local-name()='top' and string(.)='true'))) and
                       not( local-name(..)='CylinderSensor' and
-                      ((local-name()='autoOffset' and .='true') or
-                      (local-name()='axisRotation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
-                      (local-name()='enabled' and .='true') or
-                      (local-name()='diskAngle' and .='0.26179167') or
-                      (local-name()='offset' and (.='0' or .='0.0')) or
-                      (local-name()='maxAngle' and (.='-1' or .='-1.0')) or
-                      (local-name()='minAngle' and (.='0' or .='0.0'))))" />
+                      ((local-name()='autoOffset' and string(.)='true') or
+                      (local-name()='axisRotation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
+                      (local-name()='enabled' and string(.)='true') or
+                      (local-name()='diskAngle' and string(.)='0.26179167') or
+                      (local-name()='offset' and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='maxAngle' and (string(.)='-1' or string(.)='-1.0')) or
+                      (local-name()='minAngle' and (string(.)='0' or string(.)='0.0'))))" />
         <xsl:variable name="notDefaultFieldValue2"
                       select="not( local-name(..)='DirectionalLight' and
-                      ((local-name()='ambientIntensity' and (.='0' or .='0.0')) or
-                      (local-name()='color' and (.='1 1 1' or .='1.0 1.0 1.0')) or
-                      (local-name()='direction' and (.='0 0 -1' or .='0.0 0.0 -1.0')) or
-                      (local-name()='global' and .='false') or
-                      (local-name()='intensity' and (.='1' or .='1.0')) or
-                      (local-name()='on' and .='true'))) and
+                      ((local-name()='ambientIntensity' and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='color' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')) or
+                      (local-name()='direction' and (string(.)='0 0 -1' or string(.)='0.0 0.0 -1.0')) or
+                      (local-name()='global' and string(.)='false') or
+                      (local-name()='intensity' and (string(.)='1' or string(.)='1.0')) or
+                      (local-name()='on' and string(.)='true'))) and
                       not((local-name(..)='ElevationGrid' or local-name(..)='GeoElevationGrid') and
-                      ((local-name()='ccw' and .='true') or
-                      (local-name()='colorPerVertex' and .='true') or
-                      (local-name()='normalPerVertex' and .='true') or
-                      (local-name()='solid' and .='true') or
-                      (local-name()='xDimension' and (.='2')) or
-                      (local-name()='xSpacing' and (.='1' or .='1.0')) or
-                      (local-name()='zDimension' and (.='2')) or
-                      (local-name()='zSpacing' and (.='1' or .='1.0')) or
-                      (local-name()='yScale' and (.='1' or .='1.0')) or
-                      (local-name()='height' and (.='0 0 0 0' or .='0.0 0.0 0.0 0.0')) or
-                      (local-name()='geoGridOrigin' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                      (local-name()='creaseAngle' and (.='0' or .='0.0')))) and
+                      ((local-name()='ccw' and string(.)='true') or
+                      (local-name()='colorPerVertex' and string(.)='true') or
+                      (local-name()='normalPerVertex' and string(.)='true') or
+                      (local-name()='solid' and string(.)='true') or
+                      (local-name()='xDimension' and (string(.)='2')) or
+                      (local-name()='xSpacing' and (string(.)='1' or string(.)='1.0')) or
+                      (local-name()='zDimension' and (string(.)='2')) or
+                      (local-name()='zSpacing' and (string(.)='1' or string(.)='1.0')) or
+                      (local-name()='yScale' and (string(.)='1' or string(.)='1.0')) or
+                      (local-name()='height' and (string(.)='0 0 0 0' or string(.)='0.0 0.0 0.0 0.0')) or
+                      (local-name()='geoGridOrigin' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                      (local-name()='creaseAngle' and (string(.)='0' or string(.)='0.0')))) and
                       not( local-name(..)='Extrusion'	and
-                      ((local-name()='beginCap' and .='true') or
-                      (local-name()='ccw' and .='true') or
-                      (local-name()='convex' and .='true') or
-                      (local-name()='endCap' and .='true') or
-                      (local-name()='solid' and .='true') or
-                      (local-name()='creaseAngle' and (.='0' or .='0.0')) or
-                      (local-name()='orientation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
-                      (local-name()='scale' and (.='1 1' or .='1.0 1.0')) or
-                      (local-name()='crossSection' and .='1 1, 1 -1, -1 -1, -1 1, 1 1') or
-                      (local-name()='crossSection' and .='1 1 1 -1 -1 -1 -1 1 1 1') or
-                      (local-name()='spine' and .='0 0 0, 0 1 0') or
-                      (local-name()='spine' and .='0 0 0 0 1 0')))" />
+                      ((local-name()='beginCap' and string(.)='true') or
+                      (local-name()='ccw' and string(.)='true') or
+                      (local-name()='convex' and string(.)='true') or
+                      (local-name()='endCap' and string(.)='true') or
+                      (local-name()='solid' and string(.)='true') or
+                      (local-name()='creaseAngle' and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='orientation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
+                      (local-name()='scale' and (string(.)='1 1' or string(.)='1.0 1.0')) or
+                      (local-name()='crossSection' and string(.)='1 1, 1 -1, -1 -1, -1 1, 1 1') or
+                      (local-name()='crossSection' and string(.)='1 1 1 -1 -1 -1 -1 1 1 1') or
+                      (local-name()='spine' and string(.)='0 0 0, 0 1 0') or
+                      (local-name()='spine' and string(.)='0 0 0 0 1 0')))" />
         <xsl:variable name="notDefaultFieldValue3"
-                      select="not(contains(local-name(..),'Fog') and 	((local-name()='color' and (.='1 1 1' or .='1.0 1.0 1.0')) or
-                      (local-name()='visibilityRange' and (.='0' or .='0.0')) or
-                      (local-name()='enabled' and .='true') or
-                      (local-name()='fogType' and .='LINEAR'))) and
+                      select="not(contains(local-name(..),'Fog') and 	((local-name()='color' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')) or
+                      (local-name()='visibilityRange' and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='enabled' and string(.)='true') or
+                      (local-name()='fogType' and string(.)='LINEAR'))) and
                       not(contains(local-name(..),'FontStyle')	and
-                      ((local-name()='horizontal' and .='true') or
-                      (local-name()='leftToRight' and .='true') or
-                      (local-name()='topToBottom' and .='true') or
-                      (local-name()='size' and (.='1' or .='1.0')) or
-                      (local-name()='spacing' and (.='1' or .='1.0')) or
-                      (local-name()='pointSize' and (.='12' or .='12.0')) or
-                      (local-name()='family' and .='&quot;SERIF&quot;') or
-                      (local-name()='justify' and .='&quot;BEGIN&quot;') or
-                      (local-name()='style' and .='PLAIN'))) and
+                      ((local-name()='horizontal' and string(.)='true') or
+                      (local-name()='leftToRight' and string(.)='true') or
+                      (local-name()='topToBottom' and string(.)='true') or
+                      (local-name()='size' and (string(.)='1' or string(.)='1.0')) or
+                      (local-name()='spacing' and (string(.)='1' or string(.)='1.0')) or
+                      (local-name()='pointSize' and (string(.)='12' or string(.)='12.0')) or
+                      (local-name()='family' and string(.)='&quot;SERIF&quot;') or
+                      (local-name()='justify' and string(.)='&quot;BEGIN&quot;') or
+                      (local-name()='style' and string(.)='PLAIN'))) and
                       not( local-name(..)='ImageTexture' and
-                      ((local-name()='repeatS' and .='true') or
-                      (local-name()='repeatT' and .='true'))) and
+                      ((local-name()='repeatS' and string(.)='true') or
+                      (local-name()='repeatT' and string(.)='true'))) and
                       not( local-name(..)='IndexedFaceSet' and
-                      ((local-name()='ccw' and .='true') or
-                      (local-name()='colorPerVertex' and .='true') or
-                      (local-name()='convex' and .='true') or
-                      (local-name()='normalPerVertex' and .='true') or
-                      (local-name()='solid' and .='true') or
-                      (local-name()='creaseAngle' and (.='0' or .='0.0')))) and
-                      not( local-name(..)='IndexedLineSet' and local-name()='colorPerVertex' and .='true') and
-                      not( local-name(..)='Inline' and ((local-name()='load' and .='true') or (local-name()='global' and .='false'))) and
+                      ((local-name()='ccw' and string(.)='true') or
+                      (local-name()='colorPerVertex' and string(.)='true') or
+                      (local-name()='convex' and string(.)='true') or
+                      (local-name()='normalPerVertex' and string(.)='true') or
+                      (local-name()='solid' and string(.)='true') or
+                      (local-name()='creaseAngle' and (string(.)='0' or string(.)='0.0')))) and
+                      not( local-name(..)='IndexedLineSet' and local-name()='colorPerVertex' and string(.)='true') and
+                      not( local-name(..)='Inline' and ((local-name()='load' and string(.)='true') or (local-name()='global' and string(.)='false'))) and
                       not( local-name(..)='LoadSensor' and
-                      ((local-name()='enabled' and .='true') or
-                      (local-name()='timeOut' and (.='0' or .='0.0')))) and
-                      not( local-name(..)='LOD'	and	((local-name()='center' and (.='0 0 0' or .='0.0 0.0 0.0')) or (local-name()='forceTransitions' and .='false'))) and
+                      ((local-name()='enabled' and string(.)='true') or
+                      (local-name()='timeOut' and (string(.)='0' or string(.)='0.0')))) and
+                      not( local-name(..)='LOD'	and	((local-name()='center' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or (local-name()='forceTransitions' and string(.)='false'))) and
                       not(((local-name(..)='Material') or (local-name(..)='TwoSidedMaterial')) and
-                      ((local-name()='ambientIntensity' and .='0.2') or
-                      (local-name()='diffuseColor' and .='0.8 0.8 0.8') or
-                      (local-name()='emissiveColor' and (.='0 0 0' or .='0.0 0.0 0.0')) or
+                      ((local-name()='ambientIntensity' and string(.)='0.2') or
+                      (local-name()='diffuseColor' and string(.)='0.8 0.8 0.8') or
+                      (local-name()='emissiveColor' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                       (local-name()='metallic' and (string(.)='1' or string(.)='1.0')) or
                       (local-name()='normalScale' and (string(.)='1' or string(.)='1.0')) or
                       (local-name()='occlusionStrength' and (string(.)='1' or string(.)='1.0')) or
                       (local-name()='roughness' and (string(.)='1' or string(.)='1.0')) or
-                      (local-name()='shininess' and .='0.2') or
-                      (local-name()='specularColor' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                      (local-name()='transparency' and (.='0' or .='0.0')))) and
+                      (local-name()='shininess' and string(.)='0.2') or
+                      (local-name()='specularColor' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                      (local-name()='transparency' and (string(.)='0' or string(.)='0.0')))) and
                       not( local-name(..)='TwoSidedMaterial'	and
-                      ((local-name()='backAmbientIntensity' and .='0.2') or
-                      (local-name()='backDiffuseColor' and .='0.8 0.8 0.8') or
-                      (local-name()='backEmissiveColor' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                      (local-name()='backShininess' and .='0.2') or
-                      (local-name()='separateBackColor' and .='false') or
-                      (local-name()='backSpecularColor' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                      (local-name()='backTransparency' and (.='0' or .='0.0')))) and
+                      ((local-name()='backAmbientIntensity' and string(.)='0.2') or
+                      (local-name()='backDiffuseColor' and string(.)='0.8 0.8 0.8') or
+                      (local-name()='backEmissiveColor' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                      (local-name()='backShininess' and string(.)='0.2') or
+                      (local-name()='separateBackColor' and string(.)='false') or
+                      (local-name()='backSpecularColor' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                      (local-name()='backTransparency' and (string(.)='0' or string(.)='0.0')))) and
                       not(ends-with(local-name(..),'Material')	and
-                      ((ends-with(local-name(),'Mapping') and (string-length(.) = 0)) or
+                      ((ends-with(local-name(),'Mapping') and (string-length(string(.)) = 0)) or
                       (local-name()='baseColor' and ((string(.)='1 1 1') or (string(.)='1. 1. 1.') or (string(.)='1.0 1.0 1.0'))) or
-                      (ends-with(local-name(),'Mapping') and (string-length(.) = 0)) or
-                      (local-name()='emissiveColor' and (.='0 0 0' or .='0.0 0.0 0.0')) or
+                      (ends-with(local-name(),'Mapping') and (string-length(string(.)) = 0)) or
+                      (local-name()='emissiveColor' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                       (local-name()='metallic' and ((string(.)='1') or (string(.)='1.') or (string(.)='1.0'))) or
                       (local-name()='normalScale' and ((string(.)='1') or (string(.)='1.') or (string(.)='1.0'))) or
                       (local-name()='occlusionStrength' and ((string(.)='1') or (string(.)='1.') or (string(.)='1.0'))) or
@@ -3117,336 +3117,338 @@ Recommended tools:
                       (local-name()='transparency' and (string(.)='0' or string(.)='0.0'))))" />
         <xsl:variable name="notDefaultFieldValue4"
                       select="not( local-name(..)='MovieTexture' and
-                      ((local-name()='loop' and .='false') or
-                      (local-name()='speed' and (.='1' or .='1.0')) or
-                      (local-name()='startTime' and (.='0' or .='0.0')) or
-                      (local-name()='stopTime' and (.='0' or .='0.0')) or
-                      (local-name()='pauseTime' and (.='0' or .='0.0')) or
-                      (local-name()='resumeTime'  and (.='0' or .='0.0')) or
-                      (local-name()='repeatS' and .='true') or
-                      (local-name()='repeatT' and .='true'))) and
+                      ((local-name()='loop' and string(.)='false') or
+                      (local-name()='speed' and (string(.)='1' or string(.)='1.0')) or
+                      (local-name()='startTime' and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='stopTime' and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='pauseTime' and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='resumeTime'  and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='repeatS' and string(.)='true') or
+                      (local-name()='repeatT' and string(.)='true'))) and
                       not( local-name(..)='NavigationInfo' and
-                      ((local-name()='avatarSize' and .='0.25 1.6 0.75') or
-                      (local-name()='headlight' and .='true') or
-                      (local-name()='speed' and (.='1' or .='1.0')) or
-                      (local-name()='transitionTime' and (.='1' or .='1.0')) or
-                      (local-name()='transitionType' and (.='&quot;LINEAR&quot;')) or
-					  (local-name()='type' and (.='&quot;EXAMINE&quot; &quot;ANY&quot;')) or
-                      (local-name()='visibilityLimit' and (.='0' or .='0.0')))) and
+                      ((local-name()='avatarSize' and string(.)='0.25 1.6 0.75') or
+                      (local-name()='headlight' and string(.)='true') or
+                      (local-name()='speed' and (string(.)='1' or string(.)='1.0')) or
+                      (local-name()='transitionTime' and (string(.)='1' or string(.)='1.0')) or
+                      (local-name()='transitionType' and (string(.)='&quot;LINEAR&quot;')) or
+					  (local-name()='type' and (string(.)='&quot;EXAMINE&quot; &quot;ANY&quot;')) or
+                      (local-name()='visibilityLimit' and (string(.)='0' or string(.)='0.0')))) and
                       not( local-name(..)='PixelTexture' and
-                      ((local-name()='repeatS' and .='true') or
-                      (local-name()='repeatT' and .='true') or
-                      (local-name()='image' and (.='0 0 0' or .='0.0 0.0 0.0')))) and
+                      ((local-name()='repeatS' and string(.)='true') or
+                      (local-name()='repeatT' and string(.)='true') or
+                      (local-name()='image' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')))) and
                       not( local-name(..)='PlaneSensor' and
-                      ((local-name()='autoOffset' and .='true') or
-					  (local-name()='axisRotation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
-                      (local-name()='enabled' and .='true') or
-                      (local-name()='maxPosition' and (.='-1 -1' or .='-1.0 -1.0')) or
-                      (local-name()='minPosition' and (.='0 0' or .='0.0 0.0')) or
-                      (local-name()='offset' and (.='0 0 0' or .='0.0 0.0 0.0')))) and
+                      ((local-name()='autoOffset' and string(.)='true') or
+					  (local-name()='axisRotation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
+                      (local-name()='enabled' and string(.)='true') or
+                      (local-name()='maxPosition' and (string(.)='-1 -1' or string(.)='-1.0 -1.0')) or
+                      (local-name()='minPosition' and (string(.)='0 0' or string(.)='0.0 0.0')) or
+                      (local-name()='offset' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')))) and
                       not( ((local-name(..)='PointLight') or (local-name(..)='EnvironmentLight')) and
-                      ((local-name()='ambientIntensity' and (.='0' or .='0.0'))or
-                      (local-name()='attenuation' and (.='1 0 0' or .='1.0 0.0 0.0')) or
-                      (local-name()='color' and (.='1 1 1' or .='1.0 1.0 1.0')) or
-                      (local-name()='global' and .='true') or
-                      (local-name()='intensity' and (.='1' or .='1.0')) or
-                      (local-name()='location' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                      (local-name()='on' and .='true') or
-                      (local-name()='radius' and (.='100' or .='100.0'))))" />
+                      ((local-name()='ambientIntensity' and (string(.)='0' or string(.)='0.0'))or
+                      (local-name()='attenuation' and (string(.)='1 0 0' or string(.)='1.0 0.0 0.0')) or
+                      (local-name()='color' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')) or
+                      (local-name()='global' and string(.)='true') or
+                      (local-name()='intensity' and (string(.)='1' or string(.)='1.0')) or
+                      (local-name()='location' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                      (local-name()='on' and string(.)='true') or
+                      (local-name()='radius' and (string(.)='100' or string(.)='100.0'))))" />
         <xsl:variable name="notDefaultFieldValue5"
                       select="not(contains(local-name(..),'ProximitySensor') and
-                      ((local-name()='center' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                      (local-name()='size' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                      (local-name()='enabled' and .='true'))) and
-                      not( local-name(..)='Script' and ((local-name()='directOutput' and .='false') or
-                      (local-name()='mustEvaluate' and .='false'))) and
-                      not( local-name(..)='Sound' and ((local-name()='direction' and (.='0 0 1' or .='0.0 0.0 1.0')) or
-                      (local-name()='intensity' and (.='1' or .='1.0')) or
-                      (local-name()='location' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                      (local-name()='priority' and (.='0' or .='0.0')) or
-                      (local-name()='maxBack' and (.='10' or .='10.0')) or
-                      (local-name()='maxFront' and (.='10' or .='10.0')) or
-                      (local-name()='minBack' and (.='1' or .='1.0'))  or
-                      (local-name()='minFront' and (.='1' or .='1.0')) or
-                      (local-name()='spatialize' and .='true'))) and
-                      not( local-name(..)='Sphere' and ((local-name()='radius' and (.='1' or .='1.0')) or (local-name()='solid' and .='true'))) and
+                      ((local-name()='center' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                      (local-name()='size' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                      (local-name()='enabled' and string(.)='true'))) and
+                      not( local-name(..)='Script' and ((local-name()='directOutput' and string(.)='false') or
+                      (local-name()='mustEvaluate' and string(.)='false'))) and
+                      not( local-name(..)='Sound' and ((local-name()='direction' and (string(.)='0 0 1' or string(.)='0.0 0.0 1.0')) or
+                      (local-name()='intensity' and (string(.)='1' or string(.)='1.0')) or
+                      (local-name()='location' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                      (local-name()='priority' and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='maxBack' and (string(.)='10' or string(.)='10.0')) or
+                      (local-name()='maxFront' and (string(.)='10' or string(.)='10.0')) or
+                      (local-name()='minBack' and (string(.)='1' or string(.)='1.0'))  or
+                      (local-name()='minFront' and (string(.)='1' or string(.)='1.0')) or
+                      (local-name()='spatialize' and string(.)='true'))) and
+                      not( local-name(..)='Sphere' and ((local-name()='radius' and (string(.)='1' or string(.)='1.0')) or (local-name()='solid' and string(.)='true'))) and
                       not( local-name(..)='SphereSensor' and
-                      ((local-name()='autoOffset' and .='true') or
-                      (local-name()='enabled' and .='true') or
-                      (local-name()='offset' and (.='0 1 0 0' or .='0.0 1.0 0.0 0.0')) and
+                      ((local-name()='autoOffset' and string(.)='true') or
+                      (local-name()='enabled' and string(.)='true') or
+                      (local-name()='offset' and (string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0')) and
                       not( local-name(..)='Switch' and ../IS/connect[@nodeField='whichChoice'])))" />
         <!-- Switch whichChoice='-1' is very significant and somewhat counterintuitive/nonobvious, so otherwise show it. -->
-        <!--	  and not( local-name(..)='Switch' and  local-name()='whichChoice' and (.='-1' or .='-1.0')) -->
+        <!--	  and not( local-name(..)='Switch' and  local-name()='whichChoice' and (string(.)='-1' or string(.)='-1.0')) -->
         <xsl:variable name="notDefaultFieldValue6"
                       select="not( local-name(..)='SpotLight'	and
-                      ((local-name()='ambientIntensity' and (.='0' or .='0.0')) or
-                      (local-name()='attenuation' and (.='1 0 0' or .='1.0 0.0 0.0')) or
-                      (local-name()='beamWidth' and ((.='0.785398') or (.='0.7854') or (.='.785398') or (.='.7854'))) or
-                      (local-name()='color' and (.='1 1 1' or .='1.0 1.0 1.0')) or
-                      (local-name()='cutOffAngle' and (.='1.5708' or .='1.570796')) or
-                      (local-name()='direction' and (.='0 0 -1' or .='0.0 0.0 -1.0')) or
-                      (local-name()='global' and .='true') or
-                      (local-name()='intensity' and (.='1' or .='1.0')) or
-                      (local-name()='location' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                      (local-name()='on' and .='true') or
-                      (local-name()='radius' and (.='100' or .='100.0')))) and
-                      not( local-name(..)='Text'   and ((local-name()='maxExtent' and (.='0' or .='0.0')) or (local-name()='solid' and (.='false')))) and
+                      ((local-name()='ambientIntensity' and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='attenuation' and (string(.)='1 0 0' or string(.)='1.0 0.0 0.0')) or
+                      (local-name()='beamWidth' and ((string(.)='0.785398') or (string(.)='0.7854') or (string(.)='.785398') or (string(.)='.7854'))) or
+                      (local-name()='color' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')) or
+                      (local-name()='cutOffAngle' and (string(.)='1.5708' or string(.)='1.570796')) or
+                      (local-name()='direction' and (string(.)='0 0 -1' or string(.)='0.0 0.0 -1.0')) or
+                      (local-name()='global' and string(.)='true') or
+                      (local-name()='intensity' and (string(.)='1' or string(.)='1.0')) or
+                      (local-name()='location' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                      (local-name()='on' and string(.)='true') or
+                      (local-name()='radius' and (string(.)='100' or string(.)='100.0')))) and
+                      not( local-name(..)='Text'   and ((local-name()='maxExtent' and (string(.)='0' or string(.)='0.0')) or (local-name()='solid' and (string(.)='false')))) and
                       not( local-name(..)='TextureTransform' and
-                      ((local-name()='center' and (.='0 0' or .='0.0 0.0')) or
-                      (local-name()='rotation' and (.='0' or .='0.0')) or
-                      (local-name()='scale' and (.='1 1' or .='1.0 1.0')) or
-                      (local-name()='translation' and (.='0 0' or .='0.0 0.0')))) and
+                      ((local-name()='center' and (string(.)='0 0' or string(.)='0.0 0.0')) or
+                      (local-name()='rotation' and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='scale' and (string(.)='1 1' or string(.)='1.0 1.0')) or
+                      (local-name()='translation' and (string(.)='0 0' or string(.)='0.0 0.0')))) and
                       not( local-name(..)='TextureTransform3D' and
-                      ((local-name()='center' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                      (local-name()='rotation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
-                      (local-name()='scale' and (.='1 1 1' or .='1.0 1.0 1.0')) or
-                      (local-name()='translation' and (.='0 0 0' or .='0.0 0.0 0.0')))) and
+                      ((local-name()='center' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                      (local-name()='rotation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
+                      (local-name()='scale' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')) or
+                      (local-name()='translation' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')))) and
                       not( local-name(..)='TextureTransformMatrix3D' and
-                      ((local-name()='matrix' and (.='1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1' or .='1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0'))))" />
+                      ((local-name()='matrix' and (string(.)='1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1' or string(.)='1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0'))))" />
         <xsl:variable name="notDefaultFieldValue7"
                       select="not( local-name(..)='TimeSensor' and
-                      ((local-name()='cycleInterval' and (.='1' or .='1.0')) or
-                      (local-name()='enabled' and .='true') or
-                      (local-name()='startTime' and (.='0' or .='0.0')) or
-                      (local-name()='stopTime' and (.='0' or .='0.0')) or
-                      (local-name()='pauseTime' and (.='0' or .='0.0')) or
-                      (local-name()='resumeTime'  and (.='0' or .='0.0')) or
-                      (local-name()='loop' and .='false'))) and
-                      not( contains(local-name(..),'TouchSensor') and
-                      local-name()='enabled' and .='true') and
+                      ((local-name()='cycleInterval' and (string(.)='1' or string(.)='1.0')) or
+                      (local-name()='enabled' and string(.)='true') or
+                      (local-name()='startTime' and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='stopTime' and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='pauseTime' and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='resumeTime'  and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='loop' and string(.)='false'))) and
+                      not(contains(local-name(..),'TouchSensor') and
+                      local-name()='enabled' and string(.)='true') and
                       not( ((local-name(..)='Transform') or (local-name(..)='EspduTransform') or (local-name(..)='GeoTransform')) and
-                      ((local-name()='center' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-					  (local-name()='rotation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
-                      (local-name()='scale' and (.='1 1 1' or .='1.0 1.0 1.0')) or
-                      (local-name()='scaleOrientation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
-                      (local-name()='translation' and (.='0 0 0' or .='0.0 0.0 0.0')))) and
+                      ((local-name()='center' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+					  (local-name()='rotation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
+                      (local-name()='scale' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')) or
+                      (local-name()='scaleOrientation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
+                      (local-name()='translation' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')))) and
                       not( local-name(..)='Viewpoint' and
-                      (local-name()='fieldOfView' and ((.='0.785398') or (.='0.7854') or (.='.785398') or (.='.7854')))) and
+                      (local-name()='fieldOfView' and ((string(.)='0.785398') or (string(.)='0.7854') or (string(.)='.785398') or (string(.)='.7854')))) and
                       not( local-name(..)='OrthoViewpoint' and
-                      (local-name()='fieldOfView' and ((.='-1 -1 1 1') or (.='-1.0 -1.0 1.0 1.0')))) and
+                      (local-name()='fieldOfView' and ((string(.)='-1 -1 1 1') or (string(.)='-1.0 -1.0 1.0 1.0')))) and
                       not( contains(local-name(..),'Viewpoint') and
-                      ((local-name()='centerOfRotation' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                      (local-name()='fieldOfView' and ((.='0.785398') or (.='0.7854') or (.='.785398') or (.='.7854'))) or
-                      (local-name()='jump' and .='true') or
-                      (local-name()='viewAll' and .='false') or
-                      ((local-name()='nearClippingPlane' or local-name()='farClippingPlane') and ((.='-1') or (.='-1.') or (.='-1.0'))) or
-                      (local-name()='orientation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
-                      (local-name()='retainUserOffsets' and (.='false')) or
-                      (local-name()='position' and (.='0 0 10' or .='0.0 0.0 10.0')))) and
+                      ((local-name()='centerOfRotation' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                      (local-name()='fieldOfView' and ((string(.)='0.785398') or (string(.)='0.7854') or (string(.)='.785398') or (string(.)='.7854'))) or
+                      (local-name()='jump' and string(.)='true') or
+                      (local-name()='viewAll' and string(.)='false') or
+                      ((local-name()='nearClippingPlane' or local-name()='farClippingPlane') and ((string(.)='-1') or (string(.)='-1.') or (string(.)='-1.0'))) or
+                      (local-name()='orientation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
+                      (local-name()='retainUserOffsets' and (string(.)='false')) or
+                      (local-name()='position' and (string(.)='0 0 10' or string(.)='0.0 0.0 10.0')))) and
                       not( local-name(..)='VisibilitySensor' and
-                      ((local-name()='center' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                      (local-name()='enabled' and .='true') or
-                      (local-name()='size' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                      (local-name()='enterTime' and (.='0' or .='0.0')) or
-                      (local-name()='exitTime'  and (.='0' or .='0.0')) or
-                      (local-name()='isActive' and .='false')))" />
+                      ((local-name()='center' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                      (local-name()='enabled' and string(.)='true') or
+                      (local-name()='size' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                      (local-name()='enterTime' and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='exitTime'  and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='isActive' and string(.)='false')))" />
         <xsl:variable name="notDefaultFieldValue8"
                       select="not( local-name(..)='FillProperties' and
-                      ((local-name()='filled' and .='true') or
-                      (local-name()='hatched' and .='true') or
-                      (local-name()='hatchStyle' and (.='1' or .='1.0')) or
-                      (local-name()='hatchColor' and (.='1 1 1' or .='1.0 1.0 1.0')))) and
+                      ((local-name()='filled' and string(.)='true') or
+                      (local-name()='hatched' and string(.)='true') or
+                      (local-name()='hatchStyle' and (string(.)='1' or string(.)='1.0')) or
+                      (local-name()='hatchColor' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')))) and
                       not( local-name(..)='LineProperties' and
-                      ((local-name()='applied' and .='true') or
-                      (local-name()='linetype' and (.='1')) or
-                      (local-name()='linewidthScaleFactor' and (.='0' or .='0.0')))) and
+                      ((local-name()='applied' and string(.)='true') or
+                      (local-name()='linetype' and (string(.)='1')) or
+                      (local-name()='linewidthScaleFactor' and (string(.)='0' or string(.)='0.0')))) and
                       not( local-name(..)='PointProperties' and
                       ((local-name()='attenuation' and (string(.)='1 0 0' or string(.)='1.0 0.0 0.0')) or
                       (starts-with(local-name(),'pointSize') and (string(.)='1' or string(.)='1.0')))) and
                       not( local-name(..)='ClipPlane' and
-                      ((local-name()='enabled' and .='true') or
-                      (local-name()='plane' and (.='0 1 0 0' or .='0.0 1.0 0.0 0.0')))) and
+                      ((local-name()='enabled' and string(.)='true') or
+                      (local-name()='plane' and (string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0')))) and
                       not( local-name(..)='ViewpointGroup' and
-                      ((local-name()='center' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                      (local-name()='displayed' and .='true') or
-                      (local-name()='retainUserOffsets' and .='false') or
-                      (local-name()='size' and (.='0 0 0' or .='0.0 0.0 0.0'))))" />
+                      ((local-name()='center' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                      (local-name()='displayed' and string(.)='true') or
+                      (local-name()='retainUserOffsets' and string(.)='false') or
+                      (local-name()='size' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0'))))" />
         <xsl:variable name="notDefaultFieldValue9"
                       select="not( local-name(..)='MultiTexture' and
-                      ((local-name()='alpha' and (.='1' or .='1.0')) or
-                      (local-name()='color' and (.='1 1 1' or .='1.0 1.0 1.0')))) and
+                      ((local-name()='alpha' and (string(.)='1' or string(.)='1.0')) or
+                      (local-name()='color' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')))) and
                       not( contains(local-name(..),'Texture') and
-                      ((local-name() = 'mapping') and (string-length(.) = 0))) and
+                      ((local-name() = 'mapping') and (string-length(string(.)) = 0))) and
                       not( local-name(..)='TextureCoordinateGenerator' and
-                      ((local-name()='mode' and .='SPHERE'))) and
+                      ((local-name()='mode' and string(.)='SPHERE'))) and
                       not((local-name(..)='ComposedTexture3D' or local-name(..)='ImageTexture3D' or local-name(..)='PixelTexture3D') and
-                      ((local-name()='repeatS' or local-name()='repeatT' or local-name()='repeatR') and .='false')) and
+                      ((local-name()='repeatS' or local-name()='repeatT' or local-name()='repeatR') and string(.)='false')) and
                       not( local-name(..)='PixelTexture3D' and
-                      (local-name()='image' and (.='0 0 0 0'))) and
+                      (local-name()='image' and (string(.)='0 0 0 0'))) and
                       not( local-name(..)='IntegerTrigger' and
-                      ((local-name()='integerKey' and .='-1'))) and
+                      ((local-name()='integerKey' and string(.)='-1'))) and
                       not( local-name(..)='LayerSet' and
-                      ((local-name()='activeLayer' and .='0') or
-                       (local-name()='order' and .='0'))) and
+                      ((local-name()='activeLayer' and string(.)='0') or
+                       (local-name()='order' and string(.)='0'))) and
                       not(contains(local-name(..),'PickSensor') and
-                      ((local-name()='enabled' and .='true') or
-                       (local-name()='intersectionType' and .='BOUNDS') or
-                       (local-name()='matchCriterion' and .='MATCH_ANY') or
-                       (local-name()='objectType' and .='&quot;ALL&quot;') or
-                       (local-name()='sortOrder' and .='CLOSEST'))) and
+                      ((local-name()='enabled' and string(.)='true') or
+                       (local-name()='intersectionType' and string(.)='BOUNDS') or
+                       (local-name()='matchCriterion' and string(.)='MATCH_ANY') or
+                       (local-name()='objectType' and string(.)='&quot;ALL&quot;') or
+                       (local-name()='sortOrder' and string(.)='CLOSEST'))) and
                       not( local-name(..)='ParticleSystem' and
-                      ((local-name()='createParticles' and .='true') or
-                       (local-name()='enabled' and .='true') or
-                       (local-name()='geometryType' and .='QUAD') or
-                       (local-name()='lifetimeVariation' and .='0.25') or
-                       (local-name()='maxParticles' and .='200') or
-                       (local-name()='particleLifetime' and .='5') or
-                       (local-name()='particleSize' and .='0.02 0.02'))) and
+                      ((local-name()='createParticles' and string(.)='true') or
+                       (local-name()='enabled' and string(.)='true') or
+                       (local-name()='geometryType' and string(.)='QUAD') or
+                       (local-name()='lifetimeVariation' and string(.)='0.25') or
+                       (local-name()='maxParticles' and string(.)='200') or
+                       (local-name()='particleLifetime' and string(.)='5') or
+                       (local-name()='particleSize' and string(.)='0.02 0.02'))) and
                       not( local-name(..)='PickableGroup' and
-                      ((local-name()='objectType' and .='&quot;ALL&quot;') or
-                       (local-name()='pickable' and .='true'))) and
+                      ((local-name()='objectType' and string(.)='&quot;ALL&quot;') or
+                       (local-name()='pickable' and string(.)='true'))) and
                       not(local-name(..)='StringSensor' and
-                      ((local-name()='deletionAllowed' or local-name()='enabled') and (.='true'))) and
+                      ((local-name()='deletionAllowed' or local-name()='enabled') and (string(.)='true'))) and
                       not( local-name(..)='TransformSensor' and
-                      ((local-name()='enabled' and .='true') or
-                       (local-name()='size' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                       (local-name()='center' and (.='0 0 0' or .='0.0 0.0 0.0')))) and
+                      ((local-name()='enabled' and string(.)='true') or
+                       (local-name()='size' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                       (local-name()='center' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')))) and
                       not( local-name(..)='GeneratedCubeMapTexture' and
-                      ((local-name()='update' and .='NONE') or
-                       (local-name()='size' and .='128'))) and
+                      ((local-name()='update' and string(.)='NONE') or
+                       (local-name()='size' and string(.)='128'))) and
                       not(local-name(..)='MovieTexture' and
-                      ((local-name()='pitch' or local-name()='1') and (.='1.0'))) and
+                      ((local-name()='pitch' or local-name()='1') and (string(.)='1.0'))) and
                       not(contains(local-name(..),'Emitter') and
-                      ((local-name()='angle' and .='0.7854') or
-                       (local-name()='direction' and (.='0 1 0' or .='0.0 1.0 0.0')) or
-                       (local-name()='mass' and (.='0' or .='0.0')) or
-                       (local-name()='position' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                       (local-name()='speed' and (.='0' or .='0.0')) or
-                       (local-name()='surfaceArea' and (.='0' or .='0.0')) or
-                       (local-name()='variation' and .='0.25') or
-                       (local-name()='internal' and .='true') or
+                      ((local-name()='angle' and string(.)='0.7854') or
+                       (local-name()='direction' and (string(.)='0 1 0' or string(.)='0.0 1.0 0.0')) or
+                       (local-name()='mass' and (string(.)='0' or string(.)='0.0')) or
+                       (local-name()='position' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                       (local-name()='speed' and (string(.)='0' or string(.)='0.0')) or
+                       (local-name()='surfaceArea' and (string(.)='0' or string(.)='0.0')) or
+                       (local-name()='variation' and string(.)='0.25') or
+                       (local-name()='internal' and string(.)='true') or
                        (local-name()='coordIndex' or local-name()='-1'))) and
                       not(local-name(..)='Contact' and
-                      ((local-name()='minBounceSpeed' and (.='0' or .='0.0')))) and
+                      ((local-name()='minBounceSpeed' and (string(.)='0' or string(.)='0.0')))) and
                       not(contains(local-name(..),'Layer') and
-                      ((local-name()='isPickable' and .='true'))) and
+                      ((local-name()='isPickable' and string(.)='true'))) and
                       not(contains(local-name(..),'Layout') and
-                      ((local-name()='offset' and (.='0 0' or .='0.0 0.0')) or
-                       (local-name()='size'   and (.='1 1' or .='1.0 1.0')) or
-                       (local-name()='align' and .='&quot;CENTER&quot; &quot;CENTER&quot;') or
-                       (local-name()='offsetUnits' and .='&quot;WORLD&quot; &quot;WORLD&quot;') or
-                       (local-name()='scaleMode' and .='&quot;NONE&quot; &quot;NONE&quot;') or
-                       (local-name()='sizeUnits' and .='&quot;WORLD&quot; &quot;WORLD&quot;'))) and
+                      ((local-name()='offset' and (string(.)='0 0' or string(.)='0.0 0.0')) or
+                       (local-name()='size'   and (string(.)='1 1' or string(.)='1.0 1.0')) or
+                       (local-name()='align' and string(.)='&quot;CENTER&quot; &quot;CENTER&quot;') or
+                       (local-name()='offsetUnits' and string(.)='&quot;WORLD&quot; &quot;WORLD&quot;') or
+                       (local-name()='scaleMode' and string(.)='&quot;NONE&quot; &quot;NONE&quot;') or
+                       (local-name()='sizeUnits' and string(.)='&quot;WORLD&quot; &quot;WORLD&quot;'))) and
                       not( local-name(..)='TextureProperties' and
-                      ((local-name()='anisotropicDegree' and (.='1' or .='1.0')) or
-                       (local-name()='borderColor' and (.='0 0 0 0' or .='0.0 0.0 0.0 0.0')) or
-                       (local-name()='borderWidth' and (.='0' or .='0.0')) or
-                       (starts-with(local-name(),'boundaryMode') and .='REPEAT') or
-                       (local-name()='generateMipMaps' and .='false') or
-                       (local-name()='magnificationFilter' and .='FASTEST') or
-                       (local-name()='minificationFilter'  and .='FASTEST') or
-                       (local-name()='textureCompression'  and .='FASTEST') or
-                       (local-name()='texturePriority' and (.='0' or .='0.0')))) and
+                      ((local-name()='anisotropicDegree' and (string(.)='1' or string(.)='1.0')) or
+                       (local-name()='borderColor' and (string(.)='0 0 0 0' or string(.)='0.0 0.0 0.0 0.0')) or
+                       (local-name()='borderWidth' and (string(.)='0' or string(.)='0.0')) or
+                       (starts-with(local-name(),'boundaryMode') and string(.)='REPEAT') or
+                       (local-name()='generateMipMaps' and string(.)='false') or
+                       (local-name()='magnificationFilter' and string(.)='FASTEST') or
+                       (local-name()='minificationFilter'  and string(.)='FASTEST') or
+                       (local-name()='textureCompression'  and string(.)='FASTEST') or
+                       (local-name()='texturePriority' and (string(.)='0' or string(.)='0.0')))) and
                       not(local-name(..)='Viewport' and
-                      ((local-name()='clipBoundary' and (.='0 1 0 1' or .='0.0 1.0 0.0 1.0')))) and
+                      ((local-name()='clipBoundary' and (string(.)='0 1 0 1' or string(.)='0.0 1.0 0.0 1.0')))) and
                       not( local-name(..)='KeySensor' and
-                      ((local-name()='enabled' and .='true'))) and
+                      ((local-name()='enabled' and string(.)='true'))) and
                       not(starts-with(local-name(..),'TextureProjector') and
                        ((local-name()='direction' and (string(.)='0 0 1' or string(.)='0.0 0.0 1.0')) or
                         (local-name()='location'  and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                         (local-name()='upVector' and (string(.)='0 0 1' or string(.)='0.0 0.0 1.0')) or
+                        (local-name()='farDistance'  and (string(.)='10' or string(.)='10.0')) or
+                        (local-name()='nearDistance' and (string(.)='1'  or string(.)='1.0')) or
                         (local-name()='global' and string(.)='true') or
                         (local-name()='on' and string(.)='true'))) and
                       not( local-name(..)='TextureProjectorParallel' and
                       ((local-name()='fieldOfView' and (string(.)='-1 -1 1 1' or string(.)='-1.0 -1.0 1.0 1.0')))) and
                       not( local-name(..)='TextureProjectorPerspective' and
                        ((local-name()='upVector' and (string(.)='0 0 1' or string(.)='0.0 0.0 1.0')) or
-                        (local-name()='fieldOfView' and (.= '3.1416' or .= '3.14159' or .= '3.141593' or .= '3.1415926' or .= '3.14159263' or .= '3.141592653'))))" />
+                        (local-name()='fieldOfView' and ((string(.)='0.785398') or (string(.)='0.7854') or (string(.)='.785398') or (string(.)='.7854')))))" />
         <xsl:variable name="notDefaultFieldValue10"
                       select="not( local-name(..)='AcousticProperties' and
-                      ((local-name()='containerField' and .='acousticProperties') or
-                      (local-name()='absorption' and (.='0' or .='0.0')) or
-                      (local-name()='diffuse' and (.='0' or .='0.0')) or
-                      (local-name()='refraction' and (.='0' or .='0.0')) or
-                      (local-name()='specular' and (.='0' or .='0.0')))) and
+                      ((local-name()='containerField' and string(.)='acousticProperties') or
+                      (local-name()='absorption' and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='diffuse' and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='refraction' and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='specular' and (string(.)='0' or string(.)='0.0')))) and
                       not( local-name(..)='Analyser' and
-                      ((local-name()='containerField' and .='children') or
-                      (local-name()='frequencyBinCount' and (.='1024' or .='1024.0')) or
-                      (local-name()='fftSize' and (.='2048' or .='2048.0')) or
-                      (local-name()='minDecibels' and (.='-100' or .='-100.0')) or
-                      (local-name()='maxDecibels' and (.='-30' or .='-30.0')) or
-                      (local-name()='smoothingTimeConstant' and (.='.8' or .='0.8')))) and
+                      ((local-name()='containerField' and string(.)='children') or
+                      (local-name()='frequencyBinCount' and (string(.)='1024' or string(.)='1024.0')) or
+                      (local-name()='fftSize' and (string(.)='2048' or string(.)='2048.0')) or
+                      (local-name()='minDecibels' and (string(.)='-100' or string(.)='-100.0')) or
+                      (local-name()='maxDecibels' and (string(.)='-30' or string(.)='-30.0')) or
+                      (local-name()='smoothingTimeConstant' and (string(.)='.8' or string(.)='0.8')))) and
                       not( local-name(..)='BufferAudioSource' and
-                      ((local-name()='containerField' and .='children') or
-                      (local-name()='bufferDuration' and (.='0' or .='0.0')) or
-                      (local-name()='type' and (.='lowpass')) or
-                      (local-name()='loopStart' and (.='0' or .='0.0')) or
-                      (local-name()='loopEnd' and (.='0' or .='0.0')) or
-                      (local-name()='numberOfChannels' and .='0') or
-                      (local-name()='playbackRate' and (.='1' or .='1.0')) or
-                      (local-name()='sampleRate' and (.='0' or .='0.0')))) and
+                      ((local-name()='containerField' and string(.)='children') or
+                      (local-name()='bufferDuration' and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='type' and (string(.)='lowpass')) or
+                      (local-name()='loopStart' and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='loopEnd' and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='numberOfChannels' and string(.)='0') or
+                      (local-name()='playbackRate' and (string(.)='1' or string(.)='1.0')) or
+                      (local-name()='sampleRate' and (string(.)='0' or string(.)='0.0')))) and
                       not( local-name(..)='AudioDestination' and
-                      ((local-name()='containerField' and .='children') or
-                      (local-name()='maxChannelCount' and (.='2')))) and   
+                      ((local-name()='containerField' and string(.)='children') or
+                      (local-name()='maxChannelCount' and (string(.)='2')))) and   
                       not( local-name(..)='BiquadFilter' and
-                      ((local-name()='containerField' and .='children') or
-                      (local-name()='frequency' and (.='350' or .='350.0')) or
-                      (local-name()='qualityFactor' and (.='1' or .='1.0')) or
-                      (local-name()='type' and (.='lowpass')))) and
+                      ((local-name()='containerField' and string(.)='children') or
+                      (local-name()='frequency' and (string(.)='350' or string(.)='350.0')) or
+                      (local-name()='qualityFactor' and (string(.)='1' or string(.)='1.0')) or
+                      (local-name()='type' and (string(.)='lowpass')))) and
                       not( local-name(..)='ChannelMerger' and
-                      ((local-name()='containerField' and .='children'))) and
+                      ((local-name()='containerField' and string(.)='children'))) and
                       not( local-name(..)='ChannelSelector' and
-                      ((local-name()='containerField' and .='children') or
-                      (local-name()='channelSelection' and (.='0')))) and
+                      ((local-name()='containerField' and string(.)='children') or
+                      (local-name()='channelSelection' and (string(.)='0')))) and
                       not( local-name(..)='ChannelSplitter' and
-                      ((local-name()='containerField' and .='children'))) and
+                      ((local-name()='containerField' and string(.)='children'))) and
                       not( local-name(..)='Convolver' and
-                      ((local-name()='containerField' and .='children') or
-                      (local-name()='normalize' and (.='false')))) and
+                      ((local-name()='containerField' and string(.)='children') or
+                      (local-name()='normalize' and (string(.)='false')))) and
                       not( local-name(..)='Delay' and
-                      ((local-name()='containerField' and .='children') or
-                      (local-name()='delayTime' and (.='0' or .='0.0')) or
-                      (local-name()='maxDelayTime' and (.='1' or .='1.0')))) and
+                      ((local-name()='containerField' and string(.)='children') or
+                      (local-name()='delayTime' and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='maxDelayTime' and (string(.)='1' or string(.)='1.0')))) and
                       not( local-name(..)='DynamicsCompressor' and
-                      ((local-name()='containerField' and .='children') or
-                      (local-name()='attack' and (.='0.003' or .='.003')) or
-                      (local-name()='gain' and (.='1' or .='1.0')) or
-                      (local-name()='knee' and (.='30' or .='30.0')) or
-                      (local-name()='ratio' and (.='12' or .='12.0')) or
-                      (local-name()='release' and (.='.25' or .='0.25')) or
-                      (local-name()='threshold' and (.='-24' or .='-24.0')))) and
+                      ((local-name()='containerField' and string(.)='children') or
+                      (local-name()='attack' and (string(.)='0.003' or string(.)='.003')) or
+                      (local-name()='gain' and (string(.)='1' or string(.)='1.0')) or
+                      (local-name()='knee' and (string(.)='30' or string(.)='30.0')) or
+                      (local-name()='ratio' and (string(.)='12' or string(.)='12.0')) or
+                      (local-name()='release' and (string(.)='.25' or string(.)='0.25')) or
+                      (local-name()='threshold' and (string(.)='-24' or string(.)='-24.0')))) and
                       not( local-name(..)='Gain' and
-                      ((local-name()='containerField' and .='children'))) and
+                      ((local-name()='containerField' and string(.)='children'))) and
                       not( local-name(..)='ListenerPointSource' and
-                      ((local-name()='containerField' and .='children') or
-                      (local-name()='dopplerEnabled' and (.='false')) or
-                      (local-name()='interauralDistance' and (.='0' or .='0.0')) or
-                      (local-name()='orientation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
-                      (local-name()='position' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                      (local-name()='trackCurrentView' and (.='false')))) and
+                      ((local-name()='containerField' and string(.)='children') or
+                      (local-name()='dopplerEnabled' and (string(.)='false')) or
+                      (local-name()='interauralDistance' and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='orientation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
+                      (local-name()='position' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                      (local-name()='trackCurrentView' and (string(.)='false')))) and
                       not( local-name(..)='MicrophoneSource' and
-                      ((local-name()='containerField' and .='children'))) and
+                      ((local-name()='containerField' and string(.)='children'))) and
                       not( local-name(..)='OscillatorSource' and
-                      ((local-name()='containerField' and .='children') or
-                      (local-name()='frequency' and (.='0' or .='0.0')))) and
+                      ((local-name()='containerField' and string(.)='children') or
+                      (local-name()='frequency' and (string(.)='0' or string(.)='0.0')))) and
                       not( local-name(..)='PeriodicWave' and
-                      ((local-name()='containerField' and .='children') or
-                      (local-name()='type' and (.='square')))) and
+                      ((local-name()='containerField' and string(.)='children') or
+                      (local-name()='type' and (string(.)='square')))) and
                       not( local-name(..)='SpatialSound' and
-                      ((local-name()='containerField' and .='children') or
-                      (local-name()='coneInnerAngle' and (.='6.2832')) or
-                      (local-name()='coneOuterAngle' and (.='6.2832')) or
-                      (local-name()='coneOuterGain' and (.='0' or .='0.0')) or
-                      (local-name()='direction' and (.='0 0 1' or .='0.0 0.0 1.0')) or
-                      (local-name()='distanceModel' and (.='inverse')) or
-                      (local-name()='dopplerEnabled' and (.='false')) or
-                      (local-name()='enableHRTF' and (.='false')) or
-                      (local-name()='intensity' and (.='1' or .='1.0')) or
-                      (local-name()='location' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                      (local-name()='maxDistance' and (.='10000' or .='10000.0')) or
-                      (local-name()='priority' and (.='0' or .='0.0')) or
-                      (local-name()='referenceDistance' and (.='1' or .='1.0')) or
-                      (local-name()='rolloffFactor' and (.='1' or .='1.0')) or
-                      (local-name()='spatialize' and (.='true')))) and
+                      ((local-name()='containerField' and string(.)='children') or
+                      (local-name()='coneInnerAngle' and (string(.)='6.2832')) or
+                      (local-name()='coneOuterAngle' and (string(.)='6.2832')) or
+                      (local-name()='coneOuterGain' and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='direction' and (string(.)='0 0 1' or string(.)='0.0 0.0 1.0')) or
+                      (local-name()='distanceModel' and (string(.)='inverse')) or
+                      (local-name()='dopplerEnabled' and (string(.)='false')) or
+                      (local-name()='enableHRTF' and (string(.)='false')) or
+                      (local-name()='intensity' and (string(.)='1' or string(.)='1.0')) or
+                      (local-name()='location' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                      (local-name()='maxDistance' and (string(.)='10000' or string(.)='10000.0')) or
+                      (local-name()='priority' and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='referenceDistance' and (string(.)='1' or string(.)='1.0')) or
+                      (local-name()='rolloffFactor' and (string(.)='1' or string(.)='1.0')) or
+                      (local-name()='spatialize' and (string(.)='true')))) and
                       not( local-name(..)='StreamAudioDestination' and
-                      ((local-name()='containerField' and .='children'))) and
+                      ((local-name()='containerField' and string(.)='children'))) and
                       not( local-name(..)='StreamAudioSource' and
-                      ((local-name()='containerField' and .='children'))) and
+                      ((local-name()='containerField' and string(.)='children'))) and
                       not( local-name(..)='WaveShaper' and
-                      ((local-name()='containerField' and .='children') or
-                      (local-name()='oversample' and (.='none'))))" />
+                      ((local-name()='containerField' and string(.)='children') or
+                      (local-name()='oversample' and (string(.)='none'))))" />
         <xsl:variable name="notDefaultContainerField1"
-                      select="not((local-name()='containerField' and .='children')	and
+                      select="not((local-name()='containerField' and string(.)='children')	and
                       (contains(local-name(..),'Interpolator') or
                       contains(local-name(..),'Light') or
                       contains(local-name(..),'Sensor') or
@@ -3469,7 +3471,7 @@ Recommended tools:
                       local-name(..)='Viewpoint' or
                       local-name(..)='WorldInfo' or
                       local-name(..)='ProtoInstance')) and
-                      not((local-name()='containerField' and .='geometry')	and
+                      not((local-name()='containerField' and string(.)='geometry')	and
                       (local-name(..)='Box' or
                       local-name(..)='Cone' or
                       local-name(..)='Cylinder' or
@@ -3483,145 +3485,146 @@ Recommended tools:
                       local-name(..)='Text' or
                       local-name(..)='XvlShell'))" />
         <xsl:variable name="notDefaultContainerField2"
-                      select="not((local-name()='containerField' and .='source')	and (local-name(..)='AudioClip')) and
-                      not((local-name()='containerField' and .='appearance')	and (local-name(..)='Appearance')) and
-                      not((local-name()='containerField' and .='material')	and ((local-name(..)='Material') or (local-name(..)='TwoSidedMaterial'))) and
-                      not((local-name()='containerField' and .='color')	and (local-name(..)='Color' or local-name(..)='ColorRGBA')) and
-                      not((local-name()='containerField' and .='coord')	and ((local-name(..)='Coordinate') or (local-name(..)='CoordinateDouble') or (local-name(..)='GeoCoordinate'))) and
-                      not((local-name()='containerField' and .='normal')	and (local-name(..)='Normal')) and
-                      not((local-name()='containerField' and .='texture')	and (local-name(..)='ImageTexture' or local-name(..)='PixelTexture' or local-name(..)='MovieTexture' or local-name(..)='MultiTexture' or local-name(..)='ComposedTexture3D' or local-name(..)='ImageTexture3D' or local-name(..)='PixelTexture3D')) and
-                      not((local-name()='containerField' and .='fontStyle')	and (local-name(..)='FontStyle')) and
-                      not((local-name()='containerField' and .='texCoord')	and (local-name(..)='TextureCoordinate' or local-name(..)='TextureCoordinateGenerator')) and
-                      not((local-name()='containerField' and .='textureTransform')	and (local-name(..)='TextureTransform'))" />
+                      select="not((local-name()='containerField' and string(.)='source')   and (local-name(..)='AudioClip')) and
+                      not((local-name()='containerField' and string(.)='appearance')	   and (local-name(..)='Appearance')) and
+                      not((local-name()='containerField' and string(.)='material')         and ((local-name(..)='Material') or (local-name(..)='TwoSidedMaterial'))) and
+                      not((local-name()='containerField' and string(.)='color')            and (local-name(..)='Color' or local-name(..)='ColorRGBA')) and
+                      not((local-name()='containerField' and string(.)='coord')            and ((local-name(..)='Coordinate') or (local-name(..)='CoordinateDouble') or (local-name(..)='GeoCoordinate'))) and
+                      not((local-name()='containerField' and string(.)='normal')           and (local-name(..)='Normal')) and
+                      not((local-name()='containerField' and string(.)='texture')          and (local-name(..)='ImageTexture' or local-name(..)='PixelTexture' or local-name(..)='MovieTexture' or local-name(..)='MultiTexture' or local-name(..)='ComposedTexture3D' or local-name(..)='ImageTexture3D' or local-name(..)='PixelTexture3D')) and
+                      not((local-name()='containerField' and string(.)='fontStyle')        and (local-name(..)='FontStyle')) and
+                      not((local-name()='containerField' and string(.)='texCoord')         and (local-name(..)='TextureCoordinate' or local-name(..)='TextureCoordinateGenerator')) and
+                      not((local-name()='containerField' and string(.)='textureTransform') and (local-name(..)='TextureTransform'))" />
         <xsl:variable name="notDefaultContainerField3"
-                      select="not((local-name()='containerField' and .='geometry')	and
+                      select="not((local-name()='containerField' and string(.)='geometry') and
                       ((local-name(..)='Arc2D') or (local-name(..)='ArcClose2D') or (local-name(..)='Circle2D') or (local-name(..)='Disk2D') or (local-name(..)='Polyline2D') or (local-name(..)='Polypoint2D') or (local-name(..)='Rectangle2D') or (local-name(..)='TriangleSet2D') or contains(local-name(..),'QuadSet'))) and
-                      not((local-name()='containerField' and .='voxels')	and
+                      not((local-name()='containerField' and string(.)='voxels')	and
                       ((local-name(..)='IsoSurfaceVolumeData') or (local-name(..)='SegmentedVolumeData') or (local-name(..)='VolumeData'))) and
-                      not((local-name()='containerField' and .='renderStyle')	and
+                      not((local-name()='containerField' and string(.)='renderStyle')	and
                       ((local-name(..)='BlendedVolumeStyle') or (local-name(..)='BoundaryEnhancementVolumeStyle') or (local-name(..)='CartoonVolumeStyle') or (local-name(..)='ComposedVolumeStyle') or (local-name(..)='EdgeEnhancementVolumeStyle') or (local-name(..)='OpacityMapVolumeStyle') or (local-name(..)='ProjectionVolumeStyle') or (local-name(..)='ShadedVolumeStyle') or (local-name(..)='SilhouetteEnhancementVolumeStyle') or (local-name(..)='ToneMappedVolumeStyle')))" />
         <xsl:variable name="notDefaultCAD"
                       select="not((local-name(..)='CADAssembly' or local-name(..)='CADFace' or local-name(..)='CADLayer') and
-                      ((local-name()='containerField' and (.='children')) or
-                       (local-name()='bboxCenter' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                       (local-name()='bboxSize' and (.='-1 -1 -1' or .='-1.0 -1.0 -1.0')))) and
+                      ((local-name()='containerField' and (string(.)='children')) or
+                       (local-name()='bboxCenter' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                       (local-name()='bboxSize' and (string(.)='-1 -1 -1' or string(.)='-1.0 -1.0 -1.0')))) and
                       not(local-name(..)='CADPart' and
-                      ((local-name()='containerField' and (.='children')) or
-                       (local-name()='bboxCenter' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                       (local-name()='bboxSize' and (.='-1 -1 -1' or .='-1.0 -1.0 -1.0')) or
-                       (local-name()='center' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-					   (local-name()='rotation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
-                       (local-name()='scale' and (.='1 1 1' or .='1.0 1.0 1.0')) or
-                       (local-name()='scaleOrientation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
-                       (local-name()='translation' and (.='0 0 0' or .='0.0 0.0 0.0'))))" />
+                      ((local-name()='containerField' and (string(.)='children')) or
+                       (local-name()='bboxCenter' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                       (local-name()='bboxSize' and (string(.)='-1 -1 -1' or string(.)='-1.0 -1.0 -1.0')) or
+                       (local-name()='center' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+					   (local-name()='rotation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
+                       (local-name()='scale' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')) or
+                       (local-name()='scaleOrientation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
+                       (local-name()='translation' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0'))))" />
         <xsl:variable name="notDefaultDIS1"
                       select="not((local-name(..)='EspduTransform' or contains(local-name(..),'Pdu')) and
                       ((starts-with(local-name(),'is')) or
-                      (local-name()='address' and (.='localhost')) or
-                      (local-name()='enabled' and (.='true')) or
-                      (local-name()='networkMode' and (.='standAlone')) or
-                      (local-name()='rtpHeaderExpected' and (.='false')) or
-                      (local-name()='readInterval'  and (.='.1' or .='0.1')) or
-                      (local-name()='writeInterval'  and (.='1' or .='1.0')) or
-                      (((local-name()='applicationID') or (local-name()='munitionApplicationID') or (local-name()='whichGeometry')) and (.='1')) or
-                      ((contains(local-name(),'ntityID') or contains(local-name(),'iteID') or (local-name()='applicationID')) and (.='0')) or
-                      ((local-name()='port' or local-name()='multicastRelayPort' or local-name()='fireMissionIndex') and (.='0'))))" />
+                      (local-name()='address' and (string(.)='localhost')) or
+                      (local-name()='enabled' and (string(.)='true')) or
+                      (local-name()='networkMode' and (string(.)='standAlone')) or
+                      (local-name()='rtpHeaderExpected' and (string(.)='false')) or
+                      (local-name()='readInterval'  and (string(.)='.1' or string(.)='0.1')) or
+                      (local-name()='writeInterval'  and (string(.)='1' or string(.)='1.0')) or
+                      (((local-name()='applicationID') or (local-name()='munitionApplicationID') or (local-name()='whichGeometry')) and (string(.)='1')) or
+                      ((contains(local-name(),'ntityID') or contains(local-name(),'iteID') or (local-name()='applicationID')) and (string(.)='0')) or
+                      ((local-name()='port' or local-name()='multicastRelayPort' or local-name()='fireMissionIndex') and (string(.)='0'))))" />
         <!-- ='' ='1' '' geoCoords='0 0 0' geoSystem='"GD" "WE"' '1' munitionSiteID='0' ='' '0' '0' -->
         <xsl:variable name="notDefaultDIS2"
                       select="not(local-name(..)='EspduTransform' and
-                      ((((local-name()='collisionType') or (local-name()='detonationResult')) and (.='0')) or
-                      (((local-name()='detonationLocation') or (local-name()='detonationRelativeLocation'))  and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                      (local-name()='eventApplicationID'  and (.='1')) or
-                      (((local-name()='eventEntityID') or (local-name()='eventNumber') or (local-name()='eventSiteID'))  and (.='0')) or
-                      ((local-name()='fired1' or local-name()='fired2') and (.='false')) or
-                      (local-name()='deadReckoning'  and (.='0')) or
-                      ((local-name()='articulationParameterCount' or local-name()='entityCategory' or local-name()='entitySubcategory' or local-name()='entityCountry' or local-name()='entityDomain' or local-name()='entityExtra' or local-name()='entityKind' or local-name()='entitySpecific' or local-name()='eventApplicationID' or local-name()='firingRange' or local-name()='firingRate' or local-name()='fuse' or local-name()='warhead' or local-name()='forceID' or local-name()='munitionQuantity' or local-name()='munitionApplicationID') and (.='0')) or
-                      ((local-name()='linearVelocity' or local-name()='linearAcceleration' or local-name()='munitionStartPoint' or local-name()='munitionEndPoint') and (.='0 0 0'))))" />
+                      ((((local-name()='collisionType') or (local-name()='detonationResult')) and (string(.)='0')) or
+                      (((local-name()='detonationLocation') or (local-name()='detonationRelativeLocation'))  and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                      (local-name()='eventApplicationID'  and (string(.)='1')) or
+                      (((local-name()='eventEntityID') or (local-name()='eventNumber') or (local-name()='eventSiteID'))  and (string(.)='0')) or
+                      ((local-name()='fired1' or local-name()='fired2') and (string(.)='false')) or
+                      (local-name()='deadReckoning'  and (string(.)='0')) or
+                      ((local-name()='articulationParameterCount' or local-name()='entityCategory' or local-name()='entitySubcategory' or local-name()='entityCountry' or local-name()='entityDomain' or local-name()='entityExtra' or local-name()='entityKind' or local-name()='entitySpecific' or local-name()='eventApplicationID' or local-name()='firingRange' or local-name()='firingRate' or local-name()='fuse' or local-name()='warhead' or local-name()='forceID' or local-name()='munitionQuantity' or local-name()='munitionApplicationID') and (string(.)='0')) or
+                      ((local-name()='linearVelocity' or local-name()='linearAcceleration' or local-name()='munitionStartPoint' or local-name()='munitionEndPoint') and (string(.)='0 0 0'))))" />
         <xsl:variable name="notDefaultDIS3"
                       select="not(local-name(..)='ReceiverPdu' and
-                      (((local-name()='radioID' or local-name()='receiverState' or starts-with(local-name(),'transmitter')) and (.='0')) or
-                      (local-name()='receiverPower'  and (.='0' or .='0.0')))) and
+                      (((local-name()='radioID' or local-name()='receiverState' or starts-with(local-name(),'transmitter')) and (string(.)='0')) or
+                      (local-name()='receiverPower'  and (string(.)='0' or string(.)='0.0')))) and
                       not(local-name(..)='SignalPdu' and
-                      (((local-name()='radioID' or local-name()='encodingScheme' or local-name()='tdlType' or local-name()='sampleRate' or local-name()='samples' or local-name()='dataLength') and (.='0')))) and
+                      (((local-name()='radioID' or local-name()='encodingScheme' or local-name()='tdlType' or local-name()='sampleRate' or local-name()='samples' or local-name()='dataLength') and (string(.)='0')))) and
                       not(local-name(..)='TransmitterPdu' and
-                      (((local-name()='radioID' or starts-with(local-name(),'antennaPattern') or starts-with(local-name(),'crypto') or local-name()='frequency' or local-name()='inputSource' or local-name()='lengthOfModulationParameters' or starts-with(local-name(),'modulationType') or starts-with(local-name(),'radioEntityType') or local-name()='transmitFrequencyBandwidth' or local-name()='transmitState') and (.='0')) or
-                      (local-name()='power'  and (.='0' or .='0.0')) or
-                      ((contains(local-name(),'antennaLocation') and (.='0 0 0')))))" />
+                      (((local-name()='radioID' or starts-with(local-name(),'antennaPattern') or starts-with(local-name(),'crypto') or local-name()='frequency' or local-name()='inputSource' or local-name()='lengthOfModulationParameters' or starts-with(local-name(),'modulationType') or starts-with(local-name(),'radioEntityType') or local-name()='transmitFrequencyBandwidth' or local-name()='transmitState') and (string(.)='0')) or
+                      (local-name()='power'  and (string(.)='0' or string(.)='0.0')) or
+                      ((contains(local-name(),'antennaLocation') and (string(.)='0 0 0')))))" />
         <xsl:variable name="notDefaultDIS4"
                       select="not(local-name(..)='DISEntityManager' and
-                      (((local-name()='applicationID') and (.='0')) or
-                      (local-name()='address' and (.='localhost')) or
-                      ((local-name()='port' or local-name()='siteID') and (.='0')))) and
+                      (((local-name()='applicationID') and (string(.)='0')) or
+                      (local-name()='address' and (string(.)='localhost')) or
+                      ((local-name()='port' or local-name()='siteID') and (string(.)='0')))) and
                       not(local-name(..)='DISEntityTypeMapping' and 
-                      ((local-name()='containerField') and (.='mapping')) or
-                      ((local-name()='category' or local-name()='country' or local-name()='domain' or local-name()='extra' or local-name()='kind' or local-name()='specific' or local-name()='subcategory') and (.='0')))" />
+                      ((local-name()='containerField') and (string(.)='mapping')) or
+                      ((local-name()='category' or local-name()='country' or local-name()='domain' or local-name()='extra' or local-name()='kind' or local-name()='specific' or local-name()='subcategory') and (string(.)='0')))" />
         <xsl:variable name="notDefaultGeo"
                       select="not((starts-with(local-name(..),'Geo') or (local-name(..)='EspduTransform') or contains(local-name(..),'Pdu')) and 
-                      ((local-name()='containerField' and (.='children')) or
-                       (local-name()='geoCenter' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                       (local-name()='geoCoords' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                       (local-name()='geoSystem' and (translate(.,',','')='&quot;GD&quot; &quot;WE&quot;')))) and
+                      ((local-name()='containerField' and (string(.)='children')) or
+                       (local-name()='geoCenter' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                       (local-name()='geoCoords' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                       (local-name()='geoSystem' and (translate(string(.),',','')='&quot;GD&quot; &quot;WE&quot;')))) and
                       not(local-name(..)='GeoLOD' 	  and 
-                      ((local-name()='range' and (.='10' or .='10.0')) or
-                       (local-name()='center' and (.='0 0 0' or .='0.0 0.0 0.0')))) and
+                      ((local-name()='range' and (string(.)='10' or string(.)='10.0')) or
+                       (local-name()='center' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')))) and
                       not(local-name(..)='GeoViewpoint' and
-                      ((local-name()='speedFactor' and (.='1' or .='1.0')) or
-						(local-name()='headlight' and (.='true')) or
-						(local-name()='jump' and (.='true')) or
-                        (local-name()='viewAll' and .='false') or
-                        ((local-name()='nearClippingPlane' or local-name()='farClippingPlane') and ((.='-1') or (.='-1.') or (.='-1.0'))) or
-						(local-name()='navType' and (.='&quot;EXAMINE&quot; &quot;ANY&quot;')) or
-						(local-name()='orientation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
-						(local-name()='position' and (.='0 0 100000' or .='0.0 0.0 100000.0')) or
-                        (local-name()='fieldOfView' and (.='0.785398' or .='.785398' or .='0.7854' or .='.7854')) or
-                        (local-name()='geoSystem' and (translate(.,',','')='&quot;GD&quot; &quot;WE&quot;')))) and
+                      ((local-name()='speedFactor' and (string(.)='1' or string(.)='1.0')) or
+						(local-name()='headlight' and (string(.)='true')) or
+						(local-name()='jump' and (string(.)='true')) or
+                        (local-name()='viewAll' and string(.)='false') or
+                        ((local-name()='nearClippingPlane' or local-name()='farClippingPlane') and ((string(.)='-1') or (string(.)='-1.') or (string(.)='-1.0'))) or
+						(local-name()='navType' and (string(.)='&quot;EXAMINE&quot; &quot;ANY&quot;')) or
+						(local-name()='orientation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
+						(local-name()='position' and (string(.)='0 0 100000' or string(.)='0.0 0.0 100000.0')) or
+                        (local-name()='fieldOfView' and (string(.)='0.785398' or string(.)='.785398' or string(.)='0.7854' or string(.)='.7854')) or
+                        (local-name()='geoSystem' and (translate(string(.),',','')='&quot;GD&quot; &quot;WE&quot;')))) and
                       not((local-name(..)='GeoCoordinate' or local-name(..)='GeoOrigin') and
-                      ((local-name()='rotateYUp' and (.='false')) or
-                      (local-name()='containerField' and (.='geoOrigin')) or
-                      (local-name()='geoSystem' and (translate(.,',','')='&quot;GD&quot; &quot;WE&quot;'))))" />
+                      ((local-name()='rotateYUp' and (string(.)='false')) or
+                      (local-name()='containerField' and (string(.)='geoOrigin')) or
+                      (local-name()='geoSystem' and (translate(string(.),',','')='&quot;GD&quot; &quot;WE&quot;'))))" />
         <xsl:variable name="notDefaultHAnim1"
                       select="not( local-name(..)='HAnimJoint' and
-                      ((local-name()='containerField' and (.='children')) or
-                       (local-name()='center' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                       (local-name()='limitOrientation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
-                       (local-name()='rotation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
-                       (local-name()='scale' and (.='1 1 1' or .='1.0 1.0 1.0')) or
-                       (local-name()='scaleOrientation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
-                       (local-name()='stiffness' and (.='1 1 1' or .='1.0 1.0 1.0')) or
-                       (local-name()='translation' and (.='0 0 0' or .='0.0 0.0 0.0')))) and
+                      ((local-name()='containerField' and (string(.)='children')) or
+                       (local-name()='center' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                       (local-name()='limitOrientation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
+                       (local-name()='rotation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
+                       (local-name()='scale' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')) or
+                       (local-name()='scaleOrientation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
+                       (local-name()='stiffness' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')) or
+                       (local-name()='translation' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')))) and
                       not( local-name(..)='HAnimSegment' and
-                      ((local-name()='containerField' and (.='children')) or
-                       (local-name()='bboxCenter' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                       (local-name()='bboxSize' and (.='-1 -1 -1' or .='-1.0 -1.0 -1.0')) or
-                       (local-name()='centerOfMass' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                       (local-name()='mass' and (.='0' or .='0.0')) or
-                       (local-name()='momentsOfInertia' and (.='0 0 0 0 0 0 0 0 0' or .='0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0')))) and
+                      ((local-name()='containerField' and (string(.)='children')) or
+                       (local-name()='bboxCenter' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                       (local-name()='bboxSize' and (string(.)='-1 -1 -1' or string(.)='-1.0 -1.0 -1.0')) or
+                       (local-name()='centerOfMass' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                       (local-name()='mass' and (string(.)='0' or string(.)='0.0')) or
+                       (local-name()='momentsOfInertia' and
+                        (string(.)='0 0 0 0 0 0 0 0 0' or string(.)='0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0')))) and
                       not( local-name(..)='HAnimSite' and
-                      ((local-name()='containerField' and (.='children')) or
-                       (local-name()='center' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                       (local-name()='rotation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
-                       (local-name()='scale' and (.='1 1 1' or .='1.0 1.0 1.0')) or
-                       (local-name()='scaleOrientation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
-                       (local-name()='translation' and (.='0 0 0' or .='0.0 0.0 0.0'))))" />
+                      ((local-name()='containerField' and (string(.)='children')) or
+                       (local-name()='center' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                       (local-name()='rotation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
+                       (local-name()='scale' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')) or
+                       (local-name()='scaleOrientation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
+                       (local-name()='translation' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0'))))" />
         <xsl:variable name="notDefaultHAnim2"
                       select="not( local-name(..)='HAnimHumanoid' and
-                      ((local-name()='containerField' and (.='children')) or
-                       (local-name()='bboxCenter' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                       (local-name()='bboxSize' and (.='-1 -1 -1' or .='-1.0 -1.0 -1.0')) or
-                       (local-name()='center' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                       (local-name()='jointBindingPositions' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                       (local-name()='jointBindingRotations' and (.='0 0 1 0' or .='0 1 0 0' or .='0.0 0.0 1.0 0.0' or .='0.0 1.0 0.0 0.0')) or
-                       (local-name()='jointBindingScales' and (.='1 1 1' or .='1.0 1.0 1.0')) or
+                      ((local-name()='containerField' and (string(.)='children')) or
+                       (local-name()='bboxCenter' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                       (local-name()='bboxSize' and (string(.)='-1 -1 -1' or string(.)='-1.0 -1.0 -1.0')) or
+                       (local-name()='center' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                       (local-name()='jointBindingPositions' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                       (local-name()='jointBindingRotations' and (string(.)='0 0 1 0' or string(.)='0 1 0 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0.0 1.0 0.0 0.0')) or
+                       (local-name()='jointBindingScales' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')) or
                        (local-name()='loa' and (string(.)='-1')) or
-                       (local-name()='version' and (($isHAnim1 = true() and (string(.)='1.0' or (string-length(.) = 0))) or ($isHAnim2 = true() and string(.)='2.0'))) or
+                       (local-name()='version' and (($isHAnim1 = true() and (string(.)='1.0' or (string-length(string(.)) = 0))) or ($isHAnim2 = true() and string(.)='2.0'))) or
                        (local-name()='skeletalConfiguration' and (string(.)='BASIC')) or
-                       (local-name()='rotation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
-                       (local-name()='scale' and (.='1 1 1' or .='1.0 1.0 1.0')) or
-                       (local-name()='scaleOrientation' and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')) or
-                       (local-name()='translation' and (.='0 0 0' or .='0.0 0.0 0.0')))) and
+                       (local-name()='rotation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
+                       (local-name()='scale' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')) or
+                       (local-name()='scaleOrientation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
+                       (local-name()='translation' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')))) and
                       not( local-name(..)='HAnimDisplacer' and
-                      ((local-name()='containerField' and (.='displacers')) or
-                       (local-name()='weight' and (.='0' or .='0.0')))) and
+                      ((local-name()='containerField' and (string(.)='displacers')) or
+                       (local-name()='weight' and (string(.)='0' or string(.)='0.0')))) and
                       not( local-name(..)='HAnimMotion' and
                       ((local-name()='containerField' and (string(.)='motions')) or
                        (local-name()='frameDuration' and (string(.)='0.1' or string(.)='.1')) or
@@ -3630,215 +3633,215 @@ Recommended tools:
                        (local-name()='loa' and (string(.)='-1'))))" />
         <xsl:variable name="notDefaultNurbs"
                       select="not((local-name(..)='NurbsCurve' or local-name(..)='NurbsCurve2D') and
-                      ((local-name()='tessellation' and (.='0')) or
-                      (local-name()='closed' and (.='false')) or
-                      (local-name()='order' and (.='3')))) and
+                      ((local-name()='tessellation' and (string(.)='0')) or
+                      (local-name()='closed' and (string(.)='false')) or
+                      (local-name()='order' and (string(.)='3')))) and
                       not(local-name(..)='NurbsSet' and
-                      ((local-name()='tessellationScale' and (.='1' or .='1.0')) or 
-                      (local-name()='bboxCenter'	and	(.='0 0 0' or .='0.0 0.0 0.0')) or
-                      ( local-name()='bboxSize'	and	(.='-1 -1 -1' or .='-1.0 -1.0 -1.0')))) and
+                      ((local-name()='tessellationScale' and (string(.)='1' or string(.)='1.0')) or 
+                      (local-name()='bboxCenter'	and	(string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                      ( local-name()='bboxSize'	and	(string(.)='-1 -1 -1' or string(.)='-1.0 -1.0 -1.0')))) and
                       not((local-name(..)='NurbsOrientationInterpolator' or local-name(..)='NurbsPositionInterpolator') and
-                      ((local-name()='order' and (.='3' or .='3.0')))) and
+                      ((local-name()='order' and (string(.)='3' or string(.)='3.0')))) and
                       not((local-name(..)='NurbsSurface' or local-name(..)='NurbsPatchSurface' or local-name(..)='NurbsSweptSurface' or local-name(..)='NurbsTextureSurface' or local-name(..)='NurbsTrimmedSurface') and
-                      ((local-name()='uTessellation' and (.='0')) or
-                      (local-name()='vTessellation' and (.='0')) or
-                      (local-name()='uDimension' and (.='0')) or
-                      (local-name()='vDimension' and (.='0')) or
-                      (local-name()='uOrder' and (.='3')) or
-                      (local-name()='vOrder' and (.='3')) or
-                      (local-name()='ccw' and (.='true')) or
-                      (local-name()='solid' and (.='true')) or
-                      ((local-name()='uClosed' or local-name()='vClosed') and (.='false')))) and
+                      ((local-name()='uTessellation' and (string(.)='0')) or
+                      (local-name()='vTessellation' and (string(.)='0')) or
+                      (local-name()='uDimension' and (string(.)='0')) or
+                      (local-name()='vDimension' and (string(.)='0')) or
+                      (local-name()='uOrder' and (string(.)='3')) or
+                      (local-name()='vOrder' and (string(.)='3')) or
+                      (local-name()='ccw' and (string(.)='true')) or
+                      (local-name()='solid' and (string(.)='true')) or
+                      ((local-name()='uClosed' or local-name()='vClosed') and (string(.)='false')))) and
                       not((local-name(..)='NurbsSurfaceInterpolator' or local-name(..)='NurbsTextureCoordinate') and
-                      ((local-name()='uDimension' and (.='0')) or
-                      (local-name()='vDimension' and (.='0')) or
-                      (local-name()='uOrder' and (.='3')) or
-                      (local-name()='vOrder' and (.='3')))) and
+                      ((local-name()='uDimension' and (string(.)='0')) or
+                      (local-name()='vDimension' and (string(.)='0')) or
+                      (local-name()='uOrder' and (string(.)='3')) or
+                      (local-name()='vOrder' and (string(.)='3')))) and
                       not((local-name(..)='NurbsCurve' or local-name(..)='NurbsSwungSurface') and
-                      ((local-name()='ccw' or local-name()='solid') and (.='true'))) and
+                      ((local-name()='ccw' or local-name()='solid') and (string(.)='true'))) and
                       not((contains(local-name(..),'SplinePositionInterpolator') or local-name(..)='SplineScalarInterpolator' or local-name(..)='SquadOrientationInterpolator') and
-                      ((local-name()='closed' or local-name()='normalizeVelocity') and (.='false')))" />
+                      ((local-name()='closed' or local-name()='normalizeVelocity') and (string(.)='false')))" />
         <xsl:variable name="notDefaultGeometry2D"
                       select="not((local-name(..)='Arc2D' or local-name(..)='ArcClose2D') and
-                      ((local-name()='startAngle' and (.='0' or .='0.0')) or
-                       (local-name()='endAngle' and (.='1.5708' or .='1.570796')) or
-                       (local-name()='radius' and (.='1' or .='1.0')) or
-                       (local-name()='solid' and (.='false')))) and
+                      ((local-name()='startAngle' and (string(.)='0' or string(.)='0.0')) or
+                       (local-name()='endAngle' and (string(.)='1.5708' or string(.)='1.570796')) or
+                       (local-name()='radius' and (string(.)='1' or string(.)='1.0')) or
+                       (local-name()='solid' and (string(.)='false')))) and
                       not(local-name(..)='Circle2D' and
-                      ((local-name()='radius' and (.='1' or .='1.0')))) and
+                      ((local-name()='radius' and (string(.)='1' or string(.)='1.0')))) and
                       not(local-name(..)='Disk2D' and
-                      ((local-name()='innerRadius' and (.='0' or .='0.0')) or
-                       (local-name()='outerRadius' and (.='1' or .='1.0')) or
-                       (local-name()='solid' and (.='false')))) and
+                      ((local-name()='innerRadius' and (string(.)='0' or string(.)='0.0')) or
+                       (local-name()='outerRadius' and (string(.)='1' or string(.)='1.0')) or
+                       (local-name()='solid' and (string(.)='false')))) and
                       not((local-name(..)='Rectangle2D') and
-                      ((local-name()='size' and ((.='2 2') or (.='2.0 2.0'))) or
-                       (local-name()='solid' and (.='false')))) and
+                      ((local-name()='size' and ((string(.)='2 2') or (string(.)='2.0 2.0'))) or
+                       (local-name()='solid' and (string(.)='false')))) and
                       not((local-name(..)='TriangleSet2D') and
-                      ((local-name()='solid' and (.='false')) or
-                       (local-name()='closureType' and (.='PIE'))))" />
+                      ((local-name()='solid' and (string(.)='false')) or
+                       (local-name()='closureType' and (string(.)='PIE'))))" />
         <xsl:variable name="notDefaultVolume"
                       select="not(((local-name(..)='IsoSurfaceVolumeData') or (local-name(..)='SegmentedVolumeData') or (local-name(..)='VolumeData'))	and
-                      ((local-name()='dimensions' and (.='1 1 1' or .='1.0 1.0 1.0')) or 
-                      (local-name()='bboxCenter'	and	(.='0 0 0' or .='0.0 0.0 0.0')) or
-                      ( local-name()='bboxSize'	and	(.='-1 -1 -1' or .='-1.0 -1.0 -1.0')))) and
+                      ((local-name()='dimensions' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')) or 
+                      (local-name()='bboxCenter'	and	(string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                      ( local-name()='bboxSize'	and	(string(.)='-1 -1 -1' or string(.)='-1.0 -1.0 -1.0')))) and
                       not((local-name(..)='IsoSurfaceVolumeData')	and
-                      ((local-name()='contourStepSize' or local-name()='surfaceTolerance') and (.='0' or .='0.0'))) and
+                      ((local-name()='contourStepSize' or local-name()='surfaceTolerance') and (string(.)='0' or string(.)='0.0'))) and
                       not(((local-name(..)='BlendedVolumeStyle') or (local-name(..)='BoundaryEnhancementVolumeStyle') or (local-name(..)='CartoonVolumeStyle') or (local-name(..)='ComposedVolumeStyle') or (local-name(..)='EdgeEnhancementVolumeStyle') or (local-name(..)='OpacityMapVolumeStyle') or (local-name(..)='ProjectionVolumeStyle') or (local-name(..)='ShadedVolumeStyle') or (local-name(..)='SilhouetteEnhancementVolumeStyle') or (local-name(..)='ToneMappedVolumeStyle')) and
-                      (local-name()='enabled' and .='true')) and
+                      (local-name()='enabled' and string(.)='true')) and
                       not((local-name(..)='BlendedVolumeStyle')	and
-                      (((local-name()='weightConstant1' or local-name()='weightConstant2') and (.='.5' or .='0.5')) or
-                       ((local-name()='weightFunction1' or local-name()='weightFunction2') and (.='CONSTANT')))) and
+                      (((local-name()='weightConstant1' or local-name()='weightConstant2') and (string(.)='.5' or string(.)='0.5')) or
+                       ((local-name()='weightFunction1' or local-name()='weightFunction2') and (string(.)='CONSTANT')))) and
                       not((local-name(..)='BoundaryEnhancementVolumeStyle')	and
-                      (((local-name()='boundaryOpacity') and (.='.9' or .='0.9')) or
-                       ((local-name()='opacityFactor') and (.='2' or .='2.0')) or
-                       ((local-name()='retainedOpacity') and (.='.2' or .='0.2')))) and
+                      (((local-name()='boundaryOpacity') and (string(.)='.9' or string(.)='0.9')) or
+                       ((local-name()='opacityFactor') and (string(.)='2' or string(.)='2.0')) or
+                       ((local-name()='retainedOpacity') and (string(.)='.2' or string(.)='0.2')))) and
                       not((local-name(..)='CartoonVolumeStyle')	and
-                      (((local-name()='colorSteps') and (.='4')) or
-                       ((local-name()='orthogonalColor') and (.='1 1 1 1' or .='1.0 1.0 1.0 1.0')) or
-                       ((local-name()='parallelColor') and (.='0 0 0 1' or .='0.0 0.0 0.0 1.0')))) and
+                      (((local-name()='colorSteps') and (string(.)='4')) or
+                       ((local-name()='orthogonalColor') and (string(.)='1 1 1 1' or string(.)='1.0 1.0 1.0 1.0')) or
+                       ((local-name()='parallelColor') and (string(.)='0 0 0 1' or string(.)='0.0 0.0 0.0 1.0')))) and
                       not((local-name(..)='EdgeEnhancementVolumeStyle')	and
-                      (((local-name()='gradientThreshold') and (.='.4' or .='0.4')) or
-                       ((local-name()='edgeColor') and (.='0 0 0 1' or .='0.0 0.0 0.0 1.0')))) and
+                      (((local-name()='gradientThreshold') and (string(.)='.4' or string(.)='0.4')) or
+                       ((local-name()='edgeColor') and (string(.)='0 0 0 1' or string(.)='0.0 0.0 0.0 1.0')))) and
                       not((local-name(..)='IsoSurfaceVolumeData')	and
-                      (((local-name()='surfaceTolerance') and (.='0' or .='0.0')))) and
+                      (((local-name()='surfaceTolerance') and (string(.)='0' or string(.)='0.0')))) and
                       not((local-name(..)='ProjectionVolumeStyle')	and
-                      (((local-name()='intensityThreshold') and (.='0' or .='0.0')) or
-                       ((local-name()='type') and (.='MAX')))) and
+                      (((local-name()='intensityThreshold') and (string(.)='0' or string(.)='0.0')) or
+                       ((local-name()='type') and (string(.)='MAX')))) and
                       not((local-name(..)='ShadedVolumeStyle')	and
-                      (((local-name()='lighting' or local-name()='shadows') and (.='false')) or
-                       ((local-name()='phaseFunction') and (.='Henyey-Greenstein')))) and
+                      (((local-name()='lighting' or local-name()='shadows') and (string(.)='false')) or
+                       ((local-name()='phaseFunction') and (string(.)='Henyey-Greenstein')))) and
                       not((local-name(..)='SilhouetteEnhancementVolumeStyle')	and
-                      (((local-name()='silhouetteBoundaryOpacity') and (.='0' or .='0.0')) or
-                       ((local-name()='silhouetteRetainedOpacity') and (.='1' or .='1.0')) or
-                       ((local-name()='silhouetteSharpness') and (.='.5' or .='0.5')))) and
+                      (((local-name()='silhouetteBoundaryOpacity') and (string(.)='0' or string(.)='0.0')) or
+                       ((local-name()='silhouetteRetainedOpacity') and (string(.)='1' or string(.)='1.0')) or
+                       ((local-name()='silhouetteSharpness') and (string(.)='.5' or string(.)='0.5')))) and
                       not((local-name(..)='ToneMappedVolumeStyle')	and
-                      (((local-name()='colorSteps') and (.='4')) or
-                       ((local-name()='coolColor') and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0')) or
-                       ((local-name()='warmColor') and (.='1 1 0 0' or .='1.0 1.0 0.0 0.0'))))" />
+                      (((local-name()='colorSteps') and (string(.)='4')) or
+                       ((local-name()='coolColor') and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0')) or
+                       ((local-name()='warmColor') and (string(.)='1 1 0 0' or string(.)='1.0 1.0 0.0 0.0'))))" />
         <xsl:variable name="notDefaultFollower"
                       select="not(contains(local-name(..),'Chaser') and
-                      ((local-name()='duration' and (.='1' or .='1.0')))) and
+                      ((local-name()='duration' and (string(.)='1' or string(.)='1.0')))) and
                       not(contains(local-name(..),'Damper') and
-                      ((local-name()='tau' and (.='.3' or .='0.3')) or
-                      (local-name()='tolerance' and (.='-1' or .='-1.0')) or
-                      (local-name()='order ' and (.='3')))) and
+                      ((local-name()='tau' and (string(.)='.3' or string(.)='0.3')) or
+                      (local-name()='tolerance' and (string(.)='-1' or string(.)='-1.0')) or
+                      (local-name()='order ' and (string(.)='3')))) and
                       not(contains(local-name(..),'Damper') and
-                      (local-name()='order' and (.='3'))) and
+                      (local-name()='order' and (string(.)='3'))) and
                       not((local-name(..)='ColorChaser' or local-name(..)='ColorDamper') and
-                      ((local-name()='initialDestination' and (.='.8 .8 .8' or .='0.8 0.8 0.8')) or
-                      (local-name()='initialValue' and (.='.8 .8 .8' or .='0.8 0.8 0.8')))) and
+                      ((local-name()='initialDestination' and (string(.)='.8 .8 .8' or string(.)='0.8 0.8 0.8')) or
+                      (local-name()='initialValue' and (string(.)='.8 .8 .8' or string(.)='0.8 0.8 0.8')))) and
                       not((local-name(..)='CoordinateChaser' or local-name(..)='CoordinateDamper' or local-name(..)='PositionChaser' or local-name(..)='PositionDamper') and
-                      ((local-name()='initialDestination' and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                      (local-name()='initialValue' and (.='0 0 0' or .='0.0 0.0 0.0')))) and
+                      ((local-name()='initialDestination' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                      (local-name()='initialValue' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')))) and
                       not((local-name(..)='PositionChaser2D' or local-name(..)='PositionDamper2D') and
-                      ((local-name()='initialDestination' and (.='0 0' or .='0.0 0.0')) or
-                      (local-name()='initialValue' and (.='0 0' or .='0.0 0.0')))) and
+                      ((local-name()='initialDestination' and (string(.)='0 0' or string(.)='0.0 0.0')) or
+                      (local-name()='initialValue' and (string(.)='0 0' or string(.)='0.0 0.0')))) and
                       not((local-name(..)='OrientationChaser' or local-name(..)='OrientationDamper') and
-                      ((local-name()='initialDestination' and (.='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 0 1 0' or .='0.0 0.0 1.0 0.0')) or
-                      (local-name()='initialValue' and (.='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 0 1 0' or .='0.0 0.0 1.0 0.0')))) and
+                      ((local-name()='initialDestination' and (string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0')) or
+                      (local-name()='initialValue' and (string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0')))) and
                       not((local-name(..)='ScalarChaser' or local-name(..)='ScalarDamper') and
-                      ((local-name()='initialDestination' and (.='0' or .='0.0')) or
-                      (local-name()='initialValue' and (.='0' or .='0.0'))))" />
+                      ((local-name()='initialDestination' and (string(.)='0' or string(.)='0.0')) or
+                      (local-name()='initialValue' and (string(.)='0' or string(.)='0.0'))))" />
         <xsl:variable name="notDefaultShader"
                       select="not((local-name(..)='FloatVertexAttribute') and
-                      ((local-name()='numComponents' and (.='4')))) and
+                      ((local-name()='numComponents' and (string(.)='4')))) and
                       not((local-name(..)='ShaderPart' or local-name(..)='ShaderProgram') and
-                      ((local-name()='type' and (.='VERTEX'))))" />
+                      ((local-name()='type' and (string(.)='VERTEX'))))" />
         <xsl:variable name="notDefaultRigidBodyPhysics"
                       select="not((local-name(..)='CollidableOffset' or local-name(..)='CollidableShape') and
-                      (((local-name()='enabled') and (.='true')) or
-                      ((local-name()='rotation') and (.='0 0 1 0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0.0 0.0 1.0 0.0')) or
-                      ((local-name()='translation') and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                      ((local-name()='bboxCenter')	and	(.='0 0 0' or .='0.0 0.0 0.0')) or
-                      ((local-name()='bboxSize')	and	(.='-1 -1 -1' or .='-1.0 -1.0 -1.0')))) and
+                      (((local-name()='enabled') and (string(.)='true')) or
+                      ((local-name()='rotation') and (string(.)='0 0 1 0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0.0 0.0 1.0 0.0')) or
+                      ((local-name()='translation') and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                      ((local-name()='bboxCenter')	and	(string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                      ((local-name()='bboxSize')	and	(string(.)='-1 -1 -1' or string(.)='-1.0 -1.0 -1.0')))) and
                       not((local-name(..)='CollisionSpace') and
-                      ((local-name()='enabled' and (.='true')) or
-                      (local-name()='useGeometry' and (.='false')) or
-                      (local-name()='bboxCenter'	and	(.='0 0 0' or .='0.0 0.0 0.0')) or
-                      (local-name()='bboxSize'	and	(.='-1 -1 -1' or .='-1.0 -1.0 -1.0')))) and
+                      ((local-name()='enabled' and (string(.)='true')) or
+                      (local-name()='useGeometry' and (string(.)='false')) or
+                      (local-name()='bboxCenter'	and	(string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                      (local-name()='bboxSize'	and	(string(.)='-1 -1 -1' or string(.)='-1.0 -1.0 -1.0')))) and
                       not((local-name(..)='BallJoint' or local-name(..)='DoubleAxisHingeJoint' or local-name(..)='MotorJoint' or local-name(..)='SingleAxisHingeJoint' or local-name(..)='SliderJoint' or local-name(..)='UniversalJoint') and
-                      ((local-name()='forceOutput')	and	(.='&quot;NONE&quot;'))) and
+                      ((local-name()='forceOutput')	and	(string(.)='&quot;NONE&quot;'))) and
                       not((local-name(..)='BallJoint') and
-                      ((local-name()='anchorPoint')	and	(.='0 0 0' or .='0.0 0.0 0.0'))) and
+                      ((local-name()='anchorPoint')	and	(string(.)='0 0 0' or string(.)='0.0 0.0 0.0'))) and
                       not((local-name(..)='BoundedPhysicsModel') and
-                      ((local-name()='enabled')	and	(.='true'))) and
+                      ((local-name()='enabled')	and	(string(.)='true'))) and
                       not((local-name(..)='ForcePhysicsModel') and
-                      ((local-name()='enabled')	and	(.='true')) or
-                      (local-name()='force'	and	(.='0 -9.8 0' or .='0.0 -9.8 0.0'))) and
+                      ((local-name()='enabled')	and	(string(.)='true')) or
+                      (local-name()='force'	and	(string(.)='0 -9.8 0' or string(.)='0.0 -9.8 0.0'))) and
                       not((local-name(..)='WindPhysicsModel') and
-                      ((local-name()='enabled')	and	(.='true')) or
-                      (local-name()='gustiness'	and	(.='0.1')) or
-                      (local-name()='speed'	and	(.='0.1')) or
-                      (local-name()='turbulence'	and	(.='0' or .='0.0')) or
-                      (local-name()='direction'	and	(.='1 0 0' or .='1.0 0.0 0.0'))) and
+                      ((local-name()='enabled')	and	(string(.)='true')) or
+                      (local-name()='gustiness'	and	(string(.)='0.1')) or
+                      (local-name()='speed'	and	(string(.)='0.1')) or
+                      (local-name()='turbulence'	and	(string(.)='0' or string(.)='0.0')) or
+                      (local-name()='direction'	and	(string(.)='1 0 0' or string(.)='1.0 0.0 0.0'))) and
                       not((local-name(..)='CollisionCollection') and
-                      (((local-name()='appliedParameters') and (.='&quot;BOUNCE&quot;')) or
-                      ((local-name()='bounce') and (.='0' or .='0.0')) or
-                      ((local-name()='enabled') and (.='true')) or
-                      ((local-name()='frictionCoefficients' or local-name()='slipFactors' or local-name()='surfaceSpeed') and (.='0 0' or .='0.0 0.0')) or
-                      ((local-name()='minBounceSpeed') and (.='.1' or .='0.1')) or
-                      ((local-name()='softnessConstantForceMix') and (.='.0001' or .='0.0001')) or
-                      ((local-name()='softnessErrorCorrection') and (.='.8' or .='0.8')))) and
+                      (((local-name()='appliedParameters') and (string(.)='&quot;BOUNCE&quot;')) or
+                      ((local-name()='bounce') and (string(.)='0' or string(.)='0.0')) or
+                      ((local-name()='enabled') and (string(.)='true')) or
+                      ((local-name()='frictionCoefficients' or local-name()='slipFactors' or local-name()='surfaceSpeed') and (string(.)='0 0' or string(.)='0.0 0.0')) or
+                      ((local-name()='minBounceSpeed') and (string(.)='.1' or string(.)='0.1')) or
+                      ((local-name()='softnessConstantForceMix') and (string(.)='.0001' or string(.)='0.0001')) or
+                      ((local-name()='softnessErrorCorrection') and (string(.)='.8' or string(.)='0.8')))) and
                       not((local-name(..)='CollisionSensor') and
-                      (local-name()='enabled' and .='true')) and
+                      (local-name()='enabled' and string(.)='true')) and
                       not((local-name(..)='Contact') and
-                      (((local-name()='appliedParameters') and (.='&quot;BOUNCE&quot;')) or
-                      ((local-name()='bounce' or local-name()='depth' or local-name()='minbounceSpeed') and (.='0' or .='0.0')) or
-                      ((local-name()='contactNormal') and (.='0 1 0' or .='0.0 1.0 0.0')) or
-                      ((local-name()='frictionCoefficients' or local-name()='slipCoefficients' or local-name()='surfaceSpeed') and (.='0 0' or .='0.0 0.0')) or
-                      ((local-name()='frictionDirection') and (.='0 1 0' or .='0.0 1.0 0.0')) or
-                      ((local-name()='position') and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                      ((local-name()='softnessConstantForceMix') and (.='.0001' or .='0.0001')) or
-                      ((local-name()='softnessErrorCorrection') and (.='.8' or .='0.8')))) and
+                      (((local-name()='appliedParameters') and (string(.)='&quot;BOUNCE&quot;')) or
+                      ((local-name()='bounce' or local-name()='depth' or local-name()='minbounceSpeed') and (string(.)='0' or string(.)='0.0')) or
+                      ((local-name()='contactNormal') and (string(.)='0 1 0' or string(.)='0.0 1.0 0.0')) or
+                      ((local-name()='frictionCoefficients' or local-name()='slipCoefficients' or local-name()='surfaceSpeed') and (string(.)='0 0' or string(.)='0.0 0.0')) or
+                      ((local-name()='frictionDirection') and (string(.)='0 1 0' or string(.)='0.0 1.0 0.0')) or
+                      ((local-name()='position') and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                      ((local-name()='softnessConstantForceMix') and (string(.)='.0001' or string(.)='0.0001')) or
+                      ((local-name()='softnessErrorCorrection') and (string(.)='.8' or string(.)='0.8')))) and
                       not((local-name(..)='DoubleAxisHingeJoint') and
-                      (((local-name()='anchorPoint' or local-name()='axis1' or local-name()='axis2') and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                      ((local-name()='desiredAngularVelocity1' or local-name()='desiredAngularVelocity2' or local-name()='maxTorque1' or local-name()='maxTorque2' or local-name()='stop1Bounce' or local-name()='suspensionForce') and (.='0' or .='0.0')) or
+                      (((local-name()='anchorPoint' or local-name()='axis1' or local-name()='axis2') and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                      ((local-name()='desiredAngularVelocity1' or local-name()='desiredAngularVelocity2' or local-name()='maxTorque1' or local-name()='maxTorque2' or local-name()='stop1Bounce' or local-name()='suspensionForce') and (string(.)='0' or string(.)='0.0')) or
                       ((local-name()='maxAngle1') and (.= '3.1416' or .= '3.14159' or .= '3.141593' or .= '3.1415926' or .= '3.14159263' or .= '3.141592653')) or
-                      ((local-name()='minAngle1') and (.='-3.1416' or .='-3.14159' or .='-3.141593' or .='-3.1415926' or .='-3.14159263' or .='-3.141592653')) or
-                      ((local-name()='stop1Bounce') and (.='0' or .='0.0')) or
-                      ((local-name()='stop1ConstantForceMix') and (.='.001' or .='0.001')) or
-                      ((local-name()='stop1ErrorCorrection' or local-name()='suspensionErrorCorrection') and (.='.8' or .='0.8')))) and
+                      ((local-name()='minAngle1') and (string(.)='-3.1416' or string(.)='-3.14159' or string(.)='-3.141593' or string(.)='-3.1415926' or string(.)='-3.14159263' or string(.)='-3.141592653')) or
+                      ((local-name()='stop1Bounce') and (string(.)='0' or string(.)='0.0')) or
+                      ((local-name()='stop1ConstantForceMix') and (string(.)='.001' or string(.)='0.001')) or
+                      ((local-name()='stop1ErrorCorrection' or local-name()='suspensionErrorCorrection') and (string(.)='.8' or string(.)='0.8')))) and
                       not((local-name(..)='MotorJoint') and
-                      (((local-name()='axis1Angle' or local-name()='axis2Angle' or local-name()='axis3Angle' or local-name()='axis1Torque' or local-name()='axis2Torque' or local-name()='axis3Torque' or local-name()='stop1Bounce' or local-name()='stop2Bounce' or local-name()='stop3Bounce') and (.='0' or .='0.0')) or
-                      ((local-name()='stop1ErrorCorrection' or local-name()='stop2ErrorCorrection' or local-name()='stop3ErrorCorrection') and (.='.8' or .='0.8')) or
-                      ((local-name()='motor1Axis' or local-name()='motor2Axis' or local-name()='motor3Axis') and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                      ((local-name()='enabledAxes') and (.='1')) or
-                      ((local-name()='autoCalc') and (.='false')))) and
+                      (((local-name()='axis1Angle' or local-name()='axis2Angle' or local-name()='axis3Angle' or local-name()='axis1Torque' or local-name()='axis2Torque' or local-name()='axis3Torque' or local-name()='stop1Bounce' or local-name()='stop2Bounce' or local-name()='stop3Bounce') and (string(.)='0' or string(.)='0.0')) or
+                      ((local-name()='stop1ErrorCorrection' or local-name()='stop2ErrorCorrection' or local-name()='stop3ErrorCorrection') and (string(.)='.8' or string(.)='0.8')) or
+                      ((local-name()='motor1Axis' or local-name()='motor2Axis' or local-name()='motor3Axis') and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                      ((local-name()='enabledAxes') and (string(.)='1')) or
+                      ((local-name()='autoCalc') and (string(.)='false')))) and
                       not((local-name(..)='RigidBody') and
-                      (((local-name()='angularDampingFactor') and (.='.001' or .='0.001')) or
-                      ((local-name()='angularVelocity' or local-name()='centerOfMass' or local-name()='finiteRotationAxis' or local-name()='linearVelocity' or local-name()='position') and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                      ((local-name()='disableAngularSpeed' or local-name()='disableLinearSpeed' or local-name()='disableTime') and (.='0' or .='0.0')) or
-                      ((local-name()='finiteRotationAxis') and (.='0 1 0' or .='0.0 1.0 0.0')) or
-                      ((local-name()='mass') and (.='1' or .='1.0')) or
-                      ((local-name()='enabled' or local-name()='useGlobalGravity') and (.='true')) or
-                      ((local-name()='autoDamp' or local-name()='autoDisable' or local-name()='fixed' or local-name()='useFiniteRotation') and (.='false')) or
-                      ((local-name()='inertia') and (.='1 0 0 0 1 0 0 0 1' or .='1.0 0 0 0 1.0 0 0 0 1.0' or .='1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0')) or
-                      ((local-name()='linearDampingFactor') and (.='.001' or .='0.001')) or
-                      ((local-name()='orientation') and (.='0 0 1 0' or .='0.0 0.0 1.0 0.0' or .='0 1 0 0' or .='0.0 1.0 0.0 0.0' or .='0 1 0 0.0'  or .='0 0 1 0.0')))) and
+                      (((local-name()='angularDampingFactor') and (string(.)='.001' or string(.)='0.001')) or
+                      ((local-name()='angularVelocity' or local-name()='centerOfMass' or local-name()='finiteRotationAxis' or local-name()='linearVelocity' or local-name()='position') and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                      ((local-name()='disableAngularSpeed' or local-name()='disableLinearSpeed' or local-name()='disableTime') and (string(.)='0' or string(.)='0.0')) or
+                      ((local-name()='finiteRotationAxis') and (string(.)='0 1 0' or string(.)='0.0 1.0 0.0')) or
+                      ((local-name()='mass') and (string(.)='1' or string(.)='1.0')) or
+                      ((local-name()='enabled' or local-name()='useGlobalGravity') and (string(.)='true')) or
+                      ((local-name()='autoDamp' or local-name()='autoDisable' or local-name()='fixed' or local-name()='useFiniteRotation') and (string(.)='false')) or
+                      ((local-name()='inertia') and (string(.)='1 0 0 0 1 0 0 0 1' or string(.)='1.0 0 0 0 1.0 0 0 0 1.0' or string(.)='1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0')) or
+                      ((local-name()='linearDampingFactor') and (string(.)='.001' or string(.)='0.001')) or
+                      ((local-name()='orientation') and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')))) and
                       not((local-name(..)='RigidBodyCollection') and
-                      (((local-name()='autoDisable' or local-name()='preferAccuracy') and (.='false')) or
-                      ((local-name()='enabled') and (.='true')) or
-                      ((local-name()='constantForceMix') and (.='.0001' or .='0.0001')) or
-                      ((local-name()='contactSurfaceThickness' or local-name()='disableAngularSpeed' or local-name()='disableLinearSpeed' or local-name()='disableTime') and (.='0' or .='0.0')) or
-                      ((local-name()='errorCorrection') and (.='.8' or .='0.8')) or
-                      ((local-name()='gravity') and (.='0 -9.8 0' or .='0.0 -9.8 0.0')) or
-                      ((local-name()='iterations') and (.='10')) or
-                      ((local-name()='maxCorrectionSpeed') and (.='-1' or .='-1.0')))) and
+                      (((local-name()='autoDisable' or local-name()='preferAccuracy') and (string(.)='false')) or
+                      ((local-name()='enabled') and (string(.)='true')) or
+                      ((local-name()='constantForceMix') and (string(.)='.0001' or string(.)='0.0001')) or
+                      ((local-name()='contactSurfaceThickness' or local-name()='disableAngularSpeed' or local-name()='disableLinearSpeed' or local-name()='disableTime') and (string(.)='0' or string(.)='0.0')) or
+                      ((local-name()='errorCorrection') and (string(.)='.8' or string(.)='0.8')) or
+                      ((local-name()='gravity') and (string(.)='0 -9.8 0' or string(.)='0.0 -9.8 0.0')) or
+                      ((local-name()='iterations') and (string(.)='10')) or
+                      ((local-name()='maxCorrectionSpeed') and (string(.)='-1' or string(.)='-1.0')))) and
                       not((local-name(..)='SingleAxisHingeJoint') and
-                      (((local-name()='anchorPoint' or local-name()='axis') and (.='0 0 0' or .='0.0 0.0 0.0')) or
+                      (((local-name()='anchorPoint' or local-name()='axis') and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                       ((local-name()='maxAngle') and (.= '3.1416' or .= '3.14159' or .= '3.141593' or .= '3.1415926' or .= '3.14159263' or .= '3.141592653')) or
-                      ((local-name()='minAngle') and (.='-3.1416' or .='-3.14159' or .='-3.141593' or .='-3.1415926' or .='-3.14159263' or .='-3.141592653')) or
-                      ((local-name()='stopBounce') and (.='0' or .='0.0')) or
-                      ((local-name()='stopErrorCorrection') and (.='.8' or .='0.8')))) and
+                      ((local-name()='minAngle') and (string(.)='-3.1416' or string(.)='-3.14159' or string(.)='-3.141593' or string(.)='-3.1415926' or string(.)='-3.14159263' or string(.)='-3.141592653')) or
+                      ((local-name()='stopBounce') and (string(.)='0' or string(.)='0.0')) or
+                      ((local-name()='stopErrorCorrection') and (string(.)='.8' or string(.)='0.8')))) and
                       not((local-name(..)='SliderJoint') and
-                      (((local-name()='axis') and (.='0 1 0' or .='0.0 1.0 0.0')) or
-                      ((local-name()='maxSeparation' or local-name()='stopErrorCorrection') and (.='1' or .='1.0')) or
-                      ((local-name()='minSeparation' or local-name()='sliderForce' or local-name()='stopBounce') and (.='0' or .='0.0')) or
-                      ((local-name()='stopErrorCorrection') and (.='1' or .='1.0')))) and
+                      (((local-name()='axis') and (string(.)='0 1 0' or string(.)='0.0 1.0 0.0')) or
+                      ((local-name()='maxSeparation' or local-name()='stopErrorCorrection') and (string(.)='1' or string(.)='1.0')) or
+                      ((local-name()='minSeparation' or local-name()='sliderForce' or local-name()='stopBounce') and (string(.)='0' or string(.)='0.0')) or
+                      ((local-name()='stopErrorCorrection') and (string(.)='1' or string(.)='1.0')))) and
                       not((local-name(..)='UniversalJoint') and
-                      (((local-name()='anchorPoint' or local-name()='axis1' or local-name()='axis2') and (.='0 0 0' or .='0.0 0.0 0.0')) or
-                      ((local-name()='stop1Bounce' or local-name()='stop2Bounce') and (.='0' or .='0.0')) or
-                      ((local-name()='stop1ErrorCorrection' or local-name()='stop2ErrorCorrection') and (.='.8' or .='0.8'))))" />
+                      (((local-name()='anchorPoint' or local-name()='axis1' or local-name()='axis2') and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                      ((local-name()='stop1Bounce' or local-name()='stop2Bounce') and (string(.)='0' or string(.)='0.0')) or
+                      ((local-name()='stop1ErrorCorrection' or local-name()='stop2ErrorCorrection') and (string(.)='.8' or string(.)='0.8'))))" />
         <xsl:variable name="notFieldSpace"
                       select="not(local-name(..)='field'  and	(local-name()='space' or local-name()='xml:space')) and
                       not(local-name(..)='Script' and	(local-name()='space' or local-name()='xml:space'))" />
@@ -3907,8 +3910,8 @@ Recommended tools:
                 $notDefaultContainerField1  and
                 $notDefaultContainerField2  and
                 $notDefaultContainerField3  and
-                not(local-name()='containerField' and .='') and
-                not(local-name()='class' and .='') and
+                not(local-name()='containerField' and string(.)='') and
+                not(local-name()='class' and string(.)='') and
                 $notFieldSpace and
                 not(contains(local-name(),'set_')) and
                 not(contains(local-name(),'_changed')) and
@@ -3940,8 +3943,8 @@ Recommended tools:
                         <xsl:text>'</xsl:text>
                     </xsl:if>
                 </xsl:when>
-                <xsl:when test="(string-length(.) > 0) and (string-length(../@USE) > 0) and not(local-name() = 'USE') and not(local-name() = 'containerField')">
-                    <xsl:if test="not(local-name()='version' and (($isHAnim1 = true() and (string(.)='1.0' or (string-length(.) = 0))) or ($isHAnim2 = true() and string(.)='2.0')))">
+                <xsl:when test="(string-length(string(.)) > 0) and (string-length(../@USE) > 0) and not(local-name() = 'USE') and not(local-name() = 'containerField')">
+                    <xsl:if test="not(local-name()='version' and (($isHAnim1 = true() and (string(.)='1.0' or (string-length(string(.)) = 0))) or ($isHAnim2 = true() and string(.)='2.0')))">
                         <xsl:message>
                             <xsl:text>*** </xsl:text>
                             <xsl:value-of select="local-name(..)"/><!-- element name -->
@@ -4767,7 +4770,7 @@ Recommended tools:
             <!-- keep output form simple, consistent, canonical -->
             <!-- *** apply attribute value overrides, if any *** -->
             <xsl:choose>
-                <xsl:when test="(normalize-space(.) = 'TRUE') or (normalize-space(.) = 'FALSE')">
+                <xsl:when test="(normalize-space(string(.)) = 'TRUE') or (normalize-space(string(.)) = 'FALSE')">
                     <xsl:value-of select='lower-case(.)'/>
                     <xsl:message>
                         <xsl:text>*** revised attribute value </xsl:text>
@@ -4779,7 +4782,7 @@ Recommended tools:
                         <xsl:text>'</xsl:text>
                     </xsl:message>
                 </xsl:when>
-                <xsl:when test="(local-name() = 'DEF') and not($newDEFvalue = .) and (string-length($newDEFvalue) > 0) and (string-length(.) > 0)">
+                <xsl:when test="(local-name() = 'DEF') and not($newDEFvalue = .) and (string-length($newDEFvalue) > 0) and (string-length(string(.)) > 0)">
                     <xsl:value-of select='$newDEFvalue'/>
                     <xsl:message>
                         <xsl:text>*** revised replace #4 </xsl:text>
@@ -4795,7 +4798,7 @@ Recommended tools:
                         <xsl:text>'</xsl:text>
                     </xsl:message>
                 </xsl:when>
-                <xsl:when test="(local-name() = 'USE') and not($newUSEvalue = .) and (string-length($newUSEvalue) > 0) and (string-length(.) > 0)">
+                <xsl:when test="(local-name() = 'USE') and not($newUSEvalue = .) and (string-length($newUSEvalue) > 0) and (string-length(string(.)) > 0)">
                     <xsl:value-of select='$newUSEvalue'/>
                     <xsl:message>
                         <xsl:text>*** revised replace #5 </xsl:text>
@@ -4823,7 +4826,7 @@ Recommended tools:
                 <!-- fix containerField for Metadata* nodes within MetadataSet -->
                 <!-- TODO default may change in X3D4 -->
                 <xsl:when test="(local-name(../..) = 'MetadataSet') and starts-with(local-name(..), 'Metadata') and (local-name() = 'containerField') and 
-                                ((. = 'metadata') or (string-length(.) = 0)) and 
+                                ((. = 'metadata') or (string-length(string(.)) = 0)) and 
                                 (count(../*[@containerField = 'value']) = 0)">
                                 <!-- having no peer nodes with @containerField = 'value' indicates this node with @containerField = 'metadata' (or empty value) is probably wrong -->
                     <xsl:text>value</xsl:text>
@@ -4854,13 +4857,13 @@ Recommended tools:
                         </xsl:if>
                         <xsl:choose>
                             <!-- GCC may become deprecated, use GC. https://www.web3d.org/files/specifications/19775-1/V3.3/Part01/components/geodata.html#Spatialreferenceframes -->
-                            <xsl:when test="contains(.,'GCC')">
+                            <xsl:when test="contains(string(.),'GCC')">
                                 <xsl:value-of select="substring-before(.,'GCC')"/>
                                 <xsl:text>GC</xsl:text>
                                 <xsl:value-of select="substring-after (.,'GCC')"/>
                             </xsl:when>
                             <!-- GDC may become deprecated, use GD. https://www.web3d.org/files/specifications/19775-1/V3.3/Part01/components/geodata.html#Spatialreferenceframes -->
-                            <xsl:when test="contains(.,'GDC')">
+                            <xsl:when test="contains(string(.),'GDC')">
                                 <xsl:value-of select="substring-before(.,'GDC')"/>
                                 <xsl:text>GD</xsl:text>
                                 <xsl:value-of select="substring-after (.,'GDC')"/>
@@ -4871,7 +4874,7 @@ Recommended tools:
                             </xsl:otherwise>
                         </xsl:choose>
                         <!-- TODO ensure intermediate values are also quoted -->
-                        <xsl:if test="not(substring(., string-length(.)) = '&quot;')"> <!-- ends-with -->
+                        <xsl:if test="not(substring(., string-length(string(.))) = '&quot;')"> <!-- ends-with -->
                             <xsl:text disable-output-escaping="yes">&quot;</xsl:text>
                         </xsl:if>
                     </xsl:variable>
@@ -4887,7 +4890,7 @@ Recommended tools:
                     </xsl:if>
                 </xsl:when>
                 <!-- fix component values as appropriate -->
-                <xsl:when test="(local-name(..)='component') and (local-name()='name') and (.='HAnim' and //X3D[starts-with(@version,'3')])">
+                <xsl:when test="(local-name(..)='component') and (local-name()='name') and (string(.)='HAnim' and //X3D[starts-with(@version,'3')])">
                     <xsl:text>H-Anim</xsl:text>
                     <xsl:message>
                         <xsl:text>*** fix component name for X3D3: change component name='</xsl:text>
@@ -4895,7 +4898,7 @@ Recommended tools:
                         <xsl:text>' to name='H-Anim'</xsl:text>
                     </xsl:message>
                 </xsl:when>
-                <xsl:when test="(local-name(..)='component') and (local-name()='name') and (.='H-Anim' and //X3D[starts-with(@version,'4')])">
+                <xsl:when test="(local-name(..)='component') and (local-name()='name') and (string(.)='H-Anim' and //X3D[starts-with(@version,'4')])">
                     <xsl:text>HAnim</xsl:text>
                     <xsl:message>
                         <xsl:text>*** fix component name for X3D4: change component name='</xsl:text>
@@ -4904,7 +4907,7 @@ Recommended tools:
                     </xsl:message>
                 </xsl:when>
                 <!-- HAnim special-case cleanup following conversion -->
-                <xsl:when test="starts-with(local-name(..),'HAnim') and ((local-name()='name') or (local-name()='DEF') or (local-name()='USE')) and contains(.,'__')">
+                <xsl:when test="starts-with(local-name(..),'HAnim') and ((local-name()='name') or (local-name()='DEF') or (local-name()='USE')) and contains(string(.),'__')">
                     <xsl:variable name="newName">
                         <!-- fix double underscore -->
                         <xsl:value-of select="substring-before(.,'__')"/>
@@ -4925,7 +4928,7 @@ Recommended tools:
                     </xsl:message>
                 </xsl:when>
                 <!-- HAnim special-case cleanup of common error -->
-                <xsl:when test="starts-with(local-name(..),'HAnim') and ((local-name()='name') or (local-name()='DEF') or (local-name()='USE')) and contains(.,'_45')">
+                <xsl:when test="starts-with(local-name(..),'HAnim') and ((local-name()='name') or (local-name()='DEF') or (local-name()='USE')) and contains(string(.),'_45')">
                     <xsl:variable name="newName">
                         <!-- fix double underscore -->
                         <xsl:value-of select="substring-before(.,'_45')"/>
@@ -4945,7 +4948,7 @@ Recommended tools:
                     </xsl:message>
                 </xsl:when>
                 <!-- HAnim special-case cleanup -->
-                <xsl:when test="(local-name(..)='HAnimJoint') and (local-name()='name') and contains(.,'transverse_tarsal')">
+                <xsl:when test="(local-name(..)='HAnimJoint') and (local-name()='name') and contains(string(.),'transverse_tarsal')">
                     <xsl:variable name="newName">
                         <xsl:value-of select="substring-before(.,'_tarsal')"/>
                         <!-- omit underscore -->
@@ -5060,22 +5063,22 @@ Recommended tools:
                 <!-- fix common meta-name misnomers, needs to follow HAnim2 upgrade rules to avoid false positives -->
                 <!-- insert missing underscore prior to number at end of HAnim name -->
                 <xsl:when test="((local-name(..)='HAnimJoint') or (local-name(..)='HAnimSegment')) and ((local-name()='name') or (local-name()='DEF') or (local-name()='USE')) and 
-                               (contains(.,'_cuneonavicular')       and not(contains(.,'_cuneonavicular_'))) or
-                               (contains(.,'_cuneiform')            and not(contains(.,'_cuneiform_'))) or
-                               (contains(.,'_tarsometatarsal')      and not(contains(.,'_tarsometatarsal_'))) or
-                               (contains(.,'_metatarsal')           and not(contains(.,'_metatarsal_'))) or
-                               (contains(.,'_metatarsophalangeal')  and not(contains(.,'_metatarsophalangeal_'))) or
-                               (contains(.,'_phalanx')              and not(contains(.,'_phalanx_'))) or
-                               (contains(.,'_interphalangeal')      and not(contains(.,'_interphalangeal_'))) or
+                               (contains(string(.),'_cuneonavicular')       and not(contains(string(.),'_cuneonavicular_'))) or
+                               (contains(string(.),'_cuneiform')            and not(contains(string(.),'_cuneiform_'))) or
+                               (contains(string(.),'_tarsometatarsal')      and not(contains(string(.),'_tarsometatarsal_'))) or
+                               (contains(string(.),'_metatarsal')           and not(contains(string(.),'_metatarsal_'))) or
+                               (contains(string(.),'_metatarsophalangeal')  and not(contains(string(.),'_metatarsophalangeal_'))) or
+                               (contains(string(.),'_phalanx')              and not(contains(string(.),'_phalanx_'))) or
+                               (contains(string(.),'_interphalangeal')      and not(contains(string(.),'_interphalangeal_'))) or
                                
-                               (contains(.,'_midcarpal')            and not(contains(.,'_midcarpal_'))) or
-                               (contains(.,'_carpometacarpal')      and not(contains(.,'_carpometacarpal_'))) or
-                               (contains(.,'_metacarpal')           and not(contains(.,'_metacarpal_'))) or
-                               (contains(.,'l_metacarpophalangeal') and not(contains(.,'l_metacarpophalangeal_')))">
+                               (contains(string(.),'_midcarpal')            and not(contains(string(.),'_midcarpal_'))) or
+                               (contains(string(.),'_carpometacarpal')      and not(contains(string(.),'_carpometacarpal_'))) or
+                               (contains(string(.),'_metacarpal')           and not(contains(string(.),'_metacarpal_'))) or
+                               (contains(string(.),'l_metacarpophalangeal') and not(contains(string(.),'l_metacarpophalangeal_')))">
                     
-                    <xsl:variable name="lastCharacter" select="substring(., string-length(.), 1)"/>
+                    <xsl:variable name="lastCharacter" select="substring(., string-length(string(.)), 1)"/>
                     <xsl:variable name="newName">
-                        <xsl:value-of select="substring(.,1,string-length(.) - 1)"/>
+                        <xsl:value-of select="substring(.,1,string-length(string(.)) - 1)"/>
                         <xsl:text>_</xsl:text>
                         <xsl:value-of select="$lastCharacter"/>
                     </xsl:variable>
@@ -5126,7 +5129,7 @@ Recommended tools:
                     <!-- no change -->
                     <xsl:value-of select="local-name()"/>
                 </xsl:when>
-                <xsl:when test="(local-name(..)='meta') and (local-name()='name') and (.='filename' or .='file')">
+                <xsl:when test="(local-name(..)='meta') and (local-name()='name') and (string(.)='filename' or string(.)='file')">
                     <xsl:text>title</xsl:text>
                     <xsl:message>
                         <xsl:text>*** fixMetaNamesMatchDublinCore: change meta name='</xsl:text>
@@ -5134,7 +5137,7 @@ Recommended tools:
                         <xsl:text>' to name='title'</xsl:text>
                     </xsl:message>
                 </xsl:when>
-                <xsl:when test="(local-name(..)='meta') and (local-name()='name') and (.='changed' or .='revised' or .='updated')">
+                <xsl:when test="(local-name(..)='meta') and (local-name()='name') and (string(.)='changed' or string(.)='revised' or string(.)='updated')">
                     <xsl:text>modified</xsl:text>
                     <xsl:message>
                         <xsl:text>*** fixMetaNamesMatchDublinCore: change meta name='</xsl:text>
@@ -5142,7 +5145,7 @@ Recommended tools:
                         <xsl:text>' to name='modified'</xsl:text>
                     </xsl:message>
                 </xsl:when>
-                <xsl:when test="(local-name(..)='meta') and (local-name()='name') and (.='creators')">
+                <xsl:when test="(local-name(..)='meta') and (local-name()='name') and (string(.)='creators')">
                     <xsl:text>creator</xsl:text>
                     <xsl:message>
                         <xsl:text>*** fixMetaNamesMatchDublinCore: change meta name='</xsl:text>
@@ -5150,7 +5153,7 @@ Recommended tools:
                         <xsl:text>' to name='creator'</xsl:text>
                     </xsl:message>
                 </xsl:when>
-                <xsl:when test="(local-name(..)='meta') and (local-name()='name') and (.='url')">
+                <xsl:when test="(local-name(..)='meta') and (local-name()='name') and (string(.)='url')">
                     <xsl:text>identifier</xsl:text>
                     <xsl:message>
                         <xsl:text>*** fixMetaNamesMatchDublinCore: change meta name='</xsl:text>
@@ -5158,7 +5161,7 @@ Recommended tools:
                         <xsl:text>' to name='identifier'</xsl:text>
                     </xsl:message>
                 </xsl:when>
-                <xsl:when test="(local-name(..)='meta') and (local-name()='name') and ((.='image') or starts-with(.,'texture') or starts-with(.,'Texture'))">
+                <xsl:when test="(local-name(..)='meta') and (local-name()='name') and ((string(.)='image') or starts-with(.,'texture') or starts-with(.,'Texture'))">
                     <xsl:text>Image</xsl:text>
                     <xsl:message>
                         <xsl:text>*** fixMetaNamesMatchDublinCore: change meta name='</xsl:text>
@@ -5191,11 +5194,11 @@ Recommended tools:
                                 not(starts-with(.,'*enter date of '))"> <!-- default values from newScene.x3d -->
                     <xsl:variable name="newDate">
                         <xsl:call-template name="fix-date-format">
-                            <xsl:with-param name="value" select="normalize-space(.)"/>
+                            <xsl:with-param name="value" select="normalize-space(string(.))"/>
                         </xsl:call-template>
                     </xsl:variable>
                     <xsl:choose>
-                        <xsl:when test="not(normalize-space(.) = $newDate)">
+                        <xsl:when test="not(normalize-space(string(.)) = $newDate)">
                             <!-- provide revised value as output, then report -->
                             <xsl:value-of select="$newDate"/>
                             <xsl:message>
@@ -5210,24 +5213,24 @@ Recommended tools:
                         </xsl:when>
                         <xsl:otherwise>
                             <!-- original value with normalized whitespace as output -->
-                            <xsl:value-of select="normalize-space(.)"/>
+                            <xsl:value-of select="normalize-space(string(.))"/>
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:when>
                 <!-- fix wrapper quotes in SFString/String attributes -->
                 <xsl:when test="((local-name()='description') or (local-name()='name') or (local-name()='content') or (((local-name()='type') and not(local-name(..)='NavigationInfo'))) or (local-name()='accessType') or 
                                  (starts-with(local-name(..),'field') and contains(../@type,'SFString'))) and
-                                starts-with(normalize-space(.),'&quot;') and (substring(normalize-space(.),string-length(normalize-space(.))) = '&quot;')">
+                                starts-with(normalize-space(string(.)),'&quot;') and (substring(normalize-space(string(.)),string-length(normalize-space(string(.)))) = '&quot;')">
                     <xsl:message>
                         <xsl:text>*** found wrapper quotation marks around SFString value, removing them (hint: use &amp;quot; to sidestep this check if needed)</xsl:text>
                         <xsl:text>(firstCharacter=</xsl:text>
                         <xsl:value-of select="substring(.,1,1)"/>
                         <xsl:text>, lastCharacter=</xsl:text>
-                        <xsl:value-of select="substring(.,string-length(.))"/>
+                        <xsl:value-of select="substring(.,string-length(string(.)))"/>
                         <xsl:text>)</xsl:text>
                     </xsl:message>
                     <xsl:call-template name="escape-special-characters">
-                        <xsl:with-param name="inputString" select="substring(.,2,(string-length(.)-2))"/>
+                        <xsl:with-param name="inputValue" select="substring(.,2,(string-length(string(.))-2))"/>
                     </xsl:call-template>
                     <xsl:message>
                         <xsl:text>*** fixWrapperQuotes: remove extraneous initial/final quote marks from SFString field, now </xsl:text>
@@ -5236,12 +5239,12 @@ Recommended tools:
                         <xsl:text> </xsl:text>
                         <xsl:value-of select="local-name()"/>
                         <xsl:text disable-output-escaping="yes">='</xsl:text>
-                        <xsl:value-of select="substring(.,2,(string-length(.)-2))"/>
+                        <xsl:value-of select="substring(.,2,(string-length(string(.))-2))"/>
                         <xsl:text disable-output-escaping="yes">'</xsl:text>
                         <xsl:text disable-output-escaping="yes">/&gt;</xsl:text>
                     </xsl:message>
                 </xsl:when>
-                <xsl:when test="starts-with(normalize-space(.),'*') and (substring(normalize-space(.), string-length(normalize-space(.))-1) = '*')"> <!-- ends-with -->
+                <xsl:when test="starts-with(normalize-space(string(.)),'*') and (substring(normalize-space(string(.)), string-length(normalize-space(string(.)))-1) = '*')"> <!-- ends-with -->
                     <xsl:value-of select="."/>
                     <xsl:message>
                         <xsl:text>*** attribute check: found template default, may need to fix </xsl:text>
@@ -5261,7 +5264,7 @@ Recommended tools:
                     </xsl:message>
                 </xsl:when>
                 <!-- fix unquoted MFString - relaxed this requirement per Mantis 1320 https://www.web3d.org/index.php/folder/id/3?id=1320
-                <xsl:when test="$isMFString and not(contains(.,'&quot;'))">
+                <xsl:when test="$isMFString and not(contains(string(.),'&quot;'))">
 					<xsl:text disable-output-escaping="yes">&quot;</xsl:text>
 					<xsl:value-of select="."/>
 					<xsl:text disable-output-escaping="yes">&quot;</xsl:text>
@@ -5323,7 +5326,7 @@ Recommended tools:
                     -->
                     <xsl:choose>
                         <xsl:when test="($fieldType = 'MFString')">
-                            <xsl:if test="not(starts-with(normalize-space(.),'&quot;'))">
+                            <xsl:if test="not(starts-with(normalize-space(string(.)),'&quot;'))">
                                 <xsl:text disable-output-escaping="yes">&quot;</xsl:text>
                                 <xsl:message>
                                     <xsl:text disable-output-escaping="yes">*** fieldValue type checks: wrap &quot;quotation marks&quot; around MFString value, </xsl:text>
@@ -5334,7 +5337,7 @@ Recommended tools:
                                     <xsl:text>='</xsl:text>
                                     <xsl:text disable-output-escaping="yes">&quot;</xsl:text>
                                     <xsl:call-template name="escape-special-characters">
-                                        <xsl:with-param name="inputString" select="."/>
+                                        <xsl:with-param name="inputValue" select="."/>
                                     </xsl:call-template>
                                     <xsl:text>'</xsl:text>
                                     <xsl:text disable-output-escaping="yes">&quot;</xsl:text>
@@ -5342,21 +5345,21 @@ Recommended tools:
                                 </xsl:message>
                             </xsl:if>
                             <xsl:call-template name="escape-special-characters">
-                                <xsl:with-param name="inputString" select="."/>
+                                <xsl:with-param name="inputValue" select="."/>
                             </xsl:call-template>
-                            <xsl:if test="not(substring(normalize-space(.),string-length(normalize-space(.))) = '&quot;')">
+                            <xsl:if test="not(substring(normalize-space(string(.)),string-length(normalize-space(string(.)))) = '&quot;')">
                                 <xsl:text disable-output-escaping="yes">&quot;</xsl:text>
                             </xsl:if>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:call-template name="escape-special-characters">
-                                <xsl:with-param name="inputString" select="."/>
+                                <xsl:with-param name="inputValue" select="."/>
                             </xsl:call-template>
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:when>
                 <!-- fix index values when -1 sentinel is missing follow-on space character -->
-                <xsl:when test="((local-name()='index') or ends-with(local-name(),'Index')) and (contains(., '-11') or contains(., '-12') or contains(., '-13') or contains(., '-14') or contains(., '-15') or contains(., '-16') or contains(., '-17') or contains(., '-18') or contains(., '-19') or contains(., '-10'))">
+                <xsl:when test="((local-name()='index') or ends-with(local-name(),'Index')) and (contains(string(.), '-11') or contains(string(.), '-12') or contains(string(.), '-13') or contains(string(.), '-14') or contains(string(.), '-15') or contains(string(.), '-16') or contains(string(.), '-17') or contains(string(.), '-18') or contains(string(.), '-19') or contains(string(.), '-10'))">
 					<xsl:variable name="result">
 						<xsl:for-each select="tokenize(., '\s')">
 							<xsl:choose>
@@ -5395,7 +5398,7 @@ Recommended tools:
                         <xsl:text>/&gt;</xsl:text>
 					</xsl:message>
 				</xsl:when>
-                <xsl:when test="(local-name(..)='TextureProperties') and contains(../@minificationFilter,'MIPMAP') and (local-name()='generateMipMaps') and not(.='true')">
+                <xsl:when test="(local-name(..)='TextureProperties') and contains(../@minificationFilter,'MIPMAP') and (local-name()='generateMipMaps') and not(string(.)='true')">
                     <xsl:text>true</xsl:text>
                     <xsl:message>
                         <xsl:text>*** fixTexturePropertiesGenerateMipMaps: change generateMipMaps='</xsl:text>
@@ -5455,7 +5458,7 @@ Recommended tools:
                 <xsl:when test="((local-name() = 'DEF') or (local-name() = 'USE') or
                                  ((local-name() = 'name') and (starts-with(local-name(..),'HAnim') or starts-with(local-name(..),'Matrix') or
                                                                starts-with(local-name(..),'Proto')))) and 
-                                 (contains(.,' ') or contains(normalize-space(.),' '))">
+                                 (contains(string(.),' ') or contains(normalize-space(string(.)),' '))">
                         <!-- ID or IDREF contains whitespace -->
                         <xsl:message>
                             <xsl:text disable-output-escaping="yes">*** error: &lt;</xsl:text>
@@ -5467,14 +5470,14 @@ Recommended tools:
                             <xsl:text>&gt; contains illegal whitespace, now removed with new </xsl:text>
                             <xsl:value-of select="local-name()"/>
                             <xsl:text>='</xsl:text>
-                            <xsl:value-of select="translate(normalize-space(.),' ','')"/>
+                            <xsl:value-of select="translate(normalize-space(string(.)),' ','')"/>
                             <xsl:text>'</xsl:text>
                         </xsl:message>
                         <!-- corrected value -->
-                        <xsl:value-of select="translate(normalize-space(.),' ','')"/>
+                        <xsl:value-of select="translate(normalize-space(string(.)),' ','')"/>
                 </xsl:when>
                 <!-- remove whitespace from selected name fields -->
-                <xsl:when test="(local-name(..) = 'NavigationInfo') and (local-name() = 'type') and (string-length(.) > 0) and contains(.,'ALL')">
+                <xsl:when test="(local-name(..) = 'NavigationInfo') and (local-name() = 'type') and (string-length(string(.)) > 0) and contains(string(.),'ALL')">
                     <xsl:message>
                         <xsl:text disable-output-escaping="yes">*** error: &lt;NavigationInfo DEF='</xsl:text>
                         <xsl:value-of select="../@DEF"/>
@@ -5483,9 +5486,9 @@ Recommended tools:
                         <xsl:text>/&gt; contains value ALL which is undefined, replacing with value ANY</xsl:text>
                     </xsl:message>
                     <!-- corrected value -->
-                    <xsl:value-of select="substring-before(normalize-space(.),'ALL')"/>
+                    <xsl:value-of select="substring-before(normalize-space(string(.)),'ALL')"/>
                     <xsl:text>ANY</xsl:text>
-                    <xsl:value-of select="substring-after (normalize-space(.),'ALL')"/>
+                    <xsl:value-of select="substring-after (normalize-space(string(.)),'ALL')"/>
                     <!-- TODO check for embedded whitespace without quoting, also consider regex -->
                 </xsl:when>
                 <xsl:when test="(local-name(..) = 'MetadataSet') and (local-name() = 'reference') and (../@name = 'HAnimHumanoid.info') and not(. = 'https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid')">
@@ -5517,7 +5520,7 @@ Recommended tools:
                     <xsl:text>https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/components/geospatial.html#GeoMetadata</xsl:text>
                 </xsl:when>
                 <!-- TODO more fields: change apostrophes to quotation marks in selected MFString enumerations -->
-                <xsl:when test="(local-name(..)='FontStyle') and (local-name()='justify') and not(contains(.,$quot))">
+                <xsl:when test="(local-name(..)='FontStyle') and (local-name()='justify') and not(contains(string(.),$quot))">
                     <xsl:variable name="strippedJustify" select="normalize-space(translate(upper-case(.),$apos,''))"/>
                     <xsl:variable name="correctedJustify">
                         <xsl:choose>
@@ -5594,8 +5597,8 @@ Recommended tools:
                         <xsl:text>'</xsl:text>
                     </xsl:message>
                 </xsl:when>
-                <xsl:when test="(local-name(..)='FontStyle') and ((local-name()='family') or (local-name()='justify')) and contains(.,$apos)">
-                    <xsl:value-of select="translate(.,$apos,$quot)"/>
+                <xsl:when test="(local-name(..)='FontStyle') and ((local-name()='family') or (local-name()='justify')) and contains(string(.),$apos)">
+                    <xsl:value-of select="translate(string(.),$apos,$quot)"/>
                     <xsl:message>
                         <xsl:text>*** replace apostrophe characters with quote characters, </xsl:text>
                         <xsl:value-of select="local-name(..)"/>
@@ -5606,7 +5609,7 @@ Recommended tools:
                         <xsl:text>' changed to </xsl:text>
                         <xsl:value-of select="local-name(.)"/>
                         <xsl:text>='</xsl:text>
-                        <xsl:value-of select="translate(.,$apos,$quot)"/>
+                        <xsl:value-of select="translate(string(.),$apos,$quot)"/>
                         <xsl:text>'</xsl:text>
                     </xsl:message>
                 </xsl:when>
@@ -5617,26 +5620,26 @@ Recommended tools:
                 <!-- TODO change angular values from degrees to radians, if no UNITS present -->
                 <xsl:otherwise>
                     <xsl:call-template name="escape-special-characters">
-                        <xsl:with-param name="inputString" select="."/>
+                        <xsl:with-param name="inputValue" select="."/>
                     </xsl:call-template>
                 </xsl:otherwise>
             </xsl:choose>
             <!-- attribute value overrides complete -->
             <xsl:text>'</xsl:text>
             <!-- similar output blocks found in @url, @*
-            <xsl:variable name="containsQuote" select="contains(.,'&quot;')"/>
+            <xsl:variable name="containsQuote" select="contains(string(.),'&quot;')"/>
             <xsl:choose>
-                <xsl:when test='contains(.,"&apos;") and not($containsQuote)'>
+                <xsl:when test='contains(string(.),"&apos;") and not($containsQuote)'>
                     <xsl:text>"</xsl:text>
                     <xsl:call-template name="escape-lessthan-characters">
-                        <xsl:with-param name="inputString" select="."/>
+                        <xsl:with-param name="inputValue" select="."/>
                     </xsl:call-template>
                     <xsl:text>"</xsl:text>
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:text>'</xsl:text>
                     <xsl:call-template name="escape-lessthan-characters">
-                        <xsl:with-param name="inputString" select="."/>
+                        <xsl:with-param name="inputValue" select="."/>
                     </xsl:call-template>
                     <xsl:text>'</xsl:text>
                 </xsl:otherwise>
@@ -5755,18 +5758,19 @@ Recommended tools:
     </xsl:template>
 
     <xsl:template name="escape-special-characters">
-        <xsl:param name="inputString"><xsl:text></xsl:text><!-- default value is empty --></xsl:param>
+        <xsl:param name="inputValue"><xsl:text><!-- default value is empty --></xsl:text></xsl:param>
+        <xsl:variable name="inputString" select="string($inputValue)"/>
         <!-- debug:  <xsl:text>//######&#10;</xsl:text> -->
         <!-- debug:  <xsl:text>### inputString received: </xsl:text><xsl:value-of select="$inputString"/><xsl:text>&#10;</xsl:text> -->
         <xsl:call-template name="escape-solitary-backslash">
-            <xsl:with-param name="inputString">
+            <xsl:with-param name="inputValue">
                 <xsl:call-template name="escape-apostrophe-characters">
-                    <xsl:with-param name="inputString">
+                    <xsl:with-param name="inputValue">
                         <xsl:call-template name="escape-lessthan-characters">
-                            <xsl:with-param name="inputString">
+                            <xsl:with-param name="inputValue">
                                 <!-- keep escape-ampersand-characters innermost so it doesn't get overzealous about escaped apostrophes or less-than characters -->
                                 <xsl:call-template name="escape-ampersand-characters">
-                                        <xsl:with-param name="inputString" select="$inputString"/>
+                                        <xsl:with-param name="inputValue" select="$inputString"/>
                                 </xsl:call-template>
                             </xsl:with-param>
                         </xsl:call-template>
@@ -5777,7 +5781,8 @@ Recommended tools:
     </xsl:template>
 
     <xsl:template name="escape-lessthan-characters">
-        <xsl:param name="inputString"><xsl:text></xsl:text><!-- default value is empty --></xsl:param>
+        <xsl:param name="inputValue"><xsl:text><!-- default value is empty --></xsl:text></xsl:param>
+        <xsl:variable name="inputString" select="string($inputValue)"/>
         <!-- debug:  <xsl:text>//######&#10;</xsl:text> -->
         <!-- debug:  <xsl:message><xsl:text>### inputString received: </xsl:text><xsl:value-of select="$inputString"/></xsl:message> -->
         <xsl:choose>
@@ -5786,7 +5791,7 @@ Recommended tools:
                 <xsl:value-of select="substring-before($inputString,'&quot;')"/>
                 <xsl:text disable-output-escaping="no">&quot;</xsl:text>
                 <xsl:call-template name="escape-lessthan-characters">
-                    <xsl:with-param name="inputString" select="substring-after($inputString,'&quot;')"/>
+                    <xsl:with-param name="inputValue" select="substring-after($inputString,'&quot;')"/>
                 </xsl:call-template>
             </xsl:when> -->
             <!-- &#60; is &lt; -->
@@ -5795,7 +5800,7 @@ Recommended tools:
                 <xsl:text disable-output-escaping="no">&amp;</xsl:text>
                 <xsl:text disable-output-escaping="no">lt;</xsl:text>
                 <xsl:call-template name="escape-lessthan-characters"> <!-- tail recursion -->
-                    <xsl:with-param name="inputString" select="substring-after($inputString,'&#60;')"/>
+                    <xsl:with-param name="inputValue" select="substring-after($inputString,'&#60;')"/>
                 </xsl:call-template>
             </xsl:when>
             <xsl:otherwise>
@@ -5805,7 +5810,8 @@ Recommended tools:
     </xsl:template>
 
     <xsl:template name="escape-ampersand-characters">
-        <xsl:param name="inputString"><xsl:text></xsl:text><!-- default value is empty --></xsl:param>
+        <xsl:param name="inputValue"><xsl:text><!-- default value is empty --></xsl:text></xsl:param>
+        <xsl:variable name="inputString" select="string($inputValue)"/>
         <!-- debug:  <xsl:text>//######&#10;</xsl:text> -->
         <!-- debug:  <xsl:text>### inputString received: </xsl:text><xsl:value-of select="$inputString"/><xsl:text>&#10;</xsl:text> -->
         <xsl:choose>
@@ -5818,7 +5824,7 @@ Recommended tools:
                 <xsl:text disable-output-escaping="yes">amp;</xsl:text>
                <!-- <xsl:text disable-output-escaping="yes">amp;</xsl:text>-->
                 <xsl:call-template name="escape-ampersand-characters"> <!-- tail recursion -->
-                    <xsl:with-param name="inputString" select="substring-after($inputString,'&amp;amp;')"/>
+                    <xsl:with-param name="inputValue" select="substring-after($inputString,'&amp;amp;')"/>
                 </xsl:call-template>
             </xsl:when>
             <xsl:when test="contains($inputString,'&amp;#38;') and not(contains(substring-before($inputString,'&amp;#38;'),'&amp;'))">
@@ -5827,7 +5833,7 @@ Recommended tools:
                 <xsl:text disable-output-escaping="yes">#38;</xsl:text>
                <!-- <xsl:text disable-output-escaping="yes">amp;</xsl:text>-->
                 <xsl:call-template name="escape-ampersand-characters"> <!-- tail recursion -->
-                    <xsl:with-param name="inputString" select="substring-after($inputString,'&amp;amp;')"/>
+                    <xsl:with-param name="inputValue" select="substring-after($inputString,'&amp;amp;')"/>
                 </xsl:call-template>
             </xsl:when>
             <xsl:when test="contains($inputString,'&amp;')">
@@ -5835,7 +5841,7 @@ Recommended tools:
                 <xsl:text disable-output-escaping="yes">&amp;</xsl:text>
                 <xsl:text disable-output-escaping="yes">amp;</xsl:text> 
                 <xsl:call-template name="escape-ampersand-characters"> <!-- tail recursion -->
-                    <xsl:with-param name="inputString" select="substring-after($inputString,'&amp;')"/>
+                    <xsl:with-param name="inputValue" select="substring-after($inputString,'&amp;')"/>
                 </xsl:call-template>
             </xsl:when>
             <xsl:otherwise>
@@ -5845,7 +5851,8 @@ Recommended tools:
     </xsl:template>
 
     <xsl:template name="escape-apostrophe-characters">
-        <xsl:param name="inputString"><xsl:text></xsl:text><!-- default value is empty --></xsl:param>
+        <xsl:param name="inputValue"><xsl:text><!-- default value is empty --></xsl:text></xsl:param>
+        <xsl:variable name="inputString" select="string($inputValue)"/>
         <!-- debug:  <xsl:text>//######&#10;</xsl:text> -->
         <!-- debug:  <xsl:message><xsl:text>### inputString received: </xsl:text><xsl:value-of select="$inputString"/></xsl:message> -->
         <!-- debug: 
@@ -5861,7 +5868,7 @@ Recommended tools:
                 <xsl:text disable-output-escaping="yes">&amp;</xsl:text>
                 <xsl:text disable-output-escaping="yes">apos;</xsl:text>
                 <xsl:call-template name="escape-apostrophe-characters"> <!-- tail recursion -->
-                    <xsl:with-param name="inputString" select='substring-after($inputString,"&apos;")'/>
+                    <xsl:with-param name="inputValue" select='substring-after($inputString,"&apos;")'/>
                 </xsl:call-template>
             </xsl:when><!--
             <xsl:when test='contains($inputString,$apostrophe)'>
@@ -5877,7 +5884,7 @@ Recommended tools:
                 <xsl:text disable-output-escaping="yes">&amp;</xsl:text>
                 <xsl:text disable-output-escaping="no" >apos;</xsl:text>
                 <xsl:call-template name="escape-apostrophe-characters">
-                    <xsl:with-param name="inputString" select='substring-after($inputString,$apostrophe)'/>
+                    <xsl:with-param name="inputValue" select='substring-after($inputString,$apostrophe)'/>
                 </xsl:call-template>
             </xsl:when>-->
             <xsl:otherwise>
@@ -5887,7 +5894,8 @@ Recommended tools:
     </xsl:template>
 
     <xsl:template name="escape-solitary-backslash">
-        <xsl:param name="inputString"><xsl:text></xsl:text><!-- default value is empty --></xsl:param>
+        <xsl:param name="inputValue"><xsl:text><!-- default value is empty --></xsl:text></xsl:param>
+        <xsl:variable name="inputString" select="string($inputValue)"/>
         <!-- \ = &#92; -->
         <!-- debug:  <xsl:text>//######&#10;</xsl:text> -->
         <!-- debug:  <xsl:text>### inputString received: </xsl:text><xsl:value-of select="$inputString"/><xsl:text>&#10;</xsl:text> -->
@@ -5896,7 +5904,7 @@ Recommended tools:
                 <xsl:value-of select="substring-before($inputString,'\')"/>
                 <xsl:text disable-output-escaping="yes">\</xsl:text>
                 <xsl:call-template name="escape-solitary-backslash"> <!-- tail recursion -->
-                    <xsl:with-param name="inputString" select="substring-after($inputString,'\')"/>
+                    <xsl:with-param name="inputValue" select="substring-after($inputString,'\')"/>
                 </xsl:call-template>
             </xsl:when>
             <!-- TODO confirm... handle backslash \ with escaping \\ -->
@@ -5904,7 +5912,7 @@ Recommended tools:
                 <xsl:value-of select="substring-before($inputString,'\\')"/>
                 <xsl:text disable-output-escaping="yes">\</xsl:text>
                 <xsl:call-template name="escape-solitary-backslash"> <!-- tail recursion -->
-                    <xsl:with-param name="inputString" select="substring-after($inputString,'\\')"/>
+                    <xsl:with-param name="inputValue" select="substring-after($inputString,'\\')"/>
                 </xsl:call-template>
             </xsl:when>
             <xsl:otherwise>
@@ -6108,7 +6116,7 @@ Recommended tools:
     <!-- none expected, this is designed to catch errors -->
     <xsl:template match="text()[not(local-name(..)='Script')]">
       <!-- XML text is likely from digital signature nodes - try to swallow blank lines between tags and pass through other text here -->
-      <xsl:if test="not(normalize-space(.) = '') and not(normalize-space(.) = ' ')">
+      <xsl:if test="not(normalize-space(string(.)) = '') and not(normalize-space(string(.)) = ' ')">
             <xsl:value-of select="." disable-output-escaping="yes"/>
             <xsl:message>
                 <xsl:text>unexpected text found</xsl:text>
@@ -6124,7 +6132,7 @@ Recommended tools:
             <xsl:text>  </xsl:text>
         </xsl:for-each>
         <xsl:text disable-output-escaping="yes">&lt;!-- </xsl:text>
-        <xsl:value-of select="normalize-space(.)" disable-output-escaping="yes"/>
+        <xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/>
         <xsl:text disable-output-escaping="yes"> --&gt;</xsl:text>
         <xsl:text>&#10;</xsl:text>
     </xsl:template>
@@ -6858,81 +6866,81 @@ Recommended tools:
       <!-- X3dTidy.xslt correction rules in X3dDiagnostics4.0.xml autogenerated from X3DUOM -->
 
       <!-- *** start: HAnim2 HAnimJoint alias conversion generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->
-      <xsl:when test="(local-name(..)='HAnimJoint') and (local-name()='name') and $isHAnim2 and ((.='SIJ') or (.='SI joint') or (.='l_ankle') or (.='l_talocalcaneal') or (.='l_cuneonavicular') or (.='l_subtalar') or (.='l_tarsometatarsal') or (.='l_midtarsal') or (.='l_metatarsophalangeal') or (.='l_tarsal_proximal_interphalangeal') or (.='l_tarsal_distal_interphalangeal') or (.='l_calcaneuscuboid') or (.='r_ankle') or (.='r_talocalcaneal') or (.='r_cuneonavicular') or (.='r_subtalar') or (.='r_tarsometatarsal') or (.='r_midtarsal') or (.='r_metatarsophalangeal') or (.='r_tarsal_proximal_interphalangeal') or (.='r_metatarsal') or (.='r_tarsal_distal_interphalangeal') or (.='r_calcaneuscuboid') or (.='l_wrist') or (.='l_thumb1') or (.='l_thumb2') or (.='l_thumb3') or (.='l_index0') or (.='l_carpometacarpal') or (.='l_index1') or (.='l_metacarpophalangeal') or (.='l_index2') or (.='l_carpal_proximal_interphalangeal') or (.='l_index3') or (.='l_carpal_distal_interphalangeal') or (.='l_middle0') or (.='l_middle1') or (.='l_middle2') or (.='l_middle3') or (.='l_ring0') or (.='l_ring1') or (.='l_ring2') or (.='l_ring3') or (.='l_pinky0') or (.='l_pinky1') or (.='l_pinky2') or (.='l_pinky3') or (.='r_wrist') or (.='r_thumb1') or (.='r_thumb2') or (.='r_thumb3') or (.='r_index0') or (.='r_carpometacarpal') or (.='r_index1') or (.='r_metacarpophalangeal') or (.='r_index2') or (.='r_carpal_proximal_interphalangeal') or (.='r_index3') or (.='r_carpal_distal_interphalangeal') or (.='r_middle0') or (.='r_middle1') or (.='r_middle2') or (.='r_middle3') or (.='r_ring0') or (.='r_ring1') or (.='r_ring2') or (.='r_ring3') or (.='r_pinky0') or (.='r_pinky1') or (.='r_pinky2') or (.='r_pinky3'))">
+      <xsl:when test="(local-name(..)='HAnimJoint') and (local-name()='name') and $isHAnim2 and ((string(.)='SIJ') or (string(.)='SI joint') or (string(.)='l_ankle') or (string(.)='l_talocalcaneal') or (string(.)='l_cuneonavicular') or (string(.)='l_subtalar') or (string(.)='l_tarsometatarsal') or (string(.)='l_midtarsal') or (string(.)='l_metatarsophalangeal') or (string(.)='l_tarsal_proximal_interphalangeal') or (string(.)='l_tarsal_distal_interphalangeal') or (string(.)='l_calcaneuscuboid') or (string(.)='r_ankle') or (string(.)='r_talocalcaneal') or (string(.)='r_cuneonavicular') or (string(.)='r_subtalar') or (string(.)='r_tarsometatarsal') or (string(.)='r_midtarsal') or (string(.)='r_metatarsophalangeal') or (string(.)='r_tarsal_proximal_interphalangeal') or (string(.)='r_metatarsal') or (string(.)='r_tarsal_distal_interphalangeal') or (string(.)='r_calcaneuscuboid') or (string(.)='l_wrist') or (string(.)='l_thumb1') or (string(.)='l_thumb2') or (string(.)='l_thumb3') or (string(.)='l_index0') or (string(.)='l_carpometacarpal') or (string(.)='l_index1') or (string(.)='l_metacarpophalangeal') or (string(.)='l_index2') or (string(.)='l_carpal_proximal_interphalangeal') or (string(.)='l_index3') or (string(.)='l_carpal_distal_interphalangeal') or (string(.)='l_middle0') or (string(.)='l_middle1') or (string(.)='l_middle2') or (string(.)='l_middle3') or (string(.)='l_ring0') or (string(.)='l_ring1') or (string(.)='l_ring2') or (string(.)='l_ring3') or (string(.)='l_pinky0') or (string(.)='l_pinky1') or (string(.)='l_pinky2') or (string(.)='l_pinky3') or (string(.)='r_wrist') or (string(.)='r_thumb1') or (string(.)='r_thumb2') or (string(.)='r_thumb3') or (string(.)='r_index0') or (string(.)='r_carpometacarpal') or (string(.)='r_index1') or (string(.)='r_metacarpophalangeal') or (string(.)='r_index2') or (string(.)='r_carpal_proximal_interphalangeal') or (string(.)='r_index3') or (string(.)='r_carpal_distal_interphalangeal') or (string(.)='r_middle0') or (string(.)='r_middle1') or (string(.)='r_middle2') or (string(.)='r_middle3') or (string(.)='r_ring0') or (string(.)='r_ring1') or (string(.)='r_ring2') or (string(.)='r_ring3') or (string(.)='r_pinky0') or (string(.)='r_pinky1') or (string(.)='r_pinky2') or (string(.)='r_pinky3'))">
         <xsl:variable name="newName">
             <!-- find preferred value for this alias -->
             <xsl:choose>
-                <xsl:when test="(.='SIJ')"><xsl:text>sacroiliac</xsl:text></xsl:when>
-                <xsl:when test="(.='SI joint')"><xsl:text>sacroiliac</xsl:text></xsl:when>
-                <xsl:when test="(.='l_ankle')"><xsl:text>l_talocrural</xsl:text></xsl:when>
-                <xsl:when test="(.='l_talocalcaneal')"><xsl:text>l_talocalcaneonavicular</xsl:text></xsl:when>
-                <xsl:when test="(.='l_cuneonavicular')"><xsl:text>l_cuneonavicular_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_subtalar')"><xsl:text>l_tarsometatarsal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_tarsometatarsal')"><xsl:text>l_tarsometatarsal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_midtarsal')"><xsl:text>l_metatarsophalangeal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_metatarsophalangeal')"><xsl:text>l_metatarsophalangeal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_tarsal_proximal_interphalangeal')"><xsl:text>l_tarsal_proximal_interphalangeal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_tarsal_distal_interphalangeal')"><xsl:text>l_tarsal_distal_interphalangeal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_calcaneuscuboid')"><xsl:text>l_calcaneocuboid</xsl:text></xsl:when>
-                <xsl:when test="(.='r_ankle')"><xsl:text>r_talocrural</xsl:text></xsl:when>
-                <xsl:when test="(.='r_talocalcaneal')"><xsl:text>r_talocalcaneonavicular</xsl:text></xsl:when>
-                <xsl:when test="(.='r_cuneonavicular')"><xsl:text>r_cuneonavicular_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_subtalar')"><xsl:text>r_tarsometatarsal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_tarsometatarsal')"><xsl:text>r_tarsometatarsal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_midtarsal')"><xsl:text>r_metatarsophalangeal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_metatarsophalangeal')"><xsl:text>r_metatarsophalangeal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_tarsal_proximal_interphalangeal')"><xsl:text>r_tarsal_proximal_interphalangeal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_metatarsal')"><xsl:text>r_tarsal_distal_interphalangeal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_tarsal_distal_interphalangeal')"><xsl:text>r_tarsal_distal_interphalangeal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_calcaneuscuboid')"><xsl:text>r_calcaneocuboid</xsl:text></xsl:when>
-                <xsl:when test="(.='l_wrist')"><xsl:text>l_radiocarpal</xsl:text></xsl:when>
-                <xsl:when test="(.='l_thumb1')"><xsl:text>l_carpometacarpal_1</xsl:text></xsl:when>
-                <xsl:when test="(.='l_thumb2')"><xsl:text>l_metacarpophalangeal_1</xsl:text></xsl:when>
-                <xsl:when test="(.='l_thumb3')"><xsl:text>l_carpal_interphalangeal_1</xsl:text></xsl:when>
-                <xsl:when test="(.='l_index0')"><xsl:text>l_carpometacarpal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_carpometacarpal')"><xsl:text>l_carpometacarpal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_index1')"><xsl:text>l_metacarpophalangeal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_metacarpophalangeal')"><xsl:text>l_metacarpophalangeal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_index2')"><xsl:text>l_carpal_proximal_interphalangeal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_carpal_proximal_interphalangeal')"><xsl:text>l_carpal_proximal_interphalangeal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_index3')"><xsl:text>l_carpal_distal_interphalangeal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_carpal_distal_interphalangeal')"><xsl:text>l_carpal_distal_interphalangeal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_middle0')"><xsl:text>l_carpometacarpal_3</xsl:text></xsl:when>
-                <xsl:when test="(.='l_middle1')"><xsl:text>l_metacarpophalangeal_3</xsl:text></xsl:when>
-                <xsl:when test="(.='l_middle2')"><xsl:text>l_carpal_proximal_interphalangeal_3</xsl:text></xsl:when>
-                <xsl:when test="(.='l_middle3')"><xsl:text>l_carpal_distal_interphalangeal_3</xsl:text></xsl:when>
-                <xsl:when test="(.='l_ring0')"><xsl:text>l_carpometacarpal_4</xsl:text></xsl:when>
-                <xsl:when test="(.='l_ring1')"><xsl:text>l_metacarpophalangeal_4</xsl:text></xsl:when>
-                <xsl:when test="(.='l_ring2')"><xsl:text>l_carpal_proximal_interphalangeal_4</xsl:text></xsl:when>
-                <xsl:when test="(.='l_ring3')"><xsl:text>l_carpal_distal_interphalangeal_4</xsl:text></xsl:when>
-                <xsl:when test="(.='l_pinky0')"><xsl:text>l_carpometacarpal_5</xsl:text></xsl:when>
-                <xsl:when test="(.='l_pinky1')"><xsl:text>l_metacarpophalangeal_5</xsl:text></xsl:when>
-                <xsl:when test="(.='l_pinky2')"><xsl:text>l_carpal_proximal_interphalangeal_5</xsl:text></xsl:when>
-                <xsl:when test="(.='l_pinky3')"><xsl:text>l_carpal_distal_interphalangeal_5</xsl:text></xsl:when>
-                <xsl:when test="(.='r_wrist')"><xsl:text>r_radiocarpal</xsl:text></xsl:when>
-                <xsl:when test="(.='r_thumb1')"><xsl:text>r_carpometacarpal_1</xsl:text></xsl:when>
-                <xsl:when test="(.='r_thumb2')"><xsl:text>r_metacarpophalangeal_1</xsl:text></xsl:when>
-                <xsl:when test="(.='r_thumb3')"><xsl:text>r_carpal_interphalangeal_1</xsl:text></xsl:when>
-                <xsl:when test="(.='r_index0')"><xsl:text>r_carpometacarpal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_carpometacarpal')"><xsl:text>r_carpometacarpal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_index1')"><xsl:text>r_metacarpophalangeal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_metacarpophalangeal')"><xsl:text>r_metacarpophalangeal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_index2')"><xsl:text>r_carpal_proximal_interphalangeal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_carpal_proximal_interphalangeal')"><xsl:text>r_carpal_proximal_interphalangeal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_index3')"><xsl:text>r_carpal_distal_interphalangeal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_carpal_distal_interphalangeal')"><xsl:text>r_carpal_distal_interphalangeal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_middle0')"><xsl:text>r_carpometacarpal_3</xsl:text></xsl:when>
-                <xsl:when test="(.='r_middle1')"><xsl:text>r_metacarpophalangeal_3</xsl:text></xsl:when>
-                <xsl:when test="(.='r_middle2')"><xsl:text>r_carpal_proximal_interphalangeal_3</xsl:text></xsl:when>
-                <xsl:when test="(.='r_middle3')"><xsl:text>r_carpal_distal_interphalangeal_3</xsl:text></xsl:when>
-                <xsl:when test="(.='r_ring0')"><xsl:text>r_carpometacarpal_4</xsl:text></xsl:when>
-                <xsl:when test="(.='r_ring1')"><xsl:text>r_metacarpophalangeal_4</xsl:text></xsl:when>
-                <xsl:when test="(.='r_ring2')"><xsl:text>r_carpal_proximal_interphalangeal_4</xsl:text></xsl:when>
-                <xsl:when test="(.='r_ring3')"><xsl:text>r_carpal_distal_interphalangeal_4</xsl:text></xsl:when>
-                <xsl:when test="(.='r_pinky0')"><xsl:text>r_carpometacarpal_5</xsl:text></xsl:when>
-                <xsl:when test="(.='r_pinky1')"><xsl:text>r_metacarpophalangeal_5</xsl:text></xsl:when>
-                <xsl:when test="(.='r_pinky2')"><xsl:text>r_carpal_proximal_interphalangeal_5</xsl:text></xsl:when>
-                <xsl:when test="(.='r_pinky3')"><xsl:text>r_carpal_distal_interphalangeal_5</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='SIJ')"><xsl:text>sacroiliac</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='SI joint')"><xsl:text>sacroiliac</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_ankle')"><xsl:text>l_talocrural</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_talocalcaneal')"><xsl:text>l_talocalcaneonavicular</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_cuneonavicular')"><xsl:text>l_cuneonavicular_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_subtalar')"><xsl:text>l_tarsometatarsal_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_tarsometatarsal')"><xsl:text>l_tarsometatarsal_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_midtarsal')"><xsl:text>l_metatarsophalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_metatarsophalangeal')"><xsl:text>l_metatarsophalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_tarsal_proximal_interphalangeal')"><xsl:text>l_tarsal_proximal_interphalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_tarsal_distal_interphalangeal')"><xsl:text>l_tarsal_distal_interphalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_calcaneuscuboid')"><xsl:text>l_calcaneocuboid</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_ankle')"><xsl:text>r_talocrural</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_talocalcaneal')"><xsl:text>r_talocalcaneonavicular</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_cuneonavicular')"><xsl:text>r_cuneonavicular_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_subtalar')"><xsl:text>r_tarsometatarsal_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_tarsometatarsal')"><xsl:text>r_tarsometatarsal_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_midtarsal')"><xsl:text>r_metatarsophalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_metatarsophalangeal')"><xsl:text>r_metatarsophalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_tarsal_proximal_interphalangeal')"><xsl:text>r_tarsal_proximal_interphalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_metatarsal')"><xsl:text>r_tarsal_distal_interphalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_tarsal_distal_interphalangeal')"><xsl:text>r_tarsal_distal_interphalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_calcaneuscuboid')"><xsl:text>r_calcaneocuboid</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_wrist')"><xsl:text>l_radiocarpal</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_thumb1')"><xsl:text>l_carpometacarpal_1</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_thumb2')"><xsl:text>l_metacarpophalangeal_1</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_thumb3')"><xsl:text>l_carpal_interphalangeal_1</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_index0')"><xsl:text>l_carpometacarpal_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_carpometacarpal')"><xsl:text>l_carpometacarpal_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_index1')"><xsl:text>l_metacarpophalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_metacarpophalangeal')"><xsl:text>l_metacarpophalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_index2')"><xsl:text>l_carpal_proximal_interphalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_carpal_proximal_interphalangeal')"><xsl:text>l_carpal_proximal_interphalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_index3')"><xsl:text>l_carpal_distal_interphalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_carpal_distal_interphalangeal')"><xsl:text>l_carpal_distal_interphalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_middle0')"><xsl:text>l_carpometacarpal_3</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_middle1')"><xsl:text>l_metacarpophalangeal_3</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_middle2')"><xsl:text>l_carpal_proximal_interphalangeal_3</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_middle3')"><xsl:text>l_carpal_distal_interphalangeal_3</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_ring0')"><xsl:text>l_carpometacarpal_4</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_ring1')"><xsl:text>l_metacarpophalangeal_4</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_ring2')"><xsl:text>l_carpal_proximal_interphalangeal_4</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_ring3')"><xsl:text>l_carpal_distal_interphalangeal_4</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_pinky0')"><xsl:text>l_carpometacarpal_5</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_pinky1')"><xsl:text>l_metacarpophalangeal_5</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_pinky2')"><xsl:text>l_carpal_proximal_interphalangeal_5</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_pinky3')"><xsl:text>l_carpal_distal_interphalangeal_5</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_wrist')"><xsl:text>r_radiocarpal</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_thumb1')"><xsl:text>r_carpometacarpal_1</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_thumb2')"><xsl:text>r_metacarpophalangeal_1</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_thumb3')"><xsl:text>r_carpal_interphalangeal_1</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_index0')"><xsl:text>r_carpometacarpal_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_carpometacarpal')"><xsl:text>r_carpometacarpal_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_index1')"><xsl:text>r_metacarpophalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_metacarpophalangeal')"><xsl:text>r_metacarpophalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_index2')"><xsl:text>r_carpal_proximal_interphalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_carpal_proximal_interphalangeal')"><xsl:text>r_carpal_proximal_interphalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_index3')"><xsl:text>r_carpal_distal_interphalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_carpal_distal_interphalangeal')"><xsl:text>r_carpal_distal_interphalangeal_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_middle0')"><xsl:text>r_carpometacarpal_3</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_middle1')"><xsl:text>r_metacarpophalangeal_3</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_middle2')"><xsl:text>r_carpal_proximal_interphalangeal_3</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_middle3')"><xsl:text>r_carpal_distal_interphalangeal_3</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_ring0')"><xsl:text>r_carpometacarpal_4</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_ring1')"><xsl:text>r_metacarpophalangeal_4</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_ring2')"><xsl:text>r_carpal_proximal_interphalangeal_4</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_ring3')"><xsl:text>r_carpal_distal_interphalangeal_4</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_pinky0')"><xsl:text>r_carpometacarpal_5</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_pinky1')"><xsl:text>r_metacarpophalangeal_5</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_pinky2')"><xsl:text>r_carpal_proximal_interphalangeal_5</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_pinky3')"><xsl:text>r_carpal_distal_interphalangeal_5</xsl:text></xsl:when>
                 <xsl:otherwise>
                     <xsl:value-of select="."/>
                     <!-- <xsl:message>
@@ -6961,76 +6969,76 @@ Recommended tools:
       <!-- *** finish HAnim2 HAnimJoint alias conversion generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->
 
       <!-- *** start: HAnim2 HAnimSegment alias conversion generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->
-      <xsl:when test="(local-name(..)='HAnimSegment') and (local-name()='name') and $isHAnim2 and ((.='l_hindfoot') or (.='l_cuneiform') or (.='l_midproximal') or (.='l_metatarsal') or (.='l_middistal') or (.='l_tarsal_proximal_phalanx') or (.='l_tarsal_middle_phalanx') or (.='l_forefoot') or (.='l_tarsal_distal_phalanx') or (.='l_calcaneum') or (.='r_hindfoot') or (.='r_cuneiform') or (.='r_midproximal') or (.='r_middistal') or (.='r_tarsal_proximal_phalanx') or (.='r_tarsal_middle_phalanx') or (.='r_forefoot') or (.='r_tarsal_distal_phalanx') or (.='r_calcaneum') or (.='head') or (.='l_hand') or (.='l_wrist') or (.='l_thumb_metacarpal') or (.='l_thumb_proximal') or (.='l_thumb_distal') or (.='l_index_metacarpal') or (.='l_index_proximal') or (.='l_carpal_proximal_phalanx') or (.='l_index_middle') or (.='l_carpal_middle_phalanx') or (.='l_index_distal') or (.='l_carpal_distal_phalanx') or (.='l_middle_metacarpal') or (.='l_middle_proximal') or (.='l_middle_middle') or (.='l_middle_distal') or (.='l_ring_metacarpal') or (.='l_ring_proximal') or (.='l_ring_middle') or (.='l_ring_distal') or (.='l_pinky_metacarpal') or (.='l_pinky_proximal') or (.='l_pinky_middle') or (.='l_pinky_distal') or (.='r_hand') or (.='r_wrist') or (.='r_thumb_metacarpal') or (.='r_thumb_proximal') or (.='r_thumb_distal') or (.='r_index_metacarpal') or (.='r_index_proximal') or (.='r_carpal_proximal_phalanx') or (.='r_index_middle') or (.='r_carpal_middle_phalanx') or (.='r_index_distal') or (.='r_carpal_distal_phalanx') or (.='r_middle_metacarpal') or (.='r_middle_proximal') or (.='r_middle_middle') or (.='r_middle_distal') or (.='r_ring_metacarpal') or (.='r_ring_proximal') or (.='r_ring_middle') or (.='r_ring_distal') or (.='r_pinky_metacarpal') or (.='r_pinky_proximal') or (.='r_pinky_middle') or (.='r_pinky_distal'))">
+      <xsl:when test="(local-name(..)='HAnimSegment') and (local-name()='name') and $isHAnim2 and ((string(.)='l_hindfoot') or (string(.)='l_cuneiform') or (string(.)='l_midproximal') or (string(.)='l_metatarsal') or (string(.)='l_middistal') or (string(.)='l_tarsal_proximal_phalanx') or (string(.)='l_tarsal_middle_phalanx') or (string(.)='l_forefoot') or (string(.)='l_tarsal_distal_phalanx') or (string(.)='l_calcaneum') or (string(.)='r_hindfoot') or (string(.)='r_cuneiform') or (string(.)='r_midproximal') or (string(.)='r_middistal') or (string(.)='r_tarsal_proximal_phalanx') or (string(.)='r_tarsal_middle_phalanx') or (string(.)='r_forefoot') or (string(.)='r_tarsal_distal_phalanx') or (string(.)='r_calcaneum') or (string(.)='head') or (string(.)='l_hand') or (string(.)='l_wrist') or (string(.)='l_thumb_metacarpal') or (string(.)='l_thumb_proximal') or (string(.)='l_thumb_distal') or (string(.)='l_index_metacarpal') or (string(.)='l_index_proximal') or (string(.)='l_carpal_proximal_phalanx') or (string(.)='l_index_middle') or (string(.)='l_carpal_middle_phalanx') or (string(.)='l_index_distal') or (string(.)='l_carpal_distal_phalanx') or (string(.)='l_middle_metacarpal') or (string(.)='l_middle_proximal') or (string(.)='l_middle_middle') or (string(.)='l_middle_distal') or (string(.)='l_ring_metacarpal') or (string(.)='l_ring_proximal') or (string(.)='l_ring_middle') or (string(.)='l_ring_distal') or (string(.)='l_pinky_metacarpal') or (string(.)='l_pinky_proximal') or (string(.)='l_pinky_middle') or (string(.)='l_pinky_distal') or (string(.)='r_hand') or (string(.)='r_wrist') or (string(.)='r_thumb_metacarpal') or (string(.)='r_thumb_proximal') or (string(.)='r_thumb_distal') or (string(.)='r_index_metacarpal') or (string(.)='r_index_proximal') or (string(.)='r_carpal_proximal_phalanx') or (string(.)='r_index_middle') or (string(.)='r_carpal_middle_phalanx') or (string(.)='r_index_distal') or (string(.)='r_carpal_distal_phalanx') or (string(.)='r_middle_metacarpal') or (string(.)='r_middle_proximal') or (string(.)='r_middle_middle') or (string(.)='r_middle_distal') or (string(.)='r_ring_metacarpal') or (string(.)='r_ring_proximal') or (string(.)='r_ring_middle') or (string(.)='r_ring_distal') or (string(.)='r_pinky_metacarpal') or (string(.)='r_pinky_proximal') or (string(.)='r_pinky_middle') or (string(.)='r_pinky_distal'))">
         <xsl:variable name="newName">
             <!-- find preferred value for this alias -->
             <xsl:choose>
-                <xsl:when test="(.='l_hindfoot')"><xsl:text>l_talus</xsl:text></xsl:when>
-                <xsl:when test="(.='l_cuneiform')"><xsl:text>l_cuneiform_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_midproximal')"><xsl:text>l_metatarsal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_metatarsal')"><xsl:text>l_metatarsal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_middistal')"><xsl:text>l_tarsal_proximal_phalanx_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_tarsal_proximal_phalanx')"><xsl:text>l_tarsal_proximal_phalanx_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_tarsal_middle_phalanx')"><xsl:text>l_tarsal_middle_phalanx_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_forefoot')"><xsl:text>l_tarsal_distal_phalanx_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_tarsal_distal_phalanx')"><xsl:text>l_tarsal_distal_phalanx_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_calcaneum')"><xsl:text>l_calcaneus</xsl:text></xsl:when>
-                <xsl:when test="(.='r_hindfoot')"><xsl:text>r_talus</xsl:text></xsl:when>
-                <xsl:when test="(.='r_cuneiform')"><xsl:text>r_cuneiform_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_midproximal')"><xsl:text>r_metatarsal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_middistal')"><xsl:text>r_tarsal_proximal_phalanx_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_tarsal_proximal_phalanx')"><xsl:text>r_tarsal_proximal_phalanx_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_tarsal_middle_phalanx')"><xsl:text>r_tarsal_middle_phalanx_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_forefoot')"><xsl:text>r_tarsal_distal_phalanx_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_tarsal_distal_phalanx')"><xsl:text>r_tarsal_distal_phalanx_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_calcaneum')"><xsl:text>r_calcaneus</xsl:text></xsl:when>
-                <xsl:when test="(.='head')"><xsl:text>skull</xsl:text></xsl:when>
-                <xsl:when test="(.='l_hand')"><xsl:text>l_carpal</xsl:text></xsl:when>
-                <xsl:when test="(.='l_thumb_metacarpal')"><xsl:text>l_metacarpal_1</xsl:text></xsl:when>
-                <xsl:when test="(.='l_thumb_proximal')"><xsl:text>l_carpal_proximal_phalanx_1</xsl:text></xsl:when>
-                <xsl:when test="(.='l_thumb_distal')"><xsl:text>l_carpal_distal_phalanx_1</xsl:text></xsl:when>
-                <xsl:when test="(.='l_index_metacarpal')"><xsl:text>l_metacarpal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_index_proximal')"><xsl:text>l_carpal_proximal_phalanx_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_carpal_proximal_phalanx')"><xsl:text>l_carpal_proximal_phalanx_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_index_middle')"><xsl:text>l_carpal_middle_phalanx_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_carpal_middle_phalanx')"><xsl:text>l_carpal_middle_phalanx_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_index_distal')"><xsl:text>l_carpal_distal_phalanx_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_carpal_distal_phalanx')"><xsl:text>l_carpal_distal_phalanx_2</xsl:text></xsl:when>
-                <xsl:when test="(.='l_middle_metacarpal')"><xsl:text>l_metacarpal_3</xsl:text></xsl:when>
-                <xsl:when test="(.='l_middle_proximal')"><xsl:text>l_carpal_proximal_phalanx_3</xsl:text></xsl:when>
-                <xsl:when test="(.='l_middle_middle')"><xsl:text>l_carpal_middle_phalanx_3</xsl:text></xsl:when>
-                <xsl:when test="(.='l_middle_distal')"><xsl:text>l_carpal_distal_phalanx_3</xsl:text></xsl:when>
-                <xsl:when test="(.='l_ring_metacarpal')"><xsl:text>l_metacarpal_4</xsl:text></xsl:when>
-                <xsl:when test="(.='l_ring_proximal')"><xsl:text>l_carpal_proximal_phalanx_4</xsl:text></xsl:when>
-                <xsl:when test="(.='l_ring_middle')"><xsl:text>l_carpal_middle_phalanx_4</xsl:text></xsl:when>
-                <xsl:when test="(.='l_ring_distal')"><xsl:text>l_carpal_distal_phalanx_4</xsl:text></xsl:when>
-                <xsl:when test="(.='l_pinky_metacarpal')"><xsl:text>l_metacarpal_5</xsl:text></xsl:when>
-                <xsl:when test="(.='l_pinky_proximal')"><xsl:text>l_carpal_proximal_phalanx_5</xsl:text></xsl:when>
-                <xsl:when test="(.='l_pinky_middle')"><xsl:text>l_carpal_middle_phalanx_5</xsl:text></xsl:when>
-                <xsl:when test="(.='l_pinky_distal')"><xsl:text>l_carpal_distal_phalanx_5</xsl:text></xsl:when>
-                <xsl:when test="(.='r_hand')"><xsl:text>r_carpal</xsl:text></xsl:when>
-                <xsl:when test="(.='r_thumb_metacarpal')"><xsl:text>r_metacarpal_1</xsl:text></xsl:when>
-                <xsl:when test="(.='r_thumb_proximal')"><xsl:text>r_carpal_proximal_phalanx_1</xsl:text></xsl:when>
-                <xsl:when test="(.='r_thumb_distal')"><xsl:text>r_carpal_distal_phalanx_1</xsl:text></xsl:when>
-                <xsl:when test="(.='r_index_metacarpal')"><xsl:text>r_metacarpal_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_index_proximal')"><xsl:text>r_carpal_proximal_phalanx_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_carpal_proximal_phalanx')"><xsl:text>r_carpal_proximal_phalanx_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_index_middle')"><xsl:text>r_carpal_middle_phalanx_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_carpal_middle_phalanx')"><xsl:text>r_carpal_middle_phalanx_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_index_distal')"><xsl:text>r_carpal_distal_phalanx_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_carpal_distal_phalanx')"><xsl:text>r_carpal_distal_phalanx_2</xsl:text></xsl:when>
-                <xsl:when test="(.='r_middle_metacarpal')"><xsl:text>r_metacarpal_3</xsl:text></xsl:when>
-                <xsl:when test="(.='r_middle_proximal')"><xsl:text>r_carpal_proximal_phalanx_3</xsl:text></xsl:when>
-                <xsl:when test="(.='r_middle_middle')"><xsl:text>r_carpal_middle_phalanx_3</xsl:text></xsl:when>
-                <xsl:when test="(.='r_middle_distal')"><xsl:text>r_carpal_distal_phalanx_3</xsl:text></xsl:when>
-                <xsl:when test="(.='r_ring_metacarpal')"><xsl:text>r_metacarpal_4</xsl:text></xsl:when>
-                <xsl:when test="(.='r_ring_proximal')"><xsl:text>r_carpal_proximal_phalanx_4</xsl:text></xsl:when>
-                <xsl:when test="(.='r_ring_middle')"><xsl:text>r_carpal_middle_phalanx_4</xsl:text></xsl:when>
-                <xsl:when test="(.='r_ring_distal')"><xsl:text>r_carpal_distal_phalanx_4</xsl:text></xsl:when>
-                <xsl:when test="(.='r_pinky_metacarpal')"><xsl:text>r_metacarpal_5</xsl:text></xsl:when>
-                <xsl:when test="(.='r_pinky_proximal')"><xsl:text>r_carpal_proximal_phalanx_5</xsl:text></xsl:when>
-                <xsl:when test="(.='r_pinky_middle')"><xsl:text>r_carpal_middle_phalanx_5</xsl:text></xsl:when>
-                <xsl:when test="(.='r_pinky_distal')"><xsl:text>r_carpal_distal_phalanx_5</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_hindfoot')"><xsl:text>l_talus</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_cuneiform')"><xsl:text>l_cuneiform_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_midproximal')"><xsl:text>l_metatarsal_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_metatarsal')"><xsl:text>l_metatarsal_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_middistal')"><xsl:text>l_tarsal_proximal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_tarsal_proximal_phalanx')"><xsl:text>l_tarsal_proximal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_tarsal_middle_phalanx')"><xsl:text>l_tarsal_middle_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_forefoot')"><xsl:text>l_tarsal_distal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_tarsal_distal_phalanx')"><xsl:text>l_tarsal_distal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_calcaneum')"><xsl:text>l_calcaneus</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_hindfoot')"><xsl:text>r_talus</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_cuneiform')"><xsl:text>r_cuneiform_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_midproximal')"><xsl:text>r_metatarsal_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_middistal')"><xsl:text>r_tarsal_proximal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_tarsal_proximal_phalanx')"><xsl:text>r_tarsal_proximal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_tarsal_middle_phalanx')"><xsl:text>r_tarsal_middle_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_forefoot')"><xsl:text>r_tarsal_distal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_tarsal_distal_phalanx')"><xsl:text>r_tarsal_distal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_calcaneum')"><xsl:text>r_calcaneus</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='head')"><xsl:text>skull</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_hand')"><xsl:text>l_carpal</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_thumb_metacarpal')"><xsl:text>l_metacarpal_1</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_thumb_proximal')"><xsl:text>l_carpal_proximal_phalanx_1</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_thumb_distal')"><xsl:text>l_carpal_distal_phalanx_1</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_index_metacarpal')"><xsl:text>l_metacarpal_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_index_proximal')"><xsl:text>l_carpal_proximal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_carpal_proximal_phalanx')"><xsl:text>l_carpal_proximal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_index_middle')"><xsl:text>l_carpal_middle_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_carpal_middle_phalanx')"><xsl:text>l_carpal_middle_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_index_distal')"><xsl:text>l_carpal_distal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_carpal_distal_phalanx')"><xsl:text>l_carpal_distal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_middle_metacarpal')"><xsl:text>l_metacarpal_3</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_middle_proximal')"><xsl:text>l_carpal_proximal_phalanx_3</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_middle_middle')"><xsl:text>l_carpal_middle_phalanx_3</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_middle_distal')"><xsl:text>l_carpal_distal_phalanx_3</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_ring_metacarpal')"><xsl:text>l_metacarpal_4</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_ring_proximal')"><xsl:text>l_carpal_proximal_phalanx_4</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_ring_middle')"><xsl:text>l_carpal_middle_phalanx_4</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_ring_distal')"><xsl:text>l_carpal_distal_phalanx_4</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_pinky_metacarpal')"><xsl:text>l_metacarpal_5</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_pinky_proximal')"><xsl:text>l_carpal_proximal_phalanx_5</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_pinky_middle')"><xsl:text>l_carpal_middle_phalanx_5</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='l_pinky_distal')"><xsl:text>l_carpal_distal_phalanx_5</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_hand')"><xsl:text>r_carpal</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_thumb_metacarpal')"><xsl:text>r_metacarpal_1</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_thumb_proximal')"><xsl:text>r_carpal_proximal_phalanx_1</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_thumb_distal')"><xsl:text>r_carpal_distal_phalanx_1</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_index_metacarpal')"><xsl:text>r_metacarpal_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_index_proximal')"><xsl:text>r_carpal_proximal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_carpal_proximal_phalanx')"><xsl:text>r_carpal_proximal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_index_middle')"><xsl:text>r_carpal_middle_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_carpal_middle_phalanx')"><xsl:text>r_carpal_middle_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_index_distal')"><xsl:text>r_carpal_distal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_carpal_distal_phalanx')"><xsl:text>r_carpal_distal_phalanx_2</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_middle_metacarpal')"><xsl:text>r_metacarpal_3</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_middle_proximal')"><xsl:text>r_carpal_proximal_phalanx_3</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_middle_middle')"><xsl:text>r_carpal_middle_phalanx_3</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_middle_distal')"><xsl:text>r_carpal_distal_phalanx_3</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_ring_metacarpal')"><xsl:text>r_metacarpal_4</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_ring_proximal')"><xsl:text>r_carpal_proximal_phalanx_4</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_ring_middle')"><xsl:text>r_carpal_middle_phalanx_4</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_ring_distal')"><xsl:text>r_carpal_distal_phalanx_4</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_pinky_metacarpal')"><xsl:text>r_metacarpal_5</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_pinky_proximal')"><xsl:text>r_carpal_proximal_phalanx_5</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_pinky_middle')"><xsl:text>r_carpal_middle_phalanx_5</xsl:text></xsl:when>
+                <xsl:when test="(string(.)='r_pinky_distal')"><xsl:text>r_carpal_distal_phalanx_5</xsl:text></xsl:when>
                  <xsl:otherwise>
                     <xsl:value-of select="."/>
                     <!-- <xsl:message>
@@ -7086,8 +7094,8 @@ Recommended tools:
                 <xsl:when test="starts-with(.,'r_axilla_post')"><xsl:text>r_axilla_distal</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'middle back')"><xsl:text>spine_1_middle_back</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'lower back')"><xsl:text>spine_2_lower_back</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'waist_preferred_ant') and not(contains(.,'waist_preferred_anterior'))"><xsl:text>waist_preferred_anterior</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'waist_preferred_post') and not(contains(.,'waist_preferred_posterior'))"><xsl:text>waist_preferred_posterior</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'waist_preferred_ant') and not(contains(string(.),'waist_preferred_anterior'))"><xsl:text>waist_preferred_anterior</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'waist_preferred_post') and not(contains(string(.),'waist_preferred_posterior'))"><xsl:text>waist_preferred_posterior</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'l_rib10_midspine')"><xsl:text>l_rib10</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'Left Bustpoint')"><xsl:text>l_thelion</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'r_rib10_midspine')"><xsl:text>r_rib10</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
@@ -7101,13 +7109,13 @@ Recommended tools:
                 <xsl:when test="starts-with(.,'l_femoral_medial_epicn')"><xsl:text>l_femoral_medial_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'l_femoral_medial_epicondyles')"><xsl:text>l_femoral_medial_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'l_kneecap')"><xsl:text>l_suprapatella</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'l_trochanter') and not(contains(.,'trochanterion'))"><xsl:text>l_trochanterion</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'l_trochanter') and not(contains(string(.),'trochanterion'))"><xsl:text>l_trochanterion</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'r_femoral_lateral_epicn')"><xsl:text>r_femoral_lateral_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'r_femoral_lateral_epicondyles')"><xsl:text>r_femoral_lateral_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'r_femoral_medial_epicn')"><xsl:text>r_femoral_medial_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'r_femoral_medial_epicondyles')"><xsl:text>r_femoral_medial_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'r_kneecap')"><xsl:text>r_suprapatella</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'r_trochanter') and not(contains(.,'trochanterion'))"><xsl:text>r_trochanterion</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'r_trochanter') and not(contains(string(.),'trochanterion'))"><xsl:text>r_trochanterion</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'l_metatarsal_pha1')"><xsl:text>l_metatarsal_phalanx_1</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'l_metatarsal_pha5')"><xsl:text>l_metatarsal_phalanx_5</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'l_calcaneous_post')"><xsl:text>l_calcaneus_posterior</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
@@ -7123,12 +7131,12 @@ Recommended tools:
                 <xsl:when test="starts-with(.,'r_humeral_medial_epicn')"><xsl:text>r_humeral_medial_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'r_humeral_medial_epicondyles')"><xsl:text>r_humeral_medial_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'l_metacarpal_pha2')"><xsl:text>l_metacarpal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'l_metacarpal_phalanx') and not(contains(.,'phalanx_'))"><xsl:text>l_metacarpal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'l_metacarpal_phalanx') and not(contains(string(.),'phalanx_'))"><xsl:text>l_metacarpal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'l_metacarpal_pha5')"><xsl:text>l_metacarpal_phalanx_5</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'r_metacarpal_pha2')"><xsl:text>r_metacarpal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'r_metacarpal_phalanx') and not(contains(.,'phalanx_'))"><xsl:text>r_metacarpal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'r_metacarpal_phalanx') and not(contains(string(.),'phalanx_'))"><xsl:text>r_metacarpal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'r_metacarpal_pha5')"><xsl:text>r_metacarpal_phalanx_5</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'nuchal') and not(contains(.,'nuchale'))"><xsl:text>nuchale</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(.,'nuchal') and not(contains(string(.),'nuchale'))"><xsl:text>nuchale</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'belly button')"><xsl:text>navel</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'l_canthus')"><xsl:text>l_ectocanthus</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <xsl:when test="starts-with(.,'r_canthus')"><xsl:text>r_ectocanthus</xsl:text><xsl:value-of select="$suffix"/></xsl:when>

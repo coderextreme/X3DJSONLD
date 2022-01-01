@@ -28,7 +28,7 @@
           },
           {
             "@name":"modified",
-            "@content":"28 October 2020"
+            "@content":"5 December 2021"
           },
           {
             "@name":"reference",
@@ -40,7 +40,7 @@
           },
           {
             "@name":"reference",
-            "@content":"http://www.medialab.teicrete.gr/minipages/x3domAudio"
+            "@content":"https://www.medialab.hmu.gr/minipages/x3domAudio"
           },
           {
             "@name":"identifier",
@@ -56,7 +56,7 @@
           },
           {
             "@name":"translated",
-            "@content":"17 June 2021"
+            "@content":"01 January 2022"
           },
           {
             "@name":"generator",
@@ -77,8 +77,6 @@
           },
           { "NavigationInfo":
             {
-              "@DEF":"NAV",
-              "@type":["NONE"]
             }
           },
           { "Background":
@@ -88,6 +86,7 @@
           },
           { "Viewpoint":
             {
+              "@description":"View entire audio model",
               "@orientation":[1,0,0,-0.5],
               "@position":[0,500,600],
               "@retainUserOffsets":true
@@ -95,7 +94,7 @@
           },
           { "Transform":
             {
-              "@DEF":"Audio1",
+              "@DEF":"TransformAudio1",
               "@translation":[-200,50,0],
               "-children":[
                 { "Shape":
@@ -103,7 +102,7 @@
                     "-appearance":
                       { "Appearance":
                         {
-                          "@DEF":"audio_emit1",
+                          "@DEF":"audio_emit",
                           "-material":
                             { "Material":
                               {
@@ -127,7 +126,7 @@
           },
           { "Transform":
             {
-              "@DEF":"Audio2",
+              "@DEF":"TransformAudio2",
               "@translation":[0,50,0],
               "-children":[
                 { "Shape":
@@ -159,7 +158,7 @@
           },
           { "Transform":
             {
-              "@DEF":"Audio3",
+              "@DEF":"TransformAudio3",
               "@translation":[200,50,0],
               "-children":[
                 { "Shape":
@@ -250,6 +249,136 @@
                           "@radius":500.0
                         }
                       }
+                  }
+                }
+              ]
+            }
+          },
+          { "ListenerPointSource":
+            {
+              "@trackCurrentView":true
+            }
+          },
+          { "StreamAudioDestination":
+            {
+              "-children":[
+                { "DynamicsCompressor":
+                  {
+                    "-children":[
+                      { "Gain":
+                        {
+                          "-children":[
+                            { "SpatialSound":
+                              {
+                                "@DEF":"Audio1",
+                                "-children":[
+                                  { "Gain":
+                                    {
+                                      "-children":[
+                                        { "Analyser":
+                                          {
+                                            "-children":[
+                                              { "BiquadFilter":
+                                                {
+                                                  "@detune":50.0,
+                                                  "@frequency":600.0,
+                                                  "@qualityFactor":30.0,
+                                                  "@type":"allpass",
+                                                  "-source":[
+                                                    { "AudioClip":
+                                                      {
+                                                        "@description":"Techno beat",
+                                                        "@loop":true,
+                                                        "@url":["sound/techno_beat.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/techno_beat.mp3"]
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "SpatialSound":
+                              {
+                                "@DEF":"Audio2",
+                                "-children":[
+                                  { "Gain":
+                                    {
+                                      "-children":[
+                                        { "Analyser":
+                                          {
+                                            "-children":[
+                                              { "BiquadFilter":
+                                                {
+                                                  "@detune":15.0,
+                                                  "@frequency":600.0,
+                                                  "@qualityFactor":15.0,
+                                                  "@type":"allpass",
+                                                  "-source":[
+                                                    { "AudioClip":
+                                                      {
+                                                        "@description":"Simple beat",
+                                                        "@loop":true,
+                                                        "@url":["sound/beat.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/beat.mp3"]
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            { "SpatialSound":
+                              {
+                                "@DEF":"Audio3",
+                                "-children":[
+                                  { "Gain":
+                                    {
+                                      "-children":[
+                                        { "Analyser":
+                                          {
+                                            "-children":[
+                                              { "BiquadFilter":
+                                                {
+                                                  "@frequency":1000.0,
+                                                  "@qualityFactor":0.0,
+                                                  "@type":"allpass",
+                                                  "-source":[
+                                                    { "AudioClip":
+                                                      {
+                                                        "@description":"Wobble loop",
+                                                        "@loop":true,
+                                                        "@url":["sound/wobble_loop.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/wobble_loop.mp3"]
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
                   }
                 }
               ]

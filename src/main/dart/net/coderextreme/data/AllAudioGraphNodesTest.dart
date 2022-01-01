@@ -60,7 +60,6 @@ var X3D0 =  X3D(
                     Material())),
 
             SpatialSound(
-              dopplerEnabled_ : "false",
               children_ : [
                 Analyser(
                   children_ : [
@@ -89,8 +88,7 @@ var X3D0 =  X3D(
                                                               children_ : [
                                                                 BufferAudioSource(),
 
-                                                                ListenerPointSource(
-                                                                  dopplerEnabled_ : "false"),
+                                                                ListenerPointSource(),
 
                                                                 MicrophoneSource(),
 

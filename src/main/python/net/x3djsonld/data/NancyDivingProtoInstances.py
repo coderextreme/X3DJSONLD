@@ -112,7 +112,7 @@ newModel=X3D(profile='Immersive',version='3.3',
       fieldValue=[
       fieldValue(name='enabled',value=True)]),
     Background(skyColor=[(0,0.4,1)]),
-    NavigationInfo(avatarSize=[0.15,1.53,0.75],speed=0.5,type=["EXAMINE"]),
+    NavigationInfo(avatarSize=[0.15,1.53,0.75],speed=0.5,type='"EXAMINE"'),
     Viewpoint(description='Nancy diving default viewpoint',position=(-.8,0,3.1)),
     LOD(
       children=[
@@ -281,7 +281,9 @@ newModel=X3D(profile='Immersive',version='3.3',
                           field(accessType='inputOnly',name='set_fraction',type='SFFloat'),
                           field(accessType='inputOnly',name='finL',type='SFBool'),
                           field(accessType='inputOnly',name='finR',type='SFBool'),
-                          field(accessType='initializeOnly',name='traceEnabled',type='SFBool',value=True)]),
+                          field(accessType='initializeOnly',name='traceEnabled',type='SFBool',value=True)]
+*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+),
                         ROUTE(fromField='isActive',fromNode='FinTriggerProximitySensor',toField='enabled',toNode='FinClock'),
                         ROUTE(fromField='fraction_changed',fromNode='FinClock',toField='set_fraction',toNode='FinScript'),
                         ROUTE(fromField='keyValueR',fromNode='FinScript',toField='set_spine',toNode='Finr'),
@@ -796,7 +798,9 @@ newModel=X3D(profile='Immersive',version='3.3',
       field(accessType='inputOnly',name='set_rotationL',type='SFRotation'),
       field(accessType='inputOnly',name='set_rotationR',type='SFRotation'),
       field(accessType='outputOnly',name='fin_warpL',type='SFBool'),
-      field(accessType='outputOnly',name='fin_warpR',type='SFBool')]),
+      field(accessType='outputOnly',name='fin_warpR',type='SFBool')]
+*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+),
     Group(DEF='Animations',
       children=[
       Group(DEF='Dive_Animation',
@@ -872,8 +876,28 @@ newModel=X3D(profile='Immersive',version='3.3',
 
 if        metaDiagnostics(newModel): # built-in utility method in X3D class
     print(metaDiagnostics(newModel))
-print('check  newModel.XML() serialization...')
-newModelXML = newModel.XML() # test export method XML() for exceptions
-# print(newModelXML) # debug
+# print('check newModel.XML() serialization...')
+newModelXML= newModel.XML() # test export method XML() for exceptions during export
+newModel.XMLvalidate()
 
-print ("python x3d.py load successful for NancyDivingProtoInstances.py")
+try:
+#   print('check newModel.VRML() serialization...')
+    newModelVRML=newModel.VRML() # test export method VRML() for exceptions during export
+    # print(prependLineNumbers(newModelVRML)) # debug
+    print("Python-to-VRML export of VRML output successful (still testing)")
+except BaseException as err:
+    print("*** Python-to-VRML export of VRML output failed:", err)
+    if newModelVRML: # may have failed to generate
+        print(prependLineNumbers(newModelVRML, err.lineno))
+
+try:
+#   print('check newModel.JSON() serialization...')
+    newModelJSON=newModel.JSON() # test export method JSON() for exceptions during export
+#   print(prependLineNumbers(newModelJSON)) # debug
+    print("Python-to-JSON export of JSON output successful (still testing)")
+except SyntaxError as err:
+    print("*** Python-to-JSON export of JSON output failed:", err)
+    if newModelJSON: # may have failed to generate
+        print(prependLineNumbers(newModelJSON,err.lineno))
+
+print("python x3d.py load and self-test complete for NancyDivingProtoInstances.py")
