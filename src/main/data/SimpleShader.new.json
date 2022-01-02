@@ -3,7 +3,7 @@
     "@profile":"Immersive",
     "@version":"3.2",
     "@xsd:noNamespaceSchemaLocation":"https://www.web3d.org/specifications/x3d-3.2.xsd",
-    "JSON schema":"https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "-children":[
           {
@@ -95,7 +95,7 @@
           },
           {
             "@name":"translated",
-            "@content":"31 December 2021"
+            "@content":"01 January 2022"
           },
           {
             "@name":"generator",
@@ -220,19 +220,19 @@
           { "WorldInfo":
             {
               "@title":"SimpleShader",
-              "-metadata":
+              "-IllegalChildNodeFieldNameNotFound":[
                 { "MetadataSet":
                   {
                     "@name":"Titania",
                     "@DEF":"Titania",
                     "@reference":"http://titania.create3000.de",
-                    "-metadata":
+                    "-value":[
                       { "MetadataSet":
                         {
                           "@name":"Selection",
                           "@DEF":"Selection",
                           "@reference":"http://titania.create3000.de",
-                          "-metadata":
+                          "-value":[
                             { "MetadataSet":
                               {
                                 "@name":"nodes",
@@ -245,6 +245,7 @@
                                 ]
                               }
                             }
+                          ]
                         }
                       },
                       { "MetadataSet":
@@ -252,7 +253,7 @@
                           "@name":"NavigationInfo",
                           "@DEF":"NavigationInfo",
                           "@reference":"http://titania.create3000.de",
-                          "-metadata":
+                          "-value":[
                             { "MetadataString":
                               {
                                 "@name":"type",
@@ -261,6 +262,7 @@
                                 "@value":["EXAMINE"]
                               }
                             }
+                          ]
                         }
                       },
                       { "MetadataSet":
@@ -268,7 +270,7 @@
                           "@name":"Viewpoint",
                           "@DEF":"Viewpoint",
                           "@reference":"http://titania.create3000.de",
-                          "-metadata":
+                          "-value":[
                             { "MetadataDouble":
                               {
                                 "@name":"position",
@@ -293,10 +295,13 @@
                                 "@value":[-0.808320198626341,-0.358072370409949,0.22817191560906]
                               }
                             }
+                          ]
                         }
                       }
+                    ]
                   }
                 }
+              ]
             }
           },
           { "ProtoInstance":

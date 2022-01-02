@@ -70,7 +70,7 @@ code += 'java.classpath.push("../../jars/X3DJSAIL.4.0.full.jar");\n'
 classes = {}
 
 with open("../../specifications/X3dUnifiedObjectModel-4.0.xml") as fp:
-    soup = BeautifulSoup(fp, 'html.parser')
+    soup = BeautifulSoup(fp, 'xml')
 
 
 # ants = soup.find_all("AbstractNodeType")

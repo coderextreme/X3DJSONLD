@@ -964,14 +964,14 @@ Recommended tools:
                                 <xsl:text>*** warning: HAnimHumanoid info array values split into matching MetadataSet structure</xsl:text>
                             </xsl:message>
                             <xsl:comment>
-                                <xsl:text>HAnimHumanoid original info='</xsl:text>
+                                <xsl:text>original HAnimHumanoid info='</xsl:text>
                                 <xsl:value-of select="@info"/>
                                 <xsl:text>'</xsl:text>
                             </xsl:comment>
                             <xsl:element name="MetadataSet">
+                                <xsl:attribute name="containerField"><xsl:text>metadata</xsl:text></xsl:attribute>
                                 <xsl:attribute name="name"          ><xsl:text>HAnimHumanoid.info</xsl:text></xsl:attribute>
                                 <xsl:attribute name="reference"     ><xsl:text>https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid</xsl:text></xsl:attribute>
-                            <!-- <xsl:attribute name="containerField"><xsl:text>metadata</xsl:text></xsl:attribute> Mantis -->
                                 
                                 <xsl:for-each select="tokenize(@info, '&quot;\s*(,)?\s*&quot;')">
                                     <xsl:sort select="normalize-space(string(.))" order="ascending"/>
@@ -1056,14 +1056,14 @@ Recommended tools:
                                 <xsl:text>*** warning: GeoMetadata summary array values split into matching MetadataSet structure</xsl:text>
                             </xsl:message>
                             <xsl:comment>
-                                <xsl:text>GeoMetadata original summary='</xsl:text>
+                                <xsl:text>original GeoMetadata summary='</xsl:text>
                                 <xsl:value-of select="@summary"/>
                                 <xsl:text>'</xsl:text>
                             </xsl:comment>
                             <xsl:element name="MetadataSet">
+                                <xsl:attribute name="containerField"><xsl:text>metadata</xsl:text></xsl:attribute>
                                 <xsl:attribute name="name"          ><xsl:text>GeoMetadata.summary</xsl:text></xsl:attribute>
-                                <xsl:attribute name="reference"     ><xsl:text>https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/components/geospatial.html#GeoMetadata</xsl:text></xsl:attribute>
-                            <!-- <xsl:attribute name="containerField"><xsl:text>metadata</xsl:text></xsl:attribute> Mantis -->
+                                <xsl:attribute name="reference"     ><xsl:text>https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/geospatial.html#GeoMetadata</xsl:text></xsl:attribute>
                                 
                                 <xsl:for-each select="tokenize(@summary, '&quot;\s*(,)?\s*&quot;')">
                                     <xsl:sort select="normalize-space(string(.))" order="ascending"/>
@@ -1402,14 +1402,19 @@ Recommended tools:
                                                     <xsl:when test="(local-name(..) = 'GeoLOD') and not(local-name() = 'GeoOrigin') and not(starts-with(local-name(), 'Metadata'))">
                                                         <xsl:text>rootNode</xsl:text>
                                                     </xsl:when>
-                                                    <xsl:when test="(local-name() = 'HAnimJoint')">
+                                                    <!-- could be joints or skeleton, so no comparison here
+                                                    <xsl:when test="(local-name() = 'HAnimJoint') and (local-name(..) = 'HAnimHumanoid')">
                                                         <xsl:text>joints</xsl:text>
                                                     </xsl:when>
-                                                    <xsl:when test="(local-name() = 'HAnimSegment')">
+                                                    -->
+                                                    <xsl:when test="(local-name() = 'HAnimSegment') and (local-name(..) = 'HAnimHumanoid')">
                                                         <xsl:text>segments</xsl:text>
                                                     </xsl:when>
-                                                    <xsl:when test="(local-name() = 'HAnimSite')">
+                                                    <xsl:when test="(local-name() = 'HAnimSite') and (local-name(..) = 'HAnimHumanoid')">
                                                         <xsl:text>sites</xsl:text>
+                                                    </xsl:when>
+                                                    <xsl:when test="starts-with(local-name(), 'Metadata') and ((local-name(..) = 'HAnimHumanoid') or (local-name(..) = 'GeoMetadata'))">
+                                                        <xsl:text>metadata</xsl:text>
                                                     </xsl:when>
                                                     <xsl:when test="(local-name() = 'Analyser') or (local-name() = 'AudioDestination') or (local-name() = 'BiquadFilter') or (local-name() = 'BufferAudioSource') or (local-name() = 'ChannelMerger') or (local-name() = 'ChannelSelector') or (local-name() = 'ChannelSplitter') or (local-name() = 'Convolver') or (local-name() = 'Delay') or (local-name() = 'DynamicsCompressor') or (local-name() = 'Gain') or (local-name() = 'ListenerPointSource') or (local-name() = 'MicrophoneSource') or (local-name() = 'OscillatorSource') or (local-name() = 'SpatialSound') or (local-name() = 'StreamAudioDestination') or (local-name() = 'StreamAudioSource') or (local-name() = 'WaveShaper')">
                                                         <xsl:text>children</xsl:text>
@@ -1441,7 +1446,14 @@ Recommended tools:
                                                 -->
                                                 <xsl:message>
                                                     <xsl:text>*** containerField mismatch - found it #1 </xsl:text>
-                                                    <xsl:text>containerField='</xsl:text>
+                                                    <xsl:value-of select="local-name()"/>
+                                                    <xsl:text> DEF='</xsl:text>
+                                                    <xsl:value-of select="@DEF"/>
+                                                    <xsl:if test="(string-length(@name) > 0)">
+                                                        <xsl:text>' name='</xsl:text>
+                                                        <xsl:value-of select="@name"/>
+                                                    </xsl:if>
+                                                    <xsl:text>' containerField='</xsl:text>
                                                     <xsl:value-of select="@containerField"/>
                                                     <xsl:text>'</xsl:text>
                                                     <xsl:text> expectedContainerField='</xsl:text>
@@ -1962,7 +1974,7 @@ Recommended tools:
         <xsl:variable name="rootDEF">
             <xsl:choose>
                 <!-- direct ancestor -->
-                <xsl:when test="(count(ancestor-or-self::*[local-name() = 'HAnimHumanoid']/HAnimJoint) > 0)">
+                <xsl:when    test="(count(ancestor-or-self::*[local-name() = 'HAnimHumanoid']/HAnimJoint) > 0)">
                     <xsl:value-of select="ancestor-or-self::*[local-name() = 'HAnimHumanoid']/HAnimJoint/@DEF"/>
                 </xsl:when>
                 <!-- first humanoid appearing anywhere in current scene -->
@@ -1974,7 +1986,7 @@ Recommended tools:
         <xsl:variable name="rootName">
             <xsl:choose>
                 <!-- direct ancestor -->
-                <xsl:when test="(count(ancestor-or-self::*[local-name() = 'HAnimHumanoid']/HAnimJoint) > 0)">
+                <xsl:when    test="(count(ancestor-or-self::*[local-name() = 'HAnimHumanoid']/HAnimJoint) > 0)">
                     <xsl:value-of select="ancestor-or-self::*[local-name() = 'HAnimHumanoid']/HAnimJoint/@name"/>
                 </xsl:when>
                 <!-- first humanoid appearing anywhere in current scene -->
@@ -3589,7 +3601,7 @@ Recommended tools:
                        (local-name()='rotation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
                        (local-name()='scale' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')) or
                        (local-name()='scaleOrientation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
-                       (local-name()='stiffness' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')) or
+                       (local-name()='stiffness' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                        (local-name()='translation' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')))) and
                       not( local-name(..)='HAnimSegment' and
                       ((local-name()='containerField' and (string(.)='children')) or
@@ -3936,7 +3948,7 @@ Recommended tools:
                             <xsl:text> is now omitted</xsl:text>
                         </xsl:if>
                     </xsl:message>
-                    <!-- retain dissimilar id attriute -->
+                    <!-- retain dissimilar id attribute -->
                     <xsl:if test="not(. = ../@USE)">
                         <xsl:text> id='</xsl:text>
                         <xsl:value-of select="."/>
@@ -3952,7 +3964,14 @@ Recommended tools:
                             <xsl:value-of select="../@USE"/>
                             <xsl:text>' containerField='</xsl:text>
                             <xsl:value-of select="../@containerField"/>
-                            <xsl:text>' has disallowed attribute </xsl:text>
+                            <xsl:text>'</xsl:text>
+                            <!--
+                            <xsl:text> $isHAnim1=</xsl:text>
+                            <xsl:value-of select="$isHAnim1"/>
+                            <xsl:text> $isHAnim2=</xsl:text>
+                            <xsl:value-of select="$isHAnim2"/>
+                            -->
+                            <xsl:text> has disallowed attribute </xsl:text>
                             <xsl:value-of select="local-name()"/>
                             <xsl:text>='</xsl:text>
                             <xsl:value-of select="."/>
@@ -4818,13 +4837,41 @@ Recommended tools:
                 <xsl:when test="(local-name(..)='X3D') and (local-name()='version')">
                     <xsl:value-of select="$x3dVersion"/>
                 </xsl:when>
-                <xsl:when test="(local-name(..)='X3D') and (local-name()='noNamespaceSchemaLocation')">
+                <xsl:when test="(local-name(..)='X3D') and (local-name()='noNamespaceSchemaLocation') and
+                                (not(starts-with(.,'https://www.web3d.org/specifications/x3d-')) or
+                                 not(  ends-with(.,'https://www.web3d.org/specifications/x3d-')))">
                     <xsl:text>https://www.web3d.org/specifications/x3d-</xsl:text>
                     <xsl:value-of select="$x3dVersion"/>
                     <xsl:text>.xsd</xsl:text>
+                    <!-- always triggers, stay silent
+                    <xsl:message>
+                        <xsl:text>*** Changed X3D noNamespaceSchemaLocation to </xsl:text>
+                        <xsl:text>https://www.web3d.org/specifications/x3d-</xsl:text>
+                        <xsl:value-of select="$x3dVersion"/>
+                        <xsl:text>.xsd</xsl:text>
+                    </xsl:message>
+                    -->
+                </xsl:when>
+                <!-- fix containerField for Metadata* nodes within HAnimHumanoid or GeoMetadata -->
+                <!-- TODO default has changed in X3D4 -->
+                <xsl:when test="((local-name(../..) = 'HAnimHumanoid') or (local-name(../..) = 'GeoMetadata')) and starts-with(local-name(..), 'Metadata') and (local-name() = 'containerField') and 
+                                ((. = 'value') or ((string-length(.) = 0) and $isX3D4))">
+                    <xsl:text>metadata</xsl:text>
+                    <xsl:message>
+                        <xsl:text>*** </xsl:text>
+                        <xsl:value-of select="local-name(../..)"/>
+                        <xsl:text> </xsl:text>
+                        <xsl:value-of select="local-name(..)"/>
+                        <xsl:text> name='</xsl:text>
+                        <xsl:value-of select="../@name"/>
+                        <xsl:text>' -- changed containerField='</xsl:text>
+                        <xsl:value-of select="."/>
+                        <xsl:text>'</xsl:text>
+                        <xsl:text> to containerField='metadata'</xsl:text>
+                    </xsl:message>
                 </xsl:when>
                 <!-- fix containerField for Metadata* nodes within MetadataSet -->
-                <!-- TODO default may change in X3D4 -->
+                <!-- TODO default has changed in X3D4 -->
                 <xsl:when test="(local-name(../..) = 'MetadataSet') and starts-with(local-name(..), 'Metadata') and (local-name() = 'containerField') and 
                                 ((. = 'metadata') or (string-length(string(.)) = 0)) and 
                                 (count(../*[@containerField = 'value']) = 0)">
@@ -4997,7 +5044,7 @@ Recommended tools:
                     </xsl:choose>
                 </xsl:when>
                 <!-- fix HAnim name when appropriate -->
-                <xsl:when test="($isHAnim2 = true()) and not($newNameValue = .) and (local-name()='name')">
+                <xsl:when test="($isHAnim2 = true()) and (local-name()='name') and not($newNameValue = .)">
                     <xsl:text>&#10;</xsl:text>
                     <xsl:value-of select='$newNameValue'/>
                     <xsl:message>
@@ -5013,7 +5060,7 @@ Recommended tools:
                     </xsl:message>
                 </xsl:when>
                 <!-- check ROUTE for source/destination name changes -->
-                <xsl:when test="($isHAnim2 = true()) and not($newNameValue = .) and ((local-name()='toNode') or (local-name()='fromNode'))">
+                <xsl:when test="($isHAnim2 = true()) and ((local-name()='toNode') or (local-name()='fromNode')) and not($newNameValue = .)">
                     <xsl:choose>
                         <xsl:when test="//*[starts-with(local-name(),'HAnim')][@DEF = $attributeValue]">
                             <!--
@@ -5505,7 +5552,7 @@ Recommended tools:
                     </xsl:message>
                     <xsl:text>https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid</xsl:text>
                 </xsl:when>
-                <xsl:when test="(local-name(..) = 'MetadataSet') and (local-name() = 'reference') and (../@name  = 'GeoMetadata.summary') and not(. = 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/components/geospatial.html#GeoMetadata')">
+                <xsl:when test="(local-name(..) = 'MetadataSet') and (local-name() = 'reference') and (../@name  = 'GeoMetadata.summary') and not(. = 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/geospatial.html#GeoMetadata')">
                     <xsl:message>
                         <xsl:text disable-output-escaping="yes">*** error: &lt;MetadataSet DEF='</xsl:text>
                         <xsl:value-of select="../@DEF"/>
@@ -5514,10 +5561,10 @@ Recommended tools:
                         <xsl:text>'/&gt; has incorrect reference='</xsl:text>
                         <xsl:value-of select="../@reference"/>
                         <xsl:text> and so replacing with '</xsl:text>
-                    <xsl:text>https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/components/geospatial.html#GeoMetadata</xsl:text>
+                    <xsl:text>https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/geospatial.html#GeoMetadata</xsl:text>
                         <xsl:text>'</xsl:text>
                     </xsl:message>
-                    <xsl:text>https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD/Part01/components/geospatial.html#GeoMetadata</xsl:text>
+                    <xsl:text>https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/geospatial.html#GeoMetadata</xsl:text>
                 </xsl:when>
                 <!-- TODO more fields: change apostrophes to quotation marks in selected MFString enumerations -->
                 <xsl:when test="(local-name(..)='FontStyle') and (local-name()='justify') and not(contains(string(.),$quot))">
@@ -5670,10 +5717,10 @@ Recommended tools:
                 <xsl:variable name="expectedContainerField">
                     <xsl:choose>
                         <!-- note different parentage path since current context is the attribute, not the element -->
-                        <xsl:when test="(local-name(../..) = 'GeoLOD') and not(local-name() = 'GeoOrigin') and not(starts-with(local-name(), 'Metadata'))">
+                        <xsl:when test="(local-name(../..) = 'GeoLOD') and not(local-name(..) = 'GeoOrigin') and not(starts-with(local-name(..), 'Metadata'))">
                             <xsl:text>rootNode</xsl:text>
                         </xsl:when>
-                        <xsl:when test="(local-name(../..) = 'HAnimHumanoid') and (local-name() = 'HAnimSegment')">
+                        <xsl:when test="(local-name(../..) = 'HAnimHumanoid') and (local-name(..) = 'HAnimSegment')">
                             <xsl:text>segments</xsl:text>
                         </xsl:when>
                         <!-- HAnimHumanoid can contain HAnimJoint with containerField = joints or skeleton -->
@@ -5683,10 +5730,10 @@ Recommended tools:
                         <xsl:when test="(local-name() = 'Analyser') or (local-name() = 'AudioDestination') or (local-name() = 'BiquadFilter') or (local-name() = 'BufferAudioSource') or (local-name() = 'ChannelMerger') or (local-name() = 'ChannelSelector') or (local-name() = 'ChannelSplitter') or (local-name() = 'Convolver') or (local-name() = 'Delay') or (local-name() = 'DynamicsCompressor') or (local-name() = 'Gain') or (local-name() = 'ListenerPointSource') or (local-name() = 'MicrophoneSource') or (local-name() = 'OscillatorSource') or (local-name() = 'SpatialSound') or (local-name() = 'StreamAudioDestination') or (local-name() = 'StreamAudioSource') or (local-name() = 'WaveShaper')">
                             <xsl:text>children</xsl:text>
                         </xsl:when>
-                        <xsl:when test="((local-name() = 'AudioClip') or (local-name() = 'MovieTexture')) and
-                                        ((local-name(..) = 'Analyser') or (local-name(..) = 'AudioDestination') or (local-name(..) = 'BiquadFilter') or (local-name(..) = 'BufferAudioSource') or (local-name(..) = 'ChannelMerger') or (local-name(..) = 'ChannelSelector') or (local-name(..) = 'ChannelSplitter') or (local-name(..) = 'Convolver') or (local-name(..) = 'Delay') or (local-name(..) = 'DynamicsCompressor') or (local-name(..) = 'Gain') or (local-name(..) = 'ListenerPointSource') or (local-name(..) = 'MicrophoneSource') or (local-name(..) = 'OscillatorSource') or (local-name(..) = 'SpatialSound') or (local-name(..) = 'StreamAudioDestination') or (local-name(..) = 'StreamAudioSource') or (local-name(..) = 'WaveShaper'))">
+                        <xsl:when test="((local-name(..) = 'AudioClip') or (local-name(..) = 'MovieTexture')) and
+                                        ((local-name(../..) = 'Analyser') or (local-name(../..) = 'AudioDestination') or (local-name(../..) = 'BiquadFilter') or (local-name(../..) = 'BufferAudioSource') or (local-name(../..) = 'ChannelMerger') or (local-name(../..) = 'ChannelSelector') or (local-name(../..) = 'ChannelSplitter') or (local-name(../..) = 'Convolver') or (local-name(../..) = 'Delay') or (local-name(../..) = 'DynamicsCompressor') or (local-name(../..) = 'Gain') or (local-name(../..) = 'ListenerPointSource') or (local-name(../..) = 'MicrophoneSource') or (local-name(../..) = 'OscillatorSource') or (local-name(../..) = 'SpatialSound') or (local-name(../..) = 'StreamAudioDestination') or (local-name(../..) = 'StreamAudioSource') or (local-name(../..) = 'WaveShaper'))">
                             <xsl:text>children</xsl:text>
-                            <xsl:if test="(@containerField = 'source') or (@containerField = 'texture') or (string-length(@containerField) = 0)">
+                            <xsl:if test="(../@containerField = 'source') or (../@containerField = 'texture') or (string-length(../@containerField) = 0)">
                                 <xsl:message>
                                     <xsl:text>*** containerField incorrect #3 for </xsl:text>
                                     <xsl:value-of select="local-name()"/>
@@ -5706,8 +5753,15 @@ Recommended tools:
                     -->
                     <xsl:message>
                         <xsl:text>*** containerField mismatch - found it #3 </xsl:text>
-                        <xsl:text>containerField='</xsl:text>
-                        <xsl:value-of select="@containerField"/>
+                        <xsl:value-of select="local-name()"/>
+                        <xsl:text> DEF='</xsl:text>
+                        <xsl:value-of select="../@DEF"/>
+                        <xsl:if test="(string-length(../@name) > 0)">
+                            <xsl:text>' name='</xsl:text>
+                            <xsl:value-of select="../@name"/>
+                        </xsl:if>
+                        <xsl:text>' containerField='</xsl:text>
+                        <xsl:value-of select="../@containerField"/>
                         <xsl:text>'</xsl:text>
                         <xsl:text> expectedContainerField='</xsl:text>
                         <xsl:value-of select="$expectedContainerField"/>

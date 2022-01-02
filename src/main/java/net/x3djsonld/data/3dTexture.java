@@ -9,7 +9,7 @@ import org.web3d.x3d.jsail.Shape.*;
 
 // Javadoc annotations follow, see below for source.
 /**
- * <p> a kind of rubik cube with spheres. </p>
+ * <p> a kind of 3dTexture cube with spheres. </p>
  <p> Related links: 3dTexture.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
@@ -20,7 +20,7 @@ import org.web3d.x3d.jsail.Shape.*;
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/rubik.x3d">rubik.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/3dTexture.x3d">3dTexture.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -32,11 +32,11 @@ import org.web3d.x3d.jsail.Shape.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/rubik.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/rubik.x3d</a> </td>
+			<td> <a href="https://coderextreme.net/X3DJSONLD/3dTexture.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/3dTexture.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
-			<td> a kind of rubik cube with spheres </td>
+			<td> a kind of 3dTexture cube with spheres </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -67,11 +67,11 @@ public class 3dTexture
 	{
   x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_3_3)
   .setHead(new head()
-    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("rubik.x3d"))
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("3dTexture.x3d"))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("John Carlson"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("manual"))
-    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/rubik.x3d"))
-    .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("a kind of rubik cube with spheres")))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/3dTexture.x3d"))
+    .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("a kind of 3dTexture cube with spheres")))
   .setScene(new Scene()
     .addChild(new NavigationInfo().setType("\"EXAMINE\""))
     .addChild(new Viewpoint().setDescription("Rubiks Cube").setPosition(0.0,0.0,12.0))

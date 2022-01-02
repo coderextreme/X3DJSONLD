@@ -91,7 +91,9 @@ import { ImageTexture3D } from './x3d.mjs';
 import { PackagedShader } from './x3d.mjs';
 var X3D0 =  new X3D({
 
+      cssClass : new SFString("x3dModel.class"),
       profile : new SFString("Full"),
+      style : new SFString("x3dModel.style"),
       version : new SFString("4.0"),
       /*x3dVersionComparisonTest for this model: supportsX3dVersion(X3D.VERSION_3_0)=true*/
       head : new SFNode(
@@ -170,7 +172,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("20 December 2020")}),
+              content : new SFString("19 December 2021")}),
 
             new meta({
               name : new SFString("generator"),
@@ -244,6 +246,8 @@ var X3D0 =  new X3D({
 
             new WorldInfo({
               DEF : new SFString("WorldInfoDEF"),
+              cssClass : new SFString("worldInfoNode.class"),
+              style : new SFString("worldInfoNode.style"),
               title : new SFString("HelloWorldProgram produced by X3D Java SAI Library (X3DJSAIL)")}),
 
             new WorldInfo({

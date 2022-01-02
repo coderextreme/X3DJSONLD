@@ -1,6 +1,8 @@
 let browser = X3D.getBrowser();
 let X3D0 = {};
+X3D0.CssClass = "x3dModel.class";
 X3D0.profile = "Full";
+X3D0.style = "x3dModel.style";
 X3D0.version = "4.0";
 //x3dVersionComparisonTest for this model: supportsX3dVersion(X3D.VERSION_3_0)=true
 let head1 = browser.currentScene.createNode("head");
@@ -95,7 +97,7 @@ head1.meta[15] = meta17;
 
 let meta18 = browser.currentScene.createNode("meta");
 meta18.name = "modified";
-meta18.content = "20 December 2020";
+meta18.content = "19 December 2021";
 head1.meta[16] = meta18;
 
 let meta19 = browser.currentScene.createNode("meta");
@@ -191,6 +193,8 @@ browser.currentScene.children[1] = NavigationInfo36;
 
 let WorldInfo37 = browser.currentScene.createNode("WorldInfo");
 WorldInfo37.DEF = "WorldInfoDEF";
+WorldInfo37.CssClass = "worldInfoNode.class";
+WorldInfo37.style = "worldInfoNode.style";
 WorldInfo37.title = "HelloWorldProgram produced by X3D Java SAI Library (X3DJSAIL)";
 browser.currentScene.children[2] = WorldInfo37;
 

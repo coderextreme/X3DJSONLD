@@ -91,7 +91,7 @@
             </xsl:for-each>
         </xsl:variable>
         
-        <xsl:variable name="hasContainedText" select="(string-length(normalize-space(translate(.,' ',''))) > 0)"/>
+        <xsl:variable name="hasContainedText" select="(string-length(normalize-space(translate(string(.),' ',''))) > 0)"/>
                 
         <!-- common initial processing for each element
         <xsl:if test="not((local-name(..) = 'a')  or (local-name() = 'a')   or (local-name() = 'b') or (local-name() = 'i') or (local-name() = 'pre') or

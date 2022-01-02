@@ -12,7 +12,8 @@ class ClassPrinter:
 
         inhers = self.node.find_all("Inheritance")
         for inher in inhers:
-            self.parents.append(inher['baseType'])
+            if inher.get('baseType') is not None:
+                self.parents.append(inher['baseType'])
 
         self.componentInfo = self.node.find("InterfaceDefinition").find("componentInfo")
         self.metaInfo = metaInfo
@@ -52,7 +53,7 @@ code += "CommentsBlock = autoclass('org.web3d.x3d.jsail.Core.CommentsBlock')\n"
 classes = {}
 
 with open("../../specifications/X3dUnifiedObjectModel-4.0.xml") as fp:
-    soup = BeautifulSoup(fp, 'html.parser')
+    soup = BeautifulSoup(fp, 'xml')
 
 
     ants = soup.find_all("AbstractNodeType")

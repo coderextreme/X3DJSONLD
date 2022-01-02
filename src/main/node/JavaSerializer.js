@@ -249,6 +249,30 @@ JavaSerializer.prototype = {
 			method = "Value"
 			addpre = "add";
 		}
+		if (addpre+method === "setBack") {
+			method = "BackTexture"
+			addpre = "set";
+		}
+		if (addpre+method === "setFront") {
+			method = "FrontTexture"
+			addpre = "set";
+		}
+		if (addpre+method === "setLeft") {
+			method = "LeftTexture"
+			addpre = "set";
+		}
+		if (addpre+method === "setRight") {
+			method = "RightTexture"
+			addpre = "set";
+		}
+		if (addpre+method === "setTop") {
+			method = "TopTexture"
+			addpre = "set";
+		}
+		if (addpre+method === "setBottom") {
+			method = "BottomTexture"
+			addpre = "set";
+		}
 		if (element.nodeName === 'Scene' && addpre+method === "setMetadata") {
 			method = "Metadata"
 			addpre = "add";

@@ -3,7 +3,7 @@
     "@profile":"Immersive",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"https://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "-children":[
           {
@@ -136,7 +136,7 @@
           },
           {
             "@name":"translated",
-            "@content":"31 December 2021"
+            "@content":"01 January 2022"
           },
           {
             "@name":"generator",
@@ -324,11 +324,11 @@
                               "#comment":"Comment example B, XML character entities: He said, &quot;Immel did it!&quot;"
                             }
                           ],
-                          "-metadata":
+                          "-IllegalChildNodeFieldNameNotFound":[
                             { "MetadataSet":
                               {
                                 "@name":"EscapedQuotationMarksMetadataSet",
-                                "-metadata":
+                                "-value":[
                                   { "MetadataString":
                                     {
                                       "@name":"quotesTestC",
@@ -341,8 +341,10 @@
                                       "@value":["checks MetadataSetObject addValue() method"]
                                     }
                                   }
+                                ]
                               }
-                            },
+                            }
+                          ],
                           "-fontStyle":
                             { "FontStyle":
                               {
@@ -900,14 +902,15 @@
               "-children":[
                 { "Shape":
                   {
-                    "-metadata":
+                    "-IllegalChildNodeFieldNameNotFound":[
                       { "MetadataString":
                         {
                           "@name":"findThisNameValue",
                           "@DEF":"FindableMetadataStringTest",
                           "@value":["test case"]
                         }
-                      },
+                      }
+                    ],
                     "-appearance":
                       { "Appearance":
                         {

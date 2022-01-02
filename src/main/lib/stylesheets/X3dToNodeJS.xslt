@@ -299,8 +299,7 @@ POSSIBILITY OF SUCH DAMAGE.
 	}
 }
 </xsl:text><!-- class complete -->
-<xsl:text>new </xsl:text><xsl:value-of select="$newClassName"/><xsl:text>().main();
-process.exit(0);</xsl:text>
+<xsl:text>new </xsl:text><xsl:value-of select="$newClassName"/><xsl:text>().main();</xsl:text>
 
 
     </xsl:template>
@@ -1835,7 +1834,7 @@ process.exit(0);</xsl:text>
                        (local-name()='rotation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
                        (local-name()='scale' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')) or
                        (local-name()='scaleOrientation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
-                       (local-name()='stiffness' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')) or
+                       (local-name()='stiffness' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                        (local-name()='translation' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')))) and
                       not( local-name(..)='HAnimSegment' and
                       ((local-name()='containerField' and (string(.)='children')) or
@@ -2253,22 +2252,9 @@ process.exit(0);</xsl:text>
 				<xsl:if test="(local-name() = 'class')">
 					<xsl:text>Css</xsl:text><!-- method prefix -->
 				</xsl:if>
-				<xsl:if test="(local-name() = 'style')">
-					<xsl:text>Css</xsl:text><!-- method prefix -->
-				</xsl:if>
-				<xsl:if test="(local-name() = 'id')">
-					<xsl:text>Html</xsl:text><!-- method prefix -->
-				</xsl:if>
 				<!-- upper camel case -->
-				<xsl:if test="(local-name() = 'id')">
-					<xsl:value-of select="translate(substring(name(),1,2),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/>
-				</xsl:if>
-
-				<xsl:if test="(local-name() != 'id')">
-					<xsl:value-of select="translate(substring(name(),1,1),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/>
-					<xsl:value-of select="substring(name(),2)"/>
-				</xsl:if>
-
+				<xsl:value-of select="translate(substring(name(),1,1),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ')"/>
+				<xsl:value-of select="substring(name(),2)"/>
 				<xsl:text>(</xsl:text>
 				
 				<xsl:variable name="nodeNumber"    select="count(../preceding::*) + 1"/>

@@ -1,7 +1,8 @@
 #!/bin/bash
 
 export PATH=${PATH}:~/apache-maven-3.6.3/bin:~/apache-ant-1.10.9/bin
-export PYTHONPATH=${PYTHONPATH}:/usr/lib/python3/dist-packages/pkg_resources/:/usr/lib/python3/dist-packages
+# export PYTHONPATH=${PYTHONPATH}:/usr/lib/python3/dist-packages/pkg_resources/:/usr/lib/python3/dist-packages
+source src/main/python/venv/bin/activate
 
 # bring in source from sourceforget
 pushd /c/x3d-code/www.web3d.org
@@ -23,10 +24,10 @@ popd
 cp /c/x3d-code/www.web3d.org/x3d/stylesheets/*.xslt src/main/lib/stylesheets
 
 # install python3 packages
-sudo apt-get install python3-bs4
-sudo apt-get install python3-lxml
-# pip3 install bs4
-# pip3 install lxml
+# sudo apt-get install python3-bs4
+# sudo apt-get install python3-lxml
+pip3 install bs4
+pip3 install lxml
 pip3 install pyjnius
 pip3 install fastjsonschema
 pip3 install jsonschema

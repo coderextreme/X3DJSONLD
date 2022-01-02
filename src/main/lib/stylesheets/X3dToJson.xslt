@@ -359,7 +359,7 @@ POSSIBILITY OF SUCH DAMAGE.
                                     <xsl:text>&#10;</xsl:text>
                                     <xsl:call-template name="print-indent"><xsl:with-param name="indent" select="$indent+4"/></xsl:call-template>
                                     <!-- TODO no guidance yet on how to properly mark the governing schema within a JSON file at http://json-schema.org -->
-                                    <xsl:text>"JSON schema":"https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json"</xsl:text>
+                                    <xsl:text>"JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json"</xsl:text>
                                     <xsl:text>,</xsl:text>
                             </xsl:if>
 
@@ -3161,7 +3161,7 @@ POSSIBILITY OF SUCH DAMAGE.
                        (local-name()='rotation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
                        (local-name()='scale' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')) or
                        (local-name()='scaleOrientation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
-                       (local-name()='stiffness' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')) or
+                       (local-name()='stiffness' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                        (local-name()='translation' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')))) and
                       not( local-name(..)='HAnimSegment' and
                       ((local-name()='containerField' and (string(.)='children')) or
