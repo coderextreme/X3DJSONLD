@@ -29,6 +29,10 @@ import { Normal } from './x3d.mjs';
 import { Billboard } from './x3d.mjs';
 import { Text } from './x3d.mjs';
 import { FontStyle } from './x3d.mjs';
+import { AudioDestination } from './x3d.mjs';
+import { SpatialSound } from './x3d.mjs';
+import { BufferAudioSource } from './x3d.mjs';
+import { SFTime } from './x3d.mjs';
 var X3D0 =  new X3D({
 
       profile : new SFString("Full"),
@@ -58,11 +62,15 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("4 August 2021")}),
+              content : new SFString("5 December 2021")}),
 
             new meta({
               name : new SFString("reference"),
               content : new SFString("CHANGELOG.txt")}),
+
+            new meta({
+              name : new SFString("TODO"),
+              content : new SFString("where is AudioClip source?")}),
 
             new meta({
               name : new SFString("TODO"),
@@ -132,7 +140,7 @@ var X3D0 =  new X3D({
                           vector : new MFVec3f([0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0])}))}))})])}),
 
             new Transform({
-              DEF : new SFString("Audio1"),
+              DEF : new SFString("TransformAudio1"),
               children : new MFNode([
                 new Shape({
                   appearance : new SFNode(
@@ -175,7 +183,21 @@ var X3D0 =  new X3D({
                               string : new MFString(["Sound Source"]),
                               fontStyle : new SFNode(
                                 new FontStyle({
-                                  family : new MFString(["Times"]),
-                                  justify : new MFString(["BEGIN"]),
-                                  style : new SFString("BOLD")}))}))})])})])})])})])}))});
+                                  family : new MFString(["Times","SERIF"]),
+                                  style : new SFString("BOLD")}))}))})])})])})])}),
+
+            new AudioDestination({
+              /*not allowed here <Transform USE='Audio1'/>*/
+              children : new MFNode([
+                new SpatialSound({
+                  coneInnerAngle : new SFFloat(6.283),
+                  coneOuterAngle : new SFFloat(6.283),
+                  enableHRTF : new SFBool(true)}),
+
+                new BufferAudioSource({
+                  loop : new SFBool(true),
+                  pauseTime : new SFTime(-1),
+                  resumeTime : new SFTime(-1),
+                  stopTime : new SFTime(-1),
+                  url : new MFString(["sound/saxophone.mp3","sound/saxophone.ogg"])})])})])}))});
 console.log(X3D0.toXMLNode());

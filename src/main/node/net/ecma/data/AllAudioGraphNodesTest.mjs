@@ -12,10 +12,16 @@ import { Shape } from './x3d.mjs';
 import { Box } from './x3d.mjs';
 import { Appearance } from './x3d.mjs';
 import { AcousticProperties } from './x3d.mjs';
+import { SFFloat } from './x3d.mjs';
 import { Material } from './x3d.mjs';
+import { Sound } from './x3d.mjs';
+import { SFVec3f } from './x3d.mjs';
+import { AudioClip } from './x3d.mjs';
+import { MFString } from './x3d.mjs';
+import { MovieTexture } from './x3d.mjs';
 import { SpatialSound } from './x3d.mjs';
 import { Analyser } from './x3d.mjs';
-import { AudioDestination } from './x3d.mjs';
+import { StreamAudioDestination } from './x3d.mjs';
 import { BiquadFilter } from './x3d.mjs';
 import { ChannelMerger } from './x3d.mjs';
 import { ChannelSelector } from './x3d.mjs';
@@ -24,18 +30,12 @@ import { Convolver } from './x3d.mjs';
 import { Delay } from './x3d.mjs';
 import { DynamicsCompressor } from './x3d.mjs';
 import { Gain } from './x3d.mjs';
-import { StreamAudioDestination } from './x3d.mjs';
 import { WaveShaper } from './x3d.mjs';
 import { BufferAudioSource } from './x3d.mjs';
 import { ListenerPointSource } from './x3d.mjs';
 import { MicrophoneSource } from './x3d.mjs';
 import { OscillatorSource } from './x3d.mjs';
 import { StreamAudioSource } from './x3d.mjs';
-import { Sound } from './x3d.mjs';
-import { SFVec3f } from './x3d.mjs';
-import { AudioClip } from './x3d.mjs';
-import { MFString } from './x3d.mjs';
-import { MovieTexture } from './x3d.mjs';
 var X3D0 =  new X3D({
 
       profile : new SFString("Full"),
@@ -61,7 +61,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("4 August 2021")}),
+              content : new SFString("26 November 2021")}),
 
             new meta({
               name : new SFString("warning"),
@@ -73,7 +73,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("generator"),
-              content : new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")}),
+              content : new SFString("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit")}),
 
             new meta({
               name : new SFString("license"),
@@ -90,15 +90,33 @@ var X3D0 =  new X3D({
               appearance : new SFNode(
                 new Appearance({
                   acousticProperties : new SFNode(
-                    new AcousticProperties({})),
+                    new AcousticProperties({
+                      description : new SFString("Testing of X3D4 nodes demonstrating W3C Audio API in progress"),
+                      diffuse : new SFFloat(0.25),
+                      refraction : new SFFloat(0.5),
+                      specular : new SFFloat(1)})),
                   material : new SFNode(
                     new Material({}))}))}),
+
+            new Sound({
+              location : new SFVec3f([0,1.6,0]),
+              source : new SFNode(
+                new AudioClip({
+                  description : new SFString("testing"),
+                  url : new MFString(["sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"])}))}),
+
+            new Sound({
+              location : new SFVec3f([0,1.6,0]),
+              source : new SFNode(
+                new MovieTexture({
+                  description : new SFString("testing"),
+                  url : new MFString(["bogus.mpg","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/bogus.mpg"])}))}),
 
             new SpatialSound({
               children : new MFNode([
                 new Analyser({
                   children : new MFNode([
-                    new AudioDestination({
+                    new StreamAudioDestination({
                       children : new MFNode([
                         new BiquadFilter({
                           children : new MFNode([
@@ -129,19 +147,5 @@ var X3D0 =  new X3D({
 
                                                                 new OscillatorSource({}),
 
-                                                                new StreamAudioSource({})])})])})])})])})])})])}))})])})])})])})])})])})])}),
-
-            new Sound({
-              location : new SFVec3f([0,1.6,0]),
-              source : new SFNode(
-                new AudioClip({
-                  description : new SFString("testing"),
-                  url : new MFString(["sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"])}))}),
-
-            new Sound({
-              location : new SFVec3f([0,1.6,0]),
-              source : new SFNode(
-                new MovieTexture({
-                  description : new SFString("testing"),
-                  url : new MFString(["bogus.mpg","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/bogus.mpg"])}))})])}))});
+                                                                new StreamAudioSource({})])})])})])})])})])})])}))})])})])})])})])})])})])})])}))});
 console.log(X3D0.toXMLNode());

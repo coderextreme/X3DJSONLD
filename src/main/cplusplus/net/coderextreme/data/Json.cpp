@@ -339,7 +339,7 @@ MetadataString68->setName("extraChildTest");
 MetadataString68->setValue(new CString[1]{"checks MetadataSetObject addValue() method"}, 1);
 MetadataSet66->addValue(*MetadataString68);
 
-Text65->setValue(*MetadataSet66);
+Text65->setMetadata(*MetadataSet66);
 
 CFontStyle* FontStyle69 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
 FontStyle69->setJustify(new CString[2]{"MIDDLE","MIDDLE"}, 2);
