@@ -2768,7 +2768,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                        (local-name()='rotation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
                        (local-name()='scale' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')) or
                        (local-name()='scaleOrientation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
-                       (local-name()='stiffness' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')) or
+                       (local-name()='stiffness' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                        (local-name()='translation' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')))) and
                       not( local-name(..)='HAnimSegment' and
                       ((local-name()='containerField' and (string(.)='children')) or
@@ -3192,9 +3192,25 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     <xsl:comment>no value, no action</xsl:comment>
                 </xsl:when>
                 <xsl:when test="local-name()='DEF'">
+                    <!--
                     <span class="idName" title="DEF name is a unique ID for a given node">
                         <xsl:value-of select="."/>
                     </span>
+                    -->
+                    <xsl:element name="a">
+                        <xsl:attribute name="title">
+                            <xsl:text>bookmark link to </xsl:text>
+                            <xsl:value-of select="."/>
+                        </xsl:attribute>
+                        <xsl:attribute name="href">
+                            <xsl:text>#</xsl:text>
+                            <xsl:value-of select="."/>
+                        </xsl:attribute>
+                        <xsl:attribute name="class">
+                            <xsl:text>idName</xsl:text>
+                        </xsl:attribute>
+                        <xsl:value-of select="."/>
+                    </xsl:element>
                 </xsl:when>
                 <xsl:when test="local-name()='USE' or (local-name(..)='ROUTE' and contains(local-name(),'Node'))">
                     <xsl:variable name="refName" select="."/>

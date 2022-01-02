@@ -11,7 +11,9 @@ CBrowser browser = X3D.getBrowser();
 CX3D* X3D0 = new CX3D();
 CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
 group->addChildren(X3D0);
+X3D0->setCssClass("x3dModel.class");
 X3D0->setProfile("Full");
+X3D0->setStyle("x3dModel.style");
 X3D0->setVersion("4.0");
 //x3dVersionComparisonTest for this model: supportsX3dVersion(X3D.VERSION_3_0)=true
 Chead* head1 = new Chead();
@@ -104,7 +106,7 @@ head1->addMeta(*meta17);
 
 Cmeta* meta18 = new Cmeta();
 meta18->setName("modified");
-meta18->setContent("20 December 2020");
+meta18->setContent("19 December 2021");
 head1->addMeta(*meta18);
 
 Cmeta* meta19 = new Cmeta();
@@ -197,6 +199,8 @@ group->addChildren(*NavigationInfo36);
 
 CWorldInfo* WorldInfo37 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
 WorldInfo37->setDEF("WorldInfoDEF");
+WorldInfo37->setCssClass("worldInfoNode.class");
+WorldInfo37->setStyle("worldInfoNode.style");
 WorldInfo37->setTitle("HelloWorldProgram produced by X3D Java SAI Library (X3DJSAIL)");
 group->addChildren(*WorldInfo37);
 

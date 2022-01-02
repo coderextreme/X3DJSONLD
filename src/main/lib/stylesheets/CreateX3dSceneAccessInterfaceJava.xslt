@@ -3576,7 +3576,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 										<!-- https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField -->
 										<xsl:text>
         setContainerFieldOverride(""); // ensuring default value used
-		containerField_ALTERNATE_VALUES = new String[] { "</xsl:text>
+	containerField_ALTERNATE_VALUES = new String[] { "</xsl:text>
 										<xsl:value-of select="InterfaceDefinition/containerField/@default"/>
 										<xsl:text>"</xsl:text>
 										<!-- TODO once recorded in X3D XML Schema and X3D Object Model, iterate over values and add to array -->
@@ -3594,7 +3594,10 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 												<xsl:text>, "back",        "bottom",        "front",        "left",        "right",        "top"</xsl:text>
 												<xsl:text>, "backTexture", "bottomTexture", "frontTexture", "leftTexture", "rightTexture", "topTexture"</xsl:text>
 											</xsl:when>
-											<xsl:when test="starts-with($name,'Metadata')">
+											<xsl:when test="starts-with($name,'Metadata') and starts-with(//X3dUnifiedObjectModel/@version, '4')">
+												<xsl:text>, "metadata"</xsl:text>
+											</xsl:when>
+											<xsl:when test="starts-with($name,'Metadata')"><!-- X3D version 3 -->
 												<xsl:text>, "value"</xsl:text>
 											</xsl:when>
 											<!-- X3D3 synonyms for X3D4 field regularization -->
@@ -13157,9 +13160,9 @@ setAttribute method invocations).
 		if (hasUSE())
 			hasChild = false; // USE nodes only include attributes for USE and non-default containerField]]></xsl:text><!-- append to member name -->
 	</xsl:if>
-    <!-- handle field synonyms -->
+        <!-- handle field synonyms -->
 	<xsl:text>
-        handleFieldSynonyms(); // adjust containerField values for X3D3 differences, if any</xsl:text>
+		handleFieldSynonyms(); // adjust containerField values for X3D3 differences, if any</xsl:text>
 
 	<xsl:text disable-output-escaping="yes"><![CDATA[
 		StringBuilder indent = new StringBuilder();
@@ -13278,6 +13281,19 @@ setAttribute method invocations).
                     stringX3D.append(" containerField='").append(getContainerFieldOverride()).append("'");
             }
 ]]></xsl:text>
+                                <xsl:if test="starts-with($name,'Metadata')">
+                                    <xsl:text disable-output-escaping="yes"><![CDATA[            // always output Metadata* node containerField for X3D3 since defaults changed in X3D4 
+            else if (hasAncestorX3D() && findAncestorX3D().getVersion().startsWith("3"))
+            {
+                    stringX3D.append(" containerField='").append(getContainerFieldOverride()).append("'");
+            }
+            // only output Metadata* node non-default containerField='metadata' in X3D4 
+            else if (hasAncestorX3D() && findAncestorX3D().getVersion().startsWith("4") && getContainerFieldOverride().equals("metadata"))
+            {
+                    stringX3D.append(" containerField='").append(getContainerFieldOverride()).append("'");
+            }
+]]></xsl:text>
+                                </xsl:if>
                             </xsl:when>
                         </xsl:choose>
 			<!-- test attributes (i.e. non-node fields) -->
@@ -26421,6 +26437,7 @@ import org.web3d.x3d.jsail.Core.*;</xsl:text>
 	/** Check whether field is writable, default /true/
 	 * @see org.web3d.x3d.jsail.Core.field#getAccessType()
 	 * @see <a href="https://www.web3d.org/x3d/tooltips/X3dTooltips.html#accessType">X3D Tooltips: accessType</a>
+	 * @return whether field is writable
 	 */
 	/* @Override */
 	public boolean isWritable()
@@ -29420,7 +29437,7 @@ component and able to extract a Browser reference from it.
 Generally this is used to provide a definition of an AWT component with a
 VRML/X3D display capability. There is no reason why this can not be used for
 other browser representations such as off-screen renderers or file savers.
-<p>
+</p>
 ]]></xsl:text>
 			</xsl:with-param>
 			<xsl:with-param name="interfaceBlock"><xsl:text><![CDATA[

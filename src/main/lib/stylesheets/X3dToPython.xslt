@@ -345,6 +345,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
         <xsl:variable name="isInMFNodeList"  select="($containerField = 'children')        or
                                                      ($containerField = 'bodies')          or
                                                      ($containerField = 'collidables')     or
+                                                     ($containerField = 'displacers')      or
                                                      ($containerField = 'joints')          or
                                                      ($containerField = 'motions')         or
                                                      ($containerField = 'renderStyle')     or
@@ -1434,7 +1435,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                        (local-name()='rotation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
                        (local-name()='scale' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')) or
                        (local-name()='scaleOrientation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
-                       (local-name()='stiffness' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')) or
+                       (local-name()='stiffness' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                        (local-name()='translation' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')))) and
                       not( local-name(..)='HAnimSegment' and
                       ((local-name()='containerField' and (string(.)='children')) or
@@ -2272,7 +2273,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
 		  <!-- MFFloat -->
 		  <xsl:when test="
 					($localFieldType='MFFloat')  or 
-                    ($attributeName='key')       or
+					($attributeName='key')       or
 					(contains($parentElementName,'ElevationGrid') and $attributeName='height') or
 					(contains($parentElementName,'LOD') and $attributeName='range') or
 					(ends-with($parentElementName,'Background') and ($attributeName='groundAngle' or $attributeName='skyAngle')) or
@@ -2387,7 +2388,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
 		  <!-- note TextureTransform tests must precede these default checks -->
 		  <xsl:when test="
 					($localFieldType='SFVec3f')    or 
-                    ($attributeName='anchorPoint') or
+					($attributeName='anchorPoint') or
 					($attributeName='bboxCenter')  or
 					($attributeName='bboxSize')    or
 					($attributeName='center')      or

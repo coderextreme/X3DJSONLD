@@ -61,7 +61,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 20 December 2020 </td>
+			<td> 19 December 2021 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -142,7 +142,7 @@ public class HelloWorldProgramOutput
 	/** Create and initialize the X3D model for this object. */
 	public final void initialize()
 	{
-  x3dModel = new X3D().setProfile(X3D.PROFILE_FULL).setVersion(X3D.VERSION_4_0)
+  x3dModel = new X3D().setProfile(X3D.PROFILE_FULL).setVersion(X3D.VERSION_4_0).setCssClass("x3dModel.class").setHtmlID("x3dModel.id").setCssStyle("x3dModel.style")
   .addComments(" x3dVersionComparisonTest for this model: supportsX3dVersion(X3D.VERSION_3_0)=true ")
   .setHead(new head()
     .addComments(" comment #1 ")
@@ -165,7 +165,7 @@ public class HelloWorldProgramOutput
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://www.web3d.org/specifications/java/X3DJSAIL.html"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("HelloWorldProgramOutput.java"))
     .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("6 September 2016"))
-    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("20 December 2020"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("19 December 2021"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D Java Scene Access Interface Library (X3DJSAIL)"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("Netbeans http://www.netbeans.org"))
@@ -185,14 +185,14 @@ public class HelloWorldProgramOutput
       .addChild(new Viewpoint("DefaultView").setDescription("Hello X3DJSAIL"))
       .addChild(new Viewpoint("TopDownView").setDescription("top-down view from above").setOrientation(1.0,0.0,0.0,-1.570796).setPosition(0.0,100.0,0.0)))
     .addChild(new NavigationInfo().setType("\"EXAMINE\" \"FLY\" \"ANY\""))
-    .addChild(new WorldInfo("WorldInfoDEF").setTitle("HelloWorldProgram produced by X3D Java SAI Library (X3DJSAIL)"))
+    .addChild(new WorldInfo("WorldInfoDEF").setCssClass("worldInfoNode.class").setHtmlID("worldInfoNode.id").setCssStyle("worldInfoNode.style").setTitle("HelloWorldProgram produced by X3D Java SAI Library (X3DJSAIL)"))
     .addChild(new WorldInfo().setUSE("WorldInfoDEF"))
     .addChild(new WorldInfo().setUSE("WorldInfoDEF"))
     .addMetadata(new MetadataString("scene.addChildMetadata").setName("test").setValue(new String[] {"Top-level root Metadata node beneath Scene needs to be one of '-children' in JSON encoding"}))
     .addLayerSet(new LayerSet("scene.addChildLayerSetTest"))
     .addChild(new Transform("LogoGeometryTransform").setTranslation(0.0,1.5,0.0)
       .addChild(new Anchor("siteAnchor").setDescription("select for X3D Java SAI Library (X3DJSAIL) description").setUrl(new String[] {"../X3DJSAIL.html","https://www.web3d.org/specifications/java/X3DJSAIL.html"})
-        .addChild(new Shape("BoxShape")
+        .addChild(new Shape("BoxShape").setHtmlID("BoxShapeID")
           .setAppearance(new Appearance()
             .setMaterial(new Material("GreenMaterial").setDiffuseColor(0.0,1.0,1.0).setEmissiveColor(0.8,0.0,0.0).setTransparency(0.1))
             .setTexture(new ImageTexture().setUrl(new String[] {"images/X3dJavaSceneAccessInterfaceSaiLibrary.png","https://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png"})))

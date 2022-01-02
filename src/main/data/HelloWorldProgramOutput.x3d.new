@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Full" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><!--x3dVersionComparisonTest for this model: supportsX3dVersion(X3D.VERSION_3_0)=true--><head><!--comment #1--><!--comment #2--><!--comment #3--><!--comment #4--><component name="Navigation" level="3"></component>
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" class="x3dModel.class" profile="Full" style="x3dModel.style" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><!--x3dVersionComparisonTest for this model: supportsX3dVersion(X3D.VERSION_3_0)=true--><head><!--comment #1--><!--comment #2--><!--comment #3--><!--comment #4--><component name="Navigation" level="3"></component>
 <component name="Shaders" level="1"></component>
 <component name="CADGeometry" level="2"></component>
 <component name="DIS" level="2"></component>
@@ -16,7 +16,7 @@
 <meta name="reference" content="https://www.web3d.org/specifications/java/X3DJSAIL.html"></meta>
 <meta name="generator" content="HelloWorldProgramOutput.java"></meta>
 <meta name="created" content="6 September 2016"></meta>
-<meta name="modified" content="20 December 2020"></meta>
+<meta name="modified" content="19 December 2021"></meta>
 <meta name="generator" content="X3D Java Scene Access Interface Library (X3DJSAIL)"></meta>
 <meta name="generator" content="https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"></meta>
 <meta name="generator" content="Netbeans http://www.netbeans.org"></meta>
@@ -35,7 +35,7 @@
 <Viewpoint DEF="TopDownView" description="top-down view from above" orientation="1 0 0 -1.570796" position="0 100 0"></Viewpoint>
 </ViewpointGroup>
 <NavigationInfo type="&quot;EXAMINE&quot; &quot;FLY&quot; &quot;ANY&quot;"></NavigationInfo>
-<WorldInfo DEF="WorldInfoDEF" title="HelloWorldProgram produced by X3D Java SAI Library (X3DJSAIL)"></WorldInfo>
+<WorldInfo DEF="WorldInfoDEF" class="worldInfoNode.class" style="worldInfoNode.style" title="HelloWorldProgram produced by X3D Java SAI Library (X3DJSAIL)"></WorldInfo>
 <WorldInfo USE="WorldInfoDEF"></WorldInfo>
 <WorldInfo USE="WorldInfoDEF"></WorldInfo>
 <MetadataString name="test" DEF="scene.addChildMetadata" value="&quot;Top-level root Metadata node beneath Scene needs to be one of '-children' in JSON encoding&quot;"></MetadataString>
