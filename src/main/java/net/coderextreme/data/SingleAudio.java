@@ -50,8 +50,9 @@ public class SingleAudio {
         .addMeta(new meta().setName("info").setContent("This work presents an innovative solution of the spatial sound in X3DOM framework, that based on a combinational methodology. Specifically, we suggested the enrichment of X3DOM with spatial sound features, using both the X3D sound nodes and the structure of Web Audio API."))
         .addMeta(new meta().setName("creator").setContent("Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman"))
         .addMeta(new meta().setName("created").setContent("28 October 2020"))
-        .addMeta(new meta().setName("modified").setContent("4 August 2021"))
+        .addMeta(new meta().setName("modified").setContent("5 December 2021"))
         .addMeta(new meta().setName("reference").setContent("CHANGELOG.txt"))
+        .addMeta(new meta().setName("TODO").setContent("where is AudioClip source?"))
         .addMeta(new meta().setName("TODO").setContent("credit for audio files"))
         .addMeta(new meta().setName("reference").setContent("https://medialab.hmu.gr/minipages/x3domAudio"))
         .addMeta(new meta().setName("identifier").setContent("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/SingleAudio.x3d"))
@@ -69,7 +70,7 @@ public class SingleAudio {
             .setGeometry(new IndexedFaceSet().setDEF("Box001-GEOMETRY").setCoordIndex(new MFInt326().getArray()).setSolid(false)
               .setCoord(new Coordinate().setPoint(new MFVec3f7().getArray()))
               .setNormal(new Normal().setVector(new MFVec3f8().getArray())))))
-        .addChild(new Transform().setDEF("Audio1")
+        .addChild(new Transform().setDEF("TransformAudio1")
           .addChild(new Shape()
             .setAppearance(new Appearance().setDEF("WireColor_1")
               .setMaterial(new Material().setDiffuseColor(new float[] {0.690196f,0.101961f,0.101961f})))
@@ -82,7 +83,11 @@ public class SingleAudio {
                 .setAppearance(new Appearance()
                   .setMaterial(new Material().setAmbientIntensity(0.0933f).setDiffuseColor(new float[] {0.345f,0.345f,0.882f}).setShininess(0.51f).setSpecularColor(new float[] {0.46f,0.46f,0.46f})))
                 .setGeometry(new Text().setString(new MFString36().getArray())
-                  .setFontStyle(new FontStyle().setFamily(new MFString37().getArray()).setJustify(new MFString38().getArray()).setStyle("BOLD"))))))))      ;
+                  .setFontStyle(new FontStyle().setFamily(new MFString37().getArray()).setStyle("BOLD")))))))
+        .addChild(new AudioDestination()
+          .addComments("not allowed here <Transform USE='Audio1'/>")
+          .addChild(new SpatialSound().setConeInnerAngle(6.283f).setConeOuterAngle(6.283f).setEnableHRTF(true))
+          .addChild(new BufferAudioSource().setLoop(true).setPauseTime(-1d).setResumeTime(-1d).setStopTime(-1d).setUrl(new MFString38().getArray()))))      ;
     return X3D0;
     }
 protected class MFString0 {
@@ -272,12 +277,12 @@ protected class MFString36 {
 }
 protected class MFString37 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Times"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Times","SERIF"});
   }
 }
 protected class MFString38 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"BEGIN"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"sound/saxophone.mp3","sound/saxophone.ogg"});
   }
 }
 }

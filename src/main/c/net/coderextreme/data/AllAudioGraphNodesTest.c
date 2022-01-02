@@ -29,7 +29,7 @@ head1.meta[3] = meta5;
 
 meta meta6 = createNode("meta");
 meta6.name = "modified";
-meta6.content = "4 August 2021";
+meta6.content = "26 November 2021";
 head1.meta[4] = meta6;
 
 meta meta7 = createNode("meta");
@@ -44,7 +44,7 @@ head1.meta[6] = meta8;
 
 meta meta9 = createNode("meta");
 meta9.name = "generator";
-meta9.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit";
+meta9.content = "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit";
 head1.meta[7] = meta9;
 
 meta meta10 = createNode("meta");
@@ -66,6 +66,10 @@ Shape13.geometry = Box14;
 
 Appearance Appearance15 = createNode("Appearance");
 AcousticProperties AcousticProperties16 = createNode("AcousticProperties");
+AcousticProperties16.description = "Testing of X3D4 nodes demonstrating W3C Audio API in progress";
+AcousticProperties16.diffuse = 0.25;
+AcousticProperties16.refraction = 0.5;
+AcousticProperties16.specular = 1;
 Appearance15.acousticProperties = AcousticProperties16;
 
 Material Material17 = createNode("Material");
@@ -75,103 +79,103 @@ Shape13.appearance = Appearance15;
 
 children[1] = Shape13;
 
-SpatialSound SpatialSound18 = createNode("SpatialSound");
-Analyser Analyser19 = createNode("Analyser");
-AudioDestination AudioDestination20 = createNode("AudioDestination");
-BiquadFilter BiquadFilter21 = createNode("BiquadFilter");
-ChannelMerger ChannelMerger22 = createNode("ChannelMerger");
-ChannelSelector ChannelSelector23 = createNode("ChannelSelector");
-ChannelSplitter ChannelSplitter24 = createNode("ChannelSplitter");
-Convolver Convolver25 = createNode("Convolver");
-Delay Delay26 = createNode("Delay");
-DynamicsCompressor DynamicsCompressor27 = createNode("DynamicsCompressor");
-Gain Gain28 = createNode("Gain");
-StreamAudioDestination StreamAudioDestination29 = createNode("StreamAudioDestination");
-WaveShaper WaveShaper30 = createNode("WaveShaper");
+Sound Sound18 = createNode("Sound");
+Sound18.location = new SFVec3f(new float[0,1.6,0]);
+AudioClip AudioClip19 = createNode("AudioClip");
+AudioClip19.description = "testing";
+AudioClip19.url = new MFString(new java.lang.String["sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"]);
+Sound18.source = AudioClip19;
+
+children[2] = Sound18;
+
+Sound Sound20 = createNode("Sound");
+Sound20.location = new SFVec3f(new float[0,1.6,0]);
+MovieTexture MovieTexture21 = createNode("MovieTexture");
+MovieTexture21.description = "testing";
+MovieTexture21.url = new MFString(new java.lang.String["bogus.mpg","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/bogus.mpg"]);
+Sound20.source = MovieTexture21;
+
+children[3] = Sound20;
+
+SpatialSound SpatialSound22 = createNode("SpatialSound");
+Analyser Analyser23 = createNode("Analyser");
+StreamAudioDestination StreamAudioDestination24 = createNode("StreamAudioDestination");
+BiquadFilter BiquadFilter25 = createNode("BiquadFilter");
+ChannelMerger ChannelMerger26 = createNode("ChannelMerger");
+ChannelSelector ChannelSelector27 = createNode("ChannelSelector");
+ChannelSplitter ChannelSplitter28 = createNode("ChannelSplitter");
+Convolver Convolver29 = createNode("Convolver");
+Delay Delay30 = createNode("Delay");
+DynamicsCompressor DynamicsCompressor31 = createNode("DynamicsCompressor");
+Gain Gain32 = createNode("Gain");
+StreamAudioDestination StreamAudioDestination33 = createNode("StreamAudioDestination");
+WaveShaper WaveShaper34 = createNode("WaveShaper");
 //The following X3DSoundSourceNode nodes have no audio-graph children
-BufferAudioSource BufferAudioSource31 = createNode("BufferAudioSource");
-WaveShaper30.children = new MFNode();
+BufferAudioSource BufferAudioSource35 = createNode("BufferAudioSource");
+WaveShaper34.children = new MFNode();
 
-WaveShaper30.children[0] = BufferAudioSource31;
+WaveShaper34.children[0] = BufferAudioSource35;
 
-ListenerPointSource ListenerPointSource32 = createNode("ListenerPointSource");
-WaveShaper30.children[1] = ListenerPointSource32;
+ListenerPointSource ListenerPointSource36 = createNode("ListenerPointSource");
+WaveShaper34.children[1] = ListenerPointSource36;
 
-MicrophoneSource MicrophoneSource33 = createNode("MicrophoneSource");
-WaveShaper30.children[2] = MicrophoneSource33;
+MicrophoneSource MicrophoneSource37 = createNode("MicrophoneSource");
+WaveShaper34.children[2] = MicrophoneSource37;
 
-OscillatorSource OscillatorSource34 = createNode("OscillatorSource");
-WaveShaper30.children[3] = OscillatorSource34;
+OscillatorSource OscillatorSource38 = createNode("OscillatorSource");
+WaveShaper34.children[3] = OscillatorSource38;
 
-StreamAudioSource StreamAudioSource35 = createNode("StreamAudioSource");
-WaveShaper30.children[4] = StreamAudioSource35;
+StreamAudioSource StreamAudioSource39 = createNode("StreamAudioSource");
+WaveShaper34.children[4] = StreamAudioSource39;
 
-StreamAudioDestination29.children = new MFNode();
+StreamAudioDestination33.children = new MFNode();
 
-StreamAudioDestination29.children[0] = WaveShaper30;
+StreamAudioDestination33.children[0] = WaveShaper34;
 
-Gain28.children = new MFNode();
+Gain32.children = new MFNode();
 
-Gain28.children[0] = StreamAudioDestination29;
+Gain32.children[0] = StreamAudioDestination33;
 
-DynamicsCompressor27.children = new MFNode();
+DynamicsCompressor31.children = new MFNode();
 
-DynamicsCompressor27.children[0] = Gain28;
+DynamicsCompressor31.children[0] = Gain32;
 
-Delay26.children = new MFNode();
+Delay30.children = new MFNode();
 
-Delay26.children[0] = DynamicsCompressor27;
+Delay30.children[0] = DynamicsCompressor31;
 
-Convolver25.children = new MFNode();
+Convolver29.children = new MFNode();
 
-Convolver25.children[0] = Delay26;
+Convolver29.children[0] = Delay30;
 
-ChannelSplitter24.outputs = new MFNode();
+ChannelSplitter28.outputs = new MFNode();
 
-ChannelSplitter24.outputs[0] = Convolver25;
+ChannelSplitter28.outputs[0] = Convolver29;
 
-ChannelSelector23.children = new MFNode();
+ChannelSelector27.children = new MFNode();
 
-ChannelSelector23.children[0] = ChannelSplitter24;
+ChannelSelector27.children[0] = ChannelSplitter28;
 
-ChannelMerger22.children = new MFNode();
+ChannelMerger26.children = new MFNode();
 
-ChannelMerger22.children[0] = ChannelSelector23;
+ChannelMerger26.children[0] = ChannelSelector27;
 
-BiquadFilter21.children = new MFNode();
+BiquadFilter25.children = new MFNode();
 
-BiquadFilter21.children[0] = ChannelMerger22;
+BiquadFilter25.children[0] = ChannelMerger26;
 
-AudioDestination20.children = new MFNode();
+StreamAudioDestination24.children = new MFNode();
 
-AudioDestination20.children[0] = BiquadFilter21;
+StreamAudioDestination24.children[0] = BiquadFilter25;
 
-Analyser19.children = new MFNode();
+Analyser23.children = new MFNode();
 
-Analyser19.children[0] = AudioDestination20;
+Analyser23.children[0] = StreamAudioDestination24;
 
-SpatialSound18.children = new MFNode();
+SpatialSound22.children = new MFNode();
 
-SpatialSound18.children[0] = Analyser19;
+SpatialSound22.children[0] = Analyser23;
 
-children[2] = SpatialSound18;
-
-Sound Sound36 = createNode("Sound");
-Sound36.location = new SFVec3f(new float[0,1.6,0]);
-AudioClip AudioClip37 = createNode("AudioClip");
-AudioClip37.description = "testing";
-AudioClip37.url = new MFString(new java.lang.String["sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"]);
-Sound36.source = AudioClip37;
-
-children[3] = Sound36;
-
-Sound Sound38 = createNode("Sound");
-Sound38.location = new SFVec3f(new float[0,1.6,0]);
-MovieTexture MovieTexture39 = createNode("MovieTexture");
-MovieTexture39.description = "testing";
-MovieTexture39.url = new MFString(new java.lang.String["bogus.mpg","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/bogus.mpg"]);
-Sound38.source = MovieTexture39;
-
-children[4] = Sound38;
+children[4] = SpatialSound22;
 
 }

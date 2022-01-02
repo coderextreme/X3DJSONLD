@@ -102,7 +102,7 @@ newModel=X3D(profile='Immersive',version='4.0',
         geometry=Text(string=["X3D Java","SAI Library","X3DJSAIL"],
           #  Comment example A, plain quotation marks: He said, "Immel did it!" 
           #  Comment example B, XML character entities: He said, &quot;Immel did it!&quot; 
-          value=MetadataSet(name='EscapedQuotationMarksMetadataSet',
+          metadata=MetadataSet(name='EscapedQuotationMarksMetadataSet',
             value=[
             MetadataString(name='quotesTestC',value=["MFString example C, backslash-escaped quotes: He said, \"Immel did it!\""]),
             MetadataString(name='extraChildTest',value=["checks MetadataSetObject addValue() method"])]),

@@ -30,11 +30,15 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('modified'),
-              content_ : SFString('4 August 2021')),
+              content_ : SFString('5 December 2021')),
 
             meta(
               name_ : SFString('reference'),
               content_ : SFString('CHANGELOG.txt')),
+
+            meta(
+              name_ : SFString('TODO'),
+              content_ : SFString('where is AudioClip source?')),
 
             meta(
               name_ : SFString('TODO'),
@@ -104,7 +108,7 @@ var X3D0 =  X3D(
                           vector_ : MFVec3f([SFVec3f([0,-1,0]),SFVec3f([0,-1,0]),SFVec3f([0,-1,0]),SFVec3f([0,-1,0]),SFVec3f([0,-1,0]),SFVec3f([0,-1,0]),SFVec3f([0,1,0]),SFVec3f([0,1,0]),SFVec3f([0,1,0]),SFVec3f([0,1,0]),SFVec3f([0,1,0]),SFVec3f([0,1,0]),SFVec3f([0,0,1]),SFVec3f([0,0,1]),SFVec3f([0,0,1]),SFVec3f([0,0,1]),SFVec3f([0,0,1]),SFVec3f([0,0,1]),SFVec3f([1,0,0]),SFVec3f([1,0,0]),SFVec3f([1,0,0]),SFVec3f([1,0,0]),SFVec3f([1,0,0]),SFVec3f([1,0,0]),SFVec3f([0,0,-1]),SFVec3f([0,0,-1]),SFVec3f([0,0,-1]),SFVec3f([0,0,-1]),SFVec3f([0,0,-1]),SFVec3f([0,0,-1]),SFVec3f([-1,0,0]),SFVec3f([-1,0,0]),SFVec3f([-1,0,0]),SFVec3f([-1,0,0]),SFVec3f([-1,0,0]),SFVec3f([-1,0,0])]))))]),
 
             Transform(
-              DEF_ : SFString('Audio1'),
+              DEF_ : SFString('TransformAudio1'),
               children_ : [
                 Shape(
                   appearance_ : 
@@ -147,7 +151,21 @@ var X3D0 =  X3D(
                               string_ : MFString([SFString("Sound Source")]),
                               fontStyle_ : 
                                 FontStyle(
-                                  family_ : MFString([SFString("Times")]),
-                                  justify_ : MFString([SFString("BEGIN")]),
-                                  style_ : SFString('BOLD'))))])])])]));
+                                  family_ : MFString([SFString("Times"), SFString("SERIF")]),
+                                  style_ : SFString('BOLD'))))])])]),
+
+            AudioDestination(
+              /*not allowed here <Transform USE='Audio1'/>*/
+              children_ : [
+                SpatialSound(
+                  coneInnerAngle_ : 6.283,
+                  coneOuterAngle_ : 6.283,
+                  enableHRTF_ : true),
+
+                BufferAudioSource(
+                  loop_ : true,
+                  pauseTime_ : -1,
+                  resumeTime_ : -1,
+                  stopTime_ : -1,
+                  url_ : MFString([SFString("sound/saxophone.mp3"), SFString("sound/saxophone.ogg")]))])]));
 void main() { exit(0); }
