@@ -102,7 +102,7 @@ newModel=X3D(profile='Immersive',version='3.3',
         MetadataString(name='humanoidVersion',value=["*TODO*"]),
         MetadataString(name='usageRestrictions',value=['*TODO*'])]),
       skeleton=[
-      HAnimJoint(DEF='Bvh1_HumanoidRoot',name='HumanoidRoot',scale=(0.0254,0.0254,0.0254),translation=(0.000,0.806,0.194),
+      HAnimJoint(DEF='Bvh1_HumanoidRoot',name='HumanoidRoot',scale=(0.0254,0.0254,0.0254),translation=(0.000,0.806,0.194),ulimit=[0,0,0],llimit=[0,0,0],
         #  BVH ROOT Hips, OFFSET 7.62 0.0 0.0, CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation 
         children=[
         HAnimSegment(DEF='Bvh1_sacrum',name='sacrum',
@@ -149,7 +149,7 @@ newModel=X3D(profile='Immersive',version='3.3',
             geometry=LineSet(vertexCount=[2],
               coord=Coordinate(point=[(0,0,0),(0.0,7.62,-2.54)]),
               color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-        HAnimJoint(DEF='Bvh1_l_hip',center=(7.62,0.0,0.0),name='l_hip',
+        HAnimJoint(DEF='Bvh1_l_hip',center=(7.62,0.0,0.0),name='l_hip',ulimit=[0,0,0],llimit=[0,0,0],
           #  BVH JOINT LeftHip, OFFSET 7.62 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation 
           children=[
           HAnimSegment(DEF='Bvh1_l_thigh',name='l_thigh',
@@ -165,7 +165,7 @@ newModel=X3D(profile='Immersive',version='3.3',
                 geometry=LineSet(vertexCount=[2],
                   coord=Coordinate(point=[(0,0,0),(0.0,-44.449999,0.0)]),
                   color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))])]),
-          HAnimJoint(DEF='Bvh1_l_knee',center=(7.62,-44.449999,0.0),name='l_knee',
+          HAnimJoint(DEF='Bvh1_l_knee',center=(7.62,-44.449999,0.0),name='l_knee',ulimit=[0,0,0],llimit=[0,0,0],
             #  BVH JOINT LeftKnee, OFFSET 0.0 -44.449999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation 
             children=[
             HAnimSegment(DEF='Bvh1_l_calf',name='l_calf',
@@ -181,7 +181,7 @@ newModel=X3D(profile='Immersive',version='3.3',
                   geometry=LineSet(vertexCount=[2],
                     coord=Coordinate(point=[(0,0,0),(0.0,-39.369999,0.0)]),
                     color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))])]),
-            HAnimJoint(DEF='Bvh1_l_ankle',center=(7.62,-83.819998,0.0),name='l_ankle',
+            HAnimJoint(DEF='Bvh1_l_ankle',center=(7.62,-83.819998,0.0),name='l_ankle',ulimit=[0,0,0],llimit=[0,0,0],
               #  BVH JOINT LeftAnkle, OFFSET 0.0 -39.369999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation 
               children=[
               HAnimSegment(DEF='Bvh1_l_hindfoot',name='l_hindfoot',
@@ -197,7 +197,7 @@ newModel=X3D(profile='Immersive',version='3.3',
                     geometry=LineSet(vertexCount=[2],
                       coord=Coordinate(point=[(0,0,0),(0.0,-8.89,-3.81)]),
                       color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))])]),
-              HAnimJoint(DEF='Bvh1_l_midtarsal',center=(7.62,-92.709998,-3.81),name='l_midtarsal',
+              HAnimJoint(DEF='Bvh1_l_midtarsal',center=(7.62,-92.709998,-3.81),name='l_midtarsal',ulimit=[0,0,0],llimit=[0,0,0],
                 #  BVH JOINT LeftAnkleEnd, OFFSET 0.0 -8.89 -3.81, CHANNELS 3 Zrotation Xrotation Yrotation 
                 children=[
                 HAnimSegment(DEF='Bvh1_l_middistal',name='l_middistal',
@@ -218,7 +218,7 @@ newModel=X3D(profile='Immersive',version='3.3',
                     #  Visualization sphere for <HAnimJoint name='l_midtarsal'> is placed within <HAnimSegment name='Bvh1_l_middistal'> 
                     TouchSensor(description='HAnimJoint LeftAnkleEnd l_midtarsal, HAnimSegment l_middistal'),
                     Shape(USE='HAnimJointShape')])])])])])]),
-        HAnimJoint(DEF='Bvh1_r_hip',center=(-7.62,0.0,0.0),name='r_hip',
+        HAnimJoint(DEF='Bvh1_r_hip',center=(-7.62,0.0,0.0),name='r_hip',ulimit=[0,0,0],llimit=[0,0,0],
           #  BVH JOINT RightHip, OFFSET -7.62 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation 
           children=[
           HAnimSegment(DEF='Bvh1_r_thigh',name='r_thigh',
@@ -234,7 +234,7 @@ newModel=X3D(profile='Immersive',version='3.3',
                 geometry=LineSet(vertexCount=[2],
                   coord=Coordinate(point=[(0,0,0),(0.0,-44.449999,0.0)]),
                   color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))])]),
-          HAnimJoint(DEF='Bvh1_r_knee',center=(-7.62,-44.449999,0.0),name='r_knee',
+          HAnimJoint(DEF='Bvh1_r_knee',center=(-7.62,-44.449999,0.0),name='r_knee',ulimit=[0,0,0],llimit=[0,0,0],
             #  BVH JOINT RightKnee, OFFSET 0.0 -44.449999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation 
             children=[
             HAnimSegment(DEF='Bvh1_r_calf',name='r_calf',
@@ -250,7 +250,7 @@ newModel=X3D(profile='Immersive',version='3.3',
                   geometry=LineSet(vertexCount=[2],
                     coord=Coordinate(point=[(0,0,0),(0.0,-39.369999,0.0)]),
                     color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))])]),
-            HAnimJoint(DEF='Bvh1_r_ankle',center=(-7.62,-83.819998,0.0),name='r_ankle',
+            HAnimJoint(DEF='Bvh1_r_ankle',center=(-7.62,-83.819998,0.0),name='r_ankle',ulimit=[0,0,0],llimit=[0,0,0],
               #  BVH JOINT RightAnkle, OFFSET 0.0 -39.369999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation 
               children=[
               HAnimSegment(DEF='Bvh1_r_hindfoot',name='r_hindfoot',
@@ -266,7 +266,7 @@ newModel=X3D(profile='Immersive',version='3.3',
                     geometry=LineSet(vertexCount=[2],
                       coord=Coordinate(point=[(0,0,0),(0.0,-8.89,-3.81)]),
                       color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))])]),
-              HAnimJoint(DEF='Bvh1_r_midtarsal',center=(-7.62,-92.709998,-3.81),name='r_midtarsal',
+              HAnimJoint(DEF='Bvh1_r_midtarsal',center=(-7.62,-92.709998,-3.81),name='r_midtarsal',ulimit=[0,0,0],llimit=[0,0,0],
                 #  BVH JOINT RightAnkleEnd, OFFSET 0.0 -8.89 -3.81, CHANNELS 3 Zrotation Xrotation Yrotation 
                 children=[
                 HAnimSegment(DEF='Bvh1_r_middistal',name='r_middistal',
@@ -287,7 +287,7 @@ newModel=X3D(profile='Immersive',version='3.3',
                     #  Visualization sphere for <HAnimJoint name='r_midtarsal'> is placed within <HAnimSegment name='Bvh1_r_middistal'> 
                     TouchSensor(description='HAnimJoint RightAnkleEnd r_midtarsal, HAnimSegment r_middistal'),
                     Shape(USE='HAnimJointShape')])])])])])]),
-        HAnimJoint(DEF='Bvh1_vl5',center=(0.0,7.62,-2.54),name='vl5',
+        HAnimJoint(DEF='Bvh1_vl5',center=(0.0,7.62,-2.54),name='vl5',ulimit=[0,0,0],llimit=[0,0,0],
           #  BVH JOINT Chest, OFFSET 0.0 7.62 -2.54, CHANNELS 3 Zrotation Xrotation Yrotation 
           children=[
           HAnimSegment(DEF='Bvh1_l5',name='l5',
@@ -303,7 +303,7 @@ newModel=X3D(profile='Immersive',version='3.3',
                 geometry=LineSet(vertexCount=[2],
                   coord=Coordinate(point=[(0,0,0),(0.0,7.62,0.0)]),
                   color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))])]),
-          HAnimJoint(DEF='Bvh1_Chest2',center=(0.0,15.24,-2.54),name='Chest2',
+          HAnimJoint(DEF='Bvh1_Chest2',center=(0.0,15.24,-2.54),name='Chest2',ulimit=[0,0,0],llimit=[0,0,0],
             #  BVH JOINT Chest2, OFFSET 0.0 7.62 0.0, CHANNELS 3 Zrotation Xrotation Yrotation 
             children=[
             HAnimSegment(DEF='Bvh1_vl5_to_Chest2',name='vl5_to_Chest2',
@@ -329,7 +329,7 @@ newModel=X3D(profile='Immersive',version='3.3',
                   geometry=LineSet(vertexCount=[2],
                     coord=Coordinate(point=[(0,0,0),(0.0,38.099999,2.54)]),
                     color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))])]),
-            HAnimJoint(DEF='Bvh1_LeftCollar',center=(7.62,48.260000000000005,0.0),name='LeftCollar',
+            HAnimJoint(DEF='Bvh1_LeftCollar',center=(7.62,48.260000000000005,0.0),name='LeftCollar',ulimit=[0,0,0],llimit=[0,0,0],
               #  BVH JOINT LeftCollar, OFFSET 7.62 33.02 2.54, CHANNELS 3 Zrotation Xrotation Yrotation 
               children=[
               HAnimSegment(DEF='Bvh1_Chest2_to_LeftCollar',name='Chest2_to_LeftCollar',
@@ -345,7 +345,7 @@ newModel=X3D(profile='Immersive',version='3.3',
                     geometry=LineSet(vertexCount=[2],
                       coord=Coordinate(point=[(0,0,0),(12.7,0.0,0.0)]),
                       color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))])]),
-              HAnimJoint(DEF='Bvh1_l_shoulder',center=(20.32,48.260000000000005,0.0),name='l_shoulder',
+              HAnimJoint(DEF='Bvh1_l_shoulder',center=(20.32,48.260000000000005,0.0),name='l_shoulder',ulimit=[0,0,0],llimit=[0,0,0],
                 #  BVH JOINT LeftShoulder, OFFSET 12.7 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation 
                 children=[
                 HAnimSegment(DEF='Bvh1_l_upperarm',name='l_upperarm',
@@ -361,7 +361,7 @@ newModel=X3D(profile='Immersive',version='3.3',
                       geometry=LineSet(vertexCount=[2],
                         coord=Coordinate(point=[(0,0,0),(0.0,-30.48,0.0)]),
                         color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))])]),
-                HAnimJoint(DEF='Bvh1_l_elbow',center=(20.32,17.780000000000005,0.0),name='l_elbow',
+                HAnimJoint(DEF='Bvh1_l_elbow',center=(20.32,17.780000000000005,0.0),name='l_elbow',ulimit=[0,0,0],llimit=[0,0,0],
                   #  BVH JOINT LeftElbow, OFFSET 0.0 -30.48 0.0, CHANNELS 3 Zrotation Xrotation Yrotation 
                   children=[
                   HAnimSegment(DEF='Bvh1_l_forearm',name='l_forearm',
@@ -377,7 +377,7 @@ newModel=X3D(profile='Immersive',version='3.3',
                         geometry=LineSet(vertexCount=[2],
                           coord=Coordinate(point=[(0,0,0),(0.0,-24.13,0.0)]),
                           color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))])]),
-                  HAnimJoint(DEF='Bvh1_l_wrist',center=(20.32,-6.349999999999994,0.0),name='l_wrist',
+                  HAnimJoint(DEF='Bvh1_l_wrist',center=(20.32,-6.349999999999994,0.0),name='l_wrist',ulimit=[0,0,0],llimit=[0,0,0],
                     #  BVH JOINT LeftWrist, OFFSET 0.0 -24.13 0.0, CHANNELS 3 Zrotation Xrotation Yrotation 
                     children=[
                     HAnimSegment(DEF='Bvh1_l_hand',name='l_hand',
@@ -398,7 +398,7 @@ newModel=X3D(profile='Immersive',version='3.3',
                         #  Visualization sphere for <HAnimJoint name='l_wrist'> is placed within <HAnimSegment name='Bvh1_l_hand'> 
                         TouchSensor(description='HAnimJoint LeftWrist l_wrist, HAnimSegment l_hand'),
                         Shape(USE='HAnimJointShape')])])])])])]),
-            HAnimJoint(DEF='Bvh1_RightCollar',center=(-7.62,48.260000000000005,0.0),name='RightCollar',
+            HAnimJoint(DEF='Bvh1_RightCollar',center=(-7.62,48.260000000000005,0.0),name='RightCollar',ulimit=[0,0,0],llimit=[0,0,0],
               #  BVH JOINT RightCollar, OFFSET -7.62 33.02 2.54, CHANNELS 3 Zrotation Xrotation Yrotation 
               children=[
               HAnimSegment(DEF='Bvh1_Chest2_to_RightCollar',name='Chest2_to_RightCollar',
@@ -414,7 +414,7 @@ newModel=X3D(profile='Immersive',version='3.3',
                     geometry=LineSet(vertexCount=[2],
                       coord=Coordinate(point=[(0,0,0),(-12.7,0.0,0.0)]),
                       color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))])]),
-              HAnimJoint(DEF='Bvh1_r_shoulder',center=(-20.32,48.260000000000005,0.0),name='r_shoulder',
+              HAnimJoint(DEF='Bvh1_r_shoulder',center=(-20.32,48.260000000000005,0.0),name='r_shoulder',ulimit=[0,0,0],llimit=[0,0,0],
                 #  BVH JOINT RightShoulder, OFFSET -12.7 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation 
                 children=[
                 HAnimSegment(DEF='Bvh1_r_upperarm',name='r_upperarm',
@@ -430,7 +430,7 @@ newModel=X3D(profile='Immersive',version='3.3',
                       geometry=LineSet(vertexCount=[2],
                         coord=Coordinate(point=[(0,0,0),(0.0,-30.48,0.0)]),
                         color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))])]),
-                HAnimJoint(DEF='Bvh1_r_elbow',center=(-20.32,17.780000000000005,0.0),name='r_elbow',
+                HAnimJoint(DEF='Bvh1_r_elbow',center=(-20.32,17.780000000000005,0.0),name='r_elbow',ulimit=[0,0,0],llimit=[0,0,0],
                   #  BVH JOINT RightElbow, OFFSET 0.0 -30.48 0.0, CHANNELS 3 Zrotation Xrotation Yrotation 
                   children=[
                   HAnimSegment(DEF='Bvh1_r_forearm',name='r_forearm',
@@ -446,7 +446,7 @@ newModel=X3D(profile='Immersive',version='3.3',
                         geometry=LineSet(vertexCount=[2],
                           coord=Coordinate(point=[(0,0,0),(0.0,-24.13,0.0)]),
                           color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))])]),
-                  HAnimJoint(DEF='Bvh1_r_wrist',center=(-20.32,-6.349999999999994,0.0),name='r_wrist',
+                  HAnimJoint(DEF='Bvh1_r_wrist',center=(-20.32,-6.349999999999994,0.0),name='r_wrist',ulimit=[0,0,0],llimit=[0,0,0],
                     #  BVH JOINT RightWrist, OFFSET 0.0 -24.13 0.0, CHANNELS 3 Zrotation Xrotation Yrotation 
                     children=[
                     HAnimSegment(DEF='Bvh1_r_hand',name='r_hand',
@@ -467,7 +467,7 @@ newModel=X3D(profile='Immersive',version='3.3',
                         #  Visualization sphere for <HAnimJoint name='r_wrist'> is placed within <HAnimSegment name='Bvh1_r_hand'> 
                         TouchSensor(description='HAnimJoint RightWrist r_wrist, HAnimSegment r_hand'),
                         Shape(USE='HAnimJointShape')])])])])])]),
-            HAnimJoint(DEF='Bvh1_Neck',center=(0.0,53.339999,0.0),name='Neck',
+            HAnimJoint(DEF='Bvh1_Neck',center=(0.0,53.339999,0.0),name='Neck',ulimit=[0,0,0],llimit=[0,0,0],
               #  BVH JOINT Neck, OFFSET 0.0 38.099999 2.54, CHANNELS 3 Zrotation Xrotation Yrotation 
               children=[
               HAnimSegment(DEF='Bvh1_Chest2_to_Neck',name='Chest2_to_Neck',
@@ -483,7 +483,7 @@ newModel=X3D(profile='Immersive',version='3.3',
                     geometry=LineSet(vertexCount=[2],
                       coord=Coordinate(point=[(0,0,0),(0.0,16.51,0.0)]),
                       color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))])]),
-              HAnimJoint(DEF='Bvh1_skullbase',center=(0.0,69.849999,0.0),name='skullbase',
+              HAnimJoint(DEF='Bvh1_skullbase',center=(0.0,69.849999,0.0),name='skullbase',ulimit=[0,0,0],llimit=[0,0,0],
                 #  BVH JOINT Head, OFFSET 0.0 16.51 0.0, CHANNELS 3 Zrotation Xrotation Yrotation 
                 children=[
                 HAnimSegment(DEF='Bvh1_skull',name='skull',
@@ -520,27 +520,27 @@ newModel=X3D(profile='Immersive',version='3.3',
       #  insert pseudo Joint for HumanoidRoot skeleton (matching root HIERARCHY in original BVH mocap model, but appearing as skeleton field in X3D HAnimHumanoid) 
       #  top-level USE nodes follow DEF declarations and can be employed by inverse-kinematics (IK) engines or other HAnim tools 
       joints=[
-      HAnimJoint(USE='Bvh1_HumanoidRoot'),
-      HAnimJoint(USE='Bvh1_vl5'),
-      HAnimJoint(USE='Bvh1_Chest2'),
-      HAnimJoint(USE='Bvh1_LeftCollar'),
-      HAnimJoint(USE='Bvh1_RightCollar'),
-      HAnimJoint(USE='Bvh1_Neck'),
-      HAnimJoint(USE='Bvh1_skullbase'),
-      HAnimJoint(USE='Bvh1_l_ankle'),
-      HAnimJoint(USE='Bvh1_r_ankle'),
-      HAnimJoint(USE='Bvh1_l_elbow'),
-      HAnimJoint(USE='Bvh1_r_elbow'),
-      HAnimJoint(USE='Bvh1_l_hip'),
-      HAnimJoint(USE='Bvh1_r_hip'),
-      HAnimJoint(USE='Bvh1_l_knee'),
-      HAnimJoint(USE='Bvh1_r_knee'),
-      HAnimJoint(USE='Bvh1_l_midtarsal'),
-      HAnimJoint(USE='Bvh1_r_midtarsal'),
-      HAnimJoint(USE='Bvh1_l_shoulder'),
-      HAnimJoint(USE='Bvh1_r_shoulder'),
-      HAnimJoint(USE='Bvh1_l_wrist'),
-      HAnimJoint(USE='Bvh1_r_wrist')],
+      HAnimJoint(USE='Bvh1_HumanoidRoot',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='Bvh1_vl5',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='Bvh1_Chest2',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='Bvh1_LeftCollar',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='Bvh1_RightCollar',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='Bvh1_Neck',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='Bvh1_skullbase',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='Bvh1_l_ankle',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='Bvh1_r_ankle',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='Bvh1_l_elbow',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='Bvh1_r_elbow',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='Bvh1_l_hip',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='Bvh1_r_hip',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='Bvh1_l_knee',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='Bvh1_r_knee',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='Bvh1_l_midtarsal',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='Bvh1_r_midtarsal',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='Bvh1_l_shoulder',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='Bvh1_r_shoulder',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='Bvh1_l_wrist',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='Bvh1_r_wrist',ulimit=[0,0,0],llimit=[0,0,0])],
       segments=[
       HAnimSegment(USE='Bvh1_sacrum'),
       HAnimSegment(USE='Bvh1_l5'),
