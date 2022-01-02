@@ -6,24 +6,30 @@
     <meta content='List of all X3D4 audio graph nodes to test infrastructure and validation support. Absence of attributes means that checking and removal of default values is working.' name='description'/>
     <meta content='Don Brutzman' name='creator'/>
     <meta content='25 October 2020' name='created'/>
-    <meta content='4 August 2021' name='modified'/>
+    <meta content='26 November 2021' name='modified'/>
     <meta content='Developmental test, no actual 3D model expected' name='warning'/>
     <meta content='https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/AllAudioGraphNodesTest.x3d' name='identifier'/>
-    <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
+    <meta content='X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit' name='generator'/>
     <meta content='../license.html' name='license'/>
   </head>
   <Scene>
     <WorldInfo title='AllAudioGraphNodes.x3d'/>
     <Shape>
       <Appearance>
-        <AcousticProperties/>
+        <AcousticProperties description='Testing of X3D4 nodes demonstrating W3C Audio API in progress' diffuse='0.25' refraction='0.5' specular='1.0'/>
         <Material/>
       </Appearance>
       <Box/>
     </Shape>
+    <Sound location='0 1.6 0'>
+      <AudioClip description='testing' url='"sound/saxophone.mp3" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"'/>
+    </Sound>
+    <Sound location='0 1.6 0'>
+      <MovieTexture containerField='source' description='testing' url='"bogus.mpg" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/bogus.mpg"'/>
+    </Sound>
     <SpatialSound>
       <Analyser>
-        <AudioDestination>
+        <StreamAudioDestination>
           <BiquadFilter>
             <ChannelMerger>
               <ChannelSelector>
@@ -50,14 +56,8 @@
               </ChannelSelector>
             </ChannelMerger>
           </BiquadFilter>
-        </AudioDestination>
+        </StreamAudioDestination>
       </Analyser>
     </SpatialSound>
-    <Sound location='0 1.6 0'>
-      <AudioClip description='testing' url='"sound/saxophone.mp3" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"'/>
-    </Sound>
-    <Sound location='0 1.6 0'>
-      <MovieTexture containerField='source' description='testing' url='"bogus.mpg" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/bogus.mpg"'/>
-    </Sound>
   </Scene>
 </X3D>

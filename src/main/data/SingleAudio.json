@@ -28,11 +28,15 @@
           },
           {
             "@name":"modified",
-            "@content":"4 August 2021"
+            "@content":"5 December 2021"
           },
           {
             "@name":"reference",
             "@content":"CHANGELOG.txt"
+          },
+          {
+            "@name":"TODO",
+            "@content":"where is AudioClip source?"
           },
           {
             "@name":"TODO",
@@ -146,7 +150,7 @@
           },
           { "Transform":
             {
-              "@DEF":"Audio1",
+              "@DEF":"TransformAudio1",
               "-children":[
                 { "Shape":
                   {
@@ -217,8 +221,7 @@
                                       "-fontStyle":
                                         { "FontStyle":
                                           {
-                                            "@family":["Times"],
-                                            "@justify":["BEGIN"],
+                                            "@family":["Times","SERIF"],
                                             "@style":"BOLD"
                                           }
                                         }
@@ -230,6 +233,31 @@
                         }
                       }
                     ]
+                  }
+                }
+              ]
+            }
+          },
+          { "AudioDestination":
+            {
+              "-children":[
+                {
+                  "#comment":"not allowed here <Transform USE='Audio1'/>"
+                },
+                { "SpatialSound":
+                  {
+                    "@coneInnerAngle":6.283,
+                    "@coneOuterAngle":6.283,
+                    "@enableHRTF":true
+                  }
+                },
+                { "BufferAudioSource":
+                  {
+                    "@loop":true,
+                    "@pauseTime":-1,
+                    "@resumeTime":-1,
+                    "@stopTime":-1,
+                    "@url":["sound/saxophone.mp3","sound/saxophone.ogg"]
                   }
                 }
               ]
