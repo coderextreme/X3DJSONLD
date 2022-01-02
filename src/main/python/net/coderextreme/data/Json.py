@@ -329,7 +329,7 @@ MetadataString68.setValue(["checks MetadataSetObject addValue() method"])
 
 MetadataSet66.addValue(MetadataString68)
 
-Text65.setValue(MetadataSet66)
+Text65.setMetadata(MetadataSet66)
 FontStyle69 = FontStyle()
 FontStyle69.setJustify(["MIDDLE","MIDDLE"])
 

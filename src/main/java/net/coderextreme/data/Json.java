@@ -122,7 +122,7 @@ ProtoInstance ProtoInstance4 = null;
             .setGeometry(new Text().setString(new MFString7().getArray())
               .addComments("Comment example A, plain quotation marks: He said, \"Immel did it!\"")
               .addComments("Comment example B, XML character entities: He said, &quot;Immel did it!&quot;")
-              .addValue(new MetadataSet().setName("EscapedQuotationMarksMetadataSet")
+              .setMetadata(new MetadataSet().setName("EscapedQuotationMarksMetadataSet")
                 .addValue(new MetadataString().setName("quotesTestC").setValue(new MFString8().getArray()))
                 .addValue(new MetadataString().setName("extraChildTest").setValue(new MFString9().getArray())))
               .setFontStyle(new FontStyle().setJustify(new MFString10().getArray()))))

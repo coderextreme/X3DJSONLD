@@ -91,7 +91,7 @@ var ProtoInstance4 = null;
             .setGeometry((new autoclass.Text()).setString(java.newArray("java.lang.String", ["X3D Java","SAI Library","X3DJSAIL"]))
               .addComments((new autoclass.CommentsBlock("Comment example A, plain quotation marks: He said, \"Immel did it!\"")))
               .addComments((new autoclass.CommentsBlock("Comment example B, XML character entities: He said, &quot;Immel did it!&quot;")))
-              .setValue((new autoclass.MetadataSet()).setName("EscapedQuotationMarksMetadataSet")
+              .setMetadata((new autoclass.MetadataSet()).setName("EscapedQuotationMarksMetadataSet")
                 .addValue((new autoclass.MetadataString()).setName("quotesTestC").setValue(java.newArray("java.lang.String", ["MFString example C, backslash-escaped quotes: He said, \"Immel did it!\""])))
                 .addValue((new autoclass.MetadataString()).setName("extraChildTest").setValue(java.newArray("java.lang.String", ["checks MetadataSetObject addValue() method"]))))
               .setFontStyle((new autoclass.FontStyle()).setJustify(java.newArray("java.lang.String", ["MIDDLE","MIDDLE"])))))

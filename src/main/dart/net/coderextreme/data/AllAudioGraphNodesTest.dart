@@ -26,7 +26,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('modified'),
-              content_ : SFString('4 August 2021')),
+              content_ : SFString('26 November 2021')),
 
             meta(
               name_ : SFString('warning'),
@@ -38,7 +38,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('generator'),
-              content_ : SFString('X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit')),
+              content_ : SFString('X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit')),
 
             meta(
               name_ : SFString('license'),
@@ -55,15 +55,33 @@ var X3D0 =  X3D(
               appearance_ : 
                 Appearance(
                   acousticProperties_ : 
-                    AcousticProperties(),
+                    AcousticProperties(
+                      description_ : SFString('Testing of X3D4 nodes demonstrating W3C Audio API in progress'),
+                      diffuse_ : 0.25,
+                      refraction_ : 0.5,
+                      specular_ : 1),
                   material_ : 
                     Material())),
+
+            Sound(
+              location_ : SFVec3f([SFDouble(0), SFDouble(1.6), SFDouble(0)]),
+              source_ : 
+                AudioClip(
+                  description_ : SFString('testing'),
+                  url_ : MFString([SFString("sound/saxophone.mp3"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3")]))),
+
+            Sound(
+              location_ : SFVec3f([SFDouble(0), SFDouble(1.6), SFDouble(0)]),
+              source_ : 
+                MovieTexture(
+                  description_ : SFString('testing'),
+                  url_ : MFString([SFString("bogus.mpg"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/bogus.mpg")]))),
 
             SpatialSound(
               children_ : [
                 Analyser(
                   children_ : [
-                    AudioDestination(
+                    StreamAudioDestination(
                       children_ : [
                         BiquadFilter(
                           children_ : [
@@ -94,19 +112,5 @@ var X3D0 =  X3D(
 
                                                                 OscillatorSource(),
 
-                                                                StreamAudioSource()])])])])])]))])])])])])]),
-
-            Sound(
-              location_ : SFVec3f([SFDouble(0), SFDouble(1.6), SFDouble(0)]),
-              source_ : 
-                AudioClip(
-                  description_ : SFString('testing'),
-                  url_ : MFString([SFString("sound/saxophone.mp3"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3")]))),
-
-            Sound(
-              location_ : SFVec3f([SFDouble(0), SFDouble(1.6), SFDouble(0)]),
-              source_ : 
-                MovieTexture(
-                  description_ : SFString('testing'),
-                  url_ : MFString([SFString("bogus.mpg"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/bogus.mpg")])))]));
+                                                                StreamAudioSource()])])])])])]))])])])])])])]));
 void main() { exit(0); }
