@@ -32,6 +32,7 @@ pip3 install pyjnius
 pip3 install fastjsonschema
 pip3 install jsonschema
 pip3 install jschon
+pip3 install xmlschema
 
 # generate schemas
 # pushd src/main/shell
