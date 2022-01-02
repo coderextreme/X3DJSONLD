@@ -4,19 +4,23 @@
 <meta name="description" content="List of all X3D4 audio graph nodes to test infrastructure and validation support. Absence of attributes means that checking and removal of default values is working."></meta>
 <meta name="creator" content="Don Brutzman"></meta>
 <meta name="created" content="25 October 2020"></meta>
-<meta name="modified" content="4 August 2021"></meta>
+<meta name="modified" content="26 November 2021"></meta>
 <meta name="warning" content="Developmental test, no actual 3D model expected"></meta>
 <meta name="identifier" content="https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/AllAudioGraphNodesTest.x3d"></meta>
-<meta name="generator" content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"></meta>
+<meta name="generator" content="X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"></meta>
 <meta name="license" content="../license.html"></meta>
 </head>
 <Scene><WorldInfo title="AllAudioGraphNodes.x3d"></WorldInfo>
 <Shape><Box containerField="geometry"></Box>
-<Appearance><AcousticProperties></AcousticProperties>
+<Appearance><AcousticProperties description="Testing of X3D4 nodes demonstrating W3C Audio API in progress" diffuse="0.25" refraction="0.5" specular="1"></AcousticProperties>
 <Material></Material>
 </Appearance>
 </Shape>
-<SpatialSound><Analyser><AudioDestination><BiquadFilter><ChannelMerger><ChannelSelector><ChannelSplitter><Convolver><Delay><DynamicsCompressor><Gain><StreamAudioDestination><WaveShaper><!--The following X3DSoundSourceNode nodes have no audio-graph children--><BufferAudioSource></BufferAudioSource>
+<Sound location="0 1.6 0"><AudioClip containerField="source" description="testing" url="&quot;sound/saxophone.mp3&quot; &quot;https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3&quot;"></AudioClip>
+</Sound>
+<Sound location="0 1.6 0"><MovieTexture containerField="source" description="testing" url="&quot;bogus.mpg&quot; &quot;https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/bogus.mpg&quot;"></MovieTexture>
+</Sound>
+<SpatialSound><Analyser><StreamAudioDestination><BiquadFilter><ChannelMerger><ChannelSelector><ChannelSplitter><Convolver><Delay><DynamicsCompressor><Gain><StreamAudioDestination><WaveShaper><!--The following X3DSoundSourceNode nodes have no audio-graph children--><BufferAudioSource></BufferAudioSource>
 <ListenerPointSource></ListenerPointSource>
 <MicrophoneSource></MicrophoneSource>
 <OscillatorSource></OscillatorSource>
@@ -31,12 +35,8 @@
 </ChannelSelector>
 </ChannelMerger>
 </BiquadFilter>
-</AudioDestination>
+</StreamAudioDestination>
 </Analyser>
 </SpatialSound>
-<Sound location="0 1.6 0"><AudioClip containerField="source" description="testing" url="&quot;sound/saxophone.mp3&quot; &quot;https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3&quot;"></AudioClip>
-</Sound>
-<Sound location="0 1.6 0"><MovieTexture containerField="source" description="testing" url="&quot;bogus.mpg&quot; &quot;https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/bogus.mpg&quot;"></MovieTexture>
-</Sound>
 </Scene>
 </X3D>
