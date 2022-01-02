@@ -3,7 +3,9 @@ import 'dart:io';
 import '../x3d.dart';
 var X3D0 =  X3D(
 
+      cssClass_ : SFString('x3dModel.class'),
       profile_ : SFString('Full'),
+      style_ : SFString('x3dModel.style'),
       version_ : SFString('4.0'),
       /*x3dVersionComparisonTest for this model: supportsX3dVersion(X3D.VERSION_3_0)=true*/
       head_ : 
@@ -82,7 +84,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('modified'),
-              content_ : SFString('20 December 2020')),
+              content_ : SFString('19 December 2021')),
 
             meta(
               name_ : SFString('generator'),
@@ -156,6 +158,8 @@ var X3D0 =  X3D(
 
             WorldInfo(
               DEF_ : SFString('WorldInfoDEF'),
+              cssClass_ : SFString('worldInfoNode.class'),
+              style_ : SFString('worldInfoNode.style'),
               title_ : SFString('HelloWorldProgram produced by X3D Java SAI Library (X3DJSAIL)')),
 
             WorldInfo(
