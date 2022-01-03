@@ -1,8 +1,8 @@
 {
   "X3D": {
     "@profile": "Immersive",
-    "@version": "3.3",
-    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-3.3.xsd",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-4.0.xsd",
     "head": {
       "component": [
         {
@@ -53,7 +53,7 @@
         },
         {
           "@name": "translated",
-          "@content": "16 January 2021"
+          "@content": "2 January 2022"
         },
         {
           "@name": "generator",
@@ -257,7 +257,7 @@
                                           "ShaderPart": {
                                             "@url": [
                                               "../shaders/x_ite.vs",
-                                              "https://coderextreme.net/X3DJSONLD/src/main/src/main/shaders/x_ite.vs"
+                                              "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"
                                             ],
                                             "@type": "VERTEX"
                                           }
@@ -265,8 +265,8 @@
                                         {
                                           "ShaderPart": {
                                             "@url": [
-                                              "../shaders/pc_bubbles.fs",
-                                              "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"
+                                              "../shaders/x_itebubbles.fs",
+                                              "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"
                                             ],
                                             "@type": "FRAGMENT"
                                           }
@@ -278,7 +278,7 @@
                                 "-texture": {
                                   "ComposedCubeMapTexture": {
                                     "@DEF": "texture",
-                                    "-backTexture": {
+                                    "-back": {
                                       "ImageTexture": {
                                         "@url": [
                                           "../resources/images/all_probes/stpeters_cross/stpeters_back.png",
@@ -286,7 +286,7 @@
                                         ]
                                       }
                                     },
-                                    "-bottomTexture": {
+                                    "-bottom": {
                                       "ImageTexture": {
                                         "@url": [
                                           "../resources/images/all_probes/stpeters_cross/stpeters_bottom.png",
@@ -294,7 +294,7 @@
                                         ]
                                       }
                                     },
-                                    "-frontTexture": {
+                                    "-front": {
                                       "ImageTexture": {
                                         "@url": [
                                           "../resources/images/all_probes/stpeters_cross/stpeters_front.png",
@@ -302,7 +302,7 @@
                                         ]
                                       }
                                     },
-                                    "-leftTexture": {
+                                    "-left": {
                                       "ImageTexture": {
                                         "@url": [
                                           "../resources/images/all_probes/stpeters_cross/stpeters_left.png",
@@ -310,7 +310,7 @@
                                         ]
                                       }
                                     },
-                                    "-rightTexture": {
+                                    "-right": {
                                       "ImageTexture": {
                                         "@url": [
                                           "../resources/images/all_probes/stpeters_cross/stpeters_right.png",
@@ -318,7 +318,7 @@
                                         ]
                                       }
                                     },
-                                    "-topTexture": {
+                                    "-top": {
                                       "ImageTexture": {
                                         "@url": [
                                           "../resources/images/all_probes/stpeters_cross/stpeters_top.png",
