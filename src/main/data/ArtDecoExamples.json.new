@@ -51,7 +51,7 @@
         },
         {
           "@name": "translated",
-          "@content": "16 January 2021"
+          "@content": "2 January 2022"
         },
         {
           "@name": "generator",
@@ -686,7 +686,11 @@
                           {
                             "Inline": {
                               "@url": [
-                                "../data/gridBack.json"
+                                "../data/gridBack.json",
+                                "../data/gridBack.x3d",
+                                "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d",
+                                "gridBack.wrl",
+                                "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.wrl"
                               ]
                             }
                           }
