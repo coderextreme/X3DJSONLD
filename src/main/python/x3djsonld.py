@@ -1,5 +1,5 @@
 # Usage:  python3 x3djsonld.py [ file.json ] # optional file, assumes ../data/abox.json if not specified
-print("#", end="")
+print("#", end="")   # comment out output created by imports
 import json
 import sys
 from x3d import *
