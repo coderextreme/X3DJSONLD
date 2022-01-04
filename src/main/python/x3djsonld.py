@@ -1,8 +1,8 @@
 # Usage:  python3 x3djsonld.py [ file.json ] # optional file, assumes ../data/abox.json if not specified
-print("#", end="")   # comment out output created by imports
+# print("#", end="")   # comment out output created by importing x3d (see below)
 import json
 import sys
-from x3d import *
+# from x3d import *
 
 def parseArray(parent, data, indent=0):
     out = ""
