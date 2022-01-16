@@ -12154,10 +12154,8 @@
               "items": false
             },
             "@llimit": {
-              "$comment": "SFVec3f inputOutput",
+              "$comment": "MFFloat inputOutput",
               "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
               "items": {
                 "default": 0,
                 "type": "number"
@@ -12402,10 +12400,8 @@
               }
             },
             "@stiffness": {
-              "$comment": "SFVec3f inputOutput",
+              "$comment": "MFFloat inputOutput",
               "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
               "items": {
                 "default": 0,
                 "maximum": 1,
@@ -12424,10 +12420,8 @@
               }
             },
             "@ulimit": {
-              "$comment": "SFVec3f inputOutput",
+              "$comment": "MFFloat inputOutput",
               "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
               "items": {
                 "default": 0,
                 "type": "number"
@@ -23978,6 +23972,13 @@
               "default": false,
               "$comment": "SFBool initializeOnly",
               "type": "boolean"
+            },
+            "@sourceCode": {
+              "$comment": "xs:string inputOutput",
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
             },
             "@url": {
               "$comment": "MFString inputOutput",

@@ -6000,10 +6000,8 @@
               "items": false
             },
             "@llimit": {
-              "$comment": "SFVec3f inputOutput",
+              "$comment": "MFFloat inputOutput",
               "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
               "items": {
                 "default": 0,
                 "type": "number"
@@ -6196,10 +6194,8 @@
               }
             },
             "@stiffness": {
-              "$comment": "SFVec3f inputOutput",
+              "$comment": "MFFloat inputOutput",
               "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
               "items": {
                 "default": 0,
                 "maximum": 1,
@@ -6218,10 +6214,8 @@
               }
             },
             "@ulimit": {
-              "$comment": "SFVec3f inputOutput",
+              "$comment": "MFFloat inputOutput",
               "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
               "items": {
                 "default": 0,
                 "type": "number"
