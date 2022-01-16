@@ -5,7 +5,7 @@ X3D0.version = "3.0";
 let head1 = browser.currentScene.createNode("head");
 let meta2 = browser.currentScene.createNode("meta");
 meta2.name = "title";
-meta2.content = "gridBack.json";
+meta2.content = "gridBack.x3d";
 head1.meta = new MFNode();
 
 head1.meta[0] = meta2;

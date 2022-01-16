@@ -1,3767 +1,1118 @@
-from x3dpsail import *
-X3D0 = X3D()
-X3D0.setProfile("Immersive")
-X3D0.setVersion("3.3")
-head1 = head()
-meta2 = meta()
-meta2.setName("title")
-meta2.setContent("NancyPrototypes.x3d")
-
-head1.addMeta(meta2)
-meta3 = meta()
-meta3.setName("creator")
-meta3.setContent("Cindy Ballreich")
-
-head1.addMeta(meta3)
-meta4 = meta()
-meta4.setName("translators")
-meta4.setContent("Tom Miller and Don Brutzman, NPS")
-
-head1.addMeta(meta4)
-meta5 = meta()
-meta5.setName("created")
-meta5.setContent("9 July 2000")
-
-head1.addMeta(meta5)
-meta6 = meta()
-meta6.setName("modified")
-meta6.setContent("4 July 2020")
-
-head1.addMeta(meta6)
-meta7 = meta()
-meta7.setName("description")
-meta7.setContent("Canonical HAnim 1.1 specification example, using ProtoDeclaration and ProtoInstance instead of native X3D tags. Prototype definitions are a compatible combination of version 1.0 and 2.0 prototype interfaces.")
-
-head1.addMeta(meta7)
-meta8 = meta()
-meta8.setName("warning")
-meta8.setContent("using ProtoDeclare is only for developmental experimentation, use X3D native tags for Humanoids instead")
-
-head1.addMeta(meta8)
-meta9 = meta()
-meta9.setName("reference")
-meta9.setContent("NancyNativeTags.x3d")
-
-head1.addMeta(meta9)
-meta10 = meta()
-meta10.setName("TODO")
-meta10.setContent("Material color of neck and arms is ignored/incorrect in Xj3D, possily DEF/USE problem.")
-
-head1.addMeta(meta10)
-meta11 = meta()
-meta11.setName("identifier")
-meta11.setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/NancyPrototypes.x3d")
-
-head1.addMeta(meta11)
-meta12 = meta()
-meta12.setName("generator")
-meta12.setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")
-
-head1.addMeta(meta12)
-meta13 = meta()
-meta13.setName("license")
-meta13.setContent("../license.html")
-
-head1.addMeta(meta13)
-
-X3D0.setHead(head1)
-Scene14 = Scene()
-ProtoDeclare15 = ProtoDeclare()
-ProtoDeclare15.setName("Displacer")
-ProtoDeclare15.setAppinfo("A Displacer can be used in three different ways: (a) identify the vertices corresponding to a particular feature on a Segment (b) represent a particular muscular action which displaces the vertices in various directions (linearly or radially) and (c) represent a complete configuration of the vertices in a Segment.")
-ProtoDeclare15.setDocumentation("http://HAnim.org/Specifications/HAnim2001/part1/Displacer.html")
-ProtoInterface16 = ProtoInterface()
-field17 = field()
-field17.setName("name")
-field17.setAccessType("inputOutput")
-field17.setType("SFString")
-
-ProtoInterface16.addField(field17)
-field18 = field()
-field18.setName("coordIndex")
-field18.setAccessType("inputOutput")
-field18.setType("MFInt32")
-
-ProtoInterface16.addField(field18)
-field19 = field()
-field19.setName("displacements")
-field19.setAccessType("inputOutput")
-field19.setType("MFVec3f")
-
-ProtoInterface16.addField(field19)
-
-ProtoDeclare15.setProtoInterface(ProtoInterface16)
-ProtoBody20 = ProtoBody()
-WorldInfo21 = WorldInfo()
-WorldInfo21.setInfo(["null body node"])
-
-ProtoBody20.addChildren(WorldInfo21)
-
-ProtoDeclare15.setProtoBody(ProtoBody20)
-
-Scene14.addChildren(ProtoDeclare15)
-ProtoDeclare22 = ProtoDeclare()
-ProtoDeclare22.setName("Humanoid")
-ProtoDeclare22.setAppinfo("The Humanoid node serves as overall container for the Joint Segment Site and Viewpoint nodes which define the skeleton geometry and landmarks of the humanoid figure. Additionally the node provides a means for defining information about the author copyright and usage restrictions of the model.")
-ProtoDeclare22.setDocumentation("http://HAnim.org/Specifications/HAnim2001/part1/Humanoid.html")
-ProtoInterface23 = ProtoInterface()
-#HAnim v1.1 field definitions
-field24 = field()
-field24.setName("name")
-field24.setAccessType("inputOutput")
-field24.setType("SFString")
-
-ProtoInterface23.addField(field24)
-field25 = field()
-field25.setName("version")
-field25.setAccessType("inputOutput")
-field25.setAppinfo("legal values: 1.1 or 2.0")
-field25.setType("SFString")
-field25.setValue("1.1")
-
-ProtoInterface23.addField(field25)
-field26 = field()
-field26.setName("humanoidVersion")
-field26.setAccessType("inputOutput")
-field26.setAppinfo("Version of the humanoid being modeled. Hint: HAnim version 2.0")
-field26.setType("SFString")
-
-ProtoInterface23.addField(field26)
-field27 = field()
-field27.setName("info")
-field27.setAccessType("inputOutput")
-field27.setType("MFString")
-
-ProtoInterface23.addField(field27)
-field28 = field()
-field28.setName("translation")
-field28.setAccessType("inputOutput")
-field28.setType("SFVec3f")
-field28.setValue("0 0 0")
-
-ProtoInterface23.addField(field28)
-field29 = field()
-field29.setName("rotation")
-field29.setAccessType("inputOutput")
-field29.setType("SFRotation")
-field29.setValue("0 0 1 0")
-
-ProtoInterface23.addField(field29)
-field30 = field()
-field30.setName("center")
-field30.setAccessType("inputOutput")
-field30.setType("SFVec3f")
-field30.setValue("0 0 0")
-
-ProtoInterface23.addField(field30)
-field31 = field()
-field31.setName("scale")
-field31.setAccessType("inputOutput")
-field31.setType("SFVec3f")
-field31.setValue("1 1 1")
-
-ProtoInterface23.addField(field31)
-field32 = field()
-field32.setName("scaleOrientation")
-field32.setAccessType("inputOutput")
-field32.setType("SFRotation")
-field32.setValue("0 0 1 0")
-
-ProtoInterface23.addField(field32)
-field33 = field()
-field33.setName("bboxCenter")
-field33.setAccessType("initializeOnly")
-field33.setType("SFVec3f")
-field33.setValue("0 0 0")
-
-ProtoInterface23.addField(field33)
-field34 = field()
-field34.setName("bboxSize")
-field34.setAccessType("initializeOnly")
-field34.setType("SFVec3f")
-field34.setValue("-1 -1 -1")
-
-ProtoInterface23.addField(field34)
-field35 = field()
-field35.setName("humanoidBody")
-field35.setAccessType("inputOutput")
-field35.setAppinfo("HAnim 1.1 field container for body geometry Hint: replaced by 2.0 skeleton")
-field35.setDocumentation("http://HAnim.org/Specifications/HAnim1.1/#humanoid")
-field35.setType("MFNode")
-
-ProtoInterface23.addField(field35)
-field36 = field()
-field36.setName("skeleton")
-field36.setAccessType("inputOutput")
-field36.setAppinfo("HAnim 2.0 field container for body geometry Hint: replaces 1.1 humanoidBody")
-field36.setDocumentation("http://HAnim.org/Specifications/HAnim2001/part1/Humanoid.html")
-field36.setType("MFNode")
-
-ProtoInterface23.addField(field36)
-field37 = field()
-field37.setName("joints")
-field37.setAccessType("inputOutput")
-field37.setAppinfo("Container field for Joint nodes")
-field37.setType("MFNode")
-
-ProtoInterface23.addField(field37)
-field38 = field()
-field38.setName("segments")
-field38.setAccessType("inputOutput")
-field38.setAppinfo("Container field for Segment nodes")
-field38.setType("MFNode")
-
-ProtoInterface23.addField(field38)
-field39 = field()
-field39.setName("sites")
-field39.setAccessType("inputOutput")
-field39.setAppinfo("Container field for Site nodes")
-field39.setType("MFNode")
-
-ProtoInterface23.addField(field39)
-field40 = field()
-field40.setName("viewpoints")
-field40.setAccessType("inputOutput")
-field40.setAppinfo("Container field for Viewpoint nodes")
-field40.setType("MFNode")
-
-ProtoInterface23.addField(field40)
-field41 = field()
-field41.setName("skinCoord")
-field41.setAccessType("inputOutput")
-field41.setAppinfo("Hint: HAnim version 2.0")
-field41.setType("SFNode")
-#NULL node
-
-ProtoInterface23.addField(field41)
-field42 = field()
-field42.setName("skinNormal")
-field42.setAccessType("inputOutput")
-field42.setAppinfo("Hint: HAnim version 2.0")
-field42.setType("SFNode")
-#NULL node
-
-ProtoInterface23.addField(field42)
-
-ProtoDeclare22.setProtoInterface(ProtoInterface23)
-ProtoBody43 = ProtoBody()
-Transform44 = Transform()
-Transform44.setDEF("HumanoidTransform")
-IS45 = IS()
-connect46 = connect()
-connect46.setNodeField("translation")
-connect46.setProtoField("translation")
-
-IS45.addConnect(connect46)
-connect47 = connect()
-connect47.setNodeField("rotation")
-connect47.setProtoField("rotation")
-
-IS45.addConnect(connect47)
-connect48 = connect()
-connect48.setNodeField("scale")
-connect48.setProtoField("scale")
-
-IS45.addConnect(connect48)
-connect49 = connect()
-connect49.setNodeField("scaleOrientation")
-connect49.setProtoField("scaleOrientation")
-
-IS45.addConnect(connect49)
-connect50 = connect()
-connect50.setNodeField("center")
-connect50.setProtoField("center")
-
-IS45.addConnect(connect50)
-connect51 = connect()
-connect51.setNodeField("bboxCenter")
-connect51.setProtoField("bboxCenter")
-
-IS45.addConnect(connect51)
-connect52 = connect()
-connect52.setNodeField("bboxSize")
-connect52.setProtoField("bboxSize")
-
-IS45.addConnect(connect52)
-
-Transform44.setIS(IS45)
-Group53 = Group()
-Group53.setDEF("HumanoidGroup1")
-IS54 = IS()
-connect55 = connect()
-connect55.setNodeField("children")
-connect55.setProtoField("humanoidBody")
-
-IS54.addConnect(connect55)
-
-Group53.setIS(IS54)
-
-Transform44.addChildren(Group53)
-Group56 = Group()
-Group56.setDEF("HumanoidGroup2")
-IS57 = IS()
-connect58 = connect()
-connect58.setNodeField("children")
-connect58.setProtoField("skeleton")
-
-IS57.addConnect(connect58)
-
-Group56.setIS(IS57)
-
-Transform44.addChildren(Group56)
-Group59 = Group()
-Group59.setDEF("HumanoidGroup3")
-IS60 = IS()
-connect61 = connect()
-connect61.setNodeField("children")
-connect61.setProtoField("viewpoints")
-
-IS60.addConnect(connect61)
-
-Group59.setIS(IS60)
-
-Transform44.addChildren(Group59)
-
-ProtoBody43.addChildren(Transform44)
-
-ProtoDeclare22.setProtoBody(ProtoBody43)
-
-Scene14.addChildren(ProtoDeclare22)
-ProtoDeclare62 = ProtoDeclare()
-ProtoDeclare62.setName("Joint")
-ProtoDeclare62.setAppinfo("The Joint node is used as a building block to describe the articulations of the humanoid figure. Each articulation of the humanoid figure is represented by a Joint node each of which is organized into a hierarchy that describes the overall skeleton of the humanoid.")
-ProtoDeclare62.setDocumentation("http://HAnim.org/Specifications/HAnim2001/part1/Joint.html")
-ProtoInterface63 = ProtoInterface()
-field64 = field()
-field64.setName("name")
-field64.setAccessType("inputOutput")
-field64.setType("SFString")
-
-ProtoInterface63.addField(field64)
-field65 = field()
-field65.setName("ulimit")
-field65.setAccessType("inputOutput")
-field65.setType("MFFloat")
-
-ProtoInterface63.addField(field65)
-field66 = field()
-field66.setName("llimit")
-field66.setAccessType("inputOutput")
-field66.setType("MFFloat")
-
-ProtoInterface63.addField(field66)
-field67 = field()
-field67.setName("limitOrientation")
-field67.setAccessType("inputOutput")
-field67.setType("SFRotation")
-field67.setValue("0 0 1 0")
-
-ProtoInterface63.addField(field67)
-field68 = field()
-field68.setName("skinCoordIndex")
-field68.setAccessType("inputOutput")
-field68.setType("MFInt32")
-
-ProtoInterface63.addField(field68)
-field69 = field()
-field69.setName("skinCoordWeight")
-field69.setAccessType("inputOutput")
-field69.setType("MFFloat")
-
-ProtoInterface63.addField(field69)
-field70 = field()
-field70.setName("stiffness")
-field70.setAccessType("inputOutput")
-field70.setType("MFFloat")
-field70.setValue("0 0 0")
-
-ProtoInterface63.addField(field70)
-field71 = field()
-field71.setName("translation")
-field71.setAccessType("inputOutput")
-field71.setType("SFVec3f")
-field71.setValue("0 0 0")
-
-ProtoInterface63.addField(field71)
-field72 = field()
-field72.setName("rotation")
-field72.setAccessType("inputOutput")
-field72.setType("SFRotation")
-field72.setValue("0 0 1 0")
-
-ProtoInterface63.addField(field72)
-field73 = field()
-field73.setName("scale")
-field73.setAccessType("inputOutput")
-field73.setType("SFVec3f")
-field73.setValue("1 1 1")
-
-ProtoInterface63.addField(field73)
-field74 = field()
-field74.setName("scaleOrientation")
-field74.setAccessType("inputOutput")
-field74.setType("SFRotation")
-field74.setValue("0 0 1 0")
-
-ProtoInterface63.addField(field74)
-field75 = field()
-field75.setName("center")
-field75.setAccessType("inputOutput")
-field75.setType("SFVec3f")
-field75.setValue("0 0 0")
-
-ProtoInterface63.addField(field75)
-field76 = field()
-field76.setName("bboxCenter")
-field76.setAccessType("initializeOnly")
-field76.setType("SFVec3f")
-field76.setValue("0 0 0")
-
-ProtoInterface63.addField(field76)
-field77 = field()
-field77.setName("bboxSize")
-field77.setAccessType("initializeOnly")
-field77.setType("SFVec3f")
-field77.setValue("-1 -1 -1")
-
-ProtoInterface63.addField(field77)
-field78 = field()
-field78.setName("children")
-field78.setAccessType("inputOutput")
-field78.setType("MFNode")
-
-ProtoInterface63.addField(field78)
-field79 = field()
-field79.setName("addChildren")
-field79.setAccessType("inputOnly")
-field79.setType("MFNode")
-
-ProtoInterface63.addField(field79)
-field80 = field()
-field80.setName("removeChildren")
-field80.setAccessType("inputOnly")
-field80.setType("MFNode")
-
-ProtoInterface63.addField(field80)
-
-ProtoDeclare62.setProtoInterface(ProtoInterface63)
-ProtoBody81 = ProtoBody()
-Transform82 = Transform()
-Transform82.setDEF("JointTransform")
-IS83 = IS()
-connect84 = connect()
-connect84.setNodeField("translation")
-connect84.setProtoField("translation")
-
-IS83.addConnect(connect84)
-connect85 = connect()
-connect85.setNodeField("rotation")
-connect85.setProtoField("rotation")
-
-IS83.addConnect(connect85)
-connect86 = connect()
-connect86.setNodeField("scale")
-connect86.setProtoField("scale")
-
-IS83.addConnect(connect86)
-connect87 = connect()
-connect87.setNodeField("scaleOrientation")
-connect87.setProtoField("scaleOrientation")
-
-IS83.addConnect(connect87)
-connect88 = connect()
-connect88.setNodeField("center")
-connect88.setProtoField("center")
-
-IS83.addConnect(connect88)
-connect89 = connect()
-connect89.setNodeField("bboxCenter")
-connect89.setProtoField("bboxCenter")
-
-IS83.addConnect(connect89)
-connect90 = connect()
-connect90.setNodeField("bboxSize")
-connect90.setProtoField("bboxSize")
-
-IS83.addConnect(connect90)
-connect91 = connect()
-connect91.setNodeField("children")
-connect91.setProtoField("children")
-
-IS83.addConnect(connect91)
-connect92 = connect()
-connect92.setNodeField("addChildren")
-connect92.setProtoField("addChildren")
-
-IS83.addConnect(connect92)
-connect93 = connect()
-connect93.setNodeField("removeChildren")
-connect93.setProtoField("removeChildren")
-
-IS83.addConnect(connect93)
-
-Transform82.setIS(IS83)
-
-ProtoBody81.addChildren(Transform82)
-
-ProtoDeclare62.setProtoBody(ProtoBody81)
-
-Scene14.addChildren(ProtoDeclare62)
-ProtoDeclare94 = ProtoDeclare()
-ProtoDeclare94.setName("Segment")
-ProtoDeclare94.setAppinfo("The Segment node is used describe the attributes of the physical links between the joints of the humanoid figure. Each body part (pelvis thigh calf etc) of the humanoid figure is represented by a Segment node.")
-ProtoDeclare94.setDocumentation("http://HAnim.org/Specifications/HAnim2001/part1/Segment.html")
-ProtoInterface95 = ProtoInterface()
-field96 = field()
-field96.setName("name")
-field96.setAccessType("inputOutput")
-field96.setType("SFString")
-
-ProtoInterface95.addField(field96)
-field97 = field()
-field97.setName("mass")
-field97.setAccessType("inputOutput")
-field97.setType("SFFloat")
-field97.setValue("0")
-
-ProtoInterface95.addField(field97)
-field98 = field()
-field98.setName("centerOfMass")
-field98.setAccessType("inputOutput")
-field98.setType("SFVec3f")
-field98.setValue("0 0 0")
-
-ProtoInterface95.addField(field98)
-field99 = field()
-field99.setName("momentsOfInertia")
-field99.setAccessType("inputOutput")
-field99.setType("MFFloat")
-field99.setValue("0 0 0 0 0 0 0 0 0")
-
-ProtoInterface95.addField(field99)
-field100 = field()
-field100.setName("bboxCenter")
-field100.setAccessType("initializeOnly")
-field100.setType("SFVec3f")
-field100.setValue("0 0 0")
-
-ProtoInterface95.addField(field100)
-field101 = field()
-field101.setName("bboxSize")
-field101.setAccessType("initializeOnly")
-field101.setType("SFVec3f")
-field101.setValue("-1 -1 -1")
-
-ProtoInterface95.addField(field101)
-field102 = field()
-field102.setName("children")
-field102.setAccessType("inputOutput")
-field102.setType("MFNode")
-
-ProtoInterface95.addField(field102)
-field103 = field()
-field103.setName("addChildren")
-field103.setAccessType("inputOnly")
-field103.setType("MFNode")
-
-ProtoInterface95.addField(field103)
-field104 = field()
-field104.setName("removeChildren")
-field104.setAccessType("inputOnly")
-field104.setType("MFNode")
-
-ProtoInterface95.addField(field104)
-field105 = field()
-field105.setName("coord")
-field105.setAccessType("inputOutput")
-field105.setAppinfo("contains Coordinate nodes")
-field105.setType("SFNode")
-#NULL node
-
-ProtoInterface95.addField(field105)
-field106 = field()
-field106.setName("displacers")
-field106.setAccessType("inputOutput")
-field106.setAppinfo("contains Displacer nodes")
-field106.setType("MFNode")
-
-ProtoInterface95.addField(field106)
-
-ProtoDeclare94.setProtoInterface(ProtoInterface95)
-ProtoBody107 = ProtoBody()
-Group108 = Group()
-Group108.setDEF("SegmentGroup")
-IS109 = IS()
-connect110 = connect()
-connect110.setNodeField("bboxCenter")
-connect110.setProtoField("bboxCenter")
-
-IS109.addConnect(connect110)
-connect111 = connect()
-connect111.setNodeField("bboxSize")
-connect111.setProtoField("bboxSize")
-
-IS109.addConnect(connect111)
-connect112 = connect()
-connect112.setNodeField("children")
-connect112.setProtoField("children")
-
-IS109.addConnect(connect112)
-connect113 = connect()
-connect113.setNodeField("addChildren")
-connect113.setProtoField("addChildren")
-
-IS109.addConnect(connect113)
-connect114 = connect()
-connect114.setNodeField("removeChildren")
-connect114.setProtoField("removeChildren")
-
-IS109.addConnect(connect114)
-
-Group108.setIS(IS109)
-
-ProtoBody107.addChildren(Group108)
-
-ProtoDeclare94.setProtoBody(ProtoBody107)
-
-Scene14.addChildren(ProtoDeclare94)
-ProtoDeclare115 = ProtoDeclare()
-ProtoDeclare115.setName("Site")
-ProtoDeclare115.setAppinfo("The Site node can be used for three purposes: (a) to define an \"end effector\" location which can be used by an inverse kinematics system (b) to define an attachment point for accessories such as jewelry and clothing and (c) to define a location for a virtual camera in the reference frame of a Segment node (such as a view \"through the eyes\" of the humanoid for use in multi-user worlds).")
-ProtoDeclare115.setDocumentation("http://HAnim.org/Specifications/HAnim2001/part1/Site.html")
-ProtoInterface116 = ProtoInterface()
-field117 = field()
-field117.setName("name")
-field117.setAccessType("inputOutput")
-field117.setType("SFString")
-
-ProtoInterface116.addField(field117)
-field118 = field()
-field118.setName("translation")
-field118.setAccessType("inputOutput")
-field118.setType("SFVec3f")
-field118.setValue("0 0 0")
-
-ProtoInterface116.addField(field118)
-field119 = field()
-field119.setName("rotation")
-field119.setAccessType("inputOutput")
-field119.setType("SFRotation")
-field119.setValue("0 0 1 0")
-
-ProtoInterface116.addField(field119)
-field120 = field()
-field120.setName("scale")
-field120.setAccessType("inputOutput")
-field120.setType("SFVec3f")
-field120.setValue("1 1 1")
-
-ProtoInterface116.addField(field120)
-field121 = field()
-field121.setName("scaleOrientation")
-field121.setAccessType("inputOutput")
-field121.setType("SFRotation")
-field121.setValue("0 0 1 0")
-
-ProtoInterface116.addField(field121)
-field122 = field()
-field122.setName("center")
-field122.setAccessType("inputOutput")
-field122.setType("SFVec3f")
-field122.setValue("0 0 0")
-
-ProtoInterface116.addField(field122)
-field123 = field()
-field123.setName("bboxCenter")
-field123.setAccessType("initializeOnly")
-field123.setType("SFVec3f")
-field123.setValue("0 0 0")
-
-ProtoInterface116.addField(field123)
-field124 = field()
-field124.setName("bboxSize")
-field124.setAccessType("initializeOnly")
-field124.setType("SFVec3f")
-field124.setValue("-1 -1 -1")
-
-ProtoInterface116.addField(field124)
-field125 = field()
-field125.setName("children")
-field125.setAccessType("inputOutput")
-field125.setType("MFNode")
-
-ProtoInterface116.addField(field125)
-field126 = field()
-field126.setName("addChildren")
-field126.setAccessType("inputOnly")
-field126.setType("MFNode")
-
-ProtoInterface116.addField(field126)
-field127 = field()
-field127.setName("removeChildren")
-field127.setAccessType("inputOnly")
-field127.setType("MFNode")
-
-ProtoInterface116.addField(field127)
-
-ProtoDeclare115.setProtoInterface(ProtoInterface116)
-ProtoBody128 = ProtoBody()
-Transform129 = Transform()
-Transform129.setDEF("SiteTransform")
-IS130 = IS()
-connect131 = connect()
-connect131.setNodeField("translation")
-connect131.setProtoField("translation")
-
-IS130.addConnect(connect131)
-connect132 = connect()
-connect132.setNodeField("rotation")
-connect132.setProtoField("rotation")
-
-IS130.addConnect(connect132)
-connect133 = connect()
-connect133.setNodeField("scale")
-connect133.setProtoField("scale")
-
-IS130.addConnect(connect133)
-connect134 = connect()
-connect134.setNodeField("scaleOrientation")
-connect134.setProtoField("scaleOrientation")
-
-IS130.addConnect(connect134)
-connect135 = connect()
-connect135.setNodeField("center")
-connect135.setProtoField("center")
-
-IS130.addConnect(connect135)
-connect136 = connect()
-connect136.setNodeField("bboxCenter")
-connect136.setProtoField("bboxCenter")
-
-IS130.addConnect(connect136)
-connect137 = connect()
-connect137.setNodeField("bboxSize")
-connect137.setProtoField("bboxSize")
-
-IS130.addConnect(connect137)
-connect138 = connect()
-connect138.setNodeField("children")
-connect138.setProtoField("children")
-
-IS130.addConnect(connect138)
-connect139 = connect()
-connect139.setNodeField("addChildren")
-connect139.setProtoField("addChildren")
-
-IS130.addConnect(connect139)
-connect140 = connect()
-connect140.setNodeField("removeChildren")
-connect140.setProtoField("removeChildren")
-
-IS130.addConnect(connect140)
-
-Transform129.setIS(IS130)
-
-ProtoBody128.addChildren(Transform129)
-
-ProtoDeclare115.setProtoBody(ProtoBody128)
-
-Scene14.addChildren(ProtoDeclare115)
-#Start scene graph.
-ProtoInstance141 = ProtoInstance()
-ProtoInstance141.setName("Humanoid")
-ProtoInstance141.setDEF("Humanoid")
-fieldValue142 = fieldValue()
-fieldValue142.setName("name")
-fieldValue142.setValue("nancy")
-
-ProtoInstance141.addFieldValue(fieldValue142)
-fieldValue143 = fieldValue()
-fieldValue143.setName("version")
-fieldValue143.setValue("1.1")
-
-ProtoInstance141.addFieldValue(fieldValue143)
-fieldValue144 = fieldValue()
-fieldValue144.setName("info")
-fieldValue144.setValue("\"humanoidVersion=Nancy V1.2b\" \"authorName=Cindy Ballreich\" \"authorEmail=cindy@ballreich.net\" \"copyright=1997 3Name3D / Yglesias Wallock Divekar Inc. all rights reserved.\" \"creationDate=Tue Dec 30 08:30:08 PST 1997\" \"usageRestrictions=Noncommercial usage is ok if 3Name3D name and logo <www.ballreich.net/vrml/HAnim/small_logo.gif> is present and proper credit is given.\"")
-
-ProtoInstance141.addFieldValue(fieldValue144)
-fieldValue145 = fieldValue()
-fieldValue145.setName("humanoidBody")
-ProtoInstance146 = ProtoInstance()
-ProtoInstance146.setName("Joint")
-ProtoInstance146.setDEF("hanim_humanoid_root")
-fieldValue147 = fieldValue()
-fieldValue147.setName("name")
-fieldValue147.setValue("humanoid_root")
-
-ProtoInstance146.addFieldValue(fieldValue147)
-fieldValue148 = fieldValue()
-fieldValue148.setName("center")
-fieldValue148.setValue("-0.00405 0.855 -0.000113")
-
-ProtoInstance146.addFieldValue(fieldValue148)
-fieldValue149 = fieldValue()
-fieldValue149.setName("children")
-ProtoInstance150 = ProtoInstance()
-ProtoInstance150.setName("Joint")
-ProtoInstance150.setDEF("hanim_sacroiliac")
-fieldValue151 = fieldValue()
-fieldValue151.setName("name")
-fieldValue151.setValue("sacroiliac")
-
-ProtoInstance150.addFieldValue(fieldValue151)
-fieldValue152 = fieldValue()
-fieldValue152.setName("center")
-fieldValue152.setValue("0 1.01 -0.0204")
-
-ProtoInstance150.addFieldValue(fieldValue152)
-fieldValue153 = fieldValue()
-fieldValue153.setName("children")
-ProtoInstance154 = ProtoInstance()
-ProtoInstance154.setName("Segment")
-ProtoInstance154.setDEF("hanim_pelvis")
-fieldValue155 = fieldValue()
-fieldValue155.setName("name")
-fieldValue155.setValue("pelvis")
-
-ProtoInstance154.addFieldValue(fieldValue155)
-fieldValue156 = fieldValue()
-fieldValue156.setName("children")
-Shape157 = Shape()
-Appearance158 = Appearance()
-Material159 = Material()
-Material159.setDEF("Pants_Color")
-Material159.setAmbientIntensity(0.25)
-Material159.setDiffuseColor([0.054,0.233,0.39])
-
-Appearance158.setMaterial(Material159)
-
-Shape157.setAppearance(Appearance158)
-IndexedFaceSet160 = IndexedFaceSet()
-IndexedFaceSet160.setCoordIndex([0,1,40,-1,1,2,40,-1,2,3,40,-1,3,4,40,-1,4,5,40,-1,5,4,9,-1,4,3,8,-1,3,2,8,-1,2,1,6,-1,0,7,1,-1,7,6,1,-1,6,8,2,-1,9,4,10,-1,4,8,10,-1,8,6,12,-1,7,0,47,-1,50,5,9,-1,7,47,55,-1,55,13,7,-1,50,9,56,-1,9,10,14,-1,10,11,15,-1,11,12,16,-1,12,13,19,-1,13,55,17,-1,60,17,55,-1,17,19,13,-1,19,16,12,-1,16,15,11,-1,15,18,10,-1,14,56,9,-1,56,14,64,-1,17,60,20,-1,20,19,17,-1,21,64,14,-1,14,22,21,-1,15,16,24,-1,16,19,24,-1,19,20,26,-1,24,23,15,-1,64,21,69,-1,21,22,29,-1,19,26,25,-1,20,63,27,-1,27,26,20,-1,25,24,19,-1,30,29,22,-1,29,28,21,-1,28,69,21,-1,27,34,26,-1,69,28,79,-1,29,30,32,-1,30,23,33,-1,23,24,37,-1,25,26,34,-1,83,27,77,-1,37,33,23,-1,33,32,30,-1,31,79,28,-1,79,31,84,-1,32,33,36,-1,24,25,37,-1,34,27,83,-1,83,38,34,-1,34,37,25,-1,37,36,33,-1,36,35,32,-1,84,31,89,-1,31,35,89,-1,35,36,39,-1,36,37,39,-1,38,83,89,-1,89,39,38,-1,39,89,35,-1,40,41,0,-1,40,42,41,-1,40,43,42,-1,40,44,43,-1,40,45,44,-1,49,44,45,-1,48,43,44,-1,48,42,43,-1,46,41,42,-1,41,47,0,-1,41,46,47,-1,42,48,46,-1,51,44,49,-1,51,48,44,-1,48,52,53,-1,49,45,50,-1,56,49,50,-1,57,51,49,-1,58,53,52,-1,59,54,53,-1,62,55,54,-1,55,62,60,-1,54,59,62,-1,53,58,59,-1,51,61,58,-1,49,56,57,-1,64,57,56,-1,67,59,58,-1,68,62,59,-1,60,63,20,-1,60,62,63,-1,59,67,68,-1,58,61,67,-1,57,64,65,-1,65,66,57,-1,71,63,62,-1,69,65,64,-1,74,66,65,-1,78,68,67,-1,70,71,62,-1,63,72,27,-1,63,71,72,-1,68,78,76,-1,67,75,78,-1,66,74,75,-1,65,73,74,-1,65,69,73,-1,77,27,72,-1,71,82,72,-1,79,73,69,-1,81,75,74,-1,82,71,70,-1,77,72,83,-1,73,79,80,-1,84,80,79,-1,86,75,81,-1,83,72,82,-1,82,88,83,-1,70,87,82,-1,81,85,86,-1,89,80,84,-1,89,85,80,-1,90,86,85,-1,90,87,86,-1,89,83,88,-1,88,90,89,-1,85,89,90,-1,50,45,5,-1,45,40,5,-1,10,8,11,-1,8,12,11,-1,18,22,10,-1,22,14,10,-1,57,66,51,-1,66,61,51,-1,51,58,48,-1,58,52,48,-1,48,53,46,-1,53,54,46,-1,76,70,68,-1,70,62,68,-1,29,32,28,-1,28,32,31,-1,32,35,31,-1,85,81,80,-1,81,73,80,-1,81,74,73,-1,39,37,38,-1,37,34,38,-1,82,87,88,-1,87,90,88,-1,87,78,86,-1,78,75,86,-1,61,66,67,-1,66,75,67,-1,22,18,15,-1,23,30,15,-1,30,22,15,-1,13,12,7,-1,12,6,7,-1,46,54,47,-1,54,55,47,-1,87,76,78,-1,87,70,76,-1])
-IndexedFaceSet160.setCreaseAngle(1.14)
-Coordinate161 = Coordinate()
-Coordinate161.setPoint([0,1.06,0.0218,0.0561,1.07,0.00726,0.0851,1.07,-0.0115,0.104,1.07,-0.0497,0.0851,1.07,-0.0851,0.032,1.06,-0.0985,0.0873,1.04,0.0078,0.033,1.04,0.0395,0.123,1.05,-0.0405,0.0609,1.02,-0.106,0.0894,0.996,-0.106,0.143,1,-0.0309,0.117,1,0.0164,0.0314,0.999,0.0502,0.0314,0.96,-0.13,0.156,0.966,-0.0405,0.156,0.968,-0.00724,0.0341,0.954,0.0513,0.115,0.96,-0.0916,0.121,0.926,0.0352,0.0357,0.92,0.0497,0.0314,0.91,-0.146,0.0991,0.91,-0.131,0.169,0.883,-0.0448,0.169,0.885,-0.00939,0.123,0.873,0.0384,0.0926,0.872,0.047,0.0325,0.873,0.0287,0.0293,0.866,-0.142,0.102,0.869,-0.131,0.129,0.868,-0.103,0.0314,0.84,-0.125,0.101,0.844,-0.122,0.133,0.846,-0.0878,0.0653,0.835,0.0132,0.0615,0.824,-0.111,0.0985,0.823,-0.101,0.132,0.826,-0.0448,0.0609,0.821,-0.0158,0.0599,0.812,-0.0545,0,1.08,-0.0266,-0.0561,1.07,0.00726,-0.0851,1.07,-0.0115,-0.104,1.07,-0.0497,-0.0851,1.07,-0.0851,-0.032,1.06,-0.0985,-0.0873,1.04,0.0078,-0.033,1.04,0.0395,-0.123,1.05,-0.0405,-0.0609,1.02,-0.106,0,1.02,-0.108,-0.0894,0.996,-0.106,-0.143,1,-0.0309,-0.144,1,-0.011,-0.117,1,0.0164,-0.0314,0.999,0.0502,0,0.961,-0.123,-0.0314,0.96,-0.13,-0.156,0.966,-0.0405,-0.156,0.968,-0.00724,-0.0341,0.954,0.0513,-0.115,0.96,-0.0916,-0.121,0.926,0.0352,-0.0357,0.92,0.0497,0,0.91,-0.127,-0.0314,0.91,-0.146,-0.0991,0.91,-0.131,-0.167,0.911,-0.0448,-0.167,0.912,-0.00671,0,0.883,-0.129,-0.123,0.873,0.0384,-0.0926,0.872,0.047,-0.0325,0.873,0.0287,-0.0293,0.866,-0.142,-0.102,0.869,-0.131,-0.129,0.868,-0.103,-0.166,0.863,-0.0148,0,0.863,-0.00456,-0.166,0.862,-0.0459,0,0.858,-0.1,-0.0314,0.84,-0.125,-0.101,0.844,-0.122,-0.0653,0.835,0.0132,0,0.839,-0.0217,0,0.835,-0.0867,-0.0615,0.824,-0.111,-0.0985,0.823,-0.101,-0.132,0.826,-0.0448,-0.0609,0.821,-0.0158,0,0.831,-0.0626,-0.0599,0.812,-0.0545])
-
-IndexedFaceSet160.setCoord(Coordinate161)
-
-Shape157.setGeometry(IndexedFaceSet160)
-
-fieldValue156.addChildren(Shape157)
-
-ProtoInstance154.addFieldValue(fieldValue156)
-
-fieldValue153.addChildren(ProtoInstance154)
-ProtoInstance162 = ProtoInstance()
-ProtoInstance162.setName("Joint")
-ProtoInstance162.setDEF("hanim_l_hip")
-fieldValue163 = fieldValue()
-fieldValue163.setName("name")
-fieldValue163.setValue("l_hip")
-
-ProtoInstance162.addFieldValue(fieldValue163)
-fieldValue164 = fieldValue()
-fieldValue164.setName("center")
-fieldValue164.setValue("0.122 0.888271 -0.0693267")
-
-ProtoInstance162.addFieldValue(fieldValue164)
-fieldValue165 = fieldValue()
-fieldValue165.setName("children")
-ProtoInstance166 = ProtoInstance()
-ProtoInstance166.setName("Segment")
-ProtoInstance166.setDEF("hanim_l_thigh")
-fieldValue167 = fieldValue()
-fieldValue167.setName("name")
-fieldValue167.setValue("l_thigh")
-
-ProtoInstance166.addFieldValue(fieldValue167)
-fieldValue168 = fieldValue()
-fieldValue168.setName("children")
-Shape169 = Shape()
-Appearance170 = Appearance()
-Material171 = Material()
-Material171.setUSE("Pants_Color")
-
-Appearance170.setMaterial(Material171)
-
-Shape169.setAppearance(Appearance170)
-IndexedFaceSet172 = IndexedFaceSet()
-IndexedFaceSet172.setCoordIndex([0,4,5,-1,3,4,0,-1,0,7,1,-1,0,8,7,-1,0,6,8,-1,0,5,6,-1,0,2,3,-1,0,1,2,-1,9,2,1,-1,10,3,2,-1,11,4,3,-1,12,5,4,-1,13,6,5,-1,15,7,8,-1,9,1,7,-1,7,15,9,-1,8,14,15,-1,5,16,13,-1,5,12,16,-1,4,11,12,-1,3,10,11,-1,2,9,10,-1,20,13,16,-1,18,11,10,-1,19,12,11,-1,20,16,12,-1,23,15,14,-1,15,23,24,-1,12,19,20,-1,11,18,19,-1,10,17,18,-1,26,18,17,-1,27,19,18,-1,27,20,19,-1,28,21,20,-1,29,23,22,-1,23,29,30,-1,20,32,28,-1,20,27,32,-1,18,26,27,-1,17,25,26,-1,25,31,30,-1,30,29,26,-1,30,26,25,-1,29,28,27,-1,29,27,26,-1,28,32,27,-1,22,23,14,-1,20,21,13,-1,21,22,13,-1,22,14,13,-1,9,15,24,-1,10,9,17,-1,9,24,17,-1,6,13,8,-1,13,14,8,-1,28,29,21,-1,29,22,21,-1,24,31,17,-1,31,25,17,-1,30,31,23,-1,31,24,23,-1])
-IndexedFaceSet172.setCreaseAngle(1.32)
-Coordinate173 = Coordinate()
-Coordinate173.setPoint([0.0969,0.804,-0.0486,0.101,0.876,0.0336,0.17,0.894,-0.00778,0.17,0.891,-0.076,0.124,0.858,-0.129,0.076,0.843,-0.143,0.025,0.819,-0.0889,0.0507,0.847,0.0196,0.00349,0.826,-0.0287,0.0991,0.808,0.0406,0.161,0.814,-0.00187,0.165,0.808,-0.0755,0.122,0.788,-0.126,0.00993,0.762,-0.0937,0.00993,0.762,-0.0309,0.0491,0.777,0.0185,0.0755,0.766,-0.139,0.13,0.597,-0.00618,0.132,0.6,-0.0593,0.108,0.603,-0.105,0.0722,0.601,-0.118,0.0314,0.59,-0.0953,0.0239,0.566,-0.0427,0.047,0.566,0.0051,0.0878,0.581,0.0217,0.114,0.499,-0.0132,0.116,0.488,-0.061,0.103,0.567,-0.0991,0.0362,0.557,-0.0926,0.025,0.486,-0.047,0.0507,0.497,-0.00188,0.0862,0.513,0.018,0.0733,0.579,-0.108])
-
-IndexedFaceSet172.setCoord(Coordinate173)
-
-Shape169.setGeometry(IndexedFaceSet172)
-
-fieldValue168.addChildren(Shape169)
-
-ProtoInstance166.addFieldValue(fieldValue168)
-
-fieldValue165.addChildren(ProtoInstance166)
-ProtoInstance174 = ProtoInstance()
-ProtoInstance174.setName("Joint")
-ProtoInstance174.setDEF("hanim_l_knee")
-fieldValue175 = fieldValue()
-fieldValue175.setName("name")
-fieldValue175.setValue("l_knee")
-
-ProtoInstance174.addFieldValue(fieldValue175)
-fieldValue176 = fieldValue()
-fieldValue176.setName("center")
-fieldValue176.setValue("0.0738 0.517 -0.0284")
-
-ProtoInstance174.addFieldValue(fieldValue176)
-fieldValue177 = fieldValue()
-fieldValue177.setName("children")
-ProtoInstance178 = ProtoInstance()
-ProtoInstance178.setName("Segment")
-ProtoInstance178.setDEF("hanim_l_calf")
-fieldValue179 = fieldValue()
-fieldValue179.setName("name")
-fieldValue179.setValue("l_calf")
-
-ProtoInstance178.addFieldValue(fieldValue179)
-fieldValue180 = fieldValue()
-fieldValue180.setName("children")
-Shape181 = Shape()
-Appearance182 = Appearance()
-Material183 = Material()
-Material183.setUSE("Pants_Color")
-
-Appearance182.setMaterial(Material183)
-
-Shape181.setAppearance(Appearance182)
-IndexedFaceSet184 = IndexedFaceSet()
-IndexedFaceSet184.setCoordIndex([2,1,0,-1,2,3,1,-1,2,4,3,-1,2,5,4,-1,2,6,5,-1,2,7,6,-1,2,8,7,-1,2,0,8,-1,9,8,0,-1,10,6,7,-1,11,5,6,-1,12,4,5,-1,12,3,4,-1,13,1,3,-1,1,13,14,-1,3,12,13,-1,5,11,12,-1,6,10,11,-1,8,9,15,-1,22,13,12,-1,13,22,14,-1,17,15,9,-1,20,12,11,-1,21,22,12,-1,23,9,14,-1,9,23,16,-1,14,22,23,-1,12,20,21,-1,15,17,18,-1,9,16,17,-1,24,17,16,-1,25,18,17,-1,26,19,18,-1,27,20,19,-1,28,21,20,-1,29,22,21,-1,30,23,22,-1,31,16,23,-1,23,30,31,-1,22,29,30,-1,21,28,29,-1,20,27,28,-1,19,26,27,-1,18,25,26,-1,17,24,25,-1,16,31,24,-1,33,26,25,-1,36,29,28,-1,37,31,30,-1,29,36,30,-1,25,24,33,-1,31,37,24,-1,32,33,24,-1,24,37,32,-1,38,37,30,-1,30,36,38,-1,41,33,32,-1,42,39,34,-1,44,36,35,-1,45,38,36,-1,46,37,38,-1,38,45,46,-1,36,44,45,-1,35,43,44,-1,39,42,47,-1,32,40,41,-1,40,46,45,-1,41,40,45,-1,41,45,44,-1,44,43,42,-1,44,42,41,-1,43,47,42,-1,39,35,28,-1,35,36,28,-1,34,39,27,-1,39,28,27,-1,33,34,26,-1,34,27,26,-1,33,41,34,-1,41,42,34,-1,40,32,46,-1,32,37,46,-1,10,19,11,-1,19,20,11,-1,14,9,1,-1,9,0,1,-1,8,15,7,-1,7,15,10,-1,15,19,10,-1,15,18,19,-1,43,35,47,-1,35,39,47,-1])
-IndexedFaceSet184.setCreaseAngle(1.57)
-Coordinate185 = Coordinate()
-Coordinate185.setPoint([0.0883,0.532,-0.00349,0.0609,0.533,-0.00833,0.0814,0.55,-0.0395,0.0529,0.536,-0.0368,0.0577,0.544,-0.0577,0.0722,0.546,-0.0717,0.0975,0.54,-0.0647,0.105,0.539,-0.0438,0.104,0.539,-0.0223,0.0862,0.506,0.0158,0.101,0.51,-0.0798,0.0706,0.51,-0.101,0.0406,0.513,-0.0744,0.0368,0.51,-0.0357,0.0556,0.506,-0.000272,0.117,0.508,-0.0169,0.0878,0.361,-0.0126,0.123,0.363,-0.04,0.123,0.363,-0.0663,0.107,0.367,-0.107,0.0588,0.365,-0.122,0.0228,0.358,-0.0926,0.0239,0.358,-0.0475,0.0497,0.358,-0.0234,0.118,0.311,-0.0411,0.118,0.309,-0.0685,0.105,0.31,-0.108,0.0572,0.308,-0.123,0.0201,0.309,-0.0937,0.0191,0.311,-0.0508,0.0475,0.307,-0.0282,0.0883,0.309,-0.018,0.0959,0.124,-0.04,0.0905,0.12,-0.0647,0.0738,0.117,-0.0814,0.0373,0.121,-0.0636,0.0416,0.124,-0.0416,0.0744,0.13,-0.0212,0.0561,0.13,-0.0245,0.0529,0.121,-0.0873,0.0948,0.0897,-0.0368,0.0916,0.0779,-0.0604,0.0717,0.0854,-0.0765,0.0406,0.0918,-0.0626,0.0384,0.0881,-0.0363,0.054,0.0972,-0.0175,0.0765,0.11,-0.0169,0.0486,0.0999,-0.0835])
-
-IndexedFaceSet184.setCoord(Coordinate185)
-
-Shape181.setGeometry(IndexedFaceSet184)
-
-fieldValue180.addChildren(Shape181)
-
-ProtoInstance178.addFieldValue(fieldValue180)
-
-fieldValue177.addChildren(ProtoInstance178)
-ProtoInstance186 = ProtoInstance()
-ProtoInstance186.setName("Joint")
-ProtoInstance186.setDEF("hanim_l_ankle")
-fieldValue187 = fieldValue()
-fieldValue187.setName("name")
-fieldValue187.setValue("l_ankle")
-
-ProtoInstance186.addFieldValue(fieldValue187)
-fieldValue188 = fieldValue()
-fieldValue188.setName("center")
-fieldValue188.setValue("0.0645 0.0719 -0.048")
-
-ProtoInstance186.addFieldValue(fieldValue188)
-fieldValue189 = fieldValue()
-fieldValue189.setName("children")
-ProtoInstance190 = ProtoInstance()
-ProtoInstance190.setName("Segment")
-ProtoInstance190.setDEF("hanim_l_hindfoot")
-fieldValue191 = fieldValue()
-fieldValue191.setName("name")
-fieldValue191.setValue("l_hindfoot")
-
-ProtoInstance190.addFieldValue(fieldValue191)
-fieldValue192 = fieldValue()
-fieldValue192.setName("children")
-Shape193 = Shape()
-Appearance194 = Appearance()
-Material195 = Material()
-Material195.setDEF("Shoe_Color")
-Material195.setAmbientIntensity(0.25)
-
-Appearance194.setMaterial(Material195)
-
-Shape193.setAppearance(Appearance194)
-IndexedFaceSet196 = IndexedFaceSet()
-IndexedFaceSet196.setCoordIndex([2,1,0,-1,4,3,1,-1,2,4,1,-1,3,6,5,-1,1,3,5,-1,6,8,7,-1,5,6,7,-1,8,10,9,-1,7,8,9,-1,10,12,11,-1,9,10,11,-1,12,14,13,-1,11,12,13,-1,14,16,15,-1,13,14,15,-1,16,18,17,-1,15,16,17,-1,18,20,19,-1,17,18,19,-1,20,22,21,-1,19,20,21,-1,22,24,23,-1,21,22,23,-1,24,25,0,-1,23,24,0,-1,25,4,2,-1,0,25,2,-1,18,26,20,-1,16,26,18,-1,27,26,16,-1,14,27,16,-1,12,27,14,-1,28,27,12,-1,29,28,12,-1,10,29,12,-1,8,29,10,-1,6,37,8,-1,24,30,25,-1,31,30,24,-1,22,31,24,-1,32,31,22,-1,20,32,22,-1,33,32,20,-1,26,33,20,-1,34,33,26,-1,27,34,26,-1,35,34,27,-1,28,35,27,-1,29,35,28,-1,36,35,29,-1,8,36,29,-1,37,36,8,-1,6,38,37,-1,3,38,6,-1,39,38,3,-1,30,39,25,-1,41,40,30,-1,31,41,30,-1,42,41,31,-1,32,42,31,-1,43,42,32,-1,33,43,32,-1,44,43,33,-1,34,44,33,-1,45,44,34,-1,35,45,34,-1,46,45,35,-1,36,46,35,-1,47,46,36,-1,37,47,36,-1,38,47,37,-1,48,47,38,-1,49,48,38,-1,39,49,38,-1,40,49,39,-1,30,40,39,-1,48,49,50,-1,47,48,50,-1,46,47,50,-1,45,46,50,-1,44,45,50,-1,43,44,50,-1,42,43,50,-1,41,42,50,-1,40,41,50,-1,49,40,50,-1,11,13,15,-1,11,15,17,-1,9,11,17,-1,9,17,19,-1,7,9,19,-1,7,19,21,-1,5,7,21,-1,5,21,23,-1,5,23,0,-1,1,5,0,-1,3,4,39,-1,4,25,39,-1])
-IndexedFaceSet196.setCreaseAngle(1.57)
-Coordinate197 = Coordinate()
-Coordinate197.setPoint([0.0529,0,-0.0923,0.0863,0,-0.0862,0.0727,0,-0.0994,0.0863,0.0219,-0.0862,0.0727,0.0219,-0.0994,0.1,0,-0.0594,0.1,0.0219,-0.0594,0.113,0,0.0645,0.113,0.0219,0.0645,0.112,0,0.117,0.112,0.0156,0.117,0.0701,0,0.146,0.0701,0.0156,0.146,0.0468,0,0.153,0.0468,0.0156,0.153,0.0215,0,0.146,0.0215,0.0156,0.146,0.0165,0,0.125,0.0165,0.0156,0.125,0.0211,0,0.0377,0.0211,0.0219,0.0377,0.0393,0,-0.0129,0.0393,0.0219,-0.0129,0.0433,0,-0.0534,0.0433,0.0219,-0.0534,0.0529,0.0219,-0.0923,0.0305,0.0253,0.0938,0.0505,0.0253,0.099,0.0854,0.0253,0.0834,0.102,0.0253,0.0707,0.0568,0.0573,-0.0918,0.0492,0.0573,-0.0497,0.0435,0.0573,-0.0225,0.0442,0.0573,0.0235,0.0623,0.0573,0.0366,0.0911,0.0573,0.0159,0.0962,0.0573,-0.0121,0.0911,0.0573,-0.0482,0.0758,0.0573,-0.0899,0.0676,0.0573,-0.0962,0.0578,0.0953,-0.0896,0.0489,0.0953,-0.0757,0.0447,0.0953,-0.0432,0.0451,0.0953,-0.0128,0.0624,0.0953,-0.00466,0.0857,0.0953,-0.0134,0.0953,0.0953,-0.038,0.0843,0.0953,-0.0803,0.0761,0.0953,-0.0889,0.0682,0.0953,-0.0929,0.0675,0.13,-0.0608])
-
-IndexedFaceSet196.setCoord(Coordinate197)
-
-Shape193.setGeometry(IndexedFaceSet196)
-
-fieldValue192.addChildren(Shape193)
-
-ProtoInstance190.addFieldValue(fieldValue192)
-
-fieldValue189.addChildren(ProtoInstance190)
-
-ProtoInstance186.addFieldValue(fieldValue189)
-
-fieldValue177.addChildren(ProtoInstance186)
-
-ProtoInstance174.addFieldValue(fieldValue177)
-
-fieldValue165.addChildren(ProtoInstance174)
-
-ProtoInstance162.addFieldValue(fieldValue165)
-
-fieldValue153.addChildren(ProtoInstance162)
-ProtoInstance198 = ProtoInstance()
-ProtoInstance198.setName("Joint")
-ProtoInstance198.setDEF("hanim_r_hip")
-fieldValue199 = fieldValue()
-fieldValue199.setName("name")
-fieldValue199.setValue("r_hip")
-
-ProtoInstance198.addFieldValue(fieldValue199)
-fieldValue200 = fieldValue()
-fieldValue200.setName("center")
-fieldValue200.setValue("-0.11 0.892362 -0.0732533")
-
-ProtoInstance198.addFieldValue(fieldValue200)
-fieldValue201 = fieldValue()
-fieldValue201.setName("children")
-ProtoInstance202 = ProtoInstance()
-ProtoInstance202.setName("Segment")
-ProtoInstance202.setDEF("hanim_r_thigh")
-fieldValue203 = fieldValue()
-fieldValue203.setName("name")
-fieldValue203.setValue("r_thigh")
-
-ProtoInstance202.addFieldValue(fieldValue203)
-fieldValue204 = fieldValue()
-fieldValue204.setName("children")
-Shape205 = Shape()
-Appearance206 = Appearance()
-Material207 = Material()
-Material207.setUSE("Pants_Color")
-
-Appearance206.setMaterial(Material207)
-
-Shape205.setAppearance(Appearance206)
-IndexedFaceSet208 = IndexedFaceSet()
-IndexedFaceSet208.setCoordIndex([5,4,0,-1,0,4,3,-1,1,7,0,-1,7,8,0,-1,8,6,0,-1,6,5,0,-1,3,2,0,-1,2,1,0,-1,1,2,9,-1,2,3,10,-1,3,4,11,-1,4,5,12,-1,5,6,13,-1,8,7,15,-1,7,1,9,-1,9,15,7,-1,15,14,8,-1,13,16,5,-1,16,12,5,-1,12,11,4,-1,11,10,3,-1,10,9,2,-1,12,16,20,-1,13,14,22,-1,14,15,23,-1,24,23,15,-1,23,22,14,-1,20,19,12,-1,17,18,26,-1,18,19,27,-1,19,20,27,-1,20,21,28,-1,22,23,29,-1,30,29,23,-1,27,26,18,-1,26,25,17,-1,30,31,25,-1,25,26,29,-1,25,29,30,-1,26,27,28,-1,26,28,29,-1,27,20,28,-1,24,15,9,-1,22,21,13,-1,29,28,22,-1,28,21,22,-1,24,31,23,-1,31,30,23,-1,25,31,17,-1,31,24,17,-1,17,24,10,-1,24,9,10,-1,18,10,11,-1,18,17,10,-1,18,12,19,-1,18,11,12,-1,21,20,13,-1,20,16,13,-1,14,13,8,-1,13,6,8,-1])
-IndexedFaceSet208.setCreaseAngle(1.61)
-Coordinate209 = Coordinate()
-Coordinate209.setPoint([-0.0969,0.804,-0.0486,-0.101,0.876,0.0336,-0.17,0.894,-0.00778,-0.17,0.891,-0.076,-0.124,0.858,-0.129,-0.076,0.843,-0.143,-0.025,0.819,-0.0889,-0.0507,0.847,0.0196,-0.00349,0.826,-0.0287,-0.0991,0.808,0.0406,-0.161,0.814,-0.00187,-0.165,0.808,-0.0755,-0.122,0.788,-0.126,-0.00993,0.762,-0.0937,-0.00993,0.762,-0.0309,-0.0491,0.777,0.0185,-0.0755,0.766,-0.139,-0.13,0.597,-0.00618,-0.132,0.6,-0.0593,-0.108,0.603,-0.105,-0.0722,0.601,-0.118,-0.0314,0.59,-0.0953,-0.0239,0.566,-0.0427,-0.047,0.566,0.0051,-0.0878,0.581,0.0217,-0.114,0.499,-0.0132,-0.116,0.488,-0.061,-0.103,0.567,-0.0991,-0.0362,0.557,-0.0926,-0.025,0.486,-0.047,-0.0507,0.497,-0.00188,-0.0862,0.513,0.018])
-
-IndexedFaceSet208.setCoord(Coordinate209)
-
-Shape205.setGeometry(IndexedFaceSet208)
-
-fieldValue204.addChildren(Shape205)
-
-ProtoInstance202.addFieldValue(fieldValue204)
-
-fieldValue201.addChildren(ProtoInstance202)
-ProtoInstance210 = ProtoInstance()
-ProtoInstance210.setName("Joint")
-ProtoInstance210.setDEF("hanim_r_knee")
-fieldValue211 = fieldValue()
-fieldValue211.setName("name")
-fieldValue211.setValue("r_knee")
-
-ProtoInstance210.addFieldValue(fieldValue211)
-fieldValue212 = fieldValue()
-fieldValue212.setName("center")
-fieldValue212.setValue("-0.0699 0.51 -0.0166")
-
-ProtoInstance210.addFieldValue(fieldValue212)
-fieldValue213 = fieldValue()
-fieldValue213.setName("children")
-ProtoInstance214 = ProtoInstance()
-ProtoInstance214.setName("Segment")
-ProtoInstance214.setDEF("hanim_r_calf")
-fieldValue215 = fieldValue()
-fieldValue215.setName("name")
-fieldValue215.setValue("r_calf")
-
-ProtoInstance214.addFieldValue(fieldValue215)
-fieldValue216 = fieldValue()
-fieldValue216.setName("children")
-Shape217 = Shape()
-Appearance218 = Appearance()
-Material219 = Material()
-Material219.setUSE("Pants_Color")
-
-Appearance218.setMaterial(Material219)
-
-Shape217.setAppearance(Appearance218)
-IndexedFaceSet220 = IndexedFaceSet()
-IndexedFaceSet220.setCoordIndex([14,25,18,-1,25,32,18,-1,32,27,18,-1,27,22,18,-1,22,10,18,-1,10,6,18,-1,6,8,18,-1,8,14,18,-1,14,8,17,-1,6,10,9,-1,10,22,24,-1,22,27,39,-1,27,32,39,-1,32,25,42,-1,25,14,30,-1,17,30,14,-1,30,42,25,-1,42,39,32,-1,39,24,22,-1,24,9,10,-1,4,17,8,-1,39,42,43,-1,30,43,42,-1,17,4,1,-1,24,39,26,-1,39,43,44,-1,30,17,34,-1,16,34,17,-1,34,43,30,-1,44,26,39,-1,0,1,4,-1,1,16,17,-1,16,1,3,-1,1,0,2,-1,0,5,7,-1,5,26,28,-1,26,44,45,-1,44,43,46,-1,43,34,36,-1,34,16,15,-1,15,36,34,-1,36,46,43,-1,46,45,44,-1,45,28,26,-1,28,7,5,-1,7,2,0,-1,2,3,1,-1,3,15,16,-1,45,46,37,-1,36,15,20,-1,36,37,46,-1,13,2,7,-1,3,20,15,-1,3,2,13,-1,36,20,29,-1,29,37,36,-1,13,21,23,-1,21,33,23,-1,41,37,40,-1,37,29,31,-1,29,20,19,-1,19,31,29,-1,31,40,37,-1,40,38,41,-1,35,23,33,-1,23,12,13,-1,12,11,13,-1,31,19,11,-1,40,31,11,-1,40,11,12,-1,12,23,38,-1,12,38,40,-1,23,35,38,-1,28,21,7,-1,21,13,7,-1,45,33,28,-1,33,21,28,-1,33,45,41,-1,45,37,41,-1,33,41,35,-1,41,38,35,-1,20,3,47,-1,11,19,47,-1,19,20,47,-1,13,47,3,-1,13,11,47,-1,4,8,6,-1,26,5,24,-1,5,9,24,-1,6,9,4,-1,9,0,4,-1,9,5,0,-1])
-IndexedFaceSet220.setCreaseAngle(1.57)
-Coordinate221 = Coordinate()
-Coordinate221.setPoint([-0.123,0.363,-0.0663,-0.123,0.363,-0.04,-0.118,0.309,-0.0685,-0.118,0.311,-0.0411,-0.117,0.508,-0.0169,-0.107,0.367,-0.107,-0.105,0.539,-0.0438,-0.105,0.31,-0.108,-0.104,0.539,-0.0223,-0.101,0.51,-0.0798,-0.0975,0.54,-0.0647,-0.0948,0.0897,-0.0368,-0.0916,0.0779,-0.0604,-0.0905,0.12,-0.0647,-0.0883,0.532,-0.00349,-0.0883,0.309,-0.018,-0.0878,0.361,-0.0126,-0.0862,0.506,0.0158,-0.0814,0.55,-0.0395,-0.0765,0.11,-0.0169,-0.0744,0.13,-0.0212,-0.0738,0.117,-0.0814,-0.0722,0.546,-0.0717,-0.0717,0.0854,-0.0765,-0.0706,0.51,-0.101,-0.0609,0.533,-0.00833,-0.0588,0.365,-0.122,-0.0577,0.544,-0.0577,-0.0572,0.308,-0.123,-0.0561,0.13,-0.0245,-0.0556,0.506,-0.000272,-0.054,0.0972,-0.0175,-0.0529,0.536,-0.0368,-0.0529,0.121,-0.0873,-0.0497,0.358,-0.0234,-0.0486,0.0999,-0.0835,-0.0475,0.307,-0.0282,-0.0416,0.124,-0.0416,-0.0406,0.0918,-0.0626,-0.0406,0.513,-0.0744,-0.0384,0.0881,-0.0363,-0.0373,0.121,-0.0636,-0.0368,0.51,-0.0357,-0.0239,0.358,-0.0475,-0.0228,0.358,-0.0926,-0.0201,0.309,-0.0937,-0.0191,0.311,-0.0508,-0.0985,0.125,-0.0375])
-
-IndexedFaceSet220.setCoord(Coordinate221)
-
-Shape217.setGeometry(IndexedFaceSet220)
-
-fieldValue216.addChildren(Shape217)
-
-ProtoInstance214.addFieldValue(fieldValue216)
-
-fieldValue213.addChildren(ProtoInstance214)
-ProtoInstance222 = ProtoInstance()
-ProtoInstance222.setName("Joint")
-ProtoInstance222.setDEF("hanim_r_ankle")
-fieldValue223 = fieldValue()
-fieldValue223.setName("name")
-fieldValue223.setValue("r_ankle")
-
-ProtoInstance222.addFieldValue(fieldValue223)
-fieldValue224 = fieldValue()
-fieldValue224.setName("center")
-fieldValue224.setValue("-0.064 0.0753 -0.0412")
-
-ProtoInstance222.addFieldValue(fieldValue224)
-fieldValue225 = fieldValue()
-fieldValue225.setName("children")
-ProtoInstance226 = ProtoInstance()
-ProtoInstance226.setName("Segment")
-ProtoInstance226.setDEF("hanim_r_hindfoot")
-fieldValue227 = fieldValue()
-fieldValue227.setName("name")
-fieldValue227.setValue("r_hindfoot")
-
-ProtoInstance226.addFieldValue(fieldValue227)
-fieldValue228 = fieldValue()
-fieldValue228.setName("children")
-Shape229 = Shape()
-Appearance230 = Appearance()
-Material231 = Material()
-Material231.setUSE("Shoe_Color")
-
-Appearance230.setMaterial(Material231)
-
-Shape229.setAppearance(Appearance230)
-IndexedFaceSet232 = IndexedFaceSet()
-IndexedFaceSet232.setCoordIndex([6,50,0,-1,50,8,7,-1,50,7,0,-1,1,9,8,-1,1,8,50,-1,49,10,9,-1,49,9,1,-1,46,11,10,-1,46,10,49,-1,2,12,11,-1,2,11,46,-1,3,13,12,-1,3,12,2,-1,4,14,13,-1,4,13,3,-1,45,14,4,-1,47,15,45,-1,19,15,47,-1,48,18,19,-1,5,16,18,-1,5,18,48,-1,6,17,16,-1,6,16,5,-1,0,7,17,-1,0,17,6,-1,14,20,21,-1,14,21,13,-1,13,21,12,-1,12,21,22,-1,12,22,11,-1,11,22,10,-1,17,23,16,-1,16,23,24,-1,16,24,18,-1,18,24,25,-1,18,25,19,-1,19,25,26,-1,19,26,15,-1,15,26,20,-1,20,26,27,-1,20,27,21,-1,21,27,28,-1,21,28,22,-1,22,28,29,-1,10,30,9,-1,9,30,31,-1,9,31,8,-1,8,31,32,-1,17,32,23,-1,23,33,34,-1,23,34,35,-1,23,35,24,-1,24,35,36,-1,24,36,25,-1,25,36,37,-1,25,37,26,-1,26,37,38,-1,26,38,27,-1,27,38,39,-1,27,39,28,-1,28,39,40,-1,28,40,29,-1,29,40,41,-1,29,41,30,-1,30,41,42,-1,30,42,31,-1,31,42,43,-1,31,43,32,-1,32,43,33,-1,32,33,23,-1,44,43,42,-1,44,42,41,-1,44,41,40,-1,44,40,39,-1,44,39,38,-1,44,38,37,-1,44,37,36,-1,44,36,35,-1,44,35,34,-1,44,34,33,-1,44,33,43,-1,4,3,2,-1,45,4,2,-1,45,2,46,-1,47,45,46,-1,48,46,49,-1,5,48,49,-1,5,49,1,-1,6,5,1,-1,6,1,50,-1,30,10,29,-1,10,22,29,-1,17,7,32,-1,7,8,32,-1,19,47,48,-1,47,46,48,-1,20,14,15,-1,14,45,15,-1])
-IndexedFaceSet232.setCreaseAngle(1.57)
-Coordinate233 = Coordinate()
-Coordinate233.setPoint([-0.0727,0,-0.0994,-0.1,0,-0.0594,-0.0701,0,0.146,-0.0468,0,0.153,-0.0215,0,0.146,-0.0433,0,-0.0534,-0.0529,0,-0.0923,-0.0727,0.0219,-0.0994,-0.0863,0.0219,-0.0862,-0.1,0.0219,-0.0594,-0.108,0.0219,-0.00479,-0.112,0.0156,0.117,-0.0701,0.0156,0.146,-0.0468,0.0156,0.153,-0.0215,0.0156,0.146,-0.0165,0.017,0.0777,-0.0433,0.0219,-0.0534,-0.0529,0.0219,-0.0923,-0.0445,0.0273,-0.0189,-0.0265,0.0253,0.0549,-0.0305,0.0253,0.0938,-0.069,0.0253,0.0938,-0.102,0.0253,0.0707,-0.0568,0.0573,-0.0918,-0.0492,0.0573,-0.0497,-0.0424,0.0573,-0.00142,-0.0478,0.0573,0.0341,-0.0623,0.0573,0.0366,-0.0864,0.0573,0.0245,-0.0962,0.0573,-0.0121,-0.0845,0.0573,-0.0764,-0.0758,0.0573,-0.0899,-0.0676,0.0573,-0.0962,-0.0578,0.0953,-0.0896,-0.0489,0.0953,-0.0757,-0.0459,0.0953,-0.0615,-0.0435,0.0953,-0.0292,-0.0485,0.0953,-0.00582,-0.0624,0.0953,-0.00466,-0.0857,0.0953,-0.0134,-0.0953,0.0953,-0.038,-0.0843,0.0953,-0.0803,-0.0761,0.0953,-0.0889,-0.0682,0.0953,-0.0929,-0.0675,0.13,-0.0608,-0.0165,0,0.125,-0.112,0,0.117,-0.0165,0,0.0777,-0.0393,0,-0.0129,-0.108,0,-0.00479,-0.0863,0,-0.0862])
-
-IndexedFaceSet232.setCoord(Coordinate233)
-
-Shape229.setGeometry(IndexedFaceSet232)
-
-fieldValue228.addChildren(Shape229)
-
-ProtoInstance226.addFieldValue(fieldValue228)
-
-fieldValue225.addChildren(ProtoInstance226)
-
-ProtoInstance222.addFieldValue(fieldValue225)
-
-fieldValue213.addChildren(ProtoInstance222)
-
-ProtoInstance210.addFieldValue(fieldValue213)
-
-fieldValue201.addChildren(ProtoInstance210)
-
-ProtoInstance198.addFieldValue(fieldValue201)
-
-fieldValue153.addChildren(ProtoInstance198)
-
-ProtoInstance150.addFieldValue(fieldValue153)
-
-fieldValue149.addChildren(ProtoInstance150)
-ProtoInstance234 = ProtoInstance()
-ProtoInstance234.setName("Joint")
-ProtoInstance234.setDEF("hanim_vl1")
-fieldValue235 = fieldValue()
-fieldValue235.setName("name")
-fieldValue235.setValue("vl1")
-
-ProtoInstance234.addFieldValue(fieldValue235)
-fieldValue236 = fieldValue()
-fieldValue236.setName("center")
-fieldValue236.setValue("-0.00405 1.07 -0.0275")
-
-ProtoInstance234.addFieldValue(fieldValue236)
-fieldValue237 = fieldValue()
-fieldValue237.setName("children")
-ProtoInstance238 = ProtoInstance()
-ProtoInstance238.setName("Segment")
-ProtoInstance238.setDEF("hanim_c7")
-fieldValue239 = fieldValue()
-fieldValue239.setName("name")
-fieldValue239.setValue("l1")
-
-ProtoInstance238.addFieldValue(fieldValue239)
-fieldValue240 = fieldValue()
-fieldValue240.setName("children")
-Shape241 = Shape()
-Appearance242 = Appearance()
-Material243 = Material()
-Material243.setDEF("Shirt_Color")
-Material243.setAmbientIntensity(0.25)
-Material243.setDiffuseColor([0.6,0.0745,0.1137])
-
-Appearance242.setMaterial(Material243)
-ImageTexture244 = ImageTexture()
-ImageTexture244.setDEF("small_logo_Tex")
-ImageTexture244.setUrl(["small_logo.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/small_logo.gif"])
-
-Appearance242.setTexture(ImageTexture244)
-
-Shape241.setAppearance(Appearance242)
-IndexedFaceSet245 = IndexedFaceSet()
-IndexedFaceSet245.setCoordIndex([0,1,2,-1,3,0,2,-1,4,5,6,-1,6,7,4,-1,8,7,6,-1,6,9,8,-1,9,10,8,-1,6,5,11,-1,9,6,12,-1,11,12,6,-1,12,10,9,-1,7,8,13,-1,13,4,7,-1,14,15,16,-1,15,17,13,-1,4,13,17,-1,17,15,18,-1,13,19,15,-1,19,13,8,-1,19,16,15,-1,16,19,8,-1,17,20,4,-1,5,4,20,-1,18,21,17,-1,20,17,21,-1,16,22,14,-1,22,16,23,-1,8,23,16,-1,23,8,10,-1,24,25,26,-1,26,27,24,-1,25,28,26,-1,28,29,30,-1,30,26,28,-1,31,32,33,-1,32,25,33,-1,25,24,34,-1,33,25,34,-1,24,35,34,-1,27,35,24,-1,33,36,31,-1,27,26,37,-1,37,26,30,-1,38,37,30,-1,33,34,39,-1,39,34,35,-1,39,35,40,-1,41,38,30,-1,35,27,42,-1,37,42,27,-1,40,35,42,-1,42,37,43,-1,37,38,44,-1,44,43,37,-1,36,45,46,-1,36,33,45,-1,40,42,47,-1,43,47,42,-1,47,48,40,-1,39,40,48,-1,47,43,49,-1,43,44,49,-1,50,49,44,-1,51,46,52,-1,46,45,52,-1,52,45,53,-1,33,53,45,-1,33,39,53,-1,49,54,47,-1,48,47,54,-1,55,56,52,-1,57,52,53,-1,57,55,52,-1,58,57,53,-1,59,58,53,-1,53,39,59,-1,39,48,59,-1,59,48,54,-1,58,59,60,-1,54,49,61,-1,59,54,61,-1,60,59,61,-1,49,50,62,-1,63,62,50,-1,62,61,49,-1,64,63,50,-1,63,64,65,-1,65,62,63,-1,66,60,61,-1,62,65,67,-1,68,67,65,-1,64,69,70,-1,64,70,65,-1,70,68,65,-1,69,71,72,-1,72,70,69,-1,73,74,75,-1,66,76,60,-1,67,77,62,-1,62,77,61,-1,77,66,61,-1,66,77,78,-1,77,67,79,-1,79,67,68,-1,79,78,77,-1,68,70,80,-1,70,72,80,-1,80,79,68,-1,74,73,81,-1,73,76,82,-1,82,81,73,-1,76,66,83,-1,78,83,66,-1,83,82,76,-1,78,79,84,-1,79,80,84,-1,84,85,78,-1,86,84,80,-1,81,82,87,-1,87,88,81,-1,82,83,89,-1,83,78,89,-1,89,87,82,-1,78,85,89,-1,90,91,92,-1,92,93,90,-1,90,94,91,-1,95,96,94,-1,94,90,95,-1,29,96,97,-1,96,95,97,-1,97,30,29,-1,30,97,41,-1,41,97,95,-1,98,99,100,-1,98,91,99,-1,101,92,91,-1,98,101,91,-1,101,102,92,-1,92,102,93,-1,36,103,31,-1,51,103,36,46,-1,103,100,31,-1,100,103,98,-1,104,90,93,-1,90,104,95,-1,95,105,41,-1,104,105,95,-1,106,101,98,-1,102,101,106,-1,107,93,102,-1,93,107,104,-1,108,104,107,-1,107,109,108,-1,110,105,104,-1,104,108,110,-1,109,107,111,-1,107,102,111,-1,111,102,106,-1,111,112,109,-1,106,112,111,-1,113,110,108,-1,110,113,114,-1,51,52,115,-1,116,115,117,-1,117,106,116,-1,118,109,112,-1,119,108,109,-1,108,119,113,-1,109,118,119,-1,120,113,119,-1,119,121,120,-1,52,56,122,-1,122,115,52,-1,115,122,123,-1,117,124,125,-1,106,117,125,-1,118,112,106,125,-1,119,118,125,-1,121,119,125,-1,126,124,123,-1,127,114,113,-1,114,127,128,-1,113,120,127,-1,114,128,129,-1,130,126,123,-1,122,130,123,-1,131,120,121,-1,131,127,120,-1,132,129,128,-1,128,127,132,-1,74,81,133,-1,81,134,133,-1,121,135,131,-1,136,132,127,-1,132,136,137,-1,138,71,129,-1,138,129,132,-1,137,138,132,-1,139,72,71,-1,72,139,80,-1,71,138,139,-1,140,135,121,-1,140,121,125,-1,141,127,131,-1,127,141,136,-1,131,135,141,-1,142,141,135,-1,143,136,141,-1,136,143,137,-1,141,142,143,-1,144,138,137,-1,144,139,138,-1,143,144,137,-1,145,146,134,-1,145,140,146,-1,134,81,145,-1,147,135,140,-1,135,147,142,-1,140,145,147,-1,148,80,139,-1,80,148,86,-1,139,144,148,-1,149,143,142,-1,149,144,143,-1,142,150,149,-1,151,148,144,-1,144,149,151,-1,152,145,81,-1,81,88,152,-1,153,147,145,-1,153,142,147,-1,145,152,153,-1,153,150,142,-1,154,86,148,-1,148,151,154,-1,155,28,25,-1,155,29,28,-1,155,25,32,-1,155,32,31,-1,155,31,100,-1,155,100,99,-1,155,99,91,-1,155,91,94,-1,155,94,96,-1,155,96,29,-1,156,151,149,-1,156,154,151,-1,156,149,150,-1,156,150,153,-1,156,153,152,-1,156,152,88,-1,156,88,87,-1,156,87,89,-1,156,89,85,-1,156,85,84,-1,156,84,86,-1,156,86,154,-1,76,157,60,-1,76,73,158,157,-1,159,158,73,75,160,-1,161,56,55,-1,60,162,58,-1,162,60,157,-1,161,55,163,-1,57,164,163,55,-1,160,163,164,-1,160,164,159,-1,164,57,165,-1,164,165,159,-1,57,58,166,165,-1,166,58,162,-1,165,166,159,-1,166,162,157,158,159,-1,140,125,167,-1,124,168,125,-1,168,167,125,-1,124,169,168,-1,146,140,167,170,-1,168,170,167,-1,168,169,170,-1,146,170,171,-1,169,171,170,-1,172,134,146,171,-1,134,172,130,-1,169,124,126,173,-1,173,126,130,-1,169,173,172,171,-1,173,130,172,-1,122,74,133,174,-1,133,134,174,-1,130,122,174,-1,134,130,174,-1,122,56,175,74,-1,74,175,176,-1,175,56,161,176,-1,74,176,75,-1,176,161,163,-1,176,160,75,-1,176,163,160,-1,115,116,177,51,-1,106,98,177,116,-1,51,177,103,-1,177,98,103,-1])
-IndexedFaceSet245.setCreaseAngle(1.59)
-Coordinate246 = Coordinate()
-Coordinate246.setPoint([0.043,1.25,0.0614,0.101,1.25,0.0614,0.103,1.31,0.0195,0.021,1.32,0.0276,0.0572,1.27,-0.153,0.0524,1.15,-0.134,0,1.19,-0.14,0,1.26,-0.147,-0.0572,1.27,-0.153,-0.0228,1.18,-0.14,-0.0524,1.15,-0.134,0,1.13,-0.126,-0.0228,1.13,-0.124,0,1.31,-0.146,-0.0545,1.35,-0.138,0,1.35,-0.136,-0.0593,1.3,-0.151,0.0593,1.3,-0.151,0.0545,1.35,-0.138,-0.0255,1.3,-0.146,0.0975,1.26,-0.15,0.1,1.3,-0.148,-0.1,1.3,-0.148,-0.0975,1.26,-0.15,-0.117,1.41,-0.0395,-0.0674,1.45,-0.0314,-0.0926,1.41,-0.0937,-0.124,1.4,-0.0706,-0.0583,1.44,-0.0615,-0.0228,1.46,-0.0872,-0.0534,1.42,-0.112,-0.0228,1.42,0.00351,-0.0593,1.43,-0.0185,-0.0787,1.39,-0.00293,-0.112,1.4,-0.0131,-0.164,1.39,-0.0373,-0.0153,1.39,0.0159,-0.0953,1.35,-0.136,-0.0545,1.35,-0.138,-0.139,1.34,0.00297,-0.137,1.34,-0.0368,0,1.35,-0.136,-0.156,1.35,-0.0915,-0.132,1.29,-0.127,-0.1,1.3,-0.148,-0.0418,1.35,0.0168,-0.013,1.37,0.0167,-0.151,1.28,-0.0878,-0.136,1.32,-0.0406,-0.124,1.26,-0.125,-0.0975,1.26,-0.15,0.00228,1.37,0.0167,-0.00959,1.32,0.0276,-0.0918,1.31,0.0195,-0.141,1.25,-0.0744,-0.0316,1.25,0.0614,-0.00261,1.25,0.0458,-0.0611,1.25,0.0668,-0.0896,1.25,0.0614,-0.126,1.24,0.012,-0.126,1.22,0.0141,-0.129,1.17,-0.0523,-0.115,1.16,-0.105,-0.0851,1.18,-0.134,-0.0524,1.15,-0.134,-0.083,1.13,-0.122,-0.117,1.15,-0.018,-0.11,1.1,-0.0846,-0.0808,1.1,-0.111,-0.0228,1.13,-0.124,-0.0524,1.1,-0.119,0,1.13,-0.126,-0.0228,1.1,-0.116,-0.0563,1.15,0.0377,-0.00476,1.18,0.0458,-0.0343,1.18,0.0485,-0.0966,1.15,-0.00413,-0.12,1.1,-0.0373,-0.121,1.07,-0.0356,-0.106,1.07,-0.0711,-0.0475,1.06,-0.105,0,1.08,0.0556,-0.0787,1.08,0.0347,-0.103,1.08,0.00296,-0.0975,1.01,-0.0873,-0.134,0.998,-0.0314,-0.0475,1.02,-0.109,-0.0325,1.02,0.0529,0,1.02,0.0422,-0.0975,1.02,0.0132,0.0926,1.41,-0.0937,0.0674,1.45,-0.0314,0.117,1.41,-0.0395,0.124,1.4,-0.0706,0.0583,1.44,-0.0615,0.0534,1.42,-0.112,0.0228,1.46,-0.0872,0,1.4,-0.112,0.0787,1.39,-0.00293,0.0593,1.43,-0.0185,0.0228,1.42,0.00351,0.112,1.4,-0.0131,0.164,1.39,-0.0373,0.0153,1.39,0.0159,0.0953,1.35,-0.136,0.0545,1.35,-0.138,0.139,1.34,0.00297,0.156,1.35,-0.0915,0.132,1.29,-0.127,0.151,1.28,-0.0878,0.1,1.3,-0.148,0.137,1.34,-0.0368,0.147,1.32,-0.0406,0.124,1.26,-0.125,0.0975,1.26,-0.15,0.021,1.32,0.0276,0.0532,1.35,0.0168,0.103,1.31,0.0195,0.135,1.29,-0.0406,0.141,1.25,-0.0744,0.132,1.18,-0.083,0.134,1.19,-0.0572,0.014,1.25,0.0458,0.043,1.25,0.0614,0.101,1.25,0.0614,0.138,1.24,0.012,0.065,1.23,0.0743,0.115,1.16,-0.105,0.0851,1.18,-0.134,0.0524,1.15,-0.134,0.043,1.2,0.0641,0.127,1.14,-0.0427,0.083,1.13,-0.122,0.0162,1.18,0.0458,0.0457,1.18,0.0485,0.117,1.15,-0.018,0.11,1.1,-0.0846,0.0808,1.1,-0.111,0.0524,1.1,-0.119,0.0228,1.1,-0.116,0.108,1.15,-0.00413,0.12,1.1,-0.0373,0.121,1.07,-0.0356,0.106,1.07,-0.0711,0.0475,1.06,-0.105,0.0787,1.08,0.0347,0.0844,1.15,0.0297,0.103,1.08,0.00296,0,1.07,-0.11,0.0975,1.01,-0.0873,0.134,0.998,-0.0475,0.0475,1.02,-0.109,0.0325,1.02,0.0529,0.0975,1.02,0.0132,0,1.02,-0.117,0,1.44,-0.0389,0,1.01,-0.0259,-0.104,1.19,0.0423,-0.0778,1.19,0.0642,-0.078,1.19,0.0644,-0.0493,1.2,0.0664,-0.0281,1.22,0.0587,-0.104,1.2,0.0568,-0.0484,1.21,0.0692,-0.0549,1.21,0.0708,-0.0806,1.21,0.0713,-0.0852,1.21,0.0703,0.116,1.19,0.043,0.114,1.21,0.0572,0.0967,1.21,0.0701,0.11,1.19,0.0502,0.093,1.19,0.0622,0.0832,1.19,0.0662,0.0863,1.21,0.0728,0.0154,1.21,0.0458,-0.00393,1.21,0.0458,-0.0145,1.2,0.0512,0.0534,1.35,0.0168])
-
-IndexedFaceSet245.setCoord(Coordinate246)
-TextureCoordinate247 = TextureCoordinate()
-TextureCoordinate247.setPoint([0.1611,-0.02056,0.9468,-0.02056,0.9739,0.9344,-0.137,1.094,0.1973,0.6424,0.2231,0.04876,0.5054,0.2466,0.5054,0.5929,0.8135,0.6424,0.6282,0.1972,0.7876,0.04876,0.5054,-0.05018,0.6282,-0.05018,0.5054,0.8403,0.7989,1.038,0.5054,1.038,0.8248,0.7908,0.186,0.7908,0.2118,1.038,0.6427,0.7908,-0.01977,0.5929,-0.03324,0.7908,1.044,0.7908,1.031,0.5929,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0])
-
-IndexedFaceSet245.setTexCoord(TextureCoordinate247)
-
-Shape241.setGeometry(IndexedFaceSet245)
-
-fieldValue240.addChildren(Shape241)
-
-ProtoInstance238.addFieldValue(fieldValue240)
-
-fieldValue237.addChildren(ProtoInstance238)
-ProtoInstance248 = ProtoInstance()
-ProtoInstance248.setName("Joint")
-ProtoInstance248.setDEF("hanim_l_shoulder")
-fieldValue249 = fieldValue()
-fieldValue249.setName("name")
-fieldValue249.setValue("l_shoulder")
-
-ProtoInstance248.addFieldValue(fieldValue249)
-fieldValue250 = fieldValue()
-fieldValue250.setName("center")
-fieldValue250.setValue("0.167 1.36 -0.0518")
-
-ProtoInstance248.addFieldValue(fieldValue250)
-fieldValue251 = fieldValue()
-fieldValue251.setName("children")
-ProtoInstance252 = ProtoInstance()
-ProtoInstance252.setName("Segment")
-ProtoInstance252.setDEF("hanim_l_upperarm")
-fieldValue253 = fieldValue()
-fieldValue253.setName("name")
-fieldValue253.setValue("l_upperarm")
-
-ProtoInstance252.addFieldValue(fieldValue253)
-fieldValue254 = fieldValue()
-fieldValue254.setName("children")
-Transform255 = Transform()
-Transform255.setDEF("l_upperarm_adjust")
-Transform255.setCenter([0.182,1.22,-0.047])
-Transform255.setRotation([1,0,0,0.119])
-Transform255.setTranslation([0,0.0004203,-0.01665])
-Shape256 = Shape()
-Appearance257 = Appearance()
-Material258 = Material()
-Material258.setDEF("Skin_Color")
-Material258.setAmbientIntensity(0.25)
-Material258.setDiffuseColor([0.749,0.601,0.462])
-
-Appearance257.setMaterial(Material258)
-
-Shape256.setAppearance(Appearance257)
-IndexedFaceSet259 = IndexedFaceSet()
-IndexedFaceSet259.setCoordIndex([2,1,0,-1,2,3,1,-1,2,4,3,-1,2,0,5,-1,6,5,0,-1,7,2,5,-1,8,4,2,-1,8,3,4,-1,9,1,3,-1,10,0,1,-1,0,10,6,-1,1,9,10,-1,3,8,9,-1,2,7,8,-1,5,6,7,-1,11,7,6,-1,14,9,8,-1,15,10,9,-1,11,6,10,-1,10,15,11,-1,9,14,15,-1,8,13,14,-1,8,16,13,-1,7,11,12,-1,21,15,14,-1,15,17,11,-1,15,21,17,-1,16,19,13,-1,13,19,20,-1,21,14,20,-1,14,13,20,-1,12,17,18,-1,12,11,17,-1,12,18,16,-1,18,19,16,-1,12,16,7,-1,16,8,7,-1,19,18,17,-1,20,19,21,-1,19,17,21,-1])
-IndexedFaceSet259.setCreaseAngle(1.65)
-Coordinate260 = Coordinate()
-Coordinate260.setPoint([0.174,1.37,-0.0625,0.185,1.38,-0.0395,0.156,1.39,-0.0464,0.174,1.37,-0.0158,0.154,1.37,-0.0185,0.157,1.38,-0.0733,0.182,1.33,-0.0728,0.151,1.33,-0.0937,0.15,1.34,-0.000787,0.185,1.33,-0.00025,0.201,1.33,-0.0411,0.189,1.26,-0.0808,0.155,1.26,-0.0867,0.151,1.26,-0.000789,0.19,1.26,-0.00401,0.209,1.26,-0.0427,0.141,1.26,-0.0421,0.203,1.08,-0.0744,0.162,1.05,-0.0561,0.169,1.08,-0.00885,0.208,1.07,-0.00133,0.221,1.08,-0.0352])
-
-IndexedFaceSet259.setCoord(Coordinate260)
-
-Shape256.setGeometry(IndexedFaceSet259)
-
-Transform255.addChildren(Shape256)
-
-fieldValue254.addChildren(Transform255)
-
-ProtoInstance252.addFieldValue(fieldValue254)
-
-fieldValue251.addChildren(ProtoInstance252)
-ProtoInstance261 = ProtoInstance()
-ProtoInstance261.setName("Joint")
-ProtoInstance261.setDEF("hanim_l_elbow")
-fieldValue262 = fieldValue()
-fieldValue262.setName("name")
-fieldValue262.setValue("l_elbow")
-
-ProtoInstance261.addFieldValue(fieldValue262)
-fieldValue263 = fieldValue()
-fieldValue263.setName("center")
-fieldValue263.setValue("0.196 1.07 -0.0518")
-
-ProtoInstance261.addFieldValue(fieldValue263)
-fieldValue264 = fieldValue()
-fieldValue264.setName("children")
-ProtoInstance265 = ProtoInstance()
-ProtoInstance265.setName("Segment")
-ProtoInstance265.setDEF("hanim_l_forearm")
-fieldValue266 = fieldValue()
-fieldValue266.setName("name")
-fieldValue266.setValue("l_forearm")
-
-ProtoInstance265.addFieldValue(fieldValue266)
-fieldValue267 = fieldValue()
-fieldValue267.setName("children")
-Transform268 = Transform()
-Transform268.setDEF("l_forearm_adjust")
-Transform268.setCenter([0.198,0.961,-0.0405])
-Transform268.setRotation([-1,0,0,0.1])
-Transform268.setTranslation([0,0.003724,-0.0236])
-Shape269 = Shape()
-Appearance270 = Appearance()
-Material271 = Material()
-Material271.setUSE("Skin_Color")
-
-Appearance270.setMaterial(Material271)
-
-Shape269.setAppearance(Appearance270)
-IndexedFaceSet272 = IndexedFaceSet()
-IndexedFaceSet272.setCoordIndex([2,1,0,-1,2,3,1,-1,2,4,3,-1,2,5,4,-1,2,6,5,-1,2,0,6,-1,7,6,0,-1,8,5,6,-1,9,4,5,-1,9,3,4,-1,10,1,3,-1,11,0,1,-1,0,11,7,-1,1,10,11,-1,3,9,10,-1,5,12,9,-1,5,8,12,-1,6,7,8,-1,17,16,15,-1,14,17,15,-1,14,18,17,-1,13,18,14,-1,16,17,10,-1,16,10,9,-1,15,16,9,-1,15,9,12,-1,18,13,7,-1,18,7,11,-1,13,14,8,-1,13,8,7,-1,14,15,8,-1,15,12,8,-1,17,18,10,-1,18,11,10,-1])
-IndexedFaceSet272.setCreaseAngle(1.75)
-Coordinate273 = Coordinate()
-Coordinate273.setPoint([0.177,1.09,-0.0609,0.202,1.1,-0.0566,0.189,1.1,-0.0395,0.213,1.1,-0.025,0.203,1.1,-0.0158,0.182,1.09,-0.00563,0.167,1.09,-0.0325,0.176,1.08,-0.0781,0.16,1.06,-0.0373,0.214,1.07,-0.00402,0.228,1.07,-0.0319,0.208,1.08,-0.0765,0.179,1.07,-0.00294,0.21,0.818,-0.0615,0.201,0.82,-0.0405,0.205,0.819,-0.00832,0.224,0.818,-0.00778,0.237,0.82,-0.0282,0.231,0.819,-0.0609])
-
-IndexedFaceSet272.setCoord(Coordinate273)
-
-Shape269.setGeometry(IndexedFaceSet272)
-
-Transform268.addChildren(Shape269)
-
-fieldValue267.addChildren(Transform268)
-
-ProtoInstance265.addFieldValue(fieldValue267)
-
-fieldValue264.addChildren(ProtoInstance265)
-ProtoInstance274 = ProtoInstance()
-ProtoInstance274.setName("Joint")
-ProtoInstance274.setDEF("hanim_l_wrist")
-fieldValue275 = fieldValue()
-fieldValue275.setName("name")
-fieldValue275.setValue("l_wrist")
-
-ProtoInstance274.addFieldValue(fieldValue275)
-fieldValue276 = fieldValue()
-fieldValue276.setName("center")
-fieldValue276.setValue("0.213 0.811 -0.0338")
-
-ProtoInstance274.addFieldValue(fieldValue276)
-fieldValue277 = fieldValue()
-fieldValue277.setName("children")
-ProtoInstance278 = ProtoInstance()
-ProtoInstance278.setName("Segment")
-ProtoInstance278.setDEF("hanim_l_hand")
-fieldValue279 = fieldValue()
-fieldValue279.setName("name")
-fieldValue279.setValue("l_hand")
-
-ProtoInstance278.addFieldValue(fieldValue279)
-fieldValue280 = fieldValue()
-fieldValue280.setName("children")
-Transform281 = Transform()
-Transform281.setDEF("l_hand_adjust")
-Transform281.setCenter([0.213,0.811,-0.0338])
-Transform281.setRotation([-0.06361,-0.9967,0.04988,1.333])
-Transform281.setTranslation([0,0.005142,-0.008662])
-Shape282 = Shape()
-Appearance283 = Appearance()
-Material284 = Material()
-Material284.setUSE("Skin_Color")
-
-Appearance283.setMaterial(Material284)
-
-Shape282.setAppearance(Appearance283)
-IndexedFaceSet285 = IndexedFaceSet()
-IndexedFaceSet285.setCoordIndex([2,1,0,-1,5,4,3,-1,3,7,6,-1,2,3,6,-1,7,9,8,-1,6,7,8,-1,9,11,10,-1,8,9,10,-1,11,13,12,-1,10,11,12,-1,13,15,14,-1,12,13,14,-1,15,17,16,-1,14,15,16,-1,17,19,18,-1,16,17,18,-1,19,21,20,-1,18,19,20,-1,31,4,1,-1,4,5,0,-1,1,4,0,-1,5,3,2,-1,0,5,2,-1,26,25,24,-1,26,24,23,-1,27,26,23,-1,28,27,23,-1,28,23,22,-1,29,28,22,-1,29,22,21,-1,30,29,21,-1,15,13,11,-1,17,15,11,-1,19,17,11,-1,19,11,9,-1,31,19,9,-1,31,9,7,-1,4,31,7,-1,4,7,3,-1,30,21,19,-1,31,30,19,-1,12,14,16,-1,10,12,16,-1,10,16,18,-1,8,10,18,-1,6,8,1,-1,2,6,1,-1,39,38,37,-1,37,38,40,-1,37,40,36,-1,36,40,41,-1,36,41,35,-1,35,41,42,-1,35,42,34,-1,34,42,43,-1,34,43,33,-1,33,43,44,-1,33,44,32,-1,20,32,44,-1,20,44,45,-1,20,45,46,-1,47,8,18,-1,47,18,20,-1,47,20,46,-1,8,47,1,-1,22,33,32,-1,23,35,34,-1,23,36,35,-1,37,24,25,-1,40,38,27,-1,29,43,42,-1,45,44,30,-1,47,31,1,-1,47,46,31,-1,29,30,43,-1,30,44,43,-1,45,31,46,-1,45,30,31,-1,28,29,41,-1,29,42,41,-1,28,40,27,-1,28,41,40,-1,26,27,39,-1,27,38,39,-1,25,39,37,-1,25,26,39,-1,24,36,23,-1,24,37,36,-1,23,34,22,-1,34,33,22,-1,22,32,21,-1,32,20,21,-1])
-IndexedFaceSet285.setCreaseAngle(1.48)
-Coordinate286 = Coordinate()
-Coordinate286.setPoint([0.211,0.828,-0.0434,0.194,0.81,-0.0445,0.237,0.82,-0.0425,0.236,0.82,-0.0237,0.194,0.81,-0.0254,0.21,0.828,-0.0247,0.252,0.801,-0.0424,0.252,0.801,-0.0231,0.269,0.765,-0.0426,0.268,0.765,-0.0225,0.273,0.732,-0.0395,0.272,0.732,-0.0223,0.27,0.704,-0.0342,0.27,0.704,-0.0224,0.262,0.703,-0.0345,0.261,0.703,-0.0227,0.256,0.717,-0.0389,0.256,0.717,-0.023,0.255,0.738,-0.0408,0.255,0.738,-0.023,0.251,0.734,-0.0406,0.251,0.734,-0.0232,0.251,0.692,-0.0232,0.248,0.657,-0.0233,0.24,0.645,-0.0236,0.226,0.637,-0.0241,0.213,0.639,-0.0246,0.197,0.652,-0.0253,0.188,0.669,-0.0256,0.184,0.697,-0.0258,0.183,0.73,-0.0258,0.187,0.77,-0.0257,0.244,0.696,-0.0375,0.244,0.692,-0.0372,0.242,0.661,-0.0345,0.241,0.658,-0.0343,0.241,0.656,-0.0341,0.231,0.646,-0.0336,0.206,0.65,-0.0349,0.218,0.644,-0.034,0.205,0.652,-0.0352,0.198,0.667,-0.0367,0.195,0.691,-0.039,0.194,0.696,-0.0395,0.193,0.725,-0.042,0.193,0.731,-0.0425,0.197,0.765,-0.0449,0.197,0.77,-0.0453])
-
-IndexedFaceSet285.setCoord(Coordinate286)
-
-Shape282.setGeometry(IndexedFaceSet285)
-
-Transform281.addChildren(Shape282)
-
-fieldValue280.addChildren(Transform281)
-
-ProtoInstance278.addFieldValue(fieldValue280)
-
-fieldValue277.addChildren(ProtoInstance278)
-
-ProtoInstance274.addFieldValue(fieldValue277)
-
-fieldValue264.addChildren(ProtoInstance274)
-
-ProtoInstance261.addFieldValue(fieldValue264)
-
-fieldValue251.addChildren(ProtoInstance261)
-
-ProtoInstance248.addFieldValue(fieldValue251)
-
-fieldValue237.addChildren(ProtoInstance248)
-ProtoInstance287 = ProtoInstance()
-ProtoInstance287.setName("Joint")
-ProtoInstance287.setDEF("hanim_r_shoulder")
-fieldValue288 = fieldValue()
-fieldValue288.setName("name")
-fieldValue288.setValue("r_shoulder")
-
-ProtoInstance287.addFieldValue(fieldValue288)
-fieldValue289 = fieldValue()
-fieldValue289.setName("center")
-fieldValue289.setValue("-0.167 1.36 -0.0458")
-
-ProtoInstance287.addFieldValue(fieldValue289)
-fieldValue290 = fieldValue()
-fieldValue290.setName("children")
-ProtoInstance291 = ProtoInstance()
-ProtoInstance291.setName("Segment")
-ProtoInstance291.setDEF("hanim_r_upperarm")
-fieldValue292 = fieldValue()
-fieldValue292.setName("name")
-fieldValue292.setValue("r_upperarm")
-
-ProtoInstance291.addFieldValue(fieldValue292)
-fieldValue293 = fieldValue()
-fieldValue293.setName("children")
-Transform294 = Transform()
-Transform294.setDEF("r_upperarm_adjust")
-Transform294.setCenter([-0.182,1.22,-0.047])
-Transform294.setRotation([1,0,0,0.0836])
-Transform294.setTranslation([0,0.000589,-0.01169])
-Shape295 = Shape()
-Appearance296 = Appearance()
-Material297 = Material()
-Material297.setUSE("Skin_Color")
-
-Appearance296.setMaterial(Material297)
-
-Shape295.setAppearance(Appearance296)
-IndexedFaceSet298 = IndexedFaceSet()
-IndexedFaceSet298.setCoordIndex([14,10,20,-1,10,13,20,-1,13,22,20,-1,19,14,20,-1,14,19,12,-1,19,20,24,-1,20,22,25,-1,22,13,25,-1,13,10,11,-1,10,14,5,-1,12,5,14,-1,5,11,10,-1,11,25,13,-1,25,24,20,-1,24,12,19,-1,12,24,9,-1,25,11,8,-1,11,5,2,-1,5,12,9,-1,9,2,5,-1,2,8,11,-1,8,23,25,-1,23,27,25,-1,21,9,24,-1,9,21,7,-1,27,23,18,-1,23,8,18,-1,8,2,6,-1,2,9,7,-1,7,1,2,-1,1,6,2,-1,6,18,8,-1,18,26,27,-1,16,7,21,-1,7,16,4,-1,16,26,17,-1,26,18,15,-1,18,6,3,-1,6,1,0,-1,1,7,0,-1,4,0,7,-1,0,3,6,-1,3,15,18,-1,15,17,26,-1,17,4,16,-1,3,0,15,-1,15,0,4,-1,15,4,17,-1,25,27,24,-1,27,21,24,-1,27,26,21,-1,26,16,21,-1])
-IndexedFaceSet298.setCreaseAngle(1.53)
-Coordinate299 = Coordinate()
-Coordinate299.setPoint([-0.221,1.08,-0.0352,-0.214,1.14,-0.0405,-0.209,1.26,-0.0427,-0.208,1.07,-0.00133,-0.203,1.08,-0.0744,-0.201,1.33,-0.0411,-0.198,1.14,-0.0024,-0.198,1.13,-0.076,-0.19,1.26,-0.00401,-0.189,1.26,-0.0808,-0.185,1.38,-0.0395,-0.185,1.33,-0.00025,-0.182,1.33,-0.0728,-0.174,1.37,-0.0158,-0.174,1.37,-0.0625,-0.169,1.08,-0.00885,-0.167,1.13,-0.0744,-0.162,1.05,-0.0561,-0.16,1.13,-0.000793,-0.157,1.38,-0.0733,-0.156,1.39,-0.0464,-0.155,1.26,-0.0867,-0.154,1.37,-0.0185,-0.151,1.26,-0.000789,-0.151,1.33,-0.0937,-0.15,1.34,-0.000787,-0.15,1.13,-0.0411,-0.141,1.26,-0.0421])
-
-IndexedFaceSet298.setCoord(Coordinate299)
-
-Shape295.setGeometry(IndexedFaceSet298)
-
-Transform294.addChildren(Shape295)
-
-fieldValue293.addChildren(Transform294)
-
-ProtoInstance291.addFieldValue(fieldValue293)
-
-fieldValue290.addChildren(ProtoInstance291)
-ProtoInstance300 = ProtoInstance()
-ProtoInstance300.setName("Joint")
-ProtoInstance300.setDEF("hanim_r_elbow")
-fieldValue301 = fieldValue()
-fieldValue301.setName("name")
-fieldValue301.setValue("r_elbow")
-
-ProtoInstance300.addFieldValue(fieldValue301)
-fieldValue302 = fieldValue()
-fieldValue302.setName("center")
-fieldValue302.setValue("-0.192 1.07 -0.0498")
-
-ProtoInstance300.addFieldValue(fieldValue302)
-fieldValue303 = fieldValue()
-fieldValue303.setName("children")
-ProtoInstance304 = ProtoInstance()
-ProtoInstance304.setName("Segment")
-ProtoInstance304.setDEF("hanim_r_forearm")
-fieldValue305 = fieldValue()
-fieldValue305.setName("name")
-fieldValue305.setValue("r_forearm")
-
-ProtoInstance304.addFieldValue(fieldValue305)
-fieldValue306 = fieldValue()
-fieldValue306.setName("children")
-Transform307 = Transform()
-Transform307.setDEF("r_forearm_adjust")
-Transform307.setCenter([-0.198,0.961,-0.0397])
-Transform307.setRotation([-1,0,0,0.1254])
-Transform307.setTranslation([0,0.003466,-0.01065])
-Shape308 = Shape()
-Appearance309 = Appearance()
-Material310 = Material()
-Material310.setUSE("Skin_Color")
-
-Appearance309.setMaterial(Material310)
-
-Shape308.setAppearance(Appearance309)
-IndexedFaceSet311 = IndexedFaceSet()
-IndexedFaceSet311.setCoordIndex([20,13,15,-1,13,8,15,-1,8,12,15,-1,12,18,15,-1,18,22,15,-1,22,20,15,-1,20,22,21,-1,22,18,24,-1,18,12,7,-1,12,8,7,-1,8,13,3,-1,13,20,10,-1,21,10,20,-1,10,3,13,-1,3,7,8,-1,7,19,18,-1,19,24,18,-1,24,21,22,-1,21,24,23,-1,24,19,16,-1,19,7,6,-1,7,3,1,-1,3,10,5,-1,10,21,17,-1,17,5,10,-1,5,1,3,-1,1,6,7,-1,6,16,19,-1,16,23,24,-1,23,17,21,-1,1,5,2,-1,5,17,9,-1,9,2,5,-1,1,4,6,-1,4,16,6,-1,23,9,17,-1,9,23,14,-1,23,16,11,-1,4,11,16,-1,11,14,23,-1,11,4,0,-1,11,0,14,-1,0,2,14,-1,14,2,9,-1,2,0,1,-1,0,4,1,-1])
-IndexedFaceSet311.setCreaseAngle(1.73)
-Coordinate312 = Coordinate()
-Coordinate312.setPoint([-0.237,0.82,-0.0282,-0.235,1.02,-0.033,-0.231,0.819,-0.0609,-0.228,1.07,-0.0319,-0.224,0.818,-0.00778,-0.221,1.01,-0.0744,-0.218,1.01,-0.00133,-0.214,1.07,-0.00402,-0.213,1.1,-0.025,-0.21,0.818,-0.0615,-0.208,1.08,-0.0765,-0.205,0.819,-0.00832,-0.203,1.1,-0.0158,-0.202,1.1,-0.0566,-0.201,0.82,-0.0405,-0.189,1.1,-0.0395,-0.183,1.01,-0.00831,-0.183,1.01,-0.0781,-0.182,1.09,-0.00563,-0.179,1.07,-0.00294,-0.177,1.09,-0.0609,-0.176,1.08,-0.0781,-0.167,1.09,-0.0325,-0.166,1,-0.0405,-0.16,1.06,-0.0373])
-
-IndexedFaceSet311.setCoord(Coordinate312)
-
-Shape308.setGeometry(IndexedFaceSet311)
-
-Transform307.addChildren(Shape308)
-
-fieldValue306.addChildren(Transform307)
-
-ProtoInstance304.addFieldValue(fieldValue306)
-
-fieldValue303.addChildren(ProtoInstance304)
-ProtoInstance313 = ProtoInstance()
-ProtoInstance313.setName("Joint")
-ProtoInstance313.setDEF("hanim_r_wrist")
-fieldValue314 = fieldValue()
-fieldValue314.setName("name")
-fieldValue314.setValue("r_wrist")
-
-ProtoInstance313.addFieldValue(fieldValue314)
-fieldValue315 = fieldValue()
-fieldValue315.setName("center")
-fieldValue315.setValue("-0.217 0.811 -0.0338")
-
-ProtoInstance313.addFieldValue(fieldValue315)
-fieldValue316 = fieldValue()
-fieldValue316.setName("children")
-ProtoInstance317 = ProtoInstance()
-ProtoInstance317.setName("Segment")
-ProtoInstance317.setDEF("hanim_r_hand")
-fieldValue318 = fieldValue()
-fieldValue318.setName("name")
-fieldValue318.setValue("r_hand")
-
-ProtoInstance317.addFieldValue(fieldValue318)
-fieldValue319 = fieldValue()
-fieldValue319.setName("children")
-Transform320 = Transform()
-Transform320.setDEF("r_hand_adjust")
-Transform320.setCenter([-0.217,0.811,-0.0338])
-Transform320.setRotation([-0.09024,0.994,-0.0624,1.216])
-Shape321 = Shape()
-Appearance322 = Appearance()
-Material323 = Material()
-Material323.setUSE("Skin_Color")
-
-Appearance322.setMaterial(Material323)
-
-Shape321.setAppearance(Appearance322)
-IndexedFaceSet324 = IndexedFaceSet()
-IndexedFaceSet324.setCoordIndex([10,9,0,-1,11,30,31,-1,1,12,11,-1,1,11,0,-1,2,13,12,-1,2,12,1,-1,3,14,13,-1,3,13,2,-1,4,15,14,-1,4,14,3,-1,5,16,15,-1,5,15,4,-1,6,17,16,-1,6,16,5,-1,7,18,17,-1,7,17,6,-1,8,19,18,-1,8,18,7,-1,10,31,30,-1,10,30,9,-1,0,11,31,-1,0,31,10,-1,22,23,24,-1,21,22,24,-1,21,24,25,-1,21,25,26,-1,20,21,26,-1,20,26,27,-1,19,20,27,-1,19,27,28,-1,14,15,16,-1,14,16,17,-1,14,17,18,-1,13,14,18,-1,13,18,29,-1,12,13,29,-1,12,29,30,-1,11,12,30,-1,18,19,28,-1,18,28,29,-1,6,5,4,-1,6,4,3,-1,7,6,3,-1,7,3,2,-1,9,2,1,-1,9,1,0,-1,32,38,33,-1,33,38,39,-1,33,39,34,-1,34,39,40,-1,34,40,35,-1,35,40,41,-1,35,41,36,-1,36,41,42,-1,36,42,37,-1,37,42,43,-1,37,43,44,-1,44,43,8,-1,44,8,45,-1,45,8,46,-1,46,8,7,-1,46,7,2,-1,46,2,47,-1,9,47,2,-1,25,34,35,-1,25,33,34,-1,25,24,33,-1,24,32,33,-1,32,24,23,-1,40,39,21,-1,41,40,21,-1,43,19,8,-1,43,20,19,-1,43,42,20,-1,21,20,41,-1,20,42,41,-1,38,22,39,-1,22,21,39,-1,32,23,38,-1,23,22,38,-1,26,25,35,-1,27,36,37,-1,27,37,28,-1,37,44,28,-1,26,35,27,-1,35,36,27,-1,28,44,45,-1,29,46,47,-1,29,9,30,-1,29,47,9,-1,28,45,29,-1,45,46,29,-1])
-IndexedFaceSet324.setCreaseAngle(1.57)
-Coordinate325 = Coordinate()
-Coordinate325.setPoint([-0.237,0.82,-0.0425,-0.252,0.801,-0.0424,-0.269,0.765,-0.0426,-0.273,0.732,-0.0395,-0.27,0.704,-0.0342,-0.262,0.703,-0.0345,-0.256,0.717,-0.0389,-0.255,0.738,-0.0408,-0.251,0.734,-0.0406,-0.194,0.81,-0.0445,-0.211,0.828,-0.0434,-0.236,0.82,-0.0237,-0.252,0.801,-0.0231,-0.268,0.765,-0.0225,-0.272,0.732,-0.0223,-0.27,0.704,-0.0224,-0.261,0.703,-0.0227,-0.256,0.717,-0.023,-0.255,0.738,-0.023,-0.251,0.734,-0.0232,-0.251,0.692,-0.0232,-0.248,0.657,-0.0233,-0.24,0.645,-0.0236,-0.226,0.637,-0.0241,-0.213,0.639,-0.0246,-0.197,0.652,-0.0253,-0.188,0.669,-0.0256,-0.184,0.697,-0.0258,-0.183,0.73,-0.0258,-0.187,0.77,-0.0257,-0.194,0.81,-0.0254,-0.21,0.828,-0.0247,-0.221,0.641,-0.0336,-0.21,0.65,-0.0348,-0.206,0.652,-0.0352,-0.198,0.667,-0.0368,-0.193,0.692,-0.0392,-0.192,0.696,-0.0396,-0.231,0.646,-0.0336,-0.238,0.656,-0.0342,-0.24,0.658,-0.0344,-0.24,0.662,-0.0347,-0.243,0.692,-0.0372,-0.243,0.696,-0.0376,-0.192,0.725,-0.0421,-0.192,0.73,-0.0426,-0.195,0.766,-0.0451,-0.196,0.77,-0.0454])
-
-IndexedFaceSet324.setCoord(Coordinate325)
-
-Shape321.setGeometry(IndexedFaceSet324)
-
-Transform320.addChildren(Shape321)
-
-fieldValue319.addChildren(Transform320)
-
-ProtoInstance317.addFieldValue(fieldValue319)
-
-fieldValue316.addChildren(ProtoInstance317)
-
-ProtoInstance313.addFieldValue(fieldValue316)
-
-fieldValue303.addChildren(ProtoInstance313)
-
-ProtoInstance300.addFieldValue(fieldValue303)
-
-fieldValue290.addChildren(ProtoInstance300)
-
-ProtoInstance287.addFieldValue(fieldValue290)
-
-fieldValue237.addChildren(ProtoInstance287)
-ProtoInstance326 = ProtoInstance()
-ProtoInstance326.setName("Joint")
-ProtoInstance326.setDEF("hanim_vc4")
-fieldValue327 = fieldValue()
-fieldValue327.setName("name")
-fieldValue327.setValue("vc4")
-
-ProtoInstance326.addFieldValue(fieldValue327)
-fieldValue328 = fieldValue()
-fieldValue328.setName("center")
-fieldValue328.setValue("0 1.43 -0.0458")
-
-ProtoInstance326.addFieldValue(fieldValue328)
-fieldValue329 = fieldValue()
-fieldValue329.setName("children")
-ProtoInstance330 = ProtoInstance()
-ProtoInstance330.setName("Segment")
-ProtoInstance330.setDEF("hanim_c4")
-fieldValue331 = fieldValue()
-fieldValue331.setName("name")
-fieldValue331.setValue("c4")
-
-ProtoInstance330.addFieldValue(fieldValue331)
-fieldValue332 = fieldValue()
-fieldValue332.setName("children")
-Shape333 = Shape()
-Appearance334 = Appearance()
-Material335 = Material()
-Material335.setUSE("Skin_Color")
-
-Appearance334.setMaterial(Material335)
-
-Shape333.setAppearance(Appearance334)
-IndexedFaceSet336 = IndexedFaceSet()
-IndexedFaceSet336.setDEF("neck")
-IndexedFaceSet336.setCoordIndex([6,5,2,-1,6,2,3,-1,5,4,1,-1,5,1,2,-1,4,7,0,-1,4,0,1,-1,11,10,9,-1,11,9,8,-1,10,13,12,-1,10,12,9,-1,13,15,14,-1,13,14,12,-1,6,3,11,-1,6,11,8,-1,7,14,15,-1,7,15,0,-1,2,10,11,-1,2,11,3,-1,2,1,13,-1,2,13,10,-1,1,0,15,-1,1,15,13,-1,9,5,6,-1,9,6,8,-1,9,12,4,-1,9,4,5,-1,12,14,7,-1,12,7,4,-1])
-IndexedFaceSet336.setCreaseAngle(1.91)
-Coordinate337 = Coordinate()
-Coordinate337.setPoint([0.0105,1.54,-0.1,0.0357,1.54,-0.0685,0.0382,1.55,-0.0474,0.0105,1.55,-0.0204,0.0373,1.4,-0.0593,0.0577,1.4,-0.0266,0.0158,1.4,0.00512,0.0132,1.41,-0.0824,-0.0158,1.4,0.00512,-0.0577,1.4,-0.0266,-0.0382,1.55,-0.0474,-0.0105,1.55,-0.0204,-0.0373,1.4,-0.0593,-0.0357,1.54,-0.0685,-0.0132,1.41,-0.0824,-0.0105,1.54,-0.1])
-
-IndexedFaceSet336.setCoord(Coordinate337)
-
-Shape333.setGeometry(IndexedFaceSet336)
-
-fieldValue332.addChildren(Shape333)
-
-ProtoInstance330.addFieldValue(fieldValue332)
-
-fieldValue329.addChildren(ProtoInstance330)
-ProtoInstance338 = ProtoInstance()
-ProtoInstance338.setName("Joint")
-ProtoInstance338.setDEF("hanim_skullbase")
-fieldValue339 = fieldValue()
-fieldValue339.setName("name")
-fieldValue339.setValue("skullbase")
-
-ProtoInstance338.addFieldValue(fieldValue339)
-fieldValue340 = fieldValue()
-fieldValue340.setName("center")
-fieldValue340.setValue("0 1.54 -0.0409")
-
-ProtoInstance338.addFieldValue(fieldValue340)
-fieldValue341 = fieldValue()
-fieldValue341.setName("children")
-ProtoInstance342 = ProtoInstance()
-ProtoInstance342.setName("Segment")
-ProtoInstance342.setDEF("hanim_skull")
-fieldValue343 = fieldValue()
-fieldValue343.setName("name")
-fieldValue343.setValue("skull")
-
-ProtoInstance342.addFieldValue(fieldValue343)
-fieldValue344 = fieldValue()
-fieldValue344.setName("children")
-Shape345 = Shape()
-Appearance346 = Appearance()
-Material347 = Material()
-Material347.setUSE("Skin_Color")
-
-Appearance346.setMaterial(Material347)
-
-Shape345.setAppearance(Appearance346)
-IndexedFaceSet348 = IndexedFaceSet()
-IndexedFaceSet348.setDEF("headIFS")
-IndexedFaceSet348.setColorIndex([1,1,1,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,1,1,1,-1,1,1,1,-1,0,0,0,-1,1,1,1,-1,1,1,1,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,2,2,2,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,2,2,2,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,1,1,1,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,1,1,1,-1,1,1,1,-1,1,1,1,-1,1,1,1,-1,1,1,1,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,2,2,2,-1,2,2,2,-1,2,2,2,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,2,2,2,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,3,3,3,-1,3,3,3,-1,0,0,0,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,3,3,3,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,3,3,3,-1,3,3,3,-1,0,0,0,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,3,3,3,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1])
-IndexedFaceSet348.setCoordIndex([48,87,58,-1,91,92,59,-1,59,92,88,-1,88,93,231,-1,232,86,233,-1,86,89,233,-1,89,57,56,-1,49,55,57,-1,102,86,96,-1,86,90,96,-1,97,95,96,-1,97,127,95,-1,41,96,154,-1,41,102,96,-1,99,102,41,-1,153,99,41,-1,102,40,86,-1,234,235,236,-1,87,237,58,-1,56,57,91,-1,87,234,237,-1,234,236,237,-1,89,49,57,-1,49,50,55,-1,40,89,86,-1,89,56,233,-1,232,90,86,-1,90,97,96,-1,92,93,88,-1,93,94,231,-1,232,231,94,-1,97,90,232,-1,96,42,154,-1,95,42,96,-1,53,46,45,-1,53,45,51,-1,53,51,92,-1,92,51,52,-1,92,52,93,-1,94,93,52,-1,94,52,4,-1,97,232,94,-1,54,47,46,-1,54,46,53,-1,55,47,54,-1,50,47,55,-1,34,33,50,-1,34,50,49,-1,35,34,49,-1,35,49,89,-1,35,89,40,-1,99,39,102,-1,39,35,40,-1,31,34,35,-1,31,35,32,-1,14,32,35,-1,14,35,39,-1,14,39,98,-1,137,38,153,-1,38,99,153,-1,38,98,99,-1,37,238,239,-1,11,238,37,-1,101,37,36,-1,241,141,242,-1,10,12,242,-1,12,13,14,-1,12,14,243,-1,13,15,32,-1,13,32,14,-1,15,16,31,-1,15,31,32,-1,2,70,10,-1,2,10,141,-1,70,69,12,-1,70,12,10,-1,69,68,13,-1,69,13,12,-1,68,67,15,-1,68,15,13,-1,67,66,16,-1,67,16,15,-1,98,39,99,-1,101,11,37,-1,100,101,36,-1,36,244,240,-1,141,10,242,-1,12,243,242,-1,36,37,239,-1,36,239,244,-1,57,55,91,-1,55,54,91,-1,39,40,102,-1,123,103,120,-1,114,122,104,-1,115,122,114,-1,208,105,115,-1,210,119,211,-1,210,106,119,-1,116,107,106,-1,107,108,117,-1,126,119,109,-1,126,110,119,-1,126,95,125,-1,95,127,125,-1,154,126,111,-1,126,109,111,-1,111,109,112,-1,111,112,153,-1,119,113,109,-1,207,213,214,-1,123,209,103,-1,213,212,214,-1,209,214,103,-1,209,207,214,-1,107,117,106,-1,108,118,117,-1,119,106,113,-1,210,116,106,-1,119,110,211,-1,126,125,110,-1,115,105,122,-1,208,124,105,-1,124,208,211,-1,211,110,125,-1,154,42,126,-1,126,42,95,-1,168,128,121,-1,170,168,121,-1,122,170,121,-1,172,170,122,-1,105,172,122,-1,172,105,124,-1,4,172,124,-1,124,211,125,-1,128,130,129,-1,121,128,129,-1,129,130,108,-1,108,130,118,-1,118,131,132,-1,117,118,132,-1,117,132,133,-1,106,117,133,-1,113,106,133,-1,109,152,112,-1,113,133,152,-1,133,132,134,-1,135,133,134,-1,133,135,136,-1,152,133,136,-1,148,152,136,-1,153,138,137,-1,153,112,138,-1,112,148,138,-1,219,217,139,-1,36,240,149,-1,139,217,140,-1,149,139,151,-1,36,149,100,-1,220,141,241,-1,220,150,142,-1,136,143,150,-1,221,136,150,-1,135,144,143,-1,136,135,143,-1,134,158,144,-1,135,134,144,-1,142,161,2,-1,141,142,2,-1,150,145,161,-1,142,150,161,-1,143,146,145,-1,150,143,145,-1,144,147,146,-1,143,144,146,-1,158,160,147,-1,144,158,147,-1,112,152,148,-1,139,140,151,-1,149,151,100,-1,240,218,149,-1,220,142,141,-1,220,221,150,-1,219,139,149,-1,218,219,149,-1,104,108,107,-1,104,129,108,-1,109,113,152,-1,153,41,111,-1,129,104,122,-1,129,122,121,-1,91,54,92,-1,54,53,92,-1,97,94,127,-1,127,94,4,-1,125,127,124,-1,127,4,124,-1,154,111,41,-1,31,30,33,-1,31,33,34,-1,16,17,30,-1,16,30,31,-1,66,65,17,-1,66,17,16,-1,2,73,156,-1,2,156,70,-1,156,72,66,-1,156,66,67,-1,156,67,68,-1,156,68,69,-1,156,69,70,-1,72,71,65,-1,72,65,66,-1,17,18,30,-1,45,44,51,-1,51,44,43,-1,51,43,52,-1,52,43,1,-1,52,1,4,-1,245,246,27,-1,245,27,3,-1,246,247,28,-1,246,28,27,-1,248,22,29,-1,248,29,28,-1,248,28,247,-1,27,26,0,-1,27,0,3,-1,27,28,25,-1,27,25,26,-1,29,24,25,-1,29,25,28,-1,22,23,24,-1,22,24,29,-1,249,250,22,-1,249,22,248,-1,250,60,23,-1,250,23,22,-1,17,254,18,-1,65,254,17,-1,71,64,65,-1,63,74,75,-1,63,75,61,-1,64,255,254,-1,75,62,61,-1,62,76,60,-1,76,77,23,-1,76,23,60,-1,77,24,23,-1,77,78,25,-1,77,25,24,-1,78,84,26,-1,78,26,25,-1,84,192,0,-1,84,0,26,-1,84,83,193,-1,84,193,192,-1,79,83,84,-1,79,84,78,-1,76,79,78,-1,76,78,77,-1,80,83,79,-1,80,204,83,-1,75,81,80,-1,81,85,204,-1,81,204,80,-1,74,81,75,-1,74,82,81,-1,82,5,85,-1,82,85,81,-1,155,8,71,-1,155,71,72,-1,8,6,64,-1,8,64,71,-1,6,7,255,-1,6,255,64,-1,7,9,256,-1,7,256,255,-1,9,257,256,-1,73,155,156,-1,155,72,156,-1,204,193,83,-1,64,254,65,-1,131,157,134,-1,132,131,134,-1,157,159,158,-1,134,157,158,-1,159,206,160,-1,158,159,160,-1,203,73,2,-1,161,203,2,-1,160,162,203,-1,147,160,203,-1,146,147,203,-1,145,146,203,-1,161,145,203,-1,206,163,162,-1,160,206,162,-1,157,164,159,-1,170,169,168,-1,171,169,170,-1,172,171,170,-1,1,171,172,-1,4,1,172,-1,173,227,245,-1,3,173,245,-1,174,226,227,-1,173,174,227,-1,176,175,215,-1,174,176,215,-1,226,174,215,-1,0,177,173,-1,3,0,173,-1,178,174,173,-1,177,178,173,-1,178,179,176,-1,174,178,176,-1,179,180,175,-1,176,179,175,-1,175,225,216,-1,215,175,216,-1,180,181,225,-1,175,180,225,-1,164,228,159,-1,159,228,206,-1,206,185,163,-1,187,186,184,-1,183,187,184,-1,228,229,185,-1,183,182,187,-1,181,188,182,-1,180,189,188,-1,181,180,188,-1,180,179,189,-1,178,190,189,-1,179,178,189,-1,177,191,190,-1,178,177,190,-1,0,192,191,-1,177,0,191,-1,193,205,191,-1,192,193,191,-1,191,205,194,-1,190,191,194,-1,190,194,188,-1,189,190,188,-1,194,205,195,-1,205,204,195,-1,195,196,187,-1,204,85,196,-1,195,204,196,-1,187,196,186,-1,196,197,186,-1,85,5,197,-1,196,85,197,-1,163,198,202,-1,162,163,202,-1,185,199,198,-1,163,185,198,-1,229,200,199,-1,185,229,199,-1,230,201,200,-1,229,230,200,-1,230,257,201,-1,203,202,73,-1,203,162,202,-1,205,193,204,-1,206,228,185,-1,198,8,155,-1,198,155,202,-1,155,73,202,-1,199,6,8,-1,199,8,198,-1,7,6,199,-1,7,199,200,-1,201,9,7,-1,201,7,200,-1,201,257,9,-1,188,194,195,-1,188,195,182,-1,195,187,182,-1,80,79,76,-1,80,62,75,-1,80,76,62,-1,47,50,33,-1,131,118,130,-1,20,21,47,-1,21,46,47,-1,20,33,19,-1,20,47,33,-1,33,30,19,-1,30,18,19,-1,62,60,251,-1,60,250,251,-1,252,61,251,-1,61,62,251,-1,252,63,61,-1,252,253,63,-1,166,130,167,-1,130,128,167,-1,166,131,130,-1,166,165,131,-1,165,157,131,-1,165,164,157,-1,224,181,182,-1,224,225,181,-1,224,183,223,-1,224,182,183,-1,183,184,223,-1,184,222,223,-1])
-IndexedFaceSet348.setCreaseAngle(0.7854)
-Coordinate349 = Coordinate()
-Coordinate349.setDEF("Face")
-Coordinate349.setPoint([0,1.708,-0.0435,0,1.655,0.04322,0,1.486,0.02335,0,1.694,0.007789,0,1.631,0.051,0,1.524,-0.102,0.04,1.51,-0.07278,0.04029,1.514,-0.08254,0.03528,1.502,-0.05013,0.03479,1.517,-0.09269,0.0116,1.494,0.03382,0.01946,1.52,0.03421,0.02204,1.494,0.0272,0.02734,1.498,0.02215,0.02788,1.528,0.03084,0.0338,1.503,0.0124,0.04008,1.509,0.002821,0.05122,1.518,-0.02784,0.05867,1.544,-0.03316,0.06433,1.563,-0.03678,0.06732,1.583,-0.03683,0.06769,1.617,-0.03436,0.06641,1.637,-0.03046,0.06818,1.637,-0.04285,0.06308,1.666,-0.04036,0.05305,1.685,-0.03987,0.03136,1.7,-0.0413,0.02919,1.688,0.0091,0.05272,1.674,-0.001657,0.06061,1.66,-0.0101,0.05254,1.541,-0.01363,0.04099,1.527,0.008832,0.03528,1.524,0.02097,0.05792,1.557,-0.004307,0.04413,1.539,0.0149,0.03746,1.539,0.02656,0.003407,1.524,0.04155,0.01481,1.526,0.03912,0.005112,1.532,0.04358,0.02438,1.542,0.03578,0.02636,1.55,0.03808,0.006135,1.55,0.0545,0,1.559,0.05502,0.02958,1.651,0.03965,0.04847,1.643,0.02895,0.05856,1.63,0.01803,0.06182,1.614,0.008199,0.06194,1.6,0.002668,0.01489,1.583,0.04109,0.05282,1.569,0.02821,0.05767,1.58,0.0184,0.04643,1.625,0.03705,0.0264,1.628,0.04807,0.0556,1.609,0.02579,0.05467,1.599,0.02153,0.05316,1.589,0.0207,0.03603,1.58,0.03536,0.04597,1.586,0.02904,0.02106,1.592,0.03748,0.03428,1.595,0.03294,0.06808,1.617,-0.06112,0.06714,1.564,-0.07003,0.06993,1.594,-0.08238,0.05324,1.536,-0.05922,0.04904,1.521,-0.05132,0.04758,1.514,-0.03107,0.03539,1.503,-0.00093,0.02999,1.498,0.006194,0.02308,1.492,0.01628,0.01772,1.488,0.02135,0.01378,1.488,0.02484,0.04349,1.512,-0.03987,0.02308,1.499,-0.02088,0,1.487,-0.018,0.04795,1.531,-0.08973,0.05739,1.555,-0.0982,0.06815,1.622,-0.107,0.06872,1.655,-0.08466,0.05233,1.678,-0.09642,0.05334,1.631,-0.1239,0.05011,1.581,-0.1193,0.04359,1.551,-0.1067,0.03839,1.528,-0.09652,0.03399,1.636,-0.1304,0.03224,1.685,-0.1024,0,1.557,-0.1126,0.01864,1.566,0.04105,0.0249,1.58,0.0387,0.02735,1.596,0.03552,0.04317,1.564,0.03643,0.01246,1.577,0.04276,0.04354,1.59,0.02822,0.04557,1.601,0.03652,0.0291,1.603,0.04274,0.01856,1.6,0.04349,0,1.579,0.04893,0.01064,1.558,0.04476,0.005501,1.578,0.04574,0.01405,1.531,0.04152,0.01037,1.544,0.04266,0,1.515,0.03836,0.00797,1.515,0.03774,0.01824,1.55,0.04063,-0.0249,1.58,0.0387,-0.04354,1.59,0.02822,-0.0291,1.603,0.04274,-0.04317,1.564,0.03643,-0.04597,1.586,0.02904,-0.05316,1.589,0.0207,-0.01824,1.55,0.04063,-0.01246,1.577,0.04276,-0.006135,1.55,0.0545,-0.01037,1.544,0.04266,-0.02636,1.55,0.03808,-0.03428,1.595,0.03294,-0.02735,1.596,0.03552,-0.03603,1.58,0.03536,-0.05282,1.569,0.02821,-0.05767,1.58,0.0184,-0.01864,1.566,0.04105,-0.01489,1.583,0.04109,-0.0556,1.609,0.02579,-0.04557,1.601,0.03652,-0.02106,1.592,0.03748,-0.01856,1.6,0.04349,-0.005501,1.578,0.04574,-0.01064,1.558,0.04476,0,1.592,0.04694,-0.06182,1.614,0.008199,-0.05467,1.599,0.02153,-0.06194,1.6,0.002668,-0.05792,1.557,-0.004307,-0.04413,1.539,0.0149,-0.03746,1.539,0.02656,-0.04099,1.527,0.008832,-0.03528,1.524,0.02097,-0.02788,1.528,0.03084,0,1.53,0.04236,-0.005112,1.532,0.04358,-0.01481,1.526,0.03912,-0.01946,1.52,0.03421,0,1.495,0.0348,-0.0116,1.494,0.03382,-0.02734,1.498,0.02215,-0.0338,1.503,0.0124,-0.01772,1.488,0.02135,-0.02308,1.492,0.01628,-0.02999,1.498,0.006194,-0.01405,1.531,0.04152,-0.003407,1.524,0.04155,-0.02204,1.494,0.0272,-0.00797,1.515,0.03774,-0.02438,1.542,0.03578,0,1.543,0.04432,0,1.555,0.05692,0.02295,1.492,-0.02694,0.007322,1.489,-0.01677,-0.05254,1.541,-0.01363,-0.04008,1.509,0.002821,-0.05122,1.518,-0.02784,-0.03539,1.503,-0.00093,-0.01378,1.488,0.02484,-0.02308,1.499,-0.02088,-0.04349,1.512,-0.03987,-0.05867,1.544,-0.03316,-0.06433,1.563,-0.03678,-0.06732,1.583,-0.03683,-0.06769,1.617,-0.03436,-0.05856,1.63,0.01803,-0.04847,1.643,0.02895,-0.04643,1.625,0.03705,-0.02958,1.651,0.03965,-0.0264,1.628,0.04807,-0.02919,1.688,0.0091,-0.05272,1.674,-0.001657,-0.06641,1.637,-0.03046,-0.06061,1.66,-0.0101,-0.03136,1.7,-0.0413,-0.05305,1.685,-0.03987,-0.06308,1.666,-0.04036,-0.06818,1.637,-0.04285,-0.06808,1.617,-0.06112,-0.06993,1.594,-0.08238,-0.06714,1.564,-0.07003,-0.05324,1.536,-0.05922,-0.04904,1.521,-0.05132,-0.04795,1.531,-0.08973,-0.05739,1.555,-0.0982,-0.06815,1.622,-0.107,-0.06872,1.655,-0.08466,-0.05233,1.678,-0.09642,-0.03224,1.685,-0.1024,0,1.69,-0.1047,0,1.64,-0.1342,-0.05334,1.631,-0.1239,-0.05011,1.581,-0.1193,-0.04359,1.551,-0.1067,-0.03839,1.528,-0.09652,-0.03528,1.502,-0.05013,-0.04,1.51,-0.07278,-0.04029,1.514,-0.08254,-0.03479,1.517,-0.09269,-0.02295,1.492,-0.02694,-0.007322,1.489,-0.01677,0,1.588,-0.1329,-0.03399,1.636,-0.1304,-0.04758,1.514,-0.03107,-0.03428,1.595,0.03294,-0.02106,1.592,0.03748,-0.02735,1.596,0.03552,-0.0249,1.58,0.0387,-0.01489,1.583,0.04109,-0.04597,1.586,0.02904,-0.04354,1.59,0.02822,-0.03603,1.58,0.03536,-0.05856,1.63,0.01803,-0.06182,1.614,0.008199,-0.02788,1.528,0.03084,-0.005112,1.532,0.04358,-0.01405,1.531,0.04152,-0.00797,1.515,0.03774,-0.01946,1.52,0.03421,-0.05867,1.544,-0.03316,-0.06433,1.563,-0.03678,-0.06732,1.583,-0.03683,-0.06769,1.617,-0.03436,-0.04847,1.643,0.02895,-0.02958,1.651,0.03965,-0.05324,1.536,-0.05922,-0.04795,1.531,-0.08973,-0.03839,1.528,-0.09652,0.02106,1.592,0.03748,0.01489,1.583,0.04109,0.0249,1.58,0.0387,0.03603,1.58,0.03536,0.04354,1.59,0.02822,0.03428,1.595,0.03294,0.02735,1.596,0.03552,0.02788,1.528,0.03084,0.01405,1.531,0.04152,0,1.53,0.04236,0,1.515,0.03836,0.00797,1.515,0.03774,0.01946,1.52,0.03421,0.005112,1.532,0.04358,0,1.655,0.04322,0.02958,1.651,0.03965,0.04847,1.643,0.02895,0.05856,1.63,0.01803,0.06182,1.614,0.008199,0.06769,1.617,-0.03436,0.06732,1.583,-0.03683,0.06433,1.563,-0.03678,0.05867,1.544,-0.03316,0.05324,1.536,-0.05922,0.04795,1.531,-0.08973,0.03839,1.528,-0.09652,0,1.524,-0.102])
-
-IndexedFaceSet348.setCoord(Coordinate349)
-Color350 = Color()
-Color350.setColor([0.749,0.601,0.462,0.1735,0.2602,0.749,0.6364,0.133,0.1526,0.4545,0.2759,0.1902])
-
-IndexedFaceSet348.setColor(Color350)
-
-Shape345.setGeometry(IndexedFaceSet348)
-
-fieldValue344.addChildren(Shape345)
-
-ProtoInstance342.addFieldValue(fieldValue344)
-
-fieldValue341.addChildren(ProtoInstance342)
-
-ProtoInstance338.addFieldValue(fieldValue341)
-
-fieldValue329.addChildren(ProtoInstance338)
-
-ProtoInstance326.addFieldValue(fieldValue329)
-
-fieldValue237.addChildren(ProtoInstance326)
-
-ProtoInstance234.addFieldValue(fieldValue237)
-
-fieldValue149.addChildren(ProtoInstance234)
-
-ProtoInstance146.addFieldValue(fieldValue149)
-
-fieldValue145.addChildren(ProtoInstance146)
-Group351 = Group()
-
-fieldValue145.addChildren(Group351)
-
-ProtoInstance141.addFieldValue(fieldValue145)
-fieldValue352 = fieldValue()
-fieldValue352.setName("joints")
-ProtoInstance353 = ProtoInstance()
-ProtoInstance353.setUSE("hanim_humanoid_root")
-
-fieldValue352.addChildren(ProtoInstance353)
-ProtoInstance354 = ProtoInstance()
-ProtoInstance354.setUSE("hanim_sacroiliac")
-
-fieldValue352.addChildren(ProtoInstance354)
-ProtoInstance355 = ProtoInstance()
-ProtoInstance355.setUSE("hanim_l_hip")
-
-fieldValue352.addChildren(ProtoInstance355)
-ProtoInstance356 = ProtoInstance()
-ProtoInstance356.setUSE("hanim_l_knee")
-
-fieldValue352.addChildren(ProtoInstance356)
-ProtoInstance357 = ProtoInstance()
-ProtoInstance357.setUSE("hanim_l_ankle")
-
-fieldValue352.addChildren(ProtoInstance357)
-ProtoInstance358 = ProtoInstance()
-ProtoInstance358.setUSE("hanim_r_hip")
-
-fieldValue352.addChildren(ProtoInstance358)
-ProtoInstance359 = ProtoInstance()
-ProtoInstance359.setUSE("hanim_r_knee")
-
-fieldValue352.addChildren(ProtoInstance359)
-ProtoInstance360 = ProtoInstance()
-ProtoInstance360.setUSE("hanim_r_ankle")
-
-fieldValue352.addChildren(ProtoInstance360)
-ProtoInstance361 = ProtoInstance()
-ProtoInstance361.setUSE("hanim_vl1")
-
-fieldValue352.addChildren(ProtoInstance361)
-ProtoInstance362 = ProtoInstance()
-ProtoInstance362.setUSE("hanim_l_shoulder")
-
-fieldValue352.addChildren(ProtoInstance362)
-ProtoInstance363 = ProtoInstance()
-ProtoInstance363.setUSE("hanim_l_elbow")
-
-fieldValue352.addChildren(ProtoInstance363)
-ProtoInstance364 = ProtoInstance()
-ProtoInstance364.setUSE("hanim_l_wrist")
-
-fieldValue352.addChildren(ProtoInstance364)
-ProtoInstance365 = ProtoInstance()
-ProtoInstance365.setUSE("hanim_r_shoulder")
-
-fieldValue352.addChildren(ProtoInstance365)
-ProtoInstance366 = ProtoInstance()
-ProtoInstance366.setUSE("hanim_r_elbow")
-
-fieldValue352.addChildren(ProtoInstance366)
-ProtoInstance367 = ProtoInstance()
-ProtoInstance367.setUSE("hanim_r_wrist")
-
-fieldValue352.addChildren(ProtoInstance367)
-ProtoInstance368 = ProtoInstance()
-ProtoInstance368.setUSE("hanim_vc4")
-
-fieldValue352.addChildren(ProtoInstance368)
-ProtoInstance369 = ProtoInstance()
-ProtoInstance369.setUSE("hanim_skullbase")
-
-fieldValue352.addChildren(ProtoInstance369)
-
-ProtoInstance141.addFieldValue(fieldValue352)
-fieldValue370 = fieldValue()
-fieldValue370.setName("segments")
-ProtoInstance371 = ProtoInstance()
-ProtoInstance371.setUSE("hanim_pelvis")
-
-fieldValue370.addChildren(ProtoInstance371)
-ProtoInstance372 = ProtoInstance()
-ProtoInstance372.setUSE("hanim_l_thigh")
-
-fieldValue370.addChildren(ProtoInstance372)
-ProtoInstance373 = ProtoInstance()
-ProtoInstance373.setUSE("hanim_l_calf")
-
-fieldValue370.addChildren(ProtoInstance373)
-ProtoInstance374 = ProtoInstance()
-ProtoInstance374.setUSE("hanim_l_hindfoot")
-
-fieldValue370.addChildren(ProtoInstance374)
-ProtoInstance375 = ProtoInstance()
-ProtoInstance375.setUSE("hanim_r_thigh")
-
-fieldValue370.addChildren(ProtoInstance375)
-ProtoInstance376 = ProtoInstance()
-ProtoInstance376.setUSE("hanim_r_calf")
-
-fieldValue370.addChildren(ProtoInstance376)
-ProtoInstance377 = ProtoInstance()
-ProtoInstance377.setUSE("hanim_r_hindfoot")
-
-fieldValue370.addChildren(ProtoInstance377)
-ProtoInstance378 = ProtoInstance()
-ProtoInstance378.setUSE("hanim_c7")
-
-fieldValue370.addChildren(ProtoInstance378)
-ProtoInstance379 = ProtoInstance()
-ProtoInstance379.setUSE("hanim_l_upperarm")
-
-fieldValue370.addChildren(ProtoInstance379)
-ProtoInstance380 = ProtoInstance()
-ProtoInstance380.setUSE("hanim_l_forearm")
-
-fieldValue370.addChildren(ProtoInstance380)
-ProtoInstance381 = ProtoInstance()
-ProtoInstance381.setUSE("hanim_l_hand")
-
-fieldValue370.addChildren(ProtoInstance381)
-ProtoInstance382 = ProtoInstance()
-ProtoInstance382.setUSE("hanim_r_upperarm")
-
-fieldValue370.addChildren(ProtoInstance382)
-ProtoInstance383 = ProtoInstance()
-ProtoInstance383.setUSE("hanim_r_forearm")
-
-fieldValue370.addChildren(ProtoInstance383)
-ProtoInstance384 = ProtoInstance()
-ProtoInstance384.setUSE("hanim_r_hand")
-
-fieldValue370.addChildren(ProtoInstance384)
-ProtoInstance385 = ProtoInstance()
-ProtoInstance385.setUSE("hanim_c4")
-
-fieldValue370.addChildren(ProtoInstance385)
-ProtoInstance386 = ProtoInstance()
-ProtoInstance386.setUSE("hanim_skull")
-
-fieldValue370.addChildren(ProtoInstance386)
-
-ProtoInstance141.addFieldValue(fieldValue370)
-fieldValue387 = fieldValue()
-fieldValue387.setName("viewpoints")
-Viewpoint388 = Viewpoint()
-Viewpoint388.setDEF("InclinedView")
-Viewpoint388.setDescription("Inclined View")
-Viewpoint388.setOrientation([-0.113,0.993,0.0347,0.671])
-Viewpoint388.setPosition([1.62,1.05,2.06])
-
-fieldValue387.addChildren(Viewpoint388)
-Viewpoint389 = Viewpoint()
-Viewpoint389.setDEF("FrontView")
-Viewpoint389.setDescription("Front View")
-Viewpoint389.setPosition([0,0.854,2.57665])
-
-fieldValue387.addChildren(Viewpoint389)
-Viewpoint390 = Viewpoint()
-Viewpoint390.setDEF("SideView")
-Viewpoint390.setDescription("Side View")
-Viewpoint390.setOrientation([0,1,0,1.57079])
-Viewpoint390.setPosition([2.5929,0.854,0])
-
-fieldValue387.addChildren(Viewpoint390)
-Viewpoint391 = Viewpoint()
-Viewpoint391.setDEF("TopView")
-Viewpoint391.setDescription("Top View")
-Viewpoint391.setOrientation([1,0,0,-1.57079])
-Viewpoint391.setPosition([0,3.4495,0])
-
-fieldValue387.addChildren(Viewpoint391)
-
-ProtoInstance141.addFieldValue(fieldValue387)
-
-Scene14.addChildren(ProtoInstance141)
-WorldInfo392 = WorldInfo()
-WorldInfo392.setInfo(["Copyright (c) 1997. 3Name3D / Yglesias Wallock Divekar, Inc."])
-WorldInfo392.setTitle("Nancy - an HAnim compliant avatar by 3Name3D")
-
-Scene14.addChildren(WorldInfo392)
-NavigationInfo393 = NavigationInfo()
-NavigationInfo393.setAvatarSize([0.15,1.53,0.75])
-NavigationInfo393.setSpeed(0.5)
-NavigationInfo393.setType(["EXAMINE"])
-
-Scene14.addChildren(NavigationInfo393)
-Group394 = Group()
-Group394.setDEF("Interface")
-Transform395 = Transform()
-ProximitySensor396 = ProximitySensor()
-ProximitySensor396.setDEF("HudProx")
-ProximitySensor396.setCenter([0,20,0])
-ProximitySensor396.setSize([500,100,500])
-
-Transform395.addChildren(ProximitySensor396)
-
-Group394.addChildren(Transform395)
-Collision397 = Collision()
-Collision397.setDEF("HUD")
-Collision397.setEnabled(False)
-Transform398 = Transform()
-Transform398.setDEF("HudXform")
-Transform399 = Transform()
-Transform399.setScale([0.012,0.012,0.012])
-Transform399.setTranslation([0.01107,-0.025,-0.08])
-Transform400 = Transform()
-Transform400.setDEF("Stand_Text")
-TouchSensor401 = TouchSensor()
-TouchSensor401.setDEF("Stand_Touch")
-TouchSensor401.setDescription("click for behavior")
-
-Transform400.addChildren(TouchSensor401)
-Shape402 = Shape()
-Shape402.setDEF("Stand")
-IndexedFaceSet403 = IndexedFaceSet()
-IndexedFaceSet403.setCoordIndex([1,30,29,-1,1,29,2,-1,31,47,46,-1,31,46,32,-1,78,77,80,-1,78,80,79,-1,96,113,112,-1,96,112,95,-1,95,112,111,-1,95,111,94,-1,94,111,110,-1,94,110,93,-1,93,110,109,-1,93,109,108,-1,93,108,100,-1,107,99,100,-1,107,100,108,-1,107,106,99,-1,106,105,98,-1,106,98,99,-1,104,97,98,-1,104,98,105,-1,103,102,104,-1,104,102,101,-1,104,101,97,-1,101,96,97,-1,101,97,101,-1,101,101,96,-1,96,101,113,-1,113,101,114,-1,115,86,85,-1,115,85,116,-1,117,87,84,-1,117,84,118,-1,119,83,120,-1,121,88,82,-1,121,82,122,-1,123,89,81,-1,123,81,124,-1,125,90,126,-1,127,92,128,-1,129,91,130,-1,54,49,50,-1,54,50,55,-1,76,75,74,-1,76,74,54,-1,54,74,73,-1,54,73,49,-1,49,73,48,-1,48,73,62,-1,48,62,61,-1,48,61,60,-1,48,60,53,-1,53,60,59,-1,53,59,53,-1,53,59,58,-1,53,58,52,-1,52,58,57,-1,52,57,51,-1,56,51,57,-1,56,55,50,-1,56,50,51,-1,62,73,72,-1,62,72,63,-1,63,72,71,-1,63,71,64,-1,64,71,70,-1,64,70,69,-1,64,69,65,-1,65,69,68,-1,65,68,67,-1,65,67,66,-1,131,40,39,-1,131,39,132,-1,133,43,42,-1,133,42,134,-1,135,37,36,-1,135,36,136,-1,137,41,38,-1,137,38,138,-1,139,44,35,-1,139,35,140,-1,141,34,142,-1,143,45,33,-1,143,33,144,-1,145,16,15,-1,145,15,146,-1,147,14,148,-1,149,17,13,-1,149,13,150,-1,151,18,12,-1,151,12,152,-1,153,19,11,-1,153,11,154,-1,155,20,10,-1,155,10,156,-1,157,9,158,-1,159,21,8,-1,159,8,160,-1,161,22,7,-1,161,7,162,-1,163,23,164,-1,165,24,6,-1,165,6,166,-1,167,25,5,-1,167,5,168,-1,169,26,170,-1,171,27,4,-1,171,4,172,-1,173,28,3,-1,173,3,174,-1,175,0,176,-1])
-Coordinate404 = Coordinate()
-Coordinate404.setPoint([-3.21,-0.0154,0,-3.15,-0.0154,0,-3.14,-0.0467,0,-3.1,-0.0601,0,-3.05,-0.051,0,-3.04,-0.0254,0,-3.05,-0.00248,0,-3.1,0.0122,0,-3.16,0.03,0,-3.2,0.0684,0,-3.2,0.133,0,-3.16,0.17,0,-3.1,0.182,0,-3.04,0.171,0,-3.01,0.136,0,-3,0.095,0,-3.05,0.095,0,-3.06,0.125,0,-3.1,0.136,0,-3.14,0.126,0,-3.15,0.103,0,-3.14,0.0815,0,-3.1,0.0689,0,-3.04,0.0512,0,-3,0.0249,0,-2.99,-0.0195,0,-3,-0.0708,0,-3.05,-0.104,0,-3.1,-0.108,0,-3.16,-0.0947,0,-3.2,-0.0586,0,-2.86,-0.102,0,-2.9,-0.102,0,-2.94,-0.0832,0,-2.94,-0.0457,0,-2.94,0.0645,0,-2.97,0.0645,0,-2.97,0.103,0,-2.94,0.103,0,-2.94,0.158,0,-2.89,0.158,0,-2.89,0.103,0,-2.86,0.103,0,-2.86,0.0645,0,-2.89,0.0645,0,-2.89,-0.0483,0,-2.88,-0.0608,0,-2.86,-0.0612,0,-2.71,-0.000798,0,-2.71,-0.0373,0,-2.74,-0.0637,0,-2.77,-0.0624,0,-2.78,-0.0416,0,-2.77,-0.0195,0,-2.71,-0.0754,0,-2.74,-0.103,0,-2.79,-0.106,0,-2.82,-0.0865,0,-2.84,-0.0431,0,-2.82,0.000177,0,-2.78,0.0201,0,-2.73,0.0275,0,-2.71,0.0446,0,-2.72,0.0614,0,-2.74,0.0675,0,-2.77,0.0573,0,-2.78,0.039,0,-2.83,0.039,0,-2.82,0.0765,0,-2.78,0.105,0,-2.74,0.11,0,-2.71,0.107,0,-2.67,0.0849,0,-2.66,0.0526,0,-2.66,-0.0763,0,-2.65,-0.101,0,-2.7,-0.101,0,-2.61,-0.101,0,-2.61,0.103,0,-2.56,0.103,0,-2.56,0.0787,0,-2.52,0.104,0,-2.47,0.105,0,-2.43,0.0743,0,-2.43,0.038,0,-2.43,-0.101,0,-2.48,-0.101,0,-2.48,0.0224,0,-2.49,0.0514,0,-2.52,0.0627,0,-2.54,0.0505,0,-2.55,0.02,0,-2.55,-0.101,0,-2.33,0.0279,0,-2.31,0.0587,0,-2.27,0.0589,0,-2.25,0.0281,0,-2.25,-0.0232,0,-2.27,-0.0563,0,-2.31,-0.057,0,-2.33,-0.0245,0,-2.19,0.175,0,-2.19,-0.101,0,-2.25,-0.101,0,-2.25,-0.073,0,-2.26,-0.0913,0,-2.31,-0.108,0,-2.35,-0.0915,0,-2.38,-0.0424,0,-2.39,0.0243,0,-2.37,0.0809,0,-2.32,0.108,0,-2.28,0.106,0,-2.25,0.0776,0,-2.25,0.175,0,-2.48,0.0224,0,-2.43,0.038,0,-2.49,0.0514,0,-2.43,0.0743,0,-2.49,0.0514,0,-2.47,0.105,0,-2.52,0.0627,0,-2.52,0.104,0,-2.54,0.0505,0,-2.56,0.0787,0,-2.55,0.02,0,-2.56,0.0787,0,-2.61,-0.101,0,-2.55,0.02,0,-2.61,-0.101,0,-2.56,0.0787,0,-2.89,0.103,0,-2.94,0.103,0,-2.89,0.0645,0,-2.89,0.103,0,-2.94,0.103,0,-2.94,0.0645,0,-2.89,0.0645,0,-2.94,0.0645,0,-2.89,-0.0483,0,-2.94,-0.0457,0,-2.89,-0.0483,0,-2.94,-0.0832,0,-2.88,-0.0608,0,-2.9,-0.102,0,-3.06,0.125,0,-3.01,0.136,0,-3.06,0.125,0,-3.04,0.171,0,-3.1,0.136,0,-3.1,0.182,0,-3.14,0.126,0,-3.16,0.17,0,-3.15,0.103,0,-3.2,0.133,0,-3.14,0.0815,0,-3.2,0.0684,0,-3.14,0.0815,0,-3.16,0.03,0,-3.1,0.0689,0,-3.1,0.0122,0,-3.04,0.0512,0,-3.05,-0.00248,0,-3,0.0249,0,-3.05,-0.00248,0,-2.99,-0.0195,0,-3.04,-0.0254,0,-3,-0.0708,0,-3.05,-0.051,0,-3.05,-0.104,0,-3.05,-0.051,0,-3.1,-0.108,0,-3.1,-0.0601,0,-3.16,-0.0947,0,-3.14,-0.0467,0,-3.15,-0.0154,0,-3.2,-0.0586,0])
-
-IndexedFaceSet403.setCoord(Coordinate404)
-
-Shape402.setGeometry(IndexedFaceSet403)
-Appearance405 = Appearance()
-Material406 = Material()
-Material406.setDEF("text_color")
-Material406.setAmbientIntensity(0)
-Material406.setDiffuseColor([0,0,0])
-Material406.setEmissiveColor([0.819,0.521,0.169])
-
-Appearance405.setMaterial(Material406)
-
-Shape402.setAppearance(Appearance405)
-
-Transform400.addChildren(Shape402)
-Transform407 = Transform()
-Transform407.setScale([84.89,77.52,77.52])
-Transform407.setTranslation([0.04092,1.843,3.826])
-Shape408 = Shape()
-Shape408.setDEF("Stand_Back")
-IndexedFaceSet409 = IndexedFaceSet()
-IndexedFaceSet409.setCoordIndex([0,2,3,-1,2,0,1,-1])
-Coordinate410 = Coordinate()
-Coordinate410.setPoint([-0.02572,-0.02535,-0.05,-0.02578,-0.02131,-0.05,-0.03871,-0.02131,-0.05,-0.03877,-0.02541,-0.05])
-
-IndexedFaceSet409.setCoord(Coordinate410)
-
-Shape408.setGeometry(IndexedFaceSet409)
-Appearance411 = Appearance()
-Material412 = Material()
-Material412.setDEF("Clear")
-Material412.setAmbientIntensity(0)
-Material412.setDiffuseColor([0,0,0])
-Material412.setTransparency(1)
-
-Appearance411.setMaterial(Material412)
-
-Shape408.setAppearance(Appearance411)
-
-Transform407.addChildren(Shape408)
-
-Transform400.addChildren(Transform407)
-
-Transform399.addChildren(Transform400)
-Transform413 = Transform()
-Transform413.setDEF("Walk_Text")
-TouchSensor414 = TouchSensor()
-TouchSensor414.setDEF("Walk_Touch")
-TouchSensor414.setDescription("click for behavior")
-
-Transform413.addChildren(TouchSensor414)
-Shape415 = Shape()
-Shape415.setDEF("WALK")
-IndexedFaceSet416 = IndexedFaceSet()
-IndexedFaceSet416.setCoordIndex([0,2,1,-1,3,2,0,-1,12,3,0,-1,4,3,12,-1,11,4,12,-1,5,4,11,-1,10,5,11,-1,6,5,10,-1,9,6,10,-1,7,6,9,-1,8,7,9,-1,15,14,13,-1,16,15,13,-1,19,18,17,-1,20,19,17,-1,27,20,17,-1,28,27,17,-1,26,20,27,-1,23,20,26,-1,21,20,23,-1,25,23,26,-1,22,21,23,-1,24,23,25,-1,29,30,31,-1,29,31,32,-1,33,34,35,-1,33,35,29,-1,29,35,36,-1,29,36,30,-1,30,36,37,-1,37,36,38,-1,37,38,39,-1,37,39,40,-1,37,40,41,-1,41,40,42,-1,41,42,41,-1,41,42,43,-1,41,43,44,-1,44,43,45,-1,44,45,46,-1,47,46,45,-1,47,32,31,-1,47,31,46,-1,38,36,48,-1,38,48,49,-1,49,48,50,-1,49,50,51,-1,51,50,52,-1,51,52,53,-1,51,53,54,-1,54,53,55,-1,54,55,56,-1,54,56,57,-1])
-Coordinate417 = Coordinate()
-Coordinate417.setPoint([-1.88,-0.101,0,-1.96,0.175,0,-1.91,0.175,0,-1.86,-0.0195,0,-1.82,0.175,0,-1.76,0.175,0,-1.72,-0.0195,0,-1.67,0.175,0,-1.61,0.175,0,-1.69,-0.101,0,-1.75,-0.101,0,-1.79,0.111,0,-1.83,-0.101,0,-1.38,-0.101,0,-1.38,0.175,0,-1.32,0.175,0,-1.32,-0.101,0,-1.27,-0.101,0,-1.27,0.175,0,-1.22,0.175,0,-1.22,0.0304,0,-1.16,0.103,0,-1.09,0.103,0,-1.16,0.0272,0,-1.09,-0.101,0,-1.15,-0.101,0,-1.2,-0.0141,0,-1.22,-0.0363,0,-1.22,-0.101,0,-1.48,-0.0754,0,-1.48,-0.0373,0,-1.51,-0.0637,0,-1.51,-0.103,0,-1.47,-0.101,0,-1.42,-0.101,0,-1.43,-0.0763,0,-1.43,0.0526,0,-1.48,-0.000798,0,-1.48,0.0446,0,-1.5,0.0275,0,-1.55,0.0201,0,-1.54,-0.0195,0,-1.59,0.000177,0,-1.61,-0.0431,0,-1.55,-0.0416,0,-1.59,-0.0865,0,-1.54,-0.0624,0,-1.56,-0.106,0,-1.44,0.0849,0,-1.49,0.0614,0,-1.48,0.107,0,-1.51,0.0675,0,-1.52,0.11,0,-1.55,0.105,0,-1.54,0.0573,0,-1.59,0.0765,0,-1.6,0.039,0,-1.55,0.039,0])
-
-IndexedFaceSet416.setCoord(Coordinate417)
-
-Shape415.setGeometry(IndexedFaceSet416)
-Appearance418 = Appearance()
-Material419 = Material()
-Material419.setUSE("text_color")
-
-Appearance418.setMaterial(Material419)
-
-Shape415.setAppearance(Appearance418)
-
-Transform413.addChildren(Shape415)
-Transform420 = Transform()
-Transform420.setScale([81.3,81.3,81.31])
-Transform420.setTranslation([-0.0414,1.941,4.015])
-Shape421 = Shape()
-Shape421.setDEF("Walk_Back")
-IndexedFaceSet422 = IndexedFaceSet()
-IndexedFaceSet422.setCoordIndex([1,3,0,-1,3,1,2,-1])
-Coordinate423 = Coordinate()
-Coordinate423.setPoint([-0.02381,-0.02541,-0.05,-0.0127,-0.02541,-0.05,-0.01263,-0.02139,-0.05,-0.02381,-0.02146,-0.05])
-
-IndexedFaceSet422.setCoord(Coordinate423)
-
-Shape421.setGeometry(IndexedFaceSet422)
-Appearance424 = Appearance()
-Material425 = Material()
-Material425.setUSE("Clear")
-
-Appearance424.setMaterial(Material425)
-
-Shape421.setAppearance(Appearance424)
-
-Transform420.addChildren(Shape421)
-
-Transform413.addChildren(Transform420)
-
-Transform399.addChildren(Transform413)
-Transform426 = Transform()
-Transform426.setDEF("Run_Text")
-TouchSensor427 = TouchSensor()
-TouchSensor427.setDEF("Run_Touch")
-TouchSensor427.setDescription("click for behavior")
-
-Transform426.addChildren(TouchSensor427)
-Shape428 = Shape()
-Shape428.setDEF("Run")
-IndexedFaceSet429 = IndexedFaceSet()
-IndexedFaceSet429.setCoordIndex([24,26,25,-1,53,39,54,-1,17,1,0,-1,17,0,16,-1,0,14,16,-1,0,15,14,-1,14,13,22,-1,14,22,16,-1,13,12,21,-1,13,21,22,-1,12,6,21,-1,12,11,7,-1,12,7,6,-1,11,8,7,-1,10,8,11,-1,10,9,8,-1,6,5,21,-1,5,4,20,-1,5,20,21,-1,4,3,19,-1,4,19,20,-1,3,2,18,-1,3,18,19,-1,18,2,1,-1,18,1,17,-1,55,32,31,-1,55,31,56,-1,57,33,30,-1,57,30,58,-1,59,29,60,-1,61,34,28,-1,61,28,62,-1,63,35,27,-1,63,27,64,-1,65,36,66,-1,67,38,68,-1,69,37,70,-1,71,23,72,-1,73,48,47,-1,73,47,74,-1,75,49,46,-1,75,46,76,-1,77,45,78,-1,79,50,44,-1,79,44,80,-1,81,51,43,-1,81,43,82,-1,83,41,84,-1,85,40,86,-1,87,52,88,-1,89,42,90,-1])
-Coordinate430 = Coordinate()
-Coordinate430.setPoint([-0.829,-0.101,0,-0.829,0.175,0,-0.662,0.172,0,-0.622,0.148,0,-0.607,0.103,0,-0.62,0.0501,0,-0.648,0.0316,0,-0.615,-0.0063,0,-0.611,-0.0764,0,-0.601,-0.101,0,-0.664,-0.101,0,-0.671,-0.0373,0,-0.68,-0.00372,0,-0.712,0.00648,0,-0.772,0.00648,0,-0.772,-0.101,0,-0.772,0.0546,0,-0.772,0.127,0,-0.703,0.127,0,-0.673,0.118,0,-0.663,0.091,0,-0.674,0.063,0,-0.705,0.0546,0,-0.379,0.103,0,-0.379,-0.101,0,-0.432,-0.101,0,-0.432,-0.0764,0,-0.466,-0.101,0,-0.518,-0.102,0,-0.555,-0.072,0,-0.56,-0.0357,0,-0.56,0.103,0,-0.506,0.103,0,-0.506,-0.0201,0,-0.5,-0.0491,0,-0.472,-0.0604,0,-0.443,-0.0482,0,-0.433,-0.0177,0,-0.433,0.103,0,-0.331,-0.101,0,-0.331,0.103,0,-0.278,0.103,0,-0.278,0.0787,0,-0.244,0.104,0,-0.192,0.105,0,-0.154,0.0743,0,-0.149,0.038,0,-0.149,-0.101,0,-0.203,-0.101,0,-0.203,0.0224,0,-0.209,0.0514,0,-0.238,0.0627,0,-0.266,0.0505,0,-0.277,0.02,0,-0.277,-0.101,0,-0.506,-0.0201,0,-0.56,-0.0357,0,-0.5,-0.0491,0,-0.555,-0.072,0,-0.5,-0.0491,0,-0.518,-0.102,0,-0.472,-0.0604,0,-0.466,-0.101,0,-0.443,-0.0482,0,-0.432,-0.0764,0,-0.433,-0.0177,0,-0.432,-0.0764,0,-0.379,0.103,0,-0.433,-0.0177,0,-0.379,0.103,0,-0.432,-0.0764,0,-0.379,-0.101,0,-0.432,-0.0764,0,-0.203,0.0224,0,-0.149,0.038,0,-0.209,0.0514,0,-0.154,0.0743,0,-0.209,0.0514,0,-0.192,0.105,0,-0.238,0.0627,0,-0.244,0.104,0,-0.266,0.0505,0,-0.278,0.0787,0,-0.278,0.0787,0,-0.331,0.103,0,-0.277,0.02,0,-0.331,-0.101,0,-0.277,0.02,0,-0.278,0.0787,0,-0.277,0.02,0,-0.331,0.103,0])
-
-IndexedFaceSet429.setCoord(Coordinate430)
-
-Shape428.setGeometry(IndexedFaceSet429)
-Appearance431 = Appearance()
-Material432 = Material()
-Material432.setUSE("text_color")
-
-Appearance431.setMaterial(Material432)
-
-Shape428.setAppearance(Appearance431)
-
-Transform426.addChildren(Shape428)
-Transform433 = Transform()
-Transform433.setScale([82.47,82.47,82.48])
-Transform433.setTranslation([-0.01579,1.968,4.074])
-Shape434 = Shape()
-Shape434.setDEF("Run_Back")
-IndexedFaceSet435 = IndexedFaceSet()
-IndexedFaceSet435.setCoordIndex([0,2,3,-1,2,0,1,-1])
-Coordinate436 = Coordinate()
-Coordinate436.setPoint([-0.01009,-0.02534,-0.05,-0.001382,-0.02541,-0.05,-0.001315,-0.02146,-0.05,-0.01022,-0.02146,-0.05])
-
-IndexedFaceSet435.setCoord(Coordinate436)
-
-Shape434.setGeometry(IndexedFaceSet435)
-Appearance437 = Appearance()
-Material438 = Material()
-Material438.setUSE("Clear")
-
-Appearance437.setMaterial(Material438)
-
-Shape434.setAppearance(Appearance437)
-
-Transform433.addChildren(Shape434)
-
-Transform426.addChildren(Transform433)
-
-Transform399.addChildren(Transform426)
-Transform439 = Transform()
-Transform439.setDEF("Jump_Text")
-TouchSensor440 = TouchSensor()
-TouchSensor440.setDEF("Jump_Touch")
-TouchSensor440.setDescription("click for behavior")
-
-Transform439.addChildren(TouchSensor440)
-Shape441 = Shape()
-Shape441.setDEF("Jump")
-IndexedFaceSet442 = IndexedFaceSet()
-IndexedFaceSet442.setCoordIndex([1,0,14,-1,1,14,2,-1,16,15,18,-1,16,18,17,-1,64,65,66,-1,67,68,69,-1,67,69,70,-1,71,72,73,-1,71,73,74,-1,75,76,77,-1,78,79,80,-1,78,80,81,-1,82,83,84,-1,82,84,85,-1,86,87,88,-1,89,90,91,-1,92,93,94,-1,95,96,97,-1,98,7,6,-1,98,6,99,-1,100,8,5,-1,100,5,101,-1,102,9,4,-1,102,4,103,-1,104,10,105,-1,106,11,3,-1,106,3,107,-1,108,12,109,-1,110,13,111,-1,112,27,26,-1,112,26,113,-1,114,28,25,-1,114,25,115,-1,116,24,117,-1,118,29,23,-1,118,23,119,-1,120,30,22,-1,120,22,121,-1,122,31,123,-1,124,34,33,-1,124,33,125,-1,126,35,32,-1,126,32,127,-1,128,21,129,-1,130,36,20,-1,130,20,131,-1,132,37,19,-1,132,19,133,-1,134,38,135,-1,136,40,137,-1,138,39,139,-1,53,58,59,-1,53,59,54,-1,53,52,58,-1,52,51,57,-1,52,57,58,-1,51,50,56,-1,51,56,57,-1,50,49,56,-1,49,48,63,-1,49,63,56,-1,48,47,63,-1,63,47,46,-1,63,46,62,-1,62,46,45,-1,62,45,44,-1,62,44,61,-1,61,44,60,-1,54,59,60,-1,44,43,42,-1,60,44,42,-1,41,55,54,-1,41,54,60,-1,41,60,42,-1])
-Coordinate443 = Coordinate()
-Coordinate443.setPoint([0.108,0.00195,0,0.163,0.00195,0,0.166,-0.0473,0,0.194,-0.0608,0,0.222,-0.0492,0,0.228,-0.017,0,0.228,0.175,0,0.284,0.175,0,0.284,-0.02,0,0.271,-0.0798,0,0.23,-0.104,0,0.193,-0.108,0,0.155,-0.102,0,0.117,-0.0714,0,0.108,-0.0357,0,0.563,-0.101,0,0.563,0.103,0,0.615,0.103,0,0.615,0.0803,0,0.649,0.105,0,0.696,0.105,0,0.728,0.0788,0,0.76,0.104,0,0.811,0.104,0,0.842,0.081,0,0.853,0.0416,0,0.853,-0.101,0,0.799,-0.101,0,0.799,0.0305,0,0.79,0.0544,0,0.767,0.0616,0,0.743,0.0507,0,0.734,0.0228,0,0.734,-0.101,0,0.681,-0.101,0,0.681,0.0301,0,0.673,0.0532,0,0.65,0.0611,0,0.626,0.0506,0,0.617,0.0224,0,0.617,-0.101,0,0.9,-0.182,0,0.9,0.103,0,0.952,0.103,0,0.952,0.0751,0,0.968,0.0934,0,1.01,0.11,0,1.05,0.103,0,1.07,0.0796,0,1.1,0.0251,0,1.1,-0.0222,0,1.07,-0.0788,0,1.03,-0.106,0,0.988,-0.103,0,0.953,-0.0755,0,0.953,-0.182,0,1.04,-0.000177,0,1.03,-0.0446,0,0.999,-0.0603,0,0.966,-0.0453,0,0.953,-0.000177,0,0.963,0.045,0,0.998,0.063,0,1.03,0.0462,0,0.515,-0.101,0,0.462,-0.0764,0,0.462,-0.101,0,0.388,-0.0201,0,0.388,0.103,0,0.334,0.103,0,0.334,-0.0357,0,0.394,-0.0491,0,0.388,-0.0201,0,0.334,-0.0357,0,0.339,-0.072,0,0.394,-0.0491,0,0.339,-0.072,0,0.376,-0.102,0,0.422,-0.0604,0,0.394,-0.0491,0,0.376,-0.102,0,0.428,-0.101,0,0.451,-0.0482,0,0.422,-0.0604,0,0.428,-0.101,0,0.462,-0.0764,0,0.461,-0.0177,0,0.451,-0.0482,0,0.462,-0.0764,0,0.515,0.103,0,0.461,0.103,0,0.461,-0.0177,0,0.515,0.103,0,0.461,-0.0177,0,0.462,-0.0764,0,0.515,-0.101,0,0.515,0.103,0,0.462,-0.0764,0,0.284,-0.02,0,0.228,-0.017,0,0.271,-0.0798,0,0.222,-0.0492,0,0.23,-0.104,0,0.194,-0.0608,0,0.193,-0.108,0,0.194,-0.0608,0,0.155,-0.102,0,0.166,-0.0473,0,0.117,-0.0714,0,0.166,-0.0473,0,0.108,-0.0357,0,0.166,-0.0473,0,0.799,0.0305,0,0.853,0.0416,0,0.79,0.0544,0,0.842,0.081,0,0.79,0.0544,0,0.811,0.104,0,0.767,0.0616,0,0.76,0.104,0,0.743,0.0507,0,0.728,0.0788,0,0.734,0.0228,0,0.728,0.0788,0,0.681,0.0301,0,0.734,0.0228,0,0.673,0.0532,0,0.728,0.0788,0,0.673,0.0532,0,0.696,0.105,0,0.65,0.0611,0,0.649,0.105,0,0.626,0.0506,0,0.615,0.0803,0,0.617,0.0224,0,0.615,0.0803,0,0.563,-0.101,0,0.617,0.0224,0,0.563,-0.101,0,0.615,0.0803,0])
-
-IndexedFaceSet442.setCoord(Coordinate443)
-
-Shape441.setGeometry(IndexedFaceSet442)
-Appearance444 = Appearance()
-Material445 = Material()
-Material445.setUSE("text_color")
-
-Appearance444.setMaterial(Material445)
-
-Shape441.setAppearance(Appearance444)
-
-Transform439.addChildren(Shape441)
-Transform446 = Transform()
-Transform446.setScale([83.79,83.79,83.79])
-Transform446.setTranslation([-0.008979,1.99,4.14])
-Shape447 = Shape()
-Shape447.setDEF("Jump_Back")
-IndexedFaceSet448 = IndexedFaceSet()
-IndexedFaceSet448.setCoordIndex([0,2,3,-1,2,0,1,-1])
-Coordinate449 = Coordinate()
-Coordinate449.setPoint([0.001296,-0.02541,-0.05,0.01335,-0.02527,-0.05,0.01328,-0.02152,-0.05,0.001229,-0.02146,-0.05])
-
-IndexedFaceSet448.setCoord(Coordinate449)
-
-Shape447.setGeometry(IndexedFaceSet448)
-Appearance450 = Appearance()
-Material451 = Material()
-Material451.setUSE("Clear")
-
-Appearance450.setMaterial(Material451)
-
-Shape447.setAppearance(Appearance450)
-
-Transform446.addChildren(Shape447)
-
-Transform439.addChildren(Transform446)
-
-Transform399.addChildren(Transform439)
-
-Transform398.addChildren(Transform399)
-
-Collision397.setProxy(Transform398)
-
-Group394.addChildren(Collision397)
-Transform452 = Transform()
-Transform452.setDEF("Floor")
-Transform452.setScale([1,0.0125,1])
-Transform452.setTranslation([0,-0.0125,0])
-Shape453 = Shape()
-Box454 = Box()
-
-Shape453.setGeometry(Box454)
-Appearance455 = Appearance()
-Material456 = Material()
-
-Appearance455.setMaterial(Material456)
-
-Shape453.setAppearance(Appearance455)
-
-Transform452.addChildren(Shape453)
-
-Group394.addChildren(Transform452)
-
-Scene14.addChildren(Group394)
-Group457 = Group()
-Group457.setDEF("Animations")
-Group458 = Group()
-Group458.setDEF("Stand_Animation")
-OrientationInterpolator459 = OrientationInterpolator()
-OrientationInterpolator459.setDEF("r_ankle_RotationInterpolator_Stand")
-OrientationInterpolator459.setKey([0,1])
-OrientationInterpolator459.setKeyValue([0,0,1,0,0,0,1,0])
-
-Group458.addChildren(OrientationInterpolator459)
-OrientationInterpolator460 = OrientationInterpolator()
-OrientationInterpolator460.setDEF("r_knee_RotationInterpolator_Stand")
-OrientationInterpolator460.setKey([0,1])
-OrientationInterpolator460.setKeyValue([0,0,1,0,0,0,1,0])
-
-Group458.addChildren(OrientationInterpolator460)
-OrientationInterpolator461 = OrientationInterpolator()
-OrientationInterpolator461.setDEF("r_hip_RotationInterpolator_Stand")
-OrientationInterpolator461.setKey([0,1])
-OrientationInterpolator461.setKeyValue([0,0,1,0,0,0,1,0])
-
-Group458.addChildren(OrientationInterpolator461)
-OrientationInterpolator462 = OrientationInterpolator()
-OrientationInterpolator462.setDEF("l_ankle_RotationInterpolator_Stand")
-OrientationInterpolator462.setKey([0,1])
-OrientationInterpolator462.setKeyValue([0,0,1,0,0,0,1,0])
-
-Group458.addChildren(OrientationInterpolator462)
-OrientationInterpolator463 = OrientationInterpolator()
-OrientationInterpolator463.setDEF("l_knee_RotationInterpolator_Stand")
-OrientationInterpolator463.setKey([0,1])
-OrientationInterpolator463.setKeyValue([0,0,1,0,0,0,1,0])
-
-Group458.addChildren(OrientationInterpolator463)
-OrientationInterpolator464 = OrientationInterpolator()
-OrientationInterpolator464.setDEF("l_hip_RotationInterpolator_Stand")
-OrientationInterpolator464.setKey([0,1])
-OrientationInterpolator464.setKeyValue([0,0,1,0,0,0,1,0])
-
-Group458.addChildren(OrientationInterpolator464)
-OrientationInterpolator465 = OrientationInterpolator()
-OrientationInterpolator465.setDEF("lower_body_RotationInterpolator_Stand")
-OrientationInterpolator465.setKey([0,1])
-OrientationInterpolator465.setKeyValue([0,0,1,0,0,0,1,0])
-
-Group458.addChildren(OrientationInterpolator465)
-OrientationInterpolator466 = OrientationInterpolator()
-OrientationInterpolator466.setDEF("r_wrist_RotationInterpolator_Stand")
-OrientationInterpolator466.setKey([0,1])
-OrientationInterpolator466.setKeyValue([0,0,1,0,0,0,1,0])
-
-Group458.addChildren(OrientationInterpolator466)
-OrientationInterpolator467 = OrientationInterpolator()
-OrientationInterpolator467.setDEF("r_elbow_RotationInterpolator_Stand")
-OrientationInterpolator467.setKey([0,1])
-OrientationInterpolator467.setKeyValue([0,0,1,0,0,0,1,0])
-
-Group458.addChildren(OrientationInterpolator467)
-OrientationInterpolator468 = OrientationInterpolator()
-OrientationInterpolator468.setDEF("r_shoulder_RotationInterpolator_Stand")
-OrientationInterpolator468.setKey([0,1])
-OrientationInterpolator468.setKeyValue([0,0,1,0,0,0,1,0])
-
-Group458.addChildren(OrientationInterpolator468)
-OrientationInterpolator469 = OrientationInterpolator()
-OrientationInterpolator469.setDEF("l_wrist_RotationInterpolator_Stand")
-OrientationInterpolator469.setKey([0,1])
-OrientationInterpolator469.setKeyValue([0,0,1,0,0,0,1,0])
-
-Group458.addChildren(OrientationInterpolator469)
-OrientationInterpolator470 = OrientationInterpolator()
-OrientationInterpolator470.setDEF("l_elbow_RotationInterpolator_Stand")
-OrientationInterpolator470.setKey([0,1])
-OrientationInterpolator470.setKeyValue([0,0,1,0,0,0,1,0])
-
-Group458.addChildren(OrientationInterpolator470)
-OrientationInterpolator471 = OrientationInterpolator()
-OrientationInterpolator471.setDEF("l_shoulder_RotationInterpolator_Stand")
-OrientationInterpolator471.setKey([0,1])
-OrientationInterpolator471.setKeyValue([0,0,1,0,0,0,1,0])
-
-Group458.addChildren(OrientationInterpolator471)
-OrientationInterpolator472 = OrientationInterpolator()
-OrientationInterpolator472.setDEF("head_RotationInterpolator_Stand")
-OrientationInterpolator472.setKey([0,1])
-OrientationInterpolator472.setKeyValue([0,0,1,0,0,0,1,0])
-
-Group458.addChildren(OrientationInterpolator472)
-OrientationInterpolator473 = OrientationInterpolator()
-OrientationInterpolator473.setDEF("neck_RotationInterpolator_Stand")
-OrientationInterpolator473.setKey([0,1])
-OrientationInterpolator473.setKeyValue([0,0,1,0,0,0,1,0])
-
-Group458.addChildren(OrientationInterpolator473)
-OrientationInterpolator474 = OrientationInterpolator()
-OrientationInterpolator474.setDEF("upper_body_RotationInterpolator_Stand")
-OrientationInterpolator474.setKey([0,1])
-OrientationInterpolator474.setKeyValue([0,0,1,0,0,0,1,0])
-
-Group458.addChildren(OrientationInterpolator474)
-OrientationInterpolator475 = OrientationInterpolator()
-OrientationInterpolator475.setDEF("whole_body_RotationInterpolator_Stand")
-OrientationInterpolator475.setKey([0,1])
-OrientationInterpolator475.setKeyValue([0,0,1,0,0,0,1,0])
-
-Group458.addChildren(OrientationInterpolator475)
-PositionInterpolator476 = PositionInterpolator()
-PositionInterpolator476.setDEF("whole_body_TranslationInterpolator_Stand")
-PositionInterpolator476.setKey([0,1])
-PositionInterpolator476.setKeyValue([0,0,0,0,0,0])
-
-Group458.addChildren(PositionInterpolator476)
-TimeSensor477 = TimeSensor()
-TimeSensor477.setDEF("Stand_Time")
-TimeSensor477.setCycleInterval(0.009999999776482582)
-
-Group458.addChildren(TimeSensor477)
-
-Group457.addChildren(Group458)
-Group478 = Group()
-Group478.setDEF("Walk_Animation")
-OrientationInterpolator479 = OrientationInterpolator()
-OrientationInterpolator479.setDEF("r_ankle_RotationInterpolator_BasicWalk")
-OrientationInterpolator479.setKey([0,0.125,0.2083,0.375,0.4583,0.5,0.6667,0.75,0.7917,0.9167,1])
-OrientationInterpolator479.setKeyValue([0,0,1,0,-1,0,0,0.3533,-1,0,0,0.1072,1,0,0,0.2612,1,0,0,0.1268,-1,0,0,0.01793,-1,0,0,0.05824,-1,0,0,0.2398,-1,0,0,0.35,-1,0,0,0.3322,0,0,1,0])
-
-Group478.addChildren(OrientationInterpolator479)
-OrientationInterpolator480 = OrientationInterpolator()
-OrientationInterpolator480.setDEF("r_knee_RotationInterpolator_BasicWalk")
-OrientationInterpolator480.setKey([0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1])
-OrientationInterpolator480.setKeyValue([1,0,0,0.8573,1,0,0,0.8926,1,0,0,0.5351,1,0,0,0.1756,1,0,0,0.1194,1,0,0,0.3153,1,0,0,0.09354,1,0,0,0.08558,1,0,0,0.2475,1,0,0,0.8573])
-
-Group478.addChildren(OrientationInterpolator480)
-OrientationInterpolator481 = OrientationInterpolator()
-OrientationInterpolator481.setDEF("r_hip_RotationInterpolator_BasicWalk")
-OrientationInterpolator481.setKey([0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1])
-OrientationInterpolator481.setKeyValue([-0.5831,0.03511,0.8116,0.1481,-0.995,0.02296,0.09674,0.4683,-1,0.00192,0.007964,0.4732,-0.998,-0.0158,-0.06102,0.5079,-0.9911,-0.03541,-0.1286,0.5419,-0.9131,-0.06243,-0.403,0.3361,-0.4306,-0.07962,-0.899,0.07038,1,0,0,0.2571,0.9891,-0.02805,0.1444,0.3879,-0.5831,0.03511,0.8116,0.1481])
-
-Group478.addChildren(OrientationInterpolator481)
-OrientationInterpolator482 = OrientationInterpolator()
-OrientationInterpolator482.setDEF("l_ankle_RotationInterpolator_BasicWalk")
-OrientationInterpolator482.setKey([0,0.125,0.2083,0.375,0.6667,0.9167,1])
-OrientationInterpolator482.setKeyValue([-1,0,0,0.06714,-1,0,0,0.2152,-1,0,0,0.3184,-1,0,0,0.4717,-1,0,0,0.2912,1,0,0,0.1222,-1,0,0,0.06714])
-
-Group478.addChildren(OrientationInterpolator482)
-OrientationInterpolator483 = OrientationInterpolator()
-OrientationInterpolator483.setDEF("l_knee_RotationInterpolator_BasicWalk")
-OrientationInterpolator483.setKey([0,0.2083,0.375,0.5,0.6667,0.7917,0.9167,1])
-OrientationInterpolator483.setKeyValue([1,0,0,0.3226,1,0,0,0.1556,1,0,0,0.08678,1,0,0,0.8751,1,0,0,1.131,1,0,0,0.09961,1,0,0,0.3942,1,0,0,0.3226])
-
-Group478.addChildren(OrientationInterpolator483)
-OrientationInterpolator484 = OrientationInterpolator()
-OrientationInterpolator484.setDEF("l_hip_RotationInterpolator_BasicWalk")
-OrientationInterpolator484.setKey([0,0.25,0.375,0.5,0.6667,0.7917,0.9167,1])
-OrientationInterpolator484.setKeyValue([-0.873,0.06094,0.484,0.2865,0.9963,-0.01057,0.08481,0.2488,0.9965,0.01591,-0.08222,0.3836,-0.7018,-0.03223,-0.7117,0.1289,-1,0,0,0.5518,-0.9964,0.02231,0.0817,0.5351,-0.9809,0.04912,0.1881,0.5204,-0.873,0.06094,0.484,0.2865])
-
-Group478.addChildren(OrientationInterpolator484)
-OrientationInterpolator485 = OrientationInterpolator()
-OrientationInterpolator485.setDEF("lower_body_RotationInterpolator_BasicWalk")
-OrientationInterpolator485.setKey([0,0.5,1])
-OrientationInterpolator485.setKeyValue([0,0,-1,0.1056,0,0,1,0.09018,0,0,-1,0.1056])
-
-Group478.addChildren(OrientationInterpolator485)
-OrientationInterpolator486 = OrientationInterpolator()
-OrientationInterpolator486.setDEF("r_wrist_RotationInterpolator_BasicWalk")
-OrientationInterpolator486.setKey([0,0.375,0.9167,1])
-OrientationInterpolator486.setKeyValue([-0.8129,0.4759,-0.3357,0.1346,0.1533,-0.9878,0.02582,0.3902,-0.5701,0.7604,-0.311,0.366,-0.8129,0.4759,-0.3357,0.1346])
-
-Group478.addChildren(OrientationInterpolator486)
-OrientationInterpolator487 = OrientationInterpolator()
-OrientationInterpolator487.setDEF("r_elbow_RotationInterpolator_BasicWalk")
-OrientationInterpolator487.setKey([0,0.375,0.9167,1])
-OrientationInterpolator487.setKeyValue([-1,0,0,0.411508,-1,0,0,0.0925011,-1,0,0,0.572568,-1,0,0,0.411508])
-
-Group478.addChildren(OrientationInterpolator487)
-OrientationInterpolator488 = OrientationInterpolator()
-OrientationInterpolator488.setDEF("r_shoulder_RotationInterpolator_BasicWalk")
-OrientationInterpolator488.setKey([0,0.375,0.9167,1])
-OrientationInterpolator488.setKeyValue([-1,0,0,0.09346,1,0,0,0.3197,-1,0,0,0.1564,-1,0,0,0.09346])
-
-Group478.addChildren(OrientationInterpolator488)
-OrientationInterpolator489 = OrientationInterpolator()
-OrientationInterpolator489.setDEF("l_wrist_RotationInterpolator_BasicWalk")
-OrientationInterpolator489.setKey([0,0.375,0.9167,1])
-OrientationInterpolator489.setKeyValue([0,-1,0,0.461076,-0.330195,-0.927451,0.175516,0.538852,0.0327774,-0.999314,-0.0172185,0.492033,0,-1,0,0.461076])
-
-Group478.addChildren(OrientationInterpolator489)
-OrientationInterpolator490 = OrientationInterpolator()
-OrientationInterpolator490.setDEF("l_elbow_RotationInterpolator_BasicWalk")
-OrientationInterpolator490.setKey([0,0.375,0.9167,1])
-OrientationInterpolator490.setKeyValue([-1,0,0,0.0659878,-1,0,0,0.488383,-1,0,0,0.0177536,-1,0,0,0.0659878])
-
-Group478.addChildren(OrientationInterpolator490)
-OrientationInterpolator491 = OrientationInterpolator()
-OrientationInterpolator491.setDEF("l_shoulder_RotationInterpolator_BasicWalk")
-OrientationInterpolator491.setKey([0,0.375,0.9167,1])
-OrientationInterpolator491.setKeyValue([1,0,0,0.1189,-1,0,0,0.1861,1,0,0,0.3357,1,0,0,0.1189])
-
-Group478.addChildren(OrientationInterpolator491)
-OrientationInterpolator492 = OrientationInterpolator()
-OrientationInterpolator492.setDEF("head_RotationInterpolator_BasicWalk")
-OrientationInterpolator492.setKey([0,0.375,0.4167,0.5,0.5833,0.6667,0.75,0.8333,0.9167,1])
-OrientationInterpolator492.setKeyValue([0,-1,0,0.08642,0,1,0,0.1825,0,1,0,0.1505,0,1,0,0.1053,0,1,0,0.04391,0,-1,0,0.03119,0,-1,0,0.07936,0,-1,0,0.1616,0,-1,0,0.155,0,-1,0,0.08642])
-
-Group478.addChildren(OrientationInterpolator492)
-OrientationInterpolator493 = OrientationInterpolator()
-OrientationInterpolator493.setDEF("neck_RotationInterpolator_BasicWalk")
-OrientationInterpolator493.setKey([0,1])
-OrientationInterpolator493.setKeyValue([0,0,1,0,0,0,1,0])
-
-Group478.addChildren(OrientationInterpolator493)
-OrientationInterpolator494 = OrientationInterpolator()
-OrientationInterpolator494.setDEF("upper_body_RotationInterpolator_BasicWalk")
-OrientationInterpolator494.setKey([0,0.2083,0.375,0.75,0.8333,1])
-OrientationInterpolator494.setKeyValue([0,1,0,0.0826,-0.01972,-0.5974,0.8017,0.08231,0.009296,-0.9648,0.2627,0.1734,-0.01238,0.9549,-0.2968,0.08732,-0.008125,0.9691,-0.2463,0.158,0,1,0,0.0826])
-
-Group478.addChildren(OrientationInterpolator494)
-OrientationInterpolator495 = OrientationInterpolator()
-OrientationInterpolator495.setDEF("whole_body_RotationInterpolator_BasicWalk")
-OrientationInterpolator495.setKey([0,1])
-OrientationInterpolator495.setKeyValue([0,0,1,0,0,0,1,0])
-
-Group478.addChildren(OrientationInterpolator495)
-PositionInterpolator496 = PositionInterpolator()
-PositionInterpolator496.setDEF("whole_body_TranslationInterpolator_BasicWalk")
-PositionInterpolator496.setKey([0,0.04167,0.125,0.1667,0.2083,0.25,0.2917,0.375,0.4583,0.5,0.5417,0.5833,0.625,0.7083,0.75,0.7917,0.875,0.9167,1])
-PositionInterpolator496.setKeyValue([0,-0.00928,0,0,-0.003858,0,0,-0.008847,0,0,-0.01486,0,0,-0.02641,0,0,-0.03934,0,0,-0.0502,0,0,-0.07469,0,0,-0.02732,0,0,-0.01608,0,0,-0.01129,0,0,-0.005819,0,0,-0.002004,0,0,-0.002579,0,0,-0.0143,0,0,-0.03799,0,0,-0.05648,0,0,-0.045,0,0,-0.00928,0])
-
-Group478.addChildren(PositionInterpolator496)
-TimeSensor497 = TimeSensor()
-TimeSensor497.setDEF("Walk_Time")
-TimeSensor497.setCycleInterval(2)
-TimeSensor497.setLoop(True)
-TimeSensor497.setStartTime(-1)
-
-Group478.addChildren(TimeSensor497)
-
-Group457.addChildren(Group478)
-Group498 = Group()
-Group498.setDEF("Run_Animation")
-OrientationInterpolator499 = OrientationInterpolator()
-OrientationInterpolator499.setDEF("r_ankle_RotationInterpolator_Run")
-OrientationInterpolator499.setKey([0,0.4909,0.7091,0.8,0.8182,1])
-OrientationInterpolator499.setKeyValue([1,0,0,0.2323,-1,0,0,0.07843,-1,0,0,0.09676,-1,0,0,0.3274,-1,0,0,0.3278,1,0,0,0.2323])
-
-Group498.addChildren(OrientationInterpolator499)
-OrientationInterpolator500 = OrientationInterpolator()
-OrientationInterpolator500.setDEF("r_knee_RotationInterpolator_Run")
-OrientationInterpolator500.setKey([0,0.03636,0.2182,0.4909,0.7455,1])
-OrientationInterpolator500.setKeyValue([1,0,0,0.7004,1,0,0,1.011,1,0,0,1.892,1,0,0,1.188,1,0,0,0.3964,1,0,0,0.7004])
-
-Group498.addChildren(OrientationInterpolator500)
-OrientationInterpolator501 = OrientationInterpolator()
-OrientationInterpolator501.setDEF("r_hip_RotationInterpolator_Run")
-OrientationInterpolator501.setKey([0,0.2182,0.4909,0.7455,1])
-OrientationInterpolator501.setKeyValue([0.9999,0.00293,-0.00989,0.402,-1,0.004977,-0.00497,0.5943,-1,0.003265,-0.001752,1.178,-0.9999,0.00815,-0.01093,0.3031,0.9999,0.00293,-0.00989,0.402])
-
-Group498.addChildren(OrientationInterpolator501)
-OrientationInterpolator502 = OrientationInterpolator()
-OrientationInterpolator502.setDEF("l_ankle_RotationInterpolator_Run")
-OrientationInterpolator502.setKey([0,0.2182,0.3091,0.4909,1])
-OrientationInterpolator502.setKeyValue([1,0,0,0.03543,-1,0,0,0.1037,-1,0,0,0.4328,1,0,0,0.1929,1,0,0,0.03543])
-
-Group498.addChildren(OrientationInterpolator502)
-OrientationInterpolator503 = OrientationInterpolator()
-OrientationInterpolator503.setDEF("l_knee_RotationInterpolator_Run")
-OrientationInterpolator503.setKey([0,0.2182,0.4909,0.7455,1])
-OrientationInterpolator503.setKeyValue([1,0,0,1.108,1,0,0,0.4265,1,0,0,0.7052,1,0,0,2.179,1,0,0,1.108])
-
-Group498.addChildren(OrientationInterpolator503)
-OrientationInterpolator504 = OrientationInterpolator()
-OrientationInterpolator504.setDEF("l_hip_RotationInterpolator_Run")
-OrientationInterpolator504.setKey([0,0.2182,0.4909,0.7455,1])
-OrientationInterpolator504.setKeyValue([-0.9986,0.03354,0.04001,1.212,-0.9889,0.1328,0.06696,0.4025,0.9894,0.1453,0.009351,0.4114,-0.9963,0.07032,0.05003,0.7035,-0.9986,0.03354,0.04001,1.212])
-
-Group498.addChildren(OrientationInterpolator504)
-OrientationInterpolator505 = OrientationInterpolator()
-OrientationInterpolator505.setDEF("lower_body_RotationInterpolator_Run")
-OrientationInterpolator505.setKey([0,1])
-OrientationInterpolator505.setKeyValue([0.9969,-0.05444,0.05596,0.07687,0.9969,-0.05444,0.05596,0.07687])
-
-Group498.addChildren(OrientationInterpolator505)
-OrientationInterpolator506 = OrientationInterpolator()
-OrientationInterpolator506.setDEF("r_wrist_RotationInterpolator_Run")
-OrientationInterpolator506.setKey([0,1])
-OrientationInterpolator506.setKeyValue([-0.917742,-0.237244,-0.318536,0.214273,-0.917742,-0.237244,-0.318536,0.214273])
-
-Group498.addChildren(OrientationInterpolator506)
-OrientationInterpolator507 = OrientationInterpolator()
-OrientationInterpolator507.setDEF("r_elbow_RotationInterpolator_Run")
-OrientationInterpolator507.setKey([0,0.2182,0.4909,0.7455,1])
-OrientationInterpolator507.setKeyValue([0.9353,-0.2978,-0.191,4.222,-0.9362,0.2924,-0.1952,1.05,0.9941,-0.09719,-0.04725,4.512,-0.9594,0.2653,0.09579,1.525,0.9353,-0.2978,-0.191,4.222])
-
-Group498.addChildren(OrientationInterpolator507)
-OrientationInterpolator508 = OrientationInterpolator()
-OrientationInterpolator508.setDEF("r_shoulder_RotationInterpolator_Run")
-OrientationInterpolator508.setKey([0,0.2182,0.4909,0.7455,1])
-OrientationInterpolator508.setKeyValue([-1,0,0,0.6979,0.9094,0.2062,-0.3613,0.4157,0.9637,0.1537,-0.2185,1.353,0.4864,0.08841,-0.8693,0.1716,-1,0,0,0.6979])
-
-Group498.addChildren(OrientationInterpolator508)
-OrientationInterpolator509 = OrientationInterpolator()
-OrientationInterpolator509.setDEF("l_wrist_RotationInterpolator_Run")
-OrientationInterpolator509.setKey([0,1])
-OrientationInterpolator509.setKeyValue([-0.0240995,-0.999682,0.00741506,0.120409,-0.0240995,-0.999682,0.00741506,0.120409])
-
-Group498.addChildren(OrientationInterpolator509)
-OrientationInterpolator510 = OrientationInterpolator()
-OrientationInterpolator510.setDEF("l_elbow_RotationInterpolator_Run")
-OrientationInterpolator510.setKey([0,0.2182,0.4909,0.7455,1])
-OrientationInterpolator510.setKeyValue([0.9985,0.03887,0.03802,4.689,-0.965,-0.1889,-0.1821,1.415,0.9758,0.1563,0.1529,4.666,-0.9956,-0.0936,0.009826,1.126,0.9985,0.03887,0.03802,4.689])
-
-Group498.addChildren(OrientationInterpolator510)
-OrientationInterpolator511 = OrientationInterpolator()
-OrientationInterpolator511.setDEF("l_shoulder_RotationInterpolator_Run")
-OrientationInterpolator511.setKey([0,0.2182,0.4909,0.7455,1])
-OrientationInterpolator511.setKeyValue([0.9907,-0.07264,0.115,1.135,0.9291,-0.1222,0.349,0.1695,-0.9892,0.1364,-0.05394,0.5112,0.9942,-0.0002052,0.1073,0.4975,0.9907,-0.07264,0.115,1.135])
-
-Group498.addChildren(OrientationInterpolator511)
-OrientationInterpolator512 = OrientationInterpolator()
-OrientationInterpolator512.setDEF("head_RotationInterpolator_Run")
-OrientationInterpolator512.setKey([0,0.4909,1])
-OrientationInterpolator512.setKeyValue([0.6517,-0.7559,0.06211,0.2508,0.6467,0.7527,-0.1238,0.2344,0.6517,-0.7559,0.06211,0.2508])
-
-Group498.addChildren(OrientationInterpolator512)
-OrientationInterpolator513 = OrientationInterpolator()
-OrientationInterpolator513.setDEF("neck_RotationInterpolator_Run")
-OrientationInterpolator513.setKey([0,1])
-OrientationInterpolator513.setKeyValue([0,0,1,0,0,0,1,0])
-
-Group498.addChildren(OrientationInterpolator513)
-OrientationInterpolator514 = OrientationInterpolator()
-OrientationInterpolator514.setDEF("upper_body_RotationInterpolator_Run")
-OrientationInterpolator514.setKey([0,0.2545,0.4909,0.7636,1])
-OrientationInterpolator514.setKeyValue([0.7651,0.6382,0.08586,0.2712,0.9999,0.002845,-0.01547,0.3756,0.7459,-0.6505,-0.1432,0.2416,0.9984,0.05536,-0.01154,0.3488,0.7651,0.6382,0.08586,0.2712])
-
-Group498.addChildren(OrientationInterpolator514)
-OrientationInterpolator515 = OrientationInterpolator()
-OrientationInterpolator515.setDEF("whole_body_RotationInterpolator_Run")
-OrientationInterpolator515.setKey([0,1])
-OrientationInterpolator515.setKeyValue([0,0,1,0,0,0,1,0])
-
-Group498.addChildren(OrientationInterpolator515)
-PositionInterpolator516 = PositionInterpolator()
-PositionInterpolator516.setDEF("whole_body_TranslationInterpolator_Run")
-PositionInterpolator516.setKey([0,0.2182,0.2909,0.3091,0.7091,0.8,0.8182,1])
-PositionInterpolator516.setKeyValue([0,-0.0351,0,0,-0.0351,0,0,-0.04087,0,0,-0.04886,0,0,-0.04051,0,0,-0.03666,0,0,-0.03666,0,0,-0.0351,0])
-
-Group498.addChildren(PositionInterpolator516)
-TimeSensor517 = TimeSensor()
-TimeSensor517.setDEF("Run_Time")
-TimeSensor517.setLoop(True)
-TimeSensor517.setStartTime(-1)
-
-Group498.addChildren(TimeSensor517)
-
-Group457.addChildren(Group498)
-Group518 = Group()
-Group518.setDEF("Jump_Animation")
-OrientationInterpolator519 = OrientationInterpolator()
-OrientationInterpolator519.setDEF("r_ankle_RotationInterpolator_Jump")
-OrientationInterpolator519.setKey([0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.84,0.88,0.92,0.96,1])
-OrientationInterpolator519.setKeyValue([0,0,1,0,-1,0,0,0.6735,-1,0,0,0.6735,-1,0,0,0.3527,-1,0,0,0.3038,-1,0,0,0.07964,1,0,0,0.3001,1,0,0,0.6509,1,0,0,0.3001,-1,0,0,0.2087,-1,0,0,0.3756,-1,0,0,0.3279,-1,0,0,0.1193,0,0,1,0])
-
-Group518.addChildren(OrientationInterpolator519)
-OrientationInterpolator520 = OrientationInterpolator()
-OrientationInterpolator520.setDEF("r_knee_RotationInterpolator_Jump")
-OrientationInterpolator520.setKey([0,0.28,0.32,0.48,0.64,0.76,0.88,1])
-OrientationInterpolator520.setKeyValue([0,0,1,0,1,0,0,2.005,1,0,0,2.005,0,0,1,0,1,0,0,0.9507,1,0,0,0.5845,1,0,0,0.9054,0,0,1,0])
-
-Group518.addChildren(OrientationInterpolator520)
-OrientationInterpolator521 = OrientationInterpolator()
-OrientationInterpolator521.setDEF("r_hip_RotationInterpolator_Jump")
-OrientationInterpolator521.setKey([0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.88,1])
-OrientationInterpolator521.setKeyValue([0,0,1,0,1,0,0,4.433,1,0,0,4.433,1,0,0,4.647,-1,0,0,0.8943,-1,0,0,0.3698,0,0,1,0,-1,0,0,0.4963,-1,0,0,0.3829,-1,0,0,0.5169,0,0,1,0])
-
-Group518.addChildren(OrientationInterpolator521)
-OrientationInterpolator522 = OrientationInterpolator()
-OrientationInterpolator522.setDEF("l_ankle_RotationInterpolator_Jump")
-OrientationInterpolator522.setKey([0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.84,0.88,0.92,0.96,1])
-OrientationInterpolator522.setKeyValue([0,0,1,0,-1,0,0,0.625,-1,0,0,0.625,-1,0,0,0.3364,-1,0,0,0.2742,-1,0,0,0.05078,1,0,0,0.2833,1,0,0,0.6667,1,0,0,0.2833,-1,0,0,0.2108,-1,0,0,0.375,-1,0,0,0.3146,-1,0,0,0.1174,0,0,1,0])
-
-Group518.addChildren(OrientationInterpolator522)
-OrientationInterpolator523 = OrientationInterpolator()
-OrientationInterpolator523.setDEF("l_knee_RotationInterpolator_Jump")
-OrientationInterpolator523.setKey([0,0.28,0.32,0.48,0.64,0.76,0.88,1])
-OrientationInterpolator523.setKeyValue([0,0,1,0,1,0,0,2.047,1,0,0,2.047,0,0,1,0,1,0,0,1.566,1,0,0,0.5913,1,0,0,0.9235,0,0,1,0])
-
-Group518.addChildren(OrientationInterpolator523)
-OrientationInterpolator524 = OrientationInterpolator()
-OrientationInterpolator524.setDEF("l_hip_RotationInterpolator_Jump")
-OrientationInterpolator524.setKey([0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.88,1])
-OrientationInterpolator524.setKeyValue([0,0,1,0,1,0,0,4.349,1,0,0,4.349,1,0,0,4.615,-1,0,0,0.9136,-1,0,0,0.3614,0,0,1,0,-1,0,0,0.7869,-1,0,0,0.3918,-1,0,0,0.5433,0,0,1,0])
-
-Group518.addChildren(OrientationInterpolator524)
-OrientationInterpolator525 = OrientationInterpolator()
-OrientationInterpolator525.setDEF("lower_body_RotationInterpolator_Jump")
-OrientationInterpolator525.setKey([0,0.28,0.32,0.48,0.76,1])
-OrientationInterpolator525.setKeyValue([0,0,1,0,1,0,0,0.1892,1,0,0,0.1892,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group518.addChildren(OrientationInterpolator525)
-OrientationInterpolator526 = OrientationInterpolator()
-OrientationInterpolator526.setDEF("r_wrist_RotationInterpolator_Jump")
-OrientationInterpolator526.setKey([0,0.28,0.32,0.64,0.76,1])
-OrientationInterpolator526.setKeyValue([0,0,1,0,-0.0585279,0.983903,-0.168849,1.85956,-0.0585279,0.983903,-0.168849,1.85956,-0.00222418,0.99801,-0.0630095,1.46072,0,1,0,0.497349,0,0,1,0])
-
-Group518.addChildren(OrientationInterpolator526)
-OrientationInterpolator527 = OrientationInterpolator()
-OrientationInterpolator527.setDEF("r_elbow_RotationInterpolator_Jump")
-OrientationInterpolator527.setKey([0,0.28,0.32,0.64,0.76,1])
-OrientationInterpolator527.setKeyValue([0,0,1,0,-1,0,0,0.04151,-1,0,0,0.04151,-1,0,0,0.5855,-1,0,0,0.5852,0,0,1,0])
-
-Group518.addChildren(OrientationInterpolator527)
-OrientationInterpolator528 = OrientationInterpolator()
-OrientationInterpolator528.setDEF("r_shoulder_RotationInterpolator_Jump")
-OrientationInterpolator528.setKey([0,0.28,0.32,0.64,0.76,0.88,1])
-OrientationInterpolator528.setKeyValue([0,0,1,0,0.9992,0.02042,0.03558,4.688,0.9992,0.02042,0.03558,4.688,0.9989,-0.04623,0.005159,4.079,-0.8687,-0.2525,-0.4261,1.501,-0.941,-0.2893,-0.1754,0.4788,0,0,1,0])
-
-Group518.addChildren(OrientationInterpolator528)
-OrientationInterpolator529 = OrientationInterpolator()
-OrientationInterpolator529.setDEF("l_wrist_RotationInterpolator_Jump")
-OrientationInterpolator529.setKey([0,0.28,0.32,0.64,0.76,0.88,1])
-OrientationInterpolator529.setKeyValue([0,0,1,0,0.0672928,0.989475,-0.128107,4.15574,0.0672928,0.989475,-0.128107,4.15574,0.00364942,0.999901,0.0135896,4.5822,0,-1,0,0.655922,-0.00050618,-0.999999,0.0012782,1.28397,0,0,1,0])
-
-Group518.addChildren(OrientationInterpolator529)
-OrientationInterpolator530 = OrientationInterpolator()
-OrientationInterpolator530.setDEF("l_elbow_RotationInterpolator_Jump")
-OrientationInterpolator530.setKey([0,0.28,0.32,0.64,0.76,1])
-OrientationInterpolator530.setKeyValue([0,0,1,0,-1,0,0,0.1229,-1,0,0,0.1229,-1,0,0,0.5976,-1,0,0,0.3917,0,0,1,0])
-
-Group518.addChildren(OrientationInterpolator530)
-OrientationInterpolator531 = OrientationInterpolator()
-OrientationInterpolator531.setDEF("l_shoulder_RotationInterpolator_Jump")
-OrientationInterpolator531.setKey([0,0.28,0.32,0.64,0.76,0.88,1])
-OrientationInterpolator531.setKeyValue([0,0,1,0,-0.9987,0.02554,0.04498,1.57,-0.9987,0.02554,0.04498,1.57,1,0.0004113,0.003055,4.114,-0.8413,0.3238,0.4329,1.453,-0.877,0.4198,0.2337,0.6009,0,0,1,0])
-
-Group518.addChildren(OrientationInterpolator531)
-OrientationInterpolator532 = OrientationInterpolator()
-OrientationInterpolator532.setDEF("head_RotationInterpolator_Jump")
-OrientationInterpolator532.setKey([0,0.28,0.32,0.48,0.76,1])
-OrientationInterpolator532.setKeyValue([0,0,1,0,-1,0,0,0.5989,-1,0,0,0.5989,-1,0,0,0.3216,1,0,0,0.06503,0,0,1,0])
-
-Group518.addChildren(OrientationInterpolator532)
-OrientationInterpolator533 = OrientationInterpolator()
-OrientationInterpolator533.setDEF("neck_RotationInterpolator_Jump")
-OrientationInterpolator533.setKey([0,0.28,0.32,0.48,0.76,1])
-OrientationInterpolator533.setKeyValue([0,0,1,0,-1,0,0,0.1942,-1,0,0,0.1942,0,0,1,0,1,0,0,0.2284,0,0,1,0])
-
-Group518.addChildren(OrientationInterpolator533)
-OrientationInterpolator534 = OrientationInterpolator()
-OrientationInterpolator534.setDEF("upper_body_RotationInterpolator_Jump")
-OrientationInterpolator534.setKey([0,0.28,0.32,0.48,0.76,0.88,1])
-OrientationInterpolator534.setKeyValue([0,0,1,0,1,0,0,1.038,1,0,0,1.038,-1,0,0,0.1057,1,0,0,0.2171,1,0,0,0.3465,0,0,1,0])
-
-Group518.addChildren(OrientationInterpolator534)
-OrientationInterpolator535 = OrientationInterpolator()
-OrientationInterpolator535.setDEF("whole_body_RotationInterpolator_Jump")
-OrientationInterpolator535.setKey([0,0.28,0.32,0.48,0.64,0.76,1])
-OrientationInterpolator535.setKeyValue([0,0,1,0,1,0,0,0.3273,1,0,0,0.3273,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group518.addChildren(OrientationInterpolator535)
-PositionInterpolator536 = PositionInterpolator()
-PositionInterpolator536.setDEF("whole_body_TranslationInterpolator_Jump")
-PositionInterpolator536.setKey([0,0.04,0.08,0.12,0.16,0.2,0.24,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.8,0.84,0.88,0.92,0.96,1])
-PositionInterpolator536.setKeyValue([0,0,0,0,-0.01264,-0.01289,0,-0.04712,-0.03738,-0.0003345,-0.1049,-0.05353,-0.0005712,-0.1892,-0.06561,-0.0008233,-0.286,-0.06276,-0.0009591,-0.3795,-0.05148,-0.00106,-0.4484,-0.03656,-0.00106,-0.4484,-0.03656,-0.001122,-0.3269,-0.1499,-0.0008616,-0.13,-0.06358,-0.0005128,-0.03123,-0.05488,0.0004779,0.053,0.02732,0.0001728,0.4148,0.006873,0,0.03045,0.02148,0,-0.01299,-0.01057,0,-0.06932,-0.01064,0.0001365,-0.1037,-0.005059,0.0001279,-0.07198,-0.007596,0.000141,-0.01626,-0.004935,0,0,0])
-
-Group518.addChildren(PositionInterpolator536)
-TimeSensor537 = TimeSensor()
-TimeSensor537.setDEF("Jump_Time")
-TimeSensor537.setCycleInterval(2)
-TimeSensor537.setStartTime(-1)
-
-Group518.addChildren(TimeSensor537)
-
-Group457.addChildren(Group518)
-
-Scene14.addChildren(Group457)
-ROUTE538 = ROUTE()
-ROUTE538.setFromField("position_changed")
-ROUTE538.setFromNode("HudProx")
-ROUTE538.setToField("set_translation")
-ROUTE538.setToNode("HudXform")
-
-Scene14.addChildren(ROUTE538)
-ROUTE539 = ROUTE()
-ROUTE539.setFromField("orientation_changed")
-ROUTE539.setFromNode("HudProx")
-ROUTE539.setToField("set_rotation")
-ROUTE539.setToNode("HudXform")
-
-Scene14.addChildren(ROUTE539)
-ROUTE540 = ROUTE()
-ROUTE540.setFromField("touchTime")
-ROUTE540.setFromNode("Stand_Touch")
-ROUTE540.setToField("stopTime")
-ROUTE540.setToNode("Walk_Time")
-
-Scene14.addChildren(ROUTE540)
-ROUTE541 = ROUTE()
-ROUTE541.setFromField("touchTime")
-ROUTE541.setFromNode("Stand_Touch")
-ROUTE541.setToField("stopTime")
-ROUTE541.setToNode("Run_Time")
-
-Scene14.addChildren(ROUTE541)
-ROUTE542 = ROUTE()
-ROUTE542.setFromField("touchTime")
-ROUTE542.setFromNode("Stand_Touch")
-ROUTE542.setToField("stopTime")
-ROUTE542.setToNode("Jump_Time")
-
-Scene14.addChildren(ROUTE542)
-ROUTE543 = ROUTE()
-ROUTE543.setFromField("touchTime")
-ROUTE543.setFromNode("Stand_Touch")
-ROUTE543.setToField("startTime")
-ROUTE543.setToNode("Stand_Time")
-
-Scene14.addChildren(ROUTE543)
-ROUTE544 = ROUTE()
-ROUTE544.setFromField("touchTime")
-ROUTE544.setFromNode("Walk_Touch")
-ROUTE544.setToField("stopTime")
-ROUTE544.setToNode("Stand_Time")
-
-Scene14.addChildren(ROUTE544)
-ROUTE545 = ROUTE()
-ROUTE545.setFromField("touchTime")
-ROUTE545.setFromNode("Walk_Touch")
-ROUTE545.setToField("stopTime")
-ROUTE545.setToNode("Run_Time")
-
-Scene14.addChildren(ROUTE545)
-ROUTE546 = ROUTE()
-ROUTE546.setFromField("touchTime")
-ROUTE546.setFromNode("Walk_Touch")
-ROUTE546.setToField("stopTime")
-ROUTE546.setToNode("Jump_Time")
-
-Scene14.addChildren(ROUTE546)
-ROUTE547 = ROUTE()
-ROUTE547.setFromField("touchTime")
-ROUTE547.setFromNode("Walk_Touch")
-ROUTE547.setToField("startTime")
-ROUTE547.setToNode("Walk_Time")
-
-Scene14.addChildren(ROUTE547)
-ROUTE548 = ROUTE()
-ROUTE548.setFromField("touchTime")
-ROUTE548.setFromNode("Run_Touch")
-ROUTE548.setToField("stopTime")
-ROUTE548.setToNode("Stand_Time")
-
-Scene14.addChildren(ROUTE548)
-ROUTE549 = ROUTE()
-ROUTE549.setFromField("touchTime")
-ROUTE549.setFromNode("Run_Touch")
-ROUTE549.setToField("stopTime")
-ROUTE549.setToNode("Walk_Time")
-
-Scene14.addChildren(ROUTE549)
-ROUTE550 = ROUTE()
-ROUTE550.setFromField("touchTime")
-ROUTE550.setFromNode("Run_Touch")
-ROUTE550.setToField("stopTime")
-ROUTE550.setToNode("Jump_Time")
-
-Scene14.addChildren(ROUTE550)
-ROUTE551 = ROUTE()
-ROUTE551.setFromField("touchTime")
-ROUTE551.setFromNode("Run_Touch")
-ROUTE551.setToField("startTime")
-ROUTE551.setToNode("Run_Time")
-
-Scene14.addChildren(ROUTE551)
-ROUTE552 = ROUTE()
-ROUTE552.setFromField("touchTime")
-ROUTE552.setFromNode("Jump_Touch")
-ROUTE552.setToField("stopTime")
-ROUTE552.setToNode("Stand_Time")
-
-Scene14.addChildren(ROUTE552)
-ROUTE553 = ROUTE()
-ROUTE553.setFromField("touchTime")
-ROUTE553.setFromNode("Jump_Touch")
-ROUTE553.setToField("stopTime")
-ROUTE553.setToNode("Walk_Time")
-
-Scene14.addChildren(ROUTE553)
-ROUTE554 = ROUTE()
-ROUTE554.setFromField("touchTime")
-ROUTE554.setFromNode("Jump_Touch")
-ROUTE554.setToField("stopTime")
-ROUTE554.setToNode("Run_Time")
-
-Scene14.addChildren(ROUTE554)
-ROUTE555 = ROUTE()
-ROUTE555.setFromField("touchTime")
-ROUTE555.setFromNode("Jump_Touch")
-ROUTE555.setToField("startTime")
-ROUTE555.setToNode("Jump_Time")
-
-Scene14.addChildren(ROUTE555)
-ROUTE556 = ROUTE()
-ROUTE556.setFromField("fraction_changed")
-ROUTE556.setFromNode("Stand_Time")
-ROUTE556.setToField("set_fraction")
-ROUTE556.setToNode("r_ankle_RotationInterpolator_Stand")
-
-Scene14.addChildren(ROUTE556)
-ROUTE557 = ROUTE()
-ROUTE557.setFromField("fraction_changed")
-ROUTE557.setFromNode("Stand_Time")
-ROUTE557.setToField("set_fraction")
-ROUTE557.setToNode("r_knee_RotationInterpolator_Stand")
-
-Scene14.addChildren(ROUTE557)
-ROUTE558 = ROUTE()
-ROUTE558.setFromField("fraction_changed")
-ROUTE558.setFromNode("Stand_Time")
-ROUTE558.setToField("set_fraction")
-ROUTE558.setToNode("r_hip_RotationInterpolator_Stand")
-
-Scene14.addChildren(ROUTE558)
-ROUTE559 = ROUTE()
-ROUTE559.setFromField("fraction_changed")
-ROUTE559.setFromNode("Stand_Time")
-ROUTE559.setToField("set_fraction")
-ROUTE559.setToNode("l_ankle_RotationInterpolator_Stand")
-
-Scene14.addChildren(ROUTE559)
-ROUTE560 = ROUTE()
-ROUTE560.setFromField("fraction_changed")
-ROUTE560.setFromNode("Stand_Time")
-ROUTE560.setToField("set_fraction")
-ROUTE560.setToNode("l_knee_RotationInterpolator_Stand")
-
-Scene14.addChildren(ROUTE560)
-ROUTE561 = ROUTE()
-ROUTE561.setFromField("fraction_changed")
-ROUTE561.setFromNode("Stand_Time")
-ROUTE561.setToField("set_fraction")
-ROUTE561.setToNode("l_hip_RotationInterpolator_Stand")
-
-Scene14.addChildren(ROUTE561)
-ROUTE562 = ROUTE()
-ROUTE562.setFromField("fraction_changed")
-ROUTE562.setFromNode("Stand_Time")
-ROUTE562.setToField("set_fraction")
-ROUTE562.setToNode("lower_body_RotationInterpolator_Stand")
-
-Scene14.addChildren(ROUTE562)
-ROUTE563 = ROUTE()
-ROUTE563.setFromField("fraction_changed")
-ROUTE563.setFromNode("Stand_Time")
-ROUTE563.setToField("set_fraction")
-ROUTE563.setToNode("r_wrist_RotationInterpolator_Stand")
-
-Scene14.addChildren(ROUTE563)
-ROUTE564 = ROUTE()
-ROUTE564.setFromField("fraction_changed")
-ROUTE564.setFromNode("Stand_Time")
-ROUTE564.setToField("set_fraction")
-ROUTE564.setToNode("r_elbow_RotationInterpolator_Stand")
-
-Scene14.addChildren(ROUTE564)
-ROUTE565 = ROUTE()
-ROUTE565.setFromField("fraction_changed")
-ROUTE565.setFromNode("Stand_Time")
-ROUTE565.setToField("set_fraction")
-ROUTE565.setToNode("r_shoulder_RotationInterpolator_Stand")
-
-Scene14.addChildren(ROUTE565)
-ROUTE566 = ROUTE()
-ROUTE566.setFromField("fraction_changed")
-ROUTE566.setFromNode("Stand_Time")
-ROUTE566.setToField("set_fraction")
-ROUTE566.setToNode("l_wrist_RotationInterpolator_Stand")
-
-Scene14.addChildren(ROUTE566)
-ROUTE567 = ROUTE()
-ROUTE567.setFromField("fraction_changed")
-ROUTE567.setFromNode("Stand_Time")
-ROUTE567.setToField("set_fraction")
-ROUTE567.setToNode("l_elbow_RotationInterpolator_Stand")
-
-Scene14.addChildren(ROUTE567)
-ROUTE568 = ROUTE()
-ROUTE568.setFromField("fraction_changed")
-ROUTE568.setFromNode("Stand_Time")
-ROUTE568.setToField("set_fraction")
-ROUTE568.setToNode("l_shoulder_RotationInterpolator_Stand")
-
-Scene14.addChildren(ROUTE568)
-ROUTE569 = ROUTE()
-ROUTE569.setFromField("fraction_changed")
-ROUTE569.setFromNode("Stand_Time")
-ROUTE569.setToField("set_fraction")
-ROUTE569.setToNode("head_RotationInterpolator_Stand")
-
-Scene14.addChildren(ROUTE569)
-ROUTE570 = ROUTE()
-ROUTE570.setFromField("fraction_changed")
-ROUTE570.setFromNode("Stand_Time")
-ROUTE570.setToField("set_fraction")
-ROUTE570.setToNode("neck_RotationInterpolator_Stand")
-
-Scene14.addChildren(ROUTE570)
-ROUTE571 = ROUTE()
-ROUTE571.setFromField("fraction_changed")
-ROUTE571.setFromNode("Stand_Time")
-ROUTE571.setToField("set_fraction")
-ROUTE571.setToNode("upper_body_RotationInterpolator_Stand")
-
-Scene14.addChildren(ROUTE571)
-ROUTE572 = ROUTE()
-ROUTE572.setFromField("fraction_changed")
-ROUTE572.setFromNode("Stand_Time")
-ROUTE572.setToField("set_fraction")
-ROUTE572.setToNode("whole_body_RotationInterpolator_Stand")
-
-Scene14.addChildren(ROUTE572)
-ROUTE573 = ROUTE()
-ROUTE573.setFromField("fraction_changed")
-ROUTE573.setFromNode("Stand_Time")
-ROUTE573.setToField("set_fraction")
-ROUTE573.setToNode("whole_body_TranslationInterpolator_Stand")
-
-Scene14.addChildren(ROUTE573)
-ROUTE574 = ROUTE()
-ROUTE574.setFromField("value_changed")
-ROUTE574.setFromNode("r_ankle_RotationInterpolator_Stand")
-ROUTE574.setToField("set_rotation")
-ROUTE574.setToNode("hanim_r_ankle")
-
-Scene14.addChildren(ROUTE574)
-ROUTE575 = ROUTE()
-ROUTE575.setFromField("value_changed")
-ROUTE575.setFromNode("r_knee_RotationInterpolator_Stand")
-ROUTE575.setToField("set_rotation")
-ROUTE575.setToNode("hanim_r_knee")
-
-Scene14.addChildren(ROUTE575)
-ROUTE576 = ROUTE()
-ROUTE576.setFromField("value_changed")
-ROUTE576.setFromNode("r_hip_RotationInterpolator_Stand")
-ROUTE576.setToField("set_rotation")
-ROUTE576.setToNode("hanim_r_hip")
-
-Scene14.addChildren(ROUTE576)
-ROUTE577 = ROUTE()
-ROUTE577.setFromField("value_changed")
-ROUTE577.setFromNode("l_ankle_RotationInterpolator_Stand")
-ROUTE577.setToField("set_rotation")
-ROUTE577.setToNode("hanim_l_ankle")
-
-Scene14.addChildren(ROUTE577)
-ROUTE578 = ROUTE()
-ROUTE578.setFromField("value_changed")
-ROUTE578.setFromNode("l_knee_RotationInterpolator_Stand")
-ROUTE578.setToField("set_rotation")
-ROUTE578.setToNode("hanim_l_knee")
-
-Scene14.addChildren(ROUTE578)
-ROUTE579 = ROUTE()
-ROUTE579.setFromField("value_changed")
-ROUTE579.setFromNode("l_hip_RotationInterpolator_Stand")
-ROUTE579.setToField("set_rotation")
-ROUTE579.setToNode("hanim_l_hip")
-
-Scene14.addChildren(ROUTE579)
-ROUTE580 = ROUTE()
-ROUTE580.setFromField("value_changed")
-ROUTE580.setFromNode("lower_body_RotationInterpolator_Stand")
-ROUTE580.setToField("set_rotation")
-ROUTE580.setToNode("hanim_sacroiliac")
-
-Scene14.addChildren(ROUTE580)
-ROUTE581 = ROUTE()
-ROUTE581.setFromField("value_changed")
-ROUTE581.setFromNode("r_wrist_RotationInterpolator_Stand")
-ROUTE581.setToField("set_rotation")
-ROUTE581.setToNode("hanim_r_wrist")
-
-Scene14.addChildren(ROUTE581)
-ROUTE582 = ROUTE()
-ROUTE582.setFromField("value_changed")
-ROUTE582.setFromNode("r_elbow_RotationInterpolator_Stand")
-ROUTE582.setToField("set_rotation")
-ROUTE582.setToNode("hanim_r_elbow")
-
-Scene14.addChildren(ROUTE582)
-ROUTE583 = ROUTE()
-ROUTE583.setFromField("value_changed")
-ROUTE583.setFromNode("r_shoulder_RotationInterpolator_Stand")
-ROUTE583.setToField("set_rotation")
-ROUTE583.setToNode("hanim_r_shoulder")
-
-Scene14.addChildren(ROUTE583)
-ROUTE584 = ROUTE()
-ROUTE584.setFromField("value_changed")
-ROUTE584.setFromNode("l_wrist_RotationInterpolator_Stand")
-ROUTE584.setToField("set_rotation")
-ROUTE584.setToNode("hanim_l_wrist")
-
-Scene14.addChildren(ROUTE584)
-ROUTE585 = ROUTE()
-ROUTE585.setFromField("value_changed")
-ROUTE585.setFromNode("l_elbow_RotationInterpolator_Stand")
-ROUTE585.setToField("set_rotation")
-ROUTE585.setToNode("hanim_l_elbow")
-
-Scene14.addChildren(ROUTE585)
-ROUTE586 = ROUTE()
-ROUTE586.setFromField("value_changed")
-ROUTE586.setFromNode("l_shoulder_RotationInterpolator_Stand")
-ROUTE586.setToField("set_rotation")
-ROUTE586.setToNode("hanim_l_shoulder")
-
-Scene14.addChildren(ROUTE586)
-ROUTE587 = ROUTE()
-ROUTE587.setFromField("value_changed")
-ROUTE587.setFromNode("head_RotationInterpolator_Stand")
-ROUTE587.setToField("set_rotation")
-ROUTE587.setToNode("hanim_skullbase")
-
-Scene14.addChildren(ROUTE587)
-ROUTE588 = ROUTE()
-ROUTE588.setFromField("value_changed")
-ROUTE588.setFromNode("neck_RotationInterpolator_Stand")
-ROUTE588.setToField("set_rotation")
-ROUTE588.setToNode("hanim_vc4")
-
-Scene14.addChildren(ROUTE588)
-ROUTE589 = ROUTE()
-ROUTE589.setFromField("value_changed")
-ROUTE589.setFromNode("upper_body_RotationInterpolator_Stand")
-ROUTE589.setToField("set_rotation")
-ROUTE589.setToNode("hanim_vl1")
-
-Scene14.addChildren(ROUTE589)
-ROUTE590 = ROUTE()
-ROUTE590.setFromField("value_changed")
-ROUTE590.setFromNode("whole_body_RotationInterpolator_Stand")
-ROUTE590.setToField("set_rotation")
-ROUTE590.setToNode("hanim_humanoid_root")
-
-Scene14.addChildren(ROUTE590)
-ROUTE591 = ROUTE()
-ROUTE591.setFromField("value_changed")
-ROUTE591.setFromNode("whole_body_TranslationInterpolator_Stand")
-ROUTE591.setToField("set_translation")
-ROUTE591.setToNode("hanim_humanoid_root")
-
-Scene14.addChildren(ROUTE591)
-ROUTE592 = ROUTE()
-ROUTE592.setFromField("fraction_changed")
-ROUTE592.setFromNode("Walk_Time")
-ROUTE592.setToField("set_fraction")
-ROUTE592.setToNode("r_ankle_RotationInterpolator_BasicWalk")
-
-Scene14.addChildren(ROUTE592)
-ROUTE593 = ROUTE()
-ROUTE593.setFromField("fraction_changed")
-ROUTE593.setFromNode("Walk_Time")
-ROUTE593.setToField("set_fraction")
-ROUTE593.setToNode("r_knee_RotationInterpolator_BasicWalk")
-
-Scene14.addChildren(ROUTE593)
-ROUTE594 = ROUTE()
-ROUTE594.setFromField("fraction_changed")
-ROUTE594.setFromNode("Walk_Time")
-ROUTE594.setToField("set_fraction")
-ROUTE594.setToNode("r_hip_RotationInterpolator_BasicWalk")
-
-Scene14.addChildren(ROUTE594)
-ROUTE595 = ROUTE()
-ROUTE595.setFromField("fraction_changed")
-ROUTE595.setFromNode("Walk_Time")
-ROUTE595.setToField("set_fraction")
-ROUTE595.setToNode("l_ankle_RotationInterpolator_BasicWalk")
-
-Scene14.addChildren(ROUTE595)
-ROUTE596 = ROUTE()
-ROUTE596.setFromField("fraction_changed")
-ROUTE596.setFromNode("Walk_Time")
-ROUTE596.setToField("set_fraction")
-ROUTE596.setToNode("l_knee_RotationInterpolator_BasicWalk")
-
-Scene14.addChildren(ROUTE596)
-ROUTE597 = ROUTE()
-ROUTE597.setFromField("fraction_changed")
-ROUTE597.setFromNode("Walk_Time")
-ROUTE597.setToField("set_fraction")
-ROUTE597.setToNode("l_hip_RotationInterpolator_BasicWalk")
-
-Scene14.addChildren(ROUTE597)
-ROUTE598 = ROUTE()
-ROUTE598.setFromField("fraction_changed")
-ROUTE598.setFromNode("Walk_Time")
-ROUTE598.setToField("set_fraction")
-ROUTE598.setToNode("lower_body_RotationInterpolator_BasicWalk")
-
-Scene14.addChildren(ROUTE598)
-ROUTE599 = ROUTE()
-ROUTE599.setFromField("fraction_changed")
-ROUTE599.setFromNode("Walk_Time")
-ROUTE599.setToField("set_fraction")
-ROUTE599.setToNode("r_wrist_RotationInterpolator_BasicWalk")
-
-Scene14.addChildren(ROUTE599)
-ROUTE600 = ROUTE()
-ROUTE600.setFromField("fraction_changed")
-ROUTE600.setFromNode("Walk_Time")
-ROUTE600.setToField("set_fraction")
-ROUTE600.setToNode("r_elbow_RotationInterpolator_BasicWalk")
-
-Scene14.addChildren(ROUTE600)
-ROUTE601 = ROUTE()
-ROUTE601.setFromField("fraction_changed")
-ROUTE601.setFromNode("Walk_Time")
-ROUTE601.setToField("set_fraction")
-ROUTE601.setToNode("r_shoulder_RotationInterpolator_BasicWalk")
-
-Scene14.addChildren(ROUTE601)
-ROUTE602 = ROUTE()
-ROUTE602.setFromField("fraction_changed")
-ROUTE602.setFromNode("Walk_Time")
-ROUTE602.setToField("set_fraction")
-ROUTE602.setToNode("l_wrist_RotationInterpolator_BasicWalk")
-
-Scene14.addChildren(ROUTE602)
-ROUTE603 = ROUTE()
-ROUTE603.setFromField("fraction_changed")
-ROUTE603.setFromNode("Walk_Time")
-ROUTE603.setToField("set_fraction")
-ROUTE603.setToNode("l_elbow_RotationInterpolator_BasicWalk")
-
-Scene14.addChildren(ROUTE603)
-ROUTE604 = ROUTE()
-ROUTE604.setFromField("fraction_changed")
-ROUTE604.setFromNode("Walk_Time")
-ROUTE604.setToField("set_fraction")
-ROUTE604.setToNode("l_shoulder_RotationInterpolator_BasicWalk")
-
-Scene14.addChildren(ROUTE604)
-ROUTE605 = ROUTE()
-ROUTE605.setFromField("fraction_changed")
-ROUTE605.setFromNode("Walk_Time")
-ROUTE605.setToField("set_fraction")
-ROUTE605.setToNode("head_RotationInterpolator_BasicWalk")
-
-Scene14.addChildren(ROUTE605)
-ROUTE606 = ROUTE()
-ROUTE606.setFromField("fraction_changed")
-ROUTE606.setFromNode("Walk_Time")
-ROUTE606.setToField("set_fraction")
-ROUTE606.setToNode("neck_RotationInterpolator_BasicWalk")
-
-Scene14.addChildren(ROUTE606)
-ROUTE607 = ROUTE()
-ROUTE607.setFromField("fraction_changed")
-ROUTE607.setFromNode("Walk_Time")
-ROUTE607.setToField("set_fraction")
-ROUTE607.setToNode("upper_body_RotationInterpolator_BasicWalk")
-
-Scene14.addChildren(ROUTE607)
-ROUTE608 = ROUTE()
-ROUTE608.setFromField("fraction_changed")
-ROUTE608.setFromNode("Walk_Time")
-ROUTE608.setToField("set_fraction")
-ROUTE608.setToNode("whole_body_RotationInterpolator_BasicWalk")
-
-Scene14.addChildren(ROUTE608)
-ROUTE609 = ROUTE()
-ROUTE609.setFromField("fraction_changed")
-ROUTE609.setFromNode("Walk_Time")
-ROUTE609.setToField("set_fraction")
-ROUTE609.setToNode("whole_body_TranslationInterpolator_BasicWalk")
-
-Scene14.addChildren(ROUTE609)
-ROUTE610 = ROUTE()
-ROUTE610.setFromField("value_changed")
-ROUTE610.setFromNode("r_ankle_RotationInterpolator_BasicWalk")
-ROUTE610.setToField("set_rotation")
-ROUTE610.setToNode("hanim_r_ankle")
-
-Scene14.addChildren(ROUTE610)
-ROUTE611 = ROUTE()
-ROUTE611.setFromField("value_changed")
-ROUTE611.setFromNode("r_knee_RotationInterpolator_BasicWalk")
-ROUTE611.setToField("set_rotation")
-ROUTE611.setToNode("hanim_r_knee")
-
-Scene14.addChildren(ROUTE611)
-ROUTE612 = ROUTE()
-ROUTE612.setFromField("value_changed")
-ROUTE612.setFromNode("r_hip_RotationInterpolator_BasicWalk")
-ROUTE612.setToField("set_rotation")
-ROUTE612.setToNode("hanim_r_hip")
-
-Scene14.addChildren(ROUTE612)
-ROUTE613 = ROUTE()
-ROUTE613.setFromField("value_changed")
-ROUTE613.setFromNode("l_ankle_RotationInterpolator_BasicWalk")
-ROUTE613.setToField("set_rotation")
-ROUTE613.setToNode("hanim_l_ankle")
-
-Scene14.addChildren(ROUTE613)
-ROUTE614 = ROUTE()
-ROUTE614.setFromField("value_changed")
-ROUTE614.setFromNode("l_knee_RotationInterpolator_BasicWalk")
-ROUTE614.setToField("set_rotation")
-ROUTE614.setToNode("hanim_l_knee")
-
-Scene14.addChildren(ROUTE614)
-ROUTE615 = ROUTE()
-ROUTE615.setFromField("value_changed")
-ROUTE615.setFromNode("l_hip_RotationInterpolator_BasicWalk")
-ROUTE615.setToField("set_rotation")
-ROUTE615.setToNode("hanim_l_hip")
-
-Scene14.addChildren(ROUTE615)
-ROUTE616 = ROUTE()
-ROUTE616.setFromField("value_changed")
-ROUTE616.setFromNode("lower_body_RotationInterpolator_BasicWalk")
-ROUTE616.setToField("set_rotation")
-ROUTE616.setToNode("hanim_sacroiliac")
-
-Scene14.addChildren(ROUTE616)
-ROUTE617 = ROUTE()
-ROUTE617.setFromField("value_changed")
-ROUTE617.setFromNode("r_wrist_RotationInterpolator_BasicWalk")
-ROUTE617.setToField("set_rotation")
-ROUTE617.setToNode("hanim_r_wrist")
-
-Scene14.addChildren(ROUTE617)
-ROUTE618 = ROUTE()
-ROUTE618.setFromField("value_changed")
-ROUTE618.setFromNode("r_elbow_RotationInterpolator_BasicWalk")
-ROUTE618.setToField("set_rotation")
-ROUTE618.setToNode("hanim_r_elbow")
-
-Scene14.addChildren(ROUTE618)
-ROUTE619 = ROUTE()
-ROUTE619.setFromField("value_changed")
-ROUTE619.setFromNode("r_shoulder_RotationInterpolator_BasicWalk")
-ROUTE619.setToField("set_rotation")
-ROUTE619.setToNode("hanim_r_shoulder")
-
-Scene14.addChildren(ROUTE619)
-ROUTE620 = ROUTE()
-ROUTE620.setFromField("value_changed")
-ROUTE620.setFromNode("l_wrist_RotationInterpolator_BasicWalk")
-ROUTE620.setToField("set_rotation")
-ROUTE620.setToNode("hanim_l_wrist")
-
-Scene14.addChildren(ROUTE620)
-ROUTE621 = ROUTE()
-ROUTE621.setFromField("value_changed")
-ROUTE621.setFromNode("l_elbow_RotationInterpolator_BasicWalk")
-ROUTE621.setToField("set_rotation")
-ROUTE621.setToNode("hanim_l_elbow")
-
-Scene14.addChildren(ROUTE621)
-ROUTE622 = ROUTE()
-ROUTE622.setFromField("value_changed")
-ROUTE622.setFromNode("l_shoulder_RotationInterpolator_BasicWalk")
-ROUTE622.setToField("set_rotation")
-ROUTE622.setToNode("hanim_l_shoulder")
-
-Scene14.addChildren(ROUTE622)
-ROUTE623 = ROUTE()
-ROUTE623.setFromField("value_changed")
-ROUTE623.setFromNode("head_RotationInterpolator_BasicWalk")
-ROUTE623.setToField("set_rotation")
-ROUTE623.setToNode("hanim_skullbase")
-
-Scene14.addChildren(ROUTE623)
-ROUTE624 = ROUTE()
-ROUTE624.setFromField("value_changed")
-ROUTE624.setFromNode("neck_RotationInterpolator_BasicWalk")
-ROUTE624.setToField("set_rotation")
-ROUTE624.setToNode("hanim_vc4")
-
-Scene14.addChildren(ROUTE624)
-ROUTE625 = ROUTE()
-ROUTE625.setFromField("value_changed")
-ROUTE625.setFromNode("upper_body_RotationInterpolator_BasicWalk")
-ROUTE625.setToField("set_rotation")
-ROUTE625.setToNode("hanim_vl1")
-
-Scene14.addChildren(ROUTE625)
-ROUTE626 = ROUTE()
-ROUTE626.setFromField("value_changed")
-ROUTE626.setFromNode("whole_body_RotationInterpolator_BasicWalk")
-ROUTE626.setToField("set_rotation")
-ROUTE626.setToNode("hanim_humanoid_root")
-
-Scene14.addChildren(ROUTE626)
-ROUTE627 = ROUTE()
-ROUTE627.setFromField("value_changed")
-ROUTE627.setFromNode("whole_body_TranslationInterpolator_BasicWalk")
-ROUTE627.setToField("set_translation")
-ROUTE627.setToNode("hanim_humanoid_root")
-
-Scene14.addChildren(ROUTE627)
-ROUTE628 = ROUTE()
-ROUTE628.setFromField("fraction_changed")
-ROUTE628.setFromNode("Run_Time")
-ROUTE628.setToField("set_fraction")
-ROUTE628.setToNode("r_ankle_RotationInterpolator_Run")
-
-Scene14.addChildren(ROUTE628)
-ROUTE629 = ROUTE()
-ROUTE629.setFromField("fraction_changed")
-ROUTE629.setFromNode("Run_Time")
-ROUTE629.setToField("set_fraction")
-ROUTE629.setToNode("r_knee_RotationInterpolator_Run")
-
-Scene14.addChildren(ROUTE629)
-ROUTE630 = ROUTE()
-ROUTE630.setFromField("fraction_changed")
-ROUTE630.setFromNode("Run_Time")
-ROUTE630.setToField("set_fraction")
-ROUTE630.setToNode("r_hip_RotationInterpolator_Run")
-
-Scene14.addChildren(ROUTE630)
-ROUTE631 = ROUTE()
-ROUTE631.setFromField("fraction_changed")
-ROUTE631.setFromNode("Run_Time")
-ROUTE631.setToField("set_fraction")
-ROUTE631.setToNode("l_ankle_RotationInterpolator_Run")
-
-Scene14.addChildren(ROUTE631)
-ROUTE632 = ROUTE()
-ROUTE632.setFromField("fraction_changed")
-ROUTE632.setFromNode("Run_Time")
-ROUTE632.setToField("set_fraction")
-ROUTE632.setToNode("l_knee_RotationInterpolator_Run")
-
-Scene14.addChildren(ROUTE632)
-ROUTE633 = ROUTE()
-ROUTE633.setFromField("fraction_changed")
-ROUTE633.setFromNode("Run_Time")
-ROUTE633.setToField("set_fraction")
-ROUTE633.setToNode("l_hip_RotationInterpolator_Run")
-
-Scene14.addChildren(ROUTE633)
-ROUTE634 = ROUTE()
-ROUTE634.setFromField("fraction_changed")
-ROUTE634.setFromNode("Run_Time")
-ROUTE634.setToField("set_fraction")
-ROUTE634.setToNode("lower_body_RotationInterpolator_Run")
-
-Scene14.addChildren(ROUTE634)
-ROUTE635 = ROUTE()
-ROUTE635.setFromField("fraction_changed")
-ROUTE635.setFromNode("Run_Time")
-ROUTE635.setToField("set_fraction")
-ROUTE635.setToNode("r_wrist_RotationInterpolator_Run")
-
-Scene14.addChildren(ROUTE635)
-ROUTE636 = ROUTE()
-ROUTE636.setFromField("fraction_changed")
-ROUTE636.setFromNode("Run_Time")
-ROUTE636.setToField("set_fraction")
-ROUTE636.setToNode("r_elbow_RotationInterpolator_Run")
-
-Scene14.addChildren(ROUTE636)
-ROUTE637 = ROUTE()
-ROUTE637.setFromField("fraction_changed")
-ROUTE637.setFromNode("Run_Time")
-ROUTE637.setToField("set_fraction")
-ROUTE637.setToNode("r_shoulder_RotationInterpolator_Run")
-
-Scene14.addChildren(ROUTE637)
-ROUTE638 = ROUTE()
-ROUTE638.setFromField("fraction_changed")
-ROUTE638.setFromNode("Run_Time")
-ROUTE638.setToField("set_fraction")
-ROUTE638.setToNode("l_wrist_RotationInterpolator_Run")
-
-Scene14.addChildren(ROUTE638)
-ROUTE639 = ROUTE()
-ROUTE639.setFromField("fraction_changed")
-ROUTE639.setFromNode("Run_Time")
-ROUTE639.setToField("set_fraction")
-ROUTE639.setToNode("l_elbow_RotationInterpolator_Run")
-
-Scene14.addChildren(ROUTE639)
-ROUTE640 = ROUTE()
-ROUTE640.setFromField("fraction_changed")
-ROUTE640.setFromNode("Run_Time")
-ROUTE640.setToField("set_fraction")
-ROUTE640.setToNode("l_shoulder_RotationInterpolator_Run")
-
-Scene14.addChildren(ROUTE640)
-ROUTE641 = ROUTE()
-ROUTE641.setFromField("fraction_changed")
-ROUTE641.setFromNode("Run_Time")
-ROUTE641.setToField("set_fraction")
-ROUTE641.setToNode("head_RotationInterpolator_Run")
-
-Scene14.addChildren(ROUTE641)
-ROUTE642 = ROUTE()
-ROUTE642.setFromField("fraction_changed")
-ROUTE642.setFromNode("Run_Time")
-ROUTE642.setToField("set_fraction")
-ROUTE642.setToNode("neck_RotationInterpolator_Run")
-
-Scene14.addChildren(ROUTE642)
-ROUTE643 = ROUTE()
-ROUTE643.setFromField("fraction_changed")
-ROUTE643.setFromNode("Run_Time")
-ROUTE643.setToField("set_fraction")
-ROUTE643.setToNode("upper_body_RotationInterpolator_Run")
-
-Scene14.addChildren(ROUTE643)
-ROUTE644 = ROUTE()
-ROUTE644.setFromField("fraction_changed")
-ROUTE644.setFromNode("Run_Time")
-ROUTE644.setToField("set_fraction")
-ROUTE644.setToNode("whole_body_RotationInterpolator_Run")
-
-Scene14.addChildren(ROUTE644)
-ROUTE645 = ROUTE()
-ROUTE645.setFromField("fraction_changed")
-ROUTE645.setFromNode("Run_Time")
-ROUTE645.setToField("set_fraction")
-ROUTE645.setToNode("whole_body_TranslationInterpolator_Run")
-
-Scene14.addChildren(ROUTE645)
-ROUTE646 = ROUTE()
-ROUTE646.setFromField("value_changed")
-ROUTE646.setFromNode("r_ankle_RotationInterpolator_Run")
-ROUTE646.setToField("set_rotation")
-ROUTE646.setToNode("hanim_r_ankle")
-
-Scene14.addChildren(ROUTE646)
-ROUTE647 = ROUTE()
-ROUTE647.setFromField("value_changed")
-ROUTE647.setFromNode("r_knee_RotationInterpolator_Run")
-ROUTE647.setToField("set_rotation")
-ROUTE647.setToNode("hanim_r_knee")
-
-Scene14.addChildren(ROUTE647)
-ROUTE648 = ROUTE()
-ROUTE648.setFromField("value_changed")
-ROUTE648.setFromNode("r_hip_RotationInterpolator_Run")
-ROUTE648.setToField("set_rotation")
-ROUTE648.setToNode("hanim_r_hip")
-
-Scene14.addChildren(ROUTE648)
-ROUTE649 = ROUTE()
-ROUTE649.setFromField("value_changed")
-ROUTE649.setFromNode("l_ankle_RotationInterpolator_Run")
-ROUTE649.setToField("set_rotation")
-ROUTE649.setToNode("hanim_l_ankle")
-
-Scene14.addChildren(ROUTE649)
-ROUTE650 = ROUTE()
-ROUTE650.setFromField("value_changed")
-ROUTE650.setFromNode("l_knee_RotationInterpolator_Run")
-ROUTE650.setToField("set_rotation")
-ROUTE650.setToNode("hanim_l_knee")
-
-Scene14.addChildren(ROUTE650)
-ROUTE651 = ROUTE()
-ROUTE651.setFromField("value_changed")
-ROUTE651.setFromNode("l_hip_RotationInterpolator_Run")
-ROUTE651.setToField("set_rotation")
-ROUTE651.setToNode("hanim_l_hip")
-
-Scene14.addChildren(ROUTE651)
-ROUTE652 = ROUTE()
-ROUTE652.setFromField("value_changed")
-ROUTE652.setFromNode("lower_body_RotationInterpolator_Run")
-ROUTE652.setToField("set_rotation")
-ROUTE652.setToNode("hanim_sacroiliac")
-
-Scene14.addChildren(ROUTE652)
-ROUTE653 = ROUTE()
-ROUTE653.setFromField("value_changed")
-ROUTE653.setFromNode("r_wrist_RotationInterpolator_Run")
-ROUTE653.setToField("set_rotation")
-ROUTE653.setToNode("hanim_r_wrist")
-
-Scene14.addChildren(ROUTE653)
-ROUTE654 = ROUTE()
-ROUTE654.setFromField("value_changed")
-ROUTE654.setFromNode("r_elbow_RotationInterpolator_Run")
-ROUTE654.setToField("set_rotation")
-ROUTE654.setToNode("hanim_r_elbow")
-
-Scene14.addChildren(ROUTE654)
-ROUTE655 = ROUTE()
-ROUTE655.setFromField("value_changed")
-ROUTE655.setFromNode("r_shoulder_RotationInterpolator_Run")
-ROUTE655.setToField("set_rotation")
-ROUTE655.setToNode("hanim_r_shoulder")
-
-Scene14.addChildren(ROUTE655)
-ROUTE656 = ROUTE()
-ROUTE656.setFromField("value_changed")
-ROUTE656.setFromNode("l_wrist_RotationInterpolator_Run")
-ROUTE656.setToField("set_rotation")
-ROUTE656.setToNode("hanim_l_wrist")
-
-Scene14.addChildren(ROUTE656)
-ROUTE657 = ROUTE()
-ROUTE657.setFromField("value_changed")
-ROUTE657.setFromNode("l_elbow_RotationInterpolator_Run")
-ROUTE657.setToField("set_rotation")
-ROUTE657.setToNode("hanim_l_elbow")
-
-Scene14.addChildren(ROUTE657)
-ROUTE658 = ROUTE()
-ROUTE658.setFromField("value_changed")
-ROUTE658.setFromNode("l_shoulder_RotationInterpolator_Run")
-ROUTE658.setToField("set_rotation")
-ROUTE658.setToNode("hanim_l_shoulder")
-
-Scene14.addChildren(ROUTE658)
-ROUTE659 = ROUTE()
-ROUTE659.setFromField("value_changed")
-ROUTE659.setFromNode("head_RotationInterpolator_Run")
-ROUTE659.setToField("set_rotation")
-ROUTE659.setToNode("hanim_skullbase")
-
-Scene14.addChildren(ROUTE659)
-ROUTE660 = ROUTE()
-ROUTE660.setFromField("value_changed")
-ROUTE660.setFromNode("neck_RotationInterpolator_Run")
-ROUTE660.setToField("set_rotation")
-ROUTE660.setToNode("hanim_vc4")
-
-Scene14.addChildren(ROUTE660)
-ROUTE661 = ROUTE()
-ROUTE661.setFromField("value_changed")
-ROUTE661.setFromNode("upper_body_RotationInterpolator_Run")
-ROUTE661.setToField("set_rotation")
-ROUTE661.setToNode("hanim_vl1")
-
-Scene14.addChildren(ROUTE661)
-ROUTE662 = ROUTE()
-ROUTE662.setFromField("value_changed")
-ROUTE662.setFromNode("whole_body_RotationInterpolator_Run")
-ROUTE662.setToField("set_rotation")
-ROUTE662.setToNode("hanim_humanoid_root")
-
-Scene14.addChildren(ROUTE662)
-ROUTE663 = ROUTE()
-ROUTE663.setFromField("value_changed")
-ROUTE663.setFromNode("whole_body_TranslationInterpolator_Run")
-ROUTE663.setToField("set_translation")
-ROUTE663.setToNode("hanim_humanoid_root")
-
-Scene14.addChildren(ROUTE663)
-ROUTE664 = ROUTE()
-ROUTE664.setFromField("fraction_changed")
-ROUTE664.setFromNode("Jump_Time")
-ROUTE664.setToField("set_fraction")
-ROUTE664.setToNode("r_ankle_RotationInterpolator_Jump")
-
-Scene14.addChildren(ROUTE664)
-ROUTE665 = ROUTE()
-ROUTE665.setFromField("fraction_changed")
-ROUTE665.setFromNode("Jump_Time")
-ROUTE665.setToField("set_fraction")
-ROUTE665.setToNode("r_knee_RotationInterpolator_Jump")
-
-Scene14.addChildren(ROUTE665)
-ROUTE666 = ROUTE()
-ROUTE666.setFromField("fraction_changed")
-ROUTE666.setFromNode("Jump_Time")
-ROUTE666.setToField("set_fraction")
-ROUTE666.setToNode("r_hip_RotationInterpolator_Jump")
-
-Scene14.addChildren(ROUTE666)
-ROUTE667 = ROUTE()
-ROUTE667.setFromField("fraction_changed")
-ROUTE667.setFromNode("Jump_Time")
-ROUTE667.setToField("set_fraction")
-ROUTE667.setToNode("l_ankle_RotationInterpolator_Jump")
-
-Scene14.addChildren(ROUTE667)
-ROUTE668 = ROUTE()
-ROUTE668.setFromField("fraction_changed")
-ROUTE668.setFromNode("Jump_Time")
-ROUTE668.setToField("set_fraction")
-ROUTE668.setToNode("l_knee_RotationInterpolator_Jump")
-
-Scene14.addChildren(ROUTE668)
-ROUTE669 = ROUTE()
-ROUTE669.setFromField("fraction_changed")
-ROUTE669.setFromNode("Jump_Time")
-ROUTE669.setToField("set_fraction")
-ROUTE669.setToNode("l_hip_RotationInterpolator_Jump")
-
-Scene14.addChildren(ROUTE669)
-ROUTE670 = ROUTE()
-ROUTE670.setFromField("fraction_changed")
-ROUTE670.setFromNode("Jump_Time")
-ROUTE670.setToField("set_fraction")
-ROUTE670.setToNode("lower_body_RotationInterpolator_Jump")
-
-Scene14.addChildren(ROUTE670)
-ROUTE671 = ROUTE()
-ROUTE671.setFromField("fraction_changed")
-ROUTE671.setFromNode("Jump_Time")
-ROUTE671.setToField("set_fraction")
-ROUTE671.setToNode("r_wrist_RotationInterpolator_Jump")
-
-Scene14.addChildren(ROUTE671)
-ROUTE672 = ROUTE()
-ROUTE672.setFromField("fraction_changed")
-ROUTE672.setFromNode("Jump_Time")
-ROUTE672.setToField("set_fraction")
-ROUTE672.setToNode("r_elbow_RotationInterpolator_Jump")
-
-Scene14.addChildren(ROUTE672)
-ROUTE673 = ROUTE()
-ROUTE673.setFromField("fraction_changed")
-ROUTE673.setFromNode("Jump_Time")
-ROUTE673.setToField("set_fraction")
-ROUTE673.setToNode("r_shoulder_RotationInterpolator_Jump")
-
-Scene14.addChildren(ROUTE673)
-ROUTE674 = ROUTE()
-ROUTE674.setFromField("fraction_changed")
-ROUTE674.setFromNode("Jump_Time")
-ROUTE674.setToField("set_fraction")
-ROUTE674.setToNode("l_wrist_RotationInterpolator_Jump")
-
-Scene14.addChildren(ROUTE674)
-ROUTE675 = ROUTE()
-ROUTE675.setFromField("fraction_changed")
-ROUTE675.setFromNode("Jump_Time")
-ROUTE675.setToField("set_fraction")
-ROUTE675.setToNode("l_elbow_RotationInterpolator_Jump")
-
-Scene14.addChildren(ROUTE675)
-ROUTE676 = ROUTE()
-ROUTE676.setFromField("fraction_changed")
-ROUTE676.setFromNode("Jump_Time")
-ROUTE676.setToField("set_fraction")
-ROUTE676.setToNode("l_shoulder_RotationInterpolator_Jump")
-
-Scene14.addChildren(ROUTE676)
-ROUTE677 = ROUTE()
-ROUTE677.setFromField("fraction_changed")
-ROUTE677.setFromNode("Jump_Time")
-ROUTE677.setToField("set_fraction")
-ROUTE677.setToNode("head_RotationInterpolator_Jump")
-
-Scene14.addChildren(ROUTE677)
-ROUTE678 = ROUTE()
-ROUTE678.setFromField("fraction_changed")
-ROUTE678.setFromNode("Jump_Time")
-ROUTE678.setToField("set_fraction")
-ROUTE678.setToNode("neck_RotationInterpolator_Jump")
-
-Scene14.addChildren(ROUTE678)
-ROUTE679 = ROUTE()
-ROUTE679.setFromField("fraction_changed")
-ROUTE679.setFromNode("Jump_Time")
-ROUTE679.setToField("set_fraction")
-ROUTE679.setToNode("upper_body_RotationInterpolator_Jump")
-
-Scene14.addChildren(ROUTE679)
-ROUTE680 = ROUTE()
-ROUTE680.setFromField("fraction_changed")
-ROUTE680.setFromNode("Jump_Time")
-ROUTE680.setToField("set_fraction")
-ROUTE680.setToNode("whole_body_RotationInterpolator_Jump")
-
-Scene14.addChildren(ROUTE680)
-ROUTE681 = ROUTE()
-ROUTE681.setFromField("fraction_changed")
-ROUTE681.setFromNode("Jump_Time")
-ROUTE681.setToField("set_fraction")
-ROUTE681.setToNode("whole_body_TranslationInterpolator_Jump")
-
-Scene14.addChildren(ROUTE681)
-ROUTE682 = ROUTE()
-ROUTE682.setFromField("value_changed")
-ROUTE682.setFromNode("r_ankle_RotationInterpolator_Jump")
-ROUTE682.setToField("set_rotation")
-ROUTE682.setToNode("hanim_r_ankle")
-
-Scene14.addChildren(ROUTE682)
-ROUTE683 = ROUTE()
-ROUTE683.setFromField("value_changed")
-ROUTE683.setFromNode("r_knee_RotationInterpolator_Jump")
-ROUTE683.setToField("set_rotation")
-ROUTE683.setToNode("hanim_r_knee")
-
-Scene14.addChildren(ROUTE683)
-ROUTE684 = ROUTE()
-ROUTE684.setFromField("value_changed")
-ROUTE684.setFromNode("r_hip_RotationInterpolator_Jump")
-ROUTE684.setToField("set_rotation")
-ROUTE684.setToNode("hanim_r_hip")
-
-Scene14.addChildren(ROUTE684)
-ROUTE685 = ROUTE()
-ROUTE685.setFromField("value_changed")
-ROUTE685.setFromNode("l_ankle_RotationInterpolator_Jump")
-ROUTE685.setToField("set_rotation")
-ROUTE685.setToNode("hanim_l_ankle")
-
-Scene14.addChildren(ROUTE685)
-ROUTE686 = ROUTE()
-ROUTE686.setFromField("value_changed")
-ROUTE686.setFromNode("l_knee_RotationInterpolator_Jump")
-ROUTE686.setToField("set_rotation")
-ROUTE686.setToNode("hanim_l_knee")
-
-Scene14.addChildren(ROUTE686)
-ROUTE687 = ROUTE()
-ROUTE687.setFromField("value_changed")
-ROUTE687.setFromNode("l_hip_RotationInterpolator_Jump")
-ROUTE687.setToField("set_rotation")
-ROUTE687.setToNode("hanim_l_hip")
-
-Scene14.addChildren(ROUTE687)
-ROUTE688 = ROUTE()
-ROUTE688.setFromField("value_changed")
-ROUTE688.setFromNode("lower_body_RotationInterpolator_Jump")
-ROUTE688.setToField("set_rotation")
-ROUTE688.setToNode("hanim_sacroiliac")
-
-Scene14.addChildren(ROUTE688)
-ROUTE689 = ROUTE()
-ROUTE689.setFromField("value_changed")
-ROUTE689.setFromNode("r_wrist_RotationInterpolator_Jump")
-ROUTE689.setToField("set_rotation")
-ROUTE689.setToNode("hanim_r_wrist")
-
-Scene14.addChildren(ROUTE689)
-ROUTE690 = ROUTE()
-ROUTE690.setFromField("value_changed")
-ROUTE690.setFromNode("r_elbow_RotationInterpolator_Jump")
-ROUTE690.setToField("set_rotation")
-ROUTE690.setToNode("hanim_r_elbow")
-
-Scene14.addChildren(ROUTE690)
-ROUTE691 = ROUTE()
-ROUTE691.setFromField("value_changed")
-ROUTE691.setFromNode("r_shoulder_RotationInterpolator_Jump")
-ROUTE691.setToField("set_rotation")
-ROUTE691.setToNode("hanim_r_shoulder")
-
-Scene14.addChildren(ROUTE691)
-ROUTE692 = ROUTE()
-ROUTE692.setFromField("value_changed")
-ROUTE692.setFromNode("l_wrist_RotationInterpolator_Jump")
-ROUTE692.setToField("set_rotation")
-ROUTE692.setToNode("hanim_l_wrist")
-
-Scene14.addChildren(ROUTE692)
-ROUTE693 = ROUTE()
-ROUTE693.setFromField("value_changed")
-ROUTE693.setFromNode("l_elbow_RotationInterpolator_Jump")
-ROUTE693.setToField("set_rotation")
-ROUTE693.setToNode("hanim_l_elbow")
-
-Scene14.addChildren(ROUTE693)
-ROUTE694 = ROUTE()
-ROUTE694.setFromField("value_changed")
-ROUTE694.setFromNode("l_shoulder_RotationInterpolator_Jump")
-ROUTE694.setToField("set_rotation")
-ROUTE694.setToNode("hanim_l_shoulder")
-
-Scene14.addChildren(ROUTE694)
-ROUTE695 = ROUTE()
-ROUTE695.setFromField("value_changed")
-ROUTE695.setFromNode("head_RotationInterpolator_Jump")
-ROUTE695.setToField("set_rotation")
-ROUTE695.setToNode("hanim_skullbase")
-
-Scene14.addChildren(ROUTE695)
-ROUTE696 = ROUTE()
-ROUTE696.setFromField("value_changed")
-ROUTE696.setFromNode("neck_RotationInterpolator_Jump")
-ROUTE696.setToField("set_rotation")
-ROUTE696.setToNode("hanim_vc4")
-
-Scene14.addChildren(ROUTE696)
-ROUTE697 = ROUTE()
-ROUTE697.setFromField("value_changed")
-ROUTE697.setFromNode("upper_body_RotationInterpolator_Jump")
-ROUTE697.setToField("set_rotation")
-ROUTE697.setToNode("hanim_vl1")
-
-Scene14.addChildren(ROUTE697)
-ROUTE698 = ROUTE()
-ROUTE698.setFromField("value_changed")
-ROUTE698.setFromNode("whole_body_RotationInterpolator_Jump")
-ROUTE698.setToField("set_rotation")
-ROUTE698.setToNode("hanim_humanoid_root")
-
-Scene14.addChildren(ROUTE698)
-ROUTE699 = ROUTE()
-ROUTE699.setFromField("value_changed")
-ROUTE699.setFromNode("whole_body_TranslationInterpolator_Jump")
-ROUTE699.setToField("set_translation")
-ROUTE699.setToNode("hanim_humanoid_root")
-
-Scene14.addChildren(ROUTE699)
-
-X3D0.setScene(Scene14)
-X3D0.toFileX3D("../data/NancyPrototypes_RoundTrip.x3d")
+from x3d import *
+print(
+X3D(
+  profile="Immersive", version="3.3", head=head(  children=[
+      
+          meta(name="title", content="NancyPrototypes.x3d"),
+          meta(name="creator", content="Cindy Ballreich"),
+          meta(name="translators", content="Tom Miller and Don Brutzman, NPS"),
+          meta(name="created", content="9 July 2000"),
+          meta(name="modified", content="4 July 2020"),
+          meta(name="description", content="Canonical HAnim 1.1 specification example, using ProtoDeclaration and ProtoInstance instead of native X3D tags. Prototype definitions are a compatible combination of version 1.0 and 2.0 prototype interfaces."),
+          meta(name="warning", content="using ProtoDeclare is only for developmental experimentation, use X3D native tags for Humanoids instead"),
+          meta(name="reference", content="NancyNativeTags.x3d"),
+          meta(name="TODO", content="Material color of neck and arms is ignored/incorrect in Xj3D, possily DEF/USE problem."),
+          meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/NancyPrototypes.x3d"),
+          meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+          meta(name="license", content="../license.html"),
+          meta(name="translated", content="16 January 2022"),
+          meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+          meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")]), Scene=Scene(
+    children=[
+        ProtoDeclare(
+          name="Displacer", appinfo="A Displacer can be used in three different ways: (a) identify the vertices corresponding to a particular feature on a Segment (b) represent a particular muscular action which displaces the vertices in various directions (linearly or radially) and (c) represent a complete configuration of the vertices in a Segment.", documentation="http://HAnim.org/Specifications/HAnim2001/part1/Displacer.html", ProtoInterface=ProtoInterface(
+            field=[
+                field(name="name", accessType="inputOutput", type="SFString"),
+                field(name="coordIndex", accessType="inputOutput", type="MFInt32"),
+                field(name="displacements", accessType="inputOutput", type="MFVec3f")]), ProtoBody=ProtoBody(
+            children=[
+                WorldInfo(
+                  info=("null body node"))])),
+        ProtoDeclare(
+          name="Humanoid", appinfo="The Humanoid node serves as overall container for the Joint Segment Site and Viewpoint nodes which define the skeleton geometry and landmarks of the humanoid figure. Additionally the node provides a means for defining information about the author copyright and usage restrictions of the model.", documentation="http://HAnim.org/Specifications/HAnim2001/part1/Humanoid.html", ProtoInterface=ProtoInterface(
+            children=[#HAnim v1.1 field definitions
+], field=[
+                field(name="name", accessType="inputOutput", type="SFString"),
+                field(name="version", accessType="inputOutput", appinfo="legal values: 1.1 or 2.0", type="SFString", value="1.1"),
+                field(name="humanoidVersion", accessType="inputOutput", appinfo="Version of the humanoid being modeled. Hint: HAnim version 2.0", type="SFString"),
+                field(name="info", accessType="inputOutput", type="MFString"),
+                field(name="translation", accessType="inputOutput", type="SFVec3f", value=(0,0,0)),
+                field(name="rotation", accessType="inputOutput", type="SFRotation", value=(0,0,1,0)),
+                field(name="center", accessType="inputOutput", type="SFVec3f", value=(0,0,0)),
+                field(name="scale", accessType="inputOutput", type="SFVec3f", value=(1,1,1)),
+                field(name="scaleOrientation", accessType="inputOutput", type="SFRotation", value=(0,0,1,0)),
+                field(name="bboxCenter", accessType="initializeOnly", type="SFVec3f", value=(0,0,0)),
+                field(name="bboxSize", accessType="initializeOnly", type="SFVec3f", value=(-1,-1,-1)),
+                field(name="humanoidBody", accessType="inputOutput", appinfo="HAnim 1.1 field container for body geometry Hint: replaced by 2.0 skeleton", documentation="http://HAnim.org/Specifications/HAnim1.1/#humanoid", type="MFNode"),
+                field(name="skeleton", accessType="inputOutput", appinfo="HAnim 2.0 field container for body geometry Hint: replaces 1.1 humanoidBody", documentation="http://HAnim.org/Specifications/HAnim2001/part1/Humanoid.html", type="MFNode"),
+                field(name="joints", accessType="inputOutput", appinfo="Container field for Joint nodes", type="MFNode"),
+                field(name="segments", accessType="inputOutput", appinfo="Container field for Segment nodes", type="MFNode"),
+                field(name="sites", accessType="inputOutput", appinfo="Container field for Site nodes", type="MFNode"),
+                field(name="viewpoints", accessType="inputOutput", appinfo="Container field for Viewpoint nodes", type="MFNode"),
+                field(name="skinCoord", accessType="inputOutput", appinfo="Hint: HAnim version 2.0", type="SFNode", children=[#NULL node
+]),
+                field(name="skinNormal", accessType="inputOutput", appinfo="Hint: HAnim version 2.0", type="SFNode", children=[#NULL node
+])]), ProtoBody=ProtoBody(
+            children=[
+                Transform(
+                  DEF="HumanoidTransform", IS=IS(
+                    connect=[
+                        connect(nodeField="translation", protoField="translation"),
+                        connect(nodeField="rotation", protoField="rotation"),
+                        connect(nodeField="scale", protoField="scale"),
+                        connect(nodeField="scaleOrientation", protoField="scaleOrientation"),
+                        connect(nodeField="center", protoField="center"),
+                        connect(nodeField="bboxCenter", protoField="bboxCenter"),
+                        connect(nodeField="bboxSize", protoField="bboxSize")]), children=[
+                      Group(
+                        DEF="HumanoidGroup1", IS=IS(
+                          connect=[
+                              connect(nodeField="children", protoField="humanoidBody")])),
+                      Group(
+                        DEF="HumanoidGroup2", IS=IS(
+                          connect=[
+                              connect(nodeField="children", protoField="skeleton")])),
+                      Group(
+                        DEF="HumanoidGroup3", IS=IS(
+                          connect=[
+                              connect(nodeField="children", protoField="viewpoints")]))])])),
+        ProtoDeclare(
+          name="Joint", appinfo="The Joint node is used as a building block to describe the articulations of the humanoid figure. Each articulation of the humanoid figure is represented by a Joint node each of which is organized into a hierarchy that describes the overall skeleton of the humanoid.", documentation="http://HAnim.org/Specifications/HAnim2001/part1/Joint.html", ProtoInterface=ProtoInterface(
+            field=[
+                field(name="name", accessType="inputOutput", type="SFString"),
+                field(name="ulimit", accessType="inputOutput", type="MFFloat"),
+                field(name="llimit", accessType="inputOutput", type="MFFloat"),
+                field(name="limitOrientation", accessType="inputOutput", type="SFRotation", value=(0,0,1,0)),
+                field(name="skinCoordIndex", accessType="inputOutput", type="MFInt32"),
+                field(name="skinCoordWeight", accessType="inputOutput", type="MFFloat"),
+                field(name="stiffness", accessType="inputOutput", type="MFFloat", value=(0,0,0)),
+                field(name="translation", accessType="inputOutput", type="SFVec3f", value=(0,0,0)),
+                field(name="rotation", accessType="inputOutput", type="SFRotation", value=(0,0,1,0)),
+                field(name="scale", accessType="inputOutput", type="SFVec3f", value=(1,1,1)),
+                field(name="scaleOrientation", accessType="inputOutput", type="SFRotation", value=(0,0,1,0)),
+                field(name="center", accessType="inputOutput", type="SFVec3f", value=(0,0,0)),
+                field(name="bboxCenter", accessType="initializeOnly", type="SFVec3f", value=(0,0,0)),
+                field(name="bboxSize", accessType="initializeOnly", type="SFVec3f", value=(-1,-1,-1)),
+                field(name="children", accessType="inputOutput", type="MFNode"),
+                field(name="addChildren", accessType="inputOnly", type="MFNode"),
+                field(name="removeChildren", accessType="inputOnly", type="MFNode")]), ProtoBody=ProtoBody(
+            children=[
+                Transform(
+                  DEF="JointTransform", IS=IS(
+                    connect=[
+                        connect(nodeField="translation", protoField="translation"),
+                        connect(nodeField="rotation", protoField="rotation"),
+                        connect(nodeField="scale", protoField="scale"),
+                        connect(nodeField="scaleOrientation", protoField="scaleOrientation"),
+                        connect(nodeField="center", protoField="center"),
+                        connect(nodeField="bboxCenter", protoField="bboxCenter"),
+                        connect(nodeField="bboxSize", protoField="bboxSize"),
+                        connect(nodeField="children", protoField="children"),
+                        connect(nodeField="addChildren", protoField="addChildren"),
+                        connect(nodeField="removeChildren", protoField="removeChildren")]))])),
+        ProtoDeclare(
+          name="Segment", appinfo="The Segment node is used describe the attributes of the physical links between the joints of the humanoid figure. Each body part (pelvis thigh calf etc) of the humanoid figure is represented by a Segment node.", documentation="http://HAnim.org/Specifications/HAnim2001/part1/Segment.html", ProtoInterface=ProtoInterface(
+            field=[
+                field(name="name", accessType="inputOutput", type="SFString"),
+                field(name="mass", accessType="inputOutput", type="SFFloat", value=0),
+                field(name="centerOfMass", accessType="inputOutput", type="SFVec3f", value=(0,0,0)),
+                field(name="momentsOfInertia", accessType="inputOutput", type="MFFloat", value=(0,0,0,0,0,0,0,0,0)),
+                field(name="bboxCenter", accessType="initializeOnly", type="SFVec3f", value=(0,0,0)),
+                field(name="bboxSize", accessType="initializeOnly", type="SFVec3f", value=(-1,-1,-1)),
+                field(name="children", accessType="inputOutput", type="MFNode"),
+                field(name="addChildren", accessType="inputOnly", type="MFNode"),
+                field(name="removeChildren", accessType="inputOnly", type="MFNode"),
+                field(name="coord", accessType="inputOutput", appinfo="contains Coordinate nodes", type="SFNode", children=[#NULL node
+]),
+                field(name="displacers", accessType="inputOutput", appinfo="contains Displacer nodes", type="MFNode")]), ProtoBody=ProtoBody(
+            children=[
+                Group(
+                  DEF="SegmentGroup", IS=IS(
+                    connect=[
+                        connect(nodeField="bboxCenter", protoField="bboxCenter"),
+                        connect(nodeField="bboxSize", protoField="bboxSize"),
+                        connect(nodeField="children", protoField="children"),
+                        connect(nodeField="addChildren", protoField="addChildren"),
+                        connect(nodeField="removeChildren", protoField="removeChildren")]))])),
+        ProtoDeclare(
+          name="Site", appinfo="The Site node can be used for three purposes: (a) to define an \"end effector\" location which can be used by an inverse kinematics system (b) to define an attachment point for accessories such as jewelry and clothing and (c) to define a location for a virtual camera in the reference frame of a Segment node (such as a view \"through the eyes\" of the humanoid for use in multi-user worlds).", documentation="http://HAnim.org/Specifications/HAnim2001/part1/Site.html", ProtoInterface=ProtoInterface(
+            field=[
+                field(name="name", accessType="inputOutput", type="SFString"),
+                field(name="translation", accessType="inputOutput", type="SFVec3f", value=(0,0,0)),
+                field(name="rotation", accessType="inputOutput", type="SFRotation", value=(0,0,1,0)),
+                field(name="scale", accessType="inputOutput", type="SFVec3f", value=(1,1,1)),
+                field(name="scaleOrientation", accessType="inputOutput", type="SFRotation", value=(0,0,1,0)),
+                field(name="center", accessType="inputOutput", type="SFVec3f", value=(0,0,0)),
+                field(name="bboxCenter", accessType="initializeOnly", type="SFVec3f", value=(0,0,0)),
+                field(name="bboxSize", accessType="initializeOnly", type="SFVec3f", value=(-1,-1,-1)),
+                field(name="children", accessType="inputOutput", type="MFNode"),
+                field(name="addChildren", accessType="inputOnly", type="MFNode"),
+                field(name="removeChildren", accessType="inputOnly", type="MFNode")]), ProtoBody=ProtoBody(
+            children=[
+                Transform(
+                  DEF="SiteTransform", IS=IS(
+                    connect=[
+                        connect(nodeField="translation", protoField="translation"),
+                        connect(nodeField="rotation", protoField="rotation"),
+                        connect(nodeField="scale", protoField="scale"),
+                        connect(nodeField="scaleOrientation", protoField="scaleOrientation"),
+                        connect(nodeField="center", protoField="center"),
+                        connect(nodeField="bboxCenter", protoField="bboxCenter"),
+                        connect(nodeField="bboxSize", protoField="bboxSize"),
+                        connect(nodeField="children", protoField="children"),
+                        connect(nodeField="addChildren", protoField="addChildren"),
+                        connect(nodeField="removeChildren", protoField="removeChildren")]))])),#Start scene graph.
+
+        ProtoInstance(
+          name="Humanoid", DEF="Humanoid", fieldValue=[
+              fieldValue(name="name", value="nancy"),
+              fieldValue(name="version", value="1.1"),
+              fieldValue(name="info", value=("humanoidVersion=Nancy V1.2b","authorName=Cindy Ballreich","authorEmail=cindy@ballreich.net","copyright=1997 3Name3D / Yglesias Wallock Divekar Inc. all rights reserved.","creationDate=Tue Dec 30 08:30:08 PST 1997","usageRestrictions=Noncommercial usage is ok if 3Name3D name and logo <www.ballreich.net/vrml/HAnim/small_logo.gif> is present and proper credit is given.")),
+              fieldValue(name="humanoidBody", children=[
+                  ProtoInstance(
+                    name="Joint", DEF="hanim_humanoid_root", fieldValue=[
+                        fieldValue(name="name", value="humanoid_root"),
+                        fieldValue(name="center", value=(-0.00405,0.855,-0.000113)),
+                        fieldValue(name="children", children=[
+                            ProtoInstance(
+                              name="Joint", DEF="hanim_sacroiliac", fieldValue=[
+                                  fieldValue(name="name", value="sacroiliac"),
+                                  fieldValue(name="center", value=(0,1.01,-0.0204)),
+                                  fieldValue(name="children", children=[
+                                      ProtoInstance(
+                                        name="Segment", DEF="hanim_pelvis", fieldValue=[
+                                            fieldValue(name="name", value="pelvis"),
+                                            fieldValue(name="children", children=[
+                                                Shape(
+                                                  appearance=Appearance(
+                                                      material=Material(
+                                                          DEF="Pants_Color", ambientIntensity=0.25, diffuseColor=(0.054,0.233,0.39))), geometry=IndexedFaceSet(
+                                                      coordIndex=(0,1,40,-1,1,2,40,-1,2,3,40,-1,3,4,40,-1,4,5,40,-1,5,4,9,-1,4,3,8,-1,3,2,8,-1,2,1,6,-1,0,7,1,-1,7,6,1,-1,6,8,2,-1,9,4,10,-1,4,8,10,-1,8,6,12,-1,7,0,47,-1,50,5,9,-1,7,47,55,-1,55,13,7,-1,50,9,56,-1,9,10,14,-1,10,11,15,-1,11,12,16,-1,12,13,19,-1,13,55,17,-1,60,17,55,-1,17,19,13,-1,19,16,12,-1,16,15,11,-1,15,18,10,-1,14,56,9,-1,56,14,64,-1,17,60,20,-1,20,19,17,-1,21,64,14,-1,14,22,21,-1,15,16,24,-1,16,19,24,-1,19,20,26,-1,24,23,15,-1,64,21,69,-1,21,22,29,-1,19,26,25,-1,20,63,27,-1,27,26,20,-1,25,24,19,-1,30,29,22,-1,29,28,21,-1,28,69,21,-1,27,34,26,-1,69,28,79,-1,29,30,32,-1,30,23,33,-1,23,24,37,-1,25,26,34,-1,83,27,77,-1,37,33,23,-1,33,32,30,-1,31,79,28,-1,79,31,84,-1,32,33,36,-1,24,25,37,-1,34,27,83,-1,83,38,34,-1,34,37,25,-1,37,36,33,-1,36,35,32,-1,84,31,89,-1,31,35,89,-1,35,36,39,-1,36,37,39,-1,38,83,89,-1,89,39,38,-1,39,89,35,-1,40,41,0,-1,40,42,41,-1,40,43,42,-1,40,44,43,-1,40,45,44,-1,49,44,45,-1,48,43,44,-1,48,42,43,-1,46,41,42,-1,41,47,0,-1,41,46,47,-1,42,48,46,-1,51,44,49,-1,51,48,44,-1,48,52,53,-1,49,45,50,-1,56,49,50,-1,57,51,49,-1,58,53,52,-1,59,54,53,-1,62,55,54,-1,55,62,60,-1,54,59,62,-1,53,58,59,-1,51,61,58,-1,49,56,57,-1,64,57,56,-1,67,59,58,-1,68,62,59,-1,60,63,20,-1,60,62,63,-1,59,67,68,-1,58,61,67,-1,57,64,65,-1,65,66,57,-1,71,63,62,-1,69,65,64,-1,74,66,65,-1,78,68,67,-1,70,71,62,-1,63,72,27,-1,63,71,72,-1,68,78,76,-1,67,75,78,-1,66,74,75,-1,65,73,74,-1,65,69,73,-1,77,27,72,-1,71,82,72,-1,79,73,69,-1,81,75,74,-1,82,71,70,-1,77,72,83,-1,73,79,80,-1,84,80,79,-1,86,75,81,-1,83,72,82,-1,82,88,83,-1,70,87,82,-1,81,85,86,-1,89,80,84,-1,89,85,80,-1,90,86,85,-1,90,87,86,-1,89,83,88,-1,88,90,89,-1,85,89,90,-1,50,45,5,-1,45,40,5,-1,10,8,11,-1,8,12,11,-1,18,22,10,-1,22,14,10,-1,57,66,51,-1,66,61,51,-1,51,58,48,-1,58,52,48,-1,48,53,46,-1,53,54,46,-1,76,70,68,-1,70,62,68,-1,29,32,28,-1,28,32,31,-1,32,35,31,-1,85,81,80,-1,81,73,80,-1,81,74,73,-1,39,37,38,-1,37,34,38,-1,82,87,88,-1,87,90,88,-1,87,78,86,-1,78,75,86,-1,61,66,67,-1,66,75,67,-1,22,18,15,-1,23,30,15,-1,30,22,15,-1,13,12,7,-1,12,6,7,-1,46,54,47,-1,54,55,47,-1,87,76,78,-1,87,70,76,-1), creaseAngle=1.14, coord(
+                                                        Coordinate(
+                                                          point=(0,1.06,0.0218,0.0561,1.07,0.00726,0.0851,1.07,-0.0115,0.104,1.07,-0.0497,0.0851,1.07,-0.0851,0.032,1.06,-0.0985,0.0873,1.04,0.0078,0.033,1.04,0.0395,0.123,1.05,-0.0405,0.0609,1.02,-0.106,0.0894,0.996,-0.106,0.143,1,-0.0309,0.117,1,0.0164,0.0314,0.999,0.0502,0.0314,0.96,-0.13,0.156,0.966,-0.0405,0.156,0.968,-0.00724,0.0341,0.954,0.0513,0.115,0.96,-0.0916,0.121,0.926,0.0352,0.0357,0.92,0.0497,0.0314,0.91,-0.146,0.0991,0.91,-0.131,0.169,0.883,-0.0448,0.169,0.885,-0.00939,0.123,0.873,0.0384,0.0926,0.872,0.047,0.0325,0.873,0.0287,0.0293,0.866,-0.142,0.102,0.869,-0.131,0.129,0.868,-0.103,0.0314,0.84,-0.125,0.101,0.844,-0.122,0.133,0.846,-0.0878,0.0653,0.835,0.0132,0.0615,0.824,-0.111,0.0985,0.823,-0.101,0.132,0.826,-0.0448,0.0609,0.821,-0.0158,0.0599,0.812,-0.0545,0,1.08,-0.0266,-0.0561,1.07,0.00726,-0.0851,1.07,-0.0115,-0.104,1.07,-0.0497,-0.0851,1.07,-0.0851,-0.032,1.06,-0.0985,-0.0873,1.04,0.0078,-0.033,1.04,0.0395,-0.123,1.05,-0.0405,-0.0609,1.02,-0.106,0,1.02,-0.108,-0.0894,0.996,-0.106,-0.143,1,-0.0309,-0.144,1,-0.011,-0.117,1,0.0164,-0.0314,0.999,0.0502,0,0.961,-0.123,-0.0314,0.96,-0.13,-0.156,0.966,-0.0405,-0.156,0.968,-0.00724,-0.0341,0.954,0.0513,-0.115,0.96,-0.0916,-0.121,0.926,0.0352,-0.0357,0.92,0.0497,0,0.91,-0.127,-0.0314,0.91,-0.146,-0.0991,0.91,-0.131,-0.167,0.911,-0.0448,-0.167,0.912,-0.00671,0,0.883,-0.129,-0.123,0.873,0.0384,-0.0926,0.872,0.047,-0.0325,0.873,0.0287,-0.0293,0.866,-0.142,-0.102,0.869,-0.131,-0.129,0.868,-0.103,-0.166,0.863,-0.0148,0,0.863,-0.00456,-0.166,0.862,-0.0459,0,0.858,-0.1,-0.0314,0.84,-0.125,-0.101,0.844,-0.122,-0.0653,0.835,0.0132,0,0.839,-0.0217,0,0.835,-0.0867,-0.0615,0.824,-0.111,-0.0985,0.823,-0.101,-0.132,0.826,-0.0448,-0.0609,0.821,-0.0158,0,0.831,-0.0626,-0.0599,0.812,-0.0545)))))])]),
+                                      ProtoInstance(
+                                        name="Joint", DEF="hanim_l_hip", fieldValue=[
+                                            fieldValue(name="name", value="l_hip"),
+                                            fieldValue(name="center", value=(0.122,0.888271,-0.0693267)),
+                                            fieldValue(name="children", children=[
+                                                ProtoInstance(
+                                                  name="Segment", DEF="hanim_l_thigh", fieldValue=[
+                                                      fieldValue(name="name", value="l_thigh"),
+                                                      fieldValue(name="children", children=[
+                                                          Shape(
+                                                            appearance=Appearance(
+                                                                material=Material(
+                                                                    USE="Pants_Color")), geometry=IndexedFaceSet(
+                                                                coordIndex=(0,4,5,-1,3,4,0,-1,0,7,1,-1,0,8,7,-1,0,6,8,-1,0,5,6,-1,0,2,3,-1,0,1,2,-1,9,2,1,-1,10,3,2,-1,11,4,3,-1,12,5,4,-1,13,6,5,-1,15,7,8,-1,9,1,7,-1,7,15,9,-1,8,14,15,-1,5,16,13,-1,5,12,16,-1,4,11,12,-1,3,10,11,-1,2,9,10,-1,20,13,16,-1,18,11,10,-1,19,12,11,-1,20,16,12,-1,23,15,14,-1,15,23,24,-1,12,19,20,-1,11,18,19,-1,10,17,18,-1,26,18,17,-1,27,19,18,-1,27,20,19,-1,28,21,20,-1,29,23,22,-1,23,29,30,-1,20,32,28,-1,20,27,32,-1,18,26,27,-1,17,25,26,-1,25,31,30,-1,30,29,26,-1,30,26,25,-1,29,28,27,-1,29,27,26,-1,28,32,27,-1,22,23,14,-1,20,21,13,-1,21,22,13,-1,22,14,13,-1,9,15,24,-1,10,9,17,-1,9,24,17,-1,6,13,8,-1,13,14,8,-1,28,29,21,-1,29,22,21,-1,24,31,17,-1,31,25,17,-1,30,31,23,-1,31,24,23,-1), creaseAngle=1.32, coord(
+                                                                  Coordinate(
+                                                                    point=(0.0969,0.804,-0.0486,0.101,0.876,0.0336,0.17,0.894,-0.00778,0.17,0.891,-0.076,0.124,0.858,-0.129,0.076,0.843,-0.143,0.025,0.819,-0.0889,0.0507,0.847,0.0196,0.00349,0.826,-0.0287,0.0991,0.808,0.0406,0.161,0.814,-0.00187,0.165,0.808,-0.0755,0.122,0.788,-0.126,0.00993,0.762,-0.0937,0.00993,0.762,-0.0309,0.0491,0.777,0.0185,0.0755,0.766,-0.139,0.13,0.597,-0.00618,0.132,0.6,-0.0593,0.108,0.603,-0.105,0.0722,0.601,-0.118,0.0314,0.59,-0.0953,0.0239,0.566,-0.0427,0.047,0.566,0.0051,0.0878,0.581,0.0217,0.114,0.499,-0.0132,0.116,0.488,-0.061,0.103,0.567,-0.0991,0.0362,0.557,-0.0926,0.025,0.486,-0.047,0.0507,0.497,-0.00188,0.0862,0.513,0.018,0.0733,0.579,-0.108)))))])]),
+                                                ProtoInstance(
+                                                  name="Joint", DEF="hanim_l_knee", fieldValue=[
+                                                      fieldValue(name="name", value="l_knee"),
+                                                      fieldValue(name="center", value=(0.0738,0.517,-0.0284)),
+                                                      fieldValue(name="children", children=[
+                                                          ProtoInstance(
+                                                            name="Segment", DEF="hanim_l_calf", fieldValue=[
+                                                                fieldValue(name="name", value="l_calf"),
+                                                                fieldValue(name="children", children=[
+                                                                    Shape(
+                                                                      appearance=Appearance(
+                                                                          material=Material(
+                                                                              USE="Pants_Color")), geometry=IndexedFaceSet(
+                                                                          coordIndex=(2,1,0,-1,2,3,1,-1,2,4,3,-1,2,5,4,-1,2,6,5,-1,2,7,6,-1,2,8,7,-1,2,0,8,-1,9,8,0,-1,10,6,7,-1,11,5,6,-1,12,4,5,-1,12,3,4,-1,13,1,3,-1,1,13,14,-1,3,12,13,-1,5,11,12,-1,6,10,11,-1,8,9,15,-1,22,13,12,-1,13,22,14,-1,17,15,9,-1,20,12,11,-1,21,22,12,-1,23,9,14,-1,9,23,16,-1,14,22,23,-1,12,20,21,-1,15,17,18,-1,9,16,17,-1,24,17,16,-1,25,18,17,-1,26,19,18,-1,27,20,19,-1,28,21,20,-1,29,22,21,-1,30,23,22,-1,31,16,23,-1,23,30,31,-1,22,29,30,-1,21,28,29,-1,20,27,28,-1,19,26,27,-1,18,25,26,-1,17,24,25,-1,16,31,24,-1,33,26,25,-1,36,29,28,-1,37,31,30,-1,29,36,30,-1,25,24,33,-1,31,37,24,-1,32,33,24,-1,24,37,32,-1,38,37,30,-1,30,36,38,-1,41,33,32,-1,42,39,34,-1,44,36,35,-1,45,38,36,-1,46,37,38,-1,38,45,46,-1,36,44,45,-1,35,43,44,-1,39,42,47,-1,32,40,41,-1,40,46,45,-1,41,40,45,-1,41,45,44,-1,44,43,42,-1,44,42,41,-1,43,47,42,-1,39,35,28,-1,35,36,28,-1,34,39,27,-1,39,28,27,-1,33,34,26,-1,34,27,26,-1,33,41,34,-1,41,42,34,-1,40,32,46,-1,32,37,46,-1,10,19,11,-1,19,20,11,-1,14,9,1,-1,9,0,1,-1,8,15,7,-1,7,15,10,-1,15,19,10,-1,15,18,19,-1,43,35,47,-1,35,39,47,-1), creaseAngle=1.57, coord(
+                                                                            Coordinate(
+                                                                              point=(0.0883,0.532,-0.00349,0.0609,0.533,-0.00833,0.0814,0.55,-0.0395,0.0529,0.536,-0.0368,0.0577,0.544,-0.0577,0.0722,0.546,-0.0717,0.0975,0.54,-0.0647,0.105,0.539,-0.0438,0.104,0.539,-0.0223,0.0862,0.506,0.0158,0.101,0.51,-0.0798,0.0706,0.51,-0.101,0.0406,0.513,-0.0744,0.0368,0.51,-0.0357,0.0556,0.506,-0.000272,0.117,0.508,-0.0169,0.0878,0.361,-0.0126,0.123,0.363,-0.04,0.123,0.363,-0.0663,0.107,0.367,-0.107,0.0588,0.365,-0.122,0.0228,0.358,-0.0926,0.0239,0.358,-0.0475,0.0497,0.358,-0.0234,0.118,0.311,-0.0411,0.118,0.309,-0.0685,0.105,0.31,-0.108,0.0572,0.308,-0.123,0.0201,0.309,-0.0937,0.0191,0.311,-0.0508,0.0475,0.307,-0.0282,0.0883,0.309,-0.018,0.0959,0.124,-0.04,0.0905,0.12,-0.0647,0.0738,0.117,-0.0814,0.0373,0.121,-0.0636,0.0416,0.124,-0.0416,0.0744,0.13,-0.0212,0.0561,0.13,-0.0245,0.0529,0.121,-0.0873,0.0948,0.0897,-0.0368,0.0916,0.0779,-0.0604,0.0717,0.0854,-0.0765,0.0406,0.0918,-0.0626,0.0384,0.0881,-0.0363,0.054,0.0972,-0.0175,0.0765,0.11,-0.0169,0.0486,0.0999,-0.0835)))))])]),
+                                                          ProtoInstance(
+                                                            name="Joint", DEF="hanim_l_ankle", fieldValue=[
+                                                                fieldValue(name="name", value="l_ankle"),
+                                                                fieldValue(name="center", value=(0.0645,0.0719,-0.048)),
+                                                                fieldValue(name="children", children=[
+                                                                    ProtoInstance(
+                                                                      name="Segment", DEF="hanim_l_hindfoot", fieldValue=[
+                                                                          fieldValue(name="name", value="l_hindfoot"),
+                                                                          fieldValue(name="children", children=[
+                                                                              Shape(
+                                                                                appearance=Appearance(
+                                                                                    material=Material(
+                                                                                        DEF="Shoe_Color", ambientIntensity=0.25)), geometry=IndexedFaceSet(
+                                                                                    coordIndex=(2,1,0,-1,4,3,1,-1,2,4,1,-1,3,6,5,-1,1,3,5,-1,6,8,7,-1,5,6,7,-1,8,10,9,-1,7,8,9,-1,10,12,11,-1,9,10,11,-1,12,14,13,-1,11,12,13,-1,14,16,15,-1,13,14,15,-1,16,18,17,-1,15,16,17,-1,18,20,19,-1,17,18,19,-1,20,22,21,-1,19,20,21,-1,22,24,23,-1,21,22,23,-1,24,25,0,-1,23,24,0,-1,25,4,2,-1,0,25,2,-1,18,26,20,-1,16,26,18,-1,27,26,16,-1,14,27,16,-1,12,27,14,-1,28,27,12,-1,29,28,12,-1,10,29,12,-1,8,29,10,-1,6,37,8,-1,24,30,25,-1,31,30,24,-1,22,31,24,-1,32,31,22,-1,20,32,22,-1,33,32,20,-1,26,33,20,-1,34,33,26,-1,27,34,26,-1,35,34,27,-1,28,35,27,-1,29,35,28,-1,36,35,29,-1,8,36,29,-1,37,36,8,-1,6,38,37,-1,3,38,6,-1,39,38,3,-1,30,39,25,-1,41,40,30,-1,31,41,30,-1,42,41,31,-1,32,42,31,-1,43,42,32,-1,33,43,32,-1,44,43,33,-1,34,44,33,-1,45,44,34,-1,35,45,34,-1,46,45,35,-1,36,46,35,-1,47,46,36,-1,37,47,36,-1,38,47,37,-1,48,47,38,-1,49,48,38,-1,39,49,38,-1,40,49,39,-1,30,40,39,-1,48,49,50,-1,47,48,50,-1,46,47,50,-1,45,46,50,-1,44,45,50,-1,43,44,50,-1,42,43,50,-1,41,42,50,-1,40,41,50,-1,49,40,50,-1,11,13,15,-1,11,15,17,-1,9,11,17,-1,9,17,19,-1,7,9,19,-1,7,19,21,-1,5,7,21,-1,5,21,23,-1,5,23,0,-1,1,5,0,-1,3,4,39,-1,4,25,39,-1), creaseAngle=1.57, coord(
+                                                                                      Coordinate(
+                                                                                        point=(0.0529,0,-0.0923,0.0863,0,-0.0862,0.0727,0,-0.0994,0.0863,0.0219,-0.0862,0.0727,0.0219,-0.0994,0.1,0,-0.0594,0.1,0.0219,-0.0594,0.113,0,0.0645,0.113,0.0219,0.0645,0.112,0,0.117,0.112,0.0156,0.117,0.0701,0,0.146,0.0701,0.0156,0.146,0.0468,0,0.153,0.0468,0.0156,0.153,0.0215,0,0.146,0.0215,0.0156,0.146,0.0165,0,0.125,0.0165,0.0156,0.125,0.0211,0,0.0377,0.0211,0.0219,0.0377,0.0393,0,-0.0129,0.0393,0.0219,-0.0129,0.0433,0,-0.0534,0.0433,0.0219,-0.0534,0.0529,0.0219,-0.0923,0.0305,0.0253,0.0938,0.0505,0.0253,0.099,0.0854,0.0253,0.0834,0.102,0.0253,0.0707,0.0568,0.0573,-0.0918,0.0492,0.0573,-0.0497,0.0435,0.0573,-0.0225,0.0442,0.0573,0.0235,0.0623,0.0573,0.0366,0.0911,0.0573,0.0159,0.0962,0.0573,-0.0121,0.0911,0.0573,-0.0482,0.0758,0.0573,-0.0899,0.0676,0.0573,-0.0962,0.0578,0.0953,-0.0896,0.0489,0.0953,-0.0757,0.0447,0.0953,-0.0432,0.0451,0.0953,-0.0128,0.0624,0.0953,-0.00466,0.0857,0.0953,-0.0134,0.0953,0.0953,-0.038,0.0843,0.0953,-0.0803,0.0761,0.0953,-0.0889,0.0682,0.0953,-0.0929,0.0675,0.13,-0.0608)))))])])])])])])])]),
+                                      ProtoInstance(
+                                        name="Joint", DEF="hanim_r_hip", fieldValue=[
+                                            fieldValue(name="name", value="r_hip"),
+                                            fieldValue(name="center", value=(-0.11,0.892362,-0.0732533)),
+                                            fieldValue(name="children", children=[
+                                                ProtoInstance(
+                                                  name="Segment", DEF="hanim_r_thigh", fieldValue=[
+                                                      fieldValue(name="name", value="r_thigh"),
+                                                      fieldValue(name="children", children=[
+                                                          Shape(
+                                                            appearance=Appearance(
+                                                                material=Material(
+                                                                    USE="Pants_Color")), geometry=IndexedFaceSet(
+                                                                coordIndex=(5,4,0,-1,0,4,3,-1,1,7,0,-1,7,8,0,-1,8,6,0,-1,6,5,0,-1,3,2,0,-1,2,1,0,-1,1,2,9,-1,2,3,10,-1,3,4,11,-1,4,5,12,-1,5,6,13,-1,8,7,15,-1,7,1,9,-1,9,15,7,-1,15,14,8,-1,13,16,5,-1,16,12,5,-1,12,11,4,-1,11,10,3,-1,10,9,2,-1,12,16,20,-1,13,14,22,-1,14,15,23,-1,24,23,15,-1,23,22,14,-1,20,19,12,-1,17,18,26,-1,18,19,27,-1,19,20,27,-1,20,21,28,-1,22,23,29,-1,30,29,23,-1,27,26,18,-1,26,25,17,-1,30,31,25,-1,25,26,29,-1,25,29,30,-1,26,27,28,-1,26,28,29,-1,27,20,28,-1,24,15,9,-1,22,21,13,-1,29,28,22,-1,28,21,22,-1,24,31,23,-1,31,30,23,-1,25,31,17,-1,31,24,17,-1,17,24,10,-1,24,9,10,-1,18,10,11,-1,18,17,10,-1,18,12,19,-1,18,11,12,-1,21,20,13,-1,20,16,13,-1,14,13,8,-1,13,6,8,-1), creaseAngle=1.61, coord(
+                                                                  Coordinate(
+                                                                    point=(-0.0969,0.804,-0.0486,-0.101,0.876,0.0336,-0.17,0.894,-0.00778,-0.17,0.891,-0.076,-0.124,0.858,-0.129,-0.076,0.843,-0.143,-0.025,0.819,-0.0889,-0.0507,0.847,0.0196,-0.00349,0.826,-0.0287,-0.0991,0.808,0.0406,-0.161,0.814,-0.00187,-0.165,0.808,-0.0755,-0.122,0.788,-0.126,-0.00993,0.762,-0.0937,-0.00993,0.762,-0.0309,-0.0491,0.777,0.0185,-0.0755,0.766,-0.139,-0.13,0.597,-0.00618,-0.132,0.6,-0.0593,-0.108,0.603,-0.105,-0.0722,0.601,-0.118,-0.0314,0.59,-0.0953,-0.0239,0.566,-0.0427,-0.047,0.566,0.0051,-0.0878,0.581,0.0217,-0.114,0.499,-0.0132,-0.116,0.488,-0.061,-0.103,0.567,-0.0991,-0.0362,0.557,-0.0926,-0.025,0.486,-0.047,-0.0507,0.497,-0.00188,-0.0862,0.513,0.018)))))])]),
+                                                ProtoInstance(
+                                                  name="Joint", DEF="hanim_r_knee", fieldValue=[
+                                                      fieldValue(name="name", value="r_knee"),
+                                                      fieldValue(name="center", value=(-0.0699,0.51,-0.0166)),
+                                                      fieldValue(name="children", children=[
+                                                          ProtoInstance(
+                                                            name="Segment", DEF="hanim_r_calf", fieldValue=[
+                                                                fieldValue(name="name", value="r_calf"),
+                                                                fieldValue(name="children", children=[
+                                                                    Shape(
+                                                                      appearance=Appearance(
+                                                                          material=Material(
+                                                                              USE="Pants_Color")), geometry=IndexedFaceSet(
+                                                                          coordIndex=(14,25,18,-1,25,32,18,-1,32,27,18,-1,27,22,18,-1,22,10,18,-1,10,6,18,-1,6,8,18,-1,8,14,18,-1,14,8,17,-1,6,10,9,-1,10,22,24,-1,22,27,39,-1,27,32,39,-1,32,25,42,-1,25,14,30,-1,17,30,14,-1,30,42,25,-1,42,39,32,-1,39,24,22,-1,24,9,10,-1,4,17,8,-1,39,42,43,-1,30,43,42,-1,17,4,1,-1,24,39,26,-1,39,43,44,-1,30,17,34,-1,16,34,17,-1,34,43,30,-1,44,26,39,-1,0,1,4,-1,1,16,17,-1,16,1,3,-1,1,0,2,-1,0,5,7,-1,5,26,28,-1,26,44,45,-1,44,43,46,-1,43,34,36,-1,34,16,15,-1,15,36,34,-1,36,46,43,-1,46,45,44,-1,45,28,26,-1,28,7,5,-1,7,2,0,-1,2,3,1,-1,3,15,16,-1,45,46,37,-1,36,15,20,-1,36,37,46,-1,13,2,7,-1,3,20,15,-1,3,2,13,-1,36,20,29,-1,29,37,36,-1,13,21,23,-1,21,33,23,-1,41,37,40,-1,37,29,31,-1,29,20,19,-1,19,31,29,-1,31,40,37,-1,40,38,41,-1,35,23,33,-1,23,12,13,-1,12,11,13,-1,31,19,11,-1,40,31,11,-1,40,11,12,-1,12,23,38,-1,12,38,40,-1,23,35,38,-1,28,21,7,-1,21,13,7,-1,45,33,28,-1,33,21,28,-1,33,45,41,-1,45,37,41,-1,33,41,35,-1,41,38,35,-1,20,3,47,-1,11,19,47,-1,19,20,47,-1,13,47,3,-1,13,11,47,-1,4,8,6,-1,26,5,24,-1,5,9,24,-1,6,9,4,-1,9,0,4,-1,9,5,0,-1), creaseAngle=1.57, coord(
+                                                                            Coordinate(
+                                                                              point=(-0.123,0.363,-0.0663,-0.123,0.363,-0.04,-0.118,0.309,-0.0685,-0.118,0.311,-0.0411,-0.117,0.508,-0.0169,-0.107,0.367,-0.107,-0.105,0.539,-0.0438,-0.105,0.31,-0.108,-0.104,0.539,-0.0223,-0.101,0.51,-0.0798,-0.0975,0.54,-0.0647,-0.0948,0.0897,-0.0368,-0.0916,0.0779,-0.0604,-0.0905,0.12,-0.0647,-0.0883,0.532,-0.00349,-0.0883,0.309,-0.018,-0.0878,0.361,-0.0126,-0.0862,0.506,0.0158,-0.0814,0.55,-0.0395,-0.0765,0.11,-0.0169,-0.0744,0.13,-0.0212,-0.0738,0.117,-0.0814,-0.0722,0.546,-0.0717,-0.0717,0.0854,-0.0765,-0.0706,0.51,-0.101,-0.0609,0.533,-0.00833,-0.0588,0.365,-0.122,-0.0577,0.544,-0.0577,-0.0572,0.308,-0.123,-0.0561,0.13,-0.0245,-0.0556,0.506,-0.000272,-0.054,0.0972,-0.0175,-0.0529,0.536,-0.0368,-0.0529,0.121,-0.0873,-0.0497,0.358,-0.0234,-0.0486,0.0999,-0.0835,-0.0475,0.307,-0.0282,-0.0416,0.124,-0.0416,-0.0406,0.0918,-0.0626,-0.0406,0.513,-0.0744,-0.0384,0.0881,-0.0363,-0.0373,0.121,-0.0636,-0.0368,0.51,-0.0357,-0.0239,0.358,-0.0475,-0.0228,0.358,-0.0926,-0.0201,0.309,-0.0937,-0.0191,0.311,-0.0508,-0.0985,0.125,-0.0375)))))])]),
+                                                          ProtoInstance(
+                                                            name="Joint", DEF="hanim_r_ankle", fieldValue=[
+                                                                fieldValue(name="name", value="r_ankle"),
+                                                                fieldValue(name="center", value=(-0.064,0.0753,-0.0412)),
+                                                                fieldValue(name="children", children=[
+                                                                    ProtoInstance(
+                                                                      name="Segment", DEF="hanim_r_hindfoot", fieldValue=[
+                                                                          fieldValue(name="name", value="r_hindfoot"),
+                                                                          fieldValue(name="children", children=[
+                                                                              Shape(
+                                                                                appearance=Appearance(
+                                                                                    material=Material(
+                                                                                        USE="Shoe_Color")), geometry=IndexedFaceSet(
+                                                                                    coordIndex=(6,50,0,-1,50,8,7,-1,50,7,0,-1,1,9,8,-1,1,8,50,-1,49,10,9,-1,49,9,1,-1,46,11,10,-1,46,10,49,-1,2,12,11,-1,2,11,46,-1,3,13,12,-1,3,12,2,-1,4,14,13,-1,4,13,3,-1,45,14,4,-1,47,15,45,-1,19,15,47,-1,48,18,19,-1,5,16,18,-1,5,18,48,-1,6,17,16,-1,6,16,5,-1,0,7,17,-1,0,17,6,-1,14,20,21,-1,14,21,13,-1,13,21,12,-1,12,21,22,-1,12,22,11,-1,11,22,10,-1,17,23,16,-1,16,23,24,-1,16,24,18,-1,18,24,25,-1,18,25,19,-1,19,25,26,-1,19,26,15,-1,15,26,20,-1,20,26,27,-1,20,27,21,-1,21,27,28,-1,21,28,22,-1,22,28,29,-1,10,30,9,-1,9,30,31,-1,9,31,8,-1,8,31,32,-1,17,32,23,-1,23,33,34,-1,23,34,35,-1,23,35,24,-1,24,35,36,-1,24,36,25,-1,25,36,37,-1,25,37,26,-1,26,37,38,-1,26,38,27,-1,27,38,39,-1,27,39,28,-1,28,39,40,-1,28,40,29,-1,29,40,41,-1,29,41,30,-1,30,41,42,-1,30,42,31,-1,31,42,43,-1,31,43,32,-1,32,43,33,-1,32,33,23,-1,44,43,42,-1,44,42,41,-1,44,41,40,-1,44,40,39,-1,44,39,38,-1,44,38,37,-1,44,37,36,-1,44,36,35,-1,44,35,34,-1,44,34,33,-1,44,33,43,-1,4,3,2,-1,45,4,2,-1,45,2,46,-1,47,45,46,-1,48,46,49,-1,5,48,49,-1,5,49,1,-1,6,5,1,-1,6,1,50,-1,30,10,29,-1,10,22,29,-1,17,7,32,-1,7,8,32,-1,19,47,48,-1,47,46,48,-1,20,14,15,-1,14,45,15,-1), creaseAngle=1.57, coord(
+                                                                                      Coordinate(
+                                                                                        point=(-0.0727,0,-0.0994,-0.1,0,-0.0594,-0.0701,0,0.146,-0.0468,0,0.153,-0.0215,0,0.146,-0.0433,0,-0.0534,-0.0529,0,-0.0923,-0.0727,0.0219,-0.0994,-0.0863,0.0219,-0.0862,-0.1,0.0219,-0.0594,-0.108,0.0219,-0.00479,-0.112,0.0156,0.117,-0.0701,0.0156,0.146,-0.0468,0.0156,0.153,-0.0215,0.0156,0.146,-0.0165,0.017,0.0777,-0.0433,0.0219,-0.0534,-0.0529,0.0219,-0.0923,-0.0445,0.0273,-0.0189,-0.0265,0.0253,0.0549,-0.0305,0.0253,0.0938,-0.069,0.0253,0.0938,-0.102,0.0253,0.0707,-0.0568,0.0573,-0.0918,-0.0492,0.0573,-0.0497,-0.0424,0.0573,-0.00142,-0.0478,0.0573,0.0341,-0.0623,0.0573,0.0366,-0.0864,0.0573,0.0245,-0.0962,0.0573,-0.0121,-0.0845,0.0573,-0.0764,-0.0758,0.0573,-0.0899,-0.0676,0.0573,-0.0962,-0.0578,0.0953,-0.0896,-0.0489,0.0953,-0.0757,-0.0459,0.0953,-0.0615,-0.0435,0.0953,-0.0292,-0.0485,0.0953,-0.00582,-0.0624,0.0953,-0.00466,-0.0857,0.0953,-0.0134,-0.0953,0.0953,-0.038,-0.0843,0.0953,-0.0803,-0.0761,0.0953,-0.0889,-0.0682,0.0953,-0.0929,-0.0675,0.13,-0.0608,-0.0165,0,0.125,-0.112,0,0.117,-0.0165,0,0.0777,-0.0393,0,-0.0129,-0.108,0,-0.00479,-0.0863,0,-0.0862)))))])])])])])])])])])]),
+                            ProtoInstance(
+                              name="Joint", DEF="hanim_vl1", fieldValue=[
+                                  fieldValue(name="name", value="vl1"),
+                                  fieldValue(name="center", value=(-0.00405,1.07,-0.0275)),
+                                  fieldValue(name="children", children=[
+                                      ProtoInstance(
+                                        name="Segment", DEF="hanim_c7", fieldValue=[
+                                            fieldValue(name="name", value="l1"),
+                                            fieldValue(name="children", children=[
+                                                Shape(
+                                                  appearance=Appearance(
+                                                      material=Material(
+                                                          DEF="Shirt_Color", ambientIntensity=0.25, diffuseColor=(0.6,0.0745,0.1137)), texture=ImageTexture(
+                                                          DEF="small_logo_Tex", url=["small_logo.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/small_logo.gif"])), geometry=IndexedFaceSet(
+                                                      coordIndex=(0,1,2,-1,3,0,2,-1,4,5,6,-1,6,7,4,-1,8,7,6,-1,6,9,8,-1,9,10,8,-1,6,5,11,-1,9,6,12,-1,11,12,6,-1,12,10,9,-1,7,8,13,-1,13,4,7,-1,14,15,16,-1,15,17,13,-1,4,13,17,-1,17,15,18,-1,13,19,15,-1,19,13,8,-1,19,16,15,-1,16,19,8,-1,17,20,4,-1,5,4,20,-1,18,21,17,-1,20,17,21,-1,16,22,14,-1,22,16,23,-1,8,23,16,-1,23,8,10,-1,24,25,26,-1,26,27,24,-1,25,28,26,-1,28,29,30,-1,30,26,28,-1,31,32,33,-1,32,25,33,-1,25,24,34,-1,33,25,34,-1,24,35,34,-1,27,35,24,-1,33,36,31,-1,27,26,37,-1,37,26,30,-1,38,37,30,-1,33,34,39,-1,39,34,35,-1,39,35,40,-1,41,38,30,-1,35,27,42,-1,37,42,27,-1,40,35,42,-1,42,37,43,-1,37,38,44,-1,44,43,37,-1,36,45,46,-1,36,33,45,-1,40,42,47,-1,43,47,42,-1,47,48,40,-1,39,40,48,-1,47,43,49,-1,43,44,49,-1,50,49,44,-1,51,46,52,-1,46,45,52,-1,52,45,53,-1,33,53,45,-1,33,39,53,-1,49,54,47,-1,48,47,54,-1,55,56,52,-1,57,52,53,-1,57,55,52,-1,58,57,53,-1,59,58,53,-1,53,39,59,-1,39,48,59,-1,59,48,54,-1,58,59,60,-1,54,49,61,-1,59,54,61,-1,60,59,61,-1,49,50,62,-1,63,62,50,-1,62,61,49,-1,64,63,50,-1,63,64,65,-1,65,62,63,-1,66,60,61,-1,62,65,67,-1,68,67,65,-1,64,69,70,-1,64,70,65,-1,70,68,65,-1,69,71,72,-1,72,70,69,-1,73,74,75,-1,66,76,60,-1,67,77,62,-1,62,77,61,-1,77,66,61,-1,66,77,78,-1,77,67,79,-1,79,67,68,-1,79,78,77,-1,68,70,80,-1,70,72,80,-1,80,79,68,-1,74,73,81,-1,73,76,82,-1,82,81,73,-1,76,66,83,-1,78,83,66,-1,83,82,76,-1,78,79,84,-1,79,80,84,-1,84,85,78,-1,86,84,80,-1,81,82,87,-1,87,88,81,-1,82,83,89,-1,83,78,89,-1,89,87,82,-1,78,85,89,-1,90,91,92,-1,92,93,90,-1,90,94,91,-1,95,96,94,-1,94,90,95,-1,29,96,97,-1,96,95,97,-1,97,30,29,-1,30,97,41,-1,41,97,95,-1,98,99,100,-1,98,91,99,-1,101,92,91,-1,98,101,91,-1,101,102,92,-1,92,102,93,-1,36,103,31,-1,51,103,36,46,-1,103,100,31,-1,100,103,98,-1,104,90,93,-1,90,104,95,-1,95,105,41,-1,104,105,95,-1,106,101,98,-1,102,101,106,-1,107,93,102,-1,93,107,104,-1,108,104,107,-1,107,109,108,-1,110,105,104,-1,104,108,110,-1,109,107,111,-1,107,102,111,-1,111,102,106,-1,111,112,109,-1,106,112,111,-1,113,110,108,-1,110,113,114,-1,51,52,115,-1,116,115,117,-1,117,106,116,-1,118,109,112,-1,119,108,109,-1,108,119,113,-1,109,118,119,-1,120,113,119,-1,119,121,120,-1,52,56,122,-1,122,115,52,-1,115,122,123,-1,117,124,125,-1,106,117,125,-1,118,112,106,125,-1,119,118,125,-1,121,119,125,-1,126,124,123,-1,127,114,113,-1,114,127,128,-1,113,120,127,-1,114,128,129,-1,130,126,123,-1,122,130,123,-1,131,120,121,-1,131,127,120,-1,132,129,128,-1,128,127,132,-1,74,81,133,-1,81,134,133,-1,121,135,131,-1,136,132,127,-1,132,136,137,-1,138,71,129,-1,138,129,132,-1,137,138,132,-1,139,72,71,-1,72,139,80,-1,71,138,139,-1,140,135,121,-1,140,121,125,-1,141,127,131,-1,127,141,136,-1,131,135,141,-1,142,141,135,-1,143,136,141,-1,136,143,137,-1,141,142,143,-1,144,138,137,-1,144,139,138,-1,143,144,137,-1,145,146,134,-1,145,140,146,-1,134,81,145,-1,147,135,140,-1,135,147,142,-1,140,145,147,-1,148,80,139,-1,80,148,86,-1,139,144,148,-1,149,143,142,-1,149,144,143,-1,142,150,149,-1,151,148,144,-1,144,149,151,-1,152,145,81,-1,81,88,152,-1,153,147,145,-1,153,142,147,-1,145,152,153,-1,153,150,142,-1,154,86,148,-1,148,151,154,-1,155,28,25,-1,155,29,28,-1,155,25,32,-1,155,32,31,-1,155,31,100,-1,155,100,99,-1,155,99,91,-1,155,91,94,-1,155,94,96,-1,155,96,29,-1,156,151,149,-1,156,154,151,-1,156,149,150,-1,156,150,153,-1,156,153,152,-1,156,152,88,-1,156,88,87,-1,156,87,89,-1,156,89,85,-1,156,85,84,-1,156,84,86,-1,156,86,154,-1,76,157,60,-1,76,73,158,157,-1,159,158,73,75,160,-1,161,56,55,-1,60,162,58,-1,162,60,157,-1,161,55,163,-1,57,164,163,55,-1,160,163,164,-1,160,164,159,-1,164,57,165,-1,164,165,159,-1,57,58,166,165,-1,166,58,162,-1,165,166,159,-1,166,162,157,158,159,-1,140,125,167,-1,124,168,125,-1,168,167,125,-1,124,169,168,-1,146,140,167,170,-1,168,170,167,-1,168,169,170,-1,146,170,171,-1,169,171,170,-1,172,134,146,171,-1,134,172,130,-1,169,124,126,173,-1,173,126,130,-1,169,173,172,171,-1,173,130,172,-1,122,74,133,174,-1,133,134,174,-1,130,122,174,-1,134,130,174,-1,122,56,175,74,-1,74,175,176,-1,175,56,161,176,-1,74,176,75,-1,176,161,163,-1,176,160,75,-1,176,163,160,-1,115,116,177,51,-1,106,98,177,116,-1,51,177,103,-1,177,98,103,-1), creaseAngle=1.59, coord(
+                                                        Coordinate(
+                                                          point=(0.043,1.25,0.0614,0.101,1.25,0.0614,0.103,1.31,0.0195,0.021,1.32,0.0276,0.0572,1.27,-0.153,0.0524,1.15,-0.134,0,1.19,-0.14,0,1.26,-0.147,-0.0572,1.27,-0.153,-0.0228,1.18,-0.14,-0.0524,1.15,-0.134,0,1.13,-0.126,-0.0228,1.13,-0.124,0,1.31,-0.146,-0.0545,1.35,-0.138,0,1.35,-0.136,-0.0593,1.3,-0.151,0.0593,1.3,-0.151,0.0545,1.35,-0.138,-0.0255,1.3,-0.146,0.0975,1.26,-0.15,0.1,1.3,-0.148,-0.1,1.3,-0.148,-0.0975,1.26,-0.15,-0.117,1.41,-0.0395,-0.0674,1.45,-0.0314,-0.0926,1.41,-0.0937,-0.124,1.4,-0.0706,-0.0583,1.44,-0.0615,-0.0228,1.46,-0.0872,-0.0534,1.42,-0.112,-0.0228,1.42,0.00351,-0.0593,1.43,-0.0185,-0.0787,1.39,-0.00293,-0.112,1.4,-0.0131,-0.164,1.39,-0.0373,-0.0153,1.39,0.0159,-0.0953,1.35,-0.136,-0.0545,1.35,-0.138,-0.139,1.34,0.00297,-0.137,1.34,-0.0368,0,1.35,-0.136,-0.156,1.35,-0.0915,-0.132,1.29,-0.127,-0.1,1.3,-0.148,-0.0418,1.35,0.0168,-0.013,1.37,0.0167,-0.151,1.28,-0.0878,-0.136,1.32,-0.0406,-0.124,1.26,-0.125,-0.0975,1.26,-0.15,0.00228,1.37,0.0167,-0.00959,1.32,0.0276,-0.0918,1.31,0.0195,-0.141,1.25,-0.0744,-0.0316,1.25,0.0614,-0.00261,1.25,0.0458,-0.0611,1.25,0.0668,-0.0896,1.25,0.0614,-0.126,1.24,0.012,-0.126,1.22,0.0141,-0.129,1.17,-0.0523,-0.115,1.16,-0.105,-0.0851,1.18,-0.134,-0.0524,1.15,-0.134,-0.083,1.13,-0.122,-0.117,1.15,-0.018,-0.11,1.1,-0.0846,-0.0808,1.1,-0.111,-0.0228,1.13,-0.124,-0.0524,1.1,-0.119,0,1.13,-0.126,-0.0228,1.1,-0.116,-0.0563,1.15,0.0377,-0.00476,1.18,0.0458,-0.0343,1.18,0.0485,-0.0966,1.15,-0.00413,-0.12,1.1,-0.0373,-0.121,1.07,-0.0356,-0.106,1.07,-0.0711,-0.0475,1.06,-0.105,0,1.08,0.0556,-0.0787,1.08,0.0347,-0.103,1.08,0.00296,-0.0975,1.01,-0.0873,-0.134,0.998,-0.0314,-0.0475,1.02,-0.109,-0.0325,1.02,0.0529,0,1.02,0.0422,-0.0975,1.02,0.0132,0.0926,1.41,-0.0937,0.0674,1.45,-0.0314,0.117,1.41,-0.0395,0.124,1.4,-0.0706,0.0583,1.44,-0.0615,0.0534,1.42,-0.112,0.0228,1.46,-0.0872,0,1.4,-0.112,0.0787,1.39,-0.00293,0.0593,1.43,-0.0185,0.0228,1.42,0.00351,0.112,1.4,-0.0131,0.164,1.39,-0.0373,0.0153,1.39,0.0159,0.0953,1.35,-0.136,0.0545,1.35,-0.138,0.139,1.34,0.00297,0.156,1.35,-0.0915,0.132,1.29,-0.127,0.151,1.28,-0.0878,0.1,1.3,-0.148,0.137,1.34,-0.0368,0.147,1.32,-0.0406,0.124,1.26,-0.125,0.0975,1.26,-0.15,0.021,1.32,0.0276,0.0532,1.35,0.0168,0.103,1.31,0.0195,0.135,1.29,-0.0406,0.141,1.25,-0.0744,0.132,1.18,-0.083,0.134,1.19,-0.0572,0.014,1.25,0.0458,0.043,1.25,0.0614,0.101,1.25,0.0614,0.138,1.24,0.012,0.065,1.23,0.0743,0.115,1.16,-0.105,0.0851,1.18,-0.134,0.0524,1.15,-0.134,0.043,1.2,0.0641,0.127,1.14,-0.0427,0.083,1.13,-0.122,0.0162,1.18,0.0458,0.0457,1.18,0.0485,0.117,1.15,-0.018,0.11,1.1,-0.0846,0.0808,1.1,-0.111,0.0524,1.1,-0.119,0.0228,1.1,-0.116,0.108,1.15,-0.00413,0.12,1.1,-0.0373,0.121,1.07,-0.0356,0.106,1.07,-0.0711,0.0475,1.06,-0.105,0.0787,1.08,0.0347,0.0844,1.15,0.0297,0.103,1.08,0.00296,0,1.07,-0.11,0.0975,1.01,-0.0873,0.134,0.998,-0.0475,0.0475,1.02,-0.109,0.0325,1.02,0.0529,0.0975,1.02,0.0132,0,1.02,-0.117,0,1.44,-0.0389,0,1.01,-0.0259,-0.104,1.19,0.0423,-0.0778,1.19,0.0642,-0.078,1.19,0.0644,-0.0493,1.2,0.0664,-0.0281,1.22,0.0587,-0.104,1.2,0.0568,-0.0484,1.21,0.0692,-0.0549,1.21,0.0708,-0.0806,1.21,0.0713,-0.0852,1.21,0.0703,0.116,1.19,0.043,0.114,1.21,0.0572,0.0967,1.21,0.0701,0.11,1.19,0.0502,0.093,1.19,0.0622,0.0832,1.19,0.0662,0.0863,1.21,0.0728,0.0154,1.21,0.0458,-0.00393,1.21,0.0458,-0.0145,1.2,0.0512,0.0534,1.35,0.0168))), texCoord(
+                                                        TextureCoordinate(
+                                                          point=(0.1611,-0.02056,0.9468,-0.02056,0.9739,0.9344,-0.137,1.094,0.1973,0.6424,0.2231,0.04876,0.5054,0.2466,0.5054,0.5929,0.8135,0.6424,0.6282,0.1972,0.7876,0.04876,0.5054,-0.05018,0.6282,-0.05018,0.5054,0.8403,0.7989,1.038,0.5054,1.038,0.8248,0.7908,0.186,0.7908,0.2118,1.038,0.6427,0.7908,-0.01977,0.5929,-0.03324,0.7908,1.044,0.7908,1.031,0.5929,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)))))])]),
+                                      ProtoInstance(
+                                        name="Joint", DEF="hanim_l_shoulder", fieldValue=[
+                                            fieldValue(name="name", value="l_shoulder"),
+                                            fieldValue(name="center", value=(0.167,1.36,-0.0518)),
+                                            fieldValue(name="children", children=[
+                                                ProtoInstance(
+                                                  name="Segment", DEF="hanim_l_upperarm", fieldValue=[
+                                                      fieldValue(name="name", value="l_upperarm"),
+                                                      fieldValue(name="children", children=[
+                                                          Transform(
+                                                            DEF="l_upperarm_adjust", center=(0.182,1.22,-0.047), rotation=(1,0,0,0.119), translation=(0,0.0004203,-0.01665), children=[
+                                                                Shape(
+                                                                  appearance=Appearance(
+                                                                      material=Material(
+                                                                          DEF="Skin_Color", ambientIntensity=0.25, diffuseColor=(0.749,0.601,0.462))), geometry=IndexedFaceSet(
+                                                                      coordIndex=(2,1,0,-1,2,3,1,-1,2,4,3,-1,2,0,5,-1,6,5,0,-1,7,2,5,-1,8,4,2,-1,8,3,4,-1,9,1,3,-1,10,0,1,-1,0,10,6,-1,1,9,10,-1,3,8,9,-1,2,7,8,-1,5,6,7,-1,11,7,6,-1,14,9,8,-1,15,10,9,-1,11,6,10,-1,10,15,11,-1,9,14,15,-1,8,13,14,-1,8,16,13,-1,7,11,12,-1,21,15,14,-1,15,17,11,-1,15,21,17,-1,16,19,13,-1,13,19,20,-1,21,14,20,-1,14,13,20,-1,12,17,18,-1,12,11,17,-1,12,18,16,-1,18,19,16,-1,12,16,7,-1,16,8,7,-1,19,18,17,-1,20,19,21,-1,19,17,21,-1), creaseAngle=1.65, coord(
+                                                                        Coordinate(
+                                                                          point=(0.174,1.37,-0.0625,0.185,1.38,-0.0395,0.156,1.39,-0.0464,0.174,1.37,-0.0158,0.154,1.37,-0.0185,0.157,1.38,-0.0733,0.182,1.33,-0.0728,0.151,1.33,-0.0937,0.15,1.34,-0.000787,0.185,1.33,-0.00025,0.201,1.33,-0.0411,0.189,1.26,-0.0808,0.155,1.26,-0.0867,0.151,1.26,-0.000789,0.19,1.26,-0.00401,0.209,1.26,-0.0427,0.141,1.26,-0.0421,0.203,1.08,-0.0744,0.162,1.05,-0.0561,0.169,1.08,-0.00885,0.208,1.07,-0.00133,0.221,1.08,-0.0352)))))])])]),
+                                                ProtoInstance(
+                                                  name="Joint", DEF="hanim_l_elbow", fieldValue=[
+                                                      fieldValue(name="name", value="l_elbow"),
+                                                      fieldValue(name="center", value=(0.196,1.07,-0.0518)),
+                                                      fieldValue(name="children", children=[
+                                                          ProtoInstance(
+                                                            name="Segment", DEF="hanim_l_forearm", fieldValue=[
+                                                                fieldValue(name="name", value="l_forearm"),
+                                                                fieldValue(name="children", children=[
+                                                                    Transform(
+                                                                      DEF="l_forearm_adjust", center=(0.198,0.961,-0.0405), rotation=(-1,0,0,0.1), translation=(0,0.003724,-0.0236), children=[
+                                                                          Shape(
+                                                                            appearance=Appearance(
+                                                                                material=Material(
+                                                                                    USE="Skin_Color")), geometry=IndexedFaceSet(
+                                                                                coordIndex=(2,1,0,-1,2,3,1,-1,2,4,3,-1,2,5,4,-1,2,6,5,-1,2,0,6,-1,7,6,0,-1,8,5,6,-1,9,4,5,-1,9,3,4,-1,10,1,3,-1,11,0,1,-1,0,11,7,-1,1,10,11,-1,3,9,10,-1,5,12,9,-1,5,8,12,-1,6,7,8,-1,17,16,15,-1,14,17,15,-1,14,18,17,-1,13,18,14,-1,16,17,10,-1,16,10,9,-1,15,16,9,-1,15,9,12,-1,18,13,7,-1,18,7,11,-1,13,14,8,-1,13,8,7,-1,14,15,8,-1,15,12,8,-1,17,18,10,-1,18,11,10,-1), creaseAngle=1.75, coord(
+                                                                                  Coordinate(
+                                                                                    point=(0.177,1.09,-0.0609,0.202,1.1,-0.0566,0.189,1.1,-0.0395,0.213,1.1,-0.025,0.203,1.1,-0.0158,0.182,1.09,-0.00563,0.167,1.09,-0.0325,0.176,1.08,-0.0781,0.16,1.06,-0.0373,0.214,1.07,-0.00402,0.228,1.07,-0.0319,0.208,1.08,-0.0765,0.179,1.07,-0.00294,0.21,0.818,-0.0615,0.201,0.82,-0.0405,0.205,0.819,-0.00832,0.224,0.818,-0.00778,0.237,0.82,-0.0282,0.231,0.819,-0.0609)))))])])]),
+                                                          ProtoInstance(
+                                                            name="Joint", DEF="hanim_l_wrist", fieldValue=[
+                                                                fieldValue(name="name", value="l_wrist"),
+                                                                fieldValue(name="center", value=(0.213,0.811,-0.0338)),
+                                                                fieldValue(name="children", children=[
+                                                                    ProtoInstance(
+                                                                      name="Segment", DEF="hanim_l_hand", fieldValue=[
+                                                                          fieldValue(name="name", value="l_hand"),
+                                                                          fieldValue(name="children", children=[
+                                                                              Transform(
+                                                                                DEF="l_hand_adjust", center=(0.213,0.811,-0.0338), rotation=(-0.06361,-0.9967,0.04988,1.333), translation=(0,0.005142,-0.008662), children=[
+                                                                                    Shape(
+                                                                                      appearance=Appearance(
+                                                                                          material=Material(
+                                                                                              USE="Skin_Color")), geometry=IndexedFaceSet(
+                                                                                          coordIndex=(2,1,0,-1,5,4,3,-1,3,7,6,-1,2,3,6,-1,7,9,8,-1,6,7,8,-1,9,11,10,-1,8,9,10,-1,11,13,12,-1,10,11,12,-1,13,15,14,-1,12,13,14,-1,15,17,16,-1,14,15,16,-1,17,19,18,-1,16,17,18,-1,19,21,20,-1,18,19,20,-1,31,4,1,-1,4,5,0,-1,1,4,0,-1,5,3,2,-1,0,5,2,-1,26,25,24,-1,26,24,23,-1,27,26,23,-1,28,27,23,-1,28,23,22,-1,29,28,22,-1,29,22,21,-1,30,29,21,-1,15,13,11,-1,17,15,11,-1,19,17,11,-1,19,11,9,-1,31,19,9,-1,31,9,7,-1,4,31,7,-1,4,7,3,-1,30,21,19,-1,31,30,19,-1,12,14,16,-1,10,12,16,-1,10,16,18,-1,8,10,18,-1,6,8,1,-1,2,6,1,-1,39,38,37,-1,37,38,40,-1,37,40,36,-1,36,40,41,-1,36,41,35,-1,35,41,42,-1,35,42,34,-1,34,42,43,-1,34,43,33,-1,33,43,44,-1,33,44,32,-1,20,32,44,-1,20,44,45,-1,20,45,46,-1,47,8,18,-1,47,18,20,-1,47,20,46,-1,8,47,1,-1,22,33,32,-1,23,35,34,-1,23,36,35,-1,37,24,25,-1,40,38,27,-1,29,43,42,-1,45,44,30,-1,47,31,1,-1,47,46,31,-1,29,30,43,-1,30,44,43,-1,45,31,46,-1,45,30,31,-1,28,29,41,-1,29,42,41,-1,28,40,27,-1,28,41,40,-1,26,27,39,-1,27,38,39,-1,25,39,37,-1,25,26,39,-1,24,36,23,-1,24,37,36,-1,23,34,22,-1,34,33,22,-1,22,32,21,-1,32,20,21,-1), creaseAngle=1.48, coord(
+                                                                                            Coordinate(
+                                                                                              point=(0.211,0.828,-0.0434,0.194,0.81,-0.0445,0.237,0.82,-0.0425,0.236,0.82,-0.0237,0.194,0.81,-0.0254,0.21,0.828,-0.0247,0.252,0.801,-0.0424,0.252,0.801,-0.0231,0.269,0.765,-0.0426,0.268,0.765,-0.0225,0.273,0.732,-0.0395,0.272,0.732,-0.0223,0.27,0.704,-0.0342,0.27,0.704,-0.0224,0.262,0.703,-0.0345,0.261,0.703,-0.0227,0.256,0.717,-0.0389,0.256,0.717,-0.023,0.255,0.738,-0.0408,0.255,0.738,-0.023,0.251,0.734,-0.0406,0.251,0.734,-0.0232,0.251,0.692,-0.0232,0.248,0.657,-0.0233,0.24,0.645,-0.0236,0.226,0.637,-0.0241,0.213,0.639,-0.0246,0.197,0.652,-0.0253,0.188,0.669,-0.0256,0.184,0.697,-0.0258,0.183,0.73,-0.0258,0.187,0.77,-0.0257,0.244,0.696,-0.0375,0.244,0.692,-0.0372,0.242,0.661,-0.0345,0.241,0.658,-0.0343,0.241,0.656,-0.0341,0.231,0.646,-0.0336,0.206,0.65,-0.0349,0.218,0.644,-0.034,0.205,0.652,-0.0352,0.198,0.667,-0.0367,0.195,0.691,-0.039,0.194,0.696,-0.0395,0.193,0.725,-0.042,0.193,0.731,-0.0425,0.197,0.765,-0.0449,0.197,0.77,-0.0453)))))])])])])])])])])]),
+                                      ProtoInstance(
+                                        name="Joint", DEF="hanim_r_shoulder", fieldValue=[
+                                            fieldValue(name="name", value="r_shoulder"),
+                                            fieldValue(name="center", value=(-0.167,1.36,-0.0458)),
+                                            fieldValue(name="children", children=[
+                                                ProtoInstance(
+                                                  name="Segment", DEF="hanim_r_upperarm", fieldValue=[
+                                                      fieldValue(name="name", value="r_upperarm"),
+                                                      fieldValue(name="children", children=[
+                                                          Transform(
+                                                            DEF="r_upperarm_adjust", center=(-0.182,1.22,-0.047), rotation=(1,0,0,0.0836), translation=(0,0.000589,-0.01169), children=[
+                                                                Shape(
+                                                                  appearance=Appearance(
+                                                                      material=Material(
+                                                                          USE="Skin_Color")), geometry=IndexedFaceSet(
+                                                                      coordIndex=(14,10,20,-1,10,13,20,-1,13,22,20,-1,19,14,20,-1,14,19,12,-1,19,20,24,-1,20,22,25,-1,22,13,25,-1,13,10,11,-1,10,14,5,-1,12,5,14,-1,5,11,10,-1,11,25,13,-1,25,24,20,-1,24,12,19,-1,12,24,9,-1,25,11,8,-1,11,5,2,-1,5,12,9,-1,9,2,5,-1,2,8,11,-1,8,23,25,-1,23,27,25,-1,21,9,24,-1,9,21,7,-1,27,23,18,-1,23,8,18,-1,8,2,6,-1,2,9,7,-1,7,1,2,-1,1,6,2,-1,6,18,8,-1,18,26,27,-1,16,7,21,-1,7,16,4,-1,16,26,17,-1,26,18,15,-1,18,6,3,-1,6,1,0,-1,1,7,0,-1,4,0,7,-1,0,3,6,-1,3,15,18,-1,15,17,26,-1,17,4,16,-1,3,0,15,-1,15,0,4,-1,15,4,17,-1,25,27,24,-1,27,21,24,-1,27,26,21,-1,26,16,21,-1), creaseAngle=1.53, coord(
+                                                                        Coordinate(
+                                                                          point=(-0.221,1.08,-0.0352,-0.214,1.14,-0.0405,-0.209,1.26,-0.0427,-0.208,1.07,-0.00133,-0.203,1.08,-0.0744,-0.201,1.33,-0.0411,-0.198,1.14,-0.0024,-0.198,1.13,-0.076,-0.19,1.26,-0.00401,-0.189,1.26,-0.0808,-0.185,1.38,-0.0395,-0.185,1.33,-0.00025,-0.182,1.33,-0.0728,-0.174,1.37,-0.0158,-0.174,1.37,-0.0625,-0.169,1.08,-0.00885,-0.167,1.13,-0.0744,-0.162,1.05,-0.0561,-0.16,1.13,-0.000793,-0.157,1.38,-0.0733,-0.156,1.39,-0.0464,-0.155,1.26,-0.0867,-0.154,1.37,-0.0185,-0.151,1.26,-0.000789,-0.151,1.33,-0.0937,-0.15,1.34,-0.000787,-0.15,1.13,-0.0411,-0.141,1.26,-0.0421)))))])])]),
+                                                ProtoInstance(
+                                                  name="Joint", DEF="hanim_r_elbow", fieldValue=[
+                                                      fieldValue(name="name", value="r_elbow"),
+                                                      fieldValue(name="center", value=(-0.192,1.07,-0.0498)),
+                                                      fieldValue(name="children", children=[
+                                                          ProtoInstance(
+                                                            name="Segment", DEF="hanim_r_forearm", fieldValue=[
+                                                                fieldValue(name="name", value="r_forearm"),
+                                                                fieldValue(name="children", children=[
+                                                                    Transform(
+                                                                      DEF="r_forearm_adjust", center=(-0.198,0.961,-0.0397), rotation=(-1,0,0,0.1254), translation=(0,0.003466,-0.01065), children=[
+                                                                          Shape(
+                                                                            appearance=Appearance(
+                                                                                material=Material(
+                                                                                    USE="Skin_Color")), geometry=IndexedFaceSet(
+                                                                                coordIndex=(20,13,15,-1,13,8,15,-1,8,12,15,-1,12,18,15,-1,18,22,15,-1,22,20,15,-1,20,22,21,-1,22,18,24,-1,18,12,7,-1,12,8,7,-1,8,13,3,-1,13,20,10,-1,21,10,20,-1,10,3,13,-1,3,7,8,-1,7,19,18,-1,19,24,18,-1,24,21,22,-1,21,24,23,-1,24,19,16,-1,19,7,6,-1,7,3,1,-1,3,10,5,-1,10,21,17,-1,17,5,10,-1,5,1,3,-1,1,6,7,-1,6,16,19,-1,16,23,24,-1,23,17,21,-1,1,5,2,-1,5,17,9,-1,9,2,5,-1,1,4,6,-1,4,16,6,-1,23,9,17,-1,9,23,14,-1,23,16,11,-1,4,11,16,-1,11,14,23,-1,11,4,0,-1,11,0,14,-1,0,2,14,-1,14,2,9,-1,2,0,1,-1,0,4,1,-1), creaseAngle=1.73, coord(
+                                                                                  Coordinate(
+                                                                                    point=(-0.237,0.82,-0.0282,-0.235,1.02,-0.033,-0.231,0.819,-0.0609,-0.228,1.07,-0.0319,-0.224,0.818,-0.00778,-0.221,1.01,-0.0744,-0.218,1.01,-0.00133,-0.214,1.07,-0.00402,-0.213,1.1,-0.025,-0.21,0.818,-0.0615,-0.208,1.08,-0.0765,-0.205,0.819,-0.00832,-0.203,1.1,-0.0158,-0.202,1.1,-0.0566,-0.201,0.82,-0.0405,-0.189,1.1,-0.0395,-0.183,1.01,-0.00831,-0.183,1.01,-0.0781,-0.182,1.09,-0.00563,-0.179,1.07,-0.00294,-0.177,1.09,-0.0609,-0.176,1.08,-0.0781,-0.167,1.09,-0.0325,-0.166,1,-0.0405,-0.16,1.06,-0.0373)))))])])]),
+                                                          ProtoInstance(
+                                                            name="Joint", DEF="hanim_r_wrist", fieldValue=[
+                                                                fieldValue(name="name", value="r_wrist"),
+                                                                fieldValue(name="center", value=(-0.217,0.811,-0.0338)),
+                                                                fieldValue(name="children", children=[
+                                                                    ProtoInstance(
+                                                                      name="Segment", DEF="hanim_r_hand", fieldValue=[
+                                                                          fieldValue(name="name", value="r_hand"),
+                                                                          fieldValue(name="children", children=[
+                                                                              Transform(
+                                                                                DEF="r_hand_adjust", center=(-0.217,0.811,-0.0338), rotation=(-0.09024,0.994,-0.0624,1.216), children=[
+                                                                                    Shape(
+                                                                                      appearance=Appearance(
+                                                                                          material=Material(
+                                                                                              USE="Skin_Color")), geometry=IndexedFaceSet(
+                                                                                          coordIndex=(10,9,0,-1,11,30,31,-1,1,12,11,-1,1,11,0,-1,2,13,12,-1,2,12,1,-1,3,14,13,-1,3,13,2,-1,4,15,14,-1,4,14,3,-1,5,16,15,-1,5,15,4,-1,6,17,16,-1,6,16,5,-1,7,18,17,-1,7,17,6,-1,8,19,18,-1,8,18,7,-1,10,31,30,-1,10,30,9,-1,0,11,31,-1,0,31,10,-1,22,23,24,-1,21,22,24,-1,21,24,25,-1,21,25,26,-1,20,21,26,-1,20,26,27,-1,19,20,27,-1,19,27,28,-1,14,15,16,-1,14,16,17,-1,14,17,18,-1,13,14,18,-1,13,18,29,-1,12,13,29,-1,12,29,30,-1,11,12,30,-1,18,19,28,-1,18,28,29,-1,6,5,4,-1,6,4,3,-1,7,6,3,-1,7,3,2,-1,9,2,1,-1,9,1,0,-1,32,38,33,-1,33,38,39,-1,33,39,34,-1,34,39,40,-1,34,40,35,-1,35,40,41,-1,35,41,36,-1,36,41,42,-1,36,42,37,-1,37,42,43,-1,37,43,44,-1,44,43,8,-1,44,8,45,-1,45,8,46,-1,46,8,7,-1,46,7,2,-1,46,2,47,-1,9,47,2,-1,25,34,35,-1,25,33,34,-1,25,24,33,-1,24,32,33,-1,32,24,23,-1,40,39,21,-1,41,40,21,-1,43,19,8,-1,43,20,19,-1,43,42,20,-1,21,20,41,-1,20,42,41,-1,38,22,39,-1,22,21,39,-1,32,23,38,-1,23,22,38,-1,26,25,35,-1,27,36,37,-1,27,37,28,-1,37,44,28,-1,26,35,27,-1,35,36,27,-1,28,44,45,-1,29,46,47,-1,29,9,30,-1,29,47,9,-1,28,45,29,-1,45,46,29,-1), creaseAngle=1.57, coord(
+                                                                                            Coordinate(
+                                                                                              point=(-0.237,0.82,-0.0425,-0.252,0.801,-0.0424,-0.269,0.765,-0.0426,-0.273,0.732,-0.0395,-0.27,0.704,-0.0342,-0.262,0.703,-0.0345,-0.256,0.717,-0.0389,-0.255,0.738,-0.0408,-0.251,0.734,-0.0406,-0.194,0.81,-0.0445,-0.211,0.828,-0.0434,-0.236,0.82,-0.0237,-0.252,0.801,-0.0231,-0.268,0.765,-0.0225,-0.272,0.732,-0.0223,-0.27,0.704,-0.0224,-0.261,0.703,-0.0227,-0.256,0.717,-0.023,-0.255,0.738,-0.023,-0.251,0.734,-0.0232,-0.251,0.692,-0.0232,-0.248,0.657,-0.0233,-0.24,0.645,-0.0236,-0.226,0.637,-0.0241,-0.213,0.639,-0.0246,-0.197,0.652,-0.0253,-0.188,0.669,-0.0256,-0.184,0.697,-0.0258,-0.183,0.73,-0.0258,-0.187,0.77,-0.0257,-0.194,0.81,-0.0254,-0.21,0.828,-0.0247,-0.221,0.641,-0.0336,-0.21,0.65,-0.0348,-0.206,0.652,-0.0352,-0.198,0.667,-0.0368,-0.193,0.692,-0.0392,-0.192,0.696,-0.0396,-0.231,0.646,-0.0336,-0.238,0.656,-0.0342,-0.24,0.658,-0.0344,-0.24,0.662,-0.0347,-0.243,0.692,-0.0372,-0.243,0.696,-0.0376,-0.192,0.725,-0.0421,-0.192,0.73,-0.0426,-0.195,0.766,-0.0451,-0.196,0.77,-0.0454)))))])])])])])])])])]),
+                                      ProtoInstance(
+                                        name="Joint", DEF="hanim_vc4", fieldValue=[
+                                            fieldValue(name="name", value="vc4"),
+                                            fieldValue(name="center", value=(0,1.43,-0.0458)),
+                                            fieldValue(name="children", children=[
+                                                ProtoInstance(
+                                                  name="Segment", DEF="hanim_c4", fieldValue=[
+                                                      fieldValue(name="name", value="c4"),
+                                                      fieldValue(name="children", children=[
+                                                          Shape(
+                                                            appearance=Appearance(
+                                                                material=Material(
+                                                                    USE="Skin_Color")), geometry=IndexedFaceSet(
+                                                                DEF="neck", coordIndex=(6,5,2,-1,6,2,3,-1,5,4,1,-1,5,1,2,-1,4,7,0,-1,4,0,1,-1,11,10,9,-1,11,9,8,-1,10,13,12,-1,10,12,9,-1,13,15,14,-1,13,14,12,-1,6,3,11,-1,6,11,8,-1,7,14,15,-1,7,15,0,-1,2,10,11,-1,2,11,3,-1,2,1,13,-1,2,13,10,-1,1,0,15,-1,1,15,13,-1,9,5,6,-1,9,6,8,-1,9,12,4,-1,9,4,5,-1,12,14,7,-1,12,7,4,-1), creaseAngle=1.91, coord(
+                                                                  Coordinate(
+                                                                    point=(0.0105,1.54,-0.1,0.0357,1.54,-0.0685,0.0382,1.55,-0.0474,0.0105,1.55,-0.0204,0.0373,1.4,-0.0593,0.0577,1.4,-0.0266,0.0158,1.4,0.00512,0.0132,1.41,-0.0824,-0.0158,1.4,0.00512,-0.0577,1.4,-0.0266,-0.0382,1.55,-0.0474,-0.0105,1.55,-0.0204,-0.0373,1.4,-0.0593,-0.0357,1.54,-0.0685,-0.0132,1.41,-0.0824,-0.0105,1.54,-0.1)))))])]),
+                                                ProtoInstance(
+                                                  name="Joint", DEF="hanim_skullbase", fieldValue=[
+                                                      fieldValue(name="name", value="skullbase"),
+                                                      fieldValue(name="center", value=(0,1.54,-0.0409)),
+                                                      fieldValue(name="children", children=[
+                                                          ProtoInstance(
+                                                            name="Segment", DEF="hanim_skull", fieldValue=[
+                                                                fieldValue(name="name", value="skull"),
+                                                                fieldValue(name="children", children=[
+                                                                    Shape(
+                                                                      appearance=Appearance(
+                                                                          material=Material(
+                                                                              USE="Skin_Color")), geometry=IndexedFaceSet(
+                                                                          DEF="headIFS", colorIndex=(1,1,1,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,1,1,1,-1,1,1,1,-1,0,0,0,-1,1,1,1,-1,1,1,1,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,2,2,2,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,2,2,2,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,1,1,1,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,1,1,1,-1,1,1,1,-1,1,1,1,-1,1,1,1,-1,1,1,1,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,2,2,2,-1,2,2,2,-1,2,2,2,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,2,2,2,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,3,3,3,-1,3,3,3,-1,0,0,0,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,3,3,3,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,3,3,3,-1,3,3,3,-1,0,0,0,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,3,3,3,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1,3,3,3,-1), coordIndex=(48,87,58,-1,91,92,59,-1,59,92,88,-1,88,93,231,-1,232,86,233,-1,86,89,233,-1,89,57,56,-1,49,55,57,-1,102,86,96,-1,86,90,96,-1,97,95,96,-1,97,127,95,-1,41,96,154,-1,41,102,96,-1,99,102,41,-1,153,99,41,-1,102,40,86,-1,234,235,236,-1,87,237,58,-1,56,57,91,-1,87,234,237,-1,234,236,237,-1,89,49,57,-1,49,50,55,-1,40,89,86,-1,89,56,233,-1,232,90,86,-1,90,97,96,-1,92,93,88,-1,93,94,231,-1,232,231,94,-1,97,90,232,-1,96,42,154,-1,95,42,96,-1,53,46,45,-1,53,45,51,-1,53,51,92,-1,92,51,52,-1,92,52,93,-1,94,93,52,-1,94,52,4,-1,97,232,94,-1,54,47,46,-1,54,46,53,-1,55,47,54,-1,50,47,55,-1,34,33,50,-1,34,50,49,-1,35,34,49,-1,35,49,89,-1,35,89,40,-1,99,39,102,-1,39,35,40,-1,31,34,35,-1,31,35,32,-1,14,32,35,-1,14,35,39,-1,14,39,98,-1,137,38,153,-1,38,99,153,-1,38,98,99,-1,37,238,239,-1,11,238,37,-1,101,37,36,-1,241,141,242,-1,10,12,242,-1,12,13,14,-1,12,14,243,-1,13,15,32,-1,13,32,14,-1,15,16,31,-1,15,31,32,-1,2,70,10,-1,2,10,141,-1,70,69,12,-1,70,12,10,-1,69,68,13,-1,69,13,12,-1,68,67,15,-1,68,15,13,-1,67,66,16,-1,67,16,15,-1,98,39,99,-1,101,11,37,-1,100,101,36,-1,36,244,240,-1,141,10,242,-1,12,243,242,-1,36,37,239,-1,36,239,244,-1,57,55,91,-1,55,54,91,-1,39,40,102,-1,123,103,120,-1,114,122,104,-1,115,122,114,-1,208,105,115,-1,210,119,211,-1,210,106,119,-1,116,107,106,-1,107,108,117,-1,126,119,109,-1,126,110,119,-1,126,95,125,-1,95,127,125,-1,154,126,111,-1,126,109,111,-1,111,109,112,-1,111,112,153,-1,119,113,109,-1,207,213,214,-1,123,209,103,-1,213,212,214,-1,209,214,103,-1,209,207,214,-1,107,117,106,-1,108,118,117,-1,119,106,113,-1,210,116,106,-1,119,110,211,-1,126,125,110,-1,115,105,122,-1,208,124,105,-1,124,208,211,-1,211,110,125,-1,154,42,126,-1,126,42,95,-1,168,128,121,-1,170,168,121,-1,122,170,121,-1,172,170,122,-1,105,172,122,-1,172,105,124,-1,4,172,124,-1,124,211,125,-1,128,130,129,-1,121,128,129,-1,129,130,108,-1,108,130,118,-1,118,131,132,-1,117,118,132,-1,117,132,133,-1,106,117,133,-1,113,106,133,-1,109,152,112,-1,113,133,152,-1,133,132,134,-1,135,133,134,-1,133,135,136,-1,152,133,136,-1,148,152,136,-1,153,138,137,-1,153,112,138,-1,112,148,138,-1,219,217,139,-1,36,240,149,-1,139,217,140,-1,149,139,151,-1,36,149,100,-1,220,141,241,-1,220,150,142,-1,136,143,150,-1,221,136,150,-1,135,144,143,-1,136,135,143,-1,134,158,144,-1,135,134,144,-1,142,161,2,-1,141,142,2,-1,150,145,161,-1,142,150,161,-1,143,146,145,-1,150,143,145,-1,144,147,146,-1,143,144,146,-1,158,160,147,-1,144,158,147,-1,112,152,148,-1,139,140,151,-1,149,151,100,-1,240,218,149,-1,220,142,141,-1,220,221,150,-1,219,139,149,-1,218,219,149,-1,104,108,107,-1,104,129,108,-1,109,113,152,-1,153,41,111,-1,129,104,122,-1,129,122,121,-1,91,54,92,-1,54,53,92,-1,97,94,127,-1,127,94,4,-1,125,127,124,-1,127,4,124,-1,154,111,41,-1,31,30,33,-1,31,33,34,-1,16,17,30,-1,16,30,31,-1,66,65,17,-1,66,17,16,-1,2,73,156,-1,2,156,70,-1,156,72,66,-1,156,66,67,-1,156,67,68,-1,156,68,69,-1,156,69,70,-1,72,71,65,-1,72,65,66,-1,17,18,30,-1,45,44,51,-1,51,44,43,-1,51,43,52,-1,52,43,1,-1,52,1,4,-1,245,246,27,-1,245,27,3,-1,246,247,28,-1,246,28,27,-1,248,22,29,-1,248,29,28,-1,248,28,247,-1,27,26,0,-1,27,0,3,-1,27,28,25,-1,27,25,26,-1,29,24,25,-1,29,25,28,-1,22,23,24,-1,22,24,29,-1,249,250,22,-1,249,22,248,-1,250,60,23,-1,250,23,22,-1,17,254,18,-1,65,254,17,-1,71,64,65,-1,63,74,75,-1,63,75,61,-1,64,255,254,-1,75,62,61,-1,62,76,60,-1,76,77,23,-1,76,23,60,-1,77,24,23,-1,77,78,25,-1,77,25,24,-1,78,84,26,-1,78,26,25,-1,84,192,0,-1,84,0,26,-1,84,83,193,-1,84,193,192,-1,79,83,84,-1,79,84,78,-1,76,79,78,-1,76,78,77,-1,80,83,79,-1,80,204,83,-1,75,81,80,-1,81,85,204,-1,81,204,80,-1,74,81,75,-1,74,82,81,-1,82,5,85,-1,82,85,81,-1,155,8,71,-1,155,71,72,-1,8,6,64,-1,8,64,71,-1,6,7,255,-1,6,255,64,-1,7,9,256,-1,7,256,255,-1,9,257,256,-1,73,155,156,-1,155,72,156,-1,204,193,83,-1,64,254,65,-1,131,157,134,-1,132,131,134,-1,157,159,158,-1,134,157,158,-1,159,206,160,-1,158,159,160,-1,203,73,2,-1,161,203,2,-1,160,162,203,-1,147,160,203,-1,146,147,203,-1,145,146,203,-1,161,145,203,-1,206,163,162,-1,160,206,162,-1,157,164,159,-1,170,169,168,-1,171,169,170,-1,172,171,170,-1,1,171,172,-1,4,1,172,-1,173,227,245,-1,3,173,245,-1,174,226,227,-1,173,174,227,-1,176,175,215,-1,174,176,215,-1,226,174,215,-1,0,177,173,-1,3,0,173,-1,178,174,173,-1,177,178,173,-1,178,179,176,-1,174,178,176,-1,179,180,175,-1,176,179,175,-1,175,225,216,-1,215,175,216,-1,180,181,225,-1,175,180,225,-1,164,228,159,-1,159,228,206,-1,206,185,163,-1,187,186,184,-1,183,187,184,-1,228,229,185,-1,183,182,187,-1,181,188,182,-1,180,189,188,-1,181,180,188,-1,180,179,189,-1,178,190,189,-1,179,178,189,-1,177,191,190,-1,178,177,190,-1,0,192,191,-1,177,0,191,-1,193,205,191,-1,192,193,191,-1,191,205,194,-1,190,191,194,-1,190,194,188,-1,189,190,188,-1,194,205,195,-1,205,204,195,-1,195,196,187,-1,204,85,196,-1,195,204,196,-1,187,196,186,-1,196,197,186,-1,85,5,197,-1,196,85,197,-1,163,198,202,-1,162,163,202,-1,185,199,198,-1,163,185,198,-1,229,200,199,-1,185,229,199,-1,230,201,200,-1,229,230,200,-1,230,257,201,-1,203,202,73,-1,203,162,202,-1,205,193,204,-1,206,228,185,-1,198,8,155,-1,198,155,202,-1,155,73,202,-1,199,6,8,-1,199,8,198,-1,7,6,199,-1,7,199,200,-1,201,9,7,-1,201,7,200,-1,201,257,9,-1,188,194,195,-1,188,195,182,-1,195,187,182,-1,80,79,76,-1,80,62,75,-1,80,76,62,-1,47,50,33,-1,131,118,130,-1,20,21,47,-1,21,46,47,-1,20,33,19,-1,20,47,33,-1,33,30,19,-1,30,18,19,-1,62,60,251,-1,60,250,251,-1,252,61,251,-1,61,62,251,-1,252,63,61,-1,252,253,63,-1,166,130,167,-1,130,128,167,-1,166,131,130,-1,166,165,131,-1,165,157,131,-1,165,164,157,-1,224,181,182,-1,224,225,181,-1,224,183,223,-1,224,182,183,-1,183,184,223,-1,184,222,223,-1), creaseAngle=0.7854, coord(
+                                                                            Coordinate(
+                                                                              DEF="Face", point=(0,1.708,-0.0435,0,1.655,0.04322,0,1.486,0.02335,0,1.694,0.007789,0,1.631,0.051,0,1.524,-0.102,0.04,1.51,-0.07278,0.04029,1.514,-0.08254,0.03528,1.502,-0.05013,0.03479,1.517,-0.09269,0.0116,1.494,0.03382,0.01946,1.52,0.03421,0.02204,1.494,0.0272,0.02734,1.498,0.02215,0.02788,1.528,0.03084,0.0338,1.503,0.0124,0.04008,1.509,0.002821,0.05122,1.518,-0.02784,0.05867,1.544,-0.03316,0.06433,1.563,-0.03678,0.06732,1.583,-0.03683,0.06769,1.617,-0.03436,0.06641,1.637,-0.03046,0.06818,1.637,-0.04285,0.06308,1.666,-0.04036,0.05305,1.685,-0.03987,0.03136,1.7,-0.0413,0.02919,1.688,0.0091,0.05272,1.674,-0.001657,0.06061,1.66,-0.0101,0.05254,1.541,-0.01363,0.04099,1.527,0.008832,0.03528,1.524,0.02097,0.05792,1.557,-0.004307,0.04413,1.539,0.0149,0.03746,1.539,0.02656,0.003407,1.524,0.04155,0.01481,1.526,0.03912,0.005112,1.532,0.04358,0.02438,1.542,0.03578,0.02636,1.55,0.03808,0.006135,1.55,0.0545,0,1.559,0.05502,0.02958,1.651,0.03965,0.04847,1.643,0.02895,0.05856,1.63,0.01803,0.06182,1.614,0.008199,0.06194,1.6,0.002668,0.01489,1.583,0.04109,0.05282,1.569,0.02821,0.05767,1.58,0.0184,0.04643,1.625,0.03705,0.0264,1.628,0.04807,0.0556,1.609,0.02579,0.05467,1.599,0.02153,0.05316,1.589,0.0207,0.03603,1.58,0.03536,0.04597,1.586,0.02904,0.02106,1.592,0.03748,0.03428,1.595,0.03294,0.06808,1.617,-0.06112,0.06714,1.564,-0.07003,0.06993,1.594,-0.08238,0.05324,1.536,-0.05922,0.04904,1.521,-0.05132,0.04758,1.514,-0.03107,0.03539,1.503,-0.00093,0.02999,1.498,0.006194,0.02308,1.492,0.01628,0.01772,1.488,0.02135,0.01378,1.488,0.02484,0.04349,1.512,-0.03987,0.02308,1.499,-0.02088,0,1.487,-0.018,0.04795,1.531,-0.08973,0.05739,1.555,-0.0982,0.06815,1.622,-0.107,0.06872,1.655,-0.08466,0.05233,1.678,-0.09642,0.05334,1.631,-0.1239,0.05011,1.581,-0.1193,0.04359,1.551,-0.1067,0.03839,1.528,-0.09652,0.03399,1.636,-0.1304,0.03224,1.685,-0.1024,0,1.557,-0.1126,0.01864,1.566,0.04105,0.0249,1.58,0.0387,0.02735,1.596,0.03552,0.04317,1.564,0.03643,0.01246,1.577,0.04276,0.04354,1.59,0.02822,0.04557,1.601,0.03652,0.0291,1.603,0.04274,0.01856,1.6,0.04349,0,1.579,0.04893,0.01064,1.558,0.04476,0.005501,1.578,0.04574,0.01405,1.531,0.04152,0.01037,1.544,0.04266,0,1.515,0.03836,0.00797,1.515,0.03774,0.01824,1.55,0.04063,-0.0249,1.58,0.0387,-0.04354,1.59,0.02822,-0.0291,1.603,0.04274,-0.04317,1.564,0.03643,-0.04597,1.586,0.02904,-0.05316,1.589,0.0207,-0.01824,1.55,0.04063,-0.01246,1.577,0.04276,-0.006135,1.55,0.0545,-0.01037,1.544,0.04266,-0.02636,1.55,0.03808,-0.03428,1.595,0.03294,-0.02735,1.596,0.03552,-0.03603,1.58,0.03536,-0.05282,1.569,0.02821,-0.05767,1.58,0.0184,-0.01864,1.566,0.04105,-0.01489,1.583,0.04109,-0.0556,1.609,0.02579,-0.04557,1.601,0.03652,-0.02106,1.592,0.03748,-0.01856,1.6,0.04349,-0.005501,1.578,0.04574,-0.01064,1.558,0.04476,0,1.592,0.04694,-0.06182,1.614,0.008199,-0.05467,1.599,0.02153,-0.06194,1.6,0.002668,-0.05792,1.557,-0.004307,-0.04413,1.539,0.0149,-0.03746,1.539,0.02656,-0.04099,1.527,0.008832,-0.03528,1.524,0.02097,-0.02788,1.528,0.03084,0,1.53,0.04236,-0.005112,1.532,0.04358,-0.01481,1.526,0.03912,-0.01946,1.52,0.03421,0,1.495,0.0348,-0.0116,1.494,0.03382,-0.02734,1.498,0.02215,-0.0338,1.503,0.0124,-0.01772,1.488,0.02135,-0.02308,1.492,0.01628,-0.02999,1.498,0.006194,-0.01405,1.531,0.04152,-0.003407,1.524,0.04155,-0.02204,1.494,0.0272,-0.00797,1.515,0.03774,-0.02438,1.542,0.03578,0,1.543,0.04432,0,1.555,0.05692,0.02295,1.492,-0.02694,0.007322,1.489,-0.01677,-0.05254,1.541,-0.01363,-0.04008,1.509,0.002821,-0.05122,1.518,-0.02784,-0.03539,1.503,-0.00093,-0.01378,1.488,0.02484,-0.02308,1.499,-0.02088,-0.04349,1.512,-0.03987,-0.05867,1.544,-0.03316,-0.06433,1.563,-0.03678,-0.06732,1.583,-0.03683,-0.06769,1.617,-0.03436,-0.05856,1.63,0.01803,-0.04847,1.643,0.02895,-0.04643,1.625,0.03705,-0.02958,1.651,0.03965,-0.0264,1.628,0.04807,-0.02919,1.688,0.0091,-0.05272,1.674,-0.001657,-0.06641,1.637,-0.03046,-0.06061,1.66,-0.0101,-0.03136,1.7,-0.0413,-0.05305,1.685,-0.03987,-0.06308,1.666,-0.04036,-0.06818,1.637,-0.04285,-0.06808,1.617,-0.06112,-0.06993,1.594,-0.08238,-0.06714,1.564,-0.07003,-0.05324,1.536,-0.05922,-0.04904,1.521,-0.05132,-0.04795,1.531,-0.08973,-0.05739,1.555,-0.0982,-0.06815,1.622,-0.107,-0.06872,1.655,-0.08466,-0.05233,1.678,-0.09642,-0.03224,1.685,-0.1024,0,1.69,-0.1047,0,1.64,-0.1342,-0.05334,1.631,-0.1239,-0.05011,1.581,-0.1193,-0.04359,1.551,-0.1067,-0.03839,1.528,-0.09652,-0.03528,1.502,-0.05013,-0.04,1.51,-0.07278,-0.04029,1.514,-0.08254,-0.03479,1.517,-0.09269,-0.02295,1.492,-0.02694,-0.007322,1.489,-0.01677,0,1.588,-0.1329,-0.03399,1.636,-0.1304,-0.04758,1.514,-0.03107,-0.03428,1.595,0.03294,-0.02106,1.592,0.03748,-0.02735,1.596,0.03552,-0.0249,1.58,0.0387,-0.01489,1.583,0.04109,-0.04597,1.586,0.02904,-0.04354,1.59,0.02822,-0.03603,1.58,0.03536,-0.05856,1.63,0.01803,-0.06182,1.614,0.008199,-0.02788,1.528,0.03084,-0.005112,1.532,0.04358,-0.01405,1.531,0.04152,-0.00797,1.515,0.03774,-0.01946,1.52,0.03421,-0.05867,1.544,-0.03316,-0.06433,1.563,-0.03678,-0.06732,1.583,-0.03683,-0.06769,1.617,-0.03436,-0.04847,1.643,0.02895,-0.02958,1.651,0.03965,-0.05324,1.536,-0.05922,-0.04795,1.531,-0.08973,-0.03839,1.528,-0.09652,0.02106,1.592,0.03748,0.01489,1.583,0.04109,0.0249,1.58,0.0387,0.03603,1.58,0.03536,0.04354,1.59,0.02822,0.03428,1.595,0.03294,0.02735,1.596,0.03552,0.02788,1.528,0.03084,0.01405,1.531,0.04152,0,1.53,0.04236,0,1.515,0.03836,0.00797,1.515,0.03774,0.01946,1.52,0.03421,0.005112,1.532,0.04358,0,1.655,0.04322,0.02958,1.651,0.03965,0.04847,1.643,0.02895,0.05856,1.63,0.01803,0.06182,1.614,0.008199,0.06769,1.617,-0.03436,0.06732,1.583,-0.03683,0.06433,1.563,-0.03678,0.05867,1.544,-0.03316,0.05324,1.536,-0.05922,0.04795,1.531,-0.08973,0.03839,1.528,-0.09652,0,1.524,-0.102))), color(
+                                                                            Color(
+                                                                              color=(0.749,0.601,0.462,0.1735,0.2602,0.749,0.6364,0.133,0.1526,0.4545,0.2759,0.1902)))))])])])])])])])])])]),
+                  Group(
+                    )]),
+              fieldValue(name="joints", children=[
+                  ProtoInstance(
+                    USE="hanim_humanoid_root"),
+                  ProtoInstance(
+                    USE="hanim_sacroiliac"),
+                  ProtoInstance(
+                    USE="hanim_l_hip"),
+                  ProtoInstance(
+                    USE="hanim_l_knee"),
+                  ProtoInstance(
+                    USE="hanim_l_ankle"),
+                  ProtoInstance(
+                    USE="hanim_r_hip"),
+                  ProtoInstance(
+                    USE="hanim_r_knee"),
+                  ProtoInstance(
+                    USE="hanim_r_ankle"),
+                  ProtoInstance(
+                    USE="hanim_vl1"),
+                  ProtoInstance(
+                    USE="hanim_l_shoulder"),
+                  ProtoInstance(
+                    USE="hanim_l_elbow"),
+                  ProtoInstance(
+                    USE="hanim_l_wrist"),
+                  ProtoInstance(
+                    USE="hanim_r_shoulder"),
+                  ProtoInstance(
+                    USE="hanim_r_elbow"),
+                  ProtoInstance(
+                    USE="hanim_r_wrist"),
+                  ProtoInstance(
+                    USE="hanim_vc4"),
+                  ProtoInstance(
+                    USE="hanim_skullbase")]),
+              fieldValue(name="segments", children=[
+                  ProtoInstance(
+                    USE="hanim_pelvis"),
+                  ProtoInstance(
+                    USE="hanim_l_thigh"),
+                  ProtoInstance(
+                    USE="hanim_l_calf"),
+                  ProtoInstance(
+                    USE="hanim_l_hindfoot"),
+                  ProtoInstance(
+                    USE="hanim_r_thigh"),
+                  ProtoInstance(
+                    USE="hanim_r_calf"),
+                  ProtoInstance(
+                    USE="hanim_r_hindfoot"),
+                  ProtoInstance(
+                    USE="hanim_c7"),
+                  ProtoInstance(
+                    USE="hanim_l_upperarm"),
+                  ProtoInstance(
+                    USE="hanim_l_forearm"),
+                  ProtoInstance(
+                    USE="hanim_l_hand"),
+                  ProtoInstance(
+                    USE="hanim_r_upperarm"),
+                  ProtoInstance(
+                    USE="hanim_r_forearm"),
+                  ProtoInstance(
+                    USE="hanim_r_hand"),
+                  ProtoInstance(
+                    USE="hanim_c4"),
+                  ProtoInstance(
+                    USE="hanim_skull")]),
+              fieldValue(name="viewpoints", children=[
+                  Viewpoint(
+                    DEF="InclinedView", description="Inclined View", orientation=(-0.113,0.993,0.0347,0.671), position=(1.62,1.05,2.06)),
+                  Viewpoint(
+                    DEF="FrontView", description="Front View", position=(0,0.854,2.57665)),
+                  Viewpoint(
+                    DEF="SideView", description="Side View", orientation=(0,1,0,1.57079), position=(2.5929,0.854,0)),
+                  Viewpoint(
+                    DEF="TopView", description="Top View", orientation=(1,0,0,-1.57079), position=(0,3.4495,0))])]),
+        WorldInfo(
+          info=("Copyright (c) 1997. 3Name3D / Yglesias Wallock Divekar, Inc."), title="Nancy - an HAnim compliant avatar by 3Name3D"),
+        NavigationInfo(
+          avatarSize=(0.15,1.53,0.75), speed=0.5, type="\"EXAMINE\""),
+        Group(
+          DEF="Interface", children=[
+              Transform(
+                children=[
+                    ProximitySensor(
+                      DEF="HudProx", center=(0.0,20.0,0.0), size=(500.0,100.0,500.0))]),
+              Collision(
+                DEF="HUD", enabled=False, children=[
+                    Transform(
+                      DEF="HudXform", children=[
+                          Transform(
+                            scale=(0.012,0.012,0.012), translation=(0.01107,-0.025,-0.08), children=[
+                                Transform(
+                                  DEF="Stand_Text", children=[
+                                      TouchSensor(
+                                        DEF="Stand_Touch", description="click for behavior"),
+                                      Shape(
+                                        DEF="Stand", geometry=IndexedFaceSet(
+                                            coordIndex=(1,30,29,-1,1,29,2,-1,31,47,46,-1,31,46,32,-1,78,77,80,-1,78,80,79,-1,96,113,112,-1,96,112,95,-1,95,112,111,-1,95,111,94,-1,94,111,110,-1,94,110,93,-1,93,110,109,-1,93,109,108,-1,93,108,100,-1,107,99,100,-1,107,100,108,-1,107,106,99,-1,106,105,98,-1,106,98,99,-1,104,97,98,-1,104,98,105,-1,103,102,104,-1,104,102,101,-1,104,101,97,-1,101,96,97,-1,101,97,101,-1,101,101,96,-1,96,101,113,-1,113,101,114,-1,115,86,85,-1,115,85,116,-1,117,87,84,-1,117,84,118,-1,119,83,120,-1,121,88,82,-1,121,82,122,-1,123,89,81,-1,123,81,124,-1,125,90,126,-1,127,92,128,-1,129,91,130,-1,54,49,50,-1,54,50,55,-1,76,75,74,-1,76,74,54,-1,54,74,73,-1,54,73,49,-1,49,73,48,-1,48,73,62,-1,48,62,61,-1,48,61,60,-1,48,60,53,-1,53,60,59,-1,53,59,53,-1,53,59,58,-1,53,58,52,-1,52,58,57,-1,52,57,51,-1,56,51,57,-1,56,55,50,-1,56,50,51,-1,62,73,72,-1,62,72,63,-1,63,72,71,-1,63,71,64,-1,64,71,70,-1,64,70,69,-1,64,69,65,-1,65,69,68,-1,65,68,67,-1,65,67,66,-1,131,40,39,-1,131,39,132,-1,133,43,42,-1,133,42,134,-1,135,37,36,-1,135,36,136,-1,137,41,38,-1,137,38,138,-1,139,44,35,-1,139,35,140,-1,141,34,142,-1,143,45,33,-1,143,33,144,-1,145,16,15,-1,145,15,146,-1,147,14,148,-1,149,17,13,-1,149,13,150,-1,151,18,12,-1,151,12,152,-1,153,19,11,-1,153,11,154,-1,155,20,10,-1,155,10,156,-1,157,9,158,-1,159,21,8,-1,159,8,160,-1,161,22,7,-1,161,7,162,-1,163,23,164,-1,165,24,6,-1,165,6,166,-1,167,25,5,-1,167,5,168,-1,169,26,170,-1,171,27,4,-1,171,4,172,-1,173,28,3,-1,173,3,174,-1,175,0,176,-1), coord(
+                                              Coordinate(
+                                                point=(-3.21,-0.0154,0.0,-3.15,-0.0154,0.0,-3.14,-0.0467,0.0,-3.1,-0.0601,0.0,-3.05,-0.051,0.0,-3.04,-0.0254,0.0,-3.05,-0.00248,0.0,-3.1,0.0122,0.0,-3.16,0.03,0.0,-3.2,0.0684,0.0,-3.2,0.133,0.0,-3.16,0.17,0.0,-3.1,0.182,0.0,-3.04,0.171,0.0,-3.01,0.136,0.0,-3.0,0.095,0.0,-3.05,0.095,0.0,-3.06,0.125,0.0,-3.1,0.136,0.0,-3.14,0.126,0.0,-3.15,0.103,0.0,-3.14,0.0815,0.0,-3.1,0.0689,0.0,-3.04,0.0512,0.0,-3.0,0.0249,0.0,-2.99,-0.0195,0.0,-3.0,-0.0708,0.0,-3.05,-0.104,0.0,-3.1,-0.108,0.0,-3.16,-0.0947,0.0,-3.2,-0.0586,0.0,-2.86,-0.102,0.0,-2.9,-0.102,0.0,-2.94,-0.0832,0.0,-2.94,-0.0457,0.0,-2.94,0.0645,0.0,-2.97,0.0645,0.0,-2.97,0.103,0.0,-2.94,0.103,0.0,-2.94,0.158,0.0,-2.89,0.158,0.0,-2.89,0.103,0.0,-2.86,0.103,0.0,-2.86,0.0645,0.0,-2.89,0.0645,0.0,-2.89,-0.0483,0.0,-2.88,-0.0608,0.0,-2.86,-0.0612,0.0,-2.71,-0.000798,0.0,-2.71,-0.0373,0.0,-2.74,-0.0637,0.0,-2.77,-0.0624,0.0,-2.78,-0.0416,0.0,-2.77,-0.0195,0.0,-2.71,-0.0754,0.0,-2.74,-0.103,0.0,-2.79,-0.106,0.0,-2.82,-0.0865,0.0,-2.84,-0.0431,0.0,-2.82,0.000177,0.0,-2.78,0.0201,0.0,-2.73,0.0275,0.0,-2.71,0.0446,0.0,-2.72,0.0614,0.0,-2.74,0.0675,0.0,-2.77,0.0573,0.0,-2.78,0.039,0.0,-2.83,0.039,0.0,-2.82,0.0765,0.0,-2.78,0.105,0.0,-2.74,0.11,0.0,-2.71,0.107,0.0,-2.67,0.0849,0.0,-2.66,0.0526,0.0,-2.66,-0.0763,0.0,-2.65,-0.101,0.0,-2.7,-0.101,0.0,-2.61,-0.101,0.0,-2.61,0.103,0.0,-2.56,0.103,0.0,-2.56,0.0787,0.0,-2.52,0.104,0.0,-2.47,0.105,0.0,-2.43,0.0743,0.0,-2.43,0.038,0.0,-2.43,-0.101,0.0,-2.48,-0.101,0.0,-2.48,0.0224,0.0,-2.49,0.0514,0.0,-2.52,0.0627,0.0,-2.54,0.0505,0.0,-2.55,0.02,0.0,-2.55,-0.101,0.0,-2.33,0.0279,0.0,-2.31,0.0587,0.0,-2.27,0.0589,0.0,-2.25,0.0281,0.0,-2.25,-0.0232,0.0,-2.27,-0.0563,0.0,-2.31,-0.057,0.0,-2.33,-0.0245,0.0,-2.19,0.175,0.0,-2.19,-0.101,0.0,-2.25,-0.101,0.0,-2.25,-0.073,0.0,-2.26,-0.0913,0.0,-2.31,-0.108,0.0,-2.35,-0.0915,0.0,-2.38,-0.0424,0.0,-2.39,0.0243,0.0,-2.37,0.0809,0.0,-2.32,0.108,0.0,-2.28,0.106,0.0,-2.25,0.0776,0.0,-2.25,0.175,0.0,-2.48,0.0224,0.0,-2.43,0.038,0.0,-2.49,0.0514,0.0,-2.43,0.0743,0.0,-2.49,0.0514,0.0,-2.47,0.105,0.0,-2.52,0.0627,0.0,-2.52,0.104,0.0,-2.54,0.0505,0.0,-2.56,0.0787,0.0,-2.55,0.02,0.0,-2.56,0.0787,0.0,-2.61,-0.101,0.0,-2.55,0.02,0.0,-2.61,-0.101,0.0,-2.56,0.0787,0.0,-2.89,0.103,0.0,-2.94,0.103,0.0,-2.89,0.0645,0.0,-2.89,0.103,0.0,-2.94,0.103,0.0,-2.94,0.0645,0.0,-2.89,0.0645,0.0,-2.94,0.0645,0.0,-2.89,-0.0483,0.0,-2.94,-0.0457,0.0,-2.89,-0.0483,0.0,-2.94,-0.0832,0.0,-2.88,-0.0608,0.0,-2.9,-0.102,0.0,-3.06,0.125,0.0,-3.01,0.136,0.0,-3.06,0.125,0.0,-3.04,0.171,0.0,-3.1,0.136,0.0,-3.1,0.182,0.0,-3.14,0.126,0.0,-3.16,0.17,0.0,-3.15,0.103,0.0,-3.2,0.133,0.0,-3.14,0.0815,0.0,-3.2,0.0684,0.0,-3.14,0.0815,0.0,-3.16,0.03,0.0,-3.1,0.0689,0.0,-3.1,0.0122,0.0,-3.04,0.0512,0.0,-3.05,-0.00248,0.0,-3.0,0.0249,0.0,-3.05,-0.00248,0.0,-2.99,-0.0195,0.0,-3.04,-0.0254,0.0,-3.0,-0.0708,0.0,-3.05,-0.051,0.0,-3.05,-0.104,0.0,-3.05,-0.051,0.0,-3.1,-0.108,0.0,-3.1,-0.0601,0.0,-3.16,-0.0947,0.0,-3.14,-0.0467,0.0,-3.15,-0.0154,0.0,-3.2,-0.0586,0.0)))), appearance=Appearance(
+                                            material=Material(
+                                                DEF="text_color", ambientIntensity=0.0, diffuseColor=(0.0,0.0,0.0), emissiveColor=(0.819,0.521,0.169)))),
+                                      Transform(
+                                        scale=(84.89,77.52,77.52), translation=(0.04092,1.843,3.826), children=[
+                                            Shape(
+                                              DEF="Stand_Back", geometry=IndexedFaceSet(
+                                                  coordIndex=(0,2,3,-1,2,0,1,-1), coord(
+                                                    Coordinate(
+                                                      point=(-0.02572,-0.02535,-0.05,-0.02578,-0.02131,-0.05,-0.03871,-0.02131,-0.05,-0.03877,-0.02541,-0.05)))), appearance=Appearance(
+                                                  material=Material(
+                                                      DEF="Clear", ambientIntensity=0.0, diffuseColor=(0.0,0.0,0.0), transparency=1.0)))])]),
+                                Transform(
+                                  DEF="Walk_Text", children=[
+                                      TouchSensor(
+                                        DEF="Walk_Touch", description="click for behavior"),
+                                      Shape(
+                                        DEF="WALK", geometry=IndexedFaceSet(
+                                            coordIndex=(0,2,1,-1,3,2,0,-1,12,3,0,-1,4,3,12,-1,11,4,12,-1,5,4,11,-1,10,5,11,-1,6,5,10,-1,9,6,10,-1,7,6,9,-1,8,7,9,-1,15,14,13,-1,16,15,13,-1,19,18,17,-1,20,19,17,-1,27,20,17,-1,28,27,17,-1,26,20,27,-1,23,20,26,-1,21,20,23,-1,25,23,26,-1,22,21,23,-1,24,23,25,-1,29,30,31,-1,29,31,32,-1,33,34,35,-1,33,35,29,-1,29,35,36,-1,29,36,30,-1,30,36,37,-1,37,36,38,-1,37,38,39,-1,37,39,40,-1,37,40,41,-1,41,40,42,-1,41,42,41,-1,41,42,43,-1,41,43,44,-1,44,43,45,-1,44,45,46,-1,47,46,45,-1,47,32,31,-1,47,31,46,-1,38,36,48,-1,38,48,49,-1,49,48,50,-1,49,50,51,-1,51,50,52,-1,51,52,53,-1,51,53,54,-1,54,53,55,-1,54,55,56,-1,54,56,57,-1), coord(
+                                              Coordinate(
+                                                point=(-1.88,-0.101,0.0,-1.96,0.175,0.0,-1.91,0.175,0.0,-1.86,-0.0195,0.0,-1.82,0.175,0.0,-1.76,0.175,0.0,-1.72,-0.0195,0.0,-1.67,0.175,0.0,-1.61,0.175,0.0,-1.69,-0.101,0.0,-1.75,-0.101,0.0,-1.79,0.111,0.0,-1.83,-0.101,0.0,-1.38,-0.101,0.0,-1.38,0.175,0.0,-1.32,0.175,0.0,-1.32,-0.101,0.0,-1.27,-0.101,0.0,-1.27,0.175,0.0,-1.22,0.175,0.0,-1.22,0.0304,0.0,-1.16,0.103,0.0,-1.09,0.103,0.0,-1.16,0.0272,0.0,-1.09,-0.101,0.0,-1.15,-0.101,0.0,-1.2,-0.0141,0.0,-1.22,-0.0363,0.0,-1.22,-0.101,0.0,-1.48,-0.0754,0.0,-1.48,-0.0373,0.0,-1.51,-0.0637,0.0,-1.51,-0.103,0.0,-1.47,-0.101,0.0,-1.42,-0.101,0.0,-1.43,-0.0763,0.0,-1.43,0.0526,0.0,-1.48,-0.000798,0.0,-1.48,0.0446,0.0,-1.5,0.0275,0.0,-1.55,0.0201,0.0,-1.54,-0.0195,0.0,-1.59,0.000177,0.0,-1.61,-0.0431,0.0,-1.55,-0.0416,0.0,-1.59,-0.0865,0.0,-1.54,-0.0624,0.0,-1.56,-0.106,0.0,-1.44,0.0849,0.0,-1.49,0.0614,0.0,-1.48,0.107,0.0,-1.51,0.0675,0.0,-1.52,0.11,0.0,-1.55,0.105,0.0,-1.54,0.0573,0.0,-1.59,0.0765,0.0,-1.6,0.039,0.0,-1.55,0.039,0.0)))), appearance=Appearance(
+                                            material=Material(
+                                                USE="text_color"))),
+                                      Transform(
+                                        scale=(81.3,81.3,81.31), translation=(-0.0414,1.941,4.015), children=[
+                                            Shape(
+                                              DEF="Walk_Back", geometry=IndexedFaceSet(
+                                                  coordIndex=(1,3,0,-1,3,1,2,-1), coord(
+                                                    Coordinate(
+                                                      point=(-0.02381,-0.02541,-0.05,-0.0127,-0.02541,-0.05,-0.01263,-0.02139,-0.05,-0.02381,-0.02146,-0.05)))), appearance=Appearance(
+                                                  material=Material(
+                                                      USE="Clear")))])]),
+                                Transform(
+                                  DEF="Run_Text", children=[
+                                      TouchSensor(
+                                        DEF="Run_Touch", description="click for behavior"),
+                                      Shape(
+                                        DEF="Run", geometry=IndexedFaceSet(
+                                            coordIndex=(24,26,25,-1,53,39,54,-1,17,1,0,-1,17,0,16,-1,0,14,16,-1,0,15,14,-1,14,13,22,-1,14,22,16,-1,13,12,21,-1,13,21,22,-1,12,6,21,-1,12,11,7,-1,12,7,6,-1,11,8,7,-1,10,8,11,-1,10,9,8,-1,6,5,21,-1,5,4,20,-1,5,20,21,-1,4,3,19,-1,4,19,20,-1,3,2,18,-1,3,18,19,-1,18,2,1,-1,18,1,17,-1,55,32,31,-1,55,31,56,-1,57,33,30,-1,57,30,58,-1,59,29,60,-1,61,34,28,-1,61,28,62,-1,63,35,27,-1,63,27,64,-1,65,36,66,-1,67,38,68,-1,69,37,70,-1,71,23,72,-1,73,48,47,-1,73,47,74,-1,75,49,46,-1,75,46,76,-1,77,45,78,-1,79,50,44,-1,79,44,80,-1,81,51,43,-1,81,43,82,-1,83,41,84,-1,85,40,86,-1,87,52,88,-1,89,42,90,-1), coord(
+                                              Coordinate(
+                                                point=(-0.829,-0.101,0.0,-0.829,0.175,0.0,-0.662,0.172,0.0,-0.622,0.148,0.0,-0.607,0.103,0.0,-0.62,0.0501,0.0,-0.648,0.0316,0.0,-0.615,-0.0063,0.0,-0.611,-0.0764,0.0,-0.601,-0.101,0.0,-0.664,-0.101,0.0,-0.671,-0.0373,0.0,-0.68,-0.00372,0.0,-0.712,0.00648,0.0,-0.772,0.00648,0.0,-0.772,-0.101,0.0,-0.772,0.0546,0.0,-0.772,0.127,0.0,-0.703,0.127,0.0,-0.673,0.118,0.0,-0.663,0.091,0.0,-0.674,0.063,0.0,-0.705,0.0546,0.0,-0.379,0.103,0.0,-0.379,-0.101,0.0,-0.432,-0.101,0.0,-0.432,-0.0764,0.0,-0.466,-0.101,0.0,-0.518,-0.102,0.0,-0.555,-0.072,0.0,-0.56,-0.0357,0.0,-0.56,0.103,0.0,-0.506,0.103,0.0,-0.506,-0.0201,0.0,-0.5,-0.0491,0.0,-0.472,-0.0604,0.0,-0.443,-0.0482,0.0,-0.433,-0.0177,0.0,-0.433,0.103,0.0,-0.331,-0.101,0.0,-0.331,0.103,0.0,-0.278,0.103,0.0,-0.278,0.0787,0.0,-0.244,0.104,0.0,-0.192,0.105,0.0,-0.154,0.0743,0.0,-0.149,0.038,0.0,-0.149,-0.101,0.0,-0.203,-0.101,0.0,-0.203,0.0224,0.0,-0.209,0.0514,0.0,-0.238,0.0627,0.0,-0.266,0.0505,0.0,-0.277,0.02,0.0,-0.277,-0.101,0.0,-0.506,-0.0201,0.0,-0.56,-0.0357,0.0,-0.5,-0.0491,0.0,-0.555,-0.072,0.0,-0.5,-0.0491,0.0,-0.518,-0.102,0.0,-0.472,-0.0604,0.0,-0.466,-0.101,0.0,-0.443,-0.0482,0.0,-0.432,-0.0764,0.0,-0.433,-0.0177,0.0,-0.432,-0.0764,0.0,-0.379,0.103,0.0,-0.433,-0.0177,0.0,-0.379,0.103,0.0,-0.432,-0.0764,0.0,-0.379,-0.101,0.0,-0.432,-0.0764,0.0,-0.203,0.0224,0.0,-0.149,0.038,0.0,-0.209,0.0514,0.0,-0.154,0.0743,0.0,-0.209,0.0514,0.0,-0.192,0.105,0.0,-0.238,0.0627,0.0,-0.244,0.104,0.0,-0.266,0.0505,0.0,-0.278,0.0787,0.0,-0.278,0.0787,0.0,-0.331,0.103,0.0,-0.277,0.02,0.0,-0.331,-0.101,0.0,-0.277,0.02,0.0,-0.278,0.0787,0.0,-0.277,0.02,0.0,-0.331,0.103,0.0)))), appearance=Appearance(
+                                            material=Material(
+                                                USE="text_color"))),
+                                      Transform(
+                                        scale=(82.47,82.47,82.48), translation=(-0.01579,1.968,4.074), children=[
+                                            Shape(
+                                              DEF="Run_Back", geometry=IndexedFaceSet(
+                                                  coordIndex=(0,2,3,-1,2,0,1,-1), coord(
+                                                    Coordinate(
+                                                      point=(-0.01009,-0.02534,-0.05,-0.001382,-0.02541,-0.05,-0.001315,-0.02146,-0.05,-0.01022,-0.02146,-0.05)))), appearance=Appearance(
+                                                  material=Material(
+                                                      USE="Clear")))])]),
+                                Transform(
+                                  DEF="Jump_Text", children=[
+                                      TouchSensor(
+                                        DEF="Jump_Touch", description="click for behavior"),
+                                      Shape(
+                                        DEF="Jump", geometry=IndexedFaceSet(
+                                            coordIndex=(1,0,14,-1,1,14,2,-1,16,15,18,-1,16,18,17,-1,64,65,66,-1,67,68,69,-1,67,69,70,-1,71,72,73,-1,71,73,74,-1,75,76,77,-1,78,79,80,-1,78,80,81,-1,82,83,84,-1,82,84,85,-1,86,87,88,-1,89,90,91,-1,92,93,94,-1,95,96,97,-1,98,7,6,-1,98,6,99,-1,100,8,5,-1,100,5,101,-1,102,9,4,-1,102,4,103,-1,104,10,105,-1,106,11,3,-1,106,3,107,-1,108,12,109,-1,110,13,111,-1,112,27,26,-1,112,26,113,-1,114,28,25,-1,114,25,115,-1,116,24,117,-1,118,29,23,-1,118,23,119,-1,120,30,22,-1,120,22,121,-1,122,31,123,-1,124,34,33,-1,124,33,125,-1,126,35,32,-1,126,32,127,-1,128,21,129,-1,130,36,20,-1,130,20,131,-1,132,37,19,-1,132,19,133,-1,134,38,135,-1,136,40,137,-1,138,39,139,-1,53,58,59,-1,53,59,54,-1,53,52,58,-1,52,51,57,-1,52,57,58,-1,51,50,56,-1,51,56,57,-1,50,49,56,-1,49,48,63,-1,49,63,56,-1,48,47,63,-1,63,47,46,-1,63,46,62,-1,62,46,45,-1,62,45,44,-1,62,44,61,-1,61,44,60,-1,54,59,60,-1,44,43,42,-1,60,44,42,-1,41,55,54,-1,41,54,60,-1,41,60,42,-1), coord(
+                                              Coordinate(
+                                                point=(0.108,0.00195,0.0,0.163,0.00195,0.0,0.166,-0.0473,0.0,0.194,-0.0608,0.0,0.222,-0.0492,0.0,0.228,-0.017,0.0,0.228,0.175,0.0,0.284,0.175,0.0,0.284,-0.02,0.0,0.271,-0.0798,0.0,0.23,-0.104,0.0,0.193,-0.108,0.0,0.155,-0.102,0.0,0.117,-0.0714,0.0,0.108,-0.0357,0.0,0.563,-0.101,0.0,0.563,0.103,0.0,0.615,0.103,0.0,0.615,0.0803,0.0,0.649,0.105,0.0,0.696,0.105,0.0,0.728,0.0788,0.0,0.76,0.104,0.0,0.811,0.104,0.0,0.842,0.081,0.0,0.853,0.0416,0.0,0.853,-0.101,0.0,0.799,-0.101,0.0,0.799,0.0305,0.0,0.79,0.0544,0.0,0.767,0.0616,0.0,0.743,0.0507,0.0,0.734,0.0228,0.0,0.734,-0.101,0.0,0.681,-0.101,0.0,0.681,0.0301,0.0,0.673,0.0532,0.0,0.65,0.0611,0.0,0.626,0.0506,0.0,0.617,0.0224,0.0,0.617,-0.101,0.0,0.9,-0.182,0.0,0.9,0.103,0.0,0.952,0.103,0.0,0.952,0.0751,0.0,0.968,0.0934,0.0,1.01,0.11,0.0,1.05,0.103,0.0,1.07,0.0796,0.0,1.1,0.0251,0.0,1.1,-0.0222,0.0,1.07,-0.0788,0.0,1.03,-0.106,0.0,0.988,-0.103,0.0,0.953,-0.0755,0.0,0.953,-0.182,0.0,1.04,-0.000177,0.0,1.03,-0.0446,0.0,0.999,-0.0603,0.0,0.966,-0.0453,0.0,0.953,-0.000177,0.0,0.963,0.045,0.0,0.998,0.063,0.0,1.03,0.0462,0.0,0.515,-0.101,0.0,0.462,-0.0764,0.0,0.462,-0.101,0.0,0.388,-0.0201,0.0,0.388,0.103,0.0,0.334,0.103,0.0,0.334,-0.0357,0.0,0.394,-0.0491,0.0,0.388,-0.0201,0.0,0.334,-0.0357,0.0,0.339,-0.072,0.0,0.394,-0.0491,0.0,0.339,-0.072,0.0,0.376,-0.102,0.0,0.422,-0.0604,0.0,0.394,-0.0491,0.0,0.376,-0.102,0.0,0.428,-0.101,0.0,0.451,-0.0482,0.0,0.422,-0.0604,0.0,0.428,-0.101,0.0,0.462,-0.0764,0.0,0.461,-0.0177,0.0,0.451,-0.0482,0.0,0.462,-0.0764,0.0,0.515,0.103,0.0,0.461,0.103,0.0,0.461,-0.0177,0.0,0.515,0.103,0.0,0.461,-0.0177,0.0,0.462,-0.0764,0.0,0.515,-0.101,0.0,0.515,0.103,0.0,0.462,-0.0764,0.0,0.284,-0.02,0.0,0.228,-0.017,0.0,0.271,-0.0798,0.0,0.222,-0.0492,0.0,0.23,-0.104,0.0,0.194,-0.0608,0.0,0.193,-0.108,0.0,0.194,-0.0608,0.0,0.155,-0.102,0.0,0.166,-0.0473,0.0,0.117,-0.0714,0.0,0.166,-0.0473,0.0,0.108,-0.0357,0.0,0.166,-0.0473,0.0,0.799,0.0305,0.0,0.853,0.0416,0.0,0.79,0.0544,0.0,0.842,0.081,0.0,0.79,0.0544,0.0,0.811,0.104,0.0,0.767,0.0616,0.0,0.76,0.104,0.0,0.743,0.0507,0.0,0.728,0.0788,0.0,0.734,0.0228,0.0,0.728,0.0788,0.0,0.681,0.0301,0.0,0.734,0.0228,0.0,0.673,0.0532,0.0,0.728,0.0788,0.0,0.673,0.0532,0.0,0.696,0.105,0.0,0.65,0.0611,0.0,0.649,0.105,0.0,0.626,0.0506,0.0,0.615,0.0803,0.0,0.617,0.0224,0.0,0.615,0.0803,0.0,0.563,-0.101,0.0,0.617,0.0224,0.0,0.563,-0.101,0.0,0.615,0.0803,0.0)))), appearance=Appearance(
+                                            material=Material(
+                                                USE="text_color"))),
+                                      Transform(
+                                        scale=(83.79,83.79,83.79), translation=(-0.008979,1.99,4.14), children=[
+                                            Shape(
+                                              DEF="Jump_Back", geometry=IndexedFaceSet(
+                                                  coordIndex=(0,2,3,-1,2,0,1,-1), coord(
+                                                    Coordinate(
+                                                      point=(0.001296,-0.02541,-0.05,0.01335,-0.02527,-0.05,0.01328,-0.02152,-0.05,0.001229,-0.02146,-0.05)))), appearance=Appearance(
+                                                  material=Material(
+                                                      USE="Clear")))])])])])]),
+              Transform(
+                DEF="Floor", scale=(1.0,0.0125,1.0), translation=(0.0,-0.0125,0.0), children=[
+                    Shape(
+                      geometry=Box(
+                          ), appearance=Appearance(
+                          material=Material(
+                              )))])]),
+        Group(
+          DEF="Animations", children=[
+              Group(
+                DEF="Stand_Animation", children=[
+                    OrientationInterpolator(
+                      DEF="r_ankle_RotationInterpolator_Stand", key=[0.0,1.0], keyValue=[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]),
+                    OrientationInterpolator(
+                      DEF="r_knee_RotationInterpolator_Stand", key=[0.0,1.0], keyValue=[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]),
+                    OrientationInterpolator(
+                      DEF="r_hip_RotationInterpolator_Stand", key=[0.0,1.0], keyValue=[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]),
+                    OrientationInterpolator(
+                      DEF="l_ankle_RotationInterpolator_Stand", key=[0.0,1.0], keyValue=[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]),
+                    OrientationInterpolator(
+                      DEF="l_knee_RotationInterpolator_Stand", key=[0.0,1.0], keyValue=[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]),
+                    OrientationInterpolator(
+                      DEF="l_hip_RotationInterpolator_Stand", key=[0.0,1.0], keyValue=[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]),
+                    OrientationInterpolator(
+                      DEF="lower_body_RotationInterpolator_Stand", key=[0.0,1.0], keyValue=[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]),
+                    OrientationInterpolator(
+                      DEF="r_wrist_RotationInterpolator_Stand", key=[0.0,1.0], keyValue=[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]),
+                    OrientationInterpolator(
+                      DEF="r_elbow_RotationInterpolator_Stand", key=[0.0,1.0], keyValue=[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]),
+                    OrientationInterpolator(
+                      DEF="r_shoulder_RotationInterpolator_Stand", key=[0.0,1.0], keyValue=[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]),
+                    OrientationInterpolator(
+                      DEF="l_wrist_RotationInterpolator_Stand", key=[0.0,1.0], keyValue=[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]),
+                    OrientationInterpolator(
+                      DEF="l_elbow_RotationInterpolator_Stand", key=[0.0,1.0], keyValue=[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]),
+                    OrientationInterpolator(
+                      DEF="l_shoulder_RotationInterpolator_Stand", key=[0.0,1.0], keyValue=[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]),
+                    OrientationInterpolator(
+                      DEF="head_RotationInterpolator_Stand", key=[0.0,1.0], keyValue=[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]),
+                    OrientationInterpolator(
+                      DEF="neck_RotationInterpolator_Stand", key=[0.0,1.0], keyValue=[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]),
+                    OrientationInterpolator(
+                      DEF="upper_body_RotationInterpolator_Stand", key=[0.0,1.0], keyValue=[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]),
+                    OrientationInterpolator(
+                      DEF="whole_body_RotationInterpolator_Stand", key=[0.0,1.0], keyValue=[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]),
+                    PositionInterpolator(
+                      DEF="whole_body_TranslationInterpolator_Stand", key=[0.0,1.0], keyValue=[0.0,0.0,0.0,0.0,0.0,0.0]),
+                    TimeSensor(
+                      DEF="Stand_Time", cycleInterval=0.009999999776482582)]),
+              Group(
+                DEF="Walk_Animation", children=[
+                    OrientationInterpolator(
+                      DEF="r_ankle_RotationInterpolator_BasicWalk", key=[0.0,0.125,0.2083,0.375,0.4583,0.5,0.6667,0.75,0.7917,0.9167,1.0], keyValue=[0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.3533,-1.0,0.0,0.0,0.1072,1.0,0.0,0.0,0.2612,1.0,0.0,0.0,0.1268,-1.0,0.0,0.0,0.01793,-1.0,0.0,0.0,0.05824,-1.0,0.0,0.0,0.2398,-1.0,0.0,0.0,0.35,-1.0,0.0,0.0,0.3322,0.0,0.0,1.0,0.0]),
+                    OrientationInterpolator(
+                      DEF="r_knee_RotationInterpolator_BasicWalk", key=[0.0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1.0], keyValue=[1.0,0.0,0.0,0.8573,1.0,0.0,0.0,0.8926,1.0,0.0,0.0,0.5351,1.0,0.0,0.0,0.1756,1.0,0.0,0.0,0.1194,1.0,0.0,0.0,0.3153,1.0,0.0,0.0,0.09354,1.0,0.0,0.0,0.08558,1.0,0.0,0.0,0.2475,1.0,0.0,0.0,0.8573]),
+                    OrientationInterpolator(
+                      DEF="r_hip_RotationInterpolator_BasicWalk", key=[0.0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1.0], keyValue=[-0.5831,0.03511,0.8116,0.1481,-0.995,0.02296,0.09674,0.4683,-1.0,0.00192,0.007964,0.4732,-0.998,-0.0158,-0.06102,0.5079,-0.9911,-0.03541,-0.1286,0.5419,-0.9131,-0.06243,-0.403,0.3361,-0.4306,-0.07962,-0.899,0.07038,1.0,0.0,0.0,0.2571,0.9891,-0.02805,0.1444,0.3879,-0.5831,0.03511,0.8116,0.1481]),
+                    OrientationInterpolator(
+                      DEF="l_ankle_RotationInterpolator_BasicWalk", key=[0.0,0.125,0.2083,0.375,0.6667,0.9167,1.0], keyValue=[-1.0,0.0,0.0,0.06714,-1.0,0.0,0.0,0.2152,-1.0,0.0,0.0,0.3184,-1.0,0.0,0.0,0.4717,-1.0,0.0,0.0,0.2912,1.0,0.0,0.0,0.1222,-1.0,0.0,0.0,0.06714]),
+                    OrientationInterpolator(
+                      DEF="l_knee_RotationInterpolator_BasicWalk", key=[0.0,0.2083,0.375,0.5,0.6667,0.7917,0.9167,1.0], keyValue=[1.0,0.0,0.0,0.3226,1.0,0.0,0.0,0.1556,1.0,0.0,0.0,0.08678,1.0,0.0,0.0,0.8751,1.0,0.0,0.0,1.131,1.0,0.0,0.0,0.09961,1.0,0.0,0.0,0.3942,1.0,0.0,0.0,0.3226]),
+                    OrientationInterpolator(
+                      DEF="l_hip_RotationInterpolator_BasicWalk", key=[0.0,0.25,0.375,0.5,0.6667,0.7917,0.9167,1.0], keyValue=[-0.873,0.06094,0.484,0.2865,0.9963,-0.01057,0.08481,0.2488,0.9965,0.01591,-0.08222,0.3836,-0.7018,-0.03223,-0.7117,0.1289,-1.0,0.0,0.0,0.5518,-0.9964,0.02231,0.0817,0.5351,-0.9809,0.04912,0.1881,0.5204,-0.873,0.06094,0.484,0.2865]),
+                    OrientationInterpolator(
+                      DEF="lower_body_RotationInterpolator_BasicWalk", key=[0.0,0.5,1.0], keyValue=[0.0,0.0,-1.0,0.1056,0.0,0.0,1.0,0.09018,0.0,0.0,-1.0,0.1056]),
+                    OrientationInterpolator(
+                      DEF="r_wrist_RotationInterpolator_BasicWalk", key=[0.0,0.375,0.9167,1.0], keyValue=[-0.8129,0.4759,-0.3357,0.1346,0.1533,-0.9878,0.02582,0.3902,-0.5701,0.7604,-0.311,0.366,-0.8129,0.4759,-0.3357,0.1346]),
+                    OrientationInterpolator(
+                      DEF="r_elbow_RotationInterpolator_BasicWalk", key=[0.0,0.375,0.9167,1.0], keyValue=[-1.0,0.0,0.0,0.411508,-1.0,0.0,0.0,0.0925011,-1.0,0.0,0.0,0.572568,-1.0,0.0,0.0,0.411508]),
+                    OrientationInterpolator(
+                      DEF="r_shoulder_RotationInterpolator_BasicWalk", key=[0.0,0.375,0.9167,1.0], keyValue=[-1.0,0.0,0.0,0.09346,1.0,0.0,0.0,0.3197,-1.0,0.0,0.0,0.1564,-1.0,0.0,0.0,0.09346]),
+                    OrientationInterpolator(
+                      DEF="l_wrist_RotationInterpolator_BasicWalk", key=[0.0,0.375,0.9167,1.0], keyValue=[0.0,-1.0,0.0,0.461076,-0.330195,-0.927451,0.175516,0.538852,0.0327774,-0.999314,-0.0172185,0.492033,0.0,-1.0,0.0,0.461076]),
+                    OrientationInterpolator(
+                      DEF="l_elbow_RotationInterpolator_BasicWalk", key=[0.0,0.375,0.9167,1.0], keyValue=[-1.0,0.0,0.0,0.0659878,-1.0,0.0,0.0,0.488383,-1.0,0.0,0.0,0.0177536,-1.0,0.0,0.0,0.0659878]),
+                    OrientationInterpolator(
+                      DEF="l_shoulder_RotationInterpolator_BasicWalk", key=[0.0,0.375,0.9167,1.0], keyValue=[1.0,0.0,0.0,0.1189,-1.0,0.0,0.0,0.1861,1.0,0.0,0.0,0.3357,1.0,0.0,0.0,0.1189]),
+                    OrientationInterpolator(
+                      DEF="head_RotationInterpolator_BasicWalk", key=[0.0,0.375,0.4167,0.5,0.5833,0.6667,0.75,0.8333,0.9167,1.0], keyValue=[0.0,-1.0,0.0,0.08642,0.0,1.0,0.0,0.1825,0.0,1.0,0.0,0.1505,0.0,1.0,0.0,0.1053,0.0,1.0,0.0,0.04391,0.0,-1.0,0.0,0.03119,0.0,-1.0,0.0,0.07936,0.0,-1.0,0.0,0.1616,0.0,-1.0,0.0,0.155,0.0,-1.0,0.0,0.08642]),
+                    OrientationInterpolator(
+                      DEF="neck_RotationInterpolator_BasicWalk", key=[0.0,1.0], keyValue=[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]),
+                    OrientationInterpolator(
+                      DEF="upper_body_RotationInterpolator_BasicWalk", key=[0.0,0.2083,0.375,0.75,0.8333,1.0], keyValue=[0.0,1.0,0.0,0.0826,-0.01972,-0.5974,0.8017,0.08231,0.009296,-0.9648,0.2627,0.1734,-0.01238,0.9549,-0.2968,0.08732,-0.008125,0.9691,-0.2463,0.158,0.0,1.0,0.0,0.0826]),
+                    OrientationInterpolator(
+                      DEF="whole_body_RotationInterpolator_BasicWalk", key=[0.0,1.0], keyValue=[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]),
+                    PositionInterpolator(
+                      DEF="whole_body_TranslationInterpolator_BasicWalk", key=[0.0,0.04167,0.125,0.1667,0.2083,0.25,0.2917,0.375,0.4583,0.5,0.5417,0.5833,0.625,0.7083,0.75,0.7917,0.875,0.9167,1.0], keyValue=[0.0,-0.00928,0.0,0.0,-0.003858,0.0,0.0,-0.008847,0.0,0.0,-0.01486,0.0,0.0,-0.02641,0.0,0.0,-0.03934,0.0,0.0,-0.0502,0.0,0.0,-0.07469,0.0,0.0,-0.02732,0.0,0.0,-0.01608,0.0,0.0,-0.01129,0.0,0.0,-0.005819,0.0,0.0,-0.002004,0.0,0.0,-0.002579,0.0,0.0,-0.0143,0.0,0.0,-0.03799,0.0,0.0,-0.05648,0.0,0.0,-0.045,0.0,0.0,-0.00928,0.0]),
+                    TimeSensor(
+                      DEF="Walk_Time", cycleInterval=2.0, loop=True, startTime=-1.0)]),
+              Group(
+                DEF="Run_Animation", children=[
+                    OrientationInterpolator(
+                      DEF="r_ankle_RotationInterpolator_Run", key=[0.0,0.4909,0.7091,0.8,0.8182,1.0], keyValue=[1.0,0.0,0.0,0.2323,-1.0,0.0,0.0,0.07843,-1.0,0.0,0.0,0.09676,-1.0,0.0,0.0,0.3274,-1.0,0.0,0.0,0.3278,1.0,0.0,0.0,0.2323]),
+                    OrientationInterpolator(
+                      DEF="r_knee_RotationInterpolator_Run", key=[0.0,0.03636,0.2182,0.4909,0.7455,1.0], keyValue=[1.0,0.0,0.0,0.7004,1.0,0.0,0.0,1.011,1.0,0.0,0.0,1.892,1.0,0.0,0.0,1.188,1.0,0.0,0.0,0.3964,1.0,0.0,0.0,0.7004]),
+                    OrientationInterpolator(
+                      DEF="r_hip_RotationInterpolator_Run", key=[0.0,0.2182,0.4909,0.7455,1.0], keyValue=[0.9999,0.00293,-0.00989,0.402,-1.0,0.004977,-0.00497,0.5943,-1.0,0.003265,-0.001752,1.178,-0.9999,0.00815,-0.01093,0.3031,0.9999,0.00293,-0.00989,0.402]),
+                    OrientationInterpolator(
+                      DEF="l_ankle_RotationInterpolator_Run", key=[0.0,0.2182,0.3091,0.4909,1.0], keyValue=[1.0,0.0,0.0,0.03543,-1.0,0.0,0.0,0.1037,-1.0,0.0,0.0,0.4328,1.0,0.0,0.0,0.1929,1.0,0.0,0.0,0.03543]),
+                    OrientationInterpolator(
+                      DEF="l_knee_RotationInterpolator_Run", key=[0.0,0.2182,0.4909,0.7455,1.0], keyValue=[1.0,0.0,0.0,1.108,1.0,0.0,0.0,0.4265,1.0,0.0,0.0,0.7052,1.0,0.0,0.0,2.179,1.0,0.0,0.0,1.108]),
+                    OrientationInterpolator(
+                      DEF="l_hip_RotationInterpolator_Run", key=[0.0,0.2182,0.4909,0.7455,1.0], keyValue=[-0.9986,0.03354,0.04001,1.212,-0.9889,0.1328,0.06696,0.4025,0.9894,0.1453,0.009351,0.4114,-0.9963,0.07032,0.05003,0.7035,-0.9986,0.03354,0.04001,1.212]),
+                    OrientationInterpolator(
+                      DEF="lower_body_RotationInterpolator_Run", key=[0.0,1.0], keyValue=[0.9969,-0.05444,0.05596,0.07687,0.9969,-0.05444,0.05596,0.07687]),
+                    OrientationInterpolator(
+                      DEF="r_wrist_RotationInterpolator_Run", key=[0.0,1.0], keyValue=[-0.917742,-0.237244,-0.318536,0.214273,-0.917742,-0.237244,-0.318536,0.214273]),
+                    OrientationInterpolator(
+                      DEF="r_elbow_RotationInterpolator_Run", key=[0.0,0.2182,0.4909,0.7455,1.0], keyValue=[0.9353,-0.2978,-0.191,4.222,-0.9362,0.2924,-0.1952,1.05,0.9941,-0.09719,-0.04725,4.512,-0.9594,0.2653,0.09579,1.525,0.9353,-0.2978,-0.191,4.222]),
+                    OrientationInterpolator(
+                      DEF="r_shoulder_RotationInterpolator_Run", key=[0.0,0.2182,0.4909,0.7455,1.0], keyValue=[-1.0,0.0,0.0,0.6979,0.9094,0.2062,-0.3613,0.4157,0.9637,0.1537,-0.2185,1.353,0.4864,0.08841,-0.8693,0.1716,-1.0,0.0,0.0,0.6979]),
+                    OrientationInterpolator(
+                      DEF="l_wrist_RotationInterpolator_Run", key=[0.0,1.0], keyValue=[-0.0240995,-0.999682,0.00741506,0.120409,-0.0240995,-0.999682,0.00741506,0.120409]),
+                    OrientationInterpolator(
+                      DEF="l_elbow_RotationInterpolator_Run", key=[0.0,0.2182,0.4909,0.7455,1.0], keyValue=[0.9985,0.03887,0.03802,4.689,-0.965,-0.1889,-0.1821,1.415,0.9758,0.1563,0.1529,4.666,-0.9956,-0.0936,0.009826,1.126,0.9985,0.03887,0.03802,4.689]),
+                    OrientationInterpolator(
+                      DEF="l_shoulder_RotationInterpolator_Run", key=[0.0,0.2182,0.4909,0.7455,1.0], keyValue=[0.9907,-0.07264,0.115,1.135,0.9291,-0.1222,0.349,0.1695,-0.9892,0.1364,-0.05394,0.5112,0.9942,-0.0002052,0.1073,0.4975,0.9907,-0.07264,0.115,1.135]),
+                    OrientationInterpolator(
+                      DEF="head_RotationInterpolator_Run", key=[0.0,0.4909,1.0], keyValue=[0.6517,-0.7559,0.06211,0.2508,0.6467,0.7527,-0.1238,0.2344,0.6517,-0.7559,0.06211,0.2508]),
+                    OrientationInterpolator(
+                      DEF="neck_RotationInterpolator_Run", key=[0.0,1.0], keyValue=[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]),
+                    OrientationInterpolator(
+                      DEF="upper_body_RotationInterpolator_Run", key=[0.0,0.2545,0.4909,0.7636,1.0], keyValue=[0.7651,0.6382,0.08586,0.2712,0.9999,0.002845,-0.01547,0.3756,0.7459,-0.6505,-0.1432,0.2416,0.9984,0.05536,-0.01154,0.3488,0.7651,0.6382,0.08586,0.2712]),
+                    OrientationInterpolator(
+                      DEF="whole_body_RotationInterpolator_Run", key=[0.0,1.0], keyValue=[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]),
+                    PositionInterpolator(
+                      DEF="whole_body_TranslationInterpolator_Run", key=[0.0,0.2182,0.2909,0.3091,0.7091,0.8,0.8182,1.0], keyValue=[0.0,-0.0351,0.0,0.0,-0.0351,0.0,0.0,-0.04087,0.0,0.0,-0.04886,0.0,0.0,-0.04051,0.0,0.0,-0.03666,0.0,0.0,-0.03666,0.0,0.0,-0.0351,0.0]),
+                    TimeSensor(
+                      DEF="Run_Time", loop=True, startTime=-1.0)]),
+              Group(
+                DEF="Jump_Animation", children=[
+                    OrientationInterpolator(
+                      DEF="r_ankle_RotationInterpolator_Jump", key=[0.0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.84,0.88,0.92,0.96,1.0], keyValue=[0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.6735,-1.0,0.0,0.0,0.6735,-1.0,0.0,0.0,0.3527,-1.0,0.0,0.0,0.3038,-1.0,0.0,0.0,0.07964,1.0,0.0,0.0,0.3001,1.0,0.0,0.0,0.6509,1.0,0.0,0.0,0.3001,-1.0,0.0,0.0,0.2087,-1.0,0.0,0.0,0.3756,-1.0,0.0,0.0,0.3279,-1.0,0.0,0.0,0.1193,0.0,0.0,1.0,0.0]),
+                    OrientationInterpolator(
+                      DEF="r_knee_RotationInterpolator_Jump", key=[0.0,0.28,0.32,0.48,0.64,0.76,0.88,1.0], keyValue=[0.0,0.0,1.0,0.0,1.0,0.0,0.0,2.005,1.0,0.0,0.0,2.005,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.9507,1.0,0.0,0.0,0.5845,1.0,0.0,0.0,0.9054,0.0,0.0,1.0,0.0]),
+                    OrientationInterpolator(
+                      DEF="r_hip_RotationInterpolator_Jump", key=[0.0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.88,1.0], keyValue=[0.0,0.0,1.0,0.0,1.0,0.0,0.0,4.433,1.0,0.0,0.0,4.433,1.0,0.0,0.0,4.647,-1.0,0.0,0.0,0.8943,-1.0,0.0,0.0,0.3698,0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.4963,-1.0,0.0,0.0,0.3829,-1.0,0.0,0.0,0.5169,0.0,0.0,1.0,0.0]),
+                    OrientationInterpolator(
+                      DEF="l_ankle_RotationInterpolator_Jump", key=[0.0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.84,0.88,0.92,0.96,1.0], keyValue=[0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.625,-1.0,0.0,0.0,0.625,-1.0,0.0,0.0,0.3364,-1.0,0.0,0.0,0.2742,-1.0,0.0,0.0,0.05078,1.0,0.0,0.0,0.2833,1.0,0.0,0.0,0.6667,1.0,0.0,0.0,0.2833,-1.0,0.0,0.0,0.2108,-1.0,0.0,0.0,0.375,-1.0,0.0,0.0,0.3146,-1.0,0.0,0.0,0.1174,0.0,0.0,1.0,0.0]),
+                    OrientationInterpolator(
+                      DEF="l_knee_RotationInterpolator_Jump", key=[0.0,0.28,0.32,0.48,0.64,0.76,0.88,1.0], keyValue=[0.0,0.0,1.0,0.0,1.0,0.0,0.0,2.047,1.0,0.0,0.0,2.047,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.566,1.0,0.0,0.0,0.5913,1.0,0.0,0.0,0.9235,0.0,0.0,1.0,0.0]),
+                    OrientationInterpolator(
+                      DEF="l_hip_RotationInterpolator_Jump", key=[0.0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.88,1.0], keyValue=[0.0,0.0,1.0,0.0,1.0,0.0,0.0,4.349,1.0,0.0,0.0,4.349,1.0,0.0,0.0,4.615,-1.0,0.0,0.0,0.9136,-1.0,0.0,0.0,0.3614,0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.7869,-1.0,0.0,0.0,0.3918,-1.0,0.0,0.0,0.5433,0.0,0.0,1.0,0.0]),
+                    OrientationInterpolator(
+                      DEF="lower_body_RotationInterpolator_Jump", key=[0.0,0.28,0.32,0.48,0.76,1.0], keyValue=[0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.1892,1.0,0.0,0.0,0.1892,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]),
+                    OrientationInterpolator(
+                      DEF="r_wrist_RotationInterpolator_Jump", key=[0.0,0.28,0.32,0.64,0.76,1.0], keyValue=[0.0,0.0,1.0,0.0,-0.0585279,0.983903,-0.168849,1.85956,-0.0585279,0.983903,-0.168849,1.85956,-0.00222418,0.99801,-0.0630095,1.46072,0.0,1.0,0.0,0.497349,0.0,0.0,1.0,0.0]),
+                    OrientationInterpolator(
+                      DEF="r_elbow_RotationInterpolator_Jump", key=[0.0,0.28,0.32,0.64,0.76,1.0], keyValue=[0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.04151,-1.0,0.0,0.0,0.04151,-1.0,0.0,0.0,0.5855,-1.0,0.0,0.0,0.5852,0.0,0.0,1.0,0.0]),
+                    OrientationInterpolator(
+                      DEF="r_shoulder_RotationInterpolator_Jump", key=[0.0,0.28,0.32,0.64,0.76,0.88,1.0], keyValue=[0.0,0.0,1.0,0.0,0.9992,0.02042,0.03558,4.688,0.9992,0.02042,0.03558,4.688,0.9989,-0.04623,0.005159,4.079,-0.8687,-0.2525,-0.4261,1.501,-0.941,-0.2893,-0.1754,0.4788,0.0,0.0,1.0,0.0]),
+                    OrientationInterpolator(
+                      DEF="l_wrist_RotationInterpolator_Jump", key=[0.0,0.28,0.32,0.64,0.76,0.88,1.0], keyValue=[0.0,0.0,1.0,0.0,0.0672928,0.989475,-0.128107,4.15574,0.0672928,0.989475,-0.128107,4.15574,0.00364942,0.999901,0.0135896,4.5822,0.0,-1.0,0.0,0.655922,-0.00050618,-0.999999,0.0012782,1.28397,0.0,0.0,1.0,0.0]),
+                    OrientationInterpolator(
+                      DEF="l_elbow_RotationInterpolator_Jump", key=[0.0,0.28,0.32,0.64,0.76,1.0], keyValue=[0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.1229,-1.0,0.0,0.0,0.1229,-1.0,0.0,0.0,0.5976,-1.0,0.0,0.0,0.3917,0.0,0.0,1.0,0.0]),
+                    OrientationInterpolator(
+                      DEF="l_shoulder_RotationInterpolator_Jump", key=[0.0,0.28,0.32,0.64,0.76,0.88,1.0], keyValue=[0.0,0.0,1.0,0.0,-0.9987,0.02554,0.04498,1.57,-0.9987,0.02554,0.04498,1.57,1.0,0.0004113,0.003055,4.114,-0.8413,0.3238,0.4329,1.453,-0.877,0.4198,0.2337,0.6009,0.0,0.0,1.0,0.0]),
+                    OrientationInterpolator(
+                      DEF="head_RotationInterpolator_Jump", key=[0.0,0.28,0.32,0.48,0.76,1.0], keyValue=[0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.5989,-1.0,0.0,0.0,0.5989,-1.0,0.0,0.0,0.3216,1.0,0.0,0.0,0.06503,0.0,0.0,1.0,0.0]),
+                    OrientationInterpolator(
+                      DEF="neck_RotationInterpolator_Jump", key=[0.0,0.28,0.32,0.48,0.76,1.0], keyValue=[0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.1942,-1.0,0.0,0.0,0.1942,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.2284,0.0,0.0,1.0,0.0]),
+                    OrientationInterpolator(
+                      DEF="upper_body_RotationInterpolator_Jump", key=[0.0,0.28,0.32,0.48,0.76,0.88,1.0], keyValue=[0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.038,1.0,0.0,0.0,1.038,-1.0,0.0,0.0,0.1057,1.0,0.0,0.0,0.2171,1.0,0.0,0.0,0.3465,0.0,0.0,1.0,0.0]),
+                    OrientationInterpolator(
+                      DEF="whole_body_RotationInterpolator_Jump", key=[0.0,0.28,0.32,0.48,0.64,0.76,1.0], keyValue=[0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.3273,1.0,0.0,0.0,0.3273,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0]),
+                    PositionInterpolator(
+                      DEF="whole_body_TranslationInterpolator_Jump", key=[0.0,0.04,0.08,0.12,0.16,0.2,0.24,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.8,0.84,0.88,0.92,0.96,1.0], keyValue=[0.0,0.0,0.0,0.0,-0.01264,-0.01289,0.0,-0.04712,-0.03738,-0.0003345,-0.1049,-0.05353,-0.0005712,-0.1892,-0.06561,-0.0008233,-0.286,-0.06276,-0.0009591,-0.3795,-0.05148,-0.00106,-0.4484,-0.03656,-0.00106,-0.4484,-0.03656,-0.001122,-0.3269,-0.1499,-0.0008616,-0.13,-0.06358,-0.0005128,-0.03123,-0.05488,0.0004779,0.053,0.02732,0.0001728,0.4148,0.006873,0.0,0.03045,0.02148,0.0,-0.01299,-0.01057,0.0,-0.06932,-0.01064,0.0001365,-0.1037,-0.005059,0.0001279,-0.07198,-0.007596,0.000141,-0.01626,-0.004935,0.0,0.0,0.0]),
+                    TimeSensor(
+                      DEF="Jump_Time", cycleInterval=2.0, startTime=-1.0)])]),
+        ROUTE(
+          fromField="position_changed", fromNode="HudProx", toField="set_translation", toNode="HudXform"),
+        ROUTE(
+          fromField="orientation_changed", fromNode="HudProx", toField="set_rotation", toNode="HudXform"),
+        ROUTE(
+          fromField="touchTime", fromNode="Stand_Touch", toField="stopTime", toNode="Walk_Time"),
+        ROUTE(
+          fromField="touchTime", fromNode="Stand_Touch", toField="stopTime", toNode="Run_Time"),
+        ROUTE(
+          fromField="touchTime", fromNode="Stand_Touch", toField="stopTime", toNode="Jump_Time"),
+        ROUTE(
+          fromField="touchTime", fromNode="Stand_Touch", toField="startTime", toNode="Stand_Time"),
+        ROUTE(
+          fromField="touchTime", fromNode="Walk_Touch", toField="stopTime", toNode="Stand_Time"),
+        ROUTE(
+          fromField="touchTime", fromNode="Walk_Touch", toField="stopTime", toNode="Run_Time"),
+        ROUTE(
+          fromField="touchTime", fromNode="Walk_Touch", toField="stopTime", toNode="Jump_Time"),
+        ROUTE(
+          fromField="touchTime", fromNode="Walk_Touch", toField="startTime", toNode="Walk_Time"),
+        ROUTE(
+          fromField="touchTime", fromNode="Run_Touch", toField="stopTime", toNode="Stand_Time"),
+        ROUTE(
+          fromField="touchTime", fromNode="Run_Touch", toField="stopTime", toNode="Walk_Time"),
+        ROUTE(
+          fromField="touchTime", fromNode="Run_Touch", toField="stopTime", toNode="Jump_Time"),
+        ROUTE(
+          fromField="touchTime", fromNode="Run_Touch", toField="startTime", toNode="Run_Time"),
+        ROUTE(
+          fromField="touchTime", fromNode="Jump_Touch", toField="stopTime", toNode="Stand_Time"),
+        ROUTE(
+          fromField="touchTime", fromNode="Jump_Touch", toField="stopTime", toNode="Walk_Time"),
+        ROUTE(
+          fromField="touchTime", fromNode="Jump_Touch", toField="stopTime", toNode="Run_Time"),
+        ROUTE(
+          fromField="touchTime", fromNode="Jump_Touch", toField="startTime", toNode="Jump_Time"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Stand_Time", toField="set_fraction", toNode="r_ankle_RotationInterpolator_Stand"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Stand_Time", toField="set_fraction", toNode="r_knee_RotationInterpolator_Stand"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Stand_Time", toField="set_fraction", toNode="r_hip_RotationInterpolator_Stand"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Stand_Time", toField="set_fraction", toNode="l_ankle_RotationInterpolator_Stand"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Stand_Time", toField="set_fraction", toNode="l_knee_RotationInterpolator_Stand"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Stand_Time", toField="set_fraction", toNode="l_hip_RotationInterpolator_Stand"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Stand_Time", toField="set_fraction", toNode="lower_body_RotationInterpolator_Stand"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Stand_Time", toField="set_fraction", toNode="r_wrist_RotationInterpolator_Stand"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Stand_Time", toField="set_fraction", toNode="r_elbow_RotationInterpolator_Stand"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Stand_Time", toField="set_fraction", toNode="r_shoulder_RotationInterpolator_Stand"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Stand_Time", toField="set_fraction", toNode="l_wrist_RotationInterpolator_Stand"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Stand_Time", toField="set_fraction", toNode="l_elbow_RotationInterpolator_Stand"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Stand_Time", toField="set_fraction", toNode="l_shoulder_RotationInterpolator_Stand"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Stand_Time", toField="set_fraction", toNode="head_RotationInterpolator_Stand"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Stand_Time", toField="set_fraction", toNode="neck_RotationInterpolator_Stand"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Stand_Time", toField="set_fraction", toNode="upper_body_RotationInterpolator_Stand"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Stand_Time", toField="set_fraction", toNode="whole_body_RotationInterpolator_Stand"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Stand_Time", toField="set_fraction", toNode="whole_body_TranslationInterpolator_Stand"),
+        ROUTE(
+          fromField="value_changed", fromNode="r_ankle_RotationInterpolator_Stand", toField="set_rotation", toNode="hanim_r_ankle"),
+        ROUTE(
+          fromField="value_changed", fromNode="r_knee_RotationInterpolator_Stand", toField="set_rotation", toNode="hanim_r_knee"),
+        ROUTE(
+          fromField="value_changed", fromNode="r_hip_RotationInterpolator_Stand", toField="set_rotation", toNode="hanim_r_hip"),
+        ROUTE(
+          fromField="value_changed", fromNode="l_ankle_RotationInterpolator_Stand", toField="set_rotation", toNode="hanim_l_ankle"),
+        ROUTE(
+          fromField="value_changed", fromNode="l_knee_RotationInterpolator_Stand", toField="set_rotation", toNode="hanim_l_knee"),
+        ROUTE(
+          fromField="value_changed", fromNode="l_hip_RotationInterpolator_Stand", toField="set_rotation", toNode="hanim_l_hip"),
+        ROUTE(
+          fromField="value_changed", fromNode="lower_body_RotationInterpolator_Stand", toField="set_rotation", toNode="hanim_sacroiliac"),
+        ROUTE(
+          fromField="value_changed", fromNode="r_wrist_RotationInterpolator_Stand", toField="set_rotation", toNode="hanim_r_wrist"),
+        ROUTE(
+          fromField="value_changed", fromNode="r_elbow_RotationInterpolator_Stand", toField="set_rotation", toNode="hanim_r_elbow"),
+        ROUTE(
+          fromField="value_changed", fromNode="r_shoulder_RotationInterpolator_Stand", toField="set_rotation", toNode="hanim_r_shoulder"),
+        ROUTE(
+          fromField="value_changed", fromNode="l_wrist_RotationInterpolator_Stand", toField="set_rotation", toNode="hanim_l_wrist"),
+        ROUTE(
+          fromField="value_changed", fromNode="l_elbow_RotationInterpolator_Stand", toField="set_rotation", toNode="hanim_l_elbow"),
+        ROUTE(
+          fromField="value_changed", fromNode="l_shoulder_RotationInterpolator_Stand", toField="set_rotation", toNode="hanim_l_shoulder"),
+        ROUTE(
+          fromField="value_changed", fromNode="head_RotationInterpolator_Stand", toField="set_rotation", toNode="hanim_skullbase"),
+        ROUTE(
+          fromField="value_changed", fromNode="neck_RotationInterpolator_Stand", toField="set_rotation", toNode="hanim_vc4"),
+        ROUTE(
+          fromField="value_changed", fromNode="upper_body_RotationInterpolator_Stand", toField="set_rotation", toNode="hanim_vl1"),
+        ROUTE(
+          fromField="value_changed", fromNode="whole_body_RotationInterpolator_Stand", toField="set_rotation", toNode="hanim_humanoid_root"),
+        ROUTE(
+          fromField="value_changed", fromNode="whole_body_TranslationInterpolator_Stand", toField="set_translation", toNode="hanim_humanoid_root"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Walk_Time", toField="set_fraction", toNode="r_ankle_RotationInterpolator_BasicWalk"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Walk_Time", toField="set_fraction", toNode="r_knee_RotationInterpolator_BasicWalk"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Walk_Time", toField="set_fraction", toNode="r_hip_RotationInterpolator_BasicWalk"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Walk_Time", toField="set_fraction", toNode="l_ankle_RotationInterpolator_BasicWalk"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Walk_Time", toField="set_fraction", toNode="l_knee_RotationInterpolator_BasicWalk"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Walk_Time", toField="set_fraction", toNode="l_hip_RotationInterpolator_BasicWalk"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Walk_Time", toField="set_fraction", toNode="lower_body_RotationInterpolator_BasicWalk"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Walk_Time", toField="set_fraction", toNode="r_wrist_RotationInterpolator_BasicWalk"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Walk_Time", toField="set_fraction", toNode="r_elbow_RotationInterpolator_BasicWalk"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Walk_Time", toField="set_fraction", toNode="r_shoulder_RotationInterpolator_BasicWalk"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Walk_Time", toField="set_fraction", toNode="l_wrist_RotationInterpolator_BasicWalk"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Walk_Time", toField="set_fraction", toNode="l_elbow_RotationInterpolator_BasicWalk"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Walk_Time", toField="set_fraction", toNode="l_shoulder_RotationInterpolator_BasicWalk"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Walk_Time", toField="set_fraction", toNode="head_RotationInterpolator_BasicWalk"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Walk_Time", toField="set_fraction", toNode="neck_RotationInterpolator_BasicWalk"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Walk_Time", toField="set_fraction", toNode="upper_body_RotationInterpolator_BasicWalk"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Walk_Time", toField="set_fraction", toNode="whole_body_RotationInterpolator_BasicWalk"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Walk_Time", toField="set_fraction", toNode="whole_body_TranslationInterpolator_BasicWalk"),
+        ROUTE(
+          fromField="value_changed", fromNode="r_ankle_RotationInterpolator_BasicWalk", toField="set_rotation", toNode="hanim_r_ankle"),
+        ROUTE(
+          fromField="value_changed", fromNode="r_knee_RotationInterpolator_BasicWalk", toField="set_rotation", toNode="hanim_r_knee"),
+        ROUTE(
+          fromField="value_changed", fromNode="r_hip_RotationInterpolator_BasicWalk", toField="set_rotation", toNode="hanim_r_hip"),
+        ROUTE(
+          fromField="value_changed", fromNode="l_ankle_RotationInterpolator_BasicWalk", toField="set_rotation", toNode="hanim_l_ankle"),
+        ROUTE(
+          fromField="value_changed", fromNode="l_knee_RotationInterpolator_BasicWalk", toField="set_rotation", toNode="hanim_l_knee"),
+        ROUTE(
+          fromField="value_changed", fromNode="l_hip_RotationInterpolator_BasicWalk", toField="set_rotation", toNode="hanim_l_hip"),
+        ROUTE(
+          fromField="value_changed", fromNode="lower_body_RotationInterpolator_BasicWalk", toField="set_rotation", toNode="hanim_sacroiliac"),
+        ROUTE(
+          fromField="value_changed", fromNode="r_wrist_RotationInterpolator_BasicWalk", toField="set_rotation", toNode="hanim_r_wrist"),
+        ROUTE(
+          fromField="value_changed", fromNode="r_elbow_RotationInterpolator_BasicWalk", toField="set_rotation", toNode="hanim_r_elbow"),
+        ROUTE(
+          fromField="value_changed", fromNode="r_shoulder_RotationInterpolator_BasicWalk", toField="set_rotation", toNode="hanim_r_shoulder"),
+        ROUTE(
+          fromField="value_changed", fromNode="l_wrist_RotationInterpolator_BasicWalk", toField="set_rotation", toNode="hanim_l_wrist"),
+        ROUTE(
+          fromField="value_changed", fromNode="l_elbow_RotationInterpolator_BasicWalk", toField="set_rotation", toNode="hanim_l_elbow"),
+        ROUTE(
+          fromField="value_changed", fromNode="l_shoulder_RotationInterpolator_BasicWalk", toField="set_rotation", toNode="hanim_l_shoulder"),
+        ROUTE(
+          fromField="value_changed", fromNode="head_RotationInterpolator_BasicWalk", toField="set_rotation", toNode="hanim_skullbase"),
+        ROUTE(
+          fromField="value_changed", fromNode="neck_RotationInterpolator_BasicWalk", toField="set_rotation", toNode="hanim_vc4"),
+        ROUTE(
+          fromField="value_changed", fromNode="upper_body_RotationInterpolator_BasicWalk", toField="set_rotation", toNode="hanim_vl1"),
+        ROUTE(
+          fromField="value_changed", fromNode="whole_body_RotationInterpolator_BasicWalk", toField="set_rotation", toNode="hanim_humanoid_root"),
+        ROUTE(
+          fromField="value_changed", fromNode="whole_body_TranslationInterpolator_BasicWalk", toField="set_translation", toNode="hanim_humanoid_root"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Run_Time", toField="set_fraction", toNode="r_ankle_RotationInterpolator_Run"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Run_Time", toField="set_fraction", toNode="r_knee_RotationInterpolator_Run"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Run_Time", toField="set_fraction", toNode="r_hip_RotationInterpolator_Run"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Run_Time", toField="set_fraction", toNode="l_ankle_RotationInterpolator_Run"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Run_Time", toField="set_fraction", toNode="l_knee_RotationInterpolator_Run"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Run_Time", toField="set_fraction", toNode="l_hip_RotationInterpolator_Run"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Run_Time", toField="set_fraction", toNode="lower_body_RotationInterpolator_Run"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Run_Time", toField="set_fraction", toNode="r_wrist_RotationInterpolator_Run"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Run_Time", toField="set_fraction", toNode="r_elbow_RotationInterpolator_Run"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Run_Time", toField="set_fraction", toNode="r_shoulder_RotationInterpolator_Run"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Run_Time", toField="set_fraction", toNode="l_wrist_RotationInterpolator_Run"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Run_Time", toField="set_fraction", toNode="l_elbow_RotationInterpolator_Run"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Run_Time", toField="set_fraction", toNode="l_shoulder_RotationInterpolator_Run"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Run_Time", toField="set_fraction", toNode="head_RotationInterpolator_Run"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Run_Time", toField="set_fraction", toNode="neck_RotationInterpolator_Run"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Run_Time", toField="set_fraction", toNode="upper_body_RotationInterpolator_Run"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Run_Time", toField="set_fraction", toNode="whole_body_RotationInterpolator_Run"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Run_Time", toField="set_fraction", toNode="whole_body_TranslationInterpolator_Run"),
+        ROUTE(
+          fromField="value_changed", fromNode="r_ankle_RotationInterpolator_Run", toField="set_rotation", toNode="hanim_r_ankle"),
+        ROUTE(
+          fromField="value_changed", fromNode="r_knee_RotationInterpolator_Run", toField="set_rotation", toNode="hanim_r_knee"),
+        ROUTE(
+          fromField="value_changed", fromNode="r_hip_RotationInterpolator_Run", toField="set_rotation", toNode="hanim_r_hip"),
+        ROUTE(
+          fromField="value_changed", fromNode="l_ankle_RotationInterpolator_Run", toField="set_rotation", toNode="hanim_l_ankle"),
+        ROUTE(
+          fromField="value_changed", fromNode="l_knee_RotationInterpolator_Run", toField="set_rotation", toNode="hanim_l_knee"),
+        ROUTE(
+          fromField="value_changed", fromNode="l_hip_RotationInterpolator_Run", toField="set_rotation", toNode="hanim_l_hip"),
+        ROUTE(
+          fromField="value_changed", fromNode="lower_body_RotationInterpolator_Run", toField="set_rotation", toNode="hanim_sacroiliac"),
+        ROUTE(
+          fromField="value_changed", fromNode="r_wrist_RotationInterpolator_Run", toField="set_rotation", toNode="hanim_r_wrist"),
+        ROUTE(
+          fromField="value_changed", fromNode="r_elbow_RotationInterpolator_Run", toField="set_rotation", toNode="hanim_r_elbow"),
+        ROUTE(
+          fromField="value_changed", fromNode="r_shoulder_RotationInterpolator_Run", toField="set_rotation", toNode="hanim_r_shoulder"),
+        ROUTE(
+          fromField="value_changed", fromNode="l_wrist_RotationInterpolator_Run", toField="set_rotation", toNode="hanim_l_wrist"),
+        ROUTE(
+          fromField="value_changed", fromNode="l_elbow_RotationInterpolator_Run", toField="set_rotation", toNode="hanim_l_elbow"),
+        ROUTE(
+          fromField="value_changed", fromNode="l_shoulder_RotationInterpolator_Run", toField="set_rotation", toNode="hanim_l_shoulder"),
+        ROUTE(
+          fromField="value_changed", fromNode="head_RotationInterpolator_Run", toField="set_rotation", toNode="hanim_skullbase"),
+        ROUTE(
+          fromField="value_changed", fromNode="neck_RotationInterpolator_Run", toField="set_rotation", toNode="hanim_vc4"),
+        ROUTE(
+          fromField="value_changed", fromNode="upper_body_RotationInterpolator_Run", toField="set_rotation", toNode="hanim_vl1"),
+        ROUTE(
+          fromField="value_changed", fromNode="whole_body_RotationInterpolator_Run", toField="set_rotation", toNode="hanim_humanoid_root"),
+        ROUTE(
+          fromField="value_changed", fromNode="whole_body_TranslationInterpolator_Run", toField="set_translation", toNode="hanim_humanoid_root"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Jump_Time", toField="set_fraction", toNode="r_ankle_RotationInterpolator_Jump"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Jump_Time", toField="set_fraction", toNode="r_knee_RotationInterpolator_Jump"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Jump_Time", toField="set_fraction", toNode="r_hip_RotationInterpolator_Jump"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Jump_Time", toField="set_fraction", toNode="l_ankle_RotationInterpolator_Jump"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Jump_Time", toField="set_fraction", toNode="l_knee_RotationInterpolator_Jump"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Jump_Time", toField="set_fraction", toNode="l_hip_RotationInterpolator_Jump"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Jump_Time", toField="set_fraction", toNode="lower_body_RotationInterpolator_Jump"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Jump_Time", toField="set_fraction", toNode="r_wrist_RotationInterpolator_Jump"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Jump_Time", toField="set_fraction", toNode="r_elbow_RotationInterpolator_Jump"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Jump_Time", toField="set_fraction", toNode="r_shoulder_RotationInterpolator_Jump"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Jump_Time", toField="set_fraction", toNode="l_wrist_RotationInterpolator_Jump"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Jump_Time", toField="set_fraction", toNode="l_elbow_RotationInterpolator_Jump"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Jump_Time", toField="set_fraction", toNode="l_shoulder_RotationInterpolator_Jump"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Jump_Time", toField="set_fraction", toNode="head_RotationInterpolator_Jump"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Jump_Time", toField="set_fraction", toNode="neck_RotationInterpolator_Jump"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Jump_Time", toField="set_fraction", toNode="upper_body_RotationInterpolator_Jump"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Jump_Time", toField="set_fraction", toNode="whole_body_RotationInterpolator_Jump"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Jump_Time", toField="set_fraction", toNode="whole_body_TranslationInterpolator_Jump"),
+        ROUTE(
+          fromField="value_changed", fromNode="r_ankle_RotationInterpolator_Jump", toField="set_rotation", toNode="hanim_r_ankle"),
+        ROUTE(
+          fromField="value_changed", fromNode="r_knee_RotationInterpolator_Jump", toField="set_rotation", toNode="hanim_r_knee"),
+        ROUTE(
+          fromField="value_changed", fromNode="r_hip_RotationInterpolator_Jump", toField="set_rotation", toNode="hanim_r_hip"),
+        ROUTE(
+          fromField="value_changed", fromNode="l_ankle_RotationInterpolator_Jump", toField="set_rotation", toNode="hanim_l_ankle"),
+        ROUTE(
+          fromField="value_changed", fromNode="l_knee_RotationInterpolator_Jump", toField="set_rotation", toNode="hanim_l_knee"),
+        ROUTE(
+          fromField="value_changed", fromNode="l_hip_RotationInterpolator_Jump", toField="set_rotation", toNode="hanim_l_hip"),
+        ROUTE(
+          fromField="value_changed", fromNode="lower_body_RotationInterpolator_Jump", toField="set_rotation", toNode="hanim_sacroiliac"),
+        ROUTE(
+          fromField="value_changed", fromNode="r_wrist_RotationInterpolator_Jump", toField="set_rotation", toNode="hanim_r_wrist"),
+        ROUTE(
+          fromField="value_changed", fromNode="r_elbow_RotationInterpolator_Jump", toField="set_rotation", toNode="hanim_r_elbow"),
+        ROUTE(
+          fromField="value_changed", fromNode="r_shoulder_RotationInterpolator_Jump", toField="set_rotation", toNode="hanim_r_shoulder"),
+        ROUTE(
+          fromField="value_changed", fromNode="l_wrist_RotationInterpolator_Jump", toField="set_rotation", toNode="hanim_l_wrist"),
+        ROUTE(
+          fromField="value_changed", fromNode="l_elbow_RotationInterpolator_Jump", toField="set_rotation", toNode="hanim_l_elbow"),
+        ROUTE(
+          fromField="value_changed", fromNode="l_shoulder_RotationInterpolator_Jump", toField="set_rotation", toNode="hanim_l_shoulder"),
+        ROUTE(
+          fromField="value_changed", fromNode="head_RotationInterpolator_Jump", toField="set_rotation", toNode="hanim_skullbase"),
+        ROUTE(
+          fromField="value_changed", fromNode="neck_RotationInterpolator_Jump", toField="set_rotation", toNode="hanim_vc4"),
+        ROUTE(
+          fromField="value_changed", fromNode="upper_body_RotationInterpolator_Jump", toField="set_rotation", toNode="hanim_vl1"),
+        ROUTE(
+          fromField="value_changed", fromNode="whole_body_RotationInterpolator_Jump", toField="set_rotation", toNode="hanim_humanoid_root"),
+        ROUTE(
+          fromField="value_changed", fromNode="whole_body_TranslationInterpolator_Jump", toField="set_translation", toNode="hanim_humanoid_root")]))
+.XML())

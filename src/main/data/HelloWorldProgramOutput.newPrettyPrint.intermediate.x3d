@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Full' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<X3D class='x3dModel.class' profile='Full' style='x3dModel.style' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <!-- x3dVersionComparisonTest for this model: supportsX3dVersion(X3D.VERSION_3_0)=true -->
   <head>
     <!-- comment #1 -->
@@ -23,7 +23,7 @@
     <meta content='https://www.web3d.org/specifications/java/X3DJSAIL.html' name='reference'/>
     <meta content='HelloWorldProgramOutput.java' name='generator'/>
     <meta content='6 September 2016' name='created'/>
-    <meta content='20 December 2020' name='modified'/>
+    <meta content='9 January 2022' name='modified'/>
     <meta content='X3D Java Scene Access Interface Library (X3DJSAIL)' name='generator'/>
     <meta content='https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java' name='generator'/>
     <meta content='Netbeans http://www.netbeans.org' name='generator'/>
@@ -44,7 +44,7 @@
       <Viewpoint DEF='TopDownView' description='top-down view from above' orientation='1 0 0 -1.570796' position='0 100 0'/>
     </ViewpointGroup>
     <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE" "FLY" "ANY"'/>
-    <WorldInfo DEF='WorldInfoDEF' title='HelloWorldProgram produced by X3D Java SAI Library (X3DJSAIL)'/>
+    <WorldInfo DEF='WorldInfoDEF' class='worldInfoNode.class' style='worldInfoNode.style' title='HelloWorldProgram produced by X3D Java SAI Library (X3DJSAIL)'/>
     <WorldInfo USE='WorldInfoDEF'/>
     <WorldInfo USE='WorldInfoDEF'/>
     <MetadataString DEF='scene.addChildMetadata' name='test' value='"Top-level root Metadata node beneath Scene needs to be one of &apos;-children&apos; in JSON encoding"'/>
@@ -82,8 +82,7 @@
           <!-- Comment example A, plain quotation marks: He said, "Immel did it!" -->
           <!-- Comment example B, XML character entities: He said, &quot;Immel did it!&quot; -->
           <MetadataSet name='EscapedQuotationMarksMetadataSet'>
-            <MetadataString name='quotesTestC' containerField='value' value='"MFString example C, backslash-escaped quotes: He said, \"Immel did it!\""'/>
-            <MetadataString name='extraChildTest' containerField='value' value='"checks MetadataSet addValue() method"'/>
+            <MetadataString name='extraChildTest' value='"checks MetadataSet addValue() method"'/>
           </MetadataSet>
           <FontStyle family='"SERIF"' justify='"MIDDLE" "MIDDLE"'/>
         </Text>

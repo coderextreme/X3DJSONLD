@@ -323,7 +323,9 @@ setCDATACreateFunction : function(fnc) {
  */
 ConvertObject : function(xmlDoc, key, object, element, path, containerField) {
 	if (object !== null && typeof object[key] === 'object') {
-		if (key.substr(0,1) === '@') {
+		if (key === '@sourceCode') {
+			this.CDATACreateFunction(xmlDoc, element, object[key].join("\r\n")+"\r\n");
+		} else if (key.substr(0,1) === '@') {
 			this.ConvertToX3DOM(xmlDoc, object[key], key, element, path);
 		} else if (key.substr(0,1) === '-') {
 			this.ConvertChildren(xmlDoc, key, object[key], element, path);

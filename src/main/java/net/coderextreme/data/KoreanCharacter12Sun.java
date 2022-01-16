@@ -40,7 +40,9 @@ public class KoreanCharacter12Sun {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new KoreanCharacter12Sun().initialize().toFileJSON("../data/KoreanCharacter12Sun.new.json");
+    X3D model = new KoreanCharacter12Sun().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../data/KoreanCharacter12Sun.new.json");
     }
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")

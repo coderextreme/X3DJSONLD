@@ -40,7 +40,9 @@ public class X3dHeaderPrototypeSyntaxExamples {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new X3dHeaderPrototypeSyntaxExamples().initialize().toFileJSON("../data/X3dHeaderPrototypeSyntaxExamples.new.json");
+    X3D model = new X3dHeaderPrototypeSyntaxExamples().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../data/X3dHeaderPrototypeSyntaxExamples.new.json");
     }
     public X3D initialize() {
 ProtoInstance ProtoInstance0 = null;

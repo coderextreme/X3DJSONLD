@@ -40,7 +40,9 @@ public class CameraShape {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new CameraShape().initialize().toFileJSON("../data/CameraShape.new.json");
+    X3D model = new CameraShape().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../data/CameraShape.new.json");
     }
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Interactive").setVersion("3.1")

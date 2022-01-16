@@ -40,7 +40,9 @@ public class HelloWorldProgramOutput {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new HelloWorldProgramOutput().initialize().toFileJSON("../data/HelloWorldProgramOutput.new.json");
+    X3D model = new HelloWorldProgramOutput().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../data/HelloWorldProgramOutput.new.json");
     }
     public X3D initialize() {
 ProtoInstance ProtoInstance0 = null;

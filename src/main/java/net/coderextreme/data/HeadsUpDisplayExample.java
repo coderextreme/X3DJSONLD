@@ -40,7 +40,9 @@ public class HeadsUpDisplayExample {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new HeadsUpDisplayExample().initialize().toFileJSON("../data/HeadsUpDisplayExample.new.json");
+    X3D model = new HeadsUpDisplayExample().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../data/HeadsUpDisplayExample.new.json");
     }
     public X3D initialize() {
 ProtoInstance ProtoInstance0 = null;

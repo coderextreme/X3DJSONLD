@@ -109,7 +109,9 @@ JavaSerializer.prototype = {
 		str += "  public static void main(String[] args) {\n";
 		str += "    ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);\n";
 		str += "    ConfigurationProperties.setDeleteIntermediateFiles(false);\n";
-		str += "    new "+clz+"().initialize().toFileJSON(\""+clazz+".new.json\");\n";
+		str += "    "+element.nodeName+" model = new "+clz+"().initialize();\n"
+		str += "    System.out.print(model.validationReport().trim());\n"
+		str += "    model.toFileJSON(\""+clazz+".new.json\");\n";
 		str += "    }\n";
 		str += "    public "+element.nodeName+" initialize() {\n";
 
@@ -277,6 +279,16 @@ JavaSerializer.prototype = {
 			method = "Metadata"
 			addpre = "add";
 		}
+		/*
+		if (node.nodeName === 'MetadataSet' && addpre+method === "addValue") {
+			method = "Metadata"
+			addpre = "set";
+		}
+		if (node.nodeName === 'MetadataString' && addpre+method === "addValue") {
+			method = "Metadata"
+			addpre = "set";
+		}
+		*/
 		if (element.nodeName === 'HAnimHumanoid' && addpre+method === "addValue") {
 			method = "Metadata"
 			addpre = "set";

@@ -1,301 +1,74 @@
-from x3dpsail import *
-X3D0 = X3D()
-X3D0.setProfile("Immersive")
-X3D0.setVersion("4.0")
-head1 = head()
-component2 = component()
-component2.setName("Shaders")
-component2.setLevel(1)
-
-head1.addComponent(component2)
-component3 = component()
-component3.setName("CubeMapTexturing")
-component3.setLevel(1)
-
-head1.addComponent(component3)
-component4 = component()
-component4.setName("Texturing")
-component4.setLevel(1)
-
-head1.addComponent(component4)
-component5 = component()
-component5.setName("Rendering")
-component5.setLevel(1)
-
-head1.addComponent(component5)
-component6 = component()
-component6.setName("Shape")
-component6.setLevel(4)
-
-head1.addComponent(component6)
-component7 = component()
-component7.setName("Grouping")
-component7.setLevel(3)
-
-head1.addComponent(component7)
-meta8 = meta()
-meta8.setName("title")
-meta8.setContent("flowers4.x3d")
-
-head1.addMeta(meta8)
-meta9 = meta()
-meta9.setName("creator")
-meta9.setContent("John Carlson")
-
-head1.addMeta(meta9)
-meta10 = meta()
-meta10.setName("generator")
-meta10.setContent("manual")
-
-head1.addMeta(meta10)
-meta11 = meta()
-meta11.setName("identifier")
-meta11.setContent("https://coderextreme.net/X3DJSONLD/flowers4.x3d")
-
-head1.addMeta(meta11)
-meta12 = meta()
-meta12.setName("description")
-meta12.setContent("an animated flower")
-
-head1.addMeta(meta12)
-
-X3D0.setHead(head1)
-Scene13 = Scene()
-NavigationInfo14 = NavigationInfo()
-
-Scene13.addChildren(NavigationInfo14)
-Background15 = Background()
-Background15.setBackUrl(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"])
-Background15.setBottomUrl(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"])
-Background15.setFrontUrl(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"])
-Background15.setLeftUrl(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"])
-Background15.setRightUrl(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"])
-Background15.setTopUrl(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"])
-
-Scene13.addChildren(Background15)
-Transform16 = Transform()
-Transform16.setDEF("transform")
-Shape17 = Shape()
-Appearance18 = Appearance()
-Material19 = Material()
-Material19.setDiffuseColor([0.7,0.7,0.7])
-Material19.setSpecularColor([0.5,0.5,0.5])
-
-Appearance18.setMaterial(Material19)
-ComposedCubeMapTexture20 = ComposedCubeMapTexture()
-ImageTexture21 = ImageTexture()
-ImageTexture21.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"])
-
-ComposedCubeMapTexture20.setBack(ImageTexture21)
-ImageTexture22 = ImageTexture()
-ImageTexture22.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"])
-
-ComposedCubeMapTexture20.setBottom(ImageTexture22)
-ImageTexture23 = ImageTexture()
-ImageTexture23.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"])
-
-ComposedCubeMapTexture20.setFront(ImageTexture23)
-ImageTexture24 = ImageTexture()
-ImageTexture24.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"])
-
-ComposedCubeMapTexture20.setLeft(ImageTexture24)
-ImageTexture25 = ImageTexture()
-ImageTexture25.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"])
-
-ComposedCubeMapTexture20.setRight(ImageTexture25)
-ImageTexture26 = ImageTexture()
-ImageTexture26.setUrl(["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"])
-
-ComposedCubeMapTexture20.setTop(ImageTexture26)
-
-Appearance18.setTexture(ComposedCubeMapTexture20)
-ComposedShader27 = ComposedShader()
-ComposedShader27.setDEF("shader")
-ComposedShader27.setLanguage("GLSL")
-field28 = field()
-field28.setName("cube")
-field28.setType("SFInt32")
-field28.setAccessType("inputOutput")
-field28.setValue("0")
-
-ComposedShader27.addField(field28)
-field29 = field()
-field29.setName("chromaticDispertion")
-field29.setAccessType("inputOutput")
-field29.setType("SFVec3f")
-field29.setValue("0.98 1 1.033")
-
-ComposedShader27.addField(field29)
-field30 = field()
-field30.setName("bias")
-field30.setType("SFFloat")
-field30.setAccessType("inputOutput")
-field30.setValue("0.5")
-
-ComposedShader27.addField(field30)
-field31 = field()
-field31.setName("scale")
-field31.setType("SFFloat")
-field31.setAccessType("inputOutput")
-field31.setValue("0.5")
-
-ComposedShader27.addField(field31)
-field32 = field()
-field32.setName("power")
-field32.setType("SFFloat")
-field32.setAccessType("inputOutput")
-field32.setValue("2")
-
-ComposedShader27.addField(field32)
-ShaderPart33 = ShaderPart()
-ShaderPart33.setUrl(["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"])
-ShaderPart33.setType("VERTEX")
-
-ComposedShader27.addParts(ShaderPart33)
-ShaderPart34 = ShaderPart()
-ShaderPart34.setUrl(["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"])
-ShaderPart34.setType("FRAGMENT")
-
-ComposedShader27.addParts(ShaderPart34)
-
-Appearance18.addShaders(ComposedShader27)
-
-Shape17.setAppearance(Appearance18)
-#<Sphere>
-IndexedFaceSet35 = IndexedFaceSet()
-IndexedFaceSet35.setConvex(False)
-IndexedFaceSet35.setDEF("Orbit")
-Coordinate36 = Coordinate()
-Coordinate36.setDEF("OrbitCoordinates")
-
-IndexedFaceSet35.setCoord(Coordinate36)
-
-Shape17.setGeometry(IndexedFaceSet35)
-
-Transform16.addChildren(Shape17)
-
-Scene13.addChildren(Transform16)
-Script37 = Script()
-Script37.setDEF("OrbitScript")
-field38 = field()
-field38.setName("set_fraction")
-field38.setAccessType("inputOnly")
-field38.setType("SFFloat")
-
-Script37.addField(field38)
-field39 = field()
-field39.setName("coordinates")
-field39.setAccessType("inputOutput")
-field39.setType("MFVec3f")
-
-Script37.addField(field39)
-field40 = field()
-field40.setName("coordIndexes")
-field40.setAccessType("outputOnly")
-field40.setType("MFInt32")
-
-Script37.addField(field40)
-
-Script37.setSourceCode('''ecmascript:\n"+
-"\n"+
-"var e = 5;\n"+
-"var f = 5;\n"+
-"var g = 5;\n"+
-"var h = 5;\n"+
-"\n"+
-"function initialize() {\n"+
-"     var resolution = 100;\n"+
-"     updateCoordinates(resolution);\n"+
-"     var cis = [];\n"+
-"     for ( i = 0; i < resolution-1; i++) {\n"+
-"     	for ( j = 0; j < resolution-1; j++) {\n"+
-"	     cis.push(i*resolution+j);\n"+
-"	     cis.push(i*resolution+j+1);\n"+
-"	     cis.push((i+1)*resolution+j+1);\n"+
-"	     cis.push((i+1)*resolution+j);\n"+
-"	     cis.push(-1);\n"+
-"	}\n"+
-"    }\n"+
-"    coordIndexes = new MFInt32(cis);\n"+
-"}\n"+
-"\n"+
-"function updateCoordinates(resolution) {\n"+
-"     var theta = 0.0;\n"+
-"     var phi = 0.0;\n"+
-"     var delta = (2 * 3.141592653) / (resolution-1);\n"+
-"     var crds = [];\n"+
-"     for ( i = 0; i < resolution; i++) {\n"+
-"     	for ( j = 0; j < resolution; j++) {\n"+
-"		var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);\n"+
-"		crds.push(new SFVec3f(\n"+
-"			rho * Math.cos(phi) * Math.cos(theta),\n"+
-"			rho * Math.cos(phi) * Math.sin(theta),\n"+
-"			rho * Math.sin(phi)\n"+
-"		));\n"+
-"		theta += delta;\n"+
-"	}\n"+
-"	phi += delta;\n"+
-"     }\n"+
-"     coordinates = new MFVec3f(crds);\n"+
-"}\n"+
-"\n"+
-"function set_fraction(fraction, eventTime) {\n"+
-"	var choice = Math.floor(Math.random() * 4);\n"+
-"	switch (choice) {\n"+
-"	case 0:\n"+
-"		e += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	case 1:\n"+
-"		f += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	case 2:\n"+
-"		g += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	case 3:\n"+
-"		h += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	}\n"+
-"	if (f < 1) {\n"+
-"		f = 10;\n"+
-"	}\n"+
-"	if (g < 1) {\n"+
-"		g = 4;\n"+
-"	}\n"+
-"	if (h < 1) {\n"+
-"		h = 4;\n"+
-"	}\n"+
-"	var resolution = 100;\n"+
-"	updateCoordinates(resolution);\n"+
-"}''')
-
-Scene13.addChildren(Script37)
-TimeSensor41 = TimeSensor()
-TimeSensor41.setDEF("Clock")
-TimeSensor41.setCycleInterval(16)
-TimeSensor41.setLoop(True)
-
-Scene13.addChildren(TimeSensor41)
-ROUTE42 = ROUTE()
-ROUTE42.setFromField("coordIndexes")
-ROUTE42.setFromNode("OrbitScript")
-ROUTE42.setToField("set_coordIndex")
-ROUTE42.setToNode("Orbit")
-
-Scene13.addChildren(ROUTE42)
-ROUTE43 = ROUTE()
-ROUTE43.setFromField("coordinates")
-ROUTE43.setFromNode("OrbitScript")
-ROUTE43.setToField("set_point")
-ROUTE43.setToNode("OrbitCoordinates")
-
-Scene13.addChildren(ROUTE43)
-ROUTE44 = ROUTE()
-ROUTE44.setFromField("fraction_changed")
-ROUTE44.setFromNode("Clock")
-ROUTE44.setToField("set_fraction")
-ROUTE44.setToNode("OrbitScript")
-
-Scene13.addChildren(ROUTE44)
-
-X3D0.setScene(Scene13)
-X3D0.toFileX3D("../data/flowers4_RoundTrip.x3d")
+from x3d import *
+print(
+X3D(
+  profile="Immersive", version="4.0", head=head(  children=[
+      
+          component(name="Shaders", level=1),
+          component(name="CubeMapTexturing", level=1),
+          component(name="Texturing", level=1),
+          component(name="Rendering", level=1),
+          component(name="Shape", level=4),
+          component(name="Grouping", level=3), 
+          meta(name="title", content="flowers4.x3d"),
+          meta(name="creator", content="John Carlson"),
+          meta(name="generator", content="manual"),
+          meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/flowers4.x3d"),
+          meta(name="description", content="an animated flower"),
+          meta(name="translated", content="16 January 2022"),
+          meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+          meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")]), Scene=Scene(
+    children=[
+        NavigationInfo(
+          ),
+        Background(
+          backUrl=("../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"), bottomUrl=("../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"), frontUrl=("../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"), leftUrl=("../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"), rightUrl=("../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"), topUrl=("../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png")),
+        Transform(
+          DEF="transform", children=[
+              Shape(
+                appearance=Appearance(
+                    material=Material(
+                        diffuseColor=(0.7,0.7,0.7), specularColor=(0.5,0.5,0.5)), texture=ComposedCubeMapTexture(
+                        back(
+                          ImageTexture(
+                            url=["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"])), bottom(
+                          ImageTexture(
+                            url=["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"])), front(
+                          ImageTexture(
+                            url=["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"])), left(
+                          ImageTexture(
+                            url=["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"])), right(
+                          ImageTexture(
+                            url=["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"])), top(
+                          ImageTexture(
+                            url=["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"]))), shaders=(
+                        ComposedShader(
+                          DEF="shader", language="GLSL", field=[
+                              field(name="cube", type="SFInt32", accessType="inputOutput", value=0),
+                              field(name="chromaticDispertion", accessType="inputOutput", type="SFVec3f", value=(0.98,1.0,1.033)),
+                              field(name="bias", type="SFFloat", accessType="inputOutput", value=0.5),
+                              field(name="scale", type="SFFloat", accessType="inputOutput", value=0.5),
+                              field(name="power", type="SFFloat", accessType="inputOutput", value=2)], parts=(
+                              ShaderPart(
+                                url=["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"], type="VERTEX"),
+                              ShaderPart(
+                                url=["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"], type="FRAGMENT"))))), children=[#<Sphere>
+], geometry=IndexedFaceSet(
+                    convex=False, DEF="Orbit", coord(
+                      Coordinate(
+                        DEF="OrbitCoordinates"))))]),
+        Script(
+          DEF="OrbitScript", field=[
+              field(name="set_fraction", accessType="inputOnly", type="SFFloat"),
+              field(name="coordinates", accessType="inputOutput", type="MFVec3f"),
+              field(name="coordIndexes", accessType="outputOnly", type="MFInt32")], #['', '', '', 'ecmascript:', '', 'var e = 5;', 'var f = 5;', 'var g = 5;', 'var h = 5;', '', 'function initialize() {', '     var resolution = 100;', '     updateCoordinates(resolution);', '     var cis = [];', '     for ( i = 0; i < resolution-1; i++) {', '     \tfor ( j = 0; j < resolution-1; j++) {', '\t     cis.push(i*resolution+j);', '\t     cis.push(i*resolution+j+1);', '\t     cis.push((i+1)*resolution+j+1);', '\t     cis.push((i+1)*resolution+j);', '\t     cis.push(-1);', '\t}', '    }', '    coordIndexes = new MFInt32(cis);', '}', '', 'function updateCoordinates(resolution) {', '     var theta = 0.0;', '     var phi = 0.0;', '     var delta = (2 * 3.141592653) / (resolution-1);', '     var crds = [];', '     for ( i = 0; i < resolution; i++) {', '     \tfor ( j = 0; j < resolution; j++) {', '\t\tvar rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);', '\t\tcrds.push(new SFVec3f(', '\t\t\trho * Math.cos(phi) * Math.cos(theta),', '\t\t\trho * Math.cos(phi) * Math.sin(theta),', '\t\t\trho * Math.sin(phi)', '\t\t));', '\t\ttheta += delta;', '\t}', '\tphi += delta;', '     }', '     coordinates = new MFVec3f(crds);', '}', '', 'function set_fraction(fraction, eventTime) {', '\tvar choice = Math.floor(Math.random() * 4);', '\tswitch (choice) {', '\tcase 0:', '\t\te += Math.floor(Math.random() * 2) * 2 - 1;', '\t\tbreak;', '\tcase 1:', '\t\tf += Math.floor(Math.random() * 2) * 2 - 1;', '\t\tbreak;', '\tcase 2:', '\t\tg += Math.floor(Math.random() * 2) * 2 - 1;', '\t\tbreak;', '\tcase 3:', '\t\th += Math.floor(Math.random() * 2) * 2 - 1;', '\t\tbreak;', '\t}', '\tif (f < 1) {', '\t\tf = 10;', '\t}', '\tif (g < 1) {', '\t\tg = 4;', '\t}', '\tif (h < 1) {', '\t\th = 4;', '\t}', '\tvar resolution = 100;', '\tupdateCoordinates(resolution);', '}', '']
+    
+    ),
+        TimeSensor(
+          DEF="Clock", cycleInterval=16, loop=True),
+        ROUTE(
+          fromField="coordIndexes", fromNode="OrbitScript", toField="set_coordIndex", toNode="Orbit"),
+        ROUTE(
+          fromField="coordinates", fromNode="OrbitScript", toField="set_point", toNode="OrbitCoordinates"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="Clock", toField="set_fraction", toNode="OrbitScript")]))
+.XML())

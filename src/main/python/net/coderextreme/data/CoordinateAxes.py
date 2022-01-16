@@ -1,28 +1,28 @@
 from x3d import *
 print(
 X3D(
-  profile='Immersive', version='3.3', head=head(  children=[
+  profile="Immersive", version="3.3", head=head(  children=[
       
-          meta(name='title', content='CoordinateAxes.x3d'),
-          meta(name='creator', content='Don Brutzman, Byounghyun Yoo'),
-          meta(name='created', content='14 July 2000'),
-          meta(name='modified', content='20 October 2019'),
-          meta(name='description', content='X Y Z axis arrows and labels in X3D coordinate system. See CoordinateAxesExample for use as an Inline coordinate-system reference frame.'),
-          meta(name='reference', content='http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d'),
-          meta(name='reference', content='http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxesNSEW.x3d'),
-          meta(name='reference', content='https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d'),
-          meta(name='reference', content='https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxesNSEW.x3d'),
-          meta(name='identifier', content='http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d'),
-          meta(name='generator', content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit'),
-          meta(name='license', content='../license.html'),
-          meta(name='translated', content='16 January 2022'),
-          meta(name='generator', content='X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html'),
-          meta(name='reference', content='X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding')]), Scene=Scene(
+          meta(name="title", content="CoordinateAxes.x3d"),
+          meta(name="creator", content="Don Brutzman, Byounghyun Yoo"),
+          meta(name="created", content="14 July 2000"),
+          meta(name="modified", content="20 October 2019"),
+          meta(name="description", content="X Y Z axis arrows and labels in X3D coordinate system. See CoordinateAxesExample for use as an Inline coordinate-system reference frame."),
+          meta(name="reference", content="http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d"),
+          meta(name="reference", content="http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxesNSEW.x3d"),
+          meta(name="reference", content="https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d"),
+          meta(name="reference", content="https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxesNSEW.x3d"),
+          meta(name="identifier", content="http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d"),
+          meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+          meta(name="license", content="../license.html"),
+          meta(name="translated", content="16 January 2022"),
+          meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+          meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")]), Scene=Scene(
     children=[
         WorldInfo(
-          title='CoordinateAxes.x3d'),
+          title="CoordinateAxes.x3d"),
         Collision(
-          DEF='DoNotCollideWithVisualizationWidget', children=[#Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph.
+          DEF="DoNotCollideWithVisualizationWidget", children=[#Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph.
 #This NavigationInfo allows examine mode and will be overridden by any parent scene.
 #Each arrow goes from +1m to -1m to allow linear scaling to fit a scene
 #Note each label rotates about the scene's vertical Y axis for consistency, enabling local orientation by user
@@ -31,46 +31,46 @@ X3D(
                 children=[#Vertical Y arrow and label
 
                     Group(
-                      DEF='ArrowGreen', children=[
+                      DEF="ArrowGreen", children=[
                           Shape(
                             geometry=Cylinder(
-                                DEF='ArrowCylinder', radius=0.025, top=False), appearance=Appearance(
-                                DEF='Green', material=Material(
+                                DEF="ArrowCylinder", radius=0.025, top=False), appearance=Appearance(
+                                DEF="Green", material=Material(
                                     diffuseColor=(0.1,0.6,0.1), emissiveColor=(0.05,0.2,0.05)))),
                           Transform(
                             translation=(0,1,0), children=[
                                 Shape(
                                   geometry=Cone(
-                                      DEF='ArrowCone', bottomRadius=0.05, height=0.1), appearance=Appearance(
-                                      USE='Green'))])]),
+                                      DEF="ArrowCone", bottomRadius=0.05, height=0.1), appearance=Appearance(
+                                      USE="Green"))])]),
                     Transform(
                       translation=(0,1.08,0), children=[
                           Billboard(
                             children=[
                                 Shape(
                                   appearance=Appearance(
-                                      DEF='LABEL_APPEARANCE', material=Material(
+                                      DEF="LABEL_APPEARANCE", material=Material(
                                           diffuseColor=(1,1,0.3), emissiveColor=(0.33,0.33,0.1))), geometry=Text(
-                                      string=['Y'], fontStyle=FontStyle(
-                                          DEF='LABEL_FONT', family=('SANS'), justify=['MIDDLE','MIDDLE'], size=0.2)))])])]),
+                                      string=["Y"], fontStyle=FontStyle(
+                                          DEF="LABEL_FONT", family=("SANS"), justify=["MIDDLE","MIDDLE"], size=0.2)))])])]),
               Transform(
                 rotation=(0,0,1,-1.57079), children=[#Horizontal X arrow and label
 
                     Group(
                       children=[
                           Group(
-                            DEF='ArrowRed', children=[
+                            DEF="ArrowRed", children=[
                                 Shape(
                                   geometry=Cylinder(
-                                      USE='ArrowCylinder'), appearance=Appearance(
-                                      DEF='Red', material=Material(
+                                      USE="ArrowCylinder"), appearance=Appearance(
+                                      DEF="Red", material=Material(
                                           diffuseColor=(0.7,0.1,0.1), emissiveColor=(0.33,0,0)))),
                                 Transform(
                                   translation=(0,1,0), children=[
                                       Shape(
                                         geometry=Cone(
-                                            USE='ArrowCone'), appearance=Appearance(
-                                            USE='Red'))])]),
+                                            USE="ArrowCone"), appearance=Appearance(
+                                            USE="Red"))])]),
                           Transform(
                             rotation=(0,0,1,1.57079), translation=(0.072,1.1,0), children=[#note label rotated back to original coordinate frame
 
@@ -78,27 +78,27 @@ X3D(
                                   children=[
                                       Shape(
                                         appearance=Appearance(
-                                            USE='LABEL_APPEARANCE'), geometry=Text(
-                                            string=['X'], fontStyle=FontStyle(
-                                                USE='LABEL_FONT')))])])])]),
+                                            USE="LABEL_APPEARANCE"), geometry=Text(
+                                            string=["X"], fontStyle=FontStyle(
+                                                USE="LABEL_FONT")))])])])]),
               Transform(
                 rotation=(1,0,0,1.57079), children=[#Perpendicular Z arrow and label, note right-hand rule
 
                     Group(
                       children=[
                           Group(
-                            DEF='ArrowBlue', children=[
+                            DEF="ArrowBlue", children=[
                                 Shape(
                                   geometry=Cylinder(
-                                      USE='ArrowCylinder'), appearance=Appearance(
-                                      DEF='Blue', material=Material(
+                                      USE="ArrowCylinder"), appearance=Appearance(
+                                      DEF="Blue", material=Material(
                                           diffuseColor=(0.3,0.3,1), emissiveColor=(0.1,0.1,0.33)))),
                                 Transform(
                                   translation=(0,1,0), children=[
                                       Shape(
                                         geometry=Cone(
-                                            USE='ArrowCone'), appearance=Appearance(
-                                            USE='Blue'))])]),
+                                            USE="ArrowCone"), appearance=Appearance(
+                                            USE="Blue"))])]),
                           Transform(
                             rotation=(1,0,0,-1.57079), translation=(0,1.1,0.072), children=[#note label rotated back to original coordinate frame
 
@@ -106,7 +106,7 @@ X3D(
                                   children=[
                                       Shape(
                                         appearance=Appearance(
-                                            USE='LABEL_APPEARANCE'), geometry=Text(
-                                            string=['Z'], fontStyle=FontStyle(
-                                                USE='LABEL_FONT')))])])])])])]))
+                                            USE="LABEL_APPEARANCE"), geometry=Text(
+                                            string=["Z"], fontStyle=FontStyle(
+                                                USE="LABEL_FONT")))])])])])])]))
 .XML())

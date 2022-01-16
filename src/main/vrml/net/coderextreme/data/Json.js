@@ -65,7 +65,7 @@ head1.unit[9] = unit11;
 
 let meta12 = browser.currentScene.createNode("meta");
 meta12.name = "title";
-meta12.content = "HelloWorldProgramOutput.x3d";
+meta12.content = "Json.x3d";
 head1.meta[10] = meta12;
 
 let meta13 = browser.currentScene.createNode("meta");

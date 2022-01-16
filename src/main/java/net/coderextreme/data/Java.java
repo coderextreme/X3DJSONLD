@@ -40,7 +40,9 @@ public class Java {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new Java().initialize().toFileJSON("../data/Java.new.json");
+    X3D model = new Java().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../data/Java.new.json");
     }
     public X3D initialize() {
 ProtoInstance ProtoInstance0 = null;

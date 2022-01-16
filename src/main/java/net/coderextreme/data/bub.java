@@ -40,7 +40,9 @@ public class bub {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new bub().initialize().toFileJSON("../data/bub.new.json");
+    X3D model = new bub().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../data/bub.new.json");
     }
     public X3D initialize() {
 ProtoInstance ProtoInstance0 = null;

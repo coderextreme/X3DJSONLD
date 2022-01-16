@@ -40,7 +40,9 @@ public class ViewFrustumExample {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new ViewFrustumExample().initialize().toFileJSON("../data/ViewFrustumExample.new.json");
+    X3D model = new ViewFrustumExample().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../data/ViewFrustumExample.new.json");
     }
     public X3D initialize() {
 ProtoInstance ProtoInstance0 = null;

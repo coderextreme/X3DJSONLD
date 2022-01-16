@@ -3507,7 +3507,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     </xsl:element>
                 </xsl:when>
                 <xsl:when test="(local-name(..)='meta' and (../@name='generator') and local-name()='content') and contains(string(.),'http')">
-                    <xsl:variable name="prefixProse"  select="substring-before(.,'http://')"/>
+                    <xsl:variable name="prefixProse"  select="substring-before(.,'http')"/><!-- also https -->
                     <xsl:variable name="containedUrl" select="substring-after (.,$prefixProse)"/>
                     <!--	<xsl:message>
                                         <xsl:text>$prefixProse=</xsl:text>

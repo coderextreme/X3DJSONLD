@@ -607,14 +607,14 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                     <!-- <xsl:sort select="@containerField" order="ascending"/> avoid sorting, some nodes have empty containerField -->
                 </xsl:apply-templates>
                 <xsl:variable name="hasCDATA">
-                    <xsl:value-of select="(string-length(normalize-space(text())) > 1)" disable-output-escaping="yes"/>
+                    <xsl:value-of select="(string-length(normalize-space(string-join(child::text(),' '))) > 1)" disable-output-escaping="yes"/>
                 </xsl:variable>       
                 <xsl:if test="(local-name() = 'Script') and $hasCDATA">
                     <xsl:text>&#10;</xsl:text>
-                    <xsl:text>*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script</xsl:text> 
+                    <xsl:text>*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script</xsl:text> 
                     <xsl:text>&#10;</xsl:text>
                     <xsl:message>
-                        <xsl:text>*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script</xsl:text> 
+                        <xsl:text>*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script</xsl:text> 
                     </xsl:message>
                 </xsl:if>
                 
@@ -2636,7 +2636,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
     <!-- ===================================================== -->
 
     <xsl:template name="pythonValue">
-        <xsl:param name="x3dValue"/>
+        <xsl:param name="x3dValue"><xsl:text></xsl:text></xsl:param>
         <xsl:param name="x3dType">SFString</xsl:param><!-- default if x3dType is unknown -->
         <xsl:variable name="isTuple"         select="contains($x3dType,'Vec') or contains($x3dType,'Rotation') or contains($x3dType,'Color') or contains($x3dType,'Matrix')"/>
         <xsl:variable name="isList"          select="starts-with($x3dType,'MF') or ($x3dType = 'SFImage')"/>
@@ -2653,7 +2653,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
         <xsl:choose>
             <xsl:when test="$isList">
                 <xsl:text>[</xsl:text>
-                <xsl:if test="$isTuple and (string-length($x3dValue) > 0) and not(starts-with(normalize-space($x3dValue),'('))">
+                <xsl:if test="$isTuple and (string-length(string($x3dValue)) > 0) and not(starts-with(normalize-space($x3dValue),'('))">
                     <!-- list containing a tuple -->
                     <xsl:text>(</xsl:text>
                 </xsl:if>
@@ -2675,25 +2675,25 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
         </xsl:choose>
         <!-- convert value from .x3d XML syntax to Python -->
         <xsl:choose>
-            <xsl:when test="($x3dValue = 'true') and ($x3dType = 'SFBool')">
+            <xsl:when test="(string($x3dValue) = 'true') and ($x3dType = 'SFBool')">
                 <xsl:text>True</xsl:text>
             </xsl:when>
-            <xsl:when test="($x3dValue = 'false') and ($x3dType = 'SFBool')">
+            <xsl:when test="(string($x3dValue) = 'false') and ($x3dType = 'SFBool')">
                 <xsl:text>False</xsl:text>
             </xsl:when>
             <xsl:when test="($x3dType = 'MFBool')">
                 <!-- Python boolean values are True and False, comma-separated list -->
-                <xsl:value-of select="translate(translate(translate($x3dValue,'f','F'),'t','T'),' ',',')"/>
+                <xsl:value-of select="translate(translate(translate(string($x3dValue),'f','F'),'t','T'),' ',',')"/>
             </xsl:when>
-            <xsl:when test="($x3dValue = 'NULL') and ($x3dType = 'SFNode')">
+            <xsl:when test="(string($x3dValue) = 'NULL') and ($x3dType = 'SFNode')">
                 <xsl:text>None</xsl:text>
             </xsl:when>
-            <xsl:when test="$isString and contains($x3dValue,'&quot;')">
+            <xsl:when test="$isString and contains(string($x3dValue),'&quot;')">
                 <xsl:choose>
-                    <xsl:when test='contains($x3dValue,"&apos;")'>
+                    <xsl:when test='contains(string($x3dValue),"&apos;")'>
                         <!-- combination of ' and " in same value -->
                         <xsl:call-template name="escape-apostrophes-recurse">
-                            <xsl:with-param name="inputValue" select="$x3dValue"/>
+                            <xsl:with-param name="inputValue" select="string($x3dValue)"/>
                         </xsl:call-template>
                     </xsl:when>
                     <xsl:otherwise>
@@ -2719,10 +2719,10 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                 <!-- TODO combination of ' and " in same value -->
             </xsl:when>
             <!-- insert commas between values in numeric arrays -->
-            <xsl:when test="not($x3dType = 'SFString') and not($x3dType = 'MFString') and (string-length($x3dValue) > 0)">
+            <xsl:when test="not($x3dType = 'SFString') and not($x3dType = 'MFString') and (string-length(string($x3dValue)) > 0)">
                 <xsl:call-template name="insert-tuple-breaks-recurse">
                     <xsl:with-param name="inputValue">
-                        <xsl:value-of select="translate(normalize-space(translate($x3dValue,',',' ')),' ',',')"/>
+                        <xsl:value-of select="translate(normalize-space(translate(string($x3dValue),',',' ')),' ',',')"/>
                     </xsl:with-param>
                     <xsl:with-param name="tupleSize" select='$tupleSize'/>
                 </xsl:call-template>
@@ -2734,7 +2734,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
         <!-- append delimiter if appropriate -->
         <xsl:choose>
             <xsl:when test="$isList">
-                <xsl:if test="$isTuple and (string-length($x3dValue) > 0) and not(ends-with(normalize-space($x3dValue),')'))">
+                <xsl:if test="$isTuple and (string-length(string($x3dValue)) > 0) and not(ends-with(normalize-space(string($x3dValue)),')'))">
                     <!-- list containing a tuple -->
                     <xsl:text>)</xsl:text>
                 </xsl:if>

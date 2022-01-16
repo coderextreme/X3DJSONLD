@@ -40,7 +40,9 @@ public class HAnimModelsHandsFeet {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new HAnimModelsHandsFeet().initialize().toFileJSON("../data/HAnimModelsHandsFeet.new.json");
+    X3D model = new HAnimModelsHandsFeet().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../data/HAnimModelsHandsFeet.new.json");
     }
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")

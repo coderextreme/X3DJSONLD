@@ -40,7 +40,9 @@ public class PixelTextureComponentExamples {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new PixelTextureComponentExamples().initialize().toFileJSON("../data/PixelTextureComponentExamples.new.json");
+    X3D model = new PixelTextureComponentExamples().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../data/PixelTextureComponentExamples.new.json");
     }
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
