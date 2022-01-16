@@ -33,7 +33,7 @@ head1.unit[3] = unit5;
 
 let meta6 = browser.currentScene.createNode("meta");
 meta6.name = "title";
-meta6.content = "HelloWorldProgramOutput.x3d";
+meta6.content = "Quotes.x3d";
 head1.meta[4] = meta6;
 
 let meta7 = browser.currentScene.createNode("meta");

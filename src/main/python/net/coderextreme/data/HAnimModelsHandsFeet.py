@@ -1,63 +1,63 @@
 from x3d import *
 print(
 X3D(
-  profile='Immersive', version='4.0', head=head(  children=[
+  profile="Immersive", version="4.0", head=head(  children=[
       
-          component(name='HAnim', level=1), 
-          meta(name='title', content='HAnimModelsHandsFeet.x3d'),
-          meta(name='description', content='Left and right hands and feet, using high-fidelity definitions for HAnim version 2.0'),
-          meta(name='creator', content='YOO Kwan Hee and Don Brutzman'),
-          meta(name='created', content='8 February 2015'),
-          meta(name='modified', content='8 March 2021'),
-          meta(name='warning', content='not yet to scale'),
-          meta(name='warning', content='TODO will X3D HAnim component add a new level to support LOA-4 functionality?'),
-          meta(name='TODO', content='how to have HAnimHumanoid root with Inline IMPORT/EXPORT of limbs?'),
-          meta(name='Image', content='HAnimModelsHandsFeet.png'),
-          meta(name='Image', content='HAnimModelsHandsFeetWithFour1mGrids.png'),
-          meta(name='reference', content='https://www.web3d.org/working-groups/humanoid-animation-HAnim'),
-          meta(name='reference', content='https://www.web3d.org/documents/specifications/19774/V2.0'),
-          meta(name='reference', content='https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/hanim.html'),
-          meta(name='subject', content='X3D HAnim humanoid animation'),
-          meta(name='identifier', content='https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelsHandsFeet.x3d'),
-          meta(name='generator', content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit'),
-          meta(name='license', content='../license.html'),
-          meta(name='translated', content='16 January 2022'),
-          meta(name='generator', content='X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html'),
-          meta(name='reference', content='X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding')]), Scene=Scene(
+          component(name="HAnim", level=1), 
+          meta(name="title", content="HAnimModelsHandsFeet.x3d"),
+          meta(name="description", content="Left and right hands and feet, using high-fidelity definitions for HAnim version 2.0"),
+          meta(name="creator", content="YOO Kwan Hee and Don Brutzman"),
+          meta(name="created", content="8 February 2015"),
+          meta(name="modified", content="8 March 2021"),
+          meta(name="warning", content="not yet to scale"),
+          meta(name="warning", content="TODO will X3D HAnim component add a new level to support LOA-4 functionality?"),
+          meta(name="TODO", content="how to have HAnimHumanoid root with Inline IMPORT/EXPORT of limbs?"),
+          meta(name="Image", content="HAnimModelsHandsFeet.png"),
+          meta(name="Image", content="HAnimModelsHandsFeetWithFour1mGrids.png"),
+          meta(name="reference", content="https://www.web3d.org/working-groups/humanoid-animation-HAnim"),
+          meta(name="reference", content="https://www.web3d.org/documents/specifications/19774/V2.0"),
+          meta(name="reference", content="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/hanim.html"),
+          meta(name="subject", content="X3D HAnim humanoid animation"),
+          meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelsHandsFeet.x3d"),
+          meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+          meta(name="license", content="../license.html"),
+          meta(name="translated", content="16 January 2022"),
+          meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+          meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")]), Scene=Scene(
     children=[
         WorldInfo(
-          title='HAnimModelsHandsFeet.x3d'),
+          title="HAnimModelsHandsFeet.x3d"),
         Viewpoint(
-          description='Hands and feet 10m'),
+          description="Hands and feet 10m"),
         Viewpoint(
-          description='Hands and feet 1.7m', position=(0,0,1.7)),
+          description="Hands and feet 1.7m", position=(0,0,1.7)),
         Transform(
           translation=(-1,1,0), children=[
               Inline(
-                url=['HAnimModelHandLeft.x3d','https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandLeft.x3d','HAnimModelHandLeft.wrl','https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandLeft.wrl']),#Grid overlay authoring hint: first adjust grid scale to convenient large size, then adjust overall scale for your scene model
+                url=["HAnimModelHandLeft.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandLeft.x3d","HAnimModelHandLeft.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandLeft.wrl"]),#Grid overlay authoring hint: first adjust grid scale to convenient large size, then adjust overall scale for your scene model
 
               Transform(
-                DEF='GridXY_20x20Fixed_AdjustScale', scale=(0.1,0.1,0.1), children=[
+                DEF="GridXY_20x20Fixed_AdjustScale", scale=(0.1,0.1,0.1), children=[
                     Inline(
-                      DEF='GridXY_20x20Fixed', url=['GridXY_20x20Fixed.x3d','../../Savage/Tools/Authoring/GridXY_20x20Fixed.x3d','https://savage.nps.edu/Savage/Tools/Authoring/GridXY_20x20Fixed.x3d','GridXY_20x20Fixed.wrl','../../Savage/Tools/Authoring/GridXY_20x20Fixed.wrl','https://savage.nps.edu/Savage/Tools/Authoring/GridXY_20x20Fixed.wrl'])])]),
+                      DEF="GridXY_20x20Fixed", url=["GridXY_20x20Fixed.x3d","../../Savage/Tools/Authoring/GridXY_20x20Fixed.x3d","https://savage.nps.edu/Savage/Tools/Authoring/GridXY_20x20Fixed.x3d","GridXY_20x20Fixed.wrl","../../Savage/Tools/Authoring/GridXY_20x20Fixed.wrl","https://savage.nps.edu/Savage/Tools/Authoring/GridXY_20x20Fixed.wrl"])])]),
         Transform(
           translation=(1,1,0), children=[
               Inline(
-                url=['HAnimModelHandRight.x3d','https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandRight.x3d','HAnimModelHandRight.wrl','https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandRight.wrl']),
+                url=["HAnimModelHandRight.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandRight.x3d","HAnimModelHandRight.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandRight.wrl"]),
               Transform(
-                USE='GridXY_20x20Fixed_AdjustScale')]),
+                USE="GridXY_20x20Fixed_AdjustScale")]),
         Transform(
           translation=(-1,-1,0), children=[#rotation='0 0 1 3.141593'
 
               Inline(
-                url=['HAnimModelFootLeft.x3d','https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootLeft.x3d','HAnimModelFootLeft.wrl','https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootLeft.wrl']),
+                url=["HAnimModelFootLeft.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootLeft.x3d","HAnimModelFootLeft.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootLeft.wrl"]),
               Transform(
-                USE='GridXY_20x20Fixed_AdjustScale')]),
+                USE="GridXY_20x20Fixed_AdjustScale")]),
         Transform(
           translation=(1,-1,0), children=[#rotation='0 0 1 3.141593'
 
               Inline(
-                url=['HAnimModelFootRight.x3d','https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootRight.x3d','HAnimModelFootRight.wrl','https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootRight.wrl']),
+                url=["HAnimModelFootRight.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootRight.x3d","HAnimModelFootRight.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootRight.wrl"]),
               Transform(
-                USE='GridXY_20x20Fixed_AdjustScale')])]))
+                USE="GridXY_20x20Fixed_AdjustScale")])]))
 .XML())

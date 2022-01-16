@@ -19,9 +19,9 @@ def parseArray(parent, data, indent=0):
                 els = 0
         else:
             if isinstance(d, str):
-                out += "'"
-                out += d
-                out += "'"
+                out += '"'
+                out += d.replace('"', '\\"')
+                out += '"'
             else:
                 out +=  str(d)
     return out
@@ -86,7 +86,7 @@ def parseObject(nonewline, parent, data,indent=0):
                 out += parseArray(k, v,indent+1)
                 out += ")"
         elif isinstance(v, str):
-            out +=  "\n"*ndent+(("  ")*ndent)+str(key) + "='" + v + "'"
+            out +=  "\n"*ndent+(("  ")*ndent)+str(key) + '="' + v.replace('"', '\\"') + '"'
         else:
             # assume tuple
             out +=  "\n"*ndent+(("  ")*ndent)+str(key) + "=" + str(v)

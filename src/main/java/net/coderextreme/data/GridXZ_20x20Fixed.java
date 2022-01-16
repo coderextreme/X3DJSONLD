@@ -40,7 +40,9 @@ public class GridXZ_20x20Fixed {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new GridXZ_20x20Fixed().initialize().toFileJSON("../data/GridXZ_20x20Fixed.new.json");
+    X3D model = new GridXZ_20x20Fixed().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../data/GridXZ_20x20Fixed.new.json");
     }
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.0")

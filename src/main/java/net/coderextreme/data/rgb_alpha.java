@@ -40,7 +40,9 @@ public class rgb_alpha {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new rgb_alpha().initialize().toFileJSON("../data/rgb_alpha.new.json");
+    X3D model = new rgb_alpha().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../data/rgb_alpha.new.json");
     }
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Interchange").setVersion("3.0")

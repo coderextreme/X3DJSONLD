@@ -40,7 +40,9 @@ public class BoxEm {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new BoxEm().initialize().toFileJSON("../data/BoxEm.new.json");
+    X3D model = new BoxEm().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../data/BoxEm.new.json");
     }
     public X3D initialize() {
 ProtoInstance ProtoInstance0 = null;

@@ -40,7 +40,9 @@ public class x3dconnector {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new x3dconnector().initialize().toFileJSON("../data/x3dconnector.new.json");
+    X3D model = new x3dconnector().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../data/x3dconnector.new.json");
     }
     public X3D initialize() {
 ProtoInstance ProtoInstance0 = null;

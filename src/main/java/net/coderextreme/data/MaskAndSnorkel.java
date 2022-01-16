@@ -40,7 +40,9 @@ public class MaskAndSnorkel {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new MaskAndSnorkel().initialize().toFileJSON("../data/MaskAndSnorkel.new.json");
+    X3D model = new MaskAndSnorkel().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../data/MaskAndSnorkel.new.json");
     }
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")

@@ -40,7 +40,9 @@ public class AllenStandShootRifleM24 {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new AllenStandShootRifleM24().initialize().toFileJSON("../data/AllenStandShootRifleM24.new.json");
+    X3D model = new AllenStandShootRifleM24().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../data/AllenStandShootRifleM24.new.json");
     }
     public X3D initialize() {
 ProtoInstance ProtoInstance0 = null;

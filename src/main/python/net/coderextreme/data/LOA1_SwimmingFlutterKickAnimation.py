@@ -1,666 +1,176 @@
-from x3dpsail import *
-X3D0 = X3D()
-X3D0.setProfile("Immersive")
-X3D0.setVersion("3.3")
-head1 = head()
-meta2 = meta()
-meta2.setName("title")
-meta2.setContent("LOA1_SwimmingFlutterKickAnimation.x3d")
-
-head1.addMeta(meta2)
-meta3 = meta()
-meta3.setName("description")
-meta3.setContent("Humanoid animation prototype reusable by any Humanoid.")
-
-head1.addMeta(meta3)
-meta4 = meta()
-meta4.setName("creator")
-meta4.setContent("Etsuko Lippi")
-
-head1.addMeta(meta4)
-meta5 = meta()
-meta5.setName("created")
-meta5.setContent("13 December 2001")
-
-head1.addMeta(meta5)
-meta6 = meta()
-meta6.setName("modified")
-meta6.setContent("23 May 2020")
-
-head1.addMeta(meta6)
-meta7 = meta()
-meta7.setName("warning")
-meta7.setContent("not yet tested, need to compare with NancyDivingExample interpolators")
-
-head1.addMeta(meta7)
-meta8 = meta()
-meta8.setName("reference")
-meta8.setContent("http://www.HAnim.org")
-
-head1.addMeta(meta8)
-meta9 = meta()
-meta9.setName("reference")
-meta9.setContent("http://HAnim.org/Models")
-
-head1.addMeta(meta9)
-meta10 = meta()
-meta10.setName("reference")
-meta10.setContent("http://HAnim.org/Nodes")
-
-head1.addMeta(meta10)
-meta11 = meta()
-meta11.setName("subject")
-meta11.setContent("Swimming flutter kick Animation HAnim 2001")
-
-head1.addMeta(meta11)
-meta12 = meta()
-meta12.setName("identifier")
-meta12.setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/LOA1_SwimmingFlutterKickAnimation.x3d")
-
-head1.addMeta(meta12)
-meta13 = meta()
-meta13.setName("generator")
-meta13.setContent("X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit")
-
-head1.addMeta(meta13)
-meta14 = meta()
-meta14.setName("license")
-meta14.setContent("../license.html")
-
-head1.addMeta(meta14)
-
-X3D0.setHead(head1)
-Scene15 = Scene()
-WorldInfo16 = WorldInfo()
-WorldInfo16.setTitle("LOA1_SwimmingFlutterKickAnimation.x3d")
-
-Scene15.addChildren(WorldInfo16)
-ProtoDeclare17 = ProtoDeclare()
-ProtoDeclare17.setName("LOA1_DivingAnimation")
-ProtoInterface18 = ProtoInterface()
-field19 = field()
-field19.setName("cycleInterval")
-field19.setAccessType("inputOutput")
-field19.setType("SFTime")
-field19.setValue("7")
-
-ProtoInterface18.addField(field19)
-field20 = field()
-field20.setName("enabled")
-field20.setAccessType("inputOutput")
-field20.setType("SFBool")
-field20.setValue("true")
-
-ProtoInterface18.addField(field20)
-field21 = field()
-field21.setName("loop")
-field21.setAccessType("inputOutput")
-field21.setType("SFBool")
-field21.setValue("true")
-
-ProtoInterface18.addField(field21)
-field22 = field()
-field22.setName("startTime")
-field22.setAccessType("inputOutput")
-field22.setType("SFTime")
-field22.setValue("0")
-
-ProtoInterface18.addField(field22)
-field23 = field()
-field23.setName("stopTime")
-field23.setAccessType("inputOutput")
-field23.setType("SFTime")
-field23.setValue("-1")
-
-ProtoInterface18.addField(field23)
-field24 = field()
-field24.setName("fraction_changed")
-field24.setAccessType("outputOnly")
-field24.setType("SFFloat")
-
-ProtoInterface18.addField(field24)
-field25 = field()
-field25.setName("isActive")
-field25.setAccessType("outputOnly")
-field25.setType("SFBool")
-
-ProtoInterface18.addField(field25)
-field26 = field()
-field26.setName("HumanoidRoot_translation_changed")
-field26.setAccessType("outputOnly")
-field26.setType("SFVec3f")
-
-ProtoInterface18.addField(field26)
-field27 = field()
-field27.setName("HumanoidRoot_rotation_changed")
-field27.setAccessType("outputOnly")
-field27.setType("SFRotation")
-
-ProtoInterface18.addField(field27)
-field28 = field()
-field28.setName("lower_body_rotation_changed")
-field28.setAccessType("outputOnly")
-field28.setType("SFRotation")
-
-ProtoInterface18.addField(field28)
-field29 = field()
-field29.setName("l_hip_rotation_changed")
-field29.setAccessType("outputOnly")
-field29.setType("SFRotation")
-
-ProtoInterface18.addField(field29)
-field30 = field()
-field30.setName("l_knee_rotation_changed")
-field30.setAccessType("outputOnly")
-field30.setType("SFRotation")
-
-ProtoInterface18.addField(field30)
-field31 = field()
-field31.setName("l_ankle_rotation_changed")
-field31.setAccessType("outputOnly")
-field31.setType("SFRotation")
-
-ProtoInterface18.addField(field31)
-field32 = field()
-field32.setName("l_midtarsal_rotation_changed")
-field32.setAccessType("outputOnly")
-field32.setType("SFRotation")
-
-ProtoInterface18.addField(field32)
-field33 = field()
-field33.setName("r_hip_rotation_changed")
-field33.setAccessType("outputOnly")
-field33.setType("SFRotation")
-
-ProtoInterface18.addField(field33)
-field34 = field()
-field34.setName("r_knee_rotation_changed")
-field34.setAccessType("outputOnly")
-field34.setType("SFRotation")
-
-ProtoInterface18.addField(field34)
-field35 = field()
-field35.setName("r_ankle_rotation_changed")
-field35.setAccessType("outputOnly")
-field35.setType("SFRotation")
-
-ProtoInterface18.addField(field35)
-field36 = field()
-field36.setName("r_midtarsal_rotation_changed")
-field36.setAccessType("outputOnly")
-field36.setType("SFRotation")
-
-ProtoInterface18.addField(field36)
-field37 = field()
-field37.setName("vl5_rotation_changed")
-field37.setAccessType("outputOnly")
-field37.setType("SFRotation")
-
-ProtoInterface18.addField(field37)
-field38 = field()
-field38.setName("skullbase_rotation_changed")
-field38.setAccessType("outputOnly")
-field38.setType("SFRotation")
-
-ProtoInterface18.addField(field38)
-field39 = field()
-field39.setName("l_shoulder_rotation_changed")
-field39.setAccessType("outputOnly")
-field39.setType("SFRotation")
-
-ProtoInterface18.addField(field39)
-field40 = field()
-field40.setName("l_elbow_rotation_changed")
-field40.setAccessType("outputOnly")
-field40.setType("SFRotation")
-
-ProtoInterface18.addField(field40)
-field41 = field()
-field41.setName("l_wrist_rotation_changed")
-field41.setAccessType("outputOnly")
-field41.setType("SFRotation")
-
-ProtoInterface18.addField(field41)
-field42 = field()
-field42.setName("r_shoulder_rotation_changed")
-field42.setAccessType("outputOnly")
-field42.setType("SFRotation")
-
-ProtoInterface18.addField(field42)
-field43 = field()
-field43.setName("r_elbow_rotation_changed")
-field43.setAccessType("outputOnly")
-field43.setType("SFRotation")
-
-ProtoInterface18.addField(field43)
-field44 = field()
-field44.setName("r_wrist_rotation_changed")
-field44.setAccessType("outputOnly")
-field44.setType("SFRotation")
-
-ProtoInterface18.addField(field44)
-
-ProtoDeclare17.setProtoInterface(ProtoInterface18)
-ProtoBody45 = ProtoBody()
-Group46 = Group()
-TimeSensor47 = TimeSensor()
-TimeSensor47.setDEF("TIMER")
-TimeSensor47.setLoop(True)
-IS48 = IS()
-connect49 = connect()
-connect49.setNodeField("cycleInterval")
-connect49.setProtoField("cycleInterval")
-
-IS48.addConnect(connect49)
-connect50 = connect()
-connect50.setNodeField("enabled")
-connect50.setProtoField("enabled")
-
-IS48.addConnect(connect50)
-connect51 = connect()
-connect51.setNodeField("loop")
-connect51.setProtoField("loop")
-
-IS48.addConnect(connect51)
-connect52 = connect()
-connect52.setNodeField("startTime")
-connect52.setProtoField("startTime")
-
-IS48.addConnect(connect52)
-connect53 = connect()
-connect53.setNodeField("stopTime")
-connect53.setProtoField("stopTime")
-
-IS48.addConnect(connect53)
-connect54 = connect()
-connect54.setNodeField("fraction_changed")
-connect54.setProtoField("fraction_changed")
-
-IS48.addConnect(connect54)
-connect55 = connect()
-connect55.setNodeField("isActive")
-connect55.setProtoField("isActive")
-
-IS48.addConnect(connect55)
-
-TimeSensor47.setIS(IS48)
-
-Group46.addChildren(TimeSensor47)
-PositionInterpolator56 = PositionInterpolator()
-PositionInterpolator56.setDEF("HUMANOIDROOT_POSITION_ANIMATOR")
-PositionInterpolator56.setKey([0,0.04167,0.125,0.1667,0.2083,0.25,0.2917,0.375,0.4583,0.5,0.5417,0.5833,0.625,0.7083,0.75,0.7917,0.875,0.9167,1])
-PositionInterpolator56.setKeyValue([0,-0.00928,0,0,-0.003858,0,0,-0.008847,0,0,-0.01486,0,0,-0.02641,0,0,-0.03934,0,0,-0.0502,0,0,-0.07469,0,0,-0.02732,0,0,-0.01608,0,0,-0.01129,0,0,-0.005819,0,0,-0.002004,0,0,-0.002579,0,0,-0.0143,0,0,-0.03799,0,0,-0.05648,0,0,-0.045,0,0,-0.00928,0])
-IS57 = IS()
-connect58 = connect()
-connect58.setNodeField("value_changed")
-connect58.setProtoField("HumanoidRoot_translation_changed")
-
-IS57.addConnect(connect58)
-
-PositionInterpolator56.setIS(IS57)
-
-Group46.addChildren(PositionInterpolator56)
-OrientationInterpolator59 = OrientationInterpolator()
-OrientationInterpolator59.setDEF("HUMANOIDROOT_ANIMATOR")
-OrientationInterpolator59.setKey([0,1])
-OrientationInterpolator59.setKeyValue([0,0,1,0,0,0,1,0])
-IS60 = IS()
-connect61 = connect()
-connect61.setNodeField("value_changed")
-connect61.setProtoField("HumanoidRoot_rotation_changed")
-
-IS60.addConnect(connect61)
-
-OrientationInterpolator59.setIS(IS60)
-
-Group46.addChildren(OrientationInterpolator59)
-#no SACROILIAC_ANIMATOR
-OrientationInterpolator62 = OrientationInterpolator()
-OrientationInterpolator62.setDEF("L_HIP_ANIMATOR")
-OrientationInterpolator62.setKey([0,0.25,0.375,0.6667,0.7917,0.9167,1])
-OrientationInterpolator62.setKeyValue([-0.873,0.06094,0.484,0.2865,0.9963,-0.01057,0.08481,0.2488,0.9965,0.01591,-0.08222,0.3836,-1,0,0,0.5518,-0.9964,0.02231,0.0817,0.5351,-0.9809,0.04912,0.1881,0.5204,-0.873,0.06094,0.484,0.2865])
-IS63 = IS()
-connect64 = connect()
-connect64.setNodeField("value_changed")
-connect64.setProtoField("l_hip_rotation_changed")
-
-IS63.addConnect(connect64)
-
-OrientationInterpolator62.setIS(IS63)
-
-Group46.addChildren(OrientationInterpolator62)
-OrientationInterpolator65 = OrientationInterpolator()
-OrientationInterpolator65.setDEF("L_KNEE_ANIMATOR")
-OrientationInterpolator65.setKey([0,0.2083,0.375,0.5,0.6667,0.7917,0.9167,1])
-OrientationInterpolator65.setKeyValue([1,0,0,0.3226,1,0,0,0.1556,1,0,0,0.08678,1,0,0,0.8751,1,0,0,1.131,1,0,0,0.09961,1,0,0,0.3942,1,0,0,0.3226])
-IS66 = IS()
-connect67 = connect()
-connect67.setNodeField("value_changed")
-connect67.setProtoField("l_knee_rotation_changed")
-
-IS66.addConnect(connect67)
-
-OrientationInterpolator65.setIS(IS66)
-
-Group46.addChildren(OrientationInterpolator65)
-OrientationInterpolator68 = OrientationInterpolator()
-OrientationInterpolator68.setDEF("L_ANKLE_ANIMATOR")
-OrientationInterpolator68.setKey([0,0.125,0.2083,0.375,0.4583,0.5,0.6667,0.75,0.7917,0.9167,1])
-OrientationInterpolator68.setKeyValue([1,0,0,0.6001,1,0,0,0.6509,1,0,0,0.6001,1,0,0,0.6001,1,0,0,0.6509,1,0,0,0.6001,1,0,0,0.6001,1,0,0,0.6509,1,0,0,0.6001,1,0,0,0.6509,1,0,0,0.6001])
-IS69 = IS()
-connect70 = connect()
-connect70.setNodeField("value_changed")
-connect70.setProtoField("l_ankle_rotation_changed")
-
-IS69.addConnect(connect70)
-
-OrientationInterpolator68.setIS(IS69)
-
-Group46.addChildren(OrientationInterpolator68)
-#no L_MIDTARSAL_ANIMATOR
-OrientationInterpolator71 = OrientationInterpolator()
-OrientationInterpolator71.setDEF("R_HIP_ANIMATOR")
-OrientationInterpolator71.setKey([0,0.125,0.2083,0.2917,0.5,0.7917,0.9167,1])
-OrientationInterpolator71.setKeyValue([-0.5831,0.03511,0.8116,0.1481,-0.995,0.02296,0.09674,0.4683,-1,0.00192,0.007964,0.4732,-0.998,-0.0158,-0.06102,0.5079,-0.9131,-0.06243,-0.403,0.3361,1,0,0,0.2571,0.9891,-0.02805,0.1444,0.3879,-0.5831,0.03511,0.8116,0.1481])
-IS72 = IS()
-connect73 = connect()
-connect73.setNodeField("value_changed")
-connect73.setProtoField("r_hip_rotation_changed")
-
-IS72.addConnect(connect73)
-
-OrientationInterpolator71.setIS(IS72)
-
-Group46.addChildren(OrientationInterpolator71)
-OrientationInterpolator74 = OrientationInterpolator()
-OrientationInterpolator74.setDEF("R_KNEE_ANIMATOR")
-OrientationInterpolator74.setKey([0,0.125,0.2083,0.375,0.5,0.6667,0.9167,1])
-OrientationInterpolator74.setKeyValue([1,0,0,0.8573,1,0,0,0.5351,1,0,0,0.1756,1,0,0,0.1194,1,0,0,0.3153,1,0,0,0.09354,1,0,0,0.08558,1,0,0,0.8573])
-IS75 = IS()
-connect76 = connect()
-connect76.setNodeField("value_changed")
-connect76.setProtoField("r_knee_rotation_changed")
-
-IS75.addConnect(connect76)
-
-OrientationInterpolator74.setIS(IS75)
-
-Group46.addChildren(OrientationInterpolator74)
-OrientationInterpolator77 = OrientationInterpolator()
-OrientationInterpolator77.setDEF("R_ANKLE_ANIMATOR")
-OrientationInterpolator77.setKey([0,0.125,0.2083,0.375,0.4583,0.5,0.6667,0.75,0.7917,0.9167,1])
-OrientationInterpolator77.setKeyValue([1,0,0,0.8001,1,0,0,0.8509,1,0,0,0.8001,1,0,0,0.8001,1,0,0,0.8509,1,0,0,0.8001,1,0,0,0.8001,1,0,0,0.8001,1,0,0,0.8001,1,0,0,0.8509,1,0,0,0.86001])
-IS78 = IS()
-connect79 = connect()
-connect79.setNodeField("value_changed")
-connect79.setProtoField("r_ankle_rotation_changed")
-
-IS78.addConnect(connect79)
-
-OrientationInterpolator77.setIS(IS78)
-
-Group46.addChildren(OrientationInterpolator77)
-#no L_MIDTARSAL_ANIMATOR
-OrientationInterpolator80 = OrientationInterpolator()
-OrientationInterpolator80.setDEF("VL5_ANIMATOR")
-OrientationInterpolator80.setKey([0,0.2083,0.375,0.75,0.8333,1])
-OrientationInterpolator80.setKeyValue([0,1,0,0.0826,-0.01972,-0.5974,0.8017,0.08231,0.009296,-0.9648,0.2627,0.1734,-0.01238,0.9549,-0.2968,0.08732,-0.008125,0.9691,-0.2463,0.158,0,1,0,0.0826])
-IS81 = IS()
-connect82 = connect()
-connect82.setNodeField("value_changed")
-connect82.setProtoField("vl5_rotation_changed")
-
-IS81.addConnect(connect82)
-
-OrientationInterpolator80.setIS(IS81)
-
-Group46.addChildren(OrientationInterpolator80)
-OrientationInterpolator83 = OrientationInterpolator()
-OrientationInterpolator83.setDEF("SKULLBASE_ANIMATOR")
-OrientationInterpolator83.setKey([0,0.28,0.3,0.32,0.4,0.45,0.6,0.65,0.7,0.75,0.85,0.9,0.95,1])
-OrientationInterpolator83.setKeyValue([-1,0,0,1,-1,0,0,1,-1,0,0,0.999,-1,0,0,0.99,-1,0,0,0.99,-1,0,0,0.9,-1,0,0,0.9,-1,0,0,0.9,-1,0,0,0.9,-1,0,0,0.9,-1,0,0,0.9,-1,0,0,0.9,-1,0,0,0.9,-1,0,0,1])
-IS84 = IS()
-connect85 = connect()
-connect85.setNodeField("value_changed")
-connect85.setProtoField("skullbase_rotation_changed")
-
-IS84.addConnect(connect85)
-
-OrientationInterpolator83.setIS(IS84)
-
-Group46.addChildren(OrientationInterpolator83)
-OrientationInterpolator86 = OrientationInterpolator()
-OrientationInterpolator86.setDEF("L_SHOULDER_ANIMATOR")
-OrientationInterpolator86.setKey([0,0.25,0.375,0.6667,0.7917,0.9167,1])
-OrientationInterpolator86.setKeyValue([0,0,1,0.1,0,0,1,0.2,0,0,1,0.2,0.86,0.25,0.42,0.5,0.86,0.25,0.42,0.8,0.86,0.25,0.42,0.4,0.86,0.25,0.42,0.2])
-IS87 = IS()
-connect88 = connect()
-connect88.setNodeField("value_changed")
-connect88.setProtoField("l_shoulder_rotation_changed")
-
-IS87.addConnect(connect88)
-
-OrientationInterpolator86.setIS(IS87)
-
-Group46.addChildren(OrientationInterpolator86)
-OrientationInterpolator89 = OrientationInterpolator()
-OrientationInterpolator89.setDEF("L_ELBOW_ANIMATOR")
-OrientationInterpolator89.setKey([0,0.28,0.32,0.64,0.76,1])
-OrientationInterpolator89.setKeyValue([0,0,1,0,-1,0,0,0.1229,-1,0,0,0.1229,-1,0,0,0.5976,-1,0,0,0.3917,0,0,1,0])
-IS90 = IS()
-connect91 = connect()
-connect91.setNodeField("value_changed")
-connect91.setProtoField("l_elbow_rotation_changed")
-
-IS90.addConnect(connect91)
-
-OrientationInterpolator89.setIS(IS90)
-
-Group46.addChildren(OrientationInterpolator89)
-OrientationInterpolator92 = OrientationInterpolator()
-OrientationInterpolator92.setDEF("L_WRIST_ANIMATOR")
-OrientationInterpolator92.setKey([0,0.32,0.64,0.88,1])
-OrientationInterpolator92.setKeyValue([0,0,1,0,0.067,0.98,-0.128,4.15,0.067,0.98,-0.128,4.15,0.067,0.98,-0.128,4.15,0,0,1,0])
-IS93 = IS()
-connect94 = connect()
-connect94.setNodeField("value_changed")
-connect94.setProtoField("l_wrist_rotation_changed")
-
-IS93.addConnect(connect94)
-
-OrientationInterpolator92.setIS(IS93)
-
-Group46.addChildren(OrientationInterpolator92)
-OrientationInterpolator95 = OrientationInterpolator()
-OrientationInterpolator95.setDEF("R_SHOULDER_ANIMATOR")
-OrientationInterpolator95.setKey([0,0.45,0.64,0.76,0.88,1])
-OrientationInterpolator95.setKeyValue([0,0,1,0,0.9992,0.02042,0.03558,7.2,0.9989,-0.04623,0.005159,4.079,-0.8687,-0.2525,-0.4261,1.501,-0.941,-0.2893,-0.1754,0.4788,0,0,1,0])
-IS96 = IS()
-connect97 = connect()
-connect97.setNodeField("value_changed")
-connect97.setProtoField("r_shoulder_rotation_changed")
-
-IS96.addConnect(connect97)
-
-OrientationInterpolator95.setIS(IS96)
-
-Group46.addChildren(OrientationInterpolator95)
-OrientationInterpolator98 = OrientationInterpolator()
-OrientationInterpolator98.setDEF("R_ELBOW_ANIMATOR")
-OrientationInterpolator98.setKey([0,0.28,0.32,0.64,0.76,1])
-OrientationInterpolator98.setKeyValue([0,0,1,0,-1,0,0,0.04151,-1,0,0,0.04151,-1,0,0,0.5855,-1,0,0,0.5852,0,0,1,0])
-IS99 = IS()
-connect100 = connect()
-connect100.setNodeField("value_changed")
-connect100.setProtoField("r_elbow_rotation_changed")
-
-IS99.addConnect(connect100)
-
-OrientationInterpolator98.setIS(IS99)
-
-Group46.addChildren(OrientationInterpolator98)
-OrientationInterpolator101 = OrientationInterpolator()
-OrientationInterpolator101.setDEF("R_WRIST_ANIMATOR")
-OrientationInterpolator101.setKey([0,0.28,0.32,0.64,0.76,1])
-OrientationInterpolator101.setKeyValue([0,0,1,0,-0.0585279,0.983903,-0.168849,1.85956,-0.0585279,0.983903,-0.168849,1.85956,-0.00222418,0.99801,-0.0630095,1.46072,0,1,0,0.497349,0,0,1,0])
-IS102 = IS()
-connect103 = connect()
-connect103.setNodeField("value_changed")
-connect103.setProtoField("r_wrist_rotation_changed")
-
-IS102.addConnect(connect103)
-
-OrientationInterpolator101.setIS(IS102)
-
-Group46.addChildren(OrientationInterpolator101)
-
-ProtoBody45.addChildren(Group46)
-ROUTE104 = ROUTE()
-ROUTE104.setFromField("fraction_changed")
-ROUTE104.setFromNode("TIMER")
-ROUTE104.setToField("set_fraction")
-ROUTE104.setToNode("HUMANOIDROOT_POSITION_ANIMATOR")
-
-ProtoBody45.addChildren(ROUTE104)
-ROUTE105 = ROUTE()
-ROUTE105.setFromField("fraction_changed")
-ROUTE105.setFromNode("TIMER")
-ROUTE105.setToField("set_fraction")
-ROUTE105.setToNode("HUMANOIDROOT_ANIMATOR")
-
-ProtoBody45.addChildren(ROUTE105)
-ROUTE106 = ROUTE()
-ROUTE106.setFromField("fraction_changed")
-ROUTE106.setFromNode("TIMER")
-ROUTE106.setToField("set_fraction")
-ROUTE106.setToNode("SKULLBASE_ANIMATOR")
-
-ProtoBody45.addChildren(ROUTE106)
-ROUTE107 = ROUTE()
-ROUTE107.setFromField("fraction_changed")
-ROUTE107.setFromNode("TIMER")
-ROUTE107.setToField("set_fraction")
-ROUTE107.setToNode("VL5_ANIMATOR")
-
-ProtoBody45.addChildren(ROUTE107)
-ROUTE108 = ROUTE()
-ROUTE108.setFromField("fraction_changed")
-ROUTE108.setFromNode("TIMER")
-ROUTE108.setToField("set_fraction")
-ROUTE108.setToNode("L_HIP_ANIMATOR")
-
-ProtoBody45.addChildren(ROUTE108)
-ROUTE109 = ROUTE()
-ROUTE109.setFromField("fraction_changed")
-ROUTE109.setFromNode("TIMER")
-ROUTE109.setToField("set_fraction")
-ROUTE109.setToNode("L_KNEE_ANIMATOR")
-
-ProtoBody45.addChildren(ROUTE109)
-ROUTE110 = ROUTE()
-ROUTE110.setFromField("fraction_changed")
-ROUTE110.setFromNode("TIMER")
-ROUTE110.setToField("set_fraction")
-ROUTE110.setToNode("L_ANKLE_ANIMATOR")
-
-ProtoBody45.addChildren(ROUTE110)
-ROUTE111 = ROUTE()
-ROUTE111.setFromField("fraction_changed")
-ROUTE111.setFromNode("TIMER")
-ROUTE111.setToField("set_fraction")
-ROUTE111.setToNode("R_HIP_ANIMATOR")
-
-ProtoBody45.addChildren(ROUTE111)
-ROUTE112 = ROUTE()
-ROUTE112.setFromField("fraction_changed")
-ROUTE112.setFromNode("TIMER")
-ROUTE112.setToField("set_fraction")
-ROUTE112.setToNode("R_KNEE_ANIMATOR")
-
-ProtoBody45.addChildren(ROUTE112)
-ROUTE113 = ROUTE()
-ROUTE113.setFromField("fraction_changed")
-ROUTE113.setFromNode("TIMER")
-ROUTE113.setToField("set_fraction")
-ROUTE113.setToNode("R_ANKLE_ANIMATOR")
-
-ProtoBody45.addChildren(ROUTE113)
-ROUTE114 = ROUTE()
-ROUTE114.setFromField("fraction_changed")
-ROUTE114.setFromNode("TIMER")
-ROUTE114.setToField("set_fraction")
-ROUTE114.setToNode("L_SHOULDER_ANIMATOR")
-
-ProtoBody45.addChildren(ROUTE114)
-ROUTE115 = ROUTE()
-ROUTE115.setFromField("fraction_changed")
-ROUTE115.setFromNode("TIMER")
-ROUTE115.setToField("set_fraction")
-ROUTE115.setToNode("L_ELBOW_ANIMATOR")
-
-ProtoBody45.addChildren(ROUTE115)
-ROUTE116 = ROUTE()
-ROUTE116.setFromField("fraction_changed")
-ROUTE116.setFromNode("TIMER")
-ROUTE116.setToField("set_fraction")
-ROUTE116.setToNode("L_WRIST_ANIMATOR")
-
-ProtoBody45.addChildren(ROUTE116)
-ROUTE117 = ROUTE()
-ROUTE117.setFromField("fraction_changed")
-ROUTE117.setFromNode("TIMER")
-ROUTE117.setToField("set_fraction")
-ROUTE117.setToNode("R_SHOULDER_ANIMATOR")
-
-ProtoBody45.addChildren(ROUTE117)
-ROUTE118 = ROUTE()
-ROUTE118.setFromField("fraction_changed")
-ROUTE118.setFromNode("TIMER")
-ROUTE118.setToField("set_fraction")
-ROUTE118.setToNode("R_ELBOW_ANIMATOR")
-
-ProtoBody45.addChildren(ROUTE118)
-ROUTE119 = ROUTE()
-ROUTE119.setFromField("fraction_changed")
-ROUTE119.setFromNode("TIMER")
-ROUTE119.setToField("set_fraction")
-ROUTE119.setToNode("R_WRIST_ANIMATOR")
-
-ProtoBody45.addChildren(ROUTE119)
-
-ProtoDeclare17.setProtoBody(ProtoBody45)
-
-Scene15.addChildren(ProtoDeclare17)
-Viewpoint120 = Viewpoint()
-Viewpoint120.setDescription("LOA1_SwimmingFlutterKickAnimation scene")
-Viewpoint120.setPosition([0,0,12])
-
-Scene15.addChildren(Viewpoint120)
-Anchor121 = Anchor()
-Anchor121.setDescription("Nancy Diving")
-Anchor121.setParameter(["target=_blank"])
-Anchor121.setUrl(["NancyDiving.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/NancyDiving.x3d","NancyDiving.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/NancyDiving.wrl"])
-Shape122 = Shape()
-Text123 = Text()
-Text123.setString(["LOA1_SwimmingFlutterKickAnimation.x3d","defines a prototype","for animating a humanoid.","","Click text to see example."])
-FontStyle124 = FontStyle()
-FontStyle124.setJustify(["MIDDLE","MIDDLE"])
-FontStyle124.setSize(0.8)
-
-Text123.setFontStyle(FontStyle124)
-
-Shape122.setGeometry(Text123)
-Appearance125 = Appearance()
-Material126 = Material()
-Material126.setDiffuseColor([1,1,0.2])
-
-Appearance125.setMaterial(Material126)
-
-Shape122.setAppearance(Appearance125)
-
-Anchor121.addChildren(Shape122)
-
-Scene15.addChildren(Anchor121)
-
-X3D0.setScene(Scene15)
-X3D0.toFileX3D("../data/LOA1_SwimmingFlutterKickAnimation_RoundTrip.x3d")
+from x3d import *
+print(
+X3D(
+  profile="Immersive", version="3.3", head=head(  children=[
+      
+          meta(name="title", content="LOA1_SwimmingFlutterKickAnimation.x3d"),
+          meta(name="description", content="Humanoid animation prototype reusable by any Humanoid."),
+          meta(name="creator", content="Etsuko Lippi"),
+          meta(name="created", content="13 December 2001"),
+          meta(name="modified", content="23 May 2020"),
+          meta(name="warning", content="not yet tested, need to compare with NancyDivingExample interpolators"),
+          meta(name="reference", content="http://www.HAnim.org"),
+          meta(name="reference", content="http://HAnim.org/Models"),
+          meta(name="reference", content="http://HAnim.org/Nodes"),
+          meta(name="subject", content="Swimming flutter kick Animation HAnim 2001"),
+          meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/LOA1_SwimmingFlutterKickAnimation.x3d"),
+          meta(name="generator", content="X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"),
+          meta(name="license", content="../license.html"),
+          meta(name="translated", content="16 January 2022"),
+          meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+          meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")]), Scene=Scene(
+    children=[
+        WorldInfo(
+          title="LOA1_SwimmingFlutterKickAnimation.x3d"),
+        ProtoDeclare(
+          name="LOA1_DivingAnimation", ProtoInterface=ProtoInterface(
+            field=[
+                field(name="cycleInterval", accessType="inputOutput", type="SFTime", value=7),
+                field(name="enabled", accessType="inputOutput", type="SFBool", value=True),
+                field(name="loop", accessType="inputOutput", type="SFBool", value=True),
+                field(name="startTime", accessType="inputOutput", type="SFTime", value=0),
+                field(name="stopTime", accessType="inputOutput", type="SFTime", value=-1),
+                field(name="fraction_changed", accessType="outputOnly", type="SFFloat"),
+                field(name="isActive", accessType="outputOnly", type="SFBool"),
+                field(name="HumanoidRoot_translation_changed", accessType="outputOnly", type="SFVec3f"),
+                field(name="HumanoidRoot_rotation_changed", accessType="outputOnly", type="SFRotation"),
+                field(name="lower_body_rotation_changed", accessType="outputOnly", type="SFRotation"),
+                field(name="l_hip_rotation_changed", accessType="outputOnly", type="SFRotation"),
+                field(name="l_knee_rotation_changed", accessType="outputOnly", type="SFRotation"),
+                field(name="l_ankle_rotation_changed", accessType="outputOnly", type="SFRotation"),
+                field(name="l_midtarsal_rotation_changed", accessType="outputOnly", type="SFRotation"),
+                field(name="r_hip_rotation_changed", accessType="outputOnly", type="SFRotation"),
+                field(name="r_knee_rotation_changed", accessType="outputOnly", type="SFRotation"),
+                field(name="r_ankle_rotation_changed", accessType="outputOnly", type="SFRotation"),
+                field(name="r_midtarsal_rotation_changed", accessType="outputOnly", type="SFRotation"),
+                field(name="vl5_rotation_changed", accessType="outputOnly", type="SFRotation"),
+                field(name="skullbase_rotation_changed", accessType="outputOnly", type="SFRotation"),
+                field(name="l_shoulder_rotation_changed", accessType="outputOnly", type="SFRotation"),
+                field(name="l_elbow_rotation_changed", accessType="outputOnly", type="SFRotation"),
+                field(name="l_wrist_rotation_changed", accessType="outputOnly", type="SFRotation"),
+                field(name="r_shoulder_rotation_changed", accessType="outputOnly", type="SFRotation"),
+                field(name="r_elbow_rotation_changed", accessType="outputOnly", type="SFRotation"),
+                field(name="r_wrist_rotation_changed", accessType="outputOnly", type="SFRotation")]), ProtoBody=ProtoBody(
+            children=[
+                Group(
+                  children=[
+                      TimeSensor(
+                        DEF="TIMER", loop=True, IS=IS(
+                          connect=[
+                              connect(nodeField="cycleInterval", protoField="cycleInterval"),
+                              connect(nodeField="enabled", protoField="enabled"),
+                              connect(nodeField="loop", protoField="loop"),
+                              connect(nodeField="startTime", protoField="startTime"),
+                              connect(nodeField="stopTime", protoField="stopTime"),
+                              connect(nodeField="fraction_changed", protoField="fraction_changed"),
+                              connect(nodeField="isActive", protoField="isActive")])),
+                      PositionInterpolator(
+                        DEF="HUMANOIDROOT_POSITION_ANIMATOR", key=[0.0,0.04167,0.125,0.1667,0.2083,0.25,0.2917,0.375,0.4583,0.5,0.5417,0.5833,0.625,0.7083,0.75,0.7917,0.875,0.9167,1.0], keyValue=[0.0,-0.00928,0.0,0.0,-0.003858,0.0,0.0,-0.008847,0.0,0.0,-0.01486,0.0,0.0,-0.02641,0.0,0.0,-0.03934,0.0,0.0,-0.0502,0.0,0.0,-0.07469,0.0,0.0,-0.02732,0.0,0.0,-0.01608,0.0,0.0,-0.01129,0.0,0.0,-0.005819,0.0,0.0,-0.002004,0.0,0.0,-0.002579,0.0,0.0,-0.0143,0.0,0.0,-0.03799,0.0,0.0,-0.05648,0.0,0.0,-0.045,0.0,0.0,-0.00928,0.0], IS=IS(
+                          connect=[
+                              connect(nodeField="value_changed", protoField="HumanoidRoot_translation_changed")])),
+                      OrientationInterpolator(
+                        DEF="HUMANOIDROOT_ANIMATOR", key=[0.0,1.0], keyValue=[0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0], IS=IS(
+                          connect=[
+                              connect(nodeField="value_changed", protoField="HumanoidRoot_rotation_changed")])),#no SACROILIAC_ANIMATOR
+
+                      OrientationInterpolator(
+                        DEF="L_HIP_ANIMATOR", key=[0.0,0.25,0.375,0.6667,0.7917,0.9167,1.0], keyValue=[-0.873,0.06094,0.484,0.2865,0.9963,-0.01057,0.08481,0.2488,0.9965,0.01591,-0.08222,0.3836,-1.0,0.0,0.0,0.5518,-0.9964,0.02231,0.0817,0.5351,-0.9809,0.04912,0.1881,0.5204,-0.873,0.06094,0.484,0.2865], IS=IS(
+                          connect=[
+                              connect(nodeField="value_changed", protoField="l_hip_rotation_changed")])),
+                      OrientationInterpolator(
+                        DEF="L_KNEE_ANIMATOR", key=[0.0,0.2083,0.375,0.5,0.6667,0.7917,0.9167,1.0], keyValue=[1.0,0.0,0.0,0.3226,1.0,0.0,0.0,0.1556,1.0,0.0,0.0,0.08678,1.0,0.0,0.0,0.8751,1.0,0.0,0.0,1.131,1.0,0.0,0.0,0.09961,1.0,0.0,0.0,0.3942,1.0,0.0,0.0,0.3226], IS=IS(
+                          connect=[
+                              connect(nodeField="value_changed", protoField="l_knee_rotation_changed")])),
+                      OrientationInterpolator(
+                        DEF="L_ANKLE_ANIMATOR", key=[0.0,0.125,0.2083,0.375,0.4583,0.5,0.6667,0.75,0.7917,0.9167,1.0], keyValue=[1.0,0.0,0.0,0.6001,1.0,0.0,0.0,0.6509,1.0,0.0,0.0,0.6001,1.0,0.0,0.0,0.6001,1.0,0.0,0.0,0.6509,1.0,0.0,0.0,0.6001,1.0,0.0,0.0,0.6001,1.0,0.0,0.0,0.6509,1.0,0.0,0.0,0.6001,1.0,0.0,0.0,0.6509,1.0,0.0,0.0,0.6001], IS=IS(
+                          connect=[
+                              connect(nodeField="value_changed", protoField="l_ankle_rotation_changed")])),#no L_MIDTARSAL_ANIMATOR
+
+                      OrientationInterpolator(
+                        DEF="R_HIP_ANIMATOR", key=[0.0,0.125,0.2083,0.2917,0.5,0.7917,0.9167,1.0], keyValue=[-0.5831,0.03511,0.8116,0.1481,-0.995,0.02296,0.09674,0.4683,-1.0,0.00192,0.007964,0.4732,-0.998,-0.0158,-0.06102,0.5079,-0.9131,-0.06243,-0.403,0.3361,1.0,0.0,0.0,0.2571,0.9891,-0.02805,0.1444,0.3879,-0.5831,0.03511,0.8116,0.1481], IS=IS(
+                          connect=[
+                              connect(nodeField="value_changed", protoField="r_hip_rotation_changed")])),
+                      OrientationInterpolator(
+                        DEF="R_KNEE_ANIMATOR", key=[0.0,0.125,0.2083,0.375,0.5,0.6667,0.9167,1.0], keyValue=[1.0,0.0,0.0,0.8573,1.0,0.0,0.0,0.5351,1.0,0.0,0.0,0.1756,1.0,0.0,0.0,0.1194,1.0,0.0,0.0,0.3153,1.0,0.0,0.0,0.09354,1.0,0.0,0.0,0.08558,1.0,0.0,0.0,0.8573], IS=IS(
+                          connect=[
+                              connect(nodeField="value_changed", protoField="r_knee_rotation_changed")])),
+                      OrientationInterpolator(
+                        DEF="R_ANKLE_ANIMATOR", key=[0.0,0.125,0.2083,0.375,0.4583,0.5,0.6667,0.75,0.7917,0.9167,1.0], keyValue=[1.0,0.0,0.0,0.8001,1.0,0.0,0.0,0.8509,1.0,0.0,0.0,0.8001,1.0,0.0,0.0,0.8001,1.0,0.0,0.0,0.8509,1.0,0.0,0.0,0.8001,1.0,0.0,0.0,0.8001,1.0,0.0,0.0,0.8001,1.0,0.0,0.0,0.8001,1.0,0.0,0.0,0.8509,1.0,0.0,0.0,0.86001], IS=IS(
+                          connect=[
+                              connect(nodeField="value_changed", protoField="r_ankle_rotation_changed")])),#no L_MIDTARSAL_ANIMATOR
+
+                      OrientationInterpolator(
+                        DEF="VL5_ANIMATOR", key=[0.0,0.2083,0.375,0.75,0.8333,1.0], keyValue=[0.0,1.0,0.0,0.0826,-0.01972,-0.5974,0.8017,0.08231,0.009296,-0.9648,0.2627,0.1734,-0.01238,0.9549,-0.2968,0.08732,-0.008125,0.9691,-0.2463,0.158,0.0,1.0,0.0,0.0826], IS=IS(
+                          connect=[
+                              connect(nodeField="value_changed", protoField="vl5_rotation_changed")])),
+                      OrientationInterpolator(
+                        DEF="SKULLBASE_ANIMATOR", key=[0.0,0.28,0.3,0.32,0.4,0.45,0.6,0.65,0.7,0.75,0.85,0.9,0.95,1.0], keyValue=[-1.0,0.0,0.0,1.0,-1.0,0.0,0.0,1.0,-1.0,0.0,0.0,0.999,-1.0,0.0,0.0,0.99,-1.0,0.0,0.0,0.99,-1.0,0.0,0.0,0.9,-1.0,0.0,0.0,0.9,-1.0,0.0,0.0,0.9,-1.0,0.0,0.0,0.9,-1.0,0.0,0.0,0.9,-1.0,0.0,0.0,0.9,-1.0,0.0,0.0,0.9,-1.0,0.0,0.0,0.9,-1.0,0.0,0.0,1.0], IS=IS(
+                          connect=[
+                              connect(nodeField="value_changed", protoField="skullbase_rotation_changed")])),
+                      OrientationInterpolator(
+                        DEF="L_SHOULDER_ANIMATOR", key=[0.0,0.25,0.375,0.6667,0.7917,0.9167,1.0], keyValue=[0.0,0.0,1.0,0.1,0.0,0.0,1.0,0.2,0.0,0.0,1.0,0.2,0.86,0.25,0.42,0.5,0.86,0.25,0.42,0.8,0.86,0.25,0.42,0.4,0.86,0.25,0.42,0.2], IS=IS(
+                          connect=[
+                              connect(nodeField="value_changed", protoField="l_shoulder_rotation_changed")])),
+                      OrientationInterpolator(
+                        DEF="L_ELBOW_ANIMATOR", key=[0.0,0.28,0.32,0.64,0.76,1.0], keyValue=[0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.1229,-1.0,0.0,0.0,0.1229,-1.0,0.0,0.0,0.5976,-1.0,0.0,0.0,0.3917,0.0,0.0,1.0,0.0], IS=IS(
+                          connect=[
+                              connect(nodeField="value_changed", protoField="l_elbow_rotation_changed")])),
+                      OrientationInterpolator(
+                        DEF="L_WRIST_ANIMATOR", key=[0.0,0.32,0.64,0.88,1.0], keyValue=[0.0,0.0,1.0,0.0,0.067,0.98,-0.128,4.15,0.067,0.98,-0.128,4.15,0.067,0.98,-0.128,4.15,0.0,0.0,1.0,0.0], IS=IS(
+                          connect=[
+                              connect(nodeField="value_changed", protoField="l_wrist_rotation_changed")])),
+                      OrientationInterpolator(
+                        DEF="R_SHOULDER_ANIMATOR", key=[0.0,0.45,0.64,0.76,0.88,1.0], keyValue=[0.0,0.0,1.0,0.0,0.9992,0.02042,0.03558,7.2,0.9989,-0.04623,0.005159,4.079,-0.8687,-0.2525,-0.4261,1.501,-0.941,-0.2893,-0.1754,0.4788,0.0,0.0,1.0,0.0], IS=IS(
+                          connect=[
+                              connect(nodeField="value_changed", protoField="r_shoulder_rotation_changed")])),
+                      OrientationInterpolator(
+                        DEF="R_ELBOW_ANIMATOR", key=[0.0,0.28,0.32,0.64,0.76,1.0], keyValue=[0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.04151,-1.0,0.0,0.0,0.04151,-1.0,0.0,0.0,0.5855,-1.0,0.0,0.0,0.5852,0.0,0.0,1.0,0.0], IS=IS(
+                          connect=[
+                              connect(nodeField="value_changed", protoField="r_elbow_rotation_changed")])),
+                      OrientationInterpolator(
+                        DEF="R_WRIST_ANIMATOR", key=[0.0,0.28,0.32,0.64,0.76,1.0], keyValue=[0.0,0.0,1.0,0.0,-0.0585279,0.983903,-0.168849,1.85956,-0.0585279,0.983903,-0.168849,1.85956,-0.00222418,0.99801,-0.0630095,1.46072,0.0,1.0,0.0,0.497349,0.0,0.0,1.0,0.0], IS=IS(
+                          connect=[
+                              connect(nodeField="value_changed", protoField="r_wrist_rotation_changed")]))]),
+                ROUTE(
+                  fromField="fraction_changed", fromNode="TIMER", toField="set_fraction", toNode="HUMANOIDROOT_POSITION_ANIMATOR"),
+                ROUTE(
+                  fromField="fraction_changed", fromNode="TIMER", toField="set_fraction", toNode="HUMANOIDROOT_ANIMATOR"),
+                ROUTE(
+                  fromField="fraction_changed", fromNode="TIMER", toField="set_fraction", toNode="SKULLBASE_ANIMATOR"),
+                ROUTE(
+                  fromField="fraction_changed", fromNode="TIMER", toField="set_fraction", toNode="VL5_ANIMATOR"),
+                ROUTE(
+                  fromField="fraction_changed", fromNode="TIMER", toField="set_fraction", toNode="L_HIP_ANIMATOR"),
+                ROUTE(
+                  fromField="fraction_changed", fromNode="TIMER", toField="set_fraction", toNode="L_KNEE_ANIMATOR"),
+                ROUTE(
+                  fromField="fraction_changed", fromNode="TIMER", toField="set_fraction", toNode="L_ANKLE_ANIMATOR"),
+                ROUTE(
+                  fromField="fraction_changed", fromNode="TIMER", toField="set_fraction", toNode="R_HIP_ANIMATOR"),
+                ROUTE(
+                  fromField="fraction_changed", fromNode="TIMER", toField="set_fraction", toNode="R_KNEE_ANIMATOR"),
+                ROUTE(
+                  fromField="fraction_changed", fromNode="TIMER", toField="set_fraction", toNode="R_ANKLE_ANIMATOR"),
+                ROUTE(
+                  fromField="fraction_changed", fromNode="TIMER", toField="set_fraction", toNode="L_SHOULDER_ANIMATOR"),
+                ROUTE(
+                  fromField="fraction_changed", fromNode="TIMER", toField="set_fraction", toNode="L_ELBOW_ANIMATOR"),
+                ROUTE(
+                  fromField="fraction_changed", fromNode="TIMER", toField="set_fraction", toNode="L_WRIST_ANIMATOR"),
+                ROUTE(
+                  fromField="fraction_changed", fromNode="TIMER", toField="set_fraction", toNode="R_SHOULDER_ANIMATOR"),
+                ROUTE(
+                  fromField="fraction_changed", fromNode="TIMER", toField="set_fraction", toNode="R_ELBOW_ANIMATOR"),
+                ROUTE(
+                  fromField="fraction_changed", fromNode="TIMER", toField="set_fraction", toNode="R_WRIST_ANIMATOR")])),
+        Viewpoint(
+          description="LOA1_SwimmingFlutterKickAnimation scene", position=(0,0,12)),
+        Anchor(
+          description="Nancy Diving", parameter=("target=_blank"), url=["NancyDiving.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/NancyDiving.x3d","NancyDiving.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/NancyDiving.wrl"], children=[
+              Shape(
+                geometry=Text(
+                    string=["LOA1_SwimmingFlutterKickAnimation.x3d","defines a prototype","for animating a humanoid.","","Click text to see example."], fontStyle=FontStyle(
+                        justify=["MIDDLE","MIDDLE"], size=0.8)), appearance=Appearance(
+                    material=Material(
+                        diffuseColor=(1,1,0.2))))])]))
+.XML())

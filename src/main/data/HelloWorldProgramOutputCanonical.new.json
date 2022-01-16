@@ -342,13 +342,7 @@
                             { "MetadataSet":
                               {
                                 "@name":"EscapedQuotationMarksMetadataSet",
-                                "-value":[
-                                  { "MetadataString":
-                                    {
-                                      "@name":"quotesTestC",
-                                      "@value":["MFString example C, backslash-escaped quotes: He said, \"Immel did it!\""]
-                                    }
-                                  },
+                                "-IllegalChildNodeFieldNameNotFound":[
                                   { "MetadataString":
                                     {
                                       "@name":"extraChildTest",

@@ -40,7 +40,9 @@ public class KoreanCharacter07No {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new KoreanCharacter07No().initialize().toFileJSON("../data/KoreanCharacter07No.new.json");
+    X3D model = new KoreanCharacter07No().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../data/KoreanCharacter07No.new.json");
     }
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")

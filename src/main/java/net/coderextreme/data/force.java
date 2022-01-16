@@ -40,7 +40,9 @@ public class force {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new force().initialize().toFileJSON("../data/force.new.json");
+    X3D model = new force().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../data/force.new.json");
     }
     public X3D initialize() {
 ProtoInstance ProtoInstance0 = null;

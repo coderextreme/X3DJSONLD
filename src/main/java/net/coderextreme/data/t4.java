@@ -40,7 +40,9 @@ public class t4 {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new t4().initialize().toFileJSON("../data/t4.new.json");
+    X3D model = new t4().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../data/t4.new.json");
     }
     public X3D initialize() {
 ProtoInstance ProtoInstance0 = null;

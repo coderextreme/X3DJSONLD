@@ -40,7 +40,9 @@ public class ThreeDTexture {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new ThreeDTexture().initialize().toFileJSON("../data/ThreeDTexture.new.json");
+    X3D model = new ThreeDTexture().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../data/ThreeDTexture.new.json");
     }
     public X3D initialize() {
 ProtoInstance ProtoInstance0 = null;

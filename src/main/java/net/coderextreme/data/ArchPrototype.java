@@ -40,7 +40,9 @@ public class ArchPrototype {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new ArchPrototype().initialize().toFileJSON("../data/ArchPrototype.new.json");
+    X3D model = new ArchPrototype().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../data/ArchPrototype.new.json");
     }
     public X3D initialize() {
 ProtoInstance ProtoInstance0 = null;

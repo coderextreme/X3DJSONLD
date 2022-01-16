@@ -40,7 +40,9 @@ public class flowerproto {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new flowerproto().initialize().toFileJSON("../data/flowerproto.new.json");
+    X3D model = new flowerproto().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../data/flowerproto.new.json");
     }
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")

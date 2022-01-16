@@ -12,7 +12,6 @@
     "ajv": "*",
     "ajv-formats": "*",
     "ajv-i18n": "*",
-    "axios": ">=0.21.2",
     "buffer": "^6.0.3",
     "express": "*",
     "glob": "*",

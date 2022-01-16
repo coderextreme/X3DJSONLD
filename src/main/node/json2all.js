@@ -61,20 +61,20 @@ convertJSON([
 	folder : "../cplusplus/net/coderextreme/",
 	extension : ".cpp",
 	codeOutput : "../"
-	},
 /*
+	},
 	{ 
 	serializer : './JavaScriptSerializer.js',
 	folder : "../nashorn/net/coderextreme/",
 	extension : ".js",
 	codeOutput : "../"
 	},
-*/
 	{ 
 	serializer : './PythonSerializer.js',
 	folder : "../python/net/coderextreme/",
 	extension : ".py",
 	codeOutput : "../"
+*/
 	}
 	]);
 process.exit(0);

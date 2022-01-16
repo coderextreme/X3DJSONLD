@@ -40,7 +40,9 @@ public class BvhSeamless3dExport1 {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new BvhSeamless3dExport1().initialize().toFileJSON("../data/BvhSeamless3dExport1.new.json");
+    X3D model = new BvhSeamless3dExport1().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../data/BvhSeamless3dExport1.new.json");
     }
     public X3D initialize() {
 ProtoInstance ProtoInstance0 = null;
