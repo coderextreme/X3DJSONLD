@@ -40,7 +40,9 @@ public class cube {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new cube().initialize().toFileJSON("../data/cube.new.json");
+    X3D model = new cube().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../data/cube.new.json");
     }
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Interchange").setVersion("3.3")

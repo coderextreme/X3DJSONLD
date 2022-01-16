@@ -1,7239 +1,2272 @@
-from x3dpsail import *
-X3D0 = X3D()
-X3D0.setProfile("Immersive")
-X3D0.setVersion("3.3")
-head1 = head()
-component2 = component()
-component2.setName("H-Anim")
-component2.setLevel(1)
-
-head1.addComponent(component2)
-meta3 = meta()
-meta3.setName("title")
-meta3.setContent("BoxManAnimationPanel.x3d")
-
-head1.addMeta(meta3)
-meta4 = meta()
-meta4.setName("description")
-meta4.setContent("A Seamless VRML Human, demonstrating the HAnim 2001 Specification, animation panel shows multiple behaviors.")
-
-head1.addMeta(meta4)
-meta5 = meta()
-meta5.setName("creator")
-meta5.setContent("Joe Williams and James Smith - james@vapourtech.com")
-
-head1.addMeta(meta5)
-meta6 = meta()
-meta6.setName("translator")
-meta6.setContent("Joe Williams and Don Brutzman")
-
-head1.addMeta(meta6)
-meta7 = meta()
-meta7.setName("generator")
-meta7.setContent(".x3d to .x3d translation used BS Contact Geo 8.203")
-
-head1.addMeta(meta7)
-meta8 = meta()
-meta8.setName("created")
-meta8.setContent("1 March 2001")
-
-head1.addMeta(meta8)
-meta9 = meta()
-meta9.setName("revision")
-meta9.setContent("12 January 2017")
-
-head1.addMeta(meta9)
-meta10 = meta()
-meta10.setName("translated")
-meta10.setContent("14 January 2017")
-
-head1.addMeta(meta10)
-meta11 = meta()
-meta11.setName("modified")
-meta11.setContent("4 July 2020")
-
-head1.addMeta(meta11)
-meta12 = meta()
-meta12.setName("Image")
-meta12.setContent("BoxManAnimationPanelInclined.png")
-
-head1.addMeta(meta12)
-meta13 = meta()
-meta13.setName("MovingImage")
-meta13.setContent("BoxManAnimationPanel.mp4")
-
-head1.addMeta(meta13)
-meta14 = meta()
-meta14.setName("MovingImage")
-meta14.setContent("https://www.youtube.com/watch?v=8tI83Rtg_DU")
-
-head1.addMeta(meta14)
-meta15 = meta()
-meta15.setName("reference")
-meta15.setContent("https://twitter.com/Web3DConsortium/status/820638047523913728")
-
-head1.addMeta(meta15)
-meta16 = meta()
-meta16.setName("reference")
-meta16.setContent("https://twitter.com/Web3DConsortium/status/820642726009978881")
-
-head1.addMeta(meta16)
-meta17 = meta()
-meta17.setName("reference")
-meta17.setContent("http://HAnim.org")
-
-head1.addMeta(meta17)
-meta18 = meta()
-meta18.setName("reference")
-meta18.setContent("boxman.original.wrl")
-
-head1.addMeta(meta18)
-meta19 = meta()
-meta19.setName("TODO")
-meta19.setContent("InstantReality Forum Issue: InstantReality is ignoring the Viewpoint nodes in the topmost HAnimSite. http://forum.instantreality.org")
-
-head1.addMeta(meta19)
-meta20 = meta()
-meta20.setName("reference")
-meta20.setContent("BoxMan.x3d")
-
-head1.addMeta(meta20)
-meta21 = meta()
-meta21.setName("reference")
-meta21.setContent("http://HAnim.org/Models/HAnim2001/boxman")
-
-head1.addMeta(meta21)
-meta22 = meta()
-meta22.setName("reference")
-meta22.setContent("http://HAnim.org/Models/HAnim2001/boxman/boxman.wrl")
-
-head1.addMeta(meta22)
-meta23 = meta()
-meta23.setName("reference")
-meta23.setContent("http://www.vapourtech.com/team/james/boxman.wrl")
-
-head1.addMeta(meta23)
-meta24 = meta()
-meta24.setName("reference")
-meta24.setContent("http://HAnim.org/Specifications/HAnim2001")
-
-head1.addMeta(meta24)
-meta25 = meta()
-meta25.setName("reference")
-meta25.setContent("http://HAnim.org/Models")
-
-head1.addMeta(meta25)
-meta26 = meta()
-meta26.setName("reference")
-meta26.setContent("http://HAnim.org/Nodes")
-
-head1.addMeta(meta26)
-meta27 = meta()
-meta27.setName("reference")
-meta27.setContent("https://www.web3d.org/x3d/content/X3dToVrml97.xslt")
-
-head1.addMeta(meta27)
-meta28 = meta()
-meta28.setName("rights")
-meta28.setContent("(C) 2000 James Smith - james@vapourtech.com")
-
-head1.addMeta(meta28)
-meta29 = meta()
-meta29.setName("reference")
-meta29.setContent("http://www.vapourtech.com")
-
-head1.addMeta(meta29)
-meta30 = meta()
-meta30.setName("subject")
-meta30.setContent("BoxMan HAnim 2.0")
-
-head1.addMeta(meta30)
-meta31 = meta()
-meta31.setName("identifier")
-meta31.setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/BoxManAnimationPanel.x3d")
-
-head1.addMeta(meta31)
-meta32 = meta()
-meta32.setName("generator")
-meta32.setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")
-
-head1.addMeta(meta32)
-meta33 = meta()
-meta33.setName("license")
-meta33.setContent("../license.html")
-
-head1.addMeta(meta33)
-
-X3D0.setHead(head1)
-Scene34 = Scene()
-WorldInfo35 = WorldInfo()
-WorldInfo35.setInfo(["(C) 2000 James Smith - james@vapourtech.com","http://www.vapourtech.com/team/james/boxman.wrl","Blaxxun compatibility by Tu Lam - TuL@seamless-solutions.com"])
-WorldInfo35.setTitle("BoxMan - A Seamless VRML Human")
-
-Scene34.addChildren(WorldInfo35)
-Background36 = Background()
-Background36.setGroundColor([0.6,0.6,0.6])
-Background36.setSkyColor([0.75,0.75,0.75])
-
-Scene34.addChildren(Background36)
-HAnimHumanoid37 = HAnimHumanoid()
-HAnimHumanoid37.setName("Humanoid")
-HAnimHumanoid37.setDEF("boxman_Humanoid")
-HAnimHumanoid37.setInfo(["authorName=James Smith","authorEmail=james@vapourtech.com","copyright=(C) 2000 James Smith - james@vapourtech.com","humanoidVersion=1.0"])
-HAnimHumanoid37.setVersion("1.0")
-HAnimJoint38 = HAnimJoint()
-HAnimJoint38.setName("humanoid_root")
-HAnimJoint38.setDEF("boxman_humanoid_root")
-HAnimJoint38.setCenter([0,0.9723,-0.0728])
-HAnimJoint38.setSkinCoordIndex([0,1,2,3,4,5,6,7,8,9,10,11])
-HAnimJoint38.setSkinCoordWeight([1,1,1,1,1,1,1,1,1,1,1,1])
-HAnimJoint38.setUlimit([0,0,0])
-HAnimJoint38.setLlimit([0,0,0])
-HAnimSegment39 = HAnimSegment()
-HAnimSegment39.setName("sacrum")
-HAnimSegment39.setDEF("boxman_sacrum")
-Transform40 = Transform()
-Transform40.setTranslation([0,0.9723,-0.0728])
-Shape41 = Shape()
-Shape41.setDEF("SphereYellow")
-Appearance42 = Appearance()
-Material43 = Material()
-Material43.setDiffuseColor([1,1,0])
-
-Appearance42.setMaterial(Material43)
-
-Shape41.setAppearance(Appearance42)
-Sphere44 = Sphere()
-Sphere44.setRadius(0.02)
-
-Shape41.setGeometry(Sphere44)
-
-Transform40.addChildren(Shape41)
-
-HAnimSegment39.addChildren(Transform40)
-
-HAnimJoint38.addChildren(HAnimSegment39)
-HAnimJoint45 = HAnimJoint()
-HAnimJoint45.setName("l_hip")
-HAnimJoint45.setDEF("boxman_l_hip")
-HAnimJoint45.setCenter([0.0956,0.9364,0])
-HAnimJoint45.setSkinCoordIndex([12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43])
-HAnimJoint45.setSkinCoordWeight([1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5])
-HAnimJoint45.setUlimit([0,0,0])
-HAnimJoint45.setLlimit([0,0,0])
-HAnimSegment46 = HAnimSegment()
-HAnimSegment46.setName("l_thigh")
-HAnimSegment46.setDEF("boxman_l_thigh")
-Transform47 = Transform()
-Transform47.setTranslation([0.0956,0.9364,0])
-Shape48 = Shape()
-Shape48.setUSE("SphereYellow")
-
-Transform47.addChildren(Shape48)
-
-HAnimSegment46.addChildren(Transform47)
-
-HAnimJoint45.addChildren(HAnimSegment46)
-HAnimJoint49 = HAnimJoint()
-HAnimJoint49.setName("l_knee")
-HAnimJoint49.setDEF("boxman_l_knee")
-HAnimJoint49.setCenter([0.0956,0.5095,-0.0036])
-HAnimJoint49.setSkinCoordIndex([36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63])
-HAnimJoint49.setSkinCoordWeight([0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1])
-HAnimJoint49.setUlimit([0,0,0])
-HAnimJoint49.setLlimit([0,0,0])
-HAnimSegment50 = HAnimSegment()
-HAnimSegment50.setName("l_calf")
-HAnimSegment50.setDEF("boxman_l_calf")
-Transform51 = Transform()
-Transform51.setTranslation([0.0956,0.5095,-0.0036])
-Shape52 = Shape()
-Shape52.setUSE("SphereYellow")
-
-Transform51.addChildren(Shape52)
-
-HAnimSegment50.addChildren(Transform51)
-
-HAnimJoint49.addChildren(HAnimSegment50)
-HAnimJoint53 = HAnimJoint()
-HAnimJoint53.setName("l_ankle")
-HAnimJoint53.setDEF("boxman_l_ankle")
-HAnimJoint53.setCenter([0.0946,0.0762,-0.0261])
-HAnimJoint53.setSkinCoordIndex([64,65,66,67,68,69,70,71])
-HAnimJoint53.setSkinCoordWeight([1,1,1,1,1,1,1,1])
-HAnimJoint53.setUlimit([0,0,0])
-HAnimJoint53.setLlimit([0,0,0])
-HAnimSegment54 = HAnimSegment()
-HAnimSegment54.setName("l_hindfoot")
-HAnimSegment54.setDEF("boxman_l_hindfoot")
-Transform55 = Transform()
-Transform55.setTranslation([0.0946,0.0762,-0.0261])
-Shape56 = Shape()
-Shape56.setUSE("SphereYellow")
-
-Transform55.addChildren(Shape56)
-
-HAnimSegment54.addChildren(Transform55)
-
-HAnimJoint53.addChildren(HAnimSegment54)
-HAnimJoint57 = HAnimJoint()
-HAnimJoint57.setName("l_midtarsal")
-HAnimJoint57.setDEF("boxman_l_midtarsal")
-HAnimJoint57.setCenter([0.1079,0.0317,0.067])
-HAnimJoint57.setSkinCoordIndex([72,73,74,75,76,77,78,79])
-HAnimJoint57.setSkinCoordWeight([1,1,1,1,1,1,1,1])
-HAnimJoint57.setUlimit([0,0,0])
-HAnimJoint57.setLlimit([0,0,0])
-HAnimSegment58 = HAnimSegment()
-HAnimSegment58.setName("l_middistal")
-HAnimSegment58.setDEF("boxman_l_middistal")
-Transform59 = Transform()
-Transform59.setTranslation([0.1079,0.0317,0.067])
-Shape60 = Shape()
-Shape60.setUSE("SphereYellow")
-
-Transform59.addChildren(Shape60)
-
-HAnimSegment58.addChildren(Transform59)
-HAnimSite61 = HAnimSite()
-HAnimSite61.setName("l_middistal_tip")
-HAnimSite61.setDEF("boxman_l_middistal_tip")
-HAnimSite61.setTranslation([0.095,0.0005,0.1924])
-Shape62 = Shape()
-Shape62.setDEF("SphereRed")
-Appearance63 = Appearance()
-Material64 = Material()
-Material64.setDiffuseColor([1,0,0])
-
-Appearance63.setMaterial(Material64)
-
-Shape62.setAppearance(Appearance63)
-Sphere65 = Sphere()
-Sphere65.setRadius(0.02)
-
-Shape62.setGeometry(Sphere65)
-
-HAnimSite61.addChildren(Shape62)
-
-HAnimSegment58.addChildren(HAnimSite61)
-
-HAnimJoint57.addChildren(HAnimSegment58)
-
-HAnimJoint53.addChildren(HAnimJoint57)
-
-HAnimJoint49.addChildren(HAnimJoint53)
-
-HAnimJoint45.addChildren(HAnimJoint49)
-
-HAnimJoint38.addChildren(HAnimJoint45)
-HAnimJoint66 = HAnimJoint()
-HAnimJoint66.setName("r_hip")
-HAnimJoint66.setDEF("boxman_r_hip")
-HAnimJoint66.setCenter([-0.0956,0.9364,0])
-HAnimJoint66.setSkinCoordIndex([80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111])
-HAnimJoint66.setSkinCoordWeight([1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5])
-HAnimJoint66.setUlimit([0,0,0])
-HAnimJoint66.setLlimit([0,0,0])
-HAnimSegment67 = HAnimSegment()
-HAnimSegment67.setName("r_thigh")
-HAnimSegment67.setDEF("boxman_r_thigh")
-Transform68 = Transform()
-Transform68.setTranslation([-0.0956,0.9364,0])
-Shape69 = Shape()
-Shape69.setUSE("SphereYellow")
-
-Transform68.addChildren(Shape69)
-
-HAnimSegment67.addChildren(Transform68)
-
-HAnimJoint66.addChildren(HAnimSegment67)
-HAnimJoint70 = HAnimJoint()
-HAnimJoint70.setName("r_knee")
-HAnimJoint70.setDEF("boxman_r_knee")
-HAnimJoint70.setCenter([-0.0956,0.5095,-0.0036])
-HAnimJoint70.setSkinCoordIndex([104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131])
-HAnimJoint70.setSkinCoordWeight([0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1])
-HAnimJoint70.setUlimit([0,0,0])
-HAnimJoint70.setLlimit([0,0,0])
-HAnimSegment71 = HAnimSegment()
-HAnimSegment71.setName("r_calf")
-HAnimSegment71.setDEF("boxman_r_calf")
-Transform72 = Transform()
-Transform72.setTranslation([-0.0956,0.5095,-0.0036])
-Shape73 = Shape()
-Shape73.setUSE("SphereYellow")
-
-Transform72.addChildren(Shape73)
-
-HAnimSegment71.addChildren(Transform72)
-
-HAnimJoint70.addChildren(HAnimSegment71)
-HAnimJoint74 = HAnimJoint()
-HAnimJoint74.setName("r_ankle")
-HAnimJoint74.setDEF("boxman_r_ankle")
-HAnimJoint74.setCenter([-0.0946,0.0762,-0.0261])
-HAnimJoint74.setSkinCoordIndex([132,133,134,135,136,137,138,139])
-HAnimJoint74.setSkinCoordWeight([1,1,1,1,1,1,1,1])
-HAnimJoint74.setUlimit([0,0,0])
-HAnimJoint74.setLlimit([0,0,0])
-HAnimSegment75 = HAnimSegment()
-HAnimSegment75.setName("r_hindfoot")
-HAnimSegment75.setDEF("boxman_r_hindfoot")
-Transform76 = Transform()
-Transform76.setTranslation([-0.0946,0.0762,-0.0261])
-Shape77 = Shape()
-Shape77.setUSE("SphereYellow")
-
-Transform76.addChildren(Shape77)
-
-HAnimSegment75.addChildren(Transform76)
-
-HAnimJoint74.addChildren(HAnimSegment75)
-HAnimJoint78 = HAnimJoint()
-HAnimJoint78.setName("r_midtarsal")
-HAnimJoint78.setDEF("boxman_r_midtarsal")
-HAnimJoint78.setCenter([-0.1079,0.0317,0.067])
-HAnimJoint78.setSkinCoordIndex([140,141,142,143,144,145,146,147])
-HAnimJoint78.setSkinCoordWeight([1,1,1,1,1,1,1,1])
-HAnimJoint78.setUlimit([0,0,0])
-HAnimJoint78.setLlimit([0,0,0])
-HAnimSegment79 = HAnimSegment()
-HAnimSegment79.setName("r_middistal")
-HAnimSegment79.setDEF("boxman_r_middistal")
-Transform80 = Transform()
-Transform80.setTranslation([-0.1079,0.0317,0.067])
-Shape81 = Shape()
-Shape81.setUSE("SphereYellow")
-
-Transform80.addChildren(Shape81)
-
-HAnimSegment79.addChildren(Transform80)
-HAnimSite82 = HAnimSite()
-HAnimSite82.setName("r_middistal_tip")
-HAnimSite82.setDEF("boxman_r_middistal_tip")
-HAnimSite82.setTranslation([-0.095,0.0005,0.1924])
-Shape83 = Shape()
-Shape83.setUSE("SphereRed")
-
-HAnimSite82.addChildren(Shape83)
-
-HAnimSegment79.addChildren(HAnimSite82)
-
-HAnimJoint78.addChildren(HAnimSegment79)
-
-HAnimJoint74.addChildren(HAnimJoint78)
-
-HAnimJoint70.addChildren(HAnimJoint74)
-
-HAnimJoint66.addChildren(HAnimJoint70)
-
-HAnimJoint38.addChildren(HAnimJoint66)
-HAnimJoint84 = HAnimJoint()
-HAnimJoint84.setName("vl5")
-HAnimJoint84.setDEF("boxman_vl5")
-HAnimJoint84.setCenter([0,1.0817,-0.0728])
-HAnimJoint84.setSkinCoordIndex([148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167])
-HAnimJoint84.setSkinCoordWeight([1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1])
-HAnimJoint84.setUlimit([0,0,0])
-HAnimJoint84.setLlimit([0,0,0])
-HAnimSegment85 = HAnimSegment()
-HAnimSegment85.setName("l5")
-HAnimSegment85.setDEF("boxman_l5")
-Transform86 = Transform()
-Transform86.setTranslation([0,1.0817,-0.0728])
-Shape87 = Shape()
-Shape87.setUSE("SphereYellow")
-
-Transform86.addChildren(Shape87)
-
-HAnimSegment85.addChildren(Transform86)
-
-HAnimJoint84.addChildren(HAnimSegment85)
-HAnimJoint88 = HAnimJoint()
-HAnimJoint88.setName("skullbase")
-HAnimJoint88.setDEF("boxman_skullbase")
-HAnimJoint88.setCenter([0,1.644,0.036])
-HAnimJoint88.setSkinCoordIndex([168,169,170,171,172,173,174,175])
-HAnimJoint88.setSkinCoordWeight([1,1,1,1,1,1,1,1])
-HAnimJoint88.setUlimit([0,0,0])
-HAnimJoint88.setLlimit([0,0,0])
-HAnimSegment89 = HAnimSegment()
-HAnimSegment89.setName("skull")
-HAnimSegment89.setDEF("boxman_skull")
-Transform90 = Transform()
-Transform90.setTranslation([0,1.644,0.036])
-Shape91 = Shape()
-Shape91.setUSE("SphereYellow")
-
-Transform90.addChildren(Shape91)
-
-HAnimSegment89.addChildren(Transform90)
-HAnimSite92 = HAnimSite()
-HAnimSite92.setName("skull_tip")
-HAnimSite92.setDEF("boxman_skull_tip")
-HAnimSite92.setTranslation([-0.0029,1.7771,0.0274])
-Shape93 = Shape()
-Shape93.setUSE("SphereYellow")
-
-HAnimSite92.addChildren(Shape93)
-
-HAnimSegment89.addChildren(HAnimSite92)
-
-HAnimJoint88.addChildren(HAnimSegment89)
-
-HAnimJoint84.addChildren(HAnimJoint88)
-HAnimJoint94 = HAnimJoint()
-HAnimJoint94.setName("l_shoulder")
-HAnimJoint94.setDEF("boxman_l_shoulder")
-HAnimJoint94.setCenter([0.1968,1.4642,-0.0265])
-HAnimJoint94.setSkinCoordIndex([176,177,178,179,180,181,182,183])
-HAnimJoint94.setSkinCoordWeight([1,1,1,1,1,1,1,1])
-HAnimJoint94.setUlimit([0,0,0])
-HAnimJoint94.setLlimit([0,0,0])
-HAnimSegment95 = HAnimSegment()
-HAnimSegment95.setName("l_upperarm")
-HAnimSegment95.setDEF("boxman_l_upperarm")
-Transform96 = Transform()
-Transform96.setTranslation([0.1968,1.4642,-0.0265])
-Shape97 = Shape()
-Shape97.setUSE("SphereYellow")
-
-Transform96.addChildren(Shape97)
-
-HAnimSegment95.addChildren(Transform96)
-
-HAnimJoint94.addChildren(HAnimSegment95)
-HAnimJoint98 = HAnimJoint()
-HAnimJoint98.setName("l_elbow")
-HAnimJoint98.setDEF("boxman_l_elbow")
-HAnimJoint98.setCenter([0.1982,1.1622,-0.0557])
-HAnimJoint98.setSkinCoordIndex([184,185,186,187,188,189,190,191])
-HAnimJoint98.setSkinCoordWeight([1,1,1,1,1,1,1,1])
-HAnimJoint98.setUlimit([0,0,0])
-HAnimJoint98.setLlimit([0,0,0])
-HAnimSegment99 = HAnimSegment()
-HAnimSegment99.setName("l_forearm")
-HAnimSegment99.setDEF("boxman_l_forearm")
-Transform100 = Transform()
-Transform100.setTranslation([0.1982,1.1622,-0.0557])
-Shape101 = Shape()
-Shape101.setUSE("SphereYellow")
-
-Transform100.addChildren(Shape101)
-
-HAnimSegment99.addChildren(Transform100)
-
-HAnimJoint98.addChildren(HAnimSegment99)
-HAnimJoint102 = HAnimJoint()
-HAnimJoint102.setName("l_wrist")
-HAnimJoint102.setDEF("boxman_l_wrist")
-HAnimJoint102.setCenter([0.1972,0.8929,-0.069])
-HAnimJoint102.setSkinCoordIndex([192,193,194,195,196,197,198,199])
-HAnimJoint102.setSkinCoordWeight([1,1,1,1,1,1,1,1])
-HAnimJoint102.setUlimit([0,0,0])
-HAnimJoint102.setLlimit([0,0,0])
-HAnimSegment103 = HAnimSegment()
-HAnimSegment103.setName("l_hand")
-HAnimSegment103.setDEF("boxman_l_hand")
-Transform104 = Transform()
-Transform104.setTranslation([0.1972,0.8929,-0.069])
-Shape105 = Shape()
-Shape105.setUSE("SphereYellow")
-
-Transform104.addChildren(Shape105)
-
-HAnimSegment103.addChildren(Transform104)
-HAnimSite106 = HAnimSite()
-HAnimSite106.setName("l_hand_tip")
-HAnimSite106.setDEF("boxman_l_hand_tip")
-HAnimSite106.setTranslation([0.1912,0.6976,-0.071])
-Shape107 = Shape()
-Shape107.setUSE("SphereRed")
-
-HAnimSite106.addChildren(Shape107)
-
-HAnimSegment103.addChildren(HAnimSite106)
-
-HAnimJoint102.addChildren(HAnimSegment103)
-
-HAnimJoint98.addChildren(HAnimJoint102)
-
-HAnimJoint94.addChildren(HAnimJoint98)
-
-HAnimJoint84.addChildren(HAnimJoint94)
-HAnimJoint108 = HAnimJoint()
-HAnimJoint108.setName("r_shoulder")
-HAnimJoint108.setDEF("boxman_r_shoulder")
-HAnimJoint108.setCenter([-0.1968,1.4642,-0.0265])
-HAnimJoint108.setSkinCoordIndex([200,201,202,203,204,205,206,207])
-HAnimJoint108.setSkinCoordWeight([1,1,1,1,1,1,1,1])
-HAnimJoint108.setUlimit([0,0,0])
-HAnimJoint108.setLlimit([0,0,0])
-HAnimSegment109 = HAnimSegment()
-HAnimSegment109.setName("r_upperarm")
-HAnimSegment109.setDEF("boxman_r_upperarm")
-Transform110 = Transform()
-Transform110.setTranslation([-0.1968,1.4642,-0.0265])
-Shape111 = Shape()
-Shape111.setUSE("SphereYellow")
-
-Transform110.addChildren(Shape111)
-
-HAnimSegment109.addChildren(Transform110)
-
-HAnimJoint108.addChildren(HAnimSegment109)
-HAnimJoint112 = HAnimJoint()
-HAnimJoint112.setName("r_elbow")
-HAnimJoint112.setDEF("boxman_r_elbow")
-HAnimJoint112.setCenter([-0.1982,1.1622,-0.0557])
-HAnimJoint112.setSkinCoordIndex([208,209,210,211,212,213,214,215])
-HAnimJoint112.setSkinCoordWeight([1,1,1,1,1,1,1,1])
-HAnimJoint112.setUlimit([0,0,0])
-HAnimJoint112.setLlimit([0,0,0])
-HAnimSegment113 = HAnimSegment()
-HAnimSegment113.setName("r_forearm")
-HAnimSegment113.setDEF("boxman_r_forearm")
-Transform114 = Transform()
-Transform114.setTranslation([-0.1982,1.1622,-0.0557])
-Shape115 = Shape()
-Shape115.setUSE("SphereYellow")
-
-Transform114.addChildren(Shape115)
-
-HAnimSegment113.addChildren(Transform114)
-
-HAnimJoint112.addChildren(HAnimSegment113)
-HAnimJoint116 = HAnimJoint()
-HAnimJoint116.setName("r_wrist")
-HAnimJoint116.setDEF("boxman_r_wrist")
-HAnimJoint116.setCenter([-0.1972,0.8929,-0.069])
-HAnimJoint116.setSkinCoordIndex([216,217,218,219,220,221,222,223])
-HAnimJoint116.setSkinCoordWeight([1,1,1,1,1,1,1,1])
-HAnimJoint116.setUlimit([0,0,0])
-HAnimJoint116.setLlimit([0,0,0])
-HAnimSegment117 = HAnimSegment()
-HAnimSegment117.setName("r_hand")
-HAnimSegment117.setDEF("boxman_r_hand")
-Transform118 = Transform()
-Transform118.setTranslation([-0.1972,0.8929,-0.069])
-Shape119 = Shape()
-Shape119.setUSE("SphereYellow")
-
-Transform118.addChildren(Shape119)
-
-HAnimSegment117.addChildren(Transform118)
-HAnimSite120 = HAnimSite()
-HAnimSite120.setName("r_hand_tip")
-HAnimSite120.setDEF("boxman_r_hand_tip")
-HAnimSite120.setTranslation([-0.1912,0.6976,-0.071])
-Shape121 = Shape()
-Shape121.setUSE("SphereRed")
-
-HAnimSite120.addChildren(Shape121)
-
-HAnimSegment117.addChildren(HAnimSite120)
-
-HAnimJoint116.addChildren(HAnimSegment117)
-
-HAnimJoint112.addChildren(HAnimJoint116)
-
-HAnimJoint108.addChildren(HAnimJoint112)
-
-HAnimJoint84.addChildren(HAnimJoint108)
-
-HAnimJoint38.addChildren(HAnimJoint84)
-
-HAnimHumanoid37.setSkeleton(HAnimJoint38)
-## sacrum (12) # l_thigh (28) # l_calf (24) # l_hindfoot (8) # l_middistal (8) # r_thigh (28) # r_calf (24) # r_hindfoot (8) # r_middistal (8) # l5 (20) # skull (8) # l_upperarm (8) # l_forearm (8) # l_hand (8) # r_upperarm (8) # r_forearm (8) # r_hand (8)
+from x3d import *
+print(
+X3D(
+  profile="Immersive", version="3.3", head=head(  children=[
+      
+          component(name="H-Anim", level=1), 
+          meta(name="title", content="BoxManAnimationPanel.x3d"),
+          meta(name="description", content="A Seamless VRML Human, demonstrating the HAnim 2001 Specification, animation panel shows multiple behaviors."),
+          meta(name="creator", content="Joe Williams and James Smith - james@vapourtech.com"),
+          meta(name="translator", content="Joe Williams and Don Brutzman"),
+          meta(name="generator", content=".x3d to .x3d translation used BS Contact Geo 8.203"),
+          meta(name="created", content="1 March 2001"),
+          meta(name="revision", content="12 January 2017"),
+          meta(name="translated", content="14 January 2017"),
+          meta(name="modified", content="4 July 2020"),
+          meta(name="Image", content="BoxManAnimationPanelInclined.png"),
+          meta(name="MovingImage", content="BoxManAnimationPanel.mp4"),
+          meta(name="MovingImage", content="https://www.youtube.com/watch?v=8tI83Rtg_DU"),
+          meta(name="reference", content="https://twitter.com/Web3DConsortium/status/820638047523913728"),
+          meta(name="reference", content="https://twitter.com/Web3DConsortium/status/820642726009978881"),
+          meta(name="reference", content="http://HAnim.org"),
+          meta(name="reference", content="boxman.original.wrl"),
+          meta(name="TODO", content="InstantReality Forum Issue: InstantReality is ignoring the Viewpoint nodes in the topmost HAnimSite. http://forum.instantreality.org"),
+          meta(name="reference", content="BoxMan.x3d"),
+          meta(name="reference", content="http://HAnim.org/Models/HAnim2001/boxman"),
+          meta(name="reference", content="http://HAnim.org/Models/HAnim2001/boxman/boxman.wrl"),
+          meta(name="reference", content="http://www.vapourtech.com/team/james/boxman.wrl"),
+          meta(name="reference", content="http://HAnim.org/Specifications/HAnim2001"),
+          meta(name="reference", content="http://HAnim.org/Models"),
+          meta(name="reference", content="http://HAnim.org/Nodes"),
+          meta(name="reference", content="https://www.web3d.org/x3d/content/X3dToVrml97.xslt"),
+          meta(name="rights", content="(C) 2000 James Smith - james@vapourtech.com"),
+          meta(name="reference", content="http://www.vapourtech.com"),
+          meta(name="subject", content="BoxMan HAnim 2.0"),
+          meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/BoxManAnimationPanel.x3d"),
+          meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+          meta(name="license", content="../license.html"),
+          meta(name="translated", content="16 January 2022"),
+          meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+          meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")]), Scene=Scene(
+    children=[
+        WorldInfo(
+          info=("(C) 2000 James Smith - james@vapourtech.com","http://www.vapourtech.com/team/james/boxman.wrl","Blaxxun compatibility by Tu Lam - TuL@seamless-solutions.com"), title="BoxMan - A Seamless VRML Human"),
+        Background(
+          groundColor=(0.6,0.6,0.6), skyColor=(0.75,0.75,0.75)),
+        HAnimHumanoid(
+          name="Humanoid", DEF="boxman_Humanoid", info=("authorName=James Smith","authorEmail=james@vapourtech.com","copyright=(C) 2000 James Smith - james@vapourtech.com","humanoidVersion=1.0"), version="1.0", skeleton=(
+              HAnimJoint(
+                name="humanoid_root", DEF="boxman_humanoid_root", center=(0,0.9723,-0.0728), skinCoordIndex=(0,1,2,3,4,5,6,7,8,9,10,11), skinCoordWeight=(1,1,1,1,1,1,1,1,1,1,1,1), ulimit=(0,0,0), llimit=(0,0,0), children=[
+                    HAnimSegment(
+                      name="sacrum", DEF="boxman_sacrum", children=[
+                          Transform(
+                            translation=(0,0.9723,-0.0728), children=[
+                                Shape(
+                                  DEF="SphereYellow", appearance=Appearance(
+                                      material=Material(
+                                          diffuseColor=(1,1,0))), geometry=Sphere(
+                                      radius=0.02))])]),
+                    HAnimJoint(
+                      name="l_hip", DEF="boxman_l_hip", center=(0.0956,0.9364,0), skinCoordIndex=(12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43), skinCoordWeight=(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5), ulimit=(0,0,0), llimit=(0,0,0), children=[
+                          HAnimSegment(
+                            name="l_thigh", DEF="boxman_l_thigh", children=[
+                                Transform(
+                                  translation=(0.0956,0.9364,0), children=[
+                                      Shape(
+                                        USE="SphereYellow")])]),
+                          HAnimJoint(
+                            name="l_knee", DEF="boxman_l_knee", center=(0.0956,0.5095,-0.0036), skinCoordIndex=(36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63), skinCoordWeight=(0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1), ulimit=(0,0,0), llimit=(0,0,0), children=[
+                                HAnimSegment(
+                                  name="l_calf", DEF="boxman_l_calf", children=[
+                                      Transform(
+                                        translation=(0.0956,0.5095,-0.0036), children=[
+                                            Shape(
+                                              USE="SphereYellow")])]),
+                                HAnimJoint(
+                                  name="l_ankle", DEF="boxman_l_ankle", center=(0.0946,0.0762,-0.0261), skinCoordIndex=(64,65,66,67,68,69,70,71), skinCoordWeight=(1,1,1,1,1,1,1,1), ulimit=(0,0,0), llimit=(0,0,0), children=[
+                                      HAnimSegment(
+                                        name="l_hindfoot", DEF="boxman_l_hindfoot", children=[
+                                            Transform(
+                                              translation=(0.0946,0.0762,-0.0261), children=[
+                                                  Shape(
+                                                    USE="SphereYellow")])]),
+                                      HAnimJoint(
+                                        name="l_midtarsal", DEF="boxman_l_midtarsal", center=(0.1079,0.0317,0.067), skinCoordIndex=(72,73,74,75,76,77,78,79), skinCoordWeight=(1,1,1,1,1,1,1,1), ulimit=(0,0,0), llimit=(0,0,0), children=[
+                                            HAnimSegment(
+                                              name="l_middistal", DEF="boxman_l_middistal", children=[
+                                                  Transform(
+                                                    translation=(0.1079,0.0317,0.067), children=[
+                                                        Shape(
+                                                          USE="SphereYellow")]),
+                                                  HAnimSite(
+                                                    name="l_middistal_tip", DEF="boxman_l_middistal_tip", translation=(0.095,0.0005,0.1924), children=[
+                                                        Shape(
+                                                          DEF="SphereRed", appearance=Appearance(
+                                                              material=Material(
+                                                                  diffuseColor=(1,0,0))), geometry=Sphere(
+                                                              radius=0.02))])])])])])]),
+                    HAnimJoint(
+                      name="r_hip", DEF="boxman_r_hip", center=(-0.0956,0.9364,0), skinCoordIndex=(80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111), skinCoordWeight=(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5), ulimit=(0,0,0), llimit=(0,0,0), children=[
+                          HAnimSegment(
+                            name="r_thigh", DEF="boxman_r_thigh", children=[
+                                Transform(
+                                  translation=(-0.0956,0.9364,0), children=[
+                                      Shape(
+                                        USE="SphereYellow")])]),
+                          HAnimJoint(
+                            name="r_knee", DEF="boxman_r_knee", center=(-0.0956,0.5095,-0.0036), skinCoordIndex=(104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131), skinCoordWeight=(0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1), ulimit=(0,0,0), llimit=(0,0,0), children=[
+                                HAnimSegment(
+                                  name="r_calf", DEF="boxman_r_calf", children=[
+                                      Transform(
+                                        translation=(-0.0956,0.5095,-0.0036), children=[
+                                            Shape(
+                                              USE="SphereYellow")])]),
+                                HAnimJoint(
+                                  name="r_ankle", DEF="boxman_r_ankle", center=(-0.0946,0.0762,-0.0261), skinCoordIndex=(132,133,134,135,136,137,138,139), skinCoordWeight=(1,1,1,1,1,1,1,1), ulimit=(0,0,0), llimit=(0,0,0), children=[
+                                      HAnimSegment(
+                                        name="r_hindfoot", DEF="boxman_r_hindfoot", children=[
+                                            Transform(
+                                              translation=(-0.0946,0.0762,-0.0261), children=[
+                                                  Shape(
+                                                    USE="SphereYellow")])]),
+                                      HAnimJoint(
+                                        name="r_midtarsal", DEF="boxman_r_midtarsal", center=(-0.1079,0.0317,0.067), skinCoordIndex=(140,141,142,143,144,145,146,147), skinCoordWeight=(1,1,1,1,1,1,1,1), ulimit=(0,0,0), llimit=(0,0,0), children=[
+                                            HAnimSegment(
+                                              name="r_middistal", DEF="boxman_r_middistal", children=[
+                                                  Transform(
+                                                    translation=(-0.1079,0.0317,0.067), children=[
+                                                        Shape(
+                                                          USE="SphereYellow")]),
+                                                  HAnimSite(
+                                                    name="r_middistal_tip", DEF="boxman_r_middistal_tip", translation=(-0.095,0.0005,0.1924), children=[
+                                                        Shape(
+                                                          USE="SphereRed")])])])])])]),
+                    HAnimJoint(
+                      name="vl5", DEF="boxman_vl5", center=(0,1.0817,-0.0728), skinCoordIndex=(148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167), skinCoordWeight=(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1), ulimit=(0,0,0), llimit=(0,0,0), children=[
+                          HAnimSegment(
+                            name="l5", DEF="boxman_l5", children=[
+                                Transform(
+                                  translation=(0,1.0817,-0.0728), children=[
+                                      Shape(
+                                        USE="SphereYellow")])]),
+                          HAnimJoint(
+                            name="skullbase", DEF="boxman_skullbase", center=(0,1.644,0.036), skinCoordIndex=(168,169,170,171,172,173,174,175), skinCoordWeight=(1,1,1,1,1,1,1,1), ulimit=(0,0,0), llimit=(0,0,0), children=[
+                                HAnimSegment(
+                                  name="skull", DEF="boxman_skull", children=[
+                                      Transform(
+                                        translation=(0,1.644,0.036), children=[
+                                            Shape(
+                                              USE="SphereYellow")]),
+                                      HAnimSite(
+                                        name="skull_tip", DEF="boxman_skull_tip", translation=(-0.0029,1.7771,0.0274), children=[
+                                            Shape(
+                                              USE="SphereYellow")])])]),
+                          HAnimJoint(
+                            name="l_shoulder", DEF="boxman_l_shoulder", center=(0.1968,1.4642,-0.0265), skinCoordIndex=(176,177,178,179,180,181,182,183), skinCoordWeight=(1,1,1,1,1,1,1,1), ulimit=(0,0,0), llimit=(0,0,0), children=[
+                                HAnimSegment(
+                                  name="l_upperarm", DEF="boxman_l_upperarm", children=[
+                                      Transform(
+                                        translation=(0.1968,1.4642,-0.0265), children=[
+                                            Shape(
+                                              USE="SphereYellow")])]),
+                                HAnimJoint(
+                                  name="l_elbow", DEF="boxman_l_elbow", center=(0.1982,1.1622,-0.0557), skinCoordIndex=(184,185,186,187,188,189,190,191), skinCoordWeight=(1,1,1,1,1,1,1,1), ulimit=(0,0,0), llimit=(0,0,0), children=[
+                                      HAnimSegment(
+                                        name="l_forearm", DEF="boxman_l_forearm", children=[
+                                            Transform(
+                                              translation=(0.1982,1.1622,-0.0557), children=[
+                                                  Shape(
+                                                    USE="SphereYellow")])]),
+                                      HAnimJoint(
+                                        name="l_wrist", DEF="boxman_l_wrist", center=(0.1972,0.8929,-0.069), skinCoordIndex=(192,193,194,195,196,197,198,199), skinCoordWeight=(1,1,1,1,1,1,1,1), ulimit=(0,0,0), llimit=(0,0,0), children=[
+                                            HAnimSegment(
+                                              name="l_hand", DEF="boxman_l_hand", children=[
+                                                  Transform(
+                                                    translation=(0.1972,0.8929,-0.069), children=[
+                                                        Shape(
+                                                          USE="SphereYellow")]),
+                                                  HAnimSite(
+                                                    name="l_hand_tip", DEF="boxman_l_hand_tip", translation=(0.1912,0.6976,-0.071), children=[
+                                                        Shape(
+                                                          USE="SphereRed")])])])])]),
+                          HAnimJoint(
+                            name="r_shoulder", DEF="boxman_r_shoulder", center=(-0.1968,1.4642,-0.0265), skinCoordIndex=(200,201,202,203,204,205,206,207), skinCoordWeight=(1,1,1,1,1,1,1,1), ulimit=(0,0,0), llimit=(0,0,0), children=[
+                                HAnimSegment(
+                                  name="r_upperarm", DEF="boxman_r_upperarm", children=[
+                                      Transform(
+                                        translation=(-0.1968,1.4642,-0.0265), children=[
+                                            Shape(
+                                              USE="SphereYellow")])]),
+                                HAnimJoint(
+                                  name="r_elbow", DEF="boxman_r_elbow", center=(-0.1982,1.1622,-0.0557), skinCoordIndex=(208,209,210,211,212,213,214,215), skinCoordWeight=(1,1,1,1,1,1,1,1), ulimit=(0,0,0), llimit=(0,0,0), children=[
+                                      HAnimSegment(
+                                        name="r_forearm", DEF="boxman_r_forearm", children=[
+                                            Transform(
+                                              translation=(-0.1982,1.1622,-0.0557), children=[
+                                                  Shape(
+                                                    USE="SphereYellow")])]),
+                                      HAnimJoint(
+                                        name="r_wrist", DEF="boxman_r_wrist", center=(-0.1972,0.8929,-0.069), skinCoordIndex=(216,217,218,219,220,221,222,223), skinCoordWeight=(1,1,1,1,1,1,1,1), ulimit=(0,0,0), llimit=(0,0,0), children=[
+                                            HAnimSegment(
+                                              name="r_hand", DEF="boxman_r_hand", children=[
+                                                  Transform(
+                                                    translation=(-0.1972,0.8929,-0.069), children=[
+                                                        Shape(
+                                                          USE="SphereYellow")]),
+                                                  HAnimSite(
+                                                    name="r_hand_tip", DEF="boxman_r_hand_tip", translation=(-0.1912,0.6976,-0.071), children=[
+                                                        Shape(
+                                                          USE="SphereRed")])])])])])])])), children=[## sacrum (12) # l_thigh (28) # l_calf (24) # l_hindfoot (8) # l_middistal (8) # r_thigh (28) # r_calf (24) # r_hindfoot (8) # r_middistal (8) # l5 (20) # skull (8) # l_upperarm (8) # l_forearm (8) # l_hand (8) # r_upperarm (8) # r_forearm (8) # r_hand (8)
 #Coordinate DEF='SKINCOORD2' containerField='skinCoord' point='-0.05 1 0.05 0.05 1 0.05 0.03 0.97 -0.1 -0.03 0.97 -0.1 0.03 0.94 -0.075 -0.03 0.94 -0.075 0 0.92 0 0 0.94 0.03 -0.12 1.06 0.05 0.12 1.06 0.05 0.12 1.06 -0.1 -0.12 1.06 -0.1 0.0456 0.9364 0.05 0.1456 0.9364 0.05 0.1456 0.9364 -0.05 0.0456 0.9364 -0.05 0.0456 0.9 0.05 0.1456 0.9 0.05 0.1456 0.9 -0.05 0.0456 0.9 -0.05 0.0456 0.8 0.05 0.1456 0.8 0.05 0.1456 0.8 -0.05 0.0456 0.8 -0.05 0.0456 0.7 0.05 0.1456 0.7 0.05 0.1456 0.7 -0.05 0.0456 0.7 -0.05 0.0456 0.6 0.05 0.1456 0.6 0.05 0.1456 0.6 -0.05 0.0456 0.6 -0.05 0.0456 0.55 0.05 0.1456 0.55 0.05 0.1456 0.55 -0.05 0.0456 0.55 -0.05 0.0456 0.52 0.05 0.1456 0.52 0.05 0.1456 0.52 -0.05 0.0456 0.52 -0.05 0.0456 0.5 0.05 0.1456 0.5 0.05 0.1456 0.5 -0.05 0.0456 0.5 -0.05 0.0454 0.43 0.045 0.1454 0.43 0.045 0.1454 0.43 -0.055 0.0454 0.43 -0.055 0.0452 0.36 0.04 0.1452 0.36 0.04 0.1452 0.36 -0.06 0.0452 0.36 -0.06 0.045 0.29 0.035 0.145 0.29 0.035 0.145 0.29 -0.065 0.045 0.29 -0.065 0.0448 0.21 0.03 0.1448 0.21 0.03 0.1448 0.21 -0.07 0.0448 0.21 -0.07 0.0446 0.1262 0.025 0.1446 0.1262 0.025 0.1446 0.1262 -0.075 0.0446 0.1262 -0.075 0.0446 0.0702038 0.02464698 0.1446 0.0702038 0.02464698 0.1446 0.006264479 -0.08360368 0.0446 0.006264479 -0.08360368 0.0446 0.046587 0.05407905 0.1446 0.046587 0.05407905 0.1446 -0.009224742 0.0474844 0.0446 -0.009224742 0.0474844 0.0446 0.04306673 0.0838718 0.1446 0.04306673 0.0838718 0.1446 -0.01274502 0.07727715 0.0446 -0.01274502 0.07727715 0.0446 0.03069882 0.1885436 0.1446 0.03069882 0.1885436 0.1446 -0.02511293 0.181949 0.0446 -0.02511293 0.181949 -0.0456 0.9861611 0.004881433 -0.1456 0.9861611 0.004881433 -0.1456 0.8866388 -0.004881474 -0.0456 0.8866388 -0.004881474 -0.0456 0.9826074 0.04110757 -0.1456 0.9826074 0.04110757 -0.1456 0.8830851 0.03134466 -0.0456 0.8830851 0.03134466 -0.0456 0.9728445 0.1406298 -0.1456 0.9728445 0.1406298 -0.1456 0.8733222 0.1308669 -0.0456 0.8733222 0.1308669 -0.0456 0.9630816 0.2401521 -0.1456 0.9630816 0.2401521 -0.1456 0.8635593 0.2303892 -0.0456 0.8635593 0.2303892 -0.0456 0.9533187 0.3396744 -0.1456 0.9533187 0.3396744 -0.1456 0.8537964 0.3299115 -0.0456 0.8537964 0.3299115 -0.0456 0.9484373 0.3894355 -0.1456 0.9484373 0.3894355 -0.1456 0.848915 0.3796726 -0.0456 0.848915 0.3796726 -0.0456 0.94468 0.4147483 -0.1456 0.94468 0.4147483 -0.1456 0.8450468 0.4134411 -0.0456 0.8450468 0.4134411 -0.0456 0.9444185 0.4346749 -0.1456 0.9444185 0.4346749 -0.1456 0.8447853 0.4333678 -0.0456 0.8447853 0.4333678 -0.0454 0.9452982 0.5003315 -0.1454 0.9452982 0.5003315 -0.1454 0.8455541 0.5074801 -0.0454 0.8455541 0.5074801 -0.0452 0.945315 0.5705098 -0.1452 0.945315 0.5705098 -0.1452 0.8455709 0.5776584 -0.0452 0.8455709 0.5776584 -0.045 0.9453319 0.6406881 -0.145 0.9453319 0.6406881 -0.145 0.8455877 0.6478368 -0.045 0.8455877 0.6478368 -0.0448 0.9460636 0.7208409 -0.1448 0.9460636 0.7208409 -0.1448 0.8463194 0.7279896 -0.0448 0.8463194 0.7279896 -0.0446 0.947067 0.8047839 -0.1446 0.947067 0.8047839 -0.1446 0.8473228 0.8119326 -0.0446 0.8473228 0.8119326 -0.0446 0.9507178 0.8606621 -0.1446 0.9507178 0.8606621 -0.1446 0.847315 0.9321763 -0.0446 0.847315 0.9321763 -0.0446 0.9817629 0.8821145 -0.1446 0.9817629 0.8821145 -0.1446 0.9791749 0.9382548 -0.0446 0.9791749 0.9382548 -0.0446 1.011731 0.883496 -0.1446 1.011731 0.883496 -0.1446 1.009143 0.9396363 -0.0446 1.009143 0.9396363 -0.0446 1.117019 0.8883496 -0.1446 1.117019 0.8883496 -0.1446 1.114431 0.94449 -0.0446 1.114431 0.94449 -0.12 1.1 0.05 0.12 1.1 0.05 0.12 1.1 -0.1 -0.12 1.1 -0.1 -0.14 1.42 0.045 0.14 1.42 0.045 0.14 1.42 -0.09 -0.14 1.42 -0.09 -0.24 1.52 0.035 0.24 1.52 0.035 0.24 1.52 -0.09 -0.24 1.52 -0.09 -0.05 1.56 0.03 0.05 1.56 0.03 0.05 1.56 -0.06 -0.05 1.56 -0.06 -0.05 1.6 0.06 0.05 1.6 0.06 0.05 1.62 -0.03 -0.05 1.62 -0.03 -0.07 1.781247 0.1236818 0.07 1.781247 0.1236818 0.07 1.77377 -0.03614335 -0.07 1.77377 -0.03614335 -0.07 1.604441 0.1319535 0.07 1.604441 0.1319535 0.07 1.656898 -0.03067561 -0.07 1.656898 -0.03067561 0.2016854 1.406894 0.015 0.2023709 1.520029 0.015 0.2023709 1.520029 -0.075 0.2016854 1.406894 -0.075 0.3774735 1.243191 -0.025 0.4201562 1.28536 -0.025 0.4201562 1.28536 -0.085 0.3774735 1.243191 -0.085 0.4055858 1.214736 -0.025 0.4482685 1.256904 -0.025 0.4482685 1.256904 -0.085 0.4055858 1.214736 -0.085 0.5743457 1.058147 -0.05 0.6028008 1.086259 -0.05 0.6028008 1.086259 -0.09 0.5743457 1.058147 -0.09 0.6024581 1.029692 -0.02 0.6309132 1.057804 -0.02 0.6309132 1.057804 -0.1 0.6024581 1.029692 -0.1 0.7236224 0.9070502 -0.02 0.7520775 0.9351625 -0.02 0.7520775 0.9351625 -0.1 0.7236224 0.9070502 -0.1 -0.2016854 1.406894 0.015 -0.2023709 1.520029 0.015 -0.2023709 1.520029 -0.075 -0.2016854 1.406894 -0.075 -0.3774735 1.243191 -0.025 -0.4201562 1.28536 -0.025 -0.4201562 1.28536 -0.085 -0.3774735 1.243191 -0.085 -0.4055858 1.214736 -0.025 -0.4482685 1.256904 -0.025 -0.4482685 1.256904 -0.085 -0.4055858 1.214736 -0.085 -0.5743457 1.058147 -0.05 -0.6028008 1.086259 -0.05 -0.6028008 1.086259 -0.09 -0.5743457 1.058147 -0.09 -0.6024581 1.029692 -0.02 -0.6309132 1.057804 -0.02 -0.6309132 1.057804 -0.1 -0.6024581 1.029692 -0.1 -0.7236224 0.9070502 -0.02 -0.7520775 0.9351625 -0.02 -0.7520775 0.9351625 -0.1 -0.7236224 0.9070502 -0.1'/
 #top-level joint references
 #top-level segment references
 #top-level site references
-Coordinate122 = Coordinate()
-Coordinate122.setDEF("SKINCOORD")
-Coordinate122.setPoint([-0.05,1,0.05,0.05,1,0.05,0.03,0.97,-0.1,-0.03,0.97,-0.1,0.03,0.94,-0.075,-0.03,0.94,-0.075,0,0.92,0,0,0.94,0.03,-0.12,1.06,0.05,0.12,1.06,0.05,0.12,1.06,-0.1,-0.12,1.06,-0.1,0.0456,0.9364,0.05,0.1456,0.9364,0.05,0.1456,0.9364,-0.05,0.0456,0.9364,-0.05,0.0456,0.9,0.05,0.1456,0.9,0.05,0.1456,0.9,-0.05,0.0456,0.9,-0.05,0.0456,0.8,0.05,0.1456,0.8,0.05,0.1456,0.8,-0.05,0.0456,0.8,-0.05,0.0456,0.7,0.05,0.1456,0.7,0.05,0.1456,0.7,-0.05,0.0456,0.7,-0.05,0.0456,0.6,0.05,0.1456,0.6,0.05,0.1456,0.6,-0.05,0.0456,0.6,-0.05,0.0456,0.55,0.05,0.1456,0.55,0.05,0.1456,0.55,-0.05,0.0456,0.55,-0.05,0.0456,0.52,0.05,0.1456,0.52,0.05,0.1456,0.52,-0.05,0.0456,0.52,-0.05,0.0456,0.5,0.05,0.1456,0.5,0.05,0.1456,0.5,-0.05,0.0456,0.5,-0.05,0.0454,0.43,0.045,0.1454,0.43,0.045,0.1454,0.43,-0.055,0.0454,0.43,-0.055,0.0452,0.36,0.04,0.1452,0.36,0.04,0.1452,0.36,-0.06,0.0452,0.36,-0.06,0.045,0.29,0.035,0.145,0.29,0.035,0.145,0.29,-0.065,0.045,0.29,-0.065,0.0448,0.21,0.03,0.1448,0.21,0.03,0.1448,0.21,-0.07,0.0448,0.21,-0.07,0.0446,0.1262,0.025,0.1446,0.1262,0.025,0.1446,0.1262,-0.075,0.0446,0.1262,-0.075,0.0446,0.0762,0.025,0.1446,0.0762,0.025,0.1446,0,-0.075,0.0446,0,-0.075,0.0446,0.0562,0.057,0.1446,0.0562,0.057,0.1446,0,0.057,0.0446,0,0.057,0.0446,0.0562,0.087,0.1446,0.0562,0.087,0.1446,0,0.087,0.0446,0,0.087,0.0446,0.0562,0.1924,0.1446,0.0562,0.1924,0.1446,0,0.1924,0.0446,0,0.1924,-0.0456,0.9364,0.05,-0.1456,0.9364,0.05,-0.1456,0.9364,-0.05,-0.0456,0.9364,-0.05,-0.0456,0.9,0.05,-0.1456,0.9,0.05,-0.1456,0.9,-0.05,-0.0456,0.9,-0.05,-0.0456,0.8,0.05,-0.1456,0.8,0.05,-0.1456,0.8,-0.05,-0.0456,0.8,-0.05,-0.0456,0.7,0.05,-0.1456,0.7,0.05,-0.1456,0.7,-0.05,-0.0456,0.7,-0.05,-0.0456,0.6,0.05,-0.1456,0.6,0.05,-0.1456,0.6,-0.05,-0.0456,0.6,-0.05,-0.0456,0.55,0.05,-0.1456,0.55,0.05,-0.1456,0.55,-0.05,-0.0456,0.55,-0.05,-0.0456,0.52,0.05,-0.1456,0.52,0.05,-0.1456,0.52,-0.05,-0.0456,0.52,-0.05,-0.0456,0.5,0.05,-0.1456,0.5,0.05,-0.1456,0.5,-0.05,-0.0456,0.5,-0.05,-0.0454,0.43,0.045,-0.1454,0.43,0.045,-0.1454,0.43,-0.055,-0.0454,0.43,-0.055,-0.0452,0.36,0.04,-0.1452,0.36,0.04,-0.1452,0.36,-0.06,-0.0452,0.36,-0.06,-0.045,0.29,0.035,-0.145,0.29,0.035,-0.145,0.29,-0.065,-0.045,0.29,-0.065,-0.0448,0.21,0.03,-0.1448,0.21,0.03,-0.1448,0.21,-0.07,-0.0448,0.21,-0.07,-0.0446,0.1262,0.025,-0.1446,0.1262,0.025,-0.1446,0.1262,-0.075,-0.0446,0.1262,-0.075,-0.0446,0.0762,0.025,-0.1446,0.0762,0.025,-0.1446,0,-0.075,-0.0446,0,-0.075,-0.0446,0.0562,0.057,-0.1446,0.0562,0.057,-0.1446,0,0.057,-0.0446,0,0.057,-0.0446,0.0562,0.087,-0.1446,0.0562,0.087,-0.1446,0,0.087,-0.0446,0,0.087,-0.0446,0.0562,0.1924,-0.1446,0.0562,0.1924,-0.1446,0,0.1924,-0.0446,0,0.1924,-0.12,1.1,0.05,0.12,1.1,0.05,0.12,1.1,-0.1,-0.12,1.1,-0.1,-0.14,1.42,0.045,0.14,1.42,0.045,0.14,1.42,-0.09,-0.14,1.42,-0.09,-0.24,1.52,0.035,0.24,1.52,0.035,0.24,1.52,-0.09,-0.24,1.52,-0.09,-0.05,1.56,0.03,0.05,1.56,0.03,0.05,1.56,-0.06,-0.05,1.56,-0.06,-0.05,1.6,0.06,0.05,1.6,0.06,0.05,1.62,-0.03,-0.05,1.62,-0.03,-0.07,1.777,0.13,0.07,1.777,0.13,0.07,1.777,-0.03,-0.07,1.777,-0.03,-0.07,1.6,0.13,0.07,1.6,0.13,0.07,1.66,-0.03,-0.07,1.66,-0.03,0.16,1.42,0.015,0.24,1.5,0.015,0.24,1.5,-0.075,0.16,1.42,-0.075,0.17,1.18,-0.025,0.23,1.18,-0.025,0.23,1.18,-0.085,0.17,1.18,-0.085,0.17,1.14,-0.025,0.23,1.14,-0.025,0.23,1.14,-0.085,0.17,1.14,-0.085,0.18,0.91,-0.05,0.22,0.91,-0.05,0.22,0.91,-0.09,0.18,0.91,-0.09,0.18,0.87,-0.02,0.22,0.87,-0.02,0.22,0.87,-0.1,0.18,0.87,-0.1,0.18,0.6976,-0.02,0.22,0.6976,-0.02,0.22,0.6976,-0.1,0.18,0.6976,-0.1,-0.16,1.42,0.015,-0.24,1.5,0.015,-0.24,1.5,-0.075,-0.16,1.42,-0.075,-0.17,1.18,-0.025,-0.23,1.18,-0.025,-0.23,1.18,-0.085,-0.17,1.18,-0.085,-0.17,1.14,-0.025,-0.23,1.14,-0.025,-0.23,1.14,-0.085,-0.17,1.14,-0.085,-0.18,0.91,-0.05,-0.22,0.91,-0.05,-0.22,0.91,-0.09,-0.18,0.91,-0.09,-0.18,0.87,-0.02,-0.22,0.87,-0.02,-0.22,0.87,-0.1,-0.18,0.87,-0.1,-0.18,0.6976,-0.02,-0.22,0.6976,-0.02,-0.22,0.6976,-0.1,-0.18,0.6976,-0.1])
-
-HAnimHumanoid37.setSkinCoord(Coordinate122)
-Group123 = Group()
-Shape124 = Shape()
-Shape124.setDEF("TrouserSkin")
-Appearance125 = Appearance()
-Material126 = Material()
-Material126.setDiffuseColor([0,0,1])
-Material126.setTransparency(0.5)
-
-Appearance125.setMaterial(Material126)
-
-Shape124.setAppearance(Appearance125)
-## 0: sacrum (8) # 1: l_hip joint (8) # 2: r_hip joint (8) # 3: l_thigh (48) # 4: l_knee joint (8) # 5: l_calf (40) # 10: r_thigh (48) # 11: r_knee joint (8) # 12: r_calf (40)
-IndexedFaceSet127 = IndexedFaceSet()
-IndexedFaceSet127.setCoordIndex([0,7,1,-1,8,0,1,-1,1,9,8,-1,10,2,3,-1,3,11,10,-1,2,4,5,-1,5,3,2,-1,4,6,5,-1,7,12,1,-1,1,12,13,-1,13,9,1,-1,9,13,14,-1,14,10,9,-1,10,14,15,-1,15,2,10,-1,12,7,6,-1,6,15,12,-1,15,6,4,-1,4,2,15,-1,0,80,7,-1,81,80,0,-1,0,8,81,-1,82,81,8,-1,8,11,82,-1,83,82,11,-1,11,3,83,-1,6,7,80,-1,80,83,6,-1,5,6,83,-1,83,3,5,-1,12,16,17,-1,17,13,12,-1,13,17,18,-1,18,14,13,-1,14,18,19,-1,19,15,14,-1,15,19,16,-1,16,12,15,-1,16,20,21,-1,21,17,16,-1,17,21,22,-1,22,18,17,-1,18,22,23,-1,23,19,18,-1,19,23,20,-1,20,16,19,-1,20,24,25,-1,25,21,20,-1,21,25,26,-1,26,22,21,-1,22,26,27,-1,27,23,22,-1,23,27,24,-1,24,20,23,-1,24,28,29,-1,29,25,24,-1,25,29,30,-1,30,26,25,-1,26,30,31,-1,31,27,26,-1,27,31,28,-1,28,24,27,-1,28,32,33,-1,33,29,28,-1,29,33,34,-1,34,30,29,-1,30,34,35,-1,35,31,30,-1,31,35,32,-1,32,28,31,-1,32,36,37,-1,37,33,32,-1,33,37,38,-1,38,34,33,-1,34,38,39,-1,39,35,34,-1,35,39,36,-1,36,32,35,-1,36,40,41,-1,41,37,36,-1,37,41,42,-1,42,38,37,-1,38,42,43,-1,43,39,38,-1,39,43,40,-1,40,36,39,-1,40,44,45,-1,45,41,40,-1,41,45,46,-1,46,42,41,-1,42,46,47,-1,47,43,42,-1,43,47,44,-1,44,40,43,-1,44,48,49,-1,49,45,44,-1,45,49,50,-1,50,46,45,-1,46,50,51,-1,51,47,46,-1,47,51,48,-1,48,44,47,-1,48,52,53,-1,53,49,48,-1,49,53,54,-1,54,50,49,-1,50,54,55,-1,55,51,50,-1,51,55,52,-1,52,48,51,-1,52,56,57,-1,57,53,52,-1,53,57,58,-1,58,54,53,-1,54,58,59,-1,59,55,54,-1,55,59,56,-1,56,52,55,-1,56,60,61,-1,61,57,56,-1,57,61,62,-1,62,58,57,-1,58,62,63,-1,63,59,58,-1,59,63,60,-1,60,56,59,-1,81,85,84,-1,84,80,81,-1,82,86,85,-1,85,81,82,-1,83,87,86,-1,86,82,83,-1,80,84,87,-1,87,83,80,-1,85,89,88,-1,88,84,85,-1,86,90,89,-1,89,85,86,-1,87,91,90,-1,90,86,87,-1,84,88,91,-1,91,87,84,-1,89,93,92,-1,92,88,89,-1,90,94,93,-1,93,89,90,-1,91,95,94,-1,94,90,91,-1,88,92,95,-1,95,91,88,-1,93,97,96,-1,96,92,93,-1,94,98,97,-1,97,93,94,-1,95,99,98,-1,98,94,95,-1,92,96,99,-1,99,95,92,-1,97,101,100,-1,100,96,97,-1,98,102,101,-1,101,97,98,-1,99,103,102,-1,102,98,99,-1,96,100,103,-1,103,99,96,-1,101,105,104,-1,104,100,101,-1,102,106,105,-1,105,101,102,-1,103,107,106,-1,106,102,103,-1,100,104,107,-1,107,103,100,-1,105,109,108,-1,108,104,105,-1,106,110,109,-1,109,105,106,-1,107,111,110,-1,110,106,107,-1,104,108,111,-1,111,107,104,-1,109,113,112,-1,112,108,109,-1,110,114,113,-1,113,109,110,-1,111,115,114,-1,114,110,111,-1,108,112,115,-1,115,111,108,-1,113,117,116,-1,116,112,113,-1,114,118,117,-1,117,113,114,-1,115,119,118,-1,118,114,115,-1,112,116,119,-1,119,115,112,-1,117,121,120,-1,120,116,117,-1,118,122,121,-1,121,117,118,-1,119,123,122,-1,122,118,119,-1,116,120,123,-1,123,119,116,-1,121,125,124,-1,124,120,121,-1,122,126,125,-1,125,121,122,-1,123,127,126,-1,126,122,123,-1,120,124,127,-1,127,123,120,-1,125,129,128,-1,128,124,125,-1,126,130,129,-1,129,125,126,-1,127,131,130,-1,130,126,127,-1,124,128,131,-1,131,127,124,-1])
-Coordinate128 = Coordinate()
-Coordinate128.setUSE("SKINCOORD")
-
-IndexedFaceSet127.setCoord(Coordinate128)
-
-Shape124.setGeometry(IndexedFaceSet127)
-
-Group123.addChildren(Shape124)
-Shape129 = Shape()
-Shape129.setDEF("ShoeSkin")
-Appearance130 = Appearance()
-Material131 = Material()
-Material131.setDiffuseColor([0,0,0])
-Material131.setTransparency(0.5)
-
-Appearance130.setMaterial(Material131)
-
-Shape129.setAppearance(Appearance130)
-## 6: l_ankle joint (8) # 7: l_hindfoot (8) # 8: l_midtarsal joint (8) # 9: l_middistal (10) # 13: r_ankle joint (8) # 14: r_hindfoot (8) # 15: r_midtarsal joint (8) # 16: r_middistal (10)
-IndexedFaceSet132 = IndexedFaceSet()
-IndexedFaceSet132.setCoordIndex([60,64,65,-1,65,61,60,-1,61,65,66,-1,66,62,61,-1,62,66,67,-1,67,63,62,-1,63,67,64,-1,64,60,63,-1,64,68,69,-1,69,65,64,-1,65,69,70,-1,70,66,65,-1,66,70,71,-1,71,67,66,-1,67,71,68,-1,68,64,67,-1,68,72,73,-1,73,69,68,-1,69,73,74,-1,74,70,69,-1,70,74,75,-1,75,71,70,-1,71,75,72,-1,72,68,71,-1,72,76,77,-1,77,73,72,-1,73,77,78,-1,78,74,73,-1,74,78,79,-1,79,75,74,-1,75,79,76,-1,76,72,75,-1,76,79,78,-1,78,77,76,-1,129,133,132,-1,132,128,129,-1,130,134,133,-1,133,129,130,-1,131,135,134,-1,134,130,131,-1,128,132,135,-1,135,131,128,-1,133,137,136,-1,136,132,133,-1,134,138,137,-1,137,133,134,-1,135,139,138,-1,138,134,135,-1,132,136,139,-1,139,135,132,-1,137,141,140,-1,140,136,137,-1,138,142,141,-1,141,137,138,-1,139,143,142,-1,142,138,139,-1,136,140,143,-1,143,139,136,-1,141,145,144,-1,144,140,141,-1,142,146,145,-1,145,141,142,-1,143,147,146,-1,146,142,143,-1,140,144,147,-1,147,143,140,-1,145,146,147,-1,147,144,145,-1])
-Coordinate133 = Coordinate()
-Coordinate133.setUSE("SKINCOORD")
-
-IndexedFaceSet132.setCoord(Coordinate133)
-
-Shape129.setGeometry(IndexedFaceSet132)
-
-Group123.addChildren(Shape129)
-Shape134 = Shape()
-Shape134.setDEF("ShirtSkin")
-Appearance135 = Appearance()
-Material136 = Material()
-Material136.setDiffuseColor([1,1,0])
-Material136.setTransparency(0.5)
-
-Appearance135.setMaterial(Material136)
-
-Shape134.setAppearance(Appearance135)
-## 17: vl5_joint (8) # 18: l5 (28) # 21: l_shoulder joint (8) # 22: l_upperarm (8) # 23: l_elbow joint (8) # 24: l_forearm (8) # 27: r_shoulder joint (8) # 28: r_upperarm (8) # 29: r_elbow joint (8) # 30: r_forearm (8)
-IndexedFaceSet137 = IndexedFaceSet()
-IndexedFaceSet137.setCoordIndex([148,8,9,-1,9,149,148,-1,149,9,10,-1,10,150,149,-1,150,10,11,-1,11,151,150,-1,151,11,8,-1,8,148,151,-1,152,148,149,-1,149,153,152,-1,153,149,150,-1,150,154,153,-1,154,150,151,-1,151,155,154,-1,155,151,148,-1,148,152,155,-1,156,152,153,-1,153,157,156,-1,158,154,155,-1,155,159,158,-1,160,156,157,-1,157,161,160,-1,161,157,158,-1,158,162,161,-1,162,158,159,-1,159,163,162,-1,163,159,156,-1,156,160,163,-1,164,160,161,-1,161,165,164,-1,165,161,162,-1,162,166,165,-1,166,162,163,-1,163,167,166,-1,167,163,160,-1,160,164,167,-1,153,176,177,-1,177,157,153,-1,157,177,178,-1,178,158,157,-1,158,178,179,-1,179,154,158,-1,154,179,176,-1,176,153,154,-1,176,180,181,-1,181,177,176,-1,177,181,182,-1,182,178,177,-1,178,182,183,-1,183,179,178,-1,179,183,180,-1,180,176,179,-1,180,184,185,-1,185,181,180,-1,181,185,186,-1,186,182,181,-1,182,186,187,-1,187,183,182,-1,183,187,184,-1,184,180,183,-1,184,188,189,-1,189,185,184,-1,185,189,190,-1,190,186,185,-1,186,190,191,-1,191,187,186,-1,187,191,188,-1,188,184,187,-1,152,156,201,-1,201,200,152,-1,156,159,202,-1,202,201,156,-1,159,155,203,-1,203,202,159,-1,155,152,200,-1,200,203,155,-1,201,205,204,-1,204,200,201,-1,202,206,205,-1,205,201,202,-1,203,207,206,-1,206,202,203,-1,200,204,207,-1,207,203,200,-1,205,209,208,-1,208,204,205,-1,206,210,209,-1,209,205,206,-1,207,211,210,-1,210,206,207,-1,204,208,211,-1,211,207,204,-1,209,213,212,-1,212,208,209,-1,210,214,213,-1,213,209,210,-1,211,215,214,-1,214,210,211,-1,208,212,215,-1,215,211,208,-1])
-Coordinate138 = Coordinate()
-Coordinate138.setUSE("SKINCOORD")
-
-IndexedFaceSet137.setCoord(Coordinate138)
-
-Shape134.setGeometry(IndexedFaceSet137)
-
-Group123.addChildren(Shape134)
-Shape139 = Shape()
-Shape139.setDEF("HeadHandsFleshToneSkin")
-Appearance140 = Appearance()
-Material141 = Material()
-Material141.setDiffuseColor([1,0.75,0.75])
-Material141.setTransparency(0.5)
-
-Appearance140.setMaterial(Material141)
-
-Shape139.setAppearance(Appearance140)
-## 19: skullbase joint (8) # 20: skull (10) # 25: l_wrist joint (8) # 26: l_hand (10) # 31: r_wrist joint (8) # 32: r_hand (10)
-IndexedFaceSet142 = IndexedFaceSet()
-IndexedFaceSet142.setCoordIndex([172,164,165,-1,165,173,172,-1,173,165,166,-1,166,174,173,-1,174,166,167,-1,167,175,174,-1,175,167,164,-1,164,172,175,-1,168,172,173,-1,173,169,168,-1,169,173,174,-1,174,170,169,-1,170,174,175,-1,175,171,170,-1,171,175,172,-1,172,168,171,-1,171,168,169,-1,169,170,171,-1,188,192,193,-1,193,189,188,-1,189,193,194,-1,194,190,189,-1,190,194,195,-1,195,191,190,-1,191,195,192,-1,192,188,191,-1,192,196,197,-1,197,193,192,-1,193,197,198,-1,198,194,193,-1,194,198,199,-1,199,195,194,-1,195,199,196,-1,196,192,195,-1,196,199,198,-1,198,197,196,-1,213,217,216,-1,216,212,213,-1,214,218,217,-1,217,213,214,-1,215,219,218,-1,218,214,215,-1,212,216,219,-1,219,215,212,-1,217,221,220,-1,220,216,217,-1,218,222,221,-1,221,217,218,-1,219,223,222,-1,222,218,219,-1,216,220,223,-1,223,219,216,-1,221,222,223,-1,223,220,221,-1])
-Coordinate143 = Coordinate()
-Coordinate143.setUSE("SKINCOORD")
-
-IndexedFaceSet142.setCoord(Coordinate143)
-
-Shape139.setGeometry(IndexedFaceSet142)
-
-Group123.addChildren(Shape139)
-Shape144 = Shape()
-Shape144.setDEF("SkinLines")
-Appearance145 = Appearance()
-Material146 = Material()
-Material146.setDiffuseColor([0,0,0])
-
-Appearance145.setMaterial(Material146)
-
-Shape144.setAppearance(Appearance145)
-#Combined set of prior IFS coordIndex values
-IndexedLineSet147 = IndexedLineSet()
-IndexedLineSet147.setCoordIndex([0,7,1,-1,8,0,1,-1,1,9,8,-1,10,2,3,-1,3,11,10,-1,2,4,5,-1,5,3,2,-1,4,6,5,-1,7,12,1,-1,1,12,13,-1,13,9,1,-1,9,13,14,-1,14,10,9,-1,10,14,15,-1,15,2,10,-1,12,7,6,-1,6,15,12,-1,15,6,4,-1,4,2,15,-1,0,80,7,-1,81,80,0,-1,0,8,81,-1,82,81,8,-1,8,11,82,-1,83,82,11,-1,11,3,83,-1,6,7,80,-1,80,83,6,-1,5,6,83,-1,83,3,5,-1,12,16,17,-1,17,13,12,-1,13,17,18,-1,18,14,13,-1,14,18,19,-1,19,15,14,-1,15,19,16,-1,16,12,15,-1,16,20,21,-1,21,17,16,-1,17,21,22,-1,22,18,17,-1,18,22,23,-1,23,19,18,-1,19,23,20,-1,20,16,19,-1,20,24,25,-1,25,21,20,-1,21,25,26,-1,26,22,21,-1,22,26,27,-1,27,23,22,-1,23,27,24,-1,24,20,23,-1,24,28,29,-1,29,25,24,-1,25,29,30,-1,30,26,25,-1,26,30,31,-1,31,27,26,-1,27,31,28,-1,28,24,27,-1,28,32,33,-1,33,29,28,-1,29,33,34,-1,34,30,29,-1,30,34,35,-1,35,31,30,-1,31,35,32,-1,32,28,31,-1,32,36,37,-1,37,33,32,-1,33,37,38,-1,38,34,33,-1,34,38,39,-1,39,35,34,-1,35,39,36,-1,36,32,35,-1,36,40,41,-1,41,37,36,-1,37,41,42,-1,42,38,37,-1,38,42,43,-1,43,39,38,-1,39,43,40,-1,40,36,39,-1,40,44,45,-1,45,41,40,-1,41,45,46,-1,46,42,41,-1,42,46,47,-1,47,43,42,-1,43,47,44,-1,44,40,43,-1,44,48,49,-1,49,45,44,-1,45,49,50,-1,50,46,45,-1,46,50,51,-1,51,47,46,-1,47,51,48,-1,48,44,47,-1,48,52,53,-1,53,49,48,-1,49,53,54,-1,54,50,49,-1,50,54,55,-1,55,51,50,-1,51,55,52,-1,52,48,51,-1,52,56,57,-1,57,53,52,-1,53,57,58,-1,58,54,53,-1,54,58,59,-1,59,55,54,-1,55,59,56,-1,56,52,55,-1,56,60,61,-1,61,57,56,-1,57,61,62,-1,62,58,57,-1,58,62,63,-1,63,59,58,-1,59,63,60,-1,60,56,59,-1,81,85,84,-1,84,80,81,-1,82,86,85,-1,85,81,82,-1,83,87,86,-1,86,82,83,-1,80,84,87,-1,87,83,80,-1,85,89,88,-1,88,84,85,-1,86,90,89,-1,89,85,86,-1,87,91,90,-1,90,86,87,-1,84,88,91,-1,91,87,84,-1,89,93,92,-1,92,88,89,-1,90,94,93,-1,93,89,90,-1,91,95,94,-1,94,90,91,-1,88,92,95,-1,95,91,88,-1,93,97,96,-1,96,92,93,-1,94,98,97,-1,97,93,94,-1,95,99,98,-1,98,94,95,-1,92,96,99,-1,99,95,92,-1,97,101,100,-1,100,96,97,-1,98,102,101,-1,101,97,98,-1,99,103,102,-1,102,98,99,-1,96,100,103,-1,103,99,96,-1,101,105,104,-1,104,100,101,-1,102,106,105,-1,105,101,102,-1,103,107,106,-1,106,102,103,-1,100,104,107,-1,107,103,100,-1,105,109,108,-1,108,104,105,-1,106,110,109,-1,109,105,106,-1,107,111,110,-1,110,106,107,-1,104,108,111,-1,111,107,104,-1,109,113,112,-1,112,108,109,-1,110,114,113,-1,113,109,110,-1,111,115,114,-1,114,110,111,-1,108,112,115,-1,115,111,108,-1,113,117,116,-1,116,112,113,-1,114,118,117,-1,117,113,114,-1,115,119,118,-1,118,114,115,-1,112,116,119,-1,119,115,112,-1,117,121,120,-1,120,116,117,-1,118,122,121,-1,121,117,118,-1,119,123,122,-1,122,118,119,-1,116,120,123,-1,123,119,116,-1,121,125,124,-1,124,120,121,-1,122,126,125,-1,125,121,122,-1,123,127,126,-1,126,122,123,-1,120,124,127,-1,127,123,120,-1,125,129,128,-1,128,124,125,-1,126,130,129,-1,129,125,126,-1,127,131,130,-1,130,126,127,-1,124,128,131,-1,131,127,124,-1,60,64,65,-1,65,61,60,-1,61,65,66,-1,66,62,61,-1,62,66,67,-1,67,63,62,-1,63,67,64,-1,64,60,63,-1,64,68,69,-1,69,65,64,-1,65,69,70,-1,70,66,65,-1,66,70,71,-1,71,67,66,-1,67,71,68,-1,68,64,67,-1,68,72,73,-1,73,69,68,-1,69,73,74,-1,74,70,69,-1,70,74,75,-1,75,71,70,-1,71,75,72,-1,72,68,71,-1,72,76,77,-1,77,73,72,-1,73,77,78,-1,78,74,73,-1,74,78,79,-1,79,75,74,-1,75,79,76,-1,76,72,75,-1,76,79,78,-1,78,77,76,-1,129,133,132,-1,132,128,129,-1,130,134,133,-1,133,129,130,-1,131,135,134,-1,134,130,131,-1,128,132,135,-1,135,131,128,-1,133,137,136,-1,136,132,133,-1,134,138,137,-1,137,133,134,-1,135,139,138,-1,138,134,135,-1,132,136,139,-1,139,135,132,-1,137,141,140,-1,140,136,137,-1,138,142,141,-1,141,137,138,-1,139,143,142,-1,142,138,139,-1,136,140,143,-1,143,139,136,-1,141,145,144,-1,144,140,141,-1,142,146,145,-1,145,141,142,-1,143,147,146,-1,146,142,143,-1,140,144,147,-1,147,143,140,-1,145,146,147,-1,147,144,145,-1,148,8,9,-1,9,149,148,-1,149,9,10,-1,10,150,149,-1,150,10,11,-1,11,151,150,-1,151,11,8,-1,8,148,151,-1,152,148,149,-1,149,153,152,-1,153,149,150,-1,150,154,153,-1,154,150,151,-1,151,155,154,-1,155,151,148,-1,148,152,155,-1,156,152,153,-1,153,157,156,-1,158,154,155,-1,155,159,158,-1,160,156,157,-1,157,161,160,-1,161,157,158,-1,158,162,161,-1,162,158,159,-1,159,163,162,-1,163,159,156,-1,156,160,163,-1,164,160,161,-1,161,165,164,-1,165,161,162,-1,162,166,165,-1,166,162,163,-1,163,167,166,-1,167,163,160,-1,160,164,167,-1,153,176,177,-1,177,157,153,-1,157,177,178,-1,178,158,157,-1,158,178,179,-1,179,154,158,-1,154,179,176,-1,176,153,154,-1,176,180,181,-1,181,177,176,-1,177,181,182,-1,182,178,177,-1,178,182,183,-1,183,179,178,-1,179,183,180,-1,180,176,179,-1,180,184,185,-1,185,181,180,-1,181,185,186,-1,186,182,181,-1,182,186,187,-1,187,183,182,-1,183,187,184,-1,184,180,183,-1,184,188,189,-1,189,185,184,-1,185,189,190,-1,190,186,185,-1,186,190,191,-1,191,187,186,-1,187,191,188,-1,188,184,187,-1,152,156,201,-1,201,200,152,-1,156,159,202,-1,202,201,156,-1,159,155,203,-1,203,202,159,-1,155,152,200,-1,200,203,155,-1,201,205,204,-1,204,200,201,-1,202,206,205,-1,205,201,202,-1,203,207,206,-1,206,202,203,-1,200,204,207,-1,207,203,200,-1,205,209,208,-1,208,204,205,-1,206,210,209,-1,209,205,206,-1,207,211,210,-1,210,206,207,-1,204,208,211,-1,211,207,204,-1,209,213,212,-1,212,208,209,-1,210,214,213,-1,213,209,210,-1,211,215,214,-1,214,210,211,-1,208,212,215,-1,215,211,208,-1,172,164,165,-1,165,173,172,-1,173,165,166,-1,166,174,173,-1,174,166,167,-1,167,175,174,-1,175,167,164,-1,164,172,175,-1,168,172,173,-1,173,169,168,-1,169,173,174,-1,174,170,169,-1,170,174,175,-1,175,171,170,-1,171,175,172,-1,172,168,171,-1,171,168,169,-1,169,170,171,-1,188,192,193,-1,193,189,188,-1,189,193,194,-1,194,190,189,-1,190,194,195,-1,195,191,190,-1,191,195,192,-1,192,188,191,-1,192,196,197,-1,197,193,192,-1,193,197,198,-1,198,194,193,-1,194,198,199,-1,199,195,194,-1,195,199,196,-1,196,192,195,-1,196,199,198,-1,198,197,196,-1,213,217,216,-1,216,212,213,-1,214,218,217,-1,217,213,214,-1,215,219,218,-1,218,214,215,-1,212,216,219,-1,219,215,212,-1,217,221,220,-1,220,216,217,-1,218,222,221,-1,221,217,218,-1,219,223,222,-1,222,218,219,-1,216,220,223,-1,223,219,216,-1,221,222,223,-1,223,220,221,-1])
-Coordinate148 = Coordinate()
-Coordinate148.setUSE("SKINCOORD")
-
-IndexedLineSet147.setCoord(Coordinate148)
-
-Shape144.setGeometry(IndexedLineSet147)
-
-Group123.addChildren(Shape144)
-
-HAnimHumanoid37.setSkin(Group123)
-HAnimSite149 = HAnimSite()
-HAnimSite149.setName("BoxMan_view")
-HAnimSite149.setDEF("boxman_BoxMan_view")
-Viewpoint150 = Viewpoint()
-Viewpoint150.setDEF("Inclined_View")
-Viewpoint150.setDescription("Inclined View")
-Viewpoint150.setOrientation([0,1,0,0.78])
-Viewpoint150.setPosition([2,0.9,2])
-
-HAnimSite149.addChildren(Viewpoint150)
-Viewpoint151 = Viewpoint()
-Viewpoint151.setDEF("Front_View")
-Viewpoint151.setDescription("Front View")
-Viewpoint151.setPosition([0,1,3])
-
-HAnimSite149.addChildren(Viewpoint151)
-Viewpoint152 = Viewpoint()
-Viewpoint152.setDEF("Best_View")
-Viewpoint152.setDescription("Right-side View")
-Viewpoint152.setOrientation([0,1,0,-1.57])
-Viewpoint152.setPosition([-3,1,0])
-
-HAnimSite149.addChildren(Viewpoint152)
-Viewpoint153 = Viewpoint()
-Viewpoint153.setDEF("Side_View")
-Viewpoint153.setDescription("Left-side View")
-Viewpoint153.setOrientation([0,1,0,1.57])
-Viewpoint153.setPosition([3,1,0])
-
-HAnimSite149.addChildren(Viewpoint153)
-Viewpoint154 = Viewpoint()
-Viewpoint154.setDEF("Top_View")
-Viewpoint154.setDescription("Top View")
-Viewpoint154.setOrientation([1,0,0,-1.57])
-Viewpoint154.setPosition([0,3,0])
-
-HAnimSite149.addChildren(Viewpoint154)
-
-HAnimHumanoid37.addViewpoints(HAnimSite149)
-HAnimJoint155 = HAnimJoint()
-HAnimJoint155.setUSE("boxman_humanoid_root")
-
-HAnimHumanoid37.addJoints(HAnimJoint155)
-HAnimJoint156 = HAnimJoint()
-HAnimJoint156.setUSE("boxman_skullbase")
-
-HAnimHumanoid37.addJoints(HAnimJoint156)
-HAnimJoint157 = HAnimJoint()
-HAnimJoint157.setUSE("boxman_vl5")
-
-HAnimHumanoid37.addJoints(HAnimJoint157)
-HAnimJoint158 = HAnimJoint()
-HAnimJoint158.setUSE("boxman_r_ankle")
-
-HAnimHumanoid37.addJoints(HAnimJoint158)
-HAnimJoint159 = HAnimJoint()
-HAnimJoint159.setUSE("boxman_l_ankle")
-
-HAnimHumanoid37.addJoints(HAnimJoint159)
-HAnimJoint160 = HAnimJoint()
-HAnimJoint160.setUSE("boxman_r_elbow")
-
-HAnimHumanoid37.addJoints(HAnimJoint160)
-HAnimJoint161 = HAnimJoint()
-HAnimJoint161.setUSE("boxman_l_elbow")
-
-HAnimHumanoid37.addJoints(HAnimJoint161)
-HAnimJoint162 = HAnimJoint()
-HAnimJoint162.setUSE("boxman_r_hip")
-
-HAnimHumanoid37.addJoints(HAnimJoint162)
-HAnimJoint163 = HAnimJoint()
-HAnimJoint163.setUSE("boxman_l_hip")
-
-HAnimHumanoid37.addJoints(HAnimJoint163)
-HAnimJoint164 = HAnimJoint()
-HAnimJoint164.setUSE("boxman_r_knee")
-
-HAnimHumanoid37.addJoints(HAnimJoint164)
-HAnimJoint165 = HAnimJoint()
-HAnimJoint165.setUSE("boxman_l_knee")
-
-HAnimHumanoid37.addJoints(HAnimJoint165)
-HAnimJoint166 = HAnimJoint()
-HAnimJoint166.setUSE("boxman_r_midtarsal")
-
-HAnimHumanoid37.addJoints(HAnimJoint166)
-HAnimJoint167 = HAnimJoint()
-HAnimJoint167.setUSE("boxman_l_midtarsal")
-
-HAnimHumanoid37.addJoints(HAnimJoint167)
-HAnimJoint168 = HAnimJoint()
-HAnimJoint168.setUSE("boxman_r_shoulder")
-
-HAnimHumanoid37.addJoints(HAnimJoint168)
-HAnimJoint169 = HAnimJoint()
-HAnimJoint169.setUSE("boxman_l_shoulder")
-
-HAnimHumanoid37.addJoints(HAnimJoint169)
-HAnimJoint170 = HAnimJoint()
-HAnimJoint170.setUSE("boxman_r_wrist")
-
-HAnimHumanoid37.addJoints(HAnimJoint170)
-HAnimJoint171 = HAnimJoint()
-HAnimJoint171.setUSE("boxman_l_wrist")
-
-HAnimHumanoid37.addJoints(HAnimJoint171)
-HAnimSegment172 = HAnimSegment()
-HAnimSegment172.setUSE("boxman_sacrum")
-
-HAnimHumanoid37.addSegments(HAnimSegment172)
-HAnimSegment173 = HAnimSegment()
-HAnimSegment173.setUSE("boxman_l5")
-
-HAnimHumanoid37.addSegments(HAnimSegment173)
-HAnimSegment174 = HAnimSegment()
-HAnimSegment174.setUSE("boxman_skull")
-
-HAnimHumanoid37.addSegments(HAnimSegment174)
-HAnimSegment175 = HAnimSegment()
-HAnimSegment175.setUSE("boxman_l_calf")
-
-HAnimHumanoid37.addSegments(HAnimSegment175)
-HAnimSegment176 = HAnimSegment()
-HAnimSegment176.setUSE("boxman_r_calf")
-
-HAnimHumanoid37.addSegments(HAnimSegment176)
-HAnimSegment177 = HAnimSegment()
-HAnimSegment177.setUSE("boxman_l_forearm")
-
-HAnimHumanoid37.addSegments(HAnimSegment177)
-HAnimSegment178 = HAnimSegment()
-HAnimSegment178.setUSE("boxman_r_forearm")
-
-HAnimHumanoid37.addSegments(HAnimSegment178)
-HAnimSegment179 = HAnimSegment()
-HAnimSegment179.setUSE("boxman_l_hand")
-
-HAnimHumanoid37.addSegments(HAnimSegment179)
-HAnimSegment180 = HAnimSegment()
-HAnimSegment180.setUSE("boxman_r_hand")
-
-HAnimHumanoid37.addSegments(HAnimSegment180)
-HAnimSegment181 = HAnimSegment()
-HAnimSegment181.setUSE("boxman_l_hindfoot")
-
-HAnimHumanoid37.addSegments(HAnimSegment181)
-HAnimSegment182 = HAnimSegment()
-HAnimSegment182.setUSE("boxman_r_hindfoot")
-
-HAnimHumanoid37.addSegments(HAnimSegment182)
-HAnimSegment183 = HAnimSegment()
-HAnimSegment183.setUSE("boxman_l_middistal")
-
-HAnimHumanoid37.addSegments(HAnimSegment183)
-HAnimSegment184 = HAnimSegment()
-HAnimSegment184.setUSE("boxman_r_middistal")
-
-HAnimHumanoid37.addSegments(HAnimSegment184)
-HAnimSegment185 = HAnimSegment()
-HAnimSegment185.setUSE("boxman_l_thigh")
-
-HAnimHumanoid37.addSegments(HAnimSegment185)
-HAnimSegment186 = HAnimSegment()
-HAnimSegment186.setUSE("boxman_r_thigh")
-
-HAnimHumanoid37.addSegments(HAnimSegment186)
-HAnimSegment187 = HAnimSegment()
-HAnimSegment187.setUSE("boxman_l_upperarm")
-
-HAnimHumanoid37.addSegments(HAnimSegment187)
-HAnimSegment188 = HAnimSegment()
-HAnimSegment188.setUSE("boxman_r_upperarm")
-
-HAnimHumanoid37.addSegments(HAnimSegment188)
-HAnimSite189 = HAnimSite()
-HAnimSite189.setUSE("boxman_skull_tip")
-
-HAnimHumanoid37.addSites(HAnimSite189)
-HAnimSite190 = HAnimSite()
-HAnimSite190.setUSE("boxman_l_hand_tip")
-
-HAnimHumanoid37.addSites(HAnimSite190)
-HAnimSite191 = HAnimSite()
-HAnimSite191.setUSE("boxman_r_hand_tip")
-
-HAnimHumanoid37.addSites(HAnimSite191)
-HAnimSite192 = HAnimSite()
-HAnimSite192.setUSE("boxman_l_middistal_tip")
-
-HAnimHumanoid37.addSites(HAnimSite192)
-HAnimSite193 = HAnimSite()
-HAnimSite193.setUSE("boxman_r_middistal_tip")
-
-HAnimHumanoid37.addSites(HAnimSite193)
-
-Scene34.addChildren(HAnimHumanoid37)
-Group194 = Group()
-Group194.setDEF("StopAnimation")
-TimeSensor195 = TimeSensor()
-TimeSensor195.setDEF("StopTimer")
-TimeSensor195.setCycleInterval(5.73)
-TimeSensor195.setLoop(True)
-
-Group194.addChildren(TimeSensor195)
-PositionInterpolator196 = PositionInterpolator()
-PositionInterpolator196.setDEF("Stop_humanoid_root_TranslationInterpolator")
-PositionInterpolator196.setKey([0,0.5,1])
-PositionInterpolator196.setKeyValue([0,0,0,0,0,0,0,0,0])
-
-Group194.addChildren(PositionInterpolator196)
-OrientationInterpolator197 = OrientationInterpolator()
-OrientationInterpolator197.setDEF("Stop_humanoid_root_RotationInterpolator")
-OrientationInterpolator197.setKey([0,0.5,1])
-OrientationInterpolator197.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator197)
-OrientationInterpolator198 = OrientationInterpolator()
-OrientationInterpolator198.setDEF("Stop_sacroiliac_RotationInterpolator")
-OrientationInterpolator198.setKey([0,0.5,1])
-OrientationInterpolator198.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator198)
-OrientationInterpolator199 = OrientationInterpolator()
-OrientationInterpolator199.setDEF("Stop_l_hip_RotationInterpolator")
-OrientationInterpolator199.setKey([0,0.5,1])
-OrientationInterpolator199.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator199)
-OrientationInterpolator200 = OrientationInterpolator()
-OrientationInterpolator200.setDEF("Stop_l_knee_RotationInterpolator")
-OrientationInterpolator200.setKey([0,0.5,1])
-OrientationInterpolator200.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator200)
-OrientationInterpolator201 = OrientationInterpolator()
-OrientationInterpolator201.setDEF("Stop_l_ankle_RotationInterpolator")
-OrientationInterpolator201.setKey([0,0.5,1])
-OrientationInterpolator201.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator201)
-OrientationInterpolator202 = OrientationInterpolator()
-OrientationInterpolator202.setDEF("Stop_l_subtalar_RotationInterpolator")
-OrientationInterpolator202.setKey([0,0.5,1])
-OrientationInterpolator202.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator202)
-OrientationInterpolator203 = OrientationInterpolator()
-OrientationInterpolator203.setDEF("Stop_l_midtarsal_RotationInterpolator")
-OrientationInterpolator203.setKey([0,0.5,1])
-OrientationInterpolator203.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator203)
-OrientationInterpolator204 = OrientationInterpolator()
-OrientationInterpolator204.setDEF("Stop_l_metatarsal_RotationInterpolator")
-OrientationInterpolator204.setKey([0,0.5,1])
-OrientationInterpolator204.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator204)
-OrientationInterpolator205 = OrientationInterpolator()
-OrientationInterpolator205.setDEF("Stop_r_hip_RotationInterpolator")
-OrientationInterpolator205.setKey([0,0.5,1])
-OrientationInterpolator205.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator205)
-OrientationInterpolator206 = OrientationInterpolator()
-OrientationInterpolator206.setDEF("Stop_r_knee_RotationInterpolator")
-OrientationInterpolator206.setKey([0,0.5,1])
-OrientationInterpolator206.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator206)
-OrientationInterpolator207 = OrientationInterpolator()
-OrientationInterpolator207.setDEF("Stop_r_ankle_RotationInterpolator")
-OrientationInterpolator207.setKey([0,0.5,1])
-OrientationInterpolator207.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator207)
-OrientationInterpolator208 = OrientationInterpolator()
-OrientationInterpolator208.setDEF("Stop_r_subtalar_RotationInterpolator")
-OrientationInterpolator208.setKey([0,0.5,1])
-OrientationInterpolator208.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator208)
-OrientationInterpolator209 = OrientationInterpolator()
-OrientationInterpolator209.setDEF("Stop_r_midtarsal_RotationInterpolator")
-OrientationInterpolator209.setKey([0,0.5,1])
-OrientationInterpolator209.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator209)
-OrientationInterpolator210 = OrientationInterpolator()
-OrientationInterpolator210.setDEF("Stop_r_metatarsal_RotationInterpolator")
-OrientationInterpolator210.setKey([0,0.5,1])
-OrientationInterpolator210.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator210)
-OrientationInterpolator211 = OrientationInterpolator()
-OrientationInterpolator211.setDEF("Stop_vl5_RotationInterpolator")
-OrientationInterpolator211.setKey([0,0.5,1])
-OrientationInterpolator211.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator211)
-OrientationInterpolator212 = OrientationInterpolator()
-OrientationInterpolator212.setDEF("Stop_vl4_RotationInterpolator")
-OrientationInterpolator212.setKey([0,0.5,1])
-OrientationInterpolator212.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator212)
-OrientationInterpolator213 = OrientationInterpolator()
-OrientationInterpolator213.setDEF("Stop_vl3_RotationInterpolator")
-OrientationInterpolator213.setKey([0,0.5,1])
-OrientationInterpolator213.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator213)
-OrientationInterpolator214 = OrientationInterpolator()
-OrientationInterpolator214.setDEF("Stop_vl2_RotationInterpolator")
-OrientationInterpolator214.setKey([0,0.5,1])
-OrientationInterpolator214.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator214)
-OrientationInterpolator215 = OrientationInterpolator()
-OrientationInterpolator215.setDEF("Stop_vl1_RotationInterpolator")
-OrientationInterpolator215.setKey([0,0.5,1])
-OrientationInterpolator215.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator215)
-OrientationInterpolator216 = OrientationInterpolator()
-OrientationInterpolator216.setDEF("Stop_vt12_RotationInterpolator")
-OrientationInterpolator216.setKey([0,0.5,1])
-OrientationInterpolator216.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator216)
-OrientationInterpolator217 = OrientationInterpolator()
-OrientationInterpolator217.setDEF("Stop_vt11_RotationInterpolator")
-OrientationInterpolator217.setKey([0,0.5,1])
-OrientationInterpolator217.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator217)
-OrientationInterpolator218 = OrientationInterpolator()
-OrientationInterpolator218.setDEF("Stop_vt10_RotationInterpolator")
-OrientationInterpolator218.setKey([0,0.5,1])
-OrientationInterpolator218.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator218)
-OrientationInterpolator219 = OrientationInterpolator()
-OrientationInterpolator219.setDEF("Stop_vt9_RotationInterpolator")
-OrientationInterpolator219.setKey([0,0.5,1])
-OrientationInterpolator219.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator219)
-OrientationInterpolator220 = OrientationInterpolator()
-OrientationInterpolator220.setDEF("Stop_vt8_RotationInterpolator")
-OrientationInterpolator220.setKey([0,0.5,1])
-OrientationInterpolator220.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator220)
-OrientationInterpolator221 = OrientationInterpolator()
-OrientationInterpolator221.setDEF("Stop_vt7_RotationInterpolator")
-OrientationInterpolator221.setKey([0,0.5,1])
-OrientationInterpolator221.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator221)
-OrientationInterpolator222 = OrientationInterpolator()
-OrientationInterpolator222.setDEF("Stop_vt6_RotationInterpolator")
-OrientationInterpolator222.setKey([0,0.5,1])
-OrientationInterpolator222.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator222)
-OrientationInterpolator223 = OrientationInterpolator()
-OrientationInterpolator223.setDEF("Stop_vt5_RotationInterpolator")
-OrientationInterpolator223.setKey([0,0.5,1])
-OrientationInterpolator223.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator223)
-OrientationInterpolator224 = OrientationInterpolator()
-OrientationInterpolator224.setDEF("Stop_vt4_RotationInterpolator")
-OrientationInterpolator224.setKey([0,0.5,1])
-OrientationInterpolator224.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator224)
-OrientationInterpolator225 = OrientationInterpolator()
-OrientationInterpolator225.setDEF("Stop_vt3_RotationInterpolator")
-OrientationInterpolator225.setKey([0,0.5,1])
-OrientationInterpolator225.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator225)
-OrientationInterpolator226 = OrientationInterpolator()
-OrientationInterpolator226.setDEF("Stop_vt2_RotationInterpolator")
-OrientationInterpolator226.setKey([0,0.5,1])
-OrientationInterpolator226.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator226)
-OrientationInterpolator227 = OrientationInterpolator()
-OrientationInterpolator227.setDEF("Stop_vt1_RotationInterpolator")
-OrientationInterpolator227.setKey([0,0.5,1])
-OrientationInterpolator227.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator227)
-OrientationInterpolator228 = OrientationInterpolator()
-OrientationInterpolator228.setDEF("Stop_vc7_RotationInterpolator")
-OrientationInterpolator228.setKey([0,0.5,1])
-OrientationInterpolator228.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator228)
-OrientationInterpolator229 = OrientationInterpolator()
-OrientationInterpolator229.setDEF("Stop_vc6_RotationInterpolator")
-OrientationInterpolator229.setKey([0,0.5,1])
-OrientationInterpolator229.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator229)
-OrientationInterpolator230 = OrientationInterpolator()
-OrientationInterpolator230.setDEF("Stop_vc5_RotationInterpolator")
-OrientationInterpolator230.setKey([0,0.5,1])
-OrientationInterpolator230.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator230)
-OrientationInterpolator231 = OrientationInterpolator()
-OrientationInterpolator231.setDEF("Stop_vc4_RotationInterpolator")
-OrientationInterpolator231.setKey([0,0.5,1])
-OrientationInterpolator231.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator231)
-OrientationInterpolator232 = OrientationInterpolator()
-OrientationInterpolator232.setDEF("Stop_vc3_RotationInterpolator")
-OrientationInterpolator232.setKey([0,0.5,1])
-OrientationInterpolator232.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator232)
-OrientationInterpolator233 = OrientationInterpolator()
-OrientationInterpolator233.setDEF("Stop_vc2_RotationInterpolator")
-OrientationInterpolator233.setKey([0,0.5,1])
-OrientationInterpolator233.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator233)
-OrientationInterpolator234 = OrientationInterpolator()
-OrientationInterpolator234.setDEF("Stop_vc1_RotationInterpolator")
-OrientationInterpolator234.setKey([0,0.5,1])
-OrientationInterpolator234.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator234)
-OrientationInterpolator235 = OrientationInterpolator()
-OrientationInterpolator235.setDEF("Stop_skullbase_RotationInterpolator")
-OrientationInterpolator235.setKey([0,0.5,1])
-OrientationInterpolator235.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator235)
-OrientationInterpolator236 = OrientationInterpolator()
-OrientationInterpolator236.setDEF("Stop_l_eyeball_joint_RotationInterpolator")
-OrientationInterpolator236.setKey([0,0.5,1])
-OrientationInterpolator236.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator236)
-OrientationInterpolator237 = OrientationInterpolator()
-OrientationInterpolator237.setDEF("Stop_r_eyeball_joint_RotationInterpolator")
-OrientationInterpolator237.setKey([0,0.5,1])
-OrientationInterpolator237.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator237)
-OrientationInterpolator238 = OrientationInterpolator()
-OrientationInterpolator238.setDEF("Stop_l_sternoclavicular_RotationInterpolator")
-OrientationInterpolator238.setKey([0,0.5,1])
-OrientationInterpolator238.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator238)
-OrientationInterpolator239 = OrientationInterpolator()
-OrientationInterpolator239.setDEF("Stop_l_acromioclavicular_RotationInterpolator")
-OrientationInterpolator239.setKey([0,0.5,1])
-OrientationInterpolator239.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator239)
-OrientationInterpolator240 = OrientationInterpolator()
-OrientationInterpolator240.setDEF("Stop_l_shoulder_RotationInterpolator")
-OrientationInterpolator240.setKey([0,0.5,1])
-OrientationInterpolator240.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator240)
-OrientationInterpolator241 = OrientationInterpolator()
-OrientationInterpolator241.setDEF("Stop_l_elbow_RotationInterpolator")
-OrientationInterpolator241.setKey([0,0.5,1])
-OrientationInterpolator241.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator241)
-OrientationInterpolator242 = OrientationInterpolator()
-OrientationInterpolator242.setDEF("Stop_l_wrist_RotationInterpolator")
-OrientationInterpolator242.setKey([0,0.5,1])
-OrientationInterpolator242.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator242)
-OrientationInterpolator243 = OrientationInterpolator()
-OrientationInterpolator243.setDEF("Stop_l_thumb1_RotationInterpolator")
-OrientationInterpolator243.setKey([0,0.5,1])
-OrientationInterpolator243.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator243)
-OrientationInterpolator244 = OrientationInterpolator()
-OrientationInterpolator244.setDEF("Stop_l_thumb2_RotationInterpolator")
-OrientationInterpolator244.setKey([0,0.5,1])
-OrientationInterpolator244.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator244)
-OrientationInterpolator245 = OrientationInterpolator()
-OrientationInterpolator245.setDEF("Stop_l_thumb3_RotationInterpolator")
-OrientationInterpolator245.setKey([0,0.5,1])
-OrientationInterpolator245.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator245)
-OrientationInterpolator246 = OrientationInterpolator()
-OrientationInterpolator246.setDEF("Stop_l_index0_RotationInterpolator")
-OrientationInterpolator246.setKey([0,0.5,1])
-OrientationInterpolator246.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator246)
-OrientationInterpolator247 = OrientationInterpolator()
-OrientationInterpolator247.setDEF("Stop_l_index1_RotationInterpolator")
-OrientationInterpolator247.setKey([0,0.5,1])
-OrientationInterpolator247.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator247)
-OrientationInterpolator248 = OrientationInterpolator()
-OrientationInterpolator248.setDEF("Stop_l_index2_RotationInterpolator")
-OrientationInterpolator248.setKey([0,0.5,1])
-OrientationInterpolator248.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator248)
-OrientationInterpolator249 = OrientationInterpolator()
-OrientationInterpolator249.setDEF("Stop_l_index3_RotationInterpolator")
-OrientationInterpolator249.setKey([0,0.5,1])
-OrientationInterpolator249.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator249)
-OrientationInterpolator250 = OrientationInterpolator()
-OrientationInterpolator250.setDEF("Stop_l_middle0_RotationInterpolator")
-OrientationInterpolator250.setKey([0,0.5,1])
-OrientationInterpolator250.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator250)
-OrientationInterpolator251 = OrientationInterpolator()
-OrientationInterpolator251.setDEF("Stop_l_middle1_RotationInterpolator")
-OrientationInterpolator251.setKey([0,0.5,1])
-OrientationInterpolator251.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator251)
-OrientationInterpolator252 = OrientationInterpolator()
-OrientationInterpolator252.setDEF("Stop_l_middle2_RotationInterpolator")
-OrientationInterpolator252.setKey([0,0.5,1])
-OrientationInterpolator252.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator252)
-OrientationInterpolator253 = OrientationInterpolator()
-OrientationInterpolator253.setDEF("Stop_l_middle3_RotationInterpolator")
-OrientationInterpolator253.setKey([0,0.5,1])
-OrientationInterpolator253.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator253)
-OrientationInterpolator254 = OrientationInterpolator()
-OrientationInterpolator254.setDEF("Stop_l_ring0_RotationInterpolator")
-OrientationInterpolator254.setKey([0,0.5,1])
-OrientationInterpolator254.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator254)
-OrientationInterpolator255 = OrientationInterpolator()
-OrientationInterpolator255.setDEF("Stop_l_ring1_RotationInterpolator")
-OrientationInterpolator255.setKey([0,0.5,1])
-OrientationInterpolator255.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator255)
-OrientationInterpolator256 = OrientationInterpolator()
-OrientationInterpolator256.setDEF("Stop_l_ring2_RotationInterpolator")
-OrientationInterpolator256.setKey([0,0.5,1])
-OrientationInterpolator256.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator256)
-OrientationInterpolator257 = OrientationInterpolator()
-OrientationInterpolator257.setDEF("Stop_l_ring3_RotationInterpolator")
-OrientationInterpolator257.setKey([0,0.5,1])
-OrientationInterpolator257.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator257)
-OrientationInterpolator258 = OrientationInterpolator()
-OrientationInterpolator258.setDEF("Stop_l_pinky0_RotationInterpolator")
-OrientationInterpolator258.setKey([0,0.5,1])
-OrientationInterpolator258.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator258)
-OrientationInterpolator259 = OrientationInterpolator()
-OrientationInterpolator259.setDEF("Stop_l_pinky1_RotationInterpolator")
-OrientationInterpolator259.setKey([0,0.5,1])
-OrientationInterpolator259.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator259)
-OrientationInterpolator260 = OrientationInterpolator()
-OrientationInterpolator260.setDEF("Stop_l_pinky2_RotationInterpolator")
-OrientationInterpolator260.setKey([0,0.5,1])
-OrientationInterpolator260.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator260)
-OrientationInterpolator261 = OrientationInterpolator()
-OrientationInterpolator261.setDEF("Stop_l_pinky3_RotationInterpolator")
-OrientationInterpolator261.setKey([0,0.5,1])
-OrientationInterpolator261.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator261)
-OrientationInterpolator262 = OrientationInterpolator()
-OrientationInterpolator262.setDEF("Stop_r_sternoclavicular_RotationInterpolator")
-OrientationInterpolator262.setKey([0,0.5,1])
-OrientationInterpolator262.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator262)
-OrientationInterpolator263 = OrientationInterpolator()
-OrientationInterpolator263.setDEF("Stop_r_acromioclavicular_RotationInterpolator")
-OrientationInterpolator263.setKey([0,0.5,1])
-OrientationInterpolator263.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator263)
-OrientationInterpolator264 = OrientationInterpolator()
-OrientationInterpolator264.setDEF("Stop_r_shoulder_RotationInterpolator")
-OrientationInterpolator264.setKey([0,0.5,1])
-OrientationInterpolator264.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator264)
-OrientationInterpolator265 = OrientationInterpolator()
-OrientationInterpolator265.setDEF("Stop_r_elbow_RotationInterpolator")
-OrientationInterpolator265.setKey([0,0.5,1])
-OrientationInterpolator265.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator265)
-OrientationInterpolator266 = OrientationInterpolator()
-OrientationInterpolator266.setDEF("Stop_r_wrist_RotationInterpolator")
-OrientationInterpolator266.setKey([0,0.5,1])
-OrientationInterpolator266.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator266)
-OrientationInterpolator267 = OrientationInterpolator()
-OrientationInterpolator267.setDEF("Stop_r_thumb1_RotationInterpolator")
-OrientationInterpolator267.setKey([0,0.5,1])
-OrientationInterpolator267.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator267)
-OrientationInterpolator268 = OrientationInterpolator()
-OrientationInterpolator268.setDEF("Stop_r_thumb2_RotationInterpolator")
-OrientationInterpolator268.setKey([0,0.5,1])
-OrientationInterpolator268.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator268)
-OrientationInterpolator269 = OrientationInterpolator()
-OrientationInterpolator269.setDEF("Stop_r_thumb3_RotationInterpolator")
-OrientationInterpolator269.setKey([0,0.5,1])
-OrientationInterpolator269.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator269)
-OrientationInterpolator270 = OrientationInterpolator()
-OrientationInterpolator270.setDEF("Stop_r_index0_RotationInterpolator")
-OrientationInterpolator270.setKey([0,0.5,1])
-OrientationInterpolator270.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator270)
-OrientationInterpolator271 = OrientationInterpolator()
-OrientationInterpolator271.setDEF("Stop_r_index1_RotationInterpolator")
-OrientationInterpolator271.setKey([0,0.5,1])
-OrientationInterpolator271.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator271)
-OrientationInterpolator272 = OrientationInterpolator()
-OrientationInterpolator272.setDEF("Stop_r_index2_RotationInterpolator")
-OrientationInterpolator272.setKey([0,0.5,1])
-OrientationInterpolator272.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator272)
-OrientationInterpolator273 = OrientationInterpolator()
-OrientationInterpolator273.setDEF("Stop_r_index3_RotationInterpolator")
-OrientationInterpolator273.setKey([0,0.5,1])
-OrientationInterpolator273.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator273)
-OrientationInterpolator274 = OrientationInterpolator()
-OrientationInterpolator274.setDEF("Stop_r_middle0_RotationInterpolator")
-OrientationInterpolator274.setKey([0,0.5,1])
-OrientationInterpolator274.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator274)
-OrientationInterpolator275 = OrientationInterpolator()
-OrientationInterpolator275.setDEF("Stop_r_middle1_RotationInterpolator")
-OrientationInterpolator275.setKey([0,0.5,1])
-OrientationInterpolator275.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator275)
-OrientationInterpolator276 = OrientationInterpolator()
-OrientationInterpolator276.setDEF("Stop_r_middle2_RotationInterpolator")
-OrientationInterpolator276.setKey([0,0.5,1])
-OrientationInterpolator276.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator276)
-OrientationInterpolator277 = OrientationInterpolator()
-OrientationInterpolator277.setDEF("Stop_r_middle3_RotationInterpolator")
-OrientationInterpolator277.setKey([0,0.5,1])
-OrientationInterpolator277.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator277)
-OrientationInterpolator278 = OrientationInterpolator()
-OrientationInterpolator278.setDEF("Stop_r_ring0_RotationInterpolator")
-OrientationInterpolator278.setKey([0,0.5,1])
-OrientationInterpolator278.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator278)
-OrientationInterpolator279 = OrientationInterpolator()
-OrientationInterpolator279.setDEF("Stop_r_ring1_RotationInterpolator")
-OrientationInterpolator279.setKey([0,0.5,1])
-OrientationInterpolator279.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator279)
-OrientationInterpolator280 = OrientationInterpolator()
-OrientationInterpolator280.setDEF("Stop_r_ring2_RotationInterpolator")
-OrientationInterpolator280.setKey([0,0.5,1])
-OrientationInterpolator280.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator280)
-OrientationInterpolator281 = OrientationInterpolator()
-OrientationInterpolator281.setDEF("Stop_r_ring3_RotationInterpolator")
-OrientationInterpolator281.setKey([0,0.5,1])
-OrientationInterpolator281.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator281)
-OrientationInterpolator282 = OrientationInterpolator()
-OrientationInterpolator282.setDEF("Stop_r_pinky0_RotationInterpolator")
-OrientationInterpolator282.setKey([0,0.5,1])
-OrientationInterpolator282.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator282)
-OrientationInterpolator283 = OrientationInterpolator()
-OrientationInterpolator283.setDEF("Stop_r_pinky1_RotationInterpolator")
-OrientationInterpolator283.setKey([0,0.5,1])
-OrientationInterpolator283.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator283)
-OrientationInterpolator284 = OrientationInterpolator()
-OrientationInterpolator284.setDEF("Stop_r_pinky2_RotationInterpolator")
-OrientationInterpolator284.setKey([0,0.5,1])
-OrientationInterpolator284.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator284)
-OrientationInterpolator285 = OrientationInterpolator()
-OrientationInterpolator285.setDEF("Stop_r_pinky3_RotationInterpolator")
-OrientationInterpolator285.setKey([0,0.5,1])
-OrientationInterpolator285.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group194.addChildren(OrientationInterpolator285)
-
-Scene34.addChildren(Group194)
-Group286 = Group()
-Group286.setDEF("StandAnimation")
-TimeSensor287 = TimeSensor()
-TimeSensor287.setDEF("StandTimer")
-TimeSensor287.setCycleInterval(5.73)
-TimeSensor287.setLoop(True)
-
-Group286.addChildren(TimeSensor287)
-OrientationInterpolator288 = OrientationInterpolator()
-OrientationInterpolator288.setDEF("Stand_r_metatarsal_PitchInterpolator")
-OrientationInterpolator288.setKey([0,0.2,0.4,0.6,0.7,1])
-OrientationInterpolator288.setKeyValue([1,0,0,0,-1,0,0,0.015,1,0,0,0.17,-1,0,0,0.025,1,0,0,0.01,1,0,0,0])
-
-Group286.addChildren(OrientationInterpolator288)
-OrientationInterpolator289 = OrientationInterpolator()
-OrientationInterpolator289.setDEF("Stand_r_ankle_RotationInterpolator")
-OrientationInterpolator289.setKey([0,0.5,1])
-OrientationInterpolator289.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group286.addChildren(OrientationInterpolator289)
-OrientationInterpolator290 = OrientationInterpolator()
-OrientationInterpolator290.setDEF("Stand_r_knee_RotationInterpolator")
-OrientationInterpolator290.setKey([0,0.5,1])
-OrientationInterpolator290.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group286.addChildren(OrientationInterpolator290)
-OrientationInterpolator291 = OrientationInterpolator()
-OrientationInterpolator291.setDEF("Stand_r_hip_RotationInterpolator")
-OrientationInterpolator291.setKey([0,0.5,1])
-OrientationInterpolator291.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group286.addChildren(OrientationInterpolator291)
-OrientationInterpolator292 = OrientationInterpolator()
-OrientationInterpolator292.setDEF("Stand_l_ankle_RotationInterpolator")
-OrientationInterpolator292.setKey([0,0.5,1])
-OrientationInterpolator292.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group286.addChildren(OrientationInterpolator292)
-OrientationInterpolator293 = OrientationInterpolator()
-OrientationInterpolator293.setDEF("Stand_l_knee_RotationInterpolator")
-OrientationInterpolator293.setKey([0,0.5,1])
-OrientationInterpolator293.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group286.addChildren(OrientationInterpolator293)
-OrientationInterpolator294 = OrientationInterpolator()
-OrientationInterpolator294.setDEF("Stand_l_hip_RotationInterpolator")
-OrientationInterpolator294.setKey([0,0.5,1])
-OrientationInterpolator294.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group286.addChildren(OrientationInterpolator294)
-OrientationInterpolator295 = OrientationInterpolator()
-OrientationInterpolator295.setDEF("Stand_r_wrist_RotationInterpolator")
-OrientationInterpolator295.setKey([0,0.5,1])
-OrientationInterpolator295.setKeyValue([0,0,1,0,0,0,-1,0.25,0,0,1,0])
-
-Group286.addChildren(OrientationInterpolator295)
-OrientationInterpolator296 = OrientationInterpolator()
-OrientationInterpolator296.setDEF("Stand_r_elbow_RotationInterpolator")
-OrientationInterpolator296.setKey([0,0.5,1])
-OrientationInterpolator296.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group286.addChildren(OrientationInterpolator296)
-OrientationInterpolator297 = OrientationInterpolator()
-OrientationInterpolator297.setDEF("Stand_r_shoulder_RotationInterpolator")
-OrientationInterpolator297.setKey([0,0.5,1])
-OrientationInterpolator297.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group286.addChildren(OrientationInterpolator297)
-OrientationInterpolator298 = OrientationInterpolator()
-OrientationInterpolator298.setDEF("Stand_l_wrist_RotationInterpolator")
-OrientationInterpolator298.setKey([0,0.5,1])
-OrientationInterpolator298.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group286.addChildren(OrientationInterpolator298)
-OrientationInterpolator299 = OrientationInterpolator()
-OrientationInterpolator299.setDEF("Stand_l_elbow_RotationInterpolator")
-OrientationInterpolator299.setKey([0,0.5,1])
-OrientationInterpolator299.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group286.addChildren(OrientationInterpolator299)
-OrientationInterpolator300 = OrientationInterpolator()
-OrientationInterpolator300.setDEF("Stand_l_shoulder_RotationInterpolator")
-OrientationInterpolator300.setKey([0,0.5,1])
-OrientationInterpolator300.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group286.addChildren(OrientationInterpolator300)
-OrientationInterpolator301 = OrientationInterpolator()
-OrientationInterpolator301.setDEF("Stand_head_RotationInterpolator")
-OrientationInterpolator301.setKey([0,0.5,1])
-OrientationInterpolator301.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group286.addChildren(OrientationInterpolator301)
-OrientationInterpolator302 = OrientationInterpolator()
-OrientationInterpolator302.setDEF("Stand_neck_RotationInterpolator")
-OrientationInterpolator302.setKey([0,0.5,1])
-OrientationInterpolator302.setKeyValue([0,0,1,0,-1,0,0,0.5,0,0,1,0])
-
-Group286.addChildren(OrientationInterpolator302)
-OrientationInterpolator303 = OrientationInterpolator()
-OrientationInterpolator303.setDEF("Stand_l_eyeball_RotationInterpolator")
-OrientationInterpolator303.setKey([0,0.4,0.7,1])
-OrientationInterpolator303.setKeyValue([0,0,1,0,-1,0,0,0.5,1,0,0,0.45,0,0,1,0])
-
-Group286.addChildren(OrientationInterpolator303)
-OrientationInterpolator304 = OrientationInterpolator()
-OrientationInterpolator304.setDEF("Stand_r_eyeball_RotationInterpolator")
-OrientationInterpolator304.setKey([0,0.4,0.7,1])
-OrientationInterpolator304.setKeyValue([0,0,1,0,-1,0,0,0.5,1,0,0,0.45,0,0,1,0])
-
-Group286.addChildren(OrientationInterpolator304)
-OrientationInterpolator305 = OrientationInterpolator()
-OrientationInterpolator305.setDEF("Stand_lower_body_RotationInterpolator")
-OrientationInterpolator305.setKey([0,0.5,1])
-OrientationInterpolator305.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group286.addChildren(OrientationInterpolator305)
-OrientationInterpolator306 = OrientationInterpolator()
-OrientationInterpolator306.setDEF("Stand_upper_body_RotationInterpolator")
-OrientationInterpolator306.setKey([0,0.5,1])
-OrientationInterpolator306.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group286.addChildren(OrientationInterpolator306)
-OrientationInterpolator307 = OrientationInterpolator()
-OrientationInterpolator307.setDEF("Stand_whole_body_RotationInterpolator")
-OrientationInterpolator307.setKey([0,0.5,1])
-OrientationInterpolator307.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group286.addChildren(OrientationInterpolator307)
-PositionInterpolator308 = PositionInterpolator()
-PositionInterpolator308.setDEF("Stand_whole_body_TranslationInterpolator")
-PositionInterpolator308.setKey([0,0.5,1])
-PositionInterpolator308.setKeyValue([0,0,0,0,0,0,0,0,0])
-
-Group286.addChildren(PositionInterpolator308)
-OrientationInterpolator309 = OrientationInterpolator()
-OrientationInterpolator309.setDEF("Stand_l_sternoclavicular_RollInterpolator")
-OrientationInterpolator309.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator309.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group286.addChildren(OrientationInterpolator309)
-OrientationInterpolator310 = OrientationInterpolator()
-OrientationInterpolator310.setDEF("Stand_l_acromioclavicular_RollInterpolator")
-OrientationInterpolator310.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator310.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group286.addChildren(OrientationInterpolator310)
-OrientationInterpolator311 = OrientationInterpolator()
-OrientationInterpolator311.setDEF("Stand_r_sternoclavicular_RollInterpolator")
-OrientationInterpolator311.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator311.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group286.addChildren(OrientationInterpolator311)
-OrientationInterpolator312 = OrientationInterpolator()
-OrientationInterpolator312.setDEF("Stand_r_acromioclavicular_RollInterpolator")
-OrientationInterpolator312.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator312.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group286.addChildren(OrientationInterpolator312)
-OrientationInterpolator313 = OrientationInterpolator()
-OrientationInterpolator313.setDEF("Stand_sacroiliac_YawInterpolator")
-OrientationInterpolator313.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator313.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group286.addChildren(OrientationInterpolator313)
-OrientationInterpolator314 = OrientationInterpolator()
-OrientationInterpolator314.setDEF("Stand_vl5_YawInterpolator")
-OrientationInterpolator314.setKey([0,0.2,0.4,0.5,0.6,0.8,1])
-OrientationInterpolator314.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group286.addChildren(OrientationInterpolator314)
-OrientationInterpolator315 = OrientationInterpolator()
-OrientationInterpolator315.setDEF("Stand_vc6_YawInterpolator")
-OrientationInterpolator315.setKey([0,0.2,0.4,0.5,0.6,0.8,1])
-OrientationInterpolator315.setKeyValue([0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,-1,0,0,0,0,-1,0,0,0,1,0,0])
-
-Group286.addChildren(OrientationInterpolator315)
-OrientationInterpolator316 = OrientationInterpolator()
-OrientationInterpolator316.setDEF("Stand_l_thumb1_PitchInterpolator")
-OrientationInterpolator316.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator316.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group286.addChildren(OrientationInterpolator316)
-OrientationInterpolator317 = OrientationInterpolator()
-OrientationInterpolator317.setDEF("Stand_r_thumb1_PitchInterpolator")
-OrientationInterpolator317.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator317.setKeyValue([1,0,0,0,1,0,0,0.5,1,0,0,0.1,1,0,0,0.27,1,0,0,0.2,1,0,0,0])
-
-Group286.addChildren(OrientationInterpolator317)
-OrientationInterpolator318 = OrientationInterpolator()
-OrientationInterpolator318.setDEF("Stand_r_index1_RollInterpolator")
-OrientationInterpolator318.setKey([0,0.2,0.4,0.5,0.8,1])
-OrientationInterpolator318.setKeyValue([0,0,1,0,0,0,1,0.1,0,0,1,0.2,0,0,1,0.3,0,0,1,0,0,0,1,0])
-
-Group286.addChildren(OrientationInterpolator318)
-OrientationInterpolator319 = OrientationInterpolator()
-OrientationInterpolator319.setDEF("Stand_r_index2_RollInterpolator")
-OrientationInterpolator319.setKey([0,0.2,0.4,0.5,0.8,1])
-OrientationInterpolator319.setKeyValue([0,0,1,0,0,0,1,0.4,0,0,1,0.32,0,0,1,0.25,0,0,1,0.2,0,0,1,0])
-
-Group286.addChildren(OrientationInterpolator319)
-OrientationInterpolator320 = OrientationInterpolator()
-OrientationInterpolator320.setDEF("Stand_r_index3_RollInterpolator")
-OrientationInterpolator320.setKey([0,0.2,0.4,0.5,0.8,1])
-OrientationInterpolator320.setKeyValue([0,0,1,0,0,0,1,0.2,0,0,1,0.3,0,0,1,0.35,0,0,1,0.2,0,0,1,0])
-
-Group286.addChildren(OrientationInterpolator320)
-
-Scene34.addChildren(Group286)
-Group321 = Group()
-Group321.setDEF("PitchesAnimation")
-TimeSensor322 = TimeSensor()
-TimeSensor322.setDEF("PitchTimer")
-TimeSensor322.setCycleInterval(5.73)
-TimeSensor322.setLoop(True)
-
-Group321.addChildren(TimeSensor322)
-OrientationInterpolator323 = OrientationInterpolator()
-OrientationInterpolator323.setDEF("Pitch_r_metatarsal_PitchInterpolator")
-OrientationInterpolator323.setKey([0,0.2,0.4,0.6,0.7,1])
-OrientationInterpolator323.setKeyValue([1,0,0,0,-1,0,0,0.5,-1,0,0,0.7,1,0,0,0.75,-1,0,0,0.2,1,0,0,0])
-
-Group321.addChildren(OrientationInterpolator323)
-OrientationInterpolator324 = OrientationInterpolator()
-OrientationInterpolator324.setDEF("Pitches_r_ankle_RotationInterpolator")
-OrientationInterpolator324.setKey([0,0.25,0.5,0.75,1])
-OrientationInterpolator324.setKeyValue([0,0,1,0,1,0,0,1.5,0,0,1,0,-1,0,0,1.5,0,0,1,0])
-
-Group321.addChildren(OrientationInterpolator324)
-OrientationInterpolator325 = OrientationInterpolator()
-OrientationInterpolator325.setDEF("Pitches_r_knee_RotationInterpolator")
-OrientationInterpolator325.setKey([0,0.5,1])
-OrientationInterpolator325.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group321.addChildren(OrientationInterpolator325)
-OrientationInterpolator326 = OrientationInterpolator()
-OrientationInterpolator326.setDEF("Pitches_r_hip_RotationInterpolator")
-OrientationInterpolator326.setKey([0,0.25,0.5,0.75,1])
-OrientationInterpolator326.setKeyValue([0,0,1,0,-1,0,0,1.5,0,0,1,0,1,0,0,1.5,0,0,1,0])
-
-Group321.addChildren(OrientationInterpolator326)
-OrientationInterpolator327 = OrientationInterpolator()
-OrientationInterpolator327.setDEF("Pitches_l_ankle_RotationInterpolator")
-OrientationInterpolator327.setKey([0,0.25,0.5,0.75,1])
-OrientationInterpolator327.setKeyValue([0,0,1,0,-1,0,0,1.5,0,0,1,0,1,0,0,1.5,0,0,1,0])
-
-Group321.addChildren(OrientationInterpolator327)
-OrientationInterpolator328 = OrientationInterpolator()
-OrientationInterpolator328.setDEF("Pitches_l_knee_RotationInterpolator")
-OrientationInterpolator328.setKey([0,0.5,1])
-OrientationInterpolator328.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group321.addChildren(OrientationInterpolator328)
-OrientationInterpolator329 = OrientationInterpolator()
-OrientationInterpolator329.setDEF("Pitches_l_hip_RotationInterpolator")
-OrientationInterpolator329.setKey([0,0.25,0.5,0.75,1])
-OrientationInterpolator329.setKeyValue([0,0,1,0,1,0,0,1.5,0,0,1,0,-1,0,0,1.5,0,0,1,0])
-
-Group321.addChildren(OrientationInterpolator329)
-OrientationInterpolator330 = OrientationInterpolator()
-OrientationInterpolator330.setDEF("Pitches_r_wrist_RotationInterpolator")
-OrientationInterpolator330.setKey([0,0.5,1])
-OrientationInterpolator330.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group321.addChildren(OrientationInterpolator330)
-OrientationInterpolator331 = OrientationInterpolator()
-OrientationInterpolator331.setDEF("Pitches_r_elbow_RotationInterpolator")
-OrientationInterpolator331.setKey([0,0.5,1])
-OrientationInterpolator331.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group321.addChildren(OrientationInterpolator331)
-OrientationInterpolator332 = OrientationInterpolator()
-OrientationInterpolator332.setDEF("Pitches_r_shoulder_RotationInterpolator")
-OrientationInterpolator332.setKey([0,0.25,0.5,0.75,1])
-OrientationInterpolator332.setKeyValue([0,0,1,0,1,0,0,1.5,0,0,1,0,-1,0,0,1.5,0,0,1,0])
-
-Group321.addChildren(OrientationInterpolator332)
-OrientationInterpolator333 = OrientationInterpolator()
-OrientationInterpolator333.setDEF("Pitches_l_wrist_RotationInterpolator")
-OrientationInterpolator333.setKey([0,0.5,1])
-OrientationInterpolator333.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group321.addChildren(OrientationInterpolator333)
-OrientationInterpolator334 = OrientationInterpolator()
-OrientationInterpolator334.setDEF("Pitches_l_elbow_RotationInterpolator")
-OrientationInterpolator334.setKey([0,0.5,1])
-OrientationInterpolator334.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group321.addChildren(OrientationInterpolator334)
-OrientationInterpolator335 = OrientationInterpolator()
-OrientationInterpolator335.setDEF("Pitches_l_shoulder_RotationInterpolator")
-OrientationInterpolator335.setKey([0,0.25,0.5,0.75,1])
-OrientationInterpolator335.setKeyValue([0,0,1,0,-1,0,0,1.5,0,0,1,0,1,0,0,1.5,0,0,1,0])
-
-Group321.addChildren(OrientationInterpolator335)
-OrientationInterpolator336 = OrientationInterpolator()
-OrientationInterpolator336.setDEF("Pitches_head_RotationInterpolator")
-OrientationInterpolator336.setKey([0,0.5,1])
-OrientationInterpolator336.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group321.addChildren(OrientationInterpolator336)
-OrientationInterpolator337 = OrientationInterpolator()
-OrientationInterpolator337.setDEF("Pitches_neck_RotationInterpolator")
-OrientationInterpolator337.setKey([0,0.25,0.55,1])
-OrientationInterpolator337.setKeyValue([0,0,1,0,1,0,0,0.55,-1,0,0,1.05,0,0,1,0])
-
-Group321.addChildren(OrientationInterpolator337)
-OrientationInterpolator338 = OrientationInterpolator()
-OrientationInterpolator338.setDEF("Pitches_lower_body_RotationInterpolator")
-OrientationInterpolator338.setKey([0,0.5,1])
-OrientationInterpolator338.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group321.addChildren(OrientationInterpolator338)
-OrientationInterpolator339 = OrientationInterpolator()
-OrientationInterpolator339.setDEF("Pitches_upper_body_RotationInterpolator")
-OrientationInterpolator339.setKey([0,0.5,1])
-OrientationInterpolator339.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group321.addChildren(OrientationInterpolator339)
-OrientationInterpolator340 = OrientationInterpolator()
-OrientationInterpolator340.setDEF("Pitches_whole_body_RotationInterpolator")
-OrientationInterpolator340.setKey([0,0.5,1])
-OrientationInterpolator340.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group321.addChildren(OrientationInterpolator340)
-PositionInterpolator341 = PositionInterpolator()
-PositionInterpolator341.setDEF("Pitches_whole_body_TranslationInterpolator")
-PositionInterpolator341.setKey([0,0.125,0.25,0.375,0.5,0.625,0.75,0.875,1])
-PositionInterpolator341.setKeyValue([0,0,0,0,-0.15,0,0,-0.7,0,0,-0.15,0,0,0,0,0,-0.15,0,0,-0.7,0,0,-0.15,0,0,0,0])
-
-Group321.addChildren(PositionInterpolator341)
-OrientationInterpolator342 = OrientationInterpolator()
-OrientationInterpolator342.setDEF("Pitch_l_sternoclavicular_RollInterpolator")
-OrientationInterpolator342.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator342.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group321.addChildren(OrientationInterpolator342)
-OrientationInterpolator343 = OrientationInterpolator()
-OrientationInterpolator343.setDEF("Pitch_l_acromioclavicular_RollInterpolator")
-OrientationInterpolator343.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator343.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group321.addChildren(OrientationInterpolator343)
-OrientationInterpolator344 = OrientationInterpolator()
-OrientationInterpolator344.setDEF("Pitch_r_sternoclavicular_RollInterpolator")
-OrientationInterpolator344.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator344.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group321.addChildren(OrientationInterpolator344)
-OrientationInterpolator345 = OrientationInterpolator()
-OrientationInterpolator345.setDEF("Pitch_r_acromioclavicular_RollInterpolator")
-OrientationInterpolator345.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator345.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group321.addChildren(OrientationInterpolator345)
-OrientationInterpolator346 = OrientationInterpolator()
-OrientationInterpolator346.setDEF("Pitch_sacroiliac_YawInterpolator")
-OrientationInterpolator346.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator346.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group321.addChildren(OrientationInterpolator346)
-OrientationInterpolator347 = OrientationInterpolator()
-OrientationInterpolator347.setDEF("Pitch_vl5_YawInterpolator")
-OrientationInterpolator347.setKey([0,0.2,0.4,0.5,0.6,0.8,1])
-OrientationInterpolator347.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group321.addChildren(OrientationInterpolator347)
-OrientationInterpolator348 = OrientationInterpolator()
-OrientationInterpolator348.setDEF("Pitch_vc6_YawInterpolator")
-OrientationInterpolator348.setKey([0,0.2,0.4,0.5,0.6,0.8,1])
-OrientationInterpolator348.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group321.addChildren(OrientationInterpolator348)
-OrientationInterpolator349 = OrientationInterpolator()
-OrientationInterpolator349.setDEF("Pitch_l_thumb1_PitchInterpolator")
-OrientationInterpolator349.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator349.setKeyValue([1,0,0,0,1,0,0,0.25,1,0,0,0.3,1,0,0,0.27,1,0,0,0.2,1,0,0,0])
-
-Group321.addChildren(OrientationInterpolator349)
-OrientationInterpolator350 = OrientationInterpolator()
-OrientationInterpolator350.setDEF("Pitch_r_thumb1_PitchInterpolator")
-OrientationInterpolator350.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator350.setKeyValue([1,0,0,0,1,0,0,0.25,1,0,0,0.3,1,0,0,0.27,1,0,0,0.2,1,0,0,0])
-
-Group321.addChildren(OrientationInterpolator350)
-
-Scene34.addChildren(Group321)
-Group351 = Group()
-Group351.setDEF("YawsAnimation")
-TimeSensor352 = TimeSensor()
-TimeSensor352.setDEF("YawTimer")
-TimeSensor352.setCycleInterval(5.73)
-TimeSensor352.setLoop(True)
-
-Group351.addChildren(TimeSensor352)
-OrientationInterpolator353 = OrientationInterpolator()
-OrientationInterpolator353.setDEF("Yaw_r_metatarsal_PitchInterpolator")
-OrientationInterpolator353.setKey([0,0.2,0.4,0.6,0.7,1])
-OrientationInterpolator353.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group351.addChildren(OrientationInterpolator353)
-OrientationInterpolator354 = OrientationInterpolator()
-OrientationInterpolator354.setDEF("Yaws_r_ankle_RotationInterpolator")
-OrientationInterpolator354.setKey([0,0.25,0.5,0.75,1])
-OrientationInterpolator354.setKeyValue([0,0,1,0,0,-1,0,1.5,0,0,1,0,0,1,0,1.5,0,0,1,0])
-
-Group351.addChildren(OrientationInterpolator354)
-OrientationInterpolator355 = OrientationInterpolator()
-OrientationInterpolator355.setDEF("Yaws_r_knee_RotationInterpolator")
-OrientationInterpolator355.setKey([0,0.25,0.5,0.75,1])
-OrientationInterpolator355.setKeyValue([0,0,1,0,0,1,0,1.5,0,0,1,0,0,-1,0,1.5,0,0,1,0])
-
-Group351.addChildren(OrientationInterpolator355)
-OrientationInterpolator356 = OrientationInterpolator()
-OrientationInterpolator356.setDEF("Yaws_r_hip_RotationInterpolator")
-OrientationInterpolator356.setKey([0,0.5,1])
-OrientationInterpolator356.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group351.addChildren(OrientationInterpolator356)
-OrientationInterpolator357 = OrientationInterpolator()
-OrientationInterpolator357.setDEF("Yaws_l_ankle_RotationInterpolator")
-OrientationInterpolator357.setKey([0,0.25,0.5,0.75,1])
-OrientationInterpolator357.setKeyValue([0,0,1,0,0,1,0,1.5,0,0,1,0,0,-1,0,1.5,0,0,1,0])
-
-Group351.addChildren(OrientationInterpolator357)
-OrientationInterpolator358 = OrientationInterpolator()
-OrientationInterpolator358.setDEF("Yaws_l_knee_RotationInterpolator")
-OrientationInterpolator358.setKey([0,0.25,0.5,0.75,1])
-OrientationInterpolator358.setKeyValue([0,0,1,0,0,-1,0,1.5,0,0,1,0,0,1,0,1.5,0,0,1,0])
-
-Group351.addChildren(OrientationInterpolator358)
-OrientationInterpolator359 = OrientationInterpolator()
-OrientationInterpolator359.setDEF("Yaws_l_hip_RotationInterpolator")
-OrientationInterpolator359.setKey([0,0.5,1])
-OrientationInterpolator359.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group351.addChildren(OrientationInterpolator359)
-OrientationInterpolator360 = OrientationInterpolator()
-OrientationInterpolator360.setDEF("Yaws_r_wrist_RotationInterpolator")
-OrientationInterpolator360.setKey([0,0.5,1])
-OrientationInterpolator360.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group351.addChildren(OrientationInterpolator360)
-OrientationInterpolator361 = OrientationInterpolator()
-OrientationInterpolator361.setDEF("Yaws_r_elbow_RotationInterpolator")
-OrientationInterpolator361.setKey([0,0.5,1])
-OrientationInterpolator361.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group351.addChildren(OrientationInterpolator361)
-OrientationInterpolator362 = OrientationInterpolator()
-OrientationInterpolator362.setDEF("Yaws_r_shoulder_RotationInterpolator")
-OrientationInterpolator362.setKey([0,0.5,1])
-OrientationInterpolator362.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group351.addChildren(OrientationInterpolator362)
-OrientationInterpolator363 = OrientationInterpolator()
-OrientationInterpolator363.setDEF("Yaws_l_wrist_RotationInterpolator")
-OrientationInterpolator363.setKey([0,0.5,1])
-OrientationInterpolator363.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group351.addChildren(OrientationInterpolator363)
-OrientationInterpolator364 = OrientationInterpolator()
-OrientationInterpolator364.setDEF("Yaws_l_elbow_RotationInterpolator")
-OrientationInterpolator364.setKey([0,0.5,1])
-OrientationInterpolator364.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group351.addChildren(OrientationInterpolator364)
-OrientationInterpolator365 = OrientationInterpolator()
-OrientationInterpolator365.setDEF("Yaws_l_shoulder_RotationInterpolator")
-OrientationInterpolator365.setKey([0,0.5,1])
-OrientationInterpolator365.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group351.addChildren(OrientationInterpolator365)
-OrientationInterpolator366 = OrientationInterpolator()
-OrientationInterpolator366.setDEF("Yaws_head_RotationInterpolator")
-OrientationInterpolator366.setKey([0,0.5,1])
-OrientationInterpolator366.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group351.addChildren(OrientationInterpolator366)
-OrientationInterpolator367 = OrientationInterpolator()
-OrientationInterpolator367.setDEF("Yaws_neck_RotationInterpolator")
-OrientationInterpolator367.setKey([0,0.25,0.5,0.75,1])
-OrientationInterpolator367.setKeyValue([0,0,1,0,0,1,0,1.5,0,0,1,0,0,-1,0,1.5,0,0,1,0])
-
-Group351.addChildren(OrientationInterpolator367)
-OrientationInterpolator368 = OrientationInterpolator()
-OrientationInterpolator368.setDEF("Yaws_upper_body_RotationInterpolator")
-OrientationInterpolator368.setKey([0,0.25,0.5,0.75,1])
-OrientationInterpolator368.setKeyValue([0,0,1,0,0,-1,0,1.5,0,0,1,0,0,1,0,1.5,0,0,1,0])
-
-Group351.addChildren(OrientationInterpolator368)
-OrientationInterpolator369 = OrientationInterpolator()
-OrientationInterpolator369.setDEF("Yaws_lower_body_RotationInterpolator")
-OrientationInterpolator369.setKey([0,0.5,1])
-OrientationInterpolator369.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group351.addChildren(OrientationInterpolator369)
-OrientationInterpolator370 = OrientationInterpolator()
-OrientationInterpolator370.setDEF("Yaws_whole_body_RotationInterpolator")
-OrientationInterpolator370.setKey([0,0.5,1])
-OrientationInterpolator370.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group351.addChildren(OrientationInterpolator370)
-PositionInterpolator371 = PositionInterpolator()
-PositionInterpolator371.setDEF("Yaws_whole_body_TranslationInterpolator")
-PositionInterpolator371.setKey([0,0.5,1])
-PositionInterpolator371.setKeyValue([0,0,0,0,0,0,0,0,0])
-
-Group351.addChildren(PositionInterpolator371)
-OrientationInterpolator372 = OrientationInterpolator()
-OrientationInterpolator372.setDEF("Yaw_l_sternoclavicular_RollInterpolator")
-OrientationInterpolator372.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator372.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group351.addChildren(OrientationInterpolator372)
-OrientationInterpolator373 = OrientationInterpolator()
-OrientationInterpolator373.setDEF("Yaw_l_acromioclavicular_RollInterpolator")
-OrientationInterpolator373.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator373.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group351.addChildren(OrientationInterpolator373)
-OrientationInterpolator374 = OrientationInterpolator()
-OrientationInterpolator374.setDEF("Yaw_r_sternoclavicular_RollInterpolator")
-OrientationInterpolator374.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator374.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group351.addChildren(OrientationInterpolator374)
-OrientationInterpolator375 = OrientationInterpolator()
-OrientationInterpolator375.setDEF("Yaw_r_acromioclavicular_RollInterpolator")
-OrientationInterpolator375.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator375.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group351.addChildren(OrientationInterpolator375)
-OrientationInterpolator376 = OrientationInterpolator()
-OrientationInterpolator376.setDEF("Yaw_sacroiliac_YawInterpolator")
-OrientationInterpolator376.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator376.setKeyValue([0,1,0,0,0,-1,0,0.1,0,1,0,0,0,1,0,0.24,0,-1,0,0.4,0,1,0,0])
-
-Group351.addChildren(OrientationInterpolator376)
-OrientationInterpolator377 = OrientationInterpolator()
-OrientationInterpolator377.setDEF("Yaw_vl5_YawInterpolator")
-OrientationInterpolator377.setKey([0,0.2,0.4,0.5,0.6,0.8,1])
-OrientationInterpolator377.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group351.addChildren(OrientationInterpolator377)
-OrientationInterpolator378 = OrientationInterpolator()
-OrientationInterpolator378.setDEF("Yaw_vc6_YawInterpolator")
-OrientationInterpolator378.setKey([0,0.2,0.4,0.5,0.6,0.8,1])
-OrientationInterpolator378.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group351.addChildren(OrientationInterpolator378)
-OrientationInterpolator379 = OrientationInterpolator()
-OrientationInterpolator379.setDEF("Yaw_l_thumb1_PitchInterpolator")
-OrientationInterpolator379.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator379.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group351.addChildren(OrientationInterpolator379)
-OrientationInterpolator380 = OrientationInterpolator()
-OrientationInterpolator380.setDEF("Yaw_r_thumb1_PitchInterpolator")
-OrientationInterpolator380.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator380.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group351.addChildren(OrientationInterpolator380)
-
-Scene34.addChildren(Group351)
-Group381 = Group()
-Group381.setDEF("RollsAnimation")
-TimeSensor382 = TimeSensor()
-TimeSensor382.setDEF("RollTimer")
-TimeSensor382.setCycleInterval(5.73)
-TimeSensor382.setLoop(True)
-
-Group381.addChildren(TimeSensor382)
-OrientationInterpolator383 = OrientationInterpolator()
-OrientationInterpolator383.setDEF("Roll_r_metatarsal_PitchInterpolator")
-OrientationInterpolator383.setKey([0,0.2,0.4,0.6,0.7,1])
-OrientationInterpolator383.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group381.addChildren(OrientationInterpolator383)
-OrientationInterpolator384 = OrientationInterpolator()
-OrientationInterpolator384.setDEF("Rolls_r_ankle_RotationInterpolator")
-OrientationInterpolator384.setKey([0,0.25,0.5,0.75,1])
-OrientationInterpolator384.setKeyValue([0,0,1,0,0,0,1,1.5,0,0,1,0,0,0,1,1.5,0,0,1,0])
-
-Group381.addChildren(OrientationInterpolator384)
-OrientationInterpolator385 = OrientationInterpolator()
-OrientationInterpolator385.setDEF("Rolls_r_knee_RotationInterpolator")
-OrientationInterpolator385.setKey([0,0.5,1])
-OrientationInterpolator385.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group381.addChildren(OrientationInterpolator385)
-OrientationInterpolator386 = OrientationInterpolator()
-OrientationInterpolator386.setDEF("Rolls_r_hip_RotationInterpolator")
-OrientationInterpolator386.setKey([0,0.25,0.5,0.75,1])
-OrientationInterpolator386.setKeyValue([0,0,-1,0,0,0,-1,1.5,0,0,1,0,0,0,-1,1.5,0,0,1,0])
-
-Group381.addChildren(OrientationInterpolator386)
-OrientationInterpolator387 = OrientationInterpolator()
-OrientationInterpolator387.setDEF("Rolls_l_ankle_RotationInterpolator")
-OrientationInterpolator387.setKey([0,0.25,0.5,0.75,1])
-OrientationInterpolator387.setKeyValue([0,0,1,0,0,0,-1,1.5,0,0,1,0,0,0,-1,1.5,0,0,1,0])
-
-Group381.addChildren(OrientationInterpolator387)
-OrientationInterpolator388 = OrientationInterpolator()
-OrientationInterpolator388.setDEF("Rolls_l_knee_RotationInterpolator")
-OrientationInterpolator388.setKey([0,0.5,1])
-OrientationInterpolator388.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group381.addChildren(OrientationInterpolator388)
-OrientationInterpolator389 = OrientationInterpolator()
-OrientationInterpolator389.setDEF("Rolls_l_hip_RotationInterpolator")
-OrientationInterpolator389.setKey([0,0.25,0.5,0.75,1])
-OrientationInterpolator389.setKeyValue([0,0,1,0,0,0,1,1.5,0,0,1,0,0,0,1,1.5,0,0,1,0])
-
-Group381.addChildren(OrientationInterpolator389)
-OrientationInterpolator390 = OrientationInterpolator()
-OrientationInterpolator390.setDEF("Rolls_r_wrist_RotationInterpolator")
-OrientationInterpolator390.setKey([0,0.25,0.5,0.75,1])
-OrientationInterpolator390.setKeyValue([0,0,1,0,0,0,-1,1.5,0,0,1,0,0,0,1,1.5,0,0,1,0])
-
-Group381.addChildren(OrientationInterpolator390)
-OrientationInterpolator391 = OrientationInterpolator()
-OrientationInterpolator391.setDEF("Rolls_r_elbow_RotationInterpolator")
-OrientationInterpolator391.setKey([0,0.5,1])
-OrientationInterpolator391.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group381.addChildren(OrientationInterpolator391)
-OrientationInterpolator392 = OrientationInterpolator()
-OrientationInterpolator392.setDEF("Rolls_r_shoulder_RotationInterpolator")
-OrientationInterpolator392.setKey([0,0.25,0.5,0.75,1])
-OrientationInterpolator392.setKeyValue([0,0,1,0,0,0,-1,1.5,0,0,-1,3,0,0,-1,1.5,0,0,1,0])
-
-Group381.addChildren(OrientationInterpolator392)
-OrientationInterpolator393 = OrientationInterpolator()
-OrientationInterpolator393.setDEF("Rolls_l_wrist_RotationInterpolator")
-OrientationInterpolator393.setKey([0,0.25,0.5,0.75,1])
-OrientationInterpolator393.setKeyValue([0,0,1,0,0,0,1,1.5,0,0,1,0,0,0,-1,1.5,0,0,1,0])
-
-Group381.addChildren(OrientationInterpolator393)
-OrientationInterpolator394 = OrientationInterpolator()
-OrientationInterpolator394.setDEF("Rolls_l_elbow_RotationInterpolator")
-OrientationInterpolator394.setKey([0,0.5,1])
-OrientationInterpolator394.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group381.addChildren(OrientationInterpolator394)
-OrientationInterpolator395 = OrientationInterpolator()
-OrientationInterpolator395.setDEF("Rolls_l_shoulder_RotationInterpolator")
-OrientationInterpolator395.setKey([0,0.25,0.5,0.75,1])
-OrientationInterpolator395.setKeyValue([0,0,1,0,0,0,1,1.5,0,0,1,3,0,0,1,1.5,0,0,1,0])
-
-Group381.addChildren(OrientationInterpolator395)
-OrientationInterpolator396 = OrientationInterpolator()
-OrientationInterpolator396.setDEF("Rolls_head_RotationInterpolator")
-OrientationInterpolator396.setKey([0,0.5,1])
-OrientationInterpolator396.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group381.addChildren(OrientationInterpolator396)
-OrientationInterpolator397 = OrientationInterpolator()
-OrientationInterpolator397.setDEF("Rolls_neck_RotationInterpolator")
-OrientationInterpolator397.setKey([0,0.25,0.5,0.75,1])
-OrientationInterpolator397.setKeyValue([0,0,1,0,0,0,1,1.25,0,0,1,0,0,0,-1,1.25,0,0,1,0])
-
-Group381.addChildren(OrientationInterpolator397)
-OrientationInterpolator398 = OrientationInterpolator()
-OrientationInterpolator398.setDEF("Rolls_lower_body_RotationInterpolator")
-OrientationInterpolator398.setKey([0,0.5,1])
-OrientationInterpolator398.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group381.addChildren(OrientationInterpolator398)
-OrientationInterpolator399 = OrientationInterpolator()
-OrientationInterpolator399.setDEF("Rolls_upper_body_RotationInterpolator")
-OrientationInterpolator399.setKey([0,0.5,1])
-OrientationInterpolator399.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group381.addChildren(OrientationInterpolator399)
-OrientationInterpolator400 = OrientationInterpolator()
-OrientationInterpolator400.setDEF("Rolls_whole_body_RotationInterpolator")
-OrientationInterpolator400.setKey([0,0.5,1])
-OrientationInterpolator400.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group381.addChildren(OrientationInterpolator400)
-PositionInterpolator401 = PositionInterpolator()
-PositionInterpolator401.setDEF("Rolls_whole_body_TranslationInterpolator")
-PositionInterpolator401.setKey([0,0.125,0.25,0.375,0.5,0.625,0.75,0.875,1])
-PositionInterpolator401.setKeyValue([0,0,0,0,-0.25,0,0,-0.8,0,0,-0.25,0,0,0,0,0,-0.25,0,0,-0.8,0,0,-0.25,0,0,0,0])
-
-Group381.addChildren(PositionInterpolator401)
-OrientationInterpolator402 = OrientationInterpolator()
-OrientationInterpolator402.setDEF("Roll_l_sternoclavicular_RollInterpolator")
-OrientationInterpolator402.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator402.setKeyValue([0,0,1,0,0,0,1,0.2,0,0,1,0.22,0,0,1,0.2,0,0,1,0,0,0,1,0])
-
-Group381.addChildren(OrientationInterpolator402)
-OrientationInterpolator403 = OrientationInterpolator()
-OrientationInterpolator403.setDEF("Roll_l_acromioclavicular_RollInterpolator")
-OrientationInterpolator403.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator403.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0.05,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group381.addChildren(OrientationInterpolator403)
-OrientationInterpolator404 = OrientationInterpolator()
-OrientationInterpolator404.setDEF("Roll_r_sternoclavicular_RollInterpolator")
-OrientationInterpolator404.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator404.setKeyValue([0,0,1,0,0,0,1,-0.2,0,0,1,-0.22,0,0,1,-0.2,0,0,1,0,0,0,1,0])
-
-Group381.addChildren(OrientationInterpolator404)
-OrientationInterpolator405 = OrientationInterpolator()
-OrientationInterpolator405.setDEF("Roll_r_acromioclavicular_RollInterpolator")
-OrientationInterpolator405.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator405.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,-0.05,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group381.addChildren(OrientationInterpolator405)
-OrientationInterpolator406 = OrientationInterpolator()
-OrientationInterpolator406.setDEF("Roll_sacroiliac_YawInterpolator")
-OrientationInterpolator406.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator406.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group381.addChildren(OrientationInterpolator406)
-OrientationInterpolator407 = OrientationInterpolator()
-OrientationInterpolator407.setDEF("Roll_vl5_YawInterpolator")
-OrientationInterpolator407.setKey([0,0.2,0.4,0.5,0.6,0.8,1])
-OrientationInterpolator407.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group381.addChildren(OrientationInterpolator407)
-OrientationInterpolator408 = OrientationInterpolator()
-OrientationInterpolator408.setDEF("Roll_vc6_YawInterpolator")
-OrientationInterpolator408.setKey([0,0.2,0.4,0.5,0.6,0.8,1])
-OrientationInterpolator408.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group381.addChildren(OrientationInterpolator408)
-OrientationInterpolator409 = OrientationInterpolator()
-OrientationInterpolator409.setDEF("Roll_l_thumb1_PitchInterpolator")
-OrientationInterpolator409.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator409.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group381.addChildren(OrientationInterpolator409)
-OrientationInterpolator410 = OrientationInterpolator()
-OrientationInterpolator410.setDEF("Roll_r_thumb1_PitchInterpolator")
-OrientationInterpolator410.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator410.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group381.addChildren(OrientationInterpolator410)
-
-Scene34.addChildren(Group381)
-Group411 = Group()
-Group411.setDEF("WalkAnimation")
-TimeSensor412 = TimeSensor()
-TimeSensor412.setDEF("WalkTimer")
-TimeSensor412.setCycleInterval(1.73)
-TimeSensor412.setLoop(True)
-
-Group411.addChildren(TimeSensor412)
-OrientationInterpolator413 = OrientationInterpolator()
-OrientationInterpolator413.setDEF("Walk_r_metatarsal_PitchInterpolator")
-OrientationInterpolator413.setKey([0,0.2,0.4,0.6,0.7,1])
-OrientationInterpolator413.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group411.addChildren(OrientationInterpolator413)
-OrientationInterpolator414 = OrientationInterpolator()
-OrientationInterpolator414.setDEF("Walk_r_ankle_RotationInterpolator")
-OrientationInterpolator414.setKey([0,0.125,0.2083,0.375,0.4583,0.5,0.6667,0.75,0.7917,0.9167,1])
-OrientationInterpolator414.setKeyValue([0,0,1,0,-1,0,0,0.3533,-1,0,0,0.1072,1,0,0,0.2612,1,0,0,0.1268,-1,0,0,0.01793,-1,0,0,0.05824,-1,0,0,0.2398,-1,0,0,0.35,-1,0,0,0.3322,0,0,1,0])
-
-Group411.addChildren(OrientationInterpolator414)
-OrientationInterpolator415 = OrientationInterpolator()
-OrientationInterpolator415.setDEF("Walk_r_knee_RotationInterpolator")
-OrientationInterpolator415.setKey([0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1])
-OrientationInterpolator415.setKeyValue([1,0,0,0.8573,1,0,0,0.8926,1,0,0,0.5351,1,0,0,0.1756,1,0,0,0.1194,1,0,0,0.3153,1,0,0,0.09354,1,0,0,0.08558,1,0,0,0.2475,1,0,0,0.8573])
-
-Group411.addChildren(OrientationInterpolator415)
-OrientationInterpolator416 = OrientationInterpolator()
-OrientationInterpolator416.setDEF("Walk_r_hip_RotationInterpolator")
-OrientationInterpolator416.setKey([0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1])
-OrientationInterpolator416.setKeyValue([-0.5831,0.03511,0.8116,0.1481,-0.995,0.02296,0.09674,0.4683,-1,0.00192,0.007964,0.4732,-0.998,-0.0158,-0.06102,0.5079,-0.9911,-0.03541,-0.1286,0.5419,-0.9131,-0.06243,-0.403,0.3361,-0.4306,-0.07962,-0.899,0.07038,1,0,0,0.2571,0.9891,-0.02805,0.1444,0.3879,-0.5831,0.03511,0.8116,0.1481])
-
-Group411.addChildren(OrientationInterpolator416)
-OrientationInterpolator417 = OrientationInterpolator()
-OrientationInterpolator417.setDEF("Walk_l_ankle_RotationInterpolator")
-OrientationInterpolator417.setKey([0,0.125,0.2083,0.375,0.6667,0.9167,1])
-OrientationInterpolator417.setKeyValue([-1,0,0,0.06714,-1,0,0,0.2152,-1,0,0,0.3184,-1,0,0,0.4717,-1,0,0,0.2912,1,0,0,0.1222,-1,0,0,0.06714])
-
-Group411.addChildren(OrientationInterpolator417)
-OrientationInterpolator418 = OrientationInterpolator()
-OrientationInterpolator418.setDEF("Walk_l_knee_RotationInterpolator")
-OrientationInterpolator418.setKey([0,0.2083,0.375,0.5,0.6667,0.7917,0.9167,1])
-OrientationInterpolator418.setKeyValue([1,0,0,0.3226,1,0,0,0.1556,1,0,0,0.08678,1,0,0,0.8751,1,0,0,1.131,1,0,0,0.09961,1,0,0,0.3942,1,0,0,0.3226])
-
-Group411.addChildren(OrientationInterpolator418)
-OrientationInterpolator419 = OrientationInterpolator()
-OrientationInterpolator419.setDEF("Walk_l_hip_RotationInterpolator")
-OrientationInterpolator419.setKey([0,0.25,0.375,0.5,0.6667,0.7917,0.9167,1])
-OrientationInterpolator419.setKeyValue([-0.873,0.06094,0.484,0.2865,0.9963,-0.01057,0.08481,0.2488,0.9965,0.01591,-0.08222,0.3836,-0.7018,-0.03223,-0.7117,0.1289,-1,0,0,0.5518,-0.9964,0.02231,0.0817,0.5351,-0.9809,0.04912,0.1881,0.5204,-0.873,0.06094,0.484,0.2865])
-
-Group411.addChildren(OrientationInterpolator419)
-OrientationInterpolator420 = OrientationInterpolator()
-OrientationInterpolator420.setDEF("Walk_lower_body_RotationInterpolator")
-OrientationInterpolator420.setKey([0,0.5,1])
-OrientationInterpolator420.setKeyValue([0,0,-1,0.1056,0,0,1,0.09018,0,0,-1,0.1056])
-
-Group411.addChildren(OrientationInterpolator420)
-OrientationInterpolator421 = OrientationInterpolator()
-OrientationInterpolator421.setDEF("Walk_r_wrist_RotationInterpolator")
-OrientationInterpolator421.setKey([0,0.375,0.9167,1])
-OrientationInterpolator421.setKeyValue([-0.8129,0.4759,-0.3357,0.1346,0.1533,-0.9878,0.02582,0.3902,-0.5701,0.7604,-0.311,0.366,-0.8129,0.4759,-0.3357,0.1346])
-
-Group411.addChildren(OrientationInterpolator421)
-OrientationInterpolator422 = OrientationInterpolator()
-OrientationInterpolator422.setDEF("Walk_r_elbow_RotationInterpolator")
-OrientationInterpolator422.setKey([0,0.375,0.9167,1])
-OrientationInterpolator422.setKeyValue([-1,0,0,0.411508,-1,0,0,0.0925011,-1,0,0,0.572568,-1,0,0,0.411508])
-
-Group411.addChildren(OrientationInterpolator422)
-OrientationInterpolator423 = OrientationInterpolator()
-OrientationInterpolator423.setDEF("Walk_r_shoulder_RotationInterpolator")
-OrientationInterpolator423.setKey([0,0.375,0.9167,1])
-OrientationInterpolator423.setKeyValue([-1,0,0,0.09346,1,0,0,0.3197,-1,0,0,0.1564,-1,0,0,0.09346])
-
-Group411.addChildren(OrientationInterpolator423)
-OrientationInterpolator424 = OrientationInterpolator()
-OrientationInterpolator424.setDEF("Walk_l_wrist_RotationInterpolator")
-OrientationInterpolator424.setKey([0,0.375,0.9167,1])
-OrientationInterpolator424.setKeyValue([0,-1,0,0.461076,-0.330195,-0.927451,0.175516,0.538852,0.0327774,-0.999314,-0.0172185,0.492033,0,-1,0,0.461076])
-
-Group411.addChildren(OrientationInterpolator424)
-OrientationInterpolator425 = OrientationInterpolator()
-OrientationInterpolator425.setDEF("Walk_l_elbow_RotationInterpolator")
-OrientationInterpolator425.setKey([0,0.375,0.9167,1])
-OrientationInterpolator425.setKeyValue([-1,0,0,0.0659878,-1,0,0,0.488383,-1,0,0,0.0177536,-1,0,0,0.0659878])
-
-Group411.addChildren(OrientationInterpolator425)
-OrientationInterpolator426 = OrientationInterpolator()
-OrientationInterpolator426.setDEF("Walk_l_shoulder_RotationInterpolator")
-OrientationInterpolator426.setKey([0,0.375,0.9167,1])
-OrientationInterpolator426.setKeyValue([1,0,0,0.1189,-1,0,0,0.1861,1,0,0,0.3357,1,0,0,0.1189])
-
-Group411.addChildren(OrientationInterpolator426)
-OrientationInterpolator427 = OrientationInterpolator()
-OrientationInterpolator427.setDEF("Walk_head_RotationInterpolator")
-OrientationInterpolator427.setKey([0,0.375,0.4167,0.5,0.5833,0.6667,0.75,0.8333,0.9167,1])
-OrientationInterpolator427.setKeyValue([0,-1,0,0.08642,0,1,0,0.1825,0,1,0,0.1505,0,1,0,0.1053,0,1,0,0.04391,0,-1,0,0.03119,0,-1,0,0.07936,0,-1,0,0.1616,0,-1,0,0.155,0,-1,0,0.08642])
-
-Group411.addChildren(OrientationInterpolator427)
-OrientationInterpolator428 = OrientationInterpolator()
-OrientationInterpolator428.setDEF("Walk_neck_RotationInterpolator")
-OrientationInterpolator428.setKey([0,1])
-OrientationInterpolator428.setKeyValue([0,0,1,0,0,0,1,0])
-
-Group411.addChildren(OrientationInterpolator428)
-OrientationInterpolator429 = OrientationInterpolator()
-OrientationInterpolator429.setDEF("Walk_upper_body_RotationInterpolator")
-OrientationInterpolator429.setKey([0,0.2083,0.375,0.75,0.8333,1])
-OrientationInterpolator429.setKeyValue([0,1,0,0.0826,-0.01972,-0.5974,0.8017,0.08231,0.009296,-0.9648,0.2627,0.1734,-0.01238,0.9549,-0.2968,0.08732,-0.008125,0.9691,-0.2463,0.158,0,1,0,0.0826])
-
-Group411.addChildren(OrientationInterpolator429)
-OrientationInterpolator430 = OrientationInterpolator()
-OrientationInterpolator430.setDEF("Walk_whole_body_RotationInterpolator")
-OrientationInterpolator430.setKey([0,1])
-OrientationInterpolator430.setKeyValue([0,0,1,0,0,0,1,0])
-
-Group411.addChildren(OrientationInterpolator430)
-PositionInterpolator431 = PositionInterpolator()
-PositionInterpolator431.setDEF("Walk_whole_body_TranslationInterpolator")
-PositionInterpolator431.setKey([0,0.04167,0.125,0.1667,0.2083,0.25,0.2917,0.375,0.4583,0.5,0.5417,0.5833,0.625,0.7083,0.75,0.7917,0.875,0.9167,1])
-PositionInterpolator431.setKeyValue([0,-0.00928,0,0,-0.003858,0,0,-0.008847,0,0,-0.01486,0,0,-0.02641,0,0,-0.03934,0,0,-0.0502,0,0,-0.07469,0,0,-0.02732,0,0,-0.01608,0,0,-0.01129,0,0,-0.005819,0,0,-0.002004,0,0,-0.002579,0,0,-0.0143,0,0,-0.03799,0,0,-0.05648,0,0,-0.045,0,0,-0.00928,0])
-
-Group411.addChildren(PositionInterpolator431)
-OrientationInterpolator432 = OrientationInterpolator()
-OrientationInterpolator432.setDEF("Walk_l_sternoclavicular_RollInterpolator")
-OrientationInterpolator432.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator432.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group411.addChildren(OrientationInterpolator432)
-OrientationInterpolator433 = OrientationInterpolator()
-OrientationInterpolator433.setDEF("Walk_l_acromioclavicular_RollInterpolator")
-OrientationInterpolator433.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator433.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group411.addChildren(OrientationInterpolator433)
-OrientationInterpolator434 = OrientationInterpolator()
-OrientationInterpolator434.setDEF("Walk_r_sternoclavicular_RollInterpolator")
-OrientationInterpolator434.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator434.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group411.addChildren(OrientationInterpolator434)
-OrientationInterpolator435 = OrientationInterpolator()
-OrientationInterpolator435.setDEF("Walk_r_acromioclavicular_RollInterpolator")
-OrientationInterpolator435.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator435.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group411.addChildren(OrientationInterpolator435)
-OrientationInterpolator436 = OrientationInterpolator()
-OrientationInterpolator436.setDEF("Walk_sacroiliac_YawInterpolator")
-OrientationInterpolator436.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator436.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group411.addChildren(OrientationInterpolator436)
-OrientationInterpolator437 = OrientationInterpolator()
-OrientationInterpolator437.setDEF("Walk_vl5_YawInterpolator")
-OrientationInterpolator437.setKey([0,0.2,0.4,0.5,0.6,0.8,1])
-OrientationInterpolator437.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group411.addChildren(OrientationInterpolator437)
-OrientationInterpolator438 = OrientationInterpolator()
-OrientationInterpolator438.setDEF("Walk_vc6_YawInterpolator")
-OrientationInterpolator438.setKey([0,0.2,0.4,0.5,0.6,0.8,1])
-OrientationInterpolator438.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group411.addChildren(OrientationInterpolator438)
-OrientationInterpolator439 = OrientationInterpolator()
-OrientationInterpolator439.setDEF("Walk_l_thumb1_PitchInterpolator")
-OrientationInterpolator439.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator439.setKeyValue([1,0,0,0,1,0,0,0.25,1,0,0,0.5,1,0,0,0.7,1,0,0,0.2,1,0,0,0])
-
-Group411.addChildren(OrientationInterpolator439)
-OrientationInterpolator440 = OrientationInterpolator()
-OrientationInterpolator440.setDEF("Walk_r_thumb1_PitchInterpolator")
-OrientationInterpolator440.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator440.setKeyValue([1,0,0,0,1,0,0,0.25,1,0,0,0.5,1,0,0,0.7,1,0,0,0.2,1,0,0,0])
-
-Group411.addChildren(OrientationInterpolator440)
-
-Scene34.addChildren(Group411)
-Group441 = Group()
-Group441.setDEF("RunAnimation")
-TimeSensor442 = TimeSensor()
-TimeSensor442.setDEF("RunTimer")
-TimeSensor442.setCycleInterval(0.9)
-TimeSensor442.setLoop(True)
-
-Group441.addChildren(TimeSensor442)
-OrientationInterpolator443 = OrientationInterpolator()
-OrientationInterpolator443.setDEF("Run_r_metatarsal_PitchInterpolator")
-OrientationInterpolator443.setKey([0,0.2,0.4,0.6,0.7,1])
-OrientationInterpolator443.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group441.addChildren(OrientationInterpolator443)
-OrientationInterpolator444 = OrientationInterpolator()
-OrientationInterpolator444.setDEF("Run_l_hip_RotationInterpolator_Run")
-OrientationInterpolator444.setKey([0,0.2182,0.4909,0.7455,1])
-OrientationInterpolator444.setKeyValue([-0.99,0.033,0.04,1.42,-0.99,0.1328,0.067,0.42,0.99,0.014,0.009,0.9,-0.99,0.0703,0.05,0.7,-0.99,0.033,0.04,1.42])
-
-Group441.addChildren(OrientationInterpolator444)
-OrientationInterpolator445 = OrientationInterpolator()
-OrientationInterpolator445.setDEF("Run_l_knee_RotationInterpolator_Run")
-OrientationInterpolator445.setKey([0,0.2182,0.4909,0.7455,1])
-OrientationInterpolator445.setKeyValue([1,0,0,1.01,1,0,0,0.426,1,0,0,0.705,1,0,0,2.179,1,0,0,1.01])
-
-Group441.addChildren(OrientationInterpolator445)
-OrientationInterpolator446 = OrientationInterpolator()
-OrientationInterpolator446.setDEF("Run_l_ankle_RotationInterpolator_Run")
-OrientationInterpolator446.setKey([0,0.22,0.3,0.4,1])
-OrientationInterpolator446.setKeyValue([1,0,0,0.0374,-1,0,0,0.1037,-1,0,0,0.4328,1,0,0,0.1929,1,0,0,0.03574])
-
-Group441.addChildren(OrientationInterpolator446)
-OrientationInterpolator447 = OrientationInterpolator()
-OrientationInterpolator447.setDEF("Run_r_hip_RotationInterpolator_Run")
-OrientationInterpolator447.setKey([0,0.2545,0.4909,0.7091,1])
-OrientationInterpolator447.setKeyValue([0.99,-0.014,0.009,0.9,-0.99,-0.0703,-0.05,0.7,-0.99,-0.033,0.04,1.42,-0.99,-0.1328,-0.067,0.42,0.99,-0.014,0.009,0.9])
-
-Group441.addChildren(OrientationInterpolator447)
-OrientationInterpolator448 = OrientationInterpolator()
-OrientationInterpolator448.setDEF("Run_r_knee_RotationInterpolator_Run")
-OrientationInterpolator448.setKey([0,0.2545,0.4909,0.7091,1])
-OrientationInterpolator448.setKeyValue([1,0,0,0.705,1,0,0,2.179,1,0,0,1.01,1,0,0,0.426,1,0,0,0.705])
-
-Group441.addChildren(OrientationInterpolator448)
-OrientationInterpolator449 = OrientationInterpolator()
-OrientationInterpolator449.setDEF("Run_r_ankle_RotationInterpolator_Run")
-OrientationInterpolator449.setKey([0,0.4,0.71,0.8,0.82,1])
-OrientationInterpolator449.setKeyValue([1,0,0,0.2323,-1,0,0,0.07843,-1,0,0,0.32,-1,0,0,0.374,-1,0,0,0.3478,1,0,0,0.2323])
-
-Group441.addChildren(OrientationInterpolator449)
-OrientationInterpolator450 = OrientationInterpolator()
-OrientationInterpolator450.setDEF("Run_l_shoulder_RotationInterpolator_Run")
-OrientationInterpolator450.setKey([0,0.2182,0.4909,0.7455,1])
-OrientationInterpolator450.setKeyValue([0.99,-0.074,0.25,1.5,0.99,-0.092,0.44,0.3,-0.99,0.136,0.25,0.85,0.99,-0.081,0.38,0.4,0.99,-0.074,0.25,1.5])
-
-Group441.addChildren(OrientationInterpolator450)
-OrientationInterpolator451 = OrientationInterpolator()
-OrientationInterpolator451.setDEF("Run_l_elbow_RotationInterpolator_Run")
-OrientationInterpolator451.setKey([0,0.2182,0.4909,0.7455,1])
-OrientationInterpolator451.setKeyValue([-1,0,0,1.85,-0.99,-0.19,0.18,1.35,-1,0,0,0.975,-0.99,-0.09,-0.02,1.55,-1,0,0,1.85])
-
-Group441.addChildren(OrientationInterpolator451)
-OrientationInterpolator452 = OrientationInterpolator()
-OrientationInterpolator452.setDEF("Run_l_wrist_RotationInterpolator_Run")
-OrientationInterpolator452.setKey([0,0.25,0.5,0.75,1])
-OrientationInterpolator452.setKeyValue([-0.25,-1,0.08,0.14,0.25,1,0.08,0.14,0,0,1,0,-0.25,1,0.08,-0.14,-0.25,1,0.08,0.14])
-
-Group441.addChildren(OrientationInterpolator452)
-OrientationInterpolator453 = OrientationInterpolator()
-OrientationInterpolator453.setDEF("Run_r_shoulder_RotationInterpolator_Run")
-OrientationInterpolator453.setKey([0,0.2545,0.4909,0.7091,1])
-OrientationInterpolator453.setKeyValue([-0.99,-0.136,-0.25,0.85,0.99,0.081,-0.38,0.4,0.99,0.074,-0.25,1.5,0.99,0.081,-0.38,0.4,-0.99,-0.136,-0.25,0.85])
-
-Group441.addChildren(OrientationInterpolator453)
-OrientationInterpolator454 = OrientationInterpolator()
-OrientationInterpolator454.setDEF("Run_r_elbow_RotationInterpolator_Run")
-OrientationInterpolator454.setKey([0,0.2545,0.4909,0.7091,1])
-OrientationInterpolator454.setKeyValue([-1,0,0,0.975,-0.99,0.09,0.02,1.55,-1,0,0,1.85,-0.99,0.19,-0.18,1.35,-1,0,0,0.975])
-
-Group441.addChildren(OrientationInterpolator454)
-OrientationInterpolator455 = OrientationInterpolator()
-OrientationInterpolator455.setDEF("Run_r_wrist_RotationInterpolator_Run")
-OrientationInterpolator455.setKey([0,1])
-OrientationInterpolator455.setKeyValue([-0.917742,-0.237244,-0.318536,0.214273,-0.917742,-0.237244,-0.318536,0.214273])
-
-Group441.addChildren(OrientationInterpolator455)
-OrientationInterpolator456 = OrientationInterpolator()
-OrientationInterpolator456.setDEF("Run_lower_body_RotationInterpolator_Run")
-OrientationInterpolator456.setKey([0,0.2182,0.4909,0.7455,1])
-OrientationInterpolator456.setKeyValue([0,-1,0,0.125,0,0,1,0,0,1,0,0.125,0,0,1,0,0,-1,0,0.125])
-
-Group441.addChildren(OrientationInterpolator456)
-OrientationInterpolator457 = OrientationInterpolator()
-OrientationInterpolator457.setDEF("Run_head_RotationInterpolator_Run")
-OrientationInterpolator457.setKey([0,0.2545,0.4909,0.7091,1])
-OrientationInterpolator457.setKeyValue([1,0,0,0.08,1,0,0,0.12,1,0,0,0.3,1,0,0,0.3,1,0,0,0.08])
-
-Group441.addChildren(OrientationInterpolator457)
-OrientationInterpolator458 = OrientationInterpolator()
-OrientationInterpolator458.setDEF("Run_neck_RotationInterpolator_Run")
-OrientationInterpolator458.setKey([0,0.2545,0.4909,0.7091,1])
-OrientationInterpolator458.setKeyValue([0.7,0,0,0.4,-0.7,-0.7,0,0.4,0,0,0,0.4,-0.7,0.7,0,0.4,0.7,0,0,0.4])
-
-Group441.addChildren(OrientationInterpolator458)
-OrientationInterpolator459 = OrientationInterpolator()
-OrientationInterpolator459.setDEF("Run_upper_body_RotationInterpolator_Run")
-OrientationInterpolator459.setKey([0,0.2545,0.4909,0.7636,1])
-OrientationInterpolator459.setKeyValue([0.97,0.65,0.086,0.5,0.9,0.003,-0.02,0.38,0.95,-0.68,-0.086,0.5,0.9,0.004,-0.025,0.4,0.97,0.65,0.086,0.5])
-
-Group441.addChildren(OrientationInterpolator459)
-OrientationInterpolator460 = OrientationInterpolator()
-OrientationInterpolator460.setDEF("Run_whole_body_RotationInterpolator_Run")
-OrientationInterpolator460.setKey([0,0.25,0.5,0.75,1])
-OrientationInterpolator460.setKeyValue([1,0,0,0.06,1,0,0,0.167,1,0,0,0.06,1,0,0,0.168,1,0,0,0.06])
-
-Group441.addChildren(OrientationInterpolator460)
-PositionInterpolator461 = PositionInterpolator()
-PositionInterpolator461.setDEF("Run_whole_body_TranslationInterpolator_Run")
-PositionInterpolator461.setKey([0,0.22,0.3,0.31,0.5,0.69,0.7,0.78,1])
-PositionInterpolator461.setKeyValue([0,-0.01,0,0,-0.037,0,0,-0.049,0,0,-0.037,0,0,-0.01,0,0,-0.037,0,0,-0.049,0,0,-0.037,0,0,-0.01,0])
-
-Group441.addChildren(PositionInterpolator461)
-OrientationInterpolator462 = OrientationInterpolator()
-OrientationInterpolator462.setDEF("Run_l_sternoclavicular_RollInterpolator")
-OrientationInterpolator462.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator462.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group441.addChildren(OrientationInterpolator462)
-OrientationInterpolator463 = OrientationInterpolator()
-OrientationInterpolator463.setDEF("Run_l_acromioclavicular_RollInterpolator")
-OrientationInterpolator463.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator463.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group441.addChildren(OrientationInterpolator463)
-OrientationInterpolator464 = OrientationInterpolator()
-OrientationInterpolator464.setDEF("Run_r_sternoclavicular_RollInterpolator")
-OrientationInterpolator464.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator464.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group441.addChildren(OrientationInterpolator464)
-OrientationInterpolator465 = OrientationInterpolator()
-OrientationInterpolator465.setDEF("Run_r_acromioclavicular_RollInterpolator")
-OrientationInterpolator465.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator465.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group441.addChildren(OrientationInterpolator465)
-OrientationInterpolator466 = OrientationInterpolator()
-OrientationInterpolator466.setDEF("Run_sacroiliac_YawInterpolator")
-OrientationInterpolator466.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator466.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group441.addChildren(OrientationInterpolator466)
-OrientationInterpolator467 = OrientationInterpolator()
-OrientationInterpolator467.setDEF("Run_vl5_YawInterpolator")
-OrientationInterpolator467.setKey([0,0.2,0.4,0.5,0.6,0.8,1])
-OrientationInterpolator467.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group441.addChildren(OrientationInterpolator467)
-OrientationInterpolator468 = OrientationInterpolator()
-OrientationInterpolator468.setDEF("Run_vc6_YawInterpolator")
-OrientationInterpolator468.setKey([0,0.2,0.4,0.5,0.6,0.8,1])
-OrientationInterpolator468.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group441.addChildren(OrientationInterpolator468)
-OrientationInterpolator469 = OrientationInterpolator()
-OrientationInterpolator469.setDEF("Run_l_thumb1_PitchInterpolator")
-OrientationInterpolator469.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator469.setKeyValue([1,0,0,0,1,0,0,0.25,1,0,0,0.7,1,0,0,0.27,1,0,0,0.2,1,0,0,0])
-
-Group441.addChildren(OrientationInterpolator469)
-OrientationInterpolator470 = OrientationInterpolator()
-OrientationInterpolator470.setDEF("Run_r_thumb1_PitchInterpolator")
-OrientationInterpolator470.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator470.setKeyValue([1,0,0,0,1,0,0,0.25,1,0,0,0.7,1,0,0,0.27,1,0,0,0.2,1,0,0,0])
-
-Group441.addChildren(OrientationInterpolator470)
-
-Scene34.addChildren(Group441)
-Group471 = Group()
-Group471.setDEF("JumpAnimation")
-TimeSensor472 = TimeSensor()
-TimeSensor472.setDEF("JumpTimer")
-TimeSensor472.setCycleInterval(3.73)
-TimeSensor472.setLoop(True)
-
-Group471.addChildren(TimeSensor472)
-OrientationInterpolator473 = OrientationInterpolator()
-OrientationInterpolator473.setDEF("Jump_r_metatarsal_PitchInterpolator")
-OrientationInterpolator473.setKey([0,0.2,0.4,0.6,0.7,1])
-OrientationInterpolator473.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group471.addChildren(OrientationInterpolator473)
-OrientationInterpolator474 = OrientationInterpolator()
-OrientationInterpolator474.setDEF("Jump_r_ankle_RotationInterpolator")
-OrientationInterpolator474.setKey([0,0.1,0.15,0.25,0.28,0.32,0.35,0.64,0.76,0.84,0.88,0.92,0.96,1])
-OrientationInterpolator474.setKeyValue([0,0,1,0,-1,0,0,0.6735,-1,0,0,0.6735,-1,0,0,0.3527,-1,0,0,0.3038,-1,0,0,0.07964,1,0,0,1.3,1,0,0,0.6509,1,0,0,0.3001,-1,0,0,0.2087,-1,0,0,0.3756,-1,0,0,0.3279,-1,0,0,0.1193,0,0,1,0])
-
-Group471.addChildren(OrientationInterpolator474)
-OrientationInterpolator475 = OrientationInterpolator()
-OrientationInterpolator475.setDEF("Jump_r_knee_RotationInterpolator")
-OrientationInterpolator475.setKey([0,0.2,0.25,0.3,0.64,0.76,0.88,1])
-OrientationInterpolator475.setKeyValue([0,0,1,0,1,0,0,2.5,1,0,0,1.7,0,0,1,0,1,0,0,0.9507,1,0,0,0.5845,1,0,0,0.9054,0,0,1,0])
-
-Group471.addChildren(OrientationInterpolator475)
-OrientationInterpolator476 = OrientationInterpolator()
-OrientationInterpolator476.setDEF("Jump_r_hip_RotationInterpolator")
-OrientationInterpolator476.setKey([0,0.18,0.24,0.26,0.28,0.32,0.48,0.64,0.76,0.88,1])
-OrientationInterpolator476.setKeyValue([0,0,1,0,-1,0,0,1.63,-1,0,0,1.7,-1,0,0,1.55,-1,0,0,0.8943,-1,0,0,0.3698,0,0,1,0,-1,0,0,0.4963,-1,0,0,0.3829,-1,0,0,0.5169,0,0,1,0])
-
-Group471.addChildren(OrientationInterpolator476)
-OrientationInterpolator477 = OrientationInterpolator()
-OrientationInterpolator477.setDEF("Jump_l_ankle_RotationInterpolator")
-OrientationInterpolator477.setKey([0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.84,0.88,0.92,0.96,1])
-OrientationInterpolator477.setKeyValue([0,0,1,0,-1,0,0,0.625,-1,0,0,0.625,-1,0,0,0.3364,-1,0,0,0.2742,-1,0,0,0.05078,1,0,0,0.2833,1,0,0,0.6667,1,0,0,0.2833,-1,0,0,0.2108,-1,0,0,0.375,-1,0,0,0.3146,-1,0,0,0.1174,0,0,1,0])
-
-Group471.addChildren(OrientationInterpolator477)
-OrientationInterpolator478 = OrientationInterpolator()
-OrientationInterpolator478.setDEF("Jump_l_knee_RotationInterpolator")
-OrientationInterpolator478.setKey([0,0.28,0.32,0.48,0.64,0.76,0.88,1])
-OrientationInterpolator478.setKeyValue([0,0,1,0,1,0,0,2.047,1,0,0,2.047,0,0,1,0,1,0,0,1.566,1,0,0,0.5913,1,0,0,0.9235,0,0,1,0])
-
-Group471.addChildren(OrientationInterpolator478)
-OrientationInterpolator479 = OrientationInterpolator()
-OrientationInterpolator479.setDEF("Jump_l_hip_RotationInterpolator")
-OrientationInterpolator479.setKey([0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.88,1])
-OrientationInterpolator479.setKeyValue([0,0,1,0,1,0,0,4.349,1,0,0,4.349,1,0,0,4.615,-1,0,0,0.9136,-1,0,0,0.3614,0,0,1,0,-1,0,0,0.7869,-1,0,0,0.3918,-1,0,0,0.5433,0,0,1,0])
-
-Group471.addChildren(OrientationInterpolator479)
-OrientationInterpolator480 = OrientationInterpolator()
-OrientationInterpolator480.setDEF("Jump_lower_body_RotationInterpolator")
-OrientationInterpolator480.setKey([0,0.28,0.32,0.48,0.76,1])
-OrientationInterpolator480.setKeyValue([0,0,1,0,1,0,0,0.1892,1,0,0,0.1892,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group471.addChildren(OrientationInterpolator480)
-OrientationInterpolator481 = OrientationInterpolator()
-OrientationInterpolator481.setDEF("Jump_r_wrist_RotationInterpolator")
-OrientationInterpolator481.setKey([0,0.28,0.32,0.64,0.76,1])
-OrientationInterpolator481.setKeyValue([0,0,1,0,-0.0585279,0.983903,-0.168849,1.85956,-0.0585279,0.983903,-0.168849,1.85956,-0.00222418,0.99801,-0.0630095,1.46072,0,1,0,0.497349,0,0,1,0])
-
-Group471.addChildren(OrientationInterpolator481)
-OrientationInterpolator482 = OrientationInterpolator()
-OrientationInterpolator482.setDEF("Jump_r_elbow_RotationInterpolator")
-OrientationInterpolator482.setKey([0,0.28,0.32,0.64,0.76,1])
-OrientationInterpolator482.setKeyValue([0,0,1,0,-1,0,0,0.04151,-1,0,0,0.04151,-1,0,0,0.5855,-1,0,0,0.5852,0,0,1,0])
-
-Group471.addChildren(OrientationInterpolator482)
-OrientationInterpolator483 = OrientationInterpolator()
-OrientationInterpolator483.setDEF("Jump_r_shoulder_RotationInterpolator")
-OrientationInterpolator483.setKey([0,0.28,0.32,0.64,0.76,0.88,1])
-OrientationInterpolator483.setKeyValue([0,0,1,0,0.9992,0.02042,0.03558,4.688,0.9992,0.02042,0.03558,4.688,0.9989,-0.04623,0.005159,4.079,-0.8687,-0.2525,-0.4261,1.501,-0.941,-0.2893,-0.1754,0.4788,0,0,1,0])
-
-Group471.addChildren(OrientationInterpolator483)
-OrientationInterpolator484 = OrientationInterpolator()
-OrientationInterpolator484.setDEF("Jump_l_wrist_RotationInterpolator")
-OrientationInterpolator484.setKey([0,0.48,0.52,0.64,0.76,0.88,1])
-OrientationInterpolator484.setKeyValue([0,0,1,0,0.0672928,0.989475,-0.128107,4.15574,0.0672928,0.989475,-0.128107,4.15574,0.00364942,0.999901,0.0135896,4.5822,0,-1,0,0.655922,-0.00050618,-0.999999,0.0012782,1.28397,0,0,1,0])
-
-Group471.addChildren(OrientationInterpolator484)
-OrientationInterpolator485 = OrientationInterpolator()
-OrientationInterpolator485.setDEF("Jump_l_elbow_RotationInterpolator")
-OrientationInterpolator485.setKey([0,0.28,0.32,0.58,0.72,1])
-OrientationInterpolator485.setKeyValue([0,0,1,0,-1,0,0,1.13,-1,0,0,1.7,-1,0,0,1.7,-1,0,0,0.4,0,0,1,0])
-
-Group471.addChildren(OrientationInterpolator485)
-OrientationInterpolator486 = OrientationInterpolator()
-OrientationInterpolator486.setDEF("Jump_l_shoulder_RotationInterpolator")
-OrientationInterpolator486.setKey([0,0.28,0.32,0.64,0.76,0.88,1])
-OrientationInterpolator486.setKeyValue([0,0,1,0,-0.9987,0.02554,0.04498,1.57,-0.9987,0.02554,0.04498,1.57,1,0.0004113,0.003055,4.114,-0.8413,0.3238,0.4329,1.453,-0.877,0.4198,0.2337,0.6009,0,0,1,0])
-
-Group471.addChildren(OrientationInterpolator486)
-OrientationInterpolator487 = OrientationInterpolator()
-OrientationInterpolator487.setDEF("Jump_head_RotationInterpolator")
-OrientationInterpolator487.setKey([0,0.28,0.32,0.48,0.76,1])
-OrientationInterpolator487.setKeyValue([0,0,1,0,-1,0,0,0.5989,-1,0,0,0.5989,-1,0,0,0.3216,1,0,0,0.06503,0,0,1,0])
-
-Group471.addChildren(OrientationInterpolator487)
-OrientationInterpolator488 = OrientationInterpolator()
-OrientationInterpolator488.setDEF("Jump_neck_RotationInterpolator")
-OrientationInterpolator488.setKey([0,0.28,0.32,0.48,0.76,1])
-OrientationInterpolator488.setKeyValue([0,0,1,0,-1,0,0,0.1942,-1,0,0,0.1942,0,0,1,0,1,0,0,0.2284,0,0,1,0])
-
-Group471.addChildren(OrientationInterpolator488)
-OrientationInterpolator489 = OrientationInterpolator()
-OrientationInterpolator489.setDEF("Jump_upper_body_RotationInterpolator")
-OrientationInterpolator489.setKey([0,0.22,0.28,0.34,0.71,0.88,1])
-OrientationInterpolator489.setKeyValue([0,0,1,0,1,0,0,1.05,1,0,0,1.051,-1,0,0,0.257,1,0,0,0.2171,1,0,0,0.3465,0,0,1,0])
-
-Group471.addChildren(OrientationInterpolator489)
-OrientationInterpolator490 = OrientationInterpolator()
-OrientationInterpolator490.setDEF("Jump_whole_body_RotationInterpolator")
-OrientationInterpolator490.setKey([0,0.28,0.32,0.48,0.64,0.76,1])
-OrientationInterpolator490.setKeyValue([0,0,1,0,1,0,0,0.3273,1,0,0,0.3273,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group471.addChildren(OrientationInterpolator490)
-PositionInterpolator491 = PositionInterpolator()
-PositionInterpolator491.setDEF("Jump_whole_body_TranslationInterpolator")
-PositionInterpolator491.setKey([0,0.04,0.07,0.11,0.15,0.19,0.22,0.25,0.27,0.31,0.33,0.35,0.38,0.53,0.544,0.76,0.8,0.84,0.88,0.92,0.96,1])
-PositionInterpolator491.setKeyValue([0,0,0,0,-0.01264,-0.01289,0,-0.04712,-0.03738,-0.0003345,-0.1049,-0.05353,-0.0005712,-0.1892,-0.06561,-0.0008233,-0.286,-0.06276,-0.0009591,-0.3795,-0.05148,-0.00106,-0.4484,-0.03656,-0.00106,-0.4484,-0.03656,-0.001122,-0.25,-0.1499,-0.0008616,-0.05,-0.06358,-0.0005128,0.15,-0.05488,0.0004779,0.55,0.02732,0.0001728,1.385,0.006873,0.00017,1.395,0.0069,0,0.35,0.02148,0,-0.01299,-0.01057,0,-0.06932,-0.01064,0.0001365,-0.1037,-0.005059,0.0001279,-0.07198,-0.007596,0.000141,-0.01626,-0.004935,0,0,0])
-
-Group471.addChildren(PositionInterpolator491)
-OrientationInterpolator492 = OrientationInterpolator()
-OrientationInterpolator492.setDEF("Jump_l_sternoclavicular_RollInterpolator")
-OrientationInterpolator492.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator492.setKeyValue([0,0,1,0,0,0,1,0.2,0,0,1,0.22,0,0,1,0.2,0,0,1,0,0,0,1,0])
-
-Group471.addChildren(OrientationInterpolator492)
-OrientationInterpolator493 = OrientationInterpolator()
-OrientationInterpolator493.setDEF("Jump_l_acromioclavicular_RollInterpolator")
-OrientationInterpolator493.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator493.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0.05,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group471.addChildren(OrientationInterpolator493)
-OrientationInterpolator494 = OrientationInterpolator()
-OrientationInterpolator494.setDEF("Jump_r_sternoclavicular_RollInterpolator")
-OrientationInterpolator494.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator494.setKeyValue([0,0,1,0,0,0,1,-0.2,0,0,1,-0.22,0,0,1,-0.2,0,0,1,0,0,0,1,0])
-
-Group471.addChildren(OrientationInterpolator494)
-OrientationInterpolator495 = OrientationInterpolator()
-OrientationInterpolator495.setDEF("Jump_r_acromioclavicular_RollInterpolator")
-OrientationInterpolator495.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator495.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,-0.05,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group471.addChildren(OrientationInterpolator495)
-OrientationInterpolator496 = OrientationInterpolator()
-OrientationInterpolator496.setDEF("Jump_sacroiliac_YawInterpolator")
-OrientationInterpolator496.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator496.setKeyValue([0,1,0,0,0,-1,0,0.1,0,1,0,0,0,1,-1,0.24,0,-1,0,0.4,0,1,0,0])
-
-Group471.addChildren(OrientationInterpolator496)
-OrientationInterpolator497 = OrientationInterpolator()
-OrientationInterpolator497.setDEF("Jump_vl5_YawInterpolator")
-OrientationInterpolator497.setKey([0,0.2,0.4,0.5,0.6,0.8,1])
-OrientationInterpolator497.setKeyValue([0,1,0,0,0,1,0,-0.1,0,1,0,0,0,1,0,0,1,0,0,0.6,0,1,0,0.1,0,1,0,0])
-
-Group471.addChildren(OrientationInterpolator497)
-OrientationInterpolator498 = OrientationInterpolator()
-OrientationInterpolator498.setDEF("Jump_vc6_YawInterpolator")
-OrientationInterpolator498.setKey([0,0.2,0.4,0.5,0.6,0.8,1])
-OrientationInterpolator498.setKeyValue([0,1,0,0,0,1,0,0.8,0,1,0,0,0,1,0,0,-1,0,0,0.6,0,-1,0,0.8,0,1,0,0])
-
-Group471.addChildren(OrientationInterpolator498)
-OrientationInterpolator499 = OrientationInterpolator()
-OrientationInterpolator499.setDEF("Jump_l_thumb1_PitchInterpolator")
-OrientationInterpolator499.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator499.setKeyValue([1,0,0,0,1,0,0,0.5,1,0,0,1.1,1,0,0,0.7,1,0,0,0.2,1,0,0,0])
-
-Group471.addChildren(OrientationInterpolator499)
-OrientationInterpolator500 = OrientationInterpolator()
-OrientationInterpolator500.setDEF("Jump_r_thumb1_PitchInterpolator")
-OrientationInterpolator500.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator500.setKeyValue([1,0,0,0,1,0,0,0.5,1,0,0,1.1,1,0,0,0.7,1,0,0,0.2,1,0,0,0])
-
-Group471.addChildren(OrientationInterpolator500)
-
-Scene34.addChildren(Group471)
-Group501 = Group()
-Group501.setDEF("KickAnimation")
-TimeSensor502 = TimeSensor()
-TimeSensor502.setDEF("KickTimer")
-TimeSensor502.setCycleInterval(3.73)
-TimeSensor502.setLoop(True)
-
-Group501.addChildren(TimeSensor502)
-OrientationInterpolator503 = OrientationInterpolator()
-OrientationInterpolator503.setDEF("Kick_l_sternoclavicular_RollInterpolator")
-OrientationInterpolator503.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator503.setKeyValue([0,0,1,0,0,0,1,0.2,0,0,1,0.22,0,0,1,0.2,0,0,1,0,0,0,1,0])
-
-Group501.addChildren(OrientationInterpolator503)
-OrientationInterpolator504 = OrientationInterpolator()
-OrientationInterpolator504.setDEF("Kick_l_acromioclavicular_RollInterpolator")
-OrientationInterpolator504.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator504.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0.05,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group501.addChildren(OrientationInterpolator504)
-OrientationInterpolator505 = OrientationInterpolator()
-OrientationInterpolator505.setDEF("Kick_l_shoulder_RollInterpolator")
-OrientationInterpolator505.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator505.setKeyValue([0,0,1,0,0,0,1,1.76,-0.25,0,1,1.76,0,0,1,1.256,0,0,1,0.05,0,0,1,0])
-
-Group501.addChildren(OrientationInterpolator505)
-OrientationInterpolator506 = OrientationInterpolator()
-OrientationInterpolator506.setDEF("Kick_l_ForeArm_PitchInterpolator")
-OrientationInterpolator506.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator506.setKeyValue([1,0,0,0,1,0,0,-0.55,-1,0.25,0,2.55,1,0,0,0,1,0,0,0,1,0,0,0])
-
-Group501.addChildren(OrientationInterpolator506)
-OrientationInterpolator507 = OrientationInterpolator()
-OrientationInterpolator507.setDEF("Kick_l_wrist_RollInterpolator")
-OrientationInterpolator507.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator507.setKeyValue([0,0,1,0,0,0,1,0,0,1,0,0.55,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group501.addChildren(OrientationInterpolator507)
-OrientationInterpolator508 = OrientationInterpolator()
-OrientationInterpolator508.setDEF("Kick_l_thumb1_PitchInterpolator")
-OrientationInterpolator508.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator508.setKeyValue([1,0,0,0,1,0,0,0.5,1,0,0,1.1,1,0,0,0.7,1,0,0,0.2,1,0,0,0])
-
-Group501.addChildren(OrientationInterpolator508)
-OrientationInterpolator509 = OrientationInterpolator()
-OrientationInterpolator509.setDEF("Kick_r_sternoclavicular_RollInterpolator")
-OrientationInterpolator509.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator509.setKeyValue([0,0,1,0,0,0,1,-0.2,0,0,1,-0.22,0,0,1,-0.2,0,0,1,0,0,0,1,0])
-
-Group501.addChildren(OrientationInterpolator509)
-OrientationInterpolator510 = OrientationInterpolator()
-OrientationInterpolator510.setDEF("Kick_r_acromioclavicular_RollInterpolator")
-OrientationInterpolator510.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator510.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,-0.05,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group501.addChildren(OrientationInterpolator510)
-OrientationInterpolator511 = OrientationInterpolator()
-OrientationInterpolator511.setDEF("Kick_r_shoulder_RollInterpolator")
-OrientationInterpolator511.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator511.setKeyValue([0,0,1,0,0,0,1,-1.76,0.25,0,1,-1.76,0,0,1,-1.256,0,0,1,-0.05,0,0,1,0])
-
-Group501.addChildren(OrientationInterpolator511)
-OrientationInterpolator512 = OrientationInterpolator()
-OrientationInterpolator512.setDEF("Kick_r_ForeArm_PitchInterpolator")
-OrientationInterpolator512.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator512.setKeyValue([1,0,0,0,1,0,0,-0.55,1,0.25,0,-2.55,1,0,0,0,1,0,0,0,1,0,0,0])
-
-Group501.addChildren(OrientationInterpolator512)
-OrientationInterpolator513 = OrientationInterpolator()
-OrientationInterpolator513.setDEF("Kick_r_wrist_RollInterpolator")
-OrientationInterpolator513.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator513.setKeyValue([0,0,1,0,0,0,1,0,0,1,0,-0.55,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group501.addChildren(OrientationInterpolator513)
-OrientationInterpolator514 = OrientationInterpolator()
-OrientationInterpolator514.setDEF("Kick_r_thumb1_PitchInterpolator")
-OrientationInterpolator514.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator514.setKeyValue([1,0,0,0,1,0,0,0.5,1,0,0,1.1,1,0,0,0.7,1,0,0,0.2,1,0,0,0])
-
-Group501.addChildren(OrientationInterpolator514)
-OrientationInterpolator515 = OrientationInterpolator()
-OrientationInterpolator515.setDEF("Kick_r_hip_PitchInterpolator")
-OrientationInterpolator515.setKey([0,0.2,0.3,0.5,0.6,0.9,1])
-OrientationInterpolator515.setKeyValue([1,0,0,0,1,0,0,0.9,-1,0,0,1.75,-1,0,0,2.25,-1,0,0,2,1,0,0,0,1,0,0,0])
-
-Group501.addChildren(OrientationInterpolator515)
-OrientationInterpolator516 = OrientationInterpolator()
-OrientationInterpolator516.setDEF("Kick_r_knee_PitchInterpolator")
-OrientationInterpolator516.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator516.setKeyValue([0,0,1,0,1,0,0,1.95,1,0,0,1.75,-1,0,0,0.28,1,0,0,0,1,0,0,0])
-
-Group501.addChildren(OrientationInterpolator516)
-OrientationInterpolator517 = OrientationInterpolator()
-OrientationInterpolator517.setDEF("Kick_l_hip_PitchInterpolator")
-OrientationInterpolator517.setKey([0,0.2,0.3,0.5,0.6,0.9,1])
-OrientationInterpolator517.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group501.addChildren(OrientationInterpolator517)
-OrientationInterpolator518 = OrientationInterpolator()
-OrientationInterpolator518.setDEF("Kick_l_knee_PitchInterpolator")
-OrientationInterpolator518.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator518.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group501.addChildren(OrientationInterpolator518)
-OrientationInterpolator519 = OrientationInterpolator()
-OrientationInterpolator519.setDEF("Kick_r_ankle_PitchInterpolator")
-OrientationInterpolator519.setKey([0,0.2,0.4,0.6,0.7,1])
-OrientationInterpolator519.setKeyValue([0,0,1,0,-1,0,0,0.9,-1,0,0,0.95,1,0,0,0.75,-1,0,0,0.05,1,0,0,0])
-
-Group501.addChildren(OrientationInterpolator519)
-OrientationInterpolator520 = OrientationInterpolator()
-OrientationInterpolator520.setDEF("Kick_r_metatarsal_PitchInterpolator")
-OrientationInterpolator520.setKey([0,0.2,0.4,0.6,0.7,1])
-OrientationInterpolator520.setKeyValue([1,0,0,0,-1,0,0,0.5,-1,0,0,0.7,1,0,0,0.75,-1,0,0,0.2,1,0,0,0])
-
-Group501.addChildren(OrientationInterpolator520)
-OrientationInterpolator521 = OrientationInterpolator()
-OrientationInterpolator521.setDEF("Kick_sacroiliac_YawInterpolator")
-OrientationInterpolator521.setKey([0,0.2,0.4,0.6,0.8,1])
-OrientationInterpolator521.setKeyValue([0,1,0,0,0,-1,0,0.1,0,1,0,0,0,1,-1,0.24,0,-1,0,0.4,0,1,0,0])
-
-Group501.addChildren(OrientationInterpolator521)
-OrientationInterpolator522 = OrientationInterpolator()
-OrientationInterpolator522.setDEF("Kick_vl5_YawInterpolator")
-OrientationInterpolator522.setKey([0,0.2,0.4,0.5,0.6,0.8,1])
-OrientationInterpolator522.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group501.addChildren(OrientationInterpolator522)
-OrientationInterpolator523 = OrientationInterpolator()
-OrientationInterpolator523.setDEF("Kick_vc6_YawInterpolator")
-OrientationInterpolator523.setKey([0,0.2,0.4,0.5,0.6,0.8,1])
-OrientationInterpolator523.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group501.addChildren(OrientationInterpolator523)
-OrientationInterpolator524 = OrientationInterpolator()
-OrientationInterpolator524.setDEF("Kick_lower_body_RotationInterpolator")
-OrientationInterpolator524.setKey([0,0.5,1])
-OrientationInterpolator524.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group501.addChildren(OrientationInterpolator524)
-OrientationInterpolator525 = OrientationInterpolator()
-OrientationInterpolator525.setDEF("Kick_upper_body_RotationInterpolator")
-OrientationInterpolator525.setKey([0,0.5,1])
-OrientationInterpolator525.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group501.addChildren(OrientationInterpolator525)
-OrientationInterpolator526 = OrientationInterpolator()
-OrientationInterpolator526.setDEF("Kick_whole_body_RotationInterpolator")
-OrientationInterpolator526.setKey([0,0.5,1])
-OrientationInterpolator526.setKeyValue([0,0,1,0,0,0,1,0,0,0,1,0])
-
-Group501.addChildren(OrientationInterpolator526)
-PositionInterpolator527 = PositionInterpolator()
-PositionInterpolator527.setDEF("Kick_whole_body_TranslationInterpolator")
-PositionInterpolator527.setKey([0,0.5,1])
-PositionInterpolator527.setKeyValue([0,0,0,0,0,0,0,0,0])
-
-Group501.addChildren(PositionInterpolator527)
-OrientationInterpolator528 = OrientationInterpolator()
-OrientationInterpolator528.setDEF("Kick_neck_RotationInterpolator")
-OrientationInterpolator528.setKey([0,0.25,0.55,1])
-OrientationInterpolator528.setKeyValue([0,0,1,0,1,0,0,0.7,1,0,0,0.5,0,0,1,0])
-
-Group501.addChildren(OrientationInterpolator528)
-
-Scene34.addChildren(Group501)
-Group529 = Group()
-Group529.setDEF("Interface")
-Transform530 = Transform()
-Transform530.setDEF("CoordinateSystemFloor")
-Transform530.setScale([0.1,0.1,0.1])
-Shape531 = Shape()
-Shape531.setDEF("AxisLinesShape")
-#RGB lines showing XYZ axes
-IndexedLineSet532 = IndexedLineSet()
-IndexedLineSet532.setColorIndex([0,1,2])
-IndexedLineSet532.setColorPerVertex(False)
-IndexedLineSet532.setCoordIndex([0,1,-1,0,2,-1,0,3,-1])
-Coordinate533 = Coordinate()
-Coordinate533.setPoint([0,0,0,1,0,0,0,1,0,0,0,1])
-
-IndexedLineSet532.setCoord(Coordinate533)
-Color534 = Color()
-Color534.setColor([1,0,0,0,0.6,0,0,0,1])
-
-IndexedLineSet532.setColor(Color534)
-
-Shape531.setGeometry(IndexedLineSet532)
-
-Transform530.addChildren(Shape531)
-
-Group529.addChildren(Transform530)
-ProximitySensor535 = ProximitySensor()
-ProximitySensor535.setDEF("HudProx")
-ProximitySensor535.setSize([50,50,50])
-
-Group529.addChildren(ProximitySensor535)
-Transform536 = Transform()
-Transform536.setDEF("HudXform")
-Transform536.setRotation([0,1,0,0.78])
-Transform536.setTranslation([2,1,2])
-Transform537 = Transform()
-Transform537.setScale([0.02,0.02,0.02])
-Transform537.setTranslation([-0.4,-0.01,-0.75])
-Transform538 = Transform()
-Transform538.setDEF("Stand_Text")
-Transform538.setTranslation([0,-0.9,0])
-TouchSensor539 = TouchSensor()
-TouchSensor539.setDEF("Stand_Touch")
-
-Transform538.addChildren(TouchSensor539)
-Shape540 = Shape()
-Shape540.setDEF("StandText")
-Appearance541 = Appearance()
-Material542 = Material()
-Material542.setDEF("text_color")
-Material542.setAmbientIntensity(1)
-Material542.setDiffuseColor([0.819,0.521,0.169])
-Material542.setEmissiveColor([0.819,0.521,0.169])
-Material542.setSpecularColor([0.819,0.521,0.169])
-
-Appearance541.setMaterial(Material542)
-
-Shape540.setAppearance(Appearance541)
-Text543 = Text()
-Text543.setString(["Stand"])
-FontStyle544 = FontStyle()
-FontStyle544.setFamily(["SANS"])
-
-Text543.setFontStyle(FontStyle544)
-
-Shape540.setGeometry(Text543)
-
-Transform538.addChildren(Shape540)
-Shape545 = Shape()
-Shape545.setDEF("Stand_Back")
-Appearance546 = Appearance()
-Material547 = Material()
-Material547.setDEF("Clear")
-Material547.setAmbientIntensity(1)
-Material547.setDiffuseColor([0,0.5,0])
-Material547.setEmissiveColor([0,0.5,0])
-Material547.setTransparency(0.8)
-
-Appearance546.setMaterial(Material547)
-
-Shape545.setAppearance(Appearance546)
-IndexedFaceSet548 = IndexedFaceSet()
-IndexedFaceSet548.setDEF("Backing")
-IndexedFaceSet548.setCoordIndex([0,1,2,3,-1])
-Coordinate549 = Coordinate()
-Coordinate549.setPoint([-0.2,-0.25,-0.01,3,-0.25,-0.01,3,1,-0.01,-0.2,1,-0.01])
-
-IndexedFaceSet548.setCoord(Coordinate549)
-
-Shape545.setGeometry(IndexedFaceSet548)
-
-Transform538.addChildren(Shape545)
-
-Transform537.addChildren(Transform538)
-Transform550 = Transform()
-Transform550.setDEF("Pitch_Text")
-Transform550.setTranslation([0,-2.4,0])
-TouchSensor551 = TouchSensor()
-TouchSensor551.setDEF("Pitch_Touch")
-
-Transform550.addChildren(TouchSensor551)
-Shape552 = Shape()
-Shape552.setDEF("PitchText")
-Appearance553 = Appearance()
-Material554 = Material()
-Material554.setUSE("text_color")
-
-Appearance553.setMaterial(Material554)
-
-Shape552.setAppearance(Appearance553)
-Text555 = Text()
-Text555.setString(["Pitch"])
-FontStyle556 = FontStyle()
-FontStyle556.setFamily(["SANS"])
-
-Text555.setFontStyle(FontStyle556)
-
-Shape552.setGeometry(Text555)
-
-Transform550.addChildren(Shape552)
-Shape557 = Shape()
-Shape557.setDEF("Pitch_Back")
-Appearance558 = Appearance()
-Material559 = Material()
-Material559.setUSE("Clear")
-
-Appearance558.setMaterial(Material559)
-
-Shape557.setAppearance(Appearance558)
-IndexedFaceSet560 = IndexedFaceSet()
-IndexedFaceSet560.setUSE("Backing")
-
-Shape557.setGeometry(IndexedFaceSet560)
-
-Transform550.addChildren(Shape557)
-
-Transform537.addChildren(Transform550)
-Transform561 = Transform()
-Transform561.setDEF("Yaw_Text")
-Transform561.setTranslation([0,-3.8,0])
-TouchSensor562 = TouchSensor()
-TouchSensor562.setDEF("Yaw_Touch")
-
-Transform561.addChildren(TouchSensor562)
-Shape563 = Shape()
-Shape563.setDEF("YawText")
-Appearance564 = Appearance()
-Material565 = Material()
-Material565.setUSE("text_color")
-
-Appearance564.setMaterial(Material565)
-
-Shape563.setAppearance(Appearance564)
-Text566 = Text()
-Text566.setString(["Yaw"])
-FontStyle567 = FontStyle()
-FontStyle567.setFamily(["SANS"])
-
-Text566.setFontStyle(FontStyle567)
-
-Shape563.setGeometry(Text566)
-
-Transform561.addChildren(Shape563)
-Shape568 = Shape()
-Shape568.setDEF("Yaw_Back")
-Appearance569 = Appearance()
-Material570 = Material()
-Material570.setUSE("Clear")
-
-Appearance569.setMaterial(Material570)
-
-Shape568.setAppearance(Appearance569)
-IndexedFaceSet571 = IndexedFaceSet()
-IndexedFaceSet571.setUSE("Backing")
-
-Shape568.setGeometry(IndexedFaceSet571)
-
-Transform561.addChildren(Shape568)
-
-Transform537.addChildren(Transform561)
-Transform572 = Transform()
-Transform572.setDEF("Roll_Text")
-Transform572.setTranslation([0,-5.2,0])
-TouchSensor573 = TouchSensor()
-TouchSensor573.setDEF("Roll_Touch")
-
-Transform572.addChildren(TouchSensor573)
-Shape574 = Shape()
-Shape574.setDEF("RollText")
-Appearance575 = Appearance()
-Material576 = Material()
-Material576.setUSE("text_color")
-
-Appearance575.setMaterial(Material576)
-
-Shape574.setAppearance(Appearance575)
-Text577 = Text()
-Text577.setString(["Roll"])
-FontStyle578 = FontStyle()
-FontStyle578.setFamily(["SANS"])
-
-Text577.setFontStyle(FontStyle578)
-
-Shape574.setGeometry(Text577)
-
-Transform572.addChildren(Shape574)
-Shape579 = Shape()
-Shape579.setDEF("Roll_Back")
-Appearance580 = Appearance()
-Material581 = Material()
-Material581.setUSE("Clear")
-
-Appearance580.setMaterial(Material581)
-
-Shape579.setAppearance(Appearance580)
-IndexedFaceSet582 = IndexedFaceSet()
-IndexedFaceSet582.setUSE("Backing")
-
-Shape579.setGeometry(IndexedFaceSet582)
-
-Transform572.addChildren(Shape579)
-
-Transform537.addChildren(Transform572)
-Transform583 = Transform()
-Transform583.setDEF("Walk_Text")
-Transform583.setTranslation([0,-6.6,0])
-TouchSensor584 = TouchSensor()
-TouchSensor584.setDEF("Walk_Touch")
-
-Transform583.addChildren(TouchSensor584)
-Shape585 = Shape()
-Shape585.setDEF("WalkText")
-Appearance586 = Appearance()
-Material587 = Material()
-Material587.setUSE("text_color")
-
-Appearance586.setMaterial(Material587)
-
-Shape585.setAppearance(Appearance586)
-Text588 = Text()
-Text588.setString(["Walk"])
-FontStyle589 = FontStyle()
-FontStyle589.setFamily(["SANS"])
-
-Text588.setFontStyle(FontStyle589)
-
-Shape585.setGeometry(Text588)
-
-Transform583.addChildren(Shape585)
-Shape590 = Shape()
-Shape590.setDEF("Walk_Back")
-Appearance591 = Appearance()
-Material592 = Material()
-Material592.setUSE("Clear")
-
-Appearance591.setMaterial(Material592)
-
-Shape590.setAppearance(Appearance591)
-IndexedFaceSet593 = IndexedFaceSet()
-IndexedFaceSet593.setUSE("Backing")
-
-Shape590.setGeometry(IndexedFaceSet593)
-
-Transform583.addChildren(Shape590)
-
-Transform537.addChildren(Transform583)
-Transform594 = Transform()
-Transform594.setDEF("Run_Text")
-Transform594.setTranslation([0,-8,0])
-TouchSensor595 = TouchSensor()
-TouchSensor595.setDEF("Run_Touch")
-
-Transform594.addChildren(TouchSensor595)
-Shape596 = Shape()
-Shape596.setDEF("RunText")
-Appearance597 = Appearance()
-Material598 = Material()
-Material598.setUSE("text_color")
-
-Appearance597.setMaterial(Material598)
-
-Shape596.setAppearance(Appearance597)
-Text599 = Text()
-Text599.setString(["Run"])
-FontStyle600 = FontStyle()
-FontStyle600.setFamily(["SANS"])
-
-Text599.setFontStyle(FontStyle600)
-
-Shape596.setGeometry(Text599)
-
-Transform594.addChildren(Shape596)
-Shape601 = Shape()
-Shape601.setDEF("Run_Back")
-Appearance602 = Appearance()
-Material603 = Material()
-Material603.setUSE("Clear")
-
-Appearance602.setMaterial(Material603)
-
-Shape601.setAppearance(Appearance602)
-IndexedFaceSet604 = IndexedFaceSet()
-IndexedFaceSet604.setUSE("Backing")
-
-Shape601.setGeometry(IndexedFaceSet604)
-
-Transform594.addChildren(Shape601)
-
-Transform537.addChildren(Transform594)
-Transform605 = Transform()
-Transform605.setDEF("Jump_Text")
-Transform605.setTranslation([0,-9.4,0])
-TouchSensor606 = TouchSensor()
-TouchSensor606.setDEF("Jump_Touch")
-
-Transform605.addChildren(TouchSensor606)
-Shape607 = Shape()
-Shape607.setDEF("JumpText")
-Appearance608 = Appearance()
-Material609 = Material()
-Material609.setUSE("text_color")
-
-Appearance608.setMaterial(Material609)
-
-Shape607.setAppearance(Appearance608)
-Text610 = Text()
-Text610.setString(["Jump"])
-FontStyle611 = FontStyle()
-FontStyle611.setFamily(["SANS"])
-
-Text610.setFontStyle(FontStyle611)
-
-Shape607.setGeometry(Text610)
-
-Transform605.addChildren(Shape607)
-Shape612 = Shape()
-Shape612.setDEF("Jump_Back")
-Appearance613 = Appearance()
-Material614 = Material()
-Material614.setUSE("Clear")
-
-Appearance613.setMaterial(Material614)
-
-Shape612.setAppearance(Appearance613)
-IndexedFaceSet615 = IndexedFaceSet()
-IndexedFaceSet615.setUSE("Backing")
-
-Shape612.setGeometry(IndexedFaceSet615)
-
-Transform605.addChildren(Shape612)
-
-Transform537.addChildren(Transform605)
-Transform616 = Transform()
-Transform616.setDEF("Kick_Text")
-Transform616.setTranslation([0,-10.8,0])
-TouchSensor617 = TouchSensor()
-TouchSensor617.setDEF("Kick_Touch")
-
-Transform616.addChildren(TouchSensor617)
-Shape618 = Shape()
-Shape618.setDEF("KickText")
-Appearance619 = Appearance()
-Material620 = Material()
-Material620.setUSE("text_color")
-
-Appearance619.setMaterial(Material620)
-
-Shape618.setAppearance(Appearance619)
-Text621 = Text()
-Text621.setString(["Kick"])
-FontStyle622 = FontStyle()
-FontStyle622.setFamily(["SANS"])
-
-Text621.setFontStyle(FontStyle622)
-
-Shape618.setGeometry(Text621)
-
-Transform616.addChildren(Shape618)
-Shape623 = Shape()
-Shape623.setDEF("Kick_Back")
-Appearance624 = Appearance()
-Material625 = Material()
-Material625.setUSE("Clear")
-
-Appearance624.setMaterial(Material625)
-
-Shape623.setAppearance(Appearance624)
-IndexedFaceSet626 = IndexedFaceSet()
-IndexedFaceSet626.setUSE("Backing")
-
-Shape623.setGeometry(IndexedFaceSet626)
-
-Transform616.addChildren(Shape623)
-
-Transform537.addChildren(Transform616)
-Transform627 = Transform()
-Transform627.setDEF("Stop_Text")
-Transform627.setTranslation([0,0.4,0])
-TouchSensor628 = TouchSensor()
-TouchSensor628.setDEF("Stop_Touch")
-
-Transform627.addChildren(TouchSensor628)
-Shape629 = Shape()
-Shape629.setDEF("StopText")
-Appearance630 = Appearance()
-Material631 = Material()
-Material631.setUSE("text_color")
-
-Appearance630.setMaterial(Material631)
-
-Shape629.setAppearance(Appearance630)
-Text632 = Text()
-Text632.setString(["Default"])
-FontStyle633 = FontStyle()
-FontStyle633.setFamily(["SANS"])
-
-Text632.setFontStyle(FontStyle633)
-
-Shape629.setGeometry(Text632)
-
-Transform627.addChildren(Shape629)
-Shape634 = Shape()
-Shape634.setDEF("Stop_Back")
-Appearance635 = Appearance()
-Material636 = Material()
-Material636.setUSE("Clear")
-
-Appearance635.setMaterial(Material636)
-
-Shape634.setAppearance(Appearance635)
-IndexedFaceSet637 = IndexedFaceSet()
-IndexedFaceSet637.setUSE("Backing")
-
-Shape634.setGeometry(IndexedFaceSet637)
-
-Transform627.addChildren(Shape634)
-
-Transform537.addChildren(Transform627)
-Transform638 = Transform()
-Transform638.setDEF("SceneLabel")
-Transform638.setTranslation([1.3,3,0])
-Shape639 = Shape()
-Shape639.setDEF("SceneLabelText")
-Appearance640 = Appearance()
-Material641 = Material()
-Material641.setUSE("text_color")
-
-Appearance640.setMaterial(Material641)
-
-Shape639.setAppearance(Appearance640)
-Text642 = Text()
-Text642.setString(["BoxMan","Animation"])
-FontStyle643 = FontStyle()
-FontStyle643.setFamily(["SANS"])
-FontStyle643.setJustify(["MIDDLE","MIDDLE"])
-
-Text642.setFontStyle(FontStyle643)
-
-Shape639.setGeometry(Text642)
-
-Transform638.addChildren(Shape639)
-
-Transform537.addChildren(Transform638)
-
-Transform536.addChildren(Transform537)
-
-Group529.addChildren(Transform536)
-
-Scene34.addChildren(Group529)
-ROUTE644 = ROUTE()
-ROUTE644.setFromField("fraction_changed")
-ROUTE644.setFromNode("StopTimer")
-ROUTE644.setToField("set_fraction")
-ROUTE644.setToNode("Stop_humanoid_root_TranslationInterpolator")
-
-Scene34.addChildren(ROUTE644)
-ROUTE645 = ROUTE()
-ROUTE645.setFromField("fraction_changed")
-ROUTE645.setFromNode("StopTimer")
-ROUTE645.setToField("set_fraction")
-ROUTE645.setToNode("Stop_humanoid_root_RotationInterpolator")
-
-Scene34.addChildren(ROUTE645)
-ROUTE646 = ROUTE()
-ROUTE646.setFromField("fraction_changed")
-ROUTE646.setFromNode("StopTimer")
-ROUTE646.setToField("set_fraction")
-ROUTE646.setToNode("Stop_sacroiliac_RotationInterpolator")
-
-Scene34.addChildren(ROUTE646)
-ROUTE647 = ROUTE()
-ROUTE647.setFromField("fraction_changed")
-ROUTE647.setFromNode("StopTimer")
-ROUTE647.setToField("set_fraction")
-ROUTE647.setToNode("Stop_l_hip_RotationInterpolator")
-
-Scene34.addChildren(ROUTE647)
-ROUTE648 = ROUTE()
-ROUTE648.setFromField("fraction_changed")
-ROUTE648.setFromNode("StopTimer")
-ROUTE648.setToField("set_fraction")
-ROUTE648.setToNode("Stop_l_knee_RotationInterpolator")
-
-Scene34.addChildren(ROUTE648)
-ROUTE649 = ROUTE()
-ROUTE649.setFromField("fraction_changed")
-ROUTE649.setFromNode("StopTimer")
-ROUTE649.setToField("set_fraction")
-ROUTE649.setToNode("Stop_l_ankle_RotationInterpolator")
-
-Scene34.addChildren(ROUTE649)
-ROUTE650 = ROUTE()
-ROUTE650.setFromField("fraction_changed")
-ROUTE650.setFromNode("StopTimer")
-ROUTE650.setToField("set_fraction")
-ROUTE650.setToNode("Stop_l_subtalar_RotationInterpolator")
-
-Scene34.addChildren(ROUTE650)
-ROUTE651 = ROUTE()
-ROUTE651.setFromField("fraction_changed")
-ROUTE651.setFromNode("StopTimer")
-ROUTE651.setToField("set_fraction")
-ROUTE651.setToNode("Stop_l_midtarsal_RotationInterpolator")
-
-Scene34.addChildren(ROUTE651)
-ROUTE652 = ROUTE()
-ROUTE652.setFromField("fraction_changed")
-ROUTE652.setFromNode("StopTimer")
-ROUTE652.setToField("set_fraction")
-ROUTE652.setToNode("Stop_l_metatarsal_RotationInterpolator")
-
-Scene34.addChildren(ROUTE652)
-ROUTE653 = ROUTE()
-ROUTE653.setFromField("fraction_changed")
-ROUTE653.setFromNode("StopTimer")
-ROUTE653.setToField("set_fraction")
-ROUTE653.setToNode("Stop_r_hip_RotationInterpolator")
-
-Scene34.addChildren(ROUTE653)
-ROUTE654 = ROUTE()
-ROUTE654.setFromField("fraction_changed")
-ROUTE654.setFromNode("StopTimer")
-ROUTE654.setToField("set_fraction")
-ROUTE654.setToNode("Stop_r_knee_RotationInterpolator")
-
-Scene34.addChildren(ROUTE654)
-ROUTE655 = ROUTE()
-ROUTE655.setFromField("fraction_changed")
-ROUTE655.setFromNode("StopTimer")
-ROUTE655.setToField("set_fraction")
-ROUTE655.setToNode("Stop_r_ankle_RotationInterpolator")
-
-Scene34.addChildren(ROUTE655)
-ROUTE656 = ROUTE()
-ROUTE656.setFromField("fraction_changed")
-ROUTE656.setFromNode("StopTimer")
-ROUTE656.setToField("set_fraction")
-ROUTE656.setToNode("Stop_r_subtalar_RotationInterpolator")
-
-Scene34.addChildren(ROUTE656)
-ROUTE657 = ROUTE()
-ROUTE657.setFromField("fraction_changed")
-ROUTE657.setFromNode("StopTimer")
-ROUTE657.setToField("set_fraction")
-ROUTE657.setToNode("Stop_r_midtarsal_RotationInterpolator")
-
-Scene34.addChildren(ROUTE657)
-ROUTE658 = ROUTE()
-ROUTE658.setFromField("fraction_changed")
-ROUTE658.setFromNode("StopTimer")
-ROUTE658.setToField("set_fraction")
-ROUTE658.setToNode("Stop_r_metatarsal_RotationInterpolator")
-
-Scene34.addChildren(ROUTE658)
-ROUTE659 = ROUTE()
-ROUTE659.setFromField("fraction_changed")
-ROUTE659.setFromNode("StopTimer")
-ROUTE659.setToField("set_fraction")
-ROUTE659.setToNode("Stop_vl5_RotationInterpolator")
-
-Scene34.addChildren(ROUTE659)
-ROUTE660 = ROUTE()
-ROUTE660.setFromField("fraction_changed")
-ROUTE660.setFromNode("StopTimer")
-ROUTE660.setToField("set_fraction")
-ROUTE660.setToNode("Stop_vl4_RotationInterpolator")
-
-Scene34.addChildren(ROUTE660)
-ROUTE661 = ROUTE()
-ROUTE661.setFromField("fraction_changed")
-ROUTE661.setFromNode("StopTimer")
-ROUTE661.setToField("set_fraction")
-ROUTE661.setToNode("Stop_vl3_RotationInterpolator")
-
-Scene34.addChildren(ROUTE661)
-ROUTE662 = ROUTE()
-ROUTE662.setFromField("fraction_changed")
-ROUTE662.setFromNode("StopTimer")
-ROUTE662.setToField("set_fraction")
-ROUTE662.setToNode("Stop_vl2_RotationInterpolator")
-
-Scene34.addChildren(ROUTE662)
-ROUTE663 = ROUTE()
-ROUTE663.setFromField("fraction_changed")
-ROUTE663.setFromNode("StopTimer")
-ROUTE663.setToField("set_fraction")
-ROUTE663.setToNode("Stop_vl1_RotationInterpolator")
-
-Scene34.addChildren(ROUTE663)
-ROUTE664 = ROUTE()
-ROUTE664.setFromField("fraction_changed")
-ROUTE664.setFromNode("StopTimer")
-ROUTE664.setToField("set_fraction")
-ROUTE664.setToNode("Stop_vt12_RotationInterpolator")
-
-Scene34.addChildren(ROUTE664)
-ROUTE665 = ROUTE()
-ROUTE665.setFromField("fraction_changed")
-ROUTE665.setFromNode("StopTimer")
-ROUTE665.setToField("set_fraction")
-ROUTE665.setToNode("Stop_vt11_RotationInterpolator")
-
-Scene34.addChildren(ROUTE665)
-ROUTE666 = ROUTE()
-ROUTE666.setFromField("fraction_changed")
-ROUTE666.setFromNode("StopTimer")
-ROUTE666.setToField("set_fraction")
-ROUTE666.setToNode("Stop_vt10_RotationInterpolator")
-
-Scene34.addChildren(ROUTE666)
-ROUTE667 = ROUTE()
-ROUTE667.setFromField("fraction_changed")
-ROUTE667.setFromNode("StopTimer")
-ROUTE667.setToField("set_fraction")
-ROUTE667.setToNode("Stop_vt9_RotationInterpolator")
-
-Scene34.addChildren(ROUTE667)
-ROUTE668 = ROUTE()
-ROUTE668.setFromField("fraction_changed")
-ROUTE668.setFromNode("StopTimer")
-ROUTE668.setToField("set_fraction")
-ROUTE668.setToNode("Stop_vt8_RotationInterpolator")
-
-Scene34.addChildren(ROUTE668)
-ROUTE669 = ROUTE()
-ROUTE669.setFromField("fraction_changed")
-ROUTE669.setFromNode("StopTimer")
-ROUTE669.setToField("set_fraction")
-ROUTE669.setToNode("Stop_vt7_RotationInterpolator")
-
-Scene34.addChildren(ROUTE669)
-ROUTE670 = ROUTE()
-ROUTE670.setFromField("fraction_changed")
-ROUTE670.setFromNode("StopTimer")
-ROUTE670.setToField("set_fraction")
-ROUTE670.setToNode("Stop_vt6_RotationInterpolator")
-
-Scene34.addChildren(ROUTE670)
-ROUTE671 = ROUTE()
-ROUTE671.setFromField("fraction_changed")
-ROUTE671.setFromNode("StopTimer")
-ROUTE671.setToField("set_fraction")
-ROUTE671.setToNode("Stop_vt5_RotationInterpolator")
-
-Scene34.addChildren(ROUTE671)
-ROUTE672 = ROUTE()
-ROUTE672.setFromField("fraction_changed")
-ROUTE672.setFromNode("StopTimer")
-ROUTE672.setToField("set_fraction")
-ROUTE672.setToNode("Stop_vt4_RotationInterpolator")
-
-Scene34.addChildren(ROUTE672)
-ROUTE673 = ROUTE()
-ROUTE673.setFromField("fraction_changed")
-ROUTE673.setFromNode("StopTimer")
-ROUTE673.setToField("set_fraction")
-ROUTE673.setToNode("Stop_vt3_RotationInterpolator")
-
-Scene34.addChildren(ROUTE673)
-ROUTE674 = ROUTE()
-ROUTE674.setFromField("fraction_changed")
-ROUTE674.setFromNode("StopTimer")
-ROUTE674.setToField("set_fraction")
-ROUTE674.setToNode("Stop_vt2_RotationInterpolator")
-
-Scene34.addChildren(ROUTE674)
-ROUTE675 = ROUTE()
-ROUTE675.setFromField("fraction_changed")
-ROUTE675.setFromNode("StopTimer")
-ROUTE675.setToField("set_fraction")
-ROUTE675.setToNode("Stop_vt1_RotationInterpolator")
-
-Scene34.addChildren(ROUTE675)
-ROUTE676 = ROUTE()
-ROUTE676.setFromField("fraction_changed")
-ROUTE676.setFromNode("StopTimer")
-ROUTE676.setToField("set_fraction")
-ROUTE676.setToNode("Stop_vc7_RotationInterpolator")
-
-Scene34.addChildren(ROUTE676)
-ROUTE677 = ROUTE()
-ROUTE677.setFromField("fraction_changed")
-ROUTE677.setFromNode("StopTimer")
-ROUTE677.setToField("set_fraction")
-ROUTE677.setToNode("Stop_vc6_RotationInterpolator")
-
-Scene34.addChildren(ROUTE677)
-ROUTE678 = ROUTE()
-ROUTE678.setFromField("fraction_changed")
-ROUTE678.setFromNode("StopTimer")
-ROUTE678.setToField("set_fraction")
-ROUTE678.setToNode("Stop_vc5_RotationInterpolator")
-
-Scene34.addChildren(ROUTE678)
-ROUTE679 = ROUTE()
-ROUTE679.setFromField("fraction_changed")
-ROUTE679.setFromNode("StopTimer")
-ROUTE679.setToField("set_fraction")
-ROUTE679.setToNode("Stop_vc4_RotationInterpolator")
-
-Scene34.addChildren(ROUTE679)
-ROUTE680 = ROUTE()
-ROUTE680.setFromField("fraction_changed")
-ROUTE680.setFromNode("StopTimer")
-ROUTE680.setToField("set_fraction")
-ROUTE680.setToNode("Stop_vc3_RotationInterpolator")
-
-Scene34.addChildren(ROUTE680)
-ROUTE681 = ROUTE()
-ROUTE681.setFromField("fraction_changed")
-ROUTE681.setFromNode("StopTimer")
-ROUTE681.setToField("set_fraction")
-ROUTE681.setToNode("Stop_vc2_RotationInterpolator")
-
-Scene34.addChildren(ROUTE681)
-ROUTE682 = ROUTE()
-ROUTE682.setFromField("fraction_changed")
-ROUTE682.setFromNode("StopTimer")
-ROUTE682.setToField("set_fraction")
-ROUTE682.setToNode("Stop_vc1_RotationInterpolator")
-
-Scene34.addChildren(ROUTE682)
-ROUTE683 = ROUTE()
-ROUTE683.setFromField("fraction_changed")
-ROUTE683.setFromNode("StopTimer")
-ROUTE683.setToField("set_fraction")
-ROUTE683.setToNode("Stop_skullbase_RotationInterpolator")
-
-Scene34.addChildren(ROUTE683)
-ROUTE684 = ROUTE()
-ROUTE684.setFromField("fraction_changed")
-ROUTE684.setFromNode("StopTimer")
-ROUTE684.setToField("set_fraction")
-ROUTE684.setToNode("Stop_l_eyeball_joint_RotationInterpolator")
-
-Scene34.addChildren(ROUTE684)
-ROUTE685 = ROUTE()
-ROUTE685.setFromField("fraction_changed")
-ROUTE685.setFromNode("StopTimer")
-ROUTE685.setToField("set_fraction")
-ROUTE685.setToNode("Stop_r_eyeball_joint_RotationInterpolator")
-
-Scene34.addChildren(ROUTE685)
-ROUTE686 = ROUTE()
-ROUTE686.setFromField("fraction_changed")
-ROUTE686.setFromNode("StopTimer")
-ROUTE686.setToField("set_fraction")
-ROUTE686.setToNode("Stop_l_sternoclavicular_RotationInterpolator")
-
-Scene34.addChildren(ROUTE686)
-ROUTE687 = ROUTE()
-ROUTE687.setFromField("fraction_changed")
-ROUTE687.setFromNode("StopTimer")
-ROUTE687.setToField("set_fraction")
-ROUTE687.setToNode("Stop_l_acromioclavicular_RotationInterpolator")
-
-Scene34.addChildren(ROUTE687)
-ROUTE688 = ROUTE()
-ROUTE688.setFromField("fraction_changed")
-ROUTE688.setFromNode("StopTimer")
-ROUTE688.setToField("set_fraction")
-ROUTE688.setToNode("Stop_l_shoulder_RotationInterpolator")
-
-Scene34.addChildren(ROUTE688)
-ROUTE689 = ROUTE()
-ROUTE689.setFromField("fraction_changed")
-ROUTE689.setFromNode("StopTimer")
-ROUTE689.setToField("set_fraction")
-ROUTE689.setToNode("Stop_l_elbow_RotationInterpolator")
-
-Scene34.addChildren(ROUTE689)
-ROUTE690 = ROUTE()
-ROUTE690.setFromField("fraction_changed")
-ROUTE690.setFromNode("StopTimer")
-ROUTE690.setToField("set_fraction")
-ROUTE690.setToNode("Stop_l_wrist_RotationInterpolator")
-
-Scene34.addChildren(ROUTE690)
-ROUTE691 = ROUTE()
-ROUTE691.setFromField("fraction_changed")
-ROUTE691.setFromNode("StopTimer")
-ROUTE691.setToField("set_fraction")
-ROUTE691.setToNode("Stop_l_thumb1_RotationInterpolator")
-
-Scene34.addChildren(ROUTE691)
-ROUTE692 = ROUTE()
-ROUTE692.setFromField("fraction_changed")
-ROUTE692.setFromNode("StopTimer")
-ROUTE692.setToField("set_fraction")
-ROUTE692.setToNode("Stop_l_thumb2_RotationInterpolator")
-
-Scene34.addChildren(ROUTE692)
-ROUTE693 = ROUTE()
-ROUTE693.setFromField("fraction_changed")
-ROUTE693.setFromNode("StopTimer")
-ROUTE693.setToField("set_fraction")
-ROUTE693.setToNode("Stop_l_thumb3_RotationInterpolator")
-
-Scene34.addChildren(ROUTE693)
-ROUTE694 = ROUTE()
-ROUTE694.setFromField("fraction_changed")
-ROUTE694.setFromNode("StopTimer")
-ROUTE694.setToField("set_fraction")
-ROUTE694.setToNode("Stop_l_index0_RotationInterpolator")
-
-Scene34.addChildren(ROUTE694)
-ROUTE695 = ROUTE()
-ROUTE695.setFromField("fraction_changed")
-ROUTE695.setFromNode("StopTimer")
-ROUTE695.setToField("set_fraction")
-ROUTE695.setToNode("Stop_l_index1_RotationInterpolator")
-
-Scene34.addChildren(ROUTE695)
-ROUTE696 = ROUTE()
-ROUTE696.setFromField("fraction_changed")
-ROUTE696.setFromNode("StopTimer")
-ROUTE696.setToField("set_fraction")
-ROUTE696.setToNode("Stop_l_index2_RotationInterpolator")
-
-Scene34.addChildren(ROUTE696)
-ROUTE697 = ROUTE()
-ROUTE697.setFromField("fraction_changed")
-ROUTE697.setFromNode("StopTimer")
-ROUTE697.setToField("set_fraction")
-ROUTE697.setToNode("Stop_l_index3_RotationInterpolator")
-
-Scene34.addChildren(ROUTE697)
-ROUTE698 = ROUTE()
-ROUTE698.setFromField("fraction_changed")
-ROUTE698.setFromNode("StopTimer")
-ROUTE698.setToField("set_fraction")
-ROUTE698.setToNode("Stop_l_middle0_RotationInterpolator")
-
-Scene34.addChildren(ROUTE698)
-ROUTE699 = ROUTE()
-ROUTE699.setFromField("fraction_changed")
-ROUTE699.setFromNode("StopTimer")
-ROUTE699.setToField("set_fraction")
-ROUTE699.setToNode("Stop_l_middle1_RotationInterpolator")
-
-Scene34.addChildren(ROUTE699)
-ROUTE700 = ROUTE()
-ROUTE700.setFromField("fraction_changed")
-ROUTE700.setFromNode("StopTimer")
-ROUTE700.setToField("set_fraction")
-ROUTE700.setToNode("Stop_l_middle2_RotationInterpolator")
-
-Scene34.addChildren(ROUTE700)
-ROUTE701 = ROUTE()
-ROUTE701.setFromField("fraction_changed")
-ROUTE701.setFromNode("StopTimer")
-ROUTE701.setToField("set_fraction")
-ROUTE701.setToNode("Stop_l_middle3_RotationInterpolator")
-
-Scene34.addChildren(ROUTE701)
-ROUTE702 = ROUTE()
-ROUTE702.setFromField("fraction_changed")
-ROUTE702.setFromNode("StopTimer")
-ROUTE702.setToField("set_fraction")
-ROUTE702.setToNode("Stop_l_ring0_RotationInterpolator")
-
-Scene34.addChildren(ROUTE702)
-ROUTE703 = ROUTE()
-ROUTE703.setFromField("fraction_changed")
-ROUTE703.setFromNode("StopTimer")
-ROUTE703.setToField("set_fraction")
-ROUTE703.setToNode("Stop_l_ring1_RotationInterpolator")
-
-Scene34.addChildren(ROUTE703)
-ROUTE704 = ROUTE()
-ROUTE704.setFromField("fraction_changed")
-ROUTE704.setFromNode("StopTimer")
-ROUTE704.setToField("set_fraction")
-ROUTE704.setToNode("Stop_l_ring2_RotationInterpolator")
-
-Scene34.addChildren(ROUTE704)
-ROUTE705 = ROUTE()
-ROUTE705.setFromField("fraction_changed")
-ROUTE705.setFromNode("StopTimer")
-ROUTE705.setToField("set_fraction")
-ROUTE705.setToNode("Stop_l_ring3_RotationInterpolator")
-
-Scene34.addChildren(ROUTE705)
-ROUTE706 = ROUTE()
-ROUTE706.setFromField("fraction_changed")
-ROUTE706.setFromNode("StopTimer")
-ROUTE706.setToField("set_fraction")
-ROUTE706.setToNode("Stop_l_pinky0_RotationInterpolator")
-
-Scene34.addChildren(ROUTE706)
-ROUTE707 = ROUTE()
-ROUTE707.setFromField("fraction_changed")
-ROUTE707.setFromNode("StopTimer")
-ROUTE707.setToField("set_fraction")
-ROUTE707.setToNode("Stop_l_pinky1_RotationInterpolator")
-
-Scene34.addChildren(ROUTE707)
-ROUTE708 = ROUTE()
-ROUTE708.setFromField("fraction_changed")
-ROUTE708.setFromNode("StopTimer")
-ROUTE708.setToField("set_fraction")
-ROUTE708.setToNode("Stop_l_pinky2_RotationInterpolator")
-
-Scene34.addChildren(ROUTE708)
-ROUTE709 = ROUTE()
-ROUTE709.setFromField("fraction_changed")
-ROUTE709.setFromNode("StopTimer")
-ROUTE709.setToField("set_fraction")
-ROUTE709.setToNode("Stop_l_pinky3_RotationInterpolator")
-
-Scene34.addChildren(ROUTE709)
-ROUTE710 = ROUTE()
-ROUTE710.setFromField("fraction_changed")
-ROUTE710.setFromNode("StopTimer")
-ROUTE710.setToField("set_fraction")
-ROUTE710.setToNode("Stop_r_sternoclavicular_RotationInterpolator")
-
-Scene34.addChildren(ROUTE710)
-ROUTE711 = ROUTE()
-ROUTE711.setFromField("fraction_changed")
-ROUTE711.setFromNode("StopTimer")
-ROUTE711.setToField("set_fraction")
-ROUTE711.setToNode("Stop_r_acromioclavicular_RotationInterpolator")
-
-Scene34.addChildren(ROUTE711)
-ROUTE712 = ROUTE()
-ROUTE712.setFromField("fraction_changed")
-ROUTE712.setFromNode("StopTimer")
-ROUTE712.setToField("set_fraction")
-ROUTE712.setToNode("Stop_r_shoulder_RotationInterpolator")
-
-Scene34.addChildren(ROUTE712)
-ROUTE713 = ROUTE()
-ROUTE713.setFromField("fraction_changed")
-ROUTE713.setFromNode("StopTimer")
-ROUTE713.setToField("set_fraction")
-ROUTE713.setToNode("Stop_r_elbow_RotationInterpolator")
-
-Scene34.addChildren(ROUTE713)
-ROUTE714 = ROUTE()
-ROUTE714.setFromField("fraction_changed")
-ROUTE714.setFromNode("StopTimer")
-ROUTE714.setToField("set_fraction")
-ROUTE714.setToNode("Stop_r_wrist_RotationInterpolator")
-
-Scene34.addChildren(ROUTE714)
-ROUTE715 = ROUTE()
-ROUTE715.setFromField("fraction_changed")
-ROUTE715.setFromNode("StopTimer")
-ROUTE715.setToField("set_fraction")
-ROUTE715.setToNode("Stop_r_thumb1_RotationInterpolator")
-
-Scene34.addChildren(ROUTE715)
-ROUTE716 = ROUTE()
-ROUTE716.setFromField("fraction_changed")
-ROUTE716.setFromNode("StopTimer")
-ROUTE716.setToField("set_fraction")
-ROUTE716.setToNode("Stop_r_thumb2_RotationInterpolator")
-
-Scene34.addChildren(ROUTE716)
-ROUTE717 = ROUTE()
-ROUTE717.setFromField("fraction_changed")
-ROUTE717.setFromNode("StopTimer")
-ROUTE717.setToField("set_fraction")
-ROUTE717.setToNode("Stop_r_thumb3_RotationInterpolator")
-
-Scene34.addChildren(ROUTE717)
-ROUTE718 = ROUTE()
-ROUTE718.setFromField("fraction_changed")
-ROUTE718.setFromNode("StopTimer")
-ROUTE718.setToField("set_fraction")
-ROUTE718.setToNode("Stop_r_index0_RotationInterpolator")
-
-Scene34.addChildren(ROUTE718)
-ROUTE719 = ROUTE()
-ROUTE719.setFromField("fraction_changed")
-ROUTE719.setFromNode("StopTimer")
-ROUTE719.setToField("set_fraction")
-ROUTE719.setToNode("Stop_r_index1_RotationInterpolator")
-
-Scene34.addChildren(ROUTE719)
-ROUTE720 = ROUTE()
-ROUTE720.setFromField("fraction_changed")
-ROUTE720.setFromNode("StopTimer")
-ROUTE720.setToField("set_fraction")
-ROUTE720.setToNode("Stop_r_index2_RotationInterpolator")
-
-Scene34.addChildren(ROUTE720)
-ROUTE721 = ROUTE()
-ROUTE721.setFromField("fraction_changed")
-ROUTE721.setFromNode("StopTimer")
-ROUTE721.setToField("set_fraction")
-ROUTE721.setToNode("Stop_r_index3_RotationInterpolator")
-
-Scene34.addChildren(ROUTE721)
-ROUTE722 = ROUTE()
-ROUTE722.setFromField("fraction_changed")
-ROUTE722.setFromNode("StopTimer")
-ROUTE722.setToField("set_fraction")
-ROUTE722.setToNode("Stop_r_middle0_RotationInterpolator")
-
-Scene34.addChildren(ROUTE722)
-ROUTE723 = ROUTE()
-ROUTE723.setFromField("fraction_changed")
-ROUTE723.setFromNode("StopTimer")
-ROUTE723.setToField("set_fraction")
-ROUTE723.setToNode("Stop_r_middle1_RotationInterpolator")
-
-Scene34.addChildren(ROUTE723)
-ROUTE724 = ROUTE()
-ROUTE724.setFromField("fraction_changed")
-ROUTE724.setFromNode("StopTimer")
-ROUTE724.setToField("set_fraction")
-ROUTE724.setToNode("Stop_r_middle2_RotationInterpolator")
-
-Scene34.addChildren(ROUTE724)
-ROUTE725 = ROUTE()
-ROUTE725.setFromField("fraction_changed")
-ROUTE725.setFromNode("StopTimer")
-ROUTE725.setToField("set_fraction")
-ROUTE725.setToNode("Stop_r_middle3_RotationInterpolator")
-
-Scene34.addChildren(ROUTE725)
-ROUTE726 = ROUTE()
-ROUTE726.setFromField("fraction_changed")
-ROUTE726.setFromNode("StopTimer")
-ROUTE726.setToField("set_fraction")
-ROUTE726.setToNode("Stop_r_ring0_RotationInterpolator")
-
-Scene34.addChildren(ROUTE726)
-ROUTE727 = ROUTE()
-ROUTE727.setFromField("fraction_changed")
-ROUTE727.setFromNode("StopTimer")
-ROUTE727.setToField("set_fraction")
-ROUTE727.setToNode("Stop_r_ring1_RotationInterpolator")
-
-Scene34.addChildren(ROUTE727)
-ROUTE728 = ROUTE()
-ROUTE728.setFromField("fraction_changed")
-ROUTE728.setFromNode("StopTimer")
-ROUTE728.setToField("set_fraction")
-ROUTE728.setToNode("Stop_r_ring2_RotationInterpolator")
-
-Scene34.addChildren(ROUTE728)
-ROUTE729 = ROUTE()
-ROUTE729.setFromField("fraction_changed")
-ROUTE729.setFromNode("StopTimer")
-ROUTE729.setToField("set_fraction")
-ROUTE729.setToNode("Stop_r_ring3_RotationInterpolator")
-
-Scene34.addChildren(ROUTE729)
-ROUTE730 = ROUTE()
-ROUTE730.setFromField("fraction_changed")
-ROUTE730.setFromNode("StopTimer")
-ROUTE730.setToField("set_fraction")
-ROUTE730.setToNode("Stop_r_pinky0_RotationInterpolator")
-
-Scene34.addChildren(ROUTE730)
-ROUTE731 = ROUTE()
-ROUTE731.setFromField("fraction_changed")
-ROUTE731.setFromNode("StopTimer")
-ROUTE731.setToField("set_fraction")
-ROUTE731.setToNode("Stop_r_pinky1_RotationInterpolator")
-
-Scene34.addChildren(ROUTE731)
-ROUTE732 = ROUTE()
-ROUTE732.setFromField("fraction_changed")
-ROUTE732.setFromNode("StopTimer")
-ROUTE732.setToField("set_fraction")
-ROUTE732.setToNode("Stop_r_pinky2_RotationInterpolator")
-
-Scene34.addChildren(ROUTE732)
-ROUTE733 = ROUTE()
-ROUTE733.setFromField("fraction_changed")
-ROUTE733.setFromNode("StopTimer")
-ROUTE733.setToField("set_fraction")
-ROUTE733.setToNode("Stop_r_pinky3_RotationInterpolator")
-
-Scene34.addChildren(ROUTE733)
-ROUTE734 = ROUTE()
-ROUTE734.setFromField("value_changed")
-ROUTE734.setFromNode("Stop_humanoid_root_TranslationInterpolator")
-ROUTE734.setToField("set_translation")
-ROUTE734.setToNode("boxman_humanoid_root")
-
-Scene34.addChildren(ROUTE734)
-ROUTE735 = ROUTE()
-ROUTE735.setFromField("value_changed")
-ROUTE735.setFromNode("Stop_humanoid_root_RotationInterpolator")
-ROUTE735.setToField("set_rotation")
-ROUTE735.setToNode("boxman_humanoid_root")
-
-Scene34.addChildren(ROUTE735)
-ROUTE736 = ROUTE()
-ROUTE736.setFromField("value_changed")
-ROUTE736.setFromNode("Stop_l_hip_RotationInterpolator")
-ROUTE736.setToField("set_rotation")
-ROUTE736.setToNode("boxman_l_hip")
-
-Scene34.addChildren(ROUTE736)
-ROUTE737 = ROUTE()
-ROUTE737.setFromField("value_changed")
-ROUTE737.setFromNode("Stop_l_knee_RotationInterpolator")
-ROUTE737.setToField("set_rotation")
-ROUTE737.setToNode("boxman_l_knee")
-
-Scene34.addChildren(ROUTE737)
-ROUTE738 = ROUTE()
-ROUTE738.setFromField("value_changed")
-ROUTE738.setFromNode("Stop_l_ankle_RotationInterpolator")
-ROUTE738.setToField("set_rotation")
-ROUTE738.setToNode("boxman_l_ankle")
-
-Scene34.addChildren(ROUTE738)
-ROUTE739 = ROUTE()
-ROUTE739.setFromField("value_changed")
-ROUTE739.setFromNode("Stop_l_midtarsal_RotationInterpolator")
-ROUTE739.setToField("set_rotation")
-ROUTE739.setToNode("boxman_l_midtarsal")
-
-Scene34.addChildren(ROUTE739)
-ROUTE740 = ROUTE()
-ROUTE740.setFromField("value_changed")
-ROUTE740.setFromNode("Stop_r_hip_RotationInterpolator")
-ROUTE740.setToField("set_rotation")
-ROUTE740.setToNode("boxman_r_hip")
-
-Scene34.addChildren(ROUTE740)
-ROUTE741 = ROUTE()
-ROUTE741.setFromField("value_changed")
-ROUTE741.setFromNode("Stop_r_knee_RotationInterpolator")
-ROUTE741.setToField("set_rotation")
-ROUTE741.setToNode("boxman_r_knee")
-
-Scene34.addChildren(ROUTE741)
-ROUTE742 = ROUTE()
-ROUTE742.setFromField("value_changed")
-ROUTE742.setFromNode("Stop_r_ankle_RotationInterpolator")
-ROUTE742.setToField("set_rotation")
-ROUTE742.setToNode("boxman_r_ankle")
-
-Scene34.addChildren(ROUTE742)
-ROUTE743 = ROUTE()
-ROUTE743.setFromField("value_changed")
-ROUTE743.setFromNode("Stop_r_midtarsal_RotationInterpolator")
-ROUTE743.setToField("set_rotation")
-ROUTE743.setToNode("boxman_r_midtarsal")
-
-Scene34.addChildren(ROUTE743)
-ROUTE744 = ROUTE()
-ROUTE744.setFromField("value_changed")
-ROUTE744.setFromNode("Stop_vl5_RotationInterpolator")
-ROUTE744.setToField("set_rotation")
-ROUTE744.setToNode("boxman_vl5")
-
-Scene34.addChildren(ROUTE744)
-ROUTE745 = ROUTE()
-ROUTE745.setFromField("value_changed")
-ROUTE745.setFromNode("Stop_skullbase_RotationInterpolator")
-ROUTE745.setToField("set_rotation")
-ROUTE745.setToNode("boxman_skullbase")
-
-Scene34.addChildren(ROUTE745)
-ROUTE746 = ROUTE()
-ROUTE746.setFromField("value_changed")
-ROUTE746.setFromNode("Stop_l_shoulder_RotationInterpolator")
-ROUTE746.setToField("set_rotation")
-ROUTE746.setToNode("boxman_l_shoulder")
-
-Scene34.addChildren(ROUTE746)
-ROUTE747 = ROUTE()
-ROUTE747.setFromField("value_changed")
-ROUTE747.setFromNode("Stop_l_elbow_RotationInterpolator")
-ROUTE747.setToField("set_rotation")
-ROUTE747.setToNode("boxman_l_elbow")
-
-Scene34.addChildren(ROUTE747)
-ROUTE748 = ROUTE()
-ROUTE748.setFromField("value_changed")
-ROUTE748.setFromNode("Stop_l_wrist_RotationInterpolator")
-ROUTE748.setToField("set_rotation")
-ROUTE748.setToNode("boxman_l_wrist")
-
-Scene34.addChildren(ROUTE748)
-ROUTE749 = ROUTE()
-ROUTE749.setFromField("value_changed")
-ROUTE749.setFromNode("Stop_r_shoulder_RotationInterpolator")
-ROUTE749.setToField("set_rotation")
-ROUTE749.setToNode("boxman_r_shoulder")
-
-Scene34.addChildren(ROUTE749)
-ROUTE750 = ROUTE()
-ROUTE750.setFromField("value_changed")
-ROUTE750.setFromNode("Stop_r_elbow_RotationInterpolator")
-ROUTE750.setToField("set_rotation")
-ROUTE750.setToNode("boxman_r_elbow")
-
-Scene34.addChildren(ROUTE750)
-ROUTE751 = ROUTE()
-ROUTE751.setFromField("value_changed")
-ROUTE751.setFromNode("Stop_r_wrist_RotationInterpolator")
-ROUTE751.setToField("set_rotation")
-ROUTE751.setToNode("boxman_r_wrist")
-
-Scene34.addChildren(ROUTE751)
-ROUTE752 = ROUTE()
-ROUTE752.setFromField("fraction_changed")
-ROUTE752.setFromNode("StandTimer")
-ROUTE752.setToField("set_fraction")
-ROUTE752.setToNode("Stand_r_ankle_RotationInterpolator")
-
-Scene34.addChildren(ROUTE752)
-ROUTE753 = ROUTE()
-ROUTE753.setFromField("fraction_changed")
-ROUTE753.setFromNode("StandTimer")
-ROUTE753.setToField("set_fraction")
-ROUTE753.setToNode("Stand_r_knee_RotationInterpolator")
-
-Scene34.addChildren(ROUTE753)
-ROUTE754 = ROUTE()
-ROUTE754.setFromField("fraction_changed")
-ROUTE754.setFromNode("StandTimer")
-ROUTE754.setToField("set_fraction")
-ROUTE754.setToNode("Stand_r_hip_RotationInterpolator")
-
-Scene34.addChildren(ROUTE754)
-ROUTE755 = ROUTE()
-ROUTE755.setFromField("fraction_changed")
-ROUTE755.setFromNode("StandTimer")
-ROUTE755.setToField("set_fraction")
-ROUTE755.setToNode("Stand_l_ankle_RotationInterpolator")
-
-Scene34.addChildren(ROUTE755)
-ROUTE756 = ROUTE()
-ROUTE756.setFromField("fraction_changed")
-ROUTE756.setFromNode("StandTimer")
-ROUTE756.setToField("set_fraction")
-ROUTE756.setToNode("Stand_l_knee_RotationInterpolator")
-
-Scene34.addChildren(ROUTE756)
-ROUTE757 = ROUTE()
-ROUTE757.setFromField("fraction_changed")
-ROUTE757.setFromNode("StandTimer")
-ROUTE757.setToField("set_fraction")
-ROUTE757.setToNode("Stand_l_hip_RotationInterpolator")
-
-Scene34.addChildren(ROUTE757)
-ROUTE758 = ROUTE()
-ROUTE758.setFromField("fraction_changed")
-ROUTE758.setFromNode("StandTimer")
-ROUTE758.setToField("set_fraction")
-ROUTE758.setToNode("Stand_lower_body_RotationInterpolator")
-
-Scene34.addChildren(ROUTE758)
-ROUTE759 = ROUTE()
-ROUTE759.setFromField("fraction_changed")
-ROUTE759.setFromNode("StandTimer")
-ROUTE759.setToField("set_fraction")
-ROUTE759.setToNode("Stand_r_wrist_RotationInterpolator")
-
-Scene34.addChildren(ROUTE759)
-ROUTE760 = ROUTE()
-ROUTE760.setFromField("fraction_changed")
-ROUTE760.setFromNode("StandTimer")
-ROUTE760.setToField("set_fraction")
-ROUTE760.setToNode("Stand_r_elbow_RotationInterpolator")
-
-Scene34.addChildren(ROUTE760)
-ROUTE761 = ROUTE()
-ROUTE761.setFromField("fraction_changed")
-ROUTE761.setFromNode("StandTimer")
-ROUTE761.setToField("set_fraction")
-ROUTE761.setToNode("Stand_r_shoulder_RotationInterpolator")
-
-Scene34.addChildren(ROUTE761)
-ROUTE762 = ROUTE()
-ROUTE762.setFromField("fraction_changed")
-ROUTE762.setFromNode("StandTimer")
-ROUTE762.setToField("set_fraction")
-ROUTE762.setToNode("Stand_l_wrist_RotationInterpolator")
-
-Scene34.addChildren(ROUTE762)
-ROUTE763 = ROUTE()
-ROUTE763.setFromField("fraction_changed")
-ROUTE763.setFromNode("StandTimer")
-ROUTE763.setToField("set_fraction")
-ROUTE763.setToNode("Stand_l_elbow_RotationInterpolator")
-
-Scene34.addChildren(ROUTE763)
-ROUTE764 = ROUTE()
-ROUTE764.setFromField("fraction_changed")
-ROUTE764.setFromNode("StandTimer")
-ROUTE764.setToField("set_fraction")
-ROUTE764.setToNode("Stand_l_shoulder_RotationInterpolator")
-
-Scene34.addChildren(ROUTE764)
-ROUTE765 = ROUTE()
-ROUTE765.setFromField("fraction_changed")
-ROUTE765.setFromNode("StandTimer")
-ROUTE765.setToField("set_fraction")
-ROUTE765.setToNode("Stand_head_RotationInterpolator")
-
-Scene34.addChildren(ROUTE765)
-ROUTE766 = ROUTE()
-ROUTE766.setFromField("fraction_changed")
-ROUTE766.setFromNode("StandTimer")
-ROUTE766.setToField("set_fraction")
-ROUTE766.setToNode("Stand_neck_RotationInterpolator")
-
-Scene34.addChildren(ROUTE766)
-ROUTE767 = ROUTE()
-ROUTE767.setFromField("fraction_changed")
-ROUTE767.setFromNode("StandTimer")
-ROUTE767.setToField("set_fraction")
-ROUTE767.setToNode("Stand_l_eyeball_RotationInterpolator")
-
-Scene34.addChildren(ROUTE767)
-ROUTE768 = ROUTE()
-ROUTE768.setFromField("fraction_changed")
-ROUTE768.setFromNode("StandTimer")
-ROUTE768.setToField("set_fraction")
-ROUTE768.setToNode("Stand_r_eyeball_RotationInterpolator")
-
-Scene34.addChildren(ROUTE768)
-ROUTE769 = ROUTE()
-ROUTE769.setFromField("fraction_changed")
-ROUTE769.setFromNode("StandTimer")
-ROUTE769.setToField("set_fraction")
-ROUTE769.setToNode("Stand_upper_body_RotationInterpolator")
-
-Scene34.addChildren(ROUTE769)
-ROUTE770 = ROUTE()
-ROUTE770.setFromField("fraction_changed")
-ROUTE770.setFromNode("StandTimer")
-ROUTE770.setToField("set_fraction")
-ROUTE770.setToNode("Stand_whole_body_RotationInterpolator")
-
-Scene34.addChildren(ROUTE770)
-ROUTE771 = ROUTE()
-ROUTE771.setFromField("fraction_changed")
-ROUTE771.setFromNode("StandTimer")
-ROUTE771.setToField("set_fraction")
-ROUTE771.setToNode("Stand_whole_body_TranslationInterpolator")
-
-Scene34.addChildren(ROUTE771)
-ROUTE772 = ROUTE()
-ROUTE772.setFromField("fraction_changed")
-ROUTE772.setFromNode("StandTimer")
-ROUTE772.setToField("set_fraction")
-ROUTE772.setToNode("Stand_l_sternoclavicular_RollInterpolator")
-
-Scene34.addChildren(ROUTE772)
-ROUTE773 = ROUTE()
-ROUTE773.setFromField("fraction_changed")
-ROUTE773.setFromNode("StandTimer")
-ROUTE773.setToField("set_fraction")
-ROUTE773.setToNode("Stand_l_acromioclavicular_RollInterpolator")
-
-Scene34.addChildren(ROUTE773)
-ROUTE774 = ROUTE()
-ROUTE774.setFromField("fraction_changed")
-ROUTE774.setFromNode("StandTimer")
-ROUTE774.setToField("set_fraction")
-ROUTE774.setToNode("Stand_r_sternoclavicular_RollInterpolator")
-
-Scene34.addChildren(ROUTE774)
-ROUTE775 = ROUTE()
-ROUTE775.setFromField("fraction_changed")
-ROUTE775.setFromNode("StandTimer")
-ROUTE775.setToField("set_fraction")
-ROUTE775.setToNode("Stand_r_acromioclavicular_RollInterpolator")
-
-Scene34.addChildren(ROUTE775)
-ROUTE776 = ROUTE()
-ROUTE776.setFromField("fraction_changed")
-ROUTE776.setFromNode("StandTimer")
-ROUTE776.setToField("set_fraction")
-ROUTE776.setToNode("Stand_r_metatarsal_PitchInterpolator")
-
-Scene34.addChildren(ROUTE776)
-ROUTE777 = ROUTE()
-ROUTE777.setFromField("fraction_changed")
-ROUTE777.setFromNode("StandTimer")
-ROUTE777.setToField("set_fraction")
-ROUTE777.setToNode("Stand_sacroiliac_YawInterpolator")
-
-Scene34.addChildren(ROUTE777)
-ROUTE778 = ROUTE()
-ROUTE778.setFromField("fraction_changed")
-ROUTE778.setFromNode("StandTimer")
-ROUTE778.setToField("set_fraction")
-ROUTE778.setToNode("Stand_vl5_YawInterpolator")
-
-Scene34.addChildren(ROUTE778)
-ROUTE779 = ROUTE()
-ROUTE779.setFromField("fraction_changed")
-ROUTE779.setFromNode("StandTimer")
-ROUTE779.setToField("set_fraction")
-ROUTE779.setToNode("Stand_vc6_YawInterpolator")
-
-Scene34.addChildren(ROUTE779)
-ROUTE780 = ROUTE()
-ROUTE780.setFromField("fraction_changed")
-ROUTE780.setFromNode("StandTimer")
-ROUTE780.setToField("set_fraction")
-ROUTE780.setToNode("Stand_l_thumb1_PitchInterpolator")
-
-Scene34.addChildren(ROUTE780)
-ROUTE781 = ROUTE()
-ROUTE781.setFromField("fraction_changed")
-ROUTE781.setFromNode("StandTimer")
-ROUTE781.setToField("set_fraction")
-ROUTE781.setToNode("Stand_r_thumb1_PitchInterpolator")
-
-Scene34.addChildren(ROUTE781)
-ROUTE782 = ROUTE()
-ROUTE782.setFromField("fraction_changed")
-ROUTE782.setFromNode("StandTimer")
-ROUTE782.setToField("set_fraction")
-ROUTE782.setToNode("Stand_r_index1_RollInterpolator")
-
-Scene34.addChildren(ROUTE782)
-ROUTE783 = ROUTE()
-ROUTE783.setFromField("fraction_changed")
-ROUTE783.setFromNode("StandTimer")
-ROUTE783.setToField("set_fraction")
-ROUTE783.setToNode("Stand_r_index2_RollInterpolator")
-
-Scene34.addChildren(ROUTE783)
-ROUTE784 = ROUTE()
-ROUTE784.setFromField("fraction_changed")
-ROUTE784.setFromNode("StandTimer")
-ROUTE784.setToField("set_fraction")
-ROUTE784.setToNode("Stand_r_index3_RollInterpolator")
-
-Scene34.addChildren(ROUTE784)
-ROUTE785 = ROUTE()
-ROUTE785.setFromField("value_changed")
-ROUTE785.setFromNode("Stand_r_ankle_RotationInterpolator")
-ROUTE785.setToField("set_rotation")
-ROUTE785.setToNode("boxman_r_ankle")
-
-Scene34.addChildren(ROUTE785)
-ROUTE786 = ROUTE()
-ROUTE786.setFromField("value_changed")
-ROUTE786.setFromNode("Stand_r_knee_RotationInterpolator")
-ROUTE786.setToField("set_rotation")
-ROUTE786.setToNode("boxman_r_knee")
-
-Scene34.addChildren(ROUTE786)
-ROUTE787 = ROUTE()
-ROUTE787.setFromField("value_changed")
-ROUTE787.setFromNode("Stand_r_hip_RotationInterpolator")
-ROUTE787.setToField("set_rotation")
-ROUTE787.setToNode("boxman_r_hip")
-
-Scene34.addChildren(ROUTE787)
-ROUTE788 = ROUTE()
-ROUTE788.setFromField("value_changed")
-ROUTE788.setFromNode("Stand_l_ankle_RotationInterpolator")
-ROUTE788.setToField("set_rotation")
-ROUTE788.setToNode("boxman_l_ankle")
-
-Scene34.addChildren(ROUTE788)
-ROUTE789 = ROUTE()
-ROUTE789.setFromField("value_changed")
-ROUTE789.setFromNode("Stand_l_knee_RotationInterpolator")
-ROUTE789.setToField("set_rotation")
-ROUTE789.setToNode("boxman_l_knee")
-
-Scene34.addChildren(ROUTE789)
-ROUTE790 = ROUTE()
-ROUTE790.setFromField("value_changed")
-ROUTE790.setFromNode("Stand_l_hip_RotationInterpolator")
-ROUTE790.setToField("set_rotation")
-ROUTE790.setToNode("boxman_l_hip")
-
-Scene34.addChildren(ROUTE790)
-ROUTE791 = ROUTE()
-ROUTE791.setFromField("value_changed")
-ROUTE791.setFromNode("Stand_r_wrist_RotationInterpolator")
-ROUTE791.setToField("set_rotation")
-ROUTE791.setToNode("boxman_r_wrist")
-
-Scene34.addChildren(ROUTE791)
-ROUTE792 = ROUTE()
-ROUTE792.setFromField("value_changed")
-ROUTE792.setFromNode("Stand_r_elbow_RotationInterpolator")
-ROUTE792.setToField("set_rotation")
-ROUTE792.setToNode("boxman_r_elbow")
-
-Scene34.addChildren(ROUTE792)
-ROUTE793 = ROUTE()
-ROUTE793.setFromField("value_changed")
-ROUTE793.setFromNode("Stand_r_shoulder_RotationInterpolator")
-ROUTE793.setToField("set_rotation")
-ROUTE793.setToNode("boxman_r_shoulder")
-
-Scene34.addChildren(ROUTE793)
-ROUTE794 = ROUTE()
-ROUTE794.setFromField("value_changed")
-ROUTE794.setFromNode("Stand_l_wrist_RotationInterpolator")
-ROUTE794.setToField("set_rotation")
-ROUTE794.setToNode("boxman_l_wrist")
-
-Scene34.addChildren(ROUTE794)
-ROUTE795 = ROUTE()
-ROUTE795.setFromField("value_changed")
-ROUTE795.setFromNode("Stand_l_elbow_RotationInterpolator")
-ROUTE795.setToField("set_rotation")
-ROUTE795.setToNode("boxman_l_elbow")
-
-Scene34.addChildren(ROUTE795)
-ROUTE796 = ROUTE()
-ROUTE796.setFromField("value_changed")
-ROUTE796.setFromNode("Stand_l_shoulder_RotationInterpolator")
-ROUTE796.setToField("set_rotation")
-ROUTE796.setToNode("boxman_l_shoulder")
-
-Scene34.addChildren(ROUTE796)
-ROUTE797 = ROUTE()
-ROUTE797.setFromField("value_changed")
-ROUTE797.setFromNode("Stand_head_RotationInterpolator")
-ROUTE797.setToField("set_rotation")
-ROUTE797.setToNode("boxman_skullbase")
-
-Scene34.addChildren(ROUTE797)
-ROUTE798 = ROUTE()
-ROUTE798.setFromField("value_changed")
-ROUTE798.setFromNode("Stand_whole_body_RotationInterpolator")
-ROUTE798.setToField("set_rotation")
-ROUTE798.setToNode("boxman_humanoid_root")
-
-Scene34.addChildren(ROUTE798)
-ROUTE799 = ROUTE()
-ROUTE799.setFromField("value_changed")
-ROUTE799.setFromNode("Stand_whole_body_TranslationInterpolator")
-ROUTE799.setToField("set_translation")
-ROUTE799.setToNode("boxman_humanoid_root")
-
-Scene34.addChildren(ROUTE799)
-ROUTE800 = ROUTE()
-ROUTE800.setFromField("value_changed")
-ROUTE800.setFromNode("Stand_vl5_YawInterpolator")
-ROUTE800.setToField("set_rotation")
-ROUTE800.setToNode("boxman_vl5")
-
-Scene34.addChildren(ROUTE800)
-ROUTE801 = ROUTE()
-ROUTE801.setFromField("fraction_changed")
-ROUTE801.setFromNode("PitchTimer")
-ROUTE801.setToField("set_fraction")
-ROUTE801.setToNode("Pitches_r_ankle_RotationInterpolator")
-
-Scene34.addChildren(ROUTE801)
-ROUTE802 = ROUTE()
-ROUTE802.setFromField("fraction_changed")
-ROUTE802.setFromNode("PitchTimer")
-ROUTE802.setToField("set_fraction")
-ROUTE802.setToNode("Pitches_r_knee_RotationInterpolator")
-
-Scene34.addChildren(ROUTE802)
-ROUTE803 = ROUTE()
-ROUTE803.setFromField("fraction_changed")
-ROUTE803.setFromNode("PitchTimer")
-ROUTE803.setToField("set_fraction")
-ROUTE803.setToNode("Pitches_r_hip_RotationInterpolator")
-
-Scene34.addChildren(ROUTE803)
-ROUTE804 = ROUTE()
-ROUTE804.setFromField("fraction_changed")
-ROUTE804.setFromNode("PitchTimer")
-ROUTE804.setToField("set_fraction")
-ROUTE804.setToNode("Pitches_l_ankle_RotationInterpolator")
-
-Scene34.addChildren(ROUTE804)
-ROUTE805 = ROUTE()
-ROUTE805.setFromField("fraction_changed")
-ROUTE805.setFromNode("PitchTimer")
-ROUTE805.setToField("set_fraction")
-ROUTE805.setToNode("Pitches_l_knee_RotationInterpolator")
-
-Scene34.addChildren(ROUTE805)
-ROUTE806 = ROUTE()
-ROUTE806.setFromField("fraction_changed")
-ROUTE806.setFromNode("PitchTimer")
-ROUTE806.setToField("set_fraction")
-ROUTE806.setToNode("Pitches_l_hip_RotationInterpolator")
-
-Scene34.addChildren(ROUTE806)
-ROUTE807 = ROUTE()
-ROUTE807.setFromField("fraction_changed")
-ROUTE807.setFromNode("PitchTimer")
-ROUTE807.setToField("set_fraction")
-ROUTE807.setToNode("Pitches_lower_body_RotationInterpolator")
-
-Scene34.addChildren(ROUTE807)
-ROUTE808 = ROUTE()
-ROUTE808.setFromField("fraction_changed")
-ROUTE808.setFromNode("PitchTimer")
-ROUTE808.setToField("set_fraction")
-ROUTE808.setToNode("Pitches_r_wrist_RotationInterpolator")
-
-Scene34.addChildren(ROUTE808)
-ROUTE809 = ROUTE()
-ROUTE809.setFromField("fraction_changed")
-ROUTE809.setFromNode("PitchTimer")
-ROUTE809.setToField("set_fraction")
-ROUTE809.setToNode("Pitches_r_elbow_RotationInterpolator")
-
-Scene34.addChildren(ROUTE809)
-ROUTE810 = ROUTE()
-ROUTE810.setFromField("fraction_changed")
-ROUTE810.setFromNode("PitchTimer")
-ROUTE810.setToField("set_fraction")
-ROUTE810.setToNode("Pitches_r_shoulder_RotationInterpolator")
-
-Scene34.addChildren(ROUTE810)
-ROUTE811 = ROUTE()
-ROUTE811.setFromField("fraction_changed")
-ROUTE811.setFromNode("PitchTimer")
-ROUTE811.setToField("set_fraction")
-ROUTE811.setToNode("Pitches_l_wrist_RotationInterpolator")
-
-Scene34.addChildren(ROUTE811)
-ROUTE812 = ROUTE()
-ROUTE812.setFromField("fraction_changed")
-ROUTE812.setFromNode("PitchTimer")
-ROUTE812.setToField("set_fraction")
-ROUTE812.setToNode("Pitches_l_elbow_RotationInterpolator")
-
-Scene34.addChildren(ROUTE812)
-ROUTE813 = ROUTE()
-ROUTE813.setFromField("fraction_changed")
-ROUTE813.setFromNode("PitchTimer")
-ROUTE813.setToField("set_fraction")
-ROUTE813.setToNode("Pitches_l_shoulder_RotationInterpolator")
-
-Scene34.addChildren(ROUTE813)
-ROUTE814 = ROUTE()
-ROUTE814.setFromField("fraction_changed")
-ROUTE814.setFromNode("PitchTimer")
-ROUTE814.setToField("set_fraction")
-ROUTE814.setToNode("Pitches_head_RotationInterpolator")
-
-Scene34.addChildren(ROUTE814)
-ROUTE815 = ROUTE()
-ROUTE815.setFromField("fraction_changed")
-ROUTE815.setFromNode("PitchTimer")
-ROUTE815.setToField("set_fraction")
-ROUTE815.setToNode("Pitches_neck_RotationInterpolator")
-
-Scene34.addChildren(ROUTE815)
-ROUTE816 = ROUTE()
-ROUTE816.setFromField("fraction_changed")
-ROUTE816.setFromNode("PitchTimer")
-ROUTE816.setToField("set_fraction")
-ROUTE816.setToNode("Pitches_upper_body_RotationInterpolator")
-
-Scene34.addChildren(ROUTE816)
-ROUTE817 = ROUTE()
-ROUTE817.setFromField("fraction_changed")
-ROUTE817.setFromNode("PitchTimer")
-ROUTE817.setToField("set_fraction")
-ROUTE817.setToNode("Pitches_whole_body_RotationInterpolator")
-
-Scene34.addChildren(ROUTE817)
-ROUTE818 = ROUTE()
-ROUTE818.setFromField("fraction_changed")
-ROUTE818.setFromNode("PitchTimer")
-ROUTE818.setToField("set_fraction")
-ROUTE818.setToNode("Pitches_whole_body_TranslationInterpolator")
-
-Scene34.addChildren(ROUTE818)
-ROUTE819 = ROUTE()
-ROUTE819.setFromField("fraction_changed")
-ROUTE819.setFromNode("PitchTimer")
-ROUTE819.setToField("set_fraction")
-ROUTE819.setToNode("Pitch_l_sternoclavicular_RollInterpolator")
-
-Scene34.addChildren(ROUTE819)
-ROUTE820 = ROUTE()
-ROUTE820.setFromField("fraction_changed")
-ROUTE820.setFromNode("PitchTimer")
-ROUTE820.setToField("set_fraction")
-ROUTE820.setToNode("Pitch_l_acromioclavicular_RollInterpolator")
-
-Scene34.addChildren(ROUTE820)
-ROUTE821 = ROUTE()
-ROUTE821.setFromField("fraction_changed")
-ROUTE821.setFromNode("PitchTimer")
-ROUTE821.setToField("set_fraction")
-ROUTE821.setToNode("Pitch_r_sternoclavicular_RollInterpolator")
-
-Scene34.addChildren(ROUTE821)
-ROUTE822 = ROUTE()
-ROUTE822.setFromField("fraction_changed")
-ROUTE822.setFromNode("PitchTimer")
-ROUTE822.setToField("set_fraction")
-ROUTE822.setToNode("Pitch_r_acromioclavicular_RollInterpolator")
-
-Scene34.addChildren(ROUTE822)
-ROUTE823 = ROUTE()
-ROUTE823.setFromField("fraction_changed")
-ROUTE823.setFromNode("PitchTimer")
-ROUTE823.setToField("set_fraction")
-ROUTE823.setToNode("Pitch_r_metatarsal_PitchInterpolator")
-
-Scene34.addChildren(ROUTE823)
-ROUTE824 = ROUTE()
-ROUTE824.setFromField("fraction_changed")
-ROUTE824.setFromNode("PitchTimer")
-ROUTE824.setToField("set_fraction")
-ROUTE824.setToNode("Pitch_sacroiliac_YawInterpolator")
-
-Scene34.addChildren(ROUTE824)
-ROUTE825 = ROUTE()
-ROUTE825.setFromField("fraction_changed")
-ROUTE825.setFromNode("PitchTimer")
-ROUTE825.setToField("set_fraction")
-ROUTE825.setToNode("Pitch_vl5_YawInterpolator")
-
-Scene34.addChildren(ROUTE825)
-ROUTE826 = ROUTE()
-ROUTE826.setFromField("fraction_changed")
-ROUTE826.setFromNode("PitchTimer")
-ROUTE826.setToField("set_fraction")
-ROUTE826.setToNode("Pitch_vc6_YawInterpolator")
-
-Scene34.addChildren(ROUTE826)
-ROUTE827 = ROUTE()
-ROUTE827.setFromField("fraction_changed")
-ROUTE827.setFromNode("PitchTimer")
-ROUTE827.setToField("set_fraction")
-ROUTE827.setToNode("Pitch_l_thumb1_PitchInterpolator")
-
-Scene34.addChildren(ROUTE827)
-ROUTE828 = ROUTE()
-ROUTE828.setFromField("fraction_changed")
-ROUTE828.setFromNode("PitchTimer")
-ROUTE828.setToField("set_fraction")
-ROUTE828.setToNode("Pitch_r_thumb1_PitchInterpolator")
-
-Scene34.addChildren(ROUTE828)
-ROUTE829 = ROUTE()
-ROUTE829.setFromField("value_changed")
-ROUTE829.setFromNode("Pitches_r_ankle_RotationInterpolator")
-ROUTE829.setToField("set_rotation")
-ROUTE829.setToNode("boxman_r_ankle")
-
-Scene34.addChildren(ROUTE829)
-ROUTE830 = ROUTE()
-ROUTE830.setFromField("value_changed")
-ROUTE830.setFromNode("Pitches_r_knee_RotationInterpolator")
-ROUTE830.setToField("set_rotation")
-ROUTE830.setToNode("boxman_r_knee")
-
-Scene34.addChildren(ROUTE830)
-ROUTE831 = ROUTE()
-ROUTE831.setFromField("value_changed")
-ROUTE831.setFromNode("Pitches_r_hip_RotationInterpolator")
-ROUTE831.setToField("set_rotation")
-ROUTE831.setToNode("boxman_r_hip")
-
-Scene34.addChildren(ROUTE831)
-ROUTE832 = ROUTE()
-ROUTE832.setFromField("value_changed")
-ROUTE832.setFromNode("Pitches_l_ankle_RotationInterpolator")
-ROUTE832.setToField("set_rotation")
-ROUTE832.setToNode("boxman_l_ankle")
-
-Scene34.addChildren(ROUTE832)
-ROUTE833 = ROUTE()
-ROUTE833.setFromField("value_changed")
-ROUTE833.setFromNode("Pitches_l_knee_RotationInterpolator")
-ROUTE833.setToField("set_rotation")
-ROUTE833.setToNode("boxman_l_knee")
-
-Scene34.addChildren(ROUTE833)
-ROUTE834 = ROUTE()
-ROUTE834.setFromField("value_changed")
-ROUTE834.setFromNode("Pitches_l_hip_RotationInterpolator")
-ROUTE834.setToField("set_rotation")
-ROUTE834.setToNode("boxman_l_hip")
-
-Scene34.addChildren(ROUTE834)
-ROUTE835 = ROUTE()
-ROUTE835.setFromField("value_changed")
-ROUTE835.setFromNode("Pitches_r_wrist_RotationInterpolator")
-ROUTE835.setToField("set_rotation")
-ROUTE835.setToNode("boxman_r_wrist")
-
-Scene34.addChildren(ROUTE835)
-ROUTE836 = ROUTE()
-ROUTE836.setFromField("value_changed")
-ROUTE836.setFromNode("Pitches_r_elbow_RotationInterpolator")
-ROUTE836.setToField("set_rotation")
-ROUTE836.setToNode("boxman_r_elbow")
-
-Scene34.addChildren(ROUTE836)
-ROUTE837 = ROUTE()
-ROUTE837.setFromField("value_changed")
-ROUTE837.setFromNode("Pitches_r_shoulder_RotationInterpolator")
-ROUTE837.setToField("set_rotation")
-ROUTE837.setToNode("boxman_r_shoulder")
-
-Scene34.addChildren(ROUTE837)
-ROUTE838 = ROUTE()
-ROUTE838.setFromField("value_changed")
-ROUTE838.setFromNode("Pitches_l_wrist_RotationInterpolator")
-ROUTE838.setToField("set_rotation")
-ROUTE838.setToNode("boxman_l_wrist")
-
-Scene34.addChildren(ROUTE838)
-ROUTE839 = ROUTE()
-ROUTE839.setFromField("value_changed")
-ROUTE839.setFromNode("Pitches_l_elbow_RotationInterpolator")
-ROUTE839.setToField("set_rotation")
-ROUTE839.setToNode("boxman_l_elbow")
-
-Scene34.addChildren(ROUTE839)
-ROUTE840 = ROUTE()
-ROUTE840.setFromField("value_changed")
-ROUTE840.setFromNode("Pitches_l_shoulder_RotationInterpolator")
-ROUTE840.setToField("set_rotation")
-ROUTE840.setToNode("boxman_l_shoulder")
-
-Scene34.addChildren(ROUTE840)
-ROUTE841 = ROUTE()
-ROUTE841.setFromField("value_changed")
-ROUTE841.setFromNode("Pitches_head_RotationInterpolator")
-ROUTE841.setToField("set_rotation")
-ROUTE841.setToNode("boxman_skullbase")
-
-Scene34.addChildren(ROUTE841)
-ROUTE842 = ROUTE()
-ROUTE842.setFromField("value_changed")
-ROUTE842.setFromNode("Pitches_whole_body_RotationInterpolator")
-ROUTE842.setToField("set_rotation")
-ROUTE842.setToNode("boxman_humanoid_root")
-
-Scene34.addChildren(ROUTE842)
-ROUTE843 = ROUTE()
-ROUTE843.setFromField("value_changed")
-ROUTE843.setFromNode("Pitches_whole_body_TranslationInterpolator")
-ROUTE843.setToField("set_translation")
-ROUTE843.setToNode("boxman_humanoid_root")
-
-Scene34.addChildren(ROUTE843)
-ROUTE844 = ROUTE()
-ROUTE844.setFromField("value_changed")
-ROUTE844.setFromNode("Pitch_vl5_YawInterpolator")
-ROUTE844.setToField("set_rotation")
-ROUTE844.setToNode("boxman_vl5")
-
-Scene34.addChildren(ROUTE844)
-ROUTE845 = ROUTE()
-ROUTE845.setFromField("fraction_changed")
-ROUTE845.setFromNode("YawTimer")
-ROUTE845.setToField("set_fraction")
-ROUTE845.setToNode("Yaws_r_ankle_RotationInterpolator")
-
-Scene34.addChildren(ROUTE845)
-ROUTE846 = ROUTE()
-ROUTE846.setFromField("fraction_changed")
-ROUTE846.setFromNode("YawTimer")
-ROUTE846.setToField("set_fraction")
-ROUTE846.setToNode("Yaws_r_knee_RotationInterpolator")
-
-Scene34.addChildren(ROUTE846)
-ROUTE847 = ROUTE()
-ROUTE847.setFromField("fraction_changed")
-ROUTE847.setFromNode("YawTimer")
-ROUTE847.setToField("set_fraction")
-ROUTE847.setToNode("Yaws_r_hip_RotationInterpolator")
-
-Scene34.addChildren(ROUTE847)
-ROUTE848 = ROUTE()
-ROUTE848.setFromField("fraction_changed")
-ROUTE848.setFromNode("YawTimer")
-ROUTE848.setToField("set_fraction")
-ROUTE848.setToNode("Yaws_l_ankle_RotationInterpolator")
-
-Scene34.addChildren(ROUTE848)
-ROUTE849 = ROUTE()
-ROUTE849.setFromField("fraction_changed")
-ROUTE849.setFromNode("YawTimer")
-ROUTE849.setToField("set_fraction")
-ROUTE849.setToNode("Yaws_l_knee_RotationInterpolator")
-
-Scene34.addChildren(ROUTE849)
-ROUTE850 = ROUTE()
-ROUTE850.setFromField("fraction_changed")
-ROUTE850.setFromNode("YawTimer")
-ROUTE850.setToField("set_fraction")
-ROUTE850.setToNode("Yaws_l_hip_RotationInterpolator")
-
-Scene34.addChildren(ROUTE850)
-ROUTE851 = ROUTE()
-ROUTE851.setFromField("fraction_changed")
-ROUTE851.setFromNode("YawTimer")
-ROUTE851.setToField("set_fraction")
-ROUTE851.setToNode("Yaws_lower_body_RotationInterpolator")
-
-Scene34.addChildren(ROUTE851)
-ROUTE852 = ROUTE()
-ROUTE852.setFromField("fraction_changed")
-ROUTE852.setFromNode("YawTimer")
-ROUTE852.setToField("set_fraction")
-ROUTE852.setToNode("Yaws_r_wrist_RotationInterpolator")
-
-Scene34.addChildren(ROUTE852)
-ROUTE853 = ROUTE()
-ROUTE853.setFromField("fraction_changed")
-ROUTE853.setFromNode("YawTimer")
-ROUTE853.setToField("set_fraction")
-ROUTE853.setToNode("Yaws_r_elbow_RotationInterpolator")
-
-Scene34.addChildren(ROUTE853)
-ROUTE854 = ROUTE()
-ROUTE854.setFromField("fraction_changed")
-ROUTE854.setFromNode("YawTimer")
-ROUTE854.setToField("set_fraction")
-ROUTE854.setToNode("Yaws_r_shoulder_RotationInterpolator")
-
-Scene34.addChildren(ROUTE854)
-ROUTE855 = ROUTE()
-ROUTE855.setFromField("fraction_changed")
-ROUTE855.setFromNode("YawTimer")
-ROUTE855.setToField("set_fraction")
-ROUTE855.setToNode("Yaws_l_wrist_RotationInterpolator")
-
-Scene34.addChildren(ROUTE855)
-ROUTE856 = ROUTE()
-ROUTE856.setFromField("fraction_changed")
-ROUTE856.setFromNode("YawTimer")
-ROUTE856.setToField("set_fraction")
-ROUTE856.setToNode("Yaws_l_elbow_RotationInterpolator")
-
-Scene34.addChildren(ROUTE856)
-ROUTE857 = ROUTE()
-ROUTE857.setFromField("fraction_changed")
-ROUTE857.setFromNode("YawTimer")
-ROUTE857.setToField("set_fraction")
-ROUTE857.setToNode("Yaws_l_shoulder_RotationInterpolator")
-
-Scene34.addChildren(ROUTE857)
-ROUTE858 = ROUTE()
-ROUTE858.setFromField("fraction_changed")
-ROUTE858.setFromNode("YawTimer")
-ROUTE858.setToField("set_fraction")
-ROUTE858.setToNode("Yaws_head_RotationInterpolator")
-
-Scene34.addChildren(ROUTE858)
-ROUTE859 = ROUTE()
-ROUTE859.setFromField("fraction_changed")
-ROUTE859.setFromNode("YawTimer")
-ROUTE859.setToField("set_fraction")
-ROUTE859.setToNode("Yaws_neck_RotationInterpolator")
-
-Scene34.addChildren(ROUTE859)
-ROUTE860 = ROUTE()
-ROUTE860.setFromField("fraction_changed")
-ROUTE860.setFromNode("YawTimer")
-ROUTE860.setToField("set_fraction")
-ROUTE860.setToNode("Yaws_upper_body_RotationInterpolator")
-
-Scene34.addChildren(ROUTE860)
-ROUTE861 = ROUTE()
-ROUTE861.setFromField("fraction_changed")
-ROUTE861.setFromNode("YawTimer")
-ROUTE861.setToField("set_fraction")
-ROUTE861.setToNode("Yaws_whole_body_RotationInterpolator")
-
-Scene34.addChildren(ROUTE861)
-ROUTE862 = ROUTE()
-ROUTE862.setFromField("fraction_changed")
-ROUTE862.setFromNode("YawTimer")
-ROUTE862.setToField("set_fraction")
-ROUTE862.setToNode("Yaws_whole_body_TranslationInterpolator")
-
-Scene34.addChildren(ROUTE862)
-ROUTE863 = ROUTE()
-ROUTE863.setFromField("fraction_changed")
-ROUTE863.setFromNode("YawTimer")
-ROUTE863.setToField("set_fraction")
-ROUTE863.setToNode("Yaw_l_sternoclavicular_RollInterpolator")
-
-Scene34.addChildren(ROUTE863)
-ROUTE864 = ROUTE()
-ROUTE864.setFromField("fraction_changed")
-ROUTE864.setFromNode("YawTimer")
-ROUTE864.setToField("set_fraction")
-ROUTE864.setToNode("Yaw_l_acromioclavicular_RollInterpolator")
-
-Scene34.addChildren(ROUTE864)
-ROUTE865 = ROUTE()
-ROUTE865.setFromField("fraction_changed")
-ROUTE865.setFromNode("YawTimer")
-ROUTE865.setToField("set_fraction")
-ROUTE865.setToNode("Yaw_r_sternoclavicular_RollInterpolator")
-
-Scene34.addChildren(ROUTE865)
-ROUTE866 = ROUTE()
-ROUTE866.setFromField("fraction_changed")
-ROUTE866.setFromNode("YawTimer")
-ROUTE866.setToField("set_fraction")
-ROUTE866.setToNode("Yaw_r_acromioclavicular_RollInterpolator")
-
-Scene34.addChildren(ROUTE866)
-ROUTE867 = ROUTE()
-ROUTE867.setFromField("fraction_changed")
-ROUTE867.setFromNode("YawTimer")
-ROUTE867.setToField("set_fraction")
-ROUTE867.setToNode("Yaw_r_metatarsal_PitchInterpolator")
-
-Scene34.addChildren(ROUTE867)
-ROUTE868 = ROUTE()
-ROUTE868.setFromField("fraction_changed")
-ROUTE868.setFromNode("YawTimer")
-ROUTE868.setToField("set_fraction")
-ROUTE868.setToNode("Yaw_sacroiliac_YawInterpolator")
-
-Scene34.addChildren(ROUTE868)
-ROUTE869 = ROUTE()
-ROUTE869.setFromField("fraction_changed")
-ROUTE869.setFromNode("YawTimer")
-ROUTE869.setToField("set_fraction")
-ROUTE869.setToNode("Yaw_vl5_YawInterpolator")
-
-Scene34.addChildren(ROUTE869)
-ROUTE870 = ROUTE()
-ROUTE870.setFromField("fraction_changed")
-ROUTE870.setFromNode("YawTimer")
-ROUTE870.setToField("set_fraction")
-ROUTE870.setToNode("Yaw_vc6_YawInterpolator")
-
-Scene34.addChildren(ROUTE870)
-ROUTE871 = ROUTE()
-ROUTE871.setFromField("fraction_changed")
-ROUTE871.setFromNode("YawTimer")
-ROUTE871.setToField("set_fraction")
-ROUTE871.setToNode("Yaw_l_thumb1_PitchInterpolator")
-
-Scene34.addChildren(ROUTE871)
-ROUTE872 = ROUTE()
-ROUTE872.setFromField("fraction_changed")
-ROUTE872.setFromNode("YawTimer")
-ROUTE872.setToField("set_fraction")
-ROUTE872.setToNode("Yaw_r_thumb1_PitchInterpolator")
-
-Scene34.addChildren(ROUTE872)
-ROUTE873 = ROUTE()
-ROUTE873.setFromField("value_changed")
-ROUTE873.setFromNode("Yaws_r_ankle_RotationInterpolator")
-ROUTE873.setToField("set_rotation")
-ROUTE873.setToNode("boxman_r_ankle")
-
-Scene34.addChildren(ROUTE873)
-ROUTE874 = ROUTE()
-ROUTE874.setFromField("value_changed")
-ROUTE874.setFromNode("Yaws_r_knee_RotationInterpolator")
-ROUTE874.setToField("set_rotation")
-ROUTE874.setToNode("boxman_r_knee")
-
-Scene34.addChildren(ROUTE874)
-ROUTE875 = ROUTE()
-ROUTE875.setFromField("value_changed")
-ROUTE875.setFromNode("Yaws_r_hip_RotationInterpolator")
-ROUTE875.setToField("set_rotation")
-ROUTE875.setToNode("boxman_r_hip")
-
-Scene34.addChildren(ROUTE875)
-ROUTE876 = ROUTE()
-ROUTE876.setFromField("value_changed")
-ROUTE876.setFromNode("Yaws_l_ankle_RotationInterpolator")
-ROUTE876.setToField("set_rotation")
-ROUTE876.setToNode("boxman_l_ankle")
-
-Scene34.addChildren(ROUTE876)
-ROUTE877 = ROUTE()
-ROUTE877.setFromField("value_changed")
-ROUTE877.setFromNode("Yaws_l_knee_RotationInterpolator")
-ROUTE877.setToField("set_rotation")
-ROUTE877.setToNode("boxman_l_knee")
-
-Scene34.addChildren(ROUTE877)
-ROUTE878 = ROUTE()
-ROUTE878.setFromField("value_changed")
-ROUTE878.setFromNode("Yaws_l_hip_RotationInterpolator")
-ROUTE878.setToField("set_rotation")
-ROUTE878.setToNode("boxman_l_hip")
-
-Scene34.addChildren(ROUTE878)
-ROUTE879 = ROUTE()
-ROUTE879.setFromField("value_changed")
-ROUTE879.setFromNode("Yaws_r_wrist_RotationInterpolator")
-ROUTE879.setToField("set_rotation")
-ROUTE879.setToNode("boxman_r_wrist")
-
-Scene34.addChildren(ROUTE879)
-ROUTE880 = ROUTE()
-ROUTE880.setFromField("value_changed")
-ROUTE880.setFromNode("Yaws_r_elbow_RotationInterpolator")
-ROUTE880.setToField("set_rotation")
-ROUTE880.setToNode("boxman_r_elbow")
-
-Scene34.addChildren(ROUTE880)
-ROUTE881 = ROUTE()
-ROUTE881.setFromField("value_changed")
-ROUTE881.setFromNode("Yaws_r_shoulder_RotationInterpolator")
-ROUTE881.setToField("set_rotation")
-ROUTE881.setToNode("boxman_r_shoulder")
-
-Scene34.addChildren(ROUTE881)
-ROUTE882 = ROUTE()
-ROUTE882.setFromField("value_changed")
-ROUTE882.setFromNode("Yaws_l_wrist_RotationInterpolator")
-ROUTE882.setToField("set_rotation")
-ROUTE882.setToNode("boxman_l_wrist")
-
-Scene34.addChildren(ROUTE882)
-ROUTE883 = ROUTE()
-ROUTE883.setFromField("value_changed")
-ROUTE883.setFromNode("Yaws_l_elbow_RotationInterpolator")
-ROUTE883.setToField("set_rotation")
-ROUTE883.setToNode("boxman_l_elbow")
-
-Scene34.addChildren(ROUTE883)
-ROUTE884 = ROUTE()
-ROUTE884.setFromField("value_changed")
-ROUTE884.setFromNode("Yaws_l_shoulder_RotationInterpolator")
-ROUTE884.setToField("set_rotation")
-ROUTE884.setToNode("boxman_l_shoulder")
-
-Scene34.addChildren(ROUTE884)
-ROUTE885 = ROUTE()
-ROUTE885.setFromField("value_changed")
-ROUTE885.setFromNode("Yaws_head_RotationInterpolator")
-ROUTE885.setToField("set_rotation")
-ROUTE885.setToNode("boxman_skullbase")
-
-Scene34.addChildren(ROUTE885)
-ROUTE886 = ROUTE()
-ROUTE886.setFromField("value_changed")
-ROUTE886.setFromNode("Yaws_whole_body_RotationInterpolator")
-ROUTE886.setToField("set_rotation")
-ROUTE886.setToNode("boxman_humanoid_root")
-
-Scene34.addChildren(ROUTE886)
-ROUTE887 = ROUTE()
-ROUTE887.setFromField("value_changed")
-ROUTE887.setFromNode("Yaws_whole_body_TranslationInterpolator")
-ROUTE887.setToField("set_translation")
-ROUTE887.setToNode("boxman_humanoid_root")
-
-Scene34.addChildren(ROUTE887)
-ROUTE888 = ROUTE()
-ROUTE888.setFromField("value_changed")
-ROUTE888.setFromNode("Yaw_vl5_YawInterpolator")
-ROUTE888.setToField("set_rotation")
-ROUTE888.setToNode("boxman_vl5")
-
-Scene34.addChildren(ROUTE888)
-ROUTE889 = ROUTE()
-ROUTE889.setFromField("fraction_changed")
-ROUTE889.setFromNode("RollTimer")
-ROUTE889.setToField("set_fraction")
-ROUTE889.setToNode("Rolls_r_ankle_RotationInterpolator")
-
-Scene34.addChildren(ROUTE889)
-ROUTE890 = ROUTE()
-ROUTE890.setFromField("fraction_changed")
-ROUTE890.setFromNode("RollTimer")
-ROUTE890.setToField("set_fraction")
-ROUTE890.setToNode("Rolls_r_knee_RotationInterpolator")
-
-Scene34.addChildren(ROUTE890)
-ROUTE891 = ROUTE()
-ROUTE891.setFromField("fraction_changed")
-ROUTE891.setFromNode("RollTimer")
-ROUTE891.setToField("set_fraction")
-ROUTE891.setToNode("Rolls_r_hip_RotationInterpolator")
-
-Scene34.addChildren(ROUTE891)
-ROUTE892 = ROUTE()
-ROUTE892.setFromField("fraction_changed")
-ROUTE892.setFromNode("RollTimer")
-ROUTE892.setToField("set_fraction")
-ROUTE892.setToNode("Rolls_l_ankle_RotationInterpolator")
-
-Scene34.addChildren(ROUTE892)
-ROUTE893 = ROUTE()
-ROUTE893.setFromField("fraction_changed")
-ROUTE893.setFromNode("RollTimer")
-ROUTE893.setToField("set_fraction")
-ROUTE893.setToNode("Rolls_l_knee_RotationInterpolator")
-
-Scene34.addChildren(ROUTE893)
-ROUTE894 = ROUTE()
-ROUTE894.setFromField("fraction_changed")
-ROUTE894.setFromNode("RollTimer")
-ROUTE894.setToField("set_fraction")
-ROUTE894.setToNode("Rolls_l_hip_RotationInterpolator")
-
-Scene34.addChildren(ROUTE894)
-ROUTE895 = ROUTE()
-ROUTE895.setFromField("fraction_changed")
-ROUTE895.setFromNode("RollTimer")
-ROUTE895.setToField("set_fraction")
-ROUTE895.setToNode("Rolls_lower_body_RotationInterpolator")
-
-Scene34.addChildren(ROUTE895)
-ROUTE896 = ROUTE()
-ROUTE896.setFromField("fraction_changed")
-ROUTE896.setFromNode("RollTimer")
-ROUTE896.setToField("set_fraction")
-ROUTE896.setToNode("Rolls_r_wrist_RotationInterpolator")
-
-Scene34.addChildren(ROUTE896)
-ROUTE897 = ROUTE()
-ROUTE897.setFromField("fraction_changed")
-ROUTE897.setFromNode("RollTimer")
-ROUTE897.setToField("set_fraction")
-ROUTE897.setToNode("Rolls_r_elbow_RotationInterpolator")
-
-Scene34.addChildren(ROUTE897)
-ROUTE898 = ROUTE()
-ROUTE898.setFromField("fraction_changed")
-ROUTE898.setFromNode("RollTimer")
-ROUTE898.setToField("set_fraction")
-ROUTE898.setToNode("Rolls_r_shoulder_RotationInterpolator")
-
-Scene34.addChildren(ROUTE898)
-ROUTE899 = ROUTE()
-ROUTE899.setFromField("fraction_changed")
-ROUTE899.setFromNode("RollTimer")
-ROUTE899.setToField("set_fraction")
-ROUTE899.setToNode("Rolls_l_wrist_RotationInterpolator")
-
-Scene34.addChildren(ROUTE899)
-ROUTE900 = ROUTE()
-ROUTE900.setFromField("fraction_changed")
-ROUTE900.setFromNode("RollTimer")
-ROUTE900.setToField("set_fraction")
-ROUTE900.setToNode("Rolls_l_elbow_RotationInterpolator")
-
-Scene34.addChildren(ROUTE900)
-ROUTE901 = ROUTE()
-ROUTE901.setFromField("fraction_changed")
-ROUTE901.setFromNode("RollTimer")
-ROUTE901.setToField("set_fraction")
-ROUTE901.setToNode("Rolls_l_shoulder_RotationInterpolator")
-
-Scene34.addChildren(ROUTE901)
-ROUTE902 = ROUTE()
-ROUTE902.setFromField("fraction_changed")
-ROUTE902.setFromNode("RollTimer")
-ROUTE902.setToField("set_fraction")
-ROUTE902.setToNode("Rolls_head_RotationInterpolator")
-
-Scene34.addChildren(ROUTE902)
-ROUTE903 = ROUTE()
-ROUTE903.setFromField("fraction_changed")
-ROUTE903.setFromNode("RollTimer")
-ROUTE903.setToField("set_fraction")
-ROUTE903.setToNode("Rolls_neck_RotationInterpolator")
-
-Scene34.addChildren(ROUTE903)
-ROUTE904 = ROUTE()
-ROUTE904.setFromField("fraction_changed")
-ROUTE904.setFromNode("RollTimer")
-ROUTE904.setToField("set_fraction")
-ROUTE904.setToNode("Rolls_upper_body_RotationInterpolator")
-
-Scene34.addChildren(ROUTE904)
-ROUTE905 = ROUTE()
-ROUTE905.setFromField("fraction_changed")
-ROUTE905.setFromNode("RollTimer")
-ROUTE905.setToField("set_fraction")
-ROUTE905.setToNode("Rolls_whole_body_RotationInterpolator")
-
-Scene34.addChildren(ROUTE905)
-ROUTE906 = ROUTE()
-ROUTE906.setFromField("fraction_changed")
-ROUTE906.setFromNode("RollTimer")
-ROUTE906.setToField("set_fraction")
-ROUTE906.setToNode("Rolls_whole_body_TranslationInterpolator")
-
-Scene34.addChildren(ROUTE906)
-ROUTE907 = ROUTE()
-ROUTE907.setFromField("fraction_changed")
-ROUTE907.setFromNode("RollTimer")
-ROUTE907.setToField("set_fraction")
-ROUTE907.setToNode("Roll_l_sternoclavicular_RollInterpolator")
-
-Scene34.addChildren(ROUTE907)
-ROUTE908 = ROUTE()
-ROUTE908.setFromField("fraction_changed")
-ROUTE908.setFromNode("RollTimer")
-ROUTE908.setToField("set_fraction")
-ROUTE908.setToNode("Roll_l_acromioclavicular_RollInterpolator")
-
-Scene34.addChildren(ROUTE908)
-ROUTE909 = ROUTE()
-ROUTE909.setFromField("fraction_changed")
-ROUTE909.setFromNode("RollTimer")
-ROUTE909.setToField("set_fraction")
-ROUTE909.setToNode("Roll_r_sternoclavicular_RollInterpolator")
-
-Scene34.addChildren(ROUTE909)
-ROUTE910 = ROUTE()
-ROUTE910.setFromField("fraction_changed")
-ROUTE910.setFromNode("RollTimer")
-ROUTE910.setToField("set_fraction")
-ROUTE910.setToNode("Roll_r_acromioclavicular_RollInterpolator")
-
-Scene34.addChildren(ROUTE910)
-ROUTE911 = ROUTE()
-ROUTE911.setFromField("fraction_changed")
-ROUTE911.setFromNode("RollTimer")
-ROUTE911.setToField("set_fraction")
-ROUTE911.setToNode("Roll_r_metatarsal_PitchInterpolator")
-
-Scene34.addChildren(ROUTE911)
-ROUTE912 = ROUTE()
-ROUTE912.setFromField("fraction_changed")
-ROUTE912.setFromNode("RollTimer")
-ROUTE912.setToField("set_fraction")
-ROUTE912.setToNode("Roll_sacroiliac_YawInterpolator")
-
-Scene34.addChildren(ROUTE912)
-ROUTE913 = ROUTE()
-ROUTE913.setFromField("fraction_changed")
-ROUTE913.setFromNode("RollTimer")
-ROUTE913.setToField("set_fraction")
-ROUTE913.setToNode("Roll_vl5_YawInterpolator")
-
-Scene34.addChildren(ROUTE913)
-ROUTE914 = ROUTE()
-ROUTE914.setFromField("fraction_changed")
-ROUTE914.setFromNode("RollTimer")
-ROUTE914.setToField("set_fraction")
-ROUTE914.setToNode("Roll_vc6_YawInterpolator")
-
-Scene34.addChildren(ROUTE914)
-ROUTE915 = ROUTE()
-ROUTE915.setFromField("fraction_changed")
-ROUTE915.setFromNode("RollTimer")
-ROUTE915.setToField("set_fraction")
-ROUTE915.setToNode("Roll_l_thumb1_PitchInterpolator")
-
-Scene34.addChildren(ROUTE915)
-ROUTE916 = ROUTE()
-ROUTE916.setFromField("fraction_changed")
-ROUTE916.setFromNode("RollTimer")
-ROUTE916.setToField("set_fraction")
-ROUTE916.setToNode("Roll_r_thumb1_PitchInterpolator")
-
-Scene34.addChildren(ROUTE916)
-ROUTE917 = ROUTE()
-ROUTE917.setFromField("value_changed")
-ROUTE917.setFromNode("Rolls_r_ankle_RotationInterpolator")
-ROUTE917.setToField("set_rotation")
-ROUTE917.setToNode("boxman_r_ankle")
-
-Scene34.addChildren(ROUTE917)
-ROUTE918 = ROUTE()
-ROUTE918.setFromField("value_changed")
-ROUTE918.setFromNode("Rolls_r_knee_RotationInterpolator")
-ROUTE918.setToField("set_rotation")
-ROUTE918.setToNode("boxman_r_knee")
-
-Scene34.addChildren(ROUTE918)
-ROUTE919 = ROUTE()
-ROUTE919.setFromField("value_changed")
-ROUTE919.setFromNode("Rolls_r_hip_RotationInterpolator")
-ROUTE919.setToField("set_rotation")
-ROUTE919.setToNode("boxman_r_hip")
-
-Scene34.addChildren(ROUTE919)
-ROUTE920 = ROUTE()
-ROUTE920.setFromField("value_changed")
-ROUTE920.setFromNode("Rolls_l_ankle_RotationInterpolator")
-ROUTE920.setToField("set_rotation")
-ROUTE920.setToNode("boxman_l_ankle")
-
-Scene34.addChildren(ROUTE920)
-ROUTE921 = ROUTE()
-ROUTE921.setFromField("value_changed")
-ROUTE921.setFromNode("Rolls_l_knee_RotationInterpolator")
-ROUTE921.setToField("set_rotation")
-ROUTE921.setToNode("boxman_l_knee")
-
-Scene34.addChildren(ROUTE921)
-ROUTE922 = ROUTE()
-ROUTE922.setFromField("value_changed")
-ROUTE922.setFromNode("Rolls_l_hip_RotationInterpolator")
-ROUTE922.setToField("set_rotation")
-ROUTE922.setToNode("boxman_l_hip")
-
-Scene34.addChildren(ROUTE922)
-ROUTE923 = ROUTE()
-ROUTE923.setFromField("value_changed")
-ROUTE923.setFromNode("Rolls_r_wrist_RotationInterpolator")
-ROUTE923.setToField("set_rotation")
-ROUTE923.setToNode("boxman_r_wrist")
-
-Scene34.addChildren(ROUTE923)
-ROUTE924 = ROUTE()
-ROUTE924.setFromField("value_changed")
-ROUTE924.setFromNode("Rolls_r_elbow_RotationInterpolator")
-ROUTE924.setToField("set_rotation")
-ROUTE924.setToNode("boxman_r_elbow")
-
-Scene34.addChildren(ROUTE924)
-ROUTE925 = ROUTE()
-ROUTE925.setFromField("value_changed")
-ROUTE925.setFromNode("Rolls_r_shoulder_RotationInterpolator")
-ROUTE925.setToField("set_rotation")
-ROUTE925.setToNode("boxman_r_shoulder")
-
-Scene34.addChildren(ROUTE925)
-ROUTE926 = ROUTE()
-ROUTE926.setFromField("value_changed")
-ROUTE926.setFromNode("Rolls_l_wrist_RotationInterpolator")
-ROUTE926.setToField("set_rotation")
-ROUTE926.setToNode("boxman_l_wrist")
-
-Scene34.addChildren(ROUTE926)
-ROUTE927 = ROUTE()
-ROUTE927.setFromField("value_changed")
-ROUTE927.setFromNode("Rolls_l_elbow_RotationInterpolator")
-ROUTE927.setToField("set_rotation")
-ROUTE927.setToNode("boxman_l_elbow")
-
-Scene34.addChildren(ROUTE927)
-ROUTE928 = ROUTE()
-ROUTE928.setFromField("value_changed")
-ROUTE928.setFromNode("Rolls_l_shoulder_RotationInterpolator")
-ROUTE928.setToField("set_rotation")
-ROUTE928.setToNode("boxman_l_shoulder")
-
-Scene34.addChildren(ROUTE928)
-ROUTE929 = ROUTE()
-ROUTE929.setFromField("value_changed")
-ROUTE929.setFromNode("Rolls_head_RotationInterpolator")
-ROUTE929.setToField("set_rotation")
-ROUTE929.setToNode("boxman_skullbase")
-
-Scene34.addChildren(ROUTE929)
-ROUTE930 = ROUTE()
-ROUTE930.setFromField("value_changed")
-ROUTE930.setFromNode("Rolls_whole_body_RotationInterpolator")
-ROUTE930.setToField("set_rotation")
-ROUTE930.setToNode("boxman_humanoid_root")
-
-Scene34.addChildren(ROUTE930)
-ROUTE931 = ROUTE()
-ROUTE931.setFromField("value_changed")
-ROUTE931.setFromNode("Rolls_whole_body_TranslationInterpolator")
-ROUTE931.setToField("set_translation")
-ROUTE931.setToNode("boxman_humanoid_root")
-
-Scene34.addChildren(ROUTE931)
-ROUTE932 = ROUTE()
-ROUTE932.setFromField("value_changed")
-ROUTE932.setFromNode("Roll_vl5_YawInterpolator")
-ROUTE932.setToField("set_rotation")
-ROUTE932.setToNode("boxman_vl5")
-
-Scene34.addChildren(ROUTE932)
-ROUTE933 = ROUTE()
-ROUTE933.setFromField("fraction_changed")
-ROUTE933.setFromNode("WalkTimer")
-ROUTE933.setToField("set_fraction")
-ROUTE933.setToNode("Walk_r_ankle_RotationInterpolator")
-
-Scene34.addChildren(ROUTE933)
-ROUTE934 = ROUTE()
-ROUTE934.setFromField("fraction_changed")
-ROUTE934.setFromNode("WalkTimer")
-ROUTE934.setToField("set_fraction")
-ROUTE934.setToNode("Walk_r_knee_RotationInterpolator")
-
-Scene34.addChildren(ROUTE934)
-ROUTE935 = ROUTE()
-ROUTE935.setFromField("fraction_changed")
-ROUTE935.setFromNode("WalkTimer")
-ROUTE935.setToField("set_fraction")
-ROUTE935.setToNode("Walk_r_hip_RotationInterpolator")
-
-Scene34.addChildren(ROUTE935)
-ROUTE936 = ROUTE()
-ROUTE936.setFromField("fraction_changed")
-ROUTE936.setFromNode("WalkTimer")
-ROUTE936.setToField("set_fraction")
-ROUTE936.setToNode("Walk_l_ankle_RotationInterpolator")
-
-Scene34.addChildren(ROUTE936)
-ROUTE937 = ROUTE()
-ROUTE937.setFromField("fraction_changed")
-ROUTE937.setFromNode("WalkTimer")
-ROUTE937.setToField("set_fraction")
-ROUTE937.setToNode("Walk_l_knee_RotationInterpolator")
-
-Scene34.addChildren(ROUTE937)
-ROUTE938 = ROUTE()
-ROUTE938.setFromField("fraction_changed")
-ROUTE938.setFromNode("WalkTimer")
-ROUTE938.setToField("set_fraction")
-ROUTE938.setToNode("Walk_l_hip_RotationInterpolator")
-
-Scene34.addChildren(ROUTE938)
-ROUTE939 = ROUTE()
-ROUTE939.setFromField("fraction_changed")
-ROUTE939.setFromNode("WalkTimer")
-ROUTE939.setToField("set_fraction")
-ROUTE939.setToNode("Walk_lower_body_RotationInterpolator")
-
-Scene34.addChildren(ROUTE939)
-ROUTE940 = ROUTE()
-ROUTE940.setFromField("fraction_changed")
-ROUTE940.setFromNode("WalkTimer")
-ROUTE940.setToField("set_fraction")
-ROUTE940.setToNode("Walk_r_wrist_RotationInterpolator")
-
-Scene34.addChildren(ROUTE940)
-ROUTE941 = ROUTE()
-ROUTE941.setFromField("fraction_changed")
-ROUTE941.setFromNode("WalkTimer")
-ROUTE941.setToField("set_fraction")
-ROUTE941.setToNode("Walk_r_elbow_RotationInterpolator")
-
-Scene34.addChildren(ROUTE941)
-ROUTE942 = ROUTE()
-ROUTE942.setFromField("fraction_changed")
-ROUTE942.setFromNode("WalkTimer")
-ROUTE942.setToField("set_fraction")
-ROUTE942.setToNode("Walk_r_shoulder_RotationInterpolator")
-
-Scene34.addChildren(ROUTE942)
-ROUTE943 = ROUTE()
-ROUTE943.setFromField("fraction_changed")
-ROUTE943.setFromNode("WalkTimer")
-ROUTE943.setToField("set_fraction")
-ROUTE943.setToNode("Walk_l_wrist_RotationInterpolator")
-
-Scene34.addChildren(ROUTE943)
-ROUTE944 = ROUTE()
-ROUTE944.setFromField("fraction_changed")
-ROUTE944.setFromNode("WalkTimer")
-ROUTE944.setToField("set_fraction")
-ROUTE944.setToNode("Walk_l_elbow_RotationInterpolator")
-
-Scene34.addChildren(ROUTE944)
-ROUTE945 = ROUTE()
-ROUTE945.setFromField("fraction_changed")
-ROUTE945.setFromNode("WalkTimer")
-ROUTE945.setToField("set_fraction")
-ROUTE945.setToNode("Walk_l_shoulder_RotationInterpolator")
-
-Scene34.addChildren(ROUTE945)
-ROUTE946 = ROUTE()
-ROUTE946.setFromField("fraction_changed")
-ROUTE946.setFromNode("WalkTimer")
-ROUTE946.setToField("set_fraction")
-ROUTE946.setToNode("Walk_head_RotationInterpolator")
-
-Scene34.addChildren(ROUTE946)
-ROUTE947 = ROUTE()
-ROUTE947.setFromField("fraction_changed")
-ROUTE947.setFromNode("WalkTimer")
-ROUTE947.setToField("set_fraction")
-ROUTE947.setToNode("Walk_neck_RotationInterpolator")
-
-Scene34.addChildren(ROUTE947)
-ROUTE948 = ROUTE()
-ROUTE948.setFromField("fraction_changed")
-ROUTE948.setFromNode("WalkTimer")
-ROUTE948.setToField("set_fraction")
-ROUTE948.setToNode("Walk_upper_body_RotationInterpolator")
-
-Scene34.addChildren(ROUTE948)
-ROUTE949 = ROUTE()
-ROUTE949.setFromField("fraction_changed")
-ROUTE949.setFromNode("WalkTimer")
-ROUTE949.setToField("set_fraction")
-ROUTE949.setToNode("Walk_whole_body_RotationInterpolator")
-
-Scene34.addChildren(ROUTE949)
-ROUTE950 = ROUTE()
-ROUTE950.setFromField("fraction_changed")
-ROUTE950.setFromNode("WalkTimer")
-ROUTE950.setToField("set_fraction")
-ROUTE950.setToNode("Walk_whole_body_TranslationInterpolator")
-
-Scene34.addChildren(ROUTE950)
-ROUTE951 = ROUTE()
-ROUTE951.setFromField("fraction_changed")
-ROUTE951.setFromNode("WalkTimer")
-ROUTE951.setToField("set_fraction")
-ROUTE951.setToNode("Walk_l_sternoclavicular_RollInterpolator")
-
-Scene34.addChildren(ROUTE951)
-ROUTE952 = ROUTE()
-ROUTE952.setFromField("fraction_changed")
-ROUTE952.setFromNode("WalkTimer")
-ROUTE952.setToField("set_fraction")
-ROUTE952.setToNode("Walk_l_acromioclavicular_RollInterpolator")
-
-Scene34.addChildren(ROUTE952)
-ROUTE953 = ROUTE()
-ROUTE953.setFromField("fraction_changed")
-ROUTE953.setFromNode("WalkTimer")
-ROUTE953.setToField("set_fraction")
-ROUTE953.setToNode("Walk_r_sternoclavicular_RollInterpolator")
-
-Scene34.addChildren(ROUTE953)
-ROUTE954 = ROUTE()
-ROUTE954.setFromField("fraction_changed")
-ROUTE954.setFromNode("WalkTimer")
-ROUTE954.setToField("set_fraction")
-ROUTE954.setToNode("Walk_r_acromioclavicular_RollInterpolator")
-
-Scene34.addChildren(ROUTE954)
-ROUTE955 = ROUTE()
-ROUTE955.setFromField("fraction_changed")
-ROUTE955.setFromNode("WalkTimer")
-ROUTE955.setToField("set_fraction")
-ROUTE955.setToNode("Walk_r_metatarsal_PitchInterpolator")
-
-Scene34.addChildren(ROUTE955)
-ROUTE956 = ROUTE()
-ROUTE956.setFromField("fraction_changed")
-ROUTE956.setFromNode("WalkTimer")
-ROUTE956.setToField("set_fraction")
-ROUTE956.setToNode("Walk_sacroiliac_YawInterpolator")
-
-Scene34.addChildren(ROUTE956)
-ROUTE957 = ROUTE()
-ROUTE957.setFromField("fraction_changed")
-ROUTE957.setFromNode("WalkTimer")
-ROUTE957.setToField("set_fraction")
-ROUTE957.setToNode("Walk_vl5_YawInterpolator")
-
-Scene34.addChildren(ROUTE957)
-ROUTE958 = ROUTE()
-ROUTE958.setFromField("fraction_changed")
-ROUTE958.setFromNode("WalkTimer")
-ROUTE958.setToField("set_fraction")
-ROUTE958.setToNode("Walk_vc6_YawInterpolator")
-
-Scene34.addChildren(ROUTE958)
-ROUTE959 = ROUTE()
-ROUTE959.setFromField("fraction_changed")
-ROUTE959.setFromNode("WalkTimer")
-ROUTE959.setToField("set_fraction")
-ROUTE959.setToNode("Walk_l_thumb1_PitchInterpolator")
-
-Scene34.addChildren(ROUTE959)
-ROUTE960 = ROUTE()
-ROUTE960.setFromField("fraction_changed")
-ROUTE960.setFromNode("WalkTimer")
-ROUTE960.setToField("set_fraction")
-ROUTE960.setToNode("Walk_r_thumb1_PitchInterpolator")
-
-Scene34.addChildren(ROUTE960)
-ROUTE961 = ROUTE()
-ROUTE961.setFromField("value_changed")
-ROUTE961.setFromNode("Walk_r_ankle_RotationInterpolator")
-ROUTE961.setToField("set_rotation")
-ROUTE961.setToNode("boxman_r_ankle")
-
-Scene34.addChildren(ROUTE961)
-ROUTE962 = ROUTE()
-ROUTE962.setFromField("value_changed")
-ROUTE962.setFromNode("Walk_r_knee_RotationInterpolator")
-ROUTE962.setToField("set_rotation")
-ROUTE962.setToNode("boxman_r_knee")
-
-Scene34.addChildren(ROUTE962)
-ROUTE963 = ROUTE()
-ROUTE963.setFromField("value_changed")
-ROUTE963.setFromNode("Walk_r_hip_RotationInterpolator")
-ROUTE963.setToField("set_rotation")
-ROUTE963.setToNode("boxman_r_hip")
-
-Scene34.addChildren(ROUTE963)
-ROUTE964 = ROUTE()
-ROUTE964.setFromField("value_changed")
-ROUTE964.setFromNode("Walk_l_ankle_RotationInterpolator")
-ROUTE964.setToField("set_rotation")
-ROUTE964.setToNode("boxman_l_ankle")
-
-Scene34.addChildren(ROUTE964)
-ROUTE965 = ROUTE()
-ROUTE965.setFromField("value_changed")
-ROUTE965.setFromNode("Walk_l_knee_RotationInterpolator")
-ROUTE965.setToField("set_rotation")
-ROUTE965.setToNode("boxman_l_knee")
-
-Scene34.addChildren(ROUTE965)
-ROUTE966 = ROUTE()
-ROUTE966.setFromField("value_changed")
-ROUTE966.setFromNode("Walk_l_hip_RotationInterpolator")
-ROUTE966.setToField("set_rotation")
-ROUTE966.setToNode("boxman_l_hip")
-
-Scene34.addChildren(ROUTE966)
-ROUTE967 = ROUTE()
-ROUTE967.setFromField("value_changed")
-ROUTE967.setFromNode("Walk_r_wrist_RotationInterpolator")
-ROUTE967.setToField("set_rotation")
-ROUTE967.setToNode("boxman_r_wrist")
-
-Scene34.addChildren(ROUTE967)
-ROUTE968 = ROUTE()
-ROUTE968.setFromField("value_changed")
-ROUTE968.setFromNode("Walk_r_elbow_RotationInterpolator")
-ROUTE968.setToField("set_rotation")
-ROUTE968.setToNode("boxman_r_elbow")
-
-Scene34.addChildren(ROUTE968)
-ROUTE969 = ROUTE()
-ROUTE969.setFromField("value_changed")
-ROUTE969.setFromNode("Walk_r_shoulder_RotationInterpolator")
-ROUTE969.setToField("set_rotation")
-ROUTE969.setToNode("boxman_r_shoulder")
-
-Scene34.addChildren(ROUTE969)
-ROUTE970 = ROUTE()
-ROUTE970.setFromField("value_changed")
-ROUTE970.setFromNode("Walk_l_wrist_RotationInterpolator")
-ROUTE970.setToField("set_rotation")
-ROUTE970.setToNode("boxman_l_wrist")
-
-Scene34.addChildren(ROUTE970)
-ROUTE971 = ROUTE()
-ROUTE971.setFromField("value_changed")
-ROUTE971.setFromNode("Walk_l_elbow_RotationInterpolator")
-ROUTE971.setToField("set_rotation")
-ROUTE971.setToNode("boxman_l_elbow")
-
-Scene34.addChildren(ROUTE971)
-ROUTE972 = ROUTE()
-ROUTE972.setFromField("value_changed")
-ROUTE972.setFromNode("Walk_l_shoulder_RotationInterpolator")
-ROUTE972.setToField("set_rotation")
-ROUTE972.setToNode("boxman_l_shoulder")
-
-Scene34.addChildren(ROUTE972)
-ROUTE973 = ROUTE()
-ROUTE973.setFromField("value_changed")
-ROUTE973.setFromNode("Walk_head_RotationInterpolator")
-ROUTE973.setToField("set_rotation")
-ROUTE973.setToNode("boxman_skullbase")
-
-Scene34.addChildren(ROUTE973)
-ROUTE974 = ROUTE()
-ROUTE974.setFromField("value_changed")
-ROUTE974.setFromNode("Walk_whole_body_RotationInterpolator")
-ROUTE974.setToField("set_rotation")
-ROUTE974.setToNode("boxman_humanoid_root")
-
-Scene34.addChildren(ROUTE974)
-ROUTE975 = ROUTE()
-ROUTE975.setFromField("value_changed")
-ROUTE975.setFromNode("Walk_whole_body_TranslationInterpolator")
-ROUTE975.setToField("set_translation")
-ROUTE975.setToNode("boxman_humanoid_root")
-
-Scene34.addChildren(ROUTE975)
-ROUTE976 = ROUTE()
-ROUTE976.setFromField("value_changed")
-ROUTE976.setFromNode("Walk_vl5_YawInterpolator")
-ROUTE976.setToField("set_rotation")
-ROUTE976.setToNode("boxman_vl5")
-
-Scene34.addChildren(ROUTE976)
-ROUTE977 = ROUTE()
-ROUTE977.setFromField("fraction_changed")
-ROUTE977.setFromNode("RunTimer")
-ROUTE977.setToField("set_fraction")
-ROUTE977.setToNode("Run_r_ankle_RotationInterpolator_Run")
-
-Scene34.addChildren(ROUTE977)
-ROUTE978 = ROUTE()
-ROUTE978.setFromField("fraction_changed")
-ROUTE978.setFromNode("RunTimer")
-ROUTE978.setToField("set_fraction")
-ROUTE978.setToNode("Run_r_knee_RotationInterpolator_Run")
-
-Scene34.addChildren(ROUTE978)
-ROUTE979 = ROUTE()
-ROUTE979.setFromField("fraction_changed")
-ROUTE979.setFromNode("RunTimer")
-ROUTE979.setToField("set_fraction")
-ROUTE979.setToNode("Run_r_hip_RotationInterpolator_Run")
-
-Scene34.addChildren(ROUTE979)
-ROUTE980 = ROUTE()
-ROUTE980.setFromField("fraction_changed")
-ROUTE980.setFromNode("RunTimer")
-ROUTE980.setToField("set_fraction")
-ROUTE980.setToNode("Run_l_ankle_RotationInterpolator_Run")
-
-Scene34.addChildren(ROUTE980)
-ROUTE981 = ROUTE()
-ROUTE981.setFromField("fraction_changed")
-ROUTE981.setFromNode("RunTimer")
-ROUTE981.setToField("set_fraction")
-ROUTE981.setToNode("Run_l_knee_RotationInterpolator_Run")
-
-Scene34.addChildren(ROUTE981)
-ROUTE982 = ROUTE()
-ROUTE982.setFromField("fraction_changed")
-ROUTE982.setFromNode("RunTimer")
-ROUTE982.setToField("set_fraction")
-ROUTE982.setToNode("Run_l_hip_RotationInterpolator_Run")
-
-Scene34.addChildren(ROUTE982)
-ROUTE983 = ROUTE()
-ROUTE983.setFromField("fraction_changed")
-ROUTE983.setFromNode("RunTimer")
-ROUTE983.setToField("set_fraction")
-ROUTE983.setToNode("Run_lower_body_RotationInterpolator_Run")
-
-Scene34.addChildren(ROUTE983)
-ROUTE984 = ROUTE()
-ROUTE984.setFromField("fraction_changed")
-ROUTE984.setFromNode("RunTimer")
-ROUTE984.setToField("set_fraction")
-ROUTE984.setToNode("Run_r_wrist_RotationInterpolator_Run")
-
-Scene34.addChildren(ROUTE984)
-ROUTE985 = ROUTE()
-ROUTE985.setFromField("fraction_changed")
-ROUTE985.setFromNode("RunTimer")
-ROUTE985.setToField("set_fraction")
-ROUTE985.setToNode("Run_r_elbow_RotationInterpolator_Run")
-
-Scene34.addChildren(ROUTE985)
-ROUTE986 = ROUTE()
-ROUTE986.setFromField("fraction_changed")
-ROUTE986.setFromNode("RunTimer")
-ROUTE986.setToField("set_fraction")
-ROUTE986.setToNode("Run_r_shoulder_RotationInterpolator_Run")
-
-Scene34.addChildren(ROUTE986)
-ROUTE987 = ROUTE()
-ROUTE987.setFromField("fraction_changed")
-ROUTE987.setFromNode("RunTimer")
-ROUTE987.setToField("set_fraction")
-ROUTE987.setToNode("Run_l_wrist_RotationInterpolator_Run")
-
-Scene34.addChildren(ROUTE987)
-ROUTE988 = ROUTE()
-ROUTE988.setFromField("fraction_changed")
-ROUTE988.setFromNode("RunTimer")
-ROUTE988.setToField("set_fraction")
-ROUTE988.setToNode("Run_l_elbow_RotationInterpolator_Run")
-
-Scene34.addChildren(ROUTE988)
-ROUTE989 = ROUTE()
-ROUTE989.setFromField("fraction_changed")
-ROUTE989.setFromNode("RunTimer")
-ROUTE989.setToField("set_fraction")
-ROUTE989.setToNode("Run_l_shoulder_RotationInterpolator_Run")
-
-Scene34.addChildren(ROUTE989)
-ROUTE990 = ROUTE()
-ROUTE990.setFromField("fraction_changed")
-ROUTE990.setFromNode("RunTimer")
-ROUTE990.setToField("set_fraction")
-ROUTE990.setToNode("Run_head_RotationInterpolator_Run")
-
-Scene34.addChildren(ROUTE990)
-ROUTE991 = ROUTE()
-ROUTE991.setFromField("fraction_changed")
-ROUTE991.setFromNode("RunTimer")
-ROUTE991.setToField("set_fraction")
-ROUTE991.setToNode("Run_neck_RotationInterpolator_Run")
-
-Scene34.addChildren(ROUTE991)
-ROUTE992 = ROUTE()
-ROUTE992.setFromField("fraction_changed")
-ROUTE992.setFromNode("RunTimer")
-ROUTE992.setToField("set_fraction")
-ROUTE992.setToNode("Run_upper_body_RotationInterpolator_Run")
-
-Scene34.addChildren(ROUTE992)
-ROUTE993 = ROUTE()
-ROUTE993.setFromField("fraction_changed")
-ROUTE993.setFromNode("RunTimer")
-ROUTE993.setToField("set_fraction")
-ROUTE993.setToNode("Run_whole_body_RotationInterpolator_Run")
-
-Scene34.addChildren(ROUTE993)
-ROUTE994 = ROUTE()
-ROUTE994.setFromField("fraction_changed")
-ROUTE994.setFromNode("RunTimer")
-ROUTE994.setToField("set_fraction")
-ROUTE994.setToNode("Run_whole_body_TranslationInterpolator_Run")
-
-Scene34.addChildren(ROUTE994)
-ROUTE995 = ROUTE()
-ROUTE995.setFromField("fraction_changed")
-ROUTE995.setFromNode("RunTimer")
-ROUTE995.setToField("set_fraction")
-ROUTE995.setToNode("Run_l_sternoclavicular_RollInterpolator")
-
-Scene34.addChildren(ROUTE995)
-ROUTE996 = ROUTE()
-ROUTE996.setFromField("fraction_changed")
-ROUTE996.setFromNode("RunTimer")
-ROUTE996.setToField("set_fraction")
-ROUTE996.setToNode("Run_l_acromioclavicular_RollInterpolator")
-
-Scene34.addChildren(ROUTE996)
-ROUTE997 = ROUTE()
-ROUTE997.setFromField("fraction_changed")
-ROUTE997.setFromNode("RunTimer")
-ROUTE997.setToField("set_fraction")
-ROUTE997.setToNode("Run_r_sternoclavicular_RollInterpolator")
-
-Scene34.addChildren(ROUTE997)
-ROUTE998 = ROUTE()
-ROUTE998.setFromField("fraction_changed")
-ROUTE998.setFromNode("RunTimer")
-ROUTE998.setToField("set_fraction")
-ROUTE998.setToNode("Run_r_acromioclavicular_RollInterpolator")
-
-Scene34.addChildren(ROUTE998)
-ROUTE999 = ROUTE()
-ROUTE999.setFromField("fraction_changed")
-ROUTE999.setFromNode("RunTimer")
-ROUTE999.setToField("set_fraction")
-ROUTE999.setToNode("Run_r_metatarsal_PitchInterpolator")
-
-Scene34.addChildren(ROUTE999)
-ROUTE1000 = ROUTE()
-ROUTE1000.setFromField("fraction_changed")
-ROUTE1000.setFromNode("RunTimer")
-ROUTE1000.setToField("set_fraction")
-ROUTE1000.setToNode("Run_sacroiliac_YawInterpolator")
-
-Scene34.addChildren(ROUTE1000)
-ROUTE1001 = ROUTE()
-ROUTE1001.setFromField("fraction_changed")
-ROUTE1001.setFromNode("RunTimer")
-ROUTE1001.setToField("set_fraction")
-ROUTE1001.setToNode("Run_vl5_YawInterpolator")
-
-Scene34.addChildren(ROUTE1001)
-ROUTE1002 = ROUTE()
-ROUTE1002.setFromField("fraction_changed")
-ROUTE1002.setFromNode("RunTimer")
-ROUTE1002.setToField("set_fraction")
-ROUTE1002.setToNode("Run_vc6_YawInterpolator")
-
-Scene34.addChildren(ROUTE1002)
-ROUTE1003 = ROUTE()
-ROUTE1003.setFromField("fraction_changed")
-ROUTE1003.setFromNode("RunTimer")
-ROUTE1003.setToField("set_fraction")
-ROUTE1003.setToNode("Run_l_thumb1_PitchInterpolator")
-
-Scene34.addChildren(ROUTE1003)
-ROUTE1004 = ROUTE()
-ROUTE1004.setFromField("fraction_changed")
-ROUTE1004.setFromNode("RunTimer")
-ROUTE1004.setToField("set_fraction")
-ROUTE1004.setToNode("Run_r_thumb1_PitchInterpolator")
-
-Scene34.addChildren(ROUTE1004)
-ROUTE1005 = ROUTE()
-ROUTE1005.setFromField("value_changed")
-ROUTE1005.setFromNode("Run_r_ankle_RotationInterpolator_Run")
-ROUTE1005.setToField("set_rotation")
-ROUTE1005.setToNode("boxman_r_ankle")
-
-Scene34.addChildren(ROUTE1005)
-ROUTE1006 = ROUTE()
-ROUTE1006.setFromField("value_changed")
-ROUTE1006.setFromNode("Run_r_knee_RotationInterpolator_Run")
-ROUTE1006.setToField("set_rotation")
-ROUTE1006.setToNode("boxman_r_knee")
-
-Scene34.addChildren(ROUTE1006)
-ROUTE1007 = ROUTE()
-ROUTE1007.setFromField("value_changed")
-ROUTE1007.setFromNode("Run_r_hip_RotationInterpolator_Run")
-ROUTE1007.setToField("set_rotation")
-ROUTE1007.setToNode("boxman_r_hip")
-
-Scene34.addChildren(ROUTE1007)
-ROUTE1008 = ROUTE()
-ROUTE1008.setFromField("value_changed")
-ROUTE1008.setFromNode("Run_l_ankle_RotationInterpolator_Run")
-ROUTE1008.setToField("set_rotation")
-ROUTE1008.setToNode("boxman_l_ankle")
-
-Scene34.addChildren(ROUTE1008)
-ROUTE1009 = ROUTE()
-ROUTE1009.setFromField("value_changed")
-ROUTE1009.setFromNode("Run_l_knee_RotationInterpolator_Run")
-ROUTE1009.setToField("set_rotation")
-ROUTE1009.setToNode("boxman_l_knee")
-
-Scene34.addChildren(ROUTE1009)
-ROUTE1010 = ROUTE()
-ROUTE1010.setFromField("value_changed")
-ROUTE1010.setFromNode("Run_l_hip_RotationInterpolator_Run")
-ROUTE1010.setToField("set_rotation")
-ROUTE1010.setToNode("boxman_l_hip")
-
-Scene34.addChildren(ROUTE1010)
-ROUTE1011 = ROUTE()
-ROUTE1011.setFromField("value_changed")
-ROUTE1011.setFromNode("Run_r_wrist_RotationInterpolator_Run")
-ROUTE1011.setToField("set_rotation")
-ROUTE1011.setToNode("boxman_r_wrist")
-
-Scene34.addChildren(ROUTE1011)
-ROUTE1012 = ROUTE()
-ROUTE1012.setFromField("value_changed")
-ROUTE1012.setFromNode("Run_r_elbow_RotationInterpolator_Run")
-ROUTE1012.setToField("set_rotation")
-ROUTE1012.setToNode("boxman_r_elbow")
-
-Scene34.addChildren(ROUTE1012)
-ROUTE1013 = ROUTE()
-ROUTE1013.setFromField("value_changed")
-ROUTE1013.setFromNode("Run_r_shoulder_RotationInterpolator_Run")
-ROUTE1013.setToField("set_rotation")
-ROUTE1013.setToNode("boxman_r_shoulder")
-
-Scene34.addChildren(ROUTE1013)
-ROUTE1014 = ROUTE()
-ROUTE1014.setFromField("value_changed")
-ROUTE1014.setFromNode("Run_l_wrist_RotationInterpolator_Run")
-ROUTE1014.setToField("set_rotation")
-ROUTE1014.setToNode("boxman_l_wrist")
-
-Scene34.addChildren(ROUTE1014)
-ROUTE1015 = ROUTE()
-ROUTE1015.setFromField("value_changed")
-ROUTE1015.setFromNode("Run_l_elbow_RotationInterpolator_Run")
-ROUTE1015.setToField("set_rotation")
-ROUTE1015.setToNode("boxman_l_elbow")
-
-Scene34.addChildren(ROUTE1015)
-ROUTE1016 = ROUTE()
-ROUTE1016.setFromField("value_changed")
-ROUTE1016.setFromNode("Run_l_shoulder_RotationInterpolator_Run")
-ROUTE1016.setToField("set_rotation")
-ROUTE1016.setToNode("boxman_l_shoulder")
-
-Scene34.addChildren(ROUTE1016)
-ROUTE1017 = ROUTE()
-ROUTE1017.setFromField("value_changed")
-ROUTE1017.setFromNode("Run_head_RotationInterpolator_Run")
-ROUTE1017.setToField("set_rotation")
-ROUTE1017.setToNode("boxman_skullbase")
-
-Scene34.addChildren(ROUTE1017)
-ROUTE1018 = ROUTE()
-ROUTE1018.setFromField("value_changed")
-ROUTE1018.setFromNode("Run_whole_body_RotationInterpolator_Run")
-ROUTE1018.setToField("set_rotation")
-ROUTE1018.setToNode("boxman_humanoid_root")
-
-Scene34.addChildren(ROUTE1018)
-ROUTE1019 = ROUTE()
-ROUTE1019.setFromField("value_changed")
-ROUTE1019.setFromNode("Run_whole_body_TranslationInterpolator_Run")
-ROUTE1019.setToField("set_translation")
-ROUTE1019.setToNode("boxman_humanoid_root")
-
-Scene34.addChildren(ROUTE1019)
-ROUTE1020 = ROUTE()
-ROUTE1020.setFromField("value_changed")
-ROUTE1020.setFromNode("Run_vl5_YawInterpolator")
-ROUTE1020.setToField("set_rotation")
-ROUTE1020.setToNode("boxman_vl5")
-
-Scene34.addChildren(ROUTE1020)
-ROUTE1021 = ROUTE()
-ROUTE1021.setFromField("fraction_changed")
-ROUTE1021.setFromNode("JumpTimer")
-ROUTE1021.setToField("set_fraction")
-ROUTE1021.setToNode("Jump_r_ankle_RotationInterpolator")
-
-Scene34.addChildren(ROUTE1021)
-ROUTE1022 = ROUTE()
-ROUTE1022.setFromField("fraction_changed")
-ROUTE1022.setFromNode("JumpTimer")
-ROUTE1022.setToField("set_fraction")
-ROUTE1022.setToNode("Jump_r_knee_RotationInterpolator")
-
-Scene34.addChildren(ROUTE1022)
-ROUTE1023 = ROUTE()
-ROUTE1023.setFromField("fraction_changed")
-ROUTE1023.setFromNode("JumpTimer")
-ROUTE1023.setToField("set_fraction")
-ROUTE1023.setToNode("Jump_r_hip_RotationInterpolator")
-
-Scene34.addChildren(ROUTE1023)
-ROUTE1024 = ROUTE()
-ROUTE1024.setFromField("fraction_changed")
-ROUTE1024.setFromNode("JumpTimer")
-ROUTE1024.setToField("set_fraction")
-ROUTE1024.setToNode("Jump_l_ankle_RotationInterpolator")
-
-Scene34.addChildren(ROUTE1024)
-ROUTE1025 = ROUTE()
-ROUTE1025.setFromField("fraction_changed")
-ROUTE1025.setFromNode("JumpTimer")
-ROUTE1025.setToField("set_fraction")
-ROUTE1025.setToNode("Jump_l_knee_RotationInterpolator")
-
-Scene34.addChildren(ROUTE1025)
-ROUTE1026 = ROUTE()
-ROUTE1026.setFromField("fraction_changed")
-ROUTE1026.setFromNode("JumpTimer")
-ROUTE1026.setToField("set_fraction")
-ROUTE1026.setToNode("Jump_l_hip_RotationInterpolator")
-
-Scene34.addChildren(ROUTE1026)
-ROUTE1027 = ROUTE()
-ROUTE1027.setFromField("fraction_changed")
-ROUTE1027.setFromNode("JumpTimer")
-ROUTE1027.setToField("set_fraction")
-ROUTE1027.setToNode("Jump_lower_body_RotationInterpolator")
-
-Scene34.addChildren(ROUTE1027)
-ROUTE1028 = ROUTE()
-ROUTE1028.setFromField("fraction_changed")
-ROUTE1028.setFromNode("JumpTimer")
-ROUTE1028.setToField("set_fraction")
-ROUTE1028.setToNode("Jump_r_wrist_RotationInterpolator")
-
-Scene34.addChildren(ROUTE1028)
-ROUTE1029 = ROUTE()
-ROUTE1029.setFromField("fraction_changed")
-ROUTE1029.setFromNode("JumpTimer")
-ROUTE1029.setToField("set_fraction")
-ROUTE1029.setToNode("Jump_r_elbow_RotationInterpolator")
-
-Scene34.addChildren(ROUTE1029)
-ROUTE1030 = ROUTE()
-ROUTE1030.setFromField("fraction_changed")
-ROUTE1030.setFromNode("JumpTimer")
-ROUTE1030.setToField("set_fraction")
-ROUTE1030.setToNode("Jump_r_shoulder_RotationInterpolator")
-
-Scene34.addChildren(ROUTE1030)
-ROUTE1031 = ROUTE()
-ROUTE1031.setFromField("fraction_changed")
-ROUTE1031.setFromNode("JumpTimer")
-ROUTE1031.setToField("set_fraction")
-ROUTE1031.setToNode("Jump_l_wrist_RotationInterpolator")
-
-Scene34.addChildren(ROUTE1031)
-ROUTE1032 = ROUTE()
-ROUTE1032.setFromField("fraction_changed")
-ROUTE1032.setFromNode("JumpTimer")
-ROUTE1032.setToField("set_fraction")
-ROUTE1032.setToNode("Jump_l_elbow_RotationInterpolator")
-
-Scene34.addChildren(ROUTE1032)
-ROUTE1033 = ROUTE()
-ROUTE1033.setFromField("fraction_changed")
-ROUTE1033.setFromNode("JumpTimer")
-ROUTE1033.setToField("set_fraction")
-ROUTE1033.setToNode("Jump_l_shoulder_RotationInterpolator")
-
-Scene34.addChildren(ROUTE1033)
-ROUTE1034 = ROUTE()
-ROUTE1034.setFromField("fraction_changed")
-ROUTE1034.setFromNode("JumpTimer")
-ROUTE1034.setToField("set_fraction")
-ROUTE1034.setToNode("Jump_head_RotationInterpolator")
-
-Scene34.addChildren(ROUTE1034)
-ROUTE1035 = ROUTE()
-ROUTE1035.setFromField("fraction_changed")
-ROUTE1035.setFromNode("JumpTimer")
-ROUTE1035.setToField("set_fraction")
-ROUTE1035.setToNode("Jump_neck_RotationInterpolator")
-
-Scene34.addChildren(ROUTE1035)
-ROUTE1036 = ROUTE()
-ROUTE1036.setFromField("fraction_changed")
-ROUTE1036.setFromNode("JumpTimer")
-ROUTE1036.setToField("set_fraction")
-ROUTE1036.setToNode("Jump_upper_body_RotationInterpolator")
-
-Scene34.addChildren(ROUTE1036)
-ROUTE1037 = ROUTE()
-ROUTE1037.setFromField("fraction_changed")
-ROUTE1037.setFromNode("JumpTimer")
-ROUTE1037.setToField("set_fraction")
-ROUTE1037.setToNode("Jump_whole_body_RotationInterpolator")
-
-Scene34.addChildren(ROUTE1037)
-ROUTE1038 = ROUTE()
-ROUTE1038.setFromField("fraction_changed")
-ROUTE1038.setFromNode("JumpTimer")
-ROUTE1038.setToField("set_fraction")
-ROUTE1038.setToNode("Jump_whole_body_TranslationInterpolator")
-
-Scene34.addChildren(ROUTE1038)
-ROUTE1039 = ROUTE()
-ROUTE1039.setFromField("fraction_changed")
-ROUTE1039.setFromNode("JumpTimer")
-ROUTE1039.setToField("set_fraction")
-ROUTE1039.setToNode("Jump_l_sternoclavicular_RollInterpolator")
-
-Scene34.addChildren(ROUTE1039)
-ROUTE1040 = ROUTE()
-ROUTE1040.setFromField("fraction_changed")
-ROUTE1040.setFromNode("JumpTimer")
-ROUTE1040.setToField("set_fraction")
-ROUTE1040.setToNode("Jump_l_acromioclavicular_RollInterpolator")
-
-Scene34.addChildren(ROUTE1040)
-ROUTE1041 = ROUTE()
-ROUTE1041.setFromField("fraction_changed")
-ROUTE1041.setFromNode("JumpTimer")
-ROUTE1041.setToField("set_fraction")
-ROUTE1041.setToNode("Jump_r_sternoclavicular_RollInterpolator")
-
-Scene34.addChildren(ROUTE1041)
-ROUTE1042 = ROUTE()
-ROUTE1042.setFromField("fraction_changed")
-ROUTE1042.setFromNode("JumpTimer")
-ROUTE1042.setToField("set_fraction")
-ROUTE1042.setToNode("Jump_r_acromioclavicular_RollInterpolator")
-
-Scene34.addChildren(ROUTE1042)
-ROUTE1043 = ROUTE()
-ROUTE1043.setFromField("fraction_changed")
-ROUTE1043.setFromNode("JumpTimer")
-ROUTE1043.setToField("set_fraction")
-ROUTE1043.setToNode("Jump_r_metatarsal_PitchInterpolator")
-
-Scene34.addChildren(ROUTE1043)
-ROUTE1044 = ROUTE()
-ROUTE1044.setFromField("fraction_changed")
-ROUTE1044.setFromNode("JumpTimer")
-ROUTE1044.setToField("set_fraction")
-ROUTE1044.setToNode("Jump_sacroiliac_YawInterpolator")
-
-Scene34.addChildren(ROUTE1044)
-ROUTE1045 = ROUTE()
-ROUTE1045.setFromField("fraction_changed")
-ROUTE1045.setFromNode("JumpTimer")
-ROUTE1045.setToField("set_fraction")
-ROUTE1045.setToNode("Jump_vl5_YawInterpolator")
-
-Scene34.addChildren(ROUTE1045)
-ROUTE1046 = ROUTE()
-ROUTE1046.setFromField("fraction_changed")
-ROUTE1046.setFromNode("JumpTimer")
-ROUTE1046.setToField("set_fraction")
-ROUTE1046.setToNode("Jump_vc6_YawInterpolator")
-
-Scene34.addChildren(ROUTE1046)
-ROUTE1047 = ROUTE()
-ROUTE1047.setFromField("fraction_changed")
-ROUTE1047.setFromNode("JumpTimer")
-ROUTE1047.setToField("set_fraction")
-ROUTE1047.setToNode("Jump_l_thumb1_PitchInterpolator")
-
-Scene34.addChildren(ROUTE1047)
-ROUTE1048 = ROUTE()
-ROUTE1048.setFromField("fraction_changed")
-ROUTE1048.setFromNode("JumpTimer")
-ROUTE1048.setToField("set_fraction")
-ROUTE1048.setToNode("Jump_r_thumb1_PitchInterpolator")
-
-Scene34.addChildren(ROUTE1048)
-ROUTE1049 = ROUTE()
-ROUTE1049.setFromField("value_changed")
-ROUTE1049.setFromNode("Jump_r_ankle_RotationInterpolator")
-ROUTE1049.setToField("set_rotation")
-ROUTE1049.setToNode("boxman_r_ankle")
-
-Scene34.addChildren(ROUTE1049)
-ROUTE1050 = ROUTE()
-ROUTE1050.setFromField("value_changed")
-ROUTE1050.setFromNode("Jump_r_knee_RotationInterpolator")
-ROUTE1050.setToField("set_rotation")
-ROUTE1050.setToNode("boxman_r_knee")
-
-Scene34.addChildren(ROUTE1050)
-ROUTE1051 = ROUTE()
-ROUTE1051.setFromField("value_changed")
-ROUTE1051.setFromNode("Jump_r_hip_RotationInterpolator")
-ROUTE1051.setToField("set_rotation")
-ROUTE1051.setToNode("boxman_r_hip")
-
-Scene34.addChildren(ROUTE1051)
-ROUTE1052 = ROUTE()
-ROUTE1052.setFromField("value_changed")
-ROUTE1052.setFromNode("Jump_l_ankle_RotationInterpolator")
-ROUTE1052.setToField("set_rotation")
-ROUTE1052.setToNode("boxman_l_ankle")
-
-Scene34.addChildren(ROUTE1052)
-ROUTE1053 = ROUTE()
-ROUTE1053.setFromField("value_changed")
-ROUTE1053.setFromNode("Jump_l_knee_RotationInterpolator")
-ROUTE1053.setToField("set_rotation")
-ROUTE1053.setToNode("boxman_l_knee")
-
-Scene34.addChildren(ROUTE1053)
-ROUTE1054 = ROUTE()
-ROUTE1054.setFromField("value_changed")
-ROUTE1054.setFromNode("Jump_l_hip_RotationInterpolator")
-ROUTE1054.setToField("set_rotation")
-ROUTE1054.setToNode("boxman_l_hip")
-
-Scene34.addChildren(ROUTE1054)
-ROUTE1055 = ROUTE()
-ROUTE1055.setFromField("value_changed")
-ROUTE1055.setFromNode("Jump_r_wrist_RotationInterpolator")
-ROUTE1055.setToField("set_rotation")
-ROUTE1055.setToNode("boxman_r_wrist")
-
-Scene34.addChildren(ROUTE1055)
-ROUTE1056 = ROUTE()
-ROUTE1056.setFromField("value_changed")
-ROUTE1056.setFromNode("Jump_r_elbow_RotationInterpolator")
-ROUTE1056.setToField("set_rotation")
-ROUTE1056.setToNode("boxman_r_elbow")
-
-Scene34.addChildren(ROUTE1056)
-ROUTE1057 = ROUTE()
-ROUTE1057.setFromField("value_changed")
-ROUTE1057.setFromNode("Jump_r_shoulder_RotationInterpolator")
-ROUTE1057.setToField("set_rotation")
-ROUTE1057.setToNode("boxman_r_shoulder")
-
-Scene34.addChildren(ROUTE1057)
-ROUTE1058 = ROUTE()
-ROUTE1058.setFromField("value_changed")
-ROUTE1058.setFromNode("Jump_l_wrist_RotationInterpolator")
-ROUTE1058.setToField("set_rotation")
-ROUTE1058.setToNode("boxman_l_wrist")
-
-Scene34.addChildren(ROUTE1058)
-ROUTE1059 = ROUTE()
-ROUTE1059.setFromField("value_changed")
-ROUTE1059.setFromNode("Jump_l_elbow_RotationInterpolator")
-ROUTE1059.setToField("set_rotation")
-ROUTE1059.setToNode("boxman_l_elbow")
-
-Scene34.addChildren(ROUTE1059)
-ROUTE1060 = ROUTE()
-ROUTE1060.setFromField("value_changed")
-ROUTE1060.setFromNode("Jump_l_shoulder_RotationInterpolator")
-ROUTE1060.setToField("set_rotation")
-ROUTE1060.setToNode("boxman_l_shoulder")
-
-Scene34.addChildren(ROUTE1060)
-ROUTE1061 = ROUTE()
-ROUTE1061.setFromField("value_changed")
-ROUTE1061.setFromNode("Jump_head_RotationInterpolator")
-ROUTE1061.setToField("set_rotation")
-ROUTE1061.setToNode("boxman_skullbase")
-
-Scene34.addChildren(ROUTE1061)
-ROUTE1062 = ROUTE()
-ROUTE1062.setFromField("value_changed")
-ROUTE1062.setFromNode("Jump_whole_body_RotationInterpolator")
-ROUTE1062.setToField("set_rotation")
-ROUTE1062.setToNode("boxman_humanoid_root")
-
-Scene34.addChildren(ROUTE1062)
-ROUTE1063 = ROUTE()
-ROUTE1063.setFromField("value_changed")
-ROUTE1063.setFromNode("Jump_whole_body_TranslationInterpolator")
-ROUTE1063.setToField("set_translation")
-ROUTE1063.setToNode("boxman_humanoid_root")
-
-Scene34.addChildren(ROUTE1063)
-ROUTE1064 = ROUTE()
-ROUTE1064.setFromField("value_changed")
-ROUTE1064.setFromNode("Jump_vl5_YawInterpolator")
-ROUTE1064.setToField("set_rotation")
-ROUTE1064.setToNode("boxman_vl5")
-
-Scene34.addChildren(ROUTE1064)
-ROUTE1065 = ROUTE()
-ROUTE1065.setFromField("fraction_changed")
-ROUTE1065.setFromNode("KickTimer")
-ROUTE1065.setToField("set_fraction")
-ROUTE1065.setToNode("Kick_l_sternoclavicular_RollInterpolator")
-
-Scene34.addChildren(ROUTE1065)
-ROUTE1066 = ROUTE()
-ROUTE1066.setFromField("fraction_changed")
-ROUTE1066.setFromNode("KickTimer")
-ROUTE1066.setToField("set_fraction")
-ROUTE1066.setToNode("Kick_l_acromioclavicular_RollInterpolator")
-
-Scene34.addChildren(ROUTE1066)
-ROUTE1067 = ROUTE()
-ROUTE1067.setFromField("fraction_changed")
-ROUTE1067.setFromNode("KickTimer")
-ROUTE1067.setToField("set_fraction")
-ROUTE1067.setToNode("Kick_l_shoulder_RollInterpolator")
-
-Scene34.addChildren(ROUTE1067)
-ROUTE1068 = ROUTE()
-ROUTE1068.setFromField("fraction_changed")
-ROUTE1068.setFromNode("KickTimer")
-ROUTE1068.setToField("set_fraction")
-ROUTE1068.setToNode("Kick_l_ForeArm_PitchInterpolator")
-
-Scene34.addChildren(ROUTE1068)
-ROUTE1069 = ROUTE()
-ROUTE1069.setFromField("fraction_changed")
-ROUTE1069.setFromNode("KickTimer")
-ROUTE1069.setToField("set_fraction")
-ROUTE1069.setToNode("Kick_l_wrist_RollInterpolator")
-
-Scene34.addChildren(ROUTE1069)
-ROUTE1070 = ROUTE()
-ROUTE1070.setFromField("fraction_changed")
-ROUTE1070.setFromNode("KickTimer")
-ROUTE1070.setToField("set_fraction")
-ROUTE1070.setToNode("Kick_l_thumb1_PitchInterpolator")
-
-Scene34.addChildren(ROUTE1070)
-ROUTE1071 = ROUTE()
-ROUTE1071.setFromField("fraction_changed")
-ROUTE1071.setFromNode("KickTimer")
-ROUTE1071.setToField("set_fraction")
-ROUTE1071.setToNode("Kick_r_sternoclavicular_RollInterpolator")
-
-Scene34.addChildren(ROUTE1071)
-ROUTE1072 = ROUTE()
-ROUTE1072.setFromField("fraction_changed")
-ROUTE1072.setFromNode("KickTimer")
-ROUTE1072.setToField("set_fraction")
-ROUTE1072.setToNode("Kick_r_acromioclavicular_RollInterpolator")
-
-Scene34.addChildren(ROUTE1072)
-ROUTE1073 = ROUTE()
-ROUTE1073.setFromField("fraction_changed")
-ROUTE1073.setFromNode("KickTimer")
-ROUTE1073.setToField("set_fraction")
-ROUTE1073.setToNode("Kick_r_shoulder_RollInterpolator")
-
-Scene34.addChildren(ROUTE1073)
-ROUTE1074 = ROUTE()
-ROUTE1074.setFromField("fraction_changed")
-ROUTE1074.setFromNode("KickTimer")
-ROUTE1074.setToField("set_fraction")
-ROUTE1074.setToNode("Kick_r_ForeArm_PitchInterpolator")
-
-Scene34.addChildren(ROUTE1074)
-ROUTE1075 = ROUTE()
-ROUTE1075.setFromField("fraction_changed")
-ROUTE1075.setFromNode("KickTimer")
-ROUTE1075.setToField("set_fraction")
-ROUTE1075.setToNode("Kick_r_wrist_RollInterpolator")
-
-Scene34.addChildren(ROUTE1075)
-ROUTE1076 = ROUTE()
-ROUTE1076.setFromField("fraction_changed")
-ROUTE1076.setFromNode("KickTimer")
-ROUTE1076.setToField("set_fraction")
-ROUTE1076.setToNode("Kick_r_thumb1_PitchInterpolator")
-
-Scene34.addChildren(ROUTE1076)
-ROUTE1077 = ROUTE()
-ROUTE1077.setFromField("fraction_changed")
-ROUTE1077.setFromNode("KickTimer")
-ROUTE1077.setToField("set_fraction")
-ROUTE1077.setToNode("Kick_r_hip_PitchInterpolator")
-
-Scene34.addChildren(ROUTE1077)
-ROUTE1078 = ROUTE()
-ROUTE1078.setFromField("fraction_changed")
-ROUTE1078.setFromNode("KickTimer")
-ROUTE1078.setToField("set_fraction")
-ROUTE1078.setToNode("Kick_r_knee_PitchInterpolator")
-
-Scene34.addChildren(ROUTE1078)
-ROUTE1079 = ROUTE()
-ROUTE1079.setFromField("fraction_changed")
-ROUTE1079.setFromNode("KickTimer")
-ROUTE1079.setToField("set_fraction")
-ROUTE1079.setToNode("Kick_l_hip_PitchInterpolator")
-
-Scene34.addChildren(ROUTE1079)
-ROUTE1080 = ROUTE()
-ROUTE1080.setFromField("fraction_changed")
-ROUTE1080.setFromNode("KickTimer")
-ROUTE1080.setToField("set_fraction")
-ROUTE1080.setToNode("Kick_l_knee_PitchInterpolator")
-
-Scene34.addChildren(ROUTE1080)
-ROUTE1081 = ROUTE()
-ROUTE1081.setFromField("fraction_changed")
-ROUTE1081.setFromNode("KickTimer")
-ROUTE1081.setToField("set_fraction")
-ROUTE1081.setToNode("Kick_r_ankle_PitchInterpolator")
-
-Scene34.addChildren(ROUTE1081)
-ROUTE1082 = ROUTE()
-ROUTE1082.setFromField("fraction_changed")
-ROUTE1082.setFromNode("KickTimer")
-ROUTE1082.setToField("set_fraction")
-ROUTE1082.setToNode("Kick_r_metatarsal_PitchInterpolator")
-
-Scene34.addChildren(ROUTE1082)
-ROUTE1083 = ROUTE()
-ROUTE1083.setFromField("fraction_changed")
-ROUTE1083.setFromNode("KickTimer")
-ROUTE1083.setToField("set_fraction")
-ROUTE1083.setToNode("Kick_sacroiliac_YawInterpolator")
-
-Scene34.addChildren(ROUTE1083)
-ROUTE1084 = ROUTE()
-ROUTE1084.setFromField("fraction_changed")
-ROUTE1084.setFromNode("KickTimer")
-ROUTE1084.setToField("set_fraction")
-ROUTE1084.setToNode("Kick_vl5_YawInterpolator")
-
-Scene34.addChildren(ROUTE1084)
-ROUTE1085 = ROUTE()
-ROUTE1085.setFromField("fraction_changed")
-ROUTE1085.setFromNode("KickTimer")
-ROUTE1085.setToField("set_fraction")
-ROUTE1085.setToNode("Kick_vc6_YawInterpolator")
-
-Scene34.addChildren(ROUTE1085)
-ROUTE1086 = ROUTE()
-ROUTE1086.setFromField("fraction_changed")
-ROUTE1086.setFromNode("KickTimer")
-ROUTE1086.setToField("set_fraction")
-ROUTE1086.setToNode("Kick_lower_body_RotationInterpolator")
-
-Scene34.addChildren(ROUTE1086)
-ROUTE1087 = ROUTE()
-ROUTE1087.setFromField("fraction_changed")
-ROUTE1087.setFromNode("KickTimer")
-ROUTE1087.setToField("set_fraction")
-ROUTE1087.setToNode("Kick_upper_body_RotationInterpolator")
-
-Scene34.addChildren(ROUTE1087)
-ROUTE1088 = ROUTE()
-ROUTE1088.setFromField("fraction_changed")
-ROUTE1088.setFromNode("KickTimer")
-ROUTE1088.setToField("set_fraction")
-ROUTE1088.setToNode("Kick_whole_body_RotationInterpolator")
-
-Scene34.addChildren(ROUTE1088)
-ROUTE1089 = ROUTE()
-ROUTE1089.setFromField("fraction_changed")
-ROUTE1089.setFromNode("KickTimer")
-ROUTE1089.setToField("set_fraction")
-ROUTE1089.setToNode("Kick_whole_body_TranslationInterpolator")
-
-Scene34.addChildren(ROUTE1089)
-ROUTE1090 = ROUTE()
-ROUTE1090.setFromField("fraction_changed")
-ROUTE1090.setFromNode("KickTimer")
-ROUTE1090.setToField("set_fraction")
-ROUTE1090.setToNode("Kick_neck_RotationInterpolator")
-
-Scene34.addChildren(ROUTE1090)
-ROUTE1091 = ROUTE()
-ROUTE1091.setFromField("value_changed")
-ROUTE1091.setFromNode("Kick_l_shoulder_RollInterpolator")
-ROUTE1091.setToField("set_rotation")
-ROUTE1091.setToNode("boxman_l_shoulder")
-
-Scene34.addChildren(ROUTE1091)
-ROUTE1092 = ROUTE()
-ROUTE1092.setFromField("value_changed")
-ROUTE1092.setFromNode("Kick_l_ForeArm_PitchInterpolator")
-ROUTE1092.setToField("set_rotation")
-ROUTE1092.setToNode("boxman_l_elbow")
-
-Scene34.addChildren(ROUTE1092)
-ROUTE1093 = ROUTE()
-ROUTE1093.setFromField("value_changed")
-ROUTE1093.setFromNode("Kick_l_wrist_RollInterpolator")
-ROUTE1093.setToField("set_rotation")
-ROUTE1093.setToNode("boxman_l_wrist")
-
-Scene34.addChildren(ROUTE1093)
-ROUTE1094 = ROUTE()
-ROUTE1094.setFromField("value_changed")
-ROUTE1094.setFromNode("Kick_r_shoulder_RollInterpolator")
-ROUTE1094.setToField("set_rotation")
-ROUTE1094.setToNode("boxman_r_shoulder")
-
-Scene34.addChildren(ROUTE1094)
-ROUTE1095 = ROUTE()
-ROUTE1095.setFromField("value_changed")
-ROUTE1095.setFromNode("Kick_r_ForeArm_PitchInterpolator")
-ROUTE1095.setToField("set_rotation")
-ROUTE1095.setToNode("boxman_r_elbow")
-
-Scene34.addChildren(ROUTE1095)
-ROUTE1096 = ROUTE()
-ROUTE1096.setFromField("value_changed")
-ROUTE1096.setFromNode("Kick_r_wrist_RollInterpolator")
-ROUTE1096.setToField("set_rotation")
-ROUTE1096.setToNode("boxman_r_wrist")
-
-Scene34.addChildren(ROUTE1096)
-ROUTE1097 = ROUTE()
-ROUTE1097.setFromField("value_changed")
-ROUTE1097.setFromNode("Kick_r_hip_PitchInterpolator")
-ROUTE1097.setToField("set_rotation")
-ROUTE1097.setToNode("boxman_r_hip")
-
-Scene34.addChildren(ROUTE1097)
-ROUTE1098 = ROUTE()
-ROUTE1098.setFromField("value_changed")
-ROUTE1098.setFromNode("Kick_r_knee_PitchInterpolator")
-ROUTE1098.setToField("set_rotation")
-ROUTE1098.setToNode("boxman_r_knee")
-
-Scene34.addChildren(ROUTE1098)
-ROUTE1099 = ROUTE()
-ROUTE1099.setFromField("value_changed")
-ROUTE1099.setFromNode("Kick_r_ankle_PitchInterpolator")
-ROUTE1099.setToField("set_rotation")
-ROUTE1099.setToNode("boxman_r_ankle")
-
-Scene34.addChildren(ROUTE1099)
-ROUTE1100 = ROUTE()
-ROUTE1100.setFromField("value_changed")
-ROUTE1100.setFromNode("Kick_l_hip_PitchInterpolator")
-ROUTE1100.setToField("set_rotation")
-ROUTE1100.setToNode("boxman_l_hip")
-
-Scene34.addChildren(ROUTE1100)
-ROUTE1101 = ROUTE()
-ROUTE1101.setFromField("value_changed")
-ROUTE1101.setFromNode("Kick_l_knee_PitchInterpolator")
-ROUTE1101.setToField("set_rotation")
-ROUTE1101.setToNode("boxman_l_knee")
-
-Scene34.addChildren(ROUTE1101)
-ROUTE1102 = ROUTE()
-ROUTE1102.setFromField("value_changed")
-ROUTE1102.setFromNode("Kick_r_ankle_PitchInterpolator")
-ROUTE1102.setToField("set_rotation")
-ROUTE1102.setToNode("boxman_l_ankle")
-
-Scene34.addChildren(ROUTE1102)
-ROUTE1103 = ROUTE()
-ROUTE1103.setFromField("value_changed")
-ROUTE1103.setFromNode("Kick_vl5_YawInterpolator")
-ROUTE1103.setToField("set_rotation")
-ROUTE1103.setToNode("boxman_vl5")
-
-Scene34.addChildren(ROUTE1103)
-ROUTE1104 = ROUTE()
-ROUTE1104.setFromField("value_changed")
-ROUTE1104.setFromNode("Kick_whole_body_RotationInterpolator")
-ROUTE1104.setToField("set_rotation")
-ROUTE1104.setToNode("boxman_humanoid_root")
-
-Scene34.addChildren(ROUTE1104)
-ROUTE1105 = ROUTE()
-ROUTE1105.setFromField("value_changed")
-ROUTE1105.setFromNode("Kick_whole_body_TranslationInterpolator")
-ROUTE1105.setToField("set_translation")
-ROUTE1105.setToNode("boxman_humanoid_root")
-
-Scene34.addChildren(ROUTE1105)
-ROUTE1106 = ROUTE()
-ROUTE1106.setFromField("position_changed")
-ROUTE1106.setFromNode("HudProx")
-ROUTE1106.setToField("set_translation")
-ROUTE1106.setToNode("HudXform")
-
-Scene34.addChildren(ROUTE1106)
-ROUTE1107 = ROUTE()
-ROUTE1107.setFromField("orientation_changed")
-ROUTE1107.setFromNode("HudProx")
-ROUTE1107.setToField("set_rotation")
-ROUTE1107.setToNode("HudXform")
-
-Scene34.addChildren(ROUTE1107)
-ROUTE1108 = ROUTE()
-ROUTE1108.setFromField("touchTime")
-ROUTE1108.setFromNode("Stand_Touch")
-ROUTE1108.setToField("set_stopTime")
-ROUTE1108.setToNode("PitchTimer")
-
-Scene34.addChildren(ROUTE1108)
-ROUTE1109 = ROUTE()
-ROUTE1109.setFromField("touchTime")
-ROUTE1109.setFromNode("Stand_Touch")
-ROUTE1109.setToField("set_stopTime")
-ROUTE1109.setToNode("YawTimer")
-
-Scene34.addChildren(ROUTE1109)
-ROUTE1110 = ROUTE()
-ROUTE1110.setFromField("touchTime")
-ROUTE1110.setFromNode("Stand_Touch")
-ROUTE1110.setToField("set_stopTime")
-ROUTE1110.setToNode("RollTimer")
-
-Scene34.addChildren(ROUTE1110)
-ROUTE1111 = ROUTE()
-ROUTE1111.setFromField("touchTime")
-ROUTE1111.setFromNode("Stand_Touch")
-ROUTE1111.setToField("set_stopTime")
-ROUTE1111.setToNode("WalkTimer")
-
-Scene34.addChildren(ROUTE1111)
-ROUTE1112 = ROUTE()
-ROUTE1112.setFromField("touchTime")
-ROUTE1112.setFromNode("Stand_Touch")
-ROUTE1112.setToField("set_stopTime")
-ROUTE1112.setToNode("RunTimer")
-
-Scene34.addChildren(ROUTE1112)
-ROUTE1113 = ROUTE()
-ROUTE1113.setFromField("touchTime")
-ROUTE1113.setFromNode("Stand_Touch")
-ROUTE1113.setToField("set_stopTime")
-ROUTE1113.setToNode("JumpTimer")
-
-Scene34.addChildren(ROUTE1113)
-ROUTE1114 = ROUTE()
-ROUTE1114.setFromField("touchTime")
-ROUTE1114.setFromNode("Stand_Touch")
-ROUTE1114.setToField("set_stopTime")
-ROUTE1114.setToNode("KickTimer")
-
-Scene34.addChildren(ROUTE1114)
-ROUTE1115 = ROUTE()
-ROUTE1115.setFromField("touchTime")
-ROUTE1115.setFromNode("Stand_Touch")
-ROUTE1115.setToField("set_stopTime")
-ROUTE1115.setToNode("StopTimer")
-
-Scene34.addChildren(ROUTE1115)
-ROUTE1116 = ROUTE()
-ROUTE1116.setFromField("touchTime")
-ROUTE1116.setFromNode("Stand_Touch")
-ROUTE1116.setToField("set_startTime")
-ROUTE1116.setToNode("StandTimer")
-
-Scene34.addChildren(ROUTE1116)
-ROUTE1117 = ROUTE()
-ROUTE1117.setFromField("touchTime")
-ROUTE1117.setFromNode("Pitch_Touch")
-ROUTE1117.setToField("set_stopTime")
-ROUTE1117.setToNode("StandTimer")
-
-Scene34.addChildren(ROUTE1117)
-ROUTE1118 = ROUTE()
-ROUTE1118.setFromField("touchTime")
-ROUTE1118.setFromNode("Pitch_Touch")
-ROUTE1118.setToField("set_stopTime")
-ROUTE1118.setToNode("YawTimer")
-
-Scene34.addChildren(ROUTE1118)
-ROUTE1119 = ROUTE()
-ROUTE1119.setFromField("touchTime")
-ROUTE1119.setFromNode("Pitch_Touch")
-ROUTE1119.setToField("set_stopTime")
-ROUTE1119.setToNode("RollTimer")
-
-Scene34.addChildren(ROUTE1119)
-ROUTE1120 = ROUTE()
-ROUTE1120.setFromField("touchTime")
-ROUTE1120.setFromNode("Pitch_Touch")
-ROUTE1120.setToField("set_stopTime")
-ROUTE1120.setToNode("WalkTimer")
-
-Scene34.addChildren(ROUTE1120)
-ROUTE1121 = ROUTE()
-ROUTE1121.setFromField("touchTime")
-ROUTE1121.setFromNode("Pitch_Touch")
-ROUTE1121.setToField("set_stopTime")
-ROUTE1121.setToNode("RunTimer")
-
-Scene34.addChildren(ROUTE1121)
-ROUTE1122 = ROUTE()
-ROUTE1122.setFromField("touchTime")
-ROUTE1122.setFromNode("Pitch_Touch")
-ROUTE1122.setToField("set_stopTime")
-ROUTE1122.setToNode("JumpTimer")
-
-Scene34.addChildren(ROUTE1122)
-ROUTE1123 = ROUTE()
-ROUTE1123.setFromField("touchTime")
-ROUTE1123.setFromNode("Pitch_Touch")
-ROUTE1123.setToField("set_stopTime")
-ROUTE1123.setToNode("KickTimer")
-
-Scene34.addChildren(ROUTE1123)
-ROUTE1124 = ROUTE()
-ROUTE1124.setFromField("touchTime")
-ROUTE1124.setFromNode("Pitch_Touch")
-ROUTE1124.setToField("set_stopTime")
-ROUTE1124.setToNode("StopTimer")
-
-Scene34.addChildren(ROUTE1124)
-ROUTE1125 = ROUTE()
-ROUTE1125.setFromField("touchTime")
-ROUTE1125.setFromNode("Pitch_Touch")
-ROUTE1125.setToField("set_startTime")
-ROUTE1125.setToNode("PitchTimer")
-
-Scene34.addChildren(ROUTE1125)
-ROUTE1126 = ROUTE()
-ROUTE1126.setFromField("touchTime")
-ROUTE1126.setFromNode("Yaw_Touch")
-ROUTE1126.setToField("set_stopTime")
-ROUTE1126.setToNode("StandTimer")
-
-Scene34.addChildren(ROUTE1126)
-ROUTE1127 = ROUTE()
-ROUTE1127.setFromField("touchTime")
-ROUTE1127.setFromNode("Yaw_Touch")
-ROUTE1127.setToField("set_stopTime")
-ROUTE1127.setToNode("PitchTimer")
-
-Scene34.addChildren(ROUTE1127)
-ROUTE1128 = ROUTE()
-ROUTE1128.setFromField("touchTime")
-ROUTE1128.setFromNode("Yaw_Touch")
-ROUTE1128.setToField("set_stopTime")
-ROUTE1128.setToNode("RollTimer")
-
-Scene34.addChildren(ROUTE1128)
-ROUTE1129 = ROUTE()
-ROUTE1129.setFromField("touchTime")
-ROUTE1129.setFromNode("Yaw_Touch")
-ROUTE1129.setToField("set_stopTime")
-ROUTE1129.setToNode("WalkTimer")
-
-Scene34.addChildren(ROUTE1129)
-ROUTE1130 = ROUTE()
-ROUTE1130.setFromField("touchTime")
-ROUTE1130.setFromNode("Yaw_Touch")
-ROUTE1130.setToField("set_stopTime")
-ROUTE1130.setToNode("RunTimer")
-
-Scene34.addChildren(ROUTE1130)
-ROUTE1131 = ROUTE()
-ROUTE1131.setFromField("touchTime")
-ROUTE1131.setFromNode("Yaw_Touch")
-ROUTE1131.setToField("set_stopTime")
-ROUTE1131.setToNode("JumpTimer")
-
-Scene34.addChildren(ROUTE1131)
-ROUTE1132 = ROUTE()
-ROUTE1132.setFromField("touchTime")
-ROUTE1132.setFromNode("Yaw_Touch")
-ROUTE1132.setToField("set_stopTime")
-ROUTE1132.setToNode("KickTimer")
-
-Scene34.addChildren(ROUTE1132)
-ROUTE1133 = ROUTE()
-ROUTE1133.setFromField("touchTime")
-ROUTE1133.setFromNode("Yaw_Touch")
-ROUTE1133.setToField("set_stopTime")
-ROUTE1133.setToNode("StopTimer")
-
-Scene34.addChildren(ROUTE1133)
-ROUTE1134 = ROUTE()
-ROUTE1134.setFromField("touchTime")
-ROUTE1134.setFromNode("Yaw_Touch")
-ROUTE1134.setToField("set_startTime")
-ROUTE1134.setToNode("YawTimer")
-
-Scene34.addChildren(ROUTE1134)
-ROUTE1135 = ROUTE()
-ROUTE1135.setFromField("touchTime")
-ROUTE1135.setFromNode("Walk_Touch")
-ROUTE1135.setToField("set_stopTime")
-ROUTE1135.setToNode("StandTimer")
-
-Scene34.addChildren(ROUTE1135)
-ROUTE1136 = ROUTE()
-ROUTE1136.setFromField("touchTime")
-ROUTE1136.setFromNode("Walk_Touch")
-ROUTE1136.setToField("set_stopTime")
-ROUTE1136.setToNode("PitchTimer")
-
-Scene34.addChildren(ROUTE1136)
-ROUTE1137 = ROUTE()
-ROUTE1137.setFromField("touchTime")
-ROUTE1137.setFromNode("Walk_Touch")
-ROUTE1137.setToField("set_stopTime")
-ROUTE1137.setToNode("YawTimer")
-
-Scene34.addChildren(ROUTE1137)
-ROUTE1138 = ROUTE()
-ROUTE1138.setFromField("touchTime")
-ROUTE1138.setFromNode("Walk_Touch")
-ROUTE1138.setToField("set_stopTime")
-ROUTE1138.setToNode("RollTimer")
-
-Scene34.addChildren(ROUTE1138)
-ROUTE1139 = ROUTE()
-ROUTE1139.setFromField("touchTime")
-ROUTE1139.setFromNode("Walk_Touch")
-ROUTE1139.setToField("set_stopTime")
-ROUTE1139.setToNode("RunTimer")
-
-Scene34.addChildren(ROUTE1139)
-ROUTE1140 = ROUTE()
-ROUTE1140.setFromField("touchTime")
-ROUTE1140.setFromNode("Walk_Touch")
-ROUTE1140.setToField("set_stopTime")
-ROUTE1140.setToNode("JumpTimer")
-
-Scene34.addChildren(ROUTE1140)
-ROUTE1141 = ROUTE()
-ROUTE1141.setFromField("touchTime")
-ROUTE1141.setFromNode("Walk_Touch")
-ROUTE1141.setToField("set_stopTime")
-ROUTE1141.setToNode("KickTimer")
-
-Scene34.addChildren(ROUTE1141)
-ROUTE1142 = ROUTE()
-ROUTE1142.setFromField("touchTime")
-ROUTE1142.setFromNode("Walk_Touch")
-ROUTE1142.setToField("set_stopTime")
-ROUTE1142.setToNode("StopTimer")
-
-Scene34.addChildren(ROUTE1142)
-ROUTE1143 = ROUTE()
-ROUTE1143.setFromField("touchTime")
-ROUTE1143.setFromNode("Walk_Touch")
-ROUTE1143.setToField("set_startTime")
-ROUTE1143.setToNode("WalkTimer")
-
-Scene34.addChildren(ROUTE1143)
-ROUTE1144 = ROUTE()
-ROUTE1144.setFromField("touchTime")
-ROUTE1144.setFromNode("Roll_Touch")
-ROUTE1144.setToField("set_stopTime")
-ROUTE1144.setToNode("StandTimer")
-
-Scene34.addChildren(ROUTE1144)
-ROUTE1145 = ROUTE()
-ROUTE1145.setFromField("touchTime")
-ROUTE1145.setFromNode("Roll_Touch")
-ROUTE1145.setToField("set_stopTime")
-ROUTE1145.setToNode("PitchTimer")
-
-Scene34.addChildren(ROUTE1145)
-ROUTE1146 = ROUTE()
-ROUTE1146.setFromField("touchTime")
-ROUTE1146.setFromNode("Roll_Touch")
-ROUTE1146.setToField("set_stopTime")
-ROUTE1146.setToNode("YawTimer")
-
-Scene34.addChildren(ROUTE1146)
-ROUTE1147 = ROUTE()
-ROUTE1147.setFromField("touchTime")
-ROUTE1147.setFromNode("Roll_Touch")
-ROUTE1147.setToField("set_stopTime")
-ROUTE1147.setToNode("WalkTimer")
-
-Scene34.addChildren(ROUTE1147)
-ROUTE1148 = ROUTE()
-ROUTE1148.setFromField("touchTime")
-ROUTE1148.setFromNode("Roll_Touch")
-ROUTE1148.setToField("set_stopTime")
-ROUTE1148.setToNode("RunTimer")
-
-Scene34.addChildren(ROUTE1148)
-ROUTE1149 = ROUTE()
-ROUTE1149.setFromField("touchTime")
-ROUTE1149.setFromNode("Roll_Touch")
-ROUTE1149.setToField("set_stopTime")
-ROUTE1149.setToNode("JumpTimer")
-
-Scene34.addChildren(ROUTE1149)
-ROUTE1150 = ROUTE()
-ROUTE1150.setFromField("touchTime")
-ROUTE1150.setFromNode("Roll_Touch")
-ROUTE1150.setToField("set_stopTime")
-ROUTE1150.setToNode("KickTimer")
-
-Scene34.addChildren(ROUTE1150)
-ROUTE1151 = ROUTE()
-ROUTE1151.setFromField("touchTime")
-ROUTE1151.setFromNode("Roll_Touch")
-ROUTE1151.setToField("set_stopTime")
-ROUTE1151.setToNode("StopTimer")
-
-Scene34.addChildren(ROUTE1151)
-ROUTE1152 = ROUTE()
-ROUTE1152.setFromField("touchTime")
-ROUTE1152.setFromNode("Roll_Touch")
-ROUTE1152.setToField("set_startTime")
-ROUTE1152.setToNode("RollTimer")
-
-Scene34.addChildren(ROUTE1152)
-ROUTE1153 = ROUTE()
-ROUTE1153.setFromField("touchTime")
-ROUTE1153.setFromNode("Run_Touch")
-ROUTE1153.setToField("set_stopTime")
-ROUTE1153.setToNode("StandTimer")
-
-Scene34.addChildren(ROUTE1153)
-ROUTE1154 = ROUTE()
-ROUTE1154.setFromField("touchTime")
-ROUTE1154.setFromNode("Run_Touch")
-ROUTE1154.setToField("set_stopTime")
-ROUTE1154.setToNode("PitchTimer")
-
-Scene34.addChildren(ROUTE1154)
-ROUTE1155 = ROUTE()
-ROUTE1155.setFromField("touchTime")
-ROUTE1155.setFromNode("Run_Touch")
-ROUTE1155.setToField("set_stopTime")
-ROUTE1155.setToNode("YawTimer")
-
-Scene34.addChildren(ROUTE1155)
-ROUTE1156 = ROUTE()
-ROUTE1156.setFromField("touchTime")
-ROUTE1156.setFromNode("Run_Touch")
-ROUTE1156.setToField("set_stopTime")
-ROUTE1156.setToNode("RollTimer")
-
-Scene34.addChildren(ROUTE1156)
-ROUTE1157 = ROUTE()
-ROUTE1157.setFromField("touchTime")
-ROUTE1157.setFromNode("Run_Touch")
-ROUTE1157.setToField("set_stopTime")
-ROUTE1157.setToNode("WalkTimer")
-
-Scene34.addChildren(ROUTE1157)
-ROUTE1158 = ROUTE()
-ROUTE1158.setFromField("touchTime")
-ROUTE1158.setFromNode("Run_Touch")
-ROUTE1158.setToField("set_stopTime")
-ROUTE1158.setToNode("JumpTimer")
-
-Scene34.addChildren(ROUTE1158)
-ROUTE1159 = ROUTE()
-ROUTE1159.setFromField("touchTime")
-ROUTE1159.setFromNode("Run_Touch")
-ROUTE1159.setToField("set_stopTime")
-ROUTE1159.setToNode("KickTimer")
-
-Scene34.addChildren(ROUTE1159)
-ROUTE1160 = ROUTE()
-ROUTE1160.setFromField("touchTime")
-ROUTE1160.setFromNode("Run_Touch")
-ROUTE1160.setToField("set_stopTime")
-ROUTE1160.setToNode("StopTimer")
-
-Scene34.addChildren(ROUTE1160)
-ROUTE1161 = ROUTE()
-ROUTE1161.setFromField("touchTime")
-ROUTE1161.setFromNode("Run_Touch")
-ROUTE1161.setToField("set_startTime")
-ROUTE1161.setToNode("RunTimer")
-
-Scene34.addChildren(ROUTE1161)
-ROUTE1162 = ROUTE()
-ROUTE1162.setFromField("touchTime")
-ROUTE1162.setFromNode("Jump_Touch")
-ROUTE1162.setToField("set_stopTime")
-ROUTE1162.setToNode("StandTimer")
-
-Scene34.addChildren(ROUTE1162)
-ROUTE1163 = ROUTE()
-ROUTE1163.setFromField("touchTime")
-ROUTE1163.setFromNode("Jump_Touch")
-ROUTE1163.setToField("set_stopTime")
-ROUTE1163.setToNode("PitchTimer")
-
-Scene34.addChildren(ROUTE1163)
-ROUTE1164 = ROUTE()
-ROUTE1164.setFromField("touchTime")
-ROUTE1164.setFromNode("Jump_Touch")
-ROUTE1164.setToField("set_stopTime")
-ROUTE1164.setToNode("YawTimer")
-
-Scene34.addChildren(ROUTE1164)
-ROUTE1165 = ROUTE()
-ROUTE1165.setFromField("touchTime")
-ROUTE1165.setFromNode("Jump_Touch")
-ROUTE1165.setToField("set_stopTime")
-ROUTE1165.setToNode("RollTimer")
-
-Scene34.addChildren(ROUTE1165)
-ROUTE1166 = ROUTE()
-ROUTE1166.setFromField("touchTime")
-ROUTE1166.setFromNode("Jump_Touch")
-ROUTE1166.setToField("set_stopTime")
-ROUTE1166.setToNode("WalkTimer")
-
-Scene34.addChildren(ROUTE1166)
-ROUTE1167 = ROUTE()
-ROUTE1167.setFromField("touchTime")
-ROUTE1167.setFromNode("Jump_Touch")
-ROUTE1167.setToField("set_stopTime")
-ROUTE1167.setToNode("RunTimer")
-
-Scene34.addChildren(ROUTE1167)
-ROUTE1168 = ROUTE()
-ROUTE1168.setFromField("touchTime")
-ROUTE1168.setFromNode("Jump_Touch")
-ROUTE1168.setToField("set_stopTime")
-ROUTE1168.setToNode("KickTimer")
-
-Scene34.addChildren(ROUTE1168)
-ROUTE1169 = ROUTE()
-ROUTE1169.setFromField("touchTime")
-ROUTE1169.setFromNode("Jump_Touch")
-ROUTE1169.setToField("set_stopTime")
-ROUTE1169.setToNode("StopTimer")
-
-Scene34.addChildren(ROUTE1169)
-ROUTE1170 = ROUTE()
-ROUTE1170.setFromField("touchTime")
-ROUTE1170.setFromNode("Jump_Touch")
-ROUTE1170.setToField("set_startTime")
-ROUTE1170.setToNode("JumpTimer")
-
-Scene34.addChildren(ROUTE1170)
-ROUTE1171 = ROUTE()
-ROUTE1171.setFromField("touchTime")
-ROUTE1171.setFromNode("Kick_Touch")
-ROUTE1171.setToField("set_stopTime")
-ROUTE1171.setToNode("StandTimer")
-
-Scene34.addChildren(ROUTE1171)
-ROUTE1172 = ROUTE()
-ROUTE1172.setFromField("touchTime")
-ROUTE1172.setFromNode("Kick_Touch")
-ROUTE1172.setToField("set_stopTime")
-ROUTE1172.setToNode("PitchTimer")
-
-Scene34.addChildren(ROUTE1172)
-ROUTE1173 = ROUTE()
-ROUTE1173.setFromField("touchTime")
-ROUTE1173.setFromNode("Kick_Touch")
-ROUTE1173.setToField("set_stopTime")
-ROUTE1173.setToNode("YawTimer")
-
-Scene34.addChildren(ROUTE1173)
-ROUTE1174 = ROUTE()
-ROUTE1174.setFromField("touchTime")
-ROUTE1174.setFromNode("Kick_Touch")
-ROUTE1174.setToField("set_stopTime")
-ROUTE1174.setToNode("RollTimer")
-
-Scene34.addChildren(ROUTE1174)
-ROUTE1175 = ROUTE()
-ROUTE1175.setFromField("touchTime")
-ROUTE1175.setFromNode("Kick_Touch")
-ROUTE1175.setToField("set_stopTime")
-ROUTE1175.setToNode("WalkTimer")
-
-Scene34.addChildren(ROUTE1175)
-ROUTE1176 = ROUTE()
-ROUTE1176.setFromField("touchTime")
-ROUTE1176.setFromNode("Kick_Touch")
-ROUTE1176.setToField("set_stopTime")
-ROUTE1176.setToNode("RunTimer")
-
-Scene34.addChildren(ROUTE1176)
-ROUTE1177 = ROUTE()
-ROUTE1177.setFromField("touchTime")
-ROUTE1177.setFromNode("Kick_Touch")
-ROUTE1177.setToField("set_stopTime")
-ROUTE1177.setToNode("JumpTimer")
-
-Scene34.addChildren(ROUTE1177)
-ROUTE1178 = ROUTE()
-ROUTE1178.setFromField("touchTime")
-ROUTE1178.setFromNode("Kick_Touch")
-ROUTE1178.setToField("set_stopTime")
-ROUTE1178.setToNode("StopTimer")
-
-Scene34.addChildren(ROUTE1178)
-ROUTE1179 = ROUTE()
-ROUTE1179.setFromField("touchTime")
-ROUTE1179.setFromNode("Kick_Touch")
-ROUTE1179.setToField("set_startTime")
-ROUTE1179.setToNode("KickTimer")
-
-Scene34.addChildren(ROUTE1179)
-ROUTE1180 = ROUTE()
-ROUTE1180.setFromField("touchTime")
-ROUTE1180.setFromNode("Stop_Touch")
-ROUTE1180.setToField("set_stopTime")
-ROUTE1180.setToNode("StandTimer")
-
-Scene34.addChildren(ROUTE1180)
-ROUTE1181 = ROUTE()
-ROUTE1181.setFromField("touchTime")
-ROUTE1181.setFromNode("Stop_Touch")
-ROUTE1181.setToField("set_stopTime")
-ROUTE1181.setToNode("PitchTimer")
-
-Scene34.addChildren(ROUTE1181)
-ROUTE1182 = ROUTE()
-ROUTE1182.setFromField("touchTime")
-ROUTE1182.setFromNode("Stop_Touch")
-ROUTE1182.setToField("set_stopTime")
-ROUTE1182.setToNode("YawTimer")
-
-Scene34.addChildren(ROUTE1182)
-ROUTE1183 = ROUTE()
-ROUTE1183.setFromField("touchTime")
-ROUTE1183.setFromNode("Stop_Touch")
-ROUTE1183.setToField("set_stopTime")
-ROUTE1183.setToNode("RollTimer")
-
-Scene34.addChildren(ROUTE1183)
-ROUTE1184 = ROUTE()
-ROUTE1184.setFromField("touchTime")
-ROUTE1184.setFromNode("Stop_Touch")
-ROUTE1184.setToField("set_stopTime")
-ROUTE1184.setToNode("WalkTimer")
-
-Scene34.addChildren(ROUTE1184)
-ROUTE1185 = ROUTE()
-ROUTE1185.setFromField("touchTime")
-ROUTE1185.setFromNode("Stop_Touch")
-ROUTE1185.setToField("set_stopTime")
-ROUTE1185.setToNode("RunTimer")
-
-Scene34.addChildren(ROUTE1185)
-ROUTE1186 = ROUTE()
-ROUTE1186.setFromField("touchTime")
-ROUTE1186.setFromNode("Stop_Touch")
-ROUTE1186.setToField("set_stopTime")
-ROUTE1186.setToNode("JumpTimer")
-
-Scene34.addChildren(ROUTE1186)
-ROUTE1187 = ROUTE()
-ROUTE1187.setFromField("touchTime")
-ROUTE1187.setFromNode("Stop_Touch")
-ROUTE1187.setToField("set_stopTime")
-ROUTE1187.setToNode("KickTimer")
-
-Scene34.addChildren(ROUTE1187)
-ROUTE1188 = ROUTE()
-ROUTE1188.setFromField("touchTime")
-ROUTE1188.setFromNode("Stop_Touch")
-ROUTE1188.setToField("set_startTime")
-ROUTE1188.setToNode("StopTimer")
-
-Scene34.addChildren(ROUTE1188)
-
-X3D0.setScene(Scene34)
-X3D0.toFileX3D("../data/BoxManAnimationPanel_RoundTrip.x3d")
+], skinCoord(
+            Coordinate(
+              DEF="SKINCOORD", point=(-0.05,1,0.05,0.05,1,0.05,0.03,0.97,-0.1,-0.03,0.97,-0.1,0.03,0.94,-0.075,-0.03,0.94,-0.075,0,0.92,0,0,0.94,0.03,-0.12,1.06,0.05,0.12,1.06,0.05,0.12,1.06,-0.1,-0.12,1.06,-0.1,0.0456,0.9364,0.05,0.1456,0.9364,0.05,0.1456,0.9364,-0.05,0.0456,0.9364,-0.05,0.0456,0.9,0.05,0.1456,0.9,0.05,0.1456,0.9,-0.05,0.0456,0.9,-0.05,0.0456,0.8,0.05,0.1456,0.8,0.05,0.1456,0.8,-0.05,0.0456,0.8,-0.05,0.0456,0.7,0.05,0.1456,0.7,0.05,0.1456,0.7,-0.05,0.0456,0.7,-0.05,0.0456,0.6,0.05,0.1456,0.6,0.05,0.1456,0.6,-0.05,0.0456,0.6,-0.05,0.0456,0.55,0.05,0.1456,0.55,0.05,0.1456,0.55,-0.05,0.0456,0.55,-0.05,0.0456,0.52,0.05,0.1456,0.52,0.05,0.1456,0.52,-0.05,0.0456,0.52,-0.05,0.0456,0.5,0.05,0.1456,0.5,0.05,0.1456,0.5,-0.05,0.0456,0.5,-0.05,0.0454,0.43,0.045,0.1454,0.43,0.045,0.1454,0.43,-0.055,0.0454,0.43,-0.055,0.0452,0.36,0.04,0.1452,0.36,0.04,0.1452,0.36,-0.06,0.0452,0.36,-0.06,0.045,0.29,0.035,0.145,0.29,0.035,0.145,0.29,-0.065,0.045,0.29,-0.065,0.0448,0.21,0.03,0.1448,0.21,0.03,0.1448,0.21,-0.07,0.0448,0.21,-0.07,0.0446,0.1262,0.025,0.1446,0.1262,0.025,0.1446,0.1262,-0.075,0.0446,0.1262,-0.075,0.0446,0.0762,0.025,0.1446,0.0762,0.025,0.1446,0,-0.075,0.0446,0,-0.075,0.0446,0.0562,0.057,0.1446,0.0562,0.057,0.1446,0,0.057,0.0446,0,0.057,0.0446,0.0562,0.087,0.1446,0.0562,0.087,0.1446,0,0.087,0.0446,0,0.087,0.0446,0.0562,0.1924,0.1446,0.0562,0.1924,0.1446,0,0.1924,0.0446,0,0.1924,-0.0456,0.9364,0.05,-0.1456,0.9364,0.05,-0.1456,0.9364,-0.05,-0.0456,0.9364,-0.05,-0.0456,0.9,0.05,-0.1456,0.9,0.05,-0.1456,0.9,-0.05,-0.0456,0.9,-0.05,-0.0456,0.8,0.05,-0.1456,0.8,0.05,-0.1456,0.8,-0.05,-0.0456,0.8,-0.05,-0.0456,0.7,0.05,-0.1456,0.7,0.05,-0.1456,0.7,-0.05,-0.0456,0.7,-0.05,-0.0456,0.6,0.05,-0.1456,0.6,0.05,-0.1456,0.6,-0.05,-0.0456,0.6,-0.05,-0.0456,0.55,0.05,-0.1456,0.55,0.05,-0.1456,0.55,-0.05,-0.0456,0.55,-0.05,-0.0456,0.52,0.05,-0.1456,0.52,0.05,-0.1456,0.52,-0.05,-0.0456,0.52,-0.05,-0.0456,0.5,0.05,-0.1456,0.5,0.05,-0.1456,0.5,-0.05,-0.0456,0.5,-0.05,-0.0454,0.43,0.045,-0.1454,0.43,0.045,-0.1454,0.43,-0.055,-0.0454,0.43,-0.055,-0.0452,0.36,0.04,-0.1452,0.36,0.04,-0.1452,0.36,-0.06,-0.0452,0.36,-0.06,-0.045,0.29,0.035,-0.145,0.29,0.035,-0.145,0.29,-0.065,-0.045,0.29,-0.065,-0.0448,0.21,0.03,-0.1448,0.21,0.03,-0.1448,0.21,-0.07,-0.0448,0.21,-0.07,-0.0446,0.1262,0.025,-0.1446,0.1262,0.025,-0.1446,0.1262,-0.075,-0.0446,0.1262,-0.075,-0.0446,0.0762,0.025,-0.1446,0.0762,0.025,-0.1446,0,-0.075,-0.0446,0,-0.075,-0.0446,0.0562,0.057,-0.1446,0.0562,0.057,-0.1446,0,0.057,-0.0446,0,0.057,-0.0446,0.0562,0.087,-0.1446,0.0562,0.087,-0.1446,0,0.087,-0.0446,0,0.087,-0.0446,0.0562,0.1924,-0.1446,0.0562,0.1924,-0.1446,0,0.1924,-0.0446,0,0.1924,-0.12,1.1,0.05,0.12,1.1,0.05,0.12,1.1,-0.1,-0.12,1.1,-0.1,-0.14,1.42,0.045,0.14,1.42,0.045,0.14,1.42,-0.09,-0.14,1.42,-0.09,-0.24,1.52,0.035,0.24,1.52,0.035,0.24,1.52,-0.09,-0.24,1.52,-0.09,-0.05,1.56,0.03,0.05,1.56,0.03,0.05,1.56,-0.06,-0.05,1.56,-0.06,-0.05,1.6,0.06,0.05,1.6,0.06,0.05,1.62,-0.03,-0.05,1.62,-0.03,-0.07,1.777,0.13,0.07,1.777,0.13,0.07,1.777,-0.03,-0.07,1.777,-0.03,-0.07,1.6,0.13,0.07,1.6,0.13,0.07,1.66,-0.03,-0.07,1.66,-0.03,0.16,1.42,0.015,0.24,1.5,0.015,0.24,1.5,-0.075,0.16,1.42,-0.075,0.17,1.18,-0.025,0.23,1.18,-0.025,0.23,1.18,-0.085,0.17,1.18,-0.085,0.17,1.14,-0.025,0.23,1.14,-0.025,0.23,1.14,-0.085,0.17,1.14,-0.085,0.18,0.91,-0.05,0.22,0.91,-0.05,0.22,0.91,-0.09,0.18,0.91,-0.09,0.18,0.87,-0.02,0.22,0.87,-0.02,0.22,0.87,-0.1,0.18,0.87,-0.1,0.18,0.6976,-0.02,0.22,0.6976,-0.02,0.22,0.6976,-0.1,0.18,0.6976,-0.1,-0.16,1.42,0.015,-0.24,1.5,0.015,-0.24,1.5,-0.075,-0.16,1.42,-0.075,-0.17,1.18,-0.025,-0.23,1.18,-0.025,-0.23,1.18,-0.085,-0.17,1.18,-0.085,-0.17,1.14,-0.025,-0.23,1.14,-0.025,-0.23,1.14,-0.085,-0.17,1.14,-0.085,-0.18,0.91,-0.05,-0.22,0.91,-0.05,-0.22,0.91,-0.09,-0.18,0.91,-0.09,-0.18,0.87,-0.02,-0.22,0.87,-0.02,-0.22,0.87,-0.1,-0.18,0.87,-0.1,-0.18,0.6976,-0.02,-0.22,0.6976,-0.02,-0.22,0.6976,-0.1,-0.18,0.6976,-0.1))), skin=(
+              Group(
+                children=[
+                    Shape(
+                      DEF="TrouserSkin", appearance=Appearance(
+                          material=Material(
+                              diffuseColor=(0,0,1), transparency=0.5)), children=[## 0: sacrum (8) # 1: l_hip joint (8) # 2: r_hip joint (8) # 3: l_thigh (48) # 4: l_knee joint (8) # 5: l_calf (40) # 10: r_thigh (48) # 11: r_knee joint (8) # 12: r_calf (40)
+], geometry=IndexedFaceSet(
+                          coordIndex=(0,7,1,-1,8,0,1,-1,1,9,8,-1,10,2,3,-1,3,11,10,-1,2,4,5,-1,5,3,2,-1,4,6,5,-1,7,12,1,-1,1,12,13,-1,13,9,1,-1,9,13,14,-1,14,10,9,-1,10,14,15,-1,15,2,10,-1,12,7,6,-1,6,15,12,-1,15,6,4,-1,4,2,15,-1,0,80,7,-1,81,80,0,-1,0,8,81,-1,82,81,8,-1,8,11,82,-1,83,82,11,-1,11,3,83,-1,6,7,80,-1,80,83,6,-1,5,6,83,-1,83,3,5,-1,12,16,17,-1,17,13,12,-1,13,17,18,-1,18,14,13,-1,14,18,19,-1,19,15,14,-1,15,19,16,-1,16,12,15,-1,16,20,21,-1,21,17,16,-1,17,21,22,-1,22,18,17,-1,18,22,23,-1,23,19,18,-1,19,23,20,-1,20,16,19,-1,20,24,25,-1,25,21,20,-1,21,25,26,-1,26,22,21,-1,22,26,27,-1,27,23,22,-1,23,27,24,-1,24,20,23,-1,24,28,29,-1,29,25,24,-1,25,29,30,-1,30,26,25,-1,26,30,31,-1,31,27,26,-1,27,31,28,-1,28,24,27,-1,28,32,33,-1,33,29,28,-1,29,33,34,-1,34,30,29,-1,30,34,35,-1,35,31,30,-1,31,35,32,-1,32,28,31,-1,32,36,37,-1,37,33,32,-1,33,37,38,-1,38,34,33,-1,34,38,39,-1,39,35,34,-1,35,39,36,-1,36,32,35,-1,36,40,41,-1,41,37,36,-1,37,41,42,-1,42,38,37,-1,38,42,43,-1,43,39,38,-1,39,43,40,-1,40,36,39,-1,40,44,45,-1,45,41,40,-1,41,45,46,-1,46,42,41,-1,42,46,47,-1,47,43,42,-1,43,47,44,-1,44,40,43,-1,44,48,49,-1,49,45,44,-1,45,49,50,-1,50,46,45,-1,46,50,51,-1,51,47,46,-1,47,51,48,-1,48,44,47,-1,48,52,53,-1,53,49,48,-1,49,53,54,-1,54,50,49,-1,50,54,55,-1,55,51,50,-1,51,55,52,-1,52,48,51,-1,52,56,57,-1,57,53,52,-1,53,57,58,-1,58,54,53,-1,54,58,59,-1,59,55,54,-1,55,59,56,-1,56,52,55,-1,56,60,61,-1,61,57,56,-1,57,61,62,-1,62,58,57,-1,58,62,63,-1,63,59,58,-1,59,63,60,-1,60,56,59,-1,81,85,84,-1,84,80,81,-1,82,86,85,-1,85,81,82,-1,83,87,86,-1,86,82,83,-1,80,84,87,-1,87,83,80,-1,85,89,88,-1,88,84,85,-1,86,90,89,-1,89,85,86,-1,87,91,90,-1,90,86,87,-1,84,88,91,-1,91,87,84,-1,89,93,92,-1,92,88,89,-1,90,94,93,-1,93,89,90,-1,91,95,94,-1,94,90,91,-1,88,92,95,-1,95,91,88,-1,93,97,96,-1,96,92,93,-1,94,98,97,-1,97,93,94,-1,95,99,98,-1,98,94,95,-1,92,96,99,-1,99,95,92,-1,97,101,100,-1,100,96,97,-1,98,102,101,-1,101,97,98,-1,99,103,102,-1,102,98,99,-1,96,100,103,-1,103,99,96,-1,101,105,104,-1,104,100,101,-1,102,106,105,-1,105,101,102,-1,103,107,106,-1,106,102,103,-1,100,104,107,-1,107,103,100,-1,105,109,108,-1,108,104,105,-1,106,110,109,-1,109,105,106,-1,107,111,110,-1,110,106,107,-1,104,108,111,-1,111,107,104,-1,109,113,112,-1,112,108,109,-1,110,114,113,-1,113,109,110,-1,111,115,114,-1,114,110,111,-1,108,112,115,-1,115,111,108,-1,113,117,116,-1,116,112,113,-1,114,118,117,-1,117,113,114,-1,115,119,118,-1,118,114,115,-1,112,116,119,-1,119,115,112,-1,117,121,120,-1,120,116,117,-1,118,122,121,-1,121,117,118,-1,119,123,122,-1,122,118,119,-1,116,120,123,-1,123,119,116,-1,121,125,124,-1,124,120,121,-1,122,126,125,-1,125,121,122,-1,123,127,126,-1,126,122,123,-1,120,124,127,-1,127,123,120,-1,125,129,128,-1,128,124,125,-1,126,130,129,-1,129,125,126,-1,127,131,130,-1,130,126,127,-1,124,128,131,-1,131,127,124,-1), coord(
+                            Coordinate(
+                              USE="SKINCOORD")))),
+                    Shape(
+                      DEF="ShoeSkin", appearance=Appearance(
+                          material=Material(
+                              diffuseColor=(0,0,0), transparency=0.5)), children=[## 6: l_ankle joint (8) # 7: l_hindfoot (8) # 8: l_midtarsal joint (8) # 9: l_middistal (10) # 13: r_ankle joint (8) # 14: r_hindfoot (8) # 15: r_midtarsal joint (8) # 16: r_middistal (10)
+], geometry=IndexedFaceSet(
+                          coordIndex=(60,64,65,-1,65,61,60,-1,61,65,66,-1,66,62,61,-1,62,66,67,-1,67,63,62,-1,63,67,64,-1,64,60,63,-1,64,68,69,-1,69,65,64,-1,65,69,70,-1,70,66,65,-1,66,70,71,-1,71,67,66,-1,67,71,68,-1,68,64,67,-1,68,72,73,-1,73,69,68,-1,69,73,74,-1,74,70,69,-1,70,74,75,-1,75,71,70,-1,71,75,72,-1,72,68,71,-1,72,76,77,-1,77,73,72,-1,73,77,78,-1,78,74,73,-1,74,78,79,-1,79,75,74,-1,75,79,76,-1,76,72,75,-1,76,79,78,-1,78,77,76,-1,129,133,132,-1,132,128,129,-1,130,134,133,-1,133,129,130,-1,131,135,134,-1,134,130,131,-1,128,132,135,-1,135,131,128,-1,133,137,136,-1,136,132,133,-1,134,138,137,-1,137,133,134,-1,135,139,138,-1,138,134,135,-1,132,136,139,-1,139,135,132,-1,137,141,140,-1,140,136,137,-1,138,142,141,-1,141,137,138,-1,139,143,142,-1,142,138,139,-1,136,140,143,-1,143,139,136,-1,141,145,144,-1,144,140,141,-1,142,146,145,-1,145,141,142,-1,143,147,146,-1,146,142,143,-1,140,144,147,-1,147,143,140,-1,145,146,147,-1,147,144,145,-1), coord(
+                            Coordinate(
+                              USE="SKINCOORD")))),
+                    Shape(
+                      DEF="ShirtSkin", appearance=Appearance(
+                          material=Material(
+                              diffuseColor=(1,1,0), transparency=0.5)), children=[## 17: vl5_joint (8) # 18: l5 (28) # 21: l_shoulder joint (8) # 22: l_upperarm (8) # 23: l_elbow joint (8) # 24: l_forearm (8) # 27: r_shoulder joint (8) # 28: r_upperarm (8) # 29: r_elbow joint (8) # 30: r_forearm (8)
+], geometry=IndexedFaceSet(
+                          coordIndex=(148,8,9,-1,9,149,148,-1,149,9,10,-1,10,150,149,-1,150,10,11,-1,11,151,150,-1,151,11,8,-1,8,148,151,-1,152,148,149,-1,149,153,152,-1,153,149,150,-1,150,154,153,-1,154,150,151,-1,151,155,154,-1,155,151,148,-1,148,152,155,-1,156,152,153,-1,153,157,156,-1,158,154,155,-1,155,159,158,-1,160,156,157,-1,157,161,160,-1,161,157,158,-1,158,162,161,-1,162,158,159,-1,159,163,162,-1,163,159,156,-1,156,160,163,-1,164,160,161,-1,161,165,164,-1,165,161,162,-1,162,166,165,-1,166,162,163,-1,163,167,166,-1,167,163,160,-1,160,164,167,-1,153,176,177,-1,177,157,153,-1,157,177,178,-1,178,158,157,-1,158,178,179,-1,179,154,158,-1,154,179,176,-1,176,153,154,-1,176,180,181,-1,181,177,176,-1,177,181,182,-1,182,178,177,-1,178,182,183,-1,183,179,178,-1,179,183,180,-1,180,176,179,-1,180,184,185,-1,185,181,180,-1,181,185,186,-1,186,182,181,-1,182,186,187,-1,187,183,182,-1,183,187,184,-1,184,180,183,-1,184,188,189,-1,189,185,184,-1,185,189,190,-1,190,186,185,-1,186,190,191,-1,191,187,186,-1,187,191,188,-1,188,184,187,-1,152,156,201,-1,201,200,152,-1,156,159,202,-1,202,201,156,-1,159,155,203,-1,203,202,159,-1,155,152,200,-1,200,203,155,-1,201,205,204,-1,204,200,201,-1,202,206,205,-1,205,201,202,-1,203,207,206,-1,206,202,203,-1,200,204,207,-1,207,203,200,-1,205,209,208,-1,208,204,205,-1,206,210,209,-1,209,205,206,-1,207,211,210,-1,210,206,207,-1,204,208,211,-1,211,207,204,-1,209,213,212,-1,212,208,209,-1,210,214,213,-1,213,209,210,-1,211,215,214,-1,214,210,211,-1,208,212,215,-1,215,211,208,-1), coord(
+                            Coordinate(
+                              USE="SKINCOORD")))),
+                    Shape(
+                      DEF="HeadHandsFleshToneSkin", appearance=Appearance(
+                          material=Material(
+                              diffuseColor=(1,0.75,0.75), transparency=0.5)), children=[## 19: skullbase joint (8) # 20: skull (10) # 25: l_wrist joint (8) # 26: l_hand (10) # 31: r_wrist joint (8) # 32: r_hand (10)
+], geometry=IndexedFaceSet(
+                          coordIndex=(172,164,165,-1,165,173,172,-1,173,165,166,-1,166,174,173,-1,174,166,167,-1,167,175,174,-1,175,167,164,-1,164,172,175,-1,168,172,173,-1,173,169,168,-1,169,173,174,-1,174,170,169,-1,170,174,175,-1,175,171,170,-1,171,175,172,-1,172,168,171,-1,171,168,169,-1,169,170,171,-1,188,192,193,-1,193,189,188,-1,189,193,194,-1,194,190,189,-1,190,194,195,-1,195,191,190,-1,191,195,192,-1,192,188,191,-1,192,196,197,-1,197,193,192,-1,193,197,198,-1,198,194,193,-1,194,198,199,-1,199,195,194,-1,195,199,196,-1,196,192,195,-1,196,199,198,-1,198,197,196,-1,213,217,216,-1,216,212,213,-1,214,218,217,-1,217,213,214,-1,215,219,218,-1,218,214,215,-1,212,216,219,-1,219,215,212,-1,217,221,220,-1,220,216,217,-1,218,222,221,-1,221,217,218,-1,219,223,222,-1,222,218,219,-1,216,220,223,-1,223,219,216,-1,221,222,223,-1,223,220,221,-1), coord(
+                            Coordinate(
+                              USE="SKINCOORD")))),
+                    Shape(
+                      DEF="SkinLines", appearance=Appearance(
+                          material=Material(
+                              diffuseColor=(0,0,0))), children=[#Combined set of prior IFS coordIndex values
+], geometry=IndexedLineSet(
+                          coordIndex=(0,7,1,-1,8,0,1,-1,1,9,8,-1,10,2,3,-1,3,11,10,-1,2,4,5,-1,5,3,2,-1,4,6,5,-1,7,12,1,-1,1,12,13,-1,13,9,1,-1,9,13,14,-1,14,10,9,-1,10,14,15,-1,15,2,10,-1,12,7,6,-1,6,15,12,-1,15,6,4,-1,4,2,15,-1,0,80,7,-1,81,80,0,-1,0,8,81,-1,82,81,8,-1,8,11,82,-1,83,82,11,-1,11,3,83,-1,6,7,80,-1,80,83,6,-1,5,6,83,-1,83,3,5,-1,12,16,17,-1,17,13,12,-1,13,17,18,-1,18,14,13,-1,14,18,19,-1,19,15,14,-1,15,19,16,-1,16,12,15,-1,16,20,21,-1,21,17,16,-1,17,21,22,-1,22,18,17,-1,18,22,23,-1,23,19,18,-1,19,23,20,-1,20,16,19,-1,20,24,25,-1,25,21,20,-1,21,25,26,-1,26,22,21,-1,22,26,27,-1,27,23,22,-1,23,27,24,-1,24,20,23,-1,24,28,29,-1,29,25,24,-1,25,29,30,-1,30,26,25,-1,26,30,31,-1,31,27,26,-1,27,31,28,-1,28,24,27,-1,28,32,33,-1,33,29,28,-1,29,33,34,-1,34,30,29,-1,30,34,35,-1,35,31,30,-1,31,35,32,-1,32,28,31,-1,32,36,37,-1,37,33,32,-1,33,37,38,-1,38,34,33,-1,34,38,39,-1,39,35,34,-1,35,39,36,-1,36,32,35,-1,36,40,41,-1,41,37,36,-1,37,41,42,-1,42,38,37,-1,38,42,43,-1,43,39,38,-1,39,43,40,-1,40,36,39,-1,40,44,45,-1,45,41,40,-1,41,45,46,-1,46,42,41,-1,42,46,47,-1,47,43,42,-1,43,47,44,-1,44,40,43,-1,44,48,49,-1,49,45,44,-1,45,49,50,-1,50,46,45,-1,46,50,51,-1,51,47,46,-1,47,51,48,-1,48,44,47,-1,48,52,53,-1,53,49,48,-1,49,53,54,-1,54,50,49,-1,50,54,55,-1,55,51,50,-1,51,55,52,-1,52,48,51,-1,52,56,57,-1,57,53,52,-1,53,57,58,-1,58,54,53,-1,54,58,59,-1,59,55,54,-1,55,59,56,-1,56,52,55,-1,56,60,61,-1,61,57,56,-1,57,61,62,-1,62,58,57,-1,58,62,63,-1,63,59,58,-1,59,63,60,-1,60,56,59,-1,81,85,84,-1,84,80,81,-1,82,86,85,-1,85,81,82,-1,83,87,86,-1,86,82,83,-1,80,84,87,-1,87,83,80,-1,85,89,88,-1,88,84,85,-1,86,90,89,-1,89,85,86,-1,87,91,90,-1,90,86,87,-1,84,88,91,-1,91,87,84,-1,89,93,92,-1,92,88,89,-1,90,94,93,-1,93,89,90,-1,91,95,94,-1,94,90,91,-1,88,92,95,-1,95,91,88,-1,93,97,96,-1,96,92,93,-1,94,98,97,-1,97,93,94,-1,95,99,98,-1,98,94,95,-1,92,96,99,-1,99,95,92,-1,97,101,100,-1,100,96,97,-1,98,102,101,-1,101,97,98,-1,99,103,102,-1,102,98,99,-1,96,100,103,-1,103,99,96,-1,101,105,104,-1,104,100,101,-1,102,106,105,-1,105,101,102,-1,103,107,106,-1,106,102,103,-1,100,104,107,-1,107,103,100,-1,105,109,108,-1,108,104,105,-1,106,110,109,-1,109,105,106,-1,107,111,110,-1,110,106,107,-1,104,108,111,-1,111,107,104,-1,109,113,112,-1,112,108,109,-1,110,114,113,-1,113,109,110,-1,111,115,114,-1,114,110,111,-1,108,112,115,-1,115,111,108,-1,113,117,116,-1,116,112,113,-1,114,118,117,-1,117,113,114,-1,115,119,118,-1,118,114,115,-1,112,116,119,-1,119,115,112,-1,117,121,120,-1,120,116,117,-1,118,122,121,-1,121,117,118,-1,119,123,122,-1,122,118,119,-1,116,120,123,-1,123,119,116,-1,121,125,124,-1,124,120,121,-1,122,126,125,-1,125,121,122,-1,123,127,126,-1,126,122,123,-1,120,124,127,-1,127,123,120,-1,125,129,128,-1,128,124,125,-1,126,130,129,-1,129,125,126,-1,127,131,130,-1,130,126,127,-1,124,128,131,-1,131,127,124,-1,60,64,65,-1,65,61,60,-1,61,65,66,-1,66,62,61,-1,62,66,67,-1,67,63,62,-1,63,67,64,-1,64,60,63,-1,64,68,69,-1,69,65,64,-1,65,69,70,-1,70,66,65,-1,66,70,71,-1,71,67,66,-1,67,71,68,-1,68,64,67,-1,68,72,73,-1,73,69,68,-1,69,73,74,-1,74,70,69,-1,70,74,75,-1,75,71,70,-1,71,75,72,-1,72,68,71,-1,72,76,77,-1,77,73,72,-1,73,77,78,-1,78,74,73,-1,74,78,79,-1,79,75,74,-1,75,79,76,-1,76,72,75,-1,76,79,78,-1,78,77,76,-1,129,133,132,-1,132,128,129,-1,130,134,133,-1,133,129,130,-1,131,135,134,-1,134,130,131,-1,128,132,135,-1,135,131,128,-1,133,137,136,-1,136,132,133,-1,134,138,137,-1,137,133,134,-1,135,139,138,-1,138,134,135,-1,132,136,139,-1,139,135,132,-1,137,141,140,-1,140,136,137,-1,138,142,141,-1,141,137,138,-1,139,143,142,-1,142,138,139,-1,136,140,143,-1,143,139,136,-1,141,145,144,-1,144,140,141,-1,142,146,145,-1,145,141,142,-1,143,147,146,-1,146,142,143,-1,140,144,147,-1,147,143,140,-1,145,146,147,-1,147,144,145,-1,148,8,9,-1,9,149,148,-1,149,9,10,-1,10,150,149,-1,150,10,11,-1,11,151,150,-1,151,11,8,-1,8,148,151,-1,152,148,149,-1,149,153,152,-1,153,149,150,-1,150,154,153,-1,154,150,151,-1,151,155,154,-1,155,151,148,-1,148,152,155,-1,156,152,153,-1,153,157,156,-1,158,154,155,-1,155,159,158,-1,160,156,157,-1,157,161,160,-1,161,157,158,-1,158,162,161,-1,162,158,159,-1,159,163,162,-1,163,159,156,-1,156,160,163,-1,164,160,161,-1,161,165,164,-1,165,161,162,-1,162,166,165,-1,166,162,163,-1,163,167,166,-1,167,163,160,-1,160,164,167,-1,153,176,177,-1,177,157,153,-1,157,177,178,-1,178,158,157,-1,158,178,179,-1,179,154,158,-1,154,179,176,-1,176,153,154,-1,176,180,181,-1,181,177,176,-1,177,181,182,-1,182,178,177,-1,178,182,183,-1,183,179,178,-1,179,183,180,-1,180,176,179,-1,180,184,185,-1,185,181,180,-1,181,185,186,-1,186,182,181,-1,182,186,187,-1,187,183,182,-1,183,187,184,-1,184,180,183,-1,184,188,189,-1,189,185,184,-1,185,189,190,-1,190,186,185,-1,186,190,191,-1,191,187,186,-1,187,191,188,-1,188,184,187,-1,152,156,201,-1,201,200,152,-1,156,159,202,-1,202,201,156,-1,159,155,203,-1,203,202,159,-1,155,152,200,-1,200,203,155,-1,201,205,204,-1,204,200,201,-1,202,206,205,-1,205,201,202,-1,203,207,206,-1,206,202,203,-1,200,204,207,-1,207,203,200,-1,205,209,208,-1,208,204,205,-1,206,210,209,-1,209,205,206,-1,207,211,210,-1,210,206,207,-1,204,208,211,-1,211,207,204,-1,209,213,212,-1,212,208,209,-1,210,214,213,-1,213,209,210,-1,211,215,214,-1,214,210,211,-1,208,212,215,-1,215,211,208,-1,172,164,165,-1,165,173,172,-1,173,165,166,-1,166,174,173,-1,174,166,167,-1,167,175,174,-1,175,167,164,-1,164,172,175,-1,168,172,173,-1,173,169,168,-1,169,173,174,-1,174,170,169,-1,170,174,175,-1,175,171,170,-1,171,175,172,-1,172,168,171,-1,171,168,169,-1,169,170,171,-1,188,192,193,-1,193,189,188,-1,189,193,194,-1,194,190,189,-1,190,194,195,-1,195,191,190,-1,191,195,192,-1,192,188,191,-1,192,196,197,-1,197,193,192,-1,193,197,198,-1,198,194,193,-1,194,198,199,-1,199,195,194,-1,195,199,196,-1,196,192,195,-1,196,199,198,-1,198,197,196,-1,213,217,216,-1,216,212,213,-1,214,218,217,-1,217,213,214,-1,215,219,218,-1,218,214,215,-1,212,216,219,-1,219,215,212,-1,217,221,220,-1,220,216,217,-1,218,222,221,-1,221,217,218,-1,219,223,222,-1,222,218,219,-1,216,220,223,-1,223,219,216,-1,221,222,223,-1,223,220,221,-1), coord(
+                            Coordinate(
+                              USE="SKINCOORD"))))])), viewpoints=(
+              HAnimSite(
+                name="BoxMan_view", DEF="boxman_BoxMan_view", children=[
+                    Viewpoint(
+                      DEF="Inclined_View", description="Inclined View", orientation=(0,1,0,0.78), position=(2,0.9,2)),
+                    Viewpoint(
+                      DEF="Front_View", description="Front View", position=(0,1,3)),
+                    Viewpoint(
+                      DEF="Best_View", description="Right-side View", orientation=(0,1,0,-1.57), position=(-3,1,0)),
+                    Viewpoint(
+                      DEF="Side_View", description="Left-side View", orientation=(0,1,0,1.57), position=(3,1,0)),
+                    Viewpoint(
+                      DEF="Top_View", description="Top View", orientation=(1,0,0,-1.57), position=(0,3,0))])), joints=(
+              HAnimJoint(
+                USE="boxman_humanoid_root"),
+              HAnimJoint(
+                USE="boxman_skullbase"),
+              HAnimJoint(
+                USE="boxman_vl5"),
+              HAnimJoint(
+                USE="boxman_r_ankle"),
+              HAnimJoint(
+                USE="boxman_l_ankle"),
+              HAnimJoint(
+                USE="boxman_r_elbow"),
+              HAnimJoint(
+                USE="boxman_l_elbow"),
+              HAnimJoint(
+                USE="boxman_r_hip"),
+              HAnimJoint(
+                USE="boxman_l_hip"),
+              HAnimJoint(
+                USE="boxman_r_knee"),
+              HAnimJoint(
+                USE="boxman_l_knee"),
+              HAnimJoint(
+                USE="boxman_r_midtarsal"),
+              HAnimJoint(
+                USE="boxman_l_midtarsal"),
+              HAnimJoint(
+                USE="boxman_r_shoulder"),
+              HAnimJoint(
+                USE="boxman_l_shoulder"),
+              HAnimJoint(
+                USE="boxman_r_wrist"),
+              HAnimJoint(
+                USE="boxman_l_wrist")), segments=(
+              HAnimSegment(
+                USE="boxman_sacrum"),
+              HAnimSegment(
+                USE="boxman_l5"),
+              HAnimSegment(
+                USE="boxman_skull"),
+              HAnimSegment(
+                USE="boxman_l_calf"),
+              HAnimSegment(
+                USE="boxman_r_calf"),
+              HAnimSegment(
+                USE="boxman_l_forearm"),
+              HAnimSegment(
+                USE="boxman_r_forearm"),
+              HAnimSegment(
+                USE="boxman_l_hand"),
+              HAnimSegment(
+                USE="boxman_r_hand"),
+              HAnimSegment(
+                USE="boxman_l_hindfoot"),
+              HAnimSegment(
+                USE="boxman_r_hindfoot"),
+              HAnimSegment(
+                USE="boxman_l_middistal"),
+              HAnimSegment(
+                USE="boxman_r_middistal"),
+              HAnimSegment(
+                USE="boxman_l_thigh"),
+              HAnimSegment(
+                USE="boxman_r_thigh"),
+              HAnimSegment(
+                USE="boxman_l_upperarm"),
+              HAnimSegment(
+                USE="boxman_r_upperarm")), sites=(
+              HAnimSite(
+                USE="boxman_skull_tip"),
+              HAnimSite(
+                USE="boxman_l_hand_tip"),
+              HAnimSite(
+                USE="boxman_r_hand_tip"),
+              HAnimSite(
+                USE="boxman_l_middistal_tip"),
+              HAnimSite(
+                USE="boxman_r_middistal_tip"))),
+        Group(
+          DEF="StopAnimation", children=[
+              TimeSensor(
+                DEF="StopTimer", cycleInterval=5.73, loop=True),
+              PositionInterpolator(
+                DEF="Stop_humanoid_root_TranslationInterpolator", key=[0,0.5,1], keyValue=[0,0,0,0,0,0,0,0,0]),
+              OrientationInterpolator(
+                DEF="Stop_humanoid_root_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_sacroiliac_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_l_hip_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_l_knee_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_l_ankle_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_l_subtalar_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_l_midtarsal_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_l_metatarsal_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_r_hip_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_r_knee_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_r_ankle_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_r_subtalar_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_r_midtarsal_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_r_metatarsal_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_vl5_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_vl4_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_vl3_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_vl2_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_vl1_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_vt12_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_vt11_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_vt10_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_vt9_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_vt8_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_vt7_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_vt6_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_vt5_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_vt4_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_vt3_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_vt2_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_vt1_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_vc7_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_vc6_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_vc5_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_vc4_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_vc3_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_vc2_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_vc1_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_skullbase_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_l_eyeball_joint_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_r_eyeball_joint_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_l_sternoclavicular_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_l_acromioclavicular_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_l_shoulder_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_l_elbow_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_l_wrist_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_l_thumb1_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_l_thumb2_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_l_thumb3_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_l_index0_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_l_index1_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_l_index2_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_l_index3_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_l_middle0_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_l_middle1_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_l_middle2_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_l_middle3_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_l_ring0_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_l_ring1_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_l_ring2_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_l_ring3_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_l_pinky0_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_l_pinky1_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_l_pinky2_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_l_pinky3_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_r_sternoclavicular_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_r_acromioclavicular_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_r_shoulder_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_r_elbow_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_r_wrist_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_r_thumb1_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_r_thumb2_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_r_thumb3_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_r_index0_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_r_index1_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_r_index2_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_r_index3_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_r_middle0_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_r_middle1_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_r_middle2_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_r_middle3_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_r_ring0_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_r_ring1_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_r_ring2_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_r_ring3_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_r_pinky0_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_r_pinky1_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_r_pinky2_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stop_r_pinky3_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0])]),
+        Group(
+          DEF="StandAnimation", children=[
+              TimeSensor(
+                DEF="StandTimer", cycleInterval=5.73, loop=True),
+              OrientationInterpolator(
+                DEF="Stand_r_metatarsal_PitchInterpolator", key=[0,0.2,0.4,0.6,0.7,1], keyValue=[1,0,0,0,-1,0,0,0.015,1,0,0,0.17,-1,0,0,0.025,1,0,0,0.01,1,0,0,0]),
+              OrientationInterpolator(
+                DEF="Stand_r_ankle_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stand_r_knee_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stand_r_hip_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stand_l_ankle_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stand_l_knee_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stand_l_hip_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stand_r_wrist_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,-1,0.25,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stand_r_elbow_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stand_r_shoulder_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stand_l_wrist_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stand_l_elbow_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stand_l_shoulder_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stand_head_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stand_neck_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,-1,0,0,0.5,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stand_l_eyeball_RotationInterpolator", key=[0,0.4,0.7,1], keyValue=[0,0,1,0,-1,0,0,0.5,1,0,0,0.45,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stand_r_eyeball_RotationInterpolator", key=[0,0.4,0.7,1], keyValue=[0,0,1,0,-1,0,0,0.5,1,0,0,0.45,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stand_lower_body_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stand_upper_body_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stand_whole_body_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              PositionInterpolator(
+                DEF="Stand_whole_body_TranslationInterpolator", key=[0,0.5,1], keyValue=[0,0,0,0,0,0,0,0,0]),
+              OrientationInterpolator(
+                DEF="Stand_l_sternoclavicular_RollInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stand_l_acromioclavicular_RollInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stand_r_sternoclavicular_RollInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stand_r_acromioclavicular_RollInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stand_sacroiliac_YawInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stand_vl5_YawInterpolator", key=[0,0.2,0.4,0.5,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stand_vc6_YawInterpolator", key=[0,0.2,0.4,0.5,0.6,0.8,1], keyValue=[0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,-1,0,0,0,0,-1,0,0,0,1,0,0]),
+              OrientationInterpolator(
+                DEF="Stand_l_thumb1_PitchInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stand_r_thumb1_PitchInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[1,0,0,0,1,0,0,0.5,1,0,0,0.1,1,0,0,0.27,1,0,0,0.2,1,0,0,0]),
+              OrientationInterpolator(
+                DEF="Stand_r_index1_RollInterpolator", key=[0,0.2,0.4,0.5,0.8,1], keyValue=[0,0,1,0,0,0,1,0.1,0,0,1,0.2,0,0,1,0.3,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stand_r_index2_RollInterpolator", key=[0,0.2,0.4,0.5,0.8,1], keyValue=[0,0,1,0,0,0,1,0.4,0,0,1,0.32,0,0,1,0.25,0,0,1,0.2,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Stand_r_index3_RollInterpolator", key=[0,0.2,0.4,0.5,0.8,1], keyValue=[0,0,1,0,0,0,1,0.2,0,0,1,0.3,0,0,1,0.35,0,0,1,0.2,0,0,1,0])]),
+        Group(
+          DEF="PitchesAnimation", children=[
+              TimeSensor(
+                DEF="PitchTimer", cycleInterval=5.73, loop=True),
+              OrientationInterpolator(
+                DEF="Pitch_r_metatarsal_PitchInterpolator", key=[0,0.2,0.4,0.6,0.7,1], keyValue=[1,0,0,0,-1,0,0,0.5,-1,0,0,0.7,1,0,0,0.75,-1,0,0,0.2,1,0,0,0]),
+              OrientationInterpolator(
+                DEF="Pitches_r_ankle_RotationInterpolator", key=[0,0.25,0.5,0.75,1], keyValue=[0,0,1,0,1,0,0,1.5,0,0,1,0,-1,0,0,1.5,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Pitches_r_knee_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Pitches_r_hip_RotationInterpolator", key=[0,0.25,0.5,0.75,1], keyValue=[0,0,1,0,-1,0,0,1.5,0,0,1,0,1,0,0,1.5,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Pitches_l_ankle_RotationInterpolator", key=[0,0.25,0.5,0.75,1], keyValue=[0,0,1,0,-1,0,0,1.5,0,0,1,0,1,0,0,1.5,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Pitches_l_knee_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Pitches_l_hip_RotationInterpolator", key=[0,0.25,0.5,0.75,1], keyValue=[0,0,1,0,1,0,0,1.5,0,0,1,0,-1,0,0,1.5,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Pitches_r_wrist_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Pitches_r_elbow_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Pitches_r_shoulder_RotationInterpolator", key=[0,0.25,0.5,0.75,1], keyValue=[0,0,1,0,1,0,0,1.5,0,0,1,0,-1,0,0,1.5,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Pitches_l_wrist_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Pitches_l_elbow_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Pitches_l_shoulder_RotationInterpolator", key=[0,0.25,0.5,0.75,1], keyValue=[0,0,1,0,-1,0,0,1.5,0,0,1,0,1,0,0,1.5,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Pitches_head_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Pitches_neck_RotationInterpolator", key=[0,0.25,0.55,1], keyValue=[0,0,1,0,1,0,0,0.55,-1,0,0,1.05,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Pitches_lower_body_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Pitches_upper_body_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Pitches_whole_body_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              PositionInterpolator(
+                DEF="Pitches_whole_body_TranslationInterpolator", key=[0,0.125,0.25,0.375,0.5,0.625,0.75,0.875,1], keyValue=[0,0,0,0,-0.15,0,0,-0.7,0,0,-0.15,0,0,0,0,0,-0.15,0,0,-0.7,0,0,-0.15,0,0,0,0]),
+              OrientationInterpolator(
+                DEF="Pitch_l_sternoclavicular_RollInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Pitch_l_acromioclavicular_RollInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Pitch_r_sternoclavicular_RollInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Pitch_r_acromioclavicular_RollInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Pitch_sacroiliac_YawInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Pitch_vl5_YawInterpolator", key=[0,0.2,0.4,0.5,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Pitch_vc6_YawInterpolator", key=[0,0.2,0.4,0.5,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Pitch_l_thumb1_PitchInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[1,0,0,0,1,0,0,0.25,1,0,0,0.3,1,0,0,0.27,1,0,0,0.2,1,0,0,0]),
+              OrientationInterpolator(
+                DEF="Pitch_r_thumb1_PitchInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[1,0,0,0,1,0,0,0.25,1,0,0,0.3,1,0,0,0.27,1,0,0,0.2,1,0,0,0])]),
+        Group(
+          DEF="YawsAnimation", children=[
+              TimeSensor(
+                DEF="YawTimer", cycleInterval=5.73, loop=True),
+              OrientationInterpolator(
+                DEF="Yaw_r_metatarsal_PitchInterpolator", key=[0,0.2,0.4,0.6,0.7,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Yaws_r_ankle_RotationInterpolator", key=[0,0.25,0.5,0.75,1], keyValue=[0,0,1,0,0,-1,0,1.5,0,0,1,0,0,1,0,1.5,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Yaws_r_knee_RotationInterpolator", key=[0,0.25,0.5,0.75,1], keyValue=[0,0,1,0,0,1,0,1.5,0,0,1,0,0,-1,0,1.5,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Yaws_r_hip_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Yaws_l_ankle_RotationInterpolator", key=[0,0.25,0.5,0.75,1], keyValue=[0,0,1,0,0,1,0,1.5,0,0,1,0,0,-1,0,1.5,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Yaws_l_knee_RotationInterpolator", key=[0,0.25,0.5,0.75,1], keyValue=[0,0,1,0,0,-1,0,1.5,0,0,1,0,0,1,0,1.5,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Yaws_l_hip_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Yaws_r_wrist_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Yaws_r_elbow_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Yaws_r_shoulder_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Yaws_l_wrist_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Yaws_l_elbow_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Yaws_l_shoulder_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Yaws_head_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Yaws_neck_RotationInterpolator", key=[0,0.25,0.5,0.75,1], keyValue=[0,0,1,0,0,1,0,1.5,0,0,1,0,0,-1,0,1.5,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Yaws_upper_body_RotationInterpolator", key=[0,0.25,0.5,0.75,1], keyValue=[0,0,1,0,0,-1,0,1.5,0,0,1,0,0,1,0,1.5,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Yaws_lower_body_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Yaws_whole_body_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              PositionInterpolator(
+                DEF="Yaws_whole_body_TranslationInterpolator", key=[0,0.5,1], keyValue=[0,0,0,0,0,0,0,0,0]),
+              OrientationInterpolator(
+                DEF="Yaw_l_sternoclavicular_RollInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Yaw_l_acromioclavicular_RollInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Yaw_r_sternoclavicular_RollInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Yaw_r_acromioclavicular_RollInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Yaw_sacroiliac_YawInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,1,0,0,0,-1,0,0.1,0,1,0,0,0,1,0,0.24,0,-1,0,0.4,0,1,0,0]),
+              OrientationInterpolator(
+                DEF="Yaw_vl5_YawInterpolator", key=[0,0.2,0.4,0.5,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Yaw_vc6_YawInterpolator", key=[0,0.2,0.4,0.5,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Yaw_l_thumb1_PitchInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Yaw_r_thumb1_PitchInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])]),
+        Group(
+          DEF="RollsAnimation", children=[
+              TimeSensor(
+                DEF="RollTimer", cycleInterval=5.73, loop=True),
+              OrientationInterpolator(
+                DEF="Roll_r_metatarsal_PitchInterpolator", key=[0,0.2,0.4,0.6,0.7,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Rolls_r_ankle_RotationInterpolator", key=[0,0.25,0.5,0.75,1], keyValue=[0,0,1,0,0,0,1,1.5,0,0,1,0,0,0,1,1.5,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Rolls_r_knee_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Rolls_r_hip_RotationInterpolator", key=[0,0.25,0.5,0.75,1], keyValue=[0,0,-1,0,0,0,-1,1.5,0,0,1,0,0,0,-1,1.5,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Rolls_l_ankle_RotationInterpolator", key=[0,0.25,0.5,0.75,1], keyValue=[0,0,1,0,0,0,-1,1.5,0,0,1,0,0,0,-1,1.5,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Rolls_l_knee_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Rolls_l_hip_RotationInterpolator", key=[0,0.25,0.5,0.75,1], keyValue=[0,0,1,0,0,0,1,1.5,0,0,1,0,0,0,1,1.5,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Rolls_r_wrist_RotationInterpolator", key=[0,0.25,0.5,0.75,1], keyValue=[0,0,1,0,0,0,-1,1.5,0,0,1,0,0,0,1,1.5,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Rolls_r_elbow_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Rolls_r_shoulder_RotationInterpolator", key=[0,0.25,0.5,0.75,1], keyValue=[0,0,1,0,0,0,-1,1.5,0,0,-1,3,0,0,-1,1.5,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Rolls_l_wrist_RotationInterpolator", key=[0,0.25,0.5,0.75,1], keyValue=[0,0,1,0,0,0,1,1.5,0,0,1,0,0,0,-1,1.5,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Rolls_l_elbow_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Rolls_l_shoulder_RotationInterpolator", key=[0,0.25,0.5,0.75,1], keyValue=[0,0,1,0,0,0,1,1.5,0,0,1,3,0,0,1,1.5,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Rolls_head_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Rolls_neck_RotationInterpolator", key=[0,0.25,0.5,0.75,1], keyValue=[0,0,1,0,0,0,1,1.25,0,0,1,0,0,0,-1,1.25,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Rolls_lower_body_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Rolls_upper_body_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Rolls_whole_body_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              PositionInterpolator(
+                DEF="Rolls_whole_body_TranslationInterpolator", key=[0,0.125,0.25,0.375,0.5,0.625,0.75,0.875,1], keyValue=[0,0,0,0,-0.25,0,0,-0.8,0,0,-0.25,0,0,0,0,0,-0.25,0,0,-0.8,0,0,-0.25,0,0,0,0]),
+              OrientationInterpolator(
+                DEF="Roll_l_sternoclavicular_RollInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0.2,0,0,1,0.22,0,0,1,0.2,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Roll_l_acromioclavicular_RollInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0.05,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Roll_r_sternoclavicular_RollInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,-0.2,0,0,1,-0.22,0,0,1,-0.2,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Roll_r_acromioclavicular_RollInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,-0.05,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Roll_sacroiliac_YawInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Roll_vl5_YawInterpolator", key=[0,0.2,0.4,0.5,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Roll_vc6_YawInterpolator", key=[0,0.2,0.4,0.5,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Roll_l_thumb1_PitchInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Roll_r_thumb1_PitchInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0])]),
+        Group(
+          DEF="WalkAnimation", children=[
+              TimeSensor(
+                DEF="WalkTimer", cycleInterval=1.73, loop=True),
+              OrientationInterpolator(
+                DEF="Walk_r_metatarsal_PitchInterpolator", key=[0,0.2,0.4,0.6,0.7,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Walk_r_ankle_RotationInterpolator", key=[0,0.125,0.2083,0.375,0.4583,0.5,0.6667,0.75,0.7917,0.9167,1], keyValue=[0,0,1,0,-1,0,0,0.3533,-1,0,0,0.1072,1,0,0,0.2612,1,0,0,0.1268,-1,0,0,0.01793,-1,0,0,0.05824,-1,0,0,0.2398,-1,0,0,0.35,-1,0,0,0.3322,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Walk_r_knee_RotationInterpolator", key=[0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1], keyValue=[1,0,0,0.8573,1,0,0,0.8926,1,0,0,0.5351,1,0,0,0.1756,1,0,0,0.1194,1,0,0,0.3153,1,0,0,0.09354,1,0,0,0.08558,1,0,0,0.2475,1,0,0,0.8573]),
+              OrientationInterpolator(
+                DEF="Walk_r_hip_RotationInterpolator", key=[0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1], keyValue=[-0.5831,0.03511,0.8116,0.1481,-0.995,0.02296,0.09674,0.4683,-1,0.00192,0.007964,0.4732,-0.998,-0.0158,-0.06102,0.5079,-0.9911,-0.03541,-0.1286,0.5419,-0.9131,-0.06243,-0.403,0.3361,-0.4306,-0.07962,-0.899,0.07038,1,0,0,0.2571,0.9891,-0.02805,0.1444,0.3879,-0.5831,0.03511,0.8116,0.1481]),
+              OrientationInterpolator(
+                DEF="Walk_l_ankle_RotationInterpolator", key=[0,0.125,0.2083,0.375,0.6667,0.9167,1], keyValue=[-1,0,0,0.06714,-1,0,0,0.2152,-1,0,0,0.3184,-1,0,0,0.4717,-1,0,0,0.2912,1,0,0,0.1222,-1,0,0,0.06714]),
+              OrientationInterpolator(
+                DEF="Walk_l_knee_RotationInterpolator", key=[0,0.2083,0.375,0.5,0.6667,0.7917,0.9167,1], keyValue=[1,0,0,0.3226,1,0,0,0.1556,1,0,0,0.08678,1,0,0,0.8751,1,0,0,1.131,1,0,0,0.09961,1,0,0,0.3942,1,0,0,0.3226]),
+              OrientationInterpolator(
+                DEF="Walk_l_hip_RotationInterpolator", key=[0,0.25,0.375,0.5,0.6667,0.7917,0.9167,1], keyValue=[-0.873,0.06094,0.484,0.2865,0.9963,-0.01057,0.08481,0.2488,0.9965,0.01591,-0.08222,0.3836,-0.7018,-0.03223,-0.7117,0.1289,-1,0,0,0.5518,-0.9964,0.02231,0.0817,0.5351,-0.9809,0.04912,0.1881,0.5204,-0.873,0.06094,0.484,0.2865]),
+              OrientationInterpolator(
+                DEF="Walk_lower_body_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,-1,0.1056,0,0,1,0.09018,0,0,-1,0.1056]),
+              OrientationInterpolator(
+                DEF="Walk_r_wrist_RotationInterpolator", key=[0,0.375,0.9167,1], keyValue=[-0.8129,0.4759,-0.3357,0.1346,0.1533,-0.9878,0.02582,0.3902,-0.5701,0.7604,-0.311,0.366,-0.8129,0.4759,-0.3357,0.1346]),
+              OrientationInterpolator(
+                DEF="Walk_r_elbow_RotationInterpolator", key=[0,0.375,0.9167,1], keyValue=[-1,0,0,0.411508,-1,0,0,0.0925011,-1,0,0,0.572568,-1,0,0,0.411508]),
+              OrientationInterpolator(
+                DEF="Walk_r_shoulder_RotationInterpolator", key=[0,0.375,0.9167,1], keyValue=[-1,0,0,0.09346,1,0,0,0.3197,-1,0,0,0.1564,-1,0,0,0.09346]),
+              OrientationInterpolator(
+                DEF="Walk_l_wrist_RotationInterpolator", key=[0,0.375,0.9167,1], keyValue=[0,-1,0,0.461076,-0.330195,-0.927451,0.175516,0.538852,0.0327774,-0.999314,-0.0172185,0.492033,0,-1,0,0.461076]),
+              OrientationInterpolator(
+                DEF="Walk_l_elbow_RotationInterpolator", key=[0,0.375,0.9167,1], keyValue=[-1,0,0,0.0659878,-1,0,0,0.488383,-1,0,0,0.0177536,-1,0,0,0.0659878]),
+              OrientationInterpolator(
+                DEF="Walk_l_shoulder_RotationInterpolator", key=[0,0.375,0.9167,1], keyValue=[1,0,0,0.1189,-1,0,0,0.1861,1,0,0,0.3357,1,0,0,0.1189]),
+              OrientationInterpolator(
+                DEF="Walk_head_RotationInterpolator", key=[0,0.375,0.4167,0.5,0.5833,0.6667,0.75,0.8333,0.9167,1], keyValue=[0,-1,0,0.08642,0,1,0,0.1825,0,1,0,0.1505,0,1,0,0.1053,0,1,0,0.04391,0,-1,0,0.03119,0,-1,0,0.07936,0,-1,0,0.1616,0,-1,0,0.155,0,-1,0,0.08642]),
+              OrientationInterpolator(
+                DEF="Walk_neck_RotationInterpolator", key=[0,1], keyValue=[0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Walk_upper_body_RotationInterpolator", key=[0,0.2083,0.375,0.75,0.8333,1], keyValue=[0,1,0,0.0826,-0.01972,-0.5974,0.8017,0.08231,0.009296,-0.9648,0.2627,0.1734,-0.01238,0.9549,-0.2968,0.08732,-0.008125,0.9691,-0.2463,0.158,0,1,0,0.0826]),
+              OrientationInterpolator(
+                DEF="Walk_whole_body_RotationInterpolator", key=[0,1], keyValue=[0,0,1,0,0,0,1,0]),
+              PositionInterpolator(
+                DEF="Walk_whole_body_TranslationInterpolator", key=[0,0.04167,0.125,0.1667,0.2083,0.25,0.2917,0.375,0.4583,0.5,0.5417,0.5833,0.625,0.7083,0.75,0.7917,0.875,0.9167,1], keyValue=[0,-0.00928,0,0,-0.003858,0,0,-0.008847,0,0,-0.01486,0,0,-0.02641,0,0,-0.03934,0,0,-0.0502,0,0,-0.07469,0,0,-0.02732,0,0,-0.01608,0,0,-0.01129,0,0,-0.005819,0,0,-0.002004,0,0,-0.002579,0,0,-0.0143,0,0,-0.03799,0,0,-0.05648,0,0,-0.045,0,0,-0.00928,0]),
+              OrientationInterpolator(
+                DEF="Walk_l_sternoclavicular_RollInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Walk_l_acromioclavicular_RollInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Walk_r_sternoclavicular_RollInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Walk_r_acromioclavicular_RollInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Walk_sacroiliac_YawInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Walk_vl5_YawInterpolator", key=[0,0.2,0.4,0.5,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Walk_vc6_YawInterpolator", key=[0,0.2,0.4,0.5,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Walk_l_thumb1_PitchInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[1,0,0,0,1,0,0,0.25,1,0,0,0.5,1,0,0,0.7,1,0,0,0.2,1,0,0,0]),
+              OrientationInterpolator(
+                DEF="Walk_r_thumb1_PitchInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[1,0,0,0,1,0,0,0.25,1,0,0,0.5,1,0,0,0.7,1,0,0,0.2,1,0,0,0])]),
+        Group(
+          DEF="RunAnimation", children=[
+              TimeSensor(
+                DEF="RunTimer", cycleInterval=0.9, loop=True),
+              OrientationInterpolator(
+                DEF="Run_r_metatarsal_PitchInterpolator", key=[0,0.2,0.4,0.6,0.7,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Run_l_hip_RotationInterpolator_Run", key=[0,0.2182,0.4909,0.7455,1], keyValue=[-0.99,0.033,0.04,1.42,-0.99,0.1328,0.067,0.42,0.99,0.014,0.009,0.9,-0.99,0.0703,0.05,0.7,-0.99,0.033,0.04,1.42]),
+              OrientationInterpolator(
+                DEF="Run_l_knee_RotationInterpolator_Run", key=[0,0.2182,0.4909,0.7455,1], keyValue=[1,0,0,1.01,1,0,0,0.426,1,0,0,0.705,1,0,0,2.179,1,0,0,1.01]),
+              OrientationInterpolator(
+                DEF="Run_l_ankle_RotationInterpolator_Run", key=[0,0.22,0.3,0.4,1], keyValue=[1,0,0,0.0374,-1,0,0,0.1037,-1,0,0,0.4328,1,0,0,0.1929,1,0,0,0.03574]),
+              OrientationInterpolator(
+                DEF="Run_r_hip_RotationInterpolator_Run", key=[0,0.2545,0.4909,0.7091,1], keyValue=[0.99,-0.014,0.009,0.9,-0.99,-0.0703,-0.05,0.7,-0.99,-0.033,0.04,1.42,-0.99,-0.1328,-0.067,0.42,0.99,-0.014,0.009,0.9]),
+              OrientationInterpolator(
+                DEF="Run_r_knee_RotationInterpolator_Run", key=[0,0.2545,0.4909,0.7091,1], keyValue=[1,0,0,0.705,1,0,0,2.179,1,0,0,1.01,1,0,0,0.426,1,0,0,0.705]),
+              OrientationInterpolator(
+                DEF="Run_r_ankle_RotationInterpolator_Run", key=[0,0.4,0.71,0.8,0.82,1], keyValue=[1,0,0,0.2323,-1,0,0,0.07843,-1,0,0,0.32,-1,0,0,0.374,-1,0,0,0.3478,1,0,0,0.2323]),
+              OrientationInterpolator(
+                DEF="Run_l_shoulder_RotationInterpolator_Run", key=[0,0.2182,0.4909,0.7455,1], keyValue=[0.99,-0.074,0.25,1.5,0.99,-0.092,0.44,0.3,-0.99,0.136,0.25,0.85,0.99,-0.081,0.38,0.4,0.99,-0.074,0.25,1.5]),
+              OrientationInterpolator(
+                DEF="Run_l_elbow_RotationInterpolator_Run", key=[0,0.2182,0.4909,0.7455,1], keyValue=[-1,0,0,1.85,-0.99,-0.19,0.18,1.35,-1,0,0,0.975,-0.99,-0.09,-0.02,1.55,-1,0,0,1.85]),
+              OrientationInterpolator(
+                DEF="Run_l_wrist_RotationInterpolator_Run", key=[0,0.25,0.5,0.75,1], keyValue=[-0.25,-1,0.08,0.14,0.25,1,0.08,0.14,0,0,1,0,-0.25,1,0.08,-0.14,-0.25,1,0.08,0.14]),
+              OrientationInterpolator(
+                DEF="Run_r_shoulder_RotationInterpolator_Run", key=[0,0.2545,0.4909,0.7091,1], keyValue=[-0.99,-0.136,-0.25,0.85,0.99,0.081,-0.38,0.4,0.99,0.074,-0.25,1.5,0.99,0.081,-0.38,0.4,-0.99,-0.136,-0.25,0.85]),
+              OrientationInterpolator(
+                DEF="Run_r_elbow_RotationInterpolator_Run", key=[0,0.2545,0.4909,0.7091,1], keyValue=[-1,0,0,0.975,-0.99,0.09,0.02,1.55,-1,0,0,1.85,-0.99,0.19,-0.18,1.35,-1,0,0,0.975]),
+              OrientationInterpolator(
+                DEF="Run_r_wrist_RotationInterpolator_Run", key=[0,1], keyValue=[-0.917742,-0.237244,-0.318536,0.214273,-0.917742,-0.237244,-0.318536,0.214273]),
+              OrientationInterpolator(
+                DEF="Run_lower_body_RotationInterpolator_Run", key=[0,0.2182,0.4909,0.7455,1], keyValue=[0,-1,0,0.125,0,0,1,0,0,1,0,0.125,0,0,1,0,0,-1,0,0.125]),
+              OrientationInterpolator(
+                DEF="Run_head_RotationInterpolator_Run", key=[0,0.2545,0.4909,0.7091,1], keyValue=[1,0,0,0.08,1,0,0,0.12,1,0,0,0.3,1,0,0,0.3,1,0,0,0.08]),
+              OrientationInterpolator(
+                DEF="Run_neck_RotationInterpolator_Run", key=[0,0.2545,0.4909,0.7091,1], keyValue=[0.7,0,0,0.4,-0.7,-0.7,0,0.4,0,0,0,0.4,-0.7,0.7,0,0.4,0.7,0,0,0.4]),
+              OrientationInterpolator(
+                DEF="Run_upper_body_RotationInterpolator_Run", key=[0,0.2545,0.4909,0.7636,1], keyValue=[0.97,0.65,0.086,0.5,0.9,0.003,-0.02,0.38,0.95,-0.68,-0.086,0.5,0.9,0.004,-0.025,0.4,0.97,0.65,0.086,0.5]),
+              OrientationInterpolator(
+                DEF="Run_whole_body_RotationInterpolator_Run", key=[0,0.25,0.5,0.75,1], keyValue=[1,0,0,0.06,1,0,0,0.167,1,0,0,0.06,1,0,0,0.168,1,0,0,0.06]),
+              PositionInterpolator(
+                DEF="Run_whole_body_TranslationInterpolator_Run", key=[0,0.22,0.3,0.31,0.5,0.69,0.7,0.78,1], keyValue=[0,-0.01,0,0,-0.037,0,0,-0.049,0,0,-0.037,0,0,-0.01,0,0,-0.037,0,0,-0.049,0,0,-0.037,0,0,-0.01,0]),
+              OrientationInterpolator(
+                DEF="Run_l_sternoclavicular_RollInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Run_l_acromioclavicular_RollInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Run_r_sternoclavicular_RollInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Run_r_acromioclavicular_RollInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Run_sacroiliac_YawInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Run_vl5_YawInterpolator", key=[0,0.2,0.4,0.5,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Run_vc6_YawInterpolator", key=[0,0.2,0.4,0.5,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Run_l_thumb1_PitchInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[1,0,0,0,1,0,0,0.25,1,0,0,0.7,1,0,0,0.27,1,0,0,0.2,1,0,0,0]),
+              OrientationInterpolator(
+                DEF="Run_r_thumb1_PitchInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[1,0,0,0,1,0,0,0.25,1,0,0,0.7,1,0,0,0.27,1,0,0,0.2,1,0,0,0])]),
+        Group(
+          DEF="JumpAnimation", children=[
+              TimeSensor(
+                DEF="JumpTimer", cycleInterval=3.73, loop=True),
+              OrientationInterpolator(
+                DEF="Jump_r_metatarsal_PitchInterpolator", key=[0,0.2,0.4,0.6,0.7,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Jump_r_ankle_RotationInterpolator", key=[0,0.1,0.15,0.25,0.28,0.32,0.35,0.64,0.76,0.84,0.88,0.92,0.96,1], keyValue=[0,0,1,0,-1,0,0,0.6735,-1,0,0,0.6735,-1,0,0,0.3527,-1,0,0,0.3038,-1,0,0,0.07964,1,0,0,1.3,1,0,0,0.6509,1,0,0,0.3001,-1,0,0,0.2087,-1,0,0,0.3756,-1,0,0,0.3279,-1,0,0,0.1193,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Jump_r_knee_RotationInterpolator", key=[0,0.2,0.25,0.3,0.64,0.76,0.88,1], keyValue=[0,0,1,0,1,0,0,2.5,1,0,0,1.7,0,0,1,0,1,0,0,0.9507,1,0,0,0.5845,1,0,0,0.9054,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Jump_r_hip_RotationInterpolator", key=[0,0.18,0.24,0.26,0.28,0.32,0.48,0.64,0.76,0.88,1], keyValue=[0,0,1,0,-1,0,0,1.63,-1,0,0,1.7,-1,0,0,1.55,-1,0,0,0.8943,-1,0,0,0.3698,0,0,1,0,-1,0,0,0.4963,-1,0,0,0.3829,-1,0,0,0.5169,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Jump_l_ankle_RotationInterpolator", key=[0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.84,0.88,0.92,0.96,1], keyValue=[0,0,1,0,-1,0,0,0.625,-1,0,0,0.625,-1,0,0,0.3364,-1,0,0,0.2742,-1,0,0,0.05078,1,0,0,0.2833,1,0,0,0.6667,1,0,0,0.2833,-1,0,0,0.2108,-1,0,0,0.375,-1,0,0,0.3146,-1,0,0,0.1174,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Jump_l_knee_RotationInterpolator", key=[0,0.28,0.32,0.48,0.64,0.76,0.88,1], keyValue=[0,0,1,0,1,0,0,2.047,1,0,0,2.047,0,0,1,0,1,0,0,1.566,1,0,0,0.5913,1,0,0,0.9235,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Jump_l_hip_RotationInterpolator", key=[0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.88,1], keyValue=[0,0,1,0,1,0,0,4.349,1,0,0,4.349,1,0,0,4.615,-1,0,0,0.9136,-1,0,0,0.3614,0,0,1,0,-1,0,0,0.7869,-1,0,0,0.3918,-1,0,0,0.5433,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Jump_lower_body_RotationInterpolator", key=[0,0.28,0.32,0.48,0.76,1], keyValue=[0,0,1,0,1,0,0,0.1892,1,0,0,0.1892,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Jump_r_wrist_RotationInterpolator", key=[0,0.28,0.32,0.64,0.76,1], keyValue=[0,0,1,0,-0.0585279,0.983903,-0.168849,1.85956,-0.0585279,0.983903,-0.168849,1.85956,-0.00222418,0.99801,-0.0630095,1.46072,0,1,0,0.497349,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Jump_r_elbow_RotationInterpolator", key=[0,0.28,0.32,0.64,0.76,1], keyValue=[0,0,1,0,-1,0,0,0.04151,-1,0,0,0.04151,-1,0,0,0.5855,-1,0,0,0.5852,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Jump_r_shoulder_RotationInterpolator", key=[0,0.28,0.32,0.64,0.76,0.88,1], keyValue=[0,0,1,0,0.9992,0.02042,0.03558,4.688,0.9992,0.02042,0.03558,4.688,0.9989,-0.04623,0.005159,4.079,-0.8687,-0.2525,-0.4261,1.501,-0.941,-0.2893,-0.1754,0.4788,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Jump_l_wrist_RotationInterpolator", key=[0,0.48,0.52,0.64,0.76,0.88,1], keyValue=[0,0,1,0,0.0672928,0.989475,-0.128107,4.15574,0.0672928,0.989475,-0.128107,4.15574,0.00364942,0.999901,0.0135896,4.5822,0,-1,0,0.655922,-0.00050618,-0.999999,0.0012782,1.28397,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Jump_l_elbow_RotationInterpolator", key=[0,0.28,0.32,0.58,0.72,1], keyValue=[0,0,1,0,-1,0,0,1.13,-1,0,0,1.7,-1,0,0,1.7,-1,0,0,0.4,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Jump_l_shoulder_RotationInterpolator", key=[0,0.28,0.32,0.64,0.76,0.88,1], keyValue=[0,0,1,0,-0.9987,0.02554,0.04498,1.57,-0.9987,0.02554,0.04498,1.57,1,0.0004113,0.003055,4.114,-0.8413,0.3238,0.4329,1.453,-0.877,0.4198,0.2337,0.6009,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Jump_head_RotationInterpolator", key=[0,0.28,0.32,0.48,0.76,1], keyValue=[0,0,1,0,-1,0,0,0.5989,-1,0,0,0.5989,-1,0,0,0.3216,1,0,0,0.06503,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Jump_neck_RotationInterpolator", key=[0,0.28,0.32,0.48,0.76,1], keyValue=[0,0,1,0,-1,0,0,0.1942,-1,0,0,0.1942,0,0,1,0,1,0,0,0.2284,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Jump_upper_body_RotationInterpolator", key=[0,0.22,0.28,0.34,0.71,0.88,1], keyValue=[0,0,1,0,1,0,0,1.05,1,0,0,1.051,-1,0,0,0.257,1,0,0,0.2171,1,0,0,0.3465,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Jump_whole_body_RotationInterpolator", key=[0,0.28,0.32,0.48,0.64,0.76,1], keyValue=[0,0,1,0,1,0,0,0.3273,1,0,0,0.3273,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              PositionInterpolator(
+                DEF="Jump_whole_body_TranslationInterpolator", key=[0,0.04,0.07,0.11,0.15,0.19,0.22,0.25,0.27,0.31,0.33,0.35,0.38,0.53,0.544,0.76,0.8,0.84,0.88,0.92,0.96,1], keyValue=[0,0,0,0,-0.01264,-0.01289,0,-0.04712,-0.03738,-0.0003345,-0.1049,-0.05353,-0.0005712,-0.1892,-0.06561,-0.0008233,-0.286,-0.06276,-0.0009591,-0.3795,-0.05148,-0.00106,-0.4484,-0.03656,-0.00106,-0.4484,-0.03656,-0.001122,-0.25,-0.1499,-0.0008616,-0.05,-0.06358,-0.0005128,0.15,-0.05488,0.0004779,0.55,0.02732,0.0001728,1.385,0.006873,0.00017,1.395,0.0069,0,0.35,0.02148,0,-0.01299,-0.01057,0,-0.06932,-0.01064,0.0001365,-0.1037,-0.005059,0.0001279,-0.07198,-0.007596,0.000141,-0.01626,-0.004935,0,0,0]),
+              OrientationInterpolator(
+                DEF="Jump_l_sternoclavicular_RollInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0.2,0,0,1,0.22,0,0,1,0.2,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Jump_l_acromioclavicular_RollInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0.05,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Jump_r_sternoclavicular_RollInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,-0.2,0,0,1,-0.22,0,0,1,-0.2,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Jump_r_acromioclavicular_RollInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,-0.05,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Jump_sacroiliac_YawInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,1,0,0,0,-1,0,0.1,0,1,0,0,0,1,-1,0.24,0,-1,0,0.4,0,1,0,0]),
+              OrientationInterpolator(
+                DEF="Jump_vl5_YawInterpolator", key=[0,0.2,0.4,0.5,0.6,0.8,1], keyValue=[0,1,0,0,0,1,0,-0.1,0,1,0,0,0,1,0,0,1,0,0,0.6,0,1,0,0.1,0,1,0,0]),
+              OrientationInterpolator(
+                DEF="Jump_vc6_YawInterpolator", key=[0,0.2,0.4,0.5,0.6,0.8,1], keyValue=[0,1,0,0,0,1,0,0.8,0,1,0,0,0,1,0,0,-1,0,0,0.6,0,-1,0,0.8,0,1,0,0]),
+              OrientationInterpolator(
+                DEF="Jump_l_thumb1_PitchInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[1,0,0,0,1,0,0,0.5,1,0,0,1.1,1,0,0,0.7,1,0,0,0.2,1,0,0,0]),
+              OrientationInterpolator(
+                DEF="Jump_r_thumb1_PitchInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[1,0,0,0,1,0,0,0.5,1,0,0,1.1,1,0,0,0.7,1,0,0,0.2,1,0,0,0])]),
+        Group(
+          DEF="KickAnimation", children=[
+              TimeSensor(
+                DEF="KickTimer", cycleInterval=3.73, loop=True),
+              OrientationInterpolator(
+                DEF="Kick_l_sternoclavicular_RollInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0.2,0,0,1,0.22,0,0,1,0.2,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Kick_l_acromioclavicular_RollInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0.05,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Kick_l_shoulder_RollInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,1.76,-0.25,0,1,1.76,0,0,1,1.256,0,0,1,0.05,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Kick_l_ForeArm_PitchInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[1,0,0,0,1,0,0,-0.55,-1,0.25,0,2.55,1,0,0,0,1,0,0,0,1,0,0,0]),
+              OrientationInterpolator(
+                DEF="Kick_l_wrist_RollInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,1,0,0.55,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Kick_l_thumb1_PitchInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[1,0,0,0,1,0,0,0.5,1,0,0,1.1,1,0,0,0.7,1,0,0,0.2,1,0,0,0]),
+              OrientationInterpolator(
+                DEF="Kick_r_sternoclavicular_RollInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,-0.2,0,0,1,-0.22,0,0,1,-0.2,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Kick_r_acromioclavicular_RollInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,-0.05,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Kick_r_shoulder_RollInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,-1.76,0.25,0,1,-1.76,0,0,1,-1.256,0,0,1,-0.05,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Kick_r_ForeArm_PitchInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[1,0,0,0,1,0,0,-0.55,1,0.25,0,-2.55,1,0,0,0,1,0,0,0,1,0,0,0]),
+              OrientationInterpolator(
+                DEF="Kick_r_wrist_RollInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,1,0,-0.55,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Kick_r_thumb1_PitchInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[1,0,0,0,1,0,0,0.5,1,0,0,1.1,1,0,0,0.7,1,0,0,0.2,1,0,0,0]),
+              OrientationInterpolator(
+                DEF="Kick_r_hip_PitchInterpolator", key=[0,0.2,0.3,0.5,0.6,0.9,1], keyValue=[1,0,0,0,1,0,0,0.9,-1,0,0,1.75,-1,0,0,2.25,-1,0,0,2,1,0,0,0,1,0,0,0]),
+              OrientationInterpolator(
+                DEF="Kick_r_knee_PitchInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,1,0,0,1.95,1,0,0,1.75,-1,0,0,0.28,1,0,0,0,1,0,0,0]),
+              OrientationInterpolator(
+                DEF="Kick_l_hip_PitchInterpolator", key=[0,0.2,0.3,0.5,0.6,0.9,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Kick_l_knee_PitchInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Kick_r_ankle_PitchInterpolator", key=[0,0.2,0.4,0.6,0.7,1], keyValue=[0,0,1,0,-1,0,0,0.9,-1,0,0,0.95,1,0,0,0.75,-1,0,0,0.05,1,0,0,0]),
+              OrientationInterpolator(
+                DEF="Kick_r_metatarsal_PitchInterpolator", key=[0,0.2,0.4,0.6,0.7,1], keyValue=[1,0,0,0,-1,0,0,0.5,-1,0,0,0.7,1,0,0,0.75,-1,0,0,0.2,1,0,0,0]),
+              OrientationInterpolator(
+                DEF="Kick_sacroiliac_YawInterpolator", key=[0,0.2,0.4,0.6,0.8,1], keyValue=[0,1,0,0,0,-1,0,0.1,0,1,0,0,0,1,-1,0.24,0,-1,0,0.4,0,1,0,0]),
+              OrientationInterpolator(
+                DEF="Kick_vl5_YawInterpolator", key=[0,0.2,0.4,0.5,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Kick_vc6_YawInterpolator", key=[0,0.2,0.4,0.5,0.6,0.8,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Kick_lower_body_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Kick_upper_body_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              OrientationInterpolator(
+                DEF="Kick_whole_body_RotationInterpolator", key=[0,0.5,1], keyValue=[0,0,1,0,0,0,1,0,0,0,1,0]),
+              PositionInterpolator(
+                DEF="Kick_whole_body_TranslationInterpolator", key=[0,0.5,1], keyValue=[0,0,0,0,0,0,0,0,0]),
+              OrientationInterpolator(
+                DEF="Kick_neck_RotationInterpolator", key=[0,0.25,0.55,1], keyValue=[0,0,1,0,1,0,0,0.7,1,0,0,0.5,0,0,1,0])]),
+        Group(
+          DEF="Interface", children=[
+              Transform(
+                DEF="CoordinateSystemFloor", scale=(0.1,0.1,0.1), children=[
+                    Shape(
+                      DEF="AxisLinesShape", children=[#RGB lines showing XYZ axes
+], geometry=IndexedLineSet(
+                          colorIndex=(0,1,2), colorPerVertex=False, coordIndex=(0,1,-1,0,2,-1,0,3,-1), coord(
+                            Coordinate(
+                              point=(0,0,0,1.0,0,0,0,1.0,0,0,0,1.0))), color(
+                            Color(
+                              color=(1,0,0,0,0.6,0,0,0,1)))))]),
+              ProximitySensor(
+                DEF="HudProx", size=(50,50,50)),
+              Transform(
+                DEF="HudXform", rotation=(0,1,0,0.78), translation=(2,1,2), children=[
+                    Transform(
+                      scale=(0.02,0.02,0.02), translation=(-0.4,-0.01,-0.75), children=[
+                          Transform(
+                            DEF="Stand_Text", translation=(0,-0.9,0), children=[
+                                TouchSensor(
+                                  DEF="Stand_Touch"),
+                                Shape(
+                                  DEF="StandText", appearance=Appearance(
+                                      material=Material(
+                                          DEF="text_color", ambientIntensity=1, diffuseColor=(0.819,0.521,0.169), emissiveColor=(0.819,0.521,0.169), specularColor=(0.819,0.521,0.169))), geometry=Text(
+                                      string=["Stand"], fontStyle=FontStyle(
+                                          family=("SANS")))),
+                                Shape(
+                                  DEF="Stand_Back", appearance=Appearance(
+                                      material=Material(
+                                          DEF="Clear", ambientIntensity=1, diffuseColor=(0,0.5,0), emissiveColor=(0,0.5,0), transparency=0.8)), geometry=IndexedFaceSet(
+                                      DEF="Backing", coordIndex=(0,1,2,3,-1), coord(
+                                        Coordinate(
+                                          point=(-0.2,-0.25,-0.01,3,-0.25,-0.01,3,1,-0.01,-0.2,1,-0.01)))))]),
+                          Transform(
+                            DEF="Pitch_Text", translation=(0,-2.4,0), children=[
+                                TouchSensor(
+                                  DEF="Pitch_Touch"),
+                                Shape(
+                                  DEF="PitchText", appearance=Appearance(
+                                      material=Material(
+                                          USE="text_color")), geometry=Text(
+                                      string=["Pitch"], fontStyle=FontStyle(
+                                          family=("SANS")))),
+                                Shape(
+                                  DEF="Pitch_Back", appearance=Appearance(
+                                      material=Material(
+                                          USE="Clear")), geometry=IndexedFaceSet(
+                                      USE="Backing"))]),
+                          Transform(
+                            DEF="Yaw_Text", translation=(0,-3.8,0), children=[
+                                TouchSensor(
+                                  DEF="Yaw_Touch"),
+                                Shape(
+                                  DEF="YawText", appearance=Appearance(
+                                      material=Material(
+                                          USE="text_color")), geometry=Text(
+                                      string=["Yaw"], fontStyle=FontStyle(
+                                          family=("SANS")))),
+                                Shape(
+                                  DEF="Yaw_Back", appearance=Appearance(
+                                      material=Material(
+                                          USE="Clear")), geometry=IndexedFaceSet(
+                                      USE="Backing"))]),
+                          Transform(
+                            DEF="Roll_Text", translation=(0,-5.2,0), children=[
+                                TouchSensor(
+                                  DEF="Roll_Touch"),
+                                Shape(
+                                  DEF="RollText", appearance=Appearance(
+                                      material=Material(
+                                          USE="text_color")), geometry=Text(
+                                      string=["Roll"], fontStyle=FontStyle(
+                                          family=("SANS")))),
+                                Shape(
+                                  DEF="Roll_Back", appearance=Appearance(
+                                      material=Material(
+                                          USE="Clear")), geometry=IndexedFaceSet(
+                                      USE="Backing"))]),
+                          Transform(
+                            DEF="Walk_Text", translation=(0,-6.6,0), children=[
+                                TouchSensor(
+                                  DEF="Walk_Touch"),
+                                Shape(
+                                  DEF="WalkText", appearance=Appearance(
+                                      material=Material(
+                                          USE="text_color")), geometry=Text(
+                                      string=["Walk"], fontStyle=FontStyle(
+                                          family=("SANS")))),
+                                Shape(
+                                  DEF="Walk_Back", appearance=Appearance(
+                                      material=Material(
+                                          USE="Clear")), geometry=IndexedFaceSet(
+                                      USE="Backing"))]),
+                          Transform(
+                            DEF="Run_Text", translation=(0,-8,0), children=[
+                                TouchSensor(
+                                  DEF="Run_Touch"),
+                                Shape(
+                                  DEF="RunText", appearance=Appearance(
+                                      material=Material(
+                                          USE="text_color")), geometry=Text(
+                                      string=["Run"], fontStyle=FontStyle(
+                                          family=("SANS")))),
+                                Shape(
+                                  DEF="Run_Back", appearance=Appearance(
+                                      material=Material(
+                                          USE="Clear")), geometry=IndexedFaceSet(
+                                      USE="Backing"))]),
+                          Transform(
+                            DEF="Jump_Text", translation=(0,-9.4,0), children=[
+                                TouchSensor(
+                                  DEF="Jump_Touch"),
+                                Shape(
+                                  DEF="JumpText", appearance=Appearance(
+                                      material=Material(
+                                          USE="text_color")), geometry=Text(
+                                      string=["Jump"], fontStyle=FontStyle(
+                                          family=("SANS")))),
+                                Shape(
+                                  DEF="Jump_Back", appearance=Appearance(
+                                      material=Material(
+                                          USE="Clear")), geometry=IndexedFaceSet(
+                                      USE="Backing"))]),
+                          Transform(
+                            DEF="Kick_Text", translation=(0,-10.8,0), children=[
+                                TouchSensor(
+                                  DEF="Kick_Touch"),
+                                Shape(
+                                  DEF="KickText", appearance=Appearance(
+                                      material=Material(
+                                          USE="text_color")), geometry=Text(
+                                      string=["Kick"], fontStyle=FontStyle(
+                                          family=("SANS")))),
+                                Shape(
+                                  DEF="Kick_Back", appearance=Appearance(
+                                      material=Material(
+                                          USE="Clear")), geometry=IndexedFaceSet(
+                                      USE="Backing"))]),
+                          Transform(
+                            DEF="Stop_Text", translation=(0,0.4,0), children=[
+                                TouchSensor(
+                                  DEF="Stop_Touch"),
+                                Shape(
+                                  DEF="StopText", appearance=Appearance(
+                                      material=Material(
+                                          USE="text_color")), geometry=Text(
+                                      string=["Default"], fontStyle=FontStyle(
+                                          family=("SANS")))),
+                                Shape(
+                                  DEF="Stop_Back", appearance=Appearance(
+                                      material=Material(
+                                          USE="Clear")), geometry=IndexedFaceSet(
+                                      USE="Backing"))]),
+                          Transform(
+                            DEF="SceneLabel", translation=(1.3,3,0), children=[
+                                Shape(
+                                  DEF="SceneLabelText", appearance=Appearance(
+                                      material=Material(
+                                          USE="text_color")), geometry=Text(
+                                      string=["BoxMan","Animation"], fontStyle=FontStyle(
+                                          family=("SANS"), justify=["MIDDLE","MIDDLE"])))])])])]),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_humanoid_root_TranslationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_humanoid_root_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_sacroiliac_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_l_hip_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_l_knee_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_l_ankle_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_l_subtalar_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_l_midtarsal_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_l_metatarsal_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_r_hip_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_r_knee_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_r_ankle_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_r_subtalar_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_r_midtarsal_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_r_metatarsal_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_vl5_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_vl4_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_vl3_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_vl2_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_vl1_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_vt12_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_vt11_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_vt10_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_vt9_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_vt8_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_vt7_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_vt6_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_vt5_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_vt4_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_vt3_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_vt2_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_vt1_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_vc7_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_vc6_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_vc5_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_vc4_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_vc3_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_vc2_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_vc1_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_skullbase_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_l_eyeball_joint_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_r_eyeball_joint_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_l_sternoclavicular_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_l_acromioclavicular_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_l_shoulder_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_l_elbow_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_l_wrist_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_l_thumb1_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_l_thumb2_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_l_thumb3_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_l_index0_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_l_index1_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_l_index2_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_l_index3_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_l_middle0_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_l_middle1_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_l_middle2_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_l_middle3_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_l_ring0_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_l_ring1_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_l_ring2_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_l_ring3_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_l_pinky0_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_l_pinky1_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_l_pinky2_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_l_pinky3_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_r_sternoclavicular_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_r_acromioclavicular_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_r_shoulder_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_r_elbow_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_r_wrist_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_r_thumb1_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_r_thumb2_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_r_thumb3_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_r_index0_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_r_index1_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_r_index2_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_r_index3_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_r_middle0_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_r_middle1_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_r_middle2_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_r_middle3_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_r_ring0_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_r_ring1_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_r_ring2_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_r_ring3_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_r_pinky0_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_r_pinky1_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_r_pinky2_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StopTimer", toField="set_fraction", toNode="Stop_r_pinky3_RotationInterpolator"),
+        ROUTE(
+          fromField="value_changed", fromNode="Stop_humanoid_root_TranslationInterpolator", toField="set_translation", toNode="boxman_humanoid_root"),
+        ROUTE(
+          fromField="value_changed", fromNode="Stop_humanoid_root_RotationInterpolator", toField="set_rotation", toNode="boxman_humanoid_root"),
+        ROUTE(
+          fromField="value_changed", fromNode="Stop_l_hip_RotationInterpolator", toField="set_rotation", toNode="boxman_l_hip"),
+        ROUTE(
+          fromField="value_changed", fromNode="Stop_l_knee_RotationInterpolator", toField="set_rotation", toNode="boxman_l_knee"),
+        ROUTE(
+          fromField="value_changed", fromNode="Stop_l_ankle_RotationInterpolator", toField="set_rotation", toNode="boxman_l_ankle"),
+        ROUTE(
+          fromField="value_changed", fromNode="Stop_l_midtarsal_RotationInterpolator", toField="set_rotation", toNode="boxman_l_midtarsal"),
+        ROUTE(
+          fromField="value_changed", fromNode="Stop_r_hip_RotationInterpolator", toField="set_rotation", toNode="boxman_r_hip"),
+        ROUTE(
+          fromField="value_changed", fromNode="Stop_r_knee_RotationInterpolator", toField="set_rotation", toNode="boxman_r_knee"),
+        ROUTE(
+          fromField="value_changed", fromNode="Stop_r_ankle_RotationInterpolator", toField="set_rotation", toNode="boxman_r_ankle"),
+        ROUTE(
+          fromField="value_changed", fromNode="Stop_r_midtarsal_RotationInterpolator", toField="set_rotation", toNode="boxman_r_midtarsal"),
+        ROUTE(
+          fromField="value_changed", fromNode="Stop_vl5_RotationInterpolator", toField="set_rotation", toNode="boxman_vl5"),
+        ROUTE(
+          fromField="value_changed", fromNode="Stop_skullbase_RotationInterpolator", toField="set_rotation", toNode="boxman_skullbase"),
+        ROUTE(
+          fromField="value_changed", fromNode="Stop_l_shoulder_RotationInterpolator", toField="set_rotation", toNode="boxman_l_shoulder"),
+        ROUTE(
+          fromField="value_changed", fromNode="Stop_l_elbow_RotationInterpolator", toField="set_rotation", toNode="boxman_l_elbow"),
+        ROUTE(
+          fromField="value_changed", fromNode="Stop_l_wrist_RotationInterpolator", toField="set_rotation", toNode="boxman_l_wrist"),
+        ROUTE(
+          fromField="value_changed", fromNode="Stop_r_shoulder_RotationInterpolator", toField="set_rotation", toNode="boxman_r_shoulder"),
+        ROUTE(
+          fromField="value_changed", fromNode="Stop_r_elbow_RotationInterpolator", toField="set_rotation", toNode="boxman_r_elbow"),
+        ROUTE(
+          fromField="value_changed", fromNode="Stop_r_wrist_RotationInterpolator", toField="set_rotation", toNode="boxman_r_wrist"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StandTimer", toField="set_fraction", toNode="Stand_r_ankle_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StandTimer", toField="set_fraction", toNode="Stand_r_knee_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StandTimer", toField="set_fraction", toNode="Stand_r_hip_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StandTimer", toField="set_fraction", toNode="Stand_l_ankle_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StandTimer", toField="set_fraction", toNode="Stand_l_knee_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StandTimer", toField="set_fraction", toNode="Stand_l_hip_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StandTimer", toField="set_fraction", toNode="Stand_lower_body_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StandTimer", toField="set_fraction", toNode="Stand_r_wrist_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StandTimer", toField="set_fraction", toNode="Stand_r_elbow_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StandTimer", toField="set_fraction", toNode="Stand_r_shoulder_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StandTimer", toField="set_fraction", toNode="Stand_l_wrist_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StandTimer", toField="set_fraction", toNode="Stand_l_elbow_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StandTimer", toField="set_fraction", toNode="Stand_l_shoulder_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StandTimer", toField="set_fraction", toNode="Stand_head_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StandTimer", toField="set_fraction", toNode="Stand_neck_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StandTimer", toField="set_fraction", toNode="Stand_l_eyeball_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StandTimer", toField="set_fraction", toNode="Stand_r_eyeball_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StandTimer", toField="set_fraction", toNode="Stand_upper_body_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StandTimer", toField="set_fraction", toNode="Stand_whole_body_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StandTimer", toField="set_fraction", toNode="Stand_whole_body_TranslationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StandTimer", toField="set_fraction", toNode="Stand_l_sternoclavicular_RollInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StandTimer", toField="set_fraction", toNode="Stand_l_acromioclavicular_RollInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StandTimer", toField="set_fraction", toNode="Stand_r_sternoclavicular_RollInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StandTimer", toField="set_fraction", toNode="Stand_r_acromioclavicular_RollInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StandTimer", toField="set_fraction", toNode="Stand_r_metatarsal_PitchInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StandTimer", toField="set_fraction", toNode="Stand_sacroiliac_YawInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StandTimer", toField="set_fraction", toNode="Stand_vl5_YawInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StandTimer", toField="set_fraction", toNode="Stand_vc6_YawInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StandTimer", toField="set_fraction", toNode="Stand_l_thumb1_PitchInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StandTimer", toField="set_fraction", toNode="Stand_r_thumb1_PitchInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StandTimer", toField="set_fraction", toNode="Stand_r_index1_RollInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StandTimer", toField="set_fraction", toNode="Stand_r_index2_RollInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="StandTimer", toField="set_fraction", toNode="Stand_r_index3_RollInterpolator"),
+        ROUTE(
+          fromField="value_changed", fromNode="Stand_r_ankle_RotationInterpolator", toField="set_rotation", toNode="boxman_r_ankle"),
+        ROUTE(
+          fromField="value_changed", fromNode="Stand_r_knee_RotationInterpolator", toField="set_rotation", toNode="boxman_r_knee"),
+        ROUTE(
+          fromField="value_changed", fromNode="Stand_r_hip_RotationInterpolator", toField="set_rotation", toNode="boxman_r_hip"),
+        ROUTE(
+          fromField="value_changed", fromNode="Stand_l_ankle_RotationInterpolator", toField="set_rotation", toNode="boxman_l_ankle"),
+        ROUTE(
+          fromField="value_changed", fromNode="Stand_l_knee_RotationInterpolator", toField="set_rotation", toNode="boxman_l_knee"),
+        ROUTE(
+          fromField="value_changed", fromNode="Stand_l_hip_RotationInterpolator", toField="set_rotation", toNode="boxman_l_hip"),
+        ROUTE(
+          fromField="value_changed", fromNode="Stand_r_wrist_RotationInterpolator", toField="set_rotation", toNode="boxman_r_wrist"),
+        ROUTE(
+          fromField="value_changed", fromNode="Stand_r_elbow_RotationInterpolator", toField="set_rotation", toNode="boxman_r_elbow"),
+        ROUTE(
+          fromField="value_changed", fromNode="Stand_r_shoulder_RotationInterpolator", toField="set_rotation", toNode="boxman_r_shoulder"),
+        ROUTE(
+          fromField="value_changed", fromNode="Stand_l_wrist_RotationInterpolator", toField="set_rotation", toNode="boxman_l_wrist"),
+        ROUTE(
+          fromField="value_changed", fromNode="Stand_l_elbow_RotationInterpolator", toField="set_rotation", toNode="boxman_l_elbow"),
+        ROUTE(
+          fromField="value_changed", fromNode="Stand_l_shoulder_RotationInterpolator", toField="set_rotation", toNode="boxman_l_shoulder"),
+        ROUTE(
+          fromField="value_changed", fromNode="Stand_head_RotationInterpolator", toField="set_rotation", toNode="boxman_skullbase"),
+        ROUTE(
+          fromField="value_changed", fromNode="Stand_whole_body_RotationInterpolator", toField="set_rotation", toNode="boxman_humanoid_root"),
+        ROUTE(
+          fromField="value_changed", fromNode="Stand_whole_body_TranslationInterpolator", toField="set_translation", toNode="boxman_humanoid_root"),
+        ROUTE(
+          fromField="value_changed", fromNode="Stand_vl5_YawInterpolator", toField="set_rotation", toNode="boxman_vl5"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="PitchTimer", toField="set_fraction", toNode="Pitches_r_ankle_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="PitchTimer", toField="set_fraction", toNode="Pitches_r_knee_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="PitchTimer", toField="set_fraction", toNode="Pitches_r_hip_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="PitchTimer", toField="set_fraction", toNode="Pitches_l_ankle_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="PitchTimer", toField="set_fraction", toNode="Pitches_l_knee_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="PitchTimer", toField="set_fraction", toNode="Pitches_l_hip_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="PitchTimer", toField="set_fraction", toNode="Pitches_lower_body_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="PitchTimer", toField="set_fraction", toNode="Pitches_r_wrist_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="PitchTimer", toField="set_fraction", toNode="Pitches_r_elbow_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="PitchTimer", toField="set_fraction", toNode="Pitches_r_shoulder_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="PitchTimer", toField="set_fraction", toNode="Pitches_l_wrist_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="PitchTimer", toField="set_fraction", toNode="Pitches_l_elbow_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="PitchTimer", toField="set_fraction", toNode="Pitches_l_shoulder_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="PitchTimer", toField="set_fraction", toNode="Pitches_head_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="PitchTimer", toField="set_fraction", toNode="Pitches_neck_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="PitchTimer", toField="set_fraction", toNode="Pitches_upper_body_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="PitchTimer", toField="set_fraction", toNode="Pitches_whole_body_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="PitchTimer", toField="set_fraction", toNode="Pitches_whole_body_TranslationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="PitchTimer", toField="set_fraction", toNode="Pitch_l_sternoclavicular_RollInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="PitchTimer", toField="set_fraction", toNode="Pitch_l_acromioclavicular_RollInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="PitchTimer", toField="set_fraction", toNode="Pitch_r_sternoclavicular_RollInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="PitchTimer", toField="set_fraction", toNode="Pitch_r_acromioclavicular_RollInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="PitchTimer", toField="set_fraction", toNode="Pitch_r_metatarsal_PitchInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="PitchTimer", toField="set_fraction", toNode="Pitch_sacroiliac_YawInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="PitchTimer", toField="set_fraction", toNode="Pitch_vl5_YawInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="PitchTimer", toField="set_fraction", toNode="Pitch_vc6_YawInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="PitchTimer", toField="set_fraction", toNode="Pitch_l_thumb1_PitchInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="PitchTimer", toField="set_fraction", toNode="Pitch_r_thumb1_PitchInterpolator"),
+        ROUTE(
+          fromField="value_changed", fromNode="Pitches_r_ankle_RotationInterpolator", toField="set_rotation", toNode="boxman_r_ankle"),
+        ROUTE(
+          fromField="value_changed", fromNode="Pitches_r_knee_RotationInterpolator", toField="set_rotation", toNode="boxman_r_knee"),
+        ROUTE(
+          fromField="value_changed", fromNode="Pitches_r_hip_RotationInterpolator", toField="set_rotation", toNode="boxman_r_hip"),
+        ROUTE(
+          fromField="value_changed", fromNode="Pitches_l_ankle_RotationInterpolator", toField="set_rotation", toNode="boxman_l_ankle"),
+        ROUTE(
+          fromField="value_changed", fromNode="Pitches_l_knee_RotationInterpolator", toField="set_rotation", toNode="boxman_l_knee"),
+        ROUTE(
+          fromField="value_changed", fromNode="Pitches_l_hip_RotationInterpolator", toField="set_rotation", toNode="boxman_l_hip"),
+        ROUTE(
+          fromField="value_changed", fromNode="Pitches_r_wrist_RotationInterpolator", toField="set_rotation", toNode="boxman_r_wrist"),
+        ROUTE(
+          fromField="value_changed", fromNode="Pitches_r_elbow_RotationInterpolator", toField="set_rotation", toNode="boxman_r_elbow"),
+        ROUTE(
+          fromField="value_changed", fromNode="Pitches_r_shoulder_RotationInterpolator", toField="set_rotation", toNode="boxman_r_shoulder"),
+        ROUTE(
+          fromField="value_changed", fromNode="Pitches_l_wrist_RotationInterpolator", toField="set_rotation", toNode="boxman_l_wrist"),
+        ROUTE(
+          fromField="value_changed", fromNode="Pitches_l_elbow_RotationInterpolator", toField="set_rotation", toNode="boxman_l_elbow"),
+        ROUTE(
+          fromField="value_changed", fromNode="Pitches_l_shoulder_RotationInterpolator", toField="set_rotation", toNode="boxman_l_shoulder"),
+        ROUTE(
+          fromField="value_changed", fromNode="Pitches_head_RotationInterpolator", toField="set_rotation", toNode="boxman_skullbase"),
+        ROUTE(
+          fromField="value_changed", fromNode="Pitches_whole_body_RotationInterpolator", toField="set_rotation", toNode="boxman_humanoid_root"),
+        ROUTE(
+          fromField="value_changed", fromNode="Pitches_whole_body_TranslationInterpolator", toField="set_translation", toNode="boxman_humanoid_root"),
+        ROUTE(
+          fromField="value_changed", fromNode="Pitch_vl5_YawInterpolator", toField="set_rotation", toNode="boxman_vl5"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="YawTimer", toField="set_fraction", toNode="Yaws_r_ankle_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="YawTimer", toField="set_fraction", toNode="Yaws_r_knee_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="YawTimer", toField="set_fraction", toNode="Yaws_r_hip_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="YawTimer", toField="set_fraction", toNode="Yaws_l_ankle_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="YawTimer", toField="set_fraction", toNode="Yaws_l_knee_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="YawTimer", toField="set_fraction", toNode="Yaws_l_hip_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="YawTimer", toField="set_fraction", toNode="Yaws_lower_body_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="YawTimer", toField="set_fraction", toNode="Yaws_r_wrist_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="YawTimer", toField="set_fraction", toNode="Yaws_r_elbow_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="YawTimer", toField="set_fraction", toNode="Yaws_r_shoulder_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="YawTimer", toField="set_fraction", toNode="Yaws_l_wrist_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="YawTimer", toField="set_fraction", toNode="Yaws_l_elbow_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="YawTimer", toField="set_fraction", toNode="Yaws_l_shoulder_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="YawTimer", toField="set_fraction", toNode="Yaws_head_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="YawTimer", toField="set_fraction", toNode="Yaws_neck_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="YawTimer", toField="set_fraction", toNode="Yaws_upper_body_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="YawTimer", toField="set_fraction", toNode="Yaws_whole_body_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="YawTimer", toField="set_fraction", toNode="Yaws_whole_body_TranslationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="YawTimer", toField="set_fraction", toNode="Yaw_l_sternoclavicular_RollInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="YawTimer", toField="set_fraction", toNode="Yaw_l_acromioclavicular_RollInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="YawTimer", toField="set_fraction", toNode="Yaw_r_sternoclavicular_RollInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="YawTimer", toField="set_fraction", toNode="Yaw_r_acromioclavicular_RollInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="YawTimer", toField="set_fraction", toNode="Yaw_r_metatarsal_PitchInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="YawTimer", toField="set_fraction", toNode="Yaw_sacroiliac_YawInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="YawTimer", toField="set_fraction", toNode="Yaw_vl5_YawInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="YawTimer", toField="set_fraction", toNode="Yaw_vc6_YawInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="YawTimer", toField="set_fraction", toNode="Yaw_l_thumb1_PitchInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="YawTimer", toField="set_fraction", toNode="Yaw_r_thumb1_PitchInterpolator"),
+        ROUTE(
+          fromField="value_changed", fromNode="Yaws_r_ankle_RotationInterpolator", toField="set_rotation", toNode="boxman_r_ankle"),
+        ROUTE(
+          fromField="value_changed", fromNode="Yaws_r_knee_RotationInterpolator", toField="set_rotation", toNode="boxman_r_knee"),
+        ROUTE(
+          fromField="value_changed", fromNode="Yaws_r_hip_RotationInterpolator", toField="set_rotation", toNode="boxman_r_hip"),
+        ROUTE(
+          fromField="value_changed", fromNode="Yaws_l_ankle_RotationInterpolator", toField="set_rotation", toNode="boxman_l_ankle"),
+        ROUTE(
+          fromField="value_changed", fromNode="Yaws_l_knee_RotationInterpolator", toField="set_rotation", toNode="boxman_l_knee"),
+        ROUTE(
+          fromField="value_changed", fromNode="Yaws_l_hip_RotationInterpolator", toField="set_rotation", toNode="boxman_l_hip"),
+        ROUTE(
+          fromField="value_changed", fromNode="Yaws_r_wrist_RotationInterpolator", toField="set_rotation", toNode="boxman_r_wrist"),
+        ROUTE(
+          fromField="value_changed", fromNode="Yaws_r_elbow_RotationInterpolator", toField="set_rotation", toNode="boxman_r_elbow"),
+        ROUTE(
+          fromField="value_changed", fromNode="Yaws_r_shoulder_RotationInterpolator", toField="set_rotation", toNode="boxman_r_shoulder"),
+        ROUTE(
+          fromField="value_changed", fromNode="Yaws_l_wrist_RotationInterpolator", toField="set_rotation", toNode="boxman_l_wrist"),
+        ROUTE(
+          fromField="value_changed", fromNode="Yaws_l_elbow_RotationInterpolator", toField="set_rotation", toNode="boxman_l_elbow"),
+        ROUTE(
+          fromField="value_changed", fromNode="Yaws_l_shoulder_RotationInterpolator", toField="set_rotation", toNode="boxman_l_shoulder"),
+        ROUTE(
+          fromField="value_changed", fromNode="Yaws_head_RotationInterpolator", toField="set_rotation", toNode="boxman_skullbase"),
+        ROUTE(
+          fromField="value_changed", fromNode="Yaws_whole_body_RotationInterpolator", toField="set_rotation", toNode="boxman_humanoid_root"),
+        ROUTE(
+          fromField="value_changed", fromNode="Yaws_whole_body_TranslationInterpolator", toField="set_translation", toNode="boxman_humanoid_root"),
+        ROUTE(
+          fromField="value_changed", fromNode="Yaw_vl5_YawInterpolator", toField="set_rotation", toNode="boxman_vl5"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RollTimer", toField="set_fraction", toNode="Rolls_r_ankle_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RollTimer", toField="set_fraction", toNode="Rolls_r_knee_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RollTimer", toField="set_fraction", toNode="Rolls_r_hip_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RollTimer", toField="set_fraction", toNode="Rolls_l_ankle_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RollTimer", toField="set_fraction", toNode="Rolls_l_knee_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RollTimer", toField="set_fraction", toNode="Rolls_l_hip_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RollTimer", toField="set_fraction", toNode="Rolls_lower_body_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RollTimer", toField="set_fraction", toNode="Rolls_r_wrist_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RollTimer", toField="set_fraction", toNode="Rolls_r_elbow_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RollTimer", toField="set_fraction", toNode="Rolls_r_shoulder_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RollTimer", toField="set_fraction", toNode="Rolls_l_wrist_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RollTimer", toField="set_fraction", toNode="Rolls_l_elbow_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RollTimer", toField="set_fraction", toNode="Rolls_l_shoulder_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RollTimer", toField="set_fraction", toNode="Rolls_head_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RollTimer", toField="set_fraction", toNode="Rolls_neck_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RollTimer", toField="set_fraction", toNode="Rolls_upper_body_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RollTimer", toField="set_fraction", toNode="Rolls_whole_body_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RollTimer", toField="set_fraction", toNode="Rolls_whole_body_TranslationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RollTimer", toField="set_fraction", toNode="Roll_l_sternoclavicular_RollInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RollTimer", toField="set_fraction", toNode="Roll_l_acromioclavicular_RollInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RollTimer", toField="set_fraction", toNode="Roll_r_sternoclavicular_RollInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RollTimer", toField="set_fraction", toNode="Roll_r_acromioclavicular_RollInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RollTimer", toField="set_fraction", toNode="Roll_r_metatarsal_PitchInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RollTimer", toField="set_fraction", toNode="Roll_sacroiliac_YawInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RollTimer", toField="set_fraction", toNode="Roll_vl5_YawInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RollTimer", toField="set_fraction", toNode="Roll_vc6_YawInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RollTimer", toField="set_fraction", toNode="Roll_l_thumb1_PitchInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RollTimer", toField="set_fraction", toNode="Roll_r_thumb1_PitchInterpolator"),
+        ROUTE(
+          fromField="value_changed", fromNode="Rolls_r_ankle_RotationInterpolator", toField="set_rotation", toNode="boxman_r_ankle"),
+        ROUTE(
+          fromField="value_changed", fromNode="Rolls_r_knee_RotationInterpolator", toField="set_rotation", toNode="boxman_r_knee"),
+        ROUTE(
+          fromField="value_changed", fromNode="Rolls_r_hip_RotationInterpolator", toField="set_rotation", toNode="boxman_r_hip"),
+        ROUTE(
+          fromField="value_changed", fromNode="Rolls_l_ankle_RotationInterpolator", toField="set_rotation", toNode="boxman_l_ankle"),
+        ROUTE(
+          fromField="value_changed", fromNode="Rolls_l_knee_RotationInterpolator", toField="set_rotation", toNode="boxman_l_knee"),
+        ROUTE(
+          fromField="value_changed", fromNode="Rolls_l_hip_RotationInterpolator", toField="set_rotation", toNode="boxman_l_hip"),
+        ROUTE(
+          fromField="value_changed", fromNode="Rolls_r_wrist_RotationInterpolator", toField="set_rotation", toNode="boxman_r_wrist"),
+        ROUTE(
+          fromField="value_changed", fromNode="Rolls_r_elbow_RotationInterpolator", toField="set_rotation", toNode="boxman_r_elbow"),
+        ROUTE(
+          fromField="value_changed", fromNode="Rolls_r_shoulder_RotationInterpolator", toField="set_rotation", toNode="boxman_r_shoulder"),
+        ROUTE(
+          fromField="value_changed", fromNode="Rolls_l_wrist_RotationInterpolator", toField="set_rotation", toNode="boxman_l_wrist"),
+        ROUTE(
+          fromField="value_changed", fromNode="Rolls_l_elbow_RotationInterpolator", toField="set_rotation", toNode="boxman_l_elbow"),
+        ROUTE(
+          fromField="value_changed", fromNode="Rolls_l_shoulder_RotationInterpolator", toField="set_rotation", toNode="boxman_l_shoulder"),
+        ROUTE(
+          fromField="value_changed", fromNode="Rolls_head_RotationInterpolator", toField="set_rotation", toNode="boxman_skullbase"),
+        ROUTE(
+          fromField="value_changed", fromNode="Rolls_whole_body_RotationInterpolator", toField="set_rotation", toNode="boxman_humanoid_root"),
+        ROUTE(
+          fromField="value_changed", fromNode="Rolls_whole_body_TranslationInterpolator", toField="set_translation", toNode="boxman_humanoid_root"),
+        ROUTE(
+          fromField="value_changed", fromNode="Roll_vl5_YawInterpolator", toField="set_rotation", toNode="boxman_vl5"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="WalkTimer", toField="set_fraction", toNode="Walk_r_ankle_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="WalkTimer", toField="set_fraction", toNode="Walk_r_knee_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="WalkTimer", toField="set_fraction", toNode="Walk_r_hip_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="WalkTimer", toField="set_fraction", toNode="Walk_l_ankle_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="WalkTimer", toField="set_fraction", toNode="Walk_l_knee_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="WalkTimer", toField="set_fraction", toNode="Walk_l_hip_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="WalkTimer", toField="set_fraction", toNode="Walk_lower_body_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="WalkTimer", toField="set_fraction", toNode="Walk_r_wrist_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="WalkTimer", toField="set_fraction", toNode="Walk_r_elbow_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="WalkTimer", toField="set_fraction", toNode="Walk_r_shoulder_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="WalkTimer", toField="set_fraction", toNode="Walk_l_wrist_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="WalkTimer", toField="set_fraction", toNode="Walk_l_elbow_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="WalkTimer", toField="set_fraction", toNode="Walk_l_shoulder_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="WalkTimer", toField="set_fraction", toNode="Walk_head_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="WalkTimer", toField="set_fraction", toNode="Walk_neck_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="WalkTimer", toField="set_fraction", toNode="Walk_upper_body_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="WalkTimer", toField="set_fraction", toNode="Walk_whole_body_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="WalkTimer", toField="set_fraction", toNode="Walk_whole_body_TranslationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="WalkTimer", toField="set_fraction", toNode="Walk_l_sternoclavicular_RollInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="WalkTimer", toField="set_fraction", toNode="Walk_l_acromioclavicular_RollInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="WalkTimer", toField="set_fraction", toNode="Walk_r_sternoclavicular_RollInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="WalkTimer", toField="set_fraction", toNode="Walk_r_acromioclavicular_RollInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="WalkTimer", toField="set_fraction", toNode="Walk_r_metatarsal_PitchInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="WalkTimer", toField="set_fraction", toNode="Walk_sacroiliac_YawInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="WalkTimer", toField="set_fraction", toNode="Walk_vl5_YawInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="WalkTimer", toField="set_fraction", toNode="Walk_vc6_YawInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="WalkTimer", toField="set_fraction", toNode="Walk_l_thumb1_PitchInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="WalkTimer", toField="set_fraction", toNode="Walk_r_thumb1_PitchInterpolator"),
+        ROUTE(
+          fromField="value_changed", fromNode="Walk_r_ankle_RotationInterpolator", toField="set_rotation", toNode="boxman_r_ankle"),
+        ROUTE(
+          fromField="value_changed", fromNode="Walk_r_knee_RotationInterpolator", toField="set_rotation", toNode="boxman_r_knee"),
+        ROUTE(
+          fromField="value_changed", fromNode="Walk_r_hip_RotationInterpolator", toField="set_rotation", toNode="boxman_r_hip"),
+        ROUTE(
+          fromField="value_changed", fromNode="Walk_l_ankle_RotationInterpolator", toField="set_rotation", toNode="boxman_l_ankle"),
+        ROUTE(
+          fromField="value_changed", fromNode="Walk_l_knee_RotationInterpolator", toField="set_rotation", toNode="boxman_l_knee"),
+        ROUTE(
+          fromField="value_changed", fromNode="Walk_l_hip_RotationInterpolator", toField="set_rotation", toNode="boxman_l_hip"),
+        ROUTE(
+          fromField="value_changed", fromNode="Walk_r_wrist_RotationInterpolator", toField="set_rotation", toNode="boxman_r_wrist"),
+        ROUTE(
+          fromField="value_changed", fromNode="Walk_r_elbow_RotationInterpolator", toField="set_rotation", toNode="boxman_r_elbow"),
+        ROUTE(
+          fromField="value_changed", fromNode="Walk_r_shoulder_RotationInterpolator", toField="set_rotation", toNode="boxman_r_shoulder"),
+        ROUTE(
+          fromField="value_changed", fromNode="Walk_l_wrist_RotationInterpolator", toField="set_rotation", toNode="boxman_l_wrist"),
+        ROUTE(
+          fromField="value_changed", fromNode="Walk_l_elbow_RotationInterpolator", toField="set_rotation", toNode="boxman_l_elbow"),
+        ROUTE(
+          fromField="value_changed", fromNode="Walk_l_shoulder_RotationInterpolator", toField="set_rotation", toNode="boxman_l_shoulder"),
+        ROUTE(
+          fromField="value_changed", fromNode="Walk_head_RotationInterpolator", toField="set_rotation", toNode="boxman_skullbase"),
+        ROUTE(
+          fromField="value_changed", fromNode="Walk_whole_body_RotationInterpolator", toField="set_rotation", toNode="boxman_humanoid_root"),
+        ROUTE(
+          fromField="value_changed", fromNode="Walk_whole_body_TranslationInterpolator", toField="set_translation", toNode="boxman_humanoid_root"),
+        ROUTE(
+          fromField="value_changed", fromNode="Walk_vl5_YawInterpolator", toField="set_rotation", toNode="boxman_vl5"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RunTimer", toField="set_fraction", toNode="Run_r_ankle_RotationInterpolator_Run"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RunTimer", toField="set_fraction", toNode="Run_r_knee_RotationInterpolator_Run"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RunTimer", toField="set_fraction", toNode="Run_r_hip_RotationInterpolator_Run"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RunTimer", toField="set_fraction", toNode="Run_l_ankle_RotationInterpolator_Run"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RunTimer", toField="set_fraction", toNode="Run_l_knee_RotationInterpolator_Run"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RunTimer", toField="set_fraction", toNode="Run_l_hip_RotationInterpolator_Run"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RunTimer", toField="set_fraction", toNode="Run_lower_body_RotationInterpolator_Run"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RunTimer", toField="set_fraction", toNode="Run_r_wrist_RotationInterpolator_Run"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RunTimer", toField="set_fraction", toNode="Run_r_elbow_RotationInterpolator_Run"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RunTimer", toField="set_fraction", toNode="Run_r_shoulder_RotationInterpolator_Run"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RunTimer", toField="set_fraction", toNode="Run_l_wrist_RotationInterpolator_Run"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RunTimer", toField="set_fraction", toNode="Run_l_elbow_RotationInterpolator_Run"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RunTimer", toField="set_fraction", toNode="Run_l_shoulder_RotationInterpolator_Run"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RunTimer", toField="set_fraction", toNode="Run_head_RotationInterpolator_Run"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RunTimer", toField="set_fraction", toNode="Run_neck_RotationInterpolator_Run"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RunTimer", toField="set_fraction", toNode="Run_upper_body_RotationInterpolator_Run"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RunTimer", toField="set_fraction", toNode="Run_whole_body_RotationInterpolator_Run"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RunTimer", toField="set_fraction", toNode="Run_whole_body_TranslationInterpolator_Run"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RunTimer", toField="set_fraction", toNode="Run_l_sternoclavicular_RollInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RunTimer", toField="set_fraction", toNode="Run_l_acromioclavicular_RollInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RunTimer", toField="set_fraction", toNode="Run_r_sternoclavicular_RollInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RunTimer", toField="set_fraction", toNode="Run_r_acromioclavicular_RollInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RunTimer", toField="set_fraction", toNode="Run_r_metatarsal_PitchInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RunTimer", toField="set_fraction", toNode="Run_sacroiliac_YawInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RunTimer", toField="set_fraction", toNode="Run_vl5_YawInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RunTimer", toField="set_fraction", toNode="Run_vc6_YawInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RunTimer", toField="set_fraction", toNode="Run_l_thumb1_PitchInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="RunTimer", toField="set_fraction", toNode="Run_r_thumb1_PitchInterpolator"),
+        ROUTE(
+          fromField="value_changed", fromNode="Run_r_ankle_RotationInterpolator_Run", toField="set_rotation", toNode="boxman_r_ankle"),
+        ROUTE(
+          fromField="value_changed", fromNode="Run_r_knee_RotationInterpolator_Run", toField="set_rotation", toNode="boxman_r_knee"),
+        ROUTE(
+          fromField="value_changed", fromNode="Run_r_hip_RotationInterpolator_Run", toField="set_rotation", toNode="boxman_r_hip"),
+        ROUTE(
+          fromField="value_changed", fromNode="Run_l_ankle_RotationInterpolator_Run", toField="set_rotation", toNode="boxman_l_ankle"),
+        ROUTE(
+          fromField="value_changed", fromNode="Run_l_knee_RotationInterpolator_Run", toField="set_rotation", toNode="boxman_l_knee"),
+        ROUTE(
+          fromField="value_changed", fromNode="Run_l_hip_RotationInterpolator_Run", toField="set_rotation", toNode="boxman_l_hip"),
+        ROUTE(
+          fromField="value_changed", fromNode="Run_r_wrist_RotationInterpolator_Run", toField="set_rotation", toNode="boxman_r_wrist"),
+        ROUTE(
+          fromField="value_changed", fromNode="Run_r_elbow_RotationInterpolator_Run", toField="set_rotation", toNode="boxman_r_elbow"),
+        ROUTE(
+          fromField="value_changed", fromNode="Run_r_shoulder_RotationInterpolator_Run", toField="set_rotation", toNode="boxman_r_shoulder"),
+        ROUTE(
+          fromField="value_changed", fromNode="Run_l_wrist_RotationInterpolator_Run", toField="set_rotation", toNode="boxman_l_wrist"),
+        ROUTE(
+          fromField="value_changed", fromNode="Run_l_elbow_RotationInterpolator_Run", toField="set_rotation", toNode="boxman_l_elbow"),
+        ROUTE(
+          fromField="value_changed", fromNode="Run_l_shoulder_RotationInterpolator_Run", toField="set_rotation", toNode="boxman_l_shoulder"),
+        ROUTE(
+          fromField="value_changed", fromNode="Run_head_RotationInterpolator_Run", toField="set_rotation", toNode="boxman_skullbase"),
+        ROUTE(
+          fromField="value_changed", fromNode="Run_whole_body_RotationInterpolator_Run", toField="set_rotation", toNode="boxman_humanoid_root"),
+        ROUTE(
+          fromField="value_changed", fromNode="Run_whole_body_TranslationInterpolator_Run", toField="set_translation", toNode="boxman_humanoid_root"),
+        ROUTE(
+          fromField="value_changed", fromNode="Run_vl5_YawInterpolator", toField="set_rotation", toNode="boxman_vl5"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="JumpTimer", toField="set_fraction", toNode="Jump_r_ankle_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="JumpTimer", toField="set_fraction", toNode="Jump_r_knee_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="JumpTimer", toField="set_fraction", toNode="Jump_r_hip_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="JumpTimer", toField="set_fraction", toNode="Jump_l_ankle_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="JumpTimer", toField="set_fraction", toNode="Jump_l_knee_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="JumpTimer", toField="set_fraction", toNode="Jump_l_hip_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="JumpTimer", toField="set_fraction", toNode="Jump_lower_body_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="JumpTimer", toField="set_fraction", toNode="Jump_r_wrist_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="JumpTimer", toField="set_fraction", toNode="Jump_r_elbow_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="JumpTimer", toField="set_fraction", toNode="Jump_r_shoulder_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="JumpTimer", toField="set_fraction", toNode="Jump_l_wrist_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="JumpTimer", toField="set_fraction", toNode="Jump_l_elbow_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="JumpTimer", toField="set_fraction", toNode="Jump_l_shoulder_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="JumpTimer", toField="set_fraction", toNode="Jump_head_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="JumpTimer", toField="set_fraction", toNode="Jump_neck_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="JumpTimer", toField="set_fraction", toNode="Jump_upper_body_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="JumpTimer", toField="set_fraction", toNode="Jump_whole_body_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="JumpTimer", toField="set_fraction", toNode="Jump_whole_body_TranslationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="JumpTimer", toField="set_fraction", toNode="Jump_l_sternoclavicular_RollInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="JumpTimer", toField="set_fraction", toNode="Jump_l_acromioclavicular_RollInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="JumpTimer", toField="set_fraction", toNode="Jump_r_sternoclavicular_RollInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="JumpTimer", toField="set_fraction", toNode="Jump_r_acromioclavicular_RollInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="JumpTimer", toField="set_fraction", toNode="Jump_r_metatarsal_PitchInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="JumpTimer", toField="set_fraction", toNode="Jump_sacroiliac_YawInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="JumpTimer", toField="set_fraction", toNode="Jump_vl5_YawInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="JumpTimer", toField="set_fraction", toNode="Jump_vc6_YawInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="JumpTimer", toField="set_fraction", toNode="Jump_l_thumb1_PitchInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="JumpTimer", toField="set_fraction", toNode="Jump_r_thumb1_PitchInterpolator"),
+        ROUTE(
+          fromField="value_changed", fromNode="Jump_r_ankle_RotationInterpolator", toField="set_rotation", toNode="boxman_r_ankle"),
+        ROUTE(
+          fromField="value_changed", fromNode="Jump_r_knee_RotationInterpolator", toField="set_rotation", toNode="boxman_r_knee"),
+        ROUTE(
+          fromField="value_changed", fromNode="Jump_r_hip_RotationInterpolator", toField="set_rotation", toNode="boxman_r_hip"),
+        ROUTE(
+          fromField="value_changed", fromNode="Jump_l_ankle_RotationInterpolator", toField="set_rotation", toNode="boxman_l_ankle"),
+        ROUTE(
+          fromField="value_changed", fromNode="Jump_l_knee_RotationInterpolator", toField="set_rotation", toNode="boxman_l_knee"),
+        ROUTE(
+          fromField="value_changed", fromNode="Jump_l_hip_RotationInterpolator", toField="set_rotation", toNode="boxman_l_hip"),
+        ROUTE(
+          fromField="value_changed", fromNode="Jump_r_wrist_RotationInterpolator", toField="set_rotation", toNode="boxman_r_wrist"),
+        ROUTE(
+          fromField="value_changed", fromNode="Jump_r_elbow_RotationInterpolator", toField="set_rotation", toNode="boxman_r_elbow"),
+        ROUTE(
+          fromField="value_changed", fromNode="Jump_r_shoulder_RotationInterpolator", toField="set_rotation", toNode="boxman_r_shoulder"),
+        ROUTE(
+          fromField="value_changed", fromNode="Jump_l_wrist_RotationInterpolator", toField="set_rotation", toNode="boxman_l_wrist"),
+        ROUTE(
+          fromField="value_changed", fromNode="Jump_l_elbow_RotationInterpolator", toField="set_rotation", toNode="boxman_l_elbow"),
+        ROUTE(
+          fromField="value_changed", fromNode="Jump_l_shoulder_RotationInterpolator", toField="set_rotation", toNode="boxman_l_shoulder"),
+        ROUTE(
+          fromField="value_changed", fromNode="Jump_head_RotationInterpolator", toField="set_rotation", toNode="boxman_skullbase"),
+        ROUTE(
+          fromField="value_changed", fromNode="Jump_whole_body_RotationInterpolator", toField="set_rotation", toNode="boxman_humanoid_root"),
+        ROUTE(
+          fromField="value_changed", fromNode="Jump_whole_body_TranslationInterpolator", toField="set_translation", toNode="boxman_humanoid_root"),
+        ROUTE(
+          fromField="value_changed", fromNode="Jump_vl5_YawInterpolator", toField="set_rotation", toNode="boxman_vl5"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="KickTimer", toField="set_fraction", toNode="Kick_l_sternoclavicular_RollInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="KickTimer", toField="set_fraction", toNode="Kick_l_acromioclavicular_RollInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="KickTimer", toField="set_fraction", toNode="Kick_l_shoulder_RollInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="KickTimer", toField="set_fraction", toNode="Kick_l_ForeArm_PitchInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="KickTimer", toField="set_fraction", toNode="Kick_l_wrist_RollInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="KickTimer", toField="set_fraction", toNode="Kick_l_thumb1_PitchInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="KickTimer", toField="set_fraction", toNode="Kick_r_sternoclavicular_RollInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="KickTimer", toField="set_fraction", toNode="Kick_r_acromioclavicular_RollInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="KickTimer", toField="set_fraction", toNode="Kick_r_shoulder_RollInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="KickTimer", toField="set_fraction", toNode="Kick_r_ForeArm_PitchInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="KickTimer", toField="set_fraction", toNode="Kick_r_wrist_RollInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="KickTimer", toField="set_fraction", toNode="Kick_r_thumb1_PitchInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="KickTimer", toField="set_fraction", toNode="Kick_r_hip_PitchInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="KickTimer", toField="set_fraction", toNode="Kick_r_knee_PitchInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="KickTimer", toField="set_fraction", toNode="Kick_l_hip_PitchInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="KickTimer", toField="set_fraction", toNode="Kick_l_knee_PitchInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="KickTimer", toField="set_fraction", toNode="Kick_r_ankle_PitchInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="KickTimer", toField="set_fraction", toNode="Kick_r_metatarsal_PitchInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="KickTimer", toField="set_fraction", toNode="Kick_sacroiliac_YawInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="KickTimer", toField="set_fraction", toNode="Kick_vl5_YawInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="KickTimer", toField="set_fraction", toNode="Kick_vc6_YawInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="KickTimer", toField="set_fraction", toNode="Kick_lower_body_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="KickTimer", toField="set_fraction", toNode="Kick_upper_body_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="KickTimer", toField="set_fraction", toNode="Kick_whole_body_RotationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="KickTimer", toField="set_fraction", toNode="Kick_whole_body_TranslationInterpolator"),
+        ROUTE(
+          fromField="fraction_changed", fromNode="KickTimer", toField="set_fraction", toNode="Kick_neck_RotationInterpolator"),
+        ROUTE(
+          fromField="value_changed", fromNode="Kick_l_shoulder_RollInterpolator", toField="set_rotation", toNode="boxman_l_shoulder"),
+        ROUTE(
+          fromField="value_changed", fromNode="Kick_l_ForeArm_PitchInterpolator", toField="set_rotation", toNode="boxman_l_elbow"),
+        ROUTE(
+          fromField="value_changed", fromNode="Kick_l_wrist_RollInterpolator", toField="set_rotation", toNode="boxman_l_wrist"),
+        ROUTE(
+          fromField="value_changed", fromNode="Kick_r_shoulder_RollInterpolator", toField="set_rotation", toNode="boxman_r_shoulder"),
+        ROUTE(
+          fromField="value_changed", fromNode="Kick_r_ForeArm_PitchInterpolator", toField="set_rotation", toNode="boxman_r_elbow"),
+        ROUTE(
+          fromField="value_changed", fromNode="Kick_r_wrist_RollInterpolator", toField="set_rotation", toNode="boxman_r_wrist"),
+        ROUTE(
+          fromField="value_changed", fromNode="Kick_r_hip_PitchInterpolator", toField="set_rotation", toNode="boxman_r_hip"),
+        ROUTE(
+          fromField="value_changed", fromNode="Kick_r_knee_PitchInterpolator", toField="set_rotation", toNode="boxman_r_knee"),
+        ROUTE(
+          fromField="value_changed", fromNode="Kick_r_ankle_PitchInterpolator", toField="set_rotation", toNode="boxman_r_ankle"),
+        ROUTE(
+          fromField="value_changed", fromNode="Kick_l_hip_PitchInterpolator", toField="set_rotation", toNode="boxman_l_hip"),
+        ROUTE(
+          fromField="value_changed", fromNode="Kick_l_knee_PitchInterpolator", toField="set_rotation", toNode="boxman_l_knee"),
+        ROUTE(
+          fromField="value_changed", fromNode="Kick_r_ankle_PitchInterpolator", toField="set_rotation", toNode="boxman_l_ankle"),
+        ROUTE(
+          fromField="value_changed", fromNode="Kick_vl5_YawInterpolator", toField="set_rotation", toNode="boxman_vl5"),
+        ROUTE(
+          fromField="value_changed", fromNode="Kick_whole_body_RotationInterpolator", toField="set_rotation", toNode="boxman_humanoid_root"),
+        ROUTE(
+          fromField="value_changed", fromNode="Kick_whole_body_TranslationInterpolator", toField="set_translation", toNode="boxman_humanoid_root"),
+        ROUTE(
+          fromField="position_changed", fromNode="HudProx", toField="set_translation", toNode="HudXform"),
+        ROUTE(
+          fromField="orientation_changed", fromNode="HudProx", toField="set_rotation", toNode="HudXform"),
+        ROUTE(
+          fromField="touchTime", fromNode="Stand_Touch", toField="set_stopTime", toNode="PitchTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Stand_Touch", toField="set_stopTime", toNode="YawTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Stand_Touch", toField="set_stopTime", toNode="RollTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Stand_Touch", toField="set_stopTime", toNode="WalkTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Stand_Touch", toField="set_stopTime", toNode="RunTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Stand_Touch", toField="set_stopTime", toNode="JumpTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Stand_Touch", toField="set_stopTime", toNode="KickTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Stand_Touch", toField="set_stopTime", toNode="StopTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Stand_Touch", toField="set_startTime", toNode="StandTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Pitch_Touch", toField="set_stopTime", toNode="StandTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Pitch_Touch", toField="set_stopTime", toNode="YawTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Pitch_Touch", toField="set_stopTime", toNode="RollTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Pitch_Touch", toField="set_stopTime", toNode="WalkTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Pitch_Touch", toField="set_stopTime", toNode="RunTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Pitch_Touch", toField="set_stopTime", toNode="JumpTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Pitch_Touch", toField="set_stopTime", toNode="KickTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Pitch_Touch", toField="set_stopTime", toNode="StopTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Pitch_Touch", toField="set_startTime", toNode="PitchTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Yaw_Touch", toField="set_stopTime", toNode="StandTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Yaw_Touch", toField="set_stopTime", toNode="PitchTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Yaw_Touch", toField="set_stopTime", toNode="RollTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Yaw_Touch", toField="set_stopTime", toNode="WalkTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Yaw_Touch", toField="set_stopTime", toNode="RunTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Yaw_Touch", toField="set_stopTime", toNode="JumpTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Yaw_Touch", toField="set_stopTime", toNode="KickTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Yaw_Touch", toField="set_stopTime", toNode="StopTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Yaw_Touch", toField="set_startTime", toNode="YawTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Walk_Touch", toField="set_stopTime", toNode="StandTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Walk_Touch", toField="set_stopTime", toNode="PitchTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Walk_Touch", toField="set_stopTime", toNode="YawTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Walk_Touch", toField="set_stopTime", toNode="RollTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Walk_Touch", toField="set_stopTime", toNode="RunTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Walk_Touch", toField="set_stopTime", toNode="JumpTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Walk_Touch", toField="set_stopTime", toNode="KickTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Walk_Touch", toField="set_stopTime", toNode="StopTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Walk_Touch", toField="set_startTime", toNode="WalkTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Roll_Touch", toField="set_stopTime", toNode="StandTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Roll_Touch", toField="set_stopTime", toNode="PitchTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Roll_Touch", toField="set_stopTime", toNode="YawTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Roll_Touch", toField="set_stopTime", toNode="WalkTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Roll_Touch", toField="set_stopTime", toNode="RunTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Roll_Touch", toField="set_stopTime", toNode="JumpTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Roll_Touch", toField="set_stopTime", toNode="KickTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Roll_Touch", toField="set_stopTime", toNode="StopTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Roll_Touch", toField="set_startTime", toNode="RollTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Run_Touch", toField="set_stopTime", toNode="StandTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Run_Touch", toField="set_stopTime", toNode="PitchTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Run_Touch", toField="set_stopTime", toNode="YawTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Run_Touch", toField="set_stopTime", toNode="RollTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Run_Touch", toField="set_stopTime", toNode="WalkTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Run_Touch", toField="set_stopTime", toNode="JumpTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Run_Touch", toField="set_stopTime", toNode="KickTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Run_Touch", toField="set_stopTime", toNode="StopTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Run_Touch", toField="set_startTime", toNode="RunTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Jump_Touch", toField="set_stopTime", toNode="StandTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Jump_Touch", toField="set_stopTime", toNode="PitchTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Jump_Touch", toField="set_stopTime", toNode="YawTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Jump_Touch", toField="set_stopTime", toNode="RollTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Jump_Touch", toField="set_stopTime", toNode="WalkTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Jump_Touch", toField="set_stopTime", toNode="RunTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Jump_Touch", toField="set_stopTime", toNode="KickTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Jump_Touch", toField="set_stopTime", toNode="StopTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Jump_Touch", toField="set_startTime", toNode="JumpTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Kick_Touch", toField="set_stopTime", toNode="StandTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Kick_Touch", toField="set_stopTime", toNode="PitchTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Kick_Touch", toField="set_stopTime", toNode="YawTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Kick_Touch", toField="set_stopTime", toNode="RollTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Kick_Touch", toField="set_stopTime", toNode="WalkTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Kick_Touch", toField="set_stopTime", toNode="RunTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Kick_Touch", toField="set_stopTime", toNode="JumpTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Kick_Touch", toField="set_stopTime", toNode="StopTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Kick_Touch", toField="set_startTime", toNode="KickTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Stop_Touch", toField="set_stopTime", toNode="StandTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Stop_Touch", toField="set_stopTime", toNode="PitchTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Stop_Touch", toField="set_stopTime", toNode="YawTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Stop_Touch", toField="set_stopTime", toNode="RollTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Stop_Touch", toField="set_stopTime", toNode="WalkTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Stop_Touch", toField="set_stopTime", toNode="RunTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Stop_Touch", toField="set_stopTime", toNode="JumpTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Stop_Touch", toField="set_stopTime", toNode="KickTimer"),
+        ROUTE(
+          fromField="touchTime", fromNode="Stop_Touch", toField="set_startTime", toNode="StopTimer")]))
+.XML())

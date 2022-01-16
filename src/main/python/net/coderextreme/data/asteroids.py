@@ -1,21 +1,21 @@
 from x3d import *
 print(
 X3D(
-  profile='Immersive', version='3.3', head=head(  children=[
+  profile="Immersive", version="3.3", head=head(  children=[
       
-          meta(name='title', content='asteroids.x3d'),
-          meta(name='creator', content='John Carlson'),
-          meta(name='generator', content='manual'),
-          meta(name='identifier', content='https://coderextreme.net/X3DJSONLD/asteroids.x3d'),
-          meta(name='description', content='asteroids'),
-          meta(name='translated', content='16 January 2022'),
-          meta(name='generator', content='X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html'),
-          meta(name='reference', content='X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding')]), Scene=Scene(
+          meta(name="title", content="asteroids.x3d"),
+          meta(name="creator", content="John Carlson"),
+          meta(name="generator", content="manual"),
+          meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/asteroids.x3d"),
+          meta(name="description", content="asteroids"),
+          meta(name="translated", content="16 January 2022"),
+          meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+          meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")]), Scene=Scene(
     children=[
         ProtoDeclare(
-          name='anyShape', ProtoInterface=ProtoInterface(
+          name="anyShape", ProtoInterface=ProtoInterface(
             field=[
-                field(name='myShape', accessType='inputOutput', type='MFNode', children=[
+                field(name="myShape", accessType="inputOutput", type="MFNode", children=[
                     Shape(
                       geometry=Sphere(
                           ))])]), ProtoBody=ProtoBody(
@@ -23,7 +23,7 @@ X3D(
                 Transform(
                   IS=IS(
                     connect=[
-                        connect(nodeField='children', protoField='myShape')]))])),
+                        connect(nodeField="children", protoField="myShape")]))])),
         ProtoInstance(
-          name='anyShape')]))
+          name="anyShape")]))
 .XML())

@@ -2388,14 +2388,16 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 										
 ]]></xsl:text>
 								</xsl:when>
-								<xsl:when test="not($isInterface = 'true') and (($name = 'Script') or ($name = 'ShaderProgram'))">
 <!-- field added to X3DUOM
 	private ArrayList<field> fieldList = new ArrayList<>(); // instantiation
 -->
+<!--
+								<xsl:when test="not($isInterface = 'true') and (($name = 'Script') or ($name = 'ShaderProgram'))">
 									<xsl:text disable-output-escaping="yes"><![CDATA[
 	private String sourceCode;
 ]]></xsl:text>
 								</xsl:when>
+-->
 								<xsl:when test="not($isInterface = 'true') and (($name = 'ComposedShader') or ($name = 'PackagedShader'))">
 <!-- field added to X3DUOM
 									<xsl:text disable-output-escaping="yes"><![CDATA[
@@ -2403,11 +2405,13 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 ]]></xsl:text>
 -->
 								</xsl:when>
+                                                                <!-- handled by X3DUOM
 								<xsl:when test="not($isInterface = 'true') and ($name = 'ShaderPart')">
 									<xsl:text disable-output-escaping="yes"><![CDATA[
 	private String sourceCode;
 ]]></xsl:text>
 								</xsl:when>
+                                                                -->
 								<xsl:when test="not($isInterface = 'true') and (($name = 'ProtoBody'))">
 									<xsl:text disable-output-escaping="yes"><![CDATA[
 	/** The first node of a prototype declaration determines its node type, and a reference is stored here. 
@@ -3034,10 +3038,10 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 										<!-- do not re-declare NAME, let class definition provide override -->
 									</xsl:when>
 									<xsl:otherwise>
-									<xsl:text>&#10;</xsl:text>
-									<xsl:text>	// String constants for default field values match X3D Schema definitions</xsl:text>
-									<xsl:text>&#10;</xsl:text>
-									<xsl:text disable-output-escaping="yes"><![CDATA[
+                                                                            <xsl:text>&#10;</xsl:text>
+                                                                            <xsl:text>	// String constants for default field values match X3D Schema definitions</xsl:text>
+                                                                            <xsl:text>&#10;</xsl:text>
+                                                                            <xsl:text disable-output-escaping="yes"><![CDATA[
 	/** String constant <i>NAME</i> provides name of this element: <i>]]></xsl:text>
 										<xsl:value-of select="@name"/>
 			<xsl:text disable-output-escaping="yes"><![CDATA[</i>. */
@@ -3111,7 +3115,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 
 							<!-- Source code: _DEFAULT_VALUE declarations -->
                             <xsl:for-each select="InterfaceDefinition/field[((@type='SFString') or (@type='MFString') or (string-length(normalize-space(@default)) > 0)) and 
-                                                  starts-with(@type,'xs:NMTOKEN') or (@type = 'xs:token') or starts-with(@type,'xs:ID') or
+                                                  (@type = 'xs:string') or starts-with(@type,'xs:NMTOKEN') or (@type = 'xs:token') or starts-with(@type,'xs:ID') or
                                                   not(@type='MFNode') and
                                                   not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'id') and not(@name = 'class') and not((@name = 'style') and not(ends-with($name, 'FontStyle')))]
                                                   [(@accessType='initializeOnly') or (@accessType='inputOutput')]">
@@ -3416,14 +3420,14 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 	}
 </xsl:text>
 							</xsl:if> <!-- end getType(fieldName), getAccessType(fieldName) -->
-							
-							<xsl:if test="($name = 'Script') or ($name = 'ShaderProgram') or ($name = 'ShaderPart')">
+							<!-- handled by X3DUOM
+                                                        <xsl:if test="($name = 'Script') or ($name = 'ShaderProgram') or ($name = 'ShaderPart')">
 								<xsl:text>
 	/** Contained plain-text source code */
 	private String SOURCECODE_DEFAULT_VALUE = "";
 								</xsl:text>
 							</xsl:if>
-
+                                                        -->
 							<!-- containerField defaults and methods -->
 							<xsl:if test="(string-length(InterfaceDefinition/containerField/@default) > 0)">
 								<xsl:text>
@@ -3704,7 +3708,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 												<xsl:text>);</xsl:text>
 											</xsl:when>
 											<!-- TODO check if $defaultValue test is correct, order of these patterns is sensitive -->
-											<xsl:when test="(@type='SFString') or starts-with(@type,'xs:NMTOKEN') or (@type = 'xs:token') or starts-with(@type,'xs:ID') or
+											<xsl:when test="(@type='SFString') or (@type = 'xs:string') or starts-with(@type,'xs:NMTOKEN') or (@type = 'xs:token') or starts-with(@type,'xs:ID') or
                                                             (string-length(normalize-space($defaultValue)) > 0)">
 												<xsl:value-of select="upper-case(translate(@name,'-','_'))"/> <!-- translate name here to avoid xpath problems -->
 												<xsl:text>_DEFAULT_VALUE;</xsl:text>
@@ -3752,19 +3756,23 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 											<xsl:text disable-output-escaping="yes"><![CDATA[
 			fieldList = new ArrayList<>(); // instantiate, initialize
 
-			sourceCode = SOURCECODE_DEFAULT_VALUE; // reset
 	]]></xsl:text>
+        <!-- handled by X3DUOM
+			sourceCode = SOURCECODE_DEFAULT_VALUE; // reset
+        -->
 										</xsl:when>
 										<xsl:when test="(($name = 'ComposedShader') or ($name = 'PackagedShader'))">
 											<xsl:text disable-output-escaping="yes"><![CDATA[
 			fieldList = new ArrayList<>(); // instantiate, initialize
 	]]></xsl:text>
 										</xsl:when>
+        <!-- handled by X3DUOM
 										<xsl:when test="($name = 'ShaderPart')">
 											<xsl:text disable-output-escaping="yes"><![CDATA[
 			sourceCode = SOURCECODE_DEFAULT_VALUE; // reset
 	]]></xsl:text>
 										</xsl:when>
+                                                                                -->
 										<xsl:when test="($name = 'ProtoInterface')">
 											<xsl:text disable-output-escaping="yes"><![CDATA[
 			fieldList = new ArrayList<>(); // instantiate, initialize
@@ -6679,7 +6687,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 					</xsl:choose>
 					<!-- ===================================================== -->
 					<!-- Source code: accessor methods -->
-
+                                        <!-- include sourceCode; and not(@name = 'sourceCode') -->
 					<xsl:for-each select="InterfaceDefinition/field[not(starts-with(@name,'set'))]"> <!-- TODO check filtering is consistently effective -->
 
 						<xsl:if test="position()=1">
@@ -6790,7 +6798,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 							<!-- javadoc from BuildSpecificationLanguageBindingJava.xslt-->
 							<xsl:variable name="type">
                                 <xsl:choose>
-                                    <xsl:when test="(@type = 'xs:string') or (@type = 'xs:token') or starts-with(@type, 'xs:ID') or starts-with(@type, 'xs:NMTOKEN')">
+                                    <xsl:when test="(@type = 'xs:string') or (@type = 'xs:token') or starts-with(@type, 'xs:NMTOKEN') or starts-with(@type, 'xs:ID')">
                                         <xsl:text>String</xsl:text>
                                     </xsl:when>
                                     <xsl:otherwise>
@@ -7162,7 +7170,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 <!-- TODO debug comment in source
 -->
 <xsl:if test="true()"><!-- ($debug = 'true') -->
-<xsl:text>// ($isInterface=</xsl:text>
+<xsl:text>	// ($isInterface=</xsl:text>
 <xsl:value-of select="$isInterface"/>
 <xsl:text>, $isException=</xsl:text>
 <xsl:value-of select="$isException"/>
@@ -10321,7 +10329,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 									<xsl:text>&#10;</xsl:text>
 	<!-- debug -->
 	<xsl:if test="($debug = 'true')">
-	<xsl:text>// ($isInterface=</xsl:text>
+	<xsl:text>	// ($isInterface=</xsl:text>
 	<xsl:value-of select="$isInterface"/>
 	<xsl:text>, preceding-sibling::Inheritance=</xsl:text>
 	<xsl:value-of select="preceding-sibling::Inheritance"/>
@@ -10629,7 +10637,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 									<!-- source code: addMFNodeSomething(SFNodeValue) method -->
 	<!-- debug -->
 	<xsl:if test="($debug = 'true')">
-	<xsl:text>// ($isInterface=</xsl:text>
+	<xsl:text>	// ($isInterface=</xsl:text>
 	<xsl:value-of select="$isInterface"/>
 	<xsl:text>, preceding-sibling::Inheritance=</xsl:text>
 	<xsl:value-of select="preceding-sibling::Inheritance"/>
@@ -12009,7 +12017,7 @@ setAttribute method invocations).
 						
 					</xsl:for-each>
 					<!-- finished with InterfaceDefinition/field loop -->
-                    <!-- end Source code: accessor methods -->
+                                        <!-- end Source code: accessor methods -->
 
 								<!-- HAnim utility methods -->
 								<xsl:if test="(($name = 'HAnimJoint') or ($name = 'HAnimSegment') or ($name = 'HAnimSite') or ($name = 'HAnimDisplacer') or ($name = 'HAnimMotion')) and not($isInterface = 'true')">
@@ -12423,7 +12431,7 @@ setAttribute method invocations).
 	 * @see #getExternProtoDeclare
 	 * @return {@link ProtoInstance} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
-	public boolean hasProtoDeclare ()
+	public boolean hasProtoDeclare()
 	{
 		// check for corresponding declaration
 		if  (findAncestorScene() == null)
@@ -12447,7 +12455,7 @@ setAttribute method invocations).
 	 * @see #getExternProtoDeclare
 	 * @return {@link ProtoInstance} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
-	public boolean hasExternProtoDeclare ()
+	public boolean hasExternProtoDeclare()
 	{
 		// check for corresponding declaration
 		if  (findAncestorScene() == null)
@@ -12471,7 +12479,7 @@ setAttribute method invocations).
 	 * @see #getExternProtoDeclare
 	 * @return {@link ProtoInstance} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
-	public ProtoDeclare getProtoDeclare ()
+	public ProtoDeclare getProtoDeclare()
 	{
 		if  (hasProtoDeclare())
 			 return referenceProtoDeclare;
@@ -12484,7 +12492,7 @@ setAttribute method invocations).
 	 * @see #getProtoDeclare
 	 * @return {@link ProtoInstance} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
-	public ExternProtoDeclare getExternProtoDeclare ()
+	public ExternProtoDeclare getExternProtoDeclare()
 	{
 		if  (hasExternProtoDeclare())
 			 return referenceExternProtoDeclare;
@@ -13297,7 +13305,7 @@ setAttribute method invocations).
                             </xsl:when>
                         </xsl:choose>
 			<!-- test attributes (i.e. non-node fields) -->
-			<xsl:for-each select="InterfaceDefinition/field[not(contains(@type,'FNode')) and not(starts-with(@name,'set')) and not(ends-with(@name,'changed')) and not(@name = 'DEF') and not(@name = 'USE') and 
+			<xsl:for-each select="InterfaceDefinition/field[not(contains(@type,'FNode')) and not(starts-with(@name,'set')) and not(ends-with(@name,'changed')) and not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'sourceCode') and 
                                                             (not(@name = 'name') or ((@name = 'name') and ancestor::Statement[@name='meta'])) and 
                                                             ((@accessType='initializeOnly') or (@accessType='inputOutput'))]">
 				<!-- alphabetic order of attributes is essential for X3D canonical form (C14N) -->
@@ -13323,7 +13331,7 @@ setAttribute method invocations).
 							<xsl:text>HtmlID</xsl:text>
                         </xsl:when>
 						<xsl:when test="(@name = 'class')">
-							<!-- getClass() is reserved by Java () class -->
+							<!-- getClass() is reserved by Java() class -->
 							<xsl:text>CssClass</xsl:text>
 						</xsl:when>
 						<xsl:when test="(@name = 'style') and not(contains($name, 'FontStyle'))">
@@ -13472,7 +13480,15 @@ setAttribute method invocations).
 			
 			<xsl:text disable-output-escaping="yes"><![CDATA[
 		}
-		if ((hasChild)]]></xsl:text>
+		if ((hasChild]]></xsl:text>
+                        <xsl:choose>
+                            <xsl:when test="($name = 'Script')">
+                                    <xsl:text><![CDATA[ || !sourceCode.isEmpty())]]></xsl:text>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                    <xsl:text>)</xsl:text>
+                            </xsl:otherwise>
+                        </xsl:choose>
 			<xsl:if test="not($isX3dStatement = 'true')">
 				<xsl:text disable-output-escaping="yes"><![CDATA[ && !hasUSE()]]></xsl:text>
 			</xsl:if>
@@ -14044,12 +14060,12 @@ setAttribute method invocations).
 				boolean hasISconnect = (getIS() != null) && !getIS().getConnectList().isEmpty();]]></xsl:text>
 			</xsl:if>
 
-			<xsl:for-each select="InterfaceDefinition/field[not(contains(@type,'FNode')) and not(starts-with(@name,'set')) and not(ends-with(@name,'changed')) and not(@name = 'DEF') and not(@name = 'USE') and
+			<xsl:for-each select="InterfaceDefinition/field[not(contains(@type,'FNode')) and not(starts-with(@name,'set')) and not(ends-with(@name,'changed')) and not(@name = 'DEF') and not(@name = 'USE') and not(@name = 'sourceCode') and
                                                             ((@accessType='initializeOnly') or (@accessType='inputOutput'))]">
 				<!-- alphabetic order of attributes is essential for X3D canonical form (C14N) -->
 				<xsl:sort select="@name" order="ascending"/>
 				
-                <xsl:variable name="fieldName" select="translate(@name,'-','_')"/><!-- handle http-equiv etc. -->
+                                <xsl:variable name="fieldName" select="translate(@name,'-','_')"/><!-- handle http-equiv etc. -->
 				<xsl:variable name="isSingleValueType">
 					<xsl:value-of select="starts-with(@type,'SF') and not(contains(@type, 'Vec')) and not(contains(@type, 'Rotation')) and not(contains(@type, 'Color')) and not(contains(@type, 'Matrix'))"/>
 				</xsl:variable>
@@ -14064,7 +14080,7 @@ setAttribute method invocations).
 							<xsl:text>HtmlID</xsl:text>
                         </xsl:when>
 						<xsl:when test="(@name = 'class')">
-							<!-- getClass() is reserved by Java () class -->
+							<!-- getClass() is reserved by Java() class -->
 							<xsl:text>CssClass</xsl:text>
 						</xsl:when>
 						<xsl:when test="(@name = 'style') and not(contains($name, 'FontStyle'))">
@@ -16027,7 +16043,7 @@ setAttribute method invocations).
 	/**
 	 * Clear all fields
 	 */
-	public void clearFields ()
+	public void clearFields()
 	{
 		fieldList.clear();
 	}
@@ -16060,7 +16076,7 @@ setAttribute method invocations).
 	 * Determine whether field(s) are available
 	 * @return whether field(s) are found
 	 */
-	public boolean hasField ()
+	public boolean hasField()
 	{
 		return !fieldList.isEmpty();
 	}
@@ -16075,7 +16091,8 @@ setAttribute method invocations).
 -->
 							</xsl:if>
 							<!-- ComposedShader, PackagedShader have no contained source <SourceText/> -->
-							<xsl:if test="($name = 'Script') or ($name = 'ShaderProgram') or ($name = 'ShaderPart')">
+                                                        <xsl:if test="($name = 'Script') or ($name = 'ShaderProgram') or ($name = 'ShaderPart')">
+							<!-- now handled by X3DUOM
 								<xsl:text disable-output-escaping="yes"><![CDATA[
 
 	/**
@@ -16127,9 +16144,11 @@ setAttribute method invocations).
 		sourceCode = newSourceText;
 		return this;
 	}
-
+]]></xsl:text>
+-->
+                                                            <xsl:text disable-output-escaping="yes"><![CDATA[
 	/**
-	 * Set new source code (for example, JavaScript).
+	 * Set new source code (for example, JavaScript), utility method using StringBuilder.
 	 * <i>WARNING</i>: be sure to prepend <i>ecmascript:</i> prior to any actual source code.
 	 * @param newSourceText is source to set
 	 * @return {@link ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
@@ -16188,14 +16207,14 @@ setAttribute method invocations).
 	 * @return {@link ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
 setAttribute method invocations).
 	 */
-	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ clearSource ()
+	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ clearSourceCode()
 	{
 		sourceCode = SOURCECODE_DEFAULT_VALUE;
 		return this;
 	}
 ]]></xsl:text>
 								</xsl:if>
-								<!-- addField, findFieldByName methods are repeated for ProtoInterface and ExternProtoDeclare -->
+                                                        <!-- addField, findFieldByName methods are repeated for ProtoInterface and ExternProtoDeclare -->
 							</xsl:when>
 							<xsl:when test="($name = 'ProtoInterface') or ($name = 'ProtoBody') or ($name = 'ExternProtoDeclare')">
 								<xsl:if test="($name = 'ProtoInterface') or ($name = 'ExternProtoDeclare')">
@@ -16316,7 +16335,7 @@ setAttribute method invocations).
 	/**
 	 * Clear all fields
 	 */
-	public void clearFields ()
+	public void clearFields()
 	{
 		fieldList.clear();
 	}
@@ -16450,7 +16469,7 @@ setAttribute method invocations).
 	/**
 	 * Clear all fieldValues
 	 */
-	public void clearFieldValues ()
+	public void clearFieldValues()
 	{
 		fieldValueList.clear();
 	}
@@ -19854,7 +19873,7 @@ shall not include the underlying field's values at that point in time.
 	public </xsl:text>
 	<xsl:value-of select="$fieldName"/>
 	<xsl:value-of select="$jsaiClassSuffix"/>
-	<xsl:text> ()
+	<xsl:text>()
 	{
 		initialize();
 	}
@@ -21415,7 +21434,7 @@ TODO: also MFColor.
 					 <xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
 	public SFColor]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><!-- append to type name -->
-					 <xsl:text disable-output-escaping="yes"><![CDATA[ complementRGB ()
+					 <xsl:text disable-output-escaping="yes"><![CDATA[ complementRGB()
 	{
 		SFColor[0] = 1.0f - SFColor[0];
 		SFColor[1] = 1.0f - SFColor[1];
@@ -21450,7 +21469,7 @@ TODO: also MFColor.
 					 <xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
 	public SFColor]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><!-- append to type name -->
-					 <xsl:text disable-output-escaping="yes"><![CDATA[ normalizeClip ()
+					 <xsl:text disable-output-escaping="yes"><![CDATA[ normalizeClip()
 	{
 		if (SFColor[0] < 0.0f) SFColor[0] = 0.0f;
 		if (SFColor[1] < 0.0f) SFColor[1] = 0.0f;
@@ -21651,7 +21670,7 @@ TODO: also MFColor.
 					 <xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
 	public SFColorRGBA]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><!-- append to type name -->
-					 <xsl:text disable-output-escaping="yes"><![CDATA[ complementRGB ()
+					 <xsl:text disable-output-escaping="yes"><![CDATA[ complementRGB()
 	{
 		SFColorRGBA[0] = 1.0f - SFColorRGBA[0];
 		SFColorRGBA[1] = 1.0f - SFColorRGBA[1];
@@ -21666,7 +21685,7 @@ TODO: also MFColor.
 					 <xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
 	public SFColorRGBA]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><!-- append to type name -->
-					 <xsl:text disable-output-escaping="yes"><![CDATA[ complementAlpha ()
+					 <xsl:text disable-output-escaping="yes"><![CDATA[ complementAlpha()
 	{
 		SFColorRGBA[3] = 1.0f - SFColorRGBA[3];
 		return this;
@@ -21678,7 +21697,7 @@ TODO: also MFColor.
 					 <xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
 	public SFColorRGBA]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><!-- append to type name -->
-					 <xsl:text disable-output-escaping="yes"><![CDATA[ normalizeClip ()
+					 <xsl:text disable-output-escaping="yes"><![CDATA[ normalizeClip()
 	{
 		if (SFColorRGBA[0] < 0.0f) SFColorRGBA[0] = 0.0f;
 		if (SFColorRGBA[1] < 0.0f) SFColorRGBA[1] = 0.0f;
@@ -21752,7 +21771,7 @@ TODO: also MFColor.
 					 <xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
 	public MFColor]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><!-- append to type name -->
-					 <xsl:text disable-output-escaping="yes"><![CDATA[ complementRGB ()
+					 <xsl:text disable-output-escaping="yes"><![CDATA[ complementRGB()
 	{
 		for (int index = 0; index+2 < MFColor.length; index = index + 3)
 		{
@@ -21769,7 +21788,7 @@ TODO: also MFColor.
 					 <xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
 	public MFColor]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><!-- append to type name -->
-					 <xsl:text disable-output-escaping="yes"><![CDATA[ normalizeClip ()
+					 <xsl:text disable-output-escaping="yes"><![CDATA[ normalizeClip()
 	{
 		for (int index = 0; index+2 < MFColor.length; index = index + 3)
 		{
@@ -21847,7 +21866,7 @@ TODO: also MFColor.
 					 <xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
 	public MFColorRGBA]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><!-- append to type name -->
-					 <xsl:text disable-output-escaping="yes"><![CDATA[ complementRGB ()
+					 <xsl:text disable-output-escaping="yes"><![CDATA[ complementRGB()
 	{
 		for (int index = 0; index+3 < MFColorRGBA.length; index = index + 4)
 		{
@@ -21866,7 +21885,7 @@ TODO: also MFColor.
 					 <xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
 	public MFColorRGBA]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><!-- append to type name -->
-					 <xsl:text disable-output-escaping="yes"><![CDATA[ complementAlpha ()
+					 <xsl:text disable-output-escaping="yes"><![CDATA[ complementAlpha()
 	{
 		for (int index = 0; index+3 < MFColorRGBA.length; index = index + 4)
 		{
@@ -21881,7 +21900,7 @@ TODO: also MFColor.
 					 <xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
 	public MFColorRGBA]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><!-- append to type name -->
-					 <xsl:text disable-output-escaping="yes"><![CDATA[ normalizeClip ()
+					 <xsl:text disable-output-escaping="yes"><![CDATA[ normalizeClip()
 	{
 		for (int index = 0; index+3 < MFColorRGBA.length; index = index + 4)
 		{
@@ -22719,7 +22738,7 @@ TODO: also MFColor.
 	 * @see <a href="https://www.web3d.org/x3d/tools/canonical/doc/x3dTools.htm">X3D Canonicalization (C14N) Tool</a>
 	 * @return XML/X3D-escaped version of this SFString
 	 */
-	public String toStringX3D ()
+	public String toStringX3D()
 	{
 		return toStringX3D(SFString); // apply escaping to member value of this object
 	}
@@ -22741,7 +22760,7 @@ TODO: also MFColor.
 	 * @see <a href="https://www.web3d.org/x3d/tools/canonical/doc/x3dTools.htm">X3D Canonicalization (C14N) Tool</a>
 	 * @return XML/X3D-escaped String version of this object
 	 */
-	public String toStringX3D ()
+	public String toStringX3D()
 	{
 		// avoid StringBuilder since it clobbers \"
 		String result = new String();
@@ -31593,7 +31612,7 @@ import javax.script.ScriptException;</xsl:text>
 	}
 				
 	/** Reset already-loaded X3D model of interest to empty model */
-	public static void clearLoadedX3dModel ()
+	public static void clearLoadedX3dModel()
 	{
 		loadedX3dModel = new X3D();
 	}
@@ -31603,7 +31622,7 @@ import javax.script.ScriptException;</xsl:text>
     /** Initialize this CommandLine instance to default values. */
     public static final void initialize()
     {
-        clearLoadedX3dModel ();
+        clearLoadedX3dModel();
     }
                             
     /**
@@ -31766,14 +31785,14 @@ import javax.script.ScriptException;</xsl:text>
         // http://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html
         Charset charset = Charset.forName(ConfigurationProperties.XML_ENCODING_DECLARATION_DEFAULT); // "UTF-8"
 				 
-	        initializeConfigurationSwitches ();
+	        initializeConfigurationSwitches();
                 if (loadedX3dModel == null)
                     initialize();
 
 		if ((args== null) || (args.length < 1))
 		{
 			System.out.println (USAGE);
-			System.out.println ();
+			System.out.println();
 			System.out.println (USAGE_LONG);
 			return;
 		}
@@ -32154,7 +32173,7 @@ import javax.script.ScriptException;</xsl:text>
 				{
 					clearPriorConversionSwitches(args[i]);
 					System.out.println(USAGE);
-                    System.out.println ();
+                    System.out.println();
                     System.out.println (USAGE_LONG);
 					return;
 				}
@@ -32172,7 +32191,7 @@ import javax.script.ScriptException;</xsl:text>
 				{
 					System.out.println(ERROR+" [org.web3d.x3d.jsail.CommandLine] unrecognized CommandLine option \"" + args[i] + "\"");
 					System.out.println(USAGE);
-                    System.out.println ();
+                    System.out.println();
                     System.out.println (USAGE_LONG);
 					return;
 				}
@@ -32673,7 +32692,7 @@ import javax.script.ScriptException;</xsl:text>
      * @see <a href="https://www.web3d.org/specifications/java/javadoc/index.html">X3DJSAIL Javadoc (online)</a>
      * @see <a href="https://www.web3d.org/specifications/java/X3DJSAIL.html">https://www.web3d.org/specifications/java/X3DJSAIL.html</a>
      */
-    public static void openJavadocX3DJSAIL ()
+    public static void openJavadocX3DJSAIL()
     {
         // https://stackoverflow.com/questions/5226212/how-to-open-the-default-webbrowser-using-java
         String onlineURL = ConfigurationProperties.URL_X3DJSAIL.substring(0,ConfigurationProperties.URL_X3DJSAIL.lastIndexOf("/")+1)
@@ -32706,7 +32725,7 @@ import javax.script.ScriptException;</xsl:text>
     /** Open X3DJSAIL page
      * @see <a href="https://www.web3d.org/specifications/java/X3DJSAIL.html">https://www.web3d.org/specifications/java/X3DJSAIL.html</a>
      */
-    public static void openHomePageX3DJSAIL ()
+    public static void openHomePageX3DJSAIL()
     {
          openHomePageX3DJSAIL (""); // relay invocation, no bookmark
     }
@@ -32751,7 +32770,7 @@ import javax.script.ScriptException;</xsl:text>
     /** Open X3D Resources page
      * @see <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html">https://www.web3d.org/x3d/content/examples/X3dResources.html</a>
      */
-    public static void openX3dResourcesPage ()
+    public static void openX3dResourcesPage()
     {
          openX3dResourcesPage (""); // no bookmark
     }
@@ -32784,7 +32803,7 @@ import javax.script.ScriptException;</xsl:text>
     /** Open X3D Tooltips page
      * @see <a href="https://www.web3d.org/x3d/tooltips/X3dTooltips.html">X3D Tooltips</a>
      */
-    public static void openX3dTooltipsPage ()
+    public static void openX3dTooltipsPage()
     {
          openX3dTooltipsPage (""); // no bookmark
     }
@@ -32818,7 +32837,7 @@ import javax.script.ScriptException;</xsl:text>
     /** Open X3D Regexes page
      * @see <a href="https://www.web3d.org/specifications/X3dRegularExpressions.html">X3D Regular Expressions (regexes)</a>
      */
-    public static void openX3dRegexesPage ()
+    public static void openX3dRegexesPage()
     {
          openX3dRegexesPage (""); // no bookmark
     }
@@ -32853,7 +32872,7 @@ import javax.script.ScriptException;</xsl:text>
     /** Open X3D Unified Object Model (X3DUOM) page
      * @see <a href="https://www.web3d.org/x3d/tooltips/X3dTooltips.html">X3D Tooltips</a>
      */
-    public static void openX3DUOMpage ()
+    public static void openX3DUOMpage()
     {
         // https://stackoverflow.com/questions/5226212/how-to-open-the-default-webbrowser-using-java
         
@@ -32874,7 +32893,7 @@ import javax.script.ScriptException;</xsl:text>
     /** Open X3D Scene Authoring Hints page
      * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html">X3D Scene Authoring Hints</a>
      */
-    public static void openX3dSceneAuthoringHintsPage ()
+    public static void openX3dSceneAuthoringHintsPage()
     {
          openX3dSceneAuthoringHintsPage (""); // no bookmark
     }
@@ -34279,7 +34298,7 @@ showing default attribute values, and other custom settings.</p>
 	 * Debug support: adding empty comment as CommentsBlock to children field has no effect.
 	 * @return <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
-	public X3DConcreteElement addComments ()
+	public X3DConcreteElement addComments()
 	{
 		return this;
 	}
@@ -35009,7 +35028,7 @@ import org.web3d.x3d.sai.X3DException;
 	private Map<String,String> protoContainerFieldHashMap  = new HashMap<>();
 	
 	/** Default constructor to initialize X3DLoaderDOM */
-	public X3DLoaderDOM ()
+	public X3DLoaderDOM()
 	{
 		initialize();
 	}
@@ -36879,7 +36898,7 @@ import org.web3d.x3d.sai.X3DException;</xsl:with-param>
         String  compressionRatio;
         DecimalFormat formatPrecision2 = new DecimalFormat ("#0.00");
 				 
-        initializeConfigurationSwitches ();
+        initializeConfigurationSwitches();
 
         if ((args== null) || (args.length < 1))
         {
@@ -38053,7 +38072,7 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
         DecimalFormat formatPrecision2 = new DecimalFormat ("#0.00");
 		String  compressionRatio;
 				 
-		initializeConfigurationSwitches ();
+		initializeConfigurationSwitches();
 
 		if ((args== null) || (args.length < 1))
 		{
@@ -39449,7 +39468,16 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
 				<xsl:value-of select="$newValue"/><xsl:text> = savedValue; // restore invocation value with suffix (if any)</xsl:text>
 				<xsl:text>&#10;</xsl:text>
 			</xsl:if>
-			<xsl:text>			String warningMessage = "Warning: </xsl:text>
+			<xsl:text>			String warningMessage = "</xsl:text>
+            <xsl:choose>
+                <xsl:when test="$isEnumerationTypeRequired">
+                    <xsl:text>Warning: </xsl:text>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text>Info: </xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+                        <xsl:text>Warning: </xsl:text>
 			<xsl:value-of select="ancestor::*[string-length(@name) > 0]/@name"/>
 			<xsl:text> </xsl:text>
 			<xsl:value-of select="@name"/>
@@ -39467,7 +39495,11 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
 				</xsl:otherwise>
 			</xsl:choose>
 			<xsl:text> + "'</xsl:text>
-			<xsl:text> has an unrecognized value not matching any of the </xsl:text>
+			<xsl:text> includes an unrecognized</xsl:text>
+                        <xsl:if test="$isEnumerationTypeRequired">
+                            <xsl:text> optional</xsl:text>
+                        </xsl:if>
+			<xsl:text> value not matching any of the </xsl:text>
             <xsl:choose>
                 <xsl:when test="$isEnumerationTypeRequired">
                     <xsl:text>required enumeration</xsl:text>

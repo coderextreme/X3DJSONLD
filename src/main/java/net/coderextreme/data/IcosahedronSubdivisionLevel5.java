@@ -40,7 +40,9 @@ public class IcosahedronSubdivisionLevel5 {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new IcosahedronSubdivisionLevel5().initialize().toFileJSON("../data/IcosahedronSubdivisionLevel5.new.json");
+    X3D model = new IcosahedronSubdivisionLevel5().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../data/IcosahedronSubdivisionLevel5.new.json");
     }
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Interchange").setVersion("3.1")

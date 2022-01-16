@@ -10,7 +10,7 @@ var autoclass = require('./X3Dautoclass');
 
 // Javadoc annotations follow, see below for source.
 /**
- * <p> not sure what this is. </p>
+ * <p> Bubble animation used by Nancy Diving example. </p>
  <p> Related links: bubbles.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
@@ -20,23 +20,35 @@ var autoclass = require('./X3Dautoclass');
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/bubbles.x3d">bubbles.x3d</a> </td>
-		</tr>
-		<tr>
-			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
-			<td> John Carlson </td>
-		</tr>
-		<tr>
-			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
-			<td> manual </td>
-		</tr>
-		<tr>
-			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://coderextreme.net/X3DJSONLD/bubbles.x3d" target="_blank">https://coderextreme.net/X3DJSONLD/bubbles.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/Bubbles.x3d">Bubbles.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
-			<td> not sure what this is </td>
+			<td> Bubble animation used by Nancy Diving example. </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
+			<td> Etsuko Lippi </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> created </i> </td>
+			<td> 24 January 2001 </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
+			<td> 23 May 2020 </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/Bubbles.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/Bubbles.x3d</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
+			<td> X3D-Edit 3.3, <a href="https://savage.nps.edu/X3D-Edit" target="_blank">https://savage.nps.edu/X3D-Edit</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/../license.html">../license.html</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -51,7 +63,7 @@ var autoclass = require('./X3Dautoclass');
 		stylesheet to create NodeJS source code from an <code>.x3d</code> scene.
 	</p>
 
-	* @author John Carlson
+	* @author Etsuko Lippi
  */
 
 function bubbles
@@ -67,97 +79,103 @@ bubbles.prototype = {
   /** Create and initialize the X3D model. */
   initialize : function ()
   {
-  this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
+  this.x3dModel = (new autoclass.X3D()).setProfile("Interchange").setVersion("3.3")
   .setHead((new autoclass.head())
-    .addComments("component name='EnvironmentalEffects' level='1'/")
-    .addComponent((new autoclass.component()).setName("EnvironmentalEffects").setLevel(3))
-    .addComponent((new autoclass.component()).setName("Shaders").setLevel(1))
-    .addComponent((new autoclass.component()).setName("CubeMapTexturing").setLevel(1))
-    .addComponent((new autoclass.component()).setName("Texturing").setLevel(1))
-    .addComponent((new autoclass.component()).setName("Rendering").setLevel(1))
-    .addComponent((new autoclass.component()).setName("Shape").setLevel(4))
-    .addComponent((new autoclass.component()).setName("Grouping").setLevel(3))
-    .addMeta((new autoclass.meta()).setName("title").setContent("bubbles.x3d"))
-    .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
-    .addMeta((new autoclass.meta()).setName("generator").setContent("manual"))
-    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/bubbles.x3d"))
-    .addMeta((new autoclass.meta()).setName("description").setContent("not sure what this is")))
+    .addMeta((new autoclass.meta()).setName("title").setContent("Bubbles.x3d"))
+    .addMeta((new autoclass.meta()).setName("description").setContent("Bubble animation used by Nancy Diving example."))
+    .addMeta((new autoclass.meta()).setName("creator").setContent("Etsuko Lippi"))
+    .addMeta((new autoclass.meta()).setName("created").setContent("24 January 2001"))
+    .addMeta((new autoclass.meta()).setName("modified").setContent("23 May 2020"))
+    .addMeta((new autoclass.meta()).setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/Bubbles.x3d"))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+    .addMeta((new autoclass.meta()).setName("license").setContent("../license.html")))
   .setScene((new autoclass.Scene())
-    .addChild((new autoclass.NavigationInfo()).setType("\"EXAMINE\""))
-    .addChild((new autoclass.Viewpoint("Tour")).setDescription("Tour Views"))
-    .addChild((new autoclass.Viewpoint()).setDescription("sphere in road").setPosition(0.0,0.0,4.0))
-    .addChild((new autoclass.Background()).setBackUrl(new autoclass.MFString("\"../resources/images/all_probes/uffizi_cross/uffizi_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_back.png\"")).setBottomUrl(new autoclass.MFString("\"../resources/images/all_probes/uffizi_cross/uffizi_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_bottom.png\"")).setFrontUrl(new autoclass.MFString("\"../resources/images/all_probes/uffizi_cross/uffizi_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_front.png\"")).setLeftUrl(new autoclass.MFString("\"../resources/images/all_probes/uffizi_cross/uffizi_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_left.png\"")).setRightUrl(new autoclass.MFString("\"../resources/images/all_probes/uffizi_cross/uffizi_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_right.png\"")).setTopUrl(new autoclass.MFString("\"../resources/images/all_probes/uffizi_cross/uffizi_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_top.png\"")))
-    .addChild((new autoclass.Transform("Rose01"))
-      .addChild((new autoclass.Shape())
-        .setGeometry((new autoclass.Sphere()))
-        .setAppearance((new autoclass.Appearance("_01_-_Default"))
-          .setMaterial((new autoclass.Material()).setDiffuseColor(0.7,0.7,0.7).setSpecularColor(0.5,0.5,0.5))
-          .setTexture((new autoclass.ComposedCubeMapTexture())
-            .setBack((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/uffizi_cross/uffizi_back.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_back.png\"")))
-            .setBottom((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/uffizi_cross/uffizi_bottom.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_bottom.png\"")))
-            .setFront((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/uffizi_cross/uffizi_front.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_front.png\"")))
-            .setLeft((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/uffizi_cross/uffizi_left.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_left.png\"")))
-            .setRight((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/uffizi_cross/uffizi_right.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_right.png\"")))
-            .setTop((new autoclass.ImageTexture()).setUrl(new autoclass.MFString("\"../resources/images/all_probes/uffizi_cross/uffizi_top.png\" \"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_top.png\""))))
-          .addShaders((new autoclass.ComposedShader("x_ite")).setLanguage("GLSL")
-            .addField((new autoclass.field()).setName("cube").setType("SFInt32").setAccessType("inputOutput").setValue("0"))
-            .addField((new autoclass.field()).setName("chromaticDispertion").setType("SFVec3f").setAccessType("inputOutput").setValue("0.98 1 1.033"))
-            .addField((new autoclass.field()).setName("bias").setType("SFFloat").setAccessType("inputOutput").setValue("0.5"))
-            .addField((new autoclass.field()).setName("scale").setType("SFFloat").setAccessType("inputOutput").setValue("0.5"))
-            .addField((new autoclass.field()).setName("power").setType("SFFloat").setAccessType("inputOutput").setValue("2"))
-            .addParts((new autoclass.ShaderPart()).setUrl(new autoclass.MFString("\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"")))
-            .addParts((new autoclass.ShaderPart()).setType("FRAGMENT").setUrl(new autoclass.MFString("\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs\""))))
-          .addShaders((new autoclass.ComposedShader("x3dom")).setLanguage("GLSL")
-            .addField((new autoclass.field()).setName("cube").setType("SFInt32").setAccessType("inputOutput").setValue("0"))
-            .addField((new autoclass.field()).setName("chromaticDispertion").setType("SFVec3f").setAccessType("inputOutput").setValue("0.98 1 1.033"))
-            .addField((new autoclass.field()).setName("bias").setType("SFFloat").setAccessType("inputOutput").setValue("0.5"))
-            .addField((new autoclass.field()).setName("scale").setType("SFFloat").setAccessType("inputOutput").setValue("0.5"))
-            .addField((new autoclass.field()).setName("power").setType("SFFloat").setAccessType("inputOutput").setValue("2"))
-            .addParts((new autoclass.ShaderPart()).setUrl(new autoclass.MFString("\"../shaders/x3dom.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs\"")))
-            .addParts((new autoclass.ShaderPart()).setType("FRAGMENT").setUrl(new autoclass.MFString("\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"")))))))
-    .addChild((new autoclass.TimeSensor("TourTime")).setCycleInterval(5).setLoop(true))
-    .addChild((new autoclass.PositionInterpolator("TourPosition")).setKey(java.newArray("float", [0.0,1.0])).setKeyValue(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,10.0,0.0,0.0,-10.0]))))
-    .addChild((new autoclass.OrientationInterpolator("TourOrientation")).setKey(java.newArray("float", [0.0,1.0])).setKeyValue(new autoclass.MFRotation(java.newArray("float", [0.0,1.0,0.0,0.0,0.0,1.0,0.0,3.1416]))))
-    .addChild((new autoclass.Script("RandomTourTime")).setSourceCode("\n" + 
-"	    ecmascript:" + "\n" + 
-"               function set_cycle(value) {" + "\n" + 
-"	       	   try {" + "\n" + 
-"                        var ov = lastKey;" + "\n" + 
-"                        do {" + "\n" + 
-"                            lastKey = Math.round(Math.random()*(positions.length-1));" + "\n" + 
-"                        } while (lastKey === ov);" + "\n" + 
-"                        var vc = lastKey;" + "\n" + 
-"\n" + 
-"                        position_changed[0] = positions[ov];" + "\n" + 
-"                        position_changed[1] = positions[vc];" + "\n" + 
-"\n" + 
-"                        orientation_changed[0] = orientations[ov];" + "\n" + 
-"                        orientation_changed[1] = orientations[vc];" + "\n" + 
-"\n" + 
-"                        fraction_changed = 0;" + "\n" + 
-"		   } catch (e) {" + "\n" + 
-"		   	if (typeof console.log === 'function') {" + "\n" + 
-"				console.log(e);" + "\n" + 
-"			}" + "\n" + 
-"		   }" + "\n" + 
-"               }")
-      .addField((new autoclass.field()).setName("set_cycle").setType("SFTime").setAccessType("inputOnly"))
-      .addField((new autoclass.field()).setName("lastKey").setType("SFFloat").setAccessType("inputOutput").setValue("0"))
-      .addField((new autoclass.field()).setName("orientations").setType("MFRotation").setAccessType("inputOutput").setValue("0 1 0 0 0 1 0 -1.57 0 1 0 3.14 0 1 0 1.57 0 1 0 0 1 0 0 -1.57 0 1 0 0 1 0 0 1.57 0 1 0 0"))
-      .addField((new autoclass.field()).setName("positions").setType("MFVec3f").setAccessType("inputOutput").setValue("0 0 10 -10 0 0 0 0 -10 10 0 0 0 0 10 0 10 0 0 0 10 0 -10 0 0 0 10"))
-      .addField((new autoclass.field()).setName("fraction_changed").setType("SFFloat").setAccessType("outputOnly"))
-      .addField((new autoclass.field()).setName("position_changed").setType("MFVec3f").setAccessType("outputOnly"))
-      .addField((new autoclass.field()).setName("set_orientation").setType("MFRotation").setAccessType("inputOnly"))
-      .addField((new autoclass.field()).setName("orientation_changed").setType("MFRotation").setAccessType("outputOnly")))
-    .addChild((new autoclass.ROUTE()).setFromNode("TourTime").setFromField("cycleTime").setToNode("RandomTourTime").setToField("set_cycle"))
-    .addChild((new autoclass.ROUTE()).setFromNode("RandomTourTime").setFromField("fraction_changed").setToNode("TourOrientation").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("RandomTourTime").setFromField("fraction_changed").setToNode("TourPosition").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("RandomTourTime").setFromField("orientation_changed").setToNode("TourOrientation").setToField("set_keyValue"))
-    .addChild((new autoclass.ROUTE()).setFromNode("RandomTourTime").setFromField("position_changed").setToNode("TourPosition").setToField("set_keyValue"))
-    .addChild((new autoclass.ROUTE()).setFromNode("TourTime").setFromField("fraction_changed").setToNode("TourOrientation").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("TourOrientation").setFromField("value_changed").setToNode("Tour").setToField("set_orientation"))
-    .addChild((new autoclass.ROUTE()).setFromNode("TourTime").setFromField("fraction_changed").setToNode("TourPosition").setToField("set_fraction"))
-    .addChild((new autoclass.ROUTE()).setFromNode("TourPosition").setFromField("value_changed").setToNode("Tour").setToField("set_position")));
+    .addChild((new autoclass.WorldInfo()).setTitle("Bubbles.x3d"))
+    .addChild((new autoclass.Transform("Bubbles"))
+      .addChild((new autoclass.Group("Bubble"))
+        .addChild((new autoclass.TimeSensor("BubbleClock")).setCycleInterval(6.0).setLoop(true))
+        .addChild((new autoclass.PositionInterpolator("BubblePath1")).setKey(java.newArray("float", [0.0,0.5,0.8,0.9,1.0])).setKeyValue(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0,0.75,0.75,0.75,0.86,0.86,0.86,0.99,0.998,0.9876,1.272,1.90440,0.9509]))))
+        .addChild((new autoclass.PositionInterpolator("BubblePath2")).setKey(java.newArray("float", [0.0,0.3,0.64,0.85,1.0])).setKeyValue(new autoclass.MFVec3f(java.newArray("float", [0.1,0.1,0.1,0.2,0.4,0.25,0.3,0.5,0.46,0.75,0.5,.575,.038483478,1.9890,1.0983730]))))
+        .addChild((new autoclass.PositionInterpolator("BubblePath3")).setKey(java.newArray("float", [0.0,0.1,0.45,0.7,1.0])).setKeyValue(new autoclass.MFVec3f(java.newArray("float", [0.01,0.01,0.01,0.25,0.35,0.0045,0.55,0.6,0.0055,0.66,0.665,0.00655,1.5550,1.090430,0.0057340]))))
+        .addChild((new autoclass.PositionInterpolator("BubblePath4")).setKey(java.newArray("float", [0.0,0.5,0.6,0.8,1.0])).setKeyValue(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0,0.5,0.5,0.005,0.6,0.6,0.006,0.75,0.75,0.0075,1.9485940,1.39830,.009009349]))))
+        .addChild((new autoclass.PositionInterpolator("BubblePath5")).setKey(java.newArray("float", [0.0,0.25,0.35,0.65,1.0])).setKeyValue(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0,0.5,0.5,0.005,0.6,0.6,0.006,0.75,0.75,0.0075,1.844440,1.222220,0.1]))))
+        .addChild((new autoclass.PositionInterpolator("BubblePath6")).setKey(java.newArray("float", [0.0,0.15,0.22235,0.55565,1.0])).setKeyValue(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0,0.235,0.3455,0.0055,0.356,0.676,0.00456,0.5675,0.75,0.0074565,1.098,1.0343,0.140]))))
+        .addChild((new autoclass.PositionInterpolator("BubblePath7")).setKey(java.newArray("float", [0.0,0.2425,0.4535,0.6775,1.0])).setKeyValue(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0,0.12345,0.2225,0.00335,0.786,0.456,0.00666,0.74555,0.7335,0.00234575,.08787,1.022,0.12]))))
+        .addChild((new autoclass.PositionInterpolator("BubblePath8")).setKey(java.newArray("float", [0.0,0.1125,0.5535,0.97865,1.0])).setKeyValue(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0,0.1235,0.05,0.00125,0.5666,0.4346,0.005556,0.8975,0.34575,0.0098775,1.87870,1.6860,0.860]))))
+        .addChild((new autoclass.PositionInterpolator("BubblePath9")).setKey(java.newArray("float", [0.0,0.0025,0.035,0.65,1.0])).setKeyValue(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0,0.522,0.5445,0.0057,0.6543,0.226,0.0055,0.45575,0.4375,0.0067,1.87870,2.0,0.1545]))))
+        .addChild((new autoclass.PositionInterpolator("BubblePath10")).setKey(java.newArray("float", [0.0,0.00025,0.035,0.6895,1.0])).setKeyValue(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0,0.8765,0.445,0.00335,0.3336,0.4446,0.005556,0.765,0.75,0.0075,1.0,1.0,0.1]))))
+        .addChild((new autoclass.Transform())
+          .addChild((new autoclass.Transform("bubble1"))
+            .addChild((new autoclass.Shape())
+              .setAppearance((new autoclass.Appearance())
+                .setMaterial((new autoclass.Material()).setDiffuseColor(1.0,1.0,1.0).setTransparency(0.8)))
+              .setGeometry((new autoclass.Sphere()).setRadius(0.025))))
+          .addChild((new autoclass.Transform("bubble2"))
+            .addChild((new autoclass.Shape())
+              .setAppearance((new autoclass.Appearance())
+                .setMaterial((new autoclass.Material()).setDiffuseColor(1.0,1.0,1.0).setTransparency(0.8)))
+              .setGeometry((new autoclass.Sphere()).setRadius(0.055))))
+          .addChild((new autoclass.Transform("bubble3"))
+            .addChild((new autoclass.Shape())
+              .setAppearance((new autoclass.Appearance())
+                .setMaterial((new autoclass.Material()).setDiffuseColor(1.0,1.0,1.0).setTransparency(0.8)))
+              .setGeometry((new autoclass.Sphere()).setRadius(0.065))))
+          .addChild((new autoclass.Transform("bubble4"))
+            .addChild((new autoclass.Shape())
+              .setAppearance((new autoclass.Appearance())
+                .setMaterial((new autoclass.Material()).setDiffuseColor(1.0,1.0,1.0).setTransparency(0.8)))
+              .setGeometry((new autoclass.Sphere()).setRadius(0.015))))
+          .addChild((new autoclass.Transform("bubble5"))
+            .addChild((new autoclass.Shape())
+              .setAppearance((new autoclass.Appearance())
+                .setMaterial((new autoclass.Material()).setDiffuseColor(1.0,1.0,1.0).setTransparency(0.8)))
+              .setGeometry((new autoclass.Sphere()).setRadius(0.075))))
+          .addChild((new autoclass.Transform("bubble6"))
+            .addChild((new autoclass.Shape())
+              .setAppearance((new autoclass.Appearance())
+                .setMaterial((new autoclass.Material()).setDiffuseColor(1.0,1.0,1.0).setTransparency(0.8)))
+              .setGeometry((new autoclass.Sphere()).setRadius(0.005))))
+          .addChild((new autoclass.Transform("bubble7"))
+            .addChild((new autoclass.Shape())
+              .setAppearance((new autoclass.Appearance())
+                .setMaterial((new autoclass.Material()).setDiffuseColor(1.0,1.0,1.0).setTransparency(0.8)))
+              .setGeometry((new autoclass.Sphere()).setRadius(0.035))))
+          .addChild((new autoclass.Transform("bubble8"))
+            .addChild((new autoclass.Shape())
+              .setAppearance((new autoclass.Appearance())
+                .setMaterial((new autoclass.Material()).setDiffuseColor(1.0,1.0,1.0).setTransparency(0.8)))
+              .setGeometry((new autoclass.Sphere()).setRadius(0.05))))
+          .addChild((new autoclass.Transform("bubble9"))
+            .addChild((new autoclass.Shape())
+              .setAppearance((new autoclass.Appearance())
+                .setMaterial((new autoclass.Material()).setDiffuseColor(1.0,1.0,1.0).setTransparency(0.8)))
+              .setGeometry((new autoclass.Sphere()).setRadius(0.045))))
+          .addChild((new autoclass.Transform("bubble10"))
+            .addChild((new autoclass.Shape())
+              .setAppearance((new autoclass.Appearance())
+                .setMaterial((new autoclass.Material()).setDiffuseColor(1.0,1.0,1.0).setTransparency(0.8)))
+              .setGeometry((new autoclass.Sphere()).setRadius(0.035))))
+          .addChild((new autoclass.ROUTE()).setFromNode("BubbleClock").setFromField("fraction_changed").setToNode("BubblePath1").setToField("set_fraction"))
+          .addChild((new autoclass.ROUTE()).setFromNode("BubbleClock").setFromField("fraction_changed").setToNode("BubblePath2").setToField("set_fraction"))
+          .addChild((new autoclass.ROUTE()).setFromNode("BubbleClock").setFromField("fraction_changed").setToNode("BubblePath3").setToField("set_fraction"))
+          .addChild((new autoclass.ROUTE()).setFromNode("BubbleClock").setFromField("fraction_changed").setToNode("BubblePath4").setToField("set_fraction"))
+          .addChild((new autoclass.ROUTE()).setFromNode("BubbleClock").setFromField("fraction_changed").setToNode("BubblePath5").setToField("set_fraction"))
+          .addChild((new autoclass.ROUTE()).setFromNode("BubbleClock").setFromField("fraction_changed").setToNode("BubblePath6").setToField("set_fraction"))
+          .addChild((new autoclass.ROUTE()).setFromNode("BubbleClock").setFromField("fraction_changed").setToNode("BubblePath7").setToField("set_fraction"))
+          .addChild((new autoclass.ROUTE()).setFromNode("BubbleClock").setFromField("fraction_changed").setToNode("BubblePath8").setToField("set_fraction"))
+          .addChild((new autoclass.ROUTE()).setFromNode("BubbleClock").setFromField("fraction_changed").setToNode("BubblePath9").setToField("set_fraction"))
+          .addChild((new autoclass.ROUTE()).setFromNode("BubbleClock").setFromField("fraction_changed").setToNode("BubblePath10").setToField("set_fraction"))
+          .addChild((new autoclass.ROUTE()).setFromNode("BubblePath1").setFromField("value_changed").setToNode("bubble1").setToField("set_translation"))
+          .addChild((new autoclass.ROUTE()).setFromNode("BubblePath2").setFromField("value_changed").setToNode("bubble2").setToField("set_translation"))
+          .addChild((new autoclass.ROUTE()).setFromNode("BubblePath3").setFromField("value_changed").setToNode("bubble3").setToField("set_translation"))
+          .addChild((new autoclass.ROUTE()).setFromNode("BubblePath4").setFromField("value_changed").setToNode("bubble4").setToField("set_translation"))
+          .addChild((new autoclass.ROUTE()).setFromNode("BubblePath5").setFromField("value_changed").setToNode("bubble5").setToField("set_translation"))
+          .addChild((new autoclass.ROUTE()).setFromNode("BubblePath6").setFromField("value_changed").setToNode("bubble6").setToField("set_translation"))
+          .addChild((new autoclass.ROUTE()).setFromNode("BubblePath7").setFromField("value_changed").setToNode("bubble7").setToField("set_translation"))
+          .addChild((new autoclass.ROUTE()).setFromNode("BubblePath8").setFromField("value_changed").setToNode("bubble8").setToField("set_translation"))
+          .addChild((new autoclass.ROUTE()).setFromNode("BubblePath9").setFromField("value_changed").setToNode("bubble9").setToField("set_translation"))
+          .addChild((new autoclass.ROUTE()).setFromNode("BubblePath10").setFromField("value_changed").setToNode("bubble10").setToField("set_translation")))))
+    .addChild((new autoclass.Background()).setSkyColor(new autoclass.MFColor(java.newArray("float", [0.0,0.0,0.6])))));
   },
   // end of initialize() method
 

@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-3.3.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-3.3.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 3.3 of X3D -->
-<!-- Generated 2021-12-25-08:00 11:59:48.9471062-08:00 -->
+<!-- Generated 2022-01-13-08:00 16:46:13.4118039-08:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                        version="3.3"
                        xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -139,10 +139,10 @@
                       appinfo="The Rigid Body Physics component describes how to model rigid bodies and their interactions through the application of basic physics principles to effect motion."
                       documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/rigid_physics.html"/>
          <enumeration value="Scripting"
-                      appinfo="The Script component describes how Script nodes are used to effect changes in X3D worlds."
+                      appinfo="The Scripting component describes how Script nodes are used to effect changes in X3D worlds."
                       documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/scripting.html"/>
          <enumeration value="Shaders"
-                      appinfo="The programmable shaders component describes how programmable shaders are specified and how they affect the visual appearance of geometry."
+                      appinfo="The Programmable Shaders component describes how programmable shaders are specified and how they affect the visual appearance of geometry."
                       documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/shaders.html"/>
          <enumeration value="Shape"
                       appinfo="The Shape component defines nodes for associating geometry with their visible properties and the scene environment."
@@ -8502,10 +8502,10 @@
                             appinfo="The Rigid Body Physics component describes how to model rigid bodies and their interactions through the application of basic physics principles to effect motion."
                             documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/rigid_physics.html"/>
                <enumeration value="Scripting"
-                            appinfo="The Script component describes how Script nodes are used to effect changes in X3D worlds."
+                            appinfo="The Scripting component describes how Script nodes are used to effect changes in X3D worlds."
                             documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/scripting.html"/>
                <enumeration value="Shaders"
-                            appinfo="The programmable shaders component describes how programmable shaders are specified and how they affect the visual appearance of geometry."
+                            appinfo="The Programmable Shaders component describes how programmable shaders are specified and how they affect the visual appearance of geometry."
                             documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/shaders.html"/>
                <enumeration value="Shape"
                             appinfo="The Shape component defines nodes for associating geometry with their visible properties and the scene environment."
@@ -13531,7 +13531,7 @@
                    default="0 0 1 0"
                    description="Orientation of upper/lower rotation limits, relative to HAnimJoint center."/>
             <field name="llimit"
-                   type="SFVec3f"
+                   type="MFFloat"
                    accessType="inputOutput"
                    default="0 0 0"
                    description="Lower limit for minimum joint rotation in radians."/>
@@ -13680,7 +13680,7 @@
                    accessType="inputOutput"
                    description="Weight deformation values for the corresponding values in the skinCoordIndex field."/>
             <field name="stiffness"
-                   type="SFVec3f"
+                   type="MFFloat"
                    accessType="inputOutput"
                    default="0 0 0"
                    minInclusive="0"
@@ -13692,7 +13692,7 @@
                    default="0 0 0"
                    description="Position of children relative to local coordinate system."/>
             <field name="ulimit"
-                   type="SFVec3f"
+                   type="MFFloat"
                    accessType="inputOutput"
                    default="0 0 0"
                    description="Upper limit for maximum joint rotation in radians."/>

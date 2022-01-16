@@ -40,7 +40,9 @@ public class rubikcoord {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new rubikcoord().initialize().toFileJSON("../data/rubikcoord.new.json");
+    X3D model = new rubikcoord().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../data/rubikcoord.new.json");
     }
     public X3D initialize() {
 ProtoInstance ProtoInstance0 = null;

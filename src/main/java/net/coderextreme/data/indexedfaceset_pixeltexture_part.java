@@ -40,7 +40,9 @@ public class indexedfaceset_pixeltexture_part {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new indexedfaceset_pixeltexture_part().initialize().toFileJSON("../data/indexedfaceset_pixeltexture_part.new.json");
+    X3D model = new indexedfaceset_pixeltexture_part().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../data/indexedfaceset_pixeltexture_part.new.json");
     }
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Interchange").setVersion("3.0")

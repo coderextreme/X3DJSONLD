@@ -66,11 +66,12 @@ POSSIBILITY OF SUCH DAMAGE.
                 xmlns:fn="http://www.w3.org/2005/xpath-functions" -->
     
     <!-- Default parameter values can be overridden when invoking this stylesheet -->
-    <xsl:param name="packageName"			      ><xsl:text></xsl:text></xsl:param>
-    <xsl:param name="className"				      ><xsl:text><!-- necessary input, otherwise will use meta title if available --></xsl:text></xsl:param>
+    <xsl:param name="packageName"			  ><xsl:text></xsl:text></xsl:param>
+    <xsl:param name="className"				  ><xsl:text><!-- necessary input, otherwise will use meta title if available --></xsl:text></xsl:param>
     <xsl:param name="tupleSplitSize"			  ><xsl:text>100</xsl:text></xsl:param> <!-- tuples -->
     <xsl:param name="attributeSplitSize"		  ><xsl:text>1000</xsl:text></xsl:param><!-- characters -->
-    <xsl:param name="includeLicense"		      ><xsl:text>false</xsl:text></xsl:param>
+    <xsl:param name="includeLicense"		          ><xsl:text>false</xsl:text></xsl:param>
+    <xsl:param name="strictJava8"		          ><xsl:text>false</xsl:text></xsl:param>
 	
 	<!-- TODO: Java methods can only be 64K, need to split out large data structures as member variables. -->
 	<!-- https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java -->
@@ -1008,13 +1009,27 @@ POSSIBILITY OF SUCH DAMAGE.
 		<xsl:if test="((local-name() = 'Script') or (local-name() = 'ShaderPart') or (local-name() = 'ShaderProgram')) and
 					  (string-length(normalize-space(text())) > 0)"><!-- TODO restrict to immediate child? -->
 			<xsl:text>.setSourceCode(</xsl:text>
-			<xsl:if test="not(starts-with(normalize-space(text()),'ecmascript:'))">
-				<xsl:text>"ecmascript: " + </xsl:text><!-- necessary to avoid validation error -->
-			</xsl:if>
-			<xsl:call-template name="stringify-text-lines">
-			  <xsl:with-param name="inputValue" select="text()"/>
-			  <!-- TODO restrict to immediate child? might be an issue if field has contained node content and further CDATA text-->
-			</xsl:call-template>
+                        <xsl:choose>
+                            <xsl:when test="($strictJava8 = 'true')">
+                                <xsl:if test="not(starts-with(normalize-space(text()),'ecmascript:'))">
+                                        <xsl:text>"ecmascript: " + </xsl:text><!-- necessary to avoid validation error -->
+                                </xsl:if>
+                                <xsl:call-template name="stringify-text-lines">
+                                  <xsl:with-param name="inputValue" select="text()"/>
+                                  <!-- TODO restrict to immediate child? might be an issue if field has contained node content and further CDATA text-->
+                                </xsl:call-template>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <!-- can use multiline text blocks in Java 15 or greater -->
+                                <xsl:text>"""</xsl:text>
+                                <xsl:if test="not(starts-with(normalize-space(text()),'ecmascript:'))">
+                                        <xsl:text>ecmascript:</xsl:text><!-- necessary to avoid validation error -->
+                                        <xsl:text>&#10;</xsl:text>
+                                </xsl:if>
+                                <xsl:value-of select="text()"/>
+                                <xsl:text>"""</xsl:text>
+                            </xsl:otherwise>
+                        </xsl:choose>
 			<xsl:text>)</xsl:text>
 		</xsl:if>
 		
@@ -3686,7 +3701,13 @@ POSSIBILITY OF SUCH DAMAGE.
 			<xsl:text>import org.web3d.x3d.jsail.Shape.*;</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
-		<xsl:if test="//*[name()='AudioClip'] or //*[name()='Sound']">
+		<xsl:if test="//*[name()='AudioClip'] or //*[name()='Sound'] or 
+                              //*[name()='Analyser'] or //*[name()='AudioDestination'] or //*[name()='BiquadFilter'] or //*[name()='BufferAudioSource'] or
+                              //*[name()='BufferAudioSource'] or //*[name()='ChannelMerger'] or //*[name()='ChannelSelector'] or //*[name()='ChannelSplitter'] or
+                              //*[name()='Convolver'] or //*[name()='Delay'] or //*[name()='DynamicsCompressor'] or //*[name()='Gain'] or
+                              //*[name()='ListenerPointSource'] or //*[name()='MicrophoneSource'] or //*[name()='OscillatorSOurce'] or 
+                              //*[name()='PeriodicWave'] or //*[name()='SpatialSound'] or //*[name()='StreamAudioDestination'] or
+                              //*[name()='StreamAudioSource'] or //*[name()='WaveShaper']">
 			<xsl:text>import org.web3d.x3d.jsail.Sound.*;</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
@@ -4111,36 +4132,37 @@ POSSIBILITY OF SUCH DAMAGE.
 		  <!-- SFFloat -->
 		  <xsl:when test="
 					($localFieldType='SFFloat')  or 
-                    ends-with($attributeName,'Rate')    or
-                    ($attributeName='absorption')       or
-                    ($attributeName='ambientIntensity') or
+                                        ends-with($attributeName,'Rate')    or
+                                        ($attributeName='absorption')       or
+                                        ($attributeName='ambientIntensity') or
 					($attributeName='attack')           or
                                         ($attributeName='coneInnerAngle')   or ($attributeName='coneOuterAngle')  or ($attributeName='coneOuterGain')    or
 					($attributeName='creaseAngle')      or
-                    ($attributeName='detune')           or
-                    ($attributeName='diffuse')          or
+                                        ($attributeName='detune')           or
+                                        ($attributeName='diffuse')          or
 					($attributeName='farDistance')      or ($attributeName='nearDistance')    or
 					($attributeName='frequency')        or
 					($attributeName='gain')             or
 					($attributeName='intensity')        or
 					($attributeName='interauralDistance') or
 					($attributeName='knee')             or
+					($attributeName='loopEnd')          or ($attributeName='loopStart')       or
 					($attributeName='maxDistance')      or
 					($attributeName='minDecibels')      or ($attributeName='maxDecibels')     or
-                    starts-with($attributeName,'pointSize') or
+                                        starts-with($attributeName,'pointSize') or
 					($attributeName='priority')         or
 					($attributeName='qualityFactor')    or
-                    ($attributeName='radius')           or ($attributeName='innerRadius') or ($attributeName='outerRadius') or
+                                        ($attributeName='radius')           or ($attributeName='innerRadius') or ($attributeName='outerRadius') or
 					($attributeName='ratio')            or
 					($attributeName='referenceDistance') or
-                    ($attributeName='refraction')       or
-                    ($attributeName='rolloffFactor')    or
+                                        ($attributeName='refraction')       or
+                                        ($attributeName='rolloffFactor')    or
 					($attributeName='shadowIntensity')  or
 					($attributeName='smoothingTimeConstant')  or
-                    ($attributeName='specular')         or
-                    ($attributeName='startAngle')       or ($attributeName='endAngle') or
+                                        ($attributeName='specular')         or
+                                        ($attributeName='startAngle')       or ($attributeName='endAngle') or
 					($attributeName='threshold')        or
-                    ($attributeName='tolerance')        or
+                                        ($attributeName='tolerance')        or
 					($attributeName='transparency')     or
 					(starts-with($parentElementName,'Arc') and (contains($attributeName,'Angle') or $attributeName='radius')) or
 					($parentElementName='AcousticProperties' and ($attributeName='absorption' or $attributeName='diffuse' or $attributeName='refraction' or $attributeName='specular')) or

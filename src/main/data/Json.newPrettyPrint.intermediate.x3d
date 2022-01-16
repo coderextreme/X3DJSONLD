@@ -17,7 +17,7 @@
     <unit name='AngleUnitConversion' category='angle' conversionFactor='1.0'/>
     <unit name='LengthUnitConversion' category='length' conversionFactor='1.0'/>
     <unit name='ForceFromPoundsToNewtons' category='force' conversionFactor='4.4482'/>
-    <meta content='HelloWorldProgramOutput.x3d' name='title'/>
+    <meta content='Json.x3d' name='title'/>
     <meta content='continued development and testing in progress' name='info'/>
     <meta content='Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface Library (X3DJSAIL)' name='description'/>
     <meta content='https://www.web3d.org/specifications/java/X3DJSAIL.html' name='reference'/>
@@ -85,8 +85,7 @@
           <!-- Comment example A, plain quotation marks: He said, "Immel did it!" -->
           <!-- Comment example B, XML character entities: He said, &quot;Immel did it!&quot; -->
           <MetadataSet name='EscapedQuotationMarksMetadataSet'>
-            <MetadataString name='quotesTestC' containerField='value' value='"MFString example C, backslash-escaped quotes: He said, \"Immel did it!\""'/>
-            <MetadataString name='extraChildTest' containerField='value' value='"checks MetadataSetObject addValue() method"'/>
+            <MetadataString name='extraChildTest' value='"checks MetadataSetObject addValue() method"'/>
           </MetadataSet>
           <FontStyle family='"SERIF"' justify='"MIDDLE" "MIDDLE"'/>
         </Text>

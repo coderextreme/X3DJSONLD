@@ -24,6 +24,19 @@ LD_LIBRARY_PATH=/usr/lib/jvm/java-18-openjdk-amd64/lib/server
 
 
 * Edit src/main/node/config.js for node.js, put maven in your path, install X3DJSAIL in your maven repository per the pom.xml (it's different than the X3DJSAIL distribution) and start a web server
+
+* Install pythom 3.10.1 (with nodejs), and other dependent tools
+
+* Install jsonlint
+
+* install webpack
+
+* install maven
+
+* install java
+
+* install ant
+
 ```
 npm install
 node app.js

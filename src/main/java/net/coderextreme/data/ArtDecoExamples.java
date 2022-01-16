@@ -40,7 +40,9 @@ public class ArtDecoExamples {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new ArtDecoExamples().initialize().toFileJSON("../data/ArtDecoExamples.new.json");
+    X3D model = new ArtDecoExamples().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../data/ArtDecoExamples.new.json");
     }
     public X3D initialize() {
 ProtoInstance ProtoInstance0 = null;

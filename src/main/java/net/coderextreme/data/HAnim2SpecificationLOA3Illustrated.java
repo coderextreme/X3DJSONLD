@@ -40,7 +40,9 @@ public class HAnim2SpecificationLOA3Illustrated {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new HAnim2SpecificationLOA3Illustrated().initialize().toFileJSON("../data/HAnim2SpecificationLOA3Illustrated.new.json");
+    X3D model = new HAnim2SpecificationLOA3Illustrated().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../data/HAnim2SpecificationLOA3Illustrated.new.json");
     }
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")

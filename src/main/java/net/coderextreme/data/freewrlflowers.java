@@ -40,7 +40,9 @@ public class freewrlflowers {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new freewrlflowers().initialize().toFileJSON("../data/freewrlflowers.new.json");
+    X3D model = new freewrlflowers().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../data/freewrlflowers.new.json");
     }
     public X3D initialize() {
 ProtoInstance ProtoInstance0 = null;

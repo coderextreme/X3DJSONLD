@@ -40,7 +40,9 @@ public class JinLOA3 {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new JinLOA3().initialize().toFileJSON("../data/JinLOA3.new.json");
+    X3D model = new JinLOA3().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../data/JinLOA3.new.json");
     }
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")

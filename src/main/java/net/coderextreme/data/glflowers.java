@@ -40,7 +40,9 @@ public class glflowers {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new glflowers().initialize().toFileJSON("../data/glflowers.new.json");
+    X3D model = new glflowers().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../data/glflowers.new.json");
     }
     public X3D initialize() {
 ProtoInstance ProtoInstance0 = null;

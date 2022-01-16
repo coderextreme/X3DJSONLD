@@ -76,32 +76,32 @@ browser.currentScene.children[0] = Viewpoint15;
 
 let TextureBackground16 = browser.currentScene.createNode("TextureBackground");
 let ImageTexture17 = browser.currentScene.createNode("ImageTexture");
-ImageTexture17.DEF = "leftBack";
+ImageTexture17.DEF = "leftBackTexture";
 ImageTexture17.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"]);
 TextureBackground16.topTexture = ImageTexture17;
 
 let ImageTexture18 = browser.currentScene.createNode("ImageTexture");
-ImageTexture18.DEF = "rightBack";
+ImageTexture18.DEF = "rightBackTexture";
 ImageTexture18.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"]);
 TextureBackground16.topTexture = ImageTexture18;
 
 let ImageTexture19 = browser.currentScene.createNode("ImageTexture");
-ImageTexture19.DEF = "frontBack";
+ImageTexture19.DEF = "frontBackTexture";
 ImageTexture19.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"]);
 TextureBackground16.topTexture = ImageTexture19;
 
 let ImageTexture20 = browser.currentScene.createNode("ImageTexture");
-ImageTexture20.DEF = "backBack";
+ImageTexture20.DEF = "backBackTexture";
 ImageTexture20.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"]);
 TextureBackground16.topTexture = ImageTexture20;
 
 let ImageTexture21 = browser.currentScene.createNode("ImageTexture");
-ImageTexture21.DEF = "topBack";
+ImageTexture21.DEF = "topBackTexture";
 ImageTexture21.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"]);
 TextureBackground16.topTexture = ImageTexture21;
 
 let ImageTexture22 = browser.currentScene.createNode("ImageTexture");
-ImageTexture22.DEF = "bottomBack";
+ImageTexture22.DEF = "bottomBackTexture";
 ImageTexture22.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"]);
 TextureBackground16.topTexture = ImageTexture22;
 
@@ -397,42 +397,42 @@ Transform23.children[3] = ROUTE67;
 let ROUTE68 = browser.currentScene.createNode("ROUTE");
 ROUTE68.fromNode = "UrlSelector";
 ROUTE68.fromField = "front_changed";
-ROUTE68.toNode = "frontBack";
+ROUTE68.toNode = "frontBackTexture";
 ROUTE68.toField = "url";
 Transform23.children[4] = ROUTE68;
 
 let ROUTE69 = browser.currentScene.createNode("ROUTE");
 ROUTE69.fromNode = "UrlSelector";
 ROUTE69.fromField = "back_changed";
-ROUTE69.toNode = "backBack";
+ROUTE69.toNode = "backBackTexture";
 ROUTE69.toField = "url";
 Transform23.children[5] = ROUTE69;
 
 let ROUTE70 = browser.currentScene.createNode("ROUTE");
 ROUTE70.fromNode = "UrlSelector";
 ROUTE70.fromField = "left_changed";
-ROUTE70.toNode = "leftBack";
+ROUTE70.toNode = "leftBackTexture";
 ROUTE70.toField = "url";
 Transform23.children[6] = ROUTE70;
 
 let ROUTE71 = browser.currentScene.createNode("ROUTE");
 ROUTE71.fromNode = "UrlSelector";
 ROUTE71.fromField = "right_changed";
-ROUTE71.toNode = "rightBack";
+ROUTE71.toNode = "rightBackTexture";
 ROUTE71.toField = "url";
 Transform23.children[7] = ROUTE71;
 
 let ROUTE72 = browser.currentScene.createNode("ROUTE");
 ROUTE72.fromNode = "UrlSelector";
 ROUTE72.fromField = "top_changed";
-ROUTE72.toNode = "topBack";
+ROUTE72.toNode = "topBackTexture";
 ROUTE72.toField = "url";
 Transform23.children[8] = ROUTE72;
 
 let ROUTE73 = browser.currentScene.createNode("ROUTE");
 ROUTE73.fromNode = "UrlSelector";
 ROUTE73.fromField = "bottom_changed";
-ROUTE73.toNode = "bottomBack";
+ROUTE73.toNode = "bottomBackTexture";
 ROUTE73.toField = "url";
 Transform23.children[9] = ROUTE73;
 

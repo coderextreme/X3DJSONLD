@@ -40,7 +40,9 @@ public class qq3 {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new qq3().initialize().toFileJSON("../data/qq3.new.json");
+    X3D model = new qq3().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../data/qq3.new.json");
     }
     public X3D initialize() {
 ProtoInstance ProtoInstance0 = null;

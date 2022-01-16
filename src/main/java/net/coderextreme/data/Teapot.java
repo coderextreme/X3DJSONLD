@@ -40,7 +40,9 @@ public class Teapot {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new Teapot().initialize().toFileJSON("../data/Teapot.new.json");
+    X3D model = new Teapot().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../data/Teapot.new.json");
     }
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Interchange").setVersion("3.3")

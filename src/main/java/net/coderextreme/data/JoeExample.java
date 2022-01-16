@@ -40,7 +40,9 @@ public class JoeExample {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new JoeExample().initialize().toFileJSON("../data/JoeExample.new.json");
+    X3D model = new JoeExample().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../data/JoeExample.new.json");
     }
     public X3D initialize() {
       X3D X3D0 =  new X3D().setVersion("3.0").setProfile("Immersive")

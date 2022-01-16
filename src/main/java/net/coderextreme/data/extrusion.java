@@ -40,7 +40,9 @@ public class extrusion {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new extrusion().initialize().toFileJSON("../data/extrusion.new.json");
+    X3D model = new extrusion().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../data/extrusion.new.json");
     }
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
