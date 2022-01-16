@@ -47,7 +47,7 @@ public class t3 {
       .setHead(new head()
         .addComponent(new component().setName("Networking").setLevel(2))
         .addComponent(new component().setName("Core").setLevel(2))
-        .addMeta(new meta().setName("title").setContent("t4.x3d"))
+        .addMeta(new meta().setName("title").setContent("t3.x3d"))
         .addMeta(new meta().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/src/main/data/t4.x3d"))
         .addMeta(new meta().setName("generator").setContent("view3dscene, https://castle-engine.io/view3dscene.php"))
         .addMeta(new meta().setName("creator").setContent("Andreas Plesch and John Carlson"))

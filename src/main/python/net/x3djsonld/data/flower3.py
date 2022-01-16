@@ -58,7 +58,7 @@ newModel=X3D(profile='Immersive',version='3.3',
         <field accessType="initializeOnly" name="resolution" type="SFInt32" value="100"/>
 	
       
-*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
 ),
     TimeSensor(DEF='Clock',cycleInterval=16,loop=True),
     ROUTE(fromNode='OrbitScript',fromField='coordIndexes',toNode='Orbit',toField='set_coordIndex'),

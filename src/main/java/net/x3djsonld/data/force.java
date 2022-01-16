@@ -102,15 +102,17 @@ public class force
                 .setAppearance(new Appearance()
                   .setMaterial(new Material().setDiffuseColor(0.0,0.0,1.0))))))
           .addChild(new PositionInterpolator("NodePosition").setKey(new double[] {0.0,1.0}).setKeyValue(new MFVec3f(new double[] {0.0,0.0,0.0,0.0,5.0,0.0})))
-          .addChild(new Script("MoveBall").setSourceCode("\n" + 
-"\n" + 
-"ecmascript:" + "\n" + 
-"					function set_cycle(value) {" + "\n" + 
-"                                                old = translation;" + "\n" + 
-"						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);" + "\n" + 
-"                                                keyValue = new MFVec3f([old, translation]);" + "\n" + 
-"						// Browser.println(translation);" + "\n" + 
-"					}" + "\n")
+          .addChild(new Script("MoveBall").setSourceCode("""
+
+ecmascript:
+					function set_cycle(value) {
+                                                old = translation;
+						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
+                                                keyValue = new MFVec3f([old, translation]);
+						// Browser.println(translation);
+					}
+
+                """)
             .addField(new field().setName("translation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(50.0,50.0,0.0)))
             .addField(new field().setName("old").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
             .addField(new field().setName("set_cycle").setType(field.TYPE_SFTIME).setAccessType(field.ACCESSTYPE_INPUTONLY))
@@ -130,29 +132,31 @@ public class force
             .setGeometry(new Extrusion("extrusion").setCreaseAngle(0.785).setCrossSection(new MFVec2f(new double[] {1.00,0.00,0.92,-0.38,0.71,-0.71,0.38,-0.92,0.00,-1.00,-0.38,-0.92,-0.71,-0.71,-0.92,-0.38,-1.00,-0.00,-0.92,0.38,-0.71,0.71,-0.38,0.92,0.00,1.00,0.38,0.92,0.71,0.71,0.92,0.38,1.00,0.00})).setSpine(new MFVec3f(new double[] {0.0,-50.0,0.0,0.0,50.0,0.0})))
             .setAppearance(new Appearance()
               .setMaterial(new Material().setDiffuseColor(0.0,1.0,0.0))))
-          .addChild(new Script("MoveCylinder").setSourceCode("\n" + 
-"\n" + 
-"ecmascript:" + "\n" + 
-"\n" + 
-"                function set_endA(value) {" + "\n" + 
-"		    if (typeof spine === 'undefined') {" + "\n" + 
-"		        spine = new MFVec3f([value, value]);" + "\n" + 
-"		    } else {" + "\n" + 
-"		        spine = new MFVec3f([value, spine[1]]);" + "\n" + 
-"		    }" + "\n" + 
-"                }" + "\n" + 
-"                " + "\n" + 
-"                function set_endB(value) {" + "\n" + 
-"		    if (typeof spine === 'undefined') {" + "\n" + 
-"		        spine = new MFVec3f([value, value]);" + "\n" + 
-"		    } else {" + "\n" + 
-"		        spine = new MFVec3f([spine[0], value]);" + "\n" + 
-"		    }" + "\n" + 
-"                }" + "\n" + 
-"                " + "\n" + 
-"                function set_spine(value) {" + "\n" + 
-"                    spine = value;" + "\n" + 
-"                }" + "\n")
+          .addChild(new Script("MoveCylinder").setSourceCode("""
+
+ecmascript:
+
+                function set_endA(value) {
+		    if (typeof spine === 'undefined') {
+		        spine = new MFVec3f([value, value]);
+		    } else {
+		        spine = new MFVec3f([value, spine[1]]);
+		    }
+                }
+                
+                function set_endB(value) {
+		    if (typeof spine === 'undefined') {
+		        spine = new MFVec3f([value, value]);
+		    } else {
+		        spine = new MFVec3f([spine[0], value]);
+		    }
+                }
+                
+                function set_spine(value) {
+                    spine = value;
+                }
+
+                """)
             .addField(new field().setName("spine").setType(field.TYPE_MFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new MFVec3f(new MFVec3f(new double[] {0.0,-50.0,0.0,0.0,50.0,0.0}))))
             .addField(new field().setName("set_endA").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTONLY))
             .addField(new field().setName("set_endB").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTONLY))
@@ -179,26 +183,28 @@ public class force
       .addChild(new ProtoInstance("cylinder", "linkC").setContainerField("children")
         .addFieldValue(new fieldValue().setName("set_positionA").setValue(new SFVec3f(50.0,50.0,50.0)))
         .addFieldValue(new fieldValue().setName("set_positionB").setValue(new SFVec3f(50.0,50.0,-50.0)))))
-    .addChild(new Script("clickHandler").setSourceCode("\n" + 
-"	" + "\n" + 
-"ecmascript:" + "\n" + 
-"	function add_node(value) {" + "\n" + 
-"                // Browser.print('hey ', counter);" + "\n" + 
-"                counter = counter++;" + "\n" + 
-"		Browser.appendTo(Browser.getDocument().querySelector(\"field [name=ModifiableNode]\")," + "\n" + 
-"			{ \"ProtoInstance\":" + "\n" + 
-"				{ \"@name\":\"node\"," + "\n" + 
-"				  \"@DEF\":\"node'+counter+'\"," + "\n" + 
-"				  \"fieldValue\": [" + "\n" + 
-"					{" + "\n" + 
-"						 \"@name\":\"position\"," + "\n" + 
-"						 \"@value\":[0.0,0.0,0.0]" + "\n" + 
-"					}" + "\n" + 
-"				  ]" + "\n" + 
-"				}" + "\n" + 
-"			});" + "\n" + 
-"                " + "\n" + 
-"        }" + "\n")
+    .addChild(new Script("clickHandler").setSourceCode("""
+	
+ecmascript:
+	function add_node(value) {
+                // Browser.print('hey ', counter);
+                counter = counter++;
+		Browser.appendTo(Browser.getDocument().querySelector("field [name=ModifiableNode]"),
+			{ "ProtoInstance":
+				{ "@name":"node",
+				  "@DEF":"node'+counter+'",
+				  "fieldValue": [
+					{
+						 "@name":"position",
+						 "@value":[0.0,0.0,0.0]
+					}
+				  ]
+				}
+			});
+                
+        }
+	
+        """)
       .addField(new field().setName("counter").setType(field.TYPE_SFINT32).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0))
       .addField(new field().setName("node_changed").setType(field.TYPE_SFNODE).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
       .addField(new field().setName("add_node").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_INPUTONLY).setValue(false))

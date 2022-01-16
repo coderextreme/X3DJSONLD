@@ -186,4 +186,3 @@ ArchHalf.prototype = {
 	}
 }
 new ArchHalf().main();
-process.exit(0);

@@ -72,7 +72,7 @@ newModel=X3D(profile='Immersive',version='3.2',
           children=[
           Transform(USE='Cirrus')]),
         field(accessType='initializeOnly',name='Fog',type='SFNode')]
-*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
 ),
       DirectionalLight(ambientIntensity=1,color=(1,0,0),direction=(-1,-1,0),global_=True)])])
 ) # X3D model complete

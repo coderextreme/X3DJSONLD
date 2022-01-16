@@ -25,7 +25,7 @@ from x3d import *
 newModel=X3D(profile='Immersive',version='3.3',
   head=head(
     children=[
-    meta(name='title',content='rubik2x2x2.x3d'),
+    meta(name='title',content='rubikcoord.x3d'),
     meta(name='creator',content='John Carlson'),
     meta(name='generator',content='manual'),
     meta(name='identifier',content='https://coderextreme.net/X3DJSONLD/rubik.x3d'),
@@ -254,4 +254,4 @@ except SyntaxError as err:
     if newModelJSON: # may have failed to generate
         print(prependLineNumbers(newModelJSON,err.lineno))
 
-print("python x3d.py load and self-test complete for rubik2x2x2.py")
+print("python x3d.py load and self-test complete for rubikcoord.py")

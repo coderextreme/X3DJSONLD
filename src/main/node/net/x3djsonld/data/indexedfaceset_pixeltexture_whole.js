@@ -156,17 +156,17 @@ indexedfaceset_pixeltexture_whole.prototype = {
     .addMeta((new autoclass.meta()).setName("license").setContent("../../license.html")))
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.Viewpoint()).setDescription("Front View"))
-    .addChild((new autoclass.Viewpoint()).setDescription("Rear View").setPosition(0.0,0.0,-10.0).setOrientation(0.0,1.0,0.0,3.14))
-    .addChild((new autoclass.Viewpoint()).setDescription("Top View").setPosition(0.0,10.0,0.0).setOrientation(1.0,0.0,0.0,-1.57))
-    .addChild((new autoclass.Viewpoint()).setDescription("Bottom View").setPosition(0.0,-10.0,0.0).setOrientation(1.0,0.0,0.0,1.57))
+    .addChild((new autoclass.Viewpoint()).setDescription("Rear View").setOrientation(0.0,1.0,0.0,3.14).setPosition(0.0,0.0,-10.0))
+    .addChild((new autoclass.Viewpoint()).setDescription("Top View").setOrientation(1.0,0.0,0.0,-1.57).setPosition(0.0,10.0,0.0))
+    .addChild((new autoclass.Viewpoint()).setDescription("Bottom View").setOrientation(1.0,0.0,0.0,1.57).setPosition(0.0,-10.0,0.0))
     .addChild((new autoclass.Viewpoint()).setDescription("Right View").setOrientation(0.0,1.0,0.0,1.57).setPosition(10.0,0.0,0.0))
-    .addChild((new autoclass.Viewpoint()).setDescription("Left View").setPosition(-10.0,0.0,0.0).setOrientation(0.0,1.0,0.0,-1.57))
-    .addChild((new autoclass.NavigationInfo()).setType(new autoclass.MFString("\"EXAMINE\"")))
+    .addChild((new autoclass.Viewpoint()).setDescription("Left View").setOrientation(0.0,1.0,0.0,-1.57).setPosition(-10.0,0.0,0.0))
+    .addChild((new autoclass.NavigationInfo()).setType("\"EXAMINE\""))
     .addChild((new autoclass.Shape())
       .setAppearance((new autoclass.Appearance())
         .setMaterial((new autoclass.Material()))
         .setTexture((new autoclass.PixelTexture()).setImage(java.newArray("int", [2,2,4,0xFF0000FF,0x00FF00FF,0xFFFFFFFF,0xFFFF00FF]))))
-      .setGeometry((new autoclass.IndexedFaceSet()).setCreaseAngle(0.5).setColorPerVertex(false).setTexCoordIndex(java.newArray("int", [0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1])).setCoordIndex(java.newArray("int", [0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1]))
+      .setGeometry((new autoclass.IndexedFaceSet()).setColorPerVertex(false).setCreaseAngle(0.5).setCoordIndex(java.newArray("int", [0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1])).setTexCoordIndex(java.newArray("int", [0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1]))
         .setColor((new autoclass.Color()).setColor(new autoclass.MFColor(java.newArray("float", [0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0]))))
         .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [-2.0,1.0,1.0,-2.0,-1.0,1.0,2.0,1.0,1.0,2.0,-1.0,1.0,2.0,1.0,-1.0,2.0,-1.0,-1.0,-2.0,1.0,-1.0,-2.0,-1.0,-1.0]))))
         .setTexCoord((new autoclass.TextureCoordinate()).setPoint(new autoclass.MFVec2f(java.newArray("float", [0.0,1.0,0.0,0.0,1.0,1.0,1.0,0.0])))))));
@@ -228,4 +228,3 @@ indexedfaceset_pixeltexture_whole.prototype = {
 	}
 }
 new indexedfaceset_pixeltexture_whole().main();
-process.exit(0);

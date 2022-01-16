@@ -21,6 +21,7 @@ import { Viewpoint } from './x3d.mjs';
 import { HAnimHumanoid } from './x3d.mjs';
 import { HAnimSite } from './x3d.mjs';
 import { HAnimJoint } from './x3d.mjs';
+import { MFFloat } from './x3d.mjs';
 import { HAnimSegment } from './x3d.mjs';
 import { Switch } from './x3d.mjs';
 import { TouchSensor } from './x3d.mjs';
@@ -41,7 +42,6 @@ import { SFBool } from './x3d.mjs';
 import { TimeSensor } from './x3d.mjs';
 import { SFTime } from './x3d.mjs';
 import { ScalarInterpolator } from './x3d.mjs';
-import { MFFloat } from './x3d.mjs';
 import { ROUTE } from './x3d.mjs';
 import { PositionInterpolator } from './x3d.mjs';
 import { OrientationInterpolator } from './x3d.mjs';
@@ -361,8 +361,8 @@ var X3D0 =  new X3D({
                   DEF : new SFString("Bvh1_HumanoidRoot"),
                   scale : new SFVec3f([0.0254,0.0254,0.0254]),
                   translation : new SFVec3f([0,0.806,0.194]),
-                  ulimit : new SFVec3f([0,0,0]),
-                  llimit : new SFVec3f([0,0,0]),
+                  ulimit : new MFFloat([0,0,0]),
+                  llimit : new MFFloat([0,0,0]),
                   /*BVH ROOT Hips, OFFSET 7.62 0.0 0.0, CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation*/
                   children : new MFNode([
                     new HAnimSegment({
@@ -486,8 +486,8 @@ var X3D0 =  new X3D({
                       name : new SFString("l_hip"),
                       DEF : new SFString("Bvh1_l_hip"),
                       center : new SFVec3f([7.62,0,0]),
-                      ulimit : new SFVec3f([0,0,0]),
-                      llimit : new SFVec3f([0,0,0]),
+                      ulimit : new MFFloat([0,0,0]),
+                      llimit : new MFFloat([0,0,0]),
                       /*BVH JOINT LeftHip, OFFSET 7.62 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation*/
                       children : new MFNode([
                         new HAnimSegment({
@@ -521,8 +521,8 @@ var X3D0 =  new X3D({
                           name : new SFString("l_knee"),
                           DEF : new SFString("Bvh1_l_knee"),
                           center : new SFVec3f([7.62,-44.449999,0]),
-                          ulimit : new SFVec3f([0,0,0]),
-                          llimit : new SFVec3f([0,0,0]),
+                          ulimit : new MFFloat([0,0,0]),
+                          llimit : new MFFloat([0,0,0]),
                           /*BVH JOINT LeftKnee, OFFSET 0.0 -44.449999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation*/
                           children : new MFNode([
                             new HAnimSegment({
@@ -556,8 +556,8 @@ var X3D0 =  new X3D({
                               name : new SFString("l_ankle"),
                               DEF : new SFString("Bvh1_l_ankle"),
                               center : new SFVec3f([7.62,-83.819998,0]),
-                              ulimit : new SFVec3f([0,0,0]),
-                              llimit : new SFVec3f([0,0,0]),
+                              ulimit : new MFFloat([0,0,0]),
+                              llimit : new MFFloat([0,0,0]),
                               /*BVH JOINT LeftAnkle, OFFSET 0.0 -39.369999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation*/
                               children : new MFNode([
                                 new HAnimSegment({
@@ -591,8 +591,8 @@ var X3D0 =  new X3D({
                                   name : new SFString("l_midtarsal"),
                                   DEF : new SFString("Bvh1_l_midtarsal"),
                                   center : new SFVec3f([7.62,-92.709998,-3.81]),
-                                  ulimit : new SFVec3f([0,0,0]),
-                                  llimit : new SFVec3f([0,0,0]),
+                                  ulimit : new MFFloat([0,0,0]),
+                                  llimit : new MFFloat([0,0,0]),
                                   /*BVH JOINT LeftAnkleEnd, OFFSET 0.0 -8.89 -3.81, CHANNELS 3 Zrotation Xrotation Yrotation*/
                                   children : new MFNode([
                                     new HAnimSegment({
@@ -638,8 +638,8 @@ var X3D0 =  new X3D({
                       name : new SFString("r_hip"),
                       DEF : new SFString("Bvh1_r_hip"),
                       center : new SFVec3f([-7.62,0,0]),
-                      ulimit : new SFVec3f([0,0,0]),
-                      llimit : new SFVec3f([0,0,0]),
+                      ulimit : new MFFloat([0,0,0]),
+                      llimit : new MFFloat([0,0,0]),
                       /*BVH JOINT RightHip, OFFSET -7.62 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation*/
                       children : new MFNode([
                         new HAnimSegment({
@@ -673,8 +673,8 @@ var X3D0 =  new X3D({
                           name : new SFString("r_knee"),
                           DEF : new SFString("Bvh1_r_knee"),
                           center : new SFVec3f([-7.62,-44.449999,0]),
-                          ulimit : new SFVec3f([0,0,0]),
-                          llimit : new SFVec3f([0,0,0]),
+                          ulimit : new MFFloat([0,0,0]),
+                          llimit : new MFFloat([0,0,0]),
                           /*BVH JOINT RightKnee, OFFSET 0.0 -44.449999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation*/
                           children : new MFNode([
                             new HAnimSegment({
@@ -708,8 +708,8 @@ var X3D0 =  new X3D({
                               name : new SFString("r_ankle"),
                               DEF : new SFString("Bvh1_r_ankle"),
                               center : new SFVec3f([-7.62,-83.819998,0]),
-                              ulimit : new SFVec3f([0,0,0]),
-                              llimit : new SFVec3f([0,0,0]),
+                              ulimit : new MFFloat([0,0,0]),
+                              llimit : new MFFloat([0,0,0]),
                               /*BVH JOINT RightAnkle, OFFSET 0.0 -39.369999 0.0, CHANNELS 3 Zrotation Xrotation Yrotation*/
                               children : new MFNode([
                                 new HAnimSegment({
@@ -743,8 +743,8 @@ var X3D0 =  new X3D({
                                   name : new SFString("r_midtarsal"),
                                   DEF : new SFString("Bvh1_r_midtarsal"),
                                   center : new SFVec3f([-7.62,-92.709998,-3.81]),
-                                  ulimit : new SFVec3f([0,0,0]),
-                                  llimit : new SFVec3f([0,0,0]),
+                                  ulimit : new MFFloat([0,0,0]),
+                                  llimit : new MFFloat([0,0,0]),
                                   /*BVH JOINT RightAnkleEnd, OFFSET 0.0 -8.89 -3.81, CHANNELS 3 Zrotation Xrotation Yrotation*/
                                   children : new MFNode([
                                     new HAnimSegment({
@@ -790,8 +790,8 @@ var X3D0 =  new X3D({
                       name : new SFString("vl5"),
                       DEF : new SFString("Bvh1_vl5"),
                       center : new SFVec3f([0,7.62,-2.54]),
-                      ulimit : new SFVec3f([0,0,0]),
-                      llimit : new SFVec3f([0,0,0]),
+                      ulimit : new MFFloat([0,0,0]),
+                      llimit : new MFFloat([0,0,0]),
                       /*BVH JOINT Chest, OFFSET 0.0 7.62 -2.54, CHANNELS 3 Zrotation Xrotation Yrotation*/
                       children : new MFNode([
                         new HAnimSegment({
@@ -825,8 +825,8 @@ var X3D0 =  new X3D({
                           name : new SFString("Chest2"),
                           DEF : new SFString("Bvh1_Chest2"),
                           center : new SFVec3f([0,15.24,-2.54]),
-                          ulimit : new SFVec3f([0,0,0]),
-                          llimit : new SFVec3f([0,0,0]),
+                          ulimit : new MFFloat([0,0,0]),
+                          llimit : new MFFloat([0,0,0]),
                           /*BVH JOINT Chest2, OFFSET 0.0 7.62 0.0, CHANNELS 3 Zrotation Xrotation Yrotation*/
                           children : new MFNode([
                             new HAnimSegment({
@@ -884,8 +884,8 @@ var X3D0 =  new X3D({
                               name : new SFString("LeftCollar"),
                               DEF : new SFString("Bvh1_LeftCollar"),
                               center : new SFVec3f([7.62,48.260000000000005,0]),
-                              ulimit : new SFVec3f([0,0,0]),
-                              llimit : new SFVec3f([0,0,0]),
+                              ulimit : new MFFloat([0,0,0]),
+                              llimit : new MFFloat([0,0,0]),
                               /*BVH JOINT LeftCollar, OFFSET 7.62 33.02 2.54, CHANNELS 3 Zrotation Xrotation Yrotation*/
                               children : new MFNode([
                                 new HAnimSegment({
@@ -919,8 +919,8 @@ var X3D0 =  new X3D({
                                   name : new SFString("l_shoulder"),
                                   DEF : new SFString("Bvh1_l_shoulder"),
                                   center : new SFVec3f([20.32,48.260000000000005,0]),
-                                  ulimit : new SFVec3f([0,0,0]),
-                                  llimit : new SFVec3f([0,0,0]),
+                                  ulimit : new MFFloat([0,0,0]),
+                                  llimit : new MFFloat([0,0,0]),
                                   /*BVH JOINT LeftShoulder, OFFSET 12.7 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation*/
                                   children : new MFNode([
                                     new HAnimSegment({
@@ -954,8 +954,8 @@ var X3D0 =  new X3D({
                                       name : new SFString("l_elbow"),
                                       DEF : new SFString("Bvh1_l_elbow"),
                                       center : new SFVec3f([20.32,17.780000000000005,0]),
-                                      ulimit : new SFVec3f([0,0,0]),
-                                      llimit : new SFVec3f([0,0,0]),
+                                      ulimit : new MFFloat([0,0,0]),
+                                      llimit : new MFFloat([0,0,0]),
                                       /*BVH JOINT LeftElbow, OFFSET 0.0 -30.48 0.0, CHANNELS 3 Zrotation Xrotation Yrotation*/
                                       children : new MFNode([
                                         new HAnimSegment({
@@ -989,8 +989,8 @@ var X3D0 =  new X3D({
                                           name : new SFString("l_wrist"),
                                           DEF : new SFString("Bvh1_l_wrist"),
                                           center : new SFVec3f([20.32,-6.349999999999994,0]),
-                                          ulimit : new SFVec3f([0,0,0]),
-                                          llimit : new SFVec3f([0,0,0]),
+                                          ulimit : new MFFloat([0,0,0]),
+                                          llimit : new MFFloat([0,0,0]),
                                           /*BVH JOINT LeftWrist, OFFSET 0.0 -24.13 0.0, CHANNELS 3 Zrotation Xrotation Yrotation*/
                                           children : new MFNode([
                                             new HAnimSegment({
@@ -1036,8 +1036,8 @@ var X3D0 =  new X3D({
                               name : new SFString("RightCollar"),
                               DEF : new SFString("Bvh1_RightCollar"),
                               center : new SFVec3f([-7.62,48.260000000000005,0]),
-                              ulimit : new SFVec3f([0,0,0]),
-                              llimit : new SFVec3f([0,0,0]),
+                              ulimit : new MFFloat([0,0,0]),
+                              llimit : new MFFloat([0,0,0]),
                               /*BVH JOINT RightCollar, OFFSET -7.62 33.02 2.54, CHANNELS 3 Zrotation Xrotation Yrotation*/
                               children : new MFNode([
                                 new HAnimSegment({
@@ -1071,8 +1071,8 @@ var X3D0 =  new X3D({
                                   name : new SFString("r_shoulder"),
                                   DEF : new SFString("Bvh1_r_shoulder"),
                                   center : new SFVec3f([-20.32,48.260000000000005,0]),
-                                  ulimit : new SFVec3f([0,0,0]),
-                                  llimit : new SFVec3f([0,0,0]),
+                                  ulimit : new MFFloat([0,0,0]),
+                                  llimit : new MFFloat([0,0,0]),
                                   /*BVH JOINT RightShoulder, OFFSET -12.7 0.0 0.0, CHANNELS 3 Zrotation Xrotation Yrotation*/
                                   children : new MFNode([
                                     new HAnimSegment({
@@ -1106,8 +1106,8 @@ var X3D0 =  new X3D({
                                       name : new SFString("r_elbow"),
                                       DEF : new SFString("Bvh1_r_elbow"),
                                       center : new SFVec3f([-20.32,17.780000000000005,0]),
-                                      ulimit : new SFVec3f([0,0,0]),
-                                      llimit : new SFVec3f([0,0,0]),
+                                      ulimit : new MFFloat([0,0,0]),
+                                      llimit : new MFFloat([0,0,0]),
                                       /*BVH JOINT RightElbow, OFFSET 0.0 -30.48 0.0, CHANNELS 3 Zrotation Xrotation Yrotation*/
                                       children : new MFNode([
                                         new HAnimSegment({
@@ -1141,8 +1141,8 @@ var X3D0 =  new X3D({
                                           name : new SFString("r_wrist"),
                                           DEF : new SFString("Bvh1_r_wrist"),
                                           center : new SFVec3f([-20.32,-6.349999999999994,0]),
-                                          ulimit : new SFVec3f([0,0,0]),
-                                          llimit : new SFVec3f([0,0,0]),
+                                          ulimit : new MFFloat([0,0,0]),
+                                          llimit : new MFFloat([0,0,0]),
                                           /*BVH JOINT RightWrist, OFFSET 0.0 -24.13 0.0, CHANNELS 3 Zrotation Xrotation Yrotation*/
                                           children : new MFNode([
                                             new HAnimSegment({
@@ -1188,8 +1188,8 @@ var X3D0 =  new X3D({
                               name : new SFString("Neck"),
                               DEF : new SFString("Bvh1_Neck"),
                               center : new SFVec3f([0,53.339999,0]),
-                              ulimit : new SFVec3f([0,0,0]),
-                              llimit : new SFVec3f([0,0,0]),
+                              ulimit : new MFFloat([0,0,0]),
+                              llimit : new MFFloat([0,0,0]),
                               /*BVH JOINT Neck, OFFSET 0.0 38.099999 2.54, CHANNELS 3 Zrotation Xrotation Yrotation*/
                               children : new MFNode([
                                 new HAnimSegment({
@@ -1223,8 +1223,8 @@ var X3D0 =  new X3D({
                                   name : new SFString("skullbase"),
                                   DEF : new SFString("Bvh1_skullbase"),
                                   center : new SFVec3f([0,69.849999,0]),
-                                  ulimit : new SFVec3f([0,0,0]),
-                                  llimit : new SFVec3f([0,0,0]),
+                                  ulimit : new MFFloat([0,0,0]),
+                                  llimit : new MFFloat([0,0,0]),
                                   /*BVH JOINT Head, OFFSET 0.0 16.51 0.0, CHANNELS 3 Zrotation Xrotation Yrotation*/
                                   children : new MFNode([
                                     new HAnimSegment({

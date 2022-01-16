@@ -114,7 +114,7 @@ newModel=X3D(profile='Immersive',version='3.3',
             connect(nodeField='NavigationInfoNode',protoField='NavigationInfoNode'),
             connect(nodeField='aspectRatio',protoField='aspectRatio'),
             connect(nodeField='trace',protoField='trace')])
-*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
 ),
         ROUTE(fromField='visibilitySwitchSelection',fromNode='GeometryComputationScript',toField='whichChoice',toNode='VisibilitySwitch'),
         ROUTE(fromField='position_changed',fromNode='GeometryComputationScript',toField='translation',toNode='PositionTransform'),

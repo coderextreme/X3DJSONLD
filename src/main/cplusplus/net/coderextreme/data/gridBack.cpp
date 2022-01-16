@@ -16,7 +16,7 @@ X3D0->setVersion("3.0");
 Chead* head1 = new Chead();
 Cmeta* meta2 = new Cmeta();
 meta2->setName("title");
-meta2->setContent("gridBack.json");
+meta2->setContent("gridBack.x3d");
 head1->addMeta(*meta2);
 
 Cmeta* meta3 = new Cmeta();

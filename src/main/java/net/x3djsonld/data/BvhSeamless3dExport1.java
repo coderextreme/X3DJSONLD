@@ -145,55 +145,57 @@ public class BvhSeamless3dExport1
             .addConnect(new connect().setNodeField("loop").setProtoField("loop"))
             .addConnect(new connect().setNodeField("startTime").setProtoField("startTime"))
             .addConnect(new connect().setNodeField("fraction_changed").setProtoField("slider"))))
-        .addChild(new Script().setDirectOutput(true).setSourceCode("\n" + 
-"          " + "\n" + 
-"ecmascript:" + "\n" + 
-"function initialize(){" + "\n" + 
-"if(play==false){" + "\n" + 
-"timeSensor.stopTime=1;" + "\n" + 
-"}" + "\n" + 
-"pause=!play;" + "\n" + 
-"}" + "\n" + 
-"function play(v, t){" + "\n" + 
-"if(block){" + "\n" + 
-"return;" + "\n" + 
-"}" + "\n" + 
-"block=true;" + "\n" + 
-"if(v){" + "\n" + 
-"timeSensor.startTime=t;" + "\n" + 
-"}" + "\n" + 
-"else{" + "\n" + 
-"timeSensor.stopTime=t;" + "\n" + 
-"}" + "\n" + 
-"if(v==false){" + "\n" + 
-"pause=true;" + "\n" + 
-"}" + "\n" + 
-"else{" + "\n" + 
-"pause=false;" + "\n" + 
-"}" + "\n" + 
-"block=false;" + "\n" + 
-"}" + "\n" + 
-"function pause(v, t){" + "\n" + 
-"if(block){" + "\n" + 
-"return;" + "\n" + 
-"}" + "\n" + 
-"block=true;" + "\n" + 
-"if(!v){" + "\n" + 
-"t2=t-timeSensor.fraction_changed*period;" + "\n" + 
-"timeSensor.stopTime=t2-1;" + "\n" + 
-"timeSensor.startTime=t2;" + "\n" + 
-"}" + "\n" + 
-"else{" + "\n" + 
-"timeSensor.stopTime=t;" + "\n" + 
-"}" + "\n" + 
-"if(v==false){" + "\n" + 
-"play=true;" + "\n" + 
-"}" + "\n" + 
-"else{" + "\n" + 
-"play=false;" + "\n" + 
-"}" + "\n" + 
-"block=false;" + "\n" + 
-"}" + "\n")
+        .addChild(new Script().setDirectOutput(true).setSourceCode("""
+          
+ecmascript:
+function initialize(){
+if(play==false){
+timeSensor.stopTime=1;
+}
+pause=!play;
+}
+function play(v, t){
+if(block){
+return;
+}
+block=true;
+if(v){
+timeSensor.startTime=t;
+}
+else{
+timeSensor.stopTime=t;
+}
+if(v==false){
+pause=true;
+}
+else{
+pause=false;
+}
+block=false;
+}
+function pause(v, t){
+if(block){
+return;
+}
+block=true;
+if(!v){
+t2=t-timeSensor.fraction_changed*period;
+timeSensor.stopTime=t2-1;
+timeSensor.startTime=t2;
+}
+else{
+timeSensor.stopTime=t;
+}
+if(v==false){
+play=true;
+}
+else{
+play=false;
+}
+block=false;
+}
+
+        """)
           .addField(new field().setName("play").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(false))
           .addComments(" caught by VRML97..xslt ")
           .addField(new field().setName("pause").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(false))
@@ -280,55 +282,57 @@ public class BvhSeamless3dExport1
         .addChild(new OrientationInterpolator("oi_RightWrist").setKey(getoi_RightWrist_5_117_key()).setKeyValue(getoi_RightWrist_5_117_keyValue()))
         .addChild(new OrientationInterpolator("oi_Neck").setKey(getoi_Neck_5_118_key()).setKeyValue(getoi_Neck_5_118_keyValue()))
         .addChild(new OrientationInterpolator("oi_Head").setKey(getoi_Head_5_119_key()).setKeyValue(getoi_Head_5_119_keyValue()))))
-    .addChild(new Script("s03e13e80").setDirectOutput(true).setSourceCode("\n" + 
-"      " + "\n" + 
-"ecmascript:" + "\n" + 
-"function f03e07a38(v){" + "\n" + 
-"pi_Hips.set_fraction = v;" + "\n" + 
-"Hips.translation = pi_Hips.value_changed;" + "\n" + 
-"oi_Hips.set_fraction = v;" + "\n" + 
-"Hips.rotation = oi_Hips.value_changed;" + "\n" + 
-"oi_LeftHip.set_fraction = v;" + "\n" + 
-"LeftHip.rotation = oi_LeftHip.value_changed;" + "\n" + 
-"oi_LeftKnee.set_fraction = v;" + "\n" + 
-"LeftKnee.rotation = oi_LeftKnee.value_changed;" + "\n" + 
-"oi_LeftAnkle.set_fraction = v;" + "\n" + 
-"LeftAnkle.rotation = oi_LeftAnkle.value_changed;" + "\n" + 
-"oi_LeftAnkleEnd.set_fraction = v;" + "\n" + 
-"LeftAnkleEnd.rotation = oi_LeftAnkleEnd.value_changed;" + "\n" + 
-"oi_RightHip.set_fraction = v;" + "\n" + 
-"RightHip.rotation = oi_RightHip.value_changed;" + "\n" + 
-"oi_RightKnee.set_fraction = v;" + "\n" + 
-"RightKnee.rotation = oi_RightKnee.value_changed;" + "\n" + 
-"oi_RightAnkle.set_fraction = v;" + "\n" + 
-"RightAnkle.rotation = oi_RightAnkle.value_changed;" + "\n" + 
-"oi_RightAnkleEnd.set_fraction = v;" + "\n" + 
-"RightAnkleEnd.rotation = oi_RightAnkleEnd.value_changed;" + "\n" + 
-"oi_Chest.set_fraction = v;" + "\n" + 
-"Chest.rotation = oi_Chest.value_changed;" + "\n" + 
-"oi_Chest2.set_fraction = v;" + "\n" + 
-"Chest2.rotation = oi_Chest2.value_changed;" + "\n" + 
-"oi_LeftCollar.set_fraction = v;" + "\n" + 
-"LeftCollar.rotation = oi_LeftCollar.value_changed;" + "\n" + 
-"oi_LeftShoulder.set_fraction = v;" + "\n" + 
-"LeftShoulder.rotation = oi_LeftShoulder.value_changed;" + "\n" + 
-"oi_LeftElbow.set_fraction = v;" + "\n" + 
-"LeftElbow.rotation = oi_LeftElbow.value_changed;" + "\n" + 
-"oi_LeftWrist.set_fraction = v;" + "\n" + 
-"LeftWrist.rotation = oi_LeftWrist.value_changed;" + "\n" + 
-"oi_RightCollar.set_fraction = v;" + "\n" + 
-"RightCollar.rotation = oi_RightCollar.value_changed;" + "\n" + 
-"oi_RightShoulder.set_fraction = v;" + "\n" + 
-"RightShoulder.rotation = oi_RightShoulder.value_changed;" + "\n" + 
-"oi_RightElbow.set_fraction = v;" + "\n" + 
-"RightElbow.rotation = oi_RightElbow.value_changed;" + "\n" + 
-"oi_RightWrist.set_fraction = v;" + "\n" + 
-"RightWrist.rotation = oi_RightWrist.value_changed;" + "\n" + 
-"oi_Neck.set_fraction = v;" + "\n" + 
-"Neck.rotation = oi_Neck.value_changed;" + "\n" + 
-"oi_Head.set_fraction = v;" + "\n" + 
-"Head.rotation = oi_Head.value_changed;" + "\n" + 
-"}" + "\n")
+    .addChild(new Script("s03e13e80").setDirectOutput(true).setSourceCode("""
+      
+ecmascript:
+function f03e07a38(v){
+pi_Hips.set_fraction = v;
+Hips.translation = pi_Hips.value_changed;
+oi_Hips.set_fraction = v;
+Hips.rotation = oi_Hips.value_changed;
+oi_LeftHip.set_fraction = v;
+LeftHip.rotation = oi_LeftHip.value_changed;
+oi_LeftKnee.set_fraction = v;
+LeftKnee.rotation = oi_LeftKnee.value_changed;
+oi_LeftAnkle.set_fraction = v;
+LeftAnkle.rotation = oi_LeftAnkle.value_changed;
+oi_LeftAnkleEnd.set_fraction = v;
+LeftAnkleEnd.rotation = oi_LeftAnkleEnd.value_changed;
+oi_RightHip.set_fraction = v;
+RightHip.rotation = oi_RightHip.value_changed;
+oi_RightKnee.set_fraction = v;
+RightKnee.rotation = oi_RightKnee.value_changed;
+oi_RightAnkle.set_fraction = v;
+RightAnkle.rotation = oi_RightAnkle.value_changed;
+oi_RightAnkleEnd.set_fraction = v;
+RightAnkleEnd.rotation = oi_RightAnkleEnd.value_changed;
+oi_Chest.set_fraction = v;
+Chest.rotation = oi_Chest.value_changed;
+oi_Chest2.set_fraction = v;
+Chest2.rotation = oi_Chest2.value_changed;
+oi_LeftCollar.set_fraction = v;
+LeftCollar.rotation = oi_LeftCollar.value_changed;
+oi_LeftShoulder.set_fraction = v;
+LeftShoulder.rotation = oi_LeftShoulder.value_changed;
+oi_LeftElbow.set_fraction = v;
+LeftElbow.rotation = oi_LeftElbow.value_changed;
+oi_LeftWrist.set_fraction = v;
+LeftWrist.rotation = oi_LeftWrist.value_changed;
+oi_RightCollar.set_fraction = v;
+RightCollar.rotation = oi_RightCollar.value_changed;
+oi_RightShoulder.set_fraction = v;
+RightShoulder.rotation = oi_RightShoulder.value_changed;
+oi_RightElbow.set_fraction = v;
+RightElbow.rotation = oi_RightElbow.value_changed;
+oi_RightWrist.set_fraction = v;
+RightWrist.rotation = oi_RightWrist.value_changed;
+oi_Neck.set_fraction = v;
+Neck.rotation = oi_Neck.value_changed;
+oi_Head.set_fraction = v;
+Head.rotation = oi_Head.value_changed;
+}
+
+    """)
       .addField(new field().setName("f03e07a38").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0))
       .addField(new field().setName("pi_Hips").setType(field.TYPE_SFNODE).setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
         .addChild(new PositionInterpolator().setUSE("pi_Hips")))

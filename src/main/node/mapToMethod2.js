@@ -58,6 +58,9 @@ var mapToMethod2 = {
 		"LayerSet" : "addLayerSet",
 		"MetadataString" : "addMetadata",
 		"MetadataSet" : "addChildren"
+	},
+	"field" : {
+		"HAnimJoint" : "addChild"
 	}
 };
 

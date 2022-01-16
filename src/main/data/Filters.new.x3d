@@ -7,28 +7,28 @@
     <meta content='This work presents an innovative solution of the spatial sound in X3DOM framework, that based on a combinational methodology. Specifically, we suggested the enrichment of X3DOM with spatial sound features, using both the X3D sound nodes and the structure of Web Audio API.' name='info'/>
     <meta content='Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman' name='creator'/>
     <meta content='28 October 2020' name='created'/>
-    <meta content='28 October 2020' name='modified'/>
+    <meta content='5 December 2021' name='modified'/>
     <meta content='CHANGELOG.txt' name='reference'/>
     <meta content='credit for audio files' name='TODO'/>
-    <meta content='http://www.medialab.teicrete.gr/minipages/x3domAudio' name='reference'/>
+    <meta content='https://www.medialab.hmu.gr/minipages/x3domAudio' name='reference'/>
     <meta content='https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/Filters.x3d' name='identifier'/>
     <meta content='X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit' name='generator'/>
     <meta content='../license.html' name='license'/>
   </head>
   <Scene>
     <WorldInfo title='Filters.x3d'/>
-    <NavigationInfo DEF='NAV' avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"NONE"'/>
+    <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE" "ANY"'/>
     <Background skyColor='0.2 0.2 0.2'/>
-    <Viewpoint orientation='1 0 0 -0.5' position='0 500 600' retainUserOffsets='true'/>
-    <Transform DEF='Audio1' translation='-200 50 0'>
+    <Viewpoint description='View entire audio model' orientation='1 0 0 -0.5' position='0 500 600' retainUserOffsets='true'/>
+    <Transform DEF='TransformAudio1' translation='-200 50 0'>
       <Shape>
-        <Appearance DEF='audio_emit1'>
+        <Appearance DEF='audio_emit'>
           <Material diffuseColor='0.1 0.1 0.1' emissiveColor='0.8 0.8 0.8' specularColor='0.01 0.01 0.01'/>
         </Appearance>
         <Sphere radius='30.0'/>
       </Shape>
     </Transform>
-    <Transform DEF='Audio2' translation='0 50 0'>
+    <Transform DEF='TransformAudio2' translation='0 50 0'>
       <Shape>
         <Appearance DEF='audio_emit2'>
           <Material diffuseColor='0.1 0.1 0.1' emissiveColor='0.8 0.8 0.8' specularColor='0.01 0.01 0.01'/>
@@ -36,7 +36,7 @@
         <Sphere radius='30.0'/>
       </Shape>
     </Transform>
-    <Transform DEF='Audio3' translation='200 50 0'>
+    <Transform DEF='TransformAudio3' translation='200 50 0'>
       <Shape>
         <Appearance DEF='audio_emit3'>
           <Material diffuseColor='0.1 0.1 0.1' emissiveColor='0.8 0.8 0.8' specularColor='0.01 0.01 0.01'/>
@@ -58,5 +58,39 @@
         <Cylinder radius='500.0'/>
       </Shape>
     </Transform>
+    <ListenerPointSource trackCurrentView='true'/>
+    <StreamAudioDestination>
+      <DynamicsCompressor>
+        <Gain>
+          <SpatialSound DEF='Audio1'>
+            <Gain>
+              <Analyser>
+                <BiquadFilter detune='50.0' frequency='600.0' qualityFactor='30.0' type=''>
+                  <AudioClip description='Techno beat' loop='true' url='"sound/techno_beat.mp3" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/techno_beat.mp3"'/>
+                </BiquadFilter>
+              </Analyser>
+            </Gain>
+          </SpatialSound>
+          <SpatialSound DEF='Audio2'>
+            <Gain>
+              <Analyser>
+                <BiquadFilter detune='15.0' frequency='600.0' qualityFactor='15.0' type=''>
+                  <AudioClip description='Simple beat' loop='true' url='"sound/beat.mp3" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/beat.mp3"'/>
+                </BiquadFilter>
+              </Analyser>
+            </Gain>
+          </SpatialSound>
+          <SpatialSound DEF='Audio3'>
+            <Gain>
+              <Analyser>
+                <BiquadFilter frequency='1000.0' qualityFactor='0.0' type=''>
+                  <AudioClip description='Wobble loop' loop='true' url='"sound/wobble_loop.mp3" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/wobble_loop.mp3"'/>
+                </BiquadFilter>
+              </Analyser>
+            </Gain>
+          </SpatialSound>
+        </Gain>
+      </DynamicsCompressor>
+    </StreamAudioDestination>
   </Scene>
 </X3D>

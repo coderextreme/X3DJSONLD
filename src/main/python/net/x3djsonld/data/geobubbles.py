@@ -51,7 +51,7 @@ newModel=X3D(profile='Immersive',version='3.3',
       field(name='val',accessType='inputOutput',type='SFFloat',value=0),
       field(name='positions',accessType='inputOutput',type='MFVec3d',value=[(0.0015708,0,4),(0,0.0015708,4)]),
       field(name='position',accessType='inputOutput',type='MFVec3d',value=[(0.0015708,0,4),(0,0.0015708,4)])]
-*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
 ),
     ROUTE(fromNode='TourTime',fromField='cycleTime',toNode='RandomTourTime',toField='set_cycle'),
     ROUTE(fromNode='RandomTourTime',fromField='position',toNode='TourPosition',toField='keyValue'),

@@ -36,7 +36,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 4 August 2021 </td>
+			<td> 26 November 2021 </td>
 		</tr>
 		<tr style="color:burntorange">
 			<td style="text-align:right; vertical-align: text-top;"> <i> warning </i> </td>
@@ -48,7 +48,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
-			<td> X3D-Edit 3.3, <a href="https://savage.nps.edu/X3D-Edit" target="_blank">https://savage.nps.edu/X3D-Edit</a> </td>
+			<td> X3D-Edit 4.0, <a href="https://savage.nps.edu/X3D-Edit" target="_blank">https://savage.nps.edu/X3D-Edit</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
@@ -89,21 +89,25 @@ AllAudioGraphNodesTest.prototype = {
     .addMeta((new autoclass.meta()).setName("description").setContent("List of all X3D4 audio graph nodes to test infrastructure and validation support. Absence of attributes means that checking and removal of default values is working."))
     .addMeta((new autoclass.meta()).setName("creator").setContent("Don Brutzman"))
     .addMeta((new autoclass.meta()).setName("created").setContent("25 October 2020"))
-    .addMeta((new autoclass.meta()).setName("modified").setContent("4 August 2021"))
+    .addMeta((new autoclass.meta()).setName("modified").setContent("26 November 2021"))
     .addMeta((new autoclass.meta()).setName("warning").setContent("Developmental test, no actual 3D model expected"))
     .addMeta((new autoclass.meta()).setName("identifier").setContent("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/AllAudioGraphNodesTest.x3d"))
-    .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"))
     .addMeta((new autoclass.meta()).setName("license").setContent("../license.html")))
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.WorldInfo()).setTitle("AllAudioGraphNodes.x3d"))
     .addChild((new autoclass.Shape())
       .setGeometry((new autoclass.Box()))
       .setAppearance((new autoclass.Appearance())
-        .setAcousticProperties((new autoclass.AcousticProperties()))
+        .setAcousticProperties((new autoclass.AcousticProperties()).setDescription("Testing of X3D4 nodes demonstrating W3C Audio API in progress").setDiffuse(0.25).setRefraction(0.5).setSpecular(1))
         .setMaterial((new autoclass.Material()))))
+    .addChild((new autoclass.Sound()).setLocation(0.0,1.6,0.0)
+      .setSource((new autoclass.AudioClip()).setDescription("testing").setUrl(new autoclass.MFString("\"sound/saxophone.mp3\" \"https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3\""))))
+    .addChild((new autoclass.Sound()).setLocation(0.0,1.6,0.0)
+      .setSource((new autoclass.MovieTexture()).setDescription("testing").setUrl(new autoclass.MFString("\"bogus.mpg\" \"https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/bogus.mpg\""))))
     .addChild((new autoclass.SpatialSound())
       .addChild((new autoclass.Analyser())
-        .addChild((new autoclass.AudioDestination())
+        .addChild((new autoclass.StreamAudioDestination())
           .addChild((new autoclass.BiquadFilter())
             .addChild((new autoclass.ChannelMerger())
               .addChild((new autoclass.ChannelSelector())
@@ -119,11 +123,7 @@ AllAudioGraphNodesTest.prototype = {
                               .addChild((new autoclass.ListenerPointSource()))
                               .addChild((new autoclass.MicrophoneSource()))
                               .addChild((new autoclass.OscillatorSource()))
-                              .addChild((new autoclass.StreamAudioSource())))))))))))))))
-    .addChild((new autoclass.Sound()).setLocation(0.0,1.6,0.0)
-      .setSource((new autoclass.AudioClip()).setDescription("testing").setUrl(new autoclass.MFString("\"sound/saxophone.mp3\" \"https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3\""))))
-    .addChild((new autoclass.Sound()).setLocation(0.0,1.6,0.0)
-      .setSource((new autoclass.MovieTexture()).setDescription("testing").setUrl(new autoclass.MFString("\"bogus.mpg\" \"https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/bogus.mpg\"")))));
+                              .addChild((new autoclass.StreamAudioSource()))))))))))))))));
   },
   // end of initialize() method
 
@@ -182,4 +182,3 @@ AllAudioGraphNodesTest.prototype = {
 	}
 }
 new AllAudioGraphNodesTest().main();
-process.exit(0);

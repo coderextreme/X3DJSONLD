@@ -42,7 +42,7 @@ head1->addUnit(*unit5);
 
 Cmeta* meta6 = new Cmeta();
 meta6->setName("title");
-meta6->setContent("HelloWorldProgramOutput.x3d");
+meta6->setContent("Quotes.x3d");
 head1->addMeta(*meta6);
 
 Cmeta* meta7 = new Cmeta();

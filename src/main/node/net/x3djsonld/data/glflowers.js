@@ -79,20 +79,20 @@ glflowers.prototype = {
     .addChild((new autoclass.Background()).setBackUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_back.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png\"")).setBottomUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png\"")).setFrontUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_front.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png\"")).setLeftUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_left.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png\"")).setRightUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_right.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png\"")).setTopUrl(new autoclass.MFString("\"../resources/images/all_probes/stpeters_cross/stpeters_top.png\" \"https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png\"")))
     .addChild((new autoclass.Group())
       .addChild((new autoclass.ExternProtoDeclare()).setName("FlowerProto").setUrl(new autoclass.MFString("\"../data/flowerproto.x3d#FlowerProto\""))
-        .addField((new autoclass.field()).setAccessType("inputOutput").setName("vertex").setType("MFString"))
-        .addField((new autoclass.field()).setAccessType("inputOutput").setName("fragment").setType("MFString")))
+        .addField((new autoclass.field()).setName("vertex").setType("MFString").setAccessType("inputOutput"))
+        .addField((new autoclass.field()).setName("fragment").setType("MFString").setAccessType("inputOutput")))
       .addChild((new autoclass.ProtoDeclare()).setName("flower")
         .setProtoBody((new autoclass.ProtoBody())
           .addChild((new autoclass.Group())
-            .addChild((new autoclass.ProtoInstance()).setName("FlowerProto")
+            .addChild((new autoclass.ProtoInstance())
               .addFieldValue((new autoclass.fieldValue()).setName("vertex").setValue("\"../shaders/gl_flowers_chromatic.vs\""))
               .addFieldValue((new autoclass.fieldValue()).setName("fragment").setValue("\"../shaders/common.fs\""))))))
-      .addChild((new autoclass.ProtoInstance()).setName("flower"))
-      .addChild((new autoclass.ProtoInstance()).setName("flower"))
-      .addChild((new autoclass.ProtoInstance()).setName("flower"))
-      .addChild((new autoclass.ProtoInstance()).setName("flower"))
-      .addChild((new autoclass.ProtoInstance()).setName("flower"))
-      .addChild((new autoclass.ProtoInstance()).setName("flower"))));
+      .addChild((new autoclass.ProtoInstance()))
+      .addChild((new autoclass.ProtoInstance()))
+      .addChild((new autoclass.ProtoInstance()))
+      .addChild((new autoclass.ProtoInstance()))
+      .addChild((new autoclass.ProtoInstance()))
+      .addChild((new autoclass.ProtoInstance()))));
   },
   // end of initialize() method
 
@@ -151,4 +151,3 @@ glflowers.prototype = {
 	}
 }
 new glflowers().main();
-process.exit(0);

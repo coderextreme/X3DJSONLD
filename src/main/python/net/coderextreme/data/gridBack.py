@@ -5,7 +5,7 @@ X3D0.setVersion("3.0")
 head1 = head()
 meta2 = meta()
 meta2.setName("title")
-meta2.setContent("gridBack.json")
+meta2.setContent("gridBack.x3d")
 
 head1.addMeta(meta2)
 meta3 = meta()

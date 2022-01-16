@@ -53,7 +53,7 @@ newModel=X3D(profile='Immersive',version='3.3',
       Script(
         field=[
         field(name='frontUrls',type='MFString',accessType='initializeOnly',value=["rnl_front.png","uffizi_front.png"])]
-*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
 )])])
 ) # X3D model complete
 

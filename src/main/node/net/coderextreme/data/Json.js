@@ -34,7 +34,7 @@ var ProtoInstance4 = null;
         .addUnit((new autoclass.unit()).setName("AngleUnitConversion").setCategory("angle").setConversionFactor(1))
         .addUnit((new autoclass.unit()).setName("LengthUnitConversion").setCategory("length").setConversionFactor(1))
         .addUnit((new autoclass.unit()).setName("ForceFromPoundsToNewtons").setCategory("force").setConversionFactor(4.4482))
-        .addMeta((new autoclass.meta()).setName("title").setContent("HelloWorldProgramOutput.x3d"))
+        .addMeta((new autoclass.meta()).setName("title").setContent("Json.x3d"))
         .addMeta((new autoclass.meta()).setName("info").setContent("continued development and testing in progress"))
         .addMeta((new autoclass.meta()).setName("description").setContent("Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface Library (X3DJSAIL)"))
         .addMeta((new autoclass.meta()).setName("reference").setContent("https://www.web3d.org/specifications/java/X3DJSAIL.html"))

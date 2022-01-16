@@ -34,7 +34,7 @@ import org.web3d.x3d.jsail.Time.*;
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d">HelloWorldProgramOutput.x3d</a> </td>
+			<td> <a href="Json.x3d">Json.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> info </i> </td>
@@ -90,7 +90,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3dv">HelloWorldProgramOutput.x3dv</a> </td>
+			<td> <a href="HelloWorldProgramOutput.x3dv">HelloWorldProgramOutput.x3dv</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -98,7 +98,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.html">HelloWorldProgramOutput.html</a> </td>
+			<td> <a href="HelloWorldProgramOutput.html">HelloWorldProgramOutput.html</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -110,7 +110,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
-			<td> <a href="https://www.web3d.org/specifications/java/examples/../license.html">../license.html</a> </td>
+			<td> <a href="../license.html">../license.html</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> translated </i> </td>
@@ -168,7 +168,7 @@ public class Json
     .addUnit(new unit().setName("AngleUnitConversion").setCategory("angle").setConversionFactor(1.0))
     .addUnit(new unit().setName("LengthUnitConversion").setCategory("length").setConversionFactor(1.0))
     .addUnit(new unit().setName("ForceFromPoundsToNewtons").setCategory("force").setConversionFactor(4.4482))
-    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("HelloWorldProgramOutput.x3d"))
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("Json.x3d"))
     .addMeta(new meta().setName(meta.NAME_INFO       ).setContent("continued development and testing in progress"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface Library (X3DJSAIL)"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://www.web3d.org/specifications/java/X3DJSAIL.html"))
@@ -247,15 +247,17 @@ public class Json
     .addChild(new ROUTE().setFromNode("SpinInterpolator").setFromField("value_changed").setToNode("TextTransform").setToField("rotation"))
     .addChild(new Group("BackgroundGroup")
       .addChild(new Background("GradualBackground"))
-      .addChild(new Script("colorTypeConversionScript").setSourceCode("\n" + 
-"\n" + 
-"ecmascript:" + "\n" + 
-"\n" + 
-"function colorInput (eventValue) // Example source code" + "\n" + 
-"{" + "\n" + 
-"   colorsOutput = new MFColor(eventValue); // assigning value sends output event" + "\n" + 
-"// Browser.print('colorInput=' + eventValue + ', colorsOutput=' + colorsOutput + '\\n');" + "\n" + 
-"}" + "\n")
+      .addChild(new Script("colorTypeConversionScript").setSourceCode("""
+
+ecmascript:
+
+function colorInput (eventValue) // Example source code
+{
+   colorsOutput = new MFColor(eventValue); // assigning value sends output event
+// Browser.print('colorInput=' + eventValue + ', colorsOutput=' + colorsOutput + '\n');
+}
+
+      """)
         .addField(new field().setName("colorInput").setType(field.TYPE_SFCOLOR).setAccessType(field.ACCESSTYPE_INPUTONLY))
         .addField(new field().setName("colorsOutput").setType(field.TYPE_MFCOLOR).setAccessType(field.ACCESSTYPE_OUTPUTONLY)))
       .addChild(new ColorInterpolator("ColorAnimator").setKey(new double[] {0.0,0.5,1.0}).setKeyValue(new MFColor(new double[] {0.9411765,1.0,1.0,0.29411766,0.0,0.50980395,0.9411765,1.0,1.0}))
@@ -322,31 +324,33 @@ public class Json
             .addConnect(new connect().setNodeField("shininess").setProtoField("shininess"))
             .addConnect(new connect().setNodeField("ambientIntensity").setProtoField("ambientIntensity"))))
         .addComments(" Only first node (the node type) is renderable, others are along for the ride ")
-        .addChild(new Script("MaterialModulatorScript").setSourceCode("\n" + 
-"\n" + 
-"ecmascript:" + "\n" + 
-"function initialize ()" + "\n" + 
-"{" + "\n" + 
-"    newColor = diffuseColor; // start with correct color" + "\n" + 
-"}" + "\n" + 
-"function set_enabled (newValue)" + "\n" + 
-"{" + "\n" + 
-"	enabled = newValue;" + "\n" + 
-"}" + "\n" + 
-"function clockTrigger (timeValue)" + "\n" + 
-"{" + "\n" + 
-"    if (!enabled) return;" + "\n" + 
-"    red   = newColor.r;" + "\n" + 
-"    green = newColor.g;" + "\n" + 
-"    blue  = newColor.b;" + "\n" + 
-"\n" + 
-"    // note different modulation rates for each color component, % is modulus operator" + "\n" + 
-"    newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);" + "\n" + 
-"	if (enabled)" + "\n" + 
-"	{" + "\n" + 
-"		Browser.print ('diffuseColor=(' + red + ',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\\n');" + "\n" + 
-"	}" + "\n" + 
-"}" + "\n")
+        .addChild(new Script("MaterialModulatorScript").setSourceCode("""
+
+ecmascript:
+function initialize ()
+{
+    newColor = diffuseColor; // start with correct color
+}
+function set_enabled (newValue)
+{
+	enabled = newValue;
+}
+function clockTrigger (timeValue)
+{
+    if (!enabled) return;
+    red   = newColor.r;
+    green = newColor.g;
+    blue  = newColor.b;
+
+    // note different modulation rates for each color component, % is modulus operator
+    newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);
+	if (enabled)
+	{
+		Browser.print ('diffuseColor=(' + red + ',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\n');
+	}
+}
+
+        """)
           .addField(new field().setName("enabled").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
           .addField(new field().setName("diffuseColor").setType(field.TYPE_SFCOLOR).setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
           .addField(new field().setName("newColor").setType(field.TYPE_SFCOLOR).setAccessType(field.ACCESSTYPE_OUTPUTONLY))

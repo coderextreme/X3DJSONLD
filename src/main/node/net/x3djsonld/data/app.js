@@ -131,4 +131,3 @@ app.prototype = {
 	}
 }
 new app().main();
-process.exit(0);

@@ -307,111 +307,113 @@ public class NancyDivingProtoInstances
                       .addChild(new ProximitySensor("FinTriggerProximitySensor").setSize(5.0,5.0,5.0))
                       .addChild(new TimeSensor("FinClock").setCycleInterval(7.0).setLoop(true))
                       .addChild(new Group()
-                        .addChild(new Script("FinScript").setSourceCode("\n" + 
-"                          " + "\n" + 
-"ecmascript:" + "\n" + 
-"\n" + 
-"var finWarpL;" + "\n" + 
-"var finWarpR;" + "\n" + 
-"\n" + 
-"function initialize ()" + "\n" + 
-"{" + "\n" + 
-"	finWarpL = 0;" + "\n" + 
-"	finWarpR = 0;" + "\n" + 
-"}" + "\n" + 
-"\n" + 
-"function finL(value, timeStamp)" + "\n" + 
-"{" + "\n" + 
-"	if (value == 0)" + "\n" + 
-"	{" + "\n" + 
-"		finWarpL = 0;" + "\n" + 
-"	}" + "\n" + 
-"	else" + "\n" + 
-"	{" + "\n" + 
-"		finWarpL = 1;" + "\n" + 
-"	}" + "\n" + 
-"	//print ('finWarpL' + finWarpL);" + "\n" + 
-"}			 " + "\n" + 
-"\n" + 
-"function finR(value, timeStamp)" + "\n" + 
-"{" + "\n" + 
-"	if (value == 0)" + "\n" + 
-"	{" + "\n" + 
-"		finWarpR = 0;" + "\n" + 
-"	}" + "\n" + 
-"	else" + "\n" + 
-"	{" + "\n" + 
-"		finWarpR = 1;" + "\n" + 
-"	}" + "\n" + 
-"	//print ('finWarpR' + finWarpR);" + "\n" + 
-"}" + "\n" + 
-"function finMove(fraction, timeStamp)" + "\n" + 
-" {  	" + "\n" + 
-"	if (finWarpL == 1)" + "\n" + 
-"	{" + "\n" + 
-"		// level 3 (warp outside) Left					" + "\n" + 
-"		kVL7 = new SFVec3f(1.25, 0, 25);  " + "\n" + 
-"     		kVL8 = new SFVec3f(2.5, 0, 30);" + "\n" + 
-"      		kVL9 = new SFVec3f(3.25, 0, 34);			" + "\n" + 
-"	}	" + "\n" + 
-"	else " + "\n" + 
-"	{		" + "\n" + 
-"		// level -2 (warp inside) Left					" + "\n" + 
-"		kVL7 = new SFVec3f(-1.25, 0, 25);  " + "\n" + 
-"     		kVL8 = new SFVec3f(-2.5, 0, 30);" + "\n" + 
-"      		kVL9 = new SFVec3f(-3.25, 0, 34);	" + "\n" + 
-"	}" + "\n" + 
-"\n" + 
-"	if (finWarpR == 0)" + "\n" + 
-"	{		" + "\n" + 
-"		// level  1 (warp outside ) Right    			" + "\n" + 
-"		kVR7 = new SFVec3f(1.25, 0, 25);  " + "\n" + 
-"     		kVR8 = new SFVec3f(2.5, 0, 30);" + "\n" + 
-"      		kVR9 = new SFVec3f(3.25, 0, 34);	  	" + "\n" + 
-"	" + "\n" + 
-"	}	" + "\n" + 
-"	else " + "\n" + 
-"	{		" + "\n" + 
-"		// level  -2 ( warp inside) Right      				" + "\n" + 
-"		kVR7 = new SFVec3f(-1.25, 0, 25);  " + "\n" + 
-"     		kVR8 = new SFVec3f(-2.5, 0, 30);" + "\n" + 
-"      		kVR9 = new SFVec3f(-3.25, 0, 34);" + "\n" + 
-"	}" + "\n" + 
-"\n" + 
-"	// Left Fin (fixed spine)" + "\n" + 
-"	kVL1 = new SFVec3f(0, 0, 1);  " + "\n" + 
-"     	kVL2 = new SFVec3f(0, 0, 5);" + "\n" + 
-"      	kVL3 = new SFVec3f(0, 0, 8);" + "\n" + 
-"	kVL4 = new SFVec3f(0, 0, 12); " + "\n" + 
-"	kVL5 = new SFVec3f(0, 0, 15); 	" + "\n" + 
-"	kVL6 = new SFVec3f(0, 0, 18);			" + "\n" + 
-"      	keyValueL = new MFVec3f(kVL1, kVL2, kVL3, kVL4, kVL5, kVL6, kVL7, kVL8, kVL9);  " + "\n" + 
-"	" + "\n" + 
-"	// Right Fin (fixed spine)" + "\n" + 
-"	kVR1 = new SFVec3f(0, 0, 1);  " + "\n" + 
-"     	kVR2 = new SFVec3f(0, 0, 5);" + "\n" + 
-"      	kVR3 = new SFVec3f(0, 0, 8);" + "\n" + 
-"	kVR4 = new SFVec3f(0, 0, 12);  	" + "\n" + 
-"	kVR5 = new SFVec3f(0, 0, 15);" + "\n" + 
-"	kVR6 = new SFVec3f(0, 0, 18);			" + "\n" + 
-"      	keyValueR = new MFVec3f(kVR1, kVR2, kVR3, kVR4, kVR5, kVR6, kVR7, kVR8, kVR9);  " + "\n" + 
-"      	" + "\n" + 
-"	//tracePrint ('[keyValueL = ]' + keyValueL);     " + "\n" + 
-"	//tracePrint ('[keyValueR = ]' + keyValueR);     " + "\n" + 
-"			" + "\n" + 
-"}" + "\n" + 
-"\n" + 
-"function set_fraction (value, timeStamp)" + "\n" + 
-"{" + "\n" + 
-"	finMove(value);" + "\n" + 
-"	//tracePrint('time fraction =' + value);" + "\n" + 
-"	" + "\n" + 
-"}" + "\n" + 
-"\n" + 
-"function tracePrint (outputString)" + "\n" + 
-"{" + "\n" + 
-"	if (traceEnabled) Browser.print ('[Fin Move]' + outputString);" + "\n" + 
-"}" + "\n")
+                        .addChild(new Script("FinScript").setSourceCode("""
+                          
+ecmascript:
+
+var finWarpL;
+var finWarpR;
+
+function initialize ()
+{
+	finWarpL = 0;
+	finWarpR = 0;
+}
+
+function finL(value, timeStamp)
+{
+	if (value == 0)
+	{
+		finWarpL = 0;
+	}
+	else
+	{
+		finWarpL = 1;
+	}
+	//print ('finWarpL' + finWarpL);
+}			 
+
+function finR(value, timeStamp)
+{
+	if (value == 0)
+	{
+		finWarpR = 0;
+	}
+	else
+	{
+		finWarpR = 1;
+	}
+	//print ('finWarpR' + finWarpR);
+}
+function finMove(fraction, timeStamp)
+ {  	
+	if (finWarpL == 1)
+	{
+		// level 3 (warp outside) Left					
+		kVL7 = new SFVec3f(1.25, 0, 25);  
+     		kVL8 = new SFVec3f(2.5, 0, 30);
+      		kVL9 = new SFVec3f(3.25, 0, 34);			
+	}	
+	else 
+	{		
+		// level -2 (warp inside) Left					
+		kVL7 = new SFVec3f(-1.25, 0, 25);  
+     		kVL8 = new SFVec3f(-2.5, 0, 30);
+      		kVL9 = new SFVec3f(-3.25, 0, 34);	
+	}
+
+	if (finWarpR == 0)
+	{		
+		// level  1 (warp outside ) Right    			
+		kVR7 = new SFVec3f(1.25, 0, 25);  
+     		kVR8 = new SFVec3f(2.5, 0, 30);
+      		kVR9 = new SFVec3f(3.25, 0, 34);	  	
+	
+	}	
+	else 
+	{		
+		// level  -2 ( warp inside) Right      				
+		kVR7 = new SFVec3f(-1.25, 0, 25);  
+     		kVR8 = new SFVec3f(-2.5, 0, 30);
+      		kVR9 = new SFVec3f(-3.25, 0, 34);
+	}
+
+	// Left Fin (fixed spine)
+	kVL1 = new SFVec3f(0, 0, 1);  
+     	kVL2 = new SFVec3f(0, 0, 5);
+      	kVL3 = new SFVec3f(0, 0, 8);
+	kVL4 = new SFVec3f(0, 0, 12); 
+	kVL5 = new SFVec3f(0, 0, 15); 	
+	kVL6 = new SFVec3f(0, 0, 18);			
+      	keyValueL = new MFVec3f(kVL1, kVL2, kVL3, kVL4, kVL5, kVL6, kVL7, kVL8, kVL9);  
+	
+	// Right Fin (fixed spine)
+	kVR1 = new SFVec3f(0, 0, 1);  
+     	kVR2 = new SFVec3f(0, 0, 5);
+      	kVR3 = new SFVec3f(0, 0, 8);
+	kVR4 = new SFVec3f(0, 0, 12);  	
+	kVR5 = new SFVec3f(0, 0, 15);
+	kVR6 = new SFVec3f(0, 0, 18);			
+      	keyValueR = new MFVec3f(kVR1, kVR2, kVR3, kVR4, kVR5, kVR6, kVR7, kVR8, kVR9);  
+      	
+	//tracePrint ('[keyValueL = ]' + keyValueL);     
+	//tracePrint ('[keyValueR = ]' + keyValueR);     
+			
+}
+
+function set_fraction (value, timeStamp)
+{
+	finMove(value);
+	//tracePrint('time fraction =' + value);
+	
+}
+
+function tracePrint (outputString)
+{
+	if (traceEnabled) Browser.print ('[Fin Move]' + outputString);
+}
+
+                        """)
                           .addField(new field().setName("keyValueR").setType(field.TYPE_MFVEC3F).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
                           .addField(new field().setName("keyValueL").setType(field.TYPE_MFVEC3F).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
                           .addField(new field().setName("set_fraction").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTONLY))
@@ -819,55 +821,57 @@ public class NancyDivingProtoInstances
                                             .addChild(new ROUTE().setFromNode("BubblePath8").setFromField("value_changed").setToNode("bubble8").setToField("set_translation"))
                                             .addChild(new ROUTE().setFromNode("BubblePath9").setFromField("value_changed").setToNode("bubble9").setToField("set_translation"))
                                             .addChild(new ROUTE().setFromNode("BubblePath10").setFromField("value_changed").setToNode("bubble10").setToField("set_translation"))))))))))))))))))))))
-    .addChild(new Script("finWarpScript").setSourceCode("\n" + 
-"      " + "\n" + 
-"ecmascript:" + "\n" + 
-"\n" + 
-"\n" + 
-"var positionX;" + "\n" + 
-"var positionY;" + "\n" + 
-"var positionZ;" + "\n" + 
-"var rotation;" + "\n" + 
-"\n" + 
-"function initialize()" + "\n" + 
-"{" + "\n" + 
-"    	positionX = 0.0;" + "\n" + 
-"	positionY = 0.0;" + "\n" + 
-"	positionZ = 0.0;" + "\n" + 
-"	rotation = 0.0;" + "\n" + 
-"}" + "\n" + 
-"\n" + 
-"function set_rotationL( value, timeStamp)" + "\n" + 
-"{" + "\n" + 
-"	rotationFinL = new SFRotation(positionX, positionY, positionZ, rotation);" + "\n" + 
-"	rotationFinL = value;" + "\n" + 
-"	//print ('rotationFinL[0] ' + rotationFinL[0]);" + "\n" + 
-"	if (rotationFinL[0] <= 0)" + "\n" + 
-"	{" + "\n" + 
-"		fin_warpL = 0;" + "\n" + 
-"	}" + "\n" + 
-"	else" + "\n" + 
-"	{" + "\n" + 
-"		fin_warpL = 1;" + "\n" + 
-"	}" + "\n" + 
-"	" + "\n" + 
-"}" + "\n" + 
-"\n" + 
-"function set_rotationR( value, timeStamp)" + "\n" + 
-"{" + "\n" + 
-"	rotationFinR = new SFRotation(positionX, positionY, positionZ, rotation);" + "\n" + 
-"	rotationFinR = value;" + "\n" + 
-"	//print ('rotationFin[0] ' + rotationFinR[0]);" + "\n" + 
-"	if (rotationFinR[0] <= 0)" + "\n" + 
-"	{" + "\n" + 
-"		fin_warpR = 0;" + "\n" + 
-"	}" + "\n" + 
-"	else" + "\n" + 
-"	{" + "\n" + 
-"		fin_warpR = 1;" + "\n" + 
-"	}" + "\n" + 
-"	" + "\n" + 
-"}" + "\n")
+    .addChild(new Script("finWarpScript").setSourceCode("""
+      
+ecmascript:
+
+
+var positionX;
+var positionY;
+var positionZ;
+var rotation;
+
+function initialize()
+{
+    	positionX = 0.0;
+	positionY = 0.0;
+	positionZ = 0.0;
+	rotation = 0.0;
+}
+
+function set_rotationL( value, timeStamp)
+{
+	rotationFinL = new SFRotation(positionX, positionY, positionZ, rotation);
+	rotationFinL = value;
+	//print ('rotationFinL[0] ' + rotationFinL[0]);
+	if (rotationFinL[0] <= 0)
+	{
+		fin_warpL = 0;
+	}
+	else
+	{
+		fin_warpL = 1;
+	}
+	
+}
+
+function set_rotationR( value, timeStamp)
+{
+	rotationFinR = new SFRotation(positionX, positionY, positionZ, rotation);
+	rotationFinR = value;
+	//print ('rotationFin[0] ' + rotationFinR[0]);
+	if (rotationFinR[0] <= 0)
+	{
+		fin_warpR = 0;
+	}
+	else
+	{
+		fin_warpR = 1;
+	}
+	
+}
+
+    """)
       .addField(new field().setName("set_rotationL").setType(field.TYPE_SFROTATION).setAccessType(field.ACCESSTYPE_INPUTONLY))
       .addField(new field().setName("set_rotationR").setType(field.TYPE_SFROTATION).setAccessType(field.ACCESSTYPE_INPUTONLY))
       .addField(new field().setName("fin_warpL").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_OUTPUTONLY))

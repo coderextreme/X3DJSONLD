@@ -30,7 +30,7 @@ newModel=X3D(profile='Full',version='4.0',
     meta(content='This work presents an innovative solution of the spatial sound in X3DOM framework, that based on a combinational methodology. Specifically, we suggested the enrichment of X3DOM with spatial sound features, using both the X3D sound nodes and the structure of Web Audio API.',name='info'),
     meta(content='Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman',name='creator'),
     meta(content='28 October 2020',name='created'),
-    meta(content='7 August 2021',name='modified'),
+    meta(content='5 December 2021',name='modified'),
     meta(content='CHANGELOG.txt',name='reference'),
     meta(content='credit for audio files',name='TODO'),
     meta(content='https://www.medialab.hmu.gr/minipages/x3domAudio',name='reference'),
@@ -42,10 +42,10 @@ newModel=X3D(profile='Full',version='4.0',
     WorldInfo(title='SpatialAudioCameraAnimation.x3d'),
     NavigationInfo(id_='NAV'),
     Background(backUrl=["images/generic/BK1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png"],bottomUrl=["images/generic/DN1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png"],frontUrl=["images/generic/FR1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png"],leftUrl=["images/generic/LF1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/LF1.png"],rightUrl=["images/generic/RT1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/RT1.png"],topUrl=["images/generic/UP1.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png"]),
-    Viewpoint(DEF='Camera001',description='Viewpoint is like camera, prepositioned in locations (and directions) of interest. In this example the camera is the "ears of the user". So, if the trackCurrentView field from ListenerPointSource is TRUE then position and orientation matches the users current view',farDistance=0,nearDistance=1.000000,orientation=(1.000000,0.000000,-0.000000,-0.523599),position=(0.000000,2000.000000,3500.000000)),
+    Viewpoint(DEF='Camera001',description='Viewpoint is like camera, prepositioned in locations (and directions) of interest. In this example the camera is the "ears of the user". So, if the trackCurrentView field from ListenerPointSource is TRUE then position and orientation matches the users current view',orientation=(1,0,0,-0.523599),position=(0,2000,3500)),
     TimeSensor(DEF='TIMER',cycleInterval=33.333332,loop=True),
     PositionInterpolator(DEF='Camera001-POS-INTERP',key=[0,0.25,0.5,0.75,1],keyValue=[(0,2000,3500),(0,2000,0),(0,2000,-3500),(0,2000,0),(0,2000,3500)]),
-    OrientationInterpolator(DEF='Camera001-ROT-INTERP',key=[0,0.25,0.5,0.75,1],keyValue=[(1.000000,0.000000,-0.000000,-0.523599),(0.999990,0.003554,0.002727,-1.309007),(0.000000,-0.965926,-0.258819,-3.141593),(0.002282,-0.793351,-0.608760,-3.135645),(1.000000,-0.000001,-0.000000,-0.523599)]),
+    OrientationInterpolator(DEF='Camera001-ROT-INTERP',key=[0,0.25,0.5,0.75,1],keyValue=[(1,0,0,-0.523599),(0.999990,0.003554,0.002727,-1.309007),(0,-0.965926,-0.258819,-3.141593),(0.002282,-0.793351,-0.608760,-3.135645),(1,-0.000001,-0,-0.523599)]),
     ROUTE(fromField='fraction_changed',fromNode='TIMER',toField='set_fraction',toNode='Camera001-POS-INTERP'),
     ROUTE(fromField='value_changed',fromNode='Camera001-POS-INTERP',toField='set_position',toNode='Camera001'),
     ROUTE(fromField='fraction_changed',fromNode='TIMER',toField='set_fraction',toNode='Camera001-ROT-INTERP'),
@@ -56,7 +56,7 @@ newModel=X3D(profile='Full',version='4.0',
         appearance=Appearance(DEF='WireColor',
           material=Material(diffuseColor=(0.122,0.114,0.125))),
         geometry=Box(size=(2000,1,2000)))]),
-    Transform(DEF='Audio1Transform',translation=(-933.123474,0.000000,-926.253235),
+    Transform(DEF='TransformAudio1',translation=(-933.123474,0,-926.253235),
       children=[
       Shape(
         appearance=Appearance(DEF='WireColor_1',
@@ -70,8 +70,8 @@ newModel=X3D(profile='Full',version='4.0',
             appearance=Appearance(
               material=Material(ambientIntensity=0.0933,diffuseColor=(1,1,1),shininess=0.51,specularColor=(0.46,0.46,0.46))),
             geometry=Text(string=["Violin"],
-              fontStyle=FontStyle(style_='BOLD')))])])]),
-    Transform(DEF='Audio2',translation=(933.475586,0.000000,924.423218),
+              fontStyle=FontStyle(DEF='ModelFontStyle',family=["Times","SERIF"],style_='BOLD')))])])]),
+    Transform(DEF='TransformAudio2',translation=(933.475586,0,924.423218),
       children=[
       Shape(
         appearance=Appearance(DEF='WireColor_2',
@@ -85,7 +85,7 @@ newModel=X3D(profile='Full',version='4.0',
             appearance=Appearance(
               material=Material(ambientIntensity=0.0933,diffuseColor=(1,1,1),shininess=0.51,specularColor=(0.46,0.46,0.46))),
             geometry=Text(string=["Saxophone"],
-              fontStyle=FontStyle(family=["Times"],style_='BOLD')))])])]),
+              fontStyle=FontStyle(USE='ModelFontStyle')))])])]),
     ListenerPointSource(id_='ListenerPointSource',trackCurrentView=True),
     StreamAudioDestination(id_='AudioDestination',
       children=[
@@ -93,12 +93,12 @@ newModel=X3D(profile='Full',version='4.0',
         children=[
         Gain(id_='Gain1',
           children=[
-          AudioClip(id_='AudioClip1',loop=True,pauseTime=-1,resumeTime=-1,stopTime=-1,url=["sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"])])]),
+          AudioClip(description='Violin',id_='AudioClip1',loop=True,url=["sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"])])]),
       SpatialSound(DEF='Audio2',id_='SpatialSound2',
         children=[
         Gain(id_='Gain2',
           children=[
-          AudioClip(id_='AudioClip2',loop=True,pauseTime=-1,resumeTime=-1,stopTime=-1,url=["sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"])])])])])
+          AudioClip(description='Saxophone',id_='AudioClip2',loop=True,url=["sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"])])])])])
 ) # X3D model complete
 
 ###############################################

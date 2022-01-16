@@ -148,40 +148,43 @@ public class pp3
                 .setGeometry(new Text("CenterString"))))
             .addChild(new StringSensor("CenterSensor").setEnabled(false))
             .addChild(new TouchSensor("CenterTouch").setDescription("touch to activate"))))
-        .addChild(new Script("RightSingleToMultiString").setSourceCode("\n" + 
-"ecmascript:" + "\n" + 
-"\n" + 
-"function initialize() {" + "\n" + 
-"	rightlines = new MFString(\"\");" + "\n" + 
-"}" + "\n" + 
-"\n" + 
-"function set_rightstring(rightstr) {" + "\n" + 
-"	rightlines = new MFString(rightstr);" + "\n" + 
-"}" + "\n")
+        .addChild(new Script("RightSingleToMultiString").setSourceCode("""
+ecmascript:
+
+function initialize() {
+	rightlines = new MFString("");
+}
+
+function set_rightstring(rightstr) {
+	rightlines = new MFString(rightstr);
+}
+""")
           .addField(new field().setName("set_rightstring").setType(field.TYPE_SFSTRING).setAccessType(field.ACCESSTYPE_INPUTONLY))
           .addField(new field().setName("rightlines").setType(field.TYPE_MFSTRING).setAccessType(field.ACCESSTYPE_OUTPUTONLY)))
-        .addChild(new Script("UpSingleToMultiString").setSourceCode("\n" + 
-"ecmascript:" + "\n" + 
-"\n" + 
-"function initialize() {" + "\n" + 
-"	uplines = new MFString(\"\");" + "\n" + 
-"}" + "\n" + 
-"\n" + 
-"function set_upstring(upstr) {" + "\n" + 
-"	uplines = new MFString(upstr);" + "\n" + 
-"}" + "\n")
+        .addChild(new Script("UpSingleToMultiString").setSourceCode("""
+ecmascript:
+
+function initialize() {
+	uplines = new MFString("");
+}
+
+function set_upstring(upstr) {
+	uplines = new MFString(upstr);
+}
+""")
           .addField(new field().setName("set_upstring").setType(field.TYPE_SFSTRING).setAccessType(field.ACCESSTYPE_INPUTONLY))
           .addField(new field().setName("uplines").setType(field.TYPE_MFSTRING).setAccessType(field.ACCESSTYPE_OUTPUTONLY)))
-        .addChild(new Script("CenterSingleToMultiString").setSourceCode("\n" + 
-"ecmascript:" + "\n" + 
-"\n" + 
-"function initialize() {" + "\n" + 
-"	centerlines = new MFString(\"\");" + "\n" + 
-"}" + "\n" + 
-"\n" + 
-"function set_centerstring(centerstr) {" + "\n" + 
-"	centerlines = new MFString(centerstr);" + "\n" + 
-"}" + "\n")
+        .addChild(new Script("CenterSingleToMultiString").setSourceCode("""
+ecmascript:
+
+function initialize() {
+	centerlines = new MFString("");
+}
+
+function set_centerstring(centerstr) {
+	centerlines = new MFString(centerstr);
+}
+""")
           .addField(new field().setName("set_centerstring").setType(field.TYPE_SFSTRING).setAccessType(field.ACCESSTYPE_INPUTONLY))
           .addField(new field().setName("centerlines").setType(field.TYPE_MFSTRING).setAccessType(field.ACCESSTYPE_OUTPUTONLY)))
         .addChild(new ROUTE().setFromNode("CenterSensor").setFromField("enteredText").setToNode("CenterSingleToMultiString").setToField("set_centerstring"))

@@ -64,7 +64,7 @@
           },
           {
             "@name":"translated",
-            "@content":"01 January 2022"
+            "@content":"16 January 2022"
           },
           {
             "@name":"generator",
@@ -811,7 +811,7 @@
 "            else",
 "            {",
 "                // using constructor SFRotation (SFVec3f fromVector, SFVec3f toVector)",
-"                // see X3D ECMAScript binding Table 7.18 — SFRotation instance creation functions",
+"                // see X3D ECMAScript binding Table 7.18 â€” SFRotation instance creation functions",
 "",
 "                // test if difference vector is zero, if so maintain previous rotation",
 "                var shotVector = ViewpointNode.position.subtract(shots[i].moves[j].goalAimPoint).normalize();",

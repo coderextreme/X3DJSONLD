@@ -44,7 +44,7 @@
         "meta": [
           {
             "@name":"title",
-            "@content":"HelloWorldProgramOutput.x3d"
+            "@content":"Quotes.x3d"
           },
           {
             "@name":"description",
@@ -136,7 +136,7 @@
           },
           {
             "@name":"translated",
-            "@content":"15 January 2022"
+            "@content":"16 January 2022"
           },
           {
             "@name":"generator",

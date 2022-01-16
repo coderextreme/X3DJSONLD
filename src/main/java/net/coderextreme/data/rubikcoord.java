@@ -52,7 +52,7 @@ ProtoInstance ProtoInstance5 = null;
 ProtoInstance ProtoInstance6 = null;
       X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("3.3")
       .setHead(new head()
-        .addMeta(new meta().setName("title").setContent("rubik2x2x2.x3d"))
+        .addMeta(new meta().setName("title").setContent("rubikcoord.x3d"))
         .addMeta(new meta().setName("creator").setContent("John Carlson"))
         .addMeta(new meta().setName("generator").setContent("manual"))
         .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/rubik.x3d"))

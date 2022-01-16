@@ -41,12 +41,12 @@ newModel=X3D(profile='Immersive',version='4.0',
     children=[
     Viewpoint(position=(0,5,100),description='Switch background and images texture'),
     TextureBackground(
-      left=ImageTexture(DEF='leftBack',url=["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"]),
-      right=ImageTexture(DEF='rightBack',url=["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"]),
-      front=ImageTexture(DEF='frontBack',url=["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"]),
-      back=ImageTexture(DEF='backBack',url=["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"]),
-      top=ImageTexture(DEF='topBack',url=["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"]),
-      bottom=ImageTexture(DEF='bottomBack',url=["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"])),
+      leftTexture=ImageTexture(DEF='leftBackTexture',url=["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"]),
+      rightTexture=ImageTexture(DEF='rightBackTexture',url=["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"]),
+      frontTexture=ImageTexture(DEF='frontBackTexture',url=["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"]),
+      backTexture=ImageTexture(DEF='backBackTexture',url=["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"]),
+      topTexture=ImageTexture(DEF='topBackTexture',url=["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"]),
+      bottomTexture=ImageTexture(DEF='bottomBackTexture',url=["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"])),
     Transform(
       children=[
       Shape(
@@ -95,16 +95,16 @@ newModel=X3D(profile='Immersive',version='4.0',
         field(name='bottom_changed',type='MFString',accessType='outputOnly'),
         field(name='set_fraction',type='SFFloat',accessType='inputOnly'),
         field(name='old',type='SFInt32',accessType='inputOutput',value=-1)]
-*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
 ),
       TimeSensor(DEF='Clock',cycleInterval=45,loop=True),
       ROUTE(fromNode='Clock',fromField='fraction_changed',toNode='UrlSelector',toField='set_fraction'),
-      ROUTE(fromNode='UrlSelector',fromField='front_changed',toNode='frontBack',toField='url'),
-      ROUTE(fromNode='UrlSelector',fromField='back_changed',toNode='backBack',toField='url'),
-      ROUTE(fromNode='UrlSelector',fromField='left_changed',toNode='leftBack',toField='url'),
-      ROUTE(fromNode='UrlSelector',fromField='right_changed',toNode='rightBack',toField='url'),
-      ROUTE(fromNode='UrlSelector',fromField='top_changed',toNode='topBack',toField='url'),
-      ROUTE(fromNode='UrlSelector',fromField='bottom_changed',toNode='bottomBack',toField='url'),
+      ROUTE(fromNode='UrlSelector',fromField='front_changed',toNode='frontBackTexture',toField='url'),
+      ROUTE(fromNode='UrlSelector',fromField='back_changed',toNode='backBackTexture',toField='url'),
+      ROUTE(fromNode='UrlSelector',fromField='left_changed',toNode='leftBackTexture',toField='url'),
+      ROUTE(fromNode='UrlSelector',fromField='right_changed',toNode='rightBackTexture',toField='url'),
+      ROUTE(fromNode='UrlSelector',fromField='top_changed',toNode='topBackTexture',toField='url'),
+      ROUTE(fromNode='UrlSelector',fromField='bottom_changed',toNode='bottomBackTexture',toField='url'),
       ROUTE(fromNode='UrlSelector',fromField='front_changed',toNode='frontShader',toField='url'),
       ROUTE(fromNode='UrlSelector',fromField='back_changed',toNode='backShader',toField='url'),
       ROUTE(fromNode='UrlSelector',fromField='left_changed',toNode='leftShader',toField='url'),

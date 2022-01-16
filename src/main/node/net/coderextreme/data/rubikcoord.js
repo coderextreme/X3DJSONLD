@@ -21,7 +21,7 @@ var ProtoInstance5 = null;
 var ProtoInstance6 = null;
       var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
       .setHead((new autoclass.head())
-        .addMeta((new autoclass.meta()).setName("title").setContent("rubik2x2x2.x3d"))
+        .addMeta((new autoclass.meta()).setName("title").setContent("rubikcoord.x3d"))
         .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("manual"))
         .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/rubik.x3d"))

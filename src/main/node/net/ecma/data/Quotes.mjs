@@ -100,7 +100,7 @@ var X3D0 =  new X3D({
           meta : new MFNode([
             new meta({
               name : new SFString("title"),
-              content : new SFString("HelloWorldProgramOutput.x3d")}),
+              content : new SFString("Quotes.x3d")}),
 
             new meta({
               name : new SFString("description"),

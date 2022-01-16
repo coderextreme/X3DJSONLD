@@ -31,7 +31,7 @@ var ProtoInstance6 = null;
         .addComponent((new autoclass.component()).setName("Layering").setLevel(1))
         .addUnit((new autoclass.unit()).setName("AngleUnitConversion").setCategory("angle").setConversionFactor(1))
         .addUnit((new autoclass.unit()).setName("LengthUnitConversion").setCategory("length").setConversionFactor(1))
-        .addMeta((new autoclass.meta()).setName("title").setContent("HelloWorldProgramOutput.x3d"))
+        .addMeta((new autoclass.meta()).setName("title").setContent("HelloWorldProgramOutputCanonical.x3d"))
         .addMeta((new autoclass.meta()).setName("description").setContent("Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface Library (X3DJSAIL)"))
         .addMeta((new autoclass.meta()).setName("reference").setContent("https://www.web3d.org/specifications/java/X3DJSAIL.html"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("HelloWorldProgramOutput.java"))

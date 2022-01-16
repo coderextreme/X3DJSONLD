@@ -111,7 +111,7 @@ GridXZ_20x20Fixed.prototype = {
     .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"))
     .addMeta((new autoclass.meta()).setName("license").setContent("../../license.html")))
   .setScene((new autoclass.Scene())
-    .addChild((new autoclass.Viewpoint()).setDescription("XZ horizontal grid, perpendicular to Y axis (seen from 0 10 25)").setPosition(0.0,10.0,25.0).setOrientation(1.0,0.0,0.0,-0.4))
+    .addChild((new autoclass.Viewpoint()).setDescription("XZ horizontal grid, perpendicular to Y axis (seen from 0 10 25)").setOrientation(1.0,0.0,0.0,-0.4).setPosition(0.0,10.0,25.0))
     .addChild((new autoclass.Transform("GridLocation"))
       .addChild((new autoclass.Group())
         .addChild((new autoclass.Shape("LinesAlignedAlongZ"))
@@ -119,7 +119,7 @@ GridXZ_20x20Fixed.prototype = {
             .setCoord((new autoclass.Coordinate("EndPoints")).setPoint(this.EndPoints_7_13_point))
             .setColor((new autoclass.Color()).setColor(new autoclass.MFColor(java.newArray("float", [0.4,0.4,0.4,0.8,0.2,0.0,0.4,0.1,0.05]))))))
         .addChild((new autoclass.Transform("LinesAlignedAlongX")).setRotation(0.0,1.0,0.0,1.57079)
-          .addChild((new autoclass.Shape()).setUSE("LinesAlignedAlongZ")))
+          .addChild((new autoclass.Shape())))
         .addChild((new autoclass.Transform()).setTranslation(0.0,-0.5,0.0)
           .addChild((new autoclass.Billboard())
             .addChild((new autoclass.Shape())
@@ -131,26 +131,26 @@ GridXZ_20x20Fixed.prototype = {
           .addChild((new autoclass.Billboard())
             .addChild((new autoclass.Shape())
               .setGeometry((new autoclass.Text()).setString(new autoclass.MFString("\"10 0 10\""))
-                .setFontStyle((new autoclass.FontStyle()).setUSE("FS4")))
-              .setAppearance((new autoclass.Appearance()).setUSE("DefaultAppearance")))))
+                .setFontStyle((new autoclass.FontStyle())))
+              .setAppearance((new autoclass.Appearance())))))
         .addChild((new autoclass.Transform()).setTranslation(10.0,-0.5,-10.0)
           .addChild((new autoclass.Billboard())
             .addChild((new autoclass.Shape())
               .setGeometry((new autoclass.Text()).setString(new autoclass.MFString("\"10 0 -10\""))
-                .setFontStyle((new autoclass.FontStyle()).setUSE("FS4")))
-              .setAppearance((new autoclass.Appearance()).setUSE("DefaultAppearance")))))
+                .setFontStyle((new autoclass.FontStyle())))
+              .setAppearance((new autoclass.Appearance())))))
         .addChild((new autoclass.Transform()).setTranslation(-10.0,-0.5,10.0)
           .addChild((new autoclass.Billboard())
             .addChild((new autoclass.Shape())
               .setGeometry((new autoclass.Text()).setString(new autoclass.MFString("\"-10 0 10\""))
-                .setFontStyle((new autoclass.FontStyle()).setUSE("FS4")))
-              .setAppearance((new autoclass.Appearance()).setUSE("DefaultAppearance")))))
+                .setFontStyle((new autoclass.FontStyle())))
+              .setAppearance((new autoclass.Appearance())))))
         .addChild((new autoclass.Transform()).setTranslation(-10.0,-0.5,-10.0)
           .addChild((new autoclass.Billboard())
             .addChild((new autoclass.Shape())
               .setGeometry((new autoclass.Text()).setString(new autoclass.MFString("\"-10 0 -10\""))
-                .setFontStyle((new autoclass.FontStyle()).setUSE("FS4")))
-              .setAppearance((new autoclass.Appearance()).setUSE("DefaultAppearance"))))))));
+                .setFontStyle((new autoclass.FontStyle())))
+              .setAppearance((new autoclass.Appearance()))))))));
   },
   // end of initialize() method
 
@@ -209,4 +209,3 @@ GridXZ_20x20Fixed.prototype = {
 	}
 }
 new GridXZ_20x20Fixed().main();
-process.exit(0);

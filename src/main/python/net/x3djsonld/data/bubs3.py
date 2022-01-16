@@ -48,7 +48,7 @@ newModel=X3D(profile='Immersive',version='3.3',
         field(name='velocity',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
         field(name='scalvel',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
         field(name='set_fraction',accessType='inputOnly',type='SFFloat')]
-*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
 ),
       TimeSensor(DEF='DECLBubble_bubbleA_bubbleClock',cycleInterval=10,loop=True),
       ROUTE(fromNode='DECLBubble_bubbleA_bounce',fromField='translation_changed',toNode='DECLBubble_transform',toField='set_translation'),
@@ -67,7 +67,7 @@ newModel=X3D(profile='Immersive',version='3.3',
         field(name='velocity',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
         field(name='scalvel',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
         field(name='set_fraction',accessType='inputOnly',type='SFFloat')]
-*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
 ),
       TimeSensor(DEF='DECLBubble_bubbleB_bubbleClock',cycleInterval=10,loop=True),
       ROUTE(fromNode='DECLBubble_bubbleB_bounce',fromField='translation_changed',toNode='DECLBubble_transform',toField='set_translation'),
@@ -86,7 +86,7 @@ newModel=X3D(profile='Immersive',version='3.3',
         field(name='velocity',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
         field(name='scalvel',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
         field(name='set_fraction',accessType='inputOnly',type='SFFloat')]
-*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
 ),
       TimeSensor(DEF='DECLBubble_bubbleC_bubbleClock',cycleInterval=10,loop=True),
       ROUTE(fromNode='DECLBubble_bubbleC_bounce',fromField='translation_changed',toNode='DECLBubble_transform',toField='set_translation'),
@@ -105,7 +105,7 @@ newModel=X3D(profile='Immersive',version='3.3',
         field(name='velocity',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
         field(name='scalvel',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
         field(name='set_fraction',accessType='inputOnly',type='SFFloat')]
-*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
 ),
       TimeSensor(DEF='DECLBubble_bubbleD_bubbleClock',cycleInterval=10,loop=True),
       ROUTE(fromNode='DECLBubble_bubbleD_bounce',fromField='translation_changed',toNode='DECLBubble_transform',toField='set_translation'),

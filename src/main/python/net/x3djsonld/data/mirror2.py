@@ -88,7 +88,7 @@ newModel=X3D(profile='Immersive',version='4.0',
         field(name='bottom_changed',type='MFString',accessType='outputOnly'),
         field(name='set_fraction',type='SFFloat',accessType='inputOnly'),
         field(name='old',type='SFInt32',accessType='inputOutput',value=-1)]
-*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
 ),
       TimeSensor(DEF='Clock',cycleInterval=45,loop=True),
       ROUTE(fromNode='Clock',fromField='fraction_changed',toNode='UrlSelector',toField='set_fraction'),

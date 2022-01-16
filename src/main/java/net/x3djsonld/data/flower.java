@@ -88,81 +88,82 @@ public class flower
           .setMaterial(new Material().setDiffuseColor(0.9,0.3,0.3).setShininess(0.145).setSpecularColor(0.8,0.8,0.8).setTransparency(0.1)))
         .setGeometry(new IndexedFaceSet("Orbit").setDEF("Orbit").setCcw(false).setConvex(false).setCoordIndex(new int[] {0,1,2,-1})
           .setCoord(new Coordinate("OrbitCoordinates").setPoint(new MFVec3f(new double[] {0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0}))))))
-    .addChild(new Script("OrbitScript").setSourceCode("\n" + 
-"ecmascript:" + "\n" + 
-"\n" + 
-"var e = 5;" + "\n" + 
-"var f = 5;" + "\n" + 
-"var g = 5;" + "\n" + 
-"var h = 5;" + "\n" + 
-"var resolution = 100;" + "\n" + 
-"var t = 0;" + "\n" + 
-"var p = 0;" + "\n" + 
-"\n" + 
-"function initialize() {" + "\n" + 
-"     generateCoordinates(resolution);" + "\n" + 
-"     var localci = [];" + "\n" + 
-"     for ( i = 0; i < resolution-1; i++) {" + "\n" + 
-"     	for ( j = 0; j < resolution-1; j++) {" + "\n" + 
-"	     localci.push(i*resolution+j);" + "\n" + 
-"	     localci.push(i*resolution+j+1);" + "\n" + 
-"	     localci.push((i+1)*resolution+j+1);" + "\n" + 
-"	     localci.push((i+1)*resolution+j);" + "\n" + 
-"	     localci.push(-1);" + "\n" + 
-"	}" + "\n" + 
-"    }" + "\n" + 
-"    coordIndexes = new MFInt32(localci);" + "\n" + 
-"}" + "\n" + 
-"\n" + 
-"function generateCoordinates(resolution) {" + "\n" + 
-"     var theta = 0.0;" + "\n" + 
-"     var phi = 0.0;" + "\n" + 
-"     var delta = (2 * 3.141592653) / (resolution-1);" + "\n" + 
-"     var localc = [];" + "\n" + 
-"     for ( i = 0; i < resolution; i++) {" + "\n" + 
-"     	for ( j = 0; j < resolution; j++) {" + "\n" + 
-"		var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);" + "\n" + 
-"		localc.push(new SFVec3f(" + "\n" + 
-"			rho * Math.cos(phi) * Math.cos(theta)," + "\n" + 
-"			rho * Math.cos(phi) * Math.sin(theta)," + "\n" + 
-"			rho * Math.sin(phi)" + "\n" + 
-"		));" + "\n" + 
-"		theta += delta;" + "\n" + 
-"	}" + "\n" + 
-"	phi += delta;" + "\n" + 
-"     }" + "\n" + 
-"     coordinates = new MFVec3f(localc);" + "\n" + 
-"}" + "\n" + 
-"\n" + 
-"function set_fraction(fraction, eventTime) {" + "\n" + 
-"	t += 0.5;" + "\n" + 
-"	p += 0.5;" + "\n" + 
-"	var choice = Math.floor(Math.random() * 4);" + "\n" + 
-"	switch (choice) {" + "\n" + 
-"	case 0:" + "\n" + 
-"		e += Math.floor(Math.random() * 2) * 2 - 1;" + "\n" + 
-"		break;" + "\n" + 
-"	case 1:" + "\n" + 
-"		f += Math.floor(Math.random() * 2) * 2 - 1;" + "\n" + 
-"		break;" + "\n" + 
-"	case 2:" + "\n" + 
-"		g += Math.floor(Math.random() * 2) * 2 - 1;" + "\n" + 
-"		break;" + "\n" + 
-"	case 3:" + "\n" + 
-"		h += Math.floor(Math.random() * 2) * 2 - 1;" + "\n" + 
-"		break;" + "\n" + 
-"	}" + "\n" + 
-"	if (f < 1) {" + "\n" + 
-"		f = 10;" + "\n" + 
-"	}" + "\n" + 
-"	if (g < 1) {" + "\n" + 
-"		g = 4;" + "\n" + 
-"	}" + "\n" + 
-"	if (h < 1) {" + "\n" + 
-"		h = 4;" + "\n" + 
-"	}" + "\n" + 
-"	generateCoordinates(resolution);" + "\n" + 
-"}" + "\n")
+    .addChild(new Script("OrbitScript").setSourceCode("""
+ecmascript:
+
+var e = 5;
+var f = 5;
+var g = 5;
+var h = 5;
+var resolution = 100;
+var t = 0;
+var p = 0;
+
+function initialize() {
+     generateCoordinates(resolution);
+     var localci = [];
+     for ( i = 0; i < resolution-1; i++) {
+     	for ( j = 0; j < resolution-1; j++) {
+	     localci.push(i*resolution+j);
+	     localci.push(i*resolution+j+1);
+	     localci.push((i+1)*resolution+j+1);
+	     localci.push((i+1)*resolution+j);
+	     localci.push(-1);
+	}
+    }
+    coordIndexes = new MFInt32(localci);
+}
+
+function generateCoordinates(resolution) {
+     var theta = 0.0;
+     var phi = 0.0;
+     var delta = (2 * 3.141592653) / (resolution-1);
+     var localc = [];
+     for ( i = 0; i < resolution; i++) {
+     	for ( j = 0; j < resolution; j++) {
+		var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
+		localc.push(new SFVec3f(
+			rho * Math.cos(phi) * Math.cos(theta),
+			rho * Math.cos(phi) * Math.sin(theta),
+			rho * Math.sin(phi)
+		));
+		theta += delta;
+	}
+	phi += delta;
+     }
+     coordinates = new MFVec3f(localc);
+}
+
+function set_fraction(fraction, eventTime) {
+	t += 0.5;
+	p += 0.5;
+	var choice = Math.floor(Math.random() * 4);
+	switch (choice) {
+	case 0:
+		e += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 1:
+		f += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 2:
+		g += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 3:
+		h += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	}
+	if (f < 1) {
+		f = 10;
+	}
+	if (g < 1) {
+		g = 4;
+	}
+	if (h < 1) {
+		h = 4;
+	}
+	generateCoordinates(resolution);
+}
+""")
       .addField(new field().setName("set_fraction").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTONLY))
       .addField(new field().setName("coordinates").setType(field.TYPE_MFVEC3F).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
       .addField(new field().setName("coordIndexes").setType(field.TYPE_MFINT32).setAccessType(field.ACCESSTYPE_OUTPUTONLY))

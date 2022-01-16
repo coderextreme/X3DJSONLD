@@ -70,23 +70,27 @@ public class browser
     .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/X3DJSONLD/browser.x3d"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("a script test with embedded \\n between single quotes, a double backslash \\\\\\\\ a backslash \\\\ and a closing quote \"")))
   .setScene(new Scene()
-    .addChild(new Script("Browser").setSourceCode("\n" + 
-"ecmascript:" + "\n" + 
-"                function initialize() {" + "\n" + 
-"		    Browser.print('DUDES\\n'+'\"DUDETTES');" + "\n" + 
-"                }" + "\n"))
-    .addChild(new Script("Clouds").setSourceCode("\n" + 
-"        " + "\n" + 
-"ecmascript:" + "\n" + 
-"\n" + 
-"\n" + 
-"function cumulustranslation() // These values designate the boundary location of the cloud" + "\n" + 
-"{" + "\n" + 
-"var xxx = ' '+' '+" + "\n" + 
-"'	Transform		\\n'+" + "\n" + 
-"'    ' + '               	\\n';" + "\n" + 
-"\n" + 
-"}" + "\n")));
+    .addChild(new Script("Browser").setSourceCode("""
+ecmascript:
+                function initialize() {
+		    Browser.print('DUDES\n'+'"DUDETTES');
+                }
+
+            """))
+    .addChild(new Script("Clouds").setSourceCode("""
+        
+ecmascript:
+
+
+function cumulustranslation() // These values designate the boundary location of the cloud
+{
+var xxx = ' '+' '+
+'	Transform		\n'+
+'    ' + '               	\n';
+
+}
+
+            """)));
     }
 	// end of initialize() method
 

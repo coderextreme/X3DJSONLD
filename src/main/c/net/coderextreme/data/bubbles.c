@@ -2,412 +2,494 @@
 void main(int argc, char ** argv) {
 Browser browser = X3D.getBrowser();
 X3D X3D0;
-X3D0.profile = "Immersive";
-X3D0.version = "4.0";
+X3D0.profile = "Interchange";
+X3D0.version = "3.3";
 head head1 = createNode("head");
-//component name='EnvironmentalEffects' level='1'/
-component component2 = createNode("component");
-component2.name = "EnvironmentalEffects";
-component2.level = 3;
-head1.component = new MFNode();
+meta meta2 = createNode("meta");
+meta2.name = "title";
+meta2.content = "Bubbles.x3d";
+head1.meta = new MFNode();
 
-head1.component[0] = component2;
+head1.meta[0] = meta2;
 
-component component3 = createNode("component");
-component3.name = "Shaders";
-component3.level = 1;
-head1.component[1] = component3;
+meta meta3 = createNode("meta");
+meta3.name = "description";
+meta3.content = "Bubble animation used by Nancy Diving example.";
+head1.meta[1] = meta3;
 
-component component4 = createNode("component");
-component4.name = "CubeMapTexturing";
-component4.level = 1;
-head1.component[2] = component4;
+meta meta4 = createNode("meta");
+meta4.name = "creator";
+meta4.content = "Etsuko Lippi";
+head1.meta[2] = meta4;
 
-component component5 = createNode("component");
-component5.name = "Texturing";
-component5.level = 1;
-head1.component[3] = component5;
+meta meta5 = createNode("meta");
+meta5.name = "created";
+meta5.content = "24 January 2001";
+head1.meta[3] = meta5;
 
-component component6 = createNode("component");
-component6.name = "Rendering";
-component6.level = 1;
-head1.component[4] = component6;
+meta meta6 = createNode("meta");
+meta6.name = "modified";
+meta6.content = "23 May 2020";
+head1.meta[4] = meta6;
 
-component component7 = createNode("component");
-component7.name = "Shape";
-component7.level = 4;
-head1.component[5] = component7;
+meta meta7 = createNode("meta");
+meta7.name = "identifier";
+meta7.content = "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/Bubbles.x3d";
+head1.meta[5] = meta7;
 
-component component8 = createNode("component");
-component8.name = "Grouping";
-component8.level = 3;
-head1.component[6] = component8;
+meta meta8 = createNode("meta");
+meta8.name = "generator";
+meta8.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit";
+head1.meta[6] = meta8;
 
 meta meta9 = createNode("meta");
-meta9.name = "title";
-meta9.content = "bubbles.x3d";
+meta9.name = "license";
+meta9.content = "../license.html";
 head1.meta[7] = meta9;
-
-meta meta10 = createNode("meta");
-meta10.name = "creator";
-meta10.content = "John Carlson";
-head1.meta[8] = meta10;
-
-meta meta11 = createNode("meta");
-meta11.name = "generator";
-meta11.content = "manual";
-head1.meta[9] = meta11;
-
-meta meta12 = createNode("meta");
-meta12.name = "identifier";
-meta12.content = "https://coderextreme.net/X3DJSONLD/bubbles.x3d";
-head1.meta[10] = meta12;
-
-meta meta13 = createNode("meta");
-meta13.name = "description";
-meta13.content = "not sure what this is";
-head1.meta[11] = meta13;
 
 head = head1;
 
-NavigationInfo NavigationInfo15 = createNode("NavigationInfo");
-NavigationInfo15.type = new MFString(new java.lang.String["EXAMINE"]);
+WorldInfo WorldInfo11 = createNode("WorldInfo");
+WorldInfo11.title = "Bubbles.x3d";
 children = new MFNode();
 
-children[0] = NavigationInfo15;
+children[0] = WorldInfo11;
 
-Viewpoint Viewpoint16 = createNode("Viewpoint");
-Viewpoint16.DEF = "Tour";
-Viewpoint16.description = "Tour Views";
-children[1] = Viewpoint16;
+Transform Transform12 = createNode("Transform");
+Transform12.DEF = "Bubbles";
+Group Group13 = createNode("Group");
+Group13.DEF = "Bubble";
+TimeSensor TimeSensor14 = createNode("TimeSensor");
+TimeSensor14.DEF = "BubbleClock";
+TimeSensor14.cycleInterval = 6;
+TimeSensor14.loop = True;
+Group13.children = new MFNode();
 
-Viewpoint Viewpoint17 = createNode("Viewpoint");
-Viewpoint17.position = new SFVec3f(new float[0,0,4]);
-Viewpoint17.description = "sphere in road";
-children[2] = Viewpoint17;
+Group13.children[0] = TimeSensor14;
 
-Background Background18 = createNode("Background");
-Background18.backUrl = new MFString(new java.lang.String["../resources/images/all_probes/uffizi_cross/uffizi_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_back.png"]);
-Background18.bottomUrl = new MFString(new java.lang.String["../resources/images/all_probes/uffizi_cross/uffizi_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_bottom.png"]);
-Background18.frontUrl = new MFString(new java.lang.String["../resources/images/all_probes/uffizi_cross/uffizi_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_front.png"]);
-Background18.leftUrl = new MFString(new java.lang.String["../resources/images/all_probes/uffizi_cross/uffizi_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_left.png"]);
-Background18.rightUrl = new MFString(new java.lang.String["../resources/images/all_probes/uffizi_cross/uffizi_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_right.png"]);
-Background18.topUrl = new MFString(new java.lang.String["../resources/images/all_probes/uffizi_cross/uffizi_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_top.png"]);
-children[3] = Background18;
+PositionInterpolator PositionInterpolator15 = createNode("PositionInterpolator");
+PositionInterpolator15.DEF = "BubblePath1";
+PositionInterpolator15.key = new MFFloat(new float[0,0.5,0.8,0.9,1]);
+PositionInterpolator15.keyValue = new MFVec3f(new float[0,0,0,0.75,0.75,0.75,0.86,0.86,0.86,0.99,0.998,0.9876,1.272,1.9044,0.9509]);
+Group13.children[1] = PositionInterpolator15;
 
-Transform Transform19 = createNode("Transform");
-Transform19.DEF = "Rose01";
-Shape Shape20 = createNode("Shape");
-Sphere Sphere21 = createNode("Sphere");
-Shape20.geometry = Sphere21;
+PositionInterpolator PositionInterpolator16 = createNode("PositionInterpolator");
+PositionInterpolator16.DEF = "BubblePath2";
+PositionInterpolator16.key = new MFFloat(new float[0,0.3,0.64,0.85,1]);
+PositionInterpolator16.keyValue = new MFVec3f(new float[0.1,0.1,0.1,0.2,0.4,0.25,0.3,0.5,0.46,0.75,0.5,0.575,0.038483478,1.989,1.098373]);
+Group13.children[2] = PositionInterpolator16;
 
-Appearance Appearance22 = createNode("Appearance");
-Appearance22.DEF = "_01_-_Default";
-Material Material23 = createNode("Material");
-Material23.diffuseColor = new SFColor(new float[0.7,0.7,0.7]);
-Material23.specularColor = new SFColor(new float[0.5,0.5,0.5]);
-Appearance22.material = Material23;
+PositionInterpolator PositionInterpolator17 = createNode("PositionInterpolator");
+PositionInterpolator17.DEF = "BubblePath3";
+PositionInterpolator17.key = new MFFloat(new float[0,0.1,0.45,0.7,1]);
+PositionInterpolator17.keyValue = new MFVec3f(new float[0.01,0.01,0.01,0.25,0.35,0.0045,0.55,0.6,0.0055,0.66,0.665,0.00655,1.555,1.09043,0.005734]);
+Group13.children[3] = PositionInterpolator17;
 
-ComposedCubeMapTexture ComposedCubeMapTexture24 = createNode("ComposedCubeMapTexture");
-ImageTexture ImageTexture25 = createNode("ImageTexture");
-ImageTexture25.url = new MFString(new java.lang.String["../resources/images/all_probes/uffizi_cross/uffizi_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_back.png"]);
-ComposedCubeMapTexture24.topTexture = ImageTexture25;
+PositionInterpolator PositionInterpolator18 = createNode("PositionInterpolator");
+PositionInterpolator18.DEF = "BubblePath4";
+PositionInterpolator18.key = new MFFloat(new float[0,0.5,0.6,0.8,1]);
+PositionInterpolator18.keyValue = new MFVec3f(new float[0,0,0,0.5,0.5,0.005,0.6,0.6,0.006,0.75,0.75,0.0075,1.948594,1.3983,0.009009349]);
+Group13.children[4] = PositionInterpolator18;
 
-ImageTexture ImageTexture26 = createNode("ImageTexture");
-ImageTexture26.url = new MFString(new java.lang.String["../resources/images/all_probes/uffizi_cross/uffizi_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_bottom.png"]);
-ComposedCubeMapTexture24.topTexture = ImageTexture26;
+PositionInterpolator PositionInterpolator19 = createNode("PositionInterpolator");
+PositionInterpolator19.DEF = "BubblePath5";
+PositionInterpolator19.key = new MFFloat(new float[0,0.25,0.35,0.65,1]);
+PositionInterpolator19.keyValue = new MFVec3f(new float[0,0,0,0.5,0.5,0.005,0.6,0.6,0.006,0.75,0.75,0.0075,1.84444,1.22222,0.1]);
+Group13.children[5] = PositionInterpolator19;
 
-ImageTexture ImageTexture27 = createNode("ImageTexture");
-ImageTexture27.url = new MFString(new java.lang.String["../resources/images/all_probes/uffizi_cross/uffizi_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_front.png"]);
-ComposedCubeMapTexture24.topTexture = ImageTexture27;
+PositionInterpolator PositionInterpolator20 = createNode("PositionInterpolator");
+PositionInterpolator20.DEF = "BubblePath6";
+PositionInterpolator20.key = new MFFloat(new float[0,0.15,0.22235,0.55565,1]);
+PositionInterpolator20.keyValue = new MFVec3f(new float[0,0,0,0.235,0.3455,0.0055,0.356,0.676,0.00456,0.5675,0.75,0.0074565,1.098,1.0343,0.14]);
+Group13.children[6] = PositionInterpolator20;
 
-ImageTexture ImageTexture28 = createNode("ImageTexture");
-ImageTexture28.url = new MFString(new java.lang.String["../resources/images/all_probes/uffizi_cross/uffizi_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_left.png"]);
-ComposedCubeMapTexture24.topTexture = ImageTexture28;
+PositionInterpolator PositionInterpolator21 = createNode("PositionInterpolator");
+PositionInterpolator21.DEF = "BubblePath7";
+PositionInterpolator21.key = new MFFloat(new float[0,0.2425,0.4535,0.6775,1]);
+PositionInterpolator21.keyValue = new MFVec3f(new float[0,0,0,0.12345,0.2225,0.00335,0.786,0.456,0.00666,0.74555,0.7335,0.00234575,0.08787,1.022,0.12]);
+Group13.children[7] = PositionInterpolator21;
 
-ImageTexture ImageTexture29 = createNode("ImageTexture");
-ImageTexture29.url = new MFString(new java.lang.String["../resources/images/all_probes/uffizi_cross/uffizi_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_right.png"]);
-ComposedCubeMapTexture24.topTexture = ImageTexture29;
+PositionInterpolator PositionInterpolator22 = createNode("PositionInterpolator");
+PositionInterpolator22.DEF = "BubblePath8";
+PositionInterpolator22.key = new MFFloat(new float[0,0.1125,0.5535,0.97865,1]);
+PositionInterpolator22.keyValue = new MFVec3f(new float[0,0,0,0.1235,0.05,0.00125,0.5666,0.4346,0.005556,0.8975,0.34575,0.0098775,1.8787,1.686,0.86]);
+Group13.children[8] = PositionInterpolator22;
 
-ImageTexture ImageTexture30 = createNode("ImageTexture");
-ImageTexture30.url = new MFString(new java.lang.String["../resources/images/all_probes/uffizi_cross/uffizi_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_top.png"]);
-ComposedCubeMapTexture24.topTexture = ImageTexture30;
+PositionInterpolator PositionInterpolator23 = createNode("PositionInterpolator");
+PositionInterpolator23.DEF = "BubblePath9";
+PositionInterpolator23.key = new MFFloat(new float[0,0.0025,0.035,0.65,1]);
+PositionInterpolator23.keyValue = new MFVec3f(new float[0,0,0,0.522,0.5445,0.0057,0.6543,0.226,0.0055,0.45575,0.4375,0.0067,1.8787,2,0.1545]);
+Group13.children[9] = PositionInterpolator23;
 
-Appearance22.texture = ComposedCubeMapTexture24;
+PositionInterpolator PositionInterpolator24 = createNode("PositionInterpolator");
+PositionInterpolator24.DEF = "BubblePath10";
+PositionInterpolator24.key = new MFFloat(new float[0,0.00025,0.035,0.6895,1]);
+PositionInterpolator24.keyValue = new MFVec3f(new float[0,0,0,0.8765,0.445,0.00335,0.3336,0.4446,0.005556,0.765,0.75,0.0075,1,1,0.1]);
+Group13.children[10] = PositionInterpolator24;
 
-ComposedShader ComposedShader31 = createNode("ComposedShader");
-ComposedShader31.DEF = "x_ite";
-ComposedShader31.language = "GLSL";
-field field32 = createNode("field");
-field32.name = "cube";
-field32.accessType = "inputOutput";
-field32.type = "SFInt32";
-field32.value = "0";
-ComposedShader31.field = new MFNode();
+Transform Transform25 = createNode("Transform");
+Transform Transform26 = createNode("Transform");
+Transform26.DEF = "bubble1";
+Shape Shape27 = createNode("Shape");
+Appearance Appearance28 = createNode("Appearance");
+Material Material29 = createNode("Material");
+Material29.diffuseColor = new SFColor(new float[1,1,1]);
+Material29.transparency = 0.8;
+Appearance28.material = Material29;
 
-ComposedShader31.field[0] = field32;
+Shape27.appearance = Appearance28;
 
-field field33 = createNode("field");
-field33.name = "chromaticDispertion";
-field33.accessType = "inputOutput";
-field33.type = "SFVec3f";
-field33.value = "0.98 1 1.033";
-ComposedShader31.field[1] = field33;
+Sphere Sphere30 = createNode("Sphere");
+Sphere30.radius = 0.025;
+Shape27.geometry = Sphere30;
 
-field field34 = createNode("field");
-field34.name = "bias";
-field34.accessType = "inputOutput";
-field34.type = "SFFloat";
-field34.value = "0.5";
-ComposedShader31.field[2] = field34;
+Transform26.children = new MFNode();
 
-field field35 = createNode("field");
-field35.name = "scale";
-field35.accessType = "inputOutput";
-field35.type = "SFFloat";
-field35.value = "0.5";
-ComposedShader31.field[3] = field35;
+Transform26.children[0] = Shape27;
 
-field field36 = createNode("field");
-field36.name = "power";
-field36.accessType = "inputOutput";
-field36.type = "SFFloat";
-field36.value = "2";
-ComposedShader31.field[4] = field36;
+Transform25.children = new MFNode();
 
-ShaderPart ShaderPart37 = createNode("ShaderPart");
-ShaderPart37.url = new MFString(new java.lang.String["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"]);
-ShaderPart37.type = "VERTEX";
-ComposedShader31.parts[5] = ShaderPart37;
+Transform25.children[0] = Transform26;
 
-ShaderPart ShaderPart38 = createNode("ShaderPart");
-ShaderPart38.url = new MFString(new java.lang.String["../shaders/x_itebubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"]);
-ShaderPart38.type = "FRAGMENT";
-ComposedShader31.parts[6] = ShaderPart38;
+Transform Transform31 = createNode("Transform");
+Transform31.DEF = "bubble2";
+Shape Shape32 = createNode("Shape");
+Appearance Appearance33 = createNode("Appearance");
+Material Material34 = createNode("Material");
+Material34.diffuseColor = new SFColor(new float[1,1,1]);
+Material34.transparency = 0.8;
+Appearance33.material = Material34;
 
-Appearance22.shaders = new MFNode();
+Shape32.appearance = Appearance33;
 
-Appearance22.shaders[0] = ComposedShader31;
+Sphere Sphere35 = createNode("Sphere");
+Sphere35.radius = 0.055;
+Shape32.geometry = Sphere35;
 
-ComposedShader ComposedShader39 = createNode("ComposedShader");
-ComposedShader39.DEF = "x3dom";
-ComposedShader39.language = "GLSL";
-field field40 = createNode("field");
-field40.name = "cube";
-field40.accessType = "inputOutput";
-field40.type = "SFInt32";
-field40.value = "0";
-ComposedShader39.field = new MFNode();
+Transform31.children = new MFNode();
 
-ComposedShader39.field[0] = field40;
+Transform31.children[0] = Shape32;
 
-field field41 = createNode("field");
-field41.name = "chromaticDispertion";
-field41.accessType = "inputOutput";
-field41.type = "SFVec3f";
-field41.value = "0.98 1 1.033";
-ComposedShader39.field[1] = field41;
+Transform25.children[1] = Transform31;
 
-field field42 = createNode("field");
-field42.name = "bias";
-field42.accessType = "inputOutput";
-field42.type = "SFFloat";
-field42.value = "0.5";
-ComposedShader39.field[2] = field42;
+Transform Transform36 = createNode("Transform");
+Transform36.DEF = "bubble3";
+Shape Shape37 = createNode("Shape");
+Appearance Appearance38 = createNode("Appearance");
+Material Material39 = createNode("Material");
+Material39.diffuseColor = new SFColor(new float[1,1,1]);
+Material39.transparency = 0.8;
+Appearance38.material = Material39;
 
-field field43 = createNode("field");
-field43.name = "scale";
-field43.accessType = "inputOutput";
-field43.type = "SFFloat";
-field43.value = "0.5";
-ComposedShader39.field[3] = field43;
+Shape37.appearance = Appearance38;
 
-field field44 = createNode("field");
-field44.name = "power";
-field44.accessType = "inputOutput";
-field44.type = "SFFloat";
-field44.value = "2";
-ComposedShader39.field[4] = field44;
+Sphere Sphere40 = createNode("Sphere");
+Sphere40.radius = 0.065;
+Shape37.geometry = Sphere40;
 
-ShaderPart ShaderPart45 = createNode("ShaderPart");
-ShaderPart45.url = new MFString(new java.lang.String["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"]);
-ShaderPart45.type = "VERTEX";
-ComposedShader39.parts[5] = ShaderPart45;
+Transform36.children = new MFNode();
 
-ShaderPart ShaderPart46 = createNode("ShaderPart");
-ShaderPart46.url = new MFString(new java.lang.String["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"]);
-ShaderPart46.type = "FRAGMENT";
-ComposedShader39.parts[6] = ShaderPart46;
+Transform36.children[0] = Shape37;
 
-Appearance22.shaders[1] = ComposedShader39;
+Transform25.children[2] = Transform36;
 
-Shape20.appearance = Appearance22;
+Transform Transform41 = createNode("Transform");
+Transform41.DEF = "bubble4";
+Shape Shape42 = createNode("Shape");
+Appearance Appearance43 = createNode("Appearance");
+Material Material44 = createNode("Material");
+Material44.diffuseColor = new SFColor(new float[1,1,1]);
+Material44.transparency = 0.8;
+Appearance43.material = Material44;
 
-Transform19.children = new MFNode();
+Shape42.appearance = Appearance43;
 
-Transform19.children[0] = Shape20;
+Sphere Sphere45 = createNode("Sphere");
+Sphere45.radius = 0.015;
+Shape42.geometry = Sphere45;
 
-children[4] = Transform19;
+Transform41.children = new MFNode();
 
-TimeSensor TimeSensor47 = createNode("TimeSensor");
-TimeSensor47.DEF = "TourTime";
-TimeSensor47.cycleInterval = 5;
-TimeSensor47.loop = True;
-children[5] = TimeSensor47;
+Transform41.children[0] = Shape42;
 
-PositionInterpolator PositionInterpolator48 = createNode("PositionInterpolator");
-PositionInterpolator48.DEF = "TourPosition";
-PositionInterpolator48.key = new MFFloat(new float[0,1]);
-PositionInterpolator48.keyValue = new MFVec3f(new float[0,0,10,0,0,-10]);
-children[6] = PositionInterpolator48;
+Transform25.children[3] = Transform41;
 
-OrientationInterpolator OrientationInterpolator49 = createNode("OrientationInterpolator");
-OrientationInterpolator49.DEF = "TourOrientation";
-OrientationInterpolator49.key = new MFFloat(new float[0,1]);
-OrientationInterpolator49.keyValue = new MFRotation(new float[0,1,0,0,0,1,0,3.1416]);
-children[7] = OrientationInterpolator49;
+Transform Transform46 = createNode("Transform");
+Transform46.DEF = "bubble5";
+Shape Shape47 = createNode("Shape");
+Appearance Appearance48 = createNode("Appearance");
+Material Material49 = createNode("Material");
+Material49.diffuseColor = new SFColor(new float[1,1,1]);
+Material49.transparency = 0.8;
+Appearance48.material = Material49;
 
-Script Script50 = createNode("Script");
-Script50.DEF = "RandomTourTime";
-field field51 = createNode("field");
-field51.name = "set_cycle";
-field51.accessType = "inputOnly";
-field51.type = "SFTime";
-Script50.field = new MFNode();
+Shape47.appearance = Appearance48;
 
-Script50.field[0] = field51;
+Sphere Sphere50 = createNode("Sphere");
+Sphere50.radius = 0.075;
+Shape47.geometry = Sphere50;
 
-field field52 = createNode("field");
-field52.name = "lastKey";
-field52.accessType = "inputOutput";
-field52.type = "SFFloat";
-field52.value = "0";
-Script50.field[1] = field52;
+Transform46.children = new MFNode();
 
-field field53 = createNode("field");
-field53.name = "orientations";
-field53.accessType = "inputOutput";
-field53.type = "MFRotation";
-field53.value = "0 1 0 0 0 1 0 -1.57 0 1 0 3.14 0 1 0 1.57 0 1 0 0 1 0 0 -1.57 0 1 0 0 1 0 0 1.57 0 1 0 0";
-Script50.field[2] = field53;
+Transform46.children[0] = Shape47;
 
-field field54 = createNode("field");
-field54.name = "positions";
-field54.accessType = "inputOutput";
-field54.type = "MFVec3f";
-field54.value = "0 0 10 -10 0 0 0 0 -10 10 0 0 0 0 10 0 10 0 0 0 10 0 -10 0 0 0 10";
-Script50.field[3] = field54;
+Transform25.children[4] = Transform46;
 
-field field55 = createNode("field");
-field55.name = "fraction_changed";
-field55.accessType = "outputOnly";
-field55.type = "SFFloat";
-Script50.field[4] = field55;
+Transform Transform51 = createNode("Transform");
+Transform51.DEF = "bubble6";
+Shape Shape52 = createNode("Shape");
+Appearance Appearance53 = createNode("Appearance");
+Material Material54 = createNode("Material");
+Material54.diffuseColor = new SFColor(new float[1,1,1]);
+Material54.transparency = 0.8;
+Appearance53.material = Material54;
 
-field field56 = createNode("field");
-field56.name = "position_changed";
-field56.accessType = "outputOnly";
-field56.type = "MFVec3f";
-Script50.field[5] = field56;
+Shape52.appearance = Appearance53;
 
-field field57 = createNode("field");
-field57.name = "set_orientation";
-field57.accessType = "inputOnly";
-field57.type = "MFRotation";
-Script50.field[6] = field57;
+Sphere Sphere55 = createNode("Sphere");
+Sphere55.radius = 0.005;
+Shape52.geometry = Sphere55;
 
-field field58 = createNode("field");
-field58.name = "orientation_changed";
-field58.accessType = "outputOnly";
-field58.type = "MFRotation";
-Script50.field[7] = field58;
+Transform51.children = new MFNode();
 
+Transform51.children[0] = Shape52;
 
-Script50.setSourceCode(`ecmascript:\n"+
-"               function set_cycle(value) {\n"+
-"	       	   try {\n"+
-"                        var ov = lastKey;\n"+
-"                        do {\n"+
-"                            lastKey = Math.round(Math.random()*(positions.length-1));\n"+
-"                        } while (lastKey === ov);\n"+
-"                        var vc = lastKey;\n"+
-"\n"+
-"                        position_changed[0] = positions[ov];\n"+
-"                        position_changed[1] = positions[vc];\n"+
-"\n"+
-"                        orientation_changed[0] = orientations[ov];\n"+
-"                        orientation_changed[1] = orientations[vc];\n"+
-"\n"+
-"                        fraction_changed = 0;\n"+
-"		   } catch (e) {\n"+
-"		   	if (typeof console.log === 'function') {\n"+
-"				console.log(e);\n"+
-"			}\n"+
-"		   }\n"+
-"               }`)
-children[8] = Script50;
+Transform25.children[5] = Transform51;
 
-ROUTE ROUTE59 = createNode("ROUTE");
-ROUTE59.fromNode = "TourTime";
-ROUTE59.fromField = "cycleTime";
-ROUTE59.toNode = "RandomTourTime";
-ROUTE59.toField = "set_cycle";
-children[9] = ROUTE59;
+Transform Transform56 = createNode("Transform");
+Transform56.DEF = "bubble7";
+Shape Shape57 = createNode("Shape");
+Appearance Appearance58 = createNode("Appearance");
+Material Material59 = createNode("Material");
+Material59.diffuseColor = new SFColor(new float[1,1,1]);
+Material59.transparency = 0.8;
+Appearance58.material = Material59;
 
-ROUTE ROUTE60 = createNode("ROUTE");
-ROUTE60.fromNode = "RandomTourTime";
-ROUTE60.fromField = "fraction_changed";
-ROUTE60.toNode = "TourOrientation";
-ROUTE60.toField = "set_fraction";
-children[10] = ROUTE60;
+Shape57.appearance = Appearance58;
 
-ROUTE ROUTE61 = createNode("ROUTE");
-ROUTE61.fromNode = "RandomTourTime";
-ROUTE61.fromField = "fraction_changed";
-ROUTE61.toNode = "TourPosition";
-ROUTE61.toField = "set_fraction";
-children[11] = ROUTE61;
+Sphere Sphere60 = createNode("Sphere");
+Sphere60.radius = 0.035;
+Shape57.geometry = Sphere60;
 
-ROUTE ROUTE62 = createNode("ROUTE");
-ROUTE62.fromNode = "RandomTourTime";
-ROUTE62.fromField = "orientation_changed";
-ROUTE62.toNode = "TourOrientation";
-ROUTE62.toField = "set_keyValue";
-children[12] = ROUTE62;
+Transform56.children = new MFNode();
 
-ROUTE ROUTE63 = createNode("ROUTE");
-ROUTE63.fromNode = "RandomTourTime";
-ROUTE63.fromField = "position_changed";
-ROUTE63.toNode = "TourPosition";
-ROUTE63.toField = "set_keyValue";
-children[13] = ROUTE63;
+Transform56.children[0] = Shape57;
 
-ROUTE ROUTE64 = createNode("ROUTE");
-ROUTE64.fromNode = "TourTime";
-ROUTE64.fromField = "fraction_changed";
-ROUTE64.toNode = "TourOrientation";
-ROUTE64.toField = "set_fraction";
-children[14] = ROUTE64;
+Transform25.children[6] = Transform56;
 
-ROUTE ROUTE65 = createNode("ROUTE");
-ROUTE65.fromNode = "TourOrientation";
-ROUTE65.fromField = "value_changed";
-ROUTE65.toNode = "Tour";
-ROUTE65.toField = "set_orientation";
-children[15] = ROUTE65;
+Transform Transform61 = createNode("Transform");
+Transform61.DEF = "bubble8";
+Shape Shape62 = createNode("Shape");
+Appearance Appearance63 = createNode("Appearance");
+Material Material64 = createNode("Material");
+Material64.diffuseColor = new SFColor(new float[1,1,1]);
+Material64.transparency = 0.8;
+Appearance63.material = Material64;
 
-ROUTE ROUTE66 = createNode("ROUTE");
-ROUTE66.fromNode = "TourTime";
-ROUTE66.fromField = "fraction_changed";
-ROUTE66.toNode = "TourPosition";
-ROUTE66.toField = "set_fraction";
-children[16] = ROUTE66;
+Shape62.appearance = Appearance63;
 
-ROUTE ROUTE67 = createNode("ROUTE");
-ROUTE67.fromNode = "TourPosition";
-ROUTE67.fromField = "value_changed";
-ROUTE67.toNode = "Tour";
-ROUTE67.toField = "set_position";
-children[17] = ROUTE67;
+Sphere Sphere65 = createNode("Sphere");
+Sphere65.radius = 0.05;
+Shape62.geometry = Sphere65;
+
+Transform61.children = new MFNode();
+
+Transform61.children[0] = Shape62;
+
+Transform25.children[7] = Transform61;
+
+Transform Transform66 = createNode("Transform");
+Transform66.DEF = "bubble9";
+Shape Shape67 = createNode("Shape");
+Appearance Appearance68 = createNode("Appearance");
+Material Material69 = createNode("Material");
+Material69.diffuseColor = new SFColor(new float[1,1,1]);
+Material69.transparency = 0.8;
+Appearance68.material = Material69;
+
+Shape67.appearance = Appearance68;
+
+Sphere Sphere70 = createNode("Sphere");
+Sphere70.radius = 0.045;
+Shape67.geometry = Sphere70;
+
+Transform66.children = new MFNode();
+
+Transform66.children[0] = Shape67;
+
+Transform25.children[8] = Transform66;
+
+Transform Transform71 = createNode("Transform");
+Transform71.DEF = "bubble10";
+Shape Shape72 = createNode("Shape");
+Appearance Appearance73 = createNode("Appearance");
+Material Material74 = createNode("Material");
+Material74.diffuseColor = new SFColor(new float[1,1,1]);
+Material74.transparency = 0.8;
+Appearance73.material = Material74;
+
+Shape72.appearance = Appearance73;
+
+Sphere Sphere75 = createNode("Sphere");
+Sphere75.radius = 0.035;
+Shape72.geometry = Sphere75;
+
+Transform71.children = new MFNode();
+
+Transform71.children[0] = Shape72;
+
+Transform25.children[9] = Transform71;
+
+ROUTE ROUTE76 = createNode("ROUTE");
+ROUTE76.fromField = "fraction_changed";
+ROUTE76.fromNode = "BubbleClock";
+ROUTE76.toField = "set_fraction";
+ROUTE76.toNode = "BubblePath1";
+Transform25.children[10] = ROUTE76;
+
+ROUTE ROUTE77 = createNode("ROUTE");
+ROUTE77.fromField = "fraction_changed";
+ROUTE77.fromNode = "BubbleClock";
+ROUTE77.toField = "set_fraction";
+ROUTE77.toNode = "BubblePath2";
+Transform25.children[11] = ROUTE77;
+
+ROUTE ROUTE78 = createNode("ROUTE");
+ROUTE78.fromField = "fraction_changed";
+ROUTE78.fromNode = "BubbleClock";
+ROUTE78.toField = "set_fraction";
+ROUTE78.toNode = "BubblePath3";
+Transform25.children[12] = ROUTE78;
+
+ROUTE ROUTE79 = createNode("ROUTE");
+ROUTE79.fromField = "fraction_changed";
+ROUTE79.fromNode = "BubbleClock";
+ROUTE79.toField = "set_fraction";
+ROUTE79.toNode = "BubblePath4";
+Transform25.children[13] = ROUTE79;
+
+ROUTE ROUTE80 = createNode("ROUTE");
+ROUTE80.fromField = "fraction_changed";
+ROUTE80.fromNode = "BubbleClock";
+ROUTE80.toField = "set_fraction";
+ROUTE80.toNode = "BubblePath5";
+Transform25.children[14] = ROUTE80;
+
+ROUTE ROUTE81 = createNode("ROUTE");
+ROUTE81.fromField = "fraction_changed";
+ROUTE81.fromNode = "BubbleClock";
+ROUTE81.toField = "set_fraction";
+ROUTE81.toNode = "BubblePath6";
+Transform25.children[15] = ROUTE81;
+
+ROUTE ROUTE82 = createNode("ROUTE");
+ROUTE82.fromField = "fraction_changed";
+ROUTE82.fromNode = "BubbleClock";
+ROUTE82.toField = "set_fraction";
+ROUTE82.toNode = "BubblePath7";
+Transform25.children[16] = ROUTE82;
+
+ROUTE ROUTE83 = createNode("ROUTE");
+ROUTE83.fromField = "fraction_changed";
+ROUTE83.fromNode = "BubbleClock";
+ROUTE83.toField = "set_fraction";
+ROUTE83.toNode = "BubblePath8";
+Transform25.children[17] = ROUTE83;
+
+ROUTE ROUTE84 = createNode("ROUTE");
+ROUTE84.fromField = "fraction_changed";
+ROUTE84.fromNode = "BubbleClock";
+ROUTE84.toField = "set_fraction";
+ROUTE84.toNode = "BubblePath9";
+Transform25.children[18] = ROUTE84;
+
+ROUTE ROUTE85 = createNode("ROUTE");
+ROUTE85.fromField = "fraction_changed";
+ROUTE85.fromNode = "BubbleClock";
+ROUTE85.toField = "set_fraction";
+ROUTE85.toNode = "BubblePath10";
+Transform25.children[19] = ROUTE85;
+
+ROUTE ROUTE86 = createNode("ROUTE");
+ROUTE86.fromField = "value_changed";
+ROUTE86.fromNode = "BubblePath1";
+ROUTE86.toField = "set_translation";
+ROUTE86.toNode = "bubble1";
+Transform25.children[20] = ROUTE86;
+
+ROUTE ROUTE87 = createNode("ROUTE");
+ROUTE87.fromField = "value_changed";
+ROUTE87.fromNode = "BubblePath2";
+ROUTE87.toField = "set_translation";
+ROUTE87.toNode = "bubble2";
+Transform25.children[21] = ROUTE87;
+
+ROUTE ROUTE88 = createNode("ROUTE");
+ROUTE88.fromField = "value_changed";
+ROUTE88.fromNode = "BubblePath3";
+ROUTE88.toField = "set_translation";
+ROUTE88.toNode = "bubble3";
+Transform25.children[22] = ROUTE88;
+
+ROUTE ROUTE89 = createNode("ROUTE");
+ROUTE89.fromField = "value_changed";
+ROUTE89.fromNode = "BubblePath4";
+ROUTE89.toField = "set_translation";
+ROUTE89.toNode = "bubble4";
+Transform25.children[23] = ROUTE89;
+
+ROUTE ROUTE90 = createNode("ROUTE");
+ROUTE90.fromField = "value_changed";
+ROUTE90.fromNode = "BubblePath5";
+ROUTE90.toField = "set_translation";
+ROUTE90.toNode = "bubble5";
+Transform25.children[24] = ROUTE90;
+
+ROUTE ROUTE91 = createNode("ROUTE");
+ROUTE91.fromField = "value_changed";
+ROUTE91.fromNode = "BubblePath6";
+ROUTE91.toField = "set_translation";
+ROUTE91.toNode = "bubble6";
+Transform25.children[25] = ROUTE91;
+
+ROUTE ROUTE92 = createNode("ROUTE");
+ROUTE92.fromField = "value_changed";
+ROUTE92.fromNode = "BubblePath7";
+ROUTE92.toField = "set_translation";
+ROUTE92.toNode = "bubble7";
+Transform25.children[26] = ROUTE92;
+
+ROUTE ROUTE93 = createNode("ROUTE");
+ROUTE93.fromField = "value_changed";
+ROUTE93.fromNode = "BubblePath8";
+ROUTE93.toField = "set_translation";
+ROUTE93.toNode = "bubble8";
+Transform25.children[27] = ROUTE93;
+
+ROUTE ROUTE94 = createNode("ROUTE");
+ROUTE94.fromField = "value_changed";
+ROUTE94.fromNode = "BubblePath9";
+ROUTE94.toField = "set_translation";
+ROUTE94.toNode = "bubble9";
+Transform25.children[28] = ROUTE94;
+
+ROUTE ROUTE95 = createNode("ROUTE");
+ROUTE95.fromField = "value_changed";
+ROUTE95.fromNode = "BubblePath10";
+ROUTE95.toField = "set_translation";
+ROUTE95.toNode = "bubble10";
+Transform25.children[29] = ROUTE95;
+
+Group13.children[11] = Transform25;
+
+Transform12.children = new MFNode();
+
+Transform12.children[0] = Group13;
+
+children[1] = Transform12;
+
+Background Background96 = createNode("Background");
+Background96.skyColor = new MFColor(new float[0,0,0.6]);
+children[2] = Background96;
 
 }

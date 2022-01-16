@@ -207,4 +207,3 @@ Figure31_9SpinGroupPrototype.prototype = {
 	}
 }
 new Figure31_9SpinGroupPrototype().main();
-process.exit(0);

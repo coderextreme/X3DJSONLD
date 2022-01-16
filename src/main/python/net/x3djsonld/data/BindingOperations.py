@@ -110,7 +110,7 @@ newModel=X3D(profile='Immersive',version='3.3',
         field(accessType='inputOnly',name='view3Bound',type='SFBool'),
         field(accessType='inputOnly',name='view4Bound',type='SFBool'),
         field(accessType='initializeOnly',name='priorInputvalue',type='SFInt32',value=-1)]
-*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
 ),
       #  drive Script with TimeSensor clock 
       ROUTE(fromField='value_changed',fromNode='TimingSequencer',toField='set_timeEvent',toNode='BindingSequencerEngine'),

@@ -103,12 +103,12 @@ HeadsUpDisplayPrototype.prototype = {
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.ProtoDeclare()).setName("HeadsUpDisplay").setAppinfo("HeadsUpDisplay positions child geometry in screen space, movable by the user")
       .setProtoInterface((new autoclass.ProtoInterface())
-        .addField((new autoclass.field()).setAccessType("inputOutput").setName("children").setType("MFNode").setAppinfo("Displayed subscene positioned as a HUD.")
+        .addField((new autoclass.field()).setName("children").setType("MFNode").setAccessType("inputOutput").setAppinfo("Displayed subscene positioned as a HUD.")
           .addComments(" default is null array of nodes "))
-        .addField((new autoclass.field()).setAccessType("inputOutput").setName("dragChildren").setType("MFNode").setAppinfo(this.field_dragChildren_5_12_appinfo)
+        .addField((new autoclass.field()).setName("dragChildren").setType("MFNode").setAccessType("inputOutput").setAppinfo(this.field_dragChildren_5_12_appinfo)
           .addComments(" default is null array of nodes "))
-        .addField((new autoclass.field()).setAccessType("initializeOnly").setName("locationOffset").setType("SFVec3f").setValue("-2 -2 0").setAppinfo("Modified screen location and distance (for size)."))
-        .addField((new autoclass.field()).setAccessType("initializeOnly").setName("traceEnabled").setType("SFBool").setValue("false").setAppinfo("Enable/disable console output for troubleshooting.")))
+        .addField((new autoclass.field()).setName("locationOffset").setType("SFVec3f").setAccessType("initializeOnly").setValue("-2 -2 0").setAppinfo("Modified screen location and distance (for size)."))
+        .addField((new autoclass.field()).setName("traceEnabled").setType("SFBool").setAccessType("initializeOnly").setValue("false").setAppinfo("Enable/disable console output for troubleshooting.")))
       .setProtoBody((new autoclass.ProtoBody())
         .addChild((new autoclass.Group())
           .addChild((new autoclass.ProximitySensor("WhereSensor")).setSize(1000000000.0,1000000000.0,1000000000.0)
@@ -168,14 +168,14 @@ HeadsUpDisplayPrototype.prototype = {
 "	planeSensorTranslation = value;" + "\n" + 
 "	tracePrint('planeSensorTranslation=' + value);" + "\n" + 
 "}" + "\n")
-                      .addField((new autoclass.field()).setAccessType("initializeOnly").setName("traceEnabled").setType("SFBool"))
-                      .addField((new autoclass.field()).setAccessType("initializeOnly").setName("isVisible").setType("SFBool").setValue("true"))
-                      .addField((new autoclass.field()).setAccessType("initializeOnly").setName("planeSensorTranslation").setType("SFVec3f").setValue("0 0 0"))
-                      .addField((new autoclass.field()).setAccessType("inputOnly").setName("setIsVisible").setType("SFBool"))
-                      .addField((new autoclass.field()).setAccessType("inputOnly").setName("setPlaneSensorIsActive").setType("SFBool"))
-                      .addField((new autoclass.field()).setAccessType("inputOnly").setName("setPlaneSensorTranslation").setType("SFVec3f"))
-                      .addField((new autoclass.field()).setAccessType("outputOnly").setName("translationChanged").setType("SFVec3f"))
-                      .addField((new autoclass.field()).setAccessType("outputOnly").setName("translationOffsetChanged").setType("SFVec3f"))
+                      .addField((new autoclass.field()).setName("traceEnabled").setType("SFBool").setAccessType("initializeOnly"))
+                      .addField((new autoclass.field()).setName("isVisible").setType("SFBool").setAccessType("initializeOnly").setValue("true"))
+                      .addField((new autoclass.field()).setName("planeSensorTranslation").setType("SFVec3f").setAccessType("initializeOnly").setValue("0 0 0"))
+                      .addField((new autoclass.field()).setName("setIsVisible").setType("SFBool").setAccessType("inputOnly"))
+                      .addField((new autoclass.field()).setName("setPlaneSensorIsActive").setType("SFBool").setAccessType("inputOnly"))
+                      .addField((new autoclass.field()).setName("setPlaneSensorTranslation").setType("SFVec3f").setAccessType("inputOnly"))
+                      .addField((new autoclass.field()).setName("translationChanged").setType("SFVec3f").setAccessType("outputOnly"))
+                      .addField((new autoclass.field()).setName("translationOffsetChanged").setType("SFVec3f").setAccessType("outputOnly"))
                       .setIS((new autoclass.IS())
                         .addConnect((new autoclass.connect()).setNodeField("traceEnabled").setProtoField("traceEnabled"))))
                     .addChild((new autoclass.ROUTE()).setFromNode("PlaneMovementSensor").setFromField("isActive").setToNode("VisibilityControlScript").setToField("setPlaneSensorIsActive"))
@@ -252,4 +252,3 @@ HeadsUpDisplayPrototype.prototype = {
 	}
 }
 new HeadsUpDisplayPrototype().main();
-process.exit(0);

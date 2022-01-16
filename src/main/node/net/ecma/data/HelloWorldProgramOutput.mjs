@@ -172,7 +172,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("19 December 2021")}),
+              content : new SFString("9 January 2022")}),
 
             new meta({
               name : new SFString("generator"),

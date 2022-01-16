@@ -63,9 +63,9 @@ newModel=X3D(profile='Immersive',version='4.0',
         MetadataString(name='humanoidVersion',value=['JointCenters 1.1 LOA1']),
         MetadataString(name='usageRestrictions',value=['PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose.'])]),
       skeleton=[
-      HAnimJoint(DEF='hanim_humanoid_root',center=(0.0,0.8240,0.0277),name='humanoid_root',
+      HAnimJoint(DEF='hanim_humanoid_root',center=(0.0,0.8240,0.0277),name='humanoid_root',ulimit=[0,0,0],llimit=[0,0,0],
         children=[
-        HAnimJoint(DEF='hanim_sacroiliac',center=(0.0,0.9149,0.0016),name='sacroiliac',
+        HAnimJoint(DEF='hanim_sacroiliac',center=(0.0,0.9149,0.0016),name='sacroiliac',ulimit=[0,0,0],llimit=[0,0,0],
           children=[
           HAnimSegment(DEF='hanim_pelvis',name='pelvis',
             children=[
@@ -76,7 +76,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                   coord=Coordinate(DEF='points',point=[(0,0.01,0),(-0.01,0,0),(0,0,0.01),(0.01,0,0),(0,0,-0.01),(0,-0.01,0)])),
                 appearance=Appearance(
                   material=Material(diffuseColor=(1,1,0))))])]),
-          HAnimJoint(DEF='hanim_l_hip',center=(0.0961,0.9124,-0.0001),name='l_hip',
+          HAnimJoint(DEF='hanim_l_hip',center=(0.0961,0.9124,-0.0001),name='l_hip',ulimit=[0,0,0],llimit=[0,0,0],
             children=[
             HAnimSegment(DEF='hanim_l_thigh',name='l_thigh',
               children=[
@@ -86,14 +86,14 @@ newModel=X3D(profile='Immersive',version='4.0',
               HAnimSite(DEF='hanim_l_knee_crease_pt',name='l_knee_crease_pt',translation=(0.0993,0.4881,-0.0309)),
               HAnimSite(DEF='hanim_l_femoral_lateral_epicondyle_pt',name='l_femoral_lateral_epicondyle_pt',translation=(0.1598,0.4967,0.0297)),
               HAnimSite(DEF='hanim_l_femoral_medial_epicondyle_pt',name='l_femoral_medial_epicondyle_pt',translation=(0.0398,0.4946,0.0303))]),
-            HAnimJoint(DEF='hanim_l_knee',center=(0.1040,0.4867,0.0308),name='l_knee',
+            HAnimJoint(DEF='hanim_l_knee',center=(0.1040,0.4867,0.0308),name='l_knee',ulimit=[0,0,0],llimit=[0,0,0],
               children=[
               HAnimSegment(DEF='hanim_l_calf',name='l_calf',
                 children=[
                 Transform(translation=(0.1040,0.4867,0.0308),
                   children=[
                   Shape(USE='DiamondShape')])]),
-              HAnimJoint(DEF='hanim_l_talocrural',center=(0.1101,0.0656,-0.0736),name='l_talocrural',
+              HAnimJoint(DEF='hanim_l_talocrural',center=(0.1101,0.0656,-0.0736),name='l_talocrural',ulimit=[0,0,0],llimit=[0,0,0],
                 children=[
                 HAnimSegment(DEF='hanim_l_talus',name='l_talus',
                   children=[
@@ -104,7 +104,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                   HAnimSite(DEF='hanim_l_medial_malleolus_pt',name='l_medial_malleolus_pt',translation=(0.0890,0.0716,-0.0881)),
                   HAnimSite(DEF='hanim_l_sphyrion_pt',name='l_sphyrion_pt',translation=(0.0890,0.0575,-0.0943)),
                   HAnimSite(DEF='hanim_l_calcaneus_posterior_pt',name='l_calcaneus_posterior_pt',translation=(0.0974,0.0259,-0.1171))]),
-                HAnimJoint(DEF='hanim_l_metatarsophalangeal_2',center=(0.1086,0.0001,0.0368),name='l_metatarsophalangeal_2',
+                HAnimJoint(DEF='hanim_l_metatarsophalangeal_2',center=(0.1086,0.0001,0.0368),name='l_metatarsophalangeal_2',ulimit=[0,0,0],llimit=[0,0,0],
                   children=[
                   HAnimSegment(DEF='hanim_l_tarsal_proximal_phalanx_2',name='l_tarsal_proximal_phalanx_2',
                     children=[
@@ -112,7 +112,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                     HAnimSite(DEF='hanim_l_metatarsal_phalanx_5_pt',name='l_metatarsal_phalanx_5_pt',translation=(0.1825,0.0070,0.0928)),
                     HAnimSite(DEF='hanim_l_metatarsal_phalanx_1_pt',name='l_metatarsal_phalanx_1_pt',translation=(0.0816,0.0232,0.0106)),
                     HAnimSite(DEF='hanim_l_tarsal_distal_phalanx_2_pt',name='l_tarsal_distal_phalanx_2_pt',translation=(0.1195,0.0079,0.1433))])])])])]),
-          HAnimJoint(DEF='hanim_r_hip',center=(-0.0950,0.9171,0.0029),name='r_hip',
+          HAnimJoint(DEF='hanim_r_hip',center=(-0.0950,0.9171,0.0029),name='r_hip',ulimit=[0,0,0],llimit=[0,0,0],
             children=[
             HAnimSegment(DEF='hanim_r_thigh',name='r_thigh',
               children=[
@@ -122,14 +122,14 @@ newModel=X3D(profile='Immersive',version='4.0',
               HAnimSite(DEF='hanim_r_knee_crease_pt',name='r_knee_crease_pt',translation=(-0.0825,0.4932,-0.0326)),
               HAnimSite(DEF='hanim_r_femoral_lateral_epicondyle_pt',name='r_femoral_lateral_epicondyle_pt',translation=(-0.1421,0.4992,0.0310)),
               HAnimSite(DEF='hanim_r_femoral_medial_epicondyle_pt',name='r_femoral_medial_epicondyle_pt',translation=(-0.0221,0.5014,0.0289))]),
-            HAnimJoint(DEF='hanim_r_knee',center=(-0.0867,0.4913,0.0318),name='r_knee',
+            HAnimJoint(DEF='hanim_r_knee',center=(-0.0867,0.4913,0.0318),name='r_knee',ulimit=[0,0,0],llimit=[0,0,0],
               children=[
               HAnimSegment(DEF='hanim_r_calf',name='r_calf',
                 children=[
                 Transform(translation=(-0.0867,0.4913,0.0318),
                   children=[
                   Shape(USE='DiamondShape')])]),
-              HAnimJoint(DEF='hanim_r_talocrural',center=(-0.0801,0.0712,-0.0766),name='r_talocrural',
+              HAnimJoint(DEF='hanim_r_talocrural',center=(-0.0801,0.0712,-0.0766),name='r_talocrural',ulimit=[0,0,0],llimit=[0,0,0],
                 children=[
                 HAnimSegment(DEF='hanim_r_talus',name='r_talus',
                   children=[
@@ -140,7 +140,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                   HAnimSite(DEF='hanim_r_medial_malleolus_pt',name='r_medial_malleolus_pt',translation=(-0.0591,0.0760,-0.0928)),
                   HAnimSite(DEF='hanim_r_sphyrion_pt',name='r_sphyrion_pt',translation=(-0.0603,0.0610,-0.1002)),
                   HAnimSite(DEF='hanim_r_calcaneus_posterior_pt',name='r_calcaneus_posterior_pt',translation=(-0.0692,0.0297,-0.1221))]),
-                HAnimJoint(DEF='hanim_r_metatarsophalangeal_2',center=(-0.0801,0.0,0.0368),name='r_metatarsophalangeal_2',
+                HAnimJoint(DEF='hanim_r_metatarsophalangeal_2',center=(-0.0801,0.0,0.0368),name='r_metatarsophalangeal_2',ulimit=[0,0,0],llimit=[0,0,0],
                   children=[
                   HAnimSegment(DEF='hanim_r_tarsal_proximal_phalanx_2',name='r_tarsal_proximal_phalanx_2',
                     children=[
@@ -148,10 +148,10 @@ newModel=X3D(profile='Immersive',version='4.0',
                     HAnimSite(DEF='hanim_r_metatarsal_phalanx_5_pt',name='r_metatarsal_phalanx_5_pt',translation=(-0.1523,0.0166,0.0895)),
                     HAnimSite(DEF='hanim_r_metatarsal_phalanx_1_pt',name='r_metatarsal_phalanx_1_pt',translation=(-0.0521,0.0260,0.0127)),
                     HAnimSite(DEF='hanim_r_tarsal_distal_phalanx_2_pt',name='r_tarsal_distal_phalanx_2_pt',translation=(-0.0883,0.0134,0.1383))])])])])])]),
-        HAnimJoint(DEF='hanim_vl1',center=(-0.00405,1.07,-0.0275),name='vl1',
+        HAnimJoint(DEF='hanim_vl1',center=(-0.00405,1.07,-0.0275),name='vl1',ulimit=[0,0,0],llimit=[0,0,0],
           children=[
           HAnimSegment(DEF='hanim_l1',name='l1'),
-          HAnimJoint(DEF='hanim_l_shoulder',center=(0.2029,1.4376,-0.0387),name='l_shoulder',
+          HAnimJoint(DEF='hanim_l_shoulder',center=(0.2029,1.4376,-0.0387),name='l_shoulder',ulimit=[0,0,0],llimit=[0,0,0],
             children=[
             HAnimSegment(DEF='hanim_l_upperarm',name='l_upperarm',
               children=[
@@ -160,7 +160,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                 Shape(USE='DiamondShape')]),
               Transform(DEF='l_upperarm_adjust',center=(0.182,1.22,-0.047),rotation=(1,0,0,0.119),translation=(0.2029,1.4376,-0.0387)),
               HAnimSite(DEF='hanim_l_humeral_lateral_epicondyle_pt',name='l_humeral_lateral_epicondyle_pt',translation=(0.2280,1.1482,-0.1100))]),
-            HAnimJoint(DEF='hanim_l_elbow',center=(0.2014,1.1357,-0.0682),name='l_elbow',
+            HAnimJoint(DEF='hanim_l_elbow',center=(0.2014,1.1357,-0.0682),name='l_elbow',ulimit=[0,0,0],llimit=[0,0,0],
               children=[
               HAnimSegment(DEF='hanim_l_forearm',name='l_forearm',
                 children=[
@@ -172,7 +172,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                 HAnimSite(DEF='hanim_l_olecranon_pt',name='l_olecranon_pt',translation=(-0.1962,1.1375,-0.1123)),
                 HAnimSite(DEF='hanim_l_humeral_medial_epicondyle_pt',name='l_humeral_medial_epicondyle_pt',translation=(0.1735,1.1272,-0.1113)),
                 HAnimSite(DEF='hanim_l_radiale_pt',name='l_radiale_pt',translation=(0.2182,1.1212,-0.1167))]),
-              HAnimJoint(DEF='hanim_l_radiocarpal',center=(0.1984,0.8663,-0.0583),name='l_radiocarpal',
+              HAnimJoint(DEF='hanim_l_radiocarpal',center=(0.1984,0.8663,-0.0583),name='l_radiocarpal',ulimit=[0,0,0],llimit=[0,0,0],
                 children=[
                 HAnimSegment(DEF='hanim_l_carpal',name='l_carpal',
                   children=[
@@ -185,7 +185,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                   HAnimSite(DEF='hanim_l_dactylion_pt',name='l_dactylion_pt',translation=(0.2056,0.6743,-0.0482)),
                   HAnimSite(DEF='hanim_l_ulnar_styloid_pt',name='l_ulnar_styloid_pt',translation=(-0.2142,0.8529,-0.0648)),
                   HAnimSite(DEF='hanim_l_metacarpal_phalanx_5_pt',name='l_metacarpal_phalanx_5_pt',translation=(0.1929,0.7860,-0.1122))])])])]),
-          HAnimJoint(DEF='hanim_r_shoulder',center=(-0.1907,1.4407,-0.0325),name='r_shoulder',
+          HAnimJoint(DEF='hanim_r_shoulder',center=(-0.1907,1.4407,-0.0325),name='r_shoulder',ulimit=[0,0,0],llimit=[0,0,0],
             children=[
             HAnimSegment(DEF='hanim_r_upperarm',name='r_upperarm',
               children=[
@@ -194,7 +194,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                 Shape(USE='DiamondShape')]),
               Transform(DEF='r_upperarm_adjust',center=(-0.182,1.22,-0.047),rotation=(1,0,0,0.0836),translation=(-0.1907,1.4407,-0.0325)),
               HAnimSite(DEF='hanim_r_humeral_lateral_epicondyle_pt',name='r_humeral_lateral_epicondyle_pt',translation=(-0.2224,1.1517,-0.1033))]),
-            HAnimJoint(DEF='hanim_r_elbow',center=(-0.1949,1.1388,-0.0620),name='r_elbow',
+            HAnimJoint(DEF='hanim_r_elbow',center=(-0.1949,1.1388,-0.0620),name='r_elbow',ulimit=[0,0,0],llimit=[0,0,0],
               children=[
               HAnimSegment(DEF='hanim_r_forearm',name='r_forearm',
                 children=[
@@ -206,7 +206,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                 HAnimSite(DEF='hanim_r_olecranon_pt',name='r_olecranon_pt',translation=(-0.1907,1.1405,-0.1065)),
                 HAnimSite(DEF='hanim_r_humeral_medial_epicondyle_pt',name='r_humeral_medial_epicondyle_pt',translation=(-0.1680,1.1298,-0.1062)),
                 HAnimSite(DEF='hanim_r_radiale_pt',name='r_radiale_pt',translation=(-0.2130,1.1305,-0.1091))]),
-              HAnimJoint(DEF='hanim_r_radiocarpal',center=(-0.1959,0.8694,-0.0521),name='r_radiocarpal',
+              HAnimJoint(DEF='hanim_r_radiocarpal',center=(-0.1959,0.8694,-0.0521),name='r_radiocarpal',ulimit=[0,0,0],llimit=[0,0,0],
                 children=[
                 HAnimSegment(DEF='hanim_r_carpal',name='r_carpal',
                   children=[
@@ -219,12 +219,12 @@ newModel=X3D(profile='Immersive',version='4.0',
                   HAnimSite(DEF='hanim_r_dactylion_pt',name='r_dactylion_pt',translation=(-0.1941,0.6772,-0.0423)),
                   HAnimSite(DEF='hanim_r_ulnar_styloid_pt',name='r_ulnar_styloid_pt',translation=(-0.2117,0.8562,-0.0584)),
                   HAnimSite(DEF='hanim_r_metacarpal_phalanx_5_pt',name='r_metacarpal_phalanx_5_pt',translation=(-0.1929,0.7890,-0.1064))])])])]),
-          HAnimJoint(DEF='hanim_vc4',center=(0,1.43,-0.0458),name='vc4',
+          HAnimJoint(DEF='hanim_vc4',center=(0,1.43,-0.0458),name='vc4',ulimit=[0,0,0],llimit=[0,0,0],
             children=[
             HAnimSegment(DEF='hanim_c4',name='c4')])]),
-        HAnimJoint(DEF='hanim_vl5',center=(0.0028,1.0568,-0.0776),name='vl5',
+        HAnimJoint(DEF='hanim_vl5',center=(0.0028,1.0568,-0.0776),name='vl5',ulimit=[0,0,0],llimit=[0,0,0],
           children=[
-          HAnimJoint(DEF='hanim_skullbase',center=(0.0044,1.6209,0.0236),name='skullbase',
+          HAnimJoint(DEF='hanim_skullbase',center=(0.0044,1.6209,0.0236),name='skullbase',ulimit=[0,0,0],llimit=[0,0,0],
             children=[
             HAnimSegment(DEF='hanim_skull',name='skull',
               children=[
@@ -303,26 +303,26 @@ newModel=X3D(profile='Immersive',version='4.0',
         Viewpoint(DEF='TopView',description='Top View',orientation=(1,0,0,-1.57079),position=(0,3.4495,0))]),],
       #  original HAnimHumanoid info='"authorEmail=beitler@graphics.cis.upenn.edu beitler@acm.org" "authorName=Matthew T. Beitler" "copyright=Copyright 1999 Matthew T. Beitler" "humanoidVersion=JointCenters 1.1 LOA1" "usageRestrictions=PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose."' 
       joints=[
-      HAnimJoint(USE='hanim_humanoid_root'),
-      HAnimJoint(USE='hanim_sacroiliac'),
-      HAnimJoint(USE='hanim_vl1'),
-      HAnimJoint(USE='hanim_vc4'),
-      HAnimJoint(USE='hanim_skullbase'),
-      HAnimJoint(USE='hanim_vl5'),
-      HAnimJoint(USE='hanim_l_elbow'),
-      HAnimJoint(USE='hanim_r_elbow'),
-      HAnimJoint(USE='hanim_l_hip'),
-      HAnimJoint(USE='hanim_r_hip'),
-      HAnimJoint(USE='hanim_l_knee'),
-      HAnimJoint(USE='hanim_r_knee'),
-      HAnimJoint(USE='hanim_l_metatarsophalangeal_2'),
-      HAnimJoint(USE='hanim_r_metatarsophalangeal_2'),
-      HAnimJoint(USE='hanim_l_radiocarpal'),
-      HAnimJoint(USE='hanim_r_radiocarpal'),
-      HAnimJoint(USE='hanim_l_shoulder'),
-      HAnimJoint(USE='hanim_r_shoulder'),
-      HAnimJoint(USE='hanim_l_talocrural'),
-      HAnimJoint(USE='hanim_r_talocrural')],
+      HAnimJoint(USE='hanim_humanoid_root',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_sacroiliac',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vl1',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vc4',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_skullbase',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vl5',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_elbow',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_elbow',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_hip',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_hip',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_knee',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_knee',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_metatarsophalangeal_2',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_metatarsophalangeal_2',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_radiocarpal',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_radiocarpal',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_shoulder',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_shoulder',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_talocrural',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_talocrural',ulimit=[0,0,0],llimit=[0,0,0])],
       segments=[
       HAnimSegment(USE='hanim_pelvis'),
       HAnimSegment(USE='hanim_l1'),

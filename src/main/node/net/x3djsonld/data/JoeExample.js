@@ -71,10 +71,10 @@ JoeExample.prototype = {
 "      if (unlocked) vaultUnlocked = value;" + "\n" + 
 "\n" + 
 "      }" + "\n")
-      .addField((new autoclass.field()).setAccessType("inputOnly").setName("openVault").setType("SFTime"))
-      .addField((new autoclass.field()).setAccessType("inputOnly").setName("combinationEntered").setType("SFBool"))
-      .addField((new autoclass.field()).setAccessType("outputOnly").setName("vaultUnlocked").setType("SFTime"))
-      .addField((new autoclass.field()).setAccessType("initializeOnly").setName("unlocked").setType("SFBool").setValue("false")))
+      .addField((new autoclass.field()).setName("openVault").setType("SFTime").setAccessType("inputOnly"))
+      .addField((new autoclass.field()).setName("combinationEntered").setType("SFBool").setAccessType("inputOnly"))
+      .addField((new autoclass.field()).setName("vaultUnlocked").setType("SFTime").setAccessType("outputOnly"))
+      .addField((new autoclass.field()).setName("unlocked").setType("SFBool").setAccessType("initializeOnly").setValue("false")))
     .addChild((new autoclass.Shape())
       .setAppearance((new autoclass.Appearance())
         .setMaterial((new autoclass.Material()).setDiffuseColor(1.0,0.0,0.0)))
@@ -143,4 +143,3 @@ JoeExample.prototype = {
 	}
 }
 new JoeExample().main();
-process.exit(0);

@@ -117,14 +117,14 @@ HeadsUpDisplayExample.prototype = {
   .setScene((new autoclass.Scene())
     .addComments(" Simple Heads-Up Display (HUD) Prototype\\n \\n Manages the display of a HUD and maintains its position on the screen.\\n Changes to fieldOfView (in Viewpoint node) will change screen position\\n \\n Fields:\\n hudSize Size of HUD (initializeOnly - SFVec3f) default=\"1 1 .01\"\\n hudColor Color of HUD (inputOutput - SFColor) default=\"1 1 1\"\\n screenOffset Offset of HUD. This field positions the HUD on the display screen (inputOutput - SFVec3f) default=\"0 0 0\"\\n hudGeometry Geometry to be placed on the HUD. Origin is center of HUD. (inputOutput - MFNode) default = []\\n position_changed Current viewer location (outputOnly - SFVec3f)\\n orientation_changed Current viewer orientation (outputOnly - SFRotation)\\n \\n \\n ")
     .addChild((new autoclass.ExternProtoDeclare()).setName("HeadsUpDisplay").setAppinfo("Heads-up display (HUD) keeps child geometry aligned on screen in a consistent location").setUrl(new autoclass.MFString("\"HeadsUpDisplayPrototype.x3d#HeadsUpDisplay\" \"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype.x3d#HeadsUpDisplay\" \"HeadsUpDisplayPrototype.wrl#HeadsUpDisplay\" \"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype.wrl#HeadsUpDisplay\""))
-      .addField((new autoclass.field()).setAccessType("inputOutput").setName("screenOffset").setType("SFVec3f").setAppinfo("offset position for HUD relative to current view location, default 0 0 -5"))
-      .addField((new autoclass.field()).setAccessType("inputOutput").setName("children").setType("MFNode").setAppinfo("X3D content positioned at HUD offset"))
-      .addField((new autoclass.field()).setAccessType("outputOnly").setName("position_changed").setType("SFVec3f").setAppinfo("HUD position update (in world coordinates) relative to original location"))
-      .addField((new autoclass.field()).setAccessType("outputOnly").setName("orientation_changed").setType("SFRotation").setAppinfo("HUD orientation update relative to original location")))
-    .addChild((new autoclass.Background("SandyShallowBottom")).setSkyAngle(java.newArray("float", [0.04,0.05,0.1,1.309,1.570])).setGroundAngle(java.newArray("float", [0.05,1.52,1.56,1.5707])).setGroundColor(new autoclass.MFColor(java.newArray("float", [0.2,0.2,0.0,0.3,0.3,0.0,0.5,0.5,0.3,0.1,0.3,0.4,0.0,0.2,0.4]))).setSkyColor(new autoclass.MFColor(java.newArray("float", [0.8,0.8,0.2,0.8,0.8,0.2,0.1,0.1,0.6,0.1,0.1,0.6,0.1,0.25,0.8,0.6,0.6,0.9]))))
+      .addField((new autoclass.field()).setName("screenOffset").setType("SFVec3f").setAccessType("inputOutput").setAppinfo("offset position for HUD relative to current view location, default 0 0 -5"))
+      .addField((new autoclass.field()).setName("children").setType("MFNode").setAccessType("inputOutput").setAppinfo("X3D content positioned at HUD offset"))
+      .addField((new autoclass.field()).setName("position_changed").setType("SFVec3f").setAccessType("outputOnly").setAppinfo("HUD position update (in world coordinates) relative to original location"))
+      .addField((new autoclass.field()).setName("orientation_changed").setType("SFRotation").setAccessType("outputOnly").setAppinfo("HUD orientation update relative to original location")))
+    .addChild((new autoclass.Background("SandyShallowBottom")).setGroundAngle(java.newArray("float", [0.05,1.52,1.56,1.5707])).setGroundColor(new autoclass.MFColor(java.newArray("float", [0.2,0.2,0.0,0.3,0.3,0.0,0.5,0.5,0.3,0.1,0.3,0.4,0.0,0.2,0.4]))).setSkyAngle(java.newArray("float", [0.04,0.05,0.1,1.309,1.570])).setSkyColor(new autoclass.MFColor(java.newArray("float", [0.8,0.8,0.2,0.8,0.8,0.2,0.1,0.1,0.6,0.1,0.1,0.6,0.1,0.25,0.8,0.6,0.6,0.9]))))
     .addChild((new autoclass.Viewpoint()).setDescription("Heads-up display (HUD)"))
     .addComments(" ProtoDeclare is the \"cookie cutter\" template, ProtoInstance creates an actual occurrence ")
-    .addChild((new autoclass.ProtoInstance("HeadsUpDisplayInstance", "HeadsUpDisplay")).setDEF("HeadsUpDisplayInstance").setName("HeadsUpDisplay")
+    .addChild((new autoclass.ProtoInstance("HeadsUpDisplayInstance", "HeadsUpDisplay"))
       .addComments(" example: upper left-hand corner of screen (x=-2, y=1) and set back z=-5 from user view ")
       .addFieldValue((new autoclass.fieldValue()).setName("screenOffset").setValue("-0.75 1 -5"))
       .addFieldValue((new autoclass.fieldValue()).setName("children")
@@ -192,4 +192,3 @@ HeadsUpDisplayExample.prototype = {
 	}
 }
 new HeadsUpDisplayExample().main();
-process.exit(0);

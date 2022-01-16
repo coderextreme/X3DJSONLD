@@ -140,7 +140,7 @@ rgb_alpha.prototype = {
     .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
     .addMeta((new autoclass.meta()).setName("license").setContent("../../license.html")))
   .setScene((new autoclass.Scene())
-    .addChild((new autoclass.NavigationInfo()).setType(new autoclass.MFString("\"EXAMINE\" \"WALK\" \"FLY\" \"ANY\"")))
+    .addChild((new autoclass.NavigationInfo()).setType("\"EXAMINE\" \"WALK\" \"FLY\" \"ANY\""))
     .addChild((new autoclass.Group())
       .addChild((new autoclass.Transform()).setTranslation(6.14221,0.0694613,-0.000999451)
         .addChild((new autoclass.Shape())
@@ -152,19 +152,19 @@ rgb_alpha.prototype = {
         .addChild((new autoclass.Shape())
           .setAppearance((new autoclass.Appearance())
             .setMaterial((new autoclass.Material()))
-            .setTexture((new autoclass.PixelTexture()).setUSE("RgbOpacityCheckerboard")))
+            .setTexture((new autoclass.PixelTexture())))
           .setGeometry((new autoclass.Sphere()))))
       .addChild((new autoclass.Transform()).setTranslation(-1.47341,0.036672,-0.00175095)
         .addChild((new autoclass.Shape())
           .setAppearance((new autoclass.Appearance())
             .setMaterial((new autoclass.Material()))
-            .setTexture((new autoclass.PixelTexture()).setUSE("RgbOpacityCheckerboard")))
+            .setTexture((new autoclass.PixelTexture())))
           .setGeometry((new autoclass.Cone()))))
       .addChild((new autoclass.Transform()).setTranslation(2.31094,0.0694206,-0.00187683)
         .addChild((new autoclass.Shape())
           .setAppearance((new autoclass.Appearance())
             .setMaterial((new autoclass.Material()))
-            .setTexture((new autoclass.PixelTexture()).setUSE("RgbOpacityCheckerboard")))
+            .setTexture((new autoclass.PixelTexture())))
           .setGeometry((new autoclass.Cylinder()))))));
   },
   // end of initialize() method
@@ -224,4 +224,3 @@ rgb_alpha.prototype = {
 	}
 }
 new rgb_alpha().main();
-process.exit(0);

@@ -169,7 +169,7 @@ ArtDecoExamples.prototype = {
               .setAppearance((new autoclass.Appearance())
                 .setMaterial((new autoclass.Material("TextMat")).setDiffuseColor(1.0,1.0,1.0)))
               .setGeometry((new autoclass.Text()).setString(new autoclass.MFString("\"ArtDeco00\""))
-                .setFontStyle((new autoclass.FontStyle("Style")).setFamily(new autoclass.MFString("\"SANS\"")).setJustify(new autoclass.MFString("\"MIDDLE\" \"MIDDLE\"")).setSize(0.3).setCssStyle("BOLD")))))))
+                .setFontStyle((new autoclass.FontStyle("Style")).setFamily(new autoclass.MFString("\"SANS\"")).setJustify(new autoclass.MFString("\"MIDDLE\" \"MIDDLE\"")).setSize(0.3).setStyle("BOLD")))))))
       .addChild((new autoclass.Viewpoint("View01")).setDescription("ArtDeco01").setPosition(-2.25,3.75,3.0))
       .addChild((new autoclass.Transform()).setTranslation(-2.25,3.75,0.0)
         .addChild((new autoclass.Anchor()).setDescription("ArtDeco01 view").setUrl(new autoclass.MFString("\"#View01\""))
@@ -706,4 +706,3 @@ ArtDecoExamples.prototype = {
 	}
 }
 new ArtDecoExamples().main();
-process.exit(0);

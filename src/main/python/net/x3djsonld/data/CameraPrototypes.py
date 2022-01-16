@@ -178,7 +178,7 @@ newModel=X3D(profile='Immersive',version='3.2',
             connect(nodeField='totalDuration',protoField='totalDuration'),
             connect(nodeField='offlineRender',protoField='offlineRender'),
             connect(nodeField='traceEnabled',protoField='traceEnabled')])
-*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
 ),
         ROUTE(fromField='position',fromNode='CameraScript',toField='position',toNode='CameraViewpoint'),
         ROUTE(fromField='orientation',fromNode='CameraScript',toField='orientation',toNode='CameraViewpoint'),
@@ -238,7 +238,7 @@ newModel=X3D(profile='Immersive',version='3.2',
             connect(nodeField='shotDuration',protoField='shotDuration'),
             connect(nodeField='isActive',protoField='isActive'),
             connect(nodeField='traceEnabled',protoField='traceEnabled')])
-*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
 )]
         #  Add any ROUTEs here, going from Script to other nodes within ProtoBody 
         )),
@@ -291,7 +291,7 @@ newModel=X3D(profile='Immersive',version='3.2',
             connect(nodeField='goalFocusDistance',protoField='goalFocusDistance'),
             connect(nodeField='isActive',protoField='isActive'),
             connect(nodeField='traceEnabled',protoField='traceEnabled')])
-*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
 )]
         #  Add any ROUTEs here, going from Script to other nodes within ProtoBody 
         )),
@@ -341,7 +341,7 @@ newModel=X3D(profile='Immersive',version='3.2',
             connect(nodeField='movieFormat',protoField='movieFormat'),
             connect(nodeField='imageFormat',protoField='imageFormat'),
             connect(nodeField='traceEnabled',protoField='traceEnabled')])
-*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
 )]
         #  Add any ROUTEs here, going from Script to other nodes within ProtoBody 
         )),

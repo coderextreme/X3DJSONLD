@@ -45,7 +45,7 @@ public class gridBack {
     public X3D initialize() {
       X3D X3D0 =  new X3D().setProfile("Interchange").setVersion("3.0")
       .setHead(new head()
-        .addMeta(new meta().setName("title").setContent("gridBack.json"))
+        .addMeta(new meta().setName("title").setContent("gridBack.x3d"))
         .addMeta(new meta().setName("description").setContent("Checkerboard grid background for X3D/VRML materials selection."))
         .addMeta(new meta().setName("creator").setContent("David Roussel"))
         .addMeta(new meta().setName("translator").setContent("James Harney, Don Brutzman NPS"))

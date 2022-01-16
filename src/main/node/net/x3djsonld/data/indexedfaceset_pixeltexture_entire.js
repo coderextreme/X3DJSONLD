@@ -121,12 +121,12 @@ indexedfaceset_pixeltexture_entire.prototype = {
     .addMeta((new autoclass.meta()).setName("license").setContent("../../license.html")))
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.Viewpoint()).setDescription("Front View"))
-    .addChild((new autoclass.Viewpoint()).setDescription("Rear View").setPosition(0.0,0.0,-10.0).setOrientation(0.0,1.0,0.0,3.14))
-    .addChild((new autoclass.Viewpoint()).setDescription("Top View").setPosition(0.0,10.0,0.0).setOrientation(1.0,0.0,0.0,-1.57))
-    .addChild((new autoclass.Viewpoint()).setDescription("Bottom View").setPosition(0.0,-10.0,0.0).setOrientation(1.0,0.0,0.0,1.57))
+    .addChild((new autoclass.Viewpoint()).setDescription("Rear View").setOrientation(0.0,1.0,0.0,3.14).setPosition(0.0,0.0,-10.0))
+    .addChild((new autoclass.Viewpoint()).setDescription("Top View").setOrientation(1.0,0.0,0.0,-1.57).setPosition(0.0,10.0,0.0))
+    .addChild((new autoclass.Viewpoint()).setDescription("Bottom View").setOrientation(1.0,0.0,0.0,1.57).setPosition(0.0,-10.0,0.0))
     .addChild((new autoclass.Viewpoint()).setDescription("Right View").setOrientation(0.0,1.0,0.0,1.57).setPosition(10.0,0.0,0.0))
-    .addChild((new autoclass.Viewpoint()).setDescription("Left View").setPosition(-10.0,0.0,0.0).setOrientation(0.0,1.0,0.0,-1.57))
-    .addChild((new autoclass.NavigationInfo()).setType(new autoclass.MFString("\"EXAMINE\" \"WALK\" \"FLY\" \"ANY\"")))
+    .addChild((new autoclass.Viewpoint()).setDescription("Left View").setOrientation(0.0,1.0,0.0,-1.57).setPosition(-10.0,0.0,0.0))
+    .addChild((new autoclass.NavigationInfo()).setType("\"EXAMINE\" \"WALK\" \"FLY\" \"ANY\""))
     .addChild((new autoclass.Shape())
       .setAppearance((new autoclass.Appearance())
         .setMaterial((new autoclass.Material()))
@@ -191,4 +191,3 @@ indexedfaceset_pixeltexture_entire.prototype = {
 	}
 }
 new indexedfaceset_pixeltexture_entire().main();
-process.exit(0);

@@ -41,7 +41,7 @@ var X3D0 =  new X3D({
           meta : new MFNode([
             new meta({
               name : new SFString("title"),
-              content : new SFString("t4.x3d")}),
+              content : new SFString("t3.x3d")}),
 
             new meta({
               name : new SFString("identifier"),

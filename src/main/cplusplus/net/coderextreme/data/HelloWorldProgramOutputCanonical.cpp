@@ -48,7 +48,7 @@ head1->addUnit(*unit6);
 
 Cmeta* meta7 = new Cmeta();
 meta7->setName("title");
-meta7->setContent("HelloWorldProgramOutput.x3d");
+meta7->setContent("HelloWorldProgramOutputCanonical.x3d");
 head1->addMeta(*meta7);
 
 Cmeta* meta8 = new Cmeta();

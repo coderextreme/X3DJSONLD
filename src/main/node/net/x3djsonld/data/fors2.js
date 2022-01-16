@@ -92,7 +92,7 @@ fors2.prototype = {
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.ProtoDeclare()).setName("node")
       .setProtoInterface((new autoclass.ProtoInterface())
-        .addField((new autoclass.field()).setAccessType("inputOutput").setName("position").setType("SFVec3f").setValue("0 0 0")))
+        .addField((new autoclass.field()).setName("position").setType("SFVec3f").setAccessType("inputOutput").setValue("0 0 0")))
       .setProtoBody((new autoclass.ProtoBody())
         .addChild((new autoclass.Transform("transform"))
           .setIS((new autoclass.IS())
@@ -106,7 +106,7 @@ fors2.prototype = {
               .addComments("comment before Material")
               .addComments("comment after Material")
               .setMaterial((new autoclass.Material()).setDiffuseColor(1.0,0.0,0.0)))))
-        .addChild((new autoclass.PositionInterpolator("NodePosition")).setKeyValue(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0,0.0,5.0,0.0]))).setKey(java.newArray("float", [0.0,1.0])))
+        .addChild((new autoclass.PositionInterpolator("NodePosition")).setKey(java.newArray("float", [0.0,1.0])).setKeyValue(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0,0.0,5.0,0.0]))))
         .addChild((new autoclass.Script("MoveBall")).setSourceCode("\n" + 
 " ecmascript:" + "\n" + 
 "					function set_cycle(value) {" + "\n" + 
@@ -115,10 +115,10 @@ fors2.prototype = {
 "                                                keyValue = new MFVec3f([old, translation]);" + "\n" + 
 "						// Browser.println(translation);" + "\n" + 
 "					}" + "\n")
-          .addField((new autoclass.field()).setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("50 50 0"))
-          .addField((new autoclass.field()).setAccessType("inputOutput").setName("old").setType("SFVec3f").setValue("0 0 0"))
-          .addField((new autoclass.field()).setAccessType("inputOnly").setName("set_cycle").setType("SFTime"))
-          .addField((new autoclass.field()).setAccessType("outputOnly").setName("keyValue").setType("MFVec3f")))
+          .addField((new autoclass.field()).setName("translation").setType("SFVec3f").setAccessType("inputOutput").setValue("50 50 0"))
+          .addField((new autoclass.field()).setName("old").setType("SFVec3f").setAccessType("inputOutput").setValue("0 0 0"))
+          .addField((new autoclass.field()).setName("set_cycle").setType("SFTime").setAccessType("inputOnly"))
+          .addField((new autoclass.field()).setName("keyValue").setType("MFVec3f").setAccessType("outputOnly")))
         .addChild((new autoclass.TimeSensor("nodeClock")).setCycleInterval(3).setLoop(true))
         .addChild((new autoclass.ROUTE()).setFromNode("nodeClock").setFromField("cycleTime").setToNode("MoveBall").setToField("set_cycle"))
         .addChild((new autoclass.ROUTE()).setFromNode("nodeClock").setFromField("fraction_changed").setToNode("NodePosition").setToField("set_fraction"))
@@ -126,11 +126,11 @@ fors2.prototype = {
         .addChild((new autoclass.ROUTE()).setFromNode("NodePosition").setFromField("value_changed").setToNode("transform").setToField("set_translation"))))
     .addChild((new autoclass.ProtoDeclare()).setName("cylinder")
       .setProtoInterface((new autoclass.ProtoInterface())
-        .addField((new autoclass.field()).setAccessType("inputOnly").setName("positionA").setType("SFVec3f"))
-        .addField((new autoclass.field()).setAccessType("inputOnly").setName("positionB").setType("SFVec3f")))
+        .addField((new autoclass.field()).setName("positionA").setType("SFVec3f").setAccessType("inputOnly"))
+        .addField((new autoclass.field()).setName("positionB").setType("SFVec3f").setAccessType("inputOnly")))
       .setProtoBody((new autoclass.ProtoBody())
         .addChild((new autoclass.Shape())
-          .setGeometry((new autoclass.Extrusion("extrusion")).setSpine(new autoclass.MFVec3f(java.newArray("float", [0.0,-50.0,0.0,0.0,0.0,0.0,0.0,50.0,0.0]))).setCreaseAngle(0.785).setCrossSection(this.extrusion_6_34_crossSection))
+          .setGeometry((new autoclass.Extrusion("extrusion")).setCreaseAngle(0.785).setCrossSection(this.extrusion_6_34_crossSection).setSpine(new autoclass.MFVec3f(java.newArray("float", [0.0,-50.0,0.0,0.0,0.0,0.0,0.0,50.0,0.0]))))
           .setAppearance((new autoclass.Appearance())
             .setMaterial((new autoclass.Material()).setDiffuseColor(0.0,1.0,0.0))))
         .addChild((new autoclass.Script("MoveCylinder")).setSourceCode("\n" + 
@@ -156,19 +156,19 @@ fors2.prototype = {
 "		    Browser.print('\\n'+'\"');" + "\n" + 
 "                    spine = value;" + "\n" + 
 "                }" + "\n")
-          .addField((new autoclass.field()).setAccessType("inputOutput").setName("spine").setType("MFVec3f").setValue("0 -50 0 0 0 0 0 50 0"))
-          .addField((new autoclass.field()).setAccessType("inputOnly").setName("set_endA").setType("SFVec3f"))
-          .addField((new autoclass.field()).setAccessType("inputOnly").setName("set_endB").setType("SFVec3f"))
+          .addField((new autoclass.field()).setName("spine").setType("MFVec3f").setAccessType("inputOutput").setValue("0 -50 0 0 0 0 0 50 0"))
+          .addField((new autoclass.field()).setName("set_endA").setType("SFVec3f").setAccessType("inputOnly"))
+          .addField((new autoclass.field()).setName("set_endB").setType("SFVec3f").setAccessType("inputOnly"))
           .setIS((new autoclass.IS())
             .addConnect((new autoclass.connect()).setNodeField("set_endA").setProtoField("positionA"))
             .addConnect((new autoclass.connect()).setNodeField("set_endB").setProtoField("positionB"))))
         .addChild((new autoclass.ROUTE()).setFromNode("MoveCylinder").setFromField("spine").setToNode("extrusion").setToField("set_spine"))))
     .addChild((new autoclass.Transform()).setScale(0.1,0.1,0.1)
-      .addChild((new autoclass.ProtoInstance("nodeA", "node")).setDEF("nodeA").setName("node")
+      .addChild((new autoclass.ProtoInstance("nodeA", "node"))
         .addFieldValue((new autoclass.fieldValue()).setName("position").setValue("-50 -50 -50")))
-      .addChild((new autoclass.ProtoInstance("nodeB", "node")).setDEF("nodeB").setName("node")
+      .addChild((new autoclass.ProtoInstance("nodeB", "node"))
         .addFieldValue((new autoclass.fieldValue()).setName("position").setValue("50 50 50")))
-      .addChild((new autoclass.ProtoInstance("linkA", "cylinder")).setDEF("linkA").setName("cylinder")
+      .addChild((new autoclass.ProtoInstance("linkA", "cylinder"))
         .addFieldValue((new autoclass.fieldValue()).setName("positionA").setValue("0 0 0"))
         .addFieldValue((new autoclass.fieldValue()).setName("positionB").setValue("50 50 50"))))
     .addChild((new autoclass.ROUTE()).setFromNode("nodeA").setFromField("position").setToNode("linkA").setToField("positionA"))
@@ -231,4 +231,3 @@ fors2.prototype = {
 	}
 }
 new fors2().main();
-process.exit(0);

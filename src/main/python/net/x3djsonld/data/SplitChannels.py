@@ -30,7 +30,7 @@ newModel=X3D(profile='Full',version='4.0',
     meta(content='This work presents an innovative solution of the spatial sound in X3DOM framework, that based on a combinational methodology. Specifically, we suggested the enrichment of X3DOM with spatial sound features, using both the X3D sound nodes and the structure of Web Audio API.',name='info'),
     meta(content='Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman',name='creator'),
     meta(content='28 October 2020',name='created'),
-    meta(content='4 August 2021',name='modified'),
+    meta(content='5 December 2021',name='modified'),
     meta(content='CHANGELOG.txt',name='reference'),
     meta(content='credit for audio files',name='TODO'),
     meta(content='http://www.medialab.hmu.gr/minipages/x3domAudio',name='reference'),
@@ -39,9 +39,10 @@ newModel=X3D(profile='Full',version='4.0',
     meta(content='../license.html',name='license')]),
   Scene=Scene(
     children=[
+    WorldInfo(title='SplitChannels.x3d'),
     NavigationInfo(id_='NAV',type='NONE'),
     Background(skyColor=[(0.200,0.200,0.210)]),
-    Viewpoint(bind=true,orientation=(1,0,0,-0.5),position=(0.0,500.0,600.0),retainUserOffsets=True),
+    Viewpoint(orientation=(1,0,0,-0.5),position=(0.0,500.0,600.0),retainUserOffsets=True),
     Transform(DEF='PowerR',translation=(100,400,400),
       children=[
       Transform(id_='pR',rotation=(1,0,0,-0.5),translation=(0,40,0),
@@ -53,49 +54,47 @@ newModel=X3D(profile='Full',version='4.0',
       Transform(rotation=(1,0,0,-0.5),translation=(-2.7,37,0),
         children=[
         Shape(
-          appearance=Appearance(DEF='audio_emit',
+          appearance=Appearance(DEF='audio_emit2',
             material=Material(diffuseColor=(0,1,0),emissiveColor=(0.8,0.8,0.8),specularColor=(0.01,0.01,0.01)),
-            texture=ImageTexture(url=["images/line.png"])),
+            texture=ImageTexture(url=["images/line.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"])),
           geometry=Box(size=(25,83,0.01)))]),
       Transform(DEF='volumeRight',rotation=(1,0,0,-0.5),scale=(10,10,10),translation=(0,-10,0),
         children=[
         Shape(
           appearance=Appearance(
-            material=Material(diffuseColor=(0.345,0.345,0.882)),
-            Material(ambientintensity=0.0933,diffusecolor=1,1,1,emissivecolor=0,0,0,shininess=0.51,specularcolor=0.46,0.46,0.46)),
-          geometry=Text(lit=true,string=['Right Channel Volume'],usegeocache=true,
-            fontStyle=FontStyle(family=['\'Times\''],justify=['BEGIN'],lefttoright=true,style_='BOLD',toptobottom=true)))])]),
+            material=Material(ambientIntensity=0.0933,diffuseColor=(0.345,0.345,0.882),shininess=0.51,specularColor=(0.46,0.46,0.46))),
+          geometry=Text(string=['Right Channel Volume'],
+            fontStyle=FontStyle(family=["Times"],style_='BOLD')))])]),
     Transform(DEF='PowerL',translation=(-100,400,400),
       children=[
       Transform(id_='pL',rotation=(1,0,0,-0.5),translation=(0,40,0),
         children=[
         Shape(
-          appearance=Appearance(DEF='audio_emit',
+          appearance=Appearance(DEF='audio_emit3',
             material=Material(diffuseColor=(0,1,0),emissiveColor=(0.8,0.8,0.8),specularColor=(0.01,0.01,0.01))),
           geometry=Box(size=(10,80,0.01)))]),
       Transform(rotation=(1,0,0,-0.5),translation=(13.2,37,0),
         children=[
         Shape(
-          appearance=Appearance(DEF='audio_emit',
+          appearance=Appearance(DEF='audio_emit4',
             material=Material(diffuseColor=(0,1,0),emissiveColor=(0.8,0.8,0.8),specularColor=(0.01,0.01,0.01)),
-            texture=ImageTexture(url=["images/line.png"])),
+            texture=ImageTexture(url=["images/line.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"])),
           geometry=Box(size=(25,83,0.01)))]),
       Transform(DEF='volumeLeft',rotation=(1,0,0,-0.5),scale=(10,10,10),translation=(0,-10,0),
         children=[
         Shape(
           appearance=Appearance(
-            material=Material(diffuseColor=(0.345,0.345,0.882)),
-            Material(ambientintensity=0.0933,diffusecolor=1,1,1,emissivecolor=0,0,0,shininess=0.51,specularcolor=0.46,0.46,0.46)),
-          geometry=Text(lit=true,string=['Left Channel Volume'],usegeocache=true,
-            fontStyle=FontStyle(family=['\'Times\''],justify=['BEGIN'],lefttoright=true,style_='BOLD',toptobottom=true)))])]),
+            material=Material(ambientIntensity=0.0933,diffuseColor=(0.345,0.345,0.882),shininess=0.51,specularColor=(0.46,0.46,0.46))),
+          geometry=Text(string=['Left Channel Volume'],
+            fontStyle=FontStyle(family=["Times"],style_='BOLD')))])]),
     Transform(
       children=[
       Shape(
         appearance=Appearance(DEF='floor',
           material=Material(diffuseColor=(0.1,0.1,0.1),shininess=0.8,specularColor=(0.5,0.6,0.7))),
         geometry=Box(size=(1500,10,500)))]),
-    ListenerPoint(id_='ListenerPoint',trackCurrentView=True),
-    AudioDestination(id_='AudioDestination',
+    ListenerPointSource(id_='ListenerPointSource',trackCurrentView=True),
+    StreamAudioDestination(id_='AudioDestination',
       children=[
       Gain(id_='Gain3',
         children=[
@@ -103,19 +102,19 @@ newModel=X3D(profile='Full',version='4.0',
           children=[
           ChannelSelector(id_='ChannelSelector0',
             children=[
-            Gain(USE='ChannelSplitter',id_='Gain0')]),
+            Gain(USE='ChannelSplitter')]),
           ChannelSelector(channelSelection=1,id_='ChannelSelector1',
             children=[
-            Gain(USE='ChannelSplitter',id_='Gain1')])])])]),
-    ChannelSplitter(DEF='ChannelSplitter',channelCountMode='explicit',id_='ChannelSplitter',
+            Gain(USE='ChannelSplitter')])])])]),
+    ChannelSplitter(DEF='ChannelSplitter',channelCountMode='explicit',
       children=[
-      AudioClip(USE='Audio3',id_='AudioClip',loop=True,pauseTime=-1,resumeTime=-1,stopTime=-1,url=['sound/violin.mp3'])]),
+      AudioClip(description='Violin',url=["sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"])]),
     Transform(DEF='Audio3',rotation=(1,0,0,-0.5),translation=(0,100,0),
       children=[
       Shape(
-        appearance=Appearance(DEF='audio_emit',
+        appearance=Appearance(DEF='audio_emit5',
           material=Material(diffuseColor=(0.3,1,0.3),emissiveColor=(0.8,0.8,0.8),specularColor=(0.01,0.01,0.01)),
-          texture=ImageTexture(url=["images/loudspeaker.png"])),
+          texture=ImageTexture(url=["images/loudspeaker.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png"])),
         geometry=Box(size=(100,100,0.001)))])])
 ) # X3D model complete
 

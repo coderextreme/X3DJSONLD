@@ -10,7 +10,7 @@
 <unit name="AngleUnitConversion" category="angle" conversionFactor="1"></unit>
 <unit name="LengthUnitConversion" category="length" conversionFactor="1"></unit>
 <unit name="ForceFromPoundsToNewtons" category="force" conversionFactor="4.4482"></unit>
-<meta name="title" content="HelloWorldProgramOutput.x3d"></meta>
+<meta name="title" content="Json.x3d"></meta>
 <meta name="info" content="continued development and testing in progress"></meta>
 <meta name="description" content="Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface Library (X3DJSAIL)"></meta>
 <meta name="reference" content="https://www.web3d.org/specifications/java/X3DJSAIL.html"></meta>

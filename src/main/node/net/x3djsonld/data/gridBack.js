@@ -11,7 +11,7 @@ var autoclass = require('./X3Dautoclass');
 // Javadoc annotations follow, see below for source.
 /**
  * <p> Checkerboard grid background for X3D/VRML materials selection. </p>
- <p> Related links: <a href="../../../UniversalMediaMaterials/gridBack.java">gridBack.java</a> source, <a href="../../../UniversalMediaMaterials/Index.html" target="_top"> catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: <a href="../../..gridBack.java">gridBack.java</a> source, <a href="../../..gridBackIndex.html" target="_top">gridBack catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a> and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;" summary="Scene Metadata">
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
@@ -20,7 +20,7 @@ var autoclass = require('./X3Dautoclass');
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="../../../UniversalMediaMaterials/gridBack.json">gridBack.json</a> </td>
+			<td> <a href="../../..gridBack.x3d">gridBack.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -60,7 +60,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
-			<td> <a href="../../../UniversalMediaMaterials/../license.html">../license.html</a> </td>
+			<td> <a href="../../..../license.html">../license.html</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -106,7 +106,7 @@ gridBack.prototype = {
 	.append(new autoclass.MFVec3f(java.newArray("float", [0.75,-5.25,0.0,2.25,-5.25,0.0,3.75,-5.25,0.0,5.25,-5.25,0.0])));
   this.x3dModel = (new autoclass.X3D()).setProfile("Interchange").setVersion("3.0")
   .setHead((new autoclass.head())
-    .addMeta((new autoclass.meta()).setName("title").setContent("gridBack.json"))
+    .addMeta((new autoclass.meta()).setName("title").setContent("gridBack.x3d"))
     .addMeta((new autoclass.meta()).setName("description").setContent("Checkerboard grid background for X3D/VRML materials selection."))
     .addMeta((new autoclass.meta()).setName("creator").setContent("David Roussel"))
     .addMeta((new autoclass.meta()).setName("translator").setContent("James Harney, Don Brutzman NPS"))
@@ -120,7 +120,7 @@ gridBack.prototype = {
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.Shape())
       .setAppearance((new autoclass.Appearance())
-        .setMaterial((new autoclass.Material()).setAmbientIntensity(0.01).setShininess(0.05).setDiffuseColor(1.0,1.0,1.0)))
+        .setMaterial((new autoclass.Material()).setAmbientIntensity(0.01).setDiffuseColor(1.0,1.0,1.0).setShininess(0.05)))
       .setGeometry((new autoclass.IndexedFaceSet()).setColorPerVertex(false).setNormalPerVertex(false).setColorIndex(java.newArray("int", [0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0])).setCoordIndex(this.IndexedFaceSet_4_15_coordIndex)
         .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_5_15_point))
         .setColor((new autoclass.Color()).setColor(new autoclass.MFColor(java.newArray("float", [0.5,0.5,0.5,0.75,0.75,0.75])))))));
@@ -182,4 +182,3 @@ gridBack.prototype = {
 	}
 }
 new gridBack().main();
-process.exit(0);

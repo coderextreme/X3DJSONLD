@@ -25,7 +25,7 @@ from x3d import *
 newModel=X3D(profile='Interchange',version='3.0',
   head=head(
     children=[
-    meta(content='gridBack.json',name='title'),
+    meta(content='gridBack.x3d',name='title'),
     meta(content='Checkerboard grid background for X3D/VRML materials selection.',name='description'),
     meta(content='David Roussel',name='creator'),
     meta(content='James Harney, Don Brutzman NPS',name='translator'),

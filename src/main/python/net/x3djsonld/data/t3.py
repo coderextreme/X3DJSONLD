@@ -27,7 +27,7 @@ newModel=X3D(profile='Immersive',version='3.3',
     children=[
     component(name='Networking',level=2),
     component(name='Core',level=2),
-    meta(name='title',content='t4.x3d'),
+    meta(name='title',content='t3.x3d'),
     meta(name='identifier',content='http://coderextreme.net/X3DJSONLD/src/main/data/t4.x3d'),
     meta(name='generator',content='view3dscene, https://castle-engine.io/view3dscene.php'),
     meta(name='creator',content='Andreas Plesch and John Carlson'),
@@ -196,4 +196,4 @@ except SyntaxError as err:
     if newModelJSON: # may have failed to generate
         print(prependLineNumbers(newModelJSON,err.lineno))
 
-print("python x3d.py load and self-test complete for t4.py")
+print("python x3d.py load and self-test complete for t3.py")

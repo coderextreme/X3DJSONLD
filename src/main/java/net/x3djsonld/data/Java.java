@@ -234,15 +234,17 @@ public class Java
     .addChild(new ROUTE().setFromNode("SpinInterpolator").setFromField("value_changed").setToNode("TextTransform").setToField("rotation"))
     .addChild(new Group("BackgroundGroup")
       .addChild(new Background("GradualBackground"))
-      .addChild(new Script("colorTypeConversionScript").setSourceCode("\n" + 
-"\n" + 
-"ecmascript:" + "\n" + 
-"\n" + 
-"function colorInput (eventValue) // Example source code" + "\n" + 
-"{" + "\n" + 
-"   colorsOutput = new MFColor(eventValue); // assigning value sends output event" + "\n" + 
-"// Browser.print('colorInput=' + eventValue + ', colorsOutput=' + colorsOutput + '\\n');" + "\n" + 
-"}" + "\n")
+      .addChild(new Script("colorTypeConversionScript").setSourceCode("""
+
+ecmascript:
+
+function colorInput (eventValue) // Example source code
+{
+   colorsOutput = new MFColor(eventValue); // assigning value sends output event
+// Browser.print('colorInput=' + eventValue + ', colorsOutput=' + colorsOutput + '\n');
+}
+
+            """)
         .addField(new field().setName("colorInput").setType(field.TYPE_SFCOLOR).setAccessType(field.ACCESSTYPE_INPUTONLY))
         .addField(new field().setName("colorsOutput").setType(field.TYPE_MFCOLOR).setAccessType(field.ACCESSTYPE_OUTPUTONLY)))
       .addChild(new ColorInterpolator("ColorAnimator").setKey(new double[] {0.0,0.5,1.0}).setKeyValue(new MFColor(new double[] {0.9411765,1.0,1.0,0.29411766,0.0,0.50980395,0.9411765,1.0,1.0}))
@@ -309,31 +311,33 @@ public class Java
             .addConnect(new connect().setNodeField("shininess").setProtoField("shininess"))
             .addConnect(new connect().setNodeField("ambientIntensity").setProtoField("ambientIntensity"))))
         .addComments(" Only first node (the node type) is renderable, others are along for the ride ")
-        .addChild(new Script("MaterialModulatorScript").setSourceCode("\n" + 
-"\n" + 
-"ecmascript:" + "\n" + 
-"function initialize ()" + "\n" + 
-"{" + "\n" + 
-"    newColor = diffuseColor; // start with correct color" + "\n" + 
-"}" + "\n" + 
-"function set_enabled (newValue)" + "\n" + 
-"{" + "\n" + 
-"	enabled = newValue;" + "\n" + 
-"}" + "\n" + 
-"function clockTrigger (timeValue)" + "\n" + 
-"{" + "\n" + 
-"    if (!enabled) return;" + "\n" + 
-"    red   = newColor.r;" + "\n" + 
-"    green = newColor.g;" + "\n" + 
-"    blue  = newColor.b;" + "\n" + 
-"\n" + 
-"    // note different modulation rates for each color component, % is modulus operator" + "\n" + 
-"    newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);" + "\n" + 
-"	if (enabled)" + "\n" + 
-"	{" + "\n" + 
-"		Browser.print ('diffuseColor=(' + red + ',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\\n');" + "\n" + 
-"	}" + "\n" + 
-"}" + "\n")
+        .addChild(new Script("MaterialModulatorScript").setSourceCode("""
+
+ecmascript:
+function initialize ()
+{
+    newColor = diffuseColor; // start with correct color
+}
+function set_enabled (newValue)
+{
+	enabled = newValue;
+}
+function clockTrigger (timeValue)
+{
+    if (!enabled) return;
+    red   = newColor.r;
+    green = newColor.g;
+    blue  = newColor.b;
+
+    // note different modulation rates for each color component, % is modulus operator
+    newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);
+	if (enabled)
+	{
+		Browser.print ('diffuseColor=(' + red + ',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\n');
+	}
+}
+
+                """)
           .addField(new field().setName("enabled").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
           .addField(new field().setName("diffuseColor").setType(field.TYPE_SFCOLOR).setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
           .addField(new field().setName("newColor").setType(field.TYPE_SFCOLOR).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
