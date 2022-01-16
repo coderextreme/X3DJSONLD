@@ -12,12 +12,14 @@ export PROCESSORS=${PROCESSORS-8}
 STYLESHEETDIR=../lib/stylesheets
 DATATOJAVA='s/\/data\//\/java\/net\/coderextreme\/data\//' 
 DATATONODE='s/\/data\//\/node\/net\/coderextreme\/data\//' 
+DATATOPYTHON='s/\/data\//\/python\/net\/coderextreme\/data\//' 
 DATATONASH='s/\/data\//\/nashorn\/net\/coderextreme\/data\//' 
 EXTOJAVA='s/\/Library\//\/java\/net\/coderextreme\/Library\//' 
 EXTONODE='s/\/Library\//\/node\/net\/coderextreme\/Library\//' 
 EXTONASH='s/\/Library\//\/nashorn\/net\/coderextreme\/Library\//' 
 ROOTTOJAVA='s/\/x3d_code\/www.web3d.org\//\/java\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
 ROOTTONODE='s/\/x3d_code\/www.web3d.org\//\/node\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
+ROOTTOPYTHON='s/\/x3d_code\/www.web3d.org\//\/python\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
 ROOTTONASH='s/\/x3d_code\/www.web3d.org\//\/nashorn\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
 # OVERWRITE=
 OVERWRITE=---overwrite
@@ -95,3 +97,11 @@ done
 #echo ${NODE} ${NODEDIR}/jsondiff.js `dirname $i`/`basename $i x3d`json `dirname $i`/`basename $i x3d`new.json2
 #${NODE} ${NODEDIR}/jsondiff.js `dirname $i`/`basename $i x3d`json `dirname $i`/`basename $i x3d`new.json2
 #done
+
+export PYTHONPATH=../python
+for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.json/' -e 's/-/_/g' -e 's/^\/c/../'`
+do
+	PY=`echo $i | sed -e $DATATOPYTHON -e $ROOTTOPYTHON -e 's/.json$/.py/'`
+	echo python ../python/x3djsonld.py $i $PY
+	python ../python/x3djsonld.py $i > $PY
+done

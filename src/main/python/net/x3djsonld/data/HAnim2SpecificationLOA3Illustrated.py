@@ -81,7 +81,7 @@ newModel=X3D(profile='Immersive',version='4.0',
         MetadataString(name='humanoidVersion',value=['2.0']),
         MetadataString(name='usageRestrictions',value=['none'])]),
       skeleton=[
-      HAnimJoint(DEF='hanim_humanoid_root',center=(0,0.824,0.0277),name='humanoid_root',
+      HAnimJoint(DEF='hanim_humanoid_root',center=(0,0.824,0.0277),name='humanoid_root',ulimit=[0,0,0],llimit=[0,0,0],
         children=[
         HAnimSegment(DEF='hanim_sacrum',name='sacrum',
           #  Visualization sphere for <HAnimJoint name='humanoid_root'/> is placed within <HAnimSegment name='sacrum'/> 
@@ -103,7 +103,7 @@ newModel=X3D(profile='Immersive',version='4.0',
             geometry=LineSet(vertexCount=[2],
               coord=Coordinate(point=[(0,0.824,0.0277),(0.0028,1.0568,-0.0776)]),
               color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-        HAnimJoint(DEF='hanim_sacroiliac',center=(0,0.9149,0.0016),name='sacroiliac',
+        HAnimJoint(DEF='hanim_sacroiliac',center=(0,0.9149,0.0016),name='sacroiliac',ulimit=[0,0,0],llimit=[0,0,0],
           children=[
           HAnimSegment(DEF='hanim_pelvis',name='pelvis',
             #  Visualization sphere for <HAnimJoint name='sacroiliac'/> is placed within <HAnimSegment name='pelvis'/> 
@@ -216,7 +216,7 @@ newModel=X3D(profile='Immersive',version='4.0',
               children=[
               TouchSensor(description='HAnimSite crotch_pt'),
               Shape(USE='HAnimSiteShape')])]),
-          HAnimJoint(DEF='hanim_l_hip',center=(0.0961,0.9124,-0.0001),name='l_hip',
+          HAnimJoint(DEF='hanim_l_hip',center=(0.0961,0.9124,-0.0001),name='l_hip',ulimit=[0,0,0],llimit=[0,0,0],
             children=[
             HAnimSegment(DEF='hanim_l_thigh',name='l_thigh',
               #  Visualization sphere for <HAnimJoint name='l_hip'/> is placed within <HAnimSegment name='l_thigh'/> 
@@ -260,7 +260,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                 children=[
                 TouchSensor(description='HAnimSite l_femoral_medial_epicn_pt'),
                 Shape(USE='HAnimSiteShape')])]),
-            HAnimJoint(DEF='hanim_l_knee',center=(0.104,0.4867,0.0308),name='l_knee',
+            HAnimJoint(DEF='hanim_l_knee',center=(0.104,0.4867,0.0308),name='l_knee',ulimit=[0,0,0],llimit=[0,0,0],
               children=[
               HAnimSegment(DEF='hanim_l_calf',name='l_calf',
                 #  Visualization sphere for <HAnimJoint name='l_knee'/> is placed within <HAnimSegment name='l_calf'/> 
@@ -274,7 +274,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                   geometry=LineSet(vertexCount=[2],
                     coord=Coordinate(point=[(0.104,0.4867,0.0308),(0.1101,0.0656,-0.0736)]),
                     color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-              HAnimJoint(DEF='hanim_l_talocrural',center=(0.1101,0.0656,-0.0736),name='l_talocrural',
+              HAnimJoint(DEF='hanim_l_talocrural',center=(0.1101,0.0656,-0.0736),name='l_talocrural',ulimit=[0,0,0],llimit=[0,0,0],
                 children=[
                 HAnimSegment(DEF='hanim_l_talus',name='l_talus',
                   #  Visualization sphere for <HAnimJoint name='l_talocrural'/> is placed within <HAnimSegment name='l_talus'/> 
@@ -328,7 +328,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                     children=[
                     TouchSensor(description='HAnimSite l_calcaneous_post_pt'),
                     Shape(USE='HAnimSiteShape')])]),
-                HAnimJoint(DEF='hanim_l_tarsometatarsal_2',center=(0.1086,0.0001,-0.0368),name='l_tarsometatarsal_2',
+                HAnimJoint(DEF='hanim_l_tarsometatarsal_2',center=(0.1086,0.0001,-0.0368),name='l_tarsometatarsal_2',ulimit=[0,0,0],llimit=[0,0,0],
                   children=[
                   HAnimSegment(DEF='hanim_l_metatarsal_2',name='l_metatarsal_2',
                     #  Visualization sphere for <HAnimJoint name='l_tarsometatarsal_2'/> is placed within <HAnimSegment name='l_metatarsal_2'/> 
@@ -342,7 +342,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                       geometry=LineSet(vertexCount=[2],
                         coord=Coordinate(point=[(0.1086,0.0001,-0.0368),(0.1086,0.0001,0.0368)]),
                         color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                  HAnimJoint(DEF='hanim_l_metatarsophalangeal_2',center=(0.1086,0.0001,0.0368),name='l_metatarsophalangeal_2',
+                  HAnimJoint(DEF='hanim_l_metatarsophalangeal_2',center=(0.1086,0.0001,0.0368),name='l_metatarsophalangeal_2',ulimit=[0,0,0],llimit=[0,0,0],
                     children=[
                     HAnimSegment(DEF='hanim_l_tarsal_proximal_phalanx_2',name='l_tarsal_proximal_phalanx_2',
                       #  Visualization sphere for <HAnimJoint name='l_metatarsophalangeal_2'/> is placed within <HAnimSegment name='l_tarsal_proximal_phalanx_2'/> 
@@ -366,7 +366,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                         children=[
                         TouchSensor(description='HAnimSite l_metatarsal_pha1_pt'),
                         Shape(USE='HAnimSiteShape')])]),
-                    HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_2',center=(0.1086,0,0.0762),name='l_tarsal_distal_interphalangeal_2',
+                    HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_2',center=(0.1086,0,0.0762),name='l_tarsal_distal_interphalangeal_2',ulimit=[0,0,0],llimit=[0,0,0],
                       children=[
                       HAnimSegment(DEF='hanim_l_tarsal_distal_phalanx_2',name='l_tarsal_distal_phalanx_2',
                         #  Visualization sphere for <HAnimJoint name='l_tarsal_distal_interphalangeal_2'/> is placed within <HAnimSegment name='l_tarsal_distal_phalanx_2'/> 
@@ -405,7 +405,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                           children=[
                           TouchSensor(description='HAnimSite l_digit2_pt'),
                           Shape(USE='HAnimSiteShape')])])])])])])])]),
-          HAnimJoint(DEF='hanim_r_hip',center=(-0.0961,0.9124,-0.0001),name='r_hip',
+          HAnimJoint(DEF='hanim_r_hip',center=(-0.0961,0.9124,-0.0001),name='r_hip',ulimit=[0,0,0],llimit=[0,0,0],
             children=[
             HAnimSegment(DEF='hanim_r_thigh',name='r_thigh',
               #  Visualization sphere for <HAnimJoint name='r_hip'/> is placed within <HAnimSegment name='r_thigh'/> 
@@ -449,7 +449,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                 children=[
                 TouchSensor(description='HAnimSite r_femoral_medial_epicn_pt'),
                 Shape(USE='HAnimSiteShape')])]),
-            HAnimJoint(DEF='hanim_r_knee',center=(-0.104,0.4867,0.0308),name='r_knee',
+            HAnimJoint(DEF='hanim_r_knee',center=(-0.104,0.4867,0.0308),name='r_knee',ulimit=[0,0,0],llimit=[0,0,0],
               children=[
               HAnimSegment(DEF='hanim_r_calf',name='r_calf',
                 #  Visualization sphere for <HAnimJoint name='r_knee'/> is placed within <HAnimSegment name='r_calf'/> 
@@ -463,7 +463,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                   geometry=LineSet(vertexCount=[2],
                     coord=Coordinate(point=[(-0.104,0.4867,0.0308),(-0.1101,0.0656,-0.0736)]),
                     color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-              HAnimJoint(DEF='hanim_r_talocrural',center=(-0.1101,0.0656,-0.0736),name='r_talocrural',
+              HAnimJoint(DEF='hanim_r_talocrural',center=(-0.1101,0.0656,-0.0736),name='r_talocrural',ulimit=[0,0,0],llimit=[0,0,0],
                 children=[
                 HAnimSegment(DEF='hanim_r_talus',name='r_talus',
                   #  Visualization sphere for <HAnimJoint name='r_talocrural'/> is placed within <HAnimSegment name='r_talus'/> 
@@ -517,7 +517,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                     children=[
                     TouchSensor(description='HAnimSite r_calcaneous_post_pt'),
                     Shape(USE='HAnimSiteShape')])]),
-                HAnimJoint(DEF='hanim_r_tarsometatarsal_2',center=(-0.1086,0.0001,-0.0368),name='r_tarsometatarsal_2',
+                HAnimJoint(DEF='hanim_r_tarsometatarsal_2',center=(-0.1086,0.0001,-0.0368),name='r_tarsometatarsal_2',ulimit=[0,0,0],llimit=[0,0,0],
                   children=[
                   HAnimSegment(DEF='hanim_r_metatarsal_2',name='r_metatarsal_2',
                     #  Visualization sphere for <HAnimJoint name='r_tarsometatarsal_2'/> is placed within <HAnimSegment name='r_metatarsal_2'/> 
@@ -531,7 +531,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                       geometry=LineSet(vertexCount=[2],
                         coord=Coordinate(point=[(-0.1086,0.0001,-0.0368),(-0.1086,0.0001,0.0368)]),
                         color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                  HAnimJoint(DEF='hanim_r_metatarsophalangeal_2',center=(-0.1086,0.0001,0.0368),name='r_metatarsophalangeal_2',
+                  HAnimJoint(DEF='hanim_r_metatarsophalangeal_2',center=(-0.1086,0.0001,0.0368),name='r_metatarsophalangeal_2',ulimit=[0,0,0],llimit=[0,0,0],
                     children=[
                     HAnimSegment(DEF='hanim_r_tarsal_proximal_phalanx_2',name='r_tarsal_proximal_phalanx_2',
                       #  Visualization sphere for <HAnimJoint name='r_metatarsophalangeal_2'/> is placed within <HAnimSegment name='r_tarsal_proximal_phalanx_2'/> 
@@ -555,7 +555,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                         children=[
                         TouchSensor(description='HAnimSite r_metatarsal_pha1_pt'),
                         Shape(USE='HAnimSiteShape')])]),
-                    HAnimJoint(DEF='hanim_r_tarsal_distal_interphalangeal_2',center=(-0.1086,0,0.0762),name='r_tarsal_distal_interphalangeal_2',
+                    HAnimJoint(DEF='hanim_r_tarsal_distal_interphalangeal_2',center=(-0.1086,0,0.0762),name='r_tarsal_distal_interphalangeal_2',ulimit=[0,0,0],llimit=[0,0,0],
                       children=[
                       HAnimSegment(DEF='hanim_r_tarsal_distal_phalanx_2',name='r_tarsal_distal_phalanx_2',
                         #  Visualization sphere for <HAnimJoint name='r_tarsal_distal_interphalangeal_2'/> is placed within <HAnimSegment name='r_tarsal_distal_phalanx_2'/> 
@@ -594,7 +594,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                           children=[
                           TouchSensor(description='HAnimSite r_digit2_pt'),
                           Shape(USE='HAnimSiteShape')])])])])])])])])]),
-        HAnimJoint(DEF='hanim_vl5',center=(0.0028,1.0568,-0.0776),name='vl5',
+        HAnimJoint(DEF='hanim_vl5',center=(0.0028,1.0568,-0.0776),name='vl5',ulimit=[0,0,0],llimit=[0,0,0],
           children=[
           HAnimSegment(DEF='hanim_l5',name='l5',
             #  Visualization sphere for <HAnimJoint name='vl5'/> is placed within <HAnimSegment name='l5'/> 
@@ -628,7 +628,7 @@ newModel=X3D(profile='Immersive',version='4.0',
               children=[
               TouchSensor(description='HAnimSite navel_pt'),
               Shape(USE='HAnimSiteShape')])]),
-          HAnimJoint(DEF='hanim_vl4',center=(0.0035,1.0925,-0.0787),name='vl4',
+          HAnimJoint(DEF='hanim_vl4',center=(0.0035,1.0925,-0.0787),name='vl4',ulimit=[0,0,0],llimit=[0,0,0],
             children=[
             HAnimSegment(DEF='hanim_l4',name='l4',
               #  Visualization sphere for <HAnimJoint name='vl4'/> is placed within <HAnimSegment name='l4'/> 
@@ -642,7 +642,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                 geometry=LineSet(vertexCount=[2],
                   coord=Coordinate(point=[(0.0035,1.0925,-0.0787),(0.0041,1.1276,-0.0796)]),
                   color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-            HAnimJoint(DEF='hanim_vl3',center=(0.0041,1.1276,-0.0796),name='vl3',
+            HAnimJoint(DEF='hanim_vl3',center=(0.0041,1.1276,-0.0796),name='vl3',ulimit=[0,0,0],llimit=[0,0,0],
               children=[
               HAnimSegment(DEF='hanim_l3',name='l3',
                 #  Visualization sphere for <HAnimJoint name='vl3'/> is placed within <HAnimSegment name='l3'/> 
@@ -656,7 +656,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                   geometry=LineSet(vertexCount=[2],
                     coord=Coordinate(point=[(0.0041,1.1276,-0.0796),(0.0045,1.1546,-0.08)]),
                     color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-              HAnimJoint(DEF='hanim_vl2',center=(0.0045,1.1546,-0.08),name='vl2',
+              HAnimJoint(DEF='hanim_vl2',center=(0.0045,1.1546,-0.08),name='vl2',ulimit=[0,0,0],llimit=[0,0,0],
                 children=[
                 HAnimSegment(DEF='hanim_l2',name='l2',
                   #  Visualization sphere for <HAnimJoint name='vl2'/> is placed within <HAnimSegment name='l2'/> 
@@ -700,7 +700,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                     children=[
                     TouchSensor(description='HAnimSite rib10_midspine_pt'),
                     Shape(USE='HAnimSiteShape')])]),
-                HAnimJoint(DEF='hanim_vl1',center=(0.0048,1.1912,-0.0805),name='vl1',
+                HAnimJoint(DEF='hanim_vl1',center=(0.0048,1.1912,-0.0805),name='vl1',ulimit=[0,0,0],llimit=[0,0,0],
                   children=[
                   HAnimSegment(DEF='hanim_l1',name='l1',
                     #  Visualization sphere for <HAnimJoint name='vl1'/> is placed within <HAnimSegment name='l1'/> 
@@ -714,7 +714,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                       geometry=LineSet(vertexCount=[2],
                         coord=Coordinate(point=[(0.0048,1.1912,-0.0805),(0.0051,1.2278,-0.0808)]),
                         color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                  HAnimJoint(DEF='hanim_vt12',center=(0.0051,1.2278,-0.0808),name='vt12',
+                  HAnimJoint(DEF='hanim_vt12',center=(0.0051,1.2278,-0.0808),name='vt12',ulimit=[0,0,0],llimit=[0,0,0],
                     children=[
                     HAnimSegment(DEF='hanim_t12',name='t12',
                       #  Visualization sphere for <HAnimJoint name='vt12'/> is placed within <HAnimSegment name='t12'/> 
@@ -728,7 +728,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                         geometry=LineSet(vertexCount=[2],
                           coord=Coordinate(point=[(0.0051,1.2278,-0.0808),(0.0053,1.2679,-0.081)]),
                           color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                    HAnimJoint(DEF='hanim_vt11',center=(0.0053,1.2679,-0.081),name='vt11',
+                    HAnimJoint(DEF='hanim_vt11',center=(0.0053,1.2679,-0.081),name='vt11',ulimit=[0,0,0],llimit=[0,0,0],
                       children=[
                       HAnimSegment(DEF='hanim_t11',name='t11',
                         #  Visualization sphere for <HAnimJoint name='vt11'/> is placed within <HAnimSegment name='t11'/> 
@@ -742,7 +742,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                           geometry=LineSet(vertexCount=[2],
                             coord=Coordinate(point=[(0.0053,1.2679,-0.081),(0.0056,1.2848,-0.0822)]),
                             color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                      HAnimJoint(DEF='hanim_vt10',center=(0.0056,1.2848,-0.0822),name='vt10',
+                      HAnimJoint(DEF='hanim_vt10',center=(0.0056,1.2848,-0.0822),name='vt10',ulimit=[0,0,0],llimit=[0,0,0],
                         children=[
                         HAnimSegment(DEF='hanim_t10',name='t10',
                           #  Visualization sphere for <HAnimJoint name='vt10'/> is placed within <HAnimSegment name='t10'/> 
@@ -766,7 +766,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                             children=[
                             TouchSensor(description='HAnimSite substernale_pt'),
                             Shape(USE='HAnimSiteShape')])]),
-                        HAnimJoint(DEF='hanim_vt9',center=(0.0057,1.3126,-0.0838),name='vt9',
+                        HAnimJoint(DEF='hanim_vt9',center=(0.0057,1.3126,-0.0838),name='vt9',ulimit=[0,0,0],llimit=[0,0,0],
                           children=[
                           HAnimSegment(DEF='hanim_t9',name='t9',
                             #  Visualization sphere for <HAnimJoint name='vt9'/> is placed within <HAnimSegment name='t9'/> 
@@ -800,7 +800,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                               children=[
                               TouchSensor(description='HAnimSite l_thelion_pt'),
                               Shape(USE='HAnimSiteShape')])]),
-                          HAnimJoint(DEF='hanim_vt8',center=(0.0057,1.3382,-0.0845),name='vt8',
+                          HAnimJoint(DEF='hanim_vt8',center=(0.0057,1.3382,-0.0845),name='vt8',ulimit=[0,0,0],llimit=[0,0,0],
                             children=[
                             HAnimSegment(DEF='hanim_t8',name='t8',
                               #  Visualization sphere for <HAnimJoint name='vt8'/> is placed within <HAnimSegment name='t8'/> 
@@ -814,7 +814,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                 geometry=LineSet(vertexCount=[2],
                                   coord=Coordinate(point=[(0.0057,1.3382,-0.0845),(0.0058,1.3625,-0.0833)]),
                                   color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                            HAnimJoint(DEF='hanim_vt7',center=(0.0058,1.3625,-0.0833),name='vt7',
+                            HAnimJoint(DEF='hanim_vt7',center=(0.0058,1.3625,-0.0833),name='vt7',ulimit=[0,0,0],llimit=[0,0,0],
                               children=[
                               HAnimSegment(DEF='hanim_t7',name='t7',
                                 #  Visualization sphere for <HAnimJoint name='vt7'/> is placed within <HAnimSegment name='t7'/> 
@@ -828,7 +828,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                   geometry=LineSet(vertexCount=[2],
                                     coord=Coordinate(point=[(0.0058,1.3625,-0.0833),(0.0059,1.3866,-0.08)]),
                                     color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                              HAnimJoint(DEF='hanim_vt6',center=(0.0059,1.3866,-0.08),name='vt6',
+                              HAnimJoint(DEF='hanim_vt6',center=(0.0059,1.3866,-0.08),name='vt6',ulimit=[0,0,0],llimit=[0,0,0],
                                 children=[
                                 HAnimSegment(DEF='hanim_t6',name='t6',
                                   #  Visualization sphere for <HAnimJoint name='vt6'/> is placed within <HAnimSegment name='t6'/> 
@@ -842,7 +842,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                     geometry=LineSet(vertexCount=[2],
                                       coord=Coordinate(point=[(0.0059,1.3866,-0.08),(0.006,1.4102,-0.0745)]),
                                       color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                HAnimJoint(DEF='hanim_vt5',center=(0.006,1.4102,-0.0745),name='vt5',
+                                HAnimJoint(DEF='hanim_vt5',center=(0.006,1.4102,-0.0745),name='vt5',ulimit=[0,0,0],llimit=[0,0,0],
                                   children=[
                                   HAnimSegment(DEF='hanim_t5',name='t5',
                                     #  Visualization sphere for <HAnimJoint name='vt5'/> is placed within <HAnimSegment name='t5'/> 
@@ -856,7 +856,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                       geometry=LineSet(vertexCount=[2],
                                         coord=Coordinate(point=[(0.006,1.4102,-0.0745),(0.0061,1.432,-0.0675)]),
                                         color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                  HAnimJoint(DEF='hanim_vt4',center=(0.0061,1.432,-0.0675),name='vt4',
+                                  HAnimJoint(DEF='hanim_vt4',center=(0.0061,1.432,-0.0675),name='vt4',ulimit=[0,0,0],llimit=[0,0,0],
                                     children=[
                                     HAnimSegment(DEF='hanim_t4',name='t4',
                                       #  Visualization sphere for <HAnimJoint name='vt4'/> is placed within <HAnimSegment name='t4'/> 
@@ -870,7 +870,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                         geometry=LineSet(vertexCount=[2],
                                           coord=Coordinate(point=[(0.0061,1.432,-0.0675),(0.0062,1.4583,-0.057)]),
                                           color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                    HAnimJoint(DEF='hanim_vt3',center=(0.0062,1.4583,-0.057),name='vt3',
+                                    HAnimJoint(DEF='hanim_vt3',center=(0.0062,1.4583,-0.057),name='vt3',ulimit=[0,0,0],llimit=[0,0,0],
                                       children=[
                                       HAnimSegment(DEF='hanim_t3',name='t3',
                                         #  Visualization sphere for <HAnimJoint name='vt3'/> is placed within <HAnimSegment name='t3'/> 
@@ -884,7 +884,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                           geometry=LineSet(vertexCount=[2],
                                             coord=Coordinate(point=[(0.0062,1.4583,-0.057),(0.0063,1.4761,-0.0484)]),
                                             color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                      HAnimJoint(DEF='hanim_vt2',center=(0.0063,1.4761,-0.0484),name='vt2',
+                                      HAnimJoint(DEF='hanim_vt2',center=(0.0063,1.4761,-0.0484),name='vt2',ulimit=[0,0,0],llimit=[0,0,0],
                                         children=[
                                         HAnimSegment(DEF='hanim_t2',name='t2',
                                           #  Visualization sphere for <HAnimJoint name='vt2'/> is placed within <HAnimSegment name='t2'/> 
@@ -898,7 +898,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                             geometry=LineSet(vertexCount=[2],
                                               coord=Coordinate(point=[(0.0063,1.4761,-0.0484),(0.0065,1.4951,-0.0387)]),
                                               color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                        HAnimJoint(DEF='hanim_vt1',center=(0.0065,1.4951,-0.0387),name='vt1',
+                                        HAnimJoint(DEF='hanim_vt1',center=(0.0065,1.4951,-0.0387),name='vt1',ulimit=[0,0,0],llimit=[0,0,0],
                                           children=[
                                           HAnimSegment(DEF='hanim_t1',name='t1',
                                             #  Visualization sphere for <HAnimJoint name='vt1'/> is placed within <HAnimSegment name='t1'/> 
@@ -942,7 +942,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                               children=[
                                               TouchSensor(description='HAnimSite cervicale_pt'),
                                               Shape(USE='HAnimSiteShape')])]),
-                                          HAnimJoint(DEF='hanim_vc7',center=(0.0066,1.5132,-0.0301),name='vc7',
+                                          HAnimJoint(DEF='hanim_vc7',center=(0.0066,1.5132,-0.0301),name='vc7',ulimit=[0,0,0],llimit=[0,0,0],
                                             children=[
                                             HAnimSegment(DEF='hanim_c7',name='c7',
                                               #  Visualization sphere for <HAnimJoint name='vc7'/> is placed within <HAnimSegment name='c7'/> 
@@ -976,7 +976,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                 children=[
                                                 TouchSensor(description='HAnimSite l_neck_base_pt'),
                                                 Shape(USE='HAnimSiteShape')])]),
-                                            HAnimJoint(DEF='hanim_vc6',center=(0.0066,1.5357,-0.0143),name='vc6',
+                                            HAnimJoint(DEF='hanim_vc6',center=(0.0066,1.5357,-0.0143),name='vc6',ulimit=[0,0,0],llimit=[0,0,0],
                                               children=[
                                               HAnimSegment(DEF='hanim_c6',name='c6',
                                                 #  Visualization sphere for <HAnimJoint name='vc6'/> is placed within <HAnimSegment name='c6'/> 
@@ -990,7 +990,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                   geometry=LineSet(vertexCount=[2],
                                                     coord=Coordinate(point=[(0.0066,1.5357,-0.0143),(0.0066,1.552,-0.0082)]),
                                                     color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                              HAnimJoint(DEF='hanim_vc5',center=(0.0066,1.552,-0.0082),name='vc5',
+                                              HAnimJoint(DEF='hanim_vc5',center=(0.0066,1.552,-0.0082),name='vc5',ulimit=[0,0,0],llimit=[0,0,0],
                                                 children=[
                                                 HAnimSegment(DEF='hanim_c5',name='c5',
                                                   #  Visualization sphere for <HAnimJoint name='vc5'/> is placed within <HAnimSegment name='c5'/> 
@@ -1004,7 +1004,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                     geometry=LineSet(vertexCount=[2],
                                                       coord=Coordinate(point=[(0.0066,1.552,-0.0082),(0.0066,1.5662,-0.0084)]),
                                                       color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                HAnimJoint(DEF='hanim_vc4',center=(0.0066,1.5662,-0.0084),name='vc4',
+                                                HAnimJoint(DEF='hanim_vc4',center=(0.0066,1.5662,-0.0084),name='vc4',ulimit=[0,0,0],llimit=[0,0,0],
                                                   children=[
                                                   HAnimSegment(DEF='hanim_c4',name='c4',
                                                     #  Visualization sphere for <HAnimJoint name='vc4'/> is placed within <HAnimSegment name='c4'/> 
@@ -1018,7 +1018,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                       geometry=LineSet(vertexCount=[2],
                                                         coord=Coordinate(point=[(0.0066,1.5662,-0.0084),(0.0066,1.58,-0.0103)]),
                                                         color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                  HAnimJoint(DEF='hanim_vc3',center=(0.0066,1.58,-0.0103),name='vc3',
+                                                  HAnimJoint(DEF='hanim_vc3',center=(0.0066,1.58,-0.0103),name='vc3',ulimit=[0,0,0],llimit=[0,0,0],
                                                     children=[
                                                     HAnimSegment(DEF='hanim_c3',name='c3',
                                                       #  Visualization sphere for <HAnimJoint name='vc3'/> is placed within <HAnimSegment name='c3'/> 
@@ -1032,7 +1032,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                         geometry=LineSet(vertexCount=[2],
                                                           coord=Coordinate(point=[(0.0066,1.58,-0.0103),(0.0066,1.5928,-0.0103)]),
                                                           color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                    HAnimJoint(DEF='hanim_vc2',center=(0.0066,1.5928,-0.0103),name='vc2',
+                                                    HAnimJoint(DEF='hanim_vc2',center=(0.0066,1.5928,-0.0103),name='vc2',ulimit=[0,0,0],llimit=[0,0,0],
                                                       children=[
                                                       HAnimSegment(DEF='hanim_c2',name='c2',
                                                         #  Visualization sphere for <HAnimJoint name='vc2'/> is placed within <HAnimSegment name='c2'/> 
@@ -1046,7 +1046,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                           geometry=LineSet(vertexCount=[2],
                                                             coord=Coordinate(point=[(0.0066,1.5928,-0.0103),(0.0066,1.6144,-0.0034)]),
                                                             color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                      HAnimJoint(DEF='hanim_vc1',center=(0.0066,1.6144,-0.0034),name='vc1',
+                                                      HAnimJoint(DEF='hanim_vc1',center=(0.0066,1.6144,-0.0034),name='vc1',ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_c1',name='c1',
                                                           #  Visualization sphere for <HAnimJoint name='vc1'/> is placed within <HAnimSegment name='c1'/> 
@@ -1060,7 +1060,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                             geometry=LineSet(vertexCount=[2],
                                                               coord=Coordinate(point=[(0.0066,1.6144,-0.0034),(0.0044,1.6209,0.0236)]),
                                                               color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                        HAnimJoint(DEF='hanim_skullbase',center=(0.0044,1.6209,0.0236),name='skullbase',
+                                                        HAnimJoint(DEF='hanim_skullbase',center=(0.0044,1.6209,0.0236),name='skullbase',ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
                                                           HAnimSegment(DEF='hanim_skull',name='skull',
                                                             #  Visualization sphere for <HAnimJoint name='skullbase'/> is placed within <HAnimSegment name='skull'/> 
@@ -1205,7 +1205,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                               children=[
                                                               TouchSensor(description='HAnimSite nuchale_pt'),
                                                               Shape(USE='HAnimSiteShape')])]),
-                                                          HAnimJoint(DEF='hanim_l_eyeball_joint',center=(0.0336,1.6332,0.0502),name='l_eyeball_joint',
+                                                          HAnimJoint(DEF='hanim_l_eyeball_joint',center=(0.0336,1.6332,0.0502),name='l_eyeball_joint',ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
                                                             HAnimSegment(DEF='hanim_l_eyeball',name='l_eyeball',
                                                               #  Visualization sphere for <HAnimJoint name='l_eyeball_joint'/> is placed within <HAnimSegment name='l_eyeball'/> 
@@ -1236,7 +1236,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                         coord=Coordinate(point=[(0,0.010,0),(-0.010,0,0),(0,0,0.010),(0.010,0,0),(0,0,-0.010),(0,-0.010,0)])),
                                                                       appearance=Appearance(
                                                                         material=Material(diffuseColor=(1,1,0),transparency=0.3)))])])])])]),
-                                                          HAnimJoint(DEF='hanim_l_eyelid_joint',center=(0.0336,1.6332,0.0502),name='l_eyelid_joint',
+                                                          HAnimJoint(DEF='hanim_l_eyelid_joint',center=(0.0336,1.6332,0.0502),name='l_eyelid_joint',ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
                                                             HAnimSegment(DEF='hanim_l_eyelid',name='l_eyelid',
                                                               #  Visualization sphere for <HAnimJoint name='l_eyelid_joint'/> is placed within <HAnimSegment name='l_eyelid'/> 
@@ -1245,7 +1245,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                               Transform(translation=(0.0336,1.6332,0.0502),
                                                                 children=[
                                                                 Shape(USE='HAnimJointShape')])])]),
-                                                          HAnimJoint(DEF='hanim_l_eyebrow_joint',center=(0.0336,1.635,0.0506),name='l_eyebrow_joint',
+                                                          HAnimJoint(DEF='hanim_l_eyebrow_joint',center=(0.0336,1.635,0.0506),name='l_eyebrow_joint',ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
                                                             HAnimSegment(DEF='hanim_l_eyebrow',name='l_eyebrow',
                                                               #  Visualization sphere for <HAnimJoint name='l_eyebrow_joint'/> is placed within <HAnimSegment name='l_eyebrow'/> 
@@ -1254,7 +1254,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                               Transform(translation=(0.0336,1.635,0.0506),
                                                                 children=[
                                                                 Shape(USE='HAnimJointShape')])])]),
-                                                          HAnimJoint(DEF='hanim_r_eyeball_joint',center=(-0.0336,1.6332,0.0502),name='r_eyeball_joint',
+                                                          HAnimJoint(DEF='hanim_r_eyeball_joint',center=(-0.0336,1.6332,0.0502),name='r_eyeball_joint',ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
                                                             HAnimSegment(DEF='hanim_r_eyeball',name='r_eyeball',
                                                               #  Visualization sphere for <HAnimJoint name='r_eyeball_joint'/> is placed within <HAnimSegment name='r_eyeball'/> 
@@ -1281,7 +1281,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                     children=[
                                                                     WorldInfo(info=["hide diamond when close"]),
                                                                     Shape(USE='HAnimSiteViewpointShape')])])])])]),
-                                                          HAnimJoint(DEF='hanim_r_eyelid_joint',center=(-0.0336,1.6332,0.0502),name='r_eyelid_joint',
+                                                          HAnimJoint(DEF='hanim_r_eyelid_joint',center=(-0.0336,1.6332,0.0502),name='r_eyelid_joint',ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
                                                             HAnimSegment(DEF='hanim_r_eyelid',name='r_eyelid',
                                                               #  Visualization sphere for <HAnimJoint name='r_eyelid_joint'/> is placed within <HAnimSegment name='r_eyelid'/> 
@@ -1290,7 +1290,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                               Transform(translation=(-0.0336,1.6332,0.0502),
                                                                 children=[
                                                                 Shape(USE='HAnimJointShape')])])]),
-                                                          HAnimJoint(DEF='hanim_r_eyebrow_joint',center=(-0.0336,1.635,0.0506),name='r_eyebrow_joint',
+                                                          HAnimJoint(DEF='hanim_r_eyebrow_joint',center=(-0.0336,1.635,0.0506),name='r_eyebrow_joint',ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
                                                             HAnimSegment(DEF='hanim_r_eyebrow',name='r_eyebrow',
                                                               #  Visualization sphere for <HAnimJoint name='r_eyebrow_joint'/> is placed within <HAnimSegment name='r_eyebrow'/> 
@@ -1299,7 +1299,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                               Transform(translation=(-0.0336,1.635,0.0506),
                                                                 children=[
                                                                 Shape(USE='HAnimJointShape')])])]),
-                                                          HAnimJoint(DEF='hanim_temporomandibular',center=(0.0,1.63,0.015),name='temporomandibular',
+                                                          HAnimJoint(DEF='hanim_temporomandibular',center=(0.0,1.63,0.015),name='temporomandibular',ulimit=[0,0,0],llimit=[0,0,0],
                                                             #  Single joint, single segment for jaw, two sites for left/right TMJs https://en.wikipedia.org/wiki/Temporomandibular_joint 
                                                             children=[
                                                             HAnimSegment(DEF='hanim_jaw',name='jaw',
@@ -1329,7 +1329,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                 children=[
                                                                 TouchSensor(description='HAnimSite temporomandibular_r_site_pt'),
                                                                 Shape(USE='HAnimSiteShape')])])])])])])])])])])]),
-                                          HAnimJoint(DEF='hanim_l_sternoclavicular',center=(0.082,1.4488,-0.0353),name='l_sternoclavicular',
+                                          HAnimJoint(DEF='hanim_l_sternoclavicular',center=(0.082,1.4488,-0.0353),name='l_sternoclavicular',ulimit=[0,0,0],llimit=[0,0,0],
                                             children=[
                                             HAnimSegment(DEF='hanim_l_clavicle',name='l_clavicle',
                                               #  Visualization sphere for <HAnimJoint name='l_sternoclavicular'/> is placed within <HAnimSegment name='l_clavicle'/> 
@@ -1383,7 +1383,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                 children=[
                                                 TouchSensor(description='HAnimSite l_axilla_post_pt'),
                                                 Shape(USE='HAnimSiteShape')])]),
-                                            HAnimJoint(DEF='hanim_l_acromioclavicular',center=(0.0962,1.4269,-0.0424),name='l_acromioclavicular',
+                                            HAnimJoint(DEF='hanim_l_acromioclavicular',center=(0.0962,1.4269,-0.0424),name='l_acromioclavicular',ulimit=[0,0,0],llimit=[0,0,0],
                                               children=[
                                               HAnimSegment(DEF='hanim_l_scapula',name='l_scapula',
                                                 #  Visualization sphere for <HAnimJoint name='l_acromioclavicular'/> is placed within <HAnimSegment name='l_scapula'/> 
@@ -1397,7 +1397,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                   geometry=LineSet(vertexCount=[2],
                                                     coord=Coordinate(point=[(0.0962,1.4269,-0.0424),(0.2029,1.4376,-0.0387)]),
                                                     color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                              HAnimJoint(DEF='hanim_l_shoulder',center=(0.2029,1.4376,-0.0387),name='l_shoulder',
+                                              HAnimJoint(DEF='hanim_l_shoulder',center=(0.2029,1.4376,-0.0387),name='l_shoulder',ulimit=[0,0,0],llimit=[0,0,0],
                                                 children=[
                                                 HAnimSegment(DEF='hanim_l_upperarm',name='l_upperarm',
                                                   #  Visualization sphere for <HAnimJoint name='l_shoulder'/> is placed within <HAnimSegment name='l_upperarm'/> 
@@ -1421,7 +1421,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                     children=[
                                                     TouchSensor(description='HAnimSite l_humeral_lateral_epicn_pt'),
                                                     Shape(USE='HAnimSiteShape')])]),
-                                                HAnimJoint(DEF='hanim_l_elbow',center=(0.2014,1.1357,-0.0682),name='l_elbow',
+                                                HAnimJoint(DEF='hanim_l_elbow',center=(0.2014,1.1357,-0.0682),name='l_elbow',ulimit=[0,0,0],llimit=[0,0,0],
                                                   children=[
                                                   HAnimSegment(DEF='hanim_l_forearm',name='l_forearm',
                                                     #  Visualization sphere for <HAnimJoint name='l_elbow'/> is placed within <HAnimSegment name='l_forearm'/> 
@@ -1475,7 +1475,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                       children=[
                                                       TouchSensor(description='HAnimSite l_radiale_pt'),
                                                       Shape(USE='HAnimSiteShape')])]),
-                                                  HAnimJoint(DEF='hanim_l_radiocarpal',center=(0.1984,0.8663,-0.0583),name='l_radiocarpal',
+                                                  HAnimJoint(DEF='hanim_l_radiocarpal',center=(0.1984,0.8663,-0.0583),name='l_radiocarpal',ulimit=[0,0,0],llimit=[0,0,0],
                                                     children=[
                                                     HAnimSegment(DEF='hanim_l_carpal',name='l_carpal',
                                                       #  Visualization sphere for <HAnimJoint name='l_radiocarpal'/> is placed within <HAnimSegment name='l_carpal'/> 
@@ -1557,7 +1557,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                             children=[
                                                             WorldInfo(info=["hide diamond when close"]),
                                                             Shape(USE='HAnimSiteViewpointShape')])])])]),
-                                                    HAnimJoint(DEF='hanim_l_carpometacarpal_1',center=(0.1924,0.8472,-0.0534),name='l_carpometacarpal_1',
+                                                    HAnimJoint(DEF='hanim_l_carpometacarpal_1',center=(0.1924,0.8472,-0.0534),name='l_carpometacarpal_1',ulimit=[0,0,0],llimit=[0,0,0],
                                                       children=[
                                                       HAnimSegment(DEF='hanim_l_metacarpal_1',name='l_metacarpal_1',
                                                         #  Visualization sphere for <HAnimJoint name='l_thumb1'/> is placed within <HAnimSegment name='l_metacarpal_1'/> 
@@ -1571,7 +1571,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                           geometry=LineSet(vertexCount=[2],
                                                             coord=Coordinate(point=[(0.1924,0.8472,-0.0534),(0.1951,0.8226,0.0246)]),
                                                             color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                      HAnimJoint(DEF='hanim_l_metacarpophalangeal_1',center=(0.1951,0.8226,0.0246),name='l_metacarpophalangeal_1',
+                                                      HAnimJoint(DEF='hanim_l_metacarpophalangeal_1',center=(0.1951,0.8226,0.0246),name='l_metacarpophalangeal_1',ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_l_carpal_proximal_phalanx_1',name='l_carpal_proximal_phalanx_1',
                                                           #  Visualization sphere for <HAnimJoint name='l_thumb2'/> is placed within <HAnimSegment name='l_carpal_proximal_phalanx_1'/> 
@@ -1585,7 +1585,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                             geometry=LineSet(vertexCount=[2],
                                                               coord=Coordinate(point=[(0.1951,0.8226,0.0246),(0.1955,0.8159,0.0464)]),
                                                               color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                        HAnimJoint(DEF='hanim_l_carpal_interphalangeal_1',center=(0.1955,0.8159,0.0464),name='l_carpal_interphalangeal_1',
+                                                        HAnimJoint(DEF='hanim_l_carpal_interphalangeal_1',center=(0.1955,0.8159,0.0464),name='l_carpal_interphalangeal_1',ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
                                                           HAnimSegment(DEF='hanim_l_carpal_distal_phalanx_1',name='l_carpal_distal_phalanx_1',
                                                             #  Visualization sphere for <HAnimJoint name='l_thumb3'/> is placed within <HAnimSegment name='l_carpal_distal_phalanx_1'/> 
@@ -1604,7 +1604,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                               children=[
                                                               TouchSensor(description='HAnimSite l_thumb_distal_tip'),
                                                               Shape(USE='HAnimSiteShape')])])])])]),
-                                                    HAnimJoint(DEF='hanim_l_carpometacarpal_2',center=(0.1983,0.8024,-0.028),name='l_carpometacarpal_2',
+                                                    HAnimJoint(DEF='hanim_l_carpometacarpal_2',center=(0.1983,0.8024,-0.028),name='l_carpometacarpal_2',ulimit=[0,0,0],llimit=[0,0,0],
                                                       children=[
                                                       HAnimSegment(DEF='hanim_l_metacarpal_2',name='l_metacarpal_2',
                                                         #  Visualization sphere for <HAnimJoint name='l_index0'/> is placed within <HAnimSegment name='l_metacarpal_2'/> 
@@ -1618,7 +1618,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                           geometry=LineSet(vertexCount=[2],
                                                             coord=Coordinate(point=[(0.1983,0.8024,-0.028),(0.1983,0.7815,-0.028)]),
                                                             color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                      HAnimJoint(DEF='hanim_l_metacarpophalangeal_2',center=(0.1983,0.7815,-0.028),name='l_metacarpophalangeal_2',
+                                                      HAnimJoint(DEF='hanim_l_metacarpophalangeal_2',center=(0.1983,0.7815,-0.028),name='l_metacarpophalangeal_2',ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_l_carpal_proximal_phalanx_2',name='l_carpal_proximal_phalanx_2',
                                                           #  Visualization sphere for <HAnimJoint name='l_index1'/> is placed within <HAnimSegment name='l_carpal_proximal_phalanx_2'/> 
@@ -1632,7 +1632,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                             geometry=LineSet(vertexCount=[2],
                                                               coord=Coordinate(point=[(0.1983,0.7815,-0.028),(0.2017,0.7363,-0.0248)]),
                                                               color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                        HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_2',center=(0.2017,0.7363,-0.0248),name='l_carpal_proximal_interphalangeal_2',
+                                                        HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_2',center=(0.2017,0.7363,-0.0248),name='l_carpal_proximal_interphalangeal_2',ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
                                                           HAnimSegment(DEF='hanim_l_carpal_middle_phalanx_2',name='l_carpal_middle_phalanx_2',
                                                             #  Visualization sphere for <HAnimJoint name='l_index2'/> is placed within <HAnimSegment name='l_carpal_middle_phalanx_2'/> 
@@ -1646,7 +1646,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                               geometry=LineSet(vertexCount=[2],
                                                                 coord=Coordinate(point=[(0.2017,0.7363,-0.0248),(0.2028,0.7139,-0.0236)]),
                                                                 color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                          HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_2',center=(0.2028,0.7139,-0.0236),name='l_carpal_distal_interphalangeal_2',
+                                                          HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_2',center=(0.2028,0.7139,-0.0236),name='l_carpal_distal_interphalangeal_2',ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
                                                             HAnimSegment(DEF='hanim_l_carpal_distal_phalanx_2',name='l_carpal_distal_phalanx_2',
                                                               #  Visualization sphere for <HAnimJoint name='l_index3'/> is placed within <HAnimSegment name='l_carpal_distal_phalanx_2'/> 
@@ -1675,7 +1675,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                 children=[
                                                                 TouchSensor(description='HAnimSite l_dactylion_pt'),
                                                                 Shape(USE='HAnimSiteShape')])])])])])]),
-                                                    HAnimJoint(DEF='hanim_l_carpometacarpal_3',center=(0.1987,0.8029,-0.053),name='l_carpometacarpal_3',
+                                                    HAnimJoint(DEF='hanim_l_carpometacarpal_3',center=(0.1987,0.8029,-0.053),name='l_carpometacarpal_3',ulimit=[0,0,0],llimit=[0,0,0],
                                                       children=[
                                                       HAnimSegment(DEF='hanim_l_metacarpal_3',name='l_metacarpal_3',
                                                         #  Visualization sphere for <HAnimJoint name='l_middle0'/> is placed within <HAnimSegment name='l_metacarpal_3'/> 
@@ -1689,7 +1689,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                           geometry=LineSet(vertexCount=[2],
                                                             coord=Coordinate(point=[(0.1987,0.8029,-0.053),(0.1987,0.7818,-0.053)]),
                                                             color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                      HAnimJoint(DEF='hanim_l_metacarpophalangeal_3',center=(0.1987,0.7818,-0.053),name='l_metacarpophalangeal_3',
+                                                      HAnimJoint(DEF='hanim_l_metacarpophalangeal_3',center=(0.1987,0.7818,-0.053),name='l_metacarpophalangeal_3',ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_l_carpal_proximal_phalanx_3',name='l_carpal_proximal_phalanx_3',
                                                           #  Visualization sphere for <HAnimJoint name='l_middle1'/> is placed within <HAnimSegment name='l_carpal_proximal_phalanx_3'/> 
@@ -1703,7 +1703,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                             geometry=LineSet(vertexCount=[2],
                                                               coord=Coordinate(point=[(0.1987,0.7818,-0.053),(0.2013,0.7273,-0.0503)]),
                                                               color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                        HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_3',center=(0.2013,0.7273,-0.0503),name='l_carpal_proximal_interphalangeal_3',
+                                                        HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_3',center=(0.2013,0.7273,-0.0503),name='l_carpal_proximal_interphalangeal_3',ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
                                                           HAnimSegment(DEF='hanim_l_carpal_middle_phalanx_3',name='l_carpal_middle_phalanx_3',
                                                             #  Visualization sphere for <HAnimJoint name='l_middle2'/> is placed within <HAnimSegment name='l_carpal_middle_phalanx_3'/> 
@@ -1717,7 +1717,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                               geometry=LineSet(vertexCount=[2],
                                                                 coord=Coordinate(point=[(0.2013,0.7273,-0.0503),(0.2026,0.7011,-0.0494)]),
                                                                 color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                          HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_3',center=(0.2026,0.7011,-0.0494),name='l_carpal_distal_interphalangeal_3',
+                                                          HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_3',center=(0.2026,0.7011,-0.0494),name='l_carpal_distal_interphalangeal_3',ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
                                                             HAnimSegment(DEF='hanim_l_carpal_distal_phalanx_3',name='l_carpal_distal_phalanx_3',
                                                               #  Visualization sphere for <HAnimJoint name='l_middle3'/> is placed within <HAnimSegment name='l_carpal_distal_phalanx_3'/> 
@@ -1736,7 +1736,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                 children=[
                                                                 TouchSensor(description='HAnimSite l_middle_distal_tip'),
                                                                 Shape(USE='HAnimSiteShape')])])])])])]),
-                                                    HAnimJoint(DEF='hanim_l_carpometacarpal_4',center=(0.1956,0.8019,-0.0794),name='l_carpometacarpal_4',
+                                                    HAnimJoint(DEF='hanim_l_carpometacarpal_4',center=(0.1956,0.8019,-0.0794),name='l_carpometacarpal_4',ulimit=[0,0,0],llimit=[0,0,0],
                                                       children=[
                                                       HAnimSegment(DEF='hanim_l_metacarpal_4',name='l_metacarpal_4',
                                                         #  Visualization sphere for <HAnimJoint name='l_ring0'/> is placed within <HAnimSegment name='l_metacarpal_4'/> 
@@ -1750,7 +1750,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                           geometry=LineSet(vertexCount=[2],
                                                             coord=Coordinate(point=[(0.1956,0.8019,-0.0794),(0.1956,0.7815,-0.0794)]),
                                                             color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                      HAnimJoint(DEF='hanim_l_metacarpophalangeal_4',center=(0.1956,0.7815,-0.0794),name='l_metacarpophalangeal_4',
+                                                      HAnimJoint(DEF='hanim_l_metacarpophalangeal_4',center=(0.1956,0.7815,-0.0794),name='l_metacarpophalangeal_4',ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_l_carpal_proximal_phalanx_4',name='l_carpal_proximal_phalanx_4',
                                                           #  Visualization sphere for <HAnimJoint name='l_ring1'/> is placed within <HAnimSegment name='l_carpal_proximal_phalanx_4'/> 
@@ -1764,7 +1764,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                             geometry=LineSet(vertexCount=[2],
                                                               coord=Coordinate(point=[(0.1956,0.7815,-0.0794),(0.1973,0.7287,-0.0777)]),
                                                               color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                        HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_4',center=(0.1973,0.7287,-0.0777),name='l_carpal_proximal_interphalangeal_4',
+                                                        HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_4',center=(0.1973,0.7287,-0.0777),name='l_carpal_proximal_interphalangeal_4',ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
                                                           HAnimSegment(DEF='hanim_l_carpal_middle_phalanx_4',name='l_carpal_middle_phalanx_4',
                                                             #  Visualization sphere for <HAnimJoint name='l_ring2'/> is placed within <HAnimSegment name='l_carpal_middle_phalanx_4'/> 
@@ -1778,7 +1778,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                               geometry=LineSet(vertexCount=[2],
                                                                 coord=Coordinate(point=[(0.1973,0.7287,-0.0777),(0.1983,0.7045,-0.0767)]),
                                                                 color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                          HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_4',center=(0.1983,0.7045,-0.0767),name='l_carpal_distal_interphalangeal_4',
+                                                          HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_4',center=(0.1983,0.7045,-0.0767),name='l_carpal_distal_interphalangeal_4',ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
                                                             HAnimSegment(DEF='hanim_l_carpal_distal_phalanx_4',name='l_carpal_distal_phalanx_4',
                                                               #  Visualization sphere for <HAnimJoint name='l_ring3'/> is placed within <HAnimSegment name='l_carpal_distal_phalanx_4'/> 
@@ -1797,7 +1797,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                 children=[
                                                                 TouchSensor(description='HAnimSite l_ring_distal_tip'),
                                                                 Shape(USE='HAnimSiteShape')])])])])])]),
-                                                    HAnimJoint(DEF='hanim_l_carpometacarpal_5',center=(0.1925,0.8066,-0.1036),name='l_carpometacarpal_5',
+                                                    HAnimJoint(DEF='hanim_l_carpometacarpal_5',center=(0.1925,0.8066,-0.1036),name='l_carpometacarpal_5',ulimit=[0,0,0],llimit=[0,0,0],
                                                       children=[
                                                       HAnimSegment(DEF='hanim_l_metacarpal_5',name='l_metacarpal_5',
                                                         #  Visualization sphere for <HAnimJoint name='l_pinky0'/> is placed within <HAnimSegment name='l_metacarpal_5'/> 
@@ -1811,7 +1811,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                           geometry=LineSet(vertexCount=[2],
                                                             coord=Coordinate(point=[(0.1925,0.8066,-0.1036),(0.1925,0.7866,-0.1036)]),
                                                             color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                      HAnimJoint(DEF='hanim_l_metacarpophalangeal_5',center=(0.1925,0.7866,-0.1036),name='l_metacarpophalangeal_5',
+                                                      HAnimJoint(DEF='hanim_l_metacarpophalangeal_5',center=(0.1925,0.7866,-0.1036),name='l_metacarpophalangeal_5',ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_l_carpal_proximal_phalanx_5',name='l_carpal_proximal_phalanx_5',
                                                           #  Visualization sphere for <HAnimJoint name='l_pinky1'/> is placed within <HAnimSegment name='l_carpal_proximal_phalanx_5'/> 
@@ -1825,7 +1825,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                             geometry=LineSet(vertexCount=[2],
                                                               coord=Coordinate(point=[(0.1925,0.7866,-0.1036),(0.1938,0.7452,-0.1024)]),
                                                               color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                        HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_5',center=(0.1938,0.7452,-0.1024),name='l_carpal_proximal_interphalangeal_5',
+                                                        HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_5',center=(0.1938,0.7452,-0.1024),name='l_carpal_proximal_interphalangeal_5',ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
                                                           HAnimSegment(DEF='hanim_l_carpal_middle_phalanx_5',name='l_carpal_middle_phalanx_5',
                                                             #  Visualization sphere for <HAnimJoint name='l_pinky2'/> is placed within <HAnimSegment name='l_carpal_middle_phalanx_5'/> 
@@ -1839,7 +1839,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                               geometry=LineSet(vertexCount=[2],
                                                                 coord=Coordinate(point=[(0.1938,0.7452,-0.1024),(0.1948,0.7277,-0.1017)]),
                                                                 color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                          HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_5',center=(0.1948,0.7277,-0.1017),name='l_carpal_distal_interphalangeal_5',
+                                                          HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_5',center=(0.1948,0.7277,-0.1017),name='l_carpal_distal_interphalangeal_5',ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
                                                             HAnimSegment(DEF='hanim_l_carpal_distal_phalanx_5',name='l_carpal_distal_phalanx_5',
                                                               #  Visualization sphere for <HAnimJoint name='l_pinky3'/> is placed within <HAnimSegment name='l_carpal_distal_phalanx_5'/> 
@@ -1858,7 +1858,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                 children=[
                                                                 TouchSensor(description='HAnimSite l_pinky_distal_tip'),
                                                                 Shape(USE='HAnimSiteShape')])])])])])])])])])])]),
-                                          HAnimJoint(DEF='hanim_r_sternoclavicular',center=(-0.082,1.4488,-0.0353),name='r_sternoclavicular',
+                                          HAnimJoint(DEF='hanim_r_sternoclavicular',center=(-0.082,1.4488,-0.0353),name='r_sternoclavicular',ulimit=[0,0,0],llimit=[0,0,0],
                                             children=[
                                             HAnimSegment(DEF='hanim_r_clavicle',name='r_clavicle',
                                               #  Visualization sphere for <HAnimJoint name='r_sternoclavicular'/> is placed within <HAnimSegment name='r_clavicle'/> 
@@ -1912,7 +1912,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                 children=[
                                                 TouchSensor(description='HAnimSite r_axilla_post_pt'),
                                                 Shape(USE='HAnimSiteShape')])]),
-                                            HAnimJoint(DEF='hanim_r_acromioclavicular',center=(-0.0962,1.4269,-0.0424),name='r_acromioclavicular',
+                                            HAnimJoint(DEF='hanim_r_acromioclavicular',center=(-0.0962,1.4269,-0.0424),name='r_acromioclavicular',ulimit=[0,0,0],llimit=[0,0,0],
                                               children=[
                                               HAnimSegment(DEF='hanim_r_scapula',name='r_scapula',
                                                 #  Visualization sphere for <HAnimJoint name='r_acromioclavicular'/> is placed within <HAnimSegment name='r_scapula'/> 
@@ -1926,7 +1926,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                   geometry=LineSet(vertexCount=[2],
                                                     coord=Coordinate(point=[(-0.0962,1.4269,-0.0424),(-0.2029,1.4376,-0.0387)]),
                                                     color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                              HAnimJoint(DEF='hanim_r_shoulder',center=(-0.2029,1.4376,-0.0387),name='r_shoulder',
+                                              HAnimJoint(DEF='hanim_r_shoulder',center=(-0.2029,1.4376,-0.0387),name='r_shoulder',ulimit=[0,0,0],llimit=[0,0,0],
                                                 children=[
                                                 HAnimSegment(DEF='hanim_r_upperarm',name='r_upperarm',
                                                   #  Visualization sphere for <HAnimJoint name='r_shoulder'/> is placed within <HAnimSegment name='r_upperarm'/> 
@@ -1950,7 +1950,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                     children=[
                                                     TouchSensor(description='HAnimSite r_humeral_lateral_epicn_pt'),
                                                     Shape(USE='HAnimSiteShape')])]),
-                                                HAnimJoint(DEF='hanim_r_elbow',center=(-0.2014,1.1357,-0.0682),name='r_elbow',
+                                                HAnimJoint(DEF='hanim_r_elbow',center=(-0.2014,1.1357,-0.0682),name='r_elbow',ulimit=[0,0,0],llimit=[0,0,0],
                                                   children=[
                                                   HAnimSegment(DEF='hanim_r_forearm',name='r_forearm',
                                                     #  Visualization sphere for <HAnimJoint name='r_elbow'/> is placed within <HAnimSegment name='r_forearm'/> 
@@ -2004,7 +2004,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                       children=[
                                                       TouchSensor(description='HAnimSite r_radiale_pt'),
                                                       Shape(USE='HAnimSiteShape')])]),
-                                                  HAnimJoint(DEF='hanim_r_radiocarpal',center=(-0.1984,0.8663,-0.0583),name='r_radiocarpal',
+                                                  HAnimJoint(DEF='hanim_r_radiocarpal',center=(-0.1984,0.8663,-0.0583),name='r_radiocarpal',ulimit=[0,0,0],llimit=[0,0,0],
                                                     children=[
                                                     HAnimSegment(DEF='hanim_r_carpal',name='r_carpal',
                                                       #  Visualization sphere for <HAnimJoint name='r_radiocarpal'/> is placed within <HAnimSegment name='r_carpal'/> 
@@ -2086,7 +2086,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                             children=[
                                                             WorldInfo(info=["hide diamond when close"]),
                                                             Shape(USE='HAnimSiteViewpointShape')])])])]),
-                                                    HAnimJoint(DEF='hanim_r_carpometacarpal_1',center=(-0.1924,0.8472,-0.0534),name='r_carpometacarpal_1',
+                                                    HAnimJoint(DEF='hanim_r_carpometacarpal_1',center=(-0.1924,0.8472,-0.0534),name='r_carpometacarpal_1',ulimit=[0,0,0],llimit=[0,0,0],
                                                       children=[
                                                       HAnimSegment(DEF='hanim_r_metacarpal_1',name='r_metacarpal_1',
                                                         #  Visualization sphere for <HAnimJoint name='r_thumb1'/> is placed within <HAnimSegment name='r_metacarpal_1'/> 
@@ -2100,7 +2100,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                           geometry=LineSet(vertexCount=[2],
                                                             coord=Coordinate(point=[(-0.1924,0.8472,-0.0534),(-0.1951,0.8226,0.0246)]),
                                                             color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                      HAnimJoint(DEF='hanim_r_metacarpophalangeal_1',center=(-0.1951,0.8226,0.0246),name='r_metacarpophalangeal_1',
+                                                      HAnimJoint(DEF='hanim_r_metacarpophalangeal_1',center=(-0.1951,0.8226,0.0246),name='r_metacarpophalangeal_1',ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_r_carpal_proximal_phalanx_1',name='r_carpal_proximal_phalanx_1',
                                                           #  Visualization sphere for <HAnimJoint name='r_thumb2'/> is placed within <HAnimSegment name='r_carpal_proximal_phalanx_1'/> 
@@ -2114,7 +2114,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                             geometry=LineSet(vertexCount=[2],
                                                               coord=Coordinate(point=[(-0.1951,0.8226,0.0246),(-0.1955,0.8159,0.0464)]),
                                                               color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                        HAnimJoint(DEF='hanim_r_carpal_interphalangeal_1',center=(-0.1955,0.8159,0.0464),name='r_carpal_interphalangeal_1',
+                                                        HAnimJoint(DEF='hanim_r_carpal_interphalangeal_1',center=(-0.1955,0.8159,0.0464),name='r_carpal_interphalangeal_1',ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
                                                           HAnimSegment(DEF='hanim_r_carpal_distal_phalanx_1',name='r_carpal_distal_phalanx_1',
                                                             #  Visualization sphere for <HAnimJoint name='r_thumb3'/> is placed within <HAnimSegment name='r_carpal_distal_phalanx_1'/> 
@@ -2133,7 +2133,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                               children=[
                                                               TouchSensor(description='HAnimSite r_thumb_distal_tip'),
                                                               Shape(USE='HAnimSiteShape')])])])])]),
-                                                    HAnimJoint(DEF='hanim_r_carpometacarpal_2',center=(-0.1983,0.8024,-0.028),name='r_carpometacarpal_2',
+                                                    HAnimJoint(DEF='hanim_r_carpometacarpal_2',center=(-0.1983,0.8024,-0.028),name='r_carpometacarpal_2',ulimit=[0,0,0],llimit=[0,0,0],
                                                       children=[
                                                       HAnimSegment(DEF='hanim_r_metacarpal_2',name='r_metacarpal_2',
                                                         #  Visualization sphere for <HAnimJoint name='r_index0'/> is placed within <HAnimSegment name='r_metacarpal_2'/> 
@@ -2147,7 +2147,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                           geometry=LineSet(vertexCount=[2],
                                                             coord=Coordinate(point=[(-0.1983,0.8024,-0.028),(-0.1983,0.7815,-0.028)]),
                                                             color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                      HAnimJoint(DEF='hanim_r_metacarpophalangeal_2',center=(-0.1983,0.7815,-0.028),name='r_metacarpophalangeal_2',
+                                                      HAnimJoint(DEF='hanim_r_metacarpophalangeal_2',center=(-0.1983,0.7815,-0.028),name='r_metacarpophalangeal_2',ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_r_carpal_proximal_phalanx_2',name='r_carpal_proximal_phalanx_2',
                                                           #  Visualization sphere for <HAnimJoint name='r_index1'/> is placed within <HAnimSegment name='r_carpal_proximal_phalanx_2'/> 
@@ -2161,7 +2161,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                             geometry=LineSet(vertexCount=[2],
                                                               coord=Coordinate(point=[(-0.1983,0.7815,-0.028),(-0.2017,0.7363,-0.0248)]),
                                                               color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                        HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_2',center=(-0.2017,0.7363,-0.0248),name='r_carpal_proximal_interphalangeal_2',
+                                                        HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_2',center=(-0.2017,0.7363,-0.0248),name='r_carpal_proximal_interphalangeal_2',ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
                                                           HAnimSegment(DEF='hanim_r_carpal_middle_phalanx_2',name='r_carpal_middle_phalanx_2',
                                                             #  Visualization sphere for <HAnimJoint name='r_index2'/> is placed within <HAnimSegment name='r_carpal_middle_phalanx_2'/> 
@@ -2175,7 +2175,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                               geometry=LineSet(vertexCount=[2],
                                                                 coord=Coordinate(point=[(-0.2017,0.7363,-0.0248),(-0.2028,0.7139,-0.0236)]),
                                                                 color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                          HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_2',center=(-0.2028,0.7139,-0.0236),name='r_carpal_distal_interphalangeal_2',
+                                                          HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_2',center=(-0.2028,0.7139,-0.0236),name='r_carpal_distal_interphalangeal_2',ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
                                                             HAnimSegment(DEF='hanim_r_carpal_distal_phalanx_2',name='r_carpal_distal_phalanx_2',
                                                               #  Visualization sphere for <HAnimJoint name='r_index3'/> is placed within <HAnimSegment name='r_carpal_distal_phalanx_2'/> 
@@ -2204,7 +2204,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                 children=[
                                                                 TouchSensor(description='HAnimSite r_dactylion_pt'),
                                                                 Shape(USE='HAnimSiteShape')])])])])])]),
-                                                    HAnimJoint(DEF='hanim_r_carpometacarpal_3',center=(-0.1987,0.8029,-0.053),name='r_carpometacarpal_3',
+                                                    HAnimJoint(DEF='hanim_r_carpometacarpal_3',center=(-0.1987,0.8029,-0.053),name='r_carpometacarpal_3',ulimit=[0,0,0],llimit=[0,0,0],
                                                       children=[
                                                       HAnimSegment(DEF='hanim_r_metacarpal_3',name='r_metacarpal_3',
                                                         #  Visualization sphere for <HAnimJoint name='r_middle0'/> is placed within <HAnimSegment name='r_metacarpal_3'/> 
@@ -2218,7 +2218,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                           geometry=LineSet(vertexCount=[2],
                                                             coord=Coordinate(point=[(-0.1987,0.8029,-0.053),(-0.1987,0.7818,-0.053)]),
                                                             color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                      HAnimJoint(DEF='hanim_r_metacarpophalangeal_3',center=(-0.1987,0.7818,-0.053),name='r_metacarpophalangeal_3',
+                                                      HAnimJoint(DEF='hanim_r_metacarpophalangeal_3',center=(-0.1987,0.7818,-0.053),name='r_metacarpophalangeal_3',ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_r_carpal_proximal_phalanx_3',name='r_carpal_proximal_phalanx_3',
                                                           #  Visualization sphere for <HAnimJoint name='r_middle1'/> is placed within <HAnimSegment name='r_carpal_proximal_phalanx_3'/> 
@@ -2232,7 +2232,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                             geometry=LineSet(vertexCount=[2],
                                                               coord=Coordinate(point=[(-0.1987,0.7818,-0.053),(-0.2013,0.7273,-0.0503)]),
                                                               color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                        HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_3',center=(-0.2013,0.7273,-0.0503),name='r_carpal_proximal_interphalangeal_3',
+                                                        HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_3',center=(-0.2013,0.7273,-0.0503),name='r_carpal_proximal_interphalangeal_3',ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
                                                           HAnimSegment(DEF='hanim_r_carpal_middle_phalanx_3',name='r_carpal_middle_phalanx_3',
                                                             #  Visualization sphere for <HAnimJoint name='r_middle2'/> is placed within <HAnimSegment name='r_carpal_middle_phalanx_3'/> 
@@ -2246,7 +2246,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                               geometry=LineSet(vertexCount=[2],
                                                                 coord=Coordinate(point=[(-0.2013,0.7273,-0.0503),(-0.2026,0.7011,-0.0494)]),
                                                                 color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                          HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_3',center=(-0.2026,0.7011,-0.0494),name='r_carpal_distal_interphalangeal_3',
+                                                          HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_3',center=(-0.2026,0.7011,-0.0494),name='r_carpal_distal_interphalangeal_3',ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
                                                             HAnimSegment(DEF='hanim_r_carpal_distal_phalanx_3',name='r_carpal_distal_phalanx_3',
                                                               #  Visualization sphere for <HAnimJoint name='r_middle3'/> is placed within <HAnimSegment name='r_carpal_distal_phalanx_3'/> 
@@ -2265,7 +2265,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                 children=[
                                                                 TouchSensor(description='HAnimSite r_middle_distal_tip'),
                                                                 Shape(USE='HAnimSiteShape')])])])])])]),
-                                                    HAnimJoint(DEF='hanim_r_carpometacarpal_4',center=(-0.1956,0.8019,-0.0794),name='r_carpometacarpal_4',
+                                                    HAnimJoint(DEF='hanim_r_carpometacarpal_4',center=(-0.1956,0.8019,-0.0794),name='r_carpometacarpal_4',ulimit=[0,0,0],llimit=[0,0,0],
                                                       children=[
                                                       HAnimSegment(DEF='hanim_r_metacarpal_4',name='r_metacarpal_4',
                                                         #  Visualization sphere for <HAnimJoint name='r_ring0'/> is placed within <HAnimSegment name='r_metacarpal_4'/> 
@@ -2279,7 +2279,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                           geometry=LineSet(vertexCount=[2],
                                                             coord=Coordinate(point=[(-0.1956,0.8019,-0.0794),(-0.1956,0.7815,-0.0794)]),
                                                             color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                      HAnimJoint(DEF='hanim_r_metacarpophalangeal_4',center=(-0.1956,0.7815,-0.0794),name='r_metacarpophalangeal_4',
+                                                      HAnimJoint(DEF='hanim_r_metacarpophalangeal_4',center=(-0.1956,0.7815,-0.0794),name='r_metacarpophalangeal_4',ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_r_carpal_proximal_phalanx_4',name='r_carpal_proximal_phalanx_4',
                                                           #  Visualization sphere for <HAnimJoint name='r_ring1'/> is placed within <HAnimSegment name='r_carpal_proximal_phalanx_4'/> 
@@ -2293,7 +2293,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                             geometry=LineSet(vertexCount=[2],
                                                               coord=Coordinate(point=[(-0.1956,0.7815,-0.0794),(-0.1973,0.7287,-0.0777)]),
                                                               color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                        HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_4',center=(-0.1973,0.7287,-0.0777),name='r_carpal_proximal_interphalangeal_4',
+                                                        HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_4',center=(-0.1973,0.7287,-0.0777),name='r_carpal_proximal_interphalangeal_4',ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
                                                           HAnimSegment(DEF='hanim_r_carpal_middle_phalanx_4',name='r_carpal_middle_phalanx_4',
                                                             #  Visualization sphere for <HAnimJoint name='r_ring2'/> is placed within <HAnimSegment name='r_carpal_middle_phalanx_4'/> 
@@ -2307,7 +2307,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                               geometry=LineSet(vertexCount=[2],
                                                                 coord=Coordinate(point=[(-0.1973,0.7287,-0.0777),(-0.1983,0.7045,-0.0767)]),
                                                                 color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                          HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_4',center=(-0.1983,0.7045,-0.0767),name='r_carpal_distal_interphalangeal_4',
+                                                          HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_4',center=(-0.1983,0.7045,-0.0767),name='r_carpal_distal_interphalangeal_4',ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
                                                             HAnimSegment(DEF='hanim_r_carpal_distal_phalanx_4',name='r_carpal_distal_phalanx_4',
                                                               #  Visualization sphere for <HAnimJoint name='r_ring3'/> is placed within <HAnimSegment name='r_carpal_distal_phalanx_4'/> 
@@ -2326,7 +2326,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                 children=[
                                                                 TouchSensor(description='HAnimSite r_ring_distal_tip'),
                                                                 Shape(USE='HAnimSiteShape')])])])])])]),
-                                                    HAnimJoint(DEF='hanim_r_carpometacarpal_5',center=(-0.1925,0.8066,-0.1036),name='r_carpometacarpal_5',
+                                                    HAnimJoint(DEF='hanim_r_carpometacarpal_5',center=(-0.1925,0.8066,-0.1036),name='r_carpometacarpal_5',ulimit=[0,0,0],llimit=[0,0,0],
                                                       children=[
                                                       HAnimSegment(DEF='hanim_r_metacarpal_5',name='r_metacarpal_5',
                                                         #  Visualization sphere for <HAnimJoint name='r_pinky0'/> is placed within <HAnimSegment name='r_metacarpal_5'/> 
@@ -2340,7 +2340,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                           geometry=LineSet(vertexCount=[2],
                                                             coord=Coordinate(point=[(-0.1925,0.8066,-0.1036),(-0.1925,0.7866,-0.1036)]),
                                                             color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                      HAnimJoint(DEF='hanim_r_metacarpophalangeal_5',center=(-0.1925,0.7866,-0.1036),name='r_metacarpophalangeal_5',
+                                                      HAnimJoint(DEF='hanim_r_metacarpophalangeal_5',center=(-0.1925,0.7866,-0.1036),name='r_metacarpophalangeal_5',ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_r_carpal_proximal_phalanx_5',name='r_carpal_proximal_phalanx_5',
                                                           #  Visualization sphere for <HAnimJoint name='r_pinky1'/> is placed within <HAnimSegment name='r_carpal_proximal_phalanx_5'/> 
@@ -2354,7 +2354,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                             geometry=LineSet(vertexCount=[2],
                                                               coord=Coordinate(point=[(-0.1925,0.7866,-0.1036),(-0.1938,0.7452,-0.1024)]),
                                                               color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                        HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_5',center=(-0.1938,0.7452,-0.1024),name='r_carpal_proximal_interphalangeal_5',
+                                                        HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_5',center=(-0.1938,0.7452,-0.1024),name='r_carpal_proximal_interphalangeal_5',ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
                                                           HAnimSegment(DEF='hanim_r_carpal_middle_phalanx_5',name='r_carpal_middle_phalanx_5',
                                                             #  Visualization sphere for <HAnimJoint name='r_pinky2'/> is placed within <HAnimSegment name='r_carpal_middle_phalanx_5'/> 
@@ -2368,7 +2368,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                               geometry=LineSet(vertexCount=[2],
                                                                 coord=Coordinate(point=[(-0.1938,0.7452,-0.1024),(-0.1948,0.7277,-0.1017)]),
                                                                 color=ColorRGBA(USE='HAnimSegmentLineColorRGBA')))]),
-                                                          HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_5',center=(-0.1948,0.7277,-0.1017),name='r_carpal_distal_interphalangeal_5',
+                                                          HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_5',center=(-0.1948,0.7277,-0.1017),name='r_carpal_distal_interphalangeal_5',ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
                                                             HAnimSegment(DEF='hanim_r_carpal_distal_phalanx_5',name='r_carpal_distal_phalanx_5',
                                                               #  Visualization sphere for <HAnimJoint name='r_pinky3'/> is placed within <HAnimSegment name='r_carpal_distal_phalanx_5'/> 
@@ -2734,100 +2734,100 @@ newModel=X3D(profile='Immersive',version='4.0',
       #  TODO move relevant HAnimSite/Viewpoint pairs into skeleton at appropriate locations, if so also revert containerField to default 
       #  right between the eyes, stationary position not animating except with body itself 
       joints=[
-      HAnimJoint(USE='hanim_humanoid_root'),
-      HAnimJoint(USE='hanim_sacroiliac'),
-      HAnimJoint(USE='hanim_vl5'),
-      HAnimJoint(USE='hanim_vl4'),
-      HAnimJoint(USE='hanim_vl3'),
-      HAnimJoint(USE='hanim_vl2'),
-      HAnimJoint(USE='hanim_vl1'),
-      HAnimJoint(USE='hanim_vt12'),
-      HAnimJoint(USE='hanim_vt11'),
-      HAnimJoint(USE='hanim_vt10'),
-      HAnimJoint(USE='hanim_vt9'),
-      HAnimJoint(USE='hanim_vt8'),
-      HAnimJoint(USE='hanim_vt7'),
-      HAnimJoint(USE='hanim_vt6'),
-      HAnimJoint(USE='hanim_vt5'),
-      HAnimJoint(USE='hanim_vt4'),
-      HAnimJoint(USE='hanim_vt3'),
-      HAnimJoint(USE='hanim_vt2'),
-      HAnimJoint(USE='hanim_vt1'),
-      HAnimJoint(USE='hanim_vc7'),
-      HAnimJoint(USE='hanim_vc6'),
-      HAnimJoint(USE='hanim_vc5'),
-      HAnimJoint(USE='hanim_vc4'),
-      HAnimJoint(USE='hanim_vc3'),
-      HAnimJoint(USE='hanim_vc2'),
-      HAnimJoint(USE='hanim_vc1'),
-      HAnimJoint(USE='hanim_skullbase'),
-      HAnimJoint(USE='hanim_temporomandibular'),
-      HAnimJoint(USE='hanim_l_acromioclavicular'),
-      HAnimJoint(USE='hanim_r_acromioclavicular'),
-      HAnimJoint(USE='hanim_l_carpal_distal_interphalangeal_2'),
-      HAnimJoint(USE='hanim_r_carpal_distal_interphalangeal_2'),
-      HAnimJoint(USE='hanim_l_carpal_distal_interphalangeal_3'),
-      HAnimJoint(USE='hanim_r_carpal_distal_interphalangeal_3'),
-      HAnimJoint(USE='hanim_l_carpal_distal_interphalangeal_4'),
-      HAnimJoint(USE='hanim_r_carpal_distal_interphalangeal_4'),
-      HAnimJoint(USE='hanim_l_carpal_distal_interphalangeal_5'),
-      HAnimJoint(USE='hanim_r_carpal_distal_interphalangeal_5'),
-      HAnimJoint(USE='hanim_l_carpal_interphalangeal_1'),
-      HAnimJoint(USE='hanim_r_carpal_interphalangeal_1'),
-      HAnimJoint(USE='hanim_l_carpal_proximal_interphalangeal_2'),
-      HAnimJoint(USE='hanim_r_carpal_proximal_interphalangeal_2'),
-      HAnimJoint(USE='hanim_l_carpal_proximal_interphalangeal_3'),
-      HAnimJoint(USE='hanim_r_carpal_proximal_interphalangeal_3'),
-      HAnimJoint(USE='hanim_l_carpal_proximal_interphalangeal_4'),
-      HAnimJoint(USE='hanim_r_carpal_proximal_interphalangeal_4'),
-      HAnimJoint(USE='hanim_l_carpal_proximal_interphalangeal_5'),
-      HAnimJoint(USE='hanim_r_carpal_proximal_interphalangeal_5'),
-      HAnimJoint(USE='hanim_l_carpometacarpal_1'),
-      HAnimJoint(USE='hanim_r_carpometacarpal_1'),
-      HAnimJoint(USE='hanim_l_carpometacarpal_2'),
-      HAnimJoint(USE='hanim_r_carpometacarpal_2'),
-      HAnimJoint(USE='hanim_l_carpometacarpal_3'),
-      HAnimJoint(USE='hanim_r_carpometacarpal_3'),
-      HAnimJoint(USE='hanim_l_carpometacarpal_4'),
-      HAnimJoint(USE='hanim_r_carpometacarpal_4'),
-      HAnimJoint(USE='hanim_l_carpometacarpal_5'),
-      HAnimJoint(USE='hanim_r_carpometacarpal_5'),
-      HAnimJoint(USE='hanim_l_elbow'),
-      HAnimJoint(USE='hanim_r_elbow'),
-      HAnimJoint(USE='hanim_l_eyeball_joint'),
-      HAnimJoint(USE='hanim_r_eyeball_joint'),
-      HAnimJoint(USE='hanim_l_eyebrow_joint'),
-      HAnimJoint(USE='hanim_r_eyebrow_joint'),
-      HAnimJoint(USE='hanim_l_eyelid_joint'),
-      HAnimJoint(USE='hanim_r_eyelid_joint'),
-      HAnimJoint(USE='hanim_l_hip'),
-      HAnimJoint(USE='hanim_r_hip'),
-      HAnimJoint(USE='hanim_l_knee'),
-      HAnimJoint(USE='hanim_r_knee'),
-      HAnimJoint(USE='hanim_l_metacarpophalangeal_1'),
-      HAnimJoint(USE='hanim_r_metacarpophalangeal_1'),
-      HAnimJoint(USE='hanim_l_metacarpophalangeal_2'),
-      HAnimJoint(USE='hanim_r_metacarpophalangeal_2'),
-      HAnimJoint(USE='hanim_l_metacarpophalangeal_3'),
-      HAnimJoint(USE='hanim_r_metacarpophalangeal_3'),
-      HAnimJoint(USE='hanim_l_metacarpophalangeal_4'),
-      HAnimJoint(USE='hanim_r_metacarpophalangeal_4'),
-      HAnimJoint(USE='hanim_l_metacarpophalangeal_5'),
-      HAnimJoint(USE='hanim_r_metacarpophalangeal_5'),
-      HAnimJoint(USE='hanim_l_metatarsophalangeal_2'),
-      HAnimJoint(USE='hanim_r_metatarsophalangeal_2'),
-      HAnimJoint(USE='hanim_l_radiocarpal'),
-      HAnimJoint(USE='hanim_r_radiocarpal'),
-      HAnimJoint(USE='hanim_l_shoulder'),
-      HAnimJoint(USE='hanim_r_shoulder'),
-      HAnimJoint(USE='hanim_l_sternoclavicular'),
-      HAnimJoint(USE='hanim_r_sternoclavicular'),
-      HAnimJoint(USE='hanim_l_talocrural'),
-      HAnimJoint(USE='hanim_r_talocrural'),
-      HAnimJoint(USE='hanim_l_tarsal_distal_interphalangeal_2'),
-      HAnimJoint(USE='hanim_r_tarsal_distal_interphalangeal_2'),
-      HAnimJoint(USE='hanim_l_tarsometatarsal_2'),
-      HAnimJoint(USE='hanim_r_tarsometatarsal_2')],
+      HAnimJoint(USE='hanim_humanoid_root',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_sacroiliac',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vl5',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vl4',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vl3',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vl2',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vl1',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vt12',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vt11',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vt10',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vt9',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vt8',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vt7',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vt6',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vt5',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vt4',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vt3',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vt2',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vt1',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vc7',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vc6',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vc5',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vc4',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vc3',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vc2',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_vc1',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_skullbase',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_temporomandibular',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_acromioclavicular',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_acromioclavicular',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_carpal_distal_interphalangeal_2',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_carpal_distal_interphalangeal_2',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_carpal_distal_interphalangeal_3',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_carpal_distal_interphalangeal_3',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_carpal_distal_interphalangeal_4',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_carpal_distal_interphalangeal_4',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_carpal_distal_interphalangeal_5',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_carpal_distal_interphalangeal_5',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_carpal_interphalangeal_1',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_carpal_interphalangeal_1',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_carpal_proximal_interphalangeal_2',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_carpal_proximal_interphalangeal_2',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_carpal_proximal_interphalangeal_3',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_carpal_proximal_interphalangeal_3',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_carpal_proximal_interphalangeal_4',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_carpal_proximal_interphalangeal_4',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_carpal_proximal_interphalangeal_5',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_carpal_proximal_interphalangeal_5',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_carpometacarpal_1',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_carpometacarpal_1',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_carpometacarpal_2',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_carpometacarpal_2',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_carpometacarpal_3',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_carpometacarpal_3',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_carpometacarpal_4',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_carpometacarpal_4',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_carpometacarpal_5',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_carpometacarpal_5',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_elbow',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_elbow',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_eyeball_joint',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_eyeball_joint',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_eyebrow_joint',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_eyebrow_joint',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_eyelid_joint',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_eyelid_joint',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_hip',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_hip',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_knee',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_knee',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_metacarpophalangeal_1',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_metacarpophalangeal_1',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_metacarpophalangeal_2',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_metacarpophalangeal_2',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_metacarpophalangeal_3',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_metacarpophalangeal_3',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_metacarpophalangeal_4',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_metacarpophalangeal_4',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_metacarpophalangeal_5',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_metacarpophalangeal_5',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_metatarsophalangeal_2',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_metatarsophalangeal_2',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_radiocarpal',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_radiocarpal',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_shoulder',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_shoulder',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_sternoclavicular',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_sternoclavicular',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_talocrural',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_talocrural',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_tarsal_distal_interphalangeal_2',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_tarsal_distal_interphalangeal_2',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_l_tarsometatarsal_2',ulimit=[0,0,0],llimit=[0,0,0]),
+      HAnimJoint(USE='hanim_r_tarsometatarsal_2',ulimit=[0,0,0],llimit=[0,0,0])],
       segments=[
       HAnimSegment(USE='hanim_pelvis'),
       HAnimSegment(USE='hanim_skull'),

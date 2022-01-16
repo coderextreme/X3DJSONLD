@@ -49,7 +49,7 @@ newModel=X3D(profile='Immersive',version='3.3',
           field(name='old',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
           field(name='set_location',accessType='inputOnly',type='SFTime'),
           field(name='keyValue',accessType='inputOutput',type='MFVec3f',value=[(0,0,0),(0,5,0)])]
-*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
 ),
         TimeSensor(DEF='DECLpoint_INSTANCE_CL1',cycleInterval=3,loop=True),
         ROUTE(fromNode='DECLpoint_INSTANCE_CL1',fromField='cycleTime',toNode='DECLpoint_INSTANCE_MB1',toField='set_location'),
@@ -72,7 +72,7 @@ newModel=X3D(profile='Immersive',version='3.3',
           field(name='old',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
           field(name='set_location',accessType='inputOnly',type='SFTime'),
           field(name='keyValue',accessType='inputOutput',type='MFVec3f',value=[(0,0,0),(0,5,0)])]
-*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
 ),
         TimeSensor(DEF='DECLpoint_INSTANCE1000_CL1',cycleInterval=3,loop=True),
         ROUTE(fromNode='DECLpoint_INSTANCE1000_CL1',fromField='cycleTime',toNode='DECLpoint_INSTANCE1000_MB1',toField='set_location'),
@@ -104,7 +104,7 @@ newModel=X3D(profile='Immersive',version='3.3',
         Transform(USE='rotscaleC1')]),
       field(name='set_startpoint',accessType='inputOnly',type='SFVec3f'),
       field(name='set_endpoint',accessType='inputOnly',type='SFVec3f')]
-*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
 ),
     ROUTE(fromNode='G1',fromField='translation_changed',toNode='DECLx3dconnector_connector1_S1',toField='set_startpoint'),
     ROUTE(fromNode='G2',fromField='translation_changed',toNode='DECLx3dconnector_connector1_S1',toField='set_endpoint')])

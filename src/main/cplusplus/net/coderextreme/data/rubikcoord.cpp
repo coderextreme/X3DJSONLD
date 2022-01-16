@@ -16,7 +16,7 @@ X3D0->setVersion("3.3");
 Chead* head1 = new Chead();
 Cmeta* meta2 = new Cmeta();
 meta2->setName("title");
-meta2->setContent("rubik2x2x2.x3d");
+meta2->setContent("rubikcoord.x3d");
 head1->addMeta(*meta2);
 
 Cmeta* meta3 = new Cmeta();

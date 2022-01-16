@@ -86,15 +86,18 @@ public class arc2
           .setAppearance(new Appearance()
             .setMaterial(new Material().setDiffuseColor(1.0,0.0,0.0))))
         .addChild(new PositionInterpolator("DECLpoint_INSTANCE_PI1").setKey(new double[] {0.0,1.0}).setKeyValue(new MFVec3f(new double[] {0.0,0.0,0.0,0.0,5.0,0.0})))
-        .addChild(new Script("DECLpoint_INSTANCE_MB1").setSourceCode("\n" + 
-"\n" + 
-"\n" + 
-"ecmascript:" + "\n" + 
-"               function set_location(value) {" + "\n" + 
-"                    old = translation;" + "\n" + 
-"                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);" + "\n" + 
-"                    keyValue = new MFVec3f(old, translation);" + "\n" + 
-"               }" + "\n")
+        .addChild(new Script("DECLpoint_INSTANCE_MB1").setSourceCode("""
+
+
+ecmascript:
+               function set_location(value) {
+                    old = translation;
+                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
+                    keyValue = new MFVec3f(old, translation);
+               }
+
+
+""")
           .addField(new field().setName("translation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
           .addField(new field().setName("old").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
           .addField(new field().setName("set_location").setType(field.TYPE_SFTIME).setAccessType(field.ACCESSTYPE_INPUTONLY))
@@ -112,15 +115,18 @@ public class arc2
           .setAppearance(new Appearance()
             .setMaterial(new Material().setDiffuseColor(1.0,0.0,0.0))))
         .addChild(new PositionInterpolator("DECLpoint_INSTANCE1000_PI1").setKey(new double[] {0.0,1.0}).setKeyValue(new MFVec3f(new double[] {0.0,0.0,0.0,0.0,5.0,0.0})))
-        .addChild(new Script("DECLpoint_INSTANCE1000_MB1").setSourceCode("\n" + 
-"\n" + 
-"\n" + 
-"ecmascript:" + "\n" + 
-"               function set_location(value) {" + "\n" + 
-"                    old = translation;" + "\n" + 
-"                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);" + "\n" + 
-"                    keyValue = new MFVec3f(old, translation);" + "\n" + 
-"               }" + "\n")
+        .addChild(new Script("DECLpoint_INSTANCE1000_MB1").setSourceCode("""
+
+
+ecmascript:
+               function set_location(value) {
+                    old = translation;
+                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
+                    keyValue = new MFVec3f(old, translation);
+               }
+
+
+""")
           .addField(new field().setName("translation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
           .addField(new field().setName("old").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
           .addField(new field().setName("set_location").setType(field.TYPE_SFTIME).setAccessType(field.ACCESSTYPE_INPUTONLY))
@@ -137,47 +143,50 @@ public class arc2
           .setAppearance(new Appearance()
             .setMaterial(new Material().setDiffuseColor(0.2,0.7,0.7).setTransparency(0.5)))
           .setGeometry(new Cylinder().setRadius(0.05)))))
-    .addChild(new Script("DECLx3dconnector_connector1_S1").setSourceCode("\n" + 
-"\n" + 
-"            ecmascript:" + "\n" + 
-"        function recompute(startpoint,endpoint){" + "\n" + 
-"	    if (typeof endpoint === 'undefined') {" + "\n" + 
-"		return;" + "\n" + 
-"	    }" + "\n" + 
-"            var dif = endpoint.subtract(startpoint);" + "\n" + 
-"            var dist = dif.length()*0.5;" + "\n" + 
-"            var dif2 = dif.multiply(0.5);" + "\n" + 
-"            var norm = dif.normalize();" + "\n" + 
-"            var transl = startpoint.add(dif2);" + "\n" + 
-"	    if (typeof Quaternion !== 'undefined') {" + "\n" + 
-"		    return {" + "\n" + 
-"			    scale : new SFVec3f(1.0,dist,1.0)," + "\n" + 
-"			    translation : transl," + "\n" + 
-"			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)" + "\n" + 
-"		    };" + "\n" + 
-"	    } else {" + "\n" + 
-"		    return {" + "\n" + 
-"			    scale : new SFVec3f(1.0,dist,1.0)," + "\n" + 
-"			    translation : transl," + "\n" + 
-"			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)" + "\n" + 
-"		    };" + "\n" + 
-"	    }" + "\n" + 
-"	}" + "\n" + 
-"	function recompute_and_route(startpoint, endpoint) {" + "\n" + 
-"	      var trafo = recompute(startpoint, endpoint);" + "\n" + 
-"	      transC1.translation = trafo.translation;" + "\n" + 
-"	      rotscaleC1.rotation = trafo.rotation;" + "\n" + 
-"	      rotscaleC1.scale = trafo.scale;" + "\n" + 
-"	}" + "\n" + 
-"        function initialize(){" + "\n" + 
-"            recompute_and_route(startnode.translation,endnode.translation);" + "\n" + 
-"        }" + "\n" + 
-"        function set_startpoint(val,t){" + "\n" + 
-"            recompute_and_route(val,endnode.translation);" + "\n" + 
-"        }" + "\n" + 
-"        function set_endpoint(val,t){" + "\n" + 
-"            recompute_and_route(startnode.translation,val);" + "\n" + 
-"        }" + "\n")
+    .addChild(new Script("DECLx3dconnector_connector1_S1").setSourceCode("""
+
+            ecmascript:
+        function recompute(startpoint,endpoint){
+	    if (typeof endpoint === 'undefined') {
+		return;
+	    }
+            var dif = endpoint.subtract(startpoint);
+            var dist = dif.length()*0.5;
+            var dif2 = dif.multiply(0.5);
+            var norm = dif.normalize();
+            var transl = startpoint.add(dif2);
+	    if (typeof Quaternion !== 'undefined') {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)
+		    };
+	    } else {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)
+		    };
+	    }
+	}
+	function recompute_and_route(startpoint, endpoint) {
+	      var trafo = recompute(startpoint, endpoint);
+	      transC1.translation = trafo.translation;
+	      rotscaleC1.rotation = trafo.rotation;
+	      rotscaleC1.scale = trafo.scale;
+	}
+        function initialize(){
+            recompute_and_route(startnode.translation,endnode.translation);
+        }
+        function set_startpoint(val,t){
+            recompute_and_route(val,endnode.translation);
+        }
+        function set_endpoint(val,t){
+            recompute_and_route(startnode.translation,val);
+        }
+
+
+""")
       .addField(new field().setName("startnode").setType(field.TYPE_SFNODE).setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
         .addChild(new Transform().setUSE("G1")))
       .addField(new field().setName("endnode").setType(field.TYPE_SFNODE).setAccessType(field.ACCESSTYPE_INITIALIZEONLY)

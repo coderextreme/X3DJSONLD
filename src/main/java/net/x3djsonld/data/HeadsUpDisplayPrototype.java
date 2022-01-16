@@ -127,43 +127,45 @@ public class HeadsUpDisplayPrototype
                       .setIS(new IS()
                         .addConnect(new connect().setNodeField("offset").setProtoField("locationOffset"))))
                     .addChild(new VisibilitySensor("MovementVisibilitySensor"))
-                    .addChild(new Script("VisibilityControlScript").setSourceCode("\n" + 
-"                      " + "\n" + 
-"ecmascript:" + "\n" + 
-"\n" + 
-"function tracePrint (text)" + "\n" + 
-"{" + "\n" + 
-"	if (traceEnabled) Browser.print ('[HeadsUpDisplayPrototype VisibilityControlScript] ' + text);" + "\n" + 
-"}" + "\n" + 
-"function setIsVisible (value, timeStamp)" + "\n" + 
-"{" + "\n" + 
-"	isVisible = value;" + "\n" + 
-"	tracePrint('isVisible=' + value);" + "\n" + 
-"}" + "\n" + 
-"function setPlaneSensorIsActive (value, timeStamp)" + "\n" + 
-"{" + "\n" + 
-"	tracePrint('PlaneSensor isActive=' + value);" + "\n" + 
-"\n" + 
-"	if (value == false)" + "\n" + 
-"	{" + "\n" + 
-"		tracePrint('planeSensorTranslation=' + planeSensorTranslation);" + "\n" + 
-"		if (isVisible)" + "\n" + 
-"		{" + "\n" + 
-"			translationChanged = planeSensorTranslation;" + "\n" + 
-"		}" + "\n" + 
-"		else" + "\n" + 
-"		{" + "\n" + 
-"			// fell off screen, reset to center" + "\n" + 
-"			translationChanged = new SFVec3f(0, 0, 0);" + "\n" + 
-"			translationOffsetChanged  = new SFVec3f(0, 0, 0);" + "\n" + 
-"		}" + "\n" + 
-"	}" + "\n" + 
-"}" + "\n" + 
-"function setPlaneSensorTranslation (value, timeStamp)" + "\n" + 
-"{" + "\n" + 
-"	planeSensorTranslation = value;" + "\n" + 
-"	tracePrint('planeSensorTranslation=' + value);" + "\n" + 
-"}" + "\n")
+                    .addChild(new Script("VisibilityControlScript").setSourceCode("""
+                      
+ecmascript:
+
+function tracePrint (text)
+{
+	if (traceEnabled) Browser.print ('[HeadsUpDisplayPrototype VisibilityControlScript] ' + text);
+}
+function setIsVisible (value, timeStamp)
+{
+	isVisible = value;
+	tracePrint('isVisible=' + value);
+}
+function setPlaneSensorIsActive (value, timeStamp)
+{
+	tracePrint('PlaneSensor isActive=' + value);
+
+	if (value == false)
+	{
+		tracePrint('planeSensorTranslation=' + planeSensorTranslation);
+		if (isVisible)
+		{
+			translationChanged = planeSensorTranslation;
+		}
+		else
+		{
+			// fell off screen, reset to center
+			translationChanged = new SFVec3f(0, 0, 0);
+			translationOffsetChanged  = new SFVec3f(0, 0, 0);
+		}
+	}
+}
+function setPlaneSensorTranslation (value, timeStamp)
+{
+	planeSensorTranslation = value;
+	tracePrint('planeSensorTranslation=' + value);
+}
+
+                    """)
                       .addField(new field().setName("traceEnabled").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
                       .addField(new field().setName("isVisible").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(true))
                       .addField(new field().setName("planeSensorTranslation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new SFVec3f(0.0,0.0,0.0)))

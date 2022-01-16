@@ -285,6 +285,10 @@ JavaSerializer.prototype = {
 			method = "LayerSet"
 			addpre = "add";
 		}
+		if (element.nodeName === "field" && addpre+method === "addJoints") {
+			method = "Child"
+			addpre = "add";
+		}
 		return prepre+addpre+method;
 	},
 	subSerializeToString : function(element, mapToMethod, fieldTypes, n, stack) {
@@ -470,11 +474,10 @@ JavaSerializer.prototype = {
 					if (attr === "class") {
 						method = "setCssClass";
 					}
-					/*
-					if (attr === "style") {
+
+					if (attr === "style" && element.nodeName != "FontStyle" ) {
 						method = "setCssStyle";
 					}
-					*/
 					
 					str += '.'+method+"("+strval+")";
 				}

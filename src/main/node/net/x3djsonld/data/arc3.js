@@ -247,4 +247,3 @@ arc3.prototype = {
 	}
 }
 new arc3().main();
-process.exit(0);

@@ -1083,88 +1083,90 @@ public class InterchangableActorsViaDynamicRoutingPrototypes
         .addSites(new HAnimSite().setUSE("Boxman_r_hand_tip"))
         .addSites(new HAnimSite().setUSE("Boxman_l_middistal_tip"))
         .addSites(new HAnimSite().setUSE("Boxman_r_middistal_tip")))
-      .addChild(new Script("ENGINE").setDirectOutput(true).setSourceCode("\n" + 
-"        " + "\n" + 
-"ecmascript:" + "\n" + 
-"      // Initialises the script" + "\n" + 
-"      function initialize() {" + "\n" + 
-"         // Copy coord list into local storage" + "\n" + 
-"         coordList = humanoid.skinCoord.point;" + "\n" + 
-"      }" + "\n" + 
-"      // Transforms the vertices related to a joint" + "\n" + 
-"      function Transform() {" + "\n" + 
-"         // Make sure that this is a joint" + "\n" + 
-"         var iNumJoints = humanoid.joints.length;" + "\n" + 
-"         var bIsJoint = false;" + "\n" + 
-"         var j;" + "\n" + 
-"         for (j=0; (j<iNumJoints) && (bIsJoint==false); j++) {" + "\n" + 
-"            if (humanoid.joints[j].name == joint.name) bIsJoint = true;" + "\n" + 
-"         }" + "\n" + 
-"         // If it is, we process the data" + "\n" + 
-"         if (bIsJoint) {" + "\n" + 
-"            // Read in current joint" + "\n" + 
-"            var currentJoint = joint;" + "\n" + 
-"            // Read in current matrix" + "\n" + 
-"            var currentMatrix = new VrmlMatrix();" + "\n" + 
-"            currentMatrix.setTransform(translation," + "\n" + 
-"                                       rotation," + "\n" + 
-"                                       scale," + "\n" + 
-"                                       new SFRotation(1,0,0,0)," + "\n" + 
-"                                       new SFVec3f(0,0,0));" + "\n" + 
-"            // Create matrix corresponding to this joints transform" + "\n" + 
-"            var newMatrix = new VrmlMatrix();" + "\n" + 
-"            newMatrix.setTransform(currentJoint.translation," + "\n" + 
-"                                   currentJoint.rotation," + "\n" + 
-"                                   currentJoint.scale," + "\n" + 
-"                                   currentJoint.scaleOrientation," + "\n" + 
-"                                   currentJoint.center);" + "\n" + 
-"            // Update current matrix with matrix from this joint" + "\n" + 
-"            currentMatrix = newMatrix.multRight(currentMatrix);" + "\n" + 
-"            // Transform all vertices associated with this joint" + "\n" + 
-"//          var iNumAffectedVertices = currentJoint.affectedVertices.length;" + "\n" + 
-"            var iNumAffectedVertices = currentJoint.skinCoordIndex.length;" + "\n" + 
-"            var v;" + "\n" + 
-"            for (v=0; v<iNumAffectedVertices; v++) {" + "\n" + 
-"//             var vertex = currentJoint.affectedVertices[v];" + "\n" + 
-"//             var weight = currentJoint.vertexWeights[v];" + "\n" + 
-"               var vertex = currentJoint.skinCoordIndex[v];" + "\n" + 
-"               var weight = currentJoint.skinCoordWeight[v];" + "\n" + 
-"               var newVertex = currentMatrix.multVecMatrix(coordList[vertex]).multiply(weight);" + "\n" + 
-"               humanoid.skinCoord.point[vertex] = humanoid.skinCoord.point[vertex].add(newVertex);" + "\n" + 
-"            }" + "\n" + 
-"            // Transform all children" + "\n" + 
-"            var children = currentJoint.children;" + "\n" + 
-"            var iNumChildren = children.length;" + "\n" + 
-"            var c;" + "\n" + 
-"            for (c=0; c<iNumChildren; c++) {" + "\n" + 
-"               joint = children[c];" + "\n" + 
-"               currentMatrix.getTransform(translation,rotation,scale);" + "\n" + 
-"               Transform();" + "\n" + 
-"            }" + "\n" + 
-"         }" + "\n" + 
-"      }" + "\n" + 
-"      // Update event handler" + "\n" + 
-"      function update(value,time) {" + "\n" + 
-"         // Zero output data." + "\n" + 
-"         var iNumVertices = humanoid.skinCoord.point.length;" + "\n" + 
-"         var v;" + "\n" + 
-"         for (v=0; v<iNumVertices; v++) {" + "\n" + 
-"            humanoid.skinCoord.point[v].x = 0;" + "\n" + 
-"            humanoid.skinCoord.point[v].y = 0;" + "\n" + 
-"            humanoid.skinCoord.point[v].z = 0;" + "\n" + 
-"         }" + "\n" + 
-"         // Initialise transform data" + "\n" + 
-"         translation = new SFVec3f(0,0,0);" + "\n" + 
-"         scale       = new SFVec3f(1,1,1);" + "\n" + 
-"         rotation    = new SFRotation(0,0,1,0);" + "\n" + 
-"         // First (and only) item in humanoidBody should be the humanoid_root." + "\n" + 
-"         // This is stored as the joint we want to do next" + "\n" + 
-"         // This could do with being more robust, rather than a'should be ok'." + "\n" + 
-"//       joint = humanoid.humanoidBody[0];" + "\n" + 
-"         joint = humanoid.skeleton[0];" + "\n" + 
-"         // Call transform function" + "\n" + 
-"         Transform();" + "\n" + 
-"      }" + "\n")
+      .addChild(new Script("ENGINE").setDirectOutput(true).setSourceCode("""
+        
+ecmascript:
+      // Initialises the script
+      function initialize() {
+         // Copy coord list into local storage
+         coordList = humanoid.skinCoord.point;
+      }
+      // Transforms the vertices related to a joint
+      function Transform() {
+         // Make sure that this is a joint
+         var iNumJoints = humanoid.joints.length;
+         var bIsJoint = false;
+         var j;
+         for (j=0; (j<iNumJoints) && (bIsJoint==false); j++) {
+            if (humanoid.joints[j].name == joint.name) bIsJoint = true;
+         }
+         // If it is, we process the data
+         if (bIsJoint) {
+            // Read in current joint
+            var currentJoint = joint;
+            // Read in current matrix
+            var currentMatrix = new VrmlMatrix();
+            currentMatrix.setTransform(translation,
+                                       rotation,
+                                       scale,
+                                       new SFRotation(1,0,0,0),
+                                       new SFVec3f(0,0,0));
+            // Create matrix corresponding to this joints transform
+            var newMatrix = new VrmlMatrix();
+            newMatrix.setTransform(currentJoint.translation,
+                                   currentJoint.rotation,
+                                   currentJoint.scale,
+                                   currentJoint.scaleOrientation,
+                                   currentJoint.center);
+            // Update current matrix with matrix from this joint
+            currentMatrix = newMatrix.multRight(currentMatrix);
+            // Transform all vertices associated with this joint
+//          var iNumAffectedVertices = currentJoint.affectedVertices.length;
+            var iNumAffectedVertices = currentJoint.skinCoordIndex.length;
+            var v;
+            for (v=0; v<iNumAffectedVertices; v++) {
+//             var vertex = currentJoint.affectedVertices[v];
+//             var weight = currentJoint.vertexWeights[v];
+               var vertex = currentJoint.skinCoordIndex[v];
+               var weight = currentJoint.skinCoordWeight[v];
+               var newVertex = currentMatrix.multVecMatrix(coordList[vertex]).multiply(weight);
+               humanoid.skinCoord.point[vertex] = humanoid.skinCoord.point[vertex].add(newVertex);
+            }
+            // Transform all children
+            var children = currentJoint.children;
+            var iNumChildren = children.length;
+            var c;
+            for (c=0; c<iNumChildren; c++) {
+               joint = children[c];
+               currentMatrix.getTransform(translation,rotation,scale);
+               Transform();
+            }
+         }
+      }
+      // Update event handler
+      function update(value,time) {
+         // Zero output data.
+         var iNumVertices = humanoid.skinCoord.point.length;
+         var v;
+         for (v=0; v<iNumVertices; v++) {
+            humanoid.skinCoord.point[v].x = 0;
+            humanoid.skinCoord.point[v].y = 0;
+            humanoid.skinCoord.point[v].z = 0;
+         }
+         // Initialise transform data
+         translation = new SFVec3f(0,0,0);
+         scale       = new SFVec3f(1,1,1);
+         rotation    = new SFRotation(0,0,1,0);
+         // First (and only) item in humanoidBody should be the humanoid_root.
+         // This is stored as the joint we want to do next
+         // This could do with being more robust, rather than a'should be ok'.
+//       joint = humanoid.humanoidBody[0];
+         joint = humanoid.skeleton[0];
+         // Call transform function
+         Transform();
+      }
+
+      """)
         .addField(new field().setName("update").setType(field.TYPE_SFROTATION).setAccessType(field.ACCESSTYPE_INPUTONLY))
         .addField(new field().setName("humanoid").setType(field.TYPE_SFNODE).setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
           .addChild(new HAnimHumanoid().setUSE("Boxman_Humanoid").setVersion("1.0")))
@@ -1291,247 +1293,249 @@ public class InterchangableActorsViaDynamicRoutingPrototypes
             .setMaterial(new Material())))))
     .addChild(new ROUTE().setFromNode("HudProx").setFromField("position_changed").setToNode("HudXform").setToField("set_translation"))
     .addChild(new ROUTE().setFromNode("HudProx").setFromField("orientation_changed").setToNode("HudXform").setToField("set_rotation"))
-    .addChild(new Script("ActorAnimator").setDirectOutput(true).setSourceCode("\n" + 
-"      " + "\n" + 
-"ecmascript:" + "\n" + 
-"\n" + 
-"//Global Variables" + "\n" + 
-"var currentAnimatorIndex;" + "\n" + 
-"var avatarJoints;" + "\n" + 
-"var animatorFields;" + "\n" + 
-"\n" + 
-"function initialize() {" + "\n" + 
-"\n" + 
-"   //Avatar Joint Names" + "\n" + 
-"   avatarJoints = new Array();" + "\n" + 
-"   avatarJoints[0] ='humanoid_root';" + "\n" + 
-"   avatarJoints[1] ='sacroiliac';" + "\n" + 
-"   avatarJoints[2] ='l_hip';" + "\n" + 
-"   avatarJoints[3] ='l_knee';" + "\n" + 
-"   avatarJoints[4] ='l_ankle';" + "\n" + 
-"   avatarJoints[5] ='r_hip';" + "\n" + 
-"   avatarJoints[6] ='r_knee';" + "\n" + 
-"   avatarJoints[7] ='r_ankle';" + "\n" + 
-"   avatarJoints[8] ='skullbase';" + "\n" + 
-"   avatarJoints[9] ='l_shoulder';" + "\n" + 
-"   avatarJoints[10] ='l_elbow';" + "\n" + 
-"   avatarJoints[11] ='l_wrist';" + "\n" + 
-"   avatarJoints[12] ='r_shoulder';" + "\n" + 
-"   avatarJoints[13] ='r_elbow';" + "\n" + 
-"   avatarJoints[14] ='r_wrist';" + "\n" + 
-"   avatarJoints[15] ='l_midtarsal';" + "\n" + 
-"   avatarJoints[16] ='r_midtarsal';" + "\n" + 
-"   avatarJoints[17] ='vl_5';" + "\n" + 
-"\n" + 
-"\n" + 
-"   //ANIMATOR field names will be used" + "\n" + 
-"   //as fromField value of created ROUTES" + "\n" + 
-"   animatorFields = new Array();" + "\n" + 
-"   for(i = 0; i <= 17; i++) {" + "\n" + 
-"\n" + 
-"      if(avatarJoints[i] =='sacroiliac') {" + "\n" + 
-"         animatorFields[i] ='lower_body_rotation_changed';" + "\n" + 
-"      }" + "\n" + 
-"\n" + 
-"      else {" + "\n" + 
-"	 animatorFields[i] = avatarJoints[i] + '_rotation_changed';" + "\n" + 
-"      }" + "\n" + 
-"   } //end for loop" + "\n" + 
-"\n" + 
-"\n" + 
-"   // Current Avatar Choice" + "\n" + 
-"   // 0 : Allen" + "\n" + 
-"   // 1 : Nancy" + "\n" + 
-"   // 2 : Boxman" + "\n" + 
-"   AvatarChoice = 0;" + "\n" + 
-"\n" + 
-"\n" + 
-"   // Current Animator Behavior Index" + "\n" + 
-"   // 0 : WALK" + "\n" + 
-"   // 1 : RUN" + "\n" + 
-"   // 2 : JUMP" + "\n" + 
-"   // 3 : STAND" + "\n" + 
-"   // 4 : KNEEL" + "\n" + 
-"   currentAnimatorIndex = 3; //Initial behavior: KNEEL" + "\n" + 
-"\n" + 
-"   createRoutes();" + "\n" + 
-"\n" + 
-"}" + "\n" + 
-"\n" + 
-"\n" + 
-"function createRoutes() {" + "\n" + 
-"   //Add Routes for Allen which is current avatar" + "\n" + 
-"   if(AvatarChoice == 0) {" + "\n" + 
-"\n" + 
-"      //Exception routing for humanoid_Root translation" + "\n" + 
-"      Browser.addRoute(Behaviors[currentAnimatorIndex], avatarJoints[0] + '_translation_changed', AllenJointNodes[0],'set_translation');" + "\n" + 
-"\n" + 
-"      for(i = 0; i < 15; i++) {" + "\n" + 
-"\n" + 
-"         Browser.addRoute(Behaviors[currentAnimatorIndex], animatorFields[i],AllenJointNodes[i],'set_rotation');" + "\n" + 
-"      }" + "\n" + 
-"\n" + 
-"   }" + "\n" + 
-"\n" + 
-"   //Add Routes for Nancy which is current avatar" + "\n" + 
-"   if(AvatarChoice == 1) {" + "\n" + 
-"\n" + 
-"      //Exception routing for humanoid_Root translation" + "\n" + 
-"      Browser.addRoute(Behaviors[currentAnimatorIndex], avatarJoints[0] + '_translation_changed', NancyJointNodes[0],'set_translation');" + "\n" + 
-"\n" + 
-"      for(i = 0; i < 15; i++) {" + "\n" + 
-"\n" + 
-"         Browser.addRoute(Behaviors[currentAnimatorIndex], animatorFields[i],NancyJointNodes[i],'set_rotation');" + "\n" + 
-"      }" + "\n" + 
-"\n" + 
-"   }" + "\n" + 
-"\n" + 
-"   //Add Routes for Boxman which is current avatar" + "\n" + 
-"   if(AvatarChoice == 2) {" + "\n" + 
-"\n" + 
-"      //Exception routing for humanoid_Root translation" + "\n" + 
-"      Browser.addRoute(Behaviors[currentAnimatorIndex], avatarJoints[0] + '_translation_changed', BoxmanJointNodes[0],'set_translation');" + "\n" + 
-"       for(i = 0; i <= 16; i++) {" + "\n" + 
-"         if(i != 1) { //no sacroiliac in Boxman" + "\n" + 
-"            Browser.addRoute(Behaviors[currentAnimatorIndex], animatorFields[i], BoxmanJointNodes[i],'set_rotation');" + "\n" + 
-"         }" + "\n" + 
-"      }" + "\n" + 
-"    }" + "\n" + 
-"}" + "\n" + 
-"\n" + 
-"\n" + 
-"function removeRoutes() {" + "\n" + 
-"   //Remove Routes for Allen which is current avatar" + "\n" + 
-"   if(AvatarChoice == 0) {" + "\n" + 
-"\n" + 
-"      //Exception routing for humanoid_Root translation" + "\n" + 
-"      Browser.deleteRoute(Behaviors[currentAnimatorIndex], avatarJoints[0] + '_translation_changed', AllenJointNodes[0],'set_translation');" + "\n" + 
-"\n" + 
-"      for(i = 0; i < 15; i++) {" + "\n" + 
-"         Browser.deleteRoute(Behaviors[currentAnimatorIndex], animatorFields[i],AllenJointNodes[i],'set_rotation');" + "\n" + 
-"      }" + "\n" + 
-"\n" + 
-"   }" + "\n" + 
-"\n" + 
-"   //Remove Routes for Nancy which is current avatar" + "\n" + 
-"   if(AvatarChoice == 1) {" + "\n" + 
-"      " + "\n" + 
-"      //Exception routing for humanoid_Root translation               " + "\n" + 
-"      Browser.deleteRoute(Behaviors[currentAnimatorIndex], avatarJoints[0] + '_translation_changed', NancyJointNodes[0],'set_translation'); 	               " + "\n" + 
-"\n" + 
-"      //Exception routing for humanoid_Root translation" + "\n" + 
-"      Browser.deleteRoute(Behaviors[currentAnimatorIndex], avatarJoints[0] + '_translation_changed', NancyJointNodes[0],'set_translation');" + "\n" + 
-"\n" + 
-"      for(i = 0; i < 15; i++) {" + "\n" + 
-"\n" + 
-"         Browser.deleteRoute(Behaviors[currentAnimatorIndex], animatorFields[i],NancyJointNodes[i],'set_rotation');" + "\n" + 
-"      }" + "\n" + 
-"\n" + 
-"\n" + 
-"   }" + "\n" + 
-"\n" + 
-"   //Remove Routes for Boxman which is current avatar" + "\n" + 
-"   if(AvatarChoice == 2) {" + "\n" + 
-"\n" + 
-"      //Exception routing for humanoid_Root translation" + "\n" + 
-"      Browser.deleteRoute(Behaviors[currentAnimatorIndex], avatarJoints[0] + '_translation_changed', BoxmanJointNodes[0],'set_translation');" + "\n" + 
-"\n" + 
-"      for(i = 0; i < 17; i++) {" + "\n" + 
-"         if(i != 1) {" + "\n" + 
-"            Browser.deleteRoute(Behaviors[currentAnimatorIndex], animatorFields[i],BoxmanJointNodes[i],'set_rotation');" + "\n" + 
-"         }" + "\n" + 
-"      }" + "\n" + 
-"\n" + 
-"   }" + "\n" + 
-"}" + "\n" + 
-"\n" + 
-"\n" + 
-"\n" + 
-"function switchAvatarToAllen (bool, timeStamp) {//Invoked when Allen text is clicked." + "\n" + 
-"   //A control structure to avoid excessive work. If current avatar is Allen, don't do anything." + "\n" + 
-"   if(AvatarChoice != 0) {" + "\n" + 
-"      removeRoutes();" + "\n" + 
-"      AvatarChoice = 0;" + "\n" + 
-"      createRoutes();" + "\n" + 
-"\n" + 
-"   }" + "\n" + 
-"}" + "\n" + 
-"\n" + 
-"\n" + 
-"function switchAvatarToNancy (bool, timeStamp) {//Invoked when Nancy text is clicked." + "\n" + 
-"\n" + 
-"   //A control structure to avoid excessive work. If current avatar is Nancy, don't do anything." + "\n" + 
-"   if(AvatarChoice != 1) {" + "\n" + 
-"      removeRoutes();" + "\n" + 
-"      AvatarChoice = 1;" + "\n" + 
-"      createRoutes();" + "\n" + 
-"\n" + 
-"   }" + "\n" + 
-"}" + "\n" + 
-"\n" + 
-"\n" + 
-"function switchAvatarToBoxman (bool, timeStamp) {//Invoked when Boxman text is clicked." + "\n" + 
-"\n" + 
-"   //A control structure to avoid excessive work. If current avatar is Boxman, don't do anything." + "\n" + 
-"   if(AvatarChoice != 2) {" + "\n" + 
-"      removeRoutes();" + "\n" + 
-"      AvatarChoice = 2;" + "\n" + 
-"      createRoutes();" + "\n" + 
-"\n" + 
-"   }" + "\n" + 
-"}" + "\n" + 
-"\n" + 
-"\n" + 
-"function changeBehaviorToWalk(bool, timeStamp) {" + "\n" + 
-"\n" + 
-"   if(currentAnimatorIndex != 0) {" + "\n" + 
-"     removeRoutes();" + "\n" + 
-"     currentAnimatorIndex = 0;" + "\n" + 
-"     createRoutes();" + "\n" + 
-"   }" + "\n" + 
-"}" + "\n" + 
-"\n" + 
-"function changeBehaviorToRun(bool, timeStamp) {" + "\n" + 
-"\n" + 
-"   if(currentAnimatorIndex != 1) {" + "\n" + 
-"      removeRoutes();" + "\n" + 
-"      currentAnimatorIndex = 1;" + "\n" + 
-"      createRoutes();" + "\n" + 
-"   }" + "\n" + 
-"}" + "\n" + 
-"\n" + 
-"\n" + 
-"\n" + 
-"function changeBehaviorToJump(bool, timeStamp) {" + "\n" + 
-"\n" + 
-"   if(currentAnimatorIndex != 2) {" + "\n" + 
-"      removeRoutes();" + "\n" + 
-"      currentAnimatorIndex = 2;" + "\n" + 
-"      createRoutes();" + "\n" + 
-"   }" + "\n" + 
-"\n" + 
-"}" + "\n" + 
-"\n" + 
-"\n" + 
-"function changeBehaviorToStand(bool, timeStamp) {" + "\n" + 
-"\n" + 
-"   if(currentAnimatorIndex != 3) {" + "\n" + 
-"      removeRoutes();" + "\n" + 
-"      currentAnimatorIndex = 3;" + "\n" + 
-"      createRoutes();" + "\n" + 
-"   }" + "\n" + 
-"\n" + 
-"}" + "\n" + 
-"\n" + 
-"function changeBehaviorToKneel(bool, timeStamp) {" + "\n" + 
-"\n" + 
-"   if(currentAnimatorIndex != 4) {" + "\n" + 
-"      removeRoutes();" + "\n" + 
-"      currentAnimatorIndex = 4;" + "\n" + 
-"      createRoutes();" + "\n" + 
-"   }" + "\n" + 
-"\n" + 
-"}" + "\n")
+    .addChild(new Script("ActorAnimator").setDirectOutput(true).setSourceCode("""
+      
+ecmascript:
+
+//Global Variables
+var currentAnimatorIndex;
+var avatarJoints;
+var animatorFields;
+
+function initialize() {
+
+   //Avatar Joint Names
+   avatarJoints = new Array();
+   avatarJoints[0] ='humanoid_root';
+   avatarJoints[1] ='sacroiliac';
+   avatarJoints[2] ='l_hip';
+   avatarJoints[3] ='l_knee';
+   avatarJoints[4] ='l_ankle';
+   avatarJoints[5] ='r_hip';
+   avatarJoints[6] ='r_knee';
+   avatarJoints[7] ='r_ankle';
+   avatarJoints[8] ='skullbase';
+   avatarJoints[9] ='l_shoulder';
+   avatarJoints[10] ='l_elbow';
+   avatarJoints[11] ='l_wrist';
+   avatarJoints[12] ='r_shoulder';
+   avatarJoints[13] ='r_elbow';
+   avatarJoints[14] ='r_wrist';
+   avatarJoints[15] ='l_midtarsal';
+   avatarJoints[16] ='r_midtarsal';
+   avatarJoints[17] ='vl_5';
+
+
+   //ANIMATOR field names will be used
+   //as fromField value of created ROUTES
+   animatorFields = new Array();
+   for(i = 0; i <= 17; i++) {
+
+      if(avatarJoints[i] =='sacroiliac') {
+         animatorFields[i] ='lower_body_rotation_changed';
+      }
+
+      else {
+	 animatorFields[i] = avatarJoints[i] + '_rotation_changed';
+      }
+   } //end for loop
+
+
+   // Current Avatar Choice
+   // 0 : Allen
+   // 1 : Nancy
+   // 2 : Boxman
+   AvatarChoice = 0;
+
+
+   // Current Animator Behavior Index
+   // 0 : WALK
+   // 1 : RUN
+   // 2 : JUMP
+   // 3 : STAND
+   // 4 : KNEEL
+   currentAnimatorIndex = 3; //Initial behavior: KNEEL
+
+   createRoutes();
+
+}
+
+
+function createRoutes() {
+   //Add Routes for Allen which is current avatar
+   if(AvatarChoice == 0) {
+
+      //Exception routing for humanoid_Root translation
+      Browser.addRoute(Behaviors[currentAnimatorIndex], avatarJoints[0] + '_translation_changed', AllenJointNodes[0],'set_translation');
+
+      for(i = 0; i < 15; i++) {
+
+         Browser.addRoute(Behaviors[currentAnimatorIndex], animatorFields[i],AllenJointNodes[i],'set_rotation');
+      }
+
+   }
+
+   //Add Routes for Nancy which is current avatar
+   if(AvatarChoice == 1) {
+
+      //Exception routing for humanoid_Root translation
+      Browser.addRoute(Behaviors[currentAnimatorIndex], avatarJoints[0] + '_translation_changed', NancyJointNodes[0],'set_translation');
+
+      for(i = 0; i < 15; i++) {
+
+         Browser.addRoute(Behaviors[currentAnimatorIndex], animatorFields[i],NancyJointNodes[i],'set_rotation');
+      }
+
+   }
+
+   //Add Routes for Boxman which is current avatar
+   if(AvatarChoice == 2) {
+
+      //Exception routing for humanoid_Root translation
+      Browser.addRoute(Behaviors[currentAnimatorIndex], avatarJoints[0] + '_translation_changed', BoxmanJointNodes[0],'set_translation');
+       for(i = 0; i <= 16; i++) {
+         if(i != 1) { //no sacroiliac in Boxman
+            Browser.addRoute(Behaviors[currentAnimatorIndex], animatorFields[i], BoxmanJointNodes[i],'set_rotation');
+         }
+      }
+    }
+}
+
+
+function removeRoutes() {
+   //Remove Routes for Allen which is current avatar
+   if(AvatarChoice == 0) {
+
+      //Exception routing for humanoid_Root translation
+      Browser.deleteRoute(Behaviors[currentAnimatorIndex], avatarJoints[0] + '_translation_changed', AllenJointNodes[0],'set_translation');
+
+      for(i = 0; i < 15; i++) {
+         Browser.deleteRoute(Behaviors[currentAnimatorIndex], animatorFields[i],AllenJointNodes[i],'set_rotation');
+      }
+
+   }
+
+   //Remove Routes for Nancy which is current avatar
+   if(AvatarChoice == 1) {
+      
+      //Exception routing for humanoid_Root translation               
+      Browser.deleteRoute(Behaviors[currentAnimatorIndex], avatarJoints[0] + '_translation_changed', NancyJointNodes[0],'set_translation'); 	               
+
+      //Exception routing for humanoid_Root translation
+      Browser.deleteRoute(Behaviors[currentAnimatorIndex], avatarJoints[0] + '_translation_changed', NancyJointNodes[0],'set_translation');
+
+      for(i = 0; i < 15; i++) {
+
+         Browser.deleteRoute(Behaviors[currentAnimatorIndex], animatorFields[i],NancyJointNodes[i],'set_rotation');
+      }
+
+
+   }
+
+   //Remove Routes for Boxman which is current avatar
+   if(AvatarChoice == 2) {
+
+      //Exception routing for humanoid_Root translation
+      Browser.deleteRoute(Behaviors[currentAnimatorIndex], avatarJoints[0] + '_translation_changed', BoxmanJointNodes[0],'set_translation');
+
+      for(i = 0; i < 17; i++) {
+         if(i != 1) {
+            Browser.deleteRoute(Behaviors[currentAnimatorIndex], animatorFields[i],BoxmanJointNodes[i],'set_rotation');
+         }
+      }
+
+   }
+}
+
+
+
+function switchAvatarToAllen (bool, timeStamp) {//Invoked when Allen text is clicked.
+   //A control structure to avoid excessive work. If current avatar is Allen, don't do anything.
+   if(AvatarChoice != 0) {
+      removeRoutes();
+      AvatarChoice = 0;
+      createRoutes();
+
+   }
+}
+
+
+function switchAvatarToNancy (bool, timeStamp) {//Invoked when Nancy text is clicked.
+
+   //A control structure to avoid excessive work. If current avatar is Nancy, don't do anything.
+   if(AvatarChoice != 1) {
+      removeRoutes();
+      AvatarChoice = 1;
+      createRoutes();
+
+   }
+}
+
+
+function switchAvatarToBoxman (bool, timeStamp) {//Invoked when Boxman text is clicked.
+
+   //A control structure to avoid excessive work. If current avatar is Boxman, don't do anything.
+   if(AvatarChoice != 2) {
+      removeRoutes();
+      AvatarChoice = 2;
+      createRoutes();
+
+   }
+}
+
+
+function changeBehaviorToWalk(bool, timeStamp) {
+
+   if(currentAnimatorIndex != 0) {
+     removeRoutes();
+     currentAnimatorIndex = 0;
+     createRoutes();
+   }
+}
+
+function changeBehaviorToRun(bool, timeStamp) {
+
+   if(currentAnimatorIndex != 1) {
+      removeRoutes();
+      currentAnimatorIndex = 1;
+      createRoutes();
+   }
+}
+
+
+
+function changeBehaviorToJump(bool, timeStamp) {
+
+   if(currentAnimatorIndex != 2) {
+      removeRoutes();
+      currentAnimatorIndex = 2;
+      createRoutes();
+   }
+
+}
+
+
+function changeBehaviorToStand(bool, timeStamp) {
+
+   if(currentAnimatorIndex != 3) {
+      removeRoutes();
+      currentAnimatorIndex = 3;
+      createRoutes();
+   }
+
+}
+
+function changeBehaviorToKneel(bool, timeStamp) {
+
+   if(currentAnimatorIndex != 4) {
+      removeRoutes();
+      currentAnimatorIndex = 4;
+      createRoutes();
+   }
+
+}
+
+    """)
       .addComments(" ***********Interfaces***************** ")
       .addField(new field().setName("changeBehaviorToWalk").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_INPUTONLY))
       .addField(new field().setName("changeBehaviorToRun").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_INPUTONLY))

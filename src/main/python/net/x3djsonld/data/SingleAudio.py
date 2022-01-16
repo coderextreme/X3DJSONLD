@@ -30,8 +30,9 @@ newModel=X3D(profile='Full',version='4.0',
     meta(content='This work presents an innovative solution of the spatial sound in X3DOM framework, that based on a combinational methodology. Specifically, we suggested the enrichment of X3DOM with spatial sound features, using both the X3D sound nodes and the structure of Web Audio API.',name='info'),
     meta(content='Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman',name='creator'),
     meta(content='28 October 2020',name='created'),
-    meta(content='4 August 2021',name='modified'),
+    meta(content='5 December 2021',name='modified'),
     meta(content='CHANGELOG.txt',name='reference'),
+    meta(content='where is AudioClip source?',name='TODO'),
     meta(content='credit for audio files',name='TODO'),
     meta(content='https://medialab.hmu.gr/minipages/x3domAudio',name='reference'),
     meta(content='https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/SingleAudio.x3d',name='identifier'),
@@ -51,7 +52,7 @@ newModel=X3D(profile='Full',version='4.0',
         geometry=IndexedFaceSet(DEF='Box001-GEOMETRY',coordIndex=[0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,15,16,17,-1,18,19,20,-1,21,22,23,-1,24,25,26,-1,27,28,29,-1,30,31,32,-1,33,34,35,-1],solid=False,
           coord=Coordinate(point=[(-1000.000000,0.000000,1000.000000),(-1000.000000,0.000000,-1000.000000),(1000.000000,0.000000,-1000.000000),(1000.000000,0.000000,-1000.000000),(1000.000000,0.000000,1000.000000),(-1000.000000,0.000000,1000.000000),(-1000.000000,8.031588,1000.000000),(1000.000000,8.031588,1000.000000),(1000.000000,8.031588,-1000.000000),(1000.000000,8.031588,-1000.000000),(-1000.000000,8.031588,-1000.000000),(-1000.000000,8.031588,1000.000000),(-1000.000000,0.000000,1000.000000),(1000.000000,0.000000,1000.000000),(1000.000000,8.031588,1000.000000),(1000.000000,8.031588,1000.000000),(-1000.000000,8.031588,1000.000000),(-1000.000000,0.000000,1000.000000),(1000.000000,0.000000,1000.000000),(1000.000000,0.000000,-1000.000000),(1000.000000,8.031588,-1000.000000),(1000.000000,8.031588,-1000.000000),(1000.000000,8.031588,1000.000000),(1000.000000,0.000000,1000.000000),(1000.000000,0.000000,-1000.000000),(-1000.000000,0.000000,-1000.000000),(-1000.000000,8.031588,-1000.000000),(-1000.000000,8.031588,-1000.000000),(1000.000000,8.031588,-1000.000000),(1000.000000,0.000000,-1000.000000),(-1000.000000,0.000000,-1000.000000),(-1000.000000,0.000000,1000.000000),(-1000.000000,8.031588,1000.000000),(-1000.000000,8.031588,1000.000000),(-1000.000000,8.031588,-1000.000000),(-1000.000000,0.000000,-1000.000000)]),
           normal=Normal(vector=[(0.000000,-1.000000,0.000000),(0.000000,-1.000000,0.000000),(0.000000,-1.000000,0.000000),(0.000000,-1.000000,0.000000),(0.000000,-1.000000,0.000000),(0.000000,-1.000000,0.000000),(0.000000,1.000000,0.000000),(0.000000,1.000000,0.000000),(0.000000,1.000000,0.000000),(0.000000,1.000000,0.000000),(0.000000,1.000000,0.000000),(0.000000,1.000000,0.000000),(0.000000,0.000000,1.000000),(0.000000,0.000000,1.000000),(0.000000,0.000000,1.000000),(0.000000,0.000000,1.000000),(0.000000,0.000000,1.000000),(0.000000,0.000000,1.000000),(1.000000,0.000000,0.000000),(1.000000,0.000000,0.000000),(1.000000,0.000000,0.000000),(1.000000,0.000000,0.000000),(1.000000,0.000000,0.000000),(1.000000,0.000000,0.000000),(0.000000,0.000000,-1.000000),(0.000000,0.000000,-1.000000),(0.000000,0.000000,-1.000000),(0.000000,0.000000,-1.000000),(0.000000,0.000000,-1.000000),(0.000000,0.000000,-1.000000),(-1.000000,0.000000,0.000000),(-1.000000,0.000000,0.000000),(-1.000000,0.000000,0.000000),(-1.000000,0.000000,0.000000),(-1.000000,0.000000,0.000000),(-1.000000,0.000000,0.000000)])))]),
-    Transform(DEF='Audio1',
+    Transform(DEF='TransformAudio1',
       children=[
       Shape(
         appearance=Appearance(DEF='WireColor_1',
@@ -67,11 +68,11 @@ newModel=X3D(profile='Full',version='4.0',
             appearance=Appearance(
               material=Material(ambientIntensity=0.0933,diffuseColor=(0.345,0.345,0.882),shininess=0.51,specularColor=(0.46,0.46,0.46))),
             geometry=Text(string=['Sound Source'],
-              fontStyle=FontStyle(family=["Times"],justify=['BEGIN'],style_='BOLD')))])])]),
-    AudioSound(
+              fontStyle=FontStyle(family=["Times","SERIF"],style_='BOLD')))])])]),
+    AudioDestination(
+      #  not allowed here <Transform USE='Audio1'/> 
       children=[
-      Transform(USE='Audio1'),
-      SpatialSound(coneInnerAngle=360,coneOuterAngle=360,enableHRTF=True),
+      SpatialSound(coneInnerAngle=6.283,coneOuterAngle=6.283,enableHRTF=True),
       BufferAudioSource(loop=True,pauseTime=-1,resumeTime=-1,stopTime=-1,url=["sound/saxophone.mp3","sound/saxophone.ogg"])])])
 ) # X3D model complete
 

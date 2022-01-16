@@ -386,10 +386,10 @@ gears.prototype = {
     .addMeta((new autoclass.meta()).setName("translated").setContent("30 April 2017"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("X3DJSONLD: https://github.com/coderextreme/X3DJSONLD")))
   .setScene((new autoclass.Scene())
-    .addChild((new autoclass.NavigationInfo()).setType(new autoclass.MFString("\"EXAMINE\" \"FLY\" \"WALK\" \"ANY\"")))
+    .addChild((new autoclass.NavigationInfo()).setType("\"EXAMINE\" \"FLY\" \"WALK\" \"ANY\""))
     .addChild((new autoclass.Group())
       .addChild((new autoclass.Shape()).setBboxCenter(-4.868185499999999,25.359741,0.0).setBboxSize(77.23637099999999,100.502162,6.0)
-        .setGeometry((new autoclass.IndexedFaceSet("OpenSCAD_Model")).setDEF("OpenSCAD_Model").setNormalPerVertex(false).setNormalIndex(this.OpenSCAD_Model_5_13_normalIndex).setColorIndex(this.OpenSCAD_Model_5_13_colorIndex).setCoordIndex(this.OpenSCAD_Model_5_13_coordIndex)
+        .setGeometry((new autoclass.IndexedFaceSet("OpenSCAD_Model")).setDEF("OpenSCAD_Model").setNormalPerVertex(false).setColorIndex(this.OpenSCAD_Model_5_13_colorIndex).setCoordIndex(this.OpenSCAD_Model_5_13_coordIndex).setNormalIndex(this.OpenSCAD_Model_5_13_normalIndex)
           .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_6_13_point))
           .setNormal((new autoclass.Normal()).setVector(this.Normal_6_14_vector))
           .setColor((new autoclass.Color()).setColor(new autoclass.MFColor(java.newArray("float", [0.0,1.0,0.0]))))))));
@@ -451,4 +451,3 @@ gears.prototype = {
 	}
 }
 new gears().main();
-process.exit(0);

@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
-<X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
-    <component level='1' name='H-Anim'/>
+    <component level='1' name='HAnim'/>
     <meta content='KoreanCharacter12Sun.x3d' name='title'/>
     <meta content='Jin Hoon Lee and Min Joo Lee' name='creator'/>
     <meta content='Chul Hee Jung and Myeong Won Lee' name='translator'/>
     <meta content='31 March 2011' name='created'/>
     <meta content='1 November 2014' name='translated'/>
-    <meta content='3 July 2020' name='modified'/>
+    <meta content='23 December 2021' name='modified'/>
     <meta content='Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model.' name='description'/>
     <meta content='KoreanCharacter00ReadMe.txt' name='reference'/>
     <meta content='KoreanCharacterHumanMotion_Infotech2014_140706.pdf' name='reference'/>
     <meta content='KoreanCharactersIllustrated.pdf' name='reference'/>
-    <meta content='https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/KoreanCharacter12Sun.x3d' name='identifier'/>
+    <meta content='https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/KoreanCharacter12Sun.x3d' name='identifier'/>
     <meta content='3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview' name='generator'/>
     <meta content='Suwon University HAnim Editor' name='generator'/>
     <meta content='Gnu Image Manipulation Program, http://www.gimp.org' name='generator'/>
@@ -24,14 +24,23 @@
     <WorldInfo title='KoreanCharacter12Sun.x3d'/>
     <NavigationInfo speed='1.5'/>
     <Viewpoint centerOfRotation='0 1 0' description='Sun' position='0 1 3'/>
-    <HAnimHumanoid DEF='hanim_Sun' info='"authorName=Chul Hee Jung and Myeong Won Lee" "authorEmail=myeongwonlee@gmail.com" "creationDate=31 March 2011" "humanoidVersion=1.0" "gender=female" "height=1.5"' name='Sun' scale='0.0225 0.0225 0.0225' version='1.0'>
+    <HAnimHumanoid DEF='hanim_Sun' name='Sun' scale='0.0225 0.0225 0.0225' version='2.0'>
+      <!-- original HAnimHumanoid info='"authorName=Chul Hee Jung and Myeong Won Lee" "authorEmail=myeongwonlee@gmail.com" "creationDate=31 March 2011" "humanoidVersion=2.0" "gender=female" "height=1.5"' -->
+      <MetadataSet containerField='metadata' name='HAnimHumanoid.info' reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid'>
+        <MetadataString name='authorName' value='Chul Hee Jung and Myeong Won Lee'/>
+        <MetadataString name='authorEmail' value='myeongwonlee@gmail.com'/>
+        <MetadataString name='creationDate' value='31 March 2011'/>
+        <MetadataString name='gender' value='female'/>
+        <MetadataFloat name='height' value='1.5'/>
+        <MetadataString name='humanoidVersion' value='"2.0"'/>
+      </MetadataSet>
       <HAnimJoint DEF='hanim_humanoid_root' center='0 29.860001 -0.456700' containerField='skeleton' name='humanoid_root'>
         <HAnimSegment DEF='hanim_sacrum' name='sacrum'>
           <Transform translation='0 29.860001 -0.456700'>
             <Shape>
               <Appearance>
                 <Material diffuseColor='0.588000 0.588000 0.588000'/>
-                <ImageTexture DEF='SunTextureAtlas' url='"images/Sun.png" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/images/Sun.png"'/>
+                <ImageTexture DEF='SunTextureAtlas' url='"images/Sun.png" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/images/Sun.png"'/>
               </Appearance>
               <IndexedFaceSet coordIndex='2 30 0 -1 0 1 2 -1 30 36 3 -1 3 0 30 -1 3 36 32 -1 32 4 3 -1 35 5 4 -1 4 32 35 -1 44 6 33 -1 33 34 44 -1 2 28 27 -1 27 30 2 -1 30 27 29 -1 29 36 30 -1 29 7 32 -1 32 36 29 -1 16 15 34 -1 34 33 16 -1 28 10 9 -1 9 27 28 -1 9 11 29 -1 29 27 9 -1 29 11 12 -1 12 7 29 -1 8 7 12 -1 12 13 8 -1 15 16 14 -1 14 60 15 -1 10 18 17 -1 17 9 10 -1 9 17 19 -1 19 11 9 -1 19 20 12 -1 12 11 19 -1 13 12 20 -1 20 21 13 -1 60 14 22 -1 22 23 60 -1 5 35 33 -1 33 6 5 -1 16 8 13 -1 13 14 16 -1 14 13 21 -1 21 22 14 -1 24 21 20 -1 35 8 16 -1 16 33 35 -1 32 7 8 -1 8 35 32 -1 68 1 69 -1 69 1 0 -1 0 3 69 -1 69 3 4 -1 6 69 5 -1 69 6 44 -1 1 68 31 -1 31 2 1 -1 71 25 10 -1 10 28 71 -1 25 26 18 -1 18 10 25 -1 24 18 26 -1 24 17 18 -1 24 19 17 -1 24 20 19 -1 24 22 21 -1 23 22 24 -1 4 5 69 -1 71 28 2 -1 2 31 71 -1 70 38 37 -1 37 39 70 -1 39 37 40 -1 40 49 39 -1 40 41 50 -1 50 49 40 -1 42 50 41 -1 41 43 42 -1 44 34 67 -1 67 45 44 -1 70 39 46 -1 46 47 70 -1 39 49 48 -1 48 46 39 -1 48 49 50 -1 50 51 48 -1 52 67 34 -1 34 15 52 -1 47 46 53 -1 53 54 47 -1 53 46 48 -1 48 55 53 -1 48 51 56 -1 56 55 48 -1 58 57 56 -1 56 51 58 -1 15 60 59 -1 59 52 15 -1 54 53 61 -1 61 62 54 -1 53 55 63 -1 63 61 53 -1 63 55 56 -1 56 64 63 -1 57 65 64 -1 64 56 57 -1 60 23 66 -1 66 59 60 -1 43 45 67 -1 67 42 43 -1 52 59 57 -1 57 58 52 -1 59 66 65 -1 65 57 59 -1 24 64 65 -1 42 67 52 -1 52 58 42 -1 50 42 58 -1 58 51 50 -1 68 69 38 -1 69 37 38 -1 37 69 40 -1 69 41 40 -1 45 43 69 -1 69 44 45 -1 38 70 31 -1 31 68 38 -1 71 47 54 -1 54 25 71 -1 25 54 62 -1 62 26 25 -1 24 26 62 -1 24 62 61 -1 24 61 63 -1 24 63 64 -1 24 65 66 -1 23 24 66 -1 41 69 43 -1 71 31 70 -1 70 47 71 -1' creaseAngle='1.57' texCoordIndex='2 3 0 -1 0 1 2 -1 5 6 4 -1 4 0 5 -1 4 33 7 -1 7 8 4 -1 35 50 8 -1 8 34 35 -1 54 55 52 -1 52 53 54 -1 11 12 9 -1 9 10 11 -1 15 9 13 -1 13 14 15 -1 13 18 16 -1 16 17 13 -1 19 20 21 -1 21 22 19 -1 12 24 23 -1 23 9 12 -1 23 25 13 -1 13 9 23 -1 13 25 26 -1 26 18 13 -1 28 18 26 -1 26 27 28 -1 20 19 29 -1 29 30 20 -1 24 32 31 -1 31 23 24 -1 23 31 36 -1 36 25 23 -1 36 37 26 -1 26 25 36 -1 27 26 37 -1 37 38 27 -1 30 29 39 -1 39 40 30 -1 50 57 56 -1 56 55 50 -1 19 28 27 -1 27 29 19 -1 29 27 38 -1 38 39 29 -1 41 38 37 -1 42 28 19 -1 19 43 42 -1 45 18 28 -1 28 44 45 -1 58 1 59 -1 59 1 0 -1 0 4 59 -1 59 4 8 -1 55 59 50 -1 59 55 54 -1 1 58 60 -1 60 61 1 -1 46 47 24 -1 24 12 46 -1 47 48 32 -1 32 24 47 -1 41 32 48 -1 41 31 32 -1 41 36 31 -1 41 37 36 -1 41 39 38 -1 40 39 41 -1 8 50 59 -1 46 12 49 -1 49 51 46 -1 64 63 62 -1 62 65 64 -1 67 62 66 -1 66 68 67 -1 66 70 69 -1 69 71 66 -1 73 72 70 -1 70 74 73 -1 77 76 75 -1 75 78 77 -1 81 80 79 -1 79 82 81 -1 85 84 83 -1 83 79 85 -1 83 87 86 -1 86 88 83 -1 89 92 91 -1 91 90 89 -1 82 79 93 -1 93 94 82 -1 93 79 83 -1 83 95 93 -1 83 88 96 -1 96 95 83 -1 98 97 96 -1 96 88 98 -1 90 100 99 -1 99 89 90 -1 94 93 101 -1 101 102 94 -1 93 95 103 -1 103 101 93 -1 103 95 96 -1 96 104 103 -1 97 105 104 -1 104 96 97 -1 100 107 106 -1 106 99 100 -1 74 78 108 -1 108 109 74 -1 89 99 97 -1 97 98 89 -1 99 106 105 -1 105 97 99 -1 110 104 105 -1 111 112 89 -1 89 98 111 -1 114 113 98 -1 98 88 114 -1 115 116 63 -1 116 62 63 -1 62 116 66 -1 116 70 66 -1 78 74 116 -1 116 77 78 -1 63 118 117 -1 117 115 63 -1 119 82 94 -1 94 120 119 -1 120 94 102 -1 102 121 120 -1 110 121 102 -1 110 102 101 -1 110 101 103 -1 110 103 104 -1 110 105 106 -1 107 110 106 -1 70 116 74 -1 119 123 122 -1 122 82 119 -1'>
                 <Coordinate point='0.7553 1.2890 0.3192 0.4361 1.2890 0.5020 0.6835 1.0400 0.8046 0.8722 1.2890 0.0695 0.7553 1.2890 -0.2872 0.5259 1.2890 -0.4902 0.1782 1.2890 -0.5300 1.3790 0.3768 -0.5369 0.8225 0.3588 -0.9058 1.3080 -0.2088 0.5020 0.7553 -0.2088 0.8186 1.5110 -0.2088 0.0031 1.3080 -0.2088 -0.4700 0.8152 -0.2088 -0.8780 0.2426 -0.2088 -0.9658 0.0000 0.2870 -1.0260 0.2889 0.3271 -1.0340 0.7553 -0.5809 0.3192 0.4361 -0.5809 0.5020 0.8722 -0.5809 0.0031 0.7553 -0.5809 -0.2872 0.4457 -0.5809 -0.4902 0.1782 -0.5809 -0.5300 0.0000 -0.5809 -0.5369 0.0000 -0.7115 0.0030 0.0000 -0.2088 0.9345 0.0000 -0.5809 0.5689 1.3790 0.3768 0.5689 0.8185 0.3135 0.9345 1.5410 0.3768 0.0031 1.3330 1.0610 0.4211 0.0000 1.0430 0.9382 1.3060 1.0290 -0.4635 0.2707 1.0050 -0.9317 0.0000 0.9999 -0.9412 0.8080 1.0160 -0.8729 1.4830 1.0610 -0.0036 -0.7553 1.2890 0.3192 -0.4361 1.2890 0.5020 -1.3330 1.0610 0.4211 -0.8722 1.2890 0.0695 -0.7553 1.2890 -0.2872 -0.8080 1.0160 -0.8729 -0.5259 1.2890 -0.4902 0.0000 1.2890 -0.5369 -0.1782 1.2890 -0.5300 -1.3790 0.3768 0.5689 -0.8185 0.3135 0.9345 -1.5410 0.3768 0.0031 -1.4830 1.0610 -0.0036 -1.3060 1.0290 -0.4635 -1.3790 0.3768 -0.5369 -0.2889 0.3271 -1.0340 -1.3080 -0.2088 0.5020 -0.7553 -0.2088 0.8186 -1.5110 -0.2088 0.0031 -1.3080 -0.2088 -0.4700 -0.8152 -0.2088 -0.8780 -0.8225 0.3588 -0.9058 -0.2426 -0.2088 -0.9658 0.0000 -0.2088 -0.9594 -0.7553 -0.5809 0.3192 -0.4361 -0.5809 0.5020 -0.8722 -0.5809 0.0031 -0.7553 -0.5809 -0.2872 -0.4457 -0.5809 -0.4902 -0.1782 -0.5809 -0.5300 -0.2707 1.0050 -0.9317 0.0000 1.2890 0.5689 0.0000 1.4470 0.0694 -0.6835 1.0400 0.8046 0.0000 0.2734 1.0680'/>
@@ -70,8 +79,8 @@
                 </Shape>
               </Transform>
             </HAnimSegment>
-            <HAnimJoint DEF='hanim_l_ankle' center='2.839000 3.899000 -0.411600' name='l_ankle'>
-              <HAnimSegment DEF='hanim_l_hindfoot' name='l_hindfoot'>
+            <HAnimJoint DEF='hanim_l_talocrural' center='2.839000 3.899000 -0.411600' name='l_talocrural'>
+              <HAnimSegment DEF='hanim_l_talus' name='l_talus'>
                 <Transform translation='2.839000 3.899000 -0.411600'>
                   <Shape>
                     <Appearance>
@@ -85,8 +94,8 @@
                   </Shape>
                 </Transform>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_l_midtarsal' center='2.839000 3.312000 1.078000' name='l_midtarsal'>
-                <HAnimSegment DEF='hanim_l_middistal' name='l_middistal'>
+              <HAnimJoint DEF='hanim_l_metatarsophalangeal_2' center='2.839000 3.312000 1.078000' name='l_metatarsophalangeal_2'>
+                <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_2' name='l_tarsal_proximal_phalanx_2'>
                   <Transform translation='2.839000 3.312000 1.078000'>
                     <Shape>
                       <Appearance>
@@ -134,8 +143,8 @@
                 </Shape>
               </Transform>
             </HAnimSegment>
-            <HAnimJoint DEF='hanim_r_ankle' center='-2.839000 3.899000 -0.411600' name='r_ankle'>
-              <HAnimSegment DEF='hanim_r_hindfoot' name='r_hindfoot'>
+            <HAnimJoint DEF='hanim_r_talocrural' center='-2.839000 3.899000 -0.411600' name='r_talocrural'>
+              <HAnimSegment DEF='hanim_r_talus' name='r_talus'>
                 <Transform translation='-2.839000 3.899000 -0.411600'>
                   <Shape>
                     <Appearance>
@@ -149,8 +158,8 @@
                   </Shape>
                 </Transform>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_r_midtarsal' center='-2.839000 3.312000 1.078000' name='r_midtarsal'>
-                <HAnimSegment DEF='hanim_r_middistal' name='r_middistal'>
+              <HAnimJoint DEF='hanim_r_metatarsophalangeal_2' center='-2.839000 3.312000 1.078000' name='r_metatarsophalangeal_2'>
+                <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_2' name='r_tarsal_proximal_phalanx_2'>
                   <Transform translation='-2.839000 3.312000 1.078000'>
                     <Shape>
                       <Appearance>
@@ -213,8 +222,8 @@
                   </Shape>
                 </Transform>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_l_wrist' center='6.946000 30.889999 -1.308000' name='l_wrist'>
-                <HAnimSegment DEF='hanim_l_hand' name='l_hand'>
+              <HAnimJoint DEF='hanim_l_radiocarpal' center='6.946000 30.889999 -1.308000' name='l_radiocarpal'>
+                <HAnimSegment DEF='hanim_l_carpal' name='l_carpal'>
                   <Transform translation='6.946000 30.889999 -1.308000'>
                     <Shape>
                       <Appearance>
@@ -261,8 +270,8 @@
                   </Shape>
                 </Transform>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_r_wrist' center='-6.946000 30.889999 -1.308000' name='r_wrist'>
-                <HAnimSegment DEF='hanim_r_hand' name='r_hand'>
+              <HAnimJoint DEF='hanim_r_radiocarpal' center='-6.946000 30.889999 -1.308000' name='r_radiocarpal'>
+                <HAnimSegment DEF='hanim_r_carpal' name='r_carpal'>
                   <Transform translation='-6.946000 30.889999 -1.308000'>
                     <Shape>
                       <Appearance>
@@ -315,36 +324,36 @@
       </HAnimJoint>
       <HAnimJoint USE='hanim_humanoid_root' containerField='joints'/>
       <HAnimJoint USE='hanim_sacroiliac' containerField='joints'/>
-      <HAnimJoint USE='hanim_vl5' containerField='joints'/>
       <HAnimJoint USE='hanim_skullbase' containerField='joints'/>
-      <HAnimJoint USE='hanim_l_ankle' containerField='joints'/>
-      <HAnimJoint USE='hanim_r_ankle' containerField='joints'/>
+      <HAnimJoint USE='hanim_vl5' containerField='joints'/>
       <HAnimJoint USE='hanim_l_elbow' containerField='joints'/>
       <HAnimJoint USE='hanim_r_elbow' containerField='joints'/>
       <HAnimJoint USE='hanim_l_hip' containerField='joints'/>
       <HAnimJoint USE='hanim_r_hip' containerField='joints'/>
       <HAnimJoint USE='hanim_l_knee' containerField='joints'/>
       <HAnimJoint USE='hanim_r_knee' containerField='joints'/>
-      <HAnimJoint USE='hanim_l_midtarsal' containerField='joints'/>
-      <HAnimJoint USE='hanim_r_midtarsal' containerField='joints'/>
+      <HAnimJoint USE='hanim_l_metatarsophalangeal_2' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_metatarsophalangeal_2' containerField='joints'/>
+      <HAnimJoint USE='hanim_l_radiocarpal' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_radiocarpal' containerField='joints'/>
       <HAnimJoint USE='hanim_l_shoulder' containerField='joints'/>
       <HAnimJoint USE='hanim_r_shoulder' containerField='joints'/>
-      <HAnimJoint USE='hanim_l_wrist' containerField='joints'/>
-      <HAnimJoint USE='hanim_r_wrist' containerField='joints'/>
-      <HAnimSegment USE='hanim_sacrum' containerField='segments'/>
-      <HAnimSegment USE='hanim_pelvis' containerField='segments'/>
+      <HAnimJoint USE='hanim_l_talocrural' containerField='joints'/>
+      <HAnimJoint USE='hanim_r_talocrural' containerField='joints'/>
       <HAnimSegment USE='hanim_l5' containerField='segments'/>
+      <HAnimSegment USE='hanim_pelvis' containerField='segments'/>
+      <HAnimSegment USE='hanim_sacrum' containerField='segments'/>
       <HAnimSegment USE='hanim_skull' containerField='segments'/>
       <HAnimSegment USE='hanim_l_calf' containerField='segments'/>
       <HAnimSegment USE='hanim_r_calf' containerField='segments'/>
+      <HAnimSegment USE='hanim_l_carpal' containerField='segments'/>
+      <HAnimSegment USE='hanim_r_carpal' containerField='segments'/>
       <HAnimSegment USE='hanim_l_forearm' containerField='segments'/>
       <HAnimSegment USE='hanim_r_forearm' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_hand' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_hand' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_hindfoot' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_hindfoot' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_middistal' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_middistal' containerField='segments'/>
+      <HAnimSegment USE='hanim_l_talus' containerField='segments'/>
+      <HAnimSegment USE='hanim_r_talus' containerField='segments'/>
+      <HAnimSegment USE='hanim_l_tarsal_proximal_phalanx_2' containerField='segments'/>
+      <HAnimSegment USE='hanim_r_tarsal_proximal_phalanx_2' containerField='segments'/>
       <HAnimSegment USE='hanim_l_thigh' containerField='segments'/>
       <HAnimSegment USE='hanim_r_thigh' containerField='segments'/>
       <HAnimSegment USE='hanim_l_upperarm' containerField='segments'/>

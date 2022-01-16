@@ -19,7 +19,7 @@ head1.component[1] = component3;
 
 meta meta4 = createNode("meta");
 meta4.name = "title";
-meta4.content = "t4.x3d";
+meta4.content = "t3.x3d";
 head1.meta[2] = meta4;
 
 meta meta5 = createNode("meta");

@@ -30,7 +30,7 @@ newModel=X3D(profile='Full',version='4.0',
     meta(content='This work presents an innovative solution of the spatial sound in X3DOM framework, that based on a combinational methodology. Specifically, we suggested the enrichment of X3DOM with spatial sound features, using both the X3D sound nodes and the structure of Web Audio API.',name='info'),
     meta(content='Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman',name='creator'),
     meta(content='28 October 2020',name='created'),
-    meta(content='4 August 2021',name='modified'),
+    meta(content='5 December 2021',name='modified'),
     meta(content='CHANGELOG.txt',name='reference'),
     meta(content='credit for audio files',name='TODO'),
     meta(content='https://www.medialab.hmu.gr/minipages/x3domAudio',name='reference'),
@@ -39,31 +39,32 @@ newModel=X3D(profile='Full',version='4.0',
     meta(content='../license.html',name='license')]),
   Scene=Scene(
     children=[
+    WorldInfo(title='Filters.x3d'),
     NavigationInfo(id_='NAV'),
     Background(skyColor=[(0.200,0.200,0.200)]),
-    Viewpoint(orientation=(1,0,0,-0.5),position=(0.0,500.0,600.0),retainUserOffsets=True),
-    Transform(DEF='Audio1',translation=(-200,50,0),
+    Viewpoint(description='View entire audio model',orientation=(1,0,0,-0.5),position=(0.0,500.0,600.0),retainUserOffsets=True),
+    Transform(DEF='TransformAudio1',translation=(-200,50,0),
       children=[
       Shape(
         appearance=Appearance(DEF='audio_emit',
           material=Material(diffuseColor=(0.1,0.1,0.1),emissiveColor=(0.8,0.8,0.8),specularColor=(0.01,0.01,0.01))),
         geometry=Sphere(radius=30))]),
-    Transform(DEF='Audio2',translation=(0,50,0),
+    Transform(DEF='TransformAudio2',translation=(0,50,0),
       children=[
       Shape(
-        appearance=Appearance(DEF='audio_emit',
+        appearance=Appearance(DEF='audio_emit2',
           material=Material(diffuseColor=(0.1,0.1,0.1),emissiveColor=(0.8,0.8,0.8),specularColor=(0.01,0.01,0.01))),
         geometry=Sphere(radius=30))]),
-    Transform(DEF='Audio3',translation=(200,50,0),
+    Transform(DEF='TransformAudio3',translation=(200,50,0),
       children=[
       Shape(
-        appearance=Appearance(DEF='audio_emit',
+        appearance=Appearance(DEF='audio_emit3',
           material=Material(diffuseColor=(0.1,0.1,0.1),emissiveColor=(0.8,0.8,0.8),specularColor=(0.01,0.01,0.01))),
         geometry=Sphere(radius=30))]),
     Transform(DEF='AnimData',id_='AnimDataPoint',translation=(0,50,0)),
-    Transform(DEF='AnimDataBoxH',id_='AnimDataBoxH',translation=(0,100,0)),
-    Transform(DEF='AnimDataBoxM',id_='AnimDataBoxM',translation=(15,100,0)),
-    Transform(DEF='AnimDataBoxL',id_='AnimDataBoxL',translation=(30,100,0)),
+    Transform(DEF='AnimDataBoxH',translation=(0,100,0)),
+    Transform(DEF='AnimDataBoxM',translation=(15,100,0)),
+    Transform(DEF='AnimDataBoxL',translation=(30,100,0)),
     Transform(DEF='AnimDataBoxMM',id_='AnimDataBoxMMirror',translation=(-15,100,0)),
     Transform(DEF='AnimDataBoxLM',id_='AnimDataBoxLMirror',translation=(-30,100,0)),
     Transform(
@@ -72,14 +73,14 @@ newModel=X3D(profile='Full',version='4.0',
         appearance=Appearance(DEF='floor',
           material=Material(diffuseColor=(0.1,0.1,0.1),shininess=0.8,specularColor=(0.5,0.6,0.7))),
         geometry=Cylinder(radius=500))]),
-    ListenerPoint(id_='ListenerPoint',trackCurrentView=True),
-    AudioDestination(id_='AudioDestination',
+    ListenerPointSource(id_='ListenerPointSource',trackCurrentView=True),
+    StreamAudioDestination(id_='AudioDestination',
       children=[
       DynamicsCompressor(id_='DynamicsCompressor',
         children=[
         Gain(id_='Gain4',
           children=[
-          SpatialSound(USE='Audio1',coneInnerAngle=360,coneOuterAngle=360,enableHRTF=True,id_='SpatialSound1',
+          SpatialSound(DEF='Audio1',
             children=[
             Gain(id_='Gain1',
               children=[
@@ -87,8 +88,8 @@ newModel=X3D(profile='Full',version='4.0',
                 children=[
                 BiquadFilter(detune=50.0,frequency=600,id_='BiquadFilter1',qualityFactor=30.0,type='allpass',
                   children=[
-                  AudioClip(id_='AudioClip1',loop=True,pauseTime=-1,resumeTime=-1,stopTime=-1,url=['sound/techno_beat.mp3'])])])])]),
-          SpatialSound(USE='Audio2',coneInnerAngle=360,coneOuterAngle=360,enableHRTF=True,id_='SpatialSound2',
+                  AudioClip(description='Techno beat',id_='AudioClip1',loop=True,url=["sound/techno_beat.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/techno_beat.mp3"])])])])]),
+          SpatialSound(DEF='Audio2',
             children=[
             Gain(id_='Gain2',
               children=[
@@ -96,8 +97,8 @@ newModel=X3D(profile='Full',version='4.0',
                 children=[
                 BiquadFilter(detune=15.0,frequency=600,id_='BiquadFilter2',qualityFactor=15.0,type='allpass',
                   children=[
-                  AudioClip(id_='AudioClip2',loop=True,pauseTime=-1,resumeTime=-1,stopTime=-1,url=['sound/beat.mp3'])])])])]),
-          SpatialSound(USE='Audio3',coneInnerAngle=360,coneOuterAngle=360,enableHRTF=True,id_='SpatialSound3',
+                  AudioClip(description='Simple beat',id_='AudioClip2',loop=True,url=["sound/beat.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/beat.mp3"])])])])]),
+          SpatialSound(DEF='Audio3',
             children=[
             Gain(id_='Gain3',
               children=[
@@ -105,7 +106,7 @@ newModel=X3D(profile='Full',version='4.0',
                 children=[
                 BiquadFilter(frequency=1000,id_='BiquadFilter3',qualityFactor=0,type='allpass',
                   children=[
-                  AudioClip(id_='AudioClip3',loop=True,pauseTime=-1,resumeTime=-1,stopTime=-1,url=['sound/wobble_loop.mp3'])])])])])])])])])
+                  AudioClip(description='Wobble loop',id_='AudioClip3',loop=True,url=["sound/wobble_loop.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/wobble_loop.mp3"])])])])])])])])])
 ) # X3D model complete
 
 ###############################################

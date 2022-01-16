@@ -14,20 +14,20 @@
 <meta name="description" content="sphere with alternating backgrounds"></meta>
 </head>
 <Scene><Viewpoint position="0 5 100" description="Switch background and images texture"></Viewpoint>
-<TextureBackground><ImageTexture containerField="left" DEF="leftBack" url="&quot;../resources/images/all_probes/beach_cross/beach_left.png&quot; &quot;https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png&quot;"></ImageTexture>
-<ImageTexture containerField="right" DEF="rightBack" url="&quot;../resources/images/all_probes/beach_cross/beach_right.png&quot; &quot;https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png&quot;"></ImageTexture>
-<ImageTexture containerField="front" DEF="frontBack" url="&quot;../resources/images/all_probes/beach_cross/beach_front.png&quot; &quot;https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png&quot;"></ImageTexture>
-<ImageTexture containerField="back" DEF="backBack" url="&quot;../resources/images/all_probes/beach_cross/beach_back.png&quot; &quot;https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png&quot;"></ImageTexture>
-<ImageTexture containerField="top" DEF="topBack" url="&quot;../resources/images/all_probes/beach_cross/beach_top.png&quot; &quot;https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png&quot;"></ImageTexture>
-<ImageTexture containerField="bottom" DEF="bottomBack" url="&quot;../resources/images/all_probes/beach_cross/beach_bottom.png&quot; &quot;https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png&quot;"></ImageTexture>
+<TextureBackground><ImageTexture containerField="leftTexture" DEF="leftBackTexture" url="&quot;../resources/images/all_probes/beach_cross/beach_left.png&quot; &quot;https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png&quot;"></ImageTexture>
+<ImageTexture containerField="rightTexture" DEF="rightBackTexture" url="&quot;../resources/images/all_probes/beach_cross/beach_right.png&quot; &quot;https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png&quot;"></ImageTexture>
+<ImageTexture containerField="frontTexture" DEF="frontBackTexture" url="&quot;../resources/images/all_probes/beach_cross/beach_front.png&quot; &quot;https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png&quot;"></ImageTexture>
+<ImageTexture containerField="backTexture" DEF="backBackTexture" url="&quot;../resources/images/all_probes/beach_cross/beach_back.png&quot; &quot;https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png&quot;"></ImageTexture>
+<ImageTexture containerField="topTexture" DEF="topBackTexture" url="&quot;../resources/images/all_probes/beach_cross/beach_top.png&quot; &quot;https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png&quot;"></ImageTexture>
+<ImageTexture containerField="bottomTexture" DEF="bottomBackTexture" url="&quot;../resources/images/all_probes/beach_cross/beach_bottom.png&quot; &quot;https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png&quot;"></ImageTexture>
 </TextureBackground>
 <Transform><Shape><Appearance><Material diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"></Material>
-<ComposedCubeMapTexture containerField="texture"><ImageTexture containerField="back" DEF="backShader" url="&quot;../resources/images/all_probes/beach_cross/beach_back.png&quot; &quot;https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png&quot;"></ImageTexture>
-<ImageTexture containerField="bottom" DEF="bottomShader" url="&quot;../resources/images/all_probes/beach_cross/beach_bottom.png&quot; &quot;https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png&quot;"></ImageTexture>
-<ImageTexture containerField="front" DEF="frontShader" url="&quot;../resources/images/all_probes/beach_cross/beach_front.png&quot; &quot;https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png&quot;"></ImageTexture>
-<ImageTexture containerField="left" DEF="leftShader" url="&quot;../resources/images/all_probes/beach_cross/beach_left.png&quot; &quot;https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png&quot;"></ImageTexture>
-<ImageTexture containerField="right" DEF="rightShader" url="&quot;../resources/images/all_probes/beach_cross/beach_right.png&quot; &quot;https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png&quot;"></ImageTexture>
-<ImageTexture containerField="top" DEF="topShader" url="&quot;../resources/images/all_probes/beach_cross/beach_top.png&quot; &quot;https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png&quot;"></ImageTexture>
+<ComposedCubeMapTexture containerField="texture"><ImageTexture containerField="backTexture" DEF="backShader" url="&quot;../resources/images/all_probes/beach_cross/beach_back.png&quot; &quot;https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png&quot;"></ImageTexture>
+<ImageTexture containerField="bottomTexture" DEF="bottomShader" url="&quot;../resources/images/all_probes/beach_cross/beach_bottom.png&quot; &quot;https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png&quot;"></ImageTexture>
+<ImageTexture containerField="frontTexture" DEF="frontShader" url="&quot;../resources/images/all_probes/beach_cross/beach_front.png&quot; &quot;https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png&quot;"></ImageTexture>
+<ImageTexture containerField="leftTexture" DEF="leftShader" url="&quot;../resources/images/all_probes/beach_cross/beach_left.png&quot; &quot;https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png&quot;"></ImageTexture>
+<ImageTexture containerField="rightTexture" DEF="rightShader" url="&quot;../resources/images/all_probes/beach_cross/beach_right.png&quot; &quot;https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png&quot;"></ImageTexture>
+<ImageTexture containerField="topTexture" DEF="topShader" url="&quot;../resources/images/all_probes/beach_cross/beach_top.png&quot; &quot;https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png&quot;"></ImageTexture>
 </ComposedCubeMapTexture>
 <ComposedShader DEF="x3dom" language="GLSL"><field name="chromaticDispertion" accessType="inputOutput" type="SFVec3f" value="0.98 1 1.033"></field>
 <field name="cube" accessType="inputOutput" type="SFInt32" value="0"></field>
@@ -81,12 +81,12 @@
         }]]></Script>
 <TimeSensor DEF="Clock" cycleInterval="45" loop="true"></TimeSensor>
 <ROUTE fromNode="Clock" fromField="fraction_changed" toNode="UrlSelector" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="UrlSelector" fromField="front_changed" toNode="frontBack" toField="url"></ROUTE>
-<ROUTE fromNode="UrlSelector" fromField="back_changed" toNode="backBack" toField="url"></ROUTE>
-<ROUTE fromNode="UrlSelector" fromField="left_changed" toNode="leftBack" toField="url"></ROUTE>
-<ROUTE fromNode="UrlSelector" fromField="right_changed" toNode="rightBack" toField="url"></ROUTE>
-<ROUTE fromNode="UrlSelector" fromField="top_changed" toNode="topBack" toField="url"></ROUTE>
-<ROUTE fromNode="UrlSelector" fromField="bottom_changed" toNode="bottomBack" toField="url"></ROUTE>
+<ROUTE fromNode="UrlSelector" fromField="front_changed" toNode="frontBackTexture" toField="url"></ROUTE>
+<ROUTE fromNode="UrlSelector" fromField="back_changed" toNode="backBackTexture" toField="url"></ROUTE>
+<ROUTE fromNode="UrlSelector" fromField="left_changed" toNode="leftBackTexture" toField="url"></ROUTE>
+<ROUTE fromNode="UrlSelector" fromField="right_changed" toNode="rightBackTexture" toField="url"></ROUTE>
+<ROUTE fromNode="UrlSelector" fromField="top_changed" toNode="topBackTexture" toField="url"></ROUTE>
+<ROUTE fromNode="UrlSelector" fromField="bottom_changed" toNode="bottomBackTexture" toField="url"></ROUTE>
 <ROUTE fromNode="UrlSelector" fromField="front_changed" toNode="frontShader" toField="url"></ROUTE>
 <ROUTE fromNode="UrlSelector" fromField="back_changed" toNode="backShader" toField="url"></ROUTE>
 <ROUTE fromNode="UrlSelector" fromField="left_changed" toNode="leftShader" toField="url"></ROUTE>

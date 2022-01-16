@@ -11,402 +11,468 @@ CBrowser browser = X3D.getBrowser();
 CX3D* X3D0 = new CX3D();
 CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
 group->addChildren(X3D0);
-X3D0->setProfile("Immersive");
-X3D0->setVersion("4.0");
+X3D0->setProfile("Interchange");
+X3D0->setVersion("3.3");
 Chead* head1 = new Chead();
-//component name='EnvironmentalEffects' level='1'/
-Ccomponent* component2 = new Ccomponent();
-component2->setName("EnvironmentalEffects");
-component2->setLevel(3);
-head1->addComponent(*component2);
+Cmeta* meta2 = new Cmeta();
+meta2->setName("title");
+meta2->setContent("Bubbles.x3d");
+head1->addMeta(*meta2);
 
-Ccomponent* component3 = new Ccomponent();
-component3->setName("Shaders");
-component3->setLevel(1);
-head1->addComponent(*component3);
+Cmeta* meta3 = new Cmeta();
+meta3->setName("description");
+meta3->setContent("Bubble animation used by Nancy Diving example.");
+head1->addMeta(*meta3);
 
-Ccomponent* component4 = new Ccomponent();
-component4->setName("CubeMapTexturing");
-component4->setLevel(1);
-head1->addComponent(*component4);
+Cmeta* meta4 = new Cmeta();
+meta4->setName("creator");
+meta4->setContent("Etsuko Lippi");
+head1->addMeta(*meta4);
 
-Ccomponent* component5 = new Ccomponent();
-component5->setName("Texturing");
-component5->setLevel(1);
-head1->addComponent(*component5);
+Cmeta* meta5 = new Cmeta();
+meta5->setName("created");
+meta5->setContent("24 January 2001");
+head1->addMeta(*meta5);
 
-Ccomponent* component6 = new Ccomponent();
-component6->setName("Rendering");
-component6->setLevel(1);
-head1->addComponent(*component6);
+Cmeta* meta6 = new Cmeta();
+meta6->setName("modified");
+meta6->setContent("23 May 2020");
+head1->addMeta(*meta6);
 
-Ccomponent* component7 = new Ccomponent();
-component7->setName("Shape");
-component7->setLevel(4);
-head1->addComponent(*component7);
+Cmeta* meta7 = new Cmeta();
+meta7->setName("identifier");
+meta7->setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/Bubbles.x3d");
+head1->addMeta(*meta7);
 
-Ccomponent* component8 = new Ccomponent();
-component8->setName("Grouping");
-component8->setLevel(3);
-head1->addComponent(*component8);
+Cmeta* meta8 = new Cmeta();
+meta8->setName("generator");
+meta8->setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit");
+head1->addMeta(*meta8);
 
 Cmeta* meta9 = new Cmeta();
-meta9->setName("title");
-meta9->setContent("bubbles.x3d");
+meta9->setName("license");
+meta9->setContent("../license.html");
 head1->addMeta(*meta9);
-
-Cmeta* meta10 = new Cmeta();
-meta10->setName("creator");
-meta10->setContent("John Carlson");
-head1->addMeta(*meta10);
-
-Cmeta* meta11 = new Cmeta();
-meta11->setName("generator");
-meta11->setContent("manual");
-head1->addMeta(*meta11);
-
-Cmeta* meta12 = new Cmeta();
-meta12->setName("identifier");
-meta12->setContent("https://coderextreme.net/X3DJSONLD/bubbles.x3d");
-head1->addMeta(*meta12);
-
-Cmeta* meta13 = new Cmeta();
-meta13->setName("description");
-meta13->setContent("not sure what this is");
-head1->addMeta(*meta13);
 
 X3D0->setHead(*head1);
 
-CScene* Scene14 = new CScene();
-CNavigationInfo* NavigationInfo15 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
-NavigationInfo15->setType(new CString[1]{"EXAMINE"}, 1);
-group->addChildren(*NavigationInfo15);
+CScene* Scene10 = new CScene();
+CWorldInfo* WorldInfo11 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
+WorldInfo11->setTitle("Bubbles.x3d");
+group->addChildren(*WorldInfo11);
 
-CViewpoint* Viewpoint16 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint16->setDEF("Tour");
-Viewpoint16->setDescription("Tour Views");
-group->addChildren(*Viewpoint16);
+CTransform* Transform12 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform12->setDEF("Bubbles");
+CGroup* Group13 = (CGroup *)(m_pScene.createNode("Group"));
+Group13->setDEF("Bubble");
+CTimeSensor* TimeSensor14 = (CTimeSensor *)(m_pScene.createNode("TimeSensor"));
+TimeSensor14->setDEF("BubbleClock");
+TimeSensor14->setCycleInterval(6);
+TimeSensor14->setLoop(True);
+Group13->addChildren(*TimeSensor14);
 
-CViewpoint* Viewpoint17 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
-Viewpoint17->setPosition(new float[3]{0,0,4});
-Viewpoint17->setDescription("sphere in road");
-group->addChildren(*Viewpoint17);
+CPositionInterpolator* PositionInterpolator15 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
+PositionInterpolator15->setDEF("BubblePath1");
+PositionInterpolator15->setKey(new float[5]{0,0.5,0.8,0.9,1}, 5);
+PositionInterpolator15->setKeyValue(new float[15]{0,0,0,0.75,0.75,0.75,0.86,0.86,0.86,0.99,0.998,0.9876,1.272,1.9044,0.9509});
+Group13->addChildren(*PositionInterpolator15);
 
-CBackground* Background18 = (CBackground *)(m_pScene.createNode("Background"));
-Background18->setBackUrl(new CString[2]{"../resources/images/all_probes/uffizi_cross/uffizi_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_back.png"}, 2);
-Background18->setBottomUrl(new CString[2]{"../resources/images/all_probes/uffizi_cross/uffizi_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_bottom.png"}, 2);
-Background18->setFrontUrl(new CString[2]{"../resources/images/all_probes/uffizi_cross/uffizi_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_front.png"}, 2);
-Background18->setLeftUrl(new CString[2]{"../resources/images/all_probes/uffizi_cross/uffizi_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_left.png"}, 2);
-Background18->setRightUrl(new CString[2]{"../resources/images/all_probes/uffizi_cross/uffizi_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_right.png"}, 2);
-Background18->setTopUrl(new CString[2]{"../resources/images/all_probes/uffizi_cross/uffizi_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_top.png"}, 2);
-group->addChildren(*Background18);
+CPositionInterpolator* PositionInterpolator16 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
+PositionInterpolator16->setDEF("BubblePath2");
+PositionInterpolator16->setKey(new float[5]{0,0.3,0.64,0.85,1}, 5);
+PositionInterpolator16->setKeyValue(new float[15]{0.1,0.1,0.1,0.2,0.4,0.25,0.3,0.5,0.46,0.75,0.5,0.575,0.038483478,1.989,1.098373});
+Group13->addChildren(*PositionInterpolator16);
 
-CTransform* Transform19 = (CTransform *)(m_pScene.createNode("Transform"));
-Transform19->setDEF("Rose01");
-CShape* Shape20 = (CShape *)(m_pScene.createNode("Shape"));
-CSphere* Sphere21 = (CSphere *)(m_pScene.createNode("Sphere"));
-Shape20->setGeometry(Sphere21);
+CPositionInterpolator* PositionInterpolator17 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
+PositionInterpolator17->setDEF("BubblePath3");
+PositionInterpolator17->setKey(new float[5]{0,0.1,0.45,0.7,1}, 5);
+PositionInterpolator17->setKeyValue(new float[15]{0.01,0.01,0.01,0.25,0.35,0.0045,0.55,0.6,0.0055,0.66,0.665,0.00655,1.555,1.09043,0.005734});
+Group13->addChildren(*PositionInterpolator17);
 
-CAppearance* Appearance22 = (CAppearance *)(m_pScene.createNode("Appearance"));
-Appearance22->setDEF("_01_-_Default");
-CMaterial* Material23 = (CMaterial *)(m_pScene.createNode("Material"));
-Material23->setDiffuseColor(new float[3]{0.7,0.7,0.7});
-Material23->setSpecularColor(new float[3]{0.5,0.5,0.5});
-Appearance22->setMaterial(*Material23);
+CPositionInterpolator* PositionInterpolator18 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
+PositionInterpolator18->setDEF("BubblePath4");
+PositionInterpolator18->setKey(new float[5]{0,0.5,0.6,0.8,1}, 5);
+PositionInterpolator18->setKeyValue(new float[15]{0,0,0,0.5,0.5,0.005,0.6,0.6,0.006,0.75,0.75,0.0075,1.948594,1.3983,0.009009349});
+Group13->addChildren(*PositionInterpolator18);
 
-CComposedCubeMapTexture* ComposedCubeMapTexture24 = (CComposedCubeMapTexture *)(m_pScene.createNode("ComposedCubeMapTexture"));
-CImageTexture* ImageTexture25 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture25->setUrl(new CString[2]{"../resources/images/all_probes/uffizi_cross/uffizi_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_back.png"}, 2);
-ComposedCubeMapTexture24->setBack(*ImageTexture25);
+CPositionInterpolator* PositionInterpolator19 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
+PositionInterpolator19->setDEF("BubblePath5");
+PositionInterpolator19->setKey(new float[5]{0,0.25,0.35,0.65,1}, 5);
+PositionInterpolator19->setKeyValue(new float[15]{0,0,0,0.5,0.5,0.005,0.6,0.6,0.006,0.75,0.75,0.0075,1.84444,1.22222,0.1});
+Group13->addChildren(*PositionInterpolator19);
 
-CImageTexture* ImageTexture26 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture26->setUrl(new CString[2]{"../resources/images/all_probes/uffizi_cross/uffizi_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_bottom.png"}, 2);
-ComposedCubeMapTexture24->setBottom(*ImageTexture26);
+CPositionInterpolator* PositionInterpolator20 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
+PositionInterpolator20->setDEF("BubblePath6");
+PositionInterpolator20->setKey(new float[5]{0,0.15,0.22235,0.55565,1}, 5);
+PositionInterpolator20->setKeyValue(new float[15]{0,0,0,0.235,0.3455,0.0055,0.356,0.676,0.00456,0.5675,0.75,0.0074565,1.098,1.0343,0.14});
+Group13->addChildren(*PositionInterpolator20);
 
-CImageTexture* ImageTexture27 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture27->setUrl(new CString[2]{"../resources/images/all_probes/uffizi_cross/uffizi_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_front.png"}, 2);
-ComposedCubeMapTexture24->setFront(*ImageTexture27);
+CPositionInterpolator* PositionInterpolator21 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
+PositionInterpolator21->setDEF("BubblePath7");
+PositionInterpolator21->setKey(new float[5]{0,0.2425,0.4535,0.6775,1}, 5);
+PositionInterpolator21->setKeyValue(new float[15]{0,0,0,0.12345,0.2225,0.00335,0.786,0.456,0.00666,0.74555,0.7335,0.00234575,0.08787,1.022,0.12});
+Group13->addChildren(*PositionInterpolator21);
 
-CImageTexture* ImageTexture28 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture28->setUrl(new CString[2]{"../resources/images/all_probes/uffizi_cross/uffizi_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_left.png"}, 2);
-ComposedCubeMapTexture24->setLeft(*ImageTexture28);
+CPositionInterpolator* PositionInterpolator22 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
+PositionInterpolator22->setDEF("BubblePath8");
+PositionInterpolator22->setKey(new float[5]{0,0.1125,0.5535,0.97865,1}, 5);
+PositionInterpolator22->setKeyValue(new float[15]{0,0,0,0.1235,0.05,0.00125,0.5666,0.4346,0.005556,0.8975,0.34575,0.0098775,1.8787,1.686,0.86});
+Group13->addChildren(*PositionInterpolator22);
 
-CImageTexture* ImageTexture29 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture29->setUrl(new CString[2]{"../resources/images/all_probes/uffizi_cross/uffizi_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_right.png"}, 2);
-ComposedCubeMapTexture24->setRight(*ImageTexture29);
+CPositionInterpolator* PositionInterpolator23 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
+PositionInterpolator23->setDEF("BubblePath9");
+PositionInterpolator23->setKey(new float[5]{0,0.0025,0.035,0.65,1}, 5);
+PositionInterpolator23->setKeyValue(new float[15]{0,0,0,0.522,0.5445,0.0057,0.6543,0.226,0.0055,0.45575,0.4375,0.0067,1.8787,2,0.1545});
+Group13->addChildren(*PositionInterpolator23);
 
-CImageTexture* ImageTexture30 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture30->setUrl(new CString[2]{"../resources/images/all_probes/uffizi_cross/uffizi_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_top.png"}, 2);
-ComposedCubeMapTexture24->setTop(*ImageTexture30);
+CPositionInterpolator* PositionInterpolator24 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
+PositionInterpolator24->setDEF("BubblePath10");
+PositionInterpolator24->setKey(new float[5]{0,0.00025,0.035,0.6895,1}, 5);
+PositionInterpolator24->setKeyValue(new float[15]{0,0,0,0.8765,0.445,0.00335,0.3336,0.4446,0.005556,0.765,0.75,0.0075,1,1,0.1});
+Group13->addChildren(*PositionInterpolator24);
 
-Appearance22->setTexture(*ComposedCubeMapTexture24);
+CTransform* Transform25 = (CTransform *)(m_pScene.createNode("Transform"));
+CTransform* Transform26 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform26->setDEF("bubble1");
+CShape* Shape27 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance28 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material29 = (CMaterial *)(m_pScene.createNode("Material"));
+Material29->setDiffuseColor(new float[3]{1,1,1});
+Material29->setTransparency(0.8);
+Appearance28->setMaterial(*Material29);
 
-CComposedShader* ComposedShader31 = (CComposedShader *)(m_pScene.createNode("ComposedShader"));
-ComposedShader31->setDEF("x_ite");
-ComposedShader31->setLanguage("GLSL");
-Cfield* field32 = new Cfield();
-field32->setName("cube");
-field32->setAccessType("inputOutput");
-field32->setType("SFInt32");
-field32->setValue("0");
-ComposedShader31->addField(*field32);
+Shape27->setAppearance(*Appearance28);
 
-Cfield* field33 = new Cfield();
-field33->setName("chromaticDispertion");
-field33->setAccessType("inputOutput");
-field33->setType("SFVec3f");
-field33->setValue("0.98 1 1.033");
-ComposedShader31->addField(*field33);
+CSphere* Sphere30 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere30->setRadius(0.025);
+Shape27->setGeometry(Sphere30);
 
-Cfield* field34 = new Cfield();
-field34->setName("bias");
-field34->setAccessType("inputOutput");
-field34->setType("SFFloat");
-field34->setValue("0.5");
-ComposedShader31->addField(*field34);
+Transform26->addChildren(*Shape27);
 
-Cfield* field35 = new Cfield();
-field35->setName("scale");
-field35->setAccessType("inputOutput");
-field35->setType("SFFloat");
-field35->setValue("0.5");
-ComposedShader31->addField(*field35);
+Transform25->addChildren(*Transform26);
 
-Cfield* field36 = new Cfield();
-field36->setName("power");
-field36->setAccessType("inputOutput");
-field36->setType("SFFloat");
-field36->setValue("2");
-ComposedShader31->addField(*field36);
+CTransform* Transform31 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform31->setDEF("bubble2");
+CShape* Shape32 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance33 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material34 = (CMaterial *)(m_pScene.createNode("Material"));
+Material34->setDiffuseColor(new float[3]{1,1,1});
+Material34->setTransparency(0.8);
+Appearance33->setMaterial(*Material34);
 
-CShaderPart* ShaderPart37 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
-ShaderPart37->setUrl(new CString[2]{"../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"}, 2);
-ShaderPart37->setType("VERTEX");
-ComposedShader31->addParts(*ShaderPart37);
+Shape32->setAppearance(*Appearance33);
 
-CShaderPart* ShaderPart38 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
-ShaderPart38->setUrl(new CString[2]{"../shaders/x_itebubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"}, 2);
-ShaderPart38->setType("FRAGMENT");
-ComposedShader31->addParts(*ShaderPart38);
+CSphere* Sphere35 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere35->setRadius(0.055);
+Shape32->setGeometry(Sphere35);
 
-Appearance22->addShaders(*ComposedShader31);
+Transform31->addChildren(*Shape32);
 
-CComposedShader* ComposedShader39 = (CComposedShader *)(m_pScene.createNode("ComposedShader"));
-ComposedShader39->setDEF("x3dom");
-ComposedShader39->setLanguage("GLSL");
-Cfield* field40 = new Cfield();
-field40->setName("cube");
-field40->setAccessType("inputOutput");
-field40->setType("SFInt32");
-field40->setValue("0");
-ComposedShader39->addField(*field40);
+Transform25->addChildren(*Transform31);
 
-Cfield* field41 = new Cfield();
-field41->setName("chromaticDispertion");
-field41->setAccessType("inputOutput");
-field41->setType("SFVec3f");
-field41->setValue("0.98 1 1.033");
-ComposedShader39->addField(*field41);
+CTransform* Transform36 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform36->setDEF("bubble3");
+CShape* Shape37 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance38 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material39 = (CMaterial *)(m_pScene.createNode("Material"));
+Material39->setDiffuseColor(new float[3]{1,1,1});
+Material39->setTransparency(0.8);
+Appearance38->setMaterial(*Material39);
 
-Cfield* field42 = new Cfield();
-field42->setName("bias");
-field42->setAccessType("inputOutput");
-field42->setType("SFFloat");
-field42->setValue("0.5");
-ComposedShader39->addField(*field42);
+Shape37->setAppearance(*Appearance38);
 
-Cfield* field43 = new Cfield();
-field43->setName("scale");
-field43->setAccessType("inputOutput");
-field43->setType("SFFloat");
-field43->setValue("0.5");
-ComposedShader39->addField(*field43);
+CSphere* Sphere40 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere40->setRadius(0.065);
+Shape37->setGeometry(Sphere40);
 
-Cfield* field44 = new Cfield();
-field44->setName("power");
-field44->setAccessType("inputOutput");
-field44->setType("SFFloat");
-field44->setValue("2");
-ComposedShader39->addField(*field44);
+Transform36->addChildren(*Shape37);
 
-CShaderPart* ShaderPart45 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
-ShaderPart45->setUrl(new CString[2]{"../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"}, 2);
-ShaderPart45->setType("VERTEX");
-ComposedShader39->addParts(*ShaderPart45);
+Transform25->addChildren(*Transform36);
 
-CShaderPart* ShaderPart46 = (CShaderPart *)(m_pScene.createNode("ShaderPart"));
-ShaderPart46->setUrl(new CString[2]{"../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"}, 2);
-ShaderPart46->setType("FRAGMENT");
-ComposedShader39->addParts(*ShaderPart46);
+CTransform* Transform41 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform41->setDEF("bubble4");
+CShape* Shape42 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance43 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material44 = (CMaterial *)(m_pScene.createNode("Material"));
+Material44->setDiffuseColor(new float[3]{1,1,1});
+Material44->setTransparency(0.8);
+Appearance43->setMaterial(*Material44);
 
-Appearance22->addShaders(*ComposedShader39);
+Shape42->setAppearance(*Appearance43);
 
-Shape20->setAppearance(*Appearance22);
+CSphere* Sphere45 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere45->setRadius(0.015);
+Shape42->setGeometry(Sphere45);
 
-Transform19->addChildren(*Shape20);
+Transform41->addChildren(*Shape42);
 
-group->addChildren(*Transform19);
+Transform25->addChildren(*Transform41);
 
-CTimeSensor* TimeSensor47 = (CTimeSensor *)(m_pScene.createNode("TimeSensor"));
-TimeSensor47->setDEF("TourTime");
-TimeSensor47->setCycleInterval(5);
-TimeSensor47->setLoop(True);
-group->addChildren(*TimeSensor47);
+CTransform* Transform46 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform46->setDEF("bubble5");
+CShape* Shape47 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance48 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material49 = (CMaterial *)(m_pScene.createNode("Material"));
+Material49->setDiffuseColor(new float[3]{1,1,1});
+Material49->setTransparency(0.8);
+Appearance48->setMaterial(*Material49);
 
-CPositionInterpolator* PositionInterpolator48 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
-PositionInterpolator48->setDEF("TourPosition");
-PositionInterpolator48->setKey(new float[2]{0,1}, 2);
-PositionInterpolator48->setKeyValue(new float[6]{0,0,10,0,0,-10});
-group->addChildren(*PositionInterpolator48);
+Shape47->setAppearance(*Appearance48);
 
-COrientationInterpolator* OrientationInterpolator49 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
-OrientationInterpolator49->setDEF("TourOrientation");
-OrientationInterpolator49->setKey(new float[2]{0,1}, 2);
-OrientationInterpolator49->setKeyValue(new float[8]{0,1,0,0,0,1,0,3.1416});
-group->addChildren(*OrientationInterpolator49);
+CSphere* Sphere50 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere50->setRadius(0.075);
+Shape47->setGeometry(Sphere50);
 
-CScript* Script50 = (CScript *)(m_pScene.createNode("Script"));
-Script50->setDEF("RandomTourTime");
-Cfield* field51 = new Cfield();
-field51->setName("set_cycle");
-field51->setAccessType("inputOnly");
-field51->setType("SFTime");
-Script50->addField(*field51);
+Transform46->addChildren(*Shape47);
 
-Cfield* field52 = new Cfield();
-field52->setName("lastKey");
-field52->setAccessType("inputOutput");
-field52->setType("SFFloat");
-field52->setValue("0");
-Script50->addField(*field52);
+Transform25->addChildren(*Transform46);
 
-Cfield* field53 = new Cfield();
-field53->setName("orientations");
-field53->setAccessType("inputOutput");
-field53->setType("MFRotation");
-field53->setValue("0 1 0 0 0 1 0 -1.57 0 1 0 3.14 0 1 0 1.57 0 1 0 0 1 0 0 -1.57 0 1 0 0 1 0 0 1.57 0 1 0 0");
-Script50->addField(*field53);
+CTransform* Transform51 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform51->setDEF("bubble6");
+CShape* Shape52 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance53 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material54 = (CMaterial *)(m_pScene.createNode("Material"));
+Material54->setDiffuseColor(new float[3]{1,1,1});
+Material54->setTransparency(0.8);
+Appearance53->setMaterial(*Material54);
 
-Cfield* field54 = new Cfield();
-field54->setName("positions");
-field54->setAccessType("inputOutput");
-field54->setType("MFVec3f");
-field54->setValue("0 0 10 -10 0 0 0 0 -10 10 0 0 0 0 10 0 10 0 0 0 10 0 -10 0 0 0 10");
-Script50->addField(*field54);
+Shape52->setAppearance(*Appearance53);
 
-Cfield* field55 = new Cfield();
-field55->setName("fraction_changed");
-field55->setAccessType("outputOnly");
-field55->setType("SFFloat");
-Script50->addField(*field55);
+CSphere* Sphere55 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere55->setRadius(0.005);
+Shape52->setGeometry(Sphere55);
 
-Cfield* field56 = new Cfield();
-field56->setName("position_changed");
-field56->setAccessType("outputOnly");
-field56->setType("MFVec3f");
-Script50->addField(*field56);
+Transform51->addChildren(*Shape52);
 
-Cfield* field57 = new Cfield();
-field57->setName("set_orientation");
-field57->setAccessType("inputOnly");
-field57->setType("MFRotation");
-Script50->addField(*field57);
+Transform25->addChildren(*Transform51);
 
-Cfield* field58 = new Cfield();
-field58->setName("orientation_changed");
-field58->setAccessType("outputOnly");
-field58->setType("MFRotation");
-Script50->addField(*field58);
+CTransform* Transform56 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform56->setDEF("bubble7");
+CShape* Shape57 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance58 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material59 = (CMaterial *)(m_pScene.createNode("Material"));
+Material59->setDiffuseColor(new float[3]{1,1,1});
+Material59->setTransparency(0.8);
+Appearance58->setMaterial(*Material59);
 
+Shape57->setAppearance(*Appearance58);
 
-Script50.setSourceCode(`ecmascript:\n"+
-"               function set_cycle(value) {\n"+
-"	       	   try {\n"+
-"                        var ov = lastKey;\n"+
-"                        do {\n"+
-"                            lastKey = Math.round(Math.random()*(positions.length-1));\n"+
-"                        } while (lastKey === ov);\n"+
-"                        var vc = lastKey;\n"+
-"\n"+
-"                        position_changed[0] = positions[ov];\n"+
-"                        position_changed[1] = positions[vc];\n"+
-"\n"+
-"                        orientation_changed[0] = orientations[ov];\n"+
-"                        orientation_changed[1] = orientations[vc];\n"+
-"\n"+
-"                        fraction_changed = 0;\n"+
-"		   } catch (e) {\n"+
-"		   	if (typeof console.log === 'function') {\n"+
-"				console.log(e);\n"+
-"			}\n"+
-"		   }\n"+
-"               }`)
-group->addChildren(*Script50);
+CSphere* Sphere60 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere60->setRadius(0.035);
+Shape57->setGeometry(Sphere60);
 
-CROUTE* ROUTE59 = new CROUTE();
-ROUTE59->setFromNode("TourTime");
-ROUTE59->setFromField("cycleTime");
-ROUTE59->setToNode("RandomTourTime");
-ROUTE59->setToField("set_cycle");
-group->addChildren(*ROUTE59);
+Transform56->addChildren(*Shape57);
 
-CROUTE* ROUTE60 = new CROUTE();
-ROUTE60->setFromNode("RandomTourTime");
-ROUTE60->setFromField("fraction_changed");
-ROUTE60->setToNode("TourOrientation");
-ROUTE60->setToField("set_fraction");
-group->addChildren(*ROUTE60);
+Transform25->addChildren(*Transform56);
 
-CROUTE* ROUTE61 = new CROUTE();
-ROUTE61->setFromNode("RandomTourTime");
-ROUTE61->setFromField("fraction_changed");
-ROUTE61->setToNode("TourPosition");
-ROUTE61->setToField("set_fraction");
-group->addChildren(*ROUTE61);
+CTransform* Transform61 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform61->setDEF("bubble8");
+CShape* Shape62 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance63 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material64 = (CMaterial *)(m_pScene.createNode("Material"));
+Material64->setDiffuseColor(new float[3]{1,1,1});
+Material64->setTransparency(0.8);
+Appearance63->setMaterial(*Material64);
 
-CROUTE* ROUTE62 = new CROUTE();
-ROUTE62->setFromNode("RandomTourTime");
-ROUTE62->setFromField("orientation_changed");
-ROUTE62->setToNode("TourOrientation");
-ROUTE62->setToField("set_keyValue");
-group->addChildren(*ROUTE62);
+Shape62->setAppearance(*Appearance63);
 
-CROUTE* ROUTE63 = new CROUTE();
-ROUTE63->setFromNode("RandomTourTime");
-ROUTE63->setFromField("position_changed");
-ROUTE63->setToNode("TourPosition");
-ROUTE63->setToField("set_keyValue");
-group->addChildren(*ROUTE63);
+CSphere* Sphere65 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere65->setRadius(0.05);
+Shape62->setGeometry(Sphere65);
 
-CROUTE* ROUTE64 = new CROUTE();
-ROUTE64->setFromNode("TourTime");
-ROUTE64->setFromField("fraction_changed");
-ROUTE64->setToNode("TourOrientation");
-ROUTE64->setToField("set_fraction");
-group->addChildren(*ROUTE64);
+Transform61->addChildren(*Shape62);
 
-CROUTE* ROUTE65 = new CROUTE();
-ROUTE65->setFromNode("TourOrientation");
-ROUTE65->setFromField("value_changed");
-ROUTE65->setToNode("Tour");
-ROUTE65->setToField("set_orientation");
-group->addChildren(*ROUTE65);
+Transform25->addChildren(*Transform61);
 
-CROUTE* ROUTE66 = new CROUTE();
-ROUTE66->setFromNode("TourTime");
-ROUTE66->setFromField("fraction_changed");
-ROUTE66->setToNode("TourPosition");
-ROUTE66->setToField("set_fraction");
-group->addChildren(*ROUTE66);
+CTransform* Transform66 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform66->setDEF("bubble9");
+CShape* Shape67 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance68 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material69 = (CMaterial *)(m_pScene.createNode("Material"));
+Material69->setDiffuseColor(new float[3]{1,1,1});
+Material69->setTransparency(0.8);
+Appearance68->setMaterial(*Material69);
 
-CROUTE* ROUTE67 = new CROUTE();
-ROUTE67->setFromNode("TourPosition");
-ROUTE67->setFromField("value_changed");
-ROUTE67->setToNode("Tour");
-ROUTE67->setToField("set_position");
-group->addChildren(*ROUTE67);
+Shape67->setAppearance(*Appearance68);
 
-X3D0->setScene(*Scene14);
+CSphere* Sphere70 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere70->setRadius(0.045);
+Shape67->setGeometry(Sphere70);
+
+Transform66->addChildren(*Shape67);
+
+Transform25->addChildren(*Transform66);
+
+CTransform* Transform71 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform71->setDEF("bubble10");
+CShape* Shape72 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance73 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CMaterial* Material74 = (CMaterial *)(m_pScene.createNode("Material"));
+Material74->setDiffuseColor(new float[3]{1,1,1});
+Material74->setTransparency(0.8);
+Appearance73->setMaterial(*Material74);
+
+Shape72->setAppearance(*Appearance73);
+
+CSphere* Sphere75 = (CSphere *)(m_pScene.createNode("Sphere"));
+Sphere75->setRadius(0.035);
+Shape72->setGeometry(Sphere75);
+
+Transform71->addChildren(*Shape72);
+
+Transform25->addChildren(*Transform71);
+
+CROUTE* ROUTE76 = new CROUTE();
+ROUTE76->setFromField("fraction_changed");
+ROUTE76->setFromNode("BubbleClock");
+ROUTE76->setToField("set_fraction");
+ROUTE76->setToNode("BubblePath1");
+Transform25->addChildren(*ROUTE76);
+
+CROUTE* ROUTE77 = new CROUTE();
+ROUTE77->setFromField("fraction_changed");
+ROUTE77->setFromNode("BubbleClock");
+ROUTE77->setToField("set_fraction");
+ROUTE77->setToNode("BubblePath2");
+Transform25->addChildren(*ROUTE77);
+
+CROUTE* ROUTE78 = new CROUTE();
+ROUTE78->setFromField("fraction_changed");
+ROUTE78->setFromNode("BubbleClock");
+ROUTE78->setToField("set_fraction");
+ROUTE78->setToNode("BubblePath3");
+Transform25->addChildren(*ROUTE78);
+
+CROUTE* ROUTE79 = new CROUTE();
+ROUTE79->setFromField("fraction_changed");
+ROUTE79->setFromNode("BubbleClock");
+ROUTE79->setToField("set_fraction");
+ROUTE79->setToNode("BubblePath4");
+Transform25->addChildren(*ROUTE79);
+
+CROUTE* ROUTE80 = new CROUTE();
+ROUTE80->setFromField("fraction_changed");
+ROUTE80->setFromNode("BubbleClock");
+ROUTE80->setToField("set_fraction");
+ROUTE80->setToNode("BubblePath5");
+Transform25->addChildren(*ROUTE80);
+
+CROUTE* ROUTE81 = new CROUTE();
+ROUTE81->setFromField("fraction_changed");
+ROUTE81->setFromNode("BubbleClock");
+ROUTE81->setToField("set_fraction");
+ROUTE81->setToNode("BubblePath6");
+Transform25->addChildren(*ROUTE81);
+
+CROUTE* ROUTE82 = new CROUTE();
+ROUTE82->setFromField("fraction_changed");
+ROUTE82->setFromNode("BubbleClock");
+ROUTE82->setToField("set_fraction");
+ROUTE82->setToNode("BubblePath7");
+Transform25->addChildren(*ROUTE82);
+
+CROUTE* ROUTE83 = new CROUTE();
+ROUTE83->setFromField("fraction_changed");
+ROUTE83->setFromNode("BubbleClock");
+ROUTE83->setToField("set_fraction");
+ROUTE83->setToNode("BubblePath8");
+Transform25->addChildren(*ROUTE83);
+
+CROUTE* ROUTE84 = new CROUTE();
+ROUTE84->setFromField("fraction_changed");
+ROUTE84->setFromNode("BubbleClock");
+ROUTE84->setToField("set_fraction");
+ROUTE84->setToNode("BubblePath9");
+Transform25->addChildren(*ROUTE84);
+
+CROUTE* ROUTE85 = new CROUTE();
+ROUTE85->setFromField("fraction_changed");
+ROUTE85->setFromNode("BubbleClock");
+ROUTE85->setToField("set_fraction");
+ROUTE85->setToNode("BubblePath10");
+Transform25->addChildren(*ROUTE85);
+
+CROUTE* ROUTE86 = new CROUTE();
+ROUTE86->setFromField("value_changed");
+ROUTE86->setFromNode("BubblePath1");
+ROUTE86->setToField("set_translation");
+ROUTE86->setToNode("bubble1");
+Transform25->addChildren(*ROUTE86);
+
+CROUTE* ROUTE87 = new CROUTE();
+ROUTE87->setFromField("value_changed");
+ROUTE87->setFromNode("BubblePath2");
+ROUTE87->setToField("set_translation");
+ROUTE87->setToNode("bubble2");
+Transform25->addChildren(*ROUTE87);
+
+CROUTE* ROUTE88 = new CROUTE();
+ROUTE88->setFromField("value_changed");
+ROUTE88->setFromNode("BubblePath3");
+ROUTE88->setToField("set_translation");
+ROUTE88->setToNode("bubble3");
+Transform25->addChildren(*ROUTE88);
+
+CROUTE* ROUTE89 = new CROUTE();
+ROUTE89->setFromField("value_changed");
+ROUTE89->setFromNode("BubblePath4");
+ROUTE89->setToField("set_translation");
+ROUTE89->setToNode("bubble4");
+Transform25->addChildren(*ROUTE89);
+
+CROUTE* ROUTE90 = new CROUTE();
+ROUTE90->setFromField("value_changed");
+ROUTE90->setFromNode("BubblePath5");
+ROUTE90->setToField("set_translation");
+ROUTE90->setToNode("bubble5");
+Transform25->addChildren(*ROUTE90);
+
+CROUTE* ROUTE91 = new CROUTE();
+ROUTE91->setFromField("value_changed");
+ROUTE91->setFromNode("BubblePath6");
+ROUTE91->setToField("set_translation");
+ROUTE91->setToNode("bubble6");
+Transform25->addChildren(*ROUTE91);
+
+CROUTE* ROUTE92 = new CROUTE();
+ROUTE92->setFromField("value_changed");
+ROUTE92->setFromNode("BubblePath7");
+ROUTE92->setToField("set_translation");
+ROUTE92->setToNode("bubble7");
+Transform25->addChildren(*ROUTE92);
+
+CROUTE* ROUTE93 = new CROUTE();
+ROUTE93->setFromField("value_changed");
+ROUTE93->setFromNode("BubblePath8");
+ROUTE93->setToField("set_translation");
+ROUTE93->setToNode("bubble8");
+Transform25->addChildren(*ROUTE93);
+
+CROUTE* ROUTE94 = new CROUTE();
+ROUTE94->setFromField("value_changed");
+ROUTE94->setFromNode("BubblePath9");
+ROUTE94->setToField("set_translation");
+ROUTE94->setToNode("bubble9");
+Transform25->addChildren(*ROUTE94);
+
+CROUTE* ROUTE95 = new CROUTE();
+ROUTE95->setFromField("value_changed");
+ROUTE95->setFromNode("BubblePath10");
+ROUTE95->setToField("set_translation");
+ROUTE95->setToNode("bubble10");
+Transform25->addChildren(*ROUTE95);
+
+Group13->addChildren(*Transform25);
+
+Transform12->addChildren(*Group13);
+
+group->addChildren(*Transform12);
+
+CBackground* Background96 = (CBackground *)(m_pScene.createNode("Background"));
+Background96->setSkyColor(new float[3]{0,0,0.6});
+group->addChildren(*Background96);
+
+X3D0->setScene(*Scene10);
 
 m_pScene.addRootNode(group);
 X3D0->toXMLString();

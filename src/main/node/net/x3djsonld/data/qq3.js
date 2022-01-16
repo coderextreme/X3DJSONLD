@@ -108,7 +108,7 @@ qq3.prototype = {
             .addChild((new autoclass.Shape("ShapeLeftDown"))
               .setAppearance((new autoclass.Appearance())
                 .setMaterial((new autoclass.Material()).setDiffuseColor(0.7,1.0,0.0)))
-              .setGeometry((new autoclass.Extrusion()).setSpine(new autoclass.MFVec3f(java.newArray("float", [-2.5,0.0,0.0,-1.5,0.0,0.0]))).setCreaseAngle(0.785).setCrossSection(this.Extrusion_8_12_crossSection))))
+              .setGeometry((new autoclass.Extrusion()).setCreaseAngle(0.785).setCrossSection(this.Extrusion_8_12_crossSection).setSpine(new autoclass.MFVec3f(java.newArray("float", [-2.5,0.0,0.0,-1.5,0.0,0.0]))))))
           .addComments(" right ")
           .addChild((new autoclass.Transform()).setScale(0.5,0.5,0.5)
             .addChild((new autoclass.Shape("ShapeUpRight"))
@@ -117,17 +117,17 @@ qq3.prototype = {
               .setGeometry((new autoclass.Extrusion()).setCreaseAngle(0.785).setCrossSection(this.Extrusion_8_17_crossSection).setSpine(new autoclass.MFVec3f(java.newArray("float", [1.5,0.0,0.0,2.5,0.0,0.0]))))))
           .addComments(" up ")
           .addChild((new autoclass.Transform()).setScale(0.5,0.5,0.5)
-            .addChild((new autoclass.Shape()).setUSE("ShapeUpRight")))
+            .addChild((new autoclass.Shape())))
           .addComments(" down ")
           .addChild((new autoclass.Transform()).setScale(0.5,0.5,0.5)
-            .addChild((new autoclass.Shape()).setUSE("ShapeLeftDown"))))))
-    .addChild((new autoclass.Viewpoint()).setDescription("Process pipes").setPosition(0.0,5.0,12.0).setOrientation(1.0,0.0,0.0,-0.4))
+            .addChild((new autoclass.Shape()))))))
+    .addChild((new autoclass.Viewpoint()).setDescription("Process pipes").setOrientation(1.0,0.0,0.0,-0.4).setPosition(0.0,5.0,12.0))
     .addChild((new autoclass.Transform()).setTranslation(0.0,-2.5,0.0)
-      .addChild((new autoclass.ProtoInstance()).setName("Process")))
+      .addChild((new autoclass.ProtoInstance())))
     .addChild((new autoclass.Transform())
-      .addChild((new autoclass.ProtoInstance()).setName("Process")))
+      .addChild((new autoclass.ProtoInstance())))
     .addChild((new autoclass.Transform()).setTranslation(0.0,2.5,0.0)
-      .addChild((new autoclass.ProtoInstance()).setName("Process"))));
+      .addChild((new autoclass.ProtoInstance()))));
   },
   // end of initialize() method
 
@@ -186,4 +186,3 @@ qq3.prototype = {
 	}
 }
 new qq3().main();
-process.exit(0);

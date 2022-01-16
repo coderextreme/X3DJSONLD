@@ -287,4 +287,3 @@ arcold.prototype = {
 	}
 }
 new arcold().main();
-process.exit(0);

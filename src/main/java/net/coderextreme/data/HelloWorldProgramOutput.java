@@ -50,7 +50,7 @@ ProtoInstance ProtoInstance3 = null;
 ProtoInstance ProtoInstance4 = null;
 ProtoInstance ProtoInstance5 = null;
 ProtoInstance ProtoInstance6 = null;
-      X3D X3D0 =  new X3D().setCssClass("x3dModel.class").setProfile("Full").setStyle("x3dModel.style").setVersion("4.0")
+      X3D X3D0 =  new X3D().setCssClass("x3dModel.class").setProfile("Full").setCssStyle("x3dModel.style").setVersion("4.0")
       .addComments("x3dVersionComparisonTest for this model: supportsX3dVersion(X3D.VERSION_3_0)=true")
       .setHead(new head()
         .addComments("comment #1")
@@ -73,7 +73,7 @@ ProtoInstance ProtoInstance6 = null;
         .addMeta(new meta().setName("reference").setContent("https://www.web3d.org/specifications/java/X3DJSAIL.html"))
         .addMeta(new meta().setName("generator").setContent("HelloWorldProgramOutput.java"))
         .addMeta(new meta().setName("created").setContent("6 September 2016"))
-        .addMeta(new meta().setName("modified").setContent("19 December 2021"))
+        .addMeta(new meta().setName("modified").setContent("9 January 2022"))
         .addMeta(new meta().setName("generator").setContent("X3D Java Scene Access Interface Library (X3DJSAIL)"))
         .addMeta(new meta().setName("generator").setContent("https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"))
         .addMeta(new meta().setName("generator").setContent("Netbeans http://www.netbeans.org"))
@@ -92,7 +92,7 @@ ProtoInstance ProtoInstance6 = null;
           .addChild(new Viewpoint().setDEF("DefaultView").setDescription("Hello X3DJSAIL"))
           .addChild(new Viewpoint().setDEF("TopDownView").setDescription("top-down view from above").setOrientation(new float[] {1f,0f,0f,-1.570796f}).setPosition(new float[] {0f,100f,0f})))
         .addChild(new NavigationInfo().setType(new java.lang.String[] {"EXAMINE","FLY","ANY"}))
-        .addChild(new WorldInfo().setDEF("WorldInfoDEF").setCssClass("worldInfoNode.class").setStyle("worldInfoNode.style").setTitle("HelloWorldProgram produced by X3D Java SAI Library (X3DJSAIL)"))
+        .addChild(new WorldInfo().setDEF("WorldInfoDEF").setCssClass("worldInfoNode.class").setCssStyle("worldInfoNode.style").setTitle("HelloWorldProgram produced by X3D Java SAI Library (X3DJSAIL)"))
         .addChild(new WorldInfo().setUSE("WorldInfoDEF"))
         .addChild(new WorldInfo().setUSE("WorldInfoDEF"))
         .addMetadata(new MetadataString().setName("test").setDEF("scene.addChildMetadata").setValue(new MFString0().getArray()))

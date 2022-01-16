@@ -88,12 +88,12 @@ public class mirror
   .setScene(new Scene()
     .addChild(new Viewpoint().setDescription("Switch background and images texture").setPosition(0.0,5.0,100.0))
     .addChild(new TextureBackground()
-      .setLeft(new ImageTexture("leftBack").setUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"}))
-      .setRight(new ImageTexture("rightBack").setUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"}))
-      .setFront(new ImageTexture("frontBack").setUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"}))
-      .setBack(new ImageTexture("backBack").setUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"}))
-      .setTop(new ImageTexture("topBack").setUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"}))
-      .setBottom(new ImageTexture("bottomBack").setUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"})))
+      .setLeftTexture(new ImageTexture("leftBackTexture").setUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"}))
+      .setRightTexture(new ImageTexture("rightBackTexture").setUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"}))
+      .setFrontTexture(new ImageTexture("frontBackTexture").setUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"}))
+      .setBackTexture(new ImageTexture("backBackTexture").setUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"}))
+      .setTopTexture(new ImageTexture("topBackTexture").setUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"}))
+      .setBottomTexture(new ImageTexture("bottomBackTexture").setUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"})))
     .addChild(new Transform()
       .addChild(new Shape()
         .setAppearance(new Appearance()
@@ -123,25 +123,27 @@ public class mirror
             .addParts(new ShaderPart().setUrl(new String[] {"../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"}))
             .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new String[] {"../shaders/x_itemix.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itemix.fs"}))))
         .setGeometry(new Sphere().setRadius(30)))
-      .addChild(new Script("UrlSelector").setDirectOutput(true).setSourceCode(" " + "\n" + 
-"\n" + 
-"ecmascript:" + "\n" + 
-"        function set_fraction( f, tm ) {" + "\n" + 
-"	    var side = Math.floor(f*frontUrls.length);" + "\n" + 
-"	    if (side > frontUrls.length-1) {" + "\n" + 
-"	    	side = 0;" + "\n" + 
-"	    }" + "\n" + 
-"	    if (side != old) {" + "\n" + 
-"	    	    Browser.print(f+\" \"+side);" + "\n" + 
-"	    	    old = side;" + "\n" + 
-"		    front_changed[0] = frontUrls[side];" + "\n" + 
-"		    back_changed[0] = backUrls[side];" + "\n" + 
-"		    left_changed[0] = leftUrls[side];" + "\n" + 
-"		    right_changed[0] = rightUrls[side];" + "\n" + 
-"		    top_changed[0] = topUrls[side];" + "\n" + 
-"		    bottom_changed[0] = bottomUrls[side];" + "\n" + 
-"            }" + "\n" + 
-"        }" + "\n")
+      .addChild(new Script("UrlSelector").setDirectOutput(true).setSourceCode(""" 
+
+ecmascript:
+        function set_fraction( f, tm ) {
+	    var side = Math.floor(f*frontUrls.length);
+	    if (side > frontUrls.length-1) {
+	    	side = 0;
+	    }
+	    if (side != old) {
+	    	    Browser.print(f+" "+side);
+	    	    old = side;
+		    front_changed[0] = frontUrls[side];
+		    back_changed[0] = backUrls[side];
+		    left_changed[0] = leftUrls[side];
+		    right_changed[0] = rightUrls[side];
+		    top_changed[0] = topUrls[side];
+		    bottom_changed[0] = bottomUrls[side];
+            }
+        }
+
+""")
         .addField(new field().setName("frontUrls").setType(field.TYPE_MFSTRING).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new String[] {"../resources/images/all_probes/beach_cross/beach_front.png","../resources/images/all_probes/building_cross/building_front.png","../resources/images/all_probes/campus_cross/campus_front.png","../resources/images/all_probes/galileo_cross/galileo_front.png","../resources/images/all_probes/grace_cross/grace_front.png","../resources/images/all_probes/kitchen_cross/kitchen_front.png","../resources/images/all_probes/rnl_cross/rnl_front.png","../resources/images/all_probes/stpeters_cross/stpeters_front.png","../resources/images/all_probes/uffizi_cross/uffizi_front.png"}))
         .addField(new field().setName("backUrls").setType(field.TYPE_MFSTRING).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new String[] {"../resources/images/all_probes/beach_cross/beach_back.png","../resources/images/all_probes/building_cross/building_back.png","../resources/images/all_probes/campus_cross/campus_back.png","../resources/images/all_probes/galileo_cross/galileo_back.png","../resources/images/all_probes/grace_cross/grace_back.png","../resources/images/all_probes/kitchen_cross/kitchen_back.png","../resources/images/all_probes/rnl_cross/rnl_back.png","../resources/images/all_probes/stpeters_cross/stpeters_back.png","../resources/images/all_probes/uffizi_cross/uffizi_back.png"}))
         .addField(new field().setName("leftUrls").setType(field.TYPE_MFSTRING).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new String[] {"../resources/images/all_probes/beach_cross/beach_left.png","../resources/images/all_probes/building_cross/building_left.png","../resources/images/all_probes/campus_cross/campus_left.png","../resources/images/all_probes/galileo_cross/galileo_left.png","../resources/images/all_probes/grace_cross/grace_left.png","../resources/images/all_probes/kitchen_cross/kitchen_left.png","../resources/images/all_probes/rnl_cross/rnl_left.png","../resources/images/all_probes/stpeters_cross/stpeters_left.png","../resources/images/all_probes/uffizi_cross/uffizi_left.png"}))
@@ -158,12 +160,12 @@ public class mirror
         .addField(new field().setName("old").setType(field.TYPE_SFINT32).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(-1)))
       .addChild(new TimeSensor("Clock").setCycleInterval(45).setLoop(true))
       .addChild(new ROUTE().setFromNode("Clock").setFromField("fraction_changed").setToNode("UrlSelector").setToField("set_fraction"))
-      .addChild(new ROUTE().setFromNode("UrlSelector").setFromField("front_changed").setToNode("frontBack").setToField("url"))
-      .addChild(new ROUTE().setFromNode("UrlSelector").setFromField("back_changed").setToNode("backBack").setToField("url"))
-      .addChild(new ROUTE().setFromNode("UrlSelector").setFromField("left_changed").setToNode("leftBack").setToField("url"))
-      .addChild(new ROUTE().setFromNode("UrlSelector").setFromField("right_changed").setToNode("rightBack").setToField("url"))
-      .addChild(new ROUTE().setFromNode("UrlSelector").setFromField("top_changed").setToNode("topBack").setToField("url"))
-      .addChild(new ROUTE().setFromNode("UrlSelector").setFromField("bottom_changed").setToNode("bottomBack").setToField("url"))
+      .addChild(new ROUTE().setFromNode("UrlSelector").setFromField("front_changed").setToNode("frontBackTexture").setToField("url"))
+      .addChild(new ROUTE().setFromNode("UrlSelector").setFromField("back_changed").setToNode("backBackTexture").setToField("url"))
+      .addChild(new ROUTE().setFromNode("UrlSelector").setFromField("left_changed").setToNode("leftBackTexture").setToField("url"))
+      .addChild(new ROUTE().setFromNode("UrlSelector").setFromField("right_changed").setToNode("rightBackTexture").setToField("url"))
+      .addChild(new ROUTE().setFromNode("UrlSelector").setFromField("top_changed").setToNode("topBackTexture").setToField("url"))
+      .addChild(new ROUTE().setFromNode("UrlSelector").setFromField("bottom_changed").setToNode("bottomBackTexture").setToField("url"))
       .addChild(new ROUTE().setFromNode("UrlSelector").setFromField("front_changed").setToNode("frontShader").setToField("url"))
       .addChild(new ROUTE().setFromNode("UrlSelector").setFromField("back_changed").setToNode("backShader").setToField("url"))
       .addChild(new ROUTE().setFromNode("UrlSelector").setFromField("left_changed").setToNode("leftShader").setToField("url"))

@@ -40,7 +40,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     unit(name='AngleUnitConversion',category='angle',conversionFactor=1.0),
     unit(name='LengthUnitConversion',category='length',conversionFactor=1.0),
     unit(name='ForceFromPoundsToNewtons',category='force',conversionFactor=4.4482),
-    meta(content='HelloWorldProgramOutput.x3d',name='title'),
+    meta(content='Json.x3d',name='title'),
     meta(content='continued development and testing in progress',name='info'),
     meta(content='Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface Library (X3DJSAIL)',name='description'),
     meta(content='https://www.web3d.org/specifications/java/X3DJSAIL.html',name='reference'),
@@ -131,7 +131,7 @@ newModel=X3D(profile='Immersive',version='4.0',
         field=[
         field(name='colorInput',accessType='inputOnly',type='SFColor'),
         field(name='colorsOutput',accessType='outputOnly',type='MFColor')]
-*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
 ),
       ColorInterpolator(DEF='ColorAnimator',key=[0,0.5,1],keyValue=[(0.9411765,1,1),(0.29411766,0,0.50980395),(0.9411765,1,1)],
         #  AZURE to INDIGO and back again 
@@ -217,7 +217,7 @@ newModel=X3D(profile='Immersive',version='4.0',
             connect=[
             connect(nodeField='enabled',protoField='enabled'),
             connect(nodeField='diffuseColor',protoField='diffuseColor')])
-*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
 )])),
     #  Test success: declarative statement createDeclarativeShapeTests() 
     Group(DEF='DeclarativeGroupExample',
@@ -348,4 +348,4 @@ except SyntaxError as err:
     if newModelJSON: # may have failed to generate
         print(prependLineNumbers(newModelJSON,err.lineno))
 
-print("python x3d.py load and self-test complete for HelloWorldProgramOutput.py")
+print("python x3d.py load and self-test complete for Json.py")

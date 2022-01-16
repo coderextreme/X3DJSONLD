@@ -19,7 +19,7 @@ var ProtoInstance3 = null;
 var ProtoInstance4 = null;
 var ProtoInstance5 = null;
 var ProtoInstance6 = null;
-      var X3D0 =  (new autoclass.X3D()).setCssClass("x3dModel.class").setProfile("Full").setStyle("x3dModel.style").setVersion("4.0")
+      var X3D0 =  (new autoclass.X3D()).setCssClass("x3dModel.class").setProfile("Full").setCssStyle("x3dModel.style").setVersion("4.0")
       .addComments((new autoclass.CommentsBlock("x3dVersionComparisonTest for this model: supportsX3dVersion(X3D.VERSION_3_0)=true")))
       .setHead((new autoclass.head())
         .addComments((new autoclass.CommentsBlock("comment #1")))
@@ -42,7 +42,7 @@ var ProtoInstance6 = null;
         .addMeta((new autoclass.meta()).setName("reference").setContent("https://www.web3d.org/specifications/java/X3DJSAIL.html"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("HelloWorldProgramOutput.java"))
         .addMeta((new autoclass.meta()).setName("created").setContent("6 September 2016"))
-        .addMeta((new autoclass.meta()).setName("modified").setContent("19 December 2021"))
+        .addMeta((new autoclass.meta()).setName("modified").setContent("9 January 2022"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("X3D Java Scene Access Interface Library (X3DJSAIL)"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("Netbeans http://www.netbeans.org"))
@@ -61,7 +61,7 @@ var ProtoInstance6 = null;
           .addChild((new autoclass.Viewpoint()).setDEF("DefaultView").setDescription("Hello X3DJSAIL"))
           .addChild((new autoclass.Viewpoint()).setDEF("TopDownView").setDescription("top-down view from above").setOrientation(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(-1.570796)])).setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(100), java.newFloat(0)]))))
         .addChild((new autoclass.NavigationInfo()).setType(java.newArray("java.lang.String", ["EXAMINE","FLY","ANY"])))
-        .addChild((new autoclass.WorldInfo()).setDEF("WorldInfoDEF").setCssClass("worldInfoNode.class").setStyle("worldInfoNode.style").setTitle("HelloWorldProgram produced by X3D Java SAI Library (X3DJSAIL)"))
+        .addChild((new autoclass.WorldInfo()).setDEF("WorldInfoDEF").setCssClass("worldInfoNode.class").setCssStyle("worldInfoNode.style").setTitle("HelloWorldProgram produced by X3D Java SAI Library (X3DJSAIL)"))
         .addChild((new autoclass.WorldInfo()).setUSE("WorldInfoDEF"))
         .addChild((new autoclass.WorldInfo()).setUSE("WorldInfoDEF"))
         .addMetadata((new autoclass.MetadataString()).setName("test").setDEF("scene.addChildMetadata").setValue(java.newArray("java.lang.String", ["Top-level root Metadata node beneath Scene needs to be one of '-children' in JSON encoding"])))

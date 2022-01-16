@@ -139,8 +139,8 @@ PixelTextureComponentExamples.prototype = {
       .addChild((new autoclass.Transform()).setTranslation(0.0,-2.0,0.0)
         .addChild((new autoclass.Shape())
           .setGeometry((new autoclass.Text()).setString(new autoclass.MFString("\"1\""))
-            .setFontStyle((new autoclass.FontStyle()).setUSE("CenterJustify")))
-          .setAppearance((new autoclass.Appearance()).setUSE("TextMaterial")))))
+            .setFontStyle((new autoclass.FontStyle())))
+          .setAppearance((new autoclass.Appearance())))))
     .addChild((new autoclass.Transform())
       .addChild((new autoclass.Shape())
         .setAppearance((new autoclass.Appearance())
@@ -149,8 +149,8 @@ PixelTextureComponentExamples.prototype = {
       .addChild((new autoclass.Transform()).setTranslation(0.0,-2.0,0.0)
         .addChild((new autoclass.Shape())
           .setGeometry((new autoclass.Text()).setString(new autoclass.MFString("\"2\""))
-            .setFontStyle((new autoclass.FontStyle()).setUSE("CenterJustify")))
-          .setAppearance((new autoclass.Appearance()).setUSE("TextMaterial")))))
+            .setFontStyle((new autoclass.FontStyle())))
+          .setAppearance((new autoclass.Appearance())))))
     .addChild((new autoclass.Transform()).setTranslation(3.0,0.0,0.0)
       .addChild((new autoclass.Shape())
         .setAppearance((new autoclass.Appearance())
@@ -160,8 +160,8 @@ PixelTextureComponentExamples.prototype = {
       .addChild((new autoclass.Transform()).setTranslation(0.0,-2.0,0.0)
         .addChild((new autoclass.Shape())
           .setGeometry((new autoclass.Text()).setString(new autoclass.MFString("\"3\""))
-            .setFontStyle((new autoclass.FontStyle()).setUSE("CenterJustify")))
-          .setAppearance((new autoclass.Appearance()).setUSE("TextMaterial")))))
+            .setFontStyle((new autoclass.FontStyle())))
+          .setAppearance((new autoclass.Appearance())))))
     .addChild((new autoclass.Transform()).setTranslation(6.0,0.0,0.0)
       .addChild((new autoclass.Shape())
         .setAppearance((new autoclass.Appearance())
@@ -171,8 +171,8 @@ PixelTextureComponentExamples.prototype = {
       .addChild((new autoclass.Transform()).setTranslation(0.0,-2.0,0.0)
         .addChild((new autoclass.Shape())
           .setGeometry((new autoclass.Text()).setString(new autoclass.MFString("\"4\""))
-            .setFontStyle((new autoclass.FontStyle()).setUSE("CenterJustify")))
-          .setAppearance((new autoclass.Appearance()).setUSE("TextMaterial")))))
+            .setFontStyle((new autoclass.FontStyle())))
+          .setAppearance((new autoclass.Appearance())))))
     .addComments(" Background from PixelTextureBW.x3d ")
     .addChild((new autoclass.Transform()).setTranslation(0.0,6.0,-2.0)
       .addChild((new autoclass.Shape())
@@ -237,4 +237,3 @@ PixelTextureComponentExamples.prototype = {
 	}
 }
 new PixelTextureComponentExamples().main();
-process.exit(0);

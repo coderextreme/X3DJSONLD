@@ -85,7 +85,7 @@ newModel=X3D(profile='Immersive',version='3.0',
               field(accessType='inputOutput',name='g',type='SFFloat',value=5),
               field(accessType='inputOutput',name='h',type='SFFloat',value=5),
               field(accessType='inputOutput',name='resolution',type='SFInt32',value=50)]
-*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
 ),
             ROUTE(fromNode='OrbitScript',fromField='coordIndexes',toNode='Orbit',toField='set_coordIndex'),
             ROUTE(fromNode='OrbitScript',fromField='coordinates',toNode='OrbitCoordinates',toField='point'),

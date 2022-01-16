@@ -3,334 +3,371 @@ import 'dart:io';
 import '../x3d.dart';
 var X3D0 =  X3D(
 
-      profile_ : SFString('Immersive'),
-      version_ : SFString('4.0'),
+      profile_ : SFString('Interchange'),
+      version_ : SFString('3.3'),
       head_ : 
         head(
-          /*component name='EnvironmentalEffects' level='1'/*/
-          component_ : 
-            component(
-              name_ : SFString('EnvironmentalEffects'),
-              level_ : 3),
-          component_ : 
-            component(
-              name_ : SFString('Shaders'),
-              level_ : 1),
-          component_ : 
-            component(
-              name_ : SFString('CubeMapTexturing'),
-              level_ : 1),
-          component_ : 
-            component(
-              name_ : SFString('Texturing'),
-              level_ : 1),
-          component_ : 
-            component(
-              name_ : SFString('Rendering'),
-              level_ : 1),
-          component_ : 
-            component(
-              name_ : SFString('Shape'),
-              level_ : 4),
-          component_ : 
-            component(
-              name_ : SFString('Grouping'),
-              level_ : 3),
           meta_ : [
             meta(
               name_ : SFString('title'),
-              content_ : SFString('bubbles.x3d')),
-
-            meta(
-              name_ : SFString('creator'),
-              content_ : SFString('John Carlson')),
-
-            meta(
-              name_ : SFString('generator'),
-              content_ : SFString('manual')),
-
-            meta(
-              name_ : SFString('identifier'),
-              content_ : SFString('https://coderextreme.net/X3DJSONLD/bubbles.x3d')),
+              content_ : SFString('Bubbles.x3d')),
 
             meta(
               name_ : SFString('description'),
-              content_ : SFString('not sure what this is'))]),
+              content_ : SFString('Bubble animation used by Nancy Diving example.')),
+
+            meta(
+              name_ : SFString('creator'),
+              content_ : SFString('Etsuko Lippi')),
+
+            meta(
+              name_ : SFString('created'),
+              content_ : SFString('24 January 2001')),
+
+            meta(
+              name_ : SFString('modified'),
+              content_ : SFString('23 May 2020')),
+
+            meta(
+              name_ : SFString('identifier'),
+              content_ : SFString('https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/Bubbles.x3d')),
+
+            meta(
+              name_ : SFString('generator'),
+              content_ : SFString('X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit')),
+
+            meta(
+              name_ : SFString('license'),
+              content_ : SFString('../license.html'))]),
       Scene_ : 
         Scene(
           children_ : [
-            NavigationInfo(
-              type_ : MFString([SFString("EXAMINE")])),
-
-            Viewpoint(
-              DEF_ : SFString('Tour'),
-              description_ : SFString('Tour Views')),
-
-            Viewpoint(
-              position_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(4)]),
-              description_ : SFString('sphere in road')),
-
-            Background(
-              backUrl_ : MFString([SFString("../resources/images/all_probes/uffizi_cross/uffizi_back.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_back.png")]),
-              bottomUrl_ : MFString([SFString("../resources/images/all_probes/uffizi_cross/uffizi_bottom.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_bottom.png")]),
-              frontUrl_ : MFString([SFString("../resources/images/all_probes/uffizi_cross/uffizi_front.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_front.png")]),
-              leftUrl_ : MFString([SFString("../resources/images/all_probes/uffizi_cross/uffizi_left.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_left.png")]),
-              rightUrl_ : MFString([SFString("../resources/images/all_probes/uffizi_cross/uffizi_right.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_right.png")]),
-              topUrl_ : MFString([SFString("../resources/images/all_probes/uffizi_cross/uffizi_top.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_top.png")])),
+            WorldInfo(
+              title_ : SFString('Bubbles.x3d')),
 
             Transform(
-              DEF_ : SFString('Rose01'),
+              DEF_ : SFString('Bubbles'),
               children_ : [
-                Shape(
-                  geometry_ : 
-                    Sphere(),
-                  appearance_ : 
-                    Appearance(
-                      DEF_ : SFString('_01_-_Default'),
-                      material_ : 
-                        Material(
-                          diffuseColor_ : SFColor([SFDouble(0.7), SFDouble(0.7), SFDouble(0.7)]),
-                          specularColor_ : SFColor([SFDouble(0.5), SFDouble(0.5), SFDouble(0.5)])),
-                      texture_ : 
-                        ComposedCubeMapTexture(
-                          topTexture_ : 
-                            ImageTexture(
-                              url_ : MFString([SFString("../resources/images/all_probes/uffizi_cross/uffizi_back.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_back.png")])),
-                          topTexture_ : 
-                            ImageTexture(
-                              url_ : MFString([SFString("../resources/images/all_probes/uffizi_cross/uffizi_bottom.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_bottom.png")])),
-                          topTexture_ : 
-                            ImageTexture(
-                              url_ : MFString([SFString("../resources/images/all_probes/uffizi_cross/uffizi_front.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_front.png")])),
-                          topTexture_ : 
-                            ImageTexture(
-                              url_ : MFString([SFString("../resources/images/all_probes/uffizi_cross/uffizi_left.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_left.png")])),
-                          topTexture_ : 
-                            ImageTexture(
-                              url_ : MFString([SFString("../resources/images/all_probes/uffizi_cross/uffizi_right.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_right.png")])),
-                          topTexture_ : 
-                            ImageTexture(
-                              url_ : MFString([SFString("../resources/images/all_probes/uffizi_cross/uffizi_top.png"), SFString("https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/uffizi_cross/uffizi_top.png")]))),
-                      shaders_ : 
-                        ComposedShader(
-                          DEF_ : SFString('x_ite'),
-                          language_ : SFString('GLSL'),
-                          field_ : [
-                            field(
-                              type_ : SFString("SFInt32"),
-                              name_ : SFString('cube'),
-                              accessType_ : SFString("inputOutput"),
-                              value_ : SFString('0')),
+                Group(
+                  DEF_ : SFString('Bubble'),
+                  children_ : [
+                    TimeSensor(
+                      DEF_ : SFString('BubbleClock'),
+                      cycleInterval_ : 6,
+                      loop_ : true),
 
-                            field(
-                              type_ : SFString("SFVec3f"),
-                              name_ : SFString('chromaticDispertion'),
-                              accessType_ : SFString("inputOutput"),
-                              value_ : SFString('0.98 1 1.033')),
+                    PositionInterpolator(
+                      DEF_ : SFString('BubblePath1'),
+                      key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(0.8), SFFloat(0.9), SFFloat(1)]),
+                      keyValue_ : MFVec3f([SFVec3f([0,0,0]),SFVec3f([0.75,0.75,0.75]),SFVec3f([0.86,0.86,0.86]),SFVec3f([0.99,0.998,0.9876]),SFVec3f([1.272,1.9044,0.9509])])),
 
-                            field(
-                              type_ : SFString("SFFloat"),
-                              name_ : SFString('bias'),
-                              accessType_ : SFString("inputOutput"),
-                              value_ : SFString('0.5')),
+                    PositionInterpolator(
+                      DEF_ : SFString('BubblePath2'),
+                      key_ : MFFloat([SFFloat(0), SFFloat(0.3), SFFloat(0.64), SFFloat(0.85), SFFloat(1)]),
+                      keyValue_ : MFVec3f([SFVec3f([0.1,0.1,0.1]),SFVec3f([0.2,0.4,0.25]),SFVec3f([0.3,0.5,0.46]),SFVec3f([0.75,0.5,0.575]),SFVec3f([0.038483478,1.989,1.098373])])),
 
-                            field(
-                              type_ : SFString("SFFloat"),
-                              name_ : SFString('scale'),
-                              accessType_ : SFString("inputOutput"),
-                              value_ : SFString('0.5')),
+                    PositionInterpolator(
+                      DEF_ : SFString('BubblePath3'),
+                      key_ : MFFloat([SFFloat(0), SFFloat(0.1), SFFloat(0.45), SFFloat(0.7), SFFloat(1)]),
+                      keyValue_ : MFVec3f([SFVec3f([0.01,0.01,0.01]),SFVec3f([0.25,0.35,0.0045]),SFVec3f([0.55,0.6,0.0055]),SFVec3f([0.66,0.665,0.00655]),SFVec3f([1.555,1.09043,0.005734])])),
 
-                            field(
-                              type_ : SFString("SFFloat"),
-                              name_ : SFString('power'),
-                              accessType_ : SFString("inputOutput"),
-                              value_ : SFString('2')),
-                          parts_ : 
-                            ShaderPart(
-                              type_ : SFString("VERTEX",
-                              url_ : MFString([SFString("../shaders/x_ite.vs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs")]))],
-                          parts_ : 
-                            ShaderPart(
-                              type_ : SFString("FRAGMENT",
-                              url_ : MFString([SFString("../shaders/x_itebubbles.fs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs")]))),
-                      shaders_ : 
-                        ComposedShader(
-                          DEF_ : SFString('x3dom'),
-                          language_ : SFString('GLSL'),
-                          field_ : [
-                            field(
-                              type_ : SFString("SFInt32"),
-                              name_ : SFString('cube'),
-                              accessType_ : SFString("inputOutput"),
-                              value_ : SFString('0')),
+                    PositionInterpolator(
+                      DEF_ : SFString('BubblePath4'),
+                      key_ : MFFloat([SFFloat(0), SFFloat(0.5), SFFloat(0.6), SFFloat(0.8), SFFloat(1)]),
+                      keyValue_ : MFVec3f([SFVec3f([0,0,0]),SFVec3f([0.5,0.5,0.005]),SFVec3f([0.6,0.6,0.006]),SFVec3f([0.75,0.75,0.0075]),SFVec3f([1.948594,1.3983,0.009009349])])),
 
-                            field(
-                              type_ : SFString("SFVec3f"),
-                              name_ : SFString('chromaticDispertion'),
-                              accessType_ : SFString("inputOutput"),
-                              value_ : SFString('0.98 1 1.033')),
+                    PositionInterpolator(
+                      DEF_ : SFString('BubblePath5'),
+                      key_ : MFFloat([SFFloat(0), SFFloat(0.25), SFFloat(0.35), SFFloat(0.65), SFFloat(1)]),
+                      keyValue_ : MFVec3f([SFVec3f([0,0,0]),SFVec3f([0.5,0.5,0.005]),SFVec3f([0.6,0.6,0.006]),SFVec3f([0.75,0.75,0.0075]),SFVec3f([1.84444,1.22222,0.1])])),
 
-                            field(
-                              type_ : SFString("SFFloat"),
-                              name_ : SFString('bias'),
-                              accessType_ : SFString("inputOutput"),
-                              value_ : SFString('0.5')),
+                    PositionInterpolator(
+                      DEF_ : SFString('BubblePath6'),
+                      key_ : MFFloat([SFFloat(0), SFFloat(0.15), SFFloat(0.22235), SFFloat(0.55565), SFFloat(1)]),
+                      keyValue_ : MFVec3f([SFVec3f([0,0,0]),SFVec3f([0.235,0.3455,0.0055]),SFVec3f([0.356,0.676,0.00456]),SFVec3f([0.5675,0.75,0.0074565]),SFVec3f([1.098,1.0343,0.14])])),
 
-                            field(
-                              type_ : SFString("SFFloat"),
-                              name_ : SFString('scale'),
-                              accessType_ : SFString("inputOutput"),
-                              value_ : SFString('0.5')),
+                    PositionInterpolator(
+                      DEF_ : SFString('BubblePath7'),
+                      key_ : MFFloat([SFFloat(0), SFFloat(0.2425), SFFloat(0.4535), SFFloat(0.6775), SFFloat(1)]),
+                      keyValue_ : MFVec3f([SFVec3f([0,0,0]),SFVec3f([0.12345,0.2225,0.00335]),SFVec3f([0.786,0.456,0.00666]),SFVec3f([0.74555,0.7335,0.00234575]),SFVec3f([0.08787,1.022,0.12])])),
 
-                            field(
-                              type_ : SFString("SFFloat"),
-                              name_ : SFString('power'),
-                              accessType_ : SFString("inputOutput"),
-                              value_ : SFString('2')),
-                          parts_ : 
-                            ShaderPart(
-                              type_ : SFString("VERTEX",
-                              url_ : MFString([SFString("../shaders/x3dom.vs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs")]))],
-                          parts_ : 
-                            ShaderPart(
-                              type_ : SFString("FRAGMENT",
-                              url_ : MFString([SFString("../shaders/pc_bubbles.fs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs")])))))]),
+                    PositionInterpolator(
+                      DEF_ : SFString('BubblePath8'),
+                      key_ : MFFloat([SFFloat(0), SFFloat(0.1125), SFFloat(0.5535), SFFloat(0.97865), SFFloat(1)]),
+                      keyValue_ : MFVec3f([SFVec3f([0,0,0]),SFVec3f([0.1235,0.05,0.00125]),SFVec3f([0.5666,0.4346,0.005556]),SFVec3f([0.8975,0.34575,0.0098775]),SFVec3f([1.8787,1.686,0.86])])),
 
-            TimeSensor(
-              DEF_ : SFString('TourTime'),
-              cycleInterval_ : 5,
-              loop_ : true),
+                    PositionInterpolator(
+                      DEF_ : SFString('BubblePath9'),
+                      key_ : MFFloat([SFFloat(0), SFFloat(0.0025), SFFloat(0.035), SFFloat(0.65), SFFloat(1)]),
+                      keyValue_ : MFVec3f([SFVec3f([0,0,0]),SFVec3f([0.522,0.5445,0.0057]),SFVec3f([0.6543,0.226,0.0055]),SFVec3f([0.45575,0.4375,0.0067]),SFVec3f([1.8787,2,0.1545])])),
 
-            PositionInterpolator(
-              DEF_ : SFString('TourPosition'),
-              key_ : MFFloat([SFFloat(0), SFFloat(1)]),
-              keyValue_ : MFVec3f([SFVec3f([0,0,10]),SFVec3f([0,0,-10])])),
+                    PositionInterpolator(
+                      DEF_ : SFString('BubblePath10'),
+                      key_ : MFFloat([SFFloat(0), SFFloat(0.00025), SFFloat(0.035), SFFloat(0.6895), SFFloat(1)]),
+                      keyValue_ : MFVec3f([SFVec3f([0,0,0]),SFVec3f([0.8765,0.445,0.00335]),SFVec3f([0.3336,0.4446,0.005556]),SFVec3f([0.765,0.75,0.0075]),SFVec3f([1,1,0.1])])),
 
-            OrientationInterpolator(
-              DEF_ : SFString('TourOrientation'),
-              key_ : MFFloat([SFFloat(0), SFFloat(1)]),
-              keyValue_ : MFRotation([SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(0), SFRotation(0), SFRotation(1), SFRotation(0), SFRotation(3.1416)])),
+                    Transform(
+                      children_ : [
+                        Transform(
+                          DEF_ : SFString('bubble1'),
+                          children_ : [
+                            Shape(
+                              appearance_ : 
+                                Appearance(
+                                  material_ : 
+                                    Material(
+                                      diffuseColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(1)]),
+                                      transparency_ : 0.8)),
+                              geometry_ : 
+                                Sphere(
+                                  radius_ : 0.025))]),
 
-            Script(
-              DEF_ : SFString('RandomTourTime'),
-              field_ : [
-                field(
-                  type_ : SFString("SFTime"),
-                  name_ : SFString('set_cycle'),
-                  accessType_ : SFString("inputOnly")),
+                        Transform(
+                          DEF_ : SFString('bubble2'),
+                          children_ : [
+                            Shape(
+                              appearance_ : 
+                                Appearance(
+                                  material_ : 
+                                    Material(
+                                      diffuseColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(1)]),
+                                      transparency_ : 0.8)),
+                              geometry_ : 
+                                Sphere(
+                                  radius_ : 0.055))]),
 
-                field(
-                  type_ : SFString("SFFloat"),
-                  name_ : SFString('lastKey'),
-                  accessType_ : SFString("inputOutput"),
-                  value_ : SFString('0')),
+                        Transform(
+                          DEF_ : SFString('bubble3'),
+                          children_ : [
+                            Shape(
+                              appearance_ : 
+                                Appearance(
+                                  material_ : 
+                                    Material(
+                                      diffuseColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(1)]),
+                                      transparency_ : 0.8)),
+                              geometry_ : 
+                                Sphere(
+                                  radius_ : 0.065))]),
 
-                field(
-                  type_ : SFString("MFRotation"),
-                  name_ : SFString('orientations'),
-                  accessType_ : SFString("inputOutput"),
-                  value_ : SFString('0 1 0 0 0 1 0 -1.57 0 1 0 3.14 0 1 0 1.57 0 1 0 0 1 0 0 -1.57 0 1 0 0 1 0 0 1.57 0 1 0 0')),
+                        Transform(
+                          DEF_ : SFString('bubble4'),
+                          children_ : [
+                            Shape(
+                              appearance_ : 
+                                Appearance(
+                                  material_ : 
+                                    Material(
+                                      diffuseColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(1)]),
+                                      transparency_ : 0.8)),
+                              geometry_ : 
+                                Sphere(
+                                  radius_ : 0.015))]),
 
-                field(
-                  type_ : SFString("MFVec3f"),
-                  name_ : SFString('positions'),
-                  accessType_ : SFString("inputOutput"),
-                  value_ : SFString('0 0 10 -10 0 0 0 0 -10 10 0 0 0 0 10 0 10 0 0 0 10 0 -10 0 0 0 10')),
+                        Transform(
+                          DEF_ : SFString('bubble5'),
+                          children_ : [
+                            Shape(
+                              appearance_ : 
+                                Appearance(
+                                  material_ : 
+                                    Material(
+                                      diffuseColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(1)]),
+                                      transparency_ : 0.8)),
+                              geometry_ : 
+                                Sphere(
+                                  radius_ : 0.075))]),
 
-                field(
-                  type_ : SFString("SFFloat"),
-                  name_ : SFString('fraction_changed'),
-                  accessType_ : SFString("outputOnly")),
+                        Transform(
+                          DEF_ : SFString('bubble6'),
+                          children_ : [
+                            Shape(
+                              appearance_ : 
+                                Appearance(
+                                  material_ : 
+                                    Material(
+                                      diffuseColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(1)]),
+                                      transparency_ : 0.8)),
+                              geometry_ : 
+                                Sphere(
+                                  radius_ : 0.005))]),
 
-                field(
-                  type_ : SFString("MFVec3f"),
-                  name_ : SFString('position_changed'),
-                  accessType_ : SFString("outputOnly")),
+                        Transform(
+                          DEF_ : SFString('bubble7'),
+                          children_ : [
+                            Shape(
+                              appearance_ : 
+                                Appearance(
+                                  material_ : 
+                                    Material(
+                                      diffuseColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(1)]),
+                                      transparency_ : 0.8)),
+                              geometry_ : 
+                                Sphere(
+                                  radius_ : 0.035))]),
 
-                field(
-                  type_ : SFString("MFRotation"),
-                  name_ : SFString('set_orientation'),
-                  accessType_ : SFString("inputOnly")),
+                        Transform(
+                          DEF_ : SFString('bubble8'),
+                          children_ : [
+                            Shape(
+                              appearance_ : 
+                                Appearance(
+                                  material_ : 
+                                    Material(
+                                      diffuseColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(1)]),
+                                      transparency_ : 0.8)),
+                              geometry_ : 
+                                Sphere(
+                                  radius_ : 0.05))]),
 
-                field(
-                  type_ : SFString("MFRotation"),
-                  name_ : SFString('orientation_changed'),
-                  accessType_ : SFString("outputOnly")),
-              ],
-ecmascript:eval (0
-               , function set_cycle(value) {
-	       	   try {
-                        var ov = lastKey;
-                        do {
-                            lastKey = Math.round(Math.random()*(positions.length-1));
-                        } while (lastKey === ov);
-                        var vc = lastKey;
+                        Transform(
+                          DEF_ : SFString('bubble9'),
+                          children_ : [
+                            Shape(
+                              appearance_ : 
+                                Appearance(
+                                  material_ : 
+                                    Material(
+                                      diffuseColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(1)]),
+                                      transparency_ : 0.8)),
+                              geometry_ : 
+                                Sphere(
+                                  radius_ : 0.045))]),
 
-                        position_changed[0] = positions[ov];
-                        position_changed[1] = positions[vc];
+                        Transform(
+                          DEF_ : SFString('bubble10'),
+                          children_ : [
+                            Shape(
+                              appearance_ : 
+                                Appearance(
+                                  material_ : 
+                                    Material(
+                                      diffuseColor_ : SFColor([SFDouble(1), SFDouble(1), SFDouble(1)]),
+                                      transparency_ : 0.8)),
+                              geometry_ : 
+                                Sphere(
+                                  radius_ : 0.035))]),
 
-                        orientation_changed[0] = orientations[ov];
-                        orientation_changed[1] = orientations[vc];
+                        ROUTE(
+                          fromField_ : SFString('fraction_changed'),
+                          fromNode_ : SFString('BubbleClock'),
+                          toField_ : SFString('set_fraction'),
+                          toNode_ : SFString('BubblePath1')),
 
-                        fraction_changed = 0;
-		   } catch (e) {
-		   	if (typeof console.log === ', function') {
-				console.log(e);
-			}
-		   }
-               })),
+                        ROUTE(
+                          fromField_ : SFString('fraction_changed'),
+                          fromNode_ : SFString('BubbleClock'),
+                          toField_ : SFString('set_fraction'),
+                          toNode_ : SFString('BubblePath2')),
 
-            ROUTE(
-              fromNode_ : SFString('TourTime'),
-              fromField_ : SFString('cycleTime'),
-              toNode_ : SFString('RandomTourTime'),
-              toField_ : SFString('set_cycle')),
+                        ROUTE(
+                          fromField_ : SFString('fraction_changed'),
+                          fromNode_ : SFString('BubbleClock'),
+                          toField_ : SFString('set_fraction'),
+                          toNode_ : SFString('BubblePath3')),
 
-            ROUTE(
-              fromNode_ : SFString('RandomTourTime'),
-              fromField_ : SFString('fraction_changed'),
-              toNode_ : SFString('TourOrientation'),
-              toField_ : SFString('set_fraction')),
+                        ROUTE(
+                          fromField_ : SFString('fraction_changed'),
+                          fromNode_ : SFString('BubbleClock'),
+                          toField_ : SFString('set_fraction'),
+                          toNode_ : SFString('BubblePath4')),
 
-            ROUTE(
-              fromNode_ : SFString('RandomTourTime'),
-              fromField_ : SFString('fraction_changed'),
-              toNode_ : SFString('TourPosition'),
-              toField_ : SFString('set_fraction')),
+                        ROUTE(
+                          fromField_ : SFString('fraction_changed'),
+                          fromNode_ : SFString('BubbleClock'),
+                          toField_ : SFString('set_fraction'),
+                          toNode_ : SFString('BubblePath5')),
 
-            ROUTE(
-              fromNode_ : SFString('RandomTourTime'),
-              fromField_ : SFString('orientation_changed'),
-              toNode_ : SFString('TourOrientation'),
-              toField_ : SFString('set_keyValue')),
+                        ROUTE(
+                          fromField_ : SFString('fraction_changed'),
+                          fromNode_ : SFString('BubbleClock'),
+                          toField_ : SFString('set_fraction'),
+                          toNode_ : SFString('BubblePath6')),
 
-            ROUTE(
-              fromNode_ : SFString('RandomTourTime'),
-              fromField_ : SFString('position_changed'),
-              toNode_ : SFString('TourPosition'),
-              toField_ : SFString('set_keyValue')),
+                        ROUTE(
+                          fromField_ : SFString('fraction_changed'),
+                          fromNode_ : SFString('BubbleClock'),
+                          toField_ : SFString('set_fraction'),
+                          toNode_ : SFString('BubblePath7')),
 
-            ROUTE(
-              fromNode_ : SFString('TourTime'),
-              fromField_ : SFString('fraction_changed'),
-              toNode_ : SFString('TourOrientation'),
-              toField_ : SFString('set_fraction')),
+                        ROUTE(
+                          fromField_ : SFString('fraction_changed'),
+                          fromNode_ : SFString('BubbleClock'),
+                          toField_ : SFString('set_fraction'),
+                          toNode_ : SFString('BubblePath8')),
 
-            ROUTE(
-              fromNode_ : SFString('TourOrientation'),
-              fromField_ : SFString('value_changed'),
-              toNode_ : SFString('Tour'),
-              toField_ : SFString('set_orientation')),
+                        ROUTE(
+                          fromField_ : SFString('fraction_changed'),
+                          fromNode_ : SFString('BubbleClock'),
+                          toField_ : SFString('set_fraction'),
+                          toNode_ : SFString('BubblePath9')),
 
-            ROUTE(
-              fromNode_ : SFString('TourTime'),
-              fromField_ : SFString('fraction_changed'),
-              toNode_ : SFString('TourPosition'),
-              toField_ : SFString('set_fraction')),
+                        ROUTE(
+                          fromField_ : SFString('fraction_changed'),
+                          fromNode_ : SFString('BubbleClock'),
+                          toField_ : SFString('set_fraction'),
+                          toNode_ : SFString('BubblePath10')),
 
-            ROUTE(
-              fromNode_ : SFString('TourPosition'),
-              fromField_ : SFString('value_changed'),
-              toNode_ : SFString('Tour'),
-              toField_ : SFString('set_position'))]));
+                        ROUTE(
+                          fromField_ : SFString('value_changed'),
+                          fromNode_ : SFString('BubblePath1'),
+                          toField_ : SFString('set_translation'),
+                          toNode_ : SFString('bubble1')),
+
+                        ROUTE(
+                          fromField_ : SFString('value_changed'),
+                          fromNode_ : SFString('BubblePath2'),
+                          toField_ : SFString('set_translation'),
+                          toNode_ : SFString('bubble2')),
+
+                        ROUTE(
+                          fromField_ : SFString('value_changed'),
+                          fromNode_ : SFString('BubblePath3'),
+                          toField_ : SFString('set_translation'),
+                          toNode_ : SFString('bubble3')),
+
+                        ROUTE(
+                          fromField_ : SFString('value_changed'),
+                          fromNode_ : SFString('BubblePath4'),
+                          toField_ : SFString('set_translation'),
+                          toNode_ : SFString('bubble4')),
+
+                        ROUTE(
+                          fromField_ : SFString('value_changed'),
+                          fromNode_ : SFString('BubblePath5'),
+                          toField_ : SFString('set_translation'),
+                          toNode_ : SFString('bubble5')),
+
+                        ROUTE(
+                          fromField_ : SFString('value_changed'),
+                          fromNode_ : SFString('BubblePath6'),
+                          toField_ : SFString('set_translation'),
+                          toNode_ : SFString('bubble6')),
+
+                        ROUTE(
+                          fromField_ : SFString('value_changed'),
+                          fromNode_ : SFString('BubblePath7'),
+                          toField_ : SFString('set_translation'),
+                          toNode_ : SFString('bubble7')),
+
+                        ROUTE(
+                          fromField_ : SFString('value_changed'),
+                          fromNode_ : SFString('BubblePath8'),
+                          toField_ : SFString('set_translation'),
+                          toNode_ : SFString('bubble8')),
+
+                        ROUTE(
+                          fromField_ : SFString('value_changed'),
+                          fromNode_ : SFString('BubblePath9'),
+                          toField_ : SFString('set_translation'),
+                          toNode_ : SFString('bubble9')),
+
+                        ROUTE(
+                          fromField_ : SFString('value_changed'),
+                          fromNode_ : SFString('BubblePath10'),
+                          toField_ : SFString('set_translation'),
+                          toNode_ : SFString('bubble10'))])])]),
+
+            Background(
+              skyColor_ : MFColor([SFColor(0), SFColor(0), SFColor(0.6)]))]));
 void main() { exit(0); }

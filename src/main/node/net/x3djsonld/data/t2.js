@@ -60,15 +60,15 @@ t2.prototype = {
     .addMeta((new autoclass.meta()).setName("generator").setContent("view3dscene, https://castle-engine.io/view3dscene.php"))
     .addMeta((new autoclass.meta()).setName("source").setContent("t1.wrl")))
   .setScene((new autoclass.Scene())
-    .addChild((new autoclass.NavigationInfo()).setType(new autoclass.MFString("\"EXAMINE\" \"FLY\" \"WALK\"")).setAvatarSize(java.newArray("float", [200.0,200.0,120.0])).setSpeed(3))
+    .addChild((new autoclass.NavigationInfo()).setAvatarSize(java.newArray("float", [200.0,200.0,120.0])).setSpeed(3).setType("\"EXAMINE\" \"FLY\" \"WALK\""))
     .addChild((new autoclass.WorldInfo()).setTitle("Arts Mapper"))
-    .addChild((new autoclass.Viewpoint()).setDescription("looking North").setPosition(0.0,60.0,110.0).setFieldOfView(0.785398125648499).setOrientation(1.0,0.0,0.0,-0.699999988079071))
-    .addChild((new autoclass.Viewpoint()).setDescription("looking East").setPosition(-140.0,30.0,0.0).setOrientation(0.0,0.400000005960464,0.0,-1.39999997615814).setFieldOfView(0.785398125648499))
-    .addChild((new autoclass.Viewpoint()).setDescription("Overhead").setPosition(0.0,150.0,0.0).setFieldOfView(0.785398125648499).setOrientation(1.0,0.0,0.0,-1.57000005245209))
+    .addChild((new autoclass.Viewpoint()).setDescription("looking North").setFieldOfView(0.785398125648499).setOrientation(1.0,0.0,0.0,-0.699999988079071).setPosition(0.0,60.0,110.0))
+    .addChild((new autoclass.Viewpoint()).setDescription("looking East").setFieldOfView(0.785398125648499).setOrientation(0.0,0.400000005960464,0.0,-1.39999997615814).setPosition(-140.0,30.0,0.0))
+    .addChild((new autoclass.Viewpoint()).setDescription("Overhead").setFieldOfView(0.785398125648499).setOrientation(1.0,0.0,0.0,-1.57000005245209).setPosition(0.0,150.0,0.0))
     .addChild((new autoclass.ProtoDeclare()).setName("org")
       .setProtoInterface((new autoclass.ProtoInterface())
-        .addField((new autoclass.field()).setAccessType("initializeOnly").setName("posi").setType("SFVec3f").setValue("0 0 0"))
-        .addField((new autoclass.field()).setAccessType("initializeOnly").setName("col").setType("SFColor").setValue("0 0 0")))
+        .addField((new autoclass.field()).setName("posi").setType("SFVec3f").setAccessType("initializeOnly").setValue("0 0 0"))
+        .addField((new autoclass.field()).setName("col").setType("SFColor").setAccessType("initializeOnly").setValue("0 0 0")))
       .setProtoBody((new autoclass.ProtoBody())
         .addChild((new autoclass.Transform())
           .addChild((new autoclass.Shape())
@@ -81,15 +81,15 @@ t2.prototype = {
             .addConnect((new autoclass.connect()).setNodeField("translation").setProtoField("posi"))))))
     .addChild((new autoclass.ProtoDeclare()).setName("r")
       .setProtoInterface((new autoclass.ProtoInterface())
-        .addField((new autoclass.field()).setAccessType("initializeOnly").setName("pos").setType("SFVec3f").setValue("0 0 0")))
+        .addField((new autoclass.field()).setName("pos").setType("SFVec3f").setAccessType("initializeOnly").setValue("0 0 0")))
       .setProtoBody((new autoclass.ProtoBody())
-        .addChild((new autoclass.ProtoInstance()).setName("org")
+        .addChild((new autoclass.ProtoInstance())
           .addFieldValue((new autoclass.fieldValue()).setName("col").setValue("0 0.300000011920929 1"))
           .addFieldValue((new autoclass.fieldValue()).setName("posi"))
           .setIS((new autoclass.IS())
             .addConnect((new autoclass.connect()).setNodeField("posi").setProtoField("pos"))))))
     .addChild((new autoclass.Anchor()).setDescription("High Peak Community Arts").setUrl(new autoclass.MFString("\"javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');\""))
-      .addChild((new autoclass.ProtoInstance()).setName("r")
+      .addChild((new autoclass.ProtoInstance())
         .addFieldValue((new autoclass.fieldValue()).setName("pos").setValue("400 0.100000001490116 -385")))));
   },
   // end of initialize() method
@@ -149,4 +149,3 @@ t2.prototype = {
 	}
 }
 new t2().main();
-process.exit(0);

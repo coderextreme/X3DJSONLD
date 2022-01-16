@@ -15,7 +15,7 @@ component3.setLevel(2)
 head1.addComponent(component3)
 meta4 = meta()
 meta4.setName("title")
-meta4.setContent("t4.x3d")
+meta4.setContent("t3.x3d")
 
 head1.addMeta(meta4)
 meta5 = meta()

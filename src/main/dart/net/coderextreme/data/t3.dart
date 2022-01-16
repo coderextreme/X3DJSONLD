@@ -18,7 +18,7 @@ var X3D0 =  X3D(
           meta_ : [
             meta(
               name_ : SFString('title'),
-              content_ : SFString('t4.x3d')),
+              content_ : SFString('t3.x3d')),
 
             meta(
               name_ : SFString('identifier'),

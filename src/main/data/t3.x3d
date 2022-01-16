@@ -2,7 +2,7 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D  profile="Immersive" version="3.3" ><head><component name="Networking" level="2"></component>
 <component name="Core" level="2"></component>
-<meta name="title" content="t4.x3d"></meta>
+<meta name="title" content="t3.x3d"></meta>
 <meta name="identifier" content="http://coderextreme.net/X3DJSONLD/src/main/data/t4.x3d"></meta>
 <meta name="generator" content="view3dscene, https://castle-engine.io/view3dscene.php"></meta>
 <meta name="creator" content="Andreas Plesch and John Carlson"></meta>

@@ -26,7 +26,7 @@ head1->addComponent(*component3);
 
 Cmeta* meta4 = new Cmeta();
 meta4->setName("title");
-meta4->setContent("t4.x3d");
+meta4->setContent("t3.x3d");
 head1->addMeta(*meta4);
 
 Cmeta* meta5 = new Cmeta();

@@ -35,7 +35,7 @@ var X3D0 =  new X3D({
           meta : new MFNode([
             new meta({
               name : new SFString("title"),
-              content : new SFString("rubik2x2x2.x3d")}),
+              content : new SFString("rubikcoord.x3d")}),
 
             new meta({
               name : new SFString("creator"),

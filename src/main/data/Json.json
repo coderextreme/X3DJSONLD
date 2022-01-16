@@ -74,7 +74,7 @@
         "meta": [
           {
             "@name":"title",
-            "@content":"HelloWorldProgramOutput.x3d"
+            "@content":"Json.x3d"
           },
           {
             "@name":"info",
@@ -166,7 +166,7 @@
           },
           {
             "@name":"translated",
-            "@content":"15 January 2022"
+            "@content":"16 January 2022"
           },
           {
             "@name":"generator",

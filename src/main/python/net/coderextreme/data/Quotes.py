@@ -31,7 +31,7 @@ unit5.setConversionFactor(1)
 head1.addUnit(unit5)
 meta6 = meta()
 meta6.setName("title")
-meta6.setContent("HelloWorldProgramOutput.x3d")
+meta6.setContent("Quotes.x3d")
 
 head1.addMeta(meta6)
 meta7 = meta()

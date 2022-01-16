@@ -119,7 +119,7 @@ newModel=X3D(profile='Immersive',version='3.3',
             connect(nodeField='rotscalenode',protoField='rotscalenode'),
             connect(nodeField='set_startpoint',protoField='set_startpoint'),
             connect(nodeField='set_endpoint',protoField='set_endpoint')])
-*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
 )])),
     ProtoInstance(name='x3dconnector',DEF='connector1',
       fieldValue=[

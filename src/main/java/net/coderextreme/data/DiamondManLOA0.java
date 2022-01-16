@@ -82,13 +82,13 @@ public class DiamondManLOA0 {
             .addValue(new MetadataString().setName("creationDate").setValue(new MFString4().getArray()))
             .addValue(new MetadataString().setName("humanoidVersion").setValue(new MFString5().getArray()))
             .addValue(new MetadataString().setName("usageRestrictions").setValue(new MFString6().getArray())))
-          .addSkeleton(new HAnimJoint().setName("humanoid_root").setDEF("hanim_humanoid_root").setCenter(new float[] {0f,0.824f,0.0277f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
-            .addChild(new HAnimJoint().setName("sacroiliac").setDEF("hanim_sacroiliac").setCenter(new float[] {0f,0.9149f,0.0016f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+          .addSkeleton(new HAnimJoint().setName("humanoid_root").setDEF("hanim_humanoid_root").setCenter(new float[] {0f,0.824f,0.0277f}).setUlimit(new MFFloat7().getArray()).setLlimit(new MFFloat8().getArray())
+            .addChild(new HAnimJoint().setName("sacroiliac").setDEF("hanim_sacroiliac").setCenter(new float[] {0f,0.9149f,0.0016f}).setUlimit(new MFFloat9().getArray()).setLlimit(new MFFloat10().getArray())
               .addChild(new HAnimSegment().setName("pelvis").setDEF("hanim_pelvis")
                 .addChild(new Transform().setTranslation(new float[] {0f,0.9149f,0.0016f})
                   .addChild(new Shape().setDEF("DiamondShape")
-                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt327().getArray()).setCreaseAngle(0.5f)
-                      .setCoord(new Coordinate().setPoint(new MFVec3f8().getArray())))
+                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3211().getArray()).setCreaseAngle(0.5f)
+                      .setCoord(new Coordinate().setPoint(new MFVec3f12().getArray())))
                     .setAppearance(new Appearance()
                       .setMaterial(new Material().setDiffuseColor(new float[] {1f,1f,0f}))))))))
           .addViewpoints(new HAnimSite().setName("site_view").setDEF("hanim_site_view")
@@ -136,12 +136,32 @@ protected class MFString6 {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose."});
   }
 }
-protected class MFInt327 {
+protected class MFFloat7 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFFloat8 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFFloat9 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFFloat10 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFInt3211 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
   }
 }
-protected class MFVec3f8 {
+protected class MFVec3f12 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0.01f,0f,-0.01f,0f,0f,0f,0f,0.01f,0.01f,0f,0f,0f,0f,-0.01f,0f,-0.01f,0f});
   }

@@ -84,34 +84,34 @@ group->addChildren(*Viewpoint15);
 
 CTextureBackground* TextureBackground16 = (CTextureBackground *)(m_pScene.createNode("TextureBackground"));
 CImageTexture* ImageTexture17 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture17->setDEF("leftBack");
+ImageTexture17->setDEF("leftBackTexture");
 ImageTexture17->setUrl(new CString[2]{"../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"}, 2);
-TextureBackground16->setLeft(*ImageTexture17);
+TextureBackground16->setLeftTexture(*ImageTexture17);
 
 CImageTexture* ImageTexture18 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture18->setDEF("rightBack");
+ImageTexture18->setDEF("rightBackTexture");
 ImageTexture18->setUrl(new CString[2]{"../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"}, 2);
-TextureBackground16->setRight(*ImageTexture18);
+TextureBackground16->setRightTexture(*ImageTexture18);
 
 CImageTexture* ImageTexture19 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture19->setDEF("frontBack");
+ImageTexture19->setDEF("frontBackTexture");
 ImageTexture19->setUrl(new CString[2]{"../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"}, 2);
-TextureBackground16->setFront(*ImageTexture19);
+TextureBackground16->setFrontTexture(*ImageTexture19);
 
 CImageTexture* ImageTexture20 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture20->setDEF("backBack");
+ImageTexture20->setDEF("backBackTexture");
 ImageTexture20->setUrl(new CString[2]{"../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"}, 2);
-TextureBackground16->setBack(*ImageTexture20);
+TextureBackground16->setBackTexture(*ImageTexture20);
 
 CImageTexture* ImageTexture21 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture21->setDEF("topBack");
+ImageTexture21->setDEF("topBackTexture");
 ImageTexture21->setUrl(new CString[2]{"../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"}, 2);
-TextureBackground16->setTop(*ImageTexture21);
+TextureBackground16->setTopTexture(*ImageTexture21);
 
 CImageTexture* ImageTexture22 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture22->setDEF("bottomBack");
+ImageTexture22->setDEF("bottomBackTexture");
 ImageTexture22->setUrl(new CString[2]{"../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"}, 2);
-TextureBackground16->setBottom(*ImageTexture22);
+TextureBackground16->setBottomTexture(*ImageTexture22);
 
 group->addChildren(*TextureBackground16);
 
@@ -127,32 +127,32 @@ CComposedCubeMapTexture* ComposedCubeMapTexture27 = (CComposedCubeMapTexture *)(
 CImageTexture* ImageTexture28 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
 ImageTexture28->setDEF("backShader");
 ImageTexture28->setUrl(new CString[2]{"../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"}, 2);
-ComposedCubeMapTexture27->setBack(*ImageTexture28);
+ComposedCubeMapTexture27->setBackTexture(*ImageTexture28);
 
 CImageTexture* ImageTexture29 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
 ImageTexture29->setDEF("bottomShader");
 ImageTexture29->setUrl(new CString[2]{"../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"}, 2);
-ComposedCubeMapTexture27->setBottom(*ImageTexture29);
+ComposedCubeMapTexture27->setBottomTexture(*ImageTexture29);
 
 CImageTexture* ImageTexture30 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
 ImageTexture30->setDEF("frontShader");
 ImageTexture30->setUrl(new CString[2]{"../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"}, 2);
-ComposedCubeMapTexture27->setFront(*ImageTexture30);
+ComposedCubeMapTexture27->setFrontTexture(*ImageTexture30);
 
 CImageTexture* ImageTexture31 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
 ImageTexture31->setDEF("leftShader");
 ImageTexture31->setUrl(new CString[2]{"../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"}, 2);
-ComposedCubeMapTexture27->setLeft(*ImageTexture31);
+ComposedCubeMapTexture27->setLeftTexture(*ImageTexture31);
 
 CImageTexture* ImageTexture32 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
 ImageTexture32->setDEF("rightShader");
 ImageTexture32->setUrl(new CString[2]{"../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"}, 2);
-ComposedCubeMapTexture27->setRight(*ImageTexture32);
+ComposedCubeMapTexture27->setRightTexture(*ImageTexture32);
 
 CImageTexture* ImageTexture33 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
 ImageTexture33->setDEF("topShader");
 ImageTexture33->setUrl(new CString[2]{"../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"}, 2);
-ComposedCubeMapTexture27->setTop(*ImageTexture33);
+ComposedCubeMapTexture27->setTopTexture(*ImageTexture33);
 
 Appearance25->setTexture(*ComposedCubeMapTexture27);
 
@@ -395,42 +395,42 @@ Transform23->addChildren(*ROUTE67);
 CROUTE* ROUTE68 = new CROUTE();
 ROUTE68->setFromNode("UrlSelector");
 ROUTE68->setFromField("front_changed");
-ROUTE68->setToNode("frontBack");
+ROUTE68->setToNode("frontBackTexture");
 ROUTE68->setToField("url");
 Transform23->addChildren(*ROUTE68);
 
 CROUTE* ROUTE69 = new CROUTE();
 ROUTE69->setFromNode("UrlSelector");
 ROUTE69->setFromField("back_changed");
-ROUTE69->setToNode("backBack");
+ROUTE69->setToNode("backBackTexture");
 ROUTE69->setToField("url");
 Transform23->addChildren(*ROUTE69);
 
 CROUTE* ROUTE70 = new CROUTE();
 ROUTE70->setFromNode("UrlSelector");
 ROUTE70->setFromField("left_changed");
-ROUTE70->setToNode("leftBack");
+ROUTE70->setToNode("leftBackTexture");
 ROUTE70->setToField("url");
 Transform23->addChildren(*ROUTE70);
 
 CROUTE* ROUTE71 = new CROUTE();
 ROUTE71->setFromNode("UrlSelector");
 ROUTE71->setFromField("right_changed");
-ROUTE71->setToNode("rightBack");
+ROUTE71->setToNode("rightBackTexture");
 ROUTE71->setToField("url");
 Transform23->addChildren(*ROUTE71);
 
 CROUTE* ROUTE72 = new CROUTE();
 ROUTE72->setFromNode("UrlSelector");
 ROUTE72->setFromField("top_changed");
-ROUTE72->setToNode("topBack");
+ROUTE72->setToNode("topBackTexture");
 ROUTE72->setToField("url");
 Transform23->addChildren(*ROUTE72);
 
 CROUTE* ROUTE73 = new CROUTE();
 ROUTE73->setFromNode("UrlSelector");
 ROUTE73->setFromField("bottom_changed");
-ROUTE73->setToNode("bottomBack");
+ROUTE73->setToNode("bottomBackTexture");
 ROUTE73->setToField("url");
 Transform23->addChildren(*ROUTE73);
 

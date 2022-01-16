@@ -212,18 +212,18 @@ flipp.prototype = {
     .addChild((new autoclass.Viewpoint("cam0")).setDescription("cam0 description").setPosition(0.0,0.0,800.0))
     .addChild((new autoclass.Viewpoint("cam1")).setDescription("cam1 description").setPosition(0.0,0.0,2000.0))
     .addChild((new autoclass.Viewpoint("cam2")).setDescription("cam2 description").setPosition(0.0,200.0,1000.0))
-    .addChild((new autoclass.Background()).setGroundColor(new autoclass.MFColor(java.newArray("float", [0.21,0.18,0.66,0.2,0.44,0.85,0.51,0.81,0.95,0.51,0.81,0.95]))).setSkyColor(new autoclass.MFColor(java.newArray("float", [0.21,0.18,0.66,0.2,0.44,0.85,0.51,0.81,0.95,0.51,0.81,0.95]))).setGroundAngle(java.newArray("float", [0.9,1.5,1.57])).setSkyAngle(java.newArray("float", [0.9,1.5,1.57])))
+    .addChild((new autoclass.Background()).setGroundAngle(java.newArray("float", [0.9,1.5,1.57])).setGroundColor(new autoclass.MFColor(java.newArray("float", [0.21,0.18,0.66,0.2,0.44,0.85,0.51,0.81,0.95,0.51,0.81,0.95]))).setSkyAngle(java.newArray("float", [0.9,1.5,1.57])).setSkyColor(new autoclass.MFColor(java.newArray("float", [0.21,0.18,0.66,0.2,0.44,0.85,0.51,0.81,0.95,0.51,0.81,0.95]))))
     .addChild((new autoclass.NavigationInfo("user01")).setSpeed(50))
     .addChild((new autoclass.Fog()))
     .addChild((new autoclass.Transform("trans")).setRotation(1.0,0.0,0.0,0.78)
       .addChild((new autoclass.Shape())
         .setAppearance((new autoclass.Appearance())
-          .setMaterial((new autoclass.Material("mat")).setDiffuseColor(0.337255,0.4,0.788235).setAmbientIntensity(0.508497).setSpecularColor(1.0,1.0,1.0)))
+          .setMaterial((new autoclass.Material("mat")).setAmbientIntensity(0.508497).setDiffuseColor(0.337255,0.4,0.788235).setSpecularColor(1.0,1.0,1.0)))
         .setGeometry((new autoclass.IndexedFaceSet()).setCreaseAngle(2).setCoordIndex(this.IndexedFaceSet_5_17_coordIndex)
           .setCoord((new autoclass.Coordinate("pointList")).setPoint(this.pointList_6_17_point)))))
     .addChild((new autoclass.TimeSensor("ts")).setCycleInterval(2).setLoop(true))
     .addChild((new autoclass.ScalarInterpolator("si")).setKey(java.newArray("float", [0.0,0.5,1.0])).setKeyValue(java.newArray("float", [0.0,1.0,0.0])))
-    .addChild((new autoclass.CoordinateInterpolator("ci")).setKeyValue(this.ci_3_23_keyValue).setKey(java.newArray("float", [0.0,0.5,1.0])))
+    .addChild((new autoclass.CoordinateInterpolator("ci")).setKey(java.newArray("float", [0.0,0.5,1.0])).setKeyValue(this.ci_3_23_keyValue))
     .addChild((new autoclass.ROUTE()).setFromNode("ci").setFromField("value_changed").setToNode("pointList").setToField("set_point"))
     .addChild((new autoclass.ROUTE()).setFromNode("si").setFromField("value_changed").setToNode("ci").setToField("set_fraction"))
     .addChild((new autoclass.ROUTE()).setFromNode("ts").setFromField("fraction_changed").setToNode("si").setToField("set_fraction")));
@@ -285,4 +285,3 @@ flipp.prototype = {
 	}
 }
 new flipp().main();
-process.exit(0);

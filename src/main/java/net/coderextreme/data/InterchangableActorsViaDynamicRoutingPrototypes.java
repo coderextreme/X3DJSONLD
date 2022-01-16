@@ -521,99 +521,99 @@ ProtoInstance ProtoInstance173 = null;
           .addChild(ProtoInstance0 = new ProtoInstance().setName("Humanoid1_1").setDEF("Allen"))
           .addChild(ProtoInstance67 = new ProtoInstance().setName("Humanoid1_1").setDEF("Nancy"))
           .addChild(new HAnimHumanoid().setName("Humanoid").setDEF("Boxman_Humanoid").setVersion("1.0")
-            .addSkeleton(new HAnimJoint().setName("humanoid_root").setDEF("Boxman_humanoid_root").setCenter(new float[] {0f,0.9723f,-0.0728f}).setSkinCoordIndex(new MFInt32242().getArray()).setSkinCoordWeight(new MFFloat243().getArray()).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+            .addSkeleton(new HAnimJoint().setName("humanoid_root").setDEF("Boxman_humanoid_root").setCenter(new float[] {0f,0.9723f,-0.0728f}).setSkinCoordIndex(new MFInt32242().getArray()).setSkinCoordWeight(new MFFloat243().getArray()).setUlimit(new MFFloat244().getArray()).setLlimit(new MFFloat245().getArray())
               .addChild(new HAnimSegment().setName("sacrum").setDEF("Boxman_sacrum")
-                .addChild(new Inline().setUrl(new MFString244().getArray())))
-              .addChild(new HAnimJoint().setName("l_hip").setDEF("Boxman_l_hip").setCenter(new float[] {0.0956f,0.9364f,0f}).setSkinCoordIndex(new MFInt32245().getArray()).setSkinCoordWeight(new MFFloat246().getArray()).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                .addChild(new Inline().setUrl(new MFString246().getArray())))
+              .addChild(new HAnimJoint().setName("l_hip").setDEF("Boxman_l_hip").setCenter(new float[] {0.0956f,0.9364f,0f}).setSkinCoordIndex(new MFInt32247().getArray()).setSkinCoordWeight(new MFFloat248().getArray()).setUlimit(new MFFloat249().getArray()).setLlimit(new MFFloat250().getArray())
                 .addChild(new HAnimSegment().setName("l_thigh").setDEF("Boxman_l_thigh")
-                  .addChild(new Inline().setUrl(new MFString247().getArray())))
-                .addChild(new HAnimJoint().setName("l_knee").setDEF("Boxman_l_knee").setCenter(new float[] {0.0956f,0.5095f,-0.0036f}).setSkinCoordIndex(new MFInt32248().getArray()).setSkinCoordWeight(new MFFloat249().getArray()).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                  .addChild(new Inline().setUrl(new MFString251().getArray())))
+                .addChild(new HAnimJoint().setName("l_knee").setDEF("Boxman_l_knee").setCenter(new float[] {0.0956f,0.5095f,-0.0036f}).setSkinCoordIndex(new MFInt32252().getArray()).setSkinCoordWeight(new MFFloat253().getArray()).setUlimit(new MFFloat254().getArray()).setLlimit(new MFFloat255().getArray())
                   .addChild(new HAnimSegment().setName("l_calf").setDEF("Boxman_l_calf")
-                    .addChild(new Inline().setUrl(new MFString250().getArray())))
-                  .addChild(new HAnimJoint().setName("l_ankle").setDEF("Boxman_l_ankle").setCenter(new float[] {0.0946f,0.0762f,-0.0261f}).setSkinCoordIndex(new MFInt32251().getArray()).setSkinCoordWeight(new MFFloat252().getArray()).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                    .addChild(new Inline().setUrl(new MFString256().getArray())))
+                  .addChild(new HAnimJoint().setName("l_ankle").setDEF("Boxman_l_ankle").setCenter(new float[] {0.0946f,0.0762f,-0.0261f}).setSkinCoordIndex(new MFInt32257().getArray()).setSkinCoordWeight(new MFFloat258().getArray()).setUlimit(new MFFloat259().getArray()).setLlimit(new MFFloat260().getArray())
                     .addChild(new HAnimSegment().setName("l_hindfoot").setDEF("Boxman_l_hindfoot")
-                      .addChild(new Inline().setUrl(new MFString253().getArray())))
-                    .addChild(new HAnimJoint().setName("l_midtarsal").setDEF("Boxman_l_midtarsal").setCenter(new float[] {0.1079f,0.0317f,0.067f}).setSkinCoordIndex(new MFInt32254().getArray()).setSkinCoordWeight(new MFFloat255().getArray()).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                      .addChild(new Inline().setUrl(new MFString261().getArray())))
+                    .addChild(new HAnimJoint().setName("l_midtarsal").setDEF("Boxman_l_midtarsal").setCenter(new float[] {0.1079f,0.0317f,0.067f}).setSkinCoordIndex(new MFInt32262().getArray()).setSkinCoordWeight(new MFFloat263().getArray()).setUlimit(new MFFloat264().getArray()).setLlimit(new MFFloat265().getArray())
                       .addChild(new HAnimSegment().setName("l_middistal").setDEF("Boxman_l_middistal")
-                        .addChild(new Inline().setUrl(new MFString256().getArray()))
+                        .addChild(new Inline().setUrl(new MFString266().getArray()))
                         .addChild(new HAnimSite().setName("l_middistal_tip").setDEF("Boxman_l_middistal_tip").setTranslation(new float[] {0.095f,0.0005f,0.1924f}))
-                        .addChild(new Inline().setUrl(new MFString257().getArray())))))))
-              .addChild(new HAnimJoint().setName("r_hip").setDEF("Boxman_r_hip").setCenter(new float[] {-0.0956f,0.9364f,0f}).setSkinCoordIndex(new MFInt32258().getArray()).setSkinCoordWeight(new MFFloat259().getArray()).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                        .addChild(new Inline().setUrl(new MFString267().getArray())))))))
+              .addChild(new HAnimJoint().setName("r_hip").setDEF("Boxman_r_hip").setCenter(new float[] {-0.0956f,0.9364f,0f}).setSkinCoordIndex(new MFInt32268().getArray()).setSkinCoordWeight(new MFFloat269().getArray()).setUlimit(new MFFloat270().getArray()).setLlimit(new MFFloat271().getArray())
                 .addChild(new HAnimSegment().setName("r_thigh").setDEF("Boxman_r_thigh")
-                  .addChild(new Inline().setUrl(new MFString260().getArray())))
-                .addChild(new HAnimJoint().setName("r_knee").setDEF("Boxman_r_knee").setCenter(new float[] {-0.0956f,0.5095f,-0.0036f}).setSkinCoordIndex(new MFInt32261().getArray()).setSkinCoordWeight(new MFFloat262().getArray()).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                  .addChild(new Inline().setUrl(new MFString272().getArray())))
+                .addChild(new HAnimJoint().setName("r_knee").setDEF("Boxman_r_knee").setCenter(new float[] {-0.0956f,0.5095f,-0.0036f}).setSkinCoordIndex(new MFInt32273().getArray()).setSkinCoordWeight(new MFFloat274().getArray()).setUlimit(new MFFloat275().getArray()).setLlimit(new MFFloat276().getArray())
                   .addChild(new HAnimSegment().setName("r_calf").setDEF("Boxman_r_calf")
-                    .addChild(new Inline().setUrl(new MFString263().getArray())))
-                  .addChild(new HAnimJoint().setName("r_ankle").setDEF("Boxman_r_ankle").setCenter(new float[] {-0.0946f,0.0762f,-0.0261f}).setSkinCoordIndex(new MFInt32264().getArray()).setSkinCoordWeight(new MFFloat265().getArray()).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                    .addChild(new Inline().setUrl(new MFString277().getArray())))
+                  .addChild(new HAnimJoint().setName("r_ankle").setDEF("Boxman_r_ankle").setCenter(new float[] {-0.0946f,0.0762f,-0.0261f}).setSkinCoordIndex(new MFInt32278().getArray()).setSkinCoordWeight(new MFFloat279().getArray()).setUlimit(new MFFloat280().getArray()).setLlimit(new MFFloat281().getArray())
                     .addChild(new HAnimSegment().setName("r_hindfoot").setDEF("Boxman_r_hindfoot")
-                      .addChild(new Inline().setUrl(new MFString266().getArray())))
-                    .addChild(new HAnimJoint().setName("r_midtarsal").setDEF("Boxman_r_midtarsal").setCenter(new float[] {-0.1079f,0.0317f,0.067f}).setSkinCoordIndex(new MFInt32267().getArray()).setSkinCoordWeight(new MFFloat268().getArray()).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                      .addChild(new Inline().setUrl(new MFString282().getArray())))
+                    .addChild(new HAnimJoint().setName("r_midtarsal").setDEF("Boxman_r_midtarsal").setCenter(new float[] {-0.1079f,0.0317f,0.067f}).setSkinCoordIndex(new MFInt32283().getArray()).setSkinCoordWeight(new MFFloat284().getArray()).setUlimit(new MFFloat285().getArray()).setLlimit(new MFFloat286().getArray())
                       .addChild(new HAnimSegment().setName("r_middistal").setDEF("Boxman_r_middistal")
-                        .addChild(new Inline().setUrl(new MFString269().getArray()))
+                        .addChild(new Inline().setUrl(new MFString287().getArray()))
                         .addChild(new HAnimSite().setName("r_middistal_tip").setDEF("Boxman_r_middistal_tip").setTranslation(new float[] {-0.095f,0.0005f,0.1924f}))
-                        .addChild(new Inline().setUrl(new MFString270().getArray())))))))
-              .addChild(new HAnimJoint().setName("vl5").setDEF("Boxman_vl5").setCenter(new float[] {0f,1.0817f,-0.0728f}).setSkinCoordIndex(new MFInt32271().getArray()).setSkinCoordWeight(new MFFloat272().getArray()).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                        .addChild(new Inline().setUrl(new MFString288().getArray())))))))
+              .addChild(new HAnimJoint().setName("vl5").setDEF("Boxman_vl5").setCenter(new float[] {0f,1.0817f,-0.0728f}).setSkinCoordIndex(new MFInt32289().getArray()).setSkinCoordWeight(new MFFloat290().getArray()).setUlimit(new MFFloat291().getArray()).setLlimit(new MFFloat292().getArray())
                 .addChild(new HAnimSegment().setName("l5").setDEF("Boxman_l5")
-                  .addChild(new Inline().setUrl(new MFString273().getArray())))
-                .addChild(new HAnimJoint().setName("skullbase").setDEF("Boxman_skullbase").setCenter(new float[] {0f,1.644f,0.036f}).setSkinCoordIndex(new MFInt32274().getArray()).setSkinCoordWeight(new MFFloat275().getArray()).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                  .addChild(new Inline().setUrl(new MFString293().getArray())))
+                .addChild(new HAnimJoint().setName("skullbase").setDEF("Boxman_skullbase").setCenter(new float[] {0f,1.644f,0.036f}).setSkinCoordIndex(new MFInt32294().getArray()).setSkinCoordWeight(new MFFloat295().getArray()).setUlimit(new MFFloat296().getArray()).setLlimit(new MFFloat297().getArray())
                   .addChild(new HAnimSegment().setName("skull").setDEF("Boxman_skull")
-                    .addChild(new Inline().setUrl(new MFString276().getArray()))
+                    .addChild(new Inline().setUrl(new MFString298().getArray()))
                     .addChild(new HAnimSite().setName("skull_tip").setDEF("Boxman_skull_tip").setTranslation(new float[] {-0.0029f,1.7771f,0.0274f}))
-                    .addChild(new Inline().setUrl(new MFString277().getArray()))))
-                .addChild(new HAnimJoint().setName("l_shoulder").setDEF("Boxman_l_shoulder").setCenter(new float[] {0.1968f,1.4642f,-0.0265f}).setSkinCoordIndex(new MFInt32278().getArray()).setSkinCoordWeight(new MFFloat279().getArray()).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                    .addChild(new Inline().setUrl(new MFString299().getArray()))))
+                .addChild(new HAnimJoint().setName("l_shoulder").setDEF("Boxman_l_shoulder").setCenter(new float[] {0.1968f,1.4642f,-0.0265f}).setSkinCoordIndex(new MFInt32300().getArray()).setSkinCoordWeight(new MFFloat301().getArray()).setUlimit(new MFFloat302().getArray()).setLlimit(new MFFloat303().getArray())
                   .addChild(new HAnimSegment().setName("l_upperarm").setDEF("Boxman_l_upperarm")
-                    .addChild(new Inline().setUrl(new MFString280().getArray())))
-                  .addChild(new HAnimJoint().setName("l_elbow").setDEF("Boxman_l_elbow").setCenter(new float[] {0.1982f,1.1622f,-0.0557f}).setSkinCoordIndex(new MFInt32281().getArray()).setSkinCoordWeight(new MFFloat282().getArray()).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                    .addChild(new Inline().setUrl(new MFString304().getArray())))
+                  .addChild(new HAnimJoint().setName("l_elbow").setDEF("Boxman_l_elbow").setCenter(new float[] {0.1982f,1.1622f,-0.0557f}).setSkinCoordIndex(new MFInt32305().getArray()).setSkinCoordWeight(new MFFloat306().getArray()).setUlimit(new MFFloat307().getArray()).setLlimit(new MFFloat308().getArray())
                     .addChild(new HAnimSegment().setName("l_forearm").setDEF("Boxman_l_forearm")
-                      .addChild(new Inline().setUrl(new MFString283().getArray())))
-                    .addChild(new HAnimJoint().setName("l_wrist").setDEF("Boxman_l_wrist").setCenter(new float[] {0.1972f,0.8929f,-0.069f}).setSkinCoordIndex(new MFInt32284().getArray()).setSkinCoordWeight(new MFFloat285().getArray()).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                      .addChild(new Inline().setUrl(new MFString309().getArray())))
+                    .addChild(new HAnimJoint().setName("l_wrist").setDEF("Boxman_l_wrist").setCenter(new float[] {0.1972f,0.8929f,-0.069f}).setSkinCoordIndex(new MFInt32310().getArray()).setSkinCoordWeight(new MFFloat311().getArray()).setUlimit(new MFFloat312().getArray()).setLlimit(new MFFloat313().getArray())
                       .addChild(new HAnimSegment().setName("l_hand").setDEF("Boxman_l_hand")
-                        .addChild(new Inline().setUrl(new MFString286().getArray()))
+                        .addChild(new Inline().setUrl(new MFString314().getArray()))
                         .addChild(new HAnimSite().setName("l_hand_tip").setDEF("Boxman_l_hand_tip").setTranslation(new float[] {0.1912f,0.6976f,-0.071f}))
-                        .addChild(new Inline().setUrl(new MFString287().getArray()))))))
-                .addChild(new HAnimJoint().setName("r_shoulder").setDEF("Boxman_r_shoulder").setCenter(new float[] {-0.1968f,1.4642f,-0.0265f}).setSkinCoordIndex(new MFInt32288().getArray()).setSkinCoordWeight(new MFFloat289().getArray()).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                        .addChild(new Inline().setUrl(new MFString315().getArray()))))))
+                .addChild(new HAnimJoint().setName("r_shoulder").setDEF("Boxman_r_shoulder").setCenter(new float[] {-0.1968f,1.4642f,-0.0265f}).setSkinCoordIndex(new MFInt32316().getArray()).setSkinCoordWeight(new MFFloat317().getArray()).setUlimit(new MFFloat318().getArray()).setLlimit(new MFFloat319().getArray())
                   .addChild(new HAnimSegment().setName("r_upperarm").setDEF("Boxman_r_upperarm")
-                    .addChild(new Inline().setUrl(new MFString290().getArray())))
-                  .addChild(new HAnimJoint().setName("r_elbow").setDEF("Boxman_r_elbow").setCenter(new float[] {-0.1982f,1.1622f,-0.0557f}).setSkinCoordIndex(new MFInt32291().getArray()).setSkinCoordWeight(new MFFloat292().getArray()).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                    .addChild(new Inline().setUrl(new MFString320().getArray())))
+                  .addChild(new HAnimJoint().setName("r_elbow").setDEF("Boxman_r_elbow").setCenter(new float[] {-0.1982f,1.1622f,-0.0557f}).setSkinCoordIndex(new MFInt32321().getArray()).setSkinCoordWeight(new MFFloat322().getArray()).setUlimit(new MFFloat323().getArray()).setLlimit(new MFFloat324().getArray())
                     .addChild(new HAnimSegment().setName("r_forearm").setDEF("Boxman_r_forearm")
-                      .addChild(new Inline().setUrl(new MFString293().getArray())))
-                    .addChild(new HAnimJoint().setName("r_wrist").setDEF("Boxman_r_wrist").setCenter(new float[] {-0.1972f,0.8929f,-0.069f}).setSkinCoordIndex(new MFInt32294().getArray()).setSkinCoordWeight(new MFFloat295().getArray()).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                      .addChild(new Inline().setUrl(new MFString325().getArray())))
+                    .addChild(new HAnimJoint().setName("r_wrist").setDEF("Boxman_r_wrist").setCenter(new float[] {-0.1972f,0.8929f,-0.069f}).setSkinCoordIndex(new MFInt32326().getArray()).setSkinCoordWeight(new MFFloat327().getArray()).setUlimit(new MFFloat328().getArray()).setLlimit(new MFFloat329().getArray())
                       .addChild(new HAnimSegment().setName("r_hand").setDEF("Boxman_r_hand")
-                        .addChild(new Inline().setUrl(new MFString296().getArray()))
+                        .addChild(new Inline().setUrl(new MFString330().getArray()))
                         .addChild(new HAnimSite().setName("r_hand_tip").setDEF("Boxman_r_hand_tip").setTranslation(new float[] {-0.1912f,0.6976f,-0.071f}))
-                        .addChild(new Inline().setUrl(new MFString297().getArray()))))))))
+                        .addChild(new Inline().setUrl(new MFString331().getArray()))))))))
             .addComments("# sacrum (12) # l_thigh (28) # l_calf (24) # l_hindfoot (8) # l_middistal (8) # r_thigh (28) # r_calf (24) # r_hindfoot (8) # r_middistal (8) # l5 (20) # skull (8) # l_upperarm (8) # l_forearm (8) # l_hand (8) # r_upperarm (8) # r_forearm (8) # r_hand (8)")
-            .setSkinCoord(new Coordinate().setDEF("SKINCOORD").setPoint(new MFVec3f298().getArray()))
+            .setSkinCoord(new Coordinate().setDEF("SKINCOORD").setPoint(new MFVec3f332().getArray()))
             .addSkin(new Group()
               .addChild(new Shape().setDEF("TrouserSkin")
                 .setAppearance(new Appearance()
                   .setMaterial(new Material().setDiffuseColor(new float[] {0f,0f,1f}).setTransparency(0.5f)))
                 .addComments("# 0: sacrum (8) # 1: l_hip joint (8) # 2: r_hip joint (8) # 3: l_thigh (48) # 4: l_knee joint (8) # 5: l_calf (40) # 10: r_thigh (48) # 11: r_knee joint (8) # 12: r_calf (40)")
-                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32299().getArray().append(new MFInt32300().getArray()))
+                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32333().getArray().append(new MFInt32334().getArray()))
                   .setCoord(new Coordinate().setUSE("SKINCOORD"))))
               .addChild(new Shape().setDEF("ShoeSkin")
                 .setAppearance(new Appearance()
                   .setMaterial(new Material().setDiffuseColor(new float[] {0f,0f,0f}).setTransparency(0.5f)))
                 .addComments("# 6: l_ankle joint (8) # 7: l_hindfoot (8) # 8: l_midtarsal joint (8) # 9: l_middistal (10) # 13: r_ankle joint (8) # 14: r_hindfoot (8) # 15: r_midtarsal joint (8) # 16: r_middistal (10)")
-                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32301().getArray())
+                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32335().getArray())
                   .setCoord(new Coordinate().setUSE("SKINCOORD"))))
               .addChild(new Shape().setDEF("ShirtSkin")
                 .setAppearance(new Appearance()
                   .setMaterial(new Material().setDiffuseColor(new float[] {1f,1f,0f}).setTransparency(0.5f)))
                 .addComments("# 17: vl5_joint (8) # 18: l5 (28) # 21: l_shoulder joint (8) # 22: l_upperarm (8) # 23: l_elbow joint (8) # 24: l_forearm (8) # 27: r_shoulder joint (8) # 28: r_upperarm (8) # 29: r_elbow joint (8) # 30: r_forearm (8)")
-                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32302().getArray())
+                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32336().getArray())
                   .setCoord(new Coordinate().setUSE("SKINCOORD"))))
               .addChild(new Shape().setDEF("HeadHandsFleshToneSkin")
                 .setAppearance(new Appearance()
                   .setMaterial(new Material().setDiffuseColor(new float[] {1f,0.75f,0.75f}).setTransparency(0.5f)))
                 .addComments("# 19: skullbase joint (8) # 20: skull (10) # 25: l_wrist joint (8) # 26: l_hand (10) # 31: r_wrist joint (8) # 32: r_hand (10)")
-                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32303().getArray())
+                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32337().getArray())
                   .setCoord(new Coordinate().setUSE("SKINCOORD"))))
               .addChild(new Shape().setDEF("SkinLines")
                 .setAppearance(new Appearance()
                   .setMaterial(new Material().setDiffuseColor(new float[] {0f,0f,0f})))
                 .addComments("Combined set of prior IFS coordIndex values")
-                .setGeometry(new IndexedLineSet().setCoordIndex(new MFInt32304().getArray().append(new MFInt32305().getArray()).append(new MFInt32306().getArray()))
+                .setGeometry(new IndexedLineSet().setCoordIndex(new MFInt32338().getArray().append(new MFInt32339().getArray()).append(new MFInt32340().getArray()))
                   .setCoord(new Coordinate().setUSE("SKINCOORD")))))
             .addJoints(new HAnimJoint().setUSE("Boxman_humanoid_root"))
             .addJoints(new HAnimJoint().setUSE("Boxman_skullbase"))
@@ -759,60 +759,60 @@ ProtoInstance ProtoInstance173 = null;
                 .addChild(new Transform().setDEF("Stand_Text")
                   .addChild(new TouchSensor().setDEF("Stand_Touch").setDescription("click for behavior"))
                   .addChild(new Shape().setDEF("Stand")
-                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32307().getArray())
-                      .setCoord(new Coordinate().setPoint(new MFVec3f308().getArray())))
+                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32341().getArray())
+                      .setCoord(new Coordinate().setPoint(new MFVec3f342().getArray())))
                     .setAppearance(new Appearance()
                       .setMaterial(new Material().setDEF("text_color").setAmbientIntensity(0f).setDiffuseColor(new float[] {0f,0f,0f}).setEmissiveColor(new float[] {0.819f,0.521f,0.169f}))))
                   .addChild(new Transform().setScale(new float[] {84.89f,77.52f,77.52f}).setTranslation(new float[] {0.04092f,1.843f,3.826f})
                     .addChild(new Shape().setDEF("Stand_Back")
-                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32309().getArray())
-                        .setCoord(new Coordinate().setPoint(new MFVec3f310().getArray())))
+                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32343().getArray())
+                        .setCoord(new Coordinate().setPoint(new MFVec3f344().getArray())))
                       .setAppearance(new Appearance()
                         .setMaterial(new Material().setDEF("Clear").setAmbientIntensity(0f).setDiffuseColor(new float[] {0f,0f,0f}).setTransparency(1f))))))
                 .addChild(new Transform().setDEF("Walk_Text")
                   .addChild(new TouchSensor().setDEF("Walk_Touch").setDescription("click for behavior"))
                   .addChild(new Shape().setDEF("WALK_Shape")
-                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32311().getArray())
-                      .setCoord(new Coordinate().setPoint(new MFVec3f312().getArray())))
+                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32345().getArray())
+                      .setCoord(new Coordinate().setPoint(new MFVec3f346().getArray())))
                     .setAppearance(new Appearance()
                       .setMaterial(new Material().setUSE("text_color"))))
                   .addChild(new Transform().setScale(new float[] {81.3f,81.3f,81.31f}).setTranslation(new float[] {-0.0414f,1.941f,4.015f})
                     .addChild(new Shape().setDEF("Walk_Back")
-                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32313().getArray())
-                        .setCoord(new Coordinate().setPoint(new MFVec3f314().getArray())))
+                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32347().getArray())
+                        .setCoord(new Coordinate().setPoint(new MFVec3f348().getArray())))
                       .setAppearance(new Appearance()
                         .setMaterial(new Material().setUSE("Clear"))))))
                 .addChild(new Transform().setDEF("Run_Text")
                   .addChild(new TouchSensor().setDEF("Run_Touch").setDescription("click for behavior"))
                   .addChild(new Shape().setDEF("Run")
-                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32315().getArray())
-                      .setCoord(new Coordinate().setPoint(new MFVec3f316().getArray())))
+                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32349().getArray())
+                      .setCoord(new Coordinate().setPoint(new MFVec3f350().getArray())))
                     .setAppearance(new Appearance()
                       .setMaterial(new Material().setUSE("text_color"))))
                   .addChild(new Transform().setScale(new float[] {82.47f,82.47f,82.48f}).setTranslation(new float[] {-0.01579f,1.968f,4.074f})
                     .addChild(new Shape().setDEF("Run_Back")
-                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32317().getArray())
-                        .setCoord(new Coordinate().setPoint(new MFVec3f318().getArray())))
+                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32351().getArray())
+                        .setCoord(new Coordinate().setPoint(new MFVec3f352().getArray())))
                       .setAppearance(new Appearance()
                         .setMaterial(new Material().setUSE("Clear"))))))
                 .addChild(new Transform().setDEF("Jump_Text")
                   .addChild(new TouchSensor().setDEF("Jump_Touch").setDescription("click for behavior"))
                   .addChild(new Shape().setDEF("Jump")
-                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32319().getArray())
-                      .setCoord(new Coordinate().setPoint(new MFVec3f320().getArray())))
+                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32353().getArray())
+                      .setCoord(new Coordinate().setPoint(new MFVec3f354().getArray())))
                     .setAppearance(new Appearance()
                       .setMaterial(new Material().setUSE("text_color"))))
                   .addChild(new Transform().setScale(new float[] {83.79f,83.79f,83.79f}).setTranslation(new float[] {-0.008979f,1.99f,4.14f})
                     .addChild(new Shape().setDEF("Jump_Back")
-                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32321().getArray())
-                        .setCoord(new Coordinate().setPoint(new MFVec3f322().getArray())))
+                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32355().getArray())
+                        .setCoord(new Coordinate().setPoint(new MFVec3f356().getArray())))
                       .setAppearance(new Appearance()
                         .setMaterial(new Material().setUSE("Clear"))))))
                 .addChild(new Transform().setDEF("Kneel_Text").setTranslation(new float[] {1.3f,-0.12f,0f})
                   .addChild(new TouchSensor().setDEF("Kneel_Touch").setDescription("click for behavior"))
                   .addChild(new Shape().setDEF("Kneel")
-                    .setGeometry(new Text().setString(new MFString323().getArray())
-                      .setFontStyle(new FontStyle().setFamily(new MFString324().getArray()).setSize(0.45f).setStyle("BOLD")))
+                    .setGeometry(new Text().setString(new MFString357().getArray())
+                      .setFontStyle(new FontStyle().setFamily(new MFString358().getArray()).setSize(0.45f).setStyle("BOLD")))
                     .setAppearance(new Appearance()
                       .setMaterial(new Material().setUSE("text_color"))))
                   .addChild(new Transform().setTranslation(new float[] {0.5f,0.15f,-0.001f})
@@ -824,7 +824,7 @@ ProtoInstance ProtoInstance173 = null;
                   .addChild(new Transform().setDEF("Allen_Text").setTranslation(new float[] {2f,4f,0f})
                     .addChild(new TouchSensor().setDEF("Allen_Touch").setDescription("click for Allen body"))
                     .addChild(new Shape()
-                      .setGeometry(new Text().setString(new MFString325().getArray())
+                      .setGeometry(new Text().setString(new MFString359().getArray())
                         .setFontStyle(new FontStyle().setSize(0.25f).setSpacing(0.1f).setStyle("BOLD")))
                       .setAppearance(new Appearance()
                         .setMaterial(new Material().setDiffuseColor(new float[] {0.6f,0.6f,0.6f}))))
@@ -836,7 +836,7 @@ ProtoInstance ProtoInstance173 = null;
                   .addChild(new Transform().setDEF("Nancy_Text").setTranslation(new float[] {2f,3.5f,0f})
                     .addChild(new TouchSensor().setDEF("Nancy_Touch").setDescription("click for Nancy body"))
                     .addChild(new Shape()
-                      .setGeometry(new Text().setString(new MFString326().getArray())
+                      .setGeometry(new Text().setString(new MFString360().getArray())
                         .setFontStyle(new FontStyle().setSize(0.25f).setSpacing(0.1f).setStyle("BOLD")))
                       .setAppearance(new Appearance()
                         .setMaterial(new Material().setDiffuseColor(new float[] {0.6f,0.6f,0.6f}))))
@@ -845,7 +845,7 @@ ProtoInstance ProtoInstance173 = null;
                   .addChild(new Transform().setDEF("Boxman_Text").setTranslation(new float[] {2f,3f,0f})
                     .addChild(new TouchSensor().setDEF("Boxman_Touch").setDescription("click for BoxMan body"))
                     .addChild(new Shape()
-                      .setGeometry(new Text().setString(new MFString327().getArray())
+                      .setGeometry(new Text().setString(new MFString361().getArray())
                         .setFontStyle(new FontStyle().setSize(0.25f).setSpacing(0.1f).setStyle("BOLD")))
                       .setAppearance(new Appearance()
                         .setMaterial(new Material().setDiffuseColor(new float[] {0.6f,0.6f,0.6f}))))
@@ -908,23 +908,23 @@ ProtoInstance ProtoInstance173 = null;
             .addChild(ProtoInstance167 = new ProtoInstance().setUSE("Allen_hanim_l_wrist"))
             .addChild(ProtoInstance168 = new ProtoInstance().setUSE("Allen_hanim_r_wrist")))
           .addField(new field().setType("MFNode").setName("BoxmanJointNodes").setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
-            .addJoints(new HAnimJoint().setUSE("Boxman_humanoid_root"))
-            .addJoints(new HAnimJoint().setUSE("Boxman_skullbase"))
-            .addJoints(new HAnimJoint().setUSE("Boxman_vl5"))
-            .addJoints(new HAnimJoint().setUSE("Boxman_l_hip"))
-            .addJoints(new HAnimJoint().setUSE("Boxman_r_hip"))
-            .addJoints(new HAnimJoint().setUSE("Boxman_l_knee"))
-            .addJoints(new HAnimJoint().setUSE("Boxman_r_knee"))
-            .addJoints(new HAnimJoint().setUSE("Boxman_l_ankle"))
-            .addJoints(new HAnimJoint().setUSE("Boxman_r_ankle"))
-            .addJoints(new HAnimJoint().setUSE("Boxman_l_shoulder"))
-            .addJoints(new HAnimJoint().setUSE("Boxman_r_shoulder"))
-            .addJoints(new HAnimJoint().setUSE("Boxman_l_elbow"))
-            .addJoints(new HAnimJoint().setUSE("Boxman_r_elbow"))
-            .addJoints(new HAnimJoint().setUSE("Boxman_l_wrist"))
-            .addJoints(new HAnimJoint().setUSE("Boxman_r_wrist"))
-            .addJoints(new HAnimJoint().setUSE("Boxman_l_midtarsal"))
-            .addJoints(new HAnimJoint().setUSE("Boxman_r_midtarsal")))
+            .addChild(new HAnimJoint().setUSE("Boxman_humanoid_root"))
+            .addChild(new HAnimJoint().setUSE("Boxman_skullbase"))
+            .addChild(new HAnimJoint().setUSE("Boxman_vl5"))
+            .addChild(new HAnimJoint().setUSE("Boxman_l_hip"))
+            .addChild(new HAnimJoint().setUSE("Boxman_r_hip"))
+            .addChild(new HAnimJoint().setUSE("Boxman_l_knee"))
+            .addChild(new HAnimJoint().setUSE("Boxman_r_knee"))
+            .addChild(new HAnimJoint().setUSE("Boxman_l_ankle"))
+            .addChild(new HAnimJoint().setUSE("Boxman_r_ankle"))
+            .addChild(new HAnimJoint().setUSE("Boxman_l_shoulder"))
+            .addChild(new HAnimJoint().setUSE("Boxman_r_shoulder"))
+            .addChild(new HAnimJoint().setUSE("Boxman_l_elbow"))
+            .addChild(new HAnimJoint().setUSE("Boxman_r_elbow"))
+            .addChild(new HAnimJoint().setUSE("Boxman_l_wrist"))
+            .addChild(new HAnimJoint().setUSE("Boxman_r_wrist"))
+            .addChild(new HAnimJoint().setUSE("Boxman_l_midtarsal"))
+            .addChild(new HAnimJoint().setUSE("Boxman_r_midtarsal")))
           .addField(new field().setType("SFInt32").setName("AvatarChoice").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
           .addField(new field().setType("MFNode").setName("Behaviors").setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
             .addChild(ProtoInstance169 = new ProtoInstance().setUSE("WALK"))
@@ -3091,179 +3091,179 @@ protected class MFFloat243 {
     return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f});
   }
 }
-protected class MFString244 {
+protected class MFFloat244 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFFloat245 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFString246 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/sacrum.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/sacrum.wrl"});
   }
 }
-protected class MFInt32245 {
+protected class MFInt32247 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43});
   }
 }
-protected class MFFloat246 {
+protected class MFFloat248 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
     return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,0.5f,0.5f,0.5f,0.5f,0.5f,0.5f,0.5f,0.5f});
-  }
-}
-protected class MFString247 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/l_thigh.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/l_thigh.wrl"});
-  }
-}
-protected class MFInt32248 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63});
   }
 }
 protected class MFFloat249 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFFloat250 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFString251 {
+  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/l_thigh.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/l_thigh.wrl"});
+  }
+}
+protected class MFInt32252 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63});
+  }
+}
+protected class MFFloat253 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
     return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.5f,0.5f,0.5f,0.5f,0.5f,0.5f,0.5f,0.5f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f});
   }
 }
-protected class MFString250 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/l_calf.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/l_calf.wrl"});
-  }
-}
-protected class MFInt32251 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {64,65,66,67,68,69,70,71});
-  }
-}
-protected class MFFloat252 {
+protected class MFFloat254 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {1f,1f,1f,1f,1f,1f,1f,1f});
-  }
-}
-protected class MFString253 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/l_hindfoot.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/l_hindfoot.wrl"});
-  }
-}
-protected class MFInt32254 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {72,73,74,75,76,77,78,79});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
 protected class MFFloat255 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {1f,1f,1f,1f,1f,1f,1f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
 protected class MFString256 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/l_middistal.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/l_middistal.wrl"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/l_calf.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/l_calf.wrl"});
   }
 }
-protected class MFString257 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/l_middistal_tip.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/l_middistal_tip.wrl"});
-  }
-}
-protected class MFInt32258 {
+protected class MFInt32257 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111});
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {64,65,66,67,68,69,70,71});
+  }
+}
+protected class MFFloat258 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {1f,1f,1f,1f,1f,1f,1f,1f});
   }
 }
 protected class MFFloat259 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,0.5f,0.5f,0.5f,0.5f,0.5f,0.5f,0.5f,0.5f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
-protected class MFString260 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/r_thigh.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/r_thigh.wrl"});
-  }
-}
-protected class MFInt32261 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131});
-  }
-}
-protected class MFFloat262 {
+protected class MFFloat260 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.5f,0.5f,0.5f,0.5f,0.5f,0.5f,0.5f,0.5f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
-protected class MFString263 {
+protected class MFString261 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/r_calf.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/r_calf.wrl"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/l_hindfoot.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/l_hindfoot.wrl"});
   }
 }
-protected class MFInt32264 {
+protected class MFInt32262 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {132,133,134,135,136,137,138,139});
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {72,73,74,75,76,77,78,79});
+  }
+}
+protected class MFFloat263 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {1f,1f,1f,1f,1f,1f,1f,1f});
+  }
+}
+protected class MFFloat264 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
 protected class MFFloat265 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {1f,1f,1f,1f,1f,1f,1f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
 protected class MFString266 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/r_hindfoot.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/r_hindfoot.wrl"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/l_middistal.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/l_middistal.wrl"});
   }
 }
-protected class MFInt32267 {
+protected class MFString267 {
+  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/l_middistal_tip.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/l_middistal_tip.wrl"});
+  }
+}
+protected class MFInt32268 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {140,141,142,143,144,145,146,147});
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111});
   }
 }
-protected class MFFloat268 {
+protected class MFFloat269 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {1f,1f,1f,1f,1f,1f,1f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,0.5f,0.5f,0.5f,0.5f,0.5f,0.5f,0.5f,0.5f});
   }
 }
-protected class MFString269 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/r_middistal.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/r_middistal.wrl"});
-  }
-}
-protected class MFString270 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/r_middistal_tip.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/r_middistal_tip.wrl"});
-  }
-}
-protected class MFInt32271 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167});
-  }
-}
-protected class MFFloat272 {
+protected class MFFloat270 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
-protected class MFString273 {
+protected class MFFloat271 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFString272 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/l5.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/l5.wrl"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/r_thigh.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/r_thigh.wrl"});
   }
 }
-protected class MFInt32274 {
+protected class MFInt32273 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {168,169,170,171,172,173,174,175});
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131});
+  }
+}
+protected class MFFloat274 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.5f,0.5f,0.5f,0.5f,0.5f,0.5f,0.5f,0.5f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f});
   }
 }
 protected class MFFloat275 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {1f,1f,1f,1f,1f,1f,1f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
-protected class MFString276 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/skull.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/skull.wrl"});
+protected class MFFloat276 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
 protected class MFString277 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/skull_tip.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/skull_tip.wrl"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/r_calf.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/r_calf.wrl"});
   }
 }
 protected class MFInt32278 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {176,177,178,179,180,181,182,183});
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {132,133,134,135,136,137,138,139});
   }
 }
 protected class MFFloat279 {
@@ -3271,79 +3271,79 @@ protected class MFFloat279 {
     return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {1f,1f,1f,1f,1f,1f,1f,1f});
   }
 }
-protected class MFString280 {
+protected class MFFloat280 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFFloat281 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFString282 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/l_upperarm.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/l_upperarm.wrl"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/r_hindfoot.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/r_hindfoot.wrl"});
   }
 }
-protected class MFInt32281 {
+protected class MFInt32283 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {184,185,186,187,188,189,190,191});
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {140,141,142,143,144,145,146,147});
   }
 }
-protected class MFFloat282 {
+protected class MFFloat284 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
     return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {1f,1f,1f,1f,1f,1f,1f,1f});
-  }
-}
-protected class MFString283 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/l_forearm.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/l_forearm.wrl"});
-  }
-}
-protected class MFInt32284 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {192,193,194,195,196,197,198,199});
   }
 }
 protected class MFFloat285 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {1f,1f,1f,1f,1f,1f,1f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
-protected class MFString286 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/l_hand.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/l_hand.wrl"});
+protected class MFFloat286 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
 protected class MFString287 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/l_hand_tip.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/l_hand_tip.wrl"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/r_middistal.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/r_middistal.wrl"});
   }
 }
-protected class MFInt32288 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {200,201,202,203,204,205,206,207});
-  }
-}
-protected class MFFloat289 {
-  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {1f,1f,1f,1f,1f,1f,1f,1f});
-  }
-}
-protected class MFString290 {
+protected class MFString288 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/r_upperarm.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/r_upperarm.wrl"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/r_middistal_tip.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/r_middistal_tip.wrl"});
   }
 }
-protected class MFInt32291 {
+protected class MFInt32289 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {208,209,210,211,212,213,214,215});
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167});
+  }
+}
+protected class MFFloat290 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f,1f});
+  }
+}
+protected class MFFloat291 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
 protected class MFFloat292 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {1f,1f,1f,1f,1f,1f,1f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
 protected class MFString293 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/r_forearm.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/r_forearm.wrl"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/l5.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/l5.wrl"});
   }
 }
 protected class MFInt32294 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {216,217,218,219,220,221,222,223});
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {168,169,170,171,172,173,174,175});
   }
 }
 protected class MFFloat295 {
@@ -3351,162 +3351,332 @@ protected class MFFloat295 {
     return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {1f,1f,1f,1f,1f,1f,1f,1f});
   }
 }
-protected class MFString296 {
+protected class MFFloat296 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFFloat297 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFString298 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/r_hand.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/r_hand.wrl"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/skull.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/skull.wrl"});
   }
 }
-protected class MFString297 {
+protected class MFString299 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/r_hand_tip.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/r_hand_tip.wrl"});
-  }
-}
-protected class MFVec3f298 {
-  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.05f,1f,0.05f,0.05f,1f,0.05f,0.03f,0.97f,-0.1f,-0.03f,0.97f,-0.1f,0.03f,0.94f,-0.075f,-0.03f,0.94f,-0.075f,0f,0.92f,0f,0f,0.94f,0.03f,-0.12f,1.06f,0.05f,0.12f,1.06f,0.05f,0.12f,1.06f,-0.1f,-0.12f,1.06f,-0.1f,0.0456f,0.9364f,0.05f,0.1456f,0.9364f,0.05f,0.1456f,0.9364f,-0.05f,0.0456f,0.9364f,-0.05f,0.0456f,0.9f,0.05f,0.1456f,0.9f,0.05f,0.1456f,0.9f,-0.05f,0.0456f,0.9f,-0.05f,0.0456f,0.8f,0.05f,0.1456f,0.8f,0.05f,0.1456f,0.8f,-0.05f,0.0456f,0.8f,-0.05f,0.0456f,0.7f,0.05f,0.1456f,0.7f,0.05f,0.1456f,0.7f,-0.05f,0.0456f,0.7f,-0.05f,0.0456f,0.6f,0.05f,0.1456f,0.6f,0.05f,0.1456f,0.6f,-0.05f,0.0456f,0.6f,-0.05f,0.0456f,0.55f,0.05f,0.1456f,0.55f,0.05f,0.1456f,0.55f,-0.05f,0.0456f,0.55f,-0.05f,0.0456f,0.52f,0.05f,0.1456f,0.52f,0.05f,0.1456f,0.52f,-0.05f,0.0456f,0.52f,-0.05f,0.0456f,0.5f,0.05f,0.1456f,0.5f,0.05f,0.1456f,0.5f,-0.05f,0.0456f,0.5f,-0.05f,0.0454f,0.43f,0.045f,0.1454f,0.43f,0.045f,0.1454f,0.43f,-0.055f,0.0454f,0.43f,-0.055f,0.0452f,0.36f,0.04f,0.1452f,0.36f,0.04f,0.1452f,0.36f,-0.06f,0.0452f,0.36f,-0.06f,0.045f,0.29f,0.035f,0.145f,0.29f,0.035f,0.145f,0.29f,-0.065f,0.045f,0.29f,-0.065f,0.0448f,0.21f,0.03f,0.1448f,0.21f,0.03f,0.1448f,0.21f,-0.07f,0.0448f,0.21f,-0.07f,0.0446f,0.1262f,0.025f,0.1446f,0.1262f,0.025f,0.1446f,0.1262f,-0.075f,0.0446f,0.1262f,-0.075f,0.0446f,0.0762f,0.025f,0.1446f,0.0762f,0.025f,0.1446f,0f,-0.075f,0.0446f,0f,-0.075f,0.0446f,0.0562f,0.057f,0.1446f,0.0562f,0.057f,0.1446f,0f,0.057f,0.0446f,0f,0.057f,0.0446f,0.0562f,0.087f,0.1446f,0.0562f,0.087f,0.1446f,0f,0.087f,0.0446f,0f,0.087f,0.0446f,0.0562f,0.1924f,0.1446f,0.0562f,0.1924f,0.1446f,0f,0.1924f,0.0446f,0f,0.1924f,-0.0456f,0.9364f,0.05f,-0.1456f,0.9364f,0.05f,-0.1456f,0.9364f,-0.05f,-0.0456f,0.9364f,-0.05f,-0.0456f,0.9f,0.05f,-0.1456f,0.9f,0.05f,-0.1456f,0.9f,-0.05f,-0.0456f,0.9f,-0.05f,-0.0456f,0.8f,0.05f,-0.1456f,0.8f,0.05f,-0.1456f,0.8f,-0.05f,-0.0456f,0.8f,-0.05f,-0.0456f,0.7f,0.05f,-0.1456f,0.7f,0.05f,-0.1456f,0.7f,-0.05f,-0.0456f,0.7f,-0.05f,-0.0456f,0.6f,0.05f,-0.1456f,0.6f,0.05f,-0.1456f,0.6f,-0.05f,-0.0456f,0.6f,-0.05f,-0.0456f,0.55f,0.05f,-0.1456f,0.55f,0.05f,-0.1456f,0.55f,-0.05f,-0.0456f,0.55f,-0.05f,-0.0456f,0.52f,0.05f,-0.1456f,0.52f,0.05f,-0.1456f,0.52f,-0.05f,-0.0456f,0.52f,-0.05f,-0.0456f,0.5f,0.05f,-0.1456f,0.5f,0.05f,-0.1456f,0.5f,-0.05f,-0.0456f,0.5f,-0.05f,-0.0454f,0.43f,0.045f,-0.1454f,0.43f,0.045f,-0.1454f,0.43f,-0.055f,-0.0454f,0.43f,-0.055f,-0.0452f,0.36f,0.04f,-0.1452f,0.36f,0.04f,-0.1452f,0.36f,-0.06f,-0.0452f,0.36f,-0.06f,-0.045f,0.29f,0.035f,-0.145f,0.29f,0.035f,-0.145f,0.29f,-0.065f,-0.045f,0.29f,-0.065f,-0.0448f,0.21f,0.03f,-0.1448f,0.21f,0.03f,-0.1448f,0.21f,-0.07f,-0.0448f,0.21f,-0.07f,-0.0446f,0.1262f,0.025f,-0.1446f,0.1262f,0.025f,-0.1446f,0.1262f,-0.075f,-0.0446f,0.1262f,-0.075f,-0.0446f,0.0762f,0.025f,-0.1446f,0.0762f,0.025f,-0.1446f,0f,-0.075f,-0.0446f,0f,-0.075f,-0.0446f,0.0562f,0.057f,-0.1446f,0.0562f,0.057f,-0.1446f,0f,0.057f,-0.0446f,0f,0.057f,-0.0446f,0.0562f,0.087f,-0.1446f,0.0562f,0.087f,-0.1446f,0f,0.087f,-0.0446f,0f,0.087f,-0.0446f,0.0562f,0.1924f,-0.1446f,0.0562f,0.1924f,-0.1446f,0f,0.1924f,-0.0446f,0f,0.1924f,-0.12f,1.1f,0.05f,0.12f,1.1f,0.05f,0.12f,1.1f,-0.1f,-0.12f,1.1f,-0.1f,-0.14f,1.42f,0.045f,0.14f,1.42f,0.045f,0.14f,1.42f,-0.09f,-0.14f,1.42f,-0.09f,-0.24f,1.52f,0.035f,0.24f,1.52f,0.035f,0.24f,1.52f,-0.09f,-0.24f,1.52f,-0.09f,-0.05f,1.56f,0.03f,0.05f,1.56f,0.03f,0.05f,1.56f,-0.06f,-0.05f,1.56f,-0.06f,-0.05f,1.6f,0.06f,0.05f,1.6f,0.06f,0.05f,1.62f,-0.03f,-0.05f,1.62f,-0.03f,-0.07f,1.777f,0.13f,0.07f,1.777f,0.13f,0.07f,1.777f,-0.03f,-0.07f,1.777f,-0.03f,-0.07f,1.6f,0.13f,0.07f,1.6f,0.13f,0.07f,1.66f,-0.03f,-0.07f,1.66f,-0.03f,0.16f,1.42f,0.015f,0.24f,1.5f,0.015f,0.24f,1.5f,-0.075f,0.16f,1.42f,-0.075f,0.17f,1.18f,-0.025f,0.23f,1.18f,-0.025f,0.23f,1.18f,-0.085f,0.17f,1.18f,-0.085f,0.17f,1.14f,-0.025f,0.23f,1.14f,-0.025f,0.23f,1.14f,-0.085f,0.17f,1.14f,-0.085f,0.18f,0.91f,-0.05f,0.22f,0.91f,-0.05f,0.22f,0.91f,-0.09f,0.18f,0.91f,-0.09f,0.18f,0.87f,-0.02f,0.22f,0.87f,-0.02f,0.22f,0.87f,-0.1f,0.18f,0.87f,-0.1f,0.18f,0.6976f,-0.02f,0.22f,0.6976f,-0.02f,0.22f,0.6976f,-0.1f,0.18f,0.6976f,-0.1f,-0.16f,1.42f,0.015f,-0.24f,1.5f,0.015f,-0.24f,1.5f,-0.075f,-0.16f,1.42f,-0.075f,-0.17f,1.18f,-0.025f,-0.23f,1.18f,-0.025f,-0.23f,1.18f,-0.085f,-0.17f,1.18f,-0.085f,-0.17f,1.14f,-0.025f,-0.23f,1.14f,-0.025f,-0.23f,1.14f,-0.085f,-0.17f,1.14f,-0.085f,-0.18f,0.91f,-0.05f,-0.22f,0.91f,-0.05f,-0.22f,0.91f,-0.09f,-0.18f,0.91f,-0.09f,-0.18f,0.87f,-0.02f,-0.22f,0.87f,-0.02f,-0.22f,0.87f,-0.1f,-0.18f,0.87f,-0.1f,-0.18f,0.6976f,-0.02f,-0.22f,0.6976f,-0.02f,-0.22f,0.6976f,-0.1f,-0.18f,0.6976f,-0.1f});
-  }
-}
-protected class MFInt32299 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,7,1,-1,8,0,1,-1,1,9,8,-1,10,2,3,-1,3,11,10,-1,2,4,5,-1,5,3,2,-1,4,6,5,-1,7,12,1,-1,1,12,13,-1,13,9,1,-1,9,13,14,-1,14,10,9,-1,10,14,15,-1,15,2,10,-1,12,7,6,-1,6,15,12,-1,15,6,4,-1,4,2,15,-1,0,80,7,-1,81,80,0,-1,0,8,81,-1,82,81,8,-1,8,11,82,-1,83,82,11,-1,11,3,83,-1,6,7,80,-1,80,83,6,-1,5,6,83,-1,83,3,5,-1,12,16,17,-1,17,13,12,-1,13,17,18,-1,18,14,13,-1,14,18,19,-1,19,15,14,-1,15,19,16,-1,16,12,15,-1,16,20,21,-1,21,17,16,-1,17,21,22,-1,22,18,17,-1,18,22,23,-1,23,19,18,-1,19,23,20,-1,20,16,19,-1,20,24,25,-1,25,21,20,-1,21,25,26,-1,26,22,21,-1,22,26,27,-1,27,23,22,-1,23,27,24,-1,24,20,23,-1,24,28,29,-1,29,25,24,-1,25,29,30,-1,30,26,25,-1,26,30,31,-1,31,27,26,-1,27,31,28,-1,28,24,27,-1,28,32,33,-1,33,29,28,-1,29,33,34,-1,34,30,29,-1,30,34,35,-1,35,31,30,-1,31,35,32,-1,32,28,31,-1,32,36,37,-1,37,33,32,-1,33,37,38,-1,38,34,33,-1,34,38,39,-1,39,35,34,-1,35,39,36,-1,36,32,35,-1,36,40,41,-1,41,37,36,-1,37,41,42,-1,42,38,37,-1,38,42,43,-1,43,39,38,-1,39,43,40,-1,40,36,39,-1,40,44,45,-1,45,41,40,-1,41,45,46,-1,46,42,41,-1,42,46,47,-1,47,43,42,-1,43,47,44,-1,44,40,43,-1,44,48,49,-1,49,45,44,-1,45,49,50,-1,50,46,45,-1,46,50,51,-1,51,47,46,-1,47,51,48,-1,48,44,47,-1,48,52,53,-1,53,49,48,-1,49,53,54,-1,54,50,49,-1,50,54,55,-1,55,51,50,-1,51,55,52,-1,52,48,51,-1,52,56,57,-1,57,53,52,-1,53,57,58,-1,58,54,53,-1,54,58,59,-1,59,55,54,-1,55,59,56,-1,56,52,55,-1,56,60,61,-1,61,57,56,-1,57,61,62,-1,62,58,57,-1,58,62,63,-1,63,59,58,-1,59,63,60,-1,60,56,59,-1,81,85,84,-1,84,80,81,-1,82,86,85,-1,85,81,82,-1,83,87,86,-1,86,82,83,-1,80,84,87,-1,87,83,80,-1,85,89,88,-1,88,84,85,-1,86,90,89,-1,89,85,86,-1,87,91,90,-1,90,86,87,-1,84,88,91,-1,91,87,84,-1,89,93,92,-1,92,88,89,-1,90,94,93,-1,93,89,90,-1,91,95,94,-1,94,90,91,-1,88,92,95,-1,95,91,88,-1,93,97,96,-1,96,92,93,-1,94,98,97,-1,97,93,94,-1,95,99,98,-1,98,94,95,-1,92,96,99,-1,99,95,92,-1,97,101,100,-1,100,96,97,-1,98,102,101,-1,101,97,98,-1,99,103,102,-1,102,98,99,-1,96,100,103,-1,103,99,96,-1,101,105,104,-1,104,100,101,-1,102,106,105,-1,105,101,102,-1,103,107,106,-1,106,102,103,-1,100,104,107,-1,107,103,100,-1,105,109,108,-1,108,104,105,-1,106,110,109,-1,109,105,106,-1,107,111,110,-1,110,106,107,-1,104,108,111,-1,111,107,104,-1,109,113,112,-1,112,108,109,-1,110,114,113,-1,113,109,110,-1,111,115,114,-1,114,110,111,-1,108,112,115,-1,115,111,108,-1,113,117,116,-1,116,112,113,-1,114,118,117,-1,117,113,114,-1,115,119,118,-1,118,114,115,-1,112,116,119,-1,119,115,112,-1,117,121,120,-1,120,116,117,-1,118,122,121,-1,121,117,118,-1,119,123,122,-1,122,118,119,-1,116,120,123,-1,123,119,116,-1,121,125,124,-1,124,120,121,-1,122,126,125,-1,125,121,122,-1});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/skull_tip.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/skull_tip.wrl"});
   }
 }
 protected class MFInt32300 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {123,127,126,-1,126,122,123,-1,120,124,127,-1,127,123,120,-1,125,129,128,-1,128,124,125,-1,126,130,129,-1,129,125,126,-1,127,131,130,-1,130,126,127,-1,124,128,131,-1,131,127,124,-1});
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {176,177,178,179,180,181,182,183});
   }
 }
-protected class MFInt32301 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {60,64,65,-1,65,61,60,-1,61,65,66,-1,66,62,61,-1,62,66,67,-1,67,63,62,-1,63,67,64,-1,64,60,63,-1,64,68,69,-1,69,65,64,-1,65,69,70,-1,70,66,65,-1,66,70,71,-1,71,67,66,-1,67,71,68,-1,68,64,67,-1,68,72,73,-1,73,69,68,-1,69,73,74,-1,74,70,69,-1,70,74,75,-1,75,71,70,-1,71,75,72,-1,72,68,71,-1,72,76,77,-1,77,73,72,-1,73,77,78,-1,78,74,73,-1,74,78,79,-1,79,75,74,-1,75,79,76,-1,76,72,75,-1,76,79,78,-1,78,77,76,-1,129,133,132,-1,132,128,129,-1,130,134,133,-1,133,129,130,-1,131,135,134,-1,134,130,131,-1,128,132,135,-1,135,131,128,-1,133,137,136,-1,136,132,133,-1,134,138,137,-1,137,133,134,-1,135,139,138,-1,138,134,135,-1,132,136,139,-1,139,135,132,-1,137,141,140,-1,140,136,137,-1,138,142,141,-1,141,137,138,-1,139,143,142,-1,142,138,139,-1,136,140,143,-1,143,139,136,-1,141,145,144,-1,144,140,141,-1,142,146,145,-1,145,141,142,-1,143,147,146,-1,146,142,143,-1,140,144,147,-1,147,143,140,-1,145,146,147,-1,147,144,145,-1});
+protected class MFFloat301 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {1f,1f,1f,1f,1f,1f,1f,1f});
   }
 }
-protected class MFInt32302 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {148,8,9,-1,9,149,148,-1,149,9,10,-1,10,150,149,-1,150,10,11,-1,11,151,150,-1,151,11,8,-1,8,148,151,-1,152,148,149,-1,149,153,152,-1,153,149,150,-1,150,154,153,-1,154,150,151,-1,151,155,154,-1,155,151,148,-1,148,152,155,-1,156,152,153,-1,153,157,156,-1,158,154,155,-1,155,159,158,-1,160,156,157,-1,157,161,160,-1,161,157,158,-1,158,162,161,-1,162,158,159,-1,159,163,162,-1,163,159,156,-1,156,160,163,-1,164,160,161,-1,161,165,164,-1,165,161,162,-1,162,166,165,-1,166,162,163,-1,163,167,166,-1,167,163,160,-1,160,164,167,-1,153,176,177,-1,177,157,153,-1,157,177,178,-1,178,158,157,-1,158,178,179,-1,179,154,158,-1,154,179,176,-1,176,153,154,-1,176,180,181,-1,181,177,176,-1,177,181,182,-1,182,178,177,-1,178,182,183,-1,183,179,178,-1,179,183,180,-1,180,176,179,-1,180,184,185,-1,185,181,180,-1,181,185,186,-1,186,182,181,-1,182,186,187,-1,187,183,182,-1,183,187,184,-1,184,180,183,-1,184,188,189,-1,189,185,184,-1,185,189,190,-1,190,186,185,-1,186,190,191,-1,191,187,186,-1,187,191,188,-1,188,184,187,-1,152,156,201,-1,201,200,152,-1,156,159,202,-1,202,201,156,-1,159,155,203,-1,203,202,159,-1,155,152,200,-1,200,203,155,-1,201,205,204,-1,204,200,201,-1,202,206,205,-1,205,201,202,-1,203,207,206,-1,206,202,203,-1,200,204,207,-1,207,203,200,-1,205,209,208,-1,208,204,205,-1,206,210,209,-1,209,205,206,-1,207,211,210,-1,210,206,207,-1,204,208,211,-1,211,207,204,-1,209,213,212,-1,212,208,209,-1,210,214,213,-1,213,209,210,-1,211,215,214,-1,214,210,211,-1,208,212,215,-1,215,211,208,-1});
+protected class MFFloat302 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
-protected class MFInt32303 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {172,164,165,-1,165,173,172,-1,173,165,166,-1,166,174,173,-1,174,166,167,-1,167,175,174,-1,175,167,164,-1,164,172,175,-1,168,172,173,-1,173,169,168,-1,169,173,174,-1,174,170,169,-1,170,174,175,-1,175,171,170,-1,171,175,172,-1,172,168,171,-1,171,168,169,-1,169,170,171,-1,188,192,193,-1,193,189,188,-1,189,193,194,-1,194,190,189,-1,190,194,195,-1,195,191,190,-1,191,195,192,-1,192,188,191,-1,192,196,197,-1,197,193,192,-1,193,197,198,-1,198,194,193,-1,194,198,199,-1,199,195,194,-1,195,199,196,-1,196,192,195,-1,196,199,198,-1,198,197,196,-1,213,217,216,-1,216,212,213,-1,214,218,217,-1,217,213,214,-1,215,219,218,-1,218,214,215,-1,212,216,219,-1,219,215,212,-1,217,221,220,-1,220,216,217,-1,218,222,221,-1,221,217,218,-1,219,223,222,-1,222,218,219,-1,216,220,223,-1,223,219,216,-1,221,222,223,-1,223,220,221,-1});
+protected class MFFloat303 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
-protected class MFInt32304 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,7,1,-1,8,0,1,-1,1,9,8,-1,10,2,3,-1,3,11,10,-1,2,4,5,-1,5,3,2,-1,4,6,5,-1,7,12,1,-1,1,12,13,-1,13,9,1,-1,9,13,14,-1,14,10,9,-1,10,14,15,-1,15,2,10,-1,12,7,6,-1,6,15,12,-1,15,6,4,-1,4,2,15,-1,0,80,7,-1,81,80,0,-1,0,8,81,-1,82,81,8,-1,8,11,82,-1,83,82,11,-1,11,3,83,-1,6,7,80,-1,80,83,6,-1,5,6,83,-1,83,3,5,-1,12,16,17,-1,17,13,12,-1,13,17,18,-1,18,14,13,-1,14,18,19,-1,19,15,14,-1,15,19,16,-1,16,12,15,-1,16,20,21,-1,21,17,16,-1,17,21,22,-1,22,18,17,-1,18,22,23,-1,23,19,18,-1,19,23,20,-1,20,16,19,-1,20,24,25,-1,25,21,20,-1,21,25,26,-1,26,22,21,-1,22,26,27,-1,27,23,22,-1,23,27,24,-1,24,20,23,-1,24,28,29,-1,29,25,24,-1,25,29,30,-1,30,26,25,-1,26,30,31,-1,31,27,26,-1,27,31,28,-1,28,24,27,-1,28,32,33,-1,33,29,28,-1,29,33,34,-1,34,30,29,-1,30,34,35,-1,35,31,30,-1,31,35,32,-1,32,28,31,-1,32,36,37,-1,37,33,32,-1,33,37,38,-1,38,34,33,-1,34,38,39,-1,39,35,34,-1,35,39,36,-1,36,32,35,-1,36,40,41,-1,41,37,36,-1,37,41,42,-1,42,38,37,-1,38,42,43,-1,43,39,38,-1,39,43,40,-1,40,36,39,-1,40,44,45,-1,45,41,40,-1,41,45,46,-1,46,42,41,-1,42,46,47,-1,47,43,42,-1,43,47,44,-1,44,40,43,-1,44,48,49,-1,49,45,44,-1,45,49,50,-1,50,46,45,-1,46,50,51,-1,51,47,46,-1,47,51,48,-1,48,44,47,-1,48,52,53,-1,53,49,48,-1,49,53,54,-1,54,50,49,-1,50,54,55,-1,55,51,50,-1,51,55,52,-1,52,48,51,-1,52,56,57,-1,57,53,52,-1,53,57,58,-1,58,54,53,-1,54,58,59,-1,59,55,54,-1,55,59,56,-1,56,52,55,-1,56,60,61,-1,61,57,56,-1,57,61,62,-1,62,58,57,-1,58,62,63,-1,63,59,58,-1,59,63,60,-1,60,56,59,-1,81,85,84,-1,84,80,81,-1,82,86,85,-1,85,81,82,-1,83,87,86,-1,86,82,83,-1,80,84,87,-1,87,83,80,-1,85,89,88,-1,88,84,85,-1,86,90,89,-1,89,85,86,-1,87,91,90,-1,90,86,87,-1,84,88,91,-1,91,87,84,-1,89,93,92,-1,92,88,89,-1,90,94,93,-1,93,89,90,-1,91,95,94,-1,94,90,91,-1,88,92,95,-1,95,91,88,-1,93,97,96,-1,96,92,93,-1,94,98,97,-1,97,93,94,-1,95,99,98,-1,98,94,95,-1,92,96,99,-1,99,95,92,-1,97,101,100,-1,100,96,97,-1,98,102,101,-1,101,97,98,-1,99,103,102,-1,102,98,99,-1,96,100,103,-1,103,99,96,-1,101,105,104,-1,104,100,101,-1,102,106,105,-1,105,101,102,-1,103,107,106,-1,106,102,103,-1,100,104,107,-1,107,103,100,-1,105,109,108,-1,108,104,105,-1,106,110,109,-1,109,105,106,-1,107,111,110,-1,110,106,107,-1,104,108,111,-1,111,107,104,-1,109,113,112,-1,112,108,109,-1,110,114,113,-1,113,109,110,-1,111,115,114,-1,114,110,111,-1,108,112,115,-1,115,111,108,-1,113,117,116,-1,116,112,113,-1,114,118,117,-1,117,113,114,-1,115,119,118,-1,118,114,115,-1,112,116,119,-1,119,115,112,-1,117,121,120,-1,120,116,117,-1,118,122,121,-1,121,117,118,-1,119,123,122,-1,122,118,119,-1,116,120,123,-1,123,119,116,-1,121,125,124,-1,124,120,121,-1,122,126,125,-1,125,121,122,-1});
+protected class MFString304 {
+  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/l_upperarm.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/l_upperarm.wrl"});
   }
 }
 protected class MFInt32305 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {123,127,126,-1,126,122,123,-1,120,124,127,-1,127,123,120,-1,125,129,128,-1,128,124,125,-1,126,130,129,-1,129,125,126,-1,127,131,130,-1,130,126,127,-1,124,128,131,-1,131,127,124,-1,60,64,65,-1,65,61,60,-1,61,65,66,-1,66,62,61,-1,62,66,67,-1,67,63,62,-1,63,67,64,-1,64,60,63,-1,64,68,69,-1,69,65,64,-1,65,69,70,-1,70,66,65,-1,66,70,71,-1,71,67,66,-1,67,71,68,-1,68,64,67,-1,68,72,73,-1,73,69,68,-1,69,73,74,-1,74,70,69,-1,70,74,75,-1,75,71,70,-1,71,75,72,-1,72,68,71,-1,72,76,77,-1,77,73,72,-1,73,77,78,-1,78,74,73,-1,74,78,79,-1,79,75,74,-1,75,79,76,-1,76,72,75,-1,76,79,78,-1,78,77,76,-1,129,133,132,-1,132,128,129,-1,130,134,133,-1,133,129,130,-1,131,135,134,-1,134,130,131,-1,128,132,135,-1,135,131,128,-1,133,137,136,-1,136,132,133,-1,134,138,137,-1,137,133,134,-1,135,139,138,-1,138,134,135,-1,132,136,139,-1,139,135,132,-1,137,141,140,-1,140,136,137,-1,138,142,141,-1,141,137,138,-1,139,143,142,-1,142,138,139,-1,136,140,143,-1,143,139,136,-1,141,145,144,-1,144,140,141,-1,142,146,145,-1,145,141,142,-1,143,147,146,-1,146,142,143,-1,140,144,147,-1,147,143,140,-1,145,146,147,-1,147,144,145,-1,148,8,9,-1,9,149,148,-1,149,9,10,-1,10,150,149,-1,150,10,11,-1,11,151,150,-1,151,11,8,-1,8,148,151,-1,152,148,149,-1,149,153,152,-1,153,149,150,-1,150,154,153,-1,154,150,151,-1,151,155,154,-1,155,151,148,-1,148,152,155,-1,156,152,153,-1,153,157,156,-1,158,154,155,-1,155,159,158,-1,160,156,157,-1,157,161,160,-1,161,157,158,-1,158,162,161,-1,162,158,159,-1,159,163,162,-1,163,159,156,-1,156,160,163,-1,164,160,161,-1,161,165,164,-1,165,161,162,-1,162,166,165,-1,166,162,163,-1,163,167,166,-1,167,163,160,-1,160,164,167,-1,153,176,177,-1,177,157,153,-1,157,177,178,-1,178,158,157,-1,158,178,179,-1,179,154,158,-1,154,179,176,-1,176,153,154,-1,176,180,181,-1,181,177,176,-1,177,181,182,-1,182,178,177,-1,178,182,183,-1,183,179,178,-1,179,183,180,-1,180,176,179,-1,180,184,185,-1,185,181,180,-1,181,185,186,-1,186,182,181,-1,182,186,187,-1,187,183,182,-1,183,187,184,-1,184,180,183,-1,184,188,189,-1,189,185,184,-1,185,189,190,-1,190,186,185,-1,186,190,191,-1,191,187,186,-1,187,191,188,-1,188,184,187,-1,152,156,201,-1,201,200,152,-1,156,159,202,-1,202,201,156,-1,159,155,203,-1,203,202,159,-1,155,152,200,-1,200,203,155,-1,201,205,204,-1,204,200,201,-1,202,206,205,-1,205,201,202,-1,203,207,206,-1,206,202,203,-1,200,204,207,-1,207,203,200,-1,205,209,208,-1,208,204,205,-1,206,210,209,-1,209,205,206,-1,207,211,210,-1,210,206,207,-1,204,208,211,-1,211,207,204,-1,209,213,212,-1,212,208,209,-1,210,214,213,-1,213,209,210,-1,211,215,214,-1,214,210,211,-1,208,212,215,-1,215,211,208,-1,172,164,165,-1,165,173,172,-1,173,165,166,-1,166,174,173,-1,174,166,167,-1,167,175,174,-1,175,167,164,-1,164,172,175,-1,168,172,173,-1,173,169,168,-1,169,173,174,-1,174,170,169,-1,170,174,175,-1,175,171,170,-1,171,175,172,-1,172,168,171,-1,171,168,169,-1,169,170,171,-1,188,192,193,-1,193,189,188,-1,189,193,194,-1,194,190,189,-1,190,194,195,-1,195,191,190,-1,191,195,192,-1,192,188,191,-1,192,196,197,-1,197,193,192,-1,193,197,198,-1,198,194,193,-1});
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {184,185,186,187,188,189,190,191});
   }
 }
-protected class MFInt32306 {
+protected class MFFloat306 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {1f,1f,1f,1f,1f,1f,1f,1f});
+  }
+}
+protected class MFFloat307 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFFloat308 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFString309 {
+  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/l_forearm.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/l_forearm.wrl"});
+  }
+}
+protected class MFInt32310 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {194,198,199,-1,199,195,194,-1,195,199,196,-1,196,192,195,-1,196,199,198,-1,198,197,196,-1,213,217,216,-1,216,212,213,-1,214,218,217,-1,217,213,214,-1,215,219,218,-1,218,214,215,-1,212,216,219,-1,219,215,212,-1,217,221,220,-1,220,216,217,-1,218,222,221,-1,221,217,218,-1,219,223,222,-1,222,218,219,-1,216,220,223,-1,223,219,216,-1,221,222,223,-1,223,220,221,-1});
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {192,193,194,195,196,197,198,199});
   }
 }
-protected class MFInt32307 {
+protected class MFFloat311 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {1f,1f,1f,1f,1f,1f,1f,1f});
+  }
+}
+protected class MFFloat312 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFFloat313 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFString314 {
+  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/l_hand.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/l_hand.wrl"});
+  }
+}
+protected class MFString315 {
+  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/l_hand_tip.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/l_hand_tip.wrl"});
+  }
+}
+protected class MFInt32316 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {1,30,29,-1,1,29,2,-1,31,47,46,-1,31,46,32,-1,78,77,80,-1,78,80,79,-1,96,113,112,-1,96,112,95,-1,95,112,111,-1,95,111,94,-1,94,111,110,-1,94,110,93,-1,93,110,109,-1,93,109,108,-1,93,108,100,-1,107,99,100,-1,107,100,108,-1,107,106,99,-1,106,105,98,-1,106,98,99,-1,104,97,98,-1,104,98,105,-1,103,102,104,-1,104,102,101,-1,104,101,97,-1,101,96,97,-1,101,97,101,-1,101,101,96,-1,96,101,113,-1,113,101,114,-1,115,86,85,-1,115,85,116,-1,117,87,84,-1,117,84,118,-1,119,83,120,-1,121,88,82,-1,121,82,122,-1,123,89,81,-1,123,81,124,-1,125,90,126,-1,127,92,128,-1,129,91,130,-1,54,49,50,-1,54,50,55,-1,76,75,74,-1,76,74,54,-1,54,74,73,-1,54,73,49,-1,49,73,48,-1,48,73,62,-1,48,62,61,-1,48,61,60,-1,48,60,53,-1,53,60,59,-1,53,59,53,-1,53,59,58,-1,53,58,52,-1,52,58,57,-1,52,57,51,-1,56,51,57,-1,56,55,50,-1,56,50,51,-1,62,73,72,-1,62,72,63,-1,63,72,71,-1,63,71,64,-1,64,71,70,-1,64,70,69,-1,64,69,65,-1,65,69,68,-1,65,68,67,-1,65,67,66,-1,131,40,39,-1,131,39,132,-1,133,43,42,-1,133,42,134,-1,135,37,36,-1,135,36,136,-1,137,41,38,-1,137,38,138,-1,139,44,35,-1,139,35,140,-1,141,34,142,-1,143,45,33,-1,143,33,144,-1,145,16,15,-1,145,15,146,-1,147,14,148,-1,149,17,13,-1,149,13,150,-1,151,18,12,-1,151,12,152,-1,153,19,11,-1,153,11,154,-1,155,20,10,-1,155,10,156,-1,157,9,158,-1,159,21,8,-1,159,8,160,-1,161,22,7,-1,161,7,162,-1,163,23,164,-1,165,24,6,-1,165,6,166,-1,167,25,5,-1,167,5,168,-1,169,26,170,-1,171,27,4,-1,171,4,172,-1,173,28,3,-1,173,3,174,-1,175,0,176,-1});
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {200,201,202,203,204,205,206,207});
   }
 }
-protected class MFVec3f308 {
-  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-3.21f,-0.0154f,0f,-3.15f,-0.0154f,0f,-3.14f,-0.0467f,0f,-3.1f,-0.0601f,0f,-3.05f,-0.051f,0f,-3.04f,-0.0254f,0f,-3.05f,-0.00248f,0f,-3.1f,0.0122f,0f,-3.16f,0.03f,0f,-3.2f,0.0684f,0f,-3.2f,0.133f,0f,-3.16f,0.17f,0f,-3.1f,0.182f,0f,-3.04f,0.171f,0f,-3.01f,0.136f,0f,-3f,0.095f,0f,-3.05f,0.095f,0f,-3.06f,0.125f,0f,-3.1f,0.136f,0f,-3.14f,0.126f,0f,-3.15f,0.103f,0f,-3.14f,0.0815f,0f,-3.1f,0.0689f,0f,-3.04f,0.0512f,0f,-3f,0.0249f,0f,-2.99f,-0.0195f,0f,-3f,-0.0708f,0f,-3.05f,-0.104f,0f,-3.1f,-0.108f,0f,-3.16f,-0.0947f,0f,-3.2f,-0.0586f,0f,-2.86f,-0.102f,0f,-2.9f,-0.102f,0f,-2.94f,-0.0832f,0f,-2.94f,-0.0457f,0f,-2.94f,0.0645f,0f,-2.97f,0.0645f,0f,-2.97f,0.103f,0f,-2.94f,0.103f,0f,-2.94f,0.158f,0f,-2.89f,0.158f,0f,-2.89f,0.103f,0f,-2.86f,0.103f,0f,-2.86f,0.0645f,0f,-2.89f,0.0645f,0f,-2.89f,-0.0483f,0f,-2.88f,-0.0608f,0f,-2.86f,-0.0612f,0f,-2.71f,-0.000798f,0f,-2.71f,-0.0373f,0f,-2.74f,-0.0637f,0f,-2.77f,-0.0624f,0f,-2.78f,-0.0416f,0f,-2.77f,-0.0195f,0f,-2.71f,-0.0754f,0f,-2.74f,-0.103f,0f,-2.79f,-0.106f,0f,-2.82f,-0.0865f,0f,-2.84f,-0.0431f,0f,-2.82f,0.000177f,0f,-2.78f,0.0201f,0f,-2.73f,0.0275f,0f,-2.71f,0.0446f,0f,-2.72f,0.0614f,0f,-2.74f,0.0675f,0f,-2.77f,0.0573f,0f,-2.78f,0.039f,0f,-2.83f,0.039f,0f,-2.82f,0.0765f,0f,-2.78f,0.105f,0f,-2.74f,0.11f,0f,-2.71f,0.107f,0f,-2.67f,0.0849f,0f,-2.66f,0.0526f,0f,-2.66f,-0.0763f,0f,-2.65f,-0.101f,0f,-2.7f,-0.101f,0f,-2.61f,-0.101f,0f,-2.61f,0.103f,0f,-2.56f,0.103f,0f,-2.56f,0.0787f,0f,-2.52f,0.104f,0f,-2.47f,0.105f,0f,-2.43f,0.0743f,0f,-2.43f,0.038f,0f,-2.43f,-0.101f,0f,-2.48f,-0.101f,0f,-2.48f,0.0224f,0f,-2.49f,0.0514f,0f,-2.52f,0.0627f,0f,-2.54f,0.0505f,0f,-2.55f,0.02f,0f,-2.55f,-0.101f,0f,-2.33f,0.0279f,0f,-2.31f,0.0587f,0f,-2.27f,0.0589f,0f,-2.25f,0.0281f,0f,-2.25f,-0.0232f,0f,-2.27f,-0.0563f,0f,-2.31f,-0.057f,0f,-2.33f,-0.0245f,0f,-2.19f,0.175f,0f,-2.19f,-0.101f,0f,-2.25f,-0.101f,0f,-2.25f,-0.073f,0f,-2.26f,-0.0913f,0f,-2.31f,-0.108f,0f,-2.35f,-0.0915f,0f,-2.38f,-0.0424f,0f,-2.39f,0.0243f,0f,-2.37f,0.0809f,0f,-2.32f,0.108f,0f,-2.28f,0.106f,0f,-2.25f,0.0776f,0f,-2.25f,0.175f,0f,-2.48f,0.0224f,0f,-2.43f,0.038f,0f,-2.49f,0.0514f,0f,-2.43f,0.0743f,0f,-2.49f,0.0514f,0f,-2.47f,0.105f,0f,-2.52f,0.0627f,0f,-2.52f,0.104f,0f,-2.54f,0.0505f,0f,-2.56f,0.0787f,0f,-2.55f,0.02f,0f,-2.56f,0.0787f,0f,-2.61f,-0.101f,0f,-2.55f,0.02f,0f,-2.61f,-0.101f,0f,-2.56f,0.0787f,0f,-2.89f,0.103f,0f,-2.94f,0.103f,0f,-2.89f,0.0645f,0f,-2.89f,0.103f,0f,-2.94f,0.103f,0f,-2.94f,0.0645f,0f,-2.89f,0.0645f,0f,-2.94f,0.0645f,0f,-2.89f,-0.0483f,0f,-2.94f,-0.0457f,0f,-2.89f,-0.0483f,0f,-2.94f,-0.0832f,0f,-2.88f,-0.0608f,0f,-2.9f,-0.102f,0f,-3.06f,0.125f,0f,-3.01f,0.136f,0f,-3.06f,0.125f,0f,-3.04f,0.171f,0f,-3.1f,0.136f,0f,-3.1f,0.182f,0f,-3.14f,0.126f,0f,-3.16f,0.17f,0f,-3.15f,0.103f,0f,-3.2f,0.133f,0f,-3.14f,0.0815f,0f,-3.2f,0.0684f,0f,-3.14f,0.0815f,0f,-3.16f,0.03f,0f,-3.1f,0.0689f,0f,-3.1f,0.0122f,0f,-3.04f,0.0512f,0f,-3.05f,-0.00248f,0f,-3f,0.0249f,0f,-3.05f,-0.00248f,0f,-2.99f,-0.0195f,0f,-3.04f,-0.0254f,0f,-3f,-0.0708f,0f,-3.05f,-0.051f,0f,-3.05f,-0.104f,0f,-3.05f,-0.051f,0f,-3.1f,-0.108f,0f,-3.1f,-0.0601f,0f,-3.16f,-0.0947f,0f,-3.14f,-0.0467f,0f,-3.15f,-0.0154f,0f,-3.2f,-0.0586f,0f});
+protected class MFFloat317 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {1f,1f,1f,1f,1f,1f,1f,1f});
   }
 }
-protected class MFInt32309 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,2,3,-1,2,0,1,-1});
+protected class MFFloat318 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
-protected class MFVec3f310 {
-  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.02572f,-0.02535f,-0.05f,-0.02578f,-0.02131f,-0.05f,-0.03871f,-0.02131f,-0.05f,-0.03877f,-0.02541f,-0.05f});
+protected class MFFloat319 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
-protected class MFInt32311 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,2,1,-1,3,2,0,-1,12,3,0,-1,4,3,12,-1,11,4,12,-1,5,4,11,-1,10,5,11,-1,6,5,10,-1,9,6,10,-1,7,6,9,-1,8,7,9,-1,15,14,13,-1,16,15,13,-1,19,18,17,-1,20,19,17,-1,27,20,17,-1,28,27,17,-1,26,20,27,-1,23,20,26,-1,21,20,23,-1,25,23,26,-1,22,21,23,-1,24,23,25,-1,29,30,31,-1,29,31,32,-1,33,34,35,-1,33,35,29,-1,29,35,36,-1,29,36,30,-1,30,36,37,-1,37,36,38,-1,37,38,39,-1,37,39,40,-1,37,40,41,-1,41,40,42,-1,41,42,41,-1,41,42,43,-1,41,43,44,-1,44,43,45,-1,44,45,46,-1,47,46,45,-1,47,32,31,-1,47,31,46,-1,38,36,48,-1,38,48,49,-1,49,48,50,-1,49,50,51,-1,51,50,52,-1,51,52,53,-1,51,53,54,-1,54,53,55,-1,54,55,56,-1,54,56,57,-1});
-  }
-}
-protected class MFVec3f312 {
-  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-1.88f,-0.101f,0f,-1.96f,0.175f,0f,-1.91f,0.175f,0f,-1.86f,-0.0195f,0f,-1.82f,0.175f,0f,-1.76f,0.175f,0f,-1.72f,-0.0195f,0f,-1.67f,0.175f,0f,-1.61f,0.175f,0f,-1.69f,-0.101f,0f,-1.75f,-0.101f,0f,-1.79f,0.111f,0f,-1.83f,-0.101f,0f,-1.38f,-0.101f,0f,-1.38f,0.175f,0f,-1.32f,0.175f,0f,-1.32f,-0.101f,0f,-1.27f,-0.101f,0f,-1.27f,0.175f,0f,-1.22f,0.175f,0f,-1.22f,0.0304f,0f,-1.16f,0.103f,0f,-1.09f,0.103f,0f,-1.16f,0.0272f,0f,-1.09f,-0.101f,0f,-1.15f,-0.101f,0f,-1.2f,-0.0141f,0f,-1.22f,-0.0363f,0f,-1.22f,-0.101f,0f,-1.48f,-0.0754f,0f,-1.48f,-0.0373f,0f,-1.51f,-0.0637f,0f,-1.51f,-0.103f,0f,-1.47f,-0.101f,0f,-1.42f,-0.101f,0f,-1.43f,-0.0763f,0f,-1.43f,0.0526f,0f,-1.48f,-0.000798f,0f,-1.48f,0.0446f,0f,-1.5f,0.0275f,0f,-1.55f,0.0201f,0f,-1.54f,-0.0195f,0f,-1.59f,0.000177f,0f,-1.61f,-0.0431f,0f,-1.55f,-0.0416f,0f,-1.59f,-0.0865f,0f,-1.54f,-0.0624f,0f,-1.56f,-0.106f,0f,-1.44f,0.0849f,0f,-1.49f,0.0614f,0f,-1.48f,0.107f,0f,-1.51f,0.0675f,0f,-1.52f,0.11f,0f,-1.55f,0.105f,0f,-1.54f,0.0573f,0f,-1.59f,0.0765f,0f,-1.6f,0.039f,0f,-1.55f,0.039f,0f});
-  }
-}
-protected class MFInt32313 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {1,3,0,-1,3,1,2,-1});
-  }
-}
-protected class MFVec3f314 {
-  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.02381f,-0.02541f,-0.05f,-0.0127f,-0.02541f,-0.05f,-0.01263f,-0.02139f,-0.05f,-0.02381f,-0.02146f,-0.05f});
-  }
-}
-protected class MFInt32315 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {24,26,25,-1,53,39,54,-1,17,1,0,-1,17,0,16,-1,0,14,16,-1,0,15,14,-1,14,13,22,-1,14,22,16,-1,13,12,21,-1,13,21,22,-1,12,6,21,-1,12,11,7,-1,12,7,6,-1,11,8,7,-1,10,8,11,-1,10,9,8,-1,6,5,21,-1,5,4,20,-1,5,20,21,-1,4,3,19,-1,4,19,20,-1,3,2,18,-1,3,18,19,-1,18,2,1,-1,18,1,17,-1,55,32,31,-1,55,31,56,-1,57,33,30,-1,57,30,58,-1,59,29,60,-1,61,34,28,-1,61,28,62,-1,63,35,27,-1,63,27,64,-1,65,36,66,-1,67,38,68,-1,69,37,70,-1,71,23,72,-1,73,48,47,-1,73,47,74,-1,75,49,46,-1,75,46,76,-1,77,45,78,-1,79,50,44,-1,79,44,80,-1,81,51,43,-1,81,43,82,-1,83,41,84,-1,85,40,86,-1,87,52,88,-1,89,42,90,-1});
-  }
-}
-protected class MFVec3f316 {
-  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.829f,-0.101f,0f,-0.829f,0.175f,0f,-0.662f,0.172f,0f,-0.622f,0.148f,0f,-0.607f,0.103f,0f,-0.62f,0.0501f,0f,-0.648f,0.0316f,0f,-0.615f,-0.0063f,0f,-0.611f,-0.0764f,0f,-0.601f,-0.101f,0f,-0.664f,-0.101f,0f,-0.671f,-0.0373f,0f,-0.68f,-0.00372f,0f,-0.712f,0.00648f,0f,-0.772f,0.00648f,0f,-0.772f,-0.101f,0f,-0.772f,0.0546f,0f,-0.772f,0.127f,0f,-0.703f,0.127f,0f,-0.673f,0.118f,0f,-0.663f,0.091f,0f,-0.674f,0.063f,0f,-0.705f,0.0546f,0f,-0.379f,0.103f,0f,-0.379f,-0.101f,0f,-0.432f,-0.101f,0f,-0.432f,-0.0764f,0f,-0.466f,-0.101f,0f,-0.518f,-0.102f,0f,-0.555f,-0.072f,0f,-0.56f,-0.0357f,0f,-0.56f,0.103f,0f,-0.506f,0.103f,0f,-0.506f,-0.0201f,0f,-0.5f,-0.0491f,0f,-0.472f,-0.0604f,0f,-0.443f,-0.0482f,0f,-0.433f,-0.0177f,0f,-0.433f,0.103f,0f,-0.331f,-0.101f,0f,-0.331f,0.103f,0f,-0.278f,0.103f,0f,-0.278f,0.0787f,0f,-0.244f,0.104f,0f,-0.192f,0.105f,0f,-0.154f,0.0743f,0f,-0.149f,0.038f,0f,-0.149f,-0.101f,0f,-0.203f,-0.101f,0f,-0.203f,0.0224f,0f,-0.209f,0.0514f,0f,-0.238f,0.0627f,0f,-0.266f,0.0505f,0f,-0.277f,0.02f,0f,-0.277f,-0.101f,0f,-0.506f,-0.0201f,0f,-0.56f,-0.0357f,0f,-0.5f,-0.0491f,0f,-0.555f,-0.072f,0f,-0.5f,-0.0491f,0f,-0.518f,-0.102f,0f,-0.472f,-0.0604f,0f,-0.466f,-0.101f,0f,-0.443f,-0.0482f,0f,-0.432f,-0.0764f,0f,-0.433f,-0.0177f,0f,-0.432f,-0.0764f,0f,-0.379f,0.103f,0f,-0.433f,-0.0177f,0f,-0.379f,0.103f,0f,-0.432f,-0.0764f,0f,-0.379f,-0.101f,0f,-0.432f,-0.0764f,0f,-0.203f,0.0224f,0f,-0.149f,0.038f,0f,-0.209f,0.0514f,0f,-0.154f,0.0743f,0f,-0.209f,0.0514f,0f,-0.192f,0.105f,0f,-0.238f,0.0627f,0f,-0.244f,0.104f,0f,-0.266f,0.0505f,0f,-0.278f,0.0787f,0f,-0.278f,0.0787f,0f,-0.331f,0.103f,0f,-0.277f,0.02f,0f,-0.331f,-0.101f,0f,-0.277f,0.02f,0f,-0.278f,0.0787f,0f,-0.277f,0.02f,0f,-0.331f,0.103f,0f});
-  }
-}
-protected class MFInt32317 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,2,3,-1,2,0,1,-1});
-  }
-}
-protected class MFVec3f318 {
-  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.01009f,-0.02534f,-0.05f,-0.001382f,-0.02541f,-0.05f,-0.001315f,-0.02146f,-0.05f,-0.01022f,-0.02146f,-0.05f});
-  }
-}
-protected class MFInt32319 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {1,0,14,-1,1,14,2,-1,16,15,18,-1,16,18,17,-1,64,65,66,-1,67,68,69,-1,67,69,70,-1,71,72,73,-1,71,73,74,-1,75,76,77,-1,78,79,80,-1,78,80,81,-1,82,83,84,-1,82,84,85,-1,86,87,88,-1,89,90,91,-1,92,93,94,-1,95,96,97,-1,98,7,6,-1,98,6,99,-1,100,8,5,-1,100,5,101,-1,102,9,4,-1,102,4,103,-1,104,10,105,-1,106,11,3,-1,106,3,107,-1,108,12,109,-1,110,13,111,-1,112,27,26,-1,112,26,113,-1,114,28,25,-1,114,25,115,-1,116,24,117,-1,118,29,23,-1,118,23,119,-1,120,30,22,-1,120,22,121,-1,122,31,123,-1,124,34,33,-1,124,33,125,-1,126,35,32,-1,126,32,127,-1,128,21,129,-1,130,36,20,-1,130,20,131,-1,132,37,19,-1,132,19,133,-1,134,38,135,-1,136,40,137,-1,138,39,139,-1,53,58,59,-1,53,59,54,-1,53,52,58,-1,52,51,57,-1,52,57,58,-1,51,50,56,-1,51,56,57,-1,50,49,56,-1,49,48,63,-1,49,63,56,-1,48,47,63,-1,63,47,46,-1,63,46,62,-1,62,46,45,-1,62,45,44,-1,62,44,61,-1,61,44,60,-1,54,59,60,-1,44,43,42,-1,60,44,42,-1,41,55,54,-1,41,54,60,-1,41,60,42,-1});
-  }
-}
-protected class MFVec3f320 {
-  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.108f,0.00195f,0f,0.163f,0.00195f,0f,0.166f,-0.0473f,0f,0.194f,-0.0608f,0f,0.222f,-0.0492f,0f,0.228f,-0.017f,0f,0.228f,0.175f,0f,0.284f,0.175f,0f,0.284f,-0.02f,0f,0.271f,-0.0798f,0f,0.23f,-0.104f,0f,0.193f,-0.108f,0f,0.155f,-0.102f,0f,0.117f,-0.0714f,0f,0.108f,-0.0357f,0f,0.563f,-0.101f,0f,0.563f,0.103f,0f,0.615f,0.103f,0f,0.615f,0.0803f,0f,0.649f,0.105f,0f,0.696f,0.105f,0f,0.728f,0.0788f,0f,0.76f,0.104f,0f,0.811f,0.104f,0f,0.842f,0.081f,0f,0.853f,0.0416f,0f,0.853f,-0.101f,0f,0.799f,-0.101f,0f,0.799f,0.0305f,0f,0.79f,0.0544f,0f,0.767f,0.0616f,0f,0.743f,0.0507f,0f,0.734f,0.0228f,0f,0.734f,-0.101f,0f,0.681f,-0.101f,0f,0.681f,0.0301f,0f,0.673f,0.0532f,0f,0.65f,0.0611f,0f,0.626f,0.0506f,0f,0.617f,0.0224f,0f,0.617f,-0.101f,0f,0.9f,-0.182f,0f,0.9f,0.103f,0f,0.952f,0.103f,0f,0.952f,0.0751f,0f,0.968f,0.0934f,0f,1.01f,0.11f,0f,1.05f,0.103f,0f,1.07f,0.0796f,0f,1.1f,0.0251f,0f,1.1f,-0.0222f,0f,1.07f,-0.0788f,0f,1.03f,-0.106f,0f,0.988f,-0.103f,0f,0.953f,-0.0755f,0f,0.953f,-0.182f,0f,1.04f,-0.000177f,0f,1.03f,-0.0446f,0f,0.999f,-0.0603f,0f,0.966f,-0.0453f,0f,0.953f,-0.000177f,0f,0.963f,0.045f,0f,0.998f,0.063f,0f,1.03f,0.0462f,0f,0.515f,-0.101f,0f,0.462f,-0.0764f,0f,0.462f,-0.101f,0f,0.388f,-0.0201f,0f,0.388f,0.103f,0f,0.334f,0.103f,0f,0.334f,-0.0357f,0f,0.394f,-0.0491f,0f,0.388f,-0.0201f,0f,0.334f,-0.0357f,0f,0.339f,-0.072f,0f,0.394f,-0.0491f,0f,0.339f,-0.072f,0f,0.376f,-0.102f,0f,0.422f,-0.0604f,0f,0.394f,-0.0491f,0f,0.376f,-0.102f,0f,0.428f,-0.101f,0f,0.451f,-0.0482f,0f,0.422f,-0.0604f,0f,0.428f,-0.101f,0f,0.462f,-0.0764f,0f,0.461f,-0.0177f,0f,0.451f,-0.0482f,0f,0.462f,-0.0764f,0f,0.515f,0.103f,0f,0.461f,0.103f,0f,0.461f,-0.0177f,0f,0.515f,0.103f,0f,0.461f,-0.0177f,0f,0.462f,-0.0764f,0f,0.515f,-0.101f,0f,0.515f,0.103f,0f,0.462f,-0.0764f,0f,0.284f,-0.02f,0f,0.228f,-0.017f,0f,0.271f,-0.0798f,0f,0.222f,-0.0492f,0f,0.23f,-0.104f,0f,0.194f,-0.0608f,0f,0.193f,-0.108f,0f,0.194f,-0.0608f,0f,0.155f,-0.102f,0f,0.166f,-0.0473f,0f,0.117f,-0.0714f,0f,0.166f,-0.0473f,0f,0.108f,-0.0357f,0f,0.166f,-0.0473f,0f,0.799f,0.0305f,0f,0.853f,0.0416f,0f,0.79f,0.0544f,0f,0.842f,0.081f,0f,0.79f,0.0544f,0f,0.811f,0.104f,0f,0.767f,0.0616f,0f,0.76f,0.104f,0f,0.743f,0.0507f,0f,0.728f,0.0788f,0f,0.734f,0.0228f,0f,0.728f,0.0788f,0f,0.681f,0.0301f,0f,0.734f,0.0228f,0f,0.673f,0.0532f,0f,0.728f,0.0788f,0f,0.673f,0.0532f,0f,0.696f,0.105f,0f,0.65f,0.0611f,0f,0.649f,0.105f,0f,0.626f,0.0506f,0f,0.615f,0.0803f,0f,0.617f,0.0224f,0f,0.615f,0.0803f,0f,0.563f,-0.101f,0f,0.617f,0.0224f,0f,0.563f,-0.101f,0f,0.615f,0.0803f,0f});
+protected class MFString320 {
+  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/r_upperarm.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/r_upperarm.wrl"});
   }
 }
 protected class MFInt32321 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,2,3,-1,2,0,1,-1});
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {208,209,210,211,212,213,214,215});
   }
 }
-protected class MFVec3f322 {
-  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.001296f,-0.02541f,-0.05f,0.01335f,-0.02527f,-0.05f,0.01328f,-0.02152f,-0.05f,0.001229f,-0.02146f,-0.05f});
+protected class MFFloat322 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {1f,1f,1f,1f,1f,1f,1f,1f});
   }
 }
-protected class MFString323 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Kneel"});
+protected class MFFloat323 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
-protected class MFString324 {
-  protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"SANS"});
+protected class MFFloat324 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
 protected class MFString325 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/r_forearm.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/r_forearm.wrl"});
+  }
+}
+protected class MFInt32326 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {216,217,218,219,220,221,222,223});
+  }
+}
+protected class MFFloat327 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {1f,1f,1f,1f,1f,1f,1f,1f});
+  }
+}
+protected class MFFloat328 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFFloat329 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFString330 {
+  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/r_hand.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/r_hand.wrl"});
+  }
+}
+protected class MFString331 {
+  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"centres/r_hand_tip.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/r_hand_tip.wrl"});
+  }
+}
+protected class MFVec3f332 {
+  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.05f,1f,0.05f,0.05f,1f,0.05f,0.03f,0.97f,-0.1f,-0.03f,0.97f,-0.1f,0.03f,0.94f,-0.075f,-0.03f,0.94f,-0.075f,0f,0.92f,0f,0f,0.94f,0.03f,-0.12f,1.06f,0.05f,0.12f,1.06f,0.05f,0.12f,1.06f,-0.1f,-0.12f,1.06f,-0.1f,0.0456f,0.9364f,0.05f,0.1456f,0.9364f,0.05f,0.1456f,0.9364f,-0.05f,0.0456f,0.9364f,-0.05f,0.0456f,0.9f,0.05f,0.1456f,0.9f,0.05f,0.1456f,0.9f,-0.05f,0.0456f,0.9f,-0.05f,0.0456f,0.8f,0.05f,0.1456f,0.8f,0.05f,0.1456f,0.8f,-0.05f,0.0456f,0.8f,-0.05f,0.0456f,0.7f,0.05f,0.1456f,0.7f,0.05f,0.1456f,0.7f,-0.05f,0.0456f,0.7f,-0.05f,0.0456f,0.6f,0.05f,0.1456f,0.6f,0.05f,0.1456f,0.6f,-0.05f,0.0456f,0.6f,-0.05f,0.0456f,0.55f,0.05f,0.1456f,0.55f,0.05f,0.1456f,0.55f,-0.05f,0.0456f,0.55f,-0.05f,0.0456f,0.52f,0.05f,0.1456f,0.52f,0.05f,0.1456f,0.52f,-0.05f,0.0456f,0.52f,-0.05f,0.0456f,0.5f,0.05f,0.1456f,0.5f,0.05f,0.1456f,0.5f,-0.05f,0.0456f,0.5f,-0.05f,0.0454f,0.43f,0.045f,0.1454f,0.43f,0.045f,0.1454f,0.43f,-0.055f,0.0454f,0.43f,-0.055f,0.0452f,0.36f,0.04f,0.1452f,0.36f,0.04f,0.1452f,0.36f,-0.06f,0.0452f,0.36f,-0.06f,0.045f,0.29f,0.035f,0.145f,0.29f,0.035f,0.145f,0.29f,-0.065f,0.045f,0.29f,-0.065f,0.0448f,0.21f,0.03f,0.1448f,0.21f,0.03f,0.1448f,0.21f,-0.07f,0.0448f,0.21f,-0.07f,0.0446f,0.1262f,0.025f,0.1446f,0.1262f,0.025f,0.1446f,0.1262f,-0.075f,0.0446f,0.1262f,-0.075f,0.0446f,0.0762f,0.025f,0.1446f,0.0762f,0.025f,0.1446f,0f,-0.075f,0.0446f,0f,-0.075f,0.0446f,0.0562f,0.057f,0.1446f,0.0562f,0.057f,0.1446f,0f,0.057f,0.0446f,0f,0.057f,0.0446f,0.0562f,0.087f,0.1446f,0.0562f,0.087f,0.1446f,0f,0.087f,0.0446f,0f,0.087f,0.0446f,0.0562f,0.1924f,0.1446f,0.0562f,0.1924f,0.1446f,0f,0.1924f,0.0446f,0f,0.1924f,-0.0456f,0.9364f,0.05f,-0.1456f,0.9364f,0.05f,-0.1456f,0.9364f,-0.05f,-0.0456f,0.9364f,-0.05f,-0.0456f,0.9f,0.05f,-0.1456f,0.9f,0.05f,-0.1456f,0.9f,-0.05f,-0.0456f,0.9f,-0.05f,-0.0456f,0.8f,0.05f,-0.1456f,0.8f,0.05f,-0.1456f,0.8f,-0.05f,-0.0456f,0.8f,-0.05f,-0.0456f,0.7f,0.05f,-0.1456f,0.7f,0.05f,-0.1456f,0.7f,-0.05f,-0.0456f,0.7f,-0.05f,-0.0456f,0.6f,0.05f,-0.1456f,0.6f,0.05f,-0.1456f,0.6f,-0.05f,-0.0456f,0.6f,-0.05f,-0.0456f,0.55f,0.05f,-0.1456f,0.55f,0.05f,-0.1456f,0.55f,-0.05f,-0.0456f,0.55f,-0.05f,-0.0456f,0.52f,0.05f,-0.1456f,0.52f,0.05f,-0.1456f,0.52f,-0.05f,-0.0456f,0.52f,-0.05f,-0.0456f,0.5f,0.05f,-0.1456f,0.5f,0.05f,-0.1456f,0.5f,-0.05f,-0.0456f,0.5f,-0.05f,-0.0454f,0.43f,0.045f,-0.1454f,0.43f,0.045f,-0.1454f,0.43f,-0.055f,-0.0454f,0.43f,-0.055f,-0.0452f,0.36f,0.04f,-0.1452f,0.36f,0.04f,-0.1452f,0.36f,-0.06f,-0.0452f,0.36f,-0.06f,-0.045f,0.29f,0.035f,-0.145f,0.29f,0.035f,-0.145f,0.29f,-0.065f,-0.045f,0.29f,-0.065f,-0.0448f,0.21f,0.03f,-0.1448f,0.21f,0.03f,-0.1448f,0.21f,-0.07f,-0.0448f,0.21f,-0.07f,-0.0446f,0.1262f,0.025f,-0.1446f,0.1262f,0.025f,-0.1446f,0.1262f,-0.075f,-0.0446f,0.1262f,-0.075f,-0.0446f,0.0762f,0.025f,-0.1446f,0.0762f,0.025f,-0.1446f,0f,-0.075f,-0.0446f,0f,-0.075f,-0.0446f,0.0562f,0.057f,-0.1446f,0.0562f,0.057f,-0.1446f,0f,0.057f,-0.0446f,0f,0.057f,-0.0446f,0.0562f,0.087f,-0.1446f,0.0562f,0.087f,-0.1446f,0f,0.087f,-0.0446f,0f,0.087f,-0.0446f,0.0562f,0.1924f,-0.1446f,0.0562f,0.1924f,-0.1446f,0f,0.1924f,-0.0446f,0f,0.1924f,-0.12f,1.1f,0.05f,0.12f,1.1f,0.05f,0.12f,1.1f,-0.1f,-0.12f,1.1f,-0.1f,-0.14f,1.42f,0.045f,0.14f,1.42f,0.045f,0.14f,1.42f,-0.09f,-0.14f,1.42f,-0.09f,-0.24f,1.52f,0.035f,0.24f,1.52f,0.035f,0.24f,1.52f,-0.09f,-0.24f,1.52f,-0.09f,-0.05f,1.56f,0.03f,0.05f,1.56f,0.03f,0.05f,1.56f,-0.06f,-0.05f,1.56f,-0.06f,-0.05f,1.6f,0.06f,0.05f,1.6f,0.06f,0.05f,1.62f,-0.03f,-0.05f,1.62f,-0.03f,-0.07f,1.777f,0.13f,0.07f,1.777f,0.13f,0.07f,1.777f,-0.03f,-0.07f,1.777f,-0.03f,-0.07f,1.6f,0.13f,0.07f,1.6f,0.13f,0.07f,1.66f,-0.03f,-0.07f,1.66f,-0.03f,0.16f,1.42f,0.015f,0.24f,1.5f,0.015f,0.24f,1.5f,-0.075f,0.16f,1.42f,-0.075f,0.17f,1.18f,-0.025f,0.23f,1.18f,-0.025f,0.23f,1.18f,-0.085f,0.17f,1.18f,-0.085f,0.17f,1.14f,-0.025f,0.23f,1.14f,-0.025f,0.23f,1.14f,-0.085f,0.17f,1.14f,-0.085f,0.18f,0.91f,-0.05f,0.22f,0.91f,-0.05f,0.22f,0.91f,-0.09f,0.18f,0.91f,-0.09f,0.18f,0.87f,-0.02f,0.22f,0.87f,-0.02f,0.22f,0.87f,-0.1f,0.18f,0.87f,-0.1f,0.18f,0.6976f,-0.02f,0.22f,0.6976f,-0.02f,0.22f,0.6976f,-0.1f,0.18f,0.6976f,-0.1f,-0.16f,1.42f,0.015f,-0.24f,1.5f,0.015f,-0.24f,1.5f,-0.075f,-0.16f,1.42f,-0.075f,-0.17f,1.18f,-0.025f,-0.23f,1.18f,-0.025f,-0.23f,1.18f,-0.085f,-0.17f,1.18f,-0.085f,-0.17f,1.14f,-0.025f,-0.23f,1.14f,-0.025f,-0.23f,1.14f,-0.085f,-0.17f,1.14f,-0.085f,-0.18f,0.91f,-0.05f,-0.22f,0.91f,-0.05f,-0.22f,0.91f,-0.09f,-0.18f,0.91f,-0.09f,-0.18f,0.87f,-0.02f,-0.22f,0.87f,-0.02f,-0.22f,0.87f,-0.1f,-0.18f,0.87f,-0.1f,-0.18f,0.6976f,-0.02f,-0.22f,0.6976f,-0.02f,-0.22f,0.6976f,-0.1f,-0.18f,0.6976f,-0.1f});
+  }
+}
+protected class MFInt32333 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,7,1,-1,8,0,1,-1,1,9,8,-1,10,2,3,-1,3,11,10,-1,2,4,5,-1,5,3,2,-1,4,6,5,-1,7,12,1,-1,1,12,13,-1,13,9,1,-1,9,13,14,-1,14,10,9,-1,10,14,15,-1,15,2,10,-1,12,7,6,-1,6,15,12,-1,15,6,4,-1,4,2,15,-1,0,80,7,-1,81,80,0,-1,0,8,81,-1,82,81,8,-1,8,11,82,-1,83,82,11,-1,11,3,83,-1,6,7,80,-1,80,83,6,-1,5,6,83,-1,83,3,5,-1,12,16,17,-1,17,13,12,-1,13,17,18,-1,18,14,13,-1,14,18,19,-1,19,15,14,-1,15,19,16,-1,16,12,15,-1,16,20,21,-1,21,17,16,-1,17,21,22,-1,22,18,17,-1,18,22,23,-1,23,19,18,-1,19,23,20,-1,20,16,19,-1,20,24,25,-1,25,21,20,-1,21,25,26,-1,26,22,21,-1,22,26,27,-1,27,23,22,-1,23,27,24,-1,24,20,23,-1,24,28,29,-1,29,25,24,-1,25,29,30,-1,30,26,25,-1,26,30,31,-1,31,27,26,-1,27,31,28,-1,28,24,27,-1,28,32,33,-1,33,29,28,-1,29,33,34,-1,34,30,29,-1,30,34,35,-1,35,31,30,-1,31,35,32,-1,32,28,31,-1,32,36,37,-1,37,33,32,-1,33,37,38,-1,38,34,33,-1,34,38,39,-1,39,35,34,-1,35,39,36,-1,36,32,35,-1,36,40,41,-1,41,37,36,-1,37,41,42,-1,42,38,37,-1,38,42,43,-1,43,39,38,-1,39,43,40,-1,40,36,39,-1,40,44,45,-1,45,41,40,-1,41,45,46,-1,46,42,41,-1,42,46,47,-1,47,43,42,-1,43,47,44,-1,44,40,43,-1,44,48,49,-1,49,45,44,-1,45,49,50,-1,50,46,45,-1,46,50,51,-1,51,47,46,-1,47,51,48,-1,48,44,47,-1,48,52,53,-1,53,49,48,-1,49,53,54,-1,54,50,49,-1,50,54,55,-1,55,51,50,-1,51,55,52,-1,52,48,51,-1,52,56,57,-1,57,53,52,-1,53,57,58,-1,58,54,53,-1,54,58,59,-1,59,55,54,-1,55,59,56,-1,56,52,55,-1,56,60,61,-1,61,57,56,-1,57,61,62,-1,62,58,57,-1,58,62,63,-1,63,59,58,-1,59,63,60,-1,60,56,59,-1,81,85,84,-1,84,80,81,-1,82,86,85,-1,85,81,82,-1,83,87,86,-1,86,82,83,-1,80,84,87,-1,87,83,80,-1,85,89,88,-1,88,84,85,-1,86,90,89,-1,89,85,86,-1,87,91,90,-1,90,86,87,-1,84,88,91,-1,91,87,84,-1,89,93,92,-1,92,88,89,-1,90,94,93,-1,93,89,90,-1,91,95,94,-1,94,90,91,-1,88,92,95,-1,95,91,88,-1,93,97,96,-1,96,92,93,-1,94,98,97,-1,97,93,94,-1,95,99,98,-1,98,94,95,-1,92,96,99,-1,99,95,92,-1,97,101,100,-1,100,96,97,-1,98,102,101,-1,101,97,98,-1,99,103,102,-1,102,98,99,-1,96,100,103,-1,103,99,96,-1,101,105,104,-1,104,100,101,-1,102,106,105,-1,105,101,102,-1,103,107,106,-1,106,102,103,-1,100,104,107,-1,107,103,100,-1,105,109,108,-1,108,104,105,-1,106,110,109,-1,109,105,106,-1,107,111,110,-1,110,106,107,-1,104,108,111,-1,111,107,104,-1,109,113,112,-1,112,108,109,-1,110,114,113,-1,113,109,110,-1,111,115,114,-1,114,110,111,-1,108,112,115,-1,115,111,108,-1,113,117,116,-1,116,112,113,-1,114,118,117,-1,117,113,114,-1,115,119,118,-1,118,114,115,-1,112,116,119,-1,119,115,112,-1,117,121,120,-1,120,116,117,-1,118,122,121,-1,121,117,118,-1,119,123,122,-1,122,118,119,-1,116,120,123,-1,123,119,116,-1,121,125,124,-1,124,120,121,-1,122,126,125,-1,125,121,122,-1});
+  }
+}
+protected class MFInt32334 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {123,127,126,-1,126,122,123,-1,120,124,127,-1,127,123,120,-1,125,129,128,-1,128,124,125,-1,126,130,129,-1,129,125,126,-1,127,131,130,-1,130,126,127,-1,124,128,131,-1,131,127,124,-1});
+  }
+}
+protected class MFInt32335 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {60,64,65,-1,65,61,60,-1,61,65,66,-1,66,62,61,-1,62,66,67,-1,67,63,62,-1,63,67,64,-1,64,60,63,-1,64,68,69,-1,69,65,64,-1,65,69,70,-1,70,66,65,-1,66,70,71,-1,71,67,66,-1,67,71,68,-1,68,64,67,-1,68,72,73,-1,73,69,68,-1,69,73,74,-1,74,70,69,-1,70,74,75,-1,75,71,70,-1,71,75,72,-1,72,68,71,-1,72,76,77,-1,77,73,72,-1,73,77,78,-1,78,74,73,-1,74,78,79,-1,79,75,74,-1,75,79,76,-1,76,72,75,-1,76,79,78,-1,78,77,76,-1,129,133,132,-1,132,128,129,-1,130,134,133,-1,133,129,130,-1,131,135,134,-1,134,130,131,-1,128,132,135,-1,135,131,128,-1,133,137,136,-1,136,132,133,-1,134,138,137,-1,137,133,134,-1,135,139,138,-1,138,134,135,-1,132,136,139,-1,139,135,132,-1,137,141,140,-1,140,136,137,-1,138,142,141,-1,141,137,138,-1,139,143,142,-1,142,138,139,-1,136,140,143,-1,143,139,136,-1,141,145,144,-1,144,140,141,-1,142,146,145,-1,145,141,142,-1,143,147,146,-1,146,142,143,-1,140,144,147,-1,147,143,140,-1,145,146,147,-1,147,144,145,-1});
+  }
+}
+protected class MFInt32336 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {148,8,9,-1,9,149,148,-1,149,9,10,-1,10,150,149,-1,150,10,11,-1,11,151,150,-1,151,11,8,-1,8,148,151,-1,152,148,149,-1,149,153,152,-1,153,149,150,-1,150,154,153,-1,154,150,151,-1,151,155,154,-1,155,151,148,-1,148,152,155,-1,156,152,153,-1,153,157,156,-1,158,154,155,-1,155,159,158,-1,160,156,157,-1,157,161,160,-1,161,157,158,-1,158,162,161,-1,162,158,159,-1,159,163,162,-1,163,159,156,-1,156,160,163,-1,164,160,161,-1,161,165,164,-1,165,161,162,-1,162,166,165,-1,166,162,163,-1,163,167,166,-1,167,163,160,-1,160,164,167,-1,153,176,177,-1,177,157,153,-1,157,177,178,-1,178,158,157,-1,158,178,179,-1,179,154,158,-1,154,179,176,-1,176,153,154,-1,176,180,181,-1,181,177,176,-1,177,181,182,-1,182,178,177,-1,178,182,183,-1,183,179,178,-1,179,183,180,-1,180,176,179,-1,180,184,185,-1,185,181,180,-1,181,185,186,-1,186,182,181,-1,182,186,187,-1,187,183,182,-1,183,187,184,-1,184,180,183,-1,184,188,189,-1,189,185,184,-1,185,189,190,-1,190,186,185,-1,186,190,191,-1,191,187,186,-1,187,191,188,-1,188,184,187,-1,152,156,201,-1,201,200,152,-1,156,159,202,-1,202,201,156,-1,159,155,203,-1,203,202,159,-1,155,152,200,-1,200,203,155,-1,201,205,204,-1,204,200,201,-1,202,206,205,-1,205,201,202,-1,203,207,206,-1,206,202,203,-1,200,204,207,-1,207,203,200,-1,205,209,208,-1,208,204,205,-1,206,210,209,-1,209,205,206,-1,207,211,210,-1,210,206,207,-1,204,208,211,-1,211,207,204,-1,209,213,212,-1,212,208,209,-1,210,214,213,-1,213,209,210,-1,211,215,214,-1,214,210,211,-1,208,212,215,-1,215,211,208,-1});
+  }
+}
+protected class MFInt32337 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {172,164,165,-1,165,173,172,-1,173,165,166,-1,166,174,173,-1,174,166,167,-1,167,175,174,-1,175,167,164,-1,164,172,175,-1,168,172,173,-1,173,169,168,-1,169,173,174,-1,174,170,169,-1,170,174,175,-1,175,171,170,-1,171,175,172,-1,172,168,171,-1,171,168,169,-1,169,170,171,-1,188,192,193,-1,193,189,188,-1,189,193,194,-1,194,190,189,-1,190,194,195,-1,195,191,190,-1,191,195,192,-1,192,188,191,-1,192,196,197,-1,197,193,192,-1,193,197,198,-1,198,194,193,-1,194,198,199,-1,199,195,194,-1,195,199,196,-1,196,192,195,-1,196,199,198,-1,198,197,196,-1,213,217,216,-1,216,212,213,-1,214,218,217,-1,217,213,214,-1,215,219,218,-1,218,214,215,-1,212,216,219,-1,219,215,212,-1,217,221,220,-1,220,216,217,-1,218,222,221,-1,221,217,218,-1,219,223,222,-1,222,218,219,-1,216,220,223,-1,223,219,216,-1,221,222,223,-1,223,220,221,-1});
+  }
+}
+protected class MFInt32338 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,7,1,-1,8,0,1,-1,1,9,8,-1,10,2,3,-1,3,11,10,-1,2,4,5,-1,5,3,2,-1,4,6,5,-1,7,12,1,-1,1,12,13,-1,13,9,1,-1,9,13,14,-1,14,10,9,-1,10,14,15,-1,15,2,10,-1,12,7,6,-1,6,15,12,-1,15,6,4,-1,4,2,15,-1,0,80,7,-1,81,80,0,-1,0,8,81,-1,82,81,8,-1,8,11,82,-1,83,82,11,-1,11,3,83,-1,6,7,80,-1,80,83,6,-1,5,6,83,-1,83,3,5,-1,12,16,17,-1,17,13,12,-1,13,17,18,-1,18,14,13,-1,14,18,19,-1,19,15,14,-1,15,19,16,-1,16,12,15,-1,16,20,21,-1,21,17,16,-1,17,21,22,-1,22,18,17,-1,18,22,23,-1,23,19,18,-1,19,23,20,-1,20,16,19,-1,20,24,25,-1,25,21,20,-1,21,25,26,-1,26,22,21,-1,22,26,27,-1,27,23,22,-1,23,27,24,-1,24,20,23,-1,24,28,29,-1,29,25,24,-1,25,29,30,-1,30,26,25,-1,26,30,31,-1,31,27,26,-1,27,31,28,-1,28,24,27,-1,28,32,33,-1,33,29,28,-1,29,33,34,-1,34,30,29,-1,30,34,35,-1,35,31,30,-1,31,35,32,-1,32,28,31,-1,32,36,37,-1,37,33,32,-1,33,37,38,-1,38,34,33,-1,34,38,39,-1,39,35,34,-1,35,39,36,-1,36,32,35,-1,36,40,41,-1,41,37,36,-1,37,41,42,-1,42,38,37,-1,38,42,43,-1,43,39,38,-1,39,43,40,-1,40,36,39,-1,40,44,45,-1,45,41,40,-1,41,45,46,-1,46,42,41,-1,42,46,47,-1,47,43,42,-1,43,47,44,-1,44,40,43,-1,44,48,49,-1,49,45,44,-1,45,49,50,-1,50,46,45,-1,46,50,51,-1,51,47,46,-1,47,51,48,-1,48,44,47,-1,48,52,53,-1,53,49,48,-1,49,53,54,-1,54,50,49,-1,50,54,55,-1,55,51,50,-1,51,55,52,-1,52,48,51,-1,52,56,57,-1,57,53,52,-1,53,57,58,-1,58,54,53,-1,54,58,59,-1,59,55,54,-1,55,59,56,-1,56,52,55,-1,56,60,61,-1,61,57,56,-1,57,61,62,-1,62,58,57,-1,58,62,63,-1,63,59,58,-1,59,63,60,-1,60,56,59,-1,81,85,84,-1,84,80,81,-1,82,86,85,-1,85,81,82,-1,83,87,86,-1,86,82,83,-1,80,84,87,-1,87,83,80,-1,85,89,88,-1,88,84,85,-1,86,90,89,-1,89,85,86,-1,87,91,90,-1,90,86,87,-1,84,88,91,-1,91,87,84,-1,89,93,92,-1,92,88,89,-1,90,94,93,-1,93,89,90,-1,91,95,94,-1,94,90,91,-1,88,92,95,-1,95,91,88,-1,93,97,96,-1,96,92,93,-1,94,98,97,-1,97,93,94,-1,95,99,98,-1,98,94,95,-1,92,96,99,-1,99,95,92,-1,97,101,100,-1,100,96,97,-1,98,102,101,-1,101,97,98,-1,99,103,102,-1,102,98,99,-1,96,100,103,-1,103,99,96,-1,101,105,104,-1,104,100,101,-1,102,106,105,-1,105,101,102,-1,103,107,106,-1,106,102,103,-1,100,104,107,-1,107,103,100,-1,105,109,108,-1,108,104,105,-1,106,110,109,-1,109,105,106,-1,107,111,110,-1,110,106,107,-1,104,108,111,-1,111,107,104,-1,109,113,112,-1,112,108,109,-1,110,114,113,-1,113,109,110,-1,111,115,114,-1,114,110,111,-1,108,112,115,-1,115,111,108,-1,113,117,116,-1,116,112,113,-1,114,118,117,-1,117,113,114,-1,115,119,118,-1,118,114,115,-1,112,116,119,-1,119,115,112,-1,117,121,120,-1,120,116,117,-1,118,122,121,-1,121,117,118,-1,119,123,122,-1,122,118,119,-1,116,120,123,-1,123,119,116,-1,121,125,124,-1,124,120,121,-1,122,126,125,-1,125,121,122,-1});
+  }
+}
+protected class MFInt32339 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {123,127,126,-1,126,122,123,-1,120,124,127,-1,127,123,120,-1,125,129,128,-1,128,124,125,-1,126,130,129,-1,129,125,126,-1,127,131,130,-1,130,126,127,-1,124,128,131,-1,131,127,124,-1,60,64,65,-1,65,61,60,-1,61,65,66,-1,66,62,61,-1,62,66,67,-1,67,63,62,-1,63,67,64,-1,64,60,63,-1,64,68,69,-1,69,65,64,-1,65,69,70,-1,70,66,65,-1,66,70,71,-1,71,67,66,-1,67,71,68,-1,68,64,67,-1,68,72,73,-1,73,69,68,-1,69,73,74,-1,74,70,69,-1,70,74,75,-1,75,71,70,-1,71,75,72,-1,72,68,71,-1,72,76,77,-1,77,73,72,-1,73,77,78,-1,78,74,73,-1,74,78,79,-1,79,75,74,-1,75,79,76,-1,76,72,75,-1,76,79,78,-1,78,77,76,-1,129,133,132,-1,132,128,129,-1,130,134,133,-1,133,129,130,-1,131,135,134,-1,134,130,131,-1,128,132,135,-1,135,131,128,-1,133,137,136,-1,136,132,133,-1,134,138,137,-1,137,133,134,-1,135,139,138,-1,138,134,135,-1,132,136,139,-1,139,135,132,-1,137,141,140,-1,140,136,137,-1,138,142,141,-1,141,137,138,-1,139,143,142,-1,142,138,139,-1,136,140,143,-1,143,139,136,-1,141,145,144,-1,144,140,141,-1,142,146,145,-1,145,141,142,-1,143,147,146,-1,146,142,143,-1,140,144,147,-1,147,143,140,-1,145,146,147,-1,147,144,145,-1,148,8,9,-1,9,149,148,-1,149,9,10,-1,10,150,149,-1,150,10,11,-1,11,151,150,-1,151,11,8,-1,8,148,151,-1,152,148,149,-1,149,153,152,-1,153,149,150,-1,150,154,153,-1,154,150,151,-1,151,155,154,-1,155,151,148,-1,148,152,155,-1,156,152,153,-1,153,157,156,-1,158,154,155,-1,155,159,158,-1,160,156,157,-1,157,161,160,-1,161,157,158,-1,158,162,161,-1,162,158,159,-1,159,163,162,-1,163,159,156,-1,156,160,163,-1,164,160,161,-1,161,165,164,-1,165,161,162,-1,162,166,165,-1,166,162,163,-1,163,167,166,-1,167,163,160,-1,160,164,167,-1,153,176,177,-1,177,157,153,-1,157,177,178,-1,178,158,157,-1,158,178,179,-1,179,154,158,-1,154,179,176,-1,176,153,154,-1,176,180,181,-1,181,177,176,-1,177,181,182,-1,182,178,177,-1,178,182,183,-1,183,179,178,-1,179,183,180,-1,180,176,179,-1,180,184,185,-1,185,181,180,-1,181,185,186,-1,186,182,181,-1,182,186,187,-1,187,183,182,-1,183,187,184,-1,184,180,183,-1,184,188,189,-1,189,185,184,-1,185,189,190,-1,190,186,185,-1,186,190,191,-1,191,187,186,-1,187,191,188,-1,188,184,187,-1,152,156,201,-1,201,200,152,-1,156,159,202,-1,202,201,156,-1,159,155,203,-1,203,202,159,-1,155,152,200,-1,200,203,155,-1,201,205,204,-1,204,200,201,-1,202,206,205,-1,205,201,202,-1,203,207,206,-1,206,202,203,-1,200,204,207,-1,207,203,200,-1,205,209,208,-1,208,204,205,-1,206,210,209,-1,209,205,206,-1,207,211,210,-1,210,206,207,-1,204,208,211,-1,211,207,204,-1,209,213,212,-1,212,208,209,-1,210,214,213,-1,213,209,210,-1,211,215,214,-1,214,210,211,-1,208,212,215,-1,215,211,208,-1,172,164,165,-1,165,173,172,-1,173,165,166,-1,166,174,173,-1,174,166,167,-1,167,175,174,-1,175,167,164,-1,164,172,175,-1,168,172,173,-1,173,169,168,-1,169,173,174,-1,174,170,169,-1,170,174,175,-1,175,171,170,-1,171,175,172,-1,172,168,171,-1,171,168,169,-1,169,170,171,-1,188,192,193,-1,193,189,188,-1,189,193,194,-1,194,190,189,-1,190,194,195,-1,195,191,190,-1,191,195,192,-1,192,188,191,-1,192,196,197,-1,197,193,192,-1,193,197,198,-1,198,194,193,-1});
+  }
+}
+protected class MFInt32340 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {194,198,199,-1,199,195,194,-1,195,199,196,-1,196,192,195,-1,196,199,198,-1,198,197,196,-1,213,217,216,-1,216,212,213,-1,214,218,217,-1,217,213,214,-1,215,219,218,-1,218,214,215,-1,212,216,219,-1,219,215,212,-1,217,221,220,-1,220,216,217,-1,218,222,221,-1,221,217,218,-1,219,223,222,-1,222,218,219,-1,216,220,223,-1,223,219,216,-1,221,222,223,-1,223,220,221,-1});
+  }
+}
+protected class MFInt32341 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {1,30,29,-1,1,29,2,-1,31,47,46,-1,31,46,32,-1,78,77,80,-1,78,80,79,-1,96,113,112,-1,96,112,95,-1,95,112,111,-1,95,111,94,-1,94,111,110,-1,94,110,93,-1,93,110,109,-1,93,109,108,-1,93,108,100,-1,107,99,100,-1,107,100,108,-1,107,106,99,-1,106,105,98,-1,106,98,99,-1,104,97,98,-1,104,98,105,-1,103,102,104,-1,104,102,101,-1,104,101,97,-1,101,96,97,-1,101,97,101,-1,101,101,96,-1,96,101,113,-1,113,101,114,-1,115,86,85,-1,115,85,116,-1,117,87,84,-1,117,84,118,-1,119,83,120,-1,121,88,82,-1,121,82,122,-1,123,89,81,-1,123,81,124,-1,125,90,126,-1,127,92,128,-1,129,91,130,-1,54,49,50,-1,54,50,55,-1,76,75,74,-1,76,74,54,-1,54,74,73,-1,54,73,49,-1,49,73,48,-1,48,73,62,-1,48,62,61,-1,48,61,60,-1,48,60,53,-1,53,60,59,-1,53,59,53,-1,53,59,58,-1,53,58,52,-1,52,58,57,-1,52,57,51,-1,56,51,57,-1,56,55,50,-1,56,50,51,-1,62,73,72,-1,62,72,63,-1,63,72,71,-1,63,71,64,-1,64,71,70,-1,64,70,69,-1,64,69,65,-1,65,69,68,-1,65,68,67,-1,65,67,66,-1,131,40,39,-1,131,39,132,-1,133,43,42,-1,133,42,134,-1,135,37,36,-1,135,36,136,-1,137,41,38,-1,137,38,138,-1,139,44,35,-1,139,35,140,-1,141,34,142,-1,143,45,33,-1,143,33,144,-1,145,16,15,-1,145,15,146,-1,147,14,148,-1,149,17,13,-1,149,13,150,-1,151,18,12,-1,151,12,152,-1,153,19,11,-1,153,11,154,-1,155,20,10,-1,155,10,156,-1,157,9,158,-1,159,21,8,-1,159,8,160,-1,161,22,7,-1,161,7,162,-1,163,23,164,-1,165,24,6,-1,165,6,166,-1,167,25,5,-1,167,5,168,-1,169,26,170,-1,171,27,4,-1,171,4,172,-1,173,28,3,-1,173,3,174,-1,175,0,176,-1});
+  }
+}
+protected class MFVec3f342 {
+  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-3.21f,-0.0154f,0f,-3.15f,-0.0154f,0f,-3.14f,-0.0467f,0f,-3.1f,-0.0601f,0f,-3.05f,-0.051f,0f,-3.04f,-0.0254f,0f,-3.05f,-0.00248f,0f,-3.1f,0.0122f,0f,-3.16f,0.03f,0f,-3.2f,0.0684f,0f,-3.2f,0.133f,0f,-3.16f,0.17f,0f,-3.1f,0.182f,0f,-3.04f,0.171f,0f,-3.01f,0.136f,0f,-3f,0.095f,0f,-3.05f,0.095f,0f,-3.06f,0.125f,0f,-3.1f,0.136f,0f,-3.14f,0.126f,0f,-3.15f,0.103f,0f,-3.14f,0.0815f,0f,-3.1f,0.0689f,0f,-3.04f,0.0512f,0f,-3f,0.0249f,0f,-2.99f,-0.0195f,0f,-3f,-0.0708f,0f,-3.05f,-0.104f,0f,-3.1f,-0.108f,0f,-3.16f,-0.0947f,0f,-3.2f,-0.0586f,0f,-2.86f,-0.102f,0f,-2.9f,-0.102f,0f,-2.94f,-0.0832f,0f,-2.94f,-0.0457f,0f,-2.94f,0.0645f,0f,-2.97f,0.0645f,0f,-2.97f,0.103f,0f,-2.94f,0.103f,0f,-2.94f,0.158f,0f,-2.89f,0.158f,0f,-2.89f,0.103f,0f,-2.86f,0.103f,0f,-2.86f,0.0645f,0f,-2.89f,0.0645f,0f,-2.89f,-0.0483f,0f,-2.88f,-0.0608f,0f,-2.86f,-0.0612f,0f,-2.71f,-0.000798f,0f,-2.71f,-0.0373f,0f,-2.74f,-0.0637f,0f,-2.77f,-0.0624f,0f,-2.78f,-0.0416f,0f,-2.77f,-0.0195f,0f,-2.71f,-0.0754f,0f,-2.74f,-0.103f,0f,-2.79f,-0.106f,0f,-2.82f,-0.0865f,0f,-2.84f,-0.0431f,0f,-2.82f,0.000177f,0f,-2.78f,0.0201f,0f,-2.73f,0.0275f,0f,-2.71f,0.0446f,0f,-2.72f,0.0614f,0f,-2.74f,0.0675f,0f,-2.77f,0.0573f,0f,-2.78f,0.039f,0f,-2.83f,0.039f,0f,-2.82f,0.0765f,0f,-2.78f,0.105f,0f,-2.74f,0.11f,0f,-2.71f,0.107f,0f,-2.67f,0.0849f,0f,-2.66f,0.0526f,0f,-2.66f,-0.0763f,0f,-2.65f,-0.101f,0f,-2.7f,-0.101f,0f,-2.61f,-0.101f,0f,-2.61f,0.103f,0f,-2.56f,0.103f,0f,-2.56f,0.0787f,0f,-2.52f,0.104f,0f,-2.47f,0.105f,0f,-2.43f,0.0743f,0f,-2.43f,0.038f,0f,-2.43f,-0.101f,0f,-2.48f,-0.101f,0f,-2.48f,0.0224f,0f,-2.49f,0.0514f,0f,-2.52f,0.0627f,0f,-2.54f,0.0505f,0f,-2.55f,0.02f,0f,-2.55f,-0.101f,0f,-2.33f,0.0279f,0f,-2.31f,0.0587f,0f,-2.27f,0.0589f,0f,-2.25f,0.0281f,0f,-2.25f,-0.0232f,0f,-2.27f,-0.0563f,0f,-2.31f,-0.057f,0f,-2.33f,-0.0245f,0f,-2.19f,0.175f,0f,-2.19f,-0.101f,0f,-2.25f,-0.101f,0f,-2.25f,-0.073f,0f,-2.26f,-0.0913f,0f,-2.31f,-0.108f,0f,-2.35f,-0.0915f,0f,-2.38f,-0.0424f,0f,-2.39f,0.0243f,0f,-2.37f,0.0809f,0f,-2.32f,0.108f,0f,-2.28f,0.106f,0f,-2.25f,0.0776f,0f,-2.25f,0.175f,0f,-2.48f,0.0224f,0f,-2.43f,0.038f,0f,-2.49f,0.0514f,0f,-2.43f,0.0743f,0f,-2.49f,0.0514f,0f,-2.47f,0.105f,0f,-2.52f,0.0627f,0f,-2.52f,0.104f,0f,-2.54f,0.0505f,0f,-2.56f,0.0787f,0f,-2.55f,0.02f,0f,-2.56f,0.0787f,0f,-2.61f,-0.101f,0f,-2.55f,0.02f,0f,-2.61f,-0.101f,0f,-2.56f,0.0787f,0f,-2.89f,0.103f,0f,-2.94f,0.103f,0f,-2.89f,0.0645f,0f,-2.89f,0.103f,0f,-2.94f,0.103f,0f,-2.94f,0.0645f,0f,-2.89f,0.0645f,0f,-2.94f,0.0645f,0f,-2.89f,-0.0483f,0f,-2.94f,-0.0457f,0f,-2.89f,-0.0483f,0f,-2.94f,-0.0832f,0f,-2.88f,-0.0608f,0f,-2.9f,-0.102f,0f,-3.06f,0.125f,0f,-3.01f,0.136f,0f,-3.06f,0.125f,0f,-3.04f,0.171f,0f,-3.1f,0.136f,0f,-3.1f,0.182f,0f,-3.14f,0.126f,0f,-3.16f,0.17f,0f,-3.15f,0.103f,0f,-3.2f,0.133f,0f,-3.14f,0.0815f,0f,-3.2f,0.0684f,0f,-3.14f,0.0815f,0f,-3.16f,0.03f,0f,-3.1f,0.0689f,0f,-3.1f,0.0122f,0f,-3.04f,0.0512f,0f,-3.05f,-0.00248f,0f,-3f,0.0249f,0f,-3.05f,-0.00248f,0f,-2.99f,-0.0195f,0f,-3.04f,-0.0254f,0f,-3f,-0.0708f,0f,-3.05f,-0.051f,0f,-3.05f,-0.104f,0f,-3.05f,-0.051f,0f,-3.1f,-0.108f,0f,-3.1f,-0.0601f,0f,-3.16f,-0.0947f,0f,-3.14f,-0.0467f,0f,-3.15f,-0.0154f,0f,-3.2f,-0.0586f,0f});
+  }
+}
+protected class MFInt32343 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,2,3,-1,2,0,1,-1});
+  }
+}
+protected class MFVec3f344 {
+  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.02572f,-0.02535f,-0.05f,-0.02578f,-0.02131f,-0.05f,-0.03871f,-0.02131f,-0.05f,-0.03877f,-0.02541f,-0.05f});
+  }
+}
+protected class MFInt32345 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,2,1,-1,3,2,0,-1,12,3,0,-1,4,3,12,-1,11,4,12,-1,5,4,11,-1,10,5,11,-1,6,5,10,-1,9,6,10,-1,7,6,9,-1,8,7,9,-1,15,14,13,-1,16,15,13,-1,19,18,17,-1,20,19,17,-1,27,20,17,-1,28,27,17,-1,26,20,27,-1,23,20,26,-1,21,20,23,-1,25,23,26,-1,22,21,23,-1,24,23,25,-1,29,30,31,-1,29,31,32,-1,33,34,35,-1,33,35,29,-1,29,35,36,-1,29,36,30,-1,30,36,37,-1,37,36,38,-1,37,38,39,-1,37,39,40,-1,37,40,41,-1,41,40,42,-1,41,42,41,-1,41,42,43,-1,41,43,44,-1,44,43,45,-1,44,45,46,-1,47,46,45,-1,47,32,31,-1,47,31,46,-1,38,36,48,-1,38,48,49,-1,49,48,50,-1,49,50,51,-1,51,50,52,-1,51,52,53,-1,51,53,54,-1,54,53,55,-1,54,55,56,-1,54,56,57,-1});
+  }
+}
+protected class MFVec3f346 {
+  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-1.88f,-0.101f,0f,-1.96f,0.175f,0f,-1.91f,0.175f,0f,-1.86f,-0.0195f,0f,-1.82f,0.175f,0f,-1.76f,0.175f,0f,-1.72f,-0.0195f,0f,-1.67f,0.175f,0f,-1.61f,0.175f,0f,-1.69f,-0.101f,0f,-1.75f,-0.101f,0f,-1.79f,0.111f,0f,-1.83f,-0.101f,0f,-1.38f,-0.101f,0f,-1.38f,0.175f,0f,-1.32f,0.175f,0f,-1.32f,-0.101f,0f,-1.27f,-0.101f,0f,-1.27f,0.175f,0f,-1.22f,0.175f,0f,-1.22f,0.0304f,0f,-1.16f,0.103f,0f,-1.09f,0.103f,0f,-1.16f,0.0272f,0f,-1.09f,-0.101f,0f,-1.15f,-0.101f,0f,-1.2f,-0.0141f,0f,-1.22f,-0.0363f,0f,-1.22f,-0.101f,0f,-1.48f,-0.0754f,0f,-1.48f,-0.0373f,0f,-1.51f,-0.0637f,0f,-1.51f,-0.103f,0f,-1.47f,-0.101f,0f,-1.42f,-0.101f,0f,-1.43f,-0.0763f,0f,-1.43f,0.0526f,0f,-1.48f,-0.000798f,0f,-1.48f,0.0446f,0f,-1.5f,0.0275f,0f,-1.55f,0.0201f,0f,-1.54f,-0.0195f,0f,-1.59f,0.000177f,0f,-1.61f,-0.0431f,0f,-1.55f,-0.0416f,0f,-1.59f,-0.0865f,0f,-1.54f,-0.0624f,0f,-1.56f,-0.106f,0f,-1.44f,0.0849f,0f,-1.49f,0.0614f,0f,-1.48f,0.107f,0f,-1.51f,0.0675f,0f,-1.52f,0.11f,0f,-1.55f,0.105f,0f,-1.54f,0.0573f,0f,-1.59f,0.0765f,0f,-1.6f,0.039f,0f,-1.55f,0.039f,0f});
+  }
+}
+protected class MFInt32347 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {1,3,0,-1,3,1,2,-1});
+  }
+}
+protected class MFVec3f348 {
+  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.02381f,-0.02541f,-0.05f,-0.0127f,-0.02541f,-0.05f,-0.01263f,-0.02139f,-0.05f,-0.02381f,-0.02146f,-0.05f});
+  }
+}
+protected class MFInt32349 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {24,26,25,-1,53,39,54,-1,17,1,0,-1,17,0,16,-1,0,14,16,-1,0,15,14,-1,14,13,22,-1,14,22,16,-1,13,12,21,-1,13,21,22,-1,12,6,21,-1,12,11,7,-1,12,7,6,-1,11,8,7,-1,10,8,11,-1,10,9,8,-1,6,5,21,-1,5,4,20,-1,5,20,21,-1,4,3,19,-1,4,19,20,-1,3,2,18,-1,3,18,19,-1,18,2,1,-1,18,1,17,-1,55,32,31,-1,55,31,56,-1,57,33,30,-1,57,30,58,-1,59,29,60,-1,61,34,28,-1,61,28,62,-1,63,35,27,-1,63,27,64,-1,65,36,66,-1,67,38,68,-1,69,37,70,-1,71,23,72,-1,73,48,47,-1,73,47,74,-1,75,49,46,-1,75,46,76,-1,77,45,78,-1,79,50,44,-1,79,44,80,-1,81,51,43,-1,81,43,82,-1,83,41,84,-1,85,40,86,-1,87,52,88,-1,89,42,90,-1});
+  }
+}
+protected class MFVec3f350 {
+  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.829f,-0.101f,0f,-0.829f,0.175f,0f,-0.662f,0.172f,0f,-0.622f,0.148f,0f,-0.607f,0.103f,0f,-0.62f,0.0501f,0f,-0.648f,0.0316f,0f,-0.615f,-0.0063f,0f,-0.611f,-0.0764f,0f,-0.601f,-0.101f,0f,-0.664f,-0.101f,0f,-0.671f,-0.0373f,0f,-0.68f,-0.00372f,0f,-0.712f,0.00648f,0f,-0.772f,0.00648f,0f,-0.772f,-0.101f,0f,-0.772f,0.0546f,0f,-0.772f,0.127f,0f,-0.703f,0.127f,0f,-0.673f,0.118f,0f,-0.663f,0.091f,0f,-0.674f,0.063f,0f,-0.705f,0.0546f,0f,-0.379f,0.103f,0f,-0.379f,-0.101f,0f,-0.432f,-0.101f,0f,-0.432f,-0.0764f,0f,-0.466f,-0.101f,0f,-0.518f,-0.102f,0f,-0.555f,-0.072f,0f,-0.56f,-0.0357f,0f,-0.56f,0.103f,0f,-0.506f,0.103f,0f,-0.506f,-0.0201f,0f,-0.5f,-0.0491f,0f,-0.472f,-0.0604f,0f,-0.443f,-0.0482f,0f,-0.433f,-0.0177f,0f,-0.433f,0.103f,0f,-0.331f,-0.101f,0f,-0.331f,0.103f,0f,-0.278f,0.103f,0f,-0.278f,0.0787f,0f,-0.244f,0.104f,0f,-0.192f,0.105f,0f,-0.154f,0.0743f,0f,-0.149f,0.038f,0f,-0.149f,-0.101f,0f,-0.203f,-0.101f,0f,-0.203f,0.0224f,0f,-0.209f,0.0514f,0f,-0.238f,0.0627f,0f,-0.266f,0.0505f,0f,-0.277f,0.02f,0f,-0.277f,-0.101f,0f,-0.506f,-0.0201f,0f,-0.56f,-0.0357f,0f,-0.5f,-0.0491f,0f,-0.555f,-0.072f,0f,-0.5f,-0.0491f,0f,-0.518f,-0.102f,0f,-0.472f,-0.0604f,0f,-0.466f,-0.101f,0f,-0.443f,-0.0482f,0f,-0.432f,-0.0764f,0f,-0.433f,-0.0177f,0f,-0.432f,-0.0764f,0f,-0.379f,0.103f,0f,-0.433f,-0.0177f,0f,-0.379f,0.103f,0f,-0.432f,-0.0764f,0f,-0.379f,-0.101f,0f,-0.432f,-0.0764f,0f,-0.203f,0.0224f,0f,-0.149f,0.038f,0f,-0.209f,0.0514f,0f,-0.154f,0.0743f,0f,-0.209f,0.0514f,0f,-0.192f,0.105f,0f,-0.238f,0.0627f,0f,-0.244f,0.104f,0f,-0.266f,0.0505f,0f,-0.278f,0.0787f,0f,-0.278f,0.0787f,0f,-0.331f,0.103f,0f,-0.277f,0.02f,0f,-0.331f,-0.101f,0f,-0.277f,0.02f,0f,-0.278f,0.0787f,0f,-0.277f,0.02f,0f,-0.331f,0.103f,0f});
+  }
+}
+protected class MFInt32351 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,2,3,-1,2,0,1,-1});
+  }
+}
+protected class MFVec3f352 {
+  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.01009f,-0.02534f,-0.05f,-0.001382f,-0.02541f,-0.05f,-0.001315f,-0.02146f,-0.05f,-0.01022f,-0.02146f,-0.05f});
+  }
+}
+protected class MFInt32353 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {1,0,14,-1,1,14,2,-1,16,15,18,-1,16,18,17,-1,64,65,66,-1,67,68,69,-1,67,69,70,-1,71,72,73,-1,71,73,74,-1,75,76,77,-1,78,79,80,-1,78,80,81,-1,82,83,84,-1,82,84,85,-1,86,87,88,-1,89,90,91,-1,92,93,94,-1,95,96,97,-1,98,7,6,-1,98,6,99,-1,100,8,5,-1,100,5,101,-1,102,9,4,-1,102,4,103,-1,104,10,105,-1,106,11,3,-1,106,3,107,-1,108,12,109,-1,110,13,111,-1,112,27,26,-1,112,26,113,-1,114,28,25,-1,114,25,115,-1,116,24,117,-1,118,29,23,-1,118,23,119,-1,120,30,22,-1,120,22,121,-1,122,31,123,-1,124,34,33,-1,124,33,125,-1,126,35,32,-1,126,32,127,-1,128,21,129,-1,130,36,20,-1,130,20,131,-1,132,37,19,-1,132,19,133,-1,134,38,135,-1,136,40,137,-1,138,39,139,-1,53,58,59,-1,53,59,54,-1,53,52,58,-1,52,51,57,-1,52,57,58,-1,51,50,56,-1,51,56,57,-1,50,49,56,-1,49,48,63,-1,49,63,56,-1,48,47,63,-1,63,47,46,-1,63,46,62,-1,62,46,45,-1,62,45,44,-1,62,44,61,-1,61,44,60,-1,54,59,60,-1,44,43,42,-1,60,44,42,-1,41,55,54,-1,41,54,60,-1,41,60,42,-1});
+  }
+}
+protected class MFVec3f354 {
+  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.108f,0.00195f,0f,0.163f,0.00195f,0f,0.166f,-0.0473f,0f,0.194f,-0.0608f,0f,0.222f,-0.0492f,0f,0.228f,-0.017f,0f,0.228f,0.175f,0f,0.284f,0.175f,0f,0.284f,-0.02f,0f,0.271f,-0.0798f,0f,0.23f,-0.104f,0f,0.193f,-0.108f,0f,0.155f,-0.102f,0f,0.117f,-0.0714f,0f,0.108f,-0.0357f,0f,0.563f,-0.101f,0f,0.563f,0.103f,0f,0.615f,0.103f,0f,0.615f,0.0803f,0f,0.649f,0.105f,0f,0.696f,0.105f,0f,0.728f,0.0788f,0f,0.76f,0.104f,0f,0.811f,0.104f,0f,0.842f,0.081f,0f,0.853f,0.0416f,0f,0.853f,-0.101f,0f,0.799f,-0.101f,0f,0.799f,0.0305f,0f,0.79f,0.0544f,0f,0.767f,0.0616f,0f,0.743f,0.0507f,0f,0.734f,0.0228f,0f,0.734f,-0.101f,0f,0.681f,-0.101f,0f,0.681f,0.0301f,0f,0.673f,0.0532f,0f,0.65f,0.0611f,0f,0.626f,0.0506f,0f,0.617f,0.0224f,0f,0.617f,-0.101f,0f,0.9f,-0.182f,0f,0.9f,0.103f,0f,0.952f,0.103f,0f,0.952f,0.0751f,0f,0.968f,0.0934f,0f,1.01f,0.11f,0f,1.05f,0.103f,0f,1.07f,0.0796f,0f,1.1f,0.0251f,0f,1.1f,-0.0222f,0f,1.07f,-0.0788f,0f,1.03f,-0.106f,0f,0.988f,-0.103f,0f,0.953f,-0.0755f,0f,0.953f,-0.182f,0f,1.04f,-0.000177f,0f,1.03f,-0.0446f,0f,0.999f,-0.0603f,0f,0.966f,-0.0453f,0f,0.953f,-0.000177f,0f,0.963f,0.045f,0f,0.998f,0.063f,0f,1.03f,0.0462f,0f,0.515f,-0.101f,0f,0.462f,-0.0764f,0f,0.462f,-0.101f,0f,0.388f,-0.0201f,0f,0.388f,0.103f,0f,0.334f,0.103f,0f,0.334f,-0.0357f,0f,0.394f,-0.0491f,0f,0.388f,-0.0201f,0f,0.334f,-0.0357f,0f,0.339f,-0.072f,0f,0.394f,-0.0491f,0f,0.339f,-0.072f,0f,0.376f,-0.102f,0f,0.422f,-0.0604f,0f,0.394f,-0.0491f,0f,0.376f,-0.102f,0f,0.428f,-0.101f,0f,0.451f,-0.0482f,0f,0.422f,-0.0604f,0f,0.428f,-0.101f,0f,0.462f,-0.0764f,0f,0.461f,-0.0177f,0f,0.451f,-0.0482f,0f,0.462f,-0.0764f,0f,0.515f,0.103f,0f,0.461f,0.103f,0f,0.461f,-0.0177f,0f,0.515f,0.103f,0f,0.461f,-0.0177f,0f,0.462f,-0.0764f,0f,0.515f,-0.101f,0f,0.515f,0.103f,0f,0.462f,-0.0764f,0f,0.284f,-0.02f,0f,0.228f,-0.017f,0f,0.271f,-0.0798f,0f,0.222f,-0.0492f,0f,0.23f,-0.104f,0f,0.194f,-0.0608f,0f,0.193f,-0.108f,0f,0.194f,-0.0608f,0f,0.155f,-0.102f,0f,0.166f,-0.0473f,0f,0.117f,-0.0714f,0f,0.166f,-0.0473f,0f,0.108f,-0.0357f,0f,0.166f,-0.0473f,0f,0.799f,0.0305f,0f,0.853f,0.0416f,0f,0.79f,0.0544f,0f,0.842f,0.081f,0f,0.79f,0.0544f,0f,0.811f,0.104f,0f,0.767f,0.0616f,0f,0.76f,0.104f,0f,0.743f,0.0507f,0f,0.728f,0.0788f,0f,0.734f,0.0228f,0f,0.728f,0.0788f,0f,0.681f,0.0301f,0f,0.734f,0.0228f,0f,0.673f,0.0532f,0f,0.728f,0.0788f,0f,0.673f,0.0532f,0f,0.696f,0.105f,0f,0.65f,0.0611f,0f,0.649f,0.105f,0f,0.626f,0.0506f,0f,0.615f,0.0803f,0f,0.617f,0.0224f,0f,0.615f,0.0803f,0f,0.563f,-0.101f,0f,0.617f,0.0224f,0f,0.563f,-0.101f,0f,0.615f,0.0803f,0f});
+  }
+}
+protected class MFInt32355 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,2,3,-1,2,0,1,-1});
+  }
+}
+protected class MFVec3f356 {
+  protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.001296f,-0.02541f,-0.05f,0.01335f,-0.02527f,-0.05f,0.01328f,-0.02152f,-0.05f,0.001229f,-0.02146f,-0.05f});
+  }
+}
+protected class MFString357 {
+  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Kneel"});
+  }
+}
+protected class MFString358 {
+  protected org.web3d.x3d.jsail.fields.MFString getArray() {
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"SANS"});
+  }
+}
+protected class MFString359 {
+  protected org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"ALLEN"});
   }
 }
-protected class MFString326 {
+protected class MFString360 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"NANCY"});
   }
 }
-protected class MFString327 {
+protected class MFString361 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"BOXMAN"});
   }

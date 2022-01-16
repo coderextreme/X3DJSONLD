@@ -56,7 +56,7 @@ newModel=X3D(profile='Immersive',version='3.3',
             field(name='old',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
             field(name='set_location',accessType='inputOnly',type='SFTime'),
             field(name='keyValue',accessType='inputOutput',type='MFVec3f',value=[(0,0,0),(0,5,0)])]
-*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
 ),
           TimeSensor(DEF='CL1',cycleInterval=3,loop=True),
           ROUTE(fromNode='CL1',fromField='cycleTime',toNode='MB1',toField='set_location'),
@@ -105,7 +105,7 @@ newModel=X3D(profile='Immersive',version='3.3',
             connect(nodeField='rotscalenode',protoField='rotscalenode'),
             connect(nodeField='set_startpoint',protoField='set_startpoint'),
             connect(nodeField='set_endpoint',protoField='set_endpoint')])
-*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
 )])),
     ProtoInstance(name='x3dconnector',DEF='connector1',
       fieldValue=[

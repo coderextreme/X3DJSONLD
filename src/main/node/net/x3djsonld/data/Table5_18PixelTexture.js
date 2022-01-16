@@ -119,35 +119,35 @@ Table5_18PixelTexture.prototype = {
         .setGeometry((new autoclass.Box()).setSize(1000.0,1000.0,.01))))
     .addChild((new autoclass.Viewpoint()).setDescription("View All").setPosition(0.0,0.0,20.0))
     .addChild((new autoclass.Viewpoint()).setDescription("Empty Image").setPosition(0.0,5.0,5.0))
-    .addChild((new autoclass.Transform("EmptyImage")).setTranslation(0.0,5.0,0.0).setRotation(1.0,1.0,0.0,1.0)
+    .addChild((new autoclass.Transform("EmptyImage")).setRotation(1.0,1.0,0.0,1.0).setTranslation(0.0,5.0,0.0)
       .addChild((new autoclass.Shape())
         .setAppearance((new autoclass.Appearance())
           .setTexture((new autoclass.PixelTexture())))
         .setGeometry((new autoclass.Box("StandardBox")))))
     .addChild((new autoclass.Viewpoint()).setDescription("Black and white PixelTexture").setPosition(-5.0,0.0,5.0))
-    .addChild((new autoclass.Transform("BW")).setTranslation(-5.0,0.0,0.0).setRotation(1.0,1.0,0.0,1.0)
+    .addChild((new autoclass.Transform("BW")).setRotation(1.0,1.0,0.0,1.0).setTranslation(-5.0,0.0,0.0)
       .addChild((new autoclass.Shape())
         .setAppearance((new autoclass.Appearance())
           .setTexture((new autoclass.PixelTexture()).setImage(java.newArray("int", [1,2,1,0xFF,0x00]))))
-        .setGeometry((new autoclass.Box()).setUSE("StandardBox"))))
+        .setGeometry((new autoclass.Box()))))
     .addChild((new autoclass.Viewpoint()).setDescription("Black and white with Alpha PixelTexture").setPosition(5.0,0.0,5.0))
     .addChild((new autoclass.Transform("AlphaBW")).setRotation(1.0,1.0,0.0,1.0).setTranslation(5.0,0.0,0.0)
       .addChild((new autoclass.Shape())
         .setAppearance((new autoclass.Appearance())
           .setTexture((new autoclass.PixelTexture()).setImage(java.newArray("int", [2,1,2,0xCCFF,0x2277]))))
-        .setGeometry((new autoclass.Box()).setUSE("StandardBox"))))
+        .setGeometry((new autoclass.Box()))))
     .addChild((new autoclass.Viewpoint()).setDescription("RGB PixelTexture").setPosition(-5.0,-5.0,5.0))
-    .addChild((new autoclass.Transform("RGB")).setTranslation(-5.0,-5.0,0.0).setRotation(1.0,1.0,0.0,1.0)
+    .addChild((new autoclass.Transform("RGB")).setRotation(1.0,1.0,0.0,1.0).setTranslation(-5.0,-5.0,0.0)
       .addChild((new autoclass.Shape())
         .setAppearance((new autoclass.Appearance())
           .setTexture((new autoclass.PixelTexture()).setImage(java.newArray("int", [2,4,3,0xFF0000,0x00FF00,0,0,0,0,0xFFFFFF,0xFFFF00]))))
-        .setGeometry((new autoclass.Box()).setUSE("StandardBox"))))
+        .setGeometry((new autoclass.Box()))))
     .addChild((new autoclass.Viewpoint()).setDescription("RGB with Alpha PixelTexture").setPosition(5.0,-5.0,5.0))
     .addChild((new autoclass.Transform("AlphaRGB")).setRotation(1.0,1.0,0.0,1.0).setTranslation(5.0,-5.0,0.0)
       .addChild((new autoclass.Shape())
         .setAppearance((new autoclass.Appearance())
           .setTexture((new autoclass.PixelTexture()).setImage(java.newArray("int", [3,2,4,0xFF0000FF,0x00FF00FF,0x0000FFFF,0xFF00007F,0x00FF007F,0x0000FF7F]))))
-        .setGeometry((new autoclass.Box()).setUSE("StandardBox")))));
+        .setGeometry((new autoclass.Box())))));
   },
   // end of initialize() method
 
@@ -206,4 +206,3 @@ Table5_18PixelTexture.prototype = {
 	}
 }
 new Table5_18PixelTexture().main();
-process.exit(0);

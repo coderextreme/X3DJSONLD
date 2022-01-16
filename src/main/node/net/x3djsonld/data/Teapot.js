@@ -264,13 +264,13 @@ Teapot.prototype = {
     .addChild((new autoclass.Background()).setSkyColor(new autoclass.MFColor(java.newArray("float", [0.2,0.4,0.6]))))
     .addChild((new autoclass.Viewpoint()).setDescription("Newell Teapot").setCenterOfRotation(0.0,0.5,0.0).setPosition(0.0,0.5,4.0))
     .addChild((new autoclass.Shape())
-      .setGeometry((new autoclass.IndexedFaceSet()).setCreaseAngle(1.570796).setCcw(false).setColorPerVertex(false).setNormalPerVertex(false).setSolid(false).setCoordIndex(this.IndexedFaceSet_4_21_coordIndex)
+      .setGeometry((new autoclass.IndexedFaceSet()).setCcw(false).setColorPerVertex(false).setCreaseAngle(1.570796).setNormalPerVertex(false).setSolid(false).setCoordIndex(this.IndexedFaceSet_4_21_coordIndex)
         .setCoord((new autoclass.Coordinate("TeapotPoints")).setPoint(this.TeapotPoints_5_21_point)))
       .setAppearance((new autoclass.Appearance())
         .setMaterial((new autoclass.Material()).setTransparency(0.5))))
     .addChild((new autoclass.Shape("AxisLinesShape"))
       .addComments(" RGB lines showing XYZ axes ")
-      .setGeometry((new autoclass.IndexedLineSet()).setColorPerVertex(false).setCoordIndex(java.newArray("int", [0,1,-1,0,2,-1,0,3,-1])).setColorIndex(java.newArray("int", [0,1,2]))
+      .setGeometry((new autoclass.IndexedLineSet()).setColorPerVertex(false).setColorIndex(java.newArray("int", [0,1,2])).setCoordIndex(java.newArray("int", [0,1,-1,0,2,-1,0,3,-1]))
         .setCoord((new autoclass.Coordinate()).setPoint(new autoclass.MFVec3f(java.newArray("float", [0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0]))))
         .setColor((new autoclass.Color()).setColor(new autoclass.MFColor(java.newArray("float", [1.0,0.0,0.0,0.0,0.6,0.0,0.0,0.0,1.0])))))));
   },
@@ -331,4 +331,3 @@ Teapot.prototype = {
 	}
 }
 new Teapot().main();
-process.exit(0);

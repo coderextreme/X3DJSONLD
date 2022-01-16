@@ -78,13 +78,13 @@ geobubbles.prototype = {
   .setScene((new autoclass.Scene())
     .addComments("Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/")
     .addComments("PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/")
-    .addChild((new autoclass.GeoViewpoint("Tour")).setDescription("Tour Views").setPosition(0.0,0.0,4.0).setOrientation(1.0,0.0,0.0,0.0))
+    .addChild((new autoclass.GeoViewpoint("Tour")).setDescription("Tour Views").setOrientation(1.0,0.0,0.0,0.0).setPosition(0.0,0.0,4.0))
     .addChild((new autoclass.Background()).setBackUrl(new autoclass.MFString("\"../resources/images/BK.png\" \"https://coderextreme.net/X3DJSONLD/images/BK.png\"")).setBottomUrl(new autoclass.MFString("\"../resources/images/BT.png\" \"https://coderextreme.net/X3DJSONLD/images/BT.png\"")).setFrontUrl(new autoclass.MFString("\"../resources/images/FR.png\" \"https://coderextreme.net/X3DJSONLD/images/FR.png\"")).setLeftUrl(new autoclass.MFString("\"../resources/images/LF.png\" \"https://coderextreme.net/X3DJSONLD/images/LF.png\"")).setRightUrl(new autoclass.MFString("\"../resources/images/RT.png\" \"https://coderextreme.net/X3DJSONLD/images/RT.png\"")).setTopUrl(new autoclass.MFString("\"../resources/images/TP.png\" \"https://coderextreme.net/X3DJSONLD/images/TP.png\"")))
     .addChild((new autoclass.Transform())
       .addChild((new autoclass.Shape())
         .setGeometry((new autoclass.Sphere()))
         .setAppearance((new autoclass.Appearance())
-          .setMaterial((new autoclass.Material()).setSpecularColor(0.5,0.5,0.5).setDiffuseColor(0.7,0.7,0.7)))))
+          .setMaterial((new autoclass.Material()).setDiffuseColor(0.7,0.7,0.7).setSpecularColor(0.5,0.5,0.5)))))
     .addChild((new autoclass.TimeSensor("TourTime")).setCycleInterval(5).setLoop(true))
     .addChild((new autoclass.GeoPositionInterpolator("TourPosition")).setKey(java.newArray("float", [0.0,1.0])).setKeyValue(new autoclass.MFVec3d(java.newArray("double", [0.0015708,0.0,4.0,0.0,0.0015708,4.0]))))
     .addChild((new autoclass.Script("RandomTourTime")).setSourceCode("ecmascript:" + "\n" + 
@@ -104,10 +104,10 @@ geobubbles.prototype = {
 "                        position[0] = new SFVec3d(positions[ov][0],positions[ov][1],positions[ov][2]);" + "\n" + 
 "                        position[1] = new SFVec3d(positions[vc][0],positions[vc][1],positions[vc][2]);" + "\n" + 
 "               }")
-      .addField((new autoclass.field()).setAccessType("inputOnly").setName("set_cycle").setType("SFTime"))
-      .addField((new autoclass.field()).setAccessType("inputOutput").setName("val").setType("SFFloat").setValue("0"))
-      .addField((new autoclass.field()).setAccessType("inputOutput").setName("positions").setType("MFVec3d").setValue("0.0015708 0 4 0 0.0015708 4"))
-      .addField((new autoclass.field()).setAccessType("inputOutput").setName("position").setType("MFVec3d").setValue("0.0015708 0 4 0 0.0015708 4")))
+      .addField((new autoclass.field()).setName("set_cycle").setType("SFTime").setAccessType("inputOnly"))
+      .addField((new autoclass.field()).setName("val").setType("SFFloat").setAccessType("inputOutput").setValue("0"))
+      .addField((new autoclass.field()).setName("positions").setType("MFVec3d").setAccessType("inputOutput").setValue("0.0015708 0 4 0 0.0015708 4"))
+      .addField((new autoclass.field()).setName("position").setType("MFVec3d").setAccessType("inputOutput").setValue("0.0015708 0 4 0 0.0015708 4")))
     .addChild((new autoclass.ROUTE()).setFromNode("TourTime").setFromField("cycleTime").setToNode("RandomTourTime").setToField("set_cycle"))
     .addChild((new autoclass.ROUTE()).setFromNode("RandomTourTime").setFromField("position").setToNode("TourPosition").setToField("keyValue"))
     .addChild((new autoclass.ROUTE()).setFromNode("TourTime").setFromField("fraction_changed").setToNode("TourPosition").setToField("set_fraction"))
@@ -170,4 +170,3 @@ geobubbles.prototype = {
 	}
 }
 new geobubbles().main();
-process.exit(0);

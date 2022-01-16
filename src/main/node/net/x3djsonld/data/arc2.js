@@ -246,4 +246,3 @@ arc2.prototype = {
 	}
 }
 new arc2().main();
-process.exit(0);

@@ -143,9 +143,37 @@ NodeSerializer.prototype = {
 			method = "Skin"
 			addpre = "add";
 		}
+		if (addpre+method === "setBack") {
+			method = "BackTexture"
+			addpre = "set";
+		}
+		if (addpre+method === "setFront") {
+			method = "FrontTexture"
+			addpre = "set";
+		}
+		if (addpre+method === "setLeft") {
+			method = "LeftTexture"
+			addpre = "set";
+		}
+		if (addpre+method === "setRight") {
+			method = "RightTexture"
+			addpre = "set";
+		}
+		if (addpre+method === "setTop") {
+			method = "TopTexture"
+			addpre = "set";
+		}
+		if (addpre+method === "setBottom") {
+			method = "BottomTexture"
+			addpre = "set";
+		}
 		if (element.nodeName === 'Scene' && addpre+method === "setMetadata") {
 			method = "Metadata"
 			addpre = "add";
+		}
+		if (element.nodeName === 'HAnimHumanoid' && addpre+method === "addValue") {
+			method = "Metadata"
+			addpre = "set";
 		}
 		if (node.nodeName === 'LayerSet' && addpre+method === "addChild") {
 			method = "LayerSet"
@@ -154,6 +182,10 @@ NodeSerializer.prototype = {
 		if (method === "setShaders") {
 			method = "addShaders"
 			addpre = "";
+		}
+		if (element.nodeName === "field" && addpre+method === "addJoints") {
+			method = "Child"
+			addpre = "add";
 		}
 		return prepre+addpre+method+"";
 	},
@@ -337,6 +369,9 @@ NodeSerializer.prototype = {
 					}
 					if (attr === "class") {
 						method = "setCssClass";
+					}
+					if (attr === "style" && element.nodeName != "FontStyle" ) {
+						method = "setCssStyle";
 					}
 					
 					str += '.'+method+"("+strval+")";

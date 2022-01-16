@@ -84,52 +84,53 @@ public class bubble
             .setGeometry(new Sphere().setRadius(0.25))
             .setAppearance(new Appearance()
               .setMaterial(new Material().setDiffuseColor(1.0,0.0,0.0).setTransparency(0.2))))
-          .addChild(new Script("bounce").setSourceCode("\n" + 
-"ecmascript:" + "\n" + 
-"function initialize() {" + "\n" + 
-"    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);" + "\n" + 
-"\n" + 
-"    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);" + "\n" + 
-"}" + "\n" + 
-"\n" + 
-"function set_fraction(value) {" + "\n" + 
-"	translation = new SFVec3f(" + "\n" + 
-"		translation.x + velocity.x," + "\n" + 
-"		translation.y + velocity.y," + "\n" + 
-"		translation.z + velocity.z);" + "\n" + 
-"	scale = new SFVec3f(" + "\n" + 
-"		scale.x + scalvel.x," + "\n" + 
-"		scale.y + scalvel.y," + "\n" + 
-"		scale.z + scalvel.z);" + "\n" + 
-"        // if you get to far away or too big, explode" + "\n" + 
-"        if ( Math.abs(translation.x) > 256) {" + "\n" + 
-"		translation.x = 0;" + "\n" + 
-"		initialize();" + "\n" + 
-"	}" + "\n" + 
-"        if ( Math.abs(translation.y) > 256) {" + "\n" + 
-"		translation.y = 0;" + "\n" + 
-"		initialize();" + "\n" + 
-"	}" + "\n" + 
-"        if ( Math.abs(translation.z) > 256) {" + "\n" + 
-"		translation.z = 0;" + "\n" + 
-"		initialize();" + "\n" + 
-"	}" + "\n" + 
-"	if (Math.abs(scale.x) > 20) {" + "\n" + 
-"		scale.x = scale.x/2;" + "\n" + 
-"		translation.x = 0;" + "\n" + 
-"		initialize();" + "\n" + 
-"	}" + "\n" + 
-"	if (Math.abs(scale.y) > 20) {" + "\n" + 
-"		scale.y = scale.y/2;" + "\n" + 
-"		translation.y = 0;" + "\n" + 
-"		initialize();" + "\n" + 
-"	}" + "\n" + 
-"	if (Math.abs(scale.z) > 20) {" + "\n" + 
-"		scale.z = scale.z/2;" + "\n" + 
-"		translation.z = 0;" + "\n" + 
-"		initialize();" + "\n" + 
-"	}" + "\n" + 
-"}" + "\n")
+          .addChild(new Script("bounce").setSourceCode("""
+ecmascript:
+function initialize() {
+    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
+
+    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);
+}
+
+function set_fraction(value) {
+	translation = new SFVec3f(
+		translation.x + velocity.x,
+		translation.y + velocity.y,
+		translation.z + velocity.z);
+	scale = new SFVec3f(
+		scale.x + scalvel.x,
+		scale.y + scalvel.y,
+		scale.z + scalvel.z);
+        // if you get to far away or too big, explode
+        if ( Math.abs(translation.x) > 256) {
+		translation.x = 0;
+		initialize();
+	}
+        if ( Math.abs(translation.y) > 256) {
+		translation.y = 0;
+		initialize();
+	}
+        if ( Math.abs(translation.z) > 256) {
+		translation.z = 0;
+		initialize();
+	}
+	if (Math.abs(scale.x) > 20) {
+		scale.x = scale.x/2;
+		translation.x = 0;
+		initialize();
+	}
+	if (Math.abs(scale.y) > 20) {
+		scale.y = scale.y/2;
+		translation.y = 0;
+		initialize();
+	}
+	if (Math.abs(scale.z) > 20) {
+		scale.z = scale.z/2;
+		translation.z = 0;
+		initialize();
+	}
+}
+""")
             .addField(new field().setName("scale").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(1.0,1.0,1.0)))
             .addField(new field().setName("translation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
             .addField(new field().setName("velocity").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))

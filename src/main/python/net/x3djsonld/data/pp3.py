@@ -107,19 +107,19 @@ newModel=X3D(profile='Immersive',version='3.3',
           field=[
           field(name='set_rightstring',accessType='inputOnly',type='SFString'),
           field(name='rightlines',accessType='outputOnly',type='MFString')]
-*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
 ),
         Script(DEF='UpSingleToMultiString',
           field=[
           field(name='set_upstring',accessType='inputOnly',type='SFString'),
           field(name='uplines',accessType='outputOnly',type='MFString')]
-*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
 ),
         Script(DEF='CenterSingleToMultiString',
           field=[
           field(name='set_centerstring',accessType='inputOnly',type='SFString'),
           field(name='centerlines',accessType='outputOnly',type='MFString')]
-*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
 ),
         ROUTE(fromField='enteredText',fromNode='CenterSensor',toField='set_centerstring',toNode='CenterSingleToMultiString'),
         ROUTE(fromField='centerlines',fromNode='CenterSingleToMultiString',toField='set_string',toNode='CenterString'),

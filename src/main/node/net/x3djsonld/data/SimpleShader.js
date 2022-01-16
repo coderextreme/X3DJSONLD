@@ -149,20 +149,20 @@ SimpleShader.prototype = {
   .setScene((new autoclass.Scene())
     .addChild((new autoclass.ProtoDeclare()).setName("myPrototype")
       .setProtoInterface((new autoclass.ProtoInterface())
-        .addField((new autoclass.field()).setAccessType("initializeOnly").setName("myInputRange").setType("SFVec3f").setValue("0.95 0.44 0.22")))
+        .addField((new autoclass.field()).setName("myInputRange").setType("SFVec3f").setAccessType("initializeOnly").setValue("0.95 0.44 0.22")))
       .setProtoBody((new autoclass.ProtoBody())
         .addChild((new autoclass.Transform("TR"))
           .addChild((new autoclass.Shape())
             .setAppearance((new autoclass.Appearance())
               .setMaterial((new autoclass.Material()).setDiffuseColor(0.5,0.5,0.9))
               .addShaders((new autoclass.ComposedShader()).setLanguage("GLSL")
-                .addField((new autoclass.field()).setAccessType("initializeOnly").setName("decis").setType("SFVec3f"))
+                .addField((new autoclass.field()).setName("decis").setType("SFVec3f").setAccessType("initializeOnly"))
                 .setIS((new autoclass.IS())
                   .addConnect((new autoclass.connect()).setNodeField("decis").setProtoField("myInputRange")))
                 .addParts((new autoclass.ShaderPart()))
                 .addParts((new autoclass.ShaderPart()).setType("FRAGMENT")))
               .addShaders((new autoclass.ComposedShader("Cobweb")).setLanguage("GLSL")
-                .addField((new autoclass.field()).setAccessType("initializeOnly").setName("decis").setType("SFVec3f").setValue("0.95 0.77 0.44"))
+                .addField((new autoclass.field()).setName("decis").setType("SFVec3f").setAccessType("initializeOnly").setValue("0.95 0.77 0.44"))
                 .addParts((new autoclass.ShaderPart()))
                 .addParts((new autoclass.ShaderPart("_1")).setType("FRAGMENT"))))
             .setGeometry((new autoclass.Sphere()).setRadius(1.75))))))
@@ -172,12 +172,12 @@ SimpleShader.prototype = {
           .addValue((new autoclass.MetadataSet("nodes")).setName("nodes").setReference("http://titania.create3000.de")
             .addComments(" NULL ")))
         .addValue((new autoclass.MetadataSet("NavigationInfo")).setName("NavigationInfo").setReference("http://titania.create3000.de")
-          .addValue((new autoclass.MetadataString("type")).setName("type").setValue(new autoclass.MFString("\"EXAMINE\"")).setReference("http://titania.create3000.de")))
+          .addValue((new autoclass.MetadataString("type")).setName("type").setReference("http://titania.create3000.de").setValue(new autoclass.MFString("\"EXAMINE\""))))
         .addValue((new autoclass.MetadataSet("Viewpoint")).setName("Viewpoint").setReference("http://titania.create3000.de")
-          .addValue((new autoclass.MetadataDouble("position")).setName("position").setValue(java.newArray("double", [6.24067728185014,0.00250837343276661,2.92117542307615])).setReference("http://titania.create3000.de"))
-          .addValue((new autoclass.MetadataDouble("orientation")).setName("orientation").setValue(java.newArray("double", [-0.110173424710488,0.990158061907379,-0.0863065984000336,1.21146676119191])).setReference("http://titania.create3000.de"))
-          .addValue((new autoclass.MetadataDouble("centerOfRotation")).setName("centerOfRotation").setValue(java.newArray("double", [-0.808320198626341,-0.358072370409949,0.22817191560906])).setReference("http://titania.create3000.de")))))
-    .addChild((new autoclass.ProtoInstance()).setName("myPrototype")));
+          .addValue((new autoclass.MetadataDouble("position")).setName("position").setReference("http://titania.create3000.de").setValue(java.newArray("double", [6.24067728185014,0.00250837343276661,2.92117542307615])))
+          .addValue((new autoclass.MetadataDouble("orientation")).setName("orientation").setReference("http://titania.create3000.de").setValue(java.newArray("double", [-0.110173424710488,0.990158061907379,-0.0863065984000336,1.21146676119191])))
+          .addValue((new autoclass.MetadataDouble("centerOfRotation")).setName("centerOfRotation").setReference("http://titania.create3000.de").setValue(java.newArray("double", [-0.808320198626341,-0.358072370409949,0.22817191560906]))))))
+    .addChild((new autoclass.ProtoInstance())));
   },
   // end of initialize() method
 
@@ -236,4 +236,3 @@ SimpleShader.prototype = {
 	}
 }
 new SimpleShader().main();
-process.exit(0);

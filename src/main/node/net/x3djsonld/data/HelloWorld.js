@@ -181,7 +181,7 @@ HelloWorld.prototype = {
           .setGeometry((new autoclass.Text("TextMessage")).setString(new autoclass.MFString("\"Hello\" \"world!\""))
             .setFontStyle((new autoclass.FontStyle()).setJustify(new autoclass.MFString("\"MIDDLE\" \"MIDDLE\""))))
           .setAppearance((new autoclass.Appearance())
-            .setMaterial((new autoclass.Material()).setUSE("MaterialLightBlue")))))));
+            .setMaterial((new autoclass.Material())))))));
   },
   // end of initialize() method
 
@@ -240,4 +240,3 @@ HelloWorld.prototype = {
 	}
 }
 new HelloWorld().main();
-process.exit(0);

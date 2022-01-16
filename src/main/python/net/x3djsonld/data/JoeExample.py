@@ -34,7 +34,7 @@ newModel=X3D(version='3.0',profile='Immersive',
       field(name='combinationEntered',type='SFBool',accessType='inputOnly'),
       field(name='vaultUnlocked',type='SFTime',accessType='outputOnly'),
       field(name='unlocked',type='SFBool',value=False,accessType='initializeOnly')]
-*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
 ),
     Shape(
       appearance=Appearance(
