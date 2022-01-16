@@ -144,7 +144,7 @@ HelloWorldCommented.prototype = {
           .addComments(" Text complete, Appearance begin ")
           .setAppearance((new autoclass.Appearance())
             .addComments(" Material begin ")
-            .setMaterial((new autoclass.Material()).setUSE("MaterialLightBlue"))
+            .setMaterial((new autoclass.Material()))
             .addComments(" Material complete "))
           .addComments(" Appearance complete "))
         .addComments(" Shape complete "))
@@ -208,4 +208,3 @@ HelloWorldCommented.prototype = {
 	}
 }
 new HelloWorldCommented().main();
-process.exit(0);

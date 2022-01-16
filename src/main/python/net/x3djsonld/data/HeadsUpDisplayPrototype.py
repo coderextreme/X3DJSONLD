@@ -94,7 +94,7 @@ newModel=X3D(profile='Immersive',version='3.0',
                       IS=IS(
                         connect=[
                         connect(nodeField='traceEnabled',protoField='traceEnabled')])
-*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
 ),
                     ROUTE(fromField='isActive',fromNode='PlaneMovementSensor',toField='setPlaneSensorIsActive',toNode='VisibilityControlScript'),
                     ROUTE(fromField='translation_changed',fromNode='PlaneMovementSensor',toField='setPlaneSensorTranslation',toNode='VisibilityControlScript'),

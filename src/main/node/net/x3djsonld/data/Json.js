@@ -20,7 +20,7 @@ var autoclass = require('./X3Dautoclass');
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d">HelloWorldProgramOutput.x3d</a> </td>
+			<td> <a href="Json.x3d">Json.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> info </i> </td>
@@ -76,7 +76,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3dv">HelloWorldProgramOutput.x3dv</a> </td>
+			<td> <a href="HelloWorldProgramOutput.x3dv">HelloWorldProgramOutput.x3dv</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -84,7 +84,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.html">HelloWorldProgramOutput.html</a> </td>
+			<td> <a href="HelloWorldProgramOutput.html">HelloWorldProgramOutput.html</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -96,7 +96,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
-			<td> <a href="https://www.web3d.org/specifications/java/examples/../license.html">../license.html</a> </td>
+			<td> <a href="../license.html">../license.html</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> translated </i> </td>
@@ -156,7 +156,7 @@ Json.prototype = {
     .addUnit((new autoclass.unit()).setName("AngleUnitConversion").setCategory("angle").setConversionFactor(1.0))
     .addUnit((new autoclass.unit()).setName("LengthUnitConversion").setCategory("length").setConversionFactor(1.0))
     .addUnit((new autoclass.unit()).setName("ForceFromPoundsToNewtons").setCategory("force").setConversionFactor(4.4482))
-    .addMeta((new autoclass.meta()).setName("title").setContent("HelloWorldProgramOutput.x3d"))
+    .addMeta((new autoclass.meta()).setName("title").setContent("Json.x3d"))
     .addMeta((new autoclass.meta()).setName("info").setContent("continued development and testing in progress"))
     .addMeta((new autoclass.meta()).setName("description").setContent("Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface Library (X3DJSAIL)"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("https://www.web3d.org/specifications/java/X3DJSAIL.html"))

@@ -16,7 +16,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
       .setHead((new autoclass.head())
         .addComponent((new autoclass.component()).setName("Networking").setLevel(2))
         .addComponent((new autoclass.component()).setName("Core").setLevel(2))
-        .addMeta((new autoclass.meta()).setName("title").setContent("t4.x3d"))
+        .addMeta((new autoclass.meta()).setName("title").setContent("t3.x3d"))
         .addMeta((new autoclass.meta()).setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/src/main/data/t4.x3d"))
         .addMeta((new autoclass.meta()).setName("generator").setContent("view3dscene, https://castle-engine.io/view3dscene.php"))
         .addMeta((new autoclass.meta()).setName("creator").setContent("Andreas Plesch and John Carlson"))

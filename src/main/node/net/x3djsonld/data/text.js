@@ -99,7 +99,7 @@ text.prototype = {
       .addChild((new autoclass.Script()).setSourceCode("\n" + 
 "			    ecmascript:" + "\n" + 
 "			    var me = '\"1\" \"\\\"2\" \"\\n3\"';" + "\n")
-        .addField((new autoclass.field()).setAccessType("initializeOnly").setName("frontUrls").setType("MFString").setValue("\"rnl_front.png\" \"uffizi_front.png\"")))));
+        .addField((new autoclass.field()).setName("frontUrls").setType("MFString").setAccessType("initializeOnly").setValue("\"rnl_front.png\" \"uffizi_front.png\"")))));
   },
   // end of initialize() method
 
@@ -158,4 +158,3 @@ text.prototype = {
 	}
 }
 new text().main();
-process.exit(0);

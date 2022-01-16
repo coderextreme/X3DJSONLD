@@ -4,12 +4,12 @@ import '../x3d.dart';
 var X3D0 =  X3D(
 
       profile_ : SFString('Immersive'),
-      version_ : SFString('3.3'),
+      version_ : SFString('4.0'),
       head_ : 
         head(
           component_ : 
             component(
-              name_ : SFString('H-Anim'),
+              name_ : SFString('HAnim'),
               level_ : 1),
           meta_ : [
             meta(
@@ -34,7 +34,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('modified'),
-              content_ : SFString('3 July 2020')),
+              content_ : SFString('23 December 2021')),
 
             meta(
               name_ : SFString('description'),
@@ -54,7 +54,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/KoreanCharacter06Ga.x3d')),
+              content_ : SFString('https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/KoreanCharacter06Ga.x3d')),
 
             meta(
               name_ : SFString('generator'),
@@ -92,16 +92,44 @@ var X3D0 =  X3D(
             HAnimHumanoid(
               name_ : SFString('Ga'),
               DEF_ : SFString('hanim_Ga'),
-              info_ : MFString([SFString("authorName=Chul Hee Jung and Myeong Won Lee"), SFString("authorEmail=myeongwonlee@gmail.com"), SFString("creationDate=31 March 2011"), SFString("humanoidVersion=1.0"), SFString("gender=female"), SFString("height=1.5")]),
               scale_ : SFVec3f([SFDouble(0.0225), SFDouble(0.0225), SFDouble(0.0225)]),
-              version_ : SFString('1.0'),
+              version_ : SFString('2.0'),
+              /*original HAnimHumanoid info='\"authorName=Chul Hee Jung and Myeong Won Lee\" \"authorEmail=myeongwonlee@gmail.com\" \"creationDate=31 March 2011\" \"humanoidVersion=2.0\" \"gender=female\" \"height=1.5\"'*/
+              metadata_ : [
+                MetadataSet(
+                  name_ : SFString('HAnimHumanoid.info'),
+                  reference_ : SFString('https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid'),
+                  value_ : 
+                    MetadataString(
+                      name_ : SFString('authorName'),
+                      value_ : MFString([SFString("Chul Hee Jung and Myeong Won Lee")])),
+                  value_ : 
+                    MetadataString(
+                      name_ : SFString('authorEmail'),
+                      value_ : MFString([SFString("myeongwonlee@gmail.com")])),
+                  value_ : 
+                    MetadataString(
+                      name_ : SFString('creationDate'),
+                      value_ : MFString([SFString("31 March 2011")])),
+                  value_ : 
+                    MetadataString(
+                      name_ : SFString('gender'),
+                      value_ : MFString([SFString("female")])),
+                  value_ : 
+                    MetadataFloat(
+                      name_ : SFString('height'),
+                      value_ : MFFloat([SFFloat(1.5)])),
+                  value_ : 
+                    MetadataString(
+                      name_ : SFString('humanoidVersion'),
+                      value_ : MFString([SFString("2.0")]))),
               joints_ : [
                 HAnimJoint(
                   name_ : SFString('humanoid_root'),
                   DEF_ : SFString('hanim_humanoid_root'),
                   center_ : SFVec3f([SFDouble(0), SFDouble(32.310001), SFDouble(-0.7076)]),
-                  ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
-                  llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                  ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
+                  llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                   children_ : [
                     HAnimSegment(
                       name_ : SFString('sacrum'),
@@ -119,7 +147,7 @@ var X3D0 =  X3D(
                                   texture_ : 
                                     ImageTexture(
                                       DEF_ : SFString('GaTextureAtlas'),
-                                      url_ : MFString([SFString("images/Ga.png"), SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/images/Ga.png")]))),
+                                      url_ : MFString([SFString("images/Ga.png"), SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/images/Ga.png")]))),
                               geometry_ : 
                                 IndexedFaceSet(
                                   coordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(2), SFInt32(-1), SFInt32(0), SFInt32(2), SFInt32(3), SFInt32(-1), SFInt32(0), SFInt32(3), SFInt32(4), SFInt32(-1), SFInt32(0), SFInt32(4), SFInt32(5), SFInt32(-1), SFInt32(0), SFInt32(5), SFInt32(6), SFInt32(-1), SFInt32(0), SFInt32(6), SFInt32(7), SFInt32(-1), SFInt32(0), SFInt32(7), SFInt32(8), SFInt32(-1), SFInt32(0), SFInt32(8), SFInt32(9), SFInt32(-1), SFInt32(0), SFInt32(9), SFInt32(10), SFInt32(-1), SFInt32(0), SFInt32(10), SFInt32(11), SFInt32(-1), SFInt32(0), SFInt32(11), SFInt32(12), SFInt32(-1), SFInt32(0), SFInt32(12), SFInt32(1), SFInt32(-1), SFInt32(14), SFInt32(2), SFInt32(1), SFInt32(-1), SFInt32(1), SFInt32(13), SFInt32(14), SFInt32(-1), SFInt32(15), SFInt32(3), SFInt32(2), SFInt32(-1), SFInt32(2), SFInt32(14), SFInt32(15), SFInt32(-1), SFInt32(16), SFInt32(4), SFInt32(3), SFInt32(-1), SFInt32(3), SFInt32(15), SFInt32(16), SFInt32(-1), SFInt32(17), SFInt32(5), SFInt32(4), SFInt32(-1), SFInt32(4), SFInt32(16), SFInt32(17), SFInt32(-1), SFInt32(18), SFInt32(6), SFInt32(5), SFInt32(-1), SFInt32(5), SFInt32(17), SFInt32(18), SFInt32(-1), SFInt32(19), SFInt32(7), SFInt32(6), SFInt32(-1), SFInt32(6), SFInt32(18), SFInt32(19), SFInt32(-1), SFInt32(20), SFInt32(8), SFInt32(7), SFInt32(-1), SFInt32(7), SFInt32(19), SFInt32(20), SFInt32(-1), SFInt32(21), SFInt32(9), SFInt32(8), SFInt32(-1), SFInt32(8), SFInt32(20), SFInt32(21), SFInt32(-1), SFInt32(22), SFInt32(10), SFInt32(9), SFInt32(-1), SFInt32(9), SFInt32(21), SFInt32(22), SFInt32(-1), SFInt32(23), SFInt32(11), SFInt32(10), SFInt32(-1), SFInt32(10), SFInt32(22), SFInt32(23), SFInt32(-1), SFInt32(24), SFInt32(12), SFInt32(11), SFInt32(-1), SFInt32(11), SFInt32(23), SFInt32(24), SFInt32(-1), SFInt32(13), SFInt32(1), SFInt32(12), SFInt32(-1), SFInt32(12), SFInt32(24), SFInt32(13), SFInt32(-1), SFInt32(26), SFInt32(14), SFInt32(13), SFInt32(-1), SFInt32(13), SFInt32(25), SFInt32(26), SFInt32(-1), SFInt32(27), SFInt32(15), SFInt32(14), SFInt32(-1), SFInt32(14), SFInt32(26), SFInt32(27), SFInt32(-1), SFInt32(28), SFInt32(16), SFInt32(15), SFInt32(-1), SFInt32(15), SFInt32(27), SFInt32(28), SFInt32(-1), SFInt32(29), SFInt32(17), SFInt32(16), SFInt32(-1), SFInt32(16), SFInt32(28), SFInt32(29), SFInt32(-1), SFInt32(30), SFInt32(18), SFInt32(17), SFInt32(-1), SFInt32(17), SFInt32(29), SFInt32(30), SFInt32(-1), SFInt32(31), SFInt32(19), SFInt32(18), SFInt32(-1), SFInt32(18), SFInt32(30), SFInt32(31), SFInt32(-1), SFInt32(32), SFInt32(20), SFInt32(19), SFInt32(-1), SFInt32(19), SFInt32(31), SFInt32(32), SFInt32(-1), SFInt32(33), SFInt32(21), SFInt32(20), SFInt32(-1), SFInt32(20), SFInt32(32), SFInt32(33), SFInt32(-1), SFInt32(34), SFInt32(22), SFInt32(21), SFInt32(-1), SFInt32(21), SFInt32(33), SFInt32(34), SFInt32(-1), SFInt32(35), SFInt32(23), SFInt32(22), SFInt32(-1), SFInt32(22), SFInt32(34), SFInt32(35), SFInt32(-1), SFInt32(36), SFInt32(24), SFInt32(23), SFInt32(-1), SFInt32(23), SFInt32(35), SFInt32(36), SFInt32(-1), SFInt32(25), SFInt32(13), SFInt32(24), SFInt32(-1), SFInt32(24), SFInt32(36), SFInt32(25), SFInt32(-1), SFInt32(38), SFInt32(26), SFInt32(25), SFInt32(-1), SFInt32(25), SFInt32(37), SFInt32(38), SFInt32(-1), SFInt32(39), SFInt32(27), SFInt32(26), SFInt32(-1), SFInt32(26), SFInt32(38), SFInt32(39), SFInt32(-1), SFInt32(40), SFInt32(28), SFInt32(27), SFInt32(-1), SFInt32(27), SFInt32(39), SFInt32(40), SFInt32(-1), SFInt32(41), SFInt32(29), SFInt32(28), SFInt32(-1), SFInt32(28), SFInt32(40), SFInt32(41), SFInt32(-1), SFInt32(42), SFInt32(30), SFInt32(29), SFInt32(-1), SFInt32(29), SFInt32(41), SFInt32(42), SFInt32(-1), SFInt32(43), SFInt32(31), SFInt32(30), SFInt32(-1), SFInt32(30), SFInt32(42), SFInt32(43), SFInt32(-1), SFInt32(44), SFInt32(32), SFInt32(31), SFInt32(-1), SFInt32(31), SFInt32(43), SFInt32(44), SFInt32(-1), SFInt32(45), SFInt32(33), SFInt32(32), SFInt32(-1), SFInt32(32), SFInt32(44), SFInt32(45), SFInt32(-1), SFInt32(46), SFInt32(34), SFInt32(33), SFInt32(-1), SFInt32(33), SFInt32(45), SFInt32(46), SFInt32(-1), SFInt32(47), SFInt32(35), SFInt32(34), SFInt32(-1), SFInt32(34), SFInt32(46), SFInt32(47), SFInt32(-1), SFInt32(48), SFInt32(36), SFInt32(35), SFInt32(-1), SFInt32(35), SFInt32(47), SFInt32(48), SFInt32(-1), SFInt32(37), SFInt32(25), SFInt32(36), SFInt32(-1), SFInt32(36), SFInt32(48), SFInt32(37), SFInt32(-1), SFInt32(50), SFInt32(38), SFInt32(37), SFInt32(-1), SFInt32(37), SFInt32(49), SFInt32(50), SFInt32(-1), SFInt32(51), SFInt32(39), SFInt32(38), SFInt32(-1), SFInt32(38), SFInt32(50), SFInt32(51), SFInt32(-1), SFInt32(52), SFInt32(40), SFInt32(39), SFInt32(-1), SFInt32(39), SFInt32(51), SFInt32(52), SFInt32(-1), SFInt32(53), SFInt32(41), SFInt32(40), SFInt32(-1), SFInt32(40), SFInt32(52), SFInt32(53), SFInt32(-1), SFInt32(54), SFInt32(42), SFInt32(41), SFInt32(-1), SFInt32(41), SFInt32(53), SFInt32(54), SFInt32(-1), SFInt32(55), SFInt32(43), SFInt32(42), SFInt32(-1), SFInt32(42), SFInt32(54), SFInt32(55), SFInt32(-1), SFInt32(56), SFInt32(44), SFInt32(43), SFInt32(-1), SFInt32(43), SFInt32(55), SFInt32(56), SFInt32(-1), SFInt32(57), SFInt32(45), SFInt32(44), SFInt32(-1), SFInt32(44), SFInt32(56), SFInt32(57), SFInt32(-1), SFInt32(58), SFInt32(46), SFInt32(45), SFInt32(-1), SFInt32(45), SFInt32(57), SFInt32(58), SFInt32(-1), SFInt32(59), SFInt32(47), SFInt32(46), SFInt32(-1), SFInt32(46), SFInt32(58), SFInt32(59), SFInt32(-1), SFInt32(60), SFInt32(48), SFInt32(47), SFInt32(-1), SFInt32(47), SFInt32(59), SFInt32(60), SFInt32(-1), SFInt32(49), SFInt32(37), SFInt32(48), SFInt32(-1), SFInt32(48), SFInt32(60), SFInt32(49), SFInt32(-1), SFInt32(61), SFInt32(50), SFInt32(49), SFInt32(-1), SFInt32(61), SFInt32(51), SFInt32(50), SFInt32(-1), SFInt32(61), SFInt32(52), SFInt32(51), SFInt32(-1), SFInt32(61), SFInt32(53), SFInt32(52), SFInt32(-1), SFInt32(61), SFInt32(54), SFInt32(53), SFInt32(-1), SFInt32(61), SFInt32(55), SFInt32(54), SFInt32(-1), SFInt32(61), SFInt32(56), SFInt32(55), SFInt32(-1), SFInt32(61), SFInt32(57), SFInt32(56), SFInt32(-1), SFInt32(61), SFInt32(58), SFInt32(57), SFInt32(-1), SFInt32(61), SFInt32(59), SFInt32(58), SFInt32(-1), SFInt32(61), SFInt32(60), SFInt32(59), SFInt32(-1), SFInt32(61), SFInt32(49), SFInt32(60), SFInt32(-1)]),
@@ -136,8 +164,8 @@ var X3D0 =  X3D(
                       name_ : SFString('l_hip'),
                       DEF_ : SFString('hanim_l_hip'),
                       center_ : SFVec3f([SFDouble(2.906), SFDouble(30.18), SFDouble(-0.2966)]),
-                      ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
-                      llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
+                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                       children_ : [
                         HAnimSegment(
                           name_ : SFString('l_thigh'),
@@ -171,8 +199,8 @@ var X3D0 =  X3D(
                           name_ : SFString('l_knee'),
                           DEF_ : SFString('hanim_l_knee'),
                           center_ : SFVec3f([SFDouble(3.116), SFDouble(16.92), SFDouble(-0.2161)]),
-                          ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
-                          llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                          ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
+                          llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                           children_ : [
                             HAnimSegment(
                               name_ : SFString('l_calf'),
@@ -203,15 +231,15 @@ var X3D0 =  X3D(
                                               point_ : MFVec2f([SFVec2f([0.1533,0.0451]),SFVec2f([0.1623,0.0594]),SFVec2f([0.1505,0.0627]),SFVec2f([0.146,0.0491]),SFVec2f([0.1609,0.0391]),SFVec2f([0.1742,0.0547]),SFVec2f([0.1152,0.0443]),SFVec2f([0.1036,0.0603]),SFVec2f([0.0917,0.0539]),SFVec2f([0.1094,0.0349]),SFVec2f([0.1241,0.0505]),SFVec2f([0.1179,0.0642]),SFVec2f([0.1279,0.0519]),SFVec2f([0.1267,0.065]),SFVec2f([0.137,0.0496]),SFVec2f([0.1389,0.0636]),SFVec2f([0.1771,0.1833]),SFVec2f([0.1621,0.1818]),SFVec2f([0.1898,0.1853]),SFVec2f([0.0921,0.199]),SFVec2f([0.1065,0.1923]),SFVec2f([0.1237,0.1855]),SFVec2f([0.1357,0.1824]),SFVec2f([0.1477,0.1821]),SFVec2f([0.189,0.1086]),SFVec2f([0.2023,0.1026]),SFVec2f([0.1737,0.1142]),SFVec2f([0.1567,0.1184]),SFVec2f([0.0934,0.1104]),SFVec2f([0.112,0.1113]),SFVec2f([0.1261,0.1143]),SFVec2f([0.1413,0.1164]),SFVec2f([0.181,0.0492]),SFVec2f([0.1618,0.0341]),SFVec2f([0.2033,0.1901]),SFVec2f([0.078,0.1116]),SFVec2f([0.1577,0.1998]),SFVec2f([0.1212,0.212]),SFVec2f([0.1332,0.2037]),SFVec2f([0.1701,0.2038]),SFVec2f([0.1782,0.2053]),SFVec2f([0.139,0.1984]),SFVec2f([0.1454,0.199]),SFVec2f([0.1839,0.2167]),SFVec2f([0.1171,0.2197]),SFVec2f([0.1212,0.212]),SFVec2f([0.1332,0.2037]),SFVec2f([0.139,0.1984]),SFVec2f([0.1454,0.199]),SFVec2f([0.1577,0.1998]),SFVec2f([0.1701,0.2038]),SFVec2f([0.1782,0.2053]),SFVec2f([0.1839,0.2167]),SFVec2f([0.1533,0.0451]),SFVec2f([0.146,0.0491]),SFVec2f([0.137,0.0496]),SFVec2f([0.1279,0.0519]),SFVec2f([0.1241,0.0505]),SFVec2f([0.1152,0.0443]),SFVec2f([0.1094,0.0349]),SFVec2f([0.1609,0.0391])]))))])]),
 
                             HAnimJoint(
-                              name_ : SFString('l_ankle'),
-                              DEF_ : SFString('hanim_l_ankle'),
+                              name_ : SFString('l_talocrural'),
+                              DEF_ : SFString('hanim_l_talocrural'),
                               center_ : SFVec3f([SFDouble(3.28), SFDouble(4.021), SFDouble(-0.2439)]),
-                              ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
-                              llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                              ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
+                              llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                               children_ : [
                                 HAnimSegment(
-                                  name_ : SFString('l_hindfoot'),
-                                  DEF_ : SFString('hanim_l_hindfoot'),
+                                  name_ : SFString('l_talus'),
+                                  DEF_ : SFString('hanim_l_talus'),
                                   children_ : [
                                     Transform(
                                       translation_ : SFVec3f([SFDouble(3.28), SFDouble(4.021), SFDouble(-0.2439)]),
@@ -238,15 +266,15 @@ var X3D0 =  X3D(
                                                   point_ : MFVec2f([SFVec2f([0.4844,0.4832]),SFVec2f([0.4605,0.488]),SFVec2f([0.4649,0.5082]),SFVec2f([0.4285,0.4942]),SFVec2f([0.4404,0.5196]),SFVec2f([0.4906,0.5048]),SFVec2f([0.4809,0.4194]),SFVec2f([0.4963,0.3791]),SFVec2f([0.484,0.4651]),SFVec2f([0.5104,0.5081]),SFVec2f([0.4579,0.4737]),SFVec2f([0.4243,0.4748]),SFVec2f([0.4873,0.4414]),SFVec2f([0.4531,0.446]),SFVec2f([0.4226,0.4501]),SFVec2f([0.4433,0.408]),SFVec2f([0.4589,0.3795]),SFVec2f([0.4431,0.3512]),SFVec2f([0.4805,0.3391]),SFVec2f([0.504,0.5265]),SFVec2f([0.4717,0.5257]),SFVec2f([0.4602,0.5366]),SFVec2f([0.4879,0.5212]),SFVec2f([0.5157,0.5408]),SFVec2f([0.504,0.5265]),SFVec2f([0.4879,0.5212]),SFVec2f([0.504,0.5265]),SFVec2f([0.5157,0.5408]),SFVec2f([0.504,0.5265]),SFVec2f([0.4717,0.5257]),SFVec2f([0.4602,0.5366]),SFVec2f([0.5267,0.5341]),SFVec2f([0.5033,0.4843]),SFVec2f([0.5033,0.4843]),SFVec2f([0.4961,0.3404]),SFVec2f([0.5033,0.44]),SFVec2f([0.5001,0.4177]),SFVec2f([0.5032,0.44]),SFVec2f([0.5027,0.4613]),SFVec2f([0.5027,0.4613]),SFVec2f([0.513,0.3789]),SFVec2f([0.5113,0.5043]),SFVec2f([0.5237,0.5342]),SFVec2f([0.5114,0.4838]),SFVec2f([0.5029,0.4603]),SFVec2f([0.5115,0.4417]),SFVec2f([-1749,766.6]),SFVec2f([0.4979,0.3571]),SFVec2f([0.503,0.4581]),SFVec2f([0.5048,0.4836])]))))])]),
 
                                 HAnimJoint(
-                                  name_ : SFString('l_midtarsal'),
-                                  DEF_ : SFString('hanim_l_midtarsal'),
+                                  name_ : SFString('l_metatarsophalangeal_2'),
+                                  DEF_ : SFString('hanim_l_metatarsophalangeal_2'),
                                   center_ : SFVec3f([SFDouble(3.28), SFDouble(3.095), SFDouble(0.83)]),
-                                  ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
-                                  llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                                  ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
+                                  llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                   children_ : [
                                     HAnimSegment(
-                                      name_ : SFString('l_middistal'),
-                                      DEF_ : SFString('hanim_l_middistal'),
+                                      name_ : SFString('l_tarsal_proximal_phalanx_2'),
+                                      DEF_ : SFString('hanim_l_tarsal_proximal_phalanx_2'),
                                       children_ : [
                                         Transform(
                                           translation_ : SFVec3f([SFDouble(3.28), SFDouble(3.095), SFDouble(0.83)]),
@@ -276,8 +304,8 @@ var X3D0 =  X3D(
                       name_ : SFString('r_hip'),
                       DEF_ : SFString('hanim_r_hip'),
                       center_ : SFVec3f([SFDouble(-2.906), SFDouble(30.18), SFDouble(-0.2966)]),
-                      ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
-                      llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
+                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                       children_ : [
                         HAnimSegment(
                           name_ : SFString('r_thigh'),
@@ -311,8 +339,8 @@ var X3D0 =  X3D(
                           name_ : SFString('r_knee'),
                           DEF_ : SFString('hanim_r_knee'),
                           center_ : SFVec3f([SFDouble(-3.116), SFDouble(16.92), SFDouble(-0.2161)]),
-                          ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
-                          llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                          ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
+                          llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                           children_ : [
                             HAnimSegment(
                               name_ : SFString('r_calf'),
@@ -343,15 +371,15 @@ var X3D0 =  X3D(
                                               point_ : MFVec2f([SFVec2f([0.1533,0.0451]),SFVec2f([0.1623,0.0594]),SFVec2f([0.1505,0.0627]),SFVec2f([0.146,0.0491]),SFVec2f([0.1609,0.0391]),SFVec2f([0.1742,0.0547]),SFVec2f([0.1152,0.0443]),SFVec2f([0.1036,0.0603]),SFVec2f([0.0917,0.0539]),SFVec2f([0.1094,0.0349]),SFVec2f([0.1241,0.0505]),SFVec2f([0.1179,0.0642]),SFVec2f([0.1279,0.0519]),SFVec2f([0.1267,0.065]),SFVec2f([0.137,0.0496]),SFVec2f([0.1389,0.0636]),SFVec2f([0.1771,0.1833]),SFVec2f([0.1621,0.1818]),SFVec2f([0.1898,0.1853]),SFVec2f([0.0921,0.199]),SFVec2f([0.1065,0.1923]),SFVec2f([0.1237,0.1855]),SFVec2f([0.1357,0.1824]),SFVec2f([0.1477,0.1821]),SFVec2f([0.189,0.1086]),SFVec2f([0.2023,0.1026]),SFVec2f([0.1737,0.1142]),SFVec2f([0.1567,0.1184]),SFVec2f([0.0934,0.1104]),SFVec2f([0.112,0.1113]),SFVec2f([0.1261,0.1143]),SFVec2f([0.1413,0.1164]),SFVec2f([0.181,0.0492]),SFVec2f([0.1618,0.0341]),SFVec2f([0.2033,0.1901]),SFVec2f([0.078,0.1116]),SFVec2f([0.1577,0.1998]),SFVec2f([0.1212,0.212]),SFVec2f([0.1332,0.2037]),SFVec2f([0.1701,0.2038]),SFVec2f([0.1782,0.2053]),SFVec2f([0.139,0.1984]),SFVec2f([0.1454,0.199]),SFVec2f([0.1839,0.2167]),SFVec2f([0.1171,0.2197]),SFVec2f([0.1212,0.212]),SFVec2f([0.1332,0.2037]),SFVec2f([0.139,0.1984]),SFVec2f([0.1454,0.199]),SFVec2f([0.1577,0.1998]),SFVec2f([0.1701,0.2038]),SFVec2f([0.1782,0.2053]),SFVec2f([0.1839,0.2167]),SFVec2f([0.1533,0.0451]),SFVec2f([0.146,0.0491]),SFVec2f([0.137,0.0496]),SFVec2f([0.1279,0.0519]),SFVec2f([0.1241,0.0505]),SFVec2f([0.1152,0.0443]),SFVec2f([0.1094,0.0349]),SFVec2f([0.1609,0.0391])]))))])]),
 
                             HAnimJoint(
-                              name_ : SFString('r_ankle'),
-                              DEF_ : SFString('hanim_r_ankle'),
+                              name_ : SFString('r_talocrural'),
+                              DEF_ : SFString('hanim_r_talocrural'),
                               center_ : SFVec3f([SFDouble(-3.28), SFDouble(4.021), SFDouble(-0.2439)]),
-                              ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
-                              llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                              ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
+                              llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                               children_ : [
                                 HAnimSegment(
-                                  name_ : SFString('r_hindfoot'),
-                                  DEF_ : SFString('hanim_r_hindfoot'),
+                                  name_ : SFString('r_talus'),
+                                  DEF_ : SFString('hanim_r_talus'),
                                   children_ : [
                                     Transform(
                                       translation_ : SFVec3f([SFDouble(-3.28), SFDouble(4.021), SFDouble(-0.2439)]),
@@ -378,15 +406,15 @@ var X3D0 =  X3D(
                                                   point_ : MFVec2f([SFVec2f([0.4844,0.4832]),SFVec2f([0.4605,0.488]),SFVec2f([0.4649,0.5082]),SFVec2f([0.4285,0.4942]),SFVec2f([0.4404,0.5196]),SFVec2f([0.4906,0.5048]),SFVec2f([0.4809,0.4194]),SFVec2f([0.4963,0.3791]),SFVec2f([0.484,0.4651]),SFVec2f([0.5104,0.5081]),SFVec2f([0.4579,0.4737]),SFVec2f([0.4243,0.4748]),SFVec2f([0.4873,0.4414]),SFVec2f([0.4531,0.446]),SFVec2f([0.4226,0.4501]),SFVec2f([0.4433,0.408]),SFVec2f([0.4589,0.3795]),SFVec2f([0.4431,0.3512]),SFVec2f([0.4805,0.3391]),SFVec2f([0.504,0.5265]),SFVec2f([0.4717,0.5257]),SFVec2f([0.4602,0.5366]),SFVec2f([0.4879,0.5212]),SFVec2f([0.5157,0.5408]),SFVec2f([0.504,0.5265]),SFVec2f([0.4879,0.5212]),SFVec2f([0.504,0.5265]),SFVec2f([0.5157,0.5408]),SFVec2f([0.504,0.5265]),SFVec2f([0.4717,0.5257]),SFVec2f([0.4602,0.5366]),SFVec2f([0.5267,0.5341]),SFVec2f([0.5033,0.4843]),SFVec2f([0.5033,0.4843]),SFVec2f([0.4961,0.3404]),SFVec2f([0.5033,0.44]),SFVec2f([0.5001,0.4177]),SFVec2f([0.5032,0.44]),SFVec2f([0.5027,0.4613]),SFVec2f([0.5027,0.4613]),SFVec2f([0.513,0.3789]),SFVec2f([0.5113,0.5043]),SFVec2f([0.5237,0.5342]),SFVec2f([0.5114,0.4838]),SFVec2f([0.5029,0.4603]),SFVec2f([0.5115,0.4417]),SFVec2f([-1749,766.6]),SFVec2f([0.4979,0.3571]),SFVec2f([0.503,0.4581]),SFVec2f([0.5048,0.4836])]))))])]),
 
                                 HAnimJoint(
-                                  name_ : SFString('r_midtarsal'),
-                                  DEF_ : SFString('hanim_r_midtarsal'),
+                                  name_ : SFString('r_metatarsophalangeal_2'),
+                                  DEF_ : SFString('hanim_r_metatarsophalangeal_2'),
                                   center_ : SFVec3f([SFDouble(-3.28), SFDouble(3.095), SFDouble(0.83)]),
-                                  ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
-                                  llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                                  ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
+                                  llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                   children_ : [
                                     HAnimSegment(
-                                      name_ : SFString('r_middistal'),
-                                      DEF_ : SFString('hanim_r_middistal'),
+                                      name_ : SFString('r_tarsal_proximal_phalanx_2'),
+                                      DEF_ : SFString('hanim_r_tarsal_proximal_phalanx_2'),
                                       children_ : [
                                         Transform(
                                           translation_ : SFVec3f([SFDouble(-3.28), SFDouble(3.095), SFDouble(0.83)]),
@@ -416,8 +444,8 @@ var X3D0 =  X3D(
                       name_ : SFString('sacroiliac'),
                       DEF_ : SFString('hanim_sacroiliac'),
                       center_ : SFVec3f([SFDouble(0), SFDouble(29.389999), SFDouble(-0.3829)]),
-                      ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
-                      llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
+                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                       children_ : [
                         HAnimSegment(
                           name_ : SFString('pelvis'),
@@ -451,8 +479,8 @@ var X3D0 =  X3D(
                           name_ : SFString('l_shoulder'),
                           DEF_ : SFString('hanim_l_shoulder'),
                           center_ : SFVec3f([SFDouble(6.499), SFDouble(47.529999), SFDouble(-0.7415)]),
-                          ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
-                          llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                          ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
+                          llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                           children_ : [
                             HAnimSegment(
                               name_ : SFString('l_upperarm'),
@@ -486,8 +514,8 @@ var X3D0 =  X3D(
                               name_ : SFString('l_elbow'),
                               DEF_ : SFString('hanim_l_elbow'),
                               center_ : SFVec3f([SFDouble(6.851), SFDouble(38.779999), SFDouble(-0.7886)]),
-                              ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
-                              llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                              ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
+                              llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                               children_ : [
                                 HAnimSegment(
                                   name_ : SFString('l_forearm'),
@@ -518,15 +546,15 @@ var X3D0 =  X3D(
                                                   point_ : MFVec2f([SFVec2f([0.1769,0.0543]),SFVec2f([0.1836,0.0527]),SFVec2f([0.1653,0.0588]),SFVec2f([0.1588,0.058]),SFVec2f([0.1501,0.0578]),SFVec2f([0.1384,0.0565]),SFVec2f([0.128,0.0534]),SFVec2f([0.1917,0.0541]),SFVec2f([0.2019,0.0495]),SFVec2f([0.184,0.1235]),SFVec2f([0.1842,0.1235]),SFVec2f([0.1926,0.1217]),SFVec2f([0.1925,0.1213]),SFVec2f([0.1699,0.126]),SFVec2f([0.1699,0.126]),SFVec2f([0.159,0.1262]),SFVec2f([0.1588,0.1262]),SFVec2f([0.1472,0.1262]),SFVec2f([0.1471,0.1264]),SFVec2f([0.1345,0.126]),SFVec2f([0.1344,0.1265]),SFVec2f([0.1212,0.1264]),SFVec2f([0.2163,0.1209]),SFVec2f([0.2014,0.1216]),SFVec2f([0.2007,0.1217]),SFVec2f([0.1881,0.0872]),SFVec2f([0.188,0.087]),SFVec2f([0.1965,0.0879]),SFVec2f([0.1962,0.0879]),SFVec2f([0.1805,0.0889]),SFVec2f([0.1805,0.0889]),SFVec2f([0.1676,0.0924]),SFVec2f([0.1676,0.0924]),SFVec2f([0.1589,0.0921]),SFVec2f([0.1588,0.0921]),SFVec2f([0.1487,0.092]),SFVec2f([0.1486,0.0921]),SFVec2f([0.1365,0.0913]),SFVec2f([0.1364,0.0916]),SFVec2f([0.1246,0.0899]),SFVec2f([0.2091,0.0852]),SFVec2f([0.1787,0.0716]),SFVec2f([0.1787,0.0716]),SFVec2f([0.1664,0.0756]),SFVec2f([0.1664,0.0756]),SFVec2f([0.1589,0.0751]),SFVec2f([0.1588,0.0751]),SFVec2f([0.1587,0.1943]),SFVec2f([0.1592,0.1943]),SFVec2f([0.1442,0.195]),SFVec2f([0.1444,0.1945]),SFVec2f([0.1745,0.1932]),SFVec2f([0.1745,0.1933]),SFVec2f([0.1915,0.1926]),SFVec2f([0.1911,0.1928]),SFVec2f([0.2015,0.1906]),SFVec2f([0.2013,0.19]),SFVec2f([0.2111,0.1891]),SFVec2f([0.2098,0.1892]),SFVec2f([0.2308,0.1922]),SFVec2f([0.1143,0.1994]),SFVec2f([0.1304,0.1965]),SFVec2f([0.1306,0.1955]),SFVec2f([0.1442,0.195]),SFVec2f([0.1587,0.1943]),SFVec2f([0.1745,0.1932]),SFVec2f([0.1915,0.1926]),SFVec2f([0.2015,0.1906]),SFVec2f([0.2111,0.1891]),SFVec2f([0.2308,0.1922]),SFVec2f([0.1304,0.1965]),SFVec2f([0.1803,0.1929])]))))])]),
 
                                 HAnimJoint(
-                                  name_ : SFString('l_wrist'),
-                                  DEF_ : SFString('hanim_l_wrist'),
+                                  name_ : SFString('l_radiocarpal'),
+                                  DEF_ : SFString('hanim_l_radiocarpal'),
                                   center_ : SFVec3f([SFDouble(7.219), SFDouble(32.48), SFDouble(-0.434)]),
-                                  ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
-                                  llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                                  ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
+                                  llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                   children_ : [
                                     HAnimSegment(
-                                      name_ : SFString('l_hand'),
-                                      DEF_ : SFString('hanim_l_hand'),
+                                      name_ : SFString('l_carpal'),
+                                      DEF_ : SFString('hanim_l_carpal'),
                                       children_ : [
                                         Transform(
                                           translation_ : SFVec3f([SFDouble(7.219), SFDouble(32.48), SFDouble(-0.434)]),
@@ -556,8 +584,8 @@ var X3D0 =  X3D(
                           name_ : SFString('r_shoulder'),
                           DEF_ : SFString('hanim_r_shoulder'),
                           center_ : SFVec3f([SFDouble(-6.499), SFDouble(47.529999), SFDouble(-0.7415)]),
-                          ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
-                          llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                          ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
+                          llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                           children_ : [
                             HAnimSegment(
                               name_ : SFString('r_upperarm'),
@@ -591,8 +619,8 @@ var X3D0 =  X3D(
                               name_ : SFString('r_elbow'),
                               DEF_ : SFString('hanim_r_elbow'),
                               center_ : SFVec3f([SFDouble(-6.851), SFDouble(38.779999), SFDouble(-0.7886)]),
-                              ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
-                              llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                              ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
+                              llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                               children_ : [
                                 HAnimSegment(
                                   name_ : SFString('r_forearm'),
@@ -623,15 +651,15 @@ var X3D0 =  X3D(
                                                   point_ : MFVec2f([SFVec2f([0.1769,0.0543]),SFVec2f([0.1836,0.0527]),SFVec2f([0.1653,0.0588]),SFVec2f([0.1588,0.058]),SFVec2f([0.1501,0.0578]),SFVec2f([0.1384,0.0565]),SFVec2f([0.128,0.0534]),SFVec2f([0.1917,0.0541]),SFVec2f([0.2019,0.0495]),SFVec2f([0.184,0.1235]),SFVec2f([0.1842,0.1235]),SFVec2f([0.1926,0.1217]),SFVec2f([0.1925,0.1213]),SFVec2f([0.1699,0.126]),SFVec2f([0.1699,0.126]),SFVec2f([0.159,0.1262]),SFVec2f([0.1588,0.1262]),SFVec2f([0.1472,0.1262]),SFVec2f([0.1471,0.1264]),SFVec2f([0.1345,0.126]),SFVec2f([0.1344,0.1265]),SFVec2f([0.1212,0.1264]),SFVec2f([0.2163,0.1209]),SFVec2f([0.2014,0.1216]),SFVec2f([0.2007,0.1217]),SFVec2f([0.1881,0.0872]),SFVec2f([0.188,0.087]),SFVec2f([0.1965,0.0879]),SFVec2f([0.1962,0.0879]),SFVec2f([0.1805,0.0889]),SFVec2f([0.1805,0.0889]),SFVec2f([0.1676,0.0924]),SFVec2f([0.1676,0.0924]),SFVec2f([0.1589,0.0921]),SFVec2f([0.1588,0.0921]),SFVec2f([0.1487,0.092]),SFVec2f([0.1486,0.0921]),SFVec2f([0.1365,0.0913]),SFVec2f([0.1364,0.0916]),SFVec2f([0.1246,0.0899]),SFVec2f([0.2091,0.0852]),SFVec2f([0.1787,0.0716]),SFVec2f([0.1787,0.0716]),SFVec2f([0.1664,0.0756]),SFVec2f([0.1664,0.0756]),SFVec2f([0.1589,0.0751]),SFVec2f([0.1588,0.0751]),SFVec2f([0.1587,0.1943]),SFVec2f([0.1592,0.1943]),SFVec2f([0.1442,0.195]),SFVec2f([0.1444,0.1945]),SFVec2f([0.1745,0.1932]),SFVec2f([0.1745,0.1933]),SFVec2f([0.1915,0.1926]),SFVec2f([0.1911,0.1928]),SFVec2f([0.2015,0.1906]),SFVec2f([0.2013,0.19]),SFVec2f([0.2111,0.1891]),SFVec2f([0.2098,0.1892]),SFVec2f([0.2308,0.1922]),SFVec2f([0.1143,0.1994]),SFVec2f([0.1304,0.1965]),SFVec2f([0.1306,0.1955]),SFVec2f([0.1442,0.195]),SFVec2f([0.1587,0.1943]),SFVec2f([0.1745,0.1932]),SFVec2f([0.1915,0.1926]),SFVec2f([0.2015,0.1906]),SFVec2f([0.2111,0.1891]),SFVec2f([0.2308,0.1922]),SFVec2f([0.1304,0.1965]),SFVec2f([0.1803,0.1929])]))))])]),
 
                                 HAnimJoint(
-                                  name_ : SFString('r_wrist'),
-                                  DEF_ : SFString('hanim_r_wrist'),
+                                  name_ : SFString('r_radiocarpal'),
+                                  DEF_ : SFString('hanim_r_radiocarpal'),
                                   center_ : SFVec3f([SFDouble(-7.219), SFDouble(32.48), SFDouble(-0.434)]),
-                                  ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
-                                  llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                                  ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
+                                  llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                   children_ : [
                                     HAnimSegment(
-                                      name_ : SFString('r_hand'),
-                                      DEF_ : SFString('hanim_r_hand'),
+                                      name_ : SFString('r_carpal'),
+                                      DEF_ : SFString('hanim_r_carpal'),
                                       children_ : [
                                         Transform(
                                           translation_ : SFVec3f([SFDouble(-7.219), SFDouble(32.48), SFDouble(-0.434)]),
@@ -661,8 +689,8 @@ var X3D0 =  X3D(
                           name_ : SFString('vl5'),
                           DEF_ : SFString('hanim_vl5'),
                           center_ : SFVec3f([SFDouble(0), SFDouble(34.389999), SFDouble(-0.1643)]),
-                          ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
-                          llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                          ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
+                          llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                           children_ : [
                             HAnimSegment(
                               name_ : SFString('l5'),
@@ -696,8 +724,8 @@ var X3D0 =  X3D(
                               name_ : SFString('skullbase'),
                               DEF_ : SFString('hanim_skullbase'),
                               center_ : SFVec3f([SFDouble(0), SFDouble(52.639999), SFDouble(-0.209)]),
-                              ulimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
-                              llimit_ : SFVec3f([SFDouble(0), SFDouble(0), SFDouble(0)]),
+                              ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
+                              llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                               children_ : [
                                 HAnimSegment(
                                   name_ : SFString('skull'),
@@ -734,16 +762,10 @@ var X3D0 =  X3D(
                   USE_ : SFString('hanim_sacroiliac')),
 
                 HAnimJoint(
-                  USE_ : SFString('hanim_vl5')),
-
-                HAnimJoint(
                   USE_ : SFString('hanim_skullbase')),
 
                 HAnimJoint(
-                  USE_ : SFString('hanim_l_ankle')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_ankle')),
+                  USE_ : SFString('hanim_vl5')),
 
                 HAnimJoint(
                   USE_ : SFString('hanim_l_elbow')),
@@ -764,10 +786,16 @@ var X3D0 =  X3D(
                   USE_ : SFString('hanim_r_knee')),
 
                 HAnimJoint(
-                  USE_ : SFString('hanim_l_midtarsal')),
+                  USE_ : SFString('hanim_l_metatarsophalangeal_2')),
 
                 HAnimJoint(
-                  USE_ : SFString('hanim_r_midtarsal')),
+                  USE_ : SFString('hanim_r_metatarsophalangeal_2')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_radiocarpal')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_radiocarpal')),
 
                 HAnimJoint(
                   USE_ : SFString('hanim_l_shoulder')),
@@ -776,19 +804,19 @@ var X3D0 =  X3D(
                   USE_ : SFString('hanim_r_shoulder')),
 
                 HAnimJoint(
-                  USE_ : SFString('hanim_l_wrist')),
+                  USE_ : SFString('hanim_l_talocrural')),
 
                 HAnimJoint(
-                  USE_ : SFString('hanim_r_wrist')),
+                  USE_ : SFString('hanim_r_talocrural')),
               segments_ : [
                 HAnimSegment(
-                  USE_ : SFString('hanim_sacrum')),
+                  USE_ : SFString('hanim_l5')),
 
                 HAnimSegment(
                   USE_ : SFString('hanim_pelvis')),
 
                 HAnimSegment(
-                  USE_ : SFString('hanim_l5')),
+                  USE_ : SFString('hanim_sacrum')),
 
                 HAnimSegment(
                   USE_ : SFString('hanim_skull')),
@@ -800,28 +828,28 @@ var X3D0 =  X3D(
                   USE_ : SFString('hanim_r_calf')),
 
                 HAnimSegment(
+                  USE_ : SFString('hanim_l_carpal')),
+
+                HAnimSegment(
+                  USE_ : SFString('hanim_r_carpal')),
+
+                HAnimSegment(
                   USE_ : SFString('hanim_l_forearm')),
 
                 HAnimSegment(
                   USE_ : SFString('hanim_r_forearm')),
 
                 HAnimSegment(
-                  USE_ : SFString('hanim_l_hand')),
+                  USE_ : SFString('hanim_l_talus')),
 
                 HAnimSegment(
-                  USE_ : SFString('hanim_r_hand')),
+                  USE_ : SFString('hanim_r_talus')),
 
                 HAnimSegment(
-                  USE_ : SFString('hanim_l_hindfoot')),
+                  USE_ : SFString('hanim_l_tarsal_proximal_phalanx_2')),
 
                 HAnimSegment(
-                  USE_ : SFString('hanim_r_hindfoot')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_middistal')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_middistal')),
+                  USE_ : SFString('hanim_r_tarsal_proximal_phalanx_2')),
 
                 HAnimSegment(
                   USE_ : SFString('hanim_l_thigh')),

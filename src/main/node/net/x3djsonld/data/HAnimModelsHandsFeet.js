@@ -146,15 +146,15 @@ HAnimModelsHandsFeet.prototype = {
         .addChild((new autoclass.Inline("GridXY_20x20Fixed")).setUrl(new autoclass.MFString("\"GridXY_20x20Fixed.x3d\" \"../../Savage/Tools/Authoring/GridXY_20x20Fixed.x3d\" \"https://savage.nps.edu/Savage/Tools/Authoring/GridXY_20x20Fixed.x3d\" \"GridXY_20x20Fixed.wrl\" \"../../Savage/Tools/Authoring/GridXY_20x20Fixed.wrl\" \"https://savage.nps.edu/Savage/Tools/Authoring/GridXY_20x20Fixed.wrl\"")))))
     .addChild((new autoclass.Transform()).setTranslation(1.0,1.0,0.0)
       .addChild((new autoclass.Inline()).setUrl(new autoclass.MFString("\"HAnimModelHandRight.x3d\" \"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandRight.x3d\" \"HAnimModelHandRight.wrl\" \"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandRight.wrl\"")))
-      .addChild((new autoclass.Transform()).setUSE("GridXY_20x20Fixed_AdjustScale")))
+      .addChild((new autoclass.Transform())))
     .addChild((new autoclass.Transform()).setTranslation(-1.0,-1.0,0.0)
       .addComments(" rotation='0 0 1 3.141593' ")
       .addChild((new autoclass.Inline()).setUrl(new autoclass.MFString("\"HAnimModelFootLeft.x3d\" \"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootLeft.x3d\" \"HAnimModelFootLeft.wrl\" \"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootLeft.wrl\"")))
-      .addChild((new autoclass.Transform()).setUSE("GridXY_20x20Fixed_AdjustScale")))
+      .addChild((new autoclass.Transform())))
     .addChild((new autoclass.Transform()).setTranslation(1.0,-1.0,0.0)
       .addComments(" rotation='0 0 1 3.141593' ")
       .addChild((new autoclass.Inline()).setUrl(new autoclass.MFString("\"HAnimModelFootRight.x3d\" \"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootRight.x3d\" \"HAnimModelFootRight.wrl\" \"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootRight.wrl\"")))
-      .addChild((new autoclass.Transform()).setUSE("GridXY_20x20Fixed_AdjustScale"))));
+      .addChild((new autoclass.Transform()))));
   },
   // end of initialize() method
 
@@ -213,4 +213,3 @@ HAnimModelsHandsFeet.prototype = {
 	}
 }
 new HAnimModelsHandsFeet().main();
-process.exit(0);

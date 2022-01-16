@@ -75,7 +75,7 @@ MyBounce.prototype = {
     .addChild((new autoclass.Transform("transform"))
       .addChild((new autoclass.Shape())
         .setAppearance((new autoclass.Appearance())
-          .setMaterial((new autoclass.Material()).setSpecularColor(.5,.5,.5).setDiffuseColor(.7,.7,.7)))
+          .setMaterial((new autoclass.Material()).setDiffuseColor(.7,.7,.7).setSpecularColor(.5,.5,.5)))
         .setGeometry((new autoclass.Sphere()))))
     .addChild((new autoclass.Script("Bounce2")).setSourceCode("\n" + 
 "ecmascript:" + "\n" + 
@@ -109,11 +109,11 @@ MyBounce.prototype = {
 "			function initialize() {" + "\n" + 
 "			     newBubble();" + "\n" + 
 "			}" + "\n")
-      .addField((new autoclass.field()).setAccessType("inputOnly").setName("set_translation").setType("SFVec3f").setValue("0 0 0"))
-      .addField((new autoclass.field()).setAccessType("outputOnly").setName("translation_changed").setType("SFVec3f").setValue("0 0 0"))
-      .addField((new autoclass.field()).setAccessType("inputOutput").setName("translation").setType("SFVec3f").setValue("0 0 0"))
-      .addField((new autoclass.field()).setAccessType("inputOutput").setName("velocity").setType("SFVec3f").setValue("0 0 0"))
-      .addField((new autoclass.field()).setAccessType("inputOnly").setName("set_fraction").setType("SFTime")))
+      .addField((new autoclass.field()).setName("set_translation").setType("SFVec3f").setAccessType("inputOnly").setValue("0 0 0"))
+      .addField((new autoclass.field()).setName("translation_changed").setType("SFVec3f").setAccessType("outputOnly").setValue("0 0 0"))
+      .addField((new autoclass.field()).setName("translation").setType("SFVec3f").setAccessType("inputOutput").setValue("0 0 0"))
+      .addField((new autoclass.field()).setName("velocity").setType("SFVec3f").setAccessType("inputOutput").setValue("0 0 0"))
+      .addField((new autoclass.field()).setName("set_fraction").setType("SFTime").setAccessType("inputOnly")))
     .addChild((new autoclass.TimeSensor("TourTime")).setCycleInterval(0.150).setLoop(true))
     .addChild((new autoclass.ROUTE()).setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce2").setToField("set_fraction"))
     .addChild((new autoclass.ROUTE()).setFromNode("Bounce2").setFromField("translation_changed").setToNode("transform").setToField("set_translation")));
@@ -175,4 +175,3 @@ MyBounce.prototype = {
 	}
 }
 new MyBounce().main();
-process.exit(0);

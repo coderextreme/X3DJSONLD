@@ -40,7 +40,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 4 August 2021 </td>
+			<td> 5 December 2021 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -102,7 +102,7 @@ Filters.prototype = {
     .addMeta((new autoclass.meta()).setName("info").setContent("This work presents an innovative solution of the spatial sound in X3DOM framework, that based on a combinational methodology. Specifically, we suggested the enrichment of X3DOM with spatial sound features, using both the X3D sound nodes and the structure of Web Audio API."))
     .addMeta((new autoclass.meta()).setName("creator").setContent("Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman"))
     .addMeta((new autoclass.meta()).setName("created").setContent("28 October 2020"))
-    .addMeta((new autoclass.meta()).setName("modified").setContent("4 August 2021"))
+    .addMeta((new autoclass.meta()).setName("modified").setContent("5 December 2021"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("CHANGELOG.txt"))
     .addMeta((new autoclass.meta()).setName("TODO").setContent("credit for audio files"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("https://www.medialab.hmu.gr/minipages/x3domAudio"))
@@ -110,24 +110,110 @@ Filters.prototype = {
     .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"))
     .addMeta((new autoclass.meta()).setName("license").setContent("../license.html")))
   .setScene((new autoclass.Scene())
-    .addChild((new autoclass.NavigationInfo()).setHtmlID("NAV"))
+    .addChild((new autoclass.WorldInfo()).setTitle("Filters.x3d"))
+    .addChild((new autoclass.NavigationInfo()).setId("NAV"))
     .addChild((new autoclass.Background()).setSkyColor(new autoclass.MFColor(java.newArray("float", [0.200,0.200,0.200]))))
-    .addChild((new autoclass.Viewpoint()).setOrientation(1.0,0.0,0.0,-0.5).setPosition(0.0,500.0,600.0).setRetainUserOffsets(true))
-    .addChild((new autoclass.Transform("Audio1")).setTranslation(-200.0,50.0,0.0)
+    .addChild((new autoclass.Viewpoint()).setDescription("View entire audio model").setOrientation(1.0,0.0,0.0,-0.5).setPosition(0.0,500.0,600.0).setRetainUserOffsets(true))
+    .addChild((new autoclass.Transform("TransformAudio1")).setTranslation(-200.0,50.0,0.0)
       .addChild((new autoclass.Shape())
         .setAppearance((new autoclass.Appearance("audio_emit"))
           .setMaterial((new autoclass.Material()).setDiffuseColor(0.1,0.1,0.1).setEmissiveColor(0.8,0.8,0.8).setSpecularColor(0.01,0.01,0.01)))
         .setGeometry((new autoclass.Sphere()).setRadius(30))))
-    .addChild((new autoclass.Transform("Audio2")).setTranslation(0.0,50.0,0.0)
+    .addChild((new autoclass.Transform("TransformAudio2")).setTranslation(0.0,50.0,0.0)
       .addChild((new autoclass.Shape())
-        .setAppearance((new autoclass.Appearance("audio_emit"))
+        .setAppearance((new autoclass.Appearance("audio_emit2"))
           .setMaterial((new autoclass.Material()).setDiffuseColor(0.1,0.1,0.1).setEmissiveColor(0.8,0.8,0.8).setSpecularColor(0.01,0.01,0.01)))
         .setGeometry((new autoclass.Sphere()).setRadius(30))))
-    .addChild((new autoclass.Transform("Audio3")).setTranslation(200.0,50.0,0.0)
+    .addChild((new autoclass.Transform("TransformAudio3")).setTranslation(200.0,50.0,0.0)
       .addChild((new autoclass.Shape())
-        .setAppearance((new autoclass.Appearance("audio_emit"))
+        .setAppearance((new autoclass.Appearance("audio_emit3"))
           .setMaterial((new autoclass.Material()).setDiffuseColor(0.1,0.1,0.1).setEmissiveColor(0.8,0.8,0.8).setSpecularColor(0.01,0.01,0.01)))
         .setGeometry((new autoclass.Sphere()).setRadius(30))))
-    .addChild((new autoclass.Transform("AnimData")).setHtmlID("AnimDataPoint").setTranslation(0.0,50.0,0.0))
-    .addChild((new autoclass.Transform("AnimDataBoxH")).setHtmlID("AnimDataBoxH").setTranslation(0.0,100.0,0.0))
-    .
+    .addChild((new autoclass.Transform("AnimData")).setId("AnimDataPoint").setTranslation(0.0,50.0,0.0))
+    .addChild((new autoclass.Transform("AnimDataBoxH")).setTranslation(0.0,100.0,0.0))
+    .addChild((new autoclass.Transform("AnimDataBoxM")).setTranslation(15.0,100.0,0.0))
+    .addChild((new autoclass.Transform("AnimDataBoxL")).setTranslation(30.0,100.0,0.0))
+    .addChild((new autoclass.Transform("AnimDataBoxMM")).setId("AnimDataBoxMMirror").setTranslation(-15.0,100.0,0.0))
+    .addChild((new autoclass.Transform("AnimDataBoxLM")).setId("AnimDataBoxLMirror").setTranslation(-30.0,100.0,0.0))
+    .addChild((new autoclass.Transform())
+      .addChild((new autoclass.Shape())
+        .setAppearance((new autoclass.Appearance("floor"))
+          .setMaterial((new autoclass.Material()).setDiffuseColor(0.1,0.1,0.1).setShininess(0.8).setSpecularColor(0.5,0.6,0.7)))
+        .setGeometry((new autoclass.Cylinder()).setRadius(500))))
+    .addChild((new autoclass.ListenerPointSource()).setId("ListenerPointSource").setTrackCurrentView(true))
+    .addChild((new autoclass.StreamAudioDestination()).setId("AudioDestination")
+      .addChild((new autoclass.DynamicsCompressor()).setId("DynamicsCompressor")
+        .addChild((new autoclass.Gain()).setId("Gain4")
+          .addChild((new autoclass.SpatialSound("Audio1"))
+            .addChild((new autoclass.Gain()).setId("Gain1")
+              .addChild((new autoclass.Analyser()).setId("Analyser1")
+                .addChild((new autoclass.BiquadFilter()).setDetune(50.0).setFrequency(600).setId("BiquadFilter1").setQualityFactor(30.0).setType("allpass")
+                  .addChild((new autoclass.AudioClip()).setDescription("Techno beat").setId("AudioClip1").setLoop(true).setUrl(new autoclass.MFString("\"sound/techno_beat.mp3\" \"https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/techno_beat.mp3\"")))))))
+          .addChild((new autoclass.SpatialSound("Audio2"))
+            .addChild((new autoclass.Gain()).setId("Gain2")
+              .addChild((new autoclass.Analyser()).setId("Analyser2")
+                .addChild((new autoclass.BiquadFilter()).setDetune(15.0).setFrequency(600).setId("BiquadFilter2").setQualityFactor(15.0).setType("allpass")
+                  .addChild((new autoclass.AudioClip()).setDescription("Simple beat").setId("AudioClip2").setLoop(true).setUrl(new autoclass.MFString("\"sound/beat.mp3\" \"https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/beat.mp3\"")))))))
+          .addChild((new autoclass.SpatialSound("Audio3"))
+            .addChild((new autoclass.Gain()).setId("Gain3")
+              .addChild((new autoclass.Analyser()).setId("Analyser3")
+                .addChild((new autoclass.BiquadFilter()).setFrequency(1000).setId("BiquadFilter3").setQualityFactor(0).setType("allpass")
+                  .addChild((new autoclass.AudioClip()).setDescription("Wobble loop").setId("AudioClip3").setLoop(true).setUrl(new autoclass.MFString("\"sound/wobble_loop.mp3\" \"https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/wobble_loop.mp3\"")))))))))));
+  },
+  // end of initialize() method
+
+
+  /** Provide a shallow copy of the X3D model.
+   * @return Filters model
+   */
+  getX3dModel : function()
+  {	  
+	  return this.x3dModel;
+  },
+  
+  /** Indicate X3DJSAIL validation results for this X3D model.
+   * @return validation results plus exception information, if any
+   */
+  validateSelf : function()
+  {
+	var validationResult = "";
+	var  exceptionResult = "";
+	try
+	{
+		this.initialize();
+		
+		if ((this.getX3dModel() == null) || (this.getX3dModel().getHead() == null))
+		{
+			validationResult = "empty scene, nothing to validate. " + this.x3dModel.validate();
+			return validationResult;
+		}
+		validationResult += this.x3dModel.validate(); // walk entire tree to validate correctness
+	}
+	catch (e)
+	{
+		exceptionResult = e; // report exception failures, if any
+	}
+	if  (exceptionResult === "" && validationResult === "")
+	     return "success";
+	else
+	{
+		var returnMessage = "";
+		if  (exceptionResult !== "" && validationResult !== "")
+			returnMessage += "\n*** ";
+		returnMessage += exceptionResult;
+		if  (exceptionResult === "" && validationResult !== "")
+			returnMessage = "\n" + returnMessage; // skip line before meta tags, etc.
+		returnMessage += validationResult;
+		return returnMessage;
+	}
+  },
+    /** Default main() method provided for test purposes.
+     * @param argv input parameters
+     */
+    main : function (argv)
+    {
+		var testObject = new Filters();
+		console.log ("Filters execution self-validation test results: " + testObject.validateSelf());
+	}
+}
+new Filters().main();

@@ -74,7 +74,7 @@ head1->addUnit(*unit11);
 
 Cmeta* meta12 = new Cmeta();
 meta12->setName("title");
-meta12->setContent("HelloWorldProgramOutput.x3d");
+meta12->setContent("Json.x3d");
 head1->addMeta(*meta12);
 
 Cmeta* meta13 = new Cmeta();

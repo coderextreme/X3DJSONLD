@@ -187,8 +187,8 @@ DiamondManLOA_0.prototype = {
         .addValue((new autoclass.MetadataString()).setName("creationDate").setValue(new autoclass.MFString("\"05/12/99\"")))
         .addValue((new autoclass.MetadataString()).setName("humanoidVersion").setValue(new autoclass.MFString("\"JointCenters 1.1 LOA0\"")))
         .addValue((new autoclass.MetadataString()).setName("usageRestrictions").setValue(this.MetadataString_usageRestrictions_5_34_value)))
-      .addSkeleton((new autoclass.HAnimJoint("hanim_HumanoidRoot")).setName("HumanoidRoot").setCenter(0.0,0.8240,0.0277)
-        .addChild((new autoclass.HAnimJoint("hanim_sacroiliac")).setName("sacroiliac").setCenter(0.0,0.9149,0.0016)
+      .addSkeleton((new autoclass.HAnimJoint("hanim_HumanoidRoot")).setName("HumanoidRoot").setCenter(0.0,0.8240,0.0277).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
+        .addChild((new autoclass.HAnimJoint("hanim_sacroiliac")).setName("sacroiliac").setCenter(0.0,0.9149,0.0016).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
           .addChild((new autoclass.HAnimSegment("hanim_pelvis")).setName("pelvis")
             .addChild((new autoclass.Transform()).setTranslation(0.0,0.9149,0.0016)
               .addChild((new autoclass.Shape("DiamondShape"))
@@ -201,8 +201,8 @@ DiamondManLOA_0.prototype = {
         .addChild((new autoclass.Viewpoint("FrontView")).setDescription("Front View").setPosition(0.0,0.854,2.57665))
         .addChild((new autoclass.Viewpoint("SideView")).setDescription("Side View").setOrientation(0.0,1.0,0.0,1.57079).setPosition(2.5929,0.854,0.0))
         .addChild((new autoclass.Viewpoint("TopView")).setDescription("Top View").setOrientation(1.0,0.0,0.0,-1.57079).setPosition(0.0,3.4495,0.0)))
-      .addJoints((new autoclass.HAnimJoint()))
-      .addJoints((new autoclass.HAnimJoint()))
+      .addJoints((new autoclass.HAnimJoint()).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
+      .addJoints((new autoclass.HAnimJoint()).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
       .addSegments((new autoclass.HAnimSegment()))));
   },
   // end of initialize() method
@@ -262,4 +262,3 @@ DiamondManLOA_0.prototype = {
 	}
 }
 new DiamondManLOA_0().main();
-process.exit(0);

@@ -163,4 +163,3 @@ extrusion.prototype = {
 	}
 }
 new extrusion().main();
-process.exit(0);

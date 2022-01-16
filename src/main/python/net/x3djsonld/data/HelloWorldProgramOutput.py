@@ -22,7 +22,7 @@ from x3d import *
 
 ###############################################
 
-newModel=X3D(profile='Full',version='4.0',
+newModel=X3D(class_='x3dModel.class',id_='x3dModel.id',profile='Full',style_='x3dModel.style',version='4.0',
   #  x3dVersionComparisonTest for this model: supportsX3dVersion(X3D.VERSION_3_0)=true 
   head=head(
     children=[
@@ -46,7 +46,7 @@ newModel=X3D(profile='Full',version='4.0',
     meta(content='https://www.web3d.org/specifications/java/X3DJSAIL.html',name='reference'),
     meta(content='HelloWorldProgramOutput.java',name='generator'),
     meta(content='6 September 2016',name='created'),
-    meta(content='20 December 2020',name='modified'),
+    meta(content='9 January 2022',name='modified'),
     meta(content='X3D Java Scene Access Interface Library (X3DJSAIL)',name='generator'),
     meta(content='https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java',name='generator'),
     meta(content='Netbeans http://www.netbeans.org',name='generator'),
@@ -68,7 +68,7 @@ newModel=X3D(profile='Full',version='4.0',
       Viewpoint(DEF='DefaultView',description='Hello X3DJSAIL'),
       Viewpoint(DEF='TopDownView',description='top-down view from above',orientation=(1,0,0,-1.570796),position=(0,100,0))]),
     NavigationInfo(type='"EXAMINE" "FLY" "ANY"'),
-    WorldInfo(DEF='WorldInfoDEF',title='HelloWorldProgram produced by X3D Java SAI Library (X3DJSAIL)'),
+    WorldInfo(DEF='WorldInfoDEF',class_='worldInfoNode.class',id_='worldInfoNode.id',style_='worldInfoNode.style',title='HelloWorldProgram produced by X3D Java SAI Library (X3DJSAIL)'),
     WorldInfo(USE='WorldInfoDEF'),
     WorldInfo(USE='WorldInfoDEF'),
     MetadataString(DEF='scene.addChildMetadata',name='test',value=["Top-level root Metadata node beneath Scene needs to be one of \'-children\' in JSON encoding"]),
@@ -77,7 +77,7 @@ newModel=X3D(profile='Full',version='4.0',
       children=[
       Anchor(DEF='siteAnchor',description='select for X3D Java SAI Library (X3DJSAIL) description',url=["../X3DJSAIL.html","https://www.web3d.org/specifications/java/X3DJSAIL.html"],
         children=[
-        Shape(DEF='BoxShape',
+        Shape(DEF='BoxShape',id_='BoxShapeID',
           appearance=Appearance(
             material=Material(DEF='GreenMaterial',diffuseColor=(0,1,1),emissiveColor=(0.8,0,0),transparency=0.1),
             texture=ImageTexture(url=["images/X3dJavaSceneAccessInterfaceSaiLibrary.png","https://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png"])),
@@ -129,7 +129,7 @@ newModel=X3D(profile='Full',version='4.0',
         field=[
         field(name='colorInput',accessType='inputOnly',type='SFColor'),
         field(name='colorsOutput',accessType='outputOnly',type='MFColor')]
-*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
 ),
       ColorInterpolator(DEF='ColorAnimator',key=[0,0.5,1],keyValue=[(0.9411765,1,1),(0.29411766,0,0.50980395),(0.9411765,1,1)],
         #  AZURE to INDIGO and back again 
@@ -215,7 +215,7 @@ newModel=X3D(profile='Full',version='4.0',
             connect=[
             connect(nodeField='enabled',protoField='enabled'),
             connect(nodeField='diffuseColor',protoField='diffuseColor')])
-*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
 )])),
     #  Test success: declarative statement createDeclarativeShapeTests() 
     Group(DEF='DeclarativeGroupExample',

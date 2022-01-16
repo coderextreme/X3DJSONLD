@@ -4,7 +4,7 @@
 <component name="Layering" level="1"></component>
 <unit name="AngleUnitConversion" category="angle" conversionFactor="1"></unit>
 <unit name="LengthUnitConversion" category="length" conversionFactor="1"></unit>
-<meta name="title" content="HelloWorldProgramOutput.x3d"></meta>
+<meta name="title" content="Quotes.x3d"></meta>
 <meta name="description" content="Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface (SAI) Library"></meta>
 <meta name="reference" content="https://www.web3d.org/specifications/java/X3DJSAIL.html"></meta>
 <meta name="generator" content="HelloWorldProgramOutput.java"></meta>

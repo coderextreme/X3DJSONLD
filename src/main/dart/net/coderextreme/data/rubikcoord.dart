@@ -10,7 +10,7 @@ var X3D0 =  X3D(
           meta_ : [
             meta(
               name_ : SFString('title'),
-              content_ : SFString('rubik2x2x2.x3d')),
+              content_ : SFString('rubikcoord.x3d')),
 
             meta(
               name_ : SFString('creator'),

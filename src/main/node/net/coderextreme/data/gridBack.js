@@ -14,7 +14,7 @@ ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
       var X3D0 =  (new autoclass.X3D()).setProfile("Interchange").setVersion("3.0")
       .setHead((new autoclass.head())
-        .addMeta((new autoclass.meta()).setName("title").setContent("gridBack.json"))
+        .addMeta((new autoclass.meta()).setName("title").setContent("gridBack.x3d"))
         .addMeta((new autoclass.meta()).setName("description").setContent("Checkerboard grid background for X3D/VRML materials selection."))
         .addMeta((new autoclass.meta()).setName("creator").setContent("David Roussel"))
         .addMeta((new autoclass.meta()).setName("translator").setContent("James Harney, Don Brutzman NPS"))

@@ -29,10 +29,10 @@ newModel=X3D(profile='Full',version='4.0',
     meta(content='List of all X3D4 audio graph nodes to test infrastructure and validation support. Absence of attributes means that checking and removal of default values is working.',name='description'),
     meta(content='Don Brutzman',name='creator'),
     meta(content='25 October 2020',name='created'),
-    meta(content='4 August 2021',name='modified'),
+    meta(content='26 November 2021',name='modified'),
     meta(content='Developmental test, no actual 3D model expected',name='warning'),
     meta(content='https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/AllAudioGraphNodesTest.x3d',name='identifier'),
-    meta(content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit',name='generator'),
+    meta(content='X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit',name='generator'),
     meta(content='../license.html',name='license')]),
   Scene=Scene(
     children=[
@@ -40,13 +40,17 @@ newModel=X3D(profile='Full',version='4.0',
     Shape(
       geometry=Box(),
       appearance=Appearance(
-        acousticProperties=AcousticProperties(),
+        acousticProperties=AcousticProperties(description='Testing of X3D4 nodes demonstrating W3C Audio API in progress',diffuse=0.25,refraction=0.5,specular=1),
         material=Material(),)),
+    Sound(location=(0,1.6,0),
+      source=AudioClip(description='testing',url=["sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"])),
+    Sound(location=(0,1.6,0),
+      source=MovieTexture(description='testing',url=["bogus.mpg","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/bogus.mpg"])),
     SpatialSound(
       children=[
       Analyser(
         children=[
-        AudioDestination(
+        StreamAudioDestination(
           children=[
           BiquadFilter(
             children=[
@@ -73,11 +77,7 @@ newModel=X3D(profile='Full',version='4.0',
                               ListenerPointSource(),
                               MicrophoneSource(),
                               OscillatorSource(),
-                              StreamAudioSource(),])])])])])])])])])])])])]),
-    Sound(location=(0,1.6,0),
-      source=AudioClip(description='testing',url=["sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"])),
-    Sound(location=(0,1.6,0),
-      source=MovieTexture(description='testing',url=["bogus.mpg","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/bogus.mpg"]))])
+                              StreamAudioSource(),])])])])])])])])])])])])])])
 ) # X3D model complete
 
 ###############################################

@@ -65,27 +65,27 @@ var X3D0 =  X3D(
             TextureBackground(
               topTexture_ : 
                 ImageTexture(
-                  DEF_ : SFString('leftBack'),
+                  DEF_ : SFString('leftBackTexture'),
                   url_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_left.png"), SFString("https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png")])),
               topTexture_ : 
                 ImageTexture(
-                  DEF_ : SFString('rightBack'),
+                  DEF_ : SFString('rightBackTexture'),
                   url_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_right.png"), SFString("https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png")])),
               topTexture_ : 
                 ImageTexture(
-                  DEF_ : SFString('frontBack'),
+                  DEF_ : SFString('frontBackTexture'),
                   url_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_front.png"), SFString("https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png")])),
               topTexture_ : 
                 ImageTexture(
-                  DEF_ : SFString('backBack'),
+                  DEF_ : SFString('backBackTexture'),
                   url_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_back.png"), SFString("https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png")])),
               topTexture_ : 
                 ImageTexture(
-                  DEF_ : SFString('topBack'),
+                  DEF_ : SFString('topBackTexture'),
                   url_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_top.png"), SFString("https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png")])),
               topTexture_ : 
                 ImageTexture(
-                  DEF_ : SFString('bottomBack'),
+                  DEF_ : SFString('bottomBackTexture'),
                   url_ : MFString([SFString("../resources/images/all_probes/beach_cross/beach_bottom.png"), SFString("https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png")]))),
 
             Transform(
@@ -325,37 +325,37 @@ ecmascript:eval (0
                 ROUTE(
                   fromNode_ : SFString('UrlSelector'),
                   fromField_ : SFString('front_changed'),
-                  toNode_ : SFString('frontBack'),
+                  toNode_ : SFString('frontBackTexture'),
                   toField_ : SFString('url')),
 
                 ROUTE(
                   fromNode_ : SFString('UrlSelector'),
                   fromField_ : SFString('back_changed'),
-                  toNode_ : SFString('backBack'),
+                  toNode_ : SFString('backBackTexture'),
                   toField_ : SFString('url')),
 
                 ROUTE(
                   fromNode_ : SFString('UrlSelector'),
                   fromField_ : SFString('left_changed'),
-                  toNode_ : SFString('leftBack'),
+                  toNode_ : SFString('leftBackTexture'),
                   toField_ : SFString('url')),
 
                 ROUTE(
                   fromNode_ : SFString('UrlSelector'),
                   fromField_ : SFString('right_changed'),
-                  toNode_ : SFString('rightBack'),
+                  toNode_ : SFString('rightBackTexture'),
                   toField_ : SFString('url')),
 
                 ROUTE(
                   fromNode_ : SFString('UrlSelector'),
                   fromField_ : SFString('top_changed'),
-                  toNode_ : SFString('topBack'),
+                  toNode_ : SFString('topBackTexture'),
                   toField_ : SFString('url')),
 
                 ROUTE(
                   fromNode_ : SFString('UrlSelector'),
                   fromField_ : SFString('bottom_changed'),
-                  toNode_ : SFString('bottomBack'),
+                  toNode_ : SFString('bottomBackTexture'),
                   toField_ : SFString('url')),
 
                 ROUTE(

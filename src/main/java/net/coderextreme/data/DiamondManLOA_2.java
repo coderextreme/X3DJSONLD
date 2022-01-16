@@ -146,802 +146,802 @@ public class DiamondManLOA_2 {
             .addValue(new MetadataString().setName("copyright").setValue(new MFString18().getArray()))
             .addValue(new MetadataString().setName("creationDate").setValue(new MFString19().getArray()))
             .addValue(new MetadataString().setName("usageRestrictions").setValue(new MFString20().getArray())))
-          .addSkeleton(new HAnimJoint().setName("HumanoidRoot").setDEF("hanim_HumanoidRoot").setCenter(new float[] {0f,0.824f,0.0277f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+          .addSkeleton(new HAnimJoint().setName("HumanoidRoot").setDEF("hanim_HumanoidRoot").setCenter(new float[] {0f,0.824f,0.0277f}).setUlimit(new MFFloat21().getArray()).setLlimit(new MFFloat22().getArray())
             .addChild(new HAnimSegment().setName("sacrum").setDEF("hanim_sacrum")
               .addChild(new Transform().setTranslation(new float[] {0f,0.824f,0.0277f})
                 .addChild(new Shape().setDEF("DiamondShape")
-                  .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3221().getArray()).setCreaseAngle(0.5f)
-                    .setCoord(new Coordinate().setDEF("points").setPoint(new MFVec3f22().getArray())))
+                  .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3223().getArray()).setCreaseAngle(0.5f)
+                    .setCoord(new Coordinate().setDEF("points").setPoint(new MFVec3f24().getArray())))
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setDEF("ROOT_COLOR").setDiffuseColor(new float[] {1f,1f,1f}))))
                 .addChild(new Transform().setTranslation(new float[] {0f,0.01f,0f})
                   .addChild(new Billboard()
                     .addChild(new Shape()
-                      .setGeometry(new Text().setString(new MFString23().getArray())
-                        .setFontStyle(new FontStyle().setFamily(new MFString24().getArray()).setSize(0.01f).setStyle("ITALIC")))
+                      .setGeometry(new Text().setString(new MFString25().getArray())
+                        .setFontStyle(new FontStyle().setFamily(new MFString26().getArray()).setSize(0.01f).setStyle("ITALIC")))
                       .setAppearance(new Appearance()
                         .setMaterial(new Material().setDiffuseColor(new float[] {0.039216f,1f,0.568627f}))))))))
-            .addChild(new HAnimJoint().setName("sacroiliac").setDEF("hanim_sacroiliac").setCenter(new float[] {0f,0.9149f,0.0016f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+            .addChild(new HAnimJoint().setName("sacroiliac").setDEF("hanim_sacroiliac").setCenter(new float[] {0f,0.9149f,0.0016f}).setUlimit(new MFFloat27().getArray()).setLlimit(new MFFloat28().getArray())
               .addChild(new HAnimSegment().setName("pelvis").setDEF("hanim_pelvis")
                 .addChild(new Transform().setDEF("sacroiliacPos").setTranslation(new float[] {0f,0.9149f,0.0016f})
                   .addChild(new Shape()
-                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3225().getArray()).setCreaseAngle(0.5f)
+                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3229().getArray()).setCreaseAngle(0.5f)
                       .setCoord(new Coordinate().setUSE("points")))
                     .setAppearance(new Appearance()
                       .setMaterial(new Material().setUSE("MIN_COLOR")))))
                 .addChild(new HAnimSite().setName("r_iliocristale_pt").setDEF("hanim_r_iliocristale_pt").setTranslation(new float[] {-0.1525f,1.0628f,0.0035f})
                   .addChild(new Shape()
-                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3226().getArray()).setCreaseAngle(0.5f)
+                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3230().getArray()).setCreaseAngle(0.5f)
                       .setCoord(new Coordinate().setUSE("points")))
                     .setAppearance(new Appearance()
                       .setMaterial(new Material().setUSE("SITE_COLOR")))))
                 .addChild(new HAnimSite().setName("r_trochanterion_pt").setDEF("hanim_r_trochanterion_pt").setTranslation(new float[] {-0.1689f,0.8419f,0.0352f})
                   .addChild(new Shape()
-                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3227().getArray()).setCreaseAngle(0.5f)
+                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3231().getArray()).setCreaseAngle(0.5f)
                       .setCoord(new Coordinate().setUSE("points")))
                     .setAppearance(new Appearance()
                       .setMaterial(new Material().setUSE("SITE_COLOR")))))
                 .addChild(new HAnimSite().setName("l_iliocristale_pt").setDEF("hanim_l_iliocristale_pt").setTranslation(new float[] {0.1612f,1.0537f,0.0008f})
                   .addChild(new Shape()
-                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3228().getArray()).setCreaseAngle(0.5f)
+                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3232().getArray()).setCreaseAngle(0.5f)
                       .setCoord(new Coordinate().setUSE("points")))
                     .setAppearance(new Appearance()
                       .setMaterial(new Material().setUSE("SITE_COLOR")))))
                 .addChild(new HAnimSite().setName("l_trochanterion_pt").setDEF("hanim_l_trochanterion_pt").setTranslation(new float[] {0.1677f,0.8336f,0.0303f})
                   .addChild(new Shape()
-                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3229().getArray()).setCreaseAngle(0.5f)
+                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3233().getArray()).setCreaseAngle(0.5f)
                       .setCoord(new Coordinate().setUSE("points")))
                     .setAppearance(new Appearance()
                       .setMaterial(new Material().setUSE("SITE_COLOR")))))
                 .addChild(new HAnimSite().setName("r_asis_pt").setDEF("hanim_r_asis_pt").setTranslation(new float[] {-0.0887f,1.0021f,0.1112f})
                   .addChild(new Shape()
-                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3230().getArray()).setCreaseAngle(0.5f)
+                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3234().getArray()).setCreaseAngle(0.5f)
                       .setCoord(new Coordinate().setUSE("points")))
                     .setAppearance(new Appearance()
                       .setMaterial(new Material().setUSE("SITE_COLOR")))))
                 .addChild(new HAnimSite().setName("l_asis_pt").setDEF("hanim_l_asis_pt").setTranslation(new float[] {0.0925f,0.9983f,0.1052f})
                   .addChild(new Shape()
-                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3231().getArray()).setCreaseAngle(0.5f)
+                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3235().getArray()).setCreaseAngle(0.5f)
                       .setCoord(new Coordinate().setUSE("points")))
                     .setAppearance(new Appearance()
                       .setMaterial(new Material().setUSE("SITE_COLOR")))))
                 .addChild(new HAnimSite().setName("r_psis_pt").setDEF("hanim_r_psis_pt").setTranslation(new float[] {-0.0716f,1.019f,-0.1138f})
                   .addChild(new Shape()
-                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3232().getArray()).setCreaseAngle(0.5f)
+                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3236().getArray()).setCreaseAngle(0.5f)
                       .setCoord(new Coordinate().setUSE("points")))
                     .setAppearance(new Appearance()
                       .setMaterial(new Material().setUSE("SITE_COLOR")))))
                 .addChild(new HAnimSite().setName("l_psis_pt").setDEF("hanim_l_psis_pt").setTranslation(new float[] {0.0774f,1.019f,-0.1151f})
                   .addChild(new Shape()
-                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3233().getArray()).setCreaseAngle(0.5f)
+                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3237().getArray()).setCreaseAngle(0.5f)
                       .setCoord(new Coordinate().setUSE("points")))
                     .setAppearance(new Appearance()
                       .setMaterial(new Material().setUSE("SITE_COLOR")))))
                 .addChild(new HAnimSite().setName("crotch_pt").setDEF("hanim_crotch_pt").setTranslation(new float[] {0.0034f,0.8266f,0.0257f})
                   .addChild(new Shape()
-                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3234().getArray()).setCreaseAngle(0.5f)
+                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3238().getArray()).setCreaseAngle(0.5f)
                       .setCoord(new Coordinate().setUSE("points")))
                     .setAppearance(new Appearance()
                       .setMaterial(new Material().setUSE("SITE_COLOR"))))))
-              .addChild(new HAnimJoint().setName("l_hip").setDEF("hanim_l_hip").setCenter(new float[] {0.0961f,0.9124f,-0.0001f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+              .addChild(new HAnimJoint().setName("l_hip").setDEF("hanim_l_hip").setCenter(new float[] {0.0961f,0.9124f,-0.0001f}).setUlimit(new MFFloat39().getArray()).setLlimit(new MFFloat40().getArray())
                 .addChild(new HAnimSegment().setName("l_thigh").setDEF("hanim_l_thigh")
                   .addChild(new Transform().setTranslation(new float[] {0.0961f,0.9124f,-0.0001f})
                     .addChild(new Shape()
-                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3235().getArray()).setCreaseAngle(0.5f)
+                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3241().getArray()).setCreaseAngle(0.5f)
                         .setCoord(new Coordinate().setUSE("points")))
                       .setAppearance(new Appearance()
                         .setMaterial(new Material().setUSE("MIN_COLOR")))))
                   .addChild(new HAnimSite().setName("l_knee_crease_pt").setDEF("hanim_l_knee_crease_pt").setTranslation(new float[] {0.0993f,0.4881f,-0.0309f})
                     .addChild(new Shape()
-                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3236().getArray()).setCreaseAngle(0.5f)
+                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3242().getArray()).setCreaseAngle(0.5f)
                         .setCoord(new Coordinate().setUSE("points")))
                       .setAppearance(new Appearance()
                         .setMaterial(new Material().setUSE("SITE_COLOR")))))
                   .addChild(new HAnimSite().setName("l_femoral_lateral_epicn_pt").setDEF("hanim_l_femoral_lateral_epicn_pt").setTranslation(new float[] {0.1598f,0.4967f,0.0297f})
                     .addChild(new Shape()
-                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3237().getArray()).setCreaseAngle(0.5f)
+                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3243().getArray()).setCreaseAngle(0.5f)
                         .setCoord(new Coordinate().setUSE("points")))
                       .setAppearance(new Appearance()
                         .setMaterial(new Material().setUSE("SITE_COLOR")))))
                   .addChild(new HAnimSite().setName("l_femoral_medial_epicn_pt").setDEF("hanim_l_femoral_medial_epicn_pt").setTranslation(new float[] {0.0398f,0.4946f,0.0303f})
                     .addChild(new Shape()
-                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3238().getArray()).setCreaseAngle(0.5f)
+                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3244().getArray()).setCreaseAngle(0.5f)
                         .setCoord(new Coordinate().setUSE("points")))
                       .setAppearance(new Appearance()
                         .setMaterial(new Material().setUSE("SITE_COLOR"))))))
-                .addChild(new HAnimJoint().setName("l_knee").setDEF("hanim_l_knee").setCenter(new float[] {0.104f,0.4867f,0.0308f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                .addChild(new HAnimJoint().setName("l_knee").setDEF("hanim_l_knee").setCenter(new float[] {0.104f,0.4867f,0.0308f}).setUlimit(new MFFloat45().getArray()).setLlimit(new MFFloat46().getArray())
                   .addChild(new HAnimSegment().setName("l_calf").setDEF("hanim_l_calf")
                     .addChild(new Transform().setTranslation(new float[] {0.104f,0.4867f,0.0308f})
                       .addChild(new Shape()
-                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3239().getArray()).setCreaseAngle(0.5f)
+                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3247().getArray()).setCreaseAngle(0.5f)
                           .setCoord(new Coordinate().setUSE("points")))
                         .setAppearance(new Appearance()
                           .setMaterial(new Material().setUSE("MIN_COLOR"))))))
-                  .addChild(new HAnimJoint().setName("l_ankle").setDEF("hanim_l_ankle").setCenter(new float[] {0.1101f,0.0656f,-0.0736f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                  .addChild(new HAnimJoint().setName("l_ankle").setDEF("hanim_l_ankle").setCenter(new float[] {0.1101f,0.0656f,-0.0736f}).setUlimit(new MFFloat48().getArray()).setLlimit(new MFFloat49().getArray())
                     .addChild(new HAnimSegment().setName("l_hindfoot").setDEF("hanim_l_hindfoot")
                       .addChild(new Transform().setTranslation(new float[] {0.1101f,0.0656f,-0.0736f})
                         .addChild(new Shape()
-                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3240().getArray()).setCreaseAngle(0.5f)
+                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3250().getArray()).setCreaseAngle(0.5f)
                             .setCoord(new Coordinate().setUSE("points")))
                           .setAppearance(new Appearance()
                             .setMaterial(new Material().setUSE("MIN_COLOR")))))
                       .addChild(new HAnimSite().setName("l_lateral_malleolus_pt").setDEF("hanim_l_lateral_malleolus_pt").setTranslation(new float[] {0.1308f,0.0597f,-0.1032f})
                         .addChild(new Shape()
-                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3241().getArray()).setCreaseAngle(0.5f)
+                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3251().getArray()).setCreaseAngle(0.5f)
                             .setCoord(new Coordinate().setUSE("points")))
                           .setAppearance(new Appearance()
                             .setMaterial(new Material().setUSE("HAND_FEET_COLOR")))))
                       .addChild(new HAnimSite().setName("l_medial_malleolus_pt").setDEF("hanim_l_medial_malleolus_pt").setTranslation(new float[] {0.089f,0.0716f,-0.0881f})
                         .addChild(new Shape()
-                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3242().getArray()).setCreaseAngle(0.5f)
+                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3252().getArray()).setCreaseAngle(0.5f)
                             .setCoord(new Coordinate().setUSE("points")))
                           .setAppearance(new Appearance()
                             .setMaterial(new Material().setUSE("HAND_FEET_COLOR")))))
                       .addChild(new HAnimSite().setName("l_sphyrion_pt").setDEF("hanim_l_sphyrion_pt").setTranslation(new float[] {0.089f,0.0575f,-0.0943f})
                         .addChild(new Shape()
-                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3243().getArray()).setCreaseAngle(0.5f)
+                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3253().getArray()).setCreaseAngle(0.5f)
                             .setCoord(new Coordinate().setUSE("points")))
                           .setAppearance(new Appearance()
                             .setMaterial(new Material().setUSE("HAND_FEET_COLOR")))))
                       .addChild(new HAnimSite().setName("l_calcaneous_post_pt").setDEF("hanim_l_calcaneous_post_pt").setTranslation(new float[] {0.0974f,0.0259f,-0.1171f})
                         .addChild(new Shape()
-                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3244().getArray()).setCreaseAngle(0.5f)
+                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3254().getArray()).setCreaseAngle(0.5f)
                             .setCoord(new Coordinate().setUSE("points")))
                           .setAppearance(new Appearance()
                             .setMaterial(new Material().setUSE("HAND_FEET_COLOR"))))))
-                    .addChild(new HAnimJoint().setName("l_subtalar").setDEF("hanim_l_subtalar").setCenter(new float[] {0.1086f,0.0001f,-0.0368f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                    .addChild(new HAnimJoint().setName("l_subtalar").setDEF("hanim_l_subtalar").setCenter(new float[] {0.1086f,0.0001f,-0.0368f}).setUlimit(new MFFloat55().getArray()).setLlimit(new MFFloat56().getArray())
                       .addChild(new HAnimSegment().setName("midproximal").setDEF("hanim_midproximal")
                         .addChild(new Transform().setTranslation(new float[] {0.1086f,0.0001f,-0.0368f})
                           .addChild(new Shape()
-                            .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3245().getArray()).setCreaseAngle(0.5f)
+                            .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3257().getArray()).setCreaseAngle(0.5f)
                               .setCoord(new Coordinate().setUSE("points")))
                             .setAppearance(new Appearance()
                               .setMaterial(new Material().setUSE("MIN_COLOR"))))))
-                      .addChild(new HAnimJoint().setName("l_midtarsal").setDEF("hanim_l_midtarsal").setCenter(new float[] {0.1086f,0.0001f,0.0368f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                      .addChild(new HAnimJoint().setName("l_midtarsal").setDEF("hanim_l_midtarsal").setCenter(new float[] {0.1086f,0.0001f,0.0368f}).setUlimit(new MFFloat58().getArray()).setLlimit(new MFFloat59().getArray())
                         .addChild(new HAnimSegment().setName("l_middistal").setDEF("hanim_l_middistal")
                           .addChild(new Transform().setTranslation(new float[] {0.1086f,0.0001f,0.0368f})
                             .addChild(new Shape()
-                              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3246().getArray()).setCreaseAngle(0.5f)
+                              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3260().getArray()).setCreaseAngle(0.5f)
                                 .setCoord(new Coordinate().setUSE("points")))
                               .setAppearance(new Appearance()
                                 .setMaterial(new Material().setUSE("JOINT_COLOR")))))
                           .addChild(new HAnimSite().setName("l_middistal_tip").setDEF("hanim_l_middistal_tip").setTranslation(new float[] {0.1354f,0.0016f,0.1476f})
                             .addChild(new Shape()
-                              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3247().getArray()).setCreaseAngle(0.5f)
+                              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3261().getArray()).setCreaseAngle(0.5f)
                                 .setCoord(new Coordinate().setUSE("points")))
                               .setAppearance(new Appearance()
                                 .setMaterial(new Material().setUSE("HAND_FEET_COLOR")))))
                           .addChild(new HAnimSite().setName("l_metatarsal_pha1_pt").setDEF("hanim_l_metatarsal_pha1_pt").setTranslation(new float[] {0.0816f,0.0232f,0.0106f})
                             .addChild(new Shape()
-                              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3248().getArray()).setCreaseAngle(0.5f)
+                              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3262().getArray()).setCreaseAngle(0.5f)
                                 .setCoord(new Coordinate().setUSE("points")))
                               .setAppearance(new Appearance()
                                 .setMaterial(new Material().setUSE("HAND_FEET_COLOR"))))))
-                        .addChild(new HAnimJoint().setName("l_metatarsal").setDEF("hanim_l_metatarsal").setCenter(new float[] {0.1086f,0f,0.0762f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                        .addChild(new HAnimJoint().setName("l_metatarsal").setDEF("hanim_l_metatarsal").setCenter(new float[] {0.1086f,0f,0.0762f}).setUlimit(new MFFloat63().getArray()).setLlimit(new MFFloat64().getArray())
                           .addChild(new HAnimSegment().setName("l_forefoot").setDEF("hanim_l_forefoot")
                             .addChild(new Transform().setTranslation(new float[] {0.1086f,0f,0.0762f})
                               .addChild(new Shape()
-                                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3249().getArray()).setCreaseAngle(0.5f)
+                                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3265().getArray()).setCreaseAngle(0.5f)
                                   .setCoord(new Coordinate().setUSE("points")))
                                 .setAppearance(new Appearance()
                                   .setMaterial(new Material().setUSE("JOINT_COLOR")))))
                             .addChild(new HAnimSite().setName("l_forefoot_tip").setDEF("hanim_l_forefoot_tip").setTranslation(new float[] {0.1354f,0.0016f,0.1476f})
                               .addChild(new Shape()
-                                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3250().getArray()).setCreaseAngle(0.5f)
+                                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3266().getArray()).setCreaseAngle(0.5f)
                                   .setCoord(new Coordinate().setUSE("points")))
                                 .setAppearance(new Appearance()
                                   .setMaterial(new Material().setUSE("HAND_FEET_COLOR")))))
                             .addChild(new HAnimSite().setName("l_metatarsal_pha5_pt").setDEF("hanim_l_metatarsal_pha5_pt").setTranslation(new float[] {0.1825f,0.007f,0.0928f})
                               .addComments("# CAESAR Feature Point #66")
                               .addChild(new Shape()
-                                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3251().getArray()).setCreaseAngle(0.5f)
+                                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3267().getArray()).setCreaseAngle(0.5f)
                                   .setCoord(new Coordinate().setUSE("points")))
                                 .setAppearance(new Appearance()
                                   .setMaterial(new Material().setUSE("HAND_FEET_COLOR")))))
                             .addChild(new HAnimSite().setName("l_digit2_pt").setDEF("hanim_l_digit2_pt").setTranslation(new float[] {0.1195f,0.0079f,0.1433f})
                               .addComments("# CAESAR Feature Point #72")
                               .addChild(new Shape()
-                                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3252().getArray()).setCreaseAngle(0.5f)
+                                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3268().getArray()).setCreaseAngle(0.5f)
                                   .setCoord(new Coordinate().setUSE("points")))
                                 .setAppearance(new Appearance()
                                   .setMaterial(new Material().setUSE("HAND_FEET_COLOR"))))))))))))
-              .addChild(new HAnimJoint().setName("r_hip").setDEF("hanim_r_hip").setCenter(new float[] {-0.095f,0.9171f,0.0029f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+              .addChild(new HAnimJoint().setName("r_hip").setDEF("hanim_r_hip").setCenter(new float[] {-0.095f,0.9171f,0.0029f}).setUlimit(new MFFloat69().getArray()).setLlimit(new MFFloat70().getArray())
                 .addChild(new HAnimSegment().setName("r_thigh").setDEF("hanim_r_thigh")
                   .addChild(new Transform().setTranslation(new float[] {-0.095f,0.9171f,0.0029f})
                     .addChild(new Shape()
-                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3253().getArray()).setCreaseAngle(0.5f)
+                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3271().getArray()).setCreaseAngle(0.5f)
                         .setCoord(new Coordinate().setUSE("points")))
                       .setAppearance(new Appearance()
                         .setMaterial(new Material().setUSE("MIN_COLOR")))))
                   .addChild(new HAnimSite().setName("r_knee_crease_pt").setDEF("hanim_r_knee_crease_pt").setTranslation(new float[] {-0.0825f,0.4932f,-0.0326f})
                     .addChild(new Shape()
-                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3254().getArray()).setCreaseAngle(0.5f)
+                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3272().getArray()).setCreaseAngle(0.5f)
                         .setCoord(new Coordinate().setUSE("points")))
                       .setAppearance(new Appearance()
                         .setMaterial(new Material().setUSE("SITE_COLOR")))))
                   .addChild(new HAnimSite().setName("r_femoral_lateral_epicn_pt").setDEF("hanim_r_femoral_lateral_epicn_pt").setTranslation(new float[] {-0.1421f,0.4992f,0.031f})
                     .addChild(new Shape()
-                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3255().getArray()).setCreaseAngle(0.5f)
+                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3273().getArray()).setCreaseAngle(0.5f)
                         .setCoord(new Coordinate().setUSE("points")))
                       .setAppearance(new Appearance()
                         .setMaterial(new Material().setUSE("SITE_COLOR")))))
                   .addChild(new HAnimSite().setName("r_femoral_medial_epicn_pt").setDEF("hanim_r_femoral_medial_epicn_pt").setTranslation(new float[] {-0.0221f,0.5014f,0.0289f})
                     .addChild(new Shape()
-                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3256().getArray()).setCreaseAngle(0.5f)
+                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3274().getArray()).setCreaseAngle(0.5f)
                         .setCoord(new Coordinate().setUSE("points")))
                       .setAppearance(new Appearance()
                         .setMaterial(new Material().setUSE("SITE_COLOR"))))))
-                .addChild(new HAnimJoint().setName("r_knee").setDEF("hanim_r_knee").setCenter(new float[] {-0.0867f,0.4913f,0.0318f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                .addChild(new HAnimJoint().setName("r_knee").setDEF("hanim_r_knee").setCenter(new float[] {-0.0867f,0.4913f,0.0318f}).setUlimit(new MFFloat75().getArray()).setLlimit(new MFFloat76().getArray())
                   .addChild(new HAnimSegment().setName("r_calf").setDEF("hanim_r_calf")
                     .addChild(new Transform().setTranslation(new float[] {-0.0867f,0.4913f,0.0318f})
                       .addChild(new Shape()
-                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3257().getArray()).setCreaseAngle(0.5f)
+                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3277().getArray()).setCreaseAngle(0.5f)
                           .setCoord(new Coordinate().setUSE("points")))
                         .setAppearance(new Appearance()
                           .setMaterial(new Material().setUSE("SITE_COLOR"))))))
-                  .addChild(new HAnimJoint().setName("r_ankle").setDEF("hanim_r_ankle").setCenter(new float[] {-0.0801f,0.0712f,-0.0766f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                  .addChild(new HAnimJoint().setName("r_ankle").setDEF("hanim_r_ankle").setCenter(new float[] {-0.0801f,0.0712f,-0.0766f}).setUlimit(new MFFloat78().getArray()).setLlimit(new MFFloat79().getArray())
                     .addChild(new HAnimSegment().setName("r_hindfoot").setDEF("hanim_r_hindfoot")
                       .addChild(new Transform().setTranslation(new float[] {-0.0801f,0.0712f,-0.0766f})
                         .addChild(new Shape()
-                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3258().getArray()).setCreaseAngle(0.5f)
+                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3280().getArray()).setCreaseAngle(0.5f)
                             .setCoord(new Coordinate().setUSE("points")))
                           .setAppearance(new Appearance()
                             .setMaterial(new Material().setUSE("MIN_COLOR")))))
                       .addChild(new HAnimSite().setName("r_lateral_malleolus_pt").setDEF("hanim_r_lateral_malleolus_pt").setTranslation(new float[] {-0.1006f,0.0658f,-0.1075f})
                         .addChild(new Shape()
-                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3259().getArray()).setCreaseAngle(0.5f)
+                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3281().getArray()).setCreaseAngle(0.5f)
                             .setCoord(new Coordinate().setUSE("points")))
                           .setAppearance(new Appearance()
                             .setMaterial(new Material().setUSE("HAND_FEET_COLOR")))))
                       .addChild(new HAnimSite().setName("r_medial_malleolus_pt").setDEF("hanim_r_medial_malleolus_pt").setTranslation(new float[] {-0.0591f,0.076f,-0.0928f})
                         .addChild(new Shape()
-                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3260().getArray()).setCreaseAngle(0.5f)
+                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3282().getArray()).setCreaseAngle(0.5f)
                             .setCoord(new Coordinate().setUSE("points")))
                           .setAppearance(new Appearance()
                             .setMaterial(new Material().setUSE("HAND_FEET_COLOR")))))
                       .addChild(new HAnimSite().setName("r_sphyrion_pt").setDEF("hanim_r_sphyrion_pt").setTranslation(new float[] {-0.0603f,0.061f,-0.1002f})
                         .addChild(new Shape()
-                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3261().getArray()).setCreaseAngle(0.5f)
+                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3283().getArray()).setCreaseAngle(0.5f)
                             .setCoord(new Coordinate().setUSE("points")))
                           .setAppearance(new Appearance()
                             .setMaterial(new Material().setUSE("HAND_FEET_COLOR")))))
                       .addChild(new HAnimSite().setName("r_calcaneous_post_pt").setDEF("hanim_r_calcaneous_post_pt").setTranslation(new float[] {-0.0692f,0.0297f,-0.1221f})
                         .addChild(new Shape()
-                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3262().getArray()).setCreaseAngle(0.5f)
+                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3284().getArray()).setCreaseAngle(0.5f)
                             .setCoord(new Coordinate().setUSE("points")))
                           .setAppearance(new Appearance()
                             .setMaterial(new Material().setUSE("HAND_FEET_COLOR"))))))
-                    .addChild(new HAnimJoint().setName("r_midtarsal").setDEF("hanim_r_midtarsal").setCenter(new float[] {-0.0801f,0f,0.0368f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                    .addChild(new HAnimJoint().setName("r_midtarsal").setDEF("hanim_r_midtarsal").setCenter(new float[] {-0.0801f,0f,0.0368f}).setUlimit(new MFFloat85().getArray()).setLlimit(new MFFloat86().getArray())
                       .addChild(new HAnimSegment().setName("r_middistal").setDEF("hanim_r_middistal")
                         .addChild(new Transform().setTranslation(new float[] {-0.0801f,0f,0.0368f})
                           .addChild(new Shape()
-                            .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3263().getArray()).setCreaseAngle(0.5f)
+                            .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3287().getArray()).setCreaseAngle(0.5f)
                               .setCoord(new Coordinate().setUSE("points")))
                             .setAppearance(new Appearance()
                               .setMaterial(new Material().setUSE("JOINT_COLOR")))))
                         .addChild(new HAnimSite().setName("r_middistal_tip").setDEF("hanim_r_middistal_tip").setTranslation(new float[] {-0.1043f,-0.0227f,0.145f})
                           .addChild(new Shape()
-                            .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3264().getArray()).setCreaseAngle(0.5f)
+                            .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3288().getArray()).setCreaseAngle(0.5f)
                               .setCoord(new Coordinate().setUSE("points")))
                             .setAppearance(new Appearance()
                               .setMaterial(new Material().setUSE("HAND_FEET_COLOR")))))
                         .addChild(new HAnimSite().setName("r_metatarsal_pha5_pt").setDEF("hanim_r_metatarsal_pha5_pt").setTranslation(new float[] {-0.1523f,0.0166f,0.0895f})
                           .addChild(new Shape()
-                            .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3265().getArray()).setCreaseAngle(0.5f)
+                            .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3289().getArray()).setCreaseAngle(0.5f)
                               .setCoord(new Coordinate().setUSE("points")))
                             .setAppearance(new Appearance()
                               .setMaterial(new Material().setUSE("HAND_FEET_COLOR")))))
                         .addChild(new HAnimSite().setName("r_metatarsal_pha1_pt").setDEF("hanim_r_metatarsal_pha1_pt").setTranslation(new float[] {-0.0521f,0.026f,0.0127f})
                           .addChild(new Shape()
-                            .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3266().getArray()).setCreaseAngle(0.5f)
+                            .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3290().getArray()).setCreaseAngle(0.5f)
                               .setCoord(new Coordinate().setUSE("points")))
                             .setAppearance(new Appearance()
                               .setMaterial(new Material().setUSE("HAND_FEET_COLOR")))))
                         .addChild(new HAnimSite().setName("r_digit2_pt").setDEF("hanim_r_digit2_pt").setTranslation(new float[] {-0.0883f,0.0134f,0.1383f})
                           .addChild(new Shape()
-                            .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3267().getArray()).setCreaseAngle(0.5f)
+                            .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3291().getArray()).setCreaseAngle(0.5f)
                               .setCoord(new Coordinate().setUSE("points")))
                             .setAppearance(new Appearance()
                               .setMaterial(new Material().setUSE("HAND_FEET_COLOR")))))))))))
-            .addChild(new HAnimJoint().setName("vl5").setDEF("hanim_vl5").setCenter(new float[] {0.0028f,1.0568f,-0.0776f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+            .addChild(new HAnimJoint().setName("vl5").setDEF("hanim_vl5").setCenter(new float[] {0.0028f,1.0568f,-0.0776f}).setUlimit(new MFFloat92().getArray()).setLlimit(new MFFloat93().getArray())
               .addChild(new HAnimSegment().setName("l5").setDEF("hanim_l5")
                 .addChild(new Transform().setTranslation(new float[] {0.0028f,1.0568f,-0.0776f})
                   .addChild(new Shape()
-                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3268().getArray()).setCreaseAngle(0.5f)
+                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3294().getArray()).setCreaseAngle(0.5f)
                       .setCoord(new Coordinate().setUSE("points")))
                     .setAppearance(new Appearance()
                       .setMaterial(new Material().setUSE("REC_SPINAL_COLOR"))))))
-              .addChild(new HAnimJoint().setName("vl4").setDEF("hanim_vl4").setCenter(new float[] {0.0035f,1.0925f,-0.0787f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+              .addChild(new HAnimJoint().setName("vl4").setDEF("hanim_vl4").setCenter(new float[] {0.0035f,1.0925f,-0.0787f}).setUlimit(new MFFloat95().getArray()).setLlimit(new MFFloat96().getArray())
                 .addChild(new HAnimSegment().setName("l4").setDEF("hanim_l4")
                   .addChild(new Transform().setTranslation(new float[] {0.0035f,1.0925f,-0.0787f})
                     .addChild(new Shape()
-                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3269().getArray()).setCreaseAngle(0.5f)
+                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3297().getArray()).setCreaseAngle(0.5f)
                         .setCoord(new Coordinate().setUSE("points")))
                       .setAppearance(new Appearance()
                         .setMaterial(new Material().setUSE("SPINAL_COLOR"))))))
-                .addChild(new HAnimJoint().setName("vl3").setDEF("hanim_vl3").setCenter(new float[] {0.0041f,1.1276f,-0.0796f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                .addChild(new HAnimJoint().setName("vl3").setDEF("hanim_vl3").setCenter(new float[] {0.0041f,1.1276f,-0.0796f}).setUlimit(new MFFloat98().getArray()).setLlimit(new MFFloat99().getArray())
                   .addChild(new HAnimSegment().setName("l3").setDEF("hanim_l3")
                     .addChild(new Transform().setTranslation(new float[] {0.0041f,1.1276f,-0.0796f})
                       .addChild(new Shape()
-                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3270().getArray()).setCreaseAngle(0.5f)
+                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32100().getArray()).setCreaseAngle(0.5f)
                           .setCoord(new Coordinate().setUSE("points")))
                         .setAppearance(new Appearance()
                           .setMaterial(new Material().setUSE("REC_SPINAL_COLOR"))))))
-                  .addChild(new HAnimJoint().setName("vl2").setDEF("hanim_vl2").setCenter(new float[] {0.0045f,1.1546f,-0.08f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                  .addChild(new HAnimJoint().setName("vl2").setDEF("hanim_vl2").setCenter(new float[] {0.0045f,1.1546f,-0.08f}).setUlimit(new MFFloat101().getArray()).setLlimit(new MFFloat102().getArray())
                     .addChild(new HAnimSegment().setName("l2").setDEF("hanim_l2")
                       .addChild(new Transform().setTranslation(new float[] {0.0045f,1.1546f,-0.08f})
                         .addChild(new Shape()
-                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3271().getArray()).setCreaseAngle(0.5f)
+                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32103().getArray()).setCreaseAngle(0.5f)
                             .setCoord(new Coordinate().setUSE("points")))
                           .setAppearance(new Appearance()
                             .setMaterial(new Material().setUSE("SPINAL_COLOR"))))))
-                    .addChild(new HAnimJoint().setName("vl1").setDEF("hanim_vl1").setCenter(new float[] {0.0048f,1.1912f,-0.0805f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                    .addChild(new HAnimJoint().setName("vl1").setDEF("hanim_vl1").setCenter(new float[] {0.0048f,1.1912f,-0.0805f}).setUlimit(new MFFloat104().getArray()).setLlimit(new MFFloat105().getArray())
                       .addChild(new HAnimSegment().setName("l1").setDEF("hanim_l1")
                         .addChild(new Transform().setTranslation(new float[] {0.0048f,1.1912f,-0.0805f})
                           .addChild(new Shape()
-                            .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3272().getArray()).setCreaseAngle(0.5f)
+                            .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32106().getArray()).setCreaseAngle(0.5f)
                               .setCoord(new Coordinate().setUSE("points")))
                             .setAppearance(new Appearance()
                               .setMaterial(new Material().setUSE("REC_SPINAL_COLOR"))))))
-                      .addChild(new HAnimJoint().setName("vt12").setDEF("hanim_vt12").setCenter(new float[] {0.0051f,1.2278f,-0.0808f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                      .addChild(new HAnimJoint().setName("vt12").setDEF("hanim_vt12").setCenter(new float[] {0.0051f,1.2278f,-0.0808f}).setUlimit(new MFFloat107().getArray()).setLlimit(new MFFloat108().getArray())
                         .addChild(new HAnimSegment().setName("t12").setDEF("hanim_t12")
                           .addChild(new Transform().setTranslation(new float[] {0.0051f,1.2278f,-0.0808f})
                             .addChild(new Shape()
-                              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3273().getArray()).setCreaseAngle(0.5f)
+                              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32109().getArray()).setCreaseAngle(0.5f)
                                 .setCoord(new Coordinate().setUSE("points")))
                               .setAppearance(new Appearance()
                                 .setMaterial(new Material().setUSE("SPINAL_COLOR"))))))
-                        .addChild(new HAnimJoint().setName("vt11").setDEF("hanim_vt11").setCenter(new float[] {0.0053f,1.2679f,-0.081f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                        .addChild(new HAnimJoint().setName("vt11").setDEF("hanim_vt11").setCenter(new float[] {0.0053f,1.2679f,-0.081f}).setUlimit(new MFFloat110().getArray()).setLlimit(new MFFloat111().getArray())
                           .addChild(new HAnimSegment().setName("t11").setDEF("hanim_t11")
                             .addChild(new Transform().setTranslation(new float[] {0.0053f,1.2679f,-0.081f})
                               .addChild(new Shape()
-                                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3274().getArray()).setCreaseAngle(0.5f)
+                                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32112().getArray()).setCreaseAngle(0.5f)
                                   .setCoord(new Coordinate().setUSE("points")))
                                 .setAppearance(new Appearance()
                                   .setMaterial(new Material().setUSE("SPINAL_COLOR"))))))
-                          .addChild(new HAnimJoint().setName("vt10").setDEF("hanim_vt10").setCenter(new float[] {0.0056f,1.2848f,-0.0822f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                          .addChild(new HAnimJoint().setName("vt10").setDEF("hanim_vt10").setCenter(new float[] {0.0056f,1.2848f,-0.0822f}).setUlimit(new MFFloat113().getArray()).setLlimit(new MFFloat114().getArray())
                             .addChild(new HAnimSegment().setName("t10").setDEF("hanim_t10")
                               .addChild(new Transform().setTranslation(new float[] {0.0056f,1.2848f,-0.0822f})
                                 .addChild(new Shape()
-                                  .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3275().getArray()).setCreaseAngle(0.5f)
+                                  .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32115().getArray()).setCreaseAngle(0.5f)
                                     .setCoord(new Coordinate().setUSE("points")))
                                   .setAppearance(new Appearance()
                                     .setMaterial(new Material().setUSE("REC_SPINAL_COLOR"))))))
-                            .addChild(new HAnimJoint().setName("vt9").setDEF("hanim_vt9").setCenter(new float[] {0.0057f,1.3126f,-0.0838f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                            .addChild(new HAnimJoint().setName("vt9").setDEF("hanim_vt9").setCenter(new float[] {0.0057f,1.3126f,-0.0838f}).setUlimit(new MFFloat116().getArray()).setLlimit(new MFFloat117().getArray())
                               .addChild(new HAnimSegment().setName("t9").setDEF("hanim_t9")
                                 .addChild(new Transform().setTranslation(new float[] {0.0057f,1.3126f,-0.0838f})
                                   .addChild(new Shape()
-                                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3276().getArray()).setCreaseAngle(0.5f)
+                                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32118().getArray()).setCreaseAngle(0.5f)
                                       .setCoord(new Coordinate().setUSE("points")))
                                     .setAppearance(new Appearance()
                                       .setMaterial(new Material().setUSE("SPINAL_COLOR"))))))
-                              .addChild(new HAnimJoint().setName("vt8").setDEF("hanim_vt8").setCenter(new float[] {0.0057f,1.3382f,-0.0845f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                              .addChild(new HAnimJoint().setName("vt8").setDEF("hanim_vt8").setCenter(new float[] {0.0057f,1.3382f,-0.0845f}).setUlimit(new MFFloat119().getArray()).setLlimit(new MFFloat120().getArray())
                                 .addChild(new HAnimSegment().setName("t8").setDEF("hanim_t8")
                                   .addChild(new Transform().setTranslation(new float[] {0.0057f,1.3382f,-0.0845f})
                                     .addChild(new Shape()
-                                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3277().getArray()).setCreaseAngle(0.5f)
+                                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32121().getArray()).setCreaseAngle(0.5f)
                                         .setCoord(new Coordinate().setUSE("points")))
                                       .setAppearance(new Appearance()
                                         .setMaterial(new Material().setUSE("SPINAL_COLOR"))))))
-                                .addChild(new HAnimJoint().setName("vt7").setDEF("hanim_vt7").setCenter(new float[] {0.0058f,1.3625f,-0.0833f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                                .addChild(new HAnimJoint().setName("vt7").setDEF("hanim_vt7").setCenter(new float[] {0.0058f,1.3625f,-0.0833f}).setUlimit(new MFFloat122().getArray()).setLlimit(new MFFloat123().getArray())
                                   .addChild(new HAnimSegment().setName("t7").setDEF("hanim_t7")
                                     .addChild(new Transform().setTranslation(new float[] {0.0058f,1.3625f,-0.0833f})
                                       .addChild(new Shape()
-                                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3278().getArray()).setCreaseAngle(0.5f)
+                                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32124().getArray()).setCreaseAngle(0.5f)
                                           .setCoord(new Coordinate().setUSE("points")))
                                         .setAppearance(new Appearance()
                                           .setMaterial(new Material().setUSE("SPINAL_COLOR"))))))
-                                  .addChild(new HAnimJoint().setName("vt6").setDEF("hanim_vt6").setCenter(new float[] {0.0059f,1.3866f,-0.08f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                                  .addChild(new HAnimJoint().setName("vt6").setDEF("hanim_vt6").setCenter(new float[] {0.0059f,1.3866f,-0.08f}).setUlimit(new MFFloat125().getArray()).setLlimit(new MFFloat126().getArray())
                                     .addChild(new HAnimSegment().setName("t6").setDEF("hanim_t6")
                                       .addChild(new Transform().setTranslation(new float[] {0.0059f,1.3866f,-0.08f})
                                         .addChild(new Shape()
-                                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3279().getArray()).setCreaseAngle(0.5f)
+                                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32127().getArray()).setCreaseAngle(0.5f)
                                             .setCoord(new Coordinate().setUSE("points")))
                                           .setAppearance(new Appearance()
                                             .setMaterial(new Material().setUSE("REC_SPINAL_COLOR"))))))
-                                    .addChild(new HAnimJoint().setName("vt5").setDEF("hanim_vt5").setCenter(new float[] {0.006f,1.4102f,-0.0745f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                                    .addChild(new HAnimJoint().setName("vt5").setDEF("hanim_vt5").setCenter(new float[] {0.006f,1.4102f,-0.0745f}).setUlimit(new MFFloat128().getArray()).setLlimit(new MFFloat129().getArray())
                                       .addChild(new HAnimSegment().setName("t5").setDEF("hanim_t5")
                                         .addChild(new Transform().setTranslation(new float[] {0.006f,1.4102f,-0.0745f})
                                           .addChild(new Shape()
-                                            .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3280().getArray()).setCreaseAngle(0.5f)
+                                            .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32130().getArray()).setCreaseAngle(0.5f)
                                               .setCoord(new Coordinate().setUSE("points")))
                                             .setAppearance(new Appearance()
                                               .setMaterial(new Material().setUSE("SPINAL_COLOR"))))))
-                                      .addChild(new HAnimJoint().setName("vt4").setDEF("hanim_vt4").setCenter(new float[] {0.0061f,1.432f,-0.0675f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                                      .addChild(new HAnimJoint().setName("vt4").setDEF("hanim_vt4").setCenter(new float[] {0.0061f,1.432f,-0.0675f}).setUlimit(new MFFloat131().getArray()).setLlimit(new MFFloat132().getArray())
                                         .addChild(new HAnimSegment().setName("t4").setDEF("hanim_t4")
                                           .addChild(new Transform().setTranslation(new float[] {0.0061f,1.432f,-0.0675f})
                                             .addChild(new Shape()
-                                              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3281().getArray()).setCreaseAngle(0.5f)
+                                              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32133().getArray()).setCreaseAngle(0.5f)
                                                 .setCoord(new Coordinate().setUSE("points")))
                                               .setAppearance(new Appearance()
                                                 .setMaterial(new Material().setUSE("SPINAL_COLOR"))))))
-                                        .addChild(new HAnimJoint().setName("vt3").setDEF("hanim_vt3").setCenter(new float[] {0.0062f,1.4583f,-0.057f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                                        .addChild(new HAnimJoint().setName("vt3").setDEF("hanim_vt3").setCenter(new float[] {0.0062f,1.4583f,-0.057f}).setUlimit(new MFFloat134().getArray()).setLlimit(new MFFloat135().getArray())
                                           .addChild(new HAnimSegment().setName("t3").setDEF("hanim_t3")
                                             .addChild(new Transform().setTranslation(new float[] {0.0062f,1.4583f,-0.057f})
                                               .addChild(new Shape()
-                                                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3282().getArray()).setCreaseAngle(0.5f)
+                                                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32136().getArray()).setCreaseAngle(0.5f)
                                                   .setCoord(new Coordinate().setUSE("points")))
                                                 .setAppearance(new Appearance()
                                                   .setMaterial(new Material().setUSE("SPINAL_COLOR"))))))
-                                          .addChild(new HAnimJoint().setName("vt2").setDEF("hanim_vt2").setCenter(new float[] {0.0063f,1.4761f,-0.0484f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                                          .addChild(new HAnimJoint().setName("vt2").setDEF("hanim_vt2").setCenter(new float[] {0.0063f,1.4761f,-0.0484f}).setUlimit(new MFFloat137().getArray()).setLlimit(new MFFloat138().getArray())
                                             .addChild(new HAnimSegment().setName("t2").setDEF("hanim_t2")
                                               .addChild(new Transform().setTranslation(new float[] {0.0063f,1.4761f,-0.0484f})
                                                 .addChild(new Shape()
-                                                  .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3283().getArray()).setCreaseAngle(0.5f)
+                                                  .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32139().getArray()).setCreaseAngle(0.5f)
                                                     .setCoord(new Coordinate().setUSE("points")))
                                                   .setAppearance(new Appearance()
                                                     .setMaterial(new Material().setUSE("SPINAL_COLOR"))))))
-                                            .addChild(new HAnimJoint().setName("vt1").setDEF("hanim_vt1").setCenter(new float[] {0.0065f,1.4951f,-0.0387f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                                            .addChild(new HAnimJoint().setName("vt1").setDEF("hanim_vt1").setCenter(new float[] {0.0065f,1.4951f,-0.0387f}).setUlimit(new MFFloat140().getArray()).setLlimit(new MFFloat141().getArray())
                                               .addChild(new HAnimSegment().setName("t1").setDEF("hanim_t1")
                                                 .addChild(new Transform().setTranslation(new float[] {0.0065f,1.4951f,-0.0387f})
                                                   .addChild(new Shape()
-                                                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3284().getArray()).setCreaseAngle(0.5f)
+                                                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32142().getArray()).setCreaseAngle(0.5f)
                                                       .setCoord(new Coordinate().setUSE("points")))
                                                     .setAppearance(new Appearance()
                                                       .setMaterial(new Material().setUSE("REC_SPINAL_COLOR"))))))
-                                              .addChild(new HAnimJoint().setName("l_shoulder").setDEF("hanim_l_shoulder").setCenter(new float[] {0.2029f,1.4376f,-0.0387f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                                              .addChild(new HAnimJoint().setName("l_shoulder").setDEF("hanim_l_shoulder").setCenter(new float[] {0.2029f,1.4376f,-0.0387f}).setUlimit(new MFFloat143().getArray()).setLlimit(new MFFloat144().getArray())
                                                 .addChild(new HAnimSegment().setName("l_upperarm").setDEF("hanim_l_upperarm")
                                                   .addChild(new Transform().setTranslation(new float[] {0.2029f,1.4376f,-0.0387f})
                                                     .addChild(new Shape()
-                                                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3285().getArray()).setCreaseAngle(0.5f)
+                                                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32145().getArray()).setCreaseAngle(0.5f)
                                                         .setCoord(new Coordinate().setUSE("points")))
                                                       .setAppearance(new Appearance()
                                                         .setMaterial(new Material().setUSE("MIN_COLOR")))))
                                                   .addChild(new Transform().setDEF("l_upperarm_adjust").setCenter(new float[] {0.182f,1.22f,-0.047f}).setRotation(new float[] {1f,0f,0f,0.119f}).setTranslation(new float[] {0.2029f,1.4376f,-0.0387f}))
                                                   .addChild(new HAnimSite().setName("l_humeral_lateral_epicn_pt").setDEF("hanim_l_humeral_lateral_epicn_pt").setTranslation(new float[] {0.228f,1.1482f,-0.11f})
                                                     .addChild(new Shape()
-                                                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3286().getArray()).setCreaseAngle(0.5f)
+                                                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32146().getArray()).setCreaseAngle(0.5f)
                                                         .setCoord(new Coordinate().setUSE("points")))
                                                       .setAppearance(new Appearance()
                                                         .setMaterial(new Material().setUSE("SITE_COLOR"))))))
-                                                .addChild(new HAnimJoint().setName("l_elbow").setDEF("hanim_l_elbow").setCenter(new float[] {0.2014f,1.1357f,-0.0682f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                                                .addChild(new HAnimJoint().setName("l_elbow").setDEF("hanim_l_elbow").setCenter(new float[] {0.2014f,1.1357f,-0.0682f}).setUlimit(new MFFloat147().getArray()).setLlimit(new MFFloat148().getArray())
                                                   .addChild(new HAnimSegment().setName("l_forearm").setDEF("hanim_l_forearm")
                                                     .addChild(new Transform().setTranslation(new float[] {0.2014f,1.1357f,-0.0682f})
                                                       .addChild(new Shape()
-                                                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3287().getArray()).setCreaseAngle(0.5f)
+                                                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32149().getArray()).setCreaseAngle(0.5f)
                                                           .setCoord(new Coordinate().setUSE("points")))
                                                         .setAppearance(new Appearance()
                                                           .setMaterial(new Material().setUSE("MIN_COLOR")))))
                                                     .addChild(new Transform().setDEF("l_forearm_adjust").setCenter(new float[] {0.198f,0.961f,-0.0405f}).setRotation(new float[] {-1f,0f,0f,0.1f}).setTranslation(new float[] {0.2014f,1.1357f,-0.0682f}))
                                                     .addChild(new HAnimSite().setName("l_radial_styloid_pt").setDEF("hanim_l_radial_styloid_pt").setTranslation(new float[] {0.1901f,0.8645f,-0.0415f})
                                                       .addChild(new Shape()
-                                                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3288().getArray()).setCreaseAngle(0.5f)
+                                                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32150().getArray()).setCreaseAngle(0.5f)
                                                           .setCoord(new Coordinate().setUSE("points")))
                                                         .setAppearance(new Appearance()
                                                           .setMaterial(new Material().setUSE("SITE_COLOR")))))
                                                     .addChild(new HAnimSite().setName("l_olecranon_pt").setDEF("hanim_l_olecranon_pt").setTranslation(new float[] {-0.1962f,1.1375f,-0.1123f})
                                                       .addChild(new Shape()
-                                                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3289().getArray()).setCreaseAngle(0.5f)
+                                                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32151().getArray()).setCreaseAngle(0.5f)
                                                           .setCoord(new Coordinate().setUSE("points")))
                                                         .setAppearance(new Appearance()
                                                           .setMaterial(new Material().setUSE("SITE_COLOR")))))
                                                     .addChild(new HAnimSite().setName("l_humeral_medial_epicn_pt").setDEF("hanim_l_humeral_medial_epicn_pt").setTranslation(new float[] {0.1735f,1.1272f,-0.1113f})
                                                       .addChild(new Shape()
-                                                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3290().getArray()).setCreaseAngle(0.5f)
+                                                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32152().getArray()).setCreaseAngle(0.5f)
                                                           .setCoord(new Coordinate().setUSE("points")))
                                                         .setAppearance(new Appearance()
                                                           .setMaterial(new Material().setUSE("SITE_COLOR")))))
                                                     .addChild(new HAnimSite().setName("l_radiale_pt").setDEF("hanim_l_radiale_pt").setTranslation(new float[] {0.2182f,1.1212f,-0.1167f})
                                                       .addChild(new Shape()
-                                                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3291().getArray()).setCreaseAngle(0.5f)
+                                                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32153().getArray()).setCreaseAngle(0.5f)
                                                           .setCoord(new Coordinate().setUSE("points")))
                                                         .setAppearance(new Appearance()
                                                           .setMaterial(new Material().setUSE("SITE_COLOR"))))))
-                                                  .addChild(new HAnimJoint().setName("l_wrist").setDEF("hanim_l_wrist").setCenter(new float[] {0.1984f,0.8663f,-0.0583f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                                                  .addChild(new HAnimJoint().setName("l_wrist").setDEF("hanim_l_wrist").setCenter(new float[] {0.1984f,0.8663f,-0.0583f}).setUlimit(new MFFloat154().getArray()).setLlimit(new MFFloat155().getArray())
                                                     .addChild(new HAnimSegment().setName("l_hand").setDEF("hanim_l_hand")
                                                       .addChild(new Transform().setTranslation(new float[] {0.1984f,0.8663f,-0.0583f})
                                                         .addChild(new Shape()
-                                                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3292().getArray()).setCreaseAngle(0.5f)
+                                                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32156().getArray()).setCreaseAngle(0.5f)
                                                             .setCoord(new Coordinate().setUSE("points")))
                                                           .setAppearance(new Appearance()
                                                             .setMaterial(new Material().setUSE("MIN_COLOR")))))
                                                       .addChild(new Transform().setDEF("l_hand_adjust").setCenter(new float[] {0.213f,0.811f,-0.0338f}).setRotation(new float[] {-0.06361f,-0.9967f,0.04988f,1.333f}).setTranslation(new float[] {0.1984f,0.8663f,-0.0583f}))
                                                       .addChild(new HAnimSite().setName("l_hand_tip").setDEF("hanim_l_hand_tip").setTranslation(new float[] {0.208f,0.6731f,-0.0491f})
                                                         .addChild(new Shape()
-                                                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3293().getArray()).setCreaseAngle(0.5f)
+                                                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32157().getArray()).setCreaseAngle(0.5f)
                                                             .setCoord(new Coordinate().setUSE("points")))
                                                           .setAppearance(new Appearance()
                                                             .setMaterial(new Material().setUSE("SITE_COLOR")))))
                                                       .addChild(new HAnimSite().setName("l_metacarpal_pha2_pt").setDEF("hanim_l_metacarpal_pha2_pt").setTranslation(new float[] {0.2009f,0.8139f,-0.0237f})
                                                         .addChild(new Shape()
-                                                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3294().getArray()).setCreaseAngle(0.5f)
+                                                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32158().getArray()).setCreaseAngle(0.5f)
                                                             .setCoord(new Coordinate().setUSE("points")))
                                                           .setAppearance(new Appearance()
                                                             .setMaterial(new Material().setUSE("SITE_COLOR")))))
                                                       .addChild(new HAnimSite().setName("l_dactylion_pt").setDEF("hanim_l_dactylion_pt").setTranslation(new float[] {0.2056f,0.6743f,-0.0482f})
                                                         .addChild(new Shape()
-                                                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3295().getArray()).setCreaseAngle(0.5f)
+                                                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32159().getArray()).setCreaseAngle(0.5f)
                                                             .setCoord(new Coordinate().setUSE("points")))
                                                           .setAppearance(new Appearance()
                                                             .setMaterial(new Material().setUSE("SITE_COLOR")))))
                                                       .addChild(new HAnimSite().setName("l_ulnar_styloid_pt").setDEF("hanim_l_ulnar_styloid_pt").setTranslation(new float[] {-0.2142f,0.8529f,-0.0648f})
                                                         .addChild(new Shape()
-                                                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3296().getArray()).setCreaseAngle(0.5f)
+                                                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32160().getArray()).setCreaseAngle(0.5f)
                                                             .setCoord(new Coordinate().setUSE("points")))
                                                           .setAppearance(new Appearance()
                                                             .setMaterial(new Material().setUSE("SITE_COLOR")))))
                                                       .addChild(new HAnimSite().setName("l_metacarpal_pha5_pt").setDEF("hanim_l_metacarpal_pha5_pt").setTranslation(new float[] {0.1929f,0.786f,-0.1122f})
                                                         .addChild(new Shape()
-                                                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3297().getArray()).setCreaseAngle(0.5f)
+                                                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32161().getArray()).setCreaseAngle(0.5f)
                                                             .setCoord(new Coordinate().setUSE("points")))
                                                           .setAppearance(new Appearance()
                                                             .setMaterial(new Material().setUSE("SITE_COLOR"))))))
-                                                    .addChild(new HAnimJoint().setName("l_thumb1").setDEF("hanim_l_thumb1").setCenter(new float[] {0.1924f,0.8472f,-0.0534f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                                                    .addChild(new HAnimJoint().setName("l_thumb1").setDEF("hanim_l_thumb1").setCenter(new float[] {0.1924f,0.8472f,-0.0534f}).setUlimit(new MFFloat162().getArray()).setLlimit(new MFFloat163().getArray())
                                                       .addChild(new HAnimSegment().setName("l_thumb_metacarpal").setDEF("hanim_l_thumb_metacarpal")
                                                         .addChild(new Transform().setTranslation(new float[] {0.1924f,0.8472f,-0.0534f})
                                                           .addChild(new Shape()
-                                                            .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3298().getArray()).setCreaseAngle(0.5f)
+                                                            .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32164().getArray()).setCreaseAngle(0.5f)
                                                               .setCoord(new Coordinate().setUSE("points")))
                                                             .setAppearance(new Appearance()
                                                               .setMaterial(new Material().setUSE("JOINT_COLOR"))))))
-                                                      .addChild(new HAnimJoint().setName("l_thumb2").setDEF("hanim_l_thumb2").setCenter(new float[] {0.1951f,0.8226f,0.0246f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                                                      .addChild(new HAnimJoint().setName("l_thumb2").setDEF("hanim_l_thumb2").setCenter(new float[] {0.1951f,0.8226f,0.0246f}).setUlimit(new MFFloat165().getArray()).setLlimit(new MFFloat166().getArray())
                                                         .addChild(new HAnimSegment().setName("l_thumb_proximal").setDEF("hanim_l_thumb_proximal")
                                                           .addChild(new Transform().setTranslation(new float[] {0.1951f,0.8226f,0.0246f})
                                                             .addChild(new Shape()
-                                                              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3299().getArray()).setCreaseAngle(0.5f)
+                                                              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32167().getArray()).setCreaseAngle(0.5f)
                                                                 .setCoord(new Coordinate().setUSE("points")))
                                                               .setAppearance(new Appearance()
                                                                 .setMaterial(new Material().setUSE("JOINT_COLOR"))))))
-                                                        .addChild(new HAnimJoint().setName("l_thumb3").setDEF("hanim_l_thumb3").setCenter(new float[] {0.1955f,0.8159f,0.0464f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                                                        .addChild(new HAnimJoint().setName("l_thumb3").setDEF("hanim_l_thumb3").setCenter(new float[] {0.1955f,0.8159f,0.0464f}).setUlimit(new MFFloat168().getArray()).setLlimit(new MFFloat169().getArray())
                                                           .addChild(new HAnimSegment().setName("l_thumb_distal").setDEF("hanim_l_thumb_distal")
                                                             .addChild(new Transform().setTranslation(new float[] {0.1955f,0.8159f,0.0464f})
                                                               .addChild(new Shape()
-                                                                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32100().getArray()).setCreaseAngle(0.5f)
+                                                                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32170().getArray()).setCreaseAngle(0.5f)
                                                                   .setCoord(new Coordinate().setUSE("points")))
                                                                 .setAppearance(new Appearance()
                                                                   .setMaterial(new Material().setUSE("JOINT_COLOR")))))
                                                             .addChild(new HAnimSite().setName("l_thumb_distal_tip").setDEF("hanim_l_thumb_distal_tip").setTranslation(new float[] {0.1982f,0.8061f,0.0759f})
                                                               .addChild(new Shape()
-                                                                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32101().getArray()).setCreaseAngle(0.5f)
+                                                                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32171().getArray()).setCreaseAngle(0.5f)
                                                                   .setCoord(new Coordinate().setUSE("points")))
                                                                 .setAppearance(new Appearance()
                                                                   .setMaterial(new Material().setUSE("HAND_FEET_COLOR")))))))))
-                                                    .addChild(new HAnimJoint().setName("l_index0").setDEF("hanim_l_index0").setCenter(new float[] {0.1983f,0.8024f,-0.028f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                                                    .addChild(new HAnimJoint().setName("l_index0").setDEF("hanim_l_index0").setCenter(new float[] {0.1983f,0.8024f,-0.028f}).setUlimit(new MFFloat172().getArray()).setLlimit(new MFFloat173().getArray())
                                                       .addChild(new HAnimSegment().setName("l_index_metacarpal").setDEF("hanim_l_index_metacarpal")
                                                         .addChild(new Transform().setTranslation(new float[] {0.1983f,0.8024f,-0.028f})
                                                           .addChild(new Shape()
-                                                            .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32102().getArray()).setCreaseAngle(0.5f)
+                                                            .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32174().getArray()).setCreaseAngle(0.5f)
                                                               .setCoord(new Coordinate().setUSE("points")))
                                                             .setAppearance(new Appearance()
                                                               .setMaterial(new Material().setUSE("JOINT_COLOR"))))))
-                                                      .addChild(new HAnimJoint().setName("l_index1").setDEF("hanim_l_index1").setCenter(new float[] {0.1983f,0.7815f,-0.028f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                                                      .addChild(new HAnimJoint().setName("l_index1").setDEF("hanim_l_index1").setCenter(new float[] {0.1983f,0.7815f,-0.028f}).setUlimit(new MFFloat175().getArray()).setLlimit(new MFFloat176().getArray())
                                                         .addChild(new HAnimSegment().setName("l_index_proximal").setDEF("hanim_l_index_proximal")
                                                           .addChild(new Transform().setTranslation(new float[] {0.1983f,0.7815f,-0.028f})
                                                             .addChild(new Shape()
-                                                              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32103().getArray()).setCreaseAngle(0.5f)
+                                                              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32177().getArray()).setCreaseAngle(0.5f)
                                                                 .setCoord(new Coordinate().setUSE("points")))
                                                               .setAppearance(new Appearance()
                                                                 .setMaterial(new Material().setUSE("JOINT_COLOR"))))))
-                                                        .addChild(new HAnimJoint().setName("l_index2").setDEF("hanim_l_index2").setCenter(new float[] {0.2017f,0.7363f,-0.0248f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                                                        .addChild(new HAnimJoint().setName("l_index2").setDEF("hanim_l_index2").setCenter(new float[] {0.2017f,0.7363f,-0.0248f}).setUlimit(new MFFloat178().getArray()).setLlimit(new MFFloat179().getArray())
                                                           .addChild(new HAnimSegment().setName("l_index_middle").setDEF("hanim_l_index_middle")
                                                             .addChild(new Transform().setTranslation(new float[] {0.2017f,0.7363f,-0.0248f})
                                                               .addChild(new Shape()
-                                                                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32104().getArray()).setCreaseAngle(0.5f)
+                                                                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32180().getArray()).setCreaseAngle(0.5f)
                                                                   .setCoord(new Coordinate().setUSE("points")))
                                                                 .setAppearance(new Appearance()
                                                                   .setMaterial(new Material().setUSE("JOINT_COLOR"))))))
-                                                          .addChild(new HAnimJoint().setName("l_index3").setDEF("hanim_l_index3").setCenter(new float[] {0.2028f,0.7139f,-0.0236f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                                                          .addChild(new HAnimJoint().setName("l_index3").setDEF("hanim_l_index3").setCenter(new float[] {0.2028f,0.7139f,-0.0236f}).setUlimit(new MFFloat181().getArray()).setLlimit(new MFFloat182().getArray())
                                                             .addChild(new HAnimSegment().setName("l_index_distal").setDEF("hanim_l_index_distal")
                                                               .addChild(new Transform().setTranslation(new float[] {0.2028f,0.7139f,-0.0236f})
                                                                 .addChild(new Shape()
-                                                                  .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32105().getArray()).setCreaseAngle(0.5f)
+                                                                  .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32183().getArray()).setCreaseAngle(0.5f)
                                                                     .setCoord(new Coordinate().setUSE("points")))
                                                                   .setAppearance(new Appearance()
                                                                     .setMaterial(new Material().setUSE("JOINT_COLOR")))))
                                                               .addChild(new HAnimSite().setName("l_index_distal_tip").setDEF("hanim_l_index_distal_tip").setTranslation(new float[] {0.2089f,0.6858f,-0.0245f})
                                                                 .addChild(new Shape()
-                                                                  .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32106().getArray()).setCreaseAngle(0.5f)
+                                                                  .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32184().getArray()).setCreaseAngle(0.5f)
                                                                     .setCoord(new Coordinate().setUSE("points")))
                                                                   .setAppearance(new Appearance()
                                                                     .setMaterial(new Material().setUSE("HAND_FEET_COLOR")))))))))))))
-                                              .addChild(new HAnimJoint().setName("r_shoulder").setDEF("hanim_r_shoulder").setCenter(new float[] {-0.1907f,1.4407f,-0.0325f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                                              .addChild(new HAnimJoint().setName("r_shoulder").setDEF("hanim_r_shoulder").setCenter(new float[] {-0.1907f,1.4407f,-0.0325f}).setUlimit(new MFFloat185().getArray()).setLlimit(new MFFloat186().getArray())
                                                 .addChild(new HAnimSegment().setName("r_upperarm").setDEF("hanim_r_upperarm")
                                                   .addChild(new Transform().setTranslation(new float[] {-0.1907f,1.4407f,-0.0325f})
                                                     .addChild(new Shape()
-                                                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32107().getArray()).setCreaseAngle(0.5f)
+                                                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32187().getArray()).setCreaseAngle(0.5f)
                                                         .setCoord(new Coordinate().setUSE("points")))
                                                       .setAppearance(new Appearance()
                                                         .setMaterial(new Material().setUSE("MIN_COLOR")))))
                                                   .addChild(new Transform().setDEF("r_upperarm_adjust").setCenter(new float[] {-0.182f,1.22f,-0.047f}).setRotation(new float[] {1f,0f,0f,0.0836f}).setTranslation(new float[] {-0.1907f,1.4407f,-0.0325f}))
                                                   .addChild(new HAnimSite().setName("r_humeral_lateral_epicn_pt").setDEF("hanim_r_humeral_lateral_epicn_pt").setTranslation(new float[] {-0.2224f,1.1517f,-0.1033f})
                                                     .addChild(new Shape()
-                                                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32108().getArray()).setCreaseAngle(0.5f)
+                                                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32188().getArray()).setCreaseAngle(0.5f)
                                                         .setCoord(new Coordinate().setUSE("points")))
                                                       .setAppearance(new Appearance()
                                                         .setMaterial(new Material().setUSE("SITE_COLOR"))))))
-                                                .addChild(new HAnimJoint().setName("r_elbow").setDEF("hanim_r_elbow").setCenter(new float[] {-0.1949f,1.1388f,-0.062f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                                                .addChild(new HAnimJoint().setName("r_elbow").setDEF("hanim_r_elbow").setCenter(new float[] {-0.1949f,1.1388f,-0.062f}).setUlimit(new MFFloat189().getArray()).setLlimit(new MFFloat190().getArray())
                                                   .addChild(new HAnimSegment().setName("r_forearm").setDEF("hanim_r_forearm")
                                                     .addChild(new Transform().setTranslation(new float[] {-0.1949f,1.1388f,-0.062f})
                                                       .addChild(new Shape()
-                                                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32109().getArray()).setCreaseAngle(0.5f)
+                                                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32191().getArray()).setCreaseAngle(0.5f)
                                                           .setCoord(new Coordinate().setUSE("points")))
                                                         .setAppearance(new Appearance()
                                                           .setMaterial(new Material().setUSE("MIN_COLOR")))))
                                                     .addChild(new Transform().setDEF("r_forearm_adjust").setCenter(new float[] {-0.198f,0.961f,-0.0397f}).setRotation(new float[] {-1f,0f,0f,0.1254f}).setTranslation(new float[] {-0.1949f,1.1388f,-0.062f}))
                                                     .addChild(new HAnimSite().setName("r_radial_styloid_pt").setDEF("hanim_r_radial_styloid_pt").setTranslation(new float[] {-0.1884f,0.8676f,-0.036f})
                                                       .addChild(new Shape()
-                                                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32110().getArray()).setCreaseAngle(0.5f)
+                                                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32192().getArray()).setCreaseAngle(0.5f)
                                                           .setCoord(new Coordinate().setUSE("points")))
                                                         .setAppearance(new Appearance()
                                                           .setMaterial(new Material().setUSE("SITE_COLOR")))))
                                                     .addChild(new HAnimSite().setName("r_olecranon_pt").setDEF("hanim_r_olecranon_pt").setTranslation(new float[] {-0.1907f,1.1405f,-0.1065f})
                                                       .addChild(new Shape()
-                                                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32111().getArray()).setCreaseAngle(0.5f)
+                                                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32193().getArray()).setCreaseAngle(0.5f)
                                                           .setCoord(new Coordinate().setUSE("points")))
                                                         .setAppearance(new Appearance()
                                                           .setMaterial(new Material().setUSE("SITE_COLOR")))))
                                                     .addChild(new HAnimSite().setName("r_humeral_medial_epicn_pt").setDEF("hanim_r_humeral_medial_epicn_pt").setTranslation(new float[] {-0.168f,1.1298f,-0.1062f})
                                                       .addChild(new Shape()
-                                                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32112().getArray()).setCreaseAngle(0.5f)
+                                                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32194().getArray()).setCreaseAngle(0.5f)
                                                           .setCoord(new Coordinate().setUSE("points")))
                                                         .setAppearance(new Appearance()
                                                           .setMaterial(new Material().setUSE("SITE_COLOR")))))
                                                     .addChild(new HAnimSite().setName("r_radiale_pt").setDEF("hanim_r_radiale_pt").setTranslation(new float[] {-0.213f,1.1305f,-0.1091f})
                                                       .addChild(new Shape()
-                                                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32113().getArray()).setCreaseAngle(0.5f)
+                                                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32195().getArray()).setCreaseAngle(0.5f)
                                                           .setCoord(new Coordinate().setUSE("points")))
                                                         .setAppearance(new Appearance()
                                                           .setMaterial(new Material().setUSE("SITE_COLOR"))))))
-                                                  .addChild(new HAnimJoint().setName("r_wrist").setDEF("hanim_r_wrist").setCenter(new float[] {-0.1959f,0.8694f,-0.0521f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                                                  .addChild(new HAnimJoint().setName("r_wrist").setDEF("hanim_r_wrist").setCenter(new float[] {-0.1959f,0.8694f,-0.0521f}).setUlimit(new MFFloat196().getArray()).setLlimit(new MFFloat197().getArray())
                                                     .addChild(new HAnimSegment().setName("r_hand").setDEF("hanim_r_hand")
                                                       .addChild(new Transform().setTranslation(new float[] {-0.1959f,0.8694f,-0.0521f})
                                                         .addChild(new Shape()
-                                                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32114().getArray()).setCreaseAngle(0.5f)
+                                                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32198().getArray()).setCreaseAngle(0.5f)
                                                             .setCoord(new Coordinate().setUSE("points")))
                                                           .setAppearance(new Appearance()
                                                             .setMaterial(new Material().setUSE("MIN_COLOR")))))
                                                       .addChild(new Transform().setDEF("r_hand_adjust").setCenter(new float[] {-0.217f,0.811f,-0.0338f}).setRotation(new float[] {-0.09024f,0.994f,-0.0624f,1.216f}))
                                                       .addChild(new HAnimSite().setName("r_hand_tip").setDEF("hanim_r_hand_tip").setTranslation(new float[] {-0.1969f,0.6758f,-0.0427f})
                                                         .addChild(new Shape()
-                                                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32115().getArray()).setCreaseAngle(0.5f)
+                                                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32199().getArray()).setCreaseAngle(0.5f)
                                                             .setCoord(new Coordinate().setUSE("points")))
                                                           .setAppearance(new Appearance()
                                                             .setMaterial(new Material().setUSE("SITE_COLOR")))))
                                                       .addChild(new HAnimSite().setName("r_metacarpal_pha2_pt").setDEF("hanim_r_metacarpal_pha2_pt").setTranslation(new float[] {-0.1977f,0.8169f,-0.0177f})
                                                         .addChild(new Shape()
-                                                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32116().getArray()).setCreaseAngle(0.5f)
+                                                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32200().getArray()).setCreaseAngle(0.5f)
                                                             .setCoord(new Coordinate().setUSE("points")))
                                                           .setAppearance(new Appearance()
                                                             .setMaterial(new Material().setUSE("SITE_COLOR")))))
                                                       .addChild(new HAnimSite().setName("r_dactylion_pt").setDEF("hanim_r_dactylion_pt").setTranslation(new float[] {-0.1941f,0.6772f,-0.0423f})
                                                         .addChild(new Shape()
-                                                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32117().getArray()).setCreaseAngle(0.5f)
+                                                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32201().getArray()).setCreaseAngle(0.5f)
                                                             .setCoord(new Coordinate().setUSE("points")))
                                                           .setAppearance(new Appearance()
                                                             .setMaterial(new Material().setUSE("SITE_COLOR")))))
                                                       .addChild(new HAnimSite().setName("r_ulnar_styloid_pt").setDEF("hanim_r_ulnar_styloid_pt").setTranslation(new float[] {-0.2117f,0.8562f,-0.0584f})
                                                         .addChild(new Shape()
-                                                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32118().getArray()).setCreaseAngle(0.5f)
+                                                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32202().getArray()).setCreaseAngle(0.5f)
                                                             .setCoord(new Coordinate().setUSE("points")))
                                                           .setAppearance(new Appearance()
                                                             .setMaterial(new Material().setUSE("SITE_COLOR")))))
                                                       .addChild(new HAnimSite().setName("r_metacarpal_pha5_pt").setDEF("hanim_r_metacarpal_pha5_pt").setTranslation(new float[] {-0.1929f,0.789f,-0.1064f})
                                                         .addChild(new Shape()
-                                                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32119().getArray()).setCreaseAngle(0.5f)
+                                                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32203().getArray()).setCreaseAngle(0.5f)
                                                             .setCoord(new Coordinate().setUSE("points")))
                                                           .setAppearance(new Appearance()
                                                             .setMaterial(new Material().setUSE("SITE_COLOR")))))))))
-                                              .addChild(new HAnimJoint().setName("vc7").setDEF("hanim_vc7").setCenter(new float[] {0.0066f,1.5132f,-0.0301f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                                              .addChild(new HAnimJoint().setName("vc7").setDEF("hanim_vc7").setCenter(new float[] {0.0066f,1.5132f,-0.0301f}).setUlimit(new MFFloat204().getArray()).setLlimit(new MFFloat205().getArray())
                                                 .addChild(new HAnimSegment().setName("c7").setDEF("hanim_c7")
                                                   .addChild(new Transform().setTranslation(new float[] {0.0066f,1.5132f,-0.0301f})
                                                     .addChild(new Shape()
-                                                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32120().getArray()).setCreaseAngle(0.5f)
+                                                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32206().getArray()).setCreaseAngle(0.5f)
                                                         .setCoord(new Coordinate().setUSE("points")))
                                                       .setAppearance(new Appearance()
                                                         .setMaterial(new Material().setUSE("SPINAL_COLOR"))))))
-                                                .addChild(new HAnimJoint().setName("vc6").setDEF("hanim_vc6").setCenter(new float[] {0.0066f,1.5357f,-0.0143f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                                                .addChild(new HAnimJoint().setName("vc6").setDEF("hanim_vc6").setCenter(new float[] {0.0066f,1.5357f,-0.0143f}).setUlimit(new MFFloat207().getArray()).setLlimit(new MFFloat208().getArray())
                                                   .addChild(new HAnimSegment().setName("c6").setDEF("hanim_c6")
                                                     .addChild(new Transform().setTranslation(new float[] {0.0066f,1.5357f,-0.0143f})
                                                       .addChild(new Shape()
-                                                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32121().getArray()).setCreaseAngle(0.5f)
+                                                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32209().getArray()).setCreaseAngle(0.5f)
                                                           .setCoord(new Coordinate().setUSE("points")))
                                                         .setAppearance(new Appearance()
                                                           .setMaterial(new Material().setUSE("SPINAL_COLOR"))))))
-                                                  .addChild(new HAnimJoint().setName("vc5").setDEF("hanim_vc5").setCenter(new float[] {0.0066f,1.552f,-0.0082f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                                                  .addChild(new HAnimJoint().setName("vc5").setDEF("hanim_vc5").setCenter(new float[] {0.0066f,1.552f,-0.0082f}).setUlimit(new MFFloat210().getArray()).setLlimit(new MFFloat211().getArray())
                                                     .addChild(new HAnimSegment().setName("c5").setDEF("hanim_c5")
                                                       .addChild(new Transform().setTranslation(new float[] {0.0066f,1.552f,-0.0082f})
                                                         .addChild(new Shape()
-                                                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32122().getArray()).setCreaseAngle(0.5f)
+                                                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32212().getArray()).setCreaseAngle(0.5f)
                                                             .setCoord(new Coordinate().setUSE("points")))
                                                           .setAppearance(new Appearance()
                                                             .setMaterial(new Material().setUSE("SPINAL_COLOR"))))))
-                                                    .addChild(new HAnimJoint().setName("vc4").setDEF("hanim_vc4").setCenter(new float[] {0.0066f,1.5662f,-0.0084f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                                                    .addChild(new HAnimJoint().setName("vc4").setDEF("hanim_vc4").setCenter(new float[] {0.0066f,1.5662f,-0.0084f}).setUlimit(new MFFloat213().getArray()).setLlimit(new MFFloat214().getArray())
                                                       .addChild(new HAnimSegment().setName("c4").setDEF("hanim_c4")
                                                         .addChild(new Transform().setTranslation(new float[] {0.0066f,1.5662f,-0.0084f})
                                                           .addChild(new Shape()
-                                                            .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32123().getArray()).setCreaseAngle(0.5f)
+                                                            .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32215().getArray()).setCreaseAngle(0.5f)
                                                               .setCoord(new Coordinate().setUSE("points")))
                                                             .setAppearance(new Appearance()
                                                               .setMaterial(new Material().setUSE("SPINAL_COLOR"))))))
-                                                      .addChild(new HAnimJoint().setName("vc3").setDEF("hanim_vc3").setCenter(new float[] {0.0066f,1.58f,-0.0103f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                                                      .addChild(new HAnimJoint().setName("vc3").setDEF("hanim_vc3").setCenter(new float[] {0.0066f,1.58f,-0.0103f}).setUlimit(new MFFloat216().getArray()).setLlimit(new MFFloat217().getArray())
                                                         .addChild(new HAnimSegment().setName("c3").setDEF("hanim_c3")
                                                           .addChild(new Transform().setTranslation(new float[] {0.0066f,1.58f,-0.0103f})
                                                             .addChild(new Shape()
-                                                              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32124().getArray()).setCreaseAngle(0.5f)
+                                                              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32218().getArray()).setCreaseAngle(0.5f)
                                                                 .setCoord(new Coordinate().setUSE("points")))
                                                               .setAppearance(new Appearance()
                                                                 .setMaterial(new Material().setUSE("SPINAL_COLOR"))))))
-                                                        .addChild(new HAnimJoint().setName("vc2").setDEF("hanim_vc2").setCenter(new float[] {0.0066f,1.5928f,-0.0103f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                                                        .addChild(new HAnimJoint().setName("vc2").setDEF("hanim_vc2").setCenter(new float[] {0.0066f,1.5928f,-0.0103f}).setUlimit(new MFFloat219().getArray()).setLlimit(new MFFloat220().getArray())
                                                           .addChild(new HAnimSegment().setName("c2").setDEF("hanim_c2")
                                                             .addChild(new Transform().setTranslation(new float[] {0.0066f,1.5928f,-0.0103f})
                                                               .addChild(new Shape()
-                                                                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32125().getArray()).setCreaseAngle(0.5f)
+                                                                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32221().getArray()).setCreaseAngle(0.5f)
                                                                   .setCoord(new Coordinate().setUSE("points")))
                                                                 .setAppearance(new Appearance()
                                                                   .setMaterial(new Material().setUSE("REC_SPINAL_COLOR"))))))
-                                                          .addChild(new HAnimJoint().setName("vc1").setDEF("hanim_vc1").setCenter(new float[] {0.0066f,1.6144f,-0.0034f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                                                          .addChild(new HAnimJoint().setName("vc1").setDEF("hanim_vc1").setCenter(new float[] {0.0066f,1.6144f,-0.0034f}).setUlimit(new MFFloat222().getArray()).setLlimit(new MFFloat223().getArray())
                                                             .addChild(new HAnimSegment().setName("c1").setDEF("hanim_c1")
                                                               .addChild(new Transform().setTranslation(new float[] {0.0066f,1.6144f,-0.0034f})
                                                                 .addChild(new Shape()
-                                                                  .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32126().getArray()).setCreaseAngle(0.5f)
+                                                                  .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32224().getArray()).setCreaseAngle(0.5f)
                                                                     .setCoord(new Coordinate().setUSE("points")))
                                                                   .setAppearance(new Appearance()
                                                                     .setMaterial(new Material().setUSE("SPINAL_COLOR"))))))
-                                                            .addChild(new HAnimJoint().setName("skullbase").setDEF("hanim_skullbase").setCenter(new float[] {0.0044f,1.6209f,0.0236f}).setUlimit(new float[] {0f,0f,0f}).setLlimit(new float[] {0f,0f,0f})
+                                                            .addChild(new HAnimJoint().setName("skullbase").setDEF("hanim_skullbase").setCenter(new float[] {0.0044f,1.6209f,0.0236f}).setUlimit(new MFFloat225().getArray()).setLlimit(new MFFloat226().getArray())
                                                               .addChild(new HAnimSegment().setName("skull").setDEF("hanim_skull")
                                                                 .addChild(new Transform().setTranslation(new float[] {0.0044f,1.6209f,0.0236f})
                                                                   .addChild(new Shape()
-                                                                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32127().getArray()).setCreaseAngle(0.5f)
+                                                                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32227().getArray()).setCreaseAngle(0.5f)
                                                                       .setCoord(new Coordinate().setUSE("points")))
                                                                     .setAppearance(new Appearance()
                                                                       .setMaterial(new Material().setUSE("MIN_COLOR")))))
                                                                 .addChild(new HAnimSite().setName("skull_tip").setDEF("hanim_skull_tip").setTranslation(new float[] {0.005f,1.7504f,0.0055f})
                                                                   .addChild(new Shape()
-                                                                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32128().getArray()).setCreaseAngle(0.5f)
+                                                                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32228().getArray()).setCreaseAngle(0.5f)
                                                                       .setCoord(new Coordinate().setUSE("points")))
                                                                     .setAppearance(new Appearance()
                                                                       .setMaterial(new Material().setUSE("SITE_COLOR")))))
                                                                 .addChild(new HAnimSite().setName("sellion_pt").setDEF("hanim_sellion_pt").setTranslation(new float[] {0.0058f,1.6316f,0.0852f})
                                                                   .addChild(new Shape()
-                                                                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32129().getArray()).setCreaseAngle(0.5f)
+                                                                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32229().getArray()).setCreaseAngle(0.5f)
                                                                       .setCoord(new Coordinate().setUSE("points")))
                                                                     .setAppearance(new Appearance()
                                                                       .setMaterial(new Material().setUSE("SITE_COLOR")))))
                                                                 .addChild(new HAnimSite().setName("r_infraorbitale_pt").setDEF("hanim_r_infraorbitale_pt").setTranslation(new float[] {-0.0237f,1.6171f,0.0752f})
                                                                   .addChild(new Shape()
-                                                                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32130().getArray()).setCreaseAngle(0.5f)
+                                                                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32230().getArray()).setCreaseAngle(0.5f)
                                                                       .setCoord(new Coordinate().setUSE("points")))
                                                                     .setAppearance(new Appearance()
                                                                       .setMaterial(new Material().setUSE("SITE_COLOR")))))
                                                                 .addChild(new HAnimSite().setName("l_infraorbitale_pt").setDEF("hanim_l_infraorbitale_pt").setTranslation(new float[] {0.0341f,1.6171f,0.0752f})
                                                                   .addChild(new Shape()
-                                                                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32131().getArray()).setCreaseAngle(0.5f)
+                                                                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32231().getArray()).setCreaseAngle(0.5f)
                                                                       .setCoord(new Coordinate().setUSE("points")))
                                                                     .setAppearance(new Appearance()
                                                                       .setMaterial(new Material().setUSE("SITE_COLOR")))))
                                                                 .addChild(new HAnimSite().setName("supramenton_pt").setDEF("hanim_supramenton_pt").setTranslation(new float[] {0.0061f,1.541f,0.0805f})
                                                                   .addChild(new Shape()
-                                                                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32132().getArray()).setCreaseAngle(0.5f)
+                                                                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32232().getArray()).setCreaseAngle(0.5f)
                                                                       .setCoord(new Coordinate().setUSE("points")))
                                                                     .setAppearance(new Appearance()
                                                                       .setMaterial(new Material().setUSE("SITE_COLOR")))))
                                                                 .addChild(new HAnimSite().setName("r_tragion_pt").setDEF("hanim_r_tragion_pt").setTranslation(new float[] {-0.0646f,1.6347f,0.0302f})
                                                                   .addChild(new Shape()
-                                                                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32133().getArray()).setCreaseAngle(0.5f)
+                                                                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32233().getArray()).setCreaseAngle(0.5f)
                                                                       .setCoord(new Coordinate().setUSE("points")))
                                                                     .setAppearance(new Appearance()
                                                                       .setMaterial(new Material().setUSE("SITE_COLOR")))))
                                                                 .addChild(new HAnimSite().setName("r_gonion_pt").setDEF("hanim_r_gonion_pt").setTranslation(new float[] {-0.052f,1.5529f,0.0347f})
                                                                   .addChild(new Shape()
-                                                                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32134().getArray()).setCreaseAngle(0.5f)
+                                                                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32234().getArray()).setCreaseAngle(0.5f)
                                                                       .setCoord(new Coordinate().setUSE("points")))
                                                                     .setAppearance(new Appearance()
                                                                       .setMaterial(new Material().setUSE("SITE_COLOR")))))
                                                                 .addChild(new HAnimSite().setName("l_tragion_pt").setDEF("hanim_l_tragion_pt").setTranslation(new float[] {0.0739f,1.6348f,0.0282f})
                                                                   .addChild(new Shape()
-                                                                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32135().getArray()).setCreaseAngle(0.5f)
+                                                                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32235().getArray()).setCreaseAngle(0.5f)
                                                                       .setCoord(new Coordinate().setUSE("points")))
                                                                     .setAppearance(new Appearance()
                                                                       .setMaterial(new Material().setUSE("SITE_COLOR")))))
                                                                 .addChild(new HAnimSite().setName("l_gonion_pt").setDEF("hanim_l_gonion_pt").setTranslation(new float[] {0.0631f,1.553f,0.033f})
                                                                   .addChild(new Shape()
-                                                                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32136().getArray()).setCreaseAngle(0.5f)
+                                                                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32236().getArray()).setCreaseAngle(0.5f)
                                                                       .setCoord(new Coordinate().setUSE("points")))
                                                                     .setAppearance(new Appearance()
                                                                       .setMaterial(new Material().setUSE("SITE_COLOR")))))
                                                                 .addChild(new HAnimSite().setName("nuchale_pt").setDEF("hanim_nuchale_pt").setTranslation(new float[] {0.0039f,1.5972f,-0.0796f})
                                                                   .addChild(new Shape()
-                                                                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32137().getArray()).setCreaseAngle(0.5f)
+                                                                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32237().getArray()).setCreaseAngle(0.5f)
                                                                       .setCoord(new Coordinate().setUSE("points")))
                                                                     .setAppearance(new Appearance()
                                                                       .setMaterial(new Material().setUSE("SITE_COLOR"))))))))))))))))))))))))))))))))
@@ -1222,44 +1222,44 @@ protected class MFString20 {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Noncommercial usage is ok if 3Name3D name and logo <www.ballreich.net/vrml/HAnim/small_logo.gif> is present and proper credit is given."});
   }
 }
-protected class MFInt3221 {
+protected class MFFloat21 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFFloat22 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFInt3223 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
   }
 }
-protected class MFVec3f22 {
+protected class MFVec3f24 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
     return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0.01f,0f,-0.01f,0f,0f,0f,0f,0.01f,0.01f,0f,0f,0f,0f,-0.01f,0f,-0.01f,0f});
   }
 }
-protected class MFString23 {
+protected class MFString25 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"Humanoid Root"});
   }
 }
-protected class MFString24 {
+protected class MFString26 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
     return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"SANS"});
   }
 }
-protected class MFInt3225 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat27 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
-protected class MFInt3226 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
-  }
-}
-protected class MFInt3227 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
-  }
-}
-protected class MFInt3228 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat28 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
 protected class MFInt3229 {
@@ -1312,14 +1312,14 @@ protected class MFInt3238 {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
   }
 }
-protected class MFInt3239 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat39 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
-protected class MFInt3240 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat40 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
 protected class MFInt3241 {
@@ -1342,14 +1342,14 @@ protected class MFInt3244 {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
   }
 }
-protected class MFInt3245 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat45 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
-protected class MFInt3246 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat46 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
 protected class MFInt3247 {
@@ -1357,14 +1357,14 @@ protected class MFInt3247 {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
   }
 }
-protected class MFInt3248 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat48 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
-protected class MFInt3249 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat49 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
 protected class MFInt3250 {
@@ -1392,14 +1392,14 @@ protected class MFInt3254 {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
   }
 }
-protected class MFInt3255 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat55 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
-protected class MFInt3256 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat56 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
 protected class MFInt3257 {
@@ -1407,14 +1407,14 @@ protected class MFInt3257 {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
   }
 }
-protected class MFInt3258 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat58 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
-protected class MFInt3259 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat59 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
 protected class MFInt3260 {
@@ -1432,14 +1432,14 @@ protected class MFInt3262 {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
   }
 }
-protected class MFInt3263 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat63 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
-protected class MFInt3264 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat64 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
 protected class MFInt3265 {
@@ -1462,14 +1462,14 @@ protected class MFInt3268 {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
   }
 }
-protected class MFInt3269 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat69 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
-protected class MFInt3270 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat70 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
 protected class MFInt3271 {
@@ -1492,14 +1492,14 @@ protected class MFInt3274 {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
   }
 }
-protected class MFInt3275 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat75 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
-protected class MFInt3276 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat76 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
 protected class MFInt3277 {
@@ -1507,14 +1507,14 @@ protected class MFInt3277 {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
   }
 }
-protected class MFInt3278 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat78 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
-protected class MFInt3279 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat79 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
 protected class MFInt3280 {
@@ -1542,14 +1542,14 @@ protected class MFInt3284 {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
   }
 }
-protected class MFInt3285 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat85 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
-protected class MFInt3286 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat86 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
 protected class MFInt3287 {
@@ -1577,14 +1577,14 @@ protected class MFInt3291 {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
   }
 }
-protected class MFInt3292 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat92 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
-protected class MFInt3293 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat93 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
 protected class MFInt3294 {
@@ -1592,14 +1592,14 @@ protected class MFInt3294 {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
   }
 }
-protected class MFInt3295 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat95 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
-protected class MFInt3296 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat96 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
 protected class MFInt3297 {
@@ -1607,14 +1607,14 @@ protected class MFInt3297 {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
   }
 }
-protected class MFInt3298 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat98 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
-protected class MFInt3299 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat99 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
 protected class MFInt32100 {
@@ -1622,14 +1622,14 @@ protected class MFInt32100 {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
   }
 }
-protected class MFInt32101 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat101 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
-protected class MFInt32102 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat102 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
 protected class MFInt32103 {
@@ -1637,14 +1637,14 @@ protected class MFInt32103 {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
   }
 }
-protected class MFInt32104 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat104 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
-protected class MFInt32105 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat105 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
 protected class MFInt32106 {
@@ -1652,14 +1652,14 @@ protected class MFInt32106 {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
   }
 }
-protected class MFInt32107 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat107 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
-protected class MFInt32108 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat108 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
 protected class MFInt32109 {
@@ -1667,14 +1667,14 @@ protected class MFInt32109 {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
   }
 }
-protected class MFInt32110 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat110 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
-protected class MFInt32111 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat111 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
 protected class MFInt32112 {
@@ -1682,14 +1682,14 @@ protected class MFInt32112 {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
   }
 }
-protected class MFInt32113 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat113 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
-protected class MFInt32114 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat114 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
 protected class MFInt32115 {
@@ -1697,14 +1697,14 @@ protected class MFInt32115 {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
   }
 }
-protected class MFInt32116 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat116 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
-protected class MFInt32117 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat117 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
 protected class MFInt32118 {
@@ -1712,14 +1712,14 @@ protected class MFInt32118 {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
   }
 }
-protected class MFInt32119 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat119 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
-protected class MFInt32120 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat120 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
 protected class MFInt32121 {
@@ -1727,14 +1727,14 @@ protected class MFInt32121 {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
   }
 }
-protected class MFInt32122 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat122 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
-protected class MFInt32123 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat123 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
 protected class MFInt32124 {
@@ -1742,14 +1742,14 @@ protected class MFInt32124 {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
   }
 }
-protected class MFInt32125 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat125 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
-protected class MFInt32126 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat126 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
 protected class MFInt32127 {
@@ -1757,14 +1757,14 @@ protected class MFInt32127 {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
   }
 }
-protected class MFInt32128 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat128 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
-protected class MFInt32129 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat129 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
 protected class MFInt32130 {
@@ -1772,14 +1772,14 @@ protected class MFInt32130 {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
   }
 }
-protected class MFInt32131 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat131 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
-protected class MFInt32132 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat132 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
 protected class MFInt32133 {
@@ -1787,14 +1787,14 @@ protected class MFInt32133 {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
   }
 }
-protected class MFInt32134 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat134 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
-protected class MFInt32135 {
-  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
-    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+protected class MFFloat135 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
   }
 }
 protected class MFInt32136 {
@@ -1802,7 +1802,507 @@ protected class MFInt32136 {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
   }
 }
-protected class MFInt32137 {
+protected class MFFloat137 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFFloat138 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFInt32139 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFFloat140 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFFloat141 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFInt32142 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFFloat143 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFFloat144 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFInt32145 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFInt32146 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFFloat147 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFFloat148 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFInt32149 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFInt32150 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFInt32151 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFInt32152 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFInt32153 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFFloat154 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFFloat155 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFInt32156 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFInt32157 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFInt32158 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFInt32159 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFInt32160 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFInt32161 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFFloat162 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFFloat163 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFInt32164 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFFloat165 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFFloat166 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFInt32167 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFFloat168 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFFloat169 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFInt32170 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFInt32171 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFFloat172 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFFloat173 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFInt32174 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFFloat175 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFFloat176 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFInt32177 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFFloat178 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFFloat179 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFInt32180 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFFloat181 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFFloat182 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFInt32183 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFInt32184 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFFloat185 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFFloat186 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFInt32187 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFInt32188 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFFloat189 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFFloat190 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFInt32191 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFInt32192 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFInt32193 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFInt32194 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFInt32195 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFFloat196 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFFloat197 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFInt32198 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFInt32199 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFInt32200 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFInt32201 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFInt32202 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFInt32203 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFFloat204 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFFloat205 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFInt32206 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFFloat207 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFFloat208 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFInt32209 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFFloat210 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFFloat211 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFInt32212 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFFloat213 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFFloat214 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFInt32215 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFFloat216 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFFloat217 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFInt32218 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFFloat219 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFFloat220 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFInt32221 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFFloat222 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFFloat223 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFInt32224 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFFloat225 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFFloat226 {
+  protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+  }
+}
+protected class MFInt32227 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFInt32228 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFInt32229 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFInt32230 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFInt32231 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFInt32232 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFInt32233 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFInt32234 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFInt32235 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFInt32236 {
+  protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
+    return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
+  }
+}
+protected class MFInt32237 {
   protected org.web3d.x3d.jsail.fields.MFInt32 getArray() {
     return new org.web3d.x3d.jsail.fields.MFInt32(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1});
   }

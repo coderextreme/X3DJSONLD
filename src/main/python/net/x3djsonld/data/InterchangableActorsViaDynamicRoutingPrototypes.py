@@ -1026,95 +1026,95 @@ newModel=X3D(profile='Immersive',version='3.3',
           ProtoInstance(USE='Nancy_hanim_skull')])]),
       HAnimHumanoid(DEF='Boxman_Humanoid',name='Humanoid',version='1.0',
         skeleton=[
-        HAnimJoint(DEF='Boxman_humanoid_root',center=(0,.9723,-.0728),name='humanoid_root',skinCoordIndex=[0,1,2,3,4,5,6,7,8,9,10,11],skinCoordWeight=[1,1,1,1,1,1,1,1,1,1,1,1],
+        HAnimJoint(DEF='Boxman_humanoid_root',center=(0,.9723,-.0728),name='humanoid_root',skinCoordIndex=[0,1,2,3,4,5,6,7,8,9,10,11],skinCoordWeight=[1,1,1,1,1,1,1,1,1,1,1,1],ulimit=[0,0,0],llimit=[0,0,0],
           children=[
           HAnimSegment(DEF='Boxman_sacrum',name='sacrum',
             children=[
             Inline(url=["centres/sacrum.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/sacrum.wrl"])]),
-          HAnimJoint(DEF='Boxman_l_hip',center=(.0956,.9364,0),name='l_hip',skinCoordIndex=[12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43],skinCoordWeight=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5],
+          HAnimJoint(DEF='Boxman_l_hip',center=(.0956,.9364,0),name='l_hip',skinCoordIndex=[12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43],skinCoordWeight=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5],ulimit=[0,0,0],llimit=[0,0,0],
             children=[
             HAnimSegment(DEF='Boxman_l_thigh',name='l_thigh',
               children=[
               Inline(url=["centres/l_thigh.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/l_thigh.wrl"])]),
-            HAnimJoint(DEF='Boxman_l_knee',center=(.0956,.5095,-.0036),name='l_knee',skinCoordIndex=[36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63],skinCoordWeight=[0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+            HAnimJoint(DEF='Boxman_l_knee',center=(.0956,.5095,-.0036),name='l_knee',skinCoordIndex=[36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63],skinCoordWeight=[0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],ulimit=[0,0,0],llimit=[0,0,0],
               children=[
               HAnimSegment(DEF='Boxman_l_calf',name='l_calf',
                 children=[
                 Inline(url=["centres/l_calf.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/l_calf.wrl"])]),
-              HAnimJoint(DEF='Boxman_l_ankle',center=(.0946,.0762,-.0261),name='l_ankle',skinCoordIndex=[64,65,66,67,68,69,70,71],skinCoordWeight=[1,1,1,1,1,1,1,1],
+              HAnimJoint(DEF='Boxman_l_ankle',center=(.0946,.0762,-.0261),name='l_ankle',skinCoordIndex=[64,65,66,67,68,69,70,71],skinCoordWeight=[1,1,1,1,1,1,1,1],ulimit=[0,0,0],llimit=[0,0,0],
                 children=[
                 HAnimSegment(DEF='Boxman_l_hindfoot',name='l_hindfoot',
                   children=[
                   Inline(url=["centres/l_hindfoot.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/l_hindfoot.wrl"])]),
-                HAnimJoint(DEF='Boxman_l_midtarsal',center=(.1079,.0317,.067),name='l_midtarsal',skinCoordIndex=[72,73,74,75,76,77,78,79],skinCoordWeight=[1,1,1,1,1,1,1,1],
+                HAnimJoint(DEF='Boxman_l_midtarsal',center=(.1079,.0317,.067),name='l_midtarsal',skinCoordIndex=[72,73,74,75,76,77,78,79],skinCoordWeight=[1,1,1,1,1,1,1,1],ulimit=[0,0,0],llimit=[0,0,0],
                   children=[
                   HAnimSegment(DEF='Boxman_l_middistal',name='l_middistal',
                     children=[
                     Inline(url=["centres/l_middistal.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/l_middistal.wrl"]),
                     HAnimSite(DEF='Boxman_l_middistal_tip',name='l_middistal_tip',translation=(.095,.0005,.1924)),
                     Inline(url=["centres/l_middistal_tip.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/l_middistal_tip.wrl"])])])])])]),
-          HAnimJoint(DEF='Boxman_r_hip',center=(-.0956,.9364,0),name='r_hip',skinCoordIndex=[80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111],skinCoordWeight=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5],
+          HAnimJoint(DEF='Boxman_r_hip',center=(-.0956,.9364,0),name='r_hip',skinCoordIndex=[80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111],skinCoordWeight=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5],ulimit=[0,0,0],llimit=[0,0,0],
             children=[
             HAnimSegment(DEF='Boxman_r_thigh',name='r_thigh',
               children=[
               Inline(url=["centres/r_thigh.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/r_thigh.wrl"])]),
-            HAnimJoint(DEF='Boxman_r_knee',center=(-.0956,.5095,-.0036),name='r_knee',skinCoordIndex=[104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131],skinCoordWeight=[0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+            HAnimJoint(DEF='Boxman_r_knee',center=(-.0956,.5095,-.0036),name='r_knee',skinCoordIndex=[104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131],skinCoordWeight=[0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],ulimit=[0,0,0],llimit=[0,0,0],
               children=[
               HAnimSegment(DEF='Boxman_r_calf',name='r_calf',
                 children=[
                 Inline(url=["centres/r_calf.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/r_calf.wrl"])]),
-              HAnimJoint(DEF='Boxman_r_ankle',center=(-.0946,.0762,-.0261),name='r_ankle',skinCoordIndex=[132,133,134,135,136,137,138,139],skinCoordWeight=[1,1,1,1,1,1,1,1],
+              HAnimJoint(DEF='Boxman_r_ankle',center=(-.0946,.0762,-.0261),name='r_ankle',skinCoordIndex=[132,133,134,135,136,137,138,139],skinCoordWeight=[1,1,1,1,1,1,1,1],ulimit=[0,0,0],llimit=[0,0,0],
                 children=[
                 HAnimSegment(DEF='Boxman_r_hindfoot',name='r_hindfoot',
                   children=[
                   Inline(url=["centres/r_hindfoot.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/r_hindfoot.wrl"])]),
-                HAnimJoint(DEF='Boxman_r_midtarsal',center=(-.1079,.0317,.067),name='r_midtarsal',skinCoordIndex=[140,141,142,143,144,145,146,147],skinCoordWeight=[1,1,1,1,1,1,1,1],
+                HAnimJoint(DEF='Boxman_r_midtarsal',center=(-.1079,.0317,.067),name='r_midtarsal',skinCoordIndex=[140,141,142,143,144,145,146,147],skinCoordWeight=[1,1,1,1,1,1,1,1],ulimit=[0,0,0],llimit=[0,0,0],
                   children=[
                   HAnimSegment(DEF='Boxman_r_middistal',name='r_middistal',
                     children=[
                     Inline(url=["centres/r_middistal.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/r_middistal.wrl"]),
                     HAnimSite(DEF='Boxman_r_middistal_tip',name='r_middistal_tip',translation=(-.095,.0005,.1924)),
                     Inline(url=["centres/r_middistal_tip.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/r_middistal_tip.wrl"])])])])])]),
-          HAnimJoint(DEF='Boxman_vl5',center=(0,1.0817,-.0728),name='vl5',skinCoordIndex=[148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167],skinCoordWeight=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+          HAnimJoint(DEF='Boxman_vl5',center=(0,1.0817,-.0728),name='vl5',skinCoordIndex=[148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167],skinCoordWeight=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],ulimit=[0,0,0],llimit=[0,0,0],
             children=[
             HAnimSegment(DEF='Boxman_l5',name='l5',
               children=[
               Inline(url=["centres/l5.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/l5.wrl"])]),
-            HAnimJoint(DEF='Boxman_skullbase',center=(0,1.644,.036),name='skullbase',skinCoordIndex=[168,169,170,171,172,173,174,175],skinCoordWeight=[1,1,1,1,1,1,1,1],
+            HAnimJoint(DEF='Boxman_skullbase',center=(0,1.644,.036),name='skullbase',skinCoordIndex=[168,169,170,171,172,173,174,175],skinCoordWeight=[1,1,1,1,1,1,1,1],ulimit=[0,0,0],llimit=[0,0,0],
               children=[
               HAnimSegment(DEF='Boxman_skull',name='skull',
                 children=[
                 Inline(url=["centres/skull.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/skull.wrl"]),
                 HAnimSite(DEF='Boxman_skull_tip',name='skull_tip',translation=(-.0029,1.7771,.0274)),
                 Inline(url=["centres/skull_tip.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/skull_tip.wrl"])])]),
-            HAnimJoint(DEF='Boxman_l_shoulder',center=(.1968,1.4642,-.0265),name='l_shoulder',skinCoordIndex=[176,177,178,179,180,181,182,183],skinCoordWeight=[1,1,1,1,1,1,1,1],
+            HAnimJoint(DEF='Boxman_l_shoulder',center=(.1968,1.4642,-.0265),name='l_shoulder',skinCoordIndex=[176,177,178,179,180,181,182,183],skinCoordWeight=[1,1,1,1,1,1,1,1],ulimit=[0,0,0],llimit=[0,0,0],
               children=[
               HAnimSegment(DEF='Boxman_l_upperarm',name='l_upperarm',
                 children=[
                 Inline(url=["centres/l_upperarm.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/l_upperarm.wrl"])]),
-              HAnimJoint(DEF='Boxman_l_elbow',center=(.1982,1.1622,-.0557),name='l_elbow',skinCoordIndex=[184,185,186,187,188,189,190,191],skinCoordWeight=[1,1,1,1,1,1,1,1],
+              HAnimJoint(DEF='Boxman_l_elbow',center=(.1982,1.1622,-.0557),name='l_elbow',skinCoordIndex=[184,185,186,187,188,189,190,191],skinCoordWeight=[1,1,1,1,1,1,1,1],ulimit=[0,0,0],llimit=[0,0,0],
                 children=[
                 HAnimSegment(DEF='Boxman_l_forearm',name='l_forearm',
                   children=[
                   Inline(url=["centres/l_forearm.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/l_forearm.wrl"])]),
-                HAnimJoint(DEF='Boxman_l_wrist',center=(.1972,.8929,-.069),name='l_wrist',skinCoordIndex=[192,193,194,195,196,197,198,199],skinCoordWeight=[1,1,1,1,1,1,1,1],
+                HAnimJoint(DEF='Boxman_l_wrist',center=(.1972,.8929,-.069),name='l_wrist',skinCoordIndex=[192,193,194,195,196,197,198,199],skinCoordWeight=[1,1,1,1,1,1,1,1],ulimit=[0,0,0],llimit=[0,0,0],
                   children=[
                   HAnimSegment(DEF='Boxman_l_hand',name='l_hand',
                     children=[
                     Inline(url=["centres/l_hand.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/l_hand.wrl"]),
                     HAnimSite(DEF='Boxman_l_hand_tip',name='l_hand_tip',translation=(.1912,.6976,-.071)),
                     Inline(url=["centres/l_hand_tip.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/l_hand_tip.wrl"])])])])]),
-            HAnimJoint(DEF='Boxman_r_shoulder',center=(-.1968,1.4642,-.0265),name='r_shoulder',skinCoordIndex=[200,201,202,203,204,205,206,207],skinCoordWeight=[1,1,1,1,1,1,1,1],
+            HAnimJoint(DEF='Boxman_r_shoulder',center=(-.1968,1.4642,-.0265),name='r_shoulder',skinCoordIndex=[200,201,202,203,204,205,206,207],skinCoordWeight=[1,1,1,1,1,1,1,1],ulimit=[0,0,0],llimit=[0,0,0],
               children=[
               HAnimSegment(DEF='Boxman_r_upperarm',name='r_upperarm',
                 children=[
                 Inline(url=["centres/r_upperarm.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/r_upperarm.wrl"])]),
-              HAnimJoint(DEF='Boxman_r_elbow',center=(-.1982,1.1622,-.0557),name='r_elbow',skinCoordIndex=[208,209,210,211,212,213,214,215],skinCoordWeight=[1,1,1,1,1,1,1,1],
+              HAnimJoint(DEF='Boxman_r_elbow',center=(-.1982,1.1622,-.0557),name='r_elbow',skinCoordIndex=[208,209,210,211,212,213,214,215],skinCoordWeight=[1,1,1,1,1,1,1,1],ulimit=[0,0,0],llimit=[0,0,0],
                 children=[
                 HAnimSegment(DEF='Boxman_r_forearm',name='r_forearm',
                   children=[
                   Inline(url=["centres/r_forearm.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/CharactersLegacy/centres/r_forearm.wrl"])]),
-                HAnimJoint(DEF='Boxman_r_wrist',center=(-.1972,.8929,-.069),name='r_wrist',skinCoordIndex=[216,217,218,219,220,221,222,223],skinCoordWeight=[1,1,1,1,1,1,1,1],
+                HAnimJoint(DEF='Boxman_r_wrist',center=(-.1972,.8929,-.069),name='r_wrist',skinCoordIndex=[216,217,218,219,220,221,222,223],skinCoordWeight=[1,1,1,1,1,1,1,1],ulimit=[0,0,0],llimit=[0,0,0],
                   children=[
                   HAnimSegment(DEF='Boxman_r_hand',name='r_hand',
                     children=[
@@ -1163,23 +1163,23 @@ newModel=X3D(profile='Immersive',version='3.3',
             geometry=IndexedLineSet(coordIndex=[0,7,1,-1,8,0,1,-1,1,9,8,-1,10,2,3,-1,3,11,10,-1,2,4,5,-1,5,3,2,-1,4,6,5,-1,7,12,1,-1,1,12,13,-1,13,9,1,-1,9,13,14,-1,14,10,9,-1,10,14,15,-1,15,2,10,-1,12,7,6,-1,6,15,12,-1,15,6,4,-1,4,2,15,-1,0,80,7,-1,81,80,0,-1,0,8,81,-1,82,81,8,-1,8,11,82,-1,83,82,11,-1,11,3,83,-1,6,7,80,-1,80,83,6,-1,5,6,83,-1,83,3,5,-1,12,16,17,-1,17,13,12,-1,13,17,18,-1,18,14,13,-1,14,18,19,-1,19,15,14,-1,15,19,16,-1,16,12,15,-1,16,20,21,-1,21,17,16,-1,17,21,22,-1,22,18,17,-1,18,22,23,-1,23,19,18,-1,19,23,20,-1,20,16,19,-1,20,24,25,-1,25,21,20,-1,21,25,26,-1,26,22,21,-1,22,26,27,-1,27,23,22,-1,23,27,24,-1,24,20,23,-1,24,28,29,-1,29,25,24,-1,25,29,30,-1,30,26,25,-1,26,30,31,-1,31,27,26,-1,27,31,28,-1,28,24,27,-1,28,32,33,-1,33,29,28,-1,29,33,34,-1,34,30,29,-1,30,34,35,-1,35,31,30,-1,31,35,32,-1,32,28,31,-1,32,36,37,-1,37,33,32,-1,33,37,38,-1,38,34,33,-1,34,38,39,-1,39,35,34,-1,35,39,36,-1,36,32,35,-1,36,40,41,-1,41,37,36,-1,37,41,42,-1,42,38,37,-1,38,42,43,-1,43,39,38,-1,39,43,40,-1,40,36,39,-1,40,44,45,-1,45,41,40,-1,41,45,46,-1,46,42,41,-1,42,46,47,-1,47,43,42,-1,43,47,44,-1,44,40,43,-1,44,48,49,-1,49,45,44,-1,45,49,50,-1,50,46,45,-1,46,50,51,-1,51,47,46,-1,47,51,48,-1,48,44,47,-1,48,52,53,-1,53,49,48,-1,49,53,54,-1,54,50,49,-1,50,54,55,-1,55,51,50,-1,51,55,52,-1,52,48,51,-1,52,56,57,-1,57,53,52,-1,53,57,58,-1,58,54,53,-1,54,58,59,-1,59,55,54,-1,55,59,56,-1,56,52,55,-1,56,60,61,-1,61,57,56,-1,57,61,62,-1,62,58,57,-1,58,62,63,-1,63,59,58,-1,59,63,60,-1,60,56,59,-1,81,85,84,-1,84,80,81,-1,82,86,85,-1,85,81,82,-1,83,87,86,-1,86,82,83,-1,80,84,87,-1,87,83,80,-1,85,89,88,-1,88,84,85,-1,86,90,89,-1,89,85,86,-1,87,91,90,-1,90,86,87,-1,84,88,91,-1,91,87,84,-1,89,93,92,-1,92,88,89,-1,90,94,93,-1,93,89,90,-1,91,95,94,-1,94,90,91,-1,88,92,95,-1,95,91,88,-1,93,97,96,-1,96,92,93,-1,94,98,97,-1,97,93,94,-1,95,99,98,-1,98,94,95,-1,92,96,99,-1,99,95,92,-1,97,101,100,-1,100,96,97,-1,98,102,101,-1,101,97,98,-1,99,103,102,-1,102,98,99,-1,96,100,103,-1,103,99,96,-1,101,105,104,-1,104,100,101,-1,102,106,105,-1,105,101,102,-1,103,107,106,-1,106,102,103,-1,100,104,107,-1,107,103,100,-1,105,109,108,-1,108,104,105,-1,106,110,109,-1,109,105,106,-1,107,111,110,-1,110,106,107,-1,104,108,111,-1,111,107,104,-1,109,113,112,-1,112,108,109,-1,110,114,113,-1,113,109,110,-1,111,115,114,-1,114,110,111,-1,108,112,115,-1,115,111,108,-1,113,117,116,-1,116,112,113,-1,114,118,117,-1,117,113,114,-1,115,119,118,-1,118,114,115,-1,112,116,119,-1,119,115,112,-1,117,121,120,-1,120,116,117,-1,118,122,121,-1,121,117,118,-1,119,123,122,-1,122,118,119,-1,116,120,123,-1,123,119,116,-1,121,125,124,-1,124,120,121,-1,122,126,125,-1,125,121,122,-1,123,127,126,-1,126,122,123,-1,120,124,127,-1,127,123,120,-1,125,129,128,-1,128,124,125,-1,126,130,129,-1,129,125,126,-1,127,131,130,-1,130,126,127,-1,124,128,131,-1,131,127,124,-1,60,64,65,-1,65,61,60,-1,61,65,66,-1,66,62,61,-1,62,66,67,-1,67,63,62,-1,63,67,64,-1,64,60,63,-1,64,68,69,-1,69,65,64,-1,65,69,70,-1,70,66,65,-1,66,70,71,-1,71,67,66,-1,67,71,68,-1,68,64,67,-1,68,72,73,-1,73,69,68,-1,69,73,74,-1,74,70,69,-1,70,74,75,-1,75,71,70,-1,71,75,72,-1,72,68,71,-1,72,76,77,-1,77,73,72,-1,73,77,78,-1,78,74,73,-1,74,78,79,-1,79,75,74,-1,75,79,76,-1,76,72,75,-1,76,79,78,-1,78,77,76,-1,129,133,132,-1,132,128,129,-1,130,134,133,-1,133,129,130,-1,131,135,134,-1,134,130,131,-1,128,132,135,-1,135,131,128,-1,133,137,136,-1,136,132,133,-1,134,138,137,-1,137,133,134,-1,135,139,138,-1,138,134,135,-1,132,136,139,-1,139,135,132,-1,137,141,140,-1,140,136,137,-1,138,142,141,-1,141,137,138,-1,139,143,142,-1,142,138,139,-1,136,140,143,-1,143,139,136,-1,141,145,144,-1,144,140,141,-1,142,146,145,-1,145,141,142,-1,143,147,146,-1,146,142,143,-1,140,144,147,-1,147,143,140,-1,145,146,147,-1,147,144,145,-1,148,8,9,-1,9,149,148,-1,149,9,10,-1,10,150,149,-1,150,10,11,-1,11,151,150,-1,151,11,8,-1,8,148,151,-1,152,148,149,-1,149,153,152,-1,153,149,150,-1,150,154,153,-1,154,150,151,-1,151,155,154,-1,155,151,148,-1,148,152,155,-1,156,152,153,-1,153,157,156,-1,158,154,155,-1,155,159,158,-1,160,156,157,-1,157,161,160,-1,161,157,158,-1,158,162,161,-1,162,158,159,-1,159,163,162,-1,163,159,156,-1,156,160,163,-1,164,160,161,-1,161,165,164,-1,165,161,162,-1,162,166,165,-1,166,162,163,-1,163,167,166,-1,167,163,160,-1,160,164,167,-1,153,176,177,-1,177,157,153,-1,157,177,178,-1,178,158,157,-1,158,178,179,-1,179,154,158,-1,154,179,176,-1,176,153,154,-1,176,180,181,-1,181,177,176,-1,177,181,182,-1,182,178,177,-1,178,182,183,-1,183,179,178,-1,179,183,180,-1,180,176,179,-1,180,184,185,-1,185,181,180,-1,181,185,186,-1,186,182,181,-1,182,186,187,-1,187,183,182,-1,183,187,184,-1,184,180,183,-1,184,188,189,-1,189,185,184,-1,185,189,190,-1,190,186,185,-1,186,190,191,-1,191,187,186,-1,187,191,188,-1,188,184,187,-1,152,156,201,-1,201,200,152,-1,156,159,202,-1,202,201,156,-1,159,155,203,-1,203,202,159,-1,155,152,200,-1,200,203,155,-1,201,205,204,-1,204,200,201,-1,202,206,205,-1,205,201,202,-1,203,207,206,-1,206,202,203,-1,200,204,207,-1,207,203,200,-1,205,209,208,-1,208,204,205,-1,206,210,209,-1,209,205,206,-1,207,211,210,-1,210,206,207,-1,204,208,211,-1,211,207,204,-1,209,213,212,-1,212,208,209,-1,210,214,213,-1,213,209,210,-1,211,215,214,-1,214,210,211,-1,208,212,215,-1,215,211,208,-1,172,164,165,-1,165,173,172,-1,173,165,166,-1,166,174,173,-1,174,166,167,-1,167,175,174,-1,175,167,164,-1,164,172,175,-1,168,172,173,-1,173,169,168,-1,169,173,174,-1,174,170,169,-1,170,174,175,-1,175,171,170,-1,171,175,172,-1,172,168,171,-1,171,168,169,-1,169,170,171,-1,188,192,193,-1,193,189,188,-1,189,193,194,-1,194,190,189,-1,190,194,195,-1,195,191,190,-1,191,195,192,-1,192,188,191,-1,192,196,197,-1,197,193,192,-1,193,197,198,-1,198,194,193,-1,194,198,199,-1,199,195,194,-1,195,199,196,-1,196,192,195,-1,196,199,198,-1,198,197,196,-1,213,217,216,-1,216,212,213,-1,214,218,217,-1,217,213,214,-1,215,219,218,-1,218,214,215,-1,212,216,219,-1,219,215,212,-1,217,221,220,-1,220,216,217,-1,218,222,221,-1,221,217,218,-1,219,223,222,-1,222,218,219,-1,216,220,223,-1,223,219,216,-1,221,222,223,-1,223,220,221,-1],
               coord=Coordinate(USE='SKINCOORD')))]),],
         joints=[
-        HAnimJoint(USE='Boxman_humanoid_root'),
-        HAnimJoint(USE='Boxman_skullbase'),
-        HAnimJoint(USE='Boxman_vl5'),
-        HAnimJoint(USE='Boxman_r_ankle'),
-        HAnimJoint(USE='Boxman_l_ankle'),
-        HAnimJoint(USE='Boxman_r_elbow'),
-        HAnimJoint(USE='Boxman_l_elbow'),
-        HAnimJoint(USE='Boxman_r_hip'),
-        HAnimJoint(USE='Boxman_l_hip'),
-        HAnimJoint(USE='Boxman_l_knee'),
-        HAnimJoint(USE='Boxman_r_knee'),
-        HAnimJoint(USE='Boxman_r_midtarsal'),
-        HAnimJoint(USE='Boxman_l_midtarsal'),
-        HAnimJoint(USE='Boxman_r_shoulder'),
-        HAnimJoint(USE='Boxman_l_shoulder'),
-        HAnimJoint(USE='Boxman_r_wrist'),
-        HAnimJoint(USE='Boxman_l_wrist')],
+        HAnimJoint(USE='Boxman_humanoid_root',ulimit=[0,0,0],llimit=[0,0,0]),
+        HAnimJoint(USE='Boxman_skullbase',ulimit=[0,0,0],llimit=[0,0,0]),
+        HAnimJoint(USE='Boxman_vl5',ulimit=[0,0,0],llimit=[0,0,0]),
+        HAnimJoint(USE='Boxman_r_ankle',ulimit=[0,0,0],llimit=[0,0,0]),
+        HAnimJoint(USE='Boxman_l_ankle',ulimit=[0,0,0],llimit=[0,0,0]),
+        HAnimJoint(USE='Boxman_r_elbow',ulimit=[0,0,0],llimit=[0,0,0]),
+        HAnimJoint(USE='Boxman_l_elbow',ulimit=[0,0,0],llimit=[0,0,0]),
+        HAnimJoint(USE='Boxman_r_hip',ulimit=[0,0,0],llimit=[0,0,0]),
+        HAnimJoint(USE='Boxman_l_hip',ulimit=[0,0,0],llimit=[0,0,0]),
+        HAnimJoint(USE='Boxman_l_knee',ulimit=[0,0,0],llimit=[0,0,0]),
+        HAnimJoint(USE='Boxman_r_knee',ulimit=[0,0,0],llimit=[0,0,0]),
+        HAnimJoint(USE='Boxman_r_midtarsal',ulimit=[0,0,0],llimit=[0,0,0]),
+        HAnimJoint(USE='Boxman_l_midtarsal',ulimit=[0,0,0],llimit=[0,0,0]),
+        HAnimJoint(USE='Boxman_r_shoulder',ulimit=[0,0,0],llimit=[0,0,0]),
+        HAnimJoint(USE='Boxman_l_shoulder',ulimit=[0,0,0],llimit=[0,0,0]),
+        HAnimJoint(USE='Boxman_r_wrist',ulimit=[0,0,0],llimit=[0,0,0]),
+        HAnimJoint(USE='Boxman_l_wrist',ulimit=[0,0,0],llimit=[0,0,0])],
         segments=[
         HAnimSegment(USE='Boxman_sacrum'),
         HAnimSegment(USE='Boxman_l5'),
@@ -1211,7 +1211,7 @@ newModel=X3D(profile='Immersive',version='3.3',
         field(accessType='initializeOnly',name='translation',type='SFVec3f',value=(0,0,0)),
         field(accessType='initializeOnly',name='rotation',type='SFRotation',value=(1,0,0,0)),
         field(accessType='initializeOnly',name='scale',type='SFVec3f',value=(1,1,1))]
-*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
 )]),
     #  **********Behavior Proto Instances*********** 
     ProtoInstance(DEF='WALK',name='LOA1_WalkAnimation'),
@@ -1402,23 +1402,23 @@ newModel=X3D(profile='Immersive',version='3.3',
         ProtoInstance(USE='Allen_hanim_r_wrist')]),
       field(accessType='initializeOnly',name='BoxmanJointNodes',type='MFNode',
         children=[
-        HAnimJoint(USE='Boxman_humanoid_root'),
-        HAnimJoint(USE='Boxman_skullbase'),
-        HAnimJoint(USE='Boxman_vl5'),
-        HAnimJoint(USE='Boxman_l_hip'),
-        HAnimJoint(USE='Boxman_r_hip'),
-        HAnimJoint(USE='Boxman_l_knee'),
-        HAnimJoint(USE='Boxman_r_knee'),
-        HAnimJoint(USE='Boxman_l_ankle'),
-        HAnimJoint(USE='Boxman_r_ankle'),
-        HAnimJoint(USE='Boxman_l_shoulder'),
-        HAnimJoint(USE='Boxman_r_shoulder'),
-        HAnimJoint(USE='Boxman_l_elbow'),
-        HAnimJoint(USE='Boxman_r_elbow'),
-        HAnimJoint(USE='Boxman_l_wrist'),
-        HAnimJoint(USE='Boxman_r_wrist'),
-        HAnimJoint(USE='Boxman_l_midtarsal'),
-        HAnimJoint(USE='Boxman_r_midtarsal')]),
+        HAnimJoint(USE='Boxman_humanoid_root',ulimit=[0,0,0],llimit=[0,0,0]),
+        HAnimJoint(USE='Boxman_skullbase',ulimit=[0,0,0],llimit=[0,0,0]),
+        HAnimJoint(USE='Boxman_vl5',ulimit=[0,0,0],llimit=[0,0,0]),
+        HAnimJoint(USE='Boxman_l_hip',ulimit=[0,0,0],llimit=[0,0,0]),
+        HAnimJoint(USE='Boxman_r_hip',ulimit=[0,0,0],llimit=[0,0,0]),
+        HAnimJoint(USE='Boxman_l_knee',ulimit=[0,0,0],llimit=[0,0,0]),
+        HAnimJoint(USE='Boxman_r_knee',ulimit=[0,0,0],llimit=[0,0,0]),
+        HAnimJoint(USE='Boxman_l_ankle',ulimit=[0,0,0],llimit=[0,0,0]),
+        HAnimJoint(USE='Boxman_r_ankle',ulimit=[0,0,0],llimit=[0,0,0]),
+        HAnimJoint(USE='Boxman_l_shoulder',ulimit=[0,0,0],llimit=[0,0,0]),
+        HAnimJoint(USE='Boxman_r_shoulder',ulimit=[0,0,0],llimit=[0,0,0]),
+        HAnimJoint(USE='Boxman_l_elbow',ulimit=[0,0,0],llimit=[0,0,0]),
+        HAnimJoint(USE='Boxman_r_elbow',ulimit=[0,0,0],llimit=[0,0,0]),
+        HAnimJoint(USE='Boxman_l_wrist',ulimit=[0,0,0],llimit=[0,0,0]),
+        HAnimJoint(USE='Boxman_r_wrist',ulimit=[0,0,0],llimit=[0,0,0]),
+        HAnimJoint(USE='Boxman_l_midtarsal',ulimit=[0,0,0],llimit=[0,0,0]),
+        HAnimJoint(USE='Boxman_r_midtarsal',ulimit=[0,0,0],llimit=[0,0,0])]),
       #  **************Avatar choice*************** 
       field(accessType='outputOnly',name='AvatarChoice',type='SFInt32'),
       #  *************Behavior fields************ 
@@ -1429,7 +1429,7 @@ newModel=X3D(profile='Immersive',version='3.3',
         ProtoInstance(USE='JUMP'),
         ProtoInstance(USE='STAND'),
         ProtoInstance(USE='KNEEL')])]
-*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
 ),
     #  ***********Script routes************* 
     ROUTE(fromField='AvatarChoice',fromNode='ActorAnimator',toField='whichChoice',toNode='AvatarSwitch'),

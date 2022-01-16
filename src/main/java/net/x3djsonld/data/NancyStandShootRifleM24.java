@@ -284,16 +284,18 @@ public class NancyStandShootRifleM24
                             .addChild(new Transform().setCenter(-0.80,0.45,0.1).setRotation(0.0,0.0,1.0,-2.7).setScale(0.1,0.1,0.1)
                               .addChild(new Transform().setRotation(1.0,0.0,0.0,1.57).setTranslation(-0.7,0.0,0.0)
                                 .addChild(new ProtoInstance("RifleM24", "rifleM24").setContainerField("children"))
-                                .addChild(new Script("FireScript").setSourceCode("\n" + 
-"                                  " + "\n" + 
-"ecmascript:" + "\n" + 
-"\n" + 
-"function enabled (value, timeStamp)" + "\n" + 
-"{" + "\n" + 
-"        //print ('enabled value =' + value);" + "\n" + 
-"        if (value == true)" + "\n" + 
-"           fire = value;" + "\n" + 
-"}" + "\n")
+                                .addChild(new Script("FireScript").setSourceCode("""
+                                  
+ecmascript:
+
+function enabled (value, timeStamp)
+{
+        //print ('enabled value =' + value);
+        if (value == true)
+           fire = value;
+}
+
+                                """)
                                   .addField(new field().setName("fire").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
                                   .addField(new field().setName("enabled").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_INPUTONLY)))
                                 .addChild(new TouchSensor("FireTouchSensor").setDescription("click for shoot rifle"))

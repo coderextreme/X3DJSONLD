@@ -52,7 +52,7 @@ newModel=X3D(profile='Immersive',version='3.3',
             field(name='velocity',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
             field(name='scalvel',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
             field(name='set_fraction',accessType='inputOnly',type='SFFloat')]
-*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
 ),
           TimeSensor(DEF='bubbleClock',cycleInterval=10,loop=True),
           ROUTE(fromNode='bounce1',fromField='translation_changed',toNode='body_trans',toField='set_translation'),

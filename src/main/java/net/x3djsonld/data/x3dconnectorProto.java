@@ -139,48 +139,50 @@ public class x3dconnectorProto
         .addField(new field().setName("set_startpoint").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTONLY))
         .addField(new field().setName("set_endpoint").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTONLY)))
       .setProtoBody(new ProtoBody()
-        .addChild(new Script("S1").setSourceCode("\n" + 
-"            ecmascript:" + "\n" + 
-"        function recompute(startpoint,endpoint){" + "\n" + 
-"	    if (typeof endpoint === 'undefined') {" + "\n" + 
-"		return;" + "\n" + 
-"	    }" + "\n" + 
-"            var dif = endpoint.subtract(startpoint);" + "\n" + 
-"            var dist = dif.length()*0.5;" + "\n" + 
-"            var dif2 = dif.multiply(0.5);" + "\n" + 
-"            var norm = dif.normalize();" + "\n" + 
-"            var transl = startpoint.add(dif2);" + "\n" + 
-"	    if (typeof Quaternion !== 'undefined') {" + "\n" + 
-"		    return {" + "\n" + 
-"			    scale : new SFVec3f(1.0,dist,1.0)," + "\n" + 
-"			    translation : transl," + "\n" + 
-"			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)" + "\n" + 
-"		    };" + "\n" + 
-"	    } else {" + "\n" + 
-"		    return {" + "\n" + 
-"			    scale : new SFVec3f(1.0,dist,1.0)," + "\n" + 
-"			    translation : transl," + "\n" + 
-"			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)" + "\n" + 
-"		    };" + "\n" + 
-"	    }" + "\n" + 
-"	}" + "\n" + 
-"	function recompute_and_route(startpoint, endpoint) {" + "\n" + 
-"	      var trafo = recompute(startpoint, endpoint);" + "\n" + 
-"	      if (trafo) {" + "\n" + 
-"		      transnode.translation = trafo.translation;" + "\n" + 
-"		      rotscalenode.rotation = trafo.rotation;" + "\n" + 
-"		      rotscalenode.scale = trafo.scale;" + "\n" + 
-"	      }" + "\n" + 
-"	}" + "\n" + 
-"        function initialize(){" + "\n" + 
-"            recompute_and_route(startnode.translation,endnode.translation);" + "\n" + 
-"        }" + "\n" + 
-"        function set_startpoint(val,t){" + "\n" + 
-"            recompute_and_route(val,endnode.translation);" + "\n" + 
-"        }" + "\n" + 
-"        function set_endpoint(val,t){" + "\n" + 
-"            recompute_and_route(startnode.translation,val);" + "\n" + 
-"        }" + "\n")
+        .addChild(new Script("S1").setSourceCode("""
+            ecmascript:
+        function recompute(startpoint,endpoint){
+	    if (typeof endpoint === 'undefined') {
+		return;
+	    }
+            var dif = endpoint.subtract(startpoint);
+            var dist = dif.length()*0.5;
+            var dif2 = dif.multiply(0.5);
+            var norm = dif.normalize();
+            var transl = startpoint.add(dif2);
+	    if (typeof Quaternion !== 'undefined') {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)
+		    };
+	    } else {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)
+		    };
+	    }
+	}
+	function recompute_and_route(startpoint, endpoint) {
+	      var trafo = recompute(startpoint, endpoint);
+	      if (trafo) {
+		      transnode.translation = trafo.translation;
+		      rotscalenode.rotation = trafo.rotation;
+		      rotscalenode.scale = trafo.scale;
+	      }
+	}
+        function initialize(){
+            recompute_and_route(startnode.translation,endnode.translation);
+        }
+        function set_startpoint(val,t){
+            recompute_and_route(val,endnode.translation);
+        }
+        function set_endpoint(val,t){
+            recompute_and_route(startnode.translation,val);
+        }
+            
+        """)
           .addField(new field().setName("startnode").setType(field.TYPE_SFNODE).setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
           .addField(new field().setName("endnode").setType(field.TYPE_SFNODE).setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
           .addField(new field().setName("transnode").setType(field.TYPE_SFNODE).setAccessType(field.ACCESSTYPE_INITIALIZEONLY))

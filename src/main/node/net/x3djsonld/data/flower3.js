@@ -160,9 +160,9 @@ flower3.prototype = {
 "	}" + "\n" + 
 "	generateCoordinates(resolution);" + "\n" + 
 "}" + "\n")
-      .addField((new autoclass.field()).setAccessType("inputOnly").setName("set_fraction").setType("SFFloat"))
-      .addField((new autoclass.field()).setAccessType("outputOnly").setName("coordinates").setType("MFVec3f"))
-      .addField((new autoclass.field()).setAccessType("outputOnly").setName("coordIndexes").setType("MFInt32"))
+      .addField((new autoclass.field()).setName("set_fraction").setType("SFFloat").setAccessType("inputOnly"))
+      .addField((new autoclass.field()).setName("coordinates").setType("MFVec3f").setAccessType("outputOnly"))
+      .addField((new autoclass.field()).setName("coordIndexes").setType("MFInt32").setAccessType("outputOnly"))
       .addComments(java.newArray("java.lang.String",["",
 "        <field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/>",
 "        <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/>",
@@ -233,4 +233,3 @@ flower3.prototype = {
 	}
 }
 new flower3().main();
-process.exit(0);

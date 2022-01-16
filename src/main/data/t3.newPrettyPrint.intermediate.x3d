@@ -4,7 +4,7 @@
   <head>
     <component name='Networking' level='2'/>
     <component name='Core' level='2'/>
-    <meta content='t4.x3d' name='title'/>
+    <meta content='t3.x3d' name='title'/>
     <meta content='http://coderextreme.net/X3DJSONLD/src/main/data/t4.x3d' name='identifier'/>
     <meta content='view3dscene, https://castle-engine.io/view3dscene.php' name='generator'/>
     <meta content='Andreas Plesch and John Carlson' name='creator'/>

@@ -79,7 +79,7 @@ newModel=X3D(profile='Immersive',version='3.1',
             connect(nodeField='play',protoField='play'),
             connect(nodeField='pause',protoField='pause'),
             connect(nodeField='period',protoField='period')])
-*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
 )])),
     HAnimHumanoid(version='1.0',
       skeleton=[
@@ -309,7 +309,7 @@ newModel=X3D(profile='Immersive',version='3.1',
       field(accessType='inputOutput',name='Head',type='SFNode',
         children=[
         HAnimJoint(USE='_Head',ulimit=[0,0,0],llimit=[0,0,0])])]
-*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
 ),
     ROUTE(fromField='slider',fromNode='t02de8af0',toField='f03e07a38',toNode='s03e13e80')])
 ) # X3D model complete

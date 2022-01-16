@@ -7,7 +7,7 @@ X3D0.version = "3.3";
 head head1 = createNode("head");
 meta meta2 = createNode("meta");
 meta2.name = "title";
-meta2.content = "rubik2x2x2.x3d";
+meta2.content = "rubikcoord.x3d";
 head1.meta = new MFNode();
 
 head1.meta[0] = meta2;

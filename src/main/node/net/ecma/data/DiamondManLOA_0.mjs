@@ -19,6 +19,7 @@ import { HAnimHumanoid } from './x3d.mjs';
 import { MetadataSet } from './x3d.mjs';
 import { MetadataString } from './x3d.mjs';
 import { HAnimJoint } from './x3d.mjs';
+import { MFFloat } from './x3d.mjs';
 import { HAnimSegment } from './x3d.mjs';
 import { Transform } from './x3d.mjs';
 import { Shape } from './x3d.mjs';
@@ -186,15 +187,15 @@ var X3D0 =  new X3D({
                   name : new SFString("HumanoidRoot"),
                   DEF : new SFString("hanim_HumanoidRoot"),
                   center : new SFVec3f([0,0.824,0.0277]),
-                  ulimit : new SFVec3f([0,0,0]),
-                  llimit : new SFVec3f([0,0,0]),
+                  ulimit : new MFFloat([0,0,0]),
+                  llimit : new MFFloat([0,0,0]),
                   children : new MFNode([
                     new HAnimJoint({
                       name : new SFString("sacroiliac"),
                       DEF : new SFString("hanim_sacroiliac"),
                       center : new SFVec3f([0,0.9149,0.0016]),
-                      ulimit : new SFVec3f([0,0,0]),
-                      llimit : new SFVec3f([0,0,0]),
+                      ulimit : new MFFloat([0,0,0]),
+                      llimit : new MFFloat([0,0,0]),
                       children : new MFNode([
                         new HAnimSegment({
                           name : new SFString("pelvis"),

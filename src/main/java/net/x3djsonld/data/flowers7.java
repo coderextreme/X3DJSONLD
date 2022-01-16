@@ -134,24 +134,26 @@ public class flowers7
             .addParts(new ShaderPart().setUrl(new String[] {"../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"}))
             .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new String[] {"../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"}))))
         .setGeometry(new Sphere())))
-    .addChild(new Script("UrlSelector").setDirectOutput(true).setSourceCode("\n" + 
-"\n" + 
-"ecmascript:" + "\n" + 
-"        function set_fraction( f, tm ) {" + "\n" + 
-"            var side = Math.floor(f*frontUrls.length);" + "\n" + 
-"            if (side > frontUrls.length-1) {" + "\n" + 
-"                side = 0;" + "\n" + 
-"            }" + "\n" + 
-"            if (side != old) {" + "\n" + 
-"                    old = side;" + "\n" + 
-"                    front[0] = frontUrls[side];" + "\n" + 
-"                    back[0] = backUrls[side];" + "\n" + 
-"                    left[0] = leftUrls[side];" + "\n" + 
-"                    right[0] = rightUrls[side];" + "\n" + 
-"                    top[0] = topUrls[side];" + "\n" + 
-"                    bottom[0] = bottomUrls[side];" + "\n" + 
-"            }" + "\n" + 
-"        }" + "\n")
+    .addChild(new Script("UrlSelector").setDirectOutput(true).setSourceCode("""
+
+ecmascript:
+        function set_fraction( f, tm ) {
+            var side = Math.floor(f*frontUrls.length);
+            if (side > frontUrls.length-1) {
+                side = 0;
+            }
+            if (side != old) {
+                    old = side;
+                    front[0] = frontUrls[side];
+                    back[0] = backUrls[side];
+                    left[0] = leftUrls[side];
+                    right[0] = rightUrls[side];
+                    top[0] = topUrls[side];
+                    bottom[0] = bottomUrls[side];
+            }
+        }
+
+""")
       .addField(new field().setName("frontUrls").setType(field.TYPE_MFSTRING).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new String[] {"../resources/images/all_probes/beach_cross/beach_front.png","../resources/images/all_probes/building_cross/building_front.png","../resources/images/all_probes/campus_cross/campus_front.png","../resources/images/all_probes/galileo_cross/galileo_front.png","../resources/images/all_probes/grace_cross/grace_front.png","../resources/images/all_probes/kitchen_cross/kitchen_front.png","../resources/images/all_probes/rnl_cross/rnl_front.png","../resources/images/all_probes/stpeters_cross/stpeters_front.png","../resources/images/all_probes/uffizi_cross/uffizi_front.png"}))
       .addField(new field().setName("backUrls").setType(field.TYPE_MFSTRING).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new String[] {"../resources/images/all_probes/beach_cross/beach_back.png","../resources/images/all_probes/building_cross/building_back.png","../resources/images/all_probes/campus_cross/campus_back.png","../resources/images/all_probes/galileo_cross/galileo_back.png","../resources/images/all_probes/grace_cross/grace_back.png","../resources/images/all_probes/kitchen_cross/kitchen_back.png","../resources/images/all_probes/rnl_cross/rnl_back.png","../resources/images/all_probes/stpeters_cross/stpeters_back.png","../resources/images/all_probes/uffizi_cross/uffizi_back.png"}))
       .addField(new field().setName("leftUrls").setType(field.TYPE_MFSTRING).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new String[] {"../resources/images/all_probes/beach_cross/beach_left.png","../resources/images/all_probes/building_cross/building_left.png","../resources/images/all_probes/campus_cross/campus_left.png","../resources/images/all_probes/galileo_cross/galileo_left.png","../resources/images/all_probes/grace_cross/grace_left.png","../resources/images/all_probes/kitchen_cross/kitchen_left.png","../resources/images/all_probes/rnl_cross/rnl_left.png","../resources/images/all_probes/stpeters_cross/stpeters_left.png","../resources/images/all_probes/uffizi_cross/uffizi_left.png"}))
@@ -181,47 +183,49 @@ public class flowers7
 "            <ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'/>",
 "            <ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'/>",
 "            <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/>"})
-    .addChild(new Script("Animate").setDirectOutput(true).setSourceCode("\n" + 
-"\n" + 
-"ecmascript:" + "\n" + 
-"\n" + 
-"function set_fraction() {" + "\n" + 
-"	var choice = Math.floor(Math.random() * 4);" + "\n" + 
-"	switch (choice) {" + "\n" + 
-"	case 0:" + "\n" + 
-"		a = a + Math.floor(Math.random() * 2) * 2 - 1;" + "\n" + 
-"		break;" + "\n" + 
-"	case 1:" + "\n" + 
-"		b = b + Math.floor(Math.random() * 2) * 2 - 1;" + "\n" + 
-"		break;" + "\n" + 
-"	case 2:" + "\n" + 
-"		c = c + Math.floor(Math.random() * 2) * 2 - 1;" + "\n" + 
-"		break;" + "\n" + 
-"	case 3:" + "\n" + 
-"		d = d + Math.floor(Math.random() * 2) * 2 - 1;" + "\n" + 
-"		break;" + "\n" + 
-"	}" + "\n" + 
-"	tdelta = tdelta + 0.5;" + "\n" + 
-"	pdelta = pdelta + 0.5;" + "\n" + 
-"	if (a < 1) {" + "\n" + 
-"		a = 10;" + "\n" + 
-"	}" + "\n" + 
-"	if (b < 1) {" + "\n" + 
-"		b = 10;" + "\n" + 
-"	}" + "\n" + 
-"	if (c < 1) {" + "\n" + 
-"		c = 4;" + "\n" + 
-"	}" + "\n" + 
-"	if (c > 20) {" + "\n" + 
-"		c = 4;" + "\n" + 
-"	}" + "\n" + 
-"	if (d < 1) {" + "\n" + 
-"		d = 4;" + "\n" + 
-"	}" + "\n" + 
-"	if (d > 20) {" + "\n" + 
-"		d = 4;" + "\n" + 
-"	}" + "\n" + 
-"}" + "\n")
+    .addChild(new Script("Animate").setDirectOutput(true).setSourceCode("""
+
+ecmascript:
+
+function set_fraction() {
+	var choice = Math.floor(Math.random() * 4);
+	switch (choice) {
+	case 0:
+		a = a + Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 1:
+		b = b + Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 2:
+		c = c + Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 3:
+		d = d + Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	}
+	tdelta = tdelta + 0.5;
+	pdelta = pdelta + 0.5;
+	if (a < 1) {
+		a = 10;
+	}
+	if (b < 1) {
+		b = 10;
+	}
+	if (c < 1) {
+		c = 4;
+	}
+	if (c > 20) {
+		c = 4;
+	}
+	if (d < 1) {
+		d = 4;
+	}
+	if (d > 20) {
+		d = 4;
+	}
+}
+
+""")
       .addField(new field().setName("set_fraction").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTONLY))
       .addField(new field().setName("a").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(10))
       .addField(new field().setName("b").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(1))

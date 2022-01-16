@@ -282,7 +282,7 @@ newModel=X3D(profile='Immersive',version='3.3',
                           field(accessType='inputOnly',name='finL',type='SFBool'),
                           field(accessType='inputOnly',name='finR',type='SFBool'),
                           field(accessType='initializeOnly',name='traceEnabled',type='SFBool',value=True)]
-*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
 ),
                         ROUTE(fromField='isActive',fromNode='FinTriggerProximitySensor',toField='enabled',toNode='FinClock'),
                         ROUTE(fromField='fraction_changed',fromNode='FinClock',toField='set_fraction',toNode='FinScript'),
@@ -799,7 +799,7 @@ newModel=X3D(profile='Immersive',version='3.3',
       field(accessType='inputOnly',name='set_rotationR',type='SFRotation'),
       field(accessType='outputOnly',name='fin_warpL',type='SFBool'),
       field(accessType='outputOnly',name='fin_warpR',type='SFBool')]
-*** TODO x3d.py and X3dToJson.xslt need to handle embedded CDATA source code for Script
+*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
 ),
     Group(DEF='Animations',
       children=[
