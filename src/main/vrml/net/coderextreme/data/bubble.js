@@ -55,51 +55,8 @@ let ProtoDeclare10 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 <field name="velocity" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="scalvel" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="set_fraction" accessType="inputOnly" type="SFFloat"></field>
-<![CDATA[ecmascript:
-function initialize() {
-    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
-
-    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);
-}
-
-function set_fraction(value) {
-	translation = new SFVec3f(
-		translation.x + velocity.x,
-		translation.y + velocity.y,
-		translation.z + velocity.z);
-	scale = new SFVec3f(
-		scale.x + scalvel.x,
-		scale.y + scalvel.y,
-		scale.z + scalvel.z);
-        // if you get to far away or too big, explode
-        if ( Math.abs(translation.x) > 256) {
-		translation.x = 0;
-		initialize();
-	}
-        if ( Math.abs(translation.y) > 256) {
-		translation.y = 0;
-		initialize();
-	}
-        if ( Math.abs(translation.z) > 256) {
-		translation.z = 0;
-		initialize();
-	}
-	if (Math.abs(scale.x) > 20) {
-		scale.x = scale.x/2;
-		translation.x = 0;
-		initialize();
-	}
-	if (Math.abs(scale.y) > 20) {
-		scale.y = scale.y/2;
-		translation.y = 0;
-		initialize();
-	}
-	if (Math.abs(scale.z) > 20) {
-		scale.z = scale.z/2;
-		translation.z = 0;
-		initialize();
-	}
-}]]></Script>
+<#sourceCode/>
+</Script>
 <TimeSensor DEF="bubbleClock" cycleInterval="10" loop="true"></TimeSensor>
 <ROUTE fromNode="bounce" fromField="translation_changed" toNode="transform" toField="set_translation"></ROUTE>
 <ROUTE fromNode="bounce" fromField="scale_changed" toNode="transform" toField="set_scale"></ROUTE>
@@ -166,80 +123,37 @@ field22.accessType = "inputOnly";
 field22.type = "SFFloat";
 Script17.field[4] = field22;
 
+let #sourceCode23 = browser.currentScene.createNode("#sourceCode");
+Script17.#sourceCode[5] = #sourceCode23;
 
-Script17.setSourceCode(`ecmascript:\n"+
-"function initialize() {\n"+
-"    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
-"\n"+
-"    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);\n"+
-"}\n"+
-"\n"+
-"function set_fraction(value) {\n"+
-"	translation = new SFVec3f(\n"+
-"		translation.x + velocity.x,\n"+
-"		translation.y + velocity.y,\n"+
-"		translation.z + velocity.z);\n"+
-"	scale = new SFVec3f(\n"+
-"		scale.x + scalvel.x,\n"+
-"		scale.y + scalvel.y,\n"+
-"		scale.z + scalvel.z);\n"+
-"        // if you get to far away or too big, explode\n"+
-"        if ( Math.abs(translation.x) > 256) {\n"+
-"		translation.x = 0;\n"+
-"		initialize();\n"+
-"	}\n"+
-"        if ( Math.abs(translation.y) > 256) {\n"+
-"		translation.y = 0;\n"+
-"		initialize();\n"+
-"	}\n"+
-"        if ( Math.abs(translation.z) > 256) {\n"+
-"		translation.z = 0;\n"+
-"		initialize();\n"+
-"	}\n"+
-"	if (Math.abs(scale.x) > 20) {\n"+
-"		scale.x = scale.x/2;\n"+
-"		translation.x = 0;\n"+
-"		initialize();\n"+
-"	}\n"+
-"	if (Math.abs(scale.y) > 20) {\n"+
-"		scale.y = scale.y/2;\n"+
-"		translation.y = 0;\n"+
-"		initialize();\n"+
-"	}\n"+
-"	if (Math.abs(scale.z) > 20) {\n"+
-"		scale.z = scale.z/2;\n"+
-"		translation.z = 0;\n"+
-"		initialize();\n"+
-"	}\n"+
-"}`)
 Transform12.children[1] = Script17;
 
-let TimeSensor23 = browser.currentScene.createNode("TimeSensor");
-TimeSensor23.DEF = "bubbleClock";
-TimeSensor23.cycleInterval = 10;
-TimeSensor23.loop = True;
-Transform12.children[2] = TimeSensor23;
-
-let ROUTE24 = browser.currentScene.createNode("ROUTE");
-ROUTE24.fromNode = "bounce";
-ROUTE24.fromField = "translation_changed";
-ROUTE24.toNode = "transform";
-ROUTE24.toField = "set_translation";
-Transform12.children[3] = ROUTE24;
+let TimeSensor24 = browser.currentScene.createNode("TimeSensor");
+TimeSensor24.DEF = "bubbleClock";
+TimeSensor24.cycleInterval = 10;
+TimeSensor24.loop = True;
+Transform12.children[2] = TimeSensor24;
 
 let ROUTE25 = browser.currentScene.createNode("ROUTE");
 ROUTE25.fromNode = "bounce";
-ROUTE25.fromField = "scale_changed";
+ROUTE25.fromField = "translation_changed";
 ROUTE25.toNode = "transform";
-ROUTE25.toField = "set_scale";
-Transform12.children[4] = ROUTE25;
+ROUTE25.toField = "set_translation";
+Transform12.children[3] = ROUTE25;
 
 let ROUTE26 = browser.currentScene.createNode("ROUTE");
-ROUTE26.fromNode = "bubbleClock";
-ROUTE26.fromField = "fraction_changed";
-ROUTE26.toNode = "bounce";
-ROUTE26.toField = "set_fraction";
-Transform12.children[5] = ROUTE26;
+ROUTE26.fromNode = "bounce";
+ROUTE26.fromField = "scale_changed";
+ROUTE26.toNode = "transform";
+ROUTE26.toField = "set_scale";
+Transform12.children[4] = ROUTE26;
+
+let ROUTE27 = browser.currentScene.createNode("ROUTE");
+ROUTE27.fromNode = "bubbleClock";
+ROUTE27.fromField = "fraction_changed";
+ROUTE27.toNode = "bounce";
+ROUTE27.toField = "set_fraction";
+Transform12.children[5] = ROUTE27;
 
 ProtoBody11.children = new MFNode();
 
@@ -249,8 +163,8 @@ ProtoDeclare10.protoBody = ProtoBody11;
 
 browser.currentScene.children[2] = ProtoDeclare10;
 
-let ProtoInstance27 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance27.name = "Bubble";
-ProtoInstance27.DEF = "bubbleA";
-browser.currentScene.children[3] = ProtoInstance27;
+let ProtoInstance28 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance28.name = "Bubble";
+ProtoInstance28.DEF = "bubbleA";
+browser.currentScene.children[3] = ProtoInstance28;
 

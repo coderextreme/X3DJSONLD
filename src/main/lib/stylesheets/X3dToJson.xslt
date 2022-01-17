@@ -74,7 +74,7 @@ POSSIBILITY OF SUCH DAMAGE.
     <xsl:param name="stripDefaultAttributes"><xsl:text>true</xsl:text></xsl:param>
     <xsl:param name="indentEnabled"><xsl:text>true</xsl:text></xsl:param>
     <xsl:param name="normalizeCommentWhitespace"><xsl:text>true</xsl:text></xsl:param>
-    <xsl:param name="sourceText"><xsl:text>strings</xsl:text></xsl:param> <!-- escaped | strings | plaintext -->
+    <xsl:param name="sourceTextMode"><xsl:text>strings</xsl:text></xsl:param> <!-- escaped | strings | plaintext -->
     <xsl:param name="traceEnabled" ><xsl:text>false</xsl:text></xsl:param>
     <xsl:param name="traceScripts" ><xsl:text>false</xsl:text></xsl:param>
     <!-- TODO future feature: whether to apply changes to meta references, url file extensions, etc. -->
@@ -712,7 +712,7 @@ POSSIBILITY OF SUCH DAMAGE.
                                             <xsl:with-param name="element"><xsl:value-of select="local-name()"/></xsl:with-param>
                                             <xsl:with-param name="traceEnabled"><xsl:text>false</xsl:text></xsl:with-param>
                                     </xsl:call-template>
-                                    <!-- only output comma prior to #sourceText if preceded by a child node or (non-containerField) attribute value. watch out for default values! -->
+                                    <!-- only output comma prior to #sourceTextMode if preceded by a child node or (non-containerField) attribute value. watch out for default values! -->
                                     <xsl:if test="(count(*) > 0) or (count(@*[(string-length(normalize-space(string(.))) > 0) and not(local-name()='containerField')]) > 0)">
                                         <xsl:if test="(count(*) > 0) or not((local-name() = 'Script') and (@directOutput = 'false') and (@mustEvaluate = 'false') and (string-length(normalize-space(@DEF)) = 0) and (string-length(normalize-space(@url)) = 0))">
                                             <xsl:text>,</xsl:text>
@@ -720,7 +720,7 @@ POSSIBILITY OF SUCH DAMAGE.
                                     </xsl:if>
                                     <xsl:text>&#10;</xsl:text>
                                     <xsl:call-template name="print-indent"><xsl:with-param name="indent" select="$indent+6"/></xsl:call-template>
-                                    <xsl:apply-templates select="text()"/> <!-- Script/ShaderPart/ShaderProgram #sourceText -->
+                                    <xsl:apply-templates select="text()"/> <!-- Script/ShaderPart/ShaderProgram #sourceCode -->
                                 </xsl:if>
                             </xsl:if>
 
@@ -1283,8 +1283,8 @@ POSSIBILITY OF SUCH DAMAGE.
                 <xsl:variable name="traceMessage">
                     <xsl:choose>
                         <xsl:when test="($elementName = 'Script') or ($elementName = 'ShaderPart') or ($elementName = 'ShaderProgram')">
-                            <xsl:text> contains CDATA source-code text, copied as "#sourceText" using &quot;</xsl:text>
-                            <xsl:value-of select="$sourceText"/>
+                            <xsl:text> contains CDATA source-code text, copied as "#sourceCode" using &quot;</xsl:text>
+                            <xsl:value-of select="$sourceTextMode"/>
                             <xsl:text>&quot; mode</xsl:text>
                         </xsl:when>
                         <xsl:otherwise>
@@ -1309,10 +1309,10 @@ POSSIBILITY OF SUCH DAMAGE.
                     <xsl:with-param name="traceEnabled"><xsl:text>true</xsl:text></xsl:with-param><!-- override -->
                 </xsl:call-template>
                 
-                <!-- "#sourceText" is used as key for this JSON object, similar to #comment, but note that there is no array of source JSON strings -->
+                <!-- "#sourceCode" is used as key for this JSON object, similar to #comment, but note that there is no array of source JSON strings -->
                 
                 <xsl:text>"</xsl:text>
-                <xsl:text>#sourceText</xsl:text> <!-- comment prefix -->
+                <xsl:text>#sourceCode</xsl:text> <!-- comment prefix -->
                 <xsl:value-of select="name()"/>
                 <xsl:text>"</xsl:text>
                 <xsl:text>:</xsl:text>
@@ -1332,8 +1332,8 @@ POSSIBILITY OF SUCH DAMAGE.
 				<!-- debug (also use trace messages below) -->
 				<xsl:variable name="debugTrace" select="false()"/><!-- true() false() -->
 				<xsl:variable name="debugMessage">
-						<xsl:text>parameter $sourceText=</xsl:text>
-						<xsl:value-of select="$sourceText" disable-output-escaping="yes"/>
+						<xsl:text>parameter $sourceCode=</xsl:text>
+						<xsl:value-of select="$sourceTextMode" disable-output-escaping="yes"/>
 						<xsl:text>&#10;</xsl:text>
 						<xsl:text>$sourceStringText=</xsl:text>
 						<xsl:value-of select="$sourceStringText" disable-output-escaping="yes"/>
@@ -1343,7 +1343,7 @@ POSSIBILITY OF SUCH DAMAGE.
                 <!-- json, jslint insist on \n instead of newline characters, since humans are apparently less important than language dogma. -->
                 <!-- output options for embedded source:  escaped | strings | plaintext -->
                 <xsl:choose>
-                    <xsl:when test="($sourceText = 'escaped')">
+                    <xsl:when test="($sourceTextMode = 'escaped')">
                         <xsl:text>[</xsl:text>
                         <xsl:text>"</xsl:text>
                         <xsl:call-template name="replace-newlines-recurse">
@@ -1356,7 +1356,7 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:text>"</xsl:text>
                         <xsl:text>]</xsl:text>
                     </xsl:when>
-                    <xsl:when test="($sourceText = 'plaintext')">
+                    <xsl:when test="($sourceTextMode = 'plaintext')">
                         <xsl:text>[</xsl:text>
                         <xsl:text>&#10;</xsl:text>
                         <xsl:text>"</xsl:text>
@@ -1366,11 +1366,11 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:text>&#10;</xsl:text>
                     </xsl:when>
                     <xsl:otherwise>
-                        <xsl:if test="not($sourceText = 'strings')">
+                        <xsl:if test="not($sourceTextMode = 'strings')">
                             <xsl:message>
-                                <xsl:text>illegal value for $sourceText=</xsl:text>
-                                <xsl:value-of select="$sourceText"/>
-                                <xsl:text>, allowed values are escaped | strings | plaintext.  Using default $sourceText=strings</xsl:text>
+                                <xsl:text>illegal value for $sourceTextMode=</xsl:text>
+                                <xsl:value-of select="$sourceTextMode"/>
+                                <xsl:text>, allowed values are escaped | strings | plaintext.  Using default $sourceTextMode=strings</xsl:text>
                             </xsl:message>
                         </xsl:if>
                         <xsl:text>[</xsl:text>

@@ -19565,6 +19565,13 @@
         {
           "type": "object",
           "properties": {
+            "#sourceCode": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string"
+              }
+            },
             "#sourceText": {
               "type": "array",
               "minItems": 1,
@@ -19849,6 +19856,13 @@
         {
           "type": "object",
           "properties": {
+            "#sourceCode": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string"
+              }
+            },
             "#sourceText": {
               "type": "array",
               "minItems": 1,
@@ -19938,6 +19952,13 @@
         {
           "type": "object",
           "properties": {
+            "#sourceCode": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string"
+              }
+            },
             "#sourceText": {
               "type": "array",
               "minItems": 1,

@@ -475,6 +475,13 @@ class ClassPrinter:
 
         if self.name == "Script" or self.name == "ShaderProgram" or self.name == "ShaderPart":
             str += '''\
+                                "#sourceCode": {
+                                        "type": "array",
+                                        "minItems": 1,
+                                        "items": {
+                                                "type": "string"
+                                        }
+                                },
                                 "#sourceText": {
                                         "type": "array",
                                         "minItems": 1,

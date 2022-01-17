@@ -119,51 +119,36 @@ field22.type = "MFVec3d";
 field22.value = "0.0015708 0 4 0 0.0015708 4";
 Script18.field[3] = field22;
 
+let #sourceCode23 = browser.currentScene.createNode("#sourceCode");
+Script18.#sourceCode[4] = #sourceCode23;
 
-Script18.setSourceCode(`ecmascript:\n"+
-"\n"+
-"               function set_cycle(value) {\n"+
-"                        var cartesianMult = -150;  // -150 if cartesian, 1 if geo\n"+
-"                        var ov = val;\n"+
-"			// Browser.print('old '+ov);\n"+
-"                        do {\n"+
-"                                val = Math.floor(Math.random()*2);\n"+
-"                                var vc = val;\n"+
-"                                positions[vc] = new SFVec3d(Math.round(Math.random()*2)*0.0015708*cartesianMult, Math.round(Math.random()*2)*0.0015708*cartesianMult, 4);\n"+
-"                        } while ( positions[ov][0] === positions[vc][0] && positions[ov][1] === positions[vc][1] && positions[ov][2] === positions[vc][2]);\n"+
-"			// Browser.println(positions[ov]);\n"+
-"			// Browser.println(positions[vc]);\n"+
-"                        position = new MFVec3d();\n"+
-"                        position[0] = new SFVec3d(positions[ov][0],positions[ov][1],positions[ov][2]);\n"+
-"                        position[1] = new SFVec3d(positions[vc][0],positions[vc][1],positions[vc][2]);\n"+
-"               }`)
 browser.currentScene.children[5] = Script18;
 
-let ROUTE23 = browser.currentScene.createNode("ROUTE");
-ROUTE23.fromNode = "TourTime";
-ROUTE23.fromField = "cycleTime";
-ROUTE23.toNode = "RandomTourTime";
-ROUTE23.toField = "set_cycle";
-browser.currentScene.children[6] = ROUTE23;
-
 let ROUTE24 = browser.currentScene.createNode("ROUTE");
-ROUTE24.fromNode = "RandomTourTime";
-ROUTE24.fromField = "position";
-ROUTE24.toNode = "TourPosition";
-ROUTE24.toField = "keyValue";
-browser.currentScene.children[7] = ROUTE24;
+ROUTE24.fromNode = "TourTime";
+ROUTE24.fromField = "cycleTime";
+ROUTE24.toNode = "RandomTourTime";
+ROUTE24.toField = "set_cycle";
+browser.currentScene.children[6] = ROUTE24;
 
 let ROUTE25 = browser.currentScene.createNode("ROUTE");
-ROUTE25.fromNode = "TourTime";
-ROUTE25.fromField = "fraction_changed";
+ROUTE25.fromNode = "RandomTourTime";
+ROUTE25.fromField = "position";
 ROUTE25.toNode = "TourPosition";
-ROUTE25.toField = "set_fraction";
-browser.currentScene.children[8] = ROUTE25;
+ROUTE25.toField = "keyValue";
+browser.currentScene.children[7] = ROUTE25;
 
 let ROUTE26 = browser.currentScene.createNode("ROUTE");
-ROUTE26.fromNode = "TourPosition";
-ROUTE26.fromField = "geovalue_changed";
-ROUTE26.toNode = "Tour";
-ROUTE26.toField = "set_position";
-browser.currentScene.children[9] = ROUTE26;
+ROUTE26.fromNode = "TourTime";
+ROUTE26.fromField = "fraction_changed";
+ROUTE26.toNode = "TourPosition";
+ROUTE26.toField = "set_fraction";
+browser.currentScene.children[8] = ROUTE26;
+
+let ROUTE27 = browser.currentScene.createNode("ROUTE");
+ROUTE27.fromNode = "TourPosition";
+ROUTE27.fromField = "geovalue_changed";
+ROUTE27.toNode = "Tour";
+ROUTE27.toField = "set_position";
+browser.currentScene.children[9] = ROUTE27;
 

@@ -1637,6 +1637,10 @@ Recommended tool:
                 <xsl:when test="($givenType='xs:NMTOKEN') or ($givenType='xs:NMTOKENS') or ($givenType='xs:token') or ($givenType='xs:ID') or ($givenType='xs:IDREF')">
                     <xsl:text>SFString</xsl:text>
                 </xsl:when>
+                <xsl:when test="($givenType='xs:string')">
+                    <!-- used by sourceCode -->
+                    <xsl:text>SFString</xsl:text>
+                </xsl:when>
                 <xsl:when test="($constrainedTypeParent='xs:token' or $constrainedTypeParent='xs:string')">SFString</xsl:when>
                 <xsl:when test="($constrainedTypeGrandParent='xs:token' or $constrainedTypeParent='xs:string')">SFString</xsl:when>
                 <xsl:otherwise>
@@ -2065,6 +2069,12 @@ Recommended tool:
                         <xsl:when test="($containerName = 'X3DNode') and (($fieldName = 'IS') or ($fieldName = 'metadata'))">
                             <!-- IS, metadata -->
                             <xsl:attribute name="description" select="normalize-space(//xs:complexType[@name='X3DNode']/xs:annotation/xs:appinfo/xs:element[@name = $fieldName]/xs:annotation/xs:appinfo/.)"/>
+                        </xsl:when>
+                        <xsl:when test="($fieldName = 'sourceCode')">
+                            <!-- CDATA -->
+                            <xsl:attribute name="description">
+                            <xsl:text>Embedded scripting source code can be contained within the parent node as a plain-text CDATA block, without requiring escaping of special characters.</xsl:text>
+                            </xsl:attribute>
                         </xsl:when>
                         <xsl:otherwise>
                             <!-- description from tooltip -->

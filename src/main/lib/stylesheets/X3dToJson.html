@@ -383,7 +383,8 @@
                         <code>&lt;[CDATA[ &quot;world wild Web!&quot; ]]&gt;</code>
                     </td>
                     <td>
-                        <code>"#sourceText"</code> string array containing original code, possibly escaped
+                        <code>"#sourceCode"</code> string array containing original code, typically not escaped. 
+                        (previously named <code>#sourceText</code>)
                     </td>
                 </tr>
             </tbody>
@@ -693,7 +694,7 @@
                     <li> <code>-fieldName</code> for containerField names </li>
                     <li> <code>#comment</code> for comments (an allowed option, even though not natively supported by JSON) </li>
                     <li> 
-                        <code>#sourceText</code> preservation of character data (e.g. source code contained in a 
+                        <code>#sourceCode</code> preservation of character data (e.g. source code contained in a 
                         <a href="https://www.web3d.org/x3d/content/X3dTooltips.html#Script" target="_blank">Script</a>, 
                         <a href="https://www.web3d.org/x3d/content/X3dTooltips.html#ShaderPart" target="_blank">ShaderPart</a>
                         and 
@@ -734,7 +735,7 @@
                 X3D file-format encodings for XML, VRML, JSON and binary compression are all case sensitive.
             </li>
             <li>
-                Embedded <code>#sourceText</code> code 
+                Embedded <code>#sourceCode</code> code 
                (for X3D 
                 <a href="https://www.web3d.org/x3d/content/X3dTooltips.html#Script" target="_blank">Script</a>, 
                 <a href="https://www.web3d.org/x3d/content/X3dTooltips.html#ShaderPart" target="_blank">ShaderPart</a>
@@ -2638,7 +2639,7 @@
             </li>
             <li> 
                 Preserving contained character-data (CDATA) text (principal example: contained Script source code)
-                as a <code>#sourceText</code> string array. 
+                as a <code>#sourceCode</code> string array. 
             </li>
             <li> 
                 ProtoInterface is handled as an explicit JSON field output, handled similarly to ProtoBody as a contained JSON field key within ProtoDeclare.
@@ -2773,7 +2774,7 @@
     &lt;xsl:param name="<b>stripComments</b>"&gt;&lt;xsl:text&gt;<b>false</b>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
     &lt;xsl:param name="<b>stripDefaultAttributes</b>"&gt;&lt;xsl:text&gt;<b>true</b>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
     &lt;xsl:param name="<b>indentEnabled</b>"&gt;&lt;xsl:text&gt;<b>true</b>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
-    &lt;xsl:param name="<b>sourceText</b>"&gt;&lt;xsl:text&gt;<b>strings</b>&lt;/xsl:text&gt;&lt;/xsl:param&gt; &lt;!-- escaped | strings | plaintext --&gt;
+    &lt;xsl:param name="<b>sourceCode</b>"&gt;&lt;xsl:text&gt;<b>strings</b>&lt;/xsl:text&gt;&lt;/xsl:param&gt; &lt;!-- escaped | strings | plaintext --&gt;
     &lt;xsl:param name="<b>traceEnabled</b>"&gt;&lt;xsl:text&gt;<b>false</b>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
     &lt;xsl:param name="<b>traceScripts</b>"&gt;&lt;xsl:text&gt;<b>false</b>&lt;/xsl:text&gt;&lt;/xsl:param&gt;
 </pre>
@@ -2782,7 +2783,7 @@
             <!-- width="444" height="316" -->
             <a href="https://savage.nps.edu/X3D-Edit/images/X3dToJsonConversionPanel.png"><img src="https://savage.nps.edu/X3D-Edit/images/X3dToJsonConversionPanel.png" width="177" height="128" style="border:0" title="X3D-Edit conversion pane" alt="X3D-Edit conversion pane" align="right"/></a>
                
-            The <b>sourceText</b> options govern the output mode of <code>#sourceText</code> code embedded in
+            The <b>sourceCode</b> options govern the output mode of <code>#sourceCode</code> code embedded in
             <a href="https://www.web3d.org/x3d/content/X3dTooltips.html#Script" target="_blank">Script</a>, 
             <a href="https://www.web3d.org/x3d/content/X3dTooltips.html#ShaderPart" target="_blank">ShaderPart</a>
             and 
@@ -3285,7 +3286,7 @@
          </blockquote>
         
         <blockquote>
-            Updated: 18 October 2019
+            Updated: 16 January 2022
         </blockquote>
 
     </body>
