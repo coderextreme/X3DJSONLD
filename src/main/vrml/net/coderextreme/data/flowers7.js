@@ -428,215 +428,164 @@ field72.accessType = "inputOutput";
 field72.value = "-1";
 Script58.field[13] = field72;
 
+let #sourceCode73 = browser.currentScene.createNode("#sourceCode");
+Script58.#sourceCode[14] = #sourceCode73;
 
-Script58.setSourceCode(`ecmascript:\n"+
-"        function set_fraction( f, tm ) {\n"+
-"            var side = Math.floor(f*frontUrls.length);\n"+
-"            if (side > frontUrls.length-1) {\n"+
-"                side = 0;\n"+
-"            }\n"+
-"            if (side != old) {\n"+
-"                    old = side;\n"+
-"                    front[0] = frontUrls[side];\n"+
-"                    back[0] = backUrls[side];\n"+
-"                    left[0] = leftUrls[side];\n"+
-"                    right[0] = rightUrls[side];\n"+
-"                    top[0] = topUrls[side];\n"+
-"                    bottom[0] = bottomUrls[side];\n"+
-"            }\n"+
-"        }`)
 browser.currentScene.children[4] = Script58;
 
 //<TimeSensor DEF=\"Clock\" cycleInterval=\"45\" loop='true'/> <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='background' toField='frontUrl'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='background' toField='backUrl'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='background' toField='leftUrl'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='background' toField='rightUrl'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='background' toField='topUrl'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='background' toField='bottomUrl'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='frontShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='backShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='leftShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/>
-let Script73 = browser.currentScene.createNode("Script");
-Script73.DEF = "Animate";
-Script73.directOutput = True;
-let field74 = browser.currentScene.createNode("field");
-field74.name = "set_fraction";
-field74.type = "SFFloat";
-field74.accessType = "inputOnly";
-Script73.field = new MFNode();
-
-Script73.field[0] = field74;
-
+let Script74 = browser.currentScene.createNode("Script");
+Script74.DEF = "Animate";
+Script74.directOutput = True;
 let field75 = browser.currentScene.createNode("field");
-field75.name = "a";
+field75.name = "set_fraction";
 field75.type = "SFFloat";
-field75.accessType = "inputOutput";
-field75.value = "10";
-Script73.field[1] = field75;
+field75.accessType = "inputOnly";
+Script74.field = new MFNode();
+
+Script74.field[0] = field75;
 
 let field76 = browser.currentScene.createNode("field");
-field76.name = "b";
+field76.name = "a";
 field76.type = "SFFloat";
 field76.accessType = "inputOutput";
-field76.value = "1";
-Script73.field[2] = field76;
+field76.value = "10";
+Script74.field[1] = field76;
 
 let field77 = browser.currentScene.createNode("field");
-field77.name = "c";
+field77.name = "b";
 field77.type = "SFFloat";
 field77.accessType = "inputOutput";
-field77.value = "20";
-Script73.field[3] = field77;
+field77.value = "1";
+Script74.field[2] = field77;
 
 let field78 = browser.currentScene.createNode("field");
-field78.name = "d";
+field78.name = "c";
 field78.type = "SFFloat";
 field78.accessType = "inputOutput";
 field78.value = "20";
-Script73.field[4] = field78;
+Script74.field[3] = field78;
 
 let field79 = browser.currentScene.createNode("field");
-field79.name = "tdelta";
+field79.name = "d";
 field79.type = "SFFloat";
 field79.accessType = "inputOutput";
-field79.value = "0";
-Script73.field[5] = field79;
+field79.value = "20";
+Script74.field[4] = field79;
 
 let field80 = browser.currentScene.createNode("field");
-field80.name = "pdelta";
+field80.name = "tdelta";
 field80.type = "SFFloat";
 field80.accessType = "inputOutput";
 field80.value = "0";
-Script73.field[6] = field80;
+Script74.field[5] = field80;
 
+let field81 = browser.currentScene.createNode("field");
+field81.name = "pdelta";
+field81.type = "SFFloat";
+field81.accessType = "inputOutput";
+field81.value = "0";
+Script74.field[6] = field81;
 
-Script73.setSourceCode(`ecmascript:\n"+
-"\n"+
-"function set_fraction() {\n"+
-"	var choice = Math.floor(Math.random() * 4);\n"+
-"	switch (choice) {\n"+
-"	case 0:\n"+
-"		a = a + Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	case 1:\n"+
-"		b = b + Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	case 2:\n"+
-"		c = c + Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	case 3:\n"+
-"		d = d + Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	}\n"+
-"	tdelta = tdelta + 0.5;\n"+
-"	pdelta = pdelta + 0.5;\n"+
-"	if (a < 1) {\n"+
-"		a = 10;\n"+
-"	}\n"+
-"	if (b < 1) {\n"+
-"		b = 10;\n"+
-"	}\n"+
-"	if (c < 1) {\n"+
-"		c = 4;\n"+
-"	}\n"+
-"	if (c > 20) {\n"+
-"		c = 4;\n"+
-"	}\n"+
-"	if (d < 1) {\n"+
-"		d = 4;\n"+
-"	}\n"+
-"	if (d > 20) {\n"+
-"		d = 4;\n"+
-"	}\n"+
-"}`)
-browser.currentScene.children[5] = Script73;
+let #sourceCode82 = browser.currentScene.createNode("#sourceCode");
+Script74.#sourceCode[7] = #sourceCode82;
 
-let TimeSensor81 = browser.currentScene.createNode("TimeSensor");
-TimeSensor81.DEF = "TourTime";
-TimeSensor81.cycleInterval = 5;
-TimeSensor81.loop = True;
-browser.currentScene.children[6] = TimeSensor81;
+browser.currentScene.children[5] = Script74;
 
-let ROUTE82 = browser.currentScene.createNode("ROUTE");
-ROUTE82.fromNode = "TourTime";
-ROUTE82.fromField = "fraction_changed";
-ROUTE82.toNode = "Animate";
-ROUTE82.toField = "set_fraction";
-browser.currentScene.children[7] = ROUTE82;
-
-let ROUTE83 = browser.currentScene.createNode("ROUTE");
-ROUTE83.fromNode = "Animate";
-ROUTE83.fromField = "a";
-ROUTE83.toNode = "x_ite";
-ROUTE83.toField = "a";
-browser.currentScene.children[8] = ROUTE83;
+let TimeSensor83 = browser.currentScene.createNode("TimeSensor");
+TimeSensor83.DEF = "TourTime";
+TimeSensor83.cycleInterval = 5;
+TimeSensor83.loop = True;
+browser.currentScene.children[6] = TimeSensor83;
 
 let ROUTE84 = browser.currentScene.createNode("ROUTE");
-ROUTE84.fromNode = "Animate";
-ROUTE84.fromField = "b";
-ROUTE84.toNode = "x_ite";
-ROUTE84.toField = "b";
-browser.currentScene.children[9] = ROUTE84;
+ROUTE84.fromNode = "TourTime";
+ROUTE84.fromField = "fraction_changed";
+ROUTE84.toNode = "Animate";
+ROUTE84.toField = "set_fraction";
+browser.currentScene.children[7] = ROUTE84;
 
 let ROUTE85 = browser.currentScene.createNode("ROUTE");
 ROUTE85.fromNode = "Animate";
-ROUTE85.fromField = "c";
+ROUTE85.fromField = "a";
 ROUTE85.toNode = "x_ite";
-ROUTE85.toField = "c";
-browser.currentScene.children[10] = ROUTE85;
+ROUTE85.toField = "a";
+browser.currentScene.children[8] = ROUTE85;
 
 let ROUTE86 = browser.currentScene.createNode("ROUTE");
 ROUTE86.fromNode = "Animate";
-ROUTE86.fromField = "d";
+ROUTE86.fromField = "b";
 ROUTE86.toNode = "x_ite";
-ROUTE86.toField = "d";
-browser.currentScene.children[11] = ROUTE86;
+ROUTE86.toField = "b";
+browser.currentScene.children[9] = ROUTE86;
 
 let ROUTE87 = browser.currentScene.createNode("ROUTE");
 ROUTE87.fromNode = "Animate";
-ROUTE87.fromField = "pdelta";
+ROUTE87.fromField = "c";
 ROUTE87.toNode = "x_ite";
-ROUTE87.toField = "pdelta";
-browser.currentScene.children[12] = ROUTE87;
+ROUTE87.toField = "c";
+browser.currentScene.children[10] = ROUTE87;
 
 let ROUTE88 = browser.currentScene.createNode("ROUTE");
 ROUTE88.fromNode = "Animate";
-ROUTE88.fromField = "tdelta";
+ROUTE88.fromField = "d";
 ROUTE88.toNode = "x_ite";
-ROUTE88.toField = "tdelta";
-browser.currentScene.children[13] = ROUTE88;
+ROUTE88.toField = "d";
+browser.currentScene.children[11] = ROUTE88;
 
 let ROUTE89 = browser.currentScene.createNode("ROUTE");
 ROUTE89.fromNode = "Animate";
-ROUTE89.fromField = "a";
-ROUTE89.toNode = "x3dom";
-ROUTE89.toField = "a";
-browser.currentScene.children[14] = ROUTE89;
+ROUTE89.fromField = "pdelta";
+ROUTE89.toNode = "x_ite";
+ROUTE89.toField = "pdelta";
+browser.currentScene.children[12] = ROUTE89;
 
 let ROUTE90 = browser.currentScene.createNode("ROUTE");
 ROUTE90.fromNode = "Animate";
-ROUTE90.fromField = "b";
-ROUTE90.toNode = "x3dom";
-ROUTE90.toField = "b";
-browser.currentScene.children[15] = ROUTE90;
+ROUTE90.fromField = "tdelta";
+ROUTE90.toNode = "x_ite";
+ROUTE90.toField = "tdelta";
+browser.currentScene.children[13] = ROUTE90;
 
 let ROUTE91 = browser.currentScene.createNode("ROUTE");
 ROUTE91.fromNode = "Animate";
-ROUTE91.fromField = "c";
+ROUTE91.fromField = "a";
 ROUTE91.toNode = "x3dom";
-ROUTE91.toField = "c";
-browser.currentScene.children[16] = ROUTE91;
+ROUTE91.toField = "a";
+browser.currentScene.children[14] = ROUTE91;
 
 let ROUTE92 = browser.currentScene.createNode("ROUTE");
 ROUTE92.fromNode = "Animate";
-ROUTE92.fromField = "d";
+ROUTE92.fromField = "b";
 ROUTE92.toNode = "x3dom";
-ROUTE92.toField = "d";
-browser.currentScene.children[17] = ROUTE92;
+ROUTE92.toField = "b";
+browser.currentScene.children[15] = ROUTE92;
 
 let ROUTE93 = browser.currentScene.createNode("ROUTE");
 ROUTE93.fromNode = "Animate";
-ROUTE93.fromField = "pdelta";
+ROUTE93.fromField = "c";
 ROUTE93.toNode = "x3dom";
-ROUTE93.toField = "pdelta";
-browser.currentScene.children[18] = ROUTE93;
+ROUTE93.toField = "c";
+browser.currentScene.children[16] = ROUTE93;
 
 let ROUTE94 = browser.currentScene.createNode("ROUTE");
 ROUTE94.fromNode = "Animate";
-ROUTE94.fromField = "tdelta";
+ROUTE94.fromField = "d";
 ROUTE94.toNode = "x3dom";
-ROUTE94.toField = "tdelta";
-browser.currentScene.children[19] = ROUTE94;
+ROUTE94.toField = "d";
+browser.currentScene.children[17] = ROUTE94;
+
+let ROUTE95 = browser.currentScene.createNode("ROUTE");
+ROUTE95.fromNode = "Animate";
+ROUTE95.fromField = "pdelta";
+ROUTE95.toNode = "x3dom";
+ROUTE95.toField = "pdelta";
+browser.currentScene.children[18] = ROUTE95;
+
+let ROUTE96 = browser.currentScene.createNode("ROUTE");
+ROUTE96.fromNode = "Animate";
+ROUTE96.fromField = "tdelta";
+ROUTE96.toNode = "x3dom";
+ROUTE96.toField = "tdelta";
+browser.currentScene.children[19] = ROUTE96;
 

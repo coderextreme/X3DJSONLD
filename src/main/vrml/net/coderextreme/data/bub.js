@@ -115,31 +115,8 @@ let ProtoDeclare17 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 <Script DEF="Bounce"><field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="velocity" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 <field name="set_fraction" accessType="inputOnly" type="SFTime"></field>
-<![CDATA[ecmascript:
-			function initialize() {
-			    translation = new SFVec3f(0, 0, 0);
-			    velocity = new SFVec3f(
-			    	Math.random() - 0.5,
-				Math.random() - 0.5,
-				Math.random() - 0.5);
-			}
-			function set_fraction() {
-			    translation = new SFVec3f(
-			    	translation.x + velocity.x,
-				translation.y + velocity.y,
-				translation.z + velocity.z);
-			    if (Math.abs(translation.x) > 10) {
-				initialize();
-			    } else if (Math.abs(translation.y) > 10) {
-				initialize();
-			    } else if (Math.abs(translation.z) > 10) {
-				initialize();
-			    } else {
-				velocity.x += Math.random() * 0.2 - 0.1;
-				velocity.y += Math.random() * 0.2 - 0.1;
-				velocity.z += Math.random() * 0.2 - 0.1;
-			    }
-			}]]></Script>
+<#sourceCode/>
+</Script>
 <TimeSensor DEF="TourTime" cycleInterval="0.15" loop="true"></TimeSensor>
 <ROUTE fromNode="TourTime" fromField="cycleTime" toNode="Bounce" toField="set_fraction"></ROUTE>
 <ROUTE fromNode="Bounce" fromField="translation_changed" toNode="transform" toField="set_translation"></ROUTE>
@@ -335,67 +312,44 @@ field51.accessType = "inputOnly";
 field51.type = "SFTime";
 Script48.field[2] = field51;
 
+let #sourceCode52 = browser.currentScene.createNode("#sourceCode");
+Script48.#sourceCode[3] = #sourceCode52;
 
-Script48.setSourceCode(`ecmascript:\n"+
-"			function initialize() {\n"+
-"			    translation = new SFVec3f(0, 0, 0);\n"+
-"			    velocity = new SFVec3f(\n"+
-"			    	Math.random() - 0.5,\n"+
-"				Math.random() - 0.5,\n"+
-"				Math.random() - 0.5);\n"+
-"			}\n"+
-"			function set_fraction() {\n"+
-"			    translation = new SFVec3f(\n"+
-"			    	translation.x + velocity.x,\n"+
-"				translation.y + velocity.y,\n"+
-"				translation.z + velocity.z);\n"+
-"			    if (Math.abs(translation.x) > 10) {\n"+
-"				initialize();\n"+
-"			    } else if (Math.abs(translation.y) > 10) {\n"+
-"				initialize();\n"+
-"			    } else if (Math.abs(translation.z) > 10) {\n"+
-"				initialize();\n"+
-"			    } else {\n"+
-"				velocity.x += Math.random() * 0.2 - 0.1;\n"+
-"				velocity.y += Math.random() * 0.2 - 0.1;\n"+
-"				velocity.z += Math.random() * 0.2 - 0.1;\n"+
-"			    }\n"+
-"			}`)
 ProtoBody18.children[1] = Script48;
 
-let TimeSensor52 = browser.currentScene.createNode("TimeSensor");
-TimeSensor52.DEF = "TourTime";
-TimeSensor52.cycleInterval = 0.15;
-TimeSensor52.loop = True;
-ProtoBody18.children[2] = TimeSensor52;
-
-let ROUTE53 = browser.currentScene.createNode("ROUTE");
-ROUTE53.fromNode = "TourTime";
-ROUTE53.fromField = "cycleTime";
-ROUTE53.toNode = "Bounce";
-ROUTE53.toField = "set_fraction";
-ProtoBody18.children[3] = ROUTE53;
+let TimeSensor53 = browser.currentScene.createNode("TimeSensor");
+TimeSensor53.DEF = "TourTime";
+TimeSensor53.cycleInterval = 0.15;
+TimeSensor53.loop = True;
+ProtoBody18.children[2] = TimeSensor53;
 
 let ROUTE54 = browser.currentScene.createNode("ROUTE");
-ROUTE54.fromNode = "Bounce";
-ROUTE54.fromField = "translation_changed";
-ROUTE54.toNode = "transform";
-ROUTE54.toField = "set_translation";
-ProtoBody18.children[4] = ROUTE54;
+ROUTE54.fromNode = "TourTime";
+ROUTE54.fromField = "cycleTime";
+ROUTE54.toNode = "Bounce";
+ROUTE54.toField = "set_fraction";
+ProtoBody18.children[3] = ROUTE54;
+
+let ROUTE55 = browser.currentScene.createNode("ROUTE");
+ROUTE55.fromNode = "Bounce";
+ROUTE55.fromField = "translation_changed";
+ROUTE55.toNode = "transform";
+ROUTE55.toField = "set_translation";
+ProtoBody18.children[4] = ROUTE55;
 
 ProtoDeclare17.protoBody = ProtoBody18;
 
 browser.currentScene.children[3] = ProtoDeclare17;
 
-let ProtoInstance55 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance55.name = "Bubble";
-browser.currentScene.children[4] = ProtoInstance55;
-
 let ProtoInstance56 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance56.name = "Bubble";
-browser.currentScene.children[5] = ProtoInstance56;
+browser.currentScene.children[4] = ProtoInstance56;
 
 let ProtoInstance57 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance57.name = "Bubble";
-browser.currentScene.children[6] = ProtoInstance57;
+browser.currentScene.children[5] = ProtoInstance57;
+
+let ProtoInstance58 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance58.name = "Bubble";
+browser.currentScene.children[6] = ProtoInstance58;
 

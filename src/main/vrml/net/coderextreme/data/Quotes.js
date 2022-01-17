@@ -387,53 +387,48 @@ field74.accessType = "outputOnly";
 field74.type = "MFColor";
 Script72.field[1] = field74;
 
+let #sourceCode75 = browser.currentScene.createNode("#sourceCode");
+Script72.#sourceCode[2] = #sourceCode75;
 
-Script72.setSourceCode(`ecmascript:\n"+
-"\n"+
-"function colorInput (eventValue) // Example source code\n"+
-"{\n"+
-"   colorsOutput = new MFColor(eventValue); // assigning value sends output event\n"+
-"// Browser.print('colorInput=' + eventValue + ', colorsOutput=' + colorsOutput + '\\n');\n"+
-"}`)
 Group70.children[1] = Script72;
 
-let ColorInterpolator75 = browser.currentScene.createNode("ColorInterpolator");
-ColorInterpolator75.DEF = "ColorAnimator";
-ColorInterpolator75.key = new MFFloat(new float[0,0.5,1]);
-ColorInterpolator75.keyValue = new MFColor(new float[0.9411765,1,1,0.29411766,0,0.50980395,0.9411765,1,1]);
+let ColorInterpolator76 = browser.currentScene.createNode("ColorInterpolator");
+ColorInterpolator76.DEF = "ColorAnimator";
+ColorInterpolator76.key = new MFFloat(new float[0,0.5,1]);
+ColorInterpolator76.keyValue = new MFColor(new float[0.9411765,1,1,0.29411766,0,0.50980395,0.9411765,1,1]);
 //AZURE to INDIGO and back again
-Group70.children[2] = ColorInterpolator75;
+Group70.children[2] = ColorInterpolator76;
 
-let TimeSensor76 = browser.currentScene.createNode("TimeSensor");
-TimeSensor76.DEF = "ColorClock";
-TimeSensor76.cycleInterval = 60;
-TimeSensor76.loop = True;
-Group70.children[3] = TimeSensor76;
-
-let ROUTE77 = browser.currentScene.createNode("ROUTE");
-ROUTE77.fromField = "colorsOutput";
-ROUTE77.fromNode = "colorTypeConversionScript";
-ROUTE77.toField = "skyColor";
-ROUTE77.toNode = "GradualBackground";
-Group70.children[4] = ROUTE77;
+let TimeSensor77 = browser.currentScene.createNode("TimeSensor");
+TimeSensor77.DEF = "ColorClock";
+TimeSensor77.cycleInterval = 60;
+TimeSensor77.loop = True;
+Group70.children[3] = TimeSensor77;
 
 let ROUTE78 = browser.currentScene.createNode("ROUTE");
-ROUTE78.fromField = "value_changed";
-ROUTE78.fromNode = "ColorAnimator";
-ROUTE78.toField = "colorInput";
-ROUTE78.toNode = "colorTypeConversionScript";
-Group70.children[5] = ROUTE78;
+ROUTE78.fromField = "colorsOutput";
+ROUTE78.fromNode = "colorTypeConversionScript";
+ROUTE78.toField = "skyColor";
+ROUTE78.toNode = "GradualBackground";
+Group70.children[4] = ROUTE78;
 
 let ROUTE79 = browser.currentScene.createNode("ROUTE");
-ROUTE79.fromField = "fraction_changed";
-ROUTE79.fromNode = "ColorClock";
-ROUTE79.toField = "set_fraction";
-ROUTE79.toNode = "ColorAnimator";
-Group70.children[6] = ROUTE79;
+ROUTE79.fromField = "value_changed";
+ROUTE79.fromNode = "ColorAnimator";
+ROUTE79.toField = "colorInput";
+ROUTE79.toNode = "colorTypeConversionScript";
+Group70.children[5] = ROUTE79;
+
+let ROUTE80 = browser.currentScene.createNode("ROUTE");
+ROUTE80.fromField = "fraction_changed";
+ROUTE80.fromNode = "ColorClock";
+ROUTE80.toField = "set_fraction";
+ROUTE80.toNode = "ColorAnimator";
+Group70.children[6] = ROUTE80;
 
 browser.currentScene.children[17] = Group70;
 
-let ProtoDeclare80 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+let ProtoDeclare81 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="ArtDeco01Material" appinfo="tooltip: ArtDeco01Material prototype is a Material node" ><ProtoInterface><field name="description" accessType="inputOutput" appinfo="tooltip for descriptionField" type="SFString" value="ArtDeco01Material prototype is a Material node"></field>
 <field name="enabled" accessType="inputOutput" type="SFBool" value="true"></field>
@@ -445,174 +440,174 @@ let ProtoDeclare80 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 </TouchSensor>
 </ProtoBody>
 </ProtoDeclare>`);
-ProtoDeclare80.name = "ArtDeco01Material";
-ProtoDeclare80.appinfo = "tooltip: ArtDeco01Material prototype is a Material node";
-let ProtoInterface81 = browser.currentScene.createNode("ProtoInterface");
-let field82 = browser.currentScene.createNode("field");
-field82.name = "description";
-field82.accessType = "inputOutput";
-field82.appinfo = "tooltip for descriptionField";
-field82.type = "SFString";
-field82.value = "ArtDeco01Material prototype is a Material node";
-ProtoInterface81.field = new MFNode();
-
-ProtoInterface81.field[0] = field82;
-
+ProtoDeclare81.name = "ArtDeco01Material";
+ProtoDeclare81.appinfo = "tooltip: ArtDeco01Material prototype is a Material node";
+let ProtoInterface82 = browser.currentScene.createNode("ProtoInterface");
 let field83 = browser.currentScene.createNode("field");
-field83.name = "enabled";
+field83.name = "description";
 field83.accessType = "inputOutput";
-field83.type = "SFBool";
-field83.value = "true";
-ProtoInterface81.field[1] = field83;
+field83.appinfo = "tooltip for descriptionField";
+field83.type = "SFString";
+field83.value = "ArtDeco01Material prototype is a Material node";
+ProtoInterface82.field = new MFNode();
 
-ProtoDeclare80.protoInterface = ProtoInterface81;
+ProtoInterface82.field[0] = field83;
 
-let ProtoBody84 = browser.currentScene.createNode("ProtoBody");
+let field84 = browser.currentScene.createNode("field");
+field84.name = "enabled";
+field84.accessType = "inputOutput";
+field84.type = "SFBool";
+field84.value = "true";
+ProtoInterface82.field[1] = field84;
+
+ProtoDeclare81.protoInterface = ProtoInterface82;
+
+let ProtoBody85 = browser.currentScene.createNode("ProtoBody");
 //Initial node of ProtoBody determines prototype node type
-let Material85 = browser.currentScene.createNode("Material");
-Material85.ambientIntensity = 0.25;
-Material85.diffuseColor = new SFColor(new float[0.282435,0.085159,0.134462]);
-Material85.shininess = 0.127273;
-Material85.specularColor = new SFColor(new float[0.276305,0.11431,0.139857]);
-ProtoBody84.children = new MFNode();
+let Material86 = browser.currentScene.createNode("Material");
+Material86.ambientIntensity = 0.25;
+Material86.diffuseColor = new SFColor(new float[0.282435,0.085159,0.134462]);
+Material86.shininess = 0.127273;
+Material86.specularColor = new SFColor(new float[0.276305,0.11431,0.139857]);
+ProtoBody85.children = new MFNode();
 
-ProtoBody84.children[0] = Material85;
+ProtoBody85.children[0] = Material86;
 
 //[HelloWorldProgram diagnostic] should be connected to scene graph: ArtDeco01ProtoDeclare.getNodeType()=\"Material\"
 //presence of follow-on TouchSensor shows that additional nodes are allowed in ProtoBody after initial node, regardless of node types
-let TouchSensor86 = browser.currentScene.createNode("TouchSensor");
-TouchSensor86.description = "within ProtoBody";
-let IS87 = browser.currentScene.createNode("IS");
-let connect88 = browser.currentScene.createNode("connect");
-connect88.nodeField = "description";
-connect88.protoField = "description";
-IS87.connect = new MFNode();
-
-IS87.connect[0] = connect88;
-
+let TouchSensor87 = browser.currentScene.createNode("TouchSensor");
+TouchSensor87.description = "within ProtoBody";
+let IS88 = browser.currentScene.createNode("IS");
 let connect89 = browser.currentScene.createNode("connect");
-connect89.nodeField = "enabled";
-connect89.protoField = "enabled";
-IS87.connect[1] = connect89;
+connect89.nodeField = "description";
+connect89.protoField = "description";
+IS88.connect = new MFNode();
 
-TouchSensor86.iS = IS87;
+IS88.connect[0] = connect89;
 
-ProtoBody84.children[1] = TouchSensor86;
+let connect90 = browser.currentScene.createNode("connect");
+connect90.nodeField = "enabled";
+connect90.protoField = "enabled";
+IS88.connect[1] = connect90;
 
-ProtoDeclare80.protoBody = ProtoBody84;
+TouchSensor87.iS = IS88;
 
-browser.currentScene.children[18] = ProtoDeclare80;
+ProtoBody85.children[1] = TouchSensor87;
 
-let ExternProtoDeclare90 = browser.currentScene.createNode("ExternProtoDeclare");
-ExternProtoDeclare90.name = "ArtDeco02Material";
-ExternProtoDeclare90.appinfo = "this is a different Material node";
-ExternProtoDeclare90.url = new MFString(new java.lang.String["http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"]);
+ProtoDeclare81.protoBody = ProtoBody85;
+
+browser.currentScene.children[18] = ProtoDeclare81;
+
+let ExternProtoDeclare91 = browser.currentScene.createNode("ExternProtoDeclare");
+ExternProtoDeclare91.name = "ArtDeco02Material";
+ExternProtoDeclare91.appinfo = "this is a different Material node";
+ExternProtoDeclare91.url = new MFString(new java.lang.String["http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"]);
 //[HelloWorldProgram diagnostic] ArtDeco02ExternProtoDeclare.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time, TODO X3DJSAIL needs to add further capability.\"
-let field91 = browser.currentScene.createNode("field");
-field91.name = "description";
-field91.accessType = "inputOutput";
-field91.appinfo = "tooltip for descriptionField";
-field91.type = "SFString";
-ExternProtoDeclare90.field = new MFNode();
+let field92 = browser.currentScene.createNode("field");
+field92.name = "description";
+field92.accessType = "inputOutput";
+field92.appinfo = "tooltip for descriptionField";
+field92.type = "SFString";
+ExternProtoDeclare91.field = new MFNode();
 
-ExternProtoDeclare90.field[0] = field91;
+ExternProtoDeclare91.field[0] = field92;
 
-browser.currentScene.children[19] = ExternProtoDeclare90;
+browser.currentScene.children[19] = ExternProtoDeclare91;
 
 //Tested ArtDeco01ProtoInstance, ArtDeco02ProtoInstance for improper node type when ProtoInstance is added in wrong place
-let Shape92 = browser.currentScene.createNode("Shape");
-Shape92.DEF = "TestShape1";
-let Appearance93 = browser.currentScene.createNode("Appearance");
-Appearance93.DEF = "TestAppearance1";
+let Shape93 = browser.currentScene.createNode("Shape");
+Shape93.DEF = "TestShape1";
+let Appearance94 = browser.currentScene.createNode("Appearance");
+Appearance94.DEF = "TestAppearance1";
 //ArtDeco01Material prototype goes here... TODO ensure setContainerField is handled in exported Java
-let ProtoInstance94 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance94.name = "ArtDeco01Material";
+let ProtoInstance95 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance95.name = "ArtDeco01Material";
 //[HelloWorldProgram diagnostic] ArtDeco01ProtoInstance.getNodeType()=\"Material\"
-let fieldValue95 = browser.currentScene.createNode("fieldValue");
-fieldValue95.name = "description";
-fieldValue95.value = "ArtDeco01Material can substitute for a Material node";
-ProtoInstance94.fieldValue = new MFNode();
+let fieldValue96 = browser.currentScene.createNode("fieldValue");
+fieldValue96.name = "description";
+fieldValue96.value = "ArtDeco01Material can substitute for a Material node";
+ProtoInstance95.fieldValue = new MFNode();
 
-ProtoInstance94.fieldValue[0] = fieldValue95;
+ProtoInstance95.fieldValue[0] = fieldValue96;
 
-Appearance93.shaders = new MFNode();
+Appearance94.shaders = new MFNode();
 
-Appearance93.shaders[0] = ProtoInstance94;
+Appearance94.shaders[0] = ProtoInstance95;
 
-Shape92.appearance = Appearance93;
+Shape93.appearance = Appearance94;
 
-let Sphere96 = browser.currentScene.createNode("Sphere");
-Sphere96.radius = 0.001;
-Shape92.geometry = Sphere96;
+let Sphere97 = browser.currentScene.createNode("Sphere");
+Sphere97.radius = 0.001;
+Shape93.geometry = Sphere97;
 
-browser.currentScene.children[20] = Shape92;
+browser.currentScene.children[20] = Shape93;
 
-let Shape97 = browser.currentScene.createNode("Shape");
-Shape97.DEF = "TestShape2";
-let Appearance98 = browser.currentScene.createNode("Appearance");
-Appearance98.DEF = "TestAppearance2";
+let Shape98 = browser.currentScene.createNode("Shape");
+Shape98.DEF = "TestShape2";
+let Appearance99 = browser.currentScene.createNode("Appearance");
+Appearance99.DEF = "TestAppearance2";
 //ArtDeco02Material prototype goes here... TODO ensure setContainerField is handled in exported Java
-let ProtoInstance99 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance99.name = "ArtDeco02Material";
-ProtoInstance99.DEF = "ArtDeco02MaterialDEF";
+let ProtoInstance100 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance100.name = "ArtDeco02Material";
+ProtoInstance100.DEF = "ArtDeco02MaterialDEF";
 //[HelloWorldProgram diagnostic] ArtDeco02ProtoInstance.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time, TODO X3DJSAIL needs to add further capability.\"
-let fieldValue100 = browser.currentScene.createNode("fieldValue");
-fieldValue100.name = "description";
-fieldValue100.value = "ArtDeco02Material can substitute for another Material node";
-ProtoInstance99.fieldValue = new MFNode();
+let fieldValue101 = browser.currentScene.createNode("fieldValue");
+fieldValue101.name = "description";
+fieldValue101.value = "ArtDeco02Material can substitute for another Material node";
+ProtoInstance100.fieldValue = new MFNode();
 
-ProtoInstance99.fieldValue[0] = fieldValue100;
+ProtoInstance100.fieldValue[0] = fieldValue101;
 
-Appearance98.shaders = new MFNode();
+Appearance99.shaders = new MFNode();
 
-Appearance98.shaders[0] = ProtoInstance99;
+Appearance99.shaders[0] = ProtoInstance100;
 
-Shape97.appearance = Appearance98;
+Shape98.appearance = Appearance99;
 
-let Cone101 = browser.currentScene.createNode("Cone");
-Cone101.bottomRadius = 0.001;
-Cone101.height = 0.001;
-Shape97.geometry = Cone101;
+let Cone102 = browser.currentScene.createNode("Cone");
+Cone102.bottomRadius = 0.001;
+Cone102.height = 0.001;
+Shape98.geometry = Cone102;
 
-browser.currentScene.children[21] = Shape97;
+browser.currentScene.children[21] = Shape98;
 
-let Shape102 = browser.currentScene.createNode("Shape");
-Shape102.DEF = "TestShape3";
-let Appearance103 = browser.currentScene.createNode("Appearance");
-Appearance103.DEF = "TestAppearance3";
+let Shape103 = browser.currentScene.createNode("Shape");
+Shape103.DEF = "TestShape3";
+let Appearance104 = browser.currentScene.createNode("Appearance");
+Appearance104.DEF = "TestAppearance3";
 //ArtDeco02Material ProtoInstance USE goes here...
-let ProtoInstance104 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance104.USE = "ArtDeco02MaterialDEF";
-Appearance103.shaders = new MFNode();
+let ProtoInstance105 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance105.USE = "ArtDeco02MaterialDEF";
+Appearance104.shaders = new MFNode();
 
-Appearance103.shaders[0] = ProtoInstance104;
+Appearance104.shaders[0] = ProtoInstance105;
 
-Shape102.appearance = Appearance103;
+Shape103.appearance = Appearance104;
 
-let Cylinder105 = browser.currentScene.createNode("Cylinder");
-Cylinder105.height = 0.001;
-Cylinder105.radius = 0.001;
-Shape102.geometry = Cylinder105;
+let Cylinder106 = browser.currentScene.createNode("Cylinder");
+Cylinder106.height = 0.001;
+Cylinder106.radius = 0.001;
+Shape103.geometry = Cylinder106;
 
-browser.currentScene.children[22] = Shape102;
+browser.currentScene.children[22] = Shape103;
 
-let Inline106 = browser.currentScene.createNode("Inline");
-Inline106.DEF = "inlineSceneDef";
-Inline106.url = new MFString(new java.lang.String["someOtherScene.x3d"]);
-browser.currentScene.children[23] = Inline106;
+let Inline107 = browser.currentScene.createNode("Inline");
+Inline107.DEF = "inlineSceneDef";
+Inline107.url = new MFString(new java.lang.String["someOtherScene.x3d"]);
+browser.currentScene.children[23] = Inline107;
 
-let IMPORT107 = browser.currentScene.createNode("IMPORT");
-IMPORT107.AS = "WorldInfoDEF2";
-IMPORT107.importedDEF = "WorldInfoDEF";
-IMPORT107.inlineDEF = "inlineSceneDef";
-browser.currentScene.children[24] = IMPORT107;
+let IMPORT108 = browser.currentScene.createNode("IMPORT");
+IMPORT108.AS = "WorldInfoDEF2";
+IMPORT108.importedDEF = "WorldInfoDEF";
+IMPORT108.inlineDEF = "inlineSceneDef";
+browser.currentScene.children[24] = IMPORT108;
 
-let EXPORT108 = browser.currentScene.createNode("EXPORT");
-EXPORT108.AS = "WorldInfoDEF3";
-EXPORT108.localDEF = "WorldInfoDEF";
-browser.currentScene.children[25] = EXPORT108;
+let EXPORT109 = browser.currentScene.createNode("EXPORT");
+EXPORT109.AS = "WorldInfoDEF3";
+EXPORT109.localDEF = "WorldInfoDEF";
+browser.currentScene.children[25] = EXPORT109;
 
-let ProtoDeclare109 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
+let ProtoDeclare110 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
 <ProtoDeclare name="MaterialModulator" appinfo="mimic a Material node and modulate fields as an animation effect" documentation="http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html" ><ProtoInterface><field name="enabled" accessType="inputOutput" type="SFBool" value="true"></field>
 <field name="diffuseColor" accessType="inputOutput" type="SFColor" value="0 0 0"></field>
@@ -637,238 +632,196 @@ let ProtoDeclare109 = browser.createX3DFromString(`<?xml version="1.0" encoding=
 <IS><connect nodeField="enabled" protoField="enabled"></connect>
 <connect nodeField="diffuseColor" protoField="diffuseColor"></connect>
 </IS>
-<![CDATA[ecmascript:
-function initialize ()
-{
-    newColor = diffuseColor; // start with correct color
-}
-function set_enabled (newValue)
-{
-	enabled = newValue;
-}
-function clockTrigger (timeValue)
-{
-    if (!enabled) return;
-    red   = newColor.r;
-    green = newColor.g;
-    blue  = newColor.b;
-
-    // note different modulation rates for each color component, % is modulus operator
-    newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);
-	if (enabled)
-	{
-		Browser.print ('diffuseColor=(' + red + ',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\n');
-	}
-}]]></Script>
+<#sourceCode/>
+</Script>
 </ProtoBody>
 </ProtoDeclare>`);
-ProtoDeclare109.name = "MaterialModulator";
-ProtoDeclare109.appinfo = "mimic a Material node and modulate fields as an animation effect";
-ProtoDeclare109.documentation = "http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html";
-let ProtoInterface110 = browser.currentScene.createNode("ProtoInterface");
-let field111 = browser.currentScene.createNode("field");
-field111.name = "enabled";
-field111.accessType = "inputOutput";
-field111.type = "SFBool";
-field111.value = "true";
-ProtoInterface110.field = new MFNode();
-
-ProtoInterface110.field[0] = field111;
-
+ProtoDeclare110.name = "MaterialModulator";
+ProtoDeclare110.appinfo = "mimic a Material node and modulate fields as an animation effect";
+ProtoDeclare110.documentation = "http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html";
+let ProtoInterface111 = browser.currentScene.createNode("ProtoInterface");
 let field112 = browser.currentScene.createNode("field");
-field112.name = "diffuseColor";
+field112.name = "enabled";
 field112.accessType = "inputOutput";
-field112.type = "SFColor";
-field112.value = "0 0 0";
-ProtoInterface110.field[1] = field112;
+field112.type = "SFBool";
+field112.value = "true";
+ProtoInterface111.field = new MFNode();
+
+ProtoInterface111.field[0] = field112;
 
 let field113 = browser.currentScene.createNode("field");
-field113.name = "emissiveColor";
+field113.name = "diffuseColor";
 field113.accessType = "inputOutput";
 field113.type = "SFColor";
-field113.value = "0.05 0.05 0.5";
-ProtoInterface110.field[2] = field113;
+field113.value = "0 0 0";
+ProtoInterface111.field[1] = field113;
 
 let field114 = browser.currentScene.createNode("field");
-field114.name = "specularColor";
+field114.name = "emissiveColor";
 field114.accessType = "inputOutput";
 field114.type = "SFColor";
-field114.value = "0 0 0";
-ProtoInterface110.field[3] = field114;
+field114.value = "0.05 0.05 0.5";
+ProtoInterface111.field[2] = field114;
 
 let field115 = browser.currentScene.createNode("field");
-field115.name = "transparency";
+field115.name = "specularColor";
 field115.accessType = "inputOutput";
-field115.type = "SFFloat";
-field115.value = "0";
-ProtoInterface110.field[4] = field115;
+field115.type = "SFColor";
+field115.value = "0 0 0";
+ProtoInterface111.field[3] = field115;
 
 let field116 = browser.currentScene.createNode("field");
-field116.name = "shininess";
+field116.name = "transparency";
 field116.accessType = "inputOutput";
 field116.type = "SFFloat";
 field116.value = "0";
-ProtoInterface110.field[5] = field116;
+ProtoInterface111.field[4] = field116;
 
 let field117 = browser.currentScene.createNode("field");
-field117.name = "ambientIntensity";
+field117.name = "shininess";
 field117.accessType = "inputOutput";
 field117.type = "SFFloat";
 field117.value = "0";
-ProtoInterface110.field[6] = field117;
+ProtoInterface111.field[5] = field117;
 
-ProtoDeclare109.protoInterface = ProtoInterface110;
+let field118 = browser.currentScene.createNode("field");
+field118.name = "ambientIntensity";
+field118.accessType = "inputOutput";
+field118.type = "SFFloat";
+field118.value = "0";
+ProtoInterface111.field[6] = field118;
 
-let ProtoBody118 = browser.currentScene.createNode("ProtoBody");
-let Material119 = browser.currentScene.createNode("Material");
-Material119.DEF = "MaterialNode";
-let IS120 = browser.currentScene.createNode("IS");
-let connect121 = browser.currentScene.createNode("connect");
-connect121.nodeField = "diffuseColor";
-connect121.protoField = "diffuseColor";
-IS120.connect = new MFNode();
+ProtoDeclare110.protoInterface = ProtoInterface111;
 
-IS120.connect[0] = connect121;
-
+let ProtoBody119 = browser.currentScene.createNode("ProtoBody");
+let Material120 = browser.currentScene.createNode("Material");
+Material120.DEF = "MaterialNode";
+let IS121 = browser.currentScene.createNode("IS");
 let connect122 = browser.currentScene.createNode("connect");
-connect122.nodeField = "emissiveColor";
-connect122.protoField = "emissiveColor";
-IS120.connect[1] = connect122;
+connect122.nodeField = "diffuseColor";
+connect122.protoField = "diffuseColor";
+IS121.connect = new MFNode();
+
+IS121.connect[0] = connect122;
 
 let connect123 = browser.currentScene.createNode("connect");
-connect123.nodeField = "specularColor";
-connect123.protoField = "specularColor";
-IS120.connect[2] = connect123;
+connect123.nodeField = "emissiveColor";
+connect123.protoField = "emissiveColor";
+IS121.connect[1] = connect123;
 
 let connect124 = browser.currentScene.createNode("connect");
-connect124.nodeField = "transparency";
-connect124.protoField = "transparency";
-IS120.connect[3] = connect124;
+connect124.nodeField = "specularColor";
+connect124.protoField = "specularColor";
+IS121.connect[2] = connect124;
 
 let connect125 = browser.currentScene.createNode("connect");
-connect125.nodeField = "shininess";
-connect125.protoField = "shininess";
-IS120.connect[4] = connect125;
+connect125.nodeField = "transparency";
+connect125.protoField = "transparency";
+IS121.connect[3] = connect125;
 
 let connect126 = browser.currentScene.createNode("connect");
-connect126.nodeField = "ambientIntensity";
-connect126.protoField = "ambientIntensity";
-IS120.connect[5] = connect126;
+connect126.nodeField = "shininess";
+connect126.protoField = "shininess";
+IS121.connect[4] = connect126;
 
-Material119.iS = IS120;
+let connect127 = browser.currentScene.createNode("connect");
+connect127.nodeField = "ambientIntensity";
+connect127.protoField = "ambientIntensity";
+IS121.connect[5] = connect127;
 
-ProtoBody118.children = new MFNode();
+Material120.iS = IS121;
 
-ProtoBody118.children[0] = Material119;
+ProtoBody119.children = new MFNode();
+
+ProtoBody119.children[0] = Material120;
 
 //Only first node (the node type) is renderable, others are along for the ride
-let Script127 = browser.currentScene.createNode("Script");
-Script127.DEF = "MaterialModulatorScript";
-let field128 = browser.currentScene.createNode("field");
-field128.name = "enabled";
-field128.accessType = "inputOutput";
-field128.type = "SFBool";
-Script127.field = new MFNode();
-
-Script127.field[0] = field128;
-
+let Script128 = browser.currentScene.createNode("Script");
+Script128.DEF = "MaterialModulatorScript";
 let field129 = browser.currentScene.createNode("field");
-field129.name = "diffuseColor";
+field129.name = "enabled";
 field129.accessType = "inputOutput";
-field129.type = "SFColor";
-Script127.field[1] = field129;
+field129.type = "SFBool";
+Script128.field = new MFNode();
+
+Script128.field[0] = field129;
 
 let field130 = browser.currentScene.createNode("field");
-field130.name = "newColor";
-field130.accessType = "outputOnly";
+field130.name = "diffuseColor";
+field130.accessType = "inputOutput";
 field130.type = "SFColor";
-Script127.field[2] = field130;
+Script128.field[1] = field130;
 
 let field131 = browser.currentScene.createNode("field");
-field131.name = "clockTrigger";
-field131.accessType = "inputOnly";
-field131.type = "SFTime";
-Script127.field[3] = field131;
+field131.name = "newColor";
+field131.accessType = "outputOnly";
+field131.type = "SFColor";
+Script128.field[2] = field131;
 
-let IS132 = browser.currentScene.createNode("IS");
-let connect133 = browser.currentScene.createNode("connect");
-connect133.nodeField = "enabled";
-connect133.protoField = "enabled";
-IS132.connect = new MFNode();
+let field132 = browser.currentScene.createNode("field");
+field132.name = "clockTrigger";
+field132.accessType = "inputOnly";
+field132.type = "SFTime";
+Script128.field[3] = field132;
 
-IS132.connect[0] = connect133;
-
+let IS133 = browser.currentScene.createNode("IS");
 let connect134 = browser.currentScene.createNode("connect");
-connect134.nodeField = "diffuseColor";
-connect134.protoField = "diffuseColor";
-IS132.connect[1] = connect134;
+connect134.nodeField = "enabled";
+connect134.protoField = "enabled";
+IS133.connect = new MFNode();
 
-Script127.iS = IS132;
+IS133.connect[0] = connect134;
 
+let connect135 = browser.currentScene.createNode("connect");
+connect135.nodeField = "diffuseColor";
+connect135.protoField = "diffuseColor";
+IS133.connect[1] = connect135;
 
-Script127.setSourceCode(`ecmascript:\n"+
-"function initialize ()\n"+
-"{\n"+
-"    newColor = diffuseColor; // start with correct color\n"+
-"}\n"+
-"function set_enabled (newValue)\n"+
-"{\n"+
-"	enabled = newValue;\n"+
-"}\n"+
-"function clockTrigger (timeValue)\n"+
-"{\n"+
-"    if (!enabled) return;\n"+
-"    red   = newColor.r;\n"+
-"    green = newColor.g;\n"+
-"    blue  = newColor.b;\n"+
-"\n"+
-"    // note different modulation rates for each color component, % is modulus operator\n"+
-"    newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);\n"+
-"	if (enabled)\n"+
-"	{\n"+
-"		Browser.print ('diffuseColor=(' + red + ',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\\n');\n"+
-"	}\n"+
-"}`)
-ProtoBody118.children[1] = Script127;
+Script128.iS = IS133;
 
-ProtoDeclare109.protoBody = ProtoBody118;
+let #sourceCode136 = browser.currentScene.createNode("#sourceCode");
+Script128.#sourceCode[4] = #sourceCode136;
 
-browser.currentScene.children[26] = ProtoDeclare109;
+ProtoBody119.children[1] = Script128;
+
+ProtoDeclare110.protoBody = ProtoBody119;
+
+browser.currentScene.children[26] = ProtoDeclare110;
 
 //Test success: declarative statement createDeclarativeShapeTests()
-let Group135 = browser.currentScene.createNode("Group");
-Group135.DEF = "DeclarativeGroupExample";
-let Shape136 = browser.currentScene.createNode("Shape");
-let MetadataString137 = browser.currentScene.createNode("MetadataString");
-MetadataString137.name = "findThisNameValue";
-MetadataString137.DEF = "FindableMetadataStringTest";
-MetadataString137.value = new MFString(new java.lang.String["test case"]);
-Shape136.metadata = MetadataString137;
+let Group137 = browser.currentScene.createNode("Group");
+Group137.DEF = "DeclarativeGroupExample";
+let Shape138 = browser.currentScene.createNode("Shape");
+let MetadataString139 = browser.currentScene.createNode("MetadataString");
+MetadataString139.name = "findThisNameValue";
+MetadataString139.DEF = "FindableMetadataStringTest";
+MetadataString139.value = new MFString(new java.lang.String["test case"]);
+Shape138.metadata = MetadataString139;
 
-let Appearance138 = browser.currentScene.createNode("Appearance");
-Appearance138.DEF = "DeclarativeAppearanceExample";
+let Appearance140 = browser.currentScene.createNode("Appearance");
+Appearance140.DEF = "DeclarativeAppearanceExample";
 //DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance
-let ProtoInstance139 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance139.name = "MaterialModulator";
-ProtoInstance139.DEF = "MyMaterialModulator";
-Appearance138.shaders = new MFNode();
+let ProtoInstance141 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance141.name = "MaterialModulator";
+ProtoInstance141.DEF = "MyMaterialModulator";
+Appearance140.shaders = new MFNode();
 
-Appearance138.shaders[0] = ProtoInstance139;
+Appearance140.shaders[0] = ProtoInstance141;
 
-Shape136.appearance = Appearance138;
+Shape138.appearance = Appearance140;
 
-let Cone140 = browser.currentScene.createNode("Cone");
-Cone140.bottom = False;
-Cone140.bottomRadius = 0.05;
-Cone140.height = 0.1;
-Shape136.geometry = Cone140;
+let Cone142 = browser.currentScene.createNode("Cone");
+Cone142.bottom = False;
+Cone142.bottomRadius = 0.05;
+Cone142.height = 0.1;
+Shape138.geometry = Cone142;
 
-Group135.children = new MFNode();
+Group137.children = new MFNode();
 
-Group135.children[0] = Shape136;
+Group137.children[0] = Shape138;
 
 //Test success: declarativeGroup.addChild() singleton pipeline method
-browser.currentScene.children[27] = Group135;
+browser.currentScene.children[27] = Group137;
 
 //Test success: declarative statement addChild()
 //Test success: x3dModel.findNodeByDEF(DeclarativeAppearanceExample) = <Appearance DEF='DeclarativeAppearanceExample'/> i.e. <Appearance DEF='DeclarativeAppearanceExample'> <!- - DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance - -> <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField='material'/> </Appearance>
@@ -876,8 +829,8 @@ browser.currentScene.children[27] = Group135;
 //Test success: x3dModel.findElementByNameValue(\"ArtDeco01Material\", \"ProtoDeclare\") found
 //Test success: x3dModel.findElementByNameValue(\"MaterialModulator\", \"ProtoDeclare\") found
 //Test success: x3dModel.findElementByNameValue(\"MaterialModulator\", \"ProtoInstance\") found
-let Group141 = browser.currentScene.createNode("Group");
-Group141.DEF = "TestFieldObjectsGroup";
+let Group143 = browser.currentScene.createNode("Group");
+Group143.DEF = "TestFieldObjectsGroup";
 //testFieldObjects() results
 //SFBool default=true, true=true, false=false, negate()=true
 //MFBool default=, initial=true false true, negate()=false true false
@@ -885,30 +838,30 @@ Group141.DEF = "TestFieldObjectsGroup";
 //MFFloat default=, initial=1 2 3, append(5)=1 2 3 5, inserts(3,4)(0,0)=0 1 2 3 4 5, append(6)=0 1 2 3 4 5 6, size()=7
 //... get1Value[3]=3.0, remove[1]=0 2 3 4 5 6, set1Value(0,10)=10 2 3 4 5 6, multiply(2)=20 4 6 8 10 12, clear=
 //SFVec3f default=0 0 0, initial=1 2 3, setValue=4 5 6, multiply(2)=8 10 12, normalize()=0.45584232 0.5698029 0.68376344
-browser.currentScene.children[28] = Group141;
-
-let Sound142 = browser.currentScene.createNode("Sound");
-Sound142.location = new SFVec3f(new float[0,1.6,0]);
-//set sound-ellipsoid location height at 1.6m to match typical avatar height
-let AudioClip143 = browser.currentScene.createNode("AudioClip");
-AudioClip143.description = "chimes";
-AudioClip143.url = new MFString(new java.lang.String["chimes.wav","https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"]);
-//Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d
-Sound142.source = AudioClip143;
-
-browser.currentScene.children[29] = Sound142;
+browser.currentScene.children[28] = Group143;
 
 let Sound144 = browser.currentScene.createNode("Sound");
 Sound144.location = new SFVec3f(new float[0,1.6,0]);
 //set sound-ellipsoid location height at 1.6m to match typical avatar height
-let MovieTexture145 = browser.currentScene.createNode("MovieTexture");
-MovieTexture145.description = "mpgsys.mpg from ConformanceNist suite";
-MovieTexture145.url = new MFString(new java.lang.String["mpgsys.mpg","https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"]);
+let AudioClip145 = browser.currentScene.createNode("AudioClip");
+AudioClip145.description = "chimes";
+AudioClip145.url = new MFString(new java.lang.String["chimes.wav","https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"]);
+//Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d
+Sound144.source = AudioClip145;
+
+browser.currentScene.children[29] = Sound144;
+
+let Sound146 = browser.currentScene.createNode("Sound");
+Sound146.location = new SFVec3f(new float[0,1.6,0]);
+//set sound-ellipsoid location height at 1.6m to match typical avatar height
+let MovieTexture147 = browser.currentScene.createNode("MovieTexture");
+MovieTexture147.description = "mpgsys.mpg from ConformanceNist suite";
+MovieTexture147.url = new MFString(new java.lang.String["mpgsys.mpg","https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"]);
 //Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d
 //Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\"
-Sound144.source = MovieTexture145;
+Sound146.source = MovieTexture147;
 
-browser.currentScene.children[30] = Sound144;
+browser.currentScene.children[30] = Sound146;
 
 //Test success: AnchorObject.isNode()=true, siteAnchor.isNode()=true
 //Test success: AnchorObject.isStatement()=false, siteAnchor.isStatement()=false
@@ -916,21 +869,21 @@ browser.currentScene.children[30] = Sound144;
 //Test success: ROUTEObject.isStatement()=true, orbitPositionROUTE.isStatement()=true
 //Test success: CommentsBlock.isNode()=false, testComments.isNode()=false
 //Test failure: CommentsBlock.isStatement()=true, testComments.isStatement()=true
-let Shape146 = browser.currentScene.createNode("Shape");
-Shape146.DEF = "ExtrusionShape";
+let Shape148 = browser.currentScene.createNode("Shape");
+Shape148.DEF = "ExtrusionShape";
 //ExampleExtrusion isCrossSectionClosed()=true, crossSection='[1.0, 1.0, 1.0, -1.0, -1.0, -1.0, -1.0, 1.0, 1.0, 1.0]'
 //ExampleExtrusion isSpineClosed()=false, spine='[0.0, 0.0, 0.0, 0.0, 1.0, 0.0]'
-let Appearance147 = browser.currentScene.createNode("Appearance");
-Appearance147.DEF = "TransparentAppearance";
-let Material148 = browser.currentScene.createNode("Material");
-Material148.transparency = 1;
-Appearance147.material = Material148;
+let Appearance149 = browser.currentScene.createNode("Appearance");
+Appearance149.DEF = "TransparentAppearance";
+let Material150 = browser.currentScene.createNode("Material");
+Material150.transparency = 1;
+Appearance149.material = Material150;
 
-Shape146.appearance = Appearance147;
+Shape148.appearance = Appearance149;
 
-let Extrusion149 = browser.currentScene.createNode("Extrusion");
-Extrusion149.DEF = "ExampleExtrusion";
-Shape146.geometry = Extrusion149;
+let Extrusion151 = browser.currentScene.createNode("Extrusion");
+Extrusion151.DEF = "ExampleExtrusion";
+Shape148.geometry = Extrusion151;
 
-browser.currentScene.children[31] = Shape146;
+browser.currentScene.children[31] = Shape148;
 

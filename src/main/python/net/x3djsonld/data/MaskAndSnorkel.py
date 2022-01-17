@@ -125,7 +125,7 @@ try:
 #   print('check newModel.VRML() serialization...')
     newModelVRML=newModel.VRML() # test export method VRML() for exceptions during export
     # print(prependLineNumbers(newModelVRML)) # debug
-    print("Python-to-VRML export of VRML output successful (still testing)")
+    print("Python-to-VRML export of VRML output successful")
 except BaseException as err:
     print("*** Python-to-VRML export of VRML output failed:", err)
     if newModelVRML: # may have failed to generate

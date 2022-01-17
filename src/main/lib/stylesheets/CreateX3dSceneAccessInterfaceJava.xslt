@@ -16090,7 +16090,7 @@ setAttribute method invocations).
 	}
 -->
 							</xsl:if>
-							<!-- ComposedShader, PackagedShader have no contained source <SourceText/> -->
+							<!-- ComposedShader, PackagedShader have no contained source code -->
                                                         <xsl:if test="($name = 'Script') or ($name = 'ShaderProgram') or ($name = 'ShaderPart')">
 							<!-- now handled by X3DUOM
 								<xsl:text disable-output-escaping="yes"><![CDATA[
@@ -16098,50 +16098,50 @@ setAttribute method invocations).
 	/**
 	 * Set new source code (for example, JavaScript).
 	 * <i>WARNING</i>: be sure to prepend <i>ecmascript:</i> prior to any actual source code.
-	 * @param newSourceText is source code to set
+	 * @param newSourceCode is source code to set
 	 * @return {@link ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
 setAttribute method invocations).
 	 */
-	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ setSourceCode (String[] newSourceText)
+	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ setSourceCode (String[] newSourceCode)
 	{
-		return setSourceCode (Arrays.toString(newSourceText));
+		return setSourceCode (Arrays.toString(newSourceCode));
 	}
 
 	/**
 	 * Set new source code (for example, JavaScript).
 	 * <i>WARNING</i>: be sure to prepend <i>ecmascript:</i> prior to any actual source code.
 	 * @see <a href="https://www.web3d.org/x3d/content/X3dTooltips.html#CDATA" target="_blank">X3D Scene Authoring Hints: CDATA Character Data</a>
-	 * @param newSourceText is source code to set
+	 * @param newSourceCode is source code to set
 	 * @return {@link ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
 setAttribute method invocations).
 	 */
-	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ setSourceCode (String newSourceText)
+	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ setSourceCode (String newSourceCode)
 	{
 		String errorNotice = new String();
-		if (newSourceText == null)
+		if (newSourceCode == null)
 		{
-			errorNotice = "Illegal setSourceCode() invocation, String newSourceText is null. ";
+			errorNotice = "Illegal setSourceCode() invocation, String newSourceCode is null. ";
 			validationResult.append(errorNotice).append("\n");
 		}
-		else if (newSourceText.trim().isEmpty())
+		else if (newSourceCode.trim().isEmpty())
 		{
-			errorNotice = "Illegal setSourceCode() invocation, String newSourceText is empty. ";
+			errorNotice = "Illegal setSourceCode() invocation, String newSourceCode is empty. ";
 			validationResult.append(errorNotice).append("\n");
 		}
-		else if (newSourceText.trim().startsWith("<![CDATA[") || newSourceText.endsWith("]" + "]>"))
+		else if (newSourceCode.trim().startsWith("<![CDATA[") || newSourceCode.endsWith("]" + "]>"))
 		{
-			errorNotice = "Illegal setSourceCode() invocation, String newSourceText is wrapped in <![CDATA[ ...(source)... ]]> block which can be omitted";
+			errorNotice = "Illegal setSourceCode() invocation, String newSourceCode is wrapped in <![CDATA[ ...(source)... ]]> block which can be omitted";
 			validationResult.append(errorNotice).append("\n");
 		}
-		if (!newSourceText.trim().startsWith("<![CDATA[") && !newSourceText.trim().startsWith("ecmascript:"))
+		if (!newSourceCode.trim().startsWith("<![CDATA[") && !newSourceCode.trim().startsWith("ecmascript:"))
 		{
-			errorNotice = "Illegal setSourceCode() invocation, String newSourceText must start with \"ecmascript:\"";
+			errorNotice = "Illegal setSourceCode() invocation, String newSourceCode must start with \"ecmascript:\"";
 			validationResult.append(errorNotice).append("\n");
 		}
 		if (!errorNotice.isEmpty())
 			throw new InvalidFieldValueException(errorNotice);
 
-		sourceCode = newSourceText;
+		sourceCode = newSourceCode;
 		return this;
 	}
 ]]></xsl:text>
@@ -16150,55 +16150,55 @@ setAttribute method invocations).
 	/**
 	 * Set new source code (for example, JavaScript), utility method using StringBuilder.
 	 * <i>WARNING</i>: be sure to prepend <i>ecmascript:</i> prior to any actual source code.
-	 * @param newSourceText is source to set
+	 * @param newSourceCode is source to set
 	 * @return {@link ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
 setAttribute method invocations).
 	 */
-	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ setSourceCode (StringBuilder newSourceText)
+	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ setSourceCode (StringBuilder newSourceCode)
 	{
-		if (newSourceText == null)
+		if (newSourceCode == null)
 		{
-			String errorNotice = "Illegal setSourceCode() invocation, StringBuilder newSourceText is null";
+			String errorNotice = "Illegal setSourceCode() invocation, StringBuilder newSourceCode is null";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
 		}
-		else if (!newSourceText.toString().trim().startsWith("ecmascript:") && (newSourceText.toString().trim().length() > 0))
+		else if (!newSourceCode.toString().trim().startsWith("ecmascript:") && (newSourceCode.toString().trim().length() > 0))
 		{
-			String errorNotice = "Illegal setSourceCode() invocation, StringBuilder newSourceText must start with \"ecmascript:\"";
+			String errorNotice = "Illegal setSourceCode() invocation, StringBuilder newSourceCode must start with \"ecmascript:\"";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
 		}
-		setSourceCode(newSourceText.toString()); // apply further diagnostics
+		setSourceCode(newSourceCode.toString()); // apply further diagnostics
 		return this;
 	}
 
 	/**
 	 * Append source code (for example, JavaScript)
-	 * @param newSourceText is source to append
+	 * @param newSourceCode is source to append
 	 * @return {@link ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
 setAttribute method invocations).
 	 */
-	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ appendSourceCode (String newSourceText)
+	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ appendSourceCode (String newSourceCode)
 	{
-		sourceCode += newSourceText;
+		sourceCode += newSourceCode;
 		return this;
 	}
 
 	/**
 	 * Append source code (for example, JavaScript)
-	 * @param newSourceText is source to append
+	 * @param newSourceCode is source to append
 	 * @return {@link ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
 setAttribute method invocations).
 	 */
-	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ appendSourceCode (StringBuilder newSourceText)
+	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ appendSourceCode (StringBuilder newSourceCode)
 	{
-		if (newSourceText == null)
+		if (newSourceCode == null)
 		{
-			String errorNotice = "Illegal appendSourceCode() invocation, StringBuilder newSourceText is null";
+			String errorNotice = "Illegal appendSourceCode() invocation, StringBuilder newSourceCode is null";
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
 		}
-		else sourceCode += newSourceText.toString();
+		else sourceCode += newSourceCode.toString();
 		return this;
 	}
 

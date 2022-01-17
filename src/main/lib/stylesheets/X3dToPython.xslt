@@ -172,7 +172,7 @@ try:
 # ==================
         </xsl:text>-->
         <xsl:text>
-    print("Python-to-VRML export of VRML output successful (still testing)")
+    print("Python-to-VRML export of VRML output successful")
 except BaseException as err:
     print("*** Python-to-VRML export of VRML output failed:", err)
     if newModelVRML: # may have failed to generate
@@ -2192,6 +2192,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
 					($attributeName='intensity')        or
 					($attributeName='interauralDistance') or
 					($attributeName='knee')             or
+					($attributeName='loopEnd')          or ($attributeName='loopStart')       or
 					($attributeName='maxDistance')      or
 					($attributeName='minDecibels')      or ($attributeName='maxDecibels')     or
                                         starts-with($attributeName,'pointSize') or

@@ -134,73 +134,8 @@ let ProtoDeclare17 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 <field name="d" type="SFFloat" accessType="inputOutput" value="3"></field>
 <field name="tdelta" type="SFFloat" accessType="inputOutput" value="0.5"></field>
 <field name="pdelta" type="SFFloat" accessType="inputOutput" value="0.5"></field>
-<![CDATA[ecmascript:
-
-			function initialize() {
-			    translation = new SFVec3f(0, 0, 0);
-			    velocity = new SFVec3f(
-			    	Math.random() - 0.5,
-				Math.random() - 0.5,
-				Math.random() - 0.5);
-			}
-			function set_fraction() {
-			    translation = new SFVec3f(
-			    	translation.x + velocity.x,
-				translation.y + velocity.y,
-				translation.z + velocity.z);
-			    for (var j = 0; j <= 2; j++) {
-				    if (Math.abs(translation.x) > 10) {
-					initialize();
-				    } else if (Math.abs(translation.y) > 10) {
-					initialize();
-				    } else if (Math.abs(translation.z) > 10) {
-					initialize();
-				    } else {
-					velocity.x += Math.random() * 0.2 - 0.1;
-					velocity.y += Math.random() * 0.2 - 0.1;
-					velocity.z += Math.random() * 0.2 - 0.1;
-				    }
-			    }
-			    animate_flowers();
-			}
-
-			function animate_flowers(fraction, eventTime) {
-				var choice = Math.floor(Math.random() * 4);
-				switch (choice) {
-				case 0:
-					a += Math.random() * 0.2 - 0.1;
-					break;
-				case 1:
-					b += Math.random() * 0.2 - 0.1;
-					break;
-				case 2:
-					c += Math.random() * 2 - 1;
-					break;
-				case 3:
-					d += Math.random() * 2 - 1;
-					break;
-				}
-				tdelta = tdelta + 0.5;
-				pdelta = pdelta + 0.5;
-				if (a > 1) {
-					a =  0.5;
-				}
-				if (b > 1) {
-					b =  0.5;
-				}
-				if (c < 1) {
-					c =  4;
-				}
-				if (d < 1) {
-					d =  4;
-				}
-				if (c > 10) {
-					c = 4;
-				}
-				if (d > 10) {
-					d = 4;
-				}
-			}]]></Script>
+<#sourceCode/>
+</Script>
 <TimeSensor DEF="TourTime" cycleInterval="5" loop="true"></TimeSensor>
 <ROUTE fromNode="TourTime" fromField="fraction_changed" toNode="Animate" toField="set_fraction"></ROUTE>
 <ROUTE fromNode="Animate" fromField="translation_changed" toNode="animate_transform" toField="set_translation"></ROUTE>
@@ -532,193 +467,128 @@ field69.accessType = "inputOutput";
 field69.value = "0.5";
 Script60.field[8] = field69;
 
+let #sourceCode70 = browser.currentScene.createNode("#sourceCode");
+Script60.#sourceCode[9] = #sourceCode70;
 
-Script60.setSourceCode(`ecmascript:\n"+
-"\n"+
-"			function initialize() {\n"+
-"			    translation = new SFVec3f(0, 0, 0);\n"+
-"			    velocity = new SFVec3f(\n"+
-"			    	Math.random() - 0.5,\n"+
-"				Math.random() - 0.5,\n"+
-"				Math.random() - 0.5);\n"+
-"			}\n"+
-"			function set_fraction() {\n"+
-"			    translation = new SFVec3f(\n"+
-"			    	translation.x + velocity.x,\n"+
-"				translation.y + velocity.y,\n"+
-"				translation.z + velocity.z);\n"+
-"			    for (var j = 0; j <= 2; j++) {\n"+
-"				    if (Math.abs(translation.x) > 10) {\n"+
-"					initialize();\n"+
-"				    } else if (Math.abs(translation.y) > 10) {\n"+
-"					initialize();\n"+
-"				    } else if (Math.abs(translation.z) > 10) {\n"+
-"					initialize();\n"+
-"				    } else {\n"+
-"					velocity.x += Math.random() * 0.2 - 0.1;\n"+
-"					velocity.y += Math.random() * 0.2 - 0.1;\n"+
-"					velocity.z += Math.random() * 0.2 - 0.1;\n"+
-"				    }\n"+
-"			    }\n"+
-"			    animate_flowers();\n"+
-"			}\n"+
-"\n"+
-"			function animate_flowers(fraction, eventTime) {\n"+
-"				var choice = Math.floor(Math.random() * 4);\n"+
-"				switch (choice) {\n"+
-"				case 0:\n"+
-"					a += Math.random() * 0.2 - 0.1;\n"+
-"					break;\n"+
-"				case 1:\n"+
-"					b += Math.random() * 0.2 - 0.1;\n"+
-"					break;\n"+
-"				case 2:\n"+
-"					c += Math.random() * 2 - 1;\n"+
-"					break;\n"+
-"				case 3:\n"+
-"					d += Math.random() * 2 - 1;\n"+
-"					break;\n"+
-"				}\n"+
-"				tdelta = tdelta + 0.5;\n"+
-"				pdelta = pdelta + 0.5;\n"+
-"				if (a > 1) {\n"+
-"					a =  0.5;\n"+
-"				}\n"+
-"				if (b > 1) {\n"+
-"					b =  0.5;\n"+
-"				}\n"+
-"				if (c < 1) {\n"+
-"					c =  4;\n"+
-"				}\n"+
-"				if (d < 1) {\n"+
-"					d =  4;\n"+
-"				}\n"+
-"				if (c > 10) {\n"+
-"					c = 4;\n"+
-"				}\n"+
-"				if (d > 10) {\n"+
-"					d = 4;\n"+
-"				}\n"+
-"			}`)
 ProtoBody18.children[1] = Script60;
 
-let TimeSensor70 = browser.currentScene.createNode("TimeSensor");
-TimeSensor70.DEF = "TourTime";
-TimeSensor70.cycleInterval = 5;
-TimeSensor70.loop = True;
-ProtoBody18.children[2] = TimeSensor70;
-
-let ROUTE71 = browser.currentScene.createNode("ROUTE");
-ROUTE71.fromNode = "TourTime";
-ROUTE71.fromField = "fraction_changed";
-ROUTE71.toNode = "Animate";
-ROUTE71.toField = "set_fraction";
-ProtoBody18.children[3] = ROUTE71;
+let TimeSensor71 = browser.currentScene.createNode("TimeSensor");
+TimeSensor71.DEF = "TourTime";
+TimeSensor71.cycleInterval = 5;
+TimeSensor71.loop = True;
+ProtoBody18.children[2] = TimeSensor71;
 
 let ROUTE72 = browser.currentScene.createNode("ROUTE");
-ROUTE72.fromNode = "Animate";
-ROUTE72.fromField = "translation_changed";
-ROUTE72.toNode = "animate_transform";
-ROUTE72.toField = "set_translation";
-ProtoBody18.children[4] = ROUTE72;
+ROUTE72.fromNode = "TourTime";
+ROUTE72.fromField = "fraction_changed";
+ROUTE72.toNode = "Animate";
+ROUTE72.toField = "set_fraction";
+ProtoBody18.children[3] = ROUTE72;
 
 let ROUTE73 = browser.currentScene.createNode("ROUTE");
 ROUTE73.fromNode = "Animate";
-ROUTE73.fromField = "a";
-ROUTE73.toNode = "x_ite";
-ROUTE73.toField = "a";
-ProtoBody18.children[5] = ROUTE73;
+ROUTE73.fromField = "translation_changed";
+ROUTE73.toNode = "animate_transform";
+ROUTE73.toField = "set_translation";
+ProtoBody18.children[4] = ROUTE73;
 
 let ROUTE74 = browser.currentScene.createNode("ROUTE");
 ROUTE74.fromNode = "Animate";
-ROUTE74.fromField = "b";
+ROUTE74.fromField = "a";
 ROUTE74.toNode = "x_ite";
-ROUTE74.toField = "b";
-ProtoBody18.children[6] = ROUTE74;
+ROUTE74.toField = "a";
+ProtoBody18.children[5] = ROUTE74;
 
 let ROUTE75 = browser.currentScene.createNode("ROUTE");
 ROUTE75.fromNode = "Animate";
-ROUTE75.fromField = "c";
+ROUTE75.fromField = "b";
 ROUTE75.toNode = "x_ite";
-ROUTE75.toField = "c";
-ProtoBody18.children[7] = ROUTE75;
+ROUTE75.toField = "b";
+ProtoBody18.children[6] = ROUTE75;
 
 let ROUTE76 = browser.currentScene.createNode("ROUTE");
 ROUTE76.fromNode = "Animate";
-ROUTE76.fromField = "d";
+ROUTE76.fromField = "c";
 ROUTE76.toNode = "x_ite";
-ROUTE76.toField = "d";
-ProtoBody18.children[8] = ROUTE76;
+ROUTE76.toField = "c";
+ProtoBody18.children[7] = ROUTE76;
 
 let ROUTE77 = browser.currentScene.createNode("ROUTE");
 ROUTE77.fromNode = "Animate";
-ROUTE77.fromField = "pdelta";
+ROUTE77.fromField = "d";
 ROUTE77.toNode = "x_ite";
-ROUTE77.toField = "pdelta";
-ProtoBody18.children[9] = ROUTE77;
+ROUTE77.toField = "d";
+ProtoBody18.children[8] = ROUTE77;
 
 let ROUTE78 = browser.currentScene.createNode("ROUTE");
 ROUTE78.fromNode = "Animate";
-ROUTE78.fromField = "tdelta";
+ROUTE78.fromField = "pdelta";
 ROUTE78.toNode = "x_ite";
-ROUTE78.toField = "tdelta";
-ProtoBody18.children[10] = ROUTE78;
+ROUTE78.toField = "pdelta";
+ProtoBody18.children[9] = ROUTE78;
 
 let ROUTE79 = browser.currentScene.createNode("ROUTE");
 ROUTE79.fromNode = "Animate";
-ROUTE79.fromField = "a";
-ROUTE79.toNode = "x3dom";
-ROUTE79.toField = "a";
-ProtoBody18.children[11] = ROUTE79;
+ROUTE79.fromField = "tdelta";
+ROUTE79.toNode = "x_ite";
+ROUTE79.toField = "tdelta";
+ProtoBody18.children[10] = ROUTE79;
 
 let ROUTE80 = browser.currentScene.createNode("ROUTE");
 ROUTE80.fromNode = "Animate";
-ROUTE80.fromField = "b";
+ROUTE80.fromField = "a";
 ROUTE80.toNode = "x3dom";
-ROUTE80.toField = "b";
-ProtoBody18.children[12] = ROUTE80;
+ROUTE80.toField = "a";
+ProtoBody18.children[11] = ROUTE80;
 
 let ROUTE81 = browser.currentScene.createNode("ROUTE");
 ROUTE81.fromNode = "Animate";
-ROUTE81.fromField = "c";
+ROUTE81.fromField = "b";
 ROUTE81.toNode = "x3dom";
-ROUTE81.toField = "c";
-ProtoBody18.children[13] = ROUTE81;
+ROUTE81.toField = "b";
+ProtoBody18.children[12] = ROUTE81;
 
 let ROUTE82 = browser.currentScene.createNode("ROUTE");
 ROUTE82.fromNode = "Animate";
-ROUTE82.fromField = "d";
+ROUTE82.fromField = "c";
 ROUTE82.toNode = "x3dom";
-ROUTE82.toField = "d";
-ProtoBody18.children[14] = ROUTE82;
+ROUTE82.toField = "c";
+ProtoBody18.children[13] = ROUTE82;
 
 let ROUTE83 = browser.currentScene.createNode("ROUTE");
 ROUTE83.fromNode = "Animate";
-ROUTE83.fromField = "pdelta";
+ROUTE83.fromField = "d";
 ROUTE83.toNode = "x3dom";
-ROUTE83.toField = "pdelta";
-ProtoBody18.children[15] = ROUTE83;
+ROUTE83.toField = "d";
+ProtoBody18.children[14] = ROUTE83;
 
 let ROUTE84 = browser.currentScene.createNode("ROUTE");
 ROUTE84.fromNode = "Animate";
-ROUTE84.fromField = "tdelta";
+ROUTE84.fromField = "pdelta";
 ROUTE84.toNode = "x3dom";
-ROUTE84.toField = "tdelta";
-ProtoBody18.children[16] = ROUTE84;
+ROUTE84.toField = "pdelta";
+ProtoBody18.children[15] = ROUTE84;
+
+let ROUTE85 = browser.currentScene.createNode("ROUTE");
+ROUTE85.fromNode = "Animate";
+ROUTE85.fromField = "tdelta";
+ROUTE85.toNode = "x3dom";
+ROUTE85.toField = "tdelta";
+ProtoBody18.children[16] = ROUTE85;
 
 ProtoDeclare17.protoBody = ProtoBody18;
 
 browser.currentScene.children[2] = ProtoDeclare17;
 
-let ProtoInstance85 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance85.name = "flower";
-browser.currentScene.children[3] = ProtoInstance85;
-
 let ProtoInstance86 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance86.name = "flower";
-browser.currentScene.children[4] = ProtoInstance86;
+browser.currentScene.children[3] = ProtoInstance86;
 
 let ProtoInstance87 = browser.currentScene.createNode("ProtoInstance");
 ProtoInstance87.name = "flower";
-browser.currentScene.children[5] = ProtoInstance87;
+browser.currentScene.children[4] = ProtoInstance87;
+
+let ProtoInstance88 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance88.name = "flower";
+browser.currentScene.children[5] = ProtoInstance88;
 

@@ -1251,7 +1251,8 @@ POSSIBILITY OF SUCH DAMAGE.
 					<xsl:apply-templates select="."/><!-- handle this node -->
 					<xsl:text>)</xsl:text>
 				</xsl:when>
-				<xsl:when test="(local-name(..) = 'ParticleSet') and (starts-with($containerField, 'texCoord'))">
+				<xsl:when test="((local-name(..) = 'ParticleSet') and starts-with($containerField, 'texCoord')) or
+						((local-name(..) = 'MultiTextureCoordinate') and ((local-name() = 'TextureCoordinate') or (local-name() = 'TextureCoordinateGenerator') or (local-name() = 'ProtoInstance')))">
 					<!-- ignoring ($containerField = 'texCoordRamp') -->
 					<xsl:text>.addTexCoord(</xsl:text>
 					<xsl:apply-templates select="."/><!-- handle this node -->

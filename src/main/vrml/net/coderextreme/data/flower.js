@@ -107,107 +107,35 @@ field21.type = "MFInt32";
 Script18.field[2] = field21;
 
 //<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"resolution\" type=\"SFInt32\" value=\"150\"/>
+let #sourceCode22 = browser.currentScene.createNode("#sourceCode");
+Script18.#sourceCode[3] = #sourceCode22;
 
-Script18.setSourceCode(`ecmascript:\n"+
-"\n"+
-"var e = 5;\n"+
-"var f = 5;\n"+
-"var g = 5;\n"+
-"var h = 5;\n"+
-"var resolution = 100;\n"+
-"var t = 0;\n"+
-"var p = 0;\n"+
-"\n"+
-"function initialize() {\n"+
-"     generateCoordinates(resolution);\n"+
-"     var localci = [];\n"+
-"     for ( i = 0; i < resolution-1; i++) {\n"+
-"     	for ( j = 0; j < resolution-1; j++) {\n"+
-"	     localci.push(i*resolution+j);\n"+
-"	     localci.push(i*resolution+j+1);\n"+
-"	     localci.push((i+1)*resolution+j+1);\n"+
-"	     localci.push((i+1)*resolution+j);\n"+
-"	     localci.push(-1);\n"+
-"	}\n"+
-"    }\n"+
-"    coordIndexes = new MFInt32(localci);\n"+
-"}\n"+
-"\n"+
-"function generateCoordinates(resolution) {\n"+
-"     var theta = 0.0;\n"+
-"     var phi = 0.0;\n"+
-"     var delta = (2 * 3.141592653) / (resolution-1);\n"+
-"     var localc = [];\n"+
-"     for ( i = 0; i < resolution; i++) {\n"+
-"     	for ( j = 0; j < resolution; j++) {\n"+
-"		var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);\n"+
-"		localc.push(new SFVec3f(\n"+
-"			rho * Math.cos(phi) * Math.cos(theta),\n"+
-"			rho * Math.cos(phi) * Math.sin(theta),\n"+
-"			rho * Math.sin(phi)\n"+
-"		));\n"+
-"		theta += delta;\n"+
-"	}\n"+
-"	phi += delta;\n"+
-"     }\n"+
-"     coordinates = new MFVec3f(localc);\n"+
-"}\n"+
-"\n"+
-"function set_fraction(fraction, eventTime) {\n"+
-"	t += 0.5;\n"+
-"	p += 0.5;\n"+
-"	var choice = Math.floor(Math.random() * 4);\n"+
-"	switch (choice) {\n"+
-"	case 0:\n"+
-"		e += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	case 1:\n"+
-"		f += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	case 2:\n"+
-"		g += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	case 3:\n"+
-"		h += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"		break;\n"+
-"	}\n"+
-"	if (f < 1) {\n"+
-"		f = 10;\n"+
-"	}\n"+
-"	if (g < 1) {\n"+
-"		g = 4;\n"+
-"	}\n"+
-"	if (h < 1) {\n"+
-"		h = 4;\n"+
-"	}\n"+
-"	generateCoordinates(resolution);\n"+
-"}`)
 browser.currentScene.children[5] = Script18;
 
-let TimeSensor22 = browser.currentScene.createNode("TimeSensor");
-TimeSensor22.DEF = "Clock";
-TimeSensor22.cycleInterval = 16;
-TimeSensor22.loop = True;
-browser.currentScene.children[6] = TimeSensor22;
-
-let ROUTE23 = browser.currentScene.createNode("ROUTE");
-ROUTE23.fromNode = "OrbitScript";
-ROUTE23.fromField = "coordIndexes";
-ROUTE23.toNode = "Orbit";
-ROUTE23.toField = "set_coordIndex";
-browser.currentScene.children[7] = ROUTE23;
+let TimeSensor23 = browser.currentScene.createNode("TimeSensor");
+TimeSensor23.DEF = "Clock";
+TimeSensor23.cycleInterval = 16;
+TimeSensor23.loop = True;
+browser.currentScene.children[6] = TimeSensor23;
 
 let ROUTE24 = browser.currentScene.createNode("ROUTE");
 ROUTE24.fromNode = "OrbitScript";
-ROUTE24.fromField = "coordinates";
-ROUTE24.toNode = "OrbitCoordinates";
-ROUTE24.toField = "point";
-browser.currentScene.children[8] = ROUTE24;
+ROUTE24.fromField = "coordIndexes";
+ROUTE24.toNode = "Orbit";
+ROUTE24.toField = "set_coordIndex";
+browser.currentScene.children[7] = ROUTE24;
 
 let ROUTE25 = browser.currentScene.createNode("ROUTE");
-ROUTE25.fromNode = "Clock";
-ROUTE25.fromField = "fraction_changed";
-ROUTE25.toNode = "OrbitScript";
-ROUTE25.toField = "set_fraction";
-browser.currentScene.children[9] = ROUTE25;
+ROUTE25.fromNode = "OrbitScript";
+ROUTE25.fromField = "coordinates";
+ROUTE25.toNode = "OrbitCoordinates";
+ROUTE25.toField = "point";
+browser.currentScene.children[8] = ROUTE25;
+
+let ROUTE26 = browser.currentScene.createNode("ROUTE");
+ROUTE26.fromNode = "Clock";
+ROUTE26.fromField = "fraction_changed";
+ROUTE26.toNode = "OrbitScript";
+ROUTE26.toField = "set_fraction";
+browser.currentScene.children[9] = ROUTE26;
 

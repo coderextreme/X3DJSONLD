@@ -35,15 +35,15 @@ newModel=X3D(profile='Immersive',version='3.3',
     component(level=1,name='Layering'),
     unit(category='angle',conversionFactor=1.0,name='AngleUnitConversion'),
     unit(category='length',conversionFactor=1.0,name='LengthUnitConversion'),
-    meta(content='HelloWorldProgramOutputCanonical.x3d',name='title'),
+    meta(content='HelloWorldProgramOutput.x3d',name='title'),
     meta(content='Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface Library (X3DJSAIL)',name='description'),
-    meta(content='https://www.web3d.org/specifications/java/X3DJSAIL.html',name='reference'),
+    meta(content='http://www.web3d.org/specifications/java/X3DJSAIL.html',name='reference'),
     meta(content='HelloWorldProgramOutput.java',name='generator'),
     meta(content='6 September 2016',name='created'),
     meta(content='27 December 2018',name='modified'),
     meta(content='X3D Java Scene Access Interface Library (X3DJSAIL)',name='generator'),
-    meta(content='https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java',name='generator'),
-    meta(content='Netbeans https://www.netbeans.org',name='generator'),
+    meta(content='http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java',name='generator'),
+    meta(content='Netbeans http://www.netbeans.org',name='generator'),
     meta(content='Don Brutzman',name='creator'),
     meta(content='https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java/examples/HelloWorldProgramOutput.x3d',name='reference'),
     meta(content='Console output, ClassicVRML encoding, VRML97 encoding and pretty-print documentation:',name='reference'),
@@ -51,8 +51,8 @@ newModel=X3D(profile='Immersive',version='3.3',
     meta(content='HelloWorldProgramOutput.x3dv',name='reference'),
     meta(content='HelloWorldProgramOutput.wrl',name='reference'),
     meta(content='HelloWorldProgramOutput.html',name='reference'),
-    meta(content='https://savage.nps.edu/X3dValidator?url=https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d',name='reference'),
-    meta(content='https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d',name='identifier'),
+    meta(content='https://savage.nps.edu/X3dValidator?url=http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d',name='reference'),
+    meta(content='http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d',name='identifier'),
     meta(content='../license.html',name='license')]),
   Scene=Scene(
     children=[
@@ -68,12 +68,12 @@ newModel=X3D(profile='Immersive',version='3.3',
     LayerSet(DEF='scene.addChildLayerSetTest'),
     Transform(DEF='LogoGeometryTransform',translation=(0,1.5,0),
       children=[
-      Anchor(description='select for X3D Java SAI Library (X3DJSAIL) description',url=["../X3DJSAIL.html","https://www.web3d.org/specifications/java/X3DJSAIL.html"],
+      Anchor(description='select for X3D Java SAI Library (X3DJSAIL) description',url=["../X3DJSAIL.html","http://www.web3d.org/specifications/java/X3DJSAIL.html"],
         children=[
         Shape(DEF='BoxShape',
           appearance=Appearance(
             material=Material(DEF='GreenMaterial',diffuseColor=(0,1,1),emissiveColor=(0.8,0,0),transparency=0.1),
-            texture=ImageTexture(url=["images/X3dJavaSceneAccessInterfaceSaiLibrary.png","https://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png"])),
+            texture=ImageTexture(url=["images/X3dJavaSceneAccessInterfaceSaiLibrary.png","http://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png"])),
           geometry=Box(DEF='test-NMTOKEN_regex.0123456789',class_='untextured'))])]),
     Shape(DEF='LineShape',
       appearance=Appearance(
@@ -104,7 +104,7 @@ newModel=X3D(profile='Immersive',version='3.3',
           #  alternative XML encoding: Text string='"One, Two, Comment" "" "He said, \&quot;Immel did it!\&quot;"' 
           #  alternative XML encoding: Text string='"One, Two, Comment" "" "He said, \&quot;Immel did it!\&quot;" ""' 
           #  alternative Java source: .setString(new String [] {"One, Two, Comment", "", "He said, \"Immel did it!\""}) 
-          #  reference: https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html 
+          #  reference: http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html 
           geometry=Text(string=["One, Two, Text","","He said, \"Immel did it!\" \"\""])))]
       #  It's a beautiful world 
       #  ... for you! 
@@ -147,7 +147,7 @@ newModel=X3D(profile='Immersive',version='3.3',
             connect=[
             connect(nodeField='description',protoField='description'),
             connect(nodeField='enabled',protoField='enabled')]))])),
-    ExternProtoDeclare(appinfo='this is a different Material node',name='ArtDeco02Material',url=["https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"],
+    ExternProtoDeclare(appinfo='this is a different Material node',name='ArtDeco02Material',url=["http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"],
       #  [HelloWorldProgram diagnostic] artDeco02ExternProtoDeclare.getNodeType()="ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file." 
       field=[
       field(accessType='inputOutput',appinfo='tooltip for descriptionField',name='description',type='SFString')]),
@@ -173,10 +173,10 @@ newModel=X3D(profile='Immersive',version='3.3',
         #  ArtDeco02Material ProtoInstance USE goes here. Note that name field is NOT defined as part of ProtoInstance USE. 
         material=ProtoInstance(USE='ArtDeco02MaterialDEF')),
       geometry=Cylinder(height=0.001,radius=0.001)),
-    Inline(DEF='inlineSceneDef',url=["someOtherScene.x3d","https://www.web3d.org/specifications/java/examples/someOtherScene.x3d"]),
+    Inline(DEF='inlineSceneDef',url=["someOtherScene.x3d","http://www.web3d.org/specifications/java/examples/someOtherScene.x3d"]),
     IMPORT(AS='WorldInfoDEF2',importedDEF='WorldInfoDEF',inlineDEF='inlineSceneDef'),
     EXPORT(AS='WorldInfoDEF3',localDEF='WorldInfoDEF'),
-    ProtoDeclare(appinfo='mimic a Material node and modulate fields as an animation effect',documentation='https://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html',name='MaterialModulator',
+    ProtoDeclare(appinfo='mimic a Material node and modulate fields as an animation effect',documentation='http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html',name='MaterialModulator',
       ProtoInterface=ProtoInterface(
         field=[
         field(accessType='inputOutput',name='enabled',type='SFBool',value=True),
@@ -239,13 +239,13 @@ newModel=X3D(profile='Immersive',version='3.3',
       ),
     Sound(location=(0,1.6,0),
       #  set sound-ellipsoid location height at 1.6m to match typical avatar height 
-      source=AudioClip(description='chimes',url=["chimes.wav","https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"],
-        #  Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d 
+      source=AudioClip(description='chimes',url=["chimes.wav","http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"],
+        #  Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d 
         )),
     Sound(location=(0,1.6,0),
       #  set sound-ellipsoid location height at 1.6m to match typical avatar height 
-      source=MovieTexture(description='mpgsys.mpg from ConformanceNist suite',url=["mpgsys.mpg","https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"],
-        #  Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d 
+      source=MovieTexture(description='mpgsys.mpg from ConformanceNist suite',url=["mpgsys.mpg","http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"],
+        #  Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d 
         #  Expected containerField='source', allowed containerField values="texture" "source" "back" "bottom" "front" "left" "right" "top" "backTexture" "bottomTexture" "frontTexture" "leftTexture" "rightTexture" "topTexture" "watchList" 
         )),
     #  Test success: AnchorObject.isNode()=true, siteAnchor.isNode()=true 
@@ -311,7 +311,7 @@ try:
 #   print('check newModel.VRML() serialization...')
     newModelVRML=newModel.VRML() # test export method VRML() for exceptions during export
     # print(prependLineNumbers(newModelVRML)) # debug
-    print("Python-to-VRML export of VRML output successful (still testing)")
+    print("Python-to-VRML export of VRML output successful")
 except BaseException as err:
     print("*** Python-to-VRML export of VRML output failed:", err)
     if newModelVRML: # may have failed to generate
@@ -327,4 +327,4 @@ except SyntaxError as err:
     if newModelJSON: # may have failed to generate
         print(prependLineNumbers(newModelJSON,err.lineno))
 
-print("python x3d.py load and self-test complete for HelloWorldProgramOutputCanonical.py")
+print("python x3d.py load and self-test complete for HelloWorldProgramOutput.py")

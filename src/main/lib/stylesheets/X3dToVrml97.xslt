@@ -7752,6 +7752,7 @@ EXTERNPROTO TransmitterPdu [
 					($attributeName='intensity')        or
 					($attributeName='interauralDistance') or
 					($attributeName='knee')             or
+					($attributeName='loopEnd')          or ($attributeName='loopStart')       or
 					($attributeName='maxDistance')      or
 					($attributeName='minDecibels')      or ($attributeName='maxDecibels')     or
                                         starts-with($attributeName,'pointSize') or
