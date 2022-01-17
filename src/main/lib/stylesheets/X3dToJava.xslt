@@ -84,9 +84,9 @@ POSSIBILITY OF SUCH DAMAGE.
     <xsl:variable name="isX3D3" select="starts-with($x3dVersion,'3')"/>
     <xsl:variable name="isX3D4" select="starts-with($x3dVersion,'4')"/>
 
-    <xsl:strip-space elements="*"/>
+    <xsl:strip-space elements="*"/><!-- omit whitespace-only text() nodes -->
     
-	<!-- Global variables -->
+    <!-- Global variables -->
                                           
     <xsl:variable name="licenseText">
 		<xsl:text>
@@ -1022,12 +1022,17 @@ POSSIBILITY OF SUCH DAMAGE.
                             <xsl:otherwise>
                                 <!-- can use multiline text blocks in Java 15 or greater -->
                                 <xsl:text>"""</xsl:text>
+                                <xsl:text>&#10;</xsl:text>
                                 <xsl:if test="not(starts-with(normalize-space(text()),'ecmascript:'))">
-                                        <xsl:text>ecmascript:</xsl:text><!-- necessary to avoid validation error -->
-                                        <xsl:text>&#10;</xsl:text>
+                                    <xsl:text>ecmascript:</xsl:text><!-- necessary to avoid validation error -->
+                                    <xsl:text>&#10;</xsl:text>
                                 </xsl:if>
-                                <xsl:value-of select="text()"/>
+                                <xsl:call-template name="trim-whitespace-recurse">
+                                    <xsl:with-param name="inputValue" select="text()"/>
+                                </xsl:call-template>
+                                <xsl:text>&#10;</xsl:text>
                                 <xsl:text>"""</xsl:text>
+                                
                             </xsl:otherwise>
                         </xsl:choose>
 			<xsl:text>)</xsl:text>
@@ -5679,5 +5684,45 @@ POSSIBILITY OF SUCH DAMAGE.
 		</xsl:choose>
       </xsl:if>
     </xsl:template>
+
+    <xsl:template name="trim-whitespace-recurse">
+        <xsl:param name="inputValue"><xsl:text><!-- default value is empty --></xsl:text></xsl:param>
+        <xsl:variable name="inputString" select="string($inputValue)"/>
+        <xsl:variable name="firstChar" select="substring($inputString,1,1)"/>
+        <xsl:variable name="lastChar"  select="substring($inputString,string-length($inputString),1)"/>
+        <!-- debug diagnostic
+        <xsl:message>
+            <xsl:text>*** trim-whitespace-recurse firstChar='</xsl:text>
+            <xsl:value-of select="$firstChar"/>
+            <xsl:text>' lastChar='</xsl:text>
+            <xsl:value-of select="$lastChar"/>
+            <xsl:text>'</xsl:text>
+            < ! - -
+            <xsl:text> inputString='</xsl:text>
+            <xsl:value-of select="$inputString"/>
+            <xsl:text>'</xsl:text>
+            - - >
+        </xsl:message> -->
+      <xsl:choose>
+        <xsl:when test="(string-length(normalize-space($inputString)) = 0)">
+            <xsl:text></xsl:text>
+        </xsl:when>
+        <xsl:when test="(string-length(normalize-space($firstChar)) = 0)">
+            <xsl:call-template name="trim-whitespace-recurse">
+              <xsl:with-param name="inputValue" select="substring($inputString,2)"/>
+            </xsl:call-template>
+        </xsl:when>
+        <xsl:when test="(string-length(normalize-space($lastChar)) = 0)">
+            <xsl:call-template name="trim-whitespace-recurse">
+              <xsl:with-param name="inputValue" select="substring($inputString,1,string-length($inputString)-1)"/>
+            </xsl:call-template>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="$inputString"/><!-- trimmed -->
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:template>
+    
+    <!-- ===================================================== -->
 
 </xsl:stylesheet>

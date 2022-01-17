@@ -11633,13 +11633,6 @@
                 "type": "string"
               }
             },
-            "#sourceText": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "type": "string"
-              }
-            },
             "field": {
               "$ref": "#/$defs/field"
             },
