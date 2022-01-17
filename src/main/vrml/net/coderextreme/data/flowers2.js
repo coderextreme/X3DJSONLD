@@ -103,80 +103,8 @@ let ProtoDeclare17 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 <field name="g" accessType="inputOutput" type="SFFloat" value="5"></field>
 <field name="h" accessType="inputOutput" type="SFFloat" value="5"></field>
 <field name="resolution" accessType="inputOutput" type="SFInt32" value="50"></field>
-<![CDATA[ecmascript:
-
-			var e = 5;
-			var f = 5;
-			var g = 5;
-			var h = 5;
-			var resolution = 100;
-
-			function initialize() {
-			     generateCoordinates();
-			     var localci = [];
-			     for (var i = 0; i < resolution-1; i++) {
-				for (var j = 0; j < resolution-1; j++) {
-				     localci.push(i*resolution+j);
-				     localci.push(i*resolution+j+1);
-				     localci.push((i+1)*resolution+j+1);
-				     localci.push((i+1)*resolution+j);
-				     localci.push(-1);
-				}
-			    }
-			    coordIndexes = new MFInt32(localci);
-			}
-
-			function generateCoordinates() {
-			     var theta = 0.0;
-			     var phi = 0.0;
-			     var delta = (2 * 3.141592653) / (resolution-1);
-			     var localc = [];
-			     for (var i = 0; i < resolution; i++) {
-				for (var j = 0; j < resolution; j++) {
-					var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
-					localc.push(new SFVec3f(
-						rho * Math.cos(phi) * Math.cos(theta),
-						rho * Math.cos(phi) * Math.sin(theta),
-						rho * Math.sin(phi)
-					));
-					theta += delta;
-				}
-				phi += delta;
-			     }
-			     
-			     coordinates = new MFVec3f(localc);
-			}
-
-			function set_fraction(fraction, eventTime) {
-				var choice = Math.floor(Math.random() * 4);
-				switch (choice) {
-				case 0:
-					e += Math.floor(Math.random() * 2) * 2 - 1;
-					break;
-				case 1:
-					f += Math.floor(Math.random() * 2) * 2 - 1;
-					break;
-				case 2:
-					g += Math.floor(Math.random() * 2) * 2 - 1;
-					break;
-				case 3:
-					h += Math.floor(Math.random() * 2) * 2 - 1;
-					break;
-				}
-				if (e < 1) {
-					f = 10;
-				}
-				if (f < 1) {
-					f = 10;
-				}
-				if (g < 1) {
-					g = 4;
-				}
-				if (h < 1) {
-					h = 4;
-				}
-				generateCoordinates();
-			}]]></Script>
+<#sourceCode/>
+</Script>
 <ROUTE fromNode="OrbitScript" fromField="coordIndexes" toNode="Orbit" toField="set_coordIndex"></ROUTE>
 <ROUTE fromNode="OrbitScript" fromField="coordinates" toNode="OrbitCoordinates" toField="point"></ROUTE>
 <ROUTE fromNode="Clock" fromField="fraction_changed" toNode="OrbitScript" toField="set_fraction"></ROUTE>
@@ -350,117 +278,45 @@ field47.type = "SFInt32";
 field47.value = "50";
 Script39.field[7] = field47;
 
+let #sourceCode48 = browser.currentScene.createNode("#sourceCode");
+Script39.#sourceCode[8] = #sourceCode48;
 
-Script39.setSourceCode(`ecmascript:\n"+
-"\n"+
-"			var e = 5;\n"+
-"			var f = 5;\n"+
-"			var g = 5;\n"+
-"			var h = 5;\n"+
-"			var resolution = 100;\n"+
-"\n"+
-"			function initialize() {\n"+
-"			     generateCoordinates();\n"+
-"			     var localci = [];\n"+
-"			     for (var i = 0; i < resolution-1; i++) {\n"+
-"				for (var j = 0; j < resolution-1; j++) {\n"+
-"				     localci.push(i*resolution+j);\n"+
-"				     localci.push(i*resolution+j+1);\n"+
-"				     localci.push((i+1)*resolution+j+1);\n"+
-"				     localci.push((i+1)*resolution+j);\n"+
-"				     localci.push(-1);\n"+
-"				}\n"+
-"			    }\n"+
-"			    coordIndexes = new MFInt32(localci);\n"+
-"			}\n"+
-"\n"+
-"			function generateCoordinates() {\n"+
-"			     var theta = 0.0;\n"+
-"			     var phi = 0.0;\n"+
-"			     var delta = (2 * 3.141592653) / (resolution-1);\n"+
-"			     var localc = [];\n"+
-"			     for (var i = 0; i < resolution; i++) {\n"+
-"				for (var j = 0; j < resolution; j++) {\n"+
-"					var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);\n"+
-"					localc.push(new SFVec3f(\n"+
-"						rho * Math.cos(phi) * Math.cos(theta),\n"+
-"						rho * Math.cos(phi) * Math.sin(theta),\n"+
-"						rho * Math.sin(phi)\n"+
-"					));\n"+
-"					theta += delta;\n"+
-"				}\n"+
-"				phi += delta;\n"+
-"			     }\n"+
-"			     \n"+
-"			     coordinates = new MFVec3f(localc);\n"+
-"			}\n"+
-"\n"+
-"			function set_fraction(fraction, eventTime) {\n"+
-"				var choice = Math.floor(Math.random() * 4);\n"+
-"				switch (choice) {\n"+
-"				case 0:\n"+
-"					e += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"					break;\n"+
-"				case 1:\n"+
-"					f += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"					break;\n"+
-"				case 2:\n"+
-"					g += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"					break;\n"+
-"				case 3:\n"+
-"					h += Math.floor(Math.random() * 2) * 2 - 1;\n"+
-"					break;\n"+
-"				}\n"+
-"				if (e < 1) {\n"+
-"					f = 10;\n"+
-"				}\n"+
-"				if (f < 1) {\n"+
-"					f = 10;\n"+
-"				}\n"+
-"				if (g < 1) {\n"+
-"					g = 4;\n"+
-"				}\n"+
-"				if (h < 1) {\n"+
-"					h = 4;\n"+
-"				}\n"+
-"				generateCoordinates();\n"+
-"			}`)
 Group24.children[3] = Script39;
-
-let ROUTE48 = browser.currentScene.createNode("ROUTE");
-ROUTE48.fromNode = "OrbitScript";
-ROUTE48.fromField = "coordIndexes";
-ROUTE48.toNode = "Orbit";
-ROUTE48.toField = "set_coordIndex";
-Group24.children[4] = ROUTE48;
 
 let ROUTE49 = browser.currentScene.createNode("ROUTE");
 ROUTE49.fromNode = "OrbitScript";
-ROUTE49.fromField = "coordinates";
-ROUTE49.toNode = "OrbitCoordinates";
-ROUTE49.toField = "point";
-Group24.children[5] = ROUTE49;
+ROUTE49.fromField = "coordIndexes";
+ROUTE49.toNode = "Orbit";
+ROUTE49.toField = "set_coordIndex";
+Group24.children[4] = ROUTE49;
 
 let ROUTE50 = browser.currentScene.createNode("ROUTE");
-ROUTE50.fromNode = "Clock";
-ROUTE50.fromField = "fraction_changed";
-ROUTE50.toNode = "OrbitScript";
-ROUTE50.toField = "set_fraction";
-Group24.children[6] = ROUTE50;
+ROUTE50.fromNode = "OrbitScript";
+ROUTE50.fromField = "coordinates";
+ROUTE50.toNode = "OrbitCoordinates";
+ROUTE50.toField = "point";
+Group24.children[5] = ROUTE50;
 
 let ROUTE51 = browser.currentScene.createNode("ROUTE");
-ROUTE51.fromNode = "OrbitPath";
-ROUTE51.fromField = "value_changed";
-ROUTE51.toNode = "OrbitTransform";
-ROUTE51.toField = "rotation";
-Group24.children[7] = ROUTE51;
+ROUTE51.fromNode = "Clock";
+ROUTE51.fromField = "fraction_changed";
+ROUTE51.toNode = "OrbitScript";
+ROUTE51.toField = "set_fraction";
+Group24.children[6] = ROUTE51;
 
 let ROUTE52 = browser.currentScene.createNode("ROUTE");
-ROUTE52.fromNode = "Clock";
-ROUTE52.fromField = "fraction_changed";
-ROUTE52.toNode = "OrbitPath";
-ROUTE52.toField = "set_fraction";
-Group24.children[8] = ROUTE52;
+ROUTE52.fromNode = "OrbitPath";
+ROUTE52.fromField = "value_changed";
+ROUTE52.toNode = "OrbitTransform";
+ROUTE52.toField = "rotation";
+Group24.children[7] = ROUTE52;
+
+let ROUTE53 = browser.currentScene.createNode("ROUTE");
+ROUTE53.fromNode = "Clock";
+ROUTE53.fromField = "fraction_changed";
+ROUTE53.toNode = "OrbitPath";
+ROUTE53.toField = "set_fraction";
+Group24.children[8] = ROUTE53;
 
 ProtoBody23.children = new MFNode();
 
@@ -470,57 +326,57 @@ ProtoDeclare17.protoBody = ProtoBody23;
 
 Group15.children[1] = ProtoDeclare17;
 
-let ProtoInstance53 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance53.name = "orbit";
-let fieldValue54 = browser.currentScene.createNode("fieldValue");
-fieldValue54.name = "translation";
-fieldValue54.value = "-8 0 0";
-ProtoInstance53.fieldValue = new MFNode();
-
-ProtoInstance53.fieldValue[0] = fieldValue54;
-
+let ProtoInstance54 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance54.name = "orbit";
 let fieldValue55 = browser.currentScene.createNode("fieldValue");
-fieldValue55.name = "diffuseColor";
-fieldValue55.value = "1 0.5 0";
-ProtoInstance53.fieldValue[1] = fieldValue55;
+fieldValue55.name = "translation";
+fieldValue55.value = "-8 0 0";
+ProtoInstance54.fieldValue = new MFNode();
+
+ProtoInstance54.fieldValue[0] = fieldValue55;
 
 let fieldValue56 = browser.currentScene.createNode("fieldValue");
-fieldValue56.name = "specularColor";
+fieldValue56.name = "diffuseColor";
 fieldValue56.value = "1 0.5 0";
-ProtoInstance53.fieldValue[2] = fieldValue56;
+ProtoInstance54.fieldValue[1] = fieldValue56;
 
 let fieldValue57 = browser.currentScene.createNode("fieldValue");
-fieldValue57.name = "transparency";
-fieldValue57.value = "0.75";
-ProtoInstance53.fieldValue[3] = fieldValue57;
+fieldValue57.name = "specularColor";
+fieldValue57.value = "1 0.5 0";
+ProtoInstance54.fieldValue[2] = fieldValue57;
 
-Group15.children[2] = ProtoInstance53;
+let fieldValue58 = browser.currentScene.createNode("fieldValue");
+fieldValue58.name = "transparency";
+fieldValue58.value = "0.75";
+ProtoInstance54.fieldValue[3] = fieldValue58;
 
-let ProtoInstance58 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance58.name = "orbit";
-let fieldValue59 = browser.currentScene.createNode("fieldValue");
-fieldValue59.name = "translation";
-fieldValue59.value = "8 0 0";
-ProtoInstance58.fieldValue = new MFNode();
+Group15.children[2] = ProtoInstance54;
 
-ProtoInstance58.fieldValue[0] = fieldValue59;
-
+let ProtoInstance59 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance59.name = "orbit";
 let fieldValue60 = browser.currentScene.createNode("fieldValue");
-fieldValue60.name = "diffuseColor";
-fieldValue60.value = "0 0.5 1";
-ProtoInstance58.fieldValue[1] = fieldValue60;
+fieldValue60.name = "translation";
+fieldValue60.value = "8 0 0";
+ProtoInstance59.fieldValue = new MFNode();
+
+ProtoInstance59.fieldValue[0] = fieldValue60;
 
 let fieldValue61 = browser.currentScene.createNode("fieldValue");
-fieldValue61.name = "specularColor";
+fieldValue61.name = "diffuseColor";
 fieldValue61.value = "0 0.5 1";
-ProtoInstance58.fieldValue[2] = fieldValue61;
+ProtoInstance59.fieldValue[1] = fieldValue61;
 
 let fieldValue62 = browser.currentScene.createNode("fieldValue");
-fieldValue62.name = "transparency";
-fieldValue62.value = "0.5";
-ProtoInstance58.fieldValue[3] = fieldValue62;
+fieldValue62.name = "specularColor";
+fieldValue62.value = "0 0.5 1";
+ProtoInstance59.fieldValue[2] = fieldValue62;
 
-Group15.children[3] = ProtoInstance58;
+let fieldValue63 = browser.currentScene.createNode("fieldValue");
+fieldValue63.name = "transparency";
+fieldValue63.value = "0.5";
+ProtoInstance59.fieldValue[3] = fieldValue63;
+
+Group15.children[3] = ProtoInstance59;
 
 browser.currentScene.children[2] = Group15;
 

@@ -98,9 +98,9 @@ Script25.field = new MFNode();
 
 Script25.field[0] = field26;
 
+let #sourceCode27 = browser.currentScene.createNode("#sourceCode");
+Script25.#sourceCode[1] = #sourceCode27;
 
-Script25.setSourceCode(`ecmascript:\n"+
-"			    var me = '\"1\" \"\"2\" \"\\n3\"';`)
 Transform9.children[3] = Script25;
 
 browser.currentScene.children = new MFNode();

@@ -382,7 +382,7 @@ DOM2JSONSerializer.prototype = {
 				fields[fieldName].push({"#comment": subobject[line]});
 			}
 		} else if (node.nodeType === 4) {
-			fieldName = "@sourceCode";
+			fieldName = "#sourceCode";
 			subobject = this.descendSourceText(node);
 			if (subobject[subobject.length-1] === "") {
 				subobject.pop();

@@ -34,27 +34,17 @@ head = head1;
 
 let Script8 = browser.currentScene.createNode("Script");
 Script8.DEF = "Browser";
+let #sourceCode9 = browser.currentScene.createNode("#sourceCode");
+Script8.#sourceCode = #sourceCode9;
 
-Script8.setSourceCode(`ecmascript:\n"+
-"                function initialize() {\n"+
-"		    Browser.print('DUDES\\n'+'\"DUDETTES');\n"+
-"                }`)
 browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = Script8;
 
-let Script9 = browser.currentScene.createNode("Script");
-Script9.DEF = "Clouds";
+let Script10 = browser.currentScene.createNode("Script");
+Script10.DEF = "Clouds";
+let #sourceCode11 = browser.currentScene.createNode("#sourceCode");
+Script10.#sourceCode = #sourceCode11;
 
-Script9.setSourceCode(`ecmascript:\n"+
-"\n"+
-"\n"+
-"function cumulustranslation() // These values designate the boundary location of the cloud\n"+
-"{\n"+
-"var xxx = ' '+' '+\n"+
-"'	Transform		\\n'+\n"+
-"'    ' + '               	\\n';\n"+
-"\n"+
-"}`)
-browser.currentScene.children[1] = Script9;
+browser.currentScene.children[1] = Script10;
 

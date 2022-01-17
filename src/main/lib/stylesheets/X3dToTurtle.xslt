@@ -35,7 +35,7 @@
                 <xsl:text disable-output-escaping="yes"><![CDATA[@prefix dcterms: <]]></xsl:text>
                 <xsl:value-of select="$defaultModelPrefix"/>
                 <xsl:text disable-output-escaping="yes"><![CDATA[#> .]]></xsl:text>
-				<xsl:text>&#10;</xsl:text>
+		<xsl:text>&#10;</xsl:text>
             </xsl:when>
             <xsl:when test="not(count(//meta[@name='identifier']) = 1) or (string-length(//meta[@name='identifier']/@content) > 0)">
                 <xsl:choose>
@@ -1268,6 +1268,16 @@
         
         <!-- additional properties -->
         
+        <!-- sourceCode -->
+        <xsl:if test="(local-name()='Script') or (local-name()='ShaderProgram') or (local-name()='ShaderPart')">
+            <!-- diagnostic -->
+            <xsl:message>
+                <xsl:text>*** Found </xsl:text>
+                <xsl:value-of select="local-name()"/>
+            </xsl:message>
+            <xsl:apply-templates select="text()"/>    
+        </xsl:if>
+        
         <!-- TODO hasChildField -->
 		<xsl:if test="(string-length($parentName) > 0) and false()">
             <xsl:text>&#10;</xsl:text>
@@ -1875,6 +1885,7 @@
 					($attributeName='intensity')        or
 					($attributeName='interauralDistance') or
 					($attributeName='knee')             or
+					($attributeName='loopEnd')          or ($attributeName='loopStart')       or
 					($attributeName='maxDistance')      or
 					($attributeName='minDecibels')      or ($attributeName='maxDecibels')     or
                                         starts-with($attributeName,'pointSize') or
@@ -2293,13 +2304,35 @@
     
     <xsl:template match="comment()">
         <!-- TODO rule to process each comment -->
-	</xsl:template>
+    </xsl:template>
 
     <!-- ===================================================== -->
     
     <xsl:template match="text()">
-        <!-- TODO rule to process each CDATA text block -->
-	</xsl:template>
+        <!-- TODO rule to process each CDATA text block, Script ShaderProgram ShaderPart -->
+        <xsl:choose>
+            <xsl:when test="(string-length(normalize-space(.)) = 0)">
+                <!-- ignore whitespace blocks -->
+            </xsl:when>
+            <xsl:when test="(local-name(..)='Script') or (local-name(..)='ShaderProgram') or (local-name(..)='ShaderPart')">
+                <xsl:text> ;</xsl:text>
+                <xsl:text>&#10;</xsl:text>
+                <xsl:text>  x3do:sourceCode </xsl:text>
+                <xsl:text>"""</xsl:text>
+                <xsl:value-of select="."/>
+                <xsl:text>"""</xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:message>
+                    <xsl:text>*** Warning: </xsl:text>
+                    <xsl:value-of select="local-name(..)"/>
+                    <xsl:text> node contains illegal text "</xsl:text>
+                    <xsl:value-of select="."/>
+                    <xsl:text>"</xsl:text>
+                </xsl:message>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
 
     <!-- ===================================================== -->
 

@@ -358,6 +358,8 @@ ConvertObject : function(xmlDoc, key, object, element, path, containerField) {
 			*/
 		} else if (key === '#sourceText') {
 			this.CDATACreateFunction(xmlDoc, element, object[key].join("\r\n")+"\r\n");
+		} else if (key === '#sourceCode') {
+			this.CDATACreateFunction(xmlDoc, element, object[key].join("\r\n")+"\r\n");
 		} else {
 			if (key === 'connect' || key === 'fieldValue' || key === 'field' || key === 'meta' || key === 'component' || key === 'unit') {
 				/*

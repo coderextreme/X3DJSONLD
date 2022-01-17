@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Copyright (c) 2000-2021 held by the author(s).  All rights reserved.
+  Copyright (c) 2000-2022 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -93,7 +93,7 @@ POSSIBILITY OF SUCH DAMAGE.
     <property name="saxon.dir"        location="java/lib" description="relative path from stylesheets directory"/>
     <property name="saxon.jar"           value="saxon-he-10.6.jar"/><!-- saxon9he.jar -->
     
-    <property name=   "node.exe" value="node"/>
+    <property name=   "node.exe" value="node.exe"/>
 
     <!-- http://openexi.sourceforge.net -->
     <!-- https://sourceforge.net/projects/openexi/files -->
@@ -160,12 +160,12 @@ POSSIBILITY OF SUCH DAMAGE.
             <arg value="--version"/>
         </exec>
         <!-- https://www.saxonica.com/documentation10/#!using-xsl/commandline -->
-<!--
+	<!--
         <echo>saxon -? help</echo>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." failonerror="true">
             <arg value="-?" description="help information"/>
         </java>
--->
+	-->
         <echo>Check for node.js installation from https://nodejs.org</echo>
         <exec executable="${node.exe}">
             <arg value="--version"/>
@@ -260,8 +260,9 @@ POSSIBILITY OF SUCH DAMAGE.
     </target>
 	
     <!-- ensure backwards compatibility to specified version of Java -->
-    <property name="java.source"                 value="1.8"/>
-    <property name="java.target"                 value="1.8"/>
+    <!-- https://stackoverflow.com/questions/66068153/java-warning-options-system-modules-path-not-set-in-conjunction-with-source -->
+    <property name="java.source"                 value="17"/><!-- 1.8 is strictest, 15 or higher allows use of """text blocks""" for Script CDATA -->
+    <property name="java.target"                 value="17"/><!-- LTS -->
     
     <property name="javac.verbose"               value="false"/>
     <property name="X3DJSAIL.relative.dir"       value="java"/>
@@ -273,7 +274,6 @@ POSSIBILITY OF SUCH DAMAGE.
     <property name="src.org.web3d.x3d.tests"     value="${X3DJSAIL.relative.dir}/tests"/><!-- tests -->
     <property name="nashorn.dir"                 value="nashorn"/>
 
-    <property name="src.net.coderextreme"          value="${X3DJSAIL.src.dir}/net/coderextreme"/>
     <property name="src.org.web3d.x3d.jsail"       value="${X3DJSAIL.src.dir}/org/web3d/x3d/jsail"/>      <!-- concretes  -->
     <property name="src.org.web3d.x3d.sai"         value="${X3DJSAIL.src.dir}/org/web3d/x3d/sai"/>        <!-- interfaces -->
     <property name="src.org.web3d.x3d.util"        value="${X3DJSAIL.src.dir}/org/web3d/x3d/util"/>       <!-- utilities  -->
@@ -478,7 +478,7 @@ POSSIBILITY OF SUCH DAMAGE.
             <!-- https://stackoverflow.com/questions/20174355/how-class-loading-is-done-by-using-xbootclasspath-ppath -->
             <!-- https://stackoverflow.com/questions/48148607/how-to-add-a-jar-to-the-boot-classpath-in-java-9 -->
             <!-- -Xbootclasspath/p became -Xbootclasspath/a in jdk 9 -->
-            <compilerarg value="-Xbootclasspath/p:${toString:lib.path.ref}"/>
+            <!-- <compilerarg value="-Xbootclasspath/p:${toString:lib.path.ref}"/> not allowed with target 15 -->
         </javac>
         <!-- compiling interfaces must precede concrete classes -->
         <echo message="Compiling org.web3d.x3d.jsail, .util.exi, and .util.x3duom concrete classes"/>
@@ -490,7 +490,6 @@ POSSIBILITY OF SUCH DAMAGE.
                 verbose="${javac.verbose}"
       includeantruntime="false">
             <src path="${src.org.web3d.x3d.jsail}"/>
-            <src path="${src.net.coderextreme}"/>
             <src path="${src.org.web3d.x3d.util.exi}"/>
             <src path="${src.org.web3d.x3d.util.x3duom}"/>
             <!-- -Xlint reports problems (mysteriously) with missing numbered versions of included lib/*.jar files, perhaps from other jars
@@ -509,7 +508,7 @@ POSSIBILITY OF SUCH DAMAGE.
             <!-- https://stackoverflow.com/questions/20174355/how-class-loading-is-done-by-using-xbootclasspath-ppath -->
             <!-- https://stackoverflow.com/questions/48148607/how-to-add-a-jar-to-the-boot-classpath-in-java-9 -->
             <!-- -Xbootclasspath/p became -Xbootclasspath/a in jdk 9 -->
-            <compilerarg value="-Xbootclasspath/p:${toString:lib.path.ref}"/>
+            <!-- <compilerarg value="-Xbootclasspath/p:${toString:lib.path.ref}"/> not allowed with target 15 -->
         </javac>
         <echo message="Compiling org.web3d.x3d.java test classes, two different ways:"/>
         <antcall target="compile.X3DJSAIL.tests"/>
@@ -549,7 +548,7 @@ POSSIBILITY OF SUCH DAMAGE.
             <!-- https://stackoverflow.com/questions/20174355/how-class-loading-is-done-by-using-xbootclasspath-ppath -->
             <!-- https://stackoverflow.com/questions/48148607/how-to-add-a-jar-to-the-boot-classpath-in-java-9 -->
             <!-- -Xbootclasspath/p became -Xbootclasspath/a in jdk 9 -->
-            <compilerarg value="-Xbootclasspath/p:${toString:lib.path.ref}"/>
+            <!-- <compilerarg value="-Xbootclasspath/p:${toString:lib.path.ref}"/> not allowed with target 15 -->
         </javac>
     </target>
         
@@ -576,7 +575,7 @@ POSSIBILITY OF SUCH DAMAGE.
             <!-- https://stackoverflow.com/questions/20174355/how-class-loading-is-done-by-using-xbootclasspath-ppath -->
             <!-- https://stackoverflow.com/questions/48148607/how-to-add-a-jar-to-the-boot-classpath-in-java-9 -->
             <!-- -Xbootclasspath/p became -Xbootclasspath/a in jdk 9 -->
-            <compilerarg value="-Xbootclasspath/p:${toString:lib.path.ref}"/>
+            <!-- <compilerarg value="-Xbootclasspath/p:${toString:lib.path.ref}"/> not allowed with target 15 -->
         </javac>
     </target>
 	
@@ -1796,7 +1795,7 @@ POSSIBILITY OF SUCH DAMAGE.
             <!-- https://stackoverflow.com/questions/20174355/how-class-loading-is-done-by-using-xbootclasspath-ppath -->
             <!-- https://stackoverflow.com/questions/48148607/how-to-add-a-jar-to-the-boot-classpath-in-java-9 -->
             <!-- -Xbootclasspath/p became -Xbootclasspath/a in jdk 9 -->
-            <compilerarg value="-Xbootclasspath/p:${toString:lib.path.ref}"/>
+            <!-- <compilerarg value="-Xbootclasspath/p:${toString:lib.path.ref}"/> not allowed with target 15 -->
         </javac>
         <!-- self-validation test -->
         <echo message="test HelloWorldProgramOutput.java execution and self-validation:"/>
@@ -1899,7 +1898,7 @@ POSSIBILITY OF SUCH DAMAGE.
             <!-- https://stackoverflow.com/questions/20174355/how-class-loading-is-done-by-using-xbootclasspath-ppath -->
             <!-- https://stackoverflow.com/questions/48148607/how-to-add-a-jar-to-the-boot-classpath-in-java-9 -->
             <!-- -Xbootclasspath/p became -Xbootclasspath/a in jdk 9 -->
-            <compilerarg value="-Xbootclasspath/p:${toString:lib.path.ref}"/>
+            <!-- <compilerarg value="-Xbootclasspath/p:${toString:lib.path.ref}"/> not allowed with target 15 -->
         </javac>
         <!-- self-validation test -->
         <echo message="test flowers4.java execution and self-validation:"/>
@@ -2195,7 +2194,7 @@ POSSIBILITY OF SUCH DAMAGE.
             <!-- https://stackoverflow.com/questions/20174355/how-class-loading-is-done-by-using-xbootclasspath-ppath -->
             <!-- https://stackoverflow.com/questions/48148607/how-to-add-a-jar-to-the-boot-classpath-in-java-9 -->
             <!-- -Xbootclasspath/p became -Xbootclasspath/a in jdk 9 -->
-            <compilerarg value="-Xbootclasspath/p:${toString:lib.path.ref}"/>
+            <!-- <compilerarg value="-Xbootclasspath/p:${toString:lib.path.ref}"/> not allowed with target 15 -->
         </javac>
         <!-- self-validation test -->
         <echo message="test ${oneFileName}.java execution and self-validation:"/>
@@ -2308,7 +2307,7 @@ POSSIBILITY OF SUCH DAMAGE.
             <!-- https://stackoverflow.com/questions/20174355/how-class-loading-is-done-by-using-xbootclasspath-ppath -->
             <!-- https://stackoverflow.com/questions/48148607/how-to-add-a-jar-to-the-boot-classpath-in-java-9 -->
             <!-- -Xbootclasspath/p became -Xbootclasspath/a in jdk 9 -->
-            <compilerarg value="-Xbootclasspath/p:${toString:lib.path.ref}"/>
+            <!-- <compilerarg value="-Xbootclasspath/p:${toString:lib.path.ref}"/> not allowed with target 15 -->
         </javac>
         <!-- self-validation test -->
         <echo message="test CameraExamples.java execution and self-validation:"/>
@@ -2344,7 +2343,7 @@ POSSIBILITY OF SUCH DAMAGE.
             <!-- https://stackoverflow.com/questions/20174355/how-class-loading-is-done-by-using-xbootclasspath-ppath -->
             <!-- https://stackoverflow.com/questions/48148607/how-to-add-a-jar-to-the-boot-classpath-in-java-9 -->
             <!-- -Xbootclasspath/p became -Xbootclasspath/a in jdk 9 -->
-            <compilerarg value="-Xbootclasspath/p:${toString:lib.path.ref}"/>
+            <!-- <compilerarg value="-Xbootclasspath/p:${toString:lib.path.ref}"/> not allowed with target 15 -->
         </javac>
         <!-- self-validation test -->
         <echo message="test arc.java execution and self-validation:"/>
@@ -2381,7 +2380,7 @@ POSSIBILITY OF SUCH DAMAGE.
             <!-- https://stackoverflow.com/questions/20174355/how-class-loading-is-done-by-using-xbootclasspath-ppath -->
             <!-- https://stackoverflow.com/questions/48148607/how-to-add-a-jar-to-the-boot-classpath-in-java-9 -->
             <!-- -Xbootclasspath/p became -Xbootclasspath/a in jdk 9 -->
-            <compilerarg value="-Xbootclasspath/p:${toString:lib.path.ref}"/>
+            <!-- <compilerarg value="-Xbootclasspath/p:${toString:lib.path.ref}"/> not allowed with target 15 -->
         </javac>
         <!-- self-validation test -->
         <echo message="test flowers4.java execution and self-validation:"/>
@@ -2425,7 +2424,7 @@ POSSIBILITY OF SUCH DAMAGE.
             <!-- https://stackoverflow.com/questions/20174355/how-class-loading-is-done-by-using-xbootclasspath-ppath -->
             <!-- https://stackoverflow.com/questions/48148607/how-to-add-a-jar-to-the-boot-classpath-in-java-9 -->
             <!-- -Xbootclasspath/p became -Xbootclasspath/a in jdk 9 -->
-            <compilerarg value="-Xbootclasspath/p:${toString:lib.path.ref}"/>
+            <!-- <compilerarg value="-Xbootclasspath/p:${toString:lib.path.ref}"/> not allowed with target 15 -->
         </javac>
         <!-- self-validation test -->
         <echo message="test TestSurface.java execution and self-validation:"/>
@@ -2803,6 +2802,8 @@ POSSIBILITY OF SUCH DAMAGE.
     <target name="upload.X3DJSAIL" depends="scp.upload.X3DJSAIL.web3d">
         <!-- updates usually handled by create.X3DJSAIL.jars
         <ant antfile="../content/examples/build.xml" target="copy.X3DJSAIL.update.local"/> -->
+        <antcall                      target="view.X3DJSAIL.online"/>
+        <ant antfile="java/build.xml" target="view.javadoc.online"/>
     </target>
 
     <target name="upload.SpecificationInterfaces" depends="scp.upload.XmlEncodingSpecificationInterfaces.web3d"/>
@@ -3211,7 +3212,7 @@ POSSIBILITY OF SUCH DAMAGE.
             <!-- https://stackoverflow.com/questions/20174355/how-class-loading-is-done-by-using-xbootclasspath-ppath -->
             <!-- https://stackoverflow.com/questions/48148607/how-to-add-a-jar-to-the-boot-classpath-in-java-9 -->
             <!-- -Xbootclasspath/p became -Xbootclasspath/a in jdk 9 -->
-            <compilerarg value="-Xbootclasspath/p:${toString:lib.path.ref}"/>
+            <!-- <compilerarg value="-Xbootclasspath/p:${toString:lib.path.ref}"/> not allowed with target 15 -->
         </javac>
     </target>
 
