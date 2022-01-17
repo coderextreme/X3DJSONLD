@@ -13,15 +13,15 @@ X3D(
           component(name="Layering", level=1), unit=(
           name="AngleUnitConversion", category="angle", conversionFactor=1.0,
           name="LengthUnitConversion", category="length", conversionFactor=1.0), 
-          meta(name="title", content="HelloWorldProgramOutputCanonical.x3d"),
+          meta(name="title", content="HelloWorldProgramOutput.x3d"),
           meta(name="description", content="Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface Library (X3DJSAIL)"),
-          meta(name="reference", content="https://www.web3d.org/specifications/java/X3DJSAIL.html"),
+          meta(name="reference", content="http://www.web3d.org/specifications/java/X3DJSAIL.html"),
           meta(name="generator", content="HelloWorldProgramOutput.java"),
           meta(name="created", content="6 September 2016"),
           meta(name="modified", content="27 December 2018"),
           meta(name="generator", content="X3D Java Scene Access Interface Library (X3DJSAIL)"),
-          meta(name="generator", content="https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"),
-          meta(name="generator", content="Netbeans https://www.netbeans.org"),
+          meta(name="generator", content="http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"),
+          meta(name="generator", content="Netbeans http://www.netbeans.org"),
           meta(name="creator", content="Don Brutzman"),
           meta(name="reference", content="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java/examples/HelloWorldProgramOutput.x3d"),
           meta(name="reference", content="Console output, ClassicVRML encoding, VRML97 encoding and pretty-print documentation:"),
@@ -29,10 +29,10 @@ X3D(
           meta(name="reference", content="HelloWorldProgramOutput.x3dv"),
           meta(name="reference", content="HelloWorldProgramOutput.wrl"),
           meta(name="reference", content="HelloWorldProgramOutput.html"),
-          meta(name="reference", content="https://savage.nps.edu/X3dValidator?url=https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"),
-          meta(name="identifier", content="https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"),
+          meta(name="reference", content="https://savage.nps.edu/X3dValidator?url=http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"),
+          meta(name="identifier", content="http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"),
           meta(name="license", content="../license.html"),
-          meta(name="translated", content="16 January 2022"),
+          meta(name="translated", content="17 January 2022"),
           meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
           meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")]), Scene=Scene(
     children=[
@@ -57,12 +57,12 @@ X3D(
         Transform(
           DEF="LogoGeometryTransform", translation=(0,1.5,0), children=[
               Anchor(
-                description="select for X3D Java SAI Library (X3DJSAIL) description", url=["../X3DJSAIL.html","https://www.web3d.org/specifications/java/X3DJSAIL.html"], children=[
+                description="select for X3D Java SAI Library (X3DJSAIL) description", url=["../X3DJSAIL.html","http://www.web3d.org/specifications/java/X3DJSAIL.html"], children=[
                     Shape(
                       DEF="BoxShape", appearance=Appearance(
                           material=Material(
                               DEF="GreenMaterial", diffuseColor=(0,1,1), emissiveColor=(0.8,0,0), transparency=0.1), texture=ImageTexture(
-                              url=["images/X3dJavaSceneAccessInterfaceSaiLibrary.png","https://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png"])), geometry=Box(
+                              url=["images/X3dJavaSceneAccessInterfaceSaiLibrary.png","http://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png"])), geometry=Box(
                           DEF="test-NMTOKEN_regex.0123456789", class="untextured"))])]),
         Shape(
           DEF="LineShape", appearance=Appearance(
@@ -103,7 +103,7 @@ X3D(
                     DEF="ProxyShape", children=[#alternative XML encoding: Text string='"One, Two, Comment" "" "He said, \&quot;Immel did it!\&quot;"'
 #alternative XML encoding: Text string='"One, Two, Comment" "" "He said, \&quot;Immel did it!\&quot;" ""'
 #alternative Java source: .setString(new String [] {"One, Two, Comment", "", "He said, \""Immel did it!\"""})
-#reference: https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html
+#reference: http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html
 ], geometry=Text(
                         string=["One, Two, Text","","He said, \"Immel did it!\" \"\""])))),#It's a beautiful world
 #... for you!
@@ -156,7 +156,7 @@ X3D(
                         connect(nodeField="description", protoField="description"),
                         connect(nodeField="enabled", protoField="enabled")]))])),
         ExternProtoDeclare(
-          name="ArtDeco02Material", appinfo="this is a different Material node", url=["https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"], children=[#[HelloWorldProgram diagnostic] artDeco02ExternProtoDeclare.getNodeType()="ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file."
+          name="ArtDeco02Material", appinfo="this is a different Material node", url=["http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"], children=[#[HelloWorldProgram diagnostic] artDeco02ExternProtoDeclare.getNodeType()="ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file."
 ], field=[
               field(name="description", accessType="inputOutput", appinfo="tooltip for descriptionField", type="SFString")]),#Tested ArtDeco01ProtoInstance, ArtDeco02ProtoInstance for improper node type when ProtoInstance is added in wrong place
 
@@ -183,13 +183,13 @@ X3D(
                   USE="ArtDeco02MaterialDEF")), geometry=Cylinder(
               height=0.001, radius=0.001)),
         Inline(
-          DEF="inlineSceneDef", url=["someOtherScene.x3d","https://www.web3d.org/specifications/java/examples/someOtherScene.x3d"]),
+          DEF="inlineSceneDef", url=["someOtherScene.x3d","http://www.web3d.org/specifications/java/examples/someOtherScene.x3d"]),
         IMPORT(
           AS="WorldInfoDEF2", importedDEF="WorldInfoDEF", inlineDEF="inlineSceneDef"),
         EXPORT(
           AS="WorldInfoDEF3", localDEF="WorldInfoDEF"),
         ProtoDeclare(
-          name="MaterialModulator", appinfo="mimic a Material node and modulate fields as an animation effect", documentation="https://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html", ProtoInterface=ProtoInterface(
+          name="MaterialModulator", appinfo="mimic a Material node and modulate fields as an animation effect", documentation="http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html", ProtoInterface=ProtoInterface(
             field=[
                 field(name="enabled", accessType="inputOutput", type="SFBool", value=True),
                 field(name="diffuseColor", accessType="inputOutput", type="SFColor", value=(0,0,0)),
@@ -252,13 +252,13 @@ X3D(
           location=(0,1.6,0), children=[#set sound-ellipsoid location height at 1.6m to match typical avatar height
 ], source(
             AudioClip(
-              description="chimes", url=["chimes.wav","https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"], children=[#Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d
+              description="chimes", url=["chimes.wav","http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"], children=[#Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d
 ]))),
         Sound(
           location=(0,1.6,0), children=[#set sound-ellipsoid location height at 1.6m to match typical avatar height
 ], source(
             MovieTexture(
-              description="mpgsys.mpg from ConformanceNist suite", url=["mpgsys.mpg","https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"], children=[#Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d
+              description="mpgsys.mpg from ConformanceNist suite", url=["mpgsys.mpg","http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"], children=[#Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d
 #Expected containerField='source', allowed containerField values="texture" "source" "back" "bottom" "front" "left" "right" "top" "backTexture" "bottomTexture" "frontTexture" "leftTexture" "rightTexture" "topTexture" "watchList"
 ]))),#Test success: AnchorObject.isNode()=true, siteAnchor.isNode()=true
 #Test success: AnchorObject.isStatement()=false, siteAnchor.isStatement()=false

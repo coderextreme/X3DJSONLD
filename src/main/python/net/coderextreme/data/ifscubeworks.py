@@ -10,7 +10,7 @@ X3D(
           meta(name="created", content="4 April 2017"),
           meta(name="license", content="https://www.web3d.org/x3d/content/examples/license.html"),
           meta(name="generator", content="X3D-Edit, https://savage.nps.edu/X3D-Edit"),
-          meta(name="translated", content="16 January 2022"),
+          meta(name="translated", content="17 January 2022"),
           meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
           meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")]), Scene=Scene(
     children=[
