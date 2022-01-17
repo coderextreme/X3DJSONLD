@@ -361,107 +361,122 @@ field65.accessType = "inputOutput";
 field65.value = "-1";
 Script51.field[13] = field65;
 
-let #sourceCode66 = browser.currentScene.createNode("#sourceCode");
-Script51.#sourceCode[14] = #sourceCode66;
 
+Script51.setSourceCode(`ecmascript:\n"+
+"        function set_fraction( f, tm ) {\n"+
+"	    var side = Math.floor(f*frontUrls.length);\n"+
+"	    if (side > frontUrls.length-1) {\n"+
+"	    	side = 0;\n"+
+"	    }\n"+
+"	    if (side != old) {\n"+
+"	    	    Browser.print(f+\" \"+side);\n"+
+"	    	    old = side;\n"+
+"		    front_changed[0] = frontUrls[side];\n"+
+"		    back_changed[0] = backUrls[side];\n"+
+"		    left_changed[0] = leftUrls[side];\n"+
+"		    right_changed[0] = rightUrls[side];\n"+
+"		    top_changed[0] = topUrls[side];\n"+
+"		    bottom_changed[0] = bottomUrls[side];\n"+
+"            }\n"+
+"        }`)
 Transform23.children[1] = Script51;
 
-let TimeSensor67 = browser.currentScene.createNode("TimeSensor");
-TimeSensor67.DEF = "Clock";
-TimeSensor67.cycleInterval = 45;
-TimeSensor67.loop = True;
-Transform23.children[2] = TimeSensor67;
+let TimeSensor66 = browser.currentScene.createNode("TimeSensor");
+TimeSensor66.DEF = "Clock";
+TimeSensor66.cycleInterval = 45;
+TimeSensor66.loop = True;
+Transform23.children[2] = TimeSensor66;
+
+let ROUTE67 = browser.currentScene.createNode("ROUTE");
+ROUTE67.fromNode = "Clock";
+ROUTE67.fromField = "fraction_changed";
+ROUTE67.toNode = "UrlSelector";
+ROUTE67.toField = "set_fraction";
+Transform23.children[3] = ROUTE67;
 
 let ROUTE68 = browser.currentScene.createNode("ROUTE");
-ROUTE68.fromNode = "Clock";
-ROUTE68.fromField = "fraction_changed";
-ROUTE68.toNode = "UrlSelector";
-ROUTE68.toField = "set_fraction";
-Transform23.children[3] = ROUTE68;
+ROUTE68.fromNode = "UrlSelector";
+ROUTE68.fromField = "front_changed";
+ROUTE68.toNode = "frontBackTexture";
+ROUTE68.toField = "url";
+Transform23.children[4] = ROUTE68;
 
 let ROUTE69 = browser.currentScene.createNode("ROUTE");
 ROUTE69.fromNode = "UrlSelector";
-ROUTE69.fromField = "front_changed";
-ROUTE69.toNode = "frontBackTexture";
+ROUTE69.fromField = "back_changed";
+ROUTE69.toNode = "backBackTexture";
 ROUTE69.toField = "url";
-Transform23.children[4] = ROUTE69;
+Transform23.children[5] = ROUTE69;
 
 let ROUTE70 = browser.currentScene.createNode("ROUTE");
 ROUTE70.fromNode = "UrlSelector";
-ROUTE70.fromField = "back_changed";
-ROUTE70.toNode = "backBackTexture";
+ROUTE70.fromField = "left_changed";
+ROUTE70.toNode = "leftBackTexture";
 ROUTE70.toField = "url";
-Transform23.children[5] = ROUTE70;
+Transform23.children[6] = ROUTE70;
 
 let ROUTE71 = browser.currentScene.createNode("ROUTE");
 ROUTE71.fromNode = "UrlSelector";
-ROUTE71.fromField = "left_changed";
-ROUTE71.toNode = "leftBackTexture";
+ROUTE71.fromField = "right_changed";
+ROUTE71.toNode = "rightBackTexture";
 ROUTE71.toField = "url";
-Transform23.children[6] = ROUTE71;
+Transform23.children[7] = ROUTE71;
 
 let ROUTE72 = browser.currentScene.createNode("ROUTE");
 ROUTE72.fromNode = "UrlSelector";
-ROUTE72.fromField = "right_changed";
-ROUTE72.toNode = "rightBackTexture";
+ROUTE72.fromField = "top_changed";
+ROUTE72.toNode = "topBackTexture";
 ROUTE72.toField = "url";
-Transform23.children[7] = ROUTE72;
+Transform23.children[8] = ROUTE72;
 
 let ROUTE73 = browser.currentScene.createNode("ROUTE");
 ROUTE73.fromNode = "UrlSelector";
-ROUTE73.fromField = "top_changed";
-ROUTE73.toNode = "topBackTexture";
+ROUTE73.fromField = "bottom_changed";
+ROUTE73.toNode = "bottomBackTexture";
 ROUTE73.toField = "url";
-Transform23.children[8] = ROUTE73;
+Transform23.children[9] = ROUTE73;
 
 let ROUTE74 = browser.currentScene.createNode("ROUTE");
 ROUTE74.fromNode = "UrlSelector";
-ROUTE74.fromField = "bottom_changed";
-ROUTE74.toNode = "bottomBackTexture";
+ROUTE74.fromField = "front_changed";
+ROUTE74.toNode = "frontShader";
 ROUTE74.toField = "url";
-Transform23.children[9] = ROUTE74;
+Transform23.children[10] = ROUTE74;
 
 let ROUTE75 = browser.currentScene.createNode("ROUTE");
 ROUTE75.fromNode = "UrlSelector";
-ROUTE75.fromField = "front_changed";
-ROUTE75.toNode = "frontShader";
+ROUTE75.fromField = "back_changed";
+ROUTE75.toNode = "backShader";
 ROUTE75.toField = "url";
-Transform23.children[10] = ROUTE75;
+Transform23.children[11] = ROUTE75;
 
 let ROUTE76 = browser.currentScene.createNode("ROUTE");
 ROUTE76.fromNode = "UrlSelector";
-ROUTE76.fromField = "back_changed";
-ROUTE76.toNode = "backShader";
+ROUTE76.fromField = "left_changed";
+ROUTE76.toNode = "leftShader";
 ROUTE76.toField = "url";
-Transform23.children[11] = ROUTE76;
+Transform23.children[12] = ROUTE76;
 
 let ROUTE77 = browser.currentScene.createNode("ROUTE");
 ROUTE77.fromNode = "UrlSelector";
-ROUTE77.fromField = "left_changed";
-ROUTE77.toNode = "leftShader";
+ROUTE77.fromField = "right_changed";
+ROUTE77.toNode = "rightShader";
 ROUTE77.toField = "url";
-Transform23.children[12] = ROUTE77;
+Transform23.children[13] = ROUTE77;
 
 let ROUTE78 = browser.currentScene.createNode("ROUTE");
 ROUTE78.fromNode = "UrlSelector";
-ROUTE78.fromField = "right_changed";
-ROUTE78.toNode = "rightShader";
+ROUTE78.fromField = "top_changed";
+ROUTE78.toNode = "topShader";
 ROUTE78.toField = "url";
-Transform23.children[13] = ROUTE78;
+Transform23.children[14] = ROUTE78;
 
 let ROUTE79 = browser.currentScene.createNode("ROUTE");
 ROUTE79.fromNode = "UrlSelector";
-ROUTE79.fromField = "top_changed";
-ROUTE79.toNode = "topShader";
+ROUTE79.fromField = "bottom_changed";
+ROUTE79.toNode = "bottomShader";
 ROUTE79.toField = "url";
-Transform23.children[14] = ROUTE79;
-
-let ROUTE80 = browser.currentScene.createNode("ROUTE");
-ROUTE80.fromNode = "UrlSelector";
-ROUTE80.fromField = "bottom_changed";
-ROUTE80.toNode = "bottomShader";
-ROUTE80.toField = "url";
-Transform23.children[15] = ROUTE80;
+Transform23.children[15] = ROUTE79;
 
 browser.currentScene.children[2] = Transform23;
 

@@ -48,7 +48,7 @@ head1->addUnit(*unit6);
 
 Cmeta* meta7 = new Cmeta();
 meta7->setName("title");
-meta7->setContent("HelloWorldProgramOutputCanonical.x3d");
+meta7->setContent("HelloWorldProgramOutput.x3d");
 head1->addMeta(*meta7);
 
 Cmeta* meta8 = new Cmeta();
@@ -58,7 +58,7 @@ head1->addMeta(*meta8);
 
 Cmeta* meta9 = new Cmeta();
 meta9->setName("reference");
-meta9->setContent("https://www.web3d.org/specifications/java/X3DJSAIL.html");
+meta9->setContent("http://www.web3d.org/specifications/java/X3DJSAIL.html");
 head1->addMeta(*meta9);
 
 Cmeta* meta10 = new Cmeta();
@@ -83,12 +83,12 @@ head1->addMeta(*meta13);
 
 Cmeta* meta14 = new Cmeta();
 meta14->setName("generator");
-meta14->setContent("https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java");
+meta14->setContent("http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java");
 head1->addMeta(*meta14);
 
 Cmeta* meta15 = new Cmeta();
 meta15->setName("generator");
-meta15->setContent("Netbeans https://www.netbeans.org");
+meta15->setContent("Netbeans http://www.netbeans.org");
 head1->addMeta(*meta15);
 
 Cmeta* meta16 = new Cmeta();
@@ -128,12 +128,12 @@ head1->addMeta(*meta22);
 
 Cmeta* meta23 = new Cmeta();
 meta23->setName("reference");
-meta23->setContent("https://savage.nps.edu/X3dValidator?url=https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d");
+meta23->setContent("https://savage.nps.edu/X3dValidator?url=http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d");
 head1->addMeta(*meta23);
 
 Cmeta* meta24 = new Cmeta();
 meta24->setName("identifier");
-meta24->setContent("https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d");
+meta24->setContent("http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d");
 head1->addMeta(*meta24);
 
 Cmeta* meta25 = new Cmeta();
@@ -192,7 +192,7 @@ Transform36->setDEF("LogoGeometryTransform");
 Transform36->setTranslation(new float[3]{0,1.5,0});
 CAnchor* Anchor37 = (CAnchor *)(m_pScene.createNode("Anchor"));
 Anchor37->setDescription("select for X3D Java SAI Library (X3DJSAIL) description");
-Anchor37->setUrl(new CString[2]{"../X3DJSAIL.html","https://www.web3d.org/specifications/java/X3DJSAIL.html"}, 2);
+Anchor37->setUrl(new CString[2]{"../X3DJSAIL.html","http://www.web3d.org/specifications/java/X3DJSAIL.html"}, 2);
 CShape* Shape38 = (CShape *)(m_pScene.createNode("Shape"));
 Shape38->setDEF("BoxShape");
 CAppearance* Appearance39 = (CAppearance *)(m_pScene.createNode("Appearance"));
@@ -204,7 +204,7 @@ Material40->setTransparency(0.1);
 Appearance39->setMaterial(*Material40);
 
 CImageTexture* ImageTexture41 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
-ImageTexture41->setUrl(new CString[2]{"images/X3dJavaSceneAccessInterfaceSaiLibrary.png","https://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png"}, 2);
+ImageTexture41->setUrl(new CString[2]{"images/X3dJavaSceneAccessInterfaceSaiLibrary.png","http://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png"}, 2);
 Appearance39->setTexture(*ImageTexture41);
 
 Shape38->setAppearance(*Appearance39);
@@ -310,7 +310,7 @@ Shape62->setDEF("ProxyShape");
 //alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'
 //alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\" \"\"'
 //alternative Java source: .setString(new String [] {\"One, Two, Comment\", \"\", \"He said, \\\"\"Immel did it!\\\"\"\"})
-//reference: https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html
+//reference: http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html
 CText* Text63 = (CText *)(m_pScene.createNode("Text"));
 Text63->setString(new CString[3]{"One, Two, Text","","He said, \"Immel did it!\" \"\""}, 3);
 Shape62->setGeometry(Text63);
@@ -484,7 +484,7 @@ group->addChildren(*ProtoDeclare78);
 CExternProtoDeclare* ExternProtoDeclare88 = new CExternProtoDeclare();
 ExternProtoDeclare88->setName("ArtDeco02Material");
 ExternProtoDeclare88->setAppinfo("this is a different Material node");
-ExternProtoDeclare88->setUrl(new CString[2]{"https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"}, 2);
+ExternProtoDeclare88->setUrl(new CString[2]{"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"}, 2);
 //[HelloWorldProgram diagnostic] artDeco02ExternProtoDeclare.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file.\"
 Cfield* field89 = new Cfield();
 field89->setName("description");
@@ -564,7 +564,7 @@ group->addChildren(*Shape100);
 
 CInline* Inline104 = (CInline *)(m_pScene.createNode("Inline"));
 Inline104->setDEF("inlineSceneDef");
-Inline104->setUrl(new CString[2]{"someOtherScene.x3d","https://www.web3d.org/specifications/java/examples/someOtherScene.x3d"}, 2);
+Inline104->setUrl(new CString[2]{"someOtherScene.x3d","http://www.web3d.org/specifications/java/examples/someOtherScene.x3d"}, 2);
 group->addChildren(*Inline104);
 
 CIMPORT* IMPORT105 = new CIMPORT();
@@ -580,7 +580,7 @@ group->addChildren(*EXPORT106);
 
 CProtoDeclare ProtoDeclare107 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="MaterialModulator" appinfo="mimic a Material node and modulate fields as an animation effect" documentation="https://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html" ><ProtoInterface><field name="enabled" accessType="inputOutput" type="SFBool" value="true"></field>
+<ProtoDeclare name="MaterialModulator" appinfo="mimic a Material node and modulate fields as an animation effect" documentation="http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html" ><ProtoInterface><field name="enabled" accessType="inputOutput" type="SFBool" value="true"></field>
 <field name="diffuseColor" accessType="inputOutput" type="SFColor" value="0 0 0"></field>
 <field name="emissiveColor" accessType="inputOutput" type="SFColor" value="0.05 0.05 0.5"></field>
 <field name="specularColor" accessType="inputOutput" type="SFColor" value="0 0 0"></field>
@@ -630,7 +630,7 @@ function clockTrigger (timeValue)
 </ProtoDeclare>)foo");
 ProtoDeclare107->setName("MaterialModulator");
 ProtoDeclare107->setAppinfo("mimic a Material node and modulate fields as an animation effect");
-ProtoDeclare107->setDocumentation("https://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html");
+ProtoDeclare107->setDocumentation("http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html");
 CProtoInterface* ProtoInterface108 = new CProtoInterface();
 Cfield* field109 = new Cfield();
 field109->setName("enabled");
@@ -845,8 +845,8 @@ Sound140->setLocation(new float[3]{0,1.6,0});
 //set sound-ellipsoid location height at 1.6m to match typical avatar height
 CAudioClip* AudioClip141 = (CAudioClip *)(m_pScene.createNode("AudioClip"));
 AudioClip141->setDescription("chimes");
-AudioClip141->setUrl(new CString[2]{"chimes.wav","https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"}, 2);
-//Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d
+AudioClip141->setUrl(new CString[2]{"chimes.wav","http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"}, 2);
+//Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d
 Sound140->setSource(*AudioClip141);
 
 group->addChildren(*Sound140);
@@ -856,8 +856,8 @@ Sound142->setLocation(new float[3]{0,1.6,0});
 //set sound-ellipsoid location height at 1.6m to match typical avatar height
 CMovieTexture* MovieTexture143 = (CMovieTexture *)(m_pScene.createNode("MovieTexture"));
 MovieTexture143->setDescription("mpgsys.mpg from ConformanceNist suite");
-MovieTexture143->setUrl(new CString[2]{"mpgsys.mpg","https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"}, 2);
-//Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d
+MovieTexture143->setUrl(new CString[2]{"mpgsys.mpg","http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"}, 2);
+//Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d
 //Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\" \"watchList\"
 Sound142->setSource(*MovieTexture143);
 

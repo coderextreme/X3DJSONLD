@@ -110,7 +110,7 @@ var X3D0 =  new X3D({
           meta : new MFNode([
             new meta({
               name : new SFString("title"),
-              content : new SFString("HelloWorldProgramOutputCanonical.x3d")}),
+              content : new SFString("HelloWorldProgramOutput.x3d")}),
 
             new meta({
               name : new SFString("description"),
@@ -118,7 +118,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("reference"),
-              content : new SFString("https://www.web3d.org/specifications/java/X3DJSAIL.html")}),
+              content : new SFString("http://www.web3d.org/specifications/java/X3DJSAIL.html")}),
 
             new meta({
               name : new SFString("generator"),
@@ -138,11 +138,11 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("generator"),
-              content : new SFString("https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java")}),
+              content : new SFString("http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java")}),
 
             new meta({
               name : new SFString("generator"),
-              content : new SFString("Netbeans https://www.netbeans.org")}),
+              content : new SFString("Netbeans http://www.netbeans.org")}),
 
             new meta({
               name : new SFString("creator"),
@@ -174,11 +174,11 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("reference"),
-              content : new SFString("https://savage.nps.edu/X3dValidator?url=https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d")}),
+              content : new SFString("https://savage.nps.edu/X3dValidator?url=http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d")}),
 
             new meta({
               name : new SFString("identifier"),
-              content : new SFString("https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d")}),
+              content : new SFString("http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d")}),
 
             new meta({
               name : new SFString("license"),
@@ -226,7 +226,7 @@ var X3D0 =  new X3D({
               children : new MFNode([
                 new Anchor({
                   description : new SFString("select for X3D Java SAI Library (X3DJSAIL) description"),
-                  url : new MFString(["../X3DJSAIL.html","https://www.web3d.org/specifications/java/X3DJSAIL.html"]),
+                  url : new MFString(["../X3DJSAIL.html","http://www.web3d.org/specifications/java/X3DJSAIL.html"]),
                   children : new MFNode([
                     new Shape({
                       DEF : new SFString("BoxShape"),
@@ -240,7 +240,7 @@ var X3D0 =  new X3D({
                               transparency : new SFFloat(0.1)})),
                           texture : new SFNode(
                             new ImageTexture({
-                              url : new MFString(["images/X3dJavaSceneAccessInterfaceSaiLibrary.png","https://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png"])}))})),
+                              url : new MFString(["images/X3dJavaSceneAccessInterfaceSaiLibrary.png","http://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png"])}))})),
                       geometry : new SFNode(
                         new Box({
                           DEF : new SFString("test-NMTOKEN_regex.0123456789"),
@@ -321,7 +321,7 @@ var X3D0 =  new X3D({
                       /*alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'*/
                       /*alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\" \"\"'*/
                       /*alternative Java source: .setString(new String [] {\"One, Two, Comment\", \"\", \"He said, \\\"\"Immel did it!\\\"\"\"})*/
-                      /*reference: https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html*/
+                      /*reference: http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html*/
                       geometry : new SFNode(
                         new Text({
                           string : new MFString(["One, Two, Text","","He said, \"Immel did it!\" \"\""])}))}))}),
@@ -454,7 +454,7 @@ ecmascript:eval (0
             new ExternProtoDeclare({
               name : new SFString("ArtDeco02Material"),
               appinfo : new SFString("this is a different Material node"),
-              url : new MFString(["https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"]),
+              url : new MFString(["http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"]),
               /*[HelloWorldProgram diagnostic] artDeco02ExternProtoDeclare.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file.\"*/
               field : new MFNode([
                 new field({
@@ -518,7 +518,7 @@ ecmascript:eval (0
 
             new Inline({
               DEF : new SFString("inlineSceneDef"),
-              url : new MFString(["someOtherScene.x3d","https://www.web3d.org/specifications/java/examples/someOtherScene.x3d"])}),
+              url : new MFString(["someOtherScene.x3d","http://www.web3d.org/specifications/java/examples/someOtherScene.x3d"])}),
 
             new IMPORT({
               aS : new SFString("WorldInfoDEF2"),
@@ -532,7 +532,7 @@ ecmascript:eval (0
             new ProtoDeclare({
               name : new SFString("MaterialModulator"),
               appinfo : new SFString("mimic a Material node and modulate fields as an animation effect"),
-              documentation : new SFString("https://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html"),
+              documentation : new SFString("http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html"),
               ProtoInterface : new SFNode(
                 new ProtoInterface({
                   field : new MFNode([
@@ -715,8 +715,8 @@ ecmascript:eval (0
               source : new SFNode(
                 new AudioClip({
                   description : new SFString("chimes"),
-                  url : new MFString(["chimes.wav","https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"]),
-                  /*Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d*/}))}),
+                  url : new MFString(["chimes.wav","http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"]),
+                  /*Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d*/}))}),
 
             new Sound({
               location : new SFVec3f([0,1.6,0]),
@@ -724,8 +724,8 @@ ecmascript:eval (0
               source : new SFNode(
                 new MovieTexture({
                   description : new SFString("mpgsys.mpg from ConformanceNist suite"),
-                  url : new MFString(["mpgsys.mpg","https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"]),
-                  /*Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d*/
+                  url : new MFString(["mpgsys.mpg","http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"]),
+                  /*Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d*/
                   /*Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\" \"watchList\"*/}))}),
           /*Test success: AnchorObject.isNode()=true, siteAnchor.isNode()=true*/
           /*Test success: AnchorObject.isStatement()=false, siteAnchor.isStatement()=false*/

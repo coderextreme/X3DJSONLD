@@ -22,17 +22,17 @@ import org.web3d.x3d.jsail.Time.*;
 // Javadoc annotations follow, see below for source.
 /**
  * <p> Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface Library (X3DJSAIL). </p>
- <p> Related links: HelloWorldProgramOutputCanonical.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ <p> Related links: HelloWorldProgramOutput.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.HelloWorldProgramOutputCanonical&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.HelloWorldProgramOutput&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="HelloWorldProgramOutputCanonical.x3d">HelloWorldProgramOutputCanonical.x3d</a> </td>
+			<td> <a href="http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d">HelloWorldProgramOutput.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -40,7 +40,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">https://www.web3d.org/specifications/java/X3DJSAIL.html</a> </td>
+			<td> <a href="http://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">http://www.web3d.org/specifications/java/X3DJSAIL.html</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -60,11 +60,11 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
-			<td> <a href="https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java" target="_blank">https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java</a> </td>
+			<td> <a href="http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java" target="_blank">http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
-			<td> Netbeans <a href="https://www.netbeans.org" target="_blank">https://www.netbeans.org</a> </td>
+			<td> Netbeans <a href="http://www.netbeans.org" target="_blank">http://www.netbeans.org</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -84,7 +84,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="HelloWorldProgramOutput.x3dv">HelloWorldProgramOutput.x3dv</a> </td>
+			<td> <a href="http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3dv">HelloWorldProgramOutput.x3dv</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -92,19 +92,19 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="HelloWorldProgramOutput.html">HelloWorldProgramOutput.html</a> </td>
+			<td> <a href="http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.html">HelloWorldProgramOutput.html</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="https://savage.nps.edu/X3dValidator?url=https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d" target="_blank">https://savage.nps.edu/X3dValidator?url=https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d</a> </td>
+			<td> <a href="https://savage.nps.edu/X3dValidator?url=http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d" target="_blank">https://savage.nps.edu/X3dValidator?url=http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d" target="_blank">https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d</a> </td>
+			<td> <a href="http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d" target="_blank">http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
-			<td> <a href="../license.html">../license.html</a> </td>
+			<td> <a href="http://www.web3d.org/specifications/java/examples/../license.html">../license.html</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -122,10 +122,10 @@ import org.web3d.x3d.jsail.Time.*;
 	* @author Don Brutzman
  */
 
-public class HelloWorldProgramOutputCanonical
+public class HelloWorldProgramOutput
 {
 	/** Default constructor to create this object. */
-	public HelloWorldProgramOutputCanonical ()
+	public HelloWorldProgramOutput ()
 	{
 	  initialize();
 	}
@@ -145,15 +145,15 @@ public class HelloWorldProgramOutputCanonical
     .addComponent(new component().setName("Layering").setLevel(1))
     .addUnit(new unit().setName("AngleUnitConversion").setCategory("angle").setConversionFactor(1.0))
     .addUnit(new unit().setName("LengthUnitConversion").setCategory("length").setConversionFactor(1.0))
-    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("HelloWorldProgramOutputCanonical.x3d"))
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("HelloWorldProgramOutput.x3d"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface Library (X3DJSAIL)"))
-    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://www.web3d.org/specifications/java/X3DJSAIL.html"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("http://www.web3d.org/specifications/java/X3DJSAIL.html"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("HelloWorldProgramOutput.java"))
     .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("6 September 2016"))
     .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("27 December 2018"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D Java Scene Access Interface Library (X3DJSAIL)"))
-    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"))
-    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("Netbeans https://www.netbeans.org"))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("Netbeans http://www.netbeans.org"))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Don Brutzman"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java/examples/HelloWorldProgramOutput.x3d"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("Console output, ClassicVRML encoding, VRML97 encoding and pretty-print documentation:"))
@@ -161,8 +161,8 @@ public class HelloWorldProgramOutputCanonical
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("HelloWorldProgramOutput.x3dv"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("HelloWorldProgramOutput.wrl"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("HelloWorldProgramOutput.html"))
-    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://savage.nps.edu/X3dValidator?url=https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"))
-    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://savage.nps.edu/X3dValidator?url=http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"))
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html")))
   .setScene(new Scene()
     .addChild(new ViewpointGroup().setDescription("Available viewpoints")
@@ -175,11 +175,11 @@ public class HelloWorldProgramOutputCanonical
     .addMetadata(new MetadataString("scene.addChildMetadata").setName("test").setValue(new String[] {"Top-level root Metadata node beneath Scene needs to be one of '-children' in JSON encoding"}))
     .addLayerSet(new LayerSet("scene.addChildLayerSetTest"))
     .addChild(new Transform("LogoGeometryTransform").setTranslation(0.0,1.5,0.0)
-      .addChild(new Anchor().setDescription("select for X3D Java SAI Library (X3DJSAIL) description").setUrl(new String[] {"../X3DJSAIL.html","https://www.web3d.org/specifications/java/X3DJSAIL.html"})
+      .addChild(new Anchor().setDescription("select for X3D Java SAI Library (X3DJSAIL) description").setUrl(new String[] {"../X3DJSAIL.html","http://www.web3d.org/specifications/java/X3DJSAIL.html"})
         .addChild(new Shape("BoxShape")
           .setAppearance(new Appearance()
             .setMaterial(new Material("GreenMaterial").setDiffuseColor(0.0,1.0,1.0).setEmissiveColor(0.8,0.0,0.0).setTransparency(0.1))
-            .setTexture(new ImageTexture().setUrl(new String[] {"images/X3dJavaSceneAccessInterfaceSaiLibrary.png","https://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png"})))
+            .setTexture(new ImageTexture().setUrl(new String[] {"images/X3dJavaSceneAccessInterfaceSaiLibrary.png","http://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png"})))
           .setGeometry(new Box("test-NMTOKEN_regex.0123456789").setCssClass("untextured")))))
     .addChild(new Shape("LineShape")
       .setAppearance(new Appearance()
@@ -208,7 +208,7 @@ public class HelloWorldProgramOutputCanonical
           .addComments(" alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"' ")
           .addComments(" alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\" \"\"' ")
           .addComments(" alternative Java source: .setString(new String [] {\"One, Two, Comment\", \"\", \"He said, \\\"Immel did it!\\\"\"}) ")
-          .addComments(" reference: https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html ")
+          .addComments(" reference: http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html ")
           .setGeometry(new Text().setString(new String[] {"One, Two, Text","","He said, \"Immel did it!\" \"\""}))))
       .addComments(" It's a beautiful world ")
       .addComments(" ... for you! ")
@@ -252,7 +252,7 @@ function colorInput (eventValue) // Example source code
           .setIS(new IS()
             .addConnect(new connect().setNodeField("description").setProtoField("description"))
             .addConnect(new connect().setNodeField("enabled").setProtoField("enabled"))))))
-    .addChild(new ExternProtoDeclare("ArtDeco02Material").setName("ArtDeco02Material").setAppinfo("this is a different Material node").setUrl(new String[] {"https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"})
+    .addChild(new ExternProtoDeclare("ArtDeco02Material").setName("ArtDeco02Material").setAppinfo("this is a different Material node").setUrl(new String[] {"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"})
       .addComments(" [HelloWorldProgram diagnostic] artDeco02ExternProtoDeclare.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file.\" ")
       .addField(new field().setName("description").setType(field.TYPE_SFSTRING).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("tooltip for descriptionField")))
     .addComments(" Tested ArtDeco01ProtoInstance, ArtDeco02ProtoInstance for improper node type when ProtoInstance is added in wrong place ")
@@ -275,10 +275,10 @@ function colorInput (eventValue) // Example source code
         .addComments(" ArtDeco02Material ProtoInstance USE goes here. Note that name field is NOT defined as part of ProtoInstance USE. ")
         .setMaterial(new ProtoInstance().setUSE("ArtDeco02MaterialDEF").setContainerField("material")))
       .setGeometry(new Cylinder().setHeight(0.001).setRadius(0.001)))
-    .addChild(new Inline("inlineSceneDef").setUrl(new String[] {"someOtherScene.x3d","https://www.web3d.org/specifications/java/examples/someOtherScene.x3d"}))
+    .addChild(new Inline("inlineSceneDef").setUrl(new String[] {"someOtherScene.x3d","http://www.web3d.org/specifications/java/examples/someOtherScene.x3d"}))
     .addChild(new IMPORT().setImportedDEF("WorldInfoDEF").setInlineDEF("inlineSceneDef").setAS("WorldInfoDEF2"))
     .addChild(new EXPORT().setLocalDEF("WorldInfoDEF").setAS("WorldInfoDEF3"))
-    .addChild(new ProtoDeclare("MaterialModulator").setName("MaterialModulator").setAppinfo("mimic a Material node and modulate fields as an animation effect").setDocumentation("https://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html")
+    .addChild(new ProtoDeclare("MaterialModulator").setName("MaterialModulator").setAppinfo("mimic a Material node and modulate fields as an animation effect").setDocumentation("http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html")
       .setProtoInterface(new ProtoInterface()
         .addField(new field().setName("enabled").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(true))
         .addField(new field().setName("diffuseColor").setType(field.TYPE_SFCOLOR).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFColor(0.0,0.0,0.0)))
@@ -357,12 +357,12 @@ function clockTrigger (timeValue)
       .addComments(" regex test SFVec3f().matches(\"1 2 3\")=true, regex test SFVec3f().matches(\"1 2 3 4\")=false, regex test (SFRotationObject.matches(\"0 0 0 0\")=true, failure detecting illegal (zero axis) rotation value "))
     .addChild(new Sound().setLocation(0.0,1.6,0.0)
       .addComments(" set sound-ellipsoid location height at 1.6m to match typical avatar height ")
-      .setSource(new AudioClip().setDescription("chimes").setUrl(new String[] {"chimes.wav","https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"})
-        .addComments(" Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d ")))
+      .setSource(new AudioClip().setDescription("chimes").setUrl(new String[] {"chimes.wav","http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"})
+        .addComments(" Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d ")))
     .addChild(new Sound().setLocation(0.0,1.6,0.0)
       .addComments(" set sound-ellipsoid location height at 1.6m to match typical avatar height ")
-      .setSource(new MovieTexture().setDescription("mpgsys.mpg from ConformanceNist suite").setUrl(new String[] {"mpgsys.mpg","https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"})
-        .addComments(" Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d ")
+      .setSource(new MovieTexture().setDescription("mpgsys.mpg from ConformanceNist suite").setUrl(new String[] {"mpgsys.mpg","http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"})
+        .addComments(" Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d ")
         .addComments(" Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\" \"watchList\" ")))
     .addComments(" Test success: AnchorObject.isNode()=true, siteAnchor.isNode()=true ")
     .addComments(" Test success: AnchorObject.isStatement()=false, siteAnchor.isStatement()=false ")
@@ -414,7 +414,7 @@ function clockTrigger (timeValue)
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
-	 * @return HelloWorldProgramOutputCanonical model
+	 * @return HelloWorldProgramOutput model
 	 */
 	public X3D getX3dModel()
 	{	  
@@ -432,7 +432,7 @@ function clockTrigger (timeValue)
      */
     public static void main(String args[])
     {
-        X3D thisExampleX3dModel = new HelloWorldProgramOutputCanonical().getX3dModel();
+        X3D thisExampleX3dModel = new HelloWorldProgramOutput().getX3dModel();
 
 		boolean hasArguments = (args != null) && (args.length > 0);
 		boolean validate = true; // default
@@ -463,13 +463,13 @@ function clockTrigger (timeValue)
 			}
 		}
 		if      (argumentsLoadNewModel)
-			System.out.println("WARNING: \"net.x3djsonld.data.HelloWorldProgramOutputCanonical\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+			System.out.println("WARNING: \"net.x3djsonld.data.HelloWorldProgramOutput\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
 			thisExampleX3dModel.handleArguments(args);
 
 		if (validate)
 		{
-			System.out.print("Java program \"net.x3djsonld.data.HelloWorldProgramOutputCanonical\" self-validation test results: ");
+			System.out.print("Java program \"net.x3djsonld.data.HelloWorldProgramOutput\" self-validation test results: ");
 			String validationResults = thisExampleX3dModel.validationReport();
             if (validationResults.startsWith("\n"))
                 System.out.println();

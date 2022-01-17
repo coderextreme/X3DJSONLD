@@ -95,28 +95,57 @@ field19.accessType = "inputOnly";
 field19.type = "SFTime";
 Script14.field[4] = field19;
 
-let #sourceCode20 = browser.currentScene.createNode("#sourceCode");
-Script14.#sourceCode[5] = #sourceCode20;
 
+Script14.setSourceCode(`ecmascript:\n"+
+"			function newBubble() {\n"+
+"			    translation = new SFVec3f(0, 0, 0);\n"+
+"			    velocity = new SFVec3f(\n"+
+"			    	Math.random() - 0.5,\n"+
+"				Math.random() - 0.5,\n"+
+"				Math.random() - 0.5);\n"+
+"			}\n"+
+"			function set_fraction() {\n"+
+"			    translation = new SFVec3f(\n"+
+"			    	translation.x + velocity.x,\n"+
+"				translation.y + velocity.y,\n"+
+"				translation.z + velocity.z);\n"+
+"				if (Math.abs(translation.x) > 10) {\n"+
+"					newBubble();\n"+
+"				} else if (Math.abs(translation.y) > 10) {\n"+
+"					newBubble();\n"+
+"				} else if (Math.abs(translation.z) > 10) {\n"+
+"					newBubble();\n"+
+"				} else {\n"+
+"					velocity = new SFVec3f(\n"+
+"						velocity.x + Math.random() * 0.2 - 0.1,\n"+
+"						velocity.y + Math.random() * 0.2 - 0.1,\n"+
+"						velocity.z + Math.random() * 0.2 - 0.1\n"+
+"					);\n"+
+"				}\n"+
+"			}\n"+
+"\n"+
+"			function initialize() {\n"+
+"			     newBubble();\n"+
+"			}`)
 browser.currentScene.children[2] = Script14;
 
-let TimeSensor21 = browser.currentScene.createNode("TimeSensor");
-TimeSensor21.DEF = "TourTime";
-TimeSensor21.cycleInterval = 0.15;
-TimeSensor21.loop = True;
-browser.currentScene.children[3] = TimeSensor21;
+let TimeSensor20 = browser.currentScene.createNode("TimeSensor");
+TimeSensor20.DEF = "TourTime";
+TimeSensor20.cycleInterval = 0.15;
+TimeSensor20.loop = True;
+browser.currentScene.children[3] = TimeSensor20;
+
+let ROUTE21 = browser.currentScene.createNode("ROUTE");
+ROUTE21.fromNode = "TourTime";
+ROUTE21.fromField = "cycleTime";
+ROUTE21.toNode = "Bounce2";
+ROUTE21.toField = "set_fraction";
+browser.currentScene.children[4] = ROUTE21;
 
 let ROUTE22 = browser.currentScene.createNode("ROUTE");
-ROUTE22.fromNode = "TourTime";
-ROUTE22.fromField = "cycleTime";
-ROUTE22.toNode = "Bounce2";
-ROUTE22.toField = "set_fraction";
-browser.currentScene.children[4] = ROUTE22;
-
-let ROUTE23 = browser.currentScene.createNode("ROUTE");
-ROUTE23.fromNode = "Bounce2";
-ROUTE23.fromField = "translation_changed";
-ROUTE23.toNode = "transform";
-ROUTE23.toField = "set_translation";
-browser.currentScene.children[5] = ROUTE23;
+ROUTE22.fromNode = "Bounce2";
+ROUTE22.fromField = "translation_changed";
+ROUTE22.toNode = "transform";
+ROUTE22.toField = "set_translation";
+browser.currentScene.children[5] = ROUTE22;
 

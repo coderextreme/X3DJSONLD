@@ -41,62 +41,73 @@ field8.value = "false";
 field8.accessType = "initializeOnly";
 Script4.field[3] = field8;
 
-let #sourceCode9 = browser.currentScene.createNode("#sourceCode");
-Script4.#sourceCode[4] = #sourceCode9;
 
+Script4.setSourceCode(`ecmascript:\n"+
+"\n"+
+"      function combinationEntered (value) {\n"+
+"\n"+
+"        unlocked = value;\n"+
+"\n"+
+"      }\n"+
+"\n"+
+"      function openVault(value) {\n"+
+"\n"+
+"      if (unlocked) vaultUnlocked = value;\n"+
+"\n"+
+"      }`)
 browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = Script4;
 
-let Shape10 = browser.currentScene.createNode("Shape");
-let Appearance11 = browser.currentScene.createNode("Appearance");
-let Material12 = browser.currentScene.createNode("Material");
-Material12.diffuseColor = new SFColor(new float[1,0,0]);
-Appearance11.material = Material12;
+let Shape9 = browser.currentScene.createNode("Shape");
+let Appearance10 = browser.currentScene.createNode("Appearance");
+let Material11 = browser.currentScene.createNode("Material");
+Material11.diffuseColor = new SFColor(new float[1,0,0]);
+Appearance10.material = Material11;
 
-Shape10.appearance = Appearance11;
+Shape9.appearance = Appearance10;
 
-let Sphere13 = browser.currentScene.createNode("Sphere");
-Shape10.geometry = Sphere13;
+let Sphere12 = browser.currentScene.createNode("Sphere");
+Shape9.geometry = Sphere12;
 
-browser.currentScene.children[1] = Shape10;
+browser.currentScene.children[1] = Shape9;
 
-let Sound14 = browser.currentScene.createNode("Sound");
-Sound14.maxBack = 1000;
-Sound14.maxFront = 1000;
-Sound14.minBack = 1000;
-Sound14.minFront = 1000;
-let AudioClip15 = browser.currentScene.createNode("AudioClip");
-AudioClip15.DEF = "Click";
-AudioClip15.stopTime = 1;
-AudioClip15.description = "clicking sound";
-AudioClip15.url = new MFString(new java.lang.String["../resources/chandubabamusic1.wav"]);
-Sound14.source = AudioClip15;
+let Sound13 = browser.currentScene.createNode("Sound");
+Sound13.maxBack = 1000;
+Sound13.maxFront = 1000;
+Sound13.minBack = 1000;
+Sound13.minFront = 1000;
+let AudioClip14 = browser.currentScene.createNode("AudioClip");
+AudioClip14.DEF = "Click";
+AudioClip14.stopTime = 1;
+AudioClip14.description = "clicking sound";
+AudioClip14.url = new MFString(new java.lang.String["../resources/chandubabamusic1.wav"]);
+Sound13.source = AudioClip14;
 
-browser.currentScene.children[2] = Sound14;
+browser.currentScene.children[2] = Sound13;
 
-let TouchSensor16 = browser.currentScene.createNode("TouchSensor");
-TouchSensor16.DEF = "TS";
-browser.currentScene.children[3] = TouchSensor16;
+let TouchSensor15 = browser.currentScene.createNode("TouchSensor");
+TouchSensor15.DEF = "TS";
+browser.currentScene.children[3] = TouchSensor15;
+
+let ROUTE16 = browser.currentScene.createNode("ROUTE");
+ROUTE16.fromNode = "TS";
+ROUTE16.fromField = "isOver";
+ROUTE16.toNode = "OpenVault";
+ROUTE16.toField = "combinationEntered";
+browser.currentScene.children[4] = ROUTE16;
 
 let ROUTE17 = browser.currentScene.createNode("ROUTE");
 ROUTE17.fromNode = "TS";
-ROUTE17.fromField = "isOver";
+ROUTE17.fromField = "touchTime";
 ROUTE17.toNode = "OpenVault";
-ROUTE17.toField = "combinationEntered";
-browser.currentScene.children[4] = ROUTE17;
+ROUTE17.toField = "openVault";
+browser.currentScene.children[5] = ROUTE17;
 
 let ROUTE18 = browser.currentScene.createNode("ROUTE");
-ROUTE18.fromNode = "TS";
-ROUTE18.fromField = "touchTime";
-ROUTE18.toNode = "OpenVault";
-ROUTE18.toField = "openVault";
-browser.currentScene.children[5] = ROUTE18;
-
-let ROUTE19 = browser.currentScene.createNode("ROUTE");
-ROUTE19.fromNode = "OpenVault";
-ROUTE19.fromField = "vaultUnlocked";
-ROUTE19.toNode = "Click";
-ROUTE19.toField = "startTime";
-browser.currentScene.children[6] = ROUTE19;
+ROUTE18.fromNode = "OpenVault";
+ROUTE18.fromField = "vaultUnlocked";
+ROUTE18.toNode = "Click";
+ROUTE18.toField = "startTime";
+browser.currentScene.children[6] = ROUTE18;
 

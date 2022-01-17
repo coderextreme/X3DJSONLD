@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-4.0.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-4.0.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 4.0 of X3D -->
-<!-- Generated 2022-01-13-08:00 16:46:00.4269881-08:00 -->
+<!-- Generated 2022-01-15-08:00 18:14:18.4848683-08:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                        version="4.0"
                        xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -3697,11 +3697,6 @@
          <enumeration value="writeInterval"/>
          <enumeration value="yScale"/>
       </SimpleType>
-      <SimpleType name="intensityType"
-                  baseType="SFFloat"
-                  defaultValue="0.0"
-                  appinfo="intensityType value is an SFFloat ranging [0..1]"
-                  documentation="_Evaluating the X3D Schema with semantic web tools_, Web3D 2012 Conference, Petit, Marc (EDF), Henry Boccon-Gibod (EDF), Mouton, Christophe (EDF)"/>
       <SimpleType name="intersectionTypeValues"
                   baseType="xs:NMTOKEN"
                   appinfo="intersectionTypeValues are supported enumeration values for X3DPickSensorNode type intersectionType field. This list is unbounded, additional enumeration values are allowed."
@@ -4299,6 +4294,11 @@
          <enumeration value="length" appinfo="length default is meters"/>
          <enumeration value="mass" appinfo="mass default is kilograms"/>
       </SimpleType>
+      <SimpleType name="unitIntervalType"
+                  baseType="SFFloat"
+                  defaultValue="0.0"
+                  appinfo="unitIntervalType value is an SFFloat ranging [0..1]"
+                  documentation="_Evaluating the X3D Schema with semantic web tools_, Web3D 2012 Conference, Petit, Marc (EDF), Henry Boccon-Gibod (EDF), Mouton, Christophe (EDF)"/>
       <SimpleType name="volumeRenderingWeightFunctionChoices"
                   baseType="xs:NMTOKEN"
                   appinfo="volumeRenderingWeightFunctionChoices are strictly allowed enumeration values for BlendedVolumeStyle weightFunction* fields."
@@ -5055,7 +5055,7 @@
                    default="0"
                    minInclusive="0"
                    maxInclusive="1"
-                   baseType="intensityType"/>
+                   baseType="unitIntervalType"/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
@@ -6363,7 +6363,7 @@
                    default="0"
                    minInclusive="0"
                    maxInclusive="1"
-                   baseType="intensityType"/>
+                   baseType="unitIntervalType"/>
             <field name="color"
                    type="SFColor"
                    accessType="inputOutput"
@@ -6374,9 +6374,7 @@
                    type="SFFloat"
                    accessType="inputOutput"
                    default="1"
-                   minInclusive="0"
-                   maxInclusive="1"
-                   baseType="intensityType"/>
+                   minInclusive="0"/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
@@ -6396,7 +6394,7 @@
                    default="1"
                    minInclusive="0"
                    maxInclusive="1"
-                   baseType="intensityType"/>
+                   baseType="unitIntervalType"/>
             <field name="shadows"
                    type="SFBool"
                    accessType="inputOutput"
@@ -8769,7 +8767,7 @@
                    minInclusive="0"
                    maxInclusive="1"
                    inheritedFrom="X3DLightNode"
-                   baseType="intensityType"/>
+                   baseType="unitIntervalType"/>
             <field name="aspectRatio"
                    type="SFFloat"
                    accessType="outputOnly"
@@ -8800,9 +8798,7 @@
                    accessType="inputOutput"
                    default="1"
                    minInclusive="0"
-                   maxInclusive="1"
-                   inheritedFrom="X3DLightNode"
-                   baseType="intensityType"/>
+                   inheritedFrom="X3DLightNode"/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
@@ -8836,7 +8832,7 @@
                    minInclusive="0"
                    maxInclusive="1"
                    inheritedFrom="X3DLightNode"
-                   baseType="intensityType"/>
+                   baseType="unitIntervalType"/>
             <field name="shadows"
                    type="SFBool"
                    accessType="inputOutput"
@@ -9944,7 +9940,7 @@
                    default="0.5"
                    minInclusive="0"
                    maxInclusive="1"
-                   baseType="intensityType"
+                   baseType="unitIntervalType"
                    description="Threshold value used for pixel rendering either transparent or opaque, used when alphaMode=&#34;MASK&#34;."/>
             <field name="alphaMode"
                    type="SFString"
@@ -10626,7 +10622,7 @@
                    minInclusive="0"
                    maxInclusive="1"
                    inheritedFrom="X3DBackgroundNode"
-                   baseType="intensityType"
+                   baseType="unitIntervalType"
                    description="how &#34;clear&#34; the background is, allows underlying page to show through: 1."/>
             <field name="DEF"
                    type="SFString"
@@ -15755,7 +15751,7 @@
                    minInclusive="0"
                    maxInclusive="1"
                    inheritedFrom="X3DLightNode"
-                   baseType="intensityType"
+                   baseType="unitIntervalType"
                    description="Brightness of ambient (nondirectional background) emission from the light."/>
             <field name="color"
                    type="SFColor"
@@ -15780,9 +15776,7 @@
                    accessType="inputOutput"
                    default="1"
                    minInclusive="0"
-                   maxInclusive="1"
                    inheritedFrom="X3DLightNode"
-                   baseType="intensityType"
                    description="Brightness of direct emission from the light."/>
             <field name="IS"
                    type="SFNode"
@@ -15810,7 +15804,7 @@
                    minInclusive="0"
                    maxInclusive="1"
                    inheritedFrom="X3DLightNode"
-                   baseType="intensityType"
+                   baseType="unitIntervalType"
                    description="shadowIntensity field defines how much light is obscured by shapes that cast shadows, ranging from 0 (light not obscured, no visible shadows) to 1 (light completely obscured, full-intensity shadows)."/>
             <field name="shadows"
                    type="SFBool"
@@ -16815,7 +16809,7 @@
                    minInclusive="0"
                    maxInclusive="1"
                    inheritedFrom="X3DLightNode"
-                   baseType="intensityType"
+                   baseType="unitIntervalType"
                    description="Brightness of ambient (nondirectional background) emission from the light."/>
             <field name="color"
                    type="SFColor"
@@ -16851,9 +16845,7 @@
                    accessType="inputOutput"
                    default="1"
                    minInclusive="0"
-                   maxInclusive="1"
                    inheritedFrom="X3DLightNode"
-                   baseType="intensityType"
                    description="Brightness of direct emission from the light."/>
             <field name="IS"
                    type="SFNode"
@@ -16886,7 +16878,7 @@
                    minInclusive="0"
                    maxInclusive="1"
                    inheritedFrom="X3DLightNode"
-                   baseType="intensityType"
+                   baseType="unitIntervalType"
                    description="shadowIntensity field defines how much light is obscured by shapes that cast shadows, ranging from 0 (light not obscured, no visible shadows) to 1 (light completely obscured, full-intensity shadows)."/>
             <field name="shadows"
                    type="SFBool"
@@ -26725,7 +26717,7 @@
                    default="0.2"
                    minInclusive="0"
                    maxInclusive="1"
-                   baseType="intensityType"
+                   baseType="unitIntervalType"
                    description="how much ambient omnidirectional light is reflected from all light sources.">
                <componentInfo name="Shape" level="2"/>
             </field>
@@ -26818,7 +26810,7 @@
                    default="1"
                    minInclusive="0"
                    maxInclusive="1"
-                   baseType="intensityType"
+                   baseType="unitIntervalType"
                    description="occlusionStrength indicates areas of indirect lighting, typically called ambient occlusion."/>
             <field name="occlusionTexture"
                    type="SFNode"
@@ -26837,7 +26829,7 @@
                    default="0.2"
                    minInclusive="0"
                    maxInclusive="1"
-                   baseType="intensityType"
+                   baseType="unitIntervalType"
                    description="Lower shininess values provide soft specular glows, while higher values result in sharper, smaller highlights.">
                <componentInfo name="Shape" level="2"/>
             </field>
@@ -26878,7 +26870,7 @@
                    default="0"
                    minInclusive="0"
                    maxInclusive="1"
-                   baseType="intensityType"
+                   baseType="unitIntervalType"
                    description="how &#34;clear&#34; an object is: 1.">
                <componentInfo name="Shape" level="2"/>
             </field>
@@ -30651,7 +30643,7 @@
                    default="1"
                    minInclusive="0"
                    maxInclusive="1"
-                   baseType="intensityType"
+                   baseType="unitIntervalType"
                    description="metallic is a PBR parameter (TODO elaborate)."/>
             <field name="metallicRoughnessTexture"
                    type="SFNode"
@@ -30689,7 +30681,7 @@
                    default="1"
                    minInclusive="0"
                    maxInclusive="1"
-                   baseType="intensityType"
+                   baseType="unitIntervalType"
                    description="occlusionStrength indicates areas of indirect lighting, typically called ambient occlusion."/>
             <field name="occlusionTexture"
                    type="SFNode"
@@ -30708,7 +30700,7 @@
                    default="1"
                    minInclusive="0"
                    maxInclusive="1"
-                   baseType="intensityType"
+                   baseType="unitIntervalType"
                    description="roughness is a PBR parameter (TODO elaborate)."/>
             <field name="transparency"
                    type="SFFloat"
@@ -30716,7 +30708,7 @@
                    default="0"
                    minInclusive="0"
                    maxInclusive="1"
-                   baseType="intensityType"
+                   baseType="unitIntervalType"
                    description="how &#34;clear&#34; an object is: 1."/>
             <field name="DEF"
                    type="SFString"
@@ -31265,7 +31257,7 @@
                    minInclusive="0"
                    maxInclusive="1"
                    inheritedFrom="X3DLightNode"
-                   baseType="intensityType"
+                   baseType="unitIntervalType"
                    description="Brightness of ambient (nondirectional background) emission from the light."/>
             <field name="attenuation"
                    type="SFVec3f"
@@ -31291,9 +31283,7 @@
                    accessType="inputOutput"
                    default="1"
                    minInclusive="0"
-                   maxInclusive="1"
                    inheritedFrom="X3DLightNode"
-                   baseType="intensityType"
                    description="Brightness of direct emission from the light."/>
             <field name="IS"
                    type="SFNode"
@@ -31334,7 +31324,7 @@
                    minInclusive="0"
                    maxInclusive="1"
                    inheritedFrom="X3DLightNode"
-                   baseType="intensityType"
+                   baseType="unitIntervalType"
                    description="shadowIntensity field defines how much light is obscured by shapes that cast shadows, ranging from 0 (light not obscured, no visible shadows) to 1 (light completely obscured, full-intensity shadows)."/>
             <field name="shadows"
                    type="SFBool"
@@ -34202,7 +34192,7 @@
                    default="false"
                    description="If mustEvaluate false, then the X3D player may delay sending input events to Script until output events are needed."/>
             <field name="sourceCode"
-                   type="xs:string"
+                   type="SFString"
                    accessType="inputOutput"
                    baseType="xs:string"
                    description="Embedded scripting source code can be contained within the parent node as a plain-text CDATA block, without requiring escaping of special characters."/>
@@ -34497,6 +34487,11 @@
                    acceptableNodeTypes="X3DMetadataObject"
                    inheritedFrom="X3DNode"
                    description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node."/>
+            <field name="sourceCode"
+                   type="SFString"
+                   accessType="inputOutput"
+                   baseType="xs:string"
+                   description="Embedded scripting source code can be contained within the parent node as a plain-text CDATA block, without requiring escaping of special characters."/>
             <field name="type"
                    type="SFString"
                    accessType="initializeOnly"
@@ -34601,6 +34596,11 @@
                    acceptableNodeTypes="X3DMetadataObject"
                    inheritedFrom="X3DNode"
                    description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node."/>
+            <field name="sourceCode"
+                   type="SFString"
+                   accessType="inputOutput"
+                   baseType="xs:string"
+                   description="Embedded scripting source code can be contained within the parent node as a plain-text CDATA block, without requiring escaping of special characters."/>
             <field name="type"
                    type="SFString"
                    accessType="initializeOnly"
@@ -35322,7 +35322,7 @@
                    default="1"
                    minInclusive="0"
                    maxInclusive="1"
-                   baseType="intensityType"
+                   baseType="unitIntervalType"
                    description="Factor [0,1] adjusting loudness (decibels) of emitted sound."/>
             <field name="IS"
                    type="SFNode"
@@ -35372,7 +35372,7 @@
                    default="0"
                    minInclusive="0"
                    maxInclusive="1"
-                   baseType="intensityType"
+                   baseType="unitIntervalType"
                    description="Player hint [0,1] if needed to choose which sounds to play."/>
             <field name="source"
                    type="SFNode"
@@ -35499,7 +35499,7 @@
                    default="1"
                    minInclusive="0"
                    maxInclusive="1"
-                   baseType="intensityType"
+                   baseType="unitIntervalType"
                    description="Factor [0,1] adjusting loudness (decibels) of emitted sound."/>
             <field name="IS"
                    type="SFNode"
@@ -35531,7 +35531,7 @@
                    default="0"
                    minInclusive="0"
                    maxInclusive="1"
-                   baseType="intensityType"
+                   baseType="unitIntervalType"
                    description="Player hint [0,1] if needed to choose which sounds to play."/>
             <field name="referenceDistance"
                    type="SFFloat"
@@ -36011,7 +36011,7 @@
                    minInclusive="0"
                    maxInclusive="1"
                    inheritedFrom="X3DLightNode"
-                   baseType="intensityType"
+                   baseType="unitIntervalType"
                    description="Brightness of ambient (nondirectional background) emission from the light."/>
             <field name="attenuation"
                    type="SFVec3f"
@@ -36058,9 +36058,7 @@
                    accessType="inputOutput"
                    default="1"
                    minInclusive="0"
-                   maxInclusive="1"
                    inheritedFrom="X3DLightNode"
-                   baseType="intensityType"
                    description="Brightness of direct emission from the light."/>
             <field name="IS"
                    type="SFNode"
@@ -36101,7 +36099,7 @@
                    minInclusive="0"
                    maxInclusive="1"
                    inheritedFrom="X3DLightNode"
-                   baseType="intensityType"
+                   baseType="unitIntervalType"
                    description="shadowIntensity field defines how much light is obscured by shapes that cast shadows, ranging from 0 (light not obscured, no visible shadows) to 1 (light completely obscured, full-intensity shadows)."/>
             <field name="shadows"
                    type="SFBool"
@@ -37240,7 +37238,7 @@
                    minInclusive="0"
                    maxInclusive="1"
                    inheritedFrom="X3DBackgroundNode"
-                   baseType="intensityType"
+                   baseType="unitIntervalType"
                    description="transparency applied to texture images, enabling an X3D scene to overlay an HTML page or desktop."/>
             <field name="DEF"
                    type="SFString"
@@ -37573,7 +37571,7 @@
                    minInclusive="0"
                    maxInclusive="1"
                    inheritedFrom="X3DLightNode"
-                   baseType="intensityType"
+                   baseType="unitIntervalType"
                    description="Brightness of ambient (nondirectional background) emission from the light."/>
             <field name="aspectRatio"
                    type="SFFloat"
@@ -37625,9 +37623,7 @@
                    accessType="inputOutput"
                    default="1"
                    minInclusive="0"
-                   maxInclusive="1"
                    inheritedFrom="X3DLightNode"
-                   baseType="intensityType"
                    description="Brightness of direct emission from the light."/>
             <field name="IS"
                    type="SFNode"
@@ -37668,7 +37664,7 @@
                    minInclusive="0"
                    maxInclusive="1"
                    inheritedFrom="X3DLightNode"
-                   baseType="intensityType"
+                   baseType="unitIntervalType"
                    description="shadowIntensity field defines how much light is obscured by shapes that cast shadows, ranging from 0 (light not obscured, no visible shadows) to 1 (light completely obscured, full-intensity shadows)."/>
             <field name="shadows"
                    type="SFBool"
@@ -37738,7 +37734,7 @@
                    minInclusive="0"
                    maxInclusive="1"
                    inheritedFrom="X3DLightNode"
-                   baseType="intensityType"
+                   baseType="unitIntervalType"
                    description="Brightness of ambient (nondirectional background) emission from the light."/>
             <field name="aspectRatio"
                    type="SFFloat"
@@ -37788,9 +37784,7 @@
                    accessType="inputOutput"
                    default="1"
                    minInclusive="0"
-                   maxInclusive="1"
                    inheritedFrom="X3DLightNode"
-                   baseType="intensityType"
                    description="Brightness of direct emission from the light."/>
             <field name="IS"
                    type="SFNode"
@@ -37831,7 +37825,7 @@
                    minInclusive="0"
                    maxInclusive="1"
                    inheritedFrom="X3DLightNode"
-                   baseType="intensityType"
+                   baseType="unitIntervalType"
                    description="shadowIntensity field defines how much light is obscured by shapes that cast shadows, ranging from 0 (light not obscured, no visible shadows) to 1 (light completely obscured, full-intensity shadows)."/>
             <field name="shadows"
                    type="SFBool"
@@ -39649,7 +39643,7 @@
                    default="0.2"
                    minInclusive="0"
                    maxInclusive="1"
-                   baseType="intensityType"
+                   baseType="unitIntervalType"
                    description="how much ambient omnidirectional light is reflected from all light sources."/>
             <field name="backAmbientIntensity"
                    type="SFFloat"
@@ -39657,7 +39651,7 @@
                    default="0.2"
                    minInclusive="0"
                    maxInclusive="1"
-                   baseType="intensityType"
+                   baseType="unitIntervalType"
                    description="how much ambient omnidirectional light is reflected from all light sources."/>
             <field name="backDiffuseColor"
                    type="SFColor"
@@ -39679,7 +39673,7 @@
                    default="0.2"
                    minInclusive="0"
                    maxInclusive="1"
-                   baseType="intensityType"
+                   baseType="unitIntervalType"
                    description="Lower shininess values provide soft specular glows, while higher values result in sharper, smaller highlights."/>
             <field name="backSpecularColor"
                    type="SFColor"
@@ -39694,7 +39688,7 @@
                    default="0"
                    minInclusive="0"
                    maxInclusive="1"
-                   baseType="intensityType"
+                   baseType="unitIntervalType"
                    description="how &#34;clear&#34; an object is: 1."/>
             <field name="diffuseColor"
                    type="SFColor"
@@ -39734,7 +39728,7 @@
                    default="0.2"
                    minInclusive="0"
                    maxInclusive="1"
-                   baseType="intensityType"
+                   baseType="unitIntervalType"
                    description="Lower shininess values provide soft specular glows, while higher values result in sharper, smaller highlights."/>
             <field name="specularColor"
                    type="SFColor"
@@ -39749,7 +39743,7 @@
                    default="0"
                    minInclusive="0"
                    maxInclusive="1"
-                   baseType="intensityType"
+                   baseType="unitIntervalType"
                    description="how &#34;clear&#34; an object is: 1."/>
             <field name="DEF"
                    type="SFString"
@@ -39976,7 +39970,7 @@
                    default="0"
                    minInclusive="0"
                    maxInclusive="1"
-                   baseType="intensityType"
+                   baseType="unitIntervalType"
                    description="how &#34;clear&#34; an object is: 1."/>
             <field name="DEF"
                    type="SFString"
