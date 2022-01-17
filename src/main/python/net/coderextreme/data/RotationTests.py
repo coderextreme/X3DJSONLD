@@ -18,7 +18,7 @@ X3D(
           meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
           meta(name="identifier", content="https://x3dgraphics.com/examples/X3dForAdvancedModeling/MotionAnimation/RotationTests.x3d"),
           meta(name="license", content="license.html"),
-          meta(name="translated", content="16 January 2022"),
+          meta(name="translated", content="17 January 2022"),
           meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
           meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")]), Scene=Scene(
     children=[#initial 3 rotations from 1.bvh, Zrotation Xrotation Yrotation: -1.829527 -4.400301 -0.381611, 2.832229 5.801149 2.553770, -3.939975 -3.766201 -3.474078

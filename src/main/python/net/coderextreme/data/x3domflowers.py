@@ -8,7 +8,7 @@ X3D(
           meta(name="description", content="5 or more prismatic flowers"),
           meta(name="generator", content="X3D-Edit, https://savage.nps.edu/X3D-Edit"),
           meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/src/main/data/x3domflowers.x3d"),
-          meta(name="translated", content="16 January 2022"),
+          meta(name="translated", content="17 January 2022"),
           meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
           meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")]), Scene=Scene(
     children=[
