@@ -98,16 +98,37 @@ let ProtoDeclare11 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 </Group>
 <Script DEF="RightSingleToMultiString"><field name="set_rightstring" accessType="inputOnly" type="SFString"></field>
 <field name="rightlines" accessType="outputOnly" type="MFString"></field>
-<#sourceCode/>
-</Script>
+<![CDATA[ecmascript:
+
+function initialize() {
+	rightlines = new MFString("");
+}
+
+function set_rightstring(rightstr) {
+	rightlines = new MFString(rightstr);
+}]]></Script>
 <Script DEF="UpSingleToMultiString"><field name="set_upstring" accessType="inputOnly" type="SFString"></field>
 <field name="uplines" accessType="outputOnly" type="MFString"></field>
-<#sourceCode/>
-</Script>
+<![CDATA[ecmascript:
+
+function initialize() {
+	uplines = new MFString("");
+}
+
+function set_upstring(upstr) {
+	uplines = new MFString(upstr);
+}]]></Script>
 <Script DEF="CenterSingleToMultiString"><field name="set_centerstring" accessType="inputOnly" type="SFString"></field>
 <field name="centerlines" accessType="outputOnly" type="MFString"></field>
-<#sourceCode/>
-</Script>
+<![CDATA[ecmascript:
+
+function initialize() {
+	centerlines = new MFString("");
+}
+
+function set_centerstring(centerstr) {
+	centerlines = new MFString(centerstr);
+}]]></Script>
 <ROUTE fromField="enteredText" fromNode="CenterSensor" toField="set_centerstring" toNode="CenterSingleToMultiString"></ROUTE>
 <ROUTE fromField="centerlines" fromNode="CenterSingleToMultiString" toField="set_string" toNode="CenterString"></ROUTE>
 <ROUTE fromField="isOver" fromNode="CenterTouch" toField="set_enabled" toNode="CenterSensor"></ROUTE>
@@ -355,115 +376,136 @@ field62.accessType = "outputOnly";
 field62.type = "MFString";
 Script60.field[1] = field62;
 
-let #sourceCode63 = browser.currentScene.createNode("#sourceCode");
-Script60.#sourceCode[2] = #sourceCode63;
 
+Script60.setSourceCode(`ecmascript:\n"+
+"\n"+
+"function initialize() {\n"+
+"	rightlines = new MFString(\"\");\n"+
+"}\n"+
+"\n"+
+"function set_rightstring(rightstr) {\n"+
+"	rightlines = new MFString(rightstr);\n"+
+"}`)
 ProtoBody12.children[1] = Script60;
 
-let Script64 = browser.currentScene.createNode("Script");
-Script64.DEF = "UpSingleToMultiString";
+let Script63 = browser.currentScene.createNode("Script");
+Script63.DEF = "UpSingleToMultiString";
+let field64 = browser.currentScene.createNode("field");
+field64.name = "set_upstring";
+field64.accessType = "inputOnly";
+field64.type = "SFString";
+Script63.field = new MFNode();
+
+Script63.field[0] = field64;
+
 let field65 = browser.currentScene.createNode("field");
-field65.name = "set_upstring";
-field65.accessType = "inputOnly";
-field65.type = "SFString";
-Script64.field = new MFNode();
+field65.name = "uplines";
+field65.accessType = "outputOnly";
+field65.type = "MFString";
+Script63.field[1] = field65;
 
-Script64.field[0] = field65;
 
-let field66 = browser.currentScene.createNode("field");
-field66.name = "uplines";
-field66.accessType = "outputOnly";
-field66.type = "MFString";
-Script64.field[1] = field66;
+Script63.setSourceCode(`ecmascript:\n"+
+"\n"+
+"function initialize() {\n"+
+"	uplines = new MFString(\"\");\n"+
+"}\n"+
+"\n"+
+"function set_upstring(upstr) {\n"+
+"	uplines = new MFString(upstr);\n"+
+"}`)
+ProtoBody12.children[2] = Script63;
 
-let #sourceCode67 = browser.currentScene.createNode("#sourceCode");
-Script64.#sourceCode[2] = #sourceCode67;
+let Script66 = browser.currentScene.createNode("Script");
+Script66.DEF = "CenterSingleToMultiString";
+let field67 = browser.currentScene.createNode("field");
+field67.name = "set_centerstring";
+field67.accessType = "inputOnly";
+field67.type = "SFString";
+Script66.field = new MFNode();
 
-ProtoBody12.children[2] = Script64;
+Script66.field[0] = field67;
 
-let Script68 = browser.currentScene.createNode("Script");
-Script68.DEF = "CenterSingleToMultiString";
-let field69 = browser.currentScene.createNode("field");
-field69.name = "set_centerstring";
-field69.accessType = "inputOnly";
-field69.type = "SFString";
-Script68.field = new MFNode();
+let field68 = browser.currentScene.createNode("field");
+field68.name = "centerlines";
+field68.accessType = "outputOnly";
+field68.type = "MFString";
+Script66.field[1] = field68;
 
-Script68.field[0] = field69;
 
-let field70 = browser.currentScene.createNode("field");
-field70.name = "centerlines";
-field70.accessType = "outputOnly";
-field70.type = "MFString";
-Script68.field[1] = field70;
+Script66.setSourceCode(`ecmascript:\n"+
+"\n"+
+"function initialize() {\n"+
+"	centerlines = new MFString(\"\");\n"+
+"}\n"+
+"\n"+
+"function set_centerstring(centerstr) {\n"+
+"	centerlines = new MFString(centerstr);\n"+
+"}`)
+ProtoBody12.children[3] = Script66;
 
-let #sourceCode71 = browser.currentScene.createNode("#sourceCode");
-Script68.#sourceCode[2] = #sourceCode71;
+let ROUTE69 = browser.currentScene.createNode("ROUTE");
+ROUTE69.fromField = "enteredText";
+ROUTE69.fromNode = "CenterSensor";
+ROUTE69.toField = "set_centerstring";
+ROUTE69.toNode = "CenterSingleToMultiString";
+ProtoBody12.children[4] = ROUTE69;
 
-ProtoBody12.children[3] = Script68;
+let ROUTE70 = browser.currentScene.createNode("ROUTE");
+ROUTE70.fromField = "centerlines";
+ROUTE70.fromNode = "CenterSingleToMultiString";
+ROUTE70.toField = "set_string";
+ROUTE70.toNode = "CenterString";
+ProtoBody12.children[5] = ROUTE70;
+
+let ROUTE71 = browser.currentScene.createNode("ROUTE");
+ROUTE71.fromField = "isOver";
+ROUTE71.fromNode = "CenterTouch";
+ROUTE71.toField = "set_enabled";
+ROUTE71.toNode = "CenterSensor";
+ProtoBody12.children[6] = ROUTE71;
 
 let ROUTE72 = browser.currentScene.createNode("ROUTE");
 ROUTE72.fromField = "enteredText";
-ROUTE72.fromNode = "CenterSensor";
-ROUTE72.toField = "set_centerstring";
-ROUTE72.toNode = "CenterSingleToMultiString";
-ProtoBody12.children[4] = ROUTE72;
+ROUTE72.fromNode = "RightSensor";
+ROUTE72.toField = "set_rightstring";
+ROUTE72.toNode = "RightSingleToMultiString";
+ProtoBody12.children[7] = ROUTE72;
 
 let ROUTE73 = browser.currentScene.createNode("ROUTE");
-ROUTE73.fromField = "centerlines";
-ROUTE73.fromNode = "CenterSingleToMultiString";
+ROUTE73.fromField = "rightlines";
+ROUTE73.fromNode = "RightSingleToMultiString";
 ROUTE73.toField = "set_string";
-ROUTE73.toNode = "CenterString";
-ProtoBody12.children[5] = ROUTE73;
+ROUTE73.toNode = "RightString";
+ProtoBody12.children[8] = ROUTE73;
 
 let ROUTE74 = browser.currentScene.createNode("ROUTE");
 ROUTE74.fromField = "isOver";
-ROUTE74.fromNode = "CenterTouch";
+ROUTE74.fromNode = "RightTouch";
 ROUTE74.toField = "set_enabled";
-ROUTE74.toNode = "CenterSensor";
-ProtoBody12.children[6] = ROUTE74;
+ROUTE74.toNode = "RightSensor";
+ProtoBody12.children[9] = ROUTE74;
 
 let ROUTE75 = browser.currentScene.createNode("ROUTE");
 ROUTE75.fromField = "enteredText";
-ROUTE75.fromNode = "RightSensor";
-ROUTE75.toField = "set_rightstring";
-ROUTE75.toNode = "RightSingleToMultiString";
-ProtoBody12.children[7] = ROUTE75;
+ROUTE75.fromNode = "UpSensor";
+ROUTE75.toField = "set_upstring";
+ROUTE75.toNode = "UpSingleToMultiString";
+ProtoBody12.children[10] = ROUTE75;
 
 let ROUTE76 = browser.currentScene.createNode("ROUTE");
-ROUTE76.fromField = "rightlines";
-ROUTE76.fromNode = "RightSingleToMultiString";
+ROUTE76.fromField = "uplines";
+ROUTE76.fromNode = "UpSingleToMultiString";
 ROUTE76.toField = "set_string";
-ROUTE76.toNode = "RightString";
-ProtoBody12.children[8] = ROUTE76;
+ROUTE76.toNode = "UpString";
+ProtoBody12.children[11] = ROUTE76;
 
 let ROUTE77 = browser.currentScene.createNode("ROUTE");
 ROUTE77.fromField = "isOver";
-ROUTE77.fromNode = "RightTouch";
+ROUTE77.fromNode = "UpTouch";
 ROUTE77.toField = "set_enabled";
-ROUTE77.toNode = "RightSensor";
-ProtoBody12.children[9] = ROUTE77;
-
-let ROUTE78 = browser.currentScene.createNode("ROUTE");
-ROUTE78.fromField = "enteredText";
-ROUTE78.fromNode = "UpSensor";
-ROUTE78.toField = "set_upstring";
-ROUTE78.toNode = "UpSingleToMultiString";
-ProtoBody12.children[10] = ROUTE78;
-
-let ROUTE79 = browser.currentScene.createNode("ROUTE");
-ROUTE79.fromField = "uplines";
-ROUTE79.fromNode = "UpSingleToMultiString";
-ROUTE79.toField = "set_string";
-ROUTE79.toNode = "UpString";
-ProtoBody12.children[11] = ROUTE79;
-
-let ROUTE80 = browser.currentScene.createNode("ROUTE");
-ROUTE80.fromField = "isOver";
-ROUTE80.fromNode = "UpTouch";
-ROUTE80.toField = "set_enabled";
-ROUTE80.toNode = "UpSensor";
-ProtoBody12.children[12] = ROUTE80;
+ROUTE77.toNode = "UpSensor";
+ProtoBody12.children[12] = ROUTE77;
 
 ProtoDeclare11.protoBody = ProtoBody12;
 
@@ -471,41 +513,41 @@ browser.currentScene.children = new MFNode();
 
 browser.currentScene.children[0] = ProtoDeclare11;
 
-let NavigationInfo81 = browser.currentScene.createNode("NavigationInfo");
-browser.currentScene.children[1] = NavigationInfo81;
+let NavigationInfo78 = browser.currentScene.createNode("NavigationInfo");
+browser.currentScene.children[1] = NavigationInfo78;
 
-let Viewpoint82 = browser.currentScene.createNode("Viewpoint");
-Viewpoint82.description = "Process pipes";
-Viewpoint82.orientation = new SFRotation(new float[1,0,0,-0.4]);
-Viewpoint82.position = new SFVec3f(new float[0,5,12]);
-browser.currentScene.children[2] = Viewpoint82;
+let Viewpoint79 = browser.currentScene.createNode("Viewpoint");
+Viewpoint79.description = "Process pipes";
+Viewpoint79.orientation = new SFRotation(new float[1,0,0,-0.4]);
+Viewpoint79.position = new SFVec3f(new float[0,5,12]);
+browser.currentScene.children[2] = Viewpoint79;
 
-let Transform83 = browser.currentScene.createNode("Transform");
-Transform83.translation = new SFVec3f(new float[0,-2.5,0]);
-let ProtoInstance84 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance84.name = "Process";
-Transform83.children = new MFNode();
+let Transform80 = browser.currentScene.createNode("Transform");
+Transform80.translation = new SFVec3f(new float[0,-2.5,0]);
+let ProtoInstance81 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance81.name = "Process";
+Transform80.children = new MFNode();
 
-Transform83.children[0] = ProtoInstance84;
+Transform80.children[0] = ProtoInstance81;
 
-browser.currentScene.children[3] = Transform83;
+browser.currentScene.children[3] = Transform80;
 
-let Transform85 = browser.currentScene.createNode("Transform");
-let ProtoInstance86 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance86.name = "Process";
-Transform85.children = new MFNode();
+let Transform82 = browser.currentScene.createNode("Transform");
+let ProtoInstance83 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance83.name = "Process";
+Transform82.children = new MFNode();
 
-Transform85.children[0] = ProtoInstance86;
+Transform82.children[0] = ProtoInstance83;
 
-browser.currentScene.children[4] = Transform85;
+browser.currentScene.children[4] = Transform82;
 
-let Transform87 = browser.currentScene.createNode("Transform");
-Transform87.translation = new SFVec3f(new float[0,2.5,0]);
-let ProtoInstance88 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance88.name = "Process";
-Transform87.children = new MFNode();
+let Transform84 = browser.currentScene.createNode("Transform");
+Transform84.translation = new SFVec3f(new float[0,2.5,0]);
+let ProtoInstance85 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance85.name = "Process";
+Transform84.children = new MFNode();
 
-Transform87.children[0] = ProtoInstance88;
+Transform84.children[0] = ProtoInstance85;
 
-browser.currentScene.children[5] = Transform87;
+browser.currentScene.children[5] = Transform84;
 

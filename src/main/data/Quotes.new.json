@@ -136,7 +136,7 @@
           },
           {
             "@name":"translated",
-            "@content":"16 January 2022"
+            "@content":"17 January 2022"
           },
           {
             "@name":"generator",
@@ -344,7 +344,13 @@
                             { "MetadataSet":
                               {
                                 "@name":"EscapedQuotationMarksMetadataSet",
-                                "-IllegalChildNodeFieldNameNotFound":[
+                                "-value":[
+                                  { "MetadataString":
+                                    {
+                                      "@name":"quotesTestC",
+                                      "@value":["MFString example C, backslash-escaped quotes: He said, \"Immel did it!\""]
+                                    }
+                                  },
                                   { "MetadataString":
                                     {
                                       "@name":"extraChildTest",
@@ -469,7 +475,7 @@
                         "@type":"MFColor"
                       }
                     ],
-                    "#sourceText":[
+                    "#sourceCode":[
 "",
 "",
 "ecmascript:",
@@ -868,7 +874,7 @@
                               }
                             ]
                         },
-                        "#sourceText":[
+                        "#sourceCode":[
 "",
 "",
 "ecmascript:",

@@ -55,7 +55,15 @@
     </ProtoDeclare>
     <WorldInfo title='SimpleShader'>
       <MetadataSet DEF='Titania' name='Titania' containerField='' reference='http://titania.create3000.de'>
-        <MetadataSet DEF='Viewpoint' name='Viewpoint' containerField='' reference='http://titania.create3000.de'>
+        <MetadataSet DEF='Selection' name='Selection' containerField='value' reference='http://titania.create3000.de'>
+          <MetadataSet DEF='nodes' name='nodes' containerField='value' reference='http://titania.create3000.de'>
+            <!-- NULL -->
+          </MetadataSet>
+        </MetadataSet>
+        <MetadataSet DEF='NavigationInfo' name='NavigationInfo' containerField='value' reference='http://titania.create3000.de'>
+          <MetadataString DEF='type' name='type' containerField='value' reference='http://titania.create3000.de' value='"EXAMINE"'/>
+        </MetadataSet>
+        <MetadataSet DEF='Viewpoint' name='Viewpoint' containerField='value' reference='http://titania.create3000.de'>
           <MetadataDouble DEF='position' name='position' containerField='value' reference='http://titania.create3000.de' value='6.24067728185014 0.00250837343276661 2.92117542307615'/>
           <MetadataDouble DEF='orientation' name='orientation' containerField='value' reference='http://titania.create3000.de' value='-0.110173424710488 0.990158061907379 -0.0863065984000336 1.21146676119191'/>
           <MetadataDouble DEF='centerOfRotation' name='centerOfRotation' containerField='value' reference='http://titania.create3000.de' value='-0.808320198626341 -0.358072370409949 0.22817191560906'/>

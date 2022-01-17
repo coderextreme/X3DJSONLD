@@ -79,24 +79,30 @@ field17.type = "MFVec3f";
 field17.value = "-50 -50 0 50 50 0";
 Script15.field[1] = field17;
 
-let #sourceCode18 = browser.currentScene.createNode("#sourceCode");
-Script15.#sourceCode[2] = #sourceCode18;
 
+Script15.setSourceCode(`ecmascript:\n"+
+"\n"+
+"                function set_cycle(value) {\n"+
+"                        Browser.print(value);\n"+
+"                        var endA = new SFVec3f(spine[0].x*Math.random()*2, spine[0].y*Math.random()*2, spine[0].z*Math.random()*2);\n"+
+"                        var endB = new SFVec3f(spine[1].x*Math.random()*2, spine[1].y*Math.random()*2, spine[1].z*Math.random()*2);\n"+
+"		        spine = new MFVec3f([endA, endB]);\n"+
+"                }`)
 Group9.children[2] = Script15;
 
-let ROUTE19 = browser.currentScene.createNode("ROUTE");
-ROUTE19.fromNode = "TourTime";
-ROUTE19.fromField = "cycleTime";
-ROUTE19.toNode = "MoveCylinder";
-ROUTE19.toField = "set_cycle";
-Group9.children[3] = ROUTE19;
+let ROUTE18 = browser.currentScene.createNode("ROUTE");
+ROUTE18.fromNode = "TourTime";
+ROUTE18.fromField = "cycleTime";
+ROUTE18.toNode = "MoveCylinder";
+ROUTE18.toField = "set_cycle";
+Group9.children[3] = ROUTE18;
 
-let ROUTE20 = browser.currentScene.createNode("ROUTE");
-ROUTE20.fromNode = "MoveCylinder";
-ROUTE20.fromField = "spine_changed";
-ROUTE20.toNode = "extrusion";
-ROUTE20.toField = "set_spine";
-Group9.children[4] = ROUTE20;
+let ROUTE19 = browser.currentScene.createNode("ROUTE");
+ROUTE19.fromNode = "MoveCylinder";
+ROUTE19.fromField = "spine_changed";
+ROUTE19.toNode = "extrusion";
+ROUTE19.toField = "set_spine";
+Group9.children[4] = ROUTE19;
 
 browser.currentScene.children = new MFNode();
 

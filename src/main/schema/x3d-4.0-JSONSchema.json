@@ -23981,11 +23981,8 @@
               "type": "boolean"
             },
             "@sourceCode": {
-              "$comment": "xs:string inputOutput",
-              "type": "array",
-              "items": {
-                "type": "number"
-              }
+              "$comment": "SFString inputOutput",
+              "type": "string"
             },
             "@url": {
               "$comment": "MFString inputOutput",
@@ -24318,6 +24315,10 @@
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
+            "@sourceCode": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@type": {
               "anyOf": [
                 {
@@ -24443,6 +24444,10 @@
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
+            },
+            "@sourceCode": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
             },
             "@type": {
               "anyOf": [

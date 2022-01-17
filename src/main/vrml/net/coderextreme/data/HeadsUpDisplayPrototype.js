@@ -84,8 +84,41 @@ let ProtoDeclare12 = browser.createX3DFromString(`<?xml version="1.0" encoding="
 <field name="translationOffsetChanged" accessType="outputOnly" type="SFVec3f"></field>
 <IS><connect nodeField="traceEnabled" protoField="traceEnabled"></connect>
 </IS>
-<#sourceCode/>
-</Script>
+<![CDATA[ecmascript:
+
+function tracePrint (text)
+{
+	if (traceEnabled) Browser.print ('[HeadsUpDisplayPrototype VisibilityControlScript] ' + text);
+}
+function setIsVisible (value, timeStamp)
+{
+	isVisible = value;
+	tracePrint('isVisible=' + value);
+}
+function setPlaneSensorIsActive (value, timeStamp)
+{
+	tracePrint('PlaneSensor isActive=' + value);
+
+	if (value == false)
+	{
+		tracePrint('planeSensorTranslation=' + planeSensorTranslation);
+		if (isVisible)
+		{
+			translationChanged = planeSensorTranslation;
+		}
+		else
+		{
+			// fell off screen, reset to center
+			translationChanged = new SFVec3f(0, 0, 0);
+			translationOffsetChanged  = new SFVec3f(0, 0, 0);
+		}
+	}
+}
+function setPlaneSensorTranslation (value, timeStamp)
+{
+	planeSensorTranslation = value;
+	tracePrint('planeSensorTranslation=' + value);
+}]]></Script>
 <ROUTE fromField="isActive" fromNode="PlaneMovementSensor" toField="setPlaneSensorIsActive" toNode="VisibilityControlScript"></ROUTE>
 <ROUTE fromField="translation_changed" fromNode="PlaneMovementSensor" toField="setPlaneSensorTranslation" toNode="VisibilityControlScript"></ROUTE>
 <ROUTE fromField="isActive" fromNode="MovementVisibilitySensor" toField="setIsVisible" toNode="VisibilityControlScript"></ROUTE>
@@ -294,31 +327,64 @@ IS49.connect[0] = connect50;
 
 Script40.iS = IS49;
 
-let #sourceCode51 = browser.currentScene.createNode("#sourceCode");
-Script40.#sourceCode[8] = #sourceCode51;
 
+Script40.setSourceCode(`ecmascript:\n"+
+"\n"+
+"function tracePrint (text)\n"+
+"{\n"+
+"	if (traceEnabled) Browser.print ('[HeadsUpDisplayPrototype VisibilityControlScript] ' + text);\n"+
+"}\n"+
+"function setIsVisible (value, timeStamp)\n"+
+"{\n"+
+"	isVisible = value;\n"+
+"	tracePrint('isVisible=' + value);\n"+
+"}\n"+
+"function setPlaneSensorIsActive (value, timeStamp)\n"+
+"{\n"+
+"	tracePrint('PlaneSensor isActive=' + value);\n"+
+"\n"+
+"	if (value == false)\n"+
+"	{\n"+
+"		tracePrint('planeSensorTranslation=' + planeSensorTranslation);\n"+
+"		if (isVisible)\n"+
+"		{\n"+
+"			translationChanged = planeSensorTranslation;\n"+
+"		}\n"+
+"		else\n"+
+"		{\n"+
+"			// fell off screen, reset to center\n"+
+"			translationChanged = new SFVec3f(0, 0, 0);\n"+
+"			translationOffsetChanged  = new SFVec3f(0, 0, 0);\n"+
+"		}\n"+
+"	}\n"+
+"}\n"+
+"function setPlaneSensorTranslation (value, timeStamp)\n"+
+"{\n"+
+"	planeSensorTranslation = value;\n"+
+"	tracePrint('planeSensorTranslation=' + value);\n"+
+"}`)
 Group32.children[3] = Script40;
 
+let ROUTE51 = browser.currentScene.createNode("ROUTE");
+ROUTE51.fromField = "isActive";
+ROUTE51.fromNode = "PlaneMovementSensor";
+ROUTE51.toField = "setPlaneSensorIsActive";
+ROUTE51.toNode = "VisibilityControlScript";
+Group32.children[4] = ROUTE51;
+
 let ROUTE52 = browser.currentScene.createNode("ROUTE");
-ROUTE52.fromField = "isActive";
+ROUTE52.fromField = "translation_changed";
 ROUTE52.fromNode = "PlaneMovementSensor";
-ROUTE52.toField = "setPlaneSensorIsActive";
+ROUTE52.toField = "setPlaneSensorTranslation";
 ROUTE52.toNode = "VisibilityControlScript";
-Group32.children[4] = ROUTE52;
+Group32.children[5] = ROUTE52;
 
 let ROUTE53 = browser.currentScene.createNode("ROUTE");
-ROUTE53.fromField = "translation_changed";
-ROUTE53.fromNode = "PlaneMovementSensor";
-ROUTE53.toField = "setPlaneSensorTranslation";
+ROUTE53.fromField = "isActive";
+ROUTE53.fromNode = "MovementVisibilitySensor";
+ROUTE53.toField = "setIsVisible";
 ROUTE53.toNode = "VisibilityControlScript";
-Group32.children[5] = ROUTE53;
-
-let ROUTE54 = browser.currentScene.createNode("ROUTE");
-ROUTE54.fromField = "isActive";
-ROUTE54.fromNode = "MovementVisibilitySensor";
-ROUTE54.toField = "setIsVisible";
-ROUTE54.toNode = "VisibilityControlScript";
-Group32.children[6] = ROUTE54;
+Group32.children[6] = ROUTE53;
 
 Transform28.children[1] = Group32;
 
@@ -330,26 +396,26 @@ Transform24.children = new MFNode();
 
 Transform24.children[0] = Transform25;
 
+let ROUTE54 = browser.currentScene.createNode("ROUTE");
+ROUTE54.fromField = "translation_changed";
+ROUTE54.fromNode = "PlaneMovementSensor";
+ROUTE54.toField = "set_translation";
+ROUTE54.toNode = "MovableLocation";
+Transform24.children[1] = ROUTE54;
+
 let ROUTE55 = browser.currentScene.createNode("ROUTE");
-ROUTE55.fromField = "translation_changed";
-ROUTE55.fromNode = "PlaneMovementSensor";
+ROUTE55.fromField = "translationChanged";
+ROUTE55.fromNode = "VisibilityControlScript";
 ROUTE55.toField = "set_translation";
 ROUTE55.toNode = "MovableLocation";
-Transform24.children[1] = ROUTE55;
+Transform24.children[2] = ROUTE55;
 
 let ROUTE56 = browser.currentScene.createNode("ROUTE");
-ROUTE56.fromField = "translationChanged";
+ROUTE56.fromField = "translationOffsetChanged";
 ROUTE56.fromNode = "VisibilityControlScript";
-ROUTE56.toField = "set_translation";
-ROUTE56.toNode = "MovableLocation";
-Transform24.children[2] = ROUTE56;
-
-let ROUTE57 = browser.currentScene.createNode("ROUTE");
-ROUTE57.fromField = "translationOffsetChanged";
-ROUTE57.fromNode = "VisibilityControlScript";
-ROUTE57.toField = "set_offset";
-ROUTE57.toNode = "PlaneMovementSensor";
-Transform24.children[3] = ROUTE57;
+ROUTE56.toField = "set_offset";
+ROUTE56.toNode = "PlaneMovementSensor";
+Transform24.children[3] = ROUTE56;
 
 Transform23.children = new MFNode();
 
@@ -357,19 +423,19 @@ Transform23.children[0] = Transform24;
 
 Group19.children[1] = Transform23;
 
-let ROUTE58 = browser.currentScene.createNode("ROUTE");
-ROUTE58.fromField = "position_changed";
-ROUTE58.fromNode = "WhereSensor";
-ROUTE58.toField = "set_translation";
-ROUTE58.toNode = "FixedLocation";
-Group19.children[2] = ROUTE58;
+let ROUTE57 = browser.currentScene.createNode("ROUTE");
+ROUTE57.fromField = "position_changed";
+ROUTE57.fromNode = "WhereSensor";
+ROUTE57.toField = "set_translation";
+ROUTE57.toNode = "FixedLocation";
+Group19.children[2] = ROUTE57;
 
-let ROUTE59 = browser.currentScene.createNode("ROUTE");
-ROUTE59.fromField = "orientation_changed";
-ROUTE59.fromNode = "WhereSensor";
-ROUTE59.toField = "set_rotation";
-ROUTE59.toNode = "FixedLocation";
-Group19.children[3] = ROUTE59;
+let ROUTE58 = browser.currentScene.createNode("ROUTE");
+ROUTE58.fromField = "orientation_changed";
+ROUTE58.fromNode = "WhereSensor";
+ROUTE58.toField = "set_rotation";
+ROUTE58.toNode = "FixedLocation";
+Group19.children[3] = ROUTE58;
 
 ProtoBody18.children = new MFNode();
 
@@ -382,36 +448,36 @@ browser.currentScene.children = new MFNode();
 browser.currentScene.children[0] = ProtoDeclare12;
 
 //====================
-let Background60 = browser.currentScene.createNode("Background");
-Background60.groundColor = new MFColor(new float[0.1,0.1,0.3]);
-Background60.skyColor = new MFColor(new float[0.5,0.5,0.1]);
-browser.currentScene.children[1] = Background60;
+let Background59 = browser.currentScene.createNode("Background");
+Background59.groundColor = new MFColor(new float[0.1,0.1,0.3]);
+Background59.skyColor = new MFColor(new float[0.5,0.5,0.1]);
+browser.currentScene.children[1] = Background59;
 
-let Anchor61 = browser.currentScene.createNode("Anchor");
-Anchor61.description = "HeadsUpDisplayExample";
-Anchor61.parameter = new MFString(new java.lang.String["target=_blank"]);
-Anchor61.url = new MFString(new java.lang.String["HeadsUpDisplayExample.x3d","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayrExample.x3d","HeadsUpDisplayExample.wrl","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayExample.wrl"]);
-let Shape62 = browser.currentScene.createNode("Shape");
-let Appearance63 = browser.currentScene.createNode("Appearance");
-let Material64 = browser.currentScene.createNode("Material");
-Material64.diffuseColor = new SFColor(new float[0,1,1]);
-Material64.emissiveColor = new SFColor(new float[0,1,1]);
-Appearance63.material = Material64;
+let Anchor60 = browser.currentScene.createNode("Anchor");
+Anchor60.description = "HeadsUpDisplayExample";
+Anchor60.parameter = new MFString(new java.lang.String["target=_blank"]);
+Anchor60.url = new MFString(new java.lang.String["HeadsUpDisplayExample.x3d","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayrExample.x3d","HeadsUpDisplayExample.wrl","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayExample.wrl"]);
+let Shape61 = browser.currentScene.createNode("Shape");
+let Appearance62 = browser.currentScene.createNode("Appearance");
+let Material63 = browser.currentScene.createNode("Material");
+Material63.diffuseColor = new SFColor(new float[0,1,1]);
+Material63.emissiveColor = new SFColor(new float[0,1,1]);
+Appearance62.material = Material63;
 
-Shape62.appearance = Appearance63;
+Shape61.appearance = Appearance62;
 
-let Text65 = browser.currentScene.createNode("Text");
-Text65.string = new MFString(new java.lang.String["HeadsUpDisplayPrototype.x3d","is a Prototype definition file.","","To see an example scene using this node","click this text to view","HeadsUpDisplayExample.x3d"]);
-let FontStyle66 = browser.currentScene.createNode("FontStyle");
-FontStyle66.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
-FontStyle66.size = 0.8;
-Text65.fontStyle = FontStyle66;
+let Text64 = browser.currentScene.createNode("Text");
+Text64.string = new MFString(new java.lang.String["HeadsUpDisplayPrototype.x3d","is a Prototype definition file.","","To see an example scene using this node","click this text to view","HeadsUpDisplayExample.x3d"]);
+let FontStyle65 = browser.currentScene.createNode("FontStyle");
+FontStyle65.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
+FontStyle65.size = 0.8;
+Text64.fontStyle = FontStyle65;
 
-Shape62.geometry = Text65;
+Shape61.geometry = Text64;
 
-Anchor61.children = new MFNode();
+Anchor60.children = new MFNode();
 
-Anchor61.children[0] = Shape62;
+Anchor60.children[0] = Shape61;
 
-browser.currentScene.children[2] = Anchor61;
+browser.currentScene.children[2] = Anchor60;
 
