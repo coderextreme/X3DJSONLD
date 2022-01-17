@@ -6,7 +6,7 @@ X3D(
           component(name="Networking", level=2), 
           meta(name="generator", content="view3dscene, https://castle-engine.io/view3dscene.php"),
           meta(name="source", content="t1.wrl"),
-          meta(name="translated", content="16 January 2022"),
+          meta(name="translated", content="17 January 2022"),
           meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
           meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")]), Scene=Scene(
     children=[

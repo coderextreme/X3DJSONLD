@@ -14,7 +14,7 @@ X3D(
           meta(name="generator", content="manual"),
           meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/flowers4.x3d"),
           meta(name="description", content="an animated flower"),
-          meta(name="translated", content="16 January 2022"),
+          meta(name="translated", content="17 January 2022"),
           meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
           meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")]), Scene=Scene(
     children=[
