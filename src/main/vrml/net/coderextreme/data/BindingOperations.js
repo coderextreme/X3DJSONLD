@@ -364,83 +364,169 @@ field74.type = "SFInt32";
 field74.value = "-1";
 Script63.field[10] = field74;
 
-let #sourceCode75 = browser.currentScene.createNode("#sourceCode");
-Script63.#sourceCode[11] = #sourceCode75;
 
+Script63.setSourceCode(`ecmascript:\n"+
+"\n"+
+"function initialize ()\n"+
+"{\n"+
+"    bindView5 = true;\n"+
+"    Browser.print ('Timing script initialized and ready for activation');\n"+
+"}\n"+
+"function set_timeEvent (inputValue)\n"+
+"{\n"+
+"    if (inputValue == priorInputvalue)\n"+
+"    {\n"+
+"        return; // ignore repeated inputs\n"+
+"    }\n"+
+"    // new value provided\n"+
+"    priorInputvalue = inputValue;\n"+
+"    // Browser.print ('\\ntimeEvent inputValue=' + inputValue);\n"+
+"\n"+
+"    // mimics user execution of Figure 4.1 steps t_0 through t_8\n"+
+"    if (inputValue == 0)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t0');\n"+
+"        bindView1 = true;\n"+
+"    }\n"+
+"    else if (inputValue == 1)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t1');\n"+
+"        bindView2 = true;\n"+
+"    }\n"+
+"    else if (inputValue == 2)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t2');\n"+
+"        bindView3 = true;\n"+
+"    }\n"+
+"    else if (inputValue == 3)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t3');\n"+
+"        bindView3 = false;\n"+
+"    }\n"+
+"    else if (inputValue == 4)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t4');\n"+
+"        bindView1 = true;\n"+
+"    }\n"+
+"    else if (inputValue == 5)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t5');\n"+
+"        bindView2 = false;\n"+
+"    }\n"+
+"    else if (inputValue == 6)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t6');\n"+
+"        bindView1 = false;\n"+
+"    }\n"+
+"    else if (inputValue == 7)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t7');\n"+
+"        bindView4 = true;\n"+
+"\n"+
+"    }\n"+
+"    else if (inputValue == 8)\n"+
+"    {\n"+
+"        Browser.print ('\\n===========\\n time t8');\n"+
+"        Browser.print (', no action, all done');\n"+
+"        Browser.print ('\\n\\n');\n"+
+"    }\n"+
+"}\n"+
+"\n"+
+"function view1Bound (inputValue)\n"+
+"{\n"+
+"    Browser.print (', view1Bound ' + (inputValue));\n"+
+"    if (priorInputvalue == -1) Browser.print ('\\n');\n"+
+"}\n"+
+"function view2Bound (inputValue)\n"+
+"{\n"+
+"    Browser.print (', view2Bound ' + (inputValue));\n"+
+"}\n"+
+"function view3Bound (inputValue)\n"+
+"{\n"+
+"    Browser.print (', view3Bound ' + (inputValue));\n"+
+"}\n"+
+"function view4Bound (inputValue)\n"+
+"{\n"+
+"    Browser.print (', view4Bound ' + (inputValue));\n"+
+"}\n"+
+"function view5Bound (inputValue)\n"+
+"{\n"+
+"    Browser.print (', view5Bound ' + (inputValue));\n"+
+"}`)
 Transform47.children[8] = Script63;
 
 //drive Script with TimeSensor clock
-let ROUTE76 = browser.currentScene.createNode("ROUTE");
-ROUTE76.fromField = "value_changed";
-ROUTE76.fromNode = "TimingSequencer";
-ROUTE76.toField = "set_timeEvent";
-ROUTE76.toNode = "BindingSequencerEngine";
-Transform47.children[9] = ROUTE76;
+let ROUTE75 = browser.currentScene.createNode("ROUTE");
+ROUTE75.fromField = "value_changed";
+ROUTE75.fromNode = "TimingSequencer";
+ROUTE75.toField = "set_timeEvent";
+ROUTE75.toNode = "BindingSequencerEngine";
+Transform47.children[9] = ROUTE75;
 
 //Script will bind and unbind Viewpoint nodes
+let ROUTE76 = browser.currentScene.createNode("ROUTE");
+ROUTE76.fromField = "bindView1";
+ROUTE76.fromNode = "BindingSequencerEngine";
+ROUTE76.toField = "set_bind";
+ROUTE76.toNode = "View1";
+Transform47.children[10] = ROUTE76;
+
 let ROUTE77 = browser.currentScene.createNode("ROUTE");
-ROUTE77.fromField = "bindView1";
+ROUTE77.fromField = "bindView2";
 ROUTE77.fromNode = "BindingSequencerEngine";
 ROUTE77.toField = "set_bind";
-ROUTE77.toNode = "View1";
-Transform47.children[10] = ROUTE77;
+ROUTE77.toNode = "View2";
+Transform47.children[11] = ROUTE77;
 
 let ROUTE78 = browser.currentScene.createNode("ROUTE");
-ROUTE78.fromField = "bindView2";
+ROUTE78.fromField = "bindView3";
 ROUTE78.fromNode = "BindingSequencerEngine";
 ROUTE78.toField = "set_bind";
-ROUTE78.toNode = "View2";
-Transform47.children[11] = ROUTE78;
+ROUTE78.toNode = "View3";
+Transform47.children[12] = ROUTE78;
 
 let ROUTE79 = browser.currentScene.createNode("ROUTE");
-ROUTE79.fromField = "bindView3";
+ROUTE79.fromField = "bindView4";
 ROUTE79.fromNode = "BindingSequencerEngine";
 ROUTE79.toField = "set_bind";
-ROUTE79.toNode = "View3";
-Transform47.children[12] = ROUTE79;
+ROUTE79.toNode = "View4";
+Transform47.children[13] = ROUTE79;
 
 let ROUTE80 = browser.currentScene.createNode("ROUTE");
-ROUTE80.fromField = "bindView4";
+ROUTE80.fromField = "bindView5";
 ROUTE80.fromNode = "BindingSequencerEngine";
 ROUTE80.toField = "set_bind";
-ROUTE80.toNode = "View4";
-Transform47.children[13] = ROUTE80;
-
-let ROUTE81 = browser.currentScene.createNode("ROUTE");
-ROUTE81.fromField = "bindView5";
-ROUTE81.fromNode = "BindingSequencerEngine";
-ROUTE81.toField = "set_bind";
-ROUTE81.toNode = "ClickToAnimateView";
-Transform47.children[14] = ROUTE81;
+ROUTE80.toNode = "ClickToAnimateView";
+Transform47.children[14] = ROUTE80;
 
 //Viewpoint nodes report bind and unbind events
+let ROUTE81 = browser.currentScene.createNode("ROUTE");
+ROUTE81.fromField = "isBound";
+ROUTE81.fromNode = "View1";
+ROUTE81.toField = "view1Bound";
+ROUTE81.toNode = "BindingSequencerEngine";
+Transform47.children[15] = ROUTE81;
+
 let ROUTE82 = browser.currentScene.createNode("ROUTE");
 ROUTE82.fromField = "isBound";
-ROUTE82.fromNode = "View1";
-ROUTE82.toField = "view1Bound";
+ROUTE82.fromNode = "View2";
+ROUTE82.toField = "view2Bound";
 ROUTE82.toNode = "BindingSequencerEngine";
-Transform47.children[15] = ROUTE82;
+Transform47.children[16] = ROUTE82;
 
 let ROUTE83 = browser.currentScene.createNode("ROUTE");
 ROUTE83.fromField = "isBound";
-ROUTE83.fromNode = "View2";
-ROUTE83.toField = "view2Bound";
+ROUTE83.fromNode = "View3";
+ROUTE83.toField = "view3Bound";
 ROUTE83.toNode = "BindingSequencerEngine";
-Transform47.children[16] = ROUTE83;
+Transform47.children[17] = ROUTE83;
 
 let ROUTE84 = browser.currentScene.createNode("ROUTE");
 ROUTE84.fromField = "isBound";
-ROUTE84.fromNode = "View3";
-ROUTE84.toField = "view3Bound";
+ROUTE84.fromNode = "View4";
+ROUTE84.toField = "view4Bound";
 ROUTE84.toNode = "BindingSequencerEngine";
-Transform47.children[17] = ROUTE84;
-
-let ROUTE85 = browser.currentScene.createNode("ROUTE");
-ROUTE85.fromField = "isBound";
-ROUTE85.fromNode = "View4";
-ROUTE85.toField = "view4Bound";
-ROUTE85.toNode = "BindingSequencerEngine";
-Transform47.children[18] = ROUTE85;
+Transform47.children[18] = ROUTE84;
 
 browser.currentScene.children[5] = Transform47;
 

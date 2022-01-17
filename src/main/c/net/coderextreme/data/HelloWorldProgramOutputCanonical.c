@@ -41,7 +41,7 @@ head1.unit[4] = unit6;
 
 meta meta7 = createNode("meta");
 meta7.name = "title";
-meta7.content = "HelloWorldProgramOutputCanonical.x3d";
+meta7.content = "HelloWorldProgramOutput.x3d";
 head1.meta[5] = meta7;
 
 meta meta8 = createNode("meta");
@@ -51,7 +51,7 @@ head1.meta[6] = meta8;
 
 meta meta9 = createNode("meta");
 meta9.name = "reference";
-meta9.content = "https://www.web3d.org/specifications/java/X3DJSAIL.html";
+meta9.content = "http://www.web3d.org/specifications/java/X3DJSAIL.html";
 head1.meta[7] = meta9;
 
 meta meta10 = createNode("meta");
@@ -76,12 +76,12 @@ head1.meta[11] = meta13;
 
 meta meta14 = createNode("meta");
 meta14.name = "generator";
-meta14.content = "https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java";
+meta14.content = "http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java";
 head1.meta[12] = meta14;
 
 meta meta15 = createNode("meta");
 meta15.name = "generator";
-meta15.content = "Netbeans https://www.netbeans.org";
+meta15.content = "Netbeans http://www.netbeans.org";
 head1.meta[13] = meta15;
 
 meta meta16 = createNode("meta");
@@ -121,12 +121,12 @@ head1.meta[20] = meta22;
 
 meta meta23 = createNode("meta");
 meta23.name = "reference";
-meta23.content = "https://savage.nps.edu/X3dValidator?url=https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d";
+meta23.content = "https://savage.nps.edu/X3dValidator?url=http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d";
 head1.meta[21] = meta23;
 
 meta meta24 = createNode("meta");
 meta24.name = "identifier";
-meta24.content = "https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d";
+meta24.content = "http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d";
 head1.meta[22] = meta24;
 
 meta meta25 = createNode("meta");
@@ -188,7 +188,7 @@ Transform36.DEF = "LogoGeometryTransform";
 Transform36.translation = new SFVec3f(new float[0,1.5,0]);
 Anchor Anchor37 = createNode("Anchor");
 Anchor37.description = "select for X3D Java SAI Library (X3DJSAIL) description";
-Anchor37.url = new MFString(new java.lang.String["../X3DJSAIL.html","https://www.web3d.org/specifications/java/X3DJSAIL.html"]);
+Anchor37.url = new MFString(new java.lang.String["../X3DJSAIL.html","http://www.web3d.org/specifications/java/X3DJSAIL.html"]);
 Shape Shape38 = createNode("Shape");
 Shape38.DEF = "BoxShape";
 Appearance Appearance39 = createNode("Appearance");
@@ -200,7 +200,7 @@ Material40.transparency = 0.1;
 Appearance39.material = Material40;
 
 ImageTexture ImageTexture41 = createNode("ImageTexture");
-ImageTexture41.url = new MFString(new java.lang.String["images/X3dJavaSceneAccessInterfaceSaiLibrary.png","https://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png"]);
+ImageTexture41.url = new MFString(new java.lang.String["images/X3dJavaSceneAccessInterfaceSaiLibrary.png","http://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png"]);
 Appearance39.texture = ImageTexture41;
 
 Shape38.appearance = Appearance39;
@@ -314,7 +314,7 @@ Shape62.DEF = "ProxyShape";
 //alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'
 //alternative XML encoding: Text string='\"One, Two, Comment\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\" \"\"'
 //alternative Java source: .setString(new String [] {\"One, Two, Comment\", \"\", \"He said, \\\"\"Immel did it!\\\"\"\"})
-//reference: https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html
+//reference: http://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamplesIndex.html
 Text Text63 = createNode("Text");
 Text63.string = new MFString(new java.lang.String["One, Two, Text","","He said, \"Immel did it!\" \"\""]);
 Shape62.geometry = Text63;
@@ -498,7 +498,7 @@ children[19] = ProtoDeclare78;
 ExternProtoDeclare ExternProtoDeclare88 = createNode("ExternProtoDeclare");
 ExternProtoDeclare88.name = "ArtDeco02Material";
 ExternProtoDeclare88.appinfo = "this is a different Material node";
-ExternProtoDeclare88.url = new MFString(new java.lang.String["https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"]);
+ExternProtoDeclare88.url = new MFString(new java.lang.String["http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"]);
 //[HelloWorldProgram diagnostic] artDeco02ExternProtoDeclare.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file.\"
 field field89 = createNode("field");
 field89.name = "description";
@@ -590,7 +590,7 @@ children[23] = Shape100;
 
 Inline Inline104 = createNode("Inline");
 Inline104.DEF = "inlineSceneDef";
-Inline104.url = new MFString(new java.lang.String["someOtherScene.x3d","https://www.web3d.org/specifications/java/examples/someOtherScene.x3d"]);
+Inline104.url = new MFString(new java.lang.String["someOtherScene.x3d","http://www.web3d.org/specifications/java/examples/someOtherScene.x3d"]);
 children[24] = Inline104;
 
 IMPORT IMPORT105 = createNode("IMPORT");
@@ -606,7 +606,7 @@ children[26] = EXPORT106;
 
 ProtoDeclare ProtoDeclare107 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="MaterialModulator" appinfo="mimic a Material node and modulate fields as an animation effect" documentation="https://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html" ><ProtoInterface><field name="enabled" accessType="inputOutput" type="SFBool" value="true"></field>
+<ProtoDeclare name="MaterialModulator" appinfo="mimic a Material node and modulate fields as an animation effect" documentation="http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html" ><ProtoInterface><field name="enabled" accessType="inputOutput" type="SFBool" value="true"></field>
 <field name="diffuseColor" accessType="inputOutput" type="SFColor" value="0 0 0"></field>
 <field name="emissiveColor" accessType="inputOutput" type="SFColor" value="0.05 0.05 0.5"></field>
 <field name="specularColor" accessType="inputOutput" type="SFColor" value="0 0 0"></field>
@@ -656,7 +656,7 @@ function clockTrigger (timeValue)
 </ProtoDeclare>`);
 ProtoDeclare107.name = "MaterialModulator";
 ProtoDeclare107.appinfo = "mimic a Material node and modulate fields as an animation effect";
-ProtoDeclare107.documentation = "https://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html";
+ProtoDeclare107.documentation = "http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html";
 ProtoInterface ProtoInterface108 = createNode("ProtoInterface");
 field field109 = createNode("field");
 field109.name = "enabled";
@@ -885,8 +885,8 @@ Sound140.location = new SFVec3f(new float[0,1.6,0]);
 //set sound-ellipsoid location height at 1.6m to match typical avatar height
 AudioClip AudioClip141 = createNode("AudioClip");
 AudioClip141.description = "chimes";
-AudioClip141.url = new MFString(new java.lang.String["chimes.wav","https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"]);
-//Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d
+AudioClip141.url = new MFString(new java.lang.String["chimes.wav","http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"]);
+//Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/default.x3d
 Sound140.source = AudioClip141;
 
 children[30] = Sound140;
@@ -896,8 +896,8 @@ Sound142.location = new SFVec3f(new float[0,1.6,0]);
 //set sound-ellipsoid location height at 1.6m to match typical avatar height
 MovieTexture MovieTexture143 = createNode("MovieTexture");
 MovieTexture143.description = "mpgsys.mpg from ConformanceNist suite";
-MovieTexture143.url = new MFString(new java.lang.String["mpgsys.mpg","https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"]);
-//Scene example fragment from https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d
+MovieTexture143.url = new MFString(new java.lang.String["mpgsys.mpg","http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"]);
+//Scene example fragment from http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpeg1-systems.x3d
 //Expected containerField='source', allowed containerField values=\"texture\" \"source\" \"back\" \"bottom\" \"front\" \"left\" \"right\" \"top\" \"backTexture\" \"bottomTexture\" \"frontTexture\" \"leftTexture\" \"rightTexture\" \"topTexture\" \"watchList\"
 Sound142.source = MovieTexture143;
 

@@ -5204,933 +5204,1248 @@ field938.type = "SFVec3f";
 field938.value = "1 1 1";
 Script930.field[6] = field938;
 
-let #sourceCode939 = browser.currentScene.createNode("#sourceCode");
-Script930.#sourceCode[7] = #sourceCode939;
 
+Script930.setSourceCode(`ecmascript:\n"+
+"      // Initialises the script\n"+
+"      function initialize() {\n"+
+"         // Copy coord list into local storage\n"+
+"         coordList = humanoid.skinCoord.point;\n"+
+"      }\n"+
+"      // Transforms the vertices related to a joint\n"+
+"      function Transform() {\n"+
+"         // Make sure that this is a joint\n"+
+"         var iNumJoints = humanoid.joints.length;\n"+
+"         var bIsJoint = false;\n"+
+"         var j;\n"+
+"         for (j=0; (j<iNumJoints) && (bIsJoint==false); j++) {\n"+
+"            if (humanoid.joints[j].name == joint.name) bIsJoint = true;\n"+
+"         }\n"+
+"         // If it is, we process the data\n"+
+"         if (bIsJoint) {\n"+
+"            // Read in current joint\n"+
+"            var currentJoint = joint;\n"+
+"            // Read in current matrix\n"+
+"            var currentMatrix = new VrmlMatrix();\n"+
+"            currentMatrix.setTransform(translation,\n"+
+"                                       rotation,\n"+
+"                                       scale,\n"+
+"                                       new SFRotation(1,0,0,0),\n"+
+"                                       new SFVec3f(0,0,0));\n"+
+"            // Create matrix corresponding to this joints transform\n"+
+"            var newMatrix = new VrmlMatrix();\n"+
+"            newMatrix.setTransform(currentJoint.translation,\n"+
+"                                   currentJoint.rotation,\n"+
+"                                   currentJoint.scale,\n"+
+"                                   currentJoint.scaleOrientation,\n"+
+"                                   currentJoint.center);\n"+
+"            // Update current matrix with matrix from this joint\n"+
+"            currentMatrix = newMatrix.multRight(currentMatrix);\n"+
+"            // Transform all vertices associated with this joint\n"+
+"//          var iNumAffectedVertices = currentJoint.affectedVertices.length;\n"+
+"            var iNumAffectedVertices = currentJoint.skinCoordIndex.length;\n"+
+"            var v;\n"+
+"            for (v=0; v<iNumAffectedVertices; v++) {\n"+
+"//             var vertex = currentJoint.affectedVertices[v];\n"+
+"//             var weight = currentJoint.vertexWeights[v];\n"+
+"               var vertex = currentJoint.skinCoordIndex[v];\n"+
+"               var weight = currentJoint.skinCoordWeight[v];\n"+
+"               var newVertex = currentMatrix.multVecMatrix(coordList[vertex]).multiply(weight);\n"+
+"               humanoid.skinCoord.point[vertex] = humanoid.skinCoord.point[vertex].add(newVertex);\n"+
+"            }\n"+
+"            // Transform all children\n"+
+"            var children = currentJoint.children;\n"+
+"            var iNumChildren = children.length;\n"+
+"            var c;\n"+
+"            for (c=0; c<iNumChildren; c++) {\n"+
+"               joint = children[c];\n"+
+"               currentMatrix.getTransform(translation,rotation,scale);\n"+
+"               Transform();\n"+
+"            }\n"+
+"         }\n"+
+"      }\n"+
+"      // Update event handler\n"+
+"      function update(value,time) {\n"+
+"         // Zero output data.\n"+
+"         var iNumVertices = humanoid.skinCoord.point.length;\n"+
+"         var v;\n"+
+"         for (v=0; v<iNumVertices; v++) {\n"+
+"            humanoid.skinCoord.point[v].x = 0;\n"+
+"            humanoid.skinCoord.point[v].y = 0;\n"+
+"            humanoid.skinCoord.point[v].z = 0;\n"+
+"         }\n"+
+"         // Initialise transform data\n"+
+"         translation = new SFVec3f(0,0,0);\n"+
+"         scale       = new SFVec3f(1,1,1);\n"+
+"         rotation    = new SFRotation(0,0,1,0);\n"+
+"         // First (and only) item in humanoidBody should be the humanoid_root.\n"+
+"         // This is stored as the joint we want to do next\n"+
+"         // This could do with being more robust, rather than a'should be ok'.\n"+
+"//       joint = humanoid.humanoidBody[0];\n"+
+"         joint = humanoid.skeleton[0];\n"+
+"         // Call transform function\n"+
+"         Transform();\n"+
+"      }`)
 Switch291.children[3] = Script930;
 
 browser.currentScene.children[15] = Switch291;
 
 //**********Behavior Proto Instances***********
+let ProtoInstance939 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance939.name = "LOA1_WalkAnimation";
+ProtoInstance939.DEF = "WALK";
+browser.currentScene.children[16] = ProtoInstance939;
+
 let ProtoInstance940 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance940.name = "LOA1_WalkAnimation";
-ProtoInstance940.DEF = "WALK";
-browser.currentScene.children[16] = ProtoInstance940;
+ProtoInstance940.name = "LOA1_RunAnimation";
+ProtoInstance940.DEF = "RUN";
+browser.currentScene.children[17] = ProtoInstance940;
 
 let ProtoInstance941 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance941.name = "LOA1_RunAnimation";
-ProtoInstance941.DEF = "RUN";
-browser.currentScene.children[17] = ProtoInstance941;
+ProtoInstance941.name = "LOA1_JumpAnimation";
+ProtoInstance941.DEF = "JUMP";
+browser.currentScene.children[18] = ProtoInstance941;
 
 let ProtoInstance942 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance942.name = "LOA1_JumpAnimation";
-ProtoInstance942.DEF = "JUMP";
-browser.currentScene.children[18] = ProtoInstance942;
+ProtoInstance942.name = "LOA1_StandAnimation";
+ProtoInstance942.DEF = "STAND";
+browser.currentScene.children[19] = ProtoInstance942;
 
 let ProtoInstance943 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance943.name = "LOA1_StandAnimation";
-ProtoInstance943.DEF = "STAND";
-browser.currentScene.children[19] = ProtoInstance943;
+ProtoInstance943.name = "LOA1_KneelAnimation";
+ProtoInstance943.DEF = "KNEEL";
+browser.currentScene.children[20] = ProtoInstance943;
 
-let ProtoInstance944 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance944.name = "LOA1_KneelAnimation";
-ProtoInstance944.DEF = "KNEEL";
-browser.currentScene.children[20] = ProtoInstance944;
+let Group944 = browser.currentScene.createNode("Group");
+Group944.DEF = "Interface";
+let Transform945 = browser.currentScene.createNode("Transform");
+let ProximitySensor946 = browser.currentScene.createNode("ProximitySensor");
+ProximitySensor946.DEF = "HudProx";
+ProximitySensor946.center = new SFVec3f(new float[0,20,0]);
+ProximitySensor946.size = new SFVec3f(new float[500,100,500]);
+Transform945.children = new MFNode();
 
-let Group945 = browser.currentScene.createNode("Group");
-Group945.DEF = "Interface";
-let Transform946 = browser.currentScene.createNode("Transform");
-let ProximitySensor947 = browser.currentScene.createNode("ProximitySensor");
-ProximitySensor947.DEF = "HudProx";
-ProximitySensor947.center = new SFVec3f(new float[0,20,0]);
-ProximitySensor947.size = new SFVec3f(new float[500,100,500]);
-Transform946.children = new MFNode();
+Transform945.children[0] = ProximitySensor946;
 
-Transform946.children[0] = ProximitySensor947;
+Group944.children = new MFNode();
 
-Group945.children = new MFNode();
+Group944.children[0] = Transform945;
 
-Group945.children[0] = Transform946;
-
-let Collision948 = browser.currentScene.createNode("Collision");
-Collision948.DEF = "HUD";
-Collision948.enabled = False;
+let Collision947 = browser.currentScene.createNode("Collision");
+Collision947.DEF = "HUD";
+Collision947.enabled = False;
+let Transform948 = browser.currentScene.createNode("Transform");
+Transform948.DEF = "HudXform";
 let Transform949 = browser.currentScene.createNode("Transform");
-Transform949.DEF = "HudXform";
+Transform949.scale = new SFVec3f(new float[0.012,0.012,0.012]);
+Transform949.translation = new SFVec3f(new float[-0.005,-0.025,-0.08]);
 let Transform950 = browser.currentScene.createNode("Transform");
-Transform950.scale = new SFVec3f(new float[0.012,0.012,0.012]);
-Transform950.translation = new SFVec3f(new float[-0.005,-0.025,-0.08]);
-let Transform951 = browser.currentScene.createNode("Transform");
-Transform951.DEF = "Stand_Text";
-let TouchSensor952 = browser.currentScene.createNode("TouchSensor");
-TouchSensor952.DEF = "Stand_Touch";
-TouchSensor952.description = "click for behavior";
-Transform951.children = new MFNode();
-
-Transform951.children[0] = TouchSensor952;
-
-let Shape953 = browser.currentScene.createNode("Shape");
-Shape953.DEF = "Stand";
-let IndexedFaceSet954 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet954.coordIndex = new MFInt32(new int[1,30,29,-1,1,29,2,-1,31,47,46,-1,31,46,32,-1,78,77,80,-1,78,80,79,-1,96,113,112,-1,96,112,95,-1,95,112,111,-1,95,111,94,-1,94,111,110,-1,94,110,93,-1,93,110,109,-1,93,109,108,-1,93,108,100,-1,107,99,100,-1,107,100,108,-1,107,106,99,-1,106,105,98,-1,106,98,99,-1,104,97,98,-1,104,98,105,-1,103,102,104,-1,104,102,101,-1,104,101,97,-1,101,96,97,-1,101,97,101,-1,101,101,96,-1,96,101,113,-1,113,101,114,-1,115,86,85,-1,115,85,116,-1,117,87,84,-1,117,84,118,-1,119,83,120,-1,121,88,82,-1,121,82,122,-1,123,89,81,-1,123,81,124,-1,125,90,126,-1,127,92,128,-1,129,91,130,-1,54,49,50,-1,54,50,55,-1,76,75,74,-1,76,74,54,-1,54,74,73,-1,54,73,49,-1,49,73,48,-1,48,73,62,-1,48,62,61,-1,48,61,60,-1,48,60,53,-1,53,60,59,-1,53,59,53,-1,53,59,58,-1,53,58,52,-1,52,58,57,-1,52,57,51,-1,56,51,57,-1,56,55,50,-1,56,50,51,-1,62,73,72,-1,62,72,63,-1,63,72,71,-1,63,71,64,-1,64,71,70,-1,64,70,69,-1,64,69,65,-1,65,69,68,-1,65,68,67,-1,65,67,66,-1,131,40,39,-1,131,39,132,-1,133,43,42,-1,133,42,134,-1,135,37,36,-1,135,36,136,-1,137,41,38,-1,137,38,138,-1,139,44,35,-1,139,35,140,-1,141,34,142,-1,143,45,33,-1,143,33,144,-1,145,16,15,-1,145,15,146,-1,147,14,148,-1,149,17,13,-1,149,13,150,-1,151,18,12,-1,151,12,152,-1,153,19,11,-1,153,11,154,-1,155,20,10,-1,155,10,156,-1,157,9,158,-1,159,21,8,-1,159,8,160,-1,161,22,7,-1,161,7,162,-1,163,23,164,-1,165,24,6,-1,165,6,166,-1,167,25,5,-1,167,5,168,-1,169,26,170,-1,171,27,4,-1,171,4,172,-1,173,28,3,-1,173,3,174,-1,175,0,176,-1]);
-let Coordinate955 = browser.currentScene.createNode("Coordinate");
-Coordinate955.point = new MFVec3f(new float[-3.21,-0.0154,0,-3.15,-0.0154,0,-3.14,-0.0467,0,-3.1,-0.0601,0,-3.05,-0.051,0,-3.04,-0.0254,0,-3.05,-0.00248,0,-3.1,0.0122,0,-3.16,0.03,0,-3.2,0.0684,0,-3.2,0.133,0,-3.16,0.17,0,-3.1,0.182,0,-3.04,0.171,0,-3.01,0.136,0,-3,0.095,0,-3.05,0.095,0,-3.06,0.125,0,-3.1,0.136,0,-3.14,0.126,0,-3.15,0.103,0,-3.14,0.0815,0,-3.1,0.0689,0,-3.04,0.0512,0,-3,0.0249,0,-2.99,-0.0195,0,-3,-0.0708,0,-3.05,-0.104,0,-3.1,-0.108,0,-3.16,-0.0947,0,-3.2,-0.0586,0,-2.86,-0.102,0,-2.9,-0.102,0,-2.94,-0.0832,0,-2.94,-0.0457,0,-2.94,0.0645,0,-2.97,0.0645,0,-2.97,0.103,0,-2.94,0.103,0,-2.94,0.158,0,-2.89,0.158,0,-2.89,0.103,0,-2.86,0.103,0,-2.86,0.0645,0,-2.89,0.0645,0,-2.89,-0.0483,0,-2.88,-0.0608,0,-2.86,-0.0612,0,-2.71,-0.000798,0,-2.71,-0.0373,0,-2.74,-0.0637,0,-2.77,-0.0624,0,-2.78,-0.0416,0,-2.77,-0.0195,0,-2.71,-0.0754,0,-2.74,-0.103,0,-2.79,-0.106,0,-2.82,-0.0865,0,-2.84,-0.0431,0,-2.82,0.000177,0,-2.78,0.0201,0,-2.73,0.0275,0,-2.71,0.0446,0,-2.72,0.0614,0,-2.74,0.0675,0,-2.77,0.0573,0,-2.78,0.039,0,-2.83,0.039,0,-2.82,0.0765,0,-2.78,0.105,0,-2.74,0.11,0,-2.71,0.107,0,-2.67,0.0849,0,-2.66,0.0526,0,-2.66,-0.0763,0,-2.65,-0.101,0,-2.7,-0.101,0,-2.61,-0.101,0,-2.61,0.103,0,-2.56,0.103,0,-2.56,0.0787,0,-2.52,0.104,0,-2.47,0.105,0,-2.43,0.0743,0,-2.43,0.038,0,-2.43,-0.101,0,-2.48,-0.101,0,-2.48,0.0224,0,-2.49,0.0514,0,-2.52,0.0627,0,-2.54,0.0505,0,-2.55,0.02,0,-2.55,-0.101,0,-2.33,0.0279,0,-2.31,0.0587,0,-2.27,0.0589,0,-2.25,0.0281,0,-2.25,-0.0232,0,-2.27,-0.0563,0,-2.31,-0.057,0,-2.33,-0.0245,0,-2.19,0.175,0,-2.19,-0.101,0,-2.25,-0.101,0,-2.25,-0.073,0,-2.26,-0.0913,0,-2.31,-0.108,0,-2.35,-0.0915,0,-2.38,-0.0424,0,-2.39,0.0243,0,-2.37,0.0809,0,-2.32,0.108,0,-2.28,0.106,0,-2.25,0.0776,0,-2.25,0.175,0,-2.48,0.0224,0,-2.43,0.038,0,-2.49,0.0514,0,-2.43,0.0743,0,-2.49,0.0514,0,-2.47,0.105,0,-2.52,0.0627,0,-2.52,0.104,0,-2.54,0.0505,0,-2.56,0.0787,0,-2.55,0.02,0,-2.56,0.0787,0,-2.61,-0.101,0,-2.55,0.02,0,-2.61,-0.101,0,-2.56,0.0787,0,-2.89,0.103,0,-2.94,0.103,0,-2.89,0.0645,0,-2.89,0.103,0,-2.94,0.103,0,-2.94,0.0645,0,-2.89,0.0645,0,-2.94,0.0645,0,-2.89,-0.0483,0,-2.94,-0.0457,0,-2.89,-0.0483,0,-2.94,-0.0832,0,-2.88,-0.0608,0,-2.9,-0.102,0,-3.06,0.125,0,-3.01,0.136,0,-3.06,0.125,0,-3.04,0.171,0,-3.1,0.136,0,-3.1,0.182,0,-3.14,0.126,0,-3.16,0.17,0,-3.15,0.103,0,-3.2,0.133,0,-3.14,0.0815,0,-3.2,0.0684,0,-3.14,0.0815,0,-3.16,0.03,0,-3.1,0.0689,0,-3.1,0.0122,0,-3.04,0.0512,0,-3.05,-0.00248,0,-3,0.0249,0,-3.05,-0.00248,0,-2.99,-0.0195,0,-3.04,-0.0254,0,-3,-0.0708,0,-3.05,-0.051,0,-3.05,-0.104,0,-3.05,-0.051,0,-3.1,-0.108,0,-3.1,-0.0601,0,-3.16,-0.0947,0,-3.14,-0.0467,0,-3.15,-0.0154,0,-3.2,-0.0586,0]);
-IndexedFaceSet954.coord = Coordinate955;
-
-Shape953.geometry = IndexedFaceSet954;
-
-let Appearance956 = browser.currentScene.createNode("Appearance");
-let Material957 = browser.currentScene.createNode("Material");
-Material957.DEF = "text_color";
-Material957.ambientIntensity = 0;
-Material957.diffuseColor = new SFColor(new float[0,0,0]);
-Material957.emissiveColor = new SFColor(new float[0.819,0.521,0.169]);
-Appearance956.material = Material957;
-
-Shape953.appearance = Appearance956;
-
-Transform951.children[1] = Shape953;
-
-let Transform958 = browser.currentScene.createNode("Transform");
-Transform958.scale = new SFVec3f(new float[84.89,77.52,77.52]);
-Transform958.translation = new SFVec3f(new float[0.04092,1.843,3.826]);
-let Shape959 = browser.currentScene.createNode("Shape");
-Shape959.DEF = "Stand_Back";
-let IndexedFaceSet960 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet960.coordIndex = new MFInt32(new int[0,2,3,-1,2,0,1,-1]);
-let Coordinate961 = browser.currentScene.createNode("Coordinate");
-Coordinate961.point = new MFVec3f(new float[-0.02572,-0.02535,-0.05,-0.02578,-0.02131,-0.05,-0.03871,-0.02131,-0.05,-0.03877,-0.02541,-0.05]);
-IndexedFaceSet960.coord = Coordinate961;
-
-Shape959.geometry = IndexedFaceSet960;
-
-let Appearance962 = browser.currentScene.createNode("Appearance");
-let Material963 = browser.currentScene.createNode("Material");
-Material963.DEF = "Clear";
-Material963.ambientIntensity = 0;
-Material963.diffuseColor = new SFColor(new float[0,0,0]);
-Material963.transparency = 1;
-Appearance962.material = Material963;
-
-Shape959.appearance = Appearance962;
-
-Transform958.children = new MFNode();
-
-Transform958.children[0] = Shape959;
-
-Transform951.children[2] = Transform958;
-
+Transform950.DEF = "Stand_Text";
+let TouchSensor951 = browser.currentScene.createNode("TouchSensor");
+TouchSensor951.DEF = "Stand_Touch";
+TouchSensor951.description = "click for behavior";
 Transform950.children = new MFNode();
 
-Transform950.children[0] = Transform951;
-
-let Transform964 = browser.currentScene.createNode("Transform");
-Transform964.DEF = "Walk_Text";
-let TouchSensor965 = browser.currentScene.createNode("TouchSensor");
-TouchSensor965.DEF = "Walk_Touch";
-TouchSensor965.description = "click for behavior";
-Transform964.children = new MFNode();
-
-Transform964.children[0] = TouchSensor965;
-
-let Shape966 = browser.currentScene.createNode("Shape");
-Shape966.DEF = "WALK_Shape";
-let IndexedFaceSet967 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet967.coordIndex = new MFInt32(new int[0,2,1,-1,3,2,0,-1,12,3,0,-1,4,3,12,-1,11,4,12,-1,5,4,11,-1,10,5,11,-1,6,5,10,-1,9,6,10,-1,7,6,9,-1,8,7,9,-1,15,14,13,-1,16,15,13,-1,19,18,17,-1,20,19,17,-1,27,20,17,-1,28,27,17,-1,26,20,27,-1,23,20,26,-1,21,20,23,-1,25,23,26,-1,22,21,23,-1,24,23,25,-1,29,30,31,-1,29,31,32,-1,33,34,35,-1,33,35,29,-1,29,35,36,-1,29,36,30,-1,30,36,37,-1,37,36,38,-1,37,38,39,-1,37,39,40,-1,37,40,41,-1,41,40,42,-1,41,42,41,-1,41,42,43,-1,41,43,44,-1,44,43,45,-1,44,45,46,-1,47,46,45,-1,47,32,31,-1,47,31,46,-1,38,36,48,-1,38,48,49,-1,49,48,50,-1,49,50,51,-1,51,50,52,-1,51,52,53,-1,51,53,54,-1,54,53,55,-1,54,55,56,-1,54,56,57,-1]);
-let Coordinate968 = browser.currentScene.createNode("Coordinate");
-Coordinate968.point = new MFVec3f(new float[-1.88,-0.101,0,-1.96,0.175,0,-1.91,0.175,0,-1.86,-0.0195,0,-1.82,0.175,0,-1.76,0.175,0,-1.72,-0.0195,0,-1.67,0.175,0,-1.61,0.175,0,-1.69,-0.101,0,-1.75,-0.101,0,-1.79,0.111,0,-1.83,-0.101,0,-1.38,-0.101,0,-1.38,0.175,0,-1.32,0.175,0,-1.32,-0.101,0,-1.27,-0.101,0,-1.27,0.175,0,-1.22,0.175,0,-1.22,0.0304,0,-1.16,0.103,0,-1.09,0.103,0,-1.16,0.0272,0,-1.09,-0.101,0,-1.15,-0.101,0,-1.2,-0.0141,0,-1.22,-0.0363,0,-1.22,-0.101,0,-1.48,-0.0754,0,-1.48,-0.0373,0,-1.51,-0.0637,0,-1.51,-0.103,0,-1.47,-0.101,0,-1.42,-0.101,0,-1.43,-0.0763,0,-1.43,0.0526,0,-1.48,-0.000798,0,-1.48,0.0446,0,-1.5,0.0275,0,-1.55,0.0201,0,-1.54,-0.0195,0,-1.59,0.000177,0,-1.61,-0.0431,0,-1.55,-0.0416,0,-1.59,-0.0865,0,-1.54,-0.0624,0,-1.56,-0.106,0,-1.44,0.0849,0,-1.49,0.0614,0,-1.48,0.107,0,-1.51,0.0675,0,-1.52,0.11,0,-1.55,0.105,0,-1.54,0.0573,0,-1.59,0.0765,0,-1.6,0.039,0,-1.55,0.039,0]);
-IndexedFaceSet967.coord = Coordinate968;
-
-Shape966.geometry = IndexedFaceSet967;
-
-let Appearance969 = browser.currentScene.createNode("Appearance");
-let Material970 = browser.currentScene.createNode("Material");
-Material970.USE = "text_color";
-Appearance969.material = Material970;
-
-Shape966.appearance = Appearance969;
-
-Transform964.children[1] = Shape966;
-
-let Transform971 = browser.currentScene.createNode("Transform");
-Transform971.scale = new SFVec3f(new float[81.3,81.3,81.31]);
-Transform971.translation = new SFVec3f(new float[-0.0414,1.941,4.015]);
-let Shape972 = browser.currentScene.createNode("Shape");
-Shape972.DEF = "Walk_Back";
-let IndexedFaceSet973 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet973.coordIndex = new MFInt32(new int[1,3,0,-1,3,1,2,-1]);
-let Coordinate974 = browser.currentScene.createNode("Coordinate");
-Coordinate974.point = new MFVec3f(new float[-0.02381,-0.02541,-0.05,-0.0127,-0.02541,-0.05,-0.01263,-0.02139,-0.05,-0.02381,-0.02146,-0.05]);
-IndexedFaceSet973.coord = Coordinate974;
-
-Shape972.geometry = IndexedFaceSet973;
-
-let Appearance975 = browser.currentScene.createNode("Appearance");
-let Material976 = browser.currentScene.createNode("Material");
-Material976.USE = "Clear";
-Appearance975.material = Material976;
-
-Shape972.appearance = Appearance975;
-
-Transform971.children = new MFNode();
-
-Transform971.children[0] = Shape972;
-
-Transform964.children[2] = Transform971;
-
-Transform950.children[1] = Transform964;
-
-let Transform977 = browser.currentScene.createNode("Transform");
-Transform977.DEF = "Run_Text";
-let TouchSensor978 = browser.currentScene.createNode("TouchSensor");
-TouchSensor978.DEF = "Run_Touch";
-TouchSensor978.description = "click for behavior";
-Transform977.children = new MFNode();
-
-Transform977.children[0] = TouchSensor978;
-
-let Shape979 = browser.currentScene.createNode("Shape");
-Shape979.DEF = "Run";
-let IndexedFaceSet980 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet980.coordIndex = new MFInt32(new int[24,26,25,-1,53,39,54,-1,17,1,0,-1,17,0,16,-1,0,14,16,-1,0,15,14,-1,14,13,22,-1,14,22,16,-1,13,12,21,-1,13,21,22,-1,12,6,21,-1,12,11,7,-1,12,7,6,-1,11,8,7,-1,10,8,11,-1,10,9,8,-1,6,5,21,-1,5,4,20,-1,5,20,21,-1,4,3,19,-1,4,19,20,-1,3,2,18,-1,3,18,19,-1,18,2,1,-1,18,1,17,-1,55,32,31,-1,55,31,56,-1,57,33,30,-1,57,30,58,-1,59,29,60,-1,61,34,28,-1,61,28,62,-1,63,35,27,-1,63,27,64,-1,65,36,66,-1,67,38,68,-1,69,37,70,-1,71,23,72,-1,73,48,47,-1,73,47,74,-1,75,49,46,-1,75,46,76,-1,77,45,78,-1,79,50,44,-1,79,44,80,-1,81,51,43,-1,81,43,82,-1,83,41,84,-1,85,40,86,-1,87,52,88,-1,89,42,90,-1]);
-let Coordinate981 = browser.currentScene.createNode("Coordinate");
-Coordinate981.point = new MFVec3f(new float[-0.829,-0.101,0,-0.829,0.175,0,-0.662,0.172,0,-0.622,0.148,0,-0.607,0.103,0,-0.62,0.0501,0,-0.648,0.0316,0,-0.615,-0.0063,0,-0.611,-0.0764,0,-0.601,-0.101,0,-0.664,-0.101,0,-0.671,-0.0373,0,-0.68,-0.00372,0,-0.712,0.00648,0,-0.772,0.00648,0,-0.772,-0.101,0,-0.772,0.0546,0,-0.772,0.127,0,-0.703,0.127,0,-0.673,0.118,0,-0.663,0.091,0,-0.674,0.063,0,-0.705,0.0546,0,-0.379,0.103,0,-0.379,-0.101,0,-0.432,-0.101,0,-0.432,-0.0764,0,-0.466,-0.101,0,-0.518,-0.102,0,-0.555,-0.072,0,-0.56,-0.0357,0,-0.56,0.103,0,-0.506,0.103,0,-0.506,-0.0201,0,-0.5,-0.0491,0,-0.472,-0.0604,0,-0.443,-0.0482,0,-0.433,-0.0177,0,-0.433,0.103,0,-0.331,-0.101,0,-0.331,0.103,0,-0.278,0.103,0,-0.278,0.0787,0,-0.244,0.104,0,-0.192,0.105,0,-0.154,0.0743,0,-0.149,0.038,0,-0.149,-0.101,0,-0.203,-0.101,0,-0.203,0.0224,0,-0.209,0.0514,0,-0.238,0.0627,0,-0.266,0.0505,0,-0.277,0.02,0,-0.277,-0.101,0,-0.506,-0.0201,0,-0.56,-0.0357,0,-0.5,-0.0491,0,-0.555,-0.072,0,-0.5,-0.0491,0,-0.518,-0.102,0,-0.472,-0.0604,0,-0.466,-0.101,0,-0.443,-0.0482,0,-0.432,-0.0764,0,-0.433,-0.0177,0,-0.432,-0.0764,0,-0.379,0.103,0,-0.433,-0.0177,0,-0.379,0.103,0,-0.432,-0.0764,0,-0.379,-0.101,0,-0.432,-0.0764,0,-0.203,0.0224,0,-0.149,0.038,0,-0.209,0.0514,0,-0.154,0.0743,0,-0.209,0.0514,0,-0.192,0.105,0,-0.238,0.0627,0,-0.244,0.104,0,-0.266,0.0505,0,-0.278,0.0787,0,-0.278,0.0787,0,-0.331,0.103,0,-0.277,0.02,0,-0.331,-0.101,0,-0.277,0.02,0,-0.278,0.0787,0,-0.277,0.02,0,-0.331,0.103,0]);
-IndexedFaceSet980.coord = Coordinate981;
-
-Shape979.geometry = IndexedFaceSet980;
-
-let Appearance982 = browser.currentScene.createNode("Appearance");
-let Material983 = browser.currentScene.createNode("Material");
-Material983.USE = "text_color";
-Appearance982.material = Material983;
-
-Shape979.appearance = Appearance982;
-
-Transform977.children[1] = Shape979;
-
-let Transform984 = browser.currentScene.createNode("Transform");
-Transform984.scale = new SFVec3f(new float[82.47,82.47,82.48]);
-Transform984.translation = new SFVec3f(new float[-0.01579,1.968,4.074]);
-let Shape985 = browser.currentScene.createNode("Shape");
-Shape985.DEF = "Run_Back";
-let IndexedFaceSet986 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet986.coordIndex = new MFInt32(new int[0,2,3,-1,2,0,1,-1]);
-let Coordinate987 = browser.currentScene.createNode("Coordinate");
-Coordinate987.point = new MFVec3f(new float[-0.01009,-0.02534,-0.05,-0.001382,-0.02541,-0.05,-0.001315,-0.02146,-0.05,-0.01022,-0.02146,-0.05]);
-IndexedFaceSet986.coord = Coordinate987;
-
-Shape985.geometry = IndexedFaceSet986;
-
-let Appearance988 = browser.currentScene.createNode("Appearance");
-let Material989 = browser.currentScene.createNode("Material");
-Material989.USE = "Clear";
-Appearance988.material = Material989;
-
-Shape985.appearance = Appearance988;
-
-Transform984.children = new MFNode();
-
-Transform984.children[0] = Shape985;
-
-Transform977.children[2] = Transform984;
-
-Transform950.children[2] = Transform977;
-
-let Transform990 = browser.currentScene.createNode("Transform");
-Transform990.DEF = "Jump_Text";
-let TouchSensor991 = browser.currentScene.createNode("TouchSensor");
-TouchSensor991.DEF = "Jump_Touch";
-TouchSensor991.description = "click for behavior";
-Transform990.children = new MFNode();
-
-Transform990.children[0] = TouchSensor991;
-
-let Shape992 = browser.currentScene.createNode("Shape");
-Shape992.DEF = "Jump";
-let IndexedFaceSet993 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet993.coordIndex = new MFInt32(new int[1,0,14,-1,1,14,2,-1,16,15,18,-1,16,18,17,-1,64,65,66,-1,67,68,69,-1,67,69,70,-1,71,72,73,-1,71,73,74,-1,75,76,77,-1,78,79,80,-1,78,80,81,-1,82,83,84,-1,82,84,85,-1,86,87,88,-1,89,90,91,-1,92,93,94,-1,95,96,97,-1,98,7,6,-1,98,6,99,-1,100,8,5,-1,100,5,101,-1,102,9,4,-1,102,4,103,-1,104,10,105,-1,106,11,3,-1,106,3,107,-1,108,12,109,-1,110,13,111,-1,112,27,26,-1,112,26,113,-1,114,28,25,-1,114,25,115,-1,116,24,117,-1,118,29,23,-1,118,23,119,-1,120,30,22,-1,120,22,121,-1,122,31,123,-1,124,34,33,-1,124,33,125,-1,126,35,32,-1,126,32,127,-1,128,21,129,-1,130,36,20,-1,130,20,131,-1,132,37,19,-1,132,19,133,-1,134,38,135,-1,136,40,137,-1,138,39,139,-1,53,58,59,-1,53,59,54,-1,53,52,58,-1,52,51,57,-1,52,57,58,-1,51,50,56,-1,51,56,57,-1,50,49,56,-1,49,48,63,-1,49,63,56,-1,48,47,63,-1,63,47,46,-1,63,46,62,-1,62,46,45,-1,62,45,44,-1,62,44,61,-1,61,44,60,-1,54,59,60,-1,44,43,42,-1,60,44,42,-1,41,55,54,-1,41,54,60,-1,41,60,42,-1]);
-let Coordinate994 = browser.currentScene.createNode("Coordinate");
-Coordinate994.point = new MFVec3f(new float[0.108,0.00195,0,0.163,0.00195,0,0.166,-0.0473,0,0.194,-0.0608,0,0.222,-0.0492,0,0.228,-0.017,0,0.228,0.175,0,0.284,0.175,0,0.284,-0.02,0,0.271,-0.0798,0,0.23,-0.104,0,0.193,-0.108,0,0.155,-0.102,0,0.117,-0.0714,0,0.108,-0.0357,0,0.563,-0.101,0,0.563,0.103,0,0.615,0.103,0,0.615,0.0803,0,0.649,0.105,0,0.696,0.105,0,0.728,0.0788,0,0.76,0.104,0,0.811,0.104,0,0.842,0.081,0,0.853,0.0416,0,0.853,-0.101,0,0.799,-0.101,0,0.799,0.0305,0,0.79,0.0544,0,0.767,0.0616,0,0.743,0.0507,0,0.734,0.0228,0,0.734,-0.101,0,0.681,-0.101,0,0.681,0.0301,0,0.673,0.0532,0,0.65,0.0611,0,0.626,0.0506,0,0.617,0.0224,0,0.617,-0.101,0,0.9,-0.182,0,0.9,0.103,0,0.952,0.103,0,0.952,0.0751,0,0.968,0.0934,0,1.01,0.11,0,1.05,0.103,0,1.07,0.0796,0,1.1,0.0251,0,1.1,-0.0222,0,1.07,-0.0788,0,1.03,-0.106,0,0.988,-0.103,0,0.953,-0.0755,0,0.953,-0.182,0,1.04,-0.000177,0,1.03,-0.0446,0,0.999,-0.0603,0,0.966,-0.0453,0,0.953,-0.000177,0,0.963,0.045,0,0.998,0.063,0,1.03,0.0462,0,0.515,-0.101,0,0.462,-0.0764,0,0.462,-0.101,0,0.388,-0.0201,0,0.388,0.103,0,0.334,0.103,0,0.334,-0.0357,0,0.394,-0.0491,0,0.388,-0.0201,0,0.334,-0.0357,0,0.339,-0.072,0,0.394,-0.0491,0,0.339,-0.072,0,0.376,-0.102,0,0.422,-0.0604,0,0.394,-0.0491,0,0.376,-0.102,0,0.428,-0.101,0,0.451,-0.0482,0,0.422,-0.0604,0,0.428,-0.101,0,0.462,-0.0764,0,0.461,-0.0177,0,0.451,-0.0482,0,0.462,-0.0764,0,0.515,0.103,0,0.461,0.103,0,0.461,-0.0177,0,0.515,0.103,0,0.461,-0.0177,0,0.462,-0.0764,0,0.515,-0.101,0,0.515,0.103,0,0.462,-0.0764,0,0.284,-0.02,0,0.228,-0.017,0,0.271,-0.0798,0,0.222,-0.0492,0,0.23,-0.104,0,0.194,-0.0608,0,0.193,-0.108,0,0.194,-0.0608,0,0.155,-0.102,0,0.166,-0.0473,0,0.117,-0.0714,0,0.166,-0.0473,0,0.108,-0.0357,0,0.166,-0.0473,0,0.799,0.0305,0,0.853,0.0416,0,0.79,0.0544,0,0.842,0.081,0,0.79,0.0544,0,0.811,0.104,0,0.767,0.0616,0,0.76,0.104,0,0.743,0.0507,0,0.728,0.0788,0,0.734,0.0228,0,0.728,0.0788,0,0.681,0.0301,0,0.734,0.0228,0,0.673,0.0532,0,0.728,0.0788,0,0.673,0.0532,0,0.696,0.105,0,0.65,0.0611,0,0.649,0.105,0,0.626,0.0506,0,0.615,0.0803,0,0.617,0.0224,0,0.615,0.0803,0,0.563,-0.101,0,0.617,0.0224,0,0.563,-0.101,0,0.615,0.0803,0]);
-IndexedFaceSet993.coord = Coordinate994;
-
-Shape992.geometry = IndexedFaceSet993;
-
-let Appearance995 = browser.currentScene.createNode("Appearance");
-let Material996 = browser.currentScene.createNode("Material");
-Material996.USE = "text_color";
-Appearance995.material = Material996;
-
-Shape992.appearance = Appearance995;
-
-Transform990.children[1] = Shape992;
-
-let Transform997 = browser.currentScene.createNode("Transform");
-Transform997.scale = new SFVec3f(new float[83.79,83.79,83.79]);
-Transform997.translation = new SFVec3f(new float[-0.008979,1.99,4.14]);
-let Shape998 = browser.currentScene.createNode("Shape");
-Shape998.DEF = "Jump_Back";
-let IndexedFaceSet999 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet999.coordIndex = new MFInt32(new int[0,2,3,-1,2,0,1,-1]);
-let Coordinate1000 = browser.currentScene.createNode("Coordinate");
-Coordinate1000.point = new MFVec3f(new float[0.001296,-0.02541,-0.05,0.01335,-0.02527,-0.05,0.01328,-0.02152,-0.05,0.001229,-0.02146,-0.05]);
-IndexedFaceSet999.coord = Coordinate1000;
-
-Shape998.geometry = IndexedFaceSet999;
-
-let Appearance1001 = browser.currentScene.createNode("Appearance");
-let Material1002 = browser.currentScene.createNode("Material");
-Material1002.USE = "Clear";
-Appearance1001.material = Material1002;
-
-Shape998.appearance = Appearance1001;
-
-Transform997.children = new MFNode();
-
-Transform997.children[0] = Shape998;
-
-Transform990.children[2] = Transform997;
-
-Transform950.children[3] = Transform990;
-
-let Transform1003 = browser.currentScene.createNode("Transform");
-Transform1003.DEF = "Kneel_Text";
-Transform1003.translation = new SFVec3f(new float[1.3,-0.12,0]);
-let TouchSensor1004 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1004.DEF = "Kneel_Touch";
-TouchSensor1004.description = "click for behavior";
-Transform1003.children = new MFNode();
-
-Transform1003.children[0] = TouchSensor1004;
-
-let Shape1005 = browser.currentScene.createNode("Shape");
-Shape1005.DEF = "Kneel";
-let Text1006 = browser.currentScene.createNode("Text");
-Text1006.string = new MFString(new java.lang.String["Kneel"]);
-let FontStyle1007 = browser.currentScene.createNode("FontStyle");
-FontStyle1007.family = new MFString(new java.lang.String["SANS"]);
-FontStyle1007.size = 0.45;
-FontStyle1007.style = "BOLD";
-Text1006.fontStyle = FontStyle1007;
-
-Shape1005.geometry = Text1006;
-
-let Appearance1008 = browser.currentScene.createNode("Appearance");
-let Material1009 = browser.currentScene.createNode("Material");
-Material1009.USE = "text_color";
-Appearance1008.material = Material1009;
-
-Shape1005.appearance = Appearance1008;
-
-Transform1003.children[1] = Shape1005;
-
-let Transform1010 = browser.currentScene.createNode("Transform");
-Transform1010.translation = new SFVec3f(new float[0.5,0.15,-0.001]);
-let Shape1011 = browser.currentScene.createNode("Shape");
-Shape1011.DEF = "Kneel_Back";
-let Appearance1012 = browser.currentScene.createNode("Appearance");
-let Material1013 = browser.currentScene.createNode("Material");
-Material1013.diffuseColor = new SFColor(new float[0,1,0]);
-Material1013.transparency = 1;
-Appearance1012.material = Material1013;
-
-Shape1011.appearance = Appearance1012;
-
-let Box1014 = browser.currentScene.createNode("Box");
-Box1014.size = new SFVec3f(new float[1,0.36,0.001]);
-Shape1011.geometry = Box1014;
-
-Transform1010.children = new MFNode();
-
-Transform1010.children[0] = Shape1011;
-
-Transform1003.children[2] = Transform1010;
-
-Transform950.children[4] = Transform1003;
-
-let Group1015 = browser.currentScene.createNode("Group");
-let Transform1016 = browser.currentScene.createNode("Transform");
-Transform1016.DEF = "Allen_Text";
-Transform1016.translation = new SFVec3f(new float[2,4,0]);
-let TouchSensor1017 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1017.DEF = "Allen_Touch";
-TouchSensor1017.description = "click for Allen body";
-Transform1016.children = new MFNode();
-
-Transform1016.children[0] = TouchSensor1017;
-
-let Shape1018 = browser.currentScene.createNode("Shape");
-let Text1019 = browser.currentScene.createNode("Text");
-Text1019.string = new MFString(new java.lang.String["ALLEN"]);
-let FontStyle1020 = browser.currentScene.createNode("FontStyle");
-FontStyle1020.size = 0.25;
-FontStyle1020.spacing = 0.1;
-FontStyle1020.style = "BOLD";
-Text1019.fontStyle = FontStyle1020;
-
-Shape1018.geometry = Text1019;
-
-let Appearance1021 = browser.currentScene.createNode("Appearance");
-let Material1022 = browser.currentScene.createNode("Material");
-Material1022.diffuseColor = new SFColor(new float[0.6,0.6,0.6]);
-Appearance1021.material = Material1022;
-
-Shape1018.appearance = Appearance1021;
-
-Transform1016.children[1] = Shape1018;
-
-let Transform1023 = browser.currentScene.createNode("Transform");
-Transform1023.translation = new SFVec3f(new float[0.38,0.075,-0.001]);
-let Shape1024 = browser.currentScene.createNode("Shape");
-Shape1024.DEF = "MenuB";
-let Appearance1025 = browser.currentScene.createNode("Appearance");
-let Material1026 = browser.currentScene.createNode("Material");
-Material1026.diffuseColor = new SFColor(new float[0,1,0]);
-Material1026.transparency = 1;
-Appearance1025.material = Material1026;
-
-Shape1024.appearance = Appearance1025;
-
-let Box1027 = browser.currentScene.createNode("Box");
-Box1027.size = new SFVec3f(new float[0.78,0.18,0.001]);
-Shape1024.geometry = Box1027;
-
-Transform1023.children = new MFNode();
-
-Transform1023.children[0] = Shape1024;
-
-Transform1016.children[2] = Transform1023;
-
-Group1015.children = new MFNode();
-
-Group1015.children[0] = Transform1016;
-
-let Transform1028 = browser.currentScene.createNode("Transform");
-Transform1028.DEF = "Nancy_Text";
-Transform1028.translation = new SFVec3f(new float[2,3.5,0]);
-let TouchSensor1029 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1029.DEF = "Nancy_Touch";
-TouchSensor1029.description = "click for Nancy body";
-Transform1028.children = new MFNode();
-
-Transform1028.children[0] = TouchSensor1029;
-
-let Shape1030 = browser.currentScene.createNode("Shape");
-let Text1031 = browser.currentScene.createNode("Text");
-Text1031.string = new MFString(new java.lang.String["NANCY"]);
-let FontStyle1032 = browser.currentScene.createNode("FontStyle");
-FontStyle1032.size = 0.25;
-FontStyle1032.spacing = 0.1;
-FontStyle1032.style = "BOLD";
-Text1031.fontStyle = FontStyle1032;
-
-Shape1030.geometry = Text1031;
-
-let Appearance1033 = browser.currentScene.createNode("Appearance");
-let Material1034 = browser.currentScene.createNode("Material");
-Material1034.diffuseColor = new SFColor(new float[0.6,0.6,0.6]);
-Appearance1033.material = Material1034;
-
-Shape1030.appearance = Appearance1033;
-
-Transform1028.children[1] = Shape1030;
-
-let Transform1035 = browser.currentScene.createNode("Transform");
-Transform1035.translation = new SFVec3f(new float[0.38,0.075,-0.001]);
-let Shape1036 = browser.currentScene.createNode("Shape");
-Shape1036.USE = "MenuB";
-Transform1035.children = new MFNode();
-
-Transform1035.children[0] = Shape1036;
-
-Transform1028.children[2] = Transform1035;
-
-Group1015.children[1] = Transform1028;
-
-let Transform1037 = browser.currentScene.createNode("Transform");
-Transform1037.DEF = "Boxman_Text";
-Transform1037.translation = new SFVec3f(new float[2,3,0]);
-let TouchSensor1038 = browser.currentScene.createNode("TouchSensor");
-TouchSensor1038.DEF = "Boxman_Touch";
-TouchSensor1038.description = "click for BoxMan body";
-Transform1037.children = new MFNode();
-
-Transform1037.children[0] = TouchSensor1038;
-
-let Shape1039 = browser.currentScene.createNode("Shape");
-let Text1040 = browser.currentScene.createNode("Text");
-Text1040.string = new MFString(new java.lang.String["BOXMAN"]);
-let FontStyle1041 = browser.currentScene.createNode("FontStyle");
-FontStyle1041.size = 0.25;
-FontStyle1041.spacing = 0.1;
-FontStyle1041.style = "BOLD";
-Text1040.fontStyle = FontStyle1041;
-
-Shape1039.geometry = Text1040;
-
-let Appearance1042 = browser.currentScene.createNode("Appearance");
-let Material1043 = browser.currentScene.createNode("Material");
-Material1043.diffuseColor = new SFColor(new float[0.6,0.6,0.6]);
-Appearance1042.material = Material1043;
-
-Shape1039.appearance = Appearance1042;
-
-Transform1037.children[1] = Shape1039;
-
-let Transform1044 = browser.currentScene.createNode("Transform");
-Transform1044.translation = new SFVec3f(new float[0.5,0.075,-0.001]);
-let Shape1045 = browser.currentScene.createNode("Shape");
-let Appearance1046 = browser.currentScene.createNode("Appearance");
-let Material1047 = browser.currentScene.createNode("Material");
-Material1047.diffuseColor = new SFColor(new float[0,1,0]);
-Material1047.transparency = 1;
-Appearance1046.material = Material1047;
-
-Shape1045.appearance = Appearance1046;
-
-let Box1048 = browser.currentScene.createNode("Box");
-Box1048.size = new SFVec3f(new float[1,0.18,0.001]);
-Shape1045.geometry = Box1048;
-
-Transform1044.children = new MFNode();
-
-Transform1044.children[0] = Shape1045;
-
-Transform1037.children[2] = Transform1044;
-
-Group1015.children[2] = Transform1037;
-
-Transform950.children[5] = Group1015;
+Transform950.children[0] = TouchSensor951;
+
+let Shape952 = browser.currentScene.createNode("Shape");
+Shape952.DEF = "Stand";
+let IndexedFaceSet953 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet953.coordIndex = new MFInt32(new int[1,30,29,-1,1,29,2,-1,31,47,46,-1,31,46,32,-1,78,77,80,-1,78,80,79,-1,96,113,112,-1,96,112,95,-1,95,112,111,-1,95,111,94,-1,94,111,110,-1,94,110,93,-1,93,110,109,-1,93,109,108,-1,93,108,100,-1,107,99,100,-1,107,100,108,-1,107,106,99,-1,106,105,98,-1,106,98,99,-1,104,97,98,-1,104,98,105,-1,103,102,104,-1,104,102,101,-1,104,101,97,-1,101,96,97,-1,101,97,101,-1,101,101,96,-1,96,101,113,-1,113,101,114,-1,115,86,85,-1,115,85,116,-1,117,87,84,-1,117,84,118,-1,119,83,120,-1,121,88,82,-1,121,82,122,-1,123,89,81,-1,123,81,124,-1,125,90,126,-1,127,92,128,-1,129,91,130,-1,54,49,50,-1,54,50,55,-1,76,75,74,-1,76,74,54,-1,54,74,73,-1,54,73,49,-1,49,73,48,-1,48,73,62,-1,48,62,61,-1,48,61,60,-1,48,60,53,-1,53,60,59,-1,53,59,53,-1,53,59,58,-1,53,58,52,-1,52,58,57,-1,52,57,51,-1,56,51,57,-1,56,55,50,-1,56,50,51,-1,62,73,72,-1,62,72,63,-1,63,72,71,-1,63,71,64,-1,64,71,70,-1,64,70,69,-1,64,69,65,-1,65,69,68,-1,65,68,67,-1,65,67,66,-1,131,40,39,-1,131,39,132,-1,133,43,42,-1,133,42,134,-1,135,37,36,-1,135,36,136,-1,137,41,38,-1,137,38,138,-1,139,44,35,-1,139,35,140,-1,141,34,142,-1,143,45,33,-1,143,33,144,-1,145,16,15,-1,145,15,146,-1,147,14,148,-1,149,17,13,-1,149,13,150,-1,151,18,12,-1,151,12,152,-1,153,19,11,-1,153,11,154,-1,155,20,10,-1,155,10,156,-1,157,9,158,-1,159,21,8,-1,159,8,160,-1,161,22,7,-1,161,7,162,-1,163,23,164,-1,165,24,6,-1,165,6,166,-1,167,25,5,-1,167,5,168,-1,169,26,170,-1,171,27,4,-1,171,4,172,-1,173,28,3,-1,173,3,174,-1,175,0,176,-1]);
+let Coordinate954 = browser.currentScene.createNode("Coordinate");
+Coordinate954.point = new MFVec3f(new float[-3.21,-0.0154,0,-3.15,-0.0154,0,-3.14,-0.0467,0,-3.1,-0.0601,0,-3.05,-0.051,0,-3.04,-0.0254,0,-3.05,-0.00248,0,-3.1,0.0122,0,-3.16,0.03,0,-3.2,0.0684,0,-3.2,0.133,0,-3.16,0.17,0,-3.1,0.182,0,-3.04,0.171,0,-3.01,0.136,0,-3,0.095,0,-3.05,0.095,0,-3.06,0.125,0,-3.1,0.136,0,-3.14,0.126,0,-3.15,0.103,0,-3.14,0.0815,0,-3.1,0.0689,0,-3.04,0.0512,0,-3,0.0249,0,-2.99,-0.0195,0,-3,-0.0708,0,-3.05,-0.104,0,-3.1,-0.108,0,-3.16,-0.0947,0,-3.2,-0.0586,0,-2.86,-0.102,0,-2.9,-0.102,0,-2.94,-0.0832,0,-2.94,-0.0457,0,-2.94,0.0645,0,-2.97,0.0645,0,-2.97,0.103,0,-2.94,0.103,0,-2.94,0.158,0,-2.89,0.158,0,-2.89,0.103,0,-2.86,0.103,0,-2.86,0.0645,0,-2.89,0.0645,0,-2.89,-0.0483,0,-2.88,-0.0608,0,-2.86,-0.0612,0,-2.71,-0.000798,0,-2.71,-0.0373,0,-2.74,-0.0637,0,-2.77,-0.0624,0,-2.78,-0.0416,0,-2.77,-0.0195,0,-2.71,-0.0754,0,-2.74,-0.103,0,-2.79,-0.106,0,-2.82,-0.0865,0,-2.84,-0.0431,0,-2.82,0.000177,0,-2.78,0.0201,0,-2.73,0.0275,0,-2.71,0.0446,0,-2.72,0.0614,0,-2.74,0.0675,0,-2.77,0.0573,0,-2.78,0.039,0,-2.83,0.039,0,-2.82,0.0765,0,-2.78,0.105,0,-2.74,0.11,0,-2.71,0.107,0,-2.67,0.0849,0,-2.66,0.0526,0,-2.66,-0.0763,0,-2.65,-0.101,0,-2.7,-0.101,0,-2.61,-0.101,0,-2.61,0.103,0,-2.56,0.103,0,-2.56,0.0787,0,-2.52,0.104,0,-2.47,0.105,0,-2.43,0.0743,0,-2.43,0.038,0,-2.43,-0.101,0,-2.48,-0.101,0,-2.48,0.0224,0,-2.49,0.0514,0,-2.52,0.0627,0,-2.54,0.0505,0,-2.55,0.02,0,-2.55,-0.101,0,-2.33,0.0279,0,-2.31,0.0587,0,-2.27,0.0589,0,-2.25,0.0281,0,-2.25,-0.0232,0,-2.27,-0.0563,0,-2.31,-0.057,0,-2.33,-0.0245,0,-2.19,0.175,0,-2.19,-0.101,0,-2.25,-0.101,0,-2.25,-0.073,0,-2.26,-0.0913,0,-2.31,-0.108,0,-2.35,-0.0915,0,-2.38,-0.0424,0,-2.39,0.0243,0,-2.37,0.0809,0,-2.32,0.108,0,-2.28,0.106,0,-2.25,0.0776,0,-2.25,0.175,0,-2.48,0.0224,0,-2.43,0.038,0,-2.49,0.0514,0,-2.43,0.0743,0,-2.49,0.0514,0,-2.47,0.105,0,-2.52,0.0627,0,-2.52,0.104,0,-2.54,0.0505,0,-2.56,0.0787,0,-2.55,0.02,0,-2.56,0.0787,0,-2.61,-0.101,0,-2.55,0.02,0,-2.61,-0.101,0,-2.56,0.0787,0,-2.89,0.103,0,-2.94,0.103,0,-2.89,0.0645,0,-2.89,0.103,0,-2.94,0.103,0,-2.94,0.0645,0,-2.89,0.0645,0,-2.94,0.0645,0,-2.89,-0.0483,0,-2.94,-0.0457,0,-2.89,-0.0483,0,-2.94,-0.0832,0,-2.88,-0.0608,0,-2.9,-0.102,0,-3.06,0.125,0,-3.01,0.136,0,-3.06,0.125,0,-3.04,0.171,0,-3.1,0.136,0,-3.1,0.182,0,-3.14,0.126,0,-3.16,0.17,0,-3.15,0.103,0,-3.2,0.133,0,-3.14,0.0815,0,-3.2,0.0684,0,-3.14,0.0815,0,-3.16,0.03,0,-3.1,0.0689,0,-3.1,0.0122,0,-3.04,0.0512,0,-3.05,-0.00248,0,-3,0.0249,0,-3.05,-0.00248,0,-2.99,-0.0195,0,-3.04,-0.0254,0,-3,-0.0708,0,-3.05,-0.051,0,-3.05,-0.104,0,-3.05,-0.051,0,-3.1,-0.108,0,-3.1,-0.0601,0,-3.16,-0.0947,0,-3.14,-0.0467,0,-3.15,-0.0154,0,-3.2,-0.0586,0]);
+IndexedFaceSet953.coord = Coordinate954;
+
+Shape952.geometry = IndexedFaceSet953;
+
+let Appearance955 = browser.currentScene.createNode("Appearance");
+let Material956 = browser.currentScene.createNode("Material");
+Material956.DEF = "text_color";
+Material956.ambientIntensity = 0;
+Material956.diffuseColor = new SFColor(new float[0,0,0]);
+Material956.emissiveColor = new SFColor(new float[0.819,0.521,0.169]);
+Appearance955.material = Material956;
+
+Shape952.appearance = Appearance955;
+
+Transform950.children[1] = Shape952;
+
+let Transform957 = browser.currentScene.createNode("Transform");
+Transform957.scale = new SFVec3f(new float[84.89,77.52,77.52]);
+Transform957.translation = new SFVec3f(new float[0.04092,1.843,3.826]);
+let Shape958 = browser.currentScene.createNode("Shape");
+Shape958.DEF = "Stand_Back";
+let IndexedFaceSet959 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet959.coordIndex = new MFInt32(new int[0,2,3,-1,2,0,1,-1]);
+let Coordinate960 = browser.currentScene.createNode("Coordinate");
+Coordinate960.point = new MFVec3f(new float[-0.02572,-0.02535,-0.05,-0.02578,-0.02131,-0.05,-0.03871,-0.02131,-0.05,-0.03877,-0.02541,-0.05]);
+IndexedFaceSet959.coord = Coordinate960;
+
+Shape958.geometry = IndexedFaceSet959;
+
+let Appearance961 = browser.currentScene.createNode("Appearance");
+let Material962 = browser.currentScene.createNode("Material");
+Material962.DEF = "Clear";
+Material962.ambientIntensity = 0;
+Material962.diffuseColor = new SFColor(new float[0,0,0]);
+Material962.transparency = 1;
+Appearance961.material = Material962;
+
+Shape958.appearance = Appearance961;
+
+Transform957.children = new MFNode();
+
+Transform957.children[0] = Shape958;
+
+Transform950.children[2] = Transform957;
 
 Transform949.children = new MFNode();
 
 Transform949.children[0] = Transform950;
 
-Collision948.proxy = Transform949;
+let Transform963 = browser.currentScene.createNode("Transform");
+Transform963.DEF = "Walk_Text";
+let TouchSensor964 = browser.currentScene.createNode("TouchSensor");
+TouchSensor964.DEF = "Walk_Touch";
+TouchSensor964.description = "click for behavior";
+Transform963.children = new MFNode();
 
-Group945.children[1] = Collision948;
+Transform963.children[0] = TouchSensor964;
 
-let Transform1049 = browser.currentScene.createNode("Transform");
-Transform1049.DEF = "Floor";
-Transform1049.scale = new SFVec3f(new float[1,0.0125,1]);
-Transform1049.translation = new SFVec3f(new float[0,-0.0125,0]);
-let Shape1050 = browser.currentScene.createNode("Shape");
-let Box1051 = browser.currentScene.createNode("Box");
-Shape1050.geometry = Box1051;
+let Shape965 = browser.currentScene.createNode("Shape");
+Shape965.DEF = "WALK_Shape";
+let IndexedFaceSet966 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet966.coordIndex = new MFInt32(new int[0,2,1,-1,3,2,0,-1,12,3,0,-1,4,3,12,-1,11,4,12,-1,5,4,11,-1,10,5,11,-1,6,5,10,-1,9,6,10,-1,7,6,9,-1,8,7,9,-1,15,14,13,-1,16,15,13,-1,19,18,17,-1,20,19,17,-1,27,20,17,-1,28,27,17,-1,26,20,27,-1,23,20,26,-1,21,20,23,-1,25,23,26,-1,22,21,23,-1,24,23,25,-1,29,30,31,-1,29,31,32,-1,33,34,35,-1,33,35,29,-1,29,35,36,-1,29,36,30,-1,30,36,37,-1,37,36,38,-1,37,38,39,-1,37,39,40,-1,37,40,41,-1,41,40,42,-1,41,42,41,-1,41,42,43,-1,41,43,44,-1,44,43,45,-1,44,45,46,-1,47,46,45,-1,47,32,31,-1,47,31,46,-1,38,36,48,-1,38,48,49,-1,49,48,50,-1,49,50,51,-1,51,50,52,-1,51,52,53,-1,51,53,54,-1,54,53,55,-1,54,55,56,-1,54,56,57,-1]);
+let Coordinate967 = browser.currentScene.createNode("Coordinate");
+Coordinate967.point = new MFVec3f(new float[-1.88,-0.101,0,-1.96,0.175,0,-1.91,0.175,0,-1.86,-0.0195,0,-1.82,0.175,0,-1.76,0.175,0,-1.72,-0.0195,0,-1.67,0.175,0,-1.61,0.175,0,-1.69,-0.101,0,-1.75,-0.101,0,-1.79,0.111,0,-1.83,-0.101,0,-1.38,-0.101,0,-1.38,0.175,0,-1.32,0.175,0,-1.32,-0.101,0,-1.27,-0.101,0,-1.27,0.175,0,-1.22,0.175,0,-1.22,0.0304,0,-1.16,0.103,0,-1.09,0.103,0,-1.16,0.0272,0,-1.09,-0.101,0,-1.15,-0.101,0,-1.2,-0.0141,0,-1.22,-0.0363,0,-1.22,-0.101,0,-1.48,-0.0754,0,-1.48,-0.0373,0,-1.51,-0.0637,0,-1.51,-0.103,0,-1.47,-0.101,0,-1.42,-0.101,0,-1.43,-0.0763,0,-1.43,0.0526,0,-1.48,-0.000798,0,-1.48,0.0446,0,-1.5,0.0275,0,-1.55,0.0201,0,-1.54,-0.0195,0,-1.59,0.000177,0,-1.61,-0.0431,0,-1.55,-0.0416,0,-1.59,-0.0865,0,-1.54,-0.0624,0,-1.56,-0.106,0,-1.44,0.0849,0,-1.49,0.0614,0,-1.48,0.107,0,-1.51,0.0675,0,-1.52,0.11,0,-1.55,0.105,0,-1.54,0.0573,0,-1.59,0.0765,0,-1.6,0.039,0,-1.55,0.039,0]);
+IndexedFaceSet966.coord = Coordinate967;
 
-let Appearance1052 = browser.currentScene.createNode("Appearance");
-let Material1053 = browser.currentScene.createNode("Material");
-Appearance1052.material = Material1053;
+Shape965.geometry = IndexedFaceSet966;
 
-Shape1050.appearance = Appearance1052;
+let Appearance968 = browser.currentScene.createNode("Appearance");
+let Material969 = browser.currentScene.createNode("Material");
+Material969.USE = "text_color";
+Appearance968.material = Material969;
 
-Transform1049.children = new MFNode();
+Shape965.appearance = Appearance968;
 
-Transform1049.children[0] = Shape1050;
+Transform963.children[1] = Shape965;
 
-Group945.children[2] = Transform1049;
+let Transform970 = browser.currentScene.createNode("Transform");
+Transform970.scale = new SFVec3f(new float[81.3,81.3,81.31]);
+Transform970.translation = new SFVec3f(new float[-0.0414,1.941,4.015]);
+let Shape971 = browser.currentScene.createNode("Shape");
+Shape971.DEF = "Walk_Back";
+let IndexedFaceSet972 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet972.coordIndex = new MFInt32(new int[1,3,0,-1,3,1,2,-1]);
+let Coordinate973 = browser.currentScene.createNode("Coordinate");
+Coordinate973.point = new MFVec3f(new float[-0.02381,-0.02541,-0.05,-0.0127,-0.02541,-0.05,-0.01263,-0.02139,-0.05,-0.02381,-0.02146,-0.05]);
+IndexedFaceSet972.coord = Coordinate973;
 
-browser.currentScene.children[21] = Group945;
+Shape971.geometry = IndexedFaceSet972;
+
+let Appearance974 = browser.currentScene.createNode("Appearance");
+let Material975 = browser.currentScene.createNode("Material");
+Material975.USE = "Clear";
+Appearance974.material = Material975;
+
+Shape971.appearance = Appearance974;
+
+Transform970.children = new MFNode();
+
+Transform970.children[0] = Shape971;
+
+Transform963.children[2] = Transform970;
+
+Transform949.children[1] = Transform963;
+
+let Transform976 = browser.currentScene.createNode("Transform");
+Transform976.DEF = "Run_Text";
+let TouchSensor977 = browser.currentScene.createNode("TouchSensor");
+TouchSensor977.DEF = "Run_Touch";
+TouchSensor977.description = "click for behavior";
+Transform976.children = new MFNode();
+
+Transform976.children[0] = TouchSensor977;
+
+let Shape978 = browser.currentScene.createNode("Shape");
+Shape978.DEF = "Run";
+let IndexedFaceSet979 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet979.coordIndex = new MFInt32(new int[24,26,25,-1,53,39,54,-1,17,1,0,-1,17,0,16,-1,0,14,16,-1,0,15,14,-1,14,13,22,-1,14,22,16,-1,13,12,21,-1,13,21,22,-1,12,6,21,-1,12,11,7,-1,12,7,6,-1,11,8,7,-1,10,8,11,-1,10,9,8,-1,6,5,21,-1,5,4,20,-1,5,20,21,-1,4,3,19,-1,4,19,20,-1,3,2,18,-1,3,18,19,-1,18,2,1,-1,18,1,17,-1,55,32,31,-1,55,31,56,-1,57,33,30,-1,57,30,58,-1,59,29,60,-1,61,34,28,-1,61,28,62,-1,63,35,27,-1,63,27,64,-1,65,36,66,-1,67,38,68,-1,69,37,70,-1,71,23,72,-1,73,48,47,-1,73,47,74,-1,75,49,46,-1,75,46,76,-1,77,45,78,-1,79,50,44,-1,79,44,80,-1,81,51,43,-1,81,43,82,-1,83,41,84,-1,85,40,86,-1,87,52,88,-1,89,42,90,-1]);
+let Coordinate980 = browser.currentScene.createNode("Coordinate");
+Coordinate980.point = new MFVec3f(new float[-0.829,-0.101,0,-0.829,0.175,0,-0.662,0.172,0,-0.622,0.148,0,-0.607,0.103,0,-0.62,0.0501,0,-0.648,0.0316,0,-0.615,-0.0063,0,-0.611,-0.0764,0,-0.601,-0.101,0,-0.664,-0.101,0,-0.671,-0.0373,0,-0.68,-0.00372,0,-0.712,0.00648,0,-0.772,0.00648,0,-0.772,-0.101,0,-0.772,0.0546,0,-0.772,0.127,0,-0.703,0.127,0,-0.673,0.118,0,-0.663,0.091,0,-0.674,0.063,0,-0.705,0.0546,0,-0.379,0.103,0,-0.379,-0.101,0,-0.432,-0.101,0,-0.432,-0.0764,0,-0.466,-0.101,0,-0.518,-0.102,0,-0.555,-0.072,0,-0.56,-0.0357,0,-0.56,0.103,0,-0.506,0.103,0,-0.506,-0.0201,0,-0.5,-0.0491,0,-0.472,-0.0604,0,-0.443,-0.0482,0,-0.433,-0.0177,0,-0.433,0.103,0,-0.331,-0.101,0,-0.331,0.103,0,-0.278,0.103,0,-0.278,0.0787,0,-0.244,0.104,0,-0.192,0.105,0,-0.154,0.0743,0,-0.149,0.038,0,-0.149,-0.101,0,-0.203,-0.101,0,-0.203,0.0224,0,-0.209,0.0514,0,-0.238,0.0627,0,-0.266,0.0505,0,-0.277,0.02,0,-0.277,-0.101,0,-0.506,-0.0201,0,-0.56,-0.0357,0,-0.5,-0.0491,0,-0.555,-0.072,0,-0.5,-0.0491,0,-0.518,-0.102,0,-0.472,-0.0604,0,-0.466,-0.101,0,-0.443,-0.0482,0,-0.432,-0.0764,0,-0.433,-0.0177,0,-0.432,-0.0764,0,-0.379,0.103,0,-0.433,-0.0177,0,-0.379,0.103,0,-0.432,-0.0764,0,-0.379,-0.101,0,-0.432,-0.0764,0,-0.203,0.0224,0,-0.149,0.038,0,-0.209,0.0514,0,-0.154,0.0743,0,-0.209,0.0514,0,-0.192,0.105,0,-0.238,0.0627,0,-0.244,0.104,0,-0.266,0.0505,0,-0.278,0.0787,0,-0.278,0.0787,0,-0.331,0.103,0,-0.277,0.02,0,-0.331,-0.101,0,-0.277,0.02,0,-0.278,0.0787,0,-0.277,0.02,0,-0.331,0.103,0]);
+IndexedFaceSet979.coord = Coordinate980;
+
+Shape978.geometry = IndexedFaceSet979;
+
+let Appearance981 = browser.currentScene.createNode("Appearance");
+let Material982 = browser.currentScene.createNode("Material");
+Material982.USE = "text_color";
+Appearance981.material = Material982;
+
+Shape978.appearance = Appearance981;
+
+Transform976.children[1] = Shape978;
+
+let Transform983 = browser.currentScene.createNode("Transform");
+Transform983.scale = new SFVec3f(new float[82.47,82.47,82.48]);
+Transform983.translation = new SFVec3f(new float[-0.01579,1.968,4.074]);
+let Shape984 = browser.currentScene.createNode("Shape");
+Shape984.DEF = "Run_Back";
+let IndexedFaceSet985 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet985.coordIndex = new MFInt32(new int[0,2,3,-1,2,0,1,-1]);
+let Coordinate986 = browser.currentScene.createNode("Coordinate");
+Coordinate986.point = new MFVec3f(new float[-0.01009,-0.02534,-0.05,-0.001382,-0.02541,-0.05,-0.001315,-0.02146,-0.05,-0.01022,-0.02146,-0.05]);
+IndexedFaceSet985.coord = Coordinate986;
+
+Shape984.geometry = IndexedFaceSet985;
+
+let Appearance987 = browser.currentScene.createNode("Appearance");
+let Material988 = browser.currentScene.createNode("Material");
+Material988.USE = "Clear";
+Appearance987.material = Material988;
+
+Shape984.appearance = Appearance987;
+
+Transform983.children = new MFNode();
+
+Transform983.children[0] = Shape984;
+
+Transform976.children[2] = Transform983;
+
+Transform949.children[2] = Transform976;
+
+let Transform989 = browser.currentScene.createNode("Transform");
+Transform989.DEF = "Jump_Text";
+let TouchSensor990 = browser.currentScene.createNode("TouchSensor");
+TouchSensor990.DEF = "Jump_Touch";
+TouchSensor990.description = "click for behavior";
+Transform989.children = new MFNode();
+
+Transform989.children[0] = TouchSensor990;
+
+let Shape991 = browser.currentScene.createNode("Shape");
+Shape991.DEF = "Jump";
+let IndexedFaceSet992 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet992.coordIndex = new MFInt32(new int[1,0,14,-1,1,14,2,-1,16,15,18,-1,16,18,17,-1,64,65,66,-1,67,68,69,-1,67,69,70,-1,71,72,73,-1,71,73,74,-1,75,76,77,-1,78,79,80,-1,78,80,81,-1,82,83,84,-1,82,84,85,-1,86,87,88,-1,89,90,91,-1,92,93,94,-1,95,96,97,-1,98,7,6,-1,98,6,99,-1,100,8,5,-1,100,5,101,-1,102,9,4,-1,102,4,103,-1,104,10,105,-1,106,11,3,-1,106,3,107,-1,108,12,109,-1,110,13,111,-1,112,27,26,-1,112,26,113,-1,114,28,25,-1,114,25,115,-1,116,24,117,-1,118,29,23,-1,118,23,119,-1,120,30,22,-1,120,22,121,-1,122,31,123,-1,124,34,33,-1,124,33,125,-1,126,35,32,-1,126,32,127,-1,128,21,129,-1,130,36,20,-1,130,20,131,-1,132,37,19,-1,132,19,133,-1,134,38,135,-1,136,40,137,-1,138,39,139,-1,53,58,59,-1,53,59,54,-1,53,52,58,-1,52,51,57,-1,52,57,58,-1,51,50,56,-1,51,56,57,-1,50,49,56,-1,49,48,63,-1,49,63,56,-1,48,47,63,-1,63,47,46,-1,63,46,62,-1,62,46,45,-1,62,45,44,-1,62,44,61,-1,61,44,60,-1,54,59,60,-1,44,43,42,-1,60,44,42,-1,41,55,54,-1,41,54,60,-1,41,60,42,-1]);
+let Coordinate993 = browser.currentScene.createNode("Coordinate");
+Coordinate993.point = new MFVec3f(new float[0.108,0.00195,0,0.163,0.00195,0,0.166,-0.0473,0,0.194,-0.0608,0,0.222,-0.0492,0,0.228,-0.017,0,0.228,0.175,0,0.284,0.175,0,0.284,-0.02,0,0.271,-0.0798,0,0.23,-0.104,0,0.193,-0.108,0,0.155,-0.102,0,0.117,-0.0714,0,0.108,-0.0357,0,0.563,-0.101,0,0.563,0.103,0,0.615,0.103,0,0.615,0.0803,0,0.649,0.105,0,0.696,0.105,0,0.728,0.0788,0,0.76,0.104,0,0.811,0.104,0,0.842,0.081,0,0.853,0.0416,0,0.853,-0.101,0,0.799,-0.101,0,0.799,0.0305,0,0.79,0.0544,0,0.767,0.0616,0,0.743,0.0507,0,0.734,0.0228,0,0.734,-0.101,0,0.681,-0.101,0,0.681,0.0301,0,0.673,0.0532,0,0.65,0.0611,0,0.626,0.0506,0,0.617,0.0224,0,0.617,-0.101,0,0.9,-0.182,0,0.9,0.103,0,0.952,0.103,0,0.952,0.0751,0,0.968,0.0934,0,1.01,0.11,0,1.05,0.103,0,1.07,0.0796,0,1.1,0.0251,0,1.1,-0.0222,0,1.07,-0.0788,0,1.03,-0.106,0,0.988,-0.103,0,0.953,-0.0755,0,0.953,-0.182,0,1.04,-0.000177,0,1.03,-0.0446,0,0.999,-0.0603,0,0.966,-0.0453,0,0.953,-0.000177,0,0.963,0.045,0,0.998,0.063,0,1.03,0.0462,0,0.515,-0.101,0,0.462,-0.0764,0,0.462,-0.101,0,0.388,-0.0201,0,0.388,0.103,0,0.334,0.103,0,0.334,-0.0357,0,0.394,-0.0491,0,0.388,-0.0201,0,0.334,-0.0357,0,0.339,-0.072,0,0.394,-0.0491,0,0.339,-0.072,0,0.376,-0.102,0,0.422,-0.0604,0,0.394,-0.0491,0,0.376,-0.102,0,0.428,-0.101,0,0.451,-0.0482,0,0.422,-0.0604,0,0.428,-0.101,0,0.462,-0.0764,0,0.461,-0.0177,0,0.451,-0.0482,0,0.462,-0.0764,0,0.515,0.103,0,0.461,0.103,0,0.461,-0.0177,0,0.515,0.103,0,0.461,-0.0177,0,0.462,-0.0764,0,0.515,-0.101,0,0.515,0.103,0,0.462,-0.0764,0,0.284,-0.02,0,0.228,-0.017,0,0.271,-0.0798,0,0.222,-0.0492,0,0.23,-0.104,0,0.194,-0.0608,0,0.193,-0.108,0,0.194,-0.0608,0,0.155,-0.102,0,0.166,-0.0473,0,0.117,-0.0714,0,0.166,-0.0473,0,0.108,-0.0357,0,0.166,-0.0473,0,0.799,0.0305,0,0.853,0.0416,0,0.79,0.0544,0,0.842,0.081,0,0.79,0.0544,0,0.811,0.104,0,0.767,0.0616,0,0.76,0.104,0,0.743,0.0507,0,0.728,0.0788,0,0.734,0.0228,0,0.728,0.0788,0,0.681,0.0301,0,0.734,0.0228,0,0.673,0.0532,0,0.728,0.0788,0,0.673,0.0532,0,0.696,0.105,0,0.65,0.0611,0,0.649,0.105,0,0.626,0.0506,0,0.615,0.0803,0,0.617,0.0224,0,0.615,0.0803,0,0.563,-0.101,0,0.617,0.0224,0,0.563,-0.101,0,0.615,0.0803,0]);
+IndexedFaceSet992.coord = Coordinate993;
+
+Shape991.geometry = IndexedFaceSet992;
+
+let Appearance994 = browser.currentScene.createNode("Appearance");
+let Material995 = browser.currentScene.createNode("Material");
+Material995.USE = "text_color";
+Appearance994.material = Material995;
+
+Shape991.appearance = Appearance994;
+
+Transform989.children[1] = Shape991;
+
+let Transform996 = browser.currentScene.createNode("Transform");
+Transform996.scale = new SFVec3f(new float[83.79,83.79,83.79]);
+Transform996.translation = new SFVec3f(new float[-0.008979,1.99,4.14]);
+let Shape997 = browser.currentScene.createNode("Shape");
+Shape997.DEF = "Jump_Back";
+let IndexedFaceSet998 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet998.coordIndex = new MFInt32(new int[0,2,3,-1,2,0,1,-1]);
+let Coordinate999 = browser.currentScene.createNode("Coordinate");
+Coordinate999.point = new MFVec3f(new float[0.001296,-0.02541,-0.05,0.01335,-0.02527,-0.05,0.01328,-0.02152,-0.05,0.001229,-0.02146,-0.05]);
+IndexedFaceSet998.coord = Coordinate999;
+
+Shape997.geometry = IndexedFaceSet998;
+
+let Appearance1000 = browser.currentScene.createNode("Appearance");
+let Material1001 = browser.currentScene.createNode("Material");
+Material1001.USE = "Clear";
+Appearance1000.material = Material1001;
+
+Shape997.appearance = Appearance1000;
+
+Transform996.children = new MFNode();
+
+Transform996.children[0] = Shape997;
+
+Transform989.children[2] = Transform996;
+
+Transform949.children[3] = Transform989;
+
+let Transform1002 = browser.currentScene.createNode("Transform");
+Transform1002.DEF = "Kneel_Text";
+Transform1002.translation = new SFVec3f(new float[1.3,-0.12,0]);
+let TouchSensor1003 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1003.DEF = "Kneel_Touch";
+TouchSensor1003.description = "click for behavior";
+Transform1002.children = new MFNode();
+
+Transform1002.children[0] = TouchSensor1003;
+
+let Shape1004 = browser.currentScene.createNode("Shape");
+Shape1004.DEF = "Kneel";
+let Text1005 = browser.currentScene.createNode("Text");
+Text1005.string = new MFString(new java.lang.String["Kneel"]);
+let FontStyle1006 = browser.currentScene.createNode("FontStyle");
+FontStyle1006.family = new MFString(new java.lang.String["SANS"]);
+FontStyle1006.size = 0.45;
+FontStyle1006.style = "BOLD";
+Text1005.fontStyle = FontStyle1006;
+
+Shape1004.geometry = Text1005;
+
+let Appearance1007 = browser.currentScene.createNode("Appearance");
+let Material1008 = browser.currentScene.createNode("Material");
+Material1008.USE = "text_color";
+Appearance1007.material = Material1008;
+
+Shape1004.appearance = Appearance1007;
+
+Transform1002.children[1] = Shape1004;
+
+let Transform1009 = browser.currentScene.createNode("Transform");
+Transform1009.translation = new SFVec3f(new float[0.5,0.15,-0.001]);
+let Shape1010 = browser.currentScene.createNode("Shape");
+Shape1010.DEF = "Kneel_Back";
+let Appearance1011 = browser.currentScene.createNode("Appearance");
+let Material1012 = browser.currentScene.createNode("Material");
+Material1012.diffuseColor = new SFColor(new float[0,1,0]);
+Material1012.transparency = 1;
+Appearance1011.material = Material1012;
+
+Shape1010.appearance = Appearance1011;
+
+let Box1013 = browser.currentScene.createNode("Box");
+Box1013.size = new SFVec3f(new float[1,0.36,0.001]);
+Shape1010.geometry = Box1013;
+
+Transform1009.children = new MFNode();
+
+Transform1009.children[0] = Shape1010;
+
+Transform1002.children[2] = Transform1009;
+
+Transform949.children[4] = Transform1002;
+
+let Group1014 = browser.currentScene.createNode("Group");
+let Transform1015 = browser.currentScene.createNode("Transform");
+Transform1015.DEF = "Allen_Text";
+Transform1015.translation = new SFVec3f(new float[2,4,0]);
+let TouchSensor1016 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1016.DEF = "Allen_Touch";
+TouchSensor1016.description = "click for Allen body";
+Transform1015.children = new MFNode();
+
+Transform1015.children[0] = TouchSensor1016;
+
+let Shape1017 = browser.currentScene.createNode("Shape");
+let Text1018 = browser.currentScene.createNode("Text");
+Text1018.string = new MFString(new java.lang.String["ALLEN"]);
+let FontStyle1019 = browser.currentScene.createNode("FontStyle");
+FontStyle1019.size = 0.25;
+FontStyle1019.spacing = 0.1;
+FontStyle1019.style = "BOLD";
+Text1018.fontStyle = FontStyle1019;
+
+Shape1017.geometry = Text1018;
+
+let Appearance1020 = browser.currentScene.createNode("Appearance");
+let Material1021 = browser.currentScene.createNode("Material");
+Material1021.diffuseColor = new SFColor(new float[0.6,0.6,0.6]);
+Appearance1020.material = Material1021;
+
+Shape1017.appearance = Appearance1020;
+
+Transform1015.children[1] = Shape1017;
+
+let Transform1022 = browser.currentScene.createNode("Transform");
+Transform1022.translation = new SFVec3f(new float[0.38,0.075,-0.001]);
+let Shape1023 = browser.currentScene.createNode("Shape");
+Shape1023.DEF = "MenuB";
+let Appearance1024 = browser.currentScene.createNode("Appearance");
+let Material1025 = browser.currentScene.createNode("Material");
+Material1025.diffuseColor = new SFColor(new float[0,1,0]);
+Material1025.transparency = 1;
+Appearance1024.material = Material1025;
+
+Shape1023.appearance = Appearance1024;
+
+let Box1026 = browser.currentScene.createNode("Box");
+Box1026.size = new SFVec3f(new float[0.78,0.18,0.001]);
+Shape1023.geometry = Box1026;
+
+Transform1022.children = new MFNode();
+
+Transform1022.children[0] = Shape1023;
+
+Transform1015.children[2] = Transform1022;
+
+Group1014.children = new MFNode();
+
+Group1014.children[0] = Transform1015;
+
+let Transform1027 = browser.currentScene.createNode("Transform");
+Transform1027.DEF = "Nancy_Text";
+Transform1027.translation = new SFVec3f(new float[2,3.5,0]);
+let TouchSensor1028 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1028.DEF = "Nancy_Touch";
+TouchSensor1028.description = "click for Nancy body";
+Transform1027.children = new MFNode();
+
+Transform1027.children[0] = TouchSensor1028;
+
+let Shape1029 = browser.currentScene.createNode("Shape");
+let Text1030 = browser.currentScene.createNode("Text");
+Text1030.string = new MFString(new java.lang.String["NANCY"]);
+let FontStyle1031 = browser.currentScene.createNode("FontStyle");
+FontStyle1031.size = 0.25;
+FontStyle1031.spacing = 0.1;
+FontStyle1031.style = "BOLD";
+Text1030.fontStyle = FontStyle1031;
+
+Shape1029.geometry = Text1030;
+
+let Appearance1032 = browser.currentScene.createNode("Appearance");
+let Material1033 = browser.currentScene.createNode("Material");
+Material1033.diffuseColor = new SFColor(new float[0.6,0.6,0.6]);
+Appearance1032.material = Material1033;
+
+Shape1029.appearance = Appearance1032;
+
+Transform1027.children[1] = Shape1029;
+
+let Transform1034 = browser.currentScene.createNode("Transform");
+Transform1034.translation = new SFVec3f(new float[0.38,0.075,-0.001]);
+let Shape1035 = browser.currentScene.createNode("Shape");
+Shape1035.USE = "MenuB";
+Transform1034.children = new MFNode();
+
+Transform1034.children[0] = Shape1035;
+
+Transform1027.children[2] = Transform1034;
+
+Group1014.children[1] = Transform1027;
+
+let Transform1036 = browser.currentScene.createNode("Transform");
+Transform1036.DEF = "Boxman_Text";
+Transform1036.translation = new SFVec3f(new float[2,3,0]);
+let TouchSensor1037 = browser.currentScene.createNode("TouchSensor");
+TouchSensor1037.DEF = "Boxman_Touch";
+TouchSensor1037.description = "click for BoxMan body";
+Transform1036.children = new MFNode();
+
+Transform1036.children[0] = TouchSensor1037;
+
+let Shape1038 = browser.currentScene.createNode("Shape");
+let Text1039 = browser.currentScene.createNode("Text");
+Text1039.string = new MFString(new java.lang.String["BOXMAN"]);
+let FontStyle1040 = browser.currentScene.createNode("FontStyle");
+FontStyle1040.size = 0.25;
+FontStyle1040.spacing = 0.1;
+FontStyle1040.style = "BOLD";
+Text1039.fontStyle = FontStyle1040;
+
+Shape1038.geometry = Text1039;
+
+let Appearance1041 = browser.currentScene.createNode("Appearance");
+let Material1042 = browser.currentScene.createNode("Material");
+Material1042.diffuseColor = new SFColor(new float[0.6,0.6,0.6]);
+Appearance1041.material = Material1042;
+
+Shape1038.appearance = Appearance1041;
+
+Transform1036.children[1] = Shape1038;
+
+let Transform1043 = browser.currentScene.createNode("Transform");
+Transform1043.translation = new SFVec3f(new float[0.5,0.075,-0.001]);
+let Shape1044 = browser.currentScene.createNode("Shape");
+let Appearance1045 = browser.currentScene.createNode("Appearance");
+let Material1046 = browser.currentScene.createNode("Material");
+Material1046.diffuseColor = new SFColor(new float[0,1,0]);
+Material1046.transparency = 1;
+Appearance1045.material = Material1046;
+
+Shape1044.appearance = Appearance1045;
+
+let Box1047 = browser.currentScene.createNode("Box");
+Box1047.size = new SFVec3f(new float[1,0.18,0.001]);
+Shape1044.geometry = Box1047;
+
+Transform1043.children = new MFNode();
+
+Transform1043.children[0] = Shape1044;
+
+Transform1036.children[2] = Transform1043;
+
+Group1014.children[2] = Transform1036;
+
+Transform949.children[5] = Group1014;
+
+Transform948.children = new MFNode();
+
+Transform948.children[0] = Transform949;
+
+Collision947.proxy = Transform948;
+
+Group944.children[1] = Collision947;
+
+let Transform1048 = browser.currentScene.createNode("Transform");
+Transform1048.DEF = "Floor";
+Transform1048.scale = new SFVec3f(new float[1,0.0125,1]);
+Transform1048.translation = new SFVec3f(new float[0,-0.0125,0]);
+let Shape1049 = browser.currentScene.createNode("Shape");
+let Box1050 = browser.currentScene.createNode("Box");
+Shape1049.geometry = Box1050;
+
+let Appearance1051 = browser.currentScene.createNode("Appearance");
+let Material1052 = browser.currentScene.createNode("Material");
+Appearance1051.material = Material1052;
+
+Shape1049.appearance = Appearance1051;
+
+Transform1048.children = new MFNode();
+
+Transform1048.children[0] = Shape1049;
+
+Group944.children[2] = Transform1048;
+
+browser.currentScene.children[21] = Group944;
+
+let ROUTE1053 = browser.currentScene.createNode("ROUTE");
+ROUTE1053.fromField = "position_changed";
+ROUTE1053.fromNode = "HudProx";
+ROUTE1053.toField = "set_translation";
+ROUTE1053.toNode = "HudXform";
+browser.currentScene.children[22] = ROUTE1053;
 
 let ROUTE1054 = browser.currentScene.createNode("ROUTE");
-ROUTE1054.fromField = "position_changed";
+ROUTE1054.fromField = "orientation_changed";
 ROUTE1054.fromNode = "HudProx";
-ROUTE1054.toField = "set_translation";
+ROUTE1054.toField = "set_rotation";
 ROUTE1054.toNode = "HudXform";
-browser.currentScene.children[22] = ROUTE1054;
+browser.currentScene.children[23] = ROUTE1054;
 
-let ROUTE1055 = browser.currentScene.createNode("ROUTE");
-ROUTE1055.fromField = "orientation_changed";
-ROUTE1055.fromNode = "HudProx";
-ROUTE1055.toField = "set_rotation";
-ROUTE1055.toNode = "HudXform";
-browser.currentScene.children[23] = ROUTE1055;
-
-let Script1056 = browser.currentScene.createNode("Script");
-Script1056.DEF = "ActorAnimator";
-Script1056.directOutput = True;
+let Script1055 = browser.currentScene.createNode("Script");
+Script1055.DEF = "ActorAnimator";
+Script1055.directOutput = True;
 //***********Interfaces*****************
 //Joint Nodes
 //**************Avatar choice***************
 //*************Behavior fields************
+let field1056 = browser.currentScene.createNode("field");
+field1056.name = "changeBehaviorToWalk";
+field1056.accessType = "inputOnly";
+field1056.type = "SFBool";
+Script1055.field = new MFNode();
+
+Script1055.field[0] = field1056;
+
 let field1057 = browser.currentScene.createNode("field");
-field1057.name = "changeBehaviorToWalk";
+field1057.name = "changeBehaviorToRun";
 field1057.accessType = "inputOnly";
 field1057.type = "SFBool";
-Script1056.field = new MFNode();
-
-Script1056.field[0] = field1057;
+Script1055.field[1] = field1057;
 
 let field1058 = browser.currentScene.createNode("field");
-field1058.name = "changeBehaviorToRun";
+field1058.name = "changeBehaviorToJump";
 field1058.accessType = "inputOnly";
 field1058.type = "SFBool";
-Script1056.field[1] = field1058;
+Script1055.field[2] = field1058;
 
 let field1059 = browser.currentScene.createNode("field");
-field1059.name = "changeBehaviorToJump";
+field1059.name = "changeBehaviorToStand";
 field1059.accessType = "inputOnly";
 field1059.type = "SFBool";
-Script1056.field[2] = field1059;
+Script1055.field[3] = field1059;
 
 let field1060 = browser.currentScene.createNode("field");
-field1060.name = "changeBehaviorToStand";
+field1060.name = "changeBehaviorToKneel";
 field1060.accessType = "inputOnly";
 field1060.type = "SFBool";
-Script1056.field[3] = field1060;
+Script1055.field[4] = field1060;
 
 let field1061 = browser.currentScene.createNode("field");
-field1061.name = "changeBehaviorToKneel";
+field1061.name = "switchAvatarToAllen";
 field1061.accessType = "inputOnly";
 field1061.type = "SFBool";
-Script1056.field[4] = field1061;
+Script1055.field[5] = field1061;
 
 let field1062 = browser.currentScene.createNode("field");
-field1062.name = "switchAvatarToAllen";
+field1062.name = "switchAvatarToNancy";
 field1062.accessType = "inputOnly";
 field1062.type = "SFBool";
-Script1056.field[5] = field1062;
+Script1055.field[6] = field1062;
 
 let field1063 = browser.currentScene.createNode("field");
-field1063.name = "switchAvatarToNancy";
+field1063.name = "switchAvatarToBoxman";
 field1063.accessType = "inputOnly";
 field1063.type = "SFBool";
-Script1056.field[6] = field1063;
+Script1055.field[7] = field1063;
 
 let field1064 = browser.currentScene.createNode("field");
-field1064.name = "switchAvatarToBoxman";
-field1064.accessType = "inputOnly";
-field1064.type = "SFBool";
-Script1056.field[7] = field1064;
-
-let field1065 = browser.currentScene.createNode("field");
-field1065.name = "NancyJointNodes";
-field1065.accessType = "initializeOnly";
-field1065.type = "MFNode";
+field1064.name = "NancyJointNodes";
+field1064.accessType = "initializeOnly";
+field1064.type = "MFNode";
 //TODO ensure name attribute not needed as part of USE node
-let ProtoInstance1066 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance1066.USE = "Nancy_hanim_humanoid_root";
-field1065.children = new MFNode();
+let ProtoInstance1065 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance1065.USE = "Nancy_hanim_humanoid_root";
+field1064.children = new MFNode();
 
-field1065.children[0] = ProtoInstance1066;
+field1064.children[0] = ProtoInstance1065;
+
+let ProtoInstance1066 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance1066.USE = "Nancy_hanim_sacroiliac";
+field1064.children[1] = ProtoInstance1066;
 
 let ProtoInstance1067 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance1067.USE = "Nancy_hanim_sacroiliac";
-field1065.children[1] = ProtoInstance1067;
+ProtoInstance1067.USE = "Nancy_hanim_l_hip";
+field1064.children[2] = ProtoInstance1067;
 
 let ProtoInstance1068 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance1068.USE = "Nancy_hanim_l_hip";
-field1065.children[2] = ProtoInstance1068;
+ProtoInstance1068.USE = "Nancy_hanim_l_knee";
+field1064.children[3] = ProtoInstance1068;
 
 let ProtoInstance1069 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance1069.USE = "Nancy_hanim_l_knee";
-field1065.children[3] = ProtoInstance1069;
+ProtoInstance1069.USE = "Nancy_hanim_l_ankle";
+field1064.children[4] = ProtoInstance1069;
 
 let ProtoInstance1070 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance1070.USE = "Nancy_hanim_l_ankle";
-field1065.children[4] = ProtoInstance1070;
+ProtoInstance1070.USE = "Nancy_hanim_r_hip";
+field1064.children[5] = ProtoInstance1070;
 
 let ProtoInstance1071 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance1071.USE = "Nancy_hanim_r_hip";
-field1065.children[5] = ProtoInstance1071;
+ProtoInstance1071.USE = "Nancy_hanim_r_knee";
+field1064.children[6] = ProtoInstance1071;
 
 let ProtoInstance1072 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance1072.USE = "Nancy_hanim_r_knee";
-field1065.children[6] = ProtoInstance1072;
+ProtoInstance1072.USE = "Nancy_hanim_r_ankle";
+field1064.children[7] = ProtoInstance1072;
 
 let ProtoInstance1073 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance1073.USE = "Nancy_hanim_r_ankle";
-field1065.children[7] = ProtoInstance1073;
+ProtoInstance1073.USE = "Nancy_hanim_skullbase";
+field1064.children[8] = ProtoInstance1073;
 
 let ProtoInstance1074 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance1074.USE = "Nancy_hanim_skullbase";
-field1065.children[8] = ProtoInstance1074;
+ProtoInstance1074.USE = "Nancy_hanim_l_shoulder";
+field1064.children[9] = ProtoInstance1074;
 
 let ProtoInstance1075 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance1075.USE = "Nancy_hanim_l_shoulder";
-field1065.children[9] = ProtoInstance1075;
+ProtoInstance1075.USE = "Nancy_hanim_l_elbow";
+field1064.children[10] = ProtoInstance1075;
 
 let ProtoInstance1076 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance1076.USE = "Nancy_hanim_l_elbow";
-field1065.children[10] = ProtoInstance1076;
+ProtoInstance1076.USE = "Nancy_hanim_l_wrist";
+field1064.children[11] = ProtoInstance1076;
 
 let ProtoInstance1077 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance1077.USE = "Nancy_hanim_l_wrist";
-field1065.children[11] = ProtoInstance1077;
+ProtoInstance1077.USE = "Nancy_hanim_r_shoulder";
+field1064.children[12] = ProtoInstance1077;
 
 let ProtoInstance1078 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance1078.USE = "Nancy_hanim_r_shoulder";
-field1065.children[12] = ProtoInstance1078;
+ProtoInstance1078.USE = "Nancy_hanim_r_elbow";
+field1064.children[13] = ProtoInstance1078;
 
 let ProtoInstance1079 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance1079.USE = "Nancy_hanim_r_elbow";
-field1065.children[13] = ProtoInstance1079;
+ProtoInstance1079.USE = "Nancy_hanim_r_wrist";
+field1064.children[14] = ProtoInstance1079;
 
-let ProtoInstance1080 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance1080.USE = "Nancy_hanim_r_wrist";
-field1065.children[14] = ProtoInstance1080;
+Script1055.field[8] = field1064;
 
-Script1056.field[8] = field1065;
+let field1080 = browser.currentScene.createNode("field");
+field1080.name = "AllenJointNodes";
+field1080.accessType = "initializeOnly";
+field1080.type = "MFNode";
+let ProtoInstance1081 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance1081.USE = "Allen_hanim_humanoid_root";
+field1080.children = new MFNode();
 
-let field1081 = browser.currentScene.createNode("field");
-field1081.name = "AllenJointNodes";
-field1081.accessType = "initializeOnly";
-field1081.type = "MFNode";
+field1080.children[0] = ProtoInstance1081;
+
 let ProtoInstance1082 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance1082.USE = "Allen_hanim_humanoid_root";
-field1081.children = new MFNode();
-
-field1081.children[0] = ProtoInstance1082;
+ProtoInstance1082.USE = "Allen_hanim_sacroiliac";
+field1080.children[1] = ProtoInstance1082;
 
 let ProtoInstance1083 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance1083.USE = "Allen_hanim_sacroiliac";
-field1081.children[1] = ProtoInstance1083;
+ProtoInstance1083.USE = "Allen_hanim_skullbase";
+field1080.children[2] = ProtoInstance1083;
 
 let ProtoInstance1084 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance1084.USE = "Allen_hanim_skullbase";
-field1081.children[2] = ProtoInstance1084;
+ProtoInstance1084.USE = "Allen_hanim_l_hip";
+field1080.children[3] = ProtoInstance1084;
 
 let ProtoInstance1085 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance1085.USE = "Allen_hanim_l_hip";
-field1081.children[3] = ProtoInstance1085;
+ProtoInstance1085.USE = "Allen_hanim_r_hip";
+field1080.children[4] = ProtoInstance1085;
 
 let ProtoInstance1086 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance1086.USE = "Allen_hanim_r_hip";
-field1081.children[4] = ProtoInstance1086;
+ProtoInstance1086.USE = "Allen_hanim_l_knee";
+field1080.children[5] = ProtoInstance1086;
 
 let ProtoInstance1087 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance1087.USE = "Allen_hanim_l_knee";
-field1081.children[5] = ProtoInstance1087;
+ProtoInstance1087.USE = "Allen_hanim_r_knee";
+field1080.children[6] = ProtoInstance1087;
 
 let ProtoInstance1088 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance1088.USE = "Allen_hanim_r_knee";
-field1081.children[6] = ProtoInstance1088;
+ProtoInstance1088.USE = "Allen_hanim_l_ankle";
+field1080.children[7] = ProtoInstance1088;
 
 let ProtoInstance1089 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance1089.USE = "Allen_hanim_l_ankle";
-field1081.children[7] = ProtoInstance1089;
+ProtoInstance1089.USE = "Allen_hanim_r_ankle";
+field1080.children[8] = ProtoInstance1089;
 
 let ProtoInstance1090 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance1090.USE = "Allen_hanim_r_ankle";
-field1081.children[8] = ProtoInstance1090;
+ProtoInstance1090.USE = "Allen_hanim_l_shoulder";
+field1080.children[9] = ProtoInstance1090;
 
 let ProtoInstance1091 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance1091.USE = "Allen_hanim_l_shoulder";
-field1081.children[9] = ProtoInstance1091;
+ProtoInstance1091.USE = "Allen_hanim_r_shoulder";
+field1080.children[10] = ProtoInstance1091;
 
 let ProtoInstance1092 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance1092.USE = "Allen_hanim_r_shoulder";
-field1081.children[10] = ProtoInstance1092;
+ProtoInstance1092.USE = "Allen_hanim_l_elbow";
+field1080.children[11] = ProtoInstance1092;
 
 let ProtoInstance1093 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance1093.USE = "Allen_hanim_l_elbow";
-field1081.children[11] = ProtoInstance1093;
+ProtoInstance1093.USE = "Allen_hanim_r_elbow";
+field1080.children[12] = ProtoInstance1093;
 
 let ProtoInstance1094 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance1094.USE = "Allen_hanim_r_elbow";
-field1081.children[12] = ProtoInstance1094;
+ProtoInstance1094.USE = "Allen_hanim_l_wrist";
+field1080.children[13] = ProtoInstance1094;
 
 let ProtoInstance1095 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance1095.USE = "Allen_hanim_l_wrist";
-field1081.children[13] = ProtoInstance1095;
+ProtoInstance1095.USE = "Allen_hanim_r_wrist";
+field1080.children[14] = ProtoInstance1095;
 
-let ProtoInstance1096 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance1096.USE = "Allen_hanim_r_wrist";
-field1081.children[14] = ProtoInstance1096;
+Script1055.field[9] = field1080;
 
-Script1056.field[9] = field1081;
+let field1096 = browser.currentScene.createNode("field");
+field1096.name = "BoxmanJointNodes";
+field1096.accessType = "initializeOnly";
+field1096.type = "MFNode";
+let HAnimJoint1097 = browser.currentScene.createNode("HAnimJoint");
+HAnimJoint1097.USE = "Boxman_humanoid_root";
+field1096.child = new undefined();
 
-let field1097 = browser.currentScene.createNode("field");
-field1097.name = "BoxmanJointNodes";
-field1097.accessType = "initializeOnly";
-field1097.type = "MFNode";
+field1096.child[0] = HAnimJoint1097;
+
 let HAnimJoint1098 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1098.USE = "Boxman_humanoid_root";
-field1097.child = new undefined();
-
-field1097.child[0] = HAnimJoint1098;
+HAnimJoint1098.USE = "Boxman_skullbase";
+field1096.child[1] = HAnimJoint1098;
 
 let HAnimJoint1099 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1099.USE = "Boxman_skullbase";
-field1097.child[1] = HAnimJoint1099;
+HAnimJoint1099.USE = "Boxman_vl5";
+field1096.child[2] = HAnimJoint1099;
 
 let HAnimJoint1100 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1100.USE = "Boxman_vl5";
-field1097.child[2] = HAnimJoint1100;
+HAnimJoint1100.USE = "Boxman_l_hip";
+field1096.child[3] = HAnimJoint1100;
 
 let HAnimJoint1101 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1101.USE = "Boxman_l_hip";
-field1097.child[3] = HAnimJoint1101;
+HAnimJoint1101.USE = "Boxman_r_hip";
+field1096.child[4] = HAnimJoint1101;
 
 let HAnimJoint1102 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1102.USE = "Boxman_r_hip";
-field1097.child[4] = HAnimJoint1102;
+HAnimJoint1102.USE = "Boxman_l_knee";
+field1096.child[5] = HAnimJoint1102;
 
 let HAnimJoint1103 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1103.USE = "Boxman_l_knee";
-field1097.child[5] = HAnimJoint1103;
+HAnimJoint1103.USE = "Boxman_r_knee";
+field1096.child[6] = HAnimJoint1103;
 
 let HAnimJoint1104 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1104.USE = "Boxman_r_knee";
-field1097.child[6] = HAnimJoint1104;
+HAnimJoint1104.USE = "Boxman_l_ankle";
+field1096.child[7] = HAnimJoint1104;
 
 let HAnimJoint1105 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1105.USE = "Boxman_l_ankle";
-field1097.child[7] = HAnimJoint1105;
+HAnimJoint1105.USE = "Boxman_r_ankle";
+field1096.child[8] = HAnimJoint1105;
 
 let HAnimJoint1106 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1106.USE = "Boxman_r_ankle";
-field1097.child[8] = HAnimJoint1106;
+HAnimJoint1106.USE = "Boxman_l_shoulder";
+field1096.child[9] = HAnimJoint1106;
 
 let HAnimJoint1107 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1107.USE = "Boxman_l_shoulder";
-field1097.child[9] = HAnimJoint1107;
+HAnimJoint1107.USE = "Boxman_r_shoulder";
+field1096.child[10] = HAnimJoint1107;
 
 let HAnimJoint1108 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1108.USE = "Boxman_r_shoulder";
-field1097.child[10] = HAnimJoint1108;
+HAnimJoint1108.USE = "Boxman_l_elbow";
+field1096.child[11] = HAnimJoint1108;
 
 let HAnimJoint1109 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1109.USE = "Boxman_l_elbow";
-field1097.child[11] = HAnimJoint1109;
+HAnimJoint1109.USE = "Boxman_r_elbow";
+field1096.child[12] = HAnimJoint1109;
 
 let HAnimJoint1110 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1110.USE = "Boxman_r_elbow";
-field1097.child[12] = HAnimJoint1110;
+HAnimJoint1110.USE = "Boxman_l_wrist";
+field1096.child[13] = HAnimJoint1110;
 
 let HAnimJoint1111 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1111.USE = "Boxman_l_wrist";
-field1097.child[13] = HAnimJoint1111;
+HAnimJoint1111.USE = "Boxman_r_wrist";
+field1096.child[14] = HAnimJoint1111;
 
 let HAnimJoint1112 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1112.USE = "Boxman_r_wrist";
-field1097.child[14] = HAnimJoint1112;
+HAnimJoint1112.USE = "Boxman_l_midtarsal";
+field1096.child[15] = HAnimJoint1112;
 
 let HAnimJoint1113 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1113.USE = "Boxman_l_midtarsal";
-field1097.child[15] = HAnimJoint1113;
+HAnimJoint1113.USE = "Boxman_r_midtarsal";
+field1096.child[16] = HAnimJoint1113;
 
-let HAnimJoint1114 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1114.USE = "Boxman_r_midtarsal";
-field1097.child[16] = HAnimJoint1114;
+Script1055.field[10] = field1096;
 
-Script1056.field[10] = field1097;
+let field1114 = browser.currentScene.createNode("field");
+field1114.name = "AvatarChoice";
+field1114.accessType = "outputOnly";
+field1114.type = "SFInt32";
+Script1055.field[11] = field1114;
 
 let field1115 = browser.currentScene.createNode("field");
-field1115.name = "AvatarChoice";
-field1115.accessType = "outputOnly";
-field1115.type = "SFInt32";
-Script1056.field[11] = field1115;
+field1115.name = "Behaviors";
+field1115.accessType = "initializeOnly";
+field1115.type = "MFNode";
+let ProtoInstance1116 = browser.currentScene.createNode("ProtoInstance");
+ProtoInstance1116.USE = "WALK";
+field1115.children = new MFNode();
 
-let field1116 = browser.currentScene.createNode("field");
-field1116.name = "Behaviors";
-field1116.accessType = "initializeOnly";
-field1116.type = "MFNode";
+field1115.children[0] = ProtoInstance1116;
+
 let ProtoInstance1117 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance1117.USE = "WALK";
-field1116.children = new MFNode();
-
-field1116.children[0] = ProtoInstance1117;
+ProtoInstance1117.USE = "RUN";
+field1115.children[1] = ProtoInstance1117;
 
 let ProtoInstance1118 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance1118.USE = "RUN";
-field1116.children[1] = ProtoInstance1118;
+ProtoInstance1118.USE = "JUMP";
+field1115.children[2] = ProtoInstance1118;
 
 let ProtoInstance1119 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance1119.USE = "JUMP";
-field1116.children[2] = ProtoInstance1119;
+ProtoInstance1119.USE = "STAND";
+field1115.children[3] = ProtoInstance1119;
 
 let ProtoInstance1120 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance1120.USE = "STAND";
-field1116.children[3] = ProtoInstance1120;
+ProtoInstance1120.USE = "KNEEL";
+field1115.children[4] = ProtoInstance1120;
 
-let ProtoInstance1121 = browser.currentScene.createNode("ProtoInstance");
-ProtoInstance1121.USE = "KNEEL";
-field1116.children[4] = ProtoInstance1121;
+Script1055.field[12] = field1115;
 
-Script1056.field[12] = field1116;
 
-let #sourceCode1122 = browser.currentScene.createNode("#sourceCode");
-Script1056.#sourceCode[13] = #sourceCode1122;
-
-browser.currentScene.children[24] = Script1056;
+Script1055.setSourceCode(`ecmascript:\n"+
+"\n"+
+"//Global Variables\n"+
+"var currentAnimatorIndex;\n"+
+"var avatarJoints;\n"+
+"var animatorFields;\n"+
+"\n"+
+"function initialize() {\n"+
+"\n"+
+"   //Avatar Joint Names\n"+
+"   avatarJoints = new Array();\n"+
+"   avatarJoints[0] ='humanoid_root';\n"+
+"   avatarJoints[1] ='sacroiliac';\n"+
+"   avatarJoints[2] ='l_hip';\n"+
+"   avatarJoints[3] ='l_knee';\n"+
+"   avatarJoints[4] ='l_ankle';\n"+
+"   avatarJoints[5] ='r_hip';\n"+
+"   avatarJoints[6] ='r_knee';\n"+
+"   avatarJoints[7] ='r_ankle';\n"+
+"   avatarJoints[8] ='skullbase';\n"+
+"   avatarJoints[9] ='l_shoulder';\n"+
+"   avatarJoints[10] ='l_elbow';\n"+
+"   avatarJoints[11] ='l_wrist';\n"+
+"   avatarJoints[12] ='r_shoulder';\n"+
+"   avatarJoints[13] ='r_elbow';\n"+
+"   avatarJoints[14] ='r_wrist';\n"+
+"   avatarJoints[15] ='l_midtarsal';\n"+
+"   avatarJoints[16] ='r_midtarsal';\n"+
+"   avatarJoints[17] ='vl_5';\n"+
+"\n"+
+"\n"+
+"   //ANIMATOR field names will be used\n"+
+"   //as fromField value of created ROUTES\n"+
+"   animatorFields = new Array();\n"+
+"   for(i = 0; i <= 17; i++) {\n"+
+"\n"+
+"      if(avatarJoints[i] =='sacroiliac') {\n"+
+"         animatorFields[i] ='lower_body_rotation_changed';\n"+
+"      }\n"+
+"\n"+
+"      else {\n"+
+"	 animatorFields[i] = avatarJoints[i] + '_rotation_changed';\n"+
+"      }\n"+
+"   } //end for loop\n"+
+"\n"+
+"\n"+
+"   // Current Avatar Choice\n"+
+"   // 0 : Allen\n"+
+"   // 1 : Nancy\n"+
+"   // 2 : Boxman\n"+
+"   AvatarChoice = 0;\n"+
+"\n"+
+"\n"+
+"   // Current Animator Behavior Index\n"+
+"   // 0 : WALK\n"+
+"   // 1 : RUN\n"+
+"   // 2 : JUMP\n"+
+"   // 3 : STAND\n"+
+"   // 4 : KNEEL\n"+
+"   currentAnimatorIndex = 3; //Initial behavior: KNEEL\n"+
+"\n"+
+"   createRoutes();\n"+
+"\n"+
+"}\n"+
+"\n"+
+"\n"+
+"function createRoutes() {\n"+
+"   //Add Routes for Allen which is current avatar\n"+
+"   if(AvatarChoice == 0) {\n"+
+"\n"+
+"      //Exception routing for humanoid_Root translation\n"+
+"      Browser.addRoute(Behaviors[currentAnimatorIndex], avatarJoints[0] + '_translation_changed', AllenJointNodes[0],'set_translation');\n"+
+"\n"+
+"      for(i = 0; i < 15; i++) {\n"+
+"\n"+
+"         Browser.addRoute(Behaviors[currentAnimatorIndex], animatorFields[i],AllenJointNodes[i],'set_rotation');\n"+
+"      }\n"+
+"\n"+
+"   }\n"+
+"\n"+
+"   //Add Routes for Nancy which is current avatar\n"+
+"   if(AvatarChoice == 1) {\n"+
+"\n"+
+"      //Exception routing for humanoid_Root translation\n"+
+"      Browser.addRoute(Behaviors[currentAnimatorIndex], avatarJoints[0] + '_translation_changed', NancyJointNodes[0],'set_translation');\n"+
+"\n"+
+"      for(i = 0; i < 15; i++) {\n"+
+"\n"+
+"         Browser.addRoute(Behaviors[currentAnimatorIndex], animatorFields[i],NancyJointNodes[i],'set_rotation');\n"+
+"      }\n"+
+"\n"+
+"   }\n"+
+"\n"+
+"   //Add Routes for Boxman which is current avatar\n"+
+"   if(AvatarChoice == 2) {\n"+
+"\n"+
+"      //Exception routing for humanoid_Root translation\n"+
+"      Browser.addRoute(Behaviors[currentAnimatorIndex], avatarJoints[0] + '_translation_changed', BoxmanJointNodes[0],'set_translation');\n"+
+"       for(i = 0; i <= 16; i++) {\n"+
+"         if(i != 1) { //no sacroiliac in Boxman\n"+
+"            Browser.addRoute(Behaviors[currentAnimatorIndex], animatorFields[i], BoxmanJointNodes[i],'set_rotation');\n"+
+"         }\n"+
+"      }\n"+
+"    }\n"+
+"}\n"+
+"\n"+
+"\n"+
+"function removeRoutes() {\n"+
+"   //Remove Routes for Allen which is current avatar\n"+
+"   if(AvatarChoice == 0) {\n"+
+"\n"+
+"      //Exception routing for humanoid_Root translation\n"+
+"      Browser.deleteRoute(Behaviors[currentAnimatorIndex], avatarJoints[0] + '_translation_changed', AllenJointNodes[0],'set_translation');\n"+
+"\n"+
+"      for(i = 0; i < 15; i++) {\n"+
+"         Browser.deleteRoute(Behaviors[currentAnimatorIndex], animatorFields[i],AllenJointNodes[i],'set_rotation');\n"+
+"      }\n"+
+"\n"+
+"   }\n"+
+"\n"+
+"   //Remove Routes for Nancy which is current avatar\n"+
+"   if(AvatarChoice == 1) {\n"+
+"\n"+
+"      //Exception routing for humanoid_Root translation               \n"+
+"      Browser.deleteRoute(Behaviors[currentAnimatorIndex], avatarJoints[0] + '_translation_changed', NancyJointNodes[0],'set_translation'); 	               \n"+
+"\n"+
+"      //Exception routing for humanoid_Root translation\n"+
+"      Browser.deleteRoute(Behaviors[currentAnimatorIndex], avatarJoints[0] + '_translation_changed', NancyJointNodes[0],'set_translation');\n"+
+"\n"+
+"      for(i = 0; i < 15; i++) {\n"+
+"\n"+
+"         Browser.deleteRoute(Behaviors[currentAnimatorIndex], animatorFields[i],NancyJointNodes[i],'set_rotation');\n"+
+"      }\n"+
+"\n"+
+"\n"+
+"   }\n"+
+"\n"+
+"   //Remove Routes for Boxman which is current avatar\n"+
+"   if(AvatarChoice == 2) {\n"+
+"\n"+
+"      //Exception routing for humanoid_Root translation\n"+
+"      Browser.deleteRoute(Behaviors[currentAnimatorIndex], avatarJoints[0] + '_translation_changed', BoxmanJointNodes[0],'set_translation');\n"+
+"\n"+
+"      for(i = 0; i < 17; i++) {\n"+
+"         if(i != 1) {\n"+
+"            Browser.deleteRoute(Behaviors[currentAnimatorIndex], animatorFields[i],BoxmanJointNodes[i],'set_rotation');\n"+
+"         }\n"+
+"      }\n"+
+"\n"+
+"   }\n"+
+"}\n"+
+"\n"+
+"\n"+
+"\n"+
+"function switchAvatarToAllen (bool, timeStamp) {//Invoked when Allen text is clicked.\n"+
+"   //A control structure to avoid excessive work. If current avatar is Allen, don't do anything.\n"+
+"   if(AvatarChoice != 0) {\n"+
+"      removeRoutes();\n"+
+"      AvatarChoice = 0;\n"+
+"      createRoutes();\n"+
+"\n"+
+"   }\n"+
+"}\n"+
+"\n"+
+"\n"+
+"function switchAvatarToNancy (bool, timeStamp) {//Invoked when Nancy text is clicked.\n"+
+"\n"+
+"   //A control structure to avoid excessive work. If current avatar is Nancy, don't do anything.\n"+
+"   if(AvatarChoice != 1) {\n"+
+"      removeRoutes();\n"+
+"      AvatarChoice = 1;\n"+
+"      createRoutes();\n"+
+"\n"+
+"   }\n"+
+"}\n"+
+"\n"+
+"\n"+
+"function switchAvatarToBoxman (bool, timeStamp) {//Invoked when Boxman text is clicked.\n"+
+"\n"+
+"   //A control structure to avoid excessive work. If current avatar is Boxman, don't do anything.\n"+
+"   if(AvatarChoice != 2) {\n"+
+"      removeRoutes();\n"+
+"      AvatarChoice = 2;\n"+
+"      createRoutes();\n"+
+"\n"+
+"   }\n"+
+"}\n"+
+"\n"+
+"\n"+
+"function changeBehaviorToWalk(bool, timeStamp) {\n"+
+"\n"+
+"   if(currentAnimatorIndex != 0) {\n"+
+"     removeRoutes();\n"+
+"     currentAnimatorIndex = 0;\n"+
+"     createRoutes();\n"+
+"   }\n"+
+"}\n"+
+"\n"+
+"function changeBehaviorToRun(bool, timeStamp) {\n"+
+"\n"+
+"   if(currentAnimatorIndex != 1) {\n"+
+"      removeRoutes();\n"+
+"      currentAnimatorIndex = 1;\n"+
+"      createRoutes();\n"+
+"   }\n"+
+"}\n"+
+"\n"+
+"\n"+
+"\n"+
+"function changeBehaviorToJump(bool, timeStamp) {\n"+
+"\n"+
+"   if(currentAnimatorIndex != 2) {\n"+
+"      removeRoutes();\n"+
+"      currentAnimatorIndex = 2;\n"+
+"      createRoutes();\n"+
+"   }\n"+
+"\n"+
+"}\n"+
+"\n"+
+"\n"+
+"function changeBehaviorToStand(bool, timeStamp) {\n"+
+"\n"+
+"   if(currentAnimatorIndex != 3) {\n"+
+"      removeRoutes();\n"+
+"      currentAnimatorIndex = 3;\n"+
+"      createRoutes();\n"+
+"   }\n"+
+"\n"+
+"}\n"+
+"\n"+
+"function changeBehaviorToKneel(bool, timeStamp) {\n"+
+"\n"+
+"   if(currentAnimatorIndex != 4) {\n"+
+"      removeRoutes();\n"+
+"      currentAnimatorIndex = 4;\n"+
+"      createRoutes();\n"+
+"   }\n"+
+"\n"+
+"}`)
+browser.currentScene.children[24] = Script1055;
 
 //***********Script routes*************
-let ROUTE1123 = browser.currentScene.createNode("ROUTE");
-ROUTE1123.fromField = "AvatarChoice";
-ROUTE1123.fromNode = "ActorAnimator";
-ROUTE1123.toField = "whichChoice";
-ROUTE1123.toNode = "AvatarSwitch";
-browser.currentScene.children[25] = ROUTE1123;
+let ROUTE1121 = browser.currentScene.createNode("ROUTE");
+ROUTE1121.fromField = "AvatarChoice";
+ROUTE1121.fromNode = "ActorAnimator";
+ROUTE1121.toField = "whichChoice";
+ROUTE1121.toNode = "AvatarSwitch";
+browser.currentScene.children[25] = ROUTE1121;
 
 //*************Behavior Touch Sensor Routes**************
+let ROUTE1122 = browser.currentScene.createNode("ROUTE");
+ROUTE1122.fromField = "isActive";
+ROUTE1122.fromNode = "Walk_Touch";
+ROUTE1122.toField = "changeBehaviorToWalk";
+ROUTE1122.toNode = "ActorAnimator";
+browser.currentScene.children[26] = ROUTE1122;
+
+let ROUTE1123 = browser.currentScene.createNode("ROUTE");
+ROUTE1123.fromField = "isActive";
+ROUTE1123.fromNode = "Run_Touch";
+ROUTE1123.toField = "changeBehaviorToRun";
+ROUTE1123.toNode = "ActorAnimator";
+browser.currentScene.children[27] = ROUTE1123;
+
 let ROUTE1124 = browser.currentScene.createNode("ROUTE");
 ROUTE1124.fromField = "isActive";
-ROUTE1124.fromNode = "Walk_Touch";
-ROUTE1124.toField = "changeBehaviorToWalk";
+ROUTE1124.fromNode = "Jump_Touch";
+ROUTE1124.toField = "changeBehaviorToJump";
 ROUTE1124.toNode = "ActorAnimator";
-browser.currentScene.children[26] = ROUTE1124;
+browser.currentScene.children[28] = ROUTE1124;
 
 let ROUTE1125 = browser.currentScene.createNode("ROUTE");
 ROUTE1125.fromField = "isActive";
-ROUTE1125.fromNode = "Run_Touch";
-ROUTE1125.toField = "changeBehaviorToRun";
+ROUTE1125.fromNode = "Stand_Touch";
+ROUTE1125.toField = "changeBehaviorToStand";
 ROUTE1125.toNode = "ActorAnimator";
-browser.currentScene.children[27] = ROUTE1125;
+browser.currentScene.children[29] = ROUTE1125;
 
 let ROUTE1126 = browser.currentScene.createNode("ROUTE");
 ROUTE1126.fromField = "isActive";
-ROUTE1126.fromNode = "Jump_Touch";
-ROUTE1126.toField = "changeBehaviorToJump";
+ROUTE1126.fromNode = "Kneel_Touch";
+ROUTE1126.toField = "changeBehaviorToKneel";
 ROUTE1126.toNode = "ActorAnimator";
-browser.currentScene.children[28] = ROUTE1126;
+browser.currentScene.children[30] = ROUTE1126;
 
 let ROUTE1127 = browser.currentScene.createNode("ROUTE");
-ROUTE1127.fromField = "isActive";
-ROUTE1127.fromNode = "Stand_Touch";
-ROUTE1127.toField = "changeBehaviorToStand";
-ROUTE1127.toNode = "ActorAnimator";
-browser.currentScene.children[29] = ROUTE1127;
-
-let ROUTE1128 = browser.currentScene.createNode("ROUTE");
-ROUTE1128.fromField = "isActive";
-ROUTE1128.fromNode = "Kneel_Touch";
-ROUTE1128.toField = "changeBehaviorToKneel";
-ROUTE1128.toNode = "ActorAnimator";
-browser.currentScene.children[30] = ROUTE1128;
-
-let ROUTE1129 = browser.currentScene.createNode("ROUTE");
-ROUTE1129.fromField = "touchTime";
-ROUTE1129.fromNode = "Kneel_Touch";
-ROUTE1129.toField = "set_startTime";
-ROUTE1129.toNode = "KNEEL";
-browser.currentScene.children[31] = ROUTE1129;
+ROUTE1127.fromField = "touchTime";
+ROUTE1127.fromNode = "Kneel_Touch";
+ROUTE1127.toField = "set_startTime";
+ROUTE1127.toNode = "KNEEL";
+browser.currentScene.children[31] = ROUTE1127;
 
 //*************Avatar Name Touch Sensor Routes**************
+let ROUTE1128 = browser.currentScene.createNode("ROUTE");
+ROUTE1128.fromField = "isActive";
+ROUTE1128.fromNode = "Allen_Touch";
+ROUTE1128.toField = "switchAvatarToAllen";
+ROUTE1128.toNode = "ActorAnimator";
+browser.currentScene.children[32] = ROUTE1128;
+
+let ROUTE1129 = browser.currentScene.createNode("ROUTE");
+ROUTE1129.fromField = "isActive";
+ROUTE1129.fromNode = "Nancy_Touch";
+ROUTE1129.toField = "switchAvatarToNancy";
+ROUTE1129.toNode = "ActorAnimator";
+browser.currentScene.children[33] = ROUTE1129;
+
 let ROUTE1130 = browser.currentScene.createNode("ROUTE");
 ROUTE1130.fromField = "isActive";
-ROUTE1130.fromNode = "Allen_Touch";
-ROUTE1130.toField = "switchAvatarToAllen";
+ROUTE1130.fromNode = "Boxman_Touch";
+ROUTE1130.toField = "switchAvatarToBoxman";
 ROUTE1130.toNode = "ActorAnimator";
-browser.currentScene.children[32] = ROUTE1130;
+browser.currentScene.children[34] = ROUTE1130;
 
 let ROUTE1131 = browser.currentScene.createNode("ROUTE");
-ROUTE1131.fromField = "isActive";
-ROUTE1131.fromNode = "Nancy_Touch";
-ROUTE1131.toField = "switchAvatarToNancy";
-ROUTE1131.toNode = "ActorAnimator";
-browser.currentScene.children[33] = ROUTE1131;
-
-let ROUTE1132 = browser.currentScene.createNode("ROUTE");
-ROUTE1132.fromField = "isActive";
-ROUTE1132.fromNode = "Boxman_Touch";
-ROUTE1132.toField = "switchAvatarToBoxman";
-ROUTE1132.toNode = "ActorAnimator";
-browser.currentScene.children[34] = ROUTE1132;
-
-let ROUTE1133 = browser.currentScene.createNode("ROUTE");
-ROUTE1133.fromField = "rotation_changed";
-ROUTE1133.fromNode = "Boxman_r_elbow";
-ROUTE1133.toField = "update";
-ROUTE1133.toNode = "ENGINE";
-browser.currentScene.children[35] = ROUTE1133;
+ROUTE1131.fromField = "rotation_changed";
+ROUTE1131.fromNode = "Boxman_r_elbow";
+ROUTE1131.toField = "update";
+ROUTE1131.toNode = "ENGINE";
+browser.currentScene.children[35] = ROUTE1131;
 
