@@ -3302,7 +3302,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 <xsl:text>'</xsl:text>
                 <!-- opening tag is unclosed since followed by attributes -->
                 <!-- output simple-type fields as XML attributes -->
-                <xsl:for-each select="$allFields[not(contains(@type,'Node'))]">
+                <xsl:for-each select="$allFields[not(contains(@type,'Node')) and not(@name = 'sourceCode')]">
                     <xsl:sort select="@name[not(.='DEF') and not(.='USE')]" order="ascending"/>
                     <xsl:sort select="(@name = 'USE')"/>
                     <xsl:sort select="(@name = 'DEF')"/>
@@ -3377,7 +3377,11 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                     </xsl:if>
                 </xsl:for-each>
                 <xsl:text>
-        if not self.hasChild():</xsl:text>
+        if not self.hasChild()</xsl:text>
+            <xsl:if test="(@name = 'Script') or (@name = 'ShaderProgram') or (@name = 'ShaderPart')">
+                <xsl:text> and not self.sourceCode</xsl:text>
+            </xsl:if>
+            <xsl:text>:</xsl:text>
                 <xsl:text disable-output-escaping="yes"><![CDATA[
             if syntax.upper() == "HTML5":
                 result += '></]]></xsl:text><!-- closing tag -->
@@ -3470,6 +3474,18 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 <xsl:text disable-output-escaping="yes"><![CDATA[
         result += indent +
 -->
+                <xsl:if test="(@name = 'Script') or (@name = 'ShaderProgram') or (@name = 'ShaderPart')">
+                    <!-- debug diagnostic -->
+                    <xsl:message>
+                        <xsl:text>*** found @name=</xsl:text>
+                        <xsl:value-of select="@name"/>
+                        <xsl:text> for sourceCode test</xsl:text>
+                    </xsl:message>
+                    <xsl:text disable-output-escaping="yes"><![CDATA[
+            if self.sourceCode:
+                result += indent + '<![]]></xsl:text><xsl:text>CDATA[' + (self.sourceCode) + ']</xsl:text>
+                    <xsl:text disable-output-escaping="yes"><![CDATA[]>\n']]></xsl:text>
+                </xsl:if>
                 <xsl:text disable-output-escaping="yes"><![CDATA[
             result += indent + '</]]></xsl:text><!-- closing tag -->
                 <xsl:value-of select="$elementName"/>

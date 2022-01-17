@@ -8267,7 +8267,7 @@
 						"format": "uri-reference"
 					}
 				},
-				"#sourceText": {
+				"#sourceCode": {
 					"type": "array",
 					"minItems": 1,
 					"items": {
@@ -10792,7 +10792,7 @@
 						"format": "uri-reference"
 					}
 				},
-				"#sourceText": {
+				"#sourceCode": {
 					"type": "array",
 					"items": {
 						"type": "string"
@@ -10932,7 +10932,7 @@
 						"format": "uri-reference"
 					}
 				},
-				"#sourceText": {
+				"#sourceCode": {
 					"type": "array",
 					"minItems": 1,
 					"items": {
@@ -10971,7 +10971,7 @@
 						"format": "uri-reference"
 					}
 				},
-				"#sourceText": {
+				"#sourceCode": {
 					"type": "array",
 					"minItems": 1,
 					"items": {

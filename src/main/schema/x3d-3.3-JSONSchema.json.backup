@@ -8316,7 +8316,7 @@
 						"format": "uri"
 					}
 				},
-				"#sourceText": {
+				"#sourceCode": {
 					"type": "array",
 					"minItems": 1,
 					"items": {
@@ -10844,7 +10844,7 @@
 						"format": "uri"
 					}
 				},
-				"#sourceText": {
+				"#sourceCode": {
 					"type": "array",
 					"items": {
 						"type": "string"
@@ -10985,7 +10985,7 @@
 						"format": "uri"
 					}
 				},
-				"#sourceText": {
+				"#sourceCode": {
 					"type": "array",
 					"minItems": 1,
 					"items": {
@@ -11024,7 +11024,7 @@
 						"format": "uri"
 					}
 				},
-				"#sourceText": {
+				"#sourceCode": {
 					"type": "array",
 					"minItems": 1,
 					"items": {
