@@ -9,7 +9,7 @@ X3D(
           meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/browser.x3d"),
           meta(name="description", content="a script test with embedded 
  between single quotes, a double backslash \\ a backslash \ and a closing quote \""),
-          meta(name="translated", content="17 January 2022"),
+          meta(name="translated", content="18 January 2022"),
           meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
           meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")]), Scene=Scene(
     children=[

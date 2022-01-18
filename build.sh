@@ -6,7 +6,7 @@ source venv/Scripts/activate
 
 # bring in source from sourceforget
 pushd /c/x3d-code/www.web3d.org
-# svn up .
+svn up .
 popd
 
 # copy code to X3DJSONLD locations

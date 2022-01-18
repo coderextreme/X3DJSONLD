@@ -19,7 +19,7 @@ X3D(
           meta(name="identifier", content="https://x3dgraphics.com/examples/X3dForAdvancedModeling/MotionAnimation/BvhSeamless3dExport1.x3d"),
           meta(name="reference", content="https://sourceforge.net/p/x3d/code/24079"),
           meta(name="license", content="license.html"),
-          meta(name="translated", content="17 January 2022"),
+          meta(name="translated", content="18 January 2022"),
           meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
           meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")]), Scene=Scene(
     children=[

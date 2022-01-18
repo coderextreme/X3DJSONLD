@@ -8304,7 +8304,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 										<xsl:text>&#10;</xsl:text>
 										<xsl:text>	{</xsl:text>
 										<xsl:text>&#10;</xsl:text>
-										<xsl:text>		// set-newValue-validity-checks #0</xsl:text>
+										<xsl:text>		// set-newValue-validity-checks #0.a</xsl:text>
 										<xsl:text>&#10;</xsl:text>
 										<xsl:call-template name="set-newValue-validity-checks">
 											<xsl:with-param name="elementName"      ><xsl:value-of select="$name"/></xsl:with-param>
@@ -9616,8 +9616,16 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 									<xsl:if test="($isArrayListType = 'true') and not($javaReferenceType = 'X3DNode') and not($isX3dStatement = 'true')">
 										<xsl:value-of select="$newValueNullSetDEFAULT_VALUE"/>
 									</xsl:if>
-									<!-- assumption: SF/MF object assignment is OK due to object integrity
+									<!-- assumption: SF/MF object assignment is OK due to object integrity.
+                                                                             therefore check if MFString value was actually sent as SFString
 									-->
+                                                                        <xsl:text disable-output-escaping="yes">
+                // cast SFString value to MFString value if needed
+                if ((newValue.getValue().length() - newValue.getValue().replace("\"", "").length()) > 2) // more than two quotation marks
+                    return set</xsl:text>
+                <xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
+                <xsl:text>(new MFString(newValue));</xsl:text>
+                <xsl:text>&#10;</xsl:text>
 									<xsl:text>		// set-newValue-validity-checks #2</xsl:text>
 									<xsl:text>&#10;</xsl:text>
 									<xsl:call-template name="set-newValue-validity-checks">
@@ -9703,8 +9711,16 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 									<xsl:if test="($isArrayListType = 'true') and not($javaReferenceType = 'X3DNode') and not($isX3dStatement = 'true')">
 										<xsl:value-of select="$newValueNullSetDEFAULT_VALUE"/>
 									</xsl:if>
-									<!-- assumption: SF/MF object assignment is OK due to object integrity
+									<!-- assumption: SF/MF object assignment is OK due to object integrity.
+                                                                             therefore check if MFString value was actually sent as SFString
 									-->
+                                                                        <xsl:text disable-output-escaping="yes">
+                // cast String value to MFString if needed
+                if ((newValue.length() - newValue.replace("\"", "").length()) > 2) // more than two quotation marks
+                    return set</xsl:text>
+                <xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
+                <xsl:text>(new MFString(newValue));</xsl:text>
+                <xsl:text>&#10;</xsl:text>
 									<xsl:text>		// set-newValue-validity-checks #3</xsl:text>
 									<xsl:text>&#10;</xsl:text>
 									<xsl:call-template name="set-newValue-validity-checks">
@@ -10580,10 +10596,10 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 ////	 */
 ////	public final ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ setHtmlID(String newValue)
 ////	{
-////		// set-newValue-validity-checks #0
+////		// set-newValue-validity-checks #0.b
 ////		if (newValue == null)
-////			newValue = new String(); // Principle of Least Astonishment (POLA) #5
-////			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
+////		    newValue = new String(); // Principle of Least Astonishment (POLA) #5
+////		    // https://en.wikipedia.org/wiki/Principle_of_least_astonishment
 ////		setConcreteHtmlID(newValue); // private superclass method
 ////		return this;
 ////	}
@@ -10609,10 +10625,10 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 */
 	public final ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ setCssStyle(String newValue)
 	{
-		// set-newValue-validity-checks #0
+		// set-newValue-validity-checks #0.c
 		if (newValue == null)
-			newValue = new String(); // Principle of Least Astonishment (POLA) #5
-			// https://en.wikipedia.org/wiki/Principle_of_least_astonishment
+		    newValue = new String(); // Principle of Least Astonishment (POLA) #5
+		    // https://en.wikipedia.org/wiki/Principle_of_least_astonishment
 		setConcreteCssStyle(newValue); // private superclass method
 		return this;
 	}
@@ -12807,15 +12823,16 @@ setAttribute method invocations).
 	 * Accessor method to assign IS instance (using a properly typed node) to inputOutput SFNode field <i>IS</i>.
 	 * @param newValue is new value for the IS field.
 	 * @return {@link fieldValue} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
-	 */	public fieldValue setIS(IS newValue)
+	 */
+	public fieldValue setIS(IS newValue)
 	{
-		// set-newValue-validity-checks #0
-		IS = newValue;
-		if (newValue != null)
-		{
-			((X3DConcreteElement) IS).setParent(this); // parentTest15
-		}
-		return this;
+            // set-newValue-validity-checks #0.d
+            IS = newValue;
+            if (newValue != null)
+            {
+                    ((X3DConcreteElement) IS).setParent(this); // parentTest15
+            }
+            return this;
 	}
 
 	/**
@@ -39288,10 +39305,10 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
 				<xsl:when test="($x3dType='SFString')">
 					<xsl:text>		if (</xsl:text><xsl:value-of select="$newValue"/><xsl:text> == null)
 		{
-			</xsl:text>
+                    </xsl:text>
 					<xsl:value-of select="$newValue"/>
 					<xsl:text> = new String(); // null string check
-        }
+		}
 </xsl:text>
 					<xsl:variable name="isEnumerationType" select="(count(enumeration) > 0)"/>
 					<xsl:variable name="isEnumerationTypeRequired" select="boolean(@additionalEnumerationValuesAllowed='false')"/>
@@ -39305,20 +39322,22 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
 				</xsl:when>
 				<xsl:when test="($x3dType='MFString')">
 					<xsl:text>		if (</xsl:text><xsl:value-of select="$newValue"/><xsl:text> == null)
-		{
-			clear</xsl:text>
-                    <xsl:value-of select="upper-case(substring(@name,1,1))"/>
-                    <xsl:value-of select="substring(@name,2)"/><!-- upper camel case -->
-					<xsl:text>(); // null string check
-            return this;
-        }
+                {
+                    clear</xsl:text>
+                        <xsl:value-of select="upper-case(substring(@name,1,1))"/>
+                        <xsl:value-of select="substring(@name,2)"/><!-- upper camel case -->
+                        <xsl:text>(); // null string check
+                    return this;
+                }
 </xsl:text>
 				</xsl:when>
 				<!-- TODO multiple methods? works for String but not ArrayList<String>
 				-->
 			</xsl:choose>
+                        
 			<xsl:text>
-	// Check that newValue parameter has one of the allowed legal values before assigning to scene graph</xsl:text>
+                // TODO check if SFString parameter has a multistring value, then split it
+                // Check that newValue parameter has one of the allowed legal values before assigning to scene graph</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 			<xsl:if test="starts-with($elementName, 'HAnim') and (@name = 'name')">
 				<xsl:text>
@@ -39366,11 +39385,28 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
         {
 ]]></xsl:text>
                 <xsl:if test="(@type='MFString')">
-                        <xsl:text disable-output-escaping="yes"><![CDATA[
-            if (newValue[i].trim().startsWith("\"") && newValue[i].endsWith("\""))
+                        <xsl:text disable-output-escaping="yes"><![CDATA[            String priorValue = newValue[i];
+            if (newValue[i].trim().startsWith("\"") || (newValue[i].trim().endsWith("\"") && !newValue[i].trim().endsWith("\\\"")) ||
+                !newValue[i].trim().equals(priorValue))
             {
-                newValue[i] = newValue[i].trim().substring(1, newValue[i].length()-1); // unquote quoted strings before comparison
+                newValue[i] = newValue[i].trim();
                 System.out.println ("trimmed MFString newValue[" + i + "]=" + newValue[i]); // debug diagnostic
+
+                // unquote quoted strings before comparison
+                boolean reduced = false;
+                if (newValue[i].startsWith("\""))
+                {
+                    newValue[i] = newValue[i].substring(1);
+                    reduced = true;
+                }
+                if (newValue[i].endsWith("\"") && !newValue[i].endsWith("\\\""))
+                {
+                    newValue[i] = newValue[i].substring(1, newValue[i].length()-1);
+                    reduced = true;
+                }
+                if (reduced)
+                    System.out.println ("*** trimmed MFString newValue[" + i + "]=" + newValue[i] + 
+                            " from prior value \"" + priorValue + "\""); // debug diagnostic
             }
 ]]></xsl:text>
                 </xsl:if>
@@ -39459,8 +39495,8 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
 				<xsl:text>)</xsl:text>
 			</xsl:for-each>
 			<xsl:text>))</xsl:text>
-            <xsl:text>&#10;</xsl:text>
-            <xsl:text>		</xsl:text>
+                        <xsl:text>&#10;</xsl:text>
+                        <xsl:text>		</xsl:text>
 			<xsl:text>{</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 			<xsl:if test="($elementName = 'HAnimSite') and (@name = 'name')">
@@ -39477,7 +39513,6 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
                     <xsl:text>Info: </xsl:text>
                 </xsl:otherwise>
             </xsl:choose>
-                        <xsl:text>Warning: </xsl:text>
 			<xsl:value-of select="ancestor::*[string-length(@name) > 0]/@name"/>
 			<xsl:text> </xsl:text>
 			<xsl:value-of select="@name"/>
@@ -39499,7 +39534,11 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
                         <xsl:if test="$isEnumerationTypeRequired">
                             <xsl:text> optional</xsl:text>
                         </xsl:if>
-			<xsl:text> value not matching any of the </xsl:text>
+			<xsl:text> value</xsl:text>
+                        <xsl:if test="($x3dType='MFString') and ($isArrayListType = 'true') and ($comparisonType = 'simple')">
+                            <xsl:text> newValue[" + i + "]=" + newValue[i] + "</xsl:text>
+                        </xsl:if>
+			<xsl:text> not matching any of the </xsl:text>
             <xsl:choose>
                 <xsl:when test="$isEnumerationTypeRequired">
                     <xsl:text>required enumeration</xsl:text>
@@ -39512,7 +39551,20 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
             <xsl:if test="($isArrayListType = 'true') and ($comparisonType = 'simple')">
 				<xsl:text>
 			if (newValue[i].contains(" "))
-                    warningMessage += " Note that enumeration value \"" + newValue[i] + "\" contains embedded whitespace, need to check necessary quoting of individual MFString values.";</xsl:text>
+                            warningMessage += " Note that enumeration value \"" + newValue[i] + "\" contains embedded whitespace, need to check necessary quoting of individual MFString values.";</xsl:text>
+            </xsl:if>
+            <!-- multiple accessor methods include this trace -->
+            <xsl:if test="(ancestor::*[string-length(@name) > 0]/@name = 'NavigationInfo') and (@name = 'type')">
+                <xsl:text>&#10;</xsl:text>
+                <xsl:text>                        warningMessage += "\n*** trace: </xsl:text>
+                <xsl:value-of select="ancestor::*[string-length(@name) > 0]/@name"/>
+                <xsl:text> </xsl:text>
+                <xsl:value-of select="@name"/>
+                <xsl:text> </xsl:text>
+                <xsl:value-of select="$x3dType"/>
+                <xsl:text> </xsl:text>
+                <xsl:text> newValue=" + newValue + " with newValue.getClass().getTypeName()=" + newValue.getClass().getTypeName()</xsl:text>
+                <xsl:text>;</xsl:text>
             </xsl:if>
             <xsl:text>&#10;</xsl:text>
 			<xsl:if test="($elementName = 'meta') and (@name = 'name')">
