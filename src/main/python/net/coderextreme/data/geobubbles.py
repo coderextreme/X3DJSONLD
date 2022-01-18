@@ -9,7 +9,7 @@ X3D(
           meta(name="generator", content="manual"),
           meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/geobubbles.x3d"),
           meta(name="description", content="geo bubbles"),
-          meta(name="translated", content="17 January 2022"),
+          meta(name="translated", content="18 January 2022"),
           meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
           meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")]), Scene=Scene(
     children=[#Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/

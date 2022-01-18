@@ -20,7 +20,7 @@ var autoclass = require('./X3Dautoclass');
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d">HelloWorldProgramOutput.x3d</a> </td>
+			<td> <a href="HelloWorldProgramOutputCanonical.x3d">HelloWorldProgramOutputCanonical.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -72,7 +72,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3dv">HelloWorldProgramOutput.x3dv</a> </td>
+			<td> <a href="HelloWorldProgramOutput.x3dv">HelloWorldProgramOutput.x3dv</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -80,7 +80,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.html">HelloWorldProgramOutput.html</a> </td>
+			<td> <a href="HelloWorldProgramOutput.html">HelloWorldProgramOutput.html</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
@@ -92,7 +92,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
-			<td> <a href="http://www.web3d.org/specifications/java/examples/../license.html">../license.html</a> </td>
+			<td> <a href="../license.html">../license.html</a> </td>
 		</tr>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center;" colspan="2">  &nbsp; </td>
@@ -135,7 +135,7 @@ HelloWorldProgramOutputCanonical.prototype = {
     .addComponent((new autoclass.component()).setName("Layering").setLevel(1))
     .addUnit((new autoclass.unit()).setName("AngleUnitConversion").setCategory("angle").setConversionFactor(1.0))
     .addUnit((new autoclass.unit()).setName("LengthUnitConversion").setCategory("length").setConversionFactor(1.0))
-    .addMeta((new autoclass.meta()).setName("title").setContent("HelloWorldProgramOutput.x3d"))
+    .addMeta((new autoclass.meta()).setName("title").setContent("HelloWorldProgramOutputCanonical.x3d"))
     .addMeta((new autoclass.meta()).setName("description").setContent("Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface Library (X3DJSAIL)"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("http://www.web3d.org/specifications/java/X3DJSAIL.html"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("HelloWorldProgramOutput.java"))

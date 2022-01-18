@@ -13,7 +13,7 @@ X3D(
           component(name="Layering", level=1), unit=(
           name="AngleUnitConversion", category="angle", conversionFactor=1.0,
           name="LengthUnitConversion", category="length", conversionFactor=1.0), 
-          meta(name="title", content="HelloWorldProgramOutput.x3d"),
+          meta(name="title", content="HelloWorldProgramOutputCanonical.x3d"),
           meta(name="description", content="Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface Library (X3DJSAIL)"),
           meta(name="reference", content="http://www.web3d.org/specifications/java/X3DJSAIL.html"),
           meta(name="generator", content="HelloWorldProgramOutput.java"),
@@ -32,7 +32,7 @@ X3D(
           meta(name="reference", content="https://savage.nps.edu/X3dValidator?url=http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"),
           meta(name="identifier", content="http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"),
           meta(name="license", content="../license.html"),
-          meta(name="translated", content="17 January 2022"),
+          meta(name="translated", content="18 January 2022"),
           meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
           meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")]), Scene=Scene(
     children=[

@@ -37,7 +37,7 @@ var X3D0 =  X3D(
           meta_ : [
             meta(
               name_ : SFString('title'),
-              content_ : SFString('HelloWorldProgramOutput.x3d')),
+              content_ : SFString('HelloWorldProgramOutputCanonical.x3d')),
 
             meta(
               name_ : SFString('description'),
