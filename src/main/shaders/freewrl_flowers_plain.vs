@@ -1,6 +1,4 @@
-#ifdef GL_ES
-  precision highp float;
-#endif
+precision highp float;
 
 vec4 ftransform() {
 	return vec4 (fw_ProjectionMatrix*fw_ModelViewMatrix*fw_Vertex);

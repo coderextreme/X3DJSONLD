@@ -75,10 +75,8 @@ ecmascript:
                 function initialize() {
 		    Browser.print('DUDES\n'+'"DUDETTES');
                 }
-
-            """))
+"""))
     .addChild(new Script("Clouds").setSourceCode("""
-        
 ecmascript:
 
 
@@ -89,8 +87,7 @@ var xxx = ' '+' '+
 '    ' + '               	\n';
 
 }
-
-            """)));
+""")));
     }
 	// end of initialize() method
 

@@ -158,7 +158,7 @@
                 "@type": "MFString"
               }
             ],
-            "#sourceText": [
+            "#sourceCode": [
               "",
               "",
               "ecmascript:",
@@ -318,7 +318,7 @@
                 "@type": "MFString"
               }
             ],
-            "#sourceText": [
+            "#sourceCode": [
               "",
               "",
               "ecmascript:",
@@ -5350,7 +5350,7 @@
                                                                       "@value": true
                                                                     }
                                                                   ],
-                                                                  "#sourceText": [
+                                                                  "#sourceCode": [
                                                                     "",
                                                                     "",
                                                                     "ecmascript:",
@@ -19926,7 +19926,7 @@
                 "@type": "SFBool"
               }
             ],
-            "#sourceText": [
+            "#sourceCode": [
               "",
               "",
               "ecmascript:",

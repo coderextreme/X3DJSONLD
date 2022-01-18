@@ -3,7 +3,7 @@
     "@profile":"Full",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -32,7 +32,7 @@
           },
           {
             "@name":"translated",
-            "@content":"24 November 2021"
+            "@content":"17 January 2022"
           },
           {
             "@name":"generator",
@@ -58,7 +58,7 @@
                 { "NavigationInfo":
                   {
                     "@DEF":"_top",
-                    "@type":["EXAMINE"],
+                    "@type":"\"EXAMINE\"",
                     "@transitionType":["ANIMATE"],
                     "@transitionTime":2
                   }
@@ -66,7 +66,7 @@
                 { "NavigationInfo":
                   {
                     "@DEF":"_inside",
-                    "@type":[", ","ANYWALK"],
+                    "@type":"\"ANY\", \"WALK\"",
                     "@speed":0.3,
                     "@headlight":false,
                     "@transitionType":["ANIMATE"],

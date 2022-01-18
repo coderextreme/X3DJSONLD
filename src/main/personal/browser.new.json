@@ -45,7 +45,7 @@
           { "Script":
             {
               "@DEF":"Browser",
-              "#sourceText":[
+              "#sourceCode":[
 "",
 "",
 "ecmascript:",
@@ -60,7 +60,7 @@
           { "Script":
             {
               "@DEF":"Clouds",
-              "#sourceText":[
+              "#sourceCode":[
 "",
 "",
 "ecmascript:",

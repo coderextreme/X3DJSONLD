@@ -78,11 +78,21 @@ newModel=X3D(profile='Immersive',version='4.0',
                 parts=ShaderPart(
                   IS=IS(
                     connect=[
-                    connect(nodeField='url',protoField='vertex')])),
+                    connect(nodeField='url',protoField='vertex')]),
+
+                  sourceCode="""
+ecmascript:
+
+"""),
                 ShaderPart(type='FRAGMENT',
                   IS=IS(
                     connect=[
-                    connect(nodeField='url',protoField='fragment')])))),
+                    connect(nodeField='url',protoField='fragment')]),
+
+                  sourceCode="""
+ecmascript:
+
+"""))),
             geometry=Sphere(),),
           Script(DEF='Animate',
             field=[
@@ -94,9 +104,76 @@ newModel=X3D(profile='Immersive',version='4.0',
             field(name='c',type='SFFloat',accessType='inputOutput',value=3),
             field(name='d',type='SFFloat',accessType='inputOutput',value=3),
             field(name='tdelta',type='SFFloat',accessType='inputOutput',value=0.5),
-            field(name='pdelta',type='SFFloat',accessType='inputOutput',value=0.5)]
-*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
-),
+            field(name='pdelta',type='SFFloat',accessType='inputOutput',value=0.5)],
+
+            sourceCode="""
+ecmascript:
+			function initialize() {
+			    translation = new SFVec3f(0, 0, 0);
+			    velocity = new SFVec3f(
+			    	Math.random() - 0.5,
+				Math.random() - 0.5,
+				Math.random() - 0.5);
+			}
+			function set_fraction() {
+			    translation = new SFVec3f(
+			    	translation.x + velocity.x,
+				translation.y + velocity.y,
+				translation.z + velocity.z);
+			    for (var j = 0; j <= 2; j++) {
+				    if (Math.abs(translation.x) > 10) {
+					initialize();
+				    } else if (Math.abs(translation.y) > 10) {
+					initialize();
+				    } else if (Math.abs(translation.z) > 10) {
+					initialize();
+				    } else {
+					velocity.x += Math.random() * 0.2 - 0.1;
+					velocity.y += Math.random() * 0.2 - 0.1;
+					velocity.z += Math.random() * 0.2 - 0.1;
+				    }
+			    }
+			    animate_flowers();
+			}
+
+			function animate_flowers(fraction, eventTime) {
+				var choice = Math.floor(Math.random() * 4);
+				switch (choice) {
+				case 0:
+					a += Math.random() * 0.2 - 0.1;
+					break;
+				case 1:
+					b += Math.random() * 0.2 - 0.1;
+					break;
+				case 2:
+					c += Math.random() * 2 - 1;
+					break;
+				case 3:
+					d += Math.random() * 2 - 1;
+					break;
+				}
+				tdelta += 0.5;
+				pdelta += 0.5;
+				if (a > 1) {
+					a =  0.5;
+				}
+				if (b > 1) {
+					b =  0.5;
+				}
+				if (c < 1) {
+					c =  4;
+				}
+				if (d < 1) {
+					d =  4;
+				}
+				if (c > 10) {
+					c = 4;
+				}
+				if (d > 10) {
+					d = 4;
+				}
+			}
+"""),
           TimeSensor(DEF='TourTime',cycleInterval=5,loop=True),
           ROUTE(fromNode='TourTime',fromField='fraction_changed',toNode='Animate',toField='set_fraction'),
           ROUTE(fromNode='Animate',fromField='translation_changed',toNode='transform',toField='set_translation'),

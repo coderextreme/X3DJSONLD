@@ -107,9 +107,26 @@ newModel=X3D(profile='Immersive',version='4.0',
       field(name='top',type='MFString',accessType='inputOutput'),
       field(name='bottom',type='MFString',accessType='inputOutput'),
       field(name='set_fraction',type='SFFloat',accessType='inputOnly'),
-      field(name='old',type='SFInt32',accessType='inputOutput',value=-1)]
-*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
-),
+      field(name='old',type='SFInt32',accessType='inputOutput',value=-1)],
+
+      sourceCode="""
+ecmascript:
+        function set_fraction( f, tm ) {
+            var side = Math.floor(f*frontUrls.length);
+            if (side > frontUrls.length-1) {
+                side = 0;
+            }
+            if (side != old) {
+                    old = side;
+                    front[0] = frontUrls[side];
+                    back[0] = backUrls[side];
+                    left[0] = leftUrls[side];
+                    right[0] = rightUrls[side];
+                    top[0] = topUrls[side];
+                    bottom[0] = bottomUrls[side];
+            }
+        }
+"""),
     # 
             <TimeSensor DEF="Clock" cycleInterval="45" loop='true'/>
             <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/>
@@ -134,9 +151,49 @@ newModel=X3D(profile='Immersive',version='4.0',
       field(name='c',type='SFFloat',accessType='inputOutput',value=20),
       field(name='d',type='SFFloat',accessType='inputOutput',value=20),
       field(name='tdelta',type='SFFloat',accessType='inputOutput',value=0),
-      field(name='pdelta',type='SFFloat',accessType='inputOutput',value=0)]
-*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
-),
+      field(name='pdelta',type='SFFloat',accessType='inputOutput',value=0)],
+
+      sourceCode="""
+ecmascript:
+
+function set_fraction() {
+	var choice = Math.floor(Math.random() * 4);
+	switch (choice) {
+	case 0:
+		a = a + Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 1:
+		b = b + Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 2:
+		c = c + Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 3:
+		d = d + Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	}
+	tdelta = tdelta + 0.5;
+	pdelta = pdelta + 0.5;
+	if (a < 1) {
+		a = 10;
+	}
+	if (b < 1) {
+		b = 10;
+	}
+	if (c < 1) {
+		c = 4;
+	}
+	if (c > 20) {
+		c = 4;
+	}
+	if (d < 1) {
+		d = 4;
+	}
+	if (d > 20) {
+		d = 4;
+	}
+}
+"""),
     TimeSensor(DEF='TourTime',cycleInterval=5,loop=True),
     ROUTE(fromNode='TourTime',fromField='fraction_changed',toNode='Animate',toField='set_fraction'),
     ROUTE(fromNode='Animate',fromField='a',toNode='x_ite',toField='a'),

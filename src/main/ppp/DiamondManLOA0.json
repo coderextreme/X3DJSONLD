@@ -4,7 +4,7 @@
     "@profile": "Immersive",
     "@version": "4.0",
     "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-4.0.xsd",
-    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "component": [
         {
@@ -35,7 +35,7 @@
         },
         {
           "@name": "modified",
-          "@content": "8 March 2021"
+          "@content": "23 December 2021"
         },
         {
           "@name": "motto",
@@ -107,7 +107,7 @@
         },
         {
           "@name": "translated",
-          "@content": "09 December 2021"
+          "@content": "17 January 2022"
         },
         {
           "@name": "generator",
@@ -157,67 +157,65 @@
             "@version": "2.0",
             "-children": [
               {
-                "#comment": "HAnimHumanoid original info='\"authorEmail=beitler@graphics.cis.upenn.edu beitler@acm.org\" \"authorName=Matthew T. Beitler\" \"copyright=Copyright 1999 Matthew T. Beitler\" \"creationDate=05/12/99\" \"humanoidVersion=JointCenters 1.1 LOA0\" \"usageRestrictions=PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose.\"'"
+                "#comment": "original HAnimHumanoid info='\"authorEmail=beitler@graphics.cis.upenn.edu beitler@acm.org\" \"authorName=Matthew T. Beitler\" \"copyright=Copyright 1999 Matthew T. Beitler\" \"creationDate=05/12/99\" \"humanoidVersion=JointCenters 1.1 LOA0\" \"usageRestrictions=PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose.\"'"
               }
             ],
-            "-value": [
-              {
-                "MetadataSet": {
-                  "@name": "HAnimHumanoid.info",
-                  "@reference": "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid",
-                  "-value": [
-                    {
-                      "MetadataString": {
-                        "@name": "authorEmail",
-                        "@value": [
-                          "beitler@graphics.cis.upenn.edu beitler@acm.org"
-                        ]
-                      }
-                    },
-                    {
-                      "MetadataString": {
-                        "@name": "authorName",
-                        "@value": [
-                          "Matthew T. Beitler"
-                        ]
-                      }
-                    },
-                    {
-                      "MetadataString": {
-                        "@name": "copyright",
-                        "@value": [
-                          "Copyright 1999 Matthew T. Beitler"
-                        ]
-                      }
-                    },
-                    {
-                      "MetadataString": {
-                        "@name": "creationDate",
-                        "@value": [
-                          "05/12/99"
-                        ]
-                      }
-                    },
-                    {
-                      "MetadataString": {
-                        "@name": "humanoidVersion",
-                        "@value": [
-                          "JointCenters 1.1 LOA0"
-                        ]
-                      }
-                    },
-                    {
-                      "MetadataString": {
-                        "@name": "usageRestrictions",
-                        "@value": [
-                          "PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose."
-                        ]
-                      }
+            "-metadata": {
+              "MetadataSet": {
+                "@name": "HAnimHumanoid.info",
+                "@reference": "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid",
+                "-value": [
+                  {
+                    "MetadataString": {
+                      "@name": "authorEmail",
+                      "@value": [
+                        "beitler@graphics.cis.upenn.edu beitler@acm.org"
+                      ]
                     }
-                  ]
-                }
+                  },
+                  {
+                    "MetadataString": {
+                      "@name": "authorName",
+                      "@value": [
+                        "Matthew T. Beitler"
+                      ]
+                    }
+                  },
+                  {
+                    "MetadataString": {
+                      "@name": "copyright",
+                      "@value": [
+                        "Copyright 1999 Matthew T. Beitler"
+                      ]
+                    }
+                  },
+                  {
+                    "MetadataString": {
+                      "@name": "creationDate",
+                      "@value": [
+                        "05/12/99"
+                      ]
+                    }
+                  },
+                  {
+                    "MetadataString": {
+                      "@name": "humanoidVersion",
+                      "@value": [
+                        "JointCenters 1.1 LOA0"
+                      ]
+                    }
+                  },
+                  {
+                    "MetadataString": {
+                      "@name": "usageRestrictions",
+                      "@value": [
+                        "PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose."
+                      ]
+                    }
+                  }
+                ]
               }
-            ],
+            },
             "-skeleton": [
               {
                 "HAnimJoint": {
@@ -228,7 +226,12 @@
                     0.824,
                     0.0277
                   ],
-                  "@stiffness": [
+                  "@ulimit": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "@llimit": [
                     0,
                     0,
                     0
@@ -243,7 +246,12 @@
                           0.9149,
                           0.0016
                         ],
-                        "@stiffness": [
+                        "@ulimit": [
+                          0,
+                          0,
+                          0
+                        ],
+                        "@llimit": [
                           0,
                           0,
                           0

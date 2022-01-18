@@ -265,9 +265,18 @@ newModel=X3D(profile='Immersive',version='3.3',
                                 Script(DEF='FireScript',
                                   field=[
                                   field(accessType='outputOnly',name='fire',type='SFBool'),
-                                  field(accessType='inputOnly',name='enabled',type='SFBool')]
-*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
-),
+                                  field(accessType='inputOnly',name='enabled',type='SFBool')],
+
+                                  sourceCode="""
+ecmascript:
+
+function enabled (value, timeStamp)
+{
+        //print ('enabled value =' + value);
+        if (value == true)
+           fire = value;
+}
+"""),
                                 TouchSensor(DEF='FireTouchSensor',description='click to fire'),
                                 ROUTE(fromField='isOver',fromNode='FireTouchSensor',toField='enabled',toNode='FireScript'),
                                 ROUTE(fromField='touchTime',fromNode='FireTouchSensor',toField='animationStartTime',toNode='rifleM24'),

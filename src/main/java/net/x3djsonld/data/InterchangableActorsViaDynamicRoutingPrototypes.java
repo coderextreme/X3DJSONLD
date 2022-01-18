@@ -1084,7 +1084,6 @@ public class InterchangableActorsViaDynamicRoutingPrototypes
         .addSites(new HAnimSite().setUSE("Boxman_l_middistal_tip"))
         .addSites(new HAnimSite().setUSE("Boxman_r_middistal_tip")))
       .addChild(new Script("ENGINE").setDirectOutput(true).setSourceCode("""
-        
 ecmascript:
       // Initialises the script
       function initialize() {
@@ -1165,8 +1164,7 @@ ecmascript:
          // Call transform function
          Transform();
       }
-
-      """)
+""")
         .addField(new field().setName("update").setType(field.TYPE_SFROTATION).setAccessType(field.ACCESSTYPE_INPUTONLY))
         .addField(new field().setName("humanoid").setType(field.TYPE_SFNODE).setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
           .addChild(new HAnimHumanoid().setUSE("Boxman_Humanoid").setVersion("1.0")))
@@ -1294,7 +1292,6 @@ ecmascript:
     .addChild(new ROUTE().setFromNode("HudProx").setFromField("position_changed").setToNode("HudXform").setToField("set_translation"))
     .addChild(new ROUTE().setFromNode("HudProx").setFromField("orientation_changed").setToNode("HudXform").setToField("set_rotation"))
     .addChild(new Script("ActorAnimator").setDirectOutput(true).setSourceCode("""
-      
 ecmascript:
 
 //Global Variables
@@ -1534,8 +1531,7 @@ function changeBehaviorToKneel(bool, timeStamp) {
    }
 
 }
-
-    """)
+""")
       .addComments(" ***********Interfaces***************** ")
       .addField(new field().setName("changeBehaviorToWalk").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_INPUTONLY))
       .addField(new field().setName("changeBehaviorToRun").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_INPUTONLY))

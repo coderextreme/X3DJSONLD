@@ -174,7 +174,7 @@
                         "@type": "MFVec3f"
                       }
                     ],
-                    "#sourceText": [
+                    "#sourceCode": [
                       "ecmascript:",
                       "\t\t\t\t\tfunction set_cycle(value) {",
                       "                                                old = translation;",
@@ -364,7 +364,7 @@
                         }
                       ]
                     },
-                    "#sourceText": [
+                    "#sourceCode": [
                       "ecmascript:",
                       "",
                       "                function set_endA(value) {",

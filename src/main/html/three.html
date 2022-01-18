@@ -1,0 +1,457 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>X3D JSON Loader</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="https://www.x3dom.org/download/dev/x3dom.css">
+    <script type='text/javascript' src='https://www.x3dom.org/download/dev/x3dom-full.debug.js'> </script>
+<link rel="stylesheet" type="text/css" href="https://create3000.github.io/code/x_ite/latest/dist/x_ite.css"/>
+<script type="text/javascript" src="https://create3000.github.io/code/x_ite/latest/dist/x_ite.min.js"></script>
+<!--
+<script type="text/javascript" src="https://raw.githack.com/andreasplesch/x_ite_dom/master/release/x_ite_dom.1.3.js"></script>
+-->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../node/saxon-js/SaxonJS2.js"></script>
+    <script type="text/javascript">var exports = {};</script>
+    <script type="text/javascript" src="https://unpkg.com/exificient.js@0.0.5/dist/exificient.js"></script>
+    <style type="text/css">
+    X3DCanvas {
+        background:#000;
+	width: 150px;
+	height:75px;
+    }
+    X3D {
+        background:#000;
+	width: 150px;
+	height:75px;
+    }
+    #image {
+        background:#000;
+	width: 150px;
+	height:75px;
+    }
+    table td, table td * {
+        vertical-align: top;
+    }
+/* unvisited link */
+a:link {
+    color: red;
+}
+
+/* visited link */
+a:visited {
+    color: green;
+}
+
+/* mouse over link */
+a:hover {
+    color: hotpink;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
+    </style>
+</head>
+<body>
+<table>
+<tr>
+<td>
+<select id="file">
+<option>../data/abox.json</option>
+<option>../data/abox.new.json</option>
+<option>../data/AllAudioGraphNodesTest.json</option>
+<option>../data/AllAudioGraphNodesTest.new.json</option>
+<option>../data/AllenDuttonProtoInstances.json</option>
+<option>../data/AllenDuttonProtoInstances.new.json</option>
+<option>../data/AllenStandShootRifleM24.json</option>
+<option>../data/app.json</option>
+<option>../data/app.new.json</option>
+<option>../data/arc1.json</option>
+<option>../data/arc1.new.json</option>
+<option>../data/arc2.json</option>
+<option>../data/arc2.new.json</option>
+<option>../data/arc3.json</option>
+<option>../data/arc3.new.json</option>
+<option>../data/arc4.json</option>
+<option>../data/arc4.new.json</option>
+<option>../data/ArchHalf.json</option>
+<option>../data/ArchHalf.new.json</option>
+<option>../data/ArchPrototype.json</option>
+<option>../data/ArchPrototype.new.json</option>
+<option>../data/arc.json</option>
+<option>../data/arc.new.json</option>
+<option>../data/arcold.json</option>
+<option>../data/arcold.new.json</option>
+<option>../data/ArtDecoExamples.json</option>
+<option>../data/ArtDecoExamples.new.json</option>
+<option>../data/ArtDecoPrototypes.json</option>
+<option>../data/ArtDecoPrototypes.new.json</option>
+<option>../data/asmallbox.json</option>
+<option>../data/asmallbox.new.json</option>
+<option>../data/asteroids.json</option>
+<option>../data/asteroids.new.json</option>
+<option>../data/ball.json</option>
+<option>../data/ball.new.json</option>
+<option>../data/BindingOperations.json</option>
+<option>../data/BindingOperations.new.json</option>
+<option>../data/BoxEm.json</option>
+<option>../data/BoxEm.new.json</option>
+<option>../data/browser.json</option>
+<option>../data/browser.new.json</option>
+<option>../data/bubble.json</option>
+<option>../data/bubble.new.json</option>
+<option>../data/bubbles.json</option>
+<option>../data/bubbles.new.json</option>
+<option>../data/bub.json</option>
+<option>../data/bub.new.json</option>
+<option>../data/bubs2.json</option>
+<option>../data/bubs2.new.json</option>
+<option>../data/bubs3.json</option>
+<option>../data/bubs3.new.json</option>
+<option>../data/bubs.json</option>
+<option>../data/bubs.new.json</option>
+<option>../data/BvhConversion1Illustrated.json</option>
+<option>../data/BvhConversion1Invisible.json</option>
+<option>../data/BvhConversion1.json</option>
+<option>../data/BvhSeamless3dExport1.json</option>
+<option>../data/CameraExamples.json</option>
+<option>../data/CameraExamples.new.json</option>
+<option>../data/CameraPrototypes.json</option>
+<option>../data/CameraPrototypes.new.json</option>
+<option>../data/CameraShape.json</option>
+<option>../data/CameraShape.new.json</option>
+<option>../data/CloudsProcedural4.json</option>
+<option>../data/CloudsProcedural4.new.json</option>
+<option>../data/CoordinateAxes.json</option>
+<option>../data/CoordinateAxes.new.json</option>
+<option>../data/cube.json</option>
+<option>../data/cube.new.json</option>
+<option>../data/DiamondManLOA0.json</option>
+<option>../data/DiamondManLOA1.json</option>
+<option>../data/DiamondManLOA2.json</option>
+<option>../data/ExtrusionHeart.json</option>
+<option>../data/ExtrusionHeart.new.json</option>
+<option>../data/extrusion.json</option>
+<option>../data/extrusion.new.json</option>
+<option>../data/F16.json</option>
+<option>../data/F16.new.json</option>
+<option>../data/Figure31_9SpinGroupPrototype.json</option>
+<option>../data/Figure31_9SpinGroupPrototype.new.json</option>
+<option>../data/Filters.json</option>
+<option>../data/Filters.new.json</option>
+<option>../data/flipp.json</option>
+<option>../data/flipp.new.json</option>
+<option>../data/flower3.json</option>
+<option>../data/flower3.new.json</option>
+<option>../data/flower.json</option>
+<option>../data/flower.new.json</option>
+<option>../data/flowerproto.json</option>
+<option>../data/flowerproto.new.json</option>
+<option>../data/flowers2.json</option>
+<option>../data/flowers2.new.json</option>
+<option>../data/flowers4.json</option>
+<option>../data/flowers4.new.json</option>
+<option>../data/flowers7.json</option>
+<option>../data/flowers7.new.json</option>
+<option>../data/flowers.json</option>
+<option>../data/flowers.new.json</option>
+<option>../data/foo.json</option>
+<option>../data/foo.new.json</option>
+<option>../data/force.json</option>
+<option>../data/force.new.json</option>
+<option>../data/forcenode.json</option>
+<option>../data/forcenode.new.json</option>
+<option>../data/fors2.json</option>
+<option>../data/fors2.new.json</option>
+<option>../data/fors.json</option>
+<option>../data/fors.new.json</option>
+<option>../data/freewrlflowers.json</option>
+<option>../data/freewrlflowers.new.json</option>
+<option>../data/gears.json</option>
+<option>../data/gears.new.json</option>
+<option>../data/geobubbles.json</option>
+<option>../data/geobubbles.new.json</option>
+<option>../data/geo.json</option>
+<option>../data/geo.new.json</option>
+<option>../data/glflowers.json</option>
+<option>../data/glflowers.new.json</option>
+<option>../data/gridBack.json</option>
+<option>../data/gridBack.new.json</option>
+<option>../data/GridXZ_20x20Fixed.json</option>
+<option>../data/GridXZ_20x20Fixed.new.json</option>
+<option>../data/HAnim1SpecificationLOA3Animation.json</option>
+<option>../data/HAnim1SpecificationLOA3Illustrated.json</option>
+<option>../data/HAnim1SpecificationLOA3Invisible.json</option>
+<option>../data/HAnim2SpecificationLOA3Illustrated.json</option>
+<option>../data/HAnim2SpecificationLOA3Invisible.json</option>
+<option>../data/HAnimBehaviorPrototypes.json</option>
+<option>../data/HAnimBehaviorPrototypes.new.json</option>
+<option>../data/HAnimModelFootLeft.json</option>
+<option>../data/HAnimModelFootRight.json</option>
+<option>../data/HAnimModelHandLeft.json</option>
+<option>../data/HAnimModelHandRight.json</option>
+<option>../data/HAnimModelsHandsFeet.json</option>
+<option>../data/HAnimModelsHandsFeet.new.json</option>
+<option>../data/HAnimPrototypes.json</option>
+<option>../data/HAnimPrototypes.new.json</option>
+<option>../data/HeadsUpDisplayExample.json</option>
+<option>../data/HeadsUpDisplayExample.new.json</option>
+<option>../data/HeadsUpDisplayPrototype.json</option>
+<option>../data/HeadsUpDisplayPrototype.new.json</option>
+<option>../data/HelloWorldCommented.json</option>
+<option>../data/HelloWorldCommented.new.json</option>
+<option>../data/HelloWorld.json</option>
+<option>../data/HelloWorldMinimal.json</option>
+<option>../data/HelloWorldMinimal.new.json</option>
+<option>../data/HelloWorld.new.json</option>
+<option>../data/HelloWorldProgramOutputCanonical.json</option>
+<option>../data/HelloWorldProgramOutputCanonical.new.json</option>
+<option>../data/HelloWorldProgramOutput.json</option>
+<option>../data/HelloWorldProgramOutput.new.json</option>
+<option>../data/IcosahedronSubdivisionLevel5.json</option>
+<option>../data/IcosahedronSubdivisionLevel5.new.json</option>
+<option>../data/ifscube.json</option>
+<option>../data/ifscube.new.json</option>
+<option>../data/ifscubeworks.json</option>
+<option>../data/ifscubeworks.new.json</option>
+<option>../data/indexedfaceset_pixeltexture_entire.json</option>
+<option>../data/indexedfaceset_pixeltexture_entire.new.json</option>
+<option>../data/indexedfaceset_pixeltexture_part.json</option>
+<option>../data/indexedfaceset_pixeltexture_part.new.json</option>
+<option>../data/indexedfaceset_pixeltexture_plus.json</option>
+<option>../data/indexedfaceset_pixeltexture_plus.new.json</option>
+<option>../data/indexedfaceset_pixeltexture_whole.json</option>
+<option>../data/indexedfaceset_pixeltexture_whole.new.json</option>
+<option>../data/InlineSoundSource.json</option>
+<option>../data/InlineSoundSource.new.json</option>
+<option>../data/InterchangableActorsViaDynamicRoutingPrototypes.json</option>
+<option>../data/Java.json</option>
+<option>../data/Java.new.json</option>
+<option>../data/JinLOA1.json</option>
+<option>../data/JinLOA2.json</option>
+<option>../data/JinLOA3.json</option>
+<option>../data/JinLOA4.json</option>
+<option>../data/JoeKick.json</option>
+<option>../data/Json.json</option>
+<option>../data/Json.new.json</option>
+<option>../data/KoreanCharacter01Jin.json</option>
+<option>../data/KoreanCharacter02Chul.json</option>
+<option>../data/KoreanCharacter03Hyun.json</option>
+<option>../data/KoreanCharacter04Young.json</option>
+<option>../data/KoreanCharacter05Ju.json</option>
+<option>../data/KoreanCharacter06Ga.json</option>
+<option>../data/KoreanCharacter07No.json</option>
+<option>../data/KoreanCharacter08Da.json</option>
+<option>../data/KoreanCharacter09Ru.json</option>
+<option>../data/KoreanCharacter10Mi.json</option>
+<option>../data/KoreanCharacter11Min.json</option>
+<option>../data/KoreanCharacter12Sun.json</option>
+<option>../data/KoreanCharacterMotionAnnexC01Jin.json</option>
+<option>../data/KoreanCharacterMotionAnnexD01Jin.json</option>
+<option>../data/LOA1_JumpAnimation.json</option>
+<option>../data/LOA1_JumpAnimation.new.json</option>
+<option>../data/LOA1_KneelAnimation.json</option>
+<option>../data/LOA1_KneelAnimation.new.json</option>
+<option>../data/LOA1_RunAnimation.json</option>
+<option>../data/LOA1_RunAnimation.new.json</option>
+<option>../data/LOA1_StandAnimation.json</option>
+<option>../data/LOA1_StandAnimation.new.json</option>
+<option>../data/LOA1_StopAnimation.json</option>
+<option>../data/LOA1_StopAnimation.new.json</option>
+<option>../data/LOA1_SwimmingFlutterKickAnimation.json</option>
+<option>../data/LOA1_SwimmingFlutterKickAnimation.new.json</option>
+<option>../data/LOA1_WalkAnimation.json</option>
+<option>../data/LOA1_WalkAnimation.new.json</option>
+<option>../data/Marine.json</option>
+<option>../data/Marine.new.json</option>
+<option>../data/mirror2.json</option>
+<option>../data/mirror2.new.json</option>
+<option>../data/mirror.json</option>
+<option>../data/mirror.new.json</option>
+<option>../data/MyBounce.json</option>
+<option>../data/MyBounce.new.json</option>
+<option>../data/NancyDivingProtoInstances.json</option>
+<option>../data/NancyDivingProtoInstances.new.json</option>
+<option>../data/NancyPrototypes.json</option>
+<option>../data/NancyPrototypes.new.json</option>
+<option>../data/ObliqueStrategies.json</option>
+<option>../data/ObliqueStrategies.new.json</option>
+<option>../data/PixelTextureComponentExamples.json</option>
+<option>../data/PixelTextureComponentExamples.new.json</option>
+<option>../data/plainflowers.json</option>
+<option>../data/plainflowers.new.json</option>
+<option>../data/pp3.json</option>
+<option>../data/pp3.new.json</option>
+<option>../data/qq3.json</option>
+<option>../data/qq3.new.json</option>
+<option>../data/Quotes.json</option>
+<option>../data/Quotes.new.json</option>
+<option>../data/rgb_alpha.json</option>
+<option>../data/rgb_alpha.new.json</option>
+<option>../data/RotationTests.json</option>
+<option>../data/RotationTests.new.json</option>
+<option>../data/rubikFurnace.json</option>
+<option>../data/rubikFurnace.new.json</option>
+<option>../data/rubik.json</option>
+<option>../data/rubik.new.json</option>
+<option>../data/rubikOnFire.json</option>
+<option>../data/rubikOnFire.new.json</option>
+<option>../data/SimpleShader.json</option>
+<option>../data/SimpleShader.new.json</option>
+<option>../data/SingleAudio.json</option>
+<option>../data/SingleAudio.new.json</option>
+<option>../data/SpatialAudioCameraAnimation.json</option>
+<option>../data/SpatialAudioCameraAnimation.new.json</option>
+<option>../data/sphereflowers.json</option>
+<option>../data/sphereflowers.new.json</option>
+<option>../data/sphere.json</option>
+<option>../data/sphere.new.json</option>
+<option>../data/SplitChannels.json</option>
+<option>../data/SplitChannels.new.json</option>
+<option>../data/StringArrayEncodingExamples.json</option>
+<option>../data/StringArrayEncodingExamples.new.json</option>
+<option>../data/SuperCobraLightsOn.json</option>
+<option>../data/t1.json</option>
+<option>../data/t1.new.json</option>
+<option>../data/t2.json</option>
+<option>../data/t2.new.json</option>
+<option>../data/t3.json</option>
+<option>../data/t3.new.json</option>
+<option>../data/t4.json</option>
+<option>../data/t4.new.json</option>
+<option>../data/Table5_18PixelTexture.json</option>
+<option>../data/Table5_18PixelTexture.new.json</option>
+<option>../data/Teapot.json</option>
+<option>../data/Teapot.new.json</option>
+<option>../data/TextExamples.json</option>
+<option>../data/TextExamples.new.json</option>
+<option>../data/text.json</option>
+<option>../data/text.new.json</option>
+<option>../data/TextSpecialCharacters.json</option>
+<option>../data/TextSpecialCharacters.new.json</option>
+<option>../data/ViewFrustumExample.json</option>
+<option>../data/ViewFrustumExample.new.json</option>
+<option>../data/ViewFrustumPrototype.json</option>
+<option>../data/ViewFrustumPrototype.new.json</option>
+<option>../data/x3dconnector.json</option>
+<option>../data/x3dconnector.new.json</option>
+<option>../data/x3dconnectorProto.json</option>
+<option>../data/x3dconnectorProto.new.json</option>
+<option>../data/X3dHeaderPrototypeSyntaxExamples.json</option>
+<option>../data/X3dHeaderPrototypeSyntaxExamples.new.json</option>
+<option>../data/x3domflowers.json</option>
+<option>../data/x3domflowers.new.json</option>
+</select>
+<input type="text" onchange="filter(event)">
+</td>
+<td>
+Proto Expander? <input id="prototype" type="checkbox" checked="true">
+JSON Scripts? <input id="scripting" type="checkbox" checked="true">
+Use Namespace: <select id="namespace">
+<option>http://www.web3d.org/specifications/x3d</option>
+<option>http://www.w3.org/1999/xhtml</option> <!-- X3DOM XML -->
+<option>https://www.x3dom.org/x3dom</option>
+<option>http://www.web3d.org/specifications/x3d-namespace</option>  <!-- X_ITE -->
+<option>none</option> <!-- X3DOM HTML -->
+</select>
+</td>
+</tr>
+<tr>
+	<td>
+		Click <a onclick='window.updateFromJson(undefined, $("#file option:selected").text());encodeJSON(); return false;'>here</a> to load X3D JSON text into JSON X3DOM viewer, convert to STL,  convert to EXI, and convert to XML (and display).<br>
+	</td>
+	<td>
+		Click <a onclick='updateFromXml($("#file option:selected").text()); return false;'>here</a> to load X3D XML into X_ITE and XML X3DOM viewer. Converts to JSON.<br>
+	</td>
+	<td>
+		Click <a onclick='decodeEXI4JSON();window.updateFromJson(undefined, $("#file option:selected").text()); return false;'>here</a> to convert EXI to JSON, load X3D JSON and Display.
+	</td>
+</tr>
+<tr>
+<td>
+	<textarea id="json" rows="15" cols="80"></textarea><br>
+    <X3D id="x3domjson" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" showProgress="false" showStat='false' showLog='false' width='150px' height='75px' backend='webgl'>
+		<Scene>
+		</Scene>
+    </X3D>
+    <X3DCanvas id='x_itejson' cache='false'>
+           <p>Your browser may not support all features required by X_ITE!</p>
+	   <X3D>
+	   <Scene>
+	   </Scene>
+	   </X3D>
+    </X3DCanvas>
+</td>
+<td>
+	<textarea id="xml" rows="15" cols="80"></textarea><br>
+    <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" showProgress="false" showStat='false' showLog='false' width='150px' height='75px' backend='webgl'>
+		<Scene id="x3domxml">
+		</Scene>
+    </X3D>
+    <X3DCanvas id='x_itexml' cache='false'>
+           <p>Your browser may not support all features required by X_ITE!</p>
+	   <X3D>
+	   <Scene>
+	   </Scene>
+	   </X3D>
+    </X3DCanvas>
+    	<div id="threejs"></div>
+</td>
+<td>
+		<textarea id="exi" rows="15" cols="80"></textarea>
+		Standard Image<br></br>
+		<image height="150px" width="300px" id="image" src="">
+</td>
+</tr>
+<tr>
+<td>
+	<a href="../nashorn/X3Dautoclass.js">X3Dautoclass.js</a>
+	Save the link and copy the text below to a the file &quot;your_file_name.js&quot; and run with, copy X3DJSAIL.4.0.full.jar and saxon-he-10.6.jar to the same folder and run:  $ jjs -cp X3DJSAIL.4.0.full.jar your_file_name.js .
+<textarea id="java" rows="15" cols="80"></textarea><br>
+</td>
+<td>
+	Click <a onclick='updateFromStl($("#file option:selected").text());'>here</a> to load STL text into JSON X3DOM viewer and convert to XML and JSON (and display).<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click <a id="dom">here</a> to capture a snapshot.
+<textarea id="stl" rows="15" cols="80"></textarea><br>
+</td>
+<td>
+Click <a onclick='updateFromPly($("#file option:selected").text());'>here</a> to load PLY text into JSON X3DOM viewer and convert to XML and JSON (and display).<br>
+<textarea id="ply" rows="15" cols="80"></textarea><br>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</body>
+    <script type="text/javascript" src="../node/JavaScriptSerializer.js"></script>
+    <script type="text/javascript" src="../node/DOM2JSONSerializer.js"></script>
+    <script src="../node/Three2Serializer.js"></script>
+    <script type="text/javascript" src="../node/X3DJSONLD.js"></script>
+    <script type="text/javascript" src="../node/PrototypeExpander.js"></script>
+    <script type="text/javascript" src="../node/Script.js"></script>
+    <script type="text/javascript" src="../node/mapToMethod.js"></script>
+    <script type="text/javascript" src="../node/mapToMethod2.js"></script>
+    <script type="text/javascript" src="../node/fieldTypes.js"></script>
+    <script type="text/javascript" src="../node/matrix.js"></script>
+    <script type="text/javascript" src="../node/convertPlyToJson.js"></script>
+    <script type="text/javascript" src="../node/convertStlToJson.js"></script>
+    <script type="text/javascript" src="../node/convertJsonToStl.js"></script>
+    <script src="../../../node_modules/three/build/three.js"></script>
+    <!--
+    <script type="module" src="../../../node_modules/three/examples/jsm/libs/chevrotain.module.min.js"></script>
+    -->
+    <script src="../node/x3d-parser.js"></script>
+    <script src="../node/x3d-loader.js"></script>
+    <!--
+    <script type="module" src="../node/threex3dloader.mjs"></script>
+    --?
+    <script type="module" src="../node/loader-bundle.js"></script>
+    <script type="text/javascript" src="../node/exi.js"></script>
+    <script type="text/javascript">
+	$(document).ready(function() {
+		loadJson('../data/flipp.json'); // does load ball.json
+	});
+    </script>
+</html>
+<!-- Images courtesy of Paul Debevec's Light Probe Image Gallery -->

@@ -776,7 +776,7 @@
                                                 "@type":"SFVec3f"
                                               }
                                             ],
-                                            "#sourceText":[
+                                            "#sourceCode":[
 "",
 "",
 "vrmlscript:",

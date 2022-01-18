@@ -437,7 +437,7 @@
                               }
                             ]
                         },
-                        "#sourceText":[
+                        "#sourceCode":[
 "",
 "            ecmascript:",
 "        function recompute(startpoint,endpoint){",

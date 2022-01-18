@@ -168,7 +168,7 @@
                                   "@type":"MFVec3f"
                                 }
                               ],
-                              "#sourceText":[
+                              "#sourceCode":[
 "",
 "",
 "ecmascript:",
@@ -308,7 +308,7 @@
                                     }
                                   ]
                               },
-                              "#sourceText":[
+                              "#sourceCode":[
 "",
 "",
 "ecmascript:",
@@ -491,7 +491,7 @@
                   "#comment":"<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>"
                 }
               ],
-              "#sourceText":[
+              "#sourceCode":[
 "",
 "\t",
 "ecmascript:",

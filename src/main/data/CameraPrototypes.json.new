@@ -63,7 +63,7 @@
         },
         {
           "@name": "translated",
-          "@content": "2 January 2022"
+          "@content": "17 January 2022"
         },
         {
           "@name": "generator",
@@ -772,7 +772,7 @@
                         }
                       ]
                     },
-                    "#sourceText": [
+                    "#sourceCode": [
                       "ecmascript:",
                       "function initialize () // CameraScript",
                       "{",
@@ -1425,7 +1425,7 @@
                         }
                       ]
                     },
-                    "#sourceText": [
+                    "#sourceCode": [
                       "ecmascript:",
                       "function initialize () // CameraShotScript",
                       "{",
@@ -1777,7 +1777,7 @@
                         }
                       ]
                     },
-                    "#sourceText": [
+                    "#sourceCode": [
                       "ecmascript:",
                       "function initialize () // CameraMovementScript",
                       "{",
@@ -2102,7 +2102,7 @@
                         }
                       ]
                     },
-                    "#sourceText": [
+                    "#sourceCode": [
                       "ecmascript:",
                       "function initialize () // OfflineRenderScript",
                       "{",

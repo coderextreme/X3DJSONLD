@@ -580,7 +580,7 @@
                         "@type": "MFString"
                       }
                     ],
-                    "#sourceText": [
+                    "#sourceCode": [
                       "ecmascript:",
                       "",
                       "function initialize() {",
@@ -608,7 +608,7 @@
                         "@type": "MFString"
                       }
                     ],
-                    "#sourceText": [
+                    "#sourceCode": [
                       "ecmascript:",
                       "",
                       "function initialize() {",
@@ -636,7 +636,7 @@
                         "@type": "MFString"
                       }
                     ],
-                    "#sourceText": [
+                    "#sourceCode": [
                       "ecmascript:",
                       "",
                       "function initialize() {",

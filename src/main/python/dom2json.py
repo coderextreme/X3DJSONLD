@@ -20,7 +20,7 @@ def recurse(node, parent):
     for attrib,value in node.attrib.items():
         fields['@'+attrib] = value
     if node.text and node.text.strip():
-        object["#sourceText"] = node.text.strip().split("\n")
+        object["#sourceCode"] = node.text.strip().split("\n")
     for element in node:
         try:
             if element.attrib["containerField"]:
@@ -52,7 +52,7 @@ def recurse(node, parent):
     else:
         object[node.tag] =  fields
     if node.tail and node.tail.strip():
-        object["#sourceText"] = node.tail.strip().split("\n")
+        object["#sourceCode"] = node.tail.strip().split("\n")
     return object
 
 soup = ET.parse("../data/flowers.x3d").getroot()

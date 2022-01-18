@@ -177,8 +177,7 @@ ecmascript:
 				velocity.z += Math.random() * 0.2 - 0.1;
 			    }
 			}
-               
-                """)
+""")
           .addField(new field().setName("translation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
           .addField(new field().setName("velocity").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
           .addField(new field().setName("set_fraction").setType(field.TYPE_SFTIME).setAccessType(field.ACCESSTYPE_INPUTONLY)))

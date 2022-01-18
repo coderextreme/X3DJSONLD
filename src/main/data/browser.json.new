@@ -27,7 +27,7 @@
         },
         {
           "@name": "translated",
-          "@content": "2 January 2022"
+          "@content": "17 January 2022"
         },
         {
           "@name": "generator",
@@ -44,7 +44,7 @@
         {
           "Script": {
             "@DEF": "Browser",
-            "#sourceText": [
+            "#sourceCode": [
               "ecmascript:",
               "                function initialize() {",
               "\t\t    Browser.print('DUDES\n'+'\"DUDETTES');",
@@ -55,7 +55,7 @@
         {
           "Script": {
             "@DEF": "Clouds",
-            "#sourceText": [
+            "#sourceCode": [
               "ecmascript:",
               "",
               "",

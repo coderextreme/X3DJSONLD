@@ -264,7 +264,7 @@
                   "@type":"SFTime"
                 }
               ],
-              "#sourceText":[
+              "#sourceCode":[
 "",
 "",
 "vrmlscript:function triggerIn(value, time) {",

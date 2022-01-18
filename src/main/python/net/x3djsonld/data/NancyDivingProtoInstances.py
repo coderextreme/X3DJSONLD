@@ -281,9 +281,113 @@ newModel=X3D(profile='Immersive',version='3.3',
                           field(accessType='inputOnly',name='set_fraction',type='SFFloat'),
                           field(accessType='inputOnly',name='finL',type='SFBool'),
                           field(accessType='inputOnly',name='finR',type='SFBool'),
-                          field(accessType='initializeOnly',name='traceEnabled',type='SFBool',value=True)]
-*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
-),
+                          field(accessType='initializeOnly',name='traceEnabled',type='SFBool',value=True)],
+
+                          sourceCode="""
+ecmascript:
+
+var finWarpL;
+var finWarpR;
+
+function initialize ()
+{
+	finWarpL = 0;
+	finWarpR = 0;
+}
+
+function finL(value, timeStamp)
+{
+	if (value == 0)
+	{
+		finWarpL = 0;
+	}
+	else
+	{
+		finWarpL = 1;
+	}
+	//print ('finWarpL' + finWarpL);
+}			 
+
+function finR(value, timeStamp)
+{
+	if (value == 0)
+	{
+		finWarpR = 0;
+	}
+	else
+	{
+		finWarpR = 1;
+	}
+	//print ('finWarpR' + finWarpR);
+}
+function finMove(fraction, timeStamp)
+ {  	
+	if (finWarpL == 1)
+	{
+		// level 3 (warp outside) Left					
+		kVL7 = new SFVec3f(1.25, 0, 25);  
+     		kVL8 = new SFVec3f(2.5, 0, 30);
+      		kVL9 = new SFVec3f(3.25, 0, 34);			
+	}	
+	else 
+	{		
+		// level -2 (warp inside) Left					
+		kVL7 = new SFVec3f(-1.25, 0, 25);  
+     		kVL8 = new SFVec3f(-2.5, 0, 30);
+      		kVL9 = new SFVec3f(-3.25, 0, 34);	
+	}
+
+	if (finWarpR == 0)
+	{		
+		// level  1 (warp outside ) Right    			
+		kVR7 = new SFVec3f(1.25, 0, 25);  
+     		kVR8 = new SFVec3f(2.5, 0, 30);
+      		kVR9 = new SFVec3f(3.25, 0, 34);	  	
+	
+	}	
+	else 
+	{		
+		// level  -2 ( warp inside) Right      				
+		kVR7 = new SFVec3f(-1.25, 0, 25);  
+     		kVR8 = new SFVec3f(-2.5, 0, 30);
+      		kVR9 = new SFVec3f(-3.25, 0, 34);
+	}
+
+	// Left Fin (fixed spine)
+	kVL1 = new SFVec3f(0, 0, 1);  
+     	kVL2 = new SFVec3f(0, 0, 5);
+      	kVL3 = new SFVec3f(0, 0, 8);
+	kVL4 = new SFVec3f(0, 0, 12); 
+	kVL5 = new SFVec3f(0, 0, 15); 	
+	kVL6 = new SFVec3f(0, 0, 18);			
+      	keyValueL = new MFVec3f(kVL1, kVL2, kVL3, kVL4, kVL5, kVL6, kVL7, kVL8, kVL9);  
+	
+	// Right Fin (fixed spine)
+	kVR1 = new SFVec3f(0, 0, 1);  
+     	kVR2 = new SFVec3f(0, 0, 5);
+      	kVR3 = new SFVec3f(0, 0, 8);
+	kVR4 = new SFVec3f(0, 0, 12);  	
+	kVR5 = new SFVec3f(0, 0, 15);
+	kVR6 = new SFVec3f(0, 0, 18);			
+      	keyValueR = new MFVec3f(kVR1, kVR2, kVR3, kVR4, kVR5, kVR6, kVR7, kVR8, kVR9);  
+      	
+	//tracePrint ('[keyValueL = ]' + keyValueL);     
+	//tracePrint ('[keyValueR = ]' + keyValueR);     
+			
+}
+
+function set_fraction (value, timeStamp)
+{
+	finMove(value);
+	//tracePrint('time fraction =' + value);
+	
+}
+
+function tracePrint (outputString)
+{
+	if (traceEnabled) Browser.print ('[Fin Move]' + outputString);
+}
+"""),
                         ROUTE(fromField='isActive',fromNode='FinTriggerProximitySensor',toField='enabled',toNode='FinClock'),
                         ROUTE(fromField='fraction_changed',fromNode='FinClock',toField='set_fraction',toNode='FinScript'),
                         ROUTE(fromField='keyValueR',fromNode='FinScript',toField='set_spine',toNode='Finr'),
@@ -798,9 +902,57 @@ newModel=X3D(profile='Immersive',version='3.3',
       field(accessType='inputOnly',name='set_rotationL',type='SFRotation'),
       field(accessType='inputOnly',name='set_rotationR',type='SFRotation'),
       field(accessType='outputOnly',name='fin_warpL',type='SFBool'),
-      field(accessType='outputOnly',name='fin_warpR',type='SFBool')]
-*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
-),
+      field(accessType='outputOnly',name='fin_warpR',type='SFBool')],
+
+      sourceCode="""
+ecmascript:
+
+
+var positionX;
+var positionY;
+var positionZ;
+var rotation;
+
+function initialize()
+{
+    	positionX = 0.0;
+	positionY = 0.0;
+	positionZ = 0.0;
+	rotation = 0.0;
+}
+
+function set_rotationL( value, timeStamp)
+{
+	rotationFinL = new SFRotation(positionX, positionY, positionZ, rotation);
+	rotationFinL = value;
+	//print ('rotationFinL[0] ' + rotationFinL[0]);
+	if (rotationFinL[0] <= 0)
+	{
+		fin_warpL = 0;
+	}
+	else
+	{
+		fin_warpL = 1;
+	}
+	
+}
+
+function set_rotationR( value, timeStamp)
+{
+	rotationFinR = new SFRotation(positionX, positionY, positionZ, rotation);
+	rotationFinR = value;
+	//print ('rotationFin[0] ' + rotationFinR[0]);
+	if (rotationFinR[0] <= 0)
+	{
+		fin_warpR = 0;
+	}
+	else
+	{
+		fin_warpR = 1;
+	}
+	
+}
+"""),
     Group(DEF='Animations',
       children=[
       Group(DEF='Dive_Animation',

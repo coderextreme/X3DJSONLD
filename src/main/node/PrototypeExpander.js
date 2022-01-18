@@ -630,7 +630,7 @@ PROTOS.prototype = {
 	readCode : function (data, fileExt, protoexp, done, p, newobject) {
 		if (typeof data !== 'undefined') {
 			// console.log(data);
-			newobject[p]["#sourceText"] = data.split(/\r?\n/);
+			newobject[p]["#sourceCode"] = data.split(/\r?\n/);
 			delete newobject[p]["@url"];
 		}
 	},

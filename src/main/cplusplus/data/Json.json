@@ -509,7 +509,7 @@
                         "@type":"MFColor"
                       }
                     ],
-                    "#sourceText":[
+                    "#sourceCode":[
 "",
 "",
 "ecmascript:",
@@ -908,7 +908,7 @@
                               }
                             ]
                         },
-                        "#sourceText":[
+                        "#sourceCode":[
 "",
 "",
 "ecmascript:",

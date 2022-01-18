@@ -593,7 +593,7 @@
                       "@type": "MFColor"
                     }
                   ],
-                  "#sourceText": [
+                  "#sourceCode": [
                     "ecmascript:",
                     "",
                     "function colorInput (eventValue) // Example source code",
@@ -1019,7 +1019,7 @@
                         }
                       ]
                     },
-                    "#sourceText": [
+                    "#sourceCode": [
                       "ecmascript:",
                       "function initialize ()",
                       "{",

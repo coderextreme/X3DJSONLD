@@ -3,7 +3,7 @@
     "@profile":"Full",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -32,7 +32,7 @@
           },
           {
             "@name":"translated",
-            "@content":"24 November 2021"
+            "@content":"17 January 2022"
           },
           {
             "@name":"generator",
@@ -88,7 +88,7 @@
                               "@type":"SFTime"
                             }
                           ],
-                          "#sourceText":[
+                          "#sourceCode":[
 "",
 "vrmlscript:function triggerIn(value, time) {",
 "",
@@ -160,7 +160,7 @@
                               "@type":"SFInt32"
                             }
                           ],
-                          "#sourceText":[
+                          "#sourceCode":[
 "",
 "vrmlscript:",
 "function bonus_Blue(value, time)",
@@ -228,7 +228,7 @@
                       { "NavigationInfo":
                         {
                           "@DEF":"_exa",
-                          "@type":[", ","ANYEXAMINE"],
+                          "@type":"\"ANY\", \"EXAMINE\"",
                           "@visibilityLimit":450
                         }
                       },
@@ -252,7 +252,7 @@
                               "@type":"SFVec3f"
                             }
                           ],
-                          "#sourceText":[
+                          "#sourceCode":[
 "",
 "vrmlscript:",
 "function translation_animIN(value, time)",
@@ -6202,7 +6202,7 @@
                               "@type":"SFTime"
                             }
                           ],
-                          "#sourceText":[
+                          "#sourceCode":[
 "",
 "vrmlscript:",
 "function hitTime(value, time)",
@@ -7732,7 +7732,7 @@
                                                 "@type":"SFTime"
                                               }
                                             ],
-                                            "#sourceText":[
+                                            "#sourceCode":[
 "",
 "vrmlscript:",
 "function hitTime(value, time)",
@@ -8127,7 +8127,7 @@
                                                       "@type":"SFTime"
                                                     }
                                                   ],
-                                                  "#sourceText":[
+                                                  "#sourceCode":[
 "",
 "vrmlscript:",
 "function hitTime(value, time)",
@@ -8273,7 +8273,7 @@
                                                 "@type":"SFTime"
                                               }
                                             ],
-                                            "#sourceText":[
+                                            "#sourceCode":[
 "",
 "vrmlscript:",
 "function hitTime(value, time)",
@@ -8558,7 +8558,7 @@
                         "@type":"SFTime"
                       }
                     ],
-                    "#sourceText":[
+                    "#sourceCode":[
 "",
 "vrmlscript:",
 "function keyTime_A(value, time)",

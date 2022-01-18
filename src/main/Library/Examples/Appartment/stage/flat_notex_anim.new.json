@@ -1904,7 +1904,7 @@
                         "@type":"SFBool"
                       }
                     ],
-                    "#sourceText":[
+                    "#sourceCode":[
 "",
 "",
 "vrmlscript:",

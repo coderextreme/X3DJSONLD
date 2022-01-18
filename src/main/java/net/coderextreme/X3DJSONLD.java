@@ -81,7 +81,10 @@ public class X3DJSONLD {
 	public void convertProperty(Document document, String key, JsonObject object, Element element, String containerField) {
 		// System.err.println(key+"= P "+object.get(key));
 		if (object != null && object.get(key) instanceof JsonObject) {
-			if (key.substring(0,1).equals("@")) {
+			if (key.equals("@sourceCode")) {
+				System.err.println("FOUND SOURCE 1");
+				CDATACreateFunction(document, element, (JsonArray)object.get(key));
+			} else if (key.substring(0,1).equals("@")) {
 				convertJsonValue(document, object.get(key), key, element, containerField);
 			} else if (key.substring(0,1).equals("-")) {
 				System.err.println("converting children at "+key);
@@ -97,8 +100,8 @@ public class X3DJSONLD {
 						Comment child = document.createComment(CommentStringToXML(object.get(key).toString()));
 						element.appendChild(child);
 				}
-			} else if (key.equals("#sourceText")) {
-				System.err.println("FOUND SOURCE");
+			} else if (key.equals("#sourceCode")) {
+				System.err.println("FOUND SOURCE 2");
 				CDATACreateFunction(document, element, (JsonArray)object.get(key));
 			} else if (key.equals("connect") || key.equals("fieldValue") || key.equals("field") || key.equals("meta") || key.equals("component") || key.equals("unit")) {
 				JsonArray array = (JsonArray)object.get(key);
@@ -241,10 +244,13 @@ public class X3DJSONLD {
 			} else {
 			}
 		}
-		if (parentkey.substring(0,1).equals("@")) {
+		if (parentkey.equals("@sourceCode")) {
+			System.err.println("FOUND SOURCE 3");
+			CDATACreateFunction(document, element, array);
+		} else if (parentkey.substring(0,1).equals("@")) {
 			elementSetAttribute(element, parentkey.substring(1), localArray);
-		} else if (parentkey.equals("#sourceText")) {
-			System.err.println("FOUND SOURCE");
+		} else if (parentkey.equals("#sourceCode")) {
+			System.err.println("FOUND SOURCE 4");
 			CDATACreateFunction(document, element, array);
 		}
 	}

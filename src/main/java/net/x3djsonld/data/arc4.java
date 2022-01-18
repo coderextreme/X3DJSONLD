@@ -93,8 +93,6 @@ ecmascript:
                     keyValue = new MFVec3f([old, translation]);
 		    // Browser.println(keyValue);
 		}
-
-
 """)
         .addField(new field().setName("translation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
         .addField(new field().setName("old").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
@@ -119,8 +117,6 @@ ecmascript:
                     keyValue = new MFVec3f([old, translation]);
 		    // Browser.println(keyValue);
 		}
-
-
 """)
         .addField(new field().setName("translation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
         .addField(new field().setName("old").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))

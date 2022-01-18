@@ -54,10 +54,7 @@ public class JoeExample
     .addMeta(new meta().setName("filename").setContent("Scripting.x3d")))
   .setScene(new Scene()
     .addChild(new Script("OpenVault").setSourceCode("""
-
-      
-
-      ecmascript:
+ecmascript:
 
       function combinationEntered (value) {
 
@@ -70,10 +67,7 @@ public class JoeExample
       if (unlocked) vaultUnlocked = value;
 
       }
-
-      
-
-    """)
+""")
       .addField(new field().setName("openVault").setType(field.TYPE_SFTIME).setAccessType(field.ACCESSTYPE_INPUTONLY))
       .addField(new field().setName("combinationEntered").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_INPUTONLY))
       .addField(new field().setName("vaultUnlocked").setType(field.TYPE_SFTIME).setAccessType(field.ACCESSTYPE_OUTPUTONLY))

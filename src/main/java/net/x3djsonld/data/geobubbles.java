@@ -90,7 +90,8 @@ public class geobubbles
           .setMaterial(new Material().setDiffuseColor(0.7,0.7,0.7).setSpecularColor(0.5,0.5,0.5)))))
     .addChild(new TimeSensor("TourTime").setCycleInterval(5).setLoop(true))
     .addChild(new GeoPositionInterpolator("TourPosition").setKey(new double[] {0.0,1.0}).setKeyValue(new MFVec3d(new double[] {0.0015708,0.0,4.0,0.0,0.0015708,4.0})))
-    .addChild(new Script("RandomTourTime").setSourceCode("""ecmascript:
+    .addChild(new Script("RandomTourTime").setSourceCode("""
+ecmascript:
 
                function set_cycle(value) {
                         var cartesianMult = -150;  // -150 if cartesian, 1 if geo
@@ -106,7 +107,8 @@ public class geobubbles
                         position = new MFVec3d();
                         position[0] = new SFVec3d(positions[ov][0],positions[ov][1],positions[ov][2]);
                         position[1] = new SFVec3d(positions[vc][0],positions[vc][1],positions[vc][2]);
-               }""")
+               }
+""")
       .addField(new field().setName("set_cycle").setType(field.TYPE_SFTIME).setAccessType(field.ACCESSTYPE_INPUTONLY))
       .addField(new field().setName("val").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0))
       .addField(new field().setName("positions").setType(field.TYPE_MFVEC3D).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new MFVec3d(new MFVec3d(new double[] {0.0015708,0.0,4.0,0.0,0.0015708,4.0}))))

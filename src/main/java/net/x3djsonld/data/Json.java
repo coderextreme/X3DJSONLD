@@ -248,7 +248,6 @@ public class Json
     .addChild(new Group("BackgroundGroup")
       .addChild(new Background("GradualBackground"))
       .addChild(new Script("colorTypeConversionScript").setSourceCode("""
-
 ecmascript:
 
 function colorInput (eventValue) // Example source code
@@ -256,8 +255,7 @@ function colorInput (eventValue) // Example source code
    colorsOutput = new MFColor(eventValue); // assigning value sends output event
 // Browser.print('colorInput=' + eventValue + ', colorsOutput=' + colorsOutput + '\n');
 }
-
-      """)
+""")
         .addField(new field().setName("colorInput").setType(field.TYPE_SFCOLOR).setAccessType(field.ACCESSTYPE_INPUTONLY))
         .addField(new field().setName("colorsOutput").setType(field.TYPE_MFCOLOR).setAccessType(field.ACCESSTYPE_OUTPUTONLY)))
       .addChild(new ColorInterpolator("ColorAnimator").setKey(new double[] {0.0,0.5,1.0}).setKeyValue(new MFColor(new double[] {0.9411765,1.0,1.0,0.29411766,0.0,0.50980395,0.9411765,1.0,1.0}))
@@ -325,7 +323,6 @@ function colorInput (eventValue) // Example source code
             .addConnect(new connect().setNodeField("ambientIntensity").setProtoField("ambientIntensity"))))
         .addComments(" Only first node (the node type) is renderable, others are along for the ride ")
         .addChild(new Script("MaterialModulatorScript").setSourceCode("""
-
 ecmascript:
 function initialize ()
 {
@@ -349,8 +346,7 @@ function clockTrigger (timeValue)
 		Browser.print ('diffuseColor=(' + red + ',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\n');
 	}
 }
-
-        """)
+""")
           .addField(new field().setName("enabled").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
           .addField(new field().setName("diffuseColor").setType(field.TYPE_SFCOLOR).setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
           .addField(new field().setName("newColor").setType(field.TYPE_SFCOLOR).setAccessType(field.ACCESSTYPE_OUTPUTONLY))

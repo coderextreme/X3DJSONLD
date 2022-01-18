@@ -111,9 +111,12 @@ newModel=X3D(profile='Immersive',version='3.3',
             connect(nodeField='onlyIntrados',protoField='onlyIntrados'),
             connect(nodeField='archFilled',protoField='archFilled'),
             connect(nodeField='archHalfFilled',protoField='archHalfFilled'),
-            connect(nodeField='lintel',protoField='lintel')])
-*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
-),
+            connect(nodeField='lintel',protoField='lintel')]),
+
+          sourceCode="""
+ecmascript:
+
+"""),
         ROUTE(fromField='computedScale',fromNode='ArchPrototypeScript',toField='scale',toNode='ArchTransform'),
         ROUTE(fromField='pointOut',fromNode='ArchPrototypeScript',toField='point',toNode='ArchChord'),
         ROUTE(fromField='indexOut',fromNode='ArchPrototypeScript',toField='set_coordIndex',toNode='ArchIndex')])),

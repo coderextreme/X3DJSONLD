@@ -50,9 +50,27 @@ newModel=X3D(profile='Immersive',version='3.3',
       field(name='set_cycle',accessType='inputOnly',type='SFTime'),
       field(name='val',accessType='inputOutput',type='SFFloat',value=0),
       field(name='positions',accessType='inputOutput',type='MFVec3d',value=[(0.0015708,0,4),(0,0.0015708,4)]),
-      field(name='position',accessType='inputOutput',type='MFVec3d',value=[(0.0015708,0,4),(0,0.0015708,4)])]
-*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
-),
+      field(name='position',accessType='inputOutput',type='MFVec3d',value=[(0.0015708,0,4),(0,0.0015708,4)])],
+
+      sourceCode="""
+ecmascript:
+
+               function set_cycle(value) {
+                        var cartesianMult = -150;  // -150 if cartesian, 1 if geo
+                        var ov = val;
+			// Browser.print('old '+ov);
+                        do {
+                                val = Math.floor(Math.random()*2);
+                                var vc = val;
+                                positions[vc] = new SFVec3d(Math.round(Math.random()*2)*0.0015708*cartesianMult, Math.round(Math.random()*2)*0.0015708*cartesianMult, 4);
+                        } while ( positions[ov][0] === positions[vc][0] && positions[ov][1] === positions[vc][1] && positions[ov][2] === positions[vc][2]);
+			// Browser.println(positions[ov]);
+			// Browser.println(positions[vc]);
+                        position = new MFVec3d();
+                        position[0] = new SFVec3d(positions[ov][0],positions[ov][1],positions[ov][2]);
+                        position[1] = new SFVec3d(positions[vc][0],positions[vc][1],positions[vc][2]);
+               }
+"""),
     ROUTE(fromNode='TourTime',fromField='cycleTime',toNode='RandomTourTime',toField='set_cycle'),
     ROUTE(fromNode='RandomTourTime',fromField='position',toNode='TourPosition',toField='keyValue'),
     ROUTE(fromNode='TourTime',fromField='fraction_changed',toNode='TourPosition',toField='set_fraction'),

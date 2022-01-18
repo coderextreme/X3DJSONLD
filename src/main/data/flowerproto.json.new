@@ -353,7 +353,7 @@
                               "@value": 0.5
                             }
                           ],
-                          "#sourceText": [
+                          "#sourceCode": [
                             "ecmascript:",
                             "\t\t\tfunction initialize() {",
                             "\t\t\t    translation = new SFVec3f(0, 0, 0);",

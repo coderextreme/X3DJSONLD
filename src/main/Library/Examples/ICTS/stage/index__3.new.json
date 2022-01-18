@@ -848,7 +848,7 @@
                         "@type":"SFTime"
                       }
                     ],
-                    "#sourceText":[
+                    "#sourceCode":[
 "",
 "",
 "vrmlscript:",

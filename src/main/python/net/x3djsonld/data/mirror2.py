@@ -87,9 +87,27 @@ newModel=X3D(profile='Immersive',version='4.0',
         field(name='top_changed',type='MFString',accessType='outputOnly'),
         field(name='bottom_changed',type='MFString',accessType='outputOnly'),
         field(name='set_fraction',type='SFFloat',accessType='inputOnly'),
-        field(name='old',type='SFInt32',accessType='inputOutput',value=-1)]
-*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
-),
+        field(name='old',type='SFInt32',accessType='inputOutput',value=-1)],
+
+        sourceCode="""
+ecmascript:
+        function set_fraction( f, tm ) {
+	    var side = Math.floor(f*frontUrls.length);
+	    if (side > frontUrls.length-1) {
+	    	side = 0;
+	    }
+	    if (side != old) {
+	    	    // Browser.print(f+" "+side);
+	    	    old = side;
+		    front_changed[0] = frontUrls[side];
+		    back_changed[0] = backUrls[side];
+		    left_changed[0] = leftUrls[side];
+		    right_changed[0] = rightUrls[side];
+		    top_changed[0] = topUrls[side];
+		    bottom_changed[0] = bottomUrls[side];
+            }
+        }
+"""),
       TimeSensor(DEF='Clock',cycleInterval=45,loop=True),
       ROUTE(fromNode='Clock',fromField='fraction_changed',toNode='UrlSelector',toField='set_fraction'),
       ROUTE(fromNode='UrlSelector',fromField='front_changed',toNode='cube',toField='frontUrl'),

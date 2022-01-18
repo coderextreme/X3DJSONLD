@@ -254,7 +254,7 @@
                               }
                             ]
                         },
-                        "#sourceText":[
+                        "#sourceCode":[
 "",
 "",
 "vrmlscript:",
@@ -332,7 +332,7 @@
                   "@type":"SFTime"
                 }
               ],
-              "#sourceText":[
+              "#sourceCode":[
 "",
 "",
 "vrmlscript:function triggerIn(value, time) {",
@@ -1577,7 +1577,7 @@
                               ]
                             }
                           ],
-                          "#sourceText":[
+                          "#sourceCode":[
 "",
 "",
 "vrmlscript:",
@@ -1729,7 +1729,7 @@
                               "@type":"SFBool"
                             }
                           ],
-                          "#sourceText":[
+                          "#sourceCode":[
 "",
 "",
 "vrmlscript:",

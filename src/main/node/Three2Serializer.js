@@ -194,7 +194,7 @@ ThreeSerializer.prototype = {
 				}
 			} else if (field === "#comment") {
 				obj.children.push("/*"+json[field]+"*/");
-			} else if (field === "#sourceText") {
+			} else if (field === "#sourceCode") {
 				obj.children.push("<script>"+json[field].join("\r\n")+'</Script>');
 			} else {
 				var node = json[field];

@@ -3,7 +3,7 @@
     "@profile":"Full",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"24 November 2021"
+            "@content":"17 January 2022"
           },
           {
             "@name":"generator",
@@ -616,7 +616,7 @@
                                         { "NavigationInfo":
                                           {
                                             "@DEF":"_startNavInfo",
-                                            "@type":["NONE"],
+                                            "@type":"\"NONE\"",
                                             "@avatarSize":[0.5,1.2,0.6],
                                             "@speed":0,
                                             "@headlight":false
@@ -704,7 +704,7 @@
                                               { "NavigationInfo":
                                                 {
                                                   "@DEF":"_startAnimNavInfo",
-                                                  "@type":["NONE"],
+                                                  "@type":"\"NONE\"",
                                                   "@avatarSize":[0.2,1.2,0.6],
                                                   "@speed":0,
                                                   "@headlight":false
@@ -747,7 +747,7 @@
                                               { "NavigationInfo":
                                                 {
                                                   "@DEF":"_gameNavInfo",
-                                                  "@type":["WALK"],
+                                                  "@type":"\"WALK\"",
                                                   "@avatarSize":[0.2,1.2,0.6],
                                                   "@speed":4,
                                                   "@headlight":false
@@ -770,7 +770,7 @@
                                               { "NavigationInfo":
                                                 {
                                                   "@DEF":"_death-timeoverNavInfo",
-                                                  "@type":["WALK"],
+                                                  "@type":"\"WALK\"",
                                                   "@avatarSize":[0.2,1.2,0.6],
                                                   "@speed":0,
                                                   "@headlight":false
@@ -794,7 +794,7 @@
                                               { "NavigationInfo":
                                                 {
                                                   "@DEF":"_timeoverNavInfo",
-                                                  "@type":["WALK"],
+                                                  "@type":"\"WALK\"",
                                                   "@avatarSize":[0.2,1.2,0.6],
                                                   "@speed":0,
                                                   "@headlight":false
@@ -818,7 +818,7 @@
                                               { "NavigationInfo":
                                                 {
                                                   "@DEF":"_gameOverNavInfo",
-                                                  "@type":["WALK"],
+                                                  "@type":"\"WALK\"",
                                                   "@avatarSize":[0.2,1.2,0.6],
                                                   "@speed":0,
                                                   "@headlight":false
@@ -842,7 +842,7 @@
                                               { "NavigationInfo":
                                                 {
                                                   "@DEF":"_levelcompletedNavInfo",
-                                                  "@type":["WALK"],
+                                                  "@type":"\"WALK\"",
                                                   "@avatarSize":[0.2,1.2,0.6],
                                                   "@speed":0,
                                                   "@headlight":false
@@ -4816,7 +4816,7 @@
                                                                                           "@type":"SFFloat"
                                                                                         }
                                                                                       ],
-                                                                                      "#sourceText":[
+                                                                                      "#sourceCode":[
 "",
 "vrmlscript: function xIn(value) { xBuf = value; vec[0] = xBuf; vec[1] = yBuf; } function yIn(value) { yBuf = value; vec[0] = xBuf; vec[1] = yBuf; }  ",
 ""

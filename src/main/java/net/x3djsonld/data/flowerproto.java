@@ -123,8 +123,6 @@ public class flowerproto
                     .addConnect(new connect().setNodeField("url").setProtoField("fragment"))))))
             .setGeometry(new Sphere()))
           .addChild(new Script("Animate").setSourceCode("""
-
-  
 ecmascript:
 			function initialize() {
 			    translation = new SFVec3f(0, 0, 0);
@@ -191,9 +189,7 @@ ecmascript:
 					d = 4;
 				}
 			}
-
-
-            """)
+""")
             .addField(new field().setName("translation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
             .addField(new field().setName("velocity").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
             .addField(new field().setName("set_fraction").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTONLY))

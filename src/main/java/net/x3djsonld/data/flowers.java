@@ -137,7 +137,6 @@ public class flowers
                 .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new String[] {"../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"}))))
             .setGeometry(new Sphere())))
         .addChild(new Script("Animate").setSourceCode("""
-
 ecmascript:
 
 			function initialize() {
@@ -205,7 +204,6 @@ ecmascript:
 					d = 4;
 				}
 			}
-
 """)
           .addField(new field().setName("translation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
           .addField(new field().setName("velocity").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))

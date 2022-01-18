@@ -84,9 +84,84 @@ newModel=X3D(profile='Immersive',version='3.0',
               field(accessType='inputOutput',name='f',type='SFFloat',value=5),
               field(accessType='inputOutput',name='g',type='SFFloat',value=5),
               field(accessType='inputOutput',name='h',type='SFFloat',value=5),
-              field(accessType='inputOutput',name='resolution',type='SFInt32',value=50)]
-*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
-),
+              field(accessType='inputOutput',name='resolution',type='SFInt32',value=50)],
+
+              sourceCode="""
+ecmascript:
+
+			var e = 5;
+			var f = 5;
+			var g = 5;
+			var h = 5;
+			var resolution = 100;
+
+			function initialize() {
+			     generateCoordinates();
+			     var localci = [];
+			     for (var i = 0; i < resolution-1; i++) {
+				for (var j = 0; j < resolution-1; j++) {
+				     localci.push(i*resolution+j);
+				     localci.push(i*resolution+j+1);
+				     localci.push((i+1)*resolution+j+1);
+				     localci.push((i+1)*resolution+j);
+				     localci.push(-1);
+				}
+			    }
+			    coordIndexes = new MFInt32(localci);
+			}
+
+			function generateCoordinates() {
+			     var theta = 0.0;
+			     var phi = 0.0;
+			     var delta = (2 * 3.141592653) / (resolution-1);
+			     var localc = [];
+			     for (var i = 0; i < resolution; i++) {
+				for (var j = 0; j < resolution; j++) {
+					var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
+					localc.push(new SFVec3f(
+						rho * Math.cos(phi) * Math.cos(theta),
+						rho * Math.cos(phi) * Math.sin(theta),
+						rho * Math.sin(phi)
+					));
+					theta += delta;
+				}
+				phi += delta;
+			     }
+			     
+			     coordinates = new MFVec3f(localc);
+			}
+
+			function set_fraction(fraction, eventTime) {
+				var choice = Math.floor(Math.random() * 4);
+				switch (choice) {
+				case 0:
+					e += Math.floor(Math.random() * 2) * 2 - 1;
+					break;
+				case 1:
+					f += Math.floor(Math.random() * 2) * 2 - 1;
+					break;
+				case 2:
+					g += Math.floor(Math.random() * 2) * 2 - 1;
+					break;
+				case 3:
+					h += Math.floor(Math.random() * 2) * 2 - 1;
+					break;
+				}
+				if (e < 1) {
+					f = 10;
+				}
+				if (f < 1) {
+					f = 10;
+				}
+				if (g < 1) {
+					g = 4;
+				}
+				if (h < 1) {
+					h = 4;
+				}
+				generateCoordinates();
+			}
+"""),
             ROUTE(fromNode='OrbitScript',fromField='coordIndexes',toNode='Orbit',toField='set_coordIndex'),
             ROUTE(fromNode='OrbitScript',fromField='coordinates',toNode='OrbitCoordinates',toField='point'),
             ROUTE(fromNode='Clock',fromField='fraction_changed',toNode='OrbitScript',toField='set_fraction'),

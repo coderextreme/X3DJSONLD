@@ -4,7 +4,7 @@
     "@profile": "Immersive",
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "meta": [
         {
@@ -33,7 +33,7 @@
         },
         {
           "@name": "translated",
-          "@content": "09 December 2021"
+          "@content": "17 January 2022"
         },
         {
           "@name": "generator",
@@ -203,7 +203,7 @@
                             "@type": "MFVec3f"
                           }
                         ],
-                        "#sourceText": [
+                        "#sourceCode": [
                           "",
                           "",
                           "ecmascript:",
@@ -391,7 +391,7 @@
                             "@type": "MFVec3f"
                           }
                         ],
-                        "#sourceText": [
+                        "#sourceCode": [
                           "",
                           "",
                           "ecmascript:",
@@ -579,7 +579,7 @@
                             "@type": "MFVec3f"
                           }
                         ],
-                        "#sourceText": [
+                        "#sourceCode": [
                           "",
                           "",
                           "ecmascript:",
@@ -767,7 +767,7 @@
                             "@type": "MFVec3f"
                           }
                         ],
-                        "#sourceText": [
+                        "#sourceCode": [
                           "",
                           "",
                           "ecmascript:",
@@ -932,7 +932,7 @@
                             ]
                           }
                         ],
-                        "#sourceText": [
+                        "#sourceCode": [
                           "",
                           "",
                           "ecmascript:",
@@ -1080,7 +1080,7 @@
                             ]
                           }
                         ],
-                        "#sourceText": [
+                        "#sourceCode": [
                           "",
                           "",
                           "ecmascript:",
@@ -1228,7 +1228,7 @@
                             ]
                           }
                         ],
-                        "#sourceText": [
+                        "#sourceCode": [
                           "",
                           "",
                           "ecmascript:",
@@ -1298,7 +1298,7 @@
                 "#comment": "<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>"
               }
             ],
-            "#sourceText": [
+            "#sourceCode": [
               "",
               "\t",
               "ecmascript:",

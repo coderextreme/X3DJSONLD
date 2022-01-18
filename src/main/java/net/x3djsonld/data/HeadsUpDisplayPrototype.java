@@ -128,7 +128,6 @@ public class HeadsUpDisplayPrototype
                         .addConnect(new connect().setNodeField("offset").setProtoField("locationOffset"))))
                     .addChild(new VisibilitySensor("MovementVisibilitySensor"))
                     .addChild(new Script("VisibilityControlScript").setSourceCode("""
-                      
 ecmascript:
 
 function tracePrint (text)
@@ -164,8 +163,7 @@ function setPlaneSensorTranslation (value, timeStamp)
 	planeSensorTranslation = value;
 	tracePrint('planeSensorTranslation=' + value);
 }
-
-                    """)
+""")
                       .addField(new field().setName("traceEnabled").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
                       .addField(new field().setName("isVisible").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(true))
                       .addField(new field().setName("planeSensorTranslation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new SFVec3f(0.0,0.0,0.0)))

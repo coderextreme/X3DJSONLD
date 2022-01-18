@@ -141,7 +141,7 @@
                   "@value":[0.0015708,0,4,0,0.0015708,4]
                 }
               ],
-              "#sourceText":[
+              "#sourceCode":[
 "ecmascript:",
 "",
 "               function set_cycle(value) {",

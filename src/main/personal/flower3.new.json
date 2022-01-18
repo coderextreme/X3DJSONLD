@@ -125,7 +125,7 @@
                   "@type":"MFInt32"
                 }
               ],
-              "#sourceText":[
+              "#sourceCode":[
 "",
 "",
 "ecmascript:",

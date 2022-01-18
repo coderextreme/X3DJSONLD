@@ -153,7 +153,7 @@
                             "@type":"MFVec3f"
                           }
                         ],
-                        "#sourceText":[
+                        "#sourceCode":[
 "",
 " ecmascript:",
 "\t\t\t\t\tfunction set_cycle(value) {",
@@ -285,7 +285,7 @@
                               }
                             ]
                         },
-                        "#sourceText":[
+                        "#sourceCode":[
 "",
 " ecmascript:",
 "",

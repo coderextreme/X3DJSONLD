@@ -123,8 +123,7 @@ public class mirror
             .addParts(new ShaderPart().setUrl(new String[] {"../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"}))
             .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new String[] {"../shaders/x_itemix.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itemix.fs"}))))
         .setGeometry(new Sphere().setRadius(30)))
-      .addChild(new Script("UrlSelector").setDirectOutput(true).setSourceCode(""" 
-
+      .addChild(new Script("UrlSelector").setDirectOutput(true).setSourceCode("""
 ecmascript:
         function set_fraction( f, tm ) {
 	    var side = Math.floor(f*frontUrls.length);
@@ -142,7 +141,6 @@ ecmascript:
 		    bottom_changed[0] = bottomUrls[side];
             }
         }
-
 """)
         .addField(new field().setName("frontUrls").setType(field.TYPE_MFSTRING).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new String[] {"../resources/images/all_probes/beach_cross/beach_front.png","../resources/images/all_probes/building_cross/building_front.png","../resources/images/all_probes/campus_cross/campus_front.png","../resources/images/all_probes/galileo_cross/galileo_front.png","../resources/images/all_probes/grace_cross/grace_front.png","../resources/images/all_probes/kitchen_cross/kitchen_front.png","../resources/images/all_probes/rnl_cross/rnl_front.png","../resources/images/all_probes/stpeters_cross/stpeters_front.png","../resources/images/all_probes/uffizi_cross/uffizi_front.png"}))
         .addField(new field().setName("backUrls").setType(field.TYPE_MFSTRING).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new String[] {"../resources/images/all_probes/beach_cross/beach_back.png","../resources/images/all_probes/building_cross/building_back.png","../resources/images/all_probes/campus_cross/campus_back.png","../resources/images/all_probes/galileo_cross/galileo_back.png","../resources/images/all_probes/grace_cross/grace_back.png","../resources/images/all_probes/kitchen_cross/kitchen_back.png","../resources/images/all_probes/rnl_cross/rnl_back.png","../resources/images/all_probes/stpeters_cross/stpeters_back.png","../resources/images/all_probes/uffizi_cross/uffizi_back.png"}))

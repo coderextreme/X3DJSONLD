@@ -2,13 +2,13 @@
   "X3D": {
     "encoding": "UTF-8",
     "@profile": "Immersive",
-    "@version": "3.3",
-    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "@version": "4.0",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-4.0.xsd",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "component": [
         {
-          "@name": "H-Anim",
+          "@name": "HAnim",
           "@level": 1
         }
       ],
@@ -35,7 +35,7 @@
         },
         {
           "@name": "modified",
-          "@content": "3 July 2020"
+          "@content": "23 December 2021"
         },
         {
           "@name": "description",
@@ -55,7 +55,7 @@
         },
         {
           "@name": "identifier",
-          "@content": "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/KoreanCharacter10Mi.x3d"
+          "@content": "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/KoreanCharacter10Mi.x3d"
         },
         {
           "@name": "generator",
@@ -79,7 +79,7 @@
         },
         {
           "@name": "translated",
-          "@content": "09 December 2021"
+          "@content": "17 January 2022"
         },
         {
           "@name": "generator",
@@ -122,20 +122,73 @@
           "HAnimHumanoid": {
             "@name": "Mi",
             "@DEF": "hanim_Mi",
-            "@info": [
-              "authorName=Chul Hee Jung and Myeong Won Lee",
-              "authorEmail=myeongwonlee@gmail.com",
-              "creationDate=31 March 2011",
-              "humanoidVersion=1.0",
-              "gender=female",
-              "height=1.5"
-            ],
             "@scale": [
               0.0225,
               0.0225,
               0.0225
             ],
-            "@version": "1.0",
+            "@version": "2.0",
+            "-children": [
+              {
+                "#comment": "original HAnimHumanoid info='\"authorName=Chul Hee Jung and Myeong Won Lee\" \"authorEmail=myeongwonlee@gmail.com\" \"creationDate=31 March 2011\" \"humanoidVersion=2.0\" \"gender=female\" \"height=1.5\"'"
+              }
+            ],
+            "-metadata": {
+              "MetadataSet": {
+                "@name": "HAnimHumanoid.info",
+                "@reference": "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid",
+                "-value": [
+                  {
+                    "MetadataString": {
+                      "@name": "authorName",
+                      "@value": [
+                        "Chul Hee Jung and Myeong Won Lee"
+                      ]
+                    }
+                  },
+                  {
+                    "MetadataString": {
+                      "@name": "authorEmail",
+                      "@value": [
+                        "myeongwonlee@gmail.com"
+                      ]
+                    }
+                  },
+                  {
+                    "MetadataString": {
+                      "@name": "creationDate",
+                      "@value": [
+                        "31 March 2011"
+                      ]
+                    }
+                  },
+                  {
+                    "MetadataString": {
+                      "@name": "gender",
+                      "@value": [
+                        "female"
+                      ]
+                    }
+                  },
+                  {
+                    "MetadataFloat": {
+                      "@name": "height",
+                      "@value": [
+                        1.5
+                      ]
+                    }
+                  },
+                  {
+                    "MetadataString": {
+                      "@name": "humanoidVersion",
+                      "@value": [
+                        "2.0"
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
             "-skeleton": [
               {
                 "HAnimJoint": {
@@ -146,7 +199,12 @@
                     32.68,
                     -0.7076
                   ],
-                  "@stiffness": [
+                  "@ulimit": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "@llimit": [
                     0,
                     0,
                     0
@@ -183,7 +241,7 @@
                                             "@DEF": "MiTextureAtlas",
                                             "@url": [
                                               "images/Mi.png",
-                                              "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/images/Mi.png"
+                                              "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/images/Mi.png"
                                             ]
                                           }
                                         }
@@ -1497,7 +1555,12 @@
                           31.309999,
                           -0.8377
                         ],
-                        "@stiffness": [
+                        "@ulimit": [
+                          0,
+                          0,
+                          0
+                        ],
+                        "@llimit": [
                           0,
                           0,
                           0
@@ -3628,7 +3691,12 @@
                                 17.16,
                                 -1.037
                               ],
-                              "@stiffness": [
+                              "@ulimit": [
+                                0,
+                                0,
+                                0
+                              ],
+                              "@llimit": [
                                 0,
                                 0,
                                 0
@@ -4791,14 +4859,19 @@
                                 },
                                 {
                                   "HAnimJoint": {
-                                    "@name": "l_ankle",
-                                    "@DEF": "hanim_l_ankle",
+                                    "@name": "l_talocrural",
+                                    "@DEF": "hanim_l_talocrural",
                                     "@center": [
                                       3.602,
                                       4.137,
                                       0.6104
                                     ],
-                                    "@stiffness": [
+                                    "@ulimit": [
+                                      0,
+                                      0,
+                                      0
+                                    ],
+                                    "@llimit": [
                                       0,
                                       0,
                                       0
@@ -4806,8 +4879,8 @@
                                     "-children": [
                                       {
                                         "HAnimSegment": {
-                                          "@name": "l_hindfoot",
-                                          "@DEF": "hanim_l_hindfoot",
+                                          "@name": "l_talus",
+                                          "@DEF": "hanim_l_talus",
                                           "-children": [
                                             {
                                               "Transform": {
@@ -5987,14 +6060,19 @@
                                       },
                                       {
                                         "HAnimJoint": {
-                                          "@name": "l_midtarsal",
-                                          "@DEF": "hanim_l_midtarsal",
+                                          "@name": "l_metatarsophalangeal_2",
+                                          "@DEF": "hanim_l_metatarsophalangeal_2",
                                           "@center": [
                                             3.602,
                                             3.02,
                                             0.07017
                                           ],
-                                          "@stiffness": [
+                                          "@ulimit": [
+                                            0,
+                                            0,
+                                            0
+                                          ],
+                                          "@llimit": [
                                             0,
                                             0,
                                             0
@@ -6002,8 +6080,8 @@
                                           "-children": [
                                             {
                                               "HAnimSegment": {
-                                                "@name": "l_middistal",
-                                                "@DEF": "hanim_l_middistal",
+                                                "@name": "l_tarsal_proximal_phalanx_2",
+                                                "@DEF": "hanim_l_tarsal_proximal_phalanx_2",
                                                 "-children": [
                                                   {
                                                     "Transform": {
@@ -7087,7 +7165,12 @@
                           31.309999,
                           -0.8377
                         ],
-                        "@stiffness": [
+                        "@ulimit": [
+                          0,
+                          0,
+                          0
+                        ],
+                        "@llimit": [
                           0,
                           0,
                           0
@@ -9218,7 +9301,12 @@
                                 17.16,
                                 -1.037
                               ],
-                              "@stiffness": [
+                              "@ulimit": [
+                                0,
+                                0,
+                                0
+                              ],
+                              "@llimit": [
                                 0,
                                 0,
                                 0
@@ -10381,14 +10469,19 @@
                                 },
                                 {
                                   "HAnimJoint": {
-                                    "@name": "r_ankle",
-                                    "@DEF": "hanim_r_ankle",
+                                    "@name": "r_talocrural",
+                                    "@DEF": "hanim_r_talocrural",
                                     "@center": [
                                       -3.602,
                                       4.137,
                                       0.6104
                                     ],
-                                    "@stiffness": [
+                                    "@ulimit": [
+                                      0,
+                                      0,
+                                      0
+                                    ],
+                                    "@llimit": [
                                       0,
                                       0,
                                       0
@@ -10396,8 +10489,8 @@
                                     "-children": [
                                       {
                                         "HAnimSegment": {
-                                          "@name": "r_hindfoot",
-                                          "@DEF": "hanim_r_hindfoot",
+                                          "@name": "r_talus",
+                                          "@DEF": "hanim_r_talus",
                                           "-children": [
                                             {
                                               "Transform": {
@@ -11577,14 +11670,19 @@
                                       },
                                       {
                                         "HAnimJoint": {
-                                          "@name": "r_midtarsal",
-                                          "@DEF": "hanim_r_midtarsal",
+                                          "@name": "r_metatarsophalangeal_2",
+                                          "@DEF": "hanim_r_metatarsophalangeal_2",
                                           "@center": [
                                             -3.602,
                                             3.02,
                                             0.07017
                                           ],
-                                          "@stiffness": [
+                                          "@ulimit": [
+                                            0,
+                                            0,
+                                            0
+                                          ],
+                                          "@llimit": [
                                             0,
                                             0,
                                             0
@@ -11592,8 +11690,8 @@
                                           "-children": [
                                             {
                                               "HAnimSegment": {
-                                                "@name": "r_middistal",
-                                                "@DEF": "hanim_r_middistal",
+                                                "@name": "r_tarsal_proximal_phalanx_2",
+                                                "@DEF": "hanim_r_tarsal_proximal_phalanx_2",
                                                 "-children": [
                                                   {
                                                     "Transform": {
@@ -12677,7 +12775,12 @@
                           30.200001,
                           -1.38
                         ],
-                        "@stiffness": [
+                        "@ulimit": [
+                          0,
+                          0,
+                          0
+                        ],
+                        "@llimit": [
                           0,
                           0,
                           0
@@ -13787,7 +13890,12 @@
                                 48.580002,
                                 -1.277
                               ],
-                              "@stiffness": [
+                              "@ulimit": [
+                                0,
+                                0,
+                                0
+                              ],
+                              "@llimit": [
                                 0,
                                 0,
                                 0
@@ -15098,7 +15206,12 @@
                                       40.810001,
                                       -1.412
                                     ],
-                                    "@stiffness": [
+                                    "@ulimit": [
+                                      0,
+                                      0,
+                                      0
+                                    ],
+                                    "@llimit": [
                                       0,
                                       0,
                                       0
@@ -16196,14 +16309,19 @@
                                       },
                                       {
                                         "HAnimJoint": {
-                                          "@name": "l_wrist",
-                                          "@DEF": "hanim_l_wrist",
+                                          "@name": "l_radiocarpal",
+                                          "@DEF": "hanim_l_radiocarpal",
                                           "@center": [
                                             6.934,
                                             33.959999,
                                             -1.108
                                           ],
-                                          "@stiffness": [
+                                          "@ulimit": [
+                                            0,
+                                            0,
+                                            0
+                                          ],
+                                          "@llimit": [
                                             0,
                                             0,
                                             0
@@ -16211,8 +16329,8 @@
                                           "-children": [
                                             {
                                               "HAnimSegment": {
-                                                "@name": "l_hand",
-                                                "@DEF": "hanim_l_hand",
+                                                "@name": "l_carpal",
+                                                "@DEF": "hanim_l_carpal",
                                                 "-children": [
                                                   {
                                                     "Transform": {
@@ -18424,7 +18542,12 @@
                                 48.580002,
                                 -1.277
                               ],
-                              "@stiffness": [
+                              "@ulimit": [
+                                0,
+                                0,
+                                0
+                              ],
+                              "@llimit": [
                                 0,
                                 0,
                                 0
@@ -19735,7 +19858,12 @@
                                       40.810001,
                                       -1.412
                                     ],
-                                    "@stiffness": [
+                                    "@ulimit": [
+                                      0,
+                                      0,
+                                      0
+                                    ],
+                                    "@llimit": [
                                       0,
                                       0,
                                       0
@@ -20833,14 +20961,19 @@
                                       },
                                       {
                                         "HAnimJoint": {
-                                          "@name": "r_wrist",
-                                          "@DEF": "hanim_r_wrist",
+                                          "@name": "r_radiocarpal",
+                                          "@DEF": "hanim_r_radiocarpal",
                                           "@center": [
                                             -6.934,
                                             33.959999,
                                             -1.108
                                           ],
-                                          "@stiffness": [
+                                          "@ulimit": [
+                                            0,
+                                            0,
+                                            0
+                                          ],
+                                          "@llimit": [
                                             0,
                                             0,
                                             0
@@ -20848,8 +20981,8 @@
                                           "-children": [
                                             {
                                               "HAnimSegment": {
-                                                "@name": "r_hand",
-                                                "@DEF": "hanim_r_hand",
+                                                "@name": "r_carpal",
+                                                "@DEF": "hanim_r_carpal",
                                                 "-children": [
                                                   {
                                                     "Transform": {
@@ -23061,7 +23194,12 @@
                                 35.310001,
                                 -2.314
                               ],
-                              "@stiffness": [
+                              "@ulimit": [
+                                0,
+                                0,
+                                0
+                              ],
+                              "@llimit": [
                                 0,
                                 0,
                                 0
@@ -31476,7 +31614,12 @@
                                       35.310001,
                                       -2.314
                                     ],
-                                    "@stiffness": [
+                                    "@ulimit": [
+                                      0,
+                                      0,
+                                      0
+                                    ],
+                                    "@llimit": [
                                       0,
                                       0,
                                       0
@@ -36368,22 +36511,12 @@
               },
               {
                 "HAnimJoint": {
-                  "@USE": "hanim_vl5"
-                }
-              },
-              {
-                "HAnimJoint": {
                   "@USE": "hanim_skullbase"
                 }
               },
               {
                 "HAnimJoint": {
-                  "@USE": "hanim_l_ankle"
-                }
-              },
-              {
-                "HAnimJoint": {
-                  "@USE": "hanim_r_ankle"
+                  "@USE": "hanim_vl5"
                 }
               },
               {
@@ -36418,12 +36551,22 @@
               },
               {
                 "HAnimJoint": {
-                  "@USE": "hanim_l_midtarsal"
+                  "@USE": "hanim_l_metatarsophalangeal_2"
                 }
               },
               {
                 "HAnimJoint": {
-                  "@USE": "hanim_r_midtarsal"
+                  "@USE": "hanim_r_metatarsophalangeal_2"
+                }
+              },
+              {
+                "HAnimJoint": {
+                  "@USE": "hanim_l_radiocarpal"
+                }
+              },
+              {
+                "HAnimJoint": {
+                  "@USE": "hanim_r_radiocarpal"
                 }
               },
               {
@@ -36438,19 +36581,19 @@
               },
               {
                 "HAnimJoint": {
-                  "@USE": "hanim_l_wrist"
+                  "@USE": "hanim_l_talocrural"
                 }
               },
               {
                 "HAnimJoint": {
-                  "@USE": "hanim_r_wrist"
+                  "@USE": "hanim_r_talocrural"
                 }
               }
             ],
             "-segments": [
               {
                 "HAnimSegment": {
-                  "@USE": "hanim_sacrum"
+                  "@USE": "hanim_l5"
                 }
               },
               {
@@ -36460,7 +36603,7 @@
               },
               {
                 "HAnimSegment": {
-                  "@USE": "hanim_l5"
+                  "@USE": "hanim_sacrum"
                 }
               },
               {
@@ -36480,6 +36623,16 @@
               },
               {
                 "HAnimSegment": {
+                  "@USE": "hanim_l_carpal"
+                }
+              },
+              {
+                "HAnimSegment": {
+                  "@USE": "hanim_r_carpal"
+                }
+              },
+              {
+                "HAnimSegment": {
                   "@USE": "hanim_l_forearm"
                 }
               },
@@ -36490,32 +36643,22 @@
               },
               {
                 "HAnimSegment": {
-                  "@USE": "hanim_l_hand"
+                  "@USE": "hanim_l_talus"
                 }
               },
               {
                 "HAnimSegment": {
-                  "@USE": "hanim_r_hand"
+                  "@USE": "hanim_r_talus"
                 }
               },
               {
                 "HAnimSegment": {
-                  "@USE": "hanim_l_hindfoot"
+                  "@USE": "hanim_l_tarsal_proximal_phalanx_2"
                 }
               },
               {
                 "HAnimSegment": {
-                  "@USE": "hanim_r_hindfoot"
-                }
-              },
-              {
-                "HAnimSegment": {
-                  "@USE": "hanim_l_middistal"
-                }
-              },
-              {
-                "HAnimSegment": {
-                  "@USE": "hanim_r_middistal"
+                  "@USE": "hanim_r_tarsal_proximal_phalanx_2"
                 }
               },
               {
