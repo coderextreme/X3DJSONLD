@@ -160,12 +160,10 @@ POSSIBILITY OF SUCH DAMAGE.
             <arg value="--version"/>
         </exec>
         <!-- https://www.saxonica.com/documentation10/#!using-xsl/commandline -->
-	<!--
         <echo>saxon -? help</echo>
         <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." failonerror="true">
             <arg value="-?" description="help information"/>
         </java>
-	-->
         <echo>Check for node.js installation from https://nodejs.org</echo>
         <exec executable="${node.exe}">
             <arg value="--version"/>

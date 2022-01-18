@@ -41,7 +41,7 @@ head1.unit[4] = unit6;
 
 meta meta7 = createNode("meta");
 meta7.name = "title";
-meta7.content = "HelloWorldProgramOutput.x3d";
+meta7.content = "HelloWorldProgramOutputCanonical.x3d";
 head1.meta[5] = meta7;
 
 meta meta8 = createNode("meta");

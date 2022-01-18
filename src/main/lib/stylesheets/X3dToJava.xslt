@@ -24,7 +24,7 @@ Recommended tools:
 <!--	xmlns:saxon="http://icl.com/saxon" saxon:trace="true"	-->
 
 <!--
-Copyright (c) 1995-2021 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2022 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -90,7 +90,7 @@ POSSIBILITY OF SUCH DAMAGE.
                                           
     <xsl:variable name="licenseText">
 		<xsl:text>
-Copyright (c) 1995-2021 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2022 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -731,7 +731,9 @@ POSSIBILITY OF SUCH DAMAGE.
                             <!-- must escape backslashes before quote characters to avoid side effects -->
                             <xsl:call-template name="escape-backslash-characters"> <!-- tail recursion -->
                                 <xsl:with-param name="inputValue">
-                                    <xsl:value-of select="@content"/>
+                                    <xsl:call-template name="escape-ampersand-characters">
+                                        <xsl:with-param name="inputValue" select="@content"/>
+                                    </xsl:call-template>
                                 </xsl:with-param>
                             </xsl:call-template>
                         </xsl:with-param>

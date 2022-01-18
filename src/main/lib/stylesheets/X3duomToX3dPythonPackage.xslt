@@ -3260,10 +3260,10 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             from xml.etree import ElementTree
             selfX3dXmlText = self.XML()
             selfX3dXmlTree = ElementTree.fromstring(selfX3dXmlText)
-            print("Python-to-XML well-formed XML document  test of XML output successful")
+            print("Python-to-XML well-formed XML document  test of XML output complete")
             try:
                 x3dschema.is_valid(selfX3dXmlTree)
-                print("Python-to-XML X3D", str(self.version), "schema validation test of XML output successful")
+                print("Python-to-XML X3D", str(self.version), "schema validation test of XML output complete")
             except SyntaxError as err:
                 print("*** Python-to-XML X3D", str(self.version), "schema validation test of XML output failed:", err)
                 if selfX3dXmlText: # might have failed to generate
@@ -3475,12 +3475,12 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
         result += indent +
 -->
                 <xsl:if test="(@name = 'Script') or (@name = 'ShaderProgram') or (@name = 'ShaderPart')">
-                    <!-- debug diagnostic -->
+                    <!-- debug diagnostic
                     <xsl:message>
                         <xsl:text>*** found @name=</xsl:text>
                         <xsl:value-of select="@name"/>
                         <xsl:text> for sourceCode test</xsl:text>
-                    </xsl:message>
+                    </xsl:message> -->
                     <xsl:text disable-output-escaping="yes"><![CDATA[
             if self.sourceCode:
                 result += indent + '<![]]></xsl:text><xsl:text>CDATA[' + (self.sourceCode) + ']</xsl:text>
@@ -3901,7 +3901,14 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                         </xsl:choose>
                         <xsl:text>
             result += '\n' + indent + '  ' + "</xsl:text>
-                        <xsl:value-of select="translate($fieldName,'_','')"/><!-- de-mung class_ id_ and style attributes -->
+                        <xsl:choose>
+                            <xsl:when test="($fieldName = 'sourceCode')">
+                                <xsl:text>url</xsl:text>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:value-of select="translate($fieldName,'_','')"/><!-- de-mung class_ id_ and style attributes -->
+                            </xsl:otherwise>
+                        </xsl:choose>
                         <xsl:text> </xsl:text>
                         <xsl:text>" + </xsl:text>
                         <xsl:choose>
