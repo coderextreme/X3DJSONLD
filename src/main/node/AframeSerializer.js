@@ -390,9 +390,8 @@ AframeSerializer.prototype = {
 				*/
 			} else if (field === "#comment") {
 				element.appendChild(document.createComment(json[field]));
-			} else if (field === "#sourceText") {
+			} else if (field === "#sourceCode") {
 				element.appendChild(document.createCDATASection(json[field].join("\r\n").replace(/'([^'\r]*)\n([^']*)'/g, "'$1\\n$2'")));
-
 			} else {
 				var node = json[field];
 				if (typeof node === 'object') {

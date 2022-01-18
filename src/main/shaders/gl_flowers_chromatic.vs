@@ -1,6 +1,4 @@
-#ifdef GL_ES
-  precision highp float;
-#endif
+precision highp float;
 
 uniform vec3 chromaticDispertion;
 uniform float bias;

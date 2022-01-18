@@ -124,7 +124,7 @@
                         "@type":"SFFloat"
                       }
                     ],
-                    "#sourceText":[
+                    "#sourceCode":[
 "",
 "",
 "ecmascript:",
@@ -265,7 +265,7 @@
                         "@type":"SFFloat"
                       }
                     ],
-                    "#sourceText":[
+                    "#sourceCode":[
 "",
 "",
 "ecmascript:",
@@ -406,7 +406,7 @@
                         "@type":"SFFloat"
                       }
                     ],
-                    "#sourceText":[
+                    "#sourceCode":[
 "",
 "",
 "ecmascript:",
@@ -547,7 +547,7 @@
                         "@type":"SFFloat"
                       }
                     ],
-                    "#sourceText":[
+                    "#sourceCode":[
 "",
 "",
 "ecmascript:",

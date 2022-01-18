@@ -1,0 +1,4913 @@
+/* delete next 5 lines for Visual Studio */
+#define FALSE false
+#define TRUE true
+#define WINAPI
+#define AFX_EXT_CLASS
+#define EXPORT32
+#include "/c/x3d-code/www.web3d.org/x3d/languages/cpp/X3DLib/X3DLib.h"
+int main(int argc, char ** argv) {
+CX3DScene m_pScene;
+CBrowser browser = X3D.getBrowser();
+CX3D* X3D0 = new CX3D();
+CGroup* group = (CGroup*)(m_pScene.createNode("Group"));
+group->addChildren(X3D0);
+X3D0->setProfile("Full");
+X3D0->setVersion("3.3");
+Chead* head1 = new Chead();
+Cmeta* meta2 = new Cmeta();
+meta2->setName("comment");
+meta2->setContent("World of Titania");
+head1->addMeta(*meta2);
+
+Cmeta* meta3 = new Cmeta();
+meta3->setName("created");
+meta3->setContent("Mon, 09 Mar 2015 12:16:37 GMT");
+head1->addMeta(*meta3);
+
+Cmeta* meta4 = new Cmeta();
+meta4->setName("creator");
+meta4->setContent("Holger Seelig");
+head1->addMeta(*meta4);
+
+Cmeta* meta5 = new Cmeta();
+meta5->setName("generator");
+meta5->setContent("Titania V0.7.6, http://titania.create3000.de");
+head1->addMeta(*meta5);
+
+Cmeta* meta6 = new Cmeta();
+meta6->setName("modified");
+meta6->setContent("Mon, 09 Mar 2015 12:16:37 GMT");
+head1->addMeta(*meta6);
+
+Cmeta* meta7 = new Cmeta();
+meta7->setName("title");
+meta7->setContent("Approach");
+head1->addMeta(*meta7);
+
+X3D0->setHead(*head1);
+
+CScene* Scene8 = new CScene();
+CWorldInfo* WorldInfo9 = (CWorldInfo *)(m_pScene.createNode("WorldInfo"));
+WorldInfo9->setInfo(new CString[2]{", ","Created in TitaniaPackaged by CosmoPackage"}, 2);
+group->addChildren(*WorldInfo9);
+
+CTransform* Transform10 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform10->setDEF("s2LOD");
+CLOD* LOD11 = (CLOD *)(m_pScene.createNode("LOD"));
+CTransform* Transform12 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform12->setDEF("hi_1");
+CTransform* Transform13 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform13->setDEF("f_1");
+CShape* Shape14 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance15 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture16 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture16->setDEF("_1");
+ImageTexture16->setUrl(new CString[1]{"strasse.png"}, 1);
+Appearance15->setTexture(*ImageTexture16);
+
+CTextureTransform* TextureTransform17 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+Appearance15->setTextureTransform(*TextureTransform17);
+
+Shape14->setAppearance(*Appearance15);
+
+CIndexedFaceSet* IndexedFaceSet18 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet18->setDEF("nurbsToPoly79_0Geo");
+IndexedFaceSet18->setSolid(False);
+IndexedFaceSet18->setConvex(False);
+IndexedFaceSet18->setColorIndex(new int[80]{2,0,3,-1,0,1,3,-1,2,2,3,-1,2,3,3,-1,2,1,2,-1,2,3,1,-1,1,3,2,-1,3,2,2,-1,3,1,2,-1,1,0,2,-1,3,0,2,-1,3,1,0,-1,3,2,2,-1,3,3,2,-1,3,2,1,-1,2,2,1,-1,2,1,3,-1,2,0,1,-1,2,3,1,-1,2,2,3,-1});
+IndexedFaceSet18->setTexCoordIndex(new int[80]{4,7,2,-1,7,11,2,-1,5,4,3,-1,4,2,3,-1,5,19,14,-1,5,3,19,-1,19,0,14,-1,0,12,14,-1,0,1,12,-1,1,13,12,-1,9,7,4,-1,9,8,7,-1,15,4,5,-1,15,9,4,-1,15,5,16,-1,5,14,16,-1,12,21,17,-1,12,13,21,-1,14,17,16,-1,14,12,17,-1});
+IndexedFaceSet18->setCoordIndex(new int[80]{8,6,10,-1,6,1,10,-1,7,8,4,-1,8,10,4,-1,7,16,13,-1,7,4,16,-1,16,17,13,-1,17,15,13,-1,17,2,15,-1,2,11,15,-1,9,6,8,-1,9,0,6,-1,5,8,7,-1,5,9,8,-1,5,7,12,-1,7,13,12,-1,15,3,14,-1,15,11,3,-1,13,14,12,-1,13,15,14,-1});
+CColor* Color19 = (CColor *)(m_pScene.createNode("Color"));
+Color19->setColor(new float[12]{0,0.0802139,0.0759628,0.8,0.536002,0,0.508021,0.482754,0.27367,0.571396,1,0.523442});
+IndexedFaceSet18->setColor(*Color19);
+
+CTextureCoordinate* TextureCoordinate20 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate20->setPoint(new float[44]{1,0.801012,1,1,1,0.200331,1,0.400836,0.480799,0.200331,0.480799,0.400836,0.2404,0,0.480799,0,0,0,0,0.200331,0.739343,0,1,0,0.480799,0.801012,0.480799,1,0.480799,0.601177,0,0.400836,0,0.601177,0,0.801012,0.2404,1,1,0.601177,0.739343,1,0,1});
+IndexedFaceSet18->setTexCoord(*TextureCoordinate20);
+
+CCoordinate* Coordinate21 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate21->setDEF("nurbsToPoly79GeoPoints");
+Coordinate21->setPoint(new float[54]{-192.664,-0.045,360.447,-191.679,-0.045,355.386,-210.3,-0.045,355.394,-210.3,-0.045,357.817,-199.093,-0.045,355.39,-199.58,-0.045,358.763,-191.679,-0.045,357.797,-199.16,-0.045,357.086,-195.44,-0.045,357.442,-196.084,-0.045,359.501,-195.381,-0.045,355.388,-210.3,-0.045,356.652,-203.129,-0.045,358.237,-202.875,-0.045,356.834,-206.709,-0.045,357.922,-206.588,-0.045,356.689,-202.816,-0.045,355.391,-206.551,-0.045,355.393});
+IndexedFaceSet18->setCoord(*Coordinate21);
+
+Shape14->setGeometry(IndexedFaceSet18);
+
+Transform13->addChildren(*Shape14);
+
+Transform12->addChildren(*Transform13);
+
+CTransform* Transform22 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform22->setDEF("r_1");
+CShape* Shape23 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance24 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture25 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture25->setDEF("_2");
+ImageTexture25->setUrl(new CString[1]{"tunneltex1.png"}, 1);
+Appearance24->setTexture(*ImageTexture25);
+
+CTextureTransform* TextureTransform26 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform26->setScale(new float[2]{4,1});
+Appearance24->setTextureTransform(*TextureTransform26);
+
+Shape23->setAppearance(*Appearance24);
+
+CIndexedFaceSet* IndexedFaceSet27 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet27->setDEF("nurbsToPoly81_0Geo");
+IndexedFaceSet27->setSolid(False);
+IndexedFaceSet27->setConvex(False);
+IndexedFaceSet27->setColorIndex(new int[80]{2,2,0,-1,3,3,0,-1,1,1,3,-1,1,1,0,-1,2,0,0,-1,0,0,3,-1,1,1,0,-1,1,1,2,-1,1,1,0,-1,0,0,0,-1,2,0,0,-1,3,0,0,-1,3,0,1,-1,0,2,1,-1,0,2,2,-1,0,3,3,-1,0,3,1,-1,2,0,1,-1,0,0,1,-1,0,0,0,-1});
+IndexedFaceSet27->setTexCoordIndex(new int[80]{0,1,2,-1,3,4,5,-1,6,7,3,-1,8,6,5,-1,9,5,10,-1,11,12,3,-1,7,13,11,-1,14,15,0,-1,13,14,2,-1,11,2,16,-1,1,16,2,-1,4,10,5,-1,3,5,6,-1,5,9,8,-1,10,17,9,-1,12,4,3,-1,11,3,7,-1,0,2,14,-1,2,11,13,-1,16,12,11,-1});
+IndexedFaceSet27->setCoordIndex(new int[80]{14,2,16,-1,6,5,9,-1,8,4,6,-1,0,8,9,-1,7,9,10,-1,13,12,6,-1,4,11,13,-1,15,1,14,-1,11,15,16,-1,13,16,17,-1,2,17,16,-1,5,10,9,-1,6,9,8,-1,9,7,0,-1,10,3,7,-1,12,5,6,-1,13,6,4,-1,14,16,15,-1,16,13,11,-1,17,12,13,-1});
+CColor* Color28 = (CColor *)(m_pScene.createNode("Color"));
+Color28->setColor(new float[12]{0,0.529412,0.501355,0.8,0.536002,0,0,0.0802139,0.0759628,0,0.26738,0.253209});
+IndexedFaceSet27->setColor(*Color28);
+
+CTextureCoordinate* TextureCoordinate29 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate29->setPoint(new float[36]{1,0.5,1,0.80456,0.79713,0.5,0.395729,0.5,0.395729,0.80456,0.197168,0.5,0.197168,0.19544,0.395729,0.19544,0,0.19544,0,0.5,0.197168,0.80456,0.595709,0.5,0.595709,0.80456,0.595709,0.19544,0.79713,0.19544,1,0.19544,0.79713,0.80456,0,0.80456});
+IndexedFaceSet27->setTexCoord(*TextureCoordinate29);
+
+CCoordinate* Coordinate30 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate30->setDEF("nurbsToPoly81GeoPoints");
+Coordinate30->setPoint(new float[54]{-210.3,-0.045,357.817,-192.664,-0.045,360.447,-192.863,2.987,361.17,-210.3,2.987,358.404,-203.184,-0.045,358.23,-203.22,2.987,358.846,-203.223,1.138,358.84,-210.3,1.138,358.404,-206.742,-0.045,357.92,-206.752,1.138,358.513,-206.752,2.987,358.515,-199.641,-0.045,358.753,-199.719,2.987,359.399,-199.724,1.138,359.386,-192.873,1.138,361.141,-196.128,-0.045,359.49,-196.27,1.138,360.152,-196.262,2.987,360.174});
+IndexedFaceSet27->setCoord(*Coordinate30);
+
+Shape23->setGeometry(IndexedFaceSet27);
+
+Transform22->addChildren(*Shape23);
+
+Transform12->addChildren(*Transform22);
+
+CTransform* Transform31 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform31->setDEF("l_1");
+CShape* Shape32 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance33 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture34 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture34->setUSE("_2");
+Appearance33->setTexture(*ImageTexture34);
+
+CTextureTransform* TextureTransform35 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform35->setScale(new float[2]{4,1});
+Appearance33->setTextureTransform(*TextureTransform35);
+
+Shape32->setAppearance(*Appearance33);
+
+CIndexedFaceSet* IndexedFaceSet36 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet36->setDEF("nurbsToPoly80_0Geo");
+IndexedFaceSet36->setSolid(False);
+IndexedFaceSet36->setConvex(False);
+IndexedFaceSet36->setColorIndex(new int[120]{2,2,0,-1,3,3,0,-1,0,0,0,-1,1,0,0,-1,1,3,1,-1,1,1,0,-1,2,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,3,0,0,-1,1,1,0,-1,1,2,1,-1,1,1,0,-1,0,0,0,-1,2,0,0,-1,3,0,0,-1,0,0,0,-1,0,1,1,-1,3,0,1,-1,0,2,1,-1,0,2,2,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,3,3,-1,0,3,1,-1,2,0,1,-1,0,0,1,-1,0,0,0,-1});
+IndexedFaceSet36->setTexCoordIndex(new int[120]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,6,10,-1,8,3,10,-1,11,10,5,-1,12,5,13,-1,14,15,16,-1,7,17,18,-1,17,14,19,-1,3,20,21,-1,8,18,20,-1,16,0,19,-1,18,19,2,-1,20,2,22,-1,1,22,2,-1,4,13,5,-1,8,10,6,-1,10,11,9,-1,3,5,10,-1,5,12,11,-1,13,23,12,-1,16,19,14,-1,18,8,7,-1,19,18,17,-1,21,4,3,-1,20,3,8,-1,0,2,19,-1,2,20,18,-1,22,21,20,-1});
+IndexedFaceSet36->setCoordIndex(new int[120]{21,2,22,-1,10,5,12,-1,8,4,6,-1,0,8,9,-1,6,10,9,-1,7,9,12,-1,11,12,13,-1,17,1,14,-1,4,15,16,-1,15,17,18,-1,10,20,19,-1,6,16,20,-1,14,21,18,-1,16,18,22,-1,20,22,23,-1,2,23,22,-1,5,13,12,-1,6,9,8,-1,9,7,0,-1,10,12,9,-1,12,11,7,-1,13,3,11,-1,14,18,17,-1,16,6,4,-1,18,16,15,-1,19,5,10,-1,20,10,6,-1,21,22,18,-1,22,20,16,-1,23,19,20,-1});
+CColor* Color37 = (CColor *)(m_pScene.createNode("Color"));
+Color37->setColor(new float[12]{0,0.529412,0.501355,0.8,0.536002,0,0,0.0802139,0.0759628,0,0.26738,0.253209});
+IndexedFaceSet36->setColor(*Color37);
+
+CTextureCoordinate* TextureCoordinate38 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate38->setPoint(new float[48]{0.999939,0.500806,0.999939,0.802196,0.798829,0.500806,0.397851,0.500806,0.397851,0.802196,0.198798,0.500806,0.198798,0.197804,0.397851,0.197804,0.397851,0.197804,0.00121218,0.197804,0.198798,0.197804,0.00121218,0.197804,0.00121218,0.500806,0.198798,0.802196,0.798829,0.197804,0.999939,0.197804,0.999939,0.197804,0.597995,0.197804,0.597995,0.197804,0.798829,0.197804,0.597995,0.500806,0.597995,0.802196,0.798829,0.802196,0.00121218,0.802196});
+IndexedFaceSet36->setTexCoord(*TextureCoordinate38);
+
+CCoordinate* Coordinate39 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate39->setDEF("nurbsToPoly80GeoPoints");
+Coordinate39->setPoint(new float[72]{-210.3,-0.045,355.394,-191.679,-0.045,355.386,-191.679,2.977,354.798,-210.286,2.977,354.808,-202.847,-0.045,355.391,-202.853,2.977,354.805,-202.847,-0.045,355.391,-210.3,-0.045,355.394,-206.573,-0.045,355.393,-206.573,-0.045,355.393,-202.853,1.138,354.805,-210.286,1.138,354.808,-206.576,1.138,354.807,-206.576,2.977,354.807,-191.679,-0.045,355.386,-199.123,-0.045,355.39,-199.123,-0.045,355.39,-195.4,-0.045,355.388,-195.4,-0.045,355.388,-199.128,2.977,354.803,-199.128,1.138,354.803,-191.679,1.138,354.798,-195.404,1.138,354.801,-195.404,2.977,354.801});
+IndexedFaceSet36->setCoord(*Coordinate39);
+
+Shape32->setGeometry(IndexedFaceSet36);
+
+Transform31->addChildren(*Shape32);
+
+Transform12->addChildren(*Transform31);
+
+LOD11->addChildren(*Transform12);
+
+Transform10->addChildren(*LOD11);
+
+group->addChildren(*Transform10);
+
+CTransform* Transform40 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform40->setDEF("s3LOD");
+CLOD* LOD41 = (CLOD *)(m_pScene.createNode("LOD"));
+CTransform* Transform42 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform42->setDEF("hi_2");
+CTransform* Transform43 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform43->setDEF("xxx");
+CShape* Shape44 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance45 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture46 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture46->setUSE("_2");
+Appearance45->setTexture(*ImageTexture46);
+
+CTextureTransform* TextureTransform47 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform47->setScale(new float[2]{8,1});
+Appearance45->setTextureTransform(*TextureTransform47);
+
+Shape44->setAppearance(*Appearance45);
+
+CIndexedFaceSet* IndexedFaceSet48 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet48->setDEF("nurbsToPoly86_0Geo");
+IndexedFaceSet48->setSolid(False);
+IndexedFaceSet48->setColorIndex(new int[40]{3,0,0,3,-1,0,1,1,0,-1,1,1,0,0,-1,0,3,3,0,-1,3,0,2,2,-1,0,1,2,2,-1,2,1,0,2,-1,0,3,2,2,-1});
+IndexedFaceSet48->setTexCoordIndex(new int[40]{24,30,28,26,-1,30,20,21,28,-1,0,1,31,32,-1,31,24,26,32,-1,25,29,34,27,-1,29,21,22,34,-1,8,0,33,35,-1,33,25,27,35,-1});
+IndexedFaceSet48->setCoordIndex(new int[40]{6,10,9,7,-1,10,3,4,9,-1,2,1,11,12,-1,11,6,7,12,-1,7,9,13,8,-1,9,4,5,13,-1,0,2,12,14,-1,12,7,8,14,-1});
+CColor* Color49 = (CColor *)(m_pScene.createNode("Color"));
+Color49->setColor(new float[12]{0.149733,0.0406625,0,0,0.0802139,0.0759628,0.8,0.536002,0,1,0.271567,0});
+IndexedFaceSet48->setColor(*Color49);
+
+CTextureCoordinate* TextureCoordinate50 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate50->setPoint(new float[72]{1,0.500805,1,0.801914,0.390534,1,0.193771,0,0.390534,0,0,0,0.193771,1,0.793521,0,1,0.198086,0.590409,0,0.590409,1,0.793521,1,0.5,1,0.5,0,0.25,1,0.75,1,0.25,0,0.75,0,1,1,0.5,1,0,0.801914,0,0.500805,0,0.198086,0.499567,0,0.5,0.801914,0.5,0.500805,0.5,0.500805,0.5,0.198086,0.25,0.500805,0.25,0.500805,0.25,0.801914,0.75,0.801914,0.75,0.500805,0.75,0.500805,0.25,0.198086,0.75,0.198086});
+IndexedFaceSet48->setTexCoord(*TextureCoordinate50);
+
+CCoordinate* Coordinate51 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate51->setDEF("nurbsToPoly86GeoPoints");
+Coordinate51->setPoint(new float[45]{-149.66,-0.045,355.35,-149.678,2.977,354.752,-149.678,1.138,354.752,-191.679,2.977,354.798,-191.679,1.138,354.798,-191.679,-0.045,355.386,-170.678,2.977,354.775,-170.678,1.138,354.775,-170.669,-0.045,355.368,-181.179,1.138,354.786,-181.179,2.977,354.786,-160.178,2.977,354.764,-160.178,1.138,354.764,-181.174,-0.045,355.377,-160.165,-0.045,355.359});
+IndexedFaceSet48->setCoord(*Coordinate51);
+
+Shape44->setGeometry(IndexedFaceSet48);
+
+Transform43->addChildren(*Shape44);
+
+Transform42->addChildren(*Transform43);
+
+CTransform* Transform52 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform52->setDEF("f_2");
+CShape* Shape53 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance54 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture55 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture55->setUSE("_1");
+Appearance54->setTexture(*ImageTexture55);
+
+CTextureTransform* TextureTransform56 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+Appearance54->setTextureTransform(*TextureTransform56);
+
+Shape53->setAppearance(*Appearance54);
+
+CIndexedFaceSet* IndexedFaceSet57 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet57->setDEF("nurbsToPoly85_0Geo");
+IndexedFaceSet57->setSolid(False);
+IndexedFaceSet57->setConvex(False);
+IndexedFaceSet57->setColorIndex(new int[60]{2,0,3,-1,2,2,0,-1,3,2,2,-1,3,0,2,-1,3,0,3,-1,3,0,0,-1,1,0,3,-1,0,2,3,-1,0,2,2,-1,2,3,2,-1,2,0,3,-1,0,3,3,-1,0,0,3,-1,3,0,1,-1,0,0,1,-1});
+IndexedFaceSet57->setTexCoordIndex(new int[60]{25,18,23,-1,25,16,18,-1,27,16,26,-1,27,20,16,-1,29,20,28,-1,29,15,20,-1,8,19,22,-1,19,25,23,-1,19,17,25,-1,17,27,26,-1,17,21,27,-1,21,29,28,-1,21,1,29,-1,22,18,8,-1,18,5,8,-1});
+IndexedFaceSet57->setCoordIndex(new int[60]{11,6,10,-1,11,4,6,-1,12,4,11,-1,12,8,4,-1,13,8,12,-1,13,3,8,-1,1,7,10,-1,7,11,10,-1,7,5,11,-1,5,12,11,-1,5,9,12,-1,9,13,12,-1,9,2,13,-1,10,6,1,-1,6,0,1,-1});
+CColor* Color58 = (CColor *)(m_pScene.createNode("Color"));
+Color58->setColor(new float[12]{0.8,0.536002,0,0,0.0802139,0.0759628,1,0.271567,0,0.115579,0.149733,0.124117});
+IndexedFaceSet57->setColor(*Color58);
+
+CTextureCoordinate* TextureCoordinate59 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate59->setPoint(new float[60]{1,0.791128,1,1,1,0.191589,1,0.38716,0,0.191589,0,0,0.333333,0,0.666667,0,1,0,1,0.586929,0,0.38716,0,0.791128,0.333333,1,0,0.586929,0.666667,1,0,1,0,0.5,1,0.5,0,0.25,1,0.25,0,0.75,1,0.75,0.500006,0.25,0.500006,0.25,0.5,0,0.499994,0.5,0.499994,0.5,0.5,0.75,0.5,0.75,0.500006,1});
+IndexedFaceSet57->setTexCoord(*TextureCoordinate59);
+
+CCoordinate* Coordinate60 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate60->setDEF("nurbsToPoly85GeoPoints");
+Coordinate60->setPoint(new float[42]{-191.679,-0.045,355.386,-191.679,-0.045,357.797,-149.611,-0.045,357.826,-149.662,-0.045,355.35,-170.671,-0.045,355.368,-170.645,-0.045,357.811,-181.175,-0.045,355.377,-181.162,-0.045,357.804,-160.166,-0.045,355.359,-160.128,-0.045,357.819,-181.168,-0.045,356.591,-170.658,-0.045,356.59,-160.147,-0.045,356.589,-149.637,-0.045,356.588});
+IndexedFaceSet57->setCoord(*Coordinate60);
+
+Shape53->setGeometry(IndexedFaceSet57);
+
+Transform52->addChildren(*Shape53);
+
+Transform42->addChildren(*Transform52);
+
+CTransform* Transform61 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform61->setDEF("yyy");
+CShape* Shape62 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance63 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture64 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture64->setUSE("_2");
+Appearance63->setTexture(*ImageTexture64);
+
+CTextureTransform* TextureTransform65 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform65->setScale(new float[2]{8,1});
+Appearance63->setTextureTransform(*TextureTransform65);
+
+Shape62->setAppearance(*Appearance63);
+
+CIndexedFaceSet* IndexedFaceSet66 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet66->setDEF("nurbsToPoly83_0Geo");
+IndexedFaceSet66->setSolid(False);
+IndexedFaceSet66->setColorIndex(new int[40]{3,0,0,3,-1,0,1,1,0,-1,1,1,0,0,-1,0,3,3,0,-1,3,0,2,2,-1,0,1,2,2,-1,2,1,0,2,-1,0,3,2,2,-1});
+IndexedFaceSet66->setTexCoordIndex(new int[40]{20,26,24,22,-1,26,7,3,24,-1,13,14,27,28,-1,27,20,22,28,-1,21,25,30,23,-1,25,3,5,30,-1,19,13,29,31,-1,29,21,23,31,-1});
+IndexedFaceSet66->setCoordIndex(new int[40]{6,10,9,7,-1,10,0,2,9,-1,3,4,11,12,-1,11,6,7,12,-1,7,9,13,8,-1,9,2,1,13,-1,5,3,12,14,-1,12,7,8,14,-1});
+CColor* Color67 = (CColor *)(m_pScene.createNode("Color"));
+Color67->setColor(new float[12]{0.149733,0.0406625,0,0,0.0802139,0.0759628,0.8,0.536002,0,1,0.271567,0});
+IndexedFaceSet66->setColor(*Color67);
+
+CTextureCoordinate* TextureCoordinate68 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate68->setPoint(new float[64]{1,1,0.662455,0,0.329367,0,0,0.5,0.329367,1,0,0.197044,0.662455,1,0,0.802956,0.5,1,0.500001,0,0,0,0.25,1,0.5,1,1,0.5,1,0.802956,0.75,1,0.5,0,0.25,0,0.75,0,1,0.197044,0.5,0.802956,0.5,0.5,0.5,0.5,0.5,0.197044,0.25,0.5,0.25,0.5,0.25,0.802956,0.75,0.802956,0.75,0.5,0.75,0.5,0.25,0.197044,0.75,0.197044});
+IndexedFaceSet66->setTexCoord(*TextureCoordinate68);
+
+CCoordinate* Coordinate69 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate69->setDEF("nurbsToPoly83GeoPoints");
+Coordinate69->setPoint(new float[45]{-191.609,2.987,358.407,-191.649,-0.045,357.819,-191.675,1.138,358.407,-149.611,1.138,358.424,-149.611,2.987,358.424,-149.611,-0.045,357.826,-170.61,2.987,358.415,-170.643,1.138,358.415,-170.63,-0.045,357.823,-181.159,1.138,358.411,-181.11,2.987,358.411,-160.111,2.987,358.42,-160.127,1.138,358.42,-181.139,-0.045,357.821,-160.12,-0.045,357.824});
+IndexedFaceSet66->setCoord(*Coordinate69);
+
+Shape62->setGeometry(IndexedFaceSet66);
+
+Transform61->addChildren(*Shape62);
+
+Transform42->addChildren(*Transform61);
+
+LOD41->addChildren(*Transform42);
+
+Transform40->addChildren(*LOD41);
+
+group->addChildren(*Transform40);
+
+CTransform* Transform70 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform70->setDEF("s4LOD");
+CLOD* LOD71 = (CLOD *)(m_pScene.createNode("LOD"));
+CTransform* Transform72 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform72->setDEF("hi_3");
+CTransform* Transform73 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform73->setDEF("f_3");
+CShape* Shape74 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance75 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture76 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture76->setUSE("_1");
+Appearance75->setTexture(*ImageTexture76);
+
+CTextureTransform* TextureTransform77 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+Appearance75->setTextureTransform(*TextureTransform77);
+
+Shape74->setAppearance(*Appearance75);
+
+CIndexedFaceSet* IndexedFaceSet78 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet78->setDEF("nurbsToPoly88_0Geo");
+IndexedFaceSet78->setSolid(False);
+IndexedFaceSet78->setConvex(False);
+IndexedFaceSet78->setColorIndex(new int[112]{3,0,3,-1,3,4,0,-1,4,0,0,-1,4,4,0,-1,4,0,0,-1,4,5,0,-1,5,0,0,-1,5,5,0,-1,5,1,0,-1,5,2,1,-1,2,0,1,-1,2,6,0,-1,6,0,0,-1,6,0,0,-1,0,0,6,-1,0,0,6,-1,0,1,5,-1,1,2,5,-1,1,0,2,-1,0,6,2,-1,0,0,5,-1,0,5,5,-1,4,0,5,-1,4,0,0,-1,4,4,0,-1,4,0,0,-1,4,3,0,-1,3,3,0,-1});
+IndexedFaceSet78->setTexCoordIndex(new int[112]{22,0,1,-1,22,21,0,-1,21,16,0,-1,21,18,16,-1,18,15,16,-1,18,17,15,-1,17,3,15,-1,17,5,3,-1,5,2,3,-1,5,4,2,-1,4,14,2,-1,4,8,14,-1,8,13,14,-1,8,7,13,-1,10,9,8,-1,9,7,8,-1,19,11,5,-1,11,4,5,-1,11,10,4,-1,10,8,4,-1,20,19,17,-1,19,5,17,-1,18,20,17,-1,18,23,20,-1,18,21,23,-1,21,24,23,-1,21,22,24,-1,22,27,24,-1});
+IndexedFaceSet78->setCoordIndex(new int[112]{20,23,2,-1,20,22,23,-1,22,14,23,-1,22,16,14,-1,16,19,14,-1,16,18,19,-1,18,4,19,-1,18,7,4,-1,7,13,4,-1,7,10,13,-1,10,12,13,-1,10,8,12,-1,8,1,12,-1,8,6,1,-1,9,0,8,-1,0,6,8,-1,5,11,7,-1,11,10,7,-1,11,9,10,-1,9,8,10,-1,17,5,18,-1,5,7,18,-1,16,17,18,-1,16,15,17,-1,16,22,15,-1,22,21,15,-1,22,20,21,-1,20,3,21,-1});
+CColor* Color79 = (CColor *)(m_pScene.createNode("Color"));
+Color79->setColor(new float[21]{0.8,0.536002,0,0.956168,1,0.595486,0.607232,0.874452,1,0.508021,0.0124364,0,0.0748663,0.00183273,0,0.149733,0.100321,0,0.208556,0.139733,0});
+IndexedFaceSet78->setColor(*Color79);
+
+CTextureCoordinate* TextureCoordinate80 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate80->setPoint(new float[56]{1,0.847622,1,1,1,0.270535,1,0.410154,0.660445,0.270535,0.660445,0.410154,0.330792,0,0.660445,0,0.660445,0.13385,0,0,0,0.13385,0,0.270535,0.848444,0,1,0,1,0.13385,1,0.552807,1,0.698595,0.660445,0.552807,0.660445,0.698595,0,0.410154,0,0.552807,0.660445,0.847622,0.660445,1,0,0.698595,0,0.847622,0.330792,1,0.848444,1,0,1});
+IndexedFaceSet78->setTexCoord(*TextureCoordinate80);
+
+CCoordinate* Coordinate81 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate81->setDEF("nurbsToPoly88GeoPoints");
+Coordinate81->setPoint(new float[72]{-149.611,-0.045,357.826,-149.66,-0.045,355.35,-122.694,-0.045,352.644,-122.115,-0.045,357.834,-138.065,-0.045,354.854,-137.766,-0.045,357.816,-149.643,-0.045,356.191,-137.666,-0.045,356.327,-145.621,-0.045,356.316,-145.662,-0.045,357.827,-141.628,-0.045,356.36,-141.714,-0.045,357.828,-145.793,-0.045,355.304,-141.927,-0.045,355.138,-130.36,-0.045,353.947,-129.869,-0.045,357.82,-129.83,-0.045,356.065,-133.817,-0.045,357.818,-133.733,-0.045,356.226,-134.209,-0.045,354.455,-122.115,-0.045,355.306,-125.921,-0.045,357.833,-125.955,-0.045,355.855,-126.522,-0.045,353.338});
+IndexedFaceSet78->setCoord(*Coordinate81);
+
+Shape74->setGeometry(IndexedFaceSet78);
+
+Transform73->addChildren(*Shape74);
+
+Transform72->addChildren(*Transform73);
+
+CTransform* Transform82 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform82->setDEF("l_2");
+CShape* Shape83 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance84 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture85 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture85->setUSE("_2");
+Appearance84->setTexture(*ImageTexture85);
+
+CTextureTransform* TextureTransform86 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform86->setDEF("_3");
+TextureTransform86->setScale(new float[2]{6,1});
+Appearance84->setTextureTransform(*TextureTransform86);
+
+Shape83->setAppearance(*Appearance84);
+
+CIndexedFaceSet* IndexedFaceSet87 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet87->setDEF("nurbsToPoly90_0Geo");
+IndexedFaceSet87->setSolid(False);
+IndexedFaceSet87->setConvex(False);
+IndexedFaceSet87->setColorIndex(new int[168]{4,4,5,-1,3,3,3,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,1,3,3,-1,2,2,3,-1,2,3,2,-1,2,2,3,-1,3,3,3,-1,6,6,7,-1,0,0,0,-1,0,0,0,-1,2,6,2,-1,2,2,7,-1,3,7,7,-1,0,0,0,-1,0,0,0,-1,2,4,2,-1,2,2,5,-1,6,5,5,-1,4,5,5,-1,3,3,3,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,3,1,1,-1,3,1,2,-1,3,3,2,-1,3,3,2,-1,3,3,3,-1,6,7,7,-1,0,0,0,-1,0,0,0,-1,6,7,2,-1,7,3,2,-1,7,3,3,-1,0,0,0,-1,0,0,0,-1,4,5,2,-1,5,6,2,-1,5,6,6,-1});
+IndexedFaceSet87->setTexCoordIndex(new int[168]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,10,6,12,-1,13,14,15,-1,16,11,14,-1,8,3,12,-1,11,12,5,-1,14,5,17,-1,18,19,20,-1,21,22,23,-1,7,21,24,-1,23,18,24,-1,8,24,20,-1,3,20,25,-1,26,27,28,-1,22,26,29,-1,28,0,29,-1,23,29,2,-1,18,2,30,-1,1,30,2,-1,4,17,5,-1,8,12,6,-1,11,16,9,-1,12,11,10,-1,15,31,13,-1,14,13,16,-1,3,5,12,-1,5,14,11,-1,17,15,14,-1,19,25,20,-1,23,24,21,-1,24,8,7,-1,18,20,24,-1,20,3,8,-1,25,4,3,-1,28,29,26,-1,29,23,22,-1,0,2,29,-1,2,18,23,-1,30,19,18,-1});
+IndexedFaceSet87->setCoordIndex(new int[168]{29,2,30,-1,15,5,16,-1,10,4,6,-1,0,8,9,-1,8,10,11,-1,13,14,12,-1,7,9,14,-1,6,15,11,-1,9,11,16,-1,14,16,17,-1,23,19,24,-1,21,18,20,-1,4,21,22,-1,20,23,22,-1,6,22,24,-1,15,24,25,-1,27,1,26,-1,18,27,28,-1,26,29,28,-1,20,28,30,-1,23,30,31,-1,2,31,30,-1,5,17,16,-1,6,11,10,-1,9,7,0,-1,11,9,8,-1,12,3,13,-1,14,13,7,-1,15,16,11,-1,16,14,9,-1,17,12,14,-1,19,25,24,-1,20,22,21,-1,22,6,4,-1,23,24,22,-1,24,15,6,-1,25,5,15,-1,26,28,27,-1,28,20,18,-1,29,30,28,-1,30,23,20,-1,31,19,23,-1});
+CColor* Color88 = (CColor *)(m_pScene.createNode("Color"));
+Color88->setColor(new float[24]{0.8,0.8,0.8,0,0.0802139,0.0759628,0.8,0.536002,0,0,1,0.947003,0.508021,0.0124364,0,0.0748663,0.00183273,0,0,0.128342,0.12154,0,0.304813,0.288659});
+IndexedFaceSet87->setColor(*Color88);
+
+CTextureCoordinate* TextureCoordinate89 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate89->setPoint(new float[64]{0.999881,0.500809,0.999881,0.803333,0.838156,0.500809,0.394035,0.500809,0.394035,0.803333,0.258172,0.500809,0.258172,0.196667,0.394035,0.196667,0.394035,0.196667,0.00236797,0.196667,0.127739,0.196667,0.127739,0.196667,0.258172,0.196667,0.00236797,0.500809,0.127739,0.500809,0.127739,0.803333,0.00236797,0.196667,0.258172,0.803333,0.683602,0.500809,0.683602,0.803333,0.535711,0.500809,0.535711,0.196667,0.683602,0.196667,0.683602,0.196667,0.535711,0.196667,0.535711,0.803333,0.838156,0.196667,0.999881,0.196667,0.999881,0.196667,0.838156,0.196667,0.838156,0.803333,0.00236797,0.803333});
+IndexedFaceSet87->setTexCoord(*TextureCoordinate89);
+
+CCoordinate* Coordinate90 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate90->setDEF("nurbsToPoly90GeoPoints");
+Coordinate90->setPoint(new float[96]{-149.66,-0.045,355.35,-122.694,-0.045,352.644,-122.836,2.977,351.757,-149.678,2.977,354.752,-138.065,-0.045,354.854,-138.095,2.977,354.203,-138.065,-0.045,354.854,-149.66,-0.045,355.35,-145.793,-0.045,355.304,-145.793,-0.045,355.304,-141.927,-0.045,355.138,-141.927,-0.045,355.138,-145.809,2.977,354.702,-149.678,1.138,354.752,-145.81,1.138,354.705,-138.099,1.138,354.233,-141.949,1.138,354.532,-141.948,2.977,354.518,-130.36,-0.045,353.947,-130.43,2.977,353.196,-130.36,-0.045,353.947,-134.209,-0.045,354.455,-134.209,-0.045,354.455,-130.439,1.138,353.278,-134.261,1.138,353.813,-134.255,2.977,353.76,-122.694,-0.045,352.644,-126.522,-0.045,353.338,-126.522,-0.045,353.338,-122.851,1.138,351.909,-126.635,1.138,352.638,-126.623,2.977,352.523});
+IndexedFaceSet87->setCoord(*Coordinate90);
+
+Shape83->setGeometry(IndexedFaceSet87);
+
+Transform82->addChildren(*Shape83);
+
+Transform72->addChildren(*Transform82);
+
+CTransform* Transform91 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform91->setDEF("r_2");
+CShape* Shape92 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance93 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture94 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture94->setUSE("_2");
+Appearance93->setTexture(*ImageTexture94);
+
+CTextureTransform* TextureTransform95 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform95->setUSE("_3");
+Appearance93->setTextureTransform(*TextureTransform95);
+
+Shape92->setAppearance(*Appearance93);
+
+CIndexedFaceSet* IndexedFaceSet96 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet96->setDEF("nurbsToPoly89_0Geo");
+IndexedFaceSet96->setSolid(False);
+IndexedFaceSet96->setConvex(False);
+IndexedFaceSet96->setColorIndex(new int[64]{1,2,1,-1,2,2,1,-1,5,1,5,-1,1,1,5,-1,4,5,4,-1,5,5,4,-1,3,4,4,-1,3,3,4,-1,1,0,0,-1,1,2,0,-1,5,0,0,-1,5,1,0,-1,4,0,0,-1,4,5,0,-1,3,0,3,-1,3,4,0,-1});
+IndexedFaceSet96->setTexCoordIndex(new int[64]{24,17,22,-1,17,6,22,-1,18,24,20,-1,24,22,20,-1,26,18,27,-1,18,20,27,-1,0,26,27,-1,0,1,26,-1,23,8,25,-1,23,6,8,-1,19,25,21,-1,19,23,25,-1,28,21,29,-1,28,19,21,-1,0,29,15,-1,0,28,29,-1});
+IndexedFaceSet96->setCoordIndex(new int[64]{10,2,9,-1,2,3,9,-1,6,10,7,-1,10,9,7,-1,12,6,13,-1,6,7,13,-1,5,12,13,-1,5,1,12,-1,9,0,11,-1,9,3,0,-1,7,11,8,-1,7,9,11,-1,13,8,14,-1,13,7,8,-1,5,14,4,-1,5,13,14,-1});
+CColor* Color97 = (CColor *)(m_pScene.createNode("Color"));
+Color97->setColor(new float[18]{0.8,0.536002,0,0,1,0.947003,0,0.0802139,0.0759628,0.508021,0.0124364,0,0.0748663,0.00183273,0,0,0.304813,0.288659});
+IndexedFaceSet96->setColor(*Color97);
+
+CTextureCoordinate* TextureCoordinate98 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate98->setPoint(new float[60]{1,0.5,1,0.802326,0.418705,1,0.27757,0,0.418705,0,0.138016,0,0,0.5,0.138016,1,0,0.197674,0.27757,1,0.705904,1,0.561467,0,0.705904,0,0.561467,1,0.852065,0,1,0.197674,0.852065,1,0,0.802326,0.5,0.802326,0.5,0.5,0.5,0.5,0.5,0.197674,0.25,0.5,0.25,0.5,0.25,0.802326,0.25,0.197674,0.75,0.802326,0.75,0.5,0.75,0.5,0.75,0.197674});
+IndexedFaceSet96->setTexCoord(*TextureCoordinate98);
+
+CCoordinate* Coordinate99 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate99->setDEF("nurbsToPoly89GeoPoints");
+Coordinate99->setPoint(new float[45]{-149.611,-0.045,357.826,-122.115,2.987,358.446,-149.611,2.987,358.424,-149.611,1.138,358.424,-122.115,-0.045,357.834,-122.115,1.138,358.446,-135.863,2.987,358.435,-135.863,1.138,358.435,-135.863,-0.045,357.83,-142.737,1.138,358.43,-142.737,2.987,358.43,-142.737,-0.045,357.828,-128.989,2.987,358.44,-128.989,1.138,358.44,-128.989,-0.045,357.832});
+IndexedFaceSet96->setCoord(*Coordinate99);
+
+Shape92->setGeometry(IndexedFaceSet96);
+
+Transform91->addChildren(*Shape92);
+
+Transform72->addChildren(*Transform91);
+
+LOD71->addChildren(*Transform72);
+
+Transform70->addChildren(*LOD71);
+
+group->addChildren(*Transform70);
+
+CTransform* Transform100 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform100->setDEF("s5LOD-replace");
+CLOD* LOD101 = (CLOD *)(m_pScene.createNode("LOD"));
+CTransform* Transform102 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform102->setDEF("hi_4");
+CTransform* Transform103 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform103->setDEF("r2");
+CShape* Shape104 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance105 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture106 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture106->setUSE("_2");
+Appearance105->setTexture(*ImageTexture106);
+
+CTextureTransform* TextureTransform107 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform107->setDEF("_4");
+TextureTransform107->setScale(new float[2]{32,1});
+Appearance105->setTextureTransform(*TextureTransform107);
+
+Shape104->setAppearance(*Appearance105);
+
+CIndexedFaceSet* IndexedFaceSet108 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet108->setDEF("nurbsToPoly98_0Geo");
+IndexedFaceSet108->setSolid(False);
+IndexedFaceSet108->setConvex(False);
+IndexedFaceSet108->setColorIndex(new int[64]{2,0,2,-1,2,0,0,-1,2,1,1,-1,2,0,1,-1,0,2,0,-1,0,2,2,-1,0,1,1,-1,0,2,1,-1,4,0,4,-1,4,0,0,-1,3,3,4,-1,3,4,4,-1,4,1,1,-1,4,0,1,-1,1,3,1,-1,3,4,1,-1});
+IndexedFaceSet108->setTexCoordIndex(new int[64]{87,79,85,-1,87,77,79,-1,86,80,91,-1,86,78,80,-1,81,85,82,-1,81,87,85,-1,83,91,84,-1,83,86,91,-1,88,82,89,-1,88,81,82,-1,0,1,89,-1,1,88,89,-1,90,84,92,-1,90,83,84,-1,58,0,92,-1,0,90,92,-1});
+IndexedFaceSet108->setCoordIndex(new int[64]{10,4,9,-1,10,3,4,-1,9,5,13,-1,9,4,5,-1,6,9,7,-1,6,10,9,-1,7,13,8,-1,7,9,13,-1,11,7,12,-1,11,6,7,-1,2,1,12,-1,1,11,12,-1,12,8,14,-1,12,7,8,-1,0,2,14,-1,2,12,14,-1});
+CColor* Color109 = (CColor *)(m_pScene.createNode("Color"));
+Color109->setColor(new float[15]{0,0.213731,0.240642,0.8,0.536002,0,0.450665,0.79814,0.823529,1,0.27952,0,0.134445,0.166403,0.187166});
+IndexedFaceSet108->setColor(*Color109);
+
+CTextureCoordinate* TextureCoordinate110 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate110->setPoint(new float[186]{0.99988,0.5,0.99988,0.801987,0.348252,1,0.158999,1,0.065204,1,0.043023,0,0.065204,0,0.021297,0,0.021297,1,0,0,0.043023,1,0.111031,1,0.087864,0,0.111031,0,0.087864,1,0.134732,0,0.158999,0,0.134732,1,0.235595,1,0.209391,0,0.235595,0,0.183864,0,0.183864,1,0.209391,1,0.290233,1,0.262517,0,0.290233,0,0.262517,1,0.318789,0,0.348252,0,0.318789,1,0.587761,1,0.442889,1,0.41021,0,0.442889,0,0.378686,0,0.378686,1,0.41021,1,0.5122,1,0.476842,0,0.5122,0,0.476842,1,0.549111,0,0.587761,0,0.549111,1,0.764847,1,0.671201,1,0.628377,0,0.671201,0,0.628377,1,0.716557,0,0.764847,0,0.716557,1,0.872368,1,0.816552,0,0.872368,0,0.816552,1,0.933129,0,0.99988,0.198013,0.933129,1,0.5,1,0.5,0,0.25,1,0.75,1,0.25,0,0.75,0,0.125,1,0.125,0,0.375,1,0.375,0,0.625,1,0.875,1,0.625,0,0.875,0,0.5,0,0.5,1,1,1,0.501127,0.801987,0.501127,0.5,0.501127,0.5,0.501127,0.198013,0.750503,0.801987,0.750503,0.5,0.750503,0.5,0.750503,0.198013,0.625815,0.5,0.625815,0.5,0.625815,0.801987,0.875192,0.801987,0.875192,0.5,0.875192,0.5,0.625815,0.198013,0.875192,0.198013});
+IndexedFaceSet108->setTexCoord(*TextureCoordinate110);
+
+CCoordinate* Coordinate111 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate111->setDEF("nurbsToPoly98GeoPoints");
+Coordinate111->setPoint(new float[45]{62.568,-0.045,357.875,62.786,2.988,359.063,62.786,1.138,359.063,-29.6645,2.9875,358.755,-29.6645,1.138,358.755,-29.7735,-0.045,357.854,16.5607,2.98775,358.909,16.5608,1.138,358.909,16.3973,-0.045,357.865,-6.55187,1.138,358.832,-6.55188,2.98763,358.832,39.6734,2.98787,358.986,39.6734,1.138,358.986,-6.68812,-0.045,357.86,39.4826,-0.045,357.87});
+IndexedFaceSet108->setCoord(*Coordinate111);
+
+Shape104->setGeometry(IndexedFaceSet108);
+
+Transform103->addChildren(*Shape104);
+
+Transform102->addChildren(*Transform103);
+
+CTransform* Transform112 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform112->setDEF("l2");
+CShape* Shape113 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance114 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture115 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture115->setUSE("_2");
+Appearance114->setTexture(*ImageTexture115);
+
+CTextureTransform* TextureTransform116 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform116->setDEF("_5");
+TextureTransform116->setScale(new float[2]{32,1});
+Appearance114->setTextureTransform(*TextureTransform116);
+
+Shape113->setAppearance(*Appearance114);
+
+CIndexedFaceSet* IndexedFaceSet117 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet117->setDEF("nurbsToPoly97_0Geo");
+IndexedFaceSet117->setSolid(False);
+IndexedFaceSet117->setConvex(False);
+IndexedFaceSet117->setColorIndex(new int[64]{1,4,1,-1,4,4,1,-1,4,1,4,-1,1,1,4,-1,1,4,0,-1,4,0,0,-1,4,1,0,-1,1,0,0,-1,1,2,1,-1,2,2,1,-1,2,3,2,-1,3,3,2,-1,3,2,0,-1,2,0,0,-1,2,1,0,-1,1,0,0,-1});
+IndexedFaceSet117->setTexCoordIndex(new int[64]{65,74,67,-1,74,73,67,-1,74,70,73,-1,70,69,73,-1,71,75,72,-1,75,76,72,-1,75,66,76,-1,66,68,76,-1,70,78,69,-1,78,77,69,-1,78,0,77,-1,0,1,77,-1,0,79,60,-1,79,80,60,-1,79,71,80,-1,71,72,80,-1});
+IndexedFaceSet117->setCoordIndex(new int[64]{3,10,4,-1,10,9,4,-1,10,7,9,-1,7,6,9,-1,7,10,8,-1,10,11,8,-1,10,3,11,-1,3,5,11,-1,7,13,6,-1,13,12,6,-1,13,2,12,-1,2,1,12,-1,2,13,0,-1,13,14,0,-1,13,7,14,-1,7,8,14,-1});
+CColor* Color118 = (CColor *)(m_pScene.createNode("Color"));
+Color118->setColor(new float[15]{0.8,0.536002,0,0,0.213731,0.240642,0.134445,0.166403,0.187166,1,0.27952,0,0.450665,0.79814,0.823529});
+IndexedFaceSet117->setColor(*Color118);
+
+CTextureCoordinate* TextureCoordinate119 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate119->setPoint(new float[162]{1,0.500807,1,0.802721,0.387946,1,0.18792,1,0.079752,1,0.053082,0.501333,0.053082,0,0.079752,0,0,0,0.026506,0,0.026506,0.501333,0.026506,1,0.053082,1,0.133486,1,0.106545,0,0.133486,0,0.106545,1,0.160599,0,0.18792,0,0.160599,1,0.271437,1,0.243302,0,0.271437,0,0.215475,0,0.215475,1,0.243302,1,0.328798,1,0.29992,0,0.328798,0,0.29992,1,0.358121,0,0.387946,0,0.358121,1,0.618127,1,0.481156,1,0.449384,0,0.481156,0,0.418343,0,0.418343,1,0.449384,1,0.54737,1,0.513779,0,0.54737,0,0.513779,1,0.582087,0,0.618127,0,0.582087,1,0.781778,1,0.695299,1,0.655749,0,0.695299,0,0.655749,1,0.737164,0,0.781778,0,0.737164,1,0.88134,1,0.829627,0,0.88134,0,0.829627,1,0.937752,0,1,0.197279,0.937752,1,1,1,0.5,1,0.5,0,0.5,0.500807,0.5,0.500807,0.5,0.802721,0.5,0.197279,0.75,0.802721,0.75,0.500807,0.75,0.500807,0.75,0.197279,0.625,0.802721,0.625,0.500807,0.625,0.500807,0.625,0.197279,0.875,0.802721,0.875,0.500807,0.875,0.500807,0.875,0.197279});
+IndexedFaceSet117->setTexCoord(*TextureCoordinate119);
+
+CCoordinate* Coordinate120 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate120->setDEF("nurbsToPoly97GeoPoints");
+Coordinate120->setPoint(new float[45]{61.666,-0.045,352.956,61.447,2.977,351.769,61.447,1.138,351.768,-30.386,1.18963,353.357,-30.386,2.97063,353.357,-30.2245,-0.045,354.131,15.5305,2.97382,352.563,15.5305,1.16382,352.562,15.7208,-0.045,353.543,-7.42777,2.97222,352.96,-7.42776,1.17672,352.96,-7.25187,-0.045,353.837,38.4887,2.97541,352.166,38.4887,1.15091,352.165,38.6934,-0.045,353.25});
+IndexedFaceSet117->setCoord(*Coordinate120);
+
+Shape113->setGeometry(IndexedFaceSet117);
+
+Transform112->addChildren(*Shape113);
+
+Transform102->addChildren(*Transform112);
+
+CTransform* Transform121 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform121->setDEF("f_4");
+CShape* Shape122 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance123 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture124 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture124->setUSE("_1");
+Appearance123->setTexture(*ImageTexture124);
+
+CTextureTransform* TextureTransform125 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform125->setDEF("_6");
+TextureTransform125->setScale(new float[2]{1,3});
+Appearance123->setTextureTransform(*TextureTransform125);
+
+Shape122->setAppearance(*Appearance123);
+
+CIndexedFaceSet* IndexedFaceSet126 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet126->setDEF("nurbsToPoly96_0Geo");
+IndexedFaceSet126->setSolid(False);
+IndexedFaceSet126->setConvex(False);
+IndexedFaceSet126->setColorIndex(new int[64]{2,2,1,-1,2,0,1,-1,1,0,1,-1,0,0,1,-1,1,0,1,-1,0,0,1,-1,1,0,1,-1,0,0,1,-1,0,2,1,-1,2,2,1,-1,0,0,1,-1,0,1,1,-1,0,0,1,-1,0,1,1,-1,0,0,1,-1,0,1,1,-1});
+IndexedFaceSet126->setTexCoordIndex(new int[64]{72,8,74,-1,8,68,74,-1,73,68,75,-1,68,66,75,-1,76,66,78,-1,66,70,78,-1,77,70,79,-1,70,65,79,-1,69,10,74,-1,10,72,74,-1,67,69,75,-1,69,73,75,-1,71,67,78,-1,67,76,78,-1,64,71,79,-1,71,77,79,-1});
+IndexedFaceSet126->setCoordIndex(new int[64]{10,1,11,-1,1,6,11,-1,11,6,12,-1,6,4,12,-1,12,4,13,-1,4,8,13,-1,13,8,14,-1,8,3,14,-1,7,0,11,-1,0,10,11,-1,5,7,12,-1,7,11,12,-1,9,5,13,-1,5,12,13,-1,2,9,14,-1,9,13,14,-1});
+CColor* Color127 = (CColor *)(m_pScene.createNode("Color"));
+Color127->setColor(new float[9]{0.8,0.536002,0,0.215111,0.266245,0.299465,0.508021,0.0124364,0});
+IndexedFaceSet126->setColor(*Color127);
+
+CTextureCoordinate* TextureCoordinate128 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate128->setPoint(new float[160]{1,0.930646,1,0.313529,1,0.34265,1,0.132197,1,0.156055,1,0.042172,1,0.063928,0.666667,0,1,0,1,0.020871,0,0,0.333333,0,0,0.042172,0,0.020871,1,0.086165,1,0.108911,0,0.086165,0,0.063928,0,0.132197,0,0.108911,1,0.205627,1,0.231434,1,0.18052,0,0.156055,0,0.205627,0,0.18052,1,0.257991,1,0.285326,0,0.257991,0,0.231434,0,0.313529,0,0.285326,1,0.54213,1,0.580749,1,0.403997,1,0.436407,1,0.372785,0,0.34265,0,0.403997,0,0.372785,1,0.470142,1,0.505322,0,0.470142,0,0.436407,0,0.54213,0,0.505322,1,0.710035,1,0.758806,1,0.621384,1,0.664374,0,0.621384,0,0.580749,0,0.710035,0,0.664374,1,0.81131,1,0.868248,0,0.81131,0,0.758806,0,0.930646,0.333333,1,0,0.868248,0.666667,1,0.5,0,0.5,1,0,0.5,1,0.5,1,0.25,0,0.25,1,0.125,0,0.125,1,0.375,0,0.375,0.5,0,0.5,0.125,0.5,0.125,0.5,0.25,0.5,0.25,0.5,0.375,0.5,0.375,0.5,0.5});
+IndexedFaceSet126->setTexCoord(*TextureCoordinate128);
+
+CCoordinate* Coordinate129 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate129->setDEF("nurbsToPoly96GeoPoints");
+Coordinate129->setPoint(new float[45]{-122.115,-0.045,355.306,-122.115,-0.045,357.834,-30.2245,-0.045,354.131,-29.7735,-0.045,357.854,-75.9442,-0.045,357.844,-76.1698,-0.045,354.719,-99.0296,-0.045,357.839,-99.1424,-0.045,355.012,-52.8589,-0.045,357.849,-53.1971,-0.045,354.425,-122.115,-0.045,356.57,-99.086,-0.045,356.426,-76.057,-0.045,356.281,-53.028,-0.045,356.137,-29.999,-0.045,355.993});
+IndexedFaceSet126->setCoord(*Coordinate129);
+
+Shape122->setGeometry(IndexedFaceSet126);
+
+Transform121->addChildren(*Shape122);
+
+Transform102->addChildren(*Transform121);
+
+CTransform* Transform130 = (CTransform *)(m_pScene.createNode("Transform"));
+CShape* Shape131 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance132 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture133 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture133->setUSE("_2");
+Appearance132->setTexture(*ImageTexture133);
+
+CTextureTransform* TextureTransform134 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform134->setUSE("_4");
+Appearance132->setTextureTransform(*TextureTransform134);
+
+Shape131->setAppearance(*Appearance132);
+
+CIndexedFaceSet* IndexedFaceSet135 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet135->setSolid(False);
+IndexedFaceSet135->setConvex(False);
+IndexedFaceSet135->setColorIndex(new int[64]{0,1,1,-1,0,0,0,-1,0,1,0,-1,0,1,1,-1,0,0,0,-1,0,1,2,-1,0,0,2,-1,0,2,2,-1,3,0,2,-1,0,3,0,-1,3,0,3,-1,3,0,0,-1,0,3,3,-1,3,2,2,-1,0,3,2,-1,0,2,2,-1});
+IndexedFaceSet135->setTexCoordIndex(new int[64]{0,1,2,-1,3,4,5,-1,6,1,4,-1,6,7,1,-1,3,6,4,-1,0,2,8,-1,9,0,8,-1,9,8,10,-1,11,9,10,-1,12,13,14,-1,15,5,13,-1,15,3,5,-1,12,15,13,-1,11,10,16,-1,17,11,16,-1,17,16,18,-1});
+IndexedFaceSet135->setCoordIndex(new int[64]{0,1,2,-1,3,0,4,-1,5,1,0,-1,5,6,1,-1,3,5,0,-1,0,2,7,-1,4,0,7,-1,4,7,8,-1,9,4,8,-1,10,9,11,-1,12,4,9,-1,12,3,4,-1,10,12,9,-1,9,8,13,-1,11,9,13,-1,11,13,14,-1});
+CColor* Color136 = (CColor *)(m_pScene.createNode("Color"));
+Color136->setColor(new float[12]{0,0.213731,0.240642,0.508021,0.0124364,0,0.8,0.536002,0,0.450665,0.79814,0.823529});
+IndexedFaceSet135->setColor(*Color136);
+
+CTextureCoordinate* TextureCoordinate137 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate137->setPoint(new float[38]{0.127061,0.5,0.0000404716,0.5,0.0000404716,0.195763,0.25175,0.801987,0.127061,0.5,0.25175,0.5,0.127061,0.801987,0.0000404716,0.804237,0.127061,0.198013,0.25175,0.5,0.25175,0.198013,0.376438,0.5,0.501127,0.801987,0.376438,0.5,0.501127,0.5,0.376438,0.801987,0.376438,0.198013,0.501127,0.5,0.501127,0.198013});
+IndexedFaceSet135->setTexCoord(*TextureCoordinate137);
+
+CCoordinate* Coordinate138 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate138->setPoint(new float[45]{-99.0024,1.138,358.523,-122.115,1.138,358.446,-122.115,-0.045,357.834,-75.8898,2.98725,358.6,-75.8897,1.138,358.6,-99.0024,2.98712,358.523,-122.115,2.987,358.446,-99.0296,-0.045,357.839,-75.9442,-0.045,357.844,-52.7771,1.138,358.677,-29.6645,2.9875,358.755,-29.6645,1.138,358.755,-52.7771,2.98737,358.677,-52.8589,-0.045,357.849,-29.7735,-0.045,357.854});
+IndexedFaceSet135->setCoord(*Coordinate138);
+
+Shape131->setGeometry(IndexedFaceSet135);
+
+Transform130->addChildren(*Shape131);
+
+Transform102->addChildren(*Transform130);
+
+CTransform* Transform139 = (CTransform *)(m_pScene.createNode("Transform"));
+CShape* Shape140 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance141 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture142 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture142->setUSE("_2");
+Appearance141->setTexture(*ImageTexture142);
+
+CTextureTransform* TextureTransform143 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform143->setUSE("_5");
+Appearance141->setTextureTransform(*TextureTransform143);
+
+Shape140->setAppearance(*Appearance141);
+
+CIndexedFaceSet* IndexedFaceSet144 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet144->setSolid(False);
+IndexedFaceSet144->setConvex(False);
+IndexedFaceSet144->setColorIndex(new int[64]{0,0,2,-1,2,2,1,-1,0,2,2,-1,2,2,2,-1,2,2,2,-1,2,1,1,-1,2,0,1,-1,0,1,1,-1,2,2,3,-1,2,3,2,-1,3,3,2,-1,3,2,3,-1,2,3,1,-1,3,1,1,-1,3,2,1,-1,2,1,1,-1});
+IndexedFaceSet144->setTexCoordIndex(new int[64]{0,1,2,-1,3,4,5,-1,0,2,6,-1,2,7,6,-1,7,8,6,-1,4,9,5,-1,4,1,9,-1,1,10,9,-1,11,12,13,-1,7,14,8,-1,14,13,8,-1,14,11,13,-1,15,16,17,-1,16,18,17,-1,16,3,18,-1,3,5,18,-1});
+IndexedFaceSet144->setCoordIndex(new int[64]{0,1,2,-1,3,2,4,-1,0,2,5,-1,2,3,5,-1,3,6,5,-1,2,7,4,-1,2,1,7,-1,1,8,7,-1,9,10,11,-1,3,12,6,-1,12,11,6,-1,12,9,11,-1,9,12,13,-1,12,14,13,-1,12,3,14,-1,3,4,14,-1});
+CColor* Color145 = (CColor *)(m_pScene.createNode("Color"));
+Color145->setColor(new float[12]{0.508021,0.0124364,0,0.8,0.536002,0,0,0.213731,0.240642,0.450665,0.79814,0.823529});
+IndexedFaceSet144->setColor(*Color145);
+
+CTextureCoordinate* TextureCoordinate146 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate146->setPoint(new float[38]{0,0.802721,0,0.500807,0.125,0.500807,0.25,0.500807,0.125,0.500807,0.25,0.197279,0.125,0.802721,0.25,0.500807,0.25,0.802721,0.125,0.197279,0,0.197279,0.5,0.500807,0.5,0.802721,0.375,0.802721,0.375,0.500807,0.5,0.500807,0.375,0.500807,0.5,0.197279,0.375,0.197279});
+IndexedFaceSet144->setTexCoord(*TextureCoordinate146);
+
+CCoordinate* Coordinate147 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate147->setPoint(new float[45]{-122.219,2.96426,354.946,-122.219,1.24126,354.946,-99.2608,1.22836,354.549,-76.3025,1.21545,354.151,-76.1697,-0.045,354.719,-99.2608,2.96586,354.549,-76.3025,2.96745,354.152,-99.1424,-0.045,355.012,-122.115,-0.045,355.306,-30.386,1.18963,353.357,-30.386,2.97063,353.357,-53.3443,2.96904,353.754,-53.3443,1.20254,353.754,-30.2245,-0.045,354.131,-53.1971,-0.045,354.425});
+IndexedFaceSet144->setCoord(*Coordinate147);
+
+Shape140->setGeometry(IndexedFaceSet144);
+
+Transform139->addChildren(*Shape140);
+
+Transform102->addChildren(*Transform139);
+
+CTransform* Transform148 = (CTransform *)(m_pScene.createNode("Transform"));
+CShape* Shape149 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance150 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture151 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture151->setUSE("_1");
+Appearance150->setTexture(*ImageTexture151);
+
+CTextureTransform* TextureTransform152 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform152->setUSE("_6");
+Appearance150->setTextureTransform(*TextureTransform152);
+
+Shape149->setAppearance(*Appearance150);
+
+CIndexedFaceSet* IndexedFaceSet153 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet153->setSolid(False);
+IndexedFaceSet153->setConvex(False);
+IndexedFaceSet153->setColorIndex(new int[64]{0,0,1,-1,0,0,1,-1,1,0,1,-1,0,1,1,-1,0,0,1,-1,0,0,1,-1,1,0,1,-1,0,1,1,-1,0,0,1,-1,0,0,1,-1,1,0,1,-1,0,1,1,-1,2,2,0,-1,2,2,0,-1,2,1,0,-1,2,0,1,-1});
+IndexedFaceSet153->setTexCoordIndex(new int[64]{0,1,2,-1,3,4,2,-1,5,0,2,-1,4,5,2,-1,1,6,7,-1,8,3,7,-1,9,1,7,-1,3,9,7,-1,6,10,11,-1,12,8,11,-1,13,6,11,-1,8,13,11,-1,14,15,10,-1,15,16,12,-1,15,17,10,-1,15,12,17,-1});
+IndexedFaceSet153->setCoordIndex(new int[64]{0,1,2,-1,3,4,2,-1,5,0,2,-1,4,5,2,-1,1,6,7,-1,8,3,7,-1,2,1,7,-1,3,2,7,-1,6,9,10,-1,11,8,10,-1,7,6,10,-1,8,7,10,-1,12,13,9,-1,13,14,11,-1,13,10,9,-1,13,11,10,-1});
+CColor* Color154 = (CColor *)(m_pScene.createNode("Color"));
+Color154->setColor(new float[9]{0.8,0.536002,0,0.215111,0.266245,0.299465,1,0.27952,0});
+IndexedFaceSet153->setColor(*Color154);
+
+CTextureCoordinate* TextureCoordinate155 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate155->setPoint(new float[36]{1,0.5,1,0.625,0.5,0.625,0,0.625,0,0.5,0.5,0.5,1,0.75,0.499997,0.75,0,0.75,0.5,0.625,1,0.875,0.5,0.875,0,0.875,0.499997,0.75,1,1,0.5,1,0,1,0.5,0.875});
+IndexedFaceSet153->setTexCoord(*TextureCoordinate155);
+
+CCoordinate* Coordinate156 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate156->setPoint(new float[45]{-29.7735,-0.045,357.854,-6.68812,-0.045,357.86,-6.97,-0.045,355.848,-7.25188,-0.045,353.837,-30.2245,-0.045,354.131,-29.999,-0.045,355.993,16.3973,-0.045,357.865,16.059,-0.045,355.704,15.7207,-0.045,353.543,39.4826,-0.045,357.87,39.088,-0.045,355.56,38.6934,-0.045,353.25,62.568,-0.045,357.875,62.117,-0.045,355.415,61.666,-0.045,352.956});
+IndexedFaceSet153->setCoord(*Coordinate156);
+
+Shape149->setGeometry(IndexedFaceSet153);
+
+Transform148->addChildren(*Shape149);
+
+Transform102->addChildren(*Transform148);
+
+LOD101->addChildren(*Transform102);
+
+Transform100->addChildren(*LOD101);
+
+group->addChildren(*Transform100);
+
+CTransform* Transform157 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform157->setDEF("s6LOD");
+CLOD* LOD158 = (CLOD *)(m_pScene.createNode("LOD"));
+CTransform* Transform159 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform159->setDEF("hi");
+CTransform* Transform160 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform160->setDEF("f_5");
+CShape* Shape161 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance162 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture163 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture163->setUSE("_1");
+Appearance162->setTexture(*ImageTexture163);
+
+CTextureTransform* TextureTransform164 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+Appearance162->setTextureTransform(*TextureTransform164);
+
+Shape161->setAppearance(*Appearance162);
+
+CIndexedFaceSet* IndexedFaceSet165 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet165->setDEF("nurbsToPoly365_0Geo");
+IndexedFaceSet165->setSolid(False);
+IndexedFaceSet165->setConvex(False);
+IndexedFaceSet165->setColorIndex(new int[112]{0,1,0,-1,0,0,0,-1,0,0,0,-1,1,1,0,-1,0,0,1,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,1,1,0,-1,0,0,0,-1,0,0,0,-1,0,1,1,-1,0,0,1,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1});
+IndexedFaceSet165->setTexCoordIndex(new int[112]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,11,6,12,-1,13,14,15,-1,7,13,16,-1,14,3,17,-1,18,19,20,-1,4,21,22,-1,21,18,23,-1,24,25,26,-1,19,24,27,-1,25,0,28,-1,1,29,2,-1,4,22,5,-1,7,16,8,-1,11,12,9,-1,6,8,12,-1,14,17,15,-1,13,15,16,-1,3,5,17,-1,19,27,20,-1,21,23,22,-1,18,20,23,-1,25,28,26,-1,24,26,27,-1,0,2,28,-1});
+IndexedFaceSet165->setCoordIndex(new int[112]{28,2,29,-1,16,4,17,-1,10,6,11,-1,0,1,8,-1,8,10,9,-1,14,12,15,-1,6,14,7,-1,12,16,13,-1,22,18,23,-1,4,20,5,-1,20,22,21,-1,26,24,27,-1,18,26,19,-1,24,28,25,-1,2,3,29,-1,4,5,17,-1,6,7,11,-1,8,9,0,-1,10,11,9,-1,12,13,15,-1,14,15,7,-1,16,17,13,-1,18,19,23,-1,20,21,5,-1,22,23,21,-1,24,25,27,-1,26,27,19,-1,28,29,25,-1});
+CColor* Color166 = (CColor *)(m_pScene.createNode("Color"));
+Color166->setColor(new float[6]{0.8,0.536002,0,1,0.27952,0});
+IndexedFaceSet165->setColor(*Color166);
+
+CTextureCoordinate* TextureCoordinate167 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate167->setPoint(new float[60]{1,0.907687,1,1,0,0.907687,1,0.230683,1,0.319321,0,0.230683,1,0.047418,1,0.07751,0,0.047418,0,0,1,0,1,0.022195,0,0.022195,1,0.114168,1,0.162322,0,0.114168,0,0.07751,0,0.162322,1,0.511467,1,0.611576,0,0.511467,1,0.413614,0,0.319321,0,0.413614,1,0.712185,1,0.811416,0,0.712185,0,0.611576,0,0.811416,0,1});
+IndexedFaceSet165->setTexCoord(*TextureCoordinate167);
+
+CCoordinate* Coordinate168 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate168->setDEF("nurbsToPoly365GeoPoints");
+Coordinate168->setPoint(new float[90]{61.666,-0.045,352.956,62.568,-0.045,357.875,132.354,0.087,322.413,128.122,0.021,320.786,103.985,-0.044,352.795,101.852,-0.046,348.48,80.443,-0.045,357.089,79.261,-0.045,352.281,68.528,-0.045,357.674,67.547,-0.045,352.785,74.448,-0.045,357.423,73.377,-0.045,352.57,92.315,-0.045,355.93,90.807,-0.046,351.268,86.378,-0.045,356.629,85.057,-0.046,351.881,98.224,-0.044,354.735,96.444,-0.046,350.212,119.504,-0.03,343.11,116.276,-0.041,339.713,109.533,-0.043,350.223,107.031,-0.046,346.165,114.747,-0.039,346.997,111.875,-0.045,343.245,127.237,0.01,333.577,123.402,-0.02,331.013,123.692,-0.014,338.606,120.139,-0.033,335.608,130.115,0.044,328.141,126.053,-0.002,326.037});
+IndexedFaceSet165->setCoord(*Coordinate168);
+
+Shape161->setGeometry(IndexedFaceSet165);
+
+Transform160->addChildren(*Shape161);
+
+Transform159->addChildren(*Transform160);
+
+CTransform* Transform169 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform169->setDEF("l_3");
+CShape* Shape170 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance171 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture172 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture172->setUSE("_2");
+Appearance171->setTexture(*ImageTexture172);
+
+CTextureTransform* TextureTransform173 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform173->setScale(new float[2]{9,1});
+Appearance171->setTextureTransform(*TextureTransform173);
+
+Shape170->setAppearance(*Appearance171);
+
+CIndexedFaceSet* IndexedFaceSet174 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet174->setDEF("nurbsToPoly366_0Geo");
+IndexedFaceSet174->setSolid(False);
+IndexedFaceSet174->setConvex(False);
+IndexedFaceSet174->setColorIndex(new int[336]{1,1,0,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,2,2,2,-1,1,0,0,-1,2,2,0,-1,2,0,2,-1,2,2,0,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,2,0,2,-1,2,2,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,2,0,2,-1,2,2,0,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,2,2,2,-1,0,0,0,-1,2,2,0,-1,2,0,2,-1,2,2,0,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,2,0,2,-1,2,2,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,2,1,2,-1,2,2,0,-1,0,0,0,-1,1,0,0,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,2,2,2,-1,0,1,1,-1,0,1,2,-1,0,0,2,-1,0,0,2,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,0,0,2,-1,0,0,2,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,0,0,2,-1,0,0,2,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,2,2,2,-1,0,0,0,-1,0,0,2,-1,0,0,2,-1,0,0,2,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,0,0,2,-1,0,0,2,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,1,0,2,-1,0,0,2,-1,0,0,0,-1});
+IndexedFaceSet174->setTexCoordIndex(new int[336]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,13,9,15,-1,16,17,18,-1,19,14,17,-1,11,6,15,-1,14,15,8,-1,17,8,20,-1,21,22,23,-1,24,25,26,-1,10,24,27,-1,26,21,27,-1,11,27,23,-1,6,23,28,-1,29,30,31,-1,25,29,32,-1,31,3,32,-1,26,32,5,-1,21,5,33,-1,34,35,36,-1,37,38,39,-1,30,40,41,-1,40,37,42,-1,3,43,44,-1,31,41,43,-1,39,34,42,-1,41,42,36,-1,43,36,45,-1,46,47,48,-1,49,50,51,-1,38,49,52,-1,51,46,52,-1,39,52,48,-1,34,48,53,-1,54,55,56,-1,50,54,57,-1,56,0,57,-1,51,57,2,-1,46,2,58,-1,1,58,2,-1,4,33,5,-1,7,20,8,-1,11,15,9,-1,14,19,12,-1,15,14,13,-1,18,59,16,-1,17,16,19,-1,6,8,15,-1,8,17,14,-1,20,18,17,-1,22,28,23,-1,26,27,24,-1,27,11,10,-1,21,23,27,-1,23,6,11,-1,28,7,6,-1,31,32,29,-1,32,26,25,-1,3,5,32,-1,5,21,26,-1,33,22,21,-1,35,45,36,-1,39,42,37,-1,41,31,30,-1,42,41,40,-1,44,4,3,-1,43,3,31,-1,34,36,42,-1,36,43,41,-1,45,44,43,-1,47,53,48,-1,51,52,49,-1,52,39,38,-1,46,48,52,-1,48,34,39,-1,53,35,34,-1,56,57,54,-1,57,51,50,-1,0,2,57,-1,2,46,51,-1,58,47,46,-1});
+IndexedFaceSet174->setCoordIndex(new int[336]{57,2,58,-1,31,5,32,-1,17,7,18,-1,12,6,8,-1,0,10,11,-1,10,12,13,-1,15,16,14,-1,9,11,16,-1,8,17,13,-1,11,13,18,-1,16,18,19,-1,25,21,26,-1,23,20,22,-1,6,23,24,-1,22,25,24,-1,8,24,26,-1,17,26,27,-1,29,4,28,-1,20,29,30,-1,28,31,30,-1,22,30,32,-1,25,32,33,-1,43,35,44,-1,39,34,36,-1,4,37,38,-1,37,39,40,-1,31,42,41,-1,28,38,42,-1,36,43,40,-1,38,40,44,-1,42,44,45,-1,51,47,52,-1,49,46,48,-1,34,49,50,-1,48,51,50,-1,36,50,52,-1,43,52,53,-1,55,1,54,-1,46,55,56,-1,54,57,56,-1,48,56,58,-1,51,58,59,-1,2,59,58,-1,5,33,32,-1,7,19,18,-1,8,13,12,-1,11,9,0,-1,13,11,10,-1,14,3,15,-1,16,15,9,-1,17,18,13,-1,18,16,11,-1,19,14,16,-1,21,27,26,-1,22,24,23,-1,24,8,6,-1,25,26,24,-1,26,17,8,-1,27,7,17,-1,28,30,29,-1,30,22,20,-1,31,32,30,-1,32,25,22,-1,33,21,25,-1,35,45,44,-1,36,40,39,-1,38,28,4,-1,40,38,37,-1,41,5,31,-1,42,31,28,-1,43,44,40,-1,44,42,38,-1,45,41,42,-1,47,53,52,-1,48,50,49,-1,50,36,34,-1,51,52,50,-1,52,43,36,-1,53,35,43,-1,54,56,55,-1,56,48,46,-1,57,58,56,-1,58,51,48,-1,59,47,51,-1});
+CColor* Color175 = (CColor *)(m_pScene.createNode("Color"));
+Color175->setColor(new float[9]{0,0.213731,0.240642,1,0.27952,0,0.8,0.536002,0});
+IndexedFaceSet174->setColor(*Color175);
+
+CTextureCoordinate* TextureCoordinate176 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate176->setPoint(new float[120]{0.994576,0.505615,0.994576,0.80658,0.894441,0.505615,0.259003,0.505615,0.259003,0.80658,0.166098,0.505598,-0.0876712,0.509307,-0.0876712,0.806674,-0.168997,0.506576,-0.168818,0.197211,-0.0874929,0.201148,-0.0874929,0.201148,-0.332765,0.196228,-0.249969,0.197211,-0.249969,0.197211,-0.168818,0.197211,-0.332943,0.505593,-0.250148,0.506576,-0.250148,0.805142,-0.332765,0.196228,-0.168997,0.805142,0.0786091,0.505598,0.0786091,0.804506,-0.00619453,0.505598,-0.00601625,0.195889,0.0787874,0.195889,0.0787874,0.195889,-0.00601625,0.195889,-0.00619453,0.804506,0.166276,0.195889,0.259182,0.193837,0.259182,0.193837,0.166276,0.195889,0.166098,0.804506,0.572992,0.505615,0.572992,0.80658,0.464841,0.505615,0.465019,0.193837,0.57317,0.193837,0.57317,0.193837,0.359889,0.193837,0.359889,0.193837,0.465019,0.193837,0.359711,0.505615,0.359711,0.80658,0.464841,0.80658,0.789868,0.505615,0.789868,0.80658,0.682079,0.505615,0.682257,0.193837,0.790046,0.193837,0.790046,0.193837,0.682257,0.193837,0.682079,0.80658,0.894619,0.193837,0.994754,0.193837,0.994754,0.193837,0.894619,0.193837,0.894441,0.80658,-0.332943,0.804159});
+IndexedFaceSet174->setTexCoord(*TextureCoordinate176);
+
+CCoordinate* Coordinate177 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate177->setDEF("nurbsToPoly366GeoPoints");
+Coordinate177->setPoint(new float[180]{61.666,-0.045,352.956,128.122,0.021,320.786,127.097,3.023,320.468,61.447,2.977,351.769,101.14,-0.046,348.746,100.634,2.976,347.698,78.721,-0.045,352.312,78.438,2.977,351.15,78.721,-0.045,352.312,61.666,-0.045,352.956,67.375,-0.045,352.791,67.375,-0.045,352.791,73.038,-0.045,352.584,73.038,-0.045,352.584,67.138,2.977,351.61,61.447,1.138,351.768,67.138,1.138,351.61,78.438,1.137,351.15,72.78,1.137,351.411,72.78,2.977,351.412,90.075,-0.046,351.365,89.716,2.977,350.237,90.075,-0.046,351.365,84.424,-0.046,351.933,84.424,-0.046,351.933,89.717,1.137,350.236,84.109,1.137,350.784,84.108,2.977,350.785,101.14,-0.046,348.746,95.668,-0.046,350.399,95.668,-0.046,350.399,100.636,1.136,347.697,95.248,1.137,349.302,95.247,2.976,349.302,115.914,-0.041,340.044,115.137,2.978,339.227,115.914,-0.041,340.044,106.415,-0.046,346.479,106.415,-0.046,346.479,111.38,-0.045,343.585,111.38,-0.045,343.585,105.818,2.975,345.494,105.82,1.136,345.492,115.14,1.139,339.22,110.694,1.136,342.672,110.691,2.976,342.676,123.273,-0.021,331.221,122.344,2.992,330.631,123.273,-0.021,331.221,119.903,-0.034,335.893,119.903,-0.034,335.893,122.347,1.154,330.61,119.048,1.145,335.17,119.044,2.984,335.183,128.122,0.021,320.786,126.003,-0.003,326.146,126.003,-0.003,326.146,127.099,1.186,320.422,125.02,1.168,325.656,125.017,3.006,325.688});
+IndexedFaceSet174->setCoord(*Coordinate177);
+
+Shape170->setGeometry(IndexedFaceSet174);
+
+Transform169->addChildren(*Shape170);
+
+Transform159->addChildren(*Transform169);
+
+CTransform* Transform178 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform178->setDEF("r_3");
+CShape* Shape179 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance180 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture181 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture181->setUSE("_2");
+Appearance180->setTexture(*ImageTexture181);
+
+CTextureTransform* TextureTransform182 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform182->setScale(new float[2]{9,1});
+Appearance180->setTextureTransform(*TextureTransform182);
+
+Shape179->setAppearance(*Appearance180);
+
+CIndexedFaceSet* IndexedFaceSet183 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet183->setDEF("nurbsToPoly367_0Geo");
+IndexedFaceSet183->setSolid(False);
+IndexedFaceSet183->setConvex(False);
+IndexedFaceSet183->setColorIndex(new int[336]{1,1,3,-1,3,3,3,-1,3,3,3,-1,2,2,2,-1,2,2,2,-1,2,2,2,-1,1,3,3,-1,2,2,3,-1,2,3,2,-1,2,2,3,-1,3,3,3,-1,3,3,3,-1,2,2,2,-1,2,2,2,-1,2,3,2,-1,2,2,3,-1,3,3,3,-1,2,2,2,-1,2,2,2,-1,2,3,2,-1,2,2,3,-1,3,3,3,-1,3,3,3,-1,2,2,2,-1,2,2,2,-1,2,2,2,-1,3,3,3,-1,2,2,3,-1,2,3,2,-1,2,2,3,-1,3,3,3,-1,3,3,3,-1,2,2,2,-1,2,2,2,-1,2,3,2,-1,2,2,3,-1,3,3,3,-1,2,0,0,-1,2,2,2,-1,2,1,2,-1,2,2,3,-1,3,3,3,-1,1,3,3,-1,3,3,3,-1,3,3,3,-1,2,2,2,-1,2,2,2,-1,2,2,2,-1,3,1,1,-1,3,1,2,-1,3,3,2,-1,3,3,2,-1,3,3,3,-1,3,3,3,-1,2,2,2,-1,2,2,2,-1,3,3,2,-1,3,3,2,-1,3,3,3,-1,2,2,2,-1,2,2,2,-1,3,3,2,-1,3,3,2,-1,3,3,3,-1,3,3,3,-1,2,2,2,-1,2,2,2,-1,2,2,2,-1,3,3,3,-1,3,3,2,-1,3,3,2,-1,3,3,2,-1,3,3,3,-1,3,3,3,-1,2,2,2,-1,2,2,2,-1,3,3,2,-1,3,3,2,-1,3,3,3,-1,0,2,2,-1,2,2,2,-1,1,3,2,-1,3,3,2,-1,3,3,3,-1});
+IndexedFaceSet183->setTexCoordIndex(new int[336]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,13,9,15,-1,16,17,18,-1,19,14,17,-1,11,6,15,-1,14,15,8,-1,17,8,20,-1,21,22,23,-1,24,25,26,-1,10,24,27,-1,26,21,27,-1,11,27,23,-1,6,23,28,-1,29,30,31,-1,25,29,32,-1,31,3,32,-1,26,32,5,-1,21,5,33,-1,34,35,36,-1,37,38,39,-1,30,40,41,-1,40,37,42,-1,3,43,44,-1,31,41,43,-1,39,34,42,-1,41,42,36,-1,43,36,45,-1,46,47,48,-1,49,50,51,-1,38,49,52,-1,51,46,52,-1,39,52,48,-1,34,48,53,-1,54,55,56,-1,50,54,57,-1,56,0,57,-1,51,57,2,-1,46,2,58,-1,1,58,2,-1,4,33,5,-1,7,20,8,-1,11,15,9,-1,14,19,12,-1,15,14,13,-1,18,59,16,-1,17,16,19,-1,6,8,15,-1,8,17,14,-1,20,18,17,-1,22,28,23,-1,26,27,24,-1,27,11,10,-1,21,23,27,-1,23,6,11,-1,28,7,6,-1,31,32,29,-1,32,26,25,-1,3,5,32,-1,5,21,26,-1,33,22,21,-1,35,45,36,-1,39,42,37,-1,41,31,30,-1,42,41,40,-1,44,4,3,-1,43,3,31,-1,34,36,42,-1,36,43,41,-1,45,44,43,-1,47,53,48,-1,51,52,49,-1,52,39,38,-1,46,48,52,-1,48,34,39,-1,53,35,34,-1,56,57,54,-1,57,51,50,-1,0,2,57,-1,2,46,51,-1,58,47,46,-1});
+IndexedFaceSet183->setCoordIndex(new int[336]{57,2,58,-1,31,5,32,-1,17,7,18,-1,12,6,8,-1,0,10,11,-1,10,12,13,-1,15,16,14,-1,9,11,16,-1,8,17,13,-1,11,13,18,-1,16,18,19,-1,25,21,26,-1,23,20,22,-1,6,23,24,-1,22,25,24,-1,8,24,26,-1,17,26,27,-1,29,4,28,-1,20,29,30,-1,28,31,30,-1,22,30,32,-1,25,32,33,-1,43,35,44,-1,39,34,36,-1,4,37,38,-1,37,39,40,-1,31,42,41,-1,28,38,42,-1,36,43,40,-1,38,40,44,-1,42,44,45,-1,51,47,52,-1,49,46,48,-1,34,49,50,-1,48,51,50,-1,36,50,52,-1,43,52,53,-1,55,1,54,-1,46,55,56,-1,54,57,56,-1,48,56,58,-1,51,58,59,-1,2,59,58,-1,5,33,32,-1,7,19,18,-1,8,13,12,-1,11,9,0,-1,13,11,10,-1,14,3,15,-1,16,15,9,-1,17,18,13,-1,18,16,11,-1,19,14,16,-1,21,27,26,-1,22,24,23,-1,24,8,6,-1,25,26,24,-1,26,17,8,-1,27,7,17,-1,28,30,29,-1,30,22,20,-1,31,32,30,-1,32,25,22,-1,33,21,25,-1,35,45,44,-1,36,40,39,-1,38,28,4,-1,40,38,37,-1,41,5,31,-1,42,31,28,-1,43,44,40,-1,44,42,38,-1,45,41,42,-1,47,53,52,-1,48,50,49,-1,50,36,34,-1,51,52,50,-1,52,43,36,-1,53,35,43,-1,54,56,55,-1,56,48,46,-1,57,58,56,-1,58,51,48,-1,59,47,51,-1});
+CColor* Color184 = (CColor *)(m_pScene.createNode("Color"));
+Color184->setColor(new float[12]{0.8,0.8,0.8,1,0.27952,0,0.8,0.536002,0,0,0.213731,0.240642});
+IndexedFaceSet183->setColor(*Color184);
+
+CTextureCoordinate* TextureCoordinate185 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate185->setPoint(new float[120]{0.999711,0.500293,0.999711,0.800453,0.902957,0.500293,0.285275,0.500293,0.285275,0.800453,0.190225,0.500284,-0.0743913,0.498376,-0.0743913,0.799698,-0.158478,0.498394,-0.158478,0.195574,-0.0743913,0.197055,-0.0743913,0.197055,-0.333133,0.197055,-0.248027,0.195574,-0.248027,0.195574,-0.158478,0.195574,-0.333133,0.499875,-0.248027,0.498394,-0.248027,0.801215,-0.333133,0.197055,-0.158478,0.801215,0.0991542,0.500288,0.0991542,0.800481,0.0130228,0.500288,0.0130228,0.200096,0.0991542,0.200096,0.0991542,0.200096,0.0130228,0.200096,0.0130228,0.800481,0.190225,0.201321,0.285275,0.200132,0.285275,0.200132,0.190225,0.201321,0.190225,0.799246,0.593251,0.500293,0.593251,0.800453,0.48823,0.500293,0.48823,0.200132,0.593251,0.200132,0.593251,0.200132,0.385139,0.200132,0.385139,0.200132,0.48823,0.200132,0.385139,0.500293,0.385139,0.800453,0.48823,0.800453,0.802234,0.500293,0.802234,0.800453,0.69851,0.500293,0.69851,0.200132,0.802234,0.200132,0.802234,0.200132,0.69851,0.200132,0.69851,0.800453,0.902957,0.200132,0.999711,0.200132,0.999711,0.200132,0.902957,0.200132,0.902957,0.800453,-0.333133,0.802696});
+IndexedFaceSet183->setTexCoord(*TextureCoordinate185);
+
+CCoordinate* Coordinate186 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate186->setDEF("nurbsToPoly367GeoPoints");
+Coordinate186->setPoint(new float[180]{62.568,-0.045,357.875,132.354,0.087,322.413,133.374,3.131,322.881,62.786,2.988,359.063,104.654,-0.044,352.524,105.177,2.989,353.563,80.958,-0.045,357.055,81.246,2.988,358.216,80.958,-0.045,357.055,62.568,-0.045,357.875,68.696,-0.045,357.668,68.696,-0.045,357.668,74.807,-0.045,357.406,74.807,-0.045,357.406,68.933,2.988,358.849,62.786,1.138,359.063,68.933,1.138,358.849,81.246,1.138,358.216,75.067,1.138,358.578,75.067,2.988,358.578,93.029,-0.045,355.819,93.399,2.988,356.944,93.029,-0.045,355.819,86.976,-0.045,356.572,86.976,-0.045,356.572,93.4,1.139,356.943,87.299,1.139,357.718,87.298,2.988,357.718,104.654,-0.044,352.524,98.95,-0.044,354.533,98.95,-0.044,354.533,105.179,1.14,353.561,99.389,1.139,355.621,99.388,2.989,355.622,119.832,-0.029,342.8,120.612,3.006,343.626,119.832,-0.029,342.8,110.105,-0.042,349.912,110.105,-0.042,349.912,115.201,-0.038,346.67,115.201,-0.038,346.67,110.716,2.991,350.889,110.718,1.142,350.886,120.615,1.157,343.618,115.901,1.147,347.572,115.898,2.996,347.576,127.35,0.012,333.391,128.273,3.05,334.042,127.35,0.012,333.391,123.902,-0.013,338.345,123.902,-0.013,338.345,128.276,1.201,334.02,124.762,1.175,339.072,124.759,3.023,339.085,132.354,0.087,322.413,130.159,0.045,328.045,130.159,0.045,328.045,133.376,1.285,322.835,131.139,1.238,328.572,131.136,3.086,328.604});
+IndexedFaceSet183->setCoord(*Coordinate186);
+
+Shape179->setGeometry(IndexedFaceSet183);
+
+Transform178->addChildren(*Shape179);
+
+Transform159->addChildren(*Transform178);
+
+LOD158->addChildren(*Transform159);
+
+Transform157->addChildren(*LOD158);
+
+group->addChildren(*Transform157);
+
+CTransform* Transform187 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform187->setDEF("s7LOD");
+CLOD* LOD188 = (CLOD *)(m_pScene.createNode("LOD"));
+CTransform* Transform189 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform189->setDEF("med_1");
+CTransform* Transform190 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform190->setDEF("f_6");
+CShape* Shape191 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance192 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture193 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture193->setUSE("_1");
+Appearance192->setTexture(*ImageTexture193);
+
+CTextureTransform* TextureTransform194 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+Appearance192->setTextureTransform(*TextureTransform194);
+
+Shape191->setAppearance(*Appearance192);
+
+CIndexedFaceSet* IndexedFaceSet195 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet195->setDEF("nurbsToPoly362_0Geo");
+IndexedFaceSet195->setSolid(False);
+IndexedFaceSet195->setConvex(False);
+IndexedFaceSet195->setColorIndex(new int[112]{0,2,0,-1,2,0,2,-1,2,2,2,-1,1,1,2,-1,2,2,2,-1,0,2,0,-1,2,0,2,-1,2,2,2,-1,2,0,2,-1,0,2,0,-1,2,2,2,-1,2,2,2,-1,0,2,0,-1,2,0,2,-1,2,2,0,-1,0,0,2,-1,2,2,2,-1,2,2,1,-1,2,2,2,-1,2,2,0,-1,0,0,2,-1,2,2,2,-1,0,0,2,-1,2,2,0,-1,2,2,2,-1,2,2,2,-1,2,2,0,-1,0,0,2,-1});
+IndexedFaceSet195->setTexCoordIndex(new int[112]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,11,6,12,-1,13,14,15,-1,7,13,16,-1,14,3,17,-1,18,19,20,-1,4,21,22,-1,21,18,23,-1,24,25,26,-1,19,24,27,-1,25,0,28,-1,1,29,2,-1,4,22,5,-1,7,16,8,-1,11,12,9,-1,6,8,12,-1,14,17,15,-1,13,15,16,-1,3,5,17,-1,19,27,20,-1,21,23,22,-1,18,20,23,-1,25,28,26,-1,24,26,27,-1,0,2,28,-1});
+IndexedFaceSet195->setCoordIndex(new int[112]{28,2,29,-1,16,4,17,-1,10,6,11,-1,0,1,8,-1,8,10,9,-1,14,12,15,-1,6,14,7,-1,12,16,13,-1,22,18,23,-1,4,20,5,-1,20,22,21,-1,26,24,27,-1,18,26,19,-1,24,28,25,-1,2,3,29,-1,4,5,17,-1,6,7,11,-1,8,9,0,-1,10,11,9,-1,12,13,15,-1,14,15,7,-1,16,17,13,-1,18,19,23,-1,20,21,5,-1,22,23,21,-1,24,25,27,-1,26,27,19,-1,28,29,25,-1});
+CColor* Color196 = (CColor *)(m_pScene.createNode("Color"));
+Color196->setColor(new float[9]{0,0.952293,1,1,0.27952,0,0,0.327721,0.368984});
+IndexedFaceSet195->setColor(*Color196);
+
+CTextureCoordinate* TextureCoordinate197 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate197->setPoint(new float[60]{1,0.918021,1,1,0,0.918021,1,0.350789,1,0.414865,0,0.350789,1,0.11775,1,0.174889,0,0.11775,0,0,1,0,1,0.059752,0,0.059752,1,0.232116,1,0.290373,0,0.232116,0,0.174889,0,0.290373,1,0.563546,1,0.650908,0,0.563546,1,0.484786,0,0.414865,0,0.484786,1,0.742177,1,0.832079,0,0.742177,0,0.650908,0,0.832079,0,1});
+IndexedFaceSet195->setTexCoord(*TextureCoordinate197);
+
+CCoordinate* Coordinate198 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate198->setDEF("nurbsToPoly362GeoPoints");
+Coordinate198->setPoint(new float[90]{128.122,0.021,320.786,132.354,0.087,322.413,104.172,7.278,255.934,102.956,6.291,260.559,134.397,1.09,280.615,130.32,0.765,282.463,135.864,0.3,304.677,131.438,0.152,304.502,133.989,0.14,316.603,129.646,0.05,315.454,135.143,0.209,310.673,130.737,0.092,310.008,136.063,0.584,292.598,131.72,0.36,293.421,136.173,0.422,298.643,131.768,0.238,298.964,135.498,0.8,286.573,131.262,0.529,287.905,125.996,2.831,264.746,122.873,2.262,268.146,132.607,1.49,274.821,128.755,1.099,277.192,129.864,2.058,269.41,126.328,1.586,272.308,115.703,4.885,258.652,113.559,4.099,262.835,121.151,3.793,261.152,118.508,3.116,264.988,109.986,6.055,257.01,108.324,5.165,261.451});
+IndexedFaceSet195->setCoord(*Coordinate198);
+
+Shape191->setGeometry(IndexedFaceSet195);
+
+Transform190->addChildren(*Shape191);
+
+Transform189->addChildren(*Transform190);
+
+CTransform* Transform199 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform199->setDEF("r_4");
+CShape* Shape200 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance201 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture202 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture202->setDEF("_7");
+ImageTexture202->setUrl(new CString[1]{"wall-glow.png"}, 1);
+Appearance201->setTexture(*ImageTexture202);
+
+CTextureTransform* TextureTransform203 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform203->setDEF("_8");
+TextureTransform203->setScale(new float[2]{8,1});
+Appearance201->setTextureTransform(*TextureTransform203);
+
+Shape200->setAppearance(*Appearance201);
+
+CIndexedFaceSet* IndexedFaceSet204 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet204->setDEF("nurbsToPoly364_0Geo");
+IndexedFaceSet204->setSolid(False);
+IndexedFaceSet204->setConvex(False);
+IndexedFaceSet204->setColorIndex(new int[336]{0,0,3,-1,3,3,0,-1,0,0,0,-1,2,2,2,-1,1,1,1,-1,1,2,2,-1,1,1,1,-1,1,1,1,-1,2,0,2,-1,1,2,0,-1,1,0,0,-1,0,0,3,-1,2,2,2,-1,2,2,2,-1,2,0,2,-1,2,2,3,-1,0,3,3,-1,2,2,2,-1,2,2,2,-1,2,3,2,-1,2,2,0,-1,0,0,0,-1,3,3,0,-1,2,2,2,-1,2,2,2,-1,2,2,2,-1,3,0,0,-1,2,2,0,-1,2,3,2,-1,2,2,0,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,2,0,2,-1,2,2,0,-1,3,0,0,-1,2,2,2,-1,2,2,2,-1,2,0,2,-1,2,2,3,-1,0,3,3,-1,0,3,3,-1,3,0,0,-1,0,0,0,-1,2,2,2,-1,1,1,1,-1,2,1,1,-1,1,1,1,-1,1,1,1,-1,0,0,2,-1,0,1,1,-1,0,1,1,-1,0,3,3,-1,2,2,2,-1,2,2,2,-1,0,3,2,-1,3,0,2,-1,3,0,0,-1,2,2,2,-1,2,2,2,-1,3,0,2,-1,0,0,2,-1,0,0,0,-1,3,0,0,-1,2,2,2,-1,2,2,2,-1,2,2,2,-1,0,3,3,-1,0,3,2,-1,3,0,2,-1,0,0,2,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,0,0,2,-1,0,3,2,-1,0,3,3,-1,2,2,2,-1,2,2,2,-1,0,3,2,-1,3,0,2,-1,3,0,0,-1});
+IndexedFaceSet204->setTexCoordIndex(new int[336]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,13,9,15,-1,16,17,18,-1,19,14,17,-1,11,6,15,-1,14,15,8,-1,17,8,20,-1,21,22,23,-1,24,25,26,-1,10,24,27,-1,26,21,27,-1,11,27,23,-1,6,23,28,-1,29,30,31,-1,25,29,32,-1,31,3,32,-1,26,32,5,-1,21,5,33,-1,34,35,36,-1,37,38,39,-1,30,40,41,-1,40,37,42,-1,3,43,44,-1,31,41,43,-1,39,34,42,-1,41,42,36,-1,43,36,45,-1,46,47,48,-1,49,50,51,-1,38,49,52,-1,51,46,52,-1,39,52,48,-1,34,48,53,-1,54,55,56,-1,50,54,57,-1,56,0,57,-1,51,57,2,-1,46,2,58,-1,1,58,2,-1,4,33,5,-1,7,20,8,-1,11,15,9,-1,14,19,12,-1,15,14,13,-1,18,59,16,-1,17,16,19,-1,6,8,15,-1,8,17,14,-1,20,18,17,-1,22,28,23,-1,26,27,24,-1,27,11,10,-1,21,23,27,-1,23,6,11,-1,28,7,6,-1,31,32,29,-1,32,26,25,-1,3,5,32,-1,5,21,26,-1,33,22,21,-1,35,45,36,-1,39,42,37,-1,41,31,30,-1,42,41,40,-1,44,4,3,-1,43,3,31,-1,34,36,42,-1,36,43,41,-1,45,44,43,-1,47,53,48,-1,51,52,49,-1,52,39,38,-1,46,48,52,-1,48,34,39,-1,53,35,34,-1,56,57,54,-1,57,51,50,-1,0,2,57,-1,2,46,51,-1,58,47,46,-1});
+IndexedFaceSet204->setCoordIndex(new int[336]{57,2,58,-1,31,5,32,-1,17,7,18,-1,12,6,8,-1,0,10,11,-1,10,12,13,-1,15,16,14,-1,9,11,16,-1,8,17,13,-1,11,13,18,-1,16,18,19,-1,25,21,26,-1,23,20,22,-1,6,23,24,-1,22,25,24,-1,8,24,26,-1,17,26,27,-1,29,4,28,-1,20,29,30,-1,28,31,30,-1,22,30,32,-1,25,32,33,-1,43,35,44,-1,39,34,36,-1,4,37,38,-1,37,39,40,-1,31,42,41,-1,28,38,42,-1,36,43,40,-1,38,40,44,-1,42,44,45,-1,51,47,52,-1,49,46,48,-1,34,49,50,-1,48,51,50,-1,36,50,52,-1,43,52,53,-1,55,1,54,-1,46,55,56,-1,54,57,56,-1,48,56,58,-1,51,58,59,-1,2,59,58,-1,5,33,32,-1,7,19,18,-1,8,13,12,-1,11,9,0,-1,13,11,10,-1,14,3,15,-1,16,15,9,-1,17,18,13,-1,18,16,11,-1,19,14,16,-1,21,27,26,-1,22,24,23,-1,24,8,6,-1,25,26,24,-1,26,17,8,-1,27,7,17,-1,28,30,29,-1,30,22,20,-1,31,32,30,-1,32,25,22,-1,33,21,25,-1,35,45,44,-1,36,40,39,-1,38,28,4,-1,40,38,37,-1,41,5,31,-1,42,31,28,-1,43,44,40,-1,44,42,38,-1,45,41,42,-1,47,53,52,-1,48,50,49,-1,50,36,34,-1,51,52,50,-1,52,43,36,-1,53,35,43,-1,54,56,55,-1,56,48,46,-1,57,58,56,-1,58,51,48,-1,59,47,51,-1});
+CColor* Color205 = (CColor *)(m_pScene.createNode("Color"));
+Color205->setColor(new float[12]{0,0.213731,0.240642,1,0.27952,0,0,0.952293,1,0,0.88817,1});
+IndexedFaceSet204->setColor(*Color205);
+
+CTextureCoordinate* TextureCoordinate206 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate206->setPoint(new float[120]{1,0.5,1,1,0.917257,0.5,0.416458,0.5,0.416458,1,0.352247,0.5,0.175655,0.5,0.175655,1,0.118251,0.5,0.118251,0,0.175655,0,0.175655,0,0,0,0.059992,0,0.059992,0,0.118251,0,0,0.5,0.059992,0.5,0.059992,1,0,0,0.118251,1,0.291643,0.5,0.291643,1,0.233139,0.5,0.233139,0,0.291643,0,0.291643,0,0.233139,0,0.233139,1,0.352247,0,0.416458,0,0.416458,0,0.352247,0,0.352247,1,0.651184,0.5,0.651184,1,0.564689,0.5,0.564689,0,0.651184,0,0.651184,0,0.486348,0,0.486348,0,0.564689,0,0.486348,0.5,0.486348,1,0.564689,1,0.831068,0.5,0.831068,1,0.74156,0.5,0.74156,0,0.831068,0,0.831068,0,0.74156,0,0.74156,1,0.917257,0,1,0,1,0,0.917257,0,0.917257,1,0,1});
+IndexedFaceSet204->setTexCoord(*TextureCoordinate206);
+
+CCoordinate* Coordinate207 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate207->setDEF("nurbsToPoly364GeoPoints");
+Coordinate207->setPoint(new float[180]{132.354,0.087,322.413,104.172,7.278,255.934,104.964,10.423,255.458,133.374,3.131,322.881,134.363,1.098,280.474,135.411,4.18,280.352,135.871,0.302,304.596,136.948,3.359,304.802,135.871,0.302,304.596,132.354,0.087,322.413,133.994,0.14,316.579,133.994,0.14,316.579,135.151,0.21,310.621,135.151,0.21,310.621,135.043,3.188,316.958,133.376,1.285,322.835,135.043,1.343,316.896,136.943,1.516,304.701,136.216,1.418,310.832,136.218,3.262,310.913,136.056,0.588,292.469,137.132,3.656,292.508,136.056,0.588,292.469,136.174,0.425,298.535,136.174,0.425,298.535,137.115,1.818,292.361,137.245,1.647,298.534,137.255,3.487,298.657,134.363,1.098,280.474,135.478,0.805,286.432,135.478,0.805,286.432,135.372,2.349,280.152,136.518,2.045,286.218,136.544,3.88,286.39,125.983,2.834,264.733,126.934,5.944,264.395,125.983,2.834,264.733,132.56,1.5,274.701,132.56,1.5,274.701,129.819,2.067,269.34,129.819,2.067,269.34,133.584,4.591,274.501,133.526,2.764,274.272,126.814,4.131,264.1,130.726,3.346,268.805,130.81,5.167,269.067,115.768,4.872,258.675,116.631,8.002,258.244,115.768,4.872,258.675,121.187,3.786,261.172,121.187,3.786,261.172,116.421,6.209,257.891,121.93,5.103,260.454,122.093,6.907,260.781,104.172,7.278,255.934,110.038,6.044,257.022,110.038,6.044,257.022,104.66,8.65,255.067,110.605,7.399,256.189,110.863,9.182,256.564});
+IndexedFaceSet204->setCoord(*Coordinate207);
+
+Shape200->setGeometry(IndexedFaceSet204);
+
+Transform199->addChildren(*Shape200);
+
+Transform189->addChildren(*Transform199);
+
+CTransform* Transform208 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform208->setDEF("l_4");
+CShape* Shape209 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance210 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture211 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture211->setUSE("_7");
+Appearance210->setTexture(*ImageTexture211);
+
+CTextureTransform* TextureTransform212 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform212->setUSE("_8");
+Appearance210->setTextureTransform(*TextureTransform212);
+
+Shape209->setAppearance(*Appearance210);
+
+CIndexedFaceSet* IndexedFaceSet213 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet213->setDEF("nurbsToPoly363_0Geo");
+IndexedFaceSet213->setSolid(False);
+IndexedFaceSet213->setConvex(False);
+IndexedFaceSet213->setColorIndex(new int[336]{0,0,3,-1,3,3,0,-1,0,0,0,-1,2,2,2,-1,1,1,1,-1,1,2,2,-1,1,1,1,-1,1,1,1,-1,2,0,2,-1,1,2,0,-1,1,0,0,-1,0,0,3,-1,2,2,2,-1,2,2,2,-1,2,0,2,-1,2,2,3,-1,0,3,3,-1,2,2,2,-1,2,2,2,-1,2,3,2,-1,2,2,0,-1,0,0,0,-1,3,3,0,-1,2,2,2,-1,2,2,2,-1,2,2,2,-1,3,0,0,-1,2,2,0,-1,2,3,2,-1,2,2,0,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,2,0,2,-1,2,2,0,-1,3,0,0,-1,2,2,2,-1,2,2,2,-1,2,0,2,-1,2,2,3,-1,0,3,3,-1,0,3,3,-1,3,0,0,-1,0,0,0,-1,2,2,2,-1,1,1,1,-1,2,1,1,-1,1,1,1,-1,1,1,1,-1,0,0,2,-1,0,1,1,-1,0,1,1,-1,0,3,3,-1,2,2,2,-1,2,2,2,-1,0,3,2,-1,3,0,2,-1,3,0,0,-1,2,2,2,-1,2,2,2,-1,3,0,2,-1,0,0,2,-1,0,0,0,-1,3,0,0,-1,2,2,2,-1,2,2,2,-1,2,2,2,-1,0,3,3,-1,0,3,2,-1,3,0,2,-1,0,0,2,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,0,0,2,-1,0,3,2,-1,0,3,3,-1,2,2,2,-1,2,2,2,-1,0,3,2,-1,3,0,2,-1,3,0,0,-1});
+IndexedFaceSet213->setTexCoordIndex(new int[336]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,13,9,15,-1,16,17,18,-1,19,14,17,-1,11,6,15,-1,14,15,8,-1,17,8,20,-1,21,22,23,-1,24,25,26,-1,10,24,27,-1,26,21,27,-1,11,27,23,-1,6,23,28,-1,29,30,31,-1,25,29,32,-1,31,3,32,-1,26,32,5,-1,21,5,33,-1,34,35,36,-1,37,38,39,-1,30,40,41,-1,40,37,42,-1,3,43,44,-1,31,41,43,-1,39,34,42,-1,41,42,36,-1,43,36,45,-1,46,47,48,-1,49,50,51,-1,38,49,52,-1,51,46,52,-1,39,52,48,-1,34,48,53,-1,54,55,56,-1,50,54,57,-1,56,0,57,-1,51,57,2,-1,46,2,58,-1,1,58,2,-1,4,33,5,-1,7,20,8,-1,11,15,9,-1,14,19,12,-1,15,14,13,-1,18,59,16,-1,17,16,19,-1,6,8,15,-1,8,17,14,-1,20,18,17,-1,22,28,23,-1,26,27,24,-1,27,11,10,-1,21,23,27,-1,23,6,11,-1,28,7,6,-1,31,32,29,-1,32,26,25,-1,3,5,32,-1,5,21,26,-1,33,22,21,-1,35,45,36,-1,39,42,37,-1,41,31,30,-1,42,41,40,-1,44,4,3,-1,43,3,31,-1,34,36,42,-1,36,43,41,-1,45,44,43,-1,47,53,48,-1,51,52,49,-1,52,39,38,-1,46,48,52,-1,48,34,39,-1,53,35,34,-1,56,57,54,-1,57,51,50,-1,0,2,57,-1,2,46,51,-1,58,47,46,-1});
+IndexedFaceSet213->setCoordIndex(new int[336]{57,2,58,-1,31,5,32,-1,17,7,18,-1,12,6,8,-1,0,10,11,-1,10,12,13,-1,15,16,14,-1,9,11,16,-1,8,17,13,-1,11,13,18,-1,16,18,19,-1,25,21,26,-1,23,20,22,-1,6,23,24,-1,22,25,24,-1,8,24,26,-1,17,26,27,-1,29,4,28,-1,20,29,30,-1,28,31,30,-1,22,30,32,-1,25,32,33,-1,43,35,44,-1,39,34,36,-1,4,37,38,-1,37,39,40,-1,31,42,41,-1,28,38,42,-1,36,43,40,-1,38,40,44,-1,42,44,45,-1,51,47,52,-1,49,46,48,-1,34,49,50,-1,48,51,50,-1,36,50,52,-1,43,52,53,-1,55,1,54,-1,46,55,56,-1,54,57,56,-1,48,56,58,-1,51,58,59,-1,2,59,58,-1,5,33,32,-1,7,19,18,-1,8,13,12,-1,11,9,0,-1,13,11,10,-1,14,3,15,-1,16,15,9,-1,17,18,13,-1,18,16,11,-1,19,14,16,-1,21,27,26,-1,22,24,23,-1,24,8,6,-1,25,26,24,-1,26,17,8,-1,27,7,17,-1,28,30,29,-1,30,22,20,-1,31,32,30,-1,32,25,22,-1,33,21,25,-1,35,45,44,-1,36,40,39,-1,38,28,4,-1,40,38,37,-1,41,5,31,-1,42,31,28,-1,43,44,40,-1,44,42,38,-1,45,41,42,-1,47,53,52,-1,48,50,49,-1,50,36,34,-1,51,52,50,-1,52,43,36,-1,53,35,43,-1,54,56,55,-1,56,48,46,-1,57,58,56,-1,58,51,48,-1,59,47,51,-1});
+CColor* Color214 = (CColor *)(m_pScene.createNode("Color"));
+Color214->setColor(new float[12]{0,0.213731,0.240642,1,0.27952,0,0,0.952293,1,0,0.88817,1});
+IndexedFaceSet213->setColor(*Color214);
+
+CTextureCoordinate* TextureCoordinate215 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate215->setPoint(new float[120]{1,0.501333,1,1,0.91855,0.501333,0.411484,0.501333,0.411484,1,0.347788,0.501333,0.173266,0.501333,0.173266,1,0.116642,0.501333,0.116642,0,0.173266,0,0.173266,0,0,0,0.059188,0,0.059188,0,0.116642,0,0,0.501333,0.059188,0.501333,0.059188,1,0,0,0.116642,1,0.287773,0.501333,0.287773,1,0.230002,0.501333,0.230002,0,0.287773,0,0.287773,0,0.230002,0,0.230002,1,0.347788,0,0.411484,0,0.411484,0,0.347788,0,0.347788,1,0.648871,0.501333,0.648871,1,0.560344,0.501333,0.560344,0,0.648871,0,0.648871,0,0.481212,0,0.481212,0,0.560344,0,0.481212,0.501333,0.481212,1,0.560344,1,0.832475,0.501333,0.832475,1,0.74163,0.501333,0.74163,0,0.832475,0,0.832475,0,0.74163,0,0.74163,1,0.91855,0,1,0,1,0,0.91855,0,0.91855,1,0,1});
+IndexedFaceSet213->setTexCoord(*TextureCoordinate215);
+
+CCoordinate* Coordinate216 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate216->setDEF("nurbsToPoly363GeoPoints");
+Coordinate216->setPoint(new float[180]{128.122,0.021,320.786,102.956,6.291,260.559,103.159,8.95,262.315,127.097,3.023,320.468,130.381,0.751,282.737,129.457,3.667,283.499,131.423,0.15,304.659,130.362,3.126,304.777,131.423,0.15,304.659,128.122,0.021,320.786,129.633,0.05,315.506,129.633,0.05,315.506,130.72,0.091,310.114,130.72,0.091,310.114,128.583,3.045,315.328,127.099,1.186,320.422,128.584,1.209,315.266,130.357,1.293,304.678,129.657,1.242,310.002,129.658,3.077,310.082,131.731,0.354,293.664,130.708,3.305,294.095,131.731,0.354,293.664,131.763,0.235,299.167,131.763,0.235,299.167,130.691,1.476,293.951,130.704,1.368,299.318,130.714,3.199,299.439,130.381,0.751,282.737,131.295,0.519,288.171,131.295,0.519,288.171,129.419,1.845,283.303,130.286,1.629,288.595,130.311,3.454,288.765,122.962,2.244,268.23,122.399,5.071,269.529,122.962,2.244,268.23,128.849,1.08,277.442,128.849,1.08,277.442,126.44,1.563,272.485,126.44,1.563,272.485,128.008,3.973,278.38,127.951,2.155,278.154,122.281,3.267,269.237,125.635,2.615,273.346,125.717,4.427,273.605,113.536,4.104,262.827,113.363,6.845,264.416,113.536,4.104,262.827,118.536,3.111,265.004,118.536,3.111,265.004,113.153,5.061,264.064,118.001,4.101,266.139,118.163,5.895,266.463,102.956,6.291,260.559,108.29,5.172,261.444,108.29,5.172,261.444,102.856,7.186,261.926,108.054,6.097,262.757,108.311,7.871,263.131});
+IndexedFaceSet213->setCoord(*Coordinate216);
+
+Shape209->setGeometry(IndexedFaceSet213);
+
+Transform208->addChildren(*Shape209);
+
+Transform189->addChildren(*Transform208);
+
+LOD188->addChildren(*Transform189);
+
+Transform187->addChildren(*LOD188);
+
+group->addChildren(*Transform187);
+
+CTransform* Transform217 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform217->setDEF("s8LOD");
+CLOD* LOD218 = (CLOD *)(m_pScene.createNode("LOD"));
+CTransform* Transform219 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform219->setDEF("med_2");
+CTransform* Transform220 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform220->setDEF("f_7");
+CShape* Shape221 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance222 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture223 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture223->setUSE("_1");
+Appearance222->setTexture(*ImageTexture223);
+
+CTextureTransform* TextureTransform224 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+Appearance222->setTextureTransform(*TextureTransform224);
+
+Shape221->setAppearance(*Appearance222);
+
+CIndexedFaceSet* IndexedFaceSet225 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet225->setDEF("nurbsToPoly359_0Geo");
+IndexedFaceSet225->setSolid(False);
+IndexedFaceSet225->setConvex(False);
+IndexedFaceSet225->setColorIndex(new int[112]{0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,1,0,1,-1,0,1,0,-1,1,1,1,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,1,-1,1,1,0,-1,1,1,1,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1});
+IndexedFaceSet225->setTexCoordIndex(new int[112]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,11,6,12,-1,13,14,15,-1,7,13,16,-1,14,3,17,-1,18,19,20,-1,4,21,22,-1,21,18,23,-1,24,25,26,-1,19,24,27,-1,25,0,28,-1,1,29,2,-1,4,22,5,-1,7,16,8,-1,11,12,9,-1,6,8,12,-1,14,17,15,-1,13,15,16,-1,3,5,17,-1,19,27,20,-1,21,23,22,-1,18,20,23,-1,25,28,26,-1,24,26,27,-1,0,2,28,-1});
+IndexedFaceSet225->setCoordIndex(new int[112]{28,2,29,-1,16,4,17,-1,10,6,11,-1,0,1,8,-1,8,10,9,-1,14,12,15,-1,6,14,7,-1,12,16,13,-1,22,18,23,-1,4,20,5,-1,20,22,21,-1,26,24,27,-1,18,26,19,-1,24,28,25,-1,2,3,29,-1,4,5,17,-1,6,7,11,-1,8,9,0,-1,10,11,9,-1,12,13,15,-1,14,15,7,-1,16,17,13,-1,18,19,23,-1,20,21,5,-1,22,23,21,-1,24,25,27,-1,26,27,19,-1,28,29,25,-1});
+CColor* Color226 = (CColor *)(m_pScene.createNode("Color"));
+Color226->setColor(new float[6]{0,0.327721,0.368984,1,0.314483,0});
+IndexedFaceSet225->setColor(*Color226);
+
+CTextureCoordinate* TextureCoordinate227 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate227->setPoint(new float[60]{1,0.929046,1,1,0,0.929046,1,0.419907,1,0.490014,0,0.419907,1,0.143027,1,0.212545,0,0.143027,0,0,1,0,1,0.072414,0,0.072414,1,0.281554,1,0.350536,0,0.281554,0,0.212545,0,0.350536,1,0.633433,1,0.706916,0,0.633433,1,0.561129,0,0.490014,0,0.561129,1,0.781248,1,0.85568,0,0.781248,0,0.706916,0,0.85568,0,1});
+IndexedFaceSet225->setTexCoord(*TextureCoordinate227);
+
+CCoordinate* Coordinate228 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate228->setDEF("nurbsToPoly359GeoPoints");
+Coordinate228->setPoint(new float[90]{102.956,6.291,260.559,104.172,7.278,255.934,38.534,24.668,280.597,41.888,22.384,282.577,67.02,16.136,257.47,68.153,14.58,261.966,88.118,10.866,254.738,87.948,9.641,259.567,98.82,8.439,255.263,97.976,7.369,260.001,93.467,9.635,254.862,92.968,8.487,259.667,77.475,13.433,255.398,77.944,12.05,260.147,82.783,12.132,254.909,82.933,10.829,259.719,72.211,14.768,256.239,73.006,13.301,260.884,52.377,20.313,264.011,54.603,18.448,267.758,61.941,17.533,259.14,63.431,15.88,263.439,57.033,18.936,261.302,58.891,17.179,265.353,44.265,22.816,271.21,47.158,20.732,274.173,48.08,21.623,267.31,50.656,19.647,270.694,41.055,23.844,275.67,44.211,21.656,278.162});
+IndexedFaceSet225->setCoord(*Coordinate228);
+
+Shape221->setGeometry(IndexedFaceSet225);
+
+Transform220->addChildren(*Shape221);
+
+Transform219->addChildren(*Transform220);
+
+CTransform* Transform229 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform229->setDEF("r_5");
+CShape* Shape230 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance231 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture232 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture232->setUSE("_7");
+Appearance231->setTexture(*ImageTexture232);
+
+CTextureTransform* TextureTransform233 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform233->setDEF("_9");
+TextureTransform233->setScale(new float[2]{4,1});
+Appearance231->setTextureTransform(*TextureTransform233);
+
+Shape230->setAppearance(*Appearance231);
+
+CIndexedFaceSet* IndexedFaceSet234 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet234->setDEF("nurbsToPoly361_0Geo");
+IndexedFaceSet234->setSolid(False);
+IndexedFaceSet234->setConvex(False);
+IndexedFaceSet234->setColorIndex(new int[336]{5,5,0,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,2,2,2,-1,5,0,0,-1,3,2,0,-1,2,0,2,-1,2,2,0,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,2,0,2,-1,2,2,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,2,0,2,-1,2,2,0,-1,0,0,0,-1,0,0,1,-1,4,2,2,-1,2,4,4,-1,4,4,4,-1,0,1,1,-1,2,4,1,-1,2,0,4,-1,4,4,1,-1,1,1,1,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,2,0,2,-1,2,2,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,0,5,2,-1,2,2,0,-1,0,0,0,-1,5,0,0,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,2,2,2,-1,0,5,5,-1,0,5,3,-1,0,0,2,-1,0,0,2,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,0,0,2,-1,0,0,2,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,0,0,2,-1,0,0,2,-1,0,0,0,-1,0,1,1,-1,2,4,4,-1,4,2,2,-1,4,4,4,-1,1,0,0,-1,1,0,2,-1,0,1,4,-1,1,1,4,-1,1,1,1,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,0,0,2,-1,0,0,2,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,5,0,2,-1,0,0,2,-1,0,0,0,-1});
+IndexedFaceSet234->setTexCoordIndex(new int[336]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,13,9,15,-1,16,17,18,-1,19,14,17,-1,11,6,15,-1,14,15,8,-1,17,8,20,-1,21,22,23,-1,24,25,26,-1,10,24,27,-1,26,21,27,-1,11,27,23,-1,6,23,28,-1,29,30,31,-1,25,29,32,-1,31,3,32,-1,26,32,5,-1,21,5,33,-1,34,35,36,-1,37,38,39,-1,30,40,41,-1,40,37,42,-1,3,43,44,-1,31,41,43,-1,39,34,42,-1,41,42,36,-1,43,36,45,-1,46,47,48,-1,49,50,51,-1,38,49,52,-1,51,46,52,-1,39,52,48,-1,34,48,53,-1,54,55,56,-1,50,54,57,-1,56,0,57,-1,51,57,2,-1,46,2,58,-1,1,58,2,-1,4,33,5,-1,7,20,8,-1,11,15,9,-1,14,19,12,-1,15,14,13,-1,18,59,16,-1,17,16,19,-1,6,8,15,-1,8,17,14,-1,20,18,17,-1,22,28,23,-1,26,27,24,-1,27,11,10,-1,21,23,27,-1,23,6,11,-1,28,7,6,-1,31,32,29,-1,32,26,25,-1,3,5,32,-1,5,21,26,-1,33,22,21,-1,35,45,36,-1,39,42,37,-1,41,31,30,-1,42,41,40,-1,44,4,3,-1,43,3,31,-1,34,36,42,-1,36,43,41,-1,45,44,43,-1,47,53,48,-1,51,52,49,-1,52,39,38,-1,46,48,52,-1,48,34,39,-1,53,35,34,-1,56,57,54,-1,57,51,50,-1,0,2,57,-1,2,46,51,-1,58,47,46,-1});
+IndexedFaceSet234->setCoordIndex(new int[336]{57,2,58,-1,31,5,32,-1,17,7,18,-1,12,6,8,-1,0,10,11,-1,10,12,13,-1,15,16,14,-1,9,11,16,-1,8,17,13,-1,11,13,18,-1,16,18,19,-1,25,21,26,-1,23,20,22,-1,6,23,24,-1,22,25,24,-1,8,24,26,-1,17,26,27,-1,29,4,28,-1,20,29,30,-1,28,31,30,-1,22,30,32,-1,25,32,33,-1,43,35,44,-1,39,34,36,-1,4,37,38,-1,37,39,40,-1,31,42,41,-1,28,38,42,-1,36,43,40,-1,38,40,44,-1,42,44,45,-1,51,47,52,-1,49,46,48,-1,34,49,50,-1,48,51,50,-1,36,50,52,-1,43,52,53,-1,55,1,54,-1,46,55,56,-1,54,57,56,-1,48,56,58,-1,51,58,59,-1,2,59,58,-1,5,33,32,-1,7,19,18,-1,8,13,12,-1,11,9,0,-1,13,11,10,-1,14,3,15,-1,16,15,9,-1,17,18,13,-1,18,16,11,-1,19,14,16,-1,21,27,26,-1,22,24,23,-1,24,8,6,-1,25,26,24,-1,26,17,8,-1,27,7,17,-1,28,30,29,-1,30,22,20,-1,31,32,30,-1,32,25,22,-1,33,21,25,-1,35,45,44,-1,36,40,39,-1,38,28,4,-1,40,38,37,-1,41,5,31,-1,42,31,28,-1,43,44,40,-1,44,42,38,-1,45,41,42,-1,47,53,52,-1,48,50,49,-1,50,36,34,-1,51,52,50,-1,52,43,36,-1,53,35,43,-1,54,56,55,-1,56,48,46,-1,57,58,56,-1,58,51,48,-1,59,47,51,-1});
+CColor* Color235 = (CColor *)(m_pScene.createNode("Color"));
+Color235->setColor(new float[18]{0,0.327721,0.368984,1,0.314483,0,1,0.759271,0,0,0.88817,1,1,0.782176,0,0,0.213731,0.240642});
+IndexedFaceSet234->setColor(*Color235);
+
+CTextureCoordinate* TextureCoordinate236 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate236->setPoint(new float[120]{1,0.5,1,1,0.929988,0.5,0.494044,0.5,0.494044,1,0.4235,0.5,0.214017,0.5,0.214017,1,0.14381,0.5,0.14381,0,0.214017,0,0.214017,0,0,0,0.07267,0,0.07267,0,0.14381,0,0,0.5,0.07267,0.5,0.07267,1,0,0,0.14381,1,0.353494,0.5,0.353494,1,0.283776,0.5,0.283776,0,0.353494,0,0.353494,0,0.283776,0,0.283776,1,0.4235,0,0.494044,0,0.494044,0,0.4235,0,0.4235,1,0.710468,0.5,0.710468,1,0.637441,0.5,0.637441,0,0.710468,0,0.710468,0,0.565302,0,0.565302,0,0.637441,0,0.565302,0.5,0.565302,1,0.637441,1,0.857616,0.5,0.857616,1,0.784087,0.5,0.784087,0,0.857616,0,0.857616,0,0.784087,0,0.784087,1,0.929988,0,1,0,1,0,0.929988,0,0.929988,1,0,1});
+IndexedFaceSet234->setTexCoord(*TextureCoordinate236);
+
+CCoordinate* Coordinate237 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate237->setDEF("nurbsToPoly361GeoPoints");
+Coordinate237->setPoint(new float[180]{104.172,7.278,255.934,38.534,24.668,280.597,39.038,27.889,280.25,104.964,10.423,255.458,66.727,16.215,257.553,67.404,19.388,257.079,88.005,10.893,254.738,88.742,14.05,254.239,88.005,10.893,254.738,104.172,7.278,255.934,98.801,8.443,255.261,98.801,8.443,255.261,93.407,9.649,254.859,93.407,9.649,254.859,99.571,11.593,254.773,104.66,8.65,255.067,99.226,9.829,254.373,88.316,12.305,253.832,93.773,11.048,253.957,94.159,12.802,254.363,77.248,13.489,255.427,77.958,16.653,254.932,77.248,13.489,255.427,82.612,12.173,254.919,82.612,12.173,254.919,77.454,14.928,254.535,82.87,13.599,254.016,83.335,15.334,254.421,66.727,16.215,257.553,71.942,14.838,256.292,71.942,14.838,256.292,66.821,17.683,256.707,72.093,16.29,255.419,72.637,18.005,255.806,52.162,20.378,264.156,52.765,23.572,263.739,52.162,20.378,264.156,61.65,17.614,259.251,61.65,17.614,259.251,56.77,19.013,261.436,56.77,19.013,261.436,62.306,20.793,258.794,61.684,19.099,258.441,52.067,21.899,263.444,56.739,20.515,260.671,57.4,22.199,260.998,44.173,22.845,271.319,44.721,26.055,270.944,44.173,22.845,271.319,47.925,21.671,267.448,47.925,21.671,267.448,43.96,24.405,270.738,47.768,23.211,266.797,48.5,24.872,267.052,38.534,24.668,280.597,41.017,23.857,275.732,41.017,23.857,275.732,38.236,26.261,280.17,40.756,25.434,275.225,41.541,27.073,275.373});
+IndexedFaceSet234->setCoord(*Coordinate237);
+
+Shape230->setGeometry(IndexedFaceSet234);
+
+Transform229->addChildren(*Shape230);
+
+Transform219->addChildren(*Transform229);
+
+CTransform* Transform238 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform238->setDEF("l_5");
+CShape* Shape239 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance240 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture241 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture241->setUSE("_7");
+Appearance240->setTexture(*ImageTexture241);
+
+CTextureTransform* TextureTransform242 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform242->setUSE("_9");
+Appearance240->setTextureTransform(*TextureTransform242);
+
+Shape239->setAppearance(*Appearance240);
+
+CIndexedFaceSet* IndexedFaceSet243 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet243->setDEF("nurbsToPoly360_0Geo");
+IndexedFaceSet243->setSolid(False);
+IndexedFaceSet243->setConvex(False);
+IndexedFaceSet243->setColorIndex(new int[336]{5,5,1,-1,1,1,1,-1,1,1,1,-1,3,3,3,-1,0,3,3,-1,3,3,3,-1,5,1,1,-1,0,3,1,-1,3,1,3,-1,3,3,1,-1,1,1,1,-1,1,1,1,-1,3,3,3,-1,3,3,3,-1,3,1,3,-1,3,3,1,-1,1,1,1,-1,3,3,3,-1,3,3,3,-1,3,1,3,-1,3,3,1,-1,1,1,1,-1,1,1,2,-1,4,3,3,-1,3,3,3,-1,3,4,4,-1,1,2,2,-1,3,3,2,-1,3,1,4,-1,3,4,2,-1,2,2,2,-1,1,1,1,-1,3,3,3,-1,3,3,3,-1,3,1,3,-1,3,3,1,-1,1,1,1,-1,3,0,0,-1,3,3,3,-1,0,5,3,-1,3,3,1,-1,1,1,1,-1,5,1,1,-1,1,1,1,-1,1,1,1,-1,3,3,3,-1,3,0,0,-1,3,3,3,-1,1,5,5,-1,1,5,0,-1,1,1,3,-1,1,1,3,-1,1,1,1,-1,1,1,1,-1,3,3,3,-1,3,3,3,-1,1,1,3,-1,1,1,3,-1,1,1,1,-1,3,3,3,-1,3,3,3,-1,1,1,3,-1,1,1,3,-1,1,1,1,-1,1,2,2,-1,3,4,4,-1,3,3,3,-1,4,3,3,-1,2,1,1,-1,2,1,3,-1,1,2,4,-1,2,2,3,-1,2,2,2,-1,1,1,1,-1,3,3,3,-1,3,3,3,-1,1,1,3,-1,1,1,3,-1,1,1,1,-1,0,3,3,-1,3,3,3,-1,5,1,3,-1,1,1,3,-1,1,1,1,-1});
+IndexedFaceSet243->setTexCoordIndex(new int[336]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,13,9,15,-1,16,17,18,-1,19,14,17,-1,11,6,15,-1,14,15,8,-1,17,8,20,-1,21,22,23,-1,24,25,26,-1,10,24,27,-1,26,21,27,-1,11,27,23,-1,6,23,28,-1,29,30,31,-1,25,29,32,-1,31,3,32,-1,26,32,5,-1,21,5,33,-1,34,35,36,-1,37,38,39,-1,30,40,41,-1,40,37,42,-1,3,43,44,-1,31,41,43,-1,39,34,42,-1,41,42,36,-1,43,36,45,-1,46,47,48,-1,49,50,51,-1,38,49,52,-1,51,46,52,-1,39,52,48,-1,34,48,53,-1,54,55,56,-1,50,54,57,-1,56,0,57,-1,51,57,2,-1,46,2,58,-1,1,58,2,-1,4,33,5,-1,7,20,8,-1,11,15,9,-1,14,19,12,-1,15,14,13,-1,18,59,16,-1,17,16,19,-1,6,8,15,-1,8,17,14,-1,20,18,17,-1,22,28,23,-1,26,27,24,-1,27,11,10,-1,21,23,27,-1,23,6,11,-1,28,7,6,-1,31,32,29,-1,32,26,25,-1,3,5,32,-1,5,21,26,-1,33,22,21,-1,35,45,36,-1,39,42,37,-1,41,31,30,-1,42,41,40,-1,44,4,3,-1,43,3,31,-1,34,36,42,-1,36,43,41,-1,45,44,43,-1,47,53,48,-1,51,52,49,-1,52,39,38,-1,46,48,52,-1,48,34,39,-1,53,35,34,-1,56,57,54,-1,57,51,50,-1,0,2,57,-1,2,46,51,-1,58,47,46,-1});
+IndexedFaceSet243->setCoordIndex(new int[336]{57,2,58,-1,31,5,32,-1,17,7,18,-1,12,6,8,-1,0,10,11,-1,10,12,13,-1,15,16,14,-1,9,11,16,-1,8,17,13,-1,11,13,18,-1,16,18,19,-1,25,21,26,-1,23,20,22,-1,6,23,24,-1,22,25,24,-1,8,24,26,-1,17,26,27,-1,29,4,28,-1,20,29,30,-1,28,31,30,-1,22,30,32,-1,25,32,33,-1,43,35,44,-1,39,34,36,-1,4,37,38,-1,37,39,40,-1,31,42,41,-1,28,38,42,-1,36,43,40,-1,38,40,44,-1,42,44,45,-1,51,47,52,-1,49,46,48,-1,34,49,50,-1,48,51,50,-1,36,50,52,-1,43,52,53,-1,55,1,54,-1,46,55,56,-1,54,57,56,-1,48,56,58,-1,51,58,59,-1,2,59,58,-1,5,33,32,-1,7,19,18,-1,8,13,12,-1,11,9,0,-1,13,11,10,-1,14,3,15,-1,16,15,9,-1,17,18,13,-1,18,16,11,-1,19,14,16,-1,21,27,26,-1,22,24,23,-1,24,8,6,-1,25,26,24,-1,26,17,8,-1,27,7,17,-1,28,30,29,-1,30,22,20,-1,31,32,30,-1,32,25,22,-1,33,21,25,-1,35,45,44,-1,36,40,39,-1,38,28,4,-1,40,38,37,-1,41,5,31,-1,42,31,28,-1,43,44,40,-1,44,42,38,-1,45,41,42,-1,47,53,52,-1,48,50,49,-1,50,36,34,-1,51,52,50,-1,52,43,36,-1,53,35,43,-1,54,56,55,-1,56,48,46,-1,57,58,56,-1,58,51,48,-1,59,47,51,-1});
+CColor* Color244 = (CColor *)(m_pScene.createNode("Color"));
+Color244->setColor(new float[18]{0,0.88817,1,0,0.327721,0.368984,1,0.314483,0,1,0.759271,0,1,0.782176,0,0,0.213731,0.240642});
+IndexedFaceSet243->setColor(*Color244);
+
+CTextureCoordinate* TextureCoordinate245 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate245->setPoint(new float[120]{1,0.501333,1,1,0.927529,0.501333,0.484688,0.501333,0.484688,1,0.415209,0.501333,0.210589,0.501333,0.210589,1,0.141948,0.501333,0.141948,0,0.210589,0,0.210589,0,0,0,0.072034,0,0.072034,0,0.141948,0,0,0.501333,0.072034,0.501333,0.072034,1,0,0,0.141948,1,0.34668,0.501333,0.34668,1,0.278643,0.501333,0.278643,0,0.34668,0,0.34668,0,0.278643,0,0.278643,1,0.415209,0,0.484688,0,0.484688,0,0.415209,0,0.415209,1,0.701882,0.501333,0.701882,1,0.627913,0.501333,0.627913,0,0.701882,0,0.701882,0,0.555513,0,0.555513,0,0.627913,0,0.555513,0.501333,0.555513,1,0.627913,1,0.85272,0.501333,0.85272,1,0.777084,0.501333,0.777084,0,0.85272,0,0.85272,0,0.777084,0,0.777084,1,0.927529,0,1,0,1,0,0.927529,0,0.927529,1,0,1});
+IndexedFaceSet243->setTexCoord(*TextureCoordinate245);
+
+CCoordinate* Coordinate246 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate246->setDEF("nurbsToPoly360GeoPoints");
+Coordinate246->setPoint(new float[180]{102.956,6.291,260.559,41.888,22.384,282.577,44.008,24.493,283.186,103.159,8.95,262.315,68.516,14.483,261.871,69.727,16.897,263.572,88.09,9.608,259.566,88.739,12.164,261.398,88.09,9.608,259.566,102.956,6.291,260.559,98.003,7.363,260.004,98.003,7.363,260.004,93.045,8.469,259.67,93.045,8.469,259.67,98.362,9.987,261.803,102.856,7.186,261.926,98.019,8.233,261.404,88.318,10.428,260.993,93.17,9.314,261.09,93.553,11.059,261.494,78.221,11.981,260.116,79.148,14.469,261.916,78.221,11.981,260.116,83.145,10.778,259.707,83.145,10.778,259.707,78.65,12.752,261.519,83.473,11.574,261.128,83.933,13.301,261.531,68.516,14.483,261.871,73.337,13.216,260.824,73.337,13.216,260.824,69.153,15.2,263.2,73.868,13.961,262.196,74.404,15.669,262.583,54.885,18.364,267.578,56.551,20.65,268.978,54.885,18.364,267.578,63.795,15.778,263.308,63.795,15.778,263.308,59.227,17.082,265.191,59.227,17.082,265.191,65.157,18.152,264.932,64.543,16.465,264.578,55.86,18.986,268.68,60.089,17.737,266.387,60.742,19.413,266.716,47.288,20.691,274.024,49.225,22.886,275.087,47.288,20.691,274.024,50.866,19.583,270.516,50.866,19.583,270.516,48.469,21.244,274.879,51.95,20.17,271.504,52.675,21.824,271.762,41.888,22.384,282.577,44.266,21.638,278.074,44.266,21.638,278.074,43.21,22.873,283.107,45.529,22.158,278.774,46.309,23.789,278.923});
+IndexedFaceSet243->setCoord(*Coordinate246);
+
+Shape239->setGeometry(IndexedFaceSet243);
+
+Transform238->addChildren(*Shape239);
+
+Transform219->addChildren(*Transform238);
+
+LOD218->addChildren(*Transform219);
+
+Transform217->addChildren(*LOD218);
+
+group->addChildren(*Transform217);
+
+CTransform* Transform247 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform247->setDEF("s9LOD");
+CLOD* LOD248 = (CLOD *)(m_pScene.createNode("LOD"));
+CTransform* Transform249 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform249->setDEF("med_3");
+CTransform* Transform250 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform250->setDEF("f_8");
+CShape* Shape251 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance252 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture253 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture253->setUSE("_1");
+Appearance252->setTexture(*ImageTexture253);
+
+CTextureTransform* TextureTransform254 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+Appearance252->setTextureTransform(*TextureTransform254);
+
+Shape251->setAppearance(*Appearance252);
+
+CIndexedFaceSet* IndexedFaceSet255 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet255->setDEF("nurbsToPoly356_0Geo");
+IndexedFaceSet255->setSolid(False);
+IndexedFaceSet255->setConvex(False);
+IndexedFaceSet255->setColorIndex(new int[112]{1,1,0,-1,2,2,0,-1,2,2,0,-1,0,0,2,-1,2,2,0,-1,2,2,0,-1,2,2,0,-1,2,2,0,-1,2,1,0,-1,2,2,0,-1,2,2,0,-1,1,1,0,-1,1,1,0,-1,1,1,0,-1,1,0,0,-1,2,0,0,-1,2,0,0,-1,2,0,0,-1,2,0,0,-1,2,0,0,-1,2,0,0,-1,2,0,0,-1,1,0,0,-1,2,0,0,-1,2,0,0,-1,1,0,0,-1,1,0,0,-1,1,0,0,-1});
+IndexedFaceSet255->setTexCoordIndex(new int[112]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,11,6,12,-1,13,14,15,-1,7,13,16,-1,14,3,17,-1,18,19,20,-1,4,21,22,-1,21,18,23,-1,24,25,26,-1,19,24,27,-1,25,0,28,-1,1,29,2,-1,4,22,5,-1,7,16,8,-1,11,12,9,-1,6,8,12,-1,14,17,15,-1,13,15,16,-1,3,5,17,-1,19,27,20,-1,21,23,22,-1,18,20,23,-1,25,28,26,-1,24,26,27,-1,0,2,28,-1});
+IndexedFaceSet255->setCoordIndex(new int[112]{28,2,29,-1,16,4,17,-1,10,6,11,-1,0,1,8,-1,8,10,9,-1,14,12,15,-1,6,14,7,-1,12,16,13,-1,22,18,23,-1,4,20,5,-1,20,22,21,-1,26,24,27,-1,18,26,19,-1,24,28,25,-1,2,3,29,-1,4,5,17,-1,6,7,11,-1,8,9,0,-1,10,11,9,-1,12,13,15,-1,14,15,7,-1,16,17,13,-1,18,19,23,-1,20,21,5,-1,22,23,21,-1,24,25,27,-1,26,27,19,-1,28,29,25,-1});
+CColor* Color256 = (CColor *)(m_pScene.createNode("Color"));
+Color256->setColor(new float[9]{0,0.327721,0.368984,0,1,0.961045,1,0.0144675,0});
+IndexedFaceSet255->setColor(*Color256);
+
+CTextureCoordinate* TextureCoordinate257 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate257->setPoint(new float[60]{1,0.939054,1,1,0,0.939054,1,0.45374,1,0.531957,0,0.45374,1,0.152647,1,0.226563,0,0.152647,0,0,1,0,1,0.077677,0,0.077677,1,0.300791,1,0.376373,0,0.300791,0,0.226563,0,0.376373,1,0.68065,1,0.749132,0,0.68065,1,0.608246,0,0.531957,0,0.608246,1,0.814455,1,0.877479,0,0.814455,0,0.749132,0,0.877479,0,1});
+IndexedFaceSet255->setTexCoord(*TextureCoordinate257);
+
+CCoordinate* Coordinate258 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate258->setDEF("nurbsToPoly356GeoPoints");
+Coordinate258->setPoint(new float[90]{41.888,22.384,282.577,38.534,24.668,280.597,84.8,26.537,336.977,85.649,23.726,332.897,43.815,26.505,322.953,46.672,23.758,320.586,35.031,26.138,299.413,38.575,23.6,299.48,36.508,25.354,286.665,40.001,22.974,288.024,35.347,25.826,292.983,38.9,23.361,293.701,37.175,26.438,312.077,40.505,23.777,310.854,35.606,26.332,305.831,39.075,23.728,305.246,39.88,26.485,317.908,43.005,23.776,316.079,60.229,26.532,332.256,62.137,23.731,328.817,48.773,26.518,326.947,51.32,23.745,324.137,54.339,26.527,329.98,56.564,23.737,326.818,72.429,26.536,335.253,73.754,23.727,331.421,66.288,26.535,333.966,67.893,23.728,330.307,78.608,26.537,336.229,79.679,23.727,332.259});
+IndexedFaceSet255->setCoord(*Coordinate258);
+
+Shape251->setGeometry(IndexedFaceSet255);
+
+Transform250->addChildren(*Shape251);
+
+Transform249->addChildren(*Transform250);
+
+CTransform* Transform259 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform259->setDEF("r_6");
+CShape* Shape260 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance261 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture262 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture262->setUSE("_7");
+Appearance261->setTexture(*ImageTexture262);
+
+CTextureTransform* TextureTransform263 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform263->setDEF("_10");
+TextureTransform263->setScale(new float[2]{4,1});
+Appearance261->setTextureTransform(*TextureTransform263);
+
+Shape260->setAppearance(*Appearance261);
+
+CIndexedFaceSet* IndexedFaceSet264 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet264->setDEF("nurbsToPoly358_0Geo");
+IndexedFaceSet264->setSolid(False);
+IndexedFaceSet264->setConvex(False);
+IndexedFaceSet264->setColorIndex(new int[336]{3,3,0,-1,0,0,0,-1,0,0,0,-1,1,1,1,-1,0,1,1,-1,1,1,1,-1,3,0,0,-1,0,1,0,-1,1,0,1,-1,1,1,0,-1,0,0,0,-1,0,0,0,-1,1,1,1,-1,1,1,1,-1,1,0,1,-1,1,1,0,-1,0,0,0,-1,1,1,1,-1,1,1,1,-1,1,0,1,-1,1,1,0,-1,0,0,0,-1,0,0,0,-1,1,2,2,-1,1,1,1,-1,1,1,1,-1,0,0,0,-1,1,1,0,-1,2,0,1,-1,1,1,0,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,2,0,2,-1,2,2,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,2,3,2,-1,2,2,0,-1,0,0,0,-1,3,0,0,-1,0,0,0,-1,0,0,0,-1,1,1,1,-1,1,0,0,-1,1,1,1,-1,0,3,3,-1,0,3,0,-1,0,0,1,-1,0,0,1,-1,0,0,0,-1,0,0,0,-1,1,1,1,-1,1,1,1,-1,0,0,1,-1,0,0,1,-1,0,0,0,-1,1,1,1,-1,1,1,1,-1,0,0,1,-1,0,0,1,-1,0,0,0,-1,0,0,0,-1,2,1,1,-1,1,1,1,-1,1,1,1,-1,0,0,0,-1,0,0,1,-1,0,0,1,-1,0,0,1,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,0,0,2,-1,0,0,2,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,3,0,2,-1,0,0,2,-1,0,0,0,-1});
+IndexedFaceSet264->setTexCoordIndex(new int[336]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,13,9,15,-1,16,17,18,-1,19,14,17,-1,11,6,15,-1,14,15,8,-1,17,8,20,-1,21,22,23,-1,24,25,26,-1,10,24,27,-1,26,21,27,-1,11,27,23,-1,6,23,28,-1,29,30,31,-1,25,29,32,-1,31,3,32,-1,26,32,5,-1,21,5,33,-1,34,35,36,-1,37,38,39,-1,30,40,41,-1,40,37,42,-1,3,43,44,-1,31,41,43,-1,39,34,42,-1,41,42,36,-1,43,36,45,-1,46,47,48,-1,49,50,51,-1,38,49,52,-1,51,46,52,-1,39,52,48,-1,34,48,53,-1,54,55,56,-1,50,54,57,-1,56,0,57,-1,51,57,2,-1,46,2,58,-1,1,58,2,-1,4,33,5,-1,7,20,8,-1,11,15,9,-1,14,19,12,-1,15,14,13,-1,18,59,16,-1,17,16,19,-1,6,8,15,-1,8,17,14,-1,20,18,17,-1,22,28,23,-1,26,27,24,-1,27,11,10,-1,21,23,27,-1,23,6,11,-1,28,7,6,-1,31,32,29,-1,32,26,25,-1,3,5,32,-1,5,21,26,-1,33,22,21,-1,35,45,36,-1,39,42,37,-1,41,31,30,-1,42,41,40,-1,44,4,3,-1,43,3,31,-1,34,36,42,-1,36,43,41,-1,45,44,43,-1,47,53,48,-1,51,52,49,-1,52,39,38,-1,46,48,52,-1,48,34,39,-1,53,35,34,-1,56,57,54,-1,57,51,50,-1,0,2,57,-1,2,46,51,-1,58,47,46,-1});
+IndexedFaceSet264->setCoordIndex(new int[336]{57,2,58,-1,31,5,32,-1,17,7,18,-1,12,6,8,-1,0,10,11,-1,10,12,13,-1,15,16,14,-1,9,11,16,-1,8,17,13,-1,11,13,18,-1,16,18,19,-1,25,21,26,-1,23,20,22,-1,6,23,24,-1,22,25,24,-1,8,24,26,-1,17,26,27,-1,29,4,28,-1,20,29,30,-1,28,31,30,-1,22,30,32,-1,25,32,33,-1,43,35,44,-1,39,34,36,-1,4,37,38,-1,37,39,40,-1,31,42,41,-1,28,38,42,-1,36,43,40,-1,38,40,44,-1,42,44,45,-1,51,47,52,-1,49,46,48,-1,34,49,50,-1,48,51,50,-1,36,50,52,-1,43,52,53,-1,55,1,54,-1,46,55,56,-1,54,57,56,-1,48,56,58,-1,51,58,59,-1,2,59,58,-1,5,33,32,-1,7,19,18,-1,8,13,12,-1,11,9,0,-1,13,11,10,-1,14,3,15,-1,16,15,9,-1,17,18,13,-1,18,16,11,-1,19,14,16,-1,21,27,26,-1,22,24,23,-1,24,8,6,-1,25,26,24,-1,26,17,8,-1,27,7,17,-1,28,30,29,-1,30,22,20,-1,31,32,30,-1,32,25,22,-1,33,21,25,-1,35,45,44,-1,36,40,39,-1,38,28,4,-1,40,38,37,-1,41,5,31,-1,42,31,28,-1,43,44,40,-1,44,42,38,-1,45,41,42,-1,47,53,52,-1,48,50,49,-1,50,36,34,-1,51,52,50,-1,52,43,36,-1,53,35,43,-1,54,56,55,-1,56,48,46,-1,57,58,56,-1,58,51,48,-1,59,47,51,-1});
+CColor* Color265 = (CColor *)(m_pScene.createNode("Color"));
+Color265->setColor(new float[12]{0,0.327721,0.368984,1,0.0144675,0,0,1,0.961045,0,0.213731,0.240642});
+IndexedFaceSet264->setColor(*Color265);
+
+CTextureCoordinate* TextureCoordinate266 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate266->setPoint(new float[120]{1,0.5,1,1,0.937512,0.5,0.524468,0.5,0.524468,1,0.446839,0.5,0.223171,0.5,0.223171,1,0.150378,0.5,0.150378,0,0.223171,0,0.223171,0,0,0,0.076512,0,0.076512,0,0.150378,0,0,0.5,0.076512,0.5,0.076512,1,0,0,0.150378,1,0.370582,0.5,0.370582,1,0.296217,0.5,0.296217,0,0.370582,0,0.370582,0,0.296217,0,0.296217,1,0.446839,0,0.524468,0,0.524468,0,0.446839,0,0.446839,1,0.743733,0.5,0.743733,1,0.674182,0.5,0.674182,0,0.743733,0,0.743733,0,0.60099,0,0.60099,0,0.674182,0,0.60099,0.5,0.60099,1,0.674182,1,0.874534,0.5,0.874534,1,0.810253,0.5,0.810253,0,0.874534,0,0.874534,0,0.810253,0,0.810253,1,0.937512,0,1,0,1,0,0.937512,0,0.937512,1,0,1});
+IndexedFaceSet264->setTexCoord(*TextureCoordinate266);
+
+CCoordinate* Coordinate267 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate267->setDEF("nurbsToPoly358GeoPoints");
+Coordinate267->setPoint(new float[180]{38.534,24.668,280.597,84.8,26.537,336.977,84.915,29.765,336.425,39.038,27.889,280.25,43.385,26.504,322.513,43.766,29.732,322.109,35.026,26.127,299.117,35.488,29.356,298.774,35.026,26.127,299.117,38.534,24.668,280.597,36.532,25.346,286.57,36.532,25.346,286.57,35.37,25.814,292.788,35.37,25.814,292.788,37.019,28.571,286.23,38.236,26.261,280.17,36.207,26.954,286.236,34.684,27.76,298.969,35.031,27.436,292.547,35.843,29.042,292.449,37.018,26.433,311.615,37.451,29.662,311.25,37.018,26.433,311.615,35.543,26.323,305.441,35.543,26.323,305.441,36.694,28.084,311.646,35.206,27.966,305.384,35.992,29.553,305.089,43.385,26.504,322.513,39.592,26.483,317.418,39.592,26.483,317.418,43.109,28.167,322.697,39.289,28.141,317.531,40.003,29.712,317.035,59.746,26.532,332.096,60.006,29.76,331.619,59.746,26.532,332.096,48.258,26.517,326.604,48.258,26.517,326.604,53.812,26.526,329.737,53.812,26.526,329.737,48.602,29.745,326.176,48.012,28.185,326.846,59.563,28.204,332.414,53.598,28.196,330.022,54.114,29.754,329.284,72.137,26.536,335.2,72.318,29.764,334.681,72.137,26.536,335.2,65.887,26.535,333.868,65.887,26.535,333.868,72.011,28.209,335.561,65.734,28.208,334.211,66.107,29.763,333.369,84.8,26.537,336.977,78.452,26.537,336.207,78.452,26.537,336.207,84.72,28.21,337.362,78.35,28.21,336.582,78.597,29.765,335.671});
+IndexedFaceSet264->setCoord(*Coordinate267);
+
+Shape260->setGeometry(IndexedFaceSet264);
+
+Transform259->addChildren(*Shape260);
+
+Transform249->addChildren(*Transform259);
+
+CTransform* Transform268 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform268->setDEF("l_6");
+CShape* Shape269 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance270 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture271 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture271->setUSE("_7");
+Appearance270->setTexture(*ImageTexture271);
+
+CTextureTransform* TextureTransform272 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform272->setUSE("_10");
+Appearance270->setTextureTransform(*TextureTransform272);
+
+Shape269->setAppearance(*Appearance270);
+
+CIndexedFaceSet* IndexedFaceSet273 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet273->setDEF("nurbsToPoly357_0Geo");
+IndexedFaceSet273->setSolid(False);
+IndexedFaceSet273->setConvex(False);
+IndexedFaceSet273->setColorIndex(new int[336]{3,3,1,-1,1,1,1,-1,1,2,1,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,3,1,1,-1,0,0,1,-1,0,1,0,-1,0,0,1,-1,1,1,1,-1,1,1,1,-1,0,0,0,-1,0,0,0,-1,0,1,0,-1,0,0,1,-1,1,1,1,-1,0,0,0,-1,0,0,0,-1,0,1,0,-1,0,0,1,-1,1,1,2,-1,1,1,1,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,1,1,1,-1,0,0,1,-1,0,1,0,-1,0,0,1,-1,1,1,2,-1,1,2,1,-1,0,0,0,-1,0,0,0,-1,0,1,0,-1,0,0,1,-1,1,1,1,-1,0,0,0,-1,0,0,0,-1,0,3,0,-1,0,0,1,-1,1,1,1,-1,3,1,1,-1,1,2,1,-1,2,1,1,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,1,3,3,-1,1,3,0,-1,1,1,0,-1,1,1,0,-1,1,1,1,-1,1,1,1,-1,0,0,0,-1,0,0,0,-1,1,1,0,-1,1,1,0,-1,1,2,1,-1,0,0,0,-1,0,0,0,-1,1,1,0,-1,1,1,0,-1,2,1,1,-1,1,2,1,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,1,1,1,-1,1,1,0,-1,1,1,0,-1,1,1,0,-1,2,1,1,-1,2,1,1,-1,0,0,0,-1,0,0,0,-1,1,1,0,-1,1,1,0,-1,1,1,1,-1,0,0,0,-1,0,0,0,-1,3,1,0,-1,1,1,0,-1,1,2,1,-1});
+IndexedFaceSet273->setTexCoordIndex(new int[336]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,13,9,15,-1,16,17,18,-1,19,14,17,-1,11,6,15,-1,14,15,8,-1,17,8,20,-1,21,22,23,-1,24,25,26,-1,10,24,27,-1,26,21,27,-1,11,27,23,-1,6,23,28,-1,29,30,31,-1,25,29,32,-1,31,3,32,-1,26,32,5,-1,21,5,33,-1,34,35,36,-1,37,38,39,-1,30,40,41,-1,40,37,42,-1,3,43,44,-1,31,41,43,-1,39,34,42,-1,41,42,36,-1,43,36,45,-1,46,47,48,-1,49,50,51,-1,38,49,52,-1,51,46,52,-1,39,52,48,-1,34,48,53,-1,54,55,56,-1,50,54,57,-1,56,0,57,-1,51,57,2,-1,46,2,58,-1,1,58,2,-1,4,33,5,-1,7,20,8,-1,11,15,9,-1,14,19,12,-1,15,14,13,-1,18,59,16,-1,17,16,19,-1,6,8,15,-1,8,17,14,-1,20,18,17,-1,22,28,23,-1,26,27,24,-1,27,11,10,-1,21,23,27,-1,23,6,11,-1,28,7,6,-1,31,32,29,-1,32,26,25,-1,3,5,32,-1,5,21,26,-1,33,22,21,-1,35,45,36,-1,39,42,37,-1,41,31,30,-1,42,41,40,-1,44,4,3,-1,43,3,31,-1,34,36,42,-1,36,43,41,-1,45,44,43,-1,47,53,48,-1,51,52,49,-1,52,39,38,-1,46,48,52,-1,48,34,39,-1,53,35,34,-1,56,57,54,-1,57,51,50,-1,0,2,57,-1,2,46,51,-1,58,47,46,-1});
+IndexedFaceSet273->setCoordIndex(new int[336]{57,2,58,-1,31,5,32,-1,17,7,18,-1,12,6,8,-1,0,10,11,-1,10,12,13,-1,15,16,14,-1,9,11,16,-1,8,17,13,-1,11,13,18,-1,16,18,19,-1,25,21,26,-1,23,20,22,-1,6,23,24,-1,22,25,24,-1,8,24,26,-1,17,26,27,-1,29,4,28,-1,20,29,30,-1,28,31,30,-1,22,30,32,-1,25,32,33,-1,43,35,44,-1,39,34,36,-1,4,37,38,-1,37,39,40,-1,31,42,41,-1,28,38,42,-1,36,43,40,-1,38,40,44,-1,42,44,45,-1,51,47,52,-1,49,46,48,-1,34,49,50,-1,48,51,50,-1,36,50,52,-1,43,52,53,-1,55,1,54,-1,46,55,56,-1,54,57,56,-1,48,56,58,-1,51,58,59,-1,2,59,58,-1,5,33,32,-1,7,19,18,-1,8,13,12,-1,11,9,0,-1,13,11,10,-1,14,3,15,-1,16,15,9,-1,17,18,13,-1,18,16,11,-1,19,14,16,-1,21,27,26,-1,22,24,23,-1,24,8,6,-1,25,26,24,-1,26,17,8,-1,27,7,17,-1,28,30,29,-1,30,22,20,-1,31,32,30,-1,32,25,22,-1,33,21,25,-1,35,45,44,-1,36,40,39,-1,38,28,4,-1,40,38,37,-1,41,5,31,-1,42,31,28,-1,43,44,40,-1,44,42,38,-1,45,41,42,-1,47,53,52,-1,48,50,49,-1,50,36,34,-1,51,52,50,-1,52,43,36,-1,53,35,43,-1,54,56,55,-1,56,48,46,-1,57,58,56,-1,58,51,48,-1,59,47,51,-1});
+CColor* Color274 = (CColor *)(m_pScene.createNode("Color"));
+Color274->setColor(new float[12]{0,1,0.961045,0,0.327721,0.368984,0,0.888171,1,0,0.213731,0.240642});
+IndexedFaceSet273->setColor(*Color274);
+
+CTextureCoordinate* TextureCoordinate275 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate275->setPoint(new float[120]{1,0.501333,1,1,0.941204,0.501333,0.541865,0.501333,0.541865,1,0.462756,0.501333,0.2306,0.501333,0.2306,1,0.155236,0.501333,0.155236,0,0.2306,0,0.2306,0,0,0,0.078943,0,0.078943,0,0.155236,0,0,0.501333,0.078943,0.501333,0.078943,1,0,0,0.155236,1,0.383766,0.501333,0.383766,1,0.306437,0.501333,0.306437,0,0.383766,0,0.383766,0,0.306437,0,0.306437,1,0.462756,0,0.541865,0,0.541865,0,0.462756,0,0.462756,1,0.756488,0.501333,0.756488,1,0.689385,0.501333,0.689385,0,0.756488,0,0.756488,0,0.617954,0,0.617954,0,0.689385,0,0.617954,0.501333,0.617954,1,0.689385,1,0.881554,0.501333,0.881554,1,0.820226,0.501333,0.820226,0,0.881554,0,0.881554,0,0.820226,0,0.820226,1,0.941204,0,1,0,1,0,0.941204,0,0.941204,1,0,1});
+IndexedFaceSet273->setTexCoord(*TextureCoordinate275);
+
+CCoordinate* Coordinate276 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate276->setDEF("nurbsToPoly357GeoPoints");
+Coordinate276->setPoint(new float[180]{41.888,22.384,282.577,85.649,23.726,332.897,86.172,25.588,330.379,44.008,24.493,283.186,47.219,23.756,321.093,48.951,25.647,319.513,38.58,23.609,299.796,40.747,25.601,299.468,38.58,23.609,299.796,41.888,22.384,282.577,39.976,22.982,288.117,39.976,22.982,288.117,38.875,23.372,293.901,38.875,23.372,293.901,42.147,25.048,288.428,43.21,22.873,283.107,41.34,23.44,288.437,39.949,24.015,299.672,40.253,23.802,294.002,41.061,25.399,293.898,40.698,23.778,311.38,42.724,25.711,310.393,40.698,23.778,311.38,39.149,23.734,305.677,39.149,23.734,305.677,41.978,24.143,310.805,40.486,24.118,305.326,41.264,25.695,305.019,47.219,23.756,321.093,43.368,23.774,316.643,43.368,23.774,316.643,48.311,24.092,320.117,44.566,24.122,315.856,45.266,25.683,315.343,62.765,23.731,329.004,63.92,25.597,326.852,62.765,23.731,329.004,51.98,23.744,324.533,51.98,23.744,324.533,57.244,23.736,327.1,57.244,23.736,327.1,53.521,25.622,322.72,52.951,24.071,323.403,63.493,24.049,327.652,58.092,24.057,325.846,58.59,25.606,325.099,74.141,23.727,331.484,74.948,25.589,329.111,74.141,23.727,331.484,68.419,23.728,330.421,68.419,23.728,330.421,74.649,24.043,329.99,69.032,24.045,328.991,69.393,25.592,328.147,85.649,23.726,332.897,79.888,23.727,332.284,79.888,23.727,332.284,85.978,24.042,331.312,80.301,24.042,330.74,80.544,25.588,329.831});
+IndexedFaceSet273->setCoord(*Coordinate276);
+
+Shape269->setGeometry(IndexedFaceSet273);
+
+Transform268->addChildren(*Shape269);
+
+Transform249->addChildren(*Transform268);
+
+LOD248->addChildren(*Transform249);
+
+Transform247->addChildren(*LOD248);
+
+group->addChildren(*Transform247);
+
+CTransform* Transform277 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform277->setDEF("s10LOD");
+CLOD* LOD278 = (CLOD *)(m_pScene.createNode("LOD"));
+CTransform* Transform279 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform279->setDEF("med_4");
+CTransform* Transform280 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform280->setDEF("f_9");
+CShape* Shape281 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance282 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture283 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture283->setUSE("_1");
+Appearance282->setTexture(*ImageTexture283);
+
+CTextureTransform* TextureTransform284 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+Appearance282->setTextureTransform(*TextureTransform284);
+
+Shape281->setAppearance(*Appearance282);
+
+CIndexedFaceSet* IndexedFaceSet285 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet285->setDEF("nurbsToPoly353_0Geo");
+IndexedFaceSet285->setSolid(False);
+IndexedFaceSet285->setConvex(False);
+IndexedFaceSet285->setColorIndex(new int[72]{2,0,1,-1,2,2,0,-1,2,2,0,-1,0,2,2,-1,2,2,0,-1,2,2,0,-1,2,2,0,-1,2,2,0,-1,2,2,0,-1,0,1,1,-1,2,0,0,-1,2,0,0,-1,2,0,0,-1,2,0,0,-1,2,0,0,-1,2,0,0,-1,2,0,0,-1,2,1,0,-1});
+IndexedFaceSet285->setTexCoordIndex(new int[72]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,6,-1,7,3,11,-1,12,13,14,-1,4,12,15,-1,13,16,17,-1,16,0,18,-1,1,19,2,-1,4,15,5,-1,7,11,8,-1,6,8,9,-1,3,5,11,-1,13,17,14,-1,12,14,15,-1,16,18,17,-1,0,2,18,-1});
+IndexedFaceSet285->setCoordIndex(new int[72]{18,2,19,-1,10,4,11,-1,8,6,9,-1,0,1,8,-1,6,10,7,-1,14,12,15,-1,4,14,5,-1,12,16,13,-1,16,18,17,-1,2,3,19,-1,4,5,11,-1,6,7,9,-1,8,9,0,-1,10,11,7,-1,12,13,15,-1,14,15,5,-1,16,17,13,-1,18,19,17,-1});
+CColor* Color286 = (CColor *)(m_pScene.createNode("Color"));
+Color286->setColor(new float[9]{0,0.327721,0.368984,0,0.213731,0.240642,0,1,0.961045});
+IndexedFaceSet285->setColor(*Color286);
+
+CTextureCoordinate* TextureCoordinate287 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate287->setPoint(new float[40]{1,0.864599,1,1,0,0.864599,1,0.302281,1,0.406227,0,0.302281,1,0.099816,1,0.20038,0,0.099816,0,0,1,0,0,0.20038,1,0.513117,1,0.624001,0,0.513117,0,0.406227,1,0.740361,0,0.624001,0,0.740361,0,1});
+IndexedFaceSet285->setTexCoord(*TextureCoordinate287);
+
+CCoordinate* Coordinate288 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate288->setDEF("nurbsToPoly353GeoPoints");
+Coordinate288->setPoint(new float[60]{85.649,23.726,332.897,84.8,26.537,336.977,130.342,26.537,338.754,130.135,23.726,334.454,105.042,26.537,338.399,105.371,23.726,334.111,94.928,26.537,337.857,95.484,23.726,333.647,89.866,26.537,337.464,90.558,23.726,333.312,99.987,26.537,338.165,100.423,23.726,333.91,115.152,26.537,338.677,115.286,23.726,334.354,110.098,26.537,338.567,110.327,23.726,334.256,120.207,26.537,338.738,120.242,23.726,334.412,125.272,26.537,338.759,125.198,23.726,334.441});
+IndexedFaceSet285->setCoord(*Coordinate288);
+
+Shape281->setGeometry(IndexedFaceSet285);
+
+Transform280->addChildren(*Shape281);
+
+Transform279->addChildren(*Transform280);
+
+CTransform* Transform289 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform289->setDEF("r_7");
+CShape* Shape290 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance291 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture292 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture292->setUSE("_7");
+Appearance291->setTexture(*ImageTexture292);
+
+CTextureTransform* TextureTransform293 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform293->setDEF("_11");
+TextureTransform293->setScale(new float[2]{4,1});
+Appearance291->setTextureTransform(*TextureTransform293);
+
+Shape290->setAppearance(*Appearance291);
+
+CIndexedFaceSet* IndexedFaceSet294 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet294->setDEF("nurbsToPoly355_0Geo");
+IndexedFaceSet294->setSolid(False);
+IndexedFaceSet294->setConvex(False);
+IndexedFaceSet294->setColorIndex(new int[216]{0,0,0,-1,0,0,0,-1,0,0,0,-1,1,1,1,-1,1,1,1,-1,1,0,1,-1,1,1,0,-1,0,0,0,-1,1,1,1,-1,1,1,1,-1,1,0,1,-1,1,1,0,-1,0,0,0,-1,0,0,0,-1,1,1,1,-1,1,1,1,-1,1,0,1,-1,1,1,0,-1,0,0,0,-1,1,1,1,-1,1,1,1,-1,1,1,1,-1,0,0,0,-1,1,1,0,-1,1,0,1,-1,1,1,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,1,1,1,-1,1,1,1,-1,0,0,1,-1,0,0,1,-1,0,0,0,-1,1,1,1,-1,1,1,1,-1,0,0,1,-1,0,0,1,-1,0,0,0,-1,0,0,0,-1,1,1,1,-1,1,1,1,-1,0,0,1,-1,0,0,1,-1,0,0,0,-1,1,1,1,-1,1,1,1,-1,1,1,1,-1,0,0,0,-1,0,0,1,-1,0,0,1,-1,0,0,1,-1,0,0,0,-1});
+IndexedFaceSet294->setTexCoordIndex(new int[216]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,9,13,-1,11,6,13,-1,14,13,8,-1,15,8,16,-1,17,18,19,-1,10,17,20,-1,19,3,20,-1,11,20,5,-1,6,5,21,-1,22,23,24,-1,25,26,27,-1,18,25,28,-1,27,22,28,-1,19,28,24,-1,3,24,29,-1,30,31,32,-1,26,33,34,-1,33,30,35,-1,22,36,37,-1,27,34,36,-1,32,0,35,-1,34,35,2,-1,36,2,38,-1,1,38,2,-1,4,21,5,-1,7,16,8,-1,11,13,9,-1,13,14,12,-1,6,8,13,-1,8,15,14,-1,16,39,15,-1,19,20,17,-1,20,11,10,-1,3,5,20,-1,5,6,11,-1,21,7,6,-1,23,29,24,-1,27,28,25,-1,28,19,18,-1,22,24,28,-1,24,3,19,-1,29,4,3,-1,32,35,30,-1,34,27,26,-1,35,34,33,-1,37,23,22,-1,36,22,27,-1,0,2,35,-1,2,36,34,-1,38,37,36,-1});
+IndexedFaceSet294->setCoordIndex(new int[216]{37,2,38,-1,19,5,20,-1,12,7,14,-1,10,6,8,-1,0,10,11,-1,8,12,11,-1,9,11,14,-1,13,14,15,-1,17,4,16,-1,6,17,18,-1,16,19,18,-1,8,18,20,-1,12,20,21,-1,27,23,28,-1,25,22,24,-1,4,25,26,-1,24,27,26,-1,16,26,28,-1,19,28,29,-1,33,1,30,-1,22,31,32,-1,31,33,34,-1,27,36,35,-1,24,32,36,-1,30,37,34,-1,32,34,38,-1,36,38,39,-1,2,39,38,-1,5,21,20,-1,7,15,14,-1,8,11,10,-1,11,9,0,-1,12,14,11,-1,14,13,9,-1,15,3,13,-1,16,18,17,-1,18,8,6,-1,19,20,18,-1,20,12,8,-1,21,7,12,-1,23,29,28,-1,24,26,25,-1,26,16,4,-1,27,28,26,-1,28,19,16,-1,29,5,19,-1,30,34,33,-1,32,24,22,-1,34,32,31,-1,35,23,27,-1,36,27,24,-1,37,38,34,-1,38,36,32,-1,39,35,36,-1});
+CColor* Color295 = (CColor *)(m_pScene.createNode("Color"));
+Color295->setColor(new float[6]{0,0.213731,0.240642,0,1,0.961045});
+IndexedFaceSet294->setColor(*Color295);
+
+CTextureCoordinate* TextureCoordinate296 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate296->setPoint(new float[80]{1,0.5,1,1,0.864777,0.5,0.405599,0.5,0.405599,1,0.301558,0.5,0.199707,0.5,0.199707,1,0.09937,0.5,0.09937,0,0.199707,0,0.199707,0,0,0,0.09937,0,0,0,0,0.5,0.09937,1,0.301558,0,0.405599,0,0.405599,0,0.301558,0,0.301558,1,0.623809,0.5,0.623809,1,0.51268,0.5,0.51268,0,0.623809,0,0.623809,0,0.51268,0,0.51268,1,0.864777,0,1,0,1,0,0.740408,0,0.740408,0,0.864777,0,0.740408,0.5,0.740408,1,0.864777,1,0,1});
+IndexedFaceSet294->setTexCoord(*TextureCoordinate296);
+
+CCoordinate* Coordinate297 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate297->setDEF("nurbsToPoly355GeoPoints");
+Coordinate297->setPoint(new float[120]{84.8,26.537,336.977,130.342,26.537,338.754,130.314,29.765,338.173,84.915,29.765,336.425,105.012,26.537,338.398,105.057,29.765,337.818,94.895,26.537,337.854,94.97,29.765,337.285,94.895,26.537,337.854,84.8,26.537,336.977,89.843,26.537,337.462,89.843,26.537,337.462,94.842,28.21,338.252,84.72,28.21,337.362,89.778,28.21,337.854,89.937,29.765,336.9,105.012,26.537,338.398,99.951,26.537,338.164,99.951,26.537,338.164,104.981,28.21,338.804,99.91,28.21,338.566,100.011,29.765,337.588,115.144,26.537,338.677,115.162,29.765,338.092,115.144,26.537,338.677,110.077,26.537,338.567,110.077,26.537,338.567,115.131,28.21,339.086,110.056,28.21,338.974,110.109,29.765,337.984,130.342,26.537,338.754,120.209,26.537,338.738,120.209,26.537,338.738,125.279,26.537,338.759,125.279,26.537,338.759,120.213,29.765,338.153,120.205,28.21,339.147,130.361,28.21,339.161,125.286,28.21,339.167,125.269,29.765,338.175});
+IndexedFaceSet294->setCoord(*Coordinate297);
+
+Shape290->setGeometry(IndexedFaceSet294);
+
+Transform289->addChildren(*Shape290);
+
+Transform279->addChildren(*Transform289);
+
+CTransform* Transform298 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform298->setDEF("l_7");
+CShape* Shape299 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance300 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture301 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture301->setUSE("_7");
+Appearance300->setTexture(*ImageTexture301);
+
+CTextureTransform* TextureTransform302 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform302->setUSE("_11");
+Appearance300->setTextureTransform(*TextureTransform302);
+
+Shape299->setAppearance(*Appearance300);
+
+CIndexedFaceSet* IndexedFaceSet303 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet303->setDEF("nurbsToPoly354_0Geo");
+IndexedFaceSet303->setSolid(False);
+IndexedFaceSet303->setConvex(False);
+IndexedFaceSet303->setColorIndex(new int[216]{0,0,0,-1,0,0,0,-1,0,0,0,-1,1,1,1,-1,1,1,1,-1,1,0,1,-1,1,1,0,-1,0,0,0,-1,1,1,1,-1,1,1,1,-1,1,0,1,-1,1,1,0,-1,0,0,0,-1,0,0,0,-1,1,1,1,-1,1,1,1,-1,1,0,1,-1,1,1,0,-1,0,0,0,-1,1,1,1,-1,1,1,1,-1,1,1,1,-1,0,0,0,-1,1,1,0,-1,1,0,1,-1,1,1,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,1,1,1,-1,1,1,1,-1,0,0,1,-1,0,0,1,-1,0,0,0,-1,1,1,1,-1,1,1,1,-1,0,0,1,-1,0,0,1,-1,0,0,0,-1,0,0,0,-1,1,1,1,-1,1,1,1,-1,0,0,1,-1,0,0,1,-1,0,0,0,-1,1,1,1,-1,1,1,1,-1,1,1,1,-1,0,0,0,-1,0,0,1,-1,0,0,1,-1,0,0,1,-1,0,0,0,-1});
+IndexedFaceSet303->setTexCoordIndex(new int[216]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,9,13,-1,11,6,13,-1,14,13,8,-1,15,8,16,-1,17,18,19,-1,10,17,20,-1,19,3,20,-1,11,20,5,-1,6,5,21,-1,22,23,24,-1,25,26,27,-1,18,25,28,-1,27,22,28,-1,19,28,24,-1,3,24,29,-1,30,31,32,-1,26,33,34,-1,33,30,35,-1,22,36,37,-1,27,34,36,-1,32,0,35,-1,34,35,2,-1,36,2,38,-1,1,38,2,-1,4,21,5,-1,7,16,8,-1,11,13,9,-1,13,14,12,-1,6,8,13,-1,8,15,14,-1,16,39,15,-1,19,20,17,-1,20,11,10,-1,3,5,20,-1,5,6,11,-1,21,7,6,-1,23,29,24,-1,27,28,25,-1,28,19,18,-1,22,24,28,-1,24,3,19,-1,29,4,3,-1,32,35,30,-1,34,27,26,-1,35,34,33,-1,37,23,22,-1,36,22,27,-1,0,2,35,-1,2,36,34,-1,38,37,36,-1});
+IndexedFaceSet303->setCoordIndex(new int[216]{37,2,38,-1,19,5,20,-1,12,7,14,-1,10,6,8,-1,0,10,11,-1,8,12,11,-1,9,11,14,-1,13,14,15,-1,17,4,16,-1,6,17,18,-1,16,19,18,-1,8,18,20,-1,12,20,21,-1,27,23,28,-1,25,22,24,-1,4,25,26,-1,24,27,26,-1,16,26,28,-1,19,28,29,-1,33,1,30,-1,22,31,32,-1,31,33,34,-1,27,36,35,-1,24,32,36,-1,30,37,34,-1,32,34,38,-1,36,38,39,-1,2,39,38,-1,5,21,20,-1,7,15,14,-1,8,11,10,-1,11,9,0,-1,12,14,11,-1,14,13,9,-1,15,3,13,-1,16,18,17,-1,18,8,6,-1,19,20,18,-1,20,12,8,-1,21,7,12,-1,23,29,28,-1,24,26,25,-1,26,16,4,-1,27,28,26,-1,28,19,16,-1,29,5,19,-1,30,34,33,-1,32,24,22,-1,34,32,31,-1,35,23,27,-1,36,27,24,-1,37,38,34,-1,38,36,32,-1,39,35,36,-1});
+CColor* Color304 = (CColor *)(m_pScene.createNode("Color"));
+Color304->setColor(new float[6]{0,0.213731,0.240642,0,1,0.961045});
+IndexedFaceSet303->setColor(*Color304);
+
+CTextureCoordinate* TextureCoordinate305 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate305->setPoint(new float[80]{1,0.501333,1,1,0.864299,0.501333,0.407269,0.501333,0.407269,1,0.303485,0.501333,0.201504,0.501333,0.201504,1,0.100565,0.501333,0.100565,0,0.201504,0,0.201504,0,0,0,0.100565,0,0,0,0,0.501333,0.100565,1,0.303485,0,0.407269,0,0.407269,0,0.303485,0,0.303485,1,0.624315,0.501333,0.624315,1,0.513839,0.501333,0.513839,0,0.624315,0,0.624315,0,0.513839,0,0.513839,1,0.864299,0,1,0,1,0,0.740278,0,0.740278,0,0.864299,0,0.740278,0.501333,0.740278,1,0.864299,1,0,1});
+IndexedFaceSet303->setTexCoord(*TextureCoordinate305);
+
+CCoordinate* Coordinate306 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate306->setDEF("nurbsToPoly354GeoPoints");
+Coordinate306->setPoint(new float[120]{85.649,23.726,332.897,130.135,23.726,334.454,130.008,25.588,331.799,86.172,25.588,330.379,105.42,23.726,334.112,105.623,25.588,331.465,95.539,23.726,333.65,95.881,25.588,331.051,95.539,23.726,333.65,85.649,23.726,332.897,90.595,23.726,333.315,90.595,23.726,333.315,95.755,24.042,332.014,85.978,24.042,331.312,90.863,24.042,331.701,91.021,25.588,330.752,105.42,23.726,334.112,100.481,23.726,333.913,100.481,23.726,333.913,105.548,24.042,332.445,100.65,24.042,332.259,100.75,25.588,331.286,115.3,23.726,334.354,115.382,25.588,331.685,115.3,23.726,334.354,110.36,23.726,334.257,110.36,23.726,334.257,115.351,24.042,332.674,110.449,24.042,332.581,110.502,25.588,331.595,130.135,23.726,334.454,120.238,23.726,334.412,120.238,23.726,334.412,125.187,23.726,334.441,125.187,23.726,334.441,120.26,25.588,331.742,120.252,24.042,332.731,130.055,24.042,332.782,125.158,24.042,332.763,125.141,25.588,331.775});
+IndexedFaceSet303->setCoord(*Coordinate306);
+
+Shape299->setGeometry(IndexedFaceSet303);
+
+Transform298->addChildren(*Shape299);
+
+Transform279->addChildren(*Transform298);
+
+LOD278->addChildren(*Transform279);
+
+Transform277->addChildren(*LOD278);
+
+group->addChildren(*Transform277);
+
+CTransform* Transform307 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform307->setDEF("s11LOD");
+CLOD* LOD308 = (CLOD *)(m_pScene.createNode("LOD"));
+CTransform* Transform309 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform309->setDEF("med_5");
+CTransform* Transform310 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform310->setDEF("f_10");
+CShape* Shape311 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance312 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture313 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture313->setUSE("_1");
+Appearance312->setTexture(*ImageTexture313);
+
+CTextureTransform* TextureTransform314 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+Appearance312->setTextureTransform(*TextureTransform314);
+
+Shape311->setAppearance(*Appearance312);
+
+CIndexedFaceSet* IndexedFaceSet315 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet315->setDEF("nurbsToPoly350_0Geo");
+IndexedFaceSet315->setSolid(False);
+IndexedFaceSet315->setConvex(False);
+IndexedFaceSet315->setColorIndex(new int[112]{3,0,1,-1,0,3,1,-1,0,0,1,-1,2,0,3,-1,3,0,2,-1,3,0,1,-1,0,3,1,-1,0,0,1,-1,0,3,1,-1,3,0,1,-1,0,0,1,-1,0,0,1,-1,3,0,1,-1,0,3,1,-1,0,1,1,-1,3,1,1,-1,0,1,1,-1,3,2,2,-1,0,1,2,-1,0,1,1,-1,3,1,1,-1,0,1,1,-1,3,1,1,-1,0,1,1,-1,0,1,1,-1,0,1,1,-1,0,1,1,-1,3,1,1,-1});
+IndexedFaceSet315->setTexCoordIndex(new int[112]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,11,6,12,-1,13,14,15,-1,7,13,16,-1,14,3,17,-1,18,19,20,-1,4,21,22,-1,21,18,23,-1,24,25,26,-1,19,24,27,-1,25,0,28,-1,1,29,2,-1,4,22,5,-1,7,16,8,-1,11,12,9,-1,6,8,12,-1,14,17,15,-1,13,15,16,-1,3,5,17,-1,19,27,20,-1,21,23,22,-1,18,20,23,-1,25,28,26,-1,24,26,27,-1,0,2,28,-1});
+IndexedFaceSet315->setCoordIndex(new int[112]{28,2,29,-1,16,4,17,-1,10,6,11,-1,0,1,8,-1,8,10,9,-1,14,12,15,-1,6,14,7,-1,12,16,13,-1,22,18,23,-1,4,20,5,-1,20,22,21,-1,26,24,27,-1,18,26,19,-1,24,28,25,-1,2,3,29,-1,4,5,17,-1,6,7,11,-1,8,9,0,-1,10,11,9,-1,12,13,15,-1,14,15,7,-1,16,17,13,-1,18,19,23,-1,20,21,5,-1,22,23,21,-1,24,25,27,-1,26,27,19,-1,28,29,25,-1});
+CColor* Color316 = (CColor *)(m_pScene.createNode("Color"));
+Color316->setColor(new float[12]{0,0.327721,0.368984,1,0.678259,0,0,0.213731,0.240642,0,1,0.961045});
+IndexedFaceSet315->setColor(*Color316);
+
+CTextureCoordinate* TextureCoordinate317 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate317->setPoint(new float[60]{1,0.94495,1,1,0,0.94495,1,0.503655,1,0.578269,0,0.503655,1,0.148682,1,0.235691,0,0.148682,0,0,1,0,1,0.070075,0,0.070075,1,0.328276,1,0.419752,0,0.328276,0,0.235691,0,0.419752,1,0.710798,1,0.77205,0,0.710798,1,0.646624,0,0.578269,0,0.646624,1,0.831228,1,0.888742,0,0.831228,0,0.77205,0,0.888742,0,1});
+IndexedFaceSet315->setTexCoord(*TextureCoordinate317);
+
+CCoordinate* Coordinate318 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate318->setDEF("nurbsToPoly350GeoPoints");
+Coordinate318->setPoint(new float[90]{130.135,23.726,334.454,130.342,26.537,338.754,181.926,26.202,304.266,178.138,23.98,302.255,161.977,26.536,330.621,159.871,23.727,327.164,144.521,26.537,338.16,143.692,23.726,334.001,135.051,26.537,338.728,134.686,23.726,334.453,139.783,26.537,338.588,139.213,23.726,334.357,153.736,26.537,335.585,152.266,23.726,331.704,149.212,26.537,337.21,148.076,23.726,333.167,157.995,26.537,333.332,156.197,23.726,329.652,172.353,26.483,320.649,169.428,23.767,317.881,165.701,26.529,327.567,163.306,23.733,324.341,169.163,26.512,324.231,166.495,23.745,321.238,177.837,26.38,312.826,174.445,23.846,310.475,175.255,26.44,316.838,172.088,23.8,314.287,180.072,26.301,308.627,176.473,23.905,306.458});
+IndexedFaceSet315->setCoord(*Coordinate318);
+
+Shape311->setGeometry(IndexedFaceSet315);
+
+Transform310->addChildren(*Shape311);
+
+Transform309->addChildren(*Transform310);
+
+CTransform* Transform319 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform319->setDEF("r_8");
+CShape* Shape320 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance321 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture322 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture322->setUSE("_7");
+Appearance321->setTexture(*ImageTexture322);
+
+CTextureTransform* TextureTransform323 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform323->setDEF("_12");
+TextureTransform323->setScale(new float[2]{4,1});
+Appearance321->setTextureTransform(*TextureTransform323);
+
+Shape320->setAppearance(*Appearance321);
+
+CIndexedFaceSet* IndexedFaceSet324 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet324->setDEF("nurbsToPoly352_0Geo");
+IndexedFaceSet324->setSolid(False);
+IndexedFaceSet324->setConvex(False);
+IndexedFaceSet324->setColorIndex(new int[336]{0,0,1,-1,1,1,0,-1,0,0,0,-1,1,1,1,-1,1,1,1,-1,1,1,1,-1,0,1,1,-1,1,1,1,-1,1,0,1,-1,1,1,0,-1,1,0,0,-1,0,0,1,-1,1,1,1,-1,1,1,1,-1,1,0,1,-1,1,1,1,-1,0,1,1,-1,1,1,1,-1,1,1,1,-1,1,1,1,-1,1,1,0,-1,0,0,0,-1,1,1,0,-1,1,1,1,-1,1,1,1,-1,1,1,1,-1,1,0,0,-1,1,1,0,-1,1,1,1,-1,1,1,0,-1,0,0,0,-1,0,0,0,-1,1,1,1,-1,1,1,1,-1,1,0,1,-1,1,1,0,-1,1,0,0,-1,1,1,1,-1,1,1,1,-1,1,0,1,-1,1,1,1,-1,0,1,1,-1,0,1,1,-1,1,0,0,-1,0,0,0,-1,1,1,1,-1,1,1,1,-1,1,1,1,-1,1,0,0,-1,1,0,1,-1,0,0,1,-1,0,1,1,-1,0,1,1,-1,0,1,1,-1,1,1,1,-1,1,1,1,-1,0,1,1,-1,1,0,1,-1,1,0,0,-1,1,1,1,-1,1,1,1,-1,1,0,1,-1,0,0,1,-1,0,0,0,-1,1,0,0,-1,1,1,1,-1,1,1,1,-1,1,1,1,-1,0,1,1,-1,0,1,1,-1,1,0,1,-1,0,0,1,-1,0,0,0,-1,0,0,0,-1,1,1,1,-1,1,1,1,-1,0,0,1,-1,0,1,1,-1,0,1,1,-1,1,1,1,-1,1,1,1,-1,0,1,1,-1,1,0,1,-1,1,0,0,-1});
+IndexedFaceSet324->setTexCoordIndex(new int[336]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,13,9,15,-1,16,17,18,-1,19,14,17,-1,11,6,15,-1,14,15,8,-1,17,8,20,-1,21,22,23,-1,24,25,26,-1,10,24,27,-1,26,21,27,-1,11,27,23,-1,6,23,28,-1,29,30,31,-1,25,29,32,-1,31,3,32,-1,26,32,5,-1,21,5,33,-1,34,35,36,-1,37,38,39,-1,30,40,41,-1,40,37,42,-1,3,43,44,-1,31,41,43,-1,39,34,42,-1,41,42,36,-1,43,36,45,-1,46,47,48,-1,49,50,51,-1,38,49,52,-1,51,46,52,-1,39,52,48,-1,34,48,53,-1,54,55,56,-1,50,54,57,-1,56,0,57,-1,51,57,2,-1,46,2,58,-1,1,58,2,-1,4,33,5,-1,7,20,8,-1,11,15,9,-1,14,19,12,-1,15,14,13,-1,18,59,16,-1,17,16,19,-1,6,8,15,-1,8,17,14,-1,20,18,17,-1,22,28,23,-1,26,27,24,-1,27,11,10,-1,21,23,27,-1,23,6,11,-1,28,7,6,-1,31,32,29,-1,32,26,25,-1,3,5,32,-1,5,21,26,-1,33,22,21,-1,35,45,36,-1,39,42,37,-1,41,31,30,-1,42,41,40,-1,44,4,3,-1,43,3,31,-1,34,36,42,-1,36,43,41,-1,45,44,43,-1,47,53,48,-1,51,52,49,-1,52,39,38,-1,46,48,52,-1,48,34,39,-1,53,35,34,-1,56,57,54,-1,57,51,50,-1,0,2,57,-1,2,46,51,-1,58,47,46,-1});
+IndexedFaceSet324->setCoordIndex(new int[336]{57,2,58,-1,31,5,32,-1,17,7,18,-1,12,6,8,-1,0,10,11,-1,10,12,13,-1,15,16,14,-1,9,11,16,-1,8,17,13,-1,11,13,18,-1,16,18,19,-1,25,21,26,-1,23,20,22,-1,6,23,24,-1,22,25,24,-1,8,24,26,-1,17,26,27,-1,29,4,28,-1,20,29,30,-1,28,31,30,-1,22,30,32,-1,25,32,33,-1,43,35,44,-1,39,34,36,-1,4,37,38,-1,37,39,40,-1,31,42,41,-1,28,38,42,-1,36,43,40,-1,38,40,44,-1,42,44,45,-1,51,47,52,-1,49,46,48,-1,34,49,50,-1,48,51,50,-1,36,50,52,-1,43,52,53,-1,55,1,54,-1,46,55,56,-1,54,57,56,-1,48,56,58,-1,51,58,59,-1,2,59,58,-1,5,33,32,-1,7,19,18,-1,8,13,12,-1,11,9,0,-1,13,11,10,-1,14,3,15,-1,16,15,9,-1,17,18,13,-1,18,16,11,-1,19,14,16,-1,21,27,26,-1,22,24,23,-1,24,8,6,-1,25,26,24,-1,26,17,8,-1,27,7,17,-1,28,30,29,-1,30,22,20,-1,31,32,30,-1,32,25,22,-1,33,21,25,-1,35,45,44,-1,36,40,39,-1,38,28,4,-1,40,38,37,-1,41,5,31,-1,42,31,28,-1,43,44,40,-1,44,42,38,-1,45,41,42,-1,47,53,52,-1,48,50,49,-1,50,36,34,-1,51,52,50,-1,52,43,36,-1,53,35,43,-1,54,56,55,-1,56,48,46,-1,57,58,56,-1,58,51,48,-1,59,47,51,-1});
+CColor* Color325 = (CColor *)(m_pScene.createNode("Color"));
+Color325->setColor(new float[6]{0,0.213731,0.240642,0,1,0.961045});
+IndexedFaceSet324->setColor(*Color325);
+
+CTextureCoordinate* TextureCoordinate326 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate326->setPoint(new float[120]{1,0.5,1,1,0.944689,0.5,0.579394,0.5,0.579394,1,0.505424,0.5,0.238958,0.5,0.238958,1,0.151204,0.5,0.151204,0,0.238958,0,0.238958,0,0,0,0.071375,0,0.071375,0,0.151204,0,0,0.5,0.071375,0.5,0.071375,1,0,0,0.151204,1,0.422403,0.5,0.422403,1,0.331584,0.5,0.331584,0,0.422403,0,0.422403,0,0.331584,0,0.331584,1,0.505424,0,0.579394,0,0.579394,0,0.505424,0,0.505424,1,0.771996,0.5,0.771996,1,0.711044,0.5,0.711044,0,0.771996,0,0.771996,0,0.647255,0,0.647255,0,0.711044,0,0.647255,0.5,0.647255,1,0.711044,1,0.888408,0.5,0.888408,1,0.83097,0.5,0.83097,0,0.888408,0,0.888408,0,0.83097,0,0.83097,1,0.944689,0,1,0,1,0,0.944689,0,0.944689,1,0,1});
+IndexedFaceSet324->setTexCoord(*TextureCoordinate326);
+
+CCoordinate* Coordinate327 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate327->setDEF("nurbsToPoly352GeoPoints");
+Coordinate327->setPoint(new float[180]{130.342,26.537,338.754,181.926,26.202,304.266,181.834,29.334,303.933,130.314,29.765,338.173,162.038,26.536,330.575,161.754,29.763,330.108,144.691,26.537,338.136,144.578,29.765,337.574,144.691,26.537,338.136,130.342,26.537,338.754,135.134,26.537,338.727,135.134,26.537,338.727,139.927,26.537,338.581,139.927,26.537,338.581,135.084,29.765,338.148,130.361,28.21,339.161,135.169,28.21,339.131,144.77,28.21,338.529,139.982,28.21,338.981,139.849,29.765,338.008,153.868,26.537,335.526,153.667,29.765,335.002,153.868,26.537,335.526,149.376,26.537,337.165,149.376,26.537,337.165,154.008,28.21,335.893,149.485,28.21,337.547,149.221,29.765,336.618,162.038,26.536,330.575,158.088,26.537,333.276,158.088,26.537,333.276,162.238,28.208,330.901,158.259,28.21,333.623,157.844,29.765,332.778,172.35,26.483,320.652,172.022,29.695,320.268,172.35,26.483,320.652,165.735,26.528,327.536,165.735,26.528,327.536,169.176,26.512,324.218,169.176,26.512,324.218,165.421,29.754,327.099,165.966,28.199,327.84,172.653,28.136,320.91,169.441,28.176,324.499,168.846,29.732,323.808,177.823,26.38,312.85,177.561,29.563,312.503,177.823,26.38,312.85,175.242,26.44,316.856,175.242,26.44,316.856,178.22,27.995,313.061,175.589,28.077,317.09,174.936,29.64,316.493,181.926,26.202,304.266,180.063,26.301,308.647,180.063,26.301,308.647,182.448,27.752,304.432,180.518,27.888,308.836,179.871,29.462,308.311});
+IndexedFaceSet324->setCoord(*Coordinate327);
+
+Shape320->setGeometry(IndexedFaceSet324);
+
+Transform319->addChildren(*Shape320);
+
+Transform309->addChildren(*Transform319);
+
+CTransform* Transform328 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform328->setDEF("l_8");
+CShape* Shape329 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance330 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture331 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture331->setUSE("_7");
+Appearance330->setTexture(*ImageTexture331);
+
+CTextureTransform* TextureTransform332 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform332->setUSE("_12");
+Appearance330->setTextureTransform(*TextureTransform332);
+
+Shape329->setAppearance(*Appearance330);
+
+CIndexedFaceSet* IndexedFaceSet333 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet333->setDEF("nurbsToPoly351_0Geo");
+IndexedFaceSet333->setSolid(False);
+IndexedFaceSet333->setConvex(False);
+IndexedFaceSet333->setColorIndex(new int[336]{0,0,0,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,1,2,2,-1,2,2,2,-1,0,0,0,-1,1,2,0,-1,2,0,2,-1,2,2,0,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,2,0,2,-1,2,2,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,2,0,2,-1,2,2,0,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,2,2,2,-1,0,0,0,-1,2,2,0,-1,2,0,2,-1,2,2,0,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,2,0,2,-1,2,2,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,2,0,2,-1,2,2,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,1,1,-1,2,2,2,-1,0,0,0,-1,0,0,1,-1,0,0,2,-1,0,0,2,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,0,0,2,-1,0,0,2,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,0,0,2,-1,0,0,2,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,2,2,2,-1,0,0,0,-1,0,0,2,-1,0,0,2,-1,0,0,2,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,0,0,2,-1,0,0,2,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,0,0,2,-1,0,0,2,-1,0,0,0,-1});
+IndexedFaceSet333->setTexCoordIndex(new int[336]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,13,9,15,-1,16,17,18,-1,19,14,17,-1,11,6,15,-1,14,15,8,-1,17,8,20,-1,21,22,23,-1,24,25,26,-1,10,24,27,-1,26,21,27,-1,11,27,23,-1,6,23,28,-1,29,30,31,-1,25,29,32,-1,31,3,32,-1,26,32,5,-1,21,5,33,-1,34,35,36,-1,37,38,39,-1,30,40,41,-1,40,37,42,-1,3,43,44,-1,31,41,43,-1,39,34,42,-1,41,42,36,-1,43,36,45,-1,46,47,48,-1,49,50,51,-1,38,49,52,-1,51,46,52,-1,39,52,48,-1,34,48,53,-1,54,55,56,-1,50,54,57,-1,56,0,57,-1,51,57,2,-1,46,2,58,-1,1,58,2,-1,4,33,5,-1,7,20,8,-1,11,15,9,-1,14,19,12,-1,15,14,13,-1,18,59,16,-1,17,16,19,-1,6,8,15,-1,8,17,14,-1,20,18,17,-1,22,28,23,-1,26,27,24,-1,27,11,10,-1,21,23,27,-1,23,6,11,-1,28,7,6,-1,31,32,29,-1,32,26,25,-1,3,5,32,-1,5,21,26,-1,33,22,21,-1,35,45,36,-1,39,42,37,-1,41,31,30,-1,42,41,40,-1,44,4,3,-1,43,3,31,-1,34,36,42,-1,36,43,41,-1,45,44,43,-1,47,53,48,-1,51,52,49,-1,52,39,38,-1,46,48,52,-1,48,34,39,-1,53,35,34,-1,56,57,54,-1,57,51,50,-1,0,2,57,-1,2,46,51,-1,58,47,46,-1});
+IndexedFaceSet333->setCoordIndex(new int[336]{57,2,58,-1,31,5,32,-1,17,7,18,-1,12,6,8,-1,0,10,11,-1,10,12,13,-1,15,16,14,-1,9,11,16,-1,8,17,13,-1,11,13,18,-1,16,18,19,-1,25,21,26,-1,23,20,22,-1,6,23,24,-1,22,25,24,-1,8,24,26,-1,17,26,27,-1,29,4,28,-1,20,29,30,-1,28,31,30,-1,22,30,32,-1,25,32,33,-1,43,35,44,-1,39,34,36,-1,4,37,38,-1,37,39,40,-1,31,42,41,-1,28,38,42,-1,36,43,40,-1,38,40,44,-1,42,44,45,-1,51,47,52,-1,49,46,48,-1,34,49,50,-1,48,51,50,-1,36,50,52,-1,43,52,53,-1,55,1,54,-1,46,55,56,-1,54,57,56,-1,48,56,58,-1,51,58,59,-1,2,59,58,-1,5,33,32,-1,7,19,18,-1,8,13,12,-1,11,9,0,-1,13,11,10,-1,14,3,15,-1,16,15,9,-1,17,18,13,-1,18,16,11,-1,19,14,16,-1,21,27,26,-1,22,24,23,-1,24,8,6,-1,25,26,24,-1,26,17,8,-1,27,7,17,-1,28,30,29,-1,30,22,20,-1,31,32,30,-1,32,25,22,-1,33,21,25,-1,35,45,44,-1,36,40,39,-1,38,28,4,-1,40,38,37,-1,41,5,31,-1,42,31,28,-1,43,44,40,-1,44,42,38,-1,45,41,42,-1,47,53,52,-1,48,50,49,-1,50,36,34,-1,51,52,50,-1,52,43,36,-1,53,35,43,-1,54,56,55,-1,56,48,46,-1,57,58,56,-1,58,51,48,-1,59,47,51,-1});
+CColor* Color334 = (CColor *)(m_pScene.createNode("Color"));
+Color334->setColor(new float[9]{0,0.213731,0.240642,0,1,0.961045,1,0.678259,0});
+IndexedFaceSet333->setColor(*Color334);
+
+CTextureCoordinate* TextureCoordinate335 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate335->setPoint(new float[120]{1,0.501333,1,1,0.946101,0.501333,0.578797,0.501333,0.578797,1,0.502908,0.501333,0.231356,0.501333,0.231356,1,0.14516,0.501333,0.14516,0,0.231356,0,0.231356,0,0,0,0.068226,0,0.068226,0,0.14516,0,0,0.501333,0.068226,0.501333,0.068226,1,0,0,0.14516,1,0.41729,0.501333,0.41729,1,0.324306,0.501333,0.324306,0,0.41729,0,0.41729,0,0.324306,0,0.324306,1,0.502908,0,0.578797,0,0.578797,0,0.502908,0,0.502908,1,0.774382,0.501333,0.774382,1,0.71286,0.501333,0.71286,0,0.774382,0,0.774382,0,0.64806,0,0.64806,0,0.71286,0,0.64806,0.501333,0.64806,1,0.71286,1,0.89065,0.501333,0.89065,1,0.833539,0.501333,0.833539,0,0.89065,0,0.89065,0,0.833539,0,0.833539,1,0.946101,0,1,0,1,0,0.946101,0,0.946101,1,0,1});
+IndexedFaceSet333->setTexCoord(*TextureCoordinate335);
+
+CCoordinate* Coordinate336 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate336->setDEF("nurbsToPoly351GeoPoints");
+Coordinate336->setPoint(new float[180]{130.135,23.726,334.454,178.138,23.98,302.255,176.218,26.03,300.953,130.008,25.588,331.799,159.897,23.727,327.144,158.598,25.59,325.011,143.479,23.726,334.027,142.975,25.588,331.457,143.479,23.726,334.027,130.135,23.726,334.454,134.573,23.726,334.453,134.573,23.726,334.453,139.021,23.726,334.365,139.021,23.726,334.365,134.35,25.588,331.814,130.055,24.042,332.782,134.433,24.042,332.792,143.162,24.042,332.409,138.803,24.042,332.719,138.674,25.588,331.751,152.153,23.726,331.754,151.252,25.588,329.355,152.153,23.726,331.754,147.893,23.726,333.214,147.893,23.726,333.214,151.586,24.042,330.243,147.457,24.042,331.641,147.2,25.588,330.715,159.897,23.727,327.144,156.161,23.726,329.674,156.161,23.726,329.674,159.079,24.043,325.801,155.464,24.042,328.243,155.053,25.588,327.401,169.537,23.768,317.746,167.795,25.661,316.033,169.537,23.768,317.746,163.378,23.733,324.277,163.378,23.733,324.277,166.596,23.746,321.131,166.596,23.746,321.131,161.907,25.599,322.288,162.449,24.053,323.025,168.424,24.11,316.67,165.569,24.074,319.969,164.977,25.622,319.283,174.519,23.847,310.343,172.621,25.799,308.867,174.519,23.847,310.343,172.188,23.802,314.14,172.188,23.802,314.14,173.276,24.239,309.421,171.002,24.165,313.144,170.352,25.719,312.552,178.138,23.98,302.255,176.511,23.907,306.372,176.511,23.907,306.372,176.829,24.456,301.449,175.227,24.336,305.514,174.584,25.902,304.992});
+IndexedFaceSet333->setCoord(*Coordinate336);
+
+Shape329->setGeometry(IndexedFaceSet333);
+
+Transform328->addChildren(*Shape329);
+
+Transform309->addChildren(*Transform328);
+
+LOD308->addChildren(*Transform309);
+
+Transform307->addChildren(*LOD308);
+
+group->addChildren(*Transform307);
+
+CTransform* Transform337 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform337->setDEF("s12LOD");
+CLOD* LOD338 = (CLOD *)(m_pScene.createNode("LOD"));
+CTransform* Transform339 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform339->setDEF("med_6");
+CTransform* Transform340 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform340->setDEF("f_11");
+CShape* Shape341 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance342 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture343 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture343->setUSE("_1");
+Appearance342->setTexture(*ImageTexture343);
+
+CTextureTransform* TextureTransform344 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+Appearance342->setTextureTransform(*TextureTransform344);
+
+Shape341->setAppearance(*Appearance342);
+
+CIndexedFaceSet* IndexedFaceSet345 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet345->setDEF("nurbsToPoly347_0Geo");
+IndexedFaceSet345->setSolid(False);
+IndexedFaceSet345->setConvex(False);
+IndexedFaceSet345->setColorIndex(new int[112]{4,1,1,-1,0,4,2,-1,0,0,2,-1,3,0,4,-1,4,0,2,-1,4,0,2,-1,0,4,2,-1,0,0,2,-1,0,4,2,-1,4,0,2,-1,0,0,2,-1,0,0,2,-1,4,0,2,-1,0,4,2,-1,1,1,1,-1,4,2,2,-1,0,2,2,-1,4,2,3,-1,0,2,2,-1,0,2,2,-1,4,2,2,-1,0,2,2,-1,4,2,2,-1,0,2,2,-1,0,2,2,-1,0,2,2,-1,0,2,2,-1,4,1,2,-1});
+IndexedFaceSet345->setTexCoordIndex(new int[112]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,11,6,12,-1,13,14,15,-1,7,13,16,-1,14,3,17,-1,18,19,20,-1,4,21,22,-1,21,18,23,-1,24,25,26,-1,19,24,27,-1,25,0,28,-1,1,29,2,-1,4,22,5,-1,7,16,8,-1,11,12,9,-1,6,8,12,-1,14,17,15,-1,13,15,16,-1,3,5,17,-1,19,27,20,-1,21,23,22,-1,18,20,23,-1,25,28,26,-1,24,26,27,-1,0,2,28,-1});
+IndexedFaceSet345->setCoordIndex(new int[112]{28,2,29,-1,16,4,17,-1,10,6,11,-1,0,1,8,-1,8,10,9,-1,14,12,15,-1,6,14,7,-1,12,16,13,-1,22,18,23,-1,4,20,5,-1,20,22,21,-1,26,24,27,-1,18,26,19,-1,24,28,25,-1,2,3,29,-1,4,5,17,-1,6,7,11,-1,8,9,0,-1,10,11,9,-1,12,13,15,-1,14,15,7,-1,16,17,13,-1,18,19,23,-1,20,21,5,-1,22,23,21,-1,24,25,27,-1,26,27,19,-1,28,29,25,-1});
+CColor* Color346 = (CColor *)(m_pScene.createNode("Color"));
+Color346->setColor(new float[15]{0,0.327721,0.368984,0,0.88817,1,1,0,0.0362458,1,0.678259,0,0,1,0.961045});
+IndexedFaceSet345->setColor(*Color346);
+
+CTextureCoordinate* TextureCoordinate347 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate347->setPoint(new float[60]{1,0.930845,1,1,0,0.930845,1,0.458147,1,0.528555,0,0.458147,1,0.161311,1,0.237917,0,0.161311,0,0,1,0,1,0.082163,0,0.082163,1,0.312666,1,0.38605,0,0.312666,0,0.237917,0,0.38605,1,0.664208,1,0.730556,0,0.664208,1,0.597072,0,0.528555,0,0.597072,1,0.796721,1,0.863286,0,0.796721,0,0.730556,0,0.863286,0,1});
+IndexedFaceSet345->setTexCoord(*TextureCoordinate347);
+
+CCoordinate* Coordinate348 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate348->setDEF("nurbsToPoly347GeoPoints");
+Coordinate348->setPoint(new float[90]{178.138,23.98,302.255,181.926,26.202,304.266,227.622,14.214,223.188,225.798,16.292,219.426,194.356,22.381,256.247,190.139,22.893,254.257,186.816,25.348,283.271,182.455,24.264,281.639,184.038,26.004,297.346,180.001,24.115,295.525,185.556,25.727,290.314,181.327,24.227,288.618,189.655,24.19,269.378,185.224,23.952,267.689,188.102,24.842,276.275,183.672,24.186,274.644,191.685,23.372,262.664,187.324,23.53,260.854,205.954,18.767,239.362,202.531,20.093,236.603,197.685,21.246,250.214,193.681,22.066,247.994,201.576,20.025,244.582,197.839,21.114,242.101,216.003,16.303,230.238,213.321,18.036,226.928,210.773,17.512,234.57,207.704,19.051,231.53,221.624,15.186,226.418,219.358,17.097,222.862});
+IndexedFaceSet345->setCoord(*Coordinate348);
+
+Shape341->setGeometry(IndexedFaceSet345);
+
+Transform340->addChildren(*Shape341);
+
+Transform339->addChildren(*Transform340);
+
+CTransform* Transform349 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform349->setDEF("r_9");
+CShape* Shape350 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance351 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture352 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture352->setUSE("_7");
+Appearance351->setTexture(*ImageTexture352);
+
+CTextureTransform* TextureTransform353 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform353->setDEF("_13");
+TextureTransform353->setScale(new float[2]{4,1});
+Appearance351->setTextureTransform(*TextureTransform353);
+
+Shape350->setAppearance(*Appearance351);
+
+CIndexedFaceSet* IndexedFaceSet354 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet354->setDEF("nurbsToPoly349_0Geo");
+IndexedFaceSet354->setSolid(False);
+IndexedFaceSet354->setConvex(False);
+IndexedFaceSet354->setColorIndex(new int[336]{2,2,1,-1,1,1,0,-1,0,0,0,-1,1,1,1,-1,1,1,1,-1,1,1,1,-1,0,1,1,-1,1,1,1,-1,1,0,1,-1,1,1,0,-1,1,0,0,-1,0,0,1,-1,1,1,1,-1,1,1,1,-1,1,0,1,-1,1,1,1,-1,0,1,1,-1,1,1,1,-1,1,1,1,-1,1,1,1,-1,1,1,0,-1,0,0,0,-1,1,1,0,-1,1,1,1,-1,1,1,1,-1,1,1,1,-1,1,0,0,-1,1,1,0,-1,1,1,1,-1,1,1,0,-1,0,0,0,-1,0,0,0,-1,1,1,1,-1,1,1,1,-1,1,0,1,-1,1,1,0,-1,1,0,0,-1,1,0,0,-1,1,1,1,-1,1,2,1,-1,1,1,1,-1,0,1,1,-1,2,1,1,-1,1,0,0,-1,0,0,0,-1,1,1,1,-1,1,1,1,-1,1,1,1,-1,1,0,0,-1,1,0,1,-1,0,0,1,-1,0,1,1,-1,0,1,1,-1,0,1,1,-1,1,1,1,-1,1,1,1,-1,0,1,1,-1,1,0,1,-1,1,0,0,-1,1,1,1,-1,1,1,1,-1,1,0,1,-1,0,0,1,-1,0,0,0,-1,1,0,0,-1,1,1,1,-1,1,1,1,-1,1,1,1,-1,0,1,1,-1,0,1,1,-1,1,0,1,-1,0,0,1,-1,0,0,0,-1,0,0,0,-1,1,1,1,-1,1,1,1,-1,0,0,1,-1,0,1,1,-1,0,1,1,-1,0,1,1,-1,1,1,1,-1,2,1,1,-1,1,0,1,-1,1,0,0,-1});
+IndexedFaceSet354->setTexCoordIndex(new int[336]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,13,9,15,-1,16,17,18,-1,19,14,17,-1,11,6,15,-1,14,15,8,-1,17,8,20,-1,21,22,23,-1,24,25,26,-1,10,24,27,-1,26,21,27,-1,11,27,23,-1,6,23,28,-1,29,30,31,-1,25,29,32,-1,31,3,32,-1,26,32,5,-1,21,5,33,-1,34,35,36,-1,37,38,39,-1,30,40,41,-1,40,37,42,-1,3,43,44,-1,31,41,43,-1,39,34,42,-1,41,42,36,-1,43,36,45,-1,46,47,48,-1,49,50,51,-1,38,49,52,-1,51,46,52,-1,39,52,48,-1,34,48,53,-1,54,55,56,-1,50,54,57,-1,56,0,57,-1,51,57,2,-1,46,2,58,-1,1,58,2,-1,4,33,5,-1,7,20,8,-1,11,15,9,-1,14,19,12,-1,15,14,13,-1,18,59,16,-1,17,16,19,-1,6,8,15,-1,8,17,14,-1,20,18,17,-1,22,28,23,-1,26,27,24,-1,27,11,10,-1,21,23,27,-1,23,6,11,-1,28,7,6,-1,31,32,29,-1,32,26,25,-1,3,5,32,-1,5,21,26,-1,33,22,21,-1,35,45,36,-1,39,42,37,-1,41,31,30,-1,42,41,40,-1,44,4,3,-1,43,3,31,-1,34,36,42,-1,36,43,41,-1,45,44,43,-1,47,53,48,-1,51,52,49,-1,52,39,38,-1,46,48,52,-1,48,34,39,-1,53,35,34,-1,56,57,54,-1,57,51,50,-1,0,2,57,-1,2,46,51,-1,58,47,46,-1});
+IndexedFaceSet354->setCoordIndex(new int[336]{57,2,58,-1,31,5,32,-1,17,7,18,-1,12,6,8,-1,0,10,11,-1,10,12,13,-1,15,16,14,-1,9,11,16,-1,8,17,13,-1,11,13,18,-1,16,18,19,-1,25,21,26,-1,23,20,22,-1,6,23,24,-1,22,25,24,-1,8,24,26,-1,17,26,27,-1,29,4,28,-1,20,29,30,-1,28,31,30,-1,22,30,32,-1,25,32,33,-1,43,35,44,-1,39,34,36,-1,4,37,38,-1,37,39,40,-1,31,42,41,-1,28,38,42,-1,36,43,40,-1,38,40,44,-1,42,44,45,-1,51,47,52,-1,49,46,48,-1,34,49,50,-1,48,51,50,-1,36,50,52,-1,43,52,53,-1,55,1,54,-1,46,55,56,-1,54,57,56,-1,48,56,58,-1,51,58,59,-1,2,59,58,-1,5,33,32,-1,7,19,18,-1,8,13,12,-1,11,9,0,-1,13,11,10,-1,14,3,15,-1,16,15,9,-1,17,18,13,-1,18,16,11,-1,19,14,16,-1,21,27,26,-1,22,24,23,-1,24,8,6,-1,25,26,24,-1,26,17,8,-1,27,7,17,-1,28,30,29,-1,30,22,20,-1,31,32,30,-1,32,25,22,-1,33,21,25,-1,35,45,44,-1,36,40,39,-1,38,28,4,-1,40,38,37,-1,41,5,31,-1,42,31,28,-1,43,44,40,-1,44,42,38,-1,45,41,42,-1,47,53,52,-1,48,50,49,-1,50,36,34,-1,51,52,50,-1,52,43,36,-1,53,35,43,-1,54,56,55,-1,56,48,46,-1,57,58,56,-1,58,51,48,-1,59,47,51,-1});
+CColor* Color355 = (CColor *)(m_pScene.createNode("Color"));
+Color355->setColor(new float[9]{0,0.213731,0.240642,0,1,0.961045,0,0.88817,1});
+IndexedFaceSet354->setColor(*Color355);
+
+CTextureCoordinate* TextureCoordinate356 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate356->setPoint(new float[120]{1,0.5,1,1,0.928812,0.5,0.516078,0.5,0.516078,1,0.445409,0.5,0.228818,0.5,0.228818,1,0.154549,0.5,0.154549,0,0.228818,0,0.228818,0,0,0,0.078394,0,0.078394,0,0.154549,0,0,0.5,0.078394,0.5,0.078394,1,0,0,0.154549,1,0.3739,0.5,0.3739,1,0.301772,0.5,0.301772,0,0.3739,0,0.3739,0,0.301772,0,0.301772,1,0.445409,0,0.516078,0,0.516078,0,0.445409,0,0.445409,1,0.722328,0.5,0.722328,1,0.654186,0.5,0.654186,0,0.722328,0,0.722328,0,0.585581,0,0.585581,0,0.654186,0,0.585581,0.5,0.585581,1,0.654186,1,0.859138,0.5,0.859138,1,0.79048,0.5,0.79048,0,0.859138,0,0.859138,0,0.79048,0,0.79048,1,0.928812,0,1,0,1,0,0.928812,0,0.928812,1,0,1});
+IndexedFaceSet354->setTexCoord(*TextureCoordinate356);
+
+CCoordinate* Coordinate357 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate357->setDEF("nurbsToPoly349GeoPoints");
+Coordinate357->setPoint(new float[180]{181.926,26.202,304.266,227.622,14.214,223.188,227.992,16.27,225.283,181.834,29.334,303.933,193.826,22.57,257.37,194.972,25.203,257.437,186.669,25.4,284.116,187.224,28.349,283.779,186.669,25.4,284.116,181.926,26.202,304.266,183.956,26.015,297.673,183.956,26.015,297.673,185.439,25.755,290.926,185.439,25.755,290.926,184.055,29.095,297.334,182.448,27.752,304.432,184.588,27.497,297.81,187.526,26.717,284.226,186.186,27.159,291.042,185.762,28.774,290.581,189.368,24.31,270.518,190.325,27.105,270.286,189.368,24.31,270.518,187.902,24.925,277.298,187.902,24.925,277.298,190.395,25.445,270.674,188.855,26.153,277.42,188.675,27.8,276.995,193.826,22.57,257.37,191.28,23.53,263.842,191.28,23.53,263.842,194.899,23.531,257.684,192.349,24.576,264.061,192.367,26.244,263.73,205.385,18.924,239.988,206.318,21.315,240.873,205.385,18.924,239.988,197.08,21.446,251.208,197.08,21.446,251.208,200.958,20.212,245.402,200.958,20.212,245.402,198.208,23.997,251.51,198.116,22.328,251.647,206.259,19.665,240.735,201.926,21.022,245.988,202.01,22.684,245.983,215.667,16.376,230.492,216.305,18.604,232.012,215.667,16.376,230.492,210.301,17.629,235.002,210.301,17.629,235.002,216.315,16.992,231.57,211.067,18.306,235.915,211.091,19.939,236.205,227.622,14.214,223.188,221.451,15.217,226.523,221.451,15.217,226.523,228.035,14.71,224.559,221.978,15.773,227.758,221.942,17.361,228.347});
+IndexedFaceSet354->setCoord(*Coordinate357);
+
+Shape350->setGeometry(IndexedFaceSet354);
+
+Transform349->addChildren(*Shape350);
+
+Transform339->addChildren(*Transform349);
+
+CTransform* Transform358 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform358->setDEF("l_9");
+CShape* Shape359 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance360 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture361 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture361->setUSE("_7");
+Appearance360->setTexture(*ImageTexture361);
+
+CTextureTransform* TextureTransform362 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform362->setUSE("_13");
+Appearance360->setTextureTransform(*TextureTransform362);
+
+Shape359->setAppearance(*Appearance360);
+
+CIndexedFaceSet* IndexedFaceSet363 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet363->setDEF("nurbsToPoly348_0Geo");
+IndexedFaceSet363->setSolid(False);
+IndexedFaceSet363->setConvex(False);
+IndexedFaceSet363->setColorIndex(new int[336]{3,3,0,-1,0,0,1,-1,0,0,1,-1,1,1,1,-1,2,1,1,-1,1,1,1,-1,0,0,0,-1,2,1,0,-1,1,0,1,-1,1,1,1,-1,0,1,1,-1,0,0,1,-1,1,1,1,-1,1,1,1,-1,1,0,1,-1,1,1,1,-1,0,1,1,-1,1,1,1,-1,1,1,1,-1,1,0,1,-1,1,1,1,-1,0,1,1,-1,1,1,0,-1,1,1,1,-1,1,1,1,-1,1,1,1,-1,0,1,1,-1,1,1,1,-1,1,1,1,-1,1,1,0,-1,1,0,0,-1,1,1,0,-1,1,1,1,-1,1,1,1,-1,1,1,1,-1,1,1,0,-1,1,0,0,-1,3,3,3,-1,1,3,3,-1,3,3,3,-1,1,3,0,-1,1,0,0,-1,3,0,0,-1,0,1,1,-1,0,1,1,-1,1,1,1,-1,1,2,2,-1,1,1,1,-1,0,0,0,-1,0,0,2,-1,0,1,1,-1,1,0,1,-1,1,0,0,-1,0,1,1,-1,1,1,1,-1,1,1,1,-1,0,1,1,-1,1,0,1,-1,1,0,0,-1,1,1,1,-1,1,1,1,-1,0,1,1,-1,1,0,1,-1,1,0,0,-1,1,0,0,-1,1,1,1,-1,1,1,1,-1,1,1,1,-1,1,0,0,-1,1,0,1,-1,1,0,1,-1,0,1,1,-1,0,1,1,-1,1,0,0,-1,1,1,1,-1,1,1,1,-1,1,0,1,-1,0,1,1,-1,0,1,1,-1,3,3,3,-1,3,1,1,-1,3,0,3,-1,0,1,1,-1,0,1,1,-1});
+IndexedFaceSet363->setTexCoordIndex(new int[336]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,13,9,15,-1,16,17,18,-1,19,14,17,-1,11,6,15,-1,14,15,8,-1,17,8,20,-1,21,22,23,-1,24,25,26,-1,10,24,27,-1,26,21,27,-1,11,27,23,-1,6,23,28,-1,29,30,31,-1,25,29,32,-1,31,3,32,-1,26,32,5,-1,21,5,33,-1,34,35,36,-1,37,38,39,-1,30,40,41,-1,40,37,42,-1,3,43,44,-1,31,41,43,-1,39,34,42,-1,41,42,36,-1,43,36,45,-1,46,47,48,-1,49,50,51,-1,38,49,52,-1,51,46,52,-1,39,52,48,-1,34,48,53,-1,54,55,56,-1,50,54,57,-1,56,0,57,-1,51,57,2,-1,46,2,58,-1,1,58,2,-1,4,33,5,-1,7,20,8,-1,11,15,9,-1,14,19,12,-1,15,14,13,-1,18,59,16,-1,17,16,19,-1,6,8,15,-1,8,17,14,-1,20,18,17,-1,22,28,23,-1,26,27,24,-1,27,11,10,-1,21,23,27,-1,23,6,11,-1,28,7,6,-1,31,32,29,-1,32,26,25,-1,3,5,32,-1,5,21,26,-1,33,22,21,-1,35,45,36,-1,39,42,37,-1,41,31,30,-1,42,41,40,-1,44,4,3,-1,43,3,31,-1,34,36,42,-1,36,43,41,-1,45,44,43,-1,47,53,48,-1,51,52,49,-1,52,39,38,-1,46,48,52,-1,48,34,39,-1,53,35,34,-1,56,57,54,-1,57,51,50,-1,0,2,57,-1,2,46,51,-1,58,47,46,-1});
+IndexedFaceSet363->setCoordIndex(new int[336]{57,2,58,-1,31,5,32,-1,17,7,18,-1,12,6,8,-1,0,10,11,-1,10,12,13,-1,15,16,14,-1,9,11,16,-1,8,17,13,-1,11,13,18,-1,16,18,19,-1,25,21,26,-1,23,20,22,-1,6,23,24,-1,22,25,24,-1,8,24,26,-1,17,26,27,-1,29,4,28,-1,20,29,30,-1,28,31,30,-1,22,30,32,-1,25,32,33,-1,43,35,44,-1,39,34,36,-1,4,37,38,-1,37,39,40,-1,31,42,41,-1,28,38,42,-1,36,43,40,-1,38,40,44,-1,42,44,45,-1,51,47,52,-1,49,46,48,-1,34,49,50,-1,48,51,50,-1,36,50,52,-1,43,52,53,-1,55,1,54,-1,46,55,56,-1,54,57,56,-1,48,56,58,-1,51,58,59,-1,2,59,58,-1,5,33,32,-1,7,19,18,-1,8,13,12,-1,11,9,0,-1,13,11,10,-1,14,3,15,-1,16,15,9,-1,17,18,13,-1,18,16,11,-1,19,14,16,-1,21,27,26,-1,22,24,23,-1,24,8,6,-1,25,26,24,-1,26,17,8,-1,27,7,17,-1,28,30,29,-1,30,22,20,-1,31,32,30,-1,32,25,22,-1,33,21,25,-1,35,45,44,-1,36,40,39,-1,38,28,4,-1,40,38,37,-1,41,5,31,-1,42,31,28,-1,43,44,40,-1,44,42,38,-1,45,41,42,-1,47,53,52,-1,48,50,49,-1,50,36,34,-1,51,52,50,-1,52,43,36,-1,53,35,43,-1,54,56,55,-1,56,48,46,-1,57,58,56,-1,58,51,48,-1,59,47,51,-1});
+CColor* Color364 = (CColor *)(m_pScene.createNode("Color"));
+Color364->setColor(new float[12]{0,0.213731,0.240642,1,0,0.0362458,1,0.678259,0,0,0.88817,1});
+IndexedFaceSet363->setColor(*Color364);
+
+CTextureCoordinate* TextureCoordinate365 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate365->setPoint(new float[120]{1,0.501333,1,1,0.93262,0.501333,0.536064,0.501333,0.536064,1,0.465907,0.501333,0.244074,0.501333,0.244074,1,0.166175,0.501333,0.166175,0,0.244074,0,0.244074,0,0,0,0.085069,0,0.085069,0,0.166175,0,0,0.501333,0.085069,0.501333,0.085069,1,0,0,0.166175,1,0.393652,0.501333,0.393652,1,0.319724,0.501333,0.319724,0,0.393652,0,0.393652,0,0.319724,0,0.319724,1,0.465907,0,0.536064,0,0.536064,0,0.465907,0,0.465907,1,0.736012,0.501333,0.736012,1,0.670519,0.501333,0.670519,0,0.736012,0,0.736012,0,0.604072,0,0.604072,0,0.670519,0,0.604072,0.501333,0.604072,1,0.670519,1,0.866508,0.501333,0.866508,1,0.801151,0.501333,0.801151,0,0.866508,0,0.866508,0,0.801151,0,0.801151,1,0.93262,0,1,0,1,0,0.93262,0,0.93262,1,0,1});
+IndexedFaceSet363->setTexCoord(*TextureCoordinate365);
+
+CCoordinate* Coordinate366 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate366->setDEF("nurbsToPoly348GeoPoints");
+Coordinate366->setPoint(new float[180]{178.138,23.98,302.255,225.798,16.292,219.426,225.286,19.344,219.7,176.218,26.03,300.953,190.49,22.811,253.561,189.611,25.676,252.718,182.548,24.263,281.068,181.04,26.682,279.951,182.548,24.263,281.068,178.138,23.98,302.255,180.056,24.12,295.278,180.056,24.12,295.278,181.4,24.232,288.182,181.4,24.232,288.182,178.222,26.281,294.064,176.829,24.456,301.449,178.743,24.69,294.536,181.315,25.055,280.391,180.116,24.91,287.48,179.713,26.519,287.024,185.414,23.918,266.967,184.274,26.588,265.944,185.414,23.918,266.967,183.802,24.171,273.978,183.802,24.171,273.978,184.317,24.934,266.317,182.634,25.078,273.317,182.483,26.72,272.902,190.49,22.811,253.561,187.593,23.471,260.122,187.593,23.471,260.122,189.529,24.013,252.935,186.567,24.588,259.483,186.604,26.249,259.175,202.94,20.007,236.168,202.206,23.023,235.771,202.94,20.007,236.168,194.084,21.972,247.367,194.084,21.972,247.367,198.262,21.02,241.562,198.262,21.02,241.562,193.275,24.904,246.656,193.182,23.245,246.758,202.154,21.385,235.603,197.417,22.35,240.974,197.496,24,241.002,213.602,17.988,226.719,212.937,21.04,226.665,213.602,17.988,226.719,208.066,18.982,231.207,208.066,18.982,231.207,212.95,19.439,226.21,207.342,20.4,230.669,207.361,22.021,230.981,225.798,16.292,219.426,219.521,17.074,222.764,219.521,17.074,222.764,225.329,17.792,218.98,218.952,18.551,222.285,218.916,20.129,222.878});
+IndexedFaceSet363->setCoord(*Coordinate366);
+
+Shape359->setGeometry(IndexedFaceSet363);
+
+Transform358->addChildren(*Shape359);
+
+Transform339->addChildren(*Transform358);
+
+LOD338->addChildren(*Transform339);
+
+Transform337->addChildren(*LOD338);
+
+group->addChildren(*Transform337);
+
+CTransform* Transform367 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform367->setDEF("s13LOD");
+CLOD* LOD368 = (CLOD *)(m_pScene.createNode("LOD"));
+CTransform* Transform369 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform369->setDEF("med_7");
+CTransform* Transform370 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform370->setDEF("f_12");
+CShape* Shape371 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance372 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture373 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture373->setUSE("_1");
+Appearance372->setTexture(*ImageTexture373);
+
+CTextureTransform* TextureTransform374 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+Appearance372->setTextureTransform(*TextureTransform374);
+
+Shape371->setAppearance(*Appearance372);
+
+CIndexedFaceSet* IndexedFaceSet375 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet375->setDEF("nurbsToPoly344_0Geo");
+IndexedFaceSet375->setSolid(False);
+IndexedFaceSet375->setConvex(False);
+IndexedFaceSet375->setColorIndex(new int[112]{1,1,1,-1,0,1,0,-1,0,2,0,-1,1,1,1,-1,1,0,1,-1,2,2,2,-1,2,2,2,-1,2,0,2,-1,0,2,3,-1,1,1,1,-1,1,0,1,-1,0,0,0,-1,2,0,2,-1,0,1,0,-1,1,1,1,-1,1,1,0,-1,2,2,0,-1,1,1,1,-1,0,0,1,-1,2,2,2,-1,2,2,2,-1,0,0,2,-1,2,2,3,-1,1,1,1,-1,0,3,1,-1,0,0,0,-1,0,0,2,-1,1,1,0,-1});
+IndexedFaceSet375->setTexCoordIndex(new int[112]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,11,6,12,-1,13,14,15,-1,7,13,16,-1,14,3,17,-1,18,19,20,-1,4,21,22,-1,21,18,23,-1,24,25,26,-1,19,24,27,-1,25,0,28,-1,1,29,2,-1,4,22,5,-1,7,16,8,-1,11,12,9,-1,6,8,12,-1,14,17,15,-1,13,15,16,-1,3,5,17,-1,19,27,20,-1,21,23,22,-1,18,20,23,-1,25,28,26,-1,24,26,27,-1,0,2,28,-1});
+IndexedFaceSet375->setCoordIndex(new int[112]{28,2,29,-1,16,4,17,-1,10,6,11,-1,0,1,8,-1,8,10,9,-1,14,12,15,-1,6,14,7,-1,12,16,13,-1,22,18,23,-1,4,20,5,-1,20,22,21,-1,26,24,27,-1,18,26,19,-1,24,28,25,-1,2,3,29,-1,4,5,17,-1,6,7,11,-1,8,9,0,-1,10,11,9,-1,12,13,15,-1,14,15,7,-1,16,17,13,-1,18,19,23,-1,20,21,5,-1,22,23,21,-1,24,25,27,-1,26,27,19,-1,28,29,25,-1});
+CColor* Color376 = (CColor *)(m_pScene.createNode("Color"));
+Color376->setColor(new float[12]{0,0.327721,0.368984,0,0.88817,1,1,0.746737,0.0305123,0,0.213731,0.240642});
+IndexedFaceSet375->setColor(*Color376);
+
+CTextureCoordinate* TextureCoordinate377 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate377->setPoint(new float[60]{1,0.920826,1,1,0,0.920826,1,0.403318,1,0.474407,0,0.403318,1,0.129378,1,0.196161,0,0.129378,0,0,1,0,1,0.063933,0,0.063933,1,0.26414,1,0.333212,0,0.26414,0,0.196161,0,0.333212,1,0.619299,1,0.693003,0,0.619299,1,0.546431,0,0.474407,0,0.546431,1,0.767658,1,0.843496,0,0.767658,0,0.693003,0,0.843496,0,1});
+IndexedFaceSet375->setTexCoord(*TextureCoordinate377);
+
+CCoordinate* Coordinate378 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate378->setDEF("nurbsToPoly344GeoPoints");
+Coordinate378->setPoint(new float[90]{225.798,16.292,219.426,227.622,14.214,223.188,301.258,11.954,248.512,304.142,15.652,247.107,269.739,12.035,220.503,270.815,15.032,216.851,245.314,12.573,218.09,244.756,15.071,214.073,233.317,13.509,220.87,231.906,15.732,216.973,239.237,12.966,219.161,238.25,15.33,215.179,257.656,12.149,217.935,257.943,14.903,214.004,251.479,12.308,217.676,251.347,14.936,213.677,263.769,12.068,218.875,264.462,14.945,215.061,285.977,11.989,229.346,288.026,15.337,226.444,275.48,12.017,222.816,276.912,15.135,219.374,280.914,12.002,225.783,282.67,15.237,222.591,294.752,11.968,238.045,297.285,15.517,235.828,290.611,11.978,233.451,292.918,15.431,230.874,298.33,11.96,243.082,301.056,15.592,241.256});
+IndexedFaceSet375->setCoord(*Coordinate378);
+
+Shape371->setGeometry(IndexedFaceSet375);
+
+Transform370->addChildren(*Shape371);
+
+Transform369->addChildren(*Transform370);
+
+CTransform* Transform379 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform379->setDEF("l_10");
+CShape* Shape380 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance381 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture382 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture382->setUSE("_7");
+Appearance381->setTexture(*ImageTexture382);
+
+CTextureTransform* TextureTransform383 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform383->setDEF("_14");
+TextureTransform383->setScale(new float[2]{4,1});
+Appearance381->setTextureTransform(*TextureTransform383);
+
+Shape380->setAppearance(*Appearance381);
+
+CIndexedFaceSet* IndexedFaceSet384 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet384->setDEF("nurbsToPoly346_0Geo");
+IndexedFaceSet384->setSolid(False);
+IndexedFaceSet384->setConvex(False);
+IndexedFaceSet384->setColorIndex(new int[336]{1,3,0,-1,0,0,0,-1,0,0,0,-1,0,2,2,-1,1,1,1,-1,1,0,0,-1,1,0,0,-1,1,1,0,-1,2,0,0,-1,1,0,0,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,2,0,2,-1,2,2,0,-1,0,0,0,-1,0,0,0,-1,2,0,0,-1,0,0,0,-1,2,0,0,-1,0,0,0,-1,0,0,0,-1,0,2,2,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,2,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,2,0,0,-1,0,0,0,-1,2,0,0,-1,0,0,0,-1,1,3,3,-1,0,1,1,-1,3,1,1,-1,0,1,0,-1,0,0,0,-1,3,0,0,-1,0,0,0,-1,0,0,0,-1,2,0,0,-1,1,1,1,-1,0,1,1,-1,0,1,1,-1,0,1,1,-1,0,0,0,-1,0,0,1,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,0,0,2,-1,0,0,2,-1,0,0,0,-1,0,0,0,-1,0,2,2,-1,0,0,0,-1,0,0,2,-1,0,0,0,-1,0,0,0,-1,2,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,2,2,-1,0,0,0,-1,0,0,2,-1,0,0,0,-1,3,1,1,-1,1,0,0,-1,1,0,1,-1,0,0,0,-1,0,0,0,-1});
+IndexedFaceSet384->setTexCoordIndex(new int[336]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,13,9,15,-1,16,17,18,-1,19,14,17,-1,11,6,15,-1,14,15,8,-1,17,8,20,-1,21,22,23,-1,24,25,26,-1,10,24,27,-1,26,21,27,-1,11,27,23,-1,6,23,28,-1,29,30,31,-1,25,29,32,-1,31,3,32,-1,26,32,5,-1,21,5,33,-1,34,35,36,-1,37,38,39,-1,30,40,41,-1,40,37,42,-1,3,43,44,-1,31,41,43,-1,39,34,42,-1,41,42,36,-1,43,36,45,-1,46,47,48,-1,49,50,51,-1,38,49,52,-1,51,46,52,-1,39,52,48,-1,34,48,53,-1,54,55,56,-1,50,54,57,-1,56,0,57,-1,51,57,2,-1,46,2,58,-1,1,58,2,-1,4,33,5,-1,7,20,8,-1,11,15,9,-1,14,19,12,-1,15,14,13,-1,18,59,16,-1,17,16,19,-1,6,8,15,-1,8,17,14,-1,20,18,17,-1,22,28,23,-1,26,27,24,-1,27,11,10,-1,21,23,27,-1,23,6,11,-1,28,7,6,-1,31,32,29,-1,32,26,25,-1,3,5,32,-1,5,21,26,-1,33,22,21,-1,35,45,36,-1,39,42,37,-1,41,31,30,-1,42,41,40,-1,44,4,3,-1,43,3,31,-1,34,36,42,-1,36,43,41,-1,45,44,43,-1,47,53,48,-1,51,52,49,-1,52,39,38,-1,46,48,52,-1,48,34,39,-1,53,35,34,-1,56,57,54,-1,57,51,50,-1,0,2,57,-1,2,46,51,-1,58,47,46,-1});
+IndexedFaceSet384->setCoordIndex(new int[336]{57,2,58,-1,31,5,32,-1,17,7,18,-1,12,6,8,-1,0,10,11,-1,10,12,13,-1,15,16,14,-1,9,11,16,-1,8,17,13,-1,11,13,18,-1,16,18,19,-1,25,21,26,-1,23,20,22,-1,6,23,24,-1,22,25,24,-1,8,24,26,-1,17,26,27,-1,29,4,28,-1,20,29,30,-1,28,31,30,-1,22,30,32,-1,25,32,33,-1,43,35,44,-1,39,34,36,-1,4,37,38,-1,37,39,40,-1,31,42,41,-1,28,38,42,-1,36,43,40,-1,38,40,44,-1,42,44,45,-1,51,47,52,-1,49,46,48,-1,34,49,50,-1,48,51,50,-1,36,50,52,-1,43,52,53,-1,55,1,54,-1,46,55,56,-1,54,57,56,-1,48,56,58,-1,51,58,59,-1,2,59,58,-1,5,33,32,-1,7,19,18,-1,8,13,12,-1,11,9,0,-1,13,11,10,-1,14,3,15,-1,16,15,9,-1,17,18,13,-1,18,16,11,-1,19,14,16,-1,21,27,26,-1,22,24,23,-1,24,8,6,-1,25,26,24,-1,26,17,8,-1,27,7,17,-1,28,30,29,-1,30,22,20,-1,31,32,30,-1,32,25,22,-1,33,21,25,-1,35,45,44,-1,36,40,39,-1,38,28,4,-1,40,38,37,-1,41,5,31,-1,42,31,28,-1,43,44,40,-1,44,42,38,-1,45,41,42,-1,47,53,52,-1,48,50,49,-1,50,36,34,-1,51,52,50,-1,52,43,36,-1,53,35,43,-1,54,56,55,-1,56,48,46,-1,57,58,56,-1,58,51,48,-1,59,47,51,-1});
+CColor* Color385 = (CColor *)(m_pScene.createNode("Color"));
+Color385->setColor(new float[12]{0,0.213731,0.240642,0,0.88817,1,1,0.746737,0.0305123,0,0.789241,0.8});
+IndexedFaceSet384->setColor(*Color385);
+
+CTextureCoordinate* TextureCoordinate386 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate386->setPoint(new float[120]{1,0.5,1,1,0.920023,0.5,0.468173,0.5,0.468173,1,0.397635,0.5,0.193574,0.5,0.193574,1,0.12785,0.5,0.12785,0,0.193574,0,0.193574,0,0,0,0.06329,0,0.06329,0,0.12785,0,0,0.5,0.06329,0.5,0.06329,1,0,0,0.12785,1,0.328426,0.5,0.328426,1,0.260428,0.5,0.260428,0,0.328426,0,0.328426,0,0.260428,0,0.260428,1,0.397635,0,0.468173,0,0.468173,0,0.397635,0,0.397635,1,0.688279,0.5,0.688279,1,0.613575,0.5,0.613575,0,0.688279,0,0.688279,0,0.540165,0,0.540165,0,0.613575,0,0.540165,0.5,0.540165,1,0.613575,1,0.84146,0.5,0.84146,1,0.764231,0.5,0.764231,0,0.84146,0,0.84146,0,0.764231,0,0.764231,1,0.920023,0,1,0,1,0,0.920023,0,0.920023,1,0,1});
+IndexedFaceSet384->setTexCoord(*TextureCoordinate386);
+
+CCoordinate* Coordinate387 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate387->setDEF("nurbsToPoly346GeoPoints");
+Coordinate387->setPoint(new float[180]{227.622,14.214,223.188,301.258,11.954,248.512,298.689,12.828,248.804,227.992,16.27,225.283,269.226,12.036,220.333,269.068,13.494,222.731,245.079,12.585,218.119,245.282,14.399,220.675,245.079,12.585,218.119,227.622,14.214,223.188,233.259,13.515,220.891,233.259,13.515,220.891,239.098,12.977,219.194,239.098,12.977,219.194,233.554,15.492,223.184,228.035,14.71,224.559,233.583,13.959,222.359,245.243,12.926,219.708,239.34,13.369,220.736,239.342,14.874,221.642,257.232,12.157,217.896,257.328,13.797,220.501,257.232,12.157,217.896,251.144,12.32,217.682,251.144,12.32,217.682,257.231,12.392,219.492,251.229,12.608,219.289,251.303,14.047,220.291,269.226,12.036,220.333,263.281,12.072,218.774,263.281,12.072,218.774,269.011,12.165,221.809,263.183,12.254,220.328,263.278,13.622,221.311,285.667,11.99,229.102,284.605,13.162,230.668,285.667,11.99,229.102,274.994,12.019,222.59,274.994,12.019,222.59,280.502,12.003,225.529,280.502,12.003,225.529,274.604,13.381,224.772,274.635,12.092,223.951,284.953,11.955,230.144,279.974,12.022,226.743,279.804,13.27,227.427,294.648,11.968,237.917,292.787,12.97,238.776,294.648,11.968,237.917,290.41,11.978,233.252,290.41,11.978,233.252,293.55,11.836,238.58,289.502,11.893,234.106,288.951,13.061,234.462,301.258,11.954,248.512,298.296,11.961,243.029,298.296,11.961,243.029,299.831,11.75,248.833,297.02,11.788,243.51,296.054,12.891,243.57});
+IndexedFaceSet384->setCoord(*Coordinate387);
+
+Shape380->setGeometry(IndexedFaceSet384);
+
+Transform379->addChildren(*Shape380);
+
+Transform369->addChildren(*Transform379);
+
+CTransform* Transform388 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform388->setDEF("r_10");
+CShape* Shape389 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance390 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture391 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture391->setUSE("_7");
+Appearance390->setTexture(*ImageTexture391);
+
+CTextureTransform* TextureTransform392 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform392->setUSE("_14");
+Appearance390->setTextureTransform(*TextureTransform392);
+
+Shape389->setAppearance(*Appearance390);
+
+CIndexedFaceSet* IndexedFaceSet393 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet393->setDEF("nurbsToPoly345_0Geo");
+IndexedFaceSet393->setSolid(False);
+IndexedFaceSet393->setConvex(False);
+IndexedFaceSet393->setColorIndex(new int[336]{1,1,0,-1,1,1,0,-1,0,0,0,-1,0,2,2,-1,1,1,1,-1,1,0,0,-1,1,0,0,-1,1,1,0,-1,2,0,0,-1,1,0,0,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,2,0,2,-1,2,2,0,-1,0,0,0,-1,0,1,1,-1,2,0,0,-1,1,1,0,-1,2,0,0,-1,0,0,0,-1,0,0,0,-1,0,2,2,-1,1,1,1,-1,1,0,0,-1,1,1,1,-1,1,1,1,-1,2,0,0,-1,1,0,0,-1,1,0,0,-1,0,0,0,-1,0,0,0,-1,2,0,0,-1,0,0,0,-1,2,0,0,-1,0,0,0,-1,1,1,1,-1,0,1,1,-1,1,1,1,-1,0,1,0,-1,0,0,0,-1,1,0,0,-1,1,0,0,-1,0,0,0,-1,2,0,0,-1,1,1,1,-1,0,1,1,-1,0,1,1,-1,0,1,1,-1,0,0,0,-1,0,0,1,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,0,0,2,-1,0,0,2,-1,0,0,0,-1,1,0,0,-1,0,2,2,-1,1,0,0,-1,0,0,2,-1,0,0,0,-1,0,0,0,-1,2,0,0,-1,1,1,1,-1,0,1,1,-1,1,1,1,-1,1,1,1,-1,0,0,0,-1,0,1,1,-1,0,1,1,-1,0,0,0,-1,0,0,0,-1,0,2,2,-1,0,0,0,-1,0,0,2,-1,0,0,0,-1,1,1,1,-1,1,0,0,-1,1,0,1,-1,0,0,0,-1,0,0,0,-1});
+IndexedFaceSet393->setTexCoordIndex(new int[336]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,13,9,15,-1,16,17,18,-1,19,14,17,-1,11,6,15,-1,14,15,8,-1,17,8,20,-1,21,22,23,-1,24,25,26,-1,10,24,27,-1,26,21,27,-1,11,27,23,-1,6,23,28,-1,29,30,31,-1,25,29,32,-1,31,3,32,-1,26,32,5,-1,21,5,33,-1,34,35,36,-1,37,38,39,-1,30,40,41,-1,40,37,42,-1,3,43,44,-1,31,41,43,-1,39,34,42,-1,41,42,36,-1,43,36,45,-1,46,47,48,-1,49,50,51,-1,38,49,52,-1,51,46,52,-1,39,52,48,-1,34,48,53,-1,54,55,56,-1,50,54,57,-1,56,0,57,-1,51,57,2,-1,46,2,58,-1,1,58,2,-1,4,33,5,-1,7,20,8,-1,11,15,9,-1,14,19,12,-1,15,14,13,-1,18,59,16,-1,17,16,19,-1,6,8,15,-1,8,17,14,-1,20,18,17,-1,22,28,23,-1,26,27,24,-1,27,11,10,-1,21,23,27,-1,23,6,11,-1,28,7,6,-1,31,32,29,-1,32,26,25,-1,3,5,32,-1,5,21,26,-1,33,22,21,-1,35,45,36,-1,39,42,37,-1,41,31,30,-1,42,41,40,-1,44,4,3,-1,43,3,31,-1,34,36,42,-1,36,43,41,-1,45,44,43,-1,47,53,48,-1,51,52,49,-1,52,39,38,-1,46,48,52,-1,48,34,39,-1,53,35,34,-1,56,57,54,-1,57,51,50,-1,0,2,57,-1,2,46,51,-1,58,47,46,-1});
+IndexedFaceSet393->setCoordIndex(new int[336]{57,2,58,-1,31,5,32,-1,17,7,18,-1,12,6,8,-1,0,10,11,-1,10,12,13,-1,15,16,14,-1,9,11,16,-1,8,17,13,-1,11,13,18,-1,16,18,19,-1,25,21,26,-1,23,20,22,-1,6,23,24,-1,22,25,24,-1,8,24,26,-1,17,26,27,-1,29,4,28,-1,20,29,30,-1,28,31,30,-1,22,30,32,-1,25,32,33,-1,43,35,44,-1,39,34,36,-1,4,37,38,-1,37,39,40,-1,31,42,41,-1,28,38,42,-1,36,43,40,-1,38,40,44,-1,42,44,45,-1,51,47,52,-1,49,46,48,-1,34,49,50,-1,48,51,50,-1,36,50,52,-1,43,52,53,-1,55,1,54,-1,46,55,56,-1,54,57,56,-1,48,56,58,-1,51,58,59,-1,2,59,58,-1,5,33,32,-1,7,19,18,-1,8,13,12,-1,11,9,0,-1,13,11,10,-1,14,3,15,-1,16,15,9,-1,17,18,13,-1,18,16,11,-1,19,14,16,-1,21,27,26,-1,22,24,23,-1,24,8,6,-1,25,26,24,-1,26,17,8,-1,27,7,17,-1,28,30,29,-1,30,22,20,-1,31,32,30,-1,32,25,22,-1,33,21,25,-1,35,45,44,-1,36,40,39,-1,38,28,4,-1,40,38,37,-1,41,5,31,-1,42,31,28,-1,43,44,40,-1,44,42,38,-1,45,41,42,-1,47,53,52,-1,48,50,49,-1,50,36,34,-1,51,52,50,-1,52,43,36,-1,53,35,43,-1,54,56,55,-1,56,48,46,-1,57,58,56,-1,58,51,48,-1,59,47,51,-1});
+CColor* Color394 = (CColor *)(m_pScene.createNode("Color"));
+Color394->setColor(new float[9]{0,0.213731,0.240642,0,0.88817,1,1,0.746737,0.0305123});
+IndexedFaceSet393->setColor(*Color394);
+
+CTextureCoordinate* TextureCoordinate395 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate395->setPoint(new float[120]{1,0.501333,1,1,0.920565,0.501333,0.468758,0.501333,0.468758,1,0.398099,0.501333,0.193784,0.501333,0.193784,1,0.127988,0.501333,0.127988,0,0.193784,0,0.193784,0,0,0,0.063359,0,0.063359,0,0.127988,0,0,0.501333,0.063359,0.501333,0.063359,1,0,0,0.127988,1,0.328792,0.501333,0.328792,1,0.260711,0.501333,0.260711,0,0.328792,0,0.328792,0,0.260711,0,0.260711,1,0.398099,0,0.468758,0,0.468758,0,0.398099,0,0.398099,1,0.68928,0.501333,0.68928,1,0.614466,0.501333,0.614466,0,0.68928,0,0.68928,0,0.5409,0,0.5409,0,0.614466,0,0.5409,0.501333,0.5409,1,0.614466,1,0.842332,0.501333,0.842332,1,0.765244,0.501333,0.765244,0,0.842332,0,0.842332,0,0.765244,0,0.765244,1,0.920565,0,1,0,1,0,0.920565,0,0.920565,1,0,1});
+IndexedFaceSet393->setTexCoord(*TextureCoordinate395);
+
+CCoordinate* Coordinate396 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate396->setDEF("nurbsToPoly345GeoPoints");
+Coordinate396->setPoint(new float[180]{225.798,16.292,219.426,304.142,15.652,247.107,302.973,18.306,246.72,225.286,19.344,219.7,270.321,15.025,216.683,270.667,17.918,217.303,244.524,15.078,214.1,244.45,18.088,214.71,244.524,15.078,214.1,225.798,16.292,219.426,231.851,15.736,216.992,231.851,15.736,216.992,238.115,15.337,215.209,238.115,15.337,215.209,231.463,18.779,217.398,225.329,17.792,218.98,231.491,17.254,216.578,244.411,16.622,213.748,237.875,16.869,214.827,237.877,18.365,215.729,257.525,14.903,213.961,257.747,17.862,214.658,257.525,14.903,213.961,251.016,14.94,213.68,251.016,14.94,213.68,257.651,16.465,213.655,251.027,16.495,213.354,251.101,17.927,214.351,270.321,15.025,216.683,263.984,14.94,214.957,263.984,14.94,214.957,270.611,16.596,216.387,264.205,16.508,214.662,264.3,17.868,215.64,287.768,15.332,226.236,287.685,18.112,226.384,287.768,15.332,226.236,276.457,15.127,219.156,276.457,15.127,219.156,282.302,15.23,222.359,282.302,15.23,222.359,276.744,17.984,219.659,276.776,16.702,218.844,288.034,16.911,225.865,282.611,16.808,222.02,282.44,18.049,222.698,297.223,15.516,235.749,296.584,18.224,235.529,297.223,15.516,235.749,292.769,15.428,230.723,292.769,15.428,230.723,297.345,17.097,235.336,292.97,17.009,230.324,292.419,18.171,230.676,304.142,15.652,247.107,301.045,15.592,241.237,301.045,15.592,241.237,304.109,17.234,246.749,301.084,17.174,240.834,300.122,18.27,240.894});
+IndexedFaceSet393->setCoord(*Coordinate396);
+
+Shape389->setGeometry(IndexedFaceSet393);
+
+Transform388->addChildren(*Shape389);
+
+Transform369->addChildren(*Transform388);
+
+LOD368->addChildren(*Transform369);
+
+Transform367->addChildren(*LOD368);
+
+group->addChildren(*Transform367);
+
+CTransform* Transform397 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform397->setDEF("s14LOD");
+CLOD* LOD398 = (CLOD *)(m_pScene.createNode("LOD"));
+CTransform* Transform399 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform399->setDEF("med_8");
+CTransform* Transform400 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform400->setDEF("r_11");
+CShape* Shape401 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance402 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture403 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture403->setUSE("_7");
+Appearance402->setTexture(*ImageTexture403);
+
+CTextureTransform* TextureTransform404 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform404->setDEF("_15");
+TextureTransform404->setScale(new float[2]{4,1});
+Appearance402->setTextureTransform(*TextureTransform404);
+
+Shape401->setAppearance(*Appearance402);
+
+CIndexedFaceSet* IndexedFaceSet405 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet405->setDEF("nurbsToPoly341_0Geo");
+IndexedFaceSet405->setSolid(False);
+IndexedFaceSet405->setConvex(False);
+IndexedFaceSet405->setColorIndex(new int[336]{4,6,4,-1,3,3,3,-1,0,0,0,-1,2,2,2,-1,1,2,2,-1,2,2,2,-1,1,1,1,-1,1,2,1,-1,2,0,2,-1,2,2,0,-1,1,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,2,0,2,-1,2,2,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,2,3,2,-1,2,2,3,-1,0,3,3,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,2,2,2,-1,3,0,0,-1,2,2,0,-1,2,0,2,-1,2,2,0,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,2,0,2,-1,2,2,0,-1,0,0,0,-1,5,5,5,-1,2,5,5,-1,5,4,5,-1,2,5,4,-1,0,4,4,-1,6,4,4,-1,3,3,3,-1,0,0,0,-1,2,2,2,-1,2,1,1,-1,2,2,2,-1,1,1,1,-1,1,1,1,-1,0,0,2,-1,0,1,2,-1,0,1,1,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,0,0,2,-1,0,0,2,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,3,3,2,-1,3,0,2,-1,3,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,2,2,2,-1,0,3,3,-1,0,3,2,-1,0,0,2,-1,0,0,2,-1,0,0,0,-1,0,0,0,-1,2,2,2,-1,2,2,2,-1,0,0,2,-1,0,0,2,-1,0,0,0,-1,5,5,5,-1,5,2,2,-1,4,4,5,-1,4,0,2,-1,4,0,0,-1});
+IndexedFaceSet405->setTexCoordIndex(new int[336]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,13,9,15,-1,16,17,18,-1,19,14,17,-1,11,6,15,-1,14,15,8,-1,17,8,20,-1,21,22,23,-1,24,25,26,-1,10,24,27,-1,26,21,27,-1,11,27,23,-1,6,23,28,-1,29,30,31,-1,25,29,32,-1,31,3,32,-1,26,32,5,-1,21,5,33,-1,34,35,36,-1,37,38,39,-1,30,40,41,-1,40,37,42,-1,3,43,44,-1,31,41,43,-1,39,34,42,-1,41,42,36,-1,43,36,45,-1,46,47,48,-1,49,50,51,-1,38,49,52,-1,51,46,52,-1,39,52,48,-1,34,48,53,-1,54,55,56,-1,50,54,57,-1,56,0,57,-1,51,57,2,-1,46,2,58,-1,1,58,2,-1,4,33,5,-1,7,20,8,-1,11,15,9,-1,14,19,12,-1,15,14,13,-1,18,59,16,-1,17,16,19,-1,6,8,15,-1,8,17,14,-1,20,18,17,-1,22,28,23,-1,26,27,24,-1,27,11,10,-1,21,23,27,-1,23,6,11,-1,28,7,6,-1,31,32,29,-1,32,26,25,-1,3,5,32,-1,5,21,26,-1,33,22,21,-1,35,45,36,-1,39,42,37,-1,41,31,30,-1,42,41,40,-1,44,4,3,-1,43,3,31,-1,34,36,42,-1,36,43,41,-1,45,44,43,-1,47,53,48,-1,51,52,49,-1,52,39,38,-1,46,48,52,-1,48,34,39,-1,53,35,34,-1,56,57,54,-1,57,51,50,-1,0,2,57,-1,2,46,51,-1,58,47,46,-1});
+IndexedFaceSet405->setCoordIndex(new int[336]{57,2,58,-1,31,5,32,-1,17,7,18,-1,12,6,8,-1,0,10,11,-1,10,12,13,-1,15,16,14,-1,9,11,16,-1,8,17,13,-1,11,13,18,-1,16,18,19,-1,25,21,26,-1,23,20,22,-1,6,23,24,-1,22,25,24,-1,8,24,26,-1,17,26,27,-1,29,4,28,-1,20,29,30,-1,28,31,30,-1,22,30,32,-1,25,32,33,-1,43,35,44,-1,39,34,36,-1,4,37,38,-1,37,39,40,-1,31,42,41,-1,28,38,42,-1,36,43,40,-1,38,40,44,-1,42,44,45,-1,51,47,52,-1,49,46,48,-1,34,49,50,-1,48,51,50,-1,36,50,52,-1,43,52,53,-1,55,1,54,-1,46,55,56,-1,54,57,56,-1,48,56,58,-1,51,58,59,-1,2,59,58,-1,5,33,32,-1,7,19,18,-1,8,13,12,-1,11,9,0,-1,13,11,10,-1,14,3,15,-1,16,15,9,-1,17,18,13,-1,18,16,11,-1,19,14,16,-1,21,27,26,-1,22,24,23,-1,24,8,6,-1,25,26,24,-1,26,17,8,-1,27,7,17,-1,28,30,29,-1,30,22,20,-1,31,32,30,-1,32,25,22,-1,33,21,25,-1,35,45,44,-1,36,40,39,-1,38,28,4,-1,40,38,37,-1,41,5,31,-1,42,31,28,-1,43,44,40,-1,44,42,38,-1,45,41,42,-1,47,53,52,-1,48,50,49,-1,50,36,34,-1,51,52,50,-1,52,43,36,-1,53,35,43,-1,54,56,55,-1,56,48,46,-1,57,58,56,-1,58,51,48,-1,59,47,51,-1});
+CColor* Color406 = (CColor *)(m_pScene.createNode("Color"));
+Color406->setColor(new float[21]{0,0.213731,0.240642,0,0.88817,1,1,0.800213,0,0,0.840115,1,0.0852248,0.374864,0.427807,0.786096,0.539602,0,0.156601,0.688812,0.786096});
+IndexedFaceSet405->setColor(*Color406);
+
+CTextureCoordinate* TextureCoordinate407 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate407->setPoint(new float[120]{1,0.501333,1,1,0.937493,0.501333,0.523893,0.501333,0.523893,1,0.450179,0.501333,0.224799,0.501333,0.224799,1,0.149364,0.501333,0.149364,0,0.224799,0,0.224799,0,0,0,0.07432,0,0.07432,0,0.149364,0,0,0.501333,0.07432,0.501333,0.07432,1,0,0,0.149364,1,0.375536,0.501333,0.375536,1,0.300298,0.501333,0.300298,0,0.375536,0,0.375536,0,0.300298,0,0.300298,1,0.450179,0,0.523893,0,0.523893,0,0.450179,0,0.450179,1,0.737745,0.501333,0.737745,1,0.66778,0.501333,0.66778,0,0.737745,0,0.737745,0,0.596455,0,0.596455,0,0.66778,0,0.596455,0.501333,0.596455,1,0.66778,1,0.872819,0.501333,0.872819,1,0.806164,0.501333,0.806164,0,0.872819,0,0.872819,0,0.806164,0,0.806164,1,0.937493,0,1,0,1,0,0.937493,0,0.937493,1,0,1});
+IndexedFaceSet405->setTexCoord(*TextureCoordinate407);
+
+CCoordinate* Coordinate408 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate408->setDEF("nurbsToPoly341GeoPoints");
+Coordinate408->setPoint(new float[180]{304.142,15.652,247.107,271.532,13.789,314.903,272.014,16.747,315.681,302.973,18.306,246.72,303.311,15.272,287.765,302.24,17.979,288.457,308.324,15.693,264.581,306.829,18.324,264.548,308.324,15.693,264.581,304.142,15.652,247.107,306.28,15.689,252.782,306.28,15.689,252.782,307.681,15.705,258.632,307.681,15.705,258.632,304.94,18.329,252.446,304.109,17.234,246.749,306.196,17.272,252.504,308.197,17.272,264.549,307.566,17.287,258.466,306.232,18.337,258.422,307.307,15.565,276.452,305.906,18.219,276.828,307.307,15.565,276.452,308.198,15.647,270.547,308.198,15.647,270.547,307.212,17.128,276.714,308.078,17.221,270.662,306.719,18.287,270.718,303.311,15.272,287.765,305.668,15.44,282.216,305.668,15.44,282.216,303.317,16.799,288.29,305.615,16.988,282.619,304.404,18.117,282.774,292.44,14.593,302.392,292.138,17.415,303.207,292.44,14.593,302.392,300.282,15.065,293.026,300.282,15.065,293.026,296.638,14.833,297.924,296.638,14.833,297.924,299.449,17.807,293.797,300.359,16.564,293.651,292.671,16.029,303.164,296.793,16.302,298.631,296.068,17.615,298.733,282.66,14.138,309.796,282.835,17.036,310.587,282.66,14.138,309.796,287.757,14.357,306.366,287.757,14.357,306.366,283.016,15.508,310.669,288.057,15.76,307.193,287.708,17.218,307.172,271.532,13.789,314.903,277.226,13.946,312.648,277.226,13.946,312.648,271.947,15.104,315.854,277.622,15.287,313.562,277.582,16.877,313.426});
+IndexedFaceSet405->setCoord(*Coordinate408);
+
+Shape401->setGeometry(IndexedFaceSet405);
+
+Transform400->addChildren(*Shape401);
+
+Transform399->addChildren(*Transform400);
+
+CTransform* Transform409 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform409->setDEF("f_13");
+CShape* Shape410 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance411 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture412 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture412->setUSE("_1");
+Appearance411->setTexture(*ImageTexture412);
+
+CTextureTransform* TextureTransform413 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+Appearance411->setTextureTransform(*TextureTransform413);
+
+Shape410->setAppearance(*Appearance411);
+
+CIndexedFaceSet* IndexedFaceSet414 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet414->setDEF("nurbsToPoly343_0Geo");
+IndexedFaceSet414->setSolid(False);
+IndexedFaceSet414->setConvex(False);
+IndexedFaceSet414->setColorIndex(new int[112]{2,3,4,-1,2,2,2,-1,0,0,0,-1,1,1,1,-1,1,0,1,-1,0,0,0,-1,0,0,0,-1,0,2,0,-1,0,0,0,-1,2,0,2,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,0,2,0,-1,3,4,4,-1,2,2,2,-1,0,0,0,-1,1,1,1,-1,0,0,1,-1,0,0,0,-1,0,0,0,-1,2,2,0,-1,0,0,0,-1,0,0,2,-1,0,0,0,-1,0,0,0,-1,0,0,0,-1,2,4,0,-1});
+IndexedFaceSet414->setTexCoordIndex(new int[112]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,11,6,12,-1,13,14,15,-1,7,13,16,-1,14,3,17,-1,18,19,20,-1,4,21,22,-1,21,18,23,-1,24,25,26,-1,19,24,27,-1,25,0,28,-1,1,29,2,-1,4,22,5,-1,7,16,8,-1,11,12,9,-1,6,8,12,-1,14,17,15,-1,13,15,16,-1,3,5,17,-1,19,27,20,-1,21,23,22,-1,18,20,23,-1,25,28,26,-1,24,26,27,-1,0,2,28,-1});
+IndexedFaceSet414->setCoordIndex(new int[112]{28,2,29,-1,16,4,17,-1,10,6,11,-1,0,1,8,-1,8,10,9,-1,14,12,15,-1,6,14,7,-1,12,16,13,-1,22,18,23,-1,4,20,5,-1,20,22,21,-1,26,24,27,-1,18,26,19,-1,24,28,25,-1,2,3,29,-1,4,5,17,-1,6,7,11,-1,8,9,0,-1,10,11,9,-1,12,13,15,-1,14,15,7,-1,16,17,13,-1,18,19,23,-1,20,21,5,-1,22,23,21,-1,24,25,27,-1,26,27,19,-1,28,29,25,-1});
+CColor* Color415 = (CColor *)(m_pScene.createNode("Color"));
+Color415->setColor(new float[15]{0,0.213731,0.240642,0,0.88817,1,0,0.840115,1,0.199213,0.876244,1,0.0852248,0.374864,0.427807});
+IndexedFaceSet414->setColor(*Color415);
+
+CTextureCoordinate* TextureCoordinate416 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate416->setPoint(new float[60]{1,0.938876,1,1,0,0.938876,1,0.455937,1,0.530281,0,0.455937,1,0.149998,1,0.2266,0,0.149998,0,0,1,0,1,0.074292,0,0.074292,1,0.303525,1,0.380174,0,0.303525,0,0.2266,0,0.380174,1,0.673841,1,0.742985,0,0.673841,1,0.602927,0,0.530281,0,0.602927,1,0.810292,1,0.875618,0,0.810292,0,0.742985,0,0.875618,0,1});
+IndexedFaceSet414->setTexCoord(*TextureCoordinate416);
+
+CCoordinate* Coordinate417 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate417->setDEF("nurbsToPoly343GeoPoints");
+Coordinate417->setPoint(new float[90]{304.142,15.652,247.107,301.258,11.954,248.512,269.988,12.723,310.507,271.532,13.789,314.903,300.191,12.1,286.469,303.072,15.255,288.237,305.214,11.957,264.841,308.33,15.692,264.723,303.282,11.95,253.776,306.279,15.689,252.78,304.615,11.951,259.248,307.69,15.705,258.682,304.149,12.001,275.998,307.227,15.558,276.813,305.058,11.973,270.458,308.176,15.645,270.801,302.511,12.043,281.364,305.51,15.429,282.655,289.742,12.344,299.597,292.101,14.574,302.711,297.249,12.172,291.245,299.978,15.045,293.483,293.745,12.254,295.636,296.298,14.813,298.326,280.487,12.535,306.08,282.435,14.129,309.93,285.301,12.438,303.088,287.456,14.343,306.591,275.363,12.63,308.555,277.105,13.942,312.703});
+IndexedFaceSet414->setCoord(*Coordinate417);
+
+Shape410->setGeometry(IndexedFaceSet414);
+
+Transform409->addChildren(*Shape410);
+
+Transform399->addChildren(*Transform409);
+
+CTransform* Transform418 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform418->setDEF("l_11");
+CShape* Shape419 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance420 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture421 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture421->setUSE("_7");
+Appearance420->setTexture(*ImageTexture421);
+
+CTextureTransform* TextureTransform422 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform422->setUSE("_15");
+Appearance420->setTextureTransform(*TextureTransform422);
+
+Shape419->setAppearance(*Appearance420);
+
+CIndexedFaceSet* IndexedFaceSet423 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet423->setDEF("nurbsToPoly342_0Geo");
+IndexedFaceSet423->setSolid(False);
+IndexedFaceSet423->setConvex(False);
+IndexedFaceSet423->setColorIndex(new int[336]{4,4,3,-1,3,3,3,-1,0,0,0,-1,1,1,1,-1,2,1,1,-1,1,1,1,-1,2,2,2,-1,2,1,2,-1,1,0,1,-1,1,1,0,-1,2,0,0,-1,0,0,0,-1,1,1,1,-1,1,1,1,-1,1,0,1,-1,1,1,0,-1,0,0,0,-1,1,1,1,-1,1,1,1,-1,1,3,1,-1,1,1,3,-1,0,3,3,-1,0,0,0,-1,1,1,1,-1,1,1,1,-1,1,1,1,-1,3,0,0,-1,1,1,0,-1,1,0,1,-1,1,1,0,-1,0,0,0,-1,0,0,0,-1,1,1,1,-1,1,1,1,-1,1,0,1,-1,1,1,0,-1,0,0,0,-1,3,3,3,-1,1,3,3,-1,3,4,3,-1,1,3,3,-1,0,3,3,-1,4,3,3,-1,3,3,3,-1,0,0,0,-1,1,1,1,-1,1,2,2,-1,1,1,1,-1,2,2,2,-1,2,2,2,-1,0,0,1,-1,0,2,1,-1,0,2,2,-1,0,0,0,-1,1,1,1,-1,1,1,1,-1,0,0,1,-1,0,0,1,-1,0,0,0,-1,1,1,1,-1,1,1,1,-1,3,3,1,-1,3,0,1,-1,3,0,0,-1,0,0,0,-1,1,1,1,-1,1,1,1,-1,1,1,1,-1,0,3,3,-1,0,3,1,-1,0,0,1,-1,0,0,1,-1,0,0,0,-1,0,0,0,-1,1,1,1,-1,1,1,1,-1,0,0,1,-1,0,0,1,-1,0,0,0,-1,3,3,3,-1,3,1,1,-1,4,3,3,-1,3,0,1,-1,3,0,0,-1});
+IndexedFaceSet423->setTexCoordIndex(new int[336]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,13,9,15,-1,16,17,18,-1,19,14,17,-1,11,6,15,-1,14,15,8,-1,17,8,20,-1,21,22,23,-1,24,25,26,-1,10,24,27,-1,26,21,27,-1,11,27,23,-1,6,23,28,-1,29,30,31,-1,25,29,32,-1,31,3,32,-1,26,32,5,-1,21,5,33,-1,34,35,36,-1,37,38,39,-1,30,40,41,-1,40,37,42,-1,3,43,44,-1,31,41,43,-1,39,34,42,-1,41,42,36,-1,43,36,45,-1,46,47,48,-1,49,50,51,-1,38,49,52,-1,51,46,52,-1,39,52,48,-1,34,48,53,-1,54,55,56,-1,50,54,57,-1,56,0,57,-1,51,57,2,-1,46,2,58,-1,1,58,2,-1,4,33,5,-1,7,20,8,-1,11,15,9,-1,14,19,12,-1,15,14,13,-1,18,59,16,-1,17,16,19,-1,6,8,15,-1,8,17,14,-1,20,18,17,-1,22,28,23,-1,26,27,24,-1,27,11,10,-1,21,23,27,-1,23,6,11,-1,28,7,6,-1,31,32,29,-1,32,26,25,-1,3,5,32,-1,5,21,26,-1,33,22,21,-1,35,45,36,-1,39,42,37,-1,41,31,30,-1,42,41,40,-1,44,4,3,-1,43,3,31,-1,34,36,42,-1,36,43,41,-1,45,44,43,-1,47,53,48,-1,51,52,49,-1,52,39,38,-1,46,48,52,-1,48,34,39,-1,53,35,34,-1,56,57,54,-1,57,51,50,-1,0,2,57,-1,2,46,51,-1,58,47,46,-1});
+IndexedFaceSet423->setCoordIndex(new int[336]{57,2,58,-1,31,5,32,-1,17,7,18,-1,12,6,8,-1,0,10,11,-1,10,12,13,-1,15,16,14,-1,9,11,16,-1,8,17,13,-1,11,13,18,-1,16,18,19,-1,25,21,26,-1,23,20,22,-1,6,23,24,-1,22,25,24,-1,8,24,26,-1,17,26,27,-1,29,4,28,-1,20,29,30,-1,28,31,30,-1,22,30,32,-1,25,32,33,-1,43,35,44,-1,39,34,36,-1,4,37,38,-1,37,39,40,-1,31,42,41,-1,28,38,42,-1,36,43,40,-1,38,40,44,-1,42,44,45,-1,51,47,52,-1,49,46,48,-1,34,49,50,-1,48,51,50,-1,36,50,52,-1,43,52,53,-1,55,1,54,-1,46,55,56,-1,54,57,56,-1,48,56,58,-1,51,58,59,-1,2,59,58,-1,5,33,32,-1,7,19,18,-1,8,13,12,-1,11,9,0,-1,13,11,10,-1,14,3,15,-1,16,15,9,-1,17,18,13,-1,18,16,11,-1,19,14,16,-1,21,27,26,-1,22,24,23,-1,24,8,6,-1,25,26,24,-1,26,17,8,-1,27,7,17,-1,28,30,29,-1,30,22,20,-1,31,32,30,-1,32,25,22,-1,33,21,25,-1,35,45,44,-1,36,40,39,-1,38,28,4,-1,40,38,37,-1,41,5,31,-1,42,31,28,-1,43,44,40,-1,44,42,38,-1,45,41,42,-1,47,53,52,-1,48,50,49,-1,50,36,34,-1,51,52,50,-1,52,43,36,-1,53,35,43,-1,54,56,55,-1,56,48,46,-1,57,58,56,-1,58,51,48,-1,59,47,51,-1});
+CColor* Color424 = (CColor *)(m_pScene.createNode("Color"));
+Color424->setColor(new float[15]{0,0.213731,0.240642,1,0.800213,0,0,0.88817,1,0,0.840115,1,0.199213,0.876244,1});
+IndexedFaceSet423->setColor(*Color424);
+
+CTextureCoordinate* TextureCoordinate425 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate425->setPoint(new float[120]{1,0.5,1,1,0.939724,0.5,0.527299,0.5,0.527299,1,0.452615,0.5,0.225197,0.5,0.225197,1,0.149448,0.5,0.149448,0,0.225197,0,0.225197,0,0,0,0.074274,0,0.074274,0,0.149448,0,0,0.5,0.074274,0.5,0.074274,1,0,0,0.149448,1,0.377123,0.5,0.377123,1,0.301199,0.5,0.301199,0,0.377123,0,0.377123,0,0.301199,0,0.301199,1,0.452615,0,0.527299,0,0.527299,0,0.452615,0,0.452615,1,0.743084,0.5,0.743084,1,0.672868,0.5,0.672868,0,0.743084,0,0.743084,0,0.600827,0,0.600827,0,0.672868,0,0.600827,0.5,0.600827,1,0.672868,1,0.876765,0.5,0.876765,1,0.811157,0.5,0.811157,0,0.876765,0,0.876765,0,0.811157,0,0.811157,1,0.939724,0,1,0,1,0,0.939724,0,0.939724,1,0,1});
+IndexedFaceSet423->setTexCoord(*TextureCoordinate425);
+
+CCoordinate* Coordinate426 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate426->setDEF("nurbsToPoly342GeoPoints");
+Coordinate426->setPoint(new float[180]{301.258,11.954,248.512,269.988,12.723,310.507,269.724,15.175,309.16,298.689,12.828,248.804,300.298,12.097,286.268,297.837,13.282,286.121,305.21,11.957,264.739,302.202,12.789,264.768,305.21,11.957,264.739,301.258,11.954,248.512,303.282,11.95,253.775,303.282,11.95,253.775,304.608,11.951,259.208,304.608,11.951,259.208,300.488,12.789,253.92,299.831,11.75,248.833,301.75,11.727,253.978,303.577,11.731,264.769,303.007,11.719,259.318,301.666,12.774,259.273,304.2,12,275.779,301.305,12.939,275.776,304.2,12,275.779,305.074,11.973,270.289,305.074,11.973,270.289,302.616,11.841,275.661,303.448,11.771,270.246,302.082,12.842,270.303,300.298,12.097,286.268,302.599,12.041,281.131,302.599,12.041,281.131,298.912,12.093,285.953,301.096,11.948,280.925,299.882,13.084,281.082,289.736,12.344,299.602,288.312,14.099,298.913,289.736,12.344,299.602,297.343,12.169,291.11,297.343,12.169,291.11,293.797,12.253,295.578,293.797,12.253,295.578,295.2,13.528,290.811,296.104,12.275,290.666,288.833,12.7,298.874,292.723,12.481,294.993,292.009,13.806,295.091,280.398,12.536,306.129,279.645,14.678,305.055,280.398,12.536,306.129,285.24,12.44,303.131,285.24,12.44,303.131,279.817,13.138,305.142,284.505,12.922,302.266,284.168,14.394,302.24,269.988,12.723,310.507,275.291,12.632,308.585,275.291,12.632,308.585,269.658,13.523,309.334,274.847,13.34,307.494,274.811,14.94,307.356});
+IndexedFaceSet423->setCoord(*Coordinate426);
+
+Shape419->setGeometry(IndexedFaceSet423);
+
+Transform418->addChildren(*Shape419);
+
+Transform399->addChildren(*Transform418);
+
+LOD398->addChildren(*Transform399);
+
+Transform397->addChildren(*LOD398);
+
+group->addChildren(*Transform397);
+
+CTransform* Transform427 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform427->setDEF("s16LOD");
+CLOD* LOD428 = (CLOD *)(m_pScene.createNode("LOD"));
+CTransform* Transform429 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform429->setDEF("med_9");
+CTransform* Transform430 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform430->setDEF("f_14");
+CShape* Shape431 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance432 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture433 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture433->setUSE("_1");
+Appearance432->setTexture(*ImageTexture433);
+
+CTextureTransform* TextureTransform434 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+Appearance432->setTextureTransform(*TextureTransform434);
+
+Shape431->setAppearance(*Appearance432);
+
+CIndexedFaceSet* IndexedFaceSet435 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet435->setDEF("nurbsToPoly269_0Geo");
+IndexedFaceSet435->setSolid(False);
+IndexedFaceSet435->setConvex(False);
+IndexedFaceSet435->setColorIndex(new int[64]{0,3,2,-1,0,3,3,-1,0,2,1,-1,0,4,2,-1,4,2,1,-1,4,0,2,-1,4,1,2,-1,4,4,1,-1,2,3,0,-1,3,3,0,-1,1,2,4,-1,2,0,4,-1,2,1,4,-1,1,4,4,-1,0,2,4,-1,0,1,2,-1});
+IndexedFaceSet435->setTexCoordIndex(new int[64]{14,7,16,-1,14,8,7,-1,2,20,4,-1,2,19,20,-1,10,16,12,-1,10,14,16,-1,19,12,20,-1,19,10,12,-1,15,1,13,-1,1,8,13,-1,9,15,11,-1,15,13,11,-1,17,9,18,-1,9,11,18,-1,2,17,18,-1,2,3,17,-1});
+IndexedFaceSet435->setCoordIndex(new int[64]{9,3,11,-1,9,5,3,-1,4,14,0,-1,4,13,14,-1,7,11,8,-1,7,9,11,-1,13,8,14,-1,13,7,8,-1,10,2,9,-1,2,5,9,-1,6,10,7,-1,10,9,7,-1,12,6,13,-1,6,7,13,-1,4,12,13,-1,4,1,12,-1});
+CColor* Color436 = (CColor *)(m_pScene.createNode("Color"));
+Color436->setColor(new float[15]{0.117647,0.0859429,0,1,0.691309,0,0.481283,0.332716,0,0,0.926688,1,0.176471,0.128914,0});
+IndexedFaceSet435->setColor(*Color436);
+
+CTextureCoordinate* TextureCoordinate437 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate437->setPoint(new float[42]{0.997382,0.724561,0.998894,0.000118464,0.399046,0.998367,0.999844,0.998367,0.00110637,0.999882,0.00754271,0.332565,0.561557,0.00163323,0.00110637,0.000118464,0.5,0.000118464,0.999369,0.499243,0.449523,0.499243,0.449523,0.499243,0.00110637,0.5,0.474762,0.249681,0.474762,0.249681,0.999131,0.249681,0.00110637,0.250059,0.999607,0.748805,0.424285,0.748805,0.424285,0.748805,0.00110637,0.749941});
+IndexedFaceSet435->setTexCoord(*TextureCoordinate437);
+
+CCoordinate* Coordinate438 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate438->setDEF("nurbsToPoly269GeoPoints");
+Coordinate438->setPoint(new float[45]{-20.308,14.018,325.303,-19.646,13.517,314.048,23.539,13.462,314.004,23.539,13.479,319.191,-20.036,13.607,320.387,23.539,13.4692,316.191,1.9465,13.4895,314.026,1.7515,13.5387,318.492,1.6155,13.7485,322.247,12.6556,13.5016,317.17,12.7427,13.4757,314.015,12.587,13.5987,320.27,-8.84975,13.5033,314.037,-9.14225,13.5729,319.44,-9.34625,13.8832,323.775});
+IndexedFaceSet435->setCoord(*Coordinate438);
+
+Shape431->setGeometry(IndexedFaceSet435);
+
+Transform430->addChildren(*Shape431);
+
+Transform429->addChildren(*Transform430);
+
+CTransform* Transform439 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform439->setDEF("r_12");
+CShape* Shape440 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance441 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture442 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture442->setUSE("_2");
+Appearance441->setTexture(*ImageTexture442);
+
+CTextureTransform* TextureTransform443 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform443->setDEF("_16");
+TextureTransform443->setScale(new float[2]{4,1});
+Appearance441->setTextureTransform(*TextureTransform443);
+
+Shape440->setAppearance(*Appearance441);
+
+CIndexedFaceSet* IndexedFaceSet444 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet444->setDEF("nurbsToPoly271_0Geo");
+IndexedFaceSet444->setSolid(False);
+IndexedFaceSet444->setConvex(False);
+IndexedFaceSet444->setColorIndex(new int[96]{2,2,3,-1,2,2,3,-1,4,0,0,-1,1,4,4,-1,0,2,4,-1,1,4,3,-1,1,3,3,-1,4,0,0,-1,0,4,4,-1,0,2,4,-1,0,4,3,-1,2,3,3,-1,2,3,3,-1,2,3,3,-1,0,4,4,-1,4,1,1,-1,2,3,4,-1,3,1,1,-1,3,1,1,-1,0,4,4,-1,4,0,0,-1,2,3,4,-1,3,2,0,-1,3,2,2,-1});
+IndexedFaceSet444->setTexCoordIndex(new int[96]{0,1,2,-1,3,4,5,-1,7,6,6,-1,8,7,7,-1,6,3,7,-1,8,7,5,-1,9,5,10,-1,12,11,11,-1,6,12,12,-1,11,0,12,-1,6,12,2,-1,3,2,13,-1,1,13,2,-1,4,10,5,-1,6,7,7,-1,7,8,8,-1,3,5,7,-1,5,9,8,-1,10,14,9,-1,11,12,12,-1,12,6,6,-1,0,2,12,-1,2,3,6,-1,13,4,3,-1});
+IndexedFaceSet444->setCoordIndex(new int[96]{17,2,18,-1,10,5,12,-1,8,4,6,-1,0,8,9,-1,6,10,9,-1,7,9,12,-1,11,12,13,-1,15,1,14,-1,4,15,16,-1,14,17,16,-1,6,16,18,-1,10,18,19,-1,2,19,18,-1,5,13,12,-1,6,9,8,-1,9,7,0,-1,10,12,9,-1,12,11,7,-1,13,3,11,-1,14,16,15,-1,16,6,4,-1,17,18,16,-1,18,10,6,-1,19,5,10,-1});
+CColor* Color445 = (CColor *)(m_pScene.createNode("Color"));
+Color445->setColor(new float[15]{1,0.742561,0.188243,0,0.926688,1,0,0.88817,1,0,0.0712436,0.0802139,1,0.691309,0});
+IndexedFaceSet444->setColor(*Color445);
+
+CTextureCoordinate* TextureCoordinate446 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate446->setPoint(new float[30]{0.000562847,0.434348,0.00205338,0.805228,0.245131,0.434344,0.496508,0.433743,0.496485,0.803899,0.745217,0.433543,0.496508,0.197516,0.745217,0.197516,0.998913,0.197516,0.998913,0.433543,0.745217,0.803698,0.000214815,0.199322,0.245108,0.197516,0.244923,0.804299,0.998913,0.803698});
+IndexedFaceSet444->setTexCoord(*TextureCoordinate446);
+
+CCoordinate* Coordinate447 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate447->setDEF("nurbsToPoly271GeoPoints");
+Coordinate447->setPoint(new float[60]{23.539,13.462,314.004,-19.646,13.517,314.048,-19.73,16.523,312.752,23.539,16.49,312.741,1.884,13.463,314.005,1.883,16.491,312.741,1.884,13.463,314.005,23.539,13.462,314.004,12.604,13.462,314.004,12.604,13.462,314.004,1.884,14.642,312.748,23.539,14.641,312.747,12.604,14.641,312.747,12.604,16.49,312.741,-19.646,13.517,314.048,-8.952,13.467,314.008,-8.952,13.467,314.008,-19.631,14.691,312.788,-8.951,14.645,312.751,-8.96,16.493,312.742});
+IndexedFaceSet444->setCoord(*Coordinate447);
+
+Shape440->setGeometry(IndexedFaceSet444);
+
+Transform439->addChildren(*Shape440);
+
+Transform429->addChildren(*Transform439);
+
+CTransform* Transform448 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform448->setDEF("l_12");
+CShape* Shape449 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance450 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture451 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture451->setUSE("_2");
+Appearance450->setTexture(*ImageTexture451);
+
+CTextureTransform* TextureTransform452 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform452->setUSE("_16");
+Appearance450->setTextureTransform(*TextureTransform452);
+
+Shape449->setAppearance(*Appearance450);
+
+CIndexedFaceSet* IndexedFaceSet453 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet453->setDEF("nurbsToPoly270_0Geo");
+IndexedFaceSet453->setSolid(False);
+IndexedFaceSet453->setConvex(False);
+IndexedFaceSet453->setColorIndex(new int[64]{0,0,3,-1,0,0,3,-1,4,2,0,-1,1,4,3,-1,1,3,3,-1,4,2,0,-1,2,4,3,-1,0,3,3,-1,0,3,3,-1,0,3,3,-1,0,3,4,-1,3,1,1,-1,3,1,1,-1,0,3,4,-1,3,0,2,-1,3,0,0,-1});
+IndexedFaceSet453->setTexCoordIndex(new int[64]{0,1,2,-1,3,4,5,-1,6,7,3,-1,8,6,5,-1,9,5,10,-1,11,12,0,-1,7,11,2,-1,3,2,13,-1,1,13,2,-1,4,10,5,-1,3,5,6,-1,5,9,8,-1,10,14,9,-1,0,2,11,-1,2,3,7,-1,13,4,3,-1});
+IndexedFaceSet453->setCoordIndex(new int[64]{11,2,13,-1,6,5,9,-1,8,4,6,-1,0,8,9,-1,7,9,10,-1,12,1,11,-1,4,12,13,-1,6,13,14,-1,2,14,13,-1,5,10,9,-1,6,9,8,-1,9,7,0,-1,10,3,7,-1,11,13,12,-1,13,6,4,-1,14,5,6,-1});
+CColor* Color454 = (CColor *)(m_pScene.createNode("Color"));
+Color454->setColor(new float[15]{0,0.88817,1,0,0.926688,1,1,0.742561,0.188243,0,0.0712436,0.0802139,1,0.691309,0});
+IndexedFaceSet453->setColor(*Color454);
+
+CTextureCoordinate* TextureCoordinate455 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate455->setPoint(new float[30]{0.00122052,0.445761,0.000813134,0.800684,0.241777,0.446017,0.497195,0.447342,0.499221,0.803926,0.746398,0.447342,0.75045,0.197733,0.501247,0.197733,0.998745,0.195447,0.998745,0.448594,0.747307,0.80575,0.241913,0.200975,0.000813119,0.197733,0.243939,0.803926,0.997628,0.803926});
+IndexedFaceSet453->setTexCoord(*TextureCoordinate455);
+
+CCoordinate* Coordinate456 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate456->setDEF("nurbsToPoly270GeoPoints");
+Coordinate456->setPoint(new float[45]{23.539,13.479,319.191,-20.321,14.019,325.305,-20.185,17.011,326.548,23.539,16.506,320.434,1.6,13.716,321.98,1.62,16.689,323.169,1.587,14.852,323.158,23.539,14.666,320.441,12.536,13.595,320.266,12.527,14.729,321.451,12.537,16.568,321.452,-20.303,15.182,326.526,-9.325,13.856,323.729,-9.331,15.005,324.924,-9.262,16.839,324.942});
+IndexedFaceSet453->setCoord(*Coordinate456);
+
+Shape449->setGeometry(IndexedFaceSet453);
+
+Transform448->addChildren(*Shape449);
+
+Transform429->addChildren(*Transform448);
+
+LOD428->addChildren(*Transform429);
+
+Transform427->addChildren(*LOD428);
+
+group->addChildren(*Transform427);
+
+CTransform* Transform457 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform457->setDEF("s17LOD");
+CLOD* LOD458 = (CLOD *)(m_pScene.createNode("LOD"));
+CTransform* Transform459 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform459->setDEF("med_10");
+CTransform* Transform460 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform460->setDEF("f_15");
+CShape* Shape461 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance462 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture463 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture463->setUSE("_1");
+Appearance462->setTexture(*ImageTexture463);
+
+CTextureTransform* TextureTransform464 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+Appearance462->setTextureTransform(*TextureTransform464);
+
+Shape461->setAppearance(*Appearance462);
+
+CIndexedFaceSet* IndexedFaceSet465 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet465->setDEF("nurbsToPoly272_0Geo");
+IndexedFaceSet465->setSolid(False);
+IndexedFaceSet465->setConvex(False);
+IndexedFaceSet465->setTexCoordIndex(new int[32]{0,1,2,-1,3,4,5,-1,6,7,3,-1,4,0,8,-1,1,9,2,-1,4,8,5,-1,3,5,6,-1,0,2,8,-1});
+IndexedFaceSet465->setCoordIndex(new int[32]{8,2,9,-1,6,4,7,-1,0,1,6,-1,4,8,5,-1,2,3,9,-1,4,5,7,-1,6,7,0,-1,8,9,5,-1});
+CTextureCoordinate* TextureCoordinate466 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate466->setPoint(new float[20]{1,0.785793,1,1,0,0.785793,1,0.280912,1,0.546859,0,0.280912,0,0,1,0,0,0.546859,0,1});
+IndexedFaceSet465->setTexCoord(*TextureCoordinate466);
+
+CCoordinate* Coordinate467 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate467->setDEF("nurbsToPoly272GeoPoints");
+Coordinate467->setPoint(new float[30]{172.638,11.781,163.035,174.532,15.16,160.066,142.21,14.678,154.963,141.607,12.222,158.893,158.613,15.081,155.238,157.669,11.853,158.914,166.81,15.15,156.71,165.447,11.791,160.124,150.382,14.926,154.868,149.692,11.995,158.696});
+IndexedFaceSet465->setCoord(*Coordinate467);
+
+Shape461->setGeometry(IndexedFaceSet465);
+
+Transform460->addChildren(*Shape461);
+
+Transform459->addChildren(*Transform460);
+
+CTransform* Transform468 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform468->setDEF("l_13");
+CShape* Shape469 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance470 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture471 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture471->setUSE("_2");
+Appearance470->setTexture(*ImageTexture471);
+
+CTextureTransform* TextureTransform472 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform472->setDEF("_17");
+TextureTransform472->setScale(new float[2]{2,1});
+Appearance470->setTextureTransform(*TextureTransform472);
+
+Shape469->setAppearance(*Appearance470);
+
+CIndexedFaceSet* IndexedFaceSet473 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet473->setDEF("nurbsToPoly274_0Geo");
+IndexedFaceSet473->setSolid(False);
+IndexedFaceSet473->setConvex(False);
+IndexedFaceSet473->setTexCoordIndex(new int[96]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,6,10,-1,8,3,10,-1,11,10,5,-1,12,5,13,-1,14,15,16,-1,7,14,17,-1,16,0,17,-1,8,17,2,-1,3,2,18,-1,1,18,2,-1,4,13,5,-1,8,10,6,-1,10,11,9,-1,3,5,10,-1,5,12,11,-1,13,19,12,-1,16,17,14,-1,17,8,7,-1,0,2,17,-1,2,3,8,-1,18,4,3,-1});
+IndexedFaceSet473->setCoordIndex(new int[96]{17,2,18,-1,10,5,12,-1,8,4,6,-1,0,8,9,-1,6,10,9,-1,7,9,12,-1,11,12,13,-1,15,1,14,-1,4,15,16,-1,14,17,16,-1,6,16,18,-1,10,18,19,-1,2,19,18,-1,5,13,12,-1,6,9,8,-1,9,7,0,-1,10,12,9,-1,12,11,7,-1,13,3,11,-1,14,16,15,-1,16,6,4,-1,17,18,16,-1,18,10,6,-1,19,5,10,-1});
+CTextureCoordinate* TextureCoordinate474 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate474->setPoint(new float[40]{1,1,1,1,0.792861,1,0.558192,1,0.558192,1,0.29067,1,0.29067,0,0.558192,0,0.558192,0.498667,0,0,0.29067,0.498667,0,0.498667,0,1,0.29067,1,0.792861,0,1,0,1,0.498667,0.792861,0.498667,0.792861,1,0,1});
+IndexedFaceSet473->setTexCoord(*TextureCoordinate474);
+
+CCoordinate* Coordinate475 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate475->setDEF("nurbsToPoly274GeoPoints");
+Coordinate475->setPoint(new float[60]{171.233,13.257,165.238,141.16,13.946,161.185,141.607,12.222,158.893,172.638,11.781,163.035,156.625,13.377,161.515,157.313,11.858,158.889,156.907,11.979,160.458,171.81,11.862,164.333,164.182,13.274,162.583,164.592,11.878,161.549,157.313,11.858,158.889,172.638,11.781,163.035,165.18,11.792,160.056,165.18,11.792,160.056,141.344,12.536,160.368,148.931,13.601,161.23,149.14,12.198,160.253,141.607,12.222,158.893,149.44,12.001,158.698,149.44,12.001,158.698});
+IndexedFaceSet473->setCoord(*Coordinate475);
+
+Shape469->setGeometry(IndexedFaceSet473);
+
+Transform468->addChildren(*Shape469);
+
+Transform459->addChildren(*Transform468);
+
+CTransform* Transform476 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform476->setDEF("r_13");
+CShape* Shape477 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance478 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture479 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture479->setUSE("_2");
+Appearance478->setTexture(*ImageTexture479);
+
+CTextureTransform* TextureTransform480 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform480->setUSE("_17");
+Appearance478->setTextureTransform(*TextureTransform480);
+
+Shape477->setAppearance(*Appearance478);
+
+CIndexedFaceSet* IndexedFaceSet481 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet481->setDEF("nurbsToPoly273_0Geo");
+IndexedFaceSet481->setSolid(False);
+IndexedFaceSet481->setConvex(False);
+IndexedFaceSet481->setTexCoordIndex(new int[96]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,6,10,-1,8,3,10,-1,11,10,5,-1,12,5,13,-1,14,15,16,-1,7,14,17,-1,16,0,17,-1,8,17,2,-1,3,2,18,-1,1,18,2,-1,4,13,5,-1,8,10,6,-1,10,11,9,-1,3,5,10,-1,5,12,11,-1,13,19,12,-1,16,17,14,-1,17,8,7,-1,0,2,17,-1,2,3,8,-1,18,4,3,-1});
+IndexedFaceSet481->setCoordIndex(new int[96]{17,2,18,-1,10,5,12,-1,8,4,6,-1,0,8,9,-1,6,10,9,-1,7,9,12,-1,11,12,13,-1,15,1,14,-1,4,15,16,-1,14,17,16,-1,6,16,18,-1,10,18,19,-1,2,19,18,-1,5,13,12,-1,6,9,8,-1,9,7,0,-1,10,12,9,-1,12,11,7,-1,13,3,11,-1,14,16,15,-1,16,6,4,-1,17,18,16,-1,18,10,6,-1,19,5,10,-1});
+CTextureCoordinate* TextureCoordinate482 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate482->setPoint(new float[40]{1,0.5,1,1,0.782224,0.5,0.541346,0.5,0.541346,1,0.276403,0.5,0.276403,0,0.541346,0,0.541346,0,0,0,0.276403,0,0,0,0,0.5,0.276403,1,0.782224,0,1,0,1,0,0.782224,0,0.782224,1,0,1});
+IndexedFaceSet481->setTexCoord(*TextureCoordinate482);
+
+CCoordinate* Coordinate483 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate483->setDEF("nurbsToPoly273GeoPoints");
+Coordinate483->setPoint(new float[60]{174.532,15.16,160.066,142.21,14.678,154.963,142.053,17.595,155.36,174.039,18.277,160.839,158.792,15.084,155.255,158.545,18.169,156.112,158.792,15.084,155.255,174.532,15.16,160.066,166.941,15.15,156.747,166.941,15.15,156.747,158.836,16.764,155.049,174.618,16.874,159.93,167.003,16.86,156.586,166.584,18.263,157.622,142.21,14.678,154.963,150.512,14.929,154.869,150.512,14.929,154.869,142.238,16.178,154.539,150.544,16.541,154.577,150.331,17.951,155.565});
+IndexedFaceSet481->setCoord(*Coordinate483);
+
+Shape477->setGeometry(IndexedFaceSet481);
+
+Transform476->addChildren(*Shape477);
+
+Transform459->addChildren(*Transform476);
+
+LOD458->addChildren(*Transform459);
+
+Transform457->addChildren(*LOD458);
+
+group->addChildren(*Transform457);
+
+CTransform* Transform484 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform484->setDEF("s18LOD");
+CLOD* LOD485 = (CLOD *)(m_pScene.createNode("LOD"));
+CTransform* Transform486 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform486->setDEF("med_11");
+CTransform* Transform487 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform487->setDEF("r_14");
+CShape* Shape488 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance489 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture490 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture490->setDEF("_18");
+ImageTexture490->setUrl(new CString[1]{"wand2-m.png"}, 1);
+Appearance489->setTexture(*ImageTexture490);
+
+CTextureTransform* TextureTransform491 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform491->setDEF("_19");
+TextureTransform491->setScale(new float[2]{4,1});
+Appearance489->setTextureTransform(*TextureTransform491);
+
+Shape488->setAppearance(*Appearance489);
+
+CIndexedFaceSet* IndexedFaceSet492 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet492->setDEF("nurbsToPoly275_0Geo");
+IndexedFaceSet492->setSolid(False);
+IndexedFaceSet492->setConvex(False);
+IndexedFaceSet492->setTexCoordIndex(new int[336]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,13,9,15,-1,16,17,18,-1,19,14,17,-1,11,6,15,-1,14,15,8,-1,17,8,20,-1,21,22,23,-1,24,25,26,-1,10,24,27,-1,26,21,27,-1,11,27,23,-1,6,23,28,-1,29,30,31,-1,25,29,32,-1,31,3,32,-1,26,32,5,-1,21,5,33,-1,34,35,36,-1,37,38,39,-1,30,40,41,-1,40,37,42,-1,3,43,44,-1,31,41,43,-1,39,34,42,-1,41,42,36,-1,43,36,45,-1,46,47,48,-1,49,50,51,-1,38,49,52,-1,51,46,52,-1,39,52,48,-1,34,48,53,-1,54,55,56,-1,50,54,57,-1,56,0,57,-1,51,57,2,-1,46,2,58,-1,1,58,2,-1,4,33,5,-1,7,20,8,-1,11,15,9,-1,14,19,12,-1,15,14,13,-1,18,59,16,-1,17,16,19,-1,6,8,15,-1,8,17,14,-1,20,18,17,-1,22,28,23,-1,26,27,24,-1,27,11,10,-1,21,23,27,-1,23,6,11,-1,28,7,6,-1,31,32,29,-1,32,26,25,-1,3,5,32,-1,5,21,26,-1,33,22,21,-1,35,45,36,-1,39,42,37,-1,41,31,30,-1,42,41,40,-1,44,4,3,-1,43,3,31,-1,34,36,42,-1,36,43,41,-1,45,44,43,-1,47,53,48,-1,51,52,49,-1,52,39,38,-1,46,48,52,-1,48,34,39,-1,53,35,34,-1,56,57,54,-1,57,51,50,-1,0,2,57,-1,2,46,51,-1,58,47,46,-1});
+IndexedFaceSet492->setCoordIndex(new int[336]{57,2,58,-1,31,5,32,-1,17,7,18,-1,12,6,8,-1,0,10,11,-1,10,12,13,-1,15,16,14,-1,9,11,16,-1,8,17,13,-1,11,13,18,-1,16,18,19,-1,25,21,26,-1,23,20,22,-1,6,23,24,-1,22,25,24,-1,8,24,26,-1,17,26,27,-1,29,4,28,-1,20,29,30,-1,28,31,30,-1,22,30,32,-1,25,32,33,-1,43,35,44,-1,39,34,36,-1,4,37,38,-1,37,39,40,-1,31,42,41,-1,28,38,42,-1,36,43,40,-1,38,40,44,-1,42,44,45,-1,51,47,52,-1,49,46,48,-1,34,49,50,-1,48,51,50,-1,36,50,52,-1,43,52,53,-1,55,1,54,-1,46,55,56,-1,54,57,56,-1,48,56,58,-1,51,58,59,-1,2,59,58,-1,5,33,32,-1,7,19,18,-1,8,13,12,-1,11,9,0,-1,13,11,10,-1,14,3,15,-1,16,15,9,-1,17,18,13,-1,18,16,11,-1,19,14,16,-1,21,27,26,-1,22,24,23,-1,24,8,6,-1,25,26,24,-1,26,17,8,-1,27,7,17,-1,28,30,29,-1,30,22,20,-1,31,32,30,-1,32,25,22,-1,33,21,25,-1,35,45,44,-1,36,40,39,-1,38,28,4,-1,40,38,37,-1,41,5,31,-1,42,31,28,-1,43,44,40,-1,44,42,38,-1,45,41,42,-1,47,53,52,-1,48,50,49,-1,50,36,34,-1,51,52,50,-1,52,43,36,-1,53,35,43,-1,54,56,55,-1,56,48,46,-1,57,58,56,-1,58,51,48,-1,59,47,51,-1});
+CTextureCoordinate* TextureCoordinate493 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate493->setPoint(new float[120]{1,0.501333,1,1,0.940267,0.501333,0.535602,0.501333,0.535602,1,0.46176,0.501333,0.238554,0.501333,0.238554,1,0.162531,0.501333,0.162531,0,0.238554,0,0.238554,0,0,0,0.083755,0,0.083755,0,0.162531,0,0,0.501333,0.083755,0.501333,0.083755,1,0,0,0.162531,1,0.387552,0.501333,0.387552,1,0.313263,0.501333,0.313263,0,0.387552,0,0.387552,0,0.313263,0,0.313263,1,0.46176,0,0.535602,0,0.535602,0,0.46176,0,0.46176,1,0.747938,0.501333,0.747938,1,0.679204,0.501333,0.679204,0,0.747938,0,0.747938,0,0.608302,0,0.608302,0,0.679204,0,0.608302,0.501333,0.608302,1,0.679204,1,0.878461,0.501333,0.878461,1,0.814364,0.501333,0.814364,0,0.878461,0,0.878461,0,0.814364,0,0.814364,1,0.940267,0,1,0,1,0,0.940267,0,0.940267,1,0,1});
+IndexedFaceSet492->setTexCoord(*TextureCoordinate493);
+
+CCoordinate* Coordinate494 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate494->setDEF("nurbsToPoly275GeoPoints");
+Coordinate494->setPoint(new float[180]{141.607,12.222,158.893,66.334,14.382,112.693,66.384,17.445,113.225,141.16,13.946,161.185,94.245,14.123,151.698,93.512,16.907,151.944,120.752,13.064,158.921,120.124,15.258,160.206,120.752,13.064,158.921,141.607,12.222,158.893,134.633,12.477,159.115,134.633,12.477,159.115,127.679,12.764,159.178,127.679,12.764,159.178,134.159,14.343,161.103,141.344,12.536,160.368,134.353,12.925,160.482,120.368,13.821,160.024,127.355,13.362,160.417,127.136,14.79,160.82,107.087,13.651,156.857,106.322,16.173,157.493,107.087,13.651,156.857,113.871,13.364,158.199,113.871,13.364,158.199,106.577,14.717,157.694,113.422,14.279,159.165,113.163,15.726,159.141,94.245,14.123,151.698,100.495,13.91,154.736,100.495,13.91,154.736,93.658,15.436,152.334,99.936,15.111,155.46,99.716,16.575,155.131,78.695,14.459,137.732,78.351,17.444,137.992,78.695,14.459,137.732,88.482,14.283,147.753,88.482,14.283,147.753,83.286,14.394,143.048,83.286,14.394,143.048,87.852,17.157,147.944,87.888,15.681,148.33,78.12,15.956,138.243,82.698,15.851,143.585,82.793,17.332,143.252,71.345,14.478,125.771,71.264,17.516,126.189,71.345,14.478,125.771,74.717,14.485,131.935,74.717,14.485,131.935,70.79,16.008,126.248,74.155,16.005,132.428,74.516,17.502,132.273,66.334,14.382,112.693,68.56,14.442,119.336,68.56,14.442,119.336,65.763,15.905,113.131,68.003,15.972,119.796,68.565,17.495,119.823});
+IndexedFaceSet492->setCoord(*Coordinate494);
+
+Shape488->setGeometry(IndexedFaceSet492);
+
+Transform487->addChildren(*Shape488);
+
+Transform486->addChildren(*Transform487);
+
+CTransform* Transform495 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform495->setDEF("f_16");
+CShape* Shape496 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance497 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture498 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture498->setDEF("_20");
+ImageTexture498->setUrl(new CString[1]{"strasse-m.png"}, 1);
+Appearance497->setTexture(*ImageTexture498);
+
+CTextureTransform* TextureTransform499 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+Appearance497->setTextureTransform(*TextureTransform499);
+
+Shape496->setAppearance(*Appearance497);
+
+CIndexedFaceSet* IndexedFaceSet500 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet500->setDEF("nurbsToPoly277_0Geo");
+IndexedFaceSet500->setSolid(False);
+IndexedFaceSet500->setConvex(False);
+IndexedFaceSet500->setTexCoordIndex(new int[112]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,11,6,12,-1,13,14,15,-1,7,13,16,-1,14,3,17,-1,18,19,20,-1,4,21,22,-1,21,18,23,-1,24,25,26,-1,19,24,27,-1,25,0,28,-1,1,29,2,-1,4,22,5,-1,7,16,8,-1,11,12,9,-1,6,8,12,-1,14,17,15,-1,13,15,16,-1,3,5,17,-1,19,27,20,-1,21,23,22,-1,18,20,23,-1,25,28,26,-1,24,26,27,-1,0,2,28,-1});
+IndexedFaceSet500->setCoordIndex(new int[112]{28,2,29,-1,16,4,17,-1,10,6,11,-1,0,1,8,-1,8,10,9,-1,14,12,15,-1,6,14,7,-1,12,16,13,-1,22,18,23,-1,4,20,5,-1,20,22,21,-1,26,24,27,-1,18,26,19,-1,24,28,25,-1,2,3,29,-1,4,5,17,-1,6,7,11,-1,8,9,0,-1,10,11,9,-1,12,13,15,-1,14,15,7,-1,16,17,13,-1,18,19,23,-1,20,21,5,-1,22,23,21,-1,24,25,27,-1,26,27,19,-1,28,29,25,-1});
+CTextureCoordinate* TextureCoordinate501 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate501->setPoint(new float[60]{1,0.940408,1,1,0,0.940408,1,0.460352,1,0.534763,0,0.460352,1,0.160163,1,0.235981,0,0.160163,0,0,1,0,1,0.082137,0,0.082137,1,0.310856,1,0.385568,0,0.310856,0,0.235981,0,0.385568,1,0.679128,1,0.748057,0,0.679128,1,0.60791,0,0.534763,0,0.60791,1,0.814574,1,0.878677,0,0.814574,0,0.748057,0,0.878677,0,1});
+IndexedFaceSet500->setTexCoord(*TextureCoordinate501);
+
+CCoordinate* Coordinate502 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate502->setDEF("nurbsToPoly277GeoPoints");
+Coordinate502->setPoint(new float[90]{141.607,12.222,158.893,142.21,14.678,154.963,70.349,12.18,111.135,66.334,14.382,112.693,96.354,12.606,148.061,94.314,14.121,151.738,121.921,13.77,154.858,120.988,13.054,158.937,135.414,14.405,155.11,134.773,12.472,159.112,128.65,14.096,155.125,127.893,12.755,159.18,108.689,13.125,152.902,107.266,13.644,156.902,115.25,13.441,154.167,114.092,13.355,158.231,102.339,12.84,150.91,100.618,13.905,154.784,81.686,12.222,134.938,78.687,14.459,137.722,90.878,12.429,144.363,88.512,14.283,147.777,85.979,12.304,139.944,83.291,14.393,143.054,74.893,12.158,123.618,71.334,14.478,125.749,77.996,12.176,129.463,74.705,14.485,131.915,72.354,12.161,117.49,68.554,14.442,119.321});
+IndexedFaceSet500->setCoord(*Coordinate502);
+
+Shape496->setGeometry(IndexedFaceSet500);
+
+Transform495->addChildren(*Shape496);
+
+Transform486->addChildren(*Transform495);
+
+CTransform* Transform503 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform503->setDEF("l_14");
+CShape* Shape504 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance505 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture506 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture506->setUSE("_18");
+Appearance505->setTexture(*ImageTexture506);
+
+CTextureTransform* TextureTransform507 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform507->setUSE("_19");
+Appearance505->setTextureTransform(*TextureTransform507);
+
+Shape504->setAppearance(*Appearance505);
+
+CIndexedFaceSet* IndexedFaceSet508 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet508->setDEF("nurbsToPoly276_0Geo");
+IndexedFaceSet508->setSolid(False);
+IndexedFaceSet508->setConvex(False);
+IndexedFaceSet508->setTexCoordIndex(new int[336]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,13,9,15,-1,16,17,18,-1,19,14,17,-1,11,6,15,-1,14,15,8,-1,17,8,20,-1,21,22,23,-1,24,25,26,-1,10,24,27,-1,26,21,27,-1,11,27,23,-1,6,23,28,-1,29,30,31,-1,25,29,32,-1,31,3,32,-1,26,32,5,-1,21,5,33,-1,34,35,36,-1,37,38,39,-1,30,40,41,-1,40,37,42,-1,3,43,44,-1,31,41,43,-1,39,34,42,-1,41,42,36,-1,43,36,45,-1,46,47,48,-1,49,50,51,-1,38,49,52,-1,51,46,52,-1,39,52,48,-1,34,48,53,-1,54,55,56,-1,50,54,57,-1,56,0,57,-1,51,57,2,-1,46,2,58,-1,1,58,2,-1,4,33,5,-1,7,20,8,-1,11,15,9,-1,14,19,12,-1,15,14,13,-1,18,59,16,-1,17,16,19,-1,6,8,15,-1,8,17,14,-1,20,18,17,-1,22,28,23,-1,26,27,24,-1,27,11,10,-1,21,23,27,-1,23,6,11,-1,28,7,6,-1,31,32,29,-1,32,26,25,-1,3,5,32,-1,5,21,26,-1,33,22,21,-1,35,45,36,-1,39,42,37,-1,41,31,30,-1,42,41,40,-1,44,4,3,-1,43,3,31,-1,34,36,42,-1,36,43,41,-1,45,44,43,-1,47,53,48,-1,51,52,49,-1,52,39,38,-1,46,48,52,-1,48,34,39,-1,53,35,34,-1,56,57,54,-1,57,51,50,-1,0,2,57,-1,2,46,51,-1,58,47,46,-1});
+IndexedFaceSet508->setCoordIndex(new int[336]{57,2,58,-1,31,5,32,-1,17,7,18,-1,12,6,8,-1,0,10,11,-1,10,12,13,-1,15,16,14,-1,9,11,16,-1,8,17,13,-1,11,13,18,-1,16,18,19,-1,25,21,26,-1,23,20,22,-1,6,23,24,-1,22,25,24,-1,8,24,26,-1,17,26,27,-1,29,4,28,-1,20,29,30,-1,28,31,30,-1,22,30,32,-1,25,32,33,-1,43,35,44,-1,39,34,36,-1,4,37,38,-1,37,39,40,-1,31,42,41,-1,28,38,42,-1,36,43,40,-1,38,40,44,-1,42,44,45,-1,51,47,52,-1,49,46,48,-1,34,49,50,-1,48,51,50,-1,36,50,52,-1,43,52,53,-1,55,1,54,-1,46,55,56,-1,54,57,56,-1,48,56,58,-1,51,58,59,-1,2,59,58,-1,5,33,32,-1,7,19,18,-1,8,13,12,-1,11,9,0,-1,13,11,10,-1,14,3,15,-1,16,15,9,-1,17,18,13,-1,18,16,11,-1,19,14,16,-1,21,27,26,-1,22,24,23,-1,24,8,6,-1,25,26,24,-1,26,17,8,-1,27,7,17,-1,28,30,29,-1,30,22,20,-1,31,32,30,-1,32,25,22,-1,33,21,25,-1,35,45,44,-1,36,40,39,-1,38,28,4,-1,40,38,37,-1,41,5,31,-1,42,31,28,-1,43,44,40,-1,44,42,38,-1,45,41,42,-1,47,53,52,-1,48,50,49,-1,50,36,34,-1,51,52,50,-1,52,43,36,-1,53,35,43,-1,54,56,55,-1,56,48,46,-1,57,58,56,-1,58,51,48,-1,59,47,51,-1});
+CTextureCoordinate* TextureCoordinate509 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate509->setPoint(new float[120]{1,0.5,1,1,0.940082,0.5,0.525204,0.5,0.525204,1,0.450469,0.5,0.229262,0.5,0.229262,1,0.155238,0.5,0.155238,0,0.229262,0,0.229262,0,0,0,0.079385,0,0.079385,0,0.155238,0,0,0.5,0.079385,0.5,0.079385,1,0,0,0.155238,1,0.376243,0.5,0.376243,1,0.302653,0.5,0.302653,0,0.376243,0,0.376243,0,0.302653,0,0.302653,1,0.450469,0,0.525204,0,0.525204,0,0.450469,0,0.450469,1,0.743634,0.5,0.743634,1,0.67269,0.5,0.67269,0,0.743634,0,0.743634,0,0.59962,0,0.59962,0,0.67269,0,0.59962,0.5,0.59962,1,0.67269,1,0.877471,0.5,0.877471,1,0.811979,0.5,0.811979,0,0.877471,0,0.877471,0,0.811979,0,0.811979,1,0.940082,0,1,0,1,0,0.940082,0,0.940082,1,0,1});
+IndexedFaceSet508->setTexCoord(*TextureCoordinate509);
+
+CCoordinate* Coordinate510 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate510->setDEF("nurbsToPoly276GeoPoints");
+Coordinate510->setPoint(new float[180]{142.21,14.678,154.963,70.349,12.18,111.135,72.342,14.188,110.914,142.053,17.595,155.36,97.1,12.633,148.479,97.321,14.702,146.947,122.52,13.799,154.897,122.344,16.353,154.257,122.52,13.799,154.897,142.21,14.678,154.963,135.648,14.415,155.106,135.648,14.415,155.106,129.083,14.117,155.131,129.083,14.117,155.131,135.484,17.224,155.183,142.238,16.178,154.539,135.678,15.799,154.547,122.586,14.909,154.047,129.125,15.368,154.425,128.907,16.802,154.851,109.499,13.163,153.097,109.41,15.454,151.836,109.499,13.163,153.097,115.978,13.477,154.268,115.978,13.477,154.268,109.669,13.991,152.014,116.085,14.443,153.288,115.826,15.897,153.291,97.1,12.633,148.479,103.161,12.875,151.22,103.161,12.875,151.22,97.48,13.224,147.335,103.42,13.575,150.078,103.191,15.046,149.763,81.947,12.227,135.281,83.035,14.14,134.18,81.947,12.227,135.281,91.476,12.446,144.825,91.476,12.446,144.825,86.404,12.314,140.376,86.404,12.314,140.376,91.956,14.439,143.351,92.007,12.955,143.742,82.811,12.644,134.438,87.099,12.765,139.399,87.183,14.254,139.058,74.947,12.158,123.733,76.584,14.082,123.117,74.947,12.158,123.733,78.131,12.177,129.688,78.131,12.177,129.688,76.109,12.567,123.177,79.152,12.582,128.99,79.511,14.086,128.831,70.349,12.18,111.135,72.367,12.161,117.523,72.367,12.161,117.523,71.718,12.639,110.819,73.646,12.588,117.098,74.211,14.119,117.125});
+IndexedFaceSet508->setCoord(*Coordinate510);
+
+Shape504->setGeometry(IndexedFaceSet508);
+
+Transform503->addChildren(*Shape504);
+
+Transform486->addChildren(*Transform503);
+
+LOD485->addChildren(*Transform486);
+
+Transform484->addChildren(*LOD485);
+
+group->addChildren(*Transform484);
+
+CTransform* Transform511 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform511->setDEF("s19LOD");
+CLOD* LOD512 = (CLOD *)(m_pScene.createNode("LOD"));
+CTransform* Transform513 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform513->setDEF("med_12");
+CTransform* Transform514 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform514->setDEF("l_15");
+CShape* Shape515 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance516 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture517 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture517->setUSE("_18");
+Appearance516->setTexture(*ImageTexture517);
+
+CTextureTransform* TextureTransform518 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform518->setDEF("_21");
+TextureTransform518->setScale(new float[2]{4,1});
+Appearance516->setTextureTransform(*TextureTransform518);
+
+Shape515->setAppearance(*Appearance516);
+
+CIndexedFaceSet* IndexedFaceSet519 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet519->setDEF("nurbsToPoly278_0Geo");
+IndexedFaceSet519->setSolid(False);
+IndexedFaceSet519->setConvex(False);
+IndexedFaceSet519->setTexCoordIndex(new int[336]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,13,9,15,-1,16,17,18,-1,19,14,17,-1,11,6,15,-1,14,15,8,-1,17,8,20,-1,21,22,23,-1,24,25,26,-1,10,24,27,-1,26,21,27,-1,11,27,23,-1,6,23,28,-1,29,30,31,-1,25,29,32,-1,31,3,32,-1,26,32,5,-1,21,5,33,-1,34,35,36,-1,37,38,39,-1,30,40,41,-1,40,37,42,-1,3,43,44,-1,31,41,43,-1,39,34,42,-1,41,42,36,-1,43,36,45,-1,46,47,48,-1,49,50,51,-1,38,49,52,-1,51,46,52,-1,39,52,48,-1,34,48,53,-1,54,55,56,-1,50,54,57,-1,56,0,57,-1,51,57,2,-1,46,2,58,-1,1,58,2,-1,4,33,5,-1,7,20,8,-1,11,15,9,-1,14,19,12,-1,15,14,13,-1,18,59,16,-1,17,16,19,-1,6,8,15,-1,8,17,14,-1,20,18,17,-1,22,28,23,-1,26,27,24,-1,27,11,10,-1,21,23,27,-1,23,6,11,-1,28,7,6,-1,31,32,29,-1,32,26,25,-1,3,5,32,-1,5,21,26,-1,33,22,21,-1,35,45,36,-1,39,42,37,-1,41,31,30,-1,42,41,40,-1,44,4,3,-1,43,3,31,-1,34,36,42,-1,36,43,41,-1,45,44,43,-1,47,53,48,-1,51,52,49,-1,52,39,38,-1,46,48,52,-1,48,34,39,-1,53,35,34,-1,56,57,54,-1,57,51,50,-1,0,2,57,-1,2,46,51,-1,58,47,46,-1});
+IndexedFaceSet519->setCoordIndex(new int[336]{57,2,58,-1,31,5,32,-1,17,7,18,-1,12,6,8,-1,0,10,11,-1,10,12,13,-1,15,16,14,-1,9,11,16,-1,8,17,13,-1,11,13,18,-1,16,18,19,-1,25,21,26,-1,23,20,22,-1,6,23,24,-1,22,25,24,-1,8,24,26,-1,17,26,27,-1,29,4,28,-1,20,29,30,-1,28,31,30,-1,22,30,32,-1,25,32,33,-1,43,35,44,-1,39,34,36,-1,4,37,38,-1,37,39,40,-1,31,42,41,-1,28,38,42,-1,36,43,40,-1,38,40,44,-1,42,44,45,-1,51,47,52,-1,49,46,48,-1,34,49,50,-1,48,51,50,-1,36,50,52,-1,43,52,53,-1,55,1,54,-1,46,55,56,-1,54,57,56,-1,48,56,58,-1,51,58,59,-1,2,59,58,-1,5,33,32,-1,7,19,18,-1,8,13,12,-1,11,9,0,-1,13,11,10,-1,14,3,15,-1,16,15,9,-1,17,18,13,-1,18,16,11,-1,19,14,16,-1,21,27,26,-1,22,24,23,-1,24,8,6,-1,25,26,24,-1,26,17,8,-1,27,7,17,-1,28,30,29,-1,30,22,20,-1,31,32,30,-1,32,25,22,-1,33,21,25,-1,35,45,44,-1,36,40,39,-1,38,28,4,-1,40,38,37,-1,41,5,31,-1,42,31,28,-1,43,44,40,-1,44,42,38,-1,45,41,42,-1,47,53,52,-1,48,50,49,-1,50,36,34,-1,51,52,50,-1,52,43,36,-1,53,35,43,-1,54,56,55,-1,56,48,46,-1,57,58,56,-1,58,51,48,-1,59,47,51,-1});
+CTextureCoordinate* TextureCoordinate520 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate520->setPoint(new float[120]{1,0.501333,1,1,0.898812,0.501333,0.402917,0.501333,0.402917,1,0.342878,0.501333,0.17214,0.501333,0.17214,1,0.115769,0.501333,0.115769,0,0.17214,0,0.17214,0,0,0,0.058575,0,0.058575,0,0.115769,0,0,0.501333,0.058575,0.501333,0.058575,1,0,0,0.115769,1,0.284968,0.501333,0.284968,1,0.228329,0.501333,0.228329,0,0.284968,0,0.284968,0,0.228329,0,0.228329,1,0.342878,0,0.402917,0,0.402917,0,0.342878,0,0.342878,1,0.613648,0.501333,0.613648,1,0.53613,0.501333,0.53613,0,0.613648,0,0.613648,0,0.466636,0,0.466636,0,0.53613,0,0.466636,0.501333,0.466636,1,0.53613,1,0.796599,0.501333,0.796599,1,0.700497,0.501333,0.700497,0,0.796599,0,0.796599,0,0.700497,0,0.700497,1,0.898812,0,1,0,1,0,0.898812,0,0.898812,1,0,1});
+IndexedFaceSet519->setTexCoord(*TextureCoordinate520);
+
+CCoordinate* Coordinate521 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate521->setDEF("nurbsToPoly278GeoPoints");
+Coordinate521->setPoint(new float[180]{66.334,14.382,112.693,66.366,14.764,15.247,66.672,17.694,14.719,66.384,17.445,113.225,60.967,13.776,63.677,60.627,16.872,63.837,62.394,14.107,91.85,62.344,17.195,92.343,62.394,14.107,91.85,66.334,14.382,112.693,64.611,14.301,105.821,64.611,14.301,105.821,63.326,14.207,98.858,63.326,14.207,98.858,64.659,17.374,106.366,65.763,15.905,113.131,64.012,15.811,106.228,61.713,15.582,92.176,62.689,15.7,99.228,63.338,17.288,99.39,61.322,13.915,77.772,61.117,17.012,78.132,61.322,13.915,77.772,61.745,14.008,84.815,61.745,14.008,84.815,60.55,15.352,77.994,61.018,15.464,85.092,61.619,17.101,85.251,60.967,13.776,63.677,61.077,13.835,70.719,61.077,13.835,70.719,60.126,15.182,63.772,60.266,15.255,70.881,60.797,16.933,70.987,60.99,13.866,42.583,60.739,16.928,42.322,60.99,13.866,42.583,60.941,13.749,56.631,60.941,13.749,56.631,60.942,13.774,49.599,60.942,13.774,49.599,60.573,16.84,56.666,60.088,15.146,56.651,60.196,15.273,42.427,60.102,15.17,49.537,60.599,16.853,49.493,62.015,14.26,28.609,62.106,17.264,28.067,62.015,14.26,28.609,61.252,14.031,35.575,61.252,14.031,35.575,61.405,15.723,28.262,60.539,15.46,35.321,61.157,17.067,35.158,66.366,14.764,15.247,63.64,14.523,21.777,63.64,14.523,21.777,65.933,16.299,14.805,63.135,16.024,21.361,63.891,17.489,21.185});
+IndexedFaceSet519->setCoord(*Coordinate521);
+
+Shape515->setGeometry(IndexedFaceSet519);
+
+Transform514->addChildren(*Shape515);
+
+Transform513->addChildren(*Transform514);
+
+CTransform* Transform522 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform522->setDEF("f_17");
+CShape* Shape523 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance524 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture525 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture525->setUSE("_20");
+Appearance524->setTexture(*ImageTexture525);
+
+CTextureTransform* TextureTransform526 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+Appearance524->setTextureTransform(*TextureTransform526);
+
+Shape523->setAppearance(*Appearance524);
+
+CIndexedFaceSet* IndexedFaceSet527 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet527->setDEF("nurbsToPoly280_0Geo");
+IndexedFaceSet527->setSolid(False);
+IndexedFaceSet527->setConvex(False);
+IndexedFaceSet527->setTexCoordIndex(new int[112]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,11,6,12,-1,13,14,15,-1,7,13,16,-1,14,3,17,-1,18,19,20,-1,4,21,22,-1,21,18,23,-1,24,25,26,-1,19,24,27,-1,25,0,28,-1,1,29,2,-1,4,22,5,-1,7,16,8,-1,11,12,9,-1,6,8,12,-1,14,17,15,-1,13,15,16,-1,3,5,17,-1,19,27,20,-1,21,23,22,-1,18,20,23,-1,25,28,26,-1,24,26,27,-1,0,2,28,-1});
+IndexedFaceSet527->setCoordIndex(new int[112]{28,2,29,-1,16,4,17,-1,10,6,11,-1,0,1,8,-1,8,10,9,-1,14,12,15,-1,6,14,7,-1,12,16,13,-1,22,18,23,-1,4,20,5,-1,20,22,21,-1,26,24,27,-1,18,26,19,-1,24,28,25,-1,2,3,29,-1,4,5,17,-1,6,7,11,-1,8,9,0,-1,10,11,9,-1,12,13,15,-1,14,15,7,-1,16,17,13,-1,18,19,23,-1,20,21,5,-1,22,23,21,-1,24,25,27,-1,26,27,19,-1,28,29,25,-1});
+CTextureCoordinate* TextureCoordinate528 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate528->setPoint(new float[60]{1,0.897735,1,1,0,0.897735,1,0.341032,1,0.400681,0,0.341032,1,0.115329,1,0.171402,0,0.115329,0,0,1,0,1,0.058385,0,0.058385,1,0.227252,1,0.283525,0,0.227252,0,0.171402,0,0.283525,1,0.533075,1,0.610431,0,0.533075,1,0.463972,0,0.400681,0,0.463972,1,0.697417,1,0.794261,0,0.697417,0,0.610431,0,0.794261,0,1});
+IndexedFaceSet527->setTexCoord(*TextureCoordinate528);
+
+CCoordinate* Coordinate529 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate529->setDEF("nurbsToPoly280GeoPoints");
+Coordinate529->setPoint(new float[90]{66.334,14.382,112.693,70.349,12.18,111.135,70.124,12.123,16.85,66.366,14.764,15.247,65.779,12.456,63.706,60.969,13.778,63.933,66.902,12.295,91.037,62.405,14.108,91.942,68.817,12.212,104.528,64.616,14.301,105.844,67.697,12.251,97.812,63.335,14.207,98.912,66.03,12.384,77.393,61.33,13.917,77.95,66.365,12.34,84.224,61.755,14.01,84.95,65.85,12.424,70.549,61.083,13.837,70.941,65.719,12.448,43.213,60.985,13.861,42.859,65.766,12.476,56.86,60.941,13.75,56.915,65.745,12.476,50.028,60.942,13.772,49.893,66.381,12.307,29.68,61.988,14.254,28.771,65.839,12.391,36.421,61.237,14.024,35.811,67.722,12.21,23.094,63.618,14.52,21.847});
+IndexedFaceSet527->setCoord(*Coordinate529);
+
+Shape523->setGeometry(IndexedFaceSet527);
+
+Transform522->addChildren(*Shape523);
+
+Transform513->addChildren(*Transform522);
+
+CTransform* Transform530 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform530->setDEF("r_15");
+CShape* Shape531 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance532 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture533 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture533->setUSE("_18");
+Appearance532->setTexture(*ImageTexture533);
+
+CTextureTransform* TextureTransform534 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform534->setUSE("_21");
+Appearance532->setTextureTransform(*TextureTransform534);
+
+Shape531->setAppearance(*Appearance532);
+
+CIndexedFaceSet* IndexedFaceSet535 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet535->setDEF("nurbsToPoly279_0Geo");
+IndexedFaceSet535->setSolid(False);
+IndexedFaceSet535->setConvex(False);
+IndexedFaceSet535->setTexCoordIndex(new int[336]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,13,9,15,-1,16,17,18,-1,19,14,17,-1,11,6,15,-1,14,15,8,-1,17,8,20,-1,21,22,23,-1,24,25,26,-1,10,24,27,-1,26,21,27,-1,11,27,23,-1,6,23,28,-1,29,30,31,-1,25,29,32,-1,31,3,32,-1,26,32,5,-1,21,5,33,-1,34,35,36,-1,37,38,39,-1,30,40,41,-1,40,37,42,-1,3,43,44,-1,31,41,43,-1,39,34,42,-1,41,42,36,-1,43,36,45,-1,46,47,48,-1,49,50,51,-1,38,49,52,-1,51,46,52,-1,39,52,48,-1,34,48,53,-1,54,55,56,-1,50,54,57,-1,56,0,57,-1,51,57,2,-1,46,2,58,-1,1,58,2,-1,4,33,5,-1,7,20,8,-1,11,15,9,-1,14,19,12,-1,15,14,13,-1,18,59,16,-1,17,16,19,-1,6,8,15,-1,8,17,14,-1,20,18,17,-1,22,28,23,-1,26,27,24,-1,27,11,10,-1,21,23,27,-1,23,6,11,-1,28,7,6,-1,31,32,29,-1,32,26,25,-1,3,5,32,-1,5,21,26,-1,33,22,21,-1,35,45,36,-1,39,42,37,-1,41,31,30,-1,42,41,40,-1,44,4,3,-1,43,3,31,-1,34,36,42,-1,36,43,41,-1,45,44,43,-1,47,53,48,-1,51,52,49,-1,52,39,38,-1,46,48,52,-1,48,34,39,-1,53,35,34,-1,56,57,54,-1,57,51,50,-1,0,2,57,-1,2,46,51,-1,58,47,46,-1});
+IndexedFaceSet535->setCoordIndex(new int[336]{57,2,58,-1,31,5,32,-1,17,7,18,-1,12,6,8,-1,0,10,11,-1,10,12,13,-1,15,16,14,-1,9,11,16,-1,8,17,13,-1,11,13,18,-1,16,18,19,-1,25,21,26,-1,23,20,22,-1,6,23,24,-1,22,25,24,-1,8,24,26,-1,17,26,27,-1,29,4,28,-1,20,29,30,-1,28,31,30,-1,22,30,32,-1,25,32,33,-1,43,35,44,-1,39,34,36,-1,4,37,38,-1,37,39,40,-1,31,42,41,-1,28,38,42,-1,36,43,40,-1,38,40,44,-1,42,44,45,-1,51,47,52,-1,49,46,48,-1,34,49,50,-1,48,51,50,-1,36,50,52,-1,43,52,53,-1,55,1,54,-1,46,55,56,-1,54,57,56,-1,48,56,58,-1,51,58,59,-1,2,59,58,-1,5,33,32,-1,7,19,18,-1,8,13,12,-1,11,9,0,-1,13,11,10,-1,14,3,15,-1,16,15,9,-1,17,18,13,-1,18,16,11,-1,19,14,16,-1,21,27,26,-1,22,24,23,-1,24,8,6,-1,25,26,24,-1,26,17,8,-1,27,7,17,-1,28,30,29,-1,30,22,20,-1,31,32,30,-1,32,25,22,-1,33,21,25,-1,35,45,44,-1,36,40,39,-1,38,28,4,-1,40,38,37,-1,41,5,31,-1,42,31,28,-1,43,44,40,-1,44,42,38,-1,45,41,42,-1,47,53,52,-1,48,50,49,-1,50,36,34,-1,51,52,50,-1,52,43,36,-1,53,35,43,-1,54,56,55,-1,56,48,46,-1,57,58,56,-1,58,51,48,-1,59,47,51,-1});
+CTextureCoordinate* TextureCoordinate536 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate536->setPoint(new float[120]{1,0.5,1,1,0.894241,0.5,0.399377,0.5,0.399377,1,0.340402,0.5,0.172084,0.5,0.172084,1,0.116113,0.5,0.116113,0,0.172084,0,0.172084,0,0,0,0.058979,0,0.058979,0,0.116113,0,0,0.5,0.058979,0.5,0.058979,1,0,0,0.116113,1,0.283467,0.5,0.283467,1,0.227637,0.5,0.227637,0,0.283467,0,0.283467,0,0.227637,0,0.227637,1,0.340402,0,0.399377,0,0.399377,0,0.340402,0,0.340402,1,0.606344,0.5,0.606344,1,0.529971,0.5,0.529971,0,0.606344,0,0.606344,0,0.461845,0,0.461845,0,0.529971,0,0.461845,0.5,0.461845,1,0.529971,1,0.789202,0.5,0.789202,1,0.692441,0.5,0.692441,0,0.789202,0,0.789202,0,0.692441,0,0.692441,1,0.894241,0,1,0,1,0,0.894241,0,0.894241,1,0,1});
+IndexedFaceSet535->setTexCoord(*TextureCoordinate536);
+
+CCoordinate* Coordinate537 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate537->setDEF("nurbsToPoly279GeoPoints");
+Coordinate537->setPoint(new float[180]{70.349,12.18,111.135,70.124,12.123,16.85,72.249,13.784,17.098,72.342,14.188,110.914,65.78,12.455,63.852,67.769,14.921,63.907,66.894,12.295,90.954,69.021,14.517,91.012,66.894,12.295,90.954,70.349,12.18,111.135,68.804,12.212,104.459,68.804,12.212,104.459,67.684,12.251,97.719,67.684,12.251,97.719,70.887,14.285,104.371,71.718,12.639,110.819,70.236,12.713,104.231,68.387,12.895,90.844,69.155,12.801,97.558,69.807,14.397,97.721,66.03,12.384,77.4,68.101,14.748,77.494,66.03,12.384,77.4,66.362,12.34,84.177,66.362,12.34,84.177,67.531,13.08,77.355,67.863,12.99,84.105,68.468,14.636,84.265,65.78,12.455,63.852,65.851,12.423,70.623,65.851,12.423,70.623,67.264,13.222,63.839,67.345,13.16,70.597,67.88,14.846,70.705,65.719,12.45,43.554,67.75,14.844,43.471,65.719,12.45,43.554,65.766,12.476,57.081,65.766,12.476,57.081,65.747,12.476,50.319,65.747,12.476,50.319,67.732,14.96,57.097,67.244,13.257,57.078,67.209,13.177,43.572,67.226,13.248,50.325,67.723,14.941,50.286,66.339,12.312,30.015,68.549,14.394,29.911,66.339,12.312,30.015,65.825,12.395,36.789,65.825,12.395,36.789,67.85,12.84,30.106,67.331,13.04,36.831,67.945,14.66,36.671,70.124,12.123,16.85,67.66,12.213,23.31,67.66,12.213,23.31,71.506,12.382,17.183,69.14,12.602,23.494,69.898,14.078,23.314});
+IndexedFaceSet535->setCoord(*Coordinate537);
+
+Shape531->setGeometry(IndexedFaceSet535);
+
+Transform530->addChildren(*Shape531);
+
+Transform513->addChildren(*Transform530);
+
+LOD512->addChildren(*Transform513);
+
+Transform511->addChildren(*LOD512);
+
+group->addChildren(*Transform511);
+
+CTransform* Transform538 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform538->setDEF("s20LOD");
+CLOD* LOD539 = (CLOD *)(m_pScene.createNode("LOD"));
+CTransform* Transform540 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform540->setDEF("med_13");
+CTransform* Transform541 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform541->setDEF("l_16");
+CShape* Shape542 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance543 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture544 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture544->setUSE("_18");
+Appearance543->setTexture(*ImageTexture544);
+
+CTextureTransform* TextureTransform545 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform545->setDEF("_22");
+TextureTransform545->setScale(new float[2]{4,1});
+Appearance543->setTextureTransform(*TextureTransform545);
+
+Shape542->setAppearance(*Appearance543);
+
+CIndexedFaceSet* IndexedFaceSet546 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet546->setDEF("nurbsToPoly281_0Geo");
+IndexedFaceSet546->setSolid(False);
+IndexedFaceSet546->setConvex(False);
+IndexedFaceSet546->setTexCoordIndex(new int[336]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,13,9,15,-1,16,17,18,-1,19,14,17,-1,11,6,15,-1,14,15,8,-1,17,8,20,-1,21,22,23,-1,24,25,26,-1,10,24,27,-1,26,21,27,-1,11,27,23,-1,6,23,28,-1,29,30,31,-1,25,29,32,-1,31,3,32,-1,26,32,5,-1,21,5,33,-1,34,35,36,-1,37,38,39,-1,30,40,41,-1,40,37,42,-1,3,43,44,-1,31,41,43,-1,39,34,42,-1,41,42,36,-1,43,36,45,-1,46,47,48,-1,49,50,51,-1,38,49,52,-1,51,46,52,-1,39,52,48,-1,34,48,53,-1,54,55,56,-1,50,54,57,-1,56,0,57,-1,51,57,2,-1,46,2,58,-1,1,58,2,-1,4,33,5,-1,7,20,8,-1,11,15,9,-1,14,19,12,-1,15,14,13,-1,18,59,16,-1,17,16,19,-1,6,8,15,-1,8,17,14,-1,20,18,17,-1,22,28,23,-1,26,27,24,-1,27,11,10,-1,21,23,27,-1,23,6,11,-1,28,7,6,-1,31,32,29,-1,32,26,25,-1,3,5,32,-1,5,21,26,-1,33,22,21,-1,35,45,36,-1,39,42,37,-1,41,31,30,-1,42,41,40,-1,44,4,3,-1,43,3,31,-1,34,36,42,-1,36,43,41,-1,45,44,43,-1,47,53,48,-1,51,52,49,-1,52,39,38,-1,46,48,52,-1,48,34,39,-1,53,35,34,-1,56,57,54,-1,57,51,50,-1,0,2,57,-1,2,46,51,-1,58,47,46,-1});
+IndexedFaceSet546->setCoordIndex(new int[336]{57,2,58,-1,31,5,32,-1,17,7,18,-1,12,6,8,-1,0,10,11,-1,10,12,13,-1,15,16,14,-1,9,11,16,-1,8,17,13,-1,11,13,18,-1,16,18,19,-1,25,21,26,-1,23,20,22,-1,6,23,24,-1,22,25,24,-1,8,24,26,-1,17,26,27,-1,29,4,28,-1,20,29,30,-1,28,31,30,-1,22,30,32,-1,25,32,33,-1,43,35,44,-1,39,34,36,-1,4,37,38,-1,37,39,40,-1,31,42,41,-1,28,38,42,-1,36,43,40,-1,38,40,44,-1,42,44,45,-1,51,47,52,-1,49,46,48,-1,34,49,50,-1,48,51,50,-1,36,50,52,-1,43,52,53,-1,55,1,54,-1,46,55,56,-1,54,57,56,-1,48,56,58,-1,51,58,59,-1,2,59,58,-1,5,33,32,-1,7,19,18,-1,8,13,12,-1,11,9,0,-1,13,11,10,-1,14,3,15,-1,16,15,9,-1,17,18,13,-1,18,16,11,-1,19,14,16,-1,21,27,26,-1,22,24,23,-1,24,8,6,-1,25,26,24,-1,26,17,8,-1,27,7,17,-1,28,30,29,-1,30,22,20,-1,31,32,30,-1,32,25,22,-1,33,21,25,-1,35,45,44,-1,36,40,39,-1,38,28,4,-1,40,38,37,-1,41,5,31,-1,42,31,28,-1,43,44,40,-1,44,42,38,-1,45,41,42,-1,47,53,52,-1,48,50,49,-1,50,36,34,-1,51,52,50,-1,52,43,36,-1,53,35,43,-1,54,56,55,-1,56,48,46,-1,57,58,56,-1,58,51,48,-1,59,47,51,-1});
+CTextureCoordinate* TextureCoordinate547 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate547->setPoint(new float[120]{1,0.501333,1,1,0.936223,0.501333,0.53762,0.501333,0.53762,1,0.466442,0.501333,0.245016,0.501333,0.245016,1,0.167267,0.501333,0.167267,0,0.245016,0,0.245016,0,0,0,0.086057,0,0.086057,0,0.167267,0,0,0.501333,0.086057,0.501333,0.086057,1,0,0,0.167267,1,0.394083,0.501333,0.394083,1,0.320405,0.501333,0.320405,0,0.394083,0,0.394083,0,0.320405,0,0.320405,1,0.466442,0,0.53762,0,0.53762,0,0.466442,0,0.466442,1,0.742299,0.501333,0.742299,1,0.675596,0.501333,0.675596,0,0.742299,0,0.742299,0,0.6074,0,0.6074,0,0.675596,0,0.6074,0.501333,0.6074,1,0.675596,1,0.872261,0.501333,0.872261,1,0.807748,0.501333,0.807748,0,0.872261,0,0.872261,0,0.807748,0,0.807748,1,0.936223,0,1,0,1,0,0.936223,0,0.936223,1,0,1});
+IndexedFaceSet546->setTexCoord(*TextureCoordinate547);
+
+CCoordinate* Coordinate548 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate548->setDEF("nurbsToPoly281GeoPoints");
+Coordinate548->setPoint(new float[180]{66.366,14.764,15.247,145.117,13.235,-17.271,144.931,15.993,-18.291,66.672,17.694,14.719,100.529,14.849,-13.483,99.919,17.71,-13,78.319,15.1,-0.204,78.243,17.962,-0.15,78.319,15.1,-0.204,66.366,14.764,15.247,69.732,14.928,9.677,69.732,14.928,9.677,73.759,15.039,4.511,73.759,15.039,4.511,69.97,17.83,9.308,65.933,16.299,14.805,69.321,16.484,9.25,77.884,16.673,-0.555,73.343,16.608,4.119,73.857,17.918,4.348,88.749,15.075,-8.09,88.33,17.922,-7.688,88.749,15.075,-8.09,83.336,15.112,-4.424,83.336,15.112,-4.424,88.276,16.634,-8.391,82.88,16.682,-4.742,83.08,17.963,-4.174,100.529,14.849,-13.483,94.501,14.988,-11.134,94.501,14.988,-11.134,100.067,16.365,-13.831,94.023,16.529,-11.442,93.958,17.838,-10.647,119.449,14.214,-16.982,118.926,17.112,-16.954,119.449,14.214,-16.982,106.746,14.665,-15.163,106.746,14.665,-15.163,113.07,14.45,-16.29,113.07,14.45,-16.29,106.126,17.542,-14.77,106.318,16.149,-15.582,119.123,15.609,-17.603,112.689,15.894,-16.802,112.483,17.34,-16.055,132.268,13.718,-17.458,131.915,16.588,-17.933,132.268,13.718,-17.458,125.854,13.968,-17.342,125.854,13.968,-17.342,132.058,14.988,-18.318,125.585,15.305,-18.08,125.411,16.86,-17.554,145.117,13.235,-17.271,138.69,13.471,-17.411,138.69,13.471,-17.411,145.008,14.336,-18.363,138.533,14.663,-18.39,138.425,16.298,-18.158});
+IndexedFaceSet546->setCoord(*Coordinate548);
+
+Shape542->setGeometry(IndexedFaceSet546);
+
+Transform541->addChildren(*Shape542);
+
+Transform540->addChildren(*Transform541);
+
+CTransform* Transform549 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform549->setDEF("r_16");
+CShape* Shape550 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance551 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture552 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture552->setUSE("_18");
+Appearance551->setTexture(*ImageTexture552);
+
+CTextureTransform* TextureTransform553 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform553->setUSE("_22");
+Appearance551->setTextureTransform(*TextureTransform553);
+
+Shape550->setAppearance(*Appearance551);
+
+CIndexedFaceSet* IndexedFaceSet554 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet554->setDEF("nurbsToPoly283_0Geo");
+IndexedFaceSet554->setSolid(False);
+IndexedFaceSet554->setConvex(False);
+IndexedFaceSet554->setTexCoordIndex(new int[336]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,13,9,15,-1,16,17,18,-1,19,14,17,-1,11,6,15,-1,14,15,8,-1,17,8,20,-1,21,22,23,-1,24,25,26,-1,10,24,27,-1,26,21,27,-1,11,27,23,-1,6,23,28,-1,29,30,31,-1,25,29,32,-1,31,3,32,-1,26,32,5,-1,21,5,33,-1,34,35,36,-1,37,38,39,-1,30,40,41,-1,40,37,42,-1,3,43,44,-1,31,41,43,-1,39,34,42,-1,41,42,36,-1,43,36,45,-1,46,47,48,-1,49,50,51,-1,38,49,52,-1,51,46,52,-1,39,52,48,-1,34,48,53,-1,54,55,56,-1,50,54,57,-1,56,0,57,-1,51,57,2,-1,46,2,58,-1,1,58,2,-1,4,33,5,-1,7,20,8,-1,11,15,9,-1,14,19,12,-1,15,14,13,-1,18,59,16,-1,17,16,19,-1,6,8,15,-1,8,17,14,-1,20,18,17,-1,22,28,23,-1,26,27,24,-1,27,11,10,-1,21,23,27,-1,23,6,11,-1,28,7,6,-1,31,32,29,-1,32,26,25,-1,3,5,32,-1,5,21,26,-1,33,22,21,-1,35,45,36,-1,39,42,37,-1,41,31,30,-1,42,41,40,-1,44,4,3,-1,43,3,31,-1,34,36,42,-1,36,43,41,-1,45,44,43,-1,47,53,48,-1,51,52,49,-1,52,39,38,-1,46,48,52,-1,48,34,39,-1,53,35,34,-1,56,57,54,-1,57,51,50,-1,0,2,57,-1,2,46,51,-1,58,47,46,-1});
+IndexedFaceSet554->setCoordIndex(new int[336]{57,2,58,-1,31,5,32,-1,17,7,18,-1,12,6,8,-1,0,10,11,-1,10,12,13,-1,15,16,14,-1,9,11,16,-1,8,17,13,-1,11,13,18,-1,16,18,19,-1,25,21,26,-1,23,20,22,-1,6,23,24,-1,22,25,24,-1,8,24,26,-1,17,26,27,-1,29,4,28,-1,20,29,30,-1,28,31,30,-1,22,30,32,-1,25,32,33,-1,43,35,44,-1,39,34,36,-1,4,37,38,-1,37,39,40,-1,31,42,41,-1,28,38,42,-1,36,43,40,-1,38,40,44,-1,42,44,45,-1,51,47,52,-1,49,46,48,-1,34,49,50,-1,48,51,50,-1,36,50,52,-1,43,52,53,-1,55,1,54,-1,46,55,56,-1,54,57,56,-1,48,56,58,-1,51,58,59,-1,2,59,58,-1,5,33,32,-1,7,19,18,-1,8,13,12,-1,11,9,0,-1,13,11,10,-1,14,3,15,-1,16,15,9,-1,17,18,13,-1,18,16,11,-1,19,14,16,-1,21,27,26,-1,22,24,23,-1,24,8,6,-1,25,26,24,-1,26,17,8,-1,27,7,17,-1,28,30,29,-1,30,22,20,-1,31,32,30,-1,32,25,22,-1,33,21,25,-1,35,45,44,-1,36,40,39,-1,38,28,4,-1,40,38,37,-1,41,5,31,-1,42,31,28,-1,43,44,40,-1,44,42,38,-1,45,41,42,-1,47,53,52,-1,48,50,49,-1,50,36,34,-1,51,52,50,-1,52,43,36,-1,53,35,43,-1,54,56,55,-1,56,48,46,-1,57,58,56,-1,58,51,48,-1,59,47,51,-1});
+CTextureCoordinate* TextureCoordinate555 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate555->setPoint(new float[120]{1,0.5,1,1,0.939038,0.5,0.550295,0.5,0.550295,1,0.478743,0.5,0.252448,0.5,0.252448,1,0.172339,0.5,0.172339,0,0.252448,0,0.252448,0,0,0,0.08865,0,0.08865,0,0.172339,0,0,0.5,0.08865,0.5,0.08865,1,0,0,0.172339,1,0.405274,0.5,0.405274,1,0.329924,0.5,0.329924,0,0.405274,0,0.405274,0,0.329924,0,0.329924,1,0.478743,0,0.550295,0,0.550295,0,0.478743,0,0.478743,1,0.751858,0.5,0.751858,1,0.686755,0.5,0.686755,0,0.751858,0,0.751858,0,0.619648,0,0.619648,0,0.686755,0,0.619648,0.5,0.619648,1,0.686755,1,0.877621,0.5,0.877621,1,0.815355,0.5,0.815355,0,0.877621,0,0.877621,0,0.815355,0,0.815355,1,0.939038,0,1,0,1,0,0.939038,0,0.939038,1,0,1});
+IndexedFaceSet554->setTexCoord(*TextureCoordinate555);
+
+CCoordinate* Coordinate556 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate556->setDEF("nurbsToPoly283GeoPoints");
+Coordinate556->setPoint(new float[180]{70.124,12.123,16.85,145.368,13.085,-12.56,145.303,15.779,-11.304,72.249,13.784,17.098,103.108,12.164,-10.136,103.202,13.752,-7.873,81.509,12.021,1.927,82.732,13.399,3.241,81.509,12.021,1.927,70.124,12.123,16.85,73.264,12.067,11.441,73.264,12.067,11.441,77.103,12.034,6.446,77.103,12.034,6.446,75.152,13.59,12.011,71.506,12.382,17.183,74.504,12.239,11.948,82.387,12.105,2.817,78.169,12.148,7.145,78.676,13.464,7.386,91.668,12.055,-5.442,92.221,13.454,-3.493,91.668,12.055,-5.442,86.39,12.029,-2.059,86.39,12.029,-2.059,92.186,12.158,-4.217,87.081,12.108,-0.989,87.263,13.396,-0.399,103.108,12.164,-10.136,97.268,12.1,-8.153,97.268,12.1,-8.153,103.361,12.392,-8.708,97.638,12.253,-6.805,97.555,13.573,-5.996,121.176,12.456,-12.727,121.048,14.53,-10.638,121.176,12.456,-12.727,109.085,12.245,-11.466,109.085,12.245,-11.466,115.121,12.342,-12.287,115.121,12.342,-12.287,109.056,13.98,-9.192,109.253,12.57,-9.999,121.244,13.012,-11.274,115.23,12.779,-10.814,115.023,14.243,-10.077,133.283,12.735,-12.869,133.168,15.146,-11.146,133.283,12.735,-12.869,127.233,12.587,-12.891,127.233,12.587,-12.891,133.309,13.534,-11.521,127.274,13.264,-11.482,127.102,14.833,-10.969,145.368,13.085,-12.56,139.327,12.9,-12.737,139.327,12.9,-12.737,145.38,14.114,-11.376,139.344,13.817,-11.464,139.236,15.463,-11.238});
+IndexedFaceSet554->setCoord(*Coordinate556);
+
+Shape550->setGeometry(IndexedFaceSet554);
+
+Transform549->addChildren(*Shape550);
+
+Transform540->addChildren(*Transform549);
+
+CTransform* Transform557 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform557->setDEF("f_18");
+CShape* Shape558 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance559 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture560 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture560->setUSE("_20");
+Appearance559->setTexture(*ImageTexture560);
+
+CTextureTransform* TextureTransform561 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+Appearance559->setTextureTransform(*TextureTransform561);
+
+Shape558->setAppearance(*Appearance559);
+
+CIndexedFaceSet* IndexedFaceSet562 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet562->setDEF("nurbsToPoly282_0Geo");
+IndexedFaceSet562->setSolid(False);
+IndexedFaceSet562->setConvex(False);
+IndexedFaceSet562->setTexCoordIndex(new int[112]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,11,6,12,-1,13,14,15,-1,7,13,16,-1,14,3,17,-1,18,19,20,-1,4,21,22,-1,21,18,23,-1,24,25,26,-1,19,24,27,-1,25,0,28,-1,1,29,2,-1,4,22,5,-1,7,16,8,-1,11,12,9,-1,6,8,12,-1,14,17,15,-1,13,15,16,-1,3,5,17,-1,19,27,20,-1,21,23,22,-1,18,20,23,-1,25,28,26,-1,24,26,27,-1,0,2,28,-1});
+IndexedFaceSet562->setCoordIndex(new int[112]{28,2,29,-1,16,4,17,-1,10,6,11,-1,0,1,8,-1,8,10,9,-1,14,12,15,-1,6,14,7,-1,12,16,13,-1,22,18,23,-1,4,20,5,-1,20,22,21,-1,26,24,27,-1,18,26,19,-1,24,28,25,-1,2,3,29,-1,4,5,17,-1,6,7,11,-1,8,9,0,-1,10,11,9,-1,12,13,15,-1,14,15,7,-1,16,17,13,-1,18,19,23,-1,20,21,5,-1,22,23,21,-1,24,25,27,-1,26,27,19,-1,28,29,25,-1});
+CTextureCoordinate* TextureCoordinate563 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate563->setPoint(new float[60]{1,0.936766,1,1,0,0.936766,1,0.466472,1,0.537945,0,0.466472,1,0.167605,1,0.245165,0,0.167605,0,0,1,0,1,0.086435,0,0.086435,1,0.320378,1,0.393998,0,0.320378,0,0.245165,0,0.393998,1,0.676555,1,0.7434,0,0.676555,1,0.608079,0,0.537945,0,0.608079,1,0.808836,1,0.873162,0,0.808836,0,0.7434,0,0.873162,0,1});
+IndexedFaceSet562->setTexCoord(*TextureCoordinate563);
+
+CCoordinate* Coordinate564 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate564->setDEF("nurbsToPoly282GeoPoints");
+Coordinate564->setPoint(new float[90]{66.366,14.764,15.247,70.124,12.123,16.85,145.368,13.085,-12.56,145.117,13.235,-17.271,102.075,12.152,-9.841,100.557,14.848,-13.492,81.081,12.022,2.323,78.328,15.1,-0.212,73.173,12.068,11.576,69.748,14.929,9.653,76.865,12.035,6.723,73.777,15.039,4.49,90.847,12.05,-4.972,88.742,15.075,-8.086,85.757,12.027,-1.593,83.334,15.112,-4.423,96.304,12.092,-7.745,94.503,14.988,-11.135,120.379,12.441,-12.687,119.556,14.21,-16.99,108.068,12.23,-11.281,106.808,14.663,-15.176,114.189,12.326,-12.188,113.161,14.446,-16.303,132.847,12.724,-12.875,132.358,13.714,-17.458,126.605,12.573,-12.884,125.961,13.963,-17.345,139.103,12.894,-12.743,138.744,13.469,-17.41});
+IndexedFaceSet562->setCoord(*Coordinate564);
+
+Shape558->setGeometry(IndexedFaceSet562);
+
+Transform557->addChildren(*Shape558);
+
+Transform540->addChildren(*Transform557);
+
+LOD539->addChildren(*Transform540);
+
+Transform538->addChildren(*LOD539);
+
+group->addChildren(*Transform538);
+
+CTransform* Transform565 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform565->setDEF("s21LOD");
+CLOD* LOD566 = (CLOD *)(m_pScene.createNode("LOD"));
+CTransform* Transform567 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform567->setDEF("med_14");
+CTransform* Transform568 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform568->setDEF("l_17");
+CShape* Shape569 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance570 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture571 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture571->setUSE("_18");
+Appearance570->setTexture(*ImageTexture571);
+
+CTextureTransform* TextureTransform572 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform572->setDEF("_23");
+TextureTransform572->setScale(new float[2]{4,1});
+Appearance570->setTextureTransform(*TextureTransform572);
+
+Shape569->setAppearance(*Appearance570);
+
+CIndexedFaceSet* IndexedFaceSet573 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet573->setDEF("nurbsToPoly284_0Geo");
+IndexedFaceSet573->setSolid(False);
+IndexedFaceSet573->setConvex(False);
+IndexedFaceSet573->setTexCoordIndex(new int[336]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,13,9,15,-1,16,17,18,-1,19,14,17,-1,11,6,15,-1,14,15,8,-1,17,8,20,-1,21,22,23,-1,24,25,26,-1,10,24,27,-1,26,21,27,-1,11,27,23,-1,6,23,28,-1,29,30,31,-1,25,29,32,-1,31,3,32,-1,26,32,5,-1,21,5,33,-1,34,35,36,-1,37,38,39,-1,30,40,41,-1,40,37,42,-1,3,43,44,-1,31,41,43,-1,39,34,42,-1,41,42,36,-1,43,36,45,-1,46,47,48,-1,49,50,51,-1,38,49,52,-1,51,46,52,-1,39,52,48,-1,34,48,53,-1,54,55,56,-1,50,54,57,-1,56,0,57,-1,51,57,2,-1,46,2,58,-1,1,58,2,-1,4,33,5,-1,7,20,8,-1,11,15,9,-1,14,19,12,-1,15,14,13,-1,18,59,16,-1,17,16,19,-1,6,8,15,-1,8,17,14,-1,20,18,17,-1,22,28,23,-1,26,27,24,-1,27,11,10,-1,21,23,27,-1,23,6,11,-1,28,7,6,-1,31,32,29,-1,32,26,25,-1,3,5,32,-1,5,21,26,-1,33,22,21,-1,35,45,36,-1,39,42,37,-1,41,31,30,-1,42,41,40,-1,44,4,3,-1,43,3,31,-1,34,36,42,-1,36,43,41,-1,45,44,43,-1,47,53,48,-1,51,52,49,-1,52,39,38,-1,46,48,52,-1,48,34,39,-1,53,35,34,-1,56,57,54,-1,57,51,50,-1,0,2,57,-1,2,46,51,-1,58,47,46,-1});
+IndexedFaceSet573->setCoordIndex(new int[336]{57,2,58,-1,31,5,32,-1,17,7,18,-1,12,6,8,-1,0,10,11,-1,10,12,13,-1,15,16,14,-1,9,11,16,-1,8,17,13,-1,11,13,18,-1,16,18,19,-1,25,21,26,-1,23,20,22,-1,6,23,24,-1,22,25,24,-1,8,24,26,-1,17,26,27,-1,29,4,28,-1,20,29,30,-1,28,31,30,-1,22,30,32,-1,25,32,33,-1,43,35,44,-1,39,34,36,-1,4,37,38,-1,37,39,40,-1,31,42,41,-1,28,38,42,-1,36,43,40,-1,38,40,44,-1,42,44,45,-1,51,47,52,-1,49,46,48,-1,34,49,50,-1,48,51,50,-1,36,50,52,-1,43,52,53,-1,55,1,54,-1,46,55,56,-1,54,57,56,-1,48,56,58,-1,51,58,59,-1,2,59,58,-1,5,33,32,-1,7,19,18,-1,8,13,12,-1,11,9,0,-1,13,11,10,-1,14,3,15,-1,16,15,9,-1,17,18,13,-1,18,16,11,-1,19,14,16,-1,21,27,26,-1,22,24,23,-1,24,8,6,-1,25,26,24,-1,26,17,8,-1,27,7,17,-1,28,30,29,-1,30,22,20,-1,31,32,30,-1,32,25,22,-1,33,21,25,-1,35,45,44,-1,36,40,39,-1,38,28,4,-1,40,38,37,-1,41,5,31,-1,42,31,28,-1,43,44,40,-1,44,42,38,-1,45,41,42,-1,47,53,52,-1,48,50,49,-1,50,36,34,-1,51,52,50,-1,52,43,36,-1,53,35,43,-1,54,56,55,-1,56,48,46,-1,57,58,56,-1,58,51,48,-1,59,47,51,-1});
+CTextureCoordinate* TextureCoordinate574 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate574->setPoint(new float[120]{1,0.501333,1,1,0.896973,0.501333,0.378331,0.501333,0.378331,1,0.318758,0.501333,0.154147,0.501333,0.154147,1,0.102091,0.501333,0.102091,0,0.154147,0,0.154147,0,0,0,0.050806,0,0.050806,0,0.102091,0,0,0.501333,0.050806,0.501333,0.050806,1,0,0,0.102091,1,0.261984,0.501333,0.261984,1,0.207307,0.501333,0.207307,0,0.261984,0,0.261984,0,0.207307,0,0.207307,1,0.318758,0,0.378331,0,0.378331,0,0.318758,0,0.318758,1,0.597579,0.501333,0.597579,1,0.513793,0.501333,0.513793,0,0.597579,0,0.597579,0,0.442379,0,0.442379,0,0.513793,0,0.442379,0.501333,0.442379,1,0.513793,1,0.797576,0.501333,0.797576,1,0.696536,0.501333,0.696536,0,0.797576,0,0.797576,0,0.696536,0,0.696536,1,0.896973,0,1,0,1,0,0.896973,0,0.896973,1,0,1});
+IndexedFaceSet573->setTexCoord(*TextureCoordinate574);
+
+CCoordinate* Coordinate575 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate575->setDEF("nurbsToPoly284GeoPoints");
+Coordinate575->setPoint(new float[180]{145.117,13.235,-17.271,227.796,11.239,-45.77,226.352,12.977,-44.545,144.931,15.993,-18.291,199.227,11.919,-15.568,198.726,13.568,-18.086,168.165,12.518,-16.561,168.102,14.829,-18.457,168.165,12.518,-16.561,145.117,13.235,-17.271,152.783,12.973,-17.058,152.783,12.973,-17.058,160.465,12.734,-16.819,160.465,12.734,-16.819,152.668,15.611,-18.392,145.008,14.336,-18.363,152.716,13.951,-18.272,168.128,13.217,-17.969,160.422,13.576,-18.139,160.393,15.22,-18.447,183.629,12.161,-16.028,183.461,14.105,-18.349,183.629,12.161,-16.028,175.885,12.326,-16.294,175.885,12.326,-16.294,183.53,12.58,-17.555,175.83,12.882,-17.772,175.792,14.453,-18.424,199.227,11.919,-15.568,191.411,12.024,-15.777,191.411,12.024,-15.777,198.932,12.125,-17.111,191.233,12.323,-17.326,191.11,13.803,-18.232,222.65,11.796,-18.141,221.181,13.294,-20.123,222.65,11.796,-18.141,207.089,11.847,-15.577,207.089,11.847,-15.577,214.962,11.806,-16.178,214.962,11.806,-16.178,206.32,13.406,-18.065,206.636,11.987,-17.071,221.784,11.89,-19.303,214.316,11.909,-17.56,213.865,13.314,-18.511,232.066,11.809,-30.479,230.111,13.383,-30.921,232.066,11.809,-30.479,229.016,11.816,-22.944,229.016,11.816,-22.944,230.915,11.95,-30.702,227.951,11.926,-23.706,227.209,13.34,-24.268,227.796,11.239,-45.77,231.679,11.663,-38.645,231.679,11.663,-38.645,226.977,11.482,-44.974,230.597,11.847,-38.319,229.825,13.306,-38.187});
+IndexedFaceSet573->setCoord(*Coordinate575);
+
+Shape569->setGeometry(IndexedFaceSet573);
+
+Transform568->addChildren(*Shape569);
+
+Transform567->addChildren(*Transform568);
+
+CTransform* Transform576 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform576->setDEF("f_19");
+CShape* Shape577 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance578 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture579 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture579->setUSE("_20");
+Appearance578->setTexture(*ImageTexture579);
+
+CTextureTransform* TextureTransform580 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+Appearance578->setTextureTransform(*TextureTransform580);
+
+Shape577->setAppearance(*Appearance578);
+
+CIndexedFaceSet* IndexedFaceSet581 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet581->setDEF("nurbsToPoly286_0Geo");
+IndexedFaceSet581->setSolid(False);
+IndexedFaceSet581->setConvex(False);
+IndexedFaceSet581->setTexCoordIndex(new int[112]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,11,6,12,-1,13,14,15,-1,7,13,16,-1,14,3,17,-1,18,19,20,-1,4,21,22,-1,21,18,23,-1,24,25,26,-1,19,24,27,-1,25,0,28,-1,1,29,2,-1,4,22,5,-1,7,16,8,-1,11,12,9,-1,6,8,12,-1,14,17,15,-1,13,15,16,-1,3,5,17,-1,19,27,20,-1,21,23,22,-1,18,20,23,-1,25,28,26,-1,24,26,27,-1,0,2,28,-1});
+IndexedFaceSet581->setCoordIndex(new int[112]{28,2,29,-1,16,4,17,-1,10,6,11,-1,0,1,8,-1,8,10,9,-1,14,12,15,-1,6,14,7,-1,12,16,13,-1,22,18,23,-1,4,20,5,-1,20,22,21,-1,26,24,27,-1,18,26,19,-1,24,28,25,-1,2,3,29,-1,4,5,17,-1,6,7,11,-1,8,9,0,-1,10,11,9,-1,12,13,15,-1,14,15,7,-1,16,17,13,-1,18,19,23,-1,20,21,5,-1,22,23,21,-1,24,25,27,-1,26,27,19,-1,28,29,25,-1});
+CTextureCoordinate* TextureCoordinate582 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate582->setPoint(new float[60]{1,0.905418,1,1,0,0.905418,1,0.336964,1,0.39898,0,0.336964,1,0.10889,1,0.164066,0,0.10889,0,0,1,0,1,0.0543,0,0.0543,1,0.220192,1,0.277662,0,0.220192,0,0.164066,0,0.277662,1,0.54031,1,0.627081,0,0.54031,1,0.46567,0,0.39898,0,0.46567,1,0.722158,1,0.814339,0,0.722158,0,0.627081,0,0.814339,0,1});
+IndexedFaceSet581->setTexCoord(*TextureCoordinate582);
+
+CCoordinate* Coordinate583 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate583->setDEF("nurbsToPoly286GeoPoints");
+Coordinate583->setPoint(new float[90]{145.117,13.235,-17.271,145.368,13.085,-12.56,229.521,14.211,-47.924,227.796,11.239,-45.77,202.616,14.96,-11.823,201.832,11.892,-15.533,169.706,13.971,-12.002,169.618,12.48,-16.511,153.458,13.362,-12.34,153.309,12.956,-17.043,161.57,13.662,-12.154,161.477,12.704,-16.786,186.076,14.552,-11.805,185.807,12.119,-15.956,177.873,14.273,-11.885,177.73,12.284,-16.23,194.32,14.787,-11.766,193.841,11.988,-15.703,227.021,15.141,-16.879,224.884,11.8,-19.256,210.95,15.074,-12.258,209.772,11.829,-15.689,219.237,15.133,-13.598,217.594,11.799,-16.628,234.852,15.014,-31.746,232.235,11.797,-31.859,232.635,15.113,-23.323,230.121,11.821,-24.668,233.883,14.753,-40.419,231.494,11.64,-39.31});
+IndexedFaceSet581->setCoord(*Coordinate583);
+
+Shape577->setGeometry(IndexedFaceSet581);
+
+Transform576->addChildren(*Shape577);
+
+Transform567->addChildren(*Transform576);
+
+CTransform* Transform584 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform584->setDEF("r_17");
+CShape* Shape585 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance586 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture587 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture587->setUSE("_18");
+Appearance586->setTexture(*ImageTexture587);
+
+CTextureTransform* TextureTransform588 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform588->setUSE("_23");
+Appearance586->setTextureTransform(*TextureTransform588);
+
+Shape585->setAppearance(*Appearance586);
+
+CIndexedFaceSet* IndexedFaceSet589 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet589->setDEF("nurbsToPoly285_0Geo");
+IndexedFaceSet589->setSolid(False);
+IndexedFaceSet589->setConvex(False);
+IndexedFaceSet589->setTexCoordIndex(new int[336]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,13,9,15,-1,16,17,18,-1,19,14,17,-1,11,6,15,-1,14,15,8,-1,17,8,20,-1,21,22,23,-1,24,25,26,-1,10,24,27,-1,26,21,27,-1,11,27,23,-1,6,23,28,-1,29,30,31,-1,25,29,32,-1,31,3,32,-1,26,32,5,-1,21,5,33,-1,34,35,36,-1,37,38,39,-1,30,40,41,-1,40,37,42,-1,3,43,44,-1,31,41,43,-1,39,34,42,-1,41,42,36,-1,43,36,45,-1,46,47,48,-1,49,50,51,-1,38,49,52,-1,51,46,52,-1,39,52,48,-1,34,48,53,-1,54,55,56,-1,50,54,57,-1,56,0,57,-1,51,57,2,-1,46,2,58,-1,1,58,2,-1,4,33,5,-1,7,20,8,-1,11,15,9,-1,14,19,12,-1,15,14,13,-1,18,59,16,-1,17,16,19,-1,6,8,15,-1,8,17,14,-1,20,18,17,-1,22,28,23,-1,26,27,24,-1,27,11,10,-1,21,23,27,-1,23,6,11,-1,28,7,6,-1,31,32,29,-1,32,26,25,-1,3,5,32,-1,5,21,26,-1,33,22,21,-1,35,45,36,-1,39,42,37,-1,41,31,30,-1,42,41,40,-1,44,4,3,-1,43,3,31,-1,34,36,42,-1,36,43,41,-1,45,44,43,-1,47,53,48,-1,51,52,49,-1,52,39,38,-1,46,48,52,-1,48,34,39,-1,53,35,34,-1,56,57,54,-1,57,51,50,-1,0,2,57,-1,2,46,51,-1,58,47,46,-1});
+IndexedFaceSet589->setCoordIndex(new int[336]{57,2,58,-1,31,5,32,-1,17,7,18,-1,12,6,8,-1,0,10,11,-1,10,12,13,-1,15,16,14,-1,9,11,16,-1,8,17,13,-1,11,13,18,-1,16,18,19,-1,25,21,26,-1,23,20,22,-1,6,23,24,-1,22,25,24,-1,8,24,26,-1,17,26,27,-1,29,4,28,-1,20,29,30,-1,28,31,30,-1,22,30,32,-1,25,32,33,-1,43,35,44,-1,39,34,36,-1,4,37,38,-1,37,39,40,-1,31,42,41,-1,28,38,42,-1,36,43,40,-1,38,40,44,-1,42,44,45,-1,51,47,52,-1,49,46,48,-1,34,49,50,-1,48,51,50,-1,36,50,52,-1,43,52,53,-1,55,1,54,-1,46,55,56,-1,54,57,56,-1,48,56,58,-1,51,58,59,-1,2,59,58,-1,5,33,32,-1,7,19,18,-1,8,13,12,-1,11,9,0,-1,13,11,10,-1,14,3,15,-1,16,15,9,-1,17,18,13,-1,18,16,11,-1,19,14,16,-1,21,27,26,-1,22,24,23,-1,24,8,6,-1,25,26,24,-1,26,17,8,-1,27,7,17,-1,28,30,29,-1,30,22,20,-1,31,32,30,-1,32,25,22,-1,33,21,25,-1,35,45,44,-1,36,40,39,-1,38,28,4,-1,40,38,37,-1,41,5,31,-1,42,31,28,-1,43,44,40,-1,44,42,38,-1,45,41,42,-1,47,53,52,-1,48,50,49,-1,50,36,34,-1,51,52,50,-1,52,43,36,-1,53,35,43,-1,54,56,55,-1,56,48,46,-1,57,58,56,-1,58,51,48,-1,59,47,51,-1});
+CTextureCoordinate* TextureCoordinate590 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate590->setPoint(new float[120]{1,0.5,1,1,0.909675,0.5,0.410146,0.5,0.410146,1,0.346819,0.5,0.169489,0.5,0.169489,1,0.112615,0.5,0.112615,0,0.169489,0,0.169489,0,0,0,0.056222,0,0.056222,0,0.112615,0,0,0.5,0.056222,0.5,0.056222,1,0,0,0.112615,1,0.286132,0.5,0.286132,1,0.227213,0.5,0.227213,0,0.286132,0,0.286132,0,0.227213,0,0.227213,1,0.346819,0,0.410146,0,0.410146,0,0.346819,0,0.346819,1,0.642509,0.5,0.642509,1,0.554712,0.5,0.554712,0,0.642509,0,0.642509,0,0.478284,0,0.478284,0,0.554712,0,0.478284,0.5,0.478284,1,0.554712,1,0.822509,0.5,0.822509,1,0.734617,0.5,0.734617,0,0.822509,0,0.822509,0,0.734617,0,0.734617,1,0.909675,0,1,0,1,0,0.909675,0,0.909675,1,0,1});
+IndexedFaceSet589->setTexCoord(*TextureCoordinate590);
+
+CCoordinate* Coordinate591 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate591->setDEF("nurbsToPoly285GeoPoints");
+Coordinate591->setPoint(new float[180]{145.368,13.085,-12.56,229.521,14.211,-47.924,228.907,17.393,-47.737,145.303,15.779,-11.304,204.061,14.984,-11.86,203.84,18.091,-12.609,170.5,14.001,-11.989,170.477,17.013,-11.788,170.5,14.001,-11.989,145.368,13.085,-12.56,153.744,13.372,-12.333,153.744,13.372,-12.333,162.121,13.683,-12.143,162.121,13.683,-12.143,153.706,16.211,-11.428,145.38,14.114,-11.376,153.751,14.542,-11.287,170.505,15.403,-11.249,162.126,14.977,-11.248,162.098,16.625,-11.595,187.269,14.59,-11.797,187.192,17.671,-12.197,187.269,14.59,-11.797,178.885,14.31,-11.873,178.885,14.31,-11.873,187.282,16.159,-11.346,178.892,15.804,-11.284,178.845,17.366,-11.995,204.061,14.984,-11.86,195.665,14.82,-11.764,195.665,14.82,-11.764,204.099,16.654,-11.612,195.689,16.448,-11.428,195.529,17.916,-12.378,228.156,15.138,-17.708,227.579,18.263,-18.349,228.156,15.138,-17.708,212.436,15.088,-12.409,212.436,15.088,-12.409,220.681,15.138,-13.997,220.681,15.138,-13.997,212.109,18.202,-13.211,212.494,16.784,-12.225,228.257,16.849,-17.629,220.76,16.847,-13.865,220.23,18.257,-14.767,234.894,14.999,-32.535,234.197,18.146,-32.748,234.894,14.999,-32.535,233.122,15.106,-24.375,233.122,15.106,-24.375,235.007,16.699,-32.618,233.238,16.813,-24.371,232.458,18.241,-24.812,229.521,14.211,-47.924,233.761,14.735,-40.804,233.761,14.735,-40.804,229.535,15.89,-48.168,233.845,16.427,-40.974,233.08,17.899,-40.8});
+IndexedFaceSet589->setCoord(*Coordinate591);
+
+Shape585->setGeometry(IndexedFaceSet589);
+
+Transform584->addChildren(*Shape585);
+
+Transform567->addChildren(*Transform584);
+
+LOD566->addChildren(*Transform567);
+
+Transform565->addChildren(*LOD566);
+
+group->addChildren(*Transform565);
+
+CTransform* Transform592 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform592->setDEF("s22LOD");
+CLOD* LOD593 = (CLOD *)(m_pScene.createNode("LOD"));
+CTransform* Transform594 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform594->setDEF("med_15");
+CTransform* Transform595 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform595->setDEF("l_18");
+CShape* Shape596 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance597 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture598 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture598->setUSE("_18");
+Appearance597->setTexture(*ImageTexture598);
+
+CTextureTransform* TextureTransform599 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform599->setDEF("_24");
+TextureTransform599->setScale(new float[2]{5,1});
+Appearance597->setTextureTransform(*TextureTransform599);
+
+Shape596->setAppearance(*Appearance597);
+
+CIndexedFaceSet* IndexedFaceSet600 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet600->setDEF("nurbsToPoly288_0Geo");
+IndexedFaceSet600->setSolid(False);
+IndexedFaceSet600->setConvex(False);
+IndexedFaceSet600->setTexCoordIndex(new int[336]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,13,9,15,-1,16,17,18,-1,19,14,17,-1,11,6,15,-1,14,15,8,-1,17,8,20,-1,21,22,23,-1,24,25,26,-1,10,24,27,-1,26,21,27,-1,11,27,23,-1,6,23,28,-1,29,30,31,-1,25,29,32,-1,31,3,32,-1,26,32,5,-1,21,5,33,-1,34,35,36,-1,37,38,39,-1,30,40,41,-1,40,37,42,-1,3,43,44,-1,31,41,43,-1,39,34,42,-1,41,42,36,-1,43,36,45,-1,46,47,48,-1,49,50,51,-1,38,49,52,-1,51,46,52,-1,39,52,48,-1,34,48,53,-1,54,55,56,-1,50,54,57,-1,56,0,57,-1,51,57,2,-1,46,2,58,-1,1,58,2,-1,4,33,5,-1,7,20,8,-1,11,15,9,-1,14,19,12,-1,15,14,13,-1,18,59,16,-1,17,16,19,-1,6,8,15,-1,8,17,14,-1,20,18,17,-1,22,28,23,-1,26,27,24,-1,27,11,10,-1,21,23,27,-1,23,6,11,-1,28,7,6,-1,31,32,29,-1,32,26,25,-1,3,5,32,-1,5,21,26,-1,33,22,21,-1,35,45,36,-1,39,42,37,-1,41,31,30,-1,42,41,40,-1,44,4,3,-1,43,3,31,-1,34,36,42,-1,36,43,41,-1,45,44,43,-1,47,53,48,-1,51,52,49,-1,52,39,38,-1,46,48,52,-1,48,34,39,-1,53,35,34,-1,56,57,54,-1,57,51,50,-1,0,2,57,-1,2,46,51,-1,58,47,46,-1});
+IndexedFaceSet600->setCoordIndex(new int[336]{57,2,58,-1,31,5,32,-1,17,7,18,-1,12,6,8,-1,0,10,11,-1,10,12,13,-1,15,16,14,-1,9,11,16,-1,8,17,13,-1,11,13,18,-1,16,18,19,-1,25,21,26,-1,23,20,22,-1,6,23,24,-1,22,25,24,-1,8,24,26,-1,17,26,27,-1,29,4,28,-1,20,29,30,-1,28,31,30,-1,22,30,32,-1,25,32,33,-1,43,35,44,-1,39,34,36,-1,4,37,38,-1,37,39,40,-1,31,42,41,-1,28,38,42,-1,36,43,40,-1,38,40,44,-1,42,44,45,-1,51,47,52,-1,49,46,48,-1,34,49,50,-1,48,51,50,-1,36,50,52,-1,43,52,53,-1,55,1,54,-1,46,55,56,-1,54,57,56,-1,48,56,58,-1,51,58,59,-1,2,59,58,-1,5,33,32,-1,7,19,18,-1,8,13,12,-1,11,9,0,-1,13,11,10,-1,14,3,15,-1,16,15,9,-1,17,18,13,-1,18,16,11,-1,19,14,16,-1,21,27,26,-1,22,24,23,-1,24,8,6,-1,25,26,24,-1,26,17,8,-1,27,7,17,-1,28,30,29,-1,30,22,20,-1,31,32,30,-1,32,25,22,-1,33,21,25,-1,35,45,44,-1,36,40,39,-1,38,28,4,-1,40,38,37,-1,41,5,31,-1,42,31,28,-1,43,44,40,-1,44,42,38,-1,45,41,42,-1,47,53,52,-1,48,50,49,-1,50,36,34,-1,51,52,50,-1,52,43,36,-1,53,35,43,-1,54,56,55,-1,56,48,46,-1,57,58,56,-1,58,51,48,-1,59,47,51,-1});
+CTextureCoordinate* TextureCoordinate601 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate601->setPoint(new float[120]{1,0.5,1,1,0.925399,0.5,0.443177,0.5,0.443177,1,0.377261,0.5,0.180121,0.5,0.180121,1,0.120705,0.5,0.120705,0,0.180121,0,0.180121,0,0,0,0.061433,0,0.061433,0,0.120705,0,0,0.5,0.061433,0.5,0.061433,1,0,0,0.120705,1,0.310695,0.5,0.310695,1,0.243165,0.5,0.243165,0,0.310695,0,0.310695,0,0.243165,0,0.243165,1,0.377261,0,0.443177,0,0.443177,0,0.377261,0,0.377261,1,0.676149,0.5,0.676149,1,0.592595,0.5,0.592595,0,0.676149,0,0.676149,0,0.513785,0,0.513785,0,0.592595,0,0.513785,0.5,0.513785,1,0.592595,1,0.844517,0.5,0.844517,1,0.760754,0.5,0.760754,0,0.844517,0,0.844517,0,0.760754,0,0.760754,1,0.925399,0,1,0,1,0,0.925399,0,0.925399,1,0,1});
+IndexedFaceSet600->setTexCoord(*TextureCoordinate601);
+
+CCoordinate* Coordinate602 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate602->setDEF("nurbsToPoly288GeoPoints");
+Coordinate602->setPoint(new float[180]{229.521,14.211,-47.924,233.195,5.151,-24.681,233.875,8.27,-24.79,228.907,17.393,-47.737,196.063,9.402,-30.168,196.022,12.657,-29.795,209.035,11.801,-52.791,208.746,15.033,-52.423,209.035,11.801,-52.791,229.521,14.211,-47.924,223.398,13.498,-51.838,223.398,13.498,-51.838,216.285,12.668,-53.38,216.285,12.668,-53.38,222.882,16.698,-51.548,229.535,15.89,-48.168,223.316,15.163,-52.123,208.725,13.431,-53.065,216.09,14.316,-53.676,215.882,15.884,-53.036,197.733,10.276,-44.408,197.62,13.529,-44.035,197.733,10.276,-44.408,202.393,10.962,-49.904,202.393,10.962,-49.904,197.245,11.863,-44.502,201.977,12.571,-50.115,202.208,14.207,-49.531,196.063,9.402,-30.168,195.783,9.79,-37.43,195.783,9.79,-37.43,195.574,10.943,-29.954,195.27,11.355,-37.373,195.709,13.047,-37.057,209.142,7.82,-14.188,209.357,11.046,-13.832,209.142,7.82,-14.188,198.385,8.984,-23.304,198.385,8.984,-23.304,202.887,8.45,-17.693,202.887,8.45,-17.693,198.394,12.235,-22.93,197.975,10.5,-22.94,209.075,9.271,-13.63,202.621,9.936,-17.207,202.983,11.691,-17.321,223.186,6.436,-14.832,223.669,9.615,-14.613,223.186,6.436,-14.832,216.229,7.136,-13.218,216.229,7.136,-13.218,223.567,7.811,-14.34,216.388,8.55,-12.656,216.58,10.341,-12.908,233.195,5.151,-24.681,229.09,5.759,-18.839,229.09,5.759,-18.839,233.905,6.447,-24.536,229.662,7.094,-18.49,229.687,8.909,-18.76});
+IndexedFaceSet600->setCoord(*Coordinate602);
+
+Shape596->setGeometry(IndexedFaceSet600);
+
+Transform595->addChildren(*Shape596);
+
+Transform594->addChildren(*Transform595);
+
+CTransform* Transform603 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform603->setDEF("r_18");
+CShape* Shape604 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance605 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture606 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture606->setUSE("_18");
+Appearance605->setTexture(*ImageTexture606);
+
+CTextureTransform* TextureTransform607 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform607->setUSE("_24");
+Appearance605->setTextureTransform(*TextureTransform607);
+
+Shape604->setAppearance(*Appearance605);
+
+CIndexedFaceSet* IndexedFaceSet608 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet608->setDEF("nurbsToPoly287_0Geo");
+IndexedFaceSet608->setSolid(False);
+IndexedFaceSet608->setConvex(False);
+IndexedFaceSet608->setTexCoordIndex(new int[336]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,13,9,15,-1,16,17,18,-1,19,14,17,-1,11,6,15,-1,14,15,8,-1,17,8,20,-1,21,22,23,-1,24,25,26,-1,10,24,27,-1,26,21,27,-1,11,27,23,-1,6,23,28,-1,29,30,31,-1,25,29,32,-1,31,3,32,-1,26,32,5,-1,21,5,33,-1,34,35,36,-1,37,38,39,-1,30,40,41,-1,40,37,42,-1,3,43,44,-1,31,41,43,-1,39,34,42,-1,41,42,36,-1,43,36,45,-1,46,47,48,-1,49,50,51,-1,38,49,52,-1,51,46,52,-1,39,52,48,-1,34,48,53,-1,54,55,56,-1,50,54,57,-1,56,0,57,-1,51,57,2,-1,46,2,58,-1,1,58,2,-1,4,33,5,-1,7,20,8,-1,11,15,9,-1,14,19,12,-1,15,14,13,-1,18,59,16,-1,17,16,19,-1,6,8,15,-1,8,17,14,-1,20,18,17,-1,22,28,23,-1,26,27,24,-1,27,11,10,-1,21,23,27,-1,23,6,11,-1,28,7,6,-1,31,32,29,-1,32,26,25,-1,3,5,32,-1,5,21,26,-1,33,22,21,-1,35,45,36,-1,39,42,37,-1,41,31,30,-1,42,41,40,-1,44,4,3,-1,43,3,31,-1,34,36,42,-1,36,43,41,-1,45,44,43,-1,47,53,48,-1,51,52,49,-1,52,39,38,-1,46,48,52,-1,48,34,39,-1,53,35,34,-1,56,57,54,-1,57,51,50,-1,0,2,57,-1,2,46,51,-1,58,47,46,-1});
+IndexedFaceSet608->setCoordIndex(new int[336]{57,2,58,-1,31,5,32,-1,17,7,18,-1,12,6,8,-1,0,10,11,-1,10,12,13,-1,15,16,14,-1,9,11,16,-1,8,17,13,-1,11,13,18,-1,16,18,19,-1,25,21,26,-1,23,20,22,-1,6,23,24,-1,22,25,24,-1,8,24,26,-1,17,26,27,-1,29,4,28,-1,20,29,30,-1,28,31,30,-1,22,30,32,-1,25,32,33,-1,43,35,44,-1,39,34,36,-1,4,37,38,-1,37,39,40,-1,31,42,41,-1,28,38,42,-1,36,43,40,-1,38,40,44,-1,42,44,45,-1,51,47,52,-1,49,46,48,-1,34,49,50,-1,48,51,50,-1,36,50,52,-1,43,52,53,-1,55,1,54,-1,46,55,56,-1,54,57,56,-1,48,56,58,-1,51,58,59,-1,2,59,58,-1,5,33,32,-1,7,19,18,-1,8,13,12,-1,11,9,0,-1,13,11,10,-1,14,3,15,-1,16,15,9,-1,17,18,13,-1,18,16,11,-1,19,14,16,-1,21,27,26,-1,22,24,23,-1,24,8,6,-1,25,26,24,-1,26,17,8,-1,27,7,17,-1,28,30,29,-1,30,22,20,-1,31,32,30,-1,32,25,22,-1,33,21,25,-1,35,45,44,-1,36,40,39,-1,38,28,4,-1,40,38,37,-1,41,5,31,-1,42,31,28,-1,43,44,40,-1,44,42,38,-1,45,41,42,-1,47,53,52,-1,48,50,49,-1,50,36,34,-1,51,52,50,-1,52,43,36,-1,53,35,43,-1,54,56,55,-1,56,48,46,-1,57,58,56,-1,58,51,48,-1,59,47,51,-1});
+CTextureCoordinate* TextureCoordinate609 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate609->setPoint(new float[120]{1,0.501333,1,1,0.924916,0.501333,0.438913,0.501333,0.438913,1,0.373796,0.501333,0.178882,0.501333,0.178882,1,0.119826,0.501333,0.119826,0,0.178882,0,0.178882,0,0,0,0.060869,0,0.060869,0,0.119826,0,0,0.501333,0.060869,0.501333,0.060869,1,0,0,0.119826,1,0.307999,0.501333,0.307999,1,0.241285,0.501333,0.241285,0,0.307999,0,0.307999,0,0.241285,0,0.241285,1,0.373796,0,0.438913,0,0.438913,0,0.373796,0,0.373796,1,0.671502,0.501333,0.671502,1,0.587109,0.501333,0.587109,0,0.671502,0,0.671502,0,0.508544,0,0.508544,0,0.587109,0,0.508544,0.501333,0.508544,1,0.587109,1,0.842928,0.501333,0.842928,1,0.757624,0.501333,0.757624,0,0.842928,0,0.842928,0,0.757624,0,0.757624,1,0.924916,0,1,0,1,0,0.924916,0,0.924916,1,0,1});
+IndexedFaceSet608->setTexCoord(*TextureCoordinate609);
+
+CCoordinate* Coordinate610 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate610->setDEF("nurbsToPoly287GeoPoints");
+Coordinate610->setPoint(new float[180]{227.796,11.239,-45.77,230.181,4.613,-25.95,229.405,7.464,-26.67,226.352,12.977,-44.545,199.209,7.573,-31.021,200.72,9.925,-30.839,210.5,9.308,-49.981,210.847,11.319,-48.244,210.5,9.308,-49.981,227.796,11.239,-45.77,222.645,10.677,-49.115,222.645,10.677,-49.115,216.635,10.007,-50.453,216.635,10.007,-50.453,221.735,12.502,-47.525,226.977,11.482,-44.974,222.168,10.976,-48.096,210.83,9.726,-48.883,216.558,10.364,-49.339,216.348,11.923,-48.702,200.861,8.134,-43.002,202.192,10.332,-41.828,200.861,8.134,-43.002,204.869,8.646,-47.582,204.869,8.646,-47.582,201.822,8.676,-42.298,205.57,9.126,-46.616,205.794,10.752,-46.031,199.209,7.573,-31.021,199.105,7.807,-37.151,199.105,7.807,-37.151,200.274,8.221,-31.008,200.177,8.405,-36.783,200.613,10.087,-36.46,209.853,6.537,-17.139,210.584,9.117,-18.145,209.853,6.537,-17.139,201,7.324,-25.166,201,7.324,-25.166,204.641,6.976,-20.277,204.641,6.976,-20.277,202.377,9.748,-25.473,201.958,8.024,-25.493,210.299,7.353,-17.948,205.387,7.733,-20.893,205.752,9.477,-20.999,221.775,5.53,-17.544,221.634,8.257,-18.658,221.775,5.53,-17.544,215.859,6.042,-16.203,215.859,6.042,-16.203,221.531,6.463,-18.386,215.958,6.917,-17.088,216.152,8.698,-17.338,230.181,4.613,-25.95,226.762,5.041,-20.969,226.762,5.041,-20.969,229.434,5.65,-26.418,226.224,6.028,-21.663,226.249,7.833,-21.931});
+IndexedFaceSet608->setCoord(*Coordinate610);
+
+Shape604->setGeometry(IndexedFaceSet608);
+
+Transform603->addChildren(*Shape604);
+
+Transform594->addChildren(*Transform603);
+
+CTransform* Transform611 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform611->setDEF("f_20");
+CShape* Shape612 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance613 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture614 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture614->setUSE("_20");
+Appearance613->setTexture(*ImageTexture614);
+
+CTextureTransform* TextureTransform615 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+Appearance613->setTextureTransform(*TextureTransform615);
+
+Shape612->setAppearance(*Appearance613);
+
+CIndexedFaceSet* IndexedFaceSet616 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet616->setDEF("MediumStrecke_nurbsToPoly153_0Geo");
+IndexedFaceSet616->setSolid(False);
+IndexedFaceSet616->setConvex(False);
+IndexedFaceSet616->setTexCoordIndex(new int[112]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,11,6,12,-1,13,14,15,-1,7,13,16,-1,14,3,17,-1,18,19,20,-1,4,21,22,-1,21,18,23,-1,24,25,26,-1,19,24,27,-1,25,0,28,-1,1,29,2,-1,4,22,5,-1,7,16,8,-1,11,12,9,-1,6,8,12,-1,14,17,15,-1,13,15,16,-1,3,5,17,-1,19,27,20,-1,21,23,22,-1,18,20,23,-1,25,28,26,-1,24,26,27,-1,0,2,28,-1});
+IndexedFaceSet616->setCoordIndex(new int[112]{28,2,29,-1,16,4,17,-1,10,6,11,-1,0,1,8,-1,8,10,9,-1,14,12,15,-1,6,14,7,-1,12,16,13,-1,22,18,23,-1,4,20,5,-1,20,22,21,-1,26,24,27,-1,18,26,19,-1,24,28,25,-1,2,3,29,-1,4,5,17,-1,6,7,11,-1,8,9,0,-1,10,11,9,-1,12,13,15,-1,14,15,7,-1,16,17,13,-1,18,19,23,-1,20,21,5,-1,22,23,21,-1,24,25,27,-1,26,27,19,-1,28,29,25,-1});
+CTextureCoordinate* TextureCoordinate617 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate617->setPoint(new float[60]{1,0.924259,1,1,0,0.924259,1,0.373112,1,0.438587,0,0.373112,1,0.119199,1,0.177911,0,0.119199,0,0,1,0,1,0.060589,0,0.060589,1,0.240039,1,0.3069,0,0.240039,0,0.177911,0,0.3069,1,0.587031,1,0.671177,0,0.587031,1,0.508447,0,0.438587,0,0.508447,1,0.756946,1,0.84206,0,0.756946,0,0.671177,0,0.84206,0,1});
+IndexedFaceSet616->setTexCoord(*TextureCoordinate617);
+
+CCoordinate* Coordinate618 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate618->setDEF("MediumStrecke_nurbsToPoly153GeoPoints");
+Coordinate618->setPoint(new float[90]{227.796,11.239,-45.77,229.521,14.211,-47.924,233.195,5.151,-24.681,230.181,4.613,-25.95,195.98,9.427,-30.66,199.204,7.574,-31.05,209.295,11.832,-52.85,210.598,9.32,-50.003,223.494,13.509,-51.8,222.672,10.68,-49.104,216.472,12.69,-53.367,216.702,10.015,-50.448,197.92,10.308,-44.771,200.908,8.141,-43.092,202.678,10.999,-50.101,204.966,8.658,-47.648,195.835,9.816,-37.887,199.113,7.81,-37.215,208.741,7.859,-14.326,209.831,6.539,-17.147,198.147,9.018,-23.764,200.996,7.324,-25.173,202.517,8.49,-18.016,204.636,6.977,-20.281,222.99,6.456,-14.748,221.717,5.536,-17.519,215.906,7.167,-13.205,215.811,6.046,-16.202,229.015,5.768,-18.765,226.727,5.045,-20.933});
+IndexedFaceSet616->setCoord(*Coordinate618);
+
+Shape612->setGeometry(IndexedFaceSet616);
+
+Transform611->addChildren(*Shape612);
+
+Transform594->addChildren(*Transform611);
+
+LOD593->addChildren(*Transform594);
+
+Transform592->addChildren(*LOD593);
+
+group->addChildren(*Transform592);
+
+CTransform* Transform619 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform619->setDEF("s23LOD");
+CLOD* LOD620 = (CLOD *)(m_pScene.createNode("LOD"));
+CTransform* Transform621 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform621->setDEF("med_16");
+CTransform* Transform622 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform622->setDEF("f_21");
+CShape* Shape623 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance624 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture625 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture625->setUSE("_20");
+Appearance624->setTexture(*ImageTexture625);
+
+CTextureTransform* TextureTransform626 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+Appearance624->setTextureTransform(*TextureTransform626);
+
+Shape623->setAppearance(*Appearance624);
+
+CIndexedFaceSet* IndexedFaceSet627 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet627->setDEF("nurbsToPoly292_0Geo");
+IndexedFaceSet627->setSolid(False);
+IndexedFaceSet627->setConvex(False);
+IndexedFaceSet627->setTexCoordIndex(new int[120]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,11,6,12,-1,13,14,15,-1,7,13,16,-1,14,3,17,-1,18,19,20,-1,21,22,23,-1,4,21,24,-1,22,18,25,-1,26,27,28,-1,19,26,29,-1,27,0,30,-1,1,31,2,-1,4,24,5,-1,7,16,8,-1,11,12,9,-1,6,8,12,-1,14,17,15,-1,13,15,16,-1,3,5,17,-1,19,29,20,-1,22,25,23,-1,21,23,24,-1,18,20,25,-1,27,30,28,-1,26,28,29,-1,0,2,30,-1});
+IndexedFaceSet627->setCoordIndex(new int[120]{30,2,31,-1,16,4,17,-1,10,6,11,-1,0,1,8,-1,8,10,9,-1,14,12,15,-1,6,14,7,-1,12,16,13,-1,24,18,25,-1,22,20,23,-1,4,22,5,-1,20,24,21,-1,28,26,29,-1,18,28,19,-1,26,30,27,-1,2,3,31,-1,4,5,17,-1,6,7,11,-1,8,9,0,-1,10,11,9,-1,12,13,15,-1,14,15,7,-1,16,17,13,-1,18,19,25,-1,20,21,23,-1,22,23,5,-1,24,25,21,-1,26,27,29,-1,28,29,19,-1,30,31,27,-1});
+CTextureCoordinate* TextureCoordinate628 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate628->setPoint(new float[64]{1,0.969128,1,1,0,0.969128,1,0.517655,1,0.592283,0,0.517655,1,0.115491,1,0.225893,0,0.115491,0,0,1,0,1,0,0,0,1,0.333193,1,0.432355,0,0.333193,0,0.225893,0,0.432355,1,0.797345,1,0.852503,0,0.797345,1,0.663437,1,0.732966,0,0.663437,0,0.592283,0,0.732966,1,0.897996,1,0.936097,0,0.897996,0,0.852503,0,0.936097,0,1});
+IndexedFaceSet627->setTexCoord(*TextureCoordinate628);
+
+CCoordinate* Coordinate629 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate629->setDEF("nurbsToPoly292GeoPoints");
+Coordinate629->setPoint(new float[96]{230.181,4.613,-25.95,233.195,5.151,-24.681,192.727,-0.505,-18.955,197.811,0.505,-18.761,218.01,1.861,-53.376,217.344,2.246,-50.167,235.291,4.195,-37.072,231.847,3.96,-36.44,233.195,5.151,-24.681,230.181,4.613,-25.95,235.116,4.676,-30.734,231.744,4.289,-31.077,229.475,3.068,-48.064,226.923,3.156,-45.722,233.414,3.659,-43.113,230.241,3.584,-41.545,224.106,2.462,-51.46,222.426,2.703,-48.578,196.651,-0.081,-43.165,200.146,0.78,-40.827,205.423,0.711,-52.055,207.013,1.369,-48.833,211.612,1.268,-53.701,212.056,1.793,-50.368,200.266,0.249,-48.343,202.909,1.022,-45.475,193.278,-0.419,-31.195,197.89,0.549,-30.119,194.45,-0.293,-37.312,198.585,0.631,-35.588,192.816,-0.486,-24.991,197.774,0.514,-24.538});
+IndexedFaceSet627->setCoord(*Coordinate629);
+
+Shape623->setGeometry(IndexedFaceSet627);
+
+Transform622->addChildren(*Shape623);
+
+Transform621->addChildren(*Transform622);
+
+CTransform* Transform630 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform630->setDEF("r_19");
+CShape* Shape631 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance632 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture633 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture633->setUSE("_18");
+Appearance632->setTexture(*ImageTexture633);
+
+CTextureTransform* TextureTransform634 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform634->setDEF("_25");
+TextureTransform634->setScale(new float[2]{5,1});
+Appearance632->setTextureTransform(*TextureTransform634);
+
+Shape631->setAppearance(*Appearance632);
+
+CIndexedFaceSet* IndexedFaceSet635 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet635->setDEF("nurbsToPoly291_0Geo");
+IndexedFaceSet635->setSolid(False);
+IndexedFaceSet635->setConvex(False);
+IndexedFaceSet635->setTexCoordIndex(new int[336]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,13,9,15,-1,16,17,18,-1,19,14,17,-1,11,6,15,-1,14,15,8,-1,17,8,20,-1,21,22,23,-1,24,25,26,-1,10,24,27,-1,26,21,27,-1,11,27,23,-1,6,23,28,-1,29,30,31,-1,25,29,32,-1,31,3,32,-1,26,32,5,-1,21,5,33,-1,34,35,36,-1,37,38,39,-1,30,40,41,-1,40,37,42,-1,3,43,44,-1,31,41,43,-1,39,34,42,-1,41,42,36,-1,43,36,45,-1,46,47,48,-1,49,50,51,-1,38,49,52,-1,51,46,52,-1,39,52,48,-1,34,48,53,-1,54,55,56,-1,50,54,57,-1,56,0,57,-1,51,57,2,-1,46,2,58,-1,1,58,2,-1,4,33,5,-1,7,20,8,-1,11,15,9,-1,14,19,12,-1,15,14,13,-1,18,59,16,-1,17,16,19,-1,6,8,15,-1,8,17,14,-1,20,18,17,-1,22,28,23,-1,26,27,24,-1,27,11,10,-1,21,23,27,-1,23,6,11,-1,28,7,6,-1,31,32,29,-1,32,26,25,-1,3,5,32,-1,5,21,26,-1,33,22,21,-1,35,45,36,-1,39,42,37,-1,41,31,30,-1,42,41,40,-1,44,4,3,-1,43,3,31,-1,34,36,42,-1,36,43,41,-1,45,44,43,-1,47,53,48,-1,51,52,49,-1,52,39,38,-1,46,48,52,-1,48,34,39,-1,53,35,34,-1,56,57,54,-1,57,51,50,-1,0,2,57,-1,2,46,51,-1,58,47,46,-1});
+IndexedFaceSet635->setCoordIndex(new int[336]{57,2,58,-1,31,5,32,-1,17,7,18,-1,12,6,8,-1,0,10,11,-1,10,12,13,-1,15,16,14,-1,9,11,16,-1,8,17,13,-1,11,13,18,-1,16,18,19,-1,25,21,26,-1,23,20,22,-1,6,23,24,-1,22,25,24,-1,8,24,26,-1,17,26,27,-1,29,4,28,-1,20,29,30,-1,28,31,30,-1,22,30,32,-1,25,32,33,-1,43,35,44,-1,39,34,36,-1,4,37,38,-1,37,39,40,-1,31,42,41,-1,28,38,42,-1,36,43,40,-1,38,40,44,-1,42,44,45,-1,51,47,52,-1,49,46,48,-1,34,49,50,-1,48,51,50,-1,36,50,52,-1,43,52,53,-1,55,1,54,-1,46,55,56,-1,54,57,56,-1,48,56,58,-1,51,58,59,-1,2,59,58,-1,5,33,32,-1,7,19,18,-1,8,13,12,-1,11,9,0,-1,13,11,10,-1,14,3,15,-1,16,15,9,-1,17,18,13,-1,18,16,11,-1,19,14,16,-1,21,27,26,-1,22,24,23,-1,24,8,6,-1,25,26,24,-1,26,17,8,-1,27,7,17,-1,28,30,29,-1,30,22,20,-1,31,32,30,-1,32,25,22,-1,33,21,25,-1,35,45,44,-1,36,40,39,-1,38,28,4,-1,40,38,37,-1,41,5,31,-1,42,31,28,-1,43,44,40,-1,44,42,38,-1,45,41,42,-1,47,53,52,-1,48,50,49,-1,50,36,34,-1,51,52,50,-1,52,43,36,-1,53,35,43,-1,54,56,55,-1,56,48,46,-1,57,58,56,-1,58,51,48,-1,59,47,51,-1});
+CTextureCoordinate* TextureCoordinate636 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate636->setPoint(new float[120]{1,0.5,1,1,0.966888,0.5,0.657999,0.5,0.657999,1,0.588415,0.5,0.331788,0.5,0.331788,1,0.224957,0.5,0.224957,0,0.331788,0,0.331788,0,0,0,0.114969,0,0.114969,0,0.224957,0,0,0.5,0.114969,0.5,0.114969,1,0,0,0.224957,1,0.514855,0.5,0.514855,1,0.43034,0.5,0.43034,0,0.514855,0,0.514855,0,0.43034,0,0.43034,1,0.588415,0,0.657999,0,0.657999,0,0.588415,0,0.588415,1,0.845932,0.5,0.845932,1,0.789935,0.5,0.789935,0,0.845932,0,0.845932,0,0.725896,0,0.725896,0,0.789935,0,0.725896,0.5,0.725896,1,0.789935,1,0.932642,0.5,0.932642,1,0.892976,0.5,0.892976,0,0.932642,0,0.932642,0,0.892976,0,0.892976,1,0.966888,0,1,0,1,0,0.966888,0,0.966888,1,0,1});
+IndexedFaceSet635->setTexCoord(*TextureCoordinate636);
+
+CCoordinate* Coordinate637 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate637->setDEF("nurbsToPoly291GeoPoints");
+Coordinate637->setPoint(new float[180]{233.195,5.151,-24.681,192.727,-0.505,-18.955,190.906,2.224,-18.971,233.875,8.27,-24.79,212.106,1.313,-53.74,211.664,4.184,-54.78,233.454,3.667,-43.037,234.056,6.692,-43.731,233.454,3.667,-43.037,233.195,5.151,-24.681,235.111,4.678,-30.705,235.111,4.678,-30.705,235.298,4.199,-37.018,235.298,4.199,-37.018,235.828,7.77,-31.006,233.905,6.447,-24.536,235.887,5.942,-30.771,234.157,4.858,-43.537,236.079,5.428,-37.305,235.998,7.26,-37.52,224.313,2.483,-51.365,224.476,5.431,-52.327,224.313,2.483,-51.365,229.579,3.081,-47.972,229.579,3.081,-47.972,224.629,3.598,-52.163,230.12,4.234,-48.648,229.995,6.068,-48.825,212.106,1.313,-53.74,218.348,1.893,-53.311,218.348,1.893,-53.311,211.881,2.357,-54.637,218.405,2.972,-54.182,218.221,4.802,-54.337,197.033,-0.045,-43.888,195.705,2.731,-44.601,197.033,-0.045,-43.888,206.032,0.765,-52.326,206.032,0.765,-52.326,200.816,0.298,-48.891,200.816,0.298,-48.891,205.264,3.6,-53.319,205.515,1.776,-53.191,196.014,0.912,-44.522,200.025,1.28,-49.664,199.742,3.101,-49.77,193.356,-0.41,-31.798,191.685,2.333,-32.109,193.356,-0.41,-31.798,194.653,-0.272,-38.033,194.653,-0.272,-38.033,192.031,0.518,-32.087,193.459,0.668,-38.501,193.129,2.485,-38.552,192.727,-0.505,-18.955,192.833,-0.483,-25.43,192.833,-0.483,-25.43,191.267,0.411,-18.99,191.411,0.436,-25.544,191.054,2.25,-25.538});
+IndexedFaceSet635->setCoord(*Coordinate637);
+
+Shape631->setGeometry(IndexedFaceSet635);
+
+Transform630->addChildren(*Shape631);
+
+Transform621->addChildren(*Transform630);
+
+CTransform* Transform638 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform638->setDEF("l_19");
+CShape* Shape639 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance640 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture641 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture641->setUSE("_18");
+Appearance640->setTexture(*ImageTexture641);
+
+CTextureTransform* TextureTransform642 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform642->setUSE("_25");
+Appearance640->setTextureTransform(*TextureTransform642);
+
+Shape639->setAppearance(*Appearance640);
+
+CIndexedFaceSet* IndexedFaceSet643 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet643->setDEF("nurbsToPoly290_0Geo");
+IndexedFaceSet643->setSolid(False);
+IndexedFaceSet643->setConvex(False);
+IndexedFaceSet643->setTexCoordIndex(new int[336]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,13,9,15,-1,16,17,18,-1,19,14,17,-1,11,6,15,-1,14,15,8,-1,17,8,20,-1,21,22,23,-1,24,25,26,-1,10,24,27,-1,26,21,27,-1,11,27,23,-1,6,23,28,-1,29,30,31,-1,25,29,32,-1,31,3,32,-1,26,32,5,-1,21,5,33,-1,34,35,36,-1,37,38,39,-1,30,40,41,-1,40,37,42,-1,3,43,44,-1,31,41,43,-1,39,34,42,-1,41,42,36,-1,43,36,45,-1,46,47,48,-1,49,50,51,-1,38,49,52,-1,51,46,52,-1,39,52,48,-1,34,48,53,-1,54,55,56,-1,50,54,57,-1,56,0,57,-1,51,57,2,-1,46,2,58,-1,1,58,2,-1,4,33,5,-1,7,20,8,-1,11,15,9,-1,14,19,12,-1,15,14,13,-1,18,59,16,-1,17,16,19,-1,6,8,15,-1,8,17,14,-1,20,18,17,-1,22,28,23,-1,26,27,24,-1,27,11,10,-1,21,23,27,-1,23,6,11,-1,28,7,6,-1,31,32,29,-1,32,26,25,-1,3,5,32,-1,5,21,26,-1,33,22,21,-1,35,45,36,-1,39,42,37,-1,41,31,30,-1,42,41,40,-1,44,4,3,-1,43,3,31,-1,34,36,42,-1,36,43,41,-1,45,44,43,-1,47,53,48,-1,51,52,49,-1,52,39,38,-1,46,48,52,-1,48,34,39,-1,53,35,34,-1,56,57,54,-1,57,51,50,-1,0,2,57,-1,2,46,51,-1,58,47,46,-1});
+IndexedFaceSet643->setCoordIndex(new int[336]{57,2,58,-1,31,5,32,-1,17,7,18,-1,12,6,8,-1,0,10,11,-1,10,12,13,-1,15,16,14,-1,9,11,16,-1,8,17,13,-1,11,13,18,-1,16,18,19,-1,25,21,26,-1,23,20,22,-1,6,23,24,-1,22,25,24,-1,8,24,26,-1,17,26,27,-1,29,4,28,-1,20,29,30,-1,28,31,30,-1,22,30,32,-1,25,32,33,-1,43,35,44,-1,39,34,36,-1,4,37,38,-1,37,39,40,-1,31,42,41,-1,28,38,42,-1,36,43,40,-1,38,40,44,-1,42,44,45,-1,51,47,52,-1,49,46,48,-1,34,49,50,-1,48,51,50,-1,36,50,52,-1,43,52,53,-1,55,1,54,-1,46,55,56,-1,54,57,56,-1,48,56,58,-1,51,58,59,-1,2,59,58,-1,5,33,32,-1,7,19,18,-1,8,13,12,-1,11,9,0,-1,13,11,10,-1,14,3,15,-1,16,15,9,-1,17,18,13,-1,18,16,11,-1,19,14,16,-1,21,27,26,-1,22,24,23,-1,24,8,6,-1,25,26,24,-1,26,17,8,-1,27,7,17,-1,28,30,29,-1,30,22,20,-1,31,32,30,-1,32,25,22,-1,33,21,25,-1,35,45,44,-1,36,40,39,-1,38,28,4,-1,40,38,37,-1,41,5,31,-1,42,31,28,-1,43,44,40,-1,44,42,38,-1,45,41,42,-1,47,53,52,-1,48,50,49,-1,50,36,34,-1,51,52,50,-1,52,43,36,-1,53,35,43,-1,54,56,55,-1,56,48,46,-1,57,58,56,-1,58,51,48,-1,59,47,51,-1});
+CTextureCoordinate* TextureCoordinate644 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate644->setPoint(new float[120]{1,0.501333,1,1,0.971575,0.501333,0.672497,0.501333,0.672497,1,0.599642,0.501333,0.338248,0.501333,0.338248,1,0.229607,0.501333,0.229607,0,0.338248,0,0.338248,0,0,0,0.117548,0,0.117548,0,0.229607,0,0,0.501333,0.117548,0.501333,0.117548,1,0,0,0.229607,1,0.524069,0.501333,0.524069,1,0.438229,0.501333,0.438229,0,0.524069,0,0.524069,0,0.438229,0,0.438229,1,0.599642,0,0.672497,0,0.672497,0,0.599642,0,0.599642,1,0.860542,0.501333,0.860542,1,0.807495,0.501333,0.807495,0,0.860542,0,0.860542,0,0.743433,0,0.743433,0,0.807495,0,0.743433,0.501333,0.743433,1,0.807495,1,0.940097,0.501333,0.940097,1,0.904078,0.501333,0.904078,0,0.940097,0,0.940097,0,0.904078,0,0.904078,1,0.971575,0,1,0,1,0,0.971575,0,0.971575,1,0,1});
+IndexedFaceSet643->setTexCoord(*TextureCoordinate644);
+
+CCoordinate* Coordinate645 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate645->setDEF("nurbsToPoly290GeoPoints");
+Coordinate645->setPoint(new float[180]{230.181,4.613,-25.95,197.811,0.505,-18.761,198.448,3.714,-18.683,229.405,7.464,-26.67,211.381,1.736,-50.275,211.157,4.853,-49.699,230.117,3.564,-41.775,229.188,6.545,-41.701,230.117,3.564,-41.775,230.181,4.613,-25.95,231.76,4.283,-31.175,231.76,4.283,-31.175,231.822,3.948,-36.621,231.822,3.948,-36.621,230.847,7.179,-31.636,229.434,5.65,-26.418,230.906,5.36,-31.403,229.29,4.721,-41.509,230.939,5.065,-36.597,230.858,6.887,-36.809,222.024,2.666,-48.756,221.381,5.721,-48.318,222.024,2.666,-48.756,226.665,3.127,-45.944,226.665,3.127,-45.944,221.537,3.899,-48.156,225.979,4.324,-45.48,225.852,6.148,-45.655,211.381,1.736,-50.275,216.807,2.2,-50.257,216.807,2.2,-50.257,211.38,3.036,-49.56,216.552,3.467,-49.574,216.364,5.287,-49.726,199.818,0.75,-39.998,200.175,3.931,-39.573,199.818,0.75,-39.998,206.297,1.309,-48.424,206.297,1.309,-48.424,202.34,0.973,-44.75,202.34,0.973,-44.75,206.299,4.452,-47.855,206.557,2.639,-47.734,200.489,2.123,-39.502,202.831,2.328,-44.14,202.541,4.138,-44.238,197.854,0.543,-29.484,198.41,3.744,-29.267,197.854,0.543,-29.484,198.434,0.615,-34.783,198.434,0.615,-34.783,198.756,1.939,-29.252,199.238,2.002,-34.417,198.906,3.808,-34.46,197.811,0.505,-18.761,197.777,0.512,-24.097,197.777,0.512,-24.097,198.808,1.91,-18.702,198.75,1.914,-23.99,198.394,3.719,-23.981});
+IndexedFaceSet643->setCoord(*Coordinate645);
+
+Shape639->setGeometry(IndexedFaceSet643);
+
+Transform638->addChildren(*Shape639);
+
+Transform621->addChildren(*Transform638);
+
+LOD620->addChildren(*Transform621);
+
+Transform619->addChildren(*LOD620);
+
+group->addChildren(*Transform619);
+
+CTransform* Transform646 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform646->setDEF("s24LOD");
+CLOD* LOD647 = (CLOD *)(m_pScene.createNode("LOD"));
+CTransform* Transform648 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform648->setDEF("med_17");
+CTransform* Transform649 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform649->setDEF("f_22");
+CShape* Shape650 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance651 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture652 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture652->setUSE("_20");
+Appearance651->setTexture(*ImageTexture652);
+
+CTextureTransform* TextureTransform653 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+Appearance651->setTextureTransform(*TextureTransform653);
+
+Shape650->setAppearance(*Appearance651);
+
+CIndexedFaceSet* IndexedFaceSet654 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet654->setDEF("nurbsToPoly295_0Geo");
+IndexedFaceSet654->setSolid(False);
+IndexedFaceSet654->setConvex(False);
+IndexedFaceSet654->setTexCoordIndex(new int[112]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,11,6,12,-1,13,14,15,-1,7,13,16,-1,14,3,17,-1,18,19,20,-1,4,21,22,-1,21,18,23,-1,24,25,26,-1,19,24,27,-1,25,0,28,-1,1,29,2,-1,4,22,5,-1,7,16,8,-1,11,12,9,-1,6,8,12,-1,14,17,15,-1,13,15,16,-1,3,5,17,-1,19,27,20,-1,21,23,22,-1,18,20,23,-1,25,28,26,-1,24,26,27,-1,0,2,28,-1});
+IndexedFaceSet654->setCoordIndex(new int[112]{28,2,29,-1,16,4,17,-1,10,6,11,-1,0,1,8,-1,8,10,9,-1,14,12,15,-1,6,14,7,-1,12,16,13,-1,22,18,23,-1,4,20,5,-1,20,22,21,-1,26,24,27,-1,18,26,19,-1,24,28,25,-1,2,3,29,-1,4,5,17,-1,6,7,11,-1,8,9,0,-1,10,11,9,-1,12,13,15,-1,14,15,7,-1,16,17,13,-1,18,19,23,-1,20,21,5,-1,22,23,21,-1,24,25,27,-1,26,27,19,-1,28,29,25,-1});
+CTextureCoordinate* TextureCoordinate655 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate655->setPoint(new float[60]{1,0.887164,1,1,0,0.887164,1,0.331028,1,0.39217,0,0.331028,1,0.107295,1,0.161387,0,0.107295,0,0,1,0,1,0.053633,0,0.053633,1,0.216347,1,0.272722,0,0.216347,0,0.161387,0,0.272722,1,0.527224,1,0.604451,0,0.527224,1,0.457058,0,0.39217,0,0.457058,1,0.689699,1,0.783813,0,0.689699,0,0.604451,0,0.783813,0,1});
+IndexedFaceSet654->setTexCoord(*TextureCoordinate655);
+
+CCoordinate* Coordinate656 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate656->setDEF("nurbsToPoly295GeoPoints");
+Coordinate656->setPoint(new float[90]{197.811,0.505,-18.761,192.727,-0.505,-18.955,154.063,-0.506,117.905,155.965,0.506,122.301,189.84,-0.506,56.508,194.45,0.506,57.962,192.54,-0.506,13.575,197.549,0.506,14.03,192.72,-0.505,-8.085,197.796,0.505,-7.858,192.674,-0.506,2.759,197.725,0.506,3.074,191.78,-0.506,35.127,196.644,0.506,35.998,192.264,-0.506,24.363,197.212,0.506,25.004,191.009,-0.506,45.841,195.763,0.506,46.983,181.972,-0.506,87.416,185.846,0.506,90.036,188.116,-0.506,67.061,192.542,0.506,68.866,185.599,-0.506,77.423,189.786,0.506,79.618,170.725,-0.506,105.219,173.74,0.506,108.761,177.049,-0.506,96.778,180.533,0.506,99.853,163.008,-0.506,112.376,165.487,0.506,116.372});
+IndexedFaceSet654->setCoord(*Coordinate656);
+
+Shape650->setGeometry(IndexedFaceSet654);
+
+Transform649->addChildren(*Shape650);
+
+Transform648->addChildren(*Transform649);
+
+CTransform* Transform657 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform657->setDEF("r_20");
+CShape* Shape658 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance659 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture660 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture660->setUSE("_18");
+Appearance659->setTexture(*ImageTexture660);
+
+CTextureTransform* TextureTransform661 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform661->setDEF("_26");
+TextureTransform661->setScale(new float[2]{5,1});
+Appearance659->setTextureTransform(*TextureTransform661);
+
+Shape658->setAppearance(*Appearance659);
+
+CIndexedFaceSet* IndexedFaceSet662 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet662->setDEF("nurbsToPoly294_0Geo");
+IndexedFaceSet662->setSolid(False);
+IndexedFaceSet662->setConvex(False);
+IndexedFaceSet662->setTexCoordIndex(new int[336]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,13,9,15,-1,16,17,18,-1,19,14,17,-1,11,6,15,-1,14,15,8,-1,17,8,20,-1,21,22,23,-1,24,25,26,-1,10,24,27,-1,26,21,27,-1,11,27,23,-1,6,23,28,-1,29,30,31,-1,25,29,32,-1,31,3,32,-1,26,32,5,-1,21,5,33,-1,34,35,36,-1,37,38,39,-1,30,40,41,-1,40,37,42,-1,3,43,44,-1,31,41,43,-1,39,34,42,-1,41,42,36,-1,43,36,45,-1,46,47,48,-1,49,50,51,-1,38,49,52,-1,51,46,52,-1,39,52,48,-1,34,48,53,-1,54,55,56,-1,50,54,57,-1,56,0,57,-1,51,57,2,-1,46,2,58,-1,1,58,2,-1,4,33,5,-1,7,20,8,-1,11,15,9,-1,14,19,12,-1,15,14,13,-1,18,59,16,-1,17,16,19,-1,6,8,15,-1,8,17,14,-1,20,18,17,-1,22,28,23,-1,26,27,24,-1,27,11,10,-1,21,23,27,-1,23,6,11,-1,28,7,6,-1,31,32,29,-1,32,26,25,-1,3,5,32,-1,5,21,26,-1,33,22,21,-1,35,45,36,-1,39,42,37,-1,41,31,30,-1,42,41,40,-1,44,4,3,-1,43,3,31,-1,34,36,42,-1,36,43,41,-1,45,44,43,-1,47,53,48,-1,51,52,49,-1,52,39,38,-1,46,48,52,-1,48,34,39,-1,53,35,34,-1,56,57,54,-1,57,51,50,-1,0,2,57,-1,2,46,51,-1,58,47,46,-1});
+IndexedFaceSet662->setCoordIndex(new int[336]{57,2,58,-1,31,5,32,-1,17,7,18,-1,12,6,8,-1,0,10,11,-1,10,12,13,-1,15,16,14,-1,9,11,16,-1,8,17,13,-1,11,13,18,-1,16,18,19,-1,25,21,26,-1,23,20,22,-1,6,23,24,-1,22,25,24,-1,8,24,26,-1,17,26,27,-1,29,4,28,-1,20,29,30,-1,28,31,30,-1,22,30,32,-1,25,32,33,-1,43,35,44,-1,39,34,36,-1,4,37,38,-1,37,39,40,-1,31,42,41,-1,28,38,42,-1,36,43,40,-1,38,40,44,-1,42,44,45,-1,51,47,52,-1,49,46,48,-1,34,49,50,-1,48,51,50,-1,36,50,52,-1,43,52,53,-1,55,1,54,-1,46,55,56,-1,54,57,56,-1,48,56,58,-1,51,58,59,-1,2,59,58,-1,5,33,32,-1,7,19,18,-1,8,13,12,-1,11,9,0,-1,13,11,10,-1,14,3,15,-1,16,15,9,-1,17,18,13,-1,18,16,11,-1,19,14,16,-1,21,27,26,-1,22,24,23,-1,24,8,6,-1,25,26,24,-1,26,17,8,-1,27,7,17,-1,28,30,29,-1,30,22,20,-1,31,32,30,-1,32,25,22,-1,33,21,25,-1,35,45,44,-1,36,40,39,-1,38,28,4,-1,40,38,37,-1,41,5,31,-1,42,31,28,-1,43,44,40,-1,44,42,38,-1,45,41,42,-1,47,53,52,-1,48,50,49,-1,50,36,34,-1,51,52,50,-1,52,43,36,-1,53,35,43,-1,54,56,55,-1,56,48,46,-1,57,58,56,-1,58,51,48,-1,59,47,51,-1});
+CTextureCoordinate* TextureCoordinate663 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate663->setPoint(new float[120]{1,0.5,1,1,0.884657,0.5,0.386349,0.5,0.386349,1,0.325769,0.5,0.158177,0.5,0.158177,1,0.104992,0.5,0.104992,0,0.158177,0,0.158177,0,0,0,0.052388,0,0.052388,0,0.104992,0,0,0.5,0.052388,0.5,0.052388,1,0,0,0.104992,1,0.268023,0.5,0.268023,1,0.212341,0.5,0.212341,0,0.268023,0,0.268023,0,0.212341,0,0.212341,1,0.325769,0,0.386349,0,0.386349,0,0.325769,0,0.325769,1,0.597933,0.5,0.597933,1,0.520719,0.5,0.520719,0,0.597933,0,0.597933,0,0.450805,0,0.450805,0,0.520719,0,0.450805,0.5,0.450805,1,0.520719,1,0.779305,0.5,0.779305,1,0.683868,0.5,0.683868,0,0.779305,0,0.779305,0,0.683868,0,0.683868,1,0.884657,0,1,0,1,0,0.884657,0,0.884657,1,0,1});
+IndexedFaceSet662->setTexCoord(*TextureCoordinate663);
+
+CCoordinate* Coordinate664 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate664->setDEF("nurbsToPoly294GeoPoints");
+Coordinate664->setPoint(new float[180]{192.727,-0.505,-18.955,154.063,-0.506,117.905,153.342,2.224,116.349,190.906,2.224,-18.971,189.969,-0.506,55.521,188.301,2.224,55.054,192.552,-0.506,12.938,190.754,2.224,12.827,192.552,-0.506,12.938,192.727,-0.505,-18.955,192.721,-0.505,-8.337,192.721,-0.505,-8.337,192.678,-0.506,2.295,192.678,-0.506,2.295,190.902,2.224,-8.366,191.267,0.411,-18.99,191.263,0.41,-8.381,191.112,0.41,12.829,191.227,0.41,2.226,190.867,2.224,2.234,191.83,-0.506,34.244,190.079,2.224,33.985,191.83,-0.506,34.244,192.29,-0.506,23.585,192.29,-0.506,23.585,190.429,0.41,34.018,190.866,0.41,23.424,190.512,2.224,23.408,189.969,-0.506,55.521,191.092,-0.506,44.895,191.092,-0.506,44.895,188.637,0.41,55.129,189.721,0.41,44.592,189.377,2.224,44.54,182.311,-0.506,86.629,180.891,2.224,85.74,182.311,-0.506,86.629,188.306,-0.506,66.082,188.306,-0.506,66.082,185.864,-0.506,76.513,185.864,-0.506,76.513,186.7,2.224,65.489,187.025,0.41,65.59,181.182,0.41,85.901,184.648,0.41,75.908,184.338,2.224,75.779,171.045,-0.506,104.857,169.926,2.224,103.625,171.045,-0.506,104.857,177.413,-0.506,96.191,177.413,-0.506,96.191,170.161,0.41,103.858,176.394,0.41,95.33,176.128,2.224,95.134,154.063,-0.506,117.905,163.203,-0.506,112.227,163.203,-0.506,112.227,153.501,0.41,116.65,162.473,0.41,111.092,162.274,2.224,110.824});
+IndexedFaceSet662->setCoord(*Coordinate664);
+
+Shape658->setGeometry(IndexedFaceSet662);
+
+Transform657->addChildren(*Shape658);
+
+Transform648->addChildren(*Transform657);
+
+CTransform* Transform665 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform665->setDEF("l_20");
+CShape* Shape666 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance667 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture668 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture668->setUSE("_18");
+Appearance667->setTexture(*ImageTexture668);
+
+CTextureTransform* TextureTransform669 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform669->setUSE("_26");
+Appearance667->setTextureTransform(*TextureTransform669);
+
+Shape666->setAppearance(*Appearance667);
+
+CIndexedFaceSet* IndexedFaceSet670 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet670->setDEF("nurbsToPoly293_0Geo");
+IndexedFaceSet670->setSolid(False);
+IndexedFaceSet670->setConvex(False);
+IndexedFaceSet670->setTexCoordIndex(new int[336]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,13,9,15,-1,16,17,18,-1,19,14,17,-1,11,6,15,-1,14,15,8,-1,17,8,20,-1,21,22,23,-1,24,25,26,-1,10,24,27,-1,26,21,27,-1,11,27,23,-1,6,23,28,-1,29,30,31,-1,25,29,32,-1,31,3,32,-1,26,32,5,-1,21,5,33,-1,34,35,36,-1,37,38,39,-1,30,40,41,-1,40,37,42,-1,3,43,44,-1,31,41,43,-1,39,34,42,-1,41,42,36,-1,43,36,45,-1,46,47,48,-1,49,50,51,-1,38,49,52,-1,51,46,52,-1,39,52,48,-1,34,48,53,-1,54,55,56,-1,50,54,57,-1,56,0,57,-1,51,57,2,-1,46,2,58,-1,1,58,2,-1,4,33,5,-1,7,20,8,-1,11,15,9,-1,14,19,12,-1,15,14,13,-1,18,59,16,-1,17,16,19,-1,6,8,15,-1,8,17,14,-1,20,18,17,-1,22,28,23,-1,26,27,24,-1,27,11,10,-1,21,23,27,-1,23,6,11,-1,28,7,6,-1,31,32,29,-1,32,26,25,-1,3,5,32,-1,5,21,26,-1,33,22,21,-1,35,45,36,-1,39,42,37,-1,41,31,30,-1,42,41,40,-1,44,4,3,-1,43,3,31,-1,34,36,42,-1,36,43,41,-1,45,44,43,-1,47,53,48,-1,51,52,49,-1,52,39,38,-1,46,48,52,-1,48,34,39,-1,53,35,34,-1,56,57,54,-1,57,51,50,-1,0,2,57,-1,2,46,51,-1,58,47,46,-1});
+IndexedFaceSet670->setCoordIndex(new int[336]{57,2,58,-1,31,5,32,-1,17,7,18,-1,12,6,8,-1,0,10,11,-1,10,12,13,-1,15,16,14,-1,9,11,16,-1,8,17,13,-1,11,13,18,-1,16,18,19,-1,25,21,26,-1,23,20,22,-1,6,23,24,-1,22,25,24,-1,8,24,26,-1,17,26,27,-1,29,4,28,-1,20,29,30,-1,28,31,30,-1,22,30,32,-1,25,32,33,-1,43,35,44,-1,39,34,36,-1,4,37,38,-1,37,39,40,-1,31,42,41,-1,28,38,42,-1,36,43,40,-1,38,40,44,-1,42,44,45,-1,51,47,52,-1,49,46,48,-1,34,49,50,-1,48,51,50,-1,36,50,52,-1,43,52,53,-1,55,1,54,-1,46,55,56,-1,54,57,56,-1,48,56,58,-1,51,58,59,-1,2,59,58,-1,5,33,32,-1,7,19,18,-1,8,13,12,-1,11,9,0,-1,13,11,10,-1,14,3,15,-1,16,15,9,-1,17,18,13,-1,18,16,11,-1,19,14,16,-1,21,27,26,-1,22,24,23,-1,24,8,6,-1,25,26,24,-1,26,17,8,-1,27,7,17,-1,28,30,29,-1,30,22,20,-1,31,32,30,-1,32,25,22,-1,33,21,25,-1,35,45,44,-1,36,40,39,-1,38,28,4,-1,40,38,37,-1,41,5,31,-1,42,31,28,-1,43,44,40,-1,44,42,38,-1,45,41,42,-1,47,53,52,-1,48,50,49,-1,50,36,34,-1,51,52,50,-1,52,43,36,-1,53,35,43,-1,54,56,55,-1,56,48,46,-1,57,58,56,-1,58,51,48,-1,59,47,51,-1});
+CTextureCoordinate* TextureCoordinate671 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate671->setPoint(new float[120]{1,0.501333,1,1,0.889174,0.501333,0.397015,0.501333,0.397015,1,0.335471,0.501333,0.164117,0.501333,0.164117,1,0.109264,0.501333,0.109264,0,0.164117,0,0.164117,0,0,0,0.054702,0,0.054702,0,0.109264,0,0,0.501333,0.054702,0.501333,0.054702,1,0,0,0.109264,1,0.276676,0.501333,0.276676,1,0.219751,0.501333,0.219751,0,0.276676,0,0.276676,0,0.219751,0,0.219751,1,0.335471,0,0.397015,0,0.397015,0,0.335471,0,0.335471,1,0.609758,0.501333,0.609758,1,0.532647,0.501333,0.532647,0,0.609758,0,0.609758,0,0.462265,0,0.462265,0,0.532647,0,0.462265,0.501333,0.462265,1,0.532647,1,0.787472,0.501333,0.787472,1,0.694487,0.501333,0.694487,0,0.787472,0,0.787472,0,0.694487,0,0.694487,1,0.889174,0,1,0,1,0,0.889174,0,0.889174,1,0,1});
+IndexedFaceSet670->setTexCoord(*TextureCoordinate671);
+
+CCoordinate* Coordinate672 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate672->setDEF("nurbsToPoly293GeoPoints");
+Coordinate672->setPoint(new float[180]{197.811,0.505,-18.761,155.965,0.506,122.301,156.164,3.714,122.872,198.448,3.714,-18.683,194.327,0.506,58.804,194.891,3.714,59.032,197.537,0.506,14.579,198.162,3.714,14.686,197.537,0.506,14.579,197.811,0.505,-18.761,197.795,0.505,-7.64,197.795,0.505,-7.64,197.721,0.506,3.475,197.721,0.506,3.475,198.431,3.714,-7.56,198.808,1.91,-18.702,198.79,1.91,-7.575,198.518,1.91,14.689,198.711,1.91,3.557,198.353,3.714,3.565,196.595,0.506,36.756,197.198,3.714,36.913,196.595,0.506,36.756,197.184,0.506,25.676,197.184,0.506,25.676,197.545,1.91,36.948,198.152,1.91,25.822,197.8,3.714,25.805,194.327,0.506,58.804,195.682,0.506,47.801,195.682,0.506,47.801,195.224,1.91,59.111,196.609,1.91,48.046,196.268,3.714,47.991,185.543,0.506,90.698,186.003,3.714,91.066,185.543,0.506,90.698,192.363,0.506,69.703,192.363,0.506,69.703,189.539,0.506,80.398,189.539,0.506,80.398,192.901,3.714,69.974,193.222,1.91,70.079,186.29,1.91,91.232,190.349,1.91,80.85,190.043,3.714,80.716,173.46,0.506,109.068,173.804,3.714,109.543,173.46,0.506,109.068,180.209,0.506,100.354,180.209,0.506,100.354,174.035,1.91,109.777,180.877,1.91,100.974,180.616,3.714,100.775,155.965,0.506,122.301,165.321,0.506,116.499,165.321,0.506,116.499,156.322,1.91,123.171,165.791,1.91,117.293,165.595,3.714,117.025});
+IndexedFaceSet670->setCoord(*Coordinate672);
+
+Shape666->setGeometry(IndexedFaceSet670);
+
+Transform665->addChildren(*Shape666);
+
+Transform648->addChildren(*Transform665);
+
+LOD647->addChildren(*Transform648);
+
+Transform646->addChildren(*LOD647);
+
+group->addChildren(*Transform646);
+
+CTransform* Transform673 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform673->setDEF("s25LOD");
+CLOD* LOD674 = (CLOD *)(m_pScene.createNode("LOD"));
+CTransform* Transform675 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform675->setDEF("med_18");
+CTransform* Transform676 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform676->setDEF("f_23");
+CShape* Shape677 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance678 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture679 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture679->setUSE("_20");
+Appearance678->setTexture(*ImageTexture679);
+
+CTextureTransform* TextureTransform680 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+Appearance678->setTextureTransform(*TextureTransform680);
+
+Shape677->setAppearance(*Appearance678);
+
+CIndexedFaceSet* IndexedFaceSet681 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet681->setDEF("nurbsToPoly298_0Geo");
+IndexedFaceSet681->setSolid(False);
+IndexedFaceSet681->setConvex(False);
+IndexedFaceSet681->setTexCoordIndex(new int[120]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,11,6,12,-1,13,14,15,-1,7,13,16,-1,14,3,17,-1,18,19,20,-1,21,22,23,-1,4,21,24,-1,22,18,25,-1,26,27,28,-1,19,26,29,-1,27,0,30,-1,1,31,2,-1,4,24,5,-1,7,16,8,-1,11,12,9,-1,6,8,12,-1,14,17,15,-1,13,15,16,-1,3,5,17,-1,19,29,20,-1,22,25,23,-1,21,23,24,-1,18,20,25,-1,27,30,28,-1,26,28,29,-1,0,2,30,-1});
+IndexedFaceSet681->setCoordIndex(new int[120]{30,2,31,-1,16,4,17,-1,10,6,11,-1,0,1,8,-1,8,10,9,-1,14,12,15,-1,6,14,7,-1,12,16,13,-1,24,18,25,-1,22,20,23,-1,4,22,5,-1,20,24,21,-1,28,26,29,-1,18,28,19,-1,26,30,27,-1,2,3,31,-1,4,5,17,-1,6,7,11,-1,8,9,0,-1,10,11,9,-1,12,13,15,-1,14,15,7,-1,16,17,13,-1,18,19,25,-1,20,21,23,-1,22,23,5,-1,24,25,21,-1,26,27,29,-1,28,29,19,-1,30,31,27,-1});
+CTextureCoordinate* TextureCoordinate682 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate682->setPoint(new float[64]{1,0.931901,1,1,0,0.931901,1,0.364856,1,0.431987,0,0.364856,1,0.073248,1,0.148671,0,0.073248,0,0,1,0,1,0,0,0,1,0.223336,1,0.295588,0,0.223336,0,0.148671,0,0.295588,1,0.636485,1,0.709464,0,0.636485,1,0.49868,1,0.566441,0,0.49868,0,0.431987,0,0.566441,1,0.784528,1,0.859498,0,0.784528,0,0.709464,0,0.859498,0,1});
+IndexedFaceSet681->setTexCoord(*TextureCoordinate682);
+
+CCoordinate* Coordinate683 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate683->setDEF("nurbsToPoly298GeoPoints");
+Coordinate683->setPoint(new float[96]{155.965,0.506,122.301,154.063,-0.506,117.905,42.401,-0.506,90.569,38.02,0.506,92.488,100.318,-0.506,123.964,99.554,0.506,128.856,136.754,-0.506,123.028,137.672,0.506,127.863,154.063,-0.506,117.905,155.965,0.506,122.301,145.625,-0.506,121.152,147.026,0.506,125.812,118.584,-0.506,124.051,118.619,0.506,129.009,127.697,-0.506,123.844,128.159,0.506,128.772,109.454,-0.506,124.063,109.084,0.506,129.007,64.854,-0.506,117.367,62.314,0.506,121.361,82.143,-0.506,122.518,80.561,0.506,127.14,91.199,-0.506,123.534,90.036,0.506,128.324,73.272,-0.506,120.595,71.236,0.506,124.96,50.87,-0.506,106.351,47.283,0.506,109.322,57.266,-0.506,112.6,54.193,0.506,116.113,45.905,-0.506,98.886,41.871,0.506,101.311});
+IndexedFaceSet681->setCoord(*Coordinate683);
+
+Shape677->setGeometry(IndexedFaceSet681);
+
+Transform676->addChildren(*Shape677);
+
+Transform675->addChildren(*Transform676);
+
+CTransform* Transform684 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform684->setDEF("r_21");
+CShape* Shape685 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance686 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture687 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture687->setUSE("_18");
+Appearance686->setTexture(*ImageTexture687);
+
+CTextureTransform* TextureTransform688 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform688->setDEF("_27");
+TextureTransform688->setScale(new float[2]{5,1});
+Appearance686->setTextureTransform(*TextureTransform688);
+
+Shape685->setAppearance(*Appearance686);
+
+CIndexedFaceSet* IndexedFaceSet689 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet689->setDEF("nurbsToPoly297_0Geo");
+IndexedFaceSet689->setSolid(False);
+IndexedFaceSet689->setConvex(False);
+IndexedFaceSet689->setTexCoordIndex(new int[336]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,13,9,15,-1,16,17,18,-1,19,14,17,-1,11,6,15,-1,14,15,8,-1,17,8,20,-1,21,22,23,-1,24,25,26,-1,10,24,27,-1,26,21,27,-1,11,27,23,-1,6,23,28,-1,29,30,31,-1,25,29,32,-1,31,3,32,-1,26,32,5,-1,21,5,33,-1,34,35,36,-1,37,38,39,-1,30,40,41,-1,40,37,42,-1,3,43,44,-1,31,41,43,-1,39,34,42,-1,41,42,36,-1,43,36,45,-1,46,47,48,-1,49,50,51,-1,38,49,52,-1,51,46,52,-1,39,52,48,-1,34,48,53,-1,54,55,56,-1,50,54,57,-1,56,0,57,-1,51,57,2,-1,46,2,58,-1,1,58,2,-1,4,33,5,-1,7,20,8,-1,11,15,9,-1,14,19,12,-1,15,14,13,-1,18,59,16,-1,17,16,19,-1,6,8,15,-1,8,17,14,-1,20,18,17,-1,22,28,23,-1,26,27,24,-1,27,11,10,-1,21,23,27,-1,23,6,11,-1,28,7,6,-1,31,32,29,-1,32,26,25,-1,3,5,32,-1,5,21,26,-1,33,22,21,-1,35,45,36,-1,39,42,37,-1,41,31,30,-1,42,41,40,-1,44,4,3,-1,43,3,31,-1,34,36,42,-1,36,43,41,-1,45,44,43,-1,47,53,48,-1,51,52,49,-1,52,39,38,-1,46,48,52,-1,48,34,39,-1,53,35,34,-1,56,57,54,-1,57,51,50,-1,0,2,57,-1,2,46,51,-1,58,47,46,-1});
+IndexedFaceSet689->setCoordIndex(new int[336]{57,2,58,-1,31,5,32,-1,17,7,18,-1,12,6,8,-1,0,10,11,-1,10,12,13,-1,15,16,14,-1,9,11,16,-1,8,17,13,-1,11,13,18,-1,16,18,19,-1,25,21,26,-1,23,20,22,-1,6,23,24,-1,22,25,24,-1,8,24,26,-1,17,26,27,-1,29,4,28,-1,20,29,30,-1,28,31,30,-1,22,30,32,-1,25,32,33,-1,43,35,44,-1,39,34,36,-1,4,37,38,-1,37,39,40,-1,31,42,41,-1,28,38,42,-1,36,43,40,-1,38,40,44,-1,42,44,45,-1,51,47,52,-1,49,46,48,-1,34,49,50,-1,48,51,50,-1,36,50,52,-1,43,52,53,-1,55,1,54,-1,46,55,56,-1,54,57,56,-1,48,56,58,-1,51,58,59,-1,2,59,58,-1,5,33,32,-1,7,19,18,-1,8,13,12,-1,11,9,0,-1,13,11,10,-1,14,3,15,-1,16,15,9,-1,17,18,13,-1,18,16,11,-1,19,14,16,-1,21,27,26,-1,22,24,23,-1,24,8,6,-1,25,26,24,-1,26,17,8,-1,27,7,17,-1,28,30,29,-1,30,22,20,-1,31,32,30,-1,32,25,22,-1,33,21,25,-1,35,45,44,-1,36,40,39,-1,38,28,4,-1,40,38,37,-1,41,5,31,-1,42,31,28,-1,43,44,40,-1,44,42,38,-1,45,41,42,-1,47,53,52,-1,48,50,49,-1,50,36,34,-1,51,52,50,-1,52,43,36,-1,53,35,43,-1,54,56,55,-1,56,48,46,-1,57,58,56,-1,58,51,48,-1,59,47,51,-1});
+CTextureCoordinate* TextureCoordinate690 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate690->setPoint(new float[120]{1,0.5,1,1,0.931507,0.5,0.495587,0.5,0.495587,1,0.429609,0.5,0.222938,0.5,0.222938,1,0.148698,0.5,0.148698,0,0.222938,0,0.222938,0,0,0,0.073422,0,0.073422,0,0.148698,0,0,0.5,0.073422,0.5,0.073422,1,0,0,0.148698,1,0.363202,0.5,0.363202,1,0.2946,0.5,0.2946,0,0.363202,0,0.363202,0,0.2946,0,0.2946,1,0.429609,0,0.495587,0,0.495587,0,0.429609,0,0.429609,1,0.705627,0.5,0.705627,1,0.632407,0.5,0.632407,0,0.705627,0,0.705627,0,0.562723,0,0.562723,0,0.632407,0,0.562723,0.5,0.562723,1,0.632407,1,0.858039,0.5,0.858039,1,0.781695,0.5,0.781695,0,0.858039,0,0.858039,0,0.781695,0,0.781695,1,0.931507,0,1,0,1,0,0.931507,0,0.931507,1,0,1});
+IndexedFaceSet689->setTexCoord(*TextureCoordinate690);
+
+CCoordinate* Coordinate691 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate691->setDEF("nurbsToPoly297GeoPoints");
+Coordinate691->setPoint(new float[180]{154.063,-0.506,117.905,42.401,-0.506,90.569,43.951,2.224,89.843,153.342,2.224,116.349,91.619,-0.506,123.564,91.985,2.224,121.838,127.746,-0.506,123.842,127.534,2.224,122.083,127.746,-0.506,123.842,154.063,-0.506,117.905,145.604,-0.506,121.158,145.604,-0.506,121.158,136.75,-0.506,123.028,136.75,-0.506,123.028,145.061,2.224,119.503,153.501,0.41,116.65,145.186,0.41,119.826,127.595,0.41,122.43,136.47,0.41,121.644,136.378,2.224,121.307,109.677,-0.506,124.063,109.76,2.224,122.291,109.677,-0.506,124.063,118.712,-0.506,124.05,118.712,-0.506,124.05,109.762,0.41,122.643,118.682,0.41,122.628,118.652,2.224,122.277,91.619,-0.506,123.564,100.643,-0.506,123.971,100.643,-0.506,123.971,91.93,0.41,122.184,100.841,0.41,122.564,100.867,2.224,122.213,65.272,-0.506,117.571,66.134,2.224,116.112,65.272,-0.506,117.571,82.63,-0.506,122.593,82.63,-0.506,122.593,73.77,-0.506,120.736,73.77,-0.506,120.736,83.145,2.224,120.921,83.061,0.41,121.258,65.979,0.41,116.41,74.331,0.41,119.471,74.449,2.224,119.149,50.982,-0.506,106.487,52.235,2.224,105.387,50.982,-0.506,106.487,57.531,-0.506,112.807,57.531,-0.506,112.807,51.998,0.41,105.618,58.395,0.41,111.782,58.591,2.224,111.515,42.401,-0.506,90.569,45.929,-0.506,98.931,45.929,-0.506,98.931,43.651,0.41,90.003,47.077,0.41,98.22,47.349,2.224,98.026});
+IndexedFaceSet689->setCoord(*Coordinate691);
+
+Shape685->setGeometry(IndexedFaceSet689);
+
+Transform684->addChildren(*Shape685);
+
+Transform675->addChildren(*Transform684);
+
+CTransform* Transform692 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform692->setDEF("l_21");
+CShape* Shape693 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance694 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture695 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture695->setUSE("_18");
+Appearance694->setTexture(*ImageTexture695);
+
+CTextureTransform* TextureTransform696 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform696->setUSE("_27");
+Appearance694->setTextureTransform(*TextureTransform696);
+
+Shape693->setAppearance(*Appearance694);
+
+CIndexedFaceSet* IndexedFaceSet697 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet697->setDEF("nurbsToPoly296_0Geo");
+IndexedFaceSet697->setSolid(False);
+IndexedFaceSet697->setConvex(False);
+IndexedFaceSet697->setTexCoordIndex(new int[336]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,13,9,15,-1,16,17,18,-1,19,14,17,-1,11,6,15,-1,14,15,8,-1,17,8,20,-1,21,22,23,-1,24,25,26,-1,10,24,27,-1,26,21,27,-1,11,27,23,-1,6,23,28,-1,29,30,31,-1,25,29,32,-1,31,3,32,-1,26,32,5,-1,21,5,33,-1,34,35,36,-1,37,38,39,-1,30,40,41,-1,40,37,42,-1,3,43,44,-1,31,41,43,-1,39,34,42,-1,41,42,36,-1,43,36,45,-1,46,47,48,-1,49,50,51,-1,38,49,52,-1,51,46,52,-1,39,52,48,-1,34,48,53,-1,54,55,56,-1,50,54,57,-1,56,0,57,-1,51,57,2,-1,46,2,58,-1,1,58,2,-1,4,33,5,-1,7,20,8,-1,11,15,9,-1,14,19,12,-1,15,14,13,-1,18,59,16,-1,17,16,19,-1,6,8,15,-1,8,17,14,-1,20,18,17,-1,22,28,23,-1,26,27,24,-1,27,11,10,-1,21,23,27,-1,23,6,11,-1,28,7,6,-1,31,32,29,-1,32,26,25,-1,3,5,32,-1,5,21,26,-1,33,22,21,-1,35,45,36,-1,39,42,37,-1,41,31,30,-1,42,41,40,-1,44,4,3,-1,43,3,31,-1,34,36,42,-1,36,43,41,-1,45,44,43,-1,47,53,48,-1,51,52,49,-1,52,39,38,-1,46,48,52,-1,48,34,39,-1,53,35,34,-1,56,57,54,-1,57,51,50,-1,0,2,57,-1,2,46,51,-1,58,47,46,-1});
+IndexedFaceSet697->setCoordIndex(new int[336]{57,2,58,-1,31,5,32,-1,17,7,18,-1,12,6,8,-1,0,10,11,-1,10,12,13,-1,15,16,14,-1,9,11,16,-1,8,17,13,-1,11,13,18,-1,16,18,19,-1,25,21,26,-1,23,20,22,-1,6,23,24,-1,22,25,24,-1,8,24,26,-1,17,26,27,-1,29,4,28,-1,20,29,30,-1,28,31,30,-1,22,30,32,-1,25,32,33,-1,43,35,44,-1,39,34,36,-1,4,37,38,-1,37,39,40,-1,31,42,41,-1,28,38,42,-1,36,43,40,-1,38,40,44,-1,42,44,45,-1,51,47,52,-1,49,46,48,-1,34,49,50,-1,48,51,50,-1,36,50,52,-1,43,52,53,-1,55,1,54,-1,46,55,56,-1,54,57,56,-1,48,56,58,-1,51,58,59,-1,2,59,58,-1,5,33,32,-1,7,19,18,-1,8,13,12,-1,11,9,0,-1,13,11,10,-1,14,3,15,-1,16,15,9,-1,17,18,13,-1,18,16,11,-1,19,14,16,-1,21,27,26,-1,22,24,23,-1,24,8,6,-1,25,26,24,-1,26,17,8,-1,27,7,17,-1,28,30,29,-1,30,22,20,-1,31,32,30,-1,32,25,22,-1,33,21,25,-1,35,45,44,-1,36,40,39,-1,38,28,4,-1,40,38,37,-1,41,5,31,-1,42,31,28,-1,43,44,40,-1,44,42,38,-1,45,41,42,-1,47,53,52,-1,48,50,49,-1,50,36,34,-1,51,52,50,-1,52,43,36,-1,53,35,43,-1,54,56,55,-1,56,48,46,-1,57,58,56,-1,58,51,48,-1,59,47,51,-1});
+CTextureCoordinate* TextureCoordinate698 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate698->setPoint(new float[120]{1,0.501333,1,1,0.932223,0.501333,0.501215,0.501333,0.501215,1,0.43393,0.501333,0.223651,0.501333,0.223651,1,0.148641,0.501333,0.148641,0,0.223651,0,0.223651,0,0,0,0.073103,0,0.073103,0,0.148641,0,0,0.501333,0.073103,0.501333,0.073103,1,0,0,0.148641,1,0.366204,0.501333,0.366204,1,0.296386,0.501333,0.296386,0,0.366204,0,0.366204,0,0.296386,0,0.296386,1,0.43393,0,0.501215,0,0.501215,0,0.43393,0,0.43393,1,0.712515,0.501333,0.712515,1,0.639773,0.501333,0.639773,0,0.712515,0,0.712515,0,0.569467,0,0.569467,0,0.639773,0,0.569467,0.501333,0.569467,1,0.639773,1,0.860657,0.501333,0.860657,1,0.786762,0.501333,0.786762,0,0.860657,0,0.860657,0,0.786762,0,0.786762,1,0.932223,0,1,0,1,0,0.932223,0,0.932223,1,0,1});
+IndexedFaceSet697->setTexCoord(*TextureCoordinate698);
+
+CCoordinate* Coordinate699 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate699->setDEF("nurbsToPoly296GeoPoints");
+Coordinate699->setPoint(new float[180]{155.965,0.506,122.301,38.02,0.506,92.488,37.452,3.714,92.689,156.164,3.714,122.872,89.677,0.506,128.293,89.485,3.714,128.884,128.118,0.506,128.774,128.131,3.714,129.398,128.118,0.506,128.774,155.965,0.506,122.301,147.044,0.506,125.807,147.044,0.506,125.807,137.675,0.506,127.862,137.675,0.506,127.862,147.178,3.714,126.406,156.322,1.91,123.171,147.303,1.91,126.726,128.191,1.91,129.743,137.838,1.91,128.814,137.747,3.714,128.479,108.895,0.506,129.007,108.802,3.714,129.625,108.895,0.506,129.007,118.512,0.506,129.01,118.512,0.506,129.01,108.803,1.91,129.975,118.5,1.91,129.983,118.47,3.714,129.634,89.677,0.506,128.293,99.276,0.506,128.847,99.276,0.506,128.847,89.429,1.91,129.228,99.107,1.91,129.804,99.134,3.714,129.455,61.962,0.506,121.178,61.604,3.714,121.655,61.962,0.506,121.178,80.146,0.506,127.068,80.146,0.506,127.068,70.814,0.506,124.829,70.814,0.506,124.829,79.903,3.714,127.634,79.816,1.91,127.968,61.445,1.91,121.949,70.395,1.91,125.675,70.515,3.714,125.357,47.186,0.506,109.205,46.707,3.714,109.545,47.186,0.506,109.205,53.969,0.506,115.933,53.969,0.506,115.933,46.47,1.91,109.774,53.35,1.91,116.609,53.548,3.714,116.345,38.02,0.506,92.488,41.85,0.506,101.272,41.85,0.506,101.272,37.154,1.91,92.849,41.049,1.91,101.733,41.32,3.714,101.54});
+IndexedFaceSet697->setCoord(*Coordinate699);
+
+Shape693->setGeometry(IndexedFaceSet697);
+
+Transform692->addChildren(*Shape693);
+
+Transform675->addChildren(*Transform692);
+
+LOD674->addChildren(*Transform675);
+
+Transform673->addChildren(*LOD674);
+
+group->addChildren(*Transform673);
+
+CTransform* Transform700 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform700->setDEF("s26LOD");
+CLOD* LOD701 = (CLOD *)(m_pScene.createNode("LOD"));
+CTransform* Transform702 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform702->setDEF("med_19");
+CTransform* Transform703 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform703->setDEF("f_24");
+CShape* Shape704 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance705 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture706 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture706->setUSE("_20");
+Appearance705->setTexture(*ImageTexture706);
+
+CTextureTransform* TextureTransform707 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+Appearance705->setTextureTransform(*TextureTransform707);
+
+Shape704->setAppearance(*Appearance705);
+
+CIndexedFaceSet* IndexedFaceSet708 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet708->setDEF("nurbsToPoly301_0Geo");
+IndexedFaceSet708->setSolid(False);
+IndexedFaceSet708->setConvex(False);
+IndexedFaceSet708->setTexCoordIndex(new int[120]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,11,6,12,-1,13,14,15,-1,7,13,16,-1,14,3,17,-1,18,19,20,-1,21,22,23,-1,4,21,24,-1,22,18,25,-1,26,27,28,-1,19,26,29,-1,27,0,30,-1,1,31,2,-1,4,24,5,-1,7,16,8,-1,11,12,9,-1,6,8,12,-1,14,17,15,-1,13,15,16,-1,3,5,17,-1,19,29,20,-1,22,25,23,-1,21,23,24,-1,18,20,25,-1,27,30,28,-1,26,28,29,-1,0,2,30,-1});
+IndexedFaceSet708->setCoordIndex(new int[120]{30,2,31,-1,16,4,17,-1,10,6,11,-1,0,1,8,-1,8,10,9,-1,14,12,15,-1,6,14,7,-1,12,16,13,-1,24,18,25,-1,22,20,23,-1,4,22,5,-1,20,24,21,-1,28,26,29,-1,18,28,19,-1,26,30,27,-1,2,3,31,-1,4,5,17,-1,6,7,11,-1,8,9,0,-1,10,11,9,-1,12,13,15,-1,14,15,7,-1,16,17,13,-1,18,19,25,-1,20,21,23,-1,22,23,5,-1,24,25,21,-1,26,27,29,-1,28,29,19,-1,30,31,27,-1});
+CTextureCoordinate* TextureCoordinate709 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate709->setPoint(new float[64]{1,0.920488,1,1,0,0.920488,1,0.332368,1,0.411193,0,0.332368,1,0.067849,1,0.131482,0,0.067849,0,0,1,0,1,0,0,0,1,0.194326,1,0.26001,0,0.194326,0,0.131482,0,0.26001,1,0.641206,1,0.710517,0,0.641206,1,0.49219,1,0.569054,0,0.49219,0,0.411193,0,0.569054,1,0.778743,1,0.84783,0,0.778743,0,0.710517,0,0.84783,0,1});
+IndexedFaceSet708->setTexCoord(*TextureCoordinate709);
+
+CCoordinate* Coordinate710 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate710->setDEF("nurbsToPoly301GeoPoints");
+Coordinate710->setPoint(new float[96]{38.02,0.506,92.488,42.401,-0.506,90.569,101.094,-0.135,-74.047,96.603,0.061,-76.298,38.964,-0.506,11.479,34.136,0.506,10.246,38.181,-0.506,64.535,33.303,0.506,65.299,42.401,-0.506,90.569,38.02,0.506,92.488,39.495,-0.506,77.725,34.792,0.506,79.022,37.698,-0.506,37.96,32.721,0.506,37.759,37.744,-0.506,51.25,32.784,0.506,51.526,37.858,-0.506,24.685,32.918,0.506,23.984,63.482,-0.461,-34.647,59.576,0.453,-37.749,47.606,-0.504,-13.35,43.256,0.504,-15.685,42.069,-0.506,-1.355,37.444,0.506,-3.146,54.925,-0.492,-24.404,50.839,0.49,-27.196,82.99,-0.319,-53.432,79.008,0.283,-56.526,72.979,-0.403,-44.205,69.111,0.383,-47.414,92.767,-0.224,-63.06,88.561,0.168,-65.834});
+IndexedFaceSet708->setCoord(*Coordinate710);
+
+Shape704->setGeometry(IndexedFaceSet708);
+
+Transform703->addChildren(*Shape704);
+
+Transform702->addChildren(*Transform703);
+
+CTransform* Transform711 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform711->setDEF("r_22");
+CShape* Shape712 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance713 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture714 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture714->setDEF("_28");
+ImageTexture714->setUrl(new CString[1]{"wand1-m.png"}, 1);
+Appearance713->setTexture(*ImageTexture714);
+
+CTextureTransform* TextureTransform715 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform715->setDEF("_29");
+TextureTransform715->setScale(new float[2]{6,1});
+Appearance713->setTextureTransform(*TextureTransform715);
+
+Shape712->setAppearance(*Appearance713);
+
+CIndexedFaceSet* IndexedFaceSet716 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet716->setDEF("nurbsToPoly300_0Geo");
+IndexedFaceSet716->setSolid(False);
+IndexedFaceSet716->setConvex(False);
+IndexedFaceSet716->setTexCoordIndex(new int[336]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,13,9,15,-1,16,17,18,-1,19,14,17,-1,11,6,15,-1,14,15,8,-1,17,8,20,-1,21,22,23,-1,24,25,26,-1,10,24,27,-1,26,21,27,-1,11,27,23,-1,6,23,28,-1,29,30,31,-1,25,29,32,-1,31,3,32,-1,26,32,5,-1,21,5,33,-1,34,35,36,-1,37,38,39,-1,30,40,41,-1,40,37,42,-1,3,43,44,-1,31,41,43,-1,39,34,42,-1,41,42,36,-1,43,36,45,-1,46,47,48,-1,49,50,51,-1,38,49,52,-1,51,46,52,-1,39,52,48,-1,34,48,53,-1,54,55,56,-1,50,54,57,-1,56,0,57,-1,51,57,2,-1,46,2,58,-1,1,58,2,-1,4,33,5,-1,7,20,8,-1,11,15,9,-1,14,19,12,-1,15,14,13,-1,18,59,16,-1,17,16,19,-1,6,8,15,-1,8,17,14,-1,20,18,17,-1,22,28,23,-1,26,27,24,-1,27,11,10,-1,21,23,27,-1,23,6,11,-1,28,7,6,-1,31,32,29,-1,32,26,25,-1,3,5,32,-1,5,21,26,-1,33,22,21,-1,35,45,36,-1,39,42,37,-1,41,31,30,-1,42,41,40,-1,44,4,3,-1,43,3,31,-1,34,36,42,-1,36,43,41,-1,45,44,43,-1,47,53,48,-1,51,52,49,-1,52,39,38,-1,46,48,52,-1,48,34,39,-1,53,35,34,-1,56,57,54,-1,57,51,50,-1,0,2,57,-1,2,46,51,-1,58,47,46,-1});
+IndexedFaceSet716->setCoordIndex(new int[336]{57,2,58,-1,31,5,32,-1,17,7,18,-1,12,6,8,-1,0,10,11,-1,10,12,13,-1,15,16,14,-1,9,11,16,-1,8,17,13,-1,11,13,18,-1,16,18,19,-1,25,21,26,-1,23,20,22,-1,6,23,24,-1,22,25,24,-1,8,24,26,-1,17,26,27,-1,29,4,28,-1,20,29,30,-1,28,31,30,-1,22,30,32,-1,25,32,33,-1,43,35,44,-1,39,34,36,-1,4,37,38,-1,37,39,40,-1,31,42,41,-1,28,38,42,-1,36,43,40,-1,38,40,44,-1,42,44,45,-1,51,47,52,-1,49,46,48,-1,34,49,50,-1,48,51,50,-1,36,50,52,-1,43,52,53,-1,55,1,54,-1,46,55,56,-1,54,57,56,-1,48,56,58,-1,51,58,59,-1,2,59,58,-1,5,33,32,-1,7,19,18,-1,8,13,12,-1,11,9,0,-1,13,11,10,-1,14,3,15,-1,16,15,9,-1,17,18,13,-1,18,16,11,-1,19,14,16,-1,21,27,26,-1,22,24,23,-1,24,8,6,-1,25,26,24,-1,26,17,8,-1,27,7,17,-1,28,30,29,-1,30,22,20,-1,31,32,30,-1,32,25,22,-1,33,21,25,-1,35,45,44,-1,36,40,39,-1,38,28,4,-1,40,38,37,-1,41,5,31,-1,42,31,28,-1,43,44,40,-1,44,42,38,-1,45,41,42,-1,47,53,52,-1,48,50,49,-1,50,36,34,-1,51,52,50,-1,52,43,36,-1,53,35,43,-1,54,56,55,-1,56,48,46,-1,57,58,56,-1,58,51,48,-1,59,47,51,-1});
+CTextureCoordinate* TextureCoordinate717 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate717->setPoint(new float[120]{1,0.5,1,1,0.923961,0.5,0.499278,0.5,0.499278,1,0.417145,0.5,0.197011,0.5,0.197011,1,0.133527,0.5,0.133527,0,0.197011,0,0.197011,0,0,0,0.069167,0,0.069167,0,0.133527,0,0,0.5,0.069167,0.5,0.069167,1,0,0,0.133527,1,0.337016,0.5,0.337016,1,0.263498,0.5,0.263498,0,0.337016,0,0.337016,0,0.263498,0,0.263498,1,0.417145,0,0.499278,0,0.499278,0,0.417145,0,0.417145,1,0.718544,0.5,0.718544,1,0.649329,0.5,0.649329,0,0.718544,0,0.718544,0,0.576783,0,0.576783,0,0.649329,0,0.576783,0.5,0.576783,1,0.649329,1,0.853557,0.5,0.853557,1,0.785976,0.5,0.785976,0,0.853557,0,0.853557,0,0.785976,0,0.785976,1,0.923961,0,1,0,1,0,0.923961,0,0.923961,1,0,1});
+IndexedFaceSet716->setTexCoord(*TextureCoordinate717);
+
+CCoordinate* Coordinate718 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate718->setDEF("nurbsToPoly300GeoPoints");
+Coordinate718->setPoint(new float[180]{42.401,-0.506,90.569,101.094,-0.135,-74.047,102.183,2.833,-73.274,43.951,2.224,89.843,42.468,-0.506,-2.465,44.132,2.224,-1.848,37.738,-0.506,50.689,39.511,2.224,50.552,37.738,-0.506,50.689,42.401,-0.506,90.569,39.456,-0.506,77.461,39.456,-0.506,77.461,38.156,-0.506,64.103,38.156,-0.506,64.103,41.128,2.224,76.958,43.651,0.41,90.003,40.802,0.41,77.075,39.161,0.41,50.598,39.554,0.41,63.871,39.896,2.224,63.791,37.888,-0.506,23.875,39.661,2.224,24.092,37.888,-0.506,23.875,37.698,-0.506,37.287,37.698,-0.506,37.287,39.307,0.41,24.068,39.127,0.41,37.334,39.481,2.224,37.323,42.468,-0.506,-2.465,39.112,-0.506,10.519,39.112,-0.506,10.519,43.795,0.41,-1.953,40.499,0.41,10.867,40.847,2.224,10.93,64.552,-0.456,-35.801,65.9,2.305,-34.718,64.552,-0.456,-35.801,48.3,-0.504,-14.547,48.3,-0.504,-14.547,55.858,-0.49,-25.627,55.858,-0.49,-25.627,49.864,2.227,-13.732,49.546,0.414,-13.877,65.651,0.488,-34.918,57.024,0.435,-24.827,57.314,2.25,-24.649,83.805,-0.312,-54.188,84.976,2.541,-53.123,83.805,-0.312,-54.188,74.026,-0.395,-45.187,74.026,-0.395,-45.187,84.851,0.715,-53.319,75.085,0.583,-44.28,75.277,2.404,-44.074,101.094,-0.135,-74.047,93.194,-0.219,-63.526,93.194,-0.219,-63.526,102.18,0.994,-73.414,94.25,0.861,-62.75,94.308,2.693,-62.576});
+IndexedFaceSet716->setCoord(*Coordinate718);
+
+Shape712->setGeometry(IndexedFaceSet716);
+
+Transform711->addChildren(*Shape712);
+
+Transform702->addChildren(*Transform711);
+
+CTransform* Transform719 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform719->setDEF("l_22");
+CShape* Shape720 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance721 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture722 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture722->setUSE("_28");
+Appearance721->setTexture(*ImageTexture722);
+
+CTextureTransform* TextureTransform723 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform723->setUSE("_29");
+Appearance721->setTextureTransform(*TextureTransform723);
+
+Shape720->setAppearance(*Appearance721);
+
+CIndexedFaceSet* IndexedFaceSet724 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet724->setDEF("nurbsToPoly299_0Geo");
+IndexedFaceSet724->setSolid(False);
+IndexedFaceSet724->setConvex(False);
+IndexedFaceSet724->setTexCoordIndex(new int[336]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,13,9,15,-1,16,17,18,-1,19,14,17,-1,11,6,15,-1,14,15,8,-1,17,8,20,-1,21,22,23,-1,24,25,26,-1,10,24,27,-1,26,21,27,-1,11,27,23,-1,6,23,28,-1,29,30,31,-1,25,29,32,-1,31,3,32,-1,26,32,5,-1,21,5,33,-1,34,35,36,-1,37,38,39,-1,30,40,41,-1,40,37,42,-1,3,43,44,-1,31,41,43,-1,39,34,42,-1,41,42,36,-1,43,36,45,-1,46,47,48,-1,49,50,51,-1,38,49,52,-1,51,46,52,-1,39,52,48,-1,34,48,53,-1,54,55,56,-1,50,54,57,-1,56,0,57,-1,51,57,2,-1,46,2,58,-1,1,58,2,-1,4,33,5,-1,7,20,8,-1,11,15,9,-1,14,19,12,-1,15,14,13,-1,18,59,16,-1,17,16,19,-1,6,8,15,-1,8,17,14,-1,20,18,17,-1,22,28,23,-1,26,27,24,-1,27,11,10,-1,21,23,27,-1,23,6,11,-1,28,7,6,-1,31,32,29,-1,32,26,25,-1,3,5,32,-1,5,21,26,-1,33,22,21,-1,35,45,36,-1,39,42,37,-1,41,31,30,-1,42,41,40,-1,44,4,3,-1,43,3,31,-1,34,36,42,-1,36,43,41,-1,45,44,43,-1,47,53,48,-1,51,52,49,-1,52,39,38,-1,46,48,52,-1,48,34,39,-1,53,35,34,-1,56,57,54,-1,57,51,50,-1,0,2,57,-1,2,46,51,-1,58,47,46,-1});
+IndexedFaceSet724->setCoordIndex(new int[336]{57,2,58,-1,31,5,32,-1,17,7,18,-1,12,6,8,-1,0,10,11,-1,10,12,13,-1,15,16,14,-1,9,11,16,-1,8,17,13,-1,11,13,18,-1,16,18,19,-1,25,21,26,-1,23,20,22,-1,6,23,24,-1,22,25,24,-1,8,24,26,-1,17,26,27,-1,29,4,28,-1,20,29,30,-1,28,31,30,-1,22,30,32,-1,25,32,33,-1,43,35,44,-1,39,34,36,-1,4,37,38,-1,37,39,40,-1,31,42,41,-1,28,38,42,-1,36,43,40,-1,38,40,44,-1,42,44,45,-1,51,47,52,-1,49,46,48,-1,34,49,50,-1,48,51,50,-1,36,50,52,-1,43,52,53,-1,55,1,54,-1,46,55,56,-1,54,57,56,-1,48,56,58,-1,51,58,59,-1,2,59,58,-1,5,33,32,-1,7,19,18,-1,8,13,12,-1,11,9,0,-1,13,11,10,-1,14,3,15,-1,16,15,9,-1,17,18,13,-1,18,16,11,-1,19,14,16,-1,21,27,26,-1,22,24,23,-1,24,8,6,-1,25,26,24,-1,26,17,8,-1,27,7,17,-1,28,30,29,-1,30,22,20,-1,31,32,30,-1,32,25,22,-1,33,21,25,-1,35,45,44,-1,36,40,39,-1,38,28,4,-1,40,38,37,-1,41,5,31,-1,42,31,28,-1,43,44,40,-1,44,42,38,-1,45,41,42,-1,47,53,52,-1,48,50,49,-1,50,36,34,-1,51,52,50,-1,52,43,36,-1,53,35,43,-1,54,56,55,-1,56,48,46,-1,57,58,56,-1,58,51,48,-1,59,47,51,-1});
+CTextureCoordinate* TextureCoordinate725 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate725->setPoint(new float[120]{1,0.501333,1,1,0.917122,0.501333,0.485524,0.501333,0.485524,1,0.405544,0.501333,0.191793,0.501333,0.191793,1,0.12959,0.501333,0.12959,0,0.191793,0,0.191793,0,0,0,0.066663,0,0.066663,0,0.12959,0,0,0.501333,0.066663,0.501333,0.066663,1,0,0,0.12959,1,0.328004,0.501333,0.328004,1,0.256739,0.501333,0.256739,0,0.328004,0,0.328004,0,0.256739,0,0.256739,1,0.405544,0,0.485524,0,0.485524,0,0.405544,0,0.405544,1,0.702807,0.501333,0.702807,1,0.63347,0.501333,0.63347,0,0.702807,0,0.702807,0,0.561722,0,0.561722,0,0.63347,0,0.561722,0.501333,0.561722,1,0.63347,1,0.842236,0.501333,0.842236,1,0.771715,0.501333,0.771715,0,0.842236,0,0.842236,0,0.771715,0,0.771715,1,0.917122,0,1,0,1,0,0.917122,0,0.917122,1,0,1});
+IndexedFaceSet724->setTexCoord(*TextureCoordinate725);
+
+CCoordinate* Coordinate726 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate726->setDEF("nurbsToPoly299GeoPoints");
+Coordinate726->setPoint(new float[180]{38.02,0.506,92.488,96.603,0.061,-76.298,95.522,3.113,-76.613,37.452,3.714,92.689,37.069,0.506,-2.055,36.501,3.714,-2.317,32.793,0.506,52.076,32.167,3.714,52.068,32.793,0.506,52.076,38.02,0.506,92.488,34.833,0.506,79.27,34.833,0.506,79.27,33.331,0.506,65.714,33.331,0.506,65.714,34.23,3.714,79.392,37.154,1.91,92.849,33.906,1.91,79.51,31.819,1.91,52.116,32.371,1.91,65.849,32.711,3.714,65.767,32.889,0.506,24.777,32.273,3.714,24.648,32.889,0.506,24.777,32.72,0.506,38.416,32.72,0.506,38.416,31.921,1.91,24.628,31.744,1.91,38.363,32.096,3.714,38.348,37.069,0.506,-2.055,33.994,0.506,11.199,33.994,0.506,11.199,36.164,1.91,-2.414,33.049,1.91,10.947,33.397,3.714,11.005,58.548,0.458,-36.608,58.025,3.65,-37.03,58.548,0.458,-36.608,42.592,0.504,-14.496,42.592,0.504,-14.496,49.944,0.492,-25.983,49.944,0.492,-25.983,42.061,3.712,-14.823,41.74,1.908,-14.96,57.767,1.844,-37.226,49.14,1.891,-26.537,49.435,3.696,-26.366,78.221,0.292,-55.804,77.487,3.424,-56.23,78.221,0.292,-55.804,68.102,0.392,-46.455,68.102,0.392,-46.455,77.35,1.609,-56.428,67.3,1.75,-47.099,67.505,3.56,-46.894,96.603,0.061,-76.298,88.155,0.173,-65.402,88.155,0.173,-65.402,95.52,1.284,-76.752,87.182,1.442,-65.964,87.245,3.264,-65.789});
+IndexedFaceSet724->setCoord(*Coordinate726);
+
+Shape720->setGeometry(IndexedFaceSet724);
+
+Transform719->addChildren(*Shape720);
+
+Transform702->addChildren(*Transform719);
+
+LOD701->addChildren(*Transform702);
+
+Transform700->addChildren(*LOD701);
+
+group->addChildren(*Transform700);
+
+CTransform* Transform727 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform727->setDEF("s27LOD");
+CLOD* LOD728 = (CLOD *)(m_pScene.createNode("LOD"));
+CTransform* Transform729 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform729->setDEF("med_20");
+CTransform* Transform730 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform730->setDEF("f_25");
+CShape* Shape731 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance732 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture733 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture733->setUSE("_20");
+Appearance732->setTexture(*ImageTexture733);
+
+CTextureTransform* TextureTransform734 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+Appearance732->setTextureTransform(*TextureTransform734);
+
+Shape731->setAppearance(*Appearance732);
+
+CIndexedFaceSet* IndexedFaceSet735 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet735->setDEF("nurbsToPoly304_0Geo");
+IndexedFaceSet735->setSolid(False);
+IndexedFaceSet735->setConvex(False);
+IndexedFaceSet735->setTexCoordIndex(new int[72]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,6,-1,7,3,11,-1,12,13,14,-1,4,12,15,-1,13,16,17,-1,16,0,18,-1,1,19,2,-1,4,15,5,-1,7,11,8,-1,6,8,9,-1,3,5,11,-1,13,17,14,-1,12,14,15,-1,16,18,17,-1,0,2,18,-1});
+IndexedFaceSet735->setCoordIndex(new int[72]{18,2,19,-1,10,4,11,-1,8,6,9,-1,0,1,8,-1,6,10,7,-1,14,12,15,-1,4,14,5,-1,12,16,13,-1,16,18,17,-1,2,3,19,-1,4,5,11,-1,6,7,9,-1,8,9,0,-1,10,11,7,-1,12,13,15,-1,14,15,5,-1,16,17,13,-1,18,19,17,-1});
+CTextureCoordinate* TextureCoordinate736 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate736->setPoint(new float[40]{1,0.909858,1,1,0,0.909858,1,0.375657,1,0.494472,0,0.375657,1,0.125604,1,0.251927,0,0.125604,0,0,1,0,0,0.251927,1,0.607346,1,0.714039,0,0.607346,0,0.494472,1,0.814814,0,0.714039,0,0.814814,0,1});
+IndexedFaceSet735->setTexCoord(*TextureCoordinate736);
+
+CCoordinate* Coordinate737 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate737->setDEF("nurbsToPoly304GeoPoints");
+Coordinate737->setPoint(new float[60]{96.603,0.061,-76.298,101.094,-0.135,-74.047,108.244,-0.017,-118.6,103.012,-0.038,-118.93,107.116,-0.065,-93.363,102.247,-0.021,-94.621,105.076,-0.091,-83.399,100.384,0.007,-85.156,103.356,-0.11,-78.605,98.762,0.031,-80.616,106.3,-0.076,-88.343,101.516,-0.009,-89.846,107.93,-0.046,-103.471,102.906,-0.033,-104.293,107.628,-0.055,-98.414,102.68,-0.028,-99.443,108.096,-0.037,-108.526,103.002,-0.035,-109.162,108.187,-0.028,-113.563,103.023,-0.037,-114.035});
+IndexedFaceSet735->setCoord(*Coordinate737);
+
+Shape731->setGeometry(IndexedFaceSet735);
+
+Transform730->addChildren(*Shape731);
+
+Transform729->addChildren(*Transform730);
+
+CTransform* Transform738 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform738->setDEF("r_23");
+CShape* Shape739 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance740 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture741 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture741->setDEF("_30");
+ImageTexture741->setUrl(new CString[1]{"wand4-m.png"}, 1);
+Appearance740->setTexture(*ImageTexture741);
+
+CTextureTransform* TextureTransform742 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform742->setDEF("_31");
+TextureTransform742->setScale(new float[2]{2,1});
+Appearance740->setTextureTransform(*TextureTransform742);
+
+Shape739->setAppearance(*Appearance740);
+
+CIndexedFaceSet* IndexedFaceSet743 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet743->setDEF("nurbsToPoly303_0Geo");
+IndexedFaceSet743->setSolid(False);
+IndexedFaceSet743->setConvex(False);
+IndexedFaceSet743->setTexCoordIndex(new int[216]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,9,13,-1,11,6,13,-1,14,13,8,-1,15,8,16,-1,17,18,19,-1,10,17,20,-1,19,3,20,-1,11,20,5,-1,6,5,21,-1,22,23,24,-1,25,26,27,-1,18,25,28,-1,27,22,28,-1,19,28,24,-1,3,24,29,-1,30,31,32,-1,26,33,34,-1,33,30,35,-1,22,36,37,-1,27,34,36,-1,32,0,35,-1,34,35,2,-1,36,2,38,-1,1,38,2,-1,4,21,5,-1,7,16,8,-1,11,13,9,-1,13,14,12,-1,6,8,13,-1,8,15,14,-1,16,39,15,-1,19,20,17,-1,20,11,10,-1,3,5,20,-1,5,6,11,-1,21,7,6,-1,23,29,24,-1,27,28,25,-1,28,19,18,-1,22,24,28,-1,24,3,19,-1,29,4,3,-1,32,35,30,-1,34,27,26,-1,35,34,33,-1,37,23,22,-1,36,22,27,-1,0,2,35,-1,2,36,34,-1,38,37,36,-1});
+IndexedFaceSet743->setCoordIndex(new int[216]{37,2,38,-1,19,5,20,-1,12,7,14,-1,10,6,8,-1,0,10,11,-1,8,12,11,-1,9,11,14,-1,13,14,15,-1,17,4,16,-1,6,17,18,-1,16,19,18,-1,8,18,20,-1,12,20,21,-1,27,23,28,-1,25,22,24,-1,4,25,26,-1,24,27,26,-1,16,26,28,-1,19,28,29,-1,33,1,30,-1,22,31,32,-1,31,33,34,-1,27,36,35,-1,24,32,36,-1,30,37,34,-1,32,34,38,-1,36,38,39,-1,2,39,38,-1,5,21,20,-1,7,15,14,-1,8,11,10,-1,11,9,0,-1,12,14,11,-1,14,13,9,-1,15,3,13,-1,16,18,17,-1,18,8,6,-1,19,20,18,-1,20,12,8,-1,21,7,12,-1,23,29,28,-1,24,26,25,-1,26,16,4,-1,27,28,26,-1,28,19,16,-1,29,5,19,-1,30,34,33,-1,32,24,22,-1,34,32,31,-1,35,23,27,-1,36,27,24,-1,37,38,34,-1,38,36,32,-1,39,35,36,-1});
+CTextureCoordinate* TextureCoordinate744 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate744->setPoint(new float[80]{1,0.5,1,1,0.908494,0.5,0.490654,0.5,0.490654,1,0.372317,0.5,0.249531,0.5,0.249531,1,0.12446,0.5,0.12446,0,0.249531,0,0.249531,0,0,0,0.12446,0,0,0,0,0.5,0.12446,1,0.372317,0,0.490654,0,0.490654,0,0.372317,0,0.372317,1,0.710729,0.5,0.710729,1,0.603557,0.5,0.603557,0,0.710729,0,0.710729,0,0.603557,0,0.603557,1,0.908494,0,1,0,1,0,0.812299,0,0.812299,0,0.908494,0,0.812299,0.5,0.812299,1,0.908494,1,0,1});
+IndexedFaceSet743->setTexCoord(*TextureCoordinate744);
+
+CCoordinate* Coordinate745 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate745->setDEF("nurbsToPoly303GeoPoints");
+Coordinate745->setPoint(new float[120]{101.094,-0.135,-74.047,108.244,-0.017,-118.6,108.304,2.983,-118.394,102.183,2.833,-73.274,107.097,-0.065,-93.209,108.095,2.945,-92.766,105.051,-0.091,-83.313,106.136,2.905,-82.709,105.051,-0.091,-83.313,101.094,-0.135,-74.047,103.34,-0.111,-78.566,103.34,-0.111,-78.566,106.154,1.063,-82.815,102.18,0.994,-73.414,104.441,1.033,-78,104.43,2.874,-77.876,107.097,-0.065,-93.209,106.275,-0.077,-88.216,106.275,-0.077,-88.216,108.122,1.103,-92.83,107.356,1.086,-87.782,107.333,2.929,-87.696,107.923,-0.046,-103.321,108.681,2.966,-103.006,107.923,-0.046,-103.321,107.616,-0.055,-98.252,107.616,-0.055,-98.252,108.711,1.126,-103.015,108.544,1.116,-97.916,108.516,2.957,-97.877,108.244,-0.017,-118.6,108.094,-0.038,-108.406,108.094,-0.038,-108.406,108.186,-0.028,-113.494,108.186,-0.028,-113.494,108.663,2.972,-108.137,108.697,1.136,-108.116,108.35,1.155,-118.301,108.562,1.145,-113.207,108.523,2.978,-113.262});
+IndexedFaceSet743->setCoord(*Coordinate745);
+
+Shape739->setGeometry(IndexedFaceSet743);
+
+Transform738->addChildren(*Shape739);
+
+Transform729->addChildren(*Transform738);
+
+CTransform* Transform746 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform746->setDEF("l_23");
+CShape* Shape747 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance748 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture749 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture749->setUSE("_30");
+Appearance748->setTexture(*ImageTexture749);
+
+CTextureTransform* TextureTransform750 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform750->setUSE("_31");
+Appearance748->setTextureTransform(*TextureTransform750);
+
+Shape747->setAppearance(*Appearance748);
+
+CIndexedFaceSet* IndexedFaceSet751 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet751->setDEF("nurbsToPoly302_0Geo");
+IndexedFaceSet751->setSolid(False);
+IndexedFaceSet751->setConvex(False);
+IndexedFaceSet751->setTexCoordIndex(new int[216]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,9,13,-1,11,6,13,-1,14,13,8,-1,15,8,16,-1,17,18,19,-1,10,17,20,-1,19,3,20,-1,11,20,5,-1,6,5,21,-1,22,23,24,-1,25,26,27,-1,18,25,28,-1,27,22,28,-1,19,28,24,-1,3,24,29,-1,30,31,32,-1,26,33,34,-1,33,30,35,-1,22,36,37,-1,27,34,36,-1,32,0,35,-1,34,35,2,-1,36,2,38,-1,1,38,2,-1,4,21,5,-1,7,16,8,-1,11,13,9,-1,13,14,12,-1,6,8,13,-1,8,15,14,-1,16,39,15,-1,19,20,17,-1,20,11,10,-1,3,5,20,-1,5,6,11,-1,21,7,6,-1,23,29,24,-1,27,28,25,-1,28,19,18,-1,22,24,28,-1,24,3,19,-1,29,4,3,-1,32,35,30,-1,34,27,26,-1,35,34,33,-1,37,23,22,-1,36,22,27,-1,0,2,35,-1,2,36,34,-1,38,37,36,-1});
+IndexedFaceSet751->setCoordIndex(new int[216]{37,2,38,-1,19,5,20,-1,12,7,14,-1,10,6,8,-1,0,10,11,-1,8,12,11,-1,9,11,14,-1,13,14,15,-1,17,4,16,-1,6,17,18,-1,16,19,18,-1,8,18,20,-1,12,20,21,-1,27,23,28,-1,25,22,24,-1,4,25,26,-1,24,27,26,-1,16,26,28,-1,19,28,29,-1,33,1,30,-1,22,31,32,-1,31,33,34,-1,27,36,35,-1,24,32,36,-1,30,37,34,-1,32,34,38,-1,36,38,39,-1,2,39,38,-1,5,21,20,-1,7,15,14,-1,8,11,10,-1,11,9,0,-1,12,14,11,-1,14,13,9,-1,15,3,13,-1,16,18,17,-1,18,8,6,-1,19,20,18,-1,20,12,8,-1,21,7,12,-1,23,29,28,-1,24,26,25,-1,26,16,4,-1,27,28,26,-1,28,19,16,-1,29,5,19,-1,30,34,33,-1,32,24,22,-1,34,32,31,-1,35,23,27,-1,36,27,24,-1,37,38,34,-1,38,36,32,-1,39,35,36,-1});
+CTextureCoordinate* TextureCoordinate752 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate752->setPoint(new float[80]{1,0.501333,1,1,0.911012,0.501333,0.497707,0.501333,0.497707,1,0.378467,0.501333,0.253938,0.501333,0.253938,1,0.126575,0.501333,0.126575,0,0.253938,0,0.253938,0,0,0,0.126575,0,0,0,0,0.501333,0.126575,1,0.378467,0,0.497707,0,0.497707,0,0.378467,0,0.378467,1,0.716862,0.501333,0.716862,1,0.610573,0.501333,0.610573,0,0.716862,0,0.716862,0,0.610573,0,0.610573,1,0.911012,0,1,0,1,0,0.816921,0,0.816921,0,0.911012,0,0.816921,0.501333,0.816921,1,0.911012,1,0,1});
+IndexedFaceSet751->setTexCoord(*TextureCoordinate752);
+
+CCoordinate* Coordinate753 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate753->setDEF("nurbsToPoly302GeoPoints");
+Coordinate753->setPoint(new float[120]{96.603,0.061,-76.298,103.012,-0.038,-118.93,101.777,2.988,-118.99,95.522,3.113,-76.613,102.26,-0.021,-94.738,101.053,3.007,-94.917,100.403,0.007,-85.22,99.24,3.043,-85.468,100.403,0.007,-85.22,96.603,0.061,-76.298,98.774,0.031,-80.645,98.774,0.031,-80.645,99.258,1.21,-85.575,95.52,1.284,-76.752,97.657,1.242,-81.051,97.647,3.073,-80.927,102.26,-0.021,-94.738,101.534,-0.01,-89.941,101.534,-0.01,-89.941,101.074,1.171,-94.994,100.366,1.187,-90.246,100.345,3.021,-90.154,102.909,-0.033,-104.41,101.683,2.992,-104.531,102.909,-0.033,-104.41,102.687,-0.028,-99.569,102.687,-0.028,-99.569,101.699,1.155,-104.582,101.487,1.161,-99.78,101.468,2.998,-99.717,103.012,-0.038,-118.93,103.002,-0.036,-109.255,103.002,-0.036,-109.255,103.022,-0.037,-114.089,103.022,-0.037,-114.089,101.771,2.99,-109.352,101.783,1.152,-109.393,101.782,1.149,-119.015,101.797,1.15,-114.198,101.789,2.988,-114.166});
+IndexedFaceSet751->setCoord(*Coordinate753);
+
+Shape747->setGeometry(IndexedFaceSet751);
+
+Transform746->addChildren(*Shape747);
+
+Transform729->addChildren(*Transform746);
+
+LOD728->addChildren(*Transform729);
+
+Transform727->addChildren(*LOD728);
+
+group->addChildren(*Transform727);
+
+CTransform* Transform754 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform754->setDEF("s28LOD");
+CLOD* LOD755 = (CLOD *)(m_pScene.createNode("LOD"));
+CTransform* Transform756 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform756->setDEF("med_21");
+CTransform* Transform757 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform757->setDEF("f_26");
+CShape* Shape758 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance759 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture760 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture760->setUSE("_20");
+Appearance759->setTexture(*ImageTexture760);
+
+CTextureTransform* TextureTransform761 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+Appearance759->setTextureTransform(*TextureTransform761);
+
+Shape758->setAppearance(*Appearance759);
+
+CIndexedFaceSet* IndexedFaceSet762 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet762->setDEF("nurbsToPoly307_0Geo");
+IndexedFaceSet762->setSolid(False);
+IndexedFaceSet762->setConvex(False);
+IndexedFaceSet762->setTexCoordIndex(new int[64]{0,1,2,-1,3,4,5,-1,6,7,3,-1,8,6,5,-1,9,5,10,-1,4,0,10,-1,11,10,2,-1,12,2,13,-1,1,13,2,-1,4,10,5,-1,3,5,6,-1,5,9,8,-1,10,11,9,-1,0,2,10,-1,2,12,11,-1,13,14,12,-1});
+IndexedFaceSet762->setCoordIndex(new int[64]{11,2,13,-1,6,4,9,-1,8,1,6,-1,0,8,9,-1,7,9,10,-1,4,11,10,-1,5,10,13,-1,12,13,14,-1,2,14,13,-1,4,10,9,-1,6,9,8,-1,9,7,0,-1,10,5,7,-1,11,13,10,-1,13,12,5,-1,14,3,12,-1});
+CTextureCoordinate* TextureCoordinate763 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate763->setPoint(new float[30]{1,0.80841,1,1,0.505048,0.80841,1,0.314207,1,0.583467,0.505048,0.314207,0.505048,0,1,0,0,0,0,0.314207,0.505048,0.583467,0,0.583467,0,0.80841,0.505048,1,0,1});
+IndexedFaceSet762->setTexCoord(*TextureCoordinate763);
+
+CCoordinate* Coordinate764 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate764->setDEF("nurbsToPoly307GeoPoints");
+Coordinate764->setPoint(new float[45]{113.104,-0.017,-120.064,103.012,-0.038,-118.93,102.963,-0.034,-165.909,108.124,-0.059,-165.822,102.978,-0.039,-138.735,108.13,-0.026,-145.978,102.991,-0.039,-127.98,109.261,-0.018,-133.768,108.191,-0.017,-118.603,106.489,-0.022,-130.491,105.813,-0.028,-142.152,102.969,-0.037,-151.441,108.027,-0.039,-156.542,105.59,-0.036,-153.879,105.518,-0.047,-165.866});
+IndexedFaceSet762->setCoord(*Coordinate764);
+
+Shape758->setGeometry(IndexedFaceSet762);
+
+Transform757->addChildren(*Shape758);
+
+Transform756->addChildren(*Transform757);
+
+CTransform* Transform765 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform765->setDEF("l_24");
+CShape* Shape766 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance767 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture768 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture768->setUSE("_30");
+Appearance767->setTexture(*ImageTexture768);
+
+CTextureTransform* TextureTransform769 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform769->setDEF("_32");
+TextureTransform769->setScale(new float[2]{2,1});
+Appearance767->setTextureTransform(*TextureTransform769);
+
+Shape766->setAppearance(*Appearance767);
+
+CIndexedFaceSet* IndexedFaceSet770 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet770->setDEF("nurbsToPoly306_0Geo");
+IndexedFaceSet770->setSolid(False);
+IndexedFaceSet770->setConvex(False);
+IndexedFaceSet770->setTexCoordIndex(new int[96]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,6,10,-1,8,3,10,-1,11,10,5,-1,12,5,13,-1,14,15,16,-1,7,14,17,-1,16,0,17,-1,8,17,2,-1,3,2,18,-1,1,18,2,-1,4,13,5,-1,8,10,6,-1,10,11,9,-1,3,5,10,-1,5,12,11,-1,13,19,12,-1,16,17,14,-1,17,8,7,-1,0,2,17,-1,2,3,8,-1,18,4,3,-1});
+IndexedFaceSet770->setCoordIndex(new int[96]{17,2,18,-1,10,5,12,-1,8,4,6,-1,0,8,9,-1,6,10,9,-1,7,9,12,-1,11,12,13,-1,15,1,14,-1,4,15,16,-1,14,17,16,-1,6,16,18,-1,10,18,19,-1,2,19,18,-1,5,13,12,-1,6,9,8,-1,9,7,0,-1,10,12,9,-1,12,11,7,-1,13,3,11,-1,14,16,15,-1,16,6,4,-1,17,18,16,-1,18,10,6,-1,19,5,10,-1});
+CTextureCoordinate* TextureCoordinate771 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate771->setPoint(new float[40]{1,0.501333,1,1,0.847942,0.501333,0.656218,0.501333,0.656218,1,0.390803,0.501333,0.390803,0,0.656218,0,0.656218,0,0,0,0.390803,0,0,0,0,0.501333,0.390803,1,0.847942,0,1,0,1,0,0.847942,0,0.847942,1,0,1});
+IndexedFaceSet770->setTexCoord(*TextureCoordinate771);
+
+CCoordinate* Coordinate772 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate772->setDEF("nurbsToPoly306GeoPoints");
+Coordinate772->setPoint(new float[60]{103.012,-0.038,-118.93,102.963,-0.034,-165.909,101.728,2.991,-165.926,101.777,2.988,-118.99,102.975,-0.038,-142.406,101.737,2.987,-142.429,102.975,-0.038,-142.406,103.012,-0.038,-118.93,102.987,-0.039,-130.655,102.987,-0.039,-130.655,101.733,1.149,-142.438,101.782,1.149,-119.015,101.749,1.148,-130.703,101.749,2.987,-130.688,102.963,-0.034,-165.909,102.968,-0.037,-154.124,102.968,-0.037,-154.124,101.721,1.153,-165.929,101.726,1.151,-154.147,101.731,2.989,-154.142});
+IndexedFaceSet770->setCoord(*Coordinate772);
+
+Shape766->setGeometry(IndexedFaceSet770);
+
+Transform765->addChildren(*Shape766);
+
+Transform756->addChildren(*Transform765);
+
+CTransform* Transform773 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform773->setDEF("r_24");
+CShape* Shape774 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance775 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture776 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture776->setUSE("_30");
+Appearance775->setTexture(*ImageTexture776);
+
+CTextureTransform* TextureTransform777 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform777->setUSE("_32");
+Appearance775->setTextureTransform(*TextureTransform777);
+
+Shape774->setAppearance(*Appearance775);
+
+CIndexedFaceSet* IndexedFaceSet778 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet778->setDEF("nurbsToPoly305_0Geo");
+IndexedFaceSet778->setSolid(False);
+IndexedFaceSet778->setConvex(False);
+IndexedFaceSet778->setTexCoordIndex(new int[144]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,6,-1,11,9,8,-1,12,8,13,-1,14,15,3,-1,10,14,5,-1,6,5,16,-1,17,18,19,-1,20,21,17,-1,15,20,19,-1,3,19,22,-1,23,24,17,-1,21,25,23,-1,26,27,0,-1,25,26,2,-1,23,2,28,-1,1,28,2,-1,4,16,5,-1,7,13,8,-1,6,8,9,-1,8,12,11,-1,13,29,12,-1,3,5,14,-1,5,6,10,-1,16,7,6,-1,18,22,19,-1,17,19,20,-1,19,3,15,-1,22,4,3,-1,24,18,17,-1,23,17,21,-1,0,2,26,-1,2,23,25,-1,28,24,23,-1});
+IndexedFaceSet778->setCoordIndex(new int[144]{26,2,28,-1,13,5,15,-1,8,7,11,-1,10,6,8,-1,0,10,11,-1,9,11,12,-1,14,4,13,-1,6,14,15,-1,8,15,16,-1,19,18,21,-1,20,17,19,-1,4,20,21,-1,13,21,22,-1,25,24,19,-1,17,23,25,-1,27,1,26,-1,23,27,28,-1,25,28,29,-1,2,29,28,-1,5,16,15,-1,7,12,11,-1,8,11,10,-1,11,9,0,-1,12,3,9,-1,13,15,14,-1,15,8,6,-1,16,7,8,-1,18,22,21,-1,19,21,20,-1,21,13,4,-1,22,5,13,-1,24,18,19,-1,25,19,17,-1,26,28,27,-1,28,25,23,-1,29,24,25,-1});
+CTextureCoordinate* TextureCoordinate779 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate779->setPoint(new float[60]{1,0.5,1,1,0.894874,0.5,0.455639,0.5,0.455639,1,0.341741,0.5,0.227118,0.5,0.227118,1,0.112769,0.5,0.112769,0,0.227118,0,0,0,0,0.5,0.112769,1,0.341741,0,0.455639,0,0.341741,1,0.678954,0.5,0.678954,1,0.568162,0.5,0.568162,0,0.678954,0,0.568162,1,0.787867,0.5,0.787867,1,0.787867,0,0.894874,0,1,0,0.894874,1,0,1});
+IndexedFaceSet778->setTexCoord(*TextureCoordinate779);
+
+CCoordinate* Coordinate780 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate780->setDEF("nurbsToPoly305GeoPoints");
+Coordinate780->setPoint(new float[90]{113.104,-0.017,-120.064,108.124,-0.059,-165.822,109.383,2.964,-165.796,114.208,2.983,-120.56,108.481,-0.021,-140.125,109.686,2.981,-140.308,110,-0.018,-129.914,111.161,2.983,-130.248,111.188,1.154,-130.186,114.254,1.155,-120.467,111.33,-0.017,-124.919,112.5,1.155,-125.257,112.465,2.983,-125.334,109.699,1.151,-140.274,109.071,-0.019,-134.996,110.275,1.153,-135.204,110.256,2.982,-135.252,108.027,-0.03,-150.421,109.261,2.977,-150.483,109.266,1.143,-150.471,108.158,-0.025,-145.272,109.387,1.148,-145.367,109.378,2.98,-145.39,108.02,-0.038,-155.563,109.264,2.974,-155.583,109.265,1.136,-155.578,109.376,1.117,-165.799,108.072,-0.047,-160.697,109.321,1.128,-160.687,109.324,2.969,-160.687});
+IndexedFaceSet778->setCoord(*Coordinate780);
+
+Shape774->setGeometry(IndexedFaceSet778);
+
+Transform773->addChildren(*Shape774);
+
+Transform756->addChildren(*Transform773);
+
+LOD755->addChildren(*Transform756);
+
+Transform754->addChildren(*LOD755);
+
+group->addChildren(*Transform754);
+
+CTransform* Transform781 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform781->setDEF("s29LOD");
+CLOD* LOD782 = (CLOD *)(m_pScene.createNode("LOD"));
+CTransform* Transform783 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform783->setDEF("med");
+CTransform* Transform784 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform784->setDEF("f");
+CShape* Shape785 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance786 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture787 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture787->setUSE("_20");
+Appearance786->setTexture(*ImageTexture787);
+
+CTextureTransform* TextureTransform788 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+Appearance786->setTextureTransform(*TextureTransform788);
+
+Shape785->setAppearance(*Appearance786);
+
+CIndexedFaceSet* IndexedFaceSet789 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet789->setDEF("nurbsToPoly310_0Geo");
+IndexedFaceSet789->setSolid(False);
+IndexedFaceSet789->setConvex(False);
+IndexedFaceSet789->setTexCoordIndex(new int[112]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,11,6,12,-1,13,14,15,-1,7,13,16,-1,14,3,17,-1,18,19,20,-1,4,21,22,-1,21,18,23,-1,24,25,26,-1,19,24,27,-1,25,0,28,-1,1,29,2,-1,4,22,5,-1,7,16,8,-1,11,12,9,-1,6,8,12,-1,14,17,15,-1,13,15,16,-1,3,5,17,-1,19,27,20,-1,21,23,22,-1,18,20,23,-1,25,28,26,-1,24,26,27,-1,0,2,28,-1});
+IndexedFaceSet789->setCoordIndex(new int[112]{28,2,29,-1,16,4,17,-1,10,6,11,-1,0,1,8,-1,8,10,9,-1,14,12,15,-1,6,14,7,-1,12,16,13,-1,22,18,23,-1,4,20,5,-1,20,22,21,-1,26,24,27,-1,18,26,19,-1,24,28,25,-1,2,3,29,-1,4,5,17,-1,6,7,11,-1,8,9,0,-1,10,11,9,-1,12,13,15,-1,14,15,7,-1,16,17,13,-1,18,19,23,-1,20,21,5,-1,22,23,21,-1,24,25,27,-1,26,27,19,-1,28,29,25,-1});
+CTextureCoordinate* TextureCoordinate790 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate790->setPoint(new float[60]{1,0.956918,1,1,0,0.956918,1,0.582106,1,0.646543,0,0.582106,1,0.252336,1,0.349676,0,0.252336,0,0,1,0,1,0.138635,0,0.138635,1,0.435321,1,0.512149,0,0.435321,0,0.349676,0,0.512149,1,0.762317,1,0.814892,0,0.762317,1,0.706317,0,0.646543,0,0.706317,1,0.864636,1,0.911882,0,0.864636,0,0.814892,0,0.911882,0,1});
+IndexedFaceSet789->setTexCoord(*TextureCoordinate790);
+
+CCoordinate* Coordinate791 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate791->setDEF("nurbsToPoly310GeoPoints");
+Coordinate791->setPoint(new float[90]{102.963,-0.034,-165.909,108.124,-0.059,-165.822,108.139,-0.057,-403.528,102.955,-0.042,-403.719,108.12,-0.062,-284.682,102.951,-0.023,-284.783,108.121,-0.062,-216.764,102.954,-0.025,-216.832,108.123,-0.06,-182.803,102.959,-0.031,-182.875,108.122,-0.061,-199.781,102.956,-0.027,-199.848,108.119,-0.062,-250.717,102.952,-0.022,-250.799,108.12,-0.062,-233.743,102.953,-0.023,-233.817,108.12,-0.062,-267.694,102.951,-0.022,-267.785,108.126,-0.061,-335.605,102.952,-0.028,-335.744,108.122,-0.062,-301.649,102.951,-0.024,-301.762,108.123,-0.061,-318.646,102.952,-0.026,-318.771,108.131,-0.059,-369.553,102.953,-0.034,-369.717,108.128,-0.06,-352.577,102.953,-0.031,-352.728,108.135,-0.058,-386.535,102.954,-0.038,-386.712});
+IndexedFaceSet789->setCoord(*Coordinate791);
+
+Shape785->setGeometry(IndexedFaceSet789);
+
+Transform784->addChildren(*Shape785);
+
+Transform783->addChildren(*Transform784);
+
+CTransform* Transform792 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform792->setDEF("r");
+CShape* Shape793 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance794 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture795 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture795->setUSE("_18");
+Appearance794->setTexture(*ImageTexture795);
+
+CTextureTransform* TextureTransform796 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform796->setDEF("_33");
+TextureTransform796->setScale(new float[2]{6,1});
+Appearance794->setTextureTransform(*TextureTransform796);
+
+Shape793->setAppearance(*Appearance794);
+
+CIndexedFaceSet* IndexedFaceSet797 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet797->setDEF("nurbsToPoly309_0Geo");
+IndexedFaceSet797->setSolid(False);
+IndexedFaceSet797->setConvex(False);
+IndexedFaceSet797->setTexCoordIndex(new int[336]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,13,9,15,-1,16,17,18,-1,19,14,17,-1,11,6,15,-1,14,15,8,-1,17,8,20,-1,21,22,23,-1,24,25,26,-1,10,24,27,-1,26,21,27,-1,11,27,23,-1,6,23,28,-1,29,30,31,-1,25,29,32,-1,31,3,32,-1,26,32,5,-1,21,5,33,-1,34,35,36,-1,37,38,39,-1,30,40,41,-1,40,37,42,-1,3,43,44,-1,31,41,43,-1,39,34,42,-1,41,42,36,-1,43,36,45,-1,46,47,48,-1,49,50,51,-1,38,49,52,-1,51,46,52,-1,39,52,48,-1,34,48,53,-1,54,55,56,-1,50,54,57,-1,56,0,57,-1,51,57,2,-1,46,2,58,-1,1,58,2,-1,4,33,5,-1,7,20,8,-1,11,15,9,-1,14,19,12,-1,15,14,13,-1,18,59,16,-1,17,16,19,-1,6,8,15,-1,8,17,14,-1,20,18,17,-1,22,28,23,-1,26,27,24,-1,27,11,10,-1,21,23,27,-1,23,6,11,-1,28,7,6,-1,31,32,29,-1,32,26,25,-1,3,5,32,-1,5,21,26,-1,33,22,21,-1,35,45,36,-1,39,42,37,-1,41,31,30,-1,42,41,40,-1,44,4,3,-1,43,3,31,-1,34,36,42,-1,36,43,41,-1,45,44,43,-1,47,53,48,-1,51,52,49,-1,52,39,38,-1,46,48,52,-1,48,34,39,-1,53,35,34,-1,56,57,54,-1,57,51,50,-1,0,2,57,-1,2,46,51,-1,58,47,46,-1});
+IndexedFaceSet797->setCoordIndex(new int[336]{57,2,58,-1,31,5,32,-1,17,7,18,-1,12,6,8,-1,0,10,11,-1,10,12,13,-1,15,16,14,-1,9,11,16,-1,8,17,13,-1,11,13,18,-1,16,18,19,-1,25,21,26,-1,23,20,22,-1,6,23,24,-1,22,25,24,-1,8,24,26,-1,17,26,27,-1,29,4,28,-1,20,29,30,-1,28,31,30,-1,22,30,32,-1,25,32,33,-1,43,35,44,-1,39,34,36,-1,4,37,38,-1,37,39,40,-1,31,42,41,-1,28,38,42,-1,36,43,40,-1,38,40,44,-1,42,44,45,-1,51,47,52,-1,49,46,48,-1,34,49,50,-1,48,51,50,-1,36,50,52,-1,43,52,53,-1,55,1,54,-1,46,55,56,-1,54,57,56,-1,48,56,58,-1,51,58,59,-1,2,59,58,-1,5,33,32,-1,7,19,18,-1,8,13,12,-1,11,9,0,-1,13,11,10,-1,14,3,15,-1,16,15,9,-1,17,18,13,-1,18,16,11,-1,19,14,16,-1,21,27,26,-1,22,24,23,-1,24,8,6,-1,25,26,24,-1,26,17,8,-1,27,7,17,-1,28,30,29,-1,30,22,20,-1,31,32,30,-1,32,25,22,-1,33,21,25,-1,35,45,44,-1,36,40,39,-1,38,28,4,-1,40,38,37,-1,41,5,31,-1,42,31,28,-1,43,44,40,-1,44,42,38,-1,45,41,42,-1,47,53,52,-1,48,50,49,-1,50,36,34,-1,51,52,50,-1,52,43,36,-1,53,35,43,-1,54,56,55,-1,56,48,46,-1,57,58,56,-1,58,51,48,-1,59,47,51,-1});
+CTextureCoordinate* TextureCoordinate798 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate798->setPoint(new float[120]{1,0.5,1,1,0.956907,0.5,0.646446,0.5,0.646446,1,0.581991,0.5,0.349517,0.5,0.349517,1,0.25218,0.5,0.25218,0,0.349517,0,0.349517,0,0,0,0.138513,0,0.138513,0,0.25218,0,0,0.5,0.138513,0.5,0.138513,1,0,0,0.25218,1,0.512016,0.5,0.512016,1,0.435174,0.5,0.435174,0,0.512016,0,0.512016,0,0.435174,0,0.435174,1,0.581991,0,0.646446,0,0.646446,0,0.581991,0,0.581991,1,0.814841,0.5,0.814841,1,0.762252,0.5,0.762252,0,0.814841,0,0.814841,0,0.706235,0,0.706235,0,0.762252,0,0.706235,0.5,0.706235,1,0.762252,1,0.911858,0.5,0.911858,1,0.8646,0.5,0.8646,0,0.911858,0,0.911858,0,0.8646,0,0.8646,1,0.956907,0,1,0,1,0,0.956907,0,0.956907,1,0,1});
+IndexedFaceSet797->setTexCoord(*TextureCoordinate798);
+
+CCoordinate* Coordinate799 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate799->setDEF("nurbsToPoly309GeoPoints");
+Coordinate799->setPoint(new float[180]{108.124,-0.059,-165.822,108.139,-0.057,-403.528,109.4,2.972,-403.506,109.383,2.964,-165.796,108.12,-0.062,-284.655,109.393,2.952,-284.643,108.121,-0.062,-216.734,109.39,2.955,-216.722,108.121,-0.062,-216.734,108.124,-0.059,-165.822,108.123,-0.06,-182.787,108.123,-0.06,-182.787,108.122,-0.061,-199.756,108.122,-0.061,-199.756,109.387,2.96,-182.768,109.376,1.117,-165.799,109.377,1.114,-182.769,109.377,1.11,-216.719,109.378,1.111,-199.74,109.389,2.957,-199.741,108.119,-0.062,-250.687,109.392,2.952,-250.675,108.119,-0.062,-250.687,108.12,-0.062,-233.712,108.12,-0.062,-233.712,109.377,1.108,-250.67,109.377,1.108,-233.697,109.391,2.953,-233.701,108.12,-0.062,-284.655,108.12,-0.062,-267.665,108.12,-0.062,-267.665,109.378,1.108,-284.635,109.378,1.108,-267.647,109.392,2.952,-267.654,108.126,-0.061,-335.589,109.395,2.958,-335.573,108.126,-0.061,-335.589,108.122,-0.062,-301.625,108.122,-0.062,-301.625,108.123,-0.061,-318.625,108.123,-0.061,-318.625,109.394,2.954,-301.612,109.38,1.109,-301.604,109.383,1.112,-335.562,109.381,1.11,-318.601,109.395,2.956,-318.611,108.131,-0.059,-369.544,109.398,2.964,-369.526,108.131,-0.059,-369.544,108.128,-0.06,-352.564,108.128,-0.06,-352.564,109.388,1.117,-369.513,109.386,1.114,-352.535,109.397,2.961,-352.547,108.139,-0.057,-403.528,108.135,-0.058,-386.53,108.135,-0.058,-386.53,109.395,1.123,-403.492,109.391,1.12,-386.497,109.399,2.968,-386.51});
+IndexedFaceSet797->setCoord(*Coordinate799);
+
+Shape793->setGeometry(IndexedFaceSet797);
+
+Transform792->addChildren(*Shape793);
+
+Transform783->addChildren(*Transform792);
+
+CTransform* Transform800 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform800->setDEF("l");
+CShape* Shape801 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance802 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture803 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture803->setUSE("_18");
+Appearance802->setTexture(*ImageTexture803);
+
+CTextureTransform* TextureTransform804 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform804->setUSE("_33");
+Appearance802->setTextureTransform(*TextureTransform804);
+
+Shape801->setAppearance(*Appearance802);
+
+CIndexedFaceSet* IndexedFaceSet805 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet805->setDEF("nurbsToPoly308_0Geo");
+IndexedFaceSet805->setSolid(False);
+IndexedFaceSet805->setConvex(False);
+IndexedFaceSet805->setTexCoordIndex(new int[336]{0,1,2,-1,3,4,5,-1,6,7,8,-1,9,10,11,-1,12,13,14,-1,13,9,15,-1,16,17,18,-1,19,14,17,-1,11,6,15,-1,14,15,8,-1,17,8,20,-1,21,22,23,-1,24,25,26,-1,10,24,27,-1,26,21,27,-1,11,27,23,-1,6,23,28,-1,29,30,31,-1,25,29,32,-1,31,3,32,-1,26,32,5,-1,21,5,33,-1,34,35,36,-1,37,38,39,-1,30,40,41,-1,40,37,42,-1,3,43,44,-1,31,41,43,-1,39,34,42,-1,41,42,36,-1,43,36,45,-1,46,47,48,-1,49,50,51,-1,38,49,52,-1,51,46,52,-1,39,52,48,-1,34,48,53,-1,54,55,56,-1,50,54,57,-1,56,0,57,-1,51,57,2,-1,46,2,58,-1,1,58,2,-1,4,33,5,-1,7,20,8,-1,11,15,9,-1,14,19,12,-1,15,14,13,-1,18,59,16,-1,17,16,19,-1,6,8,15,-1,8,17,14,-1,20,18,17,-1,22,28,23,-1,26,27,24,-1,27,11,10,-1,21,23,27,-1,23,6,11,-1,28,7,6,-1,31,32,29,-1,32,26,25,-1,3,5,32,-1,5,21,26,-1,33,22,21,-1,35,45,36,-1,39,42,37,-1,41,31,30,-1,42,41,40,-1,44,4,3,-1,43,3,31,-1,34,36,42,-1,36,43,41,-1,45,44,43,-1,47,53,48,-1,51,52,49,-1,52,39,38,-1,46,48,52,-1,48,34,39,-1,53,35,34,-1,56,57,54,-1,57,51,50,-1,0,2,57,-1,2,46,51,-1,58,47,46,-1});
+IndexedFaceSet805->setCoordIndex(new int[336]{57,2,58,-1,31,5,32,-1,17,7,18,-1,12,6,8,-1,0,10,11,-1,10,12,13,-1,15,16,14,-1,9,11,16,-1,8,17,13,-1,11,13,18,-1,16,18,19,-1,25,21,26,-1,23,20,22,-1,6,23,24,-1,22,25,24,-1,8,24,26,-1,17,26,27,-1,29,4,28,-1,20,29,30,-1,28,31,30,-1,22,30,32,-1,25,32,33,-1,43,35,44,-1,39,34,36,-1,4,37,38,-1,37,39,40,-1,31,42,41,-1,28,38,42,-1,36,43,40,-1,38,40,44,-1,42,44,45,-1,51,47,52,-1,49,46,48,-1,34,49,50,-1,48,51,50,-1,36,50,52,-1,43,52,53,-1,55,1,54,-1,46,55,56,-1,54,57,56,-1,48,56,58,-1,51,58,59,-1,2,59,58,-1,5,33,32,-1,7,19,18,-1,8,13,12,-1,11,9,0,-1,13,11,10,-1,14,3,15,-1,16,15,9,-1,17,18,13,-1,18,16,11,-1,19,14,16,-1,21,27,26,-1,22,24,23,-1,24,8,6,-1,25,26,24,-1,26,17,8,-1,27,7,17,-1,28,30,29,-1,30,22,20,-1,31,32,30,-1,32,25,22,-1,33,21,25,-1,35,45,44,-1,36,40,39,-1,38,28,4,-1,40,38,37,-1,41,5,31,-1,42,31,28,-1,43,44,40,-1,44,42,38,-1,45,41,42,-1,47,53,52,-1,48,50,49,-1,50,36,34,-1,51,52,50,-1,52,43,36,-1,53,35,43,-1,54,56,55,-1,56,48,46,-1,57,58,56,-1,58,51,48,-1,59,47,51,-1});
+CTextureCoordinate* TextureCoordinate806 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate806->setPoint(new float[120]{1,0.501333,1,1,0.956929,0.501333,0.646633,0.501333,0.646633,1,0.582212,0.501333,0.349821,0.501333,0.349821,1,0.252477,0.501333,0.252477,0,0.349821,0,0.349821,0,0,0,0.138746,0,0.138746,0,0.252477,0,0,0.501333,0.138746,0.501333,0.138746,1,0,0,0.252477,1,0.51227,0.501333,0.51227,1,0.435455,0.501333,0.435455,0,0.51227,0,0.51227,0,0.435455,0,0.435455,1,0.582212,0,0.646633,0,0.646633,0,0.582212,0,0.582212,1,0.814938,0.501333,0.814938,1,0.762376,0.501333,0.762376,0,0.814938,0,0.814938,0,0.706392,0,0.706392,0,0.762376,0,0.706392,0.501333,0.706392,1,0.762376,1,0.911903,0.501333,0.911903,1,0.864669,0.501333,0.864669,0,0.911903,0,0.911903,0,0.864669,0,0.864669,1,0.956929,0,1,0,1,0,0.956929,0,0.956929,1,0,1});
+IndexedFaceSet805->setTexCoord(*TextureCoordinate806);
+
+CCoordinate* Coordinate807 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate807->setDEF("nurbsToPoly308GeoPoints");
+Coordinate807->setPoint(new float[180]{102.963,-0.034,-165.909,102.955,-0.042,-403.719,101.712,2.984,-403.789,101.728,2.991,-165.926,102.951,-0.023,-284.808,101.726,3.001,-284.844,102.954,-0.025,-216.859,101.727,3,-216.88,102.954,-0.025,-216.859,102.963,-0.034,-165.909,102.959,-0.031,-182.891,102.959,-0.031,-182.891,102.956,-0.027,-199.871,102.956,-0.027,-199.871,101.727,2.994,-182.907,101.721,1.153,-165.929,101.717,1.158,-182.908,101.714,1.164,-216.877,101.715,1.161,-199.888,101.727,2.997,-199.889,102.952,-0.022,-250.827,101.727,3.002,-250.855,102.952,-0.022,-250.827,102.953,-0.023,-233.845,102.953,-0.023,-233.845,101.713,1.167,-250.85,101.713,1.166,-233.866,101.727,3.001,-233.87,102.951,-0.023,-284.808,102.951,-0.022,-267.812,102.951,-0.022,-267.812,101.712,1.167,-284.837,101.712,1.167,-267.838,101.727,3.002,-267.845,102.952,-0.028,-335.759,101.722,2.997,-335.81,102.952,-0.028,-335.759,102.951,-0.024,-301.784,102.951,-0.024,-301.784,102.952,-0.026,-318.79,102.952,-0.026,-318.79,101.725,3,-301.826,101.711,1.165,-301.817,101.71,1.161,-335.799,101.711,1.163,-318.826,101.724,2.999,-318.835,102.953,-0.034,-369.725,101.718,2.991,-369.785,102.953,-0.034,-369.725,102.953,-0.031,-352.739,102.953,-0.031,-352.739,101.708,1.154,-369.772,101.709,1.157,-352.783,101.72,2.994,-352.795,102.955,-0.042,-403.719,102.954,-0.038,-386.716,102.954,-0.038,-386.716,101.707,1.145,-403.774,101.708,1.149,-386.768,101.715,2.988,-386.781});
+IndexedFaceSet805->setCoord(*Coordinate807);
+
+Shape801->setGeometry(IndexedFaceSet805);
+
+Transform800->addChildren(*Shape801);
+
+Transform783->addChildren(*Transform800);
+
+LOD782->addChildren(*Transform783);
+
+Transform781->addChildren(*LOD782);
+
+group->addChildren(*Transform781);
+
+CTransform* Transform808 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform808->setDEF("s1");
+Transform808->setTranslation(new float[3]{0.625656,0,-0.0000305176});
+Transform808->setScale(new float[3]{1.00999,1,1});
+CTransform* Transform809 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform809->setDEF("_34");
+CTransform* Transform810 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform810->setDEF("_35");
+Transform810->setTranslation(new float[3]{-292.752,2.12204,353.401});
+Transform810->setScale(new float[3]{4.36701,1.0176,0.001});
+CShape* Shape811 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance812 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture813 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture813->setDEF("_36");
+ImageTexture813->setUrl(new CString[1]{"glow_cyan_q.png"}, 1);
+Appearance812->setTexture(*ImageTexture813);
+
+CTextureTransform* TextureTransform814 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform814->setScale(new float[2]{4,2});
+Appearance812->setTextureTransform(*TextureTransform814);
+
+Shape811->setAppearance(*Appearance812);
+
+CIndexedFaceSet* IndexedFaceSet815 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet815->setSolid(False);
+IndexedFaceSet815->setCoordIndex(new int[5]{0,1,2,3,-1});
+CTextureCoordinate* TextureCoordinate816 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate816->setPoint(new float[8]{0,0,1,0,1,1,0,1});
+IndexedFaceSet815->setTexCoord(*TextureCoordinate816);
+
+CCoordinate* Coordinate817 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate817->setPoint(new float[12]{-1.561,-0.5,0,1.561,-0.5,0,1.561,0.5,0,-1.561,0.5,0});
+IndexedFaceSet815->setCoord(*Coordinate817);
+
+Shape811->setGeometry(IndexedFaceSet815);
+
+Transform810->addChildren(*Shape811);
+
+Transform809->addChildren(*Transform810);
+
+CTransform* Transform818 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform818->setTranslation(new float[3]{23.4482,-0.00000596046,0});
+CTransform* Transform819 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform819->setUSE("_35");
+Transform818->addChildren(*Transform819);
+
+Transform809->addChildren(*Transform818);
+
+CTransform* Transform820 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform820->setTranslation(new float[3]{46.8799,-0.0000174046,-0.0000696182});
+CTransform* Transform821 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform821->setUSE("_35");
+Transform820->addChildren(*Transform821);
+
+Transform809->addChildren(*Transform820);
+
+CTransform* Transform822 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform822->setTranslation(new float[3]{70.3182,0.00000214577,0});
+CTransform* Transform823 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform823->setUSE("_35");
+Transform822->addChildren(*Transform823);
+
+Transform809->addChildren(*Transform822);
+
+Transform808->addChildren(*Transform809);
+
+CTransform* Transform824 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform824->setTranslation(new float[3]{0,0,6.40582});
+CTransform* Transform825 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform825->setUSE("_34");
+Transform824->addChildren(*Transform825);
+
+Transform808->addChildren(*Transform824);
+
+CTransform* Transform826 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform826->setDEF("tunnel");
+Transform826->setTranslation(new float[3]{-257.59,2.056,356.604});
+Transform826->setScale(new float[3]{0.468627,0.0217322,0.0324753});
+CShape* Shape827 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance828 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture829 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture829->setUSE("_2");
+Appearance828->setTexture(*ImageTexture829);
+
+CTextureTransform* TextureTransform830 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform830->setScale(new float[2]{10,1});
+Appearance828->setTextureTransform(*TextureTransform830);
+
+Shape827->setAppearance(*Appearance828);
+
+CIndexedFaceSet* IndexedFaceSet831 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet831->setSolid(False);
+IndexedFaceSet831->setCreaseAngle(0.5);
+IndexedFaceSet831->setColorIndex(new int[592]{2,2,4,4,-1,2,2,4,4,-1,2,4,4,2,-1,4,4,2,2,-1,2,2,4,4,-1,2,2,4,4,-1,4,4,2,2,-1,4,4,2,2,-1,2,2,4,4,-1,2,2,4,4,-1,4,4,2,2,-1,4,4,2,2,-1,2,2,4,4,-1,2,2,4,4,-1,4,4,2,2,-1,4,4,2,2,-1,4,4,3,-1,4,1,3,-1,4,3,1,-1,4,4,3,-1,0,0,0,-1,0,5,0,-1,5,0,0,-1,0,0,0,-1,3,1,3,-1,1,1,3,-1,1,3,3,-1,1,1,3,-1,4,4,3,-1,4,1,3,-1,4,3,1,-1,4,4,3,-1,4,4,3,-1,4,1,3,-1,4,3,1,-1,4,4,3,-1,4,4,3,-1,4,1,3,-1,1,4,3,-1,4,4,3,-1,1,3,1,-1,3,3,1,-1,3,1,3,-1,1,1,3,-1,1,3,1,-1,3,3,1,-1,3,1,3,-1,1,1,3,-1,1,3,1,-1,3,3,1,-1,3,1,3,-1,1,1,3,-1,0,0,0,-1,0,5,0,-1,5,0,0,-1,0,0,0,-1,0,0,0,-1,0,5,0,-1,5,0,0,-1,0,0,0,-1,0,0,0,-1,0,5,0,-1,5,0,0,-1,0,0,0,-1,6,6,7,-1,6,8,7,-1,7,6,8,-1,7,6,6,-1,6,7,6,-1,7,8,6,-1,8,6,7,-1,6,6,7,-1,6,7,6,-1,6,8,7,-1,7,6,8,-1,7,6,6,-1,8,6,7,-1,6,6,7,-1,6,7,6,-1,7,8,6,-1,6,7,6,-1,6,8,7,-1,7,6,8,-1,7,6,6,-1,6,7,6,-1,7,8,6,-1,8,6,7,-1,6,6,7,-1,6,7,6,-1,6,8,7,-1,7,6,8,-1,7,6,6,-1,6,7,6,-1,7,8,6,-1,8,6,7,-1,6,6,7,-1,4,3,4,-1,4,1,3,-1,3,4,4,-1,3,1,4,-1,1,3,4,-1,3,4,4,-1,3,4,4,-1,3,1,4,-1,1,3,4,-1,3,4,4,-1,3,4,4,-1,3,1,4,-1,1,3,4,-1,3,4,4,-1,3,4,4,-1,3,1,4,-1,3,1,3,-1,3,1,1,-1,1,3,1,-1,1,3,3,-1,3,1,3,-1,3,1,1,-1,1,3,1,-1,1,3,3,-1,3,1,3,-1,3,1,1,-1,1,1,3,-1,1,3,3,-1,1,3,1,-1,1,3,3,-1,3,1,3,-1,3,1,1,-1,0,0,5,-1,0,0,0,-1,0,0,0,-1,0,5,0,-1,0,0,5,-1,0,0,0,-1,0,0,0,-1,0,5,0,-1,0,0,5,-1,0,0,0,-1,0,0,0,-1,0,5,0,-1,0,0,5,-1,0,0,0,-1,0,0,5,-1,0,0,0,-1});
+IndexedFaceSet831->setTexCoordIndex(new int[592]{13,128,115,7,-1,128,64,57,115,-1,13,5,127,129,-1,127,63,65,129,-1,64,130,113,57,-1,130,36,31,113,-1,63,125,131,65,-1,125,29,37,131,-1,36,132,119,31,-1,132,66,59,119,-1,29,123,133,37,-1,123,61,67,133,-1,66,134,117,59,-1,134,12,6,117,-1,61,121,135,67,-1,121,4,12,135,-1,126,5,99,-1,5,0,99,-1,62,99,51,-1,62,126,99,-1,49,138,68,-1,49,97,138,-1,97,1,138,-1,1,11,138,-1,96,48,98,-1,48,50,98,-1,0,96,98,-1,0,1,96,-1,124,62,101,-1,62,51,101,-1,28,101,27,-1,28,124,101,-1,122,28,105,-1,28,27,105,-1,60,105,53,-1,60,122,105,-1,120,60,109,-1,60,53,109,-1,19,4,109,-1,4,120,109,-1,48,102,50,-1,102,100,50,-1,102,24,100,-1,24,26,100,-1,24,106,26,-1,106,104,26,-1,106,54,104,-1,54,52,104,-1,54,110,52,-1,110,108,52,-1,110,18,108,-1,18,19,108,-1,10,18,140,-1,18,111,140,-1,111,55,140,-1,55,70,140,-1,55,142,70,-1,55,107,142,-1,107,25,142,-1,25,34,142,-1,25,136,34,-1,25,103,136,-1,103,49,136,-1,49,68,136,-1,15,9,153,-1,9,151,153,-1,152,69,139,-1,152,76,69,-1,15,152,11,-1,152,139,11,-1,151,75,153,-1,75,77,153,-1,75,155,77,-1,75,149,155,-1,154,35,137,-1,154,38,35,-1,149,33,155,-1,33,39,155,-1,76,154,69,-1,154,137,69,-1,33,157,39,-1,33,147,157,-1,156,71,143,-1,156,78,71,-1,38,156,35,-1,156,143,35,-1,147,73,157,-1,73,79,157,-1,73,159,79,-1,73,145,159,-1,158,10,141,-1,158,14,10,-1,78,158,71,-1,158,141,71,-1,145,8,159,-1,8,14,159,-1,6,83,116,-1,6,16,83,-1,83,58,116,-1,83,43,58,-1,43,85,58,-1,85,118,58,-1,85,30,118,-1,85,23,30,-1,23,89,30,-1,89,112,30,-1,89,56,112,-1,89,45,56,-1,45,93,56,-1,93,114,56,-1,93,7,114,-1,93,2,7,-1,94,2,92,-1,94,3,2,-1,46,92,44,-1,46,94,92,-1,90,44,88,-1,90,46,44,-1,20,88,22,-1,20,90,88,-1,80,42,82,-1,80,40,42,-1,16,17,82,-1,17,80,82,-1,40,84,42,-1,40,86,84,-1,86,22,84,-1,86,20,22,-1,150,3,95,-1,150,9,3,-1,74,150,47,-1,150,95,47,-1,148,47,91,-1,148,74,47,-1,32,148,21,-1,148,91,21,-1,146,21,87,-1,146,32,21,-1,72,146,41,-1,146,87,41,-1,144,41,81,-1,144,72,41,-1,17,144,81,-1,17,8,144,-1});
+IndexedFaceSet831->setCoordIndex(new int[592]{17,74,67,11,-1,74,42,38,67,-1,17,9,73,74,-1,73,41,42,74,-1,42,75,66,38,-1,75,28,25,66,-1,41,72,75,42,-1,72,24,28,75,-1,28,76,69,25,-1,76,43,39,69,-1,24,71,76,28,-1,71,40,43,76,-1,43,77,68,39,-1,77,16,10,68,-1,40,70,77,43,-1,70,8,16,77,-1,73,9,59,-1,9,6,59,-1,41,59,35,-1,41,73,59,-1,34,79,44,-1,34,58,79,-1,58,7,79,-1,7,15,79,-1,58,34,59,-1,34,35,59,-1,6,58,59,-1,6,7,58,-1,72,41,60,-1,41,35,60,-1,24,60,23,-1,24,72,60,-1,71,24,62,-1,24,23,62,-1,40,62,36,-1,40,71,62,-1,70,40,64,-1,40,36,64,-1,4,8,64,-1,8,70,64,-1,34,61,35,-1,61,60,35,-1,61,22,60,-1,22,23,60,-1,22,63,23,-1,63,62,23,-1,63,37,62,-1,37,36,62,-1,37,65,36,-1,65,64,36,-1,65,5,64,-1,5,4,64,-1,14,5,80,-1,5,65,80,-1,65,37,80,-1,37,45,80,-1,37,81,45,-1,37,63,81,-1,63,22,81,-1,22,27,81,-1,22,78,27,-1,22,61,78,-1,61,34,78,-1,34,44,78,-1,19,13,86,-1,13,85,86,-1,86,44,79,-1,86,48,44,-1,19,86,15,-1,86,79,15,-1,85,47,86,-1,47,48,86,-1,47,87,48,-1,47,84,87,-1,87,27,78,-1,87,29,27,-1,84,26,87,-1,26,29,87,-1,48,87,44,-1,87,78,44,-1,26,88,29,-1,26,83,88,-1,88,45,81,-1,88,49,45,-1,29,88,27,-1,88,81,27,-1,83,46,88,-1,46,49,88,-1,46,89,49,-1,46,82,89,-1,89,14,80,-1,89,18,14,-1,49,89,45,-1,89,80,45,-1,82,12,89,-1,12,18,89,-1,10,51,68,-1,10,2,51,-1,51,39,68,-1,51,31,39,-1,31,52,39,-1,52,69,39,-1,52,25,69,-1,52,21,25,-1,21,54,25,-1,54,66,25,-1,54,38,66,-1,54,32,38,-1,32,56,38,-1,56,67,38,-1,56,11,67,-1,56,0,11,-1,57,0,56,-1,57,1,0,-1,33,56,32,-1,33,57,56,-1,55,32,54,-1,55,33,32,-1,20,54,21,-1,20,55,54,-1,50,31,51,-1,50,30,31,-1,2,3,51,-1,3,50,51,-1,30,52,31,-1,30,53,52,-1,53,21,52,-1,53,20,21,-1,85,1,57,-1,85,13,1,-1,47,85,33,-1,85,57,33,-1,84,33,55,-1,84,47,33,-1,26,84,20,-1,84,55,20,-1,83,20,53,-1,83,26,20,-1,46,83,30,-1,83,53,30,-1,82,30,50,-1,82,46,30,-1,3,82,50,-1,3,12,82,-1});
+CColor* Color832 = (CColor *)(m_pScene.createNode("Color"));
+Color832->setColor(new float[27]{0.8,0.536002,0,0,0,0,0,0.135559,0.144385,0,0.529412,0.501355,0,0.176123,0.219251,0.983957,0.966912,0.570111,0.0139647,0.0521863,0.0641711,0,0.211595,0.219251,0,0.421304,0.438503});
+IndexedFaceSet831->setColor(*Color832);
+
+CTextureCoordinate* TextureCoordinate833 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate833->setPoint(new float[320]{0,0.716409,0.00184469,0.300537,0,0.716409,0.00359672,0.300891,0.99786,0.909474,0.0000841171,0.910335,0.99786,0.910335,0.0000841171,0.910335,0.996987,0.198957,0.00256199,0.198585,0.998674,0.198282,0.000157552,0.197284,0.99786,0.99807,0.00124007,0.998253,0.998789,0,0,0,0.998789,0.716409,0.998085,0.301752,0.998085,0.301752,0.998789,0.716409,0.500841,0.301322,0.500841,0.301322,0.499395,0.716409,0.499395,0.716409,0.499965,0.301144,0.499965,0.301144,0.499395,0.716409,0.499395,0.716409,0.498972,0.909905,0.498972,0.909905,0.498972,0.910335,0.498972,0.910335,0.499774,0.198771,0.499774,0.198771,0.499416,0.197783,0.499416,0.197783,0.49955,0.998161,0.49955,0.998161,0.499395,0,0.499395,0,0.749463,0.301537,0.749463,0.301537,0.749092,0.716409,0.749092,0.716409,0.249697,0.716409,0.249697,0.716409,0.252219,0.301106,0.252219,0.301106,0.250905,0.300841,0.250905,0.300841,0.249697,0.716409,0.249697,0.716409,0.749092,0.716409,0.749092,0.716409,0.749025,0.301448,0.749025,0.301448,0.249528,0.910335,0.249528,0.910335,0.748416,0.910335,0.748416,0.910335,0.748416,0.90969,0.748416,0.90969,0.249528,0.91012,0.249528,0.91012,0.250395,0.998207,0.250395,0.998207,0.748705,0.998116,0.748705,0.998116,0.249787,0.197533,0.249787,0.197533,0.749045,0.198032,0.749045,0.198032,0.748381,0.198864,0.748381,0.198864,0.251168,0.198678,0.251168,0.198678,0.249697,0,0.249697,0,0.749092,0,0.749092,0,0.873774,0.301644,0.873774,0.301644,0.873941,0.716409,0.873941,0.716409,0.624243,0.716409,0.624243,0.716409,0.625152,0.301429,0.625152,0.301429,0.374546,0.716409,0.374546,0.716409,0.37653,0.301214,0.37653,0.301214,0.124849,0.716409,0.124849,0.716409,0.127908,0.300999,0.127908,0.300999,0.126375,0.300689,0.126375,0.300689,0.124849,0.716409,0.124849,0.716409,0.374546,0.716409,0.374546,0.716409,0.375435,0.300993,0.375435,0.300993,0.624243,0.716409,0.624243,0.716409,0.624495,0.301296,0.624495,0.301296,0.873941,0.716409,0.873941,0.716409,0.873555,0.3016,0.873555,0.3016,0.37425,0.910335,0.37425,0.910335,0.124806,0.910335,0.124806,0.910335,0.873138,0.910335,0.873138,0.910335,0.623694,0.910335,0.623694,0.910335,0.873138,0.909582,0.873138,0.909582,0.623694,0.909797,0.623694,0.909797,0.37425,0.910012,0.37425,0.910012,0.124806,0.910227,0.124806,0.910227,0.125818,0.99823,0.125818,0.99823,0.374973,0.998184,0.374973,0.998184,0.624127,0.998138,0.624127,0.998138,0.873282,0.998093,0.873282,0.998093,0.374601,0.197658,0.374601,0.197658,0.124972,0.197408,0.124972,0.197408,0.87386,0.198157,0.87386,0.198157,0.62423,0.197907,0.62423,0.197907,0.872684,0.19891,0.872684,0.19891,0.624078,0.198817,0.624078,0.198817,0.375471,0.198724,0.375471,0.198724,0.126865,0.198631,0.126865,0.198631,0.124849,0,0.124849,0,0.374546,0,0.374546,0,0.624243,0,0.624243,0,0.873941,0,0.873941,0});
+IndexedFaceSet831->setTexCoord(*TextureCoordinate833);
+
+CCoordinate* Coordinate834 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate834->setPoint(new float[270]{-100,44.6961,100,-100,-49.3368,100,100,44.6961,100,100,-49.3368,100,100,44.6961,-100,100,-49.3368,-100,-100,44.6961,-100,-100,-49.3368,-100,100,99.3397,-50,-100,99.3397,-50,100,99.3397,50,-100,99.3397,50,100,-97.4094,50,-100,-97.4094,50,100,-97.4094,-50,-100,-97.4094,-50,100,99.3397,0,-100,99.3397,0,100,-97.4094,0,-100,-97.4094,0,0,-49.3368,100,0,44.6961,100,0,-49.3368,-100,0,44.6961,-100,0,99.3397,-50,0,99.3397,50,0,-97.4094,50,0,-97.4094,-50,0,99.3397,0,0,-97.4094,0,50,-49.3368,100,50,44.6961,100,-50,44.6961,100,-50,-49.3368,100,-50,-49.3368,-100,-50,44.6961,-100,50,44.6961,-100,50,-49.3368,-100,-50,99.3397,50,50,99.3397,50,50,99.3397,-50,-50,99.3397,-50,-50,99.3397,0,50,99.3397,0,-50,-97.4094,-50,50,-97.4094,-50,50,-97.4094,50,-50,-97.4094,50,-50,-97.4094,0,50,-97.4094,0,75,-49.3368,100,75,44.6961,100,25,44.6961,100,25,-49.3368,100,-25,44.6961,100,-25,-49.3368,100,-75,44.6961,100,-75,-49.3368,100,-75,-49.3368,-100,-75,44.6961,-100,-25,44.6961,-100,-25,-49.3368,-100,25,44.6961,-100,25,-49.3368,-100,75,44.6961,-100,75,-49.3368,-100,-25,99.3397,50,-75,99.3397,50,75,99.3397,50,25,99.3397,50,75,99.3397,-50,25,99.3397,-50,-25,99.3397,-50,-75,99.3397,-50,-75,99.3397,0,-25,99.3397,0,25,99.3397,0,75,99.3397,0,-25,-97.4094,-50,-75,-97.4094,-50,75,-97.4094,-50,25,-97.4094,-50,75,-97.4094,50,25,-97.4094,50,-25,-97.4094,50,-75,-97.4094,50,-75,-97.4094,0,-25,-97.4094,0,25,-97.4094,0,75,-97.4094,0});
+IndexedFaceSet831->setCoord(*Coordinate834);
+
+Shape827->setGeometry(IndexedFaceSet831);
+
+Transform826->addChildren(*Shape827);
+
+Transform808->addChildren(*Transform826);
+
+group->addChildren(*Transform808);
+
+CTransform* Transform835 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform835->setTranslation(new float[3]{0,-0.166861,0.164027});
+Transform835->setScale(new float[3]{1,1.30469,1});
+CTransform* Transform836 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform836->setDEF("_37");
+Transform836->setTranslation(new float[3]{-206.26,1.45881,354.761});
+Transform836->setRotation(new float[4]{0,0,1,1.5708});
+Transform836->setScale(new float[3]{0.395401,4.79757,0.001});
+CShape* Shape837 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance838 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture839 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture839->setUSE("_36");
+Appearance838->setTexture(*ImageTexture839);
+
+CTextureTransform* TextureTransform840 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform840->setScale(new float[2]{1,3});
+Appearance838->setTextureTransform(*TextureTransform840);
+
+Shape837->setAppearance(*Appearance838);
+
+CIndexedFaceSet* IndexedFaceSet841 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet841->setSolid(False);
+IndexedFaceSet841->setCoordIndex(new int[10]{0,5,4,3,-1,5,1,2,4,-1});
+CTextureCoordinate* TextureCoordinate842 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate842->setPoint(new float[12]{0,0,1,0,1,1,0,1,0.5,1,0.5,0});
+IndexedFaceSet841->setTexCoord(*TextureCoordinate842);
+
+CCoordinate* Coordinate843 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate843->setPoint(new float[18]{-1.561,-0.5,0,1.561,-0.5,0,1.561,0.5,0,-1.561,0.5,0,0,0.31654,0,0,-0.68346,0});
+IndexedFaceSet841->setCoord(*Coordinate843);
+
+Shape837->setGeometry(IndexedFaceSet841);
+
+Transform836->addChildren(*Shape837);
+
+Transform835->addChildren(*Transform836);
+
+group->addChildren(*Transform835);
+
+CTransform* Transform844 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform844->setTranslation(new float[3]{8.21611,-0.166861,0.211058});
+Transform844->setScale(new float[3]{1,1.30469,1});
+CTransform* Transform845 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform845->setUSE("_37");
+Transform844->addChildren(*Transform845);
+
+group->addChildren(*Transform844);
+
+CTransform* Transform846 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform846->setTranslation(new float[3]{0,-0.166861,3.63552});
+Transform846->setScale(new float[3]{1,1.30469,1});
+CTransform* Transform847 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform847->setTranslation(new float[3]{-206.26,1.45881,354.761});
+Transform847->setRotation(new float[4]{0,0,1,1.5708});
+Transform847->setScale(new float[3]{0.395401,4.79757,0.001});
+CShape* Shape848 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance849 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture850 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture850->setUSE("_36");
+Appearance849->setTexture(*ImageTexture850);
+
+CTextureTransform* TextureTransform851 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform851->setScale(new float[2]{1,3});
+Appearance849->setTextureTransform(*TextureTransform851);
+
+Shape848->setAppearance(*Appearance849);
+
+CIndexedFaceSet* IndexedFaceSet852 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet852->setSolid(False);
+IndexedFaceSet852->setCoordIndex(new int[20]{5,1,6,7,-1,6,2,4,7,-1,0,5,7,8,-1,7,4,3,8,-1});
+CTextureCoordinate* TextureCoordinate853 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate853->setPoint(new float[18]{0,0,1,0,1,1,0,1,0.5,1,0.5,0,1,0.407782,0.5,0.59124,0,0.40778});
+IndexedFaceSet852->setTexCoord(*TextureCoordinate853);
+
+CCoordinate* Coordinate854 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate854->setPoint(new float[27]{-1.561,-0.507249,205.801,1.561,-0.507249,205.801,1.561,0.5,0,-1.561,0.5,0,0,0.31654,0,-0.00000286102,-0.689696,298.188,1.561,-0.101721,0.451447,-0.00000274181,-0.101723,0.452469,-1.561,-0.101723,0.452394});
+IndexedFaceSet852->setCoord(*Coordinate854);
+
+Shape848->setGeometry(IndexedFaceSet852);
+
+Transform847->addChildren(*Shape848);
+
+Transform846->addChildren(*Transform847);
+
+group->addChildren(*Transform846);
+
+CTransform* Transform855 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform855->setTranslation(new float[3]{80.3035,-0.166861,58.1875});
+Transform855->setRotation(new float[4]{0,-1,0,0.21902});
+Transform855->setScale(new float[3]{1,1.30469,1});
+CTransform* Transform856 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform856->setTranslation(new float[3]{-206.26,1.45881,354.761});
+Transform856->setRotation(new float[4]{0,0,1,1.5708});
+Transform856->setScale(new float[3]{0.395401,4.79757,0.001});
+CShape* Shape857 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance858 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture859 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture859->setUSE("_36");
+Appearance858->setTexture(*ImageTexture859);
+
+CTextureTransform* TextureTransform860 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform860->setScale(new float[2]{1,3});
+Appearance858->setTextureTransform(*TextureTransform860);
+
+Shape857->setAppearance(*Appearance858);
+
+CIndexedFaceSet* IndexedFaceSet861 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet861->setSolid(False);
+IndexedFaceSet861->setCoordIndex(new int[10]{0,5,4,3,-1,5,1,2,4,-1});
+CTextureCoordinate* TextureCoordinate862 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate862->setPoint(new float[12]{0,0,1,0,1,1,0,1,0.5,1,0.5,0});
+IndexedFaceSet861->setTexCoord(*TextureCoordinate862);
+
+CCoordinate* Coordinate863 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate863->setPoint(new float[18]{-1.561,-0.5,0,1.561,-0.5,0,1.561,0.5,0,-1.561,0.5,0,0,0.31654,0,0,-0.68346,0});
+IndexedFaceSet861->setCoord(*Coordinate863);
+
+Shape857->setGeometry(IndexedFaceSet861);
+
+Transform856->addChildren(*Shape857);
+
+Transform855->addChildren(*Transform856);
+
+group->addChildren(*Transform855);
+
+CTransform* Transform864 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform864->setTranslation(new float[3]{-122.318,4.2909,354.943});
+Transform864->setRotation(new float[4]{0,1,0,1.5708});
+Transform864->setScale(new float[3]{5.12294,5.12321,5.12391});
+CShape* Shape865 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance866 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture867 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture867->setDEF("_38");
+ImageTexture867->setUrl(new CString[1]{"light7.png"}, 1);
+Appearance866->setTexture(*ImageTexture867);
+
+CTextureTransform* TextureTransform868 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform868->setScale(new float[2]{2,2});
+Appearance866->setTextureTransform(*TextureTransform868);
+
+Shape865->setAppearance(*Appearance866);
+
+CIndexedFaceSet* IndexedFaceSet869 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet869->setSolid(False);
+IndexedFaceSet869->setTexCoordIndex(new int[10]{0,5,4,3,-1,5,1,2,4,-1});
+IndexedFaceSet869->setCoordIndex(new int[10]{4,5,6,7,-1,3,0,1,2,-1});
+CTextureCoordinate* TextureCoordinate870 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate870->setPoint(new float[12]{0,0,1,0,1,1,0,1,0.5,1,0.5,0});
+IndexedFaceSet869->setTexCoord(*TextureCoordinate870);
+
+CCoordinate* Coordinate871 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate871->setPoint(new float[24]{0.738535,-0.5,0,0.738535,0.5,0,0.238535,0.5,0,0.238535,-0.5,0,-0.748488,-0.5,0,-0.248488,-0.5,0,-0.248488,0.5,0,-0.748488,0.5,0});
+IndexedFaceSet869->setCoord(*Coordinate871);
+
+Shape865->setGeometry(IndexedFaceSet869);
+
+Transform864->addChildren(*Shape865);
+
+group->addChildren(*Transform864);
+
+CTransform* Transform872 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform872->setTranslation(new float[3]{-122.297,4.27357,354.963});
+Transform872->setRotation(new float[4]{0,1,0,4.71239});
+Transform872->setScale(new float[3]{5.12505,2.63336,2.6331});
+CShape* Shape873 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance874 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture875 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture875->setDEF("_39");
+ImageTexture875->setUrl(new CString[1]{"wegweiser.png"}, 1);
+Appearance874->setTexture(*ImageTexture875);
+
+Shape873->setAppearance(*Appearance874);
+
+CIndexedFaceSet* IndexedFaceSet876 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet876->setSolid(False);
+IndexedFaceSet876->setColorPerVertex(False);
+IndexedFaceSet876->setColorIndex(new int[1]{0});
+IndexedFaceSet876->setCoordIndex(new int[5]{0,1,2,3,-1});
+CColor* Color877 = (CColor *)(m_pScene.createNode("Color"));
+Color877->setColor(new float[3]{1,0,0});
+IndexedFaceSet876->setColor(*Color877);
+
+CTextureCoordinate* TextureCoordinate878 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate878->setPoint(new float[8]{0,0,1,0,1,1,0,1});
+IndexedFaceSet876->setTexCoord(*TextureCoordinate878);
+
+CCoordinate* Coordinate879 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate879->setPoint(new float[12]{-0.5,-0.5,0,0.5,-0.5,0,0.5,0.5,0,-0.5,0.5,0});
+IndexedFaceSet876->setCoord(*Coordinate879);
+
+Shape873->setGeometry(IndexedFaceSet876);
+
+Transform872->addChildren(*Shape873);
+
+group->addChildren(*Transform872);
+
+CTransform* Transform880 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform880->setTranslation(new float[3]{0,-0.520698,-0.28009});
+CTransform* Transform881 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform881->setTranslation(new float[3]{-141.933,4.57704,356.61});
+Transform881->setRotation(new float[4]{0,1,0,4.71239});
+Transform881->setScale(new float[3]{5.06564,5.06571,5.06412});
+CShape* Shape882 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance883 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture884 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture884->setUrl(new CString[1]{"light3.png"}, 1);
+Appearance883->setTexture(*ImageTexture884);
+
+CTextureTransform* TextureTransform885 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+TextureTransform885->setScale(new float[2]{2,2});
+Appearance883->setTextureTransform(*TextureTransform885);
+
+Shape882->setAppearance(*Appearance883);
+
+CIndexedFaceSet* IndexedFaceSet886 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet886->setSolid(False);
+IndexedFaceSet886->setColorPerVertex(False);
+IndexedFaceSet886->setColorIndex(new int[1]{0});
+IndexedFaceSet886->setCoordIndex(new int[5]{0,1,2,3,-1});
+CColor* Color887 = (CColor *)(m_pScene.createNode("Color"));
+Color887->setColor(new float[3]{0,0.771365,0.8});
+IndexedFaceSet886->setColor(*Color887);
+
+CTextureCoordinate* TextureCoordinate888 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate888->setPoint(new float[8]{0,0,1,0,1,1,0,1});
+IndexedFaceSet886->setTexCoord(*TextureCoordinate888);
+
+CCoordinate* Coordinate889 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate889->setPoint(new float[12]{-0.5,-0.5,0,0.5,-0.5,0,0.5,0.5,0,-0.5,0.5,0});
+IndexedFaceSet886->setCoord(*Coordinate889);
+
+Shape882->setGeometry(IndexedFaceSet886);
+
+Transform881->addChildren(*Shape882);
+
+Transform880->addChildren(*Transform881);
+
+CTransform* Transform890 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform890->setTranslation(new float[3]{-141.882,4.57704,356.61});
+Transform890->setRotation(new float[4]{0,1,0,4.71239});
+Transform890->setScale(new float[3]{2.63334,2.63336,2.6331});
+CShape* Shape891 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance892 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture893 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture893->setUSE("_39");
+Appearance892->setTexture(*ImageTexture893);
+
+Shape891->setAppearance(*Appearance892);
+
+CIndexedFaceSet* IndexedFaceSet894 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet894->setSolid(False);
+IndexedFaceSet894->setColorPerVertex(False);
+IndexedFaceSet894->setColorIndex(new int[1]{0});
+IndexedFaceSet894->setCoordIndex(new int[5]{0,1,2,3,-1});
+CColor* Color895 = (CColor *)(m_pScene.createNode("Color"));
+Color895->setColor(new float[3]{0,0.771365,0.8});
+IndexedFaceSet894->setColor(*Color895);
+
+CTextureCoordinate* TextureCoordinate896 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate896->setPoint(new float[8]{0,0,1,0,1,1,0,1});
+IndexedFaceSet894->setTexCoord(*TextureCoordinate896);
+
+CCoordinate* Coordinate897 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate897->setPoint(new float[12]{-0.5,-0.5,0,0.5,-0.5,0,0.5,0.5,0,-0.5,0.5,0});
+IndexedFaceSet894->setCoord(*Coordinate897);
+
+Shape891->setGeometry(IndexedFaceSet894);
+
+Transform890->addChildren(*Shape891);
+
+Transform880->addChildren(*Transform890);
+
+group->addChildren(*Transform880);
+
+CTransform* Transform898 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform898->setDEF("_40");
+CTransform* Transform899 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform899->setTranslation(new float[3]{3.75874,-1.00027,0.00387314});
+CTransform* Transform900 = (CTransform *)(m_pScene.createNode("Transform"));
+CTransform* Transform901 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform901->setTranslation(new float[3]{0,0,2.89841});
+CTransform* Transform902 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform902->setDEF("_41");
+Transform902->setTranslation(new float[3]{-176.615,6.57033,355.158});
+Transform902->setRotation(new float[4]{0.0000455213,1,0.0000903954,4.71147});
+Transform902->setScale(new float[3]{6.30748,6.30738,6.30447});
+CShape* Shape903 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance904 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture905 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture905->setUrl(new CString[1]{"light6.png"}, 1);
+Appearance904->setTexture(*ImageTexture905);
+
+Shape903->setAppearance(*Appearance904);
+
+CIndexedFaceSet* IndexedFaceSet906 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet906->setCoordIndex(new int[5]{0,1,2,3,-1});
+CTextureCoordinate* TextureCoordinate907 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate907->setPoint(new float[8]{0,0,1,0,1,1,0,1});
+IndexedFaceSet906->setTexCoord(*TextureCoordinate907);
+
+CCoordinate* Coordinate908 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate908->setPoint(new float[12]{-0.5,-0.5,0,0.5,-0.5,0,0.5,0.5,0,-0.5,0.5,0});
+IndexedFaceSet906->setCoord(*Coordinate908);
+
+Shape903->setGeometry(IndexedFaceSet906);
+
+Transform902->addChildren(*Shape903);
+
+Transform901->addChildren(*Transform902);
+
+Transform900->addChildren(*Transform901);
+
+CTransform* Transform909 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform909->setUSE("_41");
+Transform900->addChildren(*Transform909);
+
+Transform899->addChildren(*Transform900);
+
+Transform898->addChildren(*Transform899);
+
+CTransform* Transform910 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform910->setTranslation(new float[3]{-3919.46,-0.314086,488.271});
+Transform910->setRotation(new float[4]{0.0000680001,1,-8.9407e-8,3.14067});
+Transform910->setScale(new float[3]{1.01371,0.096509,0.0965091});
+CShape* Shape911 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance912 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture913 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture913->setDEF("_42");
+ImageTexture913->setUrl(new CString[1]{"gatetex.png"}, 1);
+Appearance912->setTexture(*ImageTexture913);
+
+CTextureTransform* TextureTransform914 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+Appearance912->setTextureTransform(*TextureTransform914);
+
+Shape911->setAppearance(*Appearance912);
+
+CIndexedFaceSet* IndexedFaceSet915 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet915->setDEF("nurbsToPoly43_0Geo_1");
+IndexedFaceSet915->setSolid(False);
+IndexedFaceSet915->setConvex(False);
+IndexedFaceSet915->setColorPerVertex(False);
+IndexedFaceSet915->setColorIndex(new int[32]{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0});
+IndexedFaceSet915->setTexCoordIndex(new int[160]{0,1,2,3,-1,4,5,6,7,-1,8,9,10,11,-1,12,13,14,15,-1,16,17,18,19,-1,20,21,22,23,-1,24,25,26,27,-1,28,29,30,31,-1,32,33,34,35,-1,36,37,38,39,-1,40,41,42,43,-1,44,45,46,47,-1,48,49,50,51,-1,52,53,54,55,-1,56,57,58,59,-1,60,61,62,63,-1,64,65,66,67,-1,68,69,70,71,-1,72,73,74,75,-1,76,77,78,79,-1,80,81,82,83,-1,84,85,86,87,-1,88,89,90,91,-1,92,93,94,95,-1,96,97,98,99,-1,100,101,102,103,-1,104,105,106,107,-1,108,109,110,111,-1,112,113,114,115,-1,116,117,118,119,-1,120,121,122,123,-1,124,125,126,127,-1});
+IndexedFaceSet915->setCoordIndex(new int[160]{0,1,10,9,-1,1,2,11,10,-1,2,3,12,11,-1,3,4,13,12,-1,4,5,14,13,-1,5,6,15,14,-1,6,7,16,15,-1,7,8,17,16,-1,9,10,19,18,-1,10,11,20,19,-1,11,12,21,20,-1,12,13,22,21,-1,13,14,23,22,-1,14,15,24,23,-1,15,16,25,24,-1,16,17,26,25,-1,18,19,28,27,-1,19,20,29,28,-1,20,21,30,29,-1,21,22,31,30,-1,22,23,32,31,-1,23,24,33,32,-1,24,25,34,33,-1,25,26,35,34,-1,27,28,37,36,-1,28,29,38,37,-1,29,30,39,38,-1,30,31,40,39,-1,31,32,41,40,-1,32,33,42,41,-1,33,34,43,42,-1,34,35,44,43,-1});
+CColor* Color916 = (CColor *)(m_pScene.createNode("Color"));
+Color916->setColor(new float[3]{1,0.247108,0});
+IndexedFaceSet915->setColor(*Color916);
+
+CTextureCoordinate* TextureCoordinate917 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate917->setPoint(new float[256]{1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0});
+IndexedFaceSet915->setTexCoord(*TextureCoordinate917);
+
+CCoordinate* Coordinate918 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate918->setDEF("nurbsToPoly43GeoPoints_1");
+Coordinate918->setPoint(new float[135]{-3696.2,64.461,1385.92,-3696.2,64.461,1414.08,-3696.2,44.554,1433.98,-3696.2,16.401,1433.98,-3696.2,-3.506,1414.08,-3696.2,-3.506,1385.92,-3696.2,16.401,1366.02,-3696.2,44.554,1366.02,-3696.2,64.461,1385.92,-3696.2,68.723,1384.16,-3696.2,68.723,1415.84,-3696.2,46.319,1438.25,-3696.2,14.635,1438.25,-3696.2,-7.769,1415.84,-3696.2,-7.769,1384.16,-3696.2,14.635,1361.75,-3696.2,46.319,1361.75,-3696.2,68.723,1384.16,-3701.14,68.723,1384.16,-3701.14,68.723,1415.84,-3701.14,46.319,1438.25,-3701.14,14.635,1438.25,-3701.14,-7.769,1415.84,-3701.14,-7.769,1384.16,-3701.14,14.635,1361.75,-3701.14,46.319,1361.75,-3701.14,68.723,1384.16,-3701.14,64.461,1385.92,-3701.14,64.461,1414.08,-3701.14,44.554,1433.98,-3701.14,16.401,1433.98,-3701.14,-3.506,1414.08,-3701.14,-3.506,1385.92,-3701.14,16.401,1366.02,-3701.14,44.554,1366.02,-3701.14,64.461,1385.92,-3696.2,64.461,1385.92,-3696.2,64.461,1414.08,-3696.2,44.554,1433.98,-3696.2,16.401,1433.98,-3696.2,-3.506,1414.08,-3696.2,-3.506,1385.92,-3696.2,16.401,1366.02,-3696.2,44.554,1366.02,-3696.2,64.461,1385.92});
+IndexedFaceSet915->setCoord(*Coordinate918);
+
+Shape911->setGeometry(IndexedFaceSet915);
+
+Transform910->addChildren(*Shape911);
+
+Transform898->addChildren(*Transform910);
+
+group->addChildren(*Transform898);
+
+CTransform* Transform919 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform919->setTranslation(new float[3]{224.917,0.520298,-1.15598});
+CTransform* Transform920 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform920->setUSE("_40");
+Transform919->addChildren(*Transform920);
+
+group->addChildren(*Transform919);
+
+CTransform* Transform921 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform921->setTranslation(new float[3]{-164.524,2.91628,57.2497});
+Transform921->setRotation(new float[4]{0.00473096,0.999969,0.00629472,1.28905});
+Transform921->setScale(new float[3]{1,0.999997,1});
+Transform921->setScaleOrientation(new float[4]{0.0117072,-0.999919,0.00501723,0.0987105});
+CTransform* Transform922 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform922->setUSE("_40");
+Transform921->addChildren(*Transform922);
+
+group->addChildren(*Transform921);
+
+CTransform* Transform923 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform923->setTranslation(new float[3]{22.7933,58.1258,732.228});
+Transform923->setRotation(new float[4]{0.131128,0.991314,-0.0100733,3.49009});
+Transform923->setScale(new float[3]{1.1976,1.1976,1.19759});
+Transform923->setScaleOrientation(new float[4]{-0.162255,0.196103,-0.967066,0.0306261});
+CTransform* Transform924 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform924->setUSE("_40");
+Transform923->addChildren(*Transform924);
+
+group->addChildren(*Transform923);
+
+CTransform* Transform925 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform925->setDEF("SpaceGroup");
+Transform925->setTranslation(new float[3]{-0.842697,0,0.398244});
+Transform925->setRotation(new float[4]{0,1,0,0.00267443});
+Transform925->setScale(new float[3]{0.999999,0.999999,0.999999});
+CTransform* Transform926 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform926->setDEF("space2");
+Transform926->setTranslation(new float[3]{148.181,17.3425,314.622});
+Transform926->setRotation(new float[4]{-0.572605,0.579709,0.579708,2.10153});
+Transform926->setScale(new float[3]{0.0687952,1.21367,0.0687948});
+Transform926->setScaleOrientation(new float[4]{4.75667e-7,1,3.89181e-7,0.093486});
+CShape* Shape927 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance928 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture929 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture929->setDEF("_43");
+ImageTexture929->setUrl(new CString[1]{"noise1.png"}, 1);
+Appearance928->setTexture(*ImageTexture929);
+
+Shape927->setAppearance(*Appearance928);
+
+CIndexedFaceSet* IndexedFaceSet930 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet930->setCcw(False);
+IndexedFaceSet930->setCreaseAngle(0.5);
+IndexedFaceSet930->setTexCoordIndex(new int[80]{0,1,2,3,-1,4,2,5,6,-1,7,5,8,9,-1,10,8,11,12,-1,13,11,14,15,-1,16,14,17,18,-1,19,17,20,21,-1,22,20,23,24,-1,25,23,26,27,-1,28,26,29,30,-1,31,29,32,33,-1,34,32,35,36,-1,37,35,38,39,-1,40,38,41,42,-1,43,41,44,45,-1,46,44,47,48,-1});
+IndexedFaceSet930->setCoordIndex(new int[80]{0,1,2,3,-1,3,2,4,5,-1,5,4,6,7,-1,7,6,8,9,-1,9,8,10,11,-1,11,10,12,13,-1,13,12,14,15,-1,15,14,16,17,-1,17,16,18,19,-1,19,18,20,21,-1,21,20,22,23,-1,23,22,24,25,-1,25,24,26,27,-1,27,26,28,29,-1,29,28,30,31,-1,31,30,1,0,-1});
+CTextureCoordinate* TextureCoordinate931 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate931->setPoint(new float[98]{1,0.5,1,1,0.9375,1,0.9375,0.5,0.9375,0.5,0.875,1,0.875,0.5,0.875,0.5,0.8125,1,0.8125,0.5,0.8125,0.5,0.75,1,0.75,0.5,0.75,0.5,0.6875,1,0.6875,0.5,0.6875,0.5,0.625,1,0.625,0.5,0.625,0.5,0.5625,1,0.5625,0.5,0.5625,0.5,0.5,1,0.5,0.5,0.5,0.5,0.4375,1,0.4375,0.5,0.4375,0.5,0.375,1,0.375,0.5,0.375,0.5,0.3125,1,0.3125,0.5,0.3125,0.5,0.25,1,0.25,0.5,0.25,0.5,0.1875,1,0.1875,0.5,0.1875,0.5,0.125,1,0.125,0.5,0.125,0.5,0.0625,1,0.0625,0.5,0.0625,0.5,0,1,0,0.5});
+IndexedFaceSet930->setTexCoord(*TextureCoordinate931);
+
+CCoordinate* Coordinate932 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate932->setPoint(new float[96]{0,0,-100,0,100,-100,38.2683,100,-92.388,38.2683,0,-92.388,70.7107,100,-70.7107,70.7107,0,-70.7107,92.388,100,-38.2683,92.388,0,-38.2683,100,100,0.00000437114,100,0,0.00000437114,92.388,100,38.2684,92.388,0,38.2684,70.7107,100,70.7107,70.7107,0,70.7107,38.2683,100,92.388,38.2683,0,92.388,0.0000150996,100,100,0.0000150996,0,100,-38.2683,100,92.388,-38.2683,0,92.388,-70.7107,100,70.7107,-70.7107,0,70.7107,-92.388,100,38.2684,-92.388,0,38.2684,-100,100,-0.00000119249,-100,0,-0.00000119249,-92.3879,100,-38.2684,-92.3879,0,-38.2684,-70.7107,100,-70.7107,-70.7107,0,-70.7107,-38.2683,100,-92.388,-38.2683,0,-92.388});
+IndexedFaceSet930->setCoord(*Coordinate932);
+
+Shape927->setGeometry(IndexedFaceSet930);
+
+Transform926->addChildren(*Shape927);
+
+Transform925->addChildren(*Transform926);
+
+CTransform* Transform933 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform933->setDEF("space1");
+Transform933->setTranslation(new float[3]{148.181,17.3425,314.622});
+Transform933->setRotation(new float[4]{-0.572605,0.579709,0.579708,2.10153});
+Transform933->setScale(new float[3]{0.0687952,1.21367,0.0687948});
+Transform933->setScaleOrientation(new float[4]{4.82751e-7,1,4.16474e-7,0.105003});
+CShape* Shape934 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance935 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture936 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture936->setUSE("_43");
+Appearance935->setTexture(*ImageTexture936);
+
+Shape934->setAppearance(*Appearance935);
+
+CIndexedFaceSet* IndexedFaceSet937 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet937->setCcw(False);
+IndexedFaceSet937->setCreaseAngle(0.5);
+IndexedFaceSet937->setTexCoordIndex(new int[80]{0,19,17,1,-1,1,18,21,2,-1,2,22,23,3,-1,3,24,25,4,-1,4,26,27,5,-1,5,28,29,6,-1,6,30,31,7,-1,7,32,33,8,-1,8,34,35,9,-1,9,36,37,10,-1,10,38,39,11,-1,11,40,41,12,-1,12,42,43,13,-1,13,44,45,14,-1,14,46,47,15,-1,15,48,20,16,-1});
+IndexedFaceSet937->setCoordIndex(new int[80]{0,17,16,1,-1,1,16,18,2,-1,2,18,19,3,-1,3,19,20,4,-1,4,20,21,5,-1,5,21,22,6,-1,6,22,23,7,-1,7,23,24,8,-1,8,24,25,9,-1,9,25,26,10,-1,10,26,27,11,-1,11,27,28,12,-1,12,28,29,13,-1,13,29,30,14,-1,14,30,31,15,-1,15,31,17,0,-1});
+CTextureCoordinate* TextureCoordinate938 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate938->setPoint(new float[98]{1,0,0.9375,0,0.875,0,0.8125,0,0.75,0,0.6875,0,0.625,0,0.5625,0,0.5,0,0.4375,0,0.375,0,0.3125,0,0.25,0,0.1875,0,0.125,0,0.0625,0,0,0,0.9375,0.5,0.9375,0.5,1,0.5,0,0.5,0.875,0.5,0.875,0.5,0.8125,0.5,0.8125,0.5,0.75,0.5,0.75,0.5,0.6875,0.5,0.6875,0.5,0.625,0.5,0.625,0.5,0.5625,0.5,0.5625,0.5,0.5,0.5,0.5,0.5,0.4375,0.5,0.4375,0.5,0.375,0.5,0.375,0.5,0.3125,0.5,0.3125,0.5,0.25,0.5,0.25,0.5,0.1875,0.5,0.1875,0.5,0.125,0.5,0.125,0.5,0.0625,0.5,0.0625,0.5});
+IndexedFaceSet937->setTexCoord(*TextureCoordinate938);
+
+CCoordinate* Coordinate939 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate939->setPoint(new float[96]{0,-100,-100,38.2683,-100,-92.388,70.7107,-100,-70.7107,92.388,-100,-38.2683,100,-100,0.00000437114,92.388,-100,38.2684,70.7107,-100,70.7107,38.2683,-100,92.388,0.0000150996,-100,100,-38.2683,-100,92.388,-70.7107,-100,70.7107,-92.388,-100,38.2684,-100,-100,-0.00000119249,-92.3879,-100,-38.2684,-70.7107,-100,-70.7107,-38.2683,-100,-92.388,38.2683,0,-92.388,0,0,-100,70.7107,0,-70.7107,92.388,0,-38.2683,100,0,0.00000437114,92.388,0,38.2684,70.7107,0,70.7107,38.2683,0,92.388,0.0000150996,0,100,-38.2683,0,92.388,-70.7107,0,70.7107,-92.388,0,38.2684,-100,0,-0.00000119249,-92.3879,0,-38.2684,-70.7107,0,-70.7107,-38.2683,0,-92.388});
+IndexedFaceSet937->setCoord(*Coordinate939);
+
+Shape934->setGeometry(IndexedFaceSet937);
+
+Transform933->addChildren(*Shape934);
+
+Transform925->addChildren(*Transform933);
+
+group->addChildren(*Transform925);
+
+CTransform* Transform940 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform940->setTranslation(new float[3]{-79.4978,-0.488956,95.4511});
+Transform940->setRotation(new float[4]{0,1,0,0.307783});
+CTransform* Transform941 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform941->setDEF("_44");
+Transform941->setTranslation(new float[3]{268.166,17.6,312.404});
+CInline* Inline942 = (CInline *)(m_pScene.createNode("Inline"));
+Inline942->setUrl(new CString[1]{"gate.x3d"}, 1);
+Inline942->setBboxSize(new float[3]{7.63379,11.2538,11.2551});
+Inline942->setBboxCenter(new float[3]{0.00292969,-0.15992,0.000648499});
+Transform941->addChildren(*Inline942);
+
+Transform940->addChildren(*Transform941);
+
+group->addChildren(*Transform940);
+
+CTransform* Transform943 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform943->setTranslation(new float[3]{-244.623,-0.483335,3.80334});
+CTransform* Transform944 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform944->setUSE("_44");
+Transform943->addChildren(*Transform944);
+
+group->addChildren(*Transform943);
+
+CTransform* Transform945 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform945->setDEF("FlyAnim");
+Transform945->setCenter(new float[3]{-306.499,0.98113,356.686});
+CGroup* Group946 = (CGroup *)(m_pScene.createNode("Group"));
+CGroup* Group947 = (CGroup *)(m_pScene.createNode("Group"));
+Group947->setDEF("UnnamedAnimation2");
+CTimeSensor* TimeSensor948 = (CTimeSensor *)(m_pScene.createNode("TimeSensor"));
+TimeSensor948->setDEF("Time_1");
+TimeSensor948->setCycleInterval(40);
+TimeSensor948->setLoop(True);
+Group947->addChildren(*TimeSensor948);
+
+Group946->addChildren(*Group947);
+
+CPositionInterpolator* PositionInterpolator949 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
+PositionInterpolator949->setDEF("UnnamedTransformTranslationInterp_1");
+PositionInterpolator949->setKey(new float[376]{0,0.0025,0.005,0.0075,0.01,0.0125,0.015,0.0175,0.02,0.0225,0.025,0.0275,0.03,0.0325,0.035,0.0375,0.04,0.0425,0.045,0.0475,0.05,0.0525,0.055,0.0575,0.06,0.0625,0.065,0.0675,0.07,0.0725,0.075,0.0775,0.08,0.0825,0.085,0.0875,0.09,0.0925,0.095,0.0975,0.1,0.102586,0.105172,0.107759,0.110345,0.112931,0.115517,0.118103,0.12069,0.123276,0.125862,0.128448,0.131034,0.133621,0.136207,0.138793,0.141379,0.143965,0.146552,0.149138,0.151724,0.15431,0.156896,0.159483,0.162069,0.164655,0.167241,0.169827,0.172414,0.175,0.1775,0.18,0.1825,0.185,0.1875,0.19,0.1925,0.195,0.1975,0.2,0.202778,0.205556,0.208333,0.211111,0.213889,0.216667,0.219444,0.222222,0.225,0.2275,0.23,0.2325,0.235,0.2375,0.24,0.2425,0.245,0.2475,0.25,0.2525,0.255,0.2575,0.26,0.2625,0.265,0.2675,0.27,0.2725,0.275,0.278,0.281,0.284,0.287,0.29,0.2925,0.295,0.2975,0.3,0.302857,0.305714,0.308571,0.311429,0.314286,0.317143,0.32,0.3225,0.325,0.3275,0.33,0.3325,0.335,0.3375,0.34,0.343333,0.346667,0.35,0.3525,0.355,0.3575,0.36,0.3625,0.365,0.3675,0.37,0.3725,0.375,0.378,0.381,0.384,0.387,0.39,0.3925,0.395,0.3975,0.4,0.4025,0.405,0.4075,0.41,0.4125,0.415,0.4175,0.42,0.4225,0.425,0.427778,0.430556,0.433333,0.436111,0.438889,0.441667,0.444445,0.447222,0.45,0.4525,0.455,0.457857,0.460714,0.463571,0.466429,0.469286,0.472143,0.475,0.4775,0.48,0.4825,0.485,0.4875,0.49,0.4925,0.495,0.4975,0.5,0.505,0.507857,0.510714,0.513571,0.516429,0.519286,0.522143,0.525,0.5275,0.53,0.5325,0.535,0.5375,0.54,0.543333,0.546667,0.55,0.553,0.556,0.559,0.562,0.565,0.567857,0.570714,0.573571,0.576429,0.579286,0.582143,0.585,0.5875,0.59,0.5925,0.595,0.5975,0.6,0.603,0.606,0.609,0.612,0.615,0.617857,0.620714,0.623571,0.626429,0.629286,0.632143,0.635,0.638,0.641,0.644,0.647,0.65,0.6525,0.655,0.6575,0.66,0.6625,0.665,0.667857,0.670714,0.673571,0.676429,0.679286,0.682143,0.685,0.688,0.691,0.694,0.697,0.7,0.7025,0.705,0.7075,0.71,0.7125,0.715,0.7175,0.72,0.723333,0.726667,0.73,0.732857,0.735714,0.738571,0.741429,0.744286,0.747143,0.75,0.753333,0.756667,0.76,0.765,0.768333,0.771667,0.775,0.7775,0.78,0.7825,0.785,0.7875,0.79,0.7925,0.795,0.7975,0.8,0.8025,0.805,0.8075,0.81,0.8125,0.815,0.8175,0.82,0.8225,0.825,0.8275,0.83,0.8325,0.835,0.8375,0.84,0.8425,0.845,0.8475,0.85,0.8525,0.855,0.8575,0.86,0.8625,0.865,0.8675,0.87,0.8725,0.875,0.8775,0.88,0.8825,0.885,0.8875,0.89,0.8925,0.895,0.8975,0.9,0.9025,0.905,0.9075,0.91,0.9125,0.915,0.9175,0.92,0.9225,0.925,0.9275,0.93,0.9325,0.935,0.9375,0.94,0.9425,0.945,0.9475,0.95,0.9525,0.955,0.9575,0.96,0.9625,0.965,0.9675,0.97,0.975,0.977778,0.980556,0.983333,0.986111,0.988889,0.991667,0.994444,0.997222,1}, 376);
+PositionInterpolator949->setKeyValue(new float[1128]{0,0,0,4.8019,0,0,9.61779,0,0,14.4452,0,0,19.2816,0,0,24.1247,0,0,28.9718,0,0,33.8206,0,0,38.6686,0,0,43.5133,0,0,48.3522,0,0,53.1829,0,0,58.0029,0,0,62.8097,0,0,67.6009,0,0,72.374,0,0,77.1266,0,0,81.8561,0,0,86.5601,0,0,91.2362,0,0,95.8818,0,0,100.456,0,0.000990005,104.931,0,0.0037516,109.32,0,0.00797215,113.639,0,0.013339,117.902,0,0.0195396,122.123,0,0.0262612,126.319,0,0.0331912,130.503,0,0.040017,134.69,0,0.046426,138.895,0,0.0521055,143.133,0,0.0567429,147.418,0,0.0600255,151.766,0,0.0616408,156.191,0,0.0612761,160.707,0,0.0586187,165.33,0,0.0533561,170.075,0,0.0451756,174.955,0,0.0337645,179.986,0,0.0188103,185.183,0,0,190.708,-0.0000135455,-0.0214897,196.344,-0.000052247,-0.0429178,202.083,-0.000113202,-0.0644059,207.916,-0.000193508,-0.0860754,213.835,-0.000290261,-0.108048,219.832,-0.000400561,-0.130445,225.899,-0.000521503,-0.153387,232.026,-0.000650185,-0.176997,238.207,-0.000783705,-0.201396,244.432,-0.00091916,-0.226705,250.693,-0.00105365,-0.253046,256.982,-0.00118426,-0.280541,263.291,-0.00130811,-0.30931,269.611,-0.00142228,-0.339475,275.933,-0.00152387,-0.371158,282.251,-0.00160998,-0.40448,288.555,-0.00167771,-0.439563,294.837,-0.00172415,-0.476528,301.088,-0.0017464,-0.515496,307.301,-0.00174157,-0.55659,313.467,-0.00170674,-0.59993,319.578,-0.00163901,-0.645638,325.625,-0.00153548,-0.693836,331.6,-0.00139326,-0.744645,337.495,-0.00120943,-0.798187,343.302,-0.000981091,-0.854582,349.012,-0.000705345,-0.913953,354.617,-0.000379288,-0.976421,360.108,0,-1.04211,365.071,0.000682358,-1.08829,369.51,0.00186682,-1.1091,373.5,0.00343933,-1.12322,377.116,0.00528584,-1.14933,380.435,0.00729227,-1.2061,383.532,0.00934459,-1.31221,386.482,0.0113287,-1.48635,389.362,0.0131306,-1.74718,392.247,0.0146362,-2.1134,395.212,0.0157315,-2.60367,398.522,0.0158874,-3.25356,401.715,0.0148126,-3.97224,404.791,0.0130334,-4.775,407.749,0.0110762,-5.6771,410.587,0.00946725,-6.69383,413.304,0.00873292,-7.84047,415.899,0.00939955,-9.13228,418.372,0.0119935,-10.5846,420.72,0.0170412,-12.2126,422.736,0.0228304,-13.8421,424.665,0.0288473,-15.6233,426.503,0.0354806,-17.5415,428.244,0.0431192,-19.5821,429.882,0.0521517,-21.7306,431.414,0.0629669,-23.9724,432.832,0.0759535,-26.293,434.132,0.0915004,-28.6777,435.309,0.109996,-31.1119,436.357,0.13183,-33.5812,437.257,0.155474,-36.1308,438.002,0.179677,-38.8009,438.609,0.205241,-41.5696,439.095,0.232968,-44.4146,439.475,0.263661,-47.3139,439.766,0.298121,-50.2453,439.984,0.337151,-53.1868,440.145,0.381553,-56.1163,440.265,0.432129,-59.0115,440.361,0.489682,-61.8506,440.31,0.567469,-65.2257,439.978,0.659682,-68.6022,439.412,0.775309,-71.9499,438.663,0.923339,-75.2384,437.78,1.11276,-78.4375,436.977,1.30043,-81.1042,435.984,1.53168,-83.7299,434.588,1.84169,-86.1129,432.579,2.26561,-88.0519,429.699,2.85083,-89.9073,426.555,3.47686,-91.6817,423.213,4.13812,-93.3435,419.736,4.82903,-94.8612,416.189,5.54401,-96.2032,412.637,6.27749,-97.3382,409.144,7.02387,-98.2344,406.11,7.69356,-98.789,403.037,8.38564,-99.1349,399.937,9.09604,-99.307,396.82,9.82065,-99.3402,393.696,10.5554,-99.2693,390.576,11.2962,-99.1294,387.468,12.039,-98.9552,384.385,12.7796,-98.7816,380.18,13.8099,-98.4441,376.022,14.8735,-97.6977,372.328,15.8823,-96.2953,369.828,16.6049,-94.9229,367.327,17.3397,-93.5176,364.843,18.0793,-92.0682,362.394,18.8165,-90.5634,359.999,19.5439,-88.9921,357.677,20.254,-87.3432,355.446,20.9396,-85.6053,353.324,21.5933,-83.7674,351.33,22.2078,-81.8182,349.483,22.7757,-79.7466,347.654,23.3313,-76.8596,346.326,23.7331,-73.4568,345.367,24.0351,-69.7338,344.649,24.2915,-65.8864,344.041,24.5562,-62.1101,343.7,24.7781,-58.7413,343.668,24.9598,-55.107,343.943,25.0923,-51.726,344.522,25.1666,-49.1177,345.265,25.201,-47.1239,346.039,25.2212,-45.2373,346.851,25.2295,-43.453,347.709,25.2282,-41.7663,348.622,25.2196,-40.1723,349.596,25.206,-38.6662,350.639,25.1897,-37.2432,351.759,25.173,-35.8984,352.963,25.1581,-34.6272,354.26,25.1474,-33.4246,355.817,25.1365,-32.2172,357.49,25.122,-31.1732,359.267,25.1049,-30.2601,361.135,25.0864,-29.4457,363.084,25.0674,-28.6975,365.099,25.0492,-27.9833,367.17,25.0327,-27.2706,369.284,25.019,-26.5272,371.428,25.0092,-25.7206,374.029,25.0315,-24.9188,377.543,25.0667,-24.2558,381.882,25.0908,-23.682,386.288,25.1177,-23.0912,390.754,25.1447,-22.5111,395.273,25.1691,-21.9697,399.839,25.1884,-21.4947,404.445,25.1998,-21.1141,409.085,25.2008,-20.8555,413.194,25.1919,-20.7203,417.364,25.1753,-20.6402,421.578,25.1529,-20.6094,425.819,25.1265,-20.6223,430.068,25.098,-20.6729,434.31,25.069,-20.7556,438.526,25.0416,-20.8645,442.698,25.0174,-20.994,446.811,24.9984,-21.1381,450.845,24.9864,-21.2913,456.96,25.1054,-22.7241,459.653,25.1749,-24.1583,462.313,25.2543,-25.5929,464.923,25.336,-27.0611,467.464,25.412,-28.5962,469.92,25.4744,-30.2317,472.275,25.5156,-32.0008,474.51,25.5275,-33.9368,476.318,25.4952,-35.8568,477.965,25.4194,-38.0153,479.481,25.3181,-40.3406,480.896,25.2093,-42.7609,482.239,25.1109,-45.2046,483.542,25.041,-47.5998,485.087,25.0212,-50.6675,486.347,25.0433,-53.8284,487.432,25.0306,-57.4074,488.268,24.9914,-61.0479,488.977,24.9568,-64.8973,489.655,24.9011,-68.868,490.396,24.7988,-72.8726,491.294,24.6241,-76.8231,492.241,24.4021,-80.5676,493.187,24.1533,-84.3599,494.168,23.8766,-88.166,495.223,23.571,-91.9516,496.388,23.2356,-95.6826,497.701,22.8693,-99.3248,499.199,22.471,-102.844,500.731,22.0727,-105.808,502.492,21.615,-108.667,504.437,21.1158,-111.422,506.522,20.5926,-114.069,508.702,20.0632,-116.61,510.934,19.5454,-119.041,513.657,18.9108,-121.859,516.481,18.2445,-124.564,519.461,17.5807,-127.093,522.651,16.9535,-129.381,526.106,16.3971,-131.363,529.637,15.9131,-133.043,533.336,15.4393,-134.622,537.164,14.9864,-136.075,541.084,14.5651,-137.378,545.055,14.1862,-138.504,549.041,13.8605,-139.429,553.002,13.5986,-140.126,557.287,13.4479,-140.473,561.749,13.4328,-140.374,566.202,13.4955,-139.93,570.455,13.5785,-139.242,574.321,13.6241,-138.412,577.179,13.6322,-137.662,579.783,13.6426,-136.82,582.206,13.6537,-135.833,584.518,13.6639,-134.645,586.791,13.6716,-133.201,589.096,13.675,-131.445,591.827,13.6716,-129.098,594.618,13.6619,-126.498,597.402,13.6491,-123.695,600.113,13.6368,-120.735,602.685,13.6281,-117.667,605.05,13.6264,-114.539,607.143,13.6352,-111.399,609.025,13.6699,-107.965,610.578,13.7292,-104.31,611.755,13.7937,-100.541,612.51,13.8437,-96.7687,612.797,13.8597,-93.1011,612.729,13.8449,-90.1386,612.471,13.8155,-87.2083,612.034,13.7754,-84.2985,611.431,13.7283,-81.3973,610.671,13.6782,-78.493,609.768,13.6288,-75.5738,608.731,13.5839,-72.6279,607.573,13.5474,-69.6435,605.142,13.5175,-65.2078,601.711,13.5019,-60.6382,598.216,13.487,-57.0115,595.461,13.4663,-54.7137,592.705,13.4395,-52.606,589.939,13.4114,-50.6757,587.157,13.3865,-48.9101,584.348,13.3694,-47.2966,581.507,13.3648,-45.8225,578.624,13.3773,-44.4752,575.103,13.5645,-43.6103,571.415,13.8111,-43.5274,567.699,13.7238,-43.4859,562.045,11.6431,-43.2701,558.363,12.0504,-43.4487,554.703,12.8957,-43.6987,551.028,13.3954,-43.8035,548.256,13.4445,-43.7733,545.485,13.4934,-43.743,542.713,13.5418,-43.7126,539.942,13.59,-43.682,537.17,13.6378,-43.6513,534.399,13.6852,-43.6204,531.627,13.7323,-43.5893,528.856,13.7791,-43.5581,526.084,13.8254,-43.5268,523.313,13.8714,-43.4953,520.542,13.917,-43.4636,517.77,13.9621,-43.4317,514.999,14.0069,-43.3997,512.228,14.0513,-43.3675,509.456,14.0952,-43.3351,506.685,14.1387,-43.3026,503.914,14.1818,-43.2698,501.142,14.2244,-43.2369,498.371,14.2666,-43.2038,495.6,14.3083,-43.1704,492.828,14.3496,-43.1369,490.057,14.3904,-43.1032,487.286,14.4307,-43.0693,484.514,14.4705,-43.0352,481.743,14.5098,-43.0009,478.972,14.5486,-42.9663,476.2,14.587,-42.9316,473.429,14.6247,-42.8966,470.657,14.662,-42.8614,467.886,14.6987,-42.826,465.114,14.7349,-42.7903,462.343,14.7705,-42.7545,459.571,14.8056,-42.7183,456.8,14.8401,-42.682,454.028,14.8741,-42.6454,451.256,14.9074,-42.6086,448.484,14.9402,-42.5715,445.713,14.9724,-42.5342,442.941,15.004,-42.4966,440.169,15.035,-42.4588,437.397,15.0653,-42.4207,434.625,15.095,-42.3824,431.853,15.1241,-42.3438,429.08,15.1526,-42.3049,426.308,15.1804,-42.2657,423.536,15.2076,-42.2263,420.763,15.2341,-42.1866,417.991,15.2599,-42.1466,415.218,15.285,-42.1064,412.446,15.3095,-42.0658,409.673,15.3332,-42.025,406.9,15.3563,-41.9839,404.127,15.3787,-41.9424,401.354,15.4003,-41.9007,398.581,15.4212,-41.8587,395.808,15.4414,-41.8164,393.034,15.4609,-41.7737,390.261,15.4796,-41.7308,387.487,15.4975,-41.6875,384.714,15.5147,-41.644,381.94,15.5311,-41.6001,379.166,15.5468,-41.5559,376.392,15.5616,-41.5113,373.618,15.5757,-41.4665,370.844,15.589,-41.4213,368.069,15.6015,-41.3757,365.295,15.6131,-41.3299,362.52,15.6239,-41.2836,359.746,15.6339,-41.2371,356.971,15.6431,-41.1902,354.196,15.6514,-41.1429,351.42,15.6589,-41.0953,348.645,15.6655,-41.0474,345.87,15.6712,-40.9991,343.094,15.6761,-40.9504,340.318,15.6801,-40.9013,337.542,15.6832,-40.8519,334.766,15.6854,-40.8021,328.935,13.5353,-39.8054,324.538,13.3887,-39.7058,320.059,13.3167,-39.6385,315.515,13.3042,-39.597,310.921,13.3364,-39.5749,306.293,13.3984,-39.5656,301.65,13.4753,-39.5629,297.007,13.5523,-39.5601,292.379,13.6143,-39.5509,287.785,13.6465,-39.5288});
+Group946->addChildren(*PositionInterpolator949);
+
+COrientationInterpolator* OrientationInterpolator950 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator950->setDEF("UnnamedTransformRotationInterp_1");
+OrientationInterpolator950->setKey(new float[374]{0,0.0025,0.005,0.0075,0.01,0.0125,0.015,0.0175,0.02,0.0225,0.025,0.0275,0.03,0.0325,0.035,0.0375,0.04,0.0425,0.045,0.0475,0.05,0.0525,0.055,0.0575,0.06,0.0625,0.065,0.0675,0.07,0.0725,0.075,0.0775,0.08,0.0825,0.085,0.0875,0.09,0.0925,0.095,0.0975,0.1,0.1025,0.105,0.1075,0.11,0.1125,0.115,0.1175,0.12,0.1225,0.125,0.1275,0.13,0.1325,0.135,0.1375,0.14,0.1425,0.145,0.1475,0.15,0.1525,0.155,0.1575,0.16,0.1625,0.165,0.1675,0.17,0.1725,0.175,0.1775,0.18,0.1825,0.185,0.1875,0.19,0.1925,0.195,0.1975,0.2,0.202632,0.205263,0.207895,0.210526,0.213158,0.215789,0.218421,0.221053,0.223684,0.226316,0.228947,0.231579,0.23421,0.236842,0.239474,0.242105,0.244737,0.247368,0.25,0.2525,0.255,0.2575,0.26,0.2625,0.265,0.2675,0.27,0.2725,0.275,0.278,0.281,0.284,0.287,0.29,0.2925,0.295,0.2975,0.3,0.302857,0.305714,0.308571,0.311429,0.314286,0.317143,0.32,0.3225,0.325,0.3275,0.33,0.3325,0.335,0.3375,0.34,0.3425,0.345,0.3475,0.35,0.3525,0.355,0.3575,0.36,0.3625,0.365,0.368333,0.371667,0.375,0.378,0.381,0.384,0.387,0.39,0.3925,0.395,0.3975,0.4,0.4025,0.405,0.4075,0.41,0.4125,0.415,0.4175,0.42,0.4225,0.425,0.427778,0.430556,0.433333,0.436111,0.438889,0.441667,0.444445,0.447222,0.45,0.4525,0.455,0.457857,0.460714,0.463571,0.466429,0.469286,0.472143,0.475,0.4775,0.48,0.4825,0.485,0.4875,0.49,0.4925,0.495,0.4975,0.5,0.505,0.507857,0.510714,0.513571,0.516429,0.519286,0.522143,0.525,0.5275,0.53,0.5325,0.535,0.5375,0.54,0.543333,0.546667,0.55,0.553,0.556,0.559,0.562,0.565,0.5675,0.57,0.5725,0.575,0.5775,0.58,0.5825,0.585,0.5875,0.59,0.5925,0.595,0.5975,0.6,0.603,0.606,0.609,0.612,0.615,0.617857,0.620714,0.623571,0.626429,0.629286,0.632143,0.635,0.638,0.641,0.644,0.647,0.65,0.6525,0.655,0.6575,0.66,0.6625,0.665,0.667857,0.670714,0.673571,0.676429,0.679286,0.682143,0.685,0.688,0.691,0.694,0.697,0.7,0.7025,0.705,0.7075,0.71,0.7125,0.715,0.7175,0.72,0.723333,0.726667,0.73,0.732857,0.735714,0.738571,0.741429,0.744286,0.747143,0.75,0.753333,0.756667,0.76,0.765,0.768333,0.771667,0.775,0.7775,0.78,0.7825,0.785,0.7875,0.79,0.7925,0.795,0.797727,0.800455,0.803182,0.805909,0.808636,0.811364,0.814091,0.816818,0.819545,0.822273,0.825,0.8275,0.83,0.8325,0.835,0.8375,0.84,0.8425,0.845,0.8475,0.85,0.8525,0.855,0.857692,0.860385,0.863077,0.865769,0.868461,0.871154,0.873846,0.876538,0.879231,0.881923,0.884615,0.887307,0.89,0.8925,0.895,0.8975,0.9,0.9025,0.905,0.9075,0.91,0.9125,0.915,0.9175,0.92,0.9225,0.925,0.927778,0.930556,0.933333,0.936111,0.938889,0.941667,0.944444,0.947222,0.95,0.9525,0.955,0.9575,0.96,0.9625,0.965,0.9675,0.97,0.9725,0.975,0.98,0.985,0.988,0.991,0.994,0.997,1}, 374);
+OrientationInterpolator950->setKeyValue(new float[1496]{0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,-1,0,0.000690534,0,0,1,0,0,0,1,0,0,0,1,0,0,-1,0,0.000976562,0,-1,0,0.000976562,0,-1,0,0.00119604,0,-1,0,0.00138107,0,-1,0,0.00138107,0,-1,0,0.00154408,0,-1,0,0.00182698,0,-1,0,0.0020716,0,-1,0,0.00218366,0,-1,0,0.00239208,0,-1,0,0.00248976,0,-1,0,0.00276214,0,-1,0,0.00300997,0,-1,0,0.00316442,0,-1,0,0.00338291,0,-1,0,0.00358812,0,-1,0,0.00378221,0,-1,0,0.00396682,0,-1,0,0.0041432,0,-1,0,0.00431238,0,-1,0,0.00452814,0,-1,0,0.00468343,0,-1,0,0.00483374,0,-1,0,0.00497951,0,-1,0,0.00516748,0,-1,0,0.00530409,0,-1,0,0.00543727,0,-1,0,0.00556726,0,-1,0,0.00565227,0,-1,0,0.00577742,0,-1,0,0.00585938,0,-1,0,0.0059402,0,-1,0,0.0059802,0,-1,0,0.00605941,0,-1,0,0.00609863,0,-1,0,0.00609863,0,-1,0,0.00609863,0,-1,0,0.00605941,0,-1,0,0.00601994,0,-1,0,0.00601994,0,-1,0,0.00589993,0,-1,0,0.00581854,0,-1,0,0.00573601,0,-1,0,0.00560993,0,-1,0,0.00548095,0,-1,0,0.00530409,0,-1,0,0.00507437,0,-1,0,0.00488281,0,-1,0,0.00463224,0,-1,0,0.00431238,0,-1,0,0.00396682,0,-1,0,0.00365396,0,-1,0,0.00338291,0,-1,0,0.00292969,0,-1,0,0.00258374,0,-1,0,0.0020716,0,-1,0,0.00154408,0,-1,0,0.000976562,0,-1,0,0.000690534,0,0,1,0,0,0,1,0,0.0154344,-0.999237,-0.0358703,0.00556726,0.0117871,-0.999555,-0.0273938,0.0143359,0.0110812,-0.999607,-0.0257534,0.0232538,0.0114134,-0.999583,-0.0265254,0.0294109,0.0129298,-0.999465,-0.0300495,0.0299252,0.0180444,-0.998957,-0.041936,0.0219021,0.134335,-0.94047,-0.312201,0.00258374,0.00694194,0.999846,-0.0161334,0.0313949,0,1,0,0.0824256,-0.00123375,0.999995,0.00277929,0.118151,-0.00186689,0.99999,0.00409502,0.160999,-0.00221529,0.999986,0.00475337,0.210177,-0.00242366,0.999984,0.0051104,0.264894,-0.00256157,0.999982,0.00533104,0.324359,-0.0026644,0.999981,0.00549584,0.387781,-0.00275113,0.99998,0.00564619,0.454368,-0.00283253,0.999979,0.00580454,0.523329,-0.00291512,0.999978,0.00598393,0.593874,-0.00300313,0.999976,0.00619274,0.665209,-0.00309965,0.999974,0.00643714,0.736545,-0.00320716,0.999972,0.00672247,0.80709,-0.00332793,0.99997,0.00705396,0.876053,-0.00346423,0.999966,0.00743733,0.942642,-0.00361851,0.999962,0.00787907,1.00607,-0.00379348,0.999958,0.00838677,1.06554,-0.00399228,0.999952,0.00896935,1.12026,-0.00421853,0.999945,0.00963743,1.16944,-0.00447649,0.999936,0.0104036,1.2123,-0.00536184,0.999913,0.0120564,1.28043,-0.00678385,0.99988,0.0139019,1.33631,-0.00850415,0.999837,0.0159419,1.38195,-0.0103162,0.999782,0.018173,1.41932,-0.0120268,0.999716,0.0205863,1.4504,-0.013447,0.999641,0.0231661,1.47719,-0.0143893,0.999561,0.0258898,1.50167,-0.0146687,0.99948,0.0287282,1.52581,-0.0141078,0.9994,0.0316455,1.5516,-0.0125441,0.999323,0.0346015,1.58103,-0.00600579,0.999127,0.0413333,1.63925,0.00365815,0.998788,0.0490883,1.68998,0.0143288,0.998272,0.0569873,1.73874,0.0239842,0.997651,0.0641584,1.79093,0.0307032,0.997092,0.0697534,1.85187,0.034212,0.996662,0.0741187,1.93467,0.0349307,0.996433,0.07682,2.02203,0.035354,0.996237,0.0791326,2.12392,0.0376914,0.995906,0.0821636,2.25036,0.0397362,0.995664,0.0841099,2.341,0.0415951,0.99544,0.0858441,2.44658,0.0436184,0.995202,0.0875787,2.56111,0.0461437,0.994915,0.0895204,2.67856,0.049506,0.994539,0.0918737,2.79294,0.0540498,0.994023,0.0948472,2.89823,0.0601354,0.993303,0.0986562,2.98842,0.0646975,0.99274,0.101399,3.03329,0.0701319,0.992042,0.104562,3.07418,0.0762761,0.991213,0.108071,3.11161,0.0829675,0.990255,0.111852,3.1461,0.0900423,0.989179,0.11583,3.17818,0.0973366,0.987999,0.119932,3.20838,0.104686,0.986734,0.124083,3.23722,0.111927,0.985411,0.128211,3.26522,0.118896,0.984061,0.132242,3.2929,0.125434,0.982721,0.136107,3.3208,0.131382,0.981434,0.139737,3.34943,0.136585,0.980243,0.143065,3.37933,0.145352,0.978092,0.149029,3.43912,0.152761,0.97612,0.154447,3.49646,0.159142,0.974279,0.159545,3.55256,0.164827,0.972499,0.164551,3.60862,0.170152,0.970696,0.169698,3.66587,0.17546,0.968767,0.175226,3.72549,0.183202,0.965078,0.187249,3.84934,0.189457,0.961268,0.200175,3.97789,0.201828,0.95573,0.214114,4.11379,0.215269,0.950584,0.223718,4.20348,0.232835,0.943798,0.234591,4.29973,0.253046,0.93571,0.245795,4.39603,0.274133,0.926933,0.256215,4.48605,0.29393,0.918494,0.264526,4.56366,0.313599,0.909987,0.271256,4.63111,0.330117,0.903046,0.274827,4.67753,0.349433,0.895438,0.275841,4.72893,-0.379047,-0.88362,-0.274845,1.47247,0.39612,0.876455,0.273706,4.85721,0.416877,0.867379,0.271786,4.91116,0.441148,0.856168,0.269008,4.97049,0.468715,0.842575,0.26528,5.03309,0.499247,0.826373,0.2605,5.09689,0.532234,0.807412,0.254583,5.15986,0.566907,0.785726,0.247491,5.22007,0.602174,0.761664,0.239279,5.27573,0.636599,0.736053,0.230147,5.32524,-0.668443,-0.710327,-0.220498,0.915927,-0.70108,-0.681912,-0.208527,0.876219,-0.732286,-0.652641,-0.194465,0.841046,-0.761765,-0.622697,-0.178783,0.810053,-0.789273,-0.592272,-0.162054,0.782872,-0.814646,-0.561557,-0.144935,0.759125,-0.837805,-0.530718,-0.128149,0.738429,-0.85876,-0.499884,-0.11246,0.720399,-0.877603,-0.469127,-0.0986536,0.704656,-0.894487,-0.438445,-0.0875158,0.690844,-0.938957,-0.333057,-0.0862133,0.654672,-0.959592,-0.263791,-0.0979673,0.634005,-0.965073,-0.245852,-0.0905013,0.627198,-0.969291,-0.232518,-0.0800663,0.620458,-0.972817,-0.221644,-0.0670922,0.613762,-0.976109,-0.210962,-0.0520197,0.60717,-0.979548,-0.198087,-0.0353126,0.600796,-0.983414,-0.180532,-0.0174671,0.594822,-0.987802,-0.155713,0.000976261,0.589533,-0.990865,-0.133984,0.0153137,0.586389,-0.993429,-0.109919,0.0318913,0.583785,-0.995242,-0.0836434,0.0499781,0.581848,-0.996095,-0.055325,0.068808,0.580683,-0.995838,-0.0251708,0.0875916,0.580363,-0.994394,0.00658007,0.105532,0.580929,-0.991756,0.039668,0.121843,0.582386,-0.987987,0.0738257,0.135764,0.584709,-0.983199,0.108791,0.146574,0.587845,-0.977538,0.144315,0.1536,0.591731,-0.860488,0.498796,0.103747,0.688375,-0.826906,0.549355,0.120149,0.716521,-0.788668,0.597825,0.143558,0.751332,-0.747735,0.641966,0.169626,0.79161,-0.706083,0.680778,0.194906,0.835643,-0.665413,0.714269,0.216899,0.88128,-0.626987,0.743093,0.233879,0.926061,-0.591604,0.768223,0.244618,0.96736,-0.552219,0.794944,0.251235,1.01179,-0.513283,0.819582,0.254608,1.05484,-0.475661,0.841728,0.255421,1.09641,-0.440179,0.861152,0.254283,1.13624,-0.407608,0.877772,0.251739,1.17393,-0.378662,0.891612,0.24828,1.20898,-0.328912,0.913028,0.241239,1.26981,-0.286286,0.930106,0.230094,1.31862,-0.249607,0.945819,0.207659,1.35663,-0.233392,0.954329,0.186504,1.38548,-0.22214,0.961648,0.160896,1.42142,-0.210621,0.968578,0.13227,1.44853,-0.193493,0.975888,0.101008,1.451,-0.164407,0.984174,0.0661198,1.41348,-0.14906,0.987493,0.0513598,1.38658,-0.130032,0.990931,0.033865,1.35149,-0.107289,0.994134,0.0136345,1.30986,-0.0807761,0.996689,-0.00933039,1.26333,-0.050461,0.998113,-0.0349923,1.21355,-0.0163806,0.997864,-0.0632371,1.16215,0.0212928,0.995361,-0.0938232,1.11071,0.062178,0.990038,-0.126327,1.06073,0.105609,0.981436,-0.160092,1.01357,0.150575,0.969338,-0.194193,0.970378,0.195708,0.953921,-0.227448,0.932058,0.239319,0.935906,-0.258469,0.899201,0.27952,0.916628,-0.285766,0.872081,0.314364,0.897991,-0.307876,0.85069,0.383783,0.856424,-0.345323,0.811234,0.424455,0.832336,-0.356446,0.785637,0.452707,0.819921,-0.350408,0.762402,0.486793,0.806225,-0.336205,0.734039,0.547329,0.772452,-0.3221,0.695558,0.614275,0.725876,-0.309467,0.661925,0.695467,0.658668,-0.287198,0.627774,0.782927,0.567865,-0.254075,0.598592,0.865236,0.45497,-0.210637,0.578873,0.930812,0.328438,-0.160368,0.570931,0.973232,0.202196,-0.109255,0.574063,0.993882,0.0903036,-0.0635924,0.584699,0.99925,-0.0373537,-0.0101592,0.605351,0.989323,-0.141376,0.03539,0.629661,0.970671,-0.228547,0.074597,0.656431,0.946139,-0.304888,0.108928,0.686405,0.916576,-0.374786,0.139367,0.721616,0.890173,-0.42641,0.160521,0.753228,0.864146,-0.470819,0.177711,0.784294,0.837855,-0.510708,0.192814,0.816415,0.810516,-0.547832,0.207231,0.85159,0.78141,-0.583206,0.221967,0.892112,0.750018,-0.617243,0.237663,0.940504,0.721727,-0.645002,0.251163,0.990487,0.693334,-0.670617,0.263746,1.04777,0.665398,-0.693763,0.275568,1.11011,0.638182,-0.71444,0.286878,1.17525,0.611702,-0.732826,0.297969,1.24087,0.585794,-0.749179,0.309155,1.30471,0.560155,-0.763769,0.320755,1.36451,0.523688,-0.780927,0.340448,1.44235,0.486409,-0.79481,0.362881,1.51746,0.44904,-0.806919,0.383725,1.59146,0.412481,-0.818777,0.399329,1.66554,0.37768,-0.831897,0.406577,1.74063,0.356277,-0.841201,0.406751,1.78909,0.33444,-0.851055,0.40479,1.83907,0.312637,-0.86109,0.400977,1.88973,0.291293,-0.871012,0.395584,1.94018,0.270791,-0.880598,0.388869,1.9895,0.251479,-0.889687,0.381072,2.03672,0.233679,-0.898167,0.372411,2.08081,-0.217691,0.905969,-0.363086,4.16242,0.1829,-0.92526,0.332327,2.19624,0.153922,-0.943178,0.294488,2.25303,-0.125544,0.958657,-0.255372,3.94608,-0.112216,0.964712,-0.238197,3.89098,-0.0980797,0.97064,-0.219631,3.82527,-0.0840116,0.976026,-0.200787,3.75312,-0.0708099,0.980617,-0.182693,3.67883,-0.0592115,0.984296,-0.166301,3.60674,-0.0499175,0.987039,-0.152518,3.54121,-0.043618,0.988872,-0.142234,3.4866,-0.0479598,0.989532,-0.136112,3.39644,-0.0623512,0.988022,-0.141157,3.33514,-0.0572842,0.989147,-0.135304,3.28299,0.103104,0.994245,-0.0291042,3.15946,0.0838584,0.996276,-0.020031,3.14879,0.0363143,0.99909,-0.0223867,3.15431,0.00859129,0.999648,-0.0250991,3.18052,0.0122582,0.999616,-0.0248583,3.20176,0.0228913,0.999433,-0.024709,3.23377,0.0380065,0.998974,-0.024624,3.27183,0.0551195,0.998177,-0.024578,3.3112,0.0717335,0.997122,-0.0245495,3.34715,0.0853293,0.996051,-0.0245209,3.375,0.0933676,0.995331,-0.0244775,3.39009,0.0933074,0.995338,-0.0244043,3.38777,0.0874989,0.995869,-0.0242787,3.36969,0.0777411,0.996683,-0.0240612,3.33629,0.0647488,0.997618,-0.0237848,3.29138,0.0492419,0.998511,-0.0234819,3.23878,0.0319341,0.999221,-0.0231839,3.18233,0.0135328,0.999646,-0.0229229,3.12587,-0.00525556,0.999728,-0.0227317,3.07326,-0.0237178,0.999462,-0.0226449,3.02837,-0.0411292,0.998896,-0.022699,2.99504,-0.0567542,0.998125,-0.0229318,2.97712,-0.0698546,0.997283,-0.0233822,2.97846,-0.0810794,0.996414,-0.0241778,3.00042,-0.0931669,0.995326,-0.0254315,3.04133,-0.105641,0.994037,-0.0270195,3.09743,-0.118051,0.992589,-0.028823,3.1649,-0.129968,0.991042,-0.0307282,3.23992,-0.140968,0.989476,-0.0326247,3.31869,-0.150623,0.987992,-0.0344024,3.39736,-0.158485,0.986707,-0.0359483,3.47215,-0.164073,0.985749,-0.0371433,3.53924,-0.166881,0.98525,-0.0378613,3.59485,-0.166385,0.98533,-0.0379702,3.63521,-0.16207,0.986073,-0.037337,3.65653,-0.153081,0.987558,-0.0359896,3.66,-0.13859,0.989768,-0.0339518,3.65189,-0.119662,0.99232,-0.0313338,3.63359,-0.0973903,0.994845,-0.0282503,3.60649,-0.0728718,0.997032,-0.0248187,3.57206,-0.0471931,0.998662,-0.0211572,3.53181,-0.0214144,0.99962,-0.0173828,3.48728,0.00343768,0.999901,-0.0136099,3.44009,0.026372,0.999603,-0.00994922,3.39186,0.0464277,0.9989,-0.00650795,3.34424,0.0626663,0.998029,-0.00338948,3.29888,0.0741616,0.997246,-0.000694181,3.2574,0.0799918,0.996794,0.00148007,3.22142,0.0798171,0.996805,0.00314791,3.18933,0.0748085,0.997187,0.00466144,3.15433,0.0657238,0.99782,0.00602572,3.11725,0.0533127,0.998552,0.00724526,3.07891,0.0383205,0.999231,0.00832376,3.04017,0.0214929,0.999726,0.00926424,3.00189,0.00358004,0.999943,0.0100693,2.96494,-0.01466,0.999835,0.0107415,2.93017,-0.0324596,0.999409,0.0112834,2.89844,-0.0490418,0.998728,0.0116985,2.8706,-0.0636226,0.997902,0.0119906,2.84745,-0.0754143,0.997078,0.0121647,2.82978,-0.0836302,0.996422,0.0122263,2.81838,-0.08749,0.996091,0.0121819,2.814,-0.0852637,0.99629,0.0116809,2.82453,-0.0754753,0.997092,0.0105781,2.85476,-0.0601199,0.99815,0.00903075,2.89979,-0.041173,0.999126,0.00719404,2.95471,-0.0205663,0.999775,0.00522017,3.01454,-0.000189746,0.999995,0.00325827,3.0743,0.0180889,0.999835,0.00145577,3.12897,0.0323995,0.999475,-0.0000399101,3.17354,0.0408539,0.999165,-0.00108042,3.20302,0.0437703,0.99904,-0.00164389,3.21734,0.0440046,0.999029,-0.00198729,3.22464,0.0419893,0.999116,-0.00215054,3.22614,0.0381582,0.999269,-0.00217366,3.2231,0.0329461,0.999455,-0.00209671,3.21673,0.0267878,0.999639,-0.00195975,3.20828,0.0201181,0.999796,-0.00180285,3.19898,0.0133705,0.999909,-0.00166611,3.19008,0.00697757,0.999974,-0.0015897,3.18281,0.00137048,0.999998,-0.00161393,3.17841,-0.0605097,0.998164,-0.002838,3.15206,-0.0016696,0.99999,-0.00426539,3.12434,0.00255042,0.999989,-0.0039619,3.118,0.00368711,0.999987,-0.00339199,3.11106,0.00301084,0.999992,-0.0027143,3.10428,0.00179209,0.999996,-0.00208751,3.09844,0.00130158,0.999998,-0.00167029,3.09432});
+Group946->addChildren(*OrientationInterpolator950);
+
+Transform945->addChildren(*Group946);
+
+CViewpoint* Viewpoint951 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint951->setDEF("VP2");
+Viewpoint951->setDescription("cam1front");
+Viewpoint951->setPosition(new float[3]{-309.285,1.43823,356.786});
+Viewpoint951->setOrientation(new float[4]{-0.0380688,-0.99879,-0.0311258,1.56238});
+Transform945->addChildren(*Viewpoint951);
+
+CViewpoint* Viewpoint952 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint952->setDEF("VP3");
+Viewpoint952->setDescription("cam2back");
+Viewpoint952->setPosition(new float[3]{-304.732,0.783076,356.356});
+Viewpoint952->setOrientation(new float[4]{0.0558172,0.997422,-0.0451012,1.84868});
+Transform945->addChildren(*Viewpoint952);
+
+CTransform* Transform953 = (CTransform *)(m_pScene.createNode("Transform"));
+CGroup* Group954 = (CGroup *)(m_pScene.createNode("Group"));
+CGroup* Group955 = (CGroup *)(m_pScene.createNode("Group"));
+Group955->setDEF("UnnamedAnimation3");
+CTimeSensor* TimeSensor956 = (CTimeSensor *)(m_pScene.createNode("TimeSensor"));
+TimeSensor956->setDEF("Time_2");
+TimeSensor956->setCycleInterval(30);
+TimeSensor956->setLoop(True);
+Group955->addChildren(*TimeSensor956);
+
+Group954->addChildren(*Group955);
+
+CPositionInterpolator* PositionInterpolator957 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
+PositionInterpolator957->setDEF("VP4PositionInterp");
+PositionInterpolator957->setKey(new float[184]{0,0.00333333,0.00666667,0.01,0.0133333,0.0166667,0.02,0.0233333,0.0266667,0.03,0.0333333,0.0366667,0.04,0.0433333,0.0466667,0.05,0.0533333,0.0566667,0.06,0.0633333,0.0666667,0.07,0.0733333,0.0766667,0.08,0.0833333,0.0866666,0.09,0.0933333,0.0966666,0.1,0.103333,0.106667,0.11,0.113333,0.116667,0.12,0.123333,0.126667,0.13,0.133333,0.136667,0.14,0.143333,0.146667,0.15,0.153571,0.157143,0.160714,0.164286,0.167857,0.171429,0.175,0.178571,0.182143,0.185714,0.189286,0.192857,0.196428,0.2,0.24999,0.25,0.29999,0.3,0.303571,0.307143,0.310714,0.314286,0.317857,0.321429,0.325,0.328571,0.332143,0.335714,0.339286,0.342857,0.346428,0.35,0.353333,0.356667,0.36,0.363333,0.366667,0.37,0.373334,0.376667,0.38,0.383334,0.386667,0.39,0.393334,0.396667,0.400334,0.404,0.407667,0.411333,0.415,0.418667,0.422333,0.426,0.429666,0.433333,0.436666,0.44,0.443333,0.446666,0.45,0.453333,0.456666,0.46,0.463333,0.466666,0.47,0.473333,0.476666,0.48,0.483333,0.486666,0.49,0.493333,0.496666,0.5,0.503333,0.506666,0.51,0.513333,0.516666,0.52,0.523333,0.526667,0.53,0.533333,0.536667,0.54,0.543333,0.546667,0.55,0.553333,0.556667,0.56,0.563333,0.566667,0.57,0.573333,0.576667,0.58,0.583333,0.586667,0.59,0.593333,0.596667,0.6,0.64999,0.65,0.71999,0.72,0.79999,0.8,0.833323,0.833333,0.836666,0.84,0.843333,0.846666,0.85,0.853333,0.856666,0.86,0.863333,0.866666,0.87,0.873333,0.876666,0.88,0.883333,0.886666,0.89,0.893333,0.896666,0.9,0.94999,0.95,0.99999,1}, 184);
+PositionInterpolator957->setKeyValue(new float[552]{-309.262,3.90621,356.834,-309.264,3.90974,356.831,-309.268,3.91933,356.822,-309.274,3.93346,356.809,-309.282,3.95062,356.792,-309.291,3.9693,356.775,-309.299,3.98797,356.758,-309.307,4.00513,356.742,-309.313,4.01927,356.728,-309.318,4.02886,356.719,-309.319,4.03239,356.716,-309.317,4.02835,356.72,-309.311,4.01523,356.732,-309.301,3.99151,356.754,-309.284,3.95567,356.788,-309.262,3.90621,356.834,-309.236,3.8416,356.898,-309.209,3.76248,356.98,-309.18,3.67059,357.079,-309.149,3.56766,357.19,-309.116,3.45542,357.312,-309.079,3.33561,357.441,-309.037,3.20997,357.574,-308.992,3.08023,357.708,-308.941,2.94811,357.84,-308.884,2.81536,357.967,-308.82,2.68371,358.087,-308.75,2.5549,358.195,-308.672,2.43065,358.29,-308.586,2.3127,358.368,-308.491,2.20279,358.427,-308.381,2.09552,358.467,-308.251,1.98505,358.492,-308.104,1.87245,358.504,-307.945,1.75881,358.505,-307.776,1.64519,358.497,-307.601,1.53267,358.48,-307.423,1.42233,358.458,-307.244,1.31523,358.431,-307.069,1.21246,358.402,-306.901,1.11508,358.371,-306.742,1.02418,358.342,-306.597,0.940816,358.314,-306.468,0.866076,358.291,-306.359,0.80103,358.274,-306.272,0.746752,358.264,-306.204,0.701914,358.259,-306.156,0.670342,358.255,-306.125,0.650443,358.253,-306.11,0.640627,358.252,-306.108,0.6393,358.252,-306.117,0.644872,358.253,-306.133,0.655749,358.254,-306.156,0.670342,358.255,-306.181,0.687056,358.257,-306.207,0.704302,358.259,-306.232,0.720486,358.261,-306.253,0.734017,358.263,-306.267,0.743303,358.264,-306.272,0.746752,358.264,-306.272,0.746752,358.264,-283.976,2.38382,358.339,-283.976,2.38382,358.339,-283.976,2.38382,358.339,-284.801,2.39296,358.354,-285.864,2.39696,358.38,-287.128,2.39771,358.414,-288.554,2.39709,358.453,-290.104,2.39697,358.496,-291.741,2.39924,358.538,-293.426,2.40578,358.579,-295.121,2.41848,358.615,-296.789,2.43921,358.643,-298.391,2.46985,358.662,-299.889,2.51229,358.668,-301.245,2.56841,358.659,-302.421,2.64008,358.632,-303.379,2.7292,358.585,-304.081,2.84304,358.515,-304.638,2.99562,358.417,-305.069,3.17925,358.295,-305.39,3.38625,358.154,-305.621,3.60891,357.999,-305.78,3.83955,357.835,-305.884,4.07048,357.667,-305.952,4.29401,357.499,-306.003,4.50243,357.336,-306.053,4.68807,357.184,-306.122,4.84323,357.045,-306.227,4.96022,356.927,-306.386,5.03134,356.832,-306.619,5.04891,356.767,-306.931,4.97299,356.742,-307.262,4.78807,356.767,-307.607,4.51958,356.83,-307.966,4.19292,356.92,-308.336,3.83351,357.024,-308.713,3.46678,357.132,-309.096,3.11813,357.23,-309.482,2.81299,357.308,-309.869,2.57677,357.354,-310.253,2.4349,357.356,-310.601,2.35951,357.329,-310.949,2.29009,357.294,-311.297,2.22652,357.25,-311.645,2.16871,357.199,-311.993,2.11655,357.141,-312.342,2.06995,357.078,-312.691,2.0288,357.01,-313.04,1.993,356.939,-313.39,1.96245,356.864,-313.74,1.93704,356.787,-314.092,1.91669,356.709,-314.444,1.90128,356.63,-314.796,1.89072,356.552,-315.15,1.8849,356.475,-315.505,1.88372,356.4,-315.86,1.88708,356.328,-316.217,1.89488,356.259,-316.575,1.90703,356.196,-316.934,1.9234,356.138,-317.295,1.94392,356.086,-317.656,1.96847,356.041,-318.02,1.99695,356.004,-318.384,2.02926,355.977,-318.751,2.06531,355.959,-319.119,2.10498,355.951,-319.489,2.14819,355.955,-319.861,2.19807,355.971,-320.236,2.25742,355.997,-320.613,2.32562,356.034,-320.993,2.40202,356.079,-321.374,2.486,356.134,-321.758,2.57693,356.196,-322.143,2.67417,356.266,-322.53,2.7771,356.342,-322.918,2.88507,356.424,-323.308,2.99747,356.511,-323.698,3.11366,356.602,-324.09,3.23301,356.697,-324.482,3.35488,356.795,-324.875,3.47864,356.895,-325.268,3.60367,356.996,-325.661,3.72933,357.098,-326.054,3.85499,357.2,-326.447,3.98002,357.301,-326.84,4.10379,357.401,-327.232,4.22566,357.499,-327.624,4.345,357.594,-328.014,4.46119,357.685,-328.404,4.57359,357.772,-328.792,4.68157,357.854,-328.792,4.68157,357.854,-300.771,2.64067,354.992,-300.771,2.64067,354.992,-307.035,0.971394,356.726,-307.035,0.971394,356.726,-303.865,12.0905,352.786,-303.865,12.0905,352.786,-303.865,12.0905,352.786,-304.127,12.0255,352.773,-304.413,11.9547,352.759,-304.72,11.8787,352.743,-305.046,11.7978,352.727,-305.39,11.7127,352.71,-305.749,11.6236,352.692,-306.122,11.5312,352.673,-306.507,11.4357,352.654,-306.902,11.3379,352.634,-307.305,11.238,352.614,-307.715,11.1365,352.593,-308.128,11.034,352.572,-308.545,10.9308,352.552,-308.962,10.8275,352.531,-309.377,10.7245,352.51,-309.79,10.6223,352.489,-310.197,10.5213,352.469,-310.598,10.422,352.449,-310.99,10.3249,352.429,-311.371,10.2304,352.41,-311.371,10.2304,352.41,-306.243,0.0502623,355.129,-306.243,0.0502623,355.129,-309.262,3.90621,356.834});
+Group954->addChildren(*PositionInterpolator957);
+
+COrientationInterpolator* OrientationInterpolator958 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator958->setDEF("VP4OrientationInterp");
+OrientationInterpolator958->setKey(new float[184]{0,0.00333333,0.00666667,0.01,0.0133333,0.0166667,0.02,0.0233333,0.0266667,0.03,0.0333333,0.0366667,0.04,0.0433333,0.0466667,0.05,0.0533333,0.0566667,0.06,0.0633333,0.0666667,0.07,0.0733333,0.0766667,0.08,0.0833333,0.0866666,0.09,0.0933333,0.0966666,0.1,0.103333,0.106667,0.11,0.113333,0.116667,0.12,0.123333,0.126667,0.13,0.133333,0.136667,0.14,0.143333,0.146667,0.15,0.153571,0.157143,0.160714,0.164286,0.167857,0.171429,0.175,0.178571,0.182143,0.185714,0.189286,0.192857,0.196428,0.2,0.24999,0.25,0.29999,0.3,0.303571,0.307143,0.310714,0.314286,0.317857,0.321429,0.325,0.328571,0.332143,0.335714,0.339286,0.342857,0.346428,0.35,0.353333,0.356667,0.36,0.363333,0.366667,0.37,0.373334,0.376667,0.38,0.383334,0.386667,0.39,0.393334,0.396667,0.400334,0.404,0.407667,0.411333,0.415,0.418667,0.422333,0.426,0.429666,0.433333,0.436666,0.44,0.443333,0.446666,0.45,0.453333,0.456666,0.46,0.463333,0.466666,0.47,0.473333,0.476666,0.48,0.483333,0.486666,0.49,0.493333,0.496666,0.5,0.503333,0.506666,0.51,0.513333,0.516666,0.52,0.523333,0.526667,0.53,0.533333,0.536667,0.54,0.543333,0.546667,0.55,0.553333,0.556667,0.56,0.563333,0.566667,0.57,0.573333,0.576667,0.58,0.583333,0.586667,0.59,0.593333,0.596667,0.6,0.64999,0.65,0.71999,0.72,0.79999,0.8,0.833323,0.833333,0.836666,0.84,0.843333,0.846666,0.85,0.853333,0.856666,0.86,0.863333,0.866666,0.87,0.873333,0.876666,0.88,0.883333,0.886666,0.89,0.893333,0.896666,0.9,0.94999,0.95,0.99999,1}, 184);
+OrientationInterpolator958->setKeyValue(new float[736]{-0.279907,-0.923614,-0.261895,1.6182,-0.280062,-0.92349,-0.262168,1.61942,-0.280481,-0.923152,-0.262909,1.62273,-0.281096,-0.922655,-0.263995,1.62761,-0.281839,-0.922052,-0.265306,1.63354,-0.282641,-0.921397,-0.266725,1.64,-0.283438,-0.920743,-0.268133,1.64646,-0.284165,-0.920143,-0.26942,1.6524,-0.284761,-0.919649,-0.270474,1.65729,-0.285163,-0.919315,-0.271186,1.66061,-0.285311,-0.919192,-0.271447,1.66183,-0.285142,-0.919333,-0.271148,1.66044,-0.284591,-0.91979,-0.270173,1.65589,-0.283588,-0.920619,-0.268399,1.64768,-0.282056,-0.921875,-0.265691,1.63529,-0.279907,-0.923614,-0.261895,1.6182,-0.276959,-0.925986,-0.2566,1.59458,-0.273117,-0.929043,-0.249571,1.56373,-0.2684,-0.932703,-0.240888,1.52688,-0.262822,-0.936877,-0.230621,1.48523,-0.256394,-0.941473,-0.218841,1.44002,-0.249136,-0.946386,-0.205634,1.39246,-0.241081,-0.951501,-0.191118,1.34376,-0.232287,-0.956691,-0.175459,1.29512,-0.222852,-0.961815,-0.158897,1.24772,-0.212928,-0.966729,-0.141765,1.2027,-0.20273,-0.971286,-0.124514,1.16119,-0.192555,-0.975356,-0.107723,1.12426,-0.182782,-0.97883,-0.0921025,1.09295,-0.173868,-0.981637,-0.0784767,1.06823,-0.166321,-0.983742,-0.0677355,1.05108,-0.160143,-0.985268,-0.060015,1.04127,-0.154997,-0.986395,-0.0547712,1.03743,-0.150864,-0.987196,-0.0518135,1.03879,-0.147682,-0.987725,-0.0508761,1.0446,-0.145358,-0.98803,-0.051644,1.05411,-0.143773,-0.988148,-0.0537774,1.06661,-0.142799,-0.988113,-0.0569315,1.08137,-0.142303,-0.987956,-0.0607719,1.09768,-0.142152,-0.987709,-0.0649843,1.11482,-0.142221,-0.987408,-0.0692784,1.13206,-0.142389,-0.987086,-0.0733891,1.14867,-0.142543,-0.986783,-0.0770734,1.16393,-0.142574,-0.986537,-0.0801052,1.17711,-0.14238,-0.986387,-0.0822683,1.18747,-0.141852,-0.986373,-0.0833475,1.19427,-0.140409,-0.986501,-0.0842636,1.20379,-0.139203,-0.986607,-0.0850287,1.21185,-0.138227,-0.98669,-0.0856479,1.21845,-0.137474,-0.986754,-0.0861255,1.22358,-0.136939,-0.986799,-0.0864644,1.22724,-0.136619,-0.986825,-0.0866669,1.22944,-0.136513,-0.986834,-0.0867343,1.23018,-0.136619,-0.986825,-0.0866669,1.22944,-0.136939,-0.986799,-0.0864644,1.22724,-0.137474,-0.986754,-0.0861255,1.22358,-0.138227,-0.98669,-0.085648,1.21845,-0.139203,-0.986607,-0.0850287,1.21185,-0.140409,-0.986501,-0.0842636,1.20379,-0.141852,-0.986373,-0.0833475,1.19427,-0.141852,-0.986373,-0.0833475,1.19427,-0.164079,0.969824,0.180332,1.22448,-0.164079,0.969824,0.180332,1.22448,-0.164079,0.969824,0.180332,1.22448,-0.166898,0.96944,0.179808,1.21823,-0.166502,0.969641,0.179089,1.21202,-0.163915,0.970245,0.178203,1.20556,-0.160179,0.971056,0.177179,1.1986,-0.156356,0.971884,0.17605,1.19088,-0.153535,0.972551,0.174849,1.18214,-0.152839,0.972881,0.173615,1.1721,-0.155432,0.972689,0.172384,1.16053,-0.162539,0.971739,0.171186,1.14719,-0.175458,0.969692,0.170038,1.13194,-0.195573,0.96603,0.168929,1.1148,-0.224355,0.959951,0.167805,1.09598,-0.263315,0.950225,0.166546,1.07605,-0.31388,0.935027,0.164934,1.05602,-0.380012,0.910678,0.16204,1.04137,-0.461491,0.873168,0.156854,1.03782,-0.551735,0.820586,0.149087,1.04726,-0.643028,0.75316,0.1388,1.07106,-0.728174,0.673623,0.12647,1.1094,-0.802062,0.586476,0.112883,1.16094,-0.862326,0.496601,0.0989022,1.22292,-0.908977,0.408033,0.0852636,1.29151,-0.943484,0.323395,0.0724764,1.36224,-0.967891,0.243899,0.0608267,1.43034,-0.984213,0.169651,0.0504299,1.49101,-0.994132,0.0999819,0.0412924,1.53959,-0.998875,0.0336916,0.0333616,1.57161,0.999172,0.0308124,-0.0265605,4.70025,-0.991559,-0.128469,0.0175077,1.5608,-0.969988,-0.243033,0.00767414,1.50555,-0.927157,-0.37466,-0.0030993,1.43343,-0.854757,-0.518822,-0.014609,1.36128,-0.74715,-0.664143,-0.0260956,1.30472,-0.607313,-0.793635,-0.0362637,1.27538,-0.450243,-0.891834,-0.0437441,1.2777,-0.298155,-0.953322,-0.0477465,1.30802,-0.170795,-0.984123,-0.0482699,1.35705,-0.0800448,-0.99574,-0.0457581,1.41416,0.0547191,0.997537,0.0438853,4.84711,0.0326583,0.998613,0.041304,4.82615,0.0135808,0.999181,0.0381048,4.80628,-0.00277884,0.999405,0.0343701,4.78757,-0.0166683,0.999406,0.0301753,4.77009,-0.0283171,0.999271,0.0255902,4.75384,-0.037938,0.999066,0.0206805,4.73883,-0.0457279,0.998834,0.0155086,4.72503,-0.0518703,0.998602,0.0101346,4.71241,-0.0565364,0.99839,0.00461678,4.70093,-0.0598875,0.998205,-0.000987666,4.69053,-0.0620759,0.998049,-0.0066223,4.68115,-0.063247,0.997923,-0.0122311,4.67273,-0.0635404,0.997821,-0.0177584,4.6652,-0.0630908,0.997739,-0.0231485,4.65849,-0.0620292,0.997672,-0.028346,4.65255,-0.0604836,0.997614,-0.0332953,4.64729,-0.05858,0.997561,-0.0379412,4.64265,-0.0564421,0.997512,-0.0422286,4.63856,-0.0541926,0.997466,-0.0461029,4.63496,-0.051953,0.997422,-0.0495098,4.63177,-0.0498439,0.997382,-0.0523961,4.62893,-0.0479851,0.997349,-0.0547091,4.62637,-0.0464955,0.997325,-0.0563977,4.62401,-0.0454933,0.997313,-0.0574122,4.6218,-0.0450955,0.997315,-0.0577046,4.61964,0.0492709,-0.996912,0.0611441,1.67374,0.0526451,-0.996566,0.0639158,1.68253,0.0552346,-0.996288,0.0660338,1.6899,0.0570525,-0.996086,0.067509,1.69583,0.0581088,-0.995968,0.0683499,1.70033,0.05841,-0.995936,0.0685619,1.70338,0.0579599,-0.99599,0.0681481,1.70499,0.0567589,-0.99613,0.0671087,1.70516,0.0548045,-0.99635,0.0654415,1.70389,0.0520915,-0.996644,0.0631418,1.7012,0.0486114,-0.997002,0.0602024,1.69708,0.0443529,-0.99741,0.0566134,1.69156,0.0393014,-0.997854,0.0523623,1.68465,0.0334397,-0.998314,0.0474342,1.67638,0.0267469,-0.998767,0.0418112,1.66676,0.0191993,-0.999186,0.0354729,1.65583,0.0107698,-0.999539,0.0283959,1.64361,0.00142798,-0.999788,0.020554,1.63015,-0.0088599,-0.99989,0.0119182,1.61548,-0.020131,-0.999794,0.00245627,1.59966,-0.0324255,-0.999443,-0.00786658,1.58273,-0.0457872,-0.998769,-0.0190881,1.56476,-0.0602623,-0.997693,-0.0312487,1.54582,-0.0759004,-0.996127,-0.0443914,1.52598,-0.0759004,-0.996127,-0.0443914,1.52598,-0.133792,0.968289,0.210989,1.93692,-0.133792,0.968289,0.210989,1.93692,-0.0152926,-0.999867,0.00570913,1.54472,-0.0152926,-0.999867,0.00570913,1.54472,-0.14693,0.814817,0.56079,2.79029,-0.14693,0.814817,0.56079,2.79029,-0.14693,0.814817,0.56079,2.79029,-0.145983,0.815158,0.560541,2.79337,-0.143146,0.816176,0.559791,2.80262,-0.138423,0.817851,0.558533,2.81805,-0.131825,0.820153,0.556751,2.83966,-0.123364,0.823039,0.554426,2.86747,-0.113052,0.826456,0.551533,2.90149,-0.100901,0.830344,0.54804,2.94173,-0.086919,0.834631,0.543909,2.9882,-0.0711083,0.839239,0.539093,3.04091,-0.0534616,0.844084,0.533539,3.09986,-0.0339589,0.849074,0.527181,3.16503,-0.0125631,0.85411,0.519941,3.2364,0.0107845,0.859081,0.511727,3.31391,0.0361699,0.863866,0.502422,3.39749,0.0637123,0.868325,0.491886,3.48705,0.0935712,0.872295,0.479943,3.58245,0.125955,0.875575,0.466374,3.6835,0.161131,0.877912,0.450897,3.78994,0.199433,0.878978,0.433155,3.90146,0.241281,0.878337,0.412684,4.01762,0.241281,0.878337,0.412684,4.01762,-0.0620073,0.983996,-0.167051,4.23759,-0.0620073,0.983996,-0.167051,4.23759,-0.279907,-0.923614,-0.261895,1.6182});
+Group954->addChildren(*OrientationInterpolator958);
+
+Transform953->addChildren(*Group954);
+
+CViewpoint* Viewpoint959 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint959->setDEF("VP4");
+Viewpoint959->setDescription("cam3director");
+Viewpoint959->setPosition(new float[3]{-309.262,3.90621,356.834});
+Viewpoint959->setOrientation(new float[4]{-0.279907,-0.923614,-0.261895,1.6182});
+Transform953->addChildren(*Viewpoint959);
+
+Transform945->addChildren(*Transform953);
+
+CTransform* Transform960 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform960->setDEF("jet");
+CTransform* Transform961 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform961->setDEF("_45");
+Transform961->setTranslation(new float[3]{-0.0000915527,-0.111446,-0.0000534058});
+Transform961->setRotation(new float[4]{0,1,0,3.14159});
+Transform961->setScale(new float[3]{0.256726,0.256737,0.256735});
+Transform961->setScaleOrientation(new float[4]{-0.994967,0.0395612,0.0920633,0.0686551});
+Transform961->setCenter(new float[3]{-306.167,0.88651,356.733});
+CGroup* Group962 = (CGroup *)(m_pScene.createNode("Group"));
+CGroup* Group963 = (CGroup *)(m_pScene.createNode("Group"));
+Group963->setDEF("UnnamedAnimation4");
+CTimeSensor* TimeSensor964 = (CTimeSensor *)(m_pScene.createNode("TimeSensor"));
+TimeSensor964->setDEF("Time_3");
+TimeSensor964->setCycleInterval(25.5);
+TimeSensor964->setLoop(True);
+Group963->addChildren(*TimeSensor964);
+
+Group962->addChildren(*Group963);
+
+CPositionInterpolator* PositionInterpolator965 = (CPositionInterpolator *)(m_pScene.createNode("PositionInterpolator"));
+PositionInterpolator965->setDEF("UnnamedTransformTranslationInterp_2");
+PositionInterpolator965->setKey(new float[253]{0,0.00392158,0.00784315,0.0117647,0.0156863,0.0196079,0.0235295,0.027451,0.0313726,0.0352942,0.0392158,0.0431373,0.0470589,0.0509805,0.0549021,0.0588236,0.0627452,0.0666668,0.0705884,0.0745099,0.0784315,0.0823531,0.0862747,0.0901963,0.0941178,0.0980394,0.101961,0.106046,0.110131,0.114216,0.118301,0.122386,0.126471,0.130556,0.134641,0.138726,0.142811,0.146896,0.150981,0.155065,0.15915,0.163235,0.16732,0.171405,0.17549,0.179575,0.18366,0.187745,0.19183,0.195915,0.2,0.203922,0.207843,0.211765,0.215686,0.219608,0.223529,0.227451,0.231373,0.235294,0.239216,0.243137,0.247059,0.25098,0.254902,0.258824,0.262745,0.266667,0.270588,0.27451,0.278431,0.282353,0.286275,0.290196,0.294118,0.298039,0.301961,0.305882,0.309804,0.313726,0.317647,0.321569,0.32549,0.329412,0.333333,0.337255,0.341176,0.345098,0.34902,0.352941,0.356863,0.360784,0.364706,0.368627,0.372549,0.376471,0.380392,0.384314,0.388235,0.392157,0.396078,0.4,0.403922,0.407843,0.411765,0.415686,0.419608,0.423529,0.427451,0.431373,0.435294,0.439216,0.443137,0.447059,0.45098,0.454902,0.458824,0.462745,0.466667,0.470588,0.47451,0.478431,0.482353,0.486275,0.490196,0.494118,0.498039,0.501961,0.505882,0.509804,0.513726,0.517647,0.521569,0.52549,0.529412,0.533333,0.537255,0.541176,0.545098,0.54902,0.552941,0.556863,0.560784,0.564706,0.568627,0.572549,0.576471,0.580392,0.584314,0.588235,0.592157,0.596078,0.6,0.604,0.608,0.612,0.616,0.62,0.624,0.628,0.632,0.636,0.64,0.644,0.648,0.652,0.656,0.66,0.664,0.668,0.672,0.676,0.68,0.684,0.688,0.692,0.696,0.7,0.704,0.708,0.712,0.716,0.72,0.724,0.728,0.732,0.736,0.74,0.744,0.748,0.752,0.756,0.76,0.764,0.768,0.772,0.776,0.78,0.784,0.788,0.792,0.796,0.8,0.803922,0.807843,0.811765,0.815686,0.819608,0.823529,0.827451,0.831373,0.835294,0.839216,0.843137,0.847059,0.85098,0.854902,0.858824,0.862745,0.866667,0.870588,0.87451,0.878431,0.882353,0.886275,0.890196,0.894118,0.898039,0.901961,0.906046,0.910131,0.914216,0.918301,0.922386,0.926471,0.930556,0.934641,0.938726,0.94281,0.946895,0.95098,0.955065,0.95915,0.963235,0.96732,0.971405,0.97549,0.979575,0.98366,0.987745,0.99183,0.995915,1}, 253);
+PositionInterpolator965->setKeyValue(new float[759]{-0.0000915527,-0.111446,-0.0000534058,-0.0000914199,-0.124824,-0.00045502,-0.0000910428,-0.140256,-0.0015956,-0.0000904533,-0.157472,-0.00337877,-0.0000896832,-0.176207,-0.00570813,-0.0000887644,-0.196191,-0.0084873,-0.0000877287,-0.217158,-0.0116199,-0.0000866081,-0.238838,-0.0150095,-0.0000854343,-0.260965,-0.0185598,-0.0000842393,-0.283271,-0.0221743,-0.0000830549,-0.305487,-0.0257567,-0.000081913,-0.327346,-0.0292106,-0.0000808455,-0.34858,-0.0324395,-0.0000798842,-0.368922,-0.0353472,-0.000079061,-0.388103,-0.0378372,-0.0000784077,-0.405855,-0.0398132,-0.0000779563,-0.421912,-0.0411787,-0.0000777385,-0.436004,-0.0418373,-0.0000777863,-0.447865,-0.0416927,-0.0000781315,-0.457225,-0.0406485,-0.000078806,-0.463819,-0.0386083,-0.0000798417,-0.467377,-0.0354758,-0.0000812704,-0.467631,-0.0311544,-0.000083124,-0.464315,-0.0255479,-0.0000854343,-0.45716,-0.0185598,-0.0000882332,-0.445899,-0.0100938,-0.0000915527,-0.430263,-0.0000534058,-0.000095614,-0.407703,0.0135284,-0.00010029,-0.377782,0.0313403,-0.00010554,-0.341163,0.052918,-0.000111322,-0.298507,0.0777973,-0.000117594,-0.250478,0.105514,-0.000124315,-0.197737,0.135604,-0.000131443,-0.140948,0.167602,-0.000138937,-0.0807719,0.201045,-0.000146755,-0.0178719,0.235469,-0.000154856,0.0470899,0.270409,-0.000163197,0.113451,0.3054,-0.000171738,0.180549,0.33998,-0.000180437,0.247721,0.373682,-0.000189252,0.314306,0.406044,-0.000198142,0.37964,0.436601,-0.000207065,0.443062,0.464889,-0.00021598,0.503908,0.490443,-0.000224845,0.561516,0.512799,-0.000233618,0.615225,0.531493,-0.000242259,0.664372,0.546061,-0.000250724,0.708293,0.556039,-0.000258974,0.746328,0.560962,-0.000266966,0.777813,0.560366,-0.000274658,0.802086,0.553787,-0.000281903,0.8214,0.543512,-0.00028918,0.840088,0.531412,-0.000296487,0.858154,0.517563,-0.000303822,0.8756,0.502041,-0.000311183,0.89243,0.484921,-0.000318568,0.908649,0.466282,-0.000325974,0.924258,0.446198,-0.0003334,0.939263,0.424747,-0.000340844,0.953666,0.402003,-0.000348302,0.96747,0.378044,-0.000355774,0.98068,0.352947,-0.000363256,0.993298,0.326786,-0.000370748,1.00533,0.299638,-0.000378246,1.01678,0.27158,-0.000385748,1.02764,0.242688,-0.000393253,1.03793,0.213039,-0.000400759,1.04764,0.182707,-0.000408262,1.05679,0.15177,-0.000415762,1.06537,0.120305,-0.000423255,1.07338,0.0883858,-0.00043074,1.08084,0.0560905,-0.000438215,1.08773,0.0234949,-0.000445677,1.09408,-0.0093247,-0.000453124,1.09988,-0.042292,-0.000460555,1.10513,-0.075331,-0.000467967,1.10984,-0.108365,-0.000475358,1.114,-0.141318,-0.000482725,1.11764,-0.174114,-0.000490067,1.12074,-0.206677,-0.000497382,1.12331,-0.23893,-0.000504667,1.12536,-0.270796,-0.000511921,1.12689,-0.3022,-0.00051914,1.1279,-0.333066,-0.000526324,1.1284,-0.363318,-0.000533469,1.12838,-0.392877,-0.000540575,1.12786,-0.42167,-0.000547637,1.12683,-0.449619,-0.000554656,1.1253,-0.476648,-0.000561627,1.12328,-0.502681,-0.00056855,1.12076,-0.527642,-0.000575422,1.11775,-0.551454,-0.000582241,1.11426,-0.574042,-0.000589004,1.11028,-0.595328,-0.00059571,1.10583,-0.615236,-0.000602357,1.10089,-0.633691,-0.000608942,1.09549,-0.650616,-0.000615463,1.08961,-0.665936,-0.000621919,1.08328,-0.679572,-0.000628307,1.07647,-0.69145,-0.000634624,1.06921,-0.701493,-0.000640869,1.0615,-0.709625,-0.000647074,1.05256,-0.715979,-0.000653271,1.0417,-0.720777,-0.000659459,1.029,-0.724073,-0.000665635,1.01454,-0.72592,-0.000671797,0.998418,-0.726373,-0.000677945,0.980723,-0.725486,-0.000684074,0.961543,-0.723313,-0.000690185,0.940964,-0.719908,-0.000696275,0.919078,-0.715325,-0.000702342,0.895971,-0.709618,-0.000708384,0.871732,-0.702842,-0.000714399,0.846451,-0.69505,-0.000720385,0.820216,-0.686296,-0.000726341,0.793115,-0.676636,-0.000732265,0.765238,-0.666121,-0.000738154,0.736672,-0.654808,-0.000744007,0.707507,-0.642749,-0.000749822,0.677831,-0.63,-0.000755597,0.647732,-0.616613,-0.00076133,0.6173,-0.602643,-0.000767019,0.586624,-0.588145,-0.000772662,0.555791,-0.573172,-0.000778258,0.52489,-0.557778,-0.000783804,0.49401,-0.542018,-0.000789299,0.46324,-0.525945,-0.000794741,0.432667,-0.509614,-0.000800127,0.402382,-0.493079,-0.000805456,0.372473,-0.476394,-0.000810726,0.343028,-0.459612,-0.000815935,0.314136,-0.442789,-0.000821082,0.285884,-0.425977,-0.000826164,0.258364,-0.409232,-0.000831179,0.231662,-0.392607,-0.000836125,0.205868,-0.376156,-0.000841001,0.181069,-0.359934,-0.000845805,0.157356,-0.343994,-0.000850535,0.134815,-0.328391,-0.000855189,0.113537,-0.313179,-0.000859764,0.0936098,-0.298411,-0.00086426,0.0751217,-0.284143,-0.000868674,0.0581614,-0.270427,-0.000873004,0.0428178,-0.257318,-0.000877249,0.0291794,-0.244871,-0.000881406,0.0173351,-0.233139,-0.000885474,0.00737325,-0.222176,-0.000889451,-0.000617618,-0.212036,-0.000893334,-0.00654848,-0.202774,-0.000897122,-0.0103306,-0.194444,-0.000900814,-0.011876,-0.187099,-0.000904406,-0.0110955,-0.180794,-0.000907898,-0.00790024,-0.175583,-0.000911352,-0.00202983,-0.171092,-0.000914697,0.00647266,-0.167087,-0.000917934,0.0175054,-0.163551,-0.000921067,0.0309665,-0.16047,-0.000924098,0.0467541,-0.157826,-0.000927028,0.0647664,-0.155605,-0.00092986,0.0849015,-0.153791,-0.000932597,0.107058,-0.152367,-0.000935241,0.131133,-0.151318,-0.000937793,0.157025,-0.150628,-0.000940258,0.184633,-0.150281,-0.000942635,0.213854,-0.150262,-0.000944929,0.244587,-0.150554,-0.000947141,0.27673,-0.151141,-0.000949274,0.31018,-0.152009,-0.000951329,0.344837,-0.153141,-0.00095331,0.380598,-0.154521,-0.000955218,0.417362,-0.156133,-0.000957056,0.455026,-0.157962,-0.000958827,0.493488,-0.159992,-0.000960531,0.532648,-0.162206,-0.000962173,0.572402,-0.16459,-0.000963753,0.61265,-0.167127,-0.000965275,0.653288,-0.169801,-0.000966741,0.694216,-0.172597,-0.000968152,0.735332,-0.175499,-0.000969512,0.776533,-0.178491,-0.000970823,0.817719,-0.181556,-0.000972086,0.858786,-0.18468,-0.000973305,0.899633,-0.187847,-0.000974481,0.940159,-0.19104,-0.000975617,0.98026,-0.194244,-0.000976715,1.01984,-0.197443,-0.000977777,1.05879,-0.200621,-0.000978806,1.09701,-0.203762,-0.000979804,1.13439,-0.206851,-0.000980774,1.17085,-0.209872,-0.000981717,1.20627,-0.212808,-0.000982636,1.24056,-0.215644,-0.000983534,1.2736,-0.218365,-0.000984412,1.30531,-0.220954,-0.000985273,1.33557,-0.223395,-0.000986119,1.36429,-0.225673,-0.000986953,1.39137,-0.227772,-0.000987776,1.41669,-0.229676,-0.000988592,1.44017,-0.23137,-0.000989402,1.46169,-0.232836,-0.000990208,1.48117,-0.23406,-0.000991014,1.49848,-0.235026,-0.000991821,1.51354,-0.235718,-0.000993108,1.52527,-0.236306,-0.000995293,1.53333,-0.236978,-0.000998243,1.53787,-0.23771,-0.00100182,1.53905,-0.238478,-0.0010059,1.53704,-0.23926,-0.00101034,1.532,-0.240031,-0.00101501,1.52408,-0.240767,-0.00101978,1.51345,-0.241447,-0.0010245,1.50026,-0.242045,-0.00102905,1.48468,-0.242539,-0.00103329,1.46688,-0.242905,-0.0010371,1.447,-0.24312,-0.00104032,1.42521,-0.24316,-0.00104284,1.40167,-0.243001,-0.00104451,1.37654,-0.24262,-0.00104521,1.34999,-0.241994,-0.0010448,1.32217,-0.241099,-0.00104314,1.29324,-0.239911,-0.0010401,1.26336,-0.238408,-0.00103554,1.2327,-0.236565,-0.00102934,1.20141,-0.234359,-0.00102136,1.16966,-0.231767,-0.00101146,1.1376,-0.228765,-0.000999514,1.1054,-0.22533,-0.000985383,1.07322,-0.221437,-0.000968933,1.04121,-0.217064,-0.000949063,1.00681,-0.211906,-0.000926353,0.970091,-0.206086,-0.000900994,0.931208,-0.199651,-0.000873175,0.890316,-0.192642,-0.000843084,0.84757,-0.185105,-0.000810911,0.803123,-0.177083,-0.000776846,0.757131,-0.168621,-0.000741077,0.709748,-0.159763,-0.000703794,0.661128,-0.150552,-0.000665187,0.611426,-0.141033,-0.000625443,0.560798,-0.131249,-0.000584754,0.509396,-0.121245,-0.000543307,0.457376,-0.111065,-0.000501292,0.404893,-0.100753,-0.000458899,0.3521,-0.0903528,-0.000416317,0.299153,-0.0799085,-0.000373734,0.246206,-0.0694642,-0.000331341,0.193413,-0.0590639,-0.000289326,0.140929,-0.0487517,-0.00024788,0.0889094,-0.0385717,-0.00020719,0.0375079,-0.0285679,-0.000167446,-0.0131212,-0.0187843,-0.000128838,-0.062823,-0.00926499,-0.0000915527,-0.111446,-0.0000534058});
+Group962->addChildren(*PositionInterpolator965);
+
+COrientationInterpolator* OrientationInterpolator966 = (COrientationInterpolator *)(m_pScene.createNode("OrientationInterpolator"));
+OrientationInterpolator966->setDEF("UnnamedTransformRotationInterp_2");
+OrientationInterpolator966->setKey(new float[251]{0,0.00392158,0.00784315,0.0117647,0.0156863,0.0196079,0.0235295,0.027451,0.0313726,0.0352942,0.0392158,0.0431373,0.0470589,0.0509805,0.0549021,0.0588236,0.0627452,0.0666668,0.0705884,0.0745099,0.0784315,0.0823531,0.0862747,0.0901963,0.0941178,0.0980394,0.101961,0.105883,0.109804,0.113726,0.117647,0.121569,0.125491,0.129412,0.133334,0.137255,0.141177,0.145098,0.14902,0.153268,0.157517,0.161765,0.166013,0.170262,0.17451,0.178758,0.183007,0.187255,0.191503,0.195752,0.2,0.203922,0.207843,0.211765,0.215686,0.219608,0.223529,0.227451,0.231373,0.235294,0.239216,0.243137,0.247059,0.25098,0.254902,0.258824,0.262745,0.266667,0.270588,0.27451,0.278431,0.282353,0.286275,0.290196,0.294118,0.298039,0.301961,0.305882,0.309804,0.313726,0.317647,0.321569,0.32549,0.329412,0.333333,0.337255,0.341176,0.345098,0.34902,0.352941,0.356863,0.360784,0.364706,0.368627,0.372549,0.376471,0.380392,0.384314,0.388235,0.392157,0.396078,0.4,0.403922,0.407843,0.411765,0.415686,0.419608,0.423529,0.427451,0.431373,0.435294,0.439216,0.443137,0.447059,0.45098,0.454902,0.458824,0.462745,0.466667,0.470588,0.47451,0.478431,0.482353,0.486275,0.490196,0.494118,0.498039,0.501961,0.505882,0.509804,0.513904,0.518004,0.522104,0.526203,0.530303,0.534403,0.538503,0.542603,0.546703,0.550802,0.554902,0.559002,0.563102,0.567202,0.571302,0.575402,0.579501,0.583601,0.587701,0.591801,0.595901,0.6,0.604085,0.60817,0.612255,0.61634,0.620425,0.62451,0.628595,0.63268,0.636765,0.640849,0.644934,0.649019,0.653104,0.657189,0.661274,0.665359,0.669444,0.673529,0.677614,0.681699,0.685784,0.689869,0.693954,0.698039,0.701961,0.705882,0.709804,0.713725,0.717647,0.721568,0.72549,0.729412,0.733333,0.737255,0.741176,0.745098,0.749019,0.752941,0.756863,0.760784,0.764706,0.768627,0.772549,0.77647,0.780392,0.784313,0.788235,0.792157,0.796078,0.8,0.804248,0.808497,0.812745,0.816993,0.821242,0.82549,0.829738,0.833987,0.838235,0.842483,0.846732,0.85098,0.854902,0.858823,0.862745,0.866666,0.870588,0.87451,0.878431,0.882353,0.886275,0.890196,0.894118,0.89804,0.901961,0.905883,0.909804,0.913726,0.917647,0.921569,0.92549,0.929412,0.933334,0.937255,0.941177,0.945098,0.94902,0.953268,0.957517,0.961765,0.966013,0.970262,0.97451,0.978758,0.983007,0.987255,0.991503,0.995752,1}, 251);
+OrientationInterpolator966->setKeyValue(new float[1004]{0,1,0,3.14159,0.0000318819,1,0.0000421571,3.14163,0.000122426,1,0.000161883,3.14176,0.000263982,1,0.00034906,3.14196,0.000448897,1,0.000593572,3.14221,0.00066952,0.999999,0.000885299,3.14252,0.000918199,0.999999,0.00121412,3.14286,0.00118728,0.999998,0.00156993,3.14324,0.00146912,0.999997,0.0019426,3.14363,0.00175605,0.999996,0.00232201,3.14403,0.00204044,0.999994,0.00269805,3.14442,0.00231462,0.999993,0.0030606,3.1448,0.00257095,0.999991,0.00339954,3.14516,0.00280178,0.999989,0.00370476,3.14548,0.00299944,0.999988,0.00396613,3.14575,0.0031563,0.999986,0.00417354,3.14597,0.0032647,0.999985,0.00431687,3.14612,0.00331698,0.999985,0.00438601,3.14619,0.00330551,0.999985,0.00437084,3.14618,0.00322262,0.999986,0.00426123,3.14606,0.00306066,0.999987,0.00404707,3.14584,0.00281198,0.999989,0.00371825,3.14549,0.00246893,0.999992,0.00326464,3.14502,0.00202387,0.999994,0.00267613,3.1444,0.00146912,0.999997,0.0019426,3.14363,0.000797052,0.999999,0.00105393,3.1427,0,1,0,3.14159,-0.00245127,0.999993,-0.00294765,3.13819,-0.0059138,0.99996,-0.00675217,3.13338,-0.0101542,0.999885,-0.0112653,3.1275,-0.014939,0.999755,-0.0163384,3.12085,-0.0200348,0.999561,-0.0218229,3.11378,-0.0252079,0.999302,-0.0275698,3.1066,-0.0302249,0.998984,-0.0334304,3.09964,-0.0348524,0.998621,-0.039256,3.09322,-0.0388569,0.998236,-0.044898,3.08767,-0.0420053,0.997855,-0.0502081,3.0833,-0.0440646,0.997511,-0.0550383,3.08044,-0.0448017,0.997238,-0.0592408,3.07942,-0.0440634,0.997002,-0.0636095,3.08044,-0.0420049,0.996745,-0.0688101,3.0833,-0.0388574,0.996463,-0.0745025,3.08766,-0.0348532,0.996157,-0.0803468,3.09322,-0.0302252,0.995836,-0.0860041,3.09964,-0.025207,0.995519,-0.0911364,3.1066,-0.0200325,0.995237,-0.0954068,3.11378,-0.0149359,0.995027,-0.0984795,3.12086,-0.010151,0.994934,-0.100019,3.1275,-0.00591137,0.995001,-0.0996909,3.13338,-0.00245012,0.995266,-0.0971584,3.13819,1.74952e-8,0.995751,-0.0920846,3.14159,0.000410291,0.995904,-0.0904195,3.14218,0.000764149,0.996078,-0.088471,3.14272,0.00106408,0.996273,-0.0862514,3.14322,0.00131258,0.996484,-0.083773,3.14368,0.00151212,0.996709,-0.0810481,3.1441,0.00166519,0.996945,-0.0780887,3.14448,0.00177425,0.997189,-0.0749074,3.14483,0.00184178,0.997438,-0.0715162,3.14513,0.00187023,0.997689,-0.0679275,3.14541,0.00186207,0.997938,-0.0641536,3.14564,0.00181975,0.998184,-0.0602069,3.14585,0.00174571,0.998424,-0.0560996,3.14602,0.0016424,0.998654,-0.0518442,3.14617,0.00151227,0.998872,-0.0474532,3.14628,0.00135774,0.999077,-0.0429388,3.14637,0.00118126,0.999265,-0.0383136,3.14643,0.000985266,0.999435,-0.0335901,3.14647,0.000772175,0.999585,-0.0287807,3.14648,0.000544421,0.999714,-0.0238979,3.14647,0.000304427,0.99982,-0.0189544,3.14644,0.0000546201,0.999903,-0.0139626,3.14638,-0.00020258,0.99996,-0.00893519,3.14631,-0.000464752,0.999992,-0.00388463,3.14622,-0.000729476,0.999999,0.00117646,3.14612,-0.000994334,0.99998,0.00623549,3.146,-0.00125691,0.999936,0.0112799,3.14586,-0.00151478,0.999866,0.0162971,3.14571,-0.00176554,0.999772,0.0212745,3.14556,-0.00200676,0.999655,0.0261995,3.14539,-0.00223604,0.999515,0.0310597,3.14521,-0.00245095,0.999354,0.0358424,3.14502,-0.00264908,0.999175,0.0405352,3.14483,-0.00282801,0.998977,0.0451255,3.14463,-0.00298532,0.998765,0.049601,3.14443,-0.0031186,0.998539,0.0539491,3.14422,-0.00322543,0.998302,0.0581574,3.14402,-0.00330338,0.998057,0.0622136,3.14381,-0.00335003,0.997807,0.0661052,3.1436,-0.00336295,0.997554,0.0698199,3.1434,-0.00333972,0.997301,0.0733453,3.1432,-0.0032779,0.997051,0.0766692,3.14301,-0.00317506,0.996808,0.0797793,3.14282,-0.00302876,0.996573,0.0826633,3.14263,-0.00283656,0.996351,0.0853089,3.14246,-0.00259601,0.996143,0.087704,3.1423,-0.00230467,0.995954,0.0898361,3.14214,-0.00196008,0.995785,0.0916931,3.142,-0.00155978,0.99564,0.0932628,3.14188,-0.00110131,0.995521,0.0945328,3.14176,-0.000582215,0.99543,0.0954909,3.14167,-1.82629e-8,0.995369,0.0961248,3.14159,0.00127421,0.995327,0.0965552,3.14145,0.00284121,0.995361,0.0961738,3.14127,0.00467559,0.995464,0.0950277,3.14106,0.00675194,0.995628,0.0931637,3.14083,0.00904478,0.995844,0.0906286,3.14057,0.0115286,0.996101,0.0874692,3.14029,0.0141778,0.996387,0.0837321,3.13999,0.0169667,0.996693,0.0794641,3.13967,0.0198697,0.997007,0.0747122,3.13935,0.0228608,0.997318,0.0695233,3.13901,0.0259144,0.997617,0.0639445,3.13866,0.0290046,0.997894,0.058023,3.13832,0.0321055,0.998141,0.0518063,3.13797,0.0351913,0.998352,0.045342,3.13762,0.038236,0.99852,0.0386776,3.13727,0.0412139,0.998642,0.0318609,3.13694,0.0440991,0.998716,0.0249399,3.13661,0.0468661,0.99874,0.0179625,3.1363,0.049489,0.998714,0.0109767,3.136,0.0519425,0.998642,0.00403038,3.13573,0.054201,0.998526,-0.00282838,3.13547,0.0562393,0.998372,-0.00955166,3.13524,0.058032,0.998185,-0.0160916,3.13504,0.0595542,0.997974,-0.0224004,3.13487,0.0607808,0.997746,-0.0284303,3.13473,0.061687,0.997512,-0.0341339,3.13463,0.062248,0.99728,-0.0394635,3.13456,0.0624392,0.997062,-0.0443718,3.13454,0.0622899,0.996782,-0.0504647,3.13454,0.0618497,0.996468,-0.0567969,3.13454,0.0611231,0.99612,-0.0633241,3.13455,0.0601149,0.995734,-0.0700019,3.13456,0.05883,0.99531,-0.076786,3.13459,0.0572735,0.99485,-0.0836316,3.13464,0.0554508,0.994352,-0.0904941,3.13471,0.0533674,0.99382,-0.0973288,3.13481,0.0510286,0.993258,-0.104091,3.13495,0.0484403,0.992669,-0.110736,3.13512,0.0456081,0.992058,-0.117219,3.13533,0.0425377,0.991433,-0.123497,3.13558,0.0392352,0.9908,-0.129523,3.13589,0.0357061,0.990167,-0.135255,3.13625,0.0319563,0.989544,-0.140648,3.13666,0.0279916,0.988939,-0.145658,3.13714,0.0238175,0.988362,-0.150241,3.13769,0.0194397,0.987824,-0.154354,3.13831,0.0148637,0.987335,-0.157953,3.13901,0.0100948,0.986904,-0.160994,3.13978,0.00513824,0.986541,-0.163435,3.14064,3.13925e-8,0.986255,-0.165232,3.14159,-0.00524814,0.986061,-0.166301,3.14261,-0.0113439,0.985918,-0.166847,3.14385,-0.0181922,0.985806,-0.1669,3.14526,-0.0256976,0.985709,-0.166486,3.14684,-0.0337645,0.985609,-0.165634,3.14856,-0.0422969,0.985491,-0.164372,3.1504,-0.0511987,0.985341,-0.16273,3.15233,-0.0603738,0.985149,-0.160737,3.15434,-0.0697258,0.984906,-0.158424,3.1564,-0.0791584,0.984609,-0.15582,3.15848,-0.0885757,0.984255,-0.152959,3.16057,-0.0978815,0.983848,-0.149872,3.16265,-0.106981,0.983395,-0.146592,3.16468,-0.115778,0.982905,-0.143152,3.16665,-0.124178,0.982393,-0.139586,3.16854,-0.132088,0.981874,-0.135928,3.17032,-0.139413,0.981368,-0.132213,3.17197,-0.146061,0.980898,-0.128475,3.17348,-0.151939,0.980486,-0.124749,3.17481,-0.156956,0.980156,-0.121071,3.17594,-0.161019,0.979935,-0.117474,3.17687,-0.164036,0.979846,-0.113993,3.17755,-0.165916,0.979911,-0.110662,3.17798,-0.166567,0.980151,-0.107515,3.17813,-0.166015,0.980559,-0.104608,3.178,-0.1644,0.981156,-0.101519,3.17763,-0.161795,0.98192,-0.0982646,3.17703,-0.158274,0.982828,-0.094863,3.17622,-0.15391,0.983855,-0.0913315,3.17522,-0.148777,0.984975,-0.0876873,3.17405,-0.142948,0.986164,-0.0839482,3.17272,-0.136497,0.987394,-0.0801319,3.17125,-0.129498,0.988643,-0.0762564,3.16966,-0.122025,0.989887,-0.0723398,3.16796,-0.114154,0.991106,-0.0684008,3.16618,-0.105959,0.992279,-0.0644579,3.16434,-0.0975154,0.993392,-0.0605303,3.16244,-0.0889,0.994429,-0.0566371,3.16051,-0.0801888,0.99538,-0.0527976,3.15857,-0.0714581,0.996238,-0.0490315,3.15663,-0.0627849,0.996996,-0.0453583,3.15472,-0.0542459,0.997652,-0.0417979,3.15285,-0.0459182,0.998208,-0.0383699,3.15104,-0.0378788,0.998666,-0.0350941,3.14931,-0.0302047,0.999032,-0.0319903,3.14767,-0.0229728,0.999313,-0.0290781,3.14615,-0.0162598,0.99952,-0.0263769,3.14477,-0.0101425,0.999663,-0.0239061,3.14353,-0.00469717,0.999754,-0.0216848,3.14247,3.7487e-9,0.999805,-0.0197319,3.14159,0.00892353,0.999827,-0.0163219,3.14011,0.0170721,0.999758,-0.0138622,3.13899,0.0244452,0.999626,-0.0122286,3.13819,0.0310425,0.999454,-0.0112965,3.13767,0.0368638,0.99926,-0.0109412,3.13738,0.0419089,0.99906,-0.0110379,3.13728,0.0461778,0.998868,-0.0114618,3.13732,0.0496704,0.998693,-0.0120879,3.13745,0.0523866,0.998545,-0.0127917,3.13762,0.0543267,0.998433,-0.0134484,3.13781,0.0554906,0.998362,-0.0139335,3.13795,0.0558785,0.998338,-0.0141228,3.13801,0.0548014,0.998396,-0.0142284,3.13807,0.0518186,0.998551,-0.0145212,3.13822,0.047303,0.998769,-0.0149646,3.13846,0.0416271,0.999013,-0.0155224,3.13877,0.0351641,0.999251,-0.0161582,3.13912,0.0282874,0.999458,-0.0168357,3.1395,0.0213711,0.999618,-0.0175188,3.1399,0.0147894,0.999726,-0.0181715,3.1403,0.00891667,0.999784,-0.0187582,3.14067,0.00412722,0.999806,-0.019243,3.141,0.000795266,0.999808,-0.0195906,3.14128,-0.000705116,0.999804,-0.0197655,3.14148,3.78546e-9,0.999805,-0.0197319,3.14159,0.0038478,0.999803,-0.0194723,3.1416,0.0107706,0.999761,-0.0190335,3.14153,0.0201177,0.999628,-0.018439,3.14138,0.0312376,0.999355,-0.0177125,3.14118,0.043478,0.998912,-0.0168781,3.14094,0.0561866,0.998293,-0.0159608,3.14067,0.0687121,0.997524,-0.0149859,3.1404,0.0804051,0.996664,-0.0139794,3.14014,0.0906188,0.995801,-0.0129676,3.13991,0.0987094,0.995044,-0.011977,3.13973,0.104035,0.994512,-0.011034,3.1396,0.105953,0.994319,-0.0101647,3.13956,0.104212,0.994512,-0.0093055,3.13959,0.0993537,0.995017,-0.00838737,3.13969,0.0919242,0.995738,-0.00742832,3.13983,0.0824694,0.996573,-0.00644643,3.14001,0.0715367,0.997423,-0.00546002,3.14022,0.0596755,0.998208,-0.0044876,3.14045,0.0474378,0.998868,-0.00354792,3.14068,0.0353771,0.999371,-0.00265983,3.14091,0.0240481,0.999709,-0.00184223,3.14113,0.0140061,0.999901,-0.00111396,3.14132,0.00580541,0.999983,-0.000493722,3.14148,0,1,0,3.14159});
+Group962->addChildren(*OrientationInterpolator966);
+
+Transform961->addChildren(*Group962);
+
+CTransform* Transform967 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform967->setTranslation(new float[3]{-306.525,-0.0330452,356.722});
+CInline* Inline968 = (CInline *)(m_pScene.createNode("Inline"));
+Inline968->setUrl(new CString[1]{"jet.x3d"}, 1);
+Inline968->setBboxSize(new float[3]{7.23904,1.89486,7.1349});
+Inline968->setBboxCenter(new float[3]{0.358663,0.919555,0.010988});
+Transform967->addChildren(*Inline968);
+
+Transform961->addChildren(*Transform967);
+
+CViewpoint* Viewpoint969 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint969->setDEF("VP1");
+Viewpoint969->setDescription("cockpit");
+Viewpoint969->setPosition(new float[3]{-305.006,1.41078,356.713});
+Viewpoint969->setOrientation(new float[4]{0.116195,0.988823,-0.0934229,1.56096});
+Transform961->addChildren(*Viewpoint969);
+
+CViewpoint* Viewpoint970 = (CViewpoint *)(m_pScene.createNode("Viewpoint"));
+Viewpoint970->setDEF("VP5");
+Viewpoint970->setDescription("outside");
+Viewpoint970->setPosition(new float[3]{-311.311,2.0685,359.745});
+Viewpoint970->setOrientation(new float[4]{-0.178201,-0.98196,-0.0632329,0.987273});
+Transform961->addChildren(*Viewpoint970);
+
+Transform960->addChildren(*Transform961);
+
+Transform945->addChildren(*Transform960);
+
+group->addChildren(*Transform945);
+
+CTimeSensor* TimeSensor971 = (CTimeSensor *)(m_pScene.createNode("TimeSensor"));
+TimeSensor971->setDEF("enterWorldTimeSensor");
+TimeSensor971->setLoop(True);
+TimeSensor971->setStartTime(1);
+group->addChildren(*TimeSensor971);
+
+CScript* Script972 = (CScript *)(m_pScene.createNode("Script"));
+Script972->setDEF("enterWorldScript");
+Cfield* field973 = new Cfield();
+field973->setName("startTime");
+field973->setAccessType("outputOnly");
+field973->setType("SFTime");
+Script972->addField(*field973);
+
+Cfield* field974 = new Cfield();
+field974->setName("firstTime");
+field974->setAccessType("outputOnly");
+field974->setType("SFBool");
+Script972->addField(*field974);
+
+Cfield* field975 = new Cfield();
+field975->setName("triggerIn");
+field975->setAccessType("inputOnly");
+field975->setType("SFTime");
+Script972->addField(*field975);
+
+
+Script972.setSourceCode(`vrmlscript:function triggerIn(value, time) {\n"+
+"\n"+
+"         // fire off a single round                                     \n"+
+"         startTime = value;                                             \n"+
+"         firstTime = FALSE;                                             \n"+
+"       }`)
+group->addChildren(*Script972);
+
+CNavigationInfo* NavigationInfo976 = (CNavigationInfo *)(m_pScene.createNode("NavigationInfo"));
+NavigationInfo976->setDEF("_NoNameNavInfo1");
+NavigationInfo976->setType(new CString[2]{"ANY","EXAMINE"}, 2);
+group->addChildren(*NavigationInfo976);
+
+CTransform* Transform977 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform977->setTranslation(new float[3]{-1131.16,11.8583,4851.59});
+Transform977->setRotation(new float[4]{0,1,0,4.36428});
+Transform977->setScale(new float[3]{1.29343,0.152154,0.152154});
+CShape* Shape978 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance979 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture980 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture980->setUSE("_42");
+Appearance979->setTexture(*ImageTexture980);
+
+CTextureTransform* TextureTransform981 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+Appearance979->setTextureTransform(*TextureTransform981);
+
+Shape978->setAppearance(*Appearance979);
+
+CIndexedFaceSet* IndexedFaceSet982 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet982->setDEF("nurbsToPoly43_0Geo_2");
+IndexedFaceSet982->setSolid(False);
+IndexedFaceSet982->setConvex(False);
+IndexedFaceSet982->setColorPerVertex(False);
+IndexedFaceSet982->setColorIndex(new int[32]{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0});
+IndexedFaceSet982->setTexCoordIndex(new int[160]{0,1,2,3,-1,4,5,6,7,-1,8,9,10,11,-1,12,13,14,15,-1,16,17,18,19,-1,20,21,22,23,-1,24,25,26,27,-1,28,29,30,31,-1,32,33,34,35,-1,36,37,38,39,-1,40,41,42,43,-1,44,45,46,47,-1,48,49,50,51,-1,52,53,54,55,-1,56,57,58,59,-1,60,61,62,63,-1,64,65,66,67,-1,68,69,70,71,-1,72,73,74,75,-1,76,77,78,79,-1,80,81,82,83,-1,84,85,86,87,-1,88,89,90,91,-1,92,93,94,95,-1,96,97,98,99,-1,100,101,102,103,-1,104,105,106,107,-1,108,109,110,111,-1,112,113,114,115,-1,116,117,118,119,-1,120,121,122,123,-1,124,125,126,127,-1});
+IndexedFaceSet982->setCoordIndex(new int[160]{0,1,10,9,-1,1,2,11,10,-1,2,3,12,11,-1,3,4,13,12,-1,4,5,14,13,-1,5,6,15,14,-1,6,7,16,15,-1,7,8,17,16,-1,9,10,19,18,-1,10,11,20,19,-1,11,12,21,20,-1,12,13,22,21,-1,13,14,23,22,-1,14,15,24,23,-1,15,16,25,24,-1,16,17,26,25,-1,18,19,28,27,-1,19,20,29,28,-1,20,21,30,29,-1,21,22,31,30,-1,22,23,32,31,-1,23,24,33,32,-1,24,25,34,33,-1,25,26,35,34,-1,27,28,37,36,-1,28,29,38,37,-1,29,30,39,38,-1,30,31,40,39,-1,31,32,41,40,-1,32,33,42,41,-1,33,34,43,42,-1,34,35,44,43,-1});
+CColor* Color983 = (CColor *)(m_pScene.createNode("Color"));
+Color983->setColor(new float[3]{0,0.789241,0.8});
+IndexedFaceSet982->setColor(*Color983);
+
+CTextureCoordinate* TextureCoordinate984 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate984->setPoint(new float[256]{1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0});
+IndexedFaceSet982->setTexCoord(*TextureCoordinate984);
+
+CCoordinate* Coordinate985 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate985->setDEF("nurbsToPoly43GeoPoints_2");
+Coordinate985->setPoint(new float[135]{-3696.2,64.461,1385.92,-3696.2,64.461,1414.08,-3696.2,44.554,1433.98,-3696.2,16.401,1433.98,-3696.2,-3.506,1414.08,-3696.2,-3.506,1385.92,-3696.2,16.401,1366.02,-3696.2,44.554,1366.02,-3696.2,64.461,1385.92,-3696.2,68.723,1384.16,-3696.2,68.723,1415.84,-3696.2,46.319,1438.25,-3696.2,14.635,1438.25,-3696.2,-7.769,1415.84,-3696.2,-7.769,1384.16,-3696.2,14.635,1361.75,-3696.2,46.319,1361.75,-3696.2,68.723,1384.16,-3701.14,68.723,1384.16,-3701.14,68.723,1415.84,-3701.14,46.319,1438.25,-3701.14,14.635,1438.25,-3701.14,-7.769,1415.84,-3701.14,-7.769,1384.16,-3701.14,14.635,1361.75,-3701.14,46.319,1361.75,-3701.14,68.723,1384.16,-3701.14,64.461,1385.92,-3701.14,64.461,1414.08,-3701.14,44.554,1433.98,-3701.14,16.401,1433.98,-3701.14,-3.506,1414.08,-3701.14,-3.506,1385.92,-3701.14,16.401,1366.02,-3701.14,44.554,1366.02,-3701.14,64.461,1385.92,-3696.2,64.461,1385.92,-3696.2,64.461,1414.08,-3696.2,44.554,1433.98,-3696.2,16.401,1433.98,-3696.2,-3.506,1414.08,-3696.2,-3.506,1385.92,-3696.2,16.401,1366.02,-3696.2,44.554,1366.02,-3696.2,64.461,1385.92});
+IndexedFaceSet982->setCoord(*Coordinate985);
+
+Shape978->setGeometry(IndexedFaceSet982);
+
+Transform977->addChildren(*Shape978);
+
+group->addChildren(*Transform977);
+
+CTransform* Transform986 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform986->setTranslation(new float[3]{303.845,21.992,279.405});
+Transform986->setRotation(new float[4]{0,1,0,2.79348});
+Transform986->setScale(new float[3]{4.50821,4.50809,4.50848});
+Transform986->setScaleOrientation(new float[4]{0,1,0,0.00292969});
+CShape* Shape987 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance988 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture989 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture989->setDEF("_46");
+ImageTexture989->setUrl(new CString[1]{"light4.png"}, 1);
+Appearance988->setTexture(*ImageTexture989);
+
+Shape987->setAppearance(*Appearance988);
+
+CIndexedFaceSet* IndexedFaceSet990 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet990->setSolid(False);
+IndexedFaceSet990->setCoordIndex(new int[5]{0,1,2,3,-1});
+CTextureCoordinate* TextureCoordinate991 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate991->setPoint(new float[8]{0,0,1,0,1,1,0,1});
+IndexedFaceSet990->setTexCoord(*TextureCoordinate991);
+
+CCoordinate* Coordinate992 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate992->setPoint(new float[12]{-0.5,-0.5,0,0.5,-0.5,0,0.5,0.5,0,-0.5,0.5,0});
+IndexedFaceSet990->setCoord(*Coordinate992);
+
+Shape987->setGeometry(IndexedFaceSet990);
+
+Transform986->addChildren(*Shape987);
+
+group->addChildren(*Transform986);
+
+CTransform* Transform993 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform993->setTranslation(new float[3]{299.48,21.992,277.821});
+Transform993->setRotation(new float[4]{0,1,0,2.79348});
+Transform993->setScale(new float[3]{4.50821,4.50809,4.50848});
+Transform993->setScaleOrientation(new float[4]{0,1,0,0.00292969});
+CShape* Shape994 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance995 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture996 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture996->setUSE("_46");
+Appearance995->setTexture(*ImageTexture996);
+
+Shape994->setAppearance(*Appearance995);
+
+CIndexedFaceSet* IndexedFaceSet997 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet997->setSolid(False);
+IndexedFaceSet997->setCoordIndex(new int[5]{0,1,2,3,-1});
+CTextureCoordinate* TextureCoordinate998 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate998->setPoint(new float[8]{0,0,1,0,1,1,0,1});
+IndexedFaceSet997->setTexCoord(*TextureCoordinate998);
+
+CCoordinate* Coordinate999 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate999->setPoint(new float[12]{-0.5,-0.5,0,0.5,-0.5,0,0.5,0.5,0,-0.5,0.5,0});
+IndexedFaceSet997->setCoord(*Coordinate999);
+
+Shape994->setGeometry(IndexedFaceSet997);
+
+Transform993->addChildren(*Shape994);
+
+group->addChildren(*Transform993);
+
+CTransform* Transform1000 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform1000->setTranslation(new float[3]{295.235,22.1142,244.387});
+Transform1000->setRotation(new float[4]{0,1,0,3.55022});
+Transform1000->setScale(new float[3]{4.50821,4.50809,4.50849});
+Transform1000->setScaleOrientation(new float[4]{0,1,0,0.00119604});
+CShape* Shape1001 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance1002 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture1003 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture1003->setUSE("_46");
+Appearance1002->setTexture(*ImageTexture1003);
+
+Shape1001->setAppearance(*Appearance1002);
+
+CIndexedFaceSet* IndexedFaceSet1004 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet1004->setSolid(False);
+IndexedFaceSet1004->setCoordIndex(new int[5]{0,1,2,3,-1});
+CTextureCoordinate* TextureCoordinate1005 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate1005->setPoint(new float[8]{0,0,1,0,1,1,0,1});
+IndexedFaceSet1004->setTexCoord(*TextureCoordinate1005);
+
+CCoordinate* Coordinate1006 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate1006->setPoint(new float[12]{-0.5,-0.5,0,0.5,-0.5,0,0.5,0.5,0,-0.5,0.5,0});
+IndexedFaceSet1004->setCoord(*Coordinate1006);
+
+Shape1001->setGeometry(IndexedFaceSet1004);
+
+Transform1000->addChildren(*Shape1001);
+
+group->addChildren(*Transform1000);
+
+CTransform* Transform1007 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform1007->setTranslation(new float[3]{299.496,22.1142,242.542});
+Transform1007->setRotation(new float[4]{0,1,0,3.55022});
+Transform1007->setScale(new float[3]{4.50821,4.50809,4.50849});
+Transform1007->setScaleOrientation(new float[4]{0,1,0,0.00154408});
+CShape* Shape1008 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance1009 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture1010 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture1010->setUSE("_46");
+Appearance1009->setTexture(*ImageTexture1010);
+
+Shape1008->setAppearance(*Appearance1009);
+
+CIndexedFaceSet* IndexedFaceSet1011 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet1011->setSolid(False);
+IndexedFaceSet1011->setCoordIndex(new int[5]{0,1,2,3,-1});
+CTextureCoordinate* TextureCoordinate1012 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate1012->setPoint(new float[8]{0,0,1,0,1,1,0,1});
+IndexedFaceSet1011->setTexCoord(*TextureCoordinate1012);
+
+CCoordinate* Coordinate1013 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate1013->setPoint(new float[12]{-0.5,-0.5,0,0.5,-0.5,0,0.5,0.5,0,-0.5,0.5,0});
+IndexedFaceSet1011->setCoord(*Coordinate1013);
+
+Shape1008->setGeometry(IndexedFaceSet1011);
+
+Transform1007->addChildren(*Shape1008);
+
+group->addChildren(*Transform1007);
+
+CTransform* Transform1014 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform1014->setTranslation(new float[3]{2395.18,11.9806,4552.1});
+Transform1014->setRotation(new float[4]{0,-1,0,1.16217});
+Transform1014->setScale(new float[3]{1.29344,0.152154,0.152154});
+CShape* Shape1015 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance1016 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture1017 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture1017->setUSE("_42");
+Appearance1016->setTexture(*ImageTexture1017);
+
+CTextureTransform* TextureTransform1018 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+Appearance1016->setTextureTransform(*TextureTransform1018);
+
+Shape1015->setAppearance(*Appearance1016);
+
+CIndexedFaceSet* IndexedFaceSet1019 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet1019->setDEF("nurbsToPoly43_0Geo_3");
+IndexedFaceSet1019->setSolid(False);
+IndexedFaceSet1019->setConvex(False);
+IndexedFaceSet1019->setColorPerVertex(False);
+IndexedFaceSet1019->setColorIndex(new int[32]{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0});
+IndexedFaceSet1019->setTexCoordIndex(new int[160]{0,1,2,3,-1,4,5,6,7,-1,8,9,10,11,-1,12,13,14,15,-1,16,17,18,19,-1,20,21,22,23,-1,24,25,26,27,-1,28,29,30,31,-1,32,33,34,35,-1,36,37,38,39,-1,40,41,42,43,-1,44,45,46,47,-1,48,49,50,51,-1,52,53,54,55,-1,56,57,58,59,-1,60,61,62,63,-1,64,65,66,67,-1,68,69,70,71,-1,72,73,74,75,-1,76,77,78,79,-1,80,81,82,83,-1,84,85,86,87,-1,88,89,90,91,-1,92,93,94,95,-1,96,97,98,99,-1,100,101,102,103,-1,104,105,106,107,-1,108,109,110,111,-1,112,113,114,115,-1,116,117,118,119,-1,120,121,122,123,-1,124,125,126,127,-1});
+IndexedFaceSet1019->setCoordIndex(new int[160]{0,1,10,9,-1,1,2,11,10,-1,2,3,12,11,-1,3,4,13,12,-1,4,5,14,13,-1,5,6,15,14,-1,6,7,16,15,-1,7,8,17,16,-1,9,10,19,18,-1,10,11,20,19,-1,11,12,21,20,-1,12,13,22,21,-1,13,14,23,22,-1,14,15,24,23,-1,15,16,25,24,-1,16,17,26,25,-1,18,19,28,27,-1,19,20,29,28,-1,20,21,30,29,-1,21,22,31,30,-1,22,23,32,31,-1,23,24,33,32,-1,24,25,34,33,-1,25,26,35,34,-1,27,28,37,36,-1,28,29,38,37,-1,29,30,39,38,-1,30,31,40,39,-1,31,32,41,40,-1,32,33,42,41,-1,33,34,43,42,-1,34,35,44,43,-1});
+CColor* Color1020 = (CColor *)(m_pScene.createNode("Color"));
+Color1020->setColor(new float[3]{0,0.789241,0.8});
+IndexedFaceSet1019->setColor(*Color1020);
+
+CTextureCoordinate* TextureCoordinate1021 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate1021->setPoint(new float[256]{1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0});
+IndexedFaceSet1019->setTexCoord(*TextureCoordinate1021);
+
+CCoordinate* Coordinate1022 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate1022->setDEF("nurbsToPoly43GeoPoints_3");
+Coordinate1022->setPoint(new float[135]{-3696.2,64.461,1385.92,-3696.2,64.461,1414.08,-3696.2,44.554,1433.98,-3696.2,16.401,1433.98,-3696.2,-3.506,1414.08,-3696.2,-3.506,1385.92,-3696.2,16.401,1366.02,-3696.2,44.554,1366.02,-3696.2,64.461,1385.92,-3696.2,68.723,1384.16,-3696.2,68.723,1415.84,-3696.2,46.319,1438.25,-3696.2,14.635,1438.25,-3696.2,-7.769,1415.84,-3696.2,-7.769,1384.16,-3696.2,14.635,1361.75,-3696.2,46.319,1361.75,-3696.2,68.723,1384.16,-3701.14,68.723,1384.16,-3701.14,68.723,1415.84,-3701.14,46.319,1438.25,-3701.14,14.635,1438.25,-3701.14,-7.769,1415.84,-3701.14,-7.769,1384.16,-3701.14,14.635,1361.75,-3701.14,46.319,1361.75,-3701.14,68.723,1384.16,-3701.14,64.461,1385.92,-3701.14,64.461,1414.08,-3701.14,44.554,1433.98,-3701.14,16.401,1433.98,-3701.14,-3.506,1414.08,-3701.14,-3.506,1385.92,-3701.14,16.401,1366.02,-3701.14,44.554,1366.02,-3701.14,64.461,1385.92,-3696.2,64.461,1385.92,-3696.2,64.461,1414.08,-3696.2,44.554,1433.98,-3696.2,16.401,1433.98,-3696.2,-3.506,1414.08,-3696.2,-3.506,1385.92,-3696.2,16.401,1366.02,-3696.2,44.554,1366.02,-3696.2,64.461,1385.92});
+IndexedFaceSet1019->setCoord(*Coordinate1022);
+
+Shape1015->setGeometry(IndexedFaceSet1019);
+
+Transform1014->addChildren(*Shape1015);
+
+group->addChildren(*Transform1014);
+
+CTransform* Transform1023 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform1023->setTranslation(new float[3]{270.463,22.493,219.313});
+Transform1023->setRotation(new float[4]{0,1,0,4.31273});
+Transform1023->setScale(new float[3]{4.50821,4.50809,4.50848});
+CShape* Shape1024 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance1025 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture1026 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture1026->setUSE("_46");
+Appearance1025->setTexture(*ImageTexture1026);
+
+Shape1024->setAppearance(*Appearance1025);
+
+CIndexedFaceSet* IndexedFaceSet1027 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet1027->setSolid(False);
+IndexedFaceSet1027->setCoordIndex(new int[5]{0,1,2,3,-1});
+CTextureCoordinate* TextureCoordinate1028 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate1028->setPoint(new float[8]{0,0,1,0,1,1,0,1});
+IndexedFaceSet1027->setTexCoord(*TextureCoordinate1028);
+
+CCoordinate* Coordinate1029 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate1029->setPoint(new float[12]{-0.5,-0.5,0,0.5,-0.5,0,0.5,0.5,0,-0.5,0.5,0});
+IndexedFaceSet1027->setCoord(*Coordinate1029);
+
+Shape1024->setGeometry(IndexedFaceSet1027);
+
+Transform1023->addChildren(*Shape1024);
+
+group->addChildren(*Transform1023);
+
+CTransform* Transform1030 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform1030->setTranslation(new float[3]{268.656,22.493,223.591});
+Transform1030->setRotation(new float[4]{0,1,0,4.31273});
+Transform1030->setScale(new float[3]{4.50821,4.50809,4.50848});
+CShape* Shape1031 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance1032 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture1033 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture1033->setUSE("_46");
+Appearance1032->setTexture(*ImageTexture1033);
+
+Shape1031->setAppearance(*Appearance1032);
+
+CIndexedFaceSet* IndexedFaceSet1034 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet1034->setSolid(False);
+IndexedFaceSet1034->setCoordIndex(new int[5]{0,1,2,3,-1});
+CTextureCoordinate* TextureCoordinate1035 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate1035->setPoint(new float[8]{0,0,1,0,1,1,0,1});
+IndexedFaceSet1034->setTexCoord(*TextureCoordinate1035);
+
+CCoordinate* Coordinate1036 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate1036->setPoint(new float[12]{-0.5,-0.5,0,0.5,-0.5,0,0.5,0.5,0,-0.5,0.5,0});
+IndexedFaceSet1034->setCoord(*Coordinate1036);
+
+Shape1031->setGeometry(IndexedFaceSet1034);
+
+Transform1030->addChildren(*Shape1031);
+
+group->addChildren(*Transform1030);
+
+CTransform* Transform1037 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform1037->setTranslation(new float[3]{4762.63,12.3593,1887.99});
+Transform1037->setRotation(new float[4]{0,-1,0,0.399655});
+Transform1037->setScale(new float[3]{1.29343,0.152154,0.152154});
+CShape* Shape1038 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance1039 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture1040 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture1040->setUSE("_42");
+Appearance1039->setTexture(*ImageTexture1040);
+
+CTextureTransform* TextureTransform1041 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+Appearance1039->setTextureTransform(*TextureTransform1041);
+
+Shape1038->setAppearance(*Appearance1039);
+
+CIndexedFaceSet* IndexedFaceSet1042 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet1042->setDEF("nurbsToPoly43_0Geo_4");
+IndexedFaceSet1042->setSolid(False);
+IndexedFaceSet1042->setConvex(False);
+IndexedFaceSet1042->setColorPerVertex(False);
+IndexedFaceSet1042->setColorIndex(new int[32]{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0});
+IndexedFaceSet1042->setTexCoordIndex(new int[160]{0,1,2,3,-1,4,5,6,7,-1,8,9,10,11,-1,12,13,14,15,-1,16,17,18,19,-1,20,21,22,23,-1,24,25,26,27,-1,28,29,30,31,-1,32,33,34,35,-1,36,37,38,39,-1,40,41,42,43,-1,44,45,46,47,-1,48,49,50,51,-1,52,53,54,55,-1,56,57,58,59,-1,60,61,62,63,-1,64,65,66,67,-1,68,69,70,71,-1,72,73,74,75,-1,76,77,78,79,-1,80,81,82,83,-1,84,85,86,87,-1,88,89,90,91,-1,92,93,94,95,-1,96,97,98,99,-1,100,101,102,103,-1,104,105,106,107,-1,108,109,110,111,-1,112,113,114,115,-1,116,117,118,119,-1,120,121,122,123,-1,124,125,126,127,-1});
+IndexedFaceSet1042->setCoordIndex(new int[160]{0,1,10,9,-1,1,2,11,10,-1,2,3,12,11,-1,3,4,13,12,-1,4,5,14,13,-1,5,6,15,14,-1,6,7,16,15,-1,7,8,17,16,-1,9,10,19,18,-1,10,11,20,19,-1,11,12,21,20,-1,12,13,22,21,-1,13,14,23,22,-1,14,15,24,23,-1,15,16,25,24,-1,16,17,26,25,-1,18,19,28,27,-1,19,20,29,28,-1,20,21,30,29,-1,21,22,31,30,-1,22,23,32,31,-1,23,24,33,32,-1,24,25,34,33,-1,25,26,35,34,-1,27,28,37,36,-1,28,29,38,37,-1,29,30,39,38,-1,30,31,40,39,-1,31,32,41,40,-1,32,33,42,41,-1,33,34,43,42,-1,34,35,44,43,-1});
+CColor* Color1043 = (CColor *)(m_pScene.createNode("Color"));
+Color1043->setColor(new float[3]{0,0.789241,0.8});
+IndexedFaceSet1042->setColor(*Color1043);
+
+CTextureCoordinate* TextureCoordinate1044 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate1044->setPoint(new float[256]{1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0});
+IndexedFaceSet1042->setTexCoord(*TextureCoordinate1044);
+
+CCoordinate* Coordinate1045 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate1045->setDEF("nurbsToPoly43GeoPoints_4");
+Coordinate1045->setPoint(new float[135]{-3696.2,64.461,1385.92,-3696.2,64.461,1414.08,-3696.2,44.554,1433.98,-3696.2,16.401,1433.98,-3696.2,-3.506,1414.08,-3696.2,-3.506,1385.92,-3696.2,16.401,1366.02,-3696.2,44.554,1366.02,-3696.2,64.461,1385.92,-3696.2,68.723,1384.16,-3696.2,68.723,1415.84,-3696.2,46.319,1438.25,-3696.2,14.635,1438.25,-3696.2,-7.769,1415.84,-3696.2,-7.769,1384.16,-3696.2,14.635,1361.75,-3696.2,46.319,1361.75,-3696.2,68.723,1384.16,-3701.14,68.723,1384.16,-3701.14,68.723,1415.84,-3701.14,46.319,1438.25,-3701.14,14.635,1438.25,-3701.14,-7.769,1415.84,-3701.14,-7.769,1384.16,-3701.14,14.635,1361.75,-3701.14,46.319,1361.75,-3701.14,68.723,1384.16,-3701.14,64.461,1385.92,-3701.14,64.461,1414.08,-3701.14,44.554,1433.98,-3701.14,16.401,1433.98,-3701.14,-3.506,1414.08,-3701.14,-3.506,1385.92,-3701.14,16.401,1366.02,-3701.14,44.554,1366.02,-3701.14,64.461,1385.92,-3696.2,64.461,1385.92,-3696.2,64.461,1414.08,-3696.2,44.554,1433.98,-3696.2,16.401,1433.98,-3696.2,-3.506,1414.08,-3696.2,-3.506,1385.92,-3696.2,16.401,1366.02,-3696.2,44.554,1366.02,-3696.2,64.461,1385.92});
+IndexedFaceSet1042->setCoord(*Coordinate1045);
+
+Shape1038->setGeometry(IndexedFaceSet1042);
+
+Transform1037->addChildren(*Shape1038);
+
+group->addChildren(*Transform1037);
+
+CTransform* Transform1046 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform1046->setTranslation(new float[3]{221.458,24.6991,223.011});
+Transform1046->setRotation(new float[4]{0,-1,0,1.21195});
+Transform1046->setScale(new float[3]{4.50821,4.50809,4.50848});
+Transform1046->setScaleOrientation(new float[4]{0,1,0,0.00338291});
+CShape* Shape1047 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance1048 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture1049 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture1049->setUSE("_46");
+Appearance1048->setTexture(*ImageTexture1049);
+
+Shape1047->setAppearance(*Appearance1048);
+
+CIndexedFaceSet* IndexedFaceSet1050 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet1050->setSolid(False);
+IndexedFaceSet1050->setCoordIndex(new int[5]{0,1,2,3,-1});
+CTextureCoordinate* TextureCoordinate1051 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate1051->setPoint(new float[8]{0,0,1,0,1,1,0,1});
+IndexedFaceSet1050->setTexCoord(*TextureCoordinate1051);
+
+CCoordinate* Coordinate1052 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate1052->setPoint(new float[12]{-0.5,-0.5,0,0.5,-0.5,0,0.5,0.5,0,-0.5,0.5,0});
+IndexedFaceSet1050->setCoord(*Coordinate1052);
+
+Shape1047->setGeometry(IndexedFaceSet1050);
+
+Transform1046->addChildren(*Shape1047);
+
+group->addChildren(*Transform1046);
+
+CTransform* Transform1053 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform1053->setTranslation(new float[3]{223.088,24.6991,227.359});
+Transform1053->setRotation(new float[4]{0,-1,0,1.21195});
+Transform1053->setScale(new float[3]{4.50821,4.50809,4.50848});
+Transform1053->setScaleOrientation(new float[4]{0,1,0,0.00338291});
+CShape* Shape1054 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance1055 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture1056 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture1056->setUSE("_46");
+Appearance1055->setTexture(*ImageTexture1056);
+
+Shape1054->setAppearance(*Appearance1055);
+
+CIndexedFaceSet* IndexedFaceSet1057 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet1057->setSolid(False);
+IndexedFaceSet1057->setCoordIndex(new int[5]{0,1,2,3,-1});
+CTextureCoordinate* TextureCoordinate1058 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate1058->setPoint(new float[8]{0,0,1,0,1,1,0,1});
+IndexedFaceSet1057->setTexCoord(*TextureCoordinate1058);
+
+CCoordinate* Coordinate1059 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate1059->setPoint(new float[12]{-0.5,-0.5,0,0.5,-0.5,0,0.5,0.5,0,-0.5,0.5,0});
+IndexedFaceSet1057->setCoord(*Coordinate1059);
+
+Shape1054->setGeometry(IndexedFaceSet1057);
+
+Transform1053->addChildren(*Shape1054);
+
+group->addChildren(*Transform1053);
+
+CTransform* Transform1060 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform1060->setTranslation(new float[3]{4629.96,14.5654,-1655.61});
+Transform1060->setRotation(new float[4]{0,1,0,0.358843});
+Transform1060->setScale(new float[3]{1.29343,0.152153,0.152154});
+CShape* Shape1061 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance1062 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture1063 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture1063->setUSE("_42");
+Appearance1062->setTexture(*ImageTexture1063);
+
+CTextureTransform* TextureTransform1064 = (CTextureTransform *)(m_pScene.createNode("TextureTransform"));
+Appearance1062->setTextureTransform(*TextureTransform1064);
+
+Shape1061->setAppearance(*Appearance1062);
+
+CIndexedFaceSet* IndexedFaceSet1065 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet1065->setDEF("nurbsToPoly43_0Geo");
+IndexedFaceSet1065->setSolid(False);
+IndexedFaceSet1065->setConvex(False);
+IndexedFaceSet1065->setColorPerVertex(False);
+IndexedFaceSet1065->setColorIndex(new int[32]{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0});
+IndexedFaceSet1065->setTexCoordIndex(new int[160]{0,1,2,3,-1,4,5,6,7,-1,8,9,10,11,-1,12,13,14,15,-1,16,17,18,19,-1,20,21,22,23,-1,24,25,26,27,-1,28,29,30,31,-1,32,33,34,35,-1,36,37,38,39,-1,40,41,42,43,-1,44,45,46,47,-1,48,49,50,51,-1,52,53,54,55,-1,56,57,58,59,-1,60,61,62,63,-1,64,65,66,67,-1,68,69,70,71,-1,72,73,74,75,-1,76,77,78,79,-1,80,81,82,83,-1,84,85,86,87,-1,88,89,90,91,-1,92,93,94,95,-1,96,97,98,99,-1,100,101,102,103,-1,104,105,106,107,-1,108,109,110,111,-1,112,113,114,115,-1,116,117,118,119,-1,120,121,122,123,-1,124,125,126,127,-1});
+IndexedFaceSet1065->setCoordIndex(new int[160]{0,1,10,9,-1,1,2,11,10,-1,2,3,12,11,-1,3,4,13,12,-1,4,5,14,13,-1,5,6,15,14,-1,6,7,16,15,-1,7,8,17,16,-1,9,10,19,18,-1,10,11,20,19,-1,11,12,21,20,-1,12,13,22,21,-1,13,14,23,22,-1,14,15,24,23,-1,15,16,25,24,-1,16,17,26,25,-1,18,19,28,27,-1,19,20,29,28,-1,20,21,30,29,-1,21,22,31,30,-1,22,23,32,31,-1,23,24,33,32,-1,24,25,34,33,-1,25,26,35,34,-1,27,28,37,36,-1,28,29,38,37,-1,29,30,39,38,-1,30,31,40,39,-1,31,32,41,40,-1,32,33,42,41,-1,33,34,43,42,-1,34,35,44,43,-1});
+CColor* Color1066 = (CColor *)(m_pScene.createNode("Color"));
+Color1066->setColor(new float[3]{0,0.789241,0.8});
+IndexedFaceSet1065->setColor(*Color1066);
+
+CTextureCoordinate* TextureCoordinate1067 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate1067->setPoint(new float[256]{1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1,1,0,1,0,0});
+IndexedFaceSet1065->setTexCoord(*TextureCoordinate1067);
+
+CCoordinate* Coordinate1068 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate1068->setDEF("nurbsToPoly43GeoPoints");
+Coordinate1068->setPoint(new float[135]{-3696.2,64.461,1385.92,-3696.2,64.461,1414.08,-3696.2,44.554,1433.98,-3696.2,16.401,1433.98,-3696.2,-3.506,1414.08,-3696.2,-3.506,1385.92,-3696.2,16.401,1366.02,-3696.2,44.554,1366.02,-3696.2,64.461,1385.92,-3696.2,68.723,1384.16,-3696.2,68.723,1415.84,-3696.2,46.319,1438.25,-3696.2,14.635,1438.25,-3696.2,-7.769,1415.84,-3696.2,-7.769,1384.16,-3696.2,14.635,1361.75,-3696.2,46.319,1361.75,-3696.2,68.723,1384.16,-3701.14,68.723,1384.16,-3701.14,68.723,1415.84,-3701.14,46.319,1438.25,-3701.14,14.635,1438.25,-3701.14,-7.769,1415.84,-3701.14,-7.769,1384.16,-3701.14,14.635,1361.75,-3701.14,46.319,1361.75,-3701.14,68.723,1384.16,-3701.14,64.461,1385.92,-3701.14,64.461,1414.08,-3701.14,44.554,1433.98,-3701.14,16.401,1433.98,-3701.14,-3.506,1414.08,-3701.14,-3.506,1385.92,-3701.14,16.401,1366.02,-3701.14,44.554,1366.02,-3701.14,64.461,1385.92,-3696.2,64.461,1385.92,-3696.2,64.461,1414.08,-3696.2,44.554,1433.98,-3696.2,16.401,1433.98,-3696.2,-3.506,1414.08,-3696.2,-3.506,1385.92,-3696.2,16.401,1366.02,-3696.2,44.554,1366.02,-3696.2,64.461,1385.92});
+IndexedFaceSet1065->setCoord(*Coordinate1068);
+
+Shape1061->setGeometry(IndexedFaceSet1065);
+
+Transform1060->addChildren(*Shape1061);
+
+group->addChildren(*Transform1060);
+
+CTransform* Transform1069 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform1069->setTranslation(new float[3]{1.34702,-0.969894,-1.96049});
+CTransform* Transform1070 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform1070->setDEF("glow");
+Transform1070->setTranslation(new float[3]{212.021,21.8541,229.087});
+CBillboard* Billboard1071 = (CBillboard *)(m_pScene.createNode("Billboard"));
+Billboard1071->setAxisOfRotation(new float[3]{0,0,0});
+CTransform* Transform1072 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform1072->setTranslation(new float[3]{0,-8.37499e-9,0});
+Transform1072->setScale(new float[3]{3.52683,3.52683,3.52683});
+CShape* Shape1073 = (CShape *)(m_pScene.createNode("Shape"));
+CAppearance* Appearance1074 = (CAppearance *)(m_pScene.createNode("Appearance"));
+CImageTexture* ImageTexture1075 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
+ImageTexture1075->setUSE("_38");
+Appearance1074->setTexture(*ImageTexture1075);
+
+Shape1073->setAppearance(*Appearance1074);
+
+CIndexedFaceSet* IndexedFaceSet1076 = (CIndexedFaceSet *)(m_pScene.createNode("IndexedFaceSet"));
+IndexedFaceSet1076->setSolid(False);
+IndexedFaceSet1076->setCoordIndex(new int[5]{0,1,2,3,-1});
+CTextureCoordinate* TextureCoordinate1077 = (CTextureCoordinate *)(m_pScene.createNode("TextureCoordinate"));
+TextureCoordinate1077->setPoint(new float[8]{0,0,1,0,1,1,0,1});
+IndexedFaceSet1076->setTexCoord(*TextureCoordinate1077);
+
+CCoordinate* Coordinate1078 = (CCoordinate *)(m_pScene.createNode("Coordinate"));
+Coordinate1078->setPoint(new float[12]{-0.5,-0.5,0,0.5,-0.5,0,0.5,0.5,0,-0.5,0.5,0});
+IndexedFaceSet1076->setCoord(*Coordinate1078);
+
+Shape1073->setGeometry(IndexedFaceSet1076);
+
+Transform1072->addChildren(*Shape1073);
+
+Billboard1071->addChildren(*Transform1072);
+
+Transform1070->addChildren(*Billboard1071);
+
+Transform1069->addChildren(*Transform1070);
+
+group->addChildren(*Transform1069);
+
+CTransform* Transform1079 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform1079->setTranslation(new float[3]{-8.41934,1.21989,8.50215});
+CTransform* Transform1080 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform1080->setUSE("glow");
+Transform1079->addChildren(*Transform1080);
+
+group->addChildren(*Transform1079);
+
+CTransform* Transform1081 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform1081->setTranslation(new float[3]{-17.0068,3.13219,19.5444});
+CTransform* Transform1082 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform1082->setUSE("glow");
+Transform1081->addChildren(*Transform1082);
+
+group->addChildren(*Transform1081);
+
+CTransform* Transform1083 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform1083->setTranslation(new float[3]{-23.6425,5.11881,31.7535});
+CTransform* Transform1084 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform1084->setUSE("glow");
+Transform1083->addChildren(*Transform1084);
+
+group->addChildren(*Transform1083);
+
+CTransform* Transform1085 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform1085->setTranslation(new float[3]{-27.3534,6.24703,44.6891});
+CTransform* Transform1086 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform1086->setUSE("glow");
+Transform1085->addChildren(*Transform1086);
+
+group->addChildren(*Transform1085);
+
+CTransform* Transform1087 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform1087->setTranslation(new float[3]{-29.8293,6.96029,58.9958});
+CTransform* Transform1088 = (CTransform *)(m_pScene.createNode("Transform"));
+Transform1088->setUSE("glow");
+Transform1087->addChildren(*Transform1088);
+
+group->addChildren(*Transform1087);
+
+CROUTE* ROUTE1089 = new CROUTE();
+ROUTE1089->setFromNode("enterWorldScript");
+ROUTE1089->setFromField("startTime");
+ROUTE1089->setToNode("Time_1");
+ROUTE1089->setToField("set_startTime");
+group->addChildren(*ROUTE1089);
+
+CROUTE* ROUTE1090 = new CROUTE();
+ROUTE1090->setFromNode("Time_1");
+ROUTE1090->setFromField("fraction_changed");
+ROUTE1090->setToNode("UnnamedTransformTranslationInterp_1");
+ROUTE1090->setToField("set_fraction");
+group->addChildren(*ROUTE1090);
+
+CROUTE* ROUTE1091 = new CROUTE();
+ROUTE1091->setFromNode("Time_1");
+ROUTE1091->setFromField("fraction_changed");
+ROUTE1091->setToNode("UnnamedTransformRotationInterp_1");
+ROUTE1091->setToField("set_fraction");
+group->addChildren(*ROUTE1091);
+
+CROUTE* ROUTE1092 = new CROUTE();
+ROUTE1092->setFromNode("enterWorldScript");
+ROUTE1092->setFromField("startTime");
+ROUTE1092->setToNode("Time_2");
+ROUTE1092->setToField("set_startTime");
+group->addChildren(*ROUTE1092);
+
+CROUTE* ROUTE1093 = new CROUTE();
+ROUTE1093->setFromNode("Time_2");
+ROUTE1093->setFromField("fraction_changed");
+ROUTE1093->setToNode("VP4PositionInterp");
+ROUTE1093->setToField("set_fraction");
+group->addChildren(*ROUTE1093);
+
+CROUTE* ROUTE1094 = new CROUTE();
+ROUTE1094->setFromNode("Time_2");
+ROUTE1094->setFromField("fraction_changed");
+ROUTE1094->setToNode("VP4OrientationInterp");
+ROUTE1094->setToField("set_fraction");
+group->addChildren(*ROUTE1094);
+
+CROUTE* ROUTE1095 = new CROUTE();
+ROUTE1095->setFromNode("VP4PositionInterp");
+ROUTE1095->setFromField("value_changed");
+ROUTE1095->setToNode("VP4");
+ROUTE1095->setToField("set_position");
+group->addChildren(*ROUTE1095);
+
+CROUTE* ROUTE1096 = new CROUTE();
+ROUTE1096->setFromNode("VP4OrientationInterp");
+ROUTE1096->setFromField("value_changed");
+ROUTE1096->setToNode("VP4");
+ROUTE1096->setToField("set_orientation");
+group->addChildren(*ROUTE1096);
+
+CROUTE* ROUTE1097 = new CROUTE();
+ROUTE1097->setFromNode("enterWorldScript");
+ROUTE1097->setFromField("startTime");
+ROUTE1097->setToNode("Time_3");
+ROUTE1097->setToField("set_startTime");
+group->addChildren(*ROUTE1097);
+
+CROUTE* ROUTE1098 = new CROUTE();
+ROUTE1098->setFromNode("Time_3");
+ROUTE1098->setFromField("fraction_changed");
+ROUTE1098->setToNode("UnnamedTransformTranslationInterp_2");
+ROUTE1098->setToField("set_fraction");
+group->addChildren(*ROUTE1098);
+
+CROUTE* ROUTE1099 = new CROUTE();
+ROUTE1099->setFromNode("Time_3");
+ROUTE1099->setFromField("fraction_changed");
+ROUTE1099->setToNode("UnnamedTransformRotationInterp_2");
+ROUTE1099->setToField("set_fraction");
+group->addChildren(*ROUTE1099);
+
+CROUTE* ROUTE1100 = new CROUTE();
+ROUTE1100->setFromNode("UnnamedTransformTranslationInterp_2");
+ROUTE1100->setFromField("value_changed");
+ROUTE1100->setToNode("_45");
+ROUTE1100->setToField("set_translation");
+group->addChildren(*ROUTE1100);
+
+CROUTE* ROUTE1101 = new CROUTE();
+ROUTE1101->setFromNode("UnnamedTransformRotationInterp_2");
+ROUTE1101->setFromField("value_changed");
+ROUTE1101->setToNode("_45");
+ROUTE1101->setToField("set_rotation");
+group->addChildren(*ROUTE1101);
+
+CROUTE* ROUTE1102 = new CROUTE();
+ROUTE1102->setFromNode("UnnamedTransformTranslationInterp_1");
+ROUTE1102->setFromField("value_changed");
+ROUTE1102->setToNode("FlyAnim");
+ROUTE1102->setToField("set_translation");
+group->addChildren(*ROUTE1102);
+
+CROUTE* ROUTE1103 = new CROUTE();
+ROUTE1103->setFromNode("UnnamedTransformRotationInterp_1");
+ROUTE1103->setFromField("value_changed");
+ROUTE1103->setToNode("FlyAnim");
+ROUTE1103->setToField("set_rotation");
+group->addChildren(*ROUTE1103);
+
+CROUTE* ROUTE1104 = new CROUTE();
+ROUTE1104->setFromNode("enterWorldScript");
+ROUTE1104->setFromField("firstTime");
+ROUTE1104->setToNode("enterWorldTimeSensor");
+ROUTE1104->setToField("set_enabled");
+group->addChildren(*ROUTE1104);
+
+CROUTE* ROUTE1105 = new CROUTE();
+ROUTE1105->setFromNode("enterWorldTimeSensor");
+ROUTE1105->setFromField("time");
+ROUTE1105->setToNode("enterWorldScript");
+ROUTE1105->setToField("triggerIn");
+group->addChildren(*ROUTE1105);
+
+X3D0->setScene(*Scene8);
+
+m_pScene.addRootNode(group);
+X3D0->toXMLString();
+}

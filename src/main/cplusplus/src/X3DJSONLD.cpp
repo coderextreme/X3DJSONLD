@@ -255,7 +255,7 @@ void X3DJSONLD::convertProperty(DOMDocument * document, const char * key, JsonVa
 			} else {
 				cerr << "#comment is not an array or a string" << endl;
 			}
-		} else if (strcmp(key, "#sourceText") == 0) {
+		} else if (strcmp(key, "#sourceCode") == 0) {
 			CDATACreateFunction(document, element, get(object, key));
 		} else if (strcmp(key, "connect") == 0 || strcmp(key, "fieldValue") == 0 || strcmp(key, "field") == 0 || strcmp(key, "meta") == 0 || strcmp(key, "component") == 0 || strcmp(key, "unit") == 0) {
 			convertJsonArray(document, get(object, key), key, element, containerField);
@@ -426,7 +426,7 @@ void X3DJSONLD::convertJsonArray(DOMDocument * document, JsonValue array, const 
 	}
 	if (parentkey[0] == '@') {
 		elementSetVector(element, parentkey+1, localArray);
-	} else if (strcmp(parentkey, "#sourceText") == 0) {
+	} else if (strcmp(parentkey, "#sourceCode") == 0) {
 		CDATACreateFunction(document, element, array);
 	}
 }

@@ -112,8 +112,6 @@ public class flowers4
         .setGeometry(new IndexedFaceSet("Orbit").setDEF("Orbit").setConvex(false)
           .setCoord(new Coordinate("OrbitCoordinates")))))
     .addChild(new Script("OrbitScript").setSourceCode("""
-
-
 ecmascript:
 
 var e = 5;
@@ -185,7 +183,7 @@ function set_fraction(fraction, eventTime) {
 	var resolution = 100;
 	updateCoordinates(resolution);
 }
-      """)
+""")
       .addField(new field().setName("set_fraction").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTONLY))
       .addField(new field().setName("coordinates").setType(field.TYPE_MFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
       .addField(new field().setName("coordIndexes").setType(field.TYPE_MFINT32).setAccessType(field.ACCESSTYPE_OUTPUTONLY)))

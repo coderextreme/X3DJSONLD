@@ -1,6 +1,4 @@
-#ifdef GL_ES
-  precision highp float;
-#endif
+precision highp float;
 
 /* from https://en.wikibooks.org/wiki/GLSL_Programming/Blender/Reflecting_Surfaces */
 attribute vec3 position;

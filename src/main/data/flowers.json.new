@@ -470,7 +470,7 @@
                         "@value": 0.5
                       }
                     ],
-                    "#sourceText": [
+                    "#sourceCode": [
                       "ecmascript:",
                       "",
                       "\t\t\tfunction initialize() {",

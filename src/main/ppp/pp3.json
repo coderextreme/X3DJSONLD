@@ -602,7 +602,7 @@
                       "@type": "MFString"
                     }
                   ],
-                  "#sourceText": [
+                  "#sourceCode": [
                     "",
                     "ecmascript:",
                     "",
@@ -632,7 +632,7 @@
                       "@type": "MFString"
                     }
                   ],
-                  "#sourceText": [
+                  "#sourceCode": [
                     "",
                     "ecmascript:",
                     "",
@@ -662,7 +662,7 @@
                       "@type": "MFString"
                     }
                   ],
-                  "#sourceText": [
+                  "#sourceCode": [
                     "",
                     "ecmascript:",
                     "",
@@ -1274,7 +1274,7 @@
                       "@type": "MFString"
                     }
                   ],
-                  "#sourceText": [
+                  "#sourceCode": [
                     "",
                     "ecmascript:",
                     "",
@@ -1304,7 +1304,7 @@
                       "@type": "MFString"
                     }
                   ],
-                  "#sourceText": [
+                  "#sourceCode": [
                     "",
                     "ecmascript:",
                     "",
@@ -1334,7 +1334,7 @@
                       "@type": "MFString"
                     }
                   ],
-                  "#sourceText": [
+                  "#sourceCode": [
                     "",
                     "ecmascript:",
                     "",
@@ -1951,7 +1951,7 @@
                       "@type": "MFString"
                     }
                   ],
-                  "#sourceText": [
+                  "#sourceCode": [
                     "",
                     "ecmascript:",
                     "",
@@ -1981,7 +1981,7 @@
                       "@type": "MFString"
                     }
                   ],
-                  "#sourceText": [
+                  "#sourceCode": [
                     "",
                     "ecmascript:",
                     "",
@@ -2011,7 +2011,7 @@
                       "@type": "MFString"
                     }
                   ],
-                  "#sourceText": [
+                  "#sourceCode": [
                     "",
                     "ecmascript:",
                     "",

@@ -146,7 +146,6 @@ public class BvhSeamless3dExport1
             .addConnect(new connect().setNodeField("startTime").setProtoField("startTime"))
             .addConnect(new connect().setNodeField("fraction_changed").setProtoField("slider"))))
         .addChild(new Script().setDirectOutput(true).setSourceCode("""
-          
 ecmascript:
 function initialize(){
 if(play==false){
@@ -194,8 +193,7 @@ play=false;
 }
 block=false;
 }
-
-        """)
+""")
           .addField(new field().setName("play").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(false))
           .addComments(" caught by VRML97..xslt ")
           .addField(new field().setName("pause").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(false))
@@ -283,7 +281,6 @@ block=false;
         .addChild(new OrientationInterpolator("oi_Neck").setKey(getoi_Neck_5_118_key()).setKeyValue(getoi_Neck_5_118_keyValue()))
         .addChild(new OrientationInterpolator("oi_Head").setKey(getoi_Head_5_119_key()).setKeyValue(getoi_Head_5_119_keyValue()))))
     .addChild(new Script("s03e13e80").setDirectOutput(true).setSourceCode("""
-      
 ecmascript:
 function f03e07a38(v){
 pi_Hips.set_fraction = v;
@@ -331,8 +328,7 @@ Neck.rotation = oi_Neck.value_changed;
 oi_Head.set_fraction = v;
 Head.rotation = oi_Head.value_changed;
 }
-
-    """)
+""")
       .addField(new field().setName("f03e07a38").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0))
       .addField(new field().setName("pi_Hips").setType(field.TYPE_SFNODE).setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
         .addChild(new PositionInterpolator().setUSE("pi_Hips")))

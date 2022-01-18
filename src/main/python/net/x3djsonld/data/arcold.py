@@ -79,9 +79,17 @@ newModel=X3D(profile='Immersive',version='3.3',
             field(name='translation',accessType='inputOutput',type='SFVec3f',value=(50,50,0)),
             field(name='old',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
             field(name='set_location',accessType='inputOnly',type='SFTime'),
-            field(name='keyValue',accessType='outputOnly',type='MFVec3f')]
-*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
-),
+            field(name='keyValue',accessType='outputOnly',type='MFVec3f')],
+
+            sourceCode="""
+ecmascript:
+		function set_location(value) {
+                    old = translation;
+		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
+                    keyValue = new MFVec3f([old, translation]);
+		    // Browser.println(translation);
+		}
+"""),
           TimeSensor(DEF='CL1',cycleInterval=3,loop=True),
           ROUTE(fromNode='CL1',fromField='cycleTime',toNode='MB1',toField='set_location'),
           ROUTE(fromNode='CL1',fromField='fraction_changed',toNode='PI1',toField='set_fraction'),
@@ -114,9 +122,53 @@ newModel=X3D(profile='Immersive',version='3.3',
             connect(nodeField='transnode',protoField='transnode'),
             connect(nodeField='rotscalenode',protoField='rotscalenode'),
             connect(nodeField='set_startpoint',protoField='set_startpoint'),
-            connect(nodeField='set_endpoint',protoField='set_endpoint')])
-*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
-)])),
+            connect(nodeField='set_endpoint',protoField='set_endpoint')]),
+
+          sourceCode="""
+ecmascript:
+        function recompute(startpoint,endpoint){
+	    if (typeof endpoint === 'undefined') {
+		return;
+	    }
+            var dif = endpoint.subtract(startpoint);
+            var dist = dif.length()*0.5;
+            var dif2 = dif.multiply(0.5);
+            var norm = dif.normalize();
+            var transl = startpoint.add(dif2);
+	    if (typeof Quaternion !== 'undefined') {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)
+		    };
+	    } else {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)
+		    };
+	    }
+	}
+	function recompute_and_route(startpoint, endpoint) {
+		var trafo = recompute(startpoint, endpoint);
+		if (typeof trafo !== 'undefined') {
+			transnode.translation = trafo.translation;
+			rotscalenode.rotation = trafo.rotation;
+			rotscalenode.scale = trafo.scale;
+		} else {
+			Browser.print("recompute returned undefined");
+		}
+	}
+        function initialize(){
+            recompute_and_route(startnode.translation,endnode.translation);
+        }
+        function set_startpoint(val,t){
+            recompute_and_route(val || startnode.translation,endnode.translation);
+        }
+        function set_endpoint(val,t){
+            recompute_and_route(startnode.translation,val || endnode.translation);
+        }
+""")])),
     ProtoInstance(DEF='G1',name='point'),
     ProtoInstance(DEF='G2',name='point'),
     ProtoInstance(DEF='G3',name='point'),

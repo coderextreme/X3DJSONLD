@@ -175,7 +175,7 @@ class Scripts {
 	zapSource(object) {
 		if (typeof object === "object") {
 			for (p in object) {
-				if (p === '#sourceText') {
+				if (p === '#sourceCode') {
 					delete object[p];
 				} else {
 					zapSource(object[p]);
@@ -447,10 +447,10 @@ class Scripts {
 					// console.error("SCRIPT IS ",JSON.stringify(object[p]));
 					this.registerFields(object[p]['field'], classes, script);
 					this.processFields(object[p]['field'], classes, script, selector, url);
-					this.processSource(object[p]['#sourceText'], classes, script, selector, url);
+					this.processSource(object[p]['#sourceCode'], classes, script, selector, url);
 					this.realProcessScripts(object[p], classes, script, routecode, loopItems, selector, url);
 					// zap original source because we don't need it
-					// delete object[p]['#sourceText'];
+					// delete object[p]['#sourceCode'];
 				} else if (p.toLowerCase() === 'route') {
 					this.processRoute(object[p], routecode, mypackage, loopItems, selector, url);
 				} else if (p.toLowerCase() === '@use') {

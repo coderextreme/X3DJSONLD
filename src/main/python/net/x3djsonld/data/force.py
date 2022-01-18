@@ -64,9 +64,17 @@ newModel=X3D(profile='Immersive',version='3.3',
             field(name='translation',accessType='inputOutput',type='SFVec3f',value=(50,50,0)),
             field(name='old',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
             field(name='set_cycle',accessType='inputOnly',type='SFTime'),
-            field(name='keyValue',accessType='outputOnly',type='MFVec3f')]
-*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
-),
+            field(name='keyValue',accessType='outputOnly',type='MFVec3f')],
+
+            sourceCode="""
+ecmascript:
+					function set_cycle(value) {
+                                                old = translation;
+						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
+                                                keyValue = new MFVec3f([old, translation]);
+						// Browser.println(translation);
+					}
+"""),
           TimeSensor(DEF='nodeClock',cycleInterval=3,loop=True),
           ROUTE(fromNode='nodeClock',fromField='cycleTime',toNode='MoveBall',toField='set_cycle'),
           ROUTE(fromNode='nodeClock',fromField='fraction_changed',toNode='NodePosition',toField='set_fraction'),
@@ -93,9 +101,31 @@ newModel=X3D(profile='Immersive',version='3.3',
             IS=IS(
               connect=[
               connect(nodeField='set_endA',protoField='set_positionA'),
-              connect(nodeField='set_endB',protoField='set_positionB')])
-*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
-),
+              connect(nodeField='set_endB',protoField='set_positionB')]),
+
+            sourceCode="""
+ecmascript:
+
+                function set_endA(value) {
+		    if (typeof spine === 'undefined') {
+		        spine = new MFVec3f([value, value]);
+		    } else {
+		        spine = new MFVec3f([value, spine[1]]);
+		    }
+                }
+                
+                function set_endB(value) {
+		    if (typeof spine === 'undefined') {
+		        spine = new MFVec3f([value, value]);
+		    } else {
+		        spine = new MFVec3f([spine[0], value]);
+		    }
+                }
+                
+                function set_spine(value) {
+                    spine = value;
+                }
+"""),
           ROUTE(fromNode='MoveCylinder',fromField='spine',toNode='extrusion',toField='set_spine')])])),
     Transform(DEF='HoldsContent',scale=(0.1,0.1,0.1),
       children=[
@@ -134,9 +164,28 @@ newModel=X3D(profile='Immersive',version='3.3',
                 <Transform USE="HoldsContent"/>
             </field>
 	    
-      
-*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
-),
+      ,
+
+      sourceCode="""
+ecmascript:
+	function add_node(value) {
+                // Browser.print('hey ', counter);
+                counter = counter++;
+		Browser.appendTo(Browser.getDocument().querySelector("field [name=ModifiableNode]"),
+			{ "ProtoInstance":
+				{ "@name":"node",
+				  "@DEF":"node'+counter+'",
+				  "fieldValue": [
+					{
+						 "@name":"position",
+						 "@value":[0.0,0.0,0.0]
+					}
+				  ]
+				}
+			});
+                
+        }
+"""),
     ROUTE(fromNode='clickGenerator',fromField='isActive',toNode='clickHandler',toField='add_node'),
     ROUTE(fromNode='nodeA',fromField='position',toNode='linkA',toField='set_positionA'),
     ROUTE(fromNode='nodeB',fromField='position',toNode='linkA',toField='set_positionB'),

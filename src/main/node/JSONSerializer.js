@@ -73,9 +73,9 @@ function printSourceText(node, par, n) {
 	var cf = false;
 	if (par === "-children") {
 		cf = true;
-		str += '  '.repeat(n)+'{ "#sourceText":';
+		str += '  '.repeat(n)+'{ "#sourceCode":';
 	} else if (par === "") {
-		str += '  '.repeat(n)+'"#sourceText":';
+		str += '  '.repeat(n)+'"#sourceCode":';
 	}
 	str +=  '["'+node.nodeValue.split("\r\n").map(function(x) { return x.replace(/"/g, '\\"').replace(/\t/g, '\\t'); }).join('",\n"')+'"]';
 	if (cf) {

@@ -46,9 +46,17 @@ newModel=X3D(profile='Immersive',version='3.3',
         field(name='translation',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
         field(name='old',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
         field(name='set_location',accessType='inputOnly',type='SFTime'),
-        field(name='keyValue',accessType='inputOutput',type='MFVec3f',value=[(0,0,0),(0,5,0)])]
-*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
-),
+        field(name='keyValue',accessType='inputOutput',type='MFVec3f',value=[(0,0,0),(0,5,0)])],
+
+        sourceCode="""
+ecmascript:
+		function set_location(value) {
+                    old = translation;
+		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
+                    keyValue = new MFVec3f([old, translation]);
+		    // Browser.println(keyValue);
+		}
+"""),
       TimeSensor(DEF='DECLpoint_G1_CL1',cycleInterval=3,loop=True),
       ROUTE(fromNode='DECLpoint_G1_CL1',fromField='cycleTime',toNode='DECLpoint_G1_MB1',toField='set_location'),
       ROUTE(fromNode='DECLpoint_G1_CL1',fromField='fraction_changed',toNode='DECLpoint_G1_PI1',toField='set_fraction'),
@@ -66,9 +74,17 @@ newModel=X3D(profile='Immersive',version='3.3',
         field(name='translation',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
         field(name='old',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
         field(name='set_location',accessType='inputOnly',type='SFTime'),
-        field(name='keyValue',accessType='inputOutput',type='MFVec3f',value=[(0,0,0),(0,5,0)])]
-*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
-),
+        field(name='keyValue',accessType='inputOutput',type='MFVec3f',value=[(0,0,0),(0,5,0)])],
+
+        sourceCode="""
+ecmascript:
+		function set_location(value) {
+                    old = translation;
+		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
+                    keyValue = new MFVec3f([old, translation]);
+		    // Browser.println(keyValue);
+		}
+"""),
       TimeSensor(DEF='DECLpoint_G2_CL1',cycleInterval=3,loop=True),
       ROUTE(fromNode='DECLpoint_G2_CL1',fromField='cycleTime',toNode='DECLpoint_G2_MB1',toField='set_location'),
       ROUTE(fromNode='DECLpoint_G2_CL1',fromField='fraction_changed',toNode='DECLpoint_G2_PI1',toField='set_fraction'),
@@ -99,9 +115,56 @@ newModel=X3D(profile='Immersive',version='3.3',
           children=[
           Transform(USE='DECLx3dconnector_connector1_rotscale')]),
         field(name='set_startpoint',accessType='inputOnly',type='SFVec3f'),
-        field(name='set_endpoint',accessType='inputOnly',type='SFVec3f')]
-*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
-)]),
+        field(name='set_endpoint',accessType='inputOnly',type='SFVec3f')],
+
+        sourceCode="""
+ecmascript:
+        function recompute(startpoint,endpoint){
+	    if (typeof endpoint === 'undefined') {
+		return;
+	    }
+            var dif = endpoint.subtract(startpoint);
+            var dist = dif.length()*0.5;
+            var dif2 = dif.multiply(0.5);
+            var norm = dif.normalize();
+            var transl = startpoint.add(dif2);
+	    if (typeof Quaternion !== 'undefined') {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)
+		    };
+	    } else if (typeof SFRotation !== 'undefined') {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)
+		    };
+	    } else {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl
+		    };
+	    }
+	}
+	function recompute_and_route(startpoint, endpoint) {
+	      var trafo = recompute(startpoint, endpoint);
+	      if (trafo) {
+		      position.translation = trafo.translation;
+		      rotscale.rotation = trafo.rotation;
+		      rotscale.scale = trafo.scale;
+	      }
+	}
+        function initialize(){
+            recompute_and_route(startnode.translation,endnode.translation);
+        }
+        function set_startpoint(val,t){
+            recompute_and_route(val,endnode.translation);
+        }
+        function set_endpoint(val,t){
+            recompute_and_route(startnode.translation,val);
+        }
+""")]),
     ROUTE(fromNode='DECLpoint_G1_node',fromField='translation',toNode='DECLx3dconnector_connector1_S1',toField='set_startpoint'),
     ROUTE(fromNode='DECLpoint_G2_node',fromField='translation',toNode='DECLx3dconnector_connector1_S1',toField='set_endpoint')])
 ) # X3D model complete

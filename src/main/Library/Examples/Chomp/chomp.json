@@ -3,7 +3,7 @@
     "@profile":"Full",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"24 November 2021"
+            "@content":"17 January 2022"
           },
           {
             "@name":"generator",
@@ -228,7 +228,7 @@
                   "@type":"SFTime"
                 }
               ],
-              "#sourceText":[
+              "#sourceCode":[
 "",
 "javascript:",
 "\t\tfunction inputFraction(f, time){",
@@ -285,7 +285,7 @@
           { "NavigationInfo":
             {
               "@DEF":"NavInfo01",
-              "@type":[", ","FLY, ","WALKEXAMINE"],
+              "@type":"\"FLY\", \"WALK\", \"EXAMINE\"",
               "@avatarSize":[1.4,1,0.75],
               "@speed":7.5,
               "@headlight":false,
@@ -1134,7 +1134,7 @@
                   "@type":"SFFloat"
                 }
               ],
-              "#sourceText":[
+              "#sourceCode":[
 "",
 "javascript:",
 "    function fractionIn(i) {",
@@ -2426,7 +2426,7 @@
                   "@type":"SFBool"
                 }
               ],
-              "#sourceText":[
+              "#sourceCode":[
 "",
 "javascript:",
 "\t\tfunction beingEaten(input) {",
@@ -3297,7 +3297,7 @@
                   "@type":"SFBool"
                 }
               ],
-              "#sourceText":[
+              "#sourceCode":[
 "",
 "javascript:",
 "\t\tfunction beingEaten(input) {",
@@ -4026,7 +4026,7 @@
                   "@type":"SFTime"
                 }
               ],
-              "#sourceText":[
+              "#sourceCode":[
 "",
 "javascript:",
 "\t\tfunction beingEaten (input){",
@@ -4267,7 +4267,7 @@
                   "@type":"SFTime"
                 }
               ],
-              "#sourceText":[
+              "#sourceCode":[
 "",
 "javascript:",
 "\t\tfunction beingEaten (input){",
@@ -4368,7 +4368,7 @@
                   "@type":"SFFloat"
                 }
               ],
-              "#sourceText":[
+              "#sourceCode":[
 "",
 "javascript:",
 "    function fractionIn(i) {",
@@ -6304,7 +6304,7 @@
                   "@type":"SFInt32"
                 }
               ],
-              "#sourceText":[
+              "#sourceCode":[
 "",
 "javascript:",
 "\t\tfunction testEnd(input){",
@@ -6467,7 +6467,7 @@
                   "@value":4
                 }
               ],
-              "#sourceText":[
+              "#sourceCode":[
 "",
 "javascript:",
 "\t\tfunction endVisible() {",
@@ -6545,7 +6545,7 @@
                   "@type":"SFTime"
                 }
               ],
-              "#sourceText":[
+              "#sourceCode":[
 "",
 "javascript:",
 "\t\tfunction startBoom(boom, time){",
@@ -6634,7 +6634,7 @@
                   "@type":"SFTime"
                 }
               ],
-              "#sourceText":[
+              "#sourceCode":[
 "",
 "javascript:",
 "\t\tfunction fishBurp(input, time) {",
@@ -6716,7 +6716,7 @@
                   "@type":"SFBool"
                 }
               ],
-              "#sourceText":[
+              "#sourceCode":[
 "",
 "javascript:",
 "\t\tfunction eyeClick() {",

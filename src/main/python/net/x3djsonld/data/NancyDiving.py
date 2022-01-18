@@ -419,9 +419,36 @@ newModel=X3D(profile='Immersive',version='3.3',
       field(accessType='inputOnly',name='set_rotationLeft',type='SFRotation'),
       field(accessType='inputOnly',name='set_rotationRight',type='SFRotation'),
       field(accessType='outputOnly',name='finWarpLeft',type='SFBool'),
-      field(accessType='outputOnly',name='finWarpRight',type='SFBool')]
-*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
-),
+      field(accessType='outputOnly',name='finWarpRight',type='SFBool')],
+
+      sourceCode="""
+ecmascript:
+function set_rotationLeft(rotationValue, timeStamp)
+{
+	if (rotationValue[0] <= 0)
+	{
+		finWarpLeft = false;
+	}
+	else
+	{
+		finWarpLeft = true;
+	}
+//	print ('Left  rotationValue[0] ' + rotationValue[0] + ', finWarpLeft=' + finWarpLeft);
+}
+
+function set_rotationRight(rotationValue, timeStamp)
+{
+	if (rotationValue[0] <= 0)
+	{
+		finWarpRight = false;
+	}
+	else
+	{
+		finWarpRight = true;
+	}
+//	print ('Right rotationValue[0] ' + rotationValue[0] + ', finWarpRight=' + finWarpRight);
+}
+"""),
     #  Fins animation 
     ProximitySensor(DEF='FinTriggerProximitySensor',size=(15,15,15)),
     TimeSensor(DEF='FinClock',cycleInterval=7.0,loop=True),
@@ -436,9 +463,101 @@ newModel=X3D(profile='Immersive',version='3.3',
         field(accessType='inputOnly',name='finR',type='SFBool'),
         field(accessType='initializeOnly',name='finWarpL',type='SFInt32',value=0),
         field(accessType='initializeOnly',name='finWarpR',type='SFInt32',value=0),
-        field(accessType='initializeOnly',name='traceEnabled',type='SFBool',value=False)]
-*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
-),
+        field(accessType='initializeOnly',name='traceEnabled',type='SFBool',value=False)],
+
+        sourceCode="""
+ecmascript:
+function finL(value, timeStamp)
+{
+	if (value == 0)
+	{
+		finWarpL = 0;
+	}
+	else
+	{
+		finWarpL = 1;
+	}
+	//print ('finWarpL' + finWarpL);
+}
+
+function finR(value, timeStamp)
+{
+	if (value == 0)
+	{
+		finWarpR = 0;
+	}
+	else
+	{
+		finWarpR = 1;
+	}
+	//print ('finWarpR' + finWarpR);
+}
+function finMove(fraction, timeStamp)
+ {
+	if (finWarpL == 1)
+	{
+		// level 3 (warp outside) Left
+		kVL7 = new SFVec3f(1.25, 0, 25);
+		kVL8 = new SFVec3f(2.5, 0, 30);
+ 		kVL9 = new SFVec3f(3.25, 0, 34);
+	}
+	else
+	{
+		// level -2 (warp inside) Left
+		kVL7 = new SFVec3f(-1.25, 0, 25);
+		kVL8 = new SFVec3f(-2.5, 0, 30);
+ 		kVL9 = new SFVec3f(-3.25, 0, 34);
+	}
+
+	if (finWarpR == 0)
+	{
+		// level  1 (warp outside ) Right
+		kVR7 = new SFVec3f(1.25, 0, 25);
+		kVR8 = new SFVec3f(2.5, 0, 30);
+ 		kVR9 = new SFVec3f(3.25, 0, 34);
+
+	}
+	else
+	{
+		// level  -2 ( warp inside) Right
+		kVR7 = new SFVec3f(-1.25, 0, 25);
+		kVR8 = new SFVec3f(-2.5, 0, 30);
+ 		kVR9 = new SFVec3f(-3.25, 0, 34);
+	}
+
+	// Left Fin (fixed spine)
+	kVL1 = new SFVec3f(0, 0, 1);
+	kVL2 = new SFVec3f(0, 0, 5);
+	kVL3 = new SFVec3f(0, 0, 8);
+	kVL4 = new SFVec3f(0, 0, 12);
+	kVL5 = new SFVec3f(0, 0, 15);
+	kVL6 = new SFVec3f(0, 0, 18);
+	keyValueLeft = new MFVec3f(kVL1, kVL2, kVL3, kVL4, kVL5, kVL6, kVL7, kVL8, kVL9);
+
+	// Right Fin (fixed spine)
+	kVR1 = new SFVec3f(0, 0, 1);
+	kVR2 = new SFVec3f(0, 0, 5);
+	kVR3 = new SFVec3f(0, 0, 8);
+	kVR4 = new SFVec3f(0, 0, 12);
+	kVR5 = new SFVec3f(0, 0, 15);
+	kVR6 = new SFVec3f(0, 0, 18);
+	keyValueRight = new MFVec3f(kVR1, kVR2, kVR3, kVR4, kVR5, kVR6, kVR7, kVR8, kVR9);
+
+	//tracePrint ('keyValueLeft =' + keyValueLeft);
+	//tracePrint ('keyValueRight=' + keyValueRight);
+}
+
+function set_fraction (value, timeStamp)
+{
+	finMove(value);
+	//tracePrint('time fraction =' + value);
+}
+
+function tracePrint (outputString)
+{
+	if (traceEnabled) Browser.print ('[Fin Move]' + outputString);
+}
+"""),
       ROUTE(fromField='finWarpLeft',fromNode='finWarpScript',toField='finL',toNode='FinScript'),
       ROUTE(fromField='finWarpRight',fromNode='finWarpScript',toField='finR',toNode='FinScript'),
       ROUTE(fromField='isActive',fromNode='FinTriggerProximitySensor',toField='enabled',toNode='FinClock'),

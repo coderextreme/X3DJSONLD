@@ -86,7 +86,6 @@ public class extrusion
           .setMaterial(new Material().setDiffuseColor(0.0,1.0,0.0))))
       .addChild(new TimeSensor("TourTime").setLoop(true))
       .addChild(new Script("MoveCylinder").setSourceCode("""
-
 ecmascript:
 
                 function set_cycle(value) {
@@ -95,8 +94,7 @@ ecmascript:
                         var endB = new SFVec3f(spine[1].x*Math.random()*2, spine[1].y*Math.random()*2, spine[1].z*Math.random()*2);
 		        spine = new MFVec3f([endA, endB]);
                 }
-
-                """)
+""")
         .addField(new field().setName("set_cycle").setType(field.TYPE_SFTIME).setAccessType(field.ACCESSTYPE_INPUTONLY))
         .addField(new field().setName("spine").setType(field.TYPE_MFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new MFVec3f(new MFVec3f(new double[] {-50.0,-50.0,0.0,50.0,50.0,0.0})))))
       .addChild(new ROUTE().setFromNode("TourTime").setFromField("cycleTime").setToNode("MoveCylinder").setToField("set_cycle"))

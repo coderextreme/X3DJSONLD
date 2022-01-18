@@ -221,7 +221,7 @@
                         "@type":"SFNode"
                       }
                     ],
-                    "#sourceText":[
+                    "#sourceCode":[
 "",
 "",
 "ecmascript:",

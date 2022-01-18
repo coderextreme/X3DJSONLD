@@ -106,21 +106,51 @@ newModel=X3D(profile='Immersive',version='3.3',
         Script(DEF='RightSingleToMultiString',
           field=[
           field(name='set_rightstring',accessType='inputOnly',type='SFString'),
-          field(name='rightlines',accessType='outputOnly',type='MFString')]
-*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
-),
+          field(name='rightlines',accessType='outputOnly',type='MFString')],
+
+          sourceCode="""
+ecmascript:
+
+function initialize() {
+	rightlines = new MFString("");
+}
+
+function set_rightstring(rightstr) {
+	rightlines = new MFString(rightstr);
+}
+"""),
         Script(DEF='UpSingleToMultiString',
           field=[
           field(name='set_upstring',accessType='inputOnly',type='SFString'),
-          field(name='uplines',accessType='outputOnly',type='MFString')]
-*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
-),
+          field(name='uplines',accessType='outputOnly',type='MFString')],
+
+          sourceCode="""
+ecmascript:
+
+function initialize() {
+	uplines = new MFString("");
+}
+
+function set_upstring(upstr) {
+	uplines = new MFString(upstr);
+}
+"""),
         Script(DEF='CenterSingleToMultiString',
           field=[
           field(name='set_centerstring',accessType='inputOnly',type='SFString'),
-          field(name='centerlines',accessType='outputOnly',type='MFString')]
-*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
-),
+          field(name='centerlines',accessType='outputOnly',type='MFString')],
+
+          sourceCode="""
+ecmascript:
+
+function initialize() {
+	centerlines = new MFString("");
+}
+
+function set_centerstring(centerstr) {
+	centerlines = new MFString(centerstr);
+}
+"""),
         ROUTE(fromField='enteredText',fromNode='CenterSensor',toField='set_centerstring',toNode='CenterSingleToMultiString'),
         ROUTE(fromField='centerlines',fromNode='CenterSingleToMultiString',toField='set_string',toNode='CenterString'),
         ROUTE(fromField='isOver',fromNode='CenterTouch',toField='set_enabled',toNode='CenterSensor'),

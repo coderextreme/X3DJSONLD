@@ -439,7 +439,7 @@
                 "@type": "SFVec3f"
               }
             ],
-            "#sourceText": [
+            "#sourceCode": [
               "",
               "            ecmascript:",
               "        function recompute(startpoint,endpoint){",
@@ -550,7 +550,7 @@
                 "@type": "SFVec3f"
               }
             ],
-            "#sourceText": [
+            "#sourceCode": [
               "",
               "            ecmascript:",
               "        function recompute(startpoint,endpoint){",
@@ -661,7 +661,7 @@
                 "@type": "SFVec3f"
               }
             ],
-            "#sourceText": [
+            "#sourceCode": [
               "",
               "            ecmascript:",
               "        function recompute(startpoint,endpoint){",

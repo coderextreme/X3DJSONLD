@@ -78,7 +78,7 @@ function resetCount(value, time)
  counterDisplay = new MFString(s);
 }]]></Script>
 </Transform>
-<Transform DEF="CAM"><NavigationInfo DEF="_exa" type="&quot;, &quot; &quot;ANYEXAMINE&quot;" visibilityLimit="450"></NavigationInfo>
+<Transform DEF="CAM"><NavigationInfo DEF="_exa" type="&quot;ANY&quot;, &quot;EXAMINE&quot;" visibilityLimit="450"></NavigationInfo>
 <Script DEF="_cam_draggerScript"><field name="cameraOUT" accessType="outputOnly" type="SFVec3f"></field>
 <field name="translation_animIN" accessType="inputOnly" type="SFVec3f"></field>
 <field name="translation_dragIN" accessType="inputOnly" type="SFVec3f"></field>

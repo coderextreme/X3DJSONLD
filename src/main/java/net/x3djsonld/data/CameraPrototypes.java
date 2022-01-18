@@ -185,7 +185,6 @@ public class CameraPrototypes
         .addChild(new ROUTE().setFromNode("CameraPositionInterpolator").setFromField("value_changed").setToNode("CameraViewpoint").setToField("position"))
         .addChild(new ROUTE().setFromNode("CameraOrientationInterpolator").setFromField("value_changed").setToNode("CameraViewpoint").setToField("orientation"))
         .addChild(new Script("CameraScript").setDirectOutput(true).setMustEvaluate(true).setSourceCode("""
-          
 ecmascript:
 function initialize () // CameraScript
 {
@@ -526,8 +525,7 @@ function alwaysPrint (outputValue)
     else
          Browser.print ('[Camera] ' + outputString + '\n');
 }
-
-        """)
+""")
           .addComments(" binding is controlled externally, all camera operations proceed the same regardless of whether bound or not ")
           .addField(new field().setName("description").setType(field.TYPE_SFSTRING).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Text description to be displayed for this Camera"))
           .addField(new field().setName("position").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Camera position in local transformation frame"))
@@ -609,7 +607,6 @@ function alwaysPrint (outputValue)
         .addField(new field().setName("traceEnabled").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(false).setAppinfo("enable console output to trace script computations and prototype progress")))
       .setProtoBody(new ProtoBody()
         .addChild(new Script("CameraShotScript").setDirectOutput(true).setMustEvaluate(true).setSourceCode("""
-          
 ecmascript:
 function initialize () // CameraShotScript
 {
@@ -703,8 +700,7 @@ function alwaysPrint (outputValue)
     else
          Browser.print ('[CameraShot] ' + outputString + '\n');
 }
-
-        """)
+""")
           .addField(new field().setName("description").setType(field.TYPE_SFSTRING).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Text description to be displayed for this CameraShot"))
           .addField(new field().setName("enabled").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Whether this CameraShot can be activated"))
           .addField(new field().setName("moves").setType(field.TYPE_MFNODE).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Set of CameraMovement nodes")
@@ -755,7 +751,6 @@ function alwaysPrint (outputValue)
         .addComments(" Subsequent nodes do not render, but still must be a valid X3D subgraph ")
         .addComments(" Script holds CameraMovement initialization values for query by parent CameraShot, and also permits changing values via events ")
         .addChild(new Script("CameraMovementScript").setDirectOutput(true).setMustEvaluate(true).setSourceCode("""
-          
 ecmascript:
 function initialize () // CameraMovementScript
 {
@@ -846,8 +841,7 @@ function alwaysPrint (outputValue)
     else
          Browser.print ('[CameraMovement] ' + outputString + '\n');
 }
-
-        """)
+""")
           .addField(new field().setName("description").setType(field.TYPE_SFSTRING).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Text description to be displayed for this CameraMovement"))
           .addField(new field().setName("enabled").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Whether this CameraMovement can be activated"))
           .addField(new field().setName("duration").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Duration in seconds for this move"))
@@ -893,7 +887,6 @@ function alwaysPrint (outputValue)
         .addComments(" First node determines node type of this prototype ")
         .addComments(" Subsequent nodes do not render, but still must be a valid X3D subgraph ")
         .addChild(new Script("OfflineRenderScript").setMustEvaluate(true).setSourceCode("""
-          
 ecmascript:
 function initialize () // OfflineRenderScript
 {
@@ -948,8 +941,7 @@ function alwaysPrint (outputValue)
     else
          Browser.print ('[OfflineRender] ' + outputString + '\n');
 }
-
-        """)
+""")
           .addField(new field().setName("description").setType(field.TYPE_SFSTRING).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Text description to be displayed for this OfflineRender"))
           .addField(new field().setName("enabled").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Whether this OfflineRender can be activated"))
           .addField(new field().setName("frameRate").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Frames per second recorded for this rendering"))

@@ -4,7 +4,7 @@
     "@profile": "Immersive",
     "@version": "4.0",
     "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-4.0.xsd",
-    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "component": [
         {
@@ -59,7 +59,7 @@
         },
         {
           "@name": "translated",
-          "@content": "09 December 2021"
+          "@content": "17 January 2022"
         },
         {
           "@name": "generator",
@@ -85,54 +85,54 @@
         },
         {
           "TextureBackground": {
-            "-left": {
+            "-leftTexture": {
               "ImageTexture": {
-                "@DEF": "leftBack",
+                "@DEF": "leftBackTexture",
                 "@url": [
                   "../resources/images/all_probes/beach_cross/beach_left.png",
                   "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"
                 ]
               }
             },
-            "-right": {
+            "-rightTexture": {
               "ImageTexture": {
-                "@DEF": "rightBack",
+                "@DEF": "rightBackTexture",
                 "@url": [
                   "../resources/images/all_probes/beach_cross/beach_right.png",
                   "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"
                 ]
               }
             },
-            "-front": {
+            "-frontTexture": {
               "ImageTexture": {
-                "@DEF": "frontBack",
+                "@DEF": "frontBackTexture",
                 "@url": [
                   "../resources/images/all_probes/beach_cross/beach_front.png",
                   "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"
                 ]
               }
             },
-            "-back": {
+            "-backTexture": {
               "ImageTexture": {
-                "@DEF": "backBack",
+                "@DEF": "backBackTexture",
                 "@url": [
                   "../resources/images/all_probes/beach_cross/beach_back.png",
                   "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"
                 ]
               }
             },
-            "-top": {
+            "-topTexture": {
               "ImageTexture": {
-                "@DEF": "topBack",
+                "@DEF": "topBackTexture",
                 "@url": [
                   "../resources/images/all_probes/beach_cross/beach_top.png",
                   "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"
                 ]
               }
             },
-            "-bottom": {
+            "-bottomTexture": {
               "ImageTexture": {
-                "@DEF": "bottomBack",
+                "@DEF": "bottomBackTexture",
                 "@url": [
                   "../resources/images/all_probes/beach_cross/beach_bottom.png",
                   "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"
@@ -164,7 +164,7 @@
                       },
                       "-texture": {
                         "ComposedCubeMapTexture": {
-                          "-back": {
+                          "-backTexture": {
                             "ImageTexture": {
                               "@DEF": "backShader",
                               "@url": [
@@ -173,7 +173,7 @@
                               ]
                             }
                           },
-                          "-bottom": {
+                          "-bottomTexture": {
                             "ImageTexture": {
                               "@DEF": "bottomShader",
                               "@url": [
@@ -182,7 +182,7 @@
                               ]
                             }
                           },
-                          "-front": {
+                          "-frontTexture": {
                             "ImageTexture": {
                               "@DEF": "frontShader",
                               "@url": [
@@ -191,7 +191,7 @@
                               ]
                             }
                           },
-                          "-left": {
+                          "-leftTexture": {
                             "ImageTexture": {
                               "@DEF": "leftShader",
                               "@url": [
@@ -200,7 +200,7 @@
                               ]
                             }
                           },
-                          "-right": {
+                          "-rightTexture": {
                             "ImageTexture": {
                               "@DEF": "rightShader",
                               "@url": [
@@ -209,7 +209,7 @@
                               ]
                             }
                           },
-                          "-top": {
+                          "-topTexture": {
                             "ImageTexture": {
                               "@DEF": "topShader",
                               "@url": [
@@ -503,7 +503,7 @@
                       "@value": -1
                     }
                   ],
-                  "#sourceText": [
+                  "#sourceCode": [
                     "",
                     "",
                     "ecmascript:",
@@ -547,7 +547,7 @@
                 "ROUTE": {
                   "@fromNode": "UrlSelector",
                   "@fromField": "front_changed",
-                  "@toNode": "frontBack",
+                  "@toNode": "frontBackTexture",
                   "@toField": "url"
                 }
               },
@@ -555,7 +555,7 @@
                 "ROUTE": {
                   "@fromNode": "UrlSelector",
                   "@fromField": "back_changed",
-                  "@toNode": "backBack",
+                  "@toNode": "backBackTexture",
                   "@toField": "url"
                 }
               },
@@ -563,7 +563,7 @@
                 "ROUTE": {
                   "@fromNode": "UrlSelector",
                   "@fromField": "left_changed",
-                  "@toNode": "leftBack",
+                  "@toNode": "leftBackTexture",
                   "@toField": "url"
                 }
               },
@@ -571,7 +571,7 @@
                 "ROUTE": {
                   "@fromNode": "UrlSelector",
                   "@fromField": "right_changed",
-                  "@toNode": "rightBack",
+                  "@toNode": "rightBackTexture",
                   "@toField": "url"
                 }
               },
@@ -579,7 +579,7 @@
                 "ROUTE": {
                   "@fromNode": "UrlSelector",
                   "@fromField": "top_changed",
-                  "@toNode": "topBack",
+                  "@toNode": "topBackTexture",
                   "@toField": "url"
                 }
               },
@@ -587,7 +587,7 @@
                 "ROUTE": {
                   "@fromNode": "UrlSelector",
                   "@fromField": "bottom_changed",
-                  "@toNode": "bottomBack",
+                  "@toNode": "bottomBackTexture",
                   "@toField": "url"
                 }
               },

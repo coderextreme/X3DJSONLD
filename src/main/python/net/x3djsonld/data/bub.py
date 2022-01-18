@@ -115,9 +115,35 @@ newModel=X3D(profile='Immersive',version='4.0',
           field=[
           field(name='translation',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
           field(name='velocity',accessType='inputOutput',type='SFVec3f',value=(0,0,0)),
-          field(name='set_fraction',accessType='inputOnly',type='SFTime')]
-*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
-),
+          field(name='set_fraction',accessType='inputOnly',type='SFTime')],
+
+          sourceCode="""
+ecmascript:
+			function initialize() {
+			    translation = new SFVec3f(0, 0, 0);
+			    velocity = new SFVec3f(
+			    	Math.random() - 0.5,
+				Math.random() - 0.5,
+				Math.random() - 0.5);
+			}
+			function set_fraction() {
+			    translation = new SFVec3f(
+			    	translation.x + velocity.x,
+				translation.y + velocity.y,
+				translation.z + velocity.z);
+			    if (Math.abs(translation.x) > 10) {
+				initialize();
+			    } else if (Math.abs(translation.y) > 10) {
+				initialize();
+			    } else if (Math.abs(translation.z) > 10) {
+				initialize();
+			    } else {
+				velocity.x += Math.random() * 0.2 - 0.1;
+				velocity.y += Math.random() * 0.2 - 0.1;
+				velocity.z += Math.random() * 0.2 - 0.1;
+			    }
+			}
+"""),
         TimeSensor(DEF='TourTime',cycleInterval=0.150,loop=True),
         ROUTE(fromNode='TourTime',fromField='cycleTime',toNode='Bounce',toField='set_fraction'),
         ROUTE(fromNode='Bounce',fromField='translation_changed',toNode='transform',toField='set_translation')])),

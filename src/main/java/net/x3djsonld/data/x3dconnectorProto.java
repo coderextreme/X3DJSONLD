@@ -140,7 +140,7 @@ public class x3dconnectorProto
         .addField(new field().setName("set_endpoint").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTONLY)))
       .setProtoBody(new ProtoBody()
         .addChild(new Script("S1").setSourceCode("""
-            ecmascript:
+ecmascript:
         function recompute(startpoint,endpoint){
 	    if (typeof endpoint === 'undefined') {
 		return;
@@ -181,8 +181,7 @@ public class x3dconnectorProto
         function set_endpoint(val,t){
             recompute_and_route(startnode.translation,val);
         }
-            
-        """)
+""")
           .addField(new field().setName("startnode").setType(field.TYPE_SFNODE).setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
           .addField(new field().setName("endnode").setType(field.TYPE_SFNODE).setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
           .addField(new field().setName("transnode").setType(field.TYPE_SFNODE).setAccessType(field.ACCESSTYPE_INITIALIZEONLY))

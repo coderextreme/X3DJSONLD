@@ -4,7 +4,7 @@
     "@profile": "Immersive",
     "@version": "4.0",
     "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-4.0.xsd",
-    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "-children": [
       {
         "#comment": "x3dVersionComparisonTest for this model: supportsX3dVersion(X3D.VERSION_3_0)=true"
@@ -75,7 +75,7 @@
       "meta": [
         {
           "@name": "title",
-          "@content": "HelloWorldProgramOutput.x3d"
+          "@content": "Json.x3d"
         },
         {
           "@name": "info",
@@ -167,7 +167,7 @@
         },
         {
           "@name": "translated",
-          "@content": "09 December 2021"
+          "@content": "17 January 2022"
         },
         {
           "@name": "generator",
@@ -458,31 +458,29 @@
                           "#comment": "Comment example B, XML character entities: He said, &quot;Immel did it!&quot;"
                         }
                       ],
-                      "-value": [
-                        {
-                          "MetadataSet": {
-                            "@name": "EscapedQuotationMarksMetadataSet",
-                            "-value": [
-                              {
-                                "MetadataString": {
-                                  "@name": "quotesTestC",
-                                  "@value": [
-                                    "MFString example C, backslash-escaped quotes: He said, \"Immel did it!\""
-                                  ]
-                                }
-                              },
-                              {
-                                "MetadataString": {
-                                  "@name": "extraChildTest",
-                                  "@value": [
-                                    "checks MetadataSetObject addValue() method"
-                                  ]
-                                }
+                      "-metadata": {
+                        "MetadataSet": {
+                          "@name": "EscapedQuotationMarksMetadataSet",
+                          "-value": [
+                            {
+                              "MetadataString": {
+                                "@name": "quotesTestC",
+                                "@value": [
+                                  "MFString example C, backslash-escaped quotes: He said, \"Immel did it!\""
+                                ]
                               }
-                            ]
-                          }
+                            },
+                            {
+                              "MetadataString": {
+                                "@name": "extraChildTest",
+                                "@value": [
+                                  "checks MetadataSetObject addValue() method"
+                                ]
+                              }
+                            }
+                          ]
                         }
-                      ],
+                      },
                       "-fontStyle": {
                         "FontStyle": {
                           "@justify": [
@@ -618,7 +616,7 @@
                       "@type": "MFColor"
                     }
                   ],
-                  "#sourceText": [
+                  "#sourceCode": [
                     "",
                     "",
                     "ecmascript:",
@@ -898,7 +896,7 @@
                                   "@type": "SFTime"
                                 }
                               ],
-                              "#sourceText": [
+                              "#sourceCode": [
                                 "",
                                 "",
                                 "ecmascript:",

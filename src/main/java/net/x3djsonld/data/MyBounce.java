@@ -109,9 +109,7 @@ ecmascript:
 			function initialize() {
 			     newBubble();
 			}
-
-
-                """)
+""")
       .addField(new field().setName("set_translation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTONLY).setValue(new SFVec3f(0.0,0.0,0.0)))
       .addField(new field().setName("translation_changed").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_OUTPUTONLY).setValue(new SFVec3f(0.0,0.0,0.0)))
       .addField(new field().setName("translation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))

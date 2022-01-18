@@ -130,7 +130,7 @@ test_json =
                                   "@type":"SFFloat"
                                 }
                               ],
-                              "#sourceText":[
+                              "#sourceCode":[
 "ecmascript:",
 "function initialize() {",
 "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);",

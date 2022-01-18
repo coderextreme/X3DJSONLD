@@ -119,7 +119,7 @@
                                   "@type":"SFFloat"
                                 }
                               ],
-                              "#sourceText":[
+                              "#sourceCode":[
 "",
 "ecmascript:",
 "function initialize() {",

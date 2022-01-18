@@ -581,7 +581,7 @@
                       "@type": "MFColor"
                     }
                   ],
-                  "#sourceText": [
+                  "#sourceCode": [
                     "",
                     "",
                     "",
@@ -863,7 +863,7 @@
                                   "@type": "SFTime"
                                 }
                               ],
-                              "#sourceText": [
+                              "#sourceCode": [
                                 "",
                                 "",
                                 "",

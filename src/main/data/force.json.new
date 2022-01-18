@@ -214,7 +214,7 @@
                               "@type": "MFVec3f"
                             }
                           ],
-                          "#sourceText": [
+                          "#sourceCode": [
                             "ecmascript:",
                             "\t\t\t\t\tfunction set_cycle(value) {",
                             "                                                old = translation;",
@@ -404,7 +404,7 @@
                               }
                             ]
                           },
-                          "#sourceText": [
+                          "#sourceCode": [
                             "ecmascript:",
                             "",
                             "                function set_endA(value) {",
@@ -633,7 +633,7 @@
                 "#comment": "<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>"
               }
             ],
-            "#sourceText": [
+            "#sourceCode": [
               "ecmascript:",
               "\tfunction add_node(value) {",
               "                // Browser.print('hey ', counter);",

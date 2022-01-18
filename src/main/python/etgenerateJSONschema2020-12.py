@@ -482,14 +482,14 @@ class ClassPrinter:
                                                 "type": "string"
                                         }
                                 },
-                                "#sourceText": {
-                                        "type": "array",
-                                        "minItems": 1,
-                                        "items": {
-                                                "type": "string"
-                                        }
-                                },
 '''
+        #                        "#sourceText": {
+        #                                "type": "array",
+        #                                "minItems": 1,
+        #                                "items": {
+        #                                        "type": "string"
+        #                                }
+        #                        },
         if foundFieldDeclaration:
             str += '''\
                                 "field": {

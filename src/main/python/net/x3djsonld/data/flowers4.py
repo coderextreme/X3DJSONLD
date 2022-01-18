@@ -70,9 +70,81 @@ newModel=X3D(profile='Immersive',version='4.0',
       field=[
       field(accessType='inputOnly',name='set_fraction',type='SFFloat'),
       field(accessType='inputOutput',name='coordinates',type='MFVec3f'),
-      field(accessType='outputOnly',name='coordIndexes',type='MFInt32')]
-*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
-),
+      field(accessType='outputOnly',name='coordIndexes',type='MFInt32')],
+
+      sourceCode="""
+ecmascript:
+
+var e = 5;
+var f = 5;
+var g = 5;
+var h = 5;
+
+function initialize() {
+     var resolution = 100;
+     updateCoordinates(resolution);
+     var cis = [];
+     for ( i = 0; i < resolution-1; i++) {
+     	for ( j = 0; j < resolution-1; j++) {
+	     cis.push(i*resolution+j);
+	     cis.push(i*resolution+j+1);
+	     cis.push((i+1)*resolution+j+1);
+	     cis.push((i+1)*resolution+j);
+	     cis.push(-1);
+	}
+    }
+    coordIndexes = new MFInt32(cis);
+}
+
+function updateCoordinates(resolution) {
+     var theta = 0.0;
+     var phi = 0.0;
+     var delta = (2 * 3.141592653) / (resolution-1);
+     var crds = [];
+     for ( i = 0; i < resolution; i++) {
+     	for ( j = 0; j < resolution; j++) {
+		var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
+		crds.push(new SFVec3f(
+			rho * Math.cos(phi) * Math.cos(theta),
+			rho * Math.cos(phi) * Math.sin(theta),
+			rho * Math.sin(phi)
+		));
+		theta += delta;
+	}
+	phi += delta;
+     }
+     coordinates = new MFVec3f(crds);
+}
+
+function set_fraction(fraction, eventTime) {
+	var choice = Math.floor(Math.random() * 4);
+	switch (choice) {
+	case 0:
+		e += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 1:
+		f += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 2:
+		g += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	case 3:
+		h += Math.floor(Math.random() * 2) * 2 - 1;
+		break;
+	}
+	if (f < 1) {
+		f = 10;
+	}
+	if (g < 1) {
+		g = 4;
+	}
+	if (h < 1) {
+		h = 4;
+	}
+	var resolution = 100;
+	updateCoordinates(resolution);
+}
+"""),
     TimeSensor(DEF='Clock',cycleInterval=16,loop=True),
     ROUTE(fromField='coordIndexes',fromNode='OrbitScript',toField='set_coordIndex',toNode='Orbit'),
     ROUTE(fromField='coordinates',fromNode='OrbitScript',toField='set_point',toNode='OrbitCoordinates'),

@@ -178,7 +178,7 @@ public class BindingOperations
       .addChild(new IntegerSequencer("TimingSequencer").setKey(new double[] {0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,1.0}).setKeyValue(new int[] {0,1,2,3,4,5,6,7,8,10}))
       .addChild(new ROUTE().setFromNode("Clock").setFromField("fraction_changed").setToNode("TimingSequencer").setToField("set_fraction"))
       .addChild(new Script("BindingSequencerEngine").setSourceCode("""
-        ecmascript:
+ecmascript:
 
 function initialize ()
 {
@@ -266,8 +266,7 @@ function view5Bound (inputValue)
 {
     Browser.print (', view5Bound ' + (inputValue));
 }
-
-      """)
+""")
         .addField(new field().setName("set_timeEvent").setType(field.TYPE_SFINT32).setAccessType(field.ACCESSTYPE_INPUTONLY))
         .addField(new field().setName("bindView1").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
         .addField(new field().setName("bindView2").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_OUTPUTONLY))

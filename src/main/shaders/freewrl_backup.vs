@@ -1,3 +1,5 @@
+precision highp float;
+
 /*
 The MIT License (MIT)
 Copyright (c) 2011 Authors of J3D. All rights reserved.

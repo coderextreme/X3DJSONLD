@@ -3,7 +3,7 @@
     "@profile":"Full",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -40,7 +40,7 @@
           },
           {
             "@name":"translated",
-            "@content":"24 November 2021"
+            "@content":"17 January 2022"
           },
           {
             "@name":"generator",
@@ -304,7 +304,7 @@
           },
           { "NavigationInfo":
             {
-              "@type":["NONE"]
+              "@type":"\"NONE\""
             }
           },
           { "LayerSet":
@@ -803,7 +803,7 @@
                                                       ]
                                                     }
                                                   ],
-                                                  "#sourceText":[
+                                                  "#sourceCode":[
 "",
 "vrmlscript:",
 "function initialize ()",
@@ -837,7 +837,7 @@
           { "Script":
             {
               "@DEF":"EnterWorld",
-              "#sourceText":[
+              "#sourceCode":[
 "",
 "ecmascript:",
 "function initialize ()",

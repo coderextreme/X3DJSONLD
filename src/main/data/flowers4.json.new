@@ -279,7 +279,7 @@
                 "@type": "MFInt32"
               }
             ],
-            "#sourceText": [
+            "#sourceCode": [
               "ecmascript:",
               "",
               "var e = 5;",

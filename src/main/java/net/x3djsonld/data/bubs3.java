@@ -85,7 +85,6 @@ public class bubs3
         .setAppearance(new Appearance()
           .setMaterial(new Material().setDiffuseColor(1.0,0.0,0.0).setTransparency(0.2))))
       .addChild(new Script("DECLBubble_bubbleA_bounce").setSourceCode("""
- 
 ecmascript:
 function initialize() {
     velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
@@ -125,9 +124,7 @@ function set_fraction(value) {
 	initialize();
     }
 }
-
-			
- """)
+""")
         .addField(new field().setName("scale").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(1.0,1.0,1.0)))
         .addField(new field().setName("translation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
         .addField(new field().setName("velocity").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
@@ -143,7 +140,6 @@ function set_fraction(value) {
         .setAppearance(new Appearance()
           .setMaterial(new Material().setDiffuseColor(1.0,0.0,0.0).setTransparency(0.2))))
       .addChild(new Script("DECLBubble_bubbleB_bounce").setSourceCode("""
- 
 ecmascript:
 function initialize() {
     velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
@@ -183,9 +179,7 @@ function set_fraction(value) {
 	initialize();
     }
 }
-
-			
- """)
+""")
         .addField(new field().setName("scale").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(1.0,1.0,1.0)))
         .addField(new field().setName("translation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
         .addField(new field().setName("velocity").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
@@ -201,7 +195,6 @@ function set_fraction(value) {
         .setAppearance(new Appearance()
           .setMaterial(new Material().setDiffuseColor(1.0,0.0,0.0).setTransparency(0.2))))
       .addChild(new Script("DECLBubble_bubbleC_bounce").setSourceCode("""
- 
 ecmascript:
 function initialize() {
     velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
@@ -241,9 +234,7 @@ function set_fraction(value) {
 	initialize();
     }
 }
-
-			
- """)
+""")
         .addField(new field().setName("scale").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(1.0,1.0,1.0)))
         .addField(new field().setName("translation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
         .addField(new field().setName("velocity").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
@@ -259,7 +250,6 @@ function set_fraction(value) {
         .setAppearance(new Appearance()
           .setMaterial(new Material().setDiffuseColor(1.0,0.0,0.0).setTransparency(0.2))))
       .addChild(new Script("DECLBubble_bubbleD_bounce").setSourceCode("""
- 
 ecmascript:
 function initialize() {
     velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
@@ -299,9 +289,7 @@ function set_fraction(value) {
 	initialize();
     }
 }
-
-			
- """)
+""")
         .addField(new field().setName("scale").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(1.0,1.0,1.0)))
         .addField(new field().setName("translation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
         .addField(new field().setName("velocity").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))

@@ -272,7 +272,6 @@ public class AllenStandShootRifleM24
                               .addChild(new Transform().setRotation(1.0,0.0,0.0,1.35).setTranslation(2.4,-5.86,0.11)
                                 .addChild(new ProtoInstance("RifleM24", "rifleM24").setContainerField("children"))
                                 .addChild(new Script("FireScript").setSourceCode("""
-                                  
 ecmascript:
 
 function enabled (value, timeStamp)
@@ -281,8 +280,7 @@ function enabled (value, timeStamp)
         if (value == true)
            fire = value;
 }
-
-                                """)
+""")
                                   .addField(new field().setName("fire").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
                                   .addField(new field().setName("enabled").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_INPUTONLY)))
                                 .addChild(new TouchSensor("FireTouchSensor").setDescription("click to fire"))
