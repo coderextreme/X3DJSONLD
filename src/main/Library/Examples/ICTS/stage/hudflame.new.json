@@ -133,7 +133,7 @@
                               "@type":"SFTime"
                             }
                           ],
-                          "#sourceText":[
+                          "#sourceCode":[
 "",
 "",
 "vrmlscript:",
@@ -533,7 +533,7 @@
                   "@type":"SFTime"
                 }
               ],
-              "#sourceText":[
+              "#sourceCode":[
 "",
 "",
 "vrmlscript:function triggerIn(value, time) {",

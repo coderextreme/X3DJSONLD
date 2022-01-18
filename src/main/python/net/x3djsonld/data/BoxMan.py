@@ -351,9 +351,12 @@ newModel=X3D(profile='Immersive',version='3.3',
         ),
       field(accessType='initializeOnly',name='translation',type='SFVec3f',value=(0,0,0)),
       field(accessType='initializeOnly',name='rotation',type='SFRotation',value=(1,0,0,0)),
-      field(accessType='initializeOnly',name='scale',type='SFVec3f',value=(1,1,1))]
-*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
-)]
+      field(accessType='initializeOnly',name='scale',type='SFVec3f',value=(1,1,1))],
+
+      sourceCode="""
+ecmascript:
+
+""")]
     #  Trigger calculation after each animation change 
     #  <ROUTE fromField='rotation_changed' fromNode='boxman_r_wrist' toField='update' toNode='ENGINE'/> 
     )

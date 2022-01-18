@@ -1140,7 +1140,7 @@
                                                                           "@value":true
                                                                         }
                                                                       ],
-                                                                      "#sourceText":[
+                                                                      "#sourceCode":[
 "",
 "",
 "ecmascript:",
@@ -3789,7 +3789,7 @@
                   "@type":"SFBool"
                 }
               ],
-              "#sourceText":[
+              "#sourceCode":[
 "",
 "",
 "ecmascript:",

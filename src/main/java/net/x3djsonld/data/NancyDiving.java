@@ -410,7 +410,6 @@ public class NancyDiving
               .addSegments(new HAnimSegment().setUSE("hanim_l_upperarm"))
               .addSegments(new HAnimSegment().setUSE("hanim_r_upperarm")))))))
     .addChild(new Script("finWarpScript").setSourceCode("""
-      
 ecmascript:
 function set_rotationLeft(rotationValue, timeStamp)
 {
@@ -437,8 +436,7 @@ function set_rotationRight(rotationValue, timeStamp)
 	}
 //	print ('Right rotationValue[0] ' + rotationValue[0] + ', finWarpRight=' + finWarpRight);
 }
-
-    """)
+""")
       .addField(new field().setName("set_rotationLeft").setType(field.TYPE_SFROTATION).setAccessType(field.ACCESSTYPE_INPUTONLY))
       .addField(new field().setName("set_rotationRight").setType(field.TYPE_SFROTATION).setAccessType(field.ACCESSTYPE_INPUTONLY))
       .addField(new field().setName("finWarpLeft").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
@@ -448,7 +446,6 @@ function set_rotationRight(rotationValue, timeStamp)
     .addChild(new TimeSensor("FinClock").setCycleInterval(7.0).setLoop(true))
     .addChild(new Group()
       .addChild(new Script("FinScript").setSourceCode("""
-        
 ecmascript:
 function finL(value, timeStamp)
 {
@@ -540,8 +537,7 @@ function tracePrint (outputString)
 {
 	if (traceEnabled) Browser.print ('[Fin Move]' + outputString);
 }
-
-      """)
+""")
         .addField(new field().setName("keyValueRight").setType(field.TYPE_MFVEC3F).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
         .addField(new field().setName("keyValueLeft").setType(field.TYPE_MFVEC3F).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
         .addField(new field().setName("set_fraction").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTONLY))

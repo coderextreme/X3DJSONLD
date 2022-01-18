@@ -248,7 +248,7 @@
                                         "@value":50
                                       }
                                     ],
-                                    "#sourceText":[
+                                    "#sourceCode":[
 "",
 "\t\t\t",
 "\t\t\tecmascript:",

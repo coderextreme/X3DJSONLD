@@ -264,7 +264,7 @@
                               }
                             ]
                         },
-                        "#sourceText":[
+                        "#sourceCode":[
 "",
 "",
 "javascript:",
@@ -627,7 +627,7 @@
                               }
                             ]
                         },
-                        "#sourceText":[
+                        "#sourceCode":[
 "",
 "",
 "javascript:",
@@ -875,7 +875,7 @@
                   "@type":"SFVec3f"
                 }
               ],
-              "#sourceText":[
+              "#sourceCode":[
 "",
 "",
 "javascript:",
@@ -979,7 +979,7 @@
                   "@value":true
                 }
               ],
-              "#sourceText":[
+              "#sourceCode":[
 "",
 "",
 "javascript:",
@@ -1056,7 +1056,7 @@
                   "@type":"SFRotation"
                 }
               ],
-              "#sourceText":[
+              "#sourceCode":[
 "",
 "",
 "javascript:",

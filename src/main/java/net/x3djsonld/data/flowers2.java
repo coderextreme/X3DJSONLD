@@ -130,8 +130,7 @@ public class flowers2
                 .setGeometry(new IndexedFaceSet("Orbit").setDEF("Orbit").setCcw(false).setConvex(false).setCoordIndex(new int[] {0,1,2,-1})
                   .setCoord(new Coordinate("OrbitCoordinates").setPoint(new MFVec3f(new double[] {0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0}))))))
             .addChild(new Script("OrbitScript").setSourceCode("""
-			
-			ecmascript:
+ecmascript:
 
 			var e = 5;
 			var f = 5;
@@ -205,7 +204,7 @@ public class flowers2
 				}
 				generateCoordinates();
 			}
-			      """)
+""")
               .addField(new field().setName("set_fraction").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTONLY))
               .addField(new field().setName("coordinates").setType(field.TYPE_MFVEC3F).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
               .addField(new field().setName("coordIndexes").setType(field.TYPE_MFINT32).setAccessType(field.ACCESSTYPE_OUTPUTONLY))

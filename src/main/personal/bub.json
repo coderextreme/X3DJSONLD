@@ -306,7 +306,7 @@
                             "@type":"SFTime"
                           }
                         ],
-                        "#sourceText":[
+                        "#sourceCode":[
 "",
 "ecmascript:",
 "\t\t\tfunction initialize() {",

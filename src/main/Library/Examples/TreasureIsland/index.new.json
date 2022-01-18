@@ -49,7 +49,7 @@
           { "Script":
             {
               "@DEF":"Setup",
-              "#sourceText":[
+              "#sourceCode":[
 "",
 "",
 "vrmlscript:",

@@ -122,9 +122,17 @@ newModel=X3D(profile='Immersive',version='3.3',
       Script(DEF='colorTypeConversionScript',
         field=[
         field(accessType='inputOnly',name='colorInput',type='SFColor'),
-        field(accessType='outputOnly',name='colorsOutput',type='MFColor')]
-*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
-),
+        field(accessType='outputOnly',name='colorsOutput',type='MFColor')],
+
+        sourceCode="""
+ecmascript:
+
+function colorInput (eventValue) // Example source code
+{
+   colorsOutput = new MFColor(eventValue); // assigning value sends output event
+// Browser.print('colorInput=' + eventValue + ', colorsOutput=' + colorsOutput + '\n');
+}
+"""),
       ColorInterpolator(DEF='ColorAnimator',key=[0,0.5,1],keyValue=[(0.9411765,1,1),(0.29411766,0,0.50980395),(0.9411765,1,1)],
         #  AZURE to INDIGO and back again 
         ),
@@ -208,9 +216,33 @@ newModel=X3D(profile='Immersive',version='3.3',
           IS=IS(
             connect=[
             connect(nodeField='enabled',protoField='enabled'),
-            connect(nodeField='diffuseColor',protoField='diffuseColor')])
-*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
-)])),
+            connect(nodeField='diffuseColor',protoField='diffuseColor')]),
+
+          sourceCode="""
+ecmascript:
+function initialize ()
+{
+    newColor = diffuseColor; // start with correct color
+}
+function set_enabled (newValue)
+{
+	enabled = newValue;
+}
+function clockTrigger (timeValue)
+{
+    if (!enabled) return;
+    red   = newColor.r;
+    green = newColor.g;
+    blue  = newColor.b;
+
+    // note different modulation rates for each color component, % is modulus operator
+    newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);
+	if (enabled)
+	{
+		Browser.print ('diffuseColor=(' + red + ',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\n');
+	}
+}
+""")])),
     #  Test success: declarative statement createDeclarativeShapeTests() 
     Group(DEF='DeclarativeGroupExample',
       children=[

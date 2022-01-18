@@ -53,7 +53,7 @@
         },
         {
           "@name": "translated",
-          "@content": "2 January 2022"
+          "@content": "17 January 2022"
         },
         {
           "@name": "generator",
@@ -369,7 +369,7 @@
                         "@type": "SFTime"
                       }
                     ],
-                    "#sourceText": [
+                    "#sourceCode": [
                       "ecmascript:",
                       "\t\t\tfunction initialize() {",
                       "\t\t\t    translation = new SFVec3f(0, 0, 0);",

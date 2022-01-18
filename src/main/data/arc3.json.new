@@ -27,7 +27,7 @@
         },
         {
           "@name": "translated",
-          "@content": "2 January 2022"
+          "@content": "17 January 2022"
         },
         {
           "@name": "generator",
@@ -150,7 +150,7 @@
                       ]
                     }
                   ],
-                  "#sourceText": [
+                  "#sourceCode": [
                     "ecmascript:",
                     "\t\tfunction set_location(value) {",
                     "                    old = translation;",
@@ -293,7 +293,7 @@
                       ]
                     }
                   ],
-                  "#sourceText": [
+                  "#sourceCode": [
                     "ecmascript:",
                     "\t\tfunction set_location(value) {",
                     "                    old = translation;",
@@ -453,7 +453,7 @@
                       "@type": "SFVec3f"
                     }
                   ],
-                  "#sourceText": [
+                  "#sourceCode": [
                     "ecmascript:",
                     "        function recompute(startpoint,endpoint){",
                     "\t    if (typeof endpoint === 'undefined') {",

@@ -979,7 +979,7 @@
          startTime = value;                                             
          firstTime = FALSE;                                             
        }]]></Script>
-<NavigationInfo DEF="_NoNameNavInfo1" type="&quot;, &quot; &quot;ANYEXAMINE&quot;"></NavigationInfo>
+<NavigationInfo DEF="_NoNameNavInfo1" type="&quot;ANY&quot;, &quot;EXAMINE&quot;"></NavigationInfo>
 <Transform translation="-1131.16 11.8583 4851.59" rotation="0 1 0 4.36428" scale="1.29343 0.152154 0.152154"><Shape><Appearance><ImageTexture containerField="texture" USE="_42"></ImageTexture>
 <TextureTransform></TextureTransform>
 </Appearance>

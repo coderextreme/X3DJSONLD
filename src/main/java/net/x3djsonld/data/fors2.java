@@ -103,14 +103,14 @@ public class fors2
               .setMaterial(new Material().setDiffuseColor(1.0,0.0,0.0)))))
         .addChild(new PositionInterpolator("NodePosition").setKey(new double[] {0.0,1.0}).setKeyValue(new MFVec3f(new double[] {0.0,0.0,0.0,0.0,5.0,0.0})))
         .addChild(new Script("MoveBall").setSourceCode("""
- ecmascript:
+ecmascript:
 					function set_cycle(value) {
                                                 old = translation;
 						translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);
                                                 keyValue = new MFVec3f([old, translation]);
 						// Browser.println(translation);
 					}
- """)
+""")
           .addField(new field().setName("translation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(50.0,50.0,0.0)))
           .addField(new field().setName("old").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
           .addField(new field().setName("set_cycle").setType(field.TYPE_SFTIME).setAccessType(field.ACCESSTYPE_INPUTONLY))
@@ -130,7 +130,7 @@ public class fors2
           .setAppearance(new Appearance()
             .setMaterial(new Material().setDiffuseColor(0.0,1.0,0.0))))
         .addChild(new Script("MoveCylinder").setSourceCode("""
- ecmascript:
+ecmascript:
 
                 function set_endA(value) {
 		    if (typeof spine === "undefined") {
@@ -152,7 +152,7 @@ public class fors2
 		    Browser.print('\n'+'"');
                     spine = value;
                 }
- """)
+""")
           .addField(new field().setName("spine").setType(field.TYPE_MFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new MFVec3f(new MFVec3f(new double[] {0.0,-50.0,0.0,0.0,0.0,0.0,0.0,50.0,0.0}))))
           .addField(new field().setName("set_endA").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTONLY))
           .addField(new field().setName("set_endB").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTONLY))

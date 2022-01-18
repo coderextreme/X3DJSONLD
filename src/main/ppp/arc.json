@@ -4,7 +4,7 @@
     "@profile": "Immersive",
     "@version": "3.3",
     "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "meta": [
         {
@@ -29,7 +29,7 @@
         },
         {
           "@name": "translated",
-          "@content": "09 December 2021"
+          "@content": "17 January 2022"
         },
         {
           "@name": "generator",
@@ -155,7 +155,7 @@
                       ]
                     }
                   ],
-                  "#sourceText": [
+                  "#sourceCode": [
                     "",
                     "",
                     "ecmascript:",
@@ -303,7 +303,7 @@
                       ]
                     }
                   ],
-                  "#sourceText": [
+                  "#sourceCode": [
                     "",
                     "",
                     "ecmascript:",
@@ -451,7 +451,7 @@
                       ]
                     }
                   ],
-                  "#sourceText": [
+                  "#sourceCode": [
                     "",
                     "",
                     "ecmascript:",
@@ -599,7 +599,7 @@
                       ]
                     }
                   ],
-                  "#sourceText": [
+                  "#sourceCode": [
                     "",
                     "",
                     "ecmascript:",
@@ -745,7 +745,7 @@
                       "@type": "SFVec3f"
                     }
                   ],
-                  "#sourceText": [
+                  "#sourceCode": [
                     "",
                     "            ecmascript:",
                     "        function recompute(startpoint,endpoint){",
@@ -890,7 +890,7 @@
                       "@type": "SFVec3f"
                     }
                   ],
-                  "#sourceText": [
+                  "#sourceCode": [
                     "",
                     "            ecmascript:",
                     "        function recompute(startpoint,endpoint){",
@@ -1035,7 +1035,7 @@
                       "@type": "SFVec3f"
                     }
                   ],
-                  "#sourceText": [
+                  "#sourceCode": [
                     "",
                     "            ecmascript:",
                     "        function recompute(startpoint,endpoint){",

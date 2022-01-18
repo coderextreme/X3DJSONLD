@@ -4,7 +4,7 @@
     "@profile": "Full",
     "@version": "4.0",
     "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-4.0.xsd",
-    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "meta": [
         {
@@ -25,7 +25,7 @@
         },
         {
           "@name": "modified",
-          "@content": "4 August 2021"
+          "@content": "26 November 2021"
         },
         {
           "@name": "warning",
@@ -37,7 +37,7 @@
         },
         {
           "@name": "generator",
-          "@content": "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+          "@content": "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"
         },
         {
           "@name": "license",
@@ -45,7 +45,7 @@
         },
         {
           "@name": "translated",
-          "@content": "09 December 2021"
+          "@content": "17 January 2022"
         },
         {
           "@name": "generator",
@@ -73,12 +73,53 @@
               "Appearance": {
                 "-acousticProperties": [
                   {
-                    "AcousticProperties": {}
+                    "AcousticProperties": {
+                      "@description": "Testing of X3D4 nodes demonstrating W3C Audio API in progress",
+                      "@diffuse": 0.25,
+                      "@refraction": 0.5,
+                      "@specular": 1
+                    }
                   }
                 ],
                 "-material": {
                   "Material": {}
                 }
+              }
+            }
+          }
+        },
+        {
+          "Sound": {
+            "@location": [
+              0,
+              1.6,
+              0
+            ],
+            "-source": {
+              "AudioClip": {
+                "@description": "testing",
+                "@url": [
+                  "sound/saxophone.mp3",
+                  "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "Sound": {
+            "@location": [
+              0,
+              1.6,
+              0
+            ],
+            "-source": {
+              "MovieTexture": {
+                "@description": "testing",
+                "@url": [
+                  "bogus.mpg",
+                  "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/bogus.mpg"
+                ]
               }
             }
           }
@@ -90,7 +131,7 @@
                 "Analyser": {
                   "-children": [
                     {
-                      "AudioDestination": {
+                      "StreamAudioDestination": {
                         "-children": [
                           {
                             "BiquadFilter": {
@@ -177,42 +218,6 @@
                 }
               }
             ]
-          }
-        },
-        {
-          "Sound": {
-            "@location": [
-              0,
-              1.6,
-              0
-            ],
-            "-source": {
-              "AudioClip": {
-                "@description": "testing",
-                "@url": [
-                  "sound/saxophone.mp3",
-                  "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"
-                ]
-              }
-            }
-          }
-        },
-        {
-          "Sound": {
-            "@location": [
-              0,
-              1.6,
-              0
-            ],
-            "-source": {
-              "MovieTexture": {
-                "@description": "testing",
-                "@url": [
-                  "bogus.mpg",
-                  "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/bogus.mpg"
-                ]
-              }
-            }
           }
         }
       ]

@@ -4,7 +4,7 @@
     "@profile": "Immersive",
     "@version": "4.0",
     "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-4.0.xsd",
-    "JSON schema": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
       "component": [
         {
@@ -35,7 +35,7 @@
         },
         {
           "@name": "modified",
-          "@content": "8 March 2021"
+          "@content": "23 December 2021"
         },
         {
           "@name": "description",
@@ -79,7 +79,7 @@
         },
         {
           "@name": "translated",
-          "@content": "09 December 2021"
+          "@content": "17 January 2022"
         },
         {
           "@name": "generator",
@@ -130,27 +130,25 @@
             "@version": "2.0",
             "-children": [
               {
-                "#comment": "HAnimHumanoid original info='\"humanoidVersion=2.0\"'"
+                "#comment": "original HAnimHumanoid info='\"humanoidVersion=2.0\"'"
               }
             ],
-            "-value": [
-              {
-                "MetadataSet": {
-                  "@name": "HAnimHumanoid.info",
-                  "@reference": "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid",
-                  "-value": [
-                    {
-                      "MetadataString": {
-                        "@name": "humanoidVersion",
-                        "@value": [
-                          "2.0"
-                        ]
-                      }
+            "-metadata": {
+              "MetadataSet": {
+                "@name": "HAnimHumanoid.info",
+                "@reference": "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid",
+                "-value": [
+                  {
+                    "MetadataString": {
+                      "@name": "humanoidVersion",
+                      "@value": [
+                        "2.0"
+                      ]
                     }
-                  ]
-                }
+                  }
+                ]
               }
-            ],
+            },
             "-skeleton": [
               {
                 "HAnimJoint": {
@@ -161,7 +159,12 @@
                     30.53,
                     -0.7076
                   ],
-                  "@stiffness": [
+                  "@ulimit": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "@llimit": [
                     0,
                     0,
                     0
@@ -1512,7 +1515,12 @@
                           35.8,
                           -0.7076
                         ],
-                        "@stiffness": [
+                        "@ulimit": [
+                          0,
+                          0,
+                          0
+                        ],
+                        "@llimit": [
                           0,
                           0,
                           0
@@ -2859,7 +2867,12 @@
                                 32.02,
                                 -0.8155
                               ],
-                              "@stiffness": [
+                              "@ulimit": [
+                                0,
+                                0,
+                                0
+                              ],
+                              "@llimit": [
                                 0,
                                 0,
                                 0
@@ -4241,7 +4254,12 @@
                                       17.26,
                                       -0.8639
                                     ],
-                                    "@stiffness": [
+                                    "@ulimit": [
+                                      0,
+                                      0,
+                                      0
+                                    ],
+                                    "@llimit": [
                                       0,
                                       0,
                                       0
@@ -5128,7 +5146,12 @@
                                             3.939,
                                             -0.7038
                                           ],
-                                          "@stiffness": [
+                                          "@ulimit": [
+                                            0,
+                                            0,
+                                            0
+                                          ],
+                                          "@llimit": [
                                             0,
                                             0,
                                             0
@@ -6318,7 +6341,12 @@
                                                   3.64,
                                                   0.7402
                                                 ],
-                                                "@stiffness": [
+                                                "@ulimit": [
+                                                  0,
+                                                  0,
+                                                  0
+                                                ],
+                                                "@llimit": [
                                                   0,
                                                   0,
                                                   0
@@ -7170,7 +7198,12 @@
                                 32.02,
                                 -0.8155
                               ],
-                              "@stiffness": [
+                              "@ulimit": [
+                                0,
+                                0,
+                                0
+                              ],
+                              "@llimit": [
                                 0,
                                 0,
                                 0
@@ -8552,7 +8585,12 @@
                                       17.26,
                                       -0.8639
                                     ],
-                                    "@stiffness": [
+                                    "@ulimit": [
+                                      0,
+                                      0,
+                                      0
+                                    ],
+                                    "@llimit": [
                                       0,
                                       0,
                                       0
@@ -9439,7 +9477,12 @@
                                             3.939,
                                             -0.7038
                                           ],
-                                          "@stiffness": [
+                                          "@ulimit": [
+                                            0,
+                                            0,
+                                            0
+                                          ],
+                                          "@llimit": [
                                             0,
                                             0,
                                             0
@@ -10629,7 +10672,12 @@
                                                   3.64,
                                                   0.7402
                                                 ],
-                                                "@stiffness": [
+                                                "@ulimit": [
+                                                  0,
+                                                  0,
+                                                  0
+                                                ],
+                                                "@llimit": [
                                                   0,
                                                   0,
                                                   0
@@ -11481,7 +11529,12 @@
                                 40.23,
                                 -0.8527
                               ],
-                              "@stiffness": [
+                              "@ulimit": [
+                                0,
+                                0,
+                                0
+                              ],
+                              "@llimit": [
                                 0,
                                 0,
                                 0
@@ -15172,7 +15225,12 @@
                                       57.43,
                                       -0.6863
                                     ],
-                                    "@stiffness": [
+                                    "@ulimit": [
+                                      0,
+                                      0,
+                                      0
+                                    ],
+                                    "@llimit": [
                                       0,
                                       0,
                                       0
@@ -21828,7 +21886,12 @@
                                       52,
                                       -0.1452
                                     ],
-                                    "@stiffness": [
+                                    "@ulimit": [
+                                      0,
+                                      0,
+                                      0
+                                    ],
+                                    "@llimit": [
                                       0,
                                       0,
                                       0
@@ -22757,7 +22820,12 @@
                                             40.38,
                                             -0.2502
                                           ],
-                                          "@stiffness": [
+                                          "@ulimit": [
+                                            0,
+                                            0,
+                                            0
+                                          ],
+                                          "@llimit": [
                                             0,
                                             0,
                                             0
@@ -23351,7 +23419,12 @@
                                                   31.46,
                                                   -0.05849
                                                 ],
-                                                "@stiffness": [
+                                                "@ulimit": [
+                                                  0,
+                                                  0,
+                                                  0
+                                                ],
+                                                "@llimit": [
                                                   0,
                                                   0,
                                                   0
@@ -23929,7 +24002,12 @@
                                       52,
                                       -0.1452
                                     ],
-                                    "@stiffness": [
+                                    "@ulimit": [
+                                      0,
+                                      0,
+                                      0
+                                    ],
+                                    "@llimit": [
                                       0,
                                       0,
                                       0
@@ -24858,7 +24936,12 @@
                                             40.38,
                                             -0.2502
                                           ],
-                                          "@stiffness": [
+                                          "@ulimit": [
+                                            0,
+                                            0,
+                                            0
+                                          ],
+                                          "@llimit": [
                                             0,
                                             0,
                                             0
@@ -25452,7 +25535,12 @@
                                                   31.46,
                                                   -0.05849
                                                 ],
-                                                "@stiffness": [
+                                                "@ulimit": [
+                                                  0,
+                                                  0,
+                                                  0
+                                                ],
+                                                "@llimit": [
                                                   0,
                                                   0,
                                                   0

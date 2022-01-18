@@ -87,16 +87,12 @@ public class arc2
             .setMaterial(new Material().setDiffuseColor(1.0,0.0,0.0))))
         .addChild(new PositionInterpolator("DECLpoint_INSTANCE_PI1").setKey(new double[] {0.0,1.0}).setKeyValue(new MFVec3f(new double[] {0.0,0.0,0.0,0.0,5.0,0.0})))
         .addChild(new Script("DECLpoint_INSTANCE_MB1").setSourceCode("""
-
-
 ecmascript:
                function set_location(value) {
                     old = translation;
                     translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
                     keyValue = new MFVec3f(old, translation);
                }
-
-
 """)
           .addField(new field().setName("translation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
           .addField(new field().setName("old").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
@@ -116,16 +112,12 @@ ecmascript:
             .setMaterial(new Material().setDiffuseColor(1.0,0.0,0.0))))
         .addChild(new PositionInterpolator("DECLpoint_INSTANCE1000_PI1").setKey(new double[] {0.0,1.0}).setKeyValue(new MFVec3f(new double[] {0.0,0.0,0.0,0.0,5.0,0.0})))
         .addChild(new Script("DECLpoint_INSTANCE1000_MB1").setSourceCode("""
-
-
 ecmascript:
                function set_location(value) {
                     old = translation;
                     translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
                     keyValue = new MFVec3f(old, translation);
                }
-
-
 """)
           .addField(new field().setName("translation").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
           .addField(new field().setName("old").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.0,0.0,0.0)))
@@ -144,8 +136,7 @@ ecmascript:
             .setMaterial(new Material().setDiffuseColor(0.2,0.7,0.7).setTransparency(0.5)))
           .setGeometry(new Cylinder().setRadius(0.05)))))
     .addChild(new Script("DECLx3dconnector_connector1_S1").setSourceCode("""
-
-            ecmascript:
+ecmascript:
         function recompute(startpoint,endpoint){
 	    if (typeof endpoint === 'undefined') {
 		return;
@@ -184,8 +175,6 @@ ecmascript:
         function set_endpoint(val,t){
             recompute_and_route(startnode.translation,val);
         }
-
-
 """)
       .addField(new field().setName("startnode").setType(field.TYPE_SFNODE).setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
         .addChild(new Transform().setUSE("G1")))

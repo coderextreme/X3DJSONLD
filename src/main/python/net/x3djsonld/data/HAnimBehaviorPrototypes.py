@@ -2811,9 +2811,12 @@ newModel=X3D(profile='Immersive',version='3.3',
             connect(nodeField='hAnimBehaviorNodes',protoField='hAnimBehaviorNodes'),
             connect(nodeField='enabledBehaviorsArray',protoField='enabledBehaviorsArray'),
             connect(nodeField='enableBehavior',protoField='enableBehavior'),
-            connect(nodeField='disableBehavior',protoField='disableBehavior')])
-*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
-)])),
+            connect(nodeField='disableBehavior',protoField='disableBehavior')]),
+
+          sourceCode="""
+ecmascript:
+
+""")])),
     #  TODO: Goal is to have 3 different ways to present a body: local creation, Inline with IMPORT/EXPORT, or external prototype. 
     ProtoInstance(DEF='BehaviorTest1',name='HAnimBehavior',
       #  only one PositionInterpolator key/keyValue definition for entire humanoid - optional 

@@ -71,9 +71,391 @@ newModel=X3D(profile='Immersive',version='3.2',
         field(accessType='initializeOnly',name='Cirrus',type='SFNode',
           children=[
           Transform(USE='Cirrus')]),
-        field(accessType='initializeOnly',name='Fog',type='SFNode')]
-*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
-),
+        field(accessType='initializeOnly',name='Fog',type='SFNode')],
+
+        sourceCode="""
+ecmascript:
+
+
+function cumulustranslation() // These values designate the boundary location of the cloud
+{
+	X = 50000*Math.random();          //  X horizontal range
+	Y = 1000 + 300*Math.random();	 //  Y vertical base + range
+	Z = 50000*Math.random();         // z horizontal range
+
+	randomt = new String(X+' '+Y+' '+Z);
+
+	return randomt;
+	
+}
+
+
+
+function cumulusscale() // these values scale a cloud within a designated size
+{
+
+	var maxscale = 1;
+
+	scale = Math.round(9+maxscale*Math.random());
+	X = 1.5*scale;
+	Y = scale;
+	Z = scale;
+
+	randomscale = new String(X+' '+Y+' '+Z);
+
+	return randomscale;
+	
+}
+
+
+function cirrustranslation() // These values designate the boundary location of the cloud
+{
+	X = 50000*Math.random();          //  X horizontal range
+	Y = 8000 + 1000*Math.random();	 //  Y vertical base + range
+	Z = 50000*Math.random();         // z horizontal range
+
+	randomt = new String(X+' '+Y+' '+Z);
+
+	return randomt;
+	
+}
+
+
+
+function cirrusscale() // these values scale a cloud within a designated size
+{
+
+	var maxscale = 1;
+
+	scale = Math.round(9+maxscale*Math.random());
+	X = 1.5*scale;
+	Y = 2*Math.random();
+	Z = 1.5*scale;
+
+	randomscale = new String(X+' '+Y+' '+Z);
+
+	return randomscale;
+	
+}
+
+
+function cumulussectiontranslation() // These random values place another portion of cumulus type cloud
+{
+
+	randomtheta = 6.28319*Math.random();
+	randomphi = .7854*Math.random();
+	randomradius = 90 + 5*Math.random();//the first whole number should be close to the sectionradius
+
+	X = randomradius*Math.cos(randomtheta)*Math.sin(randomphi);
+	Z = randomradius*Math.sin(randomtheta)*Math.sin(randomphi);
+	Y = randomradius*Math.cos(randomphi);
+	
+
+	randomt = new String(X+' '+Y+' '+Z);
+
+	return randomt;
+	
+}
+
+function cirrussectiontranslation() // These random values place another portion of cirrus type cloud
+{
+
+	randomtheta = 6.28319*Math.random();
+	randomphi = .7854*Math.random();
+	randomradius = 90 + 5*Math.random();//the first whole number should be close to the sectionradius
+
+	X = randomradius*Math.cos(randomtheta)*Math.sin(randomphi);
+	Z = randomradius*Math.sin(randomtheta)*Math.sin(randomphi);
+	Y = randomradius*Math.cos(randomphi);
+	
+
+	randomt = new String(X+' '+Y+' '+Z);
+
+	return randomt;
+	
+}
+
+
+function rotation() // This random value is for the billboard rotation not used in this script
+{
+
+
+	radians = 6.28*Math.random();
+
+	randomr = new String('0 0 1 ' + radians );
+	
+	
+	return randomr;
+	
+}
+
+function cumulus()
+{
+
+var maxi = 20;  // number of clouds
+
+var maxj = 5; // denotes how many portions affecting the size of the cloud
+
+var maxk = 8;  // number of billboards indicating cloud density
+
+var sectionradius = 100;  //radius of individual cloud sections
+
+
+
+
+
+for (var i=0; i < maxi; i++) 
+{
+
+
+
+CloudStringA = '	Transform {		\n' +
+'    scale '+ cumulusscale() + '               	\n' +
+'    translation '+ cumulustranslation() + '    \n' +    // cloud placement
+'    children [	                                \n';
+
+
+CloudStringB = new Array();
+CloudStringF = new Array();
+
+   	for (var j=0; j < maxj; j++)
+   	{
+
+	radius = 0;
+
+	CloudStringB[j]= '  Transform {		    	       \n' +
+	'    translation '+ cumulussectiontranslation() + '    \n' +     // section placement
+	'    children [	                                       \n';
+
+	
+	CloudStringC = new Array();
+	image = new String();
+
+      		for (var k=1; k < maxk; k++)  // maxk value denotes how many textured billboards make up the cloud 
+      		{
+
+
+		randomtheta = 6.28319*Math.random();
+		randomphi = 1.57079*Math.random();
+		radius = radius+(sectionradius/maxk); // radius incremental steps based on billow radius and max billboards
+
+		X = radius*Math.cos(randomtheta)*Math.sin(randomphi);
+		Z = radius*Math.sin(randomtheta)*Math.sin(randomphi);
+		Y = radius*Math.cos(randomphi);
+
+
+		if (Y <= 30) //cloud shading and lighting control
+  	{	
+	image = ' \"CloudTexture1_5.png\" \"https://savage.nps.edu/Savage/Environment/Spheretexture.png\" \n';
+  	}
+
+  		else
+  	{	
+	image = ' \"CloudTexture1_4.png\" \"https://savage.nps.edu/Savage/Environment/Spheretexture.png\" \n';
+  	}
+
+	
+		
+		Billboardtranslation = new String(X+' '+Y+' '+Z);
+
+		CloudStringC[k] = '	Transform {		                \n' +
+		'            translation '+ Billboardtranslation   + '          \n' +     // random billboard placement within radius designated above
+		'	  children [	                                        \n' +
+		'	      Billboard {	                                \n' +
+		'	        axisOfRotation 0 0 0	                        \n' +     // 0 0 0 designates rotation on all axis
+		'	        children [	                                \n' +
+		'	            Transform {	                		\n' +
+		'	              rotation  0 0 0 0 		        \n' +     // a rotation of the individual billboards can be defined
+		'	              children [	                        \n' +
+		'	                  Shape {	                        \n' +
+		'	                    appearance Appearance {	        \n' +
+		'				material Material {		\n' +
+		'				                }  		\n' +
+		'	                      texture ImageTexture {	        \n' +
+		'	                        url [ ' + image + ' ]           \n' + 
+		'	                      }	                                \n' +
+		'	                    }	                                \n' +
+		'	                    geometry IndexedFaceSet {	        \n' +     // define type of geometry to texture
+		'	                      coordIndex [ 0, 1, 2, 3 ]	        \n' +
+		'			      solid FALSE		        \n' +
+		'	                      coord Coordinate {	        \n' +
+		'	                        point [ 50 50 0,	        \n' +     // define size of the geometry. Here 100 meter 2D square.
+		'	                                50 -50 0,	        \n' +
+		'	                               -50 -50 0,	        \n' +
+		'	                               -50 50 0 ]	        \n' +
+		'	                      }	                                \n' +
+		'	                    }	                                \n' +
+		'	                  }	                                \n' +
+		'	              ]	                                        \n' +
+		'	            }	                                        \n' +
+		'	       ]	                                        \n' +
+		'	   }	                                                \n' +
+		'      ]	                                                \n' +
+		'     }	                                                        \n';      
+		
+
+		}
+
+	CloudStringD = CloudStringC.join(' ');
+
+	
+	CloudStringE = '   ]	                 \n' +
+	'	}	                         \n';
+
+	CloudStringF[j] = CloudStringB[j] + CloudStringD +CloudStringE;
+
+
+	}
+
+CloudStringG = CloudStringF.join(' ');
+
+CloudStringH = '      ]	                                        \n' +
+'     }	                                                        \n' +
+'#########################################################      \n';
+
+CloudString = CloudStringA + CloudStringG + CloudStringH;
+
+
+
+newNode = Browser.createVrmlFromString(CloudString);
+Cumulus.children[i] = newNode[0];
+
+
+   }
+
+}
+
+function cirrus()
+
+{
+
+var maxi = 2;  // number of clouds
+
+var maxj = 5; // denotes how many portions affecting the size of the cloud
+
+var maxk = 8;  // number of billboards indicating cloud density
+
+var sectionradius = 1000;  //radius of individual cloud sections
+
+
+
+
+
+for (var i=0; i < maxi; i++) 
+{
+
+
+
+CloudStringA = '	Transform {		 \n' +
+'    scale '+ cirrusscale() + '               	 \n' +
+'    translation '+ cirrustranslation() + '      \n' +    // cloud placement
+'    children [	                                 \n';
+
+
+CloudStringB = new Array();
+CloudStringF = new Array();
+
+   	for (var j=0; j < maxj; j++)
+   	{
+
+	radius = 0;
+
+	CloudStringB[j]= '  Transform {		    	      \n' +
+	'    translation '+ cirrussectiontranslation() + '    \n' +     // section placement
+	'    children [	                                      \n';
+
+	
+	CloudStringC = new Array();
+
+      		for (var k=1; k < maxk; k++)  // maxk value denotes how many textured billboards make up the cloud 
+      		{
+
+
+		randomtheta = 6.28319*Math.random();
+		randomphi = 1.57079*Math.random();
+		radius = radius+(sectionradius/maxk); // radius incremental steps based on section radius and max billboards
+
+		X = radius*Math.cos(randomtheta)*Math.sin(randomphi);
+		Z = radius*Math.sin(randomtheta)*Math.sin(randomphi);
+		Y = radius*Math.cos(randomphi);
+		
+		Billboardtranslation = new String(X+' '+Y+' '+Z);
+
+		CloudStringC[k] = '	Transform {		                \n' +
+		'            translation '+ Billboardtranslation   + '          \n' +     // random billboard placement within radius designated above
+		'	  children [	                                        \n' +
+		'	      Billboard {	                                \n' +
+		'	        axisOfRotation 0 0 0	                        \n' +     // 0 0 0 designates rotation on all axis
+		'	        children [	                                \n' +
+		'	            Transform {	                		\n' +
+		'	              rotation '  + rotation() + '	        \n' +
+		'	              children [	                        \n' +
+		'	                  Shape {	                        \n' +
+		'	                    appearance Appearance {	        \n' +
+		'			    material Material {			\n' +
+		'			    }					\n' +
+ 		'	                      texture ImageTexture {	        \n' +
+		'	                        url [\"cloudtexture3.png\" \"https://savage.nps.edu/Savage/Environment/cloudtexture1_4.png\" ] \n' +
+		'	                      }	                                \n' +
+		'	                    }	                                \n' +
+		'	                    geometry IndexedFaceSet {	        \n' +     // define type of geometry to texture
+		'	                      coordIndex [ 0, 1, 2, 3 ]	        \n' +
+		'			      solid FALSE		        \n' +
+		'	                      coord Coordinate {	        \n' +
+		'	                        point [ 500 500 0,	        \n' +     // define size of the geometry. Here 100 meter 2D square.
+		'	                                500 -500 0,	        \n' +
+		'	                               -500 -500 0,	        \n' +
+		'	                               -500 500 0 ]	        \n' +
+		'	                      }	                                \n' +
+		'	                    }	                                \n' +
+		'	                  }	                                \n' +
+		'	              ]	                                        \n' +
+		'	            }	                                        \n' +
+		'	       ]	                                        \n' +
+		'	   }	                                                \n' +
+		'      ]	                                                \n' +
+		'     }	                                                        \n';      
+		
+
+		}
+
+	CloudStringD = CloudStringC.join(' ');
+
+	CloudStringE = '   ]	                 \n' +
+	'	}	                         \n';
+
+	CloudStringF[j] = CloudStringB[j] + CloudStringD +CloudStringE;
+
+
+	}
+
+CloudStringG = CloudStringF.join(' ');
+
+CloudStringH = '      ]	                                        \n' +
+'     }	                                                        \n' +
+'#########################################################      \n';
+
+CloudString = CloudStringA + CloudStringG + CloudStringH;
+
+
+
+newNode = Browser.createVrmlFromString(CloudString);
+Cirrus.children[i] = newNode[0];
+
+  }
+
+}
+
+
+function initialize()
+
+{
+
+cumulus();
+
+cirrus();
+}
+"""),
       DirectionalLight(ambientIntensity=1,color=(1,0,0),direction=(-1,-1,0),global_=True)])])
 ) # X3D model complete
 

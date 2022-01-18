@@ -308,7 +308,6 @@ public class NancyDivingProtoInstances
                       .addChild(new TimeSensor("FinClock").setCycleInterval(7.0).setLoop(true))
                       .addChild(new Group()
                         .addChild(new Script("FinScript").setSourceCode("""
-                          
 ecmascript:
 
 var finWarpL;
@@ -412,8 +411,7 @@ function tracePrint (outputString)
 {
 	if (traceEnabled) Browser.print ('[Fin Move]' + outputString);
 }
-
-                        """)
+""")
                           .addField(new field().setName("keyValueR").setType(field.TYPE_MFVEC3F).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
                           .addField(new field().setName("keyValueL").setType(field.TYPE_MFVEC3F).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
                           .addField(new field().setName("set_fraction").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTONLY))
@@ -822,7 +820,6 @@ function tracePrint (outputString)
                                             .addChild(new ROUTE().setFromNode("BubblePath9").setFromField("value_changed").setToNode("bubble9").setToField("set_translation"))
                                             .addChild(new ROUTE().setFromNode("BubblePath10").setFromField("value_changed").setToNode("bubble10").setToField("set_translation"))))))))))))))))))))))
     .addChild(new Script("finWarpScript").setSourceCode("""
-      
 ecmascript:
 
 
@@ -870,8 +867,7 @@ function set_rotationR( value, timeStamp)
 	}
 	
 }
-
-    """)
+""")
       .addField(new field().setName("set_rotationL").setType(field.TYPE_SFROTATION).setAccessType(field.ACCESSTYPE_INPUTONLY))
       .addField(new field().setName("set_rotationR").setType(field.TYPE_SFROTATION).setAccessType(field.ACCESSTYPE_INPUTONLY))
       .addField(new field().setName("fin_warpL").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_OUTPUTONLY))

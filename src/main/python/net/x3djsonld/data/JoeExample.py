@@ -33,9 +33,23 @@ newModel=X3D(version='3.0',profile='Immersive',
       field(name='openVault',type='SFTime',accessType='inputOnly'),
       field(name='combinationEntered',type='SFBool',accessType='inputOnly'),
       field(name='vaultUnlocked',type='SFTime',accessType='outputOnly'),
-      field(name='unlocked',type='SFBool',value=False,accessType='initializeOnly')]
-*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
-),
+      field(name='unlocked',type='SFBool',value=False,accessType='initializeOnly')],
+
+      sourceCode="""
+ecmascript:
+
+      function combinationEntered (value) {
+
+        unlocked = value;
+
+      }
+
+      function openVault(value) {
+
+      if (unlocked) vaultUnlocked = value;
+
+      }
+"""),
     Shape(
       appearance=Appearance(
         material=Material(diffuseColor=(1,0,0))),

@@ -3,7 +3,7 @@
     "@profile":"Full",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -32,7 +32,7 @@
           },
           {
             "@name":"translated",
-            "@content":"24 November 2021"
+            "@content":"17 January 2022"
           },
           {
             "@name":"generator",
@@ -104,7 +104,7 @@
                       { "NavigationInfo":
                         {
                           "@DEF":"_WorldAnimNavInfo2",
-                          "@type":["NONE"],
+                          "@type":"\"NONE\"",
                           "@avatarSize":[0.1,1.6,0.75],
                           "@visibilityLimit":300,
                           "@transitionType":["TELEPORT"]
@@ -113,7 +113,7 @@
                       { "NavigationInfo":
                         {
                           "@DEF":"_WorldWalkNavInfo1",
-                          "@type":["WALK"],
+                          "@type":"\"WALK\"",
                           "@avatarSize":[0.1,1.6,0.75],
                           "@headlight":false,
                           "@visibilityLimit":300,
@@ -140,7 +140,7 @@
                               "@type":"SFBool"
                             }
                           ],
-                          "#sourceText":[
+                          "#sourceCode":[
 "",
 "vrmlscript:",
 "function isActive(value, time)",
@@ -577,7 +577,7 @@
                                                                               "@value":true
                                                                             }
                                                                           ],
-                                                                          "#sourceText":[
+                                                                          "#sourceCode":[
 "",
 "vrmlscript:",
 "function openTime(value, time)",
@@ -774,7 +774,7 @@
                                                                                                       "@type":"SFInt32"
                                                                                                     }
                                                                                                   ],
-                                                                                                  "#sourceText":[
+                                                                                                  "#sourceCode":[
 "",
 "vrmlscript:",
 "function set_whichChoice(value, time)",
@@ -1117,7 +1117,7 @@
                                                                                     "@value":true
                                                                                   }
                                                                                 ],
-                                                                                "#sourceText":[
+                                                                                "#sourceCode":[
 "",
 "vrmlscript:",
 "function openTime(value, time)",
@@ -1314,7 +1314,7 @@
                                                                                                             "@type":"SFInt32"
                                                                                                           }
                                                                                                         ],
-                                                                                                        "#sourceText":[
+                                                                                                        "#sourceCode":[
 "",
 "vrmlscript:",
 "function set_whichChoice(value, time)",
@@ -1661,7 +1661,7 @@
                                                                                     "@value":true
                                                                                   }
                                                                                 ],
-                                                                                "#sourceText":[
+                                                                                "#sourceCode":[
 "",
 "vrmlscript:",
 "function openTime(value, time)",
@@ -1858,7 +1858,7 @@
                                                                                                             "@type":"SFInt32"
                                                                                                           }
                                                                                                         ],
-                                                                                                        "#sourceText":[
+                                                                                                        "#sourceCode":[
 "",
 "vrmlscript:",
 "function set_whichChoice(value, time)",
@@ -2200,7 +2200,7 @@
                                                                               "@value":true
                                                                             }
                                                                           ],
-                                                                          "#sourceText":[
+                                                                          "#sourceCode":[
 "",
 "vrmlscript:",
 "function openTime(value, time)",
@@ -2397,7 +2397,7 @@
                                                                                                       "@type":"SFInt32"
                                                                                                     }
                                                                                                   ],
-                                                                                                  "#sourceText":[
+                                                                                                  "#sourceCode":[
 "",
 "vrmlscript:",
 "function set_whichChoice(value, time)",
@@ -2739,7 +2739,7 @@
                                                                                     "@value":true
                                                                                   }
                                                                                 ],
-                                                                                "#sourceText":[
+                                                                                "#sourceCode":[
 "",
 "vrmlscript:",
 "function openTime(value, time)",
@@ -2936,7 +2936,7 @@
                                                                                                             "@type":"SFInt32"
                                                                                                           }
                                                                                                         ],
-                                                                                                        "#sourceText":[
+                                                                                                        "#sourceCode":[
 "",
 "vrmlscript:",
 "function set_whichChoice(value, time)",
@@ -3167,7 +3167,7 @@
                                                 "@type":"SFBool"
                                               }
                                             ],
-                                            "#sourceText":[
+                                            "#sourceCode":[
 "",
 "vrmlscript:",
 "function enterTime(value, time)",
@@ -3249,7 +3249,7 @@
                                                 "@type":"SFBool"
                                               }
                                             ],
-                                            "#sourceText":[
+                                            "#sourceCode":[
 "",
 "vrmlscript:",
 "function enterTime(value, time)",
@@ -3331,7 +3331,7 @@
                                                 "@type":"SFBool"
                                               }
                                             ],
-                                            "#sourceText":[
+                                            "#sourceCode":[
 "",
 "vrmlscript:",
 "function enterTime(value, time)",
@@ -3412,7 +3412,7 @@
                                                 "@type":"SFBool"
                                               }
                                             ],
-                                            "#sourceText":[
+                                            "#sourceCode":[
 "",
 "vrmlscript:",
 "function enterTime(value, time)",
@@ -3492,7 +3492,7 @@
                                                 "@type":"SFBool"
                                               }
                                             ],
-                                            "#sourceText":[
+                                            "#sourceCode":[
 "",
 "vrmlscript:",
 "function enterTime(value, time)",
@@ -3572,7 +3572,7 @@
                                                 "@type":"SFBool"
                                               }
                                             ],
-                                            "#sourceText":[
+                                            "#sourceCode":[
 "",
 "vrmlscript:",
 "function enterTime(value, time)",
@@ -6109,7 +6109,7 @@
                                                       "@type":"SFBool"
                                                     }
                                                   ],
-                                                  "#sourceText":[
+                                                  "#sourceCode":[
 "",
 "vrmlscript:",
 "function isActive(value, time)",
@@ -6206,7 +6206,7 @@
                                                                                     "@type":"SFFloat"
                                                                                   }
                                                                                 ],
-                                                                                "#sourceText":[
+                                                                                "#sourceCode":[
 "",
 "vrmlscript: function xIn(value) { xBuf = value; vec[0] = xBuf; vec[1] = yBuf; } function yIn(value) { yBuf = value; vec[0] = xBuf; vec[1] = yBuf; }  ",
 ""
@@ -6418,7 +6418,7 @@
                                                             "@type":"SFTime"
                                                           }
                                                         ],
-                                                        "#sourceText":[
+                                                        "#sourceCode":[
 "",
 "vrmlscript:",
 "function isActive(value, time)",
@@ -6478,7 +6478,7 @@
                                                                   "@type":"SFBool"
                                                                 }
                                                               ],
-                                                              "#sourceText":[
+                                                              "#sourceCode":[
 "",
 "vrmlscript:",
 "function initialize()",
@@ -8373,7 +8373,7 @@
                                                                               "@type":"SFTime"
                                                                             }
                                                                           ],
-                                                                          "#sourceText":[
+                                                                          "#sourceCode":[
 "",
 "vrmlscript:",
 "function options(value, time)",
@@ -8541,7 +8541,7 @@
                                                                                     "@type":"SFBool"
                                                                                   }
                                                                                 ],
-                                                                                "#sourceText":[
+                                                                                "#sourceCode":[
 "",
 "vrmlscript:",
 "function initialize(){",
@@ -8593,7 +8593,7 @@
                                                                                     "@value":["target=game-frame"]
                                                                                   }
                                                                                 ],
-                                                                                "#sourceText":[
+                                                                                "#sourceCode":[
 "",
 "vrmlscript:",
 "function touchTime(value, time)",
@@ -8828,7 +8828,7 @@
                                                                                     "@type":"SFBool"
                                                                                   }
                                                                                 ],
-                                                                                "#sourceText":[
+                                                                                "#sourceCode":[
 "",
 "vrmlscript:",
 "function initialize(){",
@@ -8880,7 +8880,7 @@
                                                                                     "@type":"SFBool"
                                                                                   }
                                                                                 ],
-                                                                                "#sourceText":[
+                                                                                "#sourceCode":[
 "",
 "vrmlscript:",
 "function touchTime(value, time)",
@@ -9533,7 +9533,7 @@
                                                                                     "@value":15
                                                                                   }
                                                                                 ],
-                                                                                "#sourceText":[
+                                                                                "#sourceCode":[
 "",
 "vrmlscript:",
 "function initialize()",
@@ -9589,7 +9589,7 @@
                                                                                           "@type":"SFInt32"
                                                                                         }
                                                                                       ],
-                                                                                      "#sourceText":[
+                                                                                      "#sourceCode":[
 "",
 "vrmlscript:",
 "function set_value(value, time)",
@@ -9804,7 +9804,7 @@
                                                                                     "@value":240
                                                                                   }
                                                                                 ],
-                                                                                "#sourceText":[
+                                                                                "#sourceCode":[
 "",
 "vrmlscript:",
 "function bonus1(value, time)",
@@ -9950,7 +9950,7 @@
                                                                                           "@value":1800
                                                                                         }
                                                                                       ],
-                                                                                      "#sourceText":[
+                                                                                      "#sourceCode":[
 "",
 "vrmlscript:",
 "function initialize()",
@@ -10123,7 +10123,7 @@
                                                                                           "@type":"SFTime"
                                                                                         }
                                                                                       ],
-                                                                                      "#sourceText":[
+                                                                                      "#sourceCode":[
 "",
 "vrmlscript:",
 "function startTime(value, time)",
@@ -10554,7 +10554,7 @@
                                                                                           "@type":"SFInt32"
                                                                                         }
                                                                                       ],
-                                                                                      "#sourceText":[
+                                                                                      "#sourceCode":[
 "",
 "vrmlscript:",
 "function initialize()",
@@ -11279,7 +11279,7 @@
                                                                                                       "@type":"SFBool"
                                                                                                     }
                                                                                                   ],
-                                                                                                  "#sourceText":[
+                                                                                                  "#sourceCode":[
 "",
 "vrmlscript:",
 "function initialize(){",
@@ -11579,7 +11579,7 @@
                                                                                                       "@value":[1,0.989362,0.989362]
                                                                                                     }
                                                                                                   ],
-                                                                                                  "#sourceText":[
+                                                                                                  "#sourceCode":[
 "",
 "vrmlscript:",
 "function initialize(){",
@@ -12017,7 +12017,7 @@
                                                                                                       "@value":[0.324455,0.794406,0.989362]
                                                                                                     }
                                                                                                   ],
-                                                                                                  "#sourceText":[
+                                                                                                  "#sourceCode":[
 "",
 "vrmlscript:",
 "function initialize(){",
@@ -12204,7 +12204,7 @@
                                                                                                             "@value":50
                                                                                                           }
                                                                                                         ],
-                                                                                                        "#sourceText":[
+                                                                                                        "#sourceCode":[
 "",
 "vrmlscript:function initialize()",
 "{",
@@ -12296,7 +12296,7 @@
                                                                                                             "@type":"SFInt32"
                                                                                                           }
                                                                                                         ],
-                                                                                                        "#sourceText":[
+                                                                                                        "#sourceCode":[
 "",
 "vrmlscript:",
 "function set_value(value, time)",
@@ -13139,7 +13139,7 @@
                                                                                                       "@value":[0.324455,0.794406,0.989362]
                                                                                                     }
                                                                                                   ],
-                                                                                                  "#sourceText":[
+                                                                                                  "#sourceCode":[
 "",
 "vrmlscript:",
 "function initialize(){",
@@ -13332,7 +13332,7 @@
                                                                                                             "@value":50
                                                                                                           }
                                                                                                         ],
-                                                                                                        "#sourceText":[
+                                                                                                        "#sourceCode":[
 "",
 "vrmlscript:function initialize()",
 "{",
@@ -13428,7 +13428,7 @@
                                                                                                             "@type":"SFInt32"
                                                                                                           }
                                                                                                         ],
-                                                                                                        "#sourceText":[
+                                                                                                        "#sourceCode":[
 "",
 "vrmlscript:",
 "function set_value(value, time)",
@@ -14300,7 +14300,7 @@
                                                                                                       "@value":[0.324455,0.794406,0.989362]
                                                                                                     }
                                                                                                   ],
-                                                                                                  "#sourceText":[
+                                                                                                  "#sourceCode":[
 "",
 "vrmlscript:",
 "function initialize(){",
@@ -14483,7 +14483,7 @@
                                                                                                             "@value":50
                                                                                                           }
                                                                                                         ],
-                                                                                                        "#sourceText":[
+                                                                                                        "#sourceCode":[
 "",
 "vrmlscript:function initialize()",
 "{",
@@ -14576,7 +14576,7 @@
                                                                                                             "@type":"SFInt32"
                                                                                                           }
                                                                                                         ],
-                                                                                                        "#sourceText":[
+                                                                                                        "#sourceCode":[
 "",
 "vrmlscript:",
 "function set_value(value, time)",
@@ -15490,7 +15490,7 @@
                         "@type":"SFTime"
                       }
                     ],
-                    "#sourceText":[
+                    "#sourceCode":[
 "",
 "vrmlscript:function triggerIn(value, time)",
 "{",

@@ -1,3 +1,5 @@
+precision highp float;
+
 uniform vec3 chromaticDispertion;
 uniform float bias;
 uniform float scale;

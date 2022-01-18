@@ -110,7 +110,7 @@
                   "@type":"SFTime"
                 }
               ],
-              "#sourceText":[
+              "#sourceCode":[
 "",
 "",
 "ecmascript:",

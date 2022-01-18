@@ -478,10 +478,10 @@ X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector']['ACTION']['front']
 }
 X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector']['ACTION']['front'].push(function(property, value) {
 		if (property === 'front') {
-			X3DJSON.nodeUtil('Scene','frontBack','url',typeof X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].front_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].front_changed() : X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].front, __eventTime);
+			X3DJSON.nodeUtil('Scene','frontBackTexture','url',typeof X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].front_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].front_changed() : X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].front, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','frontBack','url',typeof X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].front_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].front_changed() : X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].front, __eventTime);
+			X3DJSON.nodeUtil('Scene','frontBackTexture','url',typeof X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].front_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].front_changed() : X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].front, __eventTime);
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -500,10 +500,10 @@ X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector']['ACTION']['back'] 
 }
 X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector']['ACTION']['back'].push(function(property, value) {
 		if (property === 'back') {
-			X3DJSON.nodeUtil('Scene','backBack','url',typeof X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].back_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].back_changed() : X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].back, __eventTime);
+			X3DJSON.nodeUtil('Scene','backBackTexture','url',typeof X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].back_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].back_changed() : X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].back, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','backBack','url',typeof X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].back_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].back_changed() : X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].back, __eventTime);
+			X3DJSON.nodeUtil('Scene','backBackTexture','url',typeof X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].back_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].back_changed() : X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].back, __eventTime);
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -522,10 +522,10 @@ X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector']['ACTION']['left'] 
 }
 X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector']['ACTION']['left'].push(function(property, value) {
 		if (property === 'left') {
-			X3DJSON.nodeUtil('Scene','leftBack','url',typeof X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].left_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].left_changed() : X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].left, __eventTime);
+			X3DJSON.nodeUtil('Scene','leftBackTexture','url',typeof X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].left_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].left_changed() : X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].left, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','leftBack','url',typeof X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].left_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].left_changed() : X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].left, __eventTime);
+			X3DJSON.nodeUtil('Scene','leftBackTexture','url',typeof X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].left_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].left_changed() : X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].left, __eventTime);
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -544,10 +544,10 @@ X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector']['ACTION']['right']
 }
 X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector']['ACTION']['right'].push(function(property, value) {
 		if (property === 'right') {
-			X3DJSON.nodeUtil('Scene','rightBack','url',typeof X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].right_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].right_changed() : X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].right, __eventTime);
+			X3DJSON.nodeUtil('Scene','rightBackTexture','url',typeof X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].right_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].right_changed() : X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].right, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','rightBack','url',typeof X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].right_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].right_changed() : X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].right, __eventTime);
+			X3DJSON.nodeUtil('Scene','rightBackTexture','url',typeof X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].right_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].right_changed() : X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].right, __eventTime);
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -566,10 +566,10 @@ X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector']['ACTION']['top'] =
 }
 X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector']['ACTION']['top'].push(function(property, value) {
 		if (property === 'top') {
-			X3DJSON.nodeUtil('Scene','topBack','url',typeof X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].top_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].top_changed() : X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].top, __eventTime);
+			X3DJSON.nodeUtil('Scene','topBackTexture','url',typeof X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].top_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].top_changed() : X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].top, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','topBack','url',typeof X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].top_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].top_changed() : X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].top, __eventTime);
+			X3DJSON.nodeUtil('Scene','topBackTexture','url',typeof X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].top_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].top_changed() : X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].top, __eventTime);
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -588,10 +588,10 @@ X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector']['ACTION']['bottom'
 }
 X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector']['ACTION']['bottom'].push(function(property, value) {
 		if (property === 'bottom') {
-			X3DJSON.nodeUtil('Scene','bottomBack','url',typeof X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].bottom_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].bottom_changed() : X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].bottom, __eventTime);
+			X3DJSON.nodeUtil('Scene','bottomBackTexture','url',typeof X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].bottom_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].bottom_changed() : X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].bottom, __eventTime);
 		}
 });
-			X3DJSON.nodeUtil('Scene','bottomBack','url',typeof X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].bottom_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].bottom_changed() : X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].bottom, __eventTime);
+			X3DJSON.nodeUtil('Scene','bottomBackTexture','url',typeof X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].bottom_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].bottom_changed() : X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].bottom, __eventTime);
 if (typeof X3DJSON['Obj'] === 'undefined') {
 X3DJSON['Obj'] = {};
 }
@@ -725,12 +725,12 @@ X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector']['ACTION']['bottom'
 });
 			X3DJSON.nodeUtil('Scene','bottomShader','url',typeof X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].bottom_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].bottom_changed() : X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].bottom, __eventTime);
 			X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].set_fraction(X3DJSON.nodeUtil('Scene','Clock','fraction'), __eventTime);
-			X3DJSON.nodeUtil('Scene','frontBack','url',typeof X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].front_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].front_changed() : X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].front, __eventTime);
-			X3DJSON.nodeUtil('Scene','backBack','url',typeof X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].back_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].back_changed() : X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].back, __eventTime);
-			X3DJSON.nodeUtil('Scene','leftBack','url',typeof X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].left_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].left_changed() : X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].left, __eventTime);
-			X3DJSON.nodeUtil('Scene','rightBack','url',typeof X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].right_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].right_changed() : X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].right, __eventTime);
-			X3DJSON.nodeUtil('Scene','topBack','url',typeof X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].top_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].top_changed() : X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].top, __eventTime);
-			X3DJSON.nodeUtil('Scene','bottomBack','url',typeof X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].bottom_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].bottom_changed() : X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].bottom, __eventTime);
+			X3DJSON.nodeUtil('Scene','frontBackTexture','url',typeof X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].front_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].front_changed() : X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].front, __eventTime);
+			X3DJSON.nodeUtil('Scene','backBackTexture','url',typeof X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].back_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].back_changed() : X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].back, __eventTime);
+			X3DJSON.nodeUtil('Scene','leftBackTexture','url',typeof X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].left_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].left_changed() : X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].left, __eventTime);
+			X3DJSON.nodeUtil('Scene','rightBackTexture','url',typeof X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].right_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].right_changed() : X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].right, __eventTime);
+			X3DJSON.nodeUtil('Scene','topBackTexture','url',typeof X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].top_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].top_changed() : X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].top, __eventTime);
+			X3DJSON.nodeUtil('Scene','bottomBackTexture','url',typeof X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].bottom_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].bottom_changed() : X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].bottom, __eventTime);
 			X3DJSON.nodeUtil('Scene','frontShader','url',typeof X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].front_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].front_changed() : X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].front, __eventTime);
 			X3DJSON.nodeUtil('Scene','backShader','url',typeof X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].back_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].back_changed() : X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].back, __eventTime);
 			X3DJSON.nodeUtil('Scene','leftShader','url',typeof X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].left_changed === "function" ? X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].left_changed() : X3DJSON['Obj']['Scene']['../data/mirror.json']['UrlSelector'].left, __eventTime);

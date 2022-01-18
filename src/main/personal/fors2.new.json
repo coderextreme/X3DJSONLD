@@ -153,7 +153,7 @@
                             "@type":"MFVec3f"
                           }
                         ],
-                        "#sourceText":[
+                        "#sourceCode":[
 "",
 "",
 "ecmascript:",
@@ -287,7 +287,7 @@
                               }
                             ]
                         },
-                        "#sourceText":[
+                        "#sourceCode":[
 "",
 "",
 "ecmascript:",

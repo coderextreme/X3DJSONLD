@@ -84,9 +84,51 @@ newModel=X3D(profile='Immersive',version='3.3',
             connect(nodeField='transnode',protoField='transnode'),
             connect(nodeField='rotscalenode',protoField='rotscalenode'),
             connect(nodeField='set_startpoint',protoField='set_startpoint'),
-            connect(nodeField='set_endpoint',protoField='set_endpoint')])
-*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
-)])),
+            connect(nodeField='set_endpoint',protoField='set_endpoint')]),
+
+          sourceCode="""
+ecmascript:
+        function recompute(startpoint,endpoint){
+	    if (typeof endpoint === 'undefined') {
+		return;
+	    }
+            var dif = endpoint.subtract(startpoint);
+            var dist = dif.length()*0.5;
+            var dif2 = dif.multiply(0.5);
+            var norm = dif.normalize();
+            var transl = startpoint.add(dif2);
+	    if (typeof Quaternion !== 'undefined') {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)
+		    };
+	    } else {
+		    return {
+			    scale : new SFVec3f(1.0,dist,1.0),
+			    translation : transl,
+			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)
+		    };
+	    }
+	}
+	function recompute_and_route(startpoint, endpoint) {
+	      var trafo = recompute(startpoint, endpoint);
+	      if (trafo) {
+		      transnode.translation = trafo.translation;
+		      rotscalenode.rotation = trafo.rotation;
+		      rotscalenode.scale = trafo.scale;
+	      }
+	}
+        function initialize(){
+            recompute_and_route(startnode.translation,endnode.translation);
+        }
+        function set_startpoint(val,t){
+            recompute_and_route(val,endnode.translation);
+        }
+        function set_endpoint(val,t){
+            recompute_and_route(startnode.translation,val);
+        }
+""")])),
     ProtoInstance(name='x3dconnector',DEF='connector1',
       fieldValue=[
       fieldValue(name='startnode',

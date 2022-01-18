@@ -1,7 +1,5 @@
 #version 300 es
-#ifdef GL_ES
-  precision highp float;
-#endif
+precision highp float;
 
 out vec4 x3d_FragColor;
 

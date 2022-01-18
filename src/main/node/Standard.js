@@ -30,7 +30,7 @@ function handleAttribute(json, key) {
 		handleObject(json[key]);
 	} else if (isNaN(parseInt(key))) {
 		if (key === '_') {
-			json['#sourceText'] = json[key].split(/\n/);
+			json['#sourceCode'] = json[key].split(/\n/);
 		} else {
 			json['@'+key] = json[key];
 		}

@@ -93,9 +93,45 @@ newModel=X3D(profile='Immersive',version='3.0',
                       field(accessType='outputOnly',name='translationOffsetChanged',type='SFVec3f')],
                       IS=IS(
                         connect=[
-                        connect(nodeField='traceEnabled',protoField='traceEnabled')])
-*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
-),
+                        connect(nodeField='traceEnabled',protoField='traceEnabled')]),
+
+                      sourceCode="""
+ecmascript:
+
+function tracePrint (text)
+{
+	if (traceEnabled) Browser.print ('[HeadsUpDisplayPrototype VisibilityControlScript] ' + text);
+}
+function setIsVisible (value, timeStamp)
+{
+	isVisible = value;
+	tracePrint('isVisible=' + value);
+}
+function setPlaneSensorIsActive (value, timeStamp)
+{
+	tracePrint('PlaneSensor isActive=' + value);
+
+	if (value == false)
+	{
+		tracePrint('planeSensorTranslation=' + planeSensorTranslation);
+		if (isVisible)
+		{
+			translationChanged = planeSensorTranslation;
+		}
+		else
+		{
+			// fell off screen, reset to center
+			translationChanged = new SFVec3f(0, 0, 0);
+			translationOffsetChanged  = new SFVec3f(0, 0, 0);
+		}
+	}
+}
+function setPlaneSensorTranslation (value, timeStamp)
+{
+	planeSensorTranslation = value;
+	tracePrint('planeSensorTranslation=' + value);
+}
+"""),
                     ROUTE(fromField='isActive',fromNode='PlaneMovementSensor',toField='setPlaneSensorIsActive',toNode='VisibilityControlScript'),
                     ROUTE(fromField='translation_changed',fromNode='PlaneMovementSensor',toField='setPlaneSensorTranslation',toNode='VisibilityControlScript'),
                     ROUTE(fromField='isActive',fromNode='MovementVisibilitySensor',toField='setIsVisible',toNode='VisibilityControlScript')])])]),

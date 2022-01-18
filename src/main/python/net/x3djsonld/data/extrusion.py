@@ -43,9 +43,18 @@ newModel=X3D(profile='Immersive',version='3.3',
       Script(DEF='MoveCylinder',
         field=[
         field(name='set_cycle',accessType='inputOnly',type='SFTime'),
-        field(name='spine',accessType='inputOutput',type='MFVec3f',value=[(-50,-50,0),(50,50,0)])]
-*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
-),
+        field(name='spine',accessType='inputOutput',type='MFVec3f',value=[(-50,-50,0),(50,50,0)])],
+
+        sourceCode="""
+ecmascript:
+
+                function set_cycle(value) {
+                        Browser.print(value);
+                        var endA = new SFVec3f(spine[0].x*Math.random()*2, spine[0].y*Math.random()*2, spine[0].z*Math.random()*2);
+                        var endB = new SFVec3f(spine[1].x*Math.random()*2, spine[1].y*Math.random()*2, spine[1].z*Math.random()*2);
+		        spine = new MFVec3f([endA, endB]);
+                }
+"""),
       ROUTE(fromNode='TourTime',fromField='cycleTime',toNode='MoveCylinder',toField='set_cycle'),
       ROUTE(fromNode='MoveCylinder',fromField='spine_changed',toNode='extrusion',toField='set_spine')])])
 ) # X3D model complete

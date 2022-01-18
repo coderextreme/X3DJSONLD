@@ -95,10 +95,9 @@ public class text
         .setAppearance(new Appearance()
           .setMaterial(new Material())))
       .addChild(new Script().setSourceCode("""
-			    ecmascript:
+ecmascript:
 			    var me = '"1" "\"2" "\n3"';
-			    
-			""")
+""")
         .addField(new field().setName("frontUrls").setType(field.TYPE_MFSTRING).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new String[] {"rnl_front.png","uffizi_front.png"})))));
     }
 	// end of initialize() method

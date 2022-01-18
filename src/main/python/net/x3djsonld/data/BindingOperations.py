@@ -109,9 +109,98 @@ newModel=X3D(profile='Immersive',version='3.3',
         field(accessType='inputOnly',name='view2Bound',type='SFBool'),
         field(accessType='inputOnly',name='view3Bound',type='SFBool'),
         field(accessType='inputOnly',name='view4Bound',type='SFBool'),
-        field(accessType='initializeOnly',name='priorInputvalue',type='SFInt32',value=-1)]
-*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
-),
+        field(accessType='initializeOnly',name='priorInputvalue',type='SFInt32',value=-1)],
+
+        sourceCode="""
+ecmascript:
+
+function initialize ()
+{
+    bindView5 = true;
+    Browser.print ('Timing script initialized and ready for activation');
+}
+function set_timeEvent (inputValue)
+{
+    if (inputValue == priorInputvalue)
+    {
+        return; // ignore repeated inputs
+    }
+    // new value provided
+    priorInputvalue = inputValue;
+    // Browser.print ('\ntimeEvent inputValue=' + inputValue);
+        
+    // mimics user execution of Figure 4.1 steps t_0 through t_8
+    if (inputValue == 0)
+    {
+        Browser.print ('\n===========\n time t0');
+        bindView1 = true;
+    }
+    else if (inputValue == 1)
+    {
+        Browser.print ('\n===========\n time t1');
+        bindView2 = true;
+    }
+    else if (inputValue == 2)
+    {
+        Browser.print ('\n===========\n time t2');
+        bindView3 = true;
+    }
+    else if (inputValue == 3)
+    {
+        Browser.print ('\n===========\n time t3');
+        bindView3 = false;
+    }
+    else if (inputValue == 4)
+    {
+        Browser.print ('\n===========\n time t4');
+        bindView1 = true;
+    }
+    else if (inputValue == 5)
+    {
+        Browser.print ('\n===========\n time t5');
+        bindView2 = false;
+    }
+    else if (inputValue == 6)
+    {
+        Browser.print ('\n===========\n time t6');
+        bindView1 = false;
+    }
+    else if (inputValue == 7)
+    {
+        Browser.print ('\n===========\n time t7');
+        bindView4 = true;
+
+    }
+    else if (inputValue == 8)
+    {
+        Browser.print ('\n===========\n time t8');
+        Browser.print (', no action, all done');
+        Browser.print ('\n\n');
+    }
+}
+
+function view1Bound (inputValue)
+{
+    Browser.print (', view1Bound ' + (inputValue));
+    if (priorInputvalue == -1) Browser.print ('\n');
+}
+function view2Bound (inputValue)
+{
+    Browser.print (', view2Bound ' + (inputValue));
+}
+function view3Bound (inputValue)
+{
+    Browser.print (', view3Bound ' + (inputValue));
+}
+function view4Bound (inputValue)
+{
+    Browser.print (', view4Bound ' + (inputValue));
+}
+function view5Bound (inputValue)
+{
+    Browser.print (', view5Bound ' + (inputValue));
+}
+"""),
       #  drive Script with TimeSensor clock 
       ROUTE(fromField='value_changed',fromNode='TimingSequencer',toField='set_timeEvent',toNode='BindingSequencerEngine'),
       #  Script will bind and unbind Viewpoint nodes 

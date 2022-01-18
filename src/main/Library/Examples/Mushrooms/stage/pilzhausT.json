@@ -3,7 +3,7 @@
     "@profile":"Full",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"24 November 2021"
+            "@content":"17 January 2022"
           },
           {
             "@name":"generator",
@@ -179,7 +179,7 @@
                             { "NavigationInfo":
                               {
                                 "@DEF":"_EntryNavInfo1",
-                                "@type":["WALK"],
+                                "@type":"\"WALK\"",
                                 "@speed":3,
                                 "@headlight":false
                               }
@@ -199,7 +199,7 @@
                                     "@type":"SFTime"
                                   }
                                 ],
-                                "#sourceText":[
+                                "#sourceCode":[
 "",
 "vrmlscript:",
 "function set_startTime(value, time)",
@@ -763,7 +763,7 @@
                                                       "@type":"SFTime"
                                                     }
                                                   ],
-                                                  "#sourceText":[
+                                                  "#sourceCode":[
 "",
 "vrmlscript:function triggerIn(value, time) {",
 "",
@@ -1001,7 +1001,7 @@
                                                                         "@type":"SFFloat"
                                                                       }
                                                                     ],
-                                                                    "#sourceText":[
+                                                                    "#sourceCode":[
 "",
 "vrmlscript: function xIn(value) { xBuf = value; vec[0] = xBuf; vec[1] = yBuf; } function yIn(value) { yBuf = value; vec[0] = xBuf; vec[1] = yBuf; }  ",
 ""
@@ -2217,7 +2217,7 @@
                                   { "NavigationInfo":
                                     {
                                       "@DEF":"_fly",
-                                      "@type":["EXAMINE"],
+                                      "@type":"\"EXAMINE\"",
                                       "@headlight":false
                                     }
                                   },
@@ -2241,7 +2241,7 @@
                                           "@type":"SFTime"
                                         }
                                       ],
-                                      "#sourceText":[
+                                      "#sourceCode":[
 "",
 "vrmlscript:function triggerIn(value, time) {",
 "",
@@ -2289,7 +2289,7 @@
                                                 "@type":"SFTime"
                                               }
                                             ],
-                                            "#sourceText":[
+                                            "#sourceCode":[
 "",
 "vrmlscript:function triggerIn(value, time) {",
 "",

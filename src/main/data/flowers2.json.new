@@ -296,7 +296,7 @@
                                     "@value": 50
                                   }
                                 ],
-                                "#sourceText": [
+                                "#sourceCode": [
                                   "ecmascript:",
                                   "",
                                   "\t\t\tvar e = 5;",

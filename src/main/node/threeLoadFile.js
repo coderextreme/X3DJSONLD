@@ -1,3 +1,3 @@
-var threeLoadFile = require("./threex3dloader");
+var threeLoadFile = require("./threex3dloader.mjs");
 
 module.exports = threeLoadFile;

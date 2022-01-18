@@ -9,7 +9,7 @@
 </head>
 <Scene><WorldInfo info="&quot;, &quot; &quot;Created in TitaniaPackaged by CosmoPackage&quot;"></WorldInfo>
 <Transform DEF="viewing"><NavigationInfo DEF="_top" type="&quot;EXAMINE&quot;" transitionType="&quot;ANIMATE&quot;" transitionTime="2"></NavigationInfo>
-<NavigationInfo DEF="_inside" type="&quot;, &quot; &quot;ANYWALK&quot;" speed="0.3" headlight="false" transitionType="&quot;ANIMATE&quot;" transitionTime="2"></NavigationInfo>
+<NavigationInfo DEF="_inside" type="&quot;ANY&quot;, &quot;WALK&quot;" speed="0.3" headlight="false" transitionType="&quot;ANIMATE&quot;" transitionTime="2"></NavigationInfo>
 <Viewpoint DEF="VP2" description="top" position="-1.58774 10.891 2.33508" orientation="-0.999999 -0.00113122 0.00113515 1.53307" fieldOfView="1.3"></Viewpoint>
 <Viewpoint DEF="VP1" description="inside" position="4.57879 1.10243 0.55636" orientation="-0.0191714 0.999803 0.00515404 1.41461" fieldOfView="1.3"></Viewpoint>
 </Transform>

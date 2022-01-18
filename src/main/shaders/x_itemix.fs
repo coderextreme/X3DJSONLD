@@ -1,7 +1,5 @@
 #version 300 es
-#ifdef GL_ES
-  precision highp float;
-#endif
+precision highp float;
 
 /*
 The MIT License (MIT)

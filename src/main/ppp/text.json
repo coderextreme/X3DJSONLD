@@ -130,7 +130,7 @@
                       ]
                     }
                   ],
-                  "#sourceText": [
+                  "#sourceCode": [
                     "",
                     "\t\t\t    ecmascript:",
                     "\t\t\t    var me = '\"1\" \"\"2\" \"\n3\"';",

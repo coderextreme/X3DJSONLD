@@ -193,7 +193,7 @@
                                                       "@type":"SFFloat"
                                                     }
                                                   ],
-                                                  "#sourceText":[
+                                                  "#sourceCode":[
 "",
 "",
 "vrmlscript: function xIn(value) { xBuf = value; vec[0] = xBuf; vec[1] = yBuf; } function yIn(value) { yBuf = value; vec[0] = xBuf; vec[1] = yBuf; }",
@@ -338,7 +338,7 @@
                   "@type":"SFTime"
                 }
               ],
-              "#sourceText":[
+              "#sourceCode":[
 "",
 "",
 "vrmlscript:function triggerIn(value, time) {",

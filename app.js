@@ -263,7 +263,7 @@ function magic(path, type) {
 		while (url.startsWith("/")) {
 			url = url.substr(1);
 		}
-		console.error("Requested", url);
+		console.error(req.ip+":  Requested", url);
 		var wind = url.indexOf("www.web3d.org");
 		if (wind >= 0) {
 			url = url.substring(wind);
@@ -345,7 +345,7 @@ magic("*.xml", "text/xml");
 
 app.get("*.json", function(req, res, next) {
 	var url = req._parsedUrl.pathname.substr(1);
-	console.error("Requested JSON File", url);
+	console.error(req.ip+":  Requested JSON File", url);
 	var file = url;
 	var hash = url.indexOf("#");
 	if (hash > 0) {

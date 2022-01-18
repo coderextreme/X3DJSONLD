@@ -3,7 +3,7 @@
     "@profile":"Full",
     "@version":"3.3",
     "@xsd:noNamespaceSchemaLocation":"http://www.web3d.org/specifications/x3d-3.3.xsd",
-    "JSON schema":"https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+    "JSON schema":"https://www.web3d.org/specifications/x3d-3.3-JSONSchema.json",
     "head": {
         "meta": [
           {
@@ -28,7 +28,7 @@
           },
           {
             "@name":"translated",
-            "@content":"24 November 2021"
+            "@content":"17 January 2022"
           },
           {
             "@name":"generator",
@@ -113,7 +113,7 @@
                               }
                             ]
                         },
-                        "#sourceText":[
+                        "#sourceCode":[
 "",
 "javascript:",
 "function initialize(){",
@@ -602,7 +602,7 @@
                               }
                             ]
                         },
-                        "#sourceText":[
+                        "#sourceCode":[
 "",
 "javascript:",
 "function set_p(n){",
@@ -974,7 +974,7 @@
                               }
                             ]
                         },
-                        "#sourceText":[
+                        "#sourceCode":[
 "",
 "javascript:",
 "function set_transparency(n){",
@@ -1242,7 +1242,7 @@
                               }
                             ]
                         },
-                        "#sourceText":[
+                        "#sourceCode":[
 "",
 "javascript:",
 "function initialize(){",
@@ -1638,7 +1638,7 @@
                               }
                             ]
                         },
-                        "#sourceText":[
+                        "#sourceCode":[
 "",
 "javascript:",
 "function set_p(n){",
@@ -1767,7 +1767,7 @@
                               }
                             ]
                         },
-                        "#sourceText":[
+                        "#sourceCode":[
 "",
 "javascript:",
 "function initialize(){",
@@ -2304,7 +2304,7 @@
                               }
                             ]
                         },
-                        "#sourceText":[
+                        "#sourceCode":[
 "",
 "javascript:",
 "function Wa(){",
@@ -2801,7 +2801,7 @@
                               }
                             ]
                         },
-                        "#sourceText":[
+                        "#sourceCode":[
 "",
 "javascript:",
 "function initialize(){",
@@ -3115,7 +3115,7 @@
                               }
                             ]
                         },
-                        "#sourceText":[
+                        "#sourceCode":[
 "",
 "javascript:",
 "function initialize(){",
@@ -4100,7 +4100,7 @@
                               }
                             ]
                         },
-                        "#sourceText":[
+                        "#sourceCode":[
 "",
 "javascript:",
 "function kc()",
@@ -5053,7 +5053,7 @@
                               }
                             ]
                         },
-                        "#sourceText":[
+                        "#sourceCode":[
 "",
 "javascript:",
 "function Zd(lb){",
@@ -5365,7 +5365,7 @@
                               }
                             ]
                         },
-                        "#sourceText":[
+                        "#sourceCode":[
 "",
 "javascript:",
 "function initialize(){",
@@ -5587,7 +5587,7 @@
                               }
                             ]
                         },
-                        "#sourceText":[
+                        "#sourceCode":[
 "",
 "javascript:",
 "function initialize(){",
@@ -5786,7 +5786,7 @@
                               }
                             ]
                         },
-                        "#sourceText":[
+                        "#sourceCode":[
 "",
 "javascript:",
 "function R(n,Za){",
@@ -6013,7 +6013,7 @@
                               }
                             ]
                         },
-                        "#sourceText":[
+                        "#sourceCode":[
 "",
 "vrmlscript:",
 "function Re(U,Se){",
@@ -6469,7 +6469,7 @@
                               }
                             ]
                         },
-                        "#sourceText":[
+                        "#sourceCode":[
 "",
 "javascript:",
 "function initialize(){",
@@ -7016,7 +7016,7 @@
                               }
                             ]
                         },
-                        "#sourceText":[
+                        "#sourceCode":[
 "",
 "javascript:",
 "function Jf(Kf,Lf,",
@@ -7321,7 +7321,7 @@
                               }
                             ]
                         },
-                        "#sourceText":[
+                        "#sourceCode":[
 "",
 "javascript:",
 "function Re(U,Se){",
@@ -7607,7 +7607,7 @@
                               }
                             ]
                         },
-                        "#sourceText":[
+                        "#sourceCode":[
 "",
 "javascript:",
 "function Re(U,Se){",
@@ -8197,7 +8197,7 @@
                               }
                             ]
                         },
-                        "#sourceText":[
+                        "#sourceCode":[
 "",
 "javascript:",
 "function initialize(){",
@@ -8519,7 +8519,7 @@
                               }
                             ]
                         },
-                        "#sourceText":[
+                        "#sourceCode":[
 "",
 "javascript:",
 "function initialize(){",
@@ -8703,7 +8703,7 @@
                               }
                             ]
                         },
-                        "#sourceText":[
+                        "#sourceCode":[
 "",
 "javascript:",
 "function initialize(){",
@@ -9545,7 +9545,7 @@
                               }
                             ]
                         },
-                        "#sourceText":[
+                        "#sourceCode":[
 "",
 "javascript:",
 "function ld(){",
@@ -9905,7 +9905,7 @@
                 { "NavigationInfo":
                   {
                     "@DEF":"Ji",
-                    "@type":["NONE"]
+                    "@type":"\"NONE\""
                   }
                 },
                 { "Background":

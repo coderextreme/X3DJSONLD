@@ -223,7 +223,7 @@
                               }
                             ]
                         },
-                        "#sourceText":[
+                        "#sourceCode":[
 "vrmlscript:",
 "",
 "function initialize ()",

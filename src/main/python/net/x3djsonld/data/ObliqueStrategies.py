@@ -87,9 +87,12 @@ newModel=X3D(profile='Immersive',version='3.3',
       field(accessType='inputOnly',name='selectPreviousCard',type='SFBool'),
       field(accessType='inputOnly',name='selectNextCard',type='SFBool'),
       field(accessType='inputOnly',name='selectRandomCard',type='SFBool'),
-      field(accessType='initializeOnly',appinfo='controls console tracing',name='traceEnabled',type='SFBool',value=True)]
-*** TODO x3d.py and X3dToPython.xslt need to handle embedded CDATA source code for Script
-),
+      field(accessType='initializeOnly',appinfo='controls console tracing',name='traceEnabled',type='SFBool',value=True)],
+
+      sourceCode="""
+ecmascript:
+
+"""),
     Transform(DEF='CardTransform',scale=(0.4,0.4,0.4),translation=(0,-1.5,0),
       children=[
       Shape(

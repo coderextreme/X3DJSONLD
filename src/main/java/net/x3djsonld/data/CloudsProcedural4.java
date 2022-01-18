@@ -120,7 +120,6 @@ public class CloudsProcedural4
       .addChild(new Transform("Cirrus"))
       .addChild(new Transform("Fog"))
       .addChild(new Script("PixelScript").setDirectOutput(true).setSourceCode("""
-        
 ecmascript:
 
 
@@ -502,8 +501,7 @@ cumulus();
 
 cirrus();
 }
-
-      """)
+""")
         .addField(new field().setName("Cumulus").setType(field.TYPE_SFNODE).setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
           .addChild(new Transform().setUSE("Cumulus")))
         .addField(new field().setName("Cirrus").setType(field.TYPE_SFNODE).setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
