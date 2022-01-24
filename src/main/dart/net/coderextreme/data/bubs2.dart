@@ -34,7 +34,11 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('generator'),
-              content_ : SFString('X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html'))]),
+              content_ : SFString('X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html')),
+          component_ : 
+            component(
+              name_ : SFString('Scripting'),
+              level_ : 1)]),
       Scene_ : 
         Scene(
           children_ : [

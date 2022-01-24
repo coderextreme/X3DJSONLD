@@ -6,6 +6,8 @@ import { SFNode } from './x3d.mjs';
 import { head } from './x3d.mjs';
 import { MFNode } from './x3d.mjs';
 import { meta } from './x3d.mjs';
+import { component } from './x3d.mjs';
+import { SFInt32 } from './x3d.mjs';
 import { Scene } from './x3d.mjs';
 import { NavigationInfo } from './x3d.mjs';
 import { Viewpoint } from './x3d.mjs';
@@ -62,7 +64,11 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("generator"),
-              content : new SFString("X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html")})])})),
+              content : new SFString("X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html")}),
+          component : new SFNode(
+            new component({
+              name : new SFString("Scripting"),
+              level : new SFInt32(1)})])})),
       Scene : new SFNode(
         new Scene({
           children : new MFNode([
