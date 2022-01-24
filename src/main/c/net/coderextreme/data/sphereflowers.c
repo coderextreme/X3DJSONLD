@@ -3,7 +3,7 @@ void main(int argc, char ** argv) {
 Browser browser = X3D.getBrowser();
 X3D X3D0;
 X3D0.profile = "Immersive";
-X3D0.version = "3.3";
+X3D0.version = "4.0";
 head head1 = createNode("head");
 meta meta2 = createNode("meta");
 meta2.name = "title";
@@ -51,7 +51,7 @@ children[1] = Background9;
 Group Group10 = createNode("Group");
 ExternProtoDeclare ExternProtoDeclare11 = createNode("ExternProtoDeclare");
 ExternProtoDeclare11.name = "FlowerProto";
-ExternProtoDeclare11.url = new MFString(new java.lang.String["../data/flowerproto.json#FlowerProto"]);
+ExternProtoDeclare11.url = new MFString(new java.lang.String["../personal/flowerproto.json#FlowerProto","https://coderextreme.net/X3DJSONLD/src/main/personal/flowerproto.json#FlowerProto","https://localhost:3000/src/main/personal/flowerproto.json#FlowerProto"]);
 field field12 = createNode("field");
 field12.name = "vertex";
 field12.accessType = "inputOutput";
