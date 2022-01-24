@@ -40,7 +40,9 @@ public class sphereflowers {
   public static void main(String[] args) {
     ConfigurationProperties.setXsltEngine(ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA);
     ConfigurationProperties.setDeleteIntermediateFiles(false);
-    new sphereflowers().initialize().toFileJSON("../personal/sphereflowers.new.json");
+    X3D model = new sphereflowers().initialize();
+    System.out.print(model.validationReport().trim());
+    model.toFileJSON("../personal/sphereflowers.new.json");
     }
     public X3D initialize() {
 ProtoInstance ProtoInstance0 = null;
@@ -116,7 +118,7 @@ protected class MFString5 {
 }
 protected class MFString6 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../personal/flowerproto.json#FlowerProto"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"../personal/flowerproto.json#FlowerProto","https://coderextreme.net/X3DJSONLD/src/main/personal/flowerproto.json#FlowerProto"});
   }
 }
 protected class MFString7 {
