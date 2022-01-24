@@ -57,7 +57,7 @@ group->addChildren(*Background9);
 CGroup* Group10 = (CGroup *)(m_pScene.createNode("Group"));
 CExternProtoDeclare* ExternProtoDeclare11 = new CExternProtoDeclare();
 ExternProtoDeclare11->setName("FlowerProto");
-ExternProtoDeclare11->setUrl(new CString[1]{"../personal/flowerproto.json#FlowerProto"}, 1);
+ExternProtoDeclare11->setUrl(new CString[2]{"../personal/flowerproto.json#FlowerProto","https://coderextreme.net/X3DJSONLD/src/main/personal/flowerproto.json#FlowerProto"}, 2);
 Cfield* field12 = new Cfield();
 field12->setName("vertex");
 field12->setAccessType("inputOutput");
