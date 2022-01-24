@@ -36,7 +36,7 @@
           },
           {
             "@name":"translated",
-            "@content":"18 January 2022"
+            "@content":"24 January 2022"
           },
           {
             "@name":"generator",
@@ -45,6 +45,12 @@
           {
             "@name":"reference",
             "@content":"X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"
+          }
+        ],
+        "component": [
+          {
+            "@name":"Scripting",
+            "@level":1
           }
         ]
     },
