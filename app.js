@@ -383,8 +383,10 @@ app.get("*.json", function(req, res, next) {
 
 
 https.createServer({
-  key: fs.readFileSync('server.key'),
-  cert: fs.readFileSync('server.cert')
+  key: fs.readFileSync('key.pem'),
+  cert: fs.readFileSync('cert.pem'),
+  requestCert: false,
+  rejectUnauthorized: false
 }, app)
 .listen(3000, 'localhost', function () {
   console.log('Example app listening on port 3000! Go to https://localhost:3000/')
