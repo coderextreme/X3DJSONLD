@@ -1,7 +1,7 @@
 let browser = X3D.getBrowser();
 let X3D0 = {};
 X3D0.profile = "Immersive";
-X3D0.version = "3.3";
+X3D0.version = "4.0";
 let head1 = browser.currentScene.createNode("head");
 let meta2 = browser.currentScene.createNode("meta");
 meta2.name = "title";
@@ -49,7 +49,7 @@ browser.currentScene.children[1] = Background9;
 let Group10 = browser.currentScene.createNode("Group");
 let ExternProtoDeclare11 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare11.name = "FlowerProto";
-ExternProtoDeclare11.url = new MFString(new java.lang.String["../data/flowerproto.json#FlowerProto"]);
+ExternProtoDeclare11.url = new MFString(new java.lang.String["../personal/flowerproto.json#FlowerProto","https://coderextreme.net/X3DJSONLD/src/main/personal/flowerproto.json#FlowerProto","https://localhost:3000/src/main/personal/flowerproto.json#FlowerProto"]);
 let field12 = browser.currentScene.createNode("field");
 field12.name = "vertex";
 field12.accessType = "inputOutput";

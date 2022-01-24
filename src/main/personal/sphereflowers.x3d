@@ -19,7 +19,7 @@
             topUrl='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/images/src/main/resourcesall_probes/stpeters_cross/stpeters_top.png"'
         />
 	<Group>
-		<ExternProtoDeclare name="FlowerProto" url='"../personal/flowerproto.json#FlowerProto"'>
+		<ExternProtoDeclare name="FlowerProto" url='"../personal/flowerproto.json#FlowerProto" "https://coderextreme.net/X3DJSONLD/src/main/personal/flowerproto.json#FlowerProto" "https://localhost:3000/src/main/personal/flowerproto.json#FlowerProto"'>
 			<field accessType='inputOutput' name='vertex' type='MFString'/>
 			<field accessType='inputOutput' name='fragment' type='MFString'/>
 		</ExternProtoDeclare>
