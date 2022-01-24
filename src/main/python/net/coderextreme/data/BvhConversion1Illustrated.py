@@ -27,7 +27,7 @@ X3D(
           meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
           meta(name="identifier", content="https://x3dgraphics.com/examples/X3dForAdvancedModeling/MotionAnimation/BvhConversion1Illustrated.x3d"),
           meta(name="license", content="license.html"),
-          meta(name="translated", content="18 January 2022"),
+          meta(name="translated", content="22 January 2022"),
           meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
           meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")]), Scene=Scene(
     children=[#BVH HIERARCHY size computations: minX=0.0, maxX=0.0, width=0.0; minY=-17.78, maxY=10.16, height=27.94; minZ=0.0, maxZ=15.24, depth=15.24
