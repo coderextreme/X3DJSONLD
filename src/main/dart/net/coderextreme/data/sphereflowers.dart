@@ -4,7 +4,7 @@ import '../x3d.dart';
 var X3D0 =  X3D(
 
       profile_ : SFString('Immersive'),
-      version_ : SFString('3.3'),
+      version_ : SFString('4.0'),
       head_ : 
         head(
           meta_ : [
@@ -44,7 +44,7 @@ var X3D0 =  X3D(
               children_ : [
                 ExternProtoDeclare(
                   name_ : SFString('FlowerProto'),
-                  url_ : MFString([SFString("../data/flowerproto.json#FlowerProto")]),
+                  url_ : MFString([SFString("../personal/flowerproto.json#FlowerProto"), SFString("https://coderextreme.net/X3DJSONLD/src/main/personal/flowerproto.json#FlowerProto"), SFString("https://localhost:3000/src/main/personal/flowerproto.json#FlowerProto")]),
                   field_ : [
                     field(
                       type_ : SFString("MFString"),
