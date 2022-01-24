@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd' profile="Immersive" version="3.3" ><head><meta name="title" content="bubs2.x3d"></meta>
+<component name='Scripting' level='1'/>
 <meta name="creator" content="John Carlson"></meta>
 <meta name="description" content="Tour around a prismatic sphere"></meta>
 <meta name="generator" content="X3D-Edit, https://savage.nps.edu/X3D-Edit"></meta>

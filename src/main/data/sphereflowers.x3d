@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-3.3.xsd">
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd">
     <head>
         <meta name="title" content="sphereflowers.x3d"></meta>
         <meta name="creator" content="John Carlson"></meta>
@@ -19,7 +19,7 @@
             topUrl='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/images/src/main/resourcesall_probes/stpeters_cross/stpeters_top.png"'
         />
 	<Group>
-		<ExternProtoDeclare name="FlowerProto" url='"../data/flowerproto.json#FlowerProto"'>
+		<ExternProtoDeclare name="FlowerProto" url='"../personal/flowerproto.json#FlowerProto" "https://coderextreme.net/X3DJSONLD/src/main/personal/flowerproto.json#FlowerProto" "https://localhost:3000/src/main/personal/flowerproto.json#FlowerProto"'>
 			<field accessType='inputOutput' name='vertex' type='MFString'/>
 			<field accessType='inputOutput' name='fragment' type='MFString'/>
 		</ExternProtoDeclare>
