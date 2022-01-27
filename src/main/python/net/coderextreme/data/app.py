@@ -6,7 +6,7 @@ X3D(
           meta(name="creator", content="Carlson, I"),
           meta(name="creator", content="Carlson, II"),
           meta(name="creator", content="Carlson, III"),
-          meta(name="translated", content="22 January 2022"),
+          meta(name="translated", content="24 January 2022"),
           meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
           meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")]), Scene=Scene(
     children=[

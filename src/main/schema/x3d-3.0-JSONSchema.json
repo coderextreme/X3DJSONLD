@@ -9002,38 +9002,7 @@
             },
             "@type": {
               "$comment": "MFString inputOutput",
-              "type": "array",
-              "prefixItems": [
-                {
-                  "enum": [
-                    "ANY",
-                    "WALK",
-                    "EXAMINE",
-                    "FLY",
-                    "LOOKAT",
-                    "NONE",
-                    "EXPLORE"
-                  ],
-                  "default": "EXAMINE",
-                  "type": "string"
-                },
-                {
-                  "enum": [
-                    "ANY",
-                    "WALK",
-                    "EXAMINE",
-                    "FLY",
-                    "LOOKAT",
-                    "NONE",
-                    "EXPLORE"
-                  ],
-                  "default": "ANY",
-                  "type": "string"
-                }
-              ],
-              "items": {
-                "type": "string"
-              }
+              "type": "string"
             },
             "@visibilityLimit": {
               "default": 0,
