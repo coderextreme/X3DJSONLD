@@ -3999,6 +3999,10 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                 <xsl:text>go to this </xsl:text>
                                 <xsl:value-of select="local-name()"/>
                                 <xsl:text> node</xsl:text>
+                                <xsl:if test="(string-length(normalize-space(@description)) > 0)">
+                                    <xsl:text>: </xsl:text>
+                                    <xsl:value-of select="normalize-space(@description)"/>
+                                </xsl:if>
                             </xsl:attribute>
                             <xsl:attribute name="href">
                                 <xsl:text>#</xsl:text>
