@@ -3,3 +3,4 @@ node_modules/
 *.class
 *.bak
 target/
+/nbproject/private/
