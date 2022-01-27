@@ -218,6 +218,8 @@ class ClassPrinter:
                     str += 'object"\n'
                 elif field.get("type") == "SFString":
                     str += 'string"\n'
+                elif field.get("type") == "MFString" and field.get("name") == "type":
+                    str += 'string"\n'
                 else:
                     str += 'array",\n'
             if field.get("type") == "SFBool":
@@ -233,6 +235,8 @@ class ClassPrinter:
             elif field.get("type") == "SFNode":
                 pass
             elif field.get("type") == "SFString":
+                pass
+            elif field.get("type") == "MFString" and field.get("name") == "type":
                 pass
             else:
                 str += '\t\t\t\t\t\t"$comment":"'+field.get("type")+' '+field.get("accessType")+'",\n'

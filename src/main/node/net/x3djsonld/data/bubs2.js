@@ -78,6 +78,7 @@ bubs2.prototype = {
   this.x3dModel = (new autoclass.X3D()).setProfile("Immersive").setVersion("3.3")
   .setHead((new autoclass.head())
     .addMeta((new autoclass.meta()).setName("title").setContent("bubs2.x3d"))
+    .addComponent((new autoclass.component()).setName("Scripting").setLevel(1))
     .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
     .addMeta((new autoclass.meta()).setName("description").setContent("Tour around a prismatic sphere"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))

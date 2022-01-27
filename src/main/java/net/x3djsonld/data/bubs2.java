@@ -79,6 +79,7 @@ public class bubs2
   x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_3_3)
   .setHead(new head()
     .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("bubs2.x3d"))
+    .addComponent(new component().setName("Scripting").setLevel(1))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("John Carlson"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Tour around a prismatic sphere"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))

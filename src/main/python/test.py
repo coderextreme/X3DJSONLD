@@ -20,39 +20,44 @@ class ValidateX3DJSON:
             return None
 
     # validate instance against two schemas
-    def validate_with_schemas(self, entryPath, schemas, pres):
-        result = [ "jsonSkipped", "jwcSkipped", "dbSkipped"]
+    def validate_with_schemas(self, entryPath, schemas, pre):
+        result = [ "jsonSkipped", "jwcSkipped"]
 
         try:
             result[0] = "jsonDidNotParse"
             instance = self.load_json("x3d", entryPath)
             result[0] = "jsonParsed"
             for si in range(len(schemas)):
-                result[si+1] = pres[si]+"Invalid"
+                result[si+1] = pre+"Invalid"
                 validate(schema=schemas[si], instance=instance)
-                result[si+1] = pres[si]+"Valid"
+                result[si+1] = pre+"Valid"
         except:
             pass
-        print(result[0], result[1], result[2], end=" ")
+        print(result[0], result[1], end=" ")
 
     def fileList(self, dirpath):
         for base, directories, filenames in list(os.walk(dirpath)):
             for filename in filenames:
                 if filename.endswith(".json"):
                     fullpath = os.path.join(base, filename)
+                    # print(fullpath)
                     yield fullpath
 
 
 
 if __name__ == "__main__":
     X3DJSONValidator = ValidateX3DJSON()
-    pre = ["jwc", "db"]
+    pre = "jwc"
     metaschema = X3DJSONValidator.load_json("meta", "../schema/2020-12-JSONSchema.json")
-    schemafiles = ('../schema/x3d-4.0-JSONSchema.json', '../schema/X3dXml4.0SchemaConvertedToJson2020-12Schema.json')
+    schemafile = '../schema/x3d-4.0-JSONSchema.json'
     schemas = []
-    for s in range(len(schemafiles)):
-        schemas.append(X3DJSONValidator.load_json(pre[s], schemafiles[s]))
-        validate(schema=metaschema, instance=schemas[s])
-    for entryPath in X3DJSONValidator.fileList("/c/x3d-code/www.web3d.org/x3d/content/examples"):
+    schemas.append(X3DJSONValidator.load_json(pre, schemafile))
+    # print(str(metaschema))
+    # print(str(schemas[0]))
+    try:
+        validate(schema=metaschema, instance=schemas[0])
+    except:
+        print("Invalid "+schemafile)
+    for entryPath in X3DJSONValidator.fileList("C:/x3d-code/www.web3d.org/x3d/content/examples"):
         X3DJSONValidator.validate_with_schemas(entryPath, schemas, pre)
         print(entryPath)

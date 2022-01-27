@@ -15,7 +15,7 @@ X3D(
           meta(name="identifier", content="https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorldCommented.x3d"),
           meta(name="license", content="https://www.web3d.org/x3d/content/examples/license.html"),
           meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
-          meta(name="translated", content="22 January 2022"),
+          meta(name="translated", content="24 January 2022"),
           meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
           meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")]), Scene=Scene(
     children=[#Example scene to illustrate comments interspersed among X3D nodes and fields (XML elements and attributes)

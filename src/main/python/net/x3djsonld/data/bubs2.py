@@ -26,6 +26,7 @@ newModel=X3D(profile='Immersive',version='3.3',
   head=head(
     children=[
     meta(name='title',content='bubs2.x3d'),
+    component(name='Scripting',level=1),
     meta(name='creator',content='John Carlson'),
     meta(name='description',content='Tour around a prismatic sphere'),
     meta(name='generator',content='X3D-Edit, https://savage.nps.edu/X3D-Edit'),
