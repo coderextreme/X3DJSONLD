@@ -78,32 +78,32 @@ children[0] = Viewpoint15;
 
 TextureBackground TextureBackground16 = createNode("TextureBackground");
 ImageTexture ImageTexture17 = createNode("ImageTexture");
-ImageTexture17.DEF = "leftBackTexture";
+ImageTexture17.DEF = "leftBackgroundTexture";
 ImageTexture17.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"]);
 TextureBackground16.topTexture = ImageTexture17;
 
 ImageTexture ImageTexture18 = createNode("ImageTexture");
-ImageTexture18.DEF = "rightBackTexture";
+ImageTexture18.DEF = "rightBackgroundTexture";
 ImageTexture18.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"]);
 TextureBackground16.topTexture = ImageTexture18;
 
 ImageTexture ImageTexture19 = createNode("ImageTexture");
-ImageTexture19.DEF = "frontBackTexture";
+ImageTexture19.DEF = "frontBackgroundTexture";
 ImageTexture19.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"]);
 TextureBackground16.topTexture = ImageTexture19;
 
 ImageTexture ImageTexture20 = createNode("ImageTexture");
-ImageTexture20.DEF = "backBackTexture";
+ImageTexture20.DEF = "backBackgroundTexture";
 ImageTexture20.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"]);
 TextureBackground16.topTexture = ImageTexture20;
 
 ImageTexture ImageTexture21 = createNode("ImageTexture");
-ImageTexture21.DEF = "topBackTexture";
+ImageTexture21.DEF = "topBackgroundTexture";
 ImageTexture21.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"]);
 TextureBackground16.topTexture = ImageTexture21;
 
 ImageTexture ImageTexture22 = createNode("ImageTexture");
-ImageTexture22.DEF = "bottomBackTexture";
+ImageTexture22.DEF = "bottomBackgroundTexture";
 ImageTexture22.url = new MFString(new java.lang.String["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"]);
 TextureBackground16.topTexture = ImageTexture22;
 
@@ -399,42 +399,42 @@ Transform23.children[3] = ROUTE67;
 ROUTE ROUTE68 = createNode("ROUTE");
 ROUTE68.fromNode = "UrlSelector";
 ROUTE68.fromField = "front_changed";
-ROUTE68.toNode = "frontBackTexture";
+ROUTE68.toNode = "frontBackgroundTexture";
 ROUTE68.toField = "url";
 Transform23.children[4] = ROUTE68;
 
 ROUTE ROUTE69 = createNode("ROUTE");
 ROUTE69.fromNode = "UrlSelector";
 ROUTE69.fromField = "back_changed";
-ROUTE69.toNode = "backBackTexture";
+ROUTE69.toNode = "backBackgroundTexture";
 ROUTE69.toField = "url";
 Transform23.children[5] = ROUTE69;
 
 ROUTE ROUTE70 = createNode("ROUTE");
 ROUTE70.fromNode = "UrlSelector";
 ROUTE70.fromField = "left_changed";
-ROUTE70.toNode = "leftBackTexture";
+ROUTE70.toNode = "leftBackgroundTexture";
 ROUTE70.toField = "url";
 Transform23.children[6] = ROUTE70;
 
 ROUTE ROUTE71 = createNode("ROUTE");
 ROUTE71.fromNode = "UrlSelector";
 ROUTE71.fromField = "right_changed";
-ROUTE71.toNode = "rightBackTexture";
+ROUTE71.toNode = "rightBackgroundTexture";
 ROUTE71.toField = "url";
 Transform23.children[7] = ROUTE71;
 
 ROUTE ROUTE72 = createNode("ROUTE");
 ROUTE72.fromNode = "UrlSelector";
 ROUTE72.fromField = "top_changed";
-ROUTE72.toNode = "topBackTexture";
+ROUTE72.toNode = "topBackgroundTexture";
 ROUTE72.toField = "url";
 Transform23.children[8] = ROUTE72;
 
 ROUTE ROUTE73 = createNode("ROUTE");
 ROUTE73.fromNode = "UrlSelector";
 ROUTE73.fromField = "bottom_changed";
-ROUTE73.toNode = "bottomBackTexture";
+ROUTE73.toNode = "bottomBackgroundTexture";
 ROUTE73.toField = "url";
 Transform23.children[9] = ROUTE73;
 

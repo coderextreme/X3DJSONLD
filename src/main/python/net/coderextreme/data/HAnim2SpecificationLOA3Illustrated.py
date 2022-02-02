@@ -1,4230 +1,3365 @@
+#x3d.py package loaded, have fun with X3D Graphics!
 from x3d import *
+from x3d import SFBool
 print(
-X3D(
-  profile="Immersive", version="4.0", head=head(  children=[
-      
-          component(name="HAnim", level=1), 
-          meta(name="title", content="HAnim2SpecificationLOA3Illustrated.x3d"),
-          meta(name="description", content="HAnim Specification reference example providing full coverage (and no illustrated visibility) of all specified HAnim constructs, also suitable for re-use as an authoring template."),
-          meta(name="reference", content="https://www.web3d.org/files/specifications/19774/V1.0/HAnim/BodyDimensionsAndLOAs.html#LOA3ExampleSourceWithDiamonds"),
-          meta(name="created", content="18 February 2021"),
-          meta(name="modified", content="23 December 2021"),
-          meta(name="creator", content="Don Brutzman"),
-          meta(name="reference", content="HAnim2SpecificationLOA3Invisible.x3d"),
-          meta(name="reference", content="HAnim2SpecificationLOA3Animation.x3d"),
-          meta(name="reference", content="HAnimSpecificationExampleChangeLog.txt"),
-          meta(name="Image", content="images/BonesAllSkeletonFrontViewLOA1.png"),
-          meta(name="Image", content="images/BonesAllSkeletonFrontViewLOA2.png"),
-          meta(name="Image", content="images/BonesAllSkeletonFrontViewLOA3.png"),
-          meta(name="TODO", content="move relevant HAnimSite/Viewpoint pairs into skeleton at appropriate locations"),
-          meta(name="TODO", content="insert MetadataInteger nodes indicating LOA for each Joint and Segment"),
-          meta(name="reference", content="Norman Badler et al., ANTHROPOMETRY FOR COMPUTER GRAPHICS HUMAN FIGURES, University of Pennsylvania, 1989."),
-          meta(name="reference", content="http://www.cis.upenn.edu/~badler/anthro/89-71.ps"),
-          meta(name="reference", content="tables/AnthropometryForComputerGraphicsHumanFigures89-71.pdf"),
-          meta(name="translator", content="Don Brutzman and Joe Williams"),
-          meta(name="generator", content="BS Contact Geo 8.001, http://www.bitmanagement.de/en/products/interactive-3d-clients/bs-contact-geo"),
-          meta(name="reference", content="originals/LOA3ExampleSourceWithDiamondsOriginal.wrl"),
-          meta(name="reference", content="originals/LOA3ExampleSourceWithDiamondsOriginal.x3d"),
-          meta(name="reference", content="originals/LOA3ExampleSourceWithDiamondsOriginalBsContactExport.x3d"),
-          meta(name="reference", content="HAnim Specification Table 4.4 - Face Joint object names, https://www.web3d.org/files/specifications/19774/V1.0/HAnim/concepts.html#FaceJointObjectNames"),
-          meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
-          meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Specifications/HAnim2SpecificationLOA3Illustrated.x3d"),
-          meta(name="license", content="../license.html"),
-          meta(name="translated", content="24 January 2022"),
-          meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
-          meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")]), Scene=Scene(
-    children=[
-        Background(
-          skyColor=(0.3,0.3,0.3)),
-        NavigationInfo(
-          ),
-        Group(
-          DEF="Original_WorldInfo", children=[
-              WorldInfo(
-                info=(" HANIM 200x Default Joint Centers, Level-Of-Articulation 3 HANIM 200x (VRML97) Author name: eMpTy (a.k.a. Matthew T. Beitler) HANIM 200x (VRML97) Author email: beitler@cis.upenn.edu or beitler@acm.org HANIM 200x (VRML97) Author homepage: http://www.cis.upenn.edu/~beitler HANIM 200x (VRML97) Compliance Date: August 12, 2003 HANIM 200x Compliance Information: http://HAnim.org/Specifications/HAnim200x Construction Info (joint centers): The joint centers of this figure are based on the work of Norman Badler, director of the Center for Human Modeling and Simulation at the University of Pennsylvania. The original document which these joint centers are based on can be found at: http://www.cis.upenn.edu/~badler/anthro/89-71.ps "), title="HANIM 200x Default Joint Centers, LOA3")]),#TODO move viewpoints to be internal to HAnimHumanoid
+X3D(profile="Immersive", version="4.0", 
+head=head(), 
+Scene=Scene(children=[
+Background(skyColor=[(0.3,0.3,0.3)]),
+NavigationInfo(),
+Group(DEF="Original_WorldInfo", children=[
+WorldInfo(info=[" HANIM 200x Default Joint Centers, Level-Of-Articulation 3 HANIM 200x (VRML97) Author name: eMpTy (a.k.a. Matthew T. Beitler) HANIM 200x (VRML97) Author email: beitler@cis.upenn.edu or beitler@acm.org HANIM 200x (VRML97) Author homepage: http://www.cis.upenn.edu/~beitler HANIM 200x (VRML97) Compliance Date: August 12, 2003 HANIM 200x Compliance Information: http://HAnim.org/Specifications/HAnim200x Construction Info (joint centers): The joint centers of this figure are based on the work of Norman Badler, director of the Center for Human Modeling and Simulation at the University of Pennsylvania. The original document which these joint centers are based on can be found at: http://www.cis.upenn.edu/~badler/anthro/89-71.ps "], title="HANIM 200x Default Joint Centers, LOA3")]),
+#TODO move viewpoints to be internal to HAnimHumanoid
+
 #Viewpoint centerOfRotation="0 0.9149 0.0016" matches initial at-rest locaton of the sacroliac. Note that these viewpoints are external to the HAnimHumanoid and do not move with the human.
 
-        Viewpoint(
-          centerOfRotation=(0,0.9149,0.0016), description="Humanoid LOA 3 Front", position=(0,0.4,4)),
-        Viewpoint(
-          centerOfRotation=(0,0.9149,0.0016), description="Humanoid LOA 3 Front Close", position=(0,0.8,2)),
-        Viewpoint(
-          centerOfRotation=(0,0.9149,0.0016), description="Humanoid LOA 3 Front Closer", position=(0,1.2,1)),
-        Viewpoint(
-          centerOfRotation=(0,1.5,0.0016), description="Humanoid LOA 3 Front Face", position=(0,1.63,1)),
-        Viewpoint(
-          centerOfRotation=(0,0.9149,0.0016), description="Humanoid LOA 3 Right Side", orientation=(0,1,0,1.5708), position=(2.6,0.8,0)),
-        Viewpoint(
-          centerOfRotation=(0,0.9149,0.0016), description="Humanoid LOA 3 Right Side Close", orientation=(0,1,0,1.2), position=(1,0.8,0.5)),
-        Viewpoint(
-          centerOfRotation=(0,0.9149,0.0016), description="Humanoid LOA 3 Left Side Close", orientation=(0,1,0,-1.2), position=(-1,0.8,0.5)),
-        Viewpoint(
-          centerOfRotation=(0,0.9149,0.0016), description="Humanoid LOA 3 Left Side", orientation=(0,1,0,-1.5708), position=(-2.6,0.8,0)),
-        Viewpoint(
-          centerOfRotation=(0,0.9149,0.0016), description="Humanoid LOA 3 Top", orientation=(1,0,0,-1.5708), position=(0,3.5,0)),
-        HAnimHumanoid(
-          name="humanoid", DEF="hanim_humanoid", loa=3, version="2.0", children=[#original HAnimHumanoid info='"authorName=Matthew T. Beitler Joe D. Williams Don Brutzman" "authorEmail=HAnim@web3D.org" "copyright=none" "creationDate=12 May 1999" "usageRestrictions=none" "humanoidVersion=2.0" "height=1.7504"'
-#Only one root HAnimJoint is allowed
-#original HAnimHumanoid info='"authorName=Matthew T. Beitler Joe D. Williams Don Brutzman" "authorEmail=HAnim@web3D.org" "copyright=none" "creationDate=12 May 1999" "usageRestrictions=none" "humanoidVersion=2.0" "height=1.7504"'
-#Only one root HAnimJoint is allowed
-#USE nodes go here for access by inverse kinematics (IK) engines and other tools
-#Top-level HAnimSite/Viewpoint nodes that move with the human center but are unaffected by body animation
-#original HAnimHumanoid info='"authorName=Matthew T. Beitler Joe D. Williams Don Brutzman" "authorEmail=HAnim@web3D.org" "copyright=none" "creationDate=12 May 1999" "usageRestrictions=none" "humanoidVersion=2.0" "height=1.7504"'
-#Only one root HAnimJoint is expected
-#USE nodes go here for access by inverse kinematics (IK) engines and other tools
-#Top-level HAnimSite/Viewpoint nodes that move with the human center but are unaffected by body animation
-#original HAnimHumanoid info='"authorName=Matthew T. Beitler Joe D. Williams Don Brutzman" "authorEmail=HAnim@web3D.org" "copyright=none" "creationDate=12 May 1999" "usageRestrictions=none" "humanoidVersion=2.0" "height=1.7504"'
-#Only one root HAnimJoint is expected
-#USE nodes go here for access by inverse kinematics (IK) engines and other tools
-#Top-level HAnimSite/Viewpoint nodes that move with the human center but are unaffected by body animation
-#original HAnimHumanoid info='"authorName=Matthew T. Beitler Joe D. Williams Don Brutzman" "authorEmail=HAnim@web3D.org" "copyright=none" "creationDate=12 May 1999" "usageRestrictions=none" "humanoidVersion=2.0" "height=1.7504"'
-#Only one root HAnimJoint is expected
-#USE nodes go here for access by inverse kinematics (IK) engines and other tools
-#Top-level HAnimSite/Viewpoint nodes that move with the human center but are unaffected by body animation
-#original HAnimHumanoid info='"authorName=Matthew T. Beitler Joe D. Williams Don Brutzman" "authorEmail=HAnim@web3D.org" "copyright=none" "creationDate=12 May 1999" "usageRestrictions=none" "humanoidVersion=2.0" "height=1.7504"'
-#Only one root HAnimJoint is expected
-#USE nodes go here for access by inverse kinematics (IK) engines and other tools
-#Top-level HAnimSite/Viewpoint nodes that move with the human center but are unaffected by body animation
-#original HAnimHumanoid info='"authorName=Matthew T. Beitler Joe D. Williams Don Brutzman" "authorEmail=HAnim@web3D.org" "copyright=none" "creationDate=12 May 1999" "usageRestrictions=none" "humanoidVersion=2.0" "height=1.7504"'
-#Only one root HAnimJoint is expected
-#USE nodes go here for access by inverse kinematics (IK) engines and other tools
-#Top-level HAnimSite/Viewpoint nodes that move with the human center but are unaffected by body animation
-#original HAnimHumanoid info='"authorName=Matthew T. Beitler Joe D. Williams Don Brutzman" "authorEmail=HAnim@web3D.org" "copyright=none" "creationDate=12 May 1999" "usageRestrictions=none" "humanoidVersion=2.0" "height=1.7504"'
-#Only one root HAnimJoint is expected
-#USE nodes go here for access by inverse kinematics (IK) engines and other tools
-#Top-level HAnimSite/Viewpoint nodes that move with the human center but are unaffected by body animation
-#TODO move relevant HAnimSite/Viewpoint pairs into skeleton at appropriate locations, if so also revert containerField to default
-#original HAnimHumanoid info='"authorName=Matthew T. Beitler Joe D. Williams Don Brutzman" "authorEmail=HAnim@web3D.org" "copyright=none" "creationDate=12 May 1999" "usageRestrictions=none" "humanoidVersion=2.0" "height=1.7504"'
-#Only one root HAnimJoint is expected
-#USE nodes go here for access by inverse kinematics (IK) engines and other tools
-#Top-level HAnimSite/Viewpoint nodes that move with the human center but are unaffected by body animation
-#TODO move relevant HAnimSite/Viewpoint pairs into skeleton at appropriate locations, if so also revert containerField to default
-#original HAnimHumanoid info='"authorName=Matthew T. Beitler Joe D. Williams Don Brutzman" "authorEmail=HAnim@web3D.org" "copyright=none" "creationDate=12 May 1999" "usageRestrictions=none" "humanoidVersion=2.0" "height=1.7504"'
-#Only one root HAnimJoint is expected
-#USE nodes go here for access by inverse kinematics (IK) engines and other tools
-#Top-level HAnimSite/Viewpoint nodes that move with the human center but are unaffected by body animation
-#TODO move relevant HAnimSite/Viewpoint pairs into skeleton at appropriate locations, if so also revert containerField to default
-#original HAnimHumanoid info='"authorName=Matthew T. Beitler Joe D. Williams Don Brutzman" "authorEmail=HAnim@web3D.org" "copyright=none" "creationDate=12 May 1999" "usageRestrictions=none" "humanoidVersion=2.0" "height=1.7504"'
-#Only one root HAnimJoint is expected
-#USE nodes go here for access by inverse kinematics (IK) engines and other tools
-#Top-level HAnimSite/Viewpoint nodes that move with the human center but are unaffected by body animation
-#TODO move relevant HAnimSite/Viewpoint pairs into skeleton at appropriate locations, if so also revert containerField to default
-#original HAnimHumanoid info='"authorName=Matthew T. Beitler Joe D. Williams Don Brutzman" "authorEmail=HAnim@web3D.org" "copyright=none" "creationDate=12 May 1999" "usageRestrictions=none" "humanoidVersion=2.0" "height=1.7504"'
-#Only one root HAnimJoint is expected
-#USE nodes go here for access by inverse kinematics (IK) engines and other tools
-#Top-level HAnimSite/Viewpoint nodes that move with the human center but are unaffected by body animation
-#TODO move relevant HAnimSite/Viewpoint pairs into skeleton at appropriate locations, if so also revert containerField to default
-#original HAnimHumanoid info='"authorName=Matthew T. Beitler Joe D. Williams Don Brutzman" "authorEmail=HAnim@web3D.org" "copyright=none" "creationDate=12 May 1999" "usageRestrictions=none" "humanoidVersion=2.0" "height=1.7504"'
-#Only one root HAnimJoint is expected
-#USE nodes go here for access by inverse kinematics (IK) engines and other tools
-#Top-level HAnimSite/Viewpoint nodes that move with the human center but are unaffected by body animation
-#TODO move relevant HAnimSite/Viewpoint pairs into skeleton at appropriate locations, if so also revert containerField to default
-#original HAnimHumanoid info='"authorName=Matthew T. Beitler Joe D. Williams Don Brutzman" "authorEmail=HAnim@web3D.org" "copyright=none" "creationDate=12 May 1999" "usageRestrictions=none" "humanoidVersion=2.0" "height=1.7504"'
-#Only one root HAnimJoint is expected
-#USE nodes go here for access by inverse kinematics (IK) engines and other tools
-#Top-level HAnimSite/Viewpoint nodes that move with the human center but are unaffected by body animation
-#TODO move relevant HAnimSite/Viewpoint pairs into skeleton at appropriate locations, if so also revert containerField to default
-#original HAnimHumanoid info='"authorName=Matthew T. Beitler Joe D. Williams Don Brutzman" "authorEmail=HAnim@web3D.org" "copyright=none" "creationDate=12 May 1999" "usageRestrictions=none" "humanoidVersion=2.0" "height=1.7504"'
-#Only one root HAnimJoint is expected
-#USE nodes go here for access by inverse kinematics (IK) engines and other tools
-#Top-level HAnimSite/Viewpoint nodes that move with the human center but are unaffected by body animation
-#TODO move relevant HAnimSite/Viewpoint pairs into skeleton at appropriate locations, if so also revert containerField to default
-#right between the eyes, stationary position not animating except with body itself
-], metadata(
-            MetadataSet(
-              name="HAnimHumanoid.info", reference="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid", value=(
-                  MetadataString(
-                    name="authorName", value=("Matthew T. Beitler Joe D. Williams Don Brutzman")),
-                  MetadataString(
-                    name="authorEmail", value=("HAnim@web3D.org")),
-                  MetadataString(
-                    name="copyright", value=("none")),
-                  MetadataString(
-                    name="creationDate", value=("12 May 1999")),
-                  MetadataFloat(
-                    name="height", value=(1.7504)),
-                  MetadataString(
-                    name="humanoidVersion", value=("2.0")),
-                  MetadataString(
-                    name="usageRestrictions", value=("none"))))), skeleton=(
-              HAnimJoint(
-                name="humanoid_root", DEF="hanim_humanoid_root", center=(0,0.824,0.0277), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                    HAnimSegment(
-                      name="sacrum", DEF="hanim_sacrum", children=[#Visualization sphere for <HAnimJoint name='humanoid_root'/> is placed within <HAnimSegment name='sacrum'/>
-
-                          TouchSensor(
-                            description="HAnimJoint humanoid_root, HAnimSegment sacrum"),
-                          Transform(
-                            translation=(0,0.824,0.0277), children=[
-                                Shape(
-                                  DEF="HAnimJointShape", geometry=Sphere(
-                                      radius=0.006), appearance=Appearance(
-                                      DEF="HAnimJointAppearance", material=Material(
-                                          diffuseColor=(1,0.5,0), transparency=0.5)))]),#HAnimSegment visualization line from current <HAnimJoint name='humanoid_root'/> to child <HAnimJoint name='sacroiliac'/>
-
-                          Shape(
-                            geometry=LineSet(
-                                vertexCount=(2), coord(
-                                  Coordinate(
-                                    point=(0,0.824,0.0277,0,0.9149,0.0016))), color(
-                                  ColorRGBA(
-                                    DEF="HAnimSegmentLineColorRGBA", color=(1,1,0,1,1,1,0,0.1))))),#HAnimSegment visualization line from current <HAnimJoint name='humanoid_root'/> to child <HAnimJoint name='vl5'/>
-
-                          Shape(
-                            geometry=LineSet(
-                                vertexCount=(2), coord(
-                                  Coordinate(
-                                    point=(0,0.824,0.0277,0.0028,1.0568,-0.0776))), color(
-                                  ColorRGBA(
-                                    USE="HAnimSegmentLineColorRGBA"))))]),
-                    HAnimJoint(
-                      name="sacroiliac", DEF="hanim_sacroiliac", center=(0,0.9149,0.0016), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                          HAnimSegment(
-                            name="pelvis", DEF="hanim_pelvis", children=[#Visualization sphere for <HAnimJoint name='sacroiliac'/> is placed within <HAnimSegment name='pelvis'/>
-
-                                TouchSensor(
-                                  description="HAnimJoint sacroiliac, HAnimSegment pelvis"),
-                                Transform(
-                                  translation=(0,0.9149,0.0016), children=[
-                                      Shape(
-                                        USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='sacroiliac'/> to child <HAnimJoint name='l_hip'/>
-
-                                Shape(
-                                  geometry=LineSet(
-                                      vertexCount=(2), coord(
-                                        Coordinate(
-                                          point=(0,0.9149,0.0016,0.0961,0.9124,-0.0001))), color(
-                                        ColorRGBA(
-                                          USE="HAnimSegmentLineColorRGBA")))),#HAnimSegment visualization line from current <HAnimJoint name='sacroiliac'/> to child <HAnimJoint name='r_hip'/>
-
-                                Shape(
-                                  geometry=LineSet(
-                                      vertexCount=(2), coord(
-                                        Coordinate(
-                                          point=(0,0.9149,0.0016,-0.0961,0.9124,-0.0001))), color(
-                                        ColorRGBA(
-                                          USE="HAnimSegmentLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='sacroiliac'/> to <HAnimSite name='r_iliocristale_pt'/>
-
-                                Shape(
-                                  geometry=LineSet(
-                                      vertexCount=(2), coord(
-                                        Coordinate(
-                                          point=(0,0.9149,0.0016,-0.1525,1.0628,0.0035))), color(
-                                        ColorRGBA(
-                                          DEF="HAnimSiteLineColorRGBA", color=(1,0,0,1,1,0,0,0.1))))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='sacroiliac'/> to <HAnimSite name='r_trochanterion_pt'/>
-
-                                Shape(
-                                  geometry=LineSet(
-                                      vertexCount=(2), coord(
-                                        Coordinate(
-                                          point=(0,0.9149,0.0016,-0.1689,0.8419,0.0352))), color(
-                                        ColorRGBA(
-                                          USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='sacroiliac'/> to <HAnimSite name='l_iliocristale_pt'/>
-
-                                Shape(
-                                  geometry=LineSet(
-                                      vertexCount=(2), coord(
-                                        Coordinate(
-                                          point=(0,0.9149,0.0016,0.1612,1.0537,0.0008))), color(
-                                        ColorRGBA(
-                                          USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='sacroiliac'/> to <HAnimSite name='l_trochanterion_pt'/>
-
-                                Shape(
-                                  geometry=LineSet(
-                                      vertexCount=(2), coord(
-                                        Coordinate(
-                                          point=(0,0.9149,0.0016,0.1677,0.8336,0.0303))), color(
-                                        ColorRGBA(
-                                          USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='sacroiliac'/> to <HAnimSite name='r_asis_pt'/>
-
-                                Shape(
-                                  geometry=LineSet(
-                                      vertexCount=(2), coord(
-                                        Coordinate(
-                                          point=(0,0.9149,0.0016,-0.0887,1.0021,0.1112))), color(
-                                        ColorRGBA(
-                                          USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='sacroiliac'/> to <HAnimSite name='l_asis_pt'/>
-
-                                Shape(
-                                  geometry=LineSet(
-                                      vertexCount=(2), coord(
-                                        Coordinate(
-                                          point=(0,0.9149,0.0016,0.0925,0.9983,0.1052))), color(
-                                        ColorRGBA(
-                                          USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='sacroiliac'/> to <HAnimSite name='r_psis_pt'/>
-
-                                Shape(
-                                  geometry=LineSet(
-                                      vertexCount=(2), coord(
-                                        Coordinate(
-                                          point=(0,0.9149,0.0016,-0.0716,1.019,-0.1138))), color(
-                                        ColorRGBA(
-                                          USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='sacroiliac'/> to <HAnimSite name='l_psis_pt'/>
-
-                                Shape(
-                                  geometry=LineSet(
-                                      vertexCount=(2), coord(
-                                        Coordinate(
-                                          point=(0,0.9149,0.0016,0.0774,1.019,-0.1151))), color(
-                                        ColorRGBA(
-                                          USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='sacroiliac'/> to <HAnimSite name='crotch_pt'/>
-
-                                Shape(
-                                  geometry=LineSet(
-                                      vertexCount=(2), coord(
-                                        Coordinate(
-                                          point=(0,0.9149,0.0016,0.0034,0.8266,0.0257))), color(
-                                        ColorRGBA(
-                                          USE="HAnimSiteLineColorRGBA")))),
-                                HAnimSite(
-                                  name="r_iliocristale_pt", DEF="hanim_r_iliocristale_pt", translation=(-0.1525,1.0628,0.0035), children=[#HAnimSite visualization shape
-
-                                      TouchSensor(
-                                        description="HAnimSite r_iliocristale_pt"),
-                                      Shape(
-                                        DEF="HAnimSiteShape", geometry=IndexedFaceSet(
-                                            DEF="DiamondIFS", coordIndex=(0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1), creaseAngle=0.5, solid=False, coord(
-                                              Coordinate(
-                                                point=(0,0.008,0,-0.008,0,0,0,0,0.008,0.008,0,0,0,0,-0.008,0,-0.008,0)))), appearance=Appearance(
-                                            material=Material(
-                                                diffuseColor=(1,0,0))))]),
-                                HAnimSite(
-                                  name="r_trochanterion_pt", DEF="hanim_r_trochanterion_pt", translation=(-0.1689,0.8419,0.0352), children=[#HAnimSite visualization shape
-
-                                      TouchSensor(
-                                        description="HAnimSite r_trochanterion_pt"),
-                                      Shape(
-                                        USE="HAnimSiteShape")]),
-                                HAnimSite(
-                                  name="l_iliocristale_pt", DEF="hanim_l_iliocristale_pt", translation=(0.1612,1.0537,0.0008), children=[#HAnimSite visualization shape
-
-                                      TouchSensor(
-                                        description="HAnimSite l_iliocristale_pt"),
-                                      Shape(
-                                        USE="HAnimSiteShape")]),
-                                HAnimSite(
-                                  name="l_trochanterion_pt", DEF="hanim_l_trochanterion_pt", translation=(0.1677,0.8336,0.0303), children=[#HAnimSite visualization shape
-
-                                      TouchSensor(
-                                        description="HAnimSite l_trochanterion_pt"),
-                                      Shape(
-                                        USE="HAnimSiteShape")]),
-                                HAnimSite(
-                                  name="r_asis_pt", DEF="hanim_r_asis_pt", translation=(-0.0887,1.0021,0.1112), children=[#HAnimSite visualization shape
-
-                                      TouchSensor(
-                                        description="HAnimSite r_asis_pt"),
-                                      Shape(
-                                        USE="HAnimSiteShape")]),
-                                HAnimSite(
-                                  name="l_asis_pt", DEF="hanim_l_asis_pt", translation=(0.0925,0.9983,0.1052), children=[#HAnimSite visualization shape
-
-                                      TouchSensor(
-                                        description="HAnimSite l_asis_pt"),
-                                      Shape(
-                                        USE="HAnimSiteShape")]),
-                                HAnimSite(
-                                  name="r_psis_pt", DEF="hanim_r_psis_pt", translation=(-0.0716,1.019,-0.1138), children=[#HAnimSite visualization shape
-
-                                      TouchSensor(
-                                        description="HAnimSite r_psis_pt"),
-                                      Shape(
-                                        USE="HAnimSiteShape")]),
-                                HAnimSite(
-                                  name="l_psis_pt", DEF="hanim_l_psis_pt", translation=(0.0774,1.019,-0.1151), children=[#HAnimSite visualization shape
-
-                                      TouchSensor(
-                                        description="HAnimSite l_psis_pt"),
-                                      Shape(
-                                        USE="HAnimSiteShape")]),
-                                HAnimSite(
-                                  name="crotch_pt", DEF="hanim_crotch_pt", translation=(0.0034,0.8266,0.0257), children=[#HAnimSite visualization shape
-
-                                      TouchSensor(
-                                        description="HAnimSite crotch_pt"),
-                                      Shape(
-                                        USE="HAnimSiteShape")])]),
-                          HAnimJoint(
-                            name="l_hip", DEF="hanim_l_hip", center=(0.0961,0.9124,-0.0001), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                HAnimSegment(
-                                  name="l_thigh", DEF="hanim_l_thigh", children=[#Visualization sphere for <HAnimJoint name='l_hip'/> is placed within <HAnimSegment name='l_thigh'/>
-
-                                      TouchSensor(
-                                        description="HAnimJoint l_hip, HAnimSegment l_thigh"),
-                                      Transform(
-                                        translation=(0.0961,0.9124,-0.0001), children=[
-                                            Shape(
-                                              USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='l_hip'/> to child <HAnimJoint name='l_knee'/>
-
-                                      Shape(
-                                        geometry=LineSet(
-                                            vertexCount=(2), coord(
-                                              Coordinate(
-                                                point=(0.0961,0.9124,-0.0001,0.104,0.4867,0.0308))), color(
-                                              ColorRGBA(
-                                                USE="HAnimSegmentLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_hip'/> to <HAnimSite name='l_knee_crease_pt'/>
-
-                                      Shape(
-                                        geometry=LineSet(
-                                            vertexCount=(2), coord(
-                                              Coordinate(
-                                                point=(0.0961,0.9124,-0.0001,0.0993,0.4881,-0.0309))), color(
-                                              ColorRGBA(
-                                                USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_hip'/> to <HAnimSite name='l_femoral_lateral_epicn_pt'/>
-
-                                      Shape(
-                                        geometry=LineSet(
-                                            vertexCount=(2), coord(
-                                              Coordinate(
-                                                point=(0.0961,0.9124,-0.0001,0.1598,0.4967,0.0297))), color(
-                                              ColorRGBA(
-                                                USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_hip'/> to <HAnimSite name='l_femoral_medial_epicn_pt'/>
-
-                                      Shape(
-                                        geometry=LineSet(
-                                            vertexCount=(2), coord(
-                                              Coordinate(
-                                                point=(0.0961,0.9124,-0.0001,0.0398,0.4946,0.0303))), color(
-                                              ColorRGBA(
-                                                USE="HAnimSiteLineColorRGBA")))),
-                                      HAnimSite(
-                                        name="l_knee_crease_pt", DEF="hanim_l_knee_crease_pt", translation=(0.0993,0.4881,-0.0309), children=[#HAnimSite visualization shape
-
-                                            TouchSensor(
-                                              description="HAnimSite l_knee_crease_pt"),
-                                            Shape(
-                                              USE="HAnimSiteShape")]),
-                                      HAnimSite(
-                                        name="l_femoral_lateral_epicondyle_pt", DEF="hanim_l_femoral_lateral_epicondyle_pt", translation=(0.1598,0.4967,0.0297), children=[#HAnimSite visualization shape
-
-                                            TouchSensor(
-                                              description="HAnimSite l_femoral_lateral_epicn_pt"),
-                                            Shape(
-                                              USE="HAnimSiteShape")]),
-                                      HAnimSite(
-                                        name="l_femoral_medial_epicondyle_pt", DEF="hanim_l_femoral_medial_epicondyle_pt", translation=(0.0398,0.4946,0.0303), children=[#HAnimSite visualization shape
-
-                                            TouchSensor(
-                                              description="HAnimSite l_femoral_medial_epicn_pt"),
-                                            Shape(
-                                              USE="HAnimSiteShape")])]),
-                                HAnimJoint(
-                                  name="l_knee", DEF="hanim_l_knee", center=(0.104,0.4867,0.0308), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                      HAnimSegment(
-                                        name="l_calf", DEF="hanim_l_calf", children=[#Visualization sphere for <HAnimJoint name='l_knee'/> is placed within <HAnimSegment name='l_calf'/>
-
-                                            TouchSensor(
-                                              description="HAnimJoint l_knee, HAnimSegment l_calf"),
-                                            Transform(
-                                              translation=(0.104,0.4867,0.0308), children=[
-                                                  Shape(
-                                                    USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='l_knee'/> to child <HAnimJoint name='l_talocrural'/>
-
-                                            Shape(
-                                              geometry=LineSet(
-                                                  vertexCount=(2), coord(
-                                                    Coordinate(
-                                                      point=(0.104,0.4867,0.0308,0.1101,0.0656,-0.0736))), color(
-                                                    ColorRGBA(
-                                                      USE="HAnimSegmentLineColorRGBA"))))]),
-                                      HAnimJoint(
-                                        name="l_talocrural", DEF="hanim_l_talocrural", center=(0.1101,0.0656,-0.0736), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                            HAnimSegment(
-                                              name="l_talus", DEF="hanim_l_talus", children=[#Visualization sphere for <HAnimJoint name='l_talocrural'/> is placed within <HAnimSegment name='l_talus'/>
-
-                                                  TouchSensor(
-                                                    description="HAnimJoint l_talocrural, HAnimSegment l_talus"),
-                                                  Transform(
-                                                    translation=(0.1101,0.0656,-0.0736), children=[
-                                                        Shape(
-                                                          USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='l_talocrural'/> to child <HAnimJoint name='l_tarsometatarsal_2'/>
-
-                                                  Shape(
-                                                    geometry=LineSet(
-                                                        vertexCount=(2), coord(
-                                                          Coordinate(
-                                                            point=(0.1101,0.0656,-0.0736,0.1086,0.0001,-0.0368))), color(
-                                                          ColorRGBA(
-                                                            USE="HAnimSegmentLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_talocrural'/> to <HAnimSite name='l_lateral_malleolus_pt'/>
-
-                                                  Shape(
-                                                    geometry=LineSet(
-                                                        vertexCount=(2), coord(
-                                                          Coordinate(
-                                                            point=(0.1101,0.0656,-0.0736,0.1308,0.0597,-0.1032))), color(
-                                                          ColorRGBA(
-                                                            USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_talocrural'/> to <HAnimSite name='l_medial_malleolus_pt'/>
-
-                                                  Shape(
-                                                    geometry=LineSet(
-                                                        vertexCount=(2), coord(
-                                                          Coordinate(
-                                                            point=(0.1101,0.0656,-0.0736,0.089,0.0716,-0.0881))), color(
-                                                          ColorRGBA(
-                                                            USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_talocrural'/> to <HAnimSite name='l_sphyrion_pt'/>
-
-                                                  Shape(
-                                                    geometry=LineSet(
-                                                        vertexCount=(2), coord(
-                                                          Coordinate(
-                                                            point=(0.1101,0.0656,-0.0736,0.089,0.0575,-0.0943))), color(
-                                                          ColorRGBA(
-                                                            USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_talocrural'/> to <HAnimSite name='l_calcaneous_post_pt'/>
-
-                                                  Shape(
-                                                    geometry=LineSet(
-                                                        vertexCount=(2), coord(
-                                                          Coordinate(
-                                                            point=(0.1101,0.0656,-0.0736,0.0974,0.0259,-0.1171))), color(
-                                                          ColorRGBA(
-                                                            USE="HAnimSiteLineColorRGBA")))),
-                                                  HAnimSite(
-                                                    name="l_lateral_malleolus_pt", DEF="hanim_l_lateral_malleolus_pt", translation=(0.1308,0.0597,-0.1032), children=[#HAnimSite visualization shape
-
-                                                        TouchSensor(
-                                                          description="HAnimSite l_lateral_malleolus_pt"),
-                                                        Shape(
-                                                          USE="HAnimSiteShape")]),
-                                                  HAnimSite(
-                                                    name="l_medial_malleolus_pt", DEF="hanim_l_medial_malleolus_pt", translation=(0.089,0.0716,-0.0881), children=[#HAnimSite visualization shape
-
-                                                        TouchSensor(
-                                                          description="HAnimSite l_medial_malleolus_pt"),
-                                                        Shape(
-                                                          USE="HAnimSiteShape")]),
-                                                  HAnimSite(
-                                                    name="l_sphyrion_pt", DEF="hanim_l_sphyrion_pt", translation=(0.089,0.0575,-0.0943), children=[#HAnimSite visualization shape
-
-                                                        TouchSensor(
-                                                          description="HAnimSite l_sphyrion_pt"),
-                                                        Shape(
-                                                          USE="HAnimSiteShape")]),
-                                                  HAnimSite(
-                                                    name="l_calcaneus_posterior_pt", DEF="hanim_l_calcaneus_posterior_pt", translation=(0.0974,0.0259,-0.1171), children=[#HAnimSite visualization shape
-
-                                                        TouchSensor(
-                                                          description="HAnimSite l_calcaneous_post_pt"),
-                                                        Shape(
-                                                          USE="HAnimSiteShape")])]),
-                                            HAnimJoint(
-                                              name="l_tarsometatarsal_2", DEF="hanim_l_tarsometatarsal_2", center=(0.1086,0.0001,-0.0368), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                  HAnimSegment(
-                                                    name="l_metatarsal_2", DEF="hanim_l_metatarsal_2", children=[#Visualization sphere for <HAnimJoint name='l_tarsometatarsal_2'/> is placed within <HAnimSegment name='l_metatarsal_2'/>
-
-                                                        TouchSensor(
-                                                          description="HAnimJoint l_tarsometatarsal_2, HAnimSegment l_metatarsal_2"),
-                                                        Transform(
-                                                          translation=(0.1086,0.0001,-0.0368), children=[
-                                                              Shape(
-                                                                USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='l_tarsometatarsal_2'/> to child <HAnimJoint name='l_metatarsophalangeal_2'/>
-
-                                                        Shape(
-                                                          geometry=LineSet(
-                                                              vertexCount=(2), coord(
-                                                                Coordinate(
-                                                                  point=(0.1086,0.0001,-0.0368,0.1086,0.0001,0.0368))), color(
-                                                                ColorRGBA(
-                                                                  USE="HAnimSegmentLineColorRGBA"))))]),
-                                                  HAnimJoint(
-                                                    name="l_metatarsophalangeal_2", DEF="hanim_l_metatarsophalangeal_2", center=(0.1086,0.0001,0.0368), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                        HAnimSegment(
-                                                          name="l_tarsal_proximal_phalanx_2", DEF="hanim_l_tarsal_proximal_phalanx_2", children=[#Visualization sphere for <HAnimJoint name='l_metatarsophalangeal_2'/> is placed within <HAnimSegment name='l_tarsal_proximal_phalanx_2'/>
-
-                                                              TouchSensor(
-                                                                description="HAnimJoint l_metatarsophalangeal_2, HAnimSegment l_tarsal_proximal_phalanx_2"),
-                                                              Transform(
-                                                                translation=(0.1086,0.0001,0.0368), children=[
-                                                                    Shape(
-                                                                      USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='l_metatarsophalangeal_2'/> to child <HAnimJoint name='l_tarsal_distal_interphalangeal_2'/>
-
-                                                              Shape(
-                                                                geometry=LineSet(
-                                                                    vertexCount=(2), coord(
-                                                                      Coordinate(
-                                                                        point=(0.1086,0.0001,0.0368,0.1086,0,0.0762))), color(
-                                                                      ColorRGBA(
-                                                                        USE="HAnimSegmentLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_metatarsophalangeal_2'/> to <HAnimSite name='l_metatarsal_pha1_pt'/>
-
-                                                              Shape(
-                                                                geometry=LineSet(
-                                                                    vertexCount=(2), coord(
-                                                                      Coordinate(
-                                                                        point=(0.1086,0.0001,0.0368,0.0816,0.0232,0.0106))), color(
-                                                                      ColorRGBA(
-                                                                        USE="HAnimSiteLineColorRGBA")))),
-                                                              HAnimSite(
-                                                                name="l_metatarsal_phalanx_1_pt", DEF="hanim_l_metatarsal_phalanx_1_pt", translation=(0.0816,0.0232,0.0106), children=[#HAnimSite visualization shape
-
-                                                                    TouchSensor(
-                                                                      description="HAnimSite l_metatarsal_pha1_pt"),
-                                                                    Shape(
-                                                                      USE="HAnimSiteShape")])]),
-                                                        HAnimJoint(
-                                                          name="l_tarsal_distal_interphalangeal_2", DEF="hanim_l_tarsal_distal_interphalangeal_2", center=(0.1086,0,0.0762), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                              HAnimSegment(
-                                                                name="l_tarsal_distal_phalanx_2", DEF="hanim_l_tarsal_distal_phalanx_2", children=[#Visualization sphere for <HAnimJoint name='l_tarsal_distal_interphalangeal_2'/> is placed within <HAnimSegment name='l_tarsal_distal_phalanx_2'/>
-
-                                                                    TouchSensor(
-                                                                      description="HAnimJoint l_tarsal_distal_interphalangeal_2, HAnimSegment l_tarsal_distal_phalanx_2"),
-                                                                    Transform(
-                                                                      translation=(0.1086,0,0.0762), children=[
-                                                                          Shape(
-                                                                            USE="HAnimJointShape")]),#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_tarsal_distal_interphalangeal_2'/> to <HAnimSite name='l_forefoot_tip'/>
-
-                                                                    Shape(
-                                                                      geometry=LineSet(
-                                                                          vertexCount=(2), coord(
-                                                                            Coordinate(
-                                                                              point=(0.1086,0,0.0762,0.1354,0.0016,0.1476))), color(
-                                                                            ColorRGBA(
-                                                                              USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_tarsal_distal_interphalangeal_2'/> to <HAnimSite name='l_metatarsal_pha5_pt'/>
-
-                                                                    Shape(
-                                                                      geometry=LineSet(
-                                                                          vertexCount=(2), coord(
-                                                                            Coordinate(
-                                                                              point=(0.1086,0,0.0762,0.1825,0.007,0.0928))), color(
-                                                                            ColorRGBA(
-                                                                              USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_tarsal_distal_interphalangeal_2'/> to <HAnimSite name='l_digit2_pt'/>
-
-                                                                    Shape(
-                                                                      geometry=LineSet(
-                                                                          vertexCount=(2), coord(
-                                                                            Coordinate(
-                                                                              point=(0.1086,0,0.0762,0.1195,0.0079,0.1433))), color(
-                                                                            ColorRGBA(
-                                                                              USE="HAnimSiteLineColorRGBA")))),
-                                                                    HAnimSite(
-                                                                      name="l_forefoot_tip_pt", DEF="hanim_l_forefoot_tip_pt", translation=(0.1354,0.0016,0.1476), children=[#HAnimSite visualization shape
-
-                                                                          TouchSensor(
-                                                                            description="HAnimSite l_forefoot_tip"),
-                                                                          Shape(
-                                                                            USE="HAnimSiteShape")]),
-                                                                    HAnimSite(
-                                                                      name="l_metatarsal_phalanx_5_pt", DEF="hanim_l_metatarsal_phalanx_5_pt", translation=(0.1825,0.007,0.0928), children=[#HAnimSite visualization shape
-
-                                                                          TouchSensor(
-                                                                            description="HAnimSite l_metatarsal_pha5_pt"),
-                                                                          Shape(
-                                                                            USE="HAnimSiteShape")]),
-                                                                    HAnimSite(
-                                                                      name="l_tarsal_distal_phalanx_2_pt", DEF="hanim_l_tarsal_distal_phalanx_2_pt", translation=(0.1195,0.0079,0.1433), children=[#HAnimSite visualization shape
-
-                                                                          TouchSensor(
-                                                                            description="HAnimSite l_digit2_pt"),
-                                                                          Shape(
-                                                                            USE="HAnimSiteShape")])])])])])])])]),
-                          HAnimJoint(
-                            name="r_hip", DEF="hanim_r_hip", center=(-0.0961,0.9124,-0.0001), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                HAnimSegment(
-                                  name="r_thigh", DEF="hanim_r_thigh", children=[#Visualization sphere for <HAnimJoint name='r_hip'/> is placed within <HAnimSegment name='r_thigh'/>
-
-                                      TouchSensor(
-                                        description="HAnimJoint r_hip, HAnimSegment r_thigh"),
-                                      Transform(
-                                        translation=(-0.0961,0.9124,-0.0001), children=[
-                                            Shape(
-                                              USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='r_hip'/> to child <HAnimJoint name='r_knee'/>
-
-                                      Shape(
-                                        geometry=LineSet(
-                                            vertexCount=(2), coord(
-                                              Coordinate(
-                                                point=(-0.0961,0.9124,-0.0001,-0.104,0.4867,0.0308))), color(
-                                              ColorRGBA(
-                                                USE="HAnimSegmentLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_hip'/> to <HAnimSite name='r_knee_crease_pt'/>
-
-                                      Shape(
-                                        geometry=LineSet(
-                                            vertexCount=(2), coord(
-                                              Coordinate(
-                                                point=(-0.0961,0.9124,-0.0001,-0.0825,0.4932,-0.0326))), color(
-                                              ColorRGBA(
-                                                USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_hip'/> to <HAnimSite name='r_femoral_lateral_epicn_pt'/>
-
-                                      Shape(
-                                        geometry=LineSet(
-                                            vertexCount=(2), coord(
-                                              Coordinate(
-                                                point=(-0.0961,0.9124,-0.0001,-0.1421,0.4992,0.031))), color(
-                                              ColorRGBA(
-                                                USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_hip'/> to <HAnimSite name='r_femoral_medial_epicn_pt'/>
-
-                                      Shape(
-                                        geometry=LineSet(
-                                            vertexCount=(2), coord(
-                                              Coordinate(
-                                                point=(-0.0961,0.9124,-0.0001,-0.0221,0.5014,0.0289))), color(
-                                              ColorRGBA(
-                                                USE="HAnimSiteLineColorRGBA")))),
-                                      HAnimSite(
-                                        name="r_knee_crease_pt", DEF="hanim_r_knee_crease_pt", translation=(-0.0825,0.4932,-0.0326), children=[#HAnimSite visualization shape
-
-                                            TouchSensor(
-                                              description="HAnimSite r_knee_crease_pt"),
-                                            Shape(
-                                              USE="HAnimSiteShape")]),
-                                      HAnimSite(
-                                        name="r_femoral_lateral_epicondyle_pt", DEF="hanim_r_femoral_lateral_epicondyle_pt", translation=(-0.1421,0.4992,0.031), children=[#HAnimSite visualization shape
-
-                                            TouchSensor(
-                                              description="HAnimSite r_femoral_lateral_epicn_pt"),
-                                            Shape(
-                                              USE="HAnimSiteShape")]),
-                                      HAnimSite(
-                                        name="r_femoral_medial_epicondyle_pt", DEF="hanim_r_femoral_medial_epicondyle_pt", translation=(-0.0221,0.5014,0.0289), children=[#HAnimSite visualization shape
-
-                                            TouchSensor(
-                                              description="HAnimSite r_femoral_medial_epicn_pt"),
-                                            Shape(
-                                              USE="HAnimSiteShape")])]),
-                                HAnimJoint(
-                                  name="r_knee", DEF="hanim_r_knee", center=(-0.104,0.4867,0.0308), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                      HAnimSegment(
-                                        name="r_calf", DEF="hanim_r_calf", children=[#Visualization sphere for <HAnimJoint name='r_knee'/> is placed within <HAnimSegment name='r_calf'/>
-
-                                            TouchSensor(
-                                              description="HAnimJoint r_knee, HAnimSegment r_calf"),
-                                            Transform(
-                                              translation=(-0.104,0.4867,0.0308), children=[
-                                                  Shape(
-                                                    USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='r_knee'/> to child <HAnimJoint name='r_talocrural'/>
-
-                                            Shape(
-                                              geometry=LineSet(
-                                                  vertexCount=(2), coord(
-                                                    Coordinate(
-                                                      point=(-0.104,0.4867,0.0308,-0.1101,0.0656,-0.0736))), color(
-                                                    ColorRGBA(
-                                                      USE="HAnimSegmentLineColorRGBA"))))]),
-                                      HAnimJoint(
-                                        name="r_talocrural", DEF="hanim_r_talocrural", center=(-0.1101,0.0656,-0.0736), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                            HAnimSegment(
-                                              name="r_talus", DEF="hanim_r_talus", children=[#Visualization sphere for <HAnimJoint name='r_talocrural'/> is placed within <HAnimSegment name='r_talus'/>
-
-                                                  TouchSensor(
-                                                    description="HAnimJoint r_talocrural, HAnimSegment r_talus"),
-                                                  Transform(
-                                                    translation=(-0.1101,0.0656,-0.0736), children=[
-                                                        Shape(
-                                                          USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='r_talocrural'/> to child <HAnimJoint name='r_tarsometatarsal_2'/>
-
-                                                  Shape(
-                                                    geometry=LineSet(
-                                                        vertexCount=(2), coord(
-                                                          Coordinate(
-                                                            point=(-0.1101,0.0656,-0.0736,-0.1086,0.0001,-0.0368))), color(
-                                                          ColorRGBA(
-                                                            USE="HAnimSegmentLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_talocrural'/> to <HAnimSite name='r_lateral_malleolus_pt'/>
-
-                                                  Shape(
-                                                    geometry=LineSet(
-                                                        vertexCount=(2), coord(
-                                                          Coordinate(
-                                                            point=(-0.1101,0.0656,-0.0736,-0.1006,0.0658,-0.1075))), color(
-                                                          ColorRGBA(
-                                                            USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_talocrural'/> to <HAnimSite name='r_medial_malleolus_pt'/>
-
-                                                  Shape(
-                                                    geometry=LineSet(
-                                                        vertexCount=(2), coord(
-                                                          Coordinate(
-                                                            point=(-0.1101,0.0656,-0.0736,-0.0591,0.076,-0.0928))), color(
-                                                          ColorRGBA(
-                                                            USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_talocrural'/> to <HAnimSite name='r_sphyrion_pt'/>
-
-                                                  Shape(
-                                                    geometry=LineSet(
-                                                        vertexCount=(2), coord(
-                                                          Coordinate(
-                                                            point=(-0.1101,0.0656,-0.0736,-0.0603,0.061,-0.1002))), color(
-                                                          ColorRGBA(
-                                                            USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_talocrural'/> to <HAnimSite name='r_calcaneous_post_pt'/>
-
-                                                  Shape(
-                                                    geometry=LineSet(
-                                                        vertexCount=(2), coord(
-                                                          Coordinate(
-                                                            point=(-0.1101,0.0656,-0.0736,-0.0692,0.0297,-0.1221))), color(
-                                                          ColorRGBA(
-                                                            USE="HAnimSiteLineColorRGBA")))),
-                                                  HAnimSite(
-                                                    name="r_lateral_malleolus_pt", DEF="hanim_r_lateral_malleolus_pt", translation=(-0.1006,0.0658,-0.1075), children=[#HAnimSite visualization shape
-
-                                                        TouchSensor(
-                                                          description="HAnimSite r_lateral_malleolus_pt"),
-                                                        Shape(
-                                                          USE="HAnimSiteShape")]),
-                                                  HAnimSite(
-                                                    name="r_medial_malleolus_pt", DEF="hanim_r_medial_malleolus_pt", translation=(-0.0591,0.076,-0.0928), children=[#HAnimSite visualization shape
-
-                                                        TouchSensor(
-                                                          description="HAnimSite r_medial_malleolus_pt"),
-                                                        Shape(
-                                                          USE="HAnimSiteShape")]),
-                                                  HAnimSite(
-                                                    name="r_sphyrion_pt", DEF="hanim_r_sphyrion_pt", translation=(-0.0603,0.061,-0.1002), children=[#HAnimSite visualization shape
-
-                                                        TouchSensor(
-                                                          description="HAnimSite r_sphyrion_pt"),
-                                                        Shape(
-                                                          USE="HAnimSiteShape")]),
-                                                  HAnimSite(
-                                                    name="r_calcaneus_posterior_pt", DEF="hanim_r_calcaneus_posterior_pt", translation=(-0.0692,0.0297,-0.1221), children=[#HAnimSite visualization shape
-
-                                                        TouchSensor(
-                                                          description="HAnimSite r_calcaneous_post_pt"),
-                                                        Shape(
-                                                          USE="HAnimSiteShape")])]),
-                                            HAnimJoint(
-                                              name="r_tarsometatarsal_2", DEF="hanim_r_tarsometatarsal_2", center=(-0.1086,0.0001,-0.0368), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                  HAnimSegment(
-                                                    name="r_metatarsal_2", DEF="hanim_r_metatarsal_2", children=[#Visualization sphere for <HAnimJoint name='r_tarsometatarsal_2'/> is placed within <HAnimSegment name='r_metatarsal_2'/>
-
-                                                        TouchSensor(
-                                                          description="HAnimJoint r_tarsometatarsal_2, HAnimSegment r_metatarsal_2"),
-                                                        Transform(
-                                                          translation=(-0.1086,0.0001,-0.0368), children=[
-                                                              Shape(
-                                                                USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='r_tarsometatarsal_2'/> to child <HAnimJoint name='r_metatarsophalangeal_2'/>
-
-                                                        Shape(
-                                                          geometry=LineSet(
-                                                              vertexCount=(2), coord(
-                                                                Coordinate(
-                                                                  point=(-0.1086,0.0001,-0.0368,-0.1086,0.0001,0.0368))), color(
-                                                                ColorRGBA(
-                                                                  USE="HAnimSegmentLineColorRGBA"))))]),
-                                                  HAnimJoint(
-                                                    name="r_metatarsophalangeal_2", DEF="hanim_r_metatarsophalangeal_2", center=(-0.1086,0.0001,0.0368), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                        HAnimSegment(
-                                                          name="r_tarsal_proximal_phalanx_2", DEF="hanim_r_tarsal_proximal_phalanx_2", children=[#Visualization sphere for <HAnimJoint name='r_metatarsophalangeal_2'/> is placed within <HAnimSegment name='r_tarsal_proximal_phalanx_2'/>
-
-                                                              TouchSensor(
-                                                                description="HAnimJoint r_metatarsophalangeal_2, HAnimSegment r_tarsal_proximal_phalanx_2"),
-                                                              Transform(
-                                                                translation=(-0.1086,0.0001,0.0368), children=[
-                                                                    Shape(
-                                                                      USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='r_metatarsophalangeal_2'/> to child <HAnimJoint name='r_tarsal_distal_interphalangeal_2'/>
-
-                                                              Shape(
-                                                                geometry=LineSet(
-                                                                    vertexCount=(2), coord(
-                                                                      Coordinate(
-                                                                        point=(-0.1086,0.0001,0.0368,-0.1086,0,0.0762))), color(
-                                                                      ColorRGBA(
-                                                                        USE="HAnimSegmentLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_metatarsophalangeal_2'/> to <HAnimSite name='r_metatarsal_pha1_pt'/>
-
-                                                              Shape(
-                                                                geometry=LineSet(
-                                                                    vertexCount=(2), coord(
-                                                                      Coordinate(
-                                                                        point=(-0.1086,0.0001,0.0368,-0.0521,0.026,0.0127))), color(
-                                                                      ColorRGBA(
-                                                                        USE="HAnimSiteLineColorRGBA")))),
-                                                              HAnimSite(
-                                                                name="r_metatarsal_phalanx_1_pt", DEF="hanim_r_metatarsal_phalanx_1_pt", translation=(-0.0521,0.026,0.0127), children=[#HAnimSite visualization shape
-
-                                                                    TouchSensor(
-                                                                      description="HAnimSite r_metatarsal_pha1_pt"),
-                                                                    Shape(
-                                                                      USE="HAnimSiteShape")])]),
-                                                        HAnimJoint(
-                                                          name="r_tarsal_distal_interphalangeal_2", DEF="hanim_r_tarsal_distal_interphalangeal_2", center=(-0.1086,0,0.0762), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                              HAnimSegment(
-                                                                name="r_tarsal_distal_phalanx_2", DEF="hanim_r_tarsal_distal_phalanx_2", children=[#Visualization sphere for <HAnimJoint name='r_tarsal_distal_interphalangeal_2'/> is placed within <HAnimSegment name='r_tarsal_distal_phalanx_2'/>
-
-                                                                    TouchSensor(
-                                                                      description="HAnimJoint r_tarsal_distal_interphalangeal_2, HAnimSegment r_tarsal_distal_phalanx_2"),
-                                                                    Transform(
-                                                                      translation=(-0.1086,0,0.0762), children=[
-                                                                          Shape(
-                                                                            USE="HAnimJointShape")]),#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_tarsal_distal_interphalangeal_2'/> to <HAnimSite name='r_forefoot_tip'/>
-
-                                                                    Shape(
-                                                                      geometry=LineSet(
-                                                                          vertexCount=(2), coord(
-                                                                            Coordinate(
-                                                                              point=(-0.1086,0,0.0762,-0.1043,0.0227,0.145))), color(
-                                                                            ColorRGBA(
-                                                                              USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_tarsal_distal_interphalangeal_2'/> to <HAnimSite name='r_metatarsal_pha5_pt'/>
-
-                                                                    Shape(
-                                                                      geometry=LineSet(
-                                                                          vertexCount=(2), coord(
-                                                                            Coordinate(
-                                                                              point=(-0.1086,0,0.0762,-0.1523,0.0166,0.0895))), color(
-                                                                            ColorRGBA(
-                                                                              USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_tarsal_distal_interphalangeal_2'/> to <HAnimSite name='r_digit2_pt'/>
-
-                                                                    Shape(
-                                                                      geometry=LineSet(
-                                                                          vertexCount=(2), coord(
-                                                                            Coordinate(
-                                                                              point=(-0.1086,0,0.0762,-0.0883,0.0134,0.1383))), color(
-                                                                            ColorRGBA(
-                                                                              USE="HAnimSiteLineColorRGBA")))),
-                                                                    HAnimSite(
-                                                                      name="r_forefoot_tip_pt", DEF="hanim_r_forefoot_tip_pt", translation=(-0.1043,0.0227,0.145), children=[#HAnimSite visualization shape
-
-                                                                          TouchSensor(
-                                                                            description="HAnimSite r_forefoot_tip"),
-                                                                          Shape(
-                                                                            USE="HAnimSiteShape")]),
-                                                                    HAnimSite(
-                                                                      name="r_metatarsal_phalanx_5_pt", DEF="hanim_r_metatarsal_phalanx_5_pt", translation=(-0.1523,0.0166,0.0895), children=[#HAnimSite visualization shape
-
-                                                                          TouchSensor(
-                                                                            description="HAnimSite r_metatarsal_pha5_pt"),
-                                                                          Shape(
-                                                                            USE="HAnimSiteShape")]),
-                                                                    HAnimSite(
-                                                                      name="r_tarsal_distal_phalanx_2_pt", DEF="hanim_r_tarsal_distal_phalanx_2_pt", translation=(-0.0883,0.0134,0.1383), children=[#HAnimSite visualization shape
-
-                                                                          TouchSensor(
-                                                                            description="HAnimSite r_digit2_pt"),
-                                                                          Shape(
-                                                                            USE="HAnimSiteShape")])])])])])])])])]),
-                    HAnimJoint(
-                      name="vl5", DEF="hanim_vl5", center=(0.0028,1.0568,-0.0776), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                          HAnimSegment(
-                            name="l5", DEF="hanim_l5", children=[#Visualization sphere for <HAnimJoint name='vl5'/> is placed within <HAnimSegment name='l5'/>
-
-                                TouchSensor(
-                                  description="HAnimJoint vl5, HAnimSegment l5"),
-                                Transform(
-                                  translation=(0.0028,1.0568,-0.0776), children=[
-                                      Shape(
-                                        USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='vl5'/> to child <HAnimJoint name='vl4'/>
-
-                                Shape(
-                                  geometry=LineSet(
-                                      vertexCount=(2), coord(
-                                        Coordinate(
-                                          point=(0.0028,1.0568,-0.0776,0.0035,1.0925,-0.0787))), color(
-                                        ColorRGBA(
-                                          USE="HAnimSegmentLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='vl5'/> to <HAnimSite name='waist_preferred_post_pt'/>
-
-                                Shape(
-                                  geometry=LineSet(
-                                      vertexCount=(2), coord(
-                                        Coordinate(
-                                          point=(0.0028,1.0568,-0.0776,0,1.0915,-0.1091))), color(
-                                        ColorRGBA(
-                                          USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='vl5'/> to <HAnimSite name='navel_pt'/>
-
-                                Shape(
-                                  geometry=LineSet(
-                                      vertexCount=(2), coord(
-                                        Coordinate(
-                                          point=(0.0028,1.0568,-0.0776,0.0069,1.0966,0.1017))), color(
-                                        ColorRGBA(
-                                          USE="HAnimSiteLineColorRGBA")))),
-                                HAnimSite(
-                                  name="waist_preferred_posterior_pt", DEF="hanim_waist_preferred_posterior_pt", translation=(0,1.0915,-0.1091), children=[#HAnimSite visualization shape
-
-                                      TouchSensor(
-                                        description="HAnimSite waist_preferred_post_pt"),
-                                      Shape(
-                                        USE="HAnimSiteShape")]),
-                                HAnimSite(
-                                  name="navel_pt", DEF="hanim_navel_pt", translation=(0.0069,1.0966,0.1017), children=[#HAnimSite visualization shape
-
-                                      TouchSensor(
-                                        description="HAnimSite navel_pt"),
-                                      Shape(
-                                        USE="HAnimSiteShape")])]),
-                          HAnimJoint(
-                            name="vl4", DEF="hanim_vl4", center=(0.0035,1.0925,-0.0787), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                HAnimSegment(
-                                  name="l4", DEF="hanim_l4", children=[#Visualization sphere for <HAnimJoint name='vl4'/> is placed within <HAnimSegment name='l4'/>
-
-                                      TouchSensor(
-                                        description="HAnimJoint vl4, HAnimSegment l4"),
-                                      Transform(
-                                        translation=(0.0035,1.0925,-0.0787), children=[
-                                            Shape(
-                                              USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='vl4'/> to child <HAnimJoint name='vl3'/>
-
-                                      Shape(
-                                        geometry=LineSet(
-                                            vertexCount=(2), coord(
-                                              Coordinate(
-                                                point=(0.0035,1.0925,-0.0787,0.0041,1.1276,-0.0796))), color(
-                                              ColorRGBA(
-                                                USE="HAnimSegmentLineColorRGBA"))))]),
-                                HAnimJoint(
-                                  name="vl3", DEF="hanim_vl3", center=(0.0041,1.1276,-0.0796), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                      HAnimSegment(
-                                        name="l3", DEF="hanim_l3", children=[#Visualization sphere for <HAnimJoint name='vl3'/> is placed within <HAnimSegment name='l3'/>
-
-                                            TouchSensor(
-                                              description="HAnimJoint vl3, HAnimSegment l3"),
-                                            Transform(
-                                              translation=(0.0041,1.1276,-0.0796), children=[
-                                                  Shape(
-                                                    USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='vl3'/> to child <HAnimJoint name='vl2'/>
-
-                                            Shape(
-                                              geometry=LineSet(
-                                                  vertexCount=(2), coord(
-                                                    Coordinate(
-                                                      point=(0.0041,1.1276,-0.0796,0.0045,1.1546,-0.08))), color(
-                                                    ColorRGBA(
-                                                      USE="HAnimSegmentLineColorRGBA"))))]),
-                                      HAnimJoint(
-                                        name="vl2", DEF="hanim_vl2", center=(0.0045,1.1546,-0.08), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                            HAnimSegment(
-                                              name="l2", DEF="hanim_l2", children=[#Visualization sphere for <HAnimJoint name='vl2'/> is placed within <HAnimSegment name='l2'/>
-
-                                                  TouchSensor(
-                                                    description="HAnimJoint vl2, HAnimSegment l2"),
-                                                  Transform(
-                                                    translation=(0.0045,1.1546,-0.08), children=[
-                                                        Shape(
-                                                          USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='vl2'/> to child <HAnimJoint name='vl1'/>
-
-                                                  Shape(
-                                                    geometry=LineSet(
-                                                        vertexCount=(2), coord(
-                                                          Coordinate(
-                                                            point=(0.0045,1.1546,-0.08,0.0048,1.1912,-0.0805))), color(
-                                                          ColorRGBA(
-                                                            USE="HAnimSegmentLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='vl2'/> to <HAnimSite name='r_rib10_pt'/>
-
-                                                  Shape(
-                                                    geometry=LineSet(
-                                                        vertexCount=(2), coord(
-                                                          Coordinate(
-                                                            point=(0.0045,1.1546,-0.08,-0.0711,1.1941,0.1016))), color(
-                                                          ColorRGBA(
-                                                            USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='vl2'/> to <HAnimSite name='l_rib10_pt'/>
-
-                                                  Shape(
-                                                    geometry=LineSet(
-                                                        vertexCount=(2), coord(
-                                                          Coordinate(
-                                                            point=(0.0045,1.1546,-0.08,0.0871,1.1925,0.0992))), color(
-                                                          ColorRGBA(
-                                                            USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='vl2'/> to <HAnimSite name='rib10_midspine_pt'/>
-
-                                                  Shape(
-                                                    geometry=LineSet(
-                                                        vertexCount=(2), coord(
-                                                          Coordinate(
-                                                            point=(0.0045,1.1546,-0.08,0.0049,1.1908,-0.1113))), color(
-                                                          ColorRGBA(
-                                                            USE="HAnimSiteLineColorRGBA")))),
-                                                  HAnimSite(
-                                                    name="r_rib10_pt", DEF="hanim_r_rib10_pt", translation=(-0.0711,1.1941,0.1016), children=[#HAnimSite visualization shape
-
-                                                        TouchSensor(
-                                                          description="HAnimSite r_rib10_pt"),
-                                                        Shape(
-                                                          USE="HAnimSiteShape")]),
-                                                  HAnimSite(
-                                                    name="l_rib10_pt", DEF="hanim_l_rib10_pt", translation=(0.0871,1.1925,0.0992), children=[#HAnimSite visualization shape
-
-                                                        TouchSensor(
-                                                          description="HAnimSite l_rib10_pt"),
-                                                        Shape(
-                                                          USE="HAnimSiteShape")]),
-                                                  HAnimSite(
-                                                    name="rib10_midspine_pt", DEF="hanim_rib10_midspine_pt", translation=(0.0049,1.1908,-0.1113), children=[#HAnimSite visualization shape
-
-                                                        TouchSensor(
-                                                          description="HAnimSite rib10_midspine_pt"),
-                                                        Shape(
-                                                          USE="HAnimSiteShape")])]),
-                                            HAnimJoint(
-                                              name="vl1", DEF="hanim_vl1", center=(0.0048,1.1912,-0.0805), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                  HAnimSegment(
-                                                    name="l1", DEF="hanim_l1", children=[#Visualization sphere for <HAnimJoint name='vl1'/> is placed within <HAnimSegment name='l1'/>
-
-                                                        TouchSensor(
-                                                          description="HAnimJoint vl1, HAnimSegment l1"),
-                                                        Transform(
-                                                          translation=(0.0048,1.1912,-0.0805), children=[
-                                                              Shape(
-                                                                USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='vl1'/> to child <HAnimJoint name='vt12'/>
-
-                                                        Shape(
-                                                          geometry=LineSet(
-                                                              vertexCount=(2), coord(
-                                                                Coordinate(
-                                                                  point=(0.0048,1.1912,-0.0805,0.0051,1.2278,-0.0808))), color(
-                                                                ColorRGBA(
-                                                                  USE="HAnimSegmentLineColorRGBA"))))]),
-                                                  HAnimJoint(
-                                                    name="vt12", DEF="hanim_vt12", center=(0.0051,1.2278,-0.0808), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                        HAnimSegment(
-                                                          name="t12", DEF="hanim_t12", children=[#Visualization sphere for <HAnimJoint name='vt12'/> is placed within <HAnimSegment name='t12'/>
-
-                                                              TouchSensor(
-                                                                description="HAnimJoint vt12, HAnimSegment t12"),
-                                                              Transform(
-                                                                translation=(0.0051,1.2278,-0.0808), children=[
-                                                                    Shape(
-                                                                      USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='vt12'/> to child <HAnimJoint name='vt11'/>
-
-                                                              Shape(
-                                                                geometry=LineSet(
-                                                                    vertexCount=(2), coord(
-                                                                      Coordinate(
-                                                                        point=(0.0051,1.2278,-0.0808,0.0053,1.2679,-0.081))), color(
-                                                                      ColorRGBA(
-                                                                        USE="HAnimSegmentLineColorRGBA"))))]),
-                                                        HAnimJoint(
-                                                          name="vt11", DEF="hanim_vt11", center=(0.0053,1.2679,-0.081), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                              HAnimSegment(
-                                                                name="t11", DEF="hanim_t11", children=[#Visualization sphere for <HAnimJoint name='vt11'/> is placed within <HAnimSegment name='t11'/>
-
-                                                                    TouchSensor(
-                                                                      description="HAnimJoint vt11, HAnimSegment t11"),
-                                                                    Transform(
-                                                                      translation=(0.0053,1.2679,-0.081), children=[
-                                                                          Shape(
-                                                                            USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='vt11'/> to child <HAnimJoint name='vt10'/>
-
-                                                                    Shape(
-                                                                      geometry=LineSet(
-                                                                          vertexCount=(2), coord(
-                                                                            Coordinate(
-                                                                              point=(0.0053,1.2679,-0.081,0.0056,1.2848,-0.0822))), color(
-                                                                            ColorRGBA(
-                                                                              USE="HAnimSegmentLineColorRGBA"))))]),
-                                                              HAnimJoint(
-                                                                name="vt10", DEF="hanim_vt10", center=(0.0056,1.2848,-0.0822), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                    HAnimSegment(
-                                                                      name="t10", DEF="hanim_t10", children=[#Visualization sphere for <HAnimJoint name='vt10'/> is placed within <HAnimSegment name='t10'/>
-
-                                                                          TouchSensor(
-                                                                            description="HAnimJoint vt10, HAnimSegment t10"),
-                                                                          Transform(
-                                                                            translation=(0.0056,1.2848,-0.0822), children=[
-                                                                                Shape(
-                                                                                  USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='vt10'/> to child <HAnimJoint name='vt9'/>
-
-                                                                          Shape(
-                                                                            geometry=LineSet(
-                                                                                vertexCount=(2), coord(
-                                                                                  Coordinate(
-                                                                                    point=(0.0056,1.2848,-0.0822,0.0057,1.3126,-0.0838))), color(
-                                                                                  ColorRGBA(
-                                                                                    USE="HAnimSegmentLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='vt10'/> to <HAnimSite name='substernale_pt'/>
-
-                                                                          Shape(
-                                                                            geometry=LineSet(
-                                                                                vertexCount=(2), coord(
-                                                                                  Coordinate(
-                                                                                    point=(0.0056,1.2848,-0.0822,0.0085,1.2995,0.1147))), color(
-                                                                                  ColorRGBA(
-                                                                                    USE="HAnimSiteLineColorRGBA")))),
-                                                                          HAnimSite(
-                                                                            name="substernale_pt", DEF="hanim_substernale_pt", translation=(0.0085,1.2995,0.1147), children=[#HAnimSite visualization shape
-
-                                                                                TouchSensor(
-                                                                                  description="HAnimSite substernale_pt"),
-                                                                                Shape(
-                                                                                  USE="HAnimSiteShape")])]),
-                                                                    HAnimJoint(
-                                                                      name="vt9", DEF="hanim_vt9", center=(0.0057,1.3126,-0.0838), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                          HAnimSegment(
-                                                                            name="t9", DEF="hanim_t9", children=[#Visualization sphere for <HAnimJoint name='vt9'/> is placed within <HAnimSegment name='t9'/>
-
-                                                                                TouchSensor(
-                                                                                  description="HAnimJoint vt9, HAnimSegment t9"),
-                                                                                Transform(
-                                                                                  translation=(0.0057,1.3126,-0.0838), children=[
-                                                                                      Shape(
-                                                                                        USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='vt9'/> to child <HAnimJoint name='vt8'/>
-
-                                                                                Shape(
-                                                                                  geometry=LineSet(
-                                                                                      vertexCount=(2), coord(
-                                                                                        Coordinate(
-                                                                                          point=(0.0057,1.3126,-0.0838,0.0057,1.3382,-0.0845))), color(
-                                                                                        ColorRGBA(
-                                                                                          USE="HAnimSegmentLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='vt9'/> to <HAnimSite name='r_thelion_pt'/>
-
-                                                                                Shape(
-                                                                                  geometry=LineSet(
-                                                                                      vertexCount=(2), coord(
-                                                                                        Coordinate(
-                                                                                          point=(0.0057,1.3126,-0.0838,-0.0736,1.3385,0.1217))), color(
-                                                                                        ColorRGBA(
-                                                                                          USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='vt9'/> to <HAnimSite name='l_thelion_pt'/>
-
-                                                                                Shape(
-                                                                                  geometry=LineSet(
-                                                                                      vertexCount=(2), coord(
-                                                                                        Coordinate(
-                                                                                          point=(0.0057,1.3126,-0.0838,0.0918,1.3382,0.1192))), color(
-                                                                                        ColorRGBA(
-                                                                                          USE="HAnimSiteLineColorRGBA")))),
-                                                                                HAnimSite(
-                                                                                  name="r_thelion_pt", DEF="hanim_r_thelion_pt", translation=(-0.0736,1.3385,0.1217), children=[#HAnimSite visualization shape
-
-                                                                                      TouchSensor(
-                                                                                        description="HAnimSite r_thelion_pt"),
-                                                                                      Shape(
-                                                                                        USE="HAnimSiteShape")]),
-                                                                                HAnimSite(
-                                                                                  name="l_thelion_pt", DEF="hanim_l_thelion_pt", translation=(0.0918,1.3382,0.1192), children=[#HAnimSite visualization shape
-
-                                                                                      TouchSensor(
-                                                                                        description="HAnimSite l_thelion_pt"),
-                                                                                      Shape(
-                                                                                        USE="HAnimSiteShape")])]),
-                                                                          HAnimJoint(
-                                                                            name="vt8", DEF="hanim_vt8", center=(0.0057,1.3382,-0.0845), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                HAnimSegment(
-                                                                                  name="t8", DEF="hanim_t8", children=[#Visualization sphere for <HAnimJoint name='vt8'/> is placed within <HAnimSegment name='t8'/>
-
-                                                                                      TouchSensor(
-                                                                                        description="HAnimJoint vt8, HAnimSegment t8"),
-                                                                                      Transform(
-                                                                                        translation=(0.0057,1.3382,-0.0845), children=[
-                                                                                            Shape(
-                                                                                              USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='vt8'/> to child <HAnimJoint name='vt7'/>
-
-                                                                                      Shape(
-                                                                                        geometry=LineSet(
-                                                                                            vertexCount=(2), coord(
-                                                                                              Coordinate(
-                                                                                                point=(0.0057,1.3382,-0.0845,0.0058,1.3625,-0.0833))), color(
-                                                                                              ColorRGBA(
-                                                                                                USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                HAnimJoint(
-                                                                                  name="vt7", DEF="hanim_vt7", center=(0.0058,1.3625,-0.0833), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                      HAnimSegment(
-                                                                                        name="t7", DEF="hanim_t7", children=[#Visualization sphere for <HAnimJoint name='vt7'/> is placed within <HAnimSegment name='t7'/>
-
-                                                                                            TouchSensor(
-                                                                                              description="HAnimJoint vt7, HAnimSegment t7"),
-                                                                                            Transform(
-                                                                                              translation=(0.0058,1.3625,-0.0833), children=[
-                                                                                                  Shape(
-                                                                                                    USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='vt7'/> to child <HAnimJoint name='vt6'/>
-
-                                                                                            Shape(
-                                                                                              geometry=LineSet(
-                                                                                                  vertexCount=(2), coord(
-                                                                                                    Coordinate(
-                                                                                                      point=(0.0058,1.3625,-0.0833,0.0059,1.3866,-0.08))), color(
-                                                                                                    ColorRGBA(
-                                                                                                      USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                      HAnimJoint(
-                                                                                        name="vt6", DEF="hanim_vt6", center=(0.0059,1.3866,-0.08), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                            HAnimSegment(
-                                                                                              name="t6", DEF="hanim_t6", children=[#Visualization sphere for <HAnimJoint name='vt6'/> is placed within <HAnimSegment name='t6'/>
-
-                                                                                                  TouchSensor(
-                                                                                                    description="HAnimJoint vt6, HAnimSegment t6"),
-                                                                                                  Transform(
-                                                                                                    translation=(0.0059,1.3866,-0.08), children=[
-                                                                                                        Shape(
-                                                                                                          USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='vt6'/> to child <HAnimJoint name='vt5'/>
-
-                                                                                                  Shape(
-                                                                                                    geometry=LineSet(
-                                                                                                        vertexCount=(2), coord(
-                                                                                                          Coordinate(
-                                                                                                            point=(0.0059,1.3866,-0.08,0.006,1.4102,-0.0745))), color(
-                                                                                                          ColorRGBA(
-                                                                                                            USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                            HAnimJoint(
-                                                                                              name="vt5", DEF="hanim_vt5", center=(0.006,1.4102,-0.0745), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                  HAnimSegment(
-                                                                                                    name="t5", DEF="hanim_t5", children=[#Visualization sphere for <HAnimJoint name='vt5'/> is placed within <HAnimSegment name='t5'/>
-
-                                                                                                        TouchSensor(
-                                                                                                          description="HAnimJoint vt5, HAnimSegment t5"),
-                                                                                                        Transform(
-                                                                                                          translation=(0.006,1.4102,-0.0745), children=[
-                                                                                                              Shape(
-                                                                                                                USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='vt5'/> to child <HAnimJoint name='vt4'/>
-
-                                                                                                        Shape(
-                                                                                                          geometry=LineSet(
-                                                                                                              vertexCount=(2), coord(
-                                                                                                                Coordinate(
-                                                                                                                  point=(0.006,1.4102,-0.0745,0.0061,1.432,-0.0675))), color(
-                                                                                                                ColorRGBA(
-                                                                                                                  USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                                  HAnimJoint(
-                                                                                                    name="vt4", DEF="hanim_vt4", center=(0.0061,1.432,-0.0675), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                        HAnimSegment(
-                                                                                                          name="t4", DEF="hanim_t4", children=[#Visualization sphere for <HAnimJoint name='vt4'/> is placed within <HAnimSegment name='t4'/>
-
-                                                                                                              TouchSensor(
-                                                                                                                description="HAnimJoint vt4, HAnimSegment t4"),
-                                                                                                              Transform(
-                                                                                                                translation=(0.0061,1.432,-0.0675), children=[
-                                                                                                                    Shape(
-                                                                                                                      USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='vt4'/> to child <HAnimJoint name='vt3'/>
-
-                                                                                                              Shape(
-                                                                                                                geometry=LineSet(
-                                                                                                                    vertexCount=(2), coord(
-                                                                                                                      Coordinate(
-                                                                                                                        point=(0.0061,1.432,-0.0675,0.0062,1.4583,-0.057))), color(
-                                                                                                                      ColorRGBA(
-                                                                                                                        USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                                        HAnimJoint(
-                                                                                                          name="vt3", DEF="hanim_vt3", center=(0.0062,1.4583,-0.057), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                              HAnimSegment(
-                                                                                                                name="t3", DEF="hanim_t3", children=[#Visualization sphere for <HAnimJoint name='vt3'/> is placed within <HAnimSegment name='t3'/>
-
-                                                                                                                    TouchSensor(
-                                                                                                                      description="HAnimJoint vt3, HAnimSegment t3"),
-                                                                                                                    Transform(
-                                                                                                                      translation=(0.0062,1.4583,-0.057), children=[
-                                                                                                                          Shape(
-                                                                                                                            USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='vt3'/> to child <HAnimJoint name='vt2'/>
-
-                                                                                                                    Shape(
-                                                                                                                      geometry=LineSet(
-                                                                                                                          vertexCount=(2), coord(
-                                                                                                                            Coordinate(
-                                                                                                                              point=(0.0062,1.4583,-0.057,0.0063,1.4761,-0.0484))), color(
-                                                                                                                            ColorRGBA(
-                                                                                                                              USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                                              HAnimJoint(
-                                                                                                                name="vt2", DEF="hanim_vt2", center=(0.0063,1.4761,-0.0484), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                    HAnimSegment(
-                                                                                                                      name="t2", DEF="hanim_t2", children=[#Visualization sphere for <HAnimJoint name='vt2'/> is placed within <HAnimSegment name='t2'/>
-
-                                                                                                                          TouchSensor(
-                                                                                                                            description="HAnimJoint vt2, HAnimSegment t2"),
-                                                                                                                          Transform(
-                                                                                                                            translation=(0.0063,1.4761,-0.0484), children=[
-                                                                                                                                Shape(
-                                                                                                                                  USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='vt2'/> to child <HAnimJoint name='vt1'/>
-
-                                                                                                                          Shape(
-                                                                                                                            geometry=LineSet(
-                                                                                                                                vertexCount=(2), coord(
-                                                                                                                                  Coordinate(
-                                                                                                                                    point=(0.0063,1.4761,-0.0484,0.0065,1.4951,-0.0387))), color(
-                                                                                                                                  ColorRGBA(
-                                                                                                                                    USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                                                    HAnimJoint(
-                                                                                                                      name="vt1", DEF="hanim_vt1", center=(0.0065,1.4951,-0.0387), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                          HAnimSegment(
-                                                                                                                            name="t1", DEF="hanim_t1", children=[#Visualization sphere for <HAnimJoint name='vt1'/> is placed within <HAnimSegment name='t1'/>
-
-                                                                                                                                TouchSensor(
-                                                                                                                                  description="HAnimJoint vt1, HAnimSegment t1"),
-                                                                                                                                Transform(
-                                                                                                                                  translation=(0.0065,1.4951,-0.0387), children=[
-                                                                                                                                      Shape(
-                                                                                                                                        USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='vt1'/> to child <HAnimJoint name='vc7'/>
-
-                                                                                                                                Shape(
-                                                                                                                                  geometry=LineSet(
-                                                                                                                                      vertexCount=(2), coord(
-                                                                                                                                        Coordinate(
-                                                                                                                                          point=(0.0065,1.4951,-0.0387,0.0066,1.5132,-0.0301))), color(
-                                                                                                                                        ColorRGBA(
-                                                                                                                                          USE="HAnimSegmentLineColorRGBA")))),#HAnimSegment visualization line from current <HAnimJoint name='vt1'/> to child <HAnimJoint name='l_sternoclavicular'/>
-
-                                                                                                                                Shape(
-                                                                                                                                  geometry=LineSet(
-                                                                                                                                      vertexCount=(2), coord(
-                                                                                                                                        Coordinate(
-                                                                                                                                          point=(0.0065,1.4951,-0.0387,0.082,1.4488,-0.0353))), color(
-                                                                                                                                        ColorRGBA(
-                                                                                                                                          USE="HAnimSegmentLineColorRGBA")))),#HAnimSegment visualization line from current <HAnimJoint name='vt1'/> to child <HAnimJoint name='r_sternoclavicular'/>
-
-                                                                                                                                Shape(
-                                                                                                                                  geometry=LineSet(
-                                                                                                                                      vertexCount=(2), coord(
-                                                                                                                                        Coordinate(
-                                                                                                                                          point=(0.0065,1.4951,-0.0387,-0.082,1.4488,-0.0353))), color(
-                                                                                                                                        ColorRGBA(
-                                                                                                                                          USE="HAnimSegmentLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='vt1'/> to <HAnimSite name='suprasternale_pt'/>
-
-                                                                                                                                Shape(
-                                                                                                                                  geometry=LineSet(
-                                                                                                                                      vertexCount=(2), coord(
-                                                                                                                                        Coordinate(
-                                                                                                                                          point=(0.0065,1.4951,-0.0387,0.0084,1.4714,0.0551))), color(
-                                                                                                                                        ColorRGBA(
-                                                                                                                                          USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='vt1'/> to <HAnimSite name='cervicale_pt'/>
-
-                                                                                                                                Shape(
-                                                                                                                                  geometry=LineSet(
-                                                                                                                                      vertexCount=(2), coord(
-                                                                                                                                        Coordinate(
-                                                                                                                                          point=(0.0065,1.4951,-0.0387,0.0064,1.52,-0.0815))), color(
-                                                                                                                                        ColorRGBA(
-                                                                                                                                          USE="HAnimSiteLineColorRGBA")))),
-                                                                                                                                HAnimSite(
-                                                                                                                                  name="suprasternale_pt", DEF="hanim_suprasternale_pt", translation=(0.0084,1.4714,0.0551), children=[#HAnimSite visualization shape
-
-                                                                                                                                      TouchSensor(
-                                                                                                                                        description="HAnimSite suprasternale_pt"),
-                                                                                                                                      Shape(
-                                                                                                                                        USE="HAnimSiteShape")]),
-                                                                                                                                HAnimSite(
-                                                                                                                                  name="cervicale_pt", DEF="hanim_cervicale_pt", translation=(0.0064,1.52,-0.0815), children=[#HAnimSite visualization shape
-
-                                                                                                                                      TouchSensor(
-                                                                                                                                        description="HAnimSite cervicale_pt"),
-                                                                                                                                      Shape(
-                                                                                                                                        USE="HAnimSiteShape")])]),
-                                                                                                                          HAnimJoint(
-                                                                                                                            name="vc7", DEF="hanim_vc7", center=(0.0066,1.5132,-0.0301), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                HAnimSegment(
-                                                                                                                                  name="c7", DEF="hanim_c7", children=[#Visualization sphere for <HAnimJoint name='vc7'/> is placed within <HAnimSegment name='c7'/>
-
-                                                                                                                                      TouchSensor(
-                                                                                                                                        description="HAnimJoint vc7, HAnimSegment c7"),
-                                                                                                                                      Transform(
-                                                                                                                                        translation=(0.0066,1.5132,-0.0301), children=[
-                                                                                                                                            Shape(
-                                                                                                                                              USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='vc7'/> to child <HAnimJoint name='vc6'/>
-
-                                                                                                                                      Shape(
-                                                                                                                                        geometry=LineSet(
-                                                                                                                                            vertexCount=(2), coord(
-                                                                                                                                              Coordinate(
-                                                                                                                                                point=(0.0066,1.5132,-0.0301,0.0066,1.5357,-0.0143))), color(
-                                                                                                                                              ColorRGBA(
-                                                                                                                                                USE="HAnimSegmentLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='vc7'/> to <HAnimSite name='r_neck_base_pt'/>
-
-                                                                                                                                      Shape(
-                                                                                                                                        geometry=LineSet(
-                                                                                                                                            vertexCount=(2), coord(
-                                                                                                                                              Coordinate(
-                                                                                                                                                point=(0.0066,1.5132,-0.0301,-0.0419,1.5149,-0.022))), color(
-                                                                                                                                              ColorRGBA(
-                                                                                                                                                USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='vc7'/> to <HAnimSite name='l_neck_base_pt'/>
-
-                                                                                                                                      Shape(
-                                                                                                                                        geometry=LineSet(
-                                                                                                                                            vertexCount=(2), coord(
-                                                                                                                                              Coordinate(
-                                                                                                                                                point=(0.0066,1.5132,-0.0301,0.0646,1.5141,-0.038))), color(
-                                                                                                                                              ColorRGBA(
-                                                                                                                                                USE="HAnimSiteLineColorRGBA")))),
-                                                                                                                                      HAnimSite(
-                                                                                                                                        name="r_neck_base_pt", DEF="hanim_r_neck_base_pt", translation=(-0.0419,1.5149,-0.022), children=[#HAnimSite visualization shape
-
-                                                                                                                                            TouchSensor(
-                                                                                                                                              description="HAnimSite r_neck_base_pt"),
-                                                                                                                                            Shape(
-                                                                                                                                              USE="HAnimSiteShape")]),
-                                                                                                                                      HAnimSite(
-                                                                                                                                        name="l_neck_base_pt", DEF="hanim_l_neck_base_pt", translation=(0.0646,1.5141,-0.038), children=[#HAnimSite visualization shape
-
-                                                                                                                                            TouchSensor(
-                                                                                                                                              description="HAnimSite l_neck_base_pt"),
-                                                                                                                                            Shape(
-                                                                                                                                              USE="HAnimSiteShape")])]),
-                                                                                                                                HAnimJoint(
-                                                                                                                                  name="vc6", DEF="hanim_vc6", center=(0.0066,1.5357,-0.0143), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                      HAnimSegment(
-                                                                                                                                        name="c6", DEF="hanim_c6", children=[#Visualization sphere for <HAnimJoint name='vc6'/> is placed within <HAnimSegment name='c6'/>
-
-                                                                                                                                            TouchSensor(
-                                                                                                                                              description="HAnimJoint vc6, HAnimSegment c6"),
-                                                                                                                                            Transform(
-                                                                                                                                              translation=(0.0066,1.5357,-0.0143), children=[
-                                                                                                                                                  Shape(
-                                                                                                                                                    USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='vc6'/> to child <HAnimJoint name='vc5'/>
-
-                                                                                                                                            Shape(
-                                                                                                                                              geometry=LineSet(
-                                                                                                                                                  vertexCount=(2), coord(
-                                                                                                                                                    Coordinate(
-                                                                                                                                                      point=(0.0066,1.5357,-0.0143,0.0066,1.552,-0.0082))), color(
-                                                                                                                                                    ColorRGBA(
-                                                                                                                                                      USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                                                                      HAnimJoint(
-                                                                                                                                        name="vc5", DEF="hanim_vc5", center=(0.0066,1.552,-0.0082), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                            HAnimSegment(
-                                                                                                                                              name="c5", DEF="hanim_c5", children=[#Visualization sphere for <HAnimJoint name='vc5'/> is placed within <HAnimSegment name='c5'/>
-
-                                                                                                                                                  TouchSensor(
-                                                                                                                                                    description="HAnimJoint vc5, HAnimSegment c5"),
-                                                                                                                                                  Transform(
-                                                                                                                                                    translation=(0.0066,1.552,-0.0082), children=[
-                                                                                                                                                        Shape(
-                                                                                                                                                          USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='vc5'/> to child <HAnimJoint name='vc4'/>
-
-                                                                                                                                                  Shape(
-                                                                                                                                                    geometry=LineSet(
-                                                                                                                                                        vertexCount=(2), coord(
-                                                                                                                                                          Coordinate(
-                                                                                                                                                            point=(0.0066,1.552,-0.0082,0.0066,1.5662,-0.0084))), color(
-                                                                                                                                                          ColorRGBA(
-                                                                                                                                                            USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                                                                            HAnimJoint(
-                                                                                                                                              name="vc4", DEF="hanim_vc4", center=(0.0066,1.5662,-0.0084), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                  HAnimSegment(
-                                                                                                                                                    name="c4", DEF="hanim_c4", children=[#Visualization sphere for <HAnimJoint name='vc4'/> is placed within <HAnimSegment name='c4'/>
-
-                                                                                                                                                        TouchSensor(
-                                                                                                                                                          description="HAnimJoint vc4, HAnimSegment c4"),
-                                                                                                                                                        Transform(
-                                                                                                                                                          translation=(0.0066,1.5662,-0.0084), children=[
-                                                                                                                                                              Shape(
-                                                                                                                                                                USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='vc4'/> to child <HAnimJoint name='vc3'/>
-
-                                                                                                                                                        Shape(
-                                                                                                                                                          geometry=LineSet(
-                                                                                                                                                              vertexCount=(2), coord(
-                                                                                                                                                                Coordinate(
-                                                                                                                                                                  point=(0.0066,1.5662,-0.0084,0.0066,1.58,-0.0103))), color(
-                                                                                                                                                                ColorRGBA(
-                                                                                                                                                                  USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                                                                                  HAnimJoint(
-                                                                                                                                                    name="vc3", DEF="hanim_vc3", center=(0.0066,1.58,-0.0103), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                        HAnimSegment(
-                                                                                                                                                          name="c3", DEF="hanim_c3", children=[#Visualization sphere for <HAnimJoint name='vc3'/> is placed within <HAnimSegment name='c3'/>
-
-                                                                                                                                                              TouchSensor(
-                                                                                                                                                                description="HAnimJoint vc3, HAnimSegment c3"),
-                                                                                                                                                              Transform(
-                                                                                                                                                                translation=(0.0066,1.58,-0.0103), children=[
-                                                                                                                                                                    Shape(
-                                                                                                                                                                      USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='vc3'/> to child <HAnimJoint name='vc2'/>
-
-                                                                                                                                                              Shape(
-                                                                                                                                                                geometry=LineSet(
-                                                                                                                                                                    vertexCount=(2), coord(
-                                                                                                                                                                      Coordinate(
-                                                                                                                                                                        point=(0.0066,1.58,-0.0103,0.0066,1.5928,-0.0103))), color(
-                                                                                                                                                                      ColorRGBA(
-                                                                                                                                                                        USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                                                                                        HAnimJoint(
-                                                                                                                                                          name="vc2", DEF="hanim_vc2", center=(0.0066,1.5928,-0.0103), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                              HAnimSegment(
-                                                                                                                                                                name="c2", DEF="hanim_c2", children=[#Visualization sphere for <HAnimJoint name='vc2'/> is placed within <HAnimSegment name='c2'/>
-
-                                                                                                                                                                    TouchSensor(
-                                                                                                                                                                      description="HAnimJoint vc2, HAnimSegment c2"),
-                                                                                                                                                                    Transform(
-                                                                                                                                                                      translation=(0.0066,1.5928,-0.0103), children=[
-                                                                                                                                                                          Shape(
-                                                                                                                                                                            USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='vc2'/> to child <HAnimJoint name='vc1'/>
-
-                                                                                                                                                                    Shape(
-                                                                                                                                                                      geometry=LineSet(
-                                                                                                                                                                          vertexCount=(2), coord(
-                                                                                                                                                                            Coordinate(
-                                                                                                                                                                              point=(0.0066,1.5928,-0.0103,0.0066,1.6144,-0.0034))), color(
-                                                                                                                                                                            ColorRGBA(
-                                                                                                                                                                              USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                                                                                              HAnimJoint(
-                                                                                                                                                                name="vc1", DEF="hanim_vc1", center=(0.0066,1.6144,-0.0034), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                                    HAnimSegment(
-                                                                                                                                                                      name="c1", DEF="hanim_c1", children=[#Visualization sphere for <HAnimJoint name='vc1'/> is placed within <HAnimSegment name='c1'/>
-
-                                                                                                                                                                          TouchSensor(
-                                                                                                                                                                            description="HAnimJoint vc1, HAnimSegment c1"),
-                                                                                                                                                                          Transform(
-                                                                                                                                                                            translation=(0.0066,1.6144,-0.0034), children=[
-                                                                                                                                                                                Shape(
-                                                                                                                                                                                  USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='vc1'/> to child <HAnimJoint name='skullbase'/>
-
-                                                                                                                                                                          Shape(
-                                                                                                                                                                            geometry=LineSet(
-                                                                                                                                                                                vertexCount=(2), coord(
-                                                                                                                                                                                  Coordinate(
-                                                                                                                                                                                    point=(0.0066,1.6144,-0.0034,0.0044,1.6209,0.0236))), color(
-                                                                                                                                                                                  ColorRGBA(
-                                                                                                                                                                                    USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                                                                                                    HAnimJoint(
-                                                                                                                                                                      name="skullbase", DEF="hanim_skullbase", center=(0.0044,1.6209,0.0236), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                                          HAnimSegment(
-                                                                                                                                                                            name="skull", DEF="hanim_skull", children=[#Visualization sphere for <HAnimJoint name='skullbase'/> is placed within <HAnimSegment name='skull'/>
-
-                                                                                                                                                                                TouchSensor(
-                                                                                                                                                                                  description="HAnimJoint skullbase, HAnimSegment skull"),
-                                                                                                                                                                                Transform(
-                                                                                                                                                                                  translation=(0.0044,1.6209,0.0236), children=[
-                                                                                                                                                                                      Shape(
-                                                                                                                                                                                        USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='skullbase'/> to child <HAnimJoint name='l_eyeball_joint'/>
-
-                                                                                                                                                                                Shape(
-                                                                                                                                                                                  geometry=LineSet(
-                                                                                                                                                                                      vertexCount=(2), coord(
-                                                                                                                                                                                        Coordinate(
-                                                                                                                                                                                          point=(0.0044,1.6209,0.0236,0.0336,1.6332,0.0502))), color(
-                                                                                                                                                                                        ColorRGBA(
-                                                                                                                                                                                          USE="HAnimSegmentLineColorRGBA")))),#HAnimSegment visualization line from current <HAnimJoint name='skullbase'/> to child <HAnimJoint name='l_eyelid_joint'/>
-
-                                                                                                                                                                                Shape(
-                                                                                                                                                                                  geometry=LineSet(
-                                                                                                                                                                                      vertexCount=(2), coord(
-                                                                                                                                                                                        Coordinate(
-                                                                                                                                                                                          point=(0.0044,1.6209,0.0236,0.0336,1.6332,0.0502))), color(
-                                                                                                                                                                                        ColorRGBA(
-                                                                                                                                                                                          USE="HAnimSegmentLineColorRGBA")))),#HAnimSegment visualization line from current <HAnimJoint name='skullbase'/> to child <HAnimJoint name='l_eyebrow_joint'/>
-
-                                                                                                                                                                                Shape(
-                                                                                                                                                                                  geometry=LineSet(
-                                                                                                                                                                                      vertexCount=(2), coord(
-                                                                                                                                                                                        Coordinate(
-                                                                                                                                                                                          point=(0.0044,1.6209,0.0236,0.0336,1.635,0.0506))), color(
-                                                                                                                                                                                        ColorRGBA(
-                                                                                                                                                                                          USE="HAnimSegmentLineColorRGBA")))),#HAnimSegment visualization line from current <HAnimJoint name='skullbase'/> to child <HAnimJoint name='r_eyeball_joint'/>
-
-                                                                                                                                                                                Shape(
-                                                                                                                                                                                  geometry=LineSet(
-                                                                                                                                                                                      vertexCount=(2), coord(
-                                                                                                                                                                                        Coordinate(
-                                                                                                                                                                                          point=(0.0044,1.6209,0.0236,-0.0336,1.6332,0.0502))), color(
-                                                                                                                                                                                        ColorRGBA(
-                                                                                                                                                                                          USE="HAnimSegmentLineColorRGBA")))),#HAnimSegment visualization line from current <HAnimJoint name='skullbase'/> to child <HAnimJoint name='r_eyelid_joint'/>
-
-                                                                                                                                                                                Shape(
-                                                                                                                                                                                  geometry=LineSet(
-                                                                                                                                                                                      vertexCount=(2), coord(
-                                                                                                                                                                                        Coordinate(
-                                                                                                                                                                                          point=(0.0044,1.6209,0.0236,-0.0336,1.6332,0.0502))), color(
-                                                                                                                                                                                        ColorRGBA(
-                                                                                                                                                                                          USE="HAnimSegmentLineColorRGBA")))),#HAnimSegment visualization line from current <HAnimJoint name='skullbase'/> to child <HAnimJoint name='r_eyebrow_joint'/>
-
-                                                                                                                                                                                Shape(
-                                                                                                                                                                                  geometry=LineSet(
-                                                                                                                                                                                      vertexCount=(2), coord(
-                                                                                                                                                                                        Coordinate(
-                                                                                                                                                                                          point=(0.0044,1.6209,0.0236,-0.0336,1.635,0.0506))), color(
-                                                                                                                                                                                        ColorRGBA(
-                                                                                                                                                                                          USE="HAnimSegmentLineColorRGBA")))),#HAnimSegment visualization line from current <HAnimJoint name='skullbase'/> to child <HAnimJoint name='temporomandibular'/>
-
-                                                                                                                                                                                Shape(
-                                                                                                                                                                                  geometry=LineSet(
-                                                                                                                                                                                      vertexCount=(2), coord(
-                                                                                                                                                                                        Coordinate(
-                                                                                                                                                                                          point=(0.0044,1.6209,0.0236,0.0,1.63,0.015))), color(
-                                                                                                                                                                                        ColorRGBA(
-                                                                                                                                                                                          USE="HAnimSegmentLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='skullbase'/> to <HAnimSite name='skull_tip'/>
-
-                                                                                                                                                                                Shape(
-                                                                                                                                                                                  geometry=LineSet(
-                                                                                                                                                                                      vertexCount=(2), coord(
-                                                                                                                                                                                        Coordinate(
-                                                                                                                                                                                          point=(0.0044,1.6209,0.0236,0.005,1.7504,0.0055))), color(
-                                                                                                                                                                                        ColorRGBA(
-                                                                                                                                                                                          USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='skullbase'/> to <HAnimSite name='sellion_pt'/>
-
-                                                                                                                                                                                Shape(
-                                                                                                                                                                                  geometry=LineSet(
-                                                                                                                                                                                      vertexCount=(2), coord(
-                                                                                                                                                                                        Coordinate(
-                                                                                                                                                                                          point=(0.0044,1.6209,0.0236,0.0058,1.6316,0.0852))), color(
-                                                                                                                                                                                        ColorRGBA(
-                                                                                                                                                                                          USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='skullbase'/> to <HAnimSite name='r_infraorbitale_pt'/>
-
-                                                                                                                                                                                Shape(
-                                                                                                                                                                                  geometry=LineSet(
-                                                                                                                                                                                      vertexCount=(2), coord(
-                                                                                                                                                                                        Coordinate(
-                                                                                                                                                                                          point=(0.0044,1.6209,0.0236,-0.0237,1.6171,0.0752))), color(
-                                                                                                                                                                                        ColorRGBA(
-                                                                                                                                                                                          USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='skullbase'/> to <HAnimSite name='l_infraorbitale_pt'/>
-
-                                                                                                                                                                                Shape(
-                                                                                                                                                                                  geometry=LineSet(
-                                                                                                                                                                                      vertexCount=(2), coord(
-                                                                                                                                                                                        Coordinate(
-                                                                                                                                                                                          point=(0.0044,1.6209,0.0236,0.0341,1.6171,0.0752))), color(
-                                                                                                                                                                                        ColorRGBA(
-                                                                                                                                                                                          USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='skullbase'/> to <HAnimSite name='supramenton_pt'/>
-
-                                                                                                                                                                                Shape(
-                                                                                                                                                                                  geometry=LineSet(
-                                                                                                                                                                                      vertexCount=(2), coord(
-                                                                                                                                                                                        Coordinate(
-                                                                                                                                                                                          point=(0.0044,1.6209,0.0236,0.0061,1.541,0.0805))), color(
-                                                                                                                                                                                        ColorRGBA(
-                                                                                                                                                                                          USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='skullbase'/> to <HAnimSite name='r_tragion_pt'/>
-
-                                                                                                                                                                                Shape(
-                                                                                                                                                                                  geometry=LineSet(
-                                                                                                                                                                                      vertexCount=(2), coord(
-                                                                                                                                                                                        Coordinate(
-                                                                                                                                                                                          point=(0.0044,1.6209,0.0236,-0.0646,1.6347,0.0302))), color(
-                                                                                                                                                                                        ColorRGBA(
-                                                                                                                                                                                          USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='skullbase'/> to <HAnimSite name='r_gonion_pt'/>
-
-                                                                                                                                                                                Shape(
-                                                                                                                                                                                  geometry=LineSet(
-                                                                                                                                                                                      vertexCount=(2), coord(
-                                                                                                                                                                                        Coordinate(
-                                                                                                                                                                                          point=(0.0044,1.6209,0.0236,-0.052,1.5529,0.0347))), color(
-                                                                                                                                                                                        ColorRGBA(
-                                                                                                                                                                                          USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='skullbase'/> to <HAnimSite name='l_tragion_pt'/>
-
-                                                                                                                                                                                Shape(
-                                                                                                                                                                                  geometry=LineSet(
-                                                                                                                                                                                      vertexCount=(2), coord(
-                                                                                                                                                                                        Coordinate(
-                                                                                                                                                                                          point=(0.0044,1.6209,0.0236,0.0739,1.6348,0.0282))), color(
-                                                                                                                                                                                        ColorRGBA(
-                                                                                                                                                                                          USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='skullbase'/> to <HAnimSite name='l_gonion_pt'/>
-
-                                                                                                                                                                                Shape(
-                                                                                                                                                                                  geometry=LineSet(
-                                                                                                                                                                                      vertexCount=(2), coord(
-                                                                                                                                                                                        Coordinate(
-                                                                                                                                                                                          point=(0.0044,1.6209,0.0236,0.0631,1.553,0.033))), color(
-                                                                                                                                                                                        ColorRGBA(
-                                                                                                                                                                                          USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='skullbase'/> to <HAnimSite name='nuchale_pt'/>
-
-                                                                                                                                                                                Shape(
-                                                                                                                                                                                  geometry=LineSet(
-                                                                                                                                                                                      vertexCount=(2), coord(
-                                                                                                                                                                                        Coordinate(
-                                                                                                                                                                                          point=(0.0044,1.6209,0.0236,0.0039,1.5972,-0.0796))), color(
-                                                                                                                                                                                        ColorRGBA(
-                                                                                                                                                                                          USE="HAnimSiteLineColorRGBA")))),
-                                                                                                                                                                                HAnimSite(
-                                                                                                                                                                                  name="skull_vertex_pt", DEF="hanim_skull_vertex_pt", translation=(0.005,1.7504,0.0055), children=[#TODO move skull_tip x to zero, check others for symmetry
+Viewpoint(centerOfRotation=((0,0.9149,0.0016)), description="Humanoid LOA 3 Front", position=((0,0.4,4))),
+Viewpoint(centerOfRotation=((0,0.9149,0.0016)), description="Humanoid LOA 3 Front Close", position=((0,0.8,2))),
+Viewpoint(centerOfRotation=((0,0.9149,0.0016)), description="Humanoid LOA 3 Front Closer", position=((0,1.2,1))),
+Viewpoint(centerOfRotation=((0,1.5,0.0016)), description="Humanoid LOA 3 Front Face", position=((0,1.63,1))),
+Viewpoint(centerOfRotation=((0,0.9149,0.0016)), description="Humanoid LOA 3 Right Side", orientation=((0,1,0,1.5708)), position=((2.6,0.8,0))),
+Viewpoint(centerOfRotation=((0,0.9149,0.0016)), description="Humanoid LOA 3 Right Side Close", orientation=((0,1,0,1.2)), position=((1,0.8,0.5))),
+Viewpoint(centerOfRotation=((0,0.9149,0.0016)), description="Humanoid LOA 3 Left Side Close", orientation=((0,1,0,-1.2)), position=((-1,0.8,0.5))),
+Viewpoint(centerOfRotation=((0,0.9149,0.0016)), description="Humanoid LOA 3 Left Side", orientation=((0,1,0,-1.5708)), position=((-2.6,0.8,0))),
+Viewpoint(centerOfRotation=((0,0.9149,0.0016)), description="Humanoid LOA 3 Top", orientation=((1,0,0,-1.5708)), position=((0,3.5,0))),
+HAnimHumanoid(name="humanoid", DEF="hanim_humanoid", loa=3, version="2.0", 
+metadata=(
+MetadataSet(name="HAnimHumanoid.info", reference="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid", value=[
+MetadataString(name="authorName", value=["Matthew T. Beitler Joe D. Williams Don Brutzman"]),
+MetadataString(name="authorEmail", value=["HAnim@web3D.org"]),
+MetadataString(name="copyright", value=["none"]),
+MetadataString(name="creationDate", value=["12 May 1999"]),
+MetadataFloat(name="height", value=[float(1.7504)]),
+MetadataString(name="humanoidVersion", value=["2.0"]),
+MetadataString(name="usageRestrictions", value=["none"])])), skeleton=(
+HAnimJoint(name="humanoid_root", DEF="hanim_humanoid_root", center=((0,0.824,0.0277)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="sacrum", DEF="hanim_sacrum", children=[
+#Visualization sphere for <HAnimJoint name='humanoid_root'/> is placed within <HAnimSegment name='sacrum'/>
+
+TouchSensor(description="HAnimJoint humanoid_root, HAnimSegment sacrum"),
+Transform(translation=((0,0.824,0.0277)), children=[
+Shape(DEF="HAnimJointShape", 
+geometry=
+Sphere(radius=0.006), 
+appearance=
+Appearance(DEF="HAnimJointAppearance", 
+material=
+Material(diffuseColor=((1,0.5,0)), transparency=0.5)))]),
+#HAnimSegment visualization line from current <HAnimJoint name='humanoid_root'/> to child <HAnimJoint name='sacroiliac'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0,0.824,0.0277),(0,0.9149,0.0016)]), 
+color=
+ColorRGBA(DEF="HAnimSegmentLineColorRGBA", color=[(1,1,0,1),(1,1,0,0.1)]))),
+#HAnimSegment visualization line from current <HAnimJoint name='humanoid_root'/> to child <HAnimJoint name='vl5'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0,0.824,0.0277),(0.0028,1.0568,-0.0776)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="sacroiliac", DEF="hanim_sacroiliac", center=((0,0.9149,0.0016)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="pelvis", DEF="hanim_pelvis", children=[
+#Visualization sphere for <HAnimJoint name='sacroiliac'/> is placed within <HAnimSegment name='pelvis'/>
+
+TouchSensor(description="HAnimJoint sacroiliac, HAnimSegment pelvis"),
+Transform(translation=((0,0.9149,0.0016)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='sacroiliac'/> to child <HAnimJoint name='l_hip'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0,0.9149,0.0016),(0.0961,0.9124,-0.0001)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
+#HAnimSegment visualization line from current <HAnimJoint name='sacroiliac'/> to child <HAnimJoint name='r_hip'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0,0.9149,0.0016),(-0.0961,0.9124,-0.0001)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='sacroiliac'/> to <HAnimSite name='r_iliocristale_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0,0.9149,0.0016),(-0.1525,1.0628,0.0035)]), 
+color=
+ColorRGBA(DEF="HAnimSiteLineColorRGBA", color=[(1,0,0,1),(1,0,0,0.1)]))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='sacroiliac'/> to <HAnimSite name='r_trochanterion_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0,0.9149,0.0016),(-0.1689,0.8419,0.0352)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='sacroiliac'/> to <HAnimSite name='l_iliocristale_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0,0.9149,0.0016),(0.1612,1.0537,0.0008)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='sacroiliac'/> to <HAnimSite name='l_trochanterion_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0,0.9149,0.0016),(0.1677,0.8336,0.0303)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='sacroiliac'/> to <HAnimSite name='r_asis_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0,0.9149,0.0016),(-0.0887,1.0021,0.1112)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='sacroiliac'/> to <HAnimSite name='l_asis_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0,0.9149,0.0016),(0.0925,0.9983,0.1052)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='sacroiliac'/> to <HAnimSite name='r_psis_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0,0.9149,0.0016),(-0.0716,1.019,-0.1138)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='sacroiliac'/> to <HAnimSite name='l_psis_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0,0.9149,0.0016),(0.0774,1.019,-0.1151)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='sacroiliac'/> to <HAnimSite name='crotch_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0,0.9149,0.0016),(0.0034,0.8266,0.0257)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+HAnimSite(name="r_iliocristale_pt", DEF="hanim_r_iliocristale_pt", translation=((-0.1525,1.0628,0.0035)), children=[
 #HAnimSite visualization shape
 
-                                                                                                                                                                                      TouchSensor(
-                                                                                                                                                                                        description="HAnimSite skull_tip"),
-                                                                                                                                                                                      Shape(
-                                                                                                                                                                                        USE="HAnimSiteShape")]),
-                                                                                                                                                                                HAnimSite(
-                                                                                                                                                                                  name="sellion_pt", DEF="hanim_sellion_pt", translation=(0.0058,1.6316,0.0852), children=[#HAnimSite visualization shape
-
-                                                                                                                                                                                      TouchSensor(
-                                                                                                                                                                                        description="HAnimSite sellion_pt"),
-                                                                                                                                                                                      Shape(
-                                                                                                                                                                                        USE="HAnimSiteShape")]),
-                                                                                                                                                                                HAnimSite(
-                                                                                                                                                                                  name="r_infraorbitale_pt", DEF="hanim_r_infraorbitale_pt", translation=(-0.0237,1.6171,0.0752), children=[#HAnimSite visualization shape
-
-                                                                                                                                                                                      TouchSensor(
-                                                                                                                                                                                        description="HAnimSite r_infraorbitale_pt"),
-                                                                                                                                                                                      Shape(
-                                                                                                                                                                                        USE="HAnimSiteShape")]),
-                                                                                                                                                                                HAnimSite(
-                                                                                                                                                                                  name="l_infraorbitale_pt", DEF="hanim_l_infraorbitale_pt", translation=(0.0341,1.6171,0.0752), children=[#HAnimSite visualization shape
-
-                                                                                                                                                                                      TouchSensor(
-                                                                                                                                                                                        description="HAnimSite l_infraorbitale_pt"),
-                                                                                                                                                                                      Shape(
-                                                                                                                                                                                        USE="HAnimSiteShape")]),
-                                                                                                                                                                                HAnimSite(
-                                                                                                                                                                                  name="supramenton_pt", DEF="hanim_supramenton_pt", translation=(0.0061,1.541,0.0805), children=[#HAnimSite visualization shape
-
-                                                                                                                                                                                      TouchSensor(
-                                                                                                                                                                                        description="HAnimSite supramenton_pt"),
-                                                                                                                                                                                      Shape(
-                                                                                                                                                                                        USE="HAnimSiteShape")]),
-                                                                                                                                                                                HAnimSite(
-                                                                                                                                                                                  name="r_tragion_pt", DEF="hanim_r_tragion_pt", translation=(-0.0646,1.6347,0.0302), children=[#HAnimSite visualization shape
-
-                                                                                                                                                                                      TouchSensor(
-                                                                                                                                                                                        description="HAnimSite r_tragion_pt"),
-                                                                                                                                                                                      Shape(
-                                                                                                                                                                                        USE="HAnimSiteShape")]),
-                                                                                                                                                                                HAnimSite(
-                                                                                                                                                                                  name="r_gonion_pt", DEF="hanim_r_gonion_pt", translation=(-0.052,1.5529,0.0347), children=[#HAnimSite visualization shape
-
-                                                                                                                                                                                      TouchSensor(
-                                                                                                                                                                                        description="HAnimSite r_gonion_pt"),
-                                                                                                                                                                                      Shape(
-                                                                                                                                                                                        USE="HAnimSiteShape")]),
-                                                                                                                                                                                HAnimSite(
-                                                                                                                                                                                  name="l_tragion_pt", DEF="hanim_l_tragion_pt", translation=(0.0739,1.6348,0.0282), children=[#HAnimSite visualization shape
-
-                                                                                                                                                                                      TouchSensor(
-                                                                                                                                                                                        description="HAnimSite l_tragion_pt"),
-                                                                                                                                                                                      Shape(
-                                                                                                                                                                                        USE="HAnimSiteShape")]),
-                                                                                                                                                                                HAnimSite(
-                                                                                                                                                                                  name="l_gonion_pt", DEF="hanim_l_gonion_pt", translation=(0.0631,1.553,0.033), children=[#HAnimSite visualization shape
-
-                                                                                                                                                                                      TouchSensor(
-                                                                                                                                                                                        description="HAnimSite l_gonion_pt"),
-                                                                                                                                                                                      Shape(
-                                                                                                                                                                                        USE="HAnimSiteShape")]),
-                                                                                                                                                                                HAnimSite(
-                                                                                                                                                                                  name="nuchale_pt", DEF="hanim_nuchale_pt", translation=(0.0039,1.5972,-0.0796), children=[#HAnimSite visualization shape
-
-                                                                                                                                                                                      TouchSensor(
-                                                                                                                                                                                        description="HAnimSite nuchale_pt"),
-                                                                                                                                                                                      Shape(
-                                                                                                                                                                                        USE="HAnimSiteShape")])]),
-                                                                                                                                                                          HAnimJoint(
-                                                                                                                                                                            name="l_eyeball_joint", DEF="hanim_l_eyeball_joint", center=(0.0336,1.6332,0.0502), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                                                HAnimSegment(
-                                                                                                                                                                                  name="l_eyeball", DEF="hanim_l_eyeball", children=[#Visualization sphere for <HAnimJoint name='l_eyeball_joint'/> is placed within <HAnimSegment name='l_eyeball'/>
-
-                                                                                                                                                                                      TouchSensor(
-                                                                                                                                                                                        description="HAnimJoint l_eyeball_joint, HAnimSegment l_eyeball"),
-                                                                                                                                                                                      Transform(
-                                                                                                                                                                                        translation=(0.0336,1.6332,0.0502), children=[
-                                                                                                                                                                                            Shape(
-                                                                                                                                                                                              USE="HAnimJointShape")]),#HAnimSite/Viewpoint visualization line segment from ancestor <HAnimJoint name='l_eyeball_joint'/> to <HAnimSite name='l_eyeball_site_view'/>
-
-                                                                                                                                                                                      Shape(
-                                                                                                                                                                                        geometry=LineSet(
-                                                                                                                                                                                            vertexCount=(2), coord(
-                                                                                                                                                                                              Coordinate(
-                                                                                                                                                                                                point=(0.0336,1.6332,0.0502,0.034,1.64,0.05))), color(
-                                                                                                                                                                                              ColorRGBA(
-                                                                                                                                                                                                DEF="HAnimSiteViewpointLineColorRGBA", color=(1,1,0,1,1,1,0,0.1))))),
-                                                                                                                                                                                      HAnimSite(
-                                                                                                                                                                                        name="l_eyeball_site_view", DEF="hanim_l_eyeball_site_view", translation=(0.034,1.64,0.05), children=[#HAnimSite visualization shape
-
-                                                                                                                                                                                            TouchSensor(
-                                                                                                                                                                                              description="HAnimSite l_eyeball_site_view"),
-                                                                                                                                                                                            Shape(
-                                                                                                                                                                                              USE="HAnimSiteShape"),
-                                                                                                                                                                                            Viewpoint(
-                                                                                                                                                                                              DEF="hanim_l_eyeball_site_viewpoint", description="l_eyeball_site_viewpoint looking forward", orientation=(0,1,0,3.141593), position=(0,0,0)),#HAnimSite/Viewpoint visualization shape
-
-                                                                                                                                                                                            Anchor(
-                                                                                                                                                                                              description="HAnimSite hanim_l_eyeball_site_view Viewpoint", url=["#hanim_l_eyeball_site_viewpoint"], children=[
-                                                                                                                                                                                                  LOD(
-                                                                                                                                                                                                    forceTransitions=True, range=(0.04), children=[
-                                                                                                                                                                                                        WorldInfo(
-                                                                                                                                                                                                          info=("hide diamond when close")),
-                                                                                                                                                                                                        Shape(
-                                                                                                                                                                                                          DEF="HAnimSiteViewpointShape", geometry=IndexedFaceSet(
-                                                                                                                                                                                                              DEF="SiteViewpointDiamondIFS", coordIndex=(0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1), creaseAngle=0.5, coord(
-                                                                                                                                                                                                                Coordinate(
-                                                                                                                                                                                                                  point=(0,0.01,0,-0.01,0,0,0,0,0.01,0.01,0,0,0,0,-0.01,0,-0.01,0)))), appearance=Appearance(
-                                                                                                                                                                                                              material=Material(
-                                                                                                                                                                                                                  diffuseColor=(1,1,0), transparency=0.3)))])])])])]),
-                                                                                                                                                                          HAnimJoint(
-                                                                                                                                                                            name="l_eyelid_joint", DEF="hanim_l_eyelid_joint", center=(0.0336,1.6332,0.0502), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                                                HAnimSegment(
-                                                                                                                                                                                  name="l_eyelid", DEF="hanim_l_eyelid", children=[#Visualization sphere for <HAnimJoint name='l_eyelid_joint'/> is placed within <HAnimSegment name='l_eyelid'/>
-
-                                                                                                                                                                                      TouchSensor(
-                                                                                                                                                                                        description="HAnimJoint l_eyelid_joint, HAnimSegment l_eyelid"),
-                                                                                                                                                                                      Transform(
-                                                                                                                                                                                        translation=(0.0336,1.6332,0.0502), children=[
-                                                                                                                                                                                            Shape(
-                                                                                                                                                                                              USE="HAnimJointShape")])])]),
-                                                                                                                                                                          HAnimJoint(
-                                                                                                                                                                            name="l_eyebrow_joint", DEF="hanim_l_eyebrow_joint", center=(0.0336,1.635,0.0506), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                                                HAnimSegment(
-                                                                                                                                                                                  name="l_eyebrow", DEF="hanim_l_eyebrow", children=[#Visualization sphere for <HAnimJoint name='l_eyebrow_joint'/> is placed within <HAnimSegment name='l_eyebrow'/>
-
-                                                                                                                                                                                      TouchSensor(
-                                                                                                                                                                                        description="HAnimJoint l_eyebrow_joint, HAnimSegment l_eyebrow"),
-                                                                                                                                                                                      Transform(
-                                                                                                                                                                                        translation=(0.0336,1.635,0.0506), children=[
-                                                                                                                                                                                            Shape(
-                                                                                                                                                                                              USE="HAnimJointShape")])])]),
-                                                                                                                                                                          HAnimJoint(
-                                                                                                                                                                            name="r_eyeball_joint", DEF="hanim_r_eyeball_joint", center=(-0.0336,1.6332,0.0502), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                                                HAnimSegment(
-                                                                                                                                                                                  name="r_eyeball", DEF="hanim_r_eyeball", children=[#Visualization sphere for <HAnimJoint name='r_eyeball_joint'/> is placed within <HAnimSegment name='r_eyeball'/>
-
-                                                                                                                                                                                      TouchSensor(
-                                                                                                                                                                                        description="HAnimJoint r_eyeball_joint, HAnimSegment r_eyeball"),
-                                                                                                                                                                                      Transform(
-                                                                                                                                                                                        translation=(-0.0336,1.6332,0.0502), children=[
-                                                                                                                                                                                            Shape(
-                                                                                                                                                                                              USE="HAnimJointShape")]),#HAnimSite/Viewpoint visualization line segment from ancestor <HAnimJoint name='r_eyeball_joint'/> to <HAnimSite name='r_eyeball_site_view'/>
-
-                                                                                                                                                                                      Shape(
-                                                                                                                                                                                        geometry=LineSet(
-                                                                                                                                                                                            vertexCount=(2), coord(
-                                                                                                                                                                                              Coordinate(
-                                                                                                                                                                                                point=(-0.0336,1.6332,0.0502,-0.034,1.64,0.05))), color(
-                                                                                                                                                                                              ColorRGBA(
-                                                                                                                                                                                                USE="HAnimSiteViewpointLineColorRGBA")))),
-                                                                                                                                                                                      HAnimSite(
-                                                                                                                                                                                        name="r_eyeball_site_view", DEF="hanim_r_eyeball_site_view", translation=(-0.034,1.64,0.05), children=[#HAnimSite visualization shape
-
-                                                                                                                                                                                            TouchSensor(
-                                                                                                                                                                                              description="HAnimSite r_eyeball_site_view"),
-                                                                                                                                                                                            Shape(
-                                                                                                                                                                                              USE="HAnimSiteShape"),
-                                                                                                                                                                                            Viewpoint(
-                                                                                                                                                                                              DEF="hanim_r_eyeball_site_viewpoint", description="r_eyeball_site_viewpoint looking forward", orientation=(0,1,0,3.141593), position=(0,0,0)),#HAnimSite/Viewpoint visualization shape
-
-                                                                                                                                                                                            Anchor(
-                                                                                                                                                                                              description="HAnimSite hanim_r_eyeball_site_view Viewpoint", url=["#hanim_r_eyeball_site_viewpoint"], children=[
-                                                                                                                                                                                                  LOD(
-                                                                                                                                                                                                    forceTransitions=True, range=(0.04), children=[
-                                                                                                                                                                                                        WorldInfo(
-                                                                                                                                                                                                          info=("hide diamond when close")),
-                                                                                                                                                                                                        Shape(
-                                                                                                                                                                                                          USE="HAnimSiteViewpointShape")])])])])]),
-                                                                                                                                                                          HAnimJoint(
-                                                                                                                                                                            name="r_eyelid_joint", DEF="hanim_r_eyelid_joint", center=(-0.0336,1.6332,0.0502), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                                                HAnimSegment(
-                                                                                                                                                                                  name="r_eyelid", DEF="hanim_r_eyelid", children=[#Visualization sphere for <HAnimJoint name='r_eyelid_joint'/> is placed within <HAnimSegment name='r_eyelid'/>
-
-                                                                                                                                                                                      TouchSensor(
-                                                                                                                                                                                        description="HAnimJoint r_eyelid_joint, HAnimSegment r_eyelid"),
-                                                                                                                                                                                      Transform(
-                                                                                                                                                                                        translation=(-0.0336,1.6332,0.0502), children=[
-                                                                                                                                                                                            Shape(
-                                                                                                                                                                                              USE="HAnimJointShape")])])]),
-                                                                                                                                                                          HAnimJoint(
-                                                                                                                                                                            name="r_eyebrow_joint", DEF="hanim_r_eyebrow_joint", center=(-0.0336,1.635,0.0506), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                                                HAnimSegment(
-                                                                                                                                                                                  name="r_eyebrow", DEF="hanim_r_eyebrow", children=[#Visualization sphere for <HAnimJoint name='r_eyebrow_joint'/> is placed within <HAnimSegment name='r_eyebrow'/>
-
-                                                                                                                                                                                      TouchSensor(
-                                                                                                                                                                                        description="HAnimJoint r_eyebrow_joint, HAnimSegment r_eyebrow"),
-                                                                                                                                                                                      Transform(
-                                                                                                                                                                                        translation=(-0.0336,1.635,0.0506), children=[
-                                                                                                                                                                                            Shape(
-                                                                                                                                                                                              USE="HAnimJointShape")])])]),
-                                                                                                                                                                          HAnimJoint(
-                                                                                                                                                                            name="temporomandibular", DEF="hanim_temporomandibular", center=(0.0,1.63,0.015), ulimit=(0,0,0), llimit=(0,0,0), children=[#Single joint, single segment for jaw, two sites for left/right TMJs https://en.wikipedia.org/wiki/Temporomandibular_joint
-
-                                                                                                                                                                                HAnimSegment(
-                                                                                                                                                                                  name="jaw", DEF="hanim_jaw", children=[#Visualization sphere for <HAnimJoint name='temporomandibular'/> is placed within <HAnimSegment name='jaw'/>
-
-                                                                                                                                                                                      TouchSensor(
-                                                                                                                                                                                        description="HAnimJoint temporomandibular, HAnimSegment jaw"),
-                                                                                                                                                                                      Transform(
-                                                                                                                                                                                        translation=(0.0,1.63,0.015), children=[
-                                                                                                                                                                                            Shape(
-                                                                                                                                                                                              USE="HAnimJointShape")]),#HAnimSite visualization line segment from ancestor <HAnimJoint name='temporomandibular'/> to <HAnimSite name='temporomandibular_l_site_pt'/>
-
-                                                                                                                                                                                      Shape(
-                                                                                                                                                                                        geometry=LineSet(
-                                                                                                                                                                                            vertexCount=(2), coord(
-                                                                                                                                                                                              Coordinate(
-                                                                                                                                                                                                point=(0.0,1.63,0.015,0.045,1.63,0.0))), color(
-                                                                                                                                                                                              ColorRGBA(
-                                                                                                                                                                                                USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='temporomandibular'/> to <HAnimSite name='temporomandibular_r_site_pt'/>
-
-                                                                                                                                                                                      Shape(
-                                                                                                                                                                                        geometry=LineSet(
-                                                                                                                                                                                            vertexCount=(2), coord(
-                                                                                                                                                                                              Coordinate(
-                                                                                                                                                                                                point=(0.0,1.63,0.015,-0.045,1.63,0.0))), color(
-                                                                                                                                                                                              ColorRGBA(
-                                                                                                                                                                                                USE="HAnimSiteLineColorRGBA")))),
-                                                                                                                                                                                      HAnimSite(
-                                                                                                                                                                                        name="temporomandibular_l_site_pt", DEF="hanim_temporomandibular_l_site_pt", translation=(0.045,1.63,0.0), children=[#HAnimSite visualization shape
-
-                                                                                                                                                                                            TouchSensor(
-                                                                                                                                                                                              description="HAnimSite temporomandibular_l_site_pt"),
-                                                                                                                                                                                            Shape(
-                                                                                                                                                                                              USE="HAnimSiteShape")]),
-                                                                                                                                                                                      HAnimSite(
-                                                                                                                                                                                        name="temporomandibular_r_site_pt", DEF="hanim_temporomandibular_r_site_pt", translation=(-0.045,1.63,0.0), children=[#HAnimSite visualization shape
-
-                                                                                                                                                                                            TouchSensor(
-                                                                                                                                                                                              description="HAnimSite temporomandibular_r_site_pt"),
-                                                                                                                                                                                            Shape(
-                                                                                                                                                                                              USE="HAnimSiteShape")])])])])])])])])])])]),
-                                                                                                                          HAnimJoint(
-                                                                                                                            name="l_sternoclavicular", DEF="hanim_l_sternoclavicular", center=(0.082,1.4488,-0.0353), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                HAnimSegment(
-                                                                                                                                  name="l_clavicle", DEF="hanim_l_clavicle", children=[#Visualization sphere for <HAnimJoint name='l_sternoclavicular'/> is placed within <HAnimSegment name='l_clavicle'/>
-
-                                                                                                                                      TouchSensor(
-                                                                                                                                        description="HAnimJoint l_sternoclavicular, HAnimSegment l_clavicle"),
-                                                                                                                                      Transform(
-                                                                                                                                        translation=(0.082,1.4488,-0.0353), children=[
-                                                                                                                                            Shape(
-                                                                                                                                              USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='l_sternoclavicular'/> to child <HAnimJoint name='l_acromioclavicular'/>
-
-                                                                                                                                      Shape(
-                                                                                                                                        geometry=LineSet(
-                                                                                                                                            vertexCount=(2), coord(
-                                                                                                                                              Coordinate(
-                                                                                                                                                point=(0.082,1.4488,-0.0353,0.0962,1.4269,-0.0424))), color(
-                                                                                                                                              ColorRGBA(
-                                                                                                                                                USE="HAnimSegmentLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_sternoclavicular'/> to <HAnimSite name='l_clavicale_pt'/>
-
-                                                                                                                                      Shape(
-                                                                                                                                        geometry=LineSet(
-                                                                                                                                            vertexCount=(2), coord(
-                                                                                                                                              Coordinate(
-                                                                                                                                                point=(0.082,1.4488,-0.0353,0.0271,1.4943,0.0394))), color(
-                                                                                                                                              ColorRGBA(
-                                                                                                                                                USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_sternoclavicular'/> to <HAnimSite name='l_acromion_pt'/>
-
-                                                                                                                                      Shape(
-                                                                                                                                        geometry=LineSet(
-                                                                                                                                            vertexCount=(2), coord(
-                                                                                                                                              Coordinate(
-                                                                                                                                                point=(0.082,1.4488,-0.0353,0.2032,1.476,-0.049))), color(
-                                                                                                                                              ColorRGBA(
-                                                                                                                                                USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_sternoclavicular'/> to <HAnimSite name='l_axilla_ant_pt'/>
-
-                                                                                                                                      Shape(
-                                                                                                                                        geometry=LineSet(
-                                                                                                                                            vertexCount=(2), coord(
-                                                                                                                                              Coordinate(
-                                                                                                                                                point=(0.082,1.4488,-0.0353,0.1777,1.4065,-0.0075))), color(
-                                                                                                                                              ColorRGBA(
-                                                                                                                                                USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_sternoclavicular'/> to <HAnimSite name='l_axilla_post_pt'/>
-
-                                                                                                                                      Shape(
-                                                                                                                                        geometry=LineSet(
-                                                                                                                                            vertexCount=(2), coord(
-                                                                                                                                              Coordinate(
-                                                                                                                                                point=(0.082,1.4488,-0.0353,0.1706,1.4072,-0.0875))), color(
-                                                                                                                                              ColorRGBA(
-                                                                                                                                                USE="HAnimSiteLineColorRGBA")))),
-                                                                                                                                      HAnimSite(
-                                                                                                                                        name="l_clavicle_pt", DEF="hanim_l_clavicle_pt", translation=(0.0271,1.4943,0.0394), children=[#HAnimSite visualization shape
-
-                                                                                                                                            TouchSensor(
-                                                                                                                                              description="HAnimSite l_clavicale_pt"),
-                                                                                                                                            Shape(
-                                                                                                                                              USE="HAnimSiteShape")]),
-                                                                                                                                      HAnimSite(
-                                                                                                                                        name="l_acromion_pt", DEF="hanim_l_acromion_pt", translation=(0.2032,1.476,-0.049), children=[#HAnimSite visualization shape
-
-                                                                                                                                            TouchSensor(
-                                                                                                                                              description="HAnimSite l_acromion_pt"),
-                                                                                                                                            Shape(
-                                                                                                                                              USE="HAnimSiteShape")]),
-                                                                                                                                      HAnimSite(
-                                                                                                                                        name="l_axilla_proximal_pt", DEF="hanim_l_axilla_proximal_pt", translation=(0.1777,1.4065,-0.0075), children=[#HAnimSite visualization shape
-
-                                                                                                                                            TouchSensor(
-                                                                                                                                              description="HAnimSite l_axilla_ant_pt"),
-                                                                                                                                            Shape(
-                                                                                                                                              USE="HAnimSiteShape")]),
-                                                                                                                                      HAnimSite(
-                                                                                                                                        name="l_axilla_distal_pt", DEF="hanim_l_axilla_distal_pt", translation=(0.1706,1.4072,-0.0875), children=[#HAnimSite visualization shape
-
-                                                                                                                                            TouchSensor(
-                                                                                                                                              description="HAnimSite l_axilla_post_pt"),
-                                                                                                                                            Shape(
-                                                                                                                                              USE="HAnimSiteShape")])]),
-                                                                                                                                HAnimJoint(
-                                                                                                                                  name="l_acromioclavicular", DEF="hanim_l_acromioclavicular", center=(0.0962,1.4269,-0.0424), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                      HAnimSegment(
-                                                                                                                                        name="l_scapula", DEF="hanim_l_scapula", children=[#Visualization sphere for <HAnimJoint name='l_acromioclavicular'/> is placed within <HAnimSegment name='l_scapula'/>
-
-                                                                                                                                            TouchSensor(
-                                                                                                                                              description="HAnimJoint l_acromioclavicular, HAnimSegment l_scapula"),
-                                                                                                                                            Transform(
-                                                                                                                                              translation=(0.0962,1.4269,-0.0424), children=[
-                                                                                                                                                  Shape(
-                                                                                                                                                    USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='l_acromioclavicular'/> to child <HAnimJoint name='l_shoulder'/>
-
-                                                                                                                                            Shape(
-                                                                                                                                              geometry=LineSet(
-                                                                                                                                                  vertexCount=(2), coord(
-                                                                                                                                                    Coordinate(
-                                                                                                                                                      point=(0.0962,1.4269,-0.0424,0.2029,1.4376,-0.0387))), color(
-                                                                                                                                                    ColorRGBA(
-                                                                                                                                                      USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                                                                      HAnimJoint(
-                                                                                                                                        name="l_shoulder", DEF="hanim_l_shoulder", center=(0.2029,1.4376,-0.0387), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                            HAnimSegment(
-                                                                                                                                              name="l_upperarm", DEF="hanim_l_upperarm", children=[#Visualization sphere for <HAnimJoint name='l_shoulder'/> is placed within <HAnimSegment name='l_upperarm'/>
-
-                                                                                                                                                  TouchSensor(
-                                                                                                                                                    description="HAnimJoint l_shoulder, HAnimSegment l_upperarm"),
-                                                                                                                                                  Transform(
-                                                                                                                                                    translation=(0.2029,1.4376,-0.0387), children=[
-                                                                                                                                                        Shape(
-                                                                                                                                                          USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='l_shoulder'/> to child <HAnimJoint name='l_elbow'/>
-
-                                                                                                                                                  Shape(
-                                                                                                                                                    geometry=LineSet(
-                                                                                                                                                        vertexCount=(2), coord(
-                                                                                                                                                          Coordinate(
-                                                                                                                                                            point=(0.2029,1.4376,-0.0387,0.2014,1.1357,-0.0682))), color(
-                                                                                                                                                          ColorRGBA(
-                                                                                                                                                            USE="HAnimSegmentLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_shoulder'/> to <HAnimSite name='l_humeral_lateral_epicn_pt'/>
-
-                                                                                                                                                  Shape(
-                                                                                                                                                    geometry=LineSet(
-                                                                                                                                                        vertexCount=(2), coord(
-                                                                                                                                                          Coordinate(
-                                                                                                                                                            point=(0.2029,1.4376,-0.0387,0.228,1.1482,-0.11))), color(
-                                                                                                                                                          ColorRGBA(
-                                                                                                                                                            USE="HAnimSiteLineColorRGBA")))),
-                                                                                                                                                  HAnimSite(
-                                                                                                                                                    name="l_humeral_lateral_epicondyle_pt", DEF="hanim_l_humeral_lateral_epicondyle_pt", translation=(0.228,1.1482,-0.11), children=[#HAnimSite visualization shape
-
-                                                                                                                                                        TouchSensor(
-                                                                                                                                                          description="HAnimSite l_humeral_lateral_epicn_pt"),
-                                                                                                                                                        Shape(
-                                                                                                                                                          USE="HAnimSiteShape")])]),
-                                                                                                                                            HAnimJoint(
-                                                                                                                                              name="l_elbow", DEF="hanim_l_elbow", center=(0.2014,1.1357,-0.0682), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                  HAnimSegment(
-                                                                                                                                                    name="l_forearm", DEF="hanim_l_forearm", children=[#Visualization sphere for <HAnimJoint name='l_elbow'/> is placed within <HAnimSegment name='l_forearm'/>
-
-                                                                                                                                                        TouchSensor(
-                                                                                                                                                          description="HAnimJoint l_elbow, HAnimSegment l_forearm"),
-                                                                                                                                                        Transform(
-                                                                                                                                                          translation=(0.2014,1.1357,-0.0682), children=[
-                                                                                                                                                              Shape(
-                                                                                                                                                                USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='l_elbow'/> to child <HAnimJoint name='l_radiocarpal'/>
-
-                                                                                                                                                        Shape(
-                                                                                                                                                          geometry=LineSet(
-                                                                                                                                                              vertexCount=(2), coord(
-                                                                                                                                                                Coordinate(
-                                                                                                                                                                  point=(0.2014,1.1357,-0.0682,0.1984,0.8663,-0.0583))), color(
-                                                                                                                                                                ColorRGBA(
-                                                                                                                                                                  USE="HAnimSegmentLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_elbow'/> to <HAnimSite name='l_radial_styloid_pt'/>
-
-                                                                                                                                                        Shape(
-                                                                                                                                                          geometry=LineSet(
-                                                                                                                                                              vertexCount=(2), coord(
-                                                                                                                                                                Coordinate(
-                                                                                                                                                                  point=(0.2014,1.1357,-0.0682,0.1901,0.8645,-0.0415))), color(
-                                                                                                                                                                ColorRGBA(
-                                                                                                                                                                  USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_elbow'/> to <HAnimSite name='l_olecranon_pt'/>
-
-                                                                                                                                                        Shape(
-                                                                                                                                                          geometry=LineSet(
-                                                                                                                                                              vertexCount=(2), coord(
-                                                                                                                                                                Coordinate(
-                                                                                                                                                                  point=(0.2014,1.1357,-0.0682,0.1962,1.1375,-0.1123))), color(
-                                                                                                                                                                ColorRGBA(
-                                                                                                                                                                  USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_elbow'/> to <HAnimSite name='l_humeral_medial_epicn_pt'/>
-
-                                                                                                                                                        Shape(
-                                                                                                                                                          geometry=LineSet(
-                                                                                                                                                              vertexCount=(2), coord(
-                                                                                                                                                                Coordinate(
-                                                                                                                                                                  point=(0.2014,1.1357,-0.0682,0.1735,1.1272,-0.1113))), color(
-                                                                                                                                                                ColorRGBA(
-                                                                                                                                                                  USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_elbow'/> to <HAnimSite name='l_radiale_pt'/>
-
-                                                                                                                                                        Shape(
-                                                                                                                                                          geometry=LineSet(
-                                                                                                                                                              vertexCount=(2), coord(
-                                                                                                                                                                Coordinate(
-                                                                                                                                                                  point=(0.2014,1.1357,-0.0682,0.2182,1.1212,-0.1167))), color(
-                                                                                                                                                                ColorRGBA(
-                                                                                                                                                                  USE="HAnimSiteLineColorRGBA")))),
-                                                                                                                                                        HAnimSite(
-                                                                                                                                                          name="l_radial_styloid_pt", DEF="hanim_l_radial_styloid_pt", translation=(0.1901,0.8645,-0.0415), children=[#HAnimSite visualization shape
-
-                                                                                                                                                              TouchSensor(
-                                                                                                                                                                description="HAnimSite l_radial_styloid_pt"),
-                                                                                                                                                              Shape(
-                                                                                                                                                                USE="HAnimSiteShape")]),
-                                                                                                                                                        HAnimSite(
-                                                                                                                                                          name="l_olecranon_pt", DEF="hanim_l_olecranon_pt", translation=(0.1962,1.1375,-0.1123), children=[#HAnimSite visualization shape
-
-                                                                                                                                                              TouchSensor(
-                                                                                                                                                                description="HAnimSite l_olecranon_pt"),
-                                                                                                                                                              Shape(
-                                                                                                                                                                USE="HAnimSiteShape")]),
-                                                                                                                                                        HAnimSite(
-                                                                                                                                                          name="l_humeral_medial_epicondyle_pt", DEF="hanim_l_humeral_medial_epicondyle_pt", translation=(0.1735,1.1272,-0.1113), children=[#HAnimSite visualization shape
-
-                                                                                                                                                              TouchSensor(
-                                                                                                                                                                description="HAnimSite l_humeral_medial_epicn_pt"),
-                                                                                                                                                              Shape(
-                                                                                                                                                                USE="HAnimSiteShape")]),
-                                                                                                                                                        HAnimSite(
-                                                                                                                                                          name="l_radiale_pt", DEF="hanim_l_radiale_pt", translation=(0.2182,1.1212,-0.1167), children=[#HAnimSite visualization shape
-
-                                                                                                                                                              TouchSensor(
-                                                                                                                                                                description="HAnimSite l_radiale_pt"),
-                                                                                                                                                              Shape(
-                                                                                                                                                                USE="HAnimSiteShape")])]),
-                                                                                                                                                  HAnimJoint(
-                                                                                                                                                    name="l_radiocarpal", DEF="hanim_l_radiocarpal", center=(0.1984,0.8663,-0.0583), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                        HAnimSegment(
-                                                                                                                                                          name="l_carpal", DEF="hanim_l_carpal", children=[#Visualization sphere for <HAnimJoint name='l_radiocarpal'/> is placed within <HAnimSegment name='l_carpal'/>
-
-                                                                                                                                                              TouchSensor(
-                                                                                                                                                                description="HAnimJoint l_radiocarpal, HAnimSegment l_carpal"),
-                                                                                                                                                              Transform(
-                                                                                                                                                                translation=(0.1984,0.8663,-0.0583), children=[
-                                                                                                                                                                    Shape(
-                                                                                                                                                                      USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='l_radiocarpal'/> to child <HAnimJoint name='l_thumb1'/>
-
-                                                                                                                                                              Shape(
-                                                                                                                                                                geometry=LineSet(
-                                                                                                                                                                    vertexCount=(2), coord(
-                                                                                                                                                                      Coordinate(
-                                                                                                                                                                        point=(0.1984,0.8663,-0.0583,0.1924,0.8472,-0.0534))), color(
-                                                                                                                                                                      ColorRGBA(
-                                                                                                                                                                        USE="HAnimSegmentLineColorRGBA")))),#HAnimSegment visualization line from current <HAnimJoint name='l_radiocarpal'/> to child <HAnimJoint name='l_index0'/>
-
-                                                                                                                                                              Shape(
-                                                                                                                                                                geometry=LineSet(
-                                                                                                                                                                    vertexCount=(2), coord(
-                                                                                                                                                                      Coordinate(
-                                                                                                                                                                        point=(0.1984,0.8663,-0.0583,0.1983,0.8024,-0.028))), color(
-                                                                                                                                                                      ColorRGBA(
-                                                                                                                                                                        USE="HAnimSegmentLineColorRGBA")))),#HAnimSegment visualization line from current <HAnimJoint name='l_radiocarpal'/> to child <HAnimJoint name='l_middle0'/>
-
-                                                                                                                                                              Shape(
-                                                                                                                                                                geometry=LineSet(
-                                                                                                                                                                    vertexCount=(2), coord(
-                                                                                                                                                                      Coordinate(
-                                                                                                                                                                        point=(0.1984,0.8663,-0.0583,0.1987,0.8029,-0.053))), color(
-                                                                                                                                                                      ColorRGBA(
-                                                                                                                                                                        USE="HAnimSegmentLineColorRGBA")))),#HAnimSegment visualization line from current <HAnimJoint name='l_radiocarpal'/> to child <HAnimJoint name='l_ring0'/>
-
-                                                                                                                                                              Shape(
-                                                                                                                                                                geometry=LineSet(
-                                                                                                                                                                    vertexCount=(2), coord(
-                                                                                                                                                                      Coordinate(
-                                                                                                                                                                        point=(0.1984,0.8663,-0.0583,0.1956,0.8019,-0.0794))), color(
-                                                                                                                                                                      ColorRGBA(
-                                                                                                                                                                        USE="HAnimSegmentLineColorRGBA")))),#HAnimSegment visualization line from current <HAnimJoint name='l_radiocarpal'/> to child <HAnimJoint name='l_pinky0'/>
-
-                                                                                                                                                              Shape(
-                                                                                                                                                                geometry=LineSet(
-                                                                                                                                                                    vertexCount=(2), coord(
-                                                                                                                                                                      Coordinate(
-                                                                                                                                                                        point=(0.1984,0.8663,-0.0583,0.1925,0.8066,-0.1036))), color(
-                                                                                                                                                                      ColorRGBA(
-                                                                                                                                                                        USE="HAnimSegmentLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_radiocarpal'/> to <HAnimSite name='l_metacarpal_pha2_pt'/>
-
-                                                                                                                                                              Shape(
-                                                                                                                                                                geometry=LineSet(
-                                                                                                                                                                    vertexCount=(2), coord(
-                                                                                                                                                                      Coordinate(
-                                                                                                                                                                        point=(0.1984,0.8663,-0.0583,0.2009,0.8139,-0.0237))), color(
-                                                                                                                                                                      ColorRGBA(
-                                                                                                                                                                        USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_radiocarpal'/> to <HAnimSite name='l_ulnar_styloid_pt'/>
-
-                                                                                                                                                              Shape(
-                                                                                                                                                                geometry=LineSet(
-                                                                                                                                                                    vertexCount=(2), coord(
-                                                                                                                                                                      Coordinate(
-                                                                                                                                                                        point=(0.1984,0.8663,-0.0583,0.2142,0.8529,-0.0648))), color(
-                                                                                                                                                                      ColorRGBA(
-                                                                                                                                                                        USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_radiocarpal'/> to <HAnimSite name='l_metacarpal_pha5_pt'/>
-
-                                                                                                                                                              Shape(
-                                                                                                                                                                geometry=LineSet(
-                                                                                                                                                                    vertexCount=(2), coord(
-                                                                                                                                                                      Coordinate(
-                                                                                                                                                                        point=(0.1984,0.8663,-0.0583,0.1929,0.786,-0.1122))), color(
-                                                                                                                                                                      ColorRGBA(
-                                                                                                                                                                        USE="HAnimSiteLineColorRGBA")))),#HAnimSite/Viewpoint visualization line segment from ancestor <HAnimJoint name='l_radiocarpal'/> to <HAnimSite name='l_hand_front_view'/>
-
-                                                                                                                                                              Shape(
-                                                                                                                                                                geometry=LineSet(
-                                                                                                                                                                    vertexCount=(2), coord(
-                                                                                                                                                                      Coordinate(
-                                                                                                                                                                        point=(0.1984,0.8663,-0.0583,0.3,0.75,0.45))), color(
-                                                                                                                                                                      ColorRGBA(
-                                                                                                                                                                        USE="HAnimSiteViewpointLineColorRGBA")))),
-                                                                                                                                                              HAnimSite(
-                                                                                                                                                                name="l_metacarpal_phalanx_2_pt", DEF="hanim_l_metacarpal_phalanx_2_pt", translation=(0.2009,0.8139,-0.0237), children=[#HAnimSite visualization shape
-
-                                                                                                                                                                    TouchSensor(
-                                                                                                                                                                      description="HAnimSite l_metacarpal_pha2_pt"),
-                                                                                                                                                                    Shape(
-                                                                                                                                                                      USE="HAnimSiteShape")]),
-                                                                                                                                                              HAnimSite(
-                                                                                                                                                                name="l_ulnar_styloid_pt", DEF="hanim_l_ulnar_styloid_pt", translation=(0.2142,0.8529,-0.0648), children=[#HAnimSite visualization shape
-
-                                                                                                                                                                    TouchSensor(
-                                                                                                                                                                      description="HAnimSite l_ulnar_styloid_pt"),
-                                                                                                                                                                    Shape(
-                                                                                                                                                                      USE="HAnimSiteShape")]),
-                                                                                                                                                              HAnimSite(
-                                                                                                                                                                name="l_metacarpal_phalanx_5_pt", DEF="hanim_l_metacarpal_phalanx_5_pt", translation=(0.1929,0.786,-0.1122), children=[#HAnimSite visualization shape
-
-                                                                                                                                                                    TouchSensor(
-                                                                                                                                                                      description="HAnimSite l_metacarpal_pha5_pt"),
-                                                                                                                                                                    Shape(
-                                                                                                                                                                      USE="HAnimSiteShape")]),
-                                                                                                                                                              HAnimSite(
-                                                                                                                                                                name="l_hand_front_view", DEF="hanim_l_hand_front_view", translation=(0.3,0.75,0.45), children=[#HAnimSite visualization shape
-
-                                                                                                                                                                    TouchSensor(
-                                                                                                                                                                      description="HAnimSite l_hand_front_view"),
-                                                                                                                                                                    Shape(
-                                                                                                                                                                      USE="HAnimSiteShape"),
-                                                                                                                                                                    Viewpoint(
-                                                                                                                                                                      DEF="hanim_l_hand_front_viewpoint", centerOfRotation=(0,0.7,0), description="left hand front", position=(0,0,0)),#HAnimSite/Viewpoint visualization shape
-
-                                                                                                                                                                    Anchor(
-                                                                                                                                                                      description="HAnimSite hanim_l_hand_front_view Viewpoint", url=["#hanim_l_hand_front_viewpoint"], children=[
-                                                                                                                                                                          LOD(
-                                                                                                                                                                            forceTransitions=True, range=(0.04), children=[
-                                                                                                                                                                                WorldInfo(
-                                                                                                                                                                                  info=("hide diamond when close")),
-                                                                                                                                                                                Shape(
-                                                                                                                                                                                  USE="HAnimSiteViewpointShape")])])])]),
-                                                                                                                                                        HAnimJoint(
-                                                                                                                                                          name="l_carpometacarpal_1", DEF="hanim_l_carpometacarpal_1", center=(0.1924,0.8472,-0.0534), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                              HAnimSegment(
-                                                                                                                                                                name="l_metacarpal_1", DEF="hanim_l_metacarpal_1", children=[#Visualization sphere for <HAnimJoint name='l_thumb1'/> is placed within <HAnimSegment name='l_metacarpal_1'/>
-
-                                                                                                                                                                    TouchSensor(
-                                                                                                                                                                      description="HAnimJoint l_thumb1, HAnimSegment l_metacarpal_1"),
-                                                                                                                                                                    Transform(
-                                                                                                                                                                      translation=(0.1924,0.8472,-0.0534), children=[
-                                                                                                                                                                          Shape(
-                                                                                                                                                                            USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='l_thumb1'/> to child <HAnimJoint name='l_thumb2'/>
-
-                                                                                                                                                                    Shape(
-                                                                                                                                                                      geometry=LineSet(
-                                                                                                                                                                          vertexCount=(2), coord(
-                                                                                                                                                                            Coordinate(
-                                                                                                                                                                              point=(0.1924,0.8472,-0.0534,0.1951,0.8226,0.0246))), color(
-                                                                                                                                                                            ColorRGBA(
-                                                                                                                                                                              USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                                                                                              HAnimJoint(
-                                                                                                                                                                name="l_metacarpophalangeal_1", DEF="hanim_l_metacarpophalangeal_1", center=(0.1951,0.8226,0.0246), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                                    HAnimSegment(
-                                                                                                                                                                      name="l_carpal_proximal_phalanx_1", DEF="hanim_l_carpal_proximal_phalanx_1", children=[#Visualization sphere for <HAnimJoint name='l_thumb2'/> is placed within <HAnimSegment name='l_carpal_proximal_phalanx_1'/>
-
-                                                                                                                                                                          TouchSensor(
-                                                                                                                                                                            description="HAnimJoint l_thumb2, HAnimSegment l_carpal_proximal_phalanx_1"),
-                                                                                                                                                                          Transform(
-                                                                                                                                                                            translation=(0.1951,0.8226,0.0246), children=[
-                                                                                                                                                                                Shape(
-                                                                                                                                                                                  USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='l_thumb2'/> to child <HAnimJoint name='l_thumb3'/>
-
-                                                                                                                                                                          Shape(
-                                                                                                                                                                            geometry=LineSet(
-                                                                                                                                                                                vertexCount=(2), coord(
-                                                                                                                                                                                  Coordinate(
-                                                                                                                                                                                    point=(0.1951,0.8226,0.0246,0.1955,0.8159,0.0464))), color(
-                                                                                                                                                                                  ColorRGBA(
-                                                                                                                                                                                    USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                                                                                                    HAnimJoint(
-                                                                                                                                                                      name="l_carpal_interphalangeal_1", DEF="hanim_l_carpal_interphalangeal_1", center=(0.1955,0.8159,0.0464), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                                          HAnimSegment(
-                                                                                                                                                                            name="l_carpal_distal_phalanx_1", DEF="hanim_l_carpal_distal_phalanx_1", children=[#Visualization sphere for <HAnimJoint name='l_thumb3'/> is placed within <HAnimSegment name='l_carpal_distal_phalanx_1'/>
-
-                                                                                                                                                                                TouchSensor(
-                                                                                                                                                                                  description="HAnimJoint l_thumb3, HAnimSegment l_carpal_distal_phalanx_1"),
-                                                                                                                                                                                Transform(
-                                                                                                                                                                                  translation=(0.1955,0.8159,0.0464), children=[
-                                                                                                                                                                                      Shape(
-                                                                                                                                                                                        USE="HAnimJointShape")]),#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_thumb3'/> to <HAnimSite name='l_thumb_distal_tip'/>
-
-                                                                                                                                                                                Shape(
-                                                                                                                                                                                  geometry=LineSet(
-                                                                                                                                                                                      vertexCount=(2), coord(
-                                                                                                                                                                                        Coordinate(
-                                                                                                                                                                                          point=(0.1955,0.8159,0.0464,0.1982,0.8061,0.0759))), color(
-                                                                                                                                                                                        ColorRGBA(
-                                                                                                                                                                                          USE="HAnimSiteLineColorRGBA")))),
-                                                                                                                                                                                HAnimSite(
-                                                                                                                                                                                  name="l_carpal_distal_phalanx_1_pt", DEF="hanim_l_carpal_distal_phalanx_1_pt", translation=(0.1982,0.8061,0.0759), children=[#HAnimSite visualization shape
-
-                                                                                                                                                                                      TouchSensor(
-                                                                                                                                                                                        description="HAnimSite l_thumb_distal_tip"),
-                                                                                                                                                                                      Shape(
-                                                                                                                                                                                        USE="HAnimSiteShape")])])])])]),
-                                                                                                                                                        HAnimJoint(
-                                                                                                                                                          name="l_carpometacarpal_2", DEF="hanim_l_carpometacarpal_2", center=(0.1983,0.8024,-0.028), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                              HAnimSegment(
-                                                                                                                                                                name="l_metacarpal_2", DEF="hanim_l_metacarpal_2", children=[#Visualization sphere for <HAnimJoint name='l_index0'/> is placed within <HAnimSegment name='l_metacarpal_2'/>
-
-                                                                                                                                                                    TouchSensor(
-                                                                                                                                                                      description="HAnimJoint l_index0, HAnimSegment l_metacarpal_2"),
-                                                                                                                                                                    Transform(
-                                                                                                                                                                      translation=(0.1983,0.8024,-0.028), children=[
-                                                                                                                                                                          Shape(
-                                                                                                                                                                            USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='l_index0'/> to child <HAnimJoint name='l_index1'/>
-
-                                                                                                                                                                    Shape(
-                                                                                                                                                                      geometry=LineSet(
-                                                                                                                                                                          vertexCount=(2), coord(
-                                                                                                                                                                            Coordinate(
-                                                                                                                                                                              point=(0.1983,0.8024,-0.028,0.1983,0.7815,-0.028))), color(
-                                                                                                                                                                            ColorRGBA(
-                                                                                                                                                                              USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                                                                                              HAnimJoint(
-                                                                                                                                                                name="l_metacarpophalangeal_2", DEF="hanim_l_metacarpophalangeal_2", center=(0.1983,0.7815,-0.028), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                                    HAnimSegment(
-                                                                                                                                                                      name="l_carpal_proximal_phalanx_2", DEF="hanim_l_carpal_proximal_phalanx_2", children=[#Visualization sphere for <HAnimJoint name='l_index1'/> is placed within <HAnimSegment name='l_carpal_proximal_phalanx_2'/>
-
-                                                                                                                                                                          TouchSensor(
-                                                                                                                                                                            description="HAnimJoint l_index1, HAnimSegment l_carpal_proximal_phalanx_2"),
-                                                                                                                                                                          Transform(
-                                                                                                                                                                            translation=(0.1983,0.7815,-0.028), children=[
-                                                                                                                                                                                Shape(
-                                                                                                                                                                                  USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='l_index1'/> to child <HAnimJoint name='l_index2'/>
-
-                                                                                                                                                                          Shape(
-                                                                                                                                                                            geometry=LineSet(
-                                                                                                                                                                                vertexCount=(2), coord(
-                                                                                                                                                                                  Coordinate(
-                                                                                                                                                                                    point=(0.1983,0.7815,-0.028,0.2017,0.7363,-0.0248))), color(
-                                                                                                                                                                                  ColorRGBA(
-                                                                                                                                                                                    USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                                                                                                    HAnimJoint(
-                                                                                                                                                                      name="l_carpal_proximal_interphalangeal_2", DEF="hanim_l_carpal_proximal_interphalangeal_2", center=(0.2017,0.7363,-0.0248), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                                          HAnimSegment(
-                                                                                                                                                                            name="l_carpal_middle_phalanx_2", DEF="hanim_l_carpal_middle_phalanx_2", children=[#Visualization sphere for <HAnimJoint name='l_index2'/> is placed within <HAnimSegment name='l_carpal_middle_phalanx_2'/>
-
-                                                                                                                                                                                TouchSensor(
-                                                                                                                                                                                  description="HAnimJoint l_index2, HAnimSegment l_carpal_middle_phalanx_2"),
-                                                                                                                                                                                Transform(
-                                                                                                                                                                                  translation=(0.2017,0.7363,-0.0248), children=[
-                                                                                                                                                                                      Shape(
-                                                                                                                                                                                        USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='l_index2'/> to child <HAnimJoint name='l_index3'/>
-
-                                                                                                                                                                                Shape(
-                                                                                                                                                                                  geometry=LineSet(
-                                                                                                                                                                                      vertexCount=(2), coord(
-                                                                                                                                                                                        Coordinate(
-                                                                                                                                                                                          point=(0.2017,0.7363,-0.0248,0.2028,0.7139,-0.0236))), color(
-                                                                                                                                                                                        ColorRGBA(
-                                                                                                                                                                                          USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                                                                                                          HAnimJoint(
-                                                                                                                                                                            name="l_carpal_distal_interphalangeal_2", DEF="hanim_l_carpal_distal_interphalangeal_2", center=(0.2028,0.7139,-0.0236), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                                                HAnimSegment(
-                                                                                                                                                                                  name="l_carpal_distal_phalanx_2", DEF="hanim_l_carpal_distal_phalanx_2", children=[#Visualization sphere for <HAnimJoint name='l_index3'/> is placed within <HAnimSegment name='l_carpal_distal_phalanx_2'/>
-
-                                                                                                                                                                                      TouchSensor(
-                                                                                                                                                                                        description="HAnimJoint l_index3, HAnimSegment l_carpal_distal_phalanx_2"),
-                                                                                                                                                                                      Transform(
-                                                                                                                                                                                        translation=(0.2028,0.7139,-0.0236), children=[
-                                                                                                                                                                                            Shape(
-                                                                                                                                                                                              USE="HAnimJointShape")]),#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_index3'/> to <HAnimSite name='l_index_distal_tip'/>
-
-                                                                                                                                                                                      Shape(
-                                                                                                                                                                                        geometry=LineSet(
-                                                                                                                                                                                            vertexCount=(2), coord(
-                                                                                                                                                                                              Coordinate(
-                                                                                                                                                                                                point=(0.2028,0.7139,-0.0236,0.2089,0.6858,-0.0245))), color(
-                                                                                                                                                                                              ColorRGBA(
-                                                                                                                                                                                                USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_index3'/> to <HAnimSite name='l_dactylion_pt'/>
-
-                                                                                                                                                                                      Shape(
-                                                                                                                                                                                        geometry=LineSet(
-                                                                                                                                                                                            vertexCount=(2), coord(
-                                                                                                                                                                                              Coordinate(
-                                                                                                                                                                                                point=(0.2028,0.7139,-0.0236,0.2056,0.6743,-0.0482))), color(
-                                                                                                                                                                                              ColorRGBA(
-                                                                                                                                                                                                USE="HAnimSiteLineColorRGBA")))),
-                                                                                                                                                                                      HAnimSite(
-                                                                                                                                                                                        name="l_carpal_distal_phalanx_2_pt", DEF="hanim_l_carpal_distal_phalanx_2_pt", translation=(0.2089,0.6858,-0.0245), children=[#HAnimSite visualization shape
-
-                                                                                                                                                                                            TouchSensor(
-                                                                                                                                                                                              description="HAnimSite l_index_distal_tip"),
-                                                                                                                                                                                            Shape(
-                                                                                                                                                                                              USE="HAnimSiteShape")]),
-                                                                                                                                                                                      HAnimSite(
-                                                                                                                                                                                        name="l_dactylion_pt", DEF="hanim_l_dactylion_pt", translation=(0.2056,0.6743,-0.0482), children=[#HAnimSite visualization shape
-
-                                                                                                                                                                                            TouchSensor(
-                                                                                                                                                                                              description="HAnimSite l_dactylion_pt"),
-                                                                                                                                                                                            Shape(
-                                                                                                                                                                                              USE="HAnimSiteShape")])])])])])]),
-                                                                                                                                                        HAnimJoint(
-                                                                                                                                                          name="l_carpometacarpal_3", DEF="hanim_l_carpometacarpal_3", center=(0.1987,0.8029,-0.053), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                              HAnimSegment(
-                                                                                                                                                                name="l_metacarpal_3", DEF="hanim_l_metacarpal_3", children=[#Visualization sphere for <HAnimJoint name='l_middle0'/> is placed within <HAnimSegment name='l_metacarpal_3'/>
-
-                                                                                                                                                                    TouchSensor(
-                                                                                                                                                                      description="HAnimJoint l_middle0, HAnimSegment l_metacarpal_3"),
-                                                                                                                                                                    Transform(
-                                                                                                                                                                      translation=(0.1987,0.8029,-0.053), children=[
-                                                                                                                                                                          Shape(
-                                                                                                                                                                            USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='l_middle0'/> to child <HAnimJoint name='l_middle1'/>
-
-                                                                                                                                                                    Shape(
-                                                                                                                                                                      geometry=LineSet(
-                                                                                                                                                                          vertexCount=(2), coord(
-                                                                                                                                                                            Coordinate(
-                                                                                                                                                                              point=(0.1987,0.8029,-0.053,0.1987,0.7818,-0.053))), color(
-                                                                                                                                                                            ColorRGBA(
-                                                                                                                                                                              USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                                                                                              HAnimJoint(
-                                                                                                                                                                name="l_metacarpophalangeal_3", DEF="hanim_l_metacarpophalangeal_3", center=(0.1987,0.7818,-0.053), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                                    HAnimSegment(
-                                                                                                                                                                      name="l_carpal_proximal_phalanx_3", DEF="hanim_l_carpal_proximal_phalanx_3", children=[#Visualization sphere for <HAnimJoint name='l_middle1'/> is placed within <HAnimSegment name='l_carpal_proximal_phalanx_3'/>
-
-                                                                                                                                                                          TouchSensor(
-                                                                                                                                                                            description="HAnimJoint l_middle1, HAnimSegment l_carpal_proximal_phalanx_3"),
-                                                                                                                                                                          Transform(
-                                                                                                                                                                            translation=(0.1987,0.7818,-0.053), children=[
-                                                                                                                                                                                Shape(
-                                                                                                                                                                                  USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='l_middle1'/> to child <HAnimJoint name='l_middle2'/>
-
-                                                                                                                                                                          Shape(
-                                                                                                                                                                            geometry=LineSet(
-                                                                                                                                                                                vertexCount=(2), coord(
-                                                                                                                                                                                  Coordinate(
-                                                                                                                                                                                    point=(0.1987,0.7818,-0.053,0.2013,0.7273,-0.0503))), color(
-                                                                                                                                                                                  ColorRGBA(
-                                                                                                                                                                                    USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                                                                                                    HAnimJoint(
-                                                                                                                                                                      name="l_carpal_proximal_interphalangeal_3", DEF="hanim_l_carpal_proximal_interphalangeal_3", center=(0.2013,0.7273,-0.0503), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                                          HAnimSegment(
-                                                                                                                                                                            name="l_carpal_middle_phalanx_3", DEF="hanim_l_carpal_middle_phalanx_3", children=[#Visualization sphere for <HAnimJoint name='l_middle2'/> is placed within <HAnimSegment name='l_carpal_middle_phalanx_3'/>
-
-                                                                                                                                                                                TouchSensor(
-                                                                                                                                                                                  description="HAnimJoint l_middle2, HAnimSegment l_carpal_middle_phalanx_3"),
-                                                                                                                                                                                Transform(
-                                                                                                                                                                                  translation=(0.2013,0.7273,-0.0503), children=[
-                                                                                                                                                                                      Shape(
-                                                                                                                                                                                        USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='l_middle2'/> to child <HAnimJoint name='l_middle3'/>
-
-                                                                                                                                                                                Shape(
-                                                                                                                                                                                  geometry=LineSet(
-                                                                                                                                                                                      vertexCount=(2), coord(
-                                                                                                                                                                                        Coordinate(
-                                                                                                                                                                                          point=(0.2013,0.7273,-0.0503,0.2026,0.7011,-0.0494))), color(
-                                                                                                                                                                                        ColorRGBA(
-                                                                                                                                                                                          USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                                                                                                          HAnimJoint(
-                                                                                                                                                                            name="l_carpal_distal_interphalangeal_3", DEF="hanim_l_carpal_distal_interphalangeal_3", center=(0.2026,0.7011,-0.0494), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                                                HAnimSegment(
-                                                                                                                                                                                  name="l_carpal_distal_phalanx_3", DEF="hanim_l_carpal_distal_phalanx_3", children=[#Visualization sphere for <HAnimJoint name='l_middle3'/> is placed within <HAnimSegment name='l_carpal_distal_phalanx_3'/>
-
-                                                                                                                                                                                      TouchSensor(
-                                                                                                                                                                                        description="HAnimJoint l_middle3, HAnimSegment l_carpal_distal_phalanx_3"),
-                                                                                                                                                                                      Transform(
-                                                                                                                                                                                        translation=(0.2026,0.7011,-0.0494), children=[
-                                                                                                                                                                                            Shape(
-                                                                                                                                                                                              USE="HAnimJointShape")]),#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_middle3'/> to <HAnimSite name='l_middle_distal_tip'/>
-
-                                                                                                                                                                                      Shape(
-                                                                                                                                                                                        geometry=LineSet(
-                                                                                                                                                                                            vertexCount=(2), coord(
-                                                                                                                                                                                              Coordinate(
-                                                                                                                                                                                                point=(0.2026,0.7011,-0.0494,0.208,0.6731,-0.0491))), color(
-                                                                                                                                                                                              ColorRGBA(
-                                                                                                                                                                                                USE="HAnimSiteLineColorRGBA")))),
-                                                                                                                                                                                      HAnimSite(
-                                                                                                                                                                                        name="l_carpal_distal_phalanx_3_pt", DEF="hanim_l_carpal_distal_phalanx_3_pt", translation=(0.208,0.6731,-0.0491), children=[#HAnimSite visualization shape
-
-                                                                                                                                                                                            TouchSensor(
-                                                                                                                                                                                              description="HAnimSite l_middle_distal_tip"),
-                                                                                                                                                                                            Shape(
-                                                                                                                                                                                              USE="HAnimSiteShape")])])])])])]),
-                                                                                                                                                        HAnimJoint(
-                                                                                                                                                          name="l_carpometacarpal_4", DEF="hanim_l_carpometacarpal_4", center=(0.1956,0.8019,-0.0794), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                              HAnimSegment(
-                                                                                                                                                                name="l_metacarpal_4", DEF="hanim_l_metacarpal_4", children=[#Visualization sphere for <HAnimJoint name='l_ring0'/> is placed within <HAnimSegment name='l_metacarpal_4'/>
-
-                                                                                                                                                                    TouchSensor(
-                                                                                                                                                                      description="HAnimJoint l_ring0, HAnimSegment l_metacarpal_4"),
-                                                                                                                                                                    Transform(
-                                                                                                                                                                      translation=(0.1956,0.8019,-0.0794), children=[
-                                                                                                                                                                          Shape(
-                                                                                                                                                                            USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='l_ring0'/> to child <HAnimJoint name='l_ring1'/>
-
-                                                                                                                                                                    Shape(
-                                                                                                                                                                      geometry=LineSet(
-                                                                                                                                                                          vertexCount=(2), coord(
-                                                                                                                                                                            Coordinate(
-                                                                                                                                                                              point=(0.1956,0.8019,-0.0794,0.1956,0.7815,-0.0794))), color(
-                                                                                                                                                                            ColorRGBA(
-                                                                                                                                                                              USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                                                                                              HAnimJoint(
-                                                                                                                                                                name="l_metacarpophalangeal_4", DEF="hanim_l_metacarpophalangeal_4", center=(0.1956,0.7815,-0.0794), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                                    HAnimSegment(
-                                                                                                                                                                      name="l_carpal_proximal_phalanx_4", DEF="hanim_l_carpal_proximal_phalanx_4", children=[#Visualization sphere for <HAnimJoint name='l_ring1'/> is placed within <HAnimSegment name='l_carpal_proximal_phalanx_4'/>
-
-                                                                                                                                                                          TouchSensor(
-                                                                                                                                                                            description="HAnimJoint l_ring1, HAnimSegment l_carpal_proximal_phalanx_4"),
-                                                                                                                                                                          Transform(
-                                                                                                                                                                            translation=(0.1956,0.7815,-0.0794), children=[
-                                                                                                                                                                                Shape(
-                                                                                                                                                                                  USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='l_ring1'/> to child <HAnimJoint name='l_ring2'/>
-
-                                                                                                                                                                          Shape(
-                                                                                                                                                                            geometry=LineSet(
-                                                                                                                                                                                vertexCount=(2), coord(
-                                                                                                                                                                                  Coordinate(
-                                                                                                                                                                                    point=(0.1956,0.7815,-0.0794,0.1973,0.7287,-0.0777))), color(
-                                                                                                                                                                                  ColorRGBA(
-                                                                                                                                                                                    USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                                                                                                    HAnimJoint(
-                                                                                                                                                                      name="l_carpal_proximal_interphalangeal_4", DEF="hanim_l_carpal_proximal_interphalangeal_4", center=(0.1973,0.7287,-0.0777), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                                          HAnimSegment(
-                                                                                                                                                                            name="l_carpal_middle_phalanx_4", DEF="hanim_l_carpal_middle_phalanx_4", children=[#Visualization sphere for <HAnimJoint name='l_ring2'/> is placed within <HAnimSegment name='l_carpal_middle_phalanx_4'/>
-
-                                                                                                                                                                                TouchSensor(
-                                                                                                                                                                                  description="HAnimJoint l_ring2, HAnimSegment l_carpal_middle_phalanx_4"),
-                                                                                                                                                                                Transform(
-                                                                                                                                                                                  translation=(0.1973,0.7287,-0.0777), children=[
-                                                                                                                                                                                      Shape(
-                                                                                                                                                                                        USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='l_ring2'/> to child <HAnimJoint name='l_ring3'/>
-
-                                                                                                                                                                                Shape(
-                                                                                                                                                                                  geometry=LineSet(
-                                                                                                                                                                                      vertexCount=(2), coord(
-                                                                                                                                                                                        Coordinate(
-                                                                                                                                                                                          point=(0.1973,0.7287,-0.0777,0.1983,0.7045,-0.0767))), color(
-                                                                                                                                                                                        ColorRGBA(
-                                                                                                                                                                                          USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                                                                                                          HAnimJoint(
-                                                                                                                                                                            name="l_carpal_distal_interphalangeal_4", DEF="hanim_l_carpal_distal_interphalangeal_4", center=(0.1983,0.7045,-0.0767), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                                                HAnimSegment(
-                                                                                                                                                                                  name="l_carpal_distal_phalanx_4", DEF="hanim_l_carpal_distal_phalanx_4", children=[#Visualization sphere for <HAnimJoint name='l_ring3'/> is placed within <HAnimSegment name='l_carpal_distal_phalanx_4'/>
-
-                                                                                                                                                                                      TouchSensor(
-                                                                                                                                                                                        description="HAnimJoint l_ring3, HAnimSegment l_carpal_distal_phalanx_4"),
-                                                                                                                                                                                      Transform(
-                                                                                                                                                                                        translation=(0.1983,0.7045,-0.0767), children=[
-                                                                                                                                                                                            Shape(
-                                                                                                                                                                                              USE="HAnimJointShape")]),#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_ring3'/> to <HAnimSite name='l_ring_distal_tip'/>
-
-                                                                                                                                                                                      Shape(
-                                                                                                                                                                                        geometry=LineSet(
-                                                                                                                                                                                            vertexCount=(2), coord(
-                                                                                                                                                                                              Coordinate(
-                                                                                                                                                                                                point=(0.1983,0.7045,-0.0767,0.2035,0.675,-0.0756))), color(
-                                                                                                                                                                                              ColorRGBA(
-                                                                                                                                                                                                USE="HAnimSiteLineColorRGBA")))),
-                                                                                                                                                                                      HAnimSite(
-                                                                                                                                                                                        name="l_carpal_distal_phalanx_4_pt", DEF="hanim_l_carpal_distal_phalanx_4_pt", translation=(0.2035,0.675,-0.0756), children=[#HAnimSite visualization shape
-
-                                                                                                                                                                                            TouchSensor(
-                                                                                                                                                                                              description="HAnimSite l_ring_distal_tip"),
-                                                                                                                                                                                            Shape(
-                                                                                                                                                                                              USE="HAnimSiteShape")])])])])])]),
-                                                                                                                                                        HAnimJoint(
-                                                                                                                                                          name="l_carpometacarpal_5", DEF="hanim_l_carpometacarpal_5", center=(0.1925,0.8066,-0.1036), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                              HAnimSegment(
-                                                                                                                                                                name="l_metacarpal_5", DEF="hanim_l_metacarpal_5", children=[#Visualization sphere for <HAnimJoint name='l_pinky0'/> is placed within <HAnimSegment name='l_metacarpal_5'/>
-
-                                                                                                                                                                    TouchSensor(
-                                                                                                                                                                      description="HAnimJoint l_pinky0, HAnimSegment l_metacarpal_5"),
-                                                                                                                                                                    Transform(
-                                                                                                                                                                      translation=(0.1925,0.8066,-0.1036), children=[
-                                                                                                                                                                          Shape(
-                                                                                                                                                                            USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='l_pinky0'/> to child <HAnimJoint name='l_pinky1'/>
-
-                                                                                                                                                                    Shape(
-                                                                                                                                                                      geometry=LineSet(
-                                                                                                                                                                          vertexCount=(2), coord(
-                                                                                                                                                                            Coordinate(
-                                                                                                                                                                              point=(0.1925,0.8066,-0.1036,0.1925,0.7866,-0.1036))), color(
-                                                                                                                                                                            ColorRGBA(
-                                                                                                                                                                              USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                                                                                              HAnimJoint(
-                                                                                                                                                                name="l_metacarpophalangeal_5", DEF="hanim_l_metacarpophalangeal_5", center=(0.1925,0.7866,-0.1036), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                                    HAnimSegment(
-                                                                                                                                                                      name="l_carpal_proximal_phalanx_5", DEF="hanim_l_carpal_proximal_phalanx_5", children=[#Visualization sphere for <HAnimJoint name='l_pinky1'/> is placed within <HAnimSegment name='l_carpal_proximal_phalanx_5'/>
-
-                                                                                                                                                                          TouchSensor(
-                                                                                                                                                                            description="HAnimJoint l_pinky1, HAnimSegment l_carpal_proximal_phalanx_5"),
-                                                                                                                                                                          Transform(
-                                                                                                                                                                            translation=(0.1925,0.7866,-0.1036), children=[
-                                                                                                                                                                                Shape(
-                                                                                                                                                                                  USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='l_pinky1'/> to child <HAnimJoint name='l_pinky2'/>
-
-                                                                                                                                                                          Shape(
-                                                                                                                                                                            geometry=LineSet(
-                                                                                                                                                                                vertexCount=(2), coord(
-                                                                                                                                                                                  Coordinate(
-                                                                                                                                                                                    point=(0.1925,0.7866,-0.1036,0.1938,0.7452,-0.1024))), color(
-                                                                                                                                                                                  ColorRGBA(
-                                                                                                                                                                                    USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                                                                                                    HAnimJoint(
-                                                                                                                                                                      name="l_carpal_proximal_interphalangeal_5", DEF="hanim_l_carpal_proximal_interphalangeal_5", center=(0.1938,0.7452,-0.1024), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                                          HAnimSegment(
-                                                                                                                                                                            name="l_carpal_middle_phalanx_5", DEF="hanim_l_carpal_middle_phalanx_5", children=[#Visualization sphere for <HAnimJoint name='l_pinky2'/> is placed within <HAnimSegment name='l_carpal_middle_phalanx_5'/>
-
-                                                                                                                                                                                TouchSensor(
-                                                                                                                                                                                  description="HAnimJoint l_pinky2, HAnimSegment l_carpal_middle_phalanx_5"),
-                                                                                                                                                                                Transform(
-                                                                                                                                                                                  translation=(0.1938,0.7452,-0.1024), children=[
-                                                                                                                                                                                      Shape(
-                                                                                                                                                                                        USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='l_pinky2'/> to child <HAnimJoint name='l_pinky3'/>
-
-                                                                                                                                                                                Shape(
-                                                                                                                                                                                  geometry=LineSet(
-                                                                                                                                                                                      vertexCount=(2), coord(
-                                                                                                                                                                                        Coordinate(
-                                                                                                                                                                                          point=(0.1938,0.7452,-0.1024,0.1948,0.7277,-0.1017))), color(
-                                                                                                                                                                                        ColorRGBA(
-                                                                                                                                                                                          USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                                                                                                          HAnimJoint(
-                                                                                                                                                                            name="l_carpal_distal_interphalangeal_5", DEF="hanim_l_carpal_distal_interphalangeal_5", center=(0.1948,0.7277,-0.1017), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                                                HAnimSegment(
-                                                                                                                                                                                  name="l_carpal_distal_phalanx_5", DEF="hanim_l_carpal_distal_phalanx_5", children=[#Visualization sphere for <HAnimJoint name='l_pinky3'/> is placed within <HAnimSegment name='l_carpal_distal_phalanx_5'/>
-
-                                                                                                                                                                                      TouchSensor(
-                                                                                                                                                                                        description="HAnimJoint l_pinky3, HAnimSegment l_carpal_distal_phalanx_5"),
-                                                                                                                                                                                      Transform(
-                                                                                                                                                                                        translation=(0.1948,0.7277,-0.1017), children=[
-                                                                                                                                                                                            Shape(
-                                                                                                                                                                                              USE="HAnimJointShape")]),#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_pinky3'/> to <HAnimSite name='l_pinky_distal_tip'/>
-
-                                                                                                                                                                                      Shape(
-                                                                                                                                                                                        geometry=LineSet(
-                                                                                                                                                                                            vertexCount=(2), coord(
-                                                                                                                                                                                              Coordinate(
-                                                                                                                                                                                                point=(0.1948,0.7277,-0.1017,0.2014,0.7009,-0.1012))), color(
-                                                                                                                                                                                              ColorRGBA(
-                                                                                                                                                                                                USE="HAnimSiteLineColorRGBA")))),
-                                                                                                                                                                                      HAnimSite(
-                                                                                                                                                                                        name="l_carpal_distal_phalanx_5_pt", DEF="hanim_l_carpal_distal_phalanx_5_pt", translation=(0.2014,0.7009,-0.1012), children=[#HAnimSite visualization shape
-
-                                                                                                                                                                                            TouchSensor(
-                                                                                                                                                                                              description="HAnimSite l_pinky_distal_tip"),
-                                                                                                                                                                                            Shape(
-                                                                                                                                                                                              USE="HAnimSiteShape")])])])])])])])])])])]),
-                                                                                                                          HAnimJoint(
-                                                                                                                            name="r_sternoclavicular", DEF="hanim_r_sternoclavicular", center=(-0.082,1.4488,-0.0353), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                HAnimSegment(
-                                                                                                                                  name="r_clavicle", DEF="hanim_r_clavicle", children=[#Visualization sphere for <HAnimJoint name='r_sternoclavicular'/> is placed within <HAnimSegment name='r_clavicle'/>
-
-                                                                                                                                      TouchSensor(
-                                                                                                                                        description="HAnimJoint r_sternoclavicular, HAnimSegment r_clavicle"),
-                                                                                                                                      Transform(
-                                                                                                                                        translation=(-0.082,1.4488,-0.0353), children=[
-                                                                                                                                            Shape(
-                                                                                                                                              USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='r_sternoclavicular'/> to child <HAnimJoint name='r_acromioclavicular'/>
-
-                                                                                                                                      Shape(
-                                                                                                                                        geometry=LineSet(
-                                                                                                                                            vertexCount=(2), coord(
-                                                                                                                                              Coordinate(
-                                                                                                                                                point=(-0.082,1.4488,-0.0353,-0.0962,1.4269,-0.0424))), color(
-                                                                                                                                              ColorRGBA(
-                                                                                                                                                USE="HAnimSegmentLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_sternoclavicular'/> to <HAnimSite name='r_clavicale_pt'/>
-
-                                                                                                                                      Shape(
-                                                                                                                                        geometry=LineSet(
-                                                                                                                                            vertexCount=(2), coord(
-                                                                                                                                              Coordinate(
-                                                                                                                                                point=(-0.082,1.4488,-0.0353,-0.0115,1.4943,0.04))), color(
-                                                                                                                                              ColorRGBA(
-                                                                                                                                                USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_sternoclavicular'/> to <HAnimSite name='r_acromion_pt'/>
-
-                                                                                                                                      Shape(
-                                                                                                                                        geometry=LineSet(
-                                                                                                                                            vertexCount=(2), coord(
-                                                                                                                                              Coordinate(
-                                                                                                                                                point=(-0.082,1.4488,-0.0353,-0.1905,1.4791,-0.0431))), color(
-                                                                                                                                              ColorRGBA(
-                                                                                                                                                USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_sternoclavicular'/> to <HAnimSite name='r_axilla_ant_pt'/>
-
-                                                                                                                                      Shape(
-                                                                                                                                        geometry=LineSet(
-                                                                                                                                            vertexCount=(2), coord(
-                                                                                                                                              Coordinate(
-                                                                                                                                                point=(-0.082,1.4488,-0.0353,-0.1626,1.4072,-0.0031))), color(
-                                                                                                                                              ColorRGBA(
-                                                                                                                                                USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_sternoclavicular'/> to <HAnimSite name='r_axilla_post_pt'/>
-
-                                                                                                                                      Shape(
-                                                                                                                                        geometry=LineSet(
-                                                                                                                                            vertexCount=(2), coord(
-                                                                                                                                              Coordinate(
-                                                                                                                                                point=(-0.082,1.4488,-0.0353,-0.1603,1.4098,-0.0826))), color(
-                                                                                                                                              ColorRGBA(
-                                                                                                                                                USE="HAnimSiteLineColorRGBA")))),
-                                                                                                                                      HAnimSite(
-                                                                                                                                        name="r_clavicle_pt", DEF="hanim_r_clavicle_pt", translation=(-0.0115,1.4943,0.04), children=[#HAnimSite visualization shape
-
-                                                                                                                                            TouchSensor(
-                                                                                                                                              description="HAnimSite r_clavicale_pt"),
-                                                                                                                                            Shape(
-                                                                                                                                              USE="HAnimSiteShape")]),
-                                                                                                                                      HAnimSite(
-                                                                                                                                        name="r_acromion_pt", DEF="hanim_r_acromion_pt", translation=(-0.1905,1.4791,-0.0431), children=[#HAnimSite visualization shape
-
-                                                                                                                                            TouchSensor(
-                                                                                                                                              description="HAnimSite r_acromion_pt"),
-                                                                                                                                            Shape(
-                                                                                                                                              USE="HAnimSiteShape")]),
-                                                                                                                                      HAnimSite(
-                                                                                                                                        name="r_axilla_proximal_pt", DEF="hanim_r_axilla_proximal_pt", translation=(-0.1626,1.4072,-0.0031), children=[#HAnimSite visualization shape
-
-                                                                                                                                            TouchSensor(
-                                                                                                                                              description="HAnimSite r_axilla_ant_pt"),
-                                                                                                                                            Shape(
-                                                                                                                                              USE="HAnimSiteShape")]),
-                                                                                                                                      HAnimSite(
-                                                                                                                                        name="r_axilla_distal_pt", DEF="hanim_r_axilla_distal_pt", translation=(-0.1603,1.4098,-0.0826), children=[#HAnimSite visualization shape
-
-                                                                                                                                            TouchSensor(
-                                                                                                                                              description="HAnimSite r_axilla_post_pt"),
-                                                                                                                                            Shape(
-                                                                                                                                              USE="HAnimSiteShape")])]),
-                                                                                                                                HAnimJoint(
-                                                                                                                                  name="r_acromioclavicular", DEF="hanim_r_acromioclavicular", center=(-0.0962,1.4269,-0.0424), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                      HAnimSegment(
-                                                                                                                                        name="r_scapula", DEF="hanim_r_scapula", children=[#Visualization sphere for <HAnimJoint name='r_acromioclavicular'/> is placed within <HAnimSegment name='r_scapula'/>
-
-                                                                                                                                            TouchSensor(
-                                                                                                                                              description="HAnimJoint r_acromioclavicular, HAnimSegment r_scapula"),
-                                                                                                                                            Transform(
-                                                                                                                                              translation=(-0.0962,1.4269,-0.0424), children=[
-                                                                                                                                                  Shape(
-                                                                                                                                                    USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='r_acromioclavicular'/> to child <HAnimJoint name='r_shoulder'/>
-
-                                                                                                                                            Shape(
-                                                                                                                                              geometry=LineSet(
-                                                                                                                                                  vertexCount=(2), coord(
-                                                                                                                                                    Coordinate(
-                                                                                                                                                      point=(-0.0962,1.4269,-0.0424,-0.2029,1.4376,-0.0387))), color(
-                                                                                                                                                    ColorRGBA(
-                                                                                                                                                      USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                                                                      HAnimJoint(
-                                                                                                                                        name="r_shoulder", DEF="hanim_r_shoulder", center=(-0.2029,1.4376,-0.0387), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                            HAnimSegment(
-                                                                                                                                              name="r_upperarm", DEF="hanim_r_upperarm", children=[#Visualization sphere for <HAnimJoint name='r_shoulder'/> is placed within <HAnimSegment name='r_upperarm'/>
-
-                                                                                                                                                  TouchSensor(
-                                                                                                                                                    description="HAnimJoint r_shoulder, HAnimSegment r_upperarm"),
-                                                                                                                                                  Transform(
-                                                                                                                                                    translation=(-0.2029,1.4376,-0.0387), children=[
-                                                                                                                                                        Shape(
-                                                                                                                                                          USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='r_shoulder'/> to child <HAnimJoint name='r_elbow'/>
-
-                                                                                                                                                  Shape(
-                                                                                                                                                    geometry=LineSet(
-                                                                                                                                                        vertexCount=(2), coord(
-                                                                                                                                                          Coordinate(
-                                                                                                                                                            point=(-0.2029,1.4376,-0.0387,-0.2014,1.1357,-0.0682))), color(
-                                                                                                                                                          ColorRGBA(
-                                                                                                                                                            USE="HAnimSegmentLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_shoulder'/> to <HAnimSite name='r_humeral_lateral_epicn_pt'/>
-
-                                                                                                                                                  Shape(
-                                                                                                                                                    geometry=LineSet(
-                                                                                                                                                        vertexCount=(2), coord(
-                                                                                                                                                          Coordinate(
-                                                                                                                                                            point=(-0.2029,1.4376,-0.0387,-0.2224,1.1517,-0.1033))), color(
-                                                                                                                                                          ColorRGBA(
-                                                                                                                                                            USE="HAnimSiteLineColorRGBA")))),
-                                                                                                                                                  HAnimSite(
-                                                                                                                                                    name="r_humeral_lateral_epicondyle_pt", DEF="hanim_r_humeral_lateral_epicondyle_pt", translation=(-0.2224,1.1517,-0.1033), children=[#HAnimSite visualization shape
-
-                                                                                                                                                        TouchSensor(
-                                                                                                                                                          description="HAnimSite r_humeral_lateral_epicn_pt"),
-                                                                                                                                                        Shape(
-                                                                                                                                                          USE="HAnimSiteShape")])]),
-                                                                                                                                            HAnimJoint(
-                                                                                                                                              name="r_elbow", DEF="hanim_r_elbow", center=(-0.2014,1.1357,-0.0682), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                  HAnimSegment(
-                                                                                                                                                    name="r_forearm", DEF="hanim_r_forearm", children=[#Visualization sphere for <HAnimJoint name='r_elbow'/> is placed within <HAnimSegment name='r_forearm'/>
-
-                                                                                                                                                        TouchSensor(
-                                                                                                                                                          description="HAnimJoint r_elbow, HAnimSegment r_forearm"),
-                                                                                                                                                        Transform(
-                                                                                                                                                          translation=(-0.2014,1.1357,-0.0682), children=[
-                                                                                                                                                              Shape(
-                                                                                                                                                                USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='r_elbow'/> to child <HAnimJoint name='r_radiocarpal'/>
-
-                                                                                                                                                        Shape(
-                                                                                                                                                          geometry=LineSet(
-                                                                                                                                                              vertexCount=(2), coord(
-                                                                                                                                                                Coordinate(
-                                                                                                                                                                  point=(-0.2014,1.1357,-0.0682,-0.1984,0.8663,-0.0583))), color(
-                                                                                                                                                                ColorRGBA(
-                                                                                                                                                                  USE="HAnimSegmentLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_elbow'/> to <HAnimSite name='r_radial_styloid_pt'/>
-
-                                                                                                                                                        Shape(
-                                                                                                                                                          geometry=LineSet(
-                                                                                                                                                              vertexCount=(2), coord(
-                                                                                                                                                                Coordinate(
-                                                                                                                                                                  point=(-0.2014,1.1357,-0.0682,-0.1884,0.8676,-0.036))), color(
-                                                                                                                                                                ColorRGBA(
-                                                                                                                                                                  USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_elbow'/> to <HAnimSite name='r_olecranon_pt'/>
-
-                                                                                                                                                        Shape(
-                                                                                                                                                          geometry=LineSet(
-                                                                                                                                                              vertexCount=(2), coord(
-                                                                                                                                                                Coordinate(
-                                                                                                                                                                  point=(-0.2014,1.1357,-0.0682,-0.1907,1.1405,-0.1065))), color(
-                                                                                                                                                                ColorRGBA(
-                                                                                                                                                                  USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_elbow'/> to <HAnimSite name='r_humeral_medial_epicn_pt'/>
-
-                                                                                                                                                        Shape(
-                                                                                                                                                          geometry=LineSet(
-                                                                                                                                                              vertexCount=(2), coord(
-                                                                                                                                                                Coordinate(
-                                                                                                                                                                  point=(-0.2014,1.1357,-0.0682,-0.168,1.1298,-0.1062))), color(
-                                                                                                                                                                ColorRGBA(
-                                                                                                                                                                  USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_elbow'/> to <HAnimSite name='r_radiale_pt'/>
-
-                                                                                                                                                        Shape(
-                                                                                                                                                          geometry=LineSet(
-                                                                                                                                                              vertexCount=(2), coord(
-                                                                                                                                                                Coordinate(
-                                                                                                                                                                  point=(-0.2014,1.1357,-0.0682,-0.213,1.1305,-0.1091))), color(
-                                                                                                                                                                ColorRGBA(
-                                                                                                                                                                  USE="HAnimSiteLineColorRGBA")))),
-                                                                                                                                                        HAnimSite(
-                                                                                                                                                          name="r_radial_styloid_pt", DEF="hanim_r_radial_styloid_pt", translation=(-0.1884,0.8676,-0.036), children=[#HAnimSite visualization shape
-
-                                                                                                                                                              TouchSensor(
-                                                                                                                                                                description="HAnimSite r_radial_styloid_pt"),
-                                                                                                                                                              Shape(
-                                                                                                                                                                USE="HAnimSiteShape")]),
-                                                                                                                                                        HAnimSite(
-                                                                                                                                                          name="r_olecranon_pt", DEF="hanim_r_olecranon_pt", translation=(-0.1907,1.1405,-0.1065), children=[#HAnimSite visualization shape
-
-                                                                                                                                                              TouchSensor(
-                                                                                                                                                                description="HAnimSite r_olecranon_pt"),
-                                                                                                                                                              Shape(
-                                                                                                                                                                USE="HAnimSiteShape")]),
-                                                                                                                                                        HAnimSite(
-                                                                                                                                                          name="r_humeral_medial_epicondyle_pt", DEF="hanim_r_humeral_medial_epicondyle_pt", translation=(-0.168,1.1298,-0.1062), children=[#HAnimSite visualization shape
-
-                                                                                                                                                              TouchSensor(
-                                                                                                                                                                description="HAnimSite r_humeral_medial_epicn_pt"),
-                                                                                                                                                              Shape(
-                                                                                                                                                                USE="HAnimSiteShape")]),
-                                                                                                                                                        HAnimSite(
-                                                                                                                                                          name="r_radiale_pt", DEF="hanim_r_radiale_pt", translation=(-0.213,1.1305,-0.1091), children=[#HAnimSite visualization shape
-
-                                                                                                                                                              TouchSensor(
-                                                                                                                                                                description="HAnimSite r_radiale_pt"),
-                                                                                                                                                              Shape(
-                                                                                                                                                                USE="HAnimSiteShape")])]),
-                                                                                                                                                  HAnimJoint(
-                                                                                                                                                    name="r_radiocarpal", DEF="hanim_r_radiocarpal", center=(-0.1984,0.8663,-0.0583), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                        HAnimSegment(
-                                                                                                                                                          name="r_carpal", DEF="hanim_r_carpal", children=[#Visualization sphere for <HAnimJoint name='r_radiocarpal'/> is placed within <HAnimSegment name='r_carpal'/>
-
-                                                                                                                                                              TouchSensor(
-                                                                                                                                                                description="HAnimJoint r_radiocarpal, HAnimSegment r_carpal"),
-                                                                                                                                                              Transform(
-                                                                                                                                                                translation=(-0.1984,0.8663,-0.0583), children=[
-                                                                                                                                                                    Shape(
-                                                                                                                                                                      USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='r_radiocarpal'/> to child <HAnimJoint name='r_thumb1'/>
-
-                                                                                                                                                              Shape(
-                                                                                                                                                                geometry=LineSet(
-                                                                                                                                                                    vertexCount=(2), coord(
-                                                                                                                                                                      Coordinate(
-                                                                                                                                                                        point=(-0.1984,0.8663,-0.0583,-0.1924,0.8472,-0.0534))), color(
-                                                                                                                                                                      ColorRGBA(
-                                                                                                                                                                        USE="HAnimSegmentLineColorRGBA")))),#HAnimSegment visualization line from current <HAnimJoint name='r_radiocarpal'/> to child <HAnimJoint name='r_index0'/>
-
-                                                                                                                                                              Shape(
-                                                                                                                                                                geometry=LineSet(
-                                                                                                                                                                    vertexCount=(2), coord(
-                                                                                                                                                                      Coordinate(
-                                                                                                                                                                        point=(-0.1984,0.8663,-0.0583,-0.1983,0.8024,-0.028))), color(
-                                                                                                                                                                      ColorRGBA(
-                                                                                                                                                                        USE="HAnimSegmentLineColorRGBA")))),#HAnimSegment visualization line from current <HAnimJoint name='r_radiocarpal'/> to child <HAnimJoint name='r_middle0'/>
-
-                                                                                                                                                              Shape(
-                                                                                                                                                                geometry=LineSet(
-                                                                                                                                                                    vertexCount=(2), coord(
-                                                                                                                                                                      Coordinate(
-                                                                                                                                                                        point=(-0.1984,0.8663,-0.0583,-0.1987,0.8029,-0.053))), color(
-                                                                                                                                                                      ColorRGBA(
-                                                                                                                                                                        USE="HAnimSegmentLineColorRGBA")))),#HAnimSegment visualization line from current <HAnimJoint name='r_radiocarpal'/> to child <HAnimJoint name='r_ring0'/>
-
-                                                                                                                                                              Shape(
-                                                                                                                                                                geometry=LineSet(
-                                                                                                                                                                    vertexCount=(2), coord(
-                                                                                                                                                                      Coordinate(
-                                                                                                                                                                        point=(-0.1984,0.8663,-0.0583,-0.1956,0.8019,-0.0794))), color(
-                                                                                                                                                                      ColorRGBA(
-                                                                                                                                                                        USE="HAnimSegmentLineColorRGBA")))),#HAnimSegment visualization line from current <HAnimJoint name='r_radiocarpal'/> to child <HAnimJoint name='r_pinky0'/>
-
-                                                                                                                                                              Shape(
-                                                                                                                                                                geometry=LineSet(
-                                                                                                                                                                    vertexCount=(2), coord(
-                                                                                                                                                                      Coordinate(
-                                                                                                                                                                        point=(-0.1984,0.8663,-0.0583,-0.1925,0.8066,-0.1036))), color(
-                                                                                                                                                                      ColorRGBA(
-                                                                                                                                                                        USE="HAnimSegmentLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_radiocarpal'/> to <HAnimSite name='r_metacarpal_pha2_pt'/>
-
-                                                                                                                                                              Shape(
-                                                                                                                                                                geometry=LineSet(
-                                                                                                                                                                    vertexCount=(2), coord(
-                                                                                                                                                                      Coordinate(
-                                                                                                                                                                        point=(-0.1984,0.8663,-0.0583,-0.1977,0.8169,-0.0177))), color(
-                                                                                                                                                                      ColorRGBA(
-                                                                                                                                                                        USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_radiocarpal'/> to <HAnimSite name='r_ulnar_styloid_pt'/>
-
-                                                                                                                                                              Shape(
-                                                                                                                                                                geometry=LineSet(
-                                                                                                                                                                    vertexCount=(2), coord(
-                                                                                                                                                                      Coordinate(
-                                                                                                                                                                        point=(-0.1984,0.8663,-0.0583,-0.2117,0.8562,-0.0584))), color(
-                                                                                                                                                                      ColorRGBA(
-                                                                                                                                                                        USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_radiocarpal'/> to <HAnimSite name='r_metacarpal_pha5_pt'/>
-
-                                                                                                                                                              Shape(
-                                                                                                                                                                geometry=LineSet(
-                                                                                                                                                                    vertexCount=(2), coord(
-                                                                                                                                                                      Coordinate(
-                                                                                                                                                                        point=(-0.1984,0.8663,-0.0583,-0.1929,0.789,-0.1064))), color(
-                                                                                                                                                                      ColorRGBA(
-                                                                                                                                                                        USE="HAnimSiteLineColorRGBA")))),#HAnimSite/Viewpoint visualization line segment from ancestor <HAnimJoint name='r_radiocarpal'/> to <HAnimSite name='r_hand_front_view'/>
-
-                                                                                                                                                              Shape(
-                                                                                                                                                                geometry=LineSet(
-                                                                                                                                                                    vertexCount=(2), coord(
-                                                                                                                                                                      Coordinate(
-                                                                                                                                                                        point=(-0.1984,0.8663,-0.0583,-0.3,0.75,0.45))), color(
-                                                                                                                                                                      ColorRGBA(
-                                                                                                                                                                        USE="HAnimSiteViewpointLineColorRGBA")))),
-                                                                                                                                                              HAnimSite(
-                                                                                                                                                                name="r_metacarpal_phalanx_2_pt", DEF="hanim_r_metacarpal_phalanx_2_pt", translation=(-0.1977,0.8169,-0.0177), children=[#HAnimSite visualization shape
-
-                                                                                                                                                                    TouchSensor(
-                                                                                                                                                                      description="HAnimSite r_metacarpal_pha2_pt"),
-                                                                                                                                                                    Shape(
-                                                                                                                                                                      USE="HAnimSiteShape")]),
-                                                                                                                                                              HAnimSite(
-                                                                                                                                                                name="r_ulnar_styloid_pt", DEF="hanim_r_ulnar_styloid_pt", translation=(-0.2117,0.8562,-0.0584), children=[#HAnimSite visualization shape
-
-                                                                                                                                                                    TouchSensor(
-                                                                                                                                                                      description="HAnimSite r_ulnar_styloid_pt"),
-                                                                                                                                                                    Shape(
-                                                                                                                                                                      USE="HAnimSiteShape")]),
-                                                                                                                                                              HAnimSite(
-                                                                                                                                                                name="r_metacarpal_phalanx_5_pt", DEF="hanim_r_metacarpal_phalanx_5_pt", translation=(-0.1929,0.789,-0.1064), children=[#HAnimSite visualization shape
-
-                                                                                                                                                                    TouchSensor(
-                                                                                                                                                                      description="HAnimSite r_metacarpal_pha5_pt"),
-                                                                                                                                                                    Shape(
-                                                                                                                                                                      USE="HAnimSiteShape")]),
-                                                                                                                                                              HAnimSite(
-                                                                                                                                                                name="r_hand_front_view", DEF="hanim_r_hand_front_view", translation=(-0.3,0.75,0.45), children=[#HAnimSite visualization shape
-
-                                                                                                                                                                    TouchSensor(
-                                                                                                                                                                      description="HAnimSite r_hand_front_view"),
-                                                                                                                                                                    Shape(
-                                                                                                                                                                      USE="HAnimSiteShape"),
-                                                                                                                                                                    Viewpoint(
-                                                                                                                                                                      DEF="hanim_r_hand_front_viewpoint", centerOfRotation=(0,0.7,0), description="right hand front", position=(0,0,0)),#HAnimSite/Viewpoint visualization shape
-
-                                                                                                                                                                    Anchor(
-                                                                                                                                                                      description="HAnimSite hanim_r_hand_front_view Viewpoint", url=["#hanim_r_hand_front_viewpoint"], children=[
-                                                                                                                                                                          LOD(
-                                                                                                                                                                            forceTransitions=True, range=(0.04), children=[
-                                                                                                                                                                                WorldInfo(
-                                                                                                                                                                                  info=("hide diamond when close")),
-                                                                                                                                                                                Shape(
-                                                                                                                                                                                  USE="HAnimSiteViewpointShape")])])])]),
-                                                                                                                                                        HAnimJoint(
-                                                                                                                                                          name="r_carpometacarpal_1", DEF="hanim_r_carpometacarpal_1", center=(-0.1924,0.8472,-0.0534), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                              HAnimSegment(
-                                                                                                                                                                name="r_metacarpal_1", DEF="hanim_r_metacarpal_1", children=[#Visualization sphere for <HAnimJoint name='r_thumb1'/> is placed within <HAnimSegment name='r_metacarpal_1'/>
-
-                                                                                                                                                                    TouchSensor(
-                                                                                                                                                                      description="HAnimJoint r_thumb1, HAnimSegment r_metacarpal_1"),
-                                                                                                                                                                    Transform(
-                                                                                                                                                                      translation=(-0.1924,0.8472,-0.0534), children=[
-                                                                                                                                                                          Shape(
-                                                                                                                                                                            USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='r_thumb1'/> to child <HAnimJoint name='r_thumb2'/>
-
-                                                                                                                                                                    Shape(
-                                                                                                                                                                      geometry=LineSet(
-                                                                                                                                                                          vertexCount=(2), coord(
-                                                                                                                                                                            Coordinate(
-                                                                                                                                                                              point=(-0.1924,0.8472,-0.0534,-0.1951,0.8226,0.0246))), color(
-                                                                                                                                                                            ColorRGBA(
-                                                                                                                                                                              USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                                                                                              HAnimJoint(
-                                                                                                                                                                name="r_metacarpophalangeal_1", DEF="hanim_r_metacarpophalangeal_1", center=(-0.1951,0.8226,0.0246), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                                    HAnimSegment(
-                                                                                                                                                                      name="r_carpal_proximal_phalanx_1", DEF="hanim_r_carpal_proximal_phalanx_1", children=[#Visualization sphere for <HAnimJoint name='r_thumb2'/> is placed within <HAnimSegment name='r_carpal_proximal_phalanx_1'/>
-
-                                                                                                                                                                          TouchSensor(
-                                                                                                                                                                            description="HAnimJoint r_thumb2, HAnimSegment r_carpal_proximal_phalanx_1"),
-                                                                                                                                                                          Transform(
-                                                                                                                                                                            translation=(-0.1951,0.8226,0.0246), children=[
-                                                                                                                                                                                Shape(
-                                                                                                                                                                                  USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='r_thumb2'/> to child <HAnimJoint name='r_thumb3'/>
-
-                                                                                                                                                                          Shape(
-                                                                                                                                                                            geometry=LineSet(
-                                                                                                                                                                                vertexCount=(2), coord(
-                                                                                                                                                                                  Coordinate(
-                                                                                                                                                                                    point=(-0.1951,0.8226,0.0246,-0.1955,0.8159,0.0464))), color(
-                                                                                                                                                                                  ColorRGBA(
-                                                                                                                                                                                    USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                                                                                                    HAnimJoint(
-                                                                                                                                                                      name="r_carpal_interphalangeal_1", DEF="hanim_r_carpal_interphalangeal_1", center=(-0.1955,0.8159,0.0464), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                                          HAnimSegment(
-                                                                                                                                                                            name="r_carpal_distal_phalanx_1", DEF="hanim_r_carpal_distal_phalanx_1", children=[#Visualization sphere for <HAnimJoint name='r_thumb3'/> is placed within <HAnimSegment name='r_carpal_distal_phalanx_1'/>
-
-                                                                                                                                                                                TouchSensor(
-                                                                                                                                                                                  description="HAnimJoint r_thumb3, HAnimSegment r_carpal_distal_phalanx_1"),
-                                                                                                                                                                                Transform(
-                                                                                                                                                                                  translation=(-0.1955,0.8159,0.0464), children=[
-                                                                                                                                                                                      Shape(
-                                                                                                                                                                                        USE="HAnimJointShape")]),#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_thumb3'/> to <HAnimSite name='r_thumb_distal_tip'/>
-
-                                                                                                                                                                                Shape(
-                                                                                                                                                                                  geometry=LineSet(
-                                                                                                                                                                                      vertexCount=(2), coord(
-                                                                                                                                                                                        Coordinate(
-                                                                                                                                                                                          point=(-0.1955,0.8159,0.0464,-0.1869,0.809,0.082))), color(
-                                                                                                                                                                                        ColorRGBA(
-                                                                                                                                                                                          USE="HAnimSiteLineColorRGBA")))),
-                                                                                                                                                                                HAnimSite(
-                                                                                                                                                                                  name="r_carpal_distal_phalanx_1_pt", DEF="hanim_r_carpal_distal_phalanx_1_pt", translation=(-0.1869,0.809,0.082), children=[#HAnimSite visualization shape
-
-                                                                                                                                                                                      TouchSensor(
-                                                                                                                                                                                        description="HAnimSite r_thumb_distal_tip"),
-                                                                                                                                                                                      Shape(
-                                                                                                                                                                                        USE="HAnimSiteShape")])])])])]),
-                                                                                                                                                        HAnimJoint(
-                                                                                                                                                          name="r_carpometacarpal_2", DEF="hanim_r_carpometacarpal_2", center=(-0.1983,0.8024,-0.028), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                              HAnimSegment(
-                                                                                                                                                                name="r_metacarpal_2", DEF="hanim_r_metacarpal_2", children=[#Visualization sphere for <HAnimJoint name='r_index0'/> is placed within <HAnimSegment name='r_metacarpal_2'/>
-
-                                                                                                                                                                    TouchSensor(
-                                                                                                                                                                      description="HAnimJoint r_index0, HAnimSegment r_metacarpal_2"),
-                                                                                                                                                                    Transform(
-                                                                                                                                                                      translation=(-0.1983,0.8024,-0.028), children=[
-                                                                                                                                                                          Shape(
-                                                                                                                                                                            USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='r_index0'/> to child <HAnimJoint name='r_index1'/>
-
-                                                                                                                                                                    Shape(
-                                                                                                                                                                      geometry=LineSet(
-                                                                                                                                                                          vertexCount=(2), coord(
-                                                                                                                                                                            Coordinate(
-                                                                                                                                                                              point=(-0.1983,0.8024,-0.028,-0.1983,0.7815,-0.028))), color(
-                                                                                                                                                                            ColorRGBA(
-                                                                                                                                                                              USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                                                                                              HAnimJoint(
-                                                                                                                                                                name="r_metacarpophalangeal_2", DEF="hanim_r_metacarpophalangeal_2", center=(-0.1983,0.7815,-0.028), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                                    HAnimSegment(
-                                                                                                                                                                      name="r_carpal_proximal_phalanx_2", DEF="hanim_r_carpal_proximal_phalanx_2", children=[#Visualization sphere for <HAnimJoint name='r_index1'/> is placed within <HAnimSegment name='r_carpal_proximal_phalanx_2'/>
-
-                                                                                                                                                                          TouchSensor(
-                                                                                                                                                                            description="HAnimJoint r_index1, HAnimSegment r_carpal_proximal_phalanx_2"),
-                                                                                                                                                                          Transform(
-                                                                                                                                                                            translation=(-0.1983,0.7815,-0.028), children=[
-                                                                                                                                                                                Shape(
-                                                                                                                                                                                  USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='r_index1'/> to child <HAnimJoint name='r_index2'/>
-
-                                                                                                                                                                          Shape(
-                                                                                                                                                                            geometry=LineSet(
-                                                                                                                                                                                vertexCount=(2), coord(
-                                                                                                                                                                                  Coordinate(
-                                                                                                                                                                                    point=(-0.1983,0.7815,-0.028,-0.2017,0.7363,-0.0248))), color(
-                                                                                                                                                                                  ColorRGBA(
-                                                                                                                                                                                    USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                                                                                                    HAnimJoint(
-                                                                                                                                                                      name="r_carpal_proximal_interphalangeal_2", DEF="hanim_r_carpal_proximal_interphalangeal_2", center=(-0.2017,0.7363,-0.0248), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                                          HAnimSegment(
-                                                                                                                                                                            name="r_carpal_middle_phalanx_2", DEF="hanim_r_carpal_middle_phalanx_2", children=[#Visualization sphere for <HAnimJoint name='r_index2'/> is placed within <HAnimSegment name='r_carpal_middle_phalanx_2'/>
-
-                                                                                                                                                                                TouchSensor(
-                                                                                                                                                                                  description="HAnimJoint r_index2, HAnimSegment r_carpal_middle_phalanx_2"),
-                                                                                                                                                                                Transform(
-                                                                                                                                                                                  translation=(-0.2017,0.7363,-0.0248), children=[
-                                                                                                                                                                                      Shape(
-                                                                                                                                                                                        USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='r_index2'/> to child <HAnimJoint name='r_index3'/>
-
-                                                                                                                                                                                Shape(
-                                                                                                                                                                                  geometry=LineSet(
-                                                                                                                                                                                      vertexCount=(2), coord(
-                                                                                                                                                                                        Coordinate(
-                                                                                                                                                                                          point=(-0.2017,0.7363,-0.0248,-0.2028,0.7139,-0.0236))), color(
-                                                                                                                                                                                        ColorRGBA(
-                                                                                                                                                                                          USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                                                                                                          HAnimJoint(
-                                                                                                                                                                            name="r_carpal_distal_interphalangeal_2", DEF="hanim_r_carpal_distal_interphalangeal_2", center=(-0.2028,0.7139,-0.0236), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                                                HAnimSegment(
-                                                                                                                                                                                  name="r_carpal_distal_phalanx_2", DEF="hanim_r_carpal_distal_phalanx_2", children=[#Visualization sphere for <HAnimJoint name='r_index3'/> is placed within <HAnimSegment name='r_carpal_distal_phalanx_2'/>
-
-                                                                                                                                                                                      TouchSensor(
-                                                                                                                                                                                        description="HAnimJoint r_index3, HAnimSegment r_carpal_distal_phalanx_2"),
-                                                                                                                                                                                      Transform(
-                                                                                                                                                                                        translation=(-0.2028,0.7139,-0.0236), children=[
-                                                                                                                                                                                            Shape(
-                                                                                                                                                                                              USE="HAnimJointShape")]),#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_index3'/> to <HAnimSite name='r_index_distal_tip'/>
-
-                                                                                                                                                                                      Shape(
-                                                                                                                                                                                        geometry=LineSet(
-                                                                                                                                                                                            vertexCount=(2), coord(
-                                                                                                                                                                                              Coordinate(
-                                                                                                                                                                                                point=(-0.2028,0.7139,-0.0236,-0.198,0.6883,-0.018))), color(
-                                                                                                                                                                                              ColorRGBA(
-                                                                                                                                                                                                USE="HAnimSiteLineColorRGBA")))),#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_index3'/> to <HAnimSite name='r_dactylion_pt'/>
-
-                                                                                                                                                                                      Shape(
-                                                                                                                                                                                        geometry=LineSet(
-                                                                                                                                                                                            vertexCount=(2), coord(
-                                                                                                                                                                                              Coordinate(
-                                                                                                                                                                                                point=(-0.2028,0.7139,-0.0236,-0.1941,0.6772,-0.0423))), color(
-                                                                                                                                                                                              ColorRGBA(
-                                                                                                                                                                                                USE="HAnimSiteLineColorRGBA")))),
-                                                                                                                                                                                      HAnimSite(
-                                                                                                                                                                                        name="r_carpal_distal_phalanx_2_pt", DEF="hanim_r_carpal_distal_phalanx_2_pt", translation=(-0.198,0.6883,-0.018), children=[#HAnimSite visualization shape
-
-                                                                                                                                                                                            TouchSensor(
-                                                                                                                                                                                              description="HAnimSite r_index_distal_tip"),
-                                                                                                                                                                                            Shape(
-                                                                                                                                                                                              USE="HAnimSiteShape")]),
-                                                                                                                                                                                      HAnimSite(
-                                                                                                                                                                                        name="r_dactylion_pt", DEF="hanim_r_dactylion_pt", translation=(-0.1941,0.6772,-0.0423), children=[#HAnimSite visualization shape
-
-                                                                                                                                                                                            TouchSensor(
-                                                                                                                                                                                              description="HAnimSite r_dactylion_pt"),
-                                                                                                                                                                                            Shape(
-                                                                                                                                                                                              USE="HAnimSiteShape")])])])])])]),
-                                                                                                                                                        HAnimJoint(
-                                                                                                                                                          name="r_carpometacarpal_3", DEF="hanim_r_carpometacarpal_3", center=(-0.1987,0.8029,-0.053), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                              HAnimSegment(
-                                                                                                                                                                name="r_metacarpal_3", DEF="hanim_r_metacarpal_3", children=[#Visualization sphere for <HAnimJoint name='r_middle0'/> is placed within <HAnimSegment name='r_metacarpal_3'/>
-
-                                                                                                                                                                    TouchSensor(
-                                                                                                                                                                      description="HAnimJoint r_middle0, HAnimSegment r_metacarpal_3"),
-                                                                                                                                                                    Transform(
-                                                                                                                                                                      translation=(-0.1987,0.8029,-0.053), children=[
-                                                                                                                                                                          Shape(
-                                                                                                                                                                            USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='r_middle0'/> to child <HAnimJoint name='r_middle1'/>
-
-                                                                                                                                                                    Shape(
-                                                                                                                                                                      geometry=LineSet(
-                                                                                                                                                                          vertexCount=(2), coord(
-                                                                                                                                                                            Coordinate(
-                                                                                                                                                                              point=(-0.1987,0.8029,-0.053,-0.1987,0.7818,-0.053))), color(
-                                                                                                                                                                            ColorRGBA(
-                                                                                                                                                                              USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                                                                                              HAnimJoint(
-                                                                                                                                                                name="r_metacarpophalangeal_3", DEF="hanim_r_metacarpophalangeal_3", center=(-0.1987,0.7818,-0.053), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                                    HAnimSegment(
-                                                                                                                                                                      name="r_carpal_proximal_phalanx_3", DEF="hanim_r_carpal_proximal_phalanx_3", children=[#Visualization sphere for <HAnimJoint name='r_middle1'/> is placed within <HAnimSegment name='r_carpal_proximal_phalanx_3'/>
-
-                                                                                                                                                                          TouchSensor(
-                                                                                                                                                                            description="HAnimJoint r_middle1, HAnimSegment r_carpal_proximal_phalanx_3"),
-                                                                                                                                                                          Transform(
-                                                                                                                                                                            translation=(-0.1987,0.7818,-0.053), children=[
-                                                                                                                                                                                Shape(
-                                                                                                                                                                                  USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='r_middle1'/> to child <HAnimJoint name='r_middle2'/>
-
-                                                                                                                                                                          Shape(
-                                                                                                                                                                            geometry=LineSet(
-                                                                                                                                                                                vertexCount=(2), coord(
-                                                                                                                                                                                  Coordinate(
-                                                                                                                                                                                    point=(-0.1987,0.7818,-0.053,-0.2013,0.7273,-0.0503))), color(
-                                                                                                                                                                                  ColorRGBA(
-                                                                                                                                                                                    USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                                                                                                    HAnimJoint(
-                                                                                                                                                                      name="r_carpal_proximal_interphalangeal_3", DEF="hanim_r_carpal_proximal_interphalangeal_3", center=(-0.2013,0.7273,-0.0503), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                                          HAnimSegment(
-                                                                                                                                                                            name="r_carpal_middle_phalanx_3", DEF="hanim_r_carpal_middle_phalanx_3", children=[#Visualization sphere for <HAnimJoint name='r_middle2'/> is placed within <HAnimSegment name='r_carpal_middle_phalanx_3'/>
-
-                                                                                                                                                                                TouchSensor(
-                                                                                                                                                                                  description="HAnimJoint r_middle2, HAnimSegment r_carpal_middle_phalanx_3"),
-                                                                                                                                                                                Transform(
-                                                                                                                                                                                  translation=(-0.2013,0.7273,-0.0503), children=[
-                                                                                                                                                                                      Shape(
-                                                                                                                                                                                        USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='r_middle2'/> to child <HAnimJoint name='r_middle3'/>
-
-                                                                                                                                                                                Shape(
-                                                                                                                                                                                  geometry=LineSet(
-                                                                                                                                                                                      vertexCount=(2), coord(
-                                                                                                                                                                                        Coordinate(
-                                                                                                                                                                                          point=(-0.2013,0.7273,-0.0503,-0.2026,0.7011,-0.0494))), color(
-                                                                                                                                                                                        ColorRGBA(
-                                                                                                                                                                                          USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                                                                                                          HAnimJoint(
-                                                                                                                                                                            name="r_carpal_distal_interphalangeal_3", DEF="hanim_r_carpal_distal_interphalangeal_3", center=(-0.2026,0.7011,-0.0494), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                                                HAnimSegment(
-                                                                                                                                                                                  name="r_carpal_distal_phalanx_3", DEF="hanim_r_carpal_distal_phalanx_3", children=[#Visualization sphere for <HAnimJoint name='r_middle3'/> is placed within <HAnimSegment name='r_carpal_distal_phalanx_3'/>
-
-                                                                                                                                                                                      TouchSensor(
-                                                                                                                                                                                        description="HAnimJoint r_middle3, HAnimSegment r_carpal_distal_phalanx_3"),
-                                                                                                                                                                                      Transform(
-                                                                                                                                                                                        translation=(-0.2026,0.7011,-0.0494), children=[
-                                                                                                                                                                                            Shape(
-                                                                                                                                                                                              USE="HAnimJointShape")]),#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_middle3'/> to <HAnimSite name='r_middle_distal_tip'/>
-
-                                                                                                                                                                                      Shape(
-                                                                                                                                                                                        geometry=LineSet(
-                                                                                                                                                                                            vertexCount=(2), coord(
-                                                                                                                                                                                              Coordinate(
-                                                                                                                                                                                                point=(-0.2026,0.7011,-0.0494,-0.1969,0.6758,-0.0427))), color(
-                                                                                                                                                                                              ColorRGBA(
-                                                                                                                                                                                                USE="HAnimSiteLineColorRGBA")))),
-                                                                                                                                                                                      HAnimSite(
-                                                                                                                                                                                        name="r_carpal_distal_phalanx_3_pt", DEF="hanim_r_carpal_distal_phalanx_3_pt", translation=(-0.1969,0.6758,-0.0427), children=[#HAnimSite visualization shape
-
-                                                                                                                                                                                            TouchSensor(
-                                                                                                                                                                                              description="HAnimSite r_middle_distal_tip"),
-                                                                                                                                                                                            Shape(
-                                                                                                                                                                                              USE="HAnimSiteShape")])])])])])]),
-                                                                                                                                                        HAnimJoint(
-                                                                                                                                                          name="r_carpometacarpal_4", DEF="hanim_r_carpometacarpal_4", center=(-0.1956,0.8019,-0.0794), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                              HAnimSegment(
-                                                                                                                                                                name="r_metacarpal_4", DEF="hanim_r_metacarpal_4", children=[#Visualization sphere for <HAnimJoint name='r_ring0'/> is placed within <HAnimSegment name='r_metacarpal_4'/>
-
-                                                                                                                                                                    TouchSensor(
-                                                                                                                                                                      description="HAnimJoint r_ring0, HAnimSegment r_metacarpal_4"),
-                                                                                                                                                                    Transform(
-                                                                                                                                                                      translation=(-0.1956,0.8019,-0.0794), children=[
-                                                                                                                                                                          Shape(
-                                                                                                                                                                            USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='r_ring0'/> to child <HAnimJoint name='r_ring1'/>
-
-                                                                                                                                                                    Shape(
-                                                                                                                                                                      geometry=LineSet(
-                                                                                                                                                                          vertexCount=(2), coord(
-                                                                                                                                                                            Coordinate(
-                                                                                                                                                                              point=(-0.1956,0.8019,-0.0794,-0.1956,0.7815,-0.0794))), color(
-                                                                                                                                                                            ColorRGBA(
-                                                                                                                                                                              USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                                                                                              HAnimJoint(
-                                                                                                                                                                name="r_metacarpophalangeal_4", DEF="hanim_r_metacarpophalangeal_4", center=(-0.1956,0.7815,-0.0794), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                                    HAnimSegment(
-                                                                                                                                                                      name="r_carpal_proximal_phalanx_4", DEF="hanim_r_carpal_proximal_phalanx_4", children=[#Visualization sphere for <HAnimJoint name='r_ring1'/> is placed within <HAnimSegment name='r_carpal_proximal_phalanx_4'/>
-
-                                                                                                                                                                          TouchSensor(
-                                                                                                                                                                            description="HAnimJoint r_ring1, HAnimSegment r_carpal_proximal_phalanx_4"),
-                                                                                                                                                                          Transform(
-                                                                                                                                                                            translation=(-0.1956,0.7815,-0.0794), children=[
-                                                                                                                                                                                Shape(
-                                                                                                                                                                                  USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='r_ring1'/> to child <HAnimJoint name='r_ring2'/>
-
-                                                                                                                                                                          Shape(
-                                                                                                                                                                            geometry=LineSet(
-                                                                                                                                                                                vertexCount=(2), coord(
-                                                                                                                                                                                  Coordinate(
-                                                                                                                                                                                    point=(-0.1956,0.7815,-0.0794,-0.1973,0.7287,-0.0777))), color(
-                                                                                                                                                                                  ColorRGBA(
-                                                                                                                                                                                    USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                                                                                                    HAnimJoint(
-                                                                                                                                                                      name="r_carpal_proximal_interphalangeal_4", DEF="hanim_r_carpal_proximal_interphalangeal_4", center=(-0.1973,0.7287,-0.0777), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                                          HAnimSegment(
-                                                                                                                                                                            name="r_carpal_middle_phalanx_4", DEF="hanim_r_carpal_middle_phalanx_4", children=[#Visualization sphere for <HAnimJoint name='r_ring2'/> is placed within <HAnimSegment name='r_carpal_middle_phalanx_4'/>
-
-                                                                                                                                                                                TouchSensor(
-                                                                                                                                                                                  description="HAnimJoint r_ring2, HAnimSegment r_carpal_middle_phalanx_4"),
-                                                                                                                                                                                Transform(
-                                                                                                                                                                                  translation=(-0.1973,0.7287,-0.0777), children=[
-                                                                                                                                                                                      Shape(
-                                                                                                                                                                                        USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='r_ring2'/> to child <HAnimJoint name='r_ring3'/>
-
-                                                                                                                                                                                Shape(
-                                                                                                                                                                                  geometry=LineSet(
-                                                                                                                                                                                      vertexCount=(2), coord(
-                                                                                                                                                                                        Coordinate(
-                                                                                                                                                                                          point=(-0.1973,0.7287,-0.0777,-0.1983,0.7045,-0.0767))), color(
-                                                                                                                                                                                        ColorRGBA(
-                                                                                                                                                                                          USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                                                                                                          HAnimJoint(
-                                                                                                                                                                            name="r_carpal_distal_interphalangeal_4", DEF="hanim_r_carpal_distal_interphalangeal_4", center=(-0.1983,0.7045,-0.0767), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                                                HAnimSegment(
-                                                                                                                                                                                  name="r_carpal_distal_phalanx_4", DEF="hanim_r_carpal_distal_phalanx_4", children=[#Visualization sphere for <HAnimJoint name='r_ring3'/> is placed within <HAnimSegment name='r_carpal_distal_phalanx_4'/>
-
-                                                                                                                                                                                      TouchSensor(
-                                                                                                                                                                                        description="HAnimJoint r_ring3, HAnimSegment r_carpal_distal_phalanx_4"),
-                                                                                                                                                                                      Transform(
-                                                                                                                                                                                        translation=(-0.1983,0.7045,-0.0767), children=[
-                                                                                                                                                                                            Shape(
-                                                                                                                                                                                              USE="HAnimJointShape")]),#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_ring3'/> to <HAnimSite name='r_ring_distal_tip'/>
-
-                                                                                                                                                                                      Shape(
-                                                                                                                                                                                        geometry=LineSet(
-                                                                                                                                                                                            vertexCount=(2), coord(
-                                                                                                                                                                                              Coordinate(
-                                                                                                                                                                                                point=(-0.1983,0.7045,-0.0767,-0.1934,0.6778,-0.0693))), color(
-                                                                                                                                                                                              ColorRGBA(
-                                                                                                                                                                                                USE="HAnimSiteLineColorRGBA")))),
-                                                                                                                                                                                      HAnimSite(
-                                                                                                                                                                                        name="r_carpal_distal_phalanx_4_pt", DEF="hanim_r_carpal_distal_phalanx_4_pt", translation=(-0.1934,0.6778,-0.0693), children=[#HAnimSite visualization shape
-
-                                                                                                                                                                                            TouchSensor(
-                                                                                                                                                                                              description="HAnimSite r_ring_distal_tip"),
-                                                                                                                                                                                            Shape(
-                                                                                                                                                                                              USE="HAnimSiteShape")])])])])])]),
-                                                                                                                                                        HAnimJoint(
-                                                                                                                                                          name="r_carpometacarpal_5", DEF="hanim_r_carpometacarpal_5", center=(-0.1925,0.8066,-0.1036), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                              HAnimSegment(
-                                                                                                                                                                name="r_metacarpal_5", DEF="hanim_r_metacarpal_5", children=[#Visualization sphere for <HAnimJoint name='r_pinky0'/> is placed within <HAnimSegment name='r_metacarpal_5'/>
-
-                                                                                                                                                                    TouchSensor(
-                                                                                                                                                                      description="HAnimJoint r_pinky0, HAnimSegment r_metacarpal_5"),
-                                                                                                                                                                    Transform(
-                                                                                                                                                                      translation=(-0.1925,0.8066,-0.1036), children=[
-                                                                                                                                                                          Shape(
-                                                                                                                                                                            USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='r_pinky0'/> to child <HAnimJoint name='r_pinky1'/>
-
-                                                                                                                                                                    Shape(
-                                                                                                                                                                      geometry=LineSet(
-                                                                                                                                                                          vertexCount=(2), coord(
-                                                                                                                                                                            Coordinate(
-                                                                                                                                                                              point=(-0.1925,0.8066,-0.1036,-0.1925,0.7866,-0.1036))), color(
-                                                                                                                                                                            ColorRGBA(
-                                                                                                                                                                              USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                                                                                              HAnimJoint(
-                                                                                                                                                                name="r_metacarpophalangeal_5", DEF="hanim_r_metacarpophalangeal_5", center=(-0.1925,0.7866,-0.1036), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                                    HAnimSegment(
-                                                                                                                                                                      name="r_carpal_proximal_phalanx_5", DEF="hanim_r_carpal_proximal_phalanx_5", children=[#Visualization sphere for <HAnimJoint name='r_pinky1'/> is placed within <HAnimSegment name='r_carpal_proximal_phalanx_5'/>
-
-                                                                                                                                                                          TouchSensor(
-                                                                                                                                                                            description="HAnimJoint r_pinky1, HAnimSegment r_carpal_proximal_phalanx_5"),
-                                                                                                                                                                          Transform(
-                                                                                                                                                                            translation=(-0.1925,0.7866,-0.1036), children=[
-                                                                                                                                                                                Shape(
-                                                                                                                                                                                  USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='r_pinky1'/> to child <HAnimJoint name='r_pinky2'/>
-
-                                                                                                                                                                          Shape(
-                                                                                                                                                                            geometry=LineSet(
-                                                                                                                                                                                vertexCount=(2), coord(
-                                                                                                                                                                                  Coordinate(
-                                                                                                                                                                                    point=(-0.1925,0.7866,-0.1036,-0.1938,0.7452,-0.1024))), color(
-                                                                                                                                                                                  ColorRGBA(
-                                                                                                                                                                                    USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                                                                                                    HAnimJoint(
-                                                                                                                                                                      name="r_carpal_proximal_interphalangeal_5", DEF="hanim_r_carpal_proximal_interphalangeal_5", center=(-0.1938,0.7452,-0.1024), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                                          HAnimSegment(
-                                                                                                                                                                            name="r_carpal_middle_phalanx_5", DEF="hanim_r_carpal_middle_phalanx_5", children=[#Visualization sphere for <HAnimJoint name='r_pinky2'/> is placed within <HAnimSegment name='r_carpal_middle_phalanx_5'/>
-
-                                                                                                                                                                                TouchSensor(
-                                                                                                                                                                                  description="HAnimJoint r_pinky2, HAnimSegment r_carpal_middle_phalanx_5"),
-                                                                                                                                                                                Transform(
-                                                                                                                                                                                  translation=(-0.1938,0.7452,-0.1024), children=[
-                                                                                                                                                                                      Shape(
-                                                                                                                                                                                        USE="HAnimJointShape")]),#HAnimSegment visualization line from current <HAnimJoint name='r_pinky2'/> to child <HAnimJoint name='r_pinky3'/>
-
-                                                                                                                                                                                Shape(
-                                                                                                                                                                                  geometry=LineSet(
-                                                                                                                                                                                      vertexCount=(2), coord(
-                                                                                                                                                                                        Coordinate(
-                                                                                                                                                                                          point=(-0.1938,0.7452,-0.1024,-0.1948,0.7277,-0.1017))), color(
-                                                                                                                                                                                        ColorRGBA(
-                                                                                                                                                                                          USE="HAnimSegmentLineColorRGBA"))))]),
-                                                                                                                                                                          HAnimJoint(
-                                                                                                                                                                            name="r_carpal_distal_interphalangeal_5", DEF="hanim_r_carpal_distal_interphalangeal_5", center=(-0.1948,0.7277,-0.1017), ulimit=(0,0,0), llimit=(0,0,0), children=[
-                                                                                                                                                                                HAnimSegment(
-                                                                                                                                                                                  name="r_carpal_distal_phalanx_5", DEF="hanim_r_carpal_distal_phalanx_5", children=[#Visualization sphere for <HAnimJoint name='r_pinky3'/> is placed within <HAnimSegment name='r_carpal_distal_phalanx_5'/>
-
-                                                                                                                                                                                      TouchSensor(
-                                                                                                                                                                                        description="HAnimJoint r_pinky3, HAnimSegment r_carpal_distal_phalanx_5"),
-                                                                                                                                                                                      Transform(
-                                                                                                                                                                                        translation=(-0.1948,0.7277,-0.1017), children=[
-                                                                                                                                                                                            Shape(
-                                                                                                                                                                                              USE="HAnimJointShape")]),#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_pinky3'/> to <HAnimSite name='r_pinky_distal_tip'/>
-
-                                                                                                                                                                                      Shape(
-                                                                                                                                                                                        geometry=LineSet(
-                                                                                                                                                                                            vertexCount=(2), coord(
-                                                                                                                                                                                              Coordinate(
-                                                                                                                                                                                                point=(-0.1948,0.7277,-0.1017,-0.1938,0.7035,-0.0949))), color(
-                                                                                                                                                                                              ColorRGBA(
-                                                                                                                                                                                                USE="HAnimSiteLineColorRGBA")))),
-                                                                                                                                                                                      HAnimSite(
-                                                                                                                                                                                        name="r_carpal_distal_phalanx_5_pt", DEF="hanim_r_carpal_distal_phalanx_5_pt", translation=(-0.1938,0.7035,-0.0949), children=[#HAnimSite visualization shape
-
-                                                                                                                                                                                            TouchSensor(
-                                                                                                                                                                                              description="HAnimSite r_pinky_distal_tip"),
-                                                                                                                                                                                            Shape(
-                                                                                                                                                                                              USE="HAnimSiteShape")])])])])])])])])])])])])])])])])])])])])])])])])])])])])])), viewpoints=(
-              HAnimSite(
-                name="l_inclined_view", DEF="hanim_l_inclined_view", rotation=(-0.113,0.993,0.0347,0.671), translation=(1.62,1.05,2.06), children=[#HAnimSite visualization shape
-
-                    TouchSensor(
-                      description="HAnimSite l_inclined_view"),
-                    Shape(
-                      USE="HAnimSiteShape"),
-                    Viewpoint(
-                      DEF="hanim_l_inclined_viewpoint", description="left inclined", position=(0,0,0)),#HAnimSite/Viewpoint visualization shape
-
-                    Anchor(
-                      description="HAnimSite hanim_l_inclined_view Viewpoint", url=["#hanim_l_inclined_viewpoint"], children=[
-                          LOD(
-                            forceTransitions=True, range=(0.04), children=[
-                                WorldInfo(
-                                  info=("hide diamond when close")),
-                                Shape(
-                                  USE="HAnimSiteViewpointShape")])])]),
-              HAnimSite(
-                name="r_inclined_view", DEF="hanim_r_inclined_view", rotation=(-0.113,-0.993,0.0347,0.671), translation=(-1.62,1.05,2.06), children=[#HAnimSite visualization shape
-
-                    TouchSensor(
-                      description="HAnimSite r_inclined_view"),
-                    Shape(
-                      USE="HAnimSiteShape"),
-                    Viewpoint(
-                      DEF="hanim_r_inclined_viewpoint", centerOfRotation=(0,0.9,0), description="right inclined", position=(0,0,0)),#HAnimSite/Viewpoint visualization shape
-
-                    Anchor(
-                      description="HAnimSite hanim_r_inclined_view Viewpoint", url=["#hanim_r_inclined_viewpoint"], children=[
-                          LOD(
-                            forceTransitions=True, range=(0.04), children=[
-                                WorldInfo(
-                                  info=("hide diamond when close")),
-                                Shape(
-                                  USE="HAnimSiteViewpointShape")])])]),
-              HAnimSite(
-                name="front_view", DEF="hanim_front_view", translation=(0,0.85,2.58), children=[#HAnimSite visualization shape
-
-                    TouchSensor(
-                      description="HAnimSite front_view"),
-                    Shape(
-                      USE="HAnimSiteShape"),
-                    Viewpoint(
-                      DEF="hanim_front_viewpoint", centerOfRotation=(0,0.9,0), description="front", position=(0,0,0)),#HAnimSite/Viewpoint visualization shape
-
-                    Anchor(
-                      description="HAnimSite hanim_front_view Viewpoint", url=["#hanim_front_viewpoint"], children=[
-                          LOD(
-                            forceTransitions=True, range=(0.04), children=[
-                                WorldInfo(
-                                  info=("hide diamond when close")),
-                                Shape(
-                                  USE="HAnimSiteViewpointShape")])])]),
-              HAnimSite(
-                name="back_view", DEF="hanim_back_view", rotation=(0,1,0,3.14), translation=(0,0.85,-2.58), children=[#HAnimSite visualization shape
-
-                    TouchSensor(
-                      description="HAnimSite back_view"),
-                    Shape(
-                      USE="HAnimSiteShape"),
-                    Viewpoint(
-                      DEF="hanim_back_viewpoint", centerOfRotation=(0,0.9,0), description="back", position=(0,0,0)),#HAnimSite/Viewpoint visualization shape
-
-                    Anchor(
-                      description="HAnimSite hanim_back_view Viewpoint", url=["#hanim_back_viewpoint"], children=[
-                          LOD(
-                            forceTransitions=True, range=(0.04), children=[
-                                WorldInfo(
-                                  info=("hide diamond when close")),
-                                Shape(
-                                  USE="HAnimSiteViewpointShape")])])]),
-              HAnimSite(
-                name="l_side_view", DEF="hanim_l_side_view", rotation=(0,1,0,1.5708), translation=(2.6,0.854,0), children=[#HAnimSite visualization shape
-
-                    TouchSensor(
-                      description="HAnimSite l_side_view"),
-                    Shape(
-                      USE="HAnimSiteShape"),
-                    Viewpoint(
-                      DEF="hanim_l_side_viewpoint", centerOfRotation=(0,0.9,0), description="left side", position=(0,0,0)),#HAnimSite/Viewpoint visualization shape
-
-                    Anchor(
-                      description="HAnimSite hanim_l_side_view Viewpoint", url=["#hanim_l_side_viewpoint"], children=[
-                          LOD(
-                            forceTransitions=True, range=(0.04), children=[
-                                WorldInfo(
-                                  info=("hide diamond when close")),
-                                Shape(
-                                  USE="HAnimSiteViewpointShape")])])]),
-              HAnimSite(
-                name="Top_view", DEF="hanim_Top_view", rotation=(1,0,0,-1.57), translation=(0,3.5,0), children=[#HAnimSite visualization shape
-
-                    TouchSensor(
-                      description="HAnimSite Top_view"),
-                    Shape(
-                      USE="HAnimSiteShape"),
-                    Viewpoint(
-                      DEF="hanim_Top_viewpoint", centerOfRotation=(0,0.9,0), description="Top", position=(0,0,0)),#HAnimSite/Viewpoint visualization shape
-
-                    Anchor(
-                      description="HAnimSite hanim_Top_view Viewpoint", url=["#hanim_Top_viewpoint"], children=[
-                          LOD(
-                            forceTransitions=True, range=(0.04), children=[
-                                WorldInfo(
-                                  info=("hide diamond when close")),
-                                Shape(
-                                  USE="HAnimSiteViewpointShape")])])]),
-              HAnimSite(
-                name="front_close_view", DEF="hanim_front_close_view", translation=(0,0.854,1.575), children=[#HAnimSite visualization shape
-
-                    TouchSensor(
-                      description="HAnimSite front_close_view"),
-                    Shape(
-                      USE="HAnimSiteShape"),
-                    Viewpoint(
-                      DEF="hanim_front_close_viewpoint", centerOfRotation=(0,0,1.575), description="front close", position=(0,0,0)),#HAnimSite/Viewpoint visualization shape
-
-                    Anchor(
-                      description="HAnimSite hanim_front_close_view Viewpoint", url=["#hanim_front_close_viewpoint"], children=[
-                          LOD(
-                            forceTransitions=True, range=(0.04), children=[
-                                WorldInfo(
-                                  info=("hide diamond when close")),
-                                Shape(
-                                  USE="HAnimSiteViewpointShape")])])]),
-              HAnimSite(
-                name="side_close_view", DEF="hanim_side_close_view", rotation=(0,1,0,1.5708), translation=(1.56,0.854,0), children=[#HAnimSite visualization shape
-
-                    TouchSensor(
-                      description="HAnimSite side_close_view"),
-                    Shape(
-                      USE="HAnimSiteShape"),
-                    Viewpoint(
-                      DEF="hanim_side_close_viewpoint", centerOfRotation=(1.6,0,0), description="side close", position=(0,0,0)),#HAnimSite/Viewpoint visualization shape
-
-                    Anchor(
-                      description="HAnimSite hanim_side_close_view Viewpoint", url=["#hanim_side_close_viewpoint"], children=[
-                          LOD(
-                            forceTransitions=True, range=(0.04), children=[
-                                WorldInfo(
-                                  info=("hide diamond when close")),
-                                Shape(
-                                  USE="HAnimSiteViewpointShape")])])]),
-              HAnimSite(
-                name="head_front_close_view", DEF="hanim_head_front_close_view", translation=(0,1.5,1), children=[#HAnimSite visualization shape
-
-                    TouchSensor(
-                      description="HAnimSite head_front_close_view"),
-                    Shape(
-                      USE="HAnimSiteShape"),
-                    Viewpoint(
-                      DEF="hanim_head_front_close_viewpoint", centerOfRotation=(0,0,1), description="head front close", position=(0,0,0)),#HAnimSite/Viewpoint visualization shape
-
-                    Anchor(
-                      description="HAnimSite hanim_head_front_close_view Viewpoint", url=["#hanim_head_front_close_viewpoint"], children=[
-                          LOD(
-                            forceTransitions=True, range=(0.04), children=[
-                                WorldInfo(
-                                  info=("hide diamond when close")),
-                                Shape(
-                                  USE="HAnimSiteViewpointShape")])])]),
-              HAnimSite(
-                name="chest_front_close_view", DEF="hanim_chest_front_close_view", translation=(0,1.2,1), children=[#HAnimSite visualization shape
-
-                    TouchSensor(
-                      description="HAnimSite chest_front_close_view"),
-                    Shape(
-                      USE="HAnimSiteShape"),
-                    Viewpoint(
-                      DEF="hanim_chest_front_close_viewpoint", centerOfRotation=(0,0,1), description="chest front close", position=(0,0,0)),#HAnimSite/Viewpoint visualization shape
-
-                    Anchor(
-                      description="HAnimSite hanim_chest_front_close_view Viewpoint", url=["#hanim_chest_front_close_viewpoint"], children=[
-                          LOD(
-                            forceTransitions=True, range=(0.04), children=[
-                                WorldInfo(
-                                  info=("hide diamond when close")),
-                                Shape(
-                                  USE="HAnimSiteViewpointShape")])])]),
-              HAnimSite(
-                name="pelvis_front_close_view", DEF="hanim_pelvis_front_close_view", translation=(0,0.8,1), children=[#HAnimSite visualization shape
-
-                    TouchSensor(
-                      description="HAnimSite pelvis_front_close_view"),
-                    Shape(
-                      USE="HAnimSiteShape"),
-                    Viewpoint(
-                      DEF="hanim_pelvis_front_close_viewpoint", centerOfRotation=(0,0,1), description="pelvis front close", position=(0,0,0)),#HAnimSite/Viewpoint visualization shape
-
-                    Anchor(
-                      description="HAnimSite hanim_pelvis_front_close_view Viewpoint", url=["#hanim_pelvis_front_close_viewpoint"], children=[
-                          LOD(
-                            forceTransitions=True, range=(0.04), children=[
-                                WorldInfo(
-                                  info=("hide diamond when close")),
-                                Shape(
-                                  USE="HAnimSiteViewpointShape")])])]),
-              HAnimSite(
-                name="knees_front_close_view", DEF="hanim_knees_front_close_view", translation=(0,0.4,1), children=[#HAnimSite visualization shape
-
-                    TouchSensor(
-                      description="HAnimSite knees_front_close_view"),
-                    Shape(
-                      USE="HAnimSiteShape"),
-                    Viewpoint(
-                      DEF="hanim_knees_front_close_viewpoint", centerOfRotation=(0,0.4,0), description="knees front close", position=(0,0,0)),#HAnimSite/Viewpoint visualization shape
-
-                    Anchor(
-                      description="HAnimSite hanim_knees_front_close_view Viewpoint", url=["#hanim_knees_front_close_viewpoint"], children=[
-                          LOD(
-                            forceTransitions=True, range=(0.04), children=[
-                                WorldInfo(
-                                  info=("hide diamond when close")),
-                                Shape(
-                                  USE="HAnimSiteViewpointShape")])])]),
-              HAnimSite(
-                name="feet_front_close_view", DEF="hanim_feet_front_close_view", translation=(0,0,1), children=[#HAnimSite visualization shape
-
-                    TouchSensor(
-                      description="HAnimSite feet_front_close_view"),
-                    Shape(
-                      USE="HAnimSiteShape"),
-                    Viewpoint(
-                      DEF="hanim_feet_front_close_viewpoint", description="feet front close", position=(0,0,0)),#HAnimSite/Viewpoint visualization shape
-
-                    Anchor(
-                      description="HAnimSite hanim_feet_front_close_view Viewpoint", url=["#hanim_feet_front_close_viewpoint"], children=[
-                          LOD(
-                            forceTransitions=True, range=(0.04), children=[
-                                WorldInfo(
-                                  info=("hide diamond when close")),
-                                Shape(
-                                  USE="HAnimSiteViewpointShape")])])]),
-              HAnimSite(
-                name="eye_level_view", DEF="hanim_eye_level_view", translation=(0,1.6332,0.0502), children=[#HAnimSite visualization shape
-
-                    TouchSensor(
-                      description="HAnimSite eye_level_view"),
-                    Shape(
-                      USE="HAnimSiteShape"),
-                    Viewpoint(
-                      DEF="hanim_eye_level_viewpoint", description="eye level looking forward", orientation=(0,1,0,3.141593), position=(0,0,0)),#HAnimSite/Viewpoint visualization shape
-
-                    Anchor(
-                      description="HAnimSite hanim_eye_level_view Viewpoint", url=["#hanim_eye_level_viewpoint"], children=[
-                          LOD(
-                            forceTransitions=True, range=(0.04), children=[
-                                WorldInfo(
-                                  info=("hide diamond when close")),
-                                Shape(
-                                  USE="HAnimSiteViewpointShape")])])]),
-              HAnimSite(
-                USE="hanim_l_eyeball_site_view"),
-              HAnimSite(
-                USE="hanim_r_eyeball_site_view"),
-              HAnimSite(
-                USE="hanim_l_hand_front_view"),
-              HAnimSite(
-                USE="hanim_r_hand_front_view")), joints=(
-              HAnimJoint(
-                USE="hanim_humanoid_root"),
-              HAnimJoint(
-                USE="hanim_sacroiliac"),
-              HAnimJoint(
-                USE="hanim_vl5"),
-              HAnimJoint(
-                USE="hanim_vl4"),
-              HAnimJoint(
-                USE="hanim_vl3"),
-              HAnimJoint(
-                USE="hanim_vl2"),
-              HAnimJoint(
-                USE="hanim_vl1"),
-              HAnimJoint(
-                USE="hanim_vt12"),
-              HAnimJoint(
-                USE="hanim_vt11"),
-              HAnimJoint(
-                USE="hanim_vt10"),
-              HAnimJoint(
-                USE="hanim_vt9"),
-              HAnimJoint(
-                USE="hanim_vt8"),
-              HAnimJoint(
-                USE="hanim_vt7"),
-              HAnimJoint(
-                USE="hanim_vt6"),
-              HAnimJoint(
-                USE="hanim_vt5"),
-              HAnimJoint(
-                USE="hanim_vt4"),
-              HAnimJoint(
-                USE="hanim_vt3"),
-              HAnimJoint(
-                USE="hanim_vt2"),
-              HAnimJoint(
-                USE="hanim_vt1"),
-              HAnimJoint(
-                USE="hanim_vc7"),
-              HAnimJoint(
-                USE="hanim_vc6"),
-              HAnimJoint(
-                USE="hanim_vc5"),
-              HAnimJoint(
-                USE="hanim_vc4"),
-              HAnimJoint(
-                USE="hanim_vc3"),
-              HAnimJoint(
-                USE="hanim_vc2"),
-              HAnimJoint(
-                USE="hanim_vc1"),
-              HAnimJoint(
-                USE="hanim_skullbase"),
-              HAnimJoint(
-                USE="hanim_temporomandibular"),
-              HAnimJoint(
-                USE="hanim_l_acromioclavicular"),
-              HAnimJoint(
-                USE="hanim_r_acromioclavicular"),
-              HAnimJoint(
-                USE="hanim_l_carpal_distal_interphalangeal_2"),
-              HAnimJoint(
-                USE="hanim_r_carpal_distal_interphalangeal_2"),
-              HAnimJoint(
-                USE="hanim_l_carpal_distal_interphalangeal_3"),
-              HAnimJoint(
-                USE="hanim_r_carpal_distal_interphalangeal_3"),
-              HAnimJoint(
-                USE="hanim_l_carpal_distal_interphalangeal_4"),
-              HAnimJoint(
-                USE="hanim_r_carpal_distal_interphalangeal_4"),
-              HAnimJoint(
-                USE="hanim_l_carpal_distal_interphalangeal_5"),
-              HAnimJoint(
-                USE="hanim_r_carpal_distal_interphalangeal_5"),
-              HAnimJoint(
-                USE="hanim_l_carpal_interphalangeal_1"),
-              HAnimJoint(
-                USE="hanim_r_carpal_interphalangeal_1"),
-              HAnimJoint(
-                USE="hanim_l_carpal_proximal_interphalangeal_2"),
-              HAnimJoint(
-                USE="hanim_r_carpal_proximal_interphalangeal_2"),
-              HAnimJoint(
-                USE="hanim_l_carpal_proximal_interphalangeal_3"),
-              HAnimJoint(
-                USE="hanim_r_carpal_proximal_interphalangeal_3"),
-              HAnimJoint(
-                USE="hanim_l_carpal_proximal_interphalangeal_4"),
-              HAnimJoint(
-                USE="hanim_r_carpal_proximal_interphalangeal_4"),
-              HAnimJoint(
-                USE="hanim_l_carpal_proximal_interphalangeal_5"),
-              HAnimJoint(
-                USE="hanim_r_carpal_proximal_interphalangeal_5"),
-              HAnimJoint(
-                USE="hanim_l_carpometacarpal_1"),
-              HAnimJoint(
-                USE="hanim_r_carpometacarpal_1"),
-              HAnimJoint(
-                USE="hanim_l_carpometacarpal_2"),
-              HAnimJoint(
-                USE="hanim_r_carpometacarpal_2"),
-              HAnimJoint(
-                USE="hanim_l_carpometacarpal_3"),
-              HAnimJoint(
-                USE="hanim_r_carpometacarpal_3"),
-              HAnimJoint(
-                USE="hanim_l_carpometacarpal_4"),
-              HAnimJoint(
-                USE="hanim_r_carpometacarpal_4"),
-              HAnimJoint(
-                USE="hanim_l_carpometacarpal_5"),
-              HAnimJoint(
-                USE="hanim_r_carpometacarpal_5"),
-              HAnimJoint(
-                USE="hanim_l_elbow"),
-              HAnimJoint(
-                USE="hanim_r_elbow"),
-              HAnimJoint(
-                USE="hanim_l_eyeball_joint"),
-              HAnimJoint(
-                USE="hanim_r_eyeball_joint"),
-              HAnimJoint(
-                USE="hanim_l_eyebrow_joint"),
-              HAnimJoint(
-                USE="hanim_r_eyebrow_joint"),
-              HAnimJoint(
-                USE="hanim_l_eyelid_joint"),
-              HAnimJoint(
-                USE="hanim_r_eyelid_joint"),
-              HAnimJoint(
-                USE="hanim_l_hip"),
-              HAnimJoint(
-                USE="hanim_r_hip"),
-              HAnimJoint(
-                USE="hanim_l_knee"),
-              HAnimJoint(
-                USE="hanim_r_knee"),
-              HAnimJoint(
-                USE="hanim_l_metacarpophalangeal_1"),
-              HAnimJoint(
-                USE="hanim_r_metacarpophalangeal_1"),
-              HAnimJoint(
-                USE="hanim_l_metacarpophalangeal_2"),
-              HAnimJoint(
-                USE="hanim_r_metacarpophalangeal_2"),
-              HAnimJoint(
-                USE="hanim_l_metacarpophalangeal_3"),
-              HAnimJoint(
-                USE="hanim_r_metacarpophalangeal_3"),
-              HAnimJoint(
-                USE="hanim_l_metacarpophalangeal_4"),
-              HAnimJoint(
-                USE="hanim_r_metacarpophalangeal_4"),
-              HAnimJoint(
-                USE="hanim_l_metacarpophalangeal_5"),
-              HAnimJoint(
-                USE="hanim_r_metacarpophalangeal_5"),
-              HAnimJoint(
-                USE="hanim_l_metatarsophalangeal_2"),
-              HAnimJoint(
-                USE="hanim_r_metatarsophalangeal_2"),
-              HAnimJoint(
-                USE="hanim_l_radiocarpal"),
-              HAnimJoint(
-                USE="hanim_r_radiocarpal"),
-              HAnimJoint(
-                USE="hanim_l_shoulder"),
-              HAnimJoint(
-                USE="hanim_r_shoulder"),
-              HAnimJoint(
-                USE="hanim_l_sternoclavicular"),
-              HAnimJoint(
-                USE="hanim_r_sternoclavicular"),
-              HAnimJoint(
-                USE="hanim_l_talocrural"),
-              HAnimJoint(
-                USE="hanim_r_talocrural"),
-              HAnimJoint(
-                USE="hanim_l_tarsal_distal_interphalangeal_2"),
-              HAnimJoint(
-                USE="hanim_r_tarsal_distal_interphalangeal_2"),
-              HAnimJoint(
-                USE="hanim_l_tarsometatarsal_2"),
-              HAnimJoint(
-                USE="hanim_r_tarsometatarsal_2")), segments=(
-              HAnimSegment(
-                USE="hanim_pelvis"),
-              HAnimSegment(
-                USE="hanim_skull"),
-              HAnimSegment(
-                USE="hanim_jaw"),
-              HAnimSegment(
-                USE="hanim_c1"),
-              HAnimSegment(
-                USE="hanim_c2"),
-              HAnimSegment(
-                USE="hanim_c3"),
-              HAnimSegment(
-                USE="hanim_c4"),
-              HAnimSegment(
-                USE="hanim_c5"),
-              HAnimSegment(
-                USE="hanim_c6"),
-              HAnimSegment(
-                USE="hanim_c7"),
-              HAnimSegment(
-                USE="hanim_t1"),
-              HAnimSegment(
-                USE="hanim_t2"),
-              HAnimSegment(
-                USE="hanim_t3"),
-              HAnimSegment(
-                USE="hanim_t4"),
-              HAnimSegment(
-                USE="hanim_t5"),
-              HAnimSegment(
-                USE="hanim_t6"),
-              HAnimSegment(
-                USE="hanim_t7"),
-              HAnimSegment(
-                USE="hanim_t8"),
-              HAnimSegment(
-                USE="hanim_t9"),
-              HAnimSegment(
-                USE="hanim_t10"),
-              HAnimSegment(
-                USE="hanim_t11"),
-              HAnimSegment(
-                USE="hanim_t12"),
-              HAnimSegment(
-                USE="hanim_l1"),
-              HAnimSegment(
-                USE="hanim_l2"),
-              HAnimSegment(
-                USE="hanim_l3"),
-              HAnimSegment(
-                USE="hanim_l4"),
-              HAnimSegment(
-                USE="hanim_l5"),
-              HAnimSegment(
-                USE="hanim_sacrum"),
-              HAnimSegment(
-                USE="hanim_l_calf"),
-              HAnimSegment(
-                USE="hanim_r_calf"),
-              HAnimSegment(
-                USE="hanim_l_carpal"),
-              HAnimSegment(
-                USE="hanim_r_carpal"),
-              HAnimSegment(
-                USE="hanim_l_carpal_distal_phalanx_1"),
-              HAnimSegment(
-                USE="hanim_r_carpal_distal_phalanx_1"),
-              HAnimSegment(
-                USE="hanim_l_carpal_distal_phalanx_2"),
-              HAnimSegment(
-                USE="hanim_r_carpal_distal_phalanx_2"),
-              HAnimSegment(
-                USE="hanim_l_carpal_distal_phalanx_3"),
-              HAnimSegment(
-                USE="hanim_r_carpal_distal_phalanx_3"),
-              HAnimSegment(
-                USE="hanim_l_carpal_distal_phalanx_4"),
-              HAnimSegment(
-                USE="hanim_r_carpal_distal_phalanx_4"),
-              HAnimSegment(
-                USE="hanim_l_carpal_distal_phalanx_5"),
-              HAnimSegment(
-                USE="hanim_r_carpal_distal_phalanx_5"),
-              HAnimSegment(
-                USE="hanim_l_carpal_middle_phalanx_2"),
-              HAnimSegment(
-                USE="hanim_r_carpal_middle_phalanx_2"),
-              HAnimSegment(
-                USE="hanim_l_carpal_middle_phalanx_3"),
-              HAnimSegment(
-                USE="hanim_r_carpal_middle_phalanx_3"),
-              HAnimSegment(
-                USE="hanim_l_carpal_middle_phalanx_4"),
-              HAnimSegment(
-                USE="hanim_r_carpal_middle_phalanx_4"),
-              HAnimSegment(
-                USE="hanim_l_carpal_middle_phalanx_5"),
-              HAnimSegment(
-                USE="hanim_r_carpal_middle_phalanx_5"),
-              HAnimSegment(
-                USE="hanim_l_carpal_proximal_phalanx_1"),
-              HAnimSegment(
-                USE="hanim_r_carpal_proximal_phalanx_1"),
-              HAnimSegment(
-                USE="hanim_l_carpal_proximal_phalanx_2"),
-              HAnimSegment(
-                USE="hanim_r_carpal_proximal_phalanx_2"),
-              HAnimSegment(
-                USE="hanim_l_carpal_proximal_phalanx_3"),
-              HAnimSegment(
-                USE="hanim_r_carpal_proximal_phalanx_3"),
-              HAnimSegment(
-                USE="hanim_l_carpal_proximal_phalanx_4"),
-              HAnimSegment(
-                USE="hanim_r_carpal_proximal_phalanx_4"),
-              HAnimSegment(
-                USE="hanim_l_carpal_proximal_phalanx_5"),
-              HAnimSegment(
-                USE="hanim_r_carpal_proximal_phalanx_5"),
-              HAnimSegment(
-                USE="hanim_l_clavicle"),
-              HAnimSegment(
-                USE="hanim_r_clavicle"),
-              HAnimSegment(
-                USE="hanim_l_eyeball"),
-              HAnimSegment(
-                USE="hanim_r_eyeball"),
-              HAnimSegment(
-                USE="hanim_l_eyebrow"),
-              HAnimSegment(
-                USE="hanim_r_eyebrow"),
-              HAnimSegment(
-                USE="hanim_l_eyelid"),
-              HAnimSegment(
-                USE="hanim_r_eyelid"),
-              HAnimSegment(
-                USE="hanim_l_forearm"),
-              HAnimSegment(
-                USE="hanim_r_forearm"),
-              HAnimSegment(
-                USE="hanim_l_metacarpal_1"),
-              HAnimSegment(
-                USE="hanim_r_metacarpal_1"),
-              HAnimSegment(
-                USE="hanim_l_metacarpal_2"),
-              HAnimSegment(
-                USE="hanim_r_metacarpal_2"),
-              HAnimSegment(
-                USE="hanim_l_metacarpal_3"),
-              HAnimSegment(
-                USE="hanim_r_metacarpal_3"),
-              HAnimSegment(
-                USE="hanim_l_metacarpal_4"),
-              HAnimSegment(
-                USE="hanim_r_metacarpal_4"),
-              HAnimSegment(
-                USE="hanim_l_metacarpal_5"),
-              HAnimSegment(
-                USE="hanim_r_metacarpal_5"),
-              HAnimSegment(
-                USE="hanim_l_metatarsal_2"),
-              HAnimSegment(
-                USE="hanim_r_metatarsal_2"),
-              HAnimSegment(
-                USE="hanim_l_scapula"),
-              HAnimSegment(
-                USE="hanim_r_scapula"),
-              HAnimSegment(
-                USE="hanim_l_talus"),
-              HAnimSegment(
-                USE="hanim_r_talus"),
-              HAnimSegment(
-                USE="hanim_l_tarsal_distal_phalanx_2"),
-              HAnimSegment(
-                USE="hanim_r_tarsal_distal_phalanx_2"),
-              HAnimSegment(
-                USE="hanim_l_tarsal_proximal_phalanx_2"),
-              HAnimSegment(
-                USE="hanim_r_tarsal_proximal_phalanx_2"),
-              HAnimSegment(
-                USE="hanim_l_thigh"),
-              HAnimSegment(
-                USE="hanim_r_thigh"),
-              HAnimSegment(
-                USE="hanim_l_upperarm"),
-              HAnimSegment(
-                USE="hanim_r_upperarm")), sites=(
-              HAnimSite(
-                USE="hanim_crotch_pt"),
-              HAnimSite(
-                USE="hanim_skull_vertex_pt"),
-              HAnimSite(
-                USE="hanim_sellion_pt"),
-              HAnimSite(
-                USE="hanim_supramenton_pt"),
-              HAnimSite(
-                USE="hanim_nuchale_pt"),
-              HAnimSite(
-                USE="hanim_suprasternale_pt"),
-              HAnimSite(
-                USE="hanim_cervicale_pt"),
-              HAnimSite(
-                USE="hanim_substernale_pt"),
-              HAnimSite(
-                USE="hanim_rib10_midspine_pt"),
-              HAnimSite(
-                USE="hanim_waist_preferred_posterior_pt"),
-              HAnimSite(
-                USE="hanim_navel_pt"),
-              HAnimSite(
-                USE="hanim_l_acromion_pt"),
-              HAnimSite(
-                USE="hanim_r_acromion_pt"),
-              HAnimSite(
-                USE="hanim_r_asis_pt"),
-              HAnimSite(
-                USE="hanim_l_asis_pt"),
-              HAnimSite(
-                USE="hanim_l_axilla_distal_pt"),
-              HAnimSite(
-                USE="hanim_r_axilla_distal_pt"),
-              HAnimSite(
-                USE="hanim_l_axilla_proximal_pt"),
-              HAnimSite(
-                USE="hanim_r_axilla_proximal_pt"),
-              HAnimSite(
-                USE="hanim_l_calcaneus_posterior_pt"),
-              HAnimSite(
-                USE="hanim_r_calcaneus_posterior_pt"),
-              HAnimSite(
-                USE="hanim_l_carpal_distal_phalanx_1_pt"),
-              HAnimSite(
-                USE="hanim_r_carpal_distal_phalanx_1_pt"),
-              HAnimSite(
-                USE="hanim_l_carpal_distal_phalanx_2_pt"),
-              HAnimSite(
-                USE="hanim_r_carpal_distal_phalanx_2_pt"),
-              HAnimSite(
-                USE="hanim_l_carpal_distal_phalanx_3_pt"),
-              HAnimSite(
-                USE="hanim_r_carpal_distal_phalanx_3_pt"),
-              HAnimSite(
-                USE="hanim_l_carpal_distal_phalanx_4_pt"),
-              HAnimSite(
-                USE="hanim_r_carpal_distal_phalanx_4_pt"),
-              HAnimSite(
-                USE="hanim_l_carpal_distal_phalanx_5_pt"),
-              HAnimSite(
-                USE="hanim_r_carpal_distal_phalanx_5_pt"),
-              HAnimSite(
-                USE="hanim_l_clavicle_pt"),
-              HAnimSite(
-                USE="hanim_r_clavicle_pt"),
-              HAnimSite(
-                USE="hanim_l_dactylion_pt"),
-              HAnimSite(
-                USE="hanim_r_dactylion_pt"),
-              HAnimSite(
-                USE="hanim_l_femoral_lateral_epicondyle_pt"),
-              HAnimSite(
-                USE="hanim_r_femoral_lateral_epicondyle_pt"),
-              HAnimSite(
-                USE="hanim_l_femoral_medial_epicondyle_pt"),
-              HAnimSite(
-                USE="hanim_r_femoral_medial_epicondyle_pt"),
-              HAnimSite(
-                USE="hanim_l_forefoot_tip_pt"),
-              HAnimSite(
-                USE="hanim_r_forefoot_tip_pt"),
-              HAnimSite(
-                USE="hanim_r_gonion_pt"),
-              HAnimSite(
-                USE="hanim_l_gonion_pt"),
-              HAnimSite(
-                USE="hanim_l_humeral_lateral_epicondyle_pt"),
-              HAnimSite(
-                USE="hanim_r_humeral_lateral_epicondyle_pt"),
-              HAnimSite(
-                USE="hanim_l_humeral_medial_epicondyle_pt"),
-              HAnimSite(
-                USE="hanim_r_humeral_medial_epicondyle_pt"),
-              HAnimSite(
-                USE="hanim_r_iliocristale_pt"),
-              HAnimSite(
-                USE="hanim_l_iliocristale_pt"),
-              HAnimSite(
-                USE="hanim_r_infraorbitale_pt"),
-              HAnimSite(
-                USE="hanim_l_infraorbitale_pt"),
-              HAnimSite(
-                USE="hanim_l_knee_crease_pt"),
-              HAnimSite(
-                USE="hanim_r_knee_crease_pt"),
-              HAnimSite(
-                USE="hanim_l_lateral_malleolus_pt"),
-              HAnimSite(
-                USE="hanim_r_lateral_malleolus_pt"),
-              HAnimSite(
-                USE="hanim_l_medial_malleolus_pt"),
-              HAnimSite(
-                USE="hanim_r_medial_malleolus_pt"),
-              HAnimSite(
-                USE="hanim_l_metacarpal_phalanx_2_pt"),
-              HAnimSite(
-                USE="hanim_r_metacarpal_phalanx_2_pt"),
-              HAnimSite(
-                USE="hanim_l_metacarpal_phalanx_5_pt"),
-              HAnimSite(
-                USE="hanim_r_metacarpal_phalanx_5_pt"),
-              HAnimSite(
-                USE="hanim_l_metatarsal_phalanx_1_pt"),
-              HAnimSite(
-                USE="hanim_r_metatarsal_phalanx_1_pt"),
-              HAnimSite(
-                USE="hanim_l_metatarsal_phalanx_5_pt"),
-              HAnimSite(
-                USE="hanim_r_metatarsal_phalanx_5_pt"),
-              HAnimSite(
-                USE="hanim_r_neck_base_pt"),
-              HAnimSite(
-                USE="hanim_l_neck_base_pt"),
-              HAnimSite(
-                USE="hanim_l_olecranon_pt"),
-              HAnimSite(
-                USE="hanim_r_olecranon_pt"),
-              HAnimSite(
-                USE="hanim_r_psis_pt"),
-              HAnimSite(
-                USE="hanim_l_psis_pt"),
-              HAnimSite(
-                USE="hanim_l_radial_styloid_pt"),
-              HAnimSite(
-                USE="hanim_r_radial_styloid_pt"),
-              HAnimSite(
-                USE="hanim_l_radiale_pt"),
-              HAnimSite(
-                USE="hanim_r_radiale_pt"),
-              HAnimSite(
-                USE="hanim_r_rib10_pt"),
-              HAnimSite(
-                USE="hanim_l_rib10_pt"),
-              HAnimSite(
-                USE="hanim_temporomandibular_l_site_pt"),
-              HAnimSite(
-                USE="hanim_temporomandibular_r_site_pt"),
-              HAnimSite(
-                USE="hanim_l_sphyrion_pt"),
-              HAnimSite(
-                USE="hanim_r_sphyrion_pt"),
-              HAnimSite(
-                USE="hanim_l_tarsal_distal_phalanx_2_pt"),
-              HAnimSite(
-                USE="hanim_r_tarsal_distal_phalanx_2_pt"),
-              HAnimSite(
-                USE="hanim_r_thelion_pt"),
-              HAnimSite(
-                USE="hanim_l_thelion_pt"),
-              HAnimSite(
-                USE="hanim_r_tragion_pt"),
-              HAnimSite(
-                USE="hanim_l_tragion_pt"),
-              HAnimSite(
-                USE="hanim_r_trochanterion_pt"),
-              HAnimSite(
-                USE="hanim_l_trochanterion_pt"),
-              HAnimSite(
-                USE="hanim_l_ulnar_styloid_pt"),
-              HAnimSite(
-                USE="hanim_r_ulnar_styloid_pt")))]))
+TouchSensor(description="HAnimSite r_iliocristale_pt"),
+Shape(DEF="HAnimSiteShape", 
+geometry=
+IndexedFaceSet(DEF="DiamondIFS", coordIndex=[int(0),int(1),int(2),int(-1),int(0),int(2),int(3),int(-1),int(0),int(3),int(4),int(-1),int(0),int(4),int(1),int(-1),int(5),int(2),int(1),int(-1),int(5),int(3),int(2),int(-1),int(5),int(4),int(3),int(-1),int(5),int(1),int(4),int(-1)], creaseAngle=0.5, solid=False, 
+coord=
+Coordinate(point=[(0,0.008,0),(-0.008,0,0),(0,0,0.008),(0.008,0,0),(0,0,-0.008),(0,-0.008,0)])), 
+appearance=
+Appearance(
+material=
+Material(diffuseColor=((1,0,0))))),]),
+HAnimSite(name="r_trochanterion_pt", DEF="hanim_r_trochanterion_pt", translation=((-0.1689,0.8419,0.0352)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite r_trochanterion_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="l_iliocristale_pt", DEF="hanim_l_iliocristale_pt", translation=((0.1612,1.0537,0.0008)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_iliocristale_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="l_trochanterion_pt", DEF="hanim_l_trochanterion_pt", translation=((0.1677,0.8336,0.0303)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_trochanterion_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="r_asis_pt", DEF="hanim_r_asis_pt", translation=((-0.0887,1.0021,0.1112)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite r_asis_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="l_asis_pt", DEF="hanim_l_asis_pt", translation=((0.0925,0.9983,0.1052)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_asis_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="r_psis_pt", DEF="hanim_r_psis_pt", translation=((-0.0716,1.019,-0.1138)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite r_psis_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="l_psis_pt", DEF="hanim_l_psis_pt", translation=((0.0774,1.019,-0.1151)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_psis_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="crotch_pt", DEF="hanim_crotch_pt", translation=((0.0034,0.8266,0.0257)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite crotch_pt"),
+Shape(USE="HAnimSiteShape"),]),]),
+HAnimJoint(name="l_hip", DEF="hanim_l_hip", center=((0.0961,0.9124,-0.0001)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="l_thigh", DEF="hanim_l_thigh", children=[
+#Visualization sphere for <HAnimJoint name='l_hip'/> is placed within <HAnimSegment name='l_thigh'/>
+
+TouchSensor(description="HAnimJoint l_hip, HAnimSegment l_thigh"),
+Transform(translation=((0.0961,0.9124,-0.0001)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='l_hip'/> to child <HAnimJoint name='l_knee'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0961,0.9124,-0.0001),(0.104,0.4867,0.0308)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_hip'/> to <HAnimSite name='l_knee_crease_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0961,0.9124,-0.0001),(0.0993,0.4881,-0.0309)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_hip'/> to <HAnimSite name='l_femoral_lateral_epicn_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0961,0.9124,-0.0001),(0.1598,0.4967,0.0297)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_hip'/> to <HAnimSite name='l_femoral_medial_epicn_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0961,0.9124,-0.0001),(0.0398,0.4946,0.0303)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+HAnimSite(name="l_knee_crease_pt", DEF="hanim_l_knee_crease_pt", translation=((0.0993,0.4881,-0.0309)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_knee_crease_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="l_femoral_lateral_epicondyle_pt", DEF="hanim_l_femoral_lateral_epicondyle_pt", translation=((0.1598,0.4967,0.0297)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_femoral_lateral_epicn_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="l_femoral_medial_epicondyle_pt", DEF="hanim_l_femoral_medial_epicondyle_pt", translation=((0.0398,0.4946,0.0303)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_femoral_medial_epicn_pt"),
+Shape(USE="HAnimSiteShape"),]),]),
+HAnimJoint(name="l_knee", DEF="hanim_l_knee", center=((0.104,0.4867,0.0308)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="l_calf", DEF="hanim_l_calf", children=[
+#Visualization sphere for <HAnimJoint name='l_knee'/> is placed within <HAnimSegment name='l_calf'/>
+
+TouchSensor(description="HAnimJoint l_knee, HAnimSegment l_calf"),
+Transform(translation=((0.104,0.4867,0.0308)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='l_knee'/> to child <HAnimJoint name='l_talocrural'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.104,0.4867,0.0308),(0.1101,0.0656,-0.0736)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="l_talocrural", DEF="hanim_l_talocrural", center=((0.1101,0.0656,-0.0736)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="l_talus", DEF="hanim_l_talus", children=[
+#Visualization sphere for <HAnimJoint name='l_talocrural'/> is placed within <HAnimSegment name='l_talus'/>
+
+TouchSensor(description="HAnimJoint l_talocrural, HAnimSegment l_talus"),
+Transform(translation=((0.1101,0.0656,-0.0736)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='l_talocrural'/> to child <HAnimJoint name='l_tarsometatarsal_2'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.1101,0.0656,-0.0736),(0.1086,0.0001,-0.0368)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_talocrural'/> to <HAnimSite name='l_lateral_malleolus_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.1101,0.0656,-0.0736),(0.1308,0.0597,-0.1032)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_talocrural'/> to <HAnimSite name='l_medial_malleolus_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.1101,0.0656,-0.0736),(0.089,0.0716,-0.0881)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_talocrural'/> to <HAnimSite name='l_sphyrion_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.1101,0.0656,-0.0736),(0.089,0.0575,-0.0943)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_talocrural'/> to <HAnimSite name='l_calcaneous_post_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.1101,0.0656,-0.0736),(0.0974,0.0259,-0.1171)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+HAnimSite(name="l_lateral_malleolus_pt", DEF="hanim_l_lateral_malleolus_pt", translation=((0.1308,0.0597,-0.1032)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_lateral_malleolus_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="l_medial_malleolus_pt", DEF="hanim_l_medial_malleolus_pt", translation=((0.089,0.0716,-0.0881)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_medial_malleolus_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="l_sphyrion_pt", DEF="hanim_l_sphyrion_pt", translation=((0.089,0.0575,-0.0943)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_sphyrion_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="l_calcaneus_posterior_pt", DEF="hanim_l_calcaneus_posterior_pt", translation=((0.0974,0.0259,-0.1171)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_calcaneous_post_pt"),
+Shape(USE="HAnimSiteShape"),]),]),
+HAnimJoint(name="l_tarsometatarsal_2", DEF="hanim_l_tarsometatarsal_2", center=((0.1086,0.0001,-0.0368)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="l_metatarsal_2", DEF="hanim_l_metatarsal_2", children=[
+#Visualization sphere for <HAnimJoint name='l_tarsometatarsal_2'/> is placed within <HAnimSegment name='l_metatarsal_2'/>
+
+TouchSensor(description="HAnimJoint l_tarsometatarsal_2, HAnimSegment l_metatarsal_2"),
+Transform(translation=((0.1086,0.0001,-0.0368)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='l_tarsometatarsal_2'/> to child <HAnimJoint name='l_metatarsophalangeal_2'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.1086,0.0001,-0.0368),(0.1086,0.0001,0.0368)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="l_metatarsophalangeal_2", DEF="hanim_l_metatarsophalangeal_2", center=((0.1086,0.0001,0.0368)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="l_tarsal_proximal_phalanx_2", DEF="hanim_l_tarsal_proximal_phalanx_2", children=[
+#Visualization sphere for <HAnimJoint name='l_metatarsophalangeal_2'/> is placed within <HAnimSegment name='l_tarsal_proximal_phalanx_2'/>
+
+TouchSensor(description="HAnimJoint l_metatarsophalangeal_2, HAnimSegment l_tarsal_proximal_phalanx_2"),
+Transform(translation=((0.1086,0.0001,0.0368)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='l_metatarsophalangeal_2'/> to child <HAnimJoint name='l_tarsal_distal_interphalangeal_2'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.1086,0.0001,0.0368),(0.1086,0,0.0762)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_metatarsophalangeal_2'/> to <HAnimSite name='l_metatarsal_pha1_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.1086,0.0001,0.0368),(0.0816,0.0232,0.0106)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+HAnimSite(name="l_metatarsal_phalanx_1_pt", DEF="hanim_l_metatarsal_phalanx_1_pt", translation=((0.0816,0.0232,0.0106)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_metatarsal_pha1_pt"),
+Shape(USE="HAnimSiteShape"),]),]),
+HAnimJoint(name="l_tarsal_distal_interphalangeal_2", DEF="hanim_l_tarsal_distal_interphalangeal_2", center=((0.1086,0,0.0762)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="l_tarsal_distal_phalanx_2", DEF="hanim_l_tarsal_distal_phalanx_2", children=[
+#Visualization sphere for <HAnimJoint name='l_tarsal_distal_interphalangeal_2'/> is placed within <HAnimSegment name='l_tarsal_distal_phalanx_2'/>
+
+TouchSensor(description="HAnimJoint l_tarsal_distal_interphalangeal_2, HAnimSegment l_tarsal_distal_phalanx_2"),
+Transform(translation=((0.1086,0,0.0762)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_tarsal_distal_interphalangeal_2'/> to <HAnimSite name='l_forefoot_tip'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.1086,0,0.0762),(0.1354,0.0016,0.1476)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_tarsal_distal_interphalangeal_2'/> to <HAnimSite name='l_metatarsal_pha5_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.1086,0,0.0762),(0.1825,0.007,0.0928)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_tarsal_distal_interphalangeal_2'/> to <HAnimSite name='l_digit2_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.1086,0,0.0762),(0.1195,0.0079,0.1433)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+HAnimSite(name="l_forefoot_tip_pt", DEF="hanim_l_forefoot_tip_pt", translation=((0.1354,0.0016,0.1476)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_forefoot_tip"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="l_metatarsal_phalanx_5_pt", DEF="hanim_l_metatarsal_phalanx_5_pt", translation=((0.1825,0.007,0.0928)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_metatarsal_pha5_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="l_tarsal_distal_phalanx_2_pt", DEF="hanim_l_tarsal_distal_phalanx_2_pt", translation=((0.1195,0.0079,0.1433)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_digit2_pt"),
+Shape(USE="HAnimSiteShape"),]),])])])])])])]),
+HAnimJoint(name="r_hip", DEF="hanim_r_hip", center=((-0.0961,0.9124,-0.0001)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="r_thigh", DEF="hanim_r_thigh", children=[
+#Visualization sphere for <HAnimJoint name='r_hip'/> is placed within <HAnimSegment name='r_thigh'/>
+
+TouchSensor(description="HAnimJoint r_hip, HAnimSegment r_thigh"),
+Transform(translation=((-0.0961,0.9124,-0.0001)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='r_hip'/> to child <HAnimJoint name='r_knee'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.0961,0.9124,-0.0001),(-0.104,0.4867,0.0308)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_hip'/> to <HAnimSite name='r_knee_crease_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.0961,0.9124,-0.0001),(-0.0825,0.4932,-0.0326)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_hip'/> to <HAnimSite name='r_femoral_lateral_epicn_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.0961,0.9124,-0.0001),(-0.1421,0.4992,0.031)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_hip'/> to <HAnimSite name='r_femoral_medial_epicn_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.0961,0.9124,-0.0001),(-0.0221,0.5014,0.0289)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+HAnimSite(name="r_knee_crease_pt", DEF="hanim_r_knee_crease_pt", translation=((-0.0825,0.4932,-0.0326)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite r_knee_crease_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="r_femoral_lateral_epicondyle_pt", DEF="hanim_r_femoral_lateral_epicondyle_pt", translation=((-0.1421,0.4992,0.031)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite r_femoral_lateral_epicn_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="r_femoral_medial_epicondyle_pt", DEF="hanim_r_femoral_medial_epicondyle_pt", translation=((-0.0221,0.5014,0.0289)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite r_femoral_medial_epicn_pt"),
+Shape(USE="HAnimSiteShape"),]),]),
+HAnimJoint(name="r_knee", DEF="hanim_r_knee", center=((-0.104,0.4867,0.0308)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="r_calf", DEF="hanim_r_calf", children=[
+#Visualization sphere for <HAnimJoint name='r_knee'/> is placed within <HAnimSegment name='r_calf'/>
+
+TouchSensor(description="HAnimJoint r_knee, HAnimSegment r_calf"),
+Transform(translation=((-0.104,0.4867,0.0308)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='r_knee'/> to child <HAnimJoint name='r_talocrural'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.104,0.4867,0.0308),(-0.1101,0.0656,-0.0736)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="r_talocrural", DEF="hanim_r_talocrural", center=((-0.1101,0.0656,-0.0736)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="r_talus", DEF="hanim_r_talus", children=[
+#Visualization sphere for <HAnimJoint name='r_talocrural'/> is placed within <HAnimSegment name='r_talus'/>
+
+TouchSensor(description="HAnimJoint r_talocrural, HAnimSegment r_talus"),
+Transform(translation=((-0.1101,0.0656,-0.0736)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='r_talocrural'/> to child <HAnimJoint name='r_tarsometatarsal_2'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.1101,0.0656,-0.0736),(-0.1086,0.0001,-0.0368)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_talocrural'/> to <HAnimSite name='r_lateral_malleolus_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.1101,0.0656,-0.0736),(-0.1006,0.0658,-0.1075)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_talocrural'/> to <HAnimSite name='r_medial_malleolus_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.1101,0.0656,-0.0736),(-0.0591,0.076,-0.0928)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_talocrural'/> to <HAnimSite name='r_sphyrion_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.1101,0.0656,-0.0736),(-0.0603,0.061,-0.1002)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_talocrural'/> to <HAnimSite name='r_calcaneous_post_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.1101,0.0656,-0.0736),(-0.0692,0.0297,-0.1221)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+HAnimSite(name="r_lateral_malleolus_pt", DEF="hanim_r_lateral_malleolus_pt", translation=((-0.1006,0.0658,-0.1075)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite r_lateral_malleolus_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="r_medial_malleolus_pt", DEF="hanim_r_medial_malleolus_pt", translation=((-0.0591,0.076,-0.0928)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite r_medial_malleolus_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="r_sphyrion_pt", DEF="hanim_r_sphyrion_pt", translation=((-0.0603,0.061,-0.1002)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite r_sphyrion_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="r_calcaneus_posterior_pt", DEF="hanim_r_calcaneus_posterior_pt", translation=((-0.0692,0.0297,-0.1221)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite r_calcaneous_post_pt"),
+Shape(USE="HAnimSiteShape"),]),]),
+HAnimJoint(name="r_tarsometatarsal_2", DEF="hanim_r_tarsometatarsal_2", center=((-0.1086,0.0001,-0.0368)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="r_metatarsal_2", DEF="hanim_r_metatarsal_2", children=[
+#Visualization sphere for <HAnimJoint name='r_tarsometatarsal_2'/> is placed within <HAnimSegment name='r_metatarsal_2'/>
+
+TouchSensor(description="HAnimJoint r_tarsometatarsal_2, HAnimSegment r_metatarsal_2"),
+Transform(translation=((-0.1086,0.0001,-0.0368)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='r_tarsometatarsal_2'/> to child <HAnimJoint name='r_metatarsophalangeal_2'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.1086,0.0001,-0.0368),(-0.1086,0.0001,0.0368)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="r_metatarsophalangeal_2", DEF="hanim_r_metatarsophalangeal_2", center=((-0.1086,0.0001,0.0368)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="r_tarsal_proximal_phalanx_2", DEF="hanim_r_tarsal_proximal_phalanx_2", children=[
+#Visualization sphere for <HAnimJoint name='r_metatarsophalangeal_2'/> is placed within <HAnimSegment name='r_tarsal_proximal_phalanx_2'/>
+
+TouchSensor(description="HAnimJoint r_metatarsophalangeal_2, HAnimSegment r_tarsal_proximal_phalanx_2"),
+Transform(translation=((-0.1086,0.0001,0.0368)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='r_metatarsophalangeal_2'/> to child <HAnimJoint name='r_tarsal_distal_interphalangeal_2'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.1086,0.0001,0.0368),(-0.1086,0,0.0762)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_metatarsophalangeal_2'/> to <HAnimSite name='r_metatarsal_pha1_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.1086,0.0001,0.0368),(-0.0521,0.026,0.0127)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+HAnimSite(name="r_metatarsal_phalanx_1_pt", DEF="hanim_r_metatarsal_phalanx_1_pt", translation=((-0.0521,0.026,0.0127)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite r_metatarsal_pha1_pt"),
+Shape(USE="HAnimSiteShape"),]),]),
+HAnimJoint(name="r_tarsal_distal_interphalangeal_2", DEF="hanim_r_tarsal_distal_interphalangeal_2", center=((-0.1086,0,0.0762)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="r_tarsal_distal_phalanx_2", DEF="hanim_r_tarsal_distal_phalanx_2", children=[
+#Visualization sphere for <HAnimJoint name='r_tarsal_distal_interphalangeal_2'/> is placed within <HAnimSegment name='r_tarsal_distal_phalanx_2'/>
+
+TouchSensor(description="HAnimJoint r_tarsal_distal_interphalangeal_2, HAnimSegment r_tarsal_distal_phalanx_2"),
+Transform(translation=((-0.1086,0,0.0762)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_tarsal_distal_interphalangeal_2'/> to <HAnimSite name='r_forefoot_tip'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.1086,0,0.0762),(-0.1043,0.0227,0.145)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_tarsal_distal_interphalangeal_2'/> to <HAnimSite name='r_metatarsal_pha5_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.1086,0,0.0762),(-0.1523,0.0166,0.0895)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_tarsal_distal_interphalangeal_2'/> to <HAnimSite name='r_digit2_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.1086,0,0.0762),(-0.0883,0.0134,0.1383)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+HAnimSite(name="r_forefoot_tip_pt", DEF="hanim_r_forefoot_tip_pt", translation=((-0.1043,0.0227,0.145)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite r_forefoot_tip"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="r_metatarsal_phalanx_5_pt", DEF="hanim_r_metatarsal_phalanx_5_pt", translation=((-0.1523,0.0166,0.0895)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite r_metatarsal_pha5_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="r_tarsal_distal_phalanx_2_pt", DEF="hanim_r_tarsal_distal_phalanx_2_pt", translation=((-0.0883,0.0134,0.1383)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite r_digit2_pt"),
+Shape(USE="HAnimSiteShape"),]),])])])])])])])]),
+HAnimJoint(name="vl5", DEF="hanim_vl5", center=((0.0028,1.0568,-0.0776)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="l5", DEF="hanim_l5", children=[
+#Visualization sphere for <HAnimJoint name='vl5'/> is placed within <HAnimSegment name='l5'/>
+
+TouchSensor(description="HAnimJoint vl5, HAnimSegment l5"),
+Transform(translation=((0.0028,1.0568,-0.0776)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='vl5'/> to child <HAnimJoint name='vl4'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0028,1.0568,-0.0776),(0.0035,1.0925,-0.0787)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='vl5'/> to <HAnimSite name='waist_preferred_post_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0028,1.0568,-0.0776),(0,1.0915,-0.1091)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='vl5'/> to <HAnimSite name='navel_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0028,1.0568,-0.0776),(0.0069,1.0966,0.1017)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+HAnimSite(name="waist_preferred_posterior_pt", DEF="hanim_waist_preferred_posterior_pt", translation=((0,1.0915,-0.1091)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite waist_preferred_post_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="navel_pt", DEF="hanim_navel_pt", translation=((0.0069,1.0966,0.1017)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite navel_pt"),
+Shape(USE="HAnimSiteShape"),]),]),
+HAnimJoint(name="vl4", DEF="hanim_vl4", center=((0.0035,1.0925,-0.0787)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="l4", DEF="hanim_l4", children=[
+#Visualization sphere for <HAnimJoint name='vl4'/> is placed within <HAnimSegment name='l4'/>
+
+TouchSensor(description="HAnimJoint vl4, HAnimSegment l4"),
+Transform(translation=((0.0035,1.0925,-0.0787)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='vl4'/> to child <HAnimJoint name='vl3'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0035,1.0925,-0.0787),(0.0041,1.1276,-0.0796)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="vl3", DEF="hanim_vl3", center=((0.0041,1.1276,-0.0796)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="l3", DEF="hanim_l3", children=[
+#Visualization sphere for <HAnimJoint name='vl3'/> is placed within <HAnimSegment name='l3'/>
+
+TouchSensor(description="HAnimJoint vl3, HAnimSegment l3"),
+Transform(translation=((0.0041,1.1276,-0.0796)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='vl3'/> to child <HAnimJoint name='vl2'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0041,1.1276,-0.0796),(0.0045,1.1546,-0.08)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="vl2", DEF="hanim_vl2", center=((0.0045,1.1546,-0.08)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="l2", DEF="hanim_l2", children=[
+#Visualization sphere for <HAnimJoint name='vl2'/> is placed within <HAnimSegment name='l2'/>
+
+TouchSensor(description="HAnimJoint vl2, HAnimSegment l2"),
+Transform(translation=((0.0045,1.1546,-0.08)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='vl2'/> to child <HAnimJoint name='vl1'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0045,1.1546,-0.08),(0.0048,1.1912,-0.0805)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='vl2'/> to <HAnimSite name='r_rib10_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0045,1.1546,-0.08),(-0.0711,1.1941,0.1016)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='vl2'/> to <HAnimSite name='l_rib10_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0045,1.1546,-0.08),(0.0871,1.1925,0.0992)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='vl2'/> to <HAnimSite name='rib10_midspine_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0045,1.1546,-0.08),(0.0049,1.1908,-0.1113)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+HAnimSite(name="r_rib10_pt", DEF="hanim_r_rib10_pt", translation=((-0.0711,1.1941,0.1016)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite r_rib10_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="l_rib10_pt", DEF="hanim_l_rib10_pt", translation=((0.0871,1.1925,0.0992)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_rib10_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="rib10_midspine_pt", DEF="hanim_rib10_midspine_pt", translation=((0.0049,1.1908,-0.1113)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite rib10_midspine_pt"),
+Shape(USE="HAnimSiteShape"),]),]),
+HAnimJoint(name="vl1", DEF="hanim_vl1", center=((0.0048,1.1912,-0.0805)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="l1", DEF="hanim_l1", children=[
+#Visualization sphere for <HAnimJoint name='vl1'/> is placed within <HAnimSegment name='l1'/>
+
+TouchSensor(description="HAnimJoint vl1, HAnimSegment l1"),
+Transform(translation=((0.0048,1.1912,-0.0805)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='vl1'/> to child <HAnimJoint name='vt12'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0048,1.1912,-0.0805),(0.0051,1.2278,-0.0808)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="vt12", DEF="hanim_vt12", center=((0.0051,1.2278,-0.0808)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="t12", DEF="hanim_t12", children=[
+#Visualization sphere for <HAnimJoint name='vt12'/> is placed within <HAnimSegment name='t12'/>
+
+TouchSensor(description="HAnimJoint vt12, HAnimSegment t12"),
+Transform(translation=((0.0051,1.2278,-0.0808)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='vt12'/> to child <HAnimJoint name='vt11'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0051,1.2278,-0.0808),(0.0053,1.2679,-0.081)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="vt11", DEF="hanim_vt11", center=((0.0053,1.2679,-0.081)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="t11", DEF="hanim_t11", children=[
+#Visualization sphere for <HAnimJoint name='vt11'/> is placed within <HAnimSegment name='t11'/>
+
+TouchSensor(description="HAnimJoint vt11, HAnimSegment t11"),
+Transform(translation=((0.0053,1.2679,-0.081)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='vt11'/> to child <HAnimJoint name='vt10'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0053,1.2679,-0.081),(0.0056,1.2848,-0.0822)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="vt10", DEF="hanim_vt10", center=((0.0056,1.2848,-0.0822)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="t10", DEF="hanim_t10", children=[
+#Visualization sphere for <HAnimJoint name='vt10'/> is placed within <HAnimSegment name='t10'/>
+
+TouchSensor(description="HAnimJoint vt10, HAnimSegment t10"),
+Transform(translation=((0.0056,1.2848,-0.0822)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='vt10'/> to child <HAnimJoint name='vt9'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0056,1.2848,-0.0822),(0.0057,1.3126,-0.0838)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='vt10'/> to <HAnimSite name='substernale_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0056,1.2848,-0.0822),(0.0085,1.2995,0.1147)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+HAnimSite(name="substernale_pt", DEF="hanim_substernale_pt", translation=((0.0085,1.2995,0.1147)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite substernale_pt"),
+Shape(USE="HAnimSiteShape"),]),]),
+HAnimJoint(name="vt9", DEF="hanim_vt9", center=((0.0057,1.3126,-0.0838)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="t9", DEF="hanim_t9", children=[
+#Visualization sphere for <HAnimJoint name='vt9'/> is placed within <HAnimSegment name='t9'/>
+
+TouchSensor(description="HAnimJoint vt9, HAnimSegment t9"),
+Transform(translation=((0.0057,1.3126,-0.0838)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='vt9'/> to child <HAnimJoint name='vt8'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0057,1.3126,-0.0838),(0.0057,1.3382,-0.0845)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='vt9'/> to <HAnimSite name='r_thelion_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0057,1.3126,-0.0838),(-0.0736,1.3385,0.1217)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='vt9'/> to <HAnimSite name='l_thelion_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0057,1.3126,-0.0838),(0.0918,1.3382,0.1192)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+HAnimSite(name="r_thelion_pt", DEF="hanim_r_thelion_pt", translation=((-0.0736,1.3385,0.1217)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite r_thelion_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="l_thelion_pt", DEF="hanim_l_thelion_pt", translation=((0.0918,1.3382,0.1192)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_thelion_pt"),
+Shape(USE="HAnimSiteShape"),]),]),
+HAnimJoint(name="vt8", DEF="hanim_vt8", center=((0.0057,1.3382,-0.0845)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="t8", DEF="hanim_t8", children=[
+#Visualization sphere for <HAnimJoint name='vt8'/> is placed within <HAnimSegment name='t8'/>
+
+TouchSensor(description="HAnimJoint vt8, HAnimSegment t8"),
+Transform(translation=((0.0057,1.3382,-0.0845)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='vt8'/> to child <HAnimJoint name='vt7'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0057,1.3382,-0.0845),(0.0058,1.3625,-0.0833)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="vt7", DEF="hanim_vt7", center=((0.0058,1.3625,-0.0833)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="t7", DEF="hanim_t7", children=[
+#Visualization sphere for <HAnimJoint name='vt7'/> is placed within <HAnimSegment name='t7'/>
+
+TouchSensor(description="HAnimJoint vt7, HAnimSegment t7"),
+Transform(translation=((0.0058,1.3625,-0.0833)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='vt7'/> to child <HAnimJoint name='vt6'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0058,1.3625,-0.0833),(0.0059,1.3866,-0.08)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="vt6", DEF="hanim_vt6", center=((0.0059,1.3866,-0.08)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="t6", DEF="hanim_t6", children=[
+#Visualization sphere for <HAnimJoint name='vt6'/> is placed within <HAnimSegment name='t6'/>
+
+TouchSensor(description="HAnimJoint vt6, HAnimSegment t6"),
+Transform(translation=((0.0059,1.3866,-0.08)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='vt6'/> to child <HAnimJoint name='vt5'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0059,1.3866,-0.08),(0.006,1.4102,-0.0745)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="vt5", DEF="hanim_vt5", center=((0.006,1.4102,-0.0745)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="t5", DEF="hanim_t5", children=[
+#Visualization sphere for <HAnimJoint name='vt5'/> is placed within <HAnimSegment name='t5'/>
+
+TouchSensor(description="HAnimJoint vt5, HAnimSegment t5"),
+Transform(translation=((0.006,1.4102,-0.0745)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='vt5'/> to child <HAnimJoint name='vt4'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.006,1.4102,-0.0745),(0.0061,1.432,-0.0675)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="vt4", DEF="hanim_vt4", center=((0.0061,1.432,-0.0675)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="t4", DEF="hanim_t4", children=[
+#Visualization sphere for <HAnimJoint name='vt4'/> is placed within <HAnimSegment name='t4'/>
+
+TouchSensor(description="HAnimJoint vt4, HAnimSegment t4"),
+Transform(translation=((0.0061,1.432,-0.0675)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='vt4'/> to child <HAnimJoint name='vt3'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0061,1.432,-0.0675),(0.0062,1.4583,-0.057)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="vt3", DEF="hanim_vt3", center=((0.0062,1.4583,-0.057)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="t3", DEF="hanim_t3", children=[
+#Visualization sphere for <HAnimJoint name='vt3'/> is placed within <HAnimSegment name='t3'/>
+
+TouchSensor(description="HAnimJoint vt3, HAnimSegment t3"),
+Transform(translation=((0.0062,1.4583,-0.057)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='vt3'/> to child <HAnimJoint name='vt2'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0062,1.4583,-0.057),(0.0063,1.4761,-0.0484)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="vt2", DEF="hanim_vt2", center=((0.0063,1.4761,-0.0484)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="t2", DEF="hanim_t2", children=[
+#Visualization sphere for <HAnimJoint name='vt2'/> is placed within <HAnimSegment name='t2'/>
+
+TouchSensor(description="HAnimJoint vt2, HAnimSegment t2"),
+Transform(translation=((0.0063,1.4761,-0.0484)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='vt2'/> to child <HAnimJoint name='vt1'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0063,1.4761,-0.0484),(0.0065,1.4951,-0.0387)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="vt1", DEF="hanim_vt1", center=((0.0065,1.4951,-0.0387)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="t1", DEF="hanim_t1", children=[
+#Visualization sphere for <HAnimJoint name='vt1'/> is placed within <HAnimSegment name='t1'/>
+
+TouchSensor(description="HAnimJoint vt1, HAnimSegment t1"),
+Transform(translation=((0.0065,1.4951,-0.0387)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='vt1'/> to child <HAnimJoint name='vc7'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0065,1.4951,-0.0387),(0.0066,1.5132,-0.0301)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
+#HAnimSegment visualization line from current <HAnimJoint name='vt1'/> to child <HAnimJoint name='l_sternoclavicular'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0065,1.4951,-0.0387),(0.082,1.4488,-0.0353)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
+#HAnimSegment visualization line from current <HAnimJoint name='vt1'/> to child <HAnimJoint name='r_sternoclavicular'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0065,1.4951,-0.0387),(-0.082,1.4488,-0.0353)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='vt1'/> to <HAnimSite name='suprasternale_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0065,1.4951,-0.0387),(0.0084,1.4714,0.0551)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='vt1'/> to <HAnimSite name='cervicale_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0065,1.4951,-0.0387),(0.0064,1.52,-0.0815)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+HAnimSite(name="suprasternale_pt", DEF="hanim_suprasternale_pt", translation=((0.0084,1.4714,0.0551)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite suprasternale_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="cervicale_pt", DEF="hanim_cervicale_pt", translation=((0.0064,1.52,-0.0815)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite cervicale_pt"),
+Shape(USE="HAnimSiteShape"),]),]),
+HAnimJoint(name="vc7", DEF="hanim_vc7", center=((0.0066,1.5132,-0.0301)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="c7", DEF="hanim_c7", children=[
+#Visualization sphere for <HAnimJoint name='vc7'/> is placed within <HAnimSegment name='c7'/>
+
+TouchSensor(description="HAnimJoint vc7, HAnimSegment c7"),
+Transform(translation=((0.0066,1.5132,-0.0301)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='vc7'/> to child <HAnimJoint name='vc6'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0066,1.5132,-0.0301),(0.0066,1.5357,-0.0143)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='vc7'/> to <HAnimSite name='r_neck_base_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0066,1.5132,-0.0301),(-0.0419,1.5149,-0.022)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='vc7'/> to <HAnimSite name='l_neck_base_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0066,1.5132,-0.0301),(0.0646,1.5141,-0.038)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+HAnimSite(name="r_neck_base_pt", DEF="hanim_r_neck_base_pt", translation=((-0.0419,1.5149,-0.022)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite r_neck_base_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="l_neck_base_pt", DEF="hanim_l_neck_base_pt", translation=((0.0646,1.5141,-0.038)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_neck_base_pt"),
+Shape(USE="HAnimSiteShape"),]),]),
+HAnimJoint(name="vc6", DEF="hanim_vc6", center=((0.0066,1.5357,-0.0143)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="c6", DEF="hanim_c6", children=[
+#Visualization sphere for <HAnimJoint name='vc6'/> is placed within <HAnimSegment name='c6'/>
+
+TouchSensor(description="HAnimJoint vc6, HAnimSegment c6"),
+Transform(translation=((0.0066,1.5357,-0.0143)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='vc6'/> to child <HAnimJoint name='vc5'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0066,1.5357,-0.0143),(0.0066,1.552,-0.0082)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="vc5", DEF="hanim_vc5", center=((0.0066,1.552,-0.0082)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="c5", DEF="hanim_c5", children=[
+#Visualization sphere for <HAnimJoint name='vc5'/> is placed within <HAnimSegment name='c5'/>
+
+TouchSensor(description="HAnimJoint vc5, HAnimSegment c5"),
+Transform(translation=((0.0066,1.552,-0.0082)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='vc5'/> to child <HAnimJoint name='vc4'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0066,1.552,-0.0082),(0.0066,1.5662,-0.0084)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="vc4", DEF="hanim_vc4", center=((0.0066,1.5662,-0.0084)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="c4", DEF="hanim_c4", children=[
+#Visualization sphere for <HAnimJoint name='vc4'/> is placed within <HAnimSegment name='c4'/>
+
+TouchSensor(description="HAnimJoint vc4, HAnimSegment c4"),
+Transform(translation=((0.0066,1.5662,-0.0084)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='vc4'/> to child <HAnimJoint name='vc3'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0066,1.5662,-0.0084),(0.0066,1.58,-0.0103)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="vc3", DEF="hanim_vc3", center=((0.0066,1.58,-0.0103)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="c3", DEF="hanim_c3", children=[
+#Visualization sphere for <HAnimJoint name='vc3'/> is placed within <HAnimSegment name='c3'/>
+
+TouchSensor(description="HAnimJoint vc3, HAnimSegment c3"),
+Transform(translation=((0.0066,1.58,-0.0103)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='vc3'/> to child <HAnimJoint name='vc2'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0066,1.58,-0.0103),(0.0066,1.5928,-0.0103)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="vc2", DEF="hanim_vc2", center=((0.0066,1.5928,-0.0103)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="c2", DEF="hanim_c2", children=[
+#Visualization sphere for <HAnimJoint name='vc2'/> is placed within <HAnimSegment name='c2'/>
+
+TouchSensor(description="HAnimJoint vc2, HAnimSegment c2"),
+Transform(translation=((0.0066,1.5928,-0.0103)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='vc2'/> to child <HAnimJoint name='vc1'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0066,1.5928,-0.0103),(0.0066,1.6144,-0.0034)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="vc1", DEF="hanim_vc1", center=((0.0066,1.6144,-0.0034)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="c1", DEF="hanim_c1", children=[
+#Visualization sphere for <HAnimJoint name='vc1'/> is placed within <HAnimSegment name='c1'/>
+
+TouchSensor(description="HAnimJoint vc1, HAnimSegment c1"),
+Transform(translation=((0.0066,1.6144,-0.0034)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='vc1'/> to child <HAnimJoint name='skullbase'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0066,1.6144,-0.0034),(0.0044,1.6209,0.0236)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="skullbase", DEF="hanim_skullbase", center=((0.0044,1.6209,0.0236)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="skull", DEF="hanim_skull", children=[
+#Visualization sphere for <HAnimJoint name='skullbase'/> is placed within <HAnimSegment name='skull'/>
+
+TouchSensor(description="HAnimJoint skullbase, HAnimSegment skull"),
+Transform(translation=((0.0044,1.6209,0.0236)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='skullbase'/> to child <HAnimJoint name='l_eyeball_joint'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0044,1.6209,0.0236),(0.0336,1.6332,0.0502)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
+#HAnimSegment visualization line from current <HAnimJoint name='skullbase'/> to child <HAnimJoint name='l_eyelid_joint'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0044,1.6209,0.0236),(0.0336,1.6332,0.0502)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
+#HAnimSegment visualization line from current <HAnimJoint name='skullbase'/> to child <HAnimJoint name='l_eyebrow_joint'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0044,1.6209,0.0236),(0.0336,1.635,0.0506)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
+#HAnimSegment visualization line from current <HAnimJoint name='skullbase'/> to child <HAnimJoint name='r_eyeball_joint'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0044,1.6209,0.0236),(-0.0336,1.6332,0.0502)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
+#HAnimSegment visualization line from current <HAnimJoint name='skullbase'/> to child <HAnimJoint name='r_eyelid_joint'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0044,1.6209,0.0236),(-0.0336,1.6332,0.0502)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
+#HAnimSegment visualization line from current <HAnimJoint name='skullbase'/> to child <HAnimJoint name='r_eyebrow_joint'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0044,1.6209,0.0236),(-0.0336,1.635,0.0506)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
+#HAnimSegment visualization line from current <HAnimJoint name='skullbase'/> to child <HAnimJoint name='temporomandibular'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0044,1.6209,0.0236),(0.0,1.63,0.015)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='skullbase'/> to <HAnimSite name='skull_tip'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0044,1.6209,0.0236),(0.005,1.7504,0.0055)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='skullbase'/> to <HAnimSite name='sellion_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0044,1.6209,0.0236),(0.0058,1.6316,0.0852)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='skullbase'/> to <HAnimSite name='r_infraorbitale_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0044,1.6209,0.0236),(-0.0237,1.6171,0.0752)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='skullbase'/> to <HAnimSite name='l_infraorbitale_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0044,1.6209,0.0236),(0.0341,1.6171,0.0752)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='skullbase'/> to <HAnimSite name='supramenton_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0044,1.6209,0.0236),(0.0061,1.541,0.0805)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='skullbase'/> to <HAnimSite name='r_tragion_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0044,1.6209,0.0236),(-0.0646,1.6347,0.0302)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='skullbase'/> to <HAnimSite name='r_gonion_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0044,1.6209,0.0236),(-0.052,1.5529,0.0347)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='skullbase'/> to <HAnimSite name='l_tragion_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0044,1.6209,0.0236),(0.0739,1.6348,0.0282)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='skullbase'/> to <HAnimSite name='l_gonion_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0044,1.6209,0.0236),(0.0631,1.553,0.033)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='skullbase'/> to <HAnimSite name='nuchale_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0044,1.6209,0.0236),(0.0039,1.5972,-0.0796)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+HAnimSite(name="skull_vertex_pt", DEF="hanim_skull_vertex_pt", translation=((0.005,1.7504,0.0055)), children=[
+#TODO move skull_tip x to zero, check others for symmetry
+
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite skull_tip"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="sellion_pt", DEF="hanim_sellion_pt", translation=((0.0058,1.6316,0.0852)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite sellion_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="r_infraorbitale_pt", DEF="hanim_r_infraorbitale_pt", translation=((-0.0237,1.6171,0.0752)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite r_infraorbitale_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="l_infraorbitale_pt", DEF="hanim_l_infraorbitale_pt", translation=((0.0341,1.6171,0.0752)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_infraorbitale_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="supramenton_pt", DEF="hanim_supramenton_pt", translation=((0.0061,1.541,0.0805)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite supramenton_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="r_tragion_pt", DEF="hanim_r_tragion_pt", translation=((-0.0646,1.6347,0.0302)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite r_tragion_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="r_gonion_pt", DEF="hanim_r_gonion_pt", translation=((-0.052,1.5529,0.0347)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite r_gonion_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="l_tragion_pt", DEF="hanim_l_tragion_pt", translation=((0.0739,1.6348,0.0282)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_tragion_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="l_gonion_pt", DEF="hanim_l_gonion_pt", translation=((0.0631,1.553,0.033)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_gonion_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="nuchale_pt", DEF="hanim_nuchale_pt", translation=((0.0039,1.5972,-0.0796)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite nuchale_pt"),
+Shape(USE="HAnimSiteShape"),]),]),
+HAnimJoint(name="l_eyeball_joint", DEF="hanim_l_eyeball_joint", center=((0.0336,1.6332,0.0502)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="l_eyeball", DEF="hanim_l_eyeball", children=[
+#Visualization sphere for <HAnimJoint name='l_eyeball_joint'/> is placed within <HAnimSegment name='l_eyeball'/>
+
+TouchSensor(description="HAnimJoint l_eyeball_joint, HAnimSegment l_eyeball"),
+Transform(translation=((0.0336,1.6332,0.0502)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSite/Viewpoint visualization line segment from ancestor <HAnimJoint name='l_eyeball_joint'/> to <HAnimSite name='l_eyeball_site_view'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0336,1.6332,0.0502),(0.034,1.64,0.05)]), 
+color=
+ColorRGBA(DEF="HAnimSiteViewpointLineColorRGBA", color=[(1,1,0,1),(1,1,0,0.1)]))),
+HAnimSite(name="l_eyeball_site_view", DEF="hanim_l_eyeball_site_view", translation=((0.034,1.64,0.05)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_eyeball_site_view"),
+Shape(USE="HAnimSiteShape"),
+Viewpoint(DEF="hanim_l_eyeball_site_viewpoint", description="l_eyeball_site_viewpoint looking forward", orientation=((0,1,0,3.141593)), position=((0,0,0))),
+#HAnimSite/Viewpoint visualization shape
+
+Anchor(description="HAnimSite hanim_l_eyeball_site_view Viewpoint", url=["#hanim_l_eyeball_site_viewpoint"], children=[
+LOD(forceTransitions=True, range=[float(0.04)], children=[
+WorldInfo(info=["hide diamond when close"]),
+Shape(DEF="HAnimSiteViewpointShape", 
+geometry=
+IndexedFaceSet(DEF="SiteViewpointDiamondIFS", coordIndex=[int(0),int(1),int(2),int(-1),int(0),int(2),int(3),int(-1),int(0),int(3),int(4),int(-1),int(0),int(4),int(1),int(-1),int(5),int(2),int(1),int(-1),int(5),int(3),int(2),int(-1),int(5),int(4),int(3),int(-1),int(5),int(1),int(4),int(-1)], creaseAngle=0.5, 
+coord=
+Coordinate(point=[(0,0.01,0),(-0.01,0,0),(0,0,0.01),(0.01,0,0),(0,0,-0.01),(0,-0.01,0)])), 
+appearance=
+Appearance(
+material=
+Material(diffuseColor=((1,1,0)), transparency=0.3)))])]),]),])]),
+HAnimJoint(name="l_eyelid_joint", DEF="hanim_l_eyelid_joint", center=((0.0336,1.6332,0.0502)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="l_eyelid", DEF="hanim_l_eyelid", children=[
+#Visualization sphere for <HAnimJoint name='l_eyelid_joint'/> is placed within <HAnimSegment name='l_eyelid'/>
+
+TouchSensor(description="HAnimJoint l_eyelid_joint, HAnimSegment l_eyelid"),
+Transform(translation=((0.0336,1.6332,0.0502)), children=[
+Shape(USE="HAnimJointShape")]),])]),
+HAnimJoint(name="l_eyebrow_joint", DEF="hanim_l_eyebrow_joint", center=((0.0336,1.635,0.0506)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="l_eyebrow", DEF="hanim_l_eyebrow", children=[
+#Visualization sphere for <HAnimJoint name='l_eyebrow_joint'/> is placed within <HAnimSegment name='l_eyebrow'/>
+
+TouchSensor(description="HAnimJoint l_eyebrow_joint, HAnimSegment l_eyebrow"),
+Transform(translation=((0.0336,1.635,0.0506)), children=[
+Shape(USE="HAnimJointShape")]),])]),
+HAnimJoint(name="r_eyeball_joint", DEF="hanim_r_eyeball_joint", center=((-0.0336,1.6332,0.0502)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="r_eyeball", DEF="hanim_r_eyeball", children=[
+#Visualization sphere for <HAnimJoint name='r_eyeball_joint'/> is placed within <HAnimSegment name='r_eyeball'/>
+
+TouchSensor(description="HAnimJoint r_eyeball_joint, HAnimSegment r_eyeball"),
+Transform(translation=((-0.0336,1.6332,0.0502)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSite/Viewpoint visualization line segment from ancestor <HAnimJoint name='r_eyeball_joint'/> to <HAnimSite name='r_eyeball_site_view'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.0336,1.6332,0.0502),(-0.034,1.64,0.05)]), 
+color=
+ColorRGBA(USE="HAnimSiteViewpointLineColorRGBA"))),
+HAnimSite(name="r_eyeball_site_view", DEF="hanim_r_eyeball_site_view", translation=((-0.034,1.64,0.05)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite r_eyeball_site_view"),
+Shape(USE="HAnimSiteShape"),
+Viewpoint(DEF="hanim_r_eyeball_site_viewpoint", description="r_eyeball_site_viewpoint looking forward", orientation=((0,1,0,3.141593)), position=((0,0,0))),
+#HAnimSite/Viewpoint visualization shape
+
+Anchor(description="HAnimSite hanim_r_eyeball_site_view Viewpoint", url=["#hanim_r_eyeball_site_viewpoint"], children=[
+LOD(forceTransitions=True, range=[float(0.04)], children=[
+WorldInfo(info=["hide diamond when close"]),
+Shape(USE="HAnimSiteViewpointShape")])]),]),])]),
+HAnimJoint(name="r_eyelid_joint", DEF="hanim_r_eyelid_joint", center=((-0.0336,1.6332,0.0502)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="r_eyelid", DEF="hanim_r_eyelid", children=[
+#Visualization sphere for <HAnimJoint name='r_eyelid_joint'/> is placed within <HAnimSegment name='r_eyelid'/>
+
+TouchSensor(description="HAnimJoint r_eyelid_joint, HAnimSegment r_eyelid"),
+Transform(translation=((-0.0336,1.6332,0.0502)), children=[
+Shape(USE="HAnimJointShape")]),])]),
+HAnimJoint(name="r_eyebrow_joint", DEF="hanim_r_eyebrow_joint", center=((-0.0336,1.635,0.0506)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="r_eyebrow", DEF="hanim_r_eyebrow", children=[
+#Visualization sphere for <HAnimJoint name='r_eyebrow_joint'/> is placed within <HAnimSegment name='r_eyebrow'/>
+
+TouchSensor(description="HAnimJoint r_eyebrow_joint, HAnimSegment r_eyebrow"),
+Transform(translation=((-0.0336,1.635,0.0506)), children=[
+Shape(USE="HAnimJointShape")]),])]),
+HAnimJoint(name="temporomandibular", DEF="hanim_temporomandibular", center=((0.0,1.63,0.015)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+#Single joint, single segment for jaw, two sites for left/right TMJs https://en.wikipedia.org/wiki/Temporomandibular_joint
+
+HAnimSegment(name="jaw", DEF="hanim_jaw", children=[
+#Visualization sphere for <HAnimJoint name='temporomandibular'/> is placed within <HAnimSegment name='jaw'/>
+
+TouchSensor(description="HAnimJoint temporomandibular, HAnimSegment jaw"),
+Transform(translation=((0.0,1.63,0.015)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='temporomandibular'/> to <HAnimSite name='temporomandibular_l_site_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0,1.63,0.015),(0.045,1.63,0.0)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='temporomandibular'/> to <HAnimSite name='temporomandibular_r_site_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0,1.63,0.015),(-0.045,1.63,0.0)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+HAnimSite(name="temporomandibular_l_site_pt", DEF="hanim_temporomandibular_l_site_pt", translation=((0.045,1.63,0.0)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite temporomandibular_l_site_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="temporomandibular_r_site_pt", DEF="hanim_temporomandibular_r_site_pt", translation=((-0.045,1.63,0.0)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite temporomandibular_r_site_pt"),
+Shape(USE="HAnimSiteShape"),]),]),])])])])])])])])]),
+HAnimJoint(name="l_sternoclavicular", DEF="hanim_l_sternoclavicular", center=((0.082,1.4488,-0.0353)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="l_clavicle", DEF="hanim_l_clavicle", children=[
+#Visualization sphere for <HAnimJoint name='l_sternoclavicular'/> is placed within <HAnimSegment name='l_clavicle'/>
+
+TouchSensor(description="HAnimJoint l_sternoclavicular, HAnimSegment l_clavicle"),
+Transform(translation=((0.082,1.4488,-0.0353)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='l_sternoclavicular'/> to child <HAnimJoint name='l_acromioclavicular'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.082,1.4488,-0.0353),(0.0962,1.4269,-0.0424)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_sternoclavicular'/> to <HAnimSite name='l_clavicale_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.082,1.4488,-0.0353),(0.0271,1.4943,0.0394)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_sternoclavicular'/> to <HAnimSite name='l_acromion_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.082,1.4488,-0.0353),(0.2032,1.476,-0.049)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_sternoclavicular'/> to <HAnimSite name='l_axilla_ant_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.082,1.4488,-0.0353),(0.1777,1.4065,-0.0075)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_sternoclavicular'/> to <HAnimSite name='l_axilla_post_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.082,1.4488,-0.0353),(0.1706,1.4072,-0.0875)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+HAnimSite(name="l_clavicle_pt", DEF="hanim_l_clavicle_pt", translation=((0.0271,1.4943,0.0394)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_clavicale_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="l_acromion_pt", DEF="hanim_l_acromion_pt", translation=((0.2032,1.476,-0.049)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_acromion_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="l_axilla_proximal_pt", DEF="hanim_l_axilla_proximal_pt", translation=((0.1777,1.4065,-0.0075)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_axilla_ant_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="l_axilla_distal_pt", DEF="hanim_l_axilla_distal_pt", translation=((0.1706,1.4072,-0.0875)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_axilla_post_pt"),
+Shape(USE="HAnimSiteShape"),]),]),
+HAnimJoint(name="l_acromioclavicular", DEF="hanim_l_acromioclavicular", center=((0.0962,1.4269,-0.0424)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="l_scapula", DEF="hanim_l_scapula", children=[
+#Visualization sphere for <HAnimJoint name='l_acromioclavicular'/> is placed within <HAnimSegment name='l_scapula'/>
+
+TouchSensor(description="HAnimJoint l_acromioclavicular, HAnimSegment l_scapula"),
+Transform(translation=((0.0962,1.4269,-0.0424)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='l_acromioclavicular'/> to child <HAnimJoint name='l_shoulder'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.0962,1.4269,-0.0424),(0.2029,1.4376,-0.0387)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="l_shoulder", DEF="hanim_l_shoulder", center=((0.2029,1.4376,-0.0387)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="l_upperarm", DEF="hanim_l_upperarm", children=[
+#Visualization sphere for <HAnimJoint name='l_shoulder'/> is placed within <HAnimSegment name='l_upperarm'/>
+
+TouchSensor(description="HAnimJoint l_shoulder, HAnimSegment l_upperarm"),
+Transform(translation=((0.2029,1.4376,-0.0387)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='l_shoulder'/> to child <HAnimJoint name='l_elbow'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.2029,1.4376,-0.0387),(0.2014,1.1357,-0.0682)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_shoulder'/> to <HAnimSite name='l_humeral_lateral_epicn_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.2029,1.4376,-0.0387),(0.228,1.1482,-0.11)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+HAnimSite(name="l_humeral_lateral_epicondyle_pt", DEF="hanim_l_humeral_lateral_epicondyle_pt", translation=((0.228,1.1482,-0.11)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_humeral_lateral_epicn_pt"),
+Shape(USE="HAnimSiteShape"),]),]),
+HAnimJoint(name="l_elbow", DEF="hanim_l_elbow", center=((0.2014,1.1357,-0.0682)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="l_forearm", DEF="hanim_l_forearm", children=[
+#Visualization sphere for <HAnimJoint name='l_elbow'/> is placed within <HAnimSegment name='l_forearm'/>
+
+TouchSensor(description="HAnimJoint l_elbow, HAnimSegment l_forearm"),
+Transform(translation=((0.2014,1.1357,-0.0682)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='l_elbow'/> to child <HAnimJoint name='l_radiocarpal'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.2014,1.1357,-0.0682),(0.1984,0.8663,-0.0583)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_elbow'/> to <HAnimSite name='l_radial_styloid_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.2014,1.1357,-0.0682),(0.1901,0.8645,-0.0415)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_elbow'/> to <HAnimSite name='l_olecranon_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.2014,1.1357,-0.0682),(0.1962,1.1375,-0.1123)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_elbow'/> to <HAnimSite name='l_humeral_medial_epicn_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.2014,1.1357,-0.0682),(0.1735,1.1272,-0.1113)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_elbow'/> to <HAnimSite name='l_radiale_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.2014,1.1357,-0.0682),(0.2182,1.1212,-0.1167)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+HAnimSite(name="l_radial_styloid_pt", DEF="hanim_l_radial_styloid_pt", translation=((0.1901,0.8645,-0.0415)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_radial_styloid_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="l_olecranon_pt", DEF="hanim_l_olecranon_pt", translation=((0.1962,1.1375,-0.1123)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_olecranon_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="l_humeral_medial_epicondyle_pt", DEF="hanim_l_humeral_medial_epicondyle_pt", translation=((0.1735,1.1272,-0.1113)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_humeral_medial_epicn_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="l_radiale_pt", DEF="hanim_l_radiale_pt", translation=((0.2182,1.1212,-0.1167)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_radiale_pt"),
+Shape(USE="HAnimSiteShape"),]),]),
+HAnimJoint(name="l_radiocarpal", DEF="hanim_l_radiocarpal", center=((0.1984,0.8663,-0.0583)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="l_carpal", DEF="hanim_l_carpal", children=[
+#Visualization sphere for <HAnimJoint name='l_radiocarpal'/> is placed within <HAnimSegment name='l_carpal'/>
+
+TouchSensor(description="HAnimJoint l_radiocarpal, HAnimSegment l_carpal"),
+Transform(translation=((0.1984,0.8663,-0.0583)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='l_radiocarpal'/> to child <HAnimJoint name='l_thumb1'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.1984,0.8663,-0.0583),(0.1924,0.8472,-0.0534)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
+#HAnimSegment visualization line from current <HAnimJoint name='l_radiocarpal'/> to child <HAnimJoint name='l_index0'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.1984,0.8663,-0.0583),(0.1983,0.8024,-0.028)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
+#HAnimSegment visualization line from current <HAnimJoint name='l_radiocarpal'/> to child <HAnimJoint name='l_middle0'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.1984,0.8663,-0.0583),(0.1987,0.8029,-0.053)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
+#HAnimSegment visualization line from current <HAnimJoint name='l_radiocarpal'/> to child <HAnimJoint name='l_ring0'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.1984,0.8663,-0.0583),(0.1956,0.8019,-0.0794)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
+#HAnimSegment visualization line from current <HAnimJoint name='l_radiocarpal'/> to child <HAnimJoint name='l_pinky0'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.1984,0.8663,-0.0583),(0.1925,0.8066,-0.1036)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_radiocarpal'/> to <HAnimSite name='l_metacarpal_pha2_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.1984,0.8663,-0.0583),(0.2009,0.8139,-0.0237)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_radiocarpal'/> to <HAnimSite name='l_ulnar_styloid_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.1984,0.8663,-0.0583),(0.2142,0.8529,-0.0648)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_radiocarpal'/> to <HAnimSite name='l_metacarpal_pha5_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.1984,0.8663,-0.0583),(0.1929,0.786,-0.1122)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite/Viewpoint visualization line segment from ancestor <HAnimJoint name='l_radiocarpal'/> to <HAnimSite name='l_hand_front_view'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.1984,0.8663,-0.0583),(0.3,0.75,0.45)]), 
+color=
+ColorRGBA(USE="HAnimSiteViewpointLineColorRGBA"))),
+HAnimSite(name="l_metacarpal_phalanx_2_pt", DEF="hanim_l_metacarpal_phalanx_2_pt", translation=((0.2009,0.8139,-0.0237)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_metacarpal_pha2_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="l_ulnar_styloid_pt", DEF="hanim_l_ulnar_styloid_pt", translation=((0.2142,0.8529,-0.0648)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_ulnar_styloid_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="l_metacarpal_phalanx_5_pt", DEF="hanim_l_metacarpal_phalanx_5_pt", translation=((0.1929,0.786,-0.1122)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_metacarpal_pha5_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="l_hand_front_view", DEF="hanim_l_hand_front_view", translation=((0.3,0.75,0.45)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_hand_front_view"),
+Shape(USE="HAnimSiteShape"),
+Viewpoint(DEF="hanim_l_hand_front_viewpoint", centerOfRotation=((0,0.7,0)), description="left hand front", position=((0,0,0))),
+#HAnimSite/Viewpoint visualization shape
+
+Anchor(description="HAnimSite hanim_l_hand_front_view Viewpoint", url=["#hanim_l_hand_front_viewpoint"], children=[
+LOD(forceTransitions=True, range=[float(0.04)], children=[
+WorldInfo(info=["hide diamond when close"]),
+Shape(USE="HAnimSiteViewpointShape")])]),]),]),
+HAnimJoint(name="l_carpometacarpal_1", DEF="hanim_l_carpometacarpal_1", center=((0.1924,0.8472,-0.0534)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="l_metacarpal_1", DEF="hanim_l_metacarpal_1", children=[
+#Visualization sphere for <HAnimJoint name='l_thumb1'/> is placed within <HAnimSegment name='l_metacarpal_1'/>
+
+TouchSensor(description="HAnimJoint l_thumb1, HAnimSegment l_metacarpal_1"),
+Transform(translation=((0.1924,0.8472,-0.0534)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='l_thumb1'/> to child <HAnimJoint name='l_thumb2'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.1924,0.8472,-0.0534),(0.1951,0.8226,0.0246)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="l_metacarpophalangeal_1", DEF="hanim_l_metacarpophalangeal_1", center=((0.1951,0.8226,0.0246)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="l_carpal_proximal_phalanx_1", DEF="hanim_l_carpal_proximal_phalanx_1", children=[
+#Visualization sphere for <HAnimJoint name='l_thumb2'/> is placed within <HAnimSegment name='l_carpal_proximal_phalanx_1'/>
+
+TouchSensor(description="HAnimJoint l_thumb2, HAnimSegment l_carpal_proximal_phalanx_1"),
+Transform(translation=((0.1951,0.8226,0.0246)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='l_thumb2'/> to child <HAnimJoint name='l_thumb3'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.1951,0.8226,0.0246),(0.1955,0.8159,0.0464)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="l_carpal_interphalangeal_1", DEF="hanim_l_carpal_interphalangeal_1", center=((0.1955,0.8159,0.0464)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="l_carpal_distal_phalanx_1", DEF="hanim_l_carpal_distal_phalanx_1", children=[
+#Visualization sphere for <HAnimJoint name='l_thumb3'/> is placed within <HAnimSegment name='l_carpal_distal_phalanx_1'/>
+
+TouchSensor(description="HAnimJoint l_thumb3, HAnimSegment l_carpal_distal_phalanx_1"),
+Transform(translation=((0.1955,0.8159,0.0464)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_thumb3'/> to <HAnimSite name='l_thumb_distal_tip'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.1955,0.8159,0.0464),(0.1982,0.8061,0.0759)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+HAnimSite(name="l_carpal_distal_phalanx_1_pt", DEF="hanim_l_carpal_distal_phalanx_1_pt", translation=((0.1982,0.8061,0.0759)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_thumb_distal_tip"),
+Shape(USE="HAnimSiteShape"),]),])])])]),
+HAnimJoint(name="l_carpometacarpal_2", DEF="hanim_l_carpometacarpal_2", center=((0.1983,0.8024,-0.028)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="l_metacarpal_2", DEF="hanim_l_metacarpal_2", children=[
+#Visualization sphere for <HAnimJoint name='l_index0'/> is placed within <HAnimSegment name='l_metacarpal_2'/>
+
+TouchSensor(description="HAnimJoint l_index0, HAnimSegment l_metacarpal_2"),
+Transform(translation=((0.1983,0.8024,-0.028)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='l_index0'/> to child <HAnimJoint name='l_index1'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.1983,0.8024,-0.028),(0.1983,0.7815,-0.028)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="l_metacarpophalangeal_2", DEF="hanim_l_metacarpophalangeal_2", center=((0.1983,0.7815,-0.028)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="l_carpal_proximal_phalanx_2", DEF="hanim_l_carpal_proximal_phalanx_2", children=[
+#Visualization sphere for <HAnimJoint name='l_index1'/> is placed within <HAnimSegment name='l_carpal_proximal_phalanx_2'/>
+
+TouchSensor(description="HAnimJoint l_index1, HAnimSegment l_carpal_proximal_phalanx_2"),
+Transform(translation=((0.1983,0.7815,-0.028)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='l_index1'/> to child <HAnimJoint name='l_index2'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.1983,0.7815,-0.028),(0.2017,0.7363,-0.0248)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="l_carpal_proximal_interphalangeal_2", DEF="hanim_l_carpal_proximal_interphalangeal_2", center=((0.2017,0.7363,-0.0248)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="l_carpal_middle_phalanx_2", DEF="hanim_l_carpal_middle_phalanx_2", children=[
+#Visualization sphere for <HAnimJoint name='l_index2'/> is placed within <HAnimSegment name='l_carpal_middle_phalanx_2'/>
+
+TouchSensor(description="HAnimJoint l_index2, HAnimSegment l_carpal_middle_phalanx_2"),
+Transform(translation=((0.2017,0.7363,-0.0248)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='l_index2'/> to child <HAnimJoint name='l_index3'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.2017,0.7363,-0.0248),(0.2028,0.7139,-0.0236)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="l_carpal_distal_interphalangeal_2", DEF="hanim_l_carpal_distal_interphalangeal_2", center=((0.2028,0.7139,-0.0236)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="l_carpal_distal_phalanx_2", DEF="hanim_l_carpal_distal_phalanx_2", children=[
+#Visualization sphere for <HAnimJoint name='l_index3'/> is placed within <HAnimSegment name='l_carpal_distal_phalanx_2'/>
+
+TouchSensor(description="HAnimJoint l_index3, HAnimSegment l_carpal_distal_phalanx_2"),
+Transform(translation=((0.2028,0.7139,-0.0236)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_index3'/> to <HAnimSite name='l_index_distal_tip'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.2028,0.7139,-0.0236),(0.2089,0.6858,-0.0245)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_index3'/> to <HAnimSite name='l_dactylion_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.2028,0.7139,-0.0236),(0.2056,0.6743,-0.0482)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+HAnimSite(name="l_carpal_distal_phalanx_2_pt", DEF="hanim_l_carpal_distal_phalanx_2_pt", translation=((0.2089,0.6858,-0.0245)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_index_distal_tip"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="l_dactylion_pt", DEF="hanim_l_dactylion_pt", translation=((0.2056,0.6743,-0.0482)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_dactylion_pt"),
+Shape(USE="HAnimSiteShape"),]),])])])])]),
+HAnimJoint(name="l_carpometacarpal_3", DEF="hanim_l_carpometacarpal_3", center=((0.1987,0.8029,-0.053)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="l_metacarpal_3", DEF="hanim_l_metacarpal_3", children=[
+#Visualization sphere for <HAnimJoint name='l_middle0'/> is placed within <HAnimSegment name='l_metacarpal_3'/>
+
+TouchSensor(description="HAnimJoint l_middle0, HAnimSegment l_metacarpal_3"),
+Transform(translation=((0.1987,0.8029,-0.053)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='l_middle0'/> to child <HAnimJoint name='l_middle1'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.1987,0.8029,-0.053),(0.1987,0.7818,-0.053)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="l_metacarpophalangeal_3", DEF="hanim_l_metacarpophalangeal_3", center=((0.1987,0.7818,-0.053)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="l_carpal_proximal_phalanx_3", DEF="hanim_l_carpal_proximal_phalanx_3", children=[
+#Visualization sphere for <HAnimJoint name='l_middle1'/> is placed within <HAnimSegment name='l_carpal_proximal_phalanx_3'/>
+
+TouchSensor(description="HAnimJoint l_middle1, HAnimSegment l_carpal_proximal_phalanx_3"),
+Transform(translation=((0.1987,0.7818,-0.053)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='l_middle1'/> to child <HAnimJoint name='l_middle2'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.1987,0.7818,-0.053),(0.2013,0.7273,-0.0503)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="l_carpal_proximal_interphalangeal_3", DEF="hanim_l_carpal_proximal_interphalangeal_3", center=((0.2013,0.7273,-0.0503)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="l_carpal_middle_phalanx_3", DEF="hanim_l_carpal_middle_phalanx_3", children=[
+#Visualization sphere for <HAnimJoint name='l_middle2'/> is placed within <HAnimSegment name='l_carpal_middle_phalanx_3'/>
+
+TouchSensor(description="HAnimJoint l_middle2, HAnimSegment l_carpal_middle_phalanx_3"),
+Transform(translation=((0.2013,0.7273,-0.0503)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='l_middle2'/> to child <HAnimJoint name='l_middle3'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.2013,0.7273,-0.0503),(0.2026,0.7011,-0.0494)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="l_carpal_distal_interphalangeal_3", DEF="hanim_l_carpal_distal_interphalangeal_3", center=((0.2026,0.7011,-0.0494)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="l_carpal_distal_phalanx_3", DEF="hanim_l_carpal_distal_phalanx_3", children=[
+#Visualization sphere for <HAnimJoint name='l_middle3'/> is placed within <HAnimSegment name='l_carpal_distal_phalanx_3'/>
+
+TouchSensor(description="HAnimJoint l_middle3, HAnimSegment l_carpal_distal_phalanx_3"),
+Transform(translation=((0.2026,0.7011,-0.0494)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_middle3'/> to <HAnimSite name='l_middle_distal_tip'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.2026,0.7011,-0.0494),(0.208,0.6731,-0.0491)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+HAnimSite(name="l_carpal_distal_phalanx_3_pt", DEF="hanim_l_carpal_distal_phalanx_3_pt", translation=((0.208,0.6731,-0.0491)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_middle_distal_tip"),
+Shape(USE="HAnimSiteShape"),]),])])])])]),
+HAnimJoint(name="l_carpometacarpal_4", DEF="hanim_l_carpometacarpal_4", center=((0.1956,0.8019,-0.0794)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="l_metacarpal_4", DEF="hanim_l_metacarpal_4", children=[
+#Visualization sphere for <HAnimJoint name='l_ring0'/> is placed within <HAnimSegment name='l_metacarpal_4'/>
+
+TouchSensor(description="HAnimJoint l_ring0, HAnimSegment l_metacarpal_4"),
+Transform(translation=((0.1956,0.8019,-0.0794)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='l_ring0'/> to child <HAnimJoint name='l_ring1'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.1956,0.8019,-0.0794),(0.1956,0.7815,-0.0794)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="l_metacarpophalangeal_4", DEF="hanim_l_metacarpophalangeal_4", center=((0.1956,0.7815,-0.0794)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="l_carpal_proximal_phalanx_4", DEF="hanim_l_carpal_proximal_phalanx_4", children=[
+#Visualization sphere for <HAnimJoint name='l_ring1'/> is placed within <HAnimSegment name='l_carpal_proximal_phalanx_4'/>
+
+TouchSensor(description="HAnimJoint l_ring1, HAnimSegment l_carpal_proximal_phalanx_4"),
+Transform(translation=((0.1956,0.7815,-0.0794)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='l_ring1'/> to child <HAnimJoint name='l_ring2'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.1956,0.7815,-0.0794),(0.1973,0.7287,-0.0777)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="l_carpal_proximal_interphalangeal_4", DEF="hanim_l_carpal_proximal_interphalangeal_4", center=((0.1973,0.7287,-0.0777)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="l_carpal_middle_phalanx_4", DEF="hanim_l_carpal_middle_phalanx_4", children=[
+#Visualization sphere for <HAnimJoint name='l_ring2'/> is placed within <HAnimSegment name='l_carpal_middle_phalanx_4'/>
+
+TouchSensor(description="HAnimJoint l_ring2, HAnimSegment l_carpal_middle_phalanx_4"),
+Transform(translation=((0.1973,0.7287,-0.0777)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='l_ring2'/> to child <HAnimJoint name='l_ring3'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.1973,0.7287,-0.0777),(0.1983,0.7045,-0.0767)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="l_carpal_distal_interphalangeal_4", DEF="hanim_l_carpal_distal_interphalangeal_4", center=((0.1983,0.7045,-0.0767)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="l_carpal_distal_phalanx_4", DEF="hanim_l_carpal_distal_phalanx_4", children=[
+#Visualization sphere for <HAnimJoint name='l_ring3'/> is placed within <HAnimSegment name='l_carpal_distal_phalanx_4'/>
+
+TouchSensor(description="HAnimJoint l_ring3, HAnimSegment l_carpal_distal_phalanx_4"),
+Transform(translation=((0.1983,0.7045,-0.0767)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_ring3'/> to <HAnimSite name='l_ring_distal_tip'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.1983,0.7045,-0.0767),(0.2035,0.675,-0.0756)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+HAnimSite(name="l_carpal_distal_phalanx_4_pt", DEF="hanim_l_carpal_distal_phalanx_4_pt", translation=((0.2035,0.675,-0.0756)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_ring_distal_tip"),
+Shape(USE="HAnimSiteShape"),]),])])])])]),
+HAnimJoint(name="l_carpometacarpal_5", DEF="hanim_l_carpometacarpal_5", center=((0.1925,0.8066,-0.1036)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="l_metacarpal_5", DEF="hanim_l_metacarpal_5", children=[
+#Visualization sphere for <HAnimJoint name='l_pinky0'/> is placed within <HAnimSegment name='l_metacarpal_5'/>
+
+TouchSensor(description="HAnimJoint l_pinky0, HAnimSegment l_metacarpal_5"),
+Transform(translation=((0.1925,0.8066,-0.1036)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='l_pinky0'/> to child <HAnimJoint name='l_pinky1'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.1925,0.8066,-0.1036),(0.1925,0.7866,-0.1036)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="l_metacarpophalangeal_5", DEF="hanim_l_metacarpophalangeal_5", center=((0.1925,0.7866,-0.1036)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="l_carpal_proximal_phalanx_5", DEF="hanim_l_carpal_proximal_phalanx_5", children=[
+#Visualization sphere for <HAnimJoint name='l_pinky1'/> is placed within <HAnimSegment name='l_carpal_proximal_phalanx_5'/>
+
+TouchSensor(description="HAnimJoint l_pinky1, HAnimSegment l_carpal_proximal_phalanx_5"),
+Transform(translation=((0.1925,0.7866,-0.1036)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='l_pinky1'/> to child <HAnimJoint name='l_pinky2'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.1925,0.7866,-0.1036),(0.1938,0.7452,-0.1024)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="l_carpal_proximal_interphalangeal_5", DEF="hanim_l_carpal_proximal_interphalangeal_5", center=((0.1938,0.7452,-0.1024)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="l_carpal_middle_phalanx_5", DEF="hanim_l_carpal_middle_phalanx_5", children=[
+#Visualization sphere for <HAnimJoint name='l_pinky2'/> is placed within <HAnimSegment name='l_carpal_middle_phalanx_5'/>
+
+TouchSensor(description="HAnimJoint l_pinky2, HAnimSegment l_carpal_middle_phalanx_5"),
+Transform(translation=((0.1938,0.7452,-0.1024)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='l_pinky2'/> to child <HAnimJoint name='l_pinky3'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.1938,0.7452,-0.1024),(0.1948,0.7277,-0.1017)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="l_carpal_distal_interphalangeal_5", DEF="hanim_l_carpal_distal_interphalangeal_5", center=((0.1948,0.7277,-0.1017)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="l_carpal_distal_phalanx_5", DEF="hanim_l_carpal_distal_phalanx_5", children=[
+#Visualization sphere for <HAnimJoint name='l_pinky3'/> is placed within <HAnimSegment name='l_carpal_distal_phalanx_5'/>
+
+TouchSensor(description="HAnimJoint l_pinky3, HAnimSegment l_carpal_distal_phalanx_5"),
+Transform(translation=((0.1948,0.7277,-0.1017)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='l_pinky3'/> to <HAnimSite name='l_pinky_distal_tip'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(0.1948,0.7277,-0.1017),(0.2014,0.7009,-0.1012)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+HAnimSite(name="l_carpal_distal_phalanx_5_pt", DEF="hanim_l_carpal_distal_phalanx_5_pt", translation=((0.2014,0.7009,-0.1012)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_pinky_distal_tip"),
+Shape(USE="HAnimSiteShape"),]),])])])])])])])])])]),
+HAnimJoint(name="r_sternoclavicular", DEF="hanim_r_sternoclavicular", center=((-0.082,1.4488,-0.0353)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="r_clavicle", DEF="hanim_r_clavicle", children=[
+#Visualization sphere for <HAnimJoint name='r_sternoclavicular'/> is placed within <HAnimSegment name='r_clavicle'/>
+
+TouchSensor(description="HAnimJoint r_sternoclavicular, HAnimSegment r_clavicle"),
+Transform(translation=((-0.082,1.4488,-0.0353)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='r_sternoclavicular'/> to child <HAnimJoint name='r_acromioclavicular'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.082,1.4488,-0.0353),(-0.0962,1.4269,-0.0424)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_sternoclavicular'/> to <HAnimSite name='r_clavicale_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.082,1.4488,-0.0353),(-0.0115,1.4943,0.04)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_sternoclavicular'/> to <HAnimSite name='r_acromion_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.082,1.4488,-0.0353),(-0.1905,1.4791,-0.0431)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_sternoclavicular'/> to <HAnimSite name='r_axilla_ant_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.082,1.4488,-0.0353),(-0.1626,1.4072,-0.0031)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_sternoclavicular'/> to <HAnimSite name='r_axilla_post_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.082,1.4488,-0.0353),(-0.1603,1.4098,-0.0826)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+HAnimSite(name="r_clavicle_pt", DEF="hanim_r_clavicle_pt", translation=((-0.0115,1.4943,0.04)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite r_clavicale_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="r_acromion_pt", DEF="hanim_r_acromion_pt", translation=((-0.1905,1.4791,-0.0431)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite r_acromion_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="r_axilla_proximal_pt", DEF="hanim_r_axilla_proximal_pt", translation=((-0.1626,1.4072,-0.0031)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite r_axilla_ant_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="r_axilla_distal_pt", DEF="hanim_r_axilla_distal_pt", translation=((-0.1603,1.4098,-0.0826)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite r_axilla_post_pt"),
+Shape(USE="HAnimSiteShape"),]),]),
+HAnimJoint(name="r_acromioclavicular", DEF="hanim_r_acromioclavicular", center=((-0.0962,1.4269,-0.0424)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="r_scapula", DEF="hanim_r_scapula", children=[
+#Visualization sphere for <HAnimJoint name='r_acromioclavicular'/> is placed within <HAnimSegment name='r_scapula'/>
+
+TouchSensor(description="HAnimJoint r_acromioclavicular, HAnimSegment r_scapula"),
+Transform(translation=((-0.0962,1.4269,-0.0424)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='r_acromioclavicular'/> to child <HAnimJoint name='r_shoulder'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.0962,1.4269,-0.0424),(-0.2029,1.4376,-0.0387)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="r_shoulder", DEF="hanim_r_shoulder", center=((-0.2029,1.4376,-0.0387)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="r_upperarm", DEF="hanim_r_upperarm", children=[
+#Visualization sphere for <HAnimJoint name='r_shoulder'/> is placed within <HAnimSegment name='r_upperarm'/>
+
+TouchSensor(description="HAnimJoint r_shoulder, HAnimSegment r_upperarm"),
+Transform(translation=((-0.2029,1.4376,-0.0387)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='r_shoulder'/> to child <HAnimJoint name='r_elbow'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.2029,1.4376,-0.0387),(-0.2014,1.1357,-0.0682)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_shoulder'/> to <HAnimSite name='r_humeral_lateral_epicn_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.2029,1.4376,-0.0387),(-0.2224,1.1517,-0.1033)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+HAnimSite(name="r_humeral_lateral_epicondyle_pt", DEF="hanim_r_humeral_lateral_epicondyle_pt", translation=((-0.2224,1.1517,-0.1033)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite r_humeral_lateral_epicn_pt"),
+Shape(USE="HAnimSiteShape"),]),]),
+HAnimJoint(name="r_elbow", DEF="hanim_r_elbow", center=((-0.2014,1.1357,-0.0682)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="r_forearm", DEF="hanim_r_forearm", children=[
+#Visualization sphere for <HAnimJoint name='r_elbow'/> is placed within <HAnimSegment name='r_forearm'/>
+
+TouchSensor(description="HAnimJoint r_elbow, HAnimSegment r_forearm"),
+Transform(translation=((-0.2014,1.1357,-0.0682)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='r_elbow'/> to child <HAnimJoint name='r_radiocarpal'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.2014,1.1357,-0.0682),(-0.1984,0.8663,-0.0583)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_elbow'/> to <HAnimSite name='r_radial_styloid_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.2014,1.1357,-0.0682),(-0.1884,0.8676,-0.036)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_elbow'/> to <HAnimSite name='r_olecranon_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.2014,1.1357,-0.0682),(-0.1907,1.1405,-0.1065)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_elbow'/> to <HAnimSite name='r_humeral_medial_epicn_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.2014,1.1357,-0.0682),(-0.168,1.1298,-0.1062)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_elbow'/> to <HAnimSite name='r_radiale_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.2014,1.1357,-0.0682),(-0.213,1.1305,-0.1091)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+HAnimSite(name="r_radial_styloid_pt", DEF="hanim_r_radial_styloid_pt", translation=((-0.1884,0.8676,-0.036)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite r_radial_styloid_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="r_olecranon_pt", DEF="hanim_r_olecranon_pt", translation=((-0.1907,1.1405,-0.1065)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite r_olecranon_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="r_humeral_medial_epicondyle_pt", DEF="hanim_r_humeral_medial_epicondyle_pt", translation=((-0.168,1.1298,-0.1062)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite r_humeral_medial_epicn_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="r_radiale_pt", DEF="hanim_r_radiale_pt", translation=((-0.213,1.1305,-0.1091)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite r_radiale_pt"),
+Shape(USE="HAnimSiteShape"),]),]),
+HAnimJoint(name="r_radiocarpal", DEF="hanim_r_radiocarpal", center=((-0.1984,0.8663,-0.0583)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="r_carpal", DEF="hanim_r_carpal", children=[
+#Visualization sphere for <HAnimJoint name='r_radiocarpal'/> is placed within <HAnimSegment name='r_carpal'/>
+
+TouchSensor(description="HAnimJoint r_radiocarpal, HAnimSegment r_carpal"),
+Transform(translation=((-0.1984,0.8663,-0.0583)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='r_radiocarpal'/> to child <HAnimJoint name='r_thumb1'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.1984,0.8663,-0.0583),(-0.1924,0.8472,-0.0534)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
+#HAnimSegment visualization line from current <HAnimJoint name='r_radiocarpal'/> to child <HAnimJoint name='r_index0'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.1984,0.8663,-0.0583),(-0.1983,0.8024,-0.028)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
+#HAnimSegment visualization line from current <HAnimJoint name='r_radiocarpal'/> to child <HAnimJoint name='r_middle0'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.1984,0.8663,-0.0583),(-0.1987,0.8029,-0.053)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
+#HAnimSegment visualization line from current <HAnimJoint name='r_radiocarpal'/> to child <HAnimJoint name='r_ring0'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.1984,0.8663,-0.0583),(-0.1956,0.8019,-0.0794)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
+#HAnimSegment visualization line from current <HAnimJoint name='r_radiocarpal'/> to child <HAnimJoint name='r_pinky0'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.1984,0.8663,-0.0583),(-0.1925,0.8066,-0.1036)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_radiocarpal'/> to <HAnimSite name='r_metacarpal_pha2_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.1984,0.8663,-0.0583),(-0.1977,0.8169,-0.0177)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_radiocarpal'/> to <HAnimSite name='r_ulnar_styloid_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.1984,0.8663,-0.0583),(-0.2117,0.8562,-0.0584)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_radiocarpal'/> to <HAnimSite name='r_metacarpal_pha5_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.1984,0.8663,-0.0583),(-0.1929,0.789,-0.1064)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite/Viewpoint visualization line segment from ancestor <HAnimJoint name='r_radiocarpal'/> to <HAnimSite name='r_hand_front_view'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.1984,0.8663,-0.0583),(-0.3,0.75,0.45)]), 
+color=
+ColorRGBA(USE="HAnimSiteViewpointLineColorRGBA"))),
+HAnimSite(name="r_metacarpal_phalanx_2_pt", DEF="hanim_r_metacarpal_phalanx_2_pt", translation=((-0.1977,0.8169,-0.0177)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite r_metacarpal_pha2_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="r_ulnar_styloid_pt", DEF="hanim_r_ulnar_styloid_pt", translation=((-0.2117,0.8562,-0.0584)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite r_ulnar_styloid_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="r_metacarpal_phalanx_5_pt", DEF="hanim_r_metacarpal_phalanx_5_pt", translation=((-0.1929,0.789,-0.1064)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite r_metacarpal_pha5_pt"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="r_hand_front_view", DEF="hanim_r_hand_front_view", translation=((-0.3,0.75,0.45)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite r_hand_front_view"),
+Shape(USE="HAnimSiteShape"),
+Viewpoint(DEF="hanim_r_hand_front_viewpoint", centerOfRotation=((0,0.7,0)), description="right hand front", position=((0,0,0))),
+#HAnimSite/Viewpoint visualization shape
+
+Anchor(description="HAnimSite hanim_r_hand_front_view Viewpoint", url=["#hanim_r_hand_front_viewpoint"], children=[
+LOD(forceTransitions=True, range=[float(0.04)], children=[
+WorldInfo(info=["hide diamond when close"]),
+Shape(USE="HAnimSiteViewpointShape")])]),]),]),
+HAnimJoint(name="r_carpometacarpal_1", DEF="hanim_r_carpometacarpal_1", center=((-0.1924,0.8472,-0.0534)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="r_metacarpal_1", DEF="hanim_r_metacarpal_1", children=[
+#Visualization sphere for <HAnimJoint name='r_thumb1'/> is placed within <HAnimSegment name='r_metacarpal_1'/>
+
+TouchSensor(description="HAnimJoint r_thumb1, HAnimSegment r_metacarpal_1"),
+Transform(translation=((-0.1924,0.8472,-0.0534)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='r_thumb1'/> to child <HAnimJoint name='r_thumb2'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.1924,0.8472,-0.0534),(-0.1951,0.8226,0.0246)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="r_metacarpophalangeal_1", DEF="hanim_r_metacarpophalangeal_1", center=((-0.1951,0.8226,0.0246)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="r_carpal_proximal_phalanx_1", DEF="hanim_r_carpal_proximal_phalanx_1", children=[
+#Visualization sphere for <HAnimJoint name='r_thumb2'/> is placed within <HAnimSegment name='r_carpal_proximal_phalanx_1'/>
+
+TouchSensor(description="HAnimJoint r_thumb2, HAnimSegment r_carpal_proximal_phalanx_1"),
+Transform(translation=((-0.1951,0.8226,0.0246)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='r_thumb2'/> to child <HAnimJoint name='r_thumb3'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.1951,0.8226,0.0246),(-0.1955,0.8159,0.0464)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="r_carpal_interphalangeal_1", DEF="hanim_r_carpal_interphalangeal_1", center=((-0.1955,0.8159,0.0464)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="r_carpal_distal_phalanx_1", DEF="hanim_r_carpal_distal_phalanx_1", children=[
+#Visualization sphere for <HAnimJoint name='r_thumb3'/> is placed within <HAnimSegment name='r_carpal_distal_phalanx_1'/>
+
+TouchSensor(description="HAnimJoint r_thumb3, HAnimSegment r_carpal_distal_phalanx_1"),
+Transform(translation=((-0.1955,0.8159,0.0464)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_thumb3'/> to <HAnimSite name='r_thumb_distal_tip'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.1955,0.8159,0.0464),(-0.1869,0.809,0.082)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+HAnimSite(name="r_carpal_distal_phalanx_1_pt", DEF="hanim_r_carpal_distal_phalanx_1_pt", translation=((-0.1869,0.809,0.082)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite r_thumb_distal_tip"),
+Shape(USE="HAnimSiteShape"),]),])])])]),
+HAnimJoint(name="r_carpometacarpal_2", DEF="hanim_r_carpometacarpal_2", center=((-0.1983,0.8024,-0.028)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="r_metacarpal_2", DEF="hanim_r_metacarpal_2", children=[
+#Visualization sphere for <HAnimJoint name='r_index0'/> is placed within <HAnimSegment name='r_metacarpal_2'/>
+
+TouchSensor(description="HAnimJoint r_index0, HAnimSegment r_metacarpal_2"),
+Transform(translation=((-0.1983,0.8024,-0.028)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='r_index0'/> to child <HAnimJoint name='r_index1'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.1983,0.8024,-0.028),(-0.1983,0.7815,-0.028)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="r_metacarpophalangeal_2", DEF="hanim_r_metacarpophalangeal_2", center=((-0.1983,0.7815,-0.028)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="r_carpal_proximal_phalanx_2", DEF="hanim_r_carpal_proximal_phalanx_2", children=[
+#Visualization sphere for <HAnimJoint name='r_index1'/> is placed within <HAnimSegment name='r_carpal_proximal_phalanx_2'/>
+
+TouchSensor(description="HAnimJoint r_index1, HAnimSegment r_carpal_proximal_phalanx_2"),
+Transform(translation=((-0.1983,0.7815,-0.028)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='r_index1'/> to child <HAnimJoint name='r_index2'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.1983,0.7815,-0.028),(-0.2017,0.7363,-0.0248)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="r_carpal_proximal_interphalangeal_2", DEF="hanim_r_carpal_proximal_interphalangeal_2", center=((-0.2017,0.7363,-0.0248)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="r_carpal_middle_phalanx_2", DEF="hanim_r_carpal_middle_phalanx_2", children=[
+#Visualization sphere for <HAnimJoint name='r_index2'/> is placed within <HAnimSegment name='r_carpal_middle_phalanx_2'/>
+
+TouchSensor(description="HAnimJoint r_index2, HAnimSegment r_carpal_middle_phalanx_2"),
+Transform(translation=((-0.2017,0.7363,-0.0248)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='r_index2'/> to child <HAnimJoint name='r_index3'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.2017,0.7363,-0.0248),(-0.2028,0.7139,-0.0236)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="r_carpal_distal_interphalangeal_2", DEF="hanim_r_carpal_distal_interphalangeal_2", center=((-0.2028,0.7139,-0.0236)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="r_carpal_distal_phalanx_2", DEF="hanim_r_carpal_distal_phalanx_2", children=[
+#Visualization sphere for <HAnimJoint name='r_index3'/> is placed within <HAnimSegment name='r_carpal_distal_phalanx_2'/>
+
+TouchSensor(description="HAnimJoint r_index3, HAnimSegment r_carpal_distal_phalanx_2"),
+Transform(translation=((-0.2028,0.7139,-0.0236)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_index3'/> to <HAnimSite name='r_index_distal_tip'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.2028,0.7139,-0.0236),(-0.198,0.6883,-0.018)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_index3'/> to <HAnimSite name='r_dactylion_pt'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.2028,0.7139,-0.0236),(-0.1941,0.6772,-0.0423)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+HAnimSite(name="r_carpal_distal_phalanx_2_pt", DEF="hanim_r_carpal_distal_phalanx_2_pt", translation=((-0.198,0.6883,-0.018)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite r_index_distal_tip"),
+Shape(USE="HAnimSiteShape"),]),
+HAnimSite(name="r_dactylion_pt", DEF="hanim_r_dactylion_pt", translation=((-0.1941,0.6772,-0.0423)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite r_dactylion_pt"),
+Shape(USE="HAnimSiteShape"),]),])])])])]),
+HAnimJoint(name="r_carpometacarpal_3", DEF="hanim_r_carpometacarpal_3", center=((-0.1987,0.8029,-0.053)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="r_metacarpal_3", DEF="hanim_r_metacarpal_3", children=[
+#Visualization sphere for <HAnimJoint name='r_middle0'/> is placed within <HAnimSegment name='r_metacarpal_3'/>
+
+TouchSensor(description="HAnimJoint r_middle0, HAnimSegment r_metacarpal_3"),
+Transform(translation=((-0.1987,0.8029,-0.053)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='r_middle0'/> to child <HAnimJoint name='r_middle1'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.1987,0.8029,-0.053),(-0.1987,0.7818,-0.053)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="r_metacarpophalangeal_3", DEF="hanim_r_metacarpophalangeal_3", center=((-0.1987,0.7818,-0.053)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="r_carpal_proximal_phalanx_3", DEF="hanim_r_carpal_proximal_phalanx_3", children=[
+#Visualization sphere for <HAnimJoint name='r_middle1'/> is placed within <HAnimSegment name='r_carpal_proximal_phalanx_3'/>
+
+TouchSensor(description="HAnimJoint r_middle1, HAnimSegment r_carpal_proximal_phalanx_3"),
+Transform(translation=((-0.1987,0.7818,-0.053)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='r_middle1'/> to child <HAnimJoint name='r_middle2'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.1987,0.7818,-0.053),(-0.2013,0.7273,-0.0503)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="r_carpal_proximal_interphalangeal_3", DEF="hanim_r_carpal_proximal_interphalangeal_3", center=((-0.2013,0.7273,-0.0503)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="r_carpal_middle_phalanx_3", DEF="hanim_r_carpal_middle_phalanx_3", children=[
+#Visualization sphere for <HAnimJoint name='r_middle2'/> is placed within <HAnimSegment name='r_carpal_middle_phalanx_3'/>
+
+TouchSensor(description="HAnimJoint r_middle2, HAnimSegment r_carpal_middle_phalanx_3"),
+Transform(translation=((-0.2013,0.7273,-0.0503)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='r_middle2'/> to child <HAnimJoint name='r_middle3'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.2013,0.7273,-0.0503),(-0.2026,0.7011,-0.0494)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="r_carpal_distal_interphalangeal_3", DEF="hanim_r_carpal_distal_interphalangeal_3", center=((-0.2026,0.7011,-0.0494)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="r_carpal_distal_phalanx_3", DEF="hanim_r_carpal_distal_phalanx_3", children=[
+#Visualization sphere for <HAnimJoint name='r_middle3'/> is placed within <HAnimSegment name='r_carpal_distal_phalanx_3'/>
+
+TouchSensor(description="HAnimJoint r_middle3, HAnimSegment r_carpal_distal_phalanx_3"),
+Transform(translation=((-0.2026,0.7011,-0.0494)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_middle3'/> to <HAnimSite name='r_middle_distal_tip'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.2026,0.7011,-0.0494),(-0.1969,0.6758,-0.0427)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+HAnimSite(name="r_carpal_distal_phalanx_3_pt", DEF="hanim_r_carpal_distal_phalanx_3_pt", translation=((-0.1969,0.6758,-0.0427)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite r_middle_distal_tip"),
+Shape(USE="HAnimSiteShape"),]),])])])])]),
+HAnimJoint(name="r_carpometacarpal_4", DEF="hanim_r_carpometacarpal_4", center=((-0.1956,0.8019,-0.0794)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="r_metacarpal_4", DEF="hanim_r_metacarpal_4", children=[
+#Visualization sphere for <HAnimJoint name='r_ring0'/> is placed within <HAnimSegment name='r_metacarpal_4'/>
+
+TouchSensor(description="HAnimJoint r_ring0, HAnimSegment r_metacarpal_4"),
+Transform(translation=((-0.1956,0.8019,-0.0794)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='r_ring0'/> to child <HAnimJoint name='r_ring1'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.1956,0.8019,-0.0794),(-0.1956,0.7815,-0.0794)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="r_metacarpophalangeal_4", DEF="hanim_r_metacarpophalangeal_4", center=((-0.1956,0.7815,-0.0794)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="r_carpal_proximal_phalanx_4", DEF="hanim_r_carpal_proximal_phalanx_4", children=[
+#Visualization sphere for <HAnimJoint name='r_ring1'/> is placed within <HAnimSegment name='r_carpal_proximal_phalanx_4'/>
+
+TouchSensor(description="HAnimJoint r_ring1, HAnimSegment r_carpal_proximal_phalanx_4"),
+Transform(translation=((-0.1956,0.7815,-0.0794)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='r_ring1'/> to child <HAnimJoint name='r_ring2'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.1956,0.7815,-0.0794),(-0.1973,0.7287,-0.0777)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="r_carpal_proximal_interphalangeal_4", DEF="hanim_r_carpal_proximal_interphalangeal_4", center=((-0.1973,0.7287,-0.0777)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="r_carpal_middle_phalanx_4", DEF="hanim_r_carpal_middle_phalanx_4", children=[
+#Visualization sphere for <HAnimJoint name='r_ring2'/> is placed within <HAnimSegment name='r_carpal_middle_phalanx_4'/>
+
+TouchSensor(description="HAnimJoint r_ring2, HAnimSegment r_carpal_middle_phalanx_4"),
+Transform(translation=((-0.1973,0.7287,-0.0777)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='r_ring2'/> to child <HAnimJoint name='r_ring3'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.1973,0.7287,-0.0777),(-0.1983,0.7045,-0.0767)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="r_carpal_distal_interphalangeal_4", DEF="hanim_r_carpal_distal_interphalangeal_4", center=((-0.1983,0.7045,-0.0767)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="r_carpal_distal_phalanx_4", DEF="hanim_r_carpal_distal_phalanx_4", children=[
+#Visualization sphere for <HAnimJoint name='r_ring3'/> is placed within <HAnimSegment name='r_carpal_distal_phalanx_4'/>
+
+TouchSensor(description="HAnimJoint r_ring3, HAnimSegment r_carpal_distal_phalanx_4"),
+Transform(translation=((-0.1983,0.7045,-0.0767)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_ring3'/> to <HAnimSite name='r_ring_distal_tip'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.1983,0.7045,-0.0767),(-0.1934,0.6778,-0.0693)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+HAnimSite(name="r_carpal_distal_phalanx_4_pt", DEF="hanim_r_carpal_distal_phalanx_4_pt", translation=((-0.1934,0.6778,-0.0693)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite r_ring_distal_tip"),
+Shape(USE="HAnimSiteShape"),]),])])])])]),
+HAnimJoint(name="r_carpometacarpal_5", DEF="hanim_r_carpometacarpal_5", center=((-0.1925,0.8066,-0.1036)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="r_metacarpal_5", DEF="hanim_r_metacarpal_5", children=[
+#Visualization sphere for <HAnimJoint name='r_pinky0'/> is placed within <HAnimSegment name='r_metacarpal_5'/>
+
+TouchSensor(description="HAnimJoint r_pinky0, HAnimSegment r_metacarpal_5"),
+Transform(translation=((-0.1925,0.8066,-0.1036)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='r_pinky0'/> to child <HAnimJoint name='r_pinky1'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.1925,0.8066,-0.1036),(-0.1925,0.7866,-0.1036)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="r_metacarpophalangeal_5", DEF="hanim_r_metacarpophalangeal_5", center=((-0.1925,0.7866,-0.1036)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="r_carpal_proximal_phalanx_5", DEF="hanim_r_carpal_proximal_phalanx_5", children=[
+#Visualization sphere for <HAnimJoint name='r_pinky1'/> is placed within <HAnimSegment name='r_carpal_proximal_phalanx_5'/>
+
+TouchSensor(description="HAnimJoint r_pinky1, HAnimSegment r_carpal_proximal_phalanx_5"),
+Transform(translation=((-0.1925,0.7866,-0.1036)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='r_pinky1'/> to child <HAnimJoint name='r_pinky2'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.1925,0.7866,-0.1036),(-0.1938,0.7452,-0.1024)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="r_carpal_proximal_interphalangeal_5", DEF="hanim_r_carpal_proximal_interphalangeal_5", center=((-0.1938,0.7452,-0.1024)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="r_carpal_middle_phalanx_5", DEF="hanim_r_carpal_middle_phalanx_5", children=[
+#Visualization sphere for <HAnimJoint name='r_pinky2'/> is placed within <HAnimSegment name='r_carpal_middle_phalanx_5'/>
+
+TouchSensor(description="HAnimJoint r_pinky2, HAnimSegment r_carpal_middle_phalanx_5"),
+Transform(translation=((-0.1938,0.7452,-0.1024)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSegment visualization line from current <HAnimJoint name='r_pinky2'/> to child <HAnimJoint name='r_pinky3'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.1938,0.7452,-0.1024),(-0.1948,0.7277,-0.1017)]), 
+color=
+ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),]),
+HAnimJoint(name="r_carpal_distal_interphalangeal_5", DEF="hanim_r_carpal_distal_interphalangeal_5", center=((-0.1948,0.7277,-0.1017)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
+HAnimSegment(name="r_carpal_distal_phalanx_5", DEF="hanim_r_carpal_distal_phalanx_5", children=[
+#Visualization sphere for <HAnimJoint name='r_pinky3'/> is placed within <HAnimSegment name='r_carpal_distal_phalanx_5'/>
+
+TouchSensor(description="HAnimJoint r_pinky3, HAnimSegment r_carpal_distal_phalanx_5"),
+Transform(translation=((-0.1948,0.7277,-0.1017)), children=[
+Shape(USE="HAnimJointShape")]),
+#HAnimSite visualization line segment from ancestor <HAnimJoint name='r_pinky3'/> to <HAnimSite name='r_pinky_distal_tip'/>
+
+Shape(
+geometry=
+LineSet(vertexCount=[int(2)], 
+coord=
+Coordinate(point=[(-0.1948,0.7277,-0.1017),(-0.1938,0.7035,-0.0949)]), 
+color=
+ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
+HAnimSite(name="r_carpal_distal_phalanx_5_pt", DEF="hanim_r_carpal_distal_phalanx_5_pt", translation=((-0.1938,0.7035,-0.0949)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite r_pinky_distal_tip"),
+Shape(USE="HAnimSiteShape"),]),])])])])])])])])])])])])])])])])])])])])])])])])])])])])), viewpoints=(
+HAnimSite(name="l_inclined_view", DEF="hanim_l_inclined_view", rotation=((-0.113,0.993,0.0347,0.671)), translation=((1.62,1.05,2.06)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_inclined_view"),
+Shape(USE="HAnimSiteShape"),
+Viewpoint(DEF="hanim_l_inclined_viewpoint", description="left inclined", position=((0,0,0))),
+#HAnimSite/Viewpoint visualization shape
+
+Anchor(description="HAnimSite hanim_l_inclined_view Viewpoint", url=["#hanim_l_inclined_viewpoint"], children=[
+LOD(forceTransitions=True, range=[float(0.04)], children=[
+WorldInfo(info=["hide diamond when close"]),
+Shape(USE="HAnimSiteViewpointShape")])]),]),
+HAnimSite(name="r_inclined_view", DEF="hanim_r_inclined_view", rotation=((-0.113,-0.993,0.0347,0.671)), translation=((-1.62,1.05,2.06)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite r_inclined_view"),
+Shape(USE="HAnimSiteShape"),
+Viewpoint(DEF="hanim_r_inclined_viewpoint", centerOfRotation=((0,0.9,0)), description="right inclined", position=((0,0,0))),
+#HAnimSite/Viewpoint visualization shape
+
+Anchor(description="HAnimSite hanim_r_inclined_view Viewpoint", url=["#hanim_r_inclined_viewpoint"], children=[
+LOD(forceTransitions=True, range=[float(0.04)], children=[
+WorldInfo(info=["hide diamond when close"]),
+Shape(USE="HAnimSiteViewpointShape")])]),]),
+HAnimSite(name="front_view", DEF="hanim_front_view", translation=((0,0.85,2.58)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite front_view"),
+Shape(USE="HAnimSiteShape"),
+Viewpoint(DEF="hanim_front_viewpoint", centerOfRotation=((0,0.9,0)), description="front", position=((0,0,0))),
+#HAnimSite/Viewpoint visualization shape
+
+Anchor(description="HAnimSite hanim_front_view Viewpoint", url=["#hanim_front_viewpoint"], children=[
+LOD(forceTransitions=True, range=[float(0.04)], children=[
+WorldInfo(info=["hide diamond when close"]),
+Shape(USE="HAnimSiteViewpointShape")])]),]),
+HAnimSite(name="back_view", DEF="hanim_back_view", rotation=((0,1,0,3.14)), translation=((0,0.85,-2.58)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite back_view"),
+Shape(USE="HAnimSiteShape"),
+Viewpoint(DEF="hanim_back_viewpoint", centerOfRotation=((0,0.9,0)), description="back", position=((0,0,0))),
+#HAnimSite/Viewpoint visualization shape
+
+Anchor(description="HAnimSite hanim_back_view Viewpoint", url=["#hanim_back_viewpoint"], children=[
+LOD(forceTransitions=True, range=[float(0.04)], children=[
+WorldInfo(info=["hide diamond when close"]),
+Shape(USE="HAnimSiteViewpointShape")])]),]),
+HAnimSite(name="l_side_view", DEF="hanim_l_side_view", rotation=((0,1,0,1.5708)), translation=((2.6,0.854,0)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite l_side_view"),
+Shape(USE="HAnimSiteShape"),
+Viewpoint(DEF="hanim_l_side_viewpoint", centerOfRotation=((0,0.9,0)), description="left side", position=((0,0,0))),
+#HAnimSite/Viewpoint visualization shape
+
+Anchor(description="HAnimSite hanim_l_side_view Viewpoint", url=["#hanim_l_side_viewpoint"], children=[
+LOD(forceTransitions=True, range=[float(0.04)], children=[
+WorldInfo(info=["hide diamond when close"]),
+Shape(USE="HAnimSiteViewpointShape")])]),]),
+HAnimSite(name="Top_view", DEF="hanim_Top_view", rotation=((1,0,0,-1.57)), translation=((0,3.5,0)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite Top_view"),
+Shape(USE="HAnimSiteShape"),
+Viewpoint(DEF="hanim_Top_viewpoint", centerOfRotation=((0,0.9,0)), description="Top", position=((0,0,0))),
+#HAnimSite/Viewpoint visualization shape
+
+Anchor(description="HAnimSite hanim_Top_view Viewpoint", url=["#hanim_Top_viewpoint"], children=[
+LOD(forceTransitions=True, range=[float(0.04)], children=[
+WorldInfo(info=["hide diamond when close"]),
+Shape(USE="HAnimSiteViewpointShape")])]),]),
+HAnimSite(name="front_close_view", DEF="hanim_front_close_view", translation=((0,0.854,1.575)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite front_close_view"),
+Shape(USE="HAnimSiteShape"),
+Viewpoint(DEF="hanim_front_close_viewpoint", centerOfRotation=((0,0,1.575)), description="front close", position=((0,0,0))),
+#HAnimSite/Viewpoint visualization shape
+
+Anchor(description="HAnimSite hanim_front_close_view Viewpoint", url=["#hanim_front_close_viewpoint"], children=[
+LOD(forceTransitions=True, range=[float(0.04)], children=[
+WorldInfo(info=["hide diamond when close"]),
+Shape(USE="HAnimSiteViewpointShape")])]),]),
+HAnimSite(name="side_close_view", DEF="hanim_side_close_view", rotation=((0,1,0,1.5708)), translation=((1.56,0.854,0)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite side_close_view"),
+Shape(USE="HAnimSiteShape"),
+Viewpoint(DEF="hanim_side_close_viewpoint", centerOfRotation=((1.6,0,0)), description="side close", position=((0,0,0))),
+#HAnimSite/Viewpoint visualization shape
+
+Anchor(description="HAnimSite hanim_side_close_view Viewpoint", url=["#hanim_side_close_viewpoint"], children=[
+LOD(forceTransitions=True, range=[float(0.04)], children=[
+WorldInfo(info=["hide diamond when close"]),
+Shape(USE="HAnimSiteViewpointShape")])]),]),
+HAnimSite(name="head_front_close_view", DEF="hanim_head_front_close_view", translation=((0,1.5,1)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite head_front_close_view"),
+Shape(USE="HAnimSiteShape"),
+Viewpoint(DEF="hanim_head_front_close_viewpoint", centerOfRotation=((0,0,1)), description="head front close", position=((0,0,0))),
+#HAnimSite/Viewpoint visualization shape
+
+Anchor(description="HAnimSite hanim_head_front_close_view Viewpoint", url=["#hanim_head_front_close_viewpoint"], children=[
+LOD(forceTransitions=True, range=[float(0.04)], children=[
+WorldInfo(info=["hide diamond when close"]),
+Shape(USE="HAnimSiteViewpointShape")])]),]),
+HAnimSite(name="chest_front_close_view", DEF="hanim_chest_front_close_view", translation=((0,1.2,1)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite chest_front_close_view"),
+Shape(USE="HAnimSiteShape"),
+Viewpoint(DEF="hanim_chest_front_close_viewpoint", centerOfRotation=((0,0,1)), description="chest front close", position=((0,0,0))),
+#HAnimSite/Viewpoint visualization shape
+
+Anchor(description="HAnimSite hanim_chest_front_close_view Viewpoint", url=["#hanim_chest_front_close_viewpoint"], children=[
+LOD(forceTransitions=True, range=[float(0.04)], children=[
+WorldInfo(info=["hide diamond when close"]),
+Shape(USE="HAnimSiteViewpointShape")])]),]),
+HAnimSite(name="pelvis_front_close_view", DEF="hanim_pelvis_front_close_view", translation=((0,0.8,1)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite pelvis_front_close_view"),
+Shape(USE="HAnimSiteShape"),
+Viewpoint(DEF="hanim_pelvis_front_close_viewpoint", centerOfRotation=((0,0,1)), description="pelvis front close", position=((0,0,0))),
+#HAnimSite/Viewpoint visualization shape
+
+Anchor(description="HAnimSite hanim_pelvis_front_close_view Viewpoint", url=["#hanim_pelvis_front_close_viewpoint"], children=[
+LOD(forceTransitions=True, range=[float(0.04)], children=[
+WorldInfo(info=["hide diamond when close"]),
+Shape(USE="HAnimSiteViewpointShape")])]),]),
+HAnimSite(name="knees_front_close_view", DEF="hanim_knees_front_close_view", translation=((0,0.4,1)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite knees_front_close_view"),
+Shape(USE="HAnimSiteShape"),
+Viewpoint(DEF="hanim_knees_front_close_viewpoint", centerOfRotation=((0,0.4,0)), description="knees front close", position=((0,0,0))),
+#HAnimSite/Viewpoint visualization shape
+
+Anchor(description="HAnimSite hanim_knees_front_close_view Viewpoint", url=["#hanim_knees_front_close_viewpoint"], children=[
+LOD(forceTransitions=True, range=[float(0.04)], children=[
+WorldInfo(info=["hide diamond when close"]),
+Shape(USE="HAnimSiteViewpointShape")])]),]),
+HAnimSite(name="feet_front_close_view", DEF="hanim_feet_front_close_view", translation=((0,0,1)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite feet_front_close_view"),
+Shape(USE="HAnimSiteShape"),
+Viewpoint(DEF="hanim_feet_front_close_viewpoint", description="feet front close", position=((0,0,0))),
+#HAnimSite/Viewpoint visualization shape
+
+Anchor(description="HAnimSite hanim_feet_front_close_view Viewpoint", url=["#hanim_feet_front_close_viewpoint"], children=[
+LOD(forceTransitions=True, range=[float(0.04)], children=[
+WorldInfo(info=["hide diamond when close"]),
+Shape(USE="HAnimSiteViewpointShape")])]),]),
+HAnimSite(name="eye_level_view", DEF="hanim_eye_level_view", translation=((0,1.6332,0.0502)), children=[
+#HAnimSite visualization shape
+
+TouchSensor(description="HAnimSite eye_level_view"),
+Shape(USE="HAnimSiteShape"),
+Viewpoint(DEF="hanim_eye_level_viewpoint", description="eye level looking forward", orientation=((0,1,0,3.141593)), position=((0,0,0))),
+#HAnimSite/Viewpoint visualization shape
+
+Anchor(description="HAnimSite hanim_eye_level_view Viewpoint", url=["#hanim_eye_level_viewpoint"], children=[
+LOD(forceTransitions=True, range=[float(0.04)], children=[
+WorldInfo(info=["hide diamond when close"]),
+Shape(USE="HAnimSiteViewpointShape")])]),]),
+HAnimSite(USE="hanim_l_eyeball_site_view"),
+HAnimSite(USE="hanim_r_eyeball_site_view"),
+HAnimSite(USE="hanim_l_hand_front_view"),
+HAnimSite(USE="hanim_r_hand_front_view")), joints=(
+HAnimJoint(USE="hanim_humanoid_root"),
+HAnimJoint(USE="hanim_sacroiliac"),
+HAnimJoint(USE="hanim_vl5"),
+HAnimJoint(USE="hanim_vl4"),
+HAnimJoint(USE="hanim_vl3"),
+HAnimJoint(USE="hanim_vl2"),
+HAnimJoint(USE="hanim_vl1"),
+HAnimJoint(USE="hanim_vt12"),
+HAnimJoint(USE="hanim_vt11"),
+HAnimJoint(USE="hanim_vt10"),
+HAnimJoint(USE="hanim_vt9"),
+HAnimJoint(USE="hanim_vt8"),
+HAnimJoint(USE="hanim_vt7"),
+HAnimJoint(USE="hanim_vt6"),
+HAnimJoint(USE="hanim_vt5"),
+HAnimJoint(USE="hanim_vt4"),
+HAnimJoint(USE="hanim_vt3"),
+HAnimJoint(USE="hanim_vt2"),
+HAnimJoint(USE="hanim_vt1"),
+HAnimJoint(USE="hanim_vc7"),
+HAnimJoint(USE="hanim_vc6"),
+HAnimJoint(USE="hanim_vc5"),
+HAnimJoint(USE="hanim_vc4"),
+HAnimJoint(USE="hanim_vc3"),
+HAnimJoint(USE="hanim_vc2"),
+HAnimJoint(USE="hanim_vc1"),
+HAnimJoint(USE="hanim_skullbase"),
+HAnimJoint(USE="hanim_temporomandibular"),
+HAnimJoint(USE="hanim_l_acromioclavicular"),
+HAnimJoint(USE="hanim_r_acromioclavicular"),
+HAnimJoint(USE="hanim_l_carpal_distal_interphalangeal_2"),
+HAnimJoint(USE="hanim_r_carpal_distal_interphalangeal_2"),
+HAnimJoint(USE="hanim_l_carpal_distal_interphalangeal_3"),
+HAnimJoint(USE="hanim_r_carpal_distal_interphalangeal_3"),
+HAnimJoint(USE="hanim_l_carpal_distal_interphalangeal_4"),
+HAnimJoint(USE="hanim_r_carpal_distal_interphalangeal_4"),
+HAnimJoint(USE="hanim_l_carpal_distal_interphalangeal_5"),
+HAnimJoint(USE="hanim_r_carpal_distal_interphalangeal_5"),
+HAnimJoint(USE="hanim_l_carpal_interphalangeal_1"),
+HAnimJoint(USE="hanim_r_carpal_interphalangeal_1"),
+HAnimJoint(USE="hanim_l_carpal_proximal_interphalangeal_2"),
+HAnimJoint(USE="hanim_r_carpal_proximal_interphalangeal_2"),
+HAnimJoint(USE="hanim_l_carpal_proximal_interphalangeal_3"),
+HAnimJoint(USE="hanim_r_carpal_proximal_interphalangeal_3"),
+HAnimJoint(USE="hanim_l_carpal_proximal_interphalangeal_4"),
+HAnimJoint(USE="hanim_r_carpal_proximal_interphalangeal_4"),
+HAnimJoint(USE="hanim_l_carpal_proximal_interphalangeal_5"),
+HAnimJoint(USE="hanim_r_carpal_proximal_interphalangeal_5"),
+HAnimJoint(USE="hanim_l_carpometacarpal_1"),
+HAnimJoint(USE="hanim_r_carpometacarpal_1"),
+HAnimJoint(USE="hanim_l_carpometacarpal_2"),
+HAnimJoint(USE="hanim_r_carpometacarpal_2"),
+HAnimJoint(USE="hanim_l_carpometacarpal_3"),
+HAnimJoint(USE="hanim_r_carpometacarpal_3"),
+HAnimJoint(USE="hanim_l_carpometacarpal_4"),
+HAnimJoint(USE="hanim_r_carpometacarpal_4"),
+HAnimJoint(USE="hanim_l_carpometacarpal_5"),
+HAnimJoint(USE="hanim_r_carpometacarpal_5"),
+HAnimJoint(USE="hanim_l_elbow"),
+HAnimJoint(USE="hanim_r_elbow"),
+HAnimJoint(USE="hanim_l_eyeball_joint"),
+HAnimJoint(USE="hanim_r_eyeball_joint"),
+HAnimJoint(USE="hanim_l_eyebrow_joint"),
+HAnimJoint(USE="hanim_r_eyebrow_joint"),
+HAnimJoint(USE="hanim_l_eyelid_joint"),
+HAnimJoint(USE="hanim_r_eyelid_joint"),
+HAnimJoint(USE="hanim_l_hip"),
+HAnimJoint(USE="hanim_r_hip"),
+HAnimJoint(USE="hanim_l_knee"),
+HAnimJoint(USE="hanim_r_knee"),
+HAnimJoint(USE="hanim_l_metacarpophalangeal_1"),
+HAnimJoint(USE="hanim_r_metacarpophalangeal_1"),
+HAnimJoint(USE="hanim_l_metacarpophalangeal_2"),
+HAnimJoint(USE="hanim_r_metacarpophalangeal_2"),
+HAnimJoint(USE="hanim_l_metacarpophalangeal_3"),
+HAnimJoint(USE="hanim_r_metacarpophalangeal_3"),
+HAnimJoint(USE="hanim_l_metacarpophalangeal_4"),
+HAnimJoint(USE="hanim_r_metacarpophalangeal_4"),
+HAnimJoint(USE="hanim_l_metacarpophalangeal_5"),
+HAnimJoint(USE="hanim_r_metacarpophalangeal_5"),
+HAnimJoint(USE="hanim_l_metatarsophalangeal_2"),
+HAnimJoint(USE="hanim_r_metatarsophalangeal_2"),
+HAnimJoint(USE="hanim_l_radiocarpal"),
+HAnimJoint(USE="hanim_r_radiocarpal"),
+HAnimJoint(USE="hanim_l_shoulder"),
+HAnimJoint(USE="hanim_r_shoulder"),
+HAnimJoint(USE="hanim_l_sternoclavicular"),
+HAnimJoint(USE="hanim_r_sternoclavicular"),
+HAnimJoint(USE="hanim_l_talocrural"),
+HAnimJoint(USE="hanim_r_talocrural"),
+HAnimJoint(USE="hanim_l_tarsal_distal_interphalangeal_2"),
+HAnimJoint(USE="hanim_r_tarsal_distal_interphalangeal_2"),
+HAnimJoint(USE="hanim_l_tarsometatarsal_2"),
+HAnimJoint(USE="hanim_r_tarsometatarsal_2")), segments=(
+HAnimSegment(USE="hanim_pelvis"),
+HAnimSegment(USE="hanim_skull"),
+HAnimSegment(USE="hanim_jaw"),
+HAnimSegment(USE="hanim_c1"),
+HAnimSegment(USE="hanim_c2"),
+HAnimSegment(USE="hanim_c3"),
+HAnimSegment(USE="hanim_c4"),
+HAnimSegment(USE="hanim_c5"),
+HAnimSegment(USE="hanim_c6"),
+HAnimSegment(USE="hanim_c7"),
+HAnimSegment(USE="hanim_t1"),
+HAnimSegment(USE="hanim_t2"),
+HAnimSegment(USE="hanim_t3"),
+HAnimSegment(USE="hanim_t4"),
+HAnimSegment(USE="hanim_t5"),
+HAnimSegment(USE="hanim_t6"),
+HAnimSegment(USE="hanim_t7"),
+HAnimSegment(USE="hanim_t8"),
+HAnimSegment(USE="hanim_t9"),
+HAnimSegment(USE="hanim_t10"),
+HAnimSegment(USE="hanim_t11"),
+HAnimSegment(USE="hanim_t12"),
+HAnimSegment(USE="hanim_l1"),
+HAnimSegment(USE="hanim_l2"),
+HAnimSegment(USE="hanim_l3"),
+HAnimSegment(USE="hanim_l4"),
+HAnimSegment(USE="hanim_l5"),
+HAnimSegment(USE="hanim_sacrum"),
+HAnimSegment(USE="hanim_l_calf"),
+HAnimSegment(USE="hanim_r_calf"),
+HAnimSegment(USE="hanim_l_carpal"),
+HAnimSegment(USE="hanim_r_carpal"),
+HAnimSegment(USE="hanim_l_carpal_distal_phalanx_1"),
+HAnimSegment(USE="hanim_r_carpal_distal_phalanx_1"),
+HAnimSegment(USE="hanim_l_carpal_distal_phalanx_2"),
+HAnimSegment(USE="hanim_r_carpal_distal_phalanx_2"),
+HAnimSegment(USE="hanim_l_carpal_distal_phalanx_3"),
+HAnimSegment(USE="hanim_r_carpal_distal_phalanx_3"),
+HAnimSegment(USE="hanim_l_carpal_distal_phalanx_4"),
+HAnimSegment(USE="hanim_r_carpal_distal_phalanx_4"),
+HAnimSegment(USE="hanim_l_carpal_distal_phalanx_5"),
+HAnimSegment(USE="hanim_r_carpal_distal_phalanx_5"),
+HAnimSegment(USE="hanim_l_carpal_middle_phalanx_2"),
+HAnimSegment(USE="hanim_r_carpal_middle_phalanx_2"),
+HAnimSegment(USE="hanim_l_carpal_middle_phalanx_3"),
+HAnimSegment(USE="hanim_r_carpal_middle_phalanx_3"),
+HAnimSegment(USE="hanim_l_carpal_middle_phalanx_4"),
+HAnimSegment(USE="hanim_r_carpal_middle_phalanx_4"),
+HAnimSegment(USE="hanim_l_carpal_middle_phalanx_5"),
+HAnimSegment(USE="hanim_r_carpal_middle_phalanx_5"),
+HAnimSegment(USE="hanim_l_carpal_proximal_phalanx_1"),
+HAnimSegment(USE="hanim_r_carpal_proximal_phalanx_1"),
+HAnimSegment(USE="hanim_l_carpal_proximal_phalanx_2"),
+HAnimSegment(USE="hanim_r_carpal_proximal_phalanx_2"),
+HAnimSegment(USE="hanim_l_carpal_proximal_phalanx_3"),
+HAnimSegment(USE="hanim_r_carpal_proximal_phalanx_3"),
+HAnimSegment(USE="hanim_l_carpal_proximal_phalanx_4"),
+HAnimSegment(USE="hanim_r_carpal_proximal_phalanx_4"),
+HAnimSegment(USE="hanim_l_carpal_proximal_phalanx_5"),
+HAnimSegment(USE="hanim_r_carpal_proximal_phalanx_5"),
+HAnimSegment(USE="hanim_l_clavicle"),
+HAnimSegment(USE="hanim_r_clavicle"),
+HAnimSegment(USE="hanim_l_eyeball"),
+HAnimSegment(USE="hanim_r_eyeball"),
+HAnimSegment(USE="hanim_l_eyebrow"),
+HAnimSegment(USE="hanim_r_eyebrow"),
+HAnimSegment(USE="hanim_l_eyelid"),
+HAnimSegment(USE="hanim_r_eyelid"),
+HAnimSegment(USE="hanim_l_forearm"),
+HAnimSegment(USE="hanim_r_forearm"),
+HAnimSegment(USE="hanim_l_metacarpal_1"),
+HAnimSegment(USE="hanim_r_metacarpal_1"),
+HAnimSegment(USE="hanim_l_metacarpal_2"),
+HAnimSegment(USE="hanim_r_metacarpal_2"),
+HAnimSegment(USE="hanim_l_metacarpal_3"),
+HAnimSegment(USE="hanim_r_metacarpal_3"),
+HAnimSegment(USE="hanim_l_metacarpal_4"),
+HAnimSegment(USE="hanim_r_metacarpal_4"),
+HAnimSegment(USE="hanim_l_metacarpal_5"),
+HAnimSegment(USE="hanim_r_metacarpal_5"),
+HAnimSegment(USE="hanim_l_metatarsal_2"),
+HAnimSegment(USE="hanim_r_metatarsal_2"),
+HAnimSegment(USE="hanim_l_scapula"),
+HAnimSegment(USE="hanim_r_scapula"),
+HAnimSegment(USE="hanim_l_talus"),
+HAnimSegment(USE="hanim_r_talus"),
+HAnimSegment(USE="hanim_l_tarsal_distal_phalanx_2"),
+HAnimSegment(USE="hanim_r_tarsal_distal_phalanx_2"),
+HAnimSegment(USE="hanim_l_tarsal_proximal_phalanx_2"),
+HAnimSegment(USE="hanim_r_tarsal_proximal_phalanx_2"),
+HAnimSegment(USE="hanim_l_thigh"),
+HAnimSegment(USE="hanim_r_thigh"),
+HAnimSegment(USE="hanim_l_upperarm"),
+HAnimSegment(USE="hanim_r_upperarm")), sites=(
+HAnimSite(USE="hanim_crotch_pt"),
+HAnimSite(USE="hanim_skull_vertex_pt"),
+HAnimSite(USE="hanim_sellion_pt"),
+HAnimSite(USE="hanim_supramenton_pt"),
+HAnimSite(USE="hanim_nuchale_pt"),
+HAnimSite(USE="hanim_suprasternale_pt"),
+HAnimSite(USE="hanim_cervicale_pt"),
+HAnimSite(USE="hanim_substernale_pt"),
+HAnimSite(USE="hanim_rib10_midspine_pt"),
+HAnimSite(USE="hanim_waist_preferred_posterior_pt"),
+HAnimSite(USE="hanim_navel_pt"),
+HAnimSite(USE="hanim_l_acromion_pt"),
+HAnimSite(USE="hanim_r_acromion_pt"),
+HAnimSite(USE="hanim_r_asis_pt"),
+HAnimSite(USE="hanim_l_asis_pt"),
+HAnimSite(USE="hanim_l_axilla_distal_pt"),
+HAnimSite(USE="hanim_r_axilla_distal_pt"),
+HAnimSite(USE="hanim_l_axilla_proximal_pt"),
+HAnimSite(USE="hanim_r_axilla_proximal_pt"),
+HAnimSite(USE="hanim_l_calcaneus_posterior_pt"),
+HAnimSite(USE="hanim_r_calcaneus_posterior_pt"),
+HAnimSite(USE="hanim_l_carpal_distal_phalanx_1_pt"),
+HAnimSite(USE="hanim_r_carpal_distal_phalanx_1_pt"),
+HAnimSite(USE="hanim_l_carpal_distal_phalanx_2_pt"),
+HAnimSite(USE="hanim_r_carpal_distal_phalanx_2_pt"),
+HAnimSite(USE="hanim_l_carpal_distal_phalanx_3_pt"),
+HAnimSite(USE="hanim_r_carpal_distal_phalanx_3_pt"),
+HAnimSite(USE="hanim_l_carpal_distal_phalanx_4_pt"),
+HAnimSite(USE="hanim_r_carpal_distal_phalanx_4_pt"),
+HAnimSite(USE="hanim_l_carpal_distal_phalanx_5_pt"),
+HAnimSite(USE="hanim_r_carpal_distal_phalanx_5_pt"),
+HAnimSite(USE="hanim_l_clavicle_pt"),
+HAnimSite(USE="hanim_r_clavicle_pt"),
+HAnimSite(USE="hanim_l_dactylion_pt"),
+HAnimSite(USE="hanim_r_dactylion_pt"),
+HAnimSite(USE="hanim_l_femoral_lateral_epicondyle_pt"),
+HAnimSite(USE="hanim_r_femoral_lateral_epicondyle_pt"),
+HAnimSite(USE="hanim_l_femoral_medial_epicondyle_pt"),
+HAnimSite(USE="hanim_r_femoral_medial_epicondyle_pt"),
+HAnimSite(USE="hanim_l_forefoot_tip_pt"),
+HAnimSite(USE="hanim_r_forefoot_tip_pt"),
+HAnimSite(USE="hanim_r_gonion_pt"),
+HAnimSite(USE="hanim_l_gonion_pt"),
+HAnimSite(USE="hanim_l_humeral_lateral_epicondyle_pt"),
+HAnimSite(USE="hanim_r_humeral_lateral_epicondyle_pt"),
+HAnimSite(USE="hanim_l_humeral_medial_epicondyle_pt"),
+HAnimSite(USE="hanim_r_humeral_medial_epicondyle_pt"),
+HAnimSite(USE="hanim_r_iliocristale_pt"),
+HAnimSite(USE="hanim_l_iliocristale_pt"),
+HAnimSite(USE="hanim_r_infraorbitale_pt"),
+HAnimSite(USE="hanim_l_infraorbitale_pt"),
+HAnimSite(USE="hanim_l_knee_crease_pt"),
+HAnimSite(USE="hanim_r_knee_crease_pt"),
+HAnimSite(USE="hanim_l_lateral_malleolus_pt"),
+HAnimSite(USE="hanim_r_lateral_malleolus_pt"),
+HAnimSite(USE="hanim_l_medial_malleolus_pt"),
+HAnimSite(USE="hanim_r_medial_malleolus_pt"),
+HAnimSite(USE="hanim_l_metacarpal_phalanx_2_pt"),
+HAnimSite(USE="hanim_r_metacarpal_phalanx_2_pt"),
+HAnimSite(USE="hanim_l_metacarpal_phalanx_5_pt"),
+HAnimSite(USE="hanim_r_metacarpal_phalanx_5_pt"),
+HAnimSite(USE="hanim_l_metatarsal_phalanx_1_pt"),
+HAnimSite(USE="hanim_r_metatarsal_phalanx_1_pt"),
+HAnimSite(USE="hanim_l_metatarsal_phalanx_5_pt"),
+HAnimSite(USE="hanim_r_metatarsal_phalanx_5_pt"),
+HAnimSite(USE="hanim_r_neck_base_pt"),
+HAnimSite(USE="hanim_l_neck_base_pt"),
+HAnimSite(USE="hanim_l_olecranon_pt"),
+HAnimSite(USE="hanim_r_olecranon_pt"),
+HAnimSite(USE="hanim_r_psis_pt"),
+HAnimSite(USE="hanim_l_psis_pt"),
+HAnimSite(USE="hanim_l_radial_styloid_pt"),
+HAnimSite(USE="hanim_r_radial_styloid_pt"),
+HAnimSite(USE="hanim_l_radiale_pt"),
+HAnimSite(USE="hanim_r_radiale_pt"),
+HAnimSite(USE="hanim_r_rib10_pt"),
+HAnimSite(USE="hanim_l_rib10_pt"),
+HAnimSite(USE="hanim_temporomandibular_l_site_pt"),
+HAnimSite(USE="hanim_temporomandibular_r_site_pt"),
+HAnimSite(USE="hanim_l_sphyrion_pt"),
+HAnimSite(USE="hanim_r_sphyrion_pt"),
+HAnimSite(USE="hanim_l_tarsal_distal_phalanx_2_pt"),
+HAnimSite(USE="hanim_r_tarsal_distal_phalanx_2_pt"),
+HAnimSite(USE="hanim_r_thelion_pt"),
+HAnimSite(USE="hanim_l_thelion_pt"),
+HAnimSite(USE="hanim_r_tragion_pt"),
+HAnimSite(USE="hanim_l_tragion_pt"),
+HAnimSite(USE="hanim_r_trochanterion_pt"),
+HAnimSite(USE="hanim_l_trochanterion_pt"),
+HAnimSite(USE="hanim_l_ulnar_styloid_pt"),
+HAnimSite(USE="hanim_r_ulnar_styloid_pt"))),]))
 .XML())

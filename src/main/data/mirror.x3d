@@ -18,24 +18,24 @@
       <Scene>
         <Viewpoint position='0 5 100' description='Switch background and images texture'/>
 	<TextureBackground>
-	<ImageTexture DEF="leftBackTexture" containerField='leftTexture' url='"../resources/images/all_probes/beach_cross/beach_left.png" "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"'/> 
-	<ImageTexture DEF="rightBackTexture" containerField='rightTexture' url='"../resources/images/all_probes/beach_cross/beach_right.png" "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"'/> 
-	<ImageTexture DEF="frontBackTexture" containerField='frontTexture' url='"../resources/images/all_probes/beach_cross/beach_front.png" "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"'/> 
-	<ImageTexture DEF="backBackTexture" containerField='backTexture' url='"../resources/images/all_probes/beach_cross/beach_back.png" "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"'/> 
-	<ImageTexture DEF="topBackTexture" containerField='topTexture' url='"../resources/images/all_probes/beach_cross/beach_top.png" "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"'/> 
-	<ImageTexture DEF="bottomBackTexture" containerField='bottomTexture' url='"../resources/images/all_probes/beach_cross/beach_bottom.png" "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"'/>
+	<ImageTexture DEF="leftBackgroundTexture" containerField='left' url='"../resources/images/all_probes/beach_cross/beach_left.png" "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"'/> 
+	<ImageTexture DEF="rightBackgroundTexture" containerField='right' url='"../resources/images/all_probes/beach_cross/beach_right.png" "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"'/> 
+	<ImageTexture DEF="frontBackgroundTexture" containerField='front' url='"../resources/images/all_probes/beach_cross/beach_front.png" "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"'/> 
+	<ImageTexture DEF="backBackgroundTexture" containerField='back' url='"../resources/images/all_probes/beach_cross/beach_back.png" "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"'/> 
+	<ImageTexture DEF="topBackgroundTexture" containerField='top' url='"../resources/images/all_probes/beach_cross/beach_top.png" "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"'/> 
+	<ImageTexture DEF="bottomBackgroundTexture" containerField='bottom' url='"../resources/images/all_probes/beach_cross/beach_bottom.png" "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"'/>
 	</TextureBackground> 
         <Transform >
           <Shape>
             <Appearance>
                 <Material diffuseColor=".7 .7 .7" specularColor=".5 .5 .5" />
                 <ComposedCubeMapTexture>
-                    <ImageTexture DEF="backShader" containerField="backTexture" url='"../resources/images/all_probes/beach_cross/beach_back.png" "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"' />
-                    <ImageTexture DEF="bottomShader" containerField="bottomTexture" url='"../resources/images/all_probes/beach_cross/beach_bottom.png" "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"' />
-                    <ImageTexture DEF="frontShader" containerField="frontTexture" url='"../resources/images/all_probes/beach_cross/beach_front.png" "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"' />
-                    <ImageTexture DEF="leftShader" containerField="leftTexture" url='"../resources/images/all_probes/beach_cross/beach_left.png" "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"' />
-                    <ImageTexture DEF="rightShader" containerField="rightTexture" url='"../resources/images/all_probes/beach_cross/beach_right.png" "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"' />
-                    <ImageTexture DEF="topShader" containerField="topTexture" url='"../resources/images/all_probes/beach_cross/beach_top.png" "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"' />
+                    <ImageTexture DEF="backShader" containerField="back" url='"../resources/images/all_probes/beach_cross/beach_back.png" "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"' />
+                    <ImageTexture DEF="bottomShader" containerField="bottom" url='"../resources/images/all_probes/beach_cross/beach_bottom.png" "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"' />
+                    <ImageTexture DEF="frontShader" containerField="front" url='"../resources/images/all_probes/beach_cross/beach_front.png" "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"' />
+                    <ImageTexture DEF="leftShader" containerField="left" url='"../resources/images/all_probes/beach_cross/beach_left.png" "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"' />
+                    <ImageTexture DEF="rightShader" containerField="right" url='"../resources/images/all_probes/beach_cross/beach_right.png" "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"' />
+                    <ImageTexture DEF="topShader" containerField="top" url='"../resources/images/all_probes/beach_cross/beach_top.png" "https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"' />
                 </ComposedCubeMapTexture>
                 
                 <ComposedShader DEF="x3dom" language='GLSL'>
@@ -97,12 +97,12 @@ ecmascript:
 </Script> 
 	    <TimeSensor DEF="Clock" cycleInterval="45" loop='true'/>
             <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/> 
-	    <ROUTE fromNode='UrlSelector' fromField='front_changed' toNode='frontBackTexture' toField='url'/>
-	    <ROUTE fromNode='UrlSelector' fromField='back_changed' toNode='backBackTexture' toField='url'/>
-	    <ROUTE fromNode='UrlSelector' fromField='left_changed' toNode='leftBackTexture' toField='url'/>
-	    <ROUTE fromNode='UrlSelector' fromField='right_changed' toNode='rightBackTexture' toField='url'/>
-	    <ROUTE fromNode='UrlSelector' fromField='top_changed' toNode='topBackTexture' toField='url'/>
-	    <ROUTE fromNode='UrlSelector' fromField='bottom_changed' toNode='bottomBackTexture' toField='url'/>
+	    <ROUTE fromNode='UrlSelector' fromField='front_changed' toNode='frontBackgroundTexture' toField='url'/>
+	    <ROUTE fromNode='UrlSelector' fromField='back_changed' toNode='backBackgroundTexture' toField='url'/>
+	    <ROUTE fromNode='UrlSelector' fromField='left_changed' toNode='leftBackgroundTexture' toField='url'/>
+	    <ROUTE fromNode='UrlSelector' fromField='right_changed' toNode='rightBackgroundTexture' toField='url'/>
+	    <ROUTE fromNode='UrlSelector' fromField='top_changed' toNode='topBackgroundTexture' toField='url'/>
+	    <ROUTE fromNode='UrlSelector' fromField='bottom_changed' toNode='bottomBackgroundTexture' toField='url'/>
 	    <ROUTE fromNode='UrlSelector' fromField='front_changed' toNode='frontShader' toField='url'/>
 	    <ROUTE fromNode='UrlSelector' fromField='back_changed' toNode='backShader' toField='url'/>
 	    <ROUTE fromNode='UrlSelector' fromField='left_changed' toNode='leftShader' toField='url'/>
