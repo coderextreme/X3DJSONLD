@@ -1,102 +1,75 @@
+#x3d.py package loaded, have fun with X3D Graphics!
 from x3d import *
+from x3d import SFBool
 print(
-X3D(
-  profile="Immersive", version="3.3", head=head(  children=[
-      
-          meta(name="title", content="arc4.x3d"),
-          meta(name="creator", content="Lost, Doug Sanden I think"),
-          meta(name="generator", content="manual"),
-          meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"),
-          meta(name="description", content="a generic proto to connect two objects"),
-          meta(name="translated", content="24 January 2022"),
-          meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
-          meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")]), Scene=Scene(
-    children=[
-        Viewpoint(
-          position=(0,0,5), description="Only Viewpoint"),
-        Background(
-          skyColor=(0.4,0.4,0.4)),
-        Transform(
-          DEF="DECLpoint_G1_node", children=[
-              Shape(
-                geometry=Sphere(
-                    radius=0.1), appearance=Appearance(
-                    material=Material(
-                        diffuseColor=(1,0,0)))),
-              PositionInterpolator(
-                DEF="DECLpoint_G1_PI1", key=[0,1], keyValue=[0,0,0,0,5,0]),
-              Script(
-                DEF="DECLpoint_G1_MB1", field=[
-                    field(name="translation", accessType="inputOutput", type="SFVec3f", value=(0,0,0)),
-                    field(name="old", accessType="inputOutput", type="SFVec3f", value=(0,0,0)),
-                    field(name="set_location", accessType="inputOnly", type="SFTime"),
-                    field(name="keyValue", accessType="inputOutput", type="MFVec3f", value=(0,0,0,0,5,0))], #['', 'ecmascript:', '\t\tfunction set_location(value) {', '                    old = translation;', '\t\t    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);', '                    keyValue = new MFVec3f([old, translation]);', '\t\t    // Browser.println(keyValue);', '\t\t}', '', '', '']
-    
-    ),
-              TimeSensor(
-                DEF="DECLpoint_G1_CL1", cycleInterval=3, loop=True),
-              ROUTE(
-                fromNode="DECLpoint_G1_CL1", fromField="cycleTime", toNode="DECLpoint_G1_MB1", toField="set_location"),
-              ROUTE(
-                fromNode="DECLpoint_G1_CL1", fromField="fraction_changed", toNode="DECLpoint_G1_PI1", toField="set_fraction"),
-              ROUTE(
-                fromNode="DECLpoint_G1_MB1", fromField="keyValue", toNode="DECLpoint_G1_PI1", toField="keyValue"),
-              ROUTE(
-                fromNode="DECLpoint_G1_PI1", fromField="value_changed", toNode="DECLpoint_G1_node", toField="set_translation")]),
-        Transform(
-          DEF="DECLpoint_G2_node", children=[
-              Shape(
-                geometry=Sphere(
-                    radius=0.1), appearance=Appearance(
-                    material=Material(
-                        diffuseColor=(1,0,0)))),
-              PositionInterpolator(
-                DEF="DECLpoint_G2_PI1", key=[0,1], keyValue=[0,0,0,0,5,0]),
-              Script(
-                DEF="DECLpoint_G2_MB1", field=[
-                    field(name="translation", accessType="inputOutput", type="SFVec3f", value=(0,0,0)),
-                    field(name="old", accessType="inputOutput", type="SFVec3f", value=(0,0,0)),
-                    field(name="set_location", accessType="inputOnly", type="SFTime"),
-                    field(name="keyValue", accessType="inputOutput", type="MFVec3f", value=(0,0,0,0,5,0))], #['', 'ecmascript:', '\t\tfunction set_location(value) {', '                    old = translation;', '\t\t    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);', '                    keyValue = new MFVec3f([old, translation]);', '\t\t    // Browser.println(keyValue);', '\t\t}', '', '', '']
-    
-    ),
-              TimeSensor(
-                DEF="DECLpoint_G2_CL1", cycleInterval=3, loop=True),
-              ROUTE(
-                fromNode="DECLpoint_G2_CL1", fromField="cycleTime", toNode="DECLpoint_G2_MB1", toField="set_location"),
-              ROUTE(
-                fromNode="DECLpoint_G2_CL1", fromField="fraction_changed", toNode="DECLpoint_G2_PI1", toField="set_fraction"),
-              ROUTE(
-                fromNode="DECLpoint_G2_MB1", fromField="keyValue", toNode="DECLpoint_G2_PI1", toField="keyValue"),
-              ROUTE(
-                fromNode="DECLpoint_G2_PI1", fromField="value_changed", toNode="DECLpoint_G2_node", toField="set_translation")]),
-        Group(
-          children=[
-              Transform(
-                DEF="DECLx3dconnector_connector1_trans", children=[
-                    Transform(
-                      DEF="DECLx3dconnector_connector1_rotscale", children=[
-                          Shape(
-                            appearance=Appearance(
-                                material=Material(
-                                    diffuseColor=(0.2,0.7,0.7), transparency=0.5)), geometry=Cylinder(
-                                radius=0.05))])]),
-              Script(
-                DEF="DECLx3dconnector_connector1_S1", field=[
-                    field(name="startnode", accessType="initializeOnly", type="SFNode"),
-                    field(name="endnode", accessType="initializeOnly", type="SFNode"),
-                    field(name="position", accessType="inputOutput", type="SFNode", children=[
-                        Transform(
-                          USE="DECLx3dconnector_connector1_trans")]),
-                    field(name="rotscale", accessType="inputOutput", type="SFNode", children=[
-                        Transform(
-                          USE="DECLx3dconnector_connector1_rotscale")]),
-                    field(name="set_startpoint", accessType="inputOnly", type="SFVec3f"),
-                    field(name="set_endpoint", accessType="inputOnly", type="SFVec3f")], #['', 'ecmascript:', '        function recompute(startpoint,endpoint){', "\t    if (typeof endpoint === 'undefined') {", "\t\t    if (typeof Quaternion !== 'undefined') {", '\t\t\t    return {', '\t\t\t\t    scale : new SFVec3f(1.0,1.0,1.0),', '\t\t\t\t    translation : new SFVec3f(1.0,1.0,1.0),', '\t\t\t    \t    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), 1.0)', '\t\t\t    };', "\t    \t    } else if (typeof SFRotation !== 'undefined') {", '\t\t\t    return {', '\t\t\t\t    scale : new SFVec3f(1.0,1.0,1.0),', '\t\t\t\t    translation : new SFVec3f(1.0,1.0,1.0),', '\t\t\t    \t    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),1.0)', '\t\t\t    };', '\t    \t    } else {', '\t\t\t    return {', '\t\t\t\t    scale : new SFVec3f(1.0,1.0,1.0),', '\t\t\t\t    translation : new SFVec3f(1.0,1.0,1.0)', '\t\t\t    };', '\t\t    }', '\t    }', '            var dif = endpoint.subtract(startpoint);', '            var dist = dif.length()*0.5;', '            var dif2 = dif.multiply(0.5);', '            var norm = dif.normalize();', '            var transl = startpoint.add(dif2);', "\t    if (typeof Quaternion !== 'undefined') {", '\t\t    return {', '\t\t\t    scale : new SFVec3f(1.0,dist,1.0),', '\t\t\t    translation : transl,', '\t\t\t    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)', '\t\t    };', "\t    } else if (typeof SFRotation !== 'undefined') {", '\t\t    return {', '\t\t\t    scale : new SFVec3f(1.0,dist,1.0),', '\t\t\t    translation : transl,', '\t\t\t    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)', '\t\t    };', '\t    } else {', '\t\t    return {', '\t\t\t    scale : new SFVec3f(1.0,dist,1.0),', '\t\t\t    translation : transl', '\t\t    };', '\t    }', '\t}', '\tfunction recompute_and_route(startpoint, endpoint) {', '\t      var trafo = recompute(startpoint, endpoint);', '\t      position.translation = trafo.translation;', '\t      rotscale.rotation = trafo.rotation;', '\t      rotscale.scale = trafo.scale;', '\t}', '        function initialize(){', '            recompute_and_route(startnode.translation,endnode.translation);', '        }', '        function set_startpoint(val,t){', '            recompute_and_route(val,endnode.translation);', '        }', '        function set_endpoint(val,t){', '            recompute_and_route(startnode.translation,val);', '        }', '']
-    
-    )]),
-        ROUTE(
-          fromNode="DECLpoint_G1_node", fromField="translation_changed", toNode="DECLx3dconnector_connector1_S1", toField="set_startpoint"),
-        ROUTE(
-          fromNode="DECLpoint_G2_node", fromField="translation_changed", toNode="DECLx3dconnector_connector1_S1", toField="set_endpoint")]))
+X3D(profile="Immersive", version="3.3", 
+head=head(), 
+Scene=Scene(children=[
+Viewpoint(position=((0,0,5)), description="Only Viewpoint"),
+Background(skyColor=[(0.4,0.4,0.4)]),
+Transform(DEF="DECLpoint_G1_node", children=[
+Shape(
+geometry=
+Sphere(radius=0.1), 
+appearance=
+Appearance(
+material=
+Material(diffuseColor=((1,0,0))))),
+PositionInterpolator(DEF="DECLpoint_G1_PI1", key=[float(0),float(1)], keyValue=[(0,0,0),(0,5,0)]),
+Script(DEF="DECLpoint_G1_MB1", field=[field(name="translation", accessType="inputOutput", type="SFVec3f", value=(0,0,0)),
+field(name="old", accessType="inputOutput", type="SFVec3f", value=(0,0,0)),
+field(name="set_location", accessType="inputOnly", type="SFTime"),
+field(name="keyValue", accessType="inputOutput", type="MFVec3f", value=[0,0,0,0,5,0])
+], 
+#['', 'ecmascript:', '\t\tfunction set_location(value) {', '                    old = translation;', '\t\t    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);', '                    keyValue = new MFVec3f([old, translation]);', '\t\t    // Browser.println(keyValue);', '\t\t}', '', '', '']
+),
+TimeSensor(DEF="DECLpoint_G1_CL1", cycleInterval=3, loop=True),
+ROUTE(fromNode="DECLpoint_G1_CL1", fromField="cycleTime", toNode="DECLpoint_G1_MB1", toField="set_location"),
+ROUTE(fromNode="DECLpoint_G1_CL1", fromField="fraction_changed", toNode="DECLpoint_G1_PI1", toField="set_fraction"),
+ROUTE(fromNode="DECLpoint_G1_MB1", fromField="keyValue", toNode="DECLpoint_G1_PI1", toField="keyValue"),
+ROUTE(fromNode="DECLpoint_G1_PI1", fromField="value_changed", toNode="DECLpoint_G1_node", toField="set_translation")]),
+Transform(DEF="DECLpoint_G2_node", children=[
+Shape(
+geometry=
+Sphere(radius=0.1), 
+appearance=
+Appearance(
+material=
+Material(diffuseColor=((1,0,0))))),
+PositionInterpolator(DEF="DECLpoint_G2_PI1", key=[float(0),float(1)], keyValue=[(0,0,0),(0,5,0)]),
+Script(DEF="DECLpoint_G2_MB1", field=[field(name="translation", accessType="inputOutput", type="SFVec3f", value=(0,0,0)),
+field(name="old", accessType="inputOutput", type="SFVec3f", value=(0,0,0)),
+field(name="set_location", accessType="inputOnly", type="SFTime"),
+field(name="keyValue", accessType="inputOutput", type="MFVec3f", value=[0,0,0,0,5,0])
+], 
+#['', 'ecmascript:', '\t\tfunction set_location(value) {', '                    old = translation;', '\t\t    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);', '                    keyValue = new MFVec3f([old, translation]);', '\t\t    // Browser.println(keyValue);', '\t\t}', '', '', '']
+),
+TimeSensor(DEF="DECLpoint_G2_CL1", cycleInterval=3, loop=True),
+ROUTE(fromNode="DECLpoint_G2_CL1", fromField="cycleTime", toNode="DECLpoint_G2_MB1", toField="set_location"),
+ROUTE(fromNode="DECLpoint_G2_CL1", fromField="fraction_changed", toNode="DECLpoint_G2_PI1", toField="set_fraction"),
+ROUTE(fromNode="DECLpoint_G2_MB1", fromField="keyValue", toNode="DECLpoint_G2_PI1", toField="keyValue"),
+ROUTE(fromNode="DECLpoint_G2_PI1", fromField="value_changed", toNode="DECLpoint_G2_node", toField="set_translation")]),
+Group(children=[
+Transform(DEF="DECLx3dconnector_connector1_trans", children=[
+Transform(DEF="DECLx3dconnector_connector1_rotscale", children=[
+Shape(
+appearance=
+Appearance(
+material=
+Material(diffuseColor=((0.2,0.7,0.7)), transparency=0.5)), 
+geometry=
+Cylinder(radius=0.05))])]),
+Script(DEF="DECLx3dconnector_connector1_S1", field=[field(name="startnode", accessType="initializeOnly", type="SFNode"),
+field(name="endnode", accessType="initializeOnly", type="SFNode"),
+field(name="position", accessType="inputOutput", type="SFNode", children=[
+Transform(USE="DECLx3dconnector_connector1_trans")]),
+field(name="rotscale", accessType="inputOutput", type="SFNode", children=[
+Transform(USE="DECLx3dconnector_connector1_rotscale")]),
+field(name="set_startpoint", accessType="inputOnly", type="SFVec3f"),
+field(name="set_endpoint", accessType="inputOnly", type="SFVec3f")
+], 
+#['', 'ecmascript:', '        function recompute(startpoint,endpoint){', "\t    if (typeof endpoint === 'undefined') {", "\t\t    if (typeof Quaternion !== 'undefined') {", '\t\t\t    return {', '\t\t\t\t    scale : new SFVec3f(1.0,1.0,1.0),', '\t\t\t\t    translation : new SFVec3f(1.0,1.0,1.0),', '\t\t\t    \t    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), 1.0)', '\t\t\t    };', "\t    \t    } else if (typeof SFRotation !== 'undefined') {", '\t\t\t    return {', '\t\t\t\t    scale : new SFVec3f(1.0,1.0,1.0),', '\t\t\t\t    translation : new SFVec3f(1.0,1.0,1.0),', '\t\t\t    \t    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),1.0)', '\t\t\t    };', '\t    \t    } else {', '\t\t\t    return {', '\t\t\t\t    scale : new SFVec3f(1.0,1.0,1.0),', '\t\t\t\t    translation : new SFVec3f(1.0,1.0,1.0)', '\t\t\t    };', '\t\t    }', '\t    }', '            var dif = endpoint.subtract(startpoint);', '            var dist = dif.length()*0.5;', '            var dif2 = dif.multiply(0.5);', '            var norm = dif.normalize();', '            var transl = startpoint.add(dif2);', "\t    if (typeof Quaternion !== 'undefined') {", '\t\t    return {', '\t\t\t    scale : new SFVec3f(1.0,dist,1.0),', '\t\t\t    translation : transl,', '\t\t\t    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)', '\t\t    };', "\t    } else if (typeof SFRotation !== 'undefined') {", '\t\t    return {', '\t\t\t    scale : new SFVec3f(1.0,dist,1.0),', '\t\t\t    translation : transl,', '\t\t\t    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)', '\t\t    };', '\t    } else {', '\t\t    return {', '\t\t\t    scale : new SFVec3f(1.0,dist,1.0),', '\t\t\t    translation : transl', '\t\t    };', '\t    }', '\t}', '\tfunction recompute_and_route(startpoint, endpoint) {', '\t      var trafo = recompute(startpoint, endpoint);', '\t      position.translation = trafo.translation;', '\t      rotscale.rotation = trafo.rotation;', '\t      rotscale.scale = trafo.scale;', '\t}', '        function initialize(){', '            recompute_and_route(startnode.translation,endnode.translation);', '        }', '        function set_startpoint(val,t){', '            recompute_and_route(val,endnode.translation);', '        }', '        function set_endpoint(val,t){', '            recompute_and_route(startnode.translation,val);', '        }', '']
+)]),
+ROUTE(fromNode="DECLpoint_G1_node", fromField="translation_changed", toNode="DECLx3dconnector_connector1_S1", toField="set_startpoint"),
+ROUTE(fromNode="DECLpoint_G2_node", fromField="translation_changed", toNode="DECLx3dconnector_connector1_S1", toField="set_endpoint")]))
 .XML())

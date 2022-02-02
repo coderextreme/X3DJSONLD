@@ -58,7 +58,7 @@
           },
           {
             "@name":"translated",
-            "@content":"27 January 2022"
+            "@content":"28 January 2022"
           },
           {
             "@name":"generator",
@@ -83,42 +83,42 @@
               "-backTexture":
                 { "ImageTexture":
                   {
-                    "@DEF":"backBackTexture",
+                    "@DEF":"backBackgroundTexture",
                     "@url":["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"]
                   }
                 },
               "-bottomTexture":
                 { "ImageTexture":
                   {
-                    "@DEF":"bottomBackTexture",
+                    "@DEF":"bottomBackgroundTexture",
                     "@url":["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"]
                   }
                 },
               "-frontTexture":
                 { "ImageTexture":
                   {
-                    "@DEF":"frontBackTexture",
+                    "@DEF":"frontBackgroundTexture",
                     "@url":["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"]
                   }
                 },
               "-leftTexture":
                 { "ImageTexture":
                   {
-                    "@DEF":"leftBackTexture",
+                    "@DEF":"leftBackgroundTexture",
                     "@url":["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"]
                   }
                 },
               "-rightTexture":
                 { "ImageTexture":
                   {
-                    "@DEF":"rightBackTexture",
+                    "@DEF":"rightBackgroundTexture",
                     "@url":["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"]
                   }
                 },
               "-topTexture":
                 { "ImageTexture":
                   {
-                    "@DEF":"topBackTexture",
+                    "@DEF":"topBackgroundTexture",
                     "@url":["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"]
                   }
                 }
@@ -435,7 +435,7 @@
                     "@fromField":"front_changed",
                     "@fromNode":"UrlSelector",
                     "@toField":"url",
-                    "@toNode":"frontBackTexture"
+                    "@toNode":"frontBackgroundTexture"
                   }
                 },
                 { "ROUTE":
@@ -443,7 +443,7 @@
                     "@fromField":"back_changed",
                     "@fromNode":"UrlSelector",
                     "@toField":"url",
-                    "@toNode":"backBackTexture"
+                    "@toNode":"backBackgroundTexture"
                   }
                 },
                 { "ROUTE":
@@ -451,7 +451,7 @@
                     "@fromField":"left_changed",
                     "@fromNode":"UrlSelector",
                     "@toField":"url",
-                    "@toNode":"leftBackTexture"
+                    "@toNode":"leftBackgroundTexture"
                   }
                 },
                 { "ROUTE":
@@ -459,7 +459,7 @@
                     "@fromField":"right_changed",
                     "@fromNode":"UrlSelector",
                     "@toField":"url",
-                    "@toNode":"rightBackTexture"
+                    "@toNode":"rightBackgroundTexture"
                   }
                 },
                 { "ROUTE":
@@ -467,7 +467,7 @@
                     "@fromField":"top_changed",
                     "@fromNode":"UrlSelector",
                     "@toField":"url",
-                    "@toNode":"topBackTexture"
+                    "@toNode":"topBackgroundTexture"
                   }
                 },
                 { "ROUTE":
@@ -475,7 +475,7 @@
                     "@fromField":"bottom_changed",
                     "@fromNode":"UrlSelector",
                     "@toField":"url",
-                    "@toNode":"bottomBackTexture"
+                    "@toNode":"bottomBackgroundTexture"
                   }
                 },
                 { "ROUTE":

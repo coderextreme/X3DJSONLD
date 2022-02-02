@@ -1,73 +1,43 @@
+#x3d.py package loaded, have fun with X3D Graphics!
 from x3d import *
+from x3d import SFBool
 print(
-X3D(
-  profile="Full", version="4.0", head=head(  children=[
-      
-          meta(name="title", content="AllAudioGraphNodesTest.x3d"),
-          meta(name="description", content="List of all X3D4 audio graph nodes to test infrastructure and validation support. Absence of attributes means that checking and removal of default values is working."),
-          meta(name="creator", content="Don Brutzman"),
-          meta(name="created", content="25 October 2020"),
-          meta(name="modified", content="26 November 2021"),
-          meta(name="warning", content="Developmental test, no actual 3D model expected"),
-          meta(name="identifier", content="https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/AllAudioGraphNodesTest.x3d"),
-          meta(name="generator", content="X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"),
-          meta(name="license", content="../license.html"),
-          meta(name="translated", content="24 January 2022"),
-          meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
-          meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")]), Scene=Scene(
-    children=[
-        WorldInfo(
-          title="AllAudioGraphNodes.x3d"),
-        Shape(
-          geometry=Box(
-              ), appearance=Appearance(
-              acousticProperties=(
-                  AcousticProperties(
-                    description="Testing of X3D4 nodes demonstrating W3C Audio API in progress", diffuse=0.25, refraction=0.5, specular=1)), material=Material(
-                  ))),
-        Sound(
-          location=(0,1.6,0), source(
-            AudioClip(
-              description="testing", url=["sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"]))),
-        Sound(
-          location=(0,1.6,0), source(
-            MovieTexture(
-              description="testing", url=["bogus.mpg","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/bogus.mpg"]))),
-        SpatialSound(
-          children=[
-              Analyser(
-                children=[
-                    StreamAudioDestination(
-                      children=[
-                          BiquadFilter(
-                            children=[
-                                ChannelMerger(
-                                  children=[
-                                      ChannelSelector(
-                                        children=[
-                                            ChannelSplitter(
-                                              children=[
-                                                  Convolver(
-                                                    children=[
-                                                        Delay(
-                                                          children=[
-                                                              DynamicsCompressor(
-                                                                children=[
-                                                                    Gain(
-                                                                      children=[
-                                                                          StreamAudioDestination(
-                                                                            children=[
-                                                                                WaveShaper(
-                                                                                  children=[#The following X3DSoundSourceNode nodes have no audio-graph children
+X3D(profile="Full", version="4.0", 
+head=head(), 
+Scene=Scene(children=[
+WorldInfo(title="AllAudioGraphNodes.x3d"),
+Shape(
+geometry=
+Box(), 
+appearance=
+Appearance(acousticProperties=(
+AcousticProperties(description="Testing of X3D4 nodes demonstrating W3C Audio API in progress", diffuse=0.25, refraction=0.5, specular=1)), 
+material=
+Material())),
+Sound(location=((0,1.6,0)), 
+source=
+AudioClip(description="testing", url=["sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"])),
+Sound(location=((0,1.6,0)), 
+source=
+MovieTexture(description="testing", url=["bogus.mpg","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/bogus.mpg"])),
+SpatialSound(children=[
+Analyser(children=[
+StreamAudioDestination(children=[
+BiquadFilter(children=[
+ChannelMerger(children=[
+ChannelSelector(children=[
+ChannelSplitter(children=[
+Convolver(children=[
+Delay(children=[
+DynamicsCompressor(children=[
+Gain(children=[
+StreamAudioDestination(children=[
+WaveShaper(children=[
+#The following X3DSoundSourceNode nodes have no audio-graph children
 
-                                                                                      BufferAudioSource(
-                                                                                        ),
-                                                                                      ListenerPointSource(
-                                                                                        ),
-                                                                                      MicrophoneSource(
-                                                                                        ),
-                                                                                      OscillatorSource(
-                                                                                        ),
-                                                                                      StreamAudioSource(
-                                                                                        )])])])])])])])])])])])])])]))
+BufferAudioSource(),
+ListenerPointSource(),
+MicrophoneSource(),
+OscillatorSource(),
+StreamAudioSource(),])])])])])])])])])])])])])]))
 .XML())

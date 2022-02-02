@@ -1,50 +1,27 @@
+#x3d.py package loaded, have fun with X3D Graphics!
 from x3d import *
+from x3d import SFBool
 print(
-X3D(
-  profile="Immersive", version="3.0", head=head(  children=[
-      
-          meta(name="title", content="jumpcut_loadurl.x3d"),
-          meta(name="reference", content="http://www.nist.gov/vrml.html"),
-          meta(name="reference", content="http://www.itl.nist.gov/div897/ctg/vrml/vrml.html"),
-          meta(name="creator", content="http://www.itl.nist.gov/div897/ctg/vrml/members.html"),
-          meta(name="disclaimer", content="This file was provided by the National Institute of Standards and Technology, and is part of the X3D Conformance Test Suite, available at http://www.nist.gov/vrml.html The information contained within this file is provided for use in establishing conformance to the ISO VRML97 Specification. Conformance to this test does not imply recommendation or endorsement by the National Institute of Standards and Technology. This software can be redistributed and/or modified freely provided that any derivative works bear some notice that they are derived from it, and any modified versions bear some notice that they have been modified."),
-          meta(name="info", content="Correct definition and compliance of this conformance scene is maintained by the X3D Working Group, https://www.web3d.org/working-groups/x3d"),
-          meta(name="translator", content="Michael Kass NIST, Don Brutzman NPS"),
-          meta(name="translated", content="21 January 2001"),
-          meta(name="modified", content="20 October 2019"),
-          meta(name="description", content="Test jumpcut Viewpoint transition using Script loadUrl method. A NavigationInfo type of ANY is NOT included in the NavigationInfo node field in this world. Consequently, a Script node with a call to the \"loadURL\" method, with a url corresponding to the MFString \"Top_View\" (the name of a Viewpoint in this world) should create a \"jump cut\" transition of views when the Box geometry in this world is indicated by the pointing device. As a result, indicating the Box geometry should result in a Viewpoint transition to the top view of the Box geometry."),
-          meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.x3d"),
-          meta(name="generator", content="Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"),
-          meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
-          meta(name="license", content="../../license.html"),
-          meta(name="translated", content="24 January 2022"),
-          meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
-          meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")]), Scene=Scene(
-    children=[
-        WorldInfo(
-          title="jumpcut_loadurl.x3d"),
-        Background(
-          groundAngle=(1.57), groundColor=(0,0.5,0,0,0.5,0), skyColor=(0,0,1)),
-        NavigationInfo(
-          type="\"EXAMINE\" \"WALK\" \"FLY\" \"ANY\""),
-        Viewpoint(
-          DEF="Front_View", description="Front View"),
-        Viewpoint(
-          DEF="Top_View", description="Top View", orientation=(1,0,0,-1.57), position=(0,10,0)),
-        TouchSensor(
-          DEF="STARTER", description="touch to activate"),
-        Transform(
-          DEF="ROOT", children=[
-              Shape(
-                appearance=Appearance(
-                    material=Material(
-                        )), geometry=Box(
-                    ))]),
-        Script(
-          DEF="MYSCRIPT", url=["jumpcut_loadurl.js","https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.js"], field=[
-              field(name="myParameter", accessType="initializeOnly", type="MFString", value=("Top_View")),
-              field(name="myUrl", accessType="initializeOnly", type="MFString", value=("jumpcut_loadurl.x3d#Top_View","https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.x3d#Top_View","jumpcut_loadurl.wrl#Top_View","https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.wrl#Top_View")),
-              field(name="trigger_event", accessType="inputOnly", type="SFBool")]),
-        ROUTE(
-          fromField="isActive", fromNode="STARTER", toField="trigger_event", toNode="MYSCRIPT")]))
+X3D(profile="Immersive", version="3.0", 
+head=head(), 
+Scene=Scene(children=[
+WorldInfo(title="jumpcut_loadurl.x3d"),
+Background(groundAngle=[float(1.57)], groundColor=[(0,0.5,0),(0,0.5,0)], skyColor=[(0,0,1)]),
+NavigationInfo(type="\"EXAMINE\" \"WALK\" \"FLY\" \"ANY\""),
+Viewpoint(DEF="Front_View", description="Front View"),
+Viewpoint(DEF="Top_View", description="Top View", orientation=((1,0,0,-1.57)), position=((0,10,0))),
+TouchSensor(DEF="STARTER", description="touch to activate"),
+Transform(DEF="ROOT", children=[
+Shape(
+appearance=
+Appearance(
+material=
+Material()), 
+geometry=
+Box())]),
+Script(DEF="MYSCRIPT", url=["jumpcut_loadurl.js","https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.js"], field=[field(name="myParameter", accessType="initializeOnly", type="MFString", value=["Top_View"]),
+field(name="myUrl", accessType="initializeOnly", type="MFString", value=["jumpcut_loadurl.x3d#Top_View","https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.x3d#Top_View","jumpcut_loadurl.wrl#Top_View","https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.wrl#Top_View"]),
+field(name="trigger_event", accessType="inputOnly", type="SFBool")
+]),
+ROUTE(fromField="isActive", fromNode="STARTER", toField="trigger_event", toNode="MYSCRIPT")]))
 .XML())
