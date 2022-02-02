@@ -58,7 +58,7 @@
           },
           {
             "@name":"translated",
-            "@content":"27 January 2022"
+            "@content":"28 January 2022"
           },
           {
             "@name":"generator",
@@ -80,45 +80,45 @@
           },
           { "TextureBackground":
             {
-              "-leftTexture":
+              "-left":
                 { "ImageTexture":
                   {
-                    "@DEF":"leftBackTexture",
+                    "@DEF":"leftBackgroundTexture",
                     "@url":["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"]
                   }
                 },
-              "-rightTexture":
+              "-right":
                 { "ImageTexture":
                   {
-                    "@DEF":"rightBackTexture",
+                    "@DEF":"rightBackgroundTexture",
                     "@url":["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"]
                   }
                 },
-              "-frontTexture":
+              "-front":
                 { "ImageTexture":
                   {
-                    "@DEF":"frontBackTexture",
+                    "@DEF":"frontBackgroundTexture",
                     "@url":["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"]
                   }
                 },
-              "-backTexture":
+              "-back":
                 { "ImageTexture":
                   {
-                    "@DEF":"backBackTexture",
+                    "@DEF":"backBackgroundTexture",
                     "@url":["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"]
                   }
                 },
-              "-topTexture":
+              "-top":
                 { "ImageTexture":
                   {
-                    "@DEF":"topBackTexture",
+                    "@DEF":"topBackgroundTexture",
                     "@url":["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"]
                   }
                 },
-              "-bottomTexture":
+              "-bottom":
                 { "ImageTexture":
                   {
-                    "@DEF":"bottomBackTexture",
+                    "@DEF":"bottomBackgroundTexture",
                     "@url":["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"]
                   }
                 }
@@ -142,42 +142,42 @@
                           "-texture":
                             { "ComposedCubeMapTexture":
                               {
-                                "-backTexture":
+                                "-back":
                                   { "ImageTexture":
                                     {
                                       "@DEF":"backShader",
                                       "@url":["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_back.png"]
                                     }
                                   },
-                                "-bottomTexture":
+                                "-bottom":
                                   { "ImageTexture":
                                     {
                                       "@DEF":"bottomShader",
                                       "@url":["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"]
                                     }
                                   },
-                                "-frontTexture":
+                                "-front":
                                   { "ImageTexture":
                                     {
                                       "@DEF":"frontShader",
                                       "@url":["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_front.png"]
                                     }
                                   },
-                                "-leftTexture":
+                                "-left":
                                   { "ImageTexture":
                                     {
                                       "@DEF":"leftShader",
                                       "@url":["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_left.png"]
                                     }
                                   },
-                                "-rightTexture":
+                                "-right":
                                   { "ImageTexture":
                                     {
                                       "@DEF":"rightShader",
                                       "@url":["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"]
                                     }
                                   },
-                                "-topTexture":
+                                "-top":
                                   { "ImageTexture":
                                     {
                                       "@DEF":"topShader",
@@ -434,7 +434,7 @@
                   {
                     "@fromNode":"UrlSelector",
                     "@fromField":"front_changed",
-                    "@toNode":"frontBackTexture",
+                    "@toNode":"frontBackgroundTexture",
                     "@toField":"url"
                   }
                 },
@@ -442,7 +442,7 @@
                   {
                     "@fromNode":"UrlSelector",
                     "@fromField":"back_changed",
-                    "@toNode":"backBackTexture",
+                    "@toNode":"backBackgroundTexture",
                     "@toField":"url"
                   }
                 },
@@ -450,7 +450,7 @@
                   {
                     "@fromNode":"UrlSelector",
                     "@fromField":"left_changed",
-                    "@toNode":"leftBackTexture",
+                    "@toNode":"leftBackgroundTexture",
                     "@toField":"url"
                   }
                 },
@@ -458,7 +458,7 @@
                   {
                     "@fromNode":"UrlSelector",
                     "@fromField":"right_changed",
-                    "@toNode":"rightBackTexture",
+                    "@toNode":"rightBackgroundTexture",
                     "@toField":"url"
                   }
                 },
@@ -466,7 +466,7 @@
                   {
                     "@fromNode":"UrlSelector",
                     "@fromField":"top_changed",
-                    "@toNode":"topBackTexture",
+                    "@toNode":"topBackgroundTexture",
                     "@toField":"url"
                   }
                 },
@@ -474,7 +474,7 @@
                   {
                     "@fromNode":"UrlSelector",
                     "@fromField":"bottom_changed",
-                    "@toNode":"bottomBackTexture",
+                    "@toNode":"bottomBackgroundTexture",
                     "@toField":"url"
                   }
                 },
