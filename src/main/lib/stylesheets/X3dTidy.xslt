@@ -5644,6 +5644,35 @@ Recommended tools:
                         <xsl:text>'</xsl:text>
                     </xsl:message>
                 </xsl:when>
+                <xsl:when test="(local-name(..)='CollisionCollection') or (local-name(..)='Contact') and (local-name() = 'appliedParameters')">
+                    <xsl:variable name="correctedAppliedParameters">
+                        <xsl:if test="contains(.,'FRICTION_COEFFICIENT-2')">
+                            <xsl:text>replace FRICTION_COEFFICIENT-2 with FRICTION_COEFFICIENT_2; </xsl:text>
+                        </xsl:if>
+                        <xsl:if test="contains(.,'SPEED-1')">
+                            <xsl:text>replace SPEED-1 with SPEED_1; </xsl:text>
+                        </xsl:if>
+                        <xsl:if test="contains(.,'SPEED-2')">
+                            <xsl:text>replace SPEED-2 with SPEED_2; </xsl:text>
+                        </xsl:if>
+                        <xsl:if test="contains(.,'SLIP-1')">
+                            <xsl:text>replace SLIP-1 with SLIP_1; </xsl:text>
+                        </xsl:if>
+                        <xsl:if test="contains(.,'SLIP-2')">
+                            <xsl:text>replace SLIP-2 with SLIP_2; </xsl:text>
+                        </xsl:if>
+                    </xsl:variable>
+                    <xsl:if test="(string-length($correctedAppliedParameters) > 0)"/>
+                    <xsl:message>
+                        <xsl:text>*** need to correct </xsl:text>
+                        <xsl:value-of select="local-name(..)"/>
+                        <xsl:text> </xsl:text>
+                        <xsl:value-of select="local-name(.)"/>
+                        <xsl:text> enumeration: </xsl:text>
+                        <xsl:value-of select="$correctedAppliedParameters"/>
+                        <xsl:text> (no change applied) </xsl:text>
+                    </xsl:message>
+                </xsl:when>
                 <xsl:when test="(local-name(..)='FontStyle') and ((local-name()='family') or (local-name()='justify')) and contains(string(.),$apos)">
                     <xsl:value-of select="translate(string(.),$apos,$quot)"/>
                     <xsl:message>

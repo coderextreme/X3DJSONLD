@@ -1151,7 +1151,7 @@ def isValid</xsl:text>
             return False # SFImage list must start with width, height and number of components (0..4)
         width = value[0]
         height = value[1]
-        numberComponents = value[2]
+        # numberComponents = value[2]
         if  len(value) != (width * height) + 3: # assumes each value in array has all component values in single integer
             print('SFImage array length of ' + str(len(value)) + ' does not equal (width=' + str(width)+ ' * height=' + str(height)+ ') + 3) = ' + str(width * height * numberComponents + 3) + ' (numberComponents=' + numberComponents + ')', flush=True)
             return False # SFImage has invalid list length]]></xsl:text>
@@ -2234,7 +2234,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
         if  metadata is None:
             metadata = SFNode.DEFAULT_VALUE()
         assertValidSFNode(metadata)
-        if not isinstance(metadata, object) and not isinstance(metadata, [ MetadataBoolean, MetadataInteger, MetadataFloat, MetadataDouble, MetadataString, MetadataSet, ProtoInstance ] ):
+        if not isinstance(metadata, object) and not isinstance(metadata, ( MetadataBoolean, MetadataInteger, MetadataFloat, MetadataDouble, MetadataString, MetadataSet, ProtoInstance ) ):
             # print(flush=True)
             raise X3DTypeError(str(metadata) + ' metadata.setter does not have a valid node type object, must be a Metadata* node or ProtoInstance')
         self.__metadata = metadata
@@ -2344,7 +2344,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
         <!-- Python multiple inheritance https://docs.python.org/3/tutorial/classes.html#multiple-inheritance -->
         <!-- TODO fix nodes with problematic hierarchy -->
         <xsl:choose>
-            <xsl:when test="starts-with($elementName, 'Metadata') or contains($elementName, 'Layout') or contains($elementName, 'Shader')">
+            <xsl:when test="starts-with($elementName, 'Metadata') or contains($elementName, 'Layout') or contains($elementName, 'Shader') or contains($elementName, 'RigidBody')">
                 <xsl:text>)</xsl:text>
                 <xsl:text>:</xsl:text>
                 <xsl:text> # </xsl:text>
@@ -2905,7 +2905,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 </xsl:if>
             </xsl:message> -->
             
-            <!-- do not redeclare fields included in X3DNode and X3DStatement -->
+            <!-- do not redeclare fields included in X3DNode and X3DStatement to avoid inconsistent method resolution order (MRO) -->
             <xsl:if test="not($fieldName = 'DEF')      and not($fieldName = 'USE') and
                           not($fieldName = 'class_')   and not($fieldName = 'id')  and not($fieldName = 'style') and
                           not($fieldName = 'metadata') and not($fieldName = 'IS')">

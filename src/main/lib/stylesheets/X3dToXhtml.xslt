@@ -379,7 +379,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                         <xsl:for-each select="HAnimJoint[string-length(@name) > 0]">
                                             <xsl:call-template name="HAnimNode-indent"/>
                                         </xsl:for-each>
-										<!-- HAnimSite containerField='viewpoints' (not USE nodes) -->
+					<!-- HAnimSite containerField='viewpoints' (not USE nodes) -->
                                         <xsl:for-each select="HAnimSite[string-length(@name) > 0]">
                                             <xsl:apply-templates select="preceding-sibling::comment()"/>
                                             <xsl:call-template name="HAnimNode-indent"/>
@@ -625,12 +625,12 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     <xsl:text>' </xsl:text>
                 </xsl:if>
                 <xsl:if test="(string-length(@containerField) > 0) and (@containerField != 'children')">
-                    <span class="attribute">containerField</span>
-                    <xsl:text> ='</xsl:text>
-                    <span class="value">
-                        <xsl:value-of select="@containerField"/>
-                    </span>
-                    <xsl:text>' </xsl:text>
+                        <span class="attribute">containerField</span>
+                        <xsl:text> ='</xsl:text>
+                        <span class="value">
+                            <xsl:value-of select="@containerField"/>
+                        </span>
+                        <xsl:text>' </xsl:text>
                 </xsl:if>
                 <!-- HAnimSite additional attributes -->
                 <xsl:if test="count(@*[(local-name()!='DEF') and (local-name()!='name') and (local-name()!='center') and (local-name()!='containerField')]) > 0">
@@ -3060,6 +3060,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                 $notFieldSpace and
                 not(contains(local-name(),'set_')) and
                 not(contains(local-name(),'_changed')) and
+                not($isX3D4 and starts-with(local-name(..),'Metadata') and (local-name()='containerField') and (string(.)='value')) and
                 ." >
             <xsl:variable name="attributeTooltip">
                 <xsl:choose>
