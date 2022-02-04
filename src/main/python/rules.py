@@ -134,6 +134,7 @@ class ClassPrinter:
             rules += "put out @geoSystem reference\n"
             return str
         str = '\t\t\t\t\t"@' + field.get(namesyn) + '" : {\n'
+        rules += "put out field \n"
         #try:
         #    if regex[field.get("type")] is not None:
         #        str += '\t\t\t\t\t\t"pattern" : "^' + regex[field.get("type")].replace("\\", "\\\\") + '$",\n'
@@ -141,7 +142,9 @@ class ClassPrinter:
         #    pass
 
         if field.get(namesyn) != "value" or  (self.name != 'field' and self.name != 'fieldValue'):
+            rules += "if field name or synonym is not value, field or fieldValue \n"
             if not field.get("type").startswith("MF"):
+                rules += "if field type starts with MF\n"
 #                try:
 #                    str += '\t\t\t\t\t\t"exclusiveMaximum" : '+field.get("maxExclusive") + ',\n'
 #                except:
@@ -164,30 +167,38 @@ class ClassPrinter:
                 # enumerations
                 enumerations = field.iter("enumeration")
                 enums = []
+                rules += "get field enumerations\n"
                 if enumerations is not None:
+                    rules += "if enumerations is not None\n"
                     for enum in enumerations:
                         val = enum.get("value")
+                        rules += "collect "+val+" into enumeration\n"
                         if ' ' in val:
                             val = '"'+val.replace('"', '\\"')+'"'
                         elif not '"' in val:
                             val = '"'+val+'"'
                         enums.append(val)
                     if enums != []:
+                        rules += "if enumeration is not empty\n"
                         if field.get('additionalEnumerationValuesAllowed') == "true":
+                            rules += "if enumeration open ended use anyOf schema\n"
                             str += '\t\t\t\t\t\t"anyOf" : [ {\n'
                         str += '\t\t\t\t\t\t"enum": [\n'
                         str += '\t\t\t\t\t\t\t'
                         str += ',\n\t\t\t\t\t\t\t'.join(enums)
                         str += '\n\t\t\t\t\t\t]'
+                        rules += "if print out enumeration\n"
                         if field.get('additionalEnumerationValuesAllowed') == "true":
                             str += '\t\t\t\t\t\t},\n'
                             str += '\t\t\t\t\t\t{ "type" : "string" }\n'
                             str += '\t\t\t\t\t\t],\n'
+                            rules += "if enumeration is openended, put out string type\n"
                         else:
                             str += ',\n'
 
 
                 try:  # default value
+                    rules += "Print out defaults for certain SD field types\n"
                     if field.get("type") == "SFString":
                         str += '\t\t\t\t\t\t"default":'+'"'+field.get("default")+'",\n'
                     elif field.get("type") == "SFBool":
@@ -208,7 +219,10 @@ class ClassPrinter:
                 except:
                     pass
             if field.get('additionalEnumerationValuesAllowed') == "false" or field.get('additionalEnumeratrionValuesAllowed') is None:
+                rules += "if enumeration is not open ended\n"
+                rules += "print $comment\n"
                 str += '\t\t\t\t\t\t"$comment":"'+field.get("type")+' '+field.get("accessType")+'",\n'
+                rules += "print out JSON type for field\n"
                 str += '\t\t\t\t\t\t"type":"'
                 if field.get("type") == "SFBool":
                     str += 'boolean"\n'
@@ -228,6 +242,7 @@ class ClassPrinter:
                     str += 'string"\n'
                 else:
                     str += 'array",\n'
+            rules += "Ignore certain SF and MFString fiedl types or field name type\n"
             if field.get("type") == "SFBool":
                 pass
             elif field.get("type") == "SFDouble":
@@ -245,9 +260,12 @@ class ClassPrinter:
             elif field.get("type") == "MFString" and field.get("name") == "type":
                 pass
             else:
+                rules += "print $comment\n"
                 str += '\t\t\t\t\t\t"$comment":"'+field.get("type")+' '+field.get("accessType")+'",\n'
+                rules += "print out JSON array type\n"
                 str += '\t\t\t\t\t\t"type":"'
                 str += 'array",\n'
+                rules += "print out min/max Items\n"
                 if field.get(namesyn).endswith("url") or field.get(namesyn).endswith("Url"):
                     str += '\t\t\t\t\t\t"minItems" : 1,\n'
                 elif field.get(namesyn) == "ROUTE":
@@ -311,6 +329,7 @@ class ClassPrinter:
                         pass
 
                 # enumerations
+                rules += "get field enumerations\n"
                 enumerations = field.iter("enumeration")
                 enums = []
                 if enumerations is not None:
@@ -325,6 +344,7 @@ class ClassPrinter:
 
                 allTheSame = True
                 firstValue = None
+                # TODO
                 try:
                     firstTime = True
                     if field.get("type") == "MFString":
