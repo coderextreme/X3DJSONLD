@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-4.0.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-4.0.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 4.0 of X3D -->
-<!-- Generated 2022-01-15-08:00 18:14:18.4848683-08:00 -->
+<!-- Generated 2022-02-02-08:00 04:11:18.1895097-08:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                        version="4.0"
                        xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -16155,12 +16155,12 @@
             <field name="axis1"
                    type="SFVec3f"
                    accessType="inputOutput"
-                   default="0 0 0"
+                   default="1 0 0"
                    description="axis1 defines axis vector of joint connection to body1."/>
             <field name="axis2"
                    type="SFVec3f"
                    accessType="inputOutput"
-                   default="0 0 0"
+                   default="0 1 0"
                    description="axis2 defines axis vector of joint connection to body2."/>
             <field name="body1"
                    type="SFNode"
@@ -27666,7 +27666,7 @@
             <field name="motor1Axis"
                    type="SFVec3f"
                    accessType="inputOutput"
-                   default="0 0 0"
+                   default="1 0 0"
                    description="motor1Axis defines axis vector of corresponding motor axis."/>
             <field name="motor2Angle"
                    type="SFFloat"
@@ -27679,7 +27679,7 @@
             <field name="motor2Axis"
                    type="SFVec3f"
                    accessType="inputOutput"
-                   default="0 0 0"
+                   default="0 1 0"
                    description="motor2Axis defines axis vector of corresponding motor axis."/>
             <field name="motor3Angle"
                    type="SFFloat"
@@ -27692,7 +27692,7 @@
             <field name="motor3Axis"
                    type="SFVec3f"
                    accessType="inputOutput"
-                   default="0 0 0"
+                   default="0 0 1"
                    description="motor3Axis defines axis vector of corresponding motor axis."/>
             <field name="stop1Bounce"
                    type="SFFloat"
@@ -33321,6 +33321,7 @@
                               appinfo="RigidBody describes a collection of shapes with a mass distribution that is affected by the physics model.">
             <componentInfo name="RigidBodyPhysics" level="2"/>
             <Inheritance baseType="X3DNode"/>
+            <AdditionalInheritance baseType="X3DBoundedObject"/>
             <field name="angularDampingFactor"
                    type="SFFloat"
                    accessType="inputOutput"
@@ -33341,10 +33342,22 @@
                    accessType="inputOutput"
                    default="false"
                    description="autoDisable toggles operation of disableAngularSpeed, disableLinearSpeed, disableTime."/>
+            <field name="bboxCenter"
+                   type="SFVec3f"
+                   accessType="initializeOnly"
+                   default="0 0 0"
+                   inheritedFrom="X3DBoundedObject"/>
             <field name="bboxDisplay"
                    type="SFBool"
                    accessType="inputOutput"
-                   default="false"/>
+                   default="false"
+                   inheritedFrom="X3DBoundedObject"/>
+            <field name="bboxSize"
+                   type="SFVec3f"
+                   accessType="initializeOnly"
+                   default="-1 -1 -1"
+                   inheritedFrom="X3DBoundedObject"
+                   baseType="bboxSizeType"/>
             <field name="centerOfMass"
                    type="SFVec3f"
                    accessType="inputOutput"
@@ -33454,7 +33467,8 @@
             <field name="visible"
                    type="SFBool"
                    accessType="inputOutput"
-                   default="true"/>
+                   default="true"
+                   inheritedFrom="X3DBoundedObject"/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
@@ -33500,15 +33514,28 @@
                               appinfo="RigidBodyCollection represents a system of bodies that interact within a single physics model.">
             <componentInfo name="RigidBodyPhysics" level="2"/>
             <Inheritance baseType="X3DChildNode"/>
+            <AdditionalInheritance baseType="X3DBoundedObject"/>
             <field name="autoDisable"
                    type="SFBool"
                    accessType="inputOutput"
                    default="false"
                    description="autoDisable toggles operation of disableAngularSpeed, disableLinearSpeed, disableTime."/>
+            <field name="bboxCenter"
+                   type="SFVec3f"
+                   accessType="initializeOnly"
+                   default="0 0 0"
+                   inheritedFrom="X3DBoundedObject"/>
             <field name="bboxDisplay"
                    type="SFBool"
                    accessType="inputOutput"
-                   default="false"/>
+                   default="false"
+                   inheritedFrom="X3DBoundedObject"/>
+            <field name="bboxSize"
+                   type="SFVec3f"
+                   accessType="initializeOnly"
+                   default="-1 -1 -1"
+                   inheritedFrom="X3DBoundedObject"
+                   baseType="bboxSizeType"/>
             <field name="bodies"
                    type="MFNode"
                    accessType="inputOutput"
@@ -33602,7 +33629,8 @@
             <field name="visible"
                    type="SFBool"
                    accessType="inputOutput"
-                   default="true"/>
+                   default="true"
+                   inheritedFrom="X3DBoundedObject"/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
@@ -35083,7 +35111,7 @@
             <field name="axis"
                    type="SFVec3f"
                    accessType="inputOutput"
-                   default="0 0 0"
+                   default="0 1 0"
                    description="axis defines vector of joint connection between body1 and body2."/>
             <field name="body1"
                    type="SFNode"
@@ -39793,12 +39821,12 @@
             <field name="axis1"
                    type="SFVec3f"
                    accessType="inputOutput"
-                   default="0 0 0"
+                   default="1 0 0"
                    description="axis1 defines axis vector of joint connection to body1."/>
             <field name="axis2"
                    type="SFVec3f"
                    accessType="inputOutput"
-                   default="0 0 0"
+                   default="0 1 0"
                    description="axis2 defines axis vector of joint connection to body2."/>
             <field name="body1"
                    type="SFNode"
