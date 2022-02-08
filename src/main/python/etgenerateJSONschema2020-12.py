@@ -1,7 +1,7 @@
 import xml.etree.ElementTree
 import sys
 import re
-
+import datetime
 # childStatements and geoSystem are currently hardcoded.  We want to generated these from X3DUOM
 
 PY3 = sys.version_info[0] == 3
@@ -663,7 +663,7 @@ class ClassPrinter:
 code = '''{
         "$schema": "https://json-schema.org/draft/2020-12/schema",
         "$id": "https://www.web3d.org/specifications/x3d-'''+sys.argv[1]+'''-JSONSchema.json",
-        "title": "JSON Schema X3D V'''+sys.argv[1]+'''",
+        "title": "JSON Schema X3D V'''+sys.argv[1]+' '+datetime.datetime.now().strftime('%Y/%m/%d %H:%M:%S')+'''",
         "description": "Experimental JSON Schema for X3D V'''+sys.argv[1]+'''",
         "type": "object",
         "properties": {
