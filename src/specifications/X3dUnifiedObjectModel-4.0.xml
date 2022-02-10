@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-4.0.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-4.0.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 4.0 of X3D -->
-<!-- Generated 2022-02-02-08:00 04:11:18.1895097-08:00 -->
+<!-- Generated 2022-02-03-08:00 22:46:05.817961-08:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                        version="4.0"
                        xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -33346,18 +33346,21 @@
                    type="SFVec3f"
                    accessType="initializeOnly"
                    default="0 0 0"
-                   inheritedFrom="X3DBoundedObject"/>
+                   inheritedFrom="X3DBoundedObject"
+                   description="Bounding box center accompanies bboxSize and provides an optional hint for bounding box position offset from origin of local coordinate system."/>
             <field name="bboxDisplay"
                    type="SFBool"
                    accessType="inputOutput"
                    default="false"
-                   inheritedFrom="X3DBoundedObject"/>
+                   inheritedFrom="X3DBoundedObject"
+                   description="Whether to display bounding box for associated geometry, aligned with world coordinates."/>
             <field name="bboxSize"
                    type="SFVec3f"
                    accessType="initializeOnly"
                    default="-1 -1 -1"
                    inheritedFrom="X3DBoundedObject"
-                   baseType="bboxSizeType"/>
+                   baseType="bboxSizeType"
+                   description="Bounding box size is usually omitted, and can easily be calculated automatically by an X3D player at scene-loading time with minimal computational cost."/>
             <field name="centerOfMass"
                    type="SFVec3f"
                    accessType="inputOutput"
@@ -33468,7 +33471,8 @@
                    type="SFBool"
                    accessType="inputOutput"
                    default="true"
-                   inheritedFrom="X3DBoundedObject"/>
+                   inheritedFrom="X3DBoundedObject"
+                   description="Whether or not renderable content within this node is visually displayed."/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
@@ -33524,18 +33528,21 @@
                    type="SFVec3f"
                    accessType="initializeOnly"
                    default="0 0 0"
-                   inheritedFrom="X3DBoundedObject"/>
+                   inheritedFrom="X3DBoundedObject"
+                   description="Bounding box center accompanies bboxSize and provides an optional hint for bounding box position offset from origin of local coordinate system."/>
             <field name="bboxDisplay"
                    type="SFBool"
                    accessType="inputOutput"
                    default="false"
-                   inheritedFrom="X3DBoundedObject"/>
+                   inheritedFrom="X3DBoundedObject"
+                   description="Whether to display bounding box for associated geometry, aligned with world coordinates."/>
             <field name="bboxSize"
                    type="SFVec3f"
                    accessType="initializeOnly"
                    default="-1 -1 -1"
                    inheritedFrom="X3DBoundedObject"
-                   baseType="bboxSizeType"/>
+                   baseType="bboxSizeType"
+                   description="Bounding box size is usually omitted, and can easily be calculated automatically by an X3D player at scene-loading time with minimal computational cost."/>
             <field name="bodies"
                    type="MFNode"
                    accessType="inputOutput"
@@ -33630,7 +33637,8 @@
                    type="SFBool"
                    accessType="inputOutput"
                    default="true"
-                   inheritedFrom="X3DBoundedObject"/>
+                   inheritedFrom="X3DBoundedObject"
+                   description="Whether or not renderable content within this node is visually displayed."/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
