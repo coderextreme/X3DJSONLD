@@ -15697,10 +15697,10 @@ Use Namespace: <select id="namespace">
 		Click <a onclick='window.updateFromJson(undefined, $("#file option:selected").text());encodeJSON(); return false;'>here</a> to load X3D JSON text into JSON X3DOM viewer, convert to STL,  convert to EXI, and convert to XML (and display).<br>
 	</td>
 	<td>
-		Click <a onclick='updateFromXml($("#file option:selected").text()); return false;'>here</a> to load X3D XML into x_ITE and XML X3DOM viewer. Converts to JSON.<br>
+		Click <a onclick='window.updateFromXml($("#file option:selected").text()); return false;'>here</a> to load X3D XML into x_ITE and XML X3DOM viewer. Converts to JSON.<br>
 	</td>
 	<td>
-		Click <a onclick='decodeEXI4JSON();window.updateFromJson(undefined, $("#file option:selected").text()); return false;'>here</a> to convert EXI to JSON, load X3D JSON and Display.
+		Click <a onclick='window.decodeEXI4JSON();window.updateFromJson(undefined, $("#file option:selected").text()); return false;'>here</a> to convert EXI to JSON, load X3D JSON and Display.
 	</td>
 </tr>
 <tr>
@@ -15745,11 +15745,11 @@ Use Namespace: <select id="namespace">
 <textarea id="java" rows="15" cols="80"></textarea><br>
 </td>
 <td>
-	Click <a onclick='updateFromStl($("#file option:selected").text());'>here</a> to load STL text into JSON X3DOM viewer and convert to XML and JSON (and display).<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click <a id="dom">here</a> to capture a snapshot.
+	Click <a onclick='window.updateFromStl($("#file option:selected").text()); return false;'>here</a> to load STL text into JSON X3DOM viewer and convert to XML and JSON (and display).<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click <a id="dom">here</a> to capture a snapshot.
 <textarea id="stl" rows="15" cols="80"></textarea><br>
 </td>
 <td>
-Click <a onclick='updateFromPly($("#file option:selected").text());'>here</a> to load PLY text into JSON X3DOM viewer and convert to XML and JSON (and display).<br>
+Click <a onclick='window.updateFromPly($("#file option:selected").text()); return false;'>here</a> to load PLY text into JSON X3DOM viewer and convert to XML and JSON (and display).<br>
 <textarea id="ply" rows="15" cols="80"></textarea><br>
 </td>
 <td>
