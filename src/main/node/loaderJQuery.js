@@ -407,7 +407,7 @@ window.updateFromJson = function updateFromJson(json, path) {
 	}
 }
 
-function updateFromStl(path) {
+window.updateFromStl = function updateFromStl(path) {
 	var json = convertStlToJson($('#stl').val());
 	updateFromJson(json, path);
 }
@@ -417,7 +417,7 @@ function updateFromPly(path) {
 	updateFromJson(json, path);
 }
 
-function updateFromXml(path) {
+window.updateFromXml = function updateFromXml(path) {
 	var json = convertXmlToJson($('#xml').val(), path);
 	updateFromJson(json, path);
 }
@@ -426,7 +426,7 @@ function loadXml(url) {
 	// gets converted to JSON on server
 	$.get(url, function(xml) {
 		$('#xml').val(getXmlString(xml));
-		updateFromXml(url);
+		window.updateFromXml(url);
 	})
 	.fail(function(jqXHR, textStatus, errorThrown) { alert('loadXml request failed! ' + textStatus + ' ' + errorThrown); });
 }
@@ -434,7 +434,7 @@ function loadXml(url) {
 function loadStl(url) {
 	$.get(url, function(stl) {
 		$('#stl').val(stl);
-		updateFromStl(url);
+		window.updateFromStl(url);
 	})
 	.fail(function(jqXHR, textStatus, errorThrown) { alert('loadStl request failed! ' + textStatus + ' ' + errorThrown); });
 }
