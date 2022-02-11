@@ -123,7 +123,7 @@ a:active {
 <br><br><br><br><br>
         </section>
         <section>
-          <header>Click <a onclick='window.updateFromJson();'>here</a> to load X3D JSON text into JSON X3DOM viewer and convert to XML (and display).</header>
+          <header>Click <a onclick='window.updateFromJson(); return false;'>here</a> to load X3D JSON text into JSON X3DOM viewer and convert to XML (and display).</header>
         </section>
         <section class="around">
 <textarea id="json" rows="15" cols="80" class="around2"></textarea><br>
@@ -153,7 +153,7 @@ Namespace: <select id="namespace" class="around3">
 <option>none</option> <!-- X3DOM HTML -->
 </select><br>
         <section>
-          <header>Click <a onclick='updateFromXml();'>here</a> to load X3D XML into X_ITE and XML X3DOM viewer. Does not convert to JSON.</header>
+          <header>Click <a onclick='window.updateFromXml(); return false;'>here</a> to load X3D XML into X_ITE and XML X3DOM viewer. Does not convert to JSON.</header>
         </section>
         <section class="around">
 	    
