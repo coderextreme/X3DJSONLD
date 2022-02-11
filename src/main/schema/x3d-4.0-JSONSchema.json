@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
-  "title": "X3D V4.0 JSON Schema, generated 2022/02/09 21:20:10",
+  "title": "X3D V4.0 JSON Schema, generated 2022/02/10 00:36:16",
   "description": "Experimental JSON Schema for X3D V4.0",
   "type": "object",
   "properties": {
@@ -947,6 +947,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -1027,6 +1041,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -1161,6 +1189,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -1277,6 +1319,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -1368,6 +1424,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -1434,6 +1504,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -1514,6 +1598,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -1633,6 +1731,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -1726,6 +1838,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -1875,6 +2001,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -1961,6 +2101,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -2063,6 +2217,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -2202,6 +2370,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -2306,6 +2488,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -2357,6 +2553,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -2422,6 +2632,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -2478,6 +2702,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -2529,6 +2767,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -2600,6 +2852,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -2659,6 +2925,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -2725,6 +3005,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -2902,6 +3196,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -2987,6 +3295,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -3075,6 +3397,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -3160,6 +3496,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -3325,6 +3675,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -3434,6 +3798,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -3518,6 +3896,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -3607,6 +3999,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -3694,6 +4100,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -3750,6 +4170,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -3839,6 +4273,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -3963,6 +4411,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -4087,6 +4549,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -4176,6 +4652,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -4335,6 +4825,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -4400,6 +4904,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -4494,6 +5012,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -4555,6 +5087,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -4635,6 +5181,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -4725,6 +5285,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -4793,6 +5367,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -4854,6 +5442,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -4945,6 +5547,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -5018,6 +5634,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -5094,6 +5724,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -5153,6 +5797,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -5229,6 +5887,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -5342,6 +6014,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -5532,6 +6218,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -5583,6 +6283,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -5642,6 +6356,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -5765,6 +6493,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -5824,6 +6566,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -5898,6 +6654,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -5982,6 +6752,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -6041,6 +6825,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -6107,6 +6905,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -6173,6 +6985,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -6254,6 +7080,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -6364,6 +7204,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -6483,6 +7337,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -6597,6 +7465,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -6671,6 +7553,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -6785,6 +7681,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -6851,6 +7761,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -7034,6 +7958,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -7168,6 +8106,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -7234,6 +8186,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -7331,6 +8297,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -7450,6 +8430,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -7584,6 +8578,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -8056,6 +9064,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -8137,6 +9159,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -8337,6 +9373,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -8415,6 +9465,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -8482,6 +9546,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -8559,6 +9637,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -8619,6 +9711,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -8756,6 +9862,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -8833,6 +9953,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -8942,6 +10076,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -9015,6 +10163,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -9080,6 +10242,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -9214,6 +10390,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -9311,6 +10501,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -9461,6 +10665,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -9550,6 +10768,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -9619,6 +10851,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -9691,6 +10937,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -9784,6 +11044,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -9850,6 +11124,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -10018,6 +11306,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -10173,6 +11475,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -10254,6 +11570,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -10461,6 +11791,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -10734,6 +12078,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -11128,6 +12486,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -11256,6 +12628,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -11530,6 +12916,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -11827,6 +13227,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -11909,6 +13323,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -12001,6 +13429,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -12098,6 +13540,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -12229,6 +13685,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -12316,6 +13786,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -12413,6 +13897,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -12510,6 +14008,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -12607,6 +14119,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -12704,6 +14230,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -12818,6 +14358,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -12883,6 +14437,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -12939,6 +14507,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -13057,6 +14639,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -13113,6 +14709,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -13197,6 +14807,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -13265,6 +14889,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -13415,6 +15053,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -13502,6 +15154,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -13589,6 +15255,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -13718,6 +15398,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -13784,6 +15478,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -13858,6 +15566,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -13993,6 +15715,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -14057,6 +15793,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -14139,6 +15889,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -14242,6 +16006,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -14403,6 +16181,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -14465,6 +16257,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -14527,6 +16333,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -14593,6 +16413,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -14659,6 +16493,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -14725,6 +16573,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -14791,6 +16653,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -14853,6 +16729,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -14919,6 +16809,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -15008,6 +16912,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -15217,6 +17135,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -15354,6 +17286,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -15504,6 +17450,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -15558,6 +17518,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -15612,6 +17586,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -15732,6 +17720,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -15793,6 +17795,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -15859,6 +17875,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -15943,6 +17973,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -16032,6 +18076,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -16105,6 +18163,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -16229,6 +18301,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -16302,6 +18388,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -16391,6 +18491,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -16486,6 +18600,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -16553,6 +18681,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -16620,6 +18762,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -16721,6 +18877,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -16848,6 +19018,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -16907,6 +19091,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -17013,6 +19211,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -17129,6 +19341,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -17195,6 +19421,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -17359,6 +19599,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -17454,6 +19708,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -17552,6 +19820,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -17734,6 +20016,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -17820,6 +20116,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -17955,6 +20265,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -18061,6 +20385,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -18137,6 +20475,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -18218,6 +20570,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -18338,6 +20704,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -18440,6 +20820,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -18572,6 +20966,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -18701,6 +21109,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -18788,6 +21210,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -18854,6 +21290,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -18913,6 +21363,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -19023,6 +21487,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -19082,6 +21560,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -19158,6 +21650,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -19234,6 +21740,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -19320,6 +21840,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -19406,6 +21940,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -19472,6 +22020,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -19538,6 +22100,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -19667,6 +22243,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -19737,6 +22327,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -19808,6 +22412,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -19876,6 +22494,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -19953,6 +22585,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -20042,6 +22688,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -20240,6 +22900,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -20307,6 +22981,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -20599,6 +23287,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -20768,6 +23470,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -20834,6 +23550,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -20910,6 +23640,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -20975,6 +23719,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -21112,6 +23870,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -21193,6 +23965,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -21296,6 +24082,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -21404,6 +24204,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -21492,6 +24306,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -21598,6 +24426,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -21707,6 +24549,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -21799,6 +24655,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -21999,6 +24869,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -22073,6 +24957,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -22200,6 +25098,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -22322,6 +25234,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -22451,6 +25377,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -22612,6 +25552,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -22673,6 +25627,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -22763,6 +25731,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -22847,6 +25829,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -22931,6 +25927,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -23013,6 +26023,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -23176,6 +26200,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -23247,6 +26285,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -23328,6 +26380,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -23420,6 +26486,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -23528,6 +26608,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -23589,6 +26683,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -23672,6 +26780,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -23758,6 +26880,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -23830,6 +26966,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -23912,6 +27062,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -23991,6 +27155,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -24104,6 +27282,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -24167,6 +27359,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -24230,6 +27436,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -24293,6 +27513,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -24373,6 +27607,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -24540,6 +27788,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -24706,6 +27968,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -24866,6 +28142,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -24952,6 +28242,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -25058,6 +28362,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -25180,6 +28498,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -25270,6 +28602,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -25321,6 +28667,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -25446,6 +28806,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -25506,6 +28880,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -25667,6 +29055,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -25747,6 +29149,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -26035,6 +29451,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -26132,6 +29562,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -26221,6 +29665,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -26285,6 +29743,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -26382,6 +29854,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -26540,6 +30026,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -26688,6 +30188,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -26775,6 +30289,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -26919,6 +30447,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -27004,6 +30546,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -27120,6 +30676,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -27197,6 +30767,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -27295,6 +30879,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -27410,6 +31008,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -27539,6 +31151,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -27658,6 +31284,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -27750,6 +31390,20 @@
             },
             "@USE": {
               "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
             }
           },
           "required": [
