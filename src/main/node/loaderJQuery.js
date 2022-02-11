@@ -515,7 +515,7 @@ function updateStl(json) {
 $("#file").change(function() {
 	var url = $('#file option:selected').text();
 	if (url.endsWith(".json")) {
-		loadJson(url);
+		window.loadJson(url);
 		if (typeof threeLoadFile === 'function') threeLoadFile(url);
 	} else if (url.endsWith(".x3d")) {
 		loadXml(url);
