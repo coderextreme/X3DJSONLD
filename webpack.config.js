@@ -5,7 +5,7 @@ module.exports = {
   entry: './src/main/node/loaderJQuery.js',
   output: {
     path: path.resolve(__dirname, 'src/main/node'),
-    filename: 'loader-bundle.mjs',
+    filename: 'loader-bundle.js',
   },
   resolve: {
       fallback: {
