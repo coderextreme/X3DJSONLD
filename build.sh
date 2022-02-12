@@ -23,6 +23,10 @@ popd
 
 cp /c/x3d-code/www.web3d.org/x3d/stylesheets/*.xslt src/main/lib/stylesheets
 
+# compile stylesheet
+
+node_modules/.bin/xslt3 -t -xsl:src/main/lib/stylesheets/X3dToJson.xslt -export:src/main/lib/stylesheets/X3dToJson.sef.json -nogo
+
 # install python3 packages
 # sudo apt-get install python3-bs4
 # sudo apt-get install python3-lxml
