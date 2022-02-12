@@ -706,7 +706,6 @@ if        metaDiagnostics(newModel): # built-in utility method in X3D class
 # print('check newModel.XML() serialization...')
 newModelXML= newModel.XML() # test export method XML() for exceptions during export
 newModel.XMLvalidate()
-print(newModelXML)
 
 try:
 #   print('check newModel.VRML() serialization...')

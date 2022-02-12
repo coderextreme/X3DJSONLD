@@ -1,5 +1,6 @@
 import { loadSchema, doValidate, loadX3DJS } from "./loadValidate.js"
 import { convertJsonToStl } from "./convertJsonToStl.mjs";
+// import { SaxonJS } from "./saxon-js/SaxonJS2.js"
 
 var PROTOS = require('./PrototypeExpander')
 
@@ -545,7 +546,7 @@ function getXmlString(xml) {
 function convertXmlToJson(xmlString, path) {
 	output = SaxonJS.transform({
 		stylesheetLocation: "../lib/stylesheets/X3dToJson.sef.json",
-		sourceLocation: path,
+		sourceText: xmlString,
 		destination: "serialized",
 		outputProperties: { method: "json" }
 	}, "sync");
