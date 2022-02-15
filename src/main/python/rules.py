@@ -1,14 +1,12 @@
 import xml.etree.ElementTree
 import sys
 import re
-
+import datetime
 # childStatements and geoSystem are currently hardcoded.  We want to generated these from X3DUOM
 
 PY3 = sys.version_info[0] == 3
 
-
 rules = ""
-
 
 def isString(obj):
     if PY3:
@@ -60,6 +58,7 @@ class ClassPrinter:
 
     def printList(self, doList):
         str = ""
+        rules += "=================List out concretes\n"
         for k,v in doList.items():
             if not k.startswith("X3D"):
                 rules += "If "+k+" starts with X3D, put out reference\n"
@@ -79,6 +78,7 @@ class ClassPrinter:
             return doList
 
     def listParents(self):
+            rules += "====================List out parents\n"
             str = ""
                 rules += "put out  "+self.name+" reference\n"
             str += '\t\t\t\t\t\t\t\t"' + self.name + '" : {\n'
@@ -90,25 +90,31 @@ class ClassPrinter:
 
     def printTypeMinMax(self, field):
         str = ""
+        rules += "===================Print min and max rules\n"
         try:
+            rules += "print exclusive Maximum\n"
             str += '\t\t\t\t\t\t"exclusiveMaximum" : '+field.get("maxExclusive") + ',\n'
         except:
             pass
         try:
+            rules += "print Maximum\n"
             str += '\t\t\t\t\t\t"maximum" : '+field.get("maxInclusive") + ',\n'
         except:
             pass
         
         try:
+            rules += "print exclusive Minimum\n"
             str += '\t\t\t\t\t\t"exclusiveMinimum" : '+field.get("minExclusive") + ',\n'
         except:
             pass
         try:
+            rules += "print Minimum\n"
             str += '\t\t\t\t\t\t"minimum" : '+field.get("minInclusive") + ',\n'
         except:
             pass
         # if not field.get("type").startswith("MF") and not field.get("type") == "SFVec3f":
             # str += '\t\t\t\t\t\t"$comment":"'+field.get("type")+' '+field.get("accessType")+'",\n'
+        rules += "print type according to MF type (MFBool, MFInt32, MFNode, MFString, otherwise, number\n"
         str += '\t\t\t\t\t\t"type":"'
         if field.get("type") == "MFBool":
             str += 'boolean"\n'
@@ -123,6 +129,7 @@ class ClassPrinter:
         return str
 
     def printField(self, field, namesyn):
+        rules += "=========================Print field\n"
         if field.get("accessType") == "inputOnly" or field.get("accessType") == "outputOnly":
             return ""
         if field.get(namesyn) == "geoSystem":
@@ -344,10 +351,10 @@ class ClassPrinter:
 
                 allTheSame = True
                 firstValue = None
-                # TODO
                 try:
                     firstTime = True
                     if field.get("type") == "MFString":
+                        rules += "If field type is MFString, figure out if all SFStrings in default are the same\n"
                         for item in field.get("default")[1:-1].split('" "'):
                             if firstTime:
                                 firstTime = False
@@ -357,6 +364,7 @@ class ClassPrinter:
                                     allTheSame = False
 
                     else:
+                        rules += "If figure out if words in default are the same\n"
                         for item in field.get("default").split(' '):
                             if firstTime:
                                 firstTime = False
@@ -367,24 +375,31 @@ class ClassPrinter:
                 except:
                     pass
                 if allTheSame:  # or an exception was thrown
+                    rules += "If all words in default are the same, or all SFString are the same in default\n"
                     str += '\t\t\t\t\t\t"items": '
                     str += '{\n'
                     if field.get(namesyn).endswith("url") or field.get(namesyn).endswith("Url"):
+                        rules += "If field name or synonym ends with url or Url, then Format is a uri-reference\n"
                         str += '\t\t\t\t\t\t"format":"uri-reference",\n'
                     if enums != []:
+                        rules += "If there are enums\n"
                         if field.get('additionalEnumerationValuesAllowed') == "true":
+                            rules += "If additional enumeration values are allowed, use anyOf schema\n"
                             str += '\t\t\t\t\t\t"anyOf" : [ {\n'
+                        rules += "List enum values\n"
                         str += '\t\t\t\t\t\t\t"enum": [\n'
                         str += '\t\t\t\t\t\t\t\t'
                         str += ',\n\t\t\t\t\t\t\t\t'.join(enums)
                         str += '\n\t\t\t\t\t\t\t]\n'
                         if field.get('additionalEnumerationValuesAllowed') == "true":
+                            rules += "If additional enumeration values are allowed, declare type string\n"
                             str += '\t\t\t\t\t\t},\n'
                             str += '\t\t\t\t\t\t{ "type" : "string" }\n'
                             str += '\t\t\t\t\t\t],\n'
                         else:
                             str += ',\n'
                     if firstValue is not None:
+                        rules += "If use first value as default (add quotes if field type is MFString)\n"
                         if field.get("type") == "MFString":
                             str += '\t\t\t\t\t\t\t"default":"'+firstValue+'",\n'
                         else:
@@ -392,53 +407,68 @@ class ClassPrinter:
                     str += self.printTypeMinMax(field)
                     str += '\t\t\t\t\t\t}'
                 else:
+                    rules += "List prefixItems array, first type through loops is true\n"
                     str += '\t\t\t\t\t\t"prefixItems": '
                     firstTime = True
                     str += '[\n'
                     if field.get("type") == "MFString":
+                        rules += "If field type is MFString\n"
                         for item in field.get("default")[1:-1].split('" "'):
+                            rules += "Split MFString into items\n"
                             if firstTime:
                                 firstTime = False
                             else:
                                 str += ',\n'
                             str += '\t\t\t\t\t\t{\n'
                             if field.get(namesyn).endswith("url") or field.get(namesyn).endswith("Url"):
+                                rules += "If field name or synonym ends with url or Url, then Format is a uri-reference\n"
                                 str += '\t\t\t\t\t\t\t\t"format":"uri-reference",\n'
                             if enums != []:
+                                rules += "List enum values\n"
                                 str += '\t\t\t\t\t\t\t"enum": [\n'
                                 str += '\t\t\t\t\t\t\t'
                                 str += ',\n\t\t\t\t\t\t\t\t'.join(enums)
                                 str += '\n\t\t\t\t\t\t\t],\n'
+                            rules += "List item as default\n"
                             str += '\t\t\t\t\t\t\t\t"default":"'+item+'",\n'
                             str += self.printTypeMinMax(field)
                             str += '\t\t\t\t\t\t}'
                     else:
                         for item in field.get("default").split(' '):
+                            rules += "Split default into words\n"
                             if firstTime:
                                 firstTime = False
                             else:
                                 str += ',\n'
                             str += '\t\t\t\t\t\t{\n'
                             if enums != []:
+                                rules += "List enum values\n"
                                 str += '\t\t\t\t\t\t\t"enum": [\n'
                                 str += '\t\t\t\t\t\t\t\t'
                                 str += ',\n\t\t\t\t\t\t\t\t'.join(enums)
                                 str += '\n\t\t\t\t\t\t\t],\n'
+                            rules += "List item as default\n"
                             str += '\t\t\t\t\t\t\t"default":'+item+',\n'
                             str += self.printTypeMinMax(field)
                             str += '\t\t\t\t\t\t}\n'
                     str += '\t\t\t\t\t\t],\n'
                     str += '\t\t\t\t\t\t"items": '
                     if field.get('type').startswith("SF"):
+                        rules += "If field type is SF*\n"
                         str += 'false\n'
                     elif field.get('type').startswith("MF"):
+                        rules += "If field type is MF*\n"
                         str += '{\n'
                         str += self.printTypeMinMax(field)
                         if allTheSame:  # or an exception was thrown
+                            rules += "If all items are the same\n"
                             if firstValue is not None:
+                                rules += "If there is a first value\n"
                                 if field.get("type") == "MFString":
+                                    rules += "If field type is MFString, print first value\n"
                                     str += '\t\t\t\t\t\t\t"default":"'+firstValue+'",\n'
                                 else:
+                                    rules += "If field type is not MFString, print first value\n"
                                     str += '\t\t\t\t\t\t\t"default":'+firstValue+',\n'
                         str += '\t\t\t\t\t\t}'
         if str[-2] == ',':
@@ -448,7 +478,7 @@ class ClassPrinter:
 
     def printClass(self):
         str = ""
-        rules += "For class "+self.name+"\n"
+        rules += "============= For class "+self.name+"\n"
         if self.name.startswith("X3D") and self.name != "X3D":
             rules += "If class "+self.name+" startswith X3D but is not X3D, return empty string\n"
             return str
@@ -738,7 +768,7 @@ class ClassPrinter:
 code = '''{
         "$schema": "https://json-schema.org/draft/2020-12/schema",
         "$id": "https://www.web3d.org/specifications/x3d-'''+sys.argv[1]+'''-JSONSchema.json",
-        "title": "JSON Schema X3D V'''+sys.argv[1]+'''",
+        "title": "X3D V'''+sys.argv[1]+' JSON Schema, generated '+datetime.datetime.now().strftime('%Y/%m/%d %H:%M:%S')+'''",
         "description": "Experimental JSON Schema for X3D V'''+sys.argv[1]+'''",
         "type": "object",
         "properties": {
