@@ -454,9 +454,20 @@ class ClassPrinter:
 					"type": "object",
 					"properties": {
 						"@class": { "type": "string" },
-						"@USE": { "type": "string" }
-                                        },
-                                        "required": [ "@USE" ],
+                           "@USE": { "type": "string" },
+                            "-children": {
+                                    "type": "array",
+                                    "minItems": 1,
+                                    "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                    "#comment": { "type": "string", "$comment": "#comment statements are the only allowed in -children node when using a USE field" }
+                                            },
+                                            "additionalProperties": false
+                                    }
+                            }
+                    },
+                    "required": [ "@USE" ],
 					"additionalProperties": false
 				},
 				{

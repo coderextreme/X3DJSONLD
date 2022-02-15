@@ -167,6 +167,13 @@ The x3d.py Python X3D Package supports programmers with Python interfaces and ob
 This work is part of the X3D Python Scene Access Interface Library (X3DPSAIL).
 """
 
+# Include regular expression (regex) library: re is built into Python
+# https://docs.python.org/3/library/re.html
+# https://docs.python.org/3/howto/regex.html#regex-howto
+# https://www.web3d.org/specifications/X3dRegularExpressions.html
+
+import re
+
 _DEBUG = True       # options True False
 
 ###############################################
@@ -534,20 +541,27 @@ class Comment(_X3DStatement):
     @classmethod
     def SPECIFICATION_URL(cls):
         """ Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. """
-        return ''
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/core.html#Organization'
     @classmethod
     def TOOLTIP_URL(cls):
         """ X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. """
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html'
     @classmethod
+    def DEFAULT_VALUE(cls):
+        """ Default value defined for this data type by the X3D Specification """
+        return ''
     def FIELD_DECLARATIONS(cls):
         """ Field declarations for this node: name, defaultValue, type, accessType, inheritedFrom """
         return []
     @classmethod
+    def REGEX_PYTHON(cls):
+        """' Regular expression for validating values, for more information see https://www.web3d.org/specifications/X3dRegularExpressions.html """
+        return r'(\s|\S)*' # (includes lower-case true, false)
+    @classmethod
     def REGEX_XML(cls):
         """' Regular expression for validating values, for more information see https://www.web3d.org/specifications/X3dRegularExpressions.html """
         return r'(\s|\S)*' # (includes lower-case true, false)
-    def __init__(self, value=None):
+    def __init__(self, value=''):
         self.value = value
     @property # getter - - - - - - - - - -
     def value(self):
@@ -1006,7 +1020,15 @@ def isValid</xsl:text>
     if isinstance(value, </xsl:text>
             <xsl:value-of select="$fieldTypeName"/>
             <xsl:text>):
-        value = value.value # dereference value from base type
+        value = value.value # dereference value from base type</xsl:text>
+            <xsl:if test="not(contains($fieldTypeName,'Node'))">
+               <xsl:text>
+        if re.fullmatch(</xsl:text>
+            <xsl:value-of select="$fieldTypeName"/>
+            <xsl:text>().REGEX_PYTHON(),str(value)) is None:
+            return False</xsl:text>
+            </xsl:if>
+               <xsl:text> 
         return True</xsl:text>
             <!-- SF/MF promotion/demotion -->
             <xsl:choose>
@@ -1014,7 +1036,9 @@ def isValid</xsl:text>
                     <xsl:text>
     if isinstance(value, MF</xsl:text>
                     <xsl:value-of select="substring($fieldTypeName,3)"/>
-                    <xsl:text>) and len(value) == 1:
+                    <xsl:text>) and (len(value) == 1) and isValidMF</xsl:text>
+                    <xsl:value-of select="substring($fieldTypeName,3)"/>
+                    <xsl:text>(value):
         value = value.value[0] # dereference value from this MF type
         return True</xsl:text>
                 </xsl:when>
@@ -1188,6 +1212,7 @@ def assertValid</xsl:text>
                  </xsl:if> -->
             <xsl:text>
     # if _DEBUG: print('* debug value.__class__=' + str(value.__class__) + ', issubclass(value.__class__, _X3DField)=' + str(issubclass(value.__class__, _X3DField)) + ', super(value.__class__)=' + str(super(value.__class__)), flush=True)
+    # if _DEBUG: print('value=', value, 'str(value)=', str(value))
     if isinstance(value, _X3DField) and not isinstance(value, SF</xsl:text>
             <xsl:value-of select="substring($fieldTypeName,3)"/>
             <xsl:text>) and not isinstance(value, MF</xsl:text>
@@ -1218,7 +1243,40 @@ def assertValid</xsl:text>
                         <xsl:text>
         print("debug list #2b")</xsl:text>
                     </xsl:if> -->
+                    <xsl:choose>
+                        <xsl:when test="($fieldTypeName = 'SFString')">
+                            <!-- ignore, no additional test performed -->
+                        </xsl:when>
+                        <xsl:when test="($fieldTypeName = 'SFInt32')">
+                            <xsl:text>
+    # https://stackoverflow.com/questions/354038/how-do-i-check-if-a-string-is-a-number-float
+    if isinstance(value, str):
+        try:
+            int(value) # checks but does not set value, may throw exception
+        except ValueError:
+            print('</xsl:text>
+            <xsl:value-of select="$fieldTypeName"/>
+            <xsl:text> encountered string with illegal value=' + value)
+            raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid int value for SFInt32')</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="not(contains($fieldTypeName, 'Bool')) and not(contains($fieldTypeName, 'String')) and not(contains($fieldTypeName, 'Node'))">
+                            <xsl:text>
+    # https://stackoverflow.com/questions/354038/how-do-i-check-if-a-string-is-a-number-float
+    if isinstance(value, str):
+        try:
+            float(value) # checks but does not set value, may throw exception
+        except ValueError:
+            print('</xsl:text>
+            <xsl:value-of select="$fieldTypeName"/>
+            <xsl:text> encountered string with illegal value=' + value)
+            raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid float value for </xsl:text>
+                        <xsl:value-of select="$fieldTypeName"/>
+                        <xsl:text>')</xsl:text>
+                        </xsl:when>
+                    </xsl:choose>
                 </xsl:when>
+            </xsl:choose>
+            <xsl:choose>
                 <xsl:when test="starts-with($fieldTypeName, 'MF')">
                     <xsl:text>
     if (isinstance(value, SF</xsl:text>
@@ -1746,19 +1804,127 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             </xsl:with-param>
         </xsl:call-template>
         
-        <!-- TODO modify regex for True False -->
+        <xsl:variable name="regexPrefix">
+            <xsl:choose>
+                <xsl:when test="contains($fieldTypeName,'Node')">
+                    <!-- no change -->
+                </xsl:when>
+                <xsl:when test="starts-with($fieldTypeName,'MFVec') or ($fieldTypeName = 'MFRotation') or starts-with($fieldTypeName,'MFColor')">
+                    <xsl:text>\s*\[?\s*(\s*\(?</xsl:text><!-- prepend python list bracket and tuple parenthesis -->
+                </xsl:when>
+                <xsl:when test="starts-with($fieldTypeName,'SFVec') or ($fieldTypeName = 'SFRotation') or starts-with($fieldTypeName,'SFColor')">
+                    <xsl:text>\s*\(</xsl:text><!-- prepend python tuple parenthesis -->
+                </xsl:when>
+                <xsl:when test="starts-with($fieldTypeName,'MF')">
+                    <xsl:text>\s*\[?</xsl:text><!-- prepend python list bracket -->
+                </xsl:when>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:variable name="regexSuffix">
+            <xsl:choose>
+                <xsl:when test="contains($fieldTypeName,'Node')">
+                    <!-- no change -->
+                </xsl:when>
+                <xsl:when test="contains($fieldTypeName,'MFVec') or ($fieldTypeName = 'MFRotation') or starts-with($fieldTypeName,'MFColor')">
+                    <xsl:text>\)?\s*\,?)*\s*\]?\s*</xsl:text><!-- append python tuple parenthesis and list bracket -->
+                </xsl:when>
+                <xsl:when test="contains($fieldTypeName,'SFVec') or ($fieldTypeName = 'SFRotation') or starts-with($fieldTypeName,'SFColor')">
+                    <xsl:text>\)\s*</xsl:text><!-- append python tuple parenthesis -->
+                </xsl:when>
+                <xsl:when test="starts-with($fieldTypeName,'MF')">
+                    <xsl:text>\]?\s*</xsl:text><!-- append python list bracket -->
+                </xsl:when>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:variable name="regexModified.1">
+            <xsl:choose>
+                <xsl:when test="contains($fieldTypeName,'Node')">
+                    <!-- no change -->
+                </xsl:when>
+                <xsl:when test="contains(@regex,'?)\s+){')">
+                    <xsl:value-of select="substring-before(@regex,'?)\s+){')"/>
+                    <xsl:text>?)\s*</xsl:text>
+                    <xsl:text>\,?\s*</xsl:text><!-- insertion to allow intervening commas -->
+                    <xsl:text>){</xsl:text>
+                    <xsl:value-of select="substring-after (@regex,'?)\s+){')"/>
+                </xsl:when>
+                <xsl:when test="contains(@regex,'?)\s+){')">
+                    <xsl:value-of select="substring-before(@regex,'?)\s+){')"/>
+                    <xsl:text>?)\s*</xsl:text>
+                    <xsl:text>\,?\s*</xsl:text><!-- insertion to allow intervening commas -->
+                    <xsl:text>){</xsl:text>
+                    <xsl:value-of select="substring-after (@regex,'?)\s+){')"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="@regex"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:variable name="regexModified">
+            <xsl:choose>
+                <xsl:when test="contains($fieldTypeName,'Node')">
+                    <!-- no change -->
+                </xsl:when>
+                <!--
+                <xsl:when test="contains(regexModified,'?)\s+){')">
+                    <xsl:value-of select="substring-before(regexModified,'?)\s+){')"/>
+                    <xsl:text>?)\s*</xsl:text>
+                    <xsl:text>\,?\s*</xsl:text>< ! - - insertion to allow intervening commas - - >
+                    <xsl:text>){</xsl:text>
+                    <xsl:value-of select="substring-after (regexModified,'?)\s+){')"/>
+                </xsl:when>
+                -->
+                <xsl:otherwise>
+                    <xsl:value-of select="$regexModified.1"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:text>
+    @classmethod
+    def REGEX_PYTHON(cls):
+        """ Regular expression for validating Python values, for more information see https://www.web3d.org/specifications/X3dRegularExpressions.html """
+        return r'</xsl:text> <!-- "raw" python string, unescaped -->
+        <xsl:value-of select="$regexPrefix"/>
+        <xsl:choose>
+            <xsl:when test="contains(@regex,'true|false')">
+                <xsl:value-of select="substring-before(@regex,'true|false')"/>
+                <xsl:text>true|false|True|False</xsl:text>
+                <xsl:value-of select="substring-after (@regex,'true|false')"/>
+                <xsl:value-of select="$regexSuffix"/>
+                <xsl:text>'</xsl:text>
+                <xsl:text> # (less than fully strict Python: allows lower-case strings true, false)</xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="$regexModified"/>
+                <xsl:value-of select="$regexSuffix"/>
+                <xsl:text>'</xsl:text>
+            </xsl:otherwise>
+        </xsl:choose>
         <xsl:text>
     @classmethod
     def REGEX_XML(cls):
-        """ Regular expression for validating values, for more information see https://www.web3d.org/specifications/X3dRegularExpressions.html """
+        """ Regular expression for validating XML values, for more information see https://www.web3d.org/specifications/X3dRegularExpressions.html """
         return r'</xsl:text> <!-- "raw" python string, unescaped -->
         <xsl:value-of select="@regex"/>
         <xsl:text>'</xsl:text>
-        <xsl:text> # (includes lower-case true, false)</xsl:text>
-        
+
         <xsl:text>
     # - - - - - - - - - -
-    def __init__(self, value=None):</xsl:text>
+    def __init__(self, value=</xsl:text><xsl:value-of select="$defaultValue"/><xsl:text>):</xsl:text>
+        <xsl:text>
+        # print('*** in __init__ value=' + str(value), 'type=' + str(type(value))) # debug</xsl:text>
+        <xsl:choose>
+            <xsl:when test="ends-with(@type,'SFInt32')">
+                <xsl:text>
+        if isinstance(value,str):
+            value = int(value)</xsl:text>
+            </xsl:when>
+            <xsl:when test="contains(@type,'SFDouble') or contains(@type,'SFFloat') or contains(@type,'SFColor') or contains(@type,'SFRotation') or contains(@type,'SFVec')">
+                <xsl:text>
+        if isinstance(value,str):
+            value = float(value)</xsl:text>
+            </xsl:when>
+        </xsl:choose>
         <xsl:text>
         self.value = value</xsl:text>
         <!-- directly set value -->
@@ -1826,6 +1992,34 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
         elif isinstance(value, list) and len(value) == 1:
             value = </xsl:text>
                 <xsl:text>value[0] # dereference</xsl:text>
+                <xsl:choose>
+                        <xsl:when test="($fieldTypeName = 'SFInt32')">
+                            <xsl:text>
+        # https://stackoverflow.com/questions/354038/how-do-i-check-if-a-string-is-a-number-float
+        if isinstance(value, str):
+            try:
+                int(value) # this statement checks but does not set value, may throw exception
+                print ('*** string value provided, value=' + str(value) + ', int(value)=' + str(int(value)), flush=True)
+                value = int(value)
+            except ValueError:
+                print('</xsl:text>
+                            <xsl:value-of select="$fieldTypeName"/>
+                            <xsl:text> encountered string with illegal value=' + value)</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="not(contains($fieldTypeName, 'Bool')) and not(contains($fieldTypeName, 'String')) and not(contains($fieldTypeName, 'Node'))">
+                            <xsl:text>
+        # https://stackoverflow.com/questions/354038/how-do-i-check-if-a-string-is-a-number-float
+        if isinstance(value, str):
+            try:
+                float(value) # this statement checks but does not set value, may throw exception
+                print ('*** string value provided, value=' + str(value) + ', float(value)=' + str(float(value)), flush=True)
+                value = float(value)
+            except ValueError:
+                print('</xsl:text>
+                            <xsl:value-of select="$fieldTypeName"/>
+                            <xsl:text> encountered string with illegal value=' + value)</xsl:text>
+                        </xsl:when>
+                </xsl:choose>
             </xsl:when>
             <xsl:when test="starts-with($fieldTypeName, 'MF')">
                 <xsl:text>
