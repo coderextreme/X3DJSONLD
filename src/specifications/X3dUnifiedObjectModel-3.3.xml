@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-3.3.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-3.3.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 3.3 of X3D -->
-<!-- Generated 2022-01-15-08:00 18:14:32.1370145-08:00 -->
+<!-- Generated 2022-02-13-08:00 20:23:28.47283-08:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                        version="3.3"
                        xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -2063,7 +2063,7 @@
                  tupleSize="3"
                  isArray="false"
                  defaultValue="0 0 0"
-                 regex="(\s)*(([+]?((0(\.[0-9]*)?|\.[0-9]+)|1(\.0*)?)([Ee][+-]?[0-9]+)?)(\s)+){2}([+]?((0(\.[0-9]*)?|\.[0-9]+)|1(\.0*)?)([Ee][+-]?[0-9]+)?)(\s)*">
+                 regex="\s*(([+]?((0(\.[0-9]*)?|\.[0-9]+)|1(\.0*)?)([Ee][+-]?[0-9]+)?)\s+){2}([+]?((0(\.[0-9]*)?|\.[0-9]+)|1(\.0*)?)([Ee][+-]?[0-9]+)?)\s*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFColorAndMFColor"
                               appinfo="SFColor specifies one RGB (red-green-blue) color triple, where each color value is an RGB triple of floating point numbers in range [0,1]. The default value of an uninitialized SFColor field is (0 0 0). Warning: comma characters within singleton values do not pass strict XML validation.">
             <Inheritance baseType="xs:string" x3dType="X3DField"/>
@@ -2073,7 +2073,7 @@
                  tupleSize="3"
                  isArray="true"
                  defaultValue=""
-                 regex="(\s)*((([+-]?((0(\.[0-9]*)?|\.[0-9]+)|1(\.0*)?)([Ee][+-]?[0-9]+)?)(\s)+){2}([+-]?((0(\.[0-9]*)?|\.[0-9]+)|1(\.0*)?)([Ee][+-]?[0-9]+)?)\s*,?\s*)*">
+                 regex="\s*((([+-]?((0(\.[0-9]*)?|\.[0-9]+)|1(\.0*)?)([Ee][+-]?[0-9]+)?)\s+){2}([+-]?((0(\.[0-9]*)?|\.[0-9]+)|1(\.0*)?)([Ee][+-]?[0-9]+)?)\s*,?\s*)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFColorAndMFColor"
                               appinfo="MFColor specifies zero or more SFColor RGB triples, where each color value is an RGB triple of floating point numbers in range [0,1]. The default value of an uninitialized MFColor field is the empty list. Individual SFColor array values are optionally separated by commas in XML syntax.">
             <Inheritance baseType="xs:string" x3dType="X3DArrayField"/>
@@ -2083,7 +2083,7 @@
                  tupleSize="4"
                  isArray="false"
                  defaultValue="0 0 0 0"
-                 regex="(\s)*(([+-]?((0(\.[0-9]*)?|\.[0-9]+)|1(\.0*)?)([Ee][+-]?[0-9]+)?)(\s)+){3}([+-]?((0(\.[0-9]*)?|\.[0-9]+)|1(\.0*)?)([Ee][+-]?[0-9]+)?)(\s)*">
+                 regex="\s*(([+-]?((0(\.[0-9]*)?|\.[0-9]+)|1(\.0*)?)([Ee][+-]?[0-9]+)?)\s+){3}([+-]?((0(\.[0-9]*)?|\.[0-9]+)|1(\.0*)?)([Ee][+-]?[0-9]+)?)\s*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFColorRGBAAndMFColorRGBA"
                               appinfo="SFColorRGBA specifies one RGBA (red-green-blue-alpha) color 4-tuple, where each color value is an RGBA 4-tuple of floating point numbers in range [0,1]. Alpha (opacity) values = (1 - transparency). The default value of an uninitialized SFColorRGBA field is (0 0 0 0). Warning: comma characters within singleton values do not pass strict XML validation.">
             <Inheritance baseType="xs:string" x3dType="X3DField"/>
@@ -2093,7 +2093,7 @@
                  tupleSize="4"
                  isArray="true"
                  defaultValue=""
-                 regex="(\s)*((([+-]?((0(\.[0-9]*)?|\.[0-9]+)|1(\.0*)?)([Ee][+-]?[0-9]+)?)(\s)+){3}([+-]?((0(\.[0-9]*)?|\.[0-9]+)|1(\.0*)?)([Ee][+-]?[0-9]+)?)\s*,?\s*)*">
+                 regex="\s*((([+-]?((0(\.[0-9]*)?|\.[0-9]+)|1(\.0*)?)([Ee][+-]?[0-9]+)?)\s+){3}([+-]?((0(\.[0-9]*)?|\.[0-9]+)|1(\.0*)?)([Ee][+-]?[0-9]+)?)\s*,?\s*)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFColorRGBAAndMFColorRGBA"
                               appinfo="MFColorRGBA specifies zero or more SFColorRGBA 4-tuples, where each color value is an RGBA 4-tuple of floating point numbers in range [0,1]. Alpha (opacity) values = (1 - transparency). The default value of an uninitialized MFColor field is the empty list. Individual SFColorRGBA array values are optionally separated by commas in XML syntax.">
             <Inheritance baseType="xs:string" x3dType="X3DArrayField"/>
@@ -2103,7 +2103,7 @@
                  tupleSize="1"
                  isArray="false"
                  defaultValue="0.0"
-                 regex="(\s)*([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)(\s)*">
+                 regex="\s*([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFDoubleAndMFDouble"
                               appinfo="SFDouble is a double-precision floating-point type. Array values are optionally separated by commas in XML syntax. See GeoVRML 1.0 Recommended Practice, Section 2.3, Limitations of Single Precision for rationale.">
             <Inheritance baseType="xs:double" x3dType="X3DField"/>
@@ -2113,7 +2113,7 @@
                  tupleSize="1"
                  isArray="true"
                  defaultValue=""
-                 regex="(\s)*(([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*,?\s*)*">
+                 regex="\s*(([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*,?\s*)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFDoubleAndMFDouble"
                               appinfo="MFDouble is an array of Double values, meaning a double-precision floating-point array type. See GeoVRML 1.0 Recommended Practice, Section 2.3, Limitations of Single Precision for rationale. Array values are optionally separated by commas in XML syntax.">
             <Inheritance baseType="xs:string" x3dType="X3DArrayField"/>
@@ -2123,7 +2123,7 @@
                  tupleSize="1"
                  isArray="false"
                  defaultValue="0.0"
-                 regex="(\s)*([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)(\s)*">
+                 regex="\s*([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFFloatAndMFFloat"
                               appinfo="SFFloat is a single-precision floating-point type.">
             <Inheritance baseType="xs:float" x3dType="X3DField"/>
@@ -2133,7 +2133,7 @@
                  tupleSize="1"
                  isArray="true"
                  defaultValue=""
-                 regex="(\s)*(([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*,?\s*)*">
+                 regex="\s*(([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*,?\s*)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFFloatAndMFFloat"
                               appinfo="MFFloat is an array of SFFloat values, meaning a single-precision floating-point array type. Array values are optionally separated by commas in XML syntax.">
             <Inheritance baseType="xs:string" x3dType="X3DArrayField"/>
@@ -2163,7 +2163,7 @@
                  tupleSize="1"
                  isArray="false"
                  defaultValue="0"
-                 regex="(\s)*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?(\s)*">
+                 regex="\s*[+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?\s*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFInt32AndMFInt32"
                               appinfo="SFInt32 specifies one 32-bit signed integer.">
             <Inheritance baseType="xs:integer" x3dType="X3DField"/>
@@ -2173,7 +2173,7 @@
                  tupleSize="1"
                  isArray="true"
                  defaultValue=""
-                 regex="(\s)*([+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?\s*,?\s*)*">
+                 regex="\s*([+-]?(0|[1-9][0-9]*)([Ee][+-]?[0-9]+)?\s*,?\s*)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFInt32AndMFInt32"
                               appinfo="MFInt32 defines an array of 32-bit signed integers. Array values are optionally separated by commas in XML syntax.">
             <Inheritance baseType="xs:string" x3dType="X3DArrayField"/>
@@ -2313,7 +2313,7 @@
                  tupleSize="1"
                  isArray="false"
                  defaultValue="-1.0"
-                 regex="(\s)*([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)(\s)*">
+                 regex="\s*([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFTimeAndMFTime"
                               appinfo="SFTime specifies a single time value, expressed as a double-precision floating point number. Typically, SFTime fields represent the number of seconds since Jan 1, 1970, 00:00:00 GMT.">
             <Inheritance baseType="xs:double" x3dType="X3DField"/>
@@ -2323,7 +2323,7 @@
                  tupleSize="1"
                  isArray="true"
                  defaultValue=""
-                 regex="(\s)*(([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*,?\s*)*">
+                 regex="\s*(([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*,?\s*)*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/fieldsDef.html#SFTimeAndMFTime"
                               appinfo="MFTime is an array of SFTime values. Array values are optionally separated by commas in XML syntax.">
             <Inheritance baseType="xs:string" x3dType="X3DArrayField"/>
