@@ -22,7 +22,7 @@
 		document.getElementById("json").value = location.href.replace(/[^?]*\?/, "");
 		fetch(document.getElementById("json").value)
 		  .then(response => response.json())
-			.then(data => { document.getElementById("json").value = JSON.stringify(data, null, 1); window.validator()});
+			.then(data => document.getElementById("json").value = JSON.stringify(data, null, 1));
 	}
 </script>
 </html>
