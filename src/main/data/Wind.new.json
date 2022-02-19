@@ -8,11 +8,15 @@
         "meta": [
           {
             "@name":"title",
-            "@content":"browser.x3d"
+            "@content":"Wind.x3d"
           },
           {
             "@name":"creator",
             "@content":"John Carlson"
+          },
+          {
+            "@name":"description",
+            "@content":"Wind"
           },
           {
             "@name":"generator",
@@ -20,11 +24,7 @@
           },
           {
             "@name":"identifier",
-            "@content":"https://coderextreme.net/X3DJSONLD/browser.x3d"
-          },
-          {
-            "@name":"description",
-            "@content":"a script test with embedded \n between single quotes, a double backslash \\\\ a backslash \\ and a closing quote \""
+            "@content":"https://coderextreme.net/X3DJSONLD/Wind.x3d"
           },
           {
             "@name":"translated",
@@ -42,39 +42,9 @@
     },
     "Scene": {
         "-children":[
-          { "Script":
+          { "NavigationInfo":
             {
-              "@DEF":"Browser",
-              "#sourceCode":[
-"",
-"ecmascript:",
-"                function initialize() {",
-"\t\t    Browser.print('DUDES\n'+'\"DUDETTES');",
-"                }",
-"",
-""
-]
-            }
-          },
-          { "Script":
-            {
-              "@DEF":"Clouds",
-              "#sourceCode":[
-"",
-"",
-"ecmascript:",
-"",
-"",
-"function cumulustranslation() // These values designate the boundary location of the cloud",
-"{",
-"var xxx = ' '+' '+",
-"'\tTransform\t\t\n'+",
-"'    ' + '               \t\n';",
-"",
-"}",
-"",
-""
-]
+              "@type":"\"EXAMINE\""
             }
           }
         ]
