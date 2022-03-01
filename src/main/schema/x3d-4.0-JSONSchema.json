@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
-  "title": "X3D V4.0 JSON Schema, generated 2022/02/14 23:45:39",
+  "title": "X3D V4.0 JSON Schema, generated 2022/02/28 20:33:43",
   "description": "Experimental JSON Schema for X3D V4.0",
   "type": "object",
   "properties": {
@@ -3029,6 +3029,9 @@
         {
           "type": "object",
           "properties": {
+            "-children": {
+              "$ref": "#/$defs/-childStatements"
+            },
             "IS": {
               "$ref": "#/$defs/IS"
             },
@@ -3074,9 +3077,6 @@
               "default": "speakers",
               "$comment": "SFString inputOutput",
               "type": "string"
-            },
-            "-children": {
-              "$ref": "#/$defs/-Analyser-AudioClip-AudioDestination-BiquadFilter-BufferAudioSource-ChannelMerger-ChannelSelector-ChannelSplitter-Convolver-Delay-DynamicsCompressor-Gain-ListenerPointSource-MicrophoneSource-MovieTexture-OscillatorSource-Sound-SpatialSound-StreamAudioDestination-StreamAudioSource-WaveShaperMFNode"
             },
             "@description": {
               "$comment": "SFString inputOutput",
@@ -5956,6 +5956,11 @@
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
+            },
+            "@on": {
+              "default": true,
+              "$comment": "SFBool inputOutput",
+              "type": "boolean"
             },
             "@position": {
               "$comment": "SFVec3f inputOutput",
@@ -9101,6 +9106,11 @@
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
+            },
+            "@on": {
+              "default": true,
+              "$comment": "SFBool inputOutput",
+              "type": "boolean"
             },
             "@position": {
               "$comment": "SFVec3f inputOutput",
@@ -15590,11 +15600,11 @@
         {
           "type": "object",
           "properties": {
+            "-children": {
+              "$ref": "#/$defs/-childStatements"
+            },
             "IS": {
               "$ref": "#/$defs/IS"
-            },
-            "-children": {
-              "$ref": "#/$defs/-Analyser-AudioClip-AudioDestination-BiquadFilter-BufferAudioSource-ChannelMerger-ChannelSelector-ChannelSplitter-Convolver-Delay-DynamicsCompressor-Gain-ListenerPointSource-MicrophoneSource-MovieTexture-OscillatorSource-Sound-SpatialSound-StreamAudioDestination-StreamAudioSource-WaveShaperMFNode"
             },
             "@description": {
               "$comment": "SFString inputOutput",
@@ -16833,11 +16843,11 @@
         {
           "type": "object",
           "properties": {
+            "-children": {
+              "$ref": "#/$defs/-childStatements"
+            },
             "IS": {
               "$ref": "#/$defs/IS"
-            },
-            "-children": {
-              "$ref": "#/$defs/-Analyser-AudioClip-AudioDestination-BiquadFilter-BufferAudioSource-ChannelMerger-ChannelSelector-ChannelSplitter-Convolver-Delay-DynamicsCompressor-Gain-ListenerPointSource-MicrophoneSource-MovieTexture-OscillatorSource-Sound-SpatialSound-StreamAudioDestination-StreamAudioSource-WaveShaperMFNode"
             },
             "@description": {
               "$comment": "SFString inputOutput",
@@ -19623,11 +19633,11 @@
         {
           "type": "object",
           "properties": {
+            "-children": {
+              "$ref": "#/$defs/-childStatements"
+            },
             "IS": {
               "$ref": "#/$defs/IS"
-            },
-            "-children": {
-              "$ref": "#/$defs/-Analyser-AudioClip-AudioDestination-BiquadFilter-BufferAudioSource-ChannelMerger-ChannelSelector-ChannelSplitter-Convolver-Delay-DynamicsCompressor-Gain-ListenerPointSource-MicrophoneSource-MovieTexture-OscillatorSource-Sound-SpatialSound-StreamAudioDestination-StreamAudioSource-WaveShaperMFNode"
             },
             "@description": {
               "$comment": "SFString inputOutput",
@@ -20763,6 +20773,11 @@
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
+            "@on": {
+              "default": true,
+              "$comment": "SFBool inputOutput",
+              "type": "boolean"
+            },
             "@position": {
               "$comment": "SFVec3f inputOutput",
               "type": "array",
@@ -21439,6 +21454,11 @@
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
+            },
+            "@on": {
+              "default": true,
+              "$comment": "SFBool inputOutput",
+              "type": "boolean"
             },
             "@speed": {
               "default": 0,
@@ -26510,6 +26530,9 @@
         {
           "type": "object",
           "properties": {
+            "-children": {
+              "$ref": "#/$defs/-childStatements"
+            },
             "IS": {
               "$ref": "#/$defs/IS"
             },
@@ -26531,9 +26554,6 @@
               "default": "speakers",
               "$comment": "SFString inputOutput",
               "type": "string"
-            },
-            "-children": {
-              "$ref": "#/$defs/-Analyser-AudioClip-AudioDestination-BiquadFilter-BufferAudioSource-ChannelMerger-ChannelSelector-ChannelSplitter-Convolver-Delay-DynamicsCompressor-Gain-ListenerPointSource-MicrophoneSource-MovieTexture-OscillatorSource-Sound-SpatialSound-StreamAudioDestination-StreamAudioSource-WaveShaperMFNode"
             },
             "@description": {
               "$comment": "SFString inputOutput",
@@ -26729,6 +26749,11 @@
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
+            },
+            "@on": {
+              "default": true,
+              "$comment": "SFBool inputOutput",
+              "type": "boolean"
             },
             "@speed": {
               "default": 0,
@@ -30961,6 +30986,11 @@
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
+            "@on": {
+              "default": true,
+              "$comment": "SFBool inputOutput",
+              "type": "boolean"
+            },
             "@speed": {
               "default": 0,
               "$comment": "SFFloat inputOutput",
@@ -32795,6 +32825,9 @@
           "ProtoInstance": {
             "$ref": "#/$defs/ProtoInstance"
           },
+          "RigidBody": {
+            "$ref": "#/$defs/RigidBody"
+          },
           "RigidBodyCollection": {
             "$ref": "#/$defs/RigidBodyCollection"
           },
@@ -33717,6 +33750,9 @@
         "ProtoInstance": {
           "$ref": "#/$defs/ProtoInstance"
         },
+        "RigidBody": {
+          "$ref": "#/$defs/RigidBody"
+        },
         "RigidBodyCollection": {
           "$ref": "#/$defs/RigidBodyCollection"
         },
@@ -34600,6 +34636,9 @@
           "ProtoInstance": {
             "$ref": "#/$defs/ProtoInstance"
           },
+          "RigidBody": {
+            "$ref": "#/$defs/RigidBody"
+          },
           "RigidBodyCollection": {
             "$ref": "#/$defs/RigidBodyCollection"
           },
@@ -34884,9 +34923,6 @@
           },
           "NurbsTextureCoordinate": {
             "$ref": "#/$defs/NurbsTextureCoordinate"
-          },
-          "RigidBody": {
-            "$ref": "#/$defs/RigidBody"
           },
           "ShaderPart": {
             "$ref": "#/$defs/ShaderPart"
@@ -36434,6 +36470,9 @@
           },
           "ProtoInstance": {
             "$ref": "#/$defs/ProtoInstance"
+          },
+          "RigidBody": {
+            "$ref": "#/$defs/RigidBody"
           },
           "RigidBodyCollection": {
             "$ref": "#/$defs/RigidBodyCollection"

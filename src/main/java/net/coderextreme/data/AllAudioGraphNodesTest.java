@@ -84,7 +84,7 @@ public class AllAudioGraphNodesTest {
                                   .addChild(new BufferAudioSource())
                                   .addChild(new ListenerPointSource())
                                   .addChild(new MicrophoneSource())
-                                  .addChild(new OscillatorSource())
+                                  .addChild(new OscillatorSource().setFrequency(440f))
                                   .addChild(new StreamAudioSource())))))))))))))))      ;
     return X3D0;
     }

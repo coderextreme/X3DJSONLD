@@ -123,6 +123,7 @@ MicrophoneSource MicrophoneSource37 = createNode("MicrophoneSource");
 WaveShaper34.children[2] = MicrophoneSource37;
 
 OscillatorSource OscillatorSource38 = createNode("OscillatorSource");
+OscillatorSource38.frequency = 440;
 WaveShaper34.children[3] = OscillatorSource38;
 
 StreamAudioSource StreamAudioSource39 = createNode("StreamAudioSource");

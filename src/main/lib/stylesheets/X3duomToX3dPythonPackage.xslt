@@ -16,7 +16,7 @@
                 xmlns:xs ="http://www.w3.org/2001/XMLSchema"
 	            xmlns:fn ="http://www.w3.org/2005/xpath-functions">
 	<!--  extension-element-prefixes="xs" -->
-	<xsl:param name="X3dPackageSubdirectory"><xsl:text></xsl:text></xsl:param>
+	<xsl:param name="X3dPackageDirectory"><xsl:text></xsl:text></xsl:param>
         
     <xsl:output method="text"/> <!-- output methods:  xml html text -->
     
@@ -24,9 +24,9 @@
     
     <!-- See X3DJSAIL for original tooltip usage code -->
     <xsl:variable name="x3d.tooltips.path">
-		<xsl:text>../tooltips/x3d-4.0.profile.xml</xsl:text>
-	</xsl:variable>
-	<xsl:variable name="x3d.tooltips.document" select="doc($x3d.tooltips.path)"/>
+        <xsl:text>../tooltips/x3d-4.0.profile.xml</xsl:text>
+    </xsl:variable>
+    <xsl:variable name="x3d.tooltips.document" select="doc($x3d.tooltips.path)"/>
 
 <!-- TODO
      - is it possible to output metaDiagnostics even if __init__() exception thrown on loading?
@@ -36,7 +36,7 @@
     
     <xsl:template match="/"> <!-- process root of input document -->
     
-        <xsl:result-document href="{$X3dPackageSubdirectory}/__init__.py" method="text" omit-xml-declaration="yes" encoding="UTF-8" indent="no">
+        <xsl:result-document href="{$X3dPackageDirectory}/__init__.py" method="text" omit-xml-declaration="yes" encoding="UTF-8" indent="no">
         
             <xsl:text># __init__.py needed for properly configuring pypi distribution of x3d.py package
 
@@ -144,11 +144,20 @@ __all__ = [</xsl:text>
 
             <xsl:text>
     ]
+                
+# Zen of Python: Flat is better than nested.
+# https://en.wikipedia.org/wiki/Zen_of_Python
+# https://docs.python.org/3/reference/import.html
+
+# TODO failing with x3d 4.0.54, missing in 4.0.57
+
+from x3d import *
+
 </xsl:text>
             
         </xsl:result-document>
     
-        <xsl:result-document href="{$X3dPackageSubdirectory}/x3d.py" method="text" omit-xml-declaration="yes" encoding="UTF-8" indent="no">
+        <xsl:result-document href="{$X3dPackageDirectory}/x3d.py" method="text" omit-xml-declaration="yes" encoding="UTF-8" indent="no">
         
 	 <xsl:text disable-output-escaping="yes"><![CDATA[]]></xsl:text>
 
@@ -156,7 +165,7 @@ __all__ = [</xsl:text>
         
         <xsl:text>###############################################
 
-# X3D Package for Python x3d.py
+# x3d.py X3D Package for Python
 
 # generator:  X3duomToX3dPythonPackage.xslt
 # X3DUOM:     X3dUnifiedObjectModel-</xsl:text><xsl:value-of select="X3dUnifiedObjectModel/@version"/><xsl:text>.xml
@@ -174,7 +183,7 @@ This work is part of the X3D Python Scene Access Interface Library (X3DPSAIL).
 
 import re
 
-_DEBUG = True       # options True False
+_DEBUG = False       # options True False
 
 ###############################################
 
@@ -276,23 +285,23 @@ class _X3DField:
         """ Provide value of this field type. """
         return self.__value
     def __repl__(self):
-        # if _DEBUG: print('* debug: type(self.value)=' + str(type(self.value)), flush=True)
+        # if _DEBUG: print('...DEBUG... type(self.value)=' + str(type(self.value)), flush=True)
         if isinstance(self.value, (SFString, str)):
             return "'" + self.value + "'"
         if  isinstance(self.value, tuple) and 'SF' in str(type(self)): # avoid X3DTypeError if value is not iterable
             result = '('
-            if self.value: # walk each child in MFNode list, if any (avoid empty list recursion)
+            if self.value: # walk each child in list, if any (avoid empty list recursion)
                 for each in self.value:
                     result += str(each) + ', '
-                    # if _DEBUG: print('* _X3DField debug: str(each)=' + str(each), flush=True)
+                    # if _DEBUG: print('...DEBUG... _X3DField debug: str(each)=' + str(each), flush=True)
             return result.rstrip(', ') + ')'
         if  isinstance(self.value, list) and 'MF' in str(type(self)): # avoid X3DTypeError if value is not iterable
             # isinstance(self.value, MFNode): not working, what got passed in was not an MFNode object apparently
             result = '['
-            if self.value: # walk each child in MFNode list, if any (avoid empty list recursion)
+            if self.value: # walk each child in list, if any (avoid empty list recursion)
                 for each in self.value:
                     result += str(each) + ', '
-                    # if _DEBUG: print('* _X3DField debug: str(each)=' + str(each), flush=True)
+                    # if _DEBUG: print('...DEBUG... _X3DField debug: str(each)=' + str(each), flush=True)
             return result.rstrip(', ') + ']'
         return str(self.value)
     def __str__(self):
@@ -448,6 +457,10 @@ class _X3DStatement:
         """ Name of this X3D Statement class. """
         return '_X3DStatement'
     @classmethod
+    def FIELD_DECLARATIONS(cls):
+        """ Field declarations for this node: name, defaultValue, type, accessType, inheritedFrom """
+        return []
+    @classmethod
     def SPECIFICATION_URL(cls):
         """ Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. """
         return 'https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/core.html#AbstractX3DStructure'
@@ -459,7 +472,7 @@ class _X3DStatement:
         self.class_ = class_
         self.id_ = id_
         self.style_ = style_
-        # if _DEBUG: print('... in X3DNode __init__(' + str(class_) + ',' + str(id_) + ',' + str(style_) + ',' + ')', flush=True)
+        # if _DEBUG: print('...DEBUG... in X3DNode __init__(' + str(class_) + ',' + str(id_) + ',' + str(style_) + ',' + ')', flush=True)
     @property # getter - - - - - - - - - -
     def class_(self):
         """ Space-separated list of classes, reserved for use by CSS cascading stylesheets. Appended underscore to field name to avoid naming collision with Python reserved word. """
@@ -508,7 +521,7 @@ class _X3DStatement:
                         result += str(name) + '=['
                         for each in value:
                             result += str(each) + ', '
-                            # if _DEBUG: print('* _X3DStatement debug: str(each)=' + str(each), flush=True)
+                            # if _DEBUG: print('...DEBUG... _X3DStatement debug: str(each)=' + str(each), flush=True)
                         result = result.rstrip(', ')
                         result += '],'
                     elif isinstance(value, str) and "'" in value:
@@ -546,10 +559,12 @@ class Comment(_X3DStatement):
     def TOOLTIP_URL(cls):
         """ X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. """
         return 'https://www.web3d.org/x3d/tooltips/X3dTooltips.html'
+    # immutable constant functions have getter but no setter - - - - - - - - - -
     @classmethod
     def DEFAULT_VALUE(cls):
-        """ Default value defined for this data type by the X3D Specification """
+        """ Default value for comments is empty string """
         return ''
+    @classmethod
     def FIELD_DECLARATIONS(cls):
         """ Field declarations for this node: name, defaultValue, type, accessType, inheritedFrom """
         return []
@@ -573,11 +588,6 @@ class Comment(_X3DStatement):
         if  value is None:
             value = SFString.DEFAULT_VALUE()
         self.__value = str(value)
-    # immutable constant functions have getter but no setter - - - - - - - - - -
-    @classmethod
-    def DEFAULT_VALUE(cls):
-        """ Default value comments is empty string """
-        return ''
     # output function - - - - - - - - - -
     def XML(self, indentLevel=0, syntax="XML"):
         """ <!-- XML comments are wrapped in special delimiters --> """
@@ -632,11 +642,16 @@ def isX3DNode(value):
 
 # Python x3d Package Loading Complete
 
-print("x3d.py package loaded, have fun with X3D Graphics!")
+print("x3d.py package 4.0.58 loaded, have fun with X3D Graphics!")
 
 ###############################################
 </xsl:text>
-            
+<!-- (post-deployment revisions) (testing version)
+
+    TODO how to perform runtime look up __version__ or setup.py setuptools.setup(
+    name="x3d",
+    version="4.0.54", 
+-->
         </xsl:result-document>
     </xsl:template>
 
@@ -725,25 +740,40 @@ def fixBoolean(value, default=None):
     """
     # if _DEBUG: print('fixBoolean(value=' + str(value) + ', default=' + str(default) + ')', flush=True)
     if  value is None:
+        # if _DEBUG: print('...DEBUG... fixBoolean set value to default=' + str(default))
         return default
+#   print('fixBoolean #0a')
+#    if isinstance(value, MFBool):
+#        value = value.value # dereference
+#       print('fixBoolean #0a dereferenced')
+#   print('fixBoolean #0b')
+    if isinstance(value, list) and len(value) == 0:
+        return value
+#   print('fixBoolean #1') # debug
     if isinstance(value, list) and len(value) == 1:
         # if _DEBUG: print('fixBoolean downcasting by resetting singleton list value=' + str(value) + ' as value=' + str(value[0]), flush=True)
-        value = value[0]
-    elif isinstance(value, SFBool):
+        return value[0] # dereference
+    if isinstance(value, SFBool):
         return value.value # dereference
-    elif isinstance(value, MFBool) and len(value) == 1:
+    if isinstance(value, MFBool) and len(value) == 1:
         return value.value[0] # dereference
+#   print('fixBoolean #2') # debug
     if value in ('true', 'True'):
         return True
     if value in ('false', 'False'):
         return False
+#   print('fixBoolean #3') # debug
     if isinstance(value, bool):
         return value
+#   print('fixBoolean #4') # debug
+    if isinstance(value, MFBool):
+        value = value.value # dereference value from base type
+#       print('fixBoolean #4a, dereference MFBool') # debug
     if isinstance(value, list):
+#       print('fixBoolean #4b found list, value=' + str(value), ' length=' + str(len(value))) # debug
         index = 0
         result = value
         for each in value:
-#           print('each=' + str(each), flush=True) # debug
             if  each in ('true', 'True'):
                 result[index] = True
             elif each in ('false', 'False'):
@@ -751,13 +781,15 @@ def fixBoolean(value, default=None):
             while isinstance(each, list) and len(each) == 1:
                 # if _DEBUG: print('fixBoolean downcasting by extracting singleton list value[' + str(index) + ']=' + str(each) + ' as each[0]=' + str(each[0]), flush=True)
                 result[index] = each[0]
+#           print('fixBoolean #4c found each=' + str(each), 'result=' + str(result), flush=True) # debug
             if not isinstance(result[index], bool):
                 # print(flush=True)
-                raise X3DTypeError('fixBoolean(value=' + str(value) + ') MFBool value[' + str(index) + ']=' + str(each) + ', result[' + str(index) + ']=' + result[index] + ' with type=' + str(type(value)) + ' is not a valid Python bool expression')
+                raise X3DTypeError('fixBoolean(value=' + str(value) + ') MFBool value[' + str(index) + ']=' + str(each) + ', result[' + str(index) + ']=' + str(result[index]) + ' with type=' + str(type(value)) + ' is not a valid Python bool expression')
             index += 1
-        # if _DEBUG: print('...fixBoolean result=' + str(result), flush=True)
+        # if _DEBUG: print('...DEBUG...fixBoolean result=' + str(result), flush=True)
         return result
-    # print(flush=True)
+#   print('fixBoolean #5, unhandled case: value=' + str(value), ' length=' + str(len(value))) # debug
+    print(flush=True)
     raise X3DTypeError('fixBoolean(value=' + str(value) + ') with type=' + str(type(value)) + ') is not a valid Python bool')
 
 def isPositive(value):
@@ -785,8 +817,8 @@ def assertPositive(fieldName, value):
     """
     Utility function to raise X3DTypeError if not isPositive(value).
     """
-    # if _DEBUG: print('* debug: assertPositive(' + str(fieldName) + ', ' + str(value) + ')', flush=True);
-    assert isPositive(value), fieldName + '=' + str(value) + ' fails assertPositive requirements: value(s) greater than or equal to zero'
+    # if _DEBUG: print('...DEBUG... assertPositive(' + str(fieldName) + ', ' + str(value) + ')', flush=True)
+    assert isPositive(value), str(fieldName) + '=' + str(value) + ' fails assertPositive requirements: value(s) must be greater than or equal to zero'
 
 def isNonNegative(value):
     """
@@ -801,7 +833,7 @@ def isNonNegative(value):
                     return False
         return True
     if isinstance(value, (list, tuple)):
-        # if _DEBUG: print('isNonNegative: ', value, flush=True);
+        # if _DEBUG: print('isNonNegative: ', value, flush=True)
         for each in value:
             if each < 0:
                 return False
@@ -814,16 +846,18 @@ def assertNonNegative(fieldName, value):
     """
     Utility function to raise X3DTypeError if not isNonNegative(value).
     """
-    # if _DEBUG: print('* debug: assertNonNegative(' + str(fieldName) + ', ' + str(value) + ')', flush=True);
-    assert isNonNegative(value), fieldName + '=' + str(value) + ' fails assertNonNegative requirements: value(s) greater than or equal to zero'
+    # if _DEBUG: print('...DEBUG... assertNonNegative(' + str(fieldName) + ', ' + str(value) + ')', flush=True)
+    assert isNonNegative(value), str(fieldName) + '=' + str(value) + ' fails assertNonNegative requirements: value(s) must be greater than or equal to zero'
 
 def isZeroToOne(value):
     """
     Utility function to confirm value(s) in range [0..1]
     """
-    # if True or _DEBUG: print('* debug: isZeroToOne(' + str(value) + ')', flush=True);
+    # if _DEBUG: print('...DEBUG... isZeroToOne(' + str(value) + ')', flush=True)
     if  value is None:
         return None
+    if isinstance(value,_X3DField):
+        value = value.value # dereference
     if isinstance(value, (list, tuple)):
         for each in value:
             if isinstance(each, (list, tuple)):
@@ -841,14 +875,14 @@ def assertZeroToOne(fieldName, value):
     """
     Utility function to raise X3DTypeError if not isZeroToOne(value)
     """
-    # if _DEBUG: print('* debug: assertZeroToOne(' + str(fieldName) + ', ' + str(value) + ')', flush=True);
-    assert isZeroToOne(value), fieldName + '=' + str(value) + ' fails assertZeroToOne requirements: value(s) in range [0..1]'
+    # if _DEBUG: print('...DEBUG... assertZeroToOne(' + str(fieldName) + ', ' + str(value) + ')', flush=True)
+    assert isZeroToOne(value), str(fieldName) + '=' + str(value) + ' fails assertZeroToOne requirements: value(s) must be in range [0..1]'
 
 def isLessThanEquals(value, maximum):
     """
     Utility function to confirm value(s) less than or equal to maximum.
     """
-    # if True or _DEBUG: print('* debug: isLessThanEquals(' + str(value) + ')', flush=True);
+    # if True or _DEBUG: print('* debug: isLessThanEquals(' + str(value) + ')', flush=True)
     if  value is None:
         return None
     if isinstance(value, list) and any(isinstance(x, tuple) for x in value):
@@ -870,14 +904,14 @@ def assertLessThanEquals(fieldName, value, maximum):
     """
     Utility function to raise X3DTypeError if not isLessThanEquals(value)
     """
-    # if _DEBUG: print('* debug: assertLessThanEquals(' + str(fieldName) + ', ' + str(value) + ')', flush=True);
+    # if _DEBUG: print('...DEBUG... assertLessThanEquals(' + str(fieldName) + ', ' + str(value) + ')', flush=True)
     assert isLessThanEquals(value, maximum), fieldName + '=' + str(value) + ' fails assertLessThanEquals maximum=' + str(maximum)
 
 def isLessThan(value, maximum):
     """
     Utility function to confirm value(s) less than maximum.
     """
-    # if True or _DEBUG: print('* debug: isLessThan(' + str(value) + ')', flush=True);
+    # if True or _DEBUG: print('* debug: isLessThan(' + str(value) + ')', flush=True)
     if  value is None:
         return None
     if isinstance(value, list) and any(isinstance(x, tuple) for x in value):
@@ -899,15 +933,15 @@ def assertLessThan(fieldName, value, maximum):
     """
     Utility function to raise X3DTypeError if not isLessThan(value)
     """
-    # if _DEBUG: print('* debug: assertLessThan(' + str(fieldName) + ', ' + str(value) + ')', flush=True);
-    assert isLessThan(value, maximum), fieldName + '=' + str(value) + ' fails assertLessThan maximum=' + str(maximum)
+    # if _DEBUG: print('...DEBUG... assertLessThan(' + str(fieldName) + ', ' + str(value) + ')', flush=True)
+    assert isLessThan(value, maximum), str(fieldName) + '=' + str(value) + ' fails assertLessThan maximum=' + str(maximum)
 
 ######
 def isGreaterThanEquals(value, minimum):
     """
     Utility function to confirm value(s) less than or equal to minimum.
     """
-    # if True or _DEBUG: print('* debug: isGreaterThanEquals(' + str(value) + ')', flush=True);
+    # if True or _DEBUG: print('* debug: isGreaterThanEquals(' + str(value) + ')', flush=True)
     if  value is None:
         return None
     if isinstance(value, list) and any(isinstance(x, tuple) for x in value):
@@ -929,14 +963,14 @@ def assertGreaterThanEquals(fieldName, value, minimum):
     """
     Utility function to raise X3DTypeError if not isGreaterThanEquals(value)
     """
-    # if _DEBUG: print('* debug: assertGreaterThanEquals(' + str(fieldName) + ', ' + str(value) + ')', flush=True);
-    assert isGreaterThanEquals(value, minimum), fieldName + '=' + str(value) + ' fails assertGreaterThanEquals minimum=' + str(minimum)
+    # if _DEBUG: print('...DEBUG... assertGreaterThanEquals(' + str(fieldName) + ', ' + str(value) + ')', flush=True)
+    assert isGreaterThanEquals(value, minimum), str(fieldName) + '=' + str(value) + ' fails assertGreaterThanEquals minimum=' + str(minimum)
 
 def isGreaterThan(value, minimum):
     """
     Utility function to confirm value(s) less than minimum.
     """
-    # if True or _DEBUG: print('* debug: isGreaterThan(' + str(value) + ')', flush=True);
+    # if True or _DEBUG: print('* debug: isGreaterThan(' + str(value) + ')', flush=True)
     if isinstance(value, list) and any(isinstance(x, tuple) for x in value):
         for each in value:
             for element in each:
@@ -956,8 +990,8 @@ def assertGreaterThan(fieldName, value, minimum):
     """
     Utility function to raise X3DTypeError if not isGreaterThan(value)
     """
-    # if _DEBUG: print('* debug: assertGreaterThan(' + str(fieldName) + ', ' + str(value) + ')', flush=True);
-    assert isGreaterThan(value, minimum), fieldName + '=' + str(value) + ' fails assertGreaterThan minimum=' + str(minimum)
+    # if _DEBUG: print('...DEBUG... assertGreaterThan(' + str(fieldName) + ', ' + str(value) + ')', flush=True)
+    assert isGreaterThan(value, minimum), str(fieldName) + '=' + str(value) + ' fails assertGreaterThan minimum=' + str(minimum)
 
 def isBoundingBox(value):
     """
@@ -965,7 +999,7 @@ def isBoundingBox(value):
     """
     if value is None:
         return None
-    # if True or _DEBUG: print('* debug: isBoundingBox(' + str(value) + ')', 'isinstance(value, tuple)=' + str(isinstance(value, tuple)), 'len(value)=' + str(len(value)), flush=True);
+    # if True or _DEBUG: print('* debug: isBoundingBox(' + str(value) + ')', 'isinstance(value, tuple)=' + str(isinstance(value, tuple)), 'len(value)=' + str(len(value)), flush=True)
     if isinstance(value, (list, tuple)):
         if len(value) != 3:
             return False
@@ -978,8 +1012,8 @@ def assertBoundingBox(fieldName, value):
     """
     Utility function to raise X3DTypeError if not isBoundingBox(value)
     """
-    # if True or _DEBUG: print('* debug: assertBoundingBox(' + str(fieldName) + ', ' + str(value) + ')', flush=True);
-    assert isBoundingBox(value), fieldName + '=' + str(value) + ' fails assertBoundingBox requirements: must be (-1, -1, -1) or non-negative 3-tuple'
+    # if True or _DEBUG: print('* debug: assertBoundingBox(' + str(fieldName) + ', ' + str(value) + ')', flush=True)
+    assert isBoundingBox(value), str(fieldName) + '=' + str(value) + ' fails assertBoundingBox requirements: must be (-1, -1, -1) or non-negative 3-tuple'
 ]]></xsl:text>
 
         <xsl:for-each select="//FieldTypes/FieldType[not(@name = 'X3DField') and not(@name = 'X3DArrayField')]">
@@ -1001,68 +1035,90 @@ def isValid</xsl:text>
     """
     Utility function to determine type validity of a </xsl:text><xsl:value-of select="$fieldTypeName"/><xsl:text> value.
     """</xsl:text>
+            <xsl:if test="not(contains($fieldTypeName,'Node'))">
+               <xsl:text>
+    if re.fullmatch(</xsl:text>
+                <xsl:value-of select="$fieldTypeName"/>
+                <xsl:text>().REGEX_PYTHON(),str(value)) is None:
+        print('* regex mismatch </xsl:text>
+                <xsl:value-of select="$fieldTypeName"/>
+                <xsl:text>().REGEX_PYTHON(),' + str(value) + ')')
+        return False</xsl:text>
+            </xsl:if>
             <xsl:text>
-    if isinstance(value, _X3DField):
-        if not isinstance(value, SF</xsl:text>
+    try:
+        </xsl:text>
+            <xsl:value-of select="$fieldTypeName"/>
+            <xsl:text>(value)
+        return True
+    except ValueError:
+        print('isValid</xsl:text>
+            <xsl:value-of select="$fieldTypeName"/>
+            <xsl:text> failed with illegal value=' + str(value))
+        return False</xsl:text>
+
+            <xsl:text>
+    ### if isinstance(value, _X3DField):
+    ###     if not isinstance(value, SF</xsl:text>
             <xsl:value-of select="substring($fieldTypeName,3)"/>
             <xsl:text>) and not isinstance(value, MF</xsl:text>
             <xsl:value-of select="substring($fieldTypeName,3)"/>
             <xsl:text>):
-            # if _DEBUG: print('</xsl:text>
+    ###         # if _DEBUG: print('</xsl:text>
             <xsl:value-of select="$fieldTypeName"/>
             <xsl:text> type mismatch diagnostic: value=' + str(value)[:100] + ' has type=' + str(type(value)) + ', isinstance(value, </xsl:text>
             <xsl:value-of select="$fieldTypeName"/>
             <xsl:text>)=' + str(isinstance(value, </xsl:text>
             <xsl:value-of select="$fieldTypeName"/>
             <xsl:text>)), flush=True)
-            return False # type mismatch!</xsl:text>
+    ###        return False # type mismatch!</xsl:text>
             <xsl:text>
-    if isinstance(value, </xsl:text>
+    ### if isinstance(value, </xsl:text>
             <xsl:value-of select="$fieldTypeName"/>
             <xsl:text>):
-        value = value.value # dereference value from base type</xsl:text>
+    ###     value = value.value # dereference value from base type</xsl:text>
             <xsl:if test="not(contains($fieldTypeName,'Node'))">
                <xsl:text>
-        if re.fullmatch(</xsl:text>
-            <xsl:value-of select="$fieldTypeName"/>
-            <xsl:text>().REGEX_PYTHON(),str(value)) is None:
-            return False</xsl:text>
+    ###     if re.fullmatch(</xsl:text>
+                <xsl:value-of select="$fieldTypeName"/>
+                <xsl:text>().REGEX_PYTHON(),str(value)) is None:
+    ###         return False</xsl:text>
             </xsl:if>
-               <xsl:text> 
-        return True</xsl:text>
+               <xsl:text>
+    ###     return True</xsl:text>
             <!-- SF/MF promotion/demotion -->
             <xsl:choose>
                 <xsl:when test="starts-with($fieldTypeName, 'SF')">
                     <xsl:text>
-    if isinstance(value, MF</xsl:text>
+    ### if isinstance(value, MF</xsl:text>
                     <xsl:value-of select="substring($fieldTypeName,3)"/>
                     <xsl:text>) and (len(value) == 1) and isValidMF</xsl:text>
                     <xsl:value-of select="substring($fieldTypeName,3)"/>
                     <xsl:text>(value):
-        value = value.value[0] # dereference value from this MF type
-        return True</xsl:text>
+    ###     value = value.value[0] # dereference value from this MF type
+    ###     return True</xsl:text>
                 </xsl:when>
                 <xsl:when test="starts-with($fieldTypeName, 'MF')">
                     <xsl:text>
-    if isinstance(value, SF</xsl:text>
+    ### if isinstance(value, SF</xsl:text>
                     <xsl:value-of select="substring($fieldTypeName,3)"/>
                     <xsl:text>):
-        value = list(value.value) # dereference value from this SF type, convert to list #1
-        return True</xsl:text>
+    ###     value = list(value.value) # dereference value from this SF type, convert to list #1
+    ###     return True</xsl:text>
                 </xsl:when>
             </xsl:choose>
             
             <xsl:choose>
                 <xsl:when test="($fieldTypeName = 'MFNode')">
                     <xsl:text>
-    if value and isinstance(value,list):
-        for each in value:
-            if not isinstance(each, (_X3DNode, _X3DStatement)):
-                return False</xsl:text>
+    ### if value and isinstance(value,list):
+    ###     for each in value:
+    ###         if not isinstance(each, (_X3DNode, _X3DStatement)):
+    ###             return False</xsl:text>
                 </xsl:when>
                 <xsl:otherwise>
         <xsl:text>
-    if not isinstance(value, </xsl:text>
+    ### if not isinstance(value, </xsl:text>
             <xsl:choose>
                 <xsl:when test="($fieldTypeName = 'MFNode')">
                     <xsl:text>_X3DNode) and not isinstance(value, _X3DStatement</xsl:text>
@@ -1081,107 +1137,107 @@ def isValid</xsl:text>
                 </xsl:otherwise>
             </xsl:choose>
             <xsl:text>):
-        return False</xsl:text>
+    ###     return False</xsl:text>
             
             <xsl:choose>
                 <xsl:when test="($isTuple and not($isList)) or ($isList and not($isTuple))">
                     <xsl:if test="($tupleSize > 1)">
                         <xsl:text>
-    tupleCount = 0</xsl:text>
+    ### tupleCount = 0</xsl:text>
                     </xsl:if>
                     <xsl:text>
-    for each in value:</xsl:text>
+    ### for each in value:</xsl:text>
                     <xsl:if test="($tupleSize > 1)">
                         <xsl:text>
-        tupleCount += 1</xsl:text>
+    ###     tupleCount += 1</xsl:text>
                     </xsl:if>
                     <xsl:text>
-        while isinstance(each, list) and len(each) == 1:
-            each = each[0] # dereference
-        if isinstance(each, SF</xsl:text>
+    ###     while isinstance(each, list) and len(each) == 1:
+    ###         each = each[0] # dereference
+    ###     if isinstance(each, SF</xsl:text>
                     <xsl:value-of select="substring($fieldTypeName,3)"/>
                     <xsl:text>):
-            each = each.value # dereference
-        if not isinstance(each, </xsl:text>
+    ###         each = each.value # dereference
+    ###     if not isinstance(each, </xsl:text>
                     <xsl:value-of select="$pythonBaseType"/>
                     <xsl:if test="($pythonBaseType = 'float')">
                         <xsl:text>) and not isinstance(each, int</xsl:text>
                     </xsl:if>
                     <xsl:text>):
-            return False</xsl:text>
+    ###         return False</xsl:text>
                     <!-- SF range checks -->
                     <xsl:choose>
                         <xsl:when test="starts-with($fieldTypeName, 'SFColor')">
                             <xsl:text disable-output-escaping="yes"><![CDATA[
-        if (each < 0) or (each > 1):
-            return False]]></xsl:text>
+    ###     if (each < 0) or (each > 1):
+    ###         return False]]></xsl:text>
                         </xsl:when>
                     </xsl:choose>
                     <!-- tupleSize checks -->
                     <xsl:if test="($tupleSize > 1)">
                         <xsl:text>
-    if tupleCount != </xsl:text>
+    ### if tupleCount != </xsl:text>
                         <xsl:value-of select="$tupleSize"/>
                         <xsl:text>:
-        return False</xsl:text>
+    ###     return False</xsl:text>
                     </xsl:if>
                 </xsl:when>
                 <xsl:when test="$isTuple and $isList">
                     <xsl:text>
-    index = 0
-    for each in value:
-        index += 1
-        if len(each) % </xsl:text>
+    ### index = 0
+    ### for each in value:
+    ###     index += 1
+   ###      if len(each) % </xsl:text>
                         <xsl:value-of select="$fieldTypeName"/>
                         <xsl:text>().TUPLE_SIZE()  != 0:
-            # if _DEBUG:
-            print('* isValid</xsl:text>
+    ###         # if _DEBUG:
+    ###         print('* isValid</xsl:text>
                 <xsl:value-of select="$fieldTypeName"/>
                 <xsl:text> tuple ' + str(each) + ' has length ' + str(len(each)) + ' which is not a multiple of </xsl:text>
                 <xsl:value-of select="$fieldTypeName"/>
                 <xsl:text>().TUPLE_SIZE() =' + str(</xsl:text>
                         <xsl:value-of select="$fieldTypeName"/>
                         <xsl:text>().TUPLE_SIZE() ) + ' for value=' + str(value), flush=True)
-            return False
-        for element in each:
-            if not isinstance(element, </xsl:text>
+    ###         return False
+    ###     for element in each:
+    ###         if not isinstance(element, </xsl:text>
                     <xsl:value-of select="$pythonBaseType"/>
                     <xsl:if test="($pythonBaseType = 'float')">
                         <xsl:text>) and not isinstance(element, int</xsl:text>
                     </xsl:if>
                     <xsl:text>):
-                return False</xsl:text>
+    ###             return False</xsl:text>
                     <!-- MF range checks -->
                     <xsl:choose>
                         <xsl:when test="starts-with($fieldTypeName, 'MFColor')">
                             <xsl:text disable-output-escaping="yes"><![CDATA[
-            if (element < 0) or (element > 1):
-                return False]]></xsl:text>
+    ###         if (element < 0) or (element > 1):
+    ###             return False]]></xsl:text>
                         </xsl:when>
                     </xsl:choose>
                 </xsl:when>
             </xsl:choose>
             <xsl:if test="contains($fieldTypeName, 'Color')">
                 <xsl:text>
-    if not isZeroToOne(value):
-        return False</xsl:text>
+    ### if not isZeroToOne(value):
+    ###     return False</xsl:text>
             </xsl:if>
                 </xsl:otherwise>
             </xsl:choose>
             <xsl:if test="($fieldTypeName = 'SFImage')">
                 <xsl:text disable-output-escaping="yes"><![CDATA[
-    if len(value) > 0: # SFImage list length checks
-        if 0 < len(value) < 3:
-            return False # SFImage list must start with width, height and number of components (0..4)
-        width = value[0]
-        height = value[1]
-        # numberComponents = value[2]
-        if  len(value) != (width * height) + 3: # assumes each value in array has all component values in single integer
-            print('SFImage array length of ' + str(len(value)) + ' does not equal (width=' + str(width)+ ' * height=' + str(height)+ ') + 3) = ' + str(width * height * numberComponents + 3) + ' (numberComponents=' + numberComponents + ')', flush=True)
-            return False # SFImage has invalid list length]]></xsl:text>
+    ### if len(value) > 0: # SFImage list length checks
+    ###     if 0 < len(value) < 3:
+    ###         return False # SFImage list must start with width, height and number of components (0..4)
+    ###     width = value[0]
+    ###     height = value[1]
+    ###     # numberComponents = value[2]
+    ###     if  len(value) != (width * height) + 3: # assumes each value in array has all component values in single integer
+    ###         print('SFImage array length of ' + str(len(value)) + ' does not equal (width=' + str(width)+ ' * height=' + str(height)+ ') + 3) = ' + str(width * height * numberComponents + 3) + ' (numberComponents=' + numberComponents + ')', flush=True)
+    ###         return False # SFImage has invalid list length]]></xsl:text>
             </xsl:if>
             <xsl:text>
-    return True
+    ### return True
 
 def assertValid</xsl:text>
             <xsl:value-of select="$fieldTypeName"/>
@@ -1189,6 +1245,18 @@ def assertValid</xsl:text>
     """
     Utility function to assert type validity of a </xsl:text><xsl:value-of select="$fieldTypeName"/><xsl:text> value, otherwise raise X3DTypeError with diagnostic message.
     """</xsl:text>
+            <xsl:text>
+    try:
+        </xsl:text>
+            <xsl:value-of select="$fieldTypeName"/>
+            <xsl:text>(value)
+    except Exception as error:
+        # https://stackoverflow.com/questions/66995878/consider-explicitly-re-raising-using-the-from-keyword-pylint-suggestion
+        print(flush=True)
+        raise X3DTypeError(str(value)[:100] + ' has type ' + str(type(value)) + ' but is not a valid </xsl:text>
+            <xsl:value-of select="$fieldTypeName"/>
+            <xsl:text>') from error</xsl:text>
+
             <!-- provide special error message if SF type provided for MF field 
             <xsl:if test="starts-with($fieldTypeName, 'MF')">
                 <xsl:variable name="sfTypeName" select="concat('S',substring($fieldTypeName,2,string-length($fieldTypeName)))"/>
@@ -1211,37 +1279,61 @@ def assertValid</xsl:text>
     print("debug list commence...")</xsl:text>
                  </xsl:if> -->
             <xsl:text>
-    # if _DEBUG: print('* debug value.__class__=' + str(value.__class__) + ', issubclass(value.__class__, _X3DField)=' + str(issubclass(value.__class__, _X3DField)) + ', super(value.__class__)=' + str(super(value.__class__)), flush=True)
+    # if _DEBUG: print('...DEBUG... debug value.__class__=' + str(value.__class__) + ', issubclass(value.__class__, _X3DField)=' + str(issubclass(value.__class__, _X3DField)) + ', super(value.__class__)=' + str(super(value.__class__)), flush=True)
     # if _DEBUG: print('value=', value, 'str(value)=', str(value))
-    if isinstance(value, _X3DField) and not isinstance(value, SF</xsl:text>
+    ### if isinstance(value, _X3DField) and not isinstance(value, SF</xsl:text>
             <xsl:value-of select="substring($fieldTypeName,3)"/>
             <xsl:text>) and not isinstance(value, MF</xsl:text>
             <xsl:value-of select="substring($fieldTypeName,3)"/>
             <xsl:text>):
-        # print(flush=True)
-        raise X3DTypeError(str(value)[:100] + ' has type ' + str(type(value)) + ' and is not a </xsl:text>
+    ###     # print(flush=True)
+    ###     raise X3DTypeError(str(value)[:100] + ' has type ' + str(type(value)) + ' and is not a </xsl:text>
             <xsl:value-of select="$fieldTypeName"/>
             <xsl:text>')</xsl:text>
             <xsl:text>
-    if isinstance(value, </xsl:text>
+    ### if isinstance(value, </xsl:text>
             <xsl:value-of select="$fieldTypeName"/>
             <xsl:text>):
-        value = value.value # dereference value from this base type #2a</xsl:text>
+    ###     value = value.value # dereference value from this base type #2a</xsl:text>
                 <!-- <xsl:if test="ends-with($fieldTypeName,'String')">
                         <xsl:text>
-        print("debug list #2a")</xsl:text>
+    ###     print("debug list #2a")</xsl:text>
                     </xsl:if>-->
+                    <xsl:choose>
+                        <xsl:when test="contains($fieldTypeName, 'Int32')">
+                            <xsl:text>
+    ### if isinstance(value,str):
+    ###     try:
+    ###         value = SFInt32(value)
+    ###         print('found string for </xsl:text>
+                    <xsl:value-of select="$fieldTypeName"/>
+                    <xsl:text>, isinstance(value,list)=' + str(isinstance(value,list)),flush=True)
+    ###         return True
+    ###     except:
+    ###         raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid int value for SFInt32')</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="contains($fieldTypeName,'Double') or contains($fieldTypeName,'Float') or contains($fieldTypeName,'Color') or contains($fieldTypeName,'Rotation') or contains($fieldTypeName,'Vec')">
+                            <xsl:text>
+    ### if isinstance(value,str):
+    ###     value = </xsl:text>
+                    <xsl:value-of select="$fieldTypeName"/>
+                    <xsl:text>(value)
+    ###     print('found string for </xsl:text>
+                    <xsl:value-of select="$fieldTypeName"/>
+                    <xsl:text>, isinstance(value,list)=' + str(isinstance(value,list)),flush=True)</xsl:text>
+                        </xsl:when>
+                    </xsl:choose>
             <!-- SF/MF promotion/demotion -->
             <xsl:choose>
                 <xsl:when test="starts-with($fieldTypeName, 'SF')">
                     <xsl:text>
-    if isinstance(value, MF</xsl:text>
+    ### elif isinstance(value, MF</xsl:text>
                     <xsl:value-of select="substring($fieldTypeName,3)"/>
                     <xsl:text>) and len(value) == 1:
-        value = value.value[0] # dereference value from this MF type #2b</xsl:text>
+    ###     value = value.value[0] # dereference value from this MF type #2b</xsl:text>
                     <!-- <xsl:if test="ends-with($fieldTypeName,'String')">
                         <xsl:text>
-        print("debug list #2b")</xsl:text>
+    ###     print("debug list #2b")</xsl:text>
                     </xsl:if> -->
                     <xsl:choose>
                         <xsl:when test="($fieldTypeName = 'SFString')">
@@ -1250,62 +1342,58 @@ def assertValid</xsl:text>
                         <xsl:when test="($fieldTypeName = 'SFInt32')">
                             <xsl:text>
     # https://stackoverflow.com/questions/354038/how-do-i-check-if-a-string-is-a-number-float
-    if isinstance(value, str):
-        try:
-            int(value) # checks but does not set value, may throw exception
-        except ValueError:
-            print('</xsl:text>
+    ### elif isinstance(value, str):
+    ###     try:
+    ###         int(value) # checks but does not set value, may throw exception
+    ###     except ValueError:
+    ###         print('</xsl:text>
             <xsl:value-of select="$fieldTypeName"/>
-            <xsl:text> encountered string with illegal value=' + value)
-            raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid int value for SFInt32')</xsl:text>
+            <xsl:text> encountered string with illegal value=' + str(value))
+    ###         raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid int value for SFInt32')</xsl:text>
                         </xsl:when>
                         <xsl:when test="not(contains($fieldTypeName, 'Bool')) and not(contains($fieldTypeName, 'String')) and not(contains($fieldTypeName, 'Node'))">
                             <xsl:text>
     # https://stackoverflow.com/questions/354038/how-do-i-check-if-a-string-is-a-number-float
-    if isinstance(value, str):
-        try:
-            float(value) # checks but does not set value, may throw exception
-        except ValueError:
-            print('</xsl:text>
+    ### elif isinstance(value, str):
+    ###     try:
+    ###         float(value) # checks but does not set value, may throw exception
+    ###     except ValueError:
+    ###         print('</xsl:text>
             <xsl:value-of select="$fieldTypeName"/>
-            <xsl:text> encountered string with illegal value=' + value)
-            raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid float value for </xsl:text>
+            <xsl:text> encountered string with illegal value=' + str(value))
+    ###         raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid float value for </xsl:text>
                         <xsl:value-of select="$fieldTypeName"/>
                         <xsl:text>')</xsl:text>
                         </xsl:when>
                     </xsl:choose>
                 </xsl:when>
-            </xsl:choose>
-            <xsl:choose>
                 <xsl:when test="starts-with($fieldTypeName, 'MF')">
                     <xsl:text>
-    if (isinstance(value, SF</xsl:text>
+    ### elif (isinstance(value, SF</xsl:text>
                     <xsl:value-of select="substring($fieldTypeName,3)"/>
                     <xsl:text>)</xsl:text>
                     <xsl:if test="ends-with($fieldTypeName,'String')">
                         <xsl:text> or isinstance(value, str)</xsl:text>
                     </xsl:if>
                     <xsl:text>) and not isinstance(value, list):
-        value = list(str(value)) # dereference value from this SF type, convert to list #2c</xsl:text>
-                    <xsl:if test="ends-with($fieldTypeName,'String')">
-                        <!-- <xsl:text>
-        print("debug list #2c")</xsl:text> -->
-                    </xsl:if>
+        ### value = list(SF</xsl:text>
+                    <xsl:value-of select="substring($fieldTypeName,3)"/>
+                    <xsl:text>(value).value) # dereference value from this SF type, convert to list #2c</xsl:text>
                 </xsl:when>
             </xsl:choose>
             
             <xsl:choose>
                 <xsl:when test="($fieldTypeName = 'MFNode')">
                     <xsl:text>
-    if value and isinstance(value,list):
-        for each in value:
-            if not isinstance(each, _X3DNode) and not isinstance(each, _X3DStatement):
-                print(flush=True)
-                raise X3DTypeError(str(value)[:100] + ' element ' + str(each) + ', type=' + str(type(each)) + ' is not a valid _X3DNode or _X3DStatement for MFNode')</xsl:text>
+    ### if value and isinstance(value,list):
+    ###     for each in value:
+    ###         if not isinstance(each, _X3DNode) and not isinstance(each, _X3DStatement):
+    ###             print(flush=True)
+    ###             raise X3DTypeError(str(value)[:100] + ' element ' + str(each) + ', type=' + str(type(each)) + ' is not a valid _X3DNode or _X3DStatement for MFNode')</xsl:text>
                 </xsl:when>
                 <xsl:otherwise>
             <xsl:text>
-    if not isinstance(value, </xsl:text>
+    ### if not isinstance(value, </xsl:text>
             <xsl:choose>
                 <xsl:when test="($fieldTypeName = 'MFNode')">
                     <xsl:text>_X3DNode) and not isinstance(value, _X3DStatement</xsl:text>
@@ -1324,8 +1412,8 @@ def assertValid</xsl:text>
                 </xsl:otherwise>
             </xsl:choose>
             <xsl:text>):
-        # print(flush=True)
-        raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid </xsl:text>
+    ###     print(flush=True)
+    ###     raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid </xsl:text>
             <xsl:choose>
                 <xsl:when test="($fieldTypeName = 'MFNode')">
                     <xsl:text>_X3DNode or _X3DStatement</xsl:text>
@@ -1356,32 +1444,32 @@ def assertValid</xsl:text>
             <xsl:choose>
                 <xsl:when test="($isTuple and not($isList)) or ($isList and not($isTuple))">
                     <xsl:text>
-    # perform duplicative tests prior to isValid call in order to provide better assertion diagnostics #1</xsl:text>
+    ### # perform duplicative tests prior to isValid call in order to provide better assertion diagnostics #1</xsl:text>
                     <xsl:if test="($tupleSize > 1)">
                         <xsl:text>
-    tupleCount = 0</xsl:text>
+    ### tupleCount = 0</xsl:text>
                     </xsl:if>
                     <xsl:text>
-    for each in value:</xsl:text>
+    ### for each in value:</xsl:text>
                     <xsl:if test="($tupleSize > 1)">
                         <xsl:text>
-        tupleCount += 1</xsl:text>
+    ###     tupleCount += 1</xsl:text>
                     </xsl:if>
                     <xsl:text>
-        while isinstance(each, list) and len(each) == 1:
-            each = each[0] # dereference
-        if isinstance(each, SF</xsl:text>
+    ###     while isinstance(each, list) and len(each) == 1:
+    ###         each = each[0] # dereference
+    ###     if isinstance(each, SF</xsl:text>
                     <xsl:value-of select="substring($fieldTypeName,3)"/>
                     <xsl:text>):
-            each = each.value # dereference
-        if not isinstance(each, </xsl:text>
+    ###         each = each.value # dereference
+    ###     if not isinstance(each, </xsl:text>
                     <xsl:value-of select="$pythonBaseType"/>
                     <xsl:if test="($pythonBaseType = 'float')">
                         <xsl:text>) and not isinstance(each, int</xsl:text>
                     </xsl:if>
                     <xsl:text>):
-            # print(flush=True)
-            raise X3DTypeError('</xsl:text>
+    ###         # print(flush=True)
+    ###         raise X3DTypeError('</xsl:text>
                     <xsl:value-of select="$fieldTypeName"/>
                     <xsl:text> list has contained value=' + str(each) + ' with type=' + str(type(each)) + ' which is not a valid </xsl:text>
                     <xsl:value-of select="$pythonBaseType"/>
@@ -1390,9 +1478,9 @@ def assertValid</xsl:text>
                     <xsl:choose>
                         <xsl:when test="starts-with($fieldTypeName, 'SFColor')">
                             <xsl:text disable-output-escaping="yes"><![CDATA[
-        if (each < 0) or (each > 1):
-            # print(flush=True)
-            raise X3DTypeError(']]></xsl:text>
+    ###     if (each < 0) or (each > 1):
+    ###         # print(flush=True)
+    ###         raise X3DTypeError(']]></xsl:text>
                             <xsl:value-of select="$fieldTypeName"/>
                             <xsl:text>' + str(value)[:100] + ' has value ' + str(each) + ' with type=' + str(type(value)) + ' is  out of range [0..1] and is not a valid </xsl:text>
                             <xsl:value-of select="$fieldTypeName"/>
@@ -1402,11 +1490,11 @@ def assertValid</xsl:text>
                     <xsl:if test="($tupleSize > 1)">
                         <!-- tupleSize checks -->
                         <xsl:text>
-    if tupleCount != </xsl:text>
+    ### if tupleCount != </xsl:text>
                         <xsl:value-of select="$tupleSize"/>
                         <xsl:text>:
-        # print(flush=True)
-        raise X3DTypeError('</xsl:text>
+    ###     # print(flush=True)
+    ###     raise X3DTypeError('</xsl:text>
                         <xsl:value-of select="$fieldTypeName"/>
                         <xsl:text> ' + str(value)[:100] + ', type=' + str(type(value)) + '</xsl:text>
                         <xsl:text> has ' + str(tupleCount) + ' elements instead of </xsl:text>
@@ -1417,14 +1505,14 @@ def assertValid</xsl:text>
                 <xsl:when test="$isTuple and $isList">
                     <xsl:text>
     # perform duplicative tests prior to isValid call in order to provide better assertion diagnostics #2
-    if isinstance(value, list):
-        index = 0
-        for each in value:
-            if len(each) % </xsl:text>
+    ### if isinstance(value, list):
+    ###     index = 0
+    ###     for each in value:
+    ###         if len(each) % </xsl:text>
                             <xsl:value-of select="$fieldTypeName"/>
                             <xsl:text>().TUPLE_SIZE()  != 0:
                 # print(flush=True)
-                raise X3DValueError('</xsl:text>
+    ###             raise X3DValueError('</xsl:text>
                     <xsl:value-of select="$fieldTypeName"/>
                     <xsl:text> tuple ' + str(each) + ' has length ' + str(len(each)) + ' which is not a multiple of </xsl:text>
                     <xsl:value-of select="$fieldTypeName"/>
@@ -1438,17 +1526,17 @@ def assertValid</xsl:text>
 #                raise X3DTypeError('</xsl:text>
                     <xsl:value-of select="$fieldTypeName"/>
                     <xsl:text> element #' + str(index) + ' with value ' + str(each) + ', type=' + str(type(each)) + ' is not a valid tuple')
-            index += 1
-            if isinstance(each, tuple):
-                for element in each:
-                    if not isinstance(element, </xsl:text>
+        ###     index += 1
+        ###     if isinstance(each, tuple):
+        ###         for element in each:
+        ###             if not isinstance(element, </xsl:text>
                     <xsl:value-of select="$pythonBaseType"/>
                     <xsl:if test="($pythonBaseType = 'float')">
                         <xsl:text>) and not isinstance(element, int</xsl:text>
                     </xsl:if>
                     <xsl:text>):
-                        # print(flush=True)
-                        raise X3DTypeError('</xsl:text>
+        ###                 # print(flush=True)
+        ###                 raise X3DTypeError('</xsl:text>
                     <xsl:value-of select="$fieldTypeName"/>
                     <xsl:text> element #' + str(index) + ' tuple ' + str(each) + ' has value=' + str(element) + ', type=' + str(type(element)) + ' that is not a valid </xsl:text>
                     <xsl:value-of select="$pythonBaseType"/>
@@ -1457,9 +1545,9 @@ def assertValid</xsl:text>
                     <xsl:choose>
                         <xsl:when test="starts-with($fieldTypeName, 'MFColor')">
                             <xsl:text disable-output-escaping="yes"><![CDATA[
-                    if (element < 0) or (element > 1):
-                        # print(flush=True)
-                        raise X3DTypeError(']]></xsl:text>
+        ###             if (element < 0) or (element > 1):
+        ###                 # print(flush=True)
+        ###                 raise X3DTypeError(']]></xsl:text>
                             <xsl:value-of select="$fieldTypeName"/>
                             <xsl:text>' + str(value)[:100] + ' has value ' + str(element) + ' with type=' + str(type(value)) + ' out of range [0..1] and is not a valid </xsl:text>
                             <xsl:value-of select="$fieldTypeName"/>
@@ -1472,7 +1560,7 @@ def assertValid</xsl:text>
                 <xsl:when test="contains($fieldTypeName, 'Color')">
                     <xsl:text>
 </xsl:text>
-                    <xsl:text>    assertZeroToOne('</xsl:text>
+        ###             <xsl:text>    assertZeroToOne('</xsl:text>
                     <xsl:value-of select="$fieldTypeName"/>
                     <xsl:text>', value)</xsl:text>
                 </xsl:when>
@@ -1482,24 +1570,24 @@ def assertValid</xsl:text>
             </xsl:choose>
 
             <xsl:text>
-    if not isValid</xsl:text>
+    ### if not isValid</xsl:text>
             <xsl:value-of select="$fieldTypeName"/>
             <xsl:text>(value):
-        # print(flush=True)</xsl:text>
+    ###     # print(flush=True)</xsl:text>
             <xsl:if test="($fieldTypeName = 'SFImage')">
                 <xsl:text disable-output-escaping="yes"><![CDATA[
-        diagnostic = ''
-        if len(value) > 0: # SFImage list length checks
-            if 0 < len(value) < 3:
-                diagnostic = 'SFImage list must start with width, height and number of components (0..4)'
-            else:
-                width = value[0]
-                height = value[1]
-                numberComponents = value[2]
-                diagnostic = ' array length of ' + str(len(value)) + ' does not equal (width=' + str(width)+ ' * height=' + str(height)+ ') + 3) = ' + str(width * height + 3)]]></xsl:text>
+    ###     diagnostic = ''
+    ###     if len(value) > 0: # SFImage list length checks
+    ###         if 0 < len(value) < 3:
+    ###             diagnostic = 'SFImage list must start with width, height and number of components (0..4)'
+    ###         else:
+    ###             width = value[0]
+    ###             height = value[1]
+    ###             numberComponents = value[2]
+    ###             diagnostic = ' array length of ' + str(len(value)) + ' does not equal (width=' + str(width)+ ' * height=' + str(height)+ ') + 3) = ' + str(width * height + 3)]]></xsl:text>
             </xsl:if>
             <xsl:text>
-        raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid </xsl:text>
+    ###     raise X3DTypeError(str(value)[:100] + ', type=' + str(type(value)) + ' is not a valid </xsl:text>
             <xsl:choose>
                 <xsl:when test="($fieldTypeName = 'MFNode')">
                     <xsl:text>_X3DNode or _X3DStatement</xsl:text>
@@ -1542,7 +1630,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
     """
     Utility function to assert fieldType validity of a field initialization value, otherwise raise X3DTypeError with diagnostic message.
     """
-    # if _DEBUG: print('* assertValidFieldInitializationValue name=' + str(name) + ', fieldType=' + str(fieldType) + ', value=' + str(value)[:100] + ', parent=' + parent, flush=True)
+    # if _DEBUG: print('...DEBUG... assertValidFieldInitializationValue name=' + str(name) + ', fieldType=' + str(fieldType) + ', value=' + str(value)[:100] + ', parent=' + parent, flush=True)
     # note that ExternProtoDeclare field definitions do not have any value
     if name is None:
         print('* assertValidFieldInitializationValue improper invocation: name=' + str(name) + ', fieldType=' + str(fieldType) + ', value=' + str(value)[:100] + ', parent=' + parent + ', ignored', flush=True)
@@ -1654,7 +1742,8 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
 #           assertValidFieldInitializationValue(name + '[' + str(index) + '], fieldType(value[index])', value[index], parent)
     else:
         print('*** assertValidFieldInitializationValue unknown fieldType: name=' + str(name) + ', passed fieldType=' + str(fieldType) + ', fieldType(value)=' + str(fieldType(value)) + ', value=' + str(value)[:100] + ', parent=' + parent, flush=True)
-        return False # TODO check further if possible</xsl:text>
+        return False # TODO check further if possible
+    return True</xsl:text>
         <xsl:text>&#10;</xsl:text>
         <!-- TODO raise X3DTypeError once fieldType checks are thorough and working -->
 
@@ -1910,7 +1999,21 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
 
         <xsl:text>
     # - - - - - - - - - -
-    def __init__(self, value=</xsl:text><xsl:value-of select="$defaultValue"/><xsl:text>):</xsl:text>
+    def __init__(self, value=</xsl:text>
+    <xsl:choose>
+        <!-- watch out for intitializing with [] -->
+        <!-- https://stackoverflow.com/questions/9526465/best-practice-for-setting-the-default-value-of-a-parameter-thats-supposed-to-be -->
+        <xsl:when test="($defaultValue = '[]')">
+            <xsl:text>None</xsl:text>
+            <xsl:text>):
+        if value is None:
+            value = []</xsl:text>
+        </xsl:when>
+        <xsl:otherwise>
+            <xsl:value-of select="$defaultValue"/>
+            <xsl:text>):</xsl:text>
+        </xsl:otherwise>
+    </xsl:choose>
         <xsl:text>
         # print('*** in __init__ value=' + str(value), 'type=' + str(type(value))) # debug</xsl:text>
         <xsl:choose>
@@ -1943,10 +2046,29 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
         <xsl:if test="($fieldTypeName = 'SFBool') or ($fieldTypeName = 'MFBool')">
                 <xsl:text>
         value = fixBoolean(value, default=</xsl:text><xsl:value-of select="$fieldTypeName"/><xsl:text>.DEFAULT_VALUE())</xsl:text>
+            <xsl:if test="($fieldTypeName = 'MFBool')">
+                <xsl:text>
+        if not isinstance(value,list):
+            _newValue = [ value ]
+        else:
+            _newValue = []
+            for each in value:
+                _newValue.append(SFBool(each).value)
+        value = _newValue</xsl:text>
+            </xsl:if>
         </xsl:if>
         <xsl:text>
-        if  value is None:
-            value = </xsl:text><xsl:value-of select="$fieldTypeName"/><xsl:text>.DEFAULT_VALUE()</xsl:text>
+        if isinstance(value,SF</xsl:text>
+                <xsl:value-of select="substring($fieldTypeName,3)"/>
+                <xsl:text>):
+            value = value.value # dereference
+        elif value is None:
+            value = </xsl:text><xsl:value-of select="$fieldTypeName"/><xsl:text>.DEFAULT_VALUE()
+            # if _DEBUG: print('...DEBUG... set value to </xsl:text>
+                        <xsl:value-of select="@type"/>
+                        <xsl:text>.DEFAULT_VALUE()=' + str(</xsl:text>
+                        <xsl:value-of select="@type"/>
+                        <xsl:text>.DEFAULT_VALUE()))</xsl:text>
         <!-- tuple-ize list https://stackoverflow.com/questions/48745275/convert-list-of-string-to-list-of-tuples -->
         <!-- https://docs.python.org/3/tutorial/controlflow.html?highlight=break%20continue#break-and-continue-statements-and-else-clauses-on-loops -->
         <xsl:choose>
@@ -2001,10 +2123,11 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 int(value) # this statement checks but does not set value, may throw exception
                 print ('*** string value provided, value=' + str(value) + ', int(value)=' + str(int(value)), flush=True)
                 value = int(value)
-            except ValueError:
-                print('</xsl:text>
+            except ValueError as error:
+                # https://stackoverflow.com/questions/66995878/consider-explicitly-re-raising-using-the-from-keyword-pylint-suggestion
+                raise X3DTypeError('</xsl:text>
                             <xsl:value-of select="$fieldTypeName"/>
-                            <xsl:text> encountered string with illegal value=' + value)</xsl:text>
+                            <xsl:text> encountered string with illegal value=' + str(value)) from error</xsl:text>
                         </xsl:when>
                         <xsl:when test="not(contains($fieldTypeName, 'Bool')) and not(contains($fieldTypeName, 'String')) and not(contains($fieldTypeName, 'Node'))">
                             <xsl:text>
@@ -2014,28 +2137,53 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 float(value) # this statement checks but does not set value, may throw exception
                 print ('*** string value provided, value=' + str(value) + ', float(value)=' + str(float(value)), flush=True)
                 value = float(value)
-            except ValueError:
-                print('</xsl:text>
+            except ValueError as error:
+                # https://stackoverflow.com/questions/66995878/consider-explicitly-re-raising-using-the-from-keyword-pylint-suggestion
+                raise X3DTypeError('</xsl:text>
                             <xsl:value-of select="$fieldTypeName"/>
-                            <xsl:text> encountered string with illegal value=' + value)</xsl:text>
+                            <xsl:text> encountered string with illegal value=' + str(value)) from error</xsl:text>
                         </xsl:when>
                 </xsl:choose>
             </xsl:when>
             <xsl:when test="starts-with($fieldTypeName, 'MF')">
                 <xsl:text>
-        elif not isinstance(value, list) and isValidSF</xsl:text><!-- SF corresponding to this MF type -->
+    ###     elif not isinstance(value, list) and isValidSF</xsl:text><!-- SF corresponding to this MF type -->
                 <xsl:value-of select="substring($fieldTypeName,3)"/>
                 <!-- upcast to MF type -->
                 <xsl:text>(value):
-            value = </xsl:text>
-                <xsl:text>[value]</xsl:text>
+    ###         print(' upcast to MF type', value)
+    ###         value = MF</xsl:text>
+                <xsl:value-of select="substring($fieldTypeName,3)"/>
+                <xsl:text>(SF</xsl:text>
+                <xsl:value-of select="substring($fieldTypeName,3)"/>
+                <xsl:text>(value))</xsl:text>
+                <xsl:if test="starts-with($fieldTypeName, 'MF')">
+                    <xsl:text>
+        elif isinstance(value, list):
+            if not value is None and not (isinstance(value,list) and len(value) == 0):
+                _newValue = []
+                for each in value:
+                    _newValue.append(SF</xsl:text>
+                    <xsl:value-of select="substring($fieldTypeName,3)"/>
+                    <xsl:text>(each).value)
+                # if _DEBUG: print('...DEBUG... assign list, value=' + str(value), ', type=' + str(type(value)), ', _newValue=' + str(_newValue),flush=True)
+                value = _newValue
+        elif isinstance(value, str):
+            value = [ </xsl:text>
+                <xsl:value-of select="$pythonBaseType"/>
+                <xsl:text>(value) ]</xsl:text>
+                </xsl:if>
             </xsl:when>
         </xsl:choose>
-
+        <!-- ch ck value restrictions -->
+        <xsl:choose>
+            <xsl:when test="contains($fieldTypeName, 'Color')">
                 <xsl:text>
-        assertValid</xsl:text>
+        assertZeroToOne(</xsl:text>
                 <xsl:value-of select="$fieldTypeName"/>
-        <xsl:text>(value)</xsl:text><!-- throws exception if not -->
+                <xsl:text>,value)</xsl:text>
+            </xsl:when>
+        </xsl:choose>
         <!-- ready to save -->
         <xsl:text>
         self.__value = value</xsl:text>
@@ -2047,7 +2195,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 <xsl:text>
     def __repl__(self):
         result = '['
-        if self.__value: # walk each child in MFNode list, if any (avoid empty list recursion)
+        if self.__value: # walk each child in list, if any (avoid empty list recursion)
             for each in self.__value:
                 result += str(each) + ', '
         return result.rstrip(', ') + ']'</xsl:text>
@@ -2057,6 +2205,10 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             <xsl:when test="starts-with($fieldTypeName, 'SF')">
                 <xsl:text>
     def __bool__(self):
+        if not isinstance(self.__value,list):
+            print('*** x3d.py internal error, </xsl:text>
+                <xsl:value-of select="$fieldTypeName"/>
+        <xsl:text> self.__value type=' + str(type(self.__value)) + ' is not a list')
         return len(self.__value) > 0</xsl:text>
             </xsl:when>
             <xsl:when test="starts-with($fieldTypeName, 'MF')">
@@ -2064,30 +2216,59 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
     def append(self, value=None):
         """ Add to existing value list, first ensuring that a correctly typed value is applied. """
         if  not value is None:
-            if isValidSF</xsl:text><!-- SF corresponding to this MF type -->
-                <xsl:value-of select="substring($fieldTypeName,3)"/>
-                <xsl:text>(value):
-                if isinstance(value, SF</xsl:text><!-- SF corresponding to this MF type -->
+            # if _DEBUG: print('...DEBUG... append to list, value=' + str(self.__value), ', type=' + str(type(self.__value)), ', value=' + str(value),flush=True)
+            if isinstance(value,SF</xsl:text>
                 <xsl:value-of select="substring($fieldTypeName,3)"/>
                 <xsl:text>):
-                    value = value.value # dereference
-                self.__value.append(value)
-            elif isValid</xsl:text>
+                self.__value.append(value.value) # dereference
+            elif not isinstance(value,list) and not isinstance(value,</xsl:text>
+                <xsl:value-of select="$fieldTypeName"/>
+                <xsl:text>):
+                self.__value.append(SF</xsl:text>
+                <xsl:value-of select="substring($fieldTypeName,3)"/>
+                <xsl:text>(value).value) # checks validity
+            elif (isinstance(value,list) and len(value) > 0) or isinstance(value,</xsl:text>
+                <xsl:value-of select="$fieldTypeName"/>
+                <xsl:text>):
+                for each in value:
+                    self.__value.append(SF</xsl:text>
+                <xsl:value-of select="substring($fieldTypeName,3)"/>
+                <xsl:text>(each).value) # checks validity
+            elif isinstance(value,str):
+                self.__value.append(SF</xsl:text>
+                <xsl:value-of select="substring($fieldTypeName,3)"/>
+                <xsl:text>(value).value) # checks validity
+    ###     if  not value is None:
+    ###         if isValidSF</xsl:text><!-- SF corresponding to this MF type -->
+                <xsl:value-of select="substring($fieldTypeName,3)"/>
+                <xsl:text>(value):
+    ###             if isinstance(value, SF</xsl:text><!-- SF corresponding to this MF type -->
+                <xsl:value-of select="substring($fieldTypeName,3)"/>
+                <xsl:text>):
+    ###                 value = SF</xsl:text><!-- SF corresponding to this MF type -->
+                <xsl:value-of select="substring($fieldTypeName,3)"/>
+            <xsl:text>(value).value # dereference value from base type
+    ###             self.__value.append(value)
+    ###         elif isValid</xsl:text>
                 <xsl:value-of select="$fieldTypeName"/>
                 <xsl:text>(value):
-                for each in value:
-                    while isinstance(each, list) and len(each) == 1:
-                        each = each[0] # dereference
-                    if isinstance(each, SF</xsl:text><!-- SF corresponding to this MF type -->
+    ###             for each in value:
+    ###                 while isinstance(each, list) and len(each) == 1:
+    ###                     each = each[0] # dereference
+    ###                 if isinstance(each, SF</xsl:text><!-- SF corresponding to this MF type -->
                 <xsl:value-of select="substring($fieldTypeName,3)"/>
                 <xsl:text>):
-                        each = each.value # dereference
-                    self.__value.append(each)
-            else:
-                assertValid</xsl:text>
+    ###                     each = each.value # dereference
+    ###                 self.__value.append(each)
+    ###         else:
+    ###             assertValid</xsl:text>
                 <xsl:value-of select="$fieldTypeName"/>
                 <xsl:text>(value) # report type failure
     def __bool__(self):
+        if not isinstance(self.__value,list):
+            print('*** x3d.py internal error, </xsl:text>
+                <xsl:value-of select="$fieldTypeName"/>
+        <xsl:text> self.__value type=' + str(type(self.__value)) + ' is not a list', flush=True)
         return len(self.__value) > 0
     def __len__(self):
         return len(self.__value)</xsl:text>
@@ -2100,13 +2281,13 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
         </xsl:text>
         <xsl:choose>
             <xsl:when test="($fieldTypeName = 'SFString')">
-                <xsl:text>return str(self.__value).replace("'","&amp;apos;").replace("&amp; ","&amp;amp; ")</xsl:text>
+                <xsl:text>return str(self.__value).replace("'","&amp;apos;").replace("&amp; ","&amp;amp; ").replace("&lt;","&amp;lt;").replace("&gt;","&amp;gt;")</xsl:text>
             </xsl:when>
             <xsl:when test="($fieldTypeName = 'MFString')">
                 <xsl:text>result = ''
-        if self.__value: # walk each child in MFNode list, if any (avoid empty list recursion)
+        if self.__value: # walk each child in list, if any (avoid empty list recursion)
             for each in self.__value:
-                result += '"' + str(each).replace("'","&amp;apos;").replace("&amp; ","&amp;amp; ") + '"' + ' '
+                result += '"' + str(each).replace("'","&amp;apos;").replace("&amp; ","&amp;amp; ").replace("&lt;","&amp;lt;").replace("&gt;","&amp;gt;") + '"' + ' '
         result = result.rstrip(' ')
         return result</xsl:text>
             </xsl:when>
@@ -2133,7 +2314,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             </xsl:when>
             <xsl:when test="($fieldTypeName = 'MFNode')">
                 <xsl:text>result = ''
-        if self.__value: # walk each child in MFNode list, if any (avoid empty list recursion)
+        if self.__value: # walk each child in list, if any (avoid empty list recursion)
             for each in self.__value:
                 if not self.__value is None:
                     result += each.XML() # has line break '\n' at end, which is OK
@@ -2163,7 +2344,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             </xsl:when>
             <xsl:when test="($fieldTypeName = 'MFString')">
                 <xsl:text>result = ''
-        if self.__value: # walk each child in MFNode list, if any (avoid empty list recursion)
+        if self.__value: # walk each child in list, if any (avoid empty list recursion)
             for each in self.__value:
                 result += '"' + str(each) + '"' + ' '
         result = '[' + result.rstrip(' ') + ']'
@@ -2192,7 +2373,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             </xsl:when>
             <xsl:when test="($fieldTypeName = 'MFNode')">
                 <xsl:text>result = ''
-        if self.__value: # walk each child in MFNode list, if any (avoid empty list recursion)
+        if self.__value: # walk each child in list, if any (avoid empty list recursion)
             for each in self.__value:
                 if not self.__value is None:
                     result += each.VRML() # has line break '\n' at end, which is OK
@@ -2218,7 +2399,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             </xsl:when>
             <xsl:when test="($fieldTypeName = 'MFString')">
                 <xsl:text>result = ''
-        if self.__value: # walk each child in MFNode list, if any (avoid empty list recursion)
+        if self.__value: # walk each child in list, if any (avoid empty list recursion)
             for each in self.__value:
                 result += '"' + str(each).replace('"','&amp;quot;') + '"' + ' '
         result = result.rstrip(' ')
@@ -2247,7 +2428,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             </xsl:when>
             <xsl:when test="($fieldTypeName = 'MFNode')">
                 <xsl:text>result = ''
-        if self.__value: # walk each child in MFNode list, if any (avoid empty list recursion)
+        if self.__value: # walk each child in list, if any (avoid empty list recursion)
             for each in self.__value:
                 if not self.__value is None:
                     result += each.JSON() # TODO? has line break '\n' at end, which is OK
@@ -2349,7 +2530,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
         self.style_ = style_
         self.IS = IS
         self.metadata = metadata
-        # if _DEBUG: print('... in </xsl:text>
+        # if _DEBUG: print('...DEBUG... in </xsl:text>
                 <xsl:value-of select="@name"/>
                 <xsl:text> __init__(' + str(DEF) + ',' + str(USE) + ',' + str(class_) + ',' + str(id_) + ',' + str(style) + ',' + str(metadata) + ',' + str(IS) + ')', flush=True)
     @property # getter - - - - - - - - - -
@@ -2450,7 +2631,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                     if  isinstance(value, list): # avoid X3DTypeError if value is not iterable
                         result += str(name) + '=['
                         for each in value:
-                            # if _DEBUG: print('* X3DNode debug: str(each)=' + str(each), flush=True)
+                            # if _DEBUG: print('...DEBUG... X3DNode debug: str(each)=' + str(each), flush=True)
                             result += str(each) + ', '
                         result = result.rstrip(', ')
                         result += '],'
@@ -2490,7 +2671,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 <!-- __init__() of the superclass is called automatically, so this block is not need
                 <xsl:text>
     def __init__(self, DEF, USE, class_, id_, style_, IS, metadata):
-        # if _DEBUG: print('... in </xsl:text>
+        # if _DEBUG: print('...DEBUG... in </xsl:text>
                 <xsl:value-of select="local-name()"/>
                 <xsl:text> </xsl:text>
                 <xsl:value-of select="@name"/>
@@ -2951,7 +3132,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
         <xsl:choose>
             <xsl:when test="(local-name() = 'ConcreteNode')">
             <xsl:text>
-        # if _DEBUG: print('... in </xsl:text>
+        # if _DEBUG: print('...DEBUG... in </xsl:text>
                 <xsl:value-of select="local-name()"/>
                 <xsl:text> </xsl:text>
                 <xsl:value-of select="@name"/>
@@ -2964,7 +3145,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 <!-- discussion to avoid use of super(), especially when explicit superclass is known - but self can become problematic.
                      see Mark Lutz, Learning Python, 5th edition, pp. 1076-1086 -->
                 <xsl:text>
-        # if _DEBUG: print('... in </xsl:text>
+        # if _DEBUG: print('...DEBUG... in </xsl:text>
                 <xsl:value-of select="local-name()"/>
                 <xsl:text> </xsl:text>
                 <xsl:value-of select="@name"/>
@@ -3003,6 +3184,31 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 <xsl:value-of select="$fieldName"/>
             </xsl:if>
         </xsl:for-each>
+        
+        <xsl:if test="($elementName = 'fieldValue')">
+            <xsl:text>
+        self.type='SFString' # convenience property matching corresponding field declaration</xsl:text>
+        </xsl:if>
+        
+        <xsl:if test="($elementName = 'fieldValue')">
+                <xsl:text>
+    @property # getter - - - - - - - - - -
+    # convenience property matching corresponding field declaration
+    def type(self):
+        """ Computed type of this fieldValue corresponding to corresponding field declaration. """
+        if self.__type is None:
+            self.__type = 'SFString'
+        #print('*** need to find fieldValue type, using type=' + str(self.__type))
+        return self.__type
+    @type.setter
+    def type(self, type):
+        if  type is None:
+            type = SFString.NAME()
+            # if _DEBUG: print('...DEBUG... set type to SFString.NAME()=' + str(SFString.NAME()))
+        assertValidSFString(type)
+    ### assertValidFieldType('type', type) # something strange is happening here
+        self.__type = type</xsl:text>
+            </xsl:if>
         
         <!-- property of each field in this element -->
         <xsl:for-each select="$allFields">
@@ -3109,15 +3315,24 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 <xsl:value-of select="$fieldName"/>
                 <xsl:text>(self):</xsl:text>
                 <xsl:variable name="tooltipText">
-                    <xsl:value-of select="$x3d.tooltips.document//element[@name = $elementName]/attribute[@name = $fieldName]/@tooltip" disable-output-escaping="yes"/>
+                    <xsl:choose>
+                        <xsl:when test="($elementName = 'meta') and ($fieldName = 'httpequiv')">
+                            <!-- some field names got munged -->
+                            <xsl:value-of select="$x3d.tooltips.document//element[@name = $elementName]/attribute[@name = 'http-equiv']/@tooltip" disable-output-escaping="yes"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <!-- some field names have underscores to avoid collisions with Python reserved words -->
+                            <xsl:value-of select="$x3d.tooltips.document//element[@name = $elementName]/attribute[@name = translate($fieldName,'_','')]/@tooltip" disable-output-escaping="yes"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
                 </xsl:variable>
                 <xsl:variable name="fieldTooltip">
                     <xsl:if test="(string-length(normalize-space($tooltipText)) > 0)"><!-- doc-available($x3d.tooltips.path) -->
-                        <xsl:value-of select="replace(replace($tooltipText,'&#8734;','infinity'),'&#960;','pi')" disable-output-escaping="yes"/>
-                        <!-- consistent javadoc punctuation -->
-                        <xsl:if test="not(ends-with(normalize-space($tooltipText),'.')) and not(contains($tooltipText,'http')) and not(contains($tooltipText,'mailto')) and not(contains($tooltipText,'ftp'))">
-                            <xsl:text>.</xsl:text>
-                        </xsl:if>
+                            <xsl:value-of select="replace(replace($tooltipText,'&#8734;','infinity'),'&#960;','pi')" disable-output-escaping="yes"/>
+                            <!-- consistent javadoc punctuation -->
+                            <xsl:if test="not(ends-with(normalize-space($tooltipText),'.')) and not(contains($tooltipText,'http')) and not(contains($tooltipText,'mailto')) and not(contains($tooltipText,'ftp'))">
+                                <xsl:text>.</xsl:text>
+                            </xsl:if>
                     </xsl:if>
                 </xsl:variable>
                 <!-- insert docstring """ tooltip """ -->
@@ -3134,6 +3349,12 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
         """</xsl:text>
                         <xsl:text> id_ attribute is a unique identifier for use within HTML pages.</xsl:text>
                         <xsl:text> Appended underscore to field name to avoid naming collision with Python reserved word. </xsl:text>
+                        <xsl:text>"""</xsl:text>
+                    </xsl:when>
+                    <xsl:when test="($fieldName = 'sourceCode')">
+                        <xsl:text>
+        """</xsl:text>
+                        <xsl:text> Embedded source code for a local program. </xsl:text>
                         <xsl:text>"""</xsl:text>
                     </xsl:when>
                     <xsl:when test="($fieldName = 'style_')">
@@ -3156,6 +3377,21 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                         <xsl:value-of select="$fieldName"/>
                         <xsl:text> children are nodes, statements and comments if corresponding type='SFNode' or 'MFNode'.</xsl:text>
                         <xsl:text>"""</xsl:text>
+                    </xsl:when>
+                    <xsl:when test="($fieldName, 'meta') and ($fieldName = 'httpequiv')">
+                        <xsl:text>
+        """</xsl:text>
+                        <xsl:value-of select="$fieldName"/>
+                        <xsl:text> children are nodes, statements and comments if corresponding type='SFNode' or 'MFNode'.</xsl:text>
+                        <xsl:text>"""</xsl:text>
+                    </xsl:when>
+                    <xsl:when test="(string-length($fieldTooltip) = 0)">
+                        <xsl:message>
+                            <xsl:text>*** tooltip not found: </xsl:text>
+                            <xsl:value-of select="$elementName"/>
+                            <xsl:text> </xsl:text>
+                            <xsl:value-of select="translate($fieldName,'_','')"/>
+                        </xsl:message>
                     </xsl:when>
                 </xsl:choose>
 
@@ -3190,7 +3426,12 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of select="@type"/>
-                        <xsl:text>.DEFAULT_VALUE()</xsl:text>
+                        <xsl:text>.DEFAULT_VALUE()
+            # if _DEBUG: print('...DEBUG... set value to </xsl:text>
+                        <xsl:value-of select="@type"/>
+                        <xsl:text>.DEFAULT_VALUE()=' + str(</xsl:text>
+                        <xsl:value-of select="@type"/>
+                        <xsl:text>.DEFAULT_VALUE()))</xsl:text>
                     </xsl:otherwise>
                 </xsl:choose>
                 <xsl:variable name="parentElementName" select="../../@name"/><!-- if present -->
@@ -3205,7 +3446,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                         <xsl:text>
         if </xsl:text>
                         <xsl:value-of select="$fieldName"/>
-                        <xsl:text>: # walk each child in MFNode list, if any (avoid empty list recursion)
+                        <xsl:text>: # walk each child in list, if any (avoid empty list recursion)
             for each in </xsl:text>
                         <xsl:value-of select="$fieldName"/>
                         <xsl:text>:
@@ -3229,7 +3470,10 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                     <!-- next two are value attribute within 'fieldValue' or field within ExternProtoDeclare, which have no local definition of type -->
                     <xsl:when test="(($elementName = 'fieldValue') and ($fieldName = 'value'))">
                         <xsl:text>
-        assertValidFieldInitializationValue(self.name, type(value), value, parent='fieldValue')</xsl:text>
+        assertValidFieldInitializationValue(self.name, type(value), value, parent='fieldValue')
+        if isinstance(value,list) and isinstance(value[0],str):
+            # print('*** found MFString when setting fieldValue name=' + self.name) # hack, better would be matching proto declaration
+            self.type = 'MFString'</xsl:text>
                     </xsl:when>
                     <xsl:when test="(($elementName = 'field')      and ($fieldName = 'value') and ($parentElementName = 'ExternProtoDeclare'))">
                         <xsl:text>
@@ -3458,14 +3702,21 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             try:
                 x3dschema.is_valid(selfX3dXmlTree)
                 print("Python-to-XML X3D", str(self.version), "schema validation test of XML output complete")
-            except SyntaxError as err:
-                print("*** Python-to-XML X3D", str(self.version), "schema validation test of XML output failed:", err)
+            except SyntaxError as err: # Exception
+                # https://stackoverflow.com/questions/18176602/how-to-get-the-name-of-an-exception-that-was-caught-in-python
+                print("*** Python-to-XML X3D", str(self.version), "schema validation test of XML output failed.", type(err).__name__, "(line=" + str(err.lineno) + ')', err)
                 if selfX3dXmlText: # might have failed to generate
                     print(prependLineNumbers(selfX3dXmlText,err.lineno))
-        except SyntaxError as err:
-            print("*** Python-to-XML well-formed XML document  test failed:", err)
+        except Exception as err: # usually ParseError
+            # https://docs.python.org/3/library/xml.etree.elementtree.html#exceptions
+            print("*** Python-to-XML well-formed XML document test failed.", type(err).__name__, err)
+            if err.position[0]:
+                lineNumber = err.position[0]
+            else:
+                lineNumber = 1
+            print('type(err.position)=' + str(type(err.position)), 'lineNumber=' + str(lineNumber))
             if selfX3dXmlText: # might have failed to generate
-                print(prependLineNumbers(selfX3dXmlText,err.lineno))
+                print(prependLineNumbers(selfX3dXmlText,lineNumber))
     # output function - - - - - - - - - -
     def VRML97(self, indentLevel=0):
         """ Provide VRML97 output serialization suitable for .wrl file. """
@@ -3540,34 +3791,148 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                                 <xsl:text>:</xsl:text>
                             </xsl:otherwise>
                         </xsl:choose>
-                        <xsl:text>
-            result += " </xsl:text>
-                        <xsl:value-of select="translate($fieldName,'_','')"/><!-- de-mung class_ id_ and style attributes -->
-                        <xsl:text>='" + </xsl:text>
+                        <!-- xsl:text>='" + </xsl:text -->
                         <xsl:choose>
-                            <!-- always stringify value in field/fieldValue since it is arbitrary type -->
-                            <xsl:when test="(starts-with($elementName,'field') and ($fieldName = 'value'))">
+                            <xsl:when test="($elementName = 'field') and ($fieldName = 'value')">
+                                <xsl:text>
+            # print('</xsl:text>
+                                <xsl:value-of select="$elementName"/>
+                                <xsl:text> name=' + self.name + ' type=' + str(self.type) + ' type(value)=' + str(type(self.value)) + ' value=' + str(self.value))</xsl:text>
+                                <xsl:text>
+            if (self.type   == 'SFBool'):
+                _newValue =  SFBool(self.value).XML()
+            elif (self.type == 'MFBool'):
+                _newValue =  MFBool(self.value).XML()
+            elif (self.type == 'SFInt32'):
+                _newValue =  SFInt32(self.value).XML()
+            elif (self.type == 'MFInt32'):
+                _newValue =  MFInt32(self.value).XML()
+            elif (self.type == 'SFFloat'):
+                _newValue =  SFFloat(self.value).XML()
+            elif (self.type == 'MFFloat'):
+                _newValue =  MFFloat(self.value).XML()
+            elif (self.type == 'SFDouble'):
+                _newValue =  SFDouble(self.value).XML()
+            elif (self.type == 'MFDouble'):
+                _newValue =  MFDouble(self.value).XML()
+
+            elif (self.type == 'SFString'):
+                _newValue =  SFString(self.value).XML()
+            elif (self.type == 'MFString'):
+                _newValue =  MFString(self.value).XML()
+
+            elif (self.type == 'SFRotation'):
+                _newValue =  SFRotation(self.value).XML()
+            elif (self.type == 'MFRotation'):
+                _newValue =  MFRotation(self.value).XML()
+            elif (self.type == 'SFColor'):
+                _newValue =  SFColor(self.value).XML()
+            elif (self.type == 'MFColor'):
+                _newValue =  MFColor(self.value).XML()
+            elif (self.type == 'SFColorRGBA'):
+                _newValue =  SFColorRGBA(self.value).XML()
+            elif (self.type == 'MFColorRGBA'):
+                _newValue =  MFColorRGBA(self.value).XML()
+
+            elif (self.type == 'SFVec2f'):
+                _newValue =  SFVec2f(self.value).XML()
+            elif (self.type == 'MFVec2f'):
+                _newValue =  MFVec2f(self.value).XML()
+            elif (self.type == 'SFVec2d'):
+                _newValue =  SFVec2d(self.value).XML()
+            elif (self.type == 'MFVec2d'):
+                _newValue =  MFVec2d(self.value).XML()
+
+            elif (self.type == 'SFVec3f'):
+                _newValue =  SFVec3f(self.value).XML()
+            elif (self.type == 'MFVec3f'):
+                _newValue =  MFVec3f(self.value).XML()
+            elif (self.type == 'SFVec3d'):
+                _newValue =  SFVec3d(self.value).XML()
+            elif (self.type == 'MFVec3d'):
+                _newValue =  MFVec3d(self.value).XML()
+
+            elif (self.type == 'SFVec4f'):
+                _newValue =  SFVec4f(self.value).XML()
+            elif (self.type == 'MFVec4f'):
+                _newValue =  MFVec4f(self.value).XML()
+            elif (self.type == 'SFVec4d'):
+                _newValue =  SFVec4d(self.value).XML()
+            elif (self.type == 'MFVec4d'):
+                _newValue =  MFVec4d(self.value).XML()
+            # TODO matrices
+            else:
+                _newValue = SFString(self.value).XML()
+            result += " value=" + "'" + _newValue.rstrip() + "'"</xsl:text>
+                            </xsl:when>
+                            <xsl:when test="($elementName = 'fieldValue') and ($fieldName = 'value')">
+                                <!-- special handling needed for SFString/MFString -->
+                                <xsl:text>
+            # heuristic (i.e. hack) to infer MFString type from Python object, if not deduced from (Extern)ProtoDeclare
+            if not (self.type == 'MFString') and isinstance(self.value,list) and isinstance(self.value[0],str):
+                # print('*** found MFString when preparing XML output, fieldValue name=' + self.name)
+                self.type = 'MFString'</xsl:text>
+            <!--
+            if isinstance(self.value,str) and isinstance(self.value,list) and isValidMFString(self.value): # TODO and (len(MFString(self.value).value) > 1) consider MF length method
+                print('*** found MFString #2 fieldValue name=' + self.name)
+                self.type = 'MFString' # contains quoted string</xsl:text> -->
+                                <xsl:text>
+            # print('</xsl:text>
+                                <xsl:value-of select="$elementName"/>
+                                <xsl:text> name=' + self.name + ' type=' + str(self.type) + ' type(value)=' + str(type(self.value)) + ' value=' + str(self.value))</xsl:text>
+                                <xsl:text>
+            if (self.type == 'MFString'):
+                _newValue = "'" + MFString(self.value).XML() + "'"
+                # print('*** computed fieldValue MFString',_newValue)
+            elif isinstance(self.value,str):    ### (self.type == 'SFString'):
+                _newValue = "'" + SFString(self.value).XML() + "'" ## here!
+                # print('*** computed fieldValue (str)',_newValue)
+            elif isinstance(self.value,(list,tuple)):
+                # print('*** found',str(type(self.value)))
+                _newValue = "'"
+                for each in self.value:
+                    _newValue += str(each).replace('(','').replace(')','').replace(',',' ') + ' '
+                _newValue = _newValue.strip()
+                _newValue += "'"
+                # print('*** computed fieldValue (list,tuple)',_newValue)
+            else:
+                _newValue = "'" + str(self.value).replace('(','').replace(')','').replace(',',' ')
+                _newValue = _newValue.rstrip() + "'"
+                # print('*** computed fieldValue default',_newValue)</xsl:text>
+                <!--
+                                <xsl:text>='" + </xsl:text>
                                 <xsl:text>str</xsl:text>
                                 <xsl:text>(</xsl:text>
                                 <xsl:text>self.</xsl:text>
                                 <xsl:value-of select="$fieldName"/>
-                                <xsl:text>)</xsl:text>
+                                <xsl:text>) + "'" -->
+                                <xsl:text>
+            result += " value=" + _newValue</xsl:text>
                             </xsl:when>
                             <xsl:when test="(string-length(@type) > 0)"><!-- not(@type='SFString')" -->
                                 <!-- Use field type for value conversion, for example SFString handling of apostrophes and quotes -->
+                                <xsl:text>
+            result += " </xsl:text>
+                                <xsl:value-of select="translate($fieldName,'_','')"/><!-- de-mung class_ id_ and style attributes -->
+                                <xsl:text>='" + </xsl:text>
                                 <xsl:value-of select="@type"/>
                                 <xsl:text>(</xsl:text>
                                 <xsl:text>self.</xsl:text>
                                 <xsl:value-of select="$fieldName"/>
                                 <xsl:text>).XML()</xsl:text>
+                                <xsl:text> + "'"</xsl:text>
                             </xsl:when>
                             <xsl:otherwise>
+                                <xsl:value-of select="translate($fieldName,'_','')"/><!-- de-mung class_ id_ and style attributes -->
+                                <xsl:text>
+            result += " </xsl:text>
+                                <xsl:text>='" + </xsl:text>
                                 <xsl:text>self.</xsl:text>
                                 <xsl:value-of select="$fieldName"/>
+                                <xsl:text> + "'"</xsl:text>
                             </xsl:otherwise>
                         </xsl:choose>
                         
-                        <xsl:text> + "'"</xsl:text>
                     </xsl:if>
                 </xsl:for-each>
                 <xsl:text>
@@ -3593,12 +3958,12 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                         <!-- head is a special case, component/unit/meta are forcibly collected under MFNode 'children' -->
                         <!-- ## result += indent + '  ' + 'TODO iterate over each child element' + '\n' -->
                         <xsl:text>
-            if self.__children: # walk each child in MFNode list, if any (avoid empty list recursion)
+            if self.__children: # walk each child in list, if any (avoid empty list recursion)
                 ## print('* </xsl:text>
                         <xsl:value-of select="$elementName"/>
                         <xsl:text> found self.children, now invoking XML(' + str(indentLevel+1) + ')', flush=True)
                 # order is significant for component, unit, meta statements
-                if self.children: # walk each child in MFNode list, if any (avoid empty list recursion)
+                if self.children: # walk each child in list, if any (avoid empty list recursion)
                     for each in self.children:
                         # TODO check order of output: component unit meta
                         result += each.XML(indentLevel=indentLevel+1, syntax=syntax)</xsl:text>
@@ -3643,7 +4008,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                                         <xsl:text>
             ### if self.</xsl:text>
                         <xsl:value-of select="$fieldName"/>
-                        <xsl:text>: # walk each child in MFNode list, if any
+                        <xsl:text>: # walk each child in list, if any
             ### print('* </xsl:text>
                         <xsl:value-of select="$elementName"/>
                         <xsl:text> found self.children with self.hasChild()=' + str(self.hasChild()) + ' and len(</xsl:text>
@@ -3653,7 +4018,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                         <xsl:text>)) + ', now invoking XML(' + str(indentLevel+1) + ')', flush=True)
             if self.</xsl:text>
                         <xsl:value-of select="$fieldName"/>
-                        <xsl:text>: # walk each child in MFNode list, if any (avoid empty list recursion)
+                        <xsl:text>: # walk each child in list, if any (avoid empty list recursion)
                 for each in self.</xsl:text>
                         <xsl:value-of select="$fieldName"/>
                         <xsl:text>:
@@ -3853,12 +4218,12 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                         <!-- head is a special case, component/unit/meta are forcibly collected under MFNode 'children' -->
                         <!-- ## result += indent + '  ' + 'TODO iterate over each child element' + '\n' -->
                         <xsl:text>
-            if self.__children: # walk each child in MFNode list, if any
+            if self.__children: # walk each child in list, if any
                 ## print('* </xsl:text>
                         <xsl:value-of select="$elementName"/>
                         <xsl:text> found self.children, now invoking JSON(' + str(indentLevel+1) + ')', flush=True)
                 # order is significant for component, unit, meta statements
-                if self.children: # walk each child in MFNode list, if any (avoid empty list recursion)
+                if self.children: # walk each child in list, if any (avoid empty list recursion)
                     for each in self.children:
                         # TODO check order of output: component unit meta
                         result += each.JSON(indentLevel=indentLevel+1, syntax=syntax)</xsl:text>
@@ -3903,7 +4268,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                                         <xsl:text>
             ### if self.</xsl:text>
                         <xsl:value-of select="$fieldName"/>
-                        <xsl:text>: # walk each child in MFNode list, if any (avoid empty list recursion)
+                        <xsl:text>: # walk each child in list, if any (avoid empty list recursion)
             ### print('* </xsl:text>
                         <xsl:value-of select="$elementName"/>
                         <xsl:text> found self.children with self.hasChild()=' + str(self.hasChild()) + ' and len(</xsl:text>
@@ -3913,7 +4278,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                         <xsl:text>)) + ', now invoking JSON(' + str(indentLevel+1) + ')', flush=True)
             if self.</xsl:text>
                         <xsl:value-of select="$fieldName"/>
-                        <xsl:text>: # walk each child in MFNode list, if any (avoid empty list recursion)
+                        <xsl:text>: # walk each child in list, if any (avoid empty list recursion)
                 for each in self.</xsl:text>
                         <xsl:value-of select="$fieldName"/>
                         <xsl:text>:
@@ -3975,7 +4340,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             </xsl:when>
             <xsl:when test="($elementName = 'Scene')">
                                         <xsl:text>
-        if self.children: # walk each child in MFNode list, if any (avoid empty list recursion)
+        if self.children: # walk each child in list, if any (avoid empty list recursion)
             for each in self.children:
                 result += each.VRML(indentLevel=indentLevel+1, VRML97=VRML97)</xsl:text>
             </xsl:when>
@@ -3983,7 +4348,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 <!-- head is a special case, component/unit/meta are forcibly collected under MFNode 'children' -->
                 <!-- ## result += indent + '  ' + 'TODO iterate over each child element' + '\n' -->
                 <xsl:text>
-        if self.children: # walk each child in MFNode list, if any (avoid empty list recursion)
+        if self.children: # walk each child in list, if any (avoid empty list recursion)
             ## print('* </xsl:text>
                         <xsl:value-of select="$elementName"/>
                         <xsl:text> found self.children, now invoking VRML(' + str(indentLevel+1) + ', ' + VRML97 + ')', flush=True)
@@ -4189,7 +4554,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                                         <xsl:text>
         if self.</xsl:text>
                         <xsl:value-of select="$fieldName"/>
-                        <xsl:text>: # walk each child in MFNode list, if any (avoid empty list recursion)
+                        <xsl:text>: # walk each child in list, if any (avoid empty list recursion)
             result += '\n' + indent + '  ' + 'children [' + '\n' + indent + '  ' + '  '
             for each in self.</xsl:text>
                         <xsl:value-of select="$fieldName"/>

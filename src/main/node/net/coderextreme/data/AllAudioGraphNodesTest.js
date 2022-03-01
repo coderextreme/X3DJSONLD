@@ -51,7 +51,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                                   .addChild((new autoclass.BufferAudioSource()))
                                   .addChild((new autoclass.ListenerPointSource()))
                                   .addChild((new autoclass.MicrophoneSource()))
-                                  .addChild((new autoclass.OscillatorSource()))
+                                  .addChild((new autoclass.OscillatorSource()).setFrequency(java.newFloat(440)))
                                   .addChild((new autoclass.StreamAudioSource()))))))))))))))))      ;
     X3D0.toFileX3D("../data/AllAudioGraphNodesTest.new.x3d");
     process.exit(0);

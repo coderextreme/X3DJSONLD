@@ -110,7 +110,8 @@ var X3D0 =  X3D(
 
                                                                 MicrophoneSource(),
 
-                                                                OscillatorSource(),
+                                                                OscillatorSource(
+                                                                  frequency_ : 440),
 
                                                                 StreamAudioSource()])])])])])]))])])])])])])]));
 void main() { exit(0); }
