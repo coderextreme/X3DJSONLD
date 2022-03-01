@@ -145,7 +145,8 @@ var X3D0 =  new X3D({
 
                                                                 new MicrophoneSource({}),
 
-                                                                new OscillatorSource({}),
+                                                                new OscillatorSource({
+                                                                  frequency : new SFFloat(440)}),
 
                                                                 new StreamAudioSource({})])})])})])})])})])})])}))})])})])})])})])})])})])})])}))});
 console.log(X3D0.toXMLNode());

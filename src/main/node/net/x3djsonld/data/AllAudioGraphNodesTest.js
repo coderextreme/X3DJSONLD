@@ -122,7 +122,7 @@ AllAudioGraphNodesTest.prototype = {
                               .addChild((new autoclass.BufferAudioSource()))
                               .addChild((new autoclass.ListenerPointSource()))
                               .addChild((new autoclass.MicrophoneSource()))
-                              .addChild((new autoclass.OscillatorSource()))
+                              .addChild((new autoclass.OscillatorSource()).setFrequency(440.0))
                               .addChild((new autoclass.StreamAudioSource()))))))))))))))));
   },
   // end of initialize() method

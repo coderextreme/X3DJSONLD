@@ -121,6 +121,7 @@ let MicrophoneSource37 = browser.currentScene.createNode("MicrophoneSource");
 WaveShaper34.children[2] = MicrophoneSource37;
 
 let OscillatorSource38 = browser.currentScene.createNode("OscillatorSource");
+OscillatorSource38.frequency = 440;
 WaveShaper34.children[3] = OscillatorSource38;
 
 let StreamAudioSource39 = browser.currentScene.createNode("StreamAudioSource");

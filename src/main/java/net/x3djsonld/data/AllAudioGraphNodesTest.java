@@ -120,7 +120,7 @@ public class AllAudioGraphNodesTest
                               .addChild(new BufferAudioSource())
                               .addChild(new ListenerPointSource())
                               .addChild(new MicrophoneSource())
-                              .addChild(new OscillatorSource())
+                              .addChild(new OscillatorSource().setFrequency(440.0))
                               .addChild(new StreamAudioSource())))))))))))))));
     }
 	// end of initialize() method

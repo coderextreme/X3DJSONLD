@@ -127,6 +127,7 @@ CMicrophoneSource* MicrophoneSource37 = (CMicrophoneSource *)(m_pScene.createNod
 WaveShaper34->addChildren(*MicrophoneSource37);
 
 COscillatorSource* OscillatorSource38 = (COscillatorSource *)(m_pScene.createNode("OscillatorSource"));
+OscillatorSource38->setFrequency(440);
 WaveShaper34->addChildren(*OscillatorSource38);
 
 CStreamAudioSource* StreamAudioSource39 = (CStreamAudioSource *)(m_pScene.createNode("StreamAudioSource"));

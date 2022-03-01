@@ -1,7 +1,7 @@
-###############################################
+####################################################################################################
 #
 # Now available: developmental python x3d.py package on PyPi for import.
-#   This approach greatly simplifies Python X3D deployment and use.
+#   This approach simplifies Python X3D deployment and use.
 #   https://pypi.org/project/x3d
 #
 # Installation:
@@ -17,10 +17,10 @@
 #    import x3d         # traditional way to subclass x3d package, all classes require x3d.* prefix
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
+#
+####################################################################################################
 
 from x3d import *
-
-###############################################
 
 newModel=X3D(profile='Immersive',version='3.3',
   head=head(
@@ -704,23 +704,25 @@ newModel=X3D(profile='Immersive',version='3.3',
 
 #  List of hanim names for points of skin using LOA3 Site and surface features in order of appearance in the skin field # head #0 skull_tip #1 sellion #2 r_infraorbitale #3 l_infraorbitale #4 supramenton #5 r_tragion #6 r_gonion #7 l_tragion #8 l_gonion #9 nuchale # body #10 r_clavicale #11 suprasternale #12 l_clavicale #13 r_thelion #14 l_thelion #15 substernale #16 r_rib10 #17 r_asis #18 l_rib10 #19 l_asis #20 r_iliocristale #21 r_trochanterion #22 l_iliocristale #23 l_trochanterion #24 cervicale #25 rib10_midspine #26 r_psis #27 l_psis #28 waist_preferred_post # right arm #29 r_acromion #30 r_axilla_ant #31 r_radial_styloid #32 r_axilla_post #33 r_olecranon #34 r_humeral_lateral_epicn #35 r_humeral_medial_epicn #36 r_radiale Not used in this skin #37 r_metacarpal_pha2 #38 r_dactylion tip of middle finger #39 r_ulnar_styloid #40 r_metacarpal_pha5 # left arm #41 l_acromion #42 l_axilla_ant #43 l_radial_styloid #44 l_axilla_post #45 l_olecranon #46 l_humeral_medial_epicn #47 l_humeral_lateral_epicn #48 l_radiale Not used in this skin #49 l_metacarpal_pha2 #50 l_dactylion #51 l_ulnar_styloid #52 l_metacarpal_pha5 #53 r_knee_crease #54 r_femoral_lateral_epicn #55 r_femoral_medial_epicn #56 r_metatarsal_pha5 #57 r_lateral_malleolus #58 r_medial_malleolus #59 r_sphyrion #60 r_metatarsal_pha1 #61 r_calcaneous_post #62 r_digit2 #63 l_knee_crease #64 l_femoral_lateral_epicn #65 l_femoral_medial_epicn #66 l_metatarsal_pha5 #67 l_lateral_malleolus #68 l_medial_malleolus #69 l_sphyrion #70 l_metatarsal_pha1 #71 l_calcaneous_post #72 l_digit2 #73 crotch #74 r_neck_base #75 l_neck_base #76 navel #77 added r_acromioclavicular back #78 added r_shoulder skin outboard #79 added l_acromioclavicular back #80 added l_shoulder skin outboard #81 added center top back #82 added center front lower #83 added back opposite rib10 #84 added back opposite rib10 #85 added mid left top #86 added mid right top #87 added mid left mid #88 added mid right mid #89 added back of l_hip #90 added front of l_hip #91 added back of r_hip #92 added front of r_hip #93 added between legs #94 added below l_hip outside #95 added below l_hip inside #96 added below l_hip back #97 added below l_hip front #98 added below r_hip outside #99 added below r_hip inside #100 added below r_hip back #101 added below r_hip front # left arm #102 added at left mid arm #103 added at left mid arm #104 added at mid left arm #105 added at left mid arm #106 added at left elbow outer use l_humeral_lateral_epicn #107 added at left elbow inner use l_humeral_medial_epicn #108 added at left elbow back use l_olecranon #109 added at left elbow front #110 added below left elbow outside front #111 added below left elbow outside back #112 added below left elbow inside front #113 added below left elbow inside back # left wrist and hand (only -x to +x changed from right) #114 0 at elbow center not used #115 1 added above wrist outside front #116 2 added above wrist inside front #117 3 added above wrist inside back #118 4 added above wrist front #119 5 left wrist outside front #120 6 left wrist outside front #121 7 left wrist outside front #122 8 left wrist outside front #123 9 below left wrist #124 10 below left wrist #125 1 below left wrist #126 2 # left hand metacarples # r_thumb1 #127 3 #128 4 # l_index0 #129 5 #130 6 # l_middle0 #131 7 #132 8 # l_ring0 #133 9 #134 20 # l_pinky0 #135 1 #136 2 #137 3 # l_thumb web #138 4 #139 5 #140 6 # l_thumb 2 #141 7 #142 8 #143 9 # l_thumb 3 #144 30 #145 1 #146 2 #147 3 # l_thumb end #148 4 tip #149 5 #150 6 #151 7 #152 8 # l_index1 #153 9 #154 40 #155 1 # l_middle1 #156 2 #157 3 # l_ring1 #158 4 #159 5 # l_pinky1 #160 6 #161 7 #162 8 # l_between fingers #163 9 #164 50 #165 1 # l_index2 #166 2 #167 3 #168 4 #169 5 # l_index3 #170 6 #171 7 #172 8 #173 9 # l_indexend #174 60 #175 1 #176 2 #177 3 #178 4 # l_middle2 #179 5 #180 6 #181 7 #182 8 # l_middle3 #183 9 #184 70 #185 1 #186 2 # l_middleend #187 3 #188 4 #189 5 #190 6 #191 7 # l_ring2 #192 8 #193 9 #194 80 #195 1 # l_ring3 #196 2 #197 3 #198 4 #199 5 # l_ringend #200 6 #201 7 #202 8 #203 9 #204 90 # l_pinky2 #205 1 #206 2 #207 3 #208 4 # l_pinky3 #209 5 #210 6 #211 7 #212 8 # l_pinkyend #213 9 #214 100 #215 1 #216 2 #217 3 # right arm #218 114 added at right mid arm outside #219 115 added at right mid arm inside #220 116 added at right mid arm back #221 117 added at right mid arm front #222 118 added at right elbow outer use r_humeral_lateral_epicn #223 119 added at right elbow inner use r_humeral_medial_epicn #224 120 added at right elbow back use r_olecranon #225 121 added at right elbow front #226 122 added below right elbow outside front #227 123 added below right elbow outside back #228 124 added below right elbow inside front #229 125 added below right elbow inside back # right wrist and hand #230 0 at elbow center not used #231 1 # above right wrist #232 2 #233 3 #234 4 # right wrist #235 5 #236 6 #237 7 #238 8 # below right wrist #239 9 #240 10 #241 1 #242 2 # right hand metacarples # r_thumb1 #243 3 #244 4 # r_index0 #245 5 #246 6 # r_middle0 #247 7 #248 8 # r_ring0 #249 9 #250 20 # r_pinky0 #251 1 #252 2 #253 3 # r_thumb web #254 4 #255 5 #256 6 # r_thumb 2 #257 7 #258 8 #259 9 # r_thumb 3 #260 30 #261 1 #262 2 #263 3 # r_thumb end #264 4 tip #265 5 #266 6 #267 7 #268 8 # r_index1 #269 9 #270 40 #271 1 # r_middle1 #272 2 #273 3 # r_ring1 #274 4 #275 5 # r_pinky1 #276 6 #277 7 #278 8 # r_between fingers #279 9 #280 50 #281 1 # r_index2 #282 2 #283 3 #284 4 #285 5 # r_index3 #286 6 #287 7 #288 8 #289 9 # r_indexend #290 60 #291 1 #292 2 #293 3 #294 4 # r_middle2 #295 5 #296 6 #297 7 #298 8 # r_middle3 #299 9 #300 70 #301 1 #302 2 # r_middleend #303 3 #304 4 #305 5 #306 6 #307 7 # r_ring2 #308 8 #309 9 #310 80 #311 1 # r_ring3 #312 2 #313 3 #314 4 #315 5 # r_ringend #316 6 #317 7 #318 8 #319 9 #320 90 # r_pinky2 #321 1 #322 2 #323 3 #324 4 # r_pinky3 #325 5 #326 6 #327 7 #328 8 # r_pinkyend #329 9 #330 100 #331 1 #332 2 #333 3 # left leg and foot #334 added at l_knee front #335 added l_knee_crease #336 added l_knee outside l_femoral_lateral_epicn #337 added l_knee inside l_femoral_medial_epicn #338 added below l_knee outside #339 added below l_knee inside #340 added below l_knee back #341 added below l_knee front #342 added at l_ankle outside #343 added at l_ankle inside #344 added at l_ankle back #345 added at l_ankle front #346 added at l_subtalar outside #347 added at l_subtalar inside #348 added at l_subtalar rear #349 added at l_midtarsal up #350 added at l_midtarsal down #351 added at l_midtarsal outside #352 added at l_midtarsal inside #353 added at l_metatarsal top #354 added at l_metatarsal bottom #355 added at l_metatarsal outside #356 added at l_metatarsal inside #357 added at l_piggywentomarket_tip #358 added at l_piggystayedhome_tip #359 added at l_piggyateroastbeef_tip #360 added at l_piggyhadnone_tip #361 added at l_piggyranallthewayhomeweeweeweeweewee_tip # right leg and foot #362 added at r_knee front #363 added r_knee_crease #364 added r_femoral_lateral_epicn #365 added r_femoral_medial_epicn #366 added below r_knee #367 added below r_knee #368 added below r_knee #369 added below r_knee #370 added at r_ankle #371 added at r_ankle #372 added at r_ankle #373 added at r_ankle #374 added at r_subtalar outside #375 added at r_subtalar inside #376 added at r_subtalar rear #377 added at r_midtarsal up #378 added at r_midtarsal down #379 added at r_midtarsal outside #380 added at r_midtarsal inside #381 added at r_metatarsal top #382 added at r_metatarsal bottom #383 added at r_metatarsal outside #384 added at r_metatarsal inside #385 added at r_piggywenttomarket_tip #386 added at r_piggystayedhome_tip #387 added at r_piggyateroastbeef_tip #388 added at r_piggyhadnone_tip #389 added at r_piggyranallthewayhomeweeweeweeweeweeweeweeweeweewee_tip End of list of hanim names for points of skin using LOA3 Site and surface features 
 
-###############################################
+####################################################################################################
 # Self-test diagnostics
-###############################################
+####################################################################################################
 
 if        metaDiagnostics(newModel): # built-in utility method in X3D class
     print(metaDiagnostics(newModel))
 # print('check newModel.XML() serialization...')
 newModelXML= newModel.XML() # test export method XML() for exceptions during export
 newModel.XMLvalidate()
+# print(newModelXML) # diagnostic
 
 try:
 #   print('check newModel.VRML() serialization...')
     newModelVRML=newModel.VRML() # test export method VRML() for exceptions during export
     # print(prependLineNumbers(newModelVRML)) # debug
     print("Python-to-VRML export of VRML output successful")
-except BaseException as err:
-    print("*** Python-to-VRML export of VRML output failed:", err)
+except Exception as err: # usually BaseException
+    # https://stackoverflow.com/questions/18176602/how-to-get-the-name-of-an-exception-that-was-caught-in-python
+    print("*** Python-to-VRML export of VRML output failed:", type(err).__name__, err)
     if newModelVRML: # may have failed to generate
         print(prependLineNumbers(newModelVRML, err.lineno))
 
@@ -728,9 +730,9 @@ try:
 #   print('check newModel.JSON() serialization...')
     newModelJSON=newModel.JSON() # test export method JSON() for exceptions during export
 #   print(prependLineNumbers(newModelJSON)) # debug
-    print("Python-to-JSON export of JSON output successful (still testing)")
-except SyntaxError as err:
-    print("*** Python-to-JSON export of JSON output failed:", err)
+    print("Python-to-JSON export of JSON output successful (under development)")
+except Exception as err: # usually SyntaxError
+    print("*** Python-to-JSON export of JSON output failed:", type(err).__name__, err)
     if newModelJSON: # may have failed to generate
         print(prependLineNumbers(newModelJSON,err.lineno))
 
