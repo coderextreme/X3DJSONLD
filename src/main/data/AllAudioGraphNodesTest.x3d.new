@@ -23,7 +23,7 @@
 <SpatialSound><Analyser><StreamAudioDestination><BiquadFilter><ChannelMerger><ChannelSelector><ChannelSplitter><Convolver><Delay><DynamicsCompressor><Gain><StreamAudioDestination><WaveShaper><!--The following X3DSoundSourceNode nodes have no audio-graph children--><BufferAudioSource></BufferAudioSource>
 <ListenerPointSource></ListenerPointSource>
 <MicrophoneSource></MicrophoneSource>
-<OscillatorSource></OscillatorSource>
+<OscillatorSource frequency="440"></OscillatorSource>
 <StreamAudioSource></StreamAudioSource>
 </WaveShaper>
 </StreamAudioDestination>

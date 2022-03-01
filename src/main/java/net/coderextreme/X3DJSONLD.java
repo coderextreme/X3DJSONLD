@@ -14,11 +14,11 @@ import javax.xml.parsers.*;
 
 public class X3DJSONLD {
 	public String stripQuotes(String value) {
-		if (value.charAt(0) == '"' && value.charAt(value.length()-1) == '"') {
-			return value.substring(1, value.length()-1);
-		} else {
+		//if (value.charAt(0) == '"' && value.charAt(value.length()-1) == '"') {
+			//return value.substring(1, value.length()-1);
+		//} else {
 			return value;
-		}
+		//}
 	}
 	public void elementSetAttribute(Element element, String key, List<JsonValue> value) {
 		StringBuffer sb = new StringBuffer();

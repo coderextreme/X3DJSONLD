@@ -58,10 +58,10 @@
     <!--
 #   https://twitter.com/Web3DConsortium/status/1154449868846297088 -->
         
-        <xsl:text>###############################################
+        <xsl:text>####################################################################################################
 #
 # Now available: developmental python x3d.py package on PyPi for import.
-#   This approach greatly simplifies Python X3D deployment and use.
+#   This approach simplifies Python X3D deployment and use.
 #   https://pypi.org/project/x3d
 #
 # Installation:
@@ -77,6 +77,8 @@
 #    import x3d         # traditional way to subclass x3d package, all classes require x3d.* prefix
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
+#
+####################################################################################################
 </xsl:text>
 
         <xsl:choose>
@@ -92,17 +94,14 @@ from x3d import *
 </xsl:text>
             </xsl:otherwise>
         </xsl:choose>
-        <xsl:text>
-###############################################
-</xsl:text>
-        <!-- wave offs, avoid unecessary error reports in regression-testing logs -->
+        <!-- wave offs, avoid unnecessary error reports in regression-testing logs -->
         <xsl:choose>
             <xsl:when test="//*[starts-with(local-name(),'Xvl')]">
             <xsl:text>
 print('*** Lattice Xvl nodes were an experimental extensibility effort in 2002 and are not supported in ISO-standard X3D. Exiting.')
 import sys
 sys.exit()
-###############################################
+####################################################################################################
 </xsl:text>
             </xsl:when>
             <xsl:when test="(//meta[@name='title']/@content='ProtoTagDtdDeclarationExamples.x3d') or
@@ -115,7 +114,7 @@ sys.exit()
 print('*** </xsl:text><xsl:value-of select="//meta[@name='title']/@content"/><xsl:text> is an experimental X3D model and not intended to run. Exiting.')
 import sys
 sys.exit()
-###############################################
+####################################################################################################
 </xsl:text>
             </xsl:when>
         </xsl:choose>
@@ -125,15 +124,15 @@ sys.exit()
         
         <!-- this block follows model creaation since parsing and loading must be completed before running metaDiagnostics(newModel) -->
         <xsl:text>
-###############################################
+####################################################################################################
 # Self-test diagnostics
-###############################################
+####################################################################################################
 </xsl:text>
         <xsl:choose>
             <xsl:when test="($insertPackagePrefix = 'true')">
                 <xsl:text>
-if        x3d.metaDiagnostics(newModel): # built-in utility method in X3D class
-    print(x3d.metaDiagnostics(newModel))
+if        x3d.metaDiagnostics(newModel): # built-in utility method in X3D class to show
+    print(x3d.metaDiagnostics(newModel)) # ('info', 'hint', 'warning', 'error', 'TODO')
 </xsl:text>
             </xsl:when>
             <xsl:otherwise>
@@ -157,6 +156,7 @@ x3dfile.close()
         </xsl:text>-->
         <xsl:text>
 newModel.XMLvalidate()
+# print(newModelXML) # diagnostic
 
 try:
 #   print('check newModel.VRML() serialization...')
@@ -174,8 +174,9 @@ try:
         </xsl:text>-->
         <xsl:text>
     print("Python-to-VRML export of VRML output successful")
-except BaseException as err:
-    print("*** Python-to-VRML export of VRML output failed:", err)
+except Exception as err: # usually BaseException
+    # https://stackoverflow.com/questions/18176602/how-to-get-the-name-of-an-exception-that-was-caught-in-python
+    print("*** Python-to-VRML export of VRML output failed:", type(err).__name__, err)
     if newModelVRML: # may have failed to generate
         print(prependLineNumbers(newModelVRML, err.lineno))
 
@@ -194,9 +195,9 @@ try:
 # ==================
         </xsl:text>-->
         <xsl:text>
-    print("Python-to-JSON export of JSON output successful (still testing)")
-except SyntaxError as err:
-    print("*** Python-to-JSON export of JSON output failed:", err)
+    print("Python-to-JSON export of JSON output successful (under development)")
+except Exception as err: # usually SyntaxError
+    print("*** Python-to-JSON export of JSON output failed:", type(err).__name__, err)
     if newModelJSON: # may have failed to generate
         print(prependLineNumbers(newModelJSON,err.lineno))
 
@@ -321,6 +322,35 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                             <xsl:text>, reset to children</xsl:text>
                         </xsl:message>
                     </xsl:if>
+                </xsl:when>
+                <xsl:when test="$isX3D4 and starts-with(local-name(),'Metadata') and not(@containerField = 'metadata') and
+                                 not((local-name(..)='MetadataSet') or (local-name(..)='field') or (local-name(..)='fieldValue'))">
+                    <xsl:text>metadata</xsl:text>
+                    <xsl:message>
+                        <xsl:text>*** error in X3D4 model, overriding </xsl:text>
+                        <xsl:value-of select="local-name()"/>
+                        <xsl:if test="(string-length(@DEF) > 0)">
+                            <xsl:text> DEF='</xsl:text>
+                            <xsl:value-of select="@DEF"/>
+                            <xsl:text>'</xsl:text>
+                        </xsl:if>
+                        <xsl:if test="(string-length(@USE) > 0)">
+                            <xsl:text> USE='</xsl:text>
+                            <xsl:value-of select="@USE"/>
+                            <xsl:text>'</xsl:text>
+                        </xsl:if>
+                        <xsl:text> having containerField='</xsl:text>
+                        <xsl:value-of select="@containerField"/> 
+                        <xsl:text>' with corrected containerField='metadata' since </xsl:text>
+                        <xsl:text> parent node is </xsl:text>
+                        <xsl:value-of select="local-name(..)"/>
+                        <xsl:if test="(string-length(../@DEF) > 0)">
+                            <xsl:text> DEF='</xsl:text>
+                            <xsl:value-of select="../@DEF"/>
+                            <xsl:text>'</xsl:text>
+                        </xsl:if>
+                        <xsl:text> ... please fix original X3D model</xsl:text>
+                    </xsl:message>
                 </xsl:when>
                 <xsl:when test="(string-length(@containerField) > 0)">
                     <xsl:value-of select="@containerField"/>
