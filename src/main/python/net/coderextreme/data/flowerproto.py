@@ -1,4 +1,4 @@
-#x3d.py package loaded, have fun with X3D Graphics!
+#x3d.py package 4.0.60 loaded, have fun with X3D Graphics!
 from x3d import *
 from x3d import SFBool
 print(
@@ -29,7 +29,7 @@ ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_left.p
 rightTexture=
 ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"]), 
 topTexture=
-ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"])), shaders=(
+ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"])), shaders=[
 ComposedShader(DEF="shader", language="GLSL", field=[field(name="cube", type="SFInt32", accessType="inputOutput", value=0),
 field(name="chromaticDispertion", accessType="initializeOnly", type="SFVec3f", value=(0.98,1.0,1.033)),
 field(name="bias", type="SFFloat", accessType="inputOutput", value=0.5),
@@ -41,13 +41,13 @@ field(name="c", type="SFFloat", accessType="inputOutput", value=20),
 field(name="d", type="SFFloat", accessType="inputOutput", value=20),
 field(name="tdelta", type="SFFloat", accessType="inputOutput", value=0),
 field(name="pdelta", type="SFFloat", accessType="inputOutput", value=0)
-], parts=(
+], parts=[
 ShaderPart(type="VERTEX", 
 IS=IS(connect=[connect(nodeField="url", protoField="vertex")
 ])),
 ShaderPart(type="FRAGMENT", 
 IS=IS(connect=[connect(nodeField="url", protoField="fragment")
-])))))), 
+]))])]), 
 geometry=
 Sphere()),
 Script(DEF="Animate", field=[field(name="translation", accessType="inputOutput", type="SFVec3f", value=(0,0,0)),

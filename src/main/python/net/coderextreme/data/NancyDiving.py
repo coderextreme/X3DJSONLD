@@ -1,4 +1,4 @@
-#x3d.py package loaded, have fun with X3D Graphics!
+#x3d.py package 4.0.60 loaded, have fun with X3D Graphics!
 from x3d import *
 from x3d import SFBool
 print(
@@ -20,7 +20,7 @@ Viewpoint(description="Nancy diving view from above", orientation=((0,1,0,3.14))
 Transform(rotation=((1,0,0,1.57)), translation=((0,0.45,-0.04)), children=[
 Viewpoint(description="Nancy diving, view through her goggles", orientation=((0,0,1,3.14)), position=((0,0,0)))])]),
 Transform(translation=((0,-1,0)), children=[
-HAnimHumanoid(name="Nancy", DEF="hanim_Nancy", version="1.0", skeleton=(
+HAnimHumanoid(name="Nancy", DEF="hanim_Nancy", version="1.0", skeleton=[
 HAnimJoint(name="humanoid_root", DEF="hanim_humanoid_root", center=((-0.00405,0.855,-0.000113)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimJoint(name="sacroiliac", DEF="hanim_sacroiliac", center=((0,1.01,-0.0204)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="pelvis", DEF="hanim_pelvis", children=[
@@ -387,7 +387,7 @@ Material(diffuseColor=((0,0,0)))),
 geometry=
 Extrusion(crossSection=[(0.0,0.013),(0.00494,0.01196),(0.00923,0.00923),(0.01196,0.00494),(0.013,0.0),(0.01196,-0.00494),(0.00923,-0.00923),(0.00494,-0.01196),(0.0,0.013),(-0.00494,-0.01196),(-0.00923,-0.00923),(-0.01196,-0.00494),(-0.013,-0.0),(-0.01196,0.00494),(-0.00923,0.00923),(-0.00494,0.01196),(0.0,0.013)], spine=[(0.005,-0.03,0),(-0.01,0.02,0),(-0.03,0.08,0),(-0.05,0.14,0),(-0.08,0.19,0),(-0.1,0.22,0),(-0.12,0.25,0),(-0.15,0.27,0),(-0.18,0.28,0),(-0.21,0.29,0),(-0.26,0.28,0),(-0.28,0.26,0),(-0.305,0.23,0),(-0.32,0.2,0),(-0.34,0.16,0),(-0.35,0.12,0),(-0.37,0.04,0),(-0.385,0,0),(-0.39,-0.07,0)]))])]),]),
 Transform(DEF="Bubbles", scale=((0.35,0.35,0.35)), translation=((0,1.54,-0.0409)), children=[
-Inline(DEF="bubbles", url=["Bubbles.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/Bubbles.x3d","Bubbles.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/Bubbles.wrl"])])])])])])])), joints=(
+Inline(DEF="bubbles", url=["Bubbles.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/Bubbles.x3d","Bubbles.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/Bubbles.wrl"])])])])])])])], joints=(
 HAnimJoint(USE="hanim_humanoid_root"),
 HAnimJoint(USE="hanim_sacroiliac"),
 HAnimJoint(USE="hanim_vl1"),
@@ -404,7 +404,7 @@ HAnimJoint(USE="hanim_r_knee"),
 HAnimJoint(USE="hanim_l_shoulder"),
 HAnimJoint(USE="hanim_r_shoulder"),
 HAnimJoint(USE="hanim_l_wrist"),
-HAnimJoint(USE="hanim_r_wrist")), segments=(
+HAnimJoint(USE="hanim_r_wrist")), segments=[
 HAnimSegment(USE="hanim_pelvis"),
 HAnimSegment(USE="hanim_l1"),
 HAnimSegment(USE="hanim_c4"),
@@ -420,7 +420,7 @@ HAnimSegment(USE="hanim_r_hindfoot"),
 HAnimSegment(USE="hanim_l_thigh"),
 HAnimSegment(USE="hanim_r_thigh"),
 HAnimSegment(USE="hanim_l_upperarm"),
-HAnimSegment(USE="hanim_r_upperarm")))])])])]),
+HAnimSegment(USE="hanim_r_upperarm")])])])])]),
 Script(DEF="finWarpScript", field=[field(name="set_rotationLeft", accessType="inputOnly", type="SFRotation"),
 field(name="set_rotationRight", accessType="inputOnly", type="SFRotation"),
 field(name="finWarpLeft", accessType="outputOnly", type="SFBool"),

@@ -1,4 +1,4 @@
-#x3d.py package loaded, have fun with X3D Graphics!
+#x3d.py package 4.0.60 loaded, have fun with X3D Graphics!
 from x3d import *
 from x3d import SFBool
 print(
@@ -16,7 +16,7 @@ MetadataString(name="authorName", value=["Matthew T. Beitler"]),
 MetadataString(name="copyright", value=["Copyright 1999 Matthew T. Beitler"]),
 MetadataString(name="creationDate", value=["05/12/99"]),
 MetadataString(name="humanoidVersion", value=["JointCenters 1.1 LOA0"]),
-MetadataString(name="usageRestrictions", value=["PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose."])])), skeleton=(
+MetadataString(name="usageRestrictions", value=["PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose."])])), skeleton=[
 HAnimJoint(name="humanoid_root", DEF="hanim_humanoid_root", center=((0.0,0.824,0.0277)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimJoint(name="sacroiliac", DEF="hanim_sacroiliac", center=((0.0,0.9149,0.0016)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="pelvis", DEF="hanim_pelvis", children=[
@@ -29,13 +29,13 @@ Coordinate(point=[(0,0.01,0),(-0.01,0,0),(0,0,0.01),(0.01,0,0),(0,0,-0.01),(0,-0
 appearance=
 Appearance(
 material=
-Material(diffuseColor=((1,1,0)))))])])])])), viewpoints=(
+Material(diffuseColor=((1,1,0)))))])])])])], viewpoints=[
 HAnimSite(name="site_view", DEF="hanim_site_view", children=[
 Viewpoint(DEF="InclinedView", description="Inclined View", orientation=((-0.113,0.993,0.0347,0.671)), position=((1.62,1.05,2.06))),
 Viewpoint(DEF="FrontView", description="Front View", position=((0,0.854,2.57665))),
 Viewpoint(DEF="SideView", description="Side View", orientation=((0,1,0,1.57079)), position=((2.5929,0.854,0))),
-Viewpoint(DEF="TopView", description="Top View", orientation=((1,0,0,-1.57079)), position=((0,3.4495,0)))])), joints=(
+Viewpoint(DEF="TopView", description="Top View", orientation=((1,0,0,-1.57079)), position=((0,3.4495,0)))])], joints=(
 HAnimJoint(USE="hanim_humanoid_root"),
-HAnimJoint(USE="hanim_sacroiliac")), segments=(
-HAnimSegment(USE="hanim_pelvis")))]))
+HAnimJoint(USE="hanim_sacroiliac")), segments=[
+HAnimSegment(USE="hanim_pelvis")])]))
 .XML())

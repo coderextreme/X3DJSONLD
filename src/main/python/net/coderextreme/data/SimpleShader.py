@@ -1,4 +1,4 @@
-#x3d.py package loaded, have fun with X3D Graphics!
+#x3d.py package 4.0.60 loaded, have fun with X3D Graphics!
 from x3d import *
 from x3d import SFBool
 print(
@@ -14,17 +14,17 @@ Shape(
 appearance=
 Appearance(
 material=
-Material(diffuseColor=((0.5,0.5,0.9))), shaders=(
+Material(diffuseColor=((0.5,0.5,0.9))), shaders=[
 ComposedShader(language="GLSL", field=[field(name="decis", accessType="initializeOnly", type="SFVec3f")
 ], 
 IS=IS(connect=[connect(nodeField="decis", protoField="myInputRange")
-]), parts=(
+]), parts=[
 ShaderPart(type="VERTEX"),
-ShaderPart(type="FRAGMENT"))),
+ShaderPart(type="FRAGMENT")]),
 ComposedShader(DEF="Cobweb", language="GLSL", field=[field(name="decis", accessType="initializeOnly", type="SFVec3f", value=(0.95,0.77,0.44))
-], parts=(
+], parts=[
 ShaderPart(type="VERTEX"),
-ShaderPart(DEF="_1", type="FRAGMENT"))))), 
+ShaderPart(DEF="_1", type="FRAGMENT")])]), 
 geometry=
 Sphere(radius=1.75))])])),
 WorldInfo(title="SimpleShader", 

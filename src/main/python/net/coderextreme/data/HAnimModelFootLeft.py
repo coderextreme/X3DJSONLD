@@ -1,4 +1,4 @@
-#x3d.py package loaded, have fun with X3D Graphics!
+#x3d.py package 4.0.60 loaded, have fun with X3D Graphics!
 from x3d import *
 from x3d import SFBool
 print(
@@ -9,7 +9,7 @@ WorldInfo(title="HAnimModelFootLeft.x3d"),
 HAnimHumanoid(name="Foot_Left", DEF="hanim_Foot_Left", loa=4, version="2.0", 
 metadata=(
 MetadataSet(name="HAnimHumanoid.info", reference="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid", value=[
-MetadataString(name="authorName", value=["Kwan-Hee YOO, Don Brutzman and Joe Williams"])])), skeleton=(
+MetadataString(name="authorName", value=["Kwan-Hee YOO, Don Brutzman and Joe Williams"])])), skeleton=[
 HAnimJoint(name="humanoid_root", DEF="hanim_humanoid_root", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 #Might consider putting a HAnimSegment here, but that doesn't help with re-use of this foot model
 
@@ -408,7 +408,7 @@ Material(emissiveColor=((1,1,1)))),
 geometry=
 IndexedLineSet(DEF="tiptoe_l_tarsal_distal_interphalangeal_5", coordIndex=[int(0),int(1)], 
 coord=
-Coordinate(point=[(0.34,-1.05,0),(0.34,-1.08,0)])))])])])])]),]),]),]),])), joints=(
+Coordinate(point=[(0.34,-1.05,0),(0.34,-1.08,0)])))])])])])]),]),]),]),])], joints=(
 HAnimJoint(USE="hanim_humanoid_root"),
 HAnimJoint(USE="hanim_l_calcaneocuboid"),
 HAnimJoint(USE="hanim_l_cuneonavicular_1"),
@@ -435,7 +435,7 @@ HAnimJoint(USE="hanim_l_tarsometatarsal_2"),
 HAnimJoint(USE="hanim_l_tarsometatarsal_3"),
 HAnimJoint(USE="hanim_l_tarsometatarsal_4"),
 HAnimJoint(USE="hanim_l_tarsometatarsal_5"),
-HAnimJoint(USE="hanim_l_transversetarsal")), segments=(
+HAnimJoint(USE="hanim_l_transversetarsal")), segments=[
 HAnimSegment(USE="hanim_l_calcaneus"),
 HAnimSegment(USE="hanim_l_cuboid"),
 HAnimSegment(USE="hanim_l_cuneiform_1"),
@@ -461,5 +461,5 @@ HAnimSegment(USE="hanim_l_tarsal_proximal_phalanx_1"),
 HAnimSegment(USE="hanim_l_tarsal_proximal_phalanx_2"),
 HAnimSegment(USE="hanim_l_tarsal_proximal_phalanx_3"),
 HAnimSegment(USE="hanim_l_tarsal_proximal_phalanx_4"),
-HAnimSegment(USE="hanim_l_tarsal_proximal_phalanx_5")))]))
+HAnimSegment(USE="hanim_l_tarsal_proximal_phalanx_5")])]))
 .XML())

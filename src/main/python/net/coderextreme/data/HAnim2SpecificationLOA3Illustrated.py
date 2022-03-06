@@ -1,4 +1,4 @@
-#x3d.py package loaded, have fun with X3D Graphics!
+#x3d.py package 4.0.60 loaded, have fun with X3D Graphics!
 from x3d import *
 from x3d import SFBool
 print(
@@ -31,7 +31,7 @@ MetadataString(name="copyright", value=["none"]),
 MetadataString(name="creationDate", value=["12 May 1999"]),
 MetadataFloat(name="height", value=[float(1.7504)]),
 MetadataString(name="humanoidVersion", value=["2.0"]),
-MetadataString(name="usageRestrictions", value=["none"])])), skeleton=(
+MetadataString(name="usageRestrictions", value=["none"])])), skeleton=[
 HAnimJoint(name="humanoid_root", DEF="hanim_humanoid_root", center=((0,0.824,0.0277)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="sacrum", DEF="hanim_sacrum", children=[
 #Visualization sphere for <HAnimJoint name='humanoid_root'/> is placed within <HAnimSegment name='sacrum'/>
@@ -2910,7 +2910,7 @@ HAnimSite(name="r_carpal_distal_phalanx_5_pt", DEF="hanim_r_carpal_distal_phalan
 #HAnimSite visualization shape
 
 TouchSensor(description="HAnimSite r_pinky_distal_tip"),
-Shape(USE="HAnimSiteShape"),]),])])])])])])])])])])])])])])])])])])])])])])])])])])])])), viewpoints=(
+Shape(USE="HAnimSiteShape"),]),])])])])])])])])])])])])])])])])])])])])])])])])])])])])], viewpoints=[
 HAnimSite(name="l_inclined_view", DEF="hanim_l_inclined_view", rotation=((-0.113,0.993,0.0347,0.671)), translation=((1.62,1.05,2.06)), children=[
 #HAnimSite visualization shape
 
@@ -3082,7 +3082,7 @@ Shape(USE="HAnimSiteViewpointShape")])]),]),
 HAnimSite(USE="hanim_l_eyeball_site_view"),
 HAnimSite(USE="hanim_r_eyeball_site_view"),
 HAnimSite(USE="hanim_l_hand_front_view"),
-HAnimSite(USE="hanim_r_hand_front_view")), joints=(
+HAnimSite(USE="hanim_r_hand_front_view")], joints=(
 HAnimJoint(USE="hanim_humanoid_root"),
 HAnimJoint(USE="hanim_sacroiliac"),
 HAnimJoint(USE="hanim_vl5"),
@@ -3176,7 +3176,7 @@ HAnimJoint(USE="hanim_r_talocrural"),
 HAnimJoint(USE="hanim_l_tarsal_distal_interphalangeal_2"),
 HAnimJoint(USE="hanim_r_tarsal_distal_interphalangeal_2"),
 HAnimJoint(USE="hanim_l_tarsometatarsal_2"),
-HAnimJoint(USE="hanim_r_tarsometatarsal_2")), segments=(
+HAnimJoint(USE="hanim_r_tarsometatarsal_2")), segments=[
 HAnimSegment(USE="hanim_pelvis"),
 HAnimSegment(USE="hanim_skull"),
 HAnimSegment(USE="hanim_jaw"),
@@ -3270,7 +3270,7 @@ HAnimSegment(USE="hanim_r_tarsal_proximal_phalanx_2"),
 HAnimSegment(USE="hanim_l_thigh"),
 HAnimSegment(USE="hanim_r_thigh"),
 HAnimSegment(USE="hanim_l_upperarm"),
-HAnimSegment(USE="hanim_r_upperarm")), sites=(
+HAnimSegment(USE="hanim_r_upperarm")], sites=[
 HAnimSite(USE="hanim_crotch_pt"),
 HAnimSite(USE="hanim_skull_vertex_pt"),
 HAnimSite(USE="hanim_sellion_pt"),
@@ -3361,5 +3361,5 @@ HAnimSite(USE="hanim_l_tragion_pt"),
 HAnimSite(USE="hanim_r_trochanterion_pt"),
 HAnimSite(USE="hanim_l_trochanterion_pt"),
 HAnimSite(USE="hanim_l_ulnar_styloid_pt"),
-HAnimSite(USE="hanim_r_ulnar_styloid_pt"))),]))
+HAnimSite(USE="hanim_r_ulnar_styloid_pt")]),]))
 .XML())

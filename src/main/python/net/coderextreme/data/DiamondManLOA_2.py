@@ -1,4 +1,4 @@
-#x3d.py package loaded, have fun with X3D Graphics!
+#x3d.py package 4.0.60 loaded, have fun with X3D Graphics!
 from x3d import *
 from x3d import SFBool
 print(
@@ -135,7 +135,7 @@ MetadataString(name="authorEmail", value=["cindy@ballreich.net"]),
 MetadataString(name="authorName", value=["Cindy Ballreich"]),
 MetadataString(name="copyright", value=["1997 3Name3D / Yglesias Wallock Divekar Inc. all rights reserved."]),
 MetadataString(name="creationDate", value=["Tue Dec 30 08:30:08 PST 1997"]),
-MetadataString(name="usageRestrictions", value=["Noncommercial usage is ok if 3Name3D name and logo <www.ballreich.net/vrml/HAnim/small_logo.gif> is present and proper credit is given."])])), skeleton=(
+MetadataString(name="usageRestrictions", value=["Noncommercial usage is ok if 3Name3D name and logo <www.ballreich.net/vrml/HAnim/small_logo.gif> is present and proper credit is given."])])), skeleton=[
 HAnimJoint(name="HumanoidRoot", DEF="hanim_HumanoidRoot", center=((0.0,0.824,0.0277)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="sacrum", DEF="hanim_sacrum", children=[
 Transform(translation=((0.0,0.824,0.0277)), children=[
@@ -1396,13 +1396,13 @@ Coordinate(USE="points")),
 appearance=
 Appearance(
 material=
-Material(USE="SITE_COLOR")))])])])])])])])])])])])])])])])])])])])])])])])])])])])])), viewpoints=(
+Material(USE="SITE_COLOR")))])])])])])])])])])])])])])])])])])])])])])])])])])])])])], viewpoints=[
 HAnimSite(name="DiamondManLOA_2_view", DEF="hanim_DiamondManLOA_2_view", children=[
 Viewpoint(DEF="FrontView", description="Front View", position=((0.35,0.854,2.57665))),
 Viewpoint(DEF="SideView", description="Side View", orientation=((0,1,0,1.57079)), position=((2,0.854,0))),
 Viewpoint(DEF="TopView", description="Top View", orientation=((1,0,0,-1.57079)), position=((0,3.4495,0))),
 Viewpoint(DEF="RootView", description="Humanoid Root View", position=((0.0,0.824,0.277))),
-Viewpoint(DEF="InclinedView", description="Inclined View", orientation=((-0.113,0.993,0.0347,0.671)), position=((1.62,1.05,2.06)))])), joints=(
+Viewpoint(DEF="InclinedView", description="Inclined View", orientation=((-0.113,0.993,0.0347,0.671)), position=((1.62,1.05,2.06)))])], joints=(
 HAnimJoint(USE="hanim_HumanoidRoot"),
 HAnimJoint(USE="hanim_sacroiliac"),
 HAnimJoint(USE="hanim_vl1"),
@@ -1452,7 +1452,7 @@ HAnimJoint(USE="hanim_l_thumb1"),
 HAnimJoint(USE="hanim_l_thumb2"),
 HAnimJoint(USE="hanim_l_thumb3"),
 HAnimJoint(USE="hanim_l_wrist"),
-HAnimJoint(USE="hanim_r_wrist")), segments=(
+HAnimJoint(USE="hanim_r_wrist")), segments=[
 HAnimSegment(USE="hanim_pelvis"),
 HAnimSegment(USE="hanim_c7"),
 HAnimSegment(USE="hanim_c4"),
@@ -1502,7 +1502,7 @@ HAnimSegment(USE="hanim_l_thumb_distal"),
 HAnimSegment(USE="hanim_l_thumb_metacarpal"),
 HAnimSegment(USE="hanim_l_thumb_proximal"),
 HAnimSegment(USE="hanim_l_upperarm"),
-HAnimSegment(USE="hanim_r_upperarm")), sites=(
+HAnimSegment(USE="hanim_r_upperarm")], sites=[
 HAnimSite(USE="hanim_crotch_pt"),
 HAnimSite(USE="hanim_skull_tip"),
 HAnimSite(USE="hanim_sellion_pt"),
@@ -1566,5 +1566,5 @@ HAnimSite(USE="hanim_l_tragion_pt"),
 HAnimSite(USE="hanim_r_trochanterion_pt"),
 HAnimSite(USE="hanim_l_trochanterion_pt"),
 HAnimSite(USE="hanim_l_ulnar_styloid_pt"),
-HAnimSite(USE="hanim_r_ulnar_styloid_pt")))]))
+HAnimSite(USE="hanim_r_ulnar_styloid_pt")])]))
 .XML())

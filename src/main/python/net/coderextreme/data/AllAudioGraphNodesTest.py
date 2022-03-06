@@ -1,4 +1,4 @@
-#x3d.py package loaded, have fun with X3D Graphics!
+#x3d.py package 4.0.60 loaded, have fun with X3D Graphics!
 from x3d import *
 from x3d import SFBool
 print(
@@ -38,6 +38,6 @@ WaveShaper(children=[
 BufferAudioSource(),
 ListenerPointSource(),
 MicrophoneSource(),
-OscillatorSource(),
+OscillatorSource(frequency=440.0),
 StreamAudioSource(),])])])])])])])])])])])])])]))
 .XML())
