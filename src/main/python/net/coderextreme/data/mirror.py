@@ -1,4 +1,4 @@
-#x3d.py package loaded, have fun with X3D Graphics!
+#x3d.py package 4.0.60 loaded, have fun with X3D Graphics!
 from x3d import *
 from x3d import SFBool
 print(
@@ -38,23 +38,23 @@ ImageTexture(DEF="leftShader", url=["../resources/images/all_probes/beach_cross/
 rightTexture=
 ImageTexture(DEF="rightShader", url=["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_right.png"]), 
 topTexture=
-ImageTexture(DEF="topShader", url=["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"])), shaders=(
+ImageTexture(DEF="topShader", url=["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/src/main/resources/images/all_probes/beach_cross/beach_top.png"])), shaders=[
 ComposedShader(DEF="x3dom", language="GLSL", field=[field(name="chromaticDispertion", accessType="inputOutput", type="SFVec3f", value=(0.98,1,1.033)),
 field(name="cube", accessType="inputOutput", type="SFInt32", value=0),
 field(name="bias", accessType="inputOutput", type="SFFloat", value=0.5),
 field(name="scale", accessType="inputOutput", type="SFFloat", value=0.5),
 field(name="power", accessType="inputOutput", type="SFFloat", value=2)
-], parts=(
+], parts=[
 ShaderPart(url=["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"], type="VERTEX"),
-ShaderPart(url=["../shaders/mix.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/mix.fs"], type="FRAGMENT"))),
+ShaderPart(url=["../shaders/mix.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/mix.fs"], type="FRAGMENT")]),
 ComposedShader(DEF="x_ite", language="GLSL", field=[field(name="chromaticDispertion", accessType="inputOutput", type="SFVec3f", value=(0.98,1,1.033)),
 field(name="cube", accessType="inputOutput", type="SFInt32", value=0),
 field(name="bias", accessType="inputOutput", type="SFFloat", value=0.5),
 field(name="scale", accessType="inputOutput", type="SFFloat", value=0.5),
 field(name="power", accessType="inputOutput", type="SFFloat", value=2)
-], parts=(
+], parts=[
 ShaderPart(url=["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"], type="VERTEX"),
-ShaderPart(url=["../shaders/x_itemix.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itemix.fs"], type="FRAGMENT"))))), 
+ShaderPart(url=["../shaders/x_itemix.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itemix.fs"], type="FRAGMENT")])]), 
 geometry=
 Sphere(radius=30)),
 Script(DEF="UrlSelector", directOutput=True, field=[field(name="frontUrls", type="MFString", accessType="initializeOnly", value=["../resources/images/all_probes/beach_cross/beach_front.png","../resources/images/all_probes/building_cross/building_front.png","../resources/images/all_probes/campus_cross/campus_front.png","../resources/images/all_probes/galileo_cross/galileo_front.png","../resources/images/all_probes/grace_cross/grace_front.png","../resources/images/all_probes/kitchen_cross/kitchen_front.png","../resources/images/all_probes/rnl_cross/rnl_front.png","../resources/images/all_probes/stpeters_cross/stpeters_front.png","../resources/images/all_probes/uffizi_cross/uffizi_front.png"]),

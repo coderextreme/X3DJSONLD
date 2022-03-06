@@ -1,4 +1,4 @@
-#x3d.py package loaded, have fun with X3D Graphics!
+#x3d.py package 4.0.60 loaded, have fun with X3D Graphics!
 from x3d import *
 from x3d import SFBool
 print(
@@ -246,12 +246,12 @@ ProtoBody=ProtoBody(children=[
 ProgramShader()])),
 Shape(
 appearance=
-Appearance(shaders=(
-ProgramShader(DEF="TestShader1", programs=(
-ShaderProgram(DEF="TestShader2", type="VERTEX"))),
+Appearance(shaders=[
+ProgramShader(DEF="TestShader1", programs=[
+ShaderProgram(DEF="TestShader2", type="VERTEX")]),
 ProtoInstance(name="ShaderProto", DEF="TestShader3"),
-ComposedShader(DEF="TestShader4", parts=(
-ShaderPart(DEF="TestShader5", type="VERTEX")))))),
+ComposedShader(DEF="TestShader4", parts=[
+ShaderPart(DEF="TestShader5", type="VERTEX")])])),
 Transform(DEF="SpecialtyNodes", children=[
 CADLayer(children=[
 CADAssembly(children=[

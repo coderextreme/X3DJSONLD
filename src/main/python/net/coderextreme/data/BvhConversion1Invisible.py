@@ -1,4 +1,4 @@
-#x3d.py package loaded, have fun with X3D Graphics!
+#x3d.py package 4.0.60 loaded, have fun with X3D Graphics!
 from x3d import *
 from x3d import SFBool
 print(
@@ -57,9 +57,9 @@ MetadataString(name="authorEmail", value=["*TODO*"]),
 MetadataString(name="authorName", value=["*TODO*"]),
 MetadataString(name="copyright", value=["Copyright 2017"]),
 MetadataString(name="humanoidVersion", value=["*TODO*"]),
-MetadataString(name="usageRestrictions", value=["*TODO*"])])), viewpoints=(
+MetadataString(name="usageRestrictions", value=["*TODO*"])])), viewpoints=[
 HAnimSite(name="HumanoidRoot_view", DEF="Bvh1_HumanoidRoot_view", children=[
-Viewpoint(DEF="Bvh1_HumanoidRoot_viewpoint", description="Bvh1 front view towards HAnimHumanoid center", position=((0,0,314.96062992125985)))])), skeleton=(
+Viewpoint(DEF="Bvh1_HumanoidRoot_viewpoint", description="Bvh1 front view towards HAnimHumanoid center", position=((0,0,314.96062992125985)))])], skeleton=[
 HAnimJoint(name="HumanoidRoot", DEF="Bvh1_HumanoidRoot", scale=((0.0254,0.0254,0.0254)), translation=((0.0,0.806,0.194)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 #BVH ROOT Hips, OFFSET 7.62 0.0 0.0, CHANNELS 6 Xposition Yposition Zposition Zrotation Xrotation Yrotation
 
@@ -250,7 +250,7 @@ HAnimSegment(name="skull", DEF="Bvh1_skull", children=[
 Transform(translation=((0.0,69.849999,0.0)), children=[
 HAnimSite(name="skull_tip", DEF="Bvh1_skull_tip", translation=((0.0,10.16,0.0)), children=[
 #BVH End Site OFFSET (0.0, 10.16, 0.0)
-])]),]),]),]),]),]),])), joints=(
+])]),]),]),]),]),]),])], joints=(
 HAnimJoint(USE="Bvh1_HumanoidRoot"),
 HAnimJoint(USE="Bvh1_vl5"),
 HAnimJoint(USE="Bvh1_Chest2"),
@@ -271,7 +271,7 @@ HAnimJoint(USE="Bvh1_r_midtarsal"),
 HAnimJoint(USE="Bvh1_l_shoulder"),
 HAnimJoint(USE="Bvh1_r_shoulder"),
 HAnimJoint(USE="Bvh1_l_wrist"),
-HAnimJoint(USE="Bvh1_r_wrist")), segments=(
+HAnimJoint(USE="Bvh1_r_wrist")), segments=[
 HAnimSegment(USE="Bvh1_sacrum"),
 HAnimSegment(USE="Bvh1_l5"),
 HAnimSegment(USE="Bvh1_vl5_to_Chest2"),
@@ -292,13 +292,13 @@ HAnimSegment(USE="Bvh1_r_middistal"),
 HAnimSegment(USE="Bvh1_l_thigh"),
 HAnimSegment(USE="Bvh1_r_thigh"),
 HAnimSegment(USE="Bvh1_l_upperarm"),
-HAnimSegment(USE="Bvh1_r_upperarm")), sites=(
+HAnimSegment(USE="Bvh1_r_upperarm")], sites=[
 HAnimSite(USE="Bvh1_HumanoidRoot_view"),
 HAnimSite(USE="Bvh1_skull_tip"),
 HAnimSite(USE="Bvh1_l_hand_tip"),
 HAnimSite(USE="Bvh1_r_hand_tip"),
 HAnimSite(USE="Bvh1_l_middistal_tip"),
-HAnimSite(USE="Bvh1_r_middistal_tip"))),
+HAnimSite(USE="Bvh1_r_middistal_tip")]),
 #=============================================================
 
 #testAxisAngleRotation() results compared to RotationTests.x3d

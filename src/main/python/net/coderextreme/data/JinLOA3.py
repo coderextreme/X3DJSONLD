@@ -1,4 +1,4 @@
-#x3d.py package loaded, have fun with X3D Graphics!
+#x3d.py package 4.0.60 loaded, have fun with X3D Graphics!
 from x3d import *
 from x3d import SFBool
 print(
@@ -16,7 +16,7 @@ MetadataString(name="authorEmail", value=["myeongwonlee@gmail.com"]),
 MetadataString(name="creationDate", value=["31 March 2011"]),
 MetadataString(name="gender", value=["female"]),
 MetadataFloat(name="height", value=[float(1.5)]),
-MetadataString(name="humanoidVersion", value=["2.0"])])), skeleton=(
+MetadataString(name="humanoidVersion", value=["2.0"])])), skeleton=[
 HAnimJoint(name="humanoid_root", DEF="hanim_humanoid_root", center=((0,35.799999,-0.7076)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="sacrum", DEF="hanim_sacrum", children=[
 Transform(translation=((0,35.799999,-0.7076)), children=[
@@ -1520,7 +1520,7 @@ IndexedFaceSet(coordIndex=[int(0),int(2),int(3),int(-1),int(3),int(1),int(0),int
 coord=
 Coordinate(point=[(0.4265,-0.7665,0.0531),(0.4417,-0.7485,-0.0994),(0.2908,-0.8079,0.0337),(0.306,-0.7899,-0.1188),(0.4775,-0.6307,0.0765),(0.3642,-0.6752,0.1764),(0.2285,-0.7166,0.157),(0.1382,-0.7341,0.0281),(0.1534,-0.7161,-0.1244),(0.2667,-0.6716,-0.2242),(0.4024,-0.6302,-0.2049),(0.4927,-0.6127,-0.076),(0.2189,-0.0422,0.1441),(0.0919,-0.0921,0.2561),(-0.0696,-0.1414,0.2331),(-0.1709,-0.161,0.0886),(-0.1528,-0.1396,-0.0929),(-0.0258,-0.0897,-0.2049),(0.1357,-0.0404,-0.1819),(0.2371,-0.0207,-0.0373),(0.1344,0.069,0.1368),(0.0252,0.0277,0.2322),(-0.1149,-0.0067,0.2114),(-0.202,-0.0158,0.0895),(-0.1878,0.0058,-0.0611),(-0.082,0.0466,-0.1545),(0.0552,0.083,-0.137),(0.1456,0.0926,-0.0171),(-0.0613,0.1015,0.0409)]), 
 texCoord=
-TextureCoordinate(point=[(0.4049,0.6227),(0.4021,0.6229),(0.4017,0.6225),(0.4045,0.6223),(0.4072,0.6236),(0.4053,0.624),(0.4068,0.6232),(0.4044,0.623),(0.4016,0.6232),(0.3997,0.6236),(0.4001,0.624),(0.4025,0.6242),(0.4086,0.6291),(0.4066,0.6295),(0.4082,0.6286),(0.4055,0.6284),(0.4022,0.6286),(0.4001,0.6291),(0.4005,0.6296),(0.4032,0.6297),(0.4082,0.6302),(0.4064,0.6306),(0.4078,0.6299),(0.4056,0.6298),(0.4028,0.63),(0.401,0.6304),(0.4014,0.6307),(0.4036,0.6308),(0.4047,0.6309)])))])])])])])])])])])])])])])])])])])])])])])])])])])])])])])), joints=(
+TextureCoordinate(point=[(0.4049,0.6227),(0.4021,0.6229),(0.4017,0.6225),(0.4045,0.6223),(0.4072,0.6236),(0.4053,0.624),(0.4068,0.6232),(0.4044,0.623),(0.4016,0.6232),(0.3997,0.6236),(0.4001,0.624),(0.4025,0.6242),(0.4086,0.6291),(0.4066,0.6295),(0.4082,0.6286),(0.4055,0.6284),(0.4022,0.6286),(0.4001,0.6291),(0.4005,0.6296),(0.4032,0.6297),(0.4082,0.6302),(0.4064,0.6306),(0.4078,0.6299),(0.4056,0.6298),(0.4028,0.63),(0.401,0.6304),(0.4014,0.6307),(0.4036,0.6308),(0.4047,0.6309)])))])])])])])])])])])])])])])])])])])])])])])])])])])])])])])], joints=(
 HAnimJoint(USE="hanim_humanoid_root"),
 HAnimJoint(USE="hanim_sacroiliac"),
 HAnimJoint(USE="hanim_vl5"),
@@ -1614,7 +1614,7 @@ HAnimJoint(USE="hanim_r_talocrural"),
 HAnimJoint(USE="hanim_l_tarsal_distal_interphalangeal_2"),
 HAnimJoint(USE="hanim_r_tarsal_distal_interphalangeal_2"),
 HAnimJoint(USE="hanim_l_tarsometatarsal_2"),
-HAnimJoint(USE="hanim_r_tarsometatarsal_2")), segments=(
+HAnimJoint(USE="hanim_r_tarsometatarsal_2")), segments=[
 HAnimSegment(USE="hanim_sacrum"),
 HAnimSegment(USE="hanim_pelvis"),
 HAnimSegment(USE="hanim_l5"),
@@ -1708,5 +1708,5 @@ HAnimSegment(USE="hanim_r_tarsal_proximal_phalanx_2"),
 HAnimSegment(USE="hanim_l_thigh"),
 HAnimSegment(USE="hanim_r_thigh"),
 HAnimSegment(USE="hanim_l_upperarm"),
-HAnimSegment(USE="hanim_r_upperarm")))]))
+HAnimSegment(USE="hanim_r_upperarm")])]))
 .XML())
