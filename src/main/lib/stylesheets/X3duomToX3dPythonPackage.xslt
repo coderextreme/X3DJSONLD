@@ -149,7 +149,7 @@ __all__ = [</xsl:text>
 # https://en.wikipedia.org/wiki/Zen_of_Python
 # https://docs.python.org/3/reference/import.html
 
-# TODO failing with x3d 4.0.54, missing in 4.0.57
+# TODO failing with x3d 4.0.54, missing in 4.0.57, re-added in 4.0.58, again failing
 
 from x3d import *
 
@@ -646,7 +646,7 @@ print("x3d.py package 4.0.58 loaded, have fun with X3D Graphics!")
 
 ###############################################
 </xsl:text>
-<!-- (post-deployment revisions) (testing version)
+<!-- (testing version) (post-deployment revisions)
 
     TODO how to perform runtime look up __version__ or setup.py setuptools.setup(
     name="x3d",

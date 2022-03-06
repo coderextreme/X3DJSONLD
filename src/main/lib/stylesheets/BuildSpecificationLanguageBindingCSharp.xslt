@@ -106,7 +106,7 @@ TODO:
       
 	<xsl:element name="title">
 		<!-- mdash = 8212 &amp;#8212;&amp;#8212; -->
-		<xsl:text disable-output-escaping="yes">ISO/IEC 19777-2:20xx -- X3D Java Binding -- Annex B Node type interfaces </xsl:text>
+		<xsl:text disable-output-escaping="yes">ISO/IEC 19777-2:20xx -- X3D Java Binding -- Annex A Node type interfaces </xsl:text>
 	</xsl:element>
 	<xsl:element name="meta">
 		<xsl:attribute name="name"><xsl:text>identifier</xsl:text></xsl:attribute>
@@ -152,7 +152,7 @@ TODO:
 		</xsl:element>
 		<xsl:element name="p">
 			<xsl:attribute name="class"><xsl:text>HeadingClause</xsl:text></xsl:attribute>
-			<xsl:text>Annex B</xsl:text>
+			<xsl:text>Annex A</xsl:text>
 		</xsl:element>
 		<xsl:element name="p">
 			<xsl:attribute name="class"><xsl:text>AnnexType</xsl:text></xsl:attribute>
@@ -188,14 +188,14 @@ TODO:
 		<xsl:element name="a">
 			<xsl:attribute name="name"><xsl:text>IntroductionAndTopics</xsl:text></xsl:attribute>
 		</xsl:element>
-                <xsl:text>B.1&#160;&#160;Introduction and topics</xsl:text>
+                <xsl:text>A.1&#160;&#160;Introduction and topics</xsl:text>
 	</xsl:element>
 	<xsl:text>&#10;</xsl:text>
 
 	<xsl:element name="h2">
 		<xsl:element name="a">
 			<xsl:attribute name="name"><xsl:text>Introduction</xsl:text></xsl:attribute>
-			<xsl:text>B.1.1&#160;&#160;Introduction</xsl:text>
+			<xsl:text>A.1.1&#160;&#160;Introduction</xsl:text>
 		</xsl:element>
 	</xsl:element>
 	<xsl:text>&#10;</xsl:text>
@@ -215,7 +215,7 @@ TODO:
 	<xsl:element name="h2">
 		<xsl:element name="a">
 			<xsl:attribute name="name"><xsl:text>Topics</xsl:text></xsl:attribute>
-			<xsl:text>B.1.2&#160;&#160;Topics</xsl:text>
+			<xsl:text>A.1.2&#160;&#160;Topics</xsl:text>
 		</xsl:element>
 	</xsl:element>
 	<xsl:text>&#10;</xsl:text>
@@ -224,7 +224,7 @@ TODO:
             <xsl:text>See </xsl:text>
             <xsl:element name="a">
                     <xsl:attribute name="href"><xsl:text>#TopicsTable</xsl:text></xsl:attribute>
-                    <xsl:text>Table&#160;B.1</xsl:text>
+                    <xsl:text>Table&#160;A.1</xsl:text>
             </xsl:element>
             <xsl:text> for the topics in this clause.</xsl:text>
             <xsl:text>&#10;</xsl:text>
@@ -238,7 +238,7 @@ TODO:
 			<xsl:element name="a">
 				<xsl:attribute name="name"><xsl:text>TopicsTable</xsl:text></xsl:attribute>
 				<!-- mdash = 8212 -->
-				<xsl:text disable-output-escaping="yes">Table B.1 &amp;mdash; Topics</xsl:text>
+				<xsl:text disable-output-escaping="yes">Table A.1 &amp;mdash; Topics</xsl:text>
 			</xsl:element>
 		</xsl:element>
 		<xsl:text>&#10;</xsl:text>
@@ -266,25 +266,25 @@ TODO:
                                 <li>
                                     <xsl:element name="a">
                                             <xsl:attribute name="href"><xsl:text>#IntroductionAndTopics</xsl:text></xsl:attribute>
-                                            <xsl:text>B.1&#160; Introduction and topics</xsl:text>
+                                            <xsl:text>A.1&#160; Introduction and topics</xsl:text>
                                     </xsl:element>
                                     <ul>
                                         <li>
                                             <xsl:element name="a">
                                                     <xsl:attribute name="href"><xsl:text>#Introduction</xsl:text></xsl:attribute>
-                                                    <xsl:text>B.1.1&#160;Introduction</xsl:text>
+                                                    <xsl:text>A.1.1&#160;Introduction</xsl:text>
                                             </xsl:element>
                                         </li>
                                         <li>
                                             <xsl:element name="a">
                                                     <xsl:attribute name="href"><xsl:text>#Topics</xsl:text></xsl:attribute>
-                                                    <xsl:text>B.1.2&#160;Topics</xsl:text>
+                                                    <xsl:text>A.1.2&#160;Topics</xsl:text>
                                             </xsl:element>
                                         </li>
                                         <li>
                                             <xsl:element name="a">
                                                     <xsl:attribute name="href"><xsl:text>#Conventions</xsl:text></xsl:attribute>
-                                                    <xsl:text>B.1.3&#160;Conventions</xsl:text>
+                                                    <xsl:text>A.1.3&#160;Conventions</xsl:text>
                                             </xsl:element>
                                         </li>
                                     </ul>
@@ -295,7 +295,7 @@ TODO:
                                 <li>
                                     <xsl:element name="a">
                                             <xsl:attribute name="href"><xsl:text>#NodeTypeInterfaces</xsl:text></xsl:attribute>
-                                            <xsl:text>B.2&#160;Node type interfaces</xsl:text>
+                                            <xsl:text>A.2&#160;Node type interfaces</xsl:text>
                                     </xsl:element>
                                     <xsl:text>&#10;</xsl:text>
 
@@ -311,7 +311,7 @@ TODO:
                                                         <xsl:text>#</xsl:text>
                                                         <xsl:value-of select="@name"/>
                                                     </xsl:attribute>
-                                                    <xsl:text>B.2.</xsl:text> 
+                                                    <xsl:text>A.2.</xsl:text> 
                                                     <xsl:value-of select="position()"/>
                                                     <xsl:text>&#160;</xsl:text>
                                                     <xsl:value-of select="@name"/>
@@ -336,7 +336,7 @@ TODO:
                                 <li>
                                     <xsl:element name="a">
                                         <xsl:attribute name="href"><xsl:text>#AuxiliaryNodeTypeInterfaces</xsl:text></xsl:attribute>
-                                        <xsl:text>B.3&#160;Auxiliary node type interfaces</xsl:text>
+                                        <xsl:text>A.3&#160;Auxiliary node type interfaces</xsl:text>
                                     </xsl:element>
                                     <xsl:text>&#10;</xsl:text>
                                     
@@ -353,7 +353,7 @@ TODO:
                                                         <xsl:text>#</xsl:text>
                                                         <xsl:value-of select="@name"/>
                                                     </xsl:attribute>
-                                                    <xsl:text>B.3.</xsl:text>
+                                                    <xsl:text>A.3.</xsl:text>
                                                     <xsl:value-of select="position()"/>
                                                     <xsl:text>&#160;</xsl:text>
                                                     <xsl:value-of select="@name"/>
@@ -370,44 +370,44 @@ TODO:
                                 <li>
                                     <xsl:element name="a">
                                             <xsl:attribute name="href"><xsl:text>#FieldInterfaces</xsl:text></xsl:attribute>
-                                            <xsl:text>B.4&#160; Field interfaces</xsl:text>
+                                            <xsl:text>A.4&#160; Field interfaces</xsl:text>
                                     </xsl:element>
                                     <xsl:text>&#10;</xsl:text>
                                     <ul>
                                         <li>
                                             <xsl:element name="a">
                                                     <xsl:attribute name="href"><xsl:text>#X3DFieldTypes</xsl:text></xsl:attribute>
-                                                    <xsl:text>B.4.1&#160;X3DFieldTypes</xsl:text>
+                                                    <xsl:text>A.4.1&#160;X3DFieldTypes</xsl:text>
                                             </xsl:element>
                                         </li>
                                         <li>
                                             <xsl:element name="a">
                                                     <xsl:attribute name="href"><xsl:text>#X3DFieldEvent</xsl:text></xsl:attribute>
-                                                    <xsl:text>B.4.2&#160;X3DFieldEvent</xsl:text>
+                                                    <xsl:text>A.4.2&#160;X3DFieldEvent</xsl:text>
                                             </xsl:element>
                                         </li>
                                         <li>
                                             <xsl:element name="a">
                                                     <xsl:attribute name="href"><xsl:text>#X3DFieldEventListener</xsl:text></xsl:attribute>
-                                                    <xsl:text>B.4.3&#160;X3DFieldEventListener</xsl:text>
+                                                    <xsl:text>A.4.3&#160;X3DFieldEventListener</xsl:text>
                                             </xsl:element>
                                         </li>
                                         <li>
                                             <xsl:element name="a">
                                                     <xsl:attribute name="href"><xsl:text>#X3DFieldDefinition</xsl:text></xsl:attribute>
-                                                    <xsl:text>B.4.4&#160;X3DFieldDefinition</xsl:text>
+                                                    <xsl:text>A.4.4&#160;X3DFieldDefinition</xsl:text>
                                             </xsl:element>
                                         </li>
                                         <li>
                                             <xsl:element name="a">
                                                     <xsl:attribute name="href"><xsl:text>#X3DField</xsl:text></xsl:attribute>
-                                                    <xsl:text>B.4.5&#160;X3DField</xsl:text>
+                                                    <xsl:text>A.4.5&#160;X3DField</xsl:text>
                                             </xsl:element>
                                         </li>
                                         <li>
                                             <xsl:element name="a">
                                                     <xsl:attribute name="href"><xsl:text>#MField</xsl:text></xsl:attribute>
-                                                    <xsl:text>B.4.6&#160;MField</xsl:text>
+                                                    <xsl:text>A.4.6&#160;MField</xsl:text>
                                             </xsl:element>
                                         </li>
 
@@ -426,7 +426,7 @@ TODO:
                                                             <xsl:text>#</xsl:text>
                                                             <xsl:value-of select="@name"/>
                                                         </xsl:attribute>
-                                                        <xsl:text>B.4.</xsl:text>
+                                                        <xsl:text>A.4.</xsl:text>
                                                         <xsl:value-of select="position()+6"/>
                                                         <xsl:text>&#160;</xsl:text>
                                                         <xsl:value-of select="@name"/>
@@ -440,38 +440,38 @@ TODO:
                                                          
                                 <!-- ========== section ========== -->
                                 <li>
-                                    <a href="#ServiceInterfaces">B.5 Service interfaces</a>
+                                    <a href="#ServiceInterfaces">A.5 Service interfaces</a>
                                     <ul>
                                         <li>
-                                            <a href="#BrowserEvent">B.5.1 BrowserEvent</a>
+                                            <a href="#BrowserEvent">A.5.1 BrowserEvent</a>
                                         </li>
                                         <li>
-                                            <a href="#BrowserFactory">B.5.2 BrowserFactory</a>
+                                            <a href="#BrowserFactory">A.5.2 BrowserFactory</a>
                                         </li>
                                         <li>
-                                            <a href="#ServiceX3DFieldEvent">B.5.3 X3DFieldEvent</a>
+                                            <a href="#ServiceX3DFieldEvent">A.5.3 X3DFieldEvent</a>
                                         </li>
                                         <li>
-                                            <a href="#Matrix3">B.5.4 Matrix3</a>
+                                            <a href="#Matrix3">A.5.4 Matrix3</a>
                                         </li>
                                         <li>
-                                            <a href="#Matrix4">B.5.5 Matrix4</a>
+                                            <a href="#Matrix4">A.5.5 Matrix4</a>
                                         </li>
                                     </ul>
                                 </li>
                                 
                                 <!-- ========== section ========== -->
                                 <li>
-                                    <a href="#StatementInterfaces">B.6 Statement interfaces</a>
+                                    <a href="#StatementInterfaces">A.6 Statement interfaces</a>
                                     <ul>
                                         <li>
-                                            <a href="#ComponentInfo">B.6.1 ComponentInfo</a>
+                                            <a href="#ComponentInfo">A.6.1 ComponentInfo</a>
                                         </li>
                                         <li>
-                                            <a href="#ProfileInfo">B.6.2 ProfileInfo</a>
+                                            <a href="#ProfileInfo">A.6.2 ProfileInfo</a>
                                         </li>
                                         <li>
-                                            <a href="#UnitInfo">B.6.3 UnitInfo</a>
+                                            <a href="#UnitInfo">A.6.3 UnitInfo</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -487,73 +487,73 @@ TODO:
                                 <!-- ========== section ========== -->
                             <ul>
                                 <li>
-                                    <a href="#ExceptionDefinitions">B.7 Exception definitions</a>
+                                    <a href="#ExceptionDefinitions">A.7 Exception definitions</a>
                                     <ul>
                                         <li>
-                                            <a href="#X3DException">B.7.1 X3DException</a>
+                                            <a href="#X3DException">A.7.1 X3DException</a>
                                         </li>
                                         <li>
-                                            <a href="#BrowserNotSharedException">B.7.2 BrowserNotSharedException</a>
+                                            <a href="#BrowserNotSharedException">A.7.2 BrowserNotSharedException</a>
                                         </li>
                                         <li>
-                                            <a href="#ConnectionException">B.7.3 ConnectionException</a>
+                                            <a href="#ConnectionException">A.7.3 ConnectionException</a>
                                         </li>
                                         <li>
-                                            <a href="#ImportedNodeException">B.7.4 ImportedNodeException</a>
+                                            <a href="#ImportedNodeException">A.7.4 ImportedNodeException</a>
                                         </li>
                                         <li>
-                                            <a href="#InsufficientCapabilitiesException">B.7.5 
+                                            <a href="#InsufficientCapabilitiesException">A.7.5 
                                                 InsufficientCapabilitiesException</a>
                                         </li>
                                         <li>
-                                            <a href="#InvalidBrowserException">B.7.6 InvalidBrowserException</a>
+                                            <a href="#InvalidBrowserException">A.7.6 InvalidBrowserException</a>
                                         </li>
                                         <li>
-                                            <a href="#InvalidDocumentException">B.7.7 InvalidDocumentException</a>
+                                            <a href="#InvalidDocumentException">A.7.7 InvalidDocumentException</a>
                                         </li>
                                         <li>
-                                            <a href="#InvalidExecutionContextException">B.7.8 
+                                            <a href="#InvalidExecutionContextException">A.7.8 
                                                 InvalidExecutionContextException</a>
                                         </li>
                                         <li>
-                                            <a href="#InvalidFieldException">B.7.9 InvalidFieldException</a>
+                                            <a href="#InvalidFieldException">A.7.9 InvalidFieldException</a>
                                         </li>
                                         <li>
-                                            <a href="#InvalidFieldValueException">B.7.10 InvalidFieldValueException</a>
+                                            <a href="#InvalidFieldValueException">A.7.10 InvalidFieldValueException</a>
                                         </li>
                                         <li>
-                                            <a href="#InvalidNodeException">B.7.11 InvalidNodeException</a>
+                                            <a href="#InvalidNodeException">A.7.11 InvalidNodeException</a>
                                         </li>
                                         <li>
-                                            <a href="#InvalidOperationTimingException">B.7.12 
+                                            <a href="#InvalidOperationTimingException">A.7.12 
                                                 InvalidOperationTimingException</a>
                                         </li>
                                         <li>
-                                            <a href="#InvalidProtoException">B.7.13 InvalidProtoException</a>
+                                            <a href="#InvalidProtoException">A.7.13 InvalidProtoException</a>
                                         </li>
                                         <li>
-                                            <a href="#InvalidRouteException">B.7.14 InvalidRouteException</a>
+                                            <a href="#InvalidRouteException">A.7.14 InvalidRouteException</a>
                                         </li>
                                         <li>
-                                            <a href="#InvalidURLException">B.7.15 InvalidURLException</a>
+                                            <a href="#InvalidURLException">A.7.15 InvalidURLException</a>
                                         </li>
                                         <li>
-                                            <a href="#InvalidX3DException">B.7.16 InvalidX3DException</a>
+                                            <a href="#InvalidX3DException">A.7.16 InvalidX3DException</a>
                                         </li>
                                         <li>
-                                            <a href="#NodeInUseException">B.7.17 NodeInUseException</a>
+                                            <a href="#NodeInUseException">A.7.17 NodeInUseException</a>
                                         </li>
                                         <li>
-                                            <a href="#NodeUnavailableException">B.7.18 NodeUnavailableException</a>
+                                            <a href="#NodeUnavailableException">A.7.18 NodeUnavailableException</a>
                                         </li>
                                         <li>
-                                            <a href="#NoSuchBrowserException">B.7.19 NoSuchBrowserException</a>
+                                            <a href="#NoSuchBrowserException">A.7.19 NoSuchBrowserException</a>
                                         </li>
                                         <li>
-                                            <a href="#NotSupportedException">B.7.20 NotSupportedException</a>
+                                            <a href="#NotSupportedException">A.7.20 NotSupportedException</a>
                                         </li>
                                         <li>
-                                            <a href="#URLUnavailableException">B.7.21 URLUnavailableException</a>
+                                            <a href="#URLUnavailableException">A.7.21 URLUnavailableException</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -579,7 +579,7 @@ TODO:
 	<xsl:text>&#10;</xsl:text>
 
         <h2>
-            <a name="Conventions"></a>B.1.3 Conventions</h2>
+            <a name="Conventions"></a>A.1.3 Conventions</h2>
 
         <p>
             This annex describes all the known interfaces that represent abstract node
@@ -677,7 +677,7 @@ TODO:
 		</xsl:element>
 		<xsl:element name="a">
 			<xsl:attribute name="name"><xsl:text>NodeTypeInterfaces</xsl:text></xsl:attribute>
-			<xsl:text>B.2&#160;&#160;Node type interfaces</xsl:text>
+			<xsl:text>A.2&#160;&#160;Node type interfaces</xsl:text>
 		</xsl:element>
 	</xsl:element>
 	<xsl:text>&#10;</xsl:text>
@@ -713,7 +713,7 @@ TODO:
                         <xsl:value-of select="@name"/>
                     </xsl:attribute>
                 </xsl:element>
-                <xsl:text>B.2.</xsl:text>
+                <xsl:text>A.2.</xsl:text>
                 <xsl:value-of select="position()"/>
                 <xsl:text>&#160;</xsl:text>
                 <xsl:value-of select="@name"/>
@@ -755,7 +755,7 @@ TODO:
 		</xsl:element>
 		<xsl:element name="a">
 			<xsl:attribute name="name"><xsl:text>AuxiliaryNodeTypeInterfaces</xsl:text></xsl:attribute>
-			<xsl:text>B.3&#160;&#160;Auxiliary node type interfaces</xsl:text>
+			<xsl:text>A.3&#160;&#160;Auxiliary node type interfaces</xsl:text>
 		</xsl:element>
 	</xsl:element>
 	<xsl:text>&#10;</xsl:text>
@@ -786,7 +786,7 @@ TODO:
                         <xsl:value-of select="@name"/>
                     </xsl:attribute>
                 </xsl:element>
-                <xsl:text>B.3.</xsl:text>
+                <xsl:text>A.3.</xsl:text>
                 <xsl:value-of select="position()"/>
                 <xsl:text>&#160;</xsl:text>
                 <xsl:value-of select="@name"/>
@@ -826,7 +826,7 @@ TODO:
 		</xsl:element>
 		<xsl:element name="a">
 			<xsl:attribute name="name"><xsl:text>FieldInterfaces</xsl:text></xsl:attribute>
-			<xsl:text>B.4&#160;&#160;Field interfaces</xsl:text>
+			<xsl:text>A.4&#160;&#160;Field interfaces</xsl:text>
 		</xsl:element>
 	</xsl:element>
 	<xsl:text>&#10;</xsl:text>
@@ -846,7 +846,7 @@ TODO:
             <xsl:text>&#10;</xsl:text>          
 
 <h2><a name="X3DFieldTypes"></a>
-B.4.1 X3DFieldTypes</h2>
+A.4.1 X3DFieldTypes</h2>
 
 <pre class="listing">public interface X3DFieldTypes {
 
@@ -900,7 +900,7 @@ B.4.1 X3DFieldTypes</h2>
             <xsl:text>&#10;</xsl:text>
 
 <h2><a name="X3DFieldEvent"></a>
-B.4.2 X3DFieldEvent</h2>
+A.4.2 X3DFieldEvent</h2>
 
 <pre class="listing">public class X3DFieldEvent {
 
@@ -926,7 +926,7 @@ B.4.2 X3DFieldEvent</h2>
             <xsl:text>&#10;</xsl:text>
 
 <h2><a name="X3DFieldEventListener"></a>
-B.4.3 X3DFieldEventListener</h2>
+A.4.3 X3DFieldEventListener</h2>
 
 <pre class="listing">public class X3DFieldEventListener {
     public void readableFieldChanged(X3DFieldEvent evt);
@@ -947,9 +947,9 @@ B.4.3 X3DFieldEventListener</h2>
             <xsl:text>&#10;</xsl:text>
 
 <h2><a name="X3DFieldDefinition"></a>
-B.4.4 X3DFieldDefinition</h2>
+A.4.4 X3DFieldDefinition</h2>
 
-<pre class="listing">public class X3DFieldDefinition {
+<pre class="listing">public interface X3DFieldDefinition {
 
     public String getName();
 
@@ -975,9 +975,9 @@ B.4.4 X3DFieldDefinition</h2>
             <xsl:text>&#10;</xsl:text>
 
 <h2><a name="X3DField"></a>
-B.4.5 X3DField</h2>
+A.4.5 X3DField</h2>
 
-<pre class="listing">public class X3DField {
+<pre class="listing">public interface X3DField {
 
     public X3DFieldDefinition getDefinition();
 
@@ -1009,9 +1009,9 @@ B.4.5 X3DField</h2>
             <xsl:text>&#10;</xsl:text>
 
 <h2><a name="MField"></a>
-B.4.6 MField</h2>
+A.4.6 MField</h2>
 
-<pre class="listing">public class MField : X3DField {
+<pre class="listing">public interface MField : X3DField {
 
     public int size();
 
@@ -1048,7 +1048,7 @@ B.4.6 MField</h2>
                         <xsl:value-of select="@name"/>
                     </xsl:attribute>
                 </xsl:element>
-                <xsl:text>B.4.</xsl:text>
+                <xsl:text>A.4.</xsl:text>
                 <xsl:value-of select="position()+6"/>
                 <xsl:text>&#160;</xsl:text>
                 <xsl:value-of select="@name"/>
@@ -1088,14 +1088,14 @@ B.4.6 MField</h2>
 		</xsl:element>
 		<xsl:element name="a">
 			<xsl:attribute name="name"><xsl:text>ServiceInterfaces</xsl:text></xsl:attribute>
-			<xsl:text>B.5&#160;&#160;Service interfaces</xsl:text>
+			<xsl:text>A.5&#160;&#160;Service interfaces</xsl:text>
 		</xsl:element>
 	</xsl:element>
 	<xsl:text>&#10;</xsl:text>
         <xsl:text>&#10;</xsl:text>
 
 <h2><a name="BrowserEvent"></a>
-B.5.1 BrowserEvent</h2>
+A.5.1 BrowserEvent</h2>
 
 <pre class="listing">public class BrowserEvent : EventObject
 {
@@ -1111,7 +1111,7 @@ B.5.1 BrowserEvent</h2>
 </pre>
 
 <h2><a name="BrowserFactory"></a>
-B.5.2 BrowserFactory</h2>
+A.5.2 BrowserFactory</h2>
 
 <pre class="listing">public class BrowserFactory
 {
@@ -1146,7 +1146,7 @@ B.5.2 BrowserFactory</h2>
 }
 </pre>
 
-<h2><a name="ServiceX3DFieldEvent"></a>B.5.3 X3DFieldEvent</h2>
+<h2><a name="ServiceX3DFieldEvent"></a>A.5.3 X3DFieldEvent</h2>
 
 <pre class="listing">public class X3DFieldEvent : EventObject
 {
@@ -1157,7 +1157,7 @@ B.5.2 BrowserFactory</h2>
 </pre>
 
 <h2><a name="Matrix3"></a>
-B.5.4 Matrix3</h2>
+A.5.4 Matrix3</h2>
 
 <pre class="listing">public class Matrix3
 {
@@ -1183,7 +1183,7 @@ B.5.4 Matrix3</h2>
 </pre>
 
 <h2><a name="Matrix4"></a>
-B.5.5 Matrix4</h2>
+A.5.5 Matrix4</h2>
 
 <pre class="listing">public class Matrix4
 {
@@ -1230,15 +1230,15 @@ B.5.5 Matrix4</h2>
 		</xsl:element>
 		<xsl:element name="a">
 			<xsl:attribute name="name"><xsl:text>StatementInterfaces</xsl:text></xsl:attribute>
-			<xsl:text>B.6&#160;&#160;Statement interfaces</xsl:text>
+			<xsl:text>A.6&#160;&#160;Statement interfaces</xsl:text>
 		</xsl:element>
 	</xsl:element>
 	<xsl:text>&#10;</xsl:text>
         <xsl:text>&#10;</xsl:text>
 
-<h2><a name="ComponentInfo"></a>B.6.1 ComponentInfo</h2>
+<h2><a name="ComponentInfo"></a>A.6.1 ComponentInfo</h2>
 
-<pre class="listing">public class ComponentInfo
+<pre class="listing">public interface ComponentInfo
 {
     public String getName();
     public int getLevel();
@@ -1247,9 +1247,9 @@ B.5.5 Matrix4</h2>
     public String toX3DString();
 }</pre>
 
-<h2><a name="ProfileInfo"></a>B.6.2 ProfileInfo</h2>
+<h2><a name="ProfileInfo"></a>A.6.2 ProfileInfo</h2>
 
-<pre class="listing">public class ProfileInfo
+<pre class="listing">public interface ProfileInfo
 {
     public String getName();
     public String getTitle();
@@ -1279,14 +1279,14 @@ B.5.5 Matrix4</h2>
 		</xsl:element>
 		<xsl:element name="a">
 			<xsl:attribute name="name"><xsl:text>ExceptionDefinitions</xsl:text></xsl:attribute>
-			<xsl:text>B.7&#160;&#160;Exception definitions</xsl:text>
+			<xsl:text>A.7&#160;&#160;Exception definitions</xsl:text>
 		</xsl:element>
 	</xsl:element>
 	<xsl:text>&#10;</xsl:text>
         <xsl:text>&#10;</xsl:text>
         
 <h2><a name="X3DException"></a>
-B.7.1 X3DException</h2>
+A.7.1 X3DException</h2>
 
 <pre class="listing">public class X3DException : RuntimeException
 {
@@ -1296,7 +1296,7 @@ B.7.1 X3DException</h2>
 </pre>
 
 <h2><a name="BrowserNotSharedException"></a>
-B.7.2 BrowserNotSharedException</h2>
+A.7.2 BrowserNotSharedException</h2>
 
 <pre class="listing">public class BrowserNotSharedException : X3DException
 {
@@ -1306,7 +1306,7 @@ B.7.2 BrowserNotSharedException</h2>
 </pre>
 
 <h2><a name="ConnectionException"></a>
-B.7.3 ConnectionException</h2>
+A.7.3 ConnectionException</h2>
 
 <pre class="listing">public class ConnectionException : X3DException
 {
@@ -1316,7 +1316,7 @@ B.7.3 ConnectionException</h2>
 </pre>
 
 <h2><a name="ImportedNodeException"></a>
-B.7.4 ImportedNodeException</h2>
+A.7.4 ImportedNodeException</h2>
 
 <pre class="listing">public class ImportedNodeException : X3DException
 {
@@ -1326,7 +1326,7 @@ B.7.4 ImportedNodeException</h2>
 </pre>
 
 <h2><a name="InsufficientCapabilitiesException"></a>
-B.7.5 InsufficientCapabilitiesException</h2>
+A.7.5 InsufficientCapabilitiesException</h2>
 
 <pre class="listing">public class InsufficientCapabilitiesException : X3DException
 {
@@ -1336,7 +1336,7 @@ B.7.5 InsufficientCapabilitiesException</h2>
 </pre>
 
 <h2><a name="InvalidBrowserException"></a>
-B.7.6 InvalidBrowserException</h2>
+A.7.6 InvalidBrowserException</h2>
 
 <pre class="listing">public class InvalidBrowserException : X3DException
 {
@@ -1346,7 +1346,7 @@ B.7.6 InvalidBrowserException</h2>
 </pre>
 
 <h2><a name="InvalidDocumentException"></a>
-B.7.7 InvalidDocumentException</h2>
+A.7.7 InvalidDocumentException</h2>
 
 <pre class="listing">public class InvalidDocumentException : X3DException
 {
@@ -1356,7 +1356,7 @@ B.7.7 InvalidDocumentException</h2>
 </pre>
 
 <h2><a name="InvalidExecutionContextException"></a>
-B.7.8 InvalidExecutionContextException</h2>
+A.7.8 InvalidExecutionContextException</h2>
 
 <pre class="listing">public class InvalidExecutionContextException : X3DException
 {
@@ -1366,7 +1366,7 @@ B.7.8 InvalidExecutionContextException</h2>
 </pre>
 
 <h2><a name="InvalidFieldException"></a>
-B.7.9 InvalidFieldException</h2>
+A.7.9 InvalidFieldException</h2>
 
 <pre class="listing">public class InvalidFieldException : X3DException
 {
@@ -1376,7 +1376,7 @@ B.7.9 InvalidFieldException</h2>
 </pre>
 
 <h2><a name="InvalidFieldValueException"></a>
-B.7.10  InvalidFieldValueException</h2>
+A.7.10  InvalidFieldValueException</h2>
 
 <pre class="listing">public class InvalidFieldValueException : X3DException
 {
@@ -1386,7 +1386,7 @@ B.7.10  InvalidFieldValueException</h2>
 </pre>
 
 <h2><a name="InvalidNodeException"></a>
-B.7.11 InvalidNodeException</h2>
+A.7.11 InvalidNodeException</h2>
 
 <pre class="listing">public class InvalidNodeException : X3DException
 {
@@ -1396,7 +1396,7 @@ B.7.11 InvalidNodeException</h2>
 </pre>
 
 <h2><a name="InvalidOperationTimingException"></a>
-B.7.12 InvalidOperationTimingException</h2>
+A.7.12 InvalidOperationTimingException</h2>
 
 <pre class="listing">public class InvalidOperationTimingException : X3DException
 {
@@ -1406,7 +1406,7 @@ B.7.12 InvalidOperationTimingException</h2>
 </pre>
 
 <h2><a name="InvalidProtoException"></a>
-B.7.13 InvalidProtoException</h2>
+A.7.13 InvalidProtoException</h2>
 
 <pre class="listing">public class InvalidProtoException : X3DException
 {
@@ -1416,7 +1416,7 @@ B.7.13 InvalidProtoException</h2>
 </pre>
 
 <h2><a name="InvalidRouteException"></a>
-B.7.14 InvalidRouteException</h2>
+A.7.14 InvalidRouteException</h2>
 
 <pre class="listing">public class InvalidRouteException : X3DException
 {
@@ -1426,7 +1426,7 @@ B.7.14 InvalidRouteException</h2>
 </pre>
 
 <h2><a name="InvalidURLException"></a>
-B.7.15 InvalidURLException</h2>
+A.7.15 InvalidURLException</h2>
 
 <pre class="listing">public class InvalidURLException : X3DException
 {
@@ -1436,7 +1436,7 @@ B.7.15 InvalidURLException</h2>
 </pre>
 
 <h2><a name="InvalidX3DException"></a>
-B.7.16 InvalidX3DException</h2>
+A.7.16 InvalidX3DException</h2>
 
 <pre class="listing">public class InvalidX3DException : X3DException
 {
@@ -1446,7 +1446,7 @@ B.7.16 InvalidX3DException</h2>
 </pre>
 
 <h2><a name="NodeInUseException"></a>
-B.7.17 NodeInUseException</h2>
+A.7.17 NodeInUseException</h2>
 
 <pre class="listing">public class NodeInUseException : X3DException
 {
@@ -1456,7 +1456,7 @@ B.7.17 NodeInUseException</h2>
 </pre>
 
 <h2><a name="NodeUnavailableException"></a>
-B.7.18 NodeUnavailableException</h2>
+A.7.18 NodeUnavailableException</h2>
 
 <pre class="listing">public class NodeUnavailableException : X3DException
 {
@@ -1466,7 +1466,7 @@ B.7.18 NodeUnavailableException</h2>
 </pre>
 
 <h2><a name="NoSuchBrowserException"></a>
-B.7.19 NoSuchBrowserException</h2>
+A.7.19 NoSuchBrowserException</h2>
 
 <pre class="listing">public class NoSuchBrowserException : X3DException
 {
@@ -1476,7 +1476,7 @@ B.7.19 NoSuchBrowserException</h2>
 </pre>
 
 <h2><a name="NotSupportedException"></a>
-B.7.20 NotSupportedException</h2>
+A.7.20 NotSupportedException</h2>
 
 <pre class="listing">public class NotSupportedException : X3DException
 {
@@ -1486,7 +1486,7 @@ B.7.20 NotSupportedException</h2>
 </pre>
 
 <h2><a name="URLUnavailableException"></a>
-B.7.21 URLUnavailableException</h2>
+A.7.21 URLUnavailableException</h2>
 
 <pre class="listing">public class URLUnavailableException : X3DException
 {
@@ -1527,16 +1527,16 @@ B.7.21 URLUnavailableException</h2>
         </p>
         
         <p>
-            DONE.  Sections for Annex B.1 B.2 B.3 and B.4 are being generated.  Need to be re-verified to ensure that
+            DONE.  Sections for Annex A.1 A.2 A.3 and A.4 are being generated.  Need to be re-verified to ensure that
             no side effects have crept in during incremental development.
         </p>
 
         <p>
-            DONE.  Original code sections for Annex B.4.1 through B.4.6 needs to be inserted.
+            DONE.  Original code sections for Annex A.4.1 through A.4.6 needs to be inserted.
         </p>
 
         <p>
-            DONE.  Original prose sections for Annex B.5 B.6 and B.7 has been inserted.
+            DONE.  Original prose sections for Annex A.5 A.6 and A.7 has been inserted.
         </p>
         
         <p>
@@ -1557,7 +1557,7 @@ B.7.21 URLUnavailableException</h2>
 </xsl:result-document>
 
 <!-- ===================================================================================== -->
-<!-- Annex C Node interfaces -->
+<!-- Annex B Node interfaces -->
   
 <xsl:result-document  href="CSharpLanguageBinding.Part5.nodeInterfaces.html" method="html" omit-xml-declaration="yes" encoding="UTF-8" indent="yes">
 
@@ -1573,7 +1573,7 @@ B.7.21 URLUnavailableException</h2>
 
 	<xsl:element name="title">
 		<!-- mdash = 8212 &amp;#8212;&amp;#8212; -->
-		<xsl:text disable-output-escaping="yes">ISO/IEC 19777-2:2014 -- X3D Java Binding -- Annex C Node interfaces </xsl:text>
+		<xsl:text disable-output-escaping="yes">ISO/IEC 19777-2:2014 -- X3D Java Binding -- Annex B Node interfaces </xsl:text>
 	</xsl:element>
 	<xsl:element name="meta">
 		<xsl:attribute name="name"><xsl:text>identifier</xsl:text></xsl:attribute>
@@ -1621,7 +1621,7 @@ B.7.21 URLUnavailableException</h2>
 		</xsl:element>
 		<xsl:element name="p">
 			<xsl:attribute name="class"><xsl:text>HeadingClause</xsl:text></xsl:attribute>
-			<xsl:text>Annex C</xsl:text>
+			<xsl:text>Annex B</xsl:text>
 		</xsl:element>
 		<xsl:element name="p">
 			<xsl:attribute name="class"><xsl:text>AnnexType</xsl:text></xsl:attribute>
@@ -1657,7 +1657,7 @@ B.7.21 URLUnavailableException</h2>
 		<xsl:element name="a">
 			<xsl:attribute name="name"><xsl:text>IntroductionAndTopics</xsl:text></xsl:attribute>
 		</xsl:element>
-                <xsl:text>C.1&#160;&#160;Introduction and topics</xsl:text>
+                <xsl:text>B.1&#160;&#160;Introduction and topics</xsl:text>
 	</xsl:element>
 	<xsl:text>&#10;</xsl:text>
 
@@ -1665,7 +1665,7 @@ B.7.21 URLUnavailableException</h2>
 	<xsl:element name="h2">
 		<xsl:element name="a">
 			<xsl:attribute name="name"><xsl:text>Introduction</xsl:text></xsl:attribute>
-			<xsl:text>C.1.1&#160;&#160;Introduction</xsl:text>
+			<xsl:text>B.1.1&#160;&#160;Introduction</xsl:text>
 		</xsl:element>
 	</xsl:element>
 	<xsl:text>&#10;</xsl:text>
@@ -1686,7 +1686,7 @@ B.7.21 URLUnavailableException</h2>
 	<xsl:element name="h2">
 		<xsl:element name="a">
 			<xsl:attribute name="name"><xsl:text>Topics</xsl:text></xsl:attribute>
-			<xsl:text>C.1.2&#160;&#160;Topics</xsl:text>
+			<xsl:text>B.1.2&#160;&#160;Topics</xsl:text>
 		</xsl:element>
 	</xsl:element>
 	<xsl:text>&#10;</xsl:text>
@@ -1695,7 +1695,7 @@ B.7.21 URLUnavailableException</h2>
             <xsl:text>See </xsl:text>
             <xsl:element name="a">
                     <xsl:attribute name="href"><xsl:text>#TopicsTable</xsl:text></xsl:attribute>
-                    <xsl:text>Table&#160;C.1</xsl:text>
+                    <xsl:text>Table&#160;B.1</xsl:text>
             </xsl:element>
             <xsl:text> for the topics in this clause.</xsl:text>
             <xsl:text>&#10;</xsl:text>
@@ -1709,7 +1709,7 @@ B.7.21 URLUnavailableException</h2>
 			<xsl:element name="a">
 				<xsl:attribute name="name"><xsl:text>TopicsTable</xsl:text></xsl:attribute>
 				<!-- mdash = 8212 -->
-				<xsl:text disable-output-escaping="yes">Table C.1 &amp;mdash; Topics</xsl:text>
+				<xsl:text disable-output-escaping="yes">Table B.1 &amp;mdash; Topics</xsl:text>
 			</xsl:element>
 		</xsl:element>
 		<xsl:text>&#10;</xsl:text>
@@ -1737,19 +1737,19 @@ B.7.21 URLUnavailableException</h2>
                                 <li>
                                     <xsl:element name="a">
                                             <xsl:attribute name="href"><xsl:text>#IntroductionAndTopics</xsl:text></xsl:attribute>
-                                            <xsl:text>C.1&#160; Introduction and topics</xsl:text>
+                                            <xsl:text>B.1&#160; Introduction and topics</xsl:text>
                                     </xsl:element>
                                     <ul>
                                         <li>
                                             <xsl:element name="a">
                                                     <xsl:attribute name="href"><xsl:text>#Introduction</xsl:text></xsl:attribute>
-                                                    <xsl:text>C.1.1&#160;Introduction</xsl:text>
+                                                    <xsl:text>B.1.1&#160;Introduction</xsl:text>
                                             </xsl:element>
                                         </li>
                                         <li>
                                             <xsl:element name="a">
                                                     <xsl:attribute name="href"><xsl:text>#Topics</xsl:text></xsl:attribute>
-                                                    <xsl:text>C.1.2&#160;Topics</xsl:text>
+                                                    <xsl:text>B.1.2&#160;Topics</xsl:text>
                                             </xsl:element>
                                         </li>
                                     </ul>
@@ -1759,31 +1759,31 @@ B.7.21 URLUnavailableException</h2>
                                 <li>
                                     <xsl:element name="a">
                                             <xsl:attribute name="href"><xsl:text>#GenerationRules</xsl:text></xsl:attribute>
-                                            <xsl:text>C.2&#160; Generation rules</xsl:text>
+                                            <xsl:text>B.2&#160; Generation rules</xsl:text>
                                     </xsl:element>
                                     <ul>
                                         <li>
                                             <xsl:element name="a">
                                                     <xsl:attribute name="href"><xsl:text>#PackageDefinition</xsl:text></xsl:attribute>
-                                                    <xsl:text>C.2.1&#160;Package definition</xsl:text>
+                                                    <xsl:text>B.2.1&#160;Package definition</xsl:text>
                                             </xsl:element>
                                         </li>
                                         <li>
                                             <xsl:element name="a">
                                                     <xsl:attribute name="href"><xsl:text>#ClassDefinitions</xsl:text></xsl:attribute>
-                                                    <xsl:text>C.2.2&#160;Class definitions</xsl:text>
+                                                    <xsl:text>B.2.2&#160;Class definitions</xsl:text>
                                             </xsl:element>
                                         </li>
                                         <li>
                                             <xsl:element name="a">
                                                     <xsl:attribute name="href"><xsl:text>#ClassDerivation</xsl:text></xsl:attribute>
-                                                    <xsl:text>C.2.3&#160;Class derivation</xsl:text>
+                                                    <xsl:text>B.2.3&#160;Class derivation</xsl:text>
                                             </xsl:element>
                                         </li>
                                         <li>
                                             <xsl:element name="a">
                                                     <xsl:attribute name="href"><xsl:text>#MethodDeclarations</xsl:text></xsl:attribute>
-                                                    <xsl:text>C.2.4&#160;Method declarations</xsl:text>
+                                                    <xsl:text>B.2.4&#160;Method declarations</xsl:text>
                                             </xsl:element>
                                         </li>
                                     </ul>
@@ -1794,7 +1794,7 @@ B.7.21 URLUnavailableException</h2>
                                 <li>
                                     <xsl:element name="a">
                                             <xsl:attribute name="href"><xsl:text>#NodeInterfaces</xsl:text></xsl:attribute>
-                                            <xsl:text>C.3&#160;Node interfaces</xsl:text>
+                                            <xsl:text>B.3&#160;Node interfaces</xsl:text>
                                     </xsl:element>
                                     <xsl:text>&#10;</xsl:text>
 
@@ -1811,7 +1811,7 @@ B.7.21 URLUnavailableException</h2>
                                                         <xsl:text>#</xsl:text>
                                                         <xsl:value-of select="@name"/>
                                                     </xsl:attribute>
-                                                    <xsl:text>C.3.</xsl:text>
+                                                    <xsl:text>B.3.</xsl:text>
                                                     <xsl:value-of select="position()"/>
                                                     <xsl:text>&#160;</xsl:text>
                                                     <xsl:value-of select="@name"/>
@@ -1877,25 +1877,25 @@ B.7.21 URLUnavailableException</h2>
 		</xsl:element>
 		<xsl:element name="a">
 			<xsl:attribute name="name"><xsl:text>GenerationRules</xsl:text></xsl:attribute>
-			<xsl:text>C.2&#160;&#160;Generation rules</xsl:text>
+			<xsl:text>B.2&#160;&#160;Generation rules</xsl:text>
 		</xsl:element>
 	</xsl:element>
 	<xsl:text>&#10;</xsl:text>
         <xsl:text>&#10;</xsl:text>
         
-<h2><a name="PackageDefinition"></a>C.2.1 Package definition</h2>
+<h2><a name="PackageDefinition"></a>B.2.1 Package definition</h2>
 
 <p>Each concrete class shall belong to the sub-package name according to the component
 formal name under the <code>org.web3d.x3d.sai</code> parent package. 
 (See 3.3.1.4 Package Structure)</p>
 
-<h2><a name="ClassDefinitions"></a>C.2.2 Class definitions</h2>
+<h2><a name="ClassDefinitions"></a>B.2.2 Class definitions</h2>
 
 <p>Node interface representations in Java shall be expressed as public interfaces. </p>
 
-<h2><a name="ClassDerivation"></a>C.2.3 Class derivation</h2>
+<h2><a name="ClassDerivation"></a>B.2.3 Class derivation</h2>
 
-<p>Each node interface shall extend the interfaces defined in Annex B as appropriate
+<p>Each node interface shall extend the interfaces defined in Annex A as appropriate
 for the abstract node requirements for each node type. For example, the Inline 
 interface definition is</p>
 <blockquote>
@@ -1907,9 +1907,9 @@ interface definition is</p>
 </pre>
 </blockquote>
 
-<h2><a name="MethodDeclarations"></a>C.2.4 Method declarations</h2><p>Within each node interface there shall be methods to read and set the values for 
+<h2><a name="MethodDeclarations"></a>B.2.4 Method declarations</h2><p>Within each node interface there shall be methods to read and set the values for 
 every field. The naming convention for each field method shall follow the definition
-in <a href="nodeTypeInterfaces.html#Conventions">B.1.2 Conventions</a> for the abstract
+in <a href="nodeTypeInterfaces.html#Conventions">A.1.2 Conventions</a> for the abstract
 interfaces. Where fields are already covered by the abstract interface, the concrete
 interface is not required to redeclare the same methods. The concrete interface shall
 declare methods that are not defined by the abstract node representation.</p>
@@ -1936,7 +1936,7 @@ declare methods that are not defined by the abstract node representation.</p>
 		</xsl:element>
 		<xsl:element name="a">
 			<xsl:attribute name="name"><xsl:text>NodeInterfaces</xsl:text></xsl:attribute>
-			<xsl:text>C.3&#160;&#160;Node interfaces</xsl:text>
+			<xsl:text>B.3&#160;&#160;Node interfaces</xsl:text>
 		</xsl:element>
 	</xsl:element>
 	<xsl:text>&#10;</xsl:text>
@@ -1972,7 +1972,7 @@ declare methods that are not defined by the abstract node representation.</p>
                         <xsl:value-of select="@name"/>
                     </xsl:attribute>
                 </xsl:element>
-                <xsl:text>C.3.</xsl:text>
+                <xsl:text>B.3.</xsl:text>
                 <xsl:value-of select="position()"/>
                 <xsl:text>&#160;</xsl:text>
                 <xsl:value-of select="@name"/>
@@ -2027,7 +2027,7 @@ declare methods that are not defined by the abstract node representation.</p>
         </p>
         
         <p>
-            DONE.  The node-generation blocks are successfully creating Annex C - Concrete node interfaces.
+            DONE.  The node-generation blocks are successfully creating Annex B - Concrete node interfaces.
             A full set of additions to the X3D Schema now include inputOnly/outputOnly/SFNode/MFNode fields as appinfo entries.
             X3D version 3.3 is being used to generate the clause.  
         </p>
@@ -2270,7 +2270,7 @@ declare methods that are not defined by the abstract node representation.</p>
         <xsl:when test="(string-length($restrictions) > 0) and not(@type='SFString') and not(@type='MFString')
                         and not((@type='jointNames') or (@type='featurePointNames') or (@type='segmentNames') or (@type='siteNames'))
                         and not(contains($restrictions,'(-&#8734;,&#8734;)'))">
-            <xsl:text> throws InvalidFieldValueException;</xsl:text>
+            <xsl:text>;</xsl:text>
             <!-- verbose output, javadoc is sufficient:
             
             <xsl:text> // valid range </xsl:text>
@@ -2498,7 +2498,7 @@ declare methods that are not defined by the abstract node representation.</p>
             <xsl:if test="(@name='GeoOrigin') or (@name='geoOrigin')">
                 <xsl:text>@Deprecated </xsl:text>
             </xsl:if>
-            <xsl:text>public class </xsl:text>
+            <xsl:text>public interface </xsl:text>
             <xsl:value-of select="@name"/>
             <xsl:text> : </xsl:text>
             <xsl:choose>
@@ -2538,10 +2538,10 @@ declare methods that are not defined by the abstract node representation.</p>
                           int[] pixels);
 
     /** Assign a new image as current image */
-    public void setImage (java.awt.image.RenderedImage image);
+    public void setImage (RenderedImage image);
 
     /** Assign a portion of a new image as part of current image */
-    public void setSubImage (java.awt.image.RenderedImage image,
+    public void setSubImage (RenderedImage image,
                              int srcWidth,
                              int srcHeight,
                              int srcXOffset,
@@ -2859,7 +2859,7 @@ declare methods that are not defined by the abstract node representation.</p>
                 <xsl:text>public void </xsl:text>
                 <xsl:text>set</xsl:text>
                 <xsl:value-of select="$camelCaseName"/>
-                <xsl:text> (X3DPrototypeInstance protoInstance) throws InvalidFieldValueException;</xsl:text>
+                <xsl:text> (X3DPrototypeInstance protoInstance);</xsl:text>
                 <xsl:text>&#10;</xsl:text>
             </xsl:if>
             <xsl:if test="starts-with(@name,'MF') and (contains(@name,'Color') or contains(@name,'Rotation') or contains(@name,'FVec') or contains(@name,'Matrix'))">
@@ -2926,7 +2926,7 @@ declare methods that are not defined by the abstract node representation.</p>
                 <!-- remove plural 's' from $defaultParameterName -->
                 <xsl:value-of select="substring($defaultParameterName,1,string-length($defaultParameterName)-1)"/>
                 <xsl:text>)</xsl:text>
-                <xsl:text> throws ArrayIndexOutOfBoundsException;</xsl:text>
+                <xsl:text>;</xsl:text>
                 <xsl:text>&#10;</xsl:text>
                 
                 <xsl:if test="(@name='MFTime')">
@@ -2937,7 +2937,7 @@ declare methods that are not defined by the abstract node representation.</p>
                     <xsl:text>&#10;</xsl:text>
                     <!-- getter -->
                     <xsl:text>&#160;&#160;</xsl:text>
-                    <xsl:text>public void set1Value (int index, long value) throws ArrayIndexOutOfBoundsException;</xsl:text>
+                    <xsl:text>public void set1Value (int index, long value);</xsl:text>
                     <xsl:text>&#10;</xsl:text>
                 </xsl:if>
                 <!-- additional setters for array types -->
@@ -3012,7 +3012,7 @@ declare methods that are not defined by the abstract node representation.</p>
                 <!-- remove plural 's' from $defaultParameterName -->
                 <xsl:value-of select="substring($defaultParameterName,1,string-length($defaultParameterName)-1)"/>
                 <xsl:text>)</xsl:text>
-                <xsl:text> throws ArrayIndexOutOfBoundsException;</xsl:text>
+                <xsl:text> ;</xsl:text>
                 <xsl:text>&#10;</xsl:text>
             </xsl:if> <!-- end MF type handling -->
         </xsl:otherwise>
@@ -3344,7 +3344,7 @@ declare methods that are not defined by the abstract node representation.</p>
     <xsl:if test="(@name='GeoOrigin') or (@name='geoOrigin')">
         <xsl:text>@Deprecated </xsl:text>
     </xsl:if>
-    <xsl:text>public class </xsl:text>
+    <xsl:text>public interface </xsl:text>
     <xsl:value-of select="@name"/>
     <xsl:if test="(string-length($baseInterface) > 0) or xs:annotation/xs:appinfo/xs:attribute[@name='additionalInterface'][contains(@default,'Node')]"> <!-- TODO: There is a problem here with X3DScriptNode, which doesn't extend from X3DNode -->
         <xsl:text> : </xsl:text>
@@ -4091,7 +4091,7 @@ node.source {background-color:#f4f4f4;}
                 <xsl:text>public void </xsl:text>
                 <xsl:text>set</xsl:text>
                 <xsl:value-of select="$camelCaseName"/>
-                <xsl:text> (X3DPrototypeInstance protoInstance) throws InvalidFieldValueException;</xsl:text>
+                <xsl:text> (X3DPrototypeInstance protoInstance);</xsl:text>
                 <xsl:text>&#10;</xsl:text>
             </xsl:if>
                 
