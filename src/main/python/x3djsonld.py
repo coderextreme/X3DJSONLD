@@ -1,4 +1,4 @@
-# Usage:  python3 x3djsonld.py [ file.json ] # optional file, assumes ../data/abox.json if not specified
+# Usage:  python3 x3djsonld.py [ file.json ] # optional X3D JSON formatted file, assumes ../data/abox.json if not specified
 print("#", end="")   # comment out output created by importing x3d (see below)
 import json
 import sys
@@ -145,7 +145,7 @@ def parseObject(parent, data,indent):
             out += "\n"+key
             if key in ("left", "right", "top", "bottom", "front", "back"):
                 out += "Texture"
-            if key in ("fontStyle", "color", "normal", "geometry", "appearance", "material", "texture", "textureTransform", "fontStyle", "source", "texCoord", "coord", "skeleton", "displacements", "segments", "shaders", "programs", "texture", "left", "right", "top", "bottom", "front", "back"):
+            if key in ("fontStyle", "color", "normal", "geometry", "appearance", "material", "texture", "textureTransform", "fontStyle", "source", "texCoord", "coord", "skeleton", "viewpoints", "skin", "displacers", "sites", "parts", "displacements", "segments", "shaders", "programs", "texture", "left", "right", "top", "bottom", "front", "back"):
                 out += "="
             elif key not in ("X3D", "AudioClip", "LOD", "PositionInterpolator", "Extrusion", "TextureCoordinate", "Normal", "FontStyle", "ComposedShader", "ImageTexture", "ShaderProgram", "ShaderPart", "ComposedCubeMapTexture", "WorldInfo", "NavigationInfo", "Viewpoint", "Background", "Transform", "Shape", "Sphere", "Appearance", "Material", "Box", "Group", "Script", "Text", "PixelTexture", "IndexedFaceSet", "HAnimDisplacer", "HAnimSite", "HAnimJoint", "HAnimSegment", "HAnimHumanoid", "MetadataDouble", "MetadataFloat", "MetadataString", "MetadataSet", "ViewpointGroup", "ProtoInstance", "ProtoDeclare", "ExternProtoDeclare", "TouchSensor", "ProgramShader", "VisibilitySensor", "TimeSensor", "PlaneSensor", "Switch", "AcousticProperties", "Sound", "Cylinder", "ROUTE", "PhysicalMaterial", "Color", "ColorRGBA", "Coordinate", "TextureBackground", "Collision", "LineSet", "IndexedLineSet", "Inline", "Anchor", "TextureTransform", "OrientationInterpolator", "ListenerPointSource", "Cone", "LayerSet", "ProximitySensor", "StringSensor", "IMPORT", "EXPORT", "PointLight", "DirectionalLight", "ChannelSplitter", "ChannelMerger", "BooleanFilter", "BooleanToggle", "BiquadFilter", "Fog", "SpotLight", "MovieTexture", "IntegerSequencer", "Billboard", "GeoViewpoint", "GeoPositionInterpolator", "TextureProperties", "ColorInterpolator", "StreamAudioDestination", "SpatialSound", "Analyser", "Gain", "ChannelSelector", "Convolver", "Delay", "DynamicsCompressor", "WaveShaper", "BufferAudioSource", "StreamAudioSource", "MicrophoneSource", "OscillatorSource", "Rectangle2D", "ScalarInterpolator", "CADLayer", "CADAssembly", "CADPart", "CADFace", "EspduTransform", "ReceiverPdu", "SignalPdu", "TransmitterPdu", "DISEntityManager", "DISEntityTypeMapping", "LoadSensor", "GeoMetadata", "ImageCubeMapTexture", "ImageTexture3D", "PackagedShader"):
 
@@ -165,7 +165,11 @@ def parseObject(parent, data,indent):
                     out += str(prop)+"("
                     out += parseObject(prop, propValue,indent+1)
                     out += ")"
-            elif key in ("fontStyle", "color", "normal", "geometry", "appearance", "material", "texture", "textureTransform", "fontStyle", "source", "texCoord", "coord", "skeleton", "displacements", "segments", "shaders", "programs", "texture", "left", "right", "top", "bottom", "front", "back"):
+            elif key in ("skeleton", "viewpoints", "skin", "displacers", "sites", "segments", "parts", "shaders", "programs"):
+                out += "["
+                out += parseObject(k, v,indent+1)
+                out += "]"
+            elif key in ("fontStyle", "color", "normal", "geometry", "appearance", "material", "texture", "textureTransform", "fontStyle", "source", "texCoord", "coord", "displacements", "texture", "left", "right", "top", "bottom", "front", "back"):
                 out += parseObject(k, v,indent+1)
             else:
                 out += "("
@@ -182,7 +186,7 @@ def parseObject(parent, data,indent):
                 out += key+"="
             if key in ("meta", "unit", "component"):
                 pass
-            elif key in ("vertexCount", "range", "children", "url", "frontUrl", "backUrl", "bottomUrl", "topUrl", "leftUrl", "rightUrl", "key", "url", "justify", "string", "field", "fieldValue", "connect", "image", "avatarSize", "skyAngle", "groundAngle", "skinCoordWeight", "skinCoordIndex", "colorIndex", "texCoordIndex", "normalIndex", "coordIndex", "family", "stiffness", "llimit", "ulimit", "info"):
+            elif key in ("vertexCount", "range", "children", "url", "frontUrl", "backUrl", "bottomUrl", "topUrl", "leftUrl", "rightUrl", "key", "url", "justify", "string", "field", "fieldValue", "connect", "image", "avatarSize", "skyAngle", "groundAngle", "skinCoordWeight", "skinCoordIndex", "colorIndex", "texCoordIndex", "normalIndex", "coordIndex", "family", "stiffness", "llimit", "ulimit", "info", "skeleton", "viewpoints", "skin", "displacers", "sites", "segments", "parts", "shaders", "programs"):
                 out += parseArray("[", "]", parent, key, v,indent+1, fieldType)
             elif key in ("vector", "groundColor", "skyColor", "spine", "crossSection", "point"):
                 out += parseArray("[", "]", parent, key, v,indent+1, fieldType)
@@ -193,7 +197,7 @@ def parseObject(parent, data,indent):
             elif key in ("translation", "rotation"):
                 out += parseArray("(", ")", parent, key, v,indent+1, fieldType)
             elif key in ("value") and "@type" in data:
-                print("TYPE "+data["@type"], file=sys.stderr)
+                # print("TYPE "+data["@type"], file=sys.stderr)
                 dt = data["@type"]
                 if dt.startswith("SF"):
                     out += parseArray("(", ")", parent, key, v,indent+1, dt)

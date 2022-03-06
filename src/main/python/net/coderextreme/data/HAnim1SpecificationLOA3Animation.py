@@ -1,4 +1,4 @@
-#x3d.py package loaded, have fun with X3D Graphics!
+#x3d.py package 4.0.60 loaded, have fun with X3D Graphics!
 from x3d import *
 from x3d import SFBool
 print(
@@ -22,7 +22,7 @@ Viewpoint(centerOfRotation=((0,0.9149,0.0016)), description="Humanoid LOA 3 Righ
 Viewpoint(centerOfRotation=((0,0.9149,0.0016)), description="Humanoid LOA 3 Left Side Close", orientation=((0,1,0,-1.2)), position=((-1,0.8,0.5))),
 Viewpoint(centerOfRotation=((0,0.9149,0.0016)), description="Humanoid LOA 3 Left Side", orientation=((0,1,0,-1.5708)), position=((-2.6,0.8,0))),
 Viewpoint(centerOfRotation=((0,0.9149,0.0016)), description="Humanoid LOA 3 Top", orientation=((1,0,0,-1.5708)), position=((0,3.5,0))),
-HAnimHumanoid(name="humanoid", DEF="hanim_humanoid", info=["authorName=Matthew T. Beitler Joe D. Williams Don Brutzman","authorEmail=HAnim@web3D.org","copyright=none","creationDate=12 May 1999","usageRestrictions=none","humanoidVersion=1.0","height=1.7504"], version="1.0", skeleton=(
+HAnimHumanoid(name="humanoid", DEF="hanim_humanoid", info=["authorName=Matthew T. Beitler Joe D. Williams Don Brutzman","authorEmail=HAnim@web3D.org","copyright=none","creationDate=12 May 1999","usageRestrictions=none","humanoidVersion=1.0","height=1.7504"], version="1.0", skeleton=[
 HAnimJoint(name="humanoid_root", DEF="hanim_humanoid_root", center=((0,0.824,0.0277)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="sacrum", DEF="hanim_sacrum", children=[
 #<HAnimJoint name='humanoid_root'/> visualization sphere within <HAnimSegment name='sacrum'/>
@@ -2885,7 +2885,7 @@ HAnimSite(name="r_pinky_distal_tip", DEF="hanim_r_pinky_distal_tip", translation
 #HAnimSite visualization shape
 
 TouchSensor(description="HAnimSite r_pinky_distal_tip"),
-Shape(USE="HAnimSiteShape"),]),])])])])])])])])])])])])])])])])])])])])])])])])])])])])), viewpoints=(
+Shape(USE="HAnimSiteShape"),]),])])])])])])])])])])])])])])])])])])])])])])])])])])])])], viewpoints=[
 HAnimSite(name="l_inclined_view", DEF="hanim_l_inclined_view", rotation=((-0.113,0.993,0.0347,0.671)), translation=((1.62,1.05,2.06)), children=[
 Viewpoint(DEF="hanim_l_inclined_viewpoint", description="left inclined", position=((0,0,0))),
 #HAnimSite/Viewpoint visualization shape
@@ -3001,7 +3001,7 @@ Shape(USE="HAnimSiteViewpointShape")])]),]),
 HAnimSite(USE="hanim_l_eyeball_site_view"),
 HAnimSite(USE="hanim_r_eyeball_site_view"),
 HAnimSite(USE="hanim_l_hand_front_view"),
-HAnimSite(USE="hanim_r_hand_front_view")), joints=(
+HAnimSite(USE="hanim_r_hand_front_view")], joints=(
 HAnimJoint(USE="hanim_humanoid_root"),
 HAnimJoint(USE="hanim_sacroiliac"),
 HAnimJoint(USE="hanim_vl5"),
@@ -3095,7 +3095,7 @@ HAnimJoint(USE="hanim_r_thumb2"),
 HAnimJoint(USE="hanim_l_thumb3"),
 HAnimJoint(USE="hanim_r_thumb3"),
 HAnimJoint(USE="hanim_l_wrist"),
-HAnimJoint(USE="hanim_r_wrist")), segments=(
+HAnimJoint(USE="hanim_r_wrist")), segments=[
 HAnimSegment(USE="hanim_pelvis"),
 HAnimSegment(USE="hanim_skull"),
 HAnimSegment(USE="hanim_jaw"),
@@ -3189,7 +3189,7 @@ HAnimSegment(USE="hanim_r_thumb_metacarpal"),
 HAnimSegment(USE="hanim_l_thumb_proximal"),
 HAnimSegment(USE="hanim_r_thumb_proximal"),
 HAnimSegment(USE="hanim_l_upperarm"),
-HAnimSegment(USE="hanim_r_upperarm")), sites=(
+HAnimSegment(USE="hanim_r_upperarm")], sites=[
 HAnimSite(USE="hanim_crotch_pt"),
 HAnimSite(USE="hanim_skull_tip"),
 HAnimSite(USE="hanim_sellion_pt"),
@@ -3280,7 +3280,7 @@ HAnimSite(USE="hanim_l_tragion_pt"),
 HAnimSite(USE="hanim_r_trochanterion_pt"),
 HAnimSite(USE="hanim_l_trochanterion_pt"),
 HAnimSite(USE="hanim_l_ulnar_styloid_pt"),
-HAnimSite(USE="hanim_r_ulnar_styloid_pt"))),
+HAnimSite(USE="hanim_r_ulnar_styloid_pt")]),
 Group(DEF="StopAnimation", children=[
 TimeSensor(DEF="StopTimer", cycleInterval=5.73, loop=True),
 PositionInterpolator(DEF="Stop_humanoid_root_TranslationInterpolator", key=[float(0),float(0.5),float(1)], keyValue=[(0,0,0),(0,0,0),(0,0,0)]),

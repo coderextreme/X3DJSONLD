@@ -1,4 +1,4 @@
-#x3d.py package loaded, have fun with X3D Graphics!
+#x3d.py package 4.0.60 loaded, have fun with X3D Graphics!
 from x3d import *
 from x3d import SFBool
 print(
@@ -15,7 +15,7 @@ MetadataString(name="authorEmail", value=["beitler@graphics.cis.upenn.edu beitle
 MetadataString(name="authorName", value=["Matthew T. Beitler"]),
 MetadataString(name="copyright", value=["Copyright 1999 Matthew T. Beitler"]),
 MetadataString(name="humanoidVersion", value=["JointCenters 1.1 LOA1"]),
-MetadataString(name="usageRestrictions", value=["PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose."])])), skeleton=(
+MetadataString(name="usageRestrictions", value=["PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose."])])), skeleton=[
 HAnimJoint(name="HumanoidRoot", DEF="hanim_HumanoidRoot", center=((0.0,0.824,0.0277)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimJoint(name="sacroiliac", DEF="hanim_sacroiliac", center=((0.0,0.9149,0.0016)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="pelvis", DEF="hanim_pelvis", children=[
@@ -147,12 +147,12 @@ HAnimSite(name="r_tragion_pt", DEF="hanim_r_tragion_pt", translation=((-0.0646,1
 HAnimSite(name="r_gonion_pt", DEF="hanim_r_gonion_pt", translation=((-0.052,1.5529,0.0347))),
 HAnimSite(name="l_tragion_pt", DEF="hanim_l_tragion_pt", translation=((0.0739,1.6348,0.0282))),
 HAnimSite(name="l_gonion_pt", DEF="hanim_l_gonion_pt", translation=((0.0631,1.553,0.033))),
-HAnimSite(name="nuchale_pt", DEF="hanim_nuchale_pt", translation=((0.0039,1.5972,-0.0796)))])])])])), viewpoints=(
+HAnimSite(name="nuchale_pt", DEF="hanim_nuchale_pt", translation=((0.0039,1.5972,-0.0796)))])])])])], viewpoints=[
 HAnimSite(name="DiamondManLOA_1_view", DEF="hanim_DiamondManLOA_1_view", children=[
 Viewpoint(DEF="InclinedView", description="Inclined View", orientation=((-0.113,0.993,0.0347,0.671)), position=((1.62,1.05,2.06))),
 Viewpoint(DEF="FrontView", description="Front View", position=((0,0.854,2.57665))),
 Viewpoint(DEF="SideView", description="Side View", orientation=((0,1,0,1.57079)), position=((2.5929,0.854,0))),
-Viewpoint(DEF="TopView", description="Top View", orientation=((1,0,0,-1.57079)), position=((0,3.4495,0)))])), joints=(
+Viewpoint(DEF="TopView", description="Top View", orientation=((1,0,0,-1.57079)), position=((0,3.4495,0)))])], joints=(
 HAnimJoint(USE="hanim_HumanoidRoot"),
 HAnimJoint(USE="hanim_sacroiliac"),
 HAnimJoint(USE="hanim_vl1"),
@@ -172,7 +172,7 @@ HAnimJoint(USE="hanim_r_midtarsal"),
 HAnimJoint(USE="hanim_l_shoulder"),
 HAnimJoint(USE="hanim_r_shoulder"),
 HAnimJoint(USE="hanim_l_wrist"),
-HAnimJoint(USE="hanim_r_wrist")), segments=(
+HAnimJoint(USE="hanim_r_wrist")), segments=[
 HAnimSegment(USE="hanim_pelvis"),
 HAnimSegment(USE="hanim_l1"),
 HAnimSegment(USE="hanim_c4"),
@@ -190,7 +190,7 @@ HAnimSegment(USE="hanim_r_middistal"),
 HAnimSegment(USE="hanim_l_thigh"),
 HAnimSegment(USE="hanim_r_thigh"),
 HAnimSegment(USE="hanim_l_upperarm"),
-HAnimSegment(USE="hanim_r_upperarm")), sites=(
+HAnimSegment(USE="hanim_r_upperarm")], sites=[
 HAnimSite(USE="hanim_skull_tip"),
 HAnimSite(USE="hanim_sellion_pt"),
 HAnimSite(USE="hanim_supramenton_pt"),
@@ -242,5 +242,5 @@ HAnimSite(USE="hanim_r_sphyrion_pt"),
 HAnimSite(USE="hanim_r_tragion_pt"),
 HAnimSite(USE="hanim_l_tragion_pt"),
 HAnimSite(USE="hanim_l_ulnar_styloid_pt"),
-HAnimSite(USE="hanim_r_ulnar_styloid_pt")))]))
+HAnimSite(USE="hanim_r_ulnar_styloid_pt")])]))
 .XML())

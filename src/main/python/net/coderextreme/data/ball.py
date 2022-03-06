@@ -1,4 +1,4 @@
-#x3d.py package loaded, have fun with X3D Graphics!
+#x3d.py package 4.0.60 loaded, have fun with X3D Graphics!
 from x3d import *
 from x3d import SFBool
 print(
@@ -30,23 +30,23 @@ ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_left.p
 rightTexture=
 ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"]), 
 topTexture=
-ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"])), shaders=(
+ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"])), shaders=[
 ComposedShader(language="GLSL", field=[field(name="chromaticDispertion", accessType="inputOutput", type="SFVec3f", value=(0.98,1,1.033)),
 field(name="cube", type="SFNode", accessType="inputOutput", children=[
 ComposedCubeMapTexture(USE="texture")]),
 field(name="bias", accessType="inputOutput", type="SFFloat", value=0.5),
 field(name="scale", accessType="inputOutput", type="SFFloat", value=0.5),
 field(name="power", accessType="inputOutput", type="SFFloat", value=2)
-], parts=(
+], parts=[
 ShaderPart(url=["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"], type="VERTEX"),
-ShaderPart(DEF="common", url=["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"], type="FRAGMENT"))),
+ShaderPart(DEF="common", url=["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"], type="FRAGMENT")]),
 ComposedShader(language="GLSL", field=[field(name="chromaticDispertion", accessType="initializeOnly", type="SFVec3f", value=(0.98,1,1.033)),
 field(name="cube", type="SFNode", accessType="initializeOnly", children=[
 ComposedCubeMapTexture(USE="texture")]),
 field(name="bias", accessType="initializeOnly", type="SFFloat", value=0.5),
 field(name="scale", accessType="initializeOnly", type="SFFloat", value=0.5),
 field(name="power", accessType="initializeOnly", type="SFFloat", value=2)
-], parts=(
+], parts=[
 ShaderPart(url=["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"], type="VERTEX"),
-ShaderPart(url=["../shaders/x_itebubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"], type="FRAGMENT"))))))])]))
+ShaderPart(url=["../shaders/x_itebubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"], type="FRAGMENT")])]))])]))
 .XML())

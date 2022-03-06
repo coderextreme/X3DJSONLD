@@ -1,4 +1,4 @@
-#x3d.py package loaded, have fun with X3D Graphics!
+#x3d.py package 4.0.60 loaded, have fun with X3D Graphics!
 from x3d import *
 from x3d import SFBool
 print(
@@ -29,7 +29,7 @@ ImageTexture(DEF="leftShader", url=["../resources/images/all_probes/beach_cross/
 rightTexture=
 ImageTexture(DEF="rightShader", url=["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png"]), 
 topTexture=
-ImageTexture(DEF="topShader", url=["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png"])), shaders=(
+ImageTexture(DEF="topShader", url=["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png"])), shaders=[
 ComposedShader(DEF="x3dom", language="GLSL", field=[field(name="cube", type="SFInt32", accessType="inputOutput", value=0),
 field(name="chromaticDispertion", accessType="initializeOnly", type="SFVec3f", value=(0.98,1.0,1.033)),
 field(name="bias", type="SFFloat", accessType="inputOutput", value=0.5),
@@ -41,9 +41,9 @@ field(name="c", type="SFFloat", accessType="inputOutput", value=20),
 field(name="d", type="SFFloat", accessType="inputOutput", value=20),
 field(name="tdelta", type="SFFloat", accessType="inputOutput", value=0),
 field(name="pdelta", type="SFFloat", accessType="inputOutput", value=0)
-], parts=(
+], parts=[
 ShaderPart(url=["../shaders/x3dom_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"], type="VERTEX"),
-ShaderPart(url=["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"], type="FRAGMENT"))),
+ShaderPart(url=["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"], type="FRAGMENT")]),
 ComposedShader(DEF="x_ite", language="GLSL", field=[field(name="cube", type="SFNode", accessType="inputOutput", children=[
 ComposedCubeMapTexture(USE="texture")]),
 field(name="chromaticDispertion", accessType="initializeOnly", type="SFVec3f", value=(0.98,1.0,1.033)),
@@ -56,9 +56,9 @@ field(name="c", type="SFFloat", accessType="inputOnly", value=20),
 field(name="d", type="SFFloat", accessType="inputOnly", value=20),
 field(name="tdelta", type="SFFloat", accessType="inputOnly", value=0),
 field(name="pdelta", type="SFFloat", accessType="inputOnly", value=0)
-], parts=(
+], parts=[
 ShaderPart(url=["../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"], type="VERTEX"),
-ShaderPart(url=["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"], type="FRAGMENT"))))), 
+ShaderPart(url=["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"], type="FRAGMENT")])]), 
 geometry=
 Sphere())]),
 Script(DEF="UrlSelector", directOutput=True, field=[field(name="frontUrls", type="MFString", accessType="initializeOnly", value=["../resources/images/all_probes/beach_cross/beach_front.png","../resources/images/all_probes/building_cross/building_front.png","../resources/images/all_probes/campus_cross/campus_front.png","../resources/images/all_probes/galileo_cross/galileo_front.png","../resources/images/all_probes/grace_cross/grace_front.png","../resources/images/all_probes/kitchen_cross/kitchen_front.png","../resources/images/all_probes/rnl_cross/rnl_front.png","../resources/images/all_probes/stpeters_cross/stpeters_front.png","../resources/images/all_probes/uffizi_cross/uffizi_front.png"]),

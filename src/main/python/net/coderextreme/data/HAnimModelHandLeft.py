@@ -1,4 +1,4 @@
-#x3d.py package loaded, have fun with X3D Graphics!
+#x3d.py package 4.0.60 loaded, have fun with X3D Graphics!
 from x3d import *
 from x3d import SFBool
 print(
@@ -9,7 +9,7 @@ WorldInfo(title="HAnimModelHandLeft.x3d"),
 HAnimHumanoid(name="Hand_Left", DEF="hanim_Hand_Left", loa=4, version="2.0", 
 metadata=(
 MetadataSet(name="HAnimHumanoid.info", reference="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid", value=[
-MetadataString(name="authorName", value=["Kwan-Hee YOO, Don Brutzman and Joe Williams"])])), skeleton=(
+MetadataString(name="authorName", value=["Kwan-Hee YOO, Don Brutzman and Joe Williams"])])), skeleton=[
 HAnimJoint(name="humanoid_root", DEF="hanim_humanoid_root", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 #Might consider putting a HAnimSegment here, but that doesn't help with re-use of this hand model
 
@@ -390,7 +390,7 @@ Material(emissiveColor=((1,1,1)))),
 geometry=
 IndexedLineSet(DEF="fingertip_l_carpal_distal_interphalangeal_5", coordIndex=[int(0),int(1)], 
 coord=
-Coordinate(point=[(-0.25,0.79,0),(-0.26,0.85,0)])))])])])])]),]),]),])), joints=(
+Coordinate(point=[(-0.25,0.79,0),(-0.26,0.85,0)])))])])])])]),]),]),])], joints=(
 HAnimJoint(USE="hanim_humanoid_root"),
 HAnimJoint(USE="hanim_l_carpal_distal_interphalangeal_2"),
 HAnimJoint(USE="hanim_l_carpal_distal_interphalangeal_3"),
@@ -415,7 +415,7 @@ HAnimJoint(USE="hanim_l_midcarpal_1"),
 HAnimJoint(USE="hanim_l_midcarpal_2"),
 HAnimJoint(USE="hanim_l_midcarpal_3"),
 HAnimJoint(USE="hanim_l_midcarpal_4_5"),
-HAnimJoint(USE="hanim_l_radiocarpal")), segments=(
+HAnimJoint(USE="hanim_l_radiocarpal")), segments=[
 HAnimSegment(USE="hanim_l_capitate"),
 HAnimSegment(USE="hanim_l_carpal"),
 HAnimSegment(USE="hanim_l_carpal_distal_phalanx_1"),
@@ -439,5 +439,5 @@ HAnimSegment(USE="hanim_l_metacarpal_3"),
 HAnimSegment(USE="hanim_l_metacarpal_4"),
 HAnimSegment(USE="hanim_l_metacarpal_5"),
 HAnimSegment(USE="hanim_l_trapezium"),
-HAnimSegment(USE="hanim_l_trapezoid")))]))
+HAnimSegment(USE="hanim_l_trapezoid")])]))
 .XML())
