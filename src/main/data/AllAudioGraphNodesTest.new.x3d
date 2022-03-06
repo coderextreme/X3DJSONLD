@@ -44,7 +44,7 @@
                               <BufferAudioSource/>
                               <ListenerPointSource/>
                               <MicrophoneSource/>
-                              <OscillatorSource/>
+                              <OscillatorSource frequency='440.0'/>
                               <StreamAudioSource/>
                             </WaveShaper>
                           </StreamAudioDestination>
