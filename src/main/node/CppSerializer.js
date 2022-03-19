@@ -37,7 +37,7 @@ CppScriptSerializer.prototype = {
 		bodystr += "#define WINAPI\n";
 		bodystr += "#define AFX_EXT_CLASS\n";
 		bodystr += "#define EXPORT32\n";
-		bodystr += "#include \"/c/x3d-code/www.web3d.org/x3d/languages/cpp/X3DLib/X3DLib.h\"\n";
+		bodystr += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/cpp/Concretes.h\"\n";
 		bodystr += "int main(int argc, char ** argv) {\n";
 		bodystr += "CX3DScene m_pScene;\n";
 		bodystr += "CBrowser browser = X3D.getBrowser();\n";
