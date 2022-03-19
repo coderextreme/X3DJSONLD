@@ -4,7 +4,7 @@
 #define WINAPI
 #define AFX_EXT_CLASS
 #define EXPORT32
-#include "/c/x3d-code/www.web3d.org/x3d/languages/cpp/X3DLib/X3DLib.h"
+#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Concretes.h"
 int main(int argc, char ** argv) {
 CX3DScene m_pScene;
 CBrowser browser = X3D.getBrowser();

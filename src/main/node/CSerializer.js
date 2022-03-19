@@ -31,7 +31,7 @@ CScriptSerializer.prototype = {
         // https://stackoverflow.com/questions/3151436/how-can-i-get-the-current-directory-name-in-javascript
         // console.log('Current directory: ' + process.cwd()); // Node.js method for current directory - not what is needed here
         // https://flaviocopes.com/node-get-current-folder/ use __dirname under Node.js
-		bodystr += "#include \"/c/x3d-code/www.web3d.org/x3d/languages/c/X3DLib/X3DLib.h\"\n";
+		bodystr += "#include \"C:/x3d-code/www.web3d.org/x3d/languages/c/Concretes.h\"\n";
 		bodystr += "void main(int argc, char ** argv) {\n";
 		bodystr += "Browser browser = X3D.getBrowser();\n";
 		bodystr += element.nodeName+" "+element.nodeName+stack[0]+";\n";
