@@ -1,17 +1,1 @@
-#x3d.py package 4.0.60 loaded, have fun with X3D Graphics!
-from x3d import *
-from x3d import SFBool
-print(
-X3D(profile="Immersive", version="4.0", 
-head=head(), 
-Scene=Scene(children=[
-Group(children=[
-Shape(
-appearance=
-Appearance(
-material=
-Material(diffuseColor=((1,0,0)))), 
-geometry=
-Box())]),
-Transform(rotation=((7,8,9,3.14)), scale=((4,5,6)), translation=((1,2,3)))]))
-.XML())
+#
