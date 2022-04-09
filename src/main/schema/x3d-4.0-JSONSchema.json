@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
-  "title": "X3D V4.0 JSON Schema, generated 2022/03/06 00:34:55",
+  "title": "X3D V4.0 JSON Schema, generated 2022/04/09 13:02:57",
   "description": "Experimental JSON Schema for X3D V4.0",
   "type": "object",
   "properties": {
@@ -12017,14 +12017,14 @@
             "-skin": {
               "$ref": "#/$defs/-Group-Transform-Shape-IndexedFaceSetMFNode"
             },
-            "-skinBindingCoord": {
-              "$ref": "#/$defs/-X3DCoordinateNodeSFNode"
+            "-skinBindingCoords": {
+              "$ref": "#/$defs/-Coordinate-CoordinateDoubleSFNode"
             },
-            "-skinBindingNormal": {
+            "-skinBindingNormals": {
               "$ref": "#/$defs/-X3DNormalNodeSFNode"
             },
             "-skinCoord": {
-              "$ref": "#/$defs/-X3DCoordinateNodeSFNode"
+              "$ref": "#/$defs/-Coordinate-CoordinateDoubleSFNode"
             },
             "-skinNormal": {
               "$ref": "#/$defs/-X3DNormalNodeSFNode"
@@ -12151,7 +12151,7 @@
               }
             },
             "-children": {
-              "$ref": "#/$defs/-HAnimJoint-HAnimSegment-HAnimSiteMFNode"
+              "$ref": "#/$defs/-HAnimJoint-HAnimSegmentMFNode"
             },
             "@description": {
               "$comment": "SFString inputOutput",
@@ -12704,7 +12704,7 @@
               "$ref": "#/$defs/-X3DChildNodeMFNode"
             },
             "-coord": {
-              "$ref": "#/$defs/-X3DCoordinateNodeSFNode"
+              "$ref": "#/$defs/-Coordinate-CoordinateDoubleSFNode"
             },
             "@description": {
               "$comment": "SFString inputOutput",
@@ -17921,7 +17921,7 @@
               "type": "boolean"
             },
             "-controlPoint": {
-              "$ref": "#/$defs/-X3DCoordinateNodeSFNode"
+              "$ref": "#/$defs/-Coordinate-CoordinateDoubleSFNode"
             },
             "@knot": {
               "$comment": "MFDouble initializeOnly",
@@ -18117,7 +18117,7 @@
               "$ref": "#/$defs/IS"
             },
             "-controlPoint": {
-              "$ref": "#/$defs/-X3DCoordinateNodeSFNode"
+              "$ref": "#/$defs/-Coordinate-CoordinateDoubleSFNode"
             },
             "@knot": {
               "$comment": "MFDouble initializeOnly",
@@ -18204,7 +18204,7 @@
               "$ref": "#/$defs/IS"
             },
             "-controlPoint": {
-              "$ref": "#/$defs/-X3DCoordinateNodeSFNode"
+              "$ref": "#/$defs/-Coordinate-CoordinateDoubleSFNode"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -18342,7 +18342,7 @@
               "$ref": "#/$defs/IS"
             },
             "-controlPoint": {
-              "$ref": "#/$defs/-X3DCoordinateNodeSFNode"
+              "$ref": "#/$defs/-Coordinate-CoordinateDoubleSFNode"
             },
             "@knot": {
               "$comment": "MFDouble initializeOnly",
@@ -18532,7 +18532,7 @@
               "$ref": "#/$defs/IS"
             },
             "-controlPoint": {
-              "$ref": "#/$defs/-X3DCoordinateNodeSFNode"
+              "$ref": "#/$defs/-Coordinate-CoordinateDoubleSFNode"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -18918,7 +18918,7 @@
               "$ref": "#/$defs/IS"
             },
             "-controlPoint": {
-              "$ref": "#/$defs/-X3DCoordinateNodeSFNode"
+              "$ref": "#/$defs/-Coordinate-CoordinateDoubleSFNode"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -19654,7 +19654,7 @@
               "type": "boolean"
             },
             "@frequency": {
-              "default": 0,
+              "default": 440,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
@@ -26103,7 +26103,7 @@
               "items": false
             },
             "@beamWidth": {
-              "default": 0.7854,
+              "default": 0.589049,
               "$comment": "SFFloat inputOutput",
               "type": "number"
             },
@@ -30536,6 +30536,7 @@
               "maxItems": 3,
               "items": {
                 "default": 0,
+                "minimum": 0,
                 "type": "number"
               }
             },
@@ -35081,7 +35082,7 @@
         "additionalProperties": false
       }
     },
-    "-X3DCoordinateNodeSFNode": {
+    "-Coordinate-CoordinateDoubleSFNode": {
       "type": "object",
       "properties": {
         "Coordinate": {
@@ -35090,16 +35091,13 @@
         "CoordinateDouble": {
           "$ref": "#/$defs/CoordinateDouble"
         },
-        "GeoCoordinate": {
-          "$ref": "#/$defs/GeoCoordinate"
-        },
         "ProtoInstance": {
           "$ref": "#/$defs/ProtoInstance"
         }
       },
       "additionalProperties": false
     },
-    "-HAnimJoint-HAnimSegment-HAnimSiteMFNode": {
+    "-HAnimJoint-HAnimSegmentMFNode": {
       "$comment": "MFNode inputOutput",
       "type": "array",
       "minItems": 1,
@@ -35114,9 +35112,6 @@
           },
           "HAnimSegment": {
             "$ref": "#/$defs/HAnimSegment"
-          },
-          "HAnimSite": {
-            "$ref": "#/$defs/HAnimSite"
           },
           "ProtoInstance": {
             "$ref": "#/$defs/ProtoInstance"
@@ -35144,6 +35139,24 @@
         },
         "additionalProperties": false
       }
+    },
+    "-X3DCoordinateNodeSFNode": {
+      "type": "object",
+      "properties": {
+        "Coordinate": {
+          "$ref": "#/$defs/Coordinate"
+        },
+        "CoordinateDouble": {
+          "$ref": "#/$defs/CoordinateDouble"
+        },
+        "GeoCoordinate": {
+          "$ref": "#/$defs/GeoCoordinate"
+        },
+        "ProtoInstance": {
+          "$ref": "#/$defs/ProtoInstance"
+        }
+      },
+      "additionalProperties": false
     },
     "-X3DSingleTextureCoordinateNode-MultiTextureCoordinateSFNode": {
       "type": "object",

@@ -1434,8 +1434,8 @@ Recommended tools:
                                                     </xsl:when>
                                                     <!-- HAnimHumanoid can contain HAnimJoint with containerField = joints or skeleton -->
                                                     <!-- HAnimHumanoid can contain HAnimSite  with containerField = sites, skeleton or viewpoints -->
-                                                    <!-- HAnimHumanoid can contain X3DCoordinateNode with containerField = skinCoord or skinBindingCoord -->
-                                                    <!-- HAnimHumanoid can contain X3DNormalNode with containerField = skinNormal or skinBindingNormal -->
+                                                    <!-- HAnimHumanoid can contain X3DCoordinateNode with containerField = skinCoord or skinBindingCoords -->
+                                                    <!-- HAnimHumanoid can contain X3DNormalNode with containerField = skinNormal or skinBindingNormals -->
                                                     <xsl:otherwise>
                                                         <xsl:call-template name="fieldNameChanges"/>
                                                     </xsl:otherwise>
@@ -2422,8 +2422,8 @@ Recommended tools:
                     </xsl:when>
                     <!-- HAnimHumanoid can contain HAnimJoint with containerField = joints or skeleton -->
                     <!-- HAnimHumanoid can contain HAnimSite  with containerField = sites, skeleton or viewpoints -->
-                    <!-- HAnimHumanoid can contain X3DCoordinateNode with containerField = skinCoord or skinBindingCoord -->
-                    <!-- HAnimHumanoid can contain X3DNormalNode with containerField = skinNormal or skinBindingNormal -->
+                    <!-- HAnimHumanoid can contain X3DCoordinateNode with containerField = skinCoord or skinBindingCoords -->
+                    <!-- HAnimHumanoid can contain X3DNormalNode with containerField = skinNormal or skinBindingNormals -->
                     <xsl:when test="(local-name() = 'Analyser') or (local-name() = 'AudioDestination') or (local-name() = 'BiquadFilter') or (local-name() = 'BufferAudioSource') or (local-name() = 'ChannelMerger') or (local-name() = 'ChannelSelector') or (local-name() = 'ChannelSplitter') or (local-name() = 'Convolver') or (local-name() = 'Delay') or (local-name() = 'DynamicsCompressor') or (local-name() = 'Gain') or (local-name() = 'ListenerPointSource') or (local-name() = 'MicrophoneSource') or (local-name() = 'OscillatorSource') or (local-name() = 'SpatialSound') or (local-name() = 'StreamAudioDestination') or (local-name() = 'StreamAudioSource') or (local-name() = 'WaveShaper')">
                         <xsl:text>children</xsl:text>
                     </xsl:when>
@@ -5754,8 +5754,8 @@ Recommended tools:
                         </xsl:when>
                         <!-- HAnimHumanoid can contain HAnimJoint with containerField = joints or skeleton -->
                         <!-- HAnimHumanoid can contain HAnimSite  with containerField = sites, skeleton or viewpoints -->
-                        <!-- HAnimHumanoid can contain X3DCoordinateNode with containerField = skinCoord or skinBindingCoord -->
-                        <!-- HAnimHumanoid can contain X3DNormalNode with containerField = skinNormal or skinBindingNormal -->
+                        <!-- HAnimHumanoid can contain X3DCoordinateNode with containerField = skinCoord or skinBindingCoords -->
+                        <!-- HAnimHumanoid can contain X3DNormalNode with containerField = skinNormal or skinBindingNormals -->
                         <xsl:when test="(local-name() = 'Analyser') or (local-name() = 'AudioDestination') or (local-name() = 'BiquadFilter') or (local-name() = 'BufferAudioSource') or (local-name() = 'ChannelMerger') or (local-name() = 'ChannelSelector') or (local-name() = 'ChannelSplitter') or (local-name() = 'Convolver') or (local-name() = 'Delay') or (local-name() = 'DynamicsCompressor') or (local-name() = 'Gain') or (local-name() = 'ListenerPointSource') or (local-name() = 'MicrophoneSource') or (local-name() = 'OscillatorSource') or (local-name() = 'SpatialSound') or (local-name() = 'StreamAudioDestination') or (local-name() = 'StreamAudioSource') or (local-name() = 'WaveShaper')">
                             <xsl:text>children</xsl:text>
                         </xsl:when>

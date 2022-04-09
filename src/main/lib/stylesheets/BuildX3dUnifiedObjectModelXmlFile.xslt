@@ -150,23 +150,23 @@ Recommended tool:
                         <xsl:text>' with contained xs:enumeration values that does not follow naming convention of name ending in 'Type', 'Choices' (for strict enumeration set) or 'Values' (for suggested tokens).</xsl:text>
                     </xsl:message>
                 </xsl:if>
-				<!-- avoid XML types in X3D Unified Object Model (X3DUOM), use X3D types instead -->
-				<xsl:variable name="name" select="@name"/>
-				<xsl:variable name="derivedType">
-					<xsl:value-of select="//xs:schema/xs:simpleType[(@name=$name)]/xs:restriction/@base"/>
-				</xsl:variable>
-				<xsl:variable name="baseType">
-					<xsl:choose>
-						<xsl:when test="($derivedType='xs:string')"> <!-- ID, IDREF, xs:token and NMTOKEN are allowed types in this context -->
-							<xsl:text>SFString</xsl:text>
-						</xsl:when>
-						<xsl:otherwise>
-							<xsl:value-of select="$derivedType"/>
-						</xsl:otherwise>
-					</xsl:choose>
-				</xsl:variable>
-				
-				<xsl:element name="SimpleType">
+                    <!-- avoid XML types in X3D Unified Object Model (X3DUOM), use X3D types instead -->
+                    <xsl:variable name="name" select="@name"/>
+                    <xsl:variable name="derivedType">
+                            <xsl:value-of select="//xs:schema/xs:simpleType[(@name=$name)]/xs:restriction/@base"/>
+                    </xsl:variable>
+                    <xsl:variable name="baseType">
+                            <xsl:choose>
+                                    <xsl:when test="($derivedType='xs:string')"> <!-- ID, IDREF, xs:token and NMTOKEN are allowed types in this context -->
+                                            <xsl:text>SFString</xsl:text>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                            <xsl:value-of select="$derivedType"/>
+                                    </xsl:otherwise>
+                            </xsl:choose>
+                    </xsl:variable>
+
+                    <xsl:element name="SimpleType">
                     <xsl:variable name="simpleTypeName" select="translate(@name,'-','')"/>
                     <xsl:attribute name="name" select="$simpleTypeName"/>
 					<xsl:if test="(string-length($baseType) > 0)">
@@ -186,22 +186,27 @@ Recommended tool:
                             </xsl:when>
                         </xsl:choose>
                     </xsl:variable>
-					<xsl:if test="(string-length($regularExpression) > 0)">
-						<xsl:attribute name="regex" select="normalize-space($regularExpression)"/>
-					</xsl:if>
-					<xsl:variable name="simpleTypeAppinfo" select="xs:annotation/xs:appinfo"/>
-					<xsl:if test="(string-length($simpleTypeAppinfo) > 0)">
-						<xsl:attribute name="appinfo" select="normalize-space($simpleTypeAppinfo)"/>
-					</xsl:if>
+                    <xsl:if test="(string-length($regularExpression) > 0)">
+                            <xsl:attribute name="regex" select="normalize-space($regularExpression)"/>
+                    </xsl:if>
+                    <xsl:variable name="simpleTypeAppinfo" select="xs:annotation/xs:appinfo"/>
+                    <xsl:if test="(string-length($simpleTypeAppinfo) > 0)">
+                            <xsl:attribute name="appinfo" select="normalize-space($simpleTypeAppinfo)"/>
+                    </xsl:if>
                     <xsl:if test="(string-length(normalize-space(xs:annotation/xs:documentation/@source)) > 0)">
 						<xsl:attribute name="documentation" select="xs:annotation/xs:documentation/@source"/>
 					</xsl:if>
                     <!-- xsl:comment>*** enumeration loop 1</xsl:comment-->
-					<xsl:for-each select="*/xs:enumeration">
-						<xsl:variable name="enumerationName" select="@value"/>
+                    <xsl:for-each select="*/xs:enumeration">
+                        <xsl:variable name="enumerationName" select="@value"/>
                         <xsl:variable name="priorIndex" select="preceding-sibling::*[1]//xs:attribute[@name='index']/@fixed"/>
+                        <!-- xsl:comment enumeration 1  xsl:comment -->
                         <xsl:element name="enumeration">
                             <xsl:attribute name="value" select="@value"/>
+                            <xsl:variable name="aliasName" select="xs:annotation/xs:appinfo/xs:attribute[@name='alias']/@default"/>
+                            <xsl:if test="(../@base='SFInt32') and (string-length($aliasName) > 0)">
+                                <xsl:attribute name="alias" select="$aliasName"/>
+                            </xsl:if>
                             <!-- translate(@value,'-','') do not remove hyphens from enumerations in X3DUOM (e.g. H-Anim), that can happen in language bindings -->
                             <xsl:for-each select="xs:annotation/xs:appinfo/xs:attribute">
                                 <xsl:variable  name="attributeName"        select="@name"/>
@@ -549,9 +554,9 @@ Recommended tool:
 							</xsl:if>
 						</xsl:element>
 					</xsl:for-each>
-				</xsl:element>
-			</xsl:for-each>
-		</xsl:element>
+                        </xsl:element>
+                </xsl:for-each>
+        </xsl:element>
         
         <!-- check for duplicated field name within accessType enumeration lists -->
         <xsl:for-each select="//xs:simpleType[ends-with(@name,'AccessTypes')]//xs:enumeration">
@@ -858,7 +863,7 @@ Recommended tool:
                             <xsl:value-of select="//xs:schema/xs:complexType[@name=$greatGrandParentNodeType]/xs:complexContent/xs:extension/@base"/>
                         </xsl:variable>
                         <xsl:variable name="nonNodeFieldList" select="
-	//xs:schema/xs:complexType[@name=$greatGreatGrandParentNodeType]/xs:attribute
+    //xs:schema/xs:complexType[@name=$greatGreatGrandParentNodeType]/xs:attribute
   | //xs:schema/xs:complexType[@name=$greatGreatGrandParentNodeType]/xs:annotation/xs:appinfo/xs:attribute
   | //xs:schema/xs:complexType[@name=$greatGreatGrandParentNodeType]/xs:complexContent/xs:extension/xs:attribute
   | //xs:schema/xs:complexType[@name=$greatGrandParentNodeType]/xs:attribute
@@ -894,9 +899,9 @@ Recommended tool:
 									<xsl:text>*** found X3DViewpointNode description in XML schema...</xsl:text>
 								</xsl:message>
 							</xsl:if> -->
-                            <xsl:call-template name="doField">
-                                <xsl:with-param name="containerName" select="$abstractNodeTypeName"/>
-                            </xsl:call-template>
+                                <xsl:call-template name="doField">
+                                    <xsl:with-param name="containerName" select="$abstractNodeTypeName"/>
+                                </xsl:call-template>
                         </xsl:for-each>
                         <xsl:for-each select="
                               //xs:schema/xs:complexType[@name=$greatGreatGrandParentNodeType]/xs:attributeGroup
@@ -1007,53 +1012,53 @@ Recommended tool:
                     </xsl:if>
                     <xsl:element name="InterfaceDefinition">
                         <xsl:attribute name="specificationUrl" select="xs:annotation/xs:documentation/@source"/>
-                            <xsl:variable name="appinfo">
-                                <xsl:choose>
-                                    <xsl:when test="(string-length(normalize-space(xs:annotation/xs:appinfo/text())) > 0)">
-                                        <xsl:value-of select="normalize-space(xs:annotation/xs:appinfo/text())"/>
-                                    </xsl:when>
-                                    <xsl:otherwise>
-                                        <xsl:variable name="tooltipText"><!-- /attribute[@name = $fieldName] -->
-                                            <xsl:value-of select="$x3d.tooltips.document//element[@name = $concreteNodeName]/@tooltip" disable-output-escaping="yes"/>
-                                        </xsl:variable>
-                                        <xsl:variable name="nodeTooltip">
-                                            <xsl:if test="(string-length(normalize-space($tooltipText)) > 0)"><!-- doc-available($x3d.tooltips.path) -->
-                                                <xsl:value-of select="replace(replace($tooltipText,'&#8734;','infinity'),'&#960;','pi')" disable-output-escaping="yes"/>
-                                                <!-- consistent javadoc punctuation -->
-                                                <xsl:if test="not(ends-with(normalize-space($tooltipText),'.')) and not(contains($tooltipText,'http')) and not(contains($tooltipText,'mailto')) and not(contains($tooltipText,'ftp'))">
-                                                    <xsl:text>.</xsl:text>
-                                                </xsl:if>
-                                            </xsl:if>
-                                        </xsl:variable>
-                                        <!-- first sentence is topic sentence -->
-                                        <xsl:value-of select="normalize-space(substring-before(substring-after($nodeTooltip,']'),'.'))"/>
-                                    </xsl:otherwise>
-                                </xsl:choose>
-                            </xsl:variable>
-                            <!-- debug diagnostic
-                            <xsl:message>
-                                <xsl:text>*** note: ConcreteNode name='</xsl:text>
-                                <xsl:value-of select="@name"/>
-                                <xsl:text>' appinfo=</xsl:text>
-                                <xsl:value-of select="$appinfo"/>
-                            </xsl:message> -->
+                        <xsl:variable name="appinfo">
                             <xsl:choose>
-                                <xsl:when test="string-length($appinfo) > 0">
-                                    <xsl:attribute name="appinfo">
-                                        <xsl:value-of select="$appinfo"/>
-                                        <xsl:if test="not(ends-with($appinfo,'.'))">
-                                            <xsl:text>.</xsl:text>
-                                        </xsl:if>
-                                    </xsl:attribute>
+                                <xsl:when test="(string-length(normalize-space(xs:annotation/xs:appinfo/text())) > 0)">
+                                    <xsl:value-of select="normalize-space(xs:annotation/xs:appinfo/text())"/>
                                 </xsl:when>
                                 <xsl:otherwise>
-                                    <xsl:message>
-                                        <xsl:text>*** tooltip note: ConcreteNode name='</xsl:text>
-                                        <xsl:value-of select="@name"/>
-                                        <xsl:text>' has no appinfo description in XML Schema or X3D Tooltips.</xsl:text>
-                                    </xsl:message>
+                                    <xsl:variable name="tooltipText"><!-- /attribute[@name = $fieldName] -->
+                                        <xsl:value-of select="$x3d.tooltips.document//element[@name = $concreteNodeName]/@tooltip" disable-output-escaping="yes"/>
+                                    </xsl:variable>
+                                    <xsl:variable name="nodeTooltip">
+                                        <xsl:if test="(string-length(normalize-space($tooltipText)) > 0)"><!-- doc-available($x3d.tooltips.path) -->
+                                            <xsl:value-of select="replace(replace($tooltipText,'&#8734;','infinity'),'&#960;','pi')" disable-output-escaping="yes"/>
+                                            <!-- consistent javadoc punctuation -->
+                                            <xsl:if test="not(ends-with(normalize-space($tooltipText),'.')) and not(contains($tooltipText,'http')) and not(contains($tooltipText,'mailto')) and not(contains($tooltipText,'ftp'))">
+                                                <xsl:text>.</xsl:text>
+                                            </xsl:if>
+                                        </xsl:if>
+                                    </xsl:variable>
+                                    <!-- first sentence is topic sentence -->
+                                    <xsl:value-of select="normalize-space(substring-before(substring-after($nodeTooltip,']'),'.'))"/>
                                 </xsl:otherwise>
                             </xsl:choose>
+                        </xsl:variable>
+                        <!-- debug diagnostic
+                        <xsl:message>
+                            <xsl:text>*** note: ConcreteNode name='</xsl:text>
+                            <xsl:value-of select="@name"/>
+                            <xsl:text>' appinfo=</xsl:text>
+                            <xsl:value-of select="$appinfo"/>
+                        </xsl:message> -->
+                        <xsl:choose>
+                            <xsl:when test="string-length($appinfo) > 0">
+                                <xsl:attribute name="appinfo">
+                                    <xsl:value-of select="$appinfo"/>
+                                    <xsl:if test="not(ends-with($appinfo,'.'))">
+                                        <xsl:text>.</xsl:text>
+                                    </xsl:if>
+                                </xsl:attribute>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:message>
+                                    <xsl:text>*** tooltip note: ConcreteNode name='</xsl:text>
+                                    <xsl:value-of select="@name"/>
+                                    <xsl:text>' has no appinfo description in XML Schema or X3D Tooltips.</xsl:text>
+                                </xsl:message>
+                            </xsl:otherwise>
+                        </xsl:choose>
                         <xsl:if test="xs:annotation/xs:appinfo/xs:attribute[@name='componentName']">
                             <xsl:element name="componentInfo">
                                 <xsl:attribute name="name" select="xs:annotation/xs:appinfo/xs:attribute[@name='componentName']/@fixed"/>
@@ -1134,7 +1139,7 @@ Recommended tool:
                         <xsl:variable name="allFieldList" select="$nonNodeFieldList[(@name!='containerField') and (@name!='additionalInterface') and (@name!='componentName') and (@name!='componentLevel')] | $nodeFieldList"/>
                         <xsl:for-each select="$allFieldList">
                             <xsl:sort select="lower-case(@name)"/>
-                            <xsl:variable name="fieldName" select="@name"/>
+                            
                             <!-- attempting to avoid duplicates -->
                             <!-- debug diagnostic 
                             <xsl:if test="($concreteNodeName = 'ParticleSystem') and ($fieldName = 'geometry')">
@@ -1161,15 +1166,61 @@ Recommended tool:
                                     <xsl:value-of select="count(preceding::*[@name = $fieldName][@type = 'SFNode'])"/>
                                 </xsl:message>
                             </xsl:if>
+                            
                             -->
-                            <xsl:if test="(count(preceding::*[@name = $fieldName][@type = 'SFNode']) = 0)">
+                            <xsl:variable name="fieldName" select="@name"/>
+                            <xsl:if test="($concreteNodeName = 'UnlitMaterial') and (@name = 'emissiveColor')">
+                                <xsl:message>
+                                        <xsl:text>****** found UnlitMaterial emissiveColor, $concreteNodeName=</xsl:text>
+                                        <xsl:value-of select="$concreteNodeName"/>
+                                        <xsl:text>, @name=</xsl:text>
+                                        <xsl:value-of select="@name"/>
+                                        <xsl:text>, $fieldName=</xsl:text>
+                                        <xsl:value-of select="$fieldName"/>
+                                        <xsl:text>, @default=</xsl:text>
+                                        <xsl:value-of select="@default"/>
+                                        <xsl:text>, position()=</xsl:text>
+                                        <xsl:value-of select="position()"/>
+                                        <xsl:text>, count(following-sibling::*[@name = $fieldName])=</xsl:text>
+                                        <xsl:value-of select="count(following-sibling::*[@name = $fieldName])"/>
+                                        <xsl:for-each select="../*">
+                                            <xsl:text> </xsl:text>
+                                            <xsl:value-of select="@name"/>
+                                        </xsl:for-each>
+                                </xsl:message>
                             </xsl:if>
                             
-                            <xsl:call-template name="doField">
-                                <xsl:with-param name="containerName" select="$concreteNodeName"/>
-                            </xsl:call-template>
+                            <!-- avoid duplicating overrides (e.g. UnlitMaterial emissiveColor) -->
+                            <xsl:choose>
+                                <xsl:when test="($concreteNodeName = 'UnlitMaterial') and (@name = 'emissiveColor') and (@default = '0 0 0')">
+                                <xsl:message>
+                                    <!-- hack filter -->
+                                    <xsl:text>****** skipping overridded UnlitMaterial emissiveColor '0 0 0' </xsl:text>
+                                </xsl:message>
+                                <xsl:text>&#10;</xsl:text>
+                                <xsl:text disable-output-escaping="yes">&lt;!--</xsl:text>
+                                <xsl:text>&#10;</xsl:text>
+                                    <xsl:call-template name="doField">
+                                        <xsl:with-param name="containerName" select="$concreteNodeName"/>
+                                    </xsl:call-template>
+                                <xsl:text>&#10;</xsl:text>
+                                <xsl:text disable-output-escaping="yes">--&gt;</xsl:text>
+                                <xsl:text>&#10;</xsl:text>
+                                </xsl:when>
+                                <xsl:when test="(count(preceding-sibling::*[@name = $fieldName]) = 0)">
+                                    <xsl:call-template name="doField">
+                                        <xsl:with-param name="containerName" select="$concreteNodeName"/>
+                                    </xsl:call-template>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:message>
+                                            <xsl:text>****** duplication in $allFieldList </xsl:text>
+                                            <xsl:value-of select="$fieldName"/>
+                                    </xsl:message>
+                                </xsl:otherwise>
+                            </xsl:choose>
                         </xsl:for-each>
-						<!-- add attributeGroup attributes -->
+			<!-- now add attributeGroup attributes -->
                         <xsl:for-each select="
                               //xs:schema/xs:complexType[@name=$greatGreatGrandParentNodeType]/xs:attributeGroup
                             | //xs:schema/xs:complexType[@name=$greatGrandParentNodeType]/xs:attributeGroup
@@ -1220,8 +1271,13 @@ Recommended tool:
                                         <!-- xsl:comment>*** enumeration loop 2</xsl:comment-->
                                         <xsl:for-each select="xs:complexType//xs:attribute[@name='containerField']/xs:simpleType/xs:restriction/xs:enumeration">
                                             <xsl:sort select="xs:complexType//xs:attribute[@name='containerField']/@default"/>
+                                            <!-- xsl:comment enumeration 2  xsl:comment -->
                                             <xsl:element name="enumeration">
                                                 <xsl:attribute name="value" select="@value"/>
+                                                <xsl:variable name="aliasName" select="xs:annotation/xs:appinfo/xs:attribute[@name='alias']/@default"/>
+                                                <xsl:if test="(../@base='SFInt32') and (string-length($aliasName) > 0)">
+                                                    <xsl:attribute name="alias" select="$aliasName"/>
+                                                </xsl:if>
 												<xsl:for-each select="xs:annotation/xs:appinfo/xs:attribute">
 													<xsl:if test="(string-length(normalize-space(@fixed)) > 0)">
 														<xsl:attribute name="{@name}" select="normalize-space(@fixed)"/>
@@ -1244,8 +1300,13 @@ Recommended tool:
                                     </xsl:when>
                                     <xsl:when test="xs:complexType//xs:attribute[@name='containerField']/@fixed">
                                         <xsl:attribute name="name" select="xs:complexType//xs:attribute[@name='containerField']/@fixed"/>
+                                        <!-- xsl:comment enumeration 3  xsl:comment -->
                                         <xsl:element name="enumeration">
                                             <xsl:attribute name="value" select="xs:complexType//xs:attribute[@name='containerField']/@fixed"/>
+                                            <xsl:variable name="aliasName" select="xs:annotation/xs:appinfo/xs:attribute[@name='alias']/@default"/>
+                                            <xsl:if test="(../@base='SFInt32') and (string-length($aliasName) > 0)">
+                                                <xsl:attribute name="alias" select="$aliasName"/>
+                                            </xsl:if>
 											<xsl:for-each select="xs:annotation/xs:appinfo/xs:attribute">
 												<xsl:if test="(string-length(normalize-space(@fixed)) > 0)">
 													<xsl:attribute name="{@name}" select="normalize-space(@fixed)"/>
@@ -2136,8 +2197,13 @@ Recommended tool:
                         <xsl:if test="xs:simpleType/xs:restriction[@base='SFString']">
                             <!-- xsl:comment>*** enumeration loop 3</xsl:comment-->
                             <xsl:for-each select="xs:simpleType/xs:restriction/xs:enumeration">
+                                <!-- xsl:comment enumeration 4  xsl:comment -->
                                 <xsl:element name="enumeration">
                                     <xsl:attribute name="value" select="@value"/>
+                                    <xsl:variable name="aliasName" select="xs:annotation/xs:appinfo/xs:attribute[@name='alias']/@default"/>
+                                    <xsl:if test="(../@base='SFInt32') and (string-length($aliasName) > 0)">
+                                        <xsl:attribute name="alias" select="$aliasName"/>
+                                    </xsl:if>
                                     <xsl:for-each select="xs:annotation/xs:appinfo/xs:attribute">
                                         <xsl:if test="(string-length(normalize-space(@fixed)) > 0)">
                                             <xsl:attribute name="{@name}" select="normalize-space(@fixed)"/>
@@ -2161,8 +2227,13 @@ Recommended tool:
                         <xsl:if test="//xs:schema/xs:simpleType[@name=$givenType]/xs:restriction/xs:enumeration">
                             <!-- xsl:comment>*** enumeration loop 4</xsl:comment-->
                             <xsl:for-each select="//xs:schema/xs:simpleType[@name=$givenType]/xs:restriction/xs:enumeration">
+                                <!-- xsl:comment enumeration 5  xsl:comment -->
                                 <xsl:element name="enumeration">
                                     <xsl:attribute name="value" select="@value"/>
+                                    <xsl:variable name="aliasName" select="xs:annotation/xs:appinfo/xs:attribute[@name='alias']/@default"/>
+                                    <xsl:if test="(string-length($aliasName) > 0)">
+                                        <xsl:attribute name="alias" select="$aliasName"/>
+                                    </xsl:if>
                                     <xsl:for-each select="xs:annotation/xs:appinfo/xs:attribute">
                                         <xsl:variable  name="attributeName"        select="@name"/>
                                         <xsl:variable  name="attributeValue"       select="@fixed"/>
@@ -2219,8 +2290,13 @@ Recommended tool:
                             </xsl:for-each>
                         </xsl:if>
                         <xsl:if test="xs:annotation/xs:appinfo/xs:enumeration/@value">
+                            <!-- xsl:comment enumeration 6  xsl:comment -->
                             <xsl:element name="enumeration">
                                     <xsl:attribute name="value" select="xs:annotation/xs:appinfo/xs:enumeration/@value"/>
+                                    <xsl:variable name="aliasName" select="xs:annotation/xs:appinfo/xs:attribute[@name='alias']/@default"/>
+                                    <xsl:if test="(../@base='SFInt32') and (string-length($aliasName) > 0)">
+                                        <xsl:attribute name="alias" select="$aliasName"/>
+                                    </xsl:if>
                                     <xsl:for-each select="xs:annotation/xs:appinfo/xs:attribute">
                                         <xsl:if test="(string-length(normalize-space(@fixed)) > 0)">
                                             <xsl:attribute name="{@name}" select="normalize-space(@fixed)"/>
@@ -2244,8 +2320,13 @@ Recommended tool:
                             <xsl:variable name="enumerationValuesType" select="xs:annotation/xs:appinfo/xs:list/@itemType"/>
                             <!-- xsl:comment>*** enumeration loop 5</xsl:comment-->
                             <xsl:for-each select="//xs:schema/xs:simpleType[@name=$enumerationValuesType]/xs:restriction/xs:enumeration">
+                                <!-- xsl:comment enumeration 7  xsl:comment -->
                                 <xsl:element name="enumeration">
                                     <xsl:attribute name="value" select="@value"/>
+                                    <xsl:variable name="aliasName" select="xs:annotation/xs:appinfo/xs:attribute[@name='alias']/@default"/>
+                                    <xsl:if test="(../@base='SFInt32') and (string-length($aliasName) > 0)">
+                                        <xsl:attribute name="alias" select="$aliasName"/>
+                                    </xsl:if>
                                     <xsl:for-each select="xs:annotation/xs:appinfo/xs:attribute">
                                         <xsl:if test="(string-length(normalize-space(@fixed)) > 0)">
                                             <xsl:attribute name="{@name}" select="normalize-space(@fixed)"/>

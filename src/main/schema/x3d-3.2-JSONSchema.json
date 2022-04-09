@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://www.web3d.org/specifications/x3d-3.2-JSONSchema.json",
-  "title": "X3D V3.2 JSON Schema, generated 2022/03/06 00:34:55",
+  "title": "X3D V3.2 JSON Schema, generated 2022/04/09 13:02:57",
   "description": "Experimental JSON Schema for X3D V3.2",
   "type": "object",
   "properties": {
@@ -9030,7 +9030,7 @@
               }
             },
             "-children": {
-              "$ref": "#/$defs/-HAnimJoint-HAnimSegment-HAnimSiteMFNode"
+              "$ref": "#/$defs/-HAnimJoint-HAnimSegmentMFNode"
             },
             "-displacers": {
               "$ref": "#/$defs/-HAnimDisplacerMFNode"
@@ -25891,7 +25891,7 @@
       },
       "additionalProperties": false
     },
-    "-HAnimJoint-HAnimSegment-HAnimSiteMFNode": {
+    "-HAnimJoint-HAnimSegmentMFNode": {
       "$comment": "MFNode inputOutput",
       "type": "array",
       "minItems": 1,
@@ -25906,9 +25906,6 @@
           },
           "HAnimSegment": {
             "$ref": "#/$defs/HAnimSegment"
-          },
-          "HAnimSite": {
-            "$ref": "#/$defs/HAnimSite"
           },
           "ProtoInstance": {
             "$ref": "#/$defs/ProtoInstance"

@@ -41,8 +41,8 @@
             <xsl:text># __init__.py needed for properly configuring pypi distribution of x3d.py package
 
 # According to _Learning Python_ by Mark Lutz, fifth edition:
-# - Empty __init.py__ no longer required as of Python 3.3.  p. 761
-# - Using __init.py__ is performance advantage for loading, even when empty.  p. 761
+# - Empty __init__.py no longer required as of Python 3.3.  p. 761
+# - Using __init__.py is performance advantage for loading, even when empty.  p. 761
 # - Using __all__ list to define exported values for import * is allowed but not required.  p. 735 and 771-772.
 
 # 6.4.1. Importing * From a Package
@@ -71,17 +71,18 @@ __all__ = [</xsl:text>
             <xsl:text>
     # Simple Type Enumerations
     </xsl:text>
-            <xsl:for-each select="//SimpleTypeEnumerations/SimpleType[not(starts-with(@name,'containerField')) and not(ends-with(@name,'AccessTypes'))]">
+        <xsl:for-each select="//SimpleTypeEnumerations/SimpleType[count(enumeration) > 1]
+                                [not(starts-with(@name,'containerField')) and not(ends-with(@name,'AccessTypes'))]">
                 <xsl:text>'</xsl:text>
-                <xsl:value-of select="@name"/>
+                <xsl:value-of select="upper-case(@name)"/><!-- to upper -->
                 <xsl:text>'</xsl:text>
                 <xsl:text>, </xsl:text>
             </xsl:for-each>
 
             <xsl:text>&#10;</xsl:text>
             <xsl:text>
-    # Abstract Object Types
-    </xsl:text>
+    # Abstract Object Types (not used by programmers, internal only)
+    # </xsl:text>
             <xsl:for-each select="//AbstractObjectTypes/AbstractObjectType">
                 <xsl:text>'</xsl:text>
                 <xsl:text>_</xsl:text><!-- _ prefix discourages programmer use of abstract types -->
@@ -92,8 +93,8 @@ __all__ = [</xsl:text>
 
             <xsl:text>&#10;</xsl:text>
             <xsl:text>
-    # Abstract Node Types
-    </xsl:text>
+    # Abstract Node Types (not used by programmers, internal only)
+    # </xsl:text>
             <xsl:for-each select="//AbstractNodeTypes/AbstractNodeType">
                 <xsl:text>'</xsl:text>
                 <xsl:text>_</xsl:text><!-- _ prefix discourages programmer use of abstract types -->
@@ -140,18 +141,56 @@ __all__ = [</xsl:text>
             </xsl:for-each>
             <xsl:text>
     'fixBoolean', 'isPositive', 'assertPositive', 'isNonNegative', 'assertNonNegative', 'isZeroToOne', 'assertZeroToOne', 'isLessThanEquals', 'assertLessThanEquals', 'isLessThan', 'assertLessThan', 'isGreaterThanEquals', 'assertGreaterThanEquals', 'isGreaterThan', 'assertGreaterThan', 'isBoundingBox', 'assertBoundingBox',
-    'metaDiagnostics'</xsl:text>
+    'metaDiagnostics','prependLineNumbers','isX3DNode','isX3DField','isX3DStatement',</xsl:text>
+            <xsl:text>&#10;</xsl:text>
 
+            <!-- note that each continuing line must end with comma -->
+            <xsl:text>
+    # Utility classes
+    'AccessType','FieldType','Comment',</xsl:text>
+            <xsl:text>&#10;</xsl:text>
             <xsl:text>
     ]
                 
 # Zen of Python: Flat is better than nested.
 # https://en.wikipedia.org/wiki/Zen_of_Python
+
+# Note insertion of period in following incantation for relative import, thanks Vince!
 # https://docs.python.org/3/reference/import.html
+# https://docs.python.org/3/reference/import.html#package-relative-imports
+                
+import re # regular expressions library, built in
 
-# TODO failing with x3d 4.0.54, missing in 4.0.57, re-added in 4.0.58, again failing
+#print('====================================', flush=True)
+#print('PyPi x3d package __init__.py diagnostics', flush=True)
+try:
+    from x3d.x3d import *
+#   print('*** __init__.py successful invocation: from x3d.x3d import *', flush=True)
+except:
+#   print('*** __init__.py invocation failure: from x3d.x3d import *', flush=True)
+    try:
+        from .x3d import *
+    #   print('*** __init__.py successful invocation: from .x3d import *', flush=True)
+    except:
+    #   print('*** __init__.py invocation failure: from .x3d import *', flush=True)
+        try:
+            from x3d import *
+        #   print('*** __init__.py successful invocation: from x3d import *', flush=True)
+        except:
+        #   print('*** __init__.py invocation failure: from x3d import *', flush=True)
+            try:
+                from src.x3d import *
+            #   print('*** __init__.py successful invocation: from src.x3d import *', flush=True)
+            except:
+            #   print('*** __init__.py invocation failure: from src.x3d import *', flush=True)
+                try:
+                    from src.x3d.x3d import *
+                #   print('*** __init__.py successful invocation: from src.x3d.x3d import *', flush=True)
+                except:
+                #   print('*** __init__.py invocation failure: from src.x3d.x3d import *', flush=True)
+                    print('*** __init__.py invocation failure: unable to perform variations of "from x3d import *"', flush=True)
 
-from x3d import *
+#print('====================================', flush=True)
 
 </xsl:text>
             
@@ -239,14 +278,39 @@ def </xsl:text><xsl:value-of select="$assertFunctionName"/><xsl:text>(fieldName,
     if  not value:
         return True # no failure on empty defaults
     if str(MFString(value).XML()) in </xsl:text><xsl:value-of select="upper-case(@name)"/><xsl:text>:
-        # print ('*** </xsl:text><xsl:value-of select="$assertFunctionName"/><xsl:text> ' + fieldName + ' str(MFString(' + str(value) + ').XML())=' + str(MFString(value).XML()), flush=True) # diagnostic
+        # print('*** </xsl:text><xsl:value-of select="$assertFunctionName"/><xsl:text> ' + fieldName + ' str(MFString(' + str(value) + ').XML())=' + str(MFString(value).XML()), flush=True) # diagnostic
         return True
     if isinstance(value, (SFString, str)) and str(SFString(value).XML()) in </xsl:text><xsl:value-of select="upper-case(@name)"/><xsl:text>:
-        # print ('*** </xsl:text><xsl:value-of select="$assertFunctionName"/><xsl:text> ' + fieldName + ' str(SFString(' + str(value) + ').XML())=' + str(MFString(value).XML()), flush=True) # diagnostic
+        # print('*** </xsl:text><xsl:value-of select="$assertFunctionName"/><xsl:text> ' + fieldName + ' str(SFString(' + str(value) + ').XML())=' + str(MFString(value).XML()), flush=True) # diagnostic
         return True
     raise X3DTypeError(fieldName + ' value=\'' + MFString(value).XML() + '\' does not match allowed enumerations in </xsl:text><xsl:value-of select="upper-case(@name)"/><xsl:text>=' + str(</xsl:text><xsl:value-of select="upper-case(@name)"/><xsl:text>))</xsl:text>
             </xsl:if>
         <xsl:text>&#10;</xsl:text>
+        
+    <xsl:for-each select="enumeration">
+        <xsl:if test="(../@baseType = 'SFInt32') and (string-length(@alias) > 0)">
+            <!-- debug
+            <xsl:message>
+                <xsl:text>../@name=</xsl:text>
+                <xsl:value-of select="../@name"/>
+                <xsl:text>, ../@baseType=</xsl:text>
+                <xsl:value-of select="../@baseType"/>
+                <xsl:text>, @alias=</xsl:text>
+                <xsl:value-of select="@alias"/>
+            </xsl:message> -->
+            <xsl:if test="(position() = 1)">
+                <xsl:text>&#10;</xsl:text>
+                <xsl:text># Enumeration alias values</xsl:text>
+                <xsl:text>&#10;</xsl:text>
+            </xsl:if>
+            <xsl:value-of select="upper-case(../@name)"/>
+            <xsl:text>_</xsl:text>
+            <xsl:value-of select="@alias"/>
+            <xsl:text> = </xsl:text>
+            <xsl:value-of select="@value"/>
+            <xsl:text>&#10;</xsl:text>
+        </xsl:if>
+    </xsl:for-each>
         </xsl:for-each>
 
         <xsl:text>&#10;</xsl:text>
@@ -642,7 +706,7 @@ def isX3DNode(value):
 
 # Python x3d Package Loading Complete
 
-print("x3d.py package 4.0.58 loaded, have fun with X3D Graphics!")
+print("x3d.py package 4.0.63.7 loaded, have fun with X3D Graphics!", flush=True)
 
 ###############################################
 </xsl:text>
@@ -738,7 +802,7 @@ def fixBoolean(value, default=None):
     """
     Utility function to convert boolean to corresponding Python value.
     """
-    # if _DEBUG: print('fixBoolean(value=' + str(value) + ', default=' + str(default) + ')', flush=True)
+    # if _DEBUG: print('fixBoolean(value=' + str(value) + ', type=' + str(type(value)) + ', default=' + str(default) + ')', flush=True)
     if  value is None:
         # if _DEBUG: print('...DEBUG... fixBoolean set value to default=' + str(default))
         return default
@@ -1775,6 +1839,11 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
+        <xsl:variable name="tupleSize">
+            <xsl:call-template name="tupleSize">
+                <xsl:with-param name="x3dType" select="@type"/>
+            </xsl:call-template>
+        </xsl:variable>
 
         <xsl:text>class </xsl:text>
         <xsl:value-of select="$fieldTypeName"/>
@@ -2000,22 +2069,41 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
         <xsl:text>
     # - - - - - - - - - -
     def __init__(self, value=</xsl:text>
-    <xsl:choose>
-        <!-- watch out for intitializing with [] -->
+        <xsl:choose>
+            <xsl:when test="($tupleSize = 2)">
+                <xsl:text>None,value2=None</xsl:text>
+                <xsl:text>):</xsl:text>
+            </xsl:when>
+            <xsl:when test="($tupleSize = 3)">
+                <xsl:text>None,value2=None,value3=None</xsl:text>
+                <xsl:text>):</xsl:text>
+            </xsl:when>
+            <xsl:when test="($tupleSize = 4)">
+                <xsl:text>None,value2=None,value3=None,value4=None</xsl:text>
+                <xsl:text>):</xsl:text>
+            </xsl:when>
+            <!-- watch out for initializing with [] -->
+            <!-- https://stackoverflow.com/questions/9526465/best-practice-for-setting-the-default-value-of-a-parameter-thats-supposed-to-be -->
+            <xsl:when test="($defaultValue = '[]')">
+                <xsl:text>None</xsl:text>
+                <xsl:text>):</xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="$defaultValue"/>
+                <xsl:text>):</xsl:text>
+            </xsl:otherwise>
+        </xsl:choose>
+        <!-- watch out for initializing with [] -->
         <!-- https://stackoverflow.com/questions/9526465/best-practice-for-setting-the-default-value-of-a-parameter-thats-supposed-to-be -->
-        <xsl:when test="($defaultValue = '[]')">
-            <xsl:text>None</xsl:text>
-            <xsl:text>):
+        <!--
+        -->
+        <xsl:if test="($defaultValue = '[]')">
+            <xsl:text>
         if value is None:
-            value = []</xsl:text>
-        </xsl:when>
-        <xsl:otherwise>
-            <xsl:value-of select="$defaultValue"/>
-            <xsl:text>):</xsl:text>
-        </xsl:otherwise>
-    </xsl:choose>
+            value = self.DEFAULT_VALUE()</xsl:text>
+        </xsl:if>
         <xsl:text>
-        # print('*** in __init__ value=' + str(value), 'type=' + str(type(value))) # debug</xsl:text>
+        # print('*** </xsl:text><xsl:value-of select="$fieldTypeName"/><xsl:text> __init__ value=' + str(value), 'type=' + str(type(value))) # debug</xsl:text>
         <xsl:choose>
             <xsl:when test="ends-with(@type,'SFInt32')">
                 <xsl:text>
@@ -2026,6 +2114,21 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 <xsl:text>
         if isinstance(value,str):
             value = float(value)</xsl:text>
+            </xsl:when>
+            <xsl:when test="($tupleSize = 2)">
+                <xsl:text>
+        if value2 is not None:
+            value = (float(value),float(value2))</xsl:text>
+            </xsl:when>
+            <xsl:when test="($tupleSize = 3)">
+                <xsl:text>
+        if value2 is not None and value3 is not None:
+            value = (float(value),float(value2),float(value3))</xsl:text>
+            </xsl:when>
+            <xsl:when test="($tupleSize = 4)">
+                <xsl:text>
+        if value2 is not None and value3 is not None and value4 is not None:
+            value = (float(value),float(value2),float(value3),float(value4))</xsl:text>
             </xsl:when>
         </xsl:choose>
         <xsl:text>
@@ -2039,15 +2142,28 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
         """ Provide typed value of this field instance. """
         return self.__value
     @value.setter
-    def value(self, value):</xsl:text>
+    def value(self, value</xsl:text>
+        <xsl:choose>
+            <xsl:when test="($tupleSize = 2)">
+                <xsl:text>,value2=None</xsl:text>
+            </xsl:when>
+            <xsl:when test="($tupleSize = 3)">
+                <xsl:text>,value2=None,value3=None</xsl:text>
+            </xsl:when>
+            <xsl:when test="($tupleSize = 4)">
+                <xsl:text>,value2=None,value3=None,value4=None</xsl:text>
+            </xsl:when>
+        </xsl:choose>
+        <xsl:text>):</xsl:text>
         <xsl:text>
-        """ The value setter only allows correctly typed values. """</xsl:text>
+        """ The value setter only allows correctly typed and sized values. """</xsl:text>
         <!-- utility conversions -->
-        <xsl:if test="($fieldTypeName = 'SFBool') or ($fieldTypeName = 'MFBool')">
+        <xsl:choose>
+            <xsl:when test="($fieldTypeName = 'SFBool') or ($fieldTypeName = 'MFBool')">
                 <xsl:text>
         value = fixBoolean(value, default=</xsl:text><xsl:value-of select="$fieldTypeName"/><xsl:text>.DEFAULT_VALUE())</xsl:text>
-            <xsl:if test="($fieldTypeName = 'MFBool')">
-                <xsl:text>
+                <xsl:if test="($fieldTypeName = 'MFBool')">
+                    <xsl:text>
         if not isinstance(value,list):
             _newValue = [ value ]
         else:
@@ -2055,8 +2171,24 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
             for each in value:
                 _newValue.append(SFBool(each).value)
         value = _newValue</xsl:text>
-            </xsl:if>
-        </xsl:if>
+                </xsl:if>
+            </xsl:when>
+            <xsl:when test="($tupleSize = 2)">
+                <xsl:text>
+        if value2 is not None:
+            value = (float(value),float(value2))</xsl:text>
+            </xsl:when>
+            <xsl:when test="($tupleSize = 3)">
+                <xsl:text>
+        if value2 is not None and value3 is not None:
+            value = (float(value),float(value2),float(value3))</xsl:text>
+            </xsl:when>
+            <xsl:when test="($tupleSize = 4)">
+                <xsl:text>
+        if value2 is not None and value3 is not None and value4 is not None:
+            value = (float(value),float(value2),float(value3),float(value4))</xsl:text>
+            </xsl:when>
+        </xsl:choose>
         <xsl:text>
         if isinstance(value,SF</xsl:text>
                 <xsl:value-of select="substring($fieldTypeName,3)"/>
@@ -2072,30 +2204,36 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
         <!-- tuple-ize list https://stackoverflow.com/questions/48745275/convert-list-of-string-to-list-of-tuples -->
         <!-- https://docs.python.org/3/tutorial/controlflow.html?highlight=break%20continue#break-and-continue-statements-and-else-clauses-on-loops -->
         <xsl:choose>
-            <xsl:when test="contains($fieldTypeName, 'Vec2f')">
+            <xsl:when test="($tupleSize = 2)">
                 <xsl:text>
         elif isinstance(value, list):
-            for each in value: # check that elements are not tuples
+            for each in value: # check that contained elements are not tuples or lists
                 if isinstance(each, tuple):
                     break
+            if len(value) == 2:
+                value = (value[0],value[1])
             else: # no tuples found, create 2-tuples
                 value = [(x, y) for x, y, in value]</xsl:text>
             </xsl:when>
-            <xsl:when test="contains($fieldTypeName, 'Vec3f') or ends-with($fieldTypeName, 'Color')">
+            <xsl:when test="($tupleSize = 3)">
                 <xsl:text>
         elif isinstance(value, list):
-            for each in value: # check that elements are not tuples
+            for each in value: # check that contained elements are not tuples or lists
                 if isinstance(each, tuple):
                     break
+            if len(value) == 3:
+                value = (value[0],value[1],value[2])
             else: # no tuples found, create 3-tuples
                 value = [(x, y, z) for x, y, z in value]</xsl:text>
             </xsl:when>
-            <xsl:when test="contains($fieldTypeName, 'Vec4f') or ends-with($fieldTypeName, 'ColorRGBA') or ends-with($fieldTypeName, 'Rotation')">
+            <xsl:when test="($tupleSize = 4)">
                 <xsl:text>
         elif isinstance(value, list):
-            for each in value: # check that elements are not tuples
+            for each in value: # check that contained elements are not tuples or lists
                 if isinstance(each, tuple):
                     break
+            if len(value) == 4:
+                value = (value[0],value[1],value[2],value[3])
             else: # no tuples found, create 4-tuples
                 value = [(x, y, z, w) for x, y, z, w in value]</xsl:text>
             </xsl:when>
@@ -2121,7 +2259,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
         if isinstance(value, str):
             try:
                 int(value) # this statement checks but does not set value, may throw exception
-                print ('*** string value provided, value=' + str(value) + ', int(value)=' + str(int(value)), flush=True)
+                print('*** string value provided, value=' + str(value) + ', int(value)=' + str(int(value)), flush=True)
                 value = int(value)
             except ValueError as error:
                 # https://stackoverflow.com/questions/66995878/consider-explicitly-re-raising-using-the-from-keyword-pylint-suggestion
@@ -2135,7 +2273,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
         if isinstance(value, str):
             try:
                 float(value) # this statement checks but does not set value, may throw exception
-                print ('*** string value provided, value=' + str(value) + ', float(value)=' + str(float(value)), flush=True)
+                print('*** string value provided, value=' + str(value) + ', float(value)=' + str(float(value)), flush=True)
                 value = float(value)
             except ValueError as error:
                 # https://stackoverflow.com/questions/66995878/consider-explicitly-re-raising-using-the-from-keyword-pylint-suggestion
@@ -3693,28 +3831,35 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
         else:
             validationVersion = str(self.version)
         try:
+            selfX3dXmlText = ''
             import xmlschema
-            x3dschema = xmlschema.XMLSchema('https://www.web3d.org/specifications/x3d-' + validationVersion + '.xsd')
-            from xml.etree import ElementTree
-            selfX3dXmlText = self.XML()
-            selfX3dXmlTree = ElementTree.fromstring(selfX3dXmlText)
-            print("Python-to-XML well-formed XML document  test of XML output complete")
+            x3dSchemaUrl = 'https://www.web3d.org/specifications/x3d-' + validationVersion + '.xsd'
+            x3dschema = xmlschema.XMLSchema(x3dSchemaUrl)
             try:
+                from xml.etree import ElementTree
+                selfX3dXmlText = self.XML()
+                selfX3dXmlTree = ElementTree.fromstring(selfX3dXmlText)
+                print("Python-to-XML well-formed XML document  test of XML output complete")
                 x3dschema.is_valid(selfX3dXmlTree)
                 print("Python-to-XML X3D", str(self.version), "schema validation test of XML output complete")
             except SyntaxError as err: # Exception
                 # https://stackoverflow.com/questions/18176602/how-to-get-the-name-of-an-exception-that-was-caught-in-python
-                print("*** Python-to-XML X3D", str(self.version), "schema validation test of XML output failed.", type(err).__name__, "(line=" + str(err.lineno) + ')', err)
+                print("*** Python-to-XML X3D", str(self.version), "schema validation test of XML output failed.")
+                print("    x3dSchemaUrl=", x3dSchemaUrl)
+                if hasattr(err,'position') and err.position[0]:
+                    print("   ", type(err).__name__, "(line=" + str(err.lineno) + ')', err)
                 if selfX3dXmlText: # might have failed to generate
                     print(prependLineNumbers(selfX3dXmlText,err.lineno))
         except Exception as err: # usually ParseError
             # https://docs.python.org/3/library/xml.etree.elementtree.html#exceptions
-            print("*** Python-to-XML well-formed XML document test failed.", type(err).__name__, err)
-            if err.position[0]:
+            print("*** Python-to-XML well-formed XML document test failed.")
+            print("    x3dSchemaUrl=" + x3dSchemaUrl)
+            print("    " + type(err).__name__, err)
+            if hasattr(err,'position') and err.position[0]:
                 lineNumber = err.position[0]
+                print('type(err.position)=' + str(type(err.position)), 'lineNumber=' + str(lineNumber))
             else:
                 lineNumber = 1
-            print('type(err.position)=' + str(type(err.position)), 'lineNumber=' + str(lineNumber))
             if selfX3dXmlText: # might have failed to generate
                 print(prependLineNumbers(selfX3dXmlText,lineNumber))
     # output function - - - - - - - - - -
