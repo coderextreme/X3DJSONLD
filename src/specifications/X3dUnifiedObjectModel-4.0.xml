@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-4.0.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-4.0.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 4.0 of X3D -->
-<!-- Generated 2022-02-27-08:00 12:39:05.0818856-08:00 -->
+<!-- Generated 2022-03-17-07:00 16:40:12.5322621-07:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                         version="4.0"
                         xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -331,21 +331,21 @@
       </SimpleType>
       <SimpleType name="containerFieldChoicesX3DCoordinateNode"
                    baseType="xs:NMTOKEN"
-                   appinfo="containerFieldChoicesX3DCoordinateNode lists the allowed containerField enumeration values for Coordinate and CoordinateDouble nodes: default &#34;coord&#34; if parent node is a geometry node, otherwise skinCoord or skinBindingCoord if parent node is HAnimHumanoid"
+                   appinfo="containerFieldChoicesX3DCoordinateNode lists the allowed containerField enumeration values for Coordinate and CoordinateDouble nodes: default &#34;coord&#34; if parent node is a geometry node, otherwise skinCoord or skinBindingCoords if parent node is HAnimHumanoid"
                    documentation="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField">
          <enumeration value="coord" appinfo="parent node is a geometry node"/>
          <enumeration value="controlPoint" appinfo="parent node is a Nurbs node"/>
          <enumeration value="skinCoord" appinfo="parent node is HAnimHumanoid"/>
-         <enumeration value="skinBindingCoord"
+         <enumeration value="skinBindingCoords"
                        appinfo="parent node is HAnimHumanoid, added in X3D version 4"/>
       </SimpleType>
       <SimpleType name="containerFieldChoicesX3DNormalNode"
                    baseType="xs:NMTOKEN"
-                   appinfo="containerFieldChoicesX3DNormalNode lists the allowed containerField enumeration values for Normal nodes: default &#34;normal&#34; if parent node is a geometry node, otherwise skinNormal or skinBindingNormal if parent node is HAnimHumanoid"
+                   appinfo="containerFieldChoicesX3DNormalNode lists the allowed containerField enumeration values for Normal nodes: default &#34;normal&#34; if parent node is a geometry node, otherwise skinNormal or skinBindingNormals if parent node is HAnimHumanoid"
                    documentation="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField">
          <enumeration value="normal" appinfo="parent node is a geometry node"/>
          <enumeration value="skinNormal" appinfo="parent node is HAnimHumanoid"/>
-         <enumeration value="skinBindingNormal"
+         <enumeration value="skinBindingNormals"
                        appinfo="parent node is HAnimHumanoid, added in X3D version 4"/>
       </SimpleType>
       <SimpleType name="containerFieldChoicesX3DTexture2DNode"
@@ -4343,7 +4343,7 @@
       <FieldType type="SFBool"
                   tupleSize="1"
                   isArray="false"
-                  defaultValue="true"
+                  defaultValue="false"
                   regex="\s*(true|false)\s*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFBoolAndMFBool"
                                appinfo="SFBool is a logical type with possible values (true|false) to match the XML boolean type. Hint: XML boolean values are lower case (true|false) in order to maintain compatibility with HTML and other XML documents.">
@@ -4713,7 +4713,7 @@
       <FieldType type="SFVec4d"
                   tupleSize="4"
                   isArray="false"
-                  defaultValue="0.0 0.0 0.0 0.0"
+                  defaultValue="0.0 0.0 0.0 1.0"
                   regex="\s*(([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){3}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFVec4dAndMFVec4d"
                                appinfo="SFVec4d is a 4-tuple set of double-precision floating-point values, specifying a 3D homogeneous vector. Warning: comma characters within singleton values do not pass strict XML validation.">
@@ -4733,7 +4733,7 @@
       <FieldType type="SFVec4f"
                   tupleSize="4"
                   isArray="false"
-                  defaultValue="0.0 0.0 0.0 0.0"
+                  defaultValue="0.0 0.0 0.0 1.0"
                   regex="\s*(([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){3}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html#SFVec4fAndMFVec4f"
                                appinfo="SFVec4f is a 4-tuple set of single-precision floating-point values, specifying a 3D homogeneous vector. Warning: comma characters within singleton values do not pass strict XML validation.">
@@ -6855,7 +6855,7 @@
                     type="SFNode"
                     accessType="inputOutput"
                     default="NULL"
-                    acceptableNodeTypes="X3DCoordinateNode"/>
+                    acceptableNodeTypes="Coordinate|CoordinateDouble"/>
             <field name="IS"
                     type="SFNode"
                     accessType="inputOutput"
@@ -12369,7 +12369,8 @@
                     type="SFNode"
                     accessType="inputOutput"
                     default="NULL"
-                    acceptableNodeTypes="X3DTexture3DNode"/>
+                    acceptableNodeTypes="X3DTexture3DNode"
+                    description="The surfaceNormals field contains a 3D texture with at least three component values."/>
             <field name="DEF"
                     type="SFString"
                     accessType="inputOutput"
@@ -12888,7 +12889,8 @@
                     type="SFNode"
                     accessType="initializeOnly"
                     default="NULL"
-                    acceptableNodeTypes="X3DNBodyCollidableNode"/>
+                    acceptableNodeTypes="X3DNBodyCollidableNode"
+                    description="The collidable field holds a reference to a single nested item of a collidable scene graph."/>
             <field name="enabled"
                     type="SFBool"
                     accessType="inputOutput"
@@ -13017,7 +13019,8 @@
                     type="SFNode"
                     accessType="initializeOnly"
                     default="NULL"
-                    acceptableNodeTypes="Shape"/>
+                    acceptableNodeTypes="Shape"
+                    description="The shape field provides a geometry proxy for specifying which geometry best represents the collidable object."/>
             <field name="translation"
                     type="SFVec3f"
                     accessType="inputOutput"
@@ -13357,7 +13360,8 @@
                     type="SFNode"
                     accessType="inputOutput"
                     default="NULL"
-                    acceptableNodeTypes="CollisionCollection"/>
+                    acceptableNodeTypes="CollisionCollection"
+                    description="The collider field specifies a CollisionCollection node that holds a collidables field of nodes and spaces that are to be included in collision-detection computations."/>
             <field name="contacts"
                     type="MFNode"
                     accessType="outputOnly"
@@ -13456,7 +13460,8 @@
             <field name="collidables"
                     type="MFNode"
                     accessType="inputOutput"
-                    acceptableNodeTypes="X3DNBodyCollisionSpaceNode|X3DNBodyCollidableNode"/>
+                    acceptableNodeTypes="X3DNBodyCollisionSpaceNode|X3DNBodyCollidableNode"
+                    description="Collection of collidable objects as well as nested CollisionSpace collections."/>
             <field name="enabled"
                     type="SFBool"
                     accessType="inputOutput"
@@ -14153,23 +14158,24 @@
                     accessType="initializeOnly"
                     default="false"
                     inheritedFrom="X3DTexture3DNode"
-                    description="Whether to vertically repeat texture along R axis."/>
+                    description="Whether to repeat texture along R axis from front to back."/>
             <field name="repeatS"
                     type="SFBool"
                     accessType="initializeOnly"
                     default="false"
                     inheritedFrom="X3DTexture3DNode"
-                    description="Whether to horizontally repeat texture along S axis."/>
+                    description="Whether to repeat texture along S axis horizontally from left to right."/>
             <field name="repeatT"
                     type="SFBool"
                     accessType="initializeOnly"
                     default="false"
                     inheritedFrom="X3DTexture3DNode"
-                    description="Whether to vertically repeat texture along T axis."/>
+                    description="Whether to repeat texture along T axis vertically from top to bottom."/>
             <field name="texture"
                     type="MFNode"
                     accessType="inputOutput"
-                    acceptableNodeTypes="X3DTexture2DNode"/>
+                    acceptableNodeTypes="X3DTexture2DNode"
+                    description="collection of 2D texture sources."/>
             <field name="textureProperties"
                     type="SFNode"
                     accessType="initializeOnly"
@@ -14393,7 +14399,8 @@
                     accessType="inputOutput"
                     default="0"
                     minInclusive="0"
-                    inheritedFrom="X3DParticleEmitterNode"/>
+                    inheritedFrom="X3DParticleEmitterNode"
+                    description="Basic mass of each particle, defined in mass base units (default is kilograms)."/>
             <field name="metadata"
                     type="SFNode"
                     accessType="inputOutput"
@@ -14405,7 +14412,8 @@
                     type="SFBool"
                     accessType="inputOutput"
                     default="true"
-                    inheritedFrom="X3DParticleEmitterNode"/>
+                    inheritedFrom="X3DParticleEmitterNode"
+                    description="Enables/disables production of particles from this emitter node."/>
             <field name="position"
                     type="SFVec3f"
                     accessType="inputOutput"
@@ -14500,12 +14508,14 @@
                     type="SFNode"
                     accessType="inputOutput"
                     default="NULL"
-                    acceptableNodeTypes="RigidBody"/>
+                    acceptableNodeTypes="RigidBody"
+                    description="The body1 and body2 fields specify two top-level nodes that should be evaluated in the physics model as a single set of interactions with respect to each other."/>
             <field name="body2"
                     type="SFNode"
                     accessType="inputOutput"
                     default="NULL"
-                    acceptableNodeTypes="RigidBody"/>
+                    acceptableNodeTypes="RigidBody"
+                    description="The body1 and body2 fields specify two top-level nodes that should be evaluated in the physics model as a single set of interactions with respect to each other."/>
             <field name="bounce"
                     type="SFFloat"
                     accessType="inputOutput"
@@ -14538,12 +14548,14 @@
                     type="SFNode"
                     accessType="inputOutput"
                     default="NULL"
-                    acceptableNodeTypes="X3DNBodyCollidableNode"/>
+                    acceptableNodeTypes="X3DNBodyCollidableNode"
+                    description="The geometry1 and geometry2 fields specify collision-related information about body1 and body2."/>
             <field name="geometry2"
                     type="SFNode"
                     accessType="inputOutput"
                     default="NULL"
-                    acceptableNodeTypes="X3DNBodyCollidableNode"/>
+                    acceptableNodeTypes="X3DNBodyCollidableNode"
+                    description="The geometry1 and geometry2 fields specify collision-related information about body1 and body2."/>
             <field name="IS"
                     type="SFNode"
                     accessType="inputOutput"
@@ -15176,7 +15188,7 @@
       <ConcreteNode name="CoordinateDouble">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/nurbs.html#CoordinateDouble"
                                appinfo="CoordinateDouble builds geometry by defining a set of 3D coordinate (triplet) point values.">
-            <componentInfo name="NURBS" level="1"/>
+            <componentInfo name="Rendering" level="1"/>
             <Inheritance baseType="X3DCoordinateNode"/>
             <field name="IS"
                     type="SFNode"
@@ -16032,13 +16044,14 @@
                     default="0"
                     minInclusive="0"
                     maxInclusive="255"
-                    description="Specific information about an entity based on the Subcategory field."/>
+                    description="Specific information about an entity based on the subcategory field."/>
             <field name="subcategory"
                     type="SFInt32"
                     accessType="initializeOnly"
                     default="0"
                     minInclusive="0"
-                    maxInclusive="255"/>
+                    maxInclusive="255"
+                    description="Integer enumerations value for particular subcategory to which an entity belongs based on the category field."/>
             <field name="url"
                     type="MFString"
                     accessType="inputOutput"
@@ -16318,7 +16331,8 @@
                     type="SFFloat"
                     accessType="inputOutput"
                     default="0.003"
-                    minInclusive="0"/>
+                    minInclusive="0"
+                    description="The attack field is the amount of time (in seconds) to reduce the gain by 10dB."/>
             <field name="channelCount"
                     type="SFInt32"
                     accessType="outputOnly"
@@ -16459,7 +16473,8 @@
                     accessType="inputOutput"
                     default="0"
                     minInclusive="0"
-                    inheritedFrom="X3DSoundProcessingNode"/>
+                    inheritedFrom="X3DSoundProcessingNode"
+                    description="tailTime is duration of time that a node continues to provide output signal after the input signal becomes silent."/>
             <field name="threshold"
                     type="SFFloat"
                     accessType="inputOutput"
@@ -16614,7 +16629,8 @@
                     type="SFNode"
                     accessType="inputOutput"
                     default="NULL"
-                    acceptableNodeTypes="X3DTexture3DNode"/>
+                    acceptableNodeTypes="X3DTexture3DNode"
+                    description="The surfaceNormals field contains a 3D texture with at least three component values."/>
             <field name="DEF"
                     type="SFString"
                     accessType="inputOutput"
@@ -17131,7 +17147,8 @@
             <field name="entitySubcategory"
                     type="SFInt32"
                     accessType="inputOutput"
-                    default="0"/>
+                    default="0"
+                    description="Integer enumerations value for particular subcategory to which an entity belongs based on the category field."/>
             <field name="eventApplicationID"
                     type="SFInt32"
                     accessType="inputOutput"
@@ -17479,7 +17496,8 @@
                     type="SFBool"
                     accessType="inputOutput"
                     default="true"
-                    inheritedFrom="X3DParticleEmitterNode"/>
+                    inheritedFrom="X3DParticleEmitterNode"
+                    description="Enables/disables production of particles from this emitter node."/>
             <field name="position"
                     type="SFVec3f"
                     accessType="inputOutput"
@@ -19447,7 +19465,8 @@
                     accessType="initializeOnly"
                     default="&#34;GD&#34; &#34;WE&#34;"
                     additionalEnumerationValuesAllowed="true"
-                    baseType="geoSystemType"/>
+                    baseType="geoSystemType"
+                    description="Identifies spatial reference frame: Geodetic (GD), Geocentric (GC), Universal Transverse Mercator (UTM)."/>
             <field name="IS"
                     type="SFNode"
                     accessType="inputOutput"
@@ -20744,13 +20763,13 @@
                     accessType="inputOutput"
                     acceptableNodeTypes="Group|Transform|Shape|IndexedFaceSet"
                     description="List of one or more indexed mesh definitions (such as IndexedFaceSet) that utilize skinCoord point and skinNormal normal data."/>
-            <field name="skinBindingCoord"
+            <field name="skinBindingCoords"
                     type="SFNode"
                     accessType="inputOutput"
                     default="NULL"
-                    acceptableNodeTypes="X3DCoordinateNode"
+                    acceptableNodeTypes="Coordinate|CoordinateDouble"
                     description="Array of Coordinate nodes to handle non-default source pose so that both skin and skeleton can be in same binding pose."/>
-            <field name="skinBindingNormal"
+            <field name="skinBindingNormals"
                     type="SFNode"
                     accessType="inputOutput"
                     default="NULL"
@@ -20760,7 +20779,7 @@
                     type="SFNode"
                     accessType="inputOutput"
                     default="NULL"
-                    acceptableNodeTypes="X3DCoordinateNode"
+                    acceptableNodeTypes="Coordinate|CoordinateDouble"
                     description="Coordinate node utilized by indexed mesh definitions for skin."/>
             <field name="skinNormal"
                     type="SFNode"
@@ -20855,7 +20874,7 @@
             <field name="addChildren"
                     type="MFNode"
                     accessType="inputOnly"
-                    acceptableNodeTypes="HAnimJoint|HAnimSegment|HAnimSite"/>
+                    acceptableNodeTypes="HAnimJoint|HAnimSegment"/>
             <field name="bboxCenter"
                     type="SFVec3f"
                     accessType="initializeOnly"
@@ -20883,7 +20902,7 @@
             <field name="children"
                     type="MFNode"
                     accessType="inputOutput"
-                    acceptableNodeTypes="HAnimJoint|HAnimSegment|HAnimSite"
+                    acceptableNodeTypes="HAnimJoint|HAnimSegment"
                     description="Grouping nodes contain an ordered list of children nodes."/>
             <field name="description"
                     type="SFString"
@@ -21801,7 +21820,7 @@
             <field name="removeChildren"
                     type="MFNode"
                     accessType="inputOnly"
-                    acceptableNodeTypes="HAnimJoint|HAnimSegment|HAnimSite"/>
+                    acceptableNodeTypes="HAnimJoint|HAnimSegment"/>
             <field name="rotation"
                     type="SFRotation"
                     accessType="inputOutput"
@@ -21884,8 +21903,6 @@
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="HAnimJoint"/>
                <NodeContentModel name="HAnimSegment"/>
-               <NodeContentModel name="HAnimSite"/>
-               <NodeContentModel name="HAnimDisplacer"/>
                <NodeContentModel name="ProtoInstance"/>
             </ContentModel>
          </InterfaceDefinition>
@@ -22072,7 +22089,7 @@
                     type="SFNode"
                     accessType="inputOutput"
                     default="NULL"
-                    acceptableNodeTypes="X3DCoordinateNode"
+                    acceptableNodeTypes="Coordinate|CoordinateDouble"
                     description="the coord field is used for HAnimSegment objects that have deformable meshes and shall contain coordinates referenced from the IndexedFaceSet for the paarent HAnimSegment object."/>
             <field name="description"
                     type="SFString"
@@ -23976,13 +23993,13 @@
                     accessType="initializeOnly"
                     default="true"
                     inheritedFrom="X3DTexture2DNode"
-                    description="Whether to horizontally repeat texture along S axis."/>
+                    description="Whether to repeat texture along S axis horizontally from left to right."/>
             <field name="repeatT"
                     type="SFBool"
                     accessType="initializeOnly"
                     default="true"
                     inheritedFrom="X3DTexture2DNode"
-                    description="Whether to vertically repeat texture along T axis."/>
+                    description="Whether to repeat texture along T axis vertically from top to bottom."/>
             <field name="textureProperties"
                     type="SFNode"
                     accessType="initializeOnly"
@@ -24083,19 +24100,19 @@
                     accessType="initializeOnly"
                     default="false"
                     inheritedFrom="X3DTexture3DNode"
-                    description="Whether to vertically repeat texture along R axis."/>
+                    description="Whether to repeat texture along R axis from front to back."/>
             <field name="repeatS"
                     type="SFBool"
                     accessType="initializeOnly"
                     default="false"
                     inheritedFrom="X3DTexture3DNode"
-                    description="Whether to horizontally repeat texture along S axis."/>
+                    description="Whether to repeat texture along S axis horizontally from left to right."/>
             <field name="repeatT"
                     type="SFBool"
                     accessType="initializeOnly"
                     default="false"
                     inheritedFrom="X3DTexture3DNode"
-                    description="Whether to vertically repeat texture along T axis."/>
+                    description="Whether to repeat texture along T axis vertically from top to bottom."/>
             <field name="textureProperties"
                     type="SFNode"
                     accessType="initializeOnly"
@@ -24389,7 +24406,8 @@
                     type="SFNode"
                     accessType="inputOutput"
                     default="NULL"
-                    acceptableNodeTypes="X3DNormalNode"/>
+                    acceptableNodeTypes="X3DNormalNode"
+                    description="Single contained Normal node that can specify perpendicular vectors for corresponding vertices to support rendering computations, applied according to the normalPerVertex field."/>
             <field name="set_colorIndex"
                     type="MFInt32"
                     accessType="inputOnly"
@@ -26241,7 +26259,8 @@
                     type="SFNode"
                     accessType="inputOutput"
                     default="NULL"
-                    acceptableNodeTypes="X3DNormalNode"/>
+                    acceptableNodeTypes="X3DNormalNode"
+                    description="Single contained Normal node that can specify perpendicular vectors for corresponding vertices to support rendering computations, applied according to the normalPerVertex field."/>
             <field name="vertexCount"
                     type="MFInt32"
                     accessType="inputOutput"
@@ -27356,7 +27375,8 @@
             <field name="value"
                     type="MFNode"
                     accessType="inputOutput"
-                    acceptableNodeTypes="X3DMetadataObject"/>
+                    acceptableNodeTypes="X3DMetadataObject"
+                    description="The value field provides a list of X3DMetadataObject nodes whose meaning is determined by the name field."/>
             <field name="DEF"
                     type="SFString"
                     accessType="inputOutput"
@@ -27876,13 +27896,13 @@
                     accessType="initializeOnly"
                     default="true"
                     inheritedFrom="X3DTexture2DNode"
-                    description="Whether to horizontally repeat texture along S axis."/>
+                    description="Whether to repeat texture along S axis horizontally from left to right."/>
             <field name="repeatT"
                     type="SFBool"
                     accessType="initializeOnly"
                     default="true"
                     inheritedFrom="X3DTexture2DNode"
-                    description="Whether to vertically repeat texture along T axis."/>
+                    description="Whether to repeat texture along T axis vertically from top to bottom."/>
             <field name="resumeTime"
                     type="SFTime"
                     accessType="inputOutput"
@@ -28500,7 +28520,8 @@
                     type="SFNode"
                     accessType="inputOutput"
                     default="NULL"
-                    acceptableNodeTypes="X3DCoordinateNode"/>
+                    acceptableNodeTypes="Coordinate|CoordinateDouble"
+                    description="Single contained Coordinate or CoordinateDouble node that can specify control points for NURBS geometry definitions."/>
             <field name="IS"
                     type="SFNode"
                     accessType="inputOutput"
@@ -28664,7 +28685,7 @@
                     type="SFNode"
                     accessType="inputOutput"
                     default="NULL"
-                    acceptableNodeTypes="X3DCoordinateNode"
+                    acceptableNodeTypes="Coordinate|CoordinateDouble"
                     description="Single contained Coordinate or CoordinateDouble node that can specify control points for NURBS geometry definitions."/>
             <field name="IS"
                     type="SFNode"
@@ -28748,7 +28769,7 @@
                     type="SFNode"
                     accessType="inputOutput"
                     default="NULL"
-                    acceptableNodeTypes="X3DCoordinateNode"
+                    acceptableNodeTypes="Coordinate|CoordinateDouble"
                     inheritedFrom="X3DNurbsSurfaceGeometryNode"
                     description="Single contained Coordinate or CoordinateDouble node that can specify control points for NURBS geometry definitions."/>
             <field name="IS"
@@ -28895,7 +28916,7 @@
                     type="SFNode"
                     accessType="inputOutput"
                     default="NULL"
-                    acceptableNodeTypes="X3DCoordinateNode"
+                    acceptableNodeTypes="Coordinate|CoordinateDouble"
                     description="Single contained Coordinate or CoordinateDouble node that can specify control points for NURBS geometry definitions."/>
             <field name="IS"
                     type="SFNode"
@@ -29082,7 +29103,7 @@
                     type="SFNode"
                     accessType="inputOutput"
                     default="NULL"
-                    acceptableNodeTypes="X3DCoordinateNode"
+                    acceptableNodeTypes="Coordinate|CoordinateDouble"
                     description="Single contained Coordinate or CoordinateDouble node that can specify control points for NURBS geometry definitions."/>
             <field name="IS"
                     type="SFNode"
@@ -29185,7 +29206,7 @@
       </ConcreteNode>
       <ConcreteNode name="NurbsSweptSurface">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/nurbs.html#NurbsSweptSurface"
-                               appinfo="NurbsSweptSurface contains a crossSectionCurve and a trajectoryCurve [NurbsCurve].">
+                               appinfo="NurbsSweptSurface uses a trajectoryCurve path to describe a generalized surface that is swept by a crossSectionCurve.">
             <componentInfo name="NURBS" level="3"/>
             <Inheritance baseType="X3DParametricGeometryNode"/>
             <field name="ccw"
@@ -29197,7 +29218,8 @@
                     type="SFNode"
                     accessType="inputOutput"
                     default="NULL"
-                    acceptableNodeTypes="X3DNurbsControlCurveNode"/>
+                    acceptableNodeTypes="X3DNurbsControlCurveNode"
+                    description="defines cross-section of the surface traced about the trajectoryCurve axis."/>
             <field name="IS"
                     type="SFNode"
                     accessType="inputOutput"
@@ -29220,7 +29242,8 @@
                     type="SFNode"
                     accessType="inputOutput"
                     default="NULL"
-                    acceptableNodeTypes="NurbsCurve"/>
+                    acceptableNodeTypes="NurbsCurve"
+                    description="describes the center-line path using a NurbsCurve node, oriented so that it is defined counterclockwise when looking down the −Y axis, thus defining a concept of inside and outside."/>
             <field name="DEF"
                     type="SFString"
                     accessType="inputOutput"
@@ -29287,7 +29310,8 @@
                     type="SFNode"
                     accessType="inputOutput"
                     default="NULL"
-                    acceptableNodeTypes="X3DNurbsControlCurveNode"/>
+                    acceptableNodeTypes="X3DNurbsControlCurveNode"
+                    description="2D curve in the yz-plane that describes the cross-sectional shape of the object."/>
             <field name="solid"
                     type="SFBool"
                     accessType="inputOutput"
@@ -29297,7 +29321,8 @@
                     type="SFNode"
                     accessType="inputOutput"
                     default="NULL"
-                    acceptableNodeTypes="X3DNurbsControlCurveNode"/>
+                    acceptableNodeTypes="X3DNurbsControlCurveNode"
+                    description="2D curve in the xz-plane that describes path over which to trace the cross-section."/>
             <field name="DEF"
                     type="SFString"
                     accessType="inputOutput"
@@ -29443,7 +29468,7 @@
                     type="SFNode"
                     accessType="inputOutput"
                     default="NULL"
-                    acceptableNodeTypes="X3DCoordinateNode"
+                    acceptableNodeTypes="Coordinate|CoordinateDouble"
                     inheritedFrom="X3DNurbsSurfaceGeometryNode"
                     description="Single contained Coordinate or CoordinateDouble node that can specify control points for NURBS geometry definitions."/>
             <field name="IS"
@@ -29619,7 +29644,8 @@
                     type="SFNode"
                     accessType="inputOutput"
                     default="NULL"
-                    acceptableNodeTypes="X3DTexture2DNode|X3DTexture3DNode">
+                    acceptableNodeTypes="X3DTexture2DNode|X3DTexture3DNode"
+                    description="The transferFunction field holds a single texture representation in either two or three dimensions that maps the voxel data values to a specific colour output.">
                <componentInfo name="VolumeRendering" level="2"/>
             </field>
             <field name="DEF"
@@ -30085,8 +30111,9 @@
             <field name="frequency"
                     type="SFFloat"
                     accessType="inputOutput"
-                    default="0"
-                    minInclusive="0"/>
+                    default="440"
+                    minInclusive="0"
+                    description="The frequency of oscillation in hertz."/>
             <field name="gain"
                     type="SFFloat"
                     accessType="inputOutput"
@@ -30335,7 +30362,8 @@
                     type="SFBool"
                     accessType="inputOutput"
                     default="true"
-                    inheritedFrom="X3DShapeNode"/>
+                    inheritedFrom="X3DShapeNode"
+                    description="The castShadow field defines whether this Shape casts shadows as produced by lighting nodes."/>
             <field name="color"
                     synonym="colorRamp"
                     type="MFNode"
@@ -30522,7 +30550,8 @@
                     type="SFBool"
                     accessType="inputOutput"
                     default="true"
-                    inheritedFrom="X3DSoundNode"/>
+                    inheritedFrom="X3DSoundNode"
+                    description="Enables/disables node operation."/>
             <field name="IS"
                     type="SFNode"
                     accessType="inputOutput"
@@ -30661,11 +30690,13 @@
                     type="SFNode"
                     accessType="inputOutput"
                     default="NULL"
-                    acceptableNodeTypes="X3DSingleTextureNode"/>
+                    acceptableNodeTypes="X3DSingleTextureNode"
+                    description="When applying metallic for this material node, the contained texture provides Physically Based Rendering (PBR) modulation for each pixel."/>
             <field name="metallicRoughnessTextureMapping"
                     type="SFString"
                     accessType="inputOutput"
-                    baseType="xs:NMTOKEN"/>
+                    baseType="xs:NMTOKEN"
+                    description="The mapping label identifies which texture coordinates and transformations are used to compute texture effects from corresponding geometry on a given material."/>
             <field name="normalScale"
                     type="SFFloat"
                     accessType="inputOutput"
@@ -30918,13 +30949,13 @@
                     accessType="initializeOnly"
                     default="true"
                     inheritedFrom="X3DTexture2DNode"
-                    description="Whether to horizontally repeat texture along S axis."/>
+                    description="Whether to repeat texture along S axis horizontally from left to right."/>
             <field name="repeatT"
                     type="SFBool"
                     accessType="initializeOnly"
                     default="true"
                     inheritedFrom="X3DTexture2DNode"
-                    description="Whether to vertically repeat texture along T axis."/>
+                    description="Whether to repeat texture along T axis vertically from top to bottom."/>
             <field name="textureProperties"
                     type="SFNode"
                     accessType="initializeOnly"
@@ -31002,19 +31033,19 @@
                     accessType="initializeOnly"
                     default="false"
                     inheritedFrom="X3DTexture3DNode"
-                    description="Whether to vertically repeat texture along R axis."/>
+                    description="Whether to repeat texture along R axis from front to back."/>
             <field name="repeatS"
                     type="SFBool"
                     accessType="initializeOnly"
                     default="false"
                     inheritedFrom="X3DTexture3DNode"
-                    description="Whether to horizontally repeat texture along S axis."/>
+                    description="Whether to repeat texture along S axis horizontally from left to right."/>
             <field name="repeatT"
                     type="SFBool"
                     accessType="initializeOnly"
                     default="false"
                     inheritedFrom="X3DTexture3DNode"
-                    description="Whether to vertically repeat texture along T axis."/>
+                    description="Whether to repeat texture along T axis vertically from top to bottom."/>
             <field name="textureProperties"
                     type="SFNode"
                     accessType="initializeOnly"
@@ -31202,7 +31233,8 @@
                     type="SFBool"
                     accessType="inputOutput"
                     default="true"
-                    inheritedFrom="X3DParticleEmitterNode"/>
+                    inheritedFrom="X3DParticleEmitterNode"
+                    description="Enables/disables production of particles from this emitter node."/>
             <field name="position"
                     type="SFVec3f"
                     accessType="inputOutput"
@@ -31661,7 +31693,8 @@
                     type="SFNode"
                     accessType="inputOutput"
                     default="NULL"
-                    acceptableNodeTypes="X3DNormalNode"/>
+                    acceptableNodeTypes="X3DNormalNode"
+                    description="Single contained Normal node that can specify perpendicular vectors for corresponding vertices to support rendering computations."/>
             <field name="DEF"
                     type="SFString"
                     accessType="inputOutput"
@@ -31803,7 +31836,8 @@
                     type="SFBool"
                     accessType="inputOutput"
                     default="true"
-                    inheritedFrom="X3DParticleEmitterNode"/>
+                    inheritedFrom="X3DParticleEmitterNode"
+                    description="Enables/disables production of particles from this emitter node."/>
             <field name="set_coordIndex"
                     type="MFInt32"
                     accessType="inputOnly"
@@ -33428,7 +33462,8 @@
             <field name="geometry"
                     type="MFNode"
                     accessType="inputOutput"
-                    acceptableNodeTypes="X3DNBodyCollidableNode"/>
+                    acceptableNodeTypes="X3DNBodyCollidableNode"
+                    description="The geometry field is used to connect the body modelled by the physics engine implementation to the real geometry of the scene through the use of collidable nodes."/>
             <field name="inertia"
                     type="SFMatrix3f"
                     accessType="inputOutput"
@@ -33459,7 +33494,8 @@
                     type="SFNode"
                     accessType="inputOutput"
                     default="NULL"
-                    acceptableNodeTypes="Sphere|Box|Cone"/>
+                    acceptableNodeTypes="Sphere|Box|Cone"
+                    description="The massDensityModel field is used to describe the geometry type and dimensions used to calculate the mass density in the physics model."/>
             <field name="metadata"
                     type="SFNode"
                     accessType="inputOutput"
@@ -34435,7 +34471,8 @@
                     type="SFNode"
                     accessType="inputOutput"
                     default="NULL"
-                    acceptableNodeTypes="X3DMaterialNode"/>
+                    acceptableNodeTypes="X3DMaterialNode"
+                    description="Colour and opacity is determined based on whether a value has been specified for the material field."/>
             <field name="metadata"
                     type="SFNode"
                     accessType="inputOutput"
@@ -34464,7 +34501,8 @@
                     type="SFNode"
                     accessType="inputOutput"
                     default="NULL"
-                    acceptableNodeTypes="X3DTexture3DNode"/>
+                    acceptableNodeTypes="X3DTexture3DNode"
+                    description="The surfaceNormals field contains a 3D texture with at least three component values."/>
             <field name="DEF"
                     type="SFString"
                     accessType="inputOutput"
@@ -34751,7 +34789,8 @@
                     type="SFBool"
                     accessType="inputOutput"
                     default="true"
-                    inheritedFrom="X3DShapeNode"/>
+                    inheritedFrom="X3DShapeNode"
+                    description="castShadow defines whether this Shape casts shadows as produced by lighting nodes."/>
             <field name="geometry"
                     type="SFNode"
                     accessType="inputOutput"
@@ -35090,7 +35129,8 @@
                     type="SFNode"
                     accessType="inputOutput"
                     default="NULL"
-                    acceptableNodeTypes="X3DTexture3DNode"/>
+                    acceptableNodeTypes="X3DTexture3DNode"
+                    description="The surfaceNormals field contains a 3D texture with at least three component values."/>
             <field name="DEF"
                     type="SFString"
                     accessType="inputOutput"
@@ -35312,7 +35352,8 @@
             <field name="sliderForce"
                     type="SFFloat"
                     accessType="inputOutput"
-                    default="0"/>
+                    default="0"
+                    description="sliderForce value is used to apply a force (specified in force base units) along the axis of the slider in equal and opposite directions to the two bodies."/>
             <field name="stopBounce"
                     type="SFFloat"
                     accessType="inputOutput"
@@ -36086,7 +36127,7 @@
             <field name="beamWidth"
                     type="SFFloat"
                     accessType="inputOutput"
-                    default="0.7854"
+                    default="0.589049"
                     minExclusive="0"
                     maxInclusive="1.570796"
                     description="Inner conical solid angle (in radians) where light source has uniform full intensity.">
@@ -36742,7 +36783,8 @@
                     type="SFBool"
                     accessType="inputOutput"
                     default="true"
-                    inheritedFrom="X3DParticleEmitterNode"/>
+                    inheritedFrom="X3DParticleEmitterNode"
+                    description="Enables/disables production of particles from this emitter node."/>
             <field name="set_coordIndex"
                     type="MFInt32"
                     accessType="inputOnly"
@@ -37662,7 +37704,7 @@
                     accessType="inputOutput"
                     default="0 0 1"
                     inheritedFrom="X3DTextureProjectorNode"
-                    description="Initial direction from which particles emanate."/>
+                    description="Direction for projection."/>
             <field name="farDistance"
                     type="SFFloat"
                     accessType="inputOutput"
@@ -37747,7 +37789,8 @@
             <field name="upVector"
                     type="SFVec3f"
                     accessType="inputOutput"
-                    default="0 0 1"/>
+                    default="0 0 1"
+                    description="upVector describes the roll of the camera by saying which direction is up for the camera's orientation."/>
             <field name="DEF"
                     type="SFString"
                     accessType="inputOutput"
@@ -37825,7 +37868,7 @@
                     accessType="inputOutput"
                     default="0 0 1"
                     inheritedFrom="X3DTextureProjectorNode"
-                    description="Initial direction from which particles emanate."/>
+                    description="Direction for projection."/>
             <field name="farDistance"
                     type="SFFloat"
                     accessType="inputOutput"
@@ -38570,7 +38613,8 @@
                     type="SFNode"
                     accessType="inputOutput"
                     default="NULL"
-                    acceptableNodeTypes="X3DTexture3DNode"/>
+                    acceptableNodeTypes="X3DTexture3DNode"
+                    description="The surfaceNormals field contains a 3D texture with at least three component values."/>
             <field name="warmColor"
                     type="SFColorRGBA"
                     accessType="inputOutput"
@@ -40264,6 +40308,7 @@
                     type="SFVec3f"
                     accessType="inputOutput"
                     default="0 0 0"
+                    minInclusive="0"
                     description="Size of proximity box around center location within which ViewpointGroup is usable and displayed on viewpoint list."/>
             <field name="DEF"
                     type="SFString"
@@ -40648,7 +40693,8 @@
                     type="SFBool"
                     accessType="inputOutput"
                     default="true"
-                    inheritedFrom="X3DParticleEmitterNode"/>
+                    inheritedFrom="X3DParticleEmitterNode"
+                    description="Enables/disables production of particles from this emitter node."/>
             <field name="set_coordIndex"
                     type="MFInt32"
                     accessType="inputOnly"

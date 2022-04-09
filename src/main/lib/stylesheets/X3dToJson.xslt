@@ -541,8 +541,8 @@ POSSIBILITY OF SUCH DAMAGE.
                         </xsl:when>
                         <!-- HAnimHumanoid can contain HAnimJoint with containerField = joints or skeleton -->
                         <!-- HAnimHumanoid can contain HAnimSite  with containerField = sites, skeleton or viewpoints -->
-                        <!-- HAnimHumanoid can contain X3DCoordinateNode with containerField = skinCoord or skinBindingCoord -->
-                        <!-- HAnimHumanoid can contain X3DNormalNode with containerField = skinNormal or skinBindingNormal -->
+                        <!-- HAnimHumanoid can contain X3DCoordinateNode with containerField = skinCoord or skinBindingCoords -->
+                        <!-- HAnimHumanoid can contain X3DNormalNode with containerField = skinNormal or skinBindingNormals -->
                     </xsl:choose>
                 </xsl:variable>
                 <xsl:if test="(string-length($expectedContainerField) > 0) and not(@containerField = $expectedContainerField)">
