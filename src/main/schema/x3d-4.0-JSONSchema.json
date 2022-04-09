@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
-  "title": "X3D V4.0 JSON Schema, generated 2022/04/09 13:02:57",
+  "title": "X3D V4.0 JSON Schema, generated 2022/04/09 17:47:41",
   "description": "Experimental JSON Schema for X3D V4.0",
   "type": "object",
   "properties": {
@@ -4604,6 +4604,10 @@
             "-children": {
               "$ref": "#/$defs/-X3DChildNodeMFNode"
             },
+            "@description": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@enabled": {
               "default": true,
               "$comment": "SFBool inputOutput",
@@ -4860,6 +4864,10 @@
             },
             "-contacts": {
               "$ref": "#/$defs/-ContactMFNode"
+            },
+            "@description": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
             },
             "@enabled": {
               "default": true,
@@ -8708,6 +8716,10 @@
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
             },
+            "@description": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@detonationLocation": {
               "$comment": "SFVec3f inputOutput",
               "type": "array",
@@ -9436,6 +9448,27 @@
               "type": "boolean"
             },
             "@hatchStyle": {
+              "enum": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10",
+                "11",
+                "12",
+                "13",
+                "14",
+                "15",
+                "16",
+                "17",
+                "18",
+                "19"
+              ],
               "default": 1,
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
@@ -10986,6 +11019,10 @@
                 "default": 0,
                 "type": "number"
               }
+            },
+            "@description": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
             },
             "@enabled": {
               "default": true,
@@ -14679,6 +14716,10 @@
             "IS": {
               "$ref": "#/$defs/IS"
             },
+            "@description": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@enabled": {
               "default": true,
               "$comment": "SFBool inputOutput",
@@ -15295,6 +15336,10 @@
             "IS": {
               "$ref": "#/$defs/IS"
             },
+            "@description": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@enabled": {
               "default": true,
               "$comment": "SFBool inputOutput",
@@ -15444,6 +15489,24 @@
               "type": "boolean"
             },
             "@linetype": {
+              "enum": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10",
+                "11",
+                "12",
+                "13",
+                "14",
+                "15",
+                "16"
+              ],
               "default": 1,
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
@@ -15757,6 +15820,10 @@
             },
             "-watchList": {
               "$ref": "#/$defs/-X3DUrlObjectMFNode"
+            },
+            "@description": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
             },
             "@enabled": {
               "default": true,
@@ -20330,6 +20397,10 @@
             "-children": {
               "$ref": "#/$defs/-X3DChildNodeMFNode"
             },
+            "@description": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
@@ -21011,6 +21082,10 @@
             "IS": {
               "$ref": "#/$defs/IS"
             },
+            "@description": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@enabled": {
               "default": true,
               "$comment": "SFBool inputOutput",
@@ -21174,6 +21249,39 @@
                 }
               ],
               "items": false
+            },
+            "@markerType": {
+              "enum": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10",
+                "11",
+                "12",
+                "13",
+                "14",
+                "15",
+                "16",
+                "17",
+                "18",
+                "19",
+                "20",
+                "21",
+                "22",
+                "23",
+                "24",
+                "25",
+                "26"
+              ],
+              "default": 1,
+              "$comment": "SFInt32 inputOutput",
+              "type": "integer"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -22150,6 +22258,10 @@
             "IS": {
               "$ref": "#/$defs/IS"
             },
+            "@description": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@enabled": {
               "default": true,
               "$comment": "SFBool inputOutput",
@@ -22554,6 +22666,10 @@
                 "type": "number"
               }
             },
+            "@description": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@enabled": {
               "default": true,
               "$comment": "SFBool inputOutput",
@@ -22772,6 +22888,10 @@
                 "default": -1,
                 "type": "number"
               }
+            },
+            "@description": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
             },
             "@enabled": {
               "default": true,
@@ -24752,6 +24872,10 @@
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
             },
+            "@description": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@enabled": {
               "default": true,
               "$comment": "SFBool inputOutput",
@@ -26662,6 +26786,10 @@
               "default": true,
               "$comment": "SFBool inputOutput",
               "type": "boolean"
+            },
+            "@description": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
             },
             "@enabled": {
               "default": true,
@@ -29120,6 +29248,10 @@
                 "type": "number"
               }
             },
+            "@description": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@enabled": {
               "default": true,
               "$comment": "SFBool inputOutput",
@@ -29268,6 +29400,10 @@
               "default": 0,
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
+            },
+            "@description": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
             },
             "@enabled": {
               "default": true,
@@ -30249,7 +30385,7 @@
               "minItems": 3,
               "maxItems": 3,
               "items": {
-                "default": 0,
+                "default": 1,
                 "maximum": 1,
                 "minimum": 0,
                 "type": "number"
@@ -30742,6 +30878,10 @@
                 "type": "number"
               }
             },
+            "@description": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@enabled": {
               "default": true,
               "$comment": "SFBool inputOutput",
@@ -31068,6 +31208,10 @@
             },
             "IS": {
               "$ref": "#/$defs/IS"
+            },
+            "@description": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
             },
             "@enabled": {
               "default": true,

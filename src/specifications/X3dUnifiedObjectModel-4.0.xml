@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-4.0.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-4.0.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 4.0 of X3D -->
-<!-- Generated 2022-03-17-07:00 16:40:12.5322621-07:00 -->
+<!-- Generated 2022-04-03-07:00 11:16:42.3851429-07:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                         version="4.0"
                         xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -3108,6 +3108,60 @@
                        appinfo="Revised standard HAnim 19774 version 2 (parts 1 and 2) were approved by ISO in November 2019, published by Web3D Consortium May 2020."
                        documentation="https://www.web3d.org/documents/specifications/19774/V2.0"/>
       </SimpleType>
+      <SimpleType name="hatchStyleValues"
+                   baseType="SFInt32"
+                   appinfo="hatchStyle selects a hatch pattern from International Register of Graphical Items."
+                   documentation="https://isotc.iso.org/livelink/livelink/fetch/-8916524/8916549/8916590/6208440/class_pages/hatchstyle.html">
+         <enumeration value="1"
+                       alias="HORIZONTAL"
+                       appinfo="Horizontal equally spaced parallel lines"/>
+         <enumeration value="2"
+                       alias="VERTICAL"
+                       appinfo="Vertical equally spaced parallel lines"/>
+         <enumeration value="3"
+                       alias="POSITIVE_SLOPE"
+                       appinfo="Positive slope equally spaced parallel lines"/>
+         <enumeration value="4"
+                       alias="NEGATIVE_SLOPE"
+                       appinfo="Negative slope equally spaced parallel lines"/>
+         <enumeration value="5"
+                       alias="HORIZONTAL_VERTICAL_CROSSHATCH"
+                       appinfo="Horizontal/vertical crosshatch"/>
+         <enumeration value="6"
+                       alias="POSITIVE_NEGATIVE_SLOPE_CROSSHATCH"
+                       appinfo="Positive slope/negative slope crosshatch"/>
+         <enumeration value="7"
+                       alias="CAST_IRON"
+                       appinfo="(cast iron or malleable iron and general use for all materials)"/>
+         <enumeration value="8" alias="STEEL" appinfo="(steel)"/>
+         <enumeration value="9"
+                       alias="BRONZE_BRASS_COPPER_COMPOSITIONS"
+                       appinfo="(bronze, brass, copper, and compositions)"/>
+         <enumeration value="10"
+                       alias="WHITE_METAL_ZINC_LEAD_BABBIT_ALLOYS"
+                       appinfo="(white metal, zinc, lead, babbit, and alloys)"/>
+         <enumeration value="11"
+                       alias="MAGNESIUM_ALUMINUM_ALLOYS"
+                       appinfo="(magnesium, aluminum, and aluminum alloys)"/>
+         <enumeration value="12"
+                       alias="RUBBER_PLASTIC_ELECTRICAL_INSULATION"
+                       appinfo="(rubber, plastic, and electrical insulation)"/>
+         <enumeration value="13"
+                       alias="CORK_FELT_FABRIC_LEATHER_FIBRE"
+                       appinfo="(cork, felt, fabric, leather, and fibre/fiber)"/>
+         <enumeration value="14"
+                       alias="THERMAL_INSULATION"
+                       appinfo="(thermal insulation)"/>
+         <enumeration value="15"
+                       alias="TITANIUM"
+                       appinfo="(titanium and refi-actory material)"/>
+         <enumeration value="16"
+                       alias="MARBLE_SLATE_PORCELAIN_GLASS"
+                       appinfo="(marble, slate, porcelain, glass, etc.)"/>
+         <enumeration value="17" alias="EARTH" appinfo="(earth)"/>
+         <enumeration value="18" alias="SAND" appinfo="(sand)"/>
+         <enumeration value="19" alias="REPEATING_DOT" appinfo="(repeating dot)"/>
+      </SimpleType>
       <SimpleType name="initializeOnlyAccessTypes"
                    baseType="xs:NMTOKEN"
                    appinfo="Table of fields having accessType initializeOnly."
@@ -3782,10 +3836,110 @@
          <enumeration value="&#34;PIXEL&#34; &#34;FRACTION&#34;"/>
          <enumeration value="&#34;PIXEL&#34; &#34;PIXEL&#34;"/>
       </SimpleType>
+      <SimpleType name="lineTypeValues"
+                   baseType="SFInt32"
+                   appinfo="linetype selects a hatch pattern from International Register of Graphical Items."
+                   documentation="https://isotc.iso.org/livelink/livelink/fetch/-8916524/8916549/8916590/6208440/class_pages/linetype.html">
+         <enumeration value="1" alias="SOLID" appinfo="Solid"/>
+         <enumeration value="2" alias="DASHED" appinfo="Dashed"/>
+         <enumeration value="3" alias="DOTTED" appinfo="Dotted"/>
+         <enumeration value="4" alias="DASHED_DOTTED" appinfo="Dashed-dotted"/>
+         <enumeration value="5" alias="DASHED_DOT_DOT" appinfo="Dash-dot-dot"/>
+         <enumeration value="6" alias="SINGLE_ARROW" appinfo="(single arrow)"/>
+         <enumeration value="7" alias="SINGLE_DOT" appinfo="(single dot)"/>
+         <enumeration value="8" alias="DOUBLE_ARROW" appinfo="(double arrow)"/>
+         <enumeration value="9" alias="STITCH_LINE" appinfo="(stitch line)"/>
+         <enumeration value="10" alias="CHAIN_LINE" appinfo="(chain line)"/>
+         <enumeration value="11" alias="CENTER_LINE" appinfo="(center line)"/>
+         <enumeration value="12" alias="HIDDEN_LINE" appinfo="(hidden line)"/>
+         <enumeration value="13" alias="PHANTOM_LINE" appinfo="(phantom line)"/>
+         <enumeration value="14"
+                       alias="BREAK_LINE_STYLE_1"
+                       appinfo="(break line - style 1)"/>
+         <enumeration value="15"
+                       alias="BREAK_LINE_STYLE_2"
+                       appinfo="(break line - style 2)"/>
+         <enumeration value="16"
+                       alias="USER_SPECIFIED_DASH_PATTERN"
+                       appinfo="User-specified dash pattern"/>
+      </SimpleType>
       <SimpleType name="loaType"
                    baseType="SFInt32"
                    appinfo="Level Of Articulation 0..4 indicates complexity and detail of joints for given humanoid skeletal hierarchy. Note that value of -1 indicates that no LOA conformance is provided."
                    documentation="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#LevelsOfArticulation"/>
+      <SimpleType name="markerTypeValues"
+                   baseType="SFInt32"
+                   appinfo="markerType selects a marker display type for points from International Register of Graphical Items."
+                   documentation="https://isotc.iso.org/livelink/livelink/fetch/-8916524/8916549/8916590/6208440/class_pages/markertype.html">
+         <enumeration value="1" alias="DOT" appinfo="Dot"/>
+         <enumeration value="2" alias="PLUS_SIGN" appinfo="Plus sign"/>
+         <enumeration value="3" alias="ASTERISK" appinfo="Asterisk"/>
+         <enumeration value="4" alias="CIRCLE" appinfo="Circle"/>
+         <enumeration value="5" alias="DIAGONAL_CROSS" appinfo="Diagonal cross"/>
+         <enumeration value="6"
+                       alias="METEOROLOGICAL_STATION_CIRCLE_1_OKTA"
+                       appinfo="Meteorological Station Circle, one okta of cloud"/>
+         <enumeration value="7"
+                       alias="METEOROLOGICAL_STATION_CIRCLE_2_OKTAS"
+                       appinfo="Meteorological Station Circle, two oktas of cloud"/>
+         <enumeration value="8"
+                       alias="METEOROLOGICAL_STATION_CIRCLE_3_OKTAS"
+                       appinfo="Meteorological Station Circle, three oktas of cloud"/>
+         <enumeration value="9"
+                       alias="METEOROLOGICAL_STATION_CIRCLE_4_OKTAS"
+                       appinfo="Meteorological Station Circle, four oktas of cloud"/>
+         <enumeration value="10"
+                       alias="METEOROLOGICAL_STATION_CIRCLE_5_OKTAS"
+                       appinfo="Meteorological Station Circle, five oktas of cloud"/>
+         <enumeration value="11"
+                       alias="METEOROLOGICAL_STATION_CIRCLE_6_OKTAS"
+                       appinfo="Meteorological Station Circle, six oktas of cloud"/>
+         <enumeration value="12"
+                       alias="METEOROLOGICAL_STATION_CIRCLE_7_OKTAS"
+                       appinfo="Meteorological Station Circle, seven oktas of cloud"/>
+         <enumeration value="13"
+                       alias="METEOROLOGICAL_STATION_CIRCLE_8_OKTAS"
+                       appinfo="Meteorological Station Circle, eight oktas of cloud"/>
+         <enumeration value="14"
+                       alias="METEOROLOGICAL_STATION_CIRCLE_SKY_OBSCURED"
+                       appinfo="Meteorological Station Circle, sky obscured"/>
+         <enumeration value="15"
+                       alias="METEOROLOGICAL_STATION_CIRCLE_SKY_NOT_OBSERVED"
+                       appinfo="Meteorological Station Circle, sky not observed"/>
+         <enumeration value="16"
+                       alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_NO_CLOUD"
+                       appinfo="Meteorological Automatic Station Circle, no cloud"/>
+         <enumeration value="17"
+                       alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_1_OKTA"
+                       appinfo="Meteorological Automatic Station Circle, one okta of cloud"/>
+         <enumeration value="18"
+                       alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_2_OKTAS"
+                       appinfo="Meteorological Automatic Station Circle, two oktaws of cloud"/>
+         <enumeration value="19"
+                       alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_3_OKTAS"
+                       appinfo="Meteorological Automatic Station Circle, three oktaws of cloud"/>
+         <enumeration value="20"
+                       alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_4_OKTAS"
+                       appinfo="Meteorological Automatic Station Circle, four oktaws of cloud"/>
+         <enumeration value="21"
+                       alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_5_OKTAS"
+                       appinfo="Meteorological Automatic Station Circle, five oktaws of cloud"/>
+         <enumeration value="22"
+                       alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_6_OKTAS"
+                       appinfo="Meteorological Automatic Station Circle, six oktaws of cloud"/>
+         <enumeration value="23"
+                       alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_7_OKTAS"
+                       appinfo="Meteorological Automatic Station Circle, seven oktaws of cloud"/>
+         <enumeration value="24"
+                       alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_8_OKTAS"
+                       appinfo="Meteorological Automatic Station Circle, eight oktaws of cloud"/>
+         <enumeration value="25"
+                       alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_SKY_OBSCURED"
+                       appinfo="Meteorological Automatic Station Circle, sky obscured"/>
+         <enumeration value="26"
+                       alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_SKY_NOT_OBSERVED"
+                       appinfo="Meteorological Automatic Station Circle, sky not observed"/>
+      </SimpleType>
       <SimpleType name="metaDirectionChoices"
                    baseType="xs:NMTOKEN"
                    appinfo="metaDirectionChoices are strictly allowed enumeration values for meta element direction field. Bounded, no additional values are allowed."
@@ -5594,7 +5748,7 @@
             <field name="description"
                     type="SFString"
                     accessType="inputOutput"
-                    inheritedFrom="X3DPointingDeviceSensorNode"/>
+                    inheritedFrom="X3DSensorNode"/>
             <field name="enabled"
                     type="SFBool"
                     accessType="inputOutput"
@@ -5660,6 +5814,10 @@
                                appinfo="Base type for the environmental sensor nodes ProximitySensor, TransformSensor and VisibilitySensor.">
             <componentInfo name="EnvironmentalSensor" level="1"/>
             <Inheritance baseType="X3DSensorNode"/>
+            <field name="description"
+                    type="SFString"
+                    accessType="inputOutput"
+                    inheritedFrom="X3DSensorNode"/>
             <field name="enabled"
                     type="SFBool"
                     accessType="inputOutput"
@@ -6170,6 +6328,10 @@
                                appinfo="Base type for all sensor node types that operate using key devices.">
             <componentInfo name="KeyDeviceSensor" level="1"/>
             <Inheritance baseType="X3DSensorNode"/>
+            <field name="description"
+                    type="SFString"
+                    accessType="inputOutput"
+                    inheritedFrom="X3DSensorNode"/>
             <field name="enabled"
                     type="SFBool"
                     accessType="inputOutput"
@@ -6643,6 +6805,10 @@
                                appinfo="Base typefor all sensors that generate events based on network activity.">
             <componentInfo name="Networking" level="1"/>
             <Inheritance baseType="X3DSensorNode"/>
+            <field name="description"
+                    type="SFString"
+                    accessType="inputOutput"
+                    inheritedFrom="X3DSensorNode"/>
             <field name="enabled"
                     type="SFBool"
                     accessType="inputOutput"
@@ -7208,6 +7374,10 @@
                                appinfo="The X3DPickSensorNode abstract node type is the base node type that represents the lowest common denominator of picking capabilities.">
             <componentInfo name="Picking" level="1"/>
             <Inheritance baseType="X3DSensorNode"/>
+            <field name="description"
+                    type="SFString"
+                    accessType="inputOutput"
+                    inheritedFrom="X3DSensorNode"/>
             <field name="enabled"
                     type="SFBool"
                     accessType="inputOutput"
@@ -7336,7 +7506,10 @@
                                appinfo="Base type for all pointing device sensors.">
             <componentInfo name="PointingDeviceSensor" level="1"/>
             <Inheritance baseType="X3DSensorNode"/>
-            <field name="description" type="SFString" accessType="inputOutput"/>
+            <field name="description"
+                    type="SFString"
+                    accessType="inputOutput"
+                    inheritedFrom="X3DSensorNode"/>
             <field name="enabled"
                     type="SFBool"
                     accessType="inputOutput"
@@ -7610,6 +7783,7 @@
                                appinfo="Base type for all sensors.">
             <componentInfo name="Core" level="1"/>
             <Inheritance baseType="X3DChildNode"/>
+            <field name="description" type="SFString" accessType="inputOutput"/>
             <field name="enabled"
                     type="SFBool"
                     accessType="inputOutput"
@@ -9021,7 +9195,7 @@
             <field name="description"
                     type="SFString"
                     accessType="inputOutput"
-                    inheritedFrom="X3DPointingDeviceSensorNode"/>
+                    inheritedFrom="X3DSensorNode"/>
             <field name="enabled"
                     type="SFBool"
                     accessType="inputOutput"
@@ -13112,6 +13286,11 @@
                     type="SFTime"
                     accessType="outputOnly"
                     description="Time of collision between camera (avatar) and geometry."/>
+            <field name="description"
+                    type="SFString"
+                    accessType="inputOutput"
+                    inheritedFrom="X3DSensorNode"
+                    description="Author-provided prose that describes intended purpose of the node."/>
             <field name="enabled"
                     type="SFBool"
                     accessType="inputOutput"
@@ -13368,6 +13547,11 @@
                     acceptableNodeTypes="Contact">
                <componentInfo name="RigidBodyPhysics" level="2"/>
             </field>
+            <field name="description"
+                    type="SFString"
+                    accessType="inputOutput"
+                    inheritedFrom="X3DSensorNode"
+                    description="Author-provided prose that describes intended purpose of the node."/>
             <field name="enabled"
                     type="SFBool"
                     accessType="inputOutput"
@@ -15488,7 +15672,7 @@
             <field name="description"
                     type="SFString"
                     accessType="inputOutput"
-                    inheritedFrom="X3DPointingDeviceSensorNode"
+                    inheritedFrom="X3DSensorNode"
                     description="Author-provided prose that describes intended purpose of this node."/>
             <field name="diskAngle"
                     type="SFFloat"
@@ -17085,6 +17269,10 @@
                     accessType="inputOutput"
                     default="0"
                     description="Dead reckoning algorithm being used to project position/orientation with velocities/accelerations."/>
+            <field name="description"
+                    type="SFString"
+                    accessType="inputOutput"
+                    description="Author-provided prose that describes intended purpose of the node."/>
             <field name="detonateTime"
                     type="SFTime"
                     accessType="outputOnly"
@@ -17705,7 +17893,60 @@
                     type="SFInt32"
                     accessType="inputOutput"
                     default="1"
-                    description="hatchStyle selects a hatch pattern from International Register of Graphical Items."/>
+                    minInclusive="0"
+                    simpleType="hatchStyleValues"
+                    baseType="SFInt32"
+                    description="hatchStyle selects a hatch pattern from ISO/IEC 9973 International Register of Graphical Items.">
+               <enumeration value="1"
+                             alias="HORIZONTAL"
+                             appinfo="Horizontal equally spaced parallel lines."/>
+               <enumeration value="2"
+                             alias="VERTICAL"
+                             appinfo="Vertical equally spaced parallel lines."/>
+               <enumeration value="3"
+                             alias="POSITIVE_SLOPE"
+                             appinfo="Positive slope equally spaced parallel lines."/>
+               <enumeration value="4"
+                             alias="NEGATIVE_SLOPE"
+                             appinfo="Negative slope equally spaced parallel lines."/>
+               <enumeration value="5"
+                             alias="HORIZONTAL_VERTICAL_CROSSHATCH"
+                             appinfo="Horizontal/vertical crosshatch."/>
+               <enumeration value="6"
+                             alias="POSITIVE_NEGATIVE_SLOPE_CROSSHATCH"
+                             appinfo="Positive slope/negative slope crosshatch."/>
+               <enumeration value="7"
+                             alias="CAST_IRON"
+                             appinfo="(cast iron or malleable iron and general use for all materials)."/>
+               <enumeration value="8" alias="STEEL" appinfo="(steel)."/>
+               <enumeration value="9"
+                             alias="BRONZE_BRASS_COPPER_COMPOSITIONS"
+                             appinfo="(bronze, brass, copper, and compositions)."/>
+               <enumeration value="10"
+                             alias="WHITE_METAL_ZINC_LEAD_BABBIT_ALLOYS"
+                             appinfo="(white metal, zinc, lead, babbit, and alloys)."/>
+               <enumeration value="11"
+                             alias="MAGNESIUM_ALUMINUM_ALLOYS"
+                             appinfo="(magnesium, aluminum, and aluminum alloys)."/>
+               <enumeration value="12"
+                             alias="RUBBER_PLASTIC_ELECTRICAL_INSULATION"
+                             appinfo="(rubber, plastic, and electrical insulation)."/>
+               <enumeration value="13"
+                             alias="CORK_FELT_FABRIC_LEATHER_FIBRE"
+                             appinfo="(cork, felt, fabric, leather, and fibre/fiber)."/>
+               <enumeration value="14"
+                             alias="THERMAL_INSULATION"
+                             appinfo="(thermal insulation)."/>
+               <enumeration value="15"
+                             alias="TITANIUM"
+                             appinfo="(titanium and refi-actory material)."/>
+               <enumeration value="16"
+                             alias="MARBLE_SLATE_PORCELAIN_GLASS"
+                             appinfo="(marble, slate, porcelain, glass, etc.)."/>
+               <enumeration value="17" alias="EARTH" appinfo="(earth)."/>
+               <enumeration value="18" alias="SAND" appinfo="(sand)."/>
+               <enumeration value="19" alias="REPEATING_DOT" appinfo="(repeating dot)."/>
+            </field>
             <field name="IS"
                     type="SFNode"
                     accessType="inputOutput"
@@ -19198,6 +19439,11 @@
                     type="SFVec3f"
                     accessType="outputOnly"
                     description="Sends changed centerOfRotation values, likely caused by user interaction."/>
+            <field name="description"
+                    type="SFString"
+                    accessType="inputOutput"
+                    inheritedFrom="X3DSensorNode"
+                    description="Author-provided prose that describes intended purpose of the node."/>
             <field name="enabled"
                     type="SFBool"
                     accessType="inputOutput"
@@ -19311,7 +19557,7 @@
             <field name="description"
                     type="SFString"
                     accessType="inputOutput"
-                    inheritedFrom="X3DPointingDeviceSensorNode"
+                    inheritedFrom="X3DSensorNode"
                     description="Author-provided prose that describes intended purpose of this node."/>
             <field name="enabled"
                     type="SFBool"
@@ -25383,6 +25629,11 @@
                     type="SFBool"
                     accessType="outputOnly"
                     description="controlKey generates true event when pressed, false event when released."/>
+            <field name="description"
+                    type="SFString"
+                    accessType="inputOutput"
+                    inheritedFrom="X3DSensorNode"
+                    description="Author-provided prose that describes intended purpose of the node."/>
             <field name="enabled"
                     type="SFBool"
                     accessType="inputOutput"
@@ -25987,6 +26238,11 @@
                                appinfo="LinePickSensor uses one or more pickingGeometry line segments to compute intersections with pickTarget shapes.">
             <componentInfo name="Picking" level="1"/>
             <Inheritance baseType="X3DPickSensorNode"/>
+            <field name="description"
+                    type="SFString"
+                    accessType="inputOutput"
+                    inheritedFrom="X3DSensorNode"
+                    description="Author-provided prose that describes intended purpose of the node."/>
             <field name="enabled"
                     type="SFBool"
                     accessType="inputOutput"
@@ -26165,8 +26421,33 @@
                     type="SFInt32"
                     accessType="inputOutput"
                     default="1"
-                    minInclusive="1"
-                    description="linetype selects a line pattern, with solid default if defined value isn't supported."/>
+                    minInclusive="0"
+                    simpleType="lineTypeValues"
+                    baseType="SFInt32"
+                    description="linetype selects a line pattern, with solid default if defined value isn't supported.">
+               <enumeration value="1" alias="SOLID" appinfo="Solid."/>
+               <enumeration value="2" alias="DASHED" appinfo="Dashed."/>
+               <enumeration value="3" alias="DOTTED" appinfo="Dotted."/>
+               <enumeration value="4" alias="DASHED_DOTTED" appinfo="Dashed-dotted."/>
+               <enumeration value="5" alias="DASHED_DOT_DOT" appinfo="Dash-dot-dot."/>
+               <enumeration value="6" alias="SINGLE_ARROW" appinfo="(single arrow)."/>
+               <enumeration value="7" alias="SINGLE_DOT" appinfo="(single dot)."/>
+               <enumeration value="8" alias="DOUBLE_ARROW" appinfo="(double arrow)."/>
+               <enumeration value="9" alias="STITCH_LINE" appinfo="(stitch line)."/>
+               <enumeration value="10" alias="CHAIN_LINE" appinfo="(chain line)."/>
+               <enumeration value="11" alias="CENTER_LINE" appinfo="(center line)."/>
+               <enumeration value="12" alias="HIDDEN_LINE" appinfo="(hidden line)."/>
+               <enumeration value="13" alias="PHANTOM_LINE" appinfo="(phantom line)."/>
+               <enumeration value="14"
+                             alias="BREAK_LINE_STYLE_1"
+                             appinfo="(break line - style 1)."/>
+               <enumeration value="15"
+                             alias="BREAK_LINE_STYLE_2"
+                             appinfo="(break line - style 2)."/>
+               <enumeration value="16"
+                             alias="USER_SPECIFIED_DASH_PATTERN"
+                             appinfo="User-specified dash pattern."/>
+            </field>
             <field name="linewidthScaleFactor"
                     type="SFFloat"
                     accessType="inputOutput"
@@ -26455,6 +26736,11 @@
                     accessType="inputOutput"
                     acceptableNodeTypes="X3DUrlObject"
                     description="The children field monitors one or more USE nodes that contain a valid url field."/>
+            <field name="description"
+                    type="SFString"
+                    accessType="inputOutput"
+                    inheritedFrom="X3DSensorNode"
+                    description="Author-provided prose that describes intended purpose of the node."/>
             <field name="enabled"
                     type="SFBool"
                     accessType="inputOutput"
@@ -28589,6 +28875,7 @@
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="Coordinate"/>
                <NodeContentModel name="CoordinateDouble"/>
+               <NodeContentModel name="GeoCoordinate"/>
                <NodeContentModel name="ProtoInstance"/>
             </ContentModel>
          </InterfaceDefinition>
@@ -28756,6 +29043,7 @@
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="Coordinate"/>
                <NodeContentModel name="CoordinateDouble"/>
+               <NodeContentModel name="GeoCoordinate"/>
                <NodeContentModel name="ProtoInstance"/>
             </ContentModel>
          </InterfaceDefinition>
@@ -28900,6 +29188,7 @@
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="Coordinate"/>
                <NodeContentModel name="CoordinateDouble"/>
+               <NodeContentModel name="GeoCoordinate"/>
                <NodeContentModel name="TextureCoordinate"/>
                <NodeContentModel name="TextureCoordinateGenerator"/>
                <NodeContentModel name="NurbsTextureCoordinate"/>
@@ -28987,6 +29276,7 @@
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="Coordinate"/>
                <NodeContentModel name="CoordinateDouble"/>
+               <NodeContentModel name="GeoCoordinate"/>
                <NodeContentModel name="ProtoInstance"/>
             </ContentModel>
          </InterfaceDefinition>
@@ -29200,6 +29490,7 @@
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="Coordinate"/>
                <NodeContentModel name="CoordinateDouble"/>
+               <NodeContentModel name="GeoCoordinate"/>
                <NodeContentModel name="ProtoInstance"/>
             </ContentModel>
          </InterfaceDefinition>
@@ -29609,6 +29900,7 @@
                <NodeContentModel name="Contour2D"/>
                <NodeContentModel name="Coordinate"/>
                <NodeContentModel name="CoordinateDouble"/>
+               <NodeContentModel name="GeoCoordinate"/>
                <NodeContentModel name="TextureCoordinate"/>
                <NodeContentModel name="TextureCoordinateGenerator"/>
                <NodeContentModel name="NurbsTextureCoordinate"/>
@@ -30830,6 +31122,10 @@
                     acceptableNodeTypes="X3DChildNode"
                     inheritedFrom="X3DGroupingNode"
                     description="Grouping nodes contain an ordered list of children nodes."/>
+            <field name="description"
+                    type="SFString"
+                    accessType="inputOutput"
+                    description="Author-provided prose that describes intended purpose of the node."/>
             <field name="IS"
                     type="SFNode"
                     accessType="inputOutput"
@@ -31109,7 +31405,7 @@
             <field name="description"
                     type="SFString"
                     accessType="inputOutput"
-                    inheritedFrom="X3DPointingDeviceSensorNode"
+                    inheritedFrom="X3DSensorNode"
                     description="Author-provided prose that describes intended purpose of this node."/>
             <field name="enabled"
                     type="SFBool"
@@ -31423,6 +31719,11 @@
                                appinfo="PointPickSensor tests one or more pickingGeometry points in space as lying inside the provided pickTarget geometry.">
             <componentInfo name="Picking" level="1"/>
             <Inheritance baseType="X3DPickSensorNode"/>
+            <field name="description"
+                    type="SFString"
+                    accessType="inputOutput"
+                    inheritedFrom="X3DSensorNode"
+                    description="Author-provided prose that describes intended purpose of the node."/>
             <field name="enabled"
                     type="SFBool"
                     accessType="inputOutput"
@@ -31588,6 +31889,83 @@
                     default="NULL"
                     acceptableNodeTypes="IS"
                     inheritedFrom="X3DNode"/>
+            <field name="markerType"
+                    type="SFInt32"
+                    accessType="inputOutput"
+                    default="1"
+                    minInclusive="0"
+                    simpleType="markerTypeValues"
+                    baseType="SFInt32"
+                    description="markerType selects a marker display type for points from ISO/IEC 9973 International Register of Graphical Items.">
+               <enumeration value="1" alias="DOT" appinfo="Dot."/>
+               <enumeration value="2" alias="PLUS_SIGN" appinfo="Plus sign."/>
+               <enumeration value="3" alias="ASTERISK" appinfo="Asterisk."/>
+               <enumeration value="4" alias="CIRCLE" appinfo="Circle."/>
+               <enumeration value="5" alias="DIAGONAL_CROSS" appinfo="Diagonal cross."/>
+               <enumeration value="6"
+                             alias="METEOROLOGICAL_STATION_CIRCLE_1_OKTA"
+                             appinfo="Meteorological Station Circle, one okta of cloud."/>
+               <enumeration value="7"
+                             alias="METEOROLOGICAL_STATION_CIRCLE_2_OKTAS"
+                             appinfo="Meteorological Station Circle, two oktas of cloud."/>
+               <enumeration value="8"
+                             alias="METEOROLOGICAL_STATION_CIRCLE_3_OKTAS"
+                             appinfo="Meteorological Station Circle, three oktas of cloud."/>
+               <enumeration value="9"
+                             alias="METEOROLOGICAL_STATION_CIRCLE_4_OKTAS"
+                             appinfo="Meteorological Station Circle, four oktas of cloud."/>
+               <enumeration value="10"
+                             alias="METEOROLOGICAL_STATION_CIRCLE_5_OKTAS"
+                             appinfo="Meteorological Station Circle, five oktas of cloud."/>
+               <enumeration value="11"
+                             alias="METEOROLOGICAL_STATION_CIRCLE_6_OKTAS"
+                             appinfo="Meteorological Station Circle, six oktas of cloud."/>
+               <enumeration value="12"
+                             alias="METEOROLOGICAL_STATION_CIRCLE_7_OKTAS"
+                             appinfo="Meteorological Station Circle, seven oktas of cloud."/>
+               <enumeration value="13"
+                             alias="METEOROLOGICAL_STATION_CIRCLE_8_OKTAS"
+                             appinfo="Meteorological Station Circle, eight oktas of cloud."/>
+               <enumeration value="14"
+                             alias="METEOROLOGICAL_STATION_CIRCLE_SKY_OBSCURED"
+                             appinfo="Meteorological Station Circle, sky obscured."/>
+               <enumeration value="15"
+                             alias="METEOROLOGICAL_STATION_CIRCLE_SKY_NOT_OBSERVED"
+                             appinfo="Meteorological Station Circle, sky not observed."/>
+               <enumeration value="16"
+                             alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_NO_CLOUD"
+                             appinfo="Meteorological Automatic Station Circle, no cloud."/>
+               <enumeration value="17"
+                             alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_1_OKTA"
+                             appinfo="Meteorological Automatic Station Circle, one okta of cloud."/>
+               <enumeration value="18"
+                             alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_2_OKTAS"
+                             appinfo="Meteorological Automatic Station Circle, two oktaws of cloud."/>
+               <enumeration value="19"
+                             alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_3_OKTAS"
+                             appinfo="Meteorological Automatic Station Circle, three oktaws of cloud."/>
+               <enumeration value="20"
+                             alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_4_OKTAS"
+                             appinfo="Meteorological Automatic Station Circle, four oktaws of cloud."/>
+               <enumeration value="21"
+                             alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_5_OKTAS"
+                             appinfo="Meteorological Automatic Station Circle, five oktaws of cloud."/>
+               <enumeration value="22"
+                             alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_6_OKTAS"
+                             appinfo="Meteorological Automatic Station Circle, six oktaws of cloud."/>
+               <enumeration value="23"
+                             alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_7_OKTAS"
+                             appinfo="Meteorological Automatic Station Circle, seven oktaws of cloud."/>
+               <enumeration value="24"
+                             alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_8_OKTAS"
+                             appinfo="Meteorological Automatic Station Circle, eight oktaws of cloud."/>
+               <enumeration value="25"
+                             alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_SKY_OBSCURED"
+                             appinfo="Meteorological Automatic Station Circle, sky obscured."/>
+               <enumeration value="26"
+                             alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_SKY_NOT_OBSERVED"
+                             appinfo="Meteorological Automatic Station Circle, sky not observed."/>
+            </field>
             <field name="metadata"
                     type="SFNode"
                     accessType="inputOutput"
@@ -31897,6 +32275,7 @@
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="Coordinate"/>
                <NodeContentModel name="CoordinateDouble"/>
+               <NodeContentModel name="GeoCoordinate"/>
                <NodeContentModel name="ProtoInstance"/>
             </ContentModel>
          </InterfaceDefinition>
@@ -32481,6 +32860,11 @@
                                appinfo="If a non-uniform scale is applied to the pick sensor, correct results may require level 3 support.">
             <componentInfo name="Picking" level="2"/>
             <Inheritance baseType="X3DPickSensorNode"/>
+            <field name="description"
+                    type="SFString"
+                    accessType="inputOutput"
+                    inheritedFrom="X3DSensorNode"
+                    description="Author-provided prose that describes intended purpose of the node."/>
             <field name="enabled"
                     type="SFBool"
                     accessType="inputOutput"
@@ -32874,6 +33258,11 @@
                     type="SFVec3f"
                     accessType="outputOnly"
                     description="Sends changed centerOfRotation values, likely caused by user interaction."/>
+            <field name="description"
+                    type="SFString"
+                    accessType="inputOutput"
+                    inheritedFrom="X3DSensorNode"
+                    description="Author-provided prose that describes intended purpose of the node."/>
             <field name="enabled"
                     type="SFBool"
                     accessType="inputOutput"
@@ -33116,6 +33505,11 @@
                     inheritedFrom="X3DBoundedObject"
                     baseType="bboxSizeType"
                     description="Bounding box size is usually omitted, and can easily be calculated automatically by an X3D player at scene-loading time with minimal computational cost."/>
+            <field name="description"
+                    type="SFString"
+                    accessType="inputOutput"
+                    inheritedFrom="X3DSensorNode"
+                    description="Author-provided prose that describes intended purpose of the node."/>
             <field name="enabled"
                     type="SFBool"
                     accessType="inputOutput"
@@ -34897,6 +35291,11 @@
                     accessType="inputOutput"
                     default="0"
                     description="number of bits of digital voice audio or digital data being sent in the Signal PDU."/>
+            <field name="description"
+                    type="SFString"
+                    accessType="inputOutput"
+                    inheritedFrom="X3DSensorNode"
+                    description="Author-provided prose that describes intended purpose of the node."/>
             <field name="enabled"
                     type="SFBool"
                     accessType="inputOutput"
@@ -35769,7 +36168,7 @@
             <field name="description"
                     type="SFString"
                     accessType="inputOutput"
-                    inheritedFrom="X3DPointingDeviceSensorNode"
+                    inheritedFrom="X3DSensorNode"
                     description="Author-provided prose that describes intended purpose of this node."/>
             <field name="enabled"
                     type="SFBool"
@@ -36681,6 +37080,11 @@
                     accessType="inputOutput"
                     default="true"
                     description="If deletionAllowed is true, then previously entered character in enteredText can be removed."/>
+            <field name="description"
+                    type="SFString"
+                    accessType="inputOutput"
+                    inheritedFrom="X3DSensorNode"
+                    description="Author-provided prose that describes intended purpose of the node."/>
             <field name="enabled"
                     type="SFBool"
                     accessType="inputOutput"
@@ -38667,7 +39071,7 @@
             <field name="description"
                     type="SFString"
                     accessType="inputOutput"
-                    inheritedFrom="X3DPointingDeviceSensorNode"
+                    inheritedFrom="X3DSensorNode"
                     description="Author-provided prose that describes intended purpose of this node."/>
             <field name="enabled"
                     type="SFBool"
@@ -38884,6 +39288,11 @@
                     accessType="inputOutput"
                     default="0 0 0"
                     description="Translation offset from origin of local coordinate system."/>
+            <field name="description"
+                    type="SFString"
+                    accessType="inputOutput"
+                    inheritedFrom="X3DSensorNode"
+                    description="Author-provided prose that describes intended purpose of the node."/>
             <field name="enabled"
                     type="SFBool"
                     accessType="inputOutput"
@@ -39056,6 +39465,11 @@
                     accessType="inputOutput"
                     default="0"
                     description="Indicates type of crypto system being used, even if the encryption equipment is not keyed."/>
+            <field name="description"
+                    type="SFString"
+                    accessType="inputOutput"
+                    inheritedFrom="X3DSensorNode"
+                    description="Author-provided prose that describes intended purpose of the node."/>
             <field name="enabled"
                     type="SFBool"
                     accessType="inputOutput"
@@ -40021,13 +40435,22 @@
                                appinfo="UnlitMaterial specifies surface rendering properties for associated geometry nodes.">
             <componentInfo name="Shape" level="1"/>
             <Inheritance baseType="X3DOneSidedMaterialNode"/>
-            <field name="emissiveColor"
+<!--
+<field name="emissiveColor"
                     type="SFColor"
                     accessType="inputOutput"
                     default="0 0 0"
                     minInclusive="0"
                     maxInclusive="1"
                     inheritedFrom="X3DOneSidedMaterialNode"
+                    description="how much glowing light is emitted from this object."/>
+-->
+<field name="emissiveColor"
+                    type="SFColor"
+                    accessType="inputOutput"
+                    default="1 1 1"
+                    minInclusive="0"
+                    maxInclusive="1"
                     description="how much glowing light is emitted from this object."/>
             <field name="emissiveTexture"
                     type="SFNode"
@@ -40466,6 +40889,11 @@
                     accessType="inputOutput"
                     default="0 0 0"
                     description="Translation offset from origin of local coordinate system."/>
+            <field name="description"
+                    type="SFString"
+                    accessType="inputOutput"
+                    inheritedFrom="X3DSensorNode"
+                    description="Author-provided prose that describes intended purpose of the node."/>
             <field name="enabled"
                     type="SFBool"
                     accessType="inputOutput"
@@ -40754,6 +41182,7 @@
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="Coordinate"/>
                <NodeContentModel name="CoordinateDouble"/>
+               <NodeContentModel name="GeoCoordinate"/>
                <NodeContentModel name="ProtoInstance"/>
             </ContentModel>
          </InterfaceDefinition>
@@ -40763,6 +41192,11 @@
                                appinfo="VolumePickSensor tests picking intersections using the pickingGeometry against the pickTarget geometry volume.">
             <componentInfo name="Picking" level="3"/>
             <Inheritance baseType="X3DPickSensorNode"/>
+            <field name="description"
+                    type="SFString"
+                    accessType="inputOutput"
+                    inheritedFrom="X3DSensorNode"
+                    description="Author-provided prose that describes intended purpose of the node."/>
             <field name="enabled"
                     type="SFBool"
                     accessType="inputOutput"
