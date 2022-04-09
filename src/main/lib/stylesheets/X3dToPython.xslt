@@ -74,7 +74,7 @@
 #    from x3d import *  # preferred approach, terser source that avoids x3d.* class prefixes
 #
 # or
-#    import x3d         # traditional way to subclass x3d package, all classes require x3d.* prefix
+#    import x3d         # traditional way to subclass x3d package, all classes require x3d.* prefix,
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
@@ -122,12 +122,19 @@ sys.exit()
         <!-- process elements and comments -->
         <xsl:apply-templates select="* | comment()"/>
         
-        <!-- this block follows model creaation since parsing and loading must be completed before running metaDiagnostics(newModel) -->
+        <!-- this block follows model creation since parsing and loading must be completed before running metaDiagnostics(newModel) -->
         <xsl:text>
 ####################################################################################################
 # Self-test diagnostics
 ####################################################################################################
 </xsl:text>
+        <xsl:text>
+print('Self-test diagnostics</xsl:text>
+        <xsl:if test="(string-length($modelFileName) > 0)">
+            <xsl:text> for </xsl:text>
+            <xsl:value-of select="$modelFileName"/>
+        </xsl:if>
+        <xsl:text>:')</xsl:text>
         <xsl:choose>
             <xsl:when test="($insertPackagePrefix = 'true')">
                 <xsl:text>
@@ -138,7 +145,7 @@ if        x3d.metaDiagnostics(newModel): # built-in utility method in X3D class 
             <xsl:otherwise>
                 <xsl:text>
 if        metaDiagnostics(newModel): # built-in utility method in X3D class
-    print(metaDiagnostics(newModel))</xsl:text>
+    print(metaDiagnostics(newModel)) # display meta info, hint, warning, error, TODO values in this model</xsl:text>
             </xsl:otherwise>
         </xsl:choose>
         <xsl:text>
@@ -173,7 +180,7 @@ try:
 # ==================
         </xsl:text>-->
         <xsl:text>
-    print("Python-to-VRML export of VRML output successful")
+    print("Python-to-VRML export of VRML output successful", flush=True)
 except Exception as err: # usually BaseException
     # https://stackoverflow.com/questions/18176602/how-to-get-the-name-of-an-exception-that-was-caught-in-python
     print("*** Python-to-VRML export of VRML output failed:", type(err).__name__, err)
@@ -201,12 +208,12 @@ except Exception as err: # usually SyntaxError
     if newModelJSON: # may have failed to generate
         print(prependLineNumbers(newModelJSON,err.lineno))
 
-print("python x3d.py load and self-test complete</xsl:text>
+print("python</xsl:text>
         <xsl:if test="(string-length($modelFileName) > 0)">
-            <xsl:text> for </xsl:text>
+            <xsl:text> </xsl:text>
             <xsl:value-of select="$modelFileName"/>
         </xsl:if>
-        <xsl:text>")
+        <xsl:text> load and self-test diagnostics complete.")
 </xsl:text>
 <!--
 TODO print meta warnings, errors etc. as part of validation
@@ -352,6 +359,18 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                         <xsl:text> ... please fix original X3D model</xsl:text>
                     </xsl:message>
                 </xsl:when>
+                <xsl:when test="(local-name(..) = 'DISEntityManager') and (local-name() = 'DISEntityTypeMapping')">
+                    <xsl:text>children</xsl:text>
+                    <xsl:if test="not(@containerField = 'children') or (string-length(@containerField) = 0)">
+                        <xsl:message>
+                            <xsl:text>*** containerField for </xsl:text>
+                            <xsl:value-of select="local-name(..)"/>
+                            <xsl:text> child </xsl:text>
+                            <xsl:value-of select="local-name()"/>
+                            <xsl:text> changed from 'mapping' to 'children' in X3D4</xsl:text>
+                        </xsl:message>
+                    </xsl:if>
+                </xsl:when>
                 <xsl:when test="(string-length(@containerField) > 0)">
                     <xsl:value-of select="@containerField"/>
                 </xsl:when>
@@ -387,7 +406,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                                                      ($containerField = 'viewpoints')      or
                                                      ($containerField = 'trimmingContour') or
                                                      ($containerField = 'watchList')       or
-                                                     ((local-name(..) = 'DISEntityManager')       and ($containerField = 'mapping'))          or
+                                                     ((local-name(..) = 'DISEntityManager')       and (($containerField = 'mapping') or ($containerField = 'children'))) or
                                                      ((local-name(..) = 'GeoLOD')                 and ($containerField = 'rootNode'))         or
                                                      ((local-name(..) = 'MultiTexture')           and ($containerField = 'texture'))          or
                                                      ((local-name(..) = 'MultiTextureCoordinate') and ($containerField = 'texCoord'))         or
@@ -405,6 +424,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                                                       (count(preceding-sibling::*[@containerField = $containerField]) = 0)) or
                                                      (($containerField = 'children') and
                                                       (count(preceding-sibling::*[@containerField = $containerField]) +
+                                                       count(preceding-sibling::*[@containerField = 'mapping']) +
                                                        count(preceding-sibling::*[(local-name(..) = 'field') or (local-name(..) = 'fieldValue') or (local-name(..) = 'ProtoBody') or (local-name(..) = 'Scene')]) +
                                                        count(preceding-sibling::*[string-length(@containerField) = 0][local-name() != 'IS']) = 0)) or
                                                      ((local-name() = 'field') and
@@ -421,6 +441,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                                                       (count(following-sibling::*[@containerField = $containerField]) = 0)) or
                                                      (($containerField = 'children') and
                                                       (count(following-sibling::*[@containerField = 'children']) +
+                                                       count(following-sibling::*[@containerField = 'mapping']) +
                                                        count(following-sibling::*[(local-name(..) = 'field') or (local-name(..) = 'fieldValue') or (local-name(..) = 'ProtoBody') or (local-name(..) = 'Scene')]) +
                                                        count(following-sibling::*[string-length(@containerField) = 0][local-name() != 'IS']) = 0)) or
                                                      ((local-name() = 'field') and
@@ -439,6 +460,8 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                                                      (($containerField = 'children') and
                                                       (count(preceding-sibling::*[@containerField = 'children']) +
                                                        count(following-sibling::*[@containerField = 'children']) +
+                                                       count(preceding-sibling::*[@containerField = 'mapping']) +
+                                                       count(following-sibling::*[@containerField = 'mapping']) +
                                                        count(preceding-sibling::*[(local-name(..) = 'field') or (local-name(..) = 'fieldValue') or (local-name(..) = 'ProtoBody')] or (local-name(..) = 'Scene')) +
                                                        count(following-sibling::*[(local-name(..) = 'field') or (local-name(..) = 'fieldValue') or (local-name(..) = 'ProtoBody')] or (local-name(..) = 'Scene')) +
                                                        count(preceding-sibling::*[string-length(@containerField) = 0][local-name() != 'IS']) +
@@ -520,8 +543,8 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                 </xsl:when>
                 <!-- HAnimHumanoid can contain HAnimJoint with containerField = joints or skeleton -->
                 <!-- HAnimHumanoid can contain HAnimSite  with containerField = sites, skeleton or viewpoints -->
-                <!-- HAnimHumanoid can contain X3DCoordinateNode with containerField = skinCoord or skinBindingCoord -->
-                <!-- HAnimHumanoid can contain X3DNormalNode with containerField = skinNormal or skinBindingNormal -->
+                <!-- HAnimHumanoid can contain X3DCoordinateNode with containerField = skinCoord or skinBindingCoords -->
+                <!-- HAnimHumanoid can contain X3DNormalNode with containerField = skinNormal or skinBindingNormals -->
             </xsl:choose>
         </xsl:variable>
         <xsl:if test="(string-length($expectedContainerField) > 0) and not($containerField = $expectedContainerField)">
@@ -647,7 +670,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                     <xsl:text>,</xsl:text> 
                     <xsl:text>&#10;</xsl:text>
                     <xsl:value-of select="$indent"/>
-                    <xsl:text>  sourceCode="""</xsl:text>
+                    <xsl:text>sourceCode="""</xsl:text>
                     <xsl:text>&#10;</xsl:text>
                     <xsl:if test="not(starts-with(normalize-space($containedSourceText),'ecmascript:'))">
                         <xsl:text>ecmascript:</xsl:text><!-- necessary to avoid validation error -->

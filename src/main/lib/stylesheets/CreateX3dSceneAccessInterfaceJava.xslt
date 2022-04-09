@@ -697,7 +697,7 @@ Additional references of interest:
                     <xsl:text>Networking</xsl:text>
                 </xsl:when>
                 <xsl:when test="($nodeTypeBase = 'X3DNurbsControlCurveNode') or ($nodeTypeBase = 'X3DParametricGeometryNode') or ($nodeTypeBase = 'X3DNurbsSurfaceGeometryNode') or
-                                ($nodeTypeBase = 'Contour2D') or ($nodeTypeBase = 'ContourPolyline2D') or ($nodeTypeBase = 'CoordinateDouble') or 
+                                ($nodeTypeBase = 'Contour2D') or ($nodeTypeBase = 'ContourPolyline2D') or 
                                 starts-with($nodeTypeBase, 'Nurbs')">
                     <xsl:text>NURBS</xsl:text>
                 </xsl:when>
@@ -714,7 +714,8 @@ Additional references of interest:
                     <xsl:text>TextureProjector</xsl:text>
                 </xsl:when>
                 <xsl:when test="($nodeTypeBase = 'X3DColorNode')    or ($nodeTypeBase = 'X3DCoordinateNode')        or ($nodeTypeBase = 'X3DNormalNode') or
-                                ($nodeTypeBase = 'X3DGeometryNode') or ($nodeTypeBase = 'X3DGeometricPropertyNode') or ($nodeTypeBase = 'X3DComposedGeometryNode')">
+                                ($nodeTypeBase = 'X3DGeometryNode') or ($nodeTypeBase = 'X3DGeometricPropertyNode') or ($nodeTypeBase = 'X3DComposedGeometryNode') or
+                                ($nodeTypeBase = 'CoordinateDouble')">
                     <xsl:text>Rendering</xsl:text>
                 </xsl:when>
                 <xsl:when test="($nodeTypeBase = 'X3DNBodyCollidableNode') or ($nodeTypeBase = 'X3DNBodyCollisionSpaceNode') or ($nodeTypeBase = 'X3DRigidJointNode') or
@@ -1284,7 +1285,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 							<xsl:text>&#10;</xsl:text>
 						</xsl:when>
 						<xsl:when test="($baseType = 'X3DComposedGeometryNode') or ($name = 'IndexedLineSet')">
-							<xsl:text>import org.web3d.x3d.jsail.NURBS.CoordinateDouble;</xsl:text>
+							<xsl:text>import org.web3d.x3d.jsail.Rendering.CoordinateDouble;</xsl:text>
 							<xsl:text>&#10;</xsl:text>
 							<xsl:text>import org.web3d.x3d.jsail.Texturing.MultiTextureCoordinate;</xsl:text>
 							<xsl:text>&#10;</xsl:text>
@@ -2648,8 +2649,25 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 									<xsl:text> </xsl:text>
 									<xsl:value-of select="upper-case($fieldName)"/>
 									<xsl:text>_</xsl:text>
-									<!-- enumeration name: omit " character, others become _ underscore -->
-									<xsl:value-of select="upper-case(translate(@value,' .-&quot;','___'))"/>
+									<xsl:variable name="currentAlias" select="@alias"/>
+                                                                        <!-- debug
+                                                                        <xsl:message>
+                                                                            <xsl:text>../@name=</xsl:text>
+                                                                            <xsl:value-of select="../@name"/>
+                                                                            <xsl:text>, ../@baseType=</xsl:text>
+                                                                            <xsl:value-of select="../@baseType"/>
+                                                                            <xsl:text>, @alias=</xsl:text>
+                                                                            <xsl:value-of select="@alias"/>
+                                                                        </xsl:message> -->
+                                                                        <xsl:choose>
+                                                                            <xsl:when test="(../@baseType = 'SFInt32') and (string-length($currentAlias) > 0)">
+                                                                                <xsl:value-of select="upper-case($currentAlias)"/>
+                                                                            </xsl:when>
+                                                                            <xsl:otherwise>
+                                                                                <!-- enumeration name: omit " character, others become _ underscore -->
+                                                                                <xsl:value-of select="upper-case(translate(@value,' .-&quot;','___'))"/>
+                                                                            </xsl:otherwise>
+                                                                        </xsl:choose>
 									<xsl:text> = </xsl:text>
 									<xsl:call-template name="javaValue">
 										<xsl:with-param name="x3dType">
@@ -2821,9 +2839,20 @@ import org.web3d.x3d.jsail.*; // again making sure #4
                                                                                 <xsl:when test="(string-length(../@simpleType) > 0)">
                                                                                      <xsl:value-of select="substring-before(../@simpleType,'Values')"/>
                                                                                 </xsl:when>
+                                                                                <xsl:when test="(../@baseType = 'SFInt32')">
+                                                                                     <xsl:value-of select="@alias"/>
+                                                                                </xsl:when>
                                                                                 <xsl:when test="(string-length(../@baseType) > 0)">
                                                                                      <xsl:value-of select="substring-before(../@baseType,'Values')"/>
                                                                                 </xsl:when>
+                                                                                <xsl:otherwise>
+                                                                                    <xsl:message>
+                                                                                        <xsl:text>*** typeName not found, $enumerationName=</xsl:text>
+                                                                                         <xsl:value-of select="$enumerationName"/>
+                                                                                        <xsl:text> @alias=</xsl:text>
+                                                                                         <xsl:value-of select="@alias"/>
+                                                                                    </xsl:message>
+                                                                                </xsl:otherwise>
                                                                             </xsl:choose>
                                                                         </xsl:variable>
 									<xsl:variable name="suffixName">
@@ -2873,9 +2902,20 @@ import org.web3d.x3d.jsail.*; // again making sure #4
                                                                                 <xsl:when test="(string-length(../@simpleType) > 0)">
                                                                                      <xsl:value-of select="substring-before(../@simpleType,'Values')"/>
                                                                                 </xsl:when>
+                                                                                <xsl:when test="(../@baseType = 'SFInt32')">
+                                                                                     <xsl:value-of select="@alias"/>
+                                                                                </xsl:when>
                                                                                 <xsl:when test="(string-length(../@baseType) > 0)">
                                                                                      <xsl:value-of select="substring-before(../@baseType,'Values')"/>
                                                                                 </xsl:when>
+                                                                                <xsl:otherwise>
+                                                                                    <xsl:message>
+                                                                                        <xsl:text>*** typeName not found, $enumerationName=</xsl:text>
+                                                                                         <xsl:value-of select="$enumerationName"/>
+                                                                                        <xsl:text> @alias=</xsl:text>
+                                                                                         <xsl:value-of select="@alias"/>
+                                                                                    </xsl:message>
+                                                                                </xsl:otherwise>
                                                                             </xsl:choose>
                                                                         </xsl:variable>
 									<xsl:variable name="suffixName">
@@ -2917,7 +2957,8 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 </xsl:text>
 									</xsl:if>
 								</xsl:for-each> <!-- enumeration with loa -->
-
+<xsl:if test="not(@baseType = 'SFInt32')">
+    <!-- TODO need to use alias, numeric enumerations are still a problem -->
 								<xsl:for-each select="enumeration[(string-length(@alias) > 0)]">
 									<xsl:variable name="enumerationName" select="@value"/>
                                                                         <xsl:variable name="typeName">
@@ -2925,9 +2966,20 @@ import org.web3d.x3d.jsail.*; // again making sure #4
                                                                                 <xsl:when test="(string-length(../@simpleType) > 0)">
                                                                                      <xsl:value-of select="substring-before(../@simpleType,'Values')"/>
                                                                                 </xsl:when>
+                                                                                <xsl:when test="(../@baseType = 'SFInt32')">
+                                                                                     <xsl:value-of select="@alias"/>
+                                                                                </xsl:when>
                                                                                 <xsl:when test="(string-length(../@baseType) > 0)">
                                                                                      <xsl:value-of select="substring-before(../@baseType,'Values')"/>
                                                                                 </xsl:when>
+                                                                                <xsl:otherwise>
+                                                                                    <xsl:message>
+                                                                                        <xsl:text>*** typeName not found, $enumerationName=</xsl:text>
+                                                                                         <xsl:value-of select="$enumerationName"/>
+                                                                                        <xsl:text> @alias=</xsl:text>
+                                                                                         <xsl:value-of select="@alias"/>
+                                                                                    </xsl:message>
+                                                                                </xsl:otherwise>
                                                                             </xsl:choose>
                                                                         </xsl:variable>
 									<xsl:variable name="suffixName">
@@ -2969,6 +3021,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 </xsl:text>
 									</xsl:if>
 								</xsl:for-each> <!-- enumeration with alias -->
+</xsl:if>
 
 								<xsl:for-each select="enumeration[(string-length(@parent) > 0)]">
 									<xsl:variable name="enumerationName" select="@value"/>
@@ -2977,9 +3030,20 @@ import org.web3d.x3d.jsail.*; // again making sure #4
                                                                                 <xsl:when test="(string-length(../@simpleType) > 0)">
                                                                                      <xsl:value-of select="substring-before(../@simpleType,'Values')"/>
                                                                                 </xsl:when>
+                                                                                <xsl:when test="(../@baseType = 'SFInt32')">
+                                                                                     <xsl:value-of select="@alias"/>
+                                                                                </xsl:when>
                                                                                 <xsl:when test="(string-length(../@baseType) > 0)">
                                                                                      <xsl:value-of select="substring-before(../@baseType,'Values')"/>
                                                                                 </xsl:when>
+                                                                                <xsl:otherwise>
+                                                                                    <xsl:message>
+                                                                                        <xsl:text>*** typeName not found, $enumerationName=</xsl:text>
+                                                                                         <xsl:value-of select="$enumerationName"/>
+                                                                                        <xsl:text> @alias=</xsl:text>
+                                                                                         <xsl:value-of select="@alias"/>
+                                                                                    </xsl:message>
+                                                                                </xsl:otherwise>
                                                                             </xsl:choose>
                                                                         </xsl:variable>
 									<xsl:variable name="suffixName">
@@ -12959,11 +13023,12 @@ setAttribute method invocations).	 */
 						<!-- commentsBlock -->
 						<xsl:if test="(not($hasChildrenField = 'true') and not(starts-with($name, 'X3DConcrete')) and not($isInterface = 'true') and not($isFieldInterface or $isException or $isServiceInterface) and
 									   not($name = 'X3DLoaderDOM') and not($name = 'BlenderLauncher') and not($name = 'MeshLabLauncher') and not($name = 'CommandLine') and not($name = 'ConfigurationProperties') and not($name = 'CommentsBlock'))">
-							<xsl:text>
+							<xsl:text disable-output-escaping="yes"><![CDATA[
 	/**
 	 * Add comment as String to contained commentsList.
 	 * @param newComment initial value
-	 * @return {@link </xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/core.html#Organization">X3D Architecture, clause 7.2.5.1 Organization</a>
+	 * @return {@link ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
 	/* @Override */
 	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text> addComments (String newComment)

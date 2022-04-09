@@ -434,7 +434,15 @@ POSSIBILITY OF SUCH DAMAGE.
                                 <xsl:value-of select="@value"/>
                             </xsl:otherwise>
                         </xsl:choose>
-                        <xsl:text>'^^xsd:string </xsl:text>
+                        <xsl:text>'^^</xsl:text>
+                        <xsl:choose>
+                            <xsl:when test="($baseType = 'SFInt32')">
+                                <xsl:text>xsd:integer </xsl:text>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:text>xsd:string </xsl:text>
+                            </xsl:otherwise>
+                        </xsl:choose>
                         <xsl:if test="(string-length(@appinfo) > 0)">
                             <xsl:text>;</xsl:text>
                             <xsl:text>&#10;</xsl:text>
@@ -451,6 +459,12 @@ POSSIBILITY OF SUCH DAMAGE.
                         </xsl:if>
                         <xsl:text> .</xsl:text>
                         <xsl:text>&#10;</xsl:text>
+                        <xsl:if test="($baseType = 'SFInt32') and (string-length(@alias) > 0)">
+                            <!-- TODO figure out how to integrate this, Protege doesn't show enumerations -->
+                            <xsl:text>  # alias </xsl:text>
+                            <xsl:value-of select="@alias"/>
+                            <xsl:text>&#10;</xsl:text>
+                        </xsl:if>
                     </xsl:for-each>
                 </xsl:when>
                 <xsl:otherwise>
