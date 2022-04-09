@@ -175,6 +175,7 @@ var fieldTypes = {"X3DNode" : {
 	"style" : "SFString",
 },
 "X3DSensorNode" : {
+	"description" : "SFString",
 	"enabled" : "SFBool",
 	"IS" : "SFNode",
 	"isActive" : "SFBool",
@@ -214,6 +215,7 @@ var fieldTypes = {"X3DNode" : {
 	"style" : "SFString",
 },
 "X3DEnvironmentalSensorNode" : {
+	"description" : "SFString",
 	"enabled" : "SFBool",
 	"IS" : "SFNode",
 	"isActive" : "SFBool",
@@ -298,6 +300,7 @@ var fieldTypes = {"X3DNode" : {
 	"style" : "SFString",
 },
 "X3DKeyDeviceSensorNode" : {
+	"description" : "SFString",
 	"enabled" : "SFBool",
 	"IS" : "SFNode",
 	"isActive" : "SFBool",
@@ -388,6 +391,7 @@ var fieldTypes = {"X3DNode" : {
 	"style" : "SFString",
 },
 "X3DNetworkSensorNode" : {
+	"description" : "SFString",
 	"enabled" : "SFBool",
 	"IS" : "SFNode",
 	"isActive" : "SFBool",
@@ -487,6 +491,7 @@ var fieldTypes = {"X3DNode" : {
 	"style" : "SFString",
 },
 "X3DPickSensorNode" : {
+	"description" : "SFString",
 	"enabled" : "SFBool",
 	"intersectionType" : "SFString",
 	"IS" : "SFNode",
@@ -1473,6 +1478,7 @@ var fieldTypes = {"X3DNode" : {
 	"bboxSize" : "SFVec3f",
 	"children" : "MFNode",
 	"collideTime" : "SFTime",
+	"description" : "SFString",
 	"enabled" : "SFBool",
 	"IS" : "SFNode",
 	"isActive" : "SFBool",
@@ -1512,6 +1518,7 @@ var fieldTypes = {"X3DNode" : {
 "CollisionSensor" : {
 	"collider" : "SFNode",
 	"contacts" : "MFNode",
+	"description" : "SFString",
 	"enabled" : "SFBool",
 	"intersections" : "MFNode",
 	"IS" : "SFNode",
@@ -2137,6 +2144,7 @@ var fieldTypes = {"X3DNode" : {
 	"collideTime" : "SFTime",
 	"collisionType" : "SFInt32",
 	"deadReckoning" : "SFInt32",
+	"description" : "SFString",
 	"detonateTime" : "SFTime",
 	"detonationLocation" : "SFVec3f",
 	"detonationRelativeLocation" : "SFVec3f",
@@ -2495,6 +2503,7 @@ var fieldTypes = {"X3DNode" : {
 "GeoProximitySensor" : {
 	"center" : "SFVec3d",
 	"centerOfRotation_changed" : "SFVec3f",
+	"description" : "SFString",
 	"enabled" : "SFBool",
 	"enterTime" : "SFTime",
 	"exitTime" : "SFTime",
@@ -3005,6 +3014,7 @@ var fieldTypes = {"X3DNode" : {
 	"actionKeyRelease" : "SFInt32",
 	"altKey" : "SFBool",
 	"controlKey" : "SFBool",
+	"description" : "SFString",
 	"enabled" : "SFBool",
 	"IS" : "SFNode",
 	"isActive" : "SFBool",
@@ -3097,6 +3107,7 @@ var fieldTypes = {"X3DNode" : {
 	"style" : "SFString",
 },
 "LinePickSensor" : {
+	"description" : "SFString",
 	"enabled" : "SFBool",
 	"intersectionType" : "SFString",
 	"IS" : "SFNode",
@@ -3170,6 +3181,7 @@ var fieldTypes = {"X3DNode" : {
 },
 "LoadSensor" : {
 	"children" : "MFNode",
+	"description" : "SFString",
 	"enabled" : "SFBool",
 	"IS" : "SFNode",
 	"isActive" : "SFBool",
@@ -3892,6 +3904,7 @@ var fieldTypes = {"X3DNode" : {
 	"bboxDisplay" : "SFBool",
 	"bboxSize" : "SFVec3f",
 	"children" : "MFNode",
+	"description" : "SFString",
 	"IS" : "SFNode",
 	"metadata" : "SFNode",
 	"objectType" : "MFString",
@@ -3989,6 +4002,7 @@ var fieldTypes = {"X3DNode" : {
 	"style" : "SFString",
 },
 "PointPickSensor" : {
+	"description" : "SFString",
 	"enabled" : "SFBool",
 	"intersectionType" : "SFString",
 	"IS" : "SFNode",
@@ -4010,6 +4024,7 @@ var fieldTypes = {"X3DNode" : {
 "PointProperties" : {
 	"attenuation" : "SFVec3f",
 	"IS" : "SFNode",
+	"markerType" : "SFInt32",
 	"metadata" : "SFNode",
 	"pointSizeMaxValue" : "SFFloat",
 	"pointSizeMinValue" : "SFFloat",
@@ -4167,6 +4182,7 @@ var fieldTypes = {"X3DNode" : {
 	"style" : "SFString",
 },
 "PrimitivePickSensor" : {
+	"description" : "SFString",
 	"enabled" : "SFBool",
 	"intersectionType" : "SFString",
 	"IS" : "SFNode",
@@ -4224,6 +4240,7 @@ var fieldTypes = {"X3DNode" : {
 "ProximitySensor" : {
 	"center" : "SFVec3f",
 	"centerOfRotation_changed" : "SFVec3f",
+	"description" : "SFString",
 	"enabled" : "SFBool",
 	"enterTime" : "SFTime",
 	"exitTime" : "SFTime",
@@ -4264,6 +4281,7 @@ var fieldTypes = {"X3DNode" : {
 	"bboxCenter" : "SFVec3f",
 	"bboxDisplay" : "SFBool",
 	"bboxSize" : "SFVec3f",
+	"description" : "SFString",
 	"enabled" : "SFBool",
 	"entityID" : "SFInt32",
 	"geoCoords" : "SFVec3d",
@@ -4563,6 +4581,7 @@ var fieldTypes = {"X3DNode" : {
 	"bboxSize" : "SFVec3f",
 	"data" : "MFInt32",
 	"dataLength" : "SFInt32",
+	"description" : "SFString",
 	"enabled" : "SFBool",
 	"encodingScheme" : "SFInt32",
 	"entityID" : "SFInt32",
@@ -4869,6 +4888,7 @@ var fieldTypes = {"X3DNode" : {
 },
 "StringSensor" : {
 	"deletionAllowed" : "SFBool",
+	"description" : "SFString",
 	"enabled" : "SFBool",
 	"enteredText" : "SFString",
 	"finalText" : "SFString",
@@ -5226,6 +5246,7 @@ var fieldTypes = {"X3DNode" : {
 },
 "TransformSensor" : {
 	"center" : "SFVec3f",
+	"description" : "SFString",
 	"enabled" : "SFBool",
 	"enterTime" : "SFTime",
 	"exitTime" : "SFTime",
@@ -5253,6 +5274,7 @@ var fieldTypes = {"X3DNode" : {
 	"bboxSize" : "SFVec3f",
 	"cryptoKeyID" : "SFInt32",
 	"cryptoSystem" : "SFInt32",
+	"description" : "SFString",
 	"enabled" : "SFBool",
 	"entityID" : "SFInt32",
 	"frequency" : "SFInt32",
@@ -5487,6 +5509,7 @@ var fieldTypes = {"X3DNode" : {
 },
 "VisibilitySensor" : {
 	"center" : "SFVec3f",
+	"description" : "SFString",
 	"enabled" : "SFBool",
 	"enterTime" : "SFTime",
 	"exitTime" : "SFTime",
@@ -5536,6 +5559,7 @@ var fieldTypes = {"X3DNode" : {
 	"style" : "SFString",
 },
 "VolumePickSensor" : {
+	"description" : "SFString",
 	"enabled" : "SFBool",
 	"intersectionType" : "SFString",
 	"IS" : "SFNode",
