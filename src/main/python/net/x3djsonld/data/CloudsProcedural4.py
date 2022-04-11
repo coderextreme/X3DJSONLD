@@ -14,7 +14,7 @@
 #    from x3d import *  # preferred approach, terser source that avoids x3d.* class prefixes
 #
 # or
-#    import x3d         # traditional way to subclass x3d package, all classes require x3d.* prefix
+#    import x3d         # traditional way to subclass x3d package, all classes require x3d.* prefix,
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
@@ -73,7 +73,7 @@ newModel=X3D(profile='Immersive',version='3.2',
           Transform(USE='Cirrus')]),
         field(accessType='initializeOnly',name='Fog',type='SFNode')],
 
-        sourceCode="""
+      sourceCode="""
 ecmascript:
 
 
@@ -463,8 +463,9 @@ cirrus();
 # Self-test diagnostics
 ####################################################################################################
 
+print('Self-test diagnostics for CloudsProcedural4.py:')
 if        metaDiagnostics(newModel): # built-in utility method in X3D class
-    print(metaDiagnostics(newModel))
+    print(metaDiagnostics(newModel)) # display meta info, hint, warning, error, TODO values in this model
 # print('check newModel.XML() serialization...')
 newModelXML= newModel.XML() # test export method XML() for exceptions during export
 newModel.XMLvalidate()
@@ -474,7 +475,7 @@ try:
 #   print('check newModel.VRML() serialization...')
     newModelVRML=newModel.VRML() # test export method VRML() for exceptions during export
     # print(prependLineNumbers(newModelVRML)) # debug
-    print("Python-to-VRML export of VRML output successful")
+    print("Python-to-VRML export of VRML output successful", flush=True)
 except Exception as err: # usually BaseException
     # https://stackoverflow.com/questions/18176602/how-to-get-the-name-of-an-exception-that-was-caught-in-python
     print("*** Python-to-VRML export of VRML output failed:", type(err).__name__, err)
@@ -491,4 +492,4 @@ except Exception as err: # usually SyntaxError
     if newModelJSON: # may have failed to generate
         print(prependLineNumbers(newModelJSON,err.lineno))
 
-print("python x3d.py load and self-test complete for CloudsProcedural4.py")
+print("python CloudsProcedural4.py load and self-test diagnostics complete.")
