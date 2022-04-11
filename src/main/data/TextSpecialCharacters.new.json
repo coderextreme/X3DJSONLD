@@ -52,7 +52,7 @@
           },
           {
             "@name":"translated",
-            "@content":"19 March 2022"
+            "@content":"11 April 2022"
           },
           {
             "@name":"generator",
@@ -121,7 +121,7 @@
                 { "Text":
                   {
                     "@DEF":"DefaultText",
-                    "@string":["Character entity substitutions:","empty string \"\" skips a line:","","apostrophe ' is &apos;","ampersand & is &amp;","quote mark \" is &quot;","backslash \\ is X3D escape character","double backslash \\\\ is X3D backslash \\ character","Pi Î  is &#928; XML character entity"],
+                    "@string":["Character entity substitutions:","empty string \"\" skips a line:","","apostrophe ' is &apos;","ampersand & is &amp;","quote mark \" is &quot;","backslash \\ is X3D escape character","double backslash \\\\ is X3D backslash \\ character","Pi Π is &#928; XML character entity"],
                     "-fontStyle":
                       { "FontStyle":
                         {

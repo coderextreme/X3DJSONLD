@@ -98,7 +98,7 @@ done
 #${NODE} ${NODEDIR}/jsondiff.js `dirname $i`/`basename $i x3d`json `dirname $i`/`basename $i x3d`new.json2
 #done
 
-export PYTHONPATH=../python
+export PYTHONPATH=/c/x3d-code/www.web3d.org/x3d/stylesheets/python
 for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.json/' -e 's/-/_/g' -e 's/^\/c/../'`
 do
 	PY=`echo $i | sed -e $DATATOPYTHON -e $ROOTTOPYTHON -e 's/.json$/.py/'`
