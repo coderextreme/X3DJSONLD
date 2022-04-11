@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
-  "title": "X3D V4.0 JSON Schema, generated 2022/04/09 17:47:41",
+  "title": "X3D V4.0 JSON Schema, generated 2022/04/11 00:44:56",
   "description": "Experimental JSON Schema for X3D V4.0",
   "type": "object",
   "properties": {
@@ -8981,7 +8981,7 @@
             },
             "@rtpHeaderExpected": {
               "default": false,
-              "$comment": "SFBool initializeOnly",
+              "$comment": "SFBool inputOutput",
               "type": "boolean"
             },
             "@scale": {
@@ -22965,7 +22965,7 @@
             },
             "@rtpHeaderExpected": {
               "default": false,
-              "$comment": "SFBool initializeOnly",
+              "$comment": "SFBool inputOutput",
               "type": "boolean"
             },
             "@siteID": {
@@ -24943,7 +24943,7 @@
             },
             "@rtpHeaderExpected": {
               "default": false,
-              "$comment": "SFBool initializeOnly",
+              "$comment": "SFBool inputOutput",
               "type": "boolean"
             },
             "@sampleRate": {
@@ -29547,7 +29547,7 @@
             },
             "@rtpHeaderExpected": {
               "default": false,
-              "$comment": "SFBool initializeOnly",
+              "$comment": "SFBool inputOutput",
               "type": "boolean"
             },
             "@siteID": {

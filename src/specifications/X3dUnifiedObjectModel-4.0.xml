@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-4.0.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-4.0.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 4.0 of X3D -->
-<!-- Generated 2022-04-03-07:00 11:16:42.3851429-07:00 -->
+<!-- Generated 2022-04-09-07:00 18:02:18.7951307-07:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                         version="4.0"
                         xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -3223,7 +3223,6 @@
          <enumeration value="repeatT"/>
          <enumeration value="rootUrl"/>
          <enumeration value="rotateYUp"/>
-         <enumeration value="rtpHeaderExpected"/>
          <enumeration value="size"/>
          <enumeration value="sortOrder"/>
          <enumeration value="spatialize"/>
@@ -3629,6 +3628,7 @@
          <enumeration value="rolloffFactor"/>
          <enumeration value="rotation"/>
          <enumeration value="roughness"/>
+         <enumeration value="rtpHeaderExpected"/>
          <enumeration value="sampleRate"/>
          <enumeration value="samples"/>
          <enumeration value="scale"/>
@@ -17542,7 +17542,7 @@
                     description="Orientation of children relative to local coordinate system, usually read from (or written to) remote, networked EspduTransform nodes."/>
             <field name="rtpHeaderExpected"
                     type="SFBool"
-                    accessType="initializeOnly"
+                    accessType="inputOutput"
                     default="false"
                     description="Whether RTP headers are prepended to DIS PDUs."/>
             <field name="scale"
@@ -33619,7 +33619,7 @@
                     description="receiverState indicates if receiver is currently idle or busy via one of these enumerated values: 0 = off, 1 = on but not receiving, or 2 = on and receiving."/>
             <field name="rtpHeaderExpected"
                     type="SFBool"
-                    accessType="initializeOnly"
+                    accessType="inputOutput"
                     default="false"
                     description="Whether RTP headers are prepended to DIS PDUs."/>
             <field name="siteID"
@@ -35400,7 +35400,7 @@
                     description="Seconds between read updates, 0 means no reading."/>
             <field name="rtpHeaderExpected"
                     type="SFBool"
-                    accessType="initializeOnly"
+                    accessType="inputOutput"
                     default="false"
                     description="Whether RTP headers are prepended to DIS PDUs."/>
             <field name="sampleRate"
@@ -39645,7 +39645,7 @@
                     description="Relative coordinates for antenna location."/>
             <field name="rtpHeaderExpected"
                     type="SFBool"
-                    accessType="initializeOnly"
+                    accessType="inputOutput"
                     default="false"
                     description="Whether RTP headers are prepended to DIS PDUs."/>
             <field name="siteID"
