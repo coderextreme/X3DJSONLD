@@ -3646,10 +3646,31 @@ import org.web3d.x3d.jsail.*; // again making sure #4
         setContainerFieldOverride(""); // ensuring default value used
 	containerField_ALTERNATE_VALUES = new String[] { "</xsl:text>
 										<xsl:value-of select="InterfaceDefinition/containerField/@default"/>
+										<xsl:variable name="containerFieldDefaultType" select="InterfaceDefinition/containerField/@type"/>
 										<xsl:text>"</xsl:text>
 										<!-- TODO once recorded in X3D XML Schema and X3D Object Model, iterate over values and add to array -->
 										<xsl:choose>
-											<xsl:when test="($name = 'Shape') or ($name = 'LOD') or ($name = 'Transform')">
+											<xsl:when test="(string-length($containerFieldDefaultType) > 0) and //simpleType[@name=$containerFieldDefaultType]">
+                                                                                            <xsl:message>
+                                                                                                <xsl:text>*** found containerFieldDefaultType=</xsl:text>
+                                                                                                <xsl:value-of select="$containerFieldDefaultType"/>
+                                                                                            </xsl:message>
+                                                                                            <xsl:for-each select="enumeration">
+                                                                                                <xsl:text>, "</xsl:text>
+                                                                                                <xsl:value-of select="@value"/>
+                                                                                                <xsl:text>"</xsl:text>
+                                                                                                <xsl:if test="(string-length(@appinfo) > 0)">
+                                                                                                   <xsl:text> // </xsl:text>
+                                                                                                   <xsl:value-of select="@appinfo"/>
+                                                                                                   <xsl:text>&#10;</xsl:text>
+                                                                                                </xsl:if>
+                                                                                            </xsl:for-each>
+											</xsl:when>
+                                                                                        <!-- prior manually customized code follows, may be error prone -->
+											<xsl:when test="($name = 'Shape')">
+												<xsl:text>, "proxy", "shape", "rootNode", "skin"</xsl:text>
+											</xsl:when>
+											<xsl:when test="($name = 'LOD') or ($name = 'Transform')">
 												<xsl:text>, "proxy", "shape"</xsl:text>
 											</xsl:when>
 											<xsl:when test="($name = 'Group')  or ($name = 'StaticGroup') or ($name = 'Collision')   or
@@ -19217,7 +19238,7 @@ shall not include the underlying field's values at that point in time.
 				<xsl:text>&#10;</xsl:text>
 				<xsl:choose>
 					<xsl:when test="($fieldName = 'SFBool')">
-						<xsl:text>	public static final boolean DEFAULT_VALUE = true;</xsl:text>
+						<xsl:text>	public static final boolean DEFAULT_VALUE = false;</xsl:text>
 					</xsl:when>
 					<xsl:when test="($fieldName = 'SFInt32')">
 						<xsl:text>	public static final int DEFAULT_VALUE = 0;</xsl:text>
@@ -19253,10 +19274,10 @@ shall not include the underlying field's values at that point in time.
 						<xsl:text>	public static final float[] DEFAULT_VALUE = {0.0f, 0.0f, 0.0f, 0.0f};</xsl:text>
 					</xsl:when>
 					<xsl:when test="($fieldName = 'SFVec4d')">
-						<xsl:text>	public static final double[] DEFAULT_VALUE = {0.0, 0.0, 0.0, 0.0};</xsl:text>
+						<xsl:text>	public static final double[] DEFAULT_VALUE = {0.0, 0.0, 0.0, 1.0};</xsl:text>
 					</xsl:when>
 					<xsl:when test="($fieldName = 'SFVec4f')">
-						<xsl:text>	public static final float[] DEFAULT_VALUE = {0.0f, 0.0f, 0.0f, 0.0f};</xsl:text>
+						<xsl:text>	public static final float[] DEFAULT_VALUE = {0.0f, 0.0f, 0.0f, 1.0f};</xsl:text>
 					</xsl:when>
 					<xsl:when test="($fieldName = 'SFRotation')">
 						<xsl:text>	public static final float[] DEFAULT_VALUE = {0.0f, 0.0f, 1.0f, 0.0f};</xsl:text>
@@ -36529,7 +36550,7 @@ import org.web3d.x3d.sai.X3DException;
                             if (ite.getCause().toString().contains("java.lang.StackOverflowError"))
                                 continue; // likely problem is regex checking of large attribute value, defer diagnosis and continue loading
 						}
-                        if (ite.getMessage().contains("java.lang.StackOverflowError"))
+                        if (ite != null && ite.getMessage() != null && ite.getMessage().contains("java.lang.StackOverflowError"))
                             continue; // likely problem is regex checking of large attribute value, defer diagnosis and continue loading
 						validationResult.append(errorNotice).append("\n");
 						System.out.println(errorNotice + "\n"); // avoiding System.err due to redirection difficulties
@@ -39466,7 +39487,7 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
                 }
                 if (newValue[i].endsWith("\"") && !newValue[i].endsWith("\\\""))
                 {
-                    newValue[i] = newValue[i].substring(1, newValue[i].length()-1);
+                    newValue[i] = newValue[i].substring(0, newValue[i].length()-1);
                     reduced = true;
                 }
                 if (reduced)
