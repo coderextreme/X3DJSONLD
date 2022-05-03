@@ -16,7 +16,7 @@
     "express": "*",
     "glob": "*",
     "https-browserify": "*",
-    "java": "^0.12.2",
+    "java": "https://github.com/joeferner/node-java.git",
     "jsonlint": "https://github.com/prantlf/jsonlint.git",
     "mutation-observer": "*",
     "node-mkdirp": "*",

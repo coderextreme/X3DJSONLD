@@ -7630,7 +7630,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 								
 								<xsl:variable name="newValueInstanceAcceptableNodeTypesTest">
 									<xsl:if test="contains(@acceptableNodeTypes, '|')">
-										<!-- debug trace -->
+										<!-- debug trace
 										<xsl:message>
 											<xsl:value-of select="$name"/>	
 											<xsl:text> field=</xsl:text>
@@ -7639,7 +7639,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 											<xsl:value-of select="@type"/>
 											<xsl:text> @acceptableNodeTypes=</xsl:text>
 											<xsl:value-of select="@acceptableNodeTypes"/>
-										</xsl:message>
+										</xsl:message> -->
 										<xsl:text disable-output-escaping="yes">
 		// newValueInstanceAcceptableNodeTypesTest checks are needed for methods that override/subset X3DNode interfaces #1
 		boolean isNodeTypeAllowed =</xsl:text>
@@ -8943,7 +8943,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		{
 			((X3DConcreteElement) </xsl:text>
 													<xsl:value-of select="$normalizedMemberObjectName"/>
-													<xsl:text>).setParent(this); // parentTest15</xsl:text>
+													<xsl:text>).setParent(this); // parentTest15.1</xsl:text>
 													<xsl:text>&#10;</xsl:text>
 									<!-- as needed, containerField updates by checking parent node and SFNode field -->
 									<!-- Reference list found at X3D Scene Authoring Hints: containerField -->
@@ -8970,6 +8970,22 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 											<xsl:text>			((X3DConcreteNode)</xsl:text>
 											<xsl:value-of select="$normalizedMemberObjectName"/>
 											<xsl:text>).setContainerFieldOverride("</xsl:text><xsl:value-of select="@name"/><xsl:text>");</xsl:text>
+											<xsl:text>&#10;</xsl:text>
+										</xsl:when>
+										<xsl:when test="not(starts-with($name,'Metadata')) and (@name = 'metadata')">
+											<xsl:text>			// change X3D4 MetadataSet default 'value' back to 'metadata' if parent is not another Metadata* node */</xsl:text>
+											<xsl:text>&#10;</xsl:text>
+											<xsl:text>			if (</xsl:text>
+											<xsl:value-of select="$normalizedMemberObjectName"/>
+											<xsl:text> instanceof org.web3d.x3d.jsail.Core.MetadataSet)</xsl:text>
+											<xsl:text>&#10;</xsl:text>
+											<xsl:text>{</xsl:text>
+											<xsl:text>&#10;</xsl:text>
+											<xsl:text>				((X3DConcreteNode) </xsl:text>
+											<xsl:value-of select="$normalizedMemberObjectName"/>
+											<xsl:text>).setContainerFieldOverride("metadata");</xsl:text>
+											<xsl:text>&#10;</xsl:text>
+											<xsl:text>}</xsl:text>
 											<xsl:text>&#10;</xsl:text>
 										</xsl:when>
 										<xsl:when test="($name = 'Sound') and (@name = 'source')">
@@ -10999,6 +11015,12 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 															<xsl:text>).setContainerFieldOverride("value");</xsl:text>
 															<xsl:text>&#10;</xsl:text>
 														</xsl:when>
+														<xsl:when test="($name = 'MetadataSet') and (@name = 'metadata')">
+															<xsl:text>			((X3DConcreteNode)    </xsl:text>
+															<xsl:value-of select="$newValue"/>
+															<xsl:text>).setContainerFieldOverride("metadata");</xsl:text>
+															<xsl:text>&#10;</xsl:text>
+														</xsl:when>
 													</xsl:choose>
 													<xsl:text>			</xsl:text>
 													<xsl:if test="($name = 'ProtoBody')">
@@ -12915,7 +12937,7 @@ setAttribute method invocations).
             IS = newValue;
             if (newValue != null)
             {
-                    ((X3DConcreteElement) IS).setParent(this); // parentTest15
+                    ((X3DConcreteElement) IS).setParent(this); // parentTest15.2
             }
             return this;
 	}
