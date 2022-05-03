@@ -4675,7 +4675,7 @@ node.source {background-color:#f4f4f4;}
 					<xsl:text>X3DNode</xsl:text>
 				</xsl:when>
 				<xsl:when test="contains($cppType,'|') and (@type='MFNode')">
-					<xsl:text>X3DNode</xsl:text>
+					<xsl:text>X3DNode*</xsl:text>
 				</xsl:when>
 				<xsl:otherwise>
 					<xsl:value-of select="$cppType"/>
@@ -4847,7 +4847,7 @@ node.source {background-color:#f4f4f4;}
 							<xsl:value-of select="$camelCaseName"/>
 						</xsl:otherwise>
 					</xsl:choose>
-					<xsl:text> (X3DNode </xsl:text>
+					<xsl:text> (X3DNode* </xsl:text>
 					<!-- singular -->
 					<xsl:value-of select="$defaultParameterName"/>
 					<xsl:text>)</xsl:text>
