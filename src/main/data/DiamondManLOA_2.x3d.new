@@ -97,7 +97,7 @@
 <MetadataString name="authorName" value="&quot;Cindy Ballreich&quot;"></MetadataString>
 <MetadataString name="copyright" value="&quot;1997 3Name3D / Yglesias Wallock Divekar Inc. all rights reserved.&quot;"></MetadataString>
 <MetadataString name="creationDate" value="&quot;Tue Dec 30 08:30:08 PST 1997&quot;"></MetadataString>
-<MetadataString name="usageRestrictions" value="&quot;Noncommercial usage is ok if 3Name3D name and logo &lt;www.ballreich.net/vrml/HAnim/small_logo.gif> is present and proper credit is given.&quot;"/>
+<MetadataString name="usageRestrictions" value="&quot;Noncommercial usage is ok if 3Name3D name and logo &lt;www.ballreich.net/vrml/HAnim/small_logo.gif&gt; is present and proper credit is given.&quot;"></MetadataString>
 </MetadataSet>
 <HAnimJoint name="HumanoidRoot" DEF="hanim_HumanoidRoot" center="0 0.824 0.0277" ulimit="0 0 0" llimit="0 0 0" containerField="skeleton"><HAnimSegment name="sacrum" DEF="hanim_sacrum"><Transform translation="0 0.824 0.0277"><Shape DEF="DiamondShape"><IndexedFaceSet containerField="geometry" coordIndex="0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1" creaseAngle="0.5"><Coordinate containerField="coord" DEF="points" point="0 0.01 0 -0.01 0 0 0 0 0.01 0.01 0 0 0 0 -0.01 0 -0.01 0"></Coordinate>
 </IndexedFaceSet>
