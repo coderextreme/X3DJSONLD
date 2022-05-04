@@ -29,7 +29,7 @@
       <Appearance>
         <Material DEF='DefaultMaterial' diffuseColor='0.2 0.2 0.2'/>
       </Appearance>
-      <Text DEF='DefaultText' string='"Character entity substitutions:" "empty string \"\" skips a line:" "" "apostrophe &apos; is &amp;apos;" "ampersand &amp; is &amp;amp;" "quote mark \" is &amp;quot;" "backslash \\ is X3D escape character" "double backslash \\\\ is X3D backslash \\ character" "Pi Π is &amp;#928; XML character entity"'>
+      <Text DEF='DefaultText' string='"Character entity substitutions:" "empty string \"\" skips a line:" "" "apostrophe &apos; is &amp;apos;" "ampersand &amp; is &amp;amp;" "quote mark \" is &amp;quot;" "backslash \\ is X3D escape character" "double backslash \\\\ is X3D backslash \\ character" "Pi Î  is &amp;#928; XML character entity"'>
         <FontStyle DEF='CenteredFontStyle' family='"SERIF"' justify='"MIDDLE" "MIDDLE"'/>
       </Text>
     </Shape>
