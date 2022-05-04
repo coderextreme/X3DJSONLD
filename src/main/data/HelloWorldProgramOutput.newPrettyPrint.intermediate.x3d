@@ -81,7 +81,7 @@
         <Text string='"X3D Java" "SAI Library" "X3DJSAIL"'>
           <!-- Comment example A, plain quotation marks: He said, "Immel did it!" -->
           <!-- Comment example B, XML character entities: He said, &quot;Immel did it!&quot; -->
-          <MetadataSet name='EscapedQuotationMarksMetadataSet'>
+          <MetadataSet name='EscapedQuotationMarksMetadataSet' containerField='metadata'>
             <MetadataString name='extraChildTest' value='"checks MetadataSet addValue() method"'/>
           </MetadataSet>
           <FontStyle family='"SERIF"' justify='"MIDDLE" "MIDDLE"'/>
