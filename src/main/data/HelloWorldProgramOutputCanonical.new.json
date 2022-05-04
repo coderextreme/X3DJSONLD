@@ -129,7 +129,7 @@
           },
           {
             "@name":"translated",
-            "@content":"11 April 2022"
+            "@content":"03 May 2022"
           },
           {
             "@name":"generator",
@@ -338,7 +338,7 @@
                               "#comment":"Comment example B, XML character entities: He said, &quot;Immel did it!&quot;"
                             }
                           ],
-                          "-IllegalChildNodeFieldNameNotFound":[
+                          "-metadata":
                             { "MetadataSet":
                               {
                                 "@name":"EscapedQuotationMarksMetadataSet",
@@ -357,8 +357,7 @@
                                   }
                                 ]
                               }
-                            }
-                          ],
+                            },
                           "-fontStyle":
                             { "FontStyle":
                               {
