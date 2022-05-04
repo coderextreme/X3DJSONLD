@@ -555,7 +555,7 @@
 </ProtoInstance>
 <ProtoInstance name="Humanoid1_1" DEF="Nancy"><fieldValue name="name" value="nancy"></fieldValue>
 <fieldValue name="version" value="1.1"></fieldValue>
-<fieldValue name="info" value="&quot;humanoidVersion=Nancy V1.2b&quot; &quot;authorName=Cindy Ballreich&quot; &quot;authorEmail=cindy@ballreich.net&quot; &quot;copyright=1997 3Name3D / Yglesias Wallock Divekar Inc. all rights reserved.&quot; &quot;creationDate=Tue Dec 30 08:30:08 PST 1997&quot; &quot;usageRestrictions=Noncommercial usage is ok if 3Name3D name and logo &lt;www.ballreich.net/vrml/HAnim/small_logo.gif> is present and proper credit is given.&quot;"/>
+<fieldValue name="info" value="&quot;humanoidVersion=Nancy V1.2b&quot; &quot;authorName=Cindy Ballreich&quot; &quot;authorEmail=cindy@ballreich.net&quot; &quot;copyright=1997 3Name3D / Yglesias Wallock Divekar Inc. all rights reserved.&quot; &quot;creationDate=Tue Dec 30 08:30:08 PST 1997&quot; &quot;usageRestrictions=Noncommercial usage is ok if 3Name3D name and logo &lt;www.ballreich.net/vrml/HAnim/small_logo.gif&gt; is present and proper credit is given.&quot;"></fieldValue>
 <fieldValue name="humanoidBody"><ProtoInstance name="Joint" DEF="Nancy_hanim_humanoid_root"><fieldValue name="name" value="humanoid_root"></fieldValue>
 <fieldValue name="center" value="-0.00405 0.855 -0.000113"></fieldValue>
 <fieldValue name="children"><ProtoInstance name="Joint" DEF="Nancy_hanim_sacroiliac"><fieldValue name="name" value="sacroiliac"></fieldValue>

@@ -76,7 +76,7 @@
         <Text string='"X3D Java" "SAI Library" "X3DJSAIL"'>
           <!-- Comment example A, plain quotation marks: He said, "Immel did it!" -->
           <!-- Comment example B, XML character entities: He said, &quot;Immel did it!&quot; -->
-          <MetadataSet name='EscapedQuotationMarksMetadataSet' containerField=''>
+          <MetadataSet name='EscapedQuotationMarksMetadataSet' containerField='metadata'>
             <MetadataString name='quotesTestC' containerField='value' value='"MFString example C, backslash-escaped quotes: He said, \"Immel did it!\""'/>
             <MetadataString name='extraChildTest' containerField='value' value='"checks MetadataSetObject addValue() method"'/>
           </MetadataSet>
