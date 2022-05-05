@@ -11,7 +11,7 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-uniform samplerCube x3d_CubeMapTexture [x3d_MaxTextures];
+uniform samplerCube x3d_TextureCube [x3d_MaxTextures];
 
 in vec3 t;
 in vec3 tr;
@@ -23,12 +23,12 @@ out vec4 x3d_FragColor;
 
 void main()
 {
-    vec4 refracted = texture(x3d_CubeMapTexture [0], t);
+    vec4 refracted = texture(x3d_TextureCube [0], t);
     vec4 reflected = vec4(1.0);
 
-    reflected.r = texture(x3d_CubeMapTexture [0], tr).r;
-    reflected.g = texture(x3d_CubeMapTexture [0], tg).g;
-    reflected.b = texture(x3d_CubeMapTexture [0], tb).b;
+    reflected.r = texture(x3d_TextureCube [0], tr).r;
+    reflected.g = texture(x3d_TextureCube [0], tg).g;
+    reflected.b = texture(x3d_TextureCube [0], tb).b;
 
     x3d_FragColor = reflected * 0.5 + refracted * (1.0 - 0.5);
     /*  IF there aren't normals, rfac isn't computed

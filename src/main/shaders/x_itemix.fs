@@ -11,7 +11,7 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-uniform samplerCube x3d_CubeMapTexture [x3d_MaxTextures];
+uniform samplerCube x3d_TextureCube [x3d_MaxTextures];
 
 in vec3 t;
 in vec3 tr;
@@ -25,10 +25,10 @@ void main()
 {
     vec4 tcol = vec4(1.0);
 
-    vec4 rcol = texture(x3d_CubeMapTexture [0], t);
-    tcol.r = texture(x3d_CubeMapTexture [0], tr).r;
-    tcol.g = texture(x3d_CubeMapTexture [0], tg).g;
-    tcol.b = texture(x3d_CubeMapTexture [0], tb).b;
+    vec4 rcol = texture(x3d_TextureCube [0], t);
+    tcol.r = texture(x3d_TextureCube [0], tr).r;
+    tcol.g = texture(x3d_TextureCube [0], tg).g;
+    tcol.b = texture(x3d_TextureCube [0], tb).b;
 
     x3d_FragColor = mix(tcol, rcol, rfac);
     /*
