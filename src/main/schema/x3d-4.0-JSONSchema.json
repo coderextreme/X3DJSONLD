@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
-  "title": "X3D V4.0 JSON Schema, generated 2022/05/03 15:10:20",
+  "title": "X3D V4.0 JSON Schema, generated 2022/05/24 17:50:41",
   "description": "Experimental JSON Schema for X3D V4.0",
   "type": "object",
   "properties": {
@@ -8432,154 +8432,6 @@
         }
       ]
     },
-    "EnvironmentLight": {
-      "type": "object",
-      "oneOf": [
-        {
-          "type": "object",
-          "properties": {
-            "@class": {
-              "type": "string"
-            },
-            "@USE": {
-              "type": "string"
-            },
-            "-children": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "type": "object",
-                "properties": {
-                  "#comment": {
-                    "type": "string",
-                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
-                  }
-                },
-                "additionalProperties": false
-              }
-            }
-          },
-          "required": [
-            "@USE"
-          ],
-          "additionalProperties": false
-        },
-        {
-          "type": "object",
-          "properties": {
-            "-children": {
-              "$ref": "#/$defs/-childStatements"
-            },
-            "IS": {
-              "$ref": "#/$defs/IS"
-            },
-            "@ambientIntensity": {
-              "default": 0,
-              "$comment": "SFFloat inputOutput",
-              "type": "number"
-            },
-            "@color": {
-              "$comment": "SFColor inputOutput",
-              "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
-              "items": {
-                "default": 1,
-                "maximum": 1,
-                "minimum": 0,
-                "type": "number"
-              }
-            },
-            "-diffuse": {
-              "$ref": "#/$defs/-X3DSingleTextureNodeSFNode"
-            },
-            "@diffuseCoefficients": {
-              "$comment": "MFFloat inputOutput",
-              "type": "array",
-              "items": {
-                "type": "number"
-              }
-            },
-            "-diffuseTexture": {
-              "$ref": "#/$defs/-X3DEnvironmentTextureNodeSFNode"
-            },
-            "@global": {
-              "default": false,
-              "$comment": "SFBool inputOutput",
-              "type": "boolean"
-            },
-            "@intensity": {
-              "default": 1,
-              "$comment": "SFFloat inputOutput",
-              "type": "number"
-            },
-            "-metadata": {
-              "$ref": "#/$defs/-X3DMetadataObjectSFNode"
-            },
-            "@on": {
-              "default": true,
-              "$comment": "SFBool inputOutput",
-              "type": "boolean"
-            },
-            "@rotation": {
-              "$comment": "SFRotation inputOutput",
-              "type": "array",
-              "minItems": 4,
-              "maxItems": 4,
-              "prefixItems": [
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 1,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "type": "number"
-                }
-              ],
-              "items": false
-            },
-            "@shadowIntensity": {
-              "default": 1,
-              "$comment": "SFFloat inputOutput",
-              "type": "number"
-            },
-            "@shadows": {
-              "default": false,
-              "$comment": "SFBool inputOutput",
-              "type": "boolean"
-            },
-            "-specularTexture": {
-              "$ref": "#/$defs/-X3DEnvironmentTextureNodeSFNode"
-            },
-            "@DEF": {
-              "$comment": "SFString inputOutput",
-              "type": "string"
-            },
-            "@class": {
-              "$comment": "SFString inputOutput",
-              "type": "string"
-            },
-            "@id": {
-              "$comment": "SFString inputOutput",
-              "type": "string"
-            },
-            "@style": {
-              "$comment": "SFString inputOutput",
-              "type": "string"
-            }
-          },
-          "additionalProperties": false
-        }
-      ]
-    },
     "EspduTransform": {
       "type": "object",
       "oneOf": [
@@ -11277,7 +11129,6 @@
               "maxItems": 3,
               "items": {
                 "default": 1,
-                "exclusiveMinimum": 0,
                 "type": "number"
               }
             },
@@ -12078,7 +11929,6 @@
             },
             "@version": {
               "enum": [
-                "1.0",
                 "2.0"
               ],
               "default": "2.0",
@@ -18521,7 +18371,7 @@
               }
             },
             "-geometry": {
-              "$ref": "#/$defs/-X3DNurbsSurfaceGeometryNodeMFNode"
+              "$ref": "#/$defs/-X3DParametricGeometryNodeMFNode"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -18915,7 +18765,7 @@
               "type": "integer"
             },
             "@weight": {
-              "$comment": "MFFloat inputOutput",
+              "$comment": "MFDouble inputOutput",
               "type": "array",
               "items": {
                 "exclusiveMinimum": 0,
@@ -21249,39 +21099,6 @@
                 }
               ],
               "items": false
-            },
-            "@markerType": {
-              "enum": [
-                "1",
-                "2",
-                "3",
-                "4",
-                "5",
-                "6",
-                "7",
-                "8",
-                "9",
-                "10",
-                "11",
-                "12",
-                "13",
-                "14",
-                "15",
-                "16",
-                "17",
-                "18",
-                "19",
-                "20",
-                "21",
-                "22",
-                "23",
-                "24",
-                "25",
-                "26"
-              ],
-              "default": 1,
-              "$comment": "SFInt32 inputOutput",
-              "type": "integer"
             },
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
@@ -32739,9 +32556,6 @@
           "DirectionalLight": {
             "$ref": "#/$defs/DirectionalLight"
           },
-          "EnvironmentLight": {
-            "$ref": "#/$defs/EnvironmentLight"
-          },
           "PointLight": {
             "$ref": "#/$defs/PointLight"
           },
@@ -33664,9 +33478,6 @@
         "DirectionalLight": {
           "$ref": "#/$defs/DirectionalLight"
         },
-        "EnvironmentLight": {
-          "$ref": "#/$defs/EnvironmentLight"
-        },
         "PointLight": {
           "$ref": "#/$defs/PointLight"
         },
@@ -34222,42 +34033,6 @@
       },
       "additionalProperties": false
     },
-    "-X3DSingleTextureNodeSFNode": {
-      "type": "object",
-      "properties": {
-        "ImageTexture": {
-          "$ref": "#/$defs/ImageTexture"
-        },
-        "MovieTexture": {
-          "$ref": "#/$defs/MovieTexture"
-        },
-        "PixelTexture": {
-          "$ref": "#/$defs/PixelTexture"
-        },
-        "ProtoInstance": {
-          "$ref": "#/$defs/ProtoInstance"
-        }
-      },
-      "additionalProperties": false
-    },
-    "-X3DEnvironmentTextureNodeSFNode": {
-      "type": "object",
-      "properties": {
-        "ComposedCubeMapTexture": {
-          "$ref": "#/$defs/ComposedCubeMapTexture"
-        },
-        "GeneratedCubeMapTexture": {
-          "$ref": "#/$defs/GeneratedCubeMapTexture"
-        },
-        "ImageCubeMapTexture": {
-          "$ref": "#/$defs/ImageCubeMapTexture"
-        },
-        "ProtoInstance": {
-          "$ref": "#/$defs/ProtoInstance"
-        }
-      },
-      "additionalProperties": false
-    },
     "-GeoOriginSFNode": {
       "type": "object",
       "properties": {
@@ -34552,9 +34327,6 @@
           },
           "DirectionalLight": {
             "$ref": "#/$defs/DirectionalLight"
-          },
-          "EnvironmentLight": {
-            "$ref": "#/$defs/EnvironmentLight"
           },
           "PointLight": {
             "$ref": "#/$defs/PointLight"
@@ -35562,6 +35334,24 @@
         "additionalProperties": false
       }
     },
+    "-X3DSingleTextureNodeSFNode": {
+      "type": "object",
+      "properties": {
+        "ImageTexture": {
+          "$ref": "#/$defs/ImageTexture"
+        },
+        "MovieTexture": {
+          "$ref": "#/$defs/MovieTexture"
+        },
+        "PixelTexture": {
+          "$ref": "#/$defs/PixelTexture"
+        },
+        "ProtoInstance": {
+          "$ref": "#/$defs/ProtoInstance"
+        }
+      },
+      "additionalProperties": false
+    },
     "-X3DMetadataObjectMFNode": {
       "$comment": "MFNode inputOutput",
       "type": "array",
@@ -35693,7 +35483,7 @@
       },
       "additionalProperties": false
     },
-    "-X3DNurbsSurfaceGeometryNodeMFNode": {
+    "-X3DParametricGeometryNodeMFNode": {
       "$comment": "MFNode inputOutput",
       "type": "array",
       "minItems": 1,
@@ -35708,6 +35498,15 @@
           },
           "NurbsTrimmedSurface": {
             "$ref": "#/$defs/NurbsTrimmedSurface"
+          },
+          "NurbsCurve": {
+            "$ref": "#/$defs/NurbsCurve"
+          },
+          "NurbsSweptSurface": {
+            "$ref": "#/$defs/NurbsSweptSurface"
+          },
+          "NurbsSwungSurface": {
+            "$ref": "#/$defs/NurbsSwungSurface"
           },
           "ProtoInstance": {
             "$ref": "#/$defs/ProtoInstance"
@@ -36396,9 +36195,6 @@
           },
           "DirectionalLight": {
             "$ref": "#/$defs/DirectionalLight"
-          },
-          "EnvironmentLight": {
-            "$ref": "#/$defs/EnvironmentLight"
           },
           "PointLight": {
             "$ref": "#/$defs/PointLight"

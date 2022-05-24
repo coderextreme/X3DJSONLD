@@ -848,7 +848,7 @@ TODO:
 <h2><a name="X3DFieldTypes"></a>
 A.4.1 X3DFieldTypes</h2>
 
-<pre class="listing">public class X3DFieldTypes {
+<pre class="listing">public interface X3DFieldTypes {
 
     public int INPUT_ONLY = 1;
     public int INITIALIZE_ONLY = 2;
@@ -902,7 +902,7 @@ A.4.1 X3DFieldTypes</h2>
 <h2><a name="X3DFieldEvent"></a>
 A.4.2 X3DFieldEvent</h2>
 
-<pre class="listing">public class X3DFieldEvent : EventObject {
+<pre class="listing">public class X3DFieldEvent {
 
     public X3DFieldEvent(Object src, double ts, Object data);
 
@@ -928,8 +928,8 @@ A.4.2 X3DFieldEvent</h2>
 <h2><a name="X3DFieldEventListener"></a>
 A.4.3 X3DFieldEventListener</h2>
 
-<pre class="listing">public interface X3DFieldEventListener : EventListener {
-    void readableFieldChanged(X3DFieldEvent evt);
+<pre class="listing">public class X3DFieldEventListener {
+    public void readableFieldChanged(X3DFieldEvent evt);
 }
 </pre>
                                             
@@ -951,13 +951,13 @@ A.4.4 X3DFieldDefinition</h2>
 
 <pre class="listing">public interface X3DFieldDefinition {
 
-    string getName();
+    public string getName();
 
-    int getAccessType();
+    public int getAccessType();
 
-    int getFieldType();
+    public int getFieldType();
 
-    string getFieldTypeString();
+    public string getFieldTypeString();
 }
 </pre>
                                             
@@ -979,19 +979,19 @@ A.4.5 X3DField</h2>
 
 <pre class="listing">public interface X3DField {
 
-    X3DFieldDefinition getDefinition();
+    public X3DFieldDefinition getDefinition();
 
-    bool isReadable();
+    public bool isReadable();
 
-    bool isWritable();
+    public bool isWritable();
 
-    void addX3DEventListener(X3DFieldEventListener l);
+    public void addX3DEventListener(X3DFieldEventListener l);
 
-    void removeX3DEventListener(X3DFieldEventListener l);
+    public void removeX3DEventListener(X3DFieldEventListener l);
 
-    void setUserData(Object data);
+    public void setUserData(Object data);
 
-    Object getUserData();
+    public Object getUserData();
 }
 </pre>
                                             
@@ -1013,11 +1013,11 @@ A.4.6 MField</h2>
 
 <pre class="listing">public interface MField : X3DField {
 
-    int size();
+    public int size();
 
-    void clear();
+    public void clear();
 
-    void remove(int index);
+    public void remove(int index);
 }
 </pre>
 
@@ -1171,7 +1171,7 @@ A.5.4 Matrix3</h2>
 <h2><a name="Matrix4"></a>
 A.5.5 Matrix4</h2>
 
-<pre class="listing">public interface Matrix4
+<pre class="listing">public class Matrix4
 {
 	Matrix4();
 	void setIdentity();
@@ -2137,7 +2137,7 @@ declare methods that are not defined by the abstract node representation.</p>
         <xsl:when test="($schemaType='xs:double')">
             <xsl:text>SFDouble</xsl:text>
         </xsl:when>
-        <xsl:when test="($schemaType='xs:string') or ($schemaType='xs:NMTOKEN') or ($schemaType='xs:token') or ($schemaType='xs:NMTOKENS') or ($schemaType='xs:IDREF') or ($schemaType='xs:ID')">
+        <xsl:when test="($schemaType='xs:string') or ($schemaType='xs:NMTOKEN') or ($schemaType='xs:token')">
             <xsl:text>SFString</xsl:text>
         </xsl:when>
         <xsl:when test="($schemaType='SFNode') and (string-length($default) > 0)">
@@ -2182,7 +2182,7 @@ declare methods that are not defined by the abstract node representation.</p>
                         ($schemaType='SFMatrix3d') or ($schemaType='MFMatrix3d') or ($schemaType='SFMatrix4d') or ($schemaType='MFMatrix4d')">
             <xsl:text>double[]</xsl:text>
         </xsl:when>
-        <xsl:when test="($schemaType='SFString') or ($schemaType='xs:string') or ($schemaType='xs:NMTOKEN') or ($schemaType='xs:token') or ($schemaType='xs:NMTOKENS') or ($schemaType='xs:IDREF') or ($schemaType='xs:ID')">
+        <xsl:when test="($schemaType='SFString') or ($schemaType='xs:string') or ($schemaType='xs:NMTOKEN') or ($schemaType='xs:token')">
             <xsl:text>string</xsl:text>
         </xsl:when>
         <xsl:when test="($schemaType='MFString')">
@@ -3407,7 +3407,7 @@ declare methods that are not defined by the abstract node representation.</p>
 		<xsl:attribute name="content"><xsl:text>{$ReadmeFile}</xsl:text></xsl:attribute>
 	</xsl:element>
 	<xsl:element name="meta">
-		<xsl:attribute name="httpequiv"><xsl:text>Content-Type</xsl:text></xsl:attribute>
+		<xsl:attribute name="http-equiv"><xsl:text>Content-Type</xsl:text></xsl:attribute>
 		<xsl:attribute name="content"><xsl:text>text/html; charset=utf-8</xsl:text></xsl:attribute>
 	</xsl:element>
 	<xsl:text>&#10;</xsl:text>

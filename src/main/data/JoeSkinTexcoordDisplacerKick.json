@@ -78,7 +78,7 @@
           },
           {
             "@name":"translated",
-            "@content":"03 May 2022"
+            "@content":"24 May 2022"
           },
           {
             "@name":"generator",
@@ -4413,68 +4413,4 @@
                       { "Shape":
                         {
                           "@DEF":"circle1_Shape",
-                          "-appearance":
-                            { "Appearance":
-                              {
-                                "@DEF":"circle1_Appearance",
-                                "-material":
-                                  { "Material":
-                                    {
-                                      "@DEF":"circle1_Material",
-                                      "@diffuseColor":[0.9,0,0.7],
-                                      "@emissiveColor":[0.424956,0.483976,1]
-                                    }
-                                  }
-                              }
-                            },
-                          "-geometry":
-                            { "IndexedLineSet":
-                              {
-                                "@USE":"Orbit1"
-                              }
-                            }
-                        }
-                      }
-                    ]
-                  }
-                },
-                { "Transform":
-                  {
-                    "@DEF":"Circle2",
-                    "@scale":[0.25,1,0.25],
-                    "-children":[
-                      { "Shape":
-                        {
-                          "@DEF":"circle2_Shape",
-                          "-appearance":
-                            { "Appearance":
-                              {
-                                "@DEF":"circle2_Appearance",
-                                "-material":
-                                  { "Material":
-                                    {
-                                      "@DEF":"circle2_Material",
-                                      "@diffuseColor":[0.9,0,0.7],
-                                      "@emissiveColor":[0.424956,0.483976,1]
-                                    }
-                                  }
-                              }
-                            },
-                          "-geometry":
-                            { "IndexedLineSet":
-                              {
-                                "@USE":"Orbit1"
-                              }
-                            }
-                        }
-                      }
-                    ]
-                  }
-                }
-              ]
-            }
-          }
-        ]
-    }
-  }
-}
+            
