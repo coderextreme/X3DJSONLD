@@ -4823,6 +4823,7 @@ node.source {background-color:#f4f4f4;}
 					<xsl:call-template name="cpp-restrictions"/>
 					<xsl:text>&#10;</xsl:text>
 				</xsl:if>
+				<!--
 				<xsl:if test="(@type = 'MFNode') and not(contains($cppType,'|'))">
 					<xsl:text>&#10;</xsl:text>
 					<xsl:choose>
@@ -4848,12 +4849,15 @@ node.source {background-color:#f4f4f4;}
 						</xsl:otherwise>
 					</xsl:choose>
 					<xsl:text> (X3DNode* </xsl:text>
+					-->
 					<!-- singular -->
+				    <!--
 					<xsl:value-of select="$defaultParameterName"/>
 					<xsl:text>)</xsl:text>
 					<xsl:call-template name="cpp-restrictions"/>
 					<xsl:text>&#10;</xsl:text>
 				</xsl:if>
+				-->
 			</xsl:if>
 		</xsl:if>
 

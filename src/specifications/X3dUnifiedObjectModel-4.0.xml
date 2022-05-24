@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-4.0.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-4.0.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 4.0 of X3D -->
-<!-- Generated 2022-04-09-07:00 18:02:18.7951307-07:00 -->
+<!-- Generated 2022-05-21-07:00 22:05:18.4570627-07:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                         version="4.0"
                         xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -10,7 +10,7 @@
       <!-- For schema xs:simpleType with contained xs:enumeration definitions, follow naming convention of name ending in 'Type', 'Choices' (for strict enumeration set) or 'Values' (for suggested tokens). -->
       <SimpleType name="accessTypeChoices"
                    baseType="xs:NMTOKEN"
-                   appinfo="accessTypeChoices are strictly allowed enumeration values for accessType, used when defining field declarations within a Script node or ProtoDeclare/ExternProtoDeclare statements. Original accessType name values in VRML97 were eventIn, eventOut, field, exposedField respectively. Bounded, no additional values are allowed."
+                   appinfo="accessTypeChoices are strictly allowed enumeration values for accessType, used when defining field declarations within a Script node or ProtoDeclare/ExternProtoDeclare statements. Original accessType name values in VRML97 were eventIn, eventOut, field, exposedField respectively. This list is bounded, no additional values are allowed."
                    documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/concepts.html#FieldSemantics">
          <enumeration value="initializeOnly"
                        appinfo="A field with accessType initializeOnly can be initialized, but cannot send or receive events."/>
@@ -23,7 +23,7 @@
       </SimpleType>
       <SimpleType name="alphaModeChoices"
                    baseType="SFString"
-                   appinfo="Permitted values for Appearance alphaMode field. Bounded, no additional values are allowed."
+                   appinfo="Permitted values for Appearance alphaMode field. This list is bounded, no additional values are allowed."
                    documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/Shape.html#Appearance">
          <enumeration value="AUTO"
                        appinfo="Material transparency is applied to texture transparency"/>
@@ -36,7 +36,7 @@
       </SimpleType>
       <SimpleType name="appliedParametersChoices"
                    baseType="MFString"
-                   appinfo="Default global parameters for collision outputs of rigid body physics system. Contact node can override parent CollisionCollection node. Multiple optional values, but appliedParameters enumerations cannot be extended. Bounded, no additional values are allowed."
+                   appinfo="Default global parameters for collision outputs of rigid body physics system. Contact node can override parent CollisionCollection node. Multiple optional values, but appliedParameters enumerations cannot be extended. This list is bounded, no additional values are allowed."
                    documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/rigidBodyPhysics.html#t-AppliedParametersValidValues">
          <enumeration value="&#34;BOUNCE&#34;" appinfo="The bounce field value is used."/>
          <enumeration value="&#34;USER_FRICTION&#34;"
@@ -59,7 +59,7 @@
                    documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/grouping.html#Boundingboxes"/>
       <SimpleType name="biquadTypeFilterChoices"
                    baseType="SFString"
-                   appinfo="Permitted values for BiquadFilter type. Bounded, no additional values are allowed."
+                   appinfo="Permitted values for BiquadFilter type. This list is bounded, no additional values are allowed."
                    documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/sound.html#BiquadFilter">
          <enumeration value="lowpass"/>
          <enumeration value="highpass"/>
@@ -72,7 +72,7 @@
       </SimpleType>
       <SimpleType name="channelCountModeChoices"
                    baseType="SFString"
-                   appinfo="Permitted values for channelCountMode in X3DSoundChannelNode and X3DSoundDestinationNode. Bounded, no additional values are allowed."
+                   appinfo="Permitted values for channelCountMode in X3DSoundChannelNode and X3DSoundDestinationNode. This list is bounded, no additional values are allowed."
                    documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/sound.html#SoundEffectsProcessing">
          <enumeration value="max"/>
          <enumeration value="clamped-max"/>
@@ -80,14 +80,14 @@
       </SimpleType>
       <SimpleType name="channelInterpretationChoices"
                    baseType="SFString"
-                   appinfo="Permitted values for channelInterpretation in X3DSoundChannelNode and X3DSoundDestinationNode. Bounded, no additional values are allowed."
+                   appinfo="Permitted values for channelInterpretation in X3DSoundChannelNode and X3DSoundDestinationNode. This list is bounded, no additional values are allowed."
                    documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/sound.html#SoundEffectsProcessing">
          <enumeration value="speakers"/>
          <enumeration value="discrete"/>
       </SimpleType>
       <SimpleType name="closureTypeChoices"
                    baseType="xs:NMTOKEN"
-                   appinfo="closureTypeChoices are strictly allowed enumeration values for ArcClose2D closureType field. Bounded, no additional values are allowed."
+                   appinfo="closureTypeChoices are strictly allowed enumeration values for ArcClose2D closureType field. This list is bounded, no additional values are allowed."
                    documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/geometry2D.html#ArcClose2D">
          <enumeration value="PIE"
                        appinfo="Connects arc endpoints to center, forming a pie wedge"/>
@@ -96,7 +96,7 @@
       </SimpleType>
       <SimpleType name="componentNameChoices"
                    baseType="xs:NMTOKEN"
-                   appinfo="componentNameChoices are enumeration constants used to identify the profile for each scene-graph node, and also utilized by X3D element to identify the components required by the contained Scene. Bounded, no additional values are allowed."
+                   appinfo="componentNameChoices are enumeration constants used to identify the profile for each scene-graph node, and also utilized by X3D element to identify the components required by the contained Scene. This list is bounded, no additional values are allowed."
                    documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/concepts.html#Components">
          <enumeration value="Core"
                        appinfo="The Core component supplies the base functionality for the X3D run-time system, including the abstract base node type, field types, the event model, and routing."
@@ -448,7 +448,7 @@
       </SimpleType>
       <SimpleType name="distanceModelChoices"
                    baseType="SFString"
-                   appinfo="Permitted values for SpatialSound distanceModel. Bounded, no additional values are allowed."
+                   appinfo="Permitted values for SpatialSound distanceModel. This list is bounded, no additional values are allowed."
                    documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/sound.html#SpatialSound">
          <enumeration value="linear"/>
          <enumeration value="inverse"/>
@@ -456,7 +456,7 @@
       </SimpleType>
       <SimpleType name="fieldTypeChoices"
                    baseType="xs:NMTOKEN"
-                   appinfo="fieldTypeChoices are enumerations for all allowed names of X3DField types. Bounded, no additional values are allowed."
+                   appinfo="fieldTypeChoices are enumerations for all allowed names of X3DField types. This list is bounded, no additional values are allowed."
                    documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldsDef.html">
          <enumeration value="SFBool" appinfo="Single Field (singleton) Boolean"/>
          <enumeration value="MFBool" appinfo="Multiple Field (list) Boolean"/>
@@ -533,7 +533,7 @@
       </SimpleType>
       <SimpleType name="fogTypeChoices"
                    baseType="xs:NMTOKEN"
-                   appinfo="fogTypeChoices are strictly allowed enumeration values for Fog node fogType field. Bounded, no additional values are allowed."
+                   appinfo="fogTypeChoices are strictly allowed enumeration values for Fog node fogType field. This list is bounded, no additional values are allowed."
                    documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/environmentalEffects.html#Fog">
          <enumeration value="LINEAR" appinfo="linear blending as a function of distance"/>
          <enumeration value="EXPONENTIAL"
@@ -552,7 +552,7 @@
       </SimpleType>
       <SimpleType name="fontStyleChoices"
                    baseType="xs:NMTOKEN"
-                   appinfo="fontStyleChoices are strictly allowed enumeration values for FontStyle/ScreenFontStyle node style field. Bounded, no additional values are allowed."
+                   appinfo="fontStyleChoices are strictly allowed enumeration values for FontStyle/ScreenFontStyle node style field. This list is bounded, no additional values are allowed."
                    documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/text.html#Fontfamilyandstyle">
          <enumeration value="PLAIN" appinfo="default plain type"/>
          <enumeration value="BOLD" appinfo="boldface type"/>
@@ -568,7 +568,7 @@
       </SimpleType>
       <SimpleType name="generatedCubeMapTextureUpdateChoices"
                    baseType="xs:NMTOKEN"
-                   appinfo="generatedCubeMapTextureUpdateChoices are strictly allowed enumeration values for GeneratedCubeMapTexture field named 'update'. Bounded, no additional values are allowed."
+                   appinfo="generatedCubeMapTextureUpdateChoices are strictly allowed enumeration values for GeneratedCubeMapTexture field named 'update'. This list is bounded, no additional values are allowed."
                    documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/environmentalTexturing#GeneratedCubeMapTexture">
          <enumeration value="NONE" appinfo="no further texture updates are rendered"/>
          <enumeration value="NEXT_FRAME_ONLY" appinfo="render texture once at end of frame"/>
@@ -3099,11 +3099,8 @@
       </SimpleType>
       <SimpleType name="hanimVersionChoices"
                    baseType="xs:NMTOKEN"
-                   appinfo="hanimVersionChoices enumeration constants are used to identify the allowed versions for an HAnimHumanoid node. Note that default HAnimHumanoid version is 2.0 for X3D version 4, and default is 1.0 for X3D version 3. Bounded, no additional values are allowed."
+                   appinfo="hanimVersionChoices enumeration constants are used to identify the allowed versions for an HAnimHumanoid node. Note that default HAnimHumanoid version is 2.0 for X3D version 4, and default is 1.0 for X3D version 3. This list is bounded, no additional values are allowed."
                    documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/hanim.html#HAnimHumanoid">
-         <enumeration value="1.0"
-                       appinfo="International standard HAnim 19774 version 1 approved by ISO in 2006. Note that HAnim version 2.0 has more capabilties, while version 1.0 includes several small incompatibilities. Since no other versions were formally approved, no other values are allowed for earlier HAnim versions."
-                       documentation="https://www.web3d.org/documents/specifications/19774/V1.0"/>
          <enumeration value="2.0"
                        appinfo="Revised standard HAnim 19774 version 2 (parts 1 and 2) were approved by ISO in November 2019, published by Web3D Consortium May 2020."
                        documentation="https://www.web3d.org/documents/specifications/19774/V2.0"/>
@@ -3764,7 +3761,7 @@
       </SimpleType>
       <SimpleType name="justifyChoices"
                    baseType="MFString"
-                   appinfo="justifyChoices are strictly allowed enumeration values for FontStyle node justify field. Note that intermediate commas and extraneous whitespace are disallowed by these strictly defined enumeration values. Bounded, no additional values are allowed."
+                   appinfo="justifyChoices are strictly allowed enumeration values for justify field in FontStyle and ScreenFontStyle nodes determining major and minor axis alignment (typically horizontal and vertical) of text layout. Note that intermediate commas and extraneous whitespace are disallowed by these strictly defined enumeration values. This list is bounded, no additional values are allowed."
                    documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/text.html#Directionandjustification">
          <enumeration value="&#34;MIDDLE&#34;"/>
          <enumeration value="&#34;MIDDLE&#34; &#34;BEGIN&#34;"/>
@@ -3789,7 +3786,7 @@
       </SimpleType>
       <SimpleType name="layoutAlignChoices"
                    baseType="MFString"
-                   appinfo="Permitted combinations of horizontal and vertical values for the align field in the Layout node. Note that intermediate commas and extraneous whitespace are disallowed by these strictly defined enumeration values. Bounded, no additional values are allowed."
+                   appinfo="Permitted combinations of horizontal and vertical values for the align field in the Layout node. Note that intermediate commas and extraneous whitespace are disallowed by these strictly defined enumeration values. This list is bounded, no additional values are allowed."
                    documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/layout.html#Layout">
          <enumeration value="&#34;LEFT&#34; &#34;BOTTOM&#34;"/>
          <enumeration value="&#34;LEFT&#34; &#34;CENTER&#34;"/>
@@ -3803,7 +3800,7 @@
       </SimpleType>
       <SimpleType name="layoutScaleModeChoices"
                    baseType="MFString"
-                   appinfo="Permitted combinations of horizontal and vertical values for the scaleMode field in the Layout node. Note that intermediate commas and extraneous whitespace are disallowed by these strictly defined enumeration values. Bounded, no additional values are allowed."
+                   appinfo="Permitted combinations of horizontal and vertical values for the scaleMode field in the Layout node. Note that intermediate commas and extraneous whitespace are disallowed by these strictly defined enumeration values. This list is bounded, no additional values are allowed."
                    documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/layout.html#Layout">
          <enumeration value="&#34;NONE&#34; &#34;NONE&#34;"/>
          <enumeration value="&#34;NONE&#34; &#34;FRACTION&#34;"/>
@@ -3824,7 +3821,7 @@
       </SimpleType>
       <SimpleType name="layoutUnitsChoices"
                    baseType="MFString"
-                   appinfo="Permitted combinations of horizontal and vertical values for the offsetUnits field in the Layout node. Note that intermediate commas and extraneous whitespace are disallowed by these strictly defined enumeration values. Bounded, no additional values are allowed."
+                   appinfo="Permitted combinations of horizontal and vertical values for the offsetUnits field in the Layout node. Note that intermediate commas and extraneous whitespace are disallowed by these strictly defined enumeration values. This list is bounded, no additional values are allowed."
                    documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/layout.html#Layout">
          <enumeration value="&#34;WORLD&#34; &#34;WORLD&#34;"/>
          <enumeration value="&#34;WORLD&#34; &#34;FRACTION&#34;"/>
@@ -3867,82 +3864,9 @@
                    baseType="SFInt32"
                    appinfo="Level Of Articulation 0..4 indicates complexity and detail of joints for given humanoid skeletal hierarchy. Note that value of -1 indicates that no LOA conformance is provided."
                    documentation="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#LevelsOfArticulation"/>
-      <SimpleType name="markerTypeValues"
-                   baseType="SFInt32"
-                   appinfo="markerType selects a marker display type for points from International Register of Graphical Items."
-                   documentation="https://isotc.iso.org/livelink/livelink/fetch/-8916524/8916549/8916590/6208440/class_pages/markertype.html">
-         <enumeration value="1" alias="DOT" appinfo="Dot"/>
-         <enumeration value="2" alias="PLUS_SIGN" appinfo="Plus sign"/>
-         <enumeration value="3" alias="ASTERISK" appinfo="Asterisk"/>
-         <enumeration value="4" alias="CIRCLE" appinfo="Circle"/>
-         <enumeration value="5" alias="DIAGONAL_CROSS" appinfo="Diagonal cross"/>
-         <enumeration value="6"
-                       alias="METEOROLOGICAL_STATION_CIRCLE_1_OKTA"
-                       appinfo="Meteorological Station Circle, one okta of cloud"/>
-         <enumeration value="7"
-                       alias="METEOROLOGICAL_STATION_CIRCLE_2_OKTAS"
-                       appinfo="Meteorological Station Circle, two oktas of cloud"/>
-         <enumeration value="8"
-                       alias="METEOROLOGICAL_STATION_CIRCLE_3_OKTAS"
-                       appinfo="Meteorological Station Circle, three oktas of cloud"/>
-         <enumeration value="9"
-                       alias="METEOROLOGICAL_STATION_CIRCLE_4_OKTAS"
-                       appinfo="Meteorological Station Circle, four oktas of cloud"/>
-         <enumeration value="10"
-                       alias="METEOROLOGICAL_STATION_CIRCLE_5_OKTAS"
-                       appinfo="Meteorological Station Circle, five oktas of cloud"/>
-         <enumeration value="11"
-                       alias="METEOROLOGICAL_STATION_CIRCLE_6_OKTAS"
-                       appinfo="Meteorological Station Circle, six oktas of cloud"/>
-         <enumeration value="12"
-                       alias="METEOROLOGICAL_STATION_CIRCLE_7_OKTAS"
-                       appinfo="Meteorological Station Circle, seven oktas of cloud"/>
-         <enumeration value="13"
-                       alias="METEOROLOGICAL_STATION_CIRCLE_8_OKTAS"
-                       appinfo="Meteorological Station Circle, eight oktas of cloud"/>
-         <enumeration value="14"
-                       alias="METEOROLOGICAL_STATION_CIRCLE_SKY_OBSCURED"
-                       appinfo="Meteorological Station Circle, sky obscured"/>
-         <enumeration value="15"
-                       alias="METEOROLOGICAL_STATION_CIRCLE_SKY_NOT_OBSERVED"
-                       appinfo="Meteorological Station Circle, sky not observed"/>
-         <enumeration value="16"
-                       alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_NO_CLOUD"
-                       appinfo="Meteorological Automatic Station Circle, no cloud"/>
-         <enumeration value="17"
-                       alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_1_OKTA"
-                       appinfo="Meteorological Automatic Station Circle, one okta of cloud"/>
-         <enumeration value="18"
-                       alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_2_OKTAS"
-                       appinfo="Meteorological Automatic Station Circle, two oktaws of cloud"/>
-         <enumeration value="19"
-                       alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_3_OKTAS"
-                       appinfo="Meteorological Automatic Station Circle, three oktaws of cloud"/>
-         <enumeration value="20"
-                       alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_4_OKTAS"
-                       appinfo="Meteorological Automatic Station Circle, four oktaws of cloud"/>
-         <enumeration value="21"
-                       alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_5_OKTAS"
-                       appinfo="Meteorological Automatic Station Circle, five oktaws of cloud"/>
-         <enumeration value="22"
-                       alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_6_OKTAS"
-                       appinfo="Meteorological Automatic Station Circle, six oktaws of cloud"/>
-         <enumeration value="23"
-                       alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_7_OKTAS"
-                       appinfo="Meteorological Automatic Station Circle, seven oktaws of cloud"/>
-         <enumeration value="24"
-                       alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_8_OKTAS"
-                       appinfo="Meteorological Automatic Station Circle, eight oktaws of cloud"/>
-         <enumeration value="25"
-                       alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_SKY_OBSCURED"
-                       appinfo="Meteorological Automatic Station Circle, sky obscured"/>
-         <enumeration value="26"
-                       alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_SKY_NOT_OBSERVED"
-                       appinfo="Meteorological Automatic Station Circle, sky not observed"/>
-      </SimpleType>
       <SimpleType name="metaDirectionChoices"
                    baseType="xs:NMTOKEN"
-                   appinfo="metaDirectionChoices are strictly allowed enumeration values for meta element direction field. Bounded, no additional values are allowed."
+                   appinfo="metaDirectionChoices are strictly allowed enumeration values for meta element direction field. This list is bounded, no additional values are allowed."
                    documentation="http://www.w3.org/TR/html4/struct/dirlang.html#adef-dir">
          <enumeration value="rtl" appinfo="right-to-left"/>
          <enumeration value="ltr" appinfo="left-to-right"/>
@@ -4128,7 +4052,7 @@
       </SimpleType>
       <SimpleType name="networkModeChoices"
                    baseType="xs:NMTOKEN"
-                   appinfo="networkModeChoices are strictly allowed enumeration values for DIS field networkMode. Bounded, no additional values are allowed."
+                   appinfo="networkModeChoices are strictly allowed enumeration values for DIS field networkMode. This list is bounded, no additional values are allowed."
                    documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/dis.html#CommonDISfields">
          <enumeration value="standAlone"
                        appinfo="ignore network but still respond to events in local scene"/>
@@ -4255,7 +4179,7 @@
       </SimpleType>
       <SimpleType name="periodicWaveTypeChoices"
                    baseType="SFString"
-                   appinfo="Permitted values for PeriodicWave type. Bounded, no additional values are allowed."
+                   appinfo="Permitted values for PeriodicWave type. This list is bounded, no additional values are allowed."
                    documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/sound.html#PeriodicWave">
          <enumeration value="sine"/>
          <enumeration value="square"/>
@@ -4281,7 +4205,7 @@
       </SimpleType>
       <SimpleType name="pickSensorMatchCriterionChoices"
                    baseType="xs:NMTOKEN"
-                   appinfo="pickSensorMatchCriterionChoices are strictly allowed enumeration values for X3DPickSensorNode node matchCriterion field. Bounded, no additional values are allowed."
+                   appinfo="pickSensorMatchCriterionChoices are strictly allowed enumeration values for X3DPickSensorNode node matchCriterion field. This list is bounded, no additional values are allowed."
                    documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/picking.html#X3DPickSensorNode">
          <enumeration value="MATCH_ANY"
                        appinfo="any match of objectType values is acceptable"/>
@@ -4305,7 +4229,7 @@
       </SimpleType>
       <SimpleType name="profileNameChoices"
                    baseType="xs:NMTOKEN"
-                   appinfo="profileNameChoices enumeration constants are used to identify the profile for each scene-graph node, and also utilized by X3D element to identify the profile of a contained Scene. Profiles correspond primarily to subsets of allowed X3D nodes. Some nodes in Interchange profile include fields that are ignored unless Immersive or Full profile is active. Bounded, no additional values are allowed."
+                   appinfo="profileNameChoices enumeration constants are used to identify the profile for each scene-graph node, and also utilized by X3D element to identify the profile of a contained Scene. Profiles correspond primarily to subsets of allowed X3D nodes. Some nodes in Interchange profile include fields that are ignored unless Immersive or Full profile is active. This list is bounded, no additional values are allowed."
                    documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/concepts.html#Profiles">
          <enumeration value="Core"
                        appinfo="Core Profile includes no nodes and is provided as the basis for custom componentization. Allowed X3D statements for all profiles are: connect ExternProtoDeclare EXPORT field fieldValue IMPORT IS ProtoBody ProtoDeclare ProtoInterface ProtoInstance ROUTE X3D. Allowed X3D nodes for this profile are: MetadataBoolean MetadataDouble MetadataFloat MetadataInteger MetadataSet MetadataString."
@@ -4334,7 +4258,7 @@
       </SimpleType>
       <SimpleType name="projectionVolumeStyleTypeChoices"
                    baseType="xs:NMTOKEN"
-                   appinfo="projectionVolumeStyleTypeChoices are strictly allowed enumeration values for ProjectionVolumeStyle field named 'type'. Bounded, no additional values are allowed."
+                   appinfo="projectionVolumeStyleTypeChoices are strictly allowed enumeration values for ProjectionVolumeStyle field named 'type'. This list is bounded, no additional values are allowed."
                    documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/volume.html#ProjectionVolumeStyle">
          <enumeration value="MAX"
                        appinfo="Maximum Intensity Projection (MIP) or Least MIP (LMIP) algorithm is used to generate output color"/>
@@ -4360,7 +4284,7 @@
       </SimpleType>
       <SimpleType name="textureBoundaryModeChoices"
                    baseType="xs:NMTOKEN"
-                   appinfo="textureBoundaryModeChoices are strictly allowed enumeration values for TextureProperties boundaryMode* fields. Bounded, no additional values are allowed."
+                   appinfo="textureBoundaryModeChoices are strictly allowed enumeration values for TextureProperties boundaryMode* fields. This list is bounded, no additional values are allowed."
                    documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/texturing.html#t-TextureBoundaryModes">
          <enumeration value="CLAMP" appinfo="Clamp texture coordinates to range [0,1]"/>
          <enumeration value="CLAMP_TO_EDGE"
@@ -4373,7 +4297,7 @@
       </SimpleType>
       <SimpleType name="textureCompressionModeChoices"
                    baseType="xs:NMTOKEN"
-                   appinfo="textureCompressionModeChoices are strictly allowed enumeration values for TextureProperties field textureCompression. Bounded, no additional values are allowed."
+                   appinfo="textureCompressionModeChoices are strictly allowed enumeration values for TextureProperties field textureCompression. This list is bounded, no additional values are allowed."
                    documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/texturing.html#t-TextureCompressionModes">
          <enumeration value="DEFAULT" appinfo="browser-specified default compression mode"/>
          <enumeration value="FASTEST" appinfo="fastest method available"/>
@@ -4384,7 +4308,7 @@
       </SimpleType>
       <SimpleType name="textureCoordinateGeneratorModeChoices"
                    baseType="xs:NMTOKEN"
-                   appinfo="textureCoordinateGeneratorModeChoices are strictly allowed enumeration values for TextureCoordinateGenerator mode field. Bounded, no additional values are allowed."
+                   appinfo="textureCoordinateGeneratorModeChoices are strictly allowed enumeration values for TextureCoordinateGenerator mode field. This list is bounded, no additional values are allowed."
                    documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/texturing.html#t-Texturecoordgeneration">
          <enumeration value="SPHERE"
                        appinfo="Creates texture coordinates for a spherical environment"/>
@@ -4409,7 +4333,7 @@
       </SimpleType>
       <SimpleType name="textureMagnificationModeChoices"
                    baseType="xs:NMTOKEN"
-                   appinfo="textureMagnificationModeChoices are strictly allowed enumeration values for TextureProperties field magnificationFilter. Bounded, no additional values are allowed."
+                   appinfo="textureMagnificationModeChoices are strictly allowed enumeration values for TextureProperties field magnificationFilter. This list is bounded, no additional values are allowed."
                    documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/texturing.html#t-TextureMagnificationModes">
          <enumeration value="AVG_PIXEL"
                        appinfo="weighted average of four texture elements closest to center of pixel being textured"/>
@@ -4421,7 +4345,7 @@
       </SimpleType>
       <SimpleType name="textureMinificationModeChoices"
                    baseType="xs:NMTOKEN"
-                   appinfo="textureMinificationModeChoices are strictly allowed enumeration values for TextureProperties field minificationFilter. Bounded, no additional values are allowed."
+                   appinfo="textureMinificationModeChoices are strictly allowed enumeration values for TextureProperties field minificationFilter. This list is bounded, no additional values are allowed."
                    documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/texturing.html#t-TextureMinificationModes">
          <enumeration value="AVG_PIXEL"
                        appinfo="weighted average of four texture elements closest to center of pixel being textured"/>
@@ -4441,7 +4365,7 @@
       </SimpleType>
       <SimpleType name="unitCategoryChoices"
                    baseType="xs:NMTOKEN"
-                   appinfo="unitCategoryChoices are strictly allowed enumeration values for standard units in the UNIT statement. Bounded, no additional values are allowed."
+                   appinfo="unitCategoryChoices are strictly allowed enumeration values for standard units in the UNIT statement. This list is bounded, no additional values are allowed."
                    documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/concepts.html#t-Standardunits">
          <enumeration value="angle" appinfo="angle default is radians"/>
          <enumeration value="force" appinfo="force default is newtons"/>
@@ -4466,7 +4390,7 @@
       </SimpleType>
       <SimpleType name="waveShaperOversampleChoices"
                    baseType="SFString"
-                   appinfo="Permitted values for WaveShaper oversample field. Bounded, no additional values are allowed."
+                   appinfo="Permitted values for WaveShaper oversample field. This list is bounded, no additional values are allowed."
                    documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/sound.html#WaveShaper">
          <enumeration value="none" appinfo="No oversampling"/>
          <enumeration value="2x" appinfo="Double sampling rate"/>
@@ -4474,7 +4398,7 @@
       </SimpleType>
       <SimpleType name="x3dVersionChoices"
                    baseType="xs:NMTOKEN"
-                   appinfo="x3dVersionChoices enumeration string constants are used to identify the allowed versions for an X3D scene graph. Bounded, no additional values are allowed."
+                   appinfo="x3dVersionChoices enumeration string constants are used to identify the allowed versions for an X3D scene graph. This list is bounded, no additional values are allowed."
                    documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/concepts.html#Profiles">
          <enumeration value="3.0"
                        appinfo="X3D version 3.0 approved by ISO in 2004."
@@ -7124,12 +7048,6 @@
                                appinfo="Base type for material nodes that describe how the shape looks like from one side. A different number of contanied texture nodes are allowed by each of the implementing nodes.">
             <componentInfo name="Shape" level="4"/>
             <Inheritance baseType="X3DMaterialNode"/>
-            <field name="emissiveColor"
-                    type="SFColor"
-                    accessType="inputOutput"
-                    default="0 0 0"
-                    minInclusive="0"
-                    maxInclusive="1"/>
             <field name="emissiveTextureMapping"
                     type="SFString"
                     accessType="inputOutput"
@@ -17008,143 +16926,6 @@
             </ContentModel>
          </InterfaceDefinition>
       </ConcreteNode>
-      <ConcreteNode name="EnvironmentLight">
-         <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/lighting.html#DirectionalLight"
-                               appinfo="TODO add contained nodes.">
-            <componentInfo name="Lighting" level="1"/>
-            <Inheritance baseType="X3DLightNode"/>
-            <field name="ambientIntensity"
-                    type="SFFloat"
-                    accessType="inputOutput"
-                    default="0"
-                    minInclusive="0"
-                    maxInclusive="1"
-                    inheritedFrom="X3DLightNode"
-                    baseType="unitIntervalType"
-                    description="Brightness of ambient (nondirectional background) emission from the light."/>
-            <field name="color"
-                    type="SFColor"
-                    accessType="inputOutput"
-                    default="1 1 1"
-                    minInclusive="0"
-                    maxInclusive="1"
-                    inheritedFrom="X3DLightNode"
-                    description="color of light, applied to colors of objects."/>
-            <field name="diffuse"
-                    type="SFNode"
-                    accessType="inputOutput"
-                    default="NULL"
-                    acceptableNodeTypes="X3DSingleTextureNode"
-                    description="When applying diffuseColor for this light node, the contained texture provides Physically Based Rendering (PBR) modulation for each pixel."/>
-            <field name="diffuseCoefficients"
-                    type="MFFloat"
-                    accessType="inputOutput"
-                    description="diffuseCoefficients field provides a 3 x 9 array of float values that declares spherical harmonic coefficients for irradiance up to l=2, corresponding to glTF irradianceCoefficients field."/>
-            <field name="diffuseTexture"
-                    type="SFNode"
-                    accessType="inputOutput"
-                    default="NULL"
-                    acceptableNodeTypes="X3DEnvironmentTextureNode"
-                    description="When applying diffuseColor for this light node, the contained texture provides Physically Based Rendering (PBR) modulation for each pixel."/>
-            <field name="global"
-                    type="SFBool"
-                    accessType="inputOutput"
-                    default="false"
-                    description="Global lights illuminate all objects within their volume of lighting influence."/>
-            <field name="intensity"
-                    type="SFFloat"
-                    accessType="inputOutput"
-                    default="1"
-                    minInclusive="0"
-                    inheritedFrom="X3DLightNode"
-                    description="Brightness of direct emission from the light."/>
-            <field name="IS"
-                    type="SFNode"
-                    accessType="inputOutput"
-                    default="NULL"
-                    acceptableNodeTypes="IS"
-                    inheritedFrom="X3DNode"/>
-            <field name="metadata"
-                    type="SFNode"
-                    accessType="inputOutput"
-                    default="NULL"
-                    acceptableNodeTypes="X3DMetadataObject"
-                    inheritedFrom="X3DNode"
-                    description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node."/>
-            <field name="on"
-                    type="SFBool"
-                    accessType="inputOutput"
-                    default="true"
-                    inheritedFrom="X3DLightNode"
-                    description="Enables/disables this light source."/>
-            <field name="rotation"
-                    type="SFRotation"
-                    accessType="inputOutput"
-                    default="0 0 1 0"
-                    description="Orientation (axis, angle in radians) of light rotation relative to local coordinate system."/>
-            <field name="shadowIntensity"
-                    type="SFFloat"
-                    accessType="inputOutput"
-                    default="1"
-                    minInclusive="0"
-                    maxInclusive="1"
-                    inheritedFrom="X3DLightNode"
-                    baseType="unitIntervalType"
-                    description="shadowIntensity field defines how much light is obscured by shapes that cast shadows, ranging from 0 (light not obscured, no visible shadows) to 1 (light completely obscured, full-intensity shadows)."/>
-            <field name="shadows"
-                    type="SFBool"
-                    accessType="inputOutput"
-                    default="false"
-                    inheritedFrom="X3DLightNode"
-                    description="shadows field indicates whether or not this light casts a shadow behind illuminated X3DShapeNode geometry."/>
-            <field name="specularTexture"
-                    type="SFNode"
-                    accessType="inputOutput"
-                    default="NULL"
-                    acceptableNodeTypes="X3DEnvironmentTextureNode"
-                    description="When applying specularColor for this light node, the contained texture provides Physically Based Rendering (PBR) modulation for each pixel."/>
-            <field name="DEF"
-                    type="SFString"
-                    accessType="inputOutput"
-                    inheritedFrom="X3DNode"
-                    baseType="xs:ID"
-                    description="DEF defines a unique ID name for this node, referenceable by other nodes."/>
-            <field name="USE"
-                    type="SFString"
-                    accessType="inputOutput"
-                    inheritedFrom="X3DNode"
-                    baseType="xs:IDREF"
-                    description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
-            <field name="class"
-                    type="SFString"
-                    accessType="inputOutput"
-                    inheritedFrom="X3DNode"
-                    baseType="xs:NMTOKENS"
-                    description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
-            <field name="id"
-                    type="SFString"
-                    accessType="inputOutput"
-                    inheritedFrom="X3DNode"
-                    baseType="xs:NMTOKEN"
-                    description="The id attribute on each X3D node and statement is considered a unique identifier when used as part of an encompassing HTML/DOM context."/>
-            <field name="style"
-                    type="SFString"
-                    accessType="inputOutput"
-                    inheritedFrom="X3DNode"
-                    description="The style attribute on each X3D node and statement provides an inline block of CSS source for element styling, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
-            <containerField default="children" type="xs:NMTOKEN"/>
-            <ContentModel>
-               <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
-               <NodeContentModel name="ImageTexture"/>
-               <NodeContentModel name="MovieTexture"/>
-               <NodeContentModel name="PixelTexture"/>
-               <NodeContentModel name="ComposedCubeMapTexture"/>
-               <NodeContentModel name="GeneratedCubeMapTexture"/>
-               <NodeContentModel name="ImageCubeMapTexture"/>
-               <NodeContentModel name="ProtoInstance"/>
-            </ContentModel>
-         </InterfaceDefinition>
-      </ConcreteNode>
       <ConcreteNode name="EspduTransform">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/dis.html#EspduTransform"
                                appinfo="EspduTransform is a networked Transform node that can contain most nodes.">
@@ -18271,7 +18052,7 @@
                     additionalEnumerationValuesAllowed="false"
                     simpleType="justifyChoices"
                     baseType="MFString"
-                    description="The justify field determines alignment of the above text layout relative to the origin of the object coordinate system.">
+                    description="The justify field determines horizonatal and vertical alignment of text layout, relative to the origin of the object coordinate system.">
                <enumeration value="&#34;MIDDLE&#34;"/>
                <enumeration value="&#34;MIDDLE&#34; &#34;BEGIN&#34;"/>
                <enumeration value="&#34;MIDDLE&#34; &#34;END&#34;"/>
@@ -19742,7 +19523,6 @@
                     type="SFVec3f"
                     accessType="inputOutput"
                     default="1 1 1"
-                    minExclusive="0"
                     description="Non-uniform x-y-z scale of child coordinate system, adjusted by center and scaleOrientation."/>
             <field name="scaleOrientation"
                     type="SFRotation"
@@ -21046,9 +20826,6 @@
                     simpleType="hanimVersionChoices"
                     baseType="xs:NMTOKEN"
                     description="HAnimHumanoid version, where value is 1.">
-               <enumeration value="1.0"
-                             appinfo="International standard HAnim 19774 version 1 approved by ISO in 2006. Note that HAnim version 2.0 has more capabilties, while version 1.0 includes several small incompatibilities. Since no other versions were formally approved, no other values are allowed for earlier HAnim versions."
-                             documentation="https://www.web3d.org/documents/specifications/19774/V1.0"/>
                <enumeration value="2.0"
                              appinfo="Revised standard HAnim 19774 version 2 (parts 1 and 2) were approved by ISO in November 2019, published by Web3D Consortium May 2020."
                              documentation="https://www.web3d.org/documents/specifications/19774/V2.0"/>
@@ -27076,7 +26853,6 @@
                     default="0 0 0"
                     minInclusive="0"
                     maxInclusive="1"
-                    inheritedFrom="X3DOneSidedMaterialNode"
                     description="how much glowing light is emitted from this object."/>
             <field name="emissiveTexture"
                     type="SFNode"
@@ -29290,7 +29066,7 @@
             <field name="addGeometry"
                     type="MFNode"
                     accessType="inputOnly"
-                    acceptableNodeTypes="X3DNurbsSurfaceGeometryNode"/>
+                    acceptableNodeTypes="X3DParametricGeometryNode"/>
             <field name="bboxCenter"
                     type="SFVec3f"
                     accessType="initializeOnly"
@@ -29313,7 +29089,7 @@
             <field name="geometry"
                     type="MFNode"
                     accessType="inputOutput"
-                    acceptableNodeTypes="X3DNurbsSurfaceGeometryNode"
+                    acceptableNodeTypes="X3DParametricGeometryNode"
                     description="The children form a closed loop with first point of first child repeated as last point of last child, and the last point of a segment repeated as first point of the consecutive one."/>
             <field name="IS"
                     type="SFNode"
@@ -29331,7 +29107,7 @@
             <field name="removeGeometry"
                     type="MFNode"
                     accessType="inputOnly"
-                    acceptableNodeTypes="X3DNurbsSurfaceGeometryNode"/>
+                    acceptableNodeTypes="X3DParametricGeometryNode"/>
             <field name="tessellationScale"
                     type="SFFloat"
                     accessType="inputOutput"
@@ -29707,7 +29483,7 @@
                     minInclusive="2"
                     description="Define order of surface by polynomials of degree = order-1."/>
             <field name="weight"
-                    type="MFFloat"
+                    type="MFDouble"
                     accessType="inputOutput"
                     minExclusive="0"
                     description="Output values for linear interpolation, each corresponding to knots."/>
@@ -30943,7 +30719,6 @@
                     default="0 0 0"
                     minInclusive="0"
                     maxInclusive="1"
-                    inheritedFrom="X3DOneSidedMaterialNode"
                     description="how much glowing light is emitted from this object."/>
             <field name="emissiveTexture"
                     type="SFNode"
@@ -31889,83 +31664,6 @@
                     default="NULL"
                     acceptableNodeTypes="IS"
                     inheritedFrom="X3DNode"/>
-            <field name="markerType"
-                    type="SFInt32"
-                    accessType="inputOutput"
-                    default="1"
-                    minInclusive="0"
-                    simpleType="markerTypeValues"
-                    baseType="SFInt32"
-                    description="markerType selects a marker display type for points from ISO/IEC 9973 International Register of Graphical Items.">
-               <enumeration value="1" alias="DOT" appinfo="Dot."/>
-               <enumeration value="2" alias="PLUS_SIGN" appinfo="Plus sign."/>
-               <enumeration value="3" alias="ASTERISK" appinfo="Asterisk."/>
-               <enumeration value="4" alias="CIRCLE" appinfo="Circle."/>
-               <enumeration value="5" alias="DIAGONAL_CROSS" appinfo="Diagonal cross."/>
-               <enumeration value="6"
-                             alias="METEOROLOGICAL_STATION_CIRCLE_1_OKTA"
-                             appinfo="Meteorological Station Circle, one okta of cloud."/>
-               <enumeration value="7"
-                             alias="METEOROLOGICAL_STATION_CIRCLE_2_OKTAS"
-                             appinfo="Meteorological Station Circle, two oktas of cloud."/>
-               <enumeration value="8"
-                             alias="METEOROLOGICAL_STATION_CIRCLE_3_OKTAS"
-                             appinfo="Meteorological Station Circle, three oktas of cloud."/>
-               <enumeration value="9"
-                             alias="METEOROLOGICAL_STATION_CIRCLE_4_OKTAS"
-                             appinfo="Meteorological Station Circle, four oktas of cloud."/>
-               <enumeration value="10"
-                             alias="METEOROLOGICAL_STATION_CIRCLE_5_OKTAS"
-                             appinfo="Meteorological Station Circle, five oktas of cloud."/>
-               <enumeration value="11"
-                             alias="METEOROLOGICAL_STATION_CIRCLE_6_OKTAS"
-                             appinfo="Meteorological Station Circle, six oktas of cloud."/>
-               <enumeration value="12"
-                             alias="METEOROLOGICAL_STATION_CIRCLE_7_OKTAS"
-                             appinfo="Meteorological Station Circle, seven oktas of cloud."/>
-               <enumeration value="13"
-                             alias="METEOROLOGICAL_STATION_CIRCLE_8_OKTAS"
-                             appinfo="Meteorological Station Circle, eight oktas of cloud."/>
-               <enumeration value="14"
-                             alias="METEOROLOGICAL_STATION_CIRCLE_SKY_OBSCURED"
-                             appinfo="Meteorological Station Circle, sky obscured."/>
-               <enumeration value="15"
-                             alias="METEOROLOGICAL_STATION_CIRCLE_SKY_NOT_OBSERVED"
-                             appinfo="Meteorological Station Circle, sky not observed."/>
-               <enumeration value="16"
-                             alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_NO_CLOUD"
-                             appinfo="Meteorological Automatic Station Circle, no cloud."/>
-               <enumeration value="17"
-                             alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_1_OKTA"
-                             appinfo="Meteorological Automatic Station Circle, one okta of cloud."/>
-               <enumeration value="18"
-                             alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_2_OKTAS"
-                             appinfo="Meteorological Automatic Station Circle, two oktaws of cloud."/>
-               <enumeration value="19"
-                             alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_3_OKTAS"
-                             appinfo="Meteorological Automatic Station Circle, three oktaws of cloud."/>
-               <enumeration value="20"
-                             alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_4_OKTAS"
-                             appinfo="Meteorological Automatic Station Circle, four oktaws of cloud."/>
-               <enumeration value="21"
-                             alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_5_OKTAS"
-                             appinfo="Meteorological Automatic Station Circle, five oktaws of cloud."/>
-               <enumeration value="22"
-                             alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_6_OKTAS"
-                             appinfo="Meteorological Automatic Station Circle, six oktaws of cloud."/>
-               <enumeration value="23"
-                             alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_7_OKTAS"
-                             appinfo="Meteorological Automatic Station Circle, seven oktaws of cloud."/>
-               <enumeration value="24"
-                             alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_8_OKTAS"
-                             appinfo="Meteorological Automatic Station Circle, eight oktaws of cloud."/>
-               <enumeration value="25"
-                             alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_SKY_OBSCURED"
-                             appinfo="Meteorological Automatic Station Circle, sky obscured."/>
-               <enumeration value="26"
-                             alias="METEOROLOGICAL_AUTOMATIC_STATION_CIRCLE_SKY_NOT_OBSERVED"
-                             appinfo="Meteorological Automatic Station Circle, sky not observed."/>
-            </field>
             <field name="metadata"
                     type="SFNode"
                     accessType="inputOutput"
@@ -34438,7 +34136,7 @@
                     additionalEnumerationValuesAllowed="false"
                     simpleType="justifyChoices"
                     baseType="MFString"
-                    description="The justify field determines alignment of the above text layout relative to the origin of the object coordinate system.">
+                    description="The justify field determines horizonatal and vertical alignment of text layout, relative to the origin of the object coordinate system.">
                <enumeration value="&#34;MIDDLE&#34;"/>
                <enumeration value="&#34;MIDDLE&#34; &#34;BEGIN&#34;"/>
                <enumeration value="&#34;MIDDLE&#34; &#34;END&#34;"/>
@@ -40435,17 +40133,7 @@
                                appinfo="UnlitMaterial specifies surface rendering properties for associated geometry nodes.">
             <componentInfo name="Shape" level="1"/>
             <Inheritance baseType="X3DOneSidedMaterialNode"/>
-<!--
-<field name="emissiveColor"
-                    type="SFColor"
-                    accessType="inputOutput"
-                    default="0 0 0"
-                    minInclusive="0"
-                    maxInclusive="1"
-                    inheritedFrom="X3DOneSidedMaterialNode"
-                    description="how much glowing light is emitted from this object."/>
--->
-<field name="emissiveColor"
+            <field name="emissiveColor"
                     type="SFColor"
                     accessType="inputOutput"
                     default="1 1 1"
