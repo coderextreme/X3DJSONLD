@@ -2058,7 +2058,7 @@ A.7.21 URLUnavailableException</h2>
             <!-- no restriction-->
         </xsl:when>
         <xsl:when test="(@type='boundingBoxSizeType')">
-            <xsl:text>[0,inf) or −1 −1 −1 </xsl:text>
+            <xsl:text>[0,inf) or ?? ?? ?? </xsl:text>
         </xsl:when>
         <xsl:when test="contains(@type,'RGBA')">
             <xsl:text>using RGBA values [0..1] </xsl:text>
@@ -3981,6 +3981,7 @@ node.source {background-color:#f4f4f4;}
                     <xsl:text>struct X3DNode*</xsl:text>
                 </xsl:when>
                 <xsl:otherwise>
+					<xsl:text>struct </xsl:text>
                     <xsl:value-of select="$cType"/>
                 </xsl:otherwise>
             </xsl:choose>
@@ -4069,10 +4070,10 @@ node.source {background-color:#f4f4f4;}
 						<xsl:text>2)</xsl:text>
                     </xsl:otherwise>
                 </xsl:choose>
-                <xsl:text> (void* this, </xsl:text>
+                <xsl:text> (void* this, struct </xsl:text>
                 <xsl:choose>
                     <xsl:when test="contains($cType,'|')">
-                        <xsl:text>struct X3DNode</xsl:text>
+                        <xsl:text>X3DNode</xsl:text>
                     </xsl:when>
                     <xsl:when test="contains($cType,'[]')">
                         <xsl:value-of select="$cSingletonType"/>
@@ -4131,6 +4132,7 @@ node.source {background-color:#f4f4f4;}
                     <xsl:call-template name="c-restrictions"/>
                     <xsl:text>&#10;</xsl:text>
                 </xsl:if>
+				<!--
                 <xsl:if test="(@type = 'MFNode') and not(contains($cType,'|'))">
                     <xsl:text>&#10;</xsl:text>
                     <xsl:choose>
@@ -4143,6 +4145,7 @@ node.source {background-color:#f4f4f4;}
                             <xsl:value-of select="$cdocProse"/>
                         </xsl:otherwise>
                     </xsl:choose>
+					
                     <xsl:text>&#10;</xsl:text>
                     <xsl:text>&#160;&#160;</xsl:text>
                     <xsl:text>void </xsl:text>
@@ -4158,12 +4161,16 @@ node.source {background-color:#f4f4f4;}
                         </xsl:otherwise>
                     </xsl:choose>
                     <xsl:text> (void* this, struct X3DNode* </xsl:text>
+					-->
                     <!-- singular -->
+					<!--
                     <xsl:value-of select="$defaultParameterName"/>
                     <xsl:text>)</xsl:text>
                     <xsl:call-template name="c-restrictions"/>
                     <xsl:text>&#10;</xsl:text>
+					
                 </xsl:if>
+				-->
             </xsl:if>
         </xsl:if>
             

@@ -88,7 +88,6 @@ DynamicsCompressor : java.import('org.web3d.x3d.jsail.Sound.DynamicsCompressor')
 EaseInEaseOut : java.import('org.web3d.x3d.jsail.Interpolation.EaseInEaseOut'),
 EdgeEnhancementVolumeStyle : java.import('org.web3d.x3d.jsail.VolumeRendering.EdgeEnhancementVolumeStyle'),
 ElevationGrid : java.import('org.web3d.x3d.jsail.Geometry3D.ElevationGrid'),
-EnvironmentLight : java.import('org.web3d.x3d.jsail.Lighting.EnvironmentLight'),
 EspduTransform : java.import('org.web3d.x3d.jsail.DIS.EspduTransform'),
 ExplosionEmitter : java.import('org.web3d.x3d.jsail.ParticleSystems.ExplosionEmitter'),
 Extrusion : java.import('org.web3d.x3d.jsail.Geometry3D.Extrusion'),

@@ -22,7 +22,7 @@
 	            xmlns:fn ="http://www.w3.org/2005/xpath-functions">
 	<!--  extension-element-prefixes="xs" -->
     
-    <xsl:param name="verbose"><xsl:text>false</xsl:text></xsl:param>
+    <xsl:param name="verbose"><xsl:text>true</xsl:text></xsl:param>
     
     <xsl:output method="xml"/> <!-- output methods:  xml html text -->
     
@@ -36,6 +36,11 @@
         <xsl:message>
             <xsl:text>Notation: * means expected conversion, ! means unexpected problem, [prose] shows contained value </xsl:text>
         </xsl:message>
+        <!-- debug diagnostic
+        <xsl:message>
+            <xsl:text>  ($verbose=</xsl:text><xsl:value-of select="$verbose"/><xsl:text>)</xsl:text>
+        </xsl:message>
+        -->
         
         <!-- process elements and comments -->
         <xsl:apply-templates select="* | text() | comment()"/>
@@ -130,10 +135,10 @@
                 <xsl:value-of select="$elementName"/>
                 <xsl:text disable-output-escaping="yes">&gt;</xsl:text><!-- end element -->
             </xsl:when>
-            <xsl:when test="contains(@class,'Deletion')">
+            <xsl:when test="(@class = 'proposedDeletion')">
                 <xsl:if test="($verbose = 'true')">
                     <xsl:message>
-                        <xsl:text>*** omitted </xsl:text>
+                        <xsl:text disable-output-escaping="false">*** omitted [</xsl:text>
                         <xsl:value-of select="local-name()"/>
                         <xsl:text> class='</xsl:text>
                         <xsl:value-of select="@class"/>
@@ -142,11 +147,19 @@
                         <xsl:value-of select="local-name()"/>
                         <xsl:text> element </xsl:text>
                         -->
-                        <xsl:if test="$hasContainedText">
-                            <xsl:text> [</xsl:text>
-                            <xsl:value-of select="normalize-space(string(.))"/>
-                            <xsl:text>]</xsl:text>
+                        <xsl:if test="(string-length(@title) > 0)">
+                            <xsl:text> title='</xsl:text>
+                            <xsl:value-of select="@title"/>
+                            <xsl:text>'</xsl:text>
                         </xsl:if>
+                        <xsl:text>]</xsl:text>
+                        <xsl:if test="$hasContainedText">
+                            <xsl:text></xsl:text>
+                            <xsl:value-of select="normalize-space(string(.))"/>
+                        </xsl:if>
+                        <xsl:text>[/</xsl:text>
+                        <xsl:value-of select="local-name()"/>
+                        <xsl:text>]</xsl:text>
                     </xsl:message>
                 </xsl:if>
                 <!-- omit copying this element -->
@@ -255,7 +268,7 @@
         <xsl:variable name="allowedClassName" select="(local-name() = 'class') and
             ((. = 'auto-style1')   or (. = 'cube')       or (. = 'CenterDiv')   or (. = 'HeadingPart') or (. = 'HeadingClause') or 
              (. = 'code')          or (. = 'deprecated') or (. = 'equation')    or (. = 'editorsNote') or (. = 'editorialChange') or
-             (. = 'terms')         or (. = 'TermRef')    or (. = 'approved')    or (. = 'approvedDeletion') or
+             (. = 'note')          or (. = 'terms')         or (. = 'TermRef')    or (. = 'approved')    or (. = 'approvedDeletion') or
              (. = 'example')       or (. = 'IndexEntry') or (. = 'Params') or
              (. = 'terms')         or (. = 'TermRef')    or (. = 'x3dbar') or (. = 'x3dlogo') or
              (. = 'RunningHeader') or (. = 'RunningHeaderLeft')  or (. = 'RunningHeaderCenter') or (. = 'RunningHeaderRight') or 

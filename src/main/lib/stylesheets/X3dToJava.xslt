@@ -889,7 +889,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     <xsl:text>Networking.</xsl:text>
                 </xsl:when>
                 <xsl:when test="starts-with(local-name(), 'ProjectiveTexture')">
-                    <xsl:text>ProjectiveTextureMapping.</xsl:text>
+                    <xsl:text>TextureProjector.</xsl:text>
                 </xsl:when>
                 <xsl:when test="(local-name() = 'Color') or (local-name() = 'ColorRGBA') or (local-name() = 'ElevationGrid') or (local-name() = 'Extrusion') or (local-name() = 'Normal') or
                                 (local-name() = 'IndexedFaceSet') or (local-name() = 'IndexedLineSet') or (local-name() = 'LineSet') or (local-name() = 'PointSet') or
@@ -3681,7 +3681,7 @@ POSSIBILITY OF SUCH DAMAGE.
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
 		<xsl:if test="//*[starts-with(name(),'TextureProjector')]">
-			<xsl:text>import org.web3d.x3d.jsail.ProjectiveTextureMapping.*;</xsl:text>
+			<xsl:text>import org.web3d.x3d.jsail.TextureProjector.*;</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
 		<xsl:if test="//*[name()='ClipPlane'] or //*[name()='Color'] or //*[name()='ColorRGA'] or //*[name()='Coordinate'] or
