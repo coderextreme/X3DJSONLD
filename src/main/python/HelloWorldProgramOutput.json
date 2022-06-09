@@ -1132,7 +1132,7 @@
                   }
                 },
               "-geometry":
-                { "Sphere":
+                { "Extrusion":
                   {
                     "@DEF":"ExampleExtrusion"
                   }
@@ -2389,7 +2389,7 @@
                   }
                 },
               "-geometry":
-                { "Sphere":
+                { "Extrusion":
                   {
                     "@DEF":"ExampleExtrusion"
                   }
