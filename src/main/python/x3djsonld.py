@@ -247,7 +247,7 @@ def parseObject(parent, data,indent):
     return out
 
 
-with open('../data/abox.json' if len(sys.argv) == 1 else sys.argv[1], encoding="utf-8") as json_file:
+with open('HelloWorldProgramOutput.json' if len(sys.argv) == 1 else sys.argv[1], encoding="utf-8") as json_file:
     data = json.load(json_file)
     print("from x3d import *")
     print("from x3d import SFBool")
