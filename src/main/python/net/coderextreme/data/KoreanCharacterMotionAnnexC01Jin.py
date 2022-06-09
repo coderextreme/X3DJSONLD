@@ -10,7 +10,7 @@ Scene=Scene(children=[
 WorldInfo(title="KoreanCharacterMotionAnnexC01Jin.x3d"),
 NavigationInfo(speed=1.5),
 Viewpoint(centerOfRotation=((0,1,0)), description="AnnexC01Jin", position=((0,1,3))),
-HAnimHumanoid(name="AnnexC01Jin", DEF="hanim_AnnexC01Jin", scale=((0.0225,0.0225,0.0225)), version="2.0", 
+HAnimHumanoid(name="AnnexC01Jin", DEF="hanim_AnnexC01Jin", scale=(0.0225,0.0225,0.0225), version="2.0", 
 metadata=(
 MetadataSet(name="HAnimHumanoid.info", reference="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid", value=[
 MetadataString(name="humanoidVersion", value=["2.0"])])), skeleton=[

@@ -10,7 +10,7 @@ Scene=Scene(children=[
 WorldInfo(title="JinLOA4.x3d"),
 NavigationInfo(speed=1.5),
 Viewpoint(centerOfRotation=((0,1,0)), description="JinLOA4", position=((0,1,3))),
-HAnimHumanoid(name="JinLOA4", DEF="hanim_JinLOA4", loa=4, scale=((0.0225,0.0225,0.0225)), version="2.0", 
+HAnimHumanoid(name="JinLOA4", DEF="hanim_JinLOA4", loa=4, scale=(0.0225,0.0225,0.0225), version="2.0", 
 metadata=(
 MetadataSet(name="HAnimHumanoid.info", reference="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid", value=[
 MetadataString(name="authorName", value=["Jin Hoon Lee and Min Joo Lee, Chul Hee Jung and Myeong Won Lee"]),

@@ -10,7 +10,7 @@ Scene=Scene(children=[
 WorldInfo(title="KoreanCharacter12Sun.x3d"),
 NavigationInfo(speed=1.5),
 Viewpoint(centerOfRotation=((0,1,0)), description="Sun", position=((0,1,3))),
-HAnimHumanoid(name="Sun", DEF="hanim_Sun", scale=((0.0225,0.0225,0.0225)), version="2.0", 
+HAnimHumanoid(name="Sun", DEF="hanim_Sun", scale=(0.0225,0.0225,0.0225), version="2.0", 
 metadata=(
 MetadataSet(name="HAnimHumanoid.info", reference="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid", value=[
 MetadataString(name="authorName", value=["Chul Hee Jung and Myeong Won Lee"]),
