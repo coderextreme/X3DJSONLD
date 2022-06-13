@@ -1,5 +1,5 @@
 '''
-x3d.py package 4.0.63.7 loaded, have fun with X3D Graphics!
+x3d.py package 4.0.64.1 loaded, have fun with X3D Graphics!
 '''
 from x3d import *
 from x3d import SFBool
@@ -10,7 +10,7 @@ Scene=Scene(children=[
 WorldInfo(title="KoreanCharacter08Da.x3d"),
 NavigationInfo(speed=1.5),
 Viewpoint(centerOfRotation=((0,1,0)), description="Da", position=((0,1,3))),
-HAnimHumanoid(name="Da", DEF="hanim_Da", scale=(0.0225,0.0225,0.0225), version="2.0", 
+HAnimHumanoid(name="Da", DEF="hanim_Da", scale=((0.0225,0.0225,0.0225)), version="2.0", 
 metadata=(
 MetadataSet(name="HAnimHumanoid.info", reference="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid", value=[
 MetadataString(name="authorName", value=["Chul Hee Jung and Myeong Won Lee"]),
