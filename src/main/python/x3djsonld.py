@@ -4,7 +4,7 @@ import json
 import sys
 from x3d import *
 from x3d import SFBool
-from x3d import _X3DBoundedObject
+# from x3d import _X3DBoundedObject
 print("'''")   # comment out output created by importing x3d (see below)
 
 def getField(grandparent, parent):
@@ -44,6 +44,9 @@ def parseArray(lead, trail, grandparent, parent, data, indent, fieldType=None):
     if fieldType is None:
         fieldType = fieldInfo["fieldType"]
     tupleSize = fieldInfo["tupleSize"]
+    ft = eval(fieldType)()
+    if fieldType.startswith("MF"):
+        tupleSize = ft.TUPLE_SIZE()
     #if tupleSize > 1:
     #    print("'''"+str(fieldType)+" "+grandparent+"."+parent+"["+str(tupleSize)+"]'''", file=sys.stderr)
     for d in data:
@@ -122,6 +125,12 @@ def parseObject(parent, data,indent):
             key = k[1:]
         if key in ("class", "style", "id", "global"):
             key = key+"_"
+        #if k in ("-colorRamp"):
+        #    k = "-color"
+        #    key = k[1:]
+        #if k in ("-texCoordRamp"):
+        #    k = "-texCoord"
+        #    key = k[1:]
         fieldInfo = getField(parent, key)
         if not field or fieldType is None:
             fieldType = fieldInfo["fieldType"]
@@ -147,9 +156,9 @@ def parseObject(parent, data,indent):
             out += "\n"+key
             if key in ("left", "right", "top", "bottom", "front", "back"):
                 out += "Texture"
-            if key in ("fontStyle", "color", "normal", "geometry", "appearance", "material", "texture", "textureTransform", "fontStyle", "source", "texCoord", "coord", "skeleton", "viewpoints", "skin", "displacers", "sites", "parts", "displacements", "segments", "shaders", "programs", "texture", "left", "right", "top", "bottom", "front", "back"):
+            if key in ("fontStyle", "color", "colorRamp", "normal", "geometry", "appearance", "material", "texture", "textureTransform", "fontStyle", "source", "texCoord", "coord", "skeleton", "viewpoints", "skin", "displacers", "sites", "parts", "displacements", "segments", "shaders", "programs", "texture", "left", "right", "top", "bottom", "front", "back"):
                 out += "="
-            elif key not in ("X3D", "AudioClip", "LOD", "PositionInterpolator", "Extrusion", "TextureCoordinate", "Normal", "FontStyle", "ComposedShader", "ImageTexture", "ShaderProgram", "ShaderPart", "ComposedCubeMapTexture", "WorldInfo", "NavigationInfo", "Viewpoint", "Background", "Transform", "Shape", "Sphere", "Appearance", "Material", "Box", "Group", "Script", "Text", "PixelTexture", "IndexedFaceSet", "HAnimDisplacer", "HAnimSite", "HAnimJoint", "HAnimSegment", "HAnimHumanoid", "MetadataDouble", "MetadataFloat", "MetadataString", "MetadataSet", "ViewpointGroup", "ProtoInstance", "ProtoDeclare", "ExternProtoDeclare", "TouchSensor", "ProgramShader", "VisibilitySensor", "TimeSensor", "PlaneSensor", "Switch", "AcousticProperties", "Sound", "Cylinder", "ROUTE", "PhysicalMaterial", "Color", "ColorRGBA", "Coordinate", "TextureBackground", "Collision", "LineSet", "IndexedLineSet", "Inline", "Anchor", "TextureTransform", "OrientationInterpolator", "ListenerPointSource", "Cone", "LayerSet", "ProximitySensor", "StringSensor", "IMPORT", "EXPORT", "PointLight", "DirectionalLight", "ChannelSplitter", "ChannelMerger", "BooleanFilter", "BooleanToggle", "BiquadFilter", "Fog", "SpotLight", "MovieTexture", "IntegerSequencer", "Billboard", "GeoViewpoint", "GeoPositionInterpolator", "TextureProperties", "ColorInterpolator", "StreamAudioDestination", "SpatialSound", "Analyser", "Gain", "ChannelSelector", "Convolver", "Delay", "DynamicsCompressor", "WaveShaper", "BufferAudioSource", "StreamAudioSource", "MicrophoneSource", "OscillatorSource", "Rectangle2D", "ScalarInterpolator", "CADLayer", "CADAssembly", "CADPart", "CADFace", "EspduTransform", "ReceiverPdu", "SignalPdu", "TransmitterPdu", "DISEntityManager", "DISEntityTypeMapping", "LoadSensor", "GeoMetadata", "ImageCubeMapTexture", "ImageTexture3D", "PackagedShader"):
+            elif key not in ("X3D", "ForcePhysicsModel", "WindPhysicsModel", "BoundedPhysicsModel", "AudioClip", "LOD", "PositionInterpolator", "Extrusion", "TextureCoordinate", "Normal", "FontStyle", "ComposedShader", "ImageTexture", "ShaderProgram", "ShaderPart", "ComposedCubeMapTexture", "WorldInfo", "NavigationInfo", "Viewpoint", "Background", "Transform", "Shape", "Sphere", "Appearance", "Material", "Box", "Group", "Script", "Text", "PixelTexture", "IndexedFaceSet", "HAnimDisplacer", "HAnimSite", "HAnimJoint", "HAnimSegment", "HAnimHumanoid", "ParticleSystem", "PointEmitter", "PolylineEmitter", "SurfaceEmitter", "ConeEmitter", "VolumeEmitter", "MetadataBoolean", "MetadataInteger", "MetadataDouble", "MetadataFloat", "MetadataString", "MetadataSet", "ViewpointGroup", "ProtoInstance", "ProtoDeclare", "ExternProtoDeclare", "TouchSensor", "ProgramShader", "VisibilitySensor", "TimeSensor", "PlaneSensor", "Switch", "Layer", "LineProperties", "AcousticProperties", "Sound", "Cylinder", "ROUTE", "PhysicalMaterial", "Color", "ColorRGBA", "Coordinate", "TextureBackground", "Collision", "LineSet", "IndexedLineSet", "Inline", "Anchor", "TextureTransform", "OrientationInterpolator", "ListenerPointSource", "Cone", "LayerSet", "ProximitySensor", "StringSensor", "IMPORT", "EXPORT", "PointLight", "DirectionalLight", "ChannelSplitter", "ChannelMerger", "BooleanFilter", "BooleanToggle", "BiquadFilter", "Fog", "SpotLight", "MovieTexture", "IntegerSequencer", "Billboard", "GeoViewpoint", "GeoPositionInterpolator", "TextureProperties", "ColorInterpolator", "StreamAudioDestination", "SpatialSound", "Analyser", "Gain", "ChannelSelector", "Convolver", "Delay", "DynamicsCompressor", "WaveShaper", "BufferAudioSource", "StreamAudioSource", "MicrophoneSource", "OscillatorSource", "Rectangle2D", "ScalarInterpolator", "CADLayer", "CADAssembly", "CADPart", "CADFace", "EspduTransform", "ReceiverPdu", "SignalPdu", "TransmitterPdu", "DISEntityManager", "DISEntityTypeMapping", "LoadSensor", "GeoMetadata", "ImageCubeMapTexture", "ImageTexture3D", "PackagedShader"):
 
                 out += "="
             if key in ("head"):
@@ -171,7 +180,7 @@ def parseObject(parent, data,indent):
                 out += "["
                 out += parseObject(k, v,indent+1)
                 out += "]"
-            elif key in ("fontStyle", "color", "normal", "geometry", "appearance", "material", "texture", "textureTransform", "fontStyle", "source", "texCoord", "coord", "displacements", "texture", "left", "right", "top", "bottom", "front", "back"):
+            elif key in ("fontStyle", "color", "colorRamp", "normal", "geometry", "appearance", "material", "texture", "textureTransform", "fontStyle", "source", "texCoord", "coord", "displacements", "texture", "left", "right", "top", "bottom", "front", "back"):
                 out += parseObject(k, v,indent+1)
             else:
                 out += "("
@@ -207,7 +216,7 @@ def parseObject(parent, data,indent):
                     # out += parseArray(data["@type"]+"(", ")", parent, key, v,indent+1, fieldType)
                     # MF
                     out += parseArray("[", "]", parent, key, v,indent+1, dt)
-            elif key in ("color", "value", "keyValue"):
+            elif key in ("color", "colorRamp", "value", "keyValue"):
                 #print(">parent "+parent+" key "+key+" fieldType "+fieldType, file=sys.stderr)
                 fieldInfo = getField(parent, key)
                 fieldType = fieldInfo["fieldType"]

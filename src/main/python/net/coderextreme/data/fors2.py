@@ -46,7 +46,7 @@ appearance=
 Appearance(
 material=
 Material(diffuseColor=((0,1,0))))),
-Script(DEF="MoveCylinder", field=[field(name="spine", accessType="inputOutput", type="MFVec3f", value=[0,-50,0,0,0,0,0,50,0]),
+Script(DEF="MoveCylinder", field=[field(name="spine", accessType="inputOutput", type="MFVec3f", value=[(0,-50,0),(0,0,0),(0,50,0)]),
 field(name="set_endA", accessType="inputOnly", type="SFVec3f"),
 field(name="set_endB", accessType="inputOnly", type="SFVec3f")
 ], 
