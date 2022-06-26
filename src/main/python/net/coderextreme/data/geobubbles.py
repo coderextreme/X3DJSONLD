@@ -25,8 +25,8 @@ TimeSensor(DEF="TourTime", cycleInterval=5, loop=True),
 GeoPositionInterpolator(DEF="TourPosition", key=[float(0),float(1)], keyValue=[(0.0015708,0,4),(0,0.0015708,4)]),
 Script(DEF="RandomTourTime", field=[field(name="set_cycle", accessType="inputOnly", type="SFTime"),
 field(name="val", accessType="inputOutput", type="SFFloat", value=0),
-field(name="positions", accessType="inputOutput", type="MFVec3d", value=[0.0015708,0,4,0,0.0015708,4]),
-field(name="position", accessType="inputOutput", type="MFVec3d", value=[0.0015708,0,4,0,0.0015708,4])
+field(name="positions", accessType="inputOutput", type="MFVec3d", value=[(0.0015708,0,4),(0,0.0015708,4)]),
+field(name="position", accessType="inputOutput", type="MFVec3d", value=[(0.0015708,0,4),(0,0.0015708,4)])
 ], 
 #['ecmascript:', '', '               function set_cycle(value) {', '                        var cartesianMult = -150;  // -150 if cartesian, 1 if geo', '                        var ov = val;', "\t\t\t// Browser.print('old '+ov);", '                        do {', '                                val = Math.floor(Math.random()*2);', '                                var vc = val;', '                                positions[vc] = new SFVec3d(Math.round(Math.random()*2)*0.0015708*cartesianMult, Math.round(Math.random()*2)*0.0015708*cartesianMult, 4);', '                        } while ( positions[ov][0] === positions[vc][0] && positions[ov][1] === positions[vc][1] && positions[ov][2] === positions[vc][2]);', '\t\t\t// Browser.println(positions[ov]);', '\t\t\t// Browser.println(positions[vc]);', '                        position = new MFVec3d();', '                        position[0] = new SFVec3d(positions[ov][0],positions[ov][1],positions[ov][2]);', '                        position[1] = new SFVec3d(positions[vc][0],positions[vc][1],positions[vc][2]);', '               }']
 ),

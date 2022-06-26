@@ -27,7 +27,7 @@ PositionInterpolator(DEF="PI1", key=[float(0),float(1)], keyValue=[(0,0,0),(0,5,
 Script(DEF="MB1", field=[field(name="translation", accessType="inputOutput", type="SFVec3f", value=(50,50,0)),
 field(name="old", accessType="inputOutput", type="SFVec3f", value=(0,0,0)),
 field(name="set_location", accessType="inputOnly", type="SFTime"),
-field(name="keyValue", accessType="inputOutput", type="MFVec3f", value=[0,0,0,0,5,0])
+field(name="keyValue", accessType="inputOutput", type="MFVec3f", value=[(0,0,0),(0,5,0)])
 ], 
 #['', '', 'ecmascript:', '\t\tfunction set_location(value) {', '                    old = translation;', '\t\t    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);', '                    keyValue = new MFVec3f([old, translation]);', '\t\t    // Browser.println(keyValue);', '\t\t}', '', '']
 ),

@@ -249,9 +249,9 @@ field(name="coordList", accessType="initializeOnly", type="MFVec3f"),
 field(name="joint", accessType="initializeOnly", type="SFNode", children=[
 #initialization node (if any) goes here
 ]),
-field(name="translation", accessType="initializeOnly", type="SFVec3f", value=(0,0,0)),
-field(name="rotation", accessType="initializeOnly", type="SFRotation", value=(1,0,0,0)),
-field(name="scale", accessType="initializeOnly", type="SFVec3f", value=(1,1,1))
+field(name="translation", accessType="initializeOnly", type="SFVec3f", value=((0,0,0))),
+field(name="rotation", accessType="initializeOnly", type="SFRotation", value=((1,0,0,0))),
+field(name="scale", accessType="initializeOnly", type="SFVec3f", value=((1,1,1)))
 ]),
 #Trigger calculation after each animation change
 

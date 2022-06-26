@@ -17,7 +17,7 @@ material=
 Material(diffuseColor=((0,1,0))))),
 TimeSensor(DEF="TourTime", loop=True),
 Script(DEF="MoveCylinder", field=[field(name="set_cycle", accessType="inputOnly", type="SFTime"),
-field(name="spine", accessType="inputOutput", type="MFVec3f", value=[-50,-50,0,50,50,0])
+field(name="spine", accessType="inputOutput", type="MFVec3f", value=[(-50,-50,0),(50,50,0)])
 ], 
 #['', '', 'ecmascript:', '', '                function set_cycle(value) {', '                        Browser.print(value);', '                        var endA = new SFVec3f(spine[0].x*Math.random()*2, spine[0].y*Math.random()*2, spine[0].z*Math.random()*2);', '                        var endB = new SFVec3f(spine[1].x*Math.random()*2, spine[1].y*Math.random()*2, spine[1].z*Math.random()*2);', '\t\t        spine = new MFVec3f([endA, endB]);', '                }', '', '']
 ),
