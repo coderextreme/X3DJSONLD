@@ -22,7 +22,7 @@ PositionInterpolator(DEF="DECLpoint_INSTANCE_PI1", key=[float(0),float(1)], keyV
 Script(DEF="DECLpoint_INSTANCE_MB1", field=[field(name="translation", accessType="inputOutput", type="SFVec3f", value=(0,0,0)),
 field(name="old", accessType="inputOutput", type="SFVec3f", value=(0,0,0)),
 field(name="set_location", accessType="inputOnly", type="SFTime"),
-field(name="keyValue", accessType="inputOutput", type="MFVec3f", value=[0,0,0,0,5,0])
+field(name="keyValue", accessType="inputOutput", type="MFVec3f", value=[(0,0,0),(0,5,0)])
 ], 
 #['', '', '', 'ecmascript:', '               function set_location(value) {', '                    old = translation;', '                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);', '                    keyValue = new MFVec3f(old, translation);', '               }', '', '', '']
 ),
@@ -45,7 +45,7 @@ PositionInterpolator(DEF="DECLpoint_INSTANCE1000_PI1", key=[float(0),float(1)], 
 Script(DEF="DECLpoint_INSTANCE1000_MB1", field=[field(name="translation", accessType="inputOutput", type="SFVec3f", value=(0,0,0)),
 field(name="old", accessType="inputOutput", type="SFVec3f", value=(0,0,0)),
 field(name="set_location", accessType="inputOnly", type="SFTime"),
-field(name="keyValue", accessType="inputOutput", type="MFVec3f", value=[0,0,0,0,5,0])
+field(name="keyValue", accessType="inputOutput", type="MFVec3f", value=[(0,0,0),(0,5,0)])
 ], 
 #['', '', '', 'ecmascript:', '               function set_location(value) {', '                    old = translation;', '                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);', '                    keyValue = new MFVec3f(old, translation);', '               }', '', '', '']
 ),
