@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Full" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" ><head><meta name="comment" content="World of Titania"></meta>
+<meta name="created" content="Wed, 20 Apr 2016 09:17:14 GMT"></meta>
+<meta name="creator" content="Holger Seelig"></meta>
+<meta name="generator" content="Titania V1.4.1, http://titania.create3000.de"></meta>
+<meta name="identifier" content="file:///home/holger/Projekte/Cobweb/excite/tests/Components/ParticleSystems/Smoke.x3d"></meta>
+<meta name="modified" content="Wed, 20 Apr 2016 09:23:41 GMT"></meta>
+</head>
+<Scene><ExternProtoDeclare name="Grid" url="&quot;, &quot; &quot;GridTool.x3dv#Gridfile:///home/holger/Projekte/Cobweb/excite/tests/Components/ParticleSystems/GridTool.x3dv#Grid&quot;"><field name="translation" accessType="inputOutput" type="SFVec3f"></field>
+<field name="rotation" accessType="inputOutput" type="SFRotation"></field>
+<field name="scale" accessType="inputOutput" type="SFVec3f"></field>
+<field name="dimension" accessType="inputOutput" type="MFInt32"></field>
+<field name="majorLineEvery" accessType="inputOutput" type="MFInt32"></field>
+<field name="majorLineOffset" accessType="inputOutput" type="MFInt32"></field>
+<field name="color" accessType="inputOutput" type="SFColor"></field>
+<field name="transparency" accessType="inputOutput" type="SFFloat"></field>
+<field name="lineColor" accessType="inputOutput" type="SFColor"></field>
+<field name="lineTransparency" accessType="inputOutput" type="SFFloat"></field>
+<field name="majorLineColor" accessType="inputOutput" type="SFColor"></field>
+<field name="majorLineTransparency" accessType="inputOutput" type="SFFloat"></field>
+<field name="solid" accessType="initializeOnly" type="SFBool"></field>
+</ExternProtoDeclare>
+<WorldInfo><MetadataSet containerField="metadata" name="Titania" DEF="Titania" reference="http://titania.create3000.de"><MetadataSet name="AngleGrid" DEF="AngleGrid" reference="http://titania.create3000.de" containerField="value"><MetadataBoolean name="enabled" DEF="enabled" reference="http://titania.create3000.de" value="false" containerField="value"></MetadataBoolean>
+</MetadataSet>
+<MetadataSet name="Grid" DEF="Grid" reference="http://titania.create3000.de"><MetadataBoolean name="enabled" DEF="enabled_1" reference="http://titania.create3000.de" value="false" containerField="value"></MetadataBoolean>
+</MetadataSet>
+<MetadataSet name="NavigationInfo" DEF="NavigationInfo" reference="http://titania.create3000.de"><MetadataString name="type" DEF="type" reference="http://titania.create3000.de" value="&quot;EXAMINE&quot;" containerField="value"></MetadataString>
+</MetadataSet>
+<MetadataSet name="Viewpoint" DEF="Viewpoint" reference="http://titania.create3000.de"><MetadataDouble name="position" DEF="position" reference="http://titania.create3000.de" value="5.87788534164429 6.46984958648682 13.8524446487427" containerField="value"></MetadataDouble>
+<MetadataDouble name="orientation" DEF="orientation" reference="http://titania.create3000.de" value="-0.704047462871212 0.695566762376517 0.143192350010952 0.568941727555854"></MetadataDouble>
+<MetadataDouble name="centerOfRotation" DEF="centerOfRotation" reference="http://titania.create3000.de" value="-1.77635683940025e-15 -7.105427357601e-15 3.5527136788005e-15"></MetadataDouble>
+</MetadataSet>
+<MetadataSet name="Selection" DEF="Selection" reference="http://titania.create3000.de"><MetadataSet name="previous" DEF="previous" reference="http://titania.create3000.de" containerField="value"></MetadataSet>
+</MetadataSet>
+</MetadataSet>
+</WorldInfo>
+<Background DEF="Gray" skyColor="0.2 0.2 0.2"></Background>
+<ProtoInstance name="Grid"></ProtoInstance>
+<Viewpoint description="Home" position="5.87789 6.46985 13.8524" orientation="-0.704047462871212 0.695566762376517 0.143192350010952 0.568941727555854" centerOfRotation="-1.77636e-15 -7.10543e-15 3.55271e-15"></Viewpoint>
+<ParticleSystem DEF="BlackSmoke" geometryType="POINT" maxParticles="4000" particleLifetime="4" lifetimeVariation="0.5" particleSize="1 1" colorKey="0 0.2 0.5 0.7 0.8 1"><PointEmitter containerField="emitter" direction="0 0 0" speed="0.2" variation="0.5" mass="0.1" surfaceArea="0.1"></PointEmitter>
+<WindPhysicsModel direction="0 1 0" speed="0.5" gustiness="1.7" turbulence="0.1"></WindPhysicsModel>
+<WindPhysicsModel speed="0.3" gustiness="2"></WindPhysicsModel>
+<Appearance><LineProperties linewidthScaleFactor="8"></LineProperties>
+<Material emissiveColor="0.0437445 0.0437445 0.0437445" transparency="0.96"></Material>
+</Appearance>
+</ParticleSystem>
+</Scene>
+</X3D>

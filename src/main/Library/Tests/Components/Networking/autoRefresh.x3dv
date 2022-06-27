@@ -1,0 +1,31 @@
+#X3D V3.3 utf8 Sunrise X3D Browser V1.0
+
+PROFILE Full
+
+META "comment" "World of Sunrise X3D Editor"
+META "created" "Thu, 20 Jan 2022 20:08:52 +0100"
+META "creator" "Holger Seelig"
+META "generator" "Sunrise X3D Editor V1.0, https://create3000.github.io/Sunrise/"
+META "identifier" "file:///Users/holger/Desktop/X_ITE/x_ite/src/tests/autoRefresh.x3dv"
+META "modified" "Thu, 20 Jan 2022 20:09:08 +0100"
+
+WorldInfo {
+  title "autoRefresh.x3dv"
+}
+
+Transform {
+  children [
+    DEF T1 TouchSensor { }
+    Shape {
+      appearance Appearance {
+        texture DEF I ImageTexture {
+          url "https://picsum.photos/512/512/?random"
+          autoRefresh 10
+          autoRefreshTimeLimit 0
+        }
+        textureTransform TextureTransform { }
+      }
+      geometry Box { }
+    }
+  ]
+}

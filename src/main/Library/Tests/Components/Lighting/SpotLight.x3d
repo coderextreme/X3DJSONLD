@@ -76,7 +76,7 @@ function initialize ()
 	catch (error)
 	{ }
 }
-]]> 
+]]>
     </Script>
     <LayerSet
         activeLayer='1'
@@ -208,6 +208,7 @@ function initialize ()
                 direction='0.417955 -0.797554 0.434995'
                 beamWidth='0.875398'
                 cutOffAngle='1.0308'
+                shadows='true'
                 shadowColor='0.1 0 0'
                 shadowIntensity='1'
                 shadowDiffusion='0.02'/>
@@ -239,7 +240,7 @@ function initialize ()
 function set_direction (value)
 {
 	rotation_changed = new SFRotation (new SFVec3f (0, 0, 1), value);
-}]]> 
+}]]>
             </Script>
           </Transform>
           <Transform
@@ -249,6 +250,7 @@ function set_direction (value)
                 direction='0.417955 -0.797554 0.434995'
                 beamWidth='0.415398'
                 cutOffAngle='0.790796'
+                shadows='true'
                 shadowColor='0 0.1 0'
                 shadowIntensity='1'
                 shadowDiffusion='0.03'/>
@@ -276,7 +278,7 @@ function set_direction (value)
 function set_direction (value)
 {
 	rotation_changed = new SFRotation (new SFVec3f (0, 0, 1), value);
-}]]> 
+}]]>
             </Script>
           </Transform>
           <Transform
@@ -306,7 +308,7 @@ function set_direction (value)
 function set_direction (value)
 {
 	rotation_changed = new SFRotation (new SFVec3f (0, 0, 1), value);
-}]]> 
+}]]>
             </Script>
           </Transform>
           <PointLight
@@ -315,8 +317,8 @@ function set_direction (value)
               attenuation='1 1.04083e-17 0.07'
               location='0 2 0'
               radius='99.89'
+              shadows='true'
               shadowIntensity='1'
-              shadowDiffusion='0.01'
               shadowMapSize='2048'/>
         </Group>
         <Transform>
@@ -326,9 +328,9 @@ function set_direction (value)
               direction='0.417955 -0.797554 0.434995'
               beamWidth='1.1508'
               cutOffAngle='1.2708'
+              shadows='true'
               shadowColor='0 0 0.1'
-              shadowIntensity='1'
-              shadowDiffusion='0.03'/>
+              shadowIntensity='1'/>
           <Transform DEF='Box'
               translation='2.5 -1 3'
               scale='0.5 0.5 0.5'>
@@ -539,7 +541,7 @@ function set_phong ()
 	Browser .setBrowserOption ("Shading", "PHONG");
 	Browser .setDescription ("Shading: Phong");
 }
-]]> 
+]]>
           </Script>
           <Transform DEF='Text'
               translation='1.6905 -0.857496 -1'

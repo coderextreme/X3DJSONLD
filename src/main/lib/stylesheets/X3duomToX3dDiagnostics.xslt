@@ -84,7 +84,7 @@ Invocation:
 
 <xsl:output encoding="UTF-8" media-type="text/xml" indent="yes" omit-xml-declaration="yes" method="xml"/>
 
-<xsl:strip-space elements="*" />
+<!-- <xsl:strip-space elements="*" /> -->
   
 <!-- ===================================================================================== -->
 <!-- Global configuration values -->
@@ -156,16 +156,17 @@ Invocation:
     <xsl:text>&#10;</xsl:text>-->
     <xsl:text>&#10;</xsl:text>
 
-    <xsl:comment>
-        <xsl:text> X3D Schematron rules </xsl:text>
-    </xsl:comment>
+    <!-- xsl:comment elements seem to ignore preceding/following line breaks, apparently a saxon bug? -->
+    <xsl:text disable-output-escaping="yes"><![CDATA[<!-- X3D Schematron rules -->]]></xsl:text>
     <xsl:text>&#10;</xsl:text>
     <xsl:text>&#10;</xsl:text>
     
     <!-- ==================================================================================================== -->
     <!-- NodeName capitalization checks -->
     
-    <xsl:text>      </xsl:text><xsl:comment> *** start: NodeName capitalization checks generated from X3DUOM by X3duomToX3dDiagnostics.xslt </xsl:comment>
+    <xsl:text>&#10;</xsl:text>
+    <xsl:text>&#10;</xsl:text>
+    <xsl:text>      </xsl:text><xsl:text disable-output-escaping="yes"><![CDATA[<!-- *** start: NodeName capitalization checks generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->]]></xsl:text>
     <xsl:text>&#10;</xsl:text>
         
     <xsl:for-each select="//ConcreteNode">
@@ -183,14 +184,15 @@ Invocation:
         <xsl:text>&#10;</xsl:text>
     </xsl:for-each>
 
-    <xsl:text>      </xsl:text><xsl:comment> *** finish: NodeName capitalization checks generated from X3DUOM by X3duomToX3dDiagnostics.xslt </xsl:comment>
+    <xsl:text>&#10;</xsl:text>
+    <xsl:text>      </xsl:text><xsl:text disable-output-escaping="yes"><![CDATA[<!-- *** finish: NodeName capitalization checks generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->]]></xsl:text>
     <xsl:text>&#10;</xsl:text>
     <xsl:text>&#10;</xsl:text>
     
     <!-- ==================================================================================================== -->
     <!-- FieldName capitalization checks -->
     
-    <xsl:text>      </xsl:text><xsl:comment> *** start: fieldName capitalization checks generated from X3DUOM by X3duomToX3dDiagnostics.xslt </xsl:comment>
+    <xsl:text>      </xsl:text><xsl:text disable-output-escaping="yes"><![CDATA[<!-- *** start: fieldName capitalization checks generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->]]></xsl:text>
     <xsl:text>&#10;</xsl:text>
         
     <xsl:for-each select="//SimpleType[(@name='initializeOnlyAccessTypes') or (@name='inputOutputAccessTypes')]/enumeration">
@@ -209,14 +211,15 @@ Invocation:
         <xsl:text>&#10;</xsl:text>
     </xsl:for-each>
 
-    <xsl:text>      </xsl:text><xsl:comment> *** finish: fieldName capitalization checks generated from X3DUOM by X3duomToX3dDiagnostics.xslt </xsl:comment>
+    <xsl:text>&#10;</xsl:text>
+    <xsl:text>      </xsl:text><xsl:text disable-output-escaping="yes"><![CDATA[<!-- *** finish: fieldName capitalization checks generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->]]></xsl:text>
     <xsl:text>&#10;</xsl:text>
     <xsl:text>&#10;</xsl:text>
     
     <!-- ==================================================================================================== -->
     <!-- HAnimJoint name test -->
     
-    <xsl:text>      </xsl:text><xsl:comment> *** start: HAnim2 HAnimJoint name test generated from X3DUOM by X3duomToX3dDiagnostics.xslt </xsl:comment>
+    <xsl:text>      </xsl:text><xsl:text disable-output-escaping="yes"><![CDATA[<!-- *** start: HAnim2 HAnimJoint name test generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->]]></xsl:text>
     <xsl:text>&#10;</xsl:text>
     <!--
     <xsl:text disable-output-escaping="yes"><![CDATA[      <!- - HAnim]]></xsl:text>
@@ -266,17 +269,17 @@ Invocation:
     <xsl:text>"</xsl:text>
     <xsl:text>&#10;</xsl:text>
     <xsl:text>        </xsl:text>
-    <xsl:text disable-output-escaping="yes"><![CDATA[role="warning">&lt;<name/> DEF='<value-of select='@DEF'/>' name='<value-of select='@name'/>'/&gt; is not a recognized name for HAnim]]></xsl:text>
+    <xsl:text disable-output-escaping="yes"><![CDATA[role="warning">&lt;HAnimJoint DEF='<value-of select='@DEF'/>' name='<value-of select='@name'/>'/&gt; is not a recognized name for HAnim]]></xsl:text>
     <xsl:value-of select="$HAnimVersionNumber"/>
     <xsl:text disable-output-escaping="yes"><![CDATA[ HAnimJoint </assert>]]></xsl:text>
     <xsl:text>&#10;</xsl:text>
-    <xsl:text>      </xsl:text><xsl:comment> *** finish: HAnim2 HAnimJoint name test generated from X3DUOM by X3duomToX3dDiagnostics.xslt </xsl:comment>
+    <xsl:text>      </xsl:text><xsl:text disable-output-escaping="yes"><![CDATA[<!-- *** finish: HAnim2 HAnimJoint name test generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->]]></xsl:text>
     <xsl:text>&#10;</xsl:text>
     <xsl:text>&#10;</xsl:text>
     
     <!-- ==================================================================================================== -->
     <!-- HAnimJoint alias test -->
-    <xsl:text>      </xsl:text><xsl:comment> *** start: HAnim2 HAnimJoint alias test generated from X3DUOM by X3duomToX3dDiagnostics.xslt </xsl:comment>
+    <xsl:text>      </xsl:text><xsl:text disable-output-escaping="yes"><![CDATA[<!-- *** start: HAnim2 HAnimJoint alias test generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->]]></xsl:text>
     <xsl:text>&#10;</xsl:text>
         
     <xsl:for-each select="//SimpleTypeEnumerations/SimpleType[@name='hanimJointNameValues']/enumeration[string-length(@alias) > 0]">
@@ -290,19 +293,20 @@ Invocation:
             <xsl:text>report test="$isHAnim2 and (@name='</xsl:text>
             <xsl:value-of select="$alias"/>
             <xsl:text>')</xsl:text>
-            <xsl:text disable-output-escaping="yes"><![CDATA[" role="warning">&lt;<name/> DEF='<value-of select='@DEF'/>' name='<value-of select='@name'/>'/&gt; is an HAnimJoint alias for ']]></xsl:text>
+            <xsl:text disable-output-escaping="yes"><![CDATA[" role="warning">&lt;HAnimJoint DEF='<value-of select='@DEF'/>' name='<value-of select='@name'/>'/&gt; is an HAnimJoint alias for ']]></xsl:text>
             <xsl:value-of select="$value"/>
             <xsl:text disable-output-escaping="yes"><![CDATA[', recommend updating X3D model source </report>]]></xsl:text>
             <xsl:text>&#10;</xsl:text>
         </xsl:for-each>
     </xsl:for-each>
-    <xsl:text>      </xsl:text><xsl:comment> *** finish: HAnim2 HAnimJoint alias test generated from X3DUOM by X3duomToX3dDiagnostics.xslt </xsl:comment>
+    <xsl:text>&#10;</xsl:text>
+    <xsl:text>      </xsl:text><xsl:text disable-output-escaping="yes"><![CDATA[<!-- *** finish: HAnim2 HAnimJoint alias test generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->]]></xsl:text>
     <xsl:text>&#10;</xsl:text>
     <xsl:text>&#10;</xsl:text>
     
     <!-- ==================================================================================================== -->
     <!-- HAnimJoint loa test -->
-    <xsl:text>      </xsl:text><xsl:comment> *** start: HAnim2 HAnimJoint Level of Articulation (loa) test generated from X3DUOM by X3duomToX3dDiagnostics.xslt </xsl:comment>
+    <xsl:text>      </xsl:text><xsl:text disable-output-escaping="yes"><![CDATA[<!-- *** start: HAnim2 HAnimJoint Level of Articulation (loa) test generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->]]></xsl:text>
     <xsl:text>&#10;</xsl:text>
         
     <xsl:for-each select="//SimpleTypeEnumerations/SimpleType[@name='hanimJointNameValues']/enumeration[number(@loa) ge 0]">
@@ -316,19 +320,20 @@ Invocation:
         <xsl:text disable-output-escaping="yes"><![CDATA[') and not($loa = -1) and ($loa lt ]]></xsl:text>
         <xsl:value-of select="@loa"/>
         <xsl:text disable-output-escaping="yes"><![CDATA[)]]></xsl:text>
-        <xsl:text disable-output-escaping="yes"><![CDATA[" role="warning">&lt;<name/> DEF='<value-of select='@DEF'/>' name='<value-of select='@name'/>'/&gt; requires minimum loa=']]></xsl:text>
+        <xsl:text disable-output-escaping="yes"><![CDATA[" role="warning">&lt;HAnimJoint DEF='<value-of select='@DEF'/>' name='<value-of select='@name'/>'/&gt; requires minimum loa=']]></xsl:text>
         <xsl:value-of select="@loa"/>
         <xsl:text disable-output-escaping="yes"><![CDATA[' but ancestor HAnimHumanoid loa='<value-of select='$loa'/>' is insufficient, recommend revising X3D model source </report>]]></xsl:text>
         <xsl:text>&#10;</xsl:text>
             
     </xsl:for-each>
-    <xsl:text>      </xsl:text><xsl:comment> *** finish: HAnim2 HAnimJoint Level of Articulation (loa) test generated from X3DUOM by X3duomToX3dDiagnostics.xslt </xsl:comment>
+    <xsl:text>&#10;</xsl:text>
+    <xsl:text>      </xsl:text><xsl:text disable-output-escaping="yes"><![CDATA[<!-- *** finish: HAnim2 HAnimJoint Level of Articulation (loa) test generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->]]></xsl:text>
     <xsl:text>&#10;</xsl:text>
     <xsl:text>&#10;</xsl:text>
     
     <!-- ==================================================================================================== -->
     <!-- HAnimJoint parent test -->
-    <xsl:text>      </xsl:text><xsl:comment> *** start: HAnim2 HAnimJoint parent test generated from X3DUOM by X3duomToX3dDiagnostics.xslt </xsl:comment>
+    <xsl:text>      </xsl:text><xsl:text disable-output-escaping="yes"><![CDATA[<!-- *** start: HAnim2 HAnimJoint parent test generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->]]></xsl:text>
     <xsl:text>&#10;</xsl:text>
         
     <xsl:for-each select="//SimpleTypeEnumerations/SimpleType[@name='hanimJointNameValues']/enumeration[string-length(@parent) > 0]">
@@ -340,20 +345,21 @@ Invocation:
         <xsl:text>') and parent::HAnimJoint[not(@name='</xsl:text>
         <xsl:value-of select="@parent"/>
         <xsl:text>')]</xsl:text>
-        <xsl:text disable-output-escaping="yes"><![CDATA[" role="warning">&lt;<name/> DEF='<value-of select='@DEF'/>' name='<value-of select='@name'/>'/&gt; has parent HAnimJoint name='<value-of select='parent::HAnimJoint/@name'/>' ]]></xsl:text>
+        <xsl:text disable-output-escaping="yes"><![CDATA[" role="warning">&lt;HAnimJoint DEF='<value-of select='@DEF'/>' name='<value-of select='@name'/>'/&gt; has parent HAnimJoint name='<value-of select='parent::HAnimJoint/@name'/>' ]]></xsl:text>
         <xsl:text>rather than expected parent name='</xsl:text>
         <xsl:value-of select='@parent'/>
         <xsl:text disable-output-escaping="yes"><![CDATA[', recommend checking model </report>]]></xsl:text>
         <xsl:text>&#10;</xsl:text>
     </xsl:for-each>
-    <xsl:text>      </xsl:text><xsl:comment> *** finish: HAnim2 HAnimJoint parent test generated from X3DUOM by X3duomToX3dDiagnostics.xslt </xsl:comment>
+    <xsl:text>&#10;</xsl:text>
+    <xsl:text>      </xsl:text><xsl:text disable-output-escaping="yes"><![CDATA[<!-- *** finish: HAnim2 HAnimJoint parent test generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->]]></xsl:text>
     <xsl:text>&#10;</xsl:text>
     <xsl:text>&#10;</xsl:text>
     
     <!-- ==================================================================================================== -->
     <!-- ==================================================================================================== -->
     <!-- HAnimSegment name test -->
-    <xsl:text>      </xsl:text><xsl:comment> *** start: HAnim2 HAnimSegment name test generated from X3DUOM by X3duomToX3dDiagnostics.xslt </xsl:comment>
+    <xsl:text>      </xsl:text><xsl:text disable-output-escaping="yes"><![CDATA[<!-- *** start: HAnim2 HAnimSegment name test generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->]]></xsl:text>
     <xsl:text>&#10;</xsl:text>
     <xsl:text disable-output-escaping="yes"><![CDATA[      <]]></xsl:text>
     <xsl:text>assert test="(string-length(normalize-space(@USE)) > 0) or </xsl:text>
@@ -397,17 +403,17 @@ Invocation:
     <xsl:text>"</xsl:text>
     <xsl:text>&#10;</xsl:text>
     <xsl:text>        </xsl:text>
-    <xsl:text disable-output-escaping="yes"><![CDATA[role="warning">&lt;<name/> DEF='<value-of select='@DEF'/>' name='<value-of select='@name'/>'/&gt; is not a recognized name for HAnim]]></xsl:text>
+    <xsl:text disable-output-escaping="yes"><![CDATA[role="warning">&lt;HAnimSegment DEF='<value-of select='@DEF'/>' name='<value-of select='@name'/>'/&gt; is not a recognized name for HAnim]]></xsl:text>
     <xsl:value-of select="$HAnimVersionNumber"/>
     <xsl:text disable-output-escaping="yes"><![CDATA[ HAnimSegment </assert>]]></xsl:text>
     <xsl:text>&#10;</xsl:text>
-    <xsl:text>      </xsl:text><xsl:comment> *** finish HAnim2 HAnimSegment name test generated from X3DUOM by X3duomToX3dDiagnostics.xslt </xsl:comment>
+    <xsl:text>      </xsl:text><xsl:text disable-output-escaping="yes"><![CDATA[<!-- *** finish HAnim2 HAnimSegment name test generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->]]></xsl:text>
     <xsl:text>&#10;</xsl:text>
     <xsl:text>&#10;</xsl:text>
     
     <!-- ==================================================================================================== -->
     <!-- HAnimSegment alias test -->
-    <xsl:text>      </xsl:text><xsl:comment> *** start: HAnim2 HAnimSegment alias test generated from X3DUOM by X3duomToX3dDiagnostics.xslt </xsl:comment>
+    <xsl:text>      </xsl:text><xsl:text disable-output-escaping="yes"><![CDATA[<!-- *** start: HAnim2 HAnimSegment alias test generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->]]></xsl:text>
     <xsl:text>&#10;</xsl:text>
         
     <xsl:for-each select="//SimpleTypeEnumerations/SimpleType[@name='hanimSegmentNameValues']/enumeration[string-length(@alias) > 0]">
@@ -420,19 +426,20 @@ Invocation:
             <xsl:text>report test="$isHAnim2 and (@name='</xsl:text>
             <xsl:value-of select="$alias"/>
             <xsl:text>')</xsl:text>
-            <xsl:text disable-output-escaping="yes"><![CDATA[" role="warning">&lt;<name/> DEF='<value-of select='@DEF'/>' name='<value-of select='@name'/>'/&gt; is an HAnimSegment alias for ']]></xsl:text>
+            <xsl:text disable-output-escaping="yes"><![CDATA[" role="warning">&lt;HAnimSegment DEF='<value-of select='@DEF'/>' name='<value-of select='@name'/>'/&gt; is an HAnimSegment alias for ']]></xsl:text>
             <xsl:value-of select="$value"/>
             <xsl:text disable-output-escaping="yes"><![CDATA[', recommend updating X3D model source </report>]]></xsl:text>
             <xsl:text>&#10;</xsl:text>
         </xsl:for-each>
     </xsl:for-each>
-    <xsl:text>      </xsl:text><xsl:comment> *** finish: HAnim2 HAnimSegment alias test generated from X3DUOM by X3duomToX3dDiagnostics.xslt </xsl:comment>
+    <xsl:text>&#10;</xsl:text>
+    <xsl:text>      </xsl:text><xsl:text disable-output-escaping="yes"><![CDATA[<!-- *** finish: HAnim2 HAnimSegment alias test generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->]]></xsl:text>
     <xsl:text>&#10;</xsl:text>
     <xsl:text>&#10;</xsl:text>
     
     <!-- ==================================================================================================== -->
     <!-- HAnimSegment loa test -->
-    <xsl:text>      </xsl:text><xsl:comment> *** start: HAnim2 HAnimSegment Level of Articulation (loa) test generated from X3DUOM by X3duomToX3dDiagnostics.xslt </xsl:comment>
+    <xsl:text>      </xsl:text><xsl:text disable-output-escaping="yes"><![CDATA[<!-- *** start: HAnim2 HAnimSegment Level of Articulation (loa) test generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->]]></xsl:text>
     <xsl:text>&#10;</xsl:text>
         
     <xsl:for-each select="//SimpleTypeEnumerations/SimpleType[@name='hanimSegmentNameValues']/enumeration[number(@loa) ge 0]">
@@ -446,20 +453,21 @@ Invocation:
         <xsl:text disable-output-escaping="yes"><![CDATA[') and not($loa = -1) and ($loa lt ]]></xsl:text>
         <xsl:value-of select="@loa"/>
         <xsl:text disable-output-escaping="yes"><![CDATA[)]]></xsl:text>
-        <xsl:text disable-output-escaping="yes"><![CDATA[" role="warning">&lt;<name/> DEF='<value-of select='@DEF'/>' name='<value-of select='@name'/>'/&gt; requires minimum loa=']]></xsl:text>
+        <xsl:text disable-output-escaping="yes"><![CDATA[" role="warning">&lt;HAnimSegment DEF='<value-of select='@DEF'/>' name='<value-of select='@name'/>'/&gt; requires minimum loa=']]></xsl:text>
         <xsl:value-of select="@loa"/>
         <xsl:text disable-output-escaping="yes"><![CDATA[' but ancestor HAnimHumanoid loa='<value-of select='$loa'/>' is insufficient, recommend revising X3D model source </report>]]></xsl:text>
         <xsl:text>&#10;</xsl:text>
-            
     </xsl:for-each>
-    <xsl:text>      </xsl:text><xsl:comment> *** finish: HAnim2 HAnimSegment Level of Articulation (loa) test generated from X3DUOM by X3duomToX3dDiagnostics.xslt </xsl:comment>
+            
+    <xsl:text>&#10;</xsl:text>
+    <xsl:text>      </xsl:text><xsl:text disable-output-escaping="yes"><![CDATA[<!-- *** finish: HAnim2 HAnimSegment Level of Articulation (loa) test generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->]]></xsl:text>
     <xsl:text>&#10;</xsl:text>
     <xsl:text>&#10;</xsl:text>
     
     
     <!-- ==================================================================================================== -->
     <!-- HAnimSegment parent test -->
-    <xsl:text>      </xsl:text><xsl:comment> *** start: HAnim2 HAnimSegment parent test generated from X3DUOM by X3duomToX3dDiagnostics.xslt </xsl:comment>
+    <xsl:text>      </xsl:text><xsl:text disable-output-escaping="yes"><![CDATA[<!-- *** start: HAnim2 HAnimSegment parent test generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->]]></xsl:text>
     <xsl:text>&#10;</xsl:text>
         
     <xsl:for-each select="//SimpleTypeEnumerations/SimpleType[@name='hanimSegmentNameValues']/enumeration[string-length(@parent) > 0]">
@@ -471,20 +479,21 @@ Invocation:
         <xsl:text>') and parent::HAnimJoint[not(@name='</xsl:text>
         <xsl:value-of select="@parent"/>
         <xsl:text>')]</xsl:text>
-        <xsl:text disable-output-escaping="yes"><![CDATA[" role="warning">&lt;<name/> DEF='<value-of select='@DEF'/>' name='<value-of select='@name'/>'/&gt; has parent HAnimJoint name='<value-of select='parent::HAnimJoint/@name'/>' ]]></xsl:text>
+        <xsl:text disable-output-escaping="yes"><![CDATA[" role="warning">&lt;HAnimSegment DEF='<value-of select='@DEF'/>' name='<value-of select='@name'/>'/&gt; has parent HAnimJoint name='<value-of select='parent::HAnimJoint/@name'/>' ]]></xsl:text>
         <xsl:text>rather than expected parent name='</xsl:text>
         <xsl:value-of select='@parent'/>
         <xsl:text disable-output-escaping="yes"><![CDATA[', recommend checking model </report>]]></xsl:text>
         <xsl:text>&#10;</xsl:text>
     </xsl:for-each>
-    <xsl:text>      </xsl:text><xsl:comment> *** finish: HAnim2 HAnimSegment parent test generated from X3DUOM by X3duomToX3dDiagnostics.xslt </xsl:comment>
+    <xsl:text>&#10;</xsl:text>
+    <xsl:text>      </xsl:text><xsl:text disable-output-escaping="yes"><![CDATA[<!-- *** finish: HAnim2 HAnimSegment parent test generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->]]></xsl:text>
     <xsl:text>&#10;</xsl:text>
     <xsl:text>&#10;</xsl:text>
     
     <!-- ==================================================================================================== -->
     <!-- ==================================================================================================== -->
     <!-- HAnimSite name test -->
-    <xsl:text>      </xsl:text><xsl:comment> *** start: HAnim2 HAnimSite name test generated from X3DUOM by X3duomToX3dDiagnostics.xslt </xsl:comment>
+    <xsl:text>      </xsl:text><xsl:text disable-output-escaping="yes"><![CDATA[<!-- *** start: HAnim2 HAnimSite name test generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->]]></xsl:text>
     <xsl:text>&#10;</xsl:text>
     
     <xsl:text disable-output-escaping="yes"><![CDATA[      <]]></xsl:text>
@@ -538,17 +547,17 @@ Invocation:
     <xsl:text>"</xsl:text>
     <xsl:text>&#10;</xsl:text>
     <xsl:text>        </xsl:text>
-    <xsl:text disable-output-escaping="yes"><![CDATA[role="info">&lt;<name/> DEF='<value-of select='@DEF'/>' name='<value-of select='@name'/>'/&gt; is not a recognized name for HAnim]]></xsl:text>
+    <xsl:text disable-output-escaping="yes"><![CDATA[role="info">&lt;HAnimSite DEF='<value-of select='@DEF'/>' name='<value-of select='@name'/>'/&gt; is not a recognized name for HAnim]]></xsl:text>
     <xsl:value-of select="$HAnimVersionNumber"/>
     <xsl:text disable-output-escaping="yes"><![CDATA[ HAnimSite </assert>]]></xsl:text>
     <xsl:text>&#10;</xsl:text>
-    <xsl:text>      </xsl:text><xsl:comment> *** finish: HAnim2 HAnimSite name test generated from X3DUOM by X3duomToX3dDiagnostics.xslt </xsl:comment>
+    <xsl:text>      </xsl:text><xsl:text disable-output-escaping="yes"><![CDATA[<!-- *** finish: HAnim2 HAnimSite name test generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->]]></xsl:text>
     <xsl:text>&#10;</xsl:text>
     <xsl:text>&#10;</xsl:text>
     
     <!-- ==================================================================================================== -->
     <!-- HAnimSite alias test -->
-    <xsl:text>      </xsl:text><xsl:comment> *** start: HAnim2 HAnimSite alias test generated from X3DUOM by X3duomToX3dDiagnostics.xslt </xsl:comment>
+    <xsl:text>      </xsl:text><xsl:text disable-output-escaping="yes"><![CDATA[<!-- *** start: HAnim2 HAnimSite alias test generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->]]></xsl:text>
     <xsl:text>&#10;</xsl:text>
         
     <xsl:for-each select="//SimpleTypeEnumerations/SimpleType[@name='hanimFeaturePointNameValues']/enumeration[string-length(@alias) > 0]">
@@ -579,13 +588,14 @@ Invocation:
                     <xsl:text> and not(contains(.,'waist_preferred_anterior'))</xsl:text>
                 </xsl:when>
             </xsl:choose>
-            <xsl:text disable-output-escaping="yes"><![CDATA[" role="warning">&lt;<name/> DEF='<value-of select='@DEF'/>' name='<value-of select='@name'/>'/&gt; is an HAnimSite alias for ']]></xsl:text>
+            <xsl:text disable-output-escaping="yes"><![CDATA[" role="warning">&lt;HAnimSite DEF='<value-of select='@DEF'/>' name='<value-of select='@name'/>'/&gt; is an HAnimSite alias for ']]></xsl:text>
             <xsl:value-of select="$value"/>
             <xsl:text disable-output-escaping="yes"><![CDATA[', recommend updating X3D model source </report>]]></xsl:text>
             <xsl:text>&#10;</xsl:text>
         </xsl:for-each>
     </xsl:for-each>
-    <xsl:text>      </xsl:text><xsl:comment> ***   next: HAnim2 HAnimSite alias test matching HAnimSegment alias names, which may match </xsl:comment>
+    <xsl:text>&#10;</xsl:text>
+    <xsl:text>      </xsl:text><xsl:text disable-output-escaping="yes"><![CDATA[<!-- *** next: HAnim2 HAnimSite alias test matching HAnimSegment alias names, which may match -->]]></xsl:text>
     <xsl:text>&#10;</xsl:text>
     
     <xsl:for-each select="//SimpleTypeEnumerations/SimpleType[@name='hanimSegmentNameValues']/enumeration[string-length(@alias) > 0]">
@@ -598,20 +608,21 @@ Invocation:
             <xsl:text>report test="$isHAnim2 and contains(@name,'</xsl:text>
             <xsl:value-of select="$alias"/>
             <xsl:text>')</xsl:text>
-            <xsl:text disable-output-escaping="yes"><![CDATA[" role="warning">&lt;<name/> DEF='<value-of select='@DEF'/>' name='<value-of select='@name'/>'/&gt; contains an HAnimSegment alias for ']]></xsl:text>
+            <xsl:text disable-output-escaping="yes"><![CDATA[" role="warning">&lt;HAnimSite DEF='<value-of select='@DEF'/>' name='<value-of select='@name'/>'/&gt; contains an HAnimSegment alias for ']]></xsl:text>
             <xsl:value-of select="$value"/>
             <xsl:text disable-output-escaping="yes"><![CDATA[', recommend updating X3D model source </report>]]></xsl:text>
             <xsl:text>&#10;</xsl:text>
         </xsl:for-each>
     </xsl:for-each>
     
-    <xsl:text>      </xsl:text><xsl:comment> *** finish: HAnim2 HAnimSite alias test generated from X3DUOM by X3duomToX3dDiagnostics.xslt </xsl:comment>
+    <xsl:text>&#10;</xsl:text>
+    <xsl:text>      </xsl:text><xsl:text disable-output-escaping="yes"><![CDATA[<!-- *** finish: HAnim2 HAnimSite alias test generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->]]></xsl:text>
     <xsl:text>&#10;</xsl:text>
     <xsl:text>&#10;</xsl:text>
     
     <!-- ==================================================================================================== -->
     <!-- HAnimSite loa test -->
-    <xsl:text>      </xsl:text><xsl:comment> *** start: HAnim2 HAnimSite Level of Articulation (loa) test generated from X3DUOM by X3duomToX3dDiagnostics.xslt </xsl:comment>
+    <xsl:text>      </xsl:text><xsl:text disable-output-escaping="yes"><![CDATA[<!-- *** start: HAnim2 HAnimSite Level of Articulation (loa) test generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->]]></xsl:text>
     <xsl:text>&#10;</xsl:text>
         
     <xsl:for-each select="//SimpleTypeEnumerations/SimpleType[@name='hanimFeaturePointNameValues']/enumeration[number(@loa) ge 0]">
@@ -625,20 +636,21 @@ Invocation:
         <xsl:text disable-output-escaping="yes"><![CDATA[') and not($loa = -1) and ($loa lt ]]></xsl:text>
         <xsl:value-of select="@loa"/>
         <xsl:text disable-output-escaping="yes"><![CDATA[)]]></xsl:text>
-        <xsl:text disable-output-escaping="yes"><![CDATA[" role="warning">&lt;<name/> DEF='<value-of select='@DEF'/>' name='<value-of select='@name'/>'/&gt; requires minimum loa=']]></xsl:text>
+        <xsl:text disable-output-escaping="yes"><![CDATA[" role="warning">&lt;HAnimSite DEF='<value-of select='@DEF'/>' name='<value-of select='@name'/>'/&gt; requires minimum loa=']]></xsl:text>
         <xsl:value-of select="@loa"/>
         <xsl:text disable-output-escaping="yes"><![CDATA[' but ancestor HAnimHumanoid loa='<value-of select='$loa'/>' is insufficient, recommend revising X3D model source </report>]]></xsl:text>
         <xsl:text>&#10;</xsl:text>
             
     </xsl:for-each>
-    <xsl:text>      </xsl:text><xsl:comment> *** finish: HAnim2 HAnimSite Level of Articulation (loa) test generated from X3DUOM by X3duomToX3dDiagnostics.xslt </xsl:comment>
+    <xsl:text>&#10;</xsl:text>
+    <xsl:text>      </xsl:text><xsl:text disable-output-escaping="yes"><![CDATA[<!-- *** finish: HAnim2 HAnimSite Level of Articulation (loa) test generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->]]></xsl:text>
     <xsl:text>&#10;</xsl:text>
     <xsl:text>&#10;</xsl:text>
     
     
     <!-- ==================================================================================================== -->
     <!-- HAnimSite parent test -->
-    <xsl:text>      </xsl:text><xsl:comment> *** start: HAnim2 HAnimSite parent test generated from X3DUOM by X3duomToX3dDiagnostics.xslt </xsl:comment>
+    <xsl:text>      </xsl:text><xsl:text disable-output-escaping="yes"><![CDATA[<!-- *** start: HAnim2 HAnimSite parent test generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->]]></xsl:text>
     <xsl:text>&#10;</xsl:text>
         
     <xsl:for-each select="//SimpleTypeEnumerations/SimpleType[@name='hanimFeaturePointNameValues']/enumeration[string-length(@parent) > 0]">
@@ -650,13 +662,14 @@ Invocation:
         <xsl:text>') and parent::HAnimJoint[not(@name='</xsl:text>
         <xsl:value-of select="@parent"/>
         <xsl:text>')]</xsl:text>
-        <xsl:text disable-output-escaping="yes"><![CDATA[" role="warning">&lt;<name/> DEF='<value-of select='@DEF'/>' name='<value-of select='@name'/>'/&gt; has parent HAnimJoint name=' name='<value-of select='parent::HAnimJoint/@name'/>' ]]></xsl:text>
+        <xsl:text disable-output-escaping="yes"><![CDATA[" role="warning">&lt;HAnimSite DEF='<value-of select='@DEF'/>' name='<value-of select='@name'/>'/&gt; has parent HAnimJoint name=' name='<value-of select='parent::HAnimJoint/@name'/>' ]]></xsl:text>
         <xsl:text>rather than expected parent name='</xsl:text>
         <xsl:value-of select='@parent'/>
         <xsl:text disable-output-escaping="yes"><![CDATA[', recommend checking model </report>]]></xsl:text>
         <xsl:text>&#10;</xsl:text>
     </xsl:for-each>
-    <xsl:text>      </xsl:text><xsl:comment> *** finish: HAnim2 HAnimSite parent test generated from X3DUOM by X3duomToX3dDiagnostics.xslt </xsl:comment>
+    <xsl:text>&#10;</xsl:text>
+    <xsl:text>      </xsl:text><xsl:text disable-output-escaping="yes"><![CDATA[<!-- *** finish: HAnim2 HAnimSite parent test generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->]]></xsl:text>
     <xsl:text>&#10;</xsl:text>
     <xsl:text>&#10;</xsl:text>
 
@@ -672,7 +685,7 @@ Invocation:
     <!-- ==================================================================================================== -->
     <!-- X3dTidy NodeName capitalization corrections -->
     
-    <xsl:text>                </xsl:text><xsl:comment> *** start: NodeName capitalization corrections generated from X3DUOM by X3duomToX3dDiagnostics.xslt </xsl:comment>
+    <xsl:text>                </xsl:text><xsl:text disable-output-escaping="yes"><![CDATA[<!-- *** start: NodeName capitalization corrections generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->]]></xsl:text>
     <xsl:text>&#10;</xsl:text>
     
     <xsl:for-each select="//ConcreteNode">
@@ -690,14 +703,16 @@ Invocation:
         <xsl:text>&#10;</xsl:text>
     </xsl:for-each>
 
-    <xsl:text>                </xsl:text><xsl:comment> *** finish: NodeName capitalization corrections generated from X3DUOM by X3duomToX3dDiagnostics.xslt </xsl:comment>
+    <xsl:text>&#10;</xsl:text>
+    <xsl:text>                </xsl:text><xsl:text disable-output-escaping="yes"><![CDATA[<!-- *** finish: NodeName capitalization corrections generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->]]></xsl:text>
     <xsl:text>&#10;</xsl:text>
     <xsl:text>&#10;</xsl:text>
     
     <!-- ==================================================================================================== -->
     <!-- X3dTidy fieldName capitalization corrections -->
     
-    <xsl:text>                </xsl:text><xsl:comment> *** start: fieldName capitalization corrections generated from X3DUOM by X3duomToX3dDiagnostics.xslt </xsl:comment>
+    <xsl:text>&#10;</xsl:text>
+    <xsl:text>                </xsl:text><xsl:text disable-output-escaping="yes"><![CDATA[<!-- *** start: fieldName capitalization corrections generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->]]></xsl:text>
     <xsl:text>&#10;</xsl:text>
     
     <xsl:for-each select="//SimpleType[(@name='initializeOnlyAccessTypes') or (@name='inputOutputAccessTypes')]/enumeration">
@@ -720,7 +735,8 @@ Invocation:
         <xsl:text>&#10;</xsl:text>
     </xsl:for-each>
 
-    <xsl:text>                </xsl:text><xsl:comment> *** finish: fieldName capitalization corrections generated from X3DUOM by X3duomToX3dDiagnostics.xslt </xsl:comment>
+    <xsl:text>&#10;</xsl:text>
+    <xsl:text>                </xsl:text><xsl:text disable-output-escaping="yes"><![CDATA[<!-- *** finish: fieldName capitalization corrections generated from X3DUOM by X3duomToX3dDiagnostics.xslt -->]]></xsl:text>
     <xsl:text>&#10;</xsl:text>
     <xsl:text>&#10;</xsl:text>
     
@@ -1010,7 +1026,8 @@ Invocation:
                 </xsl:for-each>
             </xsl:for-each>
 
-            <xsl:text>                </xsl:text><xsl:comment> ***   next: HAnim2 HAnimSite alias test matching HAnimSegment alias names, which may match </xsl:comment>
+            <xsl:text>&#10;</xsl:text>
+            <xsl:text>                </xsl:text><xsl:text disable-output-escaping="yes"><![CDATA[<!-- *** next: HAnim2 HAnimSite alias test matching HAnimSegment alias names, which may match -->]]></xsl:text>
             <xsl:text>&#10;</xsl:text>
                 
             <xsl:for-each select="//SimpleTypeEnumerations/SimpleType[@name='hanimSegmentNameValues']/enumeration[string-length(@alias) > 0]">

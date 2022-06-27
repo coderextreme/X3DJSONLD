@@ -2348,6 +2348,7 @@
         <xsl:variable name="inputString" select="string($inputValue)"/>
         <xsl:variable name="firstChar" select="substring($inputString,1,1)"/>
         <xsl:variable name="lastChar"  select="substring($inputString,string-length($inputString),1)"/>
+        <!-- debug diagnostic
         <xsl:message>
             <xsl:text>*** trim-whitespace-recurse firstChar='</xsl:text>
             <xsl:value-of select="$firstChar"/>
@@ -2355,7 +2356,6 @@
             <xsl:value-of select="$lastChar"/>
             <xsl:text>'</xsl:text>
         </xsl:message>
-        <!-- debug diagnostic
             < ! - -
             <xsl:text> inputString='</xsl:text>
             <xsl:value-of select="$inputString"/>
