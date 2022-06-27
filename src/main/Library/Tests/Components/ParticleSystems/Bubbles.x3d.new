@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Full" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" ><head><meta name="comment" content="World of Titania"></meta>
+<meta name="created" content="Sun, 15 May 2016 00:16:04 GMT"></meta>
+<meta name="creator" content="holger"></meta>
+<meta name="generator" content="Titania V2.0.0, http://titania.create3000.de"></meta>
+<meta name="identifier" content="file:///home/holger/Projekte/Cobweb/excite/tests/Components/ParticleSystems/Bubbles.x3d"></meta>
+<meta name="modified" content="Mon, 26 Sep 2016 02:51:17 GMT"></meta>
+</head>
+<Scene><WorldInfo title="Bubbles"><MetadataSet containerField="metadata" name="Titania" DEF="Titania" reference="http://titania.create3000.de"><MetadataSet name="NavigationInfo" DEF="NavigationInfo" reference="http://titania.create3000.de" containerField="value"><MetadataString name="type" DEF="type" reference="http://titania.create3000.de" value="&quot;EXAMINE&quot;" containerField="value"></MetadataString>
+</MetadataSet>
+<MetadataSet name="Viewpoint" DEF="Viewpoint" reference="http://titania.create3000.de"><MetadataDouble name="position" DEF="position" reference="http://titania.create3000.de" value="1.62303498729208 40.0774585689728 42.6164648005402" containerField="value"></MetadataDouble>
+<MetadataDouble name="orientation" DEF="orientation" reference="http://titania.create3000.de" value="0.948208773060804 -0.218726178841849 -0.230345352416253 5.85764824335848"></MetadataDouble>
+<MetadataDouble name="centerOfRotation" DEF="centerOfRotation" reference="http://titania.create3000.de" value="0 0 0"></MetadataDouble>
+</MetadataSet>
+<MetadataSet name="Selection" DEF="Selection" reference="http://titania.create3000.de"><MetadataSet name="previous" DEF="previous" reference="http://titania.create3000.de" containerField="value"></MetadataSet>
+<MetadataSet name="children" DEF="children" reference="http://titania.create3000.de"><DirectionalLight DEF="_1" direction="-0.372556 -0.000038217 -0.92801" shadows="true" shadowIntensity="0.518717" containerField="value"></DirectionalLight>
+</MetadataSet>
+</MetadataSet>
+</MetadataSet>
+</WorldInfo>
+<Background DEF="Gray" skyColor="0.2 0.2 0.2"></Background>
+<NavigationInfo headlight="false"></NavigationInfo>
+<Viewpoint description="Viewpoint" position="0 20 55"></Viewpoint>
+<Transform DEF="IndexedLineSet"><Shape><IndexedLineSet containerField="geometry" colorPerVertex="false" colorIndex="0 1 2" coordIndex="0 1 -1 2 3 -1 4 5 -1"><Color color="1 0 0 0 1 0 0 0 1"></Color>
+<Coordinate containerField="coord" point="-1 0 0 1 0 0 0 -1 0 0 1 0 0 0 -1 0 0 1"></Coordinate>
+</IndexedLineSet>
+</Shape>
+</Transform>
+<ParticleSystem geometryType="GEOMETRY" maxParticles="500" particleLifetime="8" lifetimeVariation="0.8" particleSize="1 1"><PointEmitter containerField="emitter" direction="0 0 0" speed="0.5" variation="0.5" mass="0.1" surfaceArea="0.1"></PointEmitter>
+<WindPhysicsModel direction="0 1 0" speed="0.6" gustiness="1.7" turbulence="0.3"></WindPhysicsModel>
+<WindPhysicsModel speed="1" gustiness="1.5"></WindPhysicsModel>
+<Appearance><Material ambientIntensity="0.25" diffuseColor="1 0.520125 0.73699" specularColor="0.951515 0.951515 0.951515" shininess="0.557576"></Material>
+</Appearance>
+<Sphere containerField="geometry"></Sphere>
+</ParticleSystem>
+<Transform DEF="Rectangle2D" translation="0 19.2591 -14.5791" scale="43.4935 20.2591 1"><Shape><Appearance><Material></Material>
+</Appearance>
+<Rectangle2D containerField="geometry"></Rectangle2D>
+</Shape>
+</Transform>
+<DirectionalLight USE="_1"></DirectionalLight>
+<Script DEF="PhongShadingScript"><![CDATA[ecmascript:
+
+function initialize ()
+{
+	Browser .setBrowserOption ("Shading", "PHONG");
+}]]></Script>
+</Scene>
+</X3D>

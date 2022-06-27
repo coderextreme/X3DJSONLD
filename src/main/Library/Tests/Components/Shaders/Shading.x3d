@@ -214,7 +214,7 @@ main ()
 precision mediump float;
 
 uniform int x3d_GeometryType;
-uniform x3d_MaterialParameters x3d_FrontMaterial;
+uniform x3d_MaterialParameters x3d_Material;
 
 varying vec3 normal;
 
@@ -223,8 +223,8 @@ main ()
 {
 	float f = max (dot (normal, vec3 (0.0, 0.0, 1.0)), 0.0);
 
-	vec3  color = x3d_FrontMaterial .diffuseColor * f + x3d_FrontMaterial .emissiveColor;
-	float alpha = 1.0 - x3d_FrontMaterial .transparency;
+	vec3  color = x3d_Material .diffuseColor * f + x3d_Material .emissiveColor;
+	float alpha = 1.0 - x3d_Material .transparency;
 
 	gl_FragColor = vec4 (color, alpha);
 }]]>

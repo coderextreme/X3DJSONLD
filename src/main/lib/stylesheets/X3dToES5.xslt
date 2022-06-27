@@ -77,7 +77,7 @@ POSSIBILITY OF SUCH DAMAGE.
     <xsl:param name="includeLicense"		      ><xsl:text>false</xsl:text></xsl:param>
     
 	<!-- saxon9he problem: fails due to line length, licensing issue: saxon:line-length="120" -->
-	<!-- http://stackoverflow.com/questions/23084785/xslt-avoid-new-line-added-between-element-attributes/43301327#43301327 -->
+	<!-- https://stackoverflow.com/questions/23084785/xslt-avoid-new-line-added-between-element-attributes/43301327#43301327 -->
 	<xsl:output encoding="UTF-8" media-type="text/plain" indent="yes" method="text"/> <!-- output methods: xml html text -->
         
     <xsl:variable name="x3dVersion" select="normalize-space(//X3D/@version)"/>
@@ -124,7 +124,7 @@ POSSIBILITY OF SUCH DAMAGE.
 	
 	<!-- TODO need updated XSLT engine in Netbeans
 	http://www.sixtree.com.au/articles/2013/formatting-dates-and-times-using-xslt-2.0-and-xpath/
-	http://stackoverflow.com/questions/919692/how-to-execute-xslt-2-0-with-ant
+	https://stackoverflow.com/questions/919692/how-to-execute-xslt-2-0-with-ant
 	-->
 
     <!-- start - - - - - - - - - - - - - - - - - - - - - - - -->

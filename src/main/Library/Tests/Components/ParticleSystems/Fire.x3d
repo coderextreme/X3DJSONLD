@@ -130,6 +130,7 @@
     <Transform USE='Box'/>
     <DirectionalLight DEF='_1'
         direction='-0.531638 -0.672816 -0.51447'
+        shadows='true'
         shadowIntensity='0.605'/>
     <NavigationInfo
         headlight='false'/>
@@ -140,7 +141,7 @@ function initialize ()
 {
 	Browser .setBrowserOption ("Shading", "PHONG");
 }
-]]> 
+]]>
     </Script>
   </Scene>
 </X3D>

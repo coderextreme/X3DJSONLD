@@ -40,6 +40,7 @@
       </MetadataSet>
     </WorldInfo>
     <LayerSet
+        activeLayer="0"
         order='0, 1, 2'>
       <Layer>
         <Viewpoint DEF='Viewpoint1'

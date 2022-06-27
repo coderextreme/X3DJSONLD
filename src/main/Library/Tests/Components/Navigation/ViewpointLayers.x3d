@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile='Full' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
+  <head>
+    <meta name='comment' content='World of Sunrise X3D Editor'/>
+    <meta name='created' content='Sun, 12 Dec 2021 19:43:00 +0100'/>
+    <meta name='creator' content='Holger Seelig'/>
+    <meta name='generator' content='Sunrise X3D Editor V1.0, https://create3000.github.io/Sunrise/'/>
+    <meta name='identifier' content='file:///Users/holger/Desktop/X_ITE/x_ite/src/tests/vp-layers.x3d'/>
+    <meta name='modified' content='Tue, 14 Dec 2021 20:27:38 +0100'/>
+  </head>
+  <Scene>
+    <ProtoDeclare name='VP'>
+      <ProtoInterface>
+        <field accessType='inputOutput' type='SFVec3f' name='translation'/>
+        <field accessType='inputOutput' type='SFVec3f' name='scale' value='1 1 1'/>
+        <field accessType='inputOutput' type='SFBool' name='same'/>
+        <field accessType='initializeOnly' type='SFNode' name='viewpoint'/>
+      </ProtoInterface>
+      <ProtoBody>
+        <Transform DEF='Box'>
+          <IS>
+            <connect nodeField='translation' protoField='translation'/>
+            <connect nodeField='scale' protoField='scale'/>
+          </IS>
+          <Shape>
+            <Appearance>
+              <Material/>
+            </Appearance>
+            <Box/>
+          </Shape>
+          <TouchSensor DEF='_1'/>
+        </Transform>
+        <Script DEF='VPScript'>
+          <field accessType='inputOnly' type='SFTime' name='set_time'/>
+          <field accessType='inputOutput' type='SFBool' name='same'/>
+          <field accessType='initializeOnly' type='SFNode' name='viewpoint'/>
+          <IS>
+            <connect nodeField='same' protoField='same'/>
+            <connect nodeField='viewpoint' protoField='viewpoint'/>
+          </IS>
+<![CDATA[ecmascript:
+
+function set_time (value, time)
+{
+   var bind = same ? viewpoint .isBound : !viewpoint .isBound;
+
+   viewpoint .set_bind = bind;
+   
+   print (viewpoint .description, bind);
+}]]>
+        </Script>
+        <ROUTE fromNode='_1' fromField='touchTime' toNode='VPScript' toField='set_time'/>
+      </ProtoBody>
+    </ProtoDeclare>
+    <WorldInfo>
+      <MetadataSet DEF='Sunrise'
+          name='Sunrise'
+          reference='https://github.com/create3000/Swift-X3D'>
+        <MetadataSet DEF='Footer' containerField='value'
+            name='Footer'
+            reference='https://github.com/create3000/Swift-X3D'>
+          <MetadataString DEF='selectedTabItem' containerField='value'
+              name='selectedTabItem'
+              reference='https://github.com/create3000/Swift-X3D'
+              value='"ScriptEditor"'/>
+        </MetadataSet>
+        <MetadataSet DEF='Sidebar' containerField='value'
+            name='Sidebar'
+            reference='https://github.com/create3000/Swift-X3D'>
+          <MetadataString DEF='selectedTabItem_1' containerField='value'
+              name='selectedTabItem'
+              reference='https://github.com/create3000/Swift-X3D'
+              value='"OutlineEditor"'/>
+        </MetadataSet>
+      </MetadataSet>
+    </WorldInfo>
+    <LayerSet
+        activeLayer='1'
+        order='0, 1, 2'>
+      <Layer DEF='L1'>
+        <NavigationInfo
+            transitionTime='2'/>
+        <Viewpoint DEF='VP1'
+            description='VP1'/>
+        <ProtoInstance name='VP'>
+          <fieldValue name='translation' value='-3 2 0'/>
+          <fieldValue name='viewpoint'>
+            <Viewpoint USE='VP1' containerField='viewpoint'/>
+
+          </fieldValue>
+        </ProtoInstance>
+        <Viewpoint DEF='VP2'
+            description='VP2'
+            position='1 0 10'/>
+        <ProtoInstance name='VP'>
+          <fieldValue name='translation' value='0 2 0'/>
+          <fieldValue name='viewpoint'>
+            <Viewpoint USE='VP2' containerField='viewpoint'/>
+
+          </fieldValue>
+        </ProtoInstance>
+        <Viewpoint DEF='VP3'
+            description='VP3'
+            position='2 0 10'/>
+        <ProtoInstance name='VP'>
+          <fieldValue name='translation' value='3 2 0'/>
+          <fieldValue name='viewpoint'>
+            <Viewpoint USE='VP3' containerField='viewpoint'/>
+
+          </fieldValue>
+        </ProtoInstance>
+      </Layer>
+      <Layer DEF='L2'>
+        <NavigationInfo/>
+        <Viewpoint DEF='VP1_1'
+            description='VP1'/>
+        <ProtoInstance name='VP'>
+          <fieldValue name='translation' value='-3 -2 0'/>
+          <fieldValue name='viewpoint'>
+            <Viewpoint USE='VP1_1' containerField='viewpoint'/>
+
+          </fieldValue>
+        </ProtoInstance>
+        <Viewpoint DEF='VP2_1'
+            description='VP2'
+            position='1 0 10'/>
+        <ProtoInstance name='VP'>
+          <fieldValue name='translation' value='0 -2 0'/>
+          <fieldValue name='viewpoint'>
+            <Viewpoint USE='VP2_1' containerField='viewpoint'/>
+
+          </fieldValue>
+        </ProtoInstance>
+        <Viewpoint USE='VP3'/>
+        <ProtoInstance name='VP'>
+          <fieldValue name='translation' value='3 -2 0'/>
+          <fieldValue name='viewpoint'>
+            <Viewpoint USE='VP3' containerField='viewpoint'/>
+
+          </fieldValue>
+        </ProtoInstance>
+        <ProtoInstance name='VP'>
+          <fieldValue name='translation' value='0 -0.5 0'/>
+          <fieldValue name='scale' value='0.2 0.2 0.2'/>
+          <fieldValue name='same' value='true'/>
+          <fieldValue name='viewpoint'>
+            <Viewpoint USE='VP2_1' containerField='viewpoint'/>
+
+          </fieldValue>
+        </ProtoInstance>
+      </Layer>
+    </LayerSet>
+  </Scene>
+</X3D>
