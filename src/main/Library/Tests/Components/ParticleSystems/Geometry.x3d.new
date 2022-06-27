@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Full" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" ><head><meta name="comment" content="World of Titania"></meta>
+<meta name="created" content="Sun, 15 May 2016 00:15:37 GMT"></meta>
+<meta name="creator" content="holger"></meta>
+<meta name="generator" content="Titania V1.4.3, http://titania.create3000.de"></meta>
+<meta name="identifier" content="file:///home/holger/Projekte/Cobweb/excite/tests/Components/ParticleSystems/Geometry.x3d"></meta>
+<meta name="modified" content="Sun, 15 May 2016 00:52:08 GMT"></meta>
+</head>
+<Scene><ExternProtoDeclare name="Grid" url="&quot;, &quot; &quot;GridTool.x3dv#Gridfile:///home/holger/Projekte/Cobweb/excite/tests/Components/ParticleSystems/GridTool.x3dv#Grid&quot;"><field name="translation" accessType="inputOutput" type="SFVec3f"></field>
+<field name="rotation" accessType="inputOutput" type="SFRotation"></field>
+<field name="scale" accessType="inputOutput" type="SFVec3f"></field>
+<field name="dimension" accessType="inputOutput" type="MFInt32"></field>
+<field name="majorLineEvery" accessType="inputOutput" type="MFInt32"></field>
+<field name="majorLineOffset" accessType="inputOutput" type="MFInt32"></field>
+<field name="color" accessType="inputOutput" type="SFColor"></field>
+<field name="transparency" accessType="inputOutput" type="SFFloat"></field>
+<field name="lineColor" accessType="inputOutput" type="SFColor"></field>
+<field name="lineTransparency" accessType="inputOutput" type="SFFloat"></field>
+<field name="majorLineColor" accessType="inputOutput" type="SFColor"></field>
+<field name="majorLineTransparency" accessType="inputOutput" type="SFFloat"></field>
+<field name="solid" accessType="initializeOnly" type="SFBool"></field>
+</ExternProtoDeclare>
+<WorldInfo title="Geometry"><MetadataSet containerField="metadata" name="Titania" DEF="Titania" reference="http://titania.create3000.de"><MetadataSet name="Selection" DEF="Selection" reference="http://titania.create3000.de" containerField="value"><MetadataSet name="previous" DEF="previous" reference="http://titania.create3000.de" containerField="value"></MetadataSet>
+<MetadataSet name="children" DEF="children" reference="http://titania.create3000.de"><ParticleSystem DEF="_1" geometryType="GEOMETRY" maxParticles="10" particleLifetime="4" lifetimeVariation="0.5" particleSize="1 1" containerField="value"><PointEmitter containerField="emitter" direction="0 0 0" speed="0.5" variation="0.5" mass="0.1" surfaceArea="0.1"></PointEmitter>
+<WindPhysicsModel direction="0 1 0" speed="0.7" gustiness="1.7" turbulence="0.3"></WindPhysicsModel>
+<WindPhysicsModel speed="0.5" gustiness="2"></WindPhysicsModel>
+<Appearance><ImageTexture containerField="texture" url="&quot;../images/image.png&quot;"></ImageTexture>
+</Appearance>
+<Cone containerField="geometry"></Cone>
+</ParticleSystem>
+</MetadataSet>
+</MetadataSet>
+<MetadataSet name="NavigationInfo" DEF="NavigationInfo" reference="http://titania.create3000.de"><MetadataString name="type" DEF="type" reference="http://titania.create3000.de" value="&quot;EXAMINE&quot;" containerField="value"></MetadataString>
+</MetadataSet>
+<MetadataSet name="Viewpoint" DEF="Viewpoint" reference="http://titania.create3000.de"><MetadataDouble name="position" DEF="position" reference="http://titania.create3000.de" value="0 20 55" containerField="value"></MetadataDouble>
+<MetadataDouble name="orientation" DEF="orientation" reference="http://titania.create3000.de" value="0 0 1 0"></MetadataDouble>
+<MetadataDouble name="centerOfRotation" DEF="centerOfRotation" reference="http://titania.create3000.de" value="0 0 0"></MetadataDouble>
+</MetadataSet>
+</MetadataSet>
+</WorldInfo>
+<Background DEF="Gray" skyColor="0.2 0.2 0.2"></Background>
+<Viewpoint description="Viewpoint" position="0 20 55"></Viewpoint>
+<ParticleSystem USE="_1"></ParticleSystem>
+<Transform DEF="IndexedLineSet"><Shape><IndexedLineSet containerField="geometry" colorPerVertex="false" colorIndex="0 1 2" coordIndex="0 1 -1 2 3 -1 4 5 -1"><Color color="1 0 0 0 1 0 0 0 1"></Color>
+<Coordinate containerField="coord" point="-1 0 0 1 0 0 0 -1 0 0 1 0 0 0 -1 0 0 1"></Coordinate>
+</IndexedLineSet>
+</Shape>
+</Transform>
+<ProtoInstance name="Grid"></ProtoInstance>
+</Scene>
+</X3D>

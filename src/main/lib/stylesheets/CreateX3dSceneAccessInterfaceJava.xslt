@@ -15,7 +15,7 @@
 Additional references of interest:
 
 1.	Array or List in Java. Which is faster?
-	http://stackoverflow.com/questions/716597/arrayf-or-list-in-java-which-is-faster
+	https://stackoverflow.com/questions/716597/arrayf-or-list-in-java-which-is-faster
 	"Answer: The common consensus is that the performance difference is minor. List interface provides more flexibility."
 
 -->
@@ -1809,7 +1809,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 				<xsl:text> extends </xsl:text>
 				<xsl:choose>
 					<xsl:when test="contains($extends,'.')">
-						<!-- TODO substring after last . http://stackoverflow.com/questions/17468891/substring-after-last-character-in-xslt -->
+						<!-- TODO substring after last . https://stackoverflow.com/questions/17468891/substring-after-last-character-in-xslt -->
 						<xsl:value-of select="$extends"/>
 					</xsl:when>
 					<xsl:otherwise>
@@ -2565,6 +2565,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 										<xsl:when test="(../@type = 'MFString')">
 											<xsl:text> is an array that can only include one set of the quoted enumeration values </xsl:text>
 										</xsl:when>
+                                                                                <xsl:otherwise><xsl:text> </xsl:text></xsl:otherwise>
 									</xsl:choose>
 									<xsl:text disable-output-escaping="yes">&lt;i&gt;</xsl:text>
 									<xsl:variable name="fieldName" select="translate(../@name,'-','_')"/>
@@ -2604,6 +2605,13 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 									</xsl:if>
 									<xsl:text disable-output-escaping="yes">&lt;/i&gt;</xsl:text>
 									<xsl:text> (XML syntax).</xsl:text>
+                                                                        <xsl:if test="(string-length(@alias) > 0)">
+										<xsl:text>&#10;</xsl:text>
+										<xsl:text>	 * @see #</xsl:text>
+										<xsl:text>NAME_</xsl:text>
+										<xsl:value-of select="upper-case(@value)"/><!-- NAME -->
+										<xsl:text>_ALIAS </xsl:text>
+									</xsl:if>
 									<xsl:if test="(string-length(../@simpleType) > 0) and (ends-with(../@simpleType,'Choices') or ends-with(../@simpleType,'Values'))">
 										<xsl:text>&#10;</xsl:text>
                                                                                 <xsl:text disable-output-escaping="yes"><![CDATA[	 * @see <a href="http://web3d.org/specifications/X3dSchemaDocumentation4.0/x3d-4.0_]]></xsl:text> 
@@ -2809,8 +2817,10 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 										<xsl:text disable-output-escaping="yes">&lt;/i&gt;</xsl:text>
 										<xsl:text>"</xsl:text>
 										<xsl:text>&#10;</xsl:text>
-										<xsl:text>	 * @see #NAME_</xsl:text>
-										<xsl:value-of select="upper-case(@value)"/><!-- NAME -->
+										<xsl:text>	 * @see #</xsl:text>
+                                                                                <xsl:value-of select="upper-case($fieldName)"/>
+										<xsl:text>_</xsl:text>
+                                                                                <xsl:value-of select="upper-case($currentAlias)"/>
 										<xsl:text> */</xsl:text>
 										<xsl:text>&#10;</xsl:text>
 										<xsl:text>	public static final String </xsl:text><!-- type found in XML schema -->
@@ -7482,7 +7492,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 												return primitives;
 												-->
 												<!-- http://docs.oracle.com/javase/8/docs/api/java/util/List.html#toArray -->
-												<!-- http://stackoverflow.com/questions/5615664/coverting-a-boolean-object-array-to-boolean-primitive-array -->
+												<!-- https://stackoverflow.com/questions/5615664/coverting-a-boolean-object-array-to-boolean-primitive-array -->
 											</xsl:when>
 											<xsl:when test="(@name = 'DEF') or (@name = 'USE') or (@name = 'id') or (@name = 'class') or ((@name = 'style') and not(ends-with($thisClassName, 'FontStyle')))">
                                                 <xsl:text>		// override abstract method in X3DConcreteNode</xsl:text>
@@ -8652,7 +8662,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 												<xsl:value-of select="$newValue"/>
 												<xsl:text>); // private superclass method</xsl:text>
 											</xsl:when>
-											<!-- http://stackoverflow.com/questions/10530353/convert-string-array-to-arraylist -->
+											<!-- https://stackoverflow.com/questions/10530353/convert-string-array-to-arraylist -->
 											<xsl:when test="(@type = 'SFNode') and not($javaPrimitiveType = $javaType) and not($isX3dStatement = 'true')">
 												<xsl:value-of select="$newValueNullSetDEFAULT_VALUE"/>
 												<xsl:value-of select="$newValueInstanceAcceptableNodeTypesTest" disable-output-escaping="yes"/>
@@ -8837,7 +8847,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 											</xsl:when>
 											<xsl:when test="($isArrayListType = 'true') and not($javaReferenceType = 'X3DNode') and not($isX3dStatement = 'true')">
 												<xsl:value-of select="$newValueNullSetDEFAULT_VALUE"/>
-												<!-- http://stackoverflow.com/questions/39873596/convert-array-of-strings-to-boolean-list-in-java -->
+												<!-- https://stackoverflow.com/questions/39873596/convert-array-of-strings-to-boolean-list-in-java -->
 												<xsl:text>		</xsl:text>
                                                 <xsl:text>clear</xsl:text>
                                                 <xsl:value-of select="upper-case(substring(@name,1,1))"/>
@@ -10791,7 +10801,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 										<xsl:when test="not($isX3dStatement = 'true') and not($isInterface = 'true')">
 											<xsl:text>	 * Unable to return this object and pipeline methods since abstract SAI specifies void return type.</xsl:text>
 											<xsl:text>&#10;</xsl:text>
-											<xsl:text disable-output-escaping="yes"><![CDATA[	 * @see <a href="http://stackoverflow.com/questions/14694852/can-overridden-methods-differ-in-return-type" target="_blank">stackoverflow: Can overridden methods differ in return type?</a>]]></xsl:text>
+											<xsl:text disable-output-escaping="yes"><![CDATA[	 * @see <a href="https://stackoverflow.com/questions/14694852/can-overridden-methods-differ-in-return-type" target="_blank">stackoverflow: Can overridden methods differ in return type?</a>]]></xsl:text>
 											<xsl:text>&#10;</xsl:text>
 										</xsl:when>
 									</xsl:choose>
@@ -13070,7 +13080,7 @@ setAttribute method invocations).	 */
 	/**
 	 * Add comment as String to contained commentsList.
 	 * @param newComment initial value
-	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/core.html#Organization">X3D Architecture, clause 7.2.5.1 Organization</a>
+	 * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-DIS/Part01/components/core.html#Organization">X3D Architecture, clause 7.2.5.1 Organization</a>
 	 * @return {@link ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
 	/* @Override */
@@ -19677,299 +19687,446 @@ shall not include the underlying field's values at that point in time.
 					<xsl:when test="($fieldName = 'SFColor')">
 						<!-- TODO add lower-case bookmarks -->
 						<xsl:text disable-output-escaping="yes"><![CDATA[
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] ALICEBLUE = toFloatArray(0xf0f8ff); // decimal 240,248,255
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] ANTIQUEWHITE = toFloatArray(0xfaebd7); // decimal 250,235,215
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] AQUA = toFloatArray(0x00ffff); // decimal 0,255,255
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] AQUAMARINE = toFloatArray(0x7fffd4); // decimal 127,255,212
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] AZURE = toFloatArray(0xf0ffff); // decimal 240,255,255
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] BEIGE = toFloatArray(0xf5f5dc); // decimal 245,245,220
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] BISQUE = toFloatArray(0xffe4c4); // decimal 255,228,196
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] BLACK = toFloatArray(0x000000); // decimal 0,0,0
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] BLANCHEDALMOND = toFloatArray(0xffebcd); // decimal 255,235,205
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] BLUE = toFloatArray(0x0000ff); // decimal 0,0,255
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] BLUEVIOLET = toFloatArray(0x8a2be2); // decimal 138,43,226
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] BROWN = toFloatArray(0xa52a2a); // decimal 165,42,42
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] BURLYWOOD = toFloatArray(0xdeb887); // decimal 222,184,135
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] CADETBLUE = toFloatArray(0x5f9ea0); // decimal 95,158,160
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] CHARTREUSE = toFloatArray(0x7fff00); // decimal 127,255,0
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] CHOCOLATE = toFloatArray(0xd2691e); // decimal 210,105,30
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] CORAL = toFloatArray(0xff7f50); // decimal 255,127,80
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] CORNFLOWERBLUE = toFloatArray(0x6495ed); // decimal 100,149,237
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] CORNSILK = toFloatArray(0xfff8dc); // decimal 255,248,220
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] CRIMSON = toFloatArray(0xdc143c); // decimal 220,20,60
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] CYAN = toFloatArray(0x00ffff); // decimal 0,255,255
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DARKBLUE = toFloatArray(0x00008b); // decimal 0,0,139
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DARKCYAN = toFloatArray(0x008b8b); // decimal 0,139,139
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DARKGOLDENROD = toFloatArray(0xb8860b); // decimal 184,134,11
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DARKGRAY = toFloatArray(0xa9a9a9); // decimal 169,169,169
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DARKGREEN = toFloatArray(0x006400); // decimal 0,100,0
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DARKGREY = toFloatArray(0xa9a9a9); // decimal 169,169,169
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DARKKHAKI = toFloatArray(0xbdb76b); // decimal 189,183,107
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DARKMAGENTA = toFloatArray(0x8b008b); // decimal 139,0,139
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DARKOLIVEGREEN = toFloatArray(0x556b2f); // decimal 85,107,47
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DARKORANGE = toFloatArray(0xff8c00); // decimal 255,140,0
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DARKORCHID = toFloatArray(0x9932cc); // decimal 153,50,204
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DARKRED = toFloatArray(0x8b0000); // decimal 139,0,0
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DARKSALMON = toFloatArray(0xe9967a); // decimal 233,150,122
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DARKSEAGREEN = toFloatArray(0x8fbc8f); // decimal 143,188,143
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DARKSLATEBLUE = toFloatArray(0x483d8b); // decimal 72,61,139
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DARKSLATEGRAY = toFloatArray(0x2f4f4f); // decimal 47,79,79
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DARKSLATEGREY = toFloatArray(0x2f4f4f); // decimal 47,79,79
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DARKTURQUOISE = toFloatArray(0x00ced1); // decimal 0,206,209
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DARKVIOLET = toFloatArray(0x9400d3); // decimal 148,0,211
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DEEPPINK = toFloatArray(0xff1493); // decimal 255,20,147
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DEEPSKYBLUE = toFloatArray(0x00bfff); // decimal 0,191,255
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DIMGRAY = toFloatArray(0x696969); // decimal 105,105,105
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DIMGREY = toFloatArray(0x696969); // decimal 105,105,105
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] DODGERBLUE = toFloatArray(0x1e90ff); // decimal 30,144,255
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] FIREBRICK = toFloatArray(0xb22222); // decimal 178,34,34
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] FLORALWHITE = toFloatArray(0xfffaf0); // decimal 255,250,240
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] FORESTGREEN = toFloatArray(0x228b22); // decimal 34,139,34
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] FUCHSIA = toFloatArray(0xff00ff); // decimal 255,0,255
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] GAINSBORO = toFloatArray(0xdcdcdc); // decimal 220,220,220
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] GHOSTWHITE = toFloatArray(0xf8f8ff); // decimal 248,248,255
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] GOLD = toFloatArray(0xffd700); // decimal 255,215,0
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] GOLDENROD = toFloatArray(0xdaa520); // decimal 218,165,32
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] GRAY = toFloatArray(0x808080); // decimal 128,128,128
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] GREEN = toFloatArray(0x008000); // decimal 0,128,0
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] GREENYELLOW = toFloatArray(0xadff2f); // decimal 173,255,47
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] GREY = toFloatArray(0x808080); // decimal 128,128,128
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] HONEYDEW = toFloatArray(0xf0fff0); // decimal 240,255,240
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] HOTPINK = toFloatArray(0xff69b4); // decimal 255,105,180
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] INDIANRED = toFloatArray(0xcd5c5c); // decimal 205,92,92
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] INDIGO = toFloatArray(0x4b0082); // decimal 75,0,130
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] IVORY = toFloatArray(0xfffff0); // decimal 255,255,240
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] KHAKI = toFloatArray(0xf0e68c); // decimal 240,230,140
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LAVENDER = toFloatArray(0xe6e6fa); // decimal 230,230,250
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LAVENDERBLUSH = toFloatArray(0xfff0f5); // decimal 255,240,245
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LAWNGREEN = toFloatArray(0x7cfc00); // decimal 124,252,0
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LEMONCHIFFON = toFloatArray(0xfffacd); // decimal 255,250,205
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LIGHTBLUE = toFloatArray(0xadd8e6); // decimal 173,216,230
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LIGHTCORAL = toFloatArray(0xf08080); // decimal 240,128,128
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LIGHTCYAN = toFloatArray(0xe0ffff); // decimal 224,255,255
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LIGHTGOLDENRODYELLOW = toFloatArray(0xfafad2); // decimal 250,250,210
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LIGHTGRAY = toFloatArray(0xd3d3d3); // decimal 211,211,211
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LIGHTGREEN = toFloatArray(0x90ee90); // decimal 144,238,144
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LIGHTGREY = toFloatArray(0xd3d3d3); // decimal 211,211,211
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LIGHTPINK = toFloatArray(0xffb6c1); // decimal 255,182,193
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LIGHTSALMON = toFloatArray(0xffa07a); // decimal 255,160,122
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LIGHTSEAGREEN = toFloatArray(0x20b2aa); // decimal 32,178,170
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LIGHTSKYBLUE = toFloatArray(0x87cefa); // decimal 135,206,250
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LIGHTSLATEGRAY = toFloatArray(0x778899); // decimal 119,136,153
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LIGHTSLATEGREY = toFloatArray(0x778899); // decimal 119,136,153
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LIGHTSTEELBLUE = toFloatArray(0xb0c4de); // decimal 176,196,222
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LIGHTYELLOW = toFloatArray(0xffffe0); // decimal 255,255,224
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LIME = toFloatArray(0x00ff00); // decimal 0,255,0
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LIMEGREEN = toFloatArray(0x32cd32); // decimal 50,205,50
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] LINEN = toFloatArray(0xfaf0e6); // decimal 250,240,230
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] MAGENTA = toFloatArray(0xff00ff); // decimal 255,0,255
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] MAROON = toFloatArray(0x800000); // decimal 128,0,0
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] MEDIUMAQUAMARINE = toFloatArray(0x66cdaa); // decimal 102,205,170
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] MEDIUMBLUE = toFloatArray(0x0000cd); // decimal 0,0,205
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] MEDIUMORCHID = toFloatArray(0xba55d3); // decimal 186,85,211
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] MEDIUMPURPLE = toFloatArray(0x9370db); // decimal 147,112,219
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] MEDIUMSEAGREEN = toFloatArray(0x3cb371); // decimal 60,179,113
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] MEDIUMSLATEBLUE = toFloatArray(0x7b68ee); // decimal 123,104,238
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] MEDIUMSPRINGGREEN = toFloatArray(0x00fa9a); // decimal 0,250,154
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] MEDIUMTURQUOISE = toFloatArray(0x48d1cc); // decimal 72,209,204
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] MEDIUMVIOLETRED = toFloatArray(0xc71585); // decimal 199,21,133
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] MIDNIGHTBLUE = toFloatArray(0x191970); // decimal 25,25,112
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] MINTCREAM = toFloatArray(0xf5fffa); // decimal 245,255,250
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] MISTYROSE = toFloatArray(0xffe4e1); // decimal 255,228,225
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] MOCCASIN = toFloatArray(0xffe4b5); // decimal 255,228,181
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] NAVAJOWHITE = toFloatArray(0xffdead); // decimal 255,222,173
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] NAVY = toFloatArray(0x000080); // decimal 0,0,128
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] OLDLACE = toFloatArray(0xfdf5e6); // decimal 253,245,230
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] OLIVE = toFloatArray(0x808000); // decimal 128,128,0
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] OLIVEDRAB = toFloatArray(0x6b8e23); // decimal 107,142,35
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] ORANGE = toFloatArray(0xffa500); // decimal 255,165,0
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] ORANGERED = toFloatArray(0xff4500); // decimal 255,69,0
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] ORCHID = toFloatArray(0xda70d6); // decimal 218,112,214
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] PALEGOLDENROD = toFloatArray(0xeee8aa); // decimal 238,232,170
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] PALEGREEN = toFloatArray(0x98fb98); // decimal 152,251,152
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] PALETURQUOISE = toFloatArray(0xafeeee); // decimal 175,238,238
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] PALEVIOLETRED = toFloatArray(0xdb7093); // decimal 219,112,147
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] PAPAYAWHIP = toFloatArray(0xffefd5); // decimal 255,239,213
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] PEACHPUFF = toFloatArray(0xffdab9); // decimal 255,218,185
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] PERU = toFloatArray(0xcd853f); // decimal 205,133,63
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] PINK = toFloatArray(0xffc0cb); // decimal 255,192,203
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] PLUM = toFloatArray(0xdda0dd); // decimal 221,160,221
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] POWDERBLUE = toFloatArray(0xb0e0e6); // decimal 176,224,230
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] PURPLE = toFloatArray(0x800080); // decimal 128,0,128
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] RED = toFloatArray(0xff0000); // decimal 255,0,0
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] ROSYBROWN = toFloatArray(0xbc8f8f); // decimal 188,143,143
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] ROYALBLUE = toFloatArray(0x4169e1); // decimal 65,105,225
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] SADDLEBROWN = toFloatArray(0x8b4513); // decimal 139,69,19
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] SALMON = toFloatArray(0xfa8072); // decimal 250,128,114
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] SANDYBROWN = toFloatArray(0xf4a460); // decimal 244,164,96
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] SEAGREEN = toFloatArray(0x2e8b57); // decimal 46,139,87
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] SEASHELL = toFloatArray(0xfff5ee); // decimal 255,245,238
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] SIENNA = toFloatArray(0xa0522d); // decimal 160,82,45
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] SILVER = toFloatArray(0xc0c0c0); // decimal 192,192,192
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] SKYBLUE = toFloatArray(0x87ceeb); // decimal 135,206,235
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] SLATEBLUE = toFloatArray(0x6a5acd); // decimal 106,90,205
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] SLATEGRAY = toFloatArray(0x708090); // decimal 112,128,144
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] SLATEGREY = toFloatArray(0x708090); // decimal 112,128,144
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] SNOW = toFloatArray(0xfffafa); // decimal 255,250,250
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] SPRINGGREEN = toFloatArray(0x00ff7f); // decimal 0,255,127
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] STEELBLUE = toFloatArray(0x4682b4); // decimal 70,130,180
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] TAN = toFloatArray(0xd2b48c); // decimal 210,180,140
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] TEAL = toFloatArray(0x008080); // decimal 0,128,128
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] THISTLE = toFloatArray(0xd8bfd8); // decimal 216,191,216
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] TOMATO = toFloatArray(0xff6347); // decimal 255,99,71
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] TURQUOISE = toFloatArray(0x40e0d0); // decimal 64,224,208
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] VIOLET = toFloatArray(0xee82ee); // decimal 238,130,238
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] WHEAT = toFloatArray(0xf5deb3); // decimal 245,222,179
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] WHITE = toFloatArray(0xffffff); // decimal 255,255,255
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] WHITESMOKE = toFloatArray(0xf5f5f5); // decimal 245,245,245
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] YELLOW = toFloatArray(0xffff00); // decimal 255,255,0
-	/** @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
+	/** Color value alias.
+         * @see <a href="https://www.w3.org/TR/css3-color/#svg-color" target="_blank">CSS Color Module Level 3, 4.3. Extended color keywords</a> */
 	public static float[] YELLOWGREEN = toFloatArray(0x9acd32); // decimal 154,205,50
 ]]></xsl:text>
 					</xsl:when>
@@ -20670,7 +20827,7 @@ method invocations on the same node object).
 			}</xsl:text>
                     -->
 				</xsl:when>
-				<!-- http://stackoverflow.com/questions/225337/how-do-i-split-a-string-with-any-whitespace-chars-as-delimiters -->
+				<!-- https://stackoverflow.com/questions/225337/how-do-i-split-a-string-with-any-whitespace-chars-as-delimiters -->
 				<xsl:when test="($fieldName = 'SFVec2d')">
 					<xsl:text>String[] newValues = newValue.replace(","," ").trim().split("\\s+");
 			if (newValues.length != 2)
@@ -21476,7 +21633,7 @@ method invocations on the same node object).
 	public SFColor]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><!-- append to type name -->
 					 <xsl:text disable-output-escaping="yes"><![CDATA[ (int hexColorValue)
 	{
-		// http://stackoverflow.com/questions/12798611/splitting-a-hex-number
+		// https://stackoverflow.com/questions/12798611/splitting-a-hex-number
 
 		float   red = ((hexColorValue>>16) & 0xff) / 255.0f;
 		float green = ((hexColorValue>> 8) & 0xff) / 255.0f;
@@ -21502,7 +21659,7 @@ TODO: also MFColor.
 	 */
 	public static float[] toFloatArray (int hexColorValue)
 	{
-		// http://stackoverflow.com/questions/12798611/splitting-a-hex-number
+		// https://stackoverflow.com/questions/12798611/splitting-a-hex-number
 						 
 		float[] newFloatArray = {0.0f, 0.0f, 0.0f};
 						 
@@ -21532,7 +21689,7 @@ TODO: also MFColor.
 	public SFColor]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><!-- append to type name -->
 					 <xsl:text disable-output-escaping="yes"><![CDATA[ setValue (int hexColorValue)
 	{
-		// http://stackoverflow.com/questions/12798611/splitting-a-hex-number
+		// https://stackoverflow.com/questions/12798611/splitting-a-hex-number
 						 
 		float   red = ((hexColorValue>>16) & 0xff) / 255.0f;
 		float green = ((hexColorValue>> 8) & 0xff) / 255.0f;
@@ -21740,7 +21897,7 @@ TODO: also MFColor.
 	public SFColorRGBA]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><!-- append to type name -->
 					 <xsl:text disable-output-escaping="yes"><![CDATA[ (int hexColorValue, float alpha)
 	{
-		// http://stackoverflow.com/questions/12798611/splitting-a-hex-number
+		// https://stackoverflow.com/questions/12798611/splitting-a-hex-number
 						 
 		float   red = ((hexColorValue>>16) & 0xff) / 255.0f;
 		float green = ((hexColorValue>> 8) & 0xff) / 255.0f;
@@ -21768,7 +21925,7 @@ TODO: also MFColor.
 	public SFColorRGBA]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><!-- append to type name -->
 					 <xsl:text disable-output-escaping="yes"><![CDATA[ setValue (int hexColorValue, float alpha)
 	{
-		// http://stackoverflow.com/questions/12798611/splitting-a-hex-number
+		// https://stackoverflow.com/questions/12798611/splitting-a-hex-number
 						 
 		float   red = ((hexColorValue>>16) & 0xff) / 255.0f;
 		float green = ((hexColorValue>> 8) & 0xff) / 255.0f;
@@ -21869,7 +22026,7 @@ TODO: also MFColor.
 			validationResult.append(errorNotice).append("\n");
 			throw new InvalidFieldValueException(errorNotice);
 		}		
-		// http://stackoverflow.com/questions/12798611/splitting-a-hex-number
+		// https://stackoverflow.com/questions/12798611/splitting-a-hex-number
 						 
 		float   red = ((hexColorValue>>16) & 0xff) / 255.0f;
 		float green = ((hexColorValue>> 8) & 0xff) / 255.0f;
@@ -21963,7 +22120,7 @@ TODO: also MFColor.
 			throw new ArrayIndexOutOfBoundsException(errorNotice);
 		}
 		
-		// http://stackoverflow.com/questions/12798611/splitting-a-hex-number
+		// https://stackoverflow.com/questions/12798611/splitting-a-hex-number
 						 
 		float   red = ((hexColorValue>>16) & 0xff) / 255.0f;
 		float green = ((hexColorValue>> 8) & 0xff) / 255.0f;
@@ -25820,9 +25977,9 @@ public void setValue(long[] newValue)
 	 * Applicability: first converting an integer (such as 100) to float and then String results in trailing decimal point and zero (such as
 100.0).
 	 * Functionality can be globally enabled/disabled by {@link ConfigurationProperties#setStripTrailingZeroes(boolean)}.
-	 * @see <a href="http://stackoverflow.com/questions/14984664/remove-trailing-zero-in-java">StackOverflow: Remove trailing zero in Java</a>
-	 * @see <a href="http://stackoverflow.com/questions/11284938/remove-trailing-zeros-from-double">StackOverflow: Remove trailing zeros from double (String manipulation solution)</a>
-	 * @see <a href="http://stackoverflow.com/questions/703396/how-to-nicely-format-floating-numbers-to-string-without-unnecessary-decimal-0">StackOverflow: How to nicely format floating numbers to String without unnecessary decimal 0? (&quot;In short&quot; solution)</a>
+	 * @see <a href="https://stackoverflow.com/questions/14984664/remove-trailing-zero-in-java">StackOverflow: Remove trailing zero in Java</a>
+	 * @see <a href="https://stackoverflow.com/questions/11284938/remove-trailing-zeros-from-double">StackOverflow: Remove trailing zeros from double (String manipulation solution)</a>
+	 * @see <a href="https://stackoverflow.com/questions/703396/how-to-nicely-format-floating-numbers-to-string-without-unnecessary-decimal-0">StackOverflow: How to nicely format floating numbers to String without unnecessary decimal 0? (&quot;In short&quot; solution)</a>
 	 * @see <a href="https://library.oreilly.com/book/0636920023630/regular-expressions-cookbook-2nd-edition/275.xhtml">Regular Expressions Cookbook, 6.6. Strip Leading Zeros, by Jan Goyvaerts, Steven Levithan</a>
 	 * @return string value with trailing zeros and decimal points stripped
 	 */
@@ -25894,9 +26051,9 @@ public void setValue(long[] newValue)
 	 * Applicability: first converting an integer (such as 100) to double and then String results in trailing decimal point and zero (such as
 100.0).
 	 * Functionality can be globally enabled/disabled by {@link ConfigurationProperties#setStripTrailingZeroes(boolean)}.
-	 * @see <a href="http://stackoverflow.com/questions/14984664/remove-trailing-zero-in-java">StackOverflow: Remove trailing zero in Java</a>
-	 * @see <a href="http://stackoverflow.com/questions/11284938/remove-trailing-zeros-from-double">StackOverflow: Remove trailing zeros from double (String manipulation solution)</a>
-	 * @see <a href="http://stackoverflow.com/questions/703396/how-to-nicely-format-floating-numbers-to-string-without-unnecessary-decimal-0">StackOverflow: How to nicely format floating numbers to String without unnecessary decimal 0? (&quot;In short&quot; solution)</a>
+	 * @see <a href="https://stackoverflow.com/questions/14984664/remove-trailing-zero-in-java">StackOverflow: Remove trailing zero in Java</a>
+	 * @see <a href="https://stackoverflow.com/questions/11284938/remove-trailing-zeros-from-double">StackOverflow: Remove trailing zeros from double (String manipulation solution)</a>
+	 * @see <a href="https://stackoverflow.com/questions/703396/how-to-nicely-format-floating-numbers-to-string-without-unnecessary-decimal-0">StackOverflow: How to nicely format floating numbers to String without unnecessary decimal 0? (&quot;In short&quot; solution)</a>
 	 * @see <a href="https://library.oreilly.com/book/0636920023630/regular-expressions-cookbook-2nd-edition/275.xhtml">Regular Expressions Cookbook, 6.6. Strip Leading Zeros, by Jan Goyvaerts, Steven Levithan</a>
 	 * @return string value with trailing zeros and decimal points stripped
 	 */
@@ -31581,7 +31738,7 @@ package org.web3d.x3d.jsail;
  *     and 
  *     <a href="http://www.web3d.org/specifications/java/javadoc/index.html" target="_blank">X3DJSAIL Javadoc</a>
  * </p>
- * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldTypes.html">X3D Architecture: Field type reference</a>
+ * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-DIS/Part01/fieldTypes.html">X3D Architecture: Field type reference</a>
  * @see <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html">X3D Resources</a>
  * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html">X3D Scene Authoring Hints</a>
  * @see <a href="https://www.web3d.org/x3d/tooltips/X3dTooltips.html#type">X3D Tooltips: type Definitions</a>
@@ -31720,8 +31877,13 @@ import javax.script.ScriptException;</xsl:text>
 		</xsl:with-param>
 		<xsl:with-param name="implementationBlock">
 			<xsl:text disable-output-escaping="yes"><![CDATA[
-
     // TODO JAR configuration
+                            
+    /** CommandLine constructor creates an instance object of this class */
+    public CommandLine()
+    {
+        // customized initialization can go here
+    }
 
     // ==========================================================================================
 
@@ -35488,12 +35650,12 @@ import org.web3d.x3d.sai.X3DException;
 				String	  elementSetMethodName;
 				Method		  elementSetMethod;
 					
-				// http://stackoverflow.com/questions/7495785/java-how-to-instantiate-a-class-from-stringstring
+				// https://stackoverflow.com/questions/7495785/java-how-to-instantiate-a-class-from-stringstring
 				
 				try // to create X3D object and related X3DConcreteElement node/statement objects
 				{
 					elementClass  = (Class<X3DConcreteElement>)Class.forName(packageName); // must be fully qualified packageName
-                    // https://stackoverflow.com/questions/46393863/what-to-use-instead-of-class-newinstance
+                                // https://stackoverflow.com/questions/46393863/what-to-use-instead-of-class-newinstance
 				//	elementObject = elementClass.newInstance(); // deprecated
 					elementObject = elementClass.getDeclaredConstructor().newInstance(); // default value
 					

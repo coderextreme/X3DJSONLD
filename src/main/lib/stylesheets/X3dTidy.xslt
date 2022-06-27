@@ -144,7 +144,7 @@ Recommended tools:
     </xsl:variable>
 	<!-- TODO still need updated XSLT engine in Netbeans :(
 	http://www.sixtree.com.au/articles/2013/formatting-dates-and-times-using-xslt-2.0-and-xpath/
-	http://stackoverflow.com/questions/919692/how-to-execute-xslt-2-0-with-ant
+	https://stackoverflow.com/questions/919692/how-to-execute-xslt-2-0-with-ant
 	-->
     <xsl:variable name="todaysDate">
 		<xsl:value-of select="format-date(current-date(), '[D1] [MNn] [Y0001]')"/>
@@ -6796,7 +6796,7 @@ Recommended tools:
             <xsl:otherwise>
                 <xsl:value-of select="$day2"/>
                 <xsl:text> </xsl:text>
-                <!-- XSLT 1, http://stackoverflow.com/questions/1207098/xslt-stylesheet-changing-text-to-upper-case -->
+                <!-- XSLT 1, https://stackoverflow.com/questions/1207098/xslt-stylesheet-changing-text-to-upper-case -->
                 <xsl:variable name="lowercase" select="'abcdefghijklmnopqrstuvwxyz'" />
                 <xsl:variable name="uppercase" select="'ABCDEFGHIJKLMNOPQRSTUVWXYZ'" />
                 <xsl:choose>

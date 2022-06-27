@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile='Interchange' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
+  <head>
+    <component name='Geometry2D' level='2'/>
+    <meta name='comment' content='World of Sunrise X3D Editor'/>
+    <meta name='created' content='Fri, 21 Jan 2022 15:24:26 +0100'/>
+    <meta name='creator' content='Holger Seelig'/>
+    <meta name='generator' content='Sunrise X3D Editor V1.0, https://create3000.github.io/Sunrise/'/>
+    <meta name='identifier' content='file:///Volumes/Home/Projekte/Library/Tests/Components/Shape/TwoSidedMaterial.x3d'/>
+    <meta name='modified' content='Sat, 22 Jan 2022 13:05:20 +0100'/>
+  </head>
+  <Scene>
+    <WorldInfo>
+      <MetadataSet DEF='Sunrise'
+          name='Sunrise'
+          reference='https://github.com/create3000/Swift-X3D'>
+        <MetadataSet DEF='SceneProperties' containerField='value'
+            name='SceneProperties'
+            reference='https://github.com/create3000/Swift-X3D'>
+          <MetadataBoolean DEF='inferProfileAndComponents' containerField='value'
+              name='inferProfileAndComponents'
+              reference='https://github.com/create3000/Swift-X3D'
+              value='true'/>
+        </MetadataSet>
+      </MetadataSet>
+    </WorldInfo>
+    <Transform DEF='Box'
+        translation='-2 0 0'>
+      <Shape DEF='Shape'>
+        <Appearance>
+          <TwoSidedMaterial DEF='RedBlue'
+              separateBackColor='true'
+              diffuseColor='0 0 0'
+              emissiveColor='1 0 0'
+              backDiffuseColor='0 0 0'
+              backEmissiveColor='0 0 1'/>
+        </Appearance>
+        <Rectangle2D/>
+      </Shape>
+    </Transform>
+    <Transform
+        translation='2 0 0'
+        rotation='0 1 0 3.14159'>
+      <Shape USE='Shape'/>
+    </Transform>
+  </Scene>
+</X3D>

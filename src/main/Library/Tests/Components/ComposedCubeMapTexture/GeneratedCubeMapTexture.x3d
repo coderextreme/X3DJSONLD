@@ -215,6 +215,7 @@ function initialize ()
     <DirectionalLight
         intensity='0.466321'
         direction='0 -1 0'
+        shadows='true'
         shadowIntensity='1'/>
     <NavigationInfo/>
   </Scene>

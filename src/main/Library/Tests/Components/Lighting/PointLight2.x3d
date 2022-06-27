@@ -47,6 +47,7 @@
             <PointLight DEF='_2' containerField='value'
                 global='false'
                 location='0 5 0'
+                shadows='true'
                 shadowIntensity='1'
                 shadowMapSize='2048'/>
           </MetadataSet>

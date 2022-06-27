@@ -22,7 +22,7 @@
 	            xmlns:fn ="http://www.w3.org/2005/xpath-functions">
 	<!--  extension-element-prefixes="xs" -->
     
-    <xsl:param name="verbose"><xsl:text>true</xsl:text></xsl:param>
+    <xsl:param name="verbose"><xsl:text>false</xsl:text></xsl:param>
     
     <xsl:output method="xml"/> <!-- output methods:  xml html text -->
     

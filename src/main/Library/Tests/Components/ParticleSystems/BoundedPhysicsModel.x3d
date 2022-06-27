@@ -10,7 +10,7 @@
     <meta name='modified' content='Sun, 25 Feb 2018 10:22:55 GMT'/>
   </head>
   <Scene>
-    <ExternProtoDeclare name='IcoSphere' url='"https://cdn.rawgit.com/create3000/Library/1.0.4/Prototypes/Geometry3D/IcoSphere.x3d", "http://cdn.rawgit.com/create3000/Library/1.0.4/Prototypes/Geometry3D/IcoSphere.x3d", "https://rawgit.com/create3000/Library/1.0.4/Prototypes/Geometry3D/IcoSphere.x3d", "http://rawgit.com/create3000/Library/1.0.4/Prototypes/Geometry3D/IcoSphere.x3d"'>
+    <ExternProtoDeclare name='IcoSphere' url='"https://cdn.rawgit.com/create3000/Library/1.0.13/Prototypes/Geometry3D/IcoSphere.x3d", "http://cdn.rawgit.com/create3000/Library/1.0.13/Prototypes/Geometry3D/IcoSphere.x3d", "https://rawgit.com/create3000/Library/1.0.13/Prototypes/Geometry3D/IcoSphere.x3d", "http://rawgit.com/create3000/Library/1.0.13/Prototypes/Geometry3D/IcoSphere.x3d"'>
       <field accessType='inputOutput' type='SFString' name='type'/>
       <field accessType='inputOutput' type='SFInt32' name='order'/>
       <field accessType='inputOutput' type='SFFloat' name='radius'/>
@@ -102,7 +102,7 @@
         loop='true'/>
     <BooleanSequencer DEF='_4'
         key='0, 0.3, 1'
-        keyValue='true, false'/>
+        keyValue='true,false'/>
     <ParticleSystem DEF='_5'
         geometryType='POINT'
         maxParticles='4000'

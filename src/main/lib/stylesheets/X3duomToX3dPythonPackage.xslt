@@ -229,7 +229,7 @@ _DEBUG = False       # options True False
 # SimpleType Enumerations
 </xsl:text>
 
-        <xsl:for-each select="//SimpleTypeEnumerations/SimpleType[count(enumeration) > 1]
+        <xsl:for-each select="//SimpleTypeEnumerations/SimpleType[count(enumeration) > 0]
                                 [not(starts-with(@name,'containerField')) and not(ends-with(@name,'AccessTypes'))]">
             <xsl:text>&#10;</xsl:text>
             <xsl:value-of select="upper-case(@name)"/>
@@ -339,7 +339,7 @@ class _X3DField:
     @classmethod
     def SPECIFICATION_URL(cls):
         """ Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. """
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldTypes.html#X3DField'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-DIS/Part01/fieldTypes.html#X3DField'
     @classmethod
     def TOOLTIP_URL(cls):
         """ X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. """
@@ -383,7 +383,7 @@ class _X3DArrayField(_X3DField):
     @classmethod
     def SPECIFICATION_URL(cls):
         """ Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. """
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/fieldTypes.html#X3DArrayField'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-DIS/Part01/fieldTypes.html#X3DArrayField'
 
 def isX3DField(value):
     """
@@ -618,7 +618,7 @@ class Comment(_X3DStatement):
     @classmethod
     def SPECIFICATION_URL(cls):
         """ Extensible 3D (X3D) Graphics International Standard governs X3D architecture for all file formats and programming languages. """
-        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/core.html#Organization'
+        return 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-DIS/Part01/components/core.html#Organization'
     @classmethod
     def TOOLTIP_URL(cls):
         """ X3D Tooltips provide authoring tips, hints and warnings for each node and field in X3D. """
@@ -706,7 +706,7 @@ def isX3DNode(value):
 
 # Python x3d Package Loading Complete
 
-print("x3d.py package 4.0.63.7 loaded, have fun with X3D Graphics!", flush=True)
+print("x3d.py package 4.0.64.1 loaded, have fun with X3D Graphics!", flush=True)
 
 ###############################################
 </xsl:text>
@@ -733,7 +733,7 @@ def metaDiagnostics(self, headElement=None):
         headElement = headElement.head
     # print('type(headElement)=' + str(type(headElement)), flush=True) # diagnostic
     if  isinstance(headElement, head):
-        result = "meta "
+        result = "meta information, "
         for each in headElement.children:
             if isinstance(each, meta) and each.name in ('info', 'hint', 'warning', 'error', 'TODO'):
                 result += each.name.strip() + ': ' + each.content.strip()
@@ -741,7 +741,7 @@ def metaDiagnostics(self, headElement=None):
                     result += ' '
                 else:
                     result += ', '
-        if  result.strip() != "meta":
+        if  result.strip() != "meta information,":
             return result.rstrip(', ').strip()
     return ''
 
@@ -1698,9 +1698,9 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
     # note that ExternProtoDeclare field definitions do not have any value
     if name is None:
         print('* assertValidFieldInitializationValue improper invocation: name=' + str(name) + ', fieldType=' + str(fieldType) + ', value=' + str(value)[:100] + ', parent=' + parent + ', ignored', flush=True)
-        return # ignore
+        return None # ignore
     if value is None or (not(fieldType == bool) and not value):
-        return # ignore
+        return None # ignore
     if fieldType == 'SFString':
         assertValidSFString(value)
     elif fieldType == 'MFString':
@@ -4834,6 +4834,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
     <xsl:template name="pythonValue">
         <xsl:param name="x3dValue"/>
         <xsl:param name="x3dType">SFString</xsl:param><!-- default if x3dType is unknown -->
+        <xsl:variable name="isMFType"        select="starts-with($x3dType,'MF')"/>
         <xsl:variable name="isTuple"         select="contains($x3dType,'Vec') or contains($x3dType,'Rotation') or contains($x3dType,'Color') or contains($x3dType,'Matrix')"/>
         <xsl:variable name="isList"          select="starts-with($x3dType,'MF') or ($x3dType = 'SFImage')"/>
         <xsl:variable name="isString"        select="($x3dType = 'SFString') or ($x3dType ='xs:string') or ($x3dType ='xs:NMTOKEN')"/>
@@ -4842,6 +4843,8 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 <xsl:with-param name="x3dType" select="@type"/>
             </xsl:call-template>
         </xsl:variable>
+        <xsl:variable name="inputString" select="normalize-space(translate(string($x3dValue),',',' '))"/>
+        <xsl:variable name="whitespaceCount" select="string-length($inputString) - string-length(translate($inputString,' ', ''))"/>
         
         <!-- prepend delimiter if appropriate -->
         <xsl:choose>
@@ -4879,8 +4882,26 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
                 <xsl:value-of select="$x3dValue"/>
             </xsl:when>
             <!-- TODO MFString commas between list entries -->
+            <xsl:when test="(string-length($inputString) > 0) and $isMFType and ($tupleSize > 1) and ($whitespaceCount + 1 > $tupleSize)">
+                <xsl:for-each select="tokenize($inputString,' ')">
+                   <xsl:value-of select="."/>
+                   <xsl:choose>
+                       <xsl:when test="(position() = last())">
+                           <!-- done -->
+                       </xsl:when>
+                       <xsl:when test="(position() mod $tupleSize = 0)">
+                            <xsl:text>)</xsl:text>
+                            <xsl:if test="(position() != last())">
+                                <xsl:text>, (</xsl:text>
+                            </xsl:if>
+                       </xsl:when>
+                       <xsl:otherwise>
+                           <xsl:text>, </xsl:text>
+                       </xsl:otherwise>
+                   </xsl:choose>
+               </xsl:for-each>
+            </xsl:when>
             <xsl:when test="(string-length($x3dValue) > 0)">
-                <!-- TODO recursive function for tupleSize parentheses splits -->
                 <xsl:value-of select="replace($x3dValue,' ',', ')"/><!-- pylint wants space after each comma separating values -->
             </xsl:when>
             <xsl:when test="$isString">

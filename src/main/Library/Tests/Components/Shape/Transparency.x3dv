@@ -1,0 +1,37 @@
+#X3D V3.3 utf8 Sunrise X3D Browser V1.0
+
+PROFILE Immersive
+
+Transform {
+  translation -2 0 0
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 1 0 0
+          transparency 0.5
+        }
+      }
+      geometry Box {
+        solid TRUE
+      }
+    }
+  ]
+}
+
+Transform {
+  translation 2 0 0
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 1 0 0
+          transparency 0.5
+        }
+      }
+      geometry Box {
+        solid FALSE
+      }
+    }
+  ]
+}

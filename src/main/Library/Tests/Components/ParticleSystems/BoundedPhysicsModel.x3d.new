@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Full" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" ><head><meta name="comment" content="World of Titania"></meta>
+<meta name="created" content="Mon, 02 May 2016 10:03:35 GMT"></meta>
+<meta name="creator" content="holger"></meta>
+<meta name="generator" content="Titania V4.0.6a, http://titania.create3000.de"></meta>
+<meta name="identifier" content="file:///home/holger/Projekte/Library/Tests/Components/ParticleSystems/BoundedPhysicsModel.x3d"></meta>
+<meta name="modified" content="Sun, 25 Feb 2018 10:22:55 GMT"></meta>
+</head>
+<Scene><ExternProtoDeclare name="IcoSphere" url="&quot;, &quot; &quot;https://cdn.rawgit.com/create3000/Library/1.0.13/Prototypes/Geometry3D/IcoSphere.x3d, &quot; &quot;http://cdn.rawgit.com/create3000/Library/1.0.13/Prototypes/Geometry3D/IcoSphere.x3d, &quot; &quot;https://rawgit.com/create3000/Library/1.0.13/Prototypes/Geometry3D/IcoSphere.x3dhttp://rawgit.com/create3000/Library/1.0.13/Prototypes/Geometry3D/IcoSphere.x3d&quot;"><field name="type" accessType="inputOutput" type="SFString"></field>
+<field name="order" accessType="inputOutput" type="SFInt32"></field>
+<field name="radius" accessType="inputOutput" type="SFFloat"></field>
+<field name="solid" accessType="initializeOnly" type="SFBool"></field>
+</ExternProtoDeclare>
+<WorldInfo title="BoundedPhysicsModel"><MetadataSet containerField="metadata" name="Titania" DEF="Titania" reference="http://titania.create3000.de"><MetadataSet name="NavigationInfo" DEF="NavigationInfo" reference="http://titania.create3000.de" containerField="value"><MetadataString name="type" DEF="type" reference="http://titania.create3000.de" value="&quot;EXAMINE&quot;" containerField="value"></MetadataString>
+</MetadataSet>
+<MetadataSet name="Viewpoint" DEF="Viewpoint" reference="http://titania.create3000.de"><MetadataDouble name="position" DEF="position" reference="http://titania.create3000.de" value="0 0 15" containerField="value"></MetadataDouble>
+<MetadataDouble name="orientation" DEF="orientation" reference="http://titania.create3000.de" value="0 0 1 0"></MetadataDouble>
+<MetadataDouble name="centerOfRotation" DEF="centerOfRotation" reference="http://titania.create3000.de" value="0 0 0"></MetadataDouble>
+</MetadataSet>
+<MetadataSet name="Selection" DEF="Selection" reference="http://titania.create3000.de"><MetadataSet name="nodes" DEF="nodes" reference="http://titania.create3000.de" containerField="value"><Transform DEF="Icosahedron" containerField="value"><Shape><Appearance><Material></Material>
+</Appearance>
+<ProtoInstance containerField="geometry" name="IcoSphere" DEF="_1"><fieldValue name="order" value="3"></fieldValue>
+</ProtoInstance>
+</Shape>
+</Transform>
+</MetadataSet>
+<MetadataBoolean name="selectGeometry" DEF="selectGeometry" reference="http://titania.create3000.de" value="false"></MetadataBoolean>
+</MetadataSet>
+<MetadataSet name="Page" DEF="Page" reference="http://titania.create3000.de"><MetadataInteger name="activeView" DEF="activeView" reference="http://titania.create3000.de" value="1" containerField="value"></MetadataInteger>
+<MetadataInteger name="multiView" DEF="multiView" reference="http://titania.create3000.de" value="0"></MetadataInteger>
+</MetadataSet>
+</MetadataSet>
+</WorldInfo>
+<Background DEF="Gray" skyColor="0.2 0.2 0.2"></Background>
+<Viewpoint description="Viewpoint" position="0 0 15"></Viewpoint>
+<Transform DEF="Box"><Shape><Appearance><Material transparency="0.49"></Material>
+</Appearance>
+<Box containerField="geometry" DEF="_2" size="7 7 7"></Box>
+</Shape>
+</Transform>
+<Transform USE="Icosahedron"></Transform>
+<TimeSensor DEF="_3" cycleInterval="20" loop="true"></TimeSensor>
+<BooleanSequencer DEF="_4" key="0 0.3 1" keyValue="true false"></BooleanSequencer>
+<ParticleSystem DEF="_5" geometryType="POINT" maxParticles="4000" createParticles="false" particleLifetime="30" lifetimeVariation="0" particleSize="0.1 0.1" colorKey="0 0.1 0.4 1"><ConeEmitter containerField="emitter" position="0 -3 0" direction="1 4 0" angle="0.4" speed="0.2" mass="3200"></ConeEmitter>
+<BoundedPhysicsModel DEF="BoundedSphere"><ProtoInstance containerField="geometry" name="IcoSphere" USE="_1"></ProtoInstance>
+</BoundedPhysicsModel>
+<BoundedPhysicsModel DEF="BoundedBox"><Box containerField="geometry" USE="_2"></Box>
+</BoundedPhysicsModel>
+<ForcePhysicsModel force="0 -0.098 0"></ForcePhysicsModel>
+<ColorRGBA containerField="colorRamp" color="1 0.38 0 0.5 1 0.58 0.06 0.5 1 0.37 0 0.5 1 0.05 0 0.5"></ColorRGBA>
+<Appearance><LineProperties linewidthScaleFactor="4"></LineProperties>
+</Appearance>
+</ParticleSystem>
+<Transform DEF="IndexedLineSet"><Shape><IndexedLineSet containerField="geometry" colorPerVertex="false" colorIndex="0 1 2" coordIndex="0 1 -1 2 3 -1 4 5 -1"><Color color="1 0 0 0 1 0 0 0 1"></Color>
+<Coordinate containerField="coord" point="-1 0 0 1 0 0 0 -1 0 0 1 0 0 0 -1 0 0 1"></Coordinate>
+</IndexedLineSet>
+</Shape>
+</Transform>
+<ROUTE fromNode="_3" fromField="fraction_changed" toNode="_4" toField="set_fraction"></ROUTE>
+<ROUTE fromNode="_4" fromField="value_changed" toNode="_5" toField="set_createParticles"></ROUTE>
+</Scene>
+</X3D>

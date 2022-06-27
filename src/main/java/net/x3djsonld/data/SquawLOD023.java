@@ -640,6 +640,5 @@ public class SquawLOD023
                 System.out.println();
 			System.out.println(validationResults.trim());
 		}
-    	thisExampleX3dModel.toFileJSON("../data/SquawLOD023.new.json");
     }
 }
