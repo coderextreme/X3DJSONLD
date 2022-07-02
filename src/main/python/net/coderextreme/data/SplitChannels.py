@@ -3,7 +3,7 @@ x3d.py package 4.0.64.1 loaded, have fun with X3D Graphics!
 '''
 from x3d import *
 from x3d import SFBool
-print(
+print((
 X3D(profile="Full", version="4.0", 
 head=head(), 
 Scene=Scene(children=[
@@ -97,4 +97,4 @@ texture=
 ImageTexture(url=["images/loudspeaker.png","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png"])), 
 geometry=
 Box(size=((100,100,0.001))))])]))
-.XML())
+.XML()))

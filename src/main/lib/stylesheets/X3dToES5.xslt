@@ -2859,6 +2859,7 @@ POSSIBILITY OF SUCH DAMAGE.
 				($attributeName='loop')     or
 				($attributeName='normalizeVelocity') or
 				($attributeName='rtpHeaderExpected') or
+				($attributeName='shadows') or
 				($attributeName='solid') or
 				($attributeName='uClosed') or ($attributeName='vClosed') or
 				($attributeName='visible') or

@@ -3,7 +3,7 @@ x3d.py package 4.0.64.1 loaded, have fun with X3D Graphics!
 '''
 from x3d import *
 from x3d import SFBool
-print(
+print((
 X3D(profile="Full", version="4.0", 
 head=head(), 
 Scene=Scene(children=[
@@ -72,4 +72,4 @@ AudioClip(description="Violin", loop=True, url=["sound/violin.mp3","https://x3dg
 SpatialSound(DEF="Audio2", children=[
 Gain(children=[
 AudioClip(description="Saxophone", loop=True, url=["sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"])])])])]))
-.XML())
+.XML()))

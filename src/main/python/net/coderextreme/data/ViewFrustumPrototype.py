@@ -3,7 +3,7 @@ x3d.py package 4.0.64.1 loaded, have fun with X3D Graphics!
 '''
 from x3d import *
 from x3d import SFBool
-print(
+print((
 X3D(profile="Immersive", version="3.3", 
 head=head(), 
 Scene=Scene(children=[
@@ -28,7 +28,7 @@ Transform(DEF="PositionTransform", rotation=((0,1,0,3.14159)), children=[
 Transform(DEF="OrientationTransform", children=[
 Shape(
 geometry=
-IndexedLineSet(DEF="FrustumLines", coordIndex=[int(0),int(1),int(2),int(3),int(0),int(-1),int(4),int(5),int(6),int(7),int(4),int(-1),int(0),int(4),int(-1),int(1),int(5),int(-1),int(2),int(6),int(-1),int(3),int(7),int(-1)], 
+IndexedLineSet(DEF="FrustumLines", coordIndex=[0,1,2,3,0,-1,4,5,6,7,4,-1,0,4,-1,1,5,-1,2,6,-1,3,7,-1], 
 coord=
 Coordinate(DEF="FrustumCoordinate", point=[(0,0,0),(0,0,0),(0,0,0),(0,0,0),(0,0,0),(0,0,0),(0,0,0),(0,0,0)])), 
 appearance=
@@ -97,4 +97,4 @@ geometry=
 Text(string=["ViewFrustumPrototype.x3d","is a Prototype declaration file.","For an example scene using the prototype,","click this text and view","ViewFrustumExample.x3d"], 
 fontStyle=
 FontStyle(justify=["MIDDLE","MIDDLE"], size=0.8)))]),]))
-.XML())
+.XML()))

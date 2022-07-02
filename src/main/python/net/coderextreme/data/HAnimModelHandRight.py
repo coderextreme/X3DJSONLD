@@ -3,7 +3,7 @@ x3d.py package 4.0.64.1 loaded, have fun with X3D Graphics!
 '''
 from x3d import *
 from x3d import SFBool
-print(
+print((
 X3D(profile="Immersive", version="4.0", 
 head=head(), 
 Scene=Scene(children=[
@@ -31,7 +31,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="RCToMC12", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="RCToMC12", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0,0,0),(-0.1,0.1,0)]))),
 Shape(
@@ -40,7 +40,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="RCToMC3", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="RCToMC3", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0,0,0),(0.0,0.07,0)]))),
 Shape(
@@ -49,7 +49,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="RCToMC45", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="RCToMC45", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0,0,0),(0.1,0.1,0)])))]),
 #MC1
@@ -70,7 +70,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="MC12toCMC1", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="MC12toCMC1", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(-0.1,0.1,0),(-0.2,0.15,0)])))]),
 #thumb finger
@@ -85,7 +85,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="CMC1toMCP1xxx", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="CMC1toMCP1xxx", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(-0.2,0.15,0),(-0.3,0.3,0)])))]),
 HAnimJoint(name="r_metacarpophalangeal_1", DEF="hanim_r_metacarpophalangeal_1", center=((-0.3,0.3,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
@@ -98,7 +98,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="MCP11toIP1", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="MCP11toIP1", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(-0.3,0.3,0),(-0.35,0.4,0)])))]),
 HAnimJoint(name="r_carpal_interphalangeal_1", DEF="hanim_r_carpal_interphalangeal_1", center=((-0.35,0.4,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
@@ -111,7 +111,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="fingertip_r_carpal_interphalangeal_1", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="fingertip_r_carpal_interphalangeal_1", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(-0.35,0.4,0),(-0.36,0.45,0)])))])])])]),]),
 #MC2
@@ -126,7 +126,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="MC12toCMC2", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="MC12toCMC2", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(-0.1,0.1,0),(-0.1,0.2,0)])))]),
 #index finger
@@ -141,7 +141,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="CMC2toMCP2", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="CMC2toMCP2", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(-0.1,0.2,0),(-0.15,0.5,0)])))]),
 HAnimJoint(name="r_metacarpophalangeal_2", DEF="hanim_r_metacarpophalangeal_2", center=((-0.15,0.5,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
@@ -154,7 +154,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="MCP2toPIP2", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="MCP2toPIP2", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(-0.15,0.5,0),(-0.2,0.7,0)])))]),
 HAnimJoint(name="r_carpal_proximal_interphalangeal_2", DEF="hanim_r_carpal_proximal_interphalangeal_2", center=((-0.2,0.7,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
@@ -167,7 +167,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="PIP2toDIP2", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="PIP2toDIP2", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(-0.2,0.7,0),(-0.24,0.87,0)])))]),
 HAnimJoint(name="r_carpal_distal_interphalangeal_2", DEF="hanim_r_carpal_distal_interphalangeal_2", center=((-0.24,0.87,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
@@ -180,7 +180,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="fingertip_r_carpal_distal_interphalangeal_2", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="fingertip_r_carpal_distal_interphalangeal_2", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(-0.24,0.87,0),(-0.26,0.93,0)])))])])])])]),]),
 #MC3
@@ -195,7 +195,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="MC3toCMC3", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="MC3toCMC3", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0.0,0.07,0),(0.0,0.2,0)])))]),
 #Middle fingle
@@ -210,7 +210,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="CMC3toMCP3", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="CMC3toMCP3", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0.0,0.2,0),(-0.03,0.5,0)])))]),
 HAnimJoint(name="r_metacarpophalangeal_3", DEF="hanim_r_metacarpophalangeal_3", center=((-0.03,0.5,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
@@ -223,7 +223,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="MCP3toPIP3", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="MCP3toPIP3", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(-0.03,0.5,0),(-0.05,0.75,0)])))]),
 HAnimJoint(name="r_carpal_proximal_interphalangeal_3", DEF="hanim_r_carpal_proximal_interphalangeal_3", center=((-0.05,0.75,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
@@ -236,7 +236,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="PIP3toDIP3", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="PIP3toDIP3", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(-0.05,0.75,0),(-0.08,0.96,0)])))]),
 HAnimJoint(name="r_carpal_distal_interphalangeal_3", DEF="hanim_r_carpal_distal_interphalangeal_3", center=((-0.08,0.96,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
@@ -249,7 +249,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="fingertip_r_carpal_distal_interphalangeal_3", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="fingertip_r_carpal_distal_interphalangeal_3", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(-0.08,0.96,0),(-0.09,1.05,0)])))])])])])]),]),
 #MC4_5
@@ -264,7 +264,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="MC45toCMC4", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="MC45toCMC4", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0.1,0.1,0),(0.1,0.2,0)]))),
 Shape(
@@ -273,7 +273,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="MC45toCMC5", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="MC45toCMC5", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0.1,0.1,0),(0.15,0.17,0)])))]),
 #ring finger
@@ -288,7 +288,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="CMC4toMCP4", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="CMC4toMCP4", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0.1,0.2,0),(0.1,0.47,0)])))]),
 HAnimJoint(name="r_metacarpophalangeal_4", DEF="hanim_r_metacarpophalangeal_4", center=((0.1,0.47,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
@@ -301,7 +301,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="MCP4toPIP4", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="MCP4toPIP4", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0.1,0.47,0),(0.1,0.7,0)])))]),
 HAnimJoint(name="r_carpal_proximal_interphalangeal_4", DEF="hanim_r_carpal_proximal_interphalangeal_4", center=((0.1,0.7,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
@@ -314,7 +314,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="PIP4toDIP4", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="PIP4toDIP4", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0.1,0.7,0),(0.1,0.93,0)])))]),
 HAnimJoint(name="r_carpal_distal_interphalangeal_4", DEF="hanim_r_carpal_distal_interphalangeal_4", center=((0.1,0.93,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
@@ -327,7 +327,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="fingertip_r_carpal_distal_interphalangeal_4", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="fingertip_r_carpal_distal_interphalangeal_4", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0.1,0.93,0),(0.1,1.0,0)])))])])])])]),
 #pinky finger
@@ -342,7 +342,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="CMC5toMCP5", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="CMC5toMCP5", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0.15,0.17,0),(0.2,0.4,0)])))]),
 HAnimJoint(name="r_metacarpophalangeal_5", DEF="hanim_r_metacarpophalangeal_5", center=((0.2,0.4,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
@@ -355,7 +355,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="MCP5toPIP5", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="MCP5toPIP5", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0.2,0.4,0),(0.23,0.63,0)])))]),
 HAnimJoint(name="r_carpal_proximal_interphalangeal_5", DEF="hanim_r_carpal_proximal_interphalangeal_5", center=((0.23,0.63,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
@@ -368,7 +368,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="PIP5toDIP5", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="PIP5toDIP5", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0.23,0.63,0),(0.25,0.79,0)])))]),
 HAnimJoint(name="r_carpal_distal_interphalangeal_5", DEF="hanim_r_carpal_distal_interphalangeal_5", center=((0.25,0.79,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
@@ -381,7 +381,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="fingertip_r_carpal_distal_interphalangeal_5", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="fingertip_r_carpal_distal_interphalangeal_5", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0.25,0.79,0),(0.26,0.85,0)])))])])])])]),]),]),])], joints=(
 HAnimJoint(USE="hanim_humanoid_root"),
@@ -433,4 +433,4 @@ HAnimSegment(USE="hanim_r_metacarpal_4"),
 HAnimSegment(USE="hanim_r_metacarpal_5"),
 HAnimSegment(USE="hanim_r_trapezium"),
 HAnimSegment(USE="hanim_r_trapezoid")])]))
-.XML())
+.XML()))
