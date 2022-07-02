@@ -3,7 +3,7 @@ x3d.py package 4.0.64.1 loaded, have fun with X3D Graphics!
 '''
 from x3d import *
 from x3d import SFBool
-print(
+print((
 X3D(profile="Immersive", version="4.0", 
 head=head(), 
 Scene=Scene(children=[
@@ -31,7 +31,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="TCtoTCN", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="TCtoTCN", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0,0,0),(0.0,-0.3,0)]))),
 Shape(
@@ -40,7 +40,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="TCtoCC", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="TCtoCC", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0,0,0),(0.2,0.3,0)])))]),
 #TCN
@@ -55,7 +55,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="TCNtoCN1", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="TCNtoCN1", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0.0,-0.3,0),(-0.1,-0.45,0)]))),
 Shape(
@@ -64,7 +64,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="TCNtoCN2", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="TCNtoCN2", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0.0,-0.3,0),(0.0,-0.45,0)]))),
 Shape(
@@ -73,7 +73,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="TCNtoCN3", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="TCNtoCN3", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0.0,-0.3,0),(0.1,-0.4,0)])))]),
 #CN1
@@ -88,7 +88,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="CN1toTMT1", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="CN1toTMT1", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(-0.1,-0.45,0),(-0.1,-0.6,0)])))]),
 HAnimJoint(name="l_tarsometatarsal_1", DEF="hanim_l_tarsometatarsal_1", center=((-0.1,-0.6,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
@@ -101,7 +101,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="TMT1toMTP1", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="TMT1toMTP1", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(-0.1,-0.6,0),(-0.1,-0.9,0)])))]),
 HAnimJoint(name="l_metatarsophalangeal_1", DEF="hanim_l_metatarsophalangeal_1", center=((-0.1,-0.9,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
@@ -114,7 +114,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="MTP1toIP1", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="MTP1toIP1", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(-0.1,-0.9,0),(-0.1,-1.05,0)])))]),
 HAnimJoint(name="l_tarsal_interphalangeal_1", DEF="hanim_l_tarsal_interphalangeal_1", center=((-0.1,-1.05,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
@@ -127,7 +127,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="tiptoe_l_tarsal_distal_interphalangeal_1", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="tiptoe_l_tarsal_distal_interphalangeal_1", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(-0.1,-1.05,0),(-0.1,-1.1,0)])))])])])])]),
 #CN2
@@ -142,7 +142,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="CN2toTMT2", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="CN2toTMT2", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0.0,-0.45,0),(0.05,-0.6,0)])))]),
 HAnimJoint(name="l_tarsometatarsal_2", DEF="hanim_l_tarsometatarsal_2", center=((0.05,-0.6,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
@@ -155,7 +155,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="TMT2toMTP2", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="TMT2toMTP2", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0.05,-0.6,0),(0.05,-0.9,0)])))]),
 HAnimJoint(name="l_metatarsophalangeal_2", DEF="hanim_l_metatarsophalangeal_2", center=((0.05,-0.9,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
@@ -168,7 +168,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="MTP2toPIP2", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="MTP2toPIP2", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0.05,-0.9,0),(0.05,-1.05,0)])))]),
 HAnimJoint(name="l_tarsal_proximal_interphalangeal_2", DEF="hanim_l_tarsal_proximal_interphalangeal_2", center=((0.05,-1.05,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
@@ -181,7 +181,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="PIP2toDIP2", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="PIP2toDIP2", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0.05,-1.05,0),(0.05,-1.12,0)])))]),
 HAnimJoint(name="l_tarsal_distal_interphalangeal_2", DEF="hanim_l_tarsal_distal_interphalangeal_2", center=((0.05,-1.12,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
@@ -194,7 +194,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="tiptoe_l_tarsal_distal_phalanx_2", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="tiptoe_l_tarsal_distal_phalanx_2", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0.05,-1.12,0),(0.05,-1.16,0)])))])])])])])]),
 #CN3
@@ -209,7 +209,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="CN3toTMT3", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="CN3toTMT3", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0.1,-0.4,0),(0.15,-0.6,0)])))]),
 HAnimJoint(name="l_tarsometatarsal_3", DEF="hanim_l_tarsometatarsal_3", center=((0.15,-0.6,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
@@ -222,7 +222,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="TMT3toMTP3", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="TMT3toMTP3", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0.15,-0.6,0),(0.15,-0.9,0)])))]),
 HAnimJoint(name="l_metatarsophalangeal_3", DEF="hanim_l_metatarsophalangeal_3", center=((0.15,-0.9,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
@@ -235,7 +235,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="MTP3toPIP3", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="MTP3toPIP3", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0.15,-0.9,0),(0.15,-1.05,0)])))]),
 HAnimJoint(name="l_tarsal_proximal_interphalangeal_3", DEF="hanim_l_tarsal_proximal_interphalangeal_3", center=((0.15,-1.05,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
@@ -248,7 +248,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="PIP3toDIP3", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="PIP3toDIP3", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0.15,-1.05,0),(0.15,-1.13,0)])))]),
 HAnimJoint(name="l_tarsal_distal_interphalangeal_3", DEF="hanim_l_tarsal_distal_interphalangeal_3", center=((0.15,-1.13,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
@@ -261,7 +261,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="tiptoe_l_tarsal_distal_interphalangeal_3", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="tiptoe_l_tarsal_distal_interphalangeal_3", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0.15,-1.13,0),(0.15,-1.16,0)])))])])])])])]),]),
 #CC
@@ -276,7 +276,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="CCtoTT", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="CCtoTT", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0.2,0.3,0),(0.21,-0.3,0)])))]),
 #TT
@@ -291,7 +291,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="TTtoTMT4", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="TTtoTMT4", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0.21,-0.3,0),(0.25,-0.58,0)]))),
 Shape(
@@ -300,7 +300,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="TTtoTMT5", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="TTtoTMT5", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0.21,-0.3,0),(0.33,-0.52,0)])))]),
 #TMT4
@@ -315,7 +315,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="TMT4toMTP4", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="TMT4toMTP4", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0.25,-0.58,0),(0.25,-0.87,0)])))]),
 HAnimJoint(name="l_metatarsophalangeal_4", DEF="hanim_l_metatarsophalangeal_4", center=((0.25,-0.87,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
@@ -328,7 +328,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="MTP4toPIP4", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="MTP4toPIP4", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0.25,-0.87,0),(0.25,-1.0,0)])))]),
 HAnimJoint(name="l_tarsal_proximal_interphalangeal_4", DEF="hanim_l_tarsal_proximal_interphalangeal_4", center=((0.25,-1.0,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
@@ -341,7 +341,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="PIP4toDIP4", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="PIP4toDIP4", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0.25,-1.0,0),(0.25,-1.1,0)])))]),
 HAnimJoint(name="l_tarsal_distal_interphalangeal_4", DEF="hanim_l_tarsal_distal_interphalangeal_4", center=((0.25,-1.1,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
@@ -354,7 +354,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="tiptoe_l_tarsal_distal_interphalangeal_4", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="tiptoe_l_tarsal_distal_interphalangeal_4", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0.25,-1.1,0),(0.25,-1.15,0)])))])])])])]),
 #TMT5
@@ -369,7 +369,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="TMT5toMTP5", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="TMT5toMTP5", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0.33,-0.52,0),(0.34,-0.8,0)])))]),
 HAnimJoint(name="l_metatarsophalangeal_5", DEF="hanim_l_metatarsophalangeal_5", center=((0.34,-0.8,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
@@ -382,7 +382,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="MTP5toPIP5", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="MTP5toPIP5", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0.34,-0.8,0),(0.34,-0.95,0)])))]),
 HAnimJoint(name="l_tarsal_proximal_interphalangeal_5", DEF="hanim_l_tarsal_proximal_interphalangeal_5", center=((0.34,-0.95,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
@@ -395,7 +395,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="PIP5toDIP5", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="PIP5toDIP5", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0.34,-0.95,0),(0.34,-1.05,0)])))]),
 HAnimJoint(name="l_tarsal_distal_interphalangeal_5", DEF="hanim_l_tarsal_distal_interphalangeal_5", center=((0.34,-1.05,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
@@ -408,7 +408,7 @@ Appearance(
 material=
 Material(emissiveColor=((1,1,1)))), 
 geometry=
-IndexedLineSet(DEF="tiptoe_l_tarsal_distal_interphalangeal_5", coordIndex=[int(0),int(1)], 
+IndexedLineSet(DEF="tiptoe_l_tarsal_distal_interphalangeal_5", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0.34,-1.05,0),(0.34,-1.08,0)])))])])])])]),]),]),]),])], joints=(
 HAnimJoint(USE="hanim_humanoid_root"),
@@ -464,4 +464,4 @@ HAnimSegment(USE="hanim_l_tarsal_proximal_phalanx_2"),
 HAnimSegment(USE="hanim_l_tarsal_proximal_phalanx_3"),
 HAnimSegment(USE="hanim_l_tarsal_proximal_phalanx_4"),
 HAnimSegment(USE="hanim_l_tarsal_proximal_phalanx_5")])]))
-.XML())
+.XML()))

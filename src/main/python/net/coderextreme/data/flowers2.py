@@ -3,7 +3,7 @@ x3d.py package 4.0.64.1 loaded, have fun with X3D Graphics!
 '''
 from x3d import *
 from x3d import SFBool
-print(
+print((
 X3D(profile="Immersive", version="3.0", 
 head=head(), 
 Scene=Scene(children=[
@@ -34,7 +34,7 @@ connect(nodeField="specularColor", protoField="specularColor"),
 connect(nodeField="transparency", protoField="transparency")
 ]))), 
 geometry=
-IndexedFaceSet(ccw=False, convex=False, coordIndex=[int(0),int(1),int(2),int(-1)], DEF="Orbit", 
+IndexedFaceSet(ccw=False, convex=False, coordIndex=[0,1,2,-1], DEF="Orbit", 
 coord=
 Coordinate(DEF="OrbitCoordinates", point=[(0,0,1),(0,1,0),(1,0,0)])))]),
 Script(DEF="OrbitScript", field=[field(name="set_fraction", accessType="inputOnly", type="SFFloat"),
@@ -63,4 +63,4 @@ fieldValue(name="diffuseColor", value=[0,0.5,1]),
 fieldValue(name="specularColor", value=[0,0.5,1]),
 fieldValue(name="transparency", value=0.5)
 ])])]))
-.XML())
+.XML()))

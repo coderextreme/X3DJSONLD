@@ -3,7 +3,7 @@ x3d.py package 4.0.64.1 loaded, have fun with X3D Graphics!
 '''
 from x3d import *
 from x3d import SFBool
-print(
+print((
 X3D(profile="Immersive", version="3.3", 
 head=head(), 
 Scene=Scene(children=[
@@ -23,4 +23,4 @@ field(name="spine", accessType="inputOutput", type="MFVec3f", value=[(-50,-50,0)
 ),
 ROUTE(fromNode="TourTime", fromField="cycleTime", toNode="MoveCylinder", toField="set_cycle"),
 ROUTE(fromNode="MoveCylinder", fromField="spine_changed", toNode="extrusion", toField="set_spine")])]))
-.XML())
+.XML()))

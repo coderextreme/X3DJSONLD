@@ -3,7 +3,7 @@ x3d.py package 4.0.64.1 loaded, have fun with X3D Graphics!
 '''
 from x3d import *
 from x3d import SFBool
-print(
+print((
 X3D(profile="Immersive", version="3.3", 
 head=head(), 
 Scene=Scene(children=[
@@ -97,4 +97,4 @@ ProtoInstance(name="n", fieldValue=[fieldValue(name="pos", value=[457.3999938964
 Anchor(url=[", ","javascript:window.open('https://coderextreme.net/X3DJSONLD/src/main/data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');javascript:window.open('./data/671.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"], description="UKan2", children=[
 ProtoInstance(name="r", fieldValue=[fieldValue(name="pos", value=[458.700012207031,0.100000001490116,-262.700012207031])
 ])])])]))
-.XML())
+.XML()))

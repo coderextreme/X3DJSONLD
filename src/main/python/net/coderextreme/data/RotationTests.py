@@ -3,7 +3,7 @@ x3d.py package 4.0.64.1 loaded, have fun with X3D Graphics!
 '''
 from x3d import *
 from x3d import SFBool
-print(
+print((
 X3D(profile="Immersive", version="3.3", 
 head=head(), 
 Scene=Scene(children=[
@@ -24,7 +24,7 @@ material=
 Material(diffuseColor=((0.9,0.9,0.9))))),
 Shape(DEF="AxisLinesShape", 
 geometry=
-IndexedLineSet(colorIndex=[int(0),int(1),int(2)], colorPerVertex=False, coordIndex=[int(0),int(1),int(-1),int(0),int(2),int(-1),int(0),int(3),int(-1)], 
+IndexedLineSet(colorIndex=[0,1,2], colorPerVertex=False, coordIndex=[0,1,-1,0,2,-1,0,3,-1], 
 coord=
 Coordinate(point=[(0,0,0),(1.0,0,0),(0,1.0,0),(0,0,1.0)]), 
 color=
@@ -71,4 +71,4 @@ ROUTE(fromField="value_changed", fromNode="Interpolator2", toField="set_rotation
 ROUTE(fromField="fraction_changed", fromNode="ClockTimer", toField="set_fraction", toNode="Interpolator3"),
 ROUTE(fromField="value_changed", fromNode="DiscreteFrameStepper", toField="set_fraction", toNode="Interpolator3"),
 ROUTE(fromField="value_changed", fromNode="Interpolator3", toField="set_rotation", toNode="Transform3"),]))
-.XML())
+.XML()))

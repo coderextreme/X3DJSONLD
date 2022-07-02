@@ -3,7 +3,7 @@ x3d.py package 4.0.64.1 loaded, have fun with X3D Graphics!
 '''
 from x3d import *
 from x3d import SFBool
-print(
+print((
 X3D(profile="Immersive", version="3.3", 
 head=head(), 
 Scene=Scene(children=[
@@ -24,7 +24,7 @@ Material(diffuseColor=((1,1,1))))),
 Transform(scale=((10,3,1)), children=[
 Shape(DEF="HeadlineClickSurface", 
 geometry=
-IndexedFaceSet(coordIndex=[int(0),int(1),int(2),int(3),int(-1)], solid=False, 
+IndexedFaceSet(coordIndex=[0,1,2,3,-1], solid=False, 
 coord=
 Coordinate(point=[(1,1,0),(1,-1,0),(-1,-1,0),(-1,1,0)])), 
 appearance=
@@ -71,7 +71,7 @@ Material(diffuseColor=((1,0,0.6))))),
 Transform(scale=((2,0.6,1)), children=[
 Shape(DEF="TransparentClickSurface", 
 geometry=
-IndexedFaceSet(coordIndex=[int(0),int(1),int(2),int(3),int(-1)], solid=False, 
+IndexedFaceSet(coordIndex=[0,1,2,3,-1], solid=False, 
 coord=
 Coordinate(point=[(1,1,0),(1,-1,0),(-1,-1,0),(-1,1,0)])), 
 appearance=
@@ -114,4 +114,4 @@ appearance=
 Appearance(USE="InterfaceAppearance")),
 Transform(scale=((1.8,0.6,1)), children=[
 Shape(USE="TransparentClickSurface")])])])]))
-.XML())
+.XML()))
