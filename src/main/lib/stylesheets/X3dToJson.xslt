@@ -3616,6 +3616,7 @@ POSSIBILITY OF SUCH DAMAGE.
 					($attributeName='previous') or
 					($attributeName='normalizeVelocity') or
 					($attributeName='rtpHeaderExpected') or
+					($attributeName='shadows') or
 					($attributeName='solid') or
 					($attributeName='uClosed') or ($attributeName='vClosed') or
 					($attributeName='viewAll') or

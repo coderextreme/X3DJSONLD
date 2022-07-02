@@ -1755,6 +1755,7 @@
 					($attributeName='normalizeVelocity') or
 					($attributeName='rtpHeaderExpected') or
 					($attributeName='solid') or
+					($attributeName='shadows') or
 					($attributeName='uClosed') or ($attributeName='vClosed') or
 					($attributeName='visible') or
 					($attributeName='viewAll') or
