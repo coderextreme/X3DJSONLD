@@ -2124,6 +2124,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
 					($attributeName='previous') or
 					($attributeName='normalizeVelocity') or
 					($attributeName='rtpHeaderExpected') or
+					($attributeName='shadows') or
 					($attributeName='solid') or
 					($attributeName='trackCurrentView') or
 					($attributeName='uClosed') or ($attributeName='vClosed') or
