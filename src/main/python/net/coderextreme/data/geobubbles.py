@@ -3,7 +3,7 @@ x3d.py package 4.0.64.1 loaded, have fun with X3D Graphics!
 '''
 from x3d import *
 from x3d import SFBool
-print(
+print((
 X3D(profile="Immersive", version="3.3", 
 head=head(), 
 Scene=Scene(children=[
@@ -34,4 +34,4 @@ ROUTE(fromNode="TourTime", fromField="cycleTime", toNode="RandomTourTime", toFie
 ROUTE(fromNode="RandomTourTime", fromField="position", toNode="TourPosition", toField="keyValue"),
 ROUTE(fromNode="TourTime", fromField="fraction_changed", toNode="TourPosition", toField="set_fraction"),
 ROUTE(fromNode="TourPosition", fromField="geovalue_changed", toNode="Tour", toField="set_position"),]))
-.XML())
+.XML()))

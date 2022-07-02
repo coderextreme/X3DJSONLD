@@ -3,7 +3,7 @@ x3d.py package 4.0.64.1 loaded, have fun with X3D Graphics!
 '''
 from x3d import *
 from x3d import SFBool
-print(
+print((
 X3D(profile="Immersive", version="3.3", 
 head=head(), 
 Scene=Scene(children=[
@@ -33,7 +33,7 @@ Appearance(
 material=
 Material(emissiveColor=((0.6,0.19607843,0.8)))), 
 geometry=
-IndexedLineSet(coordIndex=[int(0),int(1),int(2),int(3),int(4),int(0)], 
+IndexedLineSet(coordIndex=[0,1,2,3,4,0], 
 coord=
 Coordinate(point=[(0,1.5,0),(2,1.5,0),(2,1.5,-2),(-2,1.5,-2),(-2,1.5,0),(0,1.5,0)]))),
 PositionInterpolator(DEF="BoxPathAnimator", key=[float(0),float(0.125),float(0.375),float(0.625),float(0.875),float(1)], keyValue=[(0,1.5,0),(2,1.5,0),(2,1.5,-2),(-2,1.5,-2),(-2,1.5,0),(0,1.5,0)]),
@@ -260,4 +260,4 @@ ShaderProgram(DEF="TestShader2", type="VERTEX")]),
 ProtoInstance(name="ShaderProto", DEF="TestShader3"),
 ComposedShader(DEF="TestShader4", parts=[
 ShaderPart(DEF="TestShader5", type="VERTEX")])])),]))
-.XML())
+.XML()))

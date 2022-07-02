@@ -3,7 +3,7 @@ x3d.py package 4.0.64.1 loaded, have fun with X3D Graphics!
 '''
 from x3d import *
 from x3d import SFBool
-print(
+print((
 X3D(profile="Immersive", version="3.3", 
 head=head(), 
 Scene=Scene(children=[
@@ -146,4 +146,4 @@ material=
 Material(diffuseColor=((1,1,1)), emissiveColor=((0,0.300000011920929,1)))), 
 geometry=
 Sphere(radius=5.10000002384186))])])])]))
-.XML())
+.XML()))

@@ -3,7 +3,7 @@ x3d.py package 4.0.64.1 loaded, have fun with X3D Graphics!
 '''
 from x3d import *
 from x3d import SFBool
-print(
+print((
 X3D(profile="Immersive", version="4.0", 
 head=head(), 
 Scene=Scene(children=[
@@ -24,7 +24,7 @@ HAnimSegment(name="pelvis", DEF="hanim_pelvis", children=[
 Transform(translation=((0.0,0.9149,0.0016)), children=[
 Shape(DEF="DiamondShape", 
 geometry=
-IndexedFaceSet(coordIndex=[int(0),int(1),int(2),int(-1),int(0),int(2),int(3),int(-1),int(0),int(3),int(4),int(-1),int(0),int(4),int(1),int(-1),int(5),int(2),int(1),int(-1),int(5),int(3),int(2),int(-1),int(5),int(4),int(3),int(-1),int(5),int(1),int(4),int(-1)], creaseAngle=0.5, 
+IndexedFaceSet(coordIndex=[0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1], creaseAngle=0.5, 
 coord=
 Coordinate(DEF="points", point=[(0,0.01,0),(-0.01,0,0),(0,0,0.01),(0.01,0,0),(0,0,-0.01),(0,-0.01,0)])), 
 appearance=
@@ -245,4 +245,4 @@ HAnimSite(USE="hanim_r_tragion_pt"),
 HAnimSite(USE="hanim_l_tragion_pt"),
 HAnimSite(USE="hanim_l_ulnar_styloid_pt"),
 HAnimSite(USE="hanim_r_ulnar_styloid_pt")])]))
-.XML())
+.XML()))

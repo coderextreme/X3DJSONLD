@@ -3,7 +3,7 @@ x3d.py package 4.0.64.1 loaded, have fun with X3D Graphics!
 '''
 from x3d import *
 from x3d import SFBool
-print(
+print((
 X3D(profile="Immersive", version="4.0", 
 head=head(), 
 Scene=Scene(children=[
@@ -51,7 +51,7 @@ Material(diffuseColor=((1,0.5,0)), transparency=0.5)))]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0,0.824,0.0277),(0,0.9149,0.0016)]), 
 color=
@@ -60,7 +60,7 @@ ColorRGBA(DEF="HAnimSegmentLineColorRGBA", color=[(1,1,0,1),(1,1,0,0.1)]))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0,0.824,0.0277),(0.0028,1.0568,-0.0776)]), 
 color=
@@ -76,7 +76,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0,0.9149,0.0016),(0.0961,0.9124,-0.0001)]), 
 color=
@@ -85,7 +85,7 @@ ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0,0.9149,0.0016),(-0.0961,0.9124,-0.0001)]), 
 color=
@@ -94,7 +94,7 @@ ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0,0.9149,0.0016),(-0.1525,1.0628,0.0035)]), 
 color=
@@ -103,7 +103,7 @@ ColorRGBA(DEF="HAnimSiteLineColorRGBA", color=[(1,0,0,1),(1,0,0,0.1)]))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0,0.9149,0.0016),(-0.1689,0.8419,0.0352)]), 
 color=
@@ -112,7 +112,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0,0.9149,0.0016),(0.1612,1.0537,0.0008)]), 
 color=
@@ -121,7 +121,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0,0.9149,0.0016),(0.1677,0.8336,0.0303)]), 
 color=
@@ -130,7 +130,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0,0.9149,0.0016),(-0.0887,1.0021,0.1112)]), 
 color=
@@ -139,7 +139,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0,0.9149,0.0016),(0.0925,0.9983,0.1052)]), 
 color=
@@ -148,7 +148,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0,0.9149,0.0016),(-0.0716,1.019,-0.1138)]), 
 color=
@@ -157,7 +157,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0,0.9149,0.0016),(0.0774,1.019,-0.1151)]), 
 color=
@@ -166,7 +166,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0,0.9149,0.0016),(0.0034,0.8266,0.0257)]), 
 color=
@@ -177,7 +177,7 @@ HAnimSite(name="r_iliocristale_pt", DEF="hanim_r_iliocristale_pt", translation=(
 TouchSensor(description="HAnimSite r_iliocristale_pt"),
 Shape(DEF="HAnimSiteShape", 
 geometry=
-IndexedFaceSet(DEF="DiamondIFS", coordIndex=[int(0),int(1),int(2),int(-1),int(0),int(2),int(3),int(-1),int(0),int(3),int(4),int(-1),int(0),int(4),int(1),int(-1),int(5),int(2),int(1),int(-1),int(5),int(3),int(2),int(-1),int(5),int(4),int(3),int(-1),int(5),int(1),int(4),int(-1)], creaseAngle=0.5, solid=False, 
+IndexedFaceSet(DEF="DiamondIFS", coordIndex=[0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1], creaseAngle=0.5, solid=False, 
 coord=
 Coordinate(point=[(0,0.008,0),(-0.008,0,0),(0,0,0.008),(0.008,0,0),(0,0,-0.008),(0,-0.008,0)])), 
 appearance=
@@ -235,7 +235,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0961,0.9124,-0.0001),(0.104,0.4867,0.0308)]), 
 color=
@@ -244,7 +244,7 @@ ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0961,0.9124,-0.0001),(0.0993,0.4881,-0.0309)]), 
 color=
@@ -253,7 +253,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0961,0.9124,-0.0001),(0.1598,0.4967,0.0297)]), 
 color=
@@ -262,7 +262,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0961,0.9124,-0.0001),(0.0398,0.4946,0.0303)]), 
 color=
@@ -293,7 +293,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.104,0.4867,0.0308),(0.1101,0.0656,-0.0736)]), 
 color=
@@ -309,7 +309,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.1101,0.0656,-0.0736),(0.1086,0.0001,-0.0368)]), 
 color=
@@ -318,7 +318,7 @@ ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.1101,0.0656,-0.0736),(0.1308,0.0597,-0.1032)]), 
 color=
@@ -327,7 +327,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.1101,0.0656,-0.0736),(0.089,0.0716,-0.0881)]), 
 color=
@@ -336,7 +336,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.1101,0.0656,-0.0736),(0.089,0.0575,-0.0943)]), 
 color=
@@ -345,7 +345,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.1101,0.0656,-0.0736),(0.0974,0.0259,-0.1171)]), 
 color=
@@ -381,7 +381,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.1086,0.0001,-0.0368),(0.1086,0.0001,0.0368)]), 
 color=
@@ -397,7 +397,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.1086,0.0001,0.0368),(0.1086,0,0.0762)]), 
 color=
@@ -406,7 +406,7 @@ ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.1086,0.0001,0.0368),(0.0816,0.0232,0.0106)]), 
 color=
@@ -427,7 +427,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.1086,0,0.0762),(0.1354,0.0016,0.1476)]), 
 color=
@@ -436,7 +436,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.1086,0,0.0762),(0.1825,0.007,0.0928)]), 
 color=
@@ -445,7 +445,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.1086,0,0.0762),(0.1195,0.0079,0.1433)]), 
 color=
@@ -476,7 +476,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.0961,0.9124,-0.0001),(-0.104,0.4867,0.0308)]), 
 color=
@@ -485,7 +485,7 @@ ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.0961,0.9124,-0.0001),(-0.0825,0.4932,-0.0326)]), 
 color=
@@ -494,7 +494,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.0961,0.9124,-0.0001),(-0.1421,0.4992,0.031)]), 
 color=
@@ -503,7 +503,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.0961,0.9124,-0.0001),(-0.0221,0.5014,0.0289)]), 
 color=
@@ -534,7 +534,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.104,0.4867,0.0308),(-0.1101,0.0656,-0.0736)]), 
 color=
@@ -550,7 +550,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.1101,0.0656,-0.0736),(-0.1086,0.0001,-0.0368)]), 
 color=
@@ -559,7 +559,7 @@ ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.1101,0.0656,-0.0736),(-0.1006,0.0658,-0.1075)]), 
 color=
@@ -568,7 +568,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.1101,0.0656,-0.0736),(-0.0591,0.076,-0.0928)]), 
 color=
@@ -577,7 +577,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.1101,0.0656,-0.0736),(-0.0603,0.061,-0.1002)]), 
 color=
@@ -586,7 +586,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.1101,0.0656,-0.0736),(-0.0692,0.0297,-0.1221)]), 
 color=
@@ -622,7 +622,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.1086,0.0001,-0.0368),(-0.1086,0.0001,0.0368)]), 
 color=
@@ -638,7 +638,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.1086,0.0001,0.0368),(-0.1086,0,0.0762)]), 
 color=
@@ -647,7 +647,7 @@ ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.1086,0.0001,0.0368),(-0.0521,0.026,0.0127)]), 
 color=
@@ -668,7 +668,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.1086,0,0.0762),(-0.1043,0.0227,0.145)]), 
 color=
@@ -677,7 +677,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.1086,0,0.0762),(-0.1523,0.0166,0.0895)]), 
 color=
@@ -686,7 +686,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.1086,0,0.0762),(-0.0883,0.0134,0.1383)]), 
 color=
@@ -717,7 +717,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0028,1.0568,-0.0776),(0.0035,1.0925,-0.0787)]), 
 color=
@@ -726,7 +726,7 @@ ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0028,1.0568,-0.0776),(0,1.0915,-0.1091)]), 
 color=
@@ -735,7 +735,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0028,1.0568,-0.0776),(0.0069,1.0966,0.1017)]), 
 color=
@@ -761,7 +761,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0035,1.0925,-0.0787),(0.0041,1.1276,-0.0796)]), 
 color=
@@ -777,7 +777,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0041,1.1276,-0.0796),(0.0045,1.1546,-0.08)]), 
 color=
@@ -793,7 +793,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0045,1.1546,-0.08),(0.0048,1.1912,-0.0805)]), 
 color=
@@ -802,7 +802,7 @@ ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0045,1.1546,-0.08),(-0.0711,1.1941,0.1016)]), 
 color=
@@ -811,7 +811,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0045,1.1546,-0.08),(0.0871,1.1925,0.0992)]), 
 color=
@@ -820,7 +820,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0045,1.1546,-0.08),(0.0049,1.1908,-0.1113)]), 
 color=
@@ -851,7 +851,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0048,1.1912,-0.0805),(0.0051,1.2278,-0.0808)]), 
 color=
@@ -867,7 +867,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0051,1.2278,-0.0808),(0.0053,1.2679,-0.081)]), 
 color=
@@ -883,7 +883,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0053,1.2679,-0.081),(0.0056,1.2848,-0.0822)]), 
 color=
@@ -899,7 +899,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0056,1.2848,-0.0822),(0.0057,1.3126,-0.0838)]), 
 color=
@@ -908,7 +908,7 @@ ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0056,1.2848,-0.0822),(0.0085,1.2995,0.1147)]), 
 color=
@@ -929,7 +929,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0057,1.3126,-0.0838),(0.0057,1.3382,-0.0845)]), 
 color=
@@ -938,7 +938,7 @@ ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0057,1.3126,-0.0838),(-0.0736,1.3385,0.1217)]), 
 color=
@@ -947,7 +947,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0057,1.3126,-0.0838),(0.0918,1.3382,0.1192)]), 
 color=
@@ -973,7 +973,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0057,1.3382,-0.0845),(0.0058,1.3625,-0.0833)]), 
 color=
@@ -989,7 +989,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0058,1.3625,-0.0833),(0.0059,1.3866,-0.08)]), 
 color=
@@ -1005,7 +1005,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0059,1.3866,-0.08),(0.006,1.4102,-0.0745)]), 
 color=
@@ -1021,7 +1021,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.006,1.4102,-0.0745),(0.0061,1.432,-0.0675)]), 
 color=
@@ -1037,7 +1037,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0061,1.432,-0.0675),(0.0062,1.4583,-0.057)]), 
 color=
@@ -1053,7 +1053,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0062,1.4583,-0.057),(0.0063,1.4761,-0.0484)]), 
 color=
@@ -1069,7 +1069,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0063,1.4761,-0.0484),(0.0065,1.4951,-0.0387)]), 
 color=
@@ -1085,7 +1085,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0065,1.4951,-0.0387),(0.0066,1.5132,-0.0301)]), 
 color=
@@ -1094,7 +1094,7 @@ ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0065,1.4951,-0.0387),(0.082,1.4488,-0.0353)]), 
 color=
@@ -1103,7 +1103,7 @@ ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0065,1.4951,-0.0387),(-0.082,1.4488,-0.0353)]), 
 color=
@@ -1112,7 +1112,7 @@ ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0065,1.4951,-0.0387),(0.0084,1.4714,0.0551)]), 
 color=
@@ -1121,7 +1121,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0065,1.4951,-0.0387),(0.0064,1.52,-0.0815)]), 
 color=
@@ -1147,7 +1147,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0066,1.5132,-0.0301),(0.0066,1.5357,-0.0143)]), 
 color=
@@ -1156,7 +1156,7 @@ ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0066,1.5132,-0.0301),(-0.0419,1.5149,-0.022)]), 
 color=
@@ -1165,7 +1165,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0066,1.5132,-0.0301),(0.0646,1.5141,-0.038)]), 
 color=
@@ -1191,7 +1191,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0066,1.5357,-0.0143),(0.0066,1.552,-0.0082)]), 
 color=
@@ -1207,7 +1207,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0066,1.552,-0.0082),(0.0066,1.5662,-0.0084)]), 
 color=
@@ -1223,7 +1223,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0066,1.5662,-0.0084),(0.0066,1.58,-0.0103)]), 
 color=
@@ -1239,7 +1239,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0066,1.58,-0.0103),(0.0066,1.5928,-0.0103)]), 
 color=
@@ -1255,7 +1255,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0066,1.5928,-0.0103),(0.0066,1.6144,-0.0034)]), 
 color=
@@ -1271,7 +1271,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0066,1.6144,-0.0034),(0.0044,1.6209,0.0236)]), 
 color=
@@ -1287,7 +1287,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0044,1.6209,0.0236),(0.0336,1.6332,0.0502)]), 
 color=
@@ -1296,7 +1296,7 @@ ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0044,1.6209,0.0236),(0.0336,1.6332,0.0502)]), 
 color=
@@ -1305,7 +1305,7 @@ ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0044,1.6209,0.0236),(0.0336,1.635,0.0506)]), 
 color=
@@ -1314,7 +1314,7 @@ ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0044,1.6209,0.0236),(-0.0336,1.6332,0.0502)]), 
 color=
@@ -1323,7 +1323,7 @@ ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0044,1.6209,0.0236),(-0.0336,1.6332,0.0502)]), 
 color=
@@ -1332,7 +1332,7 @@ ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0044,1.6209,0.0236),(-0.0336,1.635,0.0506)]), 
 color=
@@ -1341,7 +1341,7 @@ ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0044,1.6209,0.0236),(0.0,1.63,0.015)]), 
 color=
@@ -1350,7 +1350,7 @@ ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0044,1.6209,0.0236),(0.005,1.7504,0.0055)]), 
 color=
@@ -1359,7 +1359,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0044,1.6209,0.0236),(0.0058,1.6316,0.0852)]), 
 color=
@@ -1368,7 +1368,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0044,1.6209,0.0236),(-0.0237,1.6171,0.0752)]), 
 color=
@@ -1377,7 +1377,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0044,1.6209,0.0236),(0.0341,1.6171,0.0752)]), 
 color=
@@ -1386,7 +1386,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0044,1.6209,0.0236),(0.0061,1.541,0.0805)]), 
 color=
@@ -1395,7 +1395,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0044,1.6209,0.0236),(-0.0646,1.6347,0.0302)]), 
 color=
@@ -1404,7 +1404,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0044,1.6209,0.0236),(-0.052,1.5529,0.0347)]), 
 color=
@@ -1413,7 +1413,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0044,1.6209,0.0236),(0.0739,1.6348,0.0282)]), 
 color=
@@ -1422,7 +1422,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0044,1.6209,0.0236),(0.0631,1.553,0.033)]), 
 color=
@@ -1431,7 +1431,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0044,1.6209,0.0236),(0.0039,1.5972,-0.0796)]), 
 color=
@@ -1499,7 +1499,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0336,1.6332,0.0502),(0.034,1.64,0.05)]), 
 color=
@@ -1517,7 +1517,7 @@ LOD(forceTransitions=True, range=[float(0.04)], children=[
 WorldInfo(info=["hide diamond when close"]),
 Shape(DEF="HAnimSiteViewpointShape", 
 geometry=
-IndexedFaceSet(DEF="SiteViewpointDiamondIFS", coordIndex=[int(0),int(1),int(2),int(-1),int(0),int(2),int(3),int(-1),int(0),int(3),int(4),int(-1),int(0),int(4),int(1),int(-1),int(5),int(2),int(1),int(-1),int(5),int(3),int(2),int(-1),int(5),int(4),int(3),int(-1),int(5),int(1),int(4),int(-1)], creaseAngle=0.5, 
+IndexedFaceSet(DEF="SiteViewpointDiamondIFS", coordIndex=[0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1], creaseAngle=0.5, 
 coord=
 Coordinate(point=[(0,0.01,0),(-0.01,0,0),(0,0,0.01),(0.01,0,0),(0,0,-0.01),(0,-0.01,0)])), 
 appearance=
@@ -1549,7 +1549,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.0336,1.6332,0.0502),(-0.034,1.64,0.05)]), 
 color=
@@ -1593,7 +1593,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0,1.63,0.015),(0.045,1.63,0.0)]), 
 color=
@@ -1602,7 +1602,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0,1.63,0.015),(-0.045,1.63,0.0)]), 
 color=
@@ -1628,7 +1628,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.082,1.4488,-0.0353),(0.0962,1.4269,-0.0424)]), 
 color=
@@ -1637,7 +1637,7 @@ ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.082,1.4488,-0.0353),(0.0271,1.4943,0.0394)]), 
 color=
@@ -1646,7 +1646,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.082,1.4488,-0.0353),(0.2032,1.476,-0.049)]), 
 color=
@@ -1655,7 +1655,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.082,1.4488,-0.0353),(0.1777,1.4065,-0.0075)]), 
 color=
@@ -1664,7 +1664,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.082,1.4488,-0.0353),(0.1706,1.4072,-0.0875)]), 
 color=
@@ -1700,7 +1700,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.0962,1.4269,-0.0424),(0.2029,1.4376,-0.0387)]), 
 color=
@@ -1716,7 +1716,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.2029,1.4376,-0.0387),(0.2014,1.1357,-0.0682)]), 
 color=
@@ -1725,7 +1725,7 @@ ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.2029,1.4376,-0.0387),(0.228,1.1482,-0.11)]), 
 color=
@@ -1746,7 +1746,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.2014,1.1357,-0.0682),(0.1984,0.8663,-0.0583)]), 
 color=
@@ -1755,7 +1755,7 @@ ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.2014,1.1357,-0.0682),(0.1901,0.8645,-0.0415)]), 
 color=
@@ -1764,7 +1764,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.2014,1.1357,-0.0682),(0.1962,1.1375,-0.1123)]), 
 color=
@@ -1773,7 +1773,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.2014,1.1357,-0.0682),(0.1735,1.1272,-0.1113)]), 
 color=
@@ -1782,7 +1782,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.2014,1.1357,-0.0682),(0.2182,1.1212,-0.1167)]), 
 color=
@@ -1818,7 +1818,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.1984,0.8663,-0.0583),(0.1924,0.8472,-0.0534)]), 
 color=
@@ -1827,7 +1827,7 @@ ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.1984,0.8663,-0.0583),(0.1983,0.8024,-0.028)]), 
 color=
@@ -1836,7 +1836,7 @@ ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.1984,0.8663,-0.0583),(0.1987,0.8029,-0.053)]), 
 color=
@@ -1845,7 +1845,7 @@ ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.1984,0.8663,-0.0583),(0.1956,0.8019,-0.0794)]), 
 color=
@@ -1854,7 +1854,7 @@ ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.1984,0.8663,-0.0583),(0.1925,0.8066,-0.1036)]), 
 color=
@@ -1863,7 +1863,7 @@ ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.1984,0.8663,-0.0583),(0.2009,0.8139,-0.0237)]), 
 color=
@@ -1872,7 +1872,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.1984,0.8663,-0.0583),(0.2142,0.8529,-0.0648)]), 
 color=
@@ -1881,7 +1881,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.1984,0.8663,-0.0583),(0.1929,0.786,-0.1122)]), 
 color=
@@ -1890,7 +1890,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.1984,0.8663,-0.0583),(0.3,0.75,0.45)]), 
 color=
@@ -1933,7 +1933,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.1924,0.8472,-0.0534),(0.1951,0.8226,0.0246)]), 
 color=
@@ -1949,7 +1949,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.1951,0.8226,0.0246),(0.1955,0.8159,0.0464)]), 
 color=
@@ -1965,7 +1965,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.1955,0.8159,0.0464),(0.1982,0.8061,0.0759)]), 
 color=
@@ -1986,7 +1986,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.1983,0.8024,-0.028),(0.1983,0.7815,-0.028)]), 
 color=
@@ -2002,7 +2002,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.1983,0.7815,-0.028),(0.2017,0.7363,-0.0248)]), 
 color=
@@ -2018,7 +2018,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.2017,0.7363,-0.0248),(0.2028,0.7139,-0.0236)]), 
 color=
@@ -2034,7 +2034,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.2028,0.7139,-0.0236),(0.2089,0.6858,-0.0245)]), 
 color=
@@ -2043,7 +2043,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.2028,0.7139,-0.0236),(0.2056,0.6743,-0.0482)]), 
 color=
@@ -2069,7 +2069,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.1987,0.8029,-0.053),(0.1987,0.7818,-0.053)]), 
 color=
@@ -2085,7 +2085,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.1987,0.7818,-0.053),(0.2013,0.7273,-0.0503)]), 
 color=
@@ -2101,7 +2101,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.2013,0.7273,-0.0503),(0.2026,0.7011,-0.0494)]), 
 color=
@@ -2117,7 +2117,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.2026,0.7011,-0.0494),(0.208,0.6731,-0.0491)]), 
 color=
@@ -2138,7 +2138,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.1956,0.8019,-0.0794),(0.1956,0.7815,-0.0794)]), 
 color=
@@ -2154,7 +2154,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.1956,0.7815,-0.0794),(0.1973,0.7287,-0.0777)]), 
 color=
@@ -2170,7 +2170,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.1973,0.7287,-0.0777),(0.1983,0.7045,-0.0767)]), 
 color=
@@ -2186,7 +2186,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.1983,0.7045,-0.0767),(0.2035,0.675,-0.0756)]), 
 color=
@@ -2207,7 +2207,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.1925,0.8066,-0.1036),(0.1925,0.7866,-0.1036)]), 
 color=
@@ -2223,7 +2223,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.1925,0.7866,-0.1036),(0.1938,0.7452,-0.1024)]), 
 color=
@@ -2239,7 +2239,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.1938,0.7452,-0.1024),(0.1948,0.7277,-0.1017)]), 
 color=
@@ -2255,7 +2255,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(0.1948,0.7277,-0.1017),(0.2014,0.7009,-0.1012)]), 
 color=
@@ -2276,7 +2276,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.082,1.4488,-0.0353),(-0.0962,1.4269,-0.0424)]), 
 color=
@@ -2285,7 +2285,7 @@ ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.082,1.4488,-0.0353),(-0.0115,1.4943,0.04)]), 
 color=
@@ -2294,7 +2294,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.082,1.4488,-0.0353),(-0.1905,1.4791,-0.0431)]), 
 color=
@@ -2303,7 +2303,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.082,1.4488,-0.0353),(-0.1626,1.4072,-0.0031)]), 
 color=
@@ -2312,7 +2312,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.082,1.4488,-0.0353),(-0.1603,1.4098,-0.0826)]), 
 color=
@@ -2348,7 +2348,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.0962,1.4269,-0.0424),(-0.2029,1.4376,-0.0387)]), 
 color=
@@ -2364,7 +2364,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.2029,1.4376,-0.0387),(-0.2014,1.1357,-0.0682)]), 
 color=
@@ -2373,7 +2373,7 @@ ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.2029,1.4376,-0.0387),(-0.2224,1.1517,-0.1033)]), 
 color=
@@ -2394,7 +2394,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.2014,1.1357,-0.0682),(-0.1984,0.8663,-0.0583)]), 
 color=
@@ -2403,7 +2403,7 @@ ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.2014,1.1357,-0.0682),(-0.1884,0.8676,-0.036)]), 
 color=
@@ -2412,7 +2412,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.2014,1.1357,-0.0682),(-0.1907,1.1405,-0.1065)]), 
 color=
@@ -2421,7 +2421,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.2014,1.1357,-0.0682),(-0.168,1.1298,-0.1062)]), 
 color=
@@ -2430,7 +2430,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.2014,1.1357,-0.0682),(-0.213,1.1305,-0.1091)]), 
 color=
@@ -2466,7 +2466,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.1984,0.8663,-0.0583),(-0.1924,0.8472,-0.0534)]), 
 color=
@@ -2475,7 +2475,7 @@ ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.1984,0.8663,-0.0583),(-0.1983,0.8024,-0.028)]), 
 color=
@@ -2484,7 +2484,7 @@ ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.1984,0.8663,-0.0583),(-0.1987,0.8029,-0.053)]), 
 color=
@@ -2493,7 +2493,7 @@ ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.1984,0.8663,-0.0583),(-0.1956,0.8019,-0.0794)]), 
 color=
@@ -2502,7 +2502,7 @@ ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.1984,0.8663,-0.0583),(-0.1925,0.8066,-0.1036)]), 
 color=
@@ -2511,7 +2511,7 @@ ColorRGBA(USE="HAnimSegmentLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.1984,0.8663,-0.0583),(-0.1977,0.8169,-0.0177)]), 
 color=
@@ -2520,7 +2520,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.1984,0.8663,-0.0583),(-0.2117,0.8562,-0.0584)]), 
 color=
@@ -2529,7 +2529,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.1984,0.8663,-0.0583),(-0.1929,0.789,-0.1064)]), 
 color=
@@ -2538,7 +2538,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.1984,0.8663,-0.0583),(-0.3,0.75,0.45)]), 
 color=
@@ -2581,7 +2581,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.1924,0.8472,-0.0534),(-0.1951,0.8226,0.0246)]), 
 color=
@@ -2597,7 +2597,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.1951,0.8226,0.0246),(-0.1955,0.8159,0.0464)]), 
 color=
@@ -2613,7 +2613,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.1955,0.8159,0.0464),(-0.1869,0.809,0.082)]), 
 color=
@@ -2634,7 +2634,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.1983,0.8024,-0.028),(-0.1983,0.7815,-0.028)]), 
 color=
@@ -2650,7 +2650,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.1983,0.7815,-0.028),(-0.2017,0.7363,-0.0248)]), 
 color=
@@ -2666,7 +2666,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.2017,0.7363,-0.0248),(-0.2028,0.7139,-0.0236)]), 
 color=
@@ -2682,7 +2682,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.2028,0.7139,-0.0236),(-0.198,0.6883,-0.018)]), 
 color=
@@ -2691,7 +2691,7 @@ ColorRGBA(USE="HAnimSiteLineColorRGBA"))),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.2028,0.7139,-0.0236),(-0.1941,0.6772,-0.0423)]), 
 color=
@@ -2717,7 +2717,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.1987,0.8029,-0.053),(-0.1987,0.7818,-0.053)]), 
 color=
@@ -2733,7 +2733,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.1987,0.7818,-0.053),(-0.2013,0.7273,-0.0503)]), 
 color=
@@ -2749,7 +2749,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.2013,0.7273,-0.0503),(-0.2026,0.7011,-0.0494)]), 
 color=
@@ -2765,7 +2765,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.2026,0.7011,-0.0494),(-0.1969,0.6758,-0.0427)]), 
 color=
@@ -2786,7 +2786,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.1956,0.8019,-0.0794),(-0.1956,0.7815,-0.0794)]), 
 color=
@@ -2802,7 +2802,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.1956,0.7815,-0.0794),(-0.1973,0.7287,-0.0777)]), 
 color=
@@ -2818,7 +2818,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.1973,0.7287,-0.0777),(-0.1983,0.7045,-0.0767)]), 
 color=
@@ -2834,7 +2834,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.1983,0.7045,-0.0767),(-0.1934,0.6778,-0.0693)]), 
 color=
@@ -2855,7 +2855,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.1925,0.8066,-0.1036),(-0.1925,0.7866,-0.1036)]), 
 color=
@@ -2871,7 +2871,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.1925,0.7866,-0.1036),(-0.1938,0.7452,-0.1024)]), 
 color=
@@ -2887,7 +2887,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.1938,0.7452,-0.1024),(-0.1948,0.7277,-0.1017)]), 
 color=
@@ -2903,7 +2903,7 @@ Shape(USE="HAnimJointShape")]),
 
 Shape(
 geometry=
-LineSet(vertexCount=[int(2)], 
+LineSet(vertexCount=[2], 
 coord=
 Coordinate(point=[(-0.1948,0.7277,-0.1017),(-0.1938,0.7035,-0.0949)]), 
 color=
@@ -3364,4 +3364,4 @@ HAnimSite(USE="hanim_r_trochanterion_pt"),
 HAnimSite(USE="hanim_l_trochanterion_pt"),
 HAnimSite(USE="hanim_l_ulnar_styloid_pt"),
 HAnimSite(USE="hanim_r_ulnar_styloid_pt")]),]))
-.XML())
+.XML()))

@@ -3,7 +3,7 @@ x3d.py package 4.0.64.1 loaded, have fun with X3D Graphics!
 '''
 from x3d import *
 from x3d import SFBool
-print(
+print((
 X3D(profile="Interchange", version="3.0", 
 head=head(), 
 Scene=Scene(children=[
@@ -22,7 +22,7 @@ Material(),
 texture=
 PixelTexture(image=[2,2,4,4278190335,16711935,4294967295,4294902015], repeatS=False, repeatT=False)), 
 geometry=
-IndexedFaceSet(coordIndex=[int(0),int(1),int(3),int(2),int(-1),int(4),int(5),int(7),int(6),int(-1),int(6),int(7),int(1),int(0),int(-1),int(2),int(3),int(5),int(4),int(-1),int(6),int(0),int(2),int(4),int(-1),int(1),int(7),int(5),int(3),int(-1)], 
+IndexedFaceSet(coordIndex=[0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1], 
 coord=
 Coordinate(point=[(-2,1.5,1),(-2,-1.5,1),(2,1.5,1),(2,-1.5,1),(2,1.5,-1),(2,-1.5,-1),(-2,1.5,-1),(-2,-1.5,-1)])))]))
-.XML())
+.XML()))

@@ -3,7 +3,7 @@ x3d.py package 4.0.64.1 loaded, have fun with X3D Graphics!
 '''
 from x3d import *
 from x3d import SFBool
-print(
+print((
 X3D(profile="Immersive", version="3.3", 
 head=head(), 
 Scene=Scene(children=[
@@ -83,4 +83,4 @@ IMPORT(AS="someInlineRoot", importedDEF="someName", inlineDEF="someInline"),
 PositionInterpolator(DEF="StayInPlace", key=[float(0),float(1)], keyValue=[(0,0,0),(0,0,0)]),
 ROUTE(fromField="fraction_changed", fromNode="Clock", toField="set_fraction", toNode="StayInPlace"),
 ROUTE(fromField="value_changed", fromNode="StayInPlace", toField="set_translation", toNode="someInlineRoot"),]))
-.XML())
+.XML()))

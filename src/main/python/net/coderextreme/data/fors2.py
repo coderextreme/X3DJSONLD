@@ -3,7 +3,7 @@ x3d.py package 4.0.64.1 loaded, have fun with X3D Graphics!
 '''
 from x3d import *
 from x3d import SFBool
-print(
+print((
 X3D(profile="Immersive", version="3.3", 
 head=head(), 
 Scene=Scene(children=[
@@ -67,4 +67,4 @@ fieldValue(name="positionB", value=[50,50,50])
 ])]),
 ROUTE(fromNode="nodeA", fromField="position", toNode="linkA", toField="positionA"),
 ROUTE(fromNode="nodeB", fromField="position", toNode="linkA", toField="positionB")]))
-.XML())
+.XML()))

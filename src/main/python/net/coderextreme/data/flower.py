@@ -3,7 +3,7 @@ x3d.py package 4.0.64.1 loaded, have fun with X3D Graphics!
 '''
 from x3d import *
 from x3d import SFBool
-print(
+print((
 X3D(profile="Immersive", version="3.3", 
 head=head(), 
 Scene=Scene(children=[
@@ -18,7 +18,7 @@ Appearance(
 material=
 Material(transparency=0.1, diffuseColor=((0.9,0.3,0.3)), specularColor=((0.8,0.8,0.8)), shininess=0.145)), 
 geometry=
-IndexedFaceSet(ccw=False, convex=False, coordIndex=[int(0),int(1),int(2),int(-1)], DEF="Orbit", 
+IndexedFaceSet(ccw=False, convex=False, coordIndex=[0,1,2,-1], DEF="Orbit", 
 coord=
 Coordinate(DEF="OrbitCoordinates", point=[(0,0,1),(0,1,0),(1,0,0)])))]),
 Script(DEF="OrbitScript", field=[field(name="set_fraction", accessType="inputOnly", type="SFFloat"),
@@ -31,4 +31,4 @@ TimeSensor(DEF="Clock", cycleInterval=16, loop=True),
 ROUTE(fromNode="OrbitScript", fromField="coordIndexes", toNode="Orbit", toField="set_coordIndex"),
 ROUTE(fromNode="OrbitScript", fromField="coordinates", toNode="OrbitCoordinates", toField="point"),
 ROUTE(fromNode="Clock", fromField="fraction_changed", toNode="OrbitScript", toField="set_fraction")]))
-.XML())
+.XML()))
