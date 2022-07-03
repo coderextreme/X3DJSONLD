@@ -100,13 +100,14 @@ Recommended tools:
     <xsl:param name="HAnimSkeletonIllustrate"     ><xsl:text>false</xsl:text></xsl:param>
     <xsl:param name="HAnimSiteIllustrate"         ><xsl:text>false</xsl:text></xsl:param>
     <xsl:param name="HAnimViewpointIllustrate"    ><xsl:text>false</xsl:text></xsl:param>
-    <!-- TODO unimplemented -->
-    <xsl:param name="HAnimAddBoneSegments"        ><xsl:text>false</xsl:text></xsl:param>
+    
     <!-- HAnimHumanoid visualization report parameters: -->
     <xsl:param name="jointColor"             ><xsl:text>1 0.5 0</xsl:text></xsl:param>
     <xsl:param name="segmentColor"           ><xsl:text>1 1 0</xsl:text></xsl:param>
     <xsl:param name="siteColor"              ><xsl:text>1 0 0</xsl:text></xsl:param>
     <xsl:param name="siteViewpointColor"     ><xsl:text>0 0 1</xsl:text></xsl:param>
+    <!-- TODO unimplemented -->
+    <xsl:param name="HAnimAddBoneSegments"        ><xsl:text>false</xsl:text></xsl:param>
     
     <!-- TODO other X3D-Edit visualization parameters -->
     
@@ -307,14 +308,14 @@ Recommended tools:
         <!-- Decide whether to convert or not -->
         <xsl:choose>
             <xsl:when test="($performTidy=false())">
-                <xsl:message>X3dTidy.xslt:  no node conversion performed, copied source document.</xsl:message>
+                <xsl:message>X3dTidy.xslt:  performTidy=false and so no node conversion performed, simply copied source document.</xsl:message>
                 <xsl:copy-of select="@* | * | comment() | processing-instruction()"/>
-                <!-- line break at end: no
+                <!-- line break at end: not needed
                 <xsl:text>&#10;</xsl:text> -->
             </xsl:when>
             <xsl:otherwise>
                 <!-- recurse to handle all document nodes, attributes and text blocks.  TODO  | text() | node() ? -->
-                <xsl:apply-templates select="* | comment() | processing-instruction()" />
+                <xsl:apply-templates select="@* | * | comment() | processing-instruction()" />
 				<!-- line break after last line -->
 				<xsl:text>&#10;</xsl:text>
             </xsl:otherwise>
@@ -509,7 +510,7 @@ Recommended tools:
                 <xsl:value-of select="$hanimVersion"/>
             </xsl:message>
         </xsl:if> -->
-        
+        <!-- first root node within Scene: if no WorldInfo with title (for window display) found, then add one -->
         <xsl:if test="(local-name(..)='Scene') and (count(preceding-sibling::*) = 0) and 
                       ((count(//WorldInfo) = 0) or (local-name() = 'WorldInfo')) and 
                       (string-length($prependWorldInfoIfMissing) > 0) and not($prependWorldInfoIfMissing = 'false') ">
@@ -1357,7 +1358,7 @@ Recommended tools:
                                                 </xsl:message>
                                             </xsl:if>
                                         </xsl:when>
-                                        <!-- check top-level USE node, check if corresponding DEF node found -->
+                                        <!-- check top-level USE node within HAnimHumanoid, check if corresponding DEF node found -->
                                         <xsl:when test="(parent::*[local-name() = 'HAnimHumanoid']) and (string-length(@USE) > 0)">
                                             <xsl:variable name="currentNodeType" select="local-name()"/>
                                             <xsl:variable name="currentNodeUSE"  select="@USE"/>
@@ -1831,7 +1832,12 @@ Recommended tools:
                                 </xsl:choose>
                                 <xsl:apply-templates select="*"/>
                             </xsl:when>
+                            <xsl:when test="(local-name()='Scene') or (local-name()='ProtoBody')">
+                                <!-- do not sort top-level nodes or comments, Metadata nodes may be interspersed -->
+                                <xsl:apply-templates select="* | comment()"/>
+                            </xsl:when>
                             <xsl:otherwise>
+                                <!-- some sorting may be needed to maintain correct ordering of XML child nodes -->
                                 <!-- handle initial comments -->
                                 <xsl:apply-templates select="comment()[count(preceding-sibling::*) = 0]"/>
                                 <!-- handle children of current node (including USE node) without special treatment, in preferred order of SFNode fields first -->

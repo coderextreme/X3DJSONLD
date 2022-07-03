@@ -393,26 +393,39 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
         <xsl:variable name="isNode"          select="(string-length(@containerField) > 0)"/>
         <xsl:variable name="isStatement"     select="not($isNode)"/> <!-- comments are handled by a different template -->
         <xsl:variable name="isInMFNodeList"  select="($containerField = 'children')        or
+                                                     ($containerField = 'attrib')          or
                                                      ($containerField = 'bodies')          or
                                                      ($containerField = 'collidables')     or
+                                                     ($containerField = 'data')            or
                                                      ($containerField = 'displacers')      or
                                                      ($containerField = 'joints')          or
+                                                     ($containerField = 'layers')          or
                                                      ($containerField = 'motions')         or
+                                                     ($containerField = 'outputs')         or
+                                                     ($containerField = 'parts')           or
+                                                     ($containerField = 'physics')         or
+                                                     ($containerField = 'pickTarget')      or
+                                                     ($containerField = 'programs')        or
                                                      ($containerField = 'renderStyle')     or
+                                                     ($containerField = 'rootNode')        or
                                                      ($containerField = 'segments')        or
+                                                     ($containerField = 'shaders')         or
                                                      ($containerField = 'sites')           or
                                                      ($containerField = 'skeleton')        or
                                                      ($containerField = 'skin')            or
-                                                     ($containerField = 'viewpoints')      or
                                                      ($containerField = 'trimmingContour') or
+                                                     ($containerField = 'viewpoints')      or
                                                      ($containerField = 'watchList')       or
                                                      ((local-name(..) = 'DISEntityManager')       and (($containerField = 'mapping') or ($containerField = 'children'))) or
                                                      ((local-name(..) = 'GeoLOD')                 and ($containerField = 'rootNode'))         or
+                                                     ((local-name(..) = 'ComposedTexture3D')      and ($containerField = 'texture'))          or
                                                      ((local-name(..) = 'MultiTexture')           and ($containerField = 'texture'))          or
                                                      ((local-name(..) = 'MultiTextureCoordinate') and ($containerField = 'texCoord'))         or
                                                      ((local-name(..) = 'MultiTextureTransform')  and ($containerField = 'textureTransform')) or
                                                      ((local-name(..) = 'NurbsSet')               and ($containerField = 'geometry'))         or
-                                                     ((local-name(..)  = 'MetadataSet') and not(local-name() = 'IS') and not($containerField = 'metadata'))  or
+                                                     ((local-name(..) = 'MetadataSet') and not(local-name() = 'IS') and not($containerField = 'metadata'))  or
+                                                     ((local-name(..) = 'ParticleSystem')         and (($containerField = 'color') or ($containerField = 'colorRamp'))) or
+                                                     ((local-name(..) = 'RigidBody')              and ($containerField = 'geometry')) or
                                                      (local-name(..)  = 'field')           or
                                                      (local-name(..)  = 'fieldValue')      or
                                                      (local-name()    = 'field')           or
@@ -2105,9 +2118,9 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
 		  </xsl:when>
 		  <!-- SFBool -->
 		  <xsl:when test="
-					($localFieldType='SFBool')  or 
-                    ($attributeName='activate') or
-                    ($attributeName='bboxDisplay')  or
+					($localFieldType='SFBool')  or
+                                        ($attributeName='activate') or
+                                        ($attributeName='bboxDisplay')  or
 					($attributeName='ccw')      or
 					($attributeName='closed')   or
 					($attributeName='convex')   or

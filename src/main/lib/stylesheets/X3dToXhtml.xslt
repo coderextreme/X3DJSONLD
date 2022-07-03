@@ -449,6 +449,36 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:text>&#10;</xsl:text>
                     </p>
                 </xsl:if>
+                
+                <xsl:variable name="identifierUrl" select="normalize-space(substring-before(//head/meta[@name='identifier']/@content,'.x3d'))"/>
+		<!-- debug
+		<xsl:message>
+			<xsl:text>$identifierUrl=</xsl:text>
+			<xsl:value-of select="$identifierUrl"/>
+		</xsl:message> -->
+                <xsl:if test="(string-length($identifierUrl) > 0) and 
+                               (starts-with($identifierUrl,'https://www.web3d.org/x3d/content/examples/') or
+                                starts-with($identifierUrl,'https://savage.nps.edu/Savage/') or
+                                starts-with($identifierUrl,'https://SavageDefense.nps.edu/SavageDefense/'))">
+                    <p style="text-align:center; background-color:white">
+                        <xsl:text>&#10;</xsl:text>
+                        <span style="color:white">&lt;!--</span>
+                        <xsl:text>&#10;</xsl:text>
+                        <xsl:text>Online at </xsl:text>
+                        <xsl:element name="a">
+                            <xsl:attribute name="href">
+                                <xsl:value-of select="$identifierUrl"/><xsl:text>Index.html</xsl:text>
+                            </xsl:attribute>
+                            <xsl:attribute name="target">
+                                <xsl:text>_top</xsl:text>
+                            </xsl:attribute>
+                            <xsl:value-of select="$identifierUrl"/><xsl:text>Index.html</xsl:text>
+                        </xsl:element>
+                        <xsl:text>&#10;</xsl:text>
+                        <span style="color:white">--&gt;</span>
+                        <xsl:text>&#10;</xsl:text>
+                    </p>
+                </xsl:if>
 
                 <!-- build color key as XML comment -->
                 <p style="text-align:center;">
@@ -564,11 +594,11 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     <span style="color:white">&lt;!--</span>
                     <xsl:text>&#10;</xsl:text>
                     <xsl:text>For additional help information about X3D scenes, please see </xsl:text>
-                    <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" title="Summary descriptions and authoring hints for each X3D node (element) and field (attribute)">X3D Tooltips</a>
+                    <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" title="Summary descriptions and authoring hints for each X3D node (element) and field (attribute)" target="_blank">X3D Tooltips</a>
                     <xsl:text>, </xsl:text>
-                    <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" title="Numerous resources that support X3D graphics">X3D Resources</a>
+                    <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" title="Numerous resources that support X3D graphics" target="_blank">X3D Resources</a>
                     <xsl:text> and </xsl:text>
-                    <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" title="Style guidelines, authoring tips and best practices">X3D Scene Authoring Hints</a>
+                    <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" title="Style guidelines, authoring tips and best practices" target="_blank">X3D Scene Authoring Hints</a>
                     <xsl:text>.</xsl:text>
                     <xsl:text>&#10;</xsl:text>
                     <span style="color:white">--&gt;</span>
@@ -3681,9 +3711,9 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                 </xsl:when>
                 <xsl:when test="local-name(..)='meta' and local-name()='content' and (../@name='mail' or ../@name='email' or ../@name='e-mail' or ../@name='contact') and contains(string(.),'@')">
                     <xsl:element name="a">
-                            <xsl:attribute name="title">
-                                <xsl:text>select to send mail</xsl:text>
-                            </xsl:attribute>
+                        <xsl:attribute name="title">
+                            <xsl:text>select to send mail</xsl:text>
+                        </xsl:attribute>
                         <xsl:attribute name="href">
                             <xsl:if test="not(starts-with(normalize-space(string(.)),'mailto:'))">
                                 <xsl:text>mailto:</xsl:text>
@@ -3759,7 +3789,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     </span>
                 </xsl:otherwise>
             </xsl:choose>
-			<xsl:value-of select="$attributeDelimiter"/>
+            <xsl:value-of select="$attributeDelimiter"/>
             <xsl:if test="string-length($attributeTooltip) > 0">
                 <xsl:text disable-output-escaping="yes">&lt;/span&gt;</xsl:text>
             </xsl:if>
@@ -3798,7 +3828,19 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                 <!-- break to new line if needed -->
                 <xsl:if test="position() > 1"><xsl:text disable-output-escaping="yes">&lt;br /&gt;</xsl:text></xsl:if>
                 <!-- wrap comment in blanks in case it ends with hyphen, since - is not a valid comment terminator -->
-                <span title="XML comment"><xsl:text>&lt;!-- </xsl:text><xsl:value-of select="normalize-space(string(.))"/><xsl:text> --&gt;</xsl:text></span>
+                <span title="XML comment">
+                    <xsl:text>&lt;!-- </xsl:text>
+                    <xsl:call-template name="URL-ize-MFString-elements">
+                        <xsl:with-param name="list" select="normalize-space(string(.))"/>
+                        <xsl:with-param name="urlsOnly">
+                            <xsl:text>false</xsl:text>
+                        </xsl:with-param>
+                        <xsl:with-param name="insertBreaks">
+                            <xsl:text>true</xsl:text>
+                        </xsl:with-param>
+                    </xsl:call-template>
+                    <xsl:text> --&gt;</xsl:text>
+                </span>
                 <xsl:text>&#10;</xsl:text>
             </xsl:otherwise>
         </xsl:choose>
@@ -4181,6 +4223,9 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                 <xsl:attribute name="href">
                                     <xsl:value-of disable-output-escaping="yes" select="$nextURLunquoted"/>
                                 </xsl:attribute>
+                                <xsl:attribute name="target">
+                                    <xsl:text>_blank</xsl:text>
+                                </xsl:attribute>
                                 <xsl:value-of select="$nextURLunquoted"/>
                             </xsl:element>
                             <xsl:if test="($quoted='true')">
@@ -4209,6 +4254,9 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                             <xsl:text>sftp://</xsl:text>
                             <xsl:value-of select="normalize-space(substring-after($nextURLunquoted,'sftp://'))"/>
                         </xsl:attribute>
+                        <xsl:attribute name="target">
+                            <xsl:text>_blank</xsl:text>
+                        </xsl:attribute>
                         <xsl:text>sftp://</xsl:text>
                         <xsl:value-of select="normalize-space(substring-after($nextURLunquoted,'sftp://'))"/>
                     </xsl:element>
@@ -4231,6 +4279,9 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:attribute name="href">
                             <xsl:text>ftp://</xsl:text>
                             <xsl:value-of select="normalize-space(substring-after($nextURLunquoted,'ftp://'))"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="target">
+                            <xsl:text>_blank</xsl:text>
                         </xsl:attribute>
                         <xsl:text>ftp://</xsl:text>
                         <xsl:value-of select="normalize-space(substring-after($nextURLunquoted,'ftp://'))"/>
@@ -4255,6 +4306,9 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                             <xsl:text>http://</xsl:text>
                             <xsl:value-of select="normalize-space(substring-after($nextURLunquoted,'http://'))"/>
                         </xsl:attribute>
+                        <xsl:attribute name="target">
+                            <xsl:text>_blank</xsl:text>
+                        </xsl:attribute>
                         <xsl:text>http://</xsl:text>
                         <xsl:value-of select="normalize-space(substring-after($nextURLunquoted,'http://'))"/>
                     </xsl:element>
@@ -4277,6 +4331,9 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:attribute name="href">
                             <xsl:text>https://</xsl:text>
                             <xsl:value-of select="normalize-space(substring-after($nextURLunquoted,'https://'))"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="target">
+                            <xsl:text>_blank</xsl:text>
                         </xsl:attribute>
                         <xsl:text>https://</xsl:text>
                         <xsl:value-of select="normalize-space(substring-after($nextURLunquoted,'https://'))"/>
@@ -4321,6 +4378,9 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     <xsl:element name="a">
                         <xsl:attribute name="href">
                             <xsl:value-of select="$nextURLunquoted"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="target">
+                            <xsl:text>_blank</xsl:text>
                         </xsl:attribute>
                         <xsl:value-of select="$nextURLunquoted"/>
                     </xsl:element>
