@@ -2,8 +2,7 @@
 x3d.py package 4.0.64.1 loaded, have fun with X3D Graphics!
 '''
 from x3d import *
-from x3d import SFBool
-print((
+print(
 X3D(profile="Full", version="4.0", 
 head=head(), 
 Scene=Scene(children=[
@@ -25,4 +24,4 @@ normal=
 Normal(vector=[(0.0,-1.0,0.0),(0.0,-1.0,0.0),(0.0,-1.0,0.0),(0.0,-1.0,0.0),(0.0,-1.0,0.0),(0.0,-1.0,0.0),(0.0,1.0,0.0),(0.0,1.0,0.0),(0.0,1.0,0.0),(0.0,1.0,0.0),(0.0,1.0,0.0),(0.0,1.0,0.0),(0.0,0.0,1.0),(0.0,0.0,1.0),(0.0,0.0,1.0),(0.0,0.0,1.0),(0.0,0.0,1.0),(0.0,0.0,1.0),(1.0,0.0,0.0),(1.0,0.0,0.0),(1.0,0.0,0.0),(1.0,0.0,0.0),(1.0,0.0,0.0),(1.0,0.0,0.0),(0.0,0.0,-1.0),(0.0,0.0,-1.0),(0.0,0.0,-1.0),(0.0,0.0,-1.0),(0.0,0.0,-1.0),(0.0,0.0,-1.0),(-1.0,0.0,0.0),(-1.0,0.0,0.0),(-1.0,0.0,0.0),(-1.0,0.0,0.0),(-1.0,0.0,0.0),(-1.0,0.0,0.0)])))]),
 Transform(DEF="InlineScene", children=[
 Inline(DEF="inline", url=["x3d/example1.x3d","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/x3d/example1.x3d","x3d/example1.wrl","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/x3d/example1.wrl"])])]))
-.XML()))
+.XML())

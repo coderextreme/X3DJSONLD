@@ -78,15 +78,17 @@ newModel=X3D(profile='Immersive',version='4.0',
 					  <ShaderPart url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"' type='FRAGMENT'></ShaderPart>
 					</ComposedShader>
 					
-              shaders=ComposedShader(DEF='x3dom',language='GLSL',
+              shaders=[
+              ComposedShader(DEF='x3dom',language='GLSL',
                 field=[
                 field(name='cube',type='SFInt32',accessType='inputOutput',value=0),
                 field(name='chromaticDispertion',type='SFVec3f',accessType='inputOutput',value=(0.98,1.0,1.033)),
                 field(name='bias',type='SFFloat',accessType='inputOutput',value=0.5),
                 field(name='scale',type='SFFloat',accessType='inputOutput',value=0.5),
                 field(name='power',type='SFFloat',accessType='inputOutput',value=2.0)],
-                parts=ShaderPart(url=["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"]),
-                ShaderPart(url=["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"],type='FRAGMENT')),
+                parts=[
+                ShaderPart(url=["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"]),
+                ShaderPart(url=["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"],type='FRAGMENT')]),
               # 
 					<ComposedShader DEF='instant' language="GLSL">
 					  <field name='cube' type='SFInt32' accessType="inputOutput" value='0'/>
@@ -108,8 +110,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                 field(name='bias',type='SFFloat',accessType='inputOutput',value=0.5),
                 field(name='scale',type='SFFloat',accessType='inputOutput',value=0.5),
                 field(name='power',type='SFFloat',accessType='inputOutput',value=2.0)],
-                parts=ShaderPart(url=["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"]),
-                ShaderPart(url=["../shaders/x_itebubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"],type='FRAGMENT'))),
+                parts=[
+                ShaderPart(url=["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"]),
+                ShaderPart(url=["../shaders/x_itebubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"],type='FRAGMENT')])]),
             geometry=Sphere(),)]),
         Script(DEF='Bounce',
           field=[

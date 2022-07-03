@@ -52,15 +52,17 @@ newModel=X3D(profile='Immersive',version='4.0',
             leftTexture=ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"]),
             rightTexture=ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"]),
             topTexture=ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"])),
-          shaders=ComposedShader(DEF='shader',language='GLSL',
+          shaders=[
+          ComposedShader(DEF='shader',language='GLSL',
             field=[
             field(name='cube',type='SFInt32',accessType='inputOutput',value=0),
             field(name='chromaticDispertion',accessType='inputOutput',type='SFVec3f',value=(0.98,1.0,1.033)),
             field(name='bias',type='SFFloat',accessType='inputOutput',value=0.5),
             field(name='scale',type='SFFloat',accessType='inputOutput',value=0.5),
             field(name='power',type='SFFloat',accessType='inputOutput',value=2)],
-            parts=ShaderPart(url=["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"]),
-            ShaderPart(url=["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"],type='FRAGMENT'))),
+            parts=[
+            ShaderPart(url=["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"]),
+            ShaderPart(url=["../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"],type='FRAGMENT')])]),
         # 
                 <Sphere>
 		

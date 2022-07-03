@@ -2,8 +2,7 @@
 x3d.py package 4.0.64.1 loaded, have fun with X3D Graphics!
 '''
 from x3d import *
-from x3d import SFBool
-print((
+print(
 X3D(profile="Interchange", version="3.0", 
 head=head(), 
 Scene=Scene(children=[
@@ -41,4 +40,4 @@ IS=IS(connect=[connect(nodeField="posi", protoField="pos")
 Anchor(url=["javascript:window.open('./data/574.html','details','height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no');"], description="High Peak Community Arts", children=[
 ProtoInstance(name="r", fieldValue=[fieldValue(name="pos", value=[400,0.100000001490116,-385])
 ])])]))
-.XML()))
+.XML())

@@ -2,8 +2,7 @@
 x3d.py package 4.0.64.1 loaded, have fun with X3D Graphics!
 '''
 from x3d import *
-from x3d import SFBool
-print((
+print(
 X3D(profile="Immersive", version="3.3", 
 head=head(), 
 Scene=Scene(children=[
@@ -260,4 +259,4 @@ ShaderProgram(DEF="TestShader2", type="VERTEX")]),
 ProtoInstance(name="ShaderProto", DEF="TestShader3"),
 ComposedShader(DEF="TestShader4", parts=[
 ShaderPart(DEF="TestShader5", type="VERTEX")])])),]))
-.XML()))
+.XML())

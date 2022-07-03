@@ -2,8 +2,7 @@
 x3d.py package 4.0.64.1 loaded, have fun with X3D Graphics!
 '''
 from x3d import *
-from x3d import SFBool
-print((
+print(
 X3D(profile="Immersive", version="4.0", 
 head=head(), 
 Scene=Scene(children=[
@@ -106,4 +105,4 @@ ROUTE(fromNode="Animate", fromField="c", toNode="x3dom", toField="c"),
 ROUTE(fromNode="Animate", fromField="d", toNode="x3dom", toField="d"),
 ROUTE(fromNode="Animate", fromField="pdelta", toNode="x3dom", toField="pdelta"),
 ROUTE(fromNode="Animate", fromField="tdelta", toNode="x3dom", toField="tdelta"),]))
-.XML()))
+.XML())

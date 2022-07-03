@@ -2,8 +2,7 @@
 x3d.py package 4.0.64.1 loaded, have fun with X3D Graphics!
 '''
 from x3d import *
-from x3d import SFBool
-print((
+print(
 X3D(profile="Immersive", version="4.0", 
 head=head(), 
 Scene=Scene(children=[
@@ -1569,4 +1568,4 @@ HAnimSite(USE="hanim_r_trochanterion_pt"),
 HAnimSite(USE="hanim_l_trochanterion_pt"),
 HAnimSite(USE="hanim_l_ulnar_styloid_pt"),
 HAnimSite(USE="hanim_r_ulnar_styloid_pt")])]))
-.XML()))
+.XML())

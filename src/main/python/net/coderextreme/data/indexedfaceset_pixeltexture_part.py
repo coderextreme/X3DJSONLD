@@ -2,8 +2,7 @@
 x3d.py package 4.0.64.1 loaded, have fun with X3D Graphics!
 '''
 from x3d import *
-from x3d import SFBool
-print((
+print(
 X3D(profile="Interchange", version="3.0", 
 head=head(), 
 Scene=Scene(children=[
@@ -29,4 +28,4 @@ coord=
 Coordinate(point=[(-2,1,1),(-2,-1,1),(2,1,1),(2,-1,1),(2,1,-1),(2,-1,-1),(-2,1,-1),(-2,-1,-1)]), 
 texCoord=
 TextureCoordinate(point=[(0.5,1),(0.5,0.5),(1,1),(1,0.5)])))]))
-.XML()))
+.XML())
