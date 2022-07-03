@@ -59,19 +59,22 @@ newModel=X3D(profile='Immersive',version='3.2',
           Shape(
             appearance=Appearance(
               material=Material(diffuseColor=(0.5,0.5,0.9)),
-              shaders=ComposedShader(language='GLSL',
+              shaders=[
+              ComposedShader(language='GLSL',
                 field=[
                 field(accessType='initializeOnly',name='decis',type='SFVec3f')],
                 IS=IS(
                   connect=[
                   connect(nodeField='decis',protoField='myInputRange')]),
-                parts=ShaderPart(),
-                ShaderPart(type='FRAGMENT')),
+                parts=[
+                ShaderPart(),
+                ShaderPart(type='FRAGMENT')]),
               ComposedShader(DEF='Cobweb',language='GLSL',
                 field=[
                 field(accessType='initializeOnly',name='decis',type='SFVec3f',value=(0.95,0.77,0.44))],
-                parts=ShaderPart(),
-                ShaderPart(DEF='_1',type='FRAGMENT'))),
+                parts=[
+                ShaderPart(),
+                ShaderPart(DEF='_1',type='FRAGMENT')])]),
             geometry=Sphere(radius=1.75))])])),
     WorldInfo(title='SimpleShader',
       metadata=MetadataSet(DEF='Titania',name='Titania',reference='http://titania.create3000.de',

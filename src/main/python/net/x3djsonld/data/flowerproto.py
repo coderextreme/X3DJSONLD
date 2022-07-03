@@ -57,7 +57,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                 leftTexture=ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"]),
                 rightTexture=ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"]),
                 topTexture=ImageTexture(url=["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"])),
-              shaders=ComposedShader(DEF='shader',language='GLSL',
+              shaders=[
+              ComposedShader(DEF='shader',language='GLSL',
                 field=[
                 field(name='cube',type='SFInt32',accessType='inputOutput',value=0),
                 #  
@@ -75,7 +76,8 @@ newModel=X3D(profile='Immersive',version='4.0',
                 field(name='d',type='SFFloat',accessType='inputOutput',value=20),
                 field(name='tdelta',type='SFFloat',accessType='inputOutput',value=0),
                 field(name='pdelta',type='SFFloat',accessType='inputOutput',value=0)],
-                parts=ShaderPart(
+                parts=[
+                ShaderPart(
                   IS=IS(
                     connect=[
                     connect(nodeField='url',protoField='vertex')]),
@@ -92,7 +94,7 @@ ecmascript:
                 sourceCode="""
 ecmascript:
 
-"""))),
+""")])]),
             geometry=Sphere(),),
           Script(DEF='Animate',
             field=[

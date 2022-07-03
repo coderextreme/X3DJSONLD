@@ -2,8 +2,7 @@
 x3d.py package 4.0.64.1 loaded, have fun with X3D Graphics!
 '''
 from x3d import *
-from x3d import SFBool
-print((
+print(
 X3D(profile="Immersive", version="3.3", 
 head=head(), 
 Scene=Scene(children=[
@@ -27,4 +26,4 @@ field(name="set_fraction", accessType="inputOnly", type="SFTime")
 TimeSensor(DEF="TourTime", cycleInterval=0.15, loop=True),
 ROUTE(fromNode="TourTime", fromField="cycleTime", toNode="Bounce2", toField="set_fraction"),
 ROUTE(fromNode="Bounce2", fromField="translation_changed", toNode="transform", toField="set_translation")]))
-.XML()))
+.XML())

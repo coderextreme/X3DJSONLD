@@ -2,8 +2,7 @@
 x3d.py package 4.0.64.1 loaded, have fun with X3D Graphics!
 '''
 from x3d import *
-from x3d import SFBool
-print((
+print(
 X3D(profile="Immersive", version="3.3", 
 head=head(), 
 Scene=Scene(children=[
@@ -227,4 +226,4 @@ material=
 Material(transparency=1.0)), 
 geometry=
 Extrusion(DEF="ExampleExtrusion")),]))
-.XML()))
+.XML())

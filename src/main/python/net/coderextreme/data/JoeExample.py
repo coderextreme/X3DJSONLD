@@ -2,8 +2,7 @@
 x3d.py package 4.0.64.1 loaded, have fun with X3D Graphics!
 '''
 from x3d import *
-from x3d import SFBool
-print((
+print(
 X3D(version="3.0", profile="Immersive", 
 head=head(), 
 Scene=Scene(children=[
@@ -28,4 +27,4 @@ TouchSensor(DEF="TS"),
 ROUTE(fromNode="TS", fromField="isOver", toNode="OpenVault", toField="combinationEntered"),
 ROUTE(fromNode="TS", fromField="touchTime", toNode="OpenVault", toField="openVault"),
 ROUTE(fromNode="OpenVault", fromField="vaultUnlocked", toNode="Click", toField="startTime")]))
-.XML()))
+.XML())

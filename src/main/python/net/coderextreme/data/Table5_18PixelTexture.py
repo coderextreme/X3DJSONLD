@@ -2,8 +2,7 @@
 x3d.py package 4.0.64.1 loaded, have fun with X3D Graphics!
 '''
 from x3d import *
-from x3d import SFBool
-print((
+print(
 X3D(profile="Interchange", version="3.3", 
 head=head(), 
 Scene=Scene(children=[
@@ -64,4 +63,4 @@ texture=
 PixelTexture(image=[3,2,4,4278190335,16711935,65535,4278190207,16711807,65407])), 
 geometry=
 Box(USE="StandardBox"))])]))
-.XML()))
+.XML())
