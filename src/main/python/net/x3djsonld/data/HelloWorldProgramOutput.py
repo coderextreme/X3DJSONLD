@@ -329,11 +329,14 @@ function clockTrigger (timeValue)
       appearance=Appearance(
         #  Test MFNode shaders array as an ordered list consisting of comments, ProtoInstance and nodes 
         #  Test satisfactorily creates MFNode shaders array as an ordered list with mixed content 
-        shaders=ProgramShader(DEF='TestShader1',
-          programs=ShaderProgram(DEF='TestShader2')),
+        shaders=[
+        ProgramShader(DEF='TestShader1',
+          programs=[
+          ShaderProgram(DEF='TestShader2')]),
         ProtoInstance(DEF='TestShader3',name='ShaderProto'),
         ComposedShader(DEF='TestShader4',
-          parts=ShaderPart(DEF='TestShader5')))),
+          parts=[
+          ShaderPart(DEF='TestShader5')])])),
     Transform(DEF='SpecialtyNodes',
       children=[
       CADLayer(

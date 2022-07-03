@@ -54,7 +54,8 @@ newModel=X3D(profile='Immersive',version='4.0',
             leftTexture=ImageTexture(DEF='leftShader',url=["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_left.png"]),
             rightTexture=ImageTexture(DEF='rightShader',url=["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_right.png"]),
             topTexture=ImageTexture(DEF='topShader',url=["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/beach_cross/beach_top.png"])),
-          shaders=ComposedShader(DEF='x3dom',language='GLSL',
+          shaders=[
+          ComposedShader(DEF='x3dom',language='GLSL',
             field=[
             field(name='cube',type='SFInt32',accessType='inputOutput',value=0),
             #  
@@ -72,8 +73,9 @@ newModel=X3D(profile='Immersive',version='4.0',
             field(name='d',type='SFFloat',accessType='inputOutput',value=20),
             field(name='tdelta',type='SFFloat',accessType='inputOutput',value=0),
             field(name='pdelta',type='SFFloat',accessType='inputOutput',value=0)],
-            parts=ShaderPart(url=["../shaders/x3dom_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"]),
-            ShaderPart(url=["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"],type='FRAGMENT')),
+            parts=[
+            ShaderPart(url=["../shaders/x3dom_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"]),
+            ShaderPart(url=["../shaders/common.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"],type='FRAGMENT')]),
           ComposedShader(DEF='x_ite',language='GLSL',
             field=[
             field(name='cube',type='SFNode',accessType='inputOutput',
@@ -89,8 +91,9 @@ newModel=X3D(profile='Immersive',version='4.0',
             field(name='d',type='SFFloat',accessType='inputOnly',value=20),
             field(name='tdelta',type='SFFloat',accessType='inputOnly',value=0),
             field(name='pdelta',type='SFFloat',accessType='inputOnly',value=0)],
-            parts=ShaderPart(url=["../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"]),
-            ShaderPart(url=["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"],type='FRAGMENT'))),
+            parts=[
+            ShaderPart(url=["../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"]),
+            ShaderPart(url=["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"],type='FRAGMENT')])]),
         geometry=Sphere(),)]),
     Script(DEF='UrlSelector',directOutput=True,
       field=[

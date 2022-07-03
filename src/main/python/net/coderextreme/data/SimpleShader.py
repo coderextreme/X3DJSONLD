@@ -2,8 +2,7 @@
 x3d.py package 4.0.64.1 loaded, have fun with X3D Graphics!
 '''
 from x3d import *
-from x3d import SFBool
-print((
+print(
 X3D(profile="Immersive", version="3.2", 
 head=head(), 
 Scene=Scene(children=[
@@ -41,4 +40,4 @@ MetadataDouble(name="position", DEF="position", reference="http://titania.create
 MetadataDouble(name="orientation", DEF="orientation", reference="http://titania.create3000.de", value=[float(-0.110173424710488),float(0.990158061907379),float(-0.0863065984000336),float(1.21146676119191)]),
 MetadataDouble(name="centerOfRotation", DEF="centerOfRotation", reference="http://titania.create3000.de", value=[float(-0.808320198626341),float(-0.358072370409949),float(0.22817191560906)])])]))),
 ProtoInstance(name="myPrototype")]))
-.XML()))
+.XML())

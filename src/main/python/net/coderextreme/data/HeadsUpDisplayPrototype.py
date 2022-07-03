@@ -2,8 +2,7 @@
 x3d.py package 4.0.64.1 loaded, have fun with X3D Graphics!
 '''
 from x3d import *
-from x3d import SFBool
-print((
+print(
 X3D(profile="Immersive", version="3.0", 
 head=head(), 
 Scene=Scene(children=[
@@ -73,4 +72,4 @@ geometry=
 Text(string=["HeadsUpDisplayPrototype.x3d","is a Prototype definition file.","","To see an example scene using this node","click this text to view","HeadsUpDisplayExample.x3d"], 
 fontStyle=
 FontStyle(justify=["MIDDLE","MIDDLE"], size=0.8)))]),]))
-.XML()))
+.XML())
