@@ -123,7 +123,8 @@
         </ul>
         
         <p>
-            X3D Tidy has passed initial testing.
+            X3D Tidy has passed a significant amount of testing with the open-source
+            <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html#Examples" target="_blank">X3D Examples Archives</a>.
             It is available as part of the following tools:
         </p>
         <ul>
@@ -143,7 +144,7 @@
                 targets, as well as a
                 <code>&lt;X3dTidy&gt;</code>
                 macro,
-                which are used to improve all scenes in the
+                which are used to automatically test all scenes in the
                 <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html#Examples">X3D Examples Archives</a>.
             </li>
             <li>
@@ -239,6 +240,9 @@
             <li>
                 For <code>index</code> arrays in geometry nodes, detect omissions and append missing space character after -1 sentinel values if needed.
             </li>
+            <li>
+                Convert deprecated fields in X3D4 models, such as GeoViewpoint navType. 
+            </li>
             
             <!--
             <li>
@@ -274,25 +278,22 @@
         
         <ol>
             <li>
-                Add visualization spheres and lines to HAnimJoint and HAnimSegment nodes in an HAnimHumanoid skeleton. 
+                Optionally add  visualization spheres and lines to HAnimJoint and HAnimSegment nodes in an HAnimHumanoid skeleton. 
             </li>
             <li>
-                Add visualization shapes to HAnimSite nodes in an HAnimHumanoid skeleton. 
+                Optionally add visualization shapes to HAnimSite nodes in an HAnimHumanoid skeleton. 
             </li>
             <li>
-                Add visualization lines to Viewpoint nodes embedded within an HAnimHumanoid skeleton. 
+                Optionally add visualization lines to Viewpoint nodes embedded within an HAnimHumanoid skeleton. 
             </li>
             <li>
-                TODO. Remove Shape geometry from an HAnimHumanoid skeleton. 
+                TODO. Optionally remove Shape geometry from an HAnimHumanoid skeleton. 
             </li>
             <li>
-                TODO. Add visualization bones to HAnimSegment nodes in an HAnimHumanoid skeleton. 
+                TODO. Optionally add visualization bones to HAnimSegment nodes in an HAnimHumanoid skeleton. 
             </li>
             <li>
-                TODO. Convert deprecated fields, such as GeoViewpoint navType. 
-            </li>
-            <li>
-                TODO. Remove quotes surrounding SFString values. 
+                TODO. Optionally remove quotes surrounding SFString values. 
             </li>
             
             <!--
@@ -486,7 +487,7 @@ TODO:
         </h3>
         
         <p>
-            Updated: 20 October 2019
+            Updated: 2 July 2022
         </p>
         <div>
                <a href="http://validator.w3.org/check?uri=https://www.web3d.org/x3d/stylesheets/X3dTidy.html">
@@ -506,7 +507,7 @@ TODO:
         
         <p>
             Revisions are found under
-            <a href="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/">Sourceforge version control</a>.
+            <a href="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets" target="_blank">Sourceforge version control</a>.
             This page is available online at
             <a href="https://www.web3d.org/x3d/stylesheets/X3dTidy.html">https://www.web3d.org/x3d/stylesheets/X3dTidy.html</a>
         </p>

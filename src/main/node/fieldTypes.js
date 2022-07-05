@@ -3748,7 +3748,7 @@ var fieldTypes = {"X3DNode" : {
 	"centerOfRotation" : "SFVec3f",
 	"description" : "SFString",
 	"farDistance" : "SFFloat",
-	"fieldOfView" : "MFFloat",
+	"fieldOfView" : "SFVec4f",
 	"IS" : "SFNode",
 	"isBound" : "SFBool",
 	"jump" : "SFBool",

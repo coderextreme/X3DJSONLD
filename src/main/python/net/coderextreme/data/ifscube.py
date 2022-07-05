@@ -14,6 +14,6 @@ coord=
 Coordinate(point=[(0,0,1),(0,1,1),(1,1,1),(1,0,1)]), 
 normal=
 Normal(vector=[(1,0,0),(-1,0,0),(0,1,0),(0,0,-1),(0,-1,0),(0,0,1)]), 
-color=
-Color(color=[(0,1,0)])))])]))
+color=(
+Color(color=[(0,1,0)]))))])]))
 .XML())
