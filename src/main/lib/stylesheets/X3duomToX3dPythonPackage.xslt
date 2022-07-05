@@ -706,7 +706,7 @@ def isX3DNode(value):
 
 # Python x3d Package Loading Complete
 
-print("x3d.py package 4.0.64.1 loaded, have fun with X3D Graphics!", flush=True)
+print("x3d.py package 4.0.64.2 loaded, have fun with X3D Graphics!", flush=True)
 
 ###############################################
 </xsl:text>

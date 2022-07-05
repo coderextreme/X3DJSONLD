@@ -363,7 +363,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                     <xsl:text>children</xsl:text>
                     <xsl:if test="not(@containerField = 'children') or (string-length(@containerField) = 0)">
                         <xsl:message>
-                            <xsl:text>*** containerField for </xsl:text>
+                            <xsl:text>*** default containerField for </xsl:text>
                             <xsl:value-of select="local-name(..)"/>
                             <xsl:text> child </xsl:text>
                             <xsl:value-of select="local-name()"/>
@@ -1141,8 +1141,6 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                       (local-name()='scale' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')) or
                       (local-name()='scaleOrientation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
                       (local-name()='translation' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')))) and
-                      not( local-name(..)='Viewpoint' and
-                      (local-name()='fieldOfView' and ((string(.)='0.785398') or (string(.)='0.7854') or (string(.)='.785398') or (string(.)='.7854')))) and
                       not( local-name(..)='OrthoViewpoint' and
                       (local-name()='fieldOfView' and ((string(.)='-1 -1 1 1') or (string(.)='-1.0 -1.0 1.0 1.0')))) and
                       not( contains(local-name(..),'Viewpoint') and
@@ -2209,7 +2207,8 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
 					($parentElementName='FillProperties' and ($attributeName='hatchColor')) or
 					(contains($parentElementName,'Fog') and $attributeName='color') or
 					(ends-with($parentElementName,'Material') and contains($attributeName,'Color')) or
-					($parentElementName='MultiTexture' and $attributeName='color')">
+                                        ($parentElementName='MultiTexture' and $attributeName='color') or
+					(starts-with($parentElementName,'TextureProjector') and ($attributeName='color'))">
 			  <xsl:text>SFColor</xsl:text>
 		  </xsl:when>
 		  <!-- SFColorRGBA -->
@@ -2342,11 +2341,10 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
 					($parentElementName='Text' and $attributeName='maxExtent') or
 					($parentElementName='TextureProperties' and ($attributeName='anisotropicDegree' or $attributeName='texturePriority')) or
 					(starts-with($parentElementName,'TextureProjector') and ($attributeName='farDistance' or $attributeName='nearDistance')) or
-                                        ($parentElementName='TextureProjectorPerspective' and $attributeName='fieldOfView') or
-					($parentElementName='TextureTransform' and $attributeName='rotation') or
+                                        ($parentElementName='TextureTransform' and $attributeName='rotation') or
 					($parentElementName='TransmitterPdu' and ($attributeName='power' or $attributeName='transmitFrequencyBandwidth')) or
 					($parentElementName='UniversalJoint' and starts-with($attributeName,'stop')) or
-					(contains($parentElementName,'Viewpoint') and $attributeName='fieldOfView') or
+					(($parentElementName='Viewpoint' or $parentElementName='GeoViewpoint' or $parentElementName='TextureProjector') and $attributeName='fieldOfView') or
 					($parentElementName='WindPhysicsModel'    and ($attributeName='gustiness' or $attributeName='speed' or $attributeName='turbulence'))">
 			  <xsl:text>SFFloat</xsl:text>
 		  </xsl:when>
@@ -2488,6 +2486,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
 					(contains($parentElementName,'LOD') and $attributeName='center') or
 					($parentElementName='MotorJoint' and ($attributeName='motor1Axis' or $attributeName='motor2Axis' or $attributeName='motor3Axis')) or
 					($parentElementName='PlaneSensor' and $attributeName='offset') or
+					($parentElementName='PointProperties' and $attributeName='attenuation') or
 					($parentElementName='PositionChaser' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
 					($parentElementName='PositionDamper' and ($attributeName='initialDestination' or $attributeName='initialValue')) or
 					($parentElementName='ProximitySensor' and ($attributeName='center' or $attributeName='size')) or
@@ -2498,7 +2497,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
 					($parentElementName='SliderJoint' and ($attributeName='axis')) or
 					($parentElementName='Sound' and ($attributeName='direction' or $attributeName='location')) or
 					($parentElementName='SpotLight' and ($attributeName='attenuation' or $attributeName='direction' or $attributeName='location')) or
-					(starts-with($parentElementName,'TextureProjector') and ($attributeName='direction' or $attributeName='location')) or
+					(starts-with($parentElementName,'TextureProjector') and ($attributeName='direction' or $attributeName='location' or $attributeName='upVector')) or
 					($parentElementName='Transform' and ($attributeName='center' or $attributeName='scale' or $attributeName='translation')) or
 					($parentElementName='TransformSensor' and ($attributeName='size')) or
 					($parentElementName='TransmitterPdu' and (ends-with($attributeName,'Location'))) or
@@ -2532,6 +2531,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
 		  <xsl:when test="
 					($localFieldType='SFVec4f')    or 
                     ($parentElementName='ClipPlane' and $attributeName='plane') or 
+                    ($parentElementName='OrthoViewpoint' and $attributeName='fieldOfView') or 
                     ($parentElementName='TextureProjectorParallel' and $attributeName='fieldOfView')">
 			  <xsl:text>SFVec4f</xsl:text>
 		  </xsl:when>
