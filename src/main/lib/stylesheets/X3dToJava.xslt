@@ -4224,12 +4224,11 @@ POSSIBILITY OF SUCH DAMAGE.
 					($parentElementName='SpotLight' and ($attributeName='radius' or $attributeName='cutOffAngle' or $attributeName='beamWidth')) or
 					($parentElementName='Text' and $attributeName='maxExtent') or
 					($parentElementName='TextureProperties' and ($attributeName='anisotropicDegree' or $attributeName='texturePriority')) or 
-                    (starts-with($parentElementName,'TextureProjector') and ($attributeName='farDistance' or $attributeName='nearDistance')) or
-                    ($parentElementName='TextureProjectorPerspective' and $attributeName='fieldOfView') or
+					(starts-with($parentElementName,'TextureProjector') and ($attributeName='farDistance' or $attributeName='nearDistance')) or
 					($parentElementName='TextureTransform' and $attributeName='rotation') or
 					($parentElementName='TransmitterPdu' and ($attributeName='power' or $attributeName='transmitFrequencyBandwidth')) or
 					($parentElementName='UniversalJoint' and starts-with($attributeName,'stop')) or
-					(contains($parentElementName,'Viewpoint') and $attributeName='fieldOfView') or
+					(($parentElementName='Viewpoint' or $parentElementName='GeoViewpoint' or $parentElementName='TextureProjector') and $attributeName='fieldOfView') or
 					($parentElementName='WindPhysicsModel'    and ($attributeName='gustiness' or $attributeName='speed' or $attributeName='turbulence'))">
 			  <xsl:text>SFFloat</xsl:text>
 		  </xsl:when>
@@ -4420,6 +4419,7 @@ POSSIBILITY OF SUCH DAMAGE.
 		  <xsl:when test="
 					($localFieldType='SFVec4f')    or 
                     ($parentElementName='ClipPlane' and $attributeName='plane') or 
+                    ($parentElementName='OrthoViewpoint' and $attributeName='fieldOfView') or 
                     ($parentElementName='TextureProjectorParallel' and $attributeName='fieldOfView')">
 			  <xsl:text>SFVec4f</xsl:text>
 		  </xsl:when>

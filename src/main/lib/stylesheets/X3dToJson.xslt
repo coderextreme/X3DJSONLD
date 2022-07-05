@@ -597,7 +597,7 @@ POSSIBILITY OF SUCH DAMAGE.
                             ($fieldName = 'leftTexture')        or ($fieldName = 'rightTexture')       or ($fieldName = 'topTexture')         or 
                             ($fieldName = 'appearance')         or ($fieldName = 'body1')              or ($fieldName = 'body2')              or
                             ($fieldName = 'collidable')         or ($fieldName = 'collider')           or
-                            ($fieldName = 'color')              or ($fieldName = 'colorRamp')          or ($fieldName = 'coord')              or 
+                            ($fieldName = 'color')              or ($fieldName = 'coord')              or 
                             ($fieldName = 'controlPoint')       or ($fieldName = 'controlPoints')      or ($fieldName = 'crossSectionCurve')  or
                             ($fieldName = 'emitter')            or ($fieldName = 'fillProperties')     or
                             ($fieldName = 'fogCoord')           or ($fieldName = 'fontStyle')          or ($fieldName = 'geoOrigin')          or
@@ -3819,18 +3819,17 @@ POSSIBILITY OF SUCH DAMAGE.
 					($parentElementName='Text' and $attributeName='maxExtent') or
 					($parentElementName='TextureProperties' and ($attributeName='anisotropicDegree' or $attributeName='texturePriority')) or
 					(starts-with($parentElementName,'TextureProjector') and ($attributeName='farDistance' or $attributeName='nearDistance')) or
-                                        ($parentElementName='TextureProjectorPerspective' and $attributeName='fieldOfView') or
-					($parentElementName='TextureTransform' and $attributeName='rotation') or
+                                        ($parentElementName='TextureTransform' and $attributeName='rotation') or
 					($parentElementName='TransmitterPdu' and ($attributeName='power' or $attributeName='transmitFrequencyBandwidth')) or
 					($parentElementName='UniversalJoint' and starts-with($attributeName,'stop')) or
-					(contains($parentElementName,'Viewpoint') and $attributeName='fieldOfView') or
+					(($parentElementName='Viewpoint' or $parentElementName='GeoViewpoint' or $parentElementName='TextureProjector') and $attributeName='fieldOfView') or
 					($parentElementName='WindPhysicsModel'    and ($attributeName='gustiness' or $attributeName='speed' or $attributeName='turbulence'))">
 			  <xsl:text>SFFloat</xsl:text>
 		  </xsl:when>
 		  <!-- MFFloat -->
 		  <xsl:when test="
 					($localFieldType='MFFloat')  or 
-                    ($attributeName='key')       or
+					($attributeName='key')       or
 					(contains($parentElementName,'ElevationGrid') and $attributeName='height') or
 					(contains($parentElementName,'LOD') and $attributeName='range') or
 					(ends-with($parentElementName,'Background') and ($attributeName='groundAngle' or $attributeName='skyAngle')) or
@@ -4001,6 +4000,7 @@ POSSIBILITY OF SUCH DAMAGE.
 		  <xsl:when test="
 					($localFieldType='SFVec4f')    or 
                     ($parentElementName='ClipPlane' and $attributeName='plane') or 
+                    ($parentElementName='OrthoViewpoint' and $attributeName='fieldOfView') or 
                     ($parentElementName='TextureProjectorParallel' and $attributeName='fieldOfView')">
 			  <xsl:text>SFVec4f</xsl:text>
 		  </xsl:when>

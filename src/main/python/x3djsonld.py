@@ -125,12 +125,12 @@ def parseObject(parent, data,indent):
             key = k[1:]
         if key in ("class", "style", "id", "global"):
             key = key+"_"
-        #if k in ("-colorRamp"):
-        #    k = "-color"
-        #    key = k[1:]
-        #if k in ("-texCoordRamp"):
-        #    k = "-texCoord"
-        #    key = k[1:]
+        if k in ("-colorRamp"):
+            k = "-color"
+            key = k[1:]
+        if k in ("-texCoordRamp"):
+            k = "-texCoord"
+            key = k[1:]
         fieldInfo = getField(parent, key)
         if not field or fieldType is None:
             fieldType = fieldInfo["fieldType"]
@@ -156,9 +156,9 @@ def parseObject(parent, data,indent):
             out += "\n"+key
             if key in ("left", "right", "top", "bottom", "front", "back"):
                 out += "Texture"
-            if key in ("fontStyle", "color", "colorRamp", "normal", "geometry", "appearance", "material", "texture", "textureTransform", "fontStyle", "source", "texCoord", "coord", "skeleton", "viewpoints", "skin", "displacers", "sites", "parts", "displacements", "segments", "shaders", "programs", "texture", "left", "right", "top", "bottom", "front", "back"):
+            if key in ("fontStyle", "physics", "color", "colorRamp", "normal", "geometry", "appearance", "material", "texture", "textureTransform", "fontStyle", "source", "texCoord", "coord", "skeleton", "viewpoints", "skin", "displacers", "sites", "parts", "displacements", "segments", "shaders", "programs", "texture", "left", "right", "top", "bottom", "front", "back"):
                 out += "="
-            elif key not in ("X3D", "GeoElevationGrid", "ForcePhysicsModel", "WindPhysicsModel", "BoundedPhysicsModel", "AudioClip", "LOD", "PositionInterpolator", "Extrusion", "TextureCoordinate", "MultiTextureCoordinate", "Normal", "FontStyle", "ComposedShader", "ImageTexture", "ShaderProgram", "ShaderPart", "ComposedCubeMapTexture", "WorldInfo", "NavigationInfo", "Viewpoint", "Background", "Transform", "Shape", "Sphere", "Appearance", "Material", "Box", "Group", "Script", "Text", "PixelTexture", "IndexedTriangleSet", "IndexedFaceSet", "HAnimDisplacer", "HAnimSite", "HAnimJoint", "HAnimSegment", "HAnimHumanoid", "ParticleSystem", "ExplosionEmitter", "PointEmitter", "PolylineEmitter", "SurfaceEmitter", "ConeEmitter", "VolumeEmitter", "GeoLOD", "GeoOrigin", "MetadataBoolean", "MetadataInteger", "MetadataDouble", "MetadataFloat", "MetadataString", "MetadataSet", "ViewpointGroup", "ProtoInstance", "ProtoDeclare", "ExternProtoDeclare", "TouchSensor", "ProgramShader", "VisibilitySensor", "TimeSensor", "PlaneSensor", "Switch", "Layer", "LineProperties", "AcousticProperties", "Sound", "Cylinder", "ROUTE", "PhysicalMaterial", "Color", "ColorRGBA", "CoordinateInterpolator", "Coordinate", "TextureBackground", "Collision", "LineSet", "IndexedLineSet", "Inline", "Anchor", "TextureTransform", "OrientationInterpolator", "ListenerPointSource", "Cone", "LayerSet", "ProximitySensor", "StringSensor", "IMPORT", "EXPORT", "PointLight", "DirectionalLight", "ChannelSplitter", "ChannelMerger", "BooleanFilter", "BooleanToggle", "BiquadFilter", "Fog", "SpotLight", "MovieTexture", "BooleanSequencer", "IntegerSequencer", "Billboard", "LayoutLayer", "Disk2D", "OrthoViewpoint", "GeoViewpoint", "GeoPositionInterpolator", "TextureProperties", "ColorInterpolator", "StreamAudioDestination", "SpatialSound", "Analyser", "Gain", "ChannelSelector", "Convolver", "Delay", "DynamicsCompressor", "WaveShaper", "BufferAudioSource", "StreamAudioSource", "MicrophoneSource", "OscillatorSource", "Rectangle2D", "ScalarInterpolator", "CADLayer", "CADAssembly", "CADPart", "CADFace", "EspduTransform", "ReceiverPdu", "SignalPdu", "TransmitterPdu", "DISEntityManager", "DISEntityTypeMapping", "LoadSensor", "GeoMetadata", "ImageCubeMapTexture", "ImageTexture3D", "PackagedShader"):
+            elif key not in ("X3D", "GeoElevationGrid", "ForcePhysicsModel", "WindPhysicsModel", "BoundedPhysicsModel", "AudioClip", "LOD", "PositionInterpolator", "Extrusion", "TextureCoordinate", "MultiTextureCoordinate", "Normal", "FontStyle", "ComposedShader", "ImageTexture", "ShaderProgram", "ShaderPart", "ComposedCubeMapTexture", "WorldInfo", "NavigationInfo", "Viewpoint", "Background", "Transform", "Shape", "Sphere", "Appearance", "Material", "Box", "Group", "Script", "Text", "PixelTexture", "IndexedTriangleSet", "IndexedFaceSet", "HAnimDisplacer", "HAnimSite", "HAnimJoint", "HAnimSegment", "HAnimHumanoid", "ParticleSystem", "ExplosionEmitter", "PointEmitter", "PolylineEmitter", "SurfaceEmitter", "ConeEmitter", "VolumeEmitter", "GeoLOD", "GeoOrigin", "ClipPlane", "MetadataBoolean", "MetadataInteger", "MetadataDouble", "MetadataFloat", "MetadataString", "MetadataSet", "ViewpointGroup", "ProtoInstance", "ProtoDeclare", "ExternProtoDeclare", "TouchSensor", "ProgramShader", "VisibilitySensor", "TimeSensor", "PlaneSensor", "Switch", "Layer", "LineProperties", "AcousticProperties", "Sound", "Cylinder", "ROUTE", "PhysicalMaterial", "ColorRGBA", "Color", "CoordinateInterpolator", "Coordinate", "TextureBackground", "Collision", "LineSet", "IndexedLineSet", "Inline", "Anchor", "TextureTransform", "OrientationInterpolator", "ListenerPointSource", "Cone", "LayerSet", "ProximitySensor", "StringSensor", "IMPORT", "EXPORT", "PointLight", "DirectionalLight", "ChannelSplitter", "ChannelMerger", "BooleanFilter", "BooleanToggle", "BiquadFilter", "Fog", "SpotLight", "MovieTexture", "BooleanSequencer", "IntegerSequencer", "Billboard", "LayoutLayer", "Disk2D", "OrthoViewpoint", "GeoViewpoint", "GeoPositionInterpolator", "TextureProperties", "ColorInterpolator", "StreamAudioDestination", "SpatialSound", "Analyser", "Gain", "ChannelSelector", "Convolver", "Delay", "DynamicsCompressor", "WaveShaper", "BufferAudioSource", "StreamAudioSource", "MicrophoneSource", "OscillatorSource", "Rectangle2D", "ScalarInterpolator", "CADLayer", "CADAssembly", "CADPart", "CADFace", "EspduTransform", "ReceiverPdu", "SignalPdu", "TransmitterPdu", "DISEntityManager", "DISEntityTypeMapping", "LoadSensor", "GeoMetadata", "ImageCubeMapTexture", "ImageTexture3D", "PackagedShader"):
 
                 out += "="
             if key in ("head"):
@@ -176,11 +176,11 @@ def parseObject(parent, data,indent):
                     out += str(prop)+"("
                     out += parseObject(prop, propValue,indent+1)
                     out += ")"
-            elif key in ("skeleton", "viewpoints", "skin", "displacers", "sites", "segments", "parts", "shaders", "programs"):
+            elif key in ("skeleton", "colorRamp", "physics", "viewpoints", "skin", "displacers", "sites", "segments", "parts", "shaders", "programs"):
                 out += "["
                 out += parseObject(k, v,indent+1)
                 out += "]"
-            elif key in ("fontStyle", "color", "colorRamp", "normal", "geometry", "appearance", "material", "texture", "textureTransform", "fontStyle", "source", "texCoord", "coord", "displacements", "texture", "left", "right", "top", "bottom", "front", "back"):
+            elif key in ("fontStyle", "normal", "geometry", "appearance", "material", "texture", "textureTransform", "fontStyle", "source", "texCoord", "coord", "displacements", "texture", "left", "right", "top", "bottom", "front", "back"):
                 out += parseObject(k, v,indent+1)
             else:
                 out += "("
@@ -197,11 +197,13 @@ def parseObject(parent, data,indent):
                 out += key+"="
             if key in ("meta", "unit", "component"):
                 pass
-            elif key in ("vertexCount", "range", "children", "url", "frontUrl", "backUrl", "bottomUrl", "topUrl", "leftUrl", "rightUrl", "key", "url", "justify", "string", "field", "fieldValue", "connect", "image", "avatarSize", "skyAngle", "groundAngle", "skinCoordWeight", "skinCoordIndex", "colorIndex", "texCoordIndex", "normalIndex", "coordIndex", "family", "stiffness", "llimit", "ulimit", "info", "skeleton", "viewpoints", "skin", "displacers", "sites", "segments", "parts", "shaders", "programs"):
+            elif key in ("vertexCount", "range", "children", "url", "frontUrl", "backUrl", "bottomUrl", "topUrl", "leftUrl", "rightUrl", "key", "url", "justify", "string", "field", "fieldValue", "connect", "image", "avatarSize", "skyAngle", "groundAngle", "skinCoordWeight", "skinCoordIndex", "colorIndex", "texCoordIndex", "normalIndex", "coordIndex", "family", "stiffness", "llimit", "ulimit", "info", "physics", "skeleton", "viewpoints", "skin", "displacers", "sites", "segments", "parts", "shaders", "programs"):
                 out += parseArray("[", "]", parent, key, v,indent+1, fieldType)
             elif key in ("vector", "groundColor", "skyColor", "spine", "crossSection", "point"):
                 out += parseArray("[", "]", parent, key, v,indent+1, fieldType)
             elif key in ("displacements"):
+                out += parseArray("[", "]", parent, key, v,indent+1, fieldType)
+            elif key in ("colorRamp"):
                 out += parseArray("[", "]", parent, key, v,indent+1, fieldType)
             elif key in ("scale"):
                 out += parseArray("(", ")", parent, key, v,indent+1, fieldType)
@@ -216,7 +218,7 @@ def parseObject(parent, data,indent):
                     # out += parseArray(data["@type"]+"(", ")", parent, key, v,indent+1, fieldType)
                     # MF
                     out += parseArray("[", "]", parent, key, v,indent+1, dt)
-            elif key in ("color", "colorRamp", "value", "keyValue"):
+            elif key in ("color", "value", "keyValue"):
                 #print(">parent "+parent+" key "+key+" fieldType "+fieldType, file=sys.stderr)
                 fieldInfo = getField(parent, key)
                 fieldType = fieldInfo["fieldType"]

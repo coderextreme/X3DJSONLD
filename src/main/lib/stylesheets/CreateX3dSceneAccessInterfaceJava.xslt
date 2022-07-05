@@ -2809,18 +2809,33 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 										<xsl:text>"</xsl:text>
 										<xsl:text> has alias </xsl:text>
 										<xsl:if test="contains(@alias,',')">
-											<xsl:text>array (TODO tokenize)</xsl:text>
+											<xsl:text> (TODO tokenize array)</xsl:text>
 										</xsl:if>
 										<xsl:text>"</xsl:text>
 										<xsl:text disable-output-escaping="yes">&lt;i&gt;</xsl:text>
 										<xsl:value-of select="@alias"/>
 										<xsl:text disable-output-escaping="yes">&lt;/i&gt;</xsl:text>
 										<xsl:text>"</xsl:text>
-										<xsl:text>&#10;</xsl:text>
-										<xsl:text>	 * @see #</xsl:text>
-                                                                                <xsl:value-of select="upper-case($fieldName)"/>
-										<xsl:text>_</xsl:text>
-                                                                                <xsl:value-of select="upper-case($currentAlias)"/>
+                                                                                <xsl:choose>
+                                                                                    <xsl:when test="contains(@alias,',')">
+                                                                                        <!-- (TODO tokenize array) -->
+                                                                                    </xsl:when>
+                                                                                    <xsl:when test="(../@baseType = 'SFInt32')">
+                                                                                        <!-- special case such as hatchStyleValues -->
+                                                                                        <xsl:text>&#10;</xsl:text>
+                                                                                        <xsl:text>	 * @see #</xsl:text>
+                                                                                        <xsl:value-of select="upper-case($fieldName)"/>
+                                                                                        <xsl:text>_</xsl:text>
+                                                                                        <xsl:value-of select="upper-case(@alias)"/>
+                                                                                    </xsl:when>
+                                                                                    <xsl:otherwise>
+                                                                                        <xsl:text>&#10;</xsl:text>
+                                                                                        <xsl:text>	 * @see #</xsl:text>
+                                                                                        <xsl:value-of select="upper-case($fieldName)"/>
+                                                                                        <xsl:text>_</xsl:text>
+                                                                                        <xsl:value-of select="upper-case(@value)"/><!-- NAME -->
+                                                                                    </xsl:otherwise>
+                                                                                </xsl:choose>
 										<xsl:text> */</xsl:text>
 										<xsl:text>&#10;</xsl:text>
 										<xsl:text>	public static final String </xsl:text><!-- type found in XML schema -->
@@ -36972,7 +36987,12 @@ import org.web3d.x3d.sai.X3DException;</xsl:with-param>
 		</xsl:with-param>
 		<xsl:with-param name="implementationBlock">
 			<xsl:text disable-output-escaping="yes"><![CDATA[
-	
+    /** Default constructor */
+    public BlenderLauncher()
+    {
+        // avoid warning
+    }
+	 
     /** Blender website URL
      * @see #launchBlenderWebPage()
      */     
