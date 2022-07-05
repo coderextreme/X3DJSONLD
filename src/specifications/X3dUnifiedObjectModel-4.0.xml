@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-4.0.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-4.0.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 4.0 of X3D -->
-<!-- Generated 2022-06-12-07:00 16:29:11.1002491-07:00 -->
+<!-- Generated 2022-07-03-07:00 19:50:46.8410715-07:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                         version="4.0"
                         xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -20825,7 +20825,7 @@
                     additionalEnumerationValuesAllowed="false"
                     simpleType="hanimVersionChoices"
                     baseType="xs:NMTOKEN"
-                    description="HAnimHumanoid version, where value is 1.">
+                    description="HAnimHumanoid version, where allowed value is 2.">
                <enumeration value="2.0"
                              appinfo="Revised standard HAnim 19774 version 2 (parts 1 and 2) were approved by ISO in November 2019, published by Web3D Consortium May 2020."
                              documentation="https://www.web3d.org/documents/specifications/19774/V2.0"/>
@@ -30041,7 +30041,7 @@
                     inheritedFrom="X3DViewpointNode"
                     description="farDistance defines maximum clipping plane distance allowed for object display."/>
             <field name="fieldOfView"
-                    type="MFFloat"
+                    type="SFVec4f"
                     accessType="inputOutput"
                     default="-1 -1 1 1"
                     description="Minimum and maximum extents of view in units of local coordinate system."/>

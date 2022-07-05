@@ -26,8 +26,8 @@ geometry=
 IndexedLineSet(colorIndex=[0,1,2], colorPerVertex=False, coordIndex=[0,1,-1,0,2,-1,0,3,-1], 
 coord=
 Coordinate(point=[(0,0,0),(1.0,0,0),(0,1.0,0),(0,0,1.0)]), 
-color=
-Color(color=[(1,0,0),(0,0.6,0),(0,0,1)]))),]),
+color=(
+Color(color=[(1,0,0),(0,0.6,0),(0,0,1)])))),]),
 #*Expected rotation values for initial rotations* in Interpolator2
 
 Transform(DEF="Transform2", rotation=((-0.96458,0.07774,0.25206,2.59674)), children=[

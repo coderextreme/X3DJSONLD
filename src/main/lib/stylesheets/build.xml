@@ -72,7 +72,7 @@ POSSIBILITY OF SUCH DAMAGE.
     <!-- unused options: ass,bitwise,browser,closure,continue,debug,devel,eqeq,es5,evil,forin,indent,maxerr,maxlen,newcap,node,nomen,passfail,plusplus,predef,properties,regexp,rhino,sloppy,stupid,sub,todo,unparam,vars,warnings, -->
 
     <!-- https://github.com/fge/json-schema-validator -->
-    <!-- http://stackoverflow.com/questions/22867521/how-to-run-json-schema-validator-from-the-command-line -->
+    <!-- https://stackoverflow.com/questions/22867521/how-to-run-json-schema-validator-from-the-command-line -->
     <!-- fix double-hyphen switch when running on command line: -->
     <!-- java -jar lib/json-schema-validator-2.2.6-lib.jar - -help -->
     <!-- java -jar lib/json-schema-validator-2.2.6-lib.jar - -syntax ../../specifications/x3d-3.3-JSONSchema.json -->
@@ -86,12 +86,14 @@ POSSIBILITY OF SUCH DAMAGE.
     <!-- Alternate validation library candidate: https://github.com/everit-org/json-schema -->
     <!-- TODO stable ant invocation needed, see  https://github.com/everit-org/json-schema/issues/257 -->
 
-    <!-- http://stackoverflow.com/questions/919692/how-to-execute-xslt-2-0-with-ant -->
+    <!-- https://stackoverflow.com/questions/919692/how-to-execute-xslt-2-0-with-ant -->
     <!-- https://sourceforge.net/projects/saxon/files/Saxon-HE jar download handled in X3DJSAIL build -->
-    <!-- https://sourceforge.net/projects/saxon/files/Saxon-HE/10/Java/ -->
+    <!-- https://sourceforge.net/projects/saxon/files/Saxon-HE/11/Java/ -->
     <!-- https://www.saxonica.com/documentation10/#!about/gettingstarted/gettingstartedjava -->
+    <!-- SaxonHE 11 (java.lang.NoClassDefFoundError: org/xmlresolver/Resolver) https://saxonica.plan.io/boards/3/topics/8478?r=8480 -->
     <property name="saxon.dir"        location="java/lib" description="relative path from stylesheets directory"/>
-    <property name="saxon.jar"           value="saxon-he-10.6.jar"/><!-- saxon9he.jar -->
+    <property name="saxon.jar"           value="saxon-he-11.3.jar"/><!-- previously saxon-he-10.6.jar saxon9he.jar -->
+    <property name="xmlresolver.jar"     value="xmlresolver-4.2.0.jar"/><!-- required with saxon-he-11+.jar -->
     
     <property name=   "node.exe" value="node.exe"/>
 
@@ -121,12 +123,15 @@ POSSIBILITY OF SUCH DAMAGE.
         <mkdir dir="${saxon.dir}"/>
         <get src="http://svn.code.sf.net/p/x3d/code/www.web3d.org/x3d/tools/jar/${saxon.jar}"
              dest="${saxon.dir}/${saxon.jar}" verbose="true" failonerror="false" ignoreerrors="${ignoreSetupDownloadErrors}"/>
+        <get src="http://svn.code.sf.net/p/x3d/code/www.web3d.org/x3d/tools/jar/${xmlresolver.jar}"
+             dest="${saxon.dir}/${xmlresolver.jar}" verbose="true" failonerror="false" ignoreerrors="${ignoreSetupDownloadErrors}"/>
     </target>
     <target name="get.saxon.check">
         <condition property="saxon.found" else="false">
             <available file="${saxon.dir}/${saxon.jar}"/>
+            <available file="${saxon.dir}/${xmlresolver.jar}"/>
         </condition>
-        <echo message="found ${saxon.dir}/${saxon.jar}: ${saxon.found}"/>
+        <echo message="found ${saxon.dir}/${saxon.jar} and ${saxon.dir}/${xmlresolver.jar}: ${saxon.found}"/>
     </target>
     
     <target name="versions" description="show tool versions and environment values">
@@ -161,9 +166,11 @@ POSSIBILITY OF SUCH DAMAGE.
         </exec>
         <!-- https://www.saxonica.com/documentation10/#!using-xsl/commandline -->
         <echo>saxon -? help</echo>
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." failonerror="true">
+	<!--
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." failonerror="true">
             <arg value="-?" description="help information"/>
         </java>
+	-->
         <echo>Check for node.js installation from https://nodejs.org</echo>
         <exec executable="${node.exe}">
             <arg value="--version"/>
@@ -181,11 +188,11 @@ POSSIBILITY OF SUCH DAMAGE.
     </target>
 
     <xmlcatalog id="X3dCatalog">
-        <dtd    publicId="ISO//Web3D//DTD X3D 3.0//EN"                                  location="../../../../specifications/x3d-3.0.dtd"/>
-        <dtd    publicId="ISO//Web3D//DTD X3D 3.1//EN"                                  location="../../../../specifications/x3d-3.1.dtd"/>
-        <dtd    publicId="ISO//Web3D//DTD X3D 3.2//EN"                                  location="../../../../specifications/x3d-3.2.dtd"/>
-        <dtd    publicId="ISO//Web3D//DTD X3D 3.3//EN"                                  location="../../../../specifications/x3d-3.3.dtd"/>
-        <dtd    publicId="ISO//Web3D//DTD X3D 4.0//EN"                                  location="../../../../specifications/x3d-4.0.dtd"/>
+        <dtd    publicId="ISO//Web3D//DTD X3D 3.0//EN"                                   location="../../../../specifications/x3d-3.0.dtd"/>
+        <dtd    publicId="ISO//Web3D//DTD X3D 3.1//EN"                                   location="../../../../specifications/x3d-3.1.dtd"/>
+        <dtd    publicId="ISO//Web3D//DTD X3D 3.2//EN"                                   location="../../../../specifications/x3d-3.2.dtd"/>
+        <dtd    publicId="ISO//Web3D//DTD X3D 3.3//EN"                                   location="../../../../specifications/x3d-3.3.dtd"/>
+        <dtd    publicId="ISO//Web3D//DTD X3D 4.0//EN"                                   location="../../../../specifications/x3d-4.0.dtd"/>
         <dtd    publicId="https://www.web3D.org/specifications/x3d-3.0.dtd"              location="../../../../specifications/x3d-3.0.dtd"/>
         <dtd    publicId="https://www.web3D.org/specifications/x3d-3.1.dtd"              location="../../../../specifications/x3d-3.1.dtd"/>
         <dtd    publicId="https://www.web3D.org/specifications/x3d-3.2.dtd"              location="../../../../specifications/x3d-3.2.dtd"/>
@@ -197,8 +204,8 @@ POSSIBILITY OF SUCH DAMAGE.
         <entity publicId="https://www.web3D.org/specifications/x3d-3.3.xsd"              location="../../../../specifications/x3d-3.3.xsd"/>
         <entity publicId="https://www.web3D.org/specifications/x3d-4.0.xsd"              location="../../../../specifications/x3d-4.0.xsd"/>
         <!-- Transitional DTD, versions 3.1 and 3.1 only -->
-        <dtd    publicId="file:///www.web3d.org/TaskGroups/x3d/translation/x3d-3.0.dtd" location="../../../../specifications/x3d-3.0.dtd"/>
-        <dtd    publicId="file:///www.web3d.org/TaskGroups/x3d/translation/x3d-3.1.dtd" location="../../../../specifications/x3d-3.1.dtd"/>
+        <dtd    publicId="file:///www.web3d.org/TaskGroups/x3d/translation/x3d-3.0.dtd"  location="../../../../specifications/x3d-3.0.dtd"/>
+        <dtd    publicId="file:///www.web3d.org/TaskGroups/x3d/translation/x3d-3.1.dtd"  location="../../../../specifications/x3d-3.1.dtd"/>
     </xmlcatalog>
 
     <property name="examples.dir"       location="../content/examples"/>
@@ -259,8 +266,9 @@ POSSIBILITY OF SUCH DAMAGE.
 	
     <!-- ensure backwards compatibility to specified version of Java -->
     <!-- https://stackoverflow.com/questions/66068153/java-warning-options-system-modules-path-not-set-in-conjunction-with-source -->
-    <property name="java.source"                 value="17"/><!-- 1.8 is strictest, 15 or higher allows use of """text blocks""" for Script CDATA -->
-    <property name="java.target"                 value="17"/><!-- LTS -->
+    <property name="java.source"                 value="16"/><!-- 1.8 is strictest, 15 or higher allows use of """text blocks""" for Script CDATA -->
+    <property name="java.target"                 value="16"/><!-- LTS -->
+    <!-- TODO compiler bug, java source and target 17 not supported as advertised -->
     
     <property name="javac.verbose"               value="false"/>
     <property name="X3DJSAIL.relative.dir"       value="java"/>
@@ -301,8 +309,8 @@ POSSIBILITY OF SUCH DAMAGE.
     <property name="junit5.dir"              location="${X3DJSAIL.relative.dir}/lib/support"   description="do not create local copies of junit for project"/>
     <property name="junit5.jupiter.dir"      location="${junit5.dir}/jupiter" description="do not create local copies of junit for project"/>
     <property name="junit5.site"                value="http://central.maven.org/maven2/org/junit" description="Maven repository"/>
-    <property name="junit5.version"             value="1.3.1" description="latest supported version"/>
-    <property name="jupiter.version"            value="5.3.1" description="latest supported version"/>
+    <property name="junit5.version"             value="1.5.0" description="latest supported version"/>
+    <property name="jupiter.version"            value="5.6.0" description="latest supported version"/>
     <property name="opentest4j"                 value="opentest4j"/>
     <!-- opentest4j 1.1.1 failing -->
     <property name="opentest4j.version"         value="1.1.0" description="latest supported version"/>
@@ -321,6 +329,7 @@ POSSIBILITY OF SUCH DAMAGE.
         </fileset>
     </path>
 	
+    <!-- TODO debug/update -->
     <target name="get.junit5.jars" description="Get latest versions of JUnit5 .jar test suite">
         <ant antfile="java/build.xml" target="antVersionCheck"/>
         <echo message="get junit5 .jar files if not already available) and install in ANT_HOME/lib=${env.ANT_HOME}/lib"/>
@@ -330,29 +339,29 @@ POSSIBILITY OF SUCH DAMAGE.
 
         <!-- http://central.maven.org/maven2/org/junit/platform/junit-platform-commons/1.2.0/junit-platform-commons-1.2.0.jar -->
         <get src="${junit5.site}/platform/${junit-platform-commons}/${junit5.version}/${junit-platform-commons}-${junit5.version}.jar"
-             dest="${junit5.dir}/${junit-platform-commons}.jar" verbose="true" failonerror="false" ignoreerrors="${ignoreSetupDownloadErrors}"/>
+             dest="${junit5.dir}/${junit-platform-commons}.jar" verbose="true" ignoreerrors="${ignoreSetupDownloadErrors}"/>
         <get src="${junit5.site}/platform/${junit-platform-engine}/${junit5.version}/${junit-platform-engine}-${junit5.version}.jar"
-                     dest="${junit5.dir}/${junit-platform-engine}.jar" verbose="true" failonerror="false" ignoreerrors="${ignoreSetupDownloadErrors}"/>
+                     dest="${junit5.dir}/${junit-platform-engine}.jar" verbose="true" ignoreerrors="${ignoreSetupDownloadErrors}"/>
         <get src="${junit5.site}/platform/${junit-platform-launcher}/${junit5.version}/${junit-platform-launcher}-${junit5.version}.jar"
-                     dest="${junit5.dir}/${junit-platform-launcher}.jar" verbose="true" failonerror="false" ignoreerrors="${ignoreSetupDownloadErrors}"/>
+                     dest="${junit5.dir}/${junit-platform-launcher}.jar" verbose="true" ignoreerrors="${ignoreSetupDownloadErrors}"/>
 		
         <get src="http://central.maven.org/maven2/org/${opentest4j}/${opentest4j}/${opentest4j.version}/${opentest4j}-${opentest4j.version}.jar"
-                     dest="${junit5.dir}/${opentest4j}-${opentest4j.version}.jar" verbose="true" failonerror="false" ignoreerrors="${ignoreSetupDownloadErrors}"/>
+                     dest="${junit5.dir}/${opentest4j}-${opentest4j.version}.jar" verbose="true" ignoreerrors="${ignoreSetupDownloadErrors}"/>
 		
         <!--  example http://central.maven.org/maven2/org/junit/jupiter/junit-jupiter-engine/5.2.0/junit-jupiter-engine-5.2.0.jar
         redirect from https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine/5.2.0/junit-jupiter-api.jar -->
         <!-- note that these go into the jupiter subdirectory -->
         <get src="${junit5.site}/jupiter/${junit-jupiter-api}/${jupiter.version}/${junit-jupiter-api}-${jupiter.version}.jar"
-                     dest="${junit5.dir}/jupiter/${junit-jupiter-api}.jar" verbose="true" failonerror="false" ignoreerrors="${ignoreSetupDownloadErrors}"/>
+                     dest="${junit5.dir}/jupiter/${junit-jupiter-api}.jar" verbose="true" ignoreerrors="${ignoreSetupDownloadErrors}"/>
         <get src="${junit5.site}/jupiter/${junit-jupiter-engine}/${jupiter.version}/${junit-jupiter-engine}-${jupiter.version}.jar"
-             dest="${junit5.dir}/jupiter/${junit-jupiter-engine}.jar" verbose="true" failonerror="false" ignoreerrors="${ignoreSetupDownloadErrors}"/>
+             dest="${junit5.dir}/jupiter/${junit-jupiter-engine}.jar" verbose="true" ignoreerrors="${ignoreSetupDownloadErrors}"/>
         
         <echo message="bugfix: silence junit5 package warnings"/>
         <!-- https://github.com/junit-team/junit5/issues/1104 warning: unknown enum constant Status.STABLE while compiling org.junit.jupiter.api.Test -->
         <!-- https://mvnrepository.com/artifact/org.apiguardian/apiguardian-api/1.0.0 -->
         <!-- at   http://central.maven.org/maven2/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.jar -->
         <get src="http://central.maven.org/maven2/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.jar"
-             dest="${junit5.dir}/apiguardian-api-1.0.0.jar" verbose="true" failonerror="false" ignoreerrors="${ignoreSetupDownloadErrors}"/>
+             dest="${junit5.dir}/apiguardian-api-1.0.0.jar" verbose="true" ignoreerrors="${ignoreSetupDownloadErrors}"/>
     </target>
 
     <target name="create.X3DPSAIL" depends="BuildX3dPythonPackageFromX3duom.saxon" description="Build API for X3D Python Scene Authoring Interface Library (X3DJSAIL) from X3D Unified Object Model (X3DUOM)" >
@@ -413,7 +422,8 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="copy latest stylesheets:"/>
         <mkdir dir="${X3DJSAIL.lib.dir}/stylesheets"/>
         <!-- copying of local/latest updates is optional since the following files are in version control -->
-        <copy file="${saxon.jar}"                          todir="${X3DJSAIL.lib.dir}"             force="true" verbose="true" failonerror="false"/>
+        <copy file="${saxon.dir}/${saxon.jar}"             todir="${X3DJSAIL.lib.dir}"             force="true" verbose="true" failonerror="false"/>
+        <copy file="${saxon.dir}/${xmlresolver.jar}"       todir="${X3DJSAIL.lib.dir}"             force="true" verbose="true" failonerror="false"/>
         <copy file=      "${c14n.dir}/${c14n.jar}"         todir="${X3DJSAIL.lib.dir}"             force="true" verbose="true" failonerror="false"/>
         <copy file="${exificient.dir}/${exificient.jar}"   todir="${X3DJSAIL.lib.dir}"             force="true" verbose="true" failonerror="false"/>
         <copy file=   "${openexi.dir}/${nagasena.jar}"     todir="${X3DJSAIL.lib.dir}"             force="true" verbose="true" failonerror="false"/>
@@ -444,8 +454,8 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="create autogenerated Java source code:"/>
         <!-- https://stackoverflow.com/questions/51916221/javax-xml-bind-jaxbexception-implementation-of-jaxb-api-has-not-been-found-on-mo -->
         <!-- https://stackoverflow.com/questions/48204141/replacements-for-deprecated-jpms-modules-with-java-ee-apis/48279048#48279048 -->
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}" failonerror="true">
-            <arg value="-t" description="timing information"/>
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}" failonerror="true">
+            <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:TempSaiJava.txt" description="output-doc"/>
             <arg value="-s:${specifications.dir}/${X3dUnifiedObjectModel}" description="source-doc"/>
@@ -498,6 +508,8 @@ POSSIBILITY OF SUCH DAMAGE.
             <classpath>
                 <fileset dir="${X3DJSAIL.lib.dir}">
                     <include name="*.jar"/>
+                    <include name="lib/*.jar"/><!-- saxon lib jars including xmlresolver -->
+                    <!-- SaxonHE 11 (java.lang.NoClassDefFoundError: org/xmlresolver/Resolver) https://saxonica.plan.io/boards/3/topics/8478?r=8480 -->
                     <include name="support/jaxb/*.jar"/>
                 </fileset>
             </classpath>
@@ -650,7 +662,7 @@ POSSIBILITY OF SUCH DAMAGE.
             <!-- previous switches
        maxmemory="4096m"
              useexternalfile="yes" explained at:
-             http://stackoverflow.com/questions/10519558/createprocess-error-206-the-filename-or-extension-is-too-long-when-running-main
+             https://stackoverflow.com/questions/10519558/createprocess-error-206-the-filename-or-extension-is-too-long-when-running-main
 
       sourcepath="${src.org.web3d.x3d.sai}"
  useexternalfile="true"
@@ -815,6 +827,8 @@ POSSIBILITY OF SUCH DAMAGE.
             </fileset>
             <!-- lib, stylesheets -->
             <fileset dir="${X3DJSAIL.lib.dir}">
+                <include name="lib/*.jar"/><!-- saxon lib jars including xmlresolver -->
+                <!-- SaxonHE 11 (java.lang.NoClassDefFoundError: org/xmlresolver/Resolver) https://saxonica.plan.io/boards/3/topics/8478?r=8480 -->
                 <include name="specifications/**"/>
                 <include name="stylesheets/**"/>
                 <!-- Note that no external-dependency jar files are included in this stripped-down jar -->
@@ -877,6 +891,8 @@ POSSIBILITY OF SUCH DAMAGE.
             </fileset>
             <!-- lib, stylesheets -->
             <fileset dir="${X3DJSAIL.lib.dir}">
+                <include name="lib/*.jar"/><!-- saxon lib jars including xmlresolver -->
+                <!-- SaxonHE 11 (java.lang.NoClassDefFoundError: org/xmlresolver/Resolver) https://saxonica.plan.io/boards/3/topics/8478?r=8480 -->
                 <include name="specifications/**"/>
                 <include name="stylesheets/**"/>
                 <!-- lib jar dependencies are extracted and reintegrated in a later step -->
@@ -979,22 +995,22 @@ POSSIBILITY OF SUCH DAMAGE.
     </target>
 
     <target name="BuildSpecificationLanguageBindingJava.saxon" depends="" description="Build X3D specification XML encodings clause 6, Encoding of Nodes" >
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
-            <arg value="-t" description="timing information"/>
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:unused.html" description="output-doc"/>
             <arg value="-s:${specifications.dir}/${X3dSchemaSource}" description="source-doc"/>
             <arg value="-xsl:BuildSpecificationLanguageBindingJava.xslt" description="style-doc"/>
         </java>
         <echo message="Remove extraneous namespace attributes from result file:"/>
-        <replace file="JavaLanguageBinding.Part2.nodeTypeInterfaces.html" token=' xmlns:fn="http://www.w3.org/2005/xpath-functions"' value=""  summary="true"/>
-        <replace file="JavaLanguageBinding.Part2.nodeInterfaces.html" token=' xmlns:fn="http://www.w3.org/2005/xpath-functions"'     value=""  summary="true"/>
-        <echo message="Produced new X3D Java SAI Appendix B JavaLanguageBinding.Part2.nodeTypeInterfaces.html and Appendix C JavaLanguageBinding.Part2.nodeInterfaces.html"/>
+        <replace file="JavaLanguageBinding.Part2.abstracts.html" token=' xmlns:fn="http://www.w3.org/2005/xpath-functions"' value=""  summary="true"/>
+        <replace file="JavaLanguageBinding.Part2.concretes.html" token=' xmlns:fn="http://www.w3.org/2005/xpath-functions"'     value=""  summary="true"/>
+        <echo message="Produced new X3D Java SAI Appendix B JavaLanguageBinding.Part2.abstracts.html and Appendix C JavaLanguageBinding.Part2.concretes.html"/>
         <mkdir dir="../../specifications/JavaLanguageBinding/Part2"/>
         <mkdir dir="../../specifications/JavaLanguageBinding/images"/>
         <echo message="move to subdirectory specifications/JavaLanguageBinding, rename to match specification filenames:"/>
-        <move file="JavaLanguageBinding.Part2.nodeTypeInterfaces.html" tofile="../../specifications/JavaLanguageBinding/Part2/nodeTypeInterfaces.html" verbose="true" failonerror="false"/>
-        <move file="JavaLanguageBinding.Part2.nodeInterfaces.html"     tofile="../../specifications/JavaLanguageBinding/Part2/nodeInterfaces.html"     verbose="true" failonerror="false"/>
+        <move file="JavaLanguageBinding.Part2.abstracts.html" tofile="../../specifications/JavaLanguageBinding/Part2/abstracts.html" verbose="true" failonerror="false"/>
+        <move file="JavaLanguageBinding.Part2.concretes.html"     tofile="../../specifications/JavaLanguageBinding/Part2/concretes.html"     verbose="true" failonerror="false"/>
         <copy file="Web3D_LB.css"      todir="../../specifications/JavaLanguageBinding/Part2/" verbose="true" failonerror="false"/>
         <copy file="images/cube.gif"   todir="../../specifications/JavaLanguageBinding/images" verbose="true" failonerror="false"/>
         <copy file="images/x3dbar.png" todir="../../specifications/JavaLanguageBinding/images" verbose="true" failonerror="false"/>
@@ -1016,7 +1032,141 @@ POSSIBILITY OF SUCH DAMAGE.
             </fileset>
         </copy>
     </target>
+
+    <target name="BuildSpecificationLanguageBindingC.saxon" depends="" description="Build X3D specification XML encodings clause 6, Encoding of Nodes" >
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- arg value="-t" description="timing information"/ -->
+            <arg value="-warnings:recover" description="recover after writing a warning message"/>
+            <arg value="-o:unused.html" description="output-doc"/>
+            <arg value="-s:${specifications.dir}/${X3dSchemaSource3.3}" description="source-doc"/>
+            <arg value="-xsl:BuildSpecificationLanguageBindingC.xslt" description="style-doc"/>
+        </java>
+        <echo message="Remove extraneous namespace attributes from result file:"/>
+        <replace file="CLanguageBinding.Part3.abstracts.html" token=' xmlns:fn="http://www.w3.org/2005/xpath-functions"' value=""  summary="true"/>
+        <replace file="CLanguageBinding.Part3.concretes.html" token=' xmlns:fn="http://www.w3.org/2005/xpath-functions"'     value=""  summary="true"/>
+        <echo message="Produced new X3D C SAI Appendix B CLanguageBinding.Part3.abstracts.html and Appendix C CLanguageBinding.Part3.concretes.html"/>
+        <mkdir dir="../../specifications/CLanguageBinding/Part3"/>
+        <mkdir dir="../../specifications/CLanguageBinding/images"/>
+        <echo message="move to subdirectory specifications/CSharpLanguageBinding, rename to match specification filenames:"/>
+        <move file="CLanguageBinding.Part3.abstracts.html" tofile="../../specifications/CLanguageBinding/Part3/abstracts.html" verbose="true" failonerror="false"/>
+        <move file="CLanguageBinding.Part3.concretes.html"     tofile="../../specifications/CLanguageBinding/Part3/concretes.html"     verbose="true" failonerror="false"/>
+        <copy file="Web3D_LB.css"      todir="../../specifications/CLanguageBinding/Part3/" verbose="true" failonerror="false"/>
+        <copy file="images/cube.gif"   todir="../../specifications/CLanguageBinding/images" verbose="true" failonerror="false"/>
+        <copy file="images/x3dbar.png" todir="../../specifications/CLanguageBinding/images" verbose="true" failonerror="false"/>
+        <copy file="images/x3d.png"    todir="../../specifications/CLanguageBinding/images" verbose="true" failonerror="false"/>
+
+        <echo message="Update draft C specification annexes"/>
+        <echo message="==========================================="/>
+        <echo message="BuildSpecificationLanguageBindingC.saxon"/>
+        <echo message="==========================================="/>
+    <!-- 
+    <echo message="Copy open-source license and draft Java specification annexes"/>
+    <copy file="license.txt"  todir="${src.org.web3d.x3d.jsail}"/>
+        <copy file="license.html" todir="${src.org.web3d.x3d.jsail}"/>
+        <copy file="license.txt"  todir="${src.org.web3d.x3d.sai}"/>
+        <copy file="license.html" todir="${src.org.web3d.x3d.sai}"/>
+        <copy todir="${X3DJSAIL.relative.dir}/draftJavaLanguageBindingAnnexes"><!- verbose="true" failonerror="false" ->
+            <fileset dir="../../specifications/JavaLanguageBinding/" defaultexcludes="yes">
+                <include name="Part3/**/*"/>
+                <include name="Images/*.gif"/>
+                <include name="Images/*.png"/>
+            </fileset>
+        </copy>
+        -->
+    </target>
+
+    <target name="BuildSpecificationLanguageBindingCPP.saxon" depends="" description="Build X3D specification XML encodings clause 6, Encoding of Nodes" >
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- arg value="-t" description="timing information"/ -->
+            <arg value="-warnings:recover" description="recover after writing a warning message"/>
+            <arg value="-o:unused.html" description="output-doc"/>
+            <arg value="-s:${specifications.dir}/${X3dSchemaSource3.3}" description="source-doc"/>
+            <arg value="-xsl:BuildSpecificationLanguageBindingCPP.xslt" description="style-doc"/>
+        </java>
+        <echo message="Remove extraneous namespace attributes from result file:"/>
+        <replace file="CPPLanguageBinding.Part4.abstracts.html" token=' xmlns:fn="http://www.w3.org/2005/xpath-functions"' value=""  summary="true"/>
+        <replace file="CPPLanguageBinding.Part4.concretes.html" token=' xmlns:fn="http://www.w3.org/2005/xpath-functions"'     value=""  summary="true"/>
+        <echo message="Produced new X3D CPP SAI Appendix B CPPLanguageBinding.Part4.abstracts.html and Appendix C CPPLanguageBinding.Part4.concretes.html"/>
+        <mkdir dir="../../specifications/CPPLanguageBinding/Part4"/>
+        <mkdir dir="../../specifications/CPPLanguageBinding/images"/>
+        <echo message="move to subdirectory specifications/CSharpLanguageBinding, rename to match specification filenames:"/>
+        <move file="CPPLanguageBinding.Part4.abstracts.html" tofile="../../specifications/CPPLanguageBinding/Part4/abstracts.html" verbose="true" failonerror="false"/>
+        <move file="CPPLanguageBinding.Part4.concretes.html"     tofile="../../specifications/CPPLanguageBinding/Part4/concretes.html"     verbose="true" failonerror="false"/>
+        <copy file="Web3D_LB.css"      todir="../../specifications/CPPLanguageBinding/Part4/" verbose="true" failonerror="false"/>
+        <copy file="images/cube.gif"   todir="../../specifications/CPPLanguageBinding/images" verbose="true" failonerror="false"/>
+        <copy file="images/x3dbar.png" todir="../../specifications/CPPLanguageBinding/images" verbose="true" failonerror="false"/>
+        <copy file="images/x3d.png" todir="../../specifications/CPPLanguageBinding/images" verbose="true" failonerror="false"/>
+
+        <echo message="Update draft CPP specification annexes"/>
+        <echo message="==========================================="/>
+        <echo message="BuildSpecificationLanguageBindingCPP.saxon"/>
+        <echo message="==========================================="/>
+        
+        <!-- the following techniques are unique to netbeans and display results in the browser -->
+        <echo message="file:///../../specifications/CPPLanguageBinding/Part4/abstracts.html"/>
+        <nbbrowse url="file:///../../specifications/CPPLanguageBinding/Part4/abstracts.html"/>
+        <echo message="file:///../../specifications/CPPLanguageBinding/Part4/concretes.html"/>
+        <nbbrowse url="file:///../../specifications/CPPLanguageBinding/Part4/concretes.html"/>
+        <echo message="==========================================="/>
+
+    <!-- 
+    <echo message="Copy open-source license and draft Java specification annexes"/>
+    <copy file="license.txt"  todir="${src.org.web3d.x3d.jsail}"/>
+        <copy file="license.html" todir="${src.org.web3d.x3d.jsail}"/>
+        <copy file="license.txt"  todir="${src.org.web3d.x3d.sai}"/>
+        <copy file="license.html" todir="${src.org.web3d.x3d.sai}"/>
+        <copy todir="${X3DJSAIL.relative.dir}/draftJavaLanguageBindingAnnexes"><!- verbose="true" failonerror="false" ->
+            <fileset dir="../../specifications/JavaLanguageBinding/" defaultexcludes="yes">
+                <include name="Part4/**/*"/>
+                <include name="Images/*.gif"/>
+                <include name="Images/*.png"/>
+            </fileset>
+        </copy>
+        -->
+    </target>
     
+    <target name="BuildSpecificationLanguageBindingCSharp.saxon" depends="" description="Build X3D specification XML encodings clause 6, Encoding of Nodes" >
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- arg value="-t" description="timing information"/ -->
+            <arg value="-warnings:recover" description="recover after writing a warning message"/>
+            <arg value="-o:unused.html" description="output-doc"/>
+            <arg value="-s:${specifications.dir}/${X3dSchemaSource3.3}" description="source-doc"/>
+            <arg value="-xsl:BuildSpecificationLanguageBindingCSharp.xslt" description="style-doc"/>
+        </java>
+        <echo message="Remove extraneous namespace attributes from result file:"/>
+        <replace file="CSharpLanguageBinding.Part5.abstracts.html" token=' xmlns:fn="http://www.w3.org/2005/xpath-functions"' value=""  summary="true"/>
+        <replace file="CSharpLanguageBinding.Part5.concretes.html" token=' xmlns:fn="http://www.w3.org/2005/xpath-functions"'     value=""  summary="true"/>
+        <echo message="Produced new X3D CSharp SAI Appendix B CSharpLanguageBinding.Part5.abstracts.html and Appendix C CSharpLanguageBinding.Part5.concretes.html"/>
+        <mkdir dir="../../specifications/CSharpLanguageBinding/Part5"/>
+        <mkdir dir="../../specifications/CSharpLanguageBinding/images"/>
+        <echo message="move to subdirectory specifications/CSharpLanguageBinding, rename to match specification filenames:"/>
+        <move file="CSharpLanguageBinding.Part5.abstracts.html" tofile="../../specifications/CSharpLanguageBinding/Part5/abstracts.html" verbose="true" failonerror="false"/>
+        <move file="CSharpLanguageBinding.Part5.concretes.html"     tofile="../../specifications/CSharpLanguageBinding/Part5/concretes.html"     verbose="true" failonerror="false"/>
+        <copy file="Web3D_LB.css"      todir="../../specifications/CSharpLanguageBinding/Part5/" verbose="true" failonerror="false"/>
+        <copy file="images/cube.gif"   todir="../../specifications/CSharpLanguageBinding/images" verbose="true" failonerror="false"/>
+        <copy file="images/x3dbar.png" todir="../../specifications/CSharpLanguageBinding/images" verbose="true" failonerror="false"/>
+<copy file="images/x3d.png" todir="../../specifications/CSharpLanguageBinding/images" verbose="true" failonerror="false"/>
+       
+        <echo message="Update draft CSharp specification annexes"/>
+        <echo message="==========================================="/>
+        <echo message="BuildSpecificationLanguageBindingCSharp.saxon"/>
+        <echo message="==========================================="/>
+    <!-- 
+    <echo message="Copy open-source license and draft Java specification annexes"/>
+    <copy file="license.txt"  todir="${src.org.web3d.x3d.jsail}"/>
+        <copy file="license.html" todir="${src.org.web3d.x3d.jsail}"/>
+        <copy file="license.txt"  todir="${src.org.web3d.x3d.sai}"/>
+        <copy file="license.html" todir="${src.org.web3d.x3d.sai}"/>
+        <copy todir="${X3DJSAIL.relative.dir}/draftJavaLanguageBindingAnnexes"><!- verbose="true" failonerror="false" ->
+            <fileset dir="../../specifications/JavaLanguageBinding/" defaultexcludes="yes">
+                <include name="Part5/**/*"/>
+                <include name="Images/*.gif"/>
+                <include name="Images/*.png"/>
+            </fileset>
+        </copy>
+        -->
+    </target>
+
     <target name="view.javadoc.local" description="view X3DJSAIL javadoc local">
         <ant dir="java" antfile="build.xml" target="view.javadoc.local"/>
     </target>
@@ -1027,16 +1177,16 @@ POSSIBILITY OF SUCH DAMAGE.
     <target name="view.BuildSpecificationLanguageBindingJava.local" description="view BuildSpecificationLanguageBindingJava appendices in web browser (Netbeans only)">
         <property name="javadocPath" location="${X3DJSAIL.relative.dir}/javadoc/index.html"/>
         <nbbrowse url="file:///${javadocPath}" />
-        <property name="abstractPath" location="../../specifications/JavaLanguageBinding/Part2/nodeTypeInterfaces.html"/>
+        <property name="abstractPath" location="../../specifications/JavaLanguageBinding/Part2/abstracts.html"/>
         <nbbrowse url="file:///${abstractPath}" />
-        <property name="concretePath" location="../../specifications/JavaLanguageBinding/Part2/nodeInterfaces.html"/>
+        <property name="concretePath" location="../../specifications/JavaLanguageBinding/Part2/concretes.html"/>
         <nbbrowse url="file:///${concretePath}" />
         <!-- TODO implementation-independent approach to browser viewing if possible.  other Ant approachs have to be customized for each OS -->
     </target>
 
     <target name="view.BuildSpecificationLanguageBindingJava.online" description="view BuildSpecificationLanguageBindingJava appendices in web browser (Netbeans only)">
-        <nbbrowse url="https://www.web3D.org/documents/specifications/19777-2/V3.3/Part2/nodeTypeInterfaces.html" />
-        <nbbrowse url="https://www.web3D.org/documents/specifications/19777-2/V3.3/Part2/nodeInterfaces.html" />
+        <nbbrowse url="https://www.web3D.org/documents/specifications/19777-2/V3.3/Part2/abstracts.html" />
+        <nbbrowse url="https://www.web3D.org/documents/specifications/19777-2/V3.3/Part2/concretes.html" />
         <!-- TODO implementation-independent approach to browser viewing, if possible.  other Ant approachs have to be customized for each OS -->
     </target>
 
@@ -1085,8 +1235,8 @@ POSSIBILITY OF SUCH DAMAGE.
         <antcall target="BuildX3dUnifiedObjectModel.saxon.v3.3"/><!-- version 3.3 -->
         <echo message="==========================================="/>
         <echo message="Build X3D Unified Object Model (X3DUOM) version 3.2"/>
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
-            <arg value="-t" description="timing information"/>
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:unused.html"/> <!-- output-doc file name is created by stylesheet using schema version number -->
             <arg value="-s:${specifications.dir}/${X3dSchemaSource3.2}" description="source-doc"/>
@@ -1096,8 +1246,8 @@ POSSIBILITY OF SUCH DAMAGE.
         <copy file="${X3dUnifiedObjectModel3.2}" todir="java/lib/specifications/" verbose="true" failonerror="false"/>
         <echo message="==========================================="/>
         <echo message="Build X3D Unified Object Model (X3DUOM) version 3.1"/>
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
-            <arg value="-t" description="timing information"/>
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:unused.html"/> <!-- output-doc file name is created by stylesheet using schema version number -->
             <arg value="-s:${specifications.dir}/${X3dSchemaSource3.1}" description="source-doc"/>
@@ -1114,8 +1264,8 @@ POSSIBILITY OF SUCH DAMAGE.
 
     <target name="BuildX3dUnifiedObjectModel.saxon.v3.0" depends="" description="Build  X3D v3.0 object model files in XML format, used in API autogeneration">
         <echo message="Build X3D Unified Object Model (X3DUOM) version 3.0"/>
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
-            <arg value="-t" description="timing information"/>
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:unused.html"/> <!-- output-doc file name is created by stylesheet using schema version number -->
             <arg value="-s:${specifications.dir}/${X3dSchemaSource3.0}" description="source-doc"/>
@@ -1127,8 +1277,8 @@ POSSIBILITY OF SUCH DAMAGE.
 
     <target name="BuildX3dUnifiedObjectModel.saxon.v3.3" depends="" description="Build  X3D v3.3 object model files in XML format, used in API autogeneration">
         <echo message="Build X3D Unified Object Model (X3DUOM) version 3.3"/>
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
-            <arg value="-t" description="timing information"/>
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:unused.html"/> <!-- output-doc file name is created by stylesheet using schema version number -->
             <arg value="-s:${specifications.dir}/${X3dSchemaSource3.3}" description="source-doc"/>
@@ -1140,8 +1290,8 @@ POSSIBILITY OF SUCH DAMAGE.
 
     <target name="BuildX3dUnifiedObjectModel.saxon.v4.0" depends="" description="Build  X3D v4.0 object model files in XML format, used in API autogeneration">
         <echo message="Build X3D Unified Object Model (X3DUOM) version 4.0"/>
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
-            <arg value="-t" description="timing information"/>
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:unused.html"/> <!-- output-doc file name is created by stylesheet using schema version number -->
             <arg value="-s:${specifications.dir}/${X3dSchemaSource4.0}" description="source-doc"/>
@@ -1155,8 +1305,8 @@ POSSIBILITY OF SUCH DAMAGE.
     <target name="BuildX3dOntologyFromX3duom.saxon" depends="" description="Build X3D Ontology from X3D Unified Object Model (X3DUOM)" >
         <echo message="Following output is for X3D ontology version 4.0 in Terse Triple Language (Turtle)"/>
         <!-- TODO other versions of X3D -->
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
-            <arg value="-t" description="timing information"/>
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-s:${specifications.dir}/${X3dUnifiedObjectModel4.0}" description="source-doc"/>
             <arg value="-xsl:X3duomToX3dOntology.xslt" description="style-doc"/>
@@ -1175,32 +1325,28 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="  https://www.web3d.org/x3d/content/semantics/ontologies/X3dOntology4.0.ttl"/>
     </target>
 
-    <!-- note difference between parent and child build.xml values -->
-    <property name="X3dPythonSubdirectory"  value="python"/>
-    <property name="X3dPackageSubdirectory" value="python/x3d"/>
+    <!-- note difference values pointing to same directory in parent and child build.xml -->
+    <property name="X3dPackageDirectory" value="python"/>
 
     <target name="BuildX3dPythonPackageFromX3duom.saxon" depends="" description="Build Python X3D Package from X3D Unified Object Model (X3DUOM)" >
-        <echo message="Following output is for X3D version 4.0 in X3dPackageSubdirectory=${X3dPackageSubdirectory}"/><!-- TODO other versions of X3D -->
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
-            <arg value="-t" description="timing information"/>
+        <echo message="Following output is for X3D version 4.0 in X3dPackageDirectory=${X3dPackageDirectory}"/><!-- TODO other versions of X3D -->
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}" failonerror="true">
+            <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-s:${specifications.dir}/${X3dUnifiedObjectModel4.0}" description="source-doc"/>
             <arg value="-xsl:X3duomToX3dPythonPackage.xslt" description="style-doc"/>
-            <arg value="X3dPackageSubdirectory=${X3dPackageSubdirectory}"/> <!-- stylesheet parameter -->
-            <!-- stylesheet output goes to X3dPackageSubdirectory -->
+            <arg value="X3dPackageDirectory=${X3dPackageDirectory}"/> <!-- stylesheet parameter -->
+            <!-- stylesheet output goes to X3dPackageDirectory -->
             <!-- <arg value="-o:python/temphold.py" description="output-doc"/> -->
         </java>
-        <echo message="Result: created files ${stylesheets.dir}/${X3dPackageSubdirectory}/x3d.py and __init__.py"/>
-        <copy file="${stylesheets.dir}/${X3dPackageSubdirectory}/x3d.py"      tofile="${stylesheets.dir}/${X3dPythonSubdirectory}/x3d.py"      verbose="true" failonerror="false"/>
-        <copy file="${stylesheets.dir}/${X3dPackageSubdirectory}/__init__.py" tofile="${stylesheets.dir}/${X3dPythonSubdirectory}/__init__.py" verbose="true" failonerror="false"/>
-        <echo message="Result: copied  files ${stylesheets.dir}/x3d.py and __init__.py"/>
+        <echo message="Result: created files ${stylesheets.dir}/${X3dPackageDirectory}/x3d.py and __init__.py"/>
         <echo message="PYTHONPATH=${env.PYTHONPATH}"/>
         <echo message="BuildX3dPythonPackageFromX3duom.saxon complete."/>
     </target>
 
     <target name="BuildX3duomToX3dDiagnostics.saxon" depends="" description="Build X3D ontology constructs">
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
-            <arg value="-t" description="timing information"/>
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:unused.html" description="output-doc"/>
             <arg value="-s:${specifications.dir}/${X3dUnifiedObjectModel}" description="source-doc"/>
@@ -1215,8 +1361,8 @@ POSSIBILITY OF SUCH DAMAGE.
 
     <target name="BuildSpecificationXmlEncodingFromSchema.saxon" depends="" description="Build X3D specification XML encodings clause 6, Encoding of Nodes and clause 7, Encoding of statements" >
         <echo message="Following output includes AllX3dElementsAttributes4.0.xml"/>
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
-            <arg value="-t" description="timing information"/>
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:unused.html" description="output-doc"/>
             <arg value="-s:${specifications.dir}/${X3dSchemaSource4.0}" description="source-doc"/>
@@ -1224,8 +1370,8 @@ POSSIBILITY OF SUCH DAMAGE.
         </java>
         <antcall target="BuildAllX3dElementsAttributes.txt"/>
         <echo message="Following output includes AllX3dElementsAttributes4.0.xml"/>
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
-            <arg value="-t" description="timing information"/>
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:unused.html" description="output-doc"/>
             <arg value="-s:${specifications.dir}/${X3dSchemaSource}" description="source-doc"/>
@@ -1251,8 +1397,8 @@ POSSIBILITY OF SUCH DAMAGE.
         <!-- TODO add other X3D versions -->
         <!-- ========================================= -->
         <echo message="stylesheet AllX3dElementsAttributesTextTemplate.xslt"/>
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
-            <arg value="-t" description="timing information"/>
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:AllX3dElementsAttributes4.0.txt" description="output-doc"/>
             <arg value="-s:AllX3dElementsAttributes4.0.xml" description="source-doc"/>
@@ -1261,8 +1407,8 @@ POSSIBILITY OF SUCH DAMAGE.
         <copy file="AllX3dElementsAttributes4.0.txt"         todir="../../specifications/"  verbose="true" failonerror="false"/>
         <copy file="AllX3dElementsAttributes4.0.xml"         todir="../../specifications/"  verbose="true" failonerror="false"/>
         <!-- ========================================= -->
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
-            <arg value="-t" description="timing information"/>
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:AllX3dElementsAttributes3.3.txt" description="output-doc"/>
             <arg value="-s:AllX3dElementsAttributes3.3.xml" description="source-doc"/>
@@ -1274,8 +1420,8 @@ POSSIBILITY OF SUCH DAMAGE.
     </target>
 
     <target name="BuildSpecificationVrmlEncodingFromSchema.saxon" depends="" description="Build X3D specification Classic VRML encoding clause 6 Encoding of Nodes" >
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
-            <arg value="-t" description="timing information"/>
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:VrmlEncodingOfNodes.html" description="output-doc"/>
             <arg value="-s:${specifications.dir}/${X3dSchemaSource}" description="source-doc"/>
@@ -1334,8 +1480,8 @@ POSSIBILITY OF SUCH DAMAGE.
                 reloadstylesheet="yes" force="yes">
         </xslt>
         -->
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
-            <arg value="-t" description="timing information"/>
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:X3dElementsAttributesLowerCaseTable.txt" description="output-doc"/>
             <arg value="-s:${specifications.dir}/${X3dSchemaSource}" description="source-doc"/>
@@ -1352,8 +1498,8 @@ POSSIBILITY OF SUCH DAMAGE.
         <delete dir="test" verbose="true" failonerror="false"/>
         <delete file="EncodingOfNodes.html" verbose="true" failonerror="false"/>
         <delete file="EncodingOfStatements.html" verbose="true" failonerror="false"/>
-        <delete file="JavaLanguageBinding/Part2/nodeTypeInterfaces.html" verbose="true" failonerror="false"/>
-        <delete file="JavaLanguageBinding/Part2/nodeInterfaces.html" verbose="true" failonerror="false"/>
+        <delete file="JavaLanguageBinding/Part2/abstracts.html" verbose="true" failonerror="false"/>
+        <delete file="JavaLanguageBinding/Part2/concretes.html" verbose="true" failonerror="false"/>
         <delete file="VRMLEncodingOfNodes.html" verbose="true" failonerror="false"/>
     </target>
 
@@ -1416,8 +1562,8 @@ POSSIBILITY OF SUCH DAMAGE.
     </target>
     
     <target name="test.X3dToXhtml.saxon" depends="test.mkdir" description="Test X3dToXhtml.xslt stylesheet using saxon" >
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
-            <arg value="-t" description="timing information"/>
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:test/HelloWorld.saxon.html" description="output-doc"/>
             <arg value="-s:test/HelloWorld.x3d" description="source-doc"/>
@@ -1429,8 +1575,8 @@ POSSIBILITY OF SUCH DAMAGE.
     <target name="test.X3dModelMetaToMarkdown.saxon" depends="test.mkdir" description="Test X3dToXhtml.xslt stylesheet using saxon" >
         <echo message="==========================================="/>
         <echo message="test X3dModelMetaToMarkdown.xslt to test/HelloWorld.meta.md with default parameter includeSubdirectoryPaths=true"/>
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
-            <arg value="-t" description="timing information"/>
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:test/HelloWorld.meta.md" description="output-doc"/>
             <arg value="-s:test/HelloWorld.x3d" description="source-doc"/>
@@ -1438,8 +1584,8 @@ POSSIBILITY OF SUCH DAMAGE.
         </java>
         <echo message="==========================================="/>
         <echo message="test X3dModelMetaToMarkdown.xslt to test/HelloWorld.metaFlattened.md with parameter includeSubdirectoryPaths=false"/>
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
-            <arg value="-t" description="timing information"/>
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:test/HelloWorld.metaFlattened.md" description="output-doc"/>
             <arg value="-s:test/HelloWorld.x3d" description="source-doc"/>
@@ -1450,8 +1596,8 @@ POSSIBILITY OF SUCH DAMAGE.
     </target>
     
     <target name="test.X3dToVrml97.saxon" depends="test.mkdir" description="Test X3dToVrml97.xslt stylesheet using saxon" >
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
-            <arg value="-t" description="timing information"/>
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:test/HelloWorld.saxon.wrl" description="output-doc"/>
             <arg value="-s:${examples.dir}/HelloWorld.x3d" description="source-doc"/>
@@ -1461,8 +1607,8 @@ POSSIBILITY OF SUCH DAMAGE.
     </target>
     
     <target name="test.X3dToX3dvClassicVrmlEncoding.saxon" depends="test.mkdir" description="Test X3dToX3dvClassicVrmlEncoding.xslt stylesheet using saxon" >
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
-            <arg value="-t" description="timing information"/>
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:test/HelloWorld.saxon.x3dv" description="output-doc"/>
             <arg value="-s:${examples.dir}/HelloWorld.x3d" description="source-doc"/>
@@ -1499,7 +1645,9 @@ POSSIBILITY OF SUCH DAMAGE.
         </java>
     </target>
         
-    <target name="test.X3DJSAIL.FontStyleObjectTest">
+    <target name="test.X3DJSAIL.FontStyleObjectTest" 
+            description="Unit testing org.web3d.x3d.tests.FontStyleObjectTest">
+        <echo   message="Unit testing org.web3d.x3d.tests.FontStyleObjectTest"/>
         <java classpath="${X3DJSAIL.jars.dir}/${jsail.full.archive.jar.name}" fork="${fork}" 
              sourcefile="${src.org.web3d.x3d.tests}/org/web3d/x3d/tests/FontStyleObjectTest.java">
         </java>
@@ -1728,7 +1876,9 @@ POSSIBILITY OF SUCH DAMAGE.
         </java>
     </target>
 
-    <target name="test.X3DJSAIL.FieldObjectTests" depends="compile.X3DJSAIL.tests" description="Unit testing org.web3d.x3d.tests.FieldObjectTests">
+    <target name="test.X3DJSAIL.FieldObjectTests" depends="compile.X3DJSAIL.tests" 
+            description="Unit testing org.web3d.x3d.tests.FieldObjectTests">
+        <echo   message="Unit testing org.web3d.x3d.tests.FieldObjectTests"/>
         <java classname="org.web3d.x3d.tests.FieldObjectTests" fork="${fork}">
             <classpath>
                 <pathelement path="${X3DJSAIL.jars.dir}/${jsail.full.archive.jar.name}"/>
@@ -1737,7 +1887,9 @@ POSSIBILITY OF SUCH DAMAGE.
         </java>
     </target>
 
-    <target name="test.X3DUnifiedObjectModelJaxbTests" depends="compile.X3DJSAIL.tests" description="Test X3DUnifiedObjectModelJaxbTests">
+    <target name="test.X3DUnifiedObjectModelJaxbTests" depends="compile.X3DJSAIL.tests" 
+            description="Test X3DUnifiedObjectModelJaxbTests">
+        <echo   message="Unit testing org.web3d.x3d.tests.X3DUnifiedObjectModelJaxbTests"/>
         <java classname="org.web3d.x3d.tests.X3DUnifiedObjectModelJaxbTests" fork="${fork}">
             <classpath>
                 <pathelement path="${X3DJSAIL.jars.dir}/${jsail.full.archive.jar.name}"/>
@@ -1804,6 +1956,18 @@ POSSIBILITY OF SUCH DAMAGE.
         <delete file="${X3DJSAIL.examples.dir}/HelloWorldProgramOutput.class" verbose="true" failonerror="false"/>
         <echo message="==========================================="/>
         <!-- .json jslint and schema validation -->
+        <!-- convert HelloWorldProgramOutput.x3d to HelloWorldProgramOutput.json -->
+        <!-- example: antcall target="test.X3dToJson.xslt"/ -->
+        <echo message="translation input: ${X3DJSAIL.examples.dir}/HelloWorldProgramOutput.x3d"/>
+        <echo message="..expected output: ${X3DJSAIL.examples.dir}/HelloWorldProgramOutput.json"/>
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- <arg value="-t" description="timing information"/> -->
+            <arg value="-warnings:recover" description="recover after writing a warning message"/>
+            <arg value="-expand:on" description="force insertion of default attribute values found in DTD"/>
+            <arg value="-o:${X3DJSAIL.examples.dir}/HelloWorldProgramOutput.json" description="output-doc"/>
+            <arg value="-s:${X3DJSAIL.examples.dir}/HelloWorldProgramOutput.x3d"  description="source-doc"/>
+            <arg value="-xsl:X3dToJson.xslt" description="style-doc"/>
+        </java>
         <echo>Error checking with jslint: ${X3DJSAIL.examples.dir}/HelloWorldProgramOutput.json</echo>
         <java classname="com.googlecode.jslint4java.cli.Main" classpath="${jslint.jar}" fork="${fork}">
             <arg value="${X3DJSAIL.examples.dir}/HelloWorldProgramOutput.json"/>
@@ -2017,8 +2181,8 @@ POSSIBILITY OF SUCH DAMAGE.
     </target>
     
     <target name="test.X3dHAnimHumanoidReport" depends="test.mkdir" description="Test X3dToXhtml.xslt stylesheet using saxon" >
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
-            <arg value="-t" description="timing information"/>
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:test/HAnimSpecificationLOA3Invisible.xslt.html" description="output-doc"/>
             <arg value="-s:${examples.dir}/HumanoidAnimation/HAnimSpecificationLOA3Invisible.x3d" description="source-doc"/>
@@ -2026,8 +2190,8 @@ POSSIBILITY OF SUCH DAMAGE.
         </java>
         <echo message="expected output: test/HAnimSpecificationLOA3Invisible.xslt.html"/>
         
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
-            <arg value="-t" description="timing information"/>
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-o:test/BoxMan.xslt.html" description="output-doc"/>
             <arg value="-s:${examples.dir}/HumanoidAnimation/BoxMan.x3d" description="source-doc"/>
@@ -2080,7 +2244,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <sequential>
             <echo message="translation input: @{pathScene}.x3d"/>
             <echo message="..expected output: @{pathScene}.fixed.json"/>
-            <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
+            <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
                 <!-- <arg value="-t" description="timing information"/> -->
                 <arg value="-warnings:recover" description="recover after writing a warning message"/>
                 <arg value="-expand:on" description="force insertion of default attribute values found in DTD"/>
@@ -2105,7 +2269,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="==========================================="/>
         <echo message="translation input: test/text.x3d"/>
         <echo message="..expected output: test/text.json"/>
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
             <!-- <arg value="-t" description="timing information"/> -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-expand:on" description="force insertion of default attribute values found in DTD"/>
@@ -2163,7 +2327,7 @@ POSSIBILITY OF SUCH DAMAGE.
         </java>
         -->
         <!-- prefer testing stylesheet directlly to support debugging -->
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
             <!-- <arg value="-t" description="timing information"/> -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-expand:on" description="force insertion of default attribute values found in DTD"/>
@@ -2214,7 +2378,7 @@ POSSIBILITY OF SUCH DAMAGE.
              XML Entity and URI Resolvers http://xerces.apache.org/xml-commons/components/resolver/resolver-article.html
             <xmlcatalog refid="X3dCatalog"/> -->
             
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
             <!-- <arg value="-t" description="timing information"/> -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-expand:on" description="force insertion of default attribute values found in DTD"/>
@@ -2254,7 +2418,7 @@ POSSIBILITY OF SUCH DAMAGE.
              XML Entity and URI Resolvers http://xerces.apache.org/xml-commons/components/resolver/resolver-article.html
             <xmlcatalog refid="X3dCatalog"/> -->
             
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
             <!-- <arg value="-t" description="timing information"/> -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-expand:on" description="force insertion of default attribute values found in DTD"/>
@@ -2276,7 +2440,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="translation input: test/CameraExamples.x3d"/>
         <echo message="..expected output: test/CameraExamples.java"/>
         <delete file="test/CameraExamples.java" failonerror="false"/>
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
             <!-- <arg value="-t" description="timing information"/> -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-expand:on" description="force insertion of default attribute values found in DTD"/>
@@ -2394,7 +2558,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="translation input: test/TestSurface.x3d"/>
         <echo message="..expected output: test/TestSurface.java"/>
         <delete file="test/TestSurface.java" failonerror="false"/>
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
             <!-- <arg value="-t" description="timing information"/> -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-expand:on" description="force insertion of default attribute values found in DTD"/>
@@ -2437,7 +2601,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="==========================================="/>
         <echo message="translation input: test/HelloWorldProgramOutput.x3d"/>
         <echo message="..expected output: test/HelloWorldProgramOutput.json"/>
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
             <!-- <arg value="-t" description="timing information"/> -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-expand:on" description="force insertion of default attribute values found in DTD"/>
@@ -2469,7 +2633,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="==========================================="/>
         <echo message="translation input: AllX3dElementsAttributes3.3.xml"/>
         <echo message="..expected output: test/AllX3dElementsAttributes3.3.json"/>
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
             <!-- <arg value="-t" description="timing information"/> -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-expand:on" description="force insertion of default attribute values found in DTD"/>
@@ -2485,7 +2649,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="==========================================="/>
         <echo message="translation input: test/HelloWorld.x3d"/>
         <echo message="..expected output: test/HelloWorld.json"/>
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
             <!-- <arg value="-t" description="timing information"/> -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-expand:on" description="force insertion of default attribute values found in DTD"/>
@@ -2505,7 +2669,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="==========================================="/>
         <echo message="translation input: ${examples.dir}/Basic/development/TestJsonEncoding.x3d"/>
         <echo message="..expected output: test/TestJsonEncoding.json"/>
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
             <!-- <arg value="-t" description="timing information"/> -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-expand:on" description="force insertion of default attribute values found in DTD"/>
@@ -2525,7 +2689,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="==========================================="/>
         <echo message="translation input: ${examples.dir}/X3dForAdvancedModeling/Animation/OrigamiCranes.x3d"/>
         <echo message="..expected output: test/OrigamiCranes.json"/>
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
             <!-- <arg value="-t" description="timing information"/> -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-expand:on" description="force insertion of default attribute values found in DTD"/>
@@ -2545,7 +2709,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="==========================================="/>
         <echo message="translation input: ${examples.dir}/X3dForAdvancedModeling/Animation/CubeWithLabeledSidesViewpointSequencer.x3d"/>
         <echo message="..expected output: test/CubeWithLabeledSidesViewpointSequencer.json"/>
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
             <!-- <arg value="-t" description="timing information"/> -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-expand:on" description="force insertion of default attribute values found in DTD"/>
@@ -2565,7 +2729,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="==========================================="/>
         <echo message="translation input: ${examples.dir}/Basic/CAD/CadGeometryExternPrototypes.x3d"/>
         <echo message="..expected output: test/CadGeometryExternPrototypes.json"/>
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
             <!-- <arg value="-t" description="timing information"/> -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-expand:on" description="force insertion of default attribute values found in DTD"/>
@@ -2585,7 +2749,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="==========================================="/>
         <echo message="translation input: ${examples.dir}/Basic/CAD/CadGeometryPrototypes.x3d"/>
         <echo message="..expected output: test/CadGeometryPrototypes.json"/>
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
             <!-- <arg value="-t" description="timing information"/> -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-expand:on" description="force insertion of default attribute values found in DTD"/>
@@ -2605,7 +2769,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="==========================================="/>
         <echo message="translation input: test/flowers4.x3d"/>
         <echo message="..expected output: test/flowers4.json"/>
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
             <!-- <arg value="-t" description="timing information"/> -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-expand:on" description="force insertion of default attribute values found in DTD"/>
@@ -2625,7 +2789,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="==========================================="/>
         <echo message="translation input: test/arc.x3d"/>
         <echo message="..expected output: test/arc.json"/>
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
             <!-- <arg value="-t" description="timing information"/> -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-expand:on" description="force insertion of default attribute values found in DTD"/>
@@ -2692,7 +2856,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <!-- Specially prepared HelloWorldSimpleUrl.x3d is found in test/ subdirectory, refresh of other scenes handled by get-test-scenes target -->
         <delete file="test/HelloWorldSimpleUrlTidy.x3d" failonerror="false"/>
         <!-- Ant xslt task:  http://ant.apache.org/manual/Tasks/style.html -->
-        <xslt style="X3dTidy.xslt" in="test/HelloWorldSimpleUrl.x3d" out="test/HelloWorldSimpleUrlTidy.x3d" classpath="${saxon.dir}/${saxon.jar};." >
+        <xslt style="X3dTidy.xslt" in="test/HelloWorldSimpleUrl.x3d" out="test/HelloWorldSimpleUrlTidy.x3d" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." >
             <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <param name="title"                       expression="HelloWorldSimpleUrl.x3d"/>
             <param name="conversionRequired"          expression="true"/>
@@ -2707,37 +2871,37 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="expected output: test/HelloWorldSimpleUrlTidy.x3d"/>
         
         <delete file="test/TestScriptInitializationTidy.x3d" failonerror="false"/>
-        <xslt style="X3dTidy.xslt"  in="test/TestScriptInitialization.x3d" out="test/TestScriptInitializationTidy.x3d" classpath="${saxon.dir}/${saxon.jar};.">
+        <xslt style="X3dTidy.xslt"  in="test/TestScriptInitialization.x3d" out="test/TestScriptInitializationTidy.x3d" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};.">
             <factory name="net.sf.saxon.TransformerFactoryImpl"/>
         </xslt>
         <echo message="expected output: test/TestScriptInitialization.x3d"/>
 
         <delete file="test/arcTidy.x3d" failonerror="false"/>
-        <xslt style="X3dTidy.xslt"  in="test/arc.x3d" out="test/arcTidy.x3d" classpath="${saxon.dir}/${saxon.jar};.">
+        <xslt style="X3dTidy.xslt"  in="test/arc.x3d" out="test/arcTidy.x3d" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};.">
             <factory name="net.sf.saxon.TransformerFactoryImpl"/>
         </xslt>
         <echo message="expected output: test/arc.x3d"/>
 		
         <delete file="test/TextSpecialCharactersTidy.x3d" failonerror="false"/>
-        <xslt style="X3dTidy.xslt"  in="test/TextSpecialCharacters.x3d" out="test/TextSpecialCharactersTidy.x3d" classpath="${saxon.dir}/${saxon.jar};.">
+        <xslt style="X3dTidy.xslt"  in="test/TextSpecialCharacters.x3d" out="test/TextSpecialCharactersTidy.x3d" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};.">
             <factory name="net.sf.saxon.TransformerFactoryImpl"/>
         </xslt>
         <echo message="expected output: test/TextSpecialCharacters.x3d"/>
         
         <delete file="test/HelloWorldTidy.x3d" failonerror="false"/>
-        <xslt style="X3dTidy.xslt"  in="test/HelloWorld.x3d"              out="test/HelloWorldTidy.x3d" classpath="${saxon.dir}/${saxon.jar};.">
+        <xslt style="X3dTidy.xslt"  in="test/HelloWorld.x3d"              out="test/HelloWorldTidy.x3d" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};.">
             <factory name="net.sf.saxon.TransformerFactoryImpl"/>
         </xslt>
         <echo message="expected output: test/HelloWorld.x3d"/>
         
         <delete file="test/HelloWorldSignedTidy.x3d" failonerror="false"/>
-        <xslt style="X3dTidy.xslt"  in="test/HelloWorldSigned.x3d"      out="test/HelloWorldSignedTidy.x3d" classpath="${saxon.dir}/${saxon.jar};.">
+        <xslt style="X3dTidy.xslt"  in="test/HelloWorldSigned.x3d"      out="test/HelloWorldSignedTidy.x3d" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};.">
             <factory name="net.sf.saxon.TransformerFactoryImpl"/>
         </xslt>
         <echo message="expected output: test/HelloWorldSigned.x3d"/>
         
         <delete file="test/Background2Tidy.x3d" failonerror="false"/>
-        <xslt style="X3dTidy.xslt"  in="test/Background2.x3d"      out="test/Background2Tidy.x3d" classpath="${saxon.dir}/${saxon.jar};.">
+        <xslt style="X3dTidy.xslt"  in="test/Background2.x3d"      out="test/Background2Tidy.x3d" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};.">
             <factory name="net.sf.saxon.TransformerFactoryImpl"/>
         </xslt>
         <echo message="expected output: test/Background2.x3d"/>
@@ -3038,8 +3202,8 @@ POSSIBILITY OF SUCH DAMAGE.
                 <!--
                 <include name="build.xml"/>
                 <include name="EncodingOfNodes.html"/>
-                <include name="JavaLanguageBinding.Part2.nodeTypeInterfaces.html"/>
-                <include name="JavaLanguageBinding.Part2.nodeInterfaces.html"/>
+                <include name="JavaLanguageBinding.Part2.abstracts.html"/>
+                <include name="JavaLanguageBinding.Part2.concretes.html"/>
                 <include name="X3DEncodings.css"/>
                 <include name="cube.gif"/>
                 <include name="x3d.png"/>
@@ -3059,16 +3223,16 @@ POSSIBILITY OF SUCH DAMAGE.
         </scp>
         <echo  message="results online at https://www.web3D.org/specifications/stylesheets/EncodingOfNodes.html"/>
         <echo  message="           and at https://www.web3D.org/specifications/stylesheets/VrmlEncodingOfNodes.html"/>
-        <echo  message="           and at https://www.web3D.org/specifications/stylesheets/JavaLanguageBinding/Part2/nodeTypeInterfaces.html"/>
-        <echo  message="           and at https://www.web3D.org/specifications/stylesheets/JavaLanguageBinding/Part2/nodeInterfaces.html"/>
+        <echo  message="           and at https://www.web3D.org/specifications/stylesheets/JavaLanguageBinding/Part2/abstracts.html"/>
+        <echo  message="           and at https://www.web3D.org/specifications/stylesheets/JavaLanguageBinding/Part2/concretes.html"/>
         <scp remotetodir="${username.web3d}@${sftpServer.web3d}:${sftpDirectory.web3d.stylesheets}" password="${password.web3d}"
                trust="yes"
              verbose="true" failonerror="false">
             <fileset refid="stylesheetGenerationProducts"/>
         </scp>
         <echo  message="results online at https://www.web3D.org/x3d/stylesheets/EncodingOfNodes.html"/>
-        <echo  message="               at https://www.web3D.org/x3d/stylesheets/JavaLanguageBinding/Part2/nodeTypeInterfaces.html"/>
-        <echo  message="           and at https://www.web3D.org/x3d/stylesheets/JavaLanguageBinding/Part2/nodeInterfaces.html"/>
+        <echo  message="               at https://www.web3D.org/x3d/stylesheets/JavaLanguageBinding/Part2/abstracts.html"/>
+        <echo  message="           and at https://www.web3D.org/x3d/stylesheets/JavaLanguageBinding/Part2/concretes.html"/>
         <echo  message="scp.upload.stylesheets.web3d ssh-sftp task complete"/>
     </target>
 
@@ -3217,8 +3381,8 @@ POSSIBILITY OF SUCH DAMAGE.
     <target name="BuildConfigurationNotepad++" depends="" description="Exemplar template that builds text version of AllX3dElementsAttributes.xml">
         <!-- TODO add other X3D versions -->
         <!-- ========================================= -->
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};." fork="${fork}">
-            <arg value="-t" description="timing information"/>
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." fork="${fork}">
+            <!-- arg value="-t" description="timing information"/ -->
             <arg value="-warnings:recover" description="recover after writing a warning message"/>
             <arg value="-s:AllX3dElementsAttributes4.0.xml"          description="source-doc"/><!-- produced from X3DUOM  -->
             <arg value="-xsl:ConfigurationFilesNotepadPlusPlus.xslt" description="style-doc"/> <!-- conversion stylesheet -->

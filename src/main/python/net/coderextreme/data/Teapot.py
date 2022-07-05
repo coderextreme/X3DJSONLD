@@ -23,6 +23,6 @@ geometry=
 IndexedLineSet(colorIndex=[0,1,2], colorPerVertex=False, coordIndex=[0,1,-1,0,2,-1,0,3,-1], 
 coord=
 Coordinate(point=[(0,0,0),(1.0,0,0),(0,1.0,0),(0,0,1.0)]), 
-color=
-Color(color=[(1,0,0),(0,0.6,0),(0,0,1)])))]))
+color=(
+Color(color=[(1,0,0),(0,0.6,0),(0,0,1)]))))]))
 .XML())
