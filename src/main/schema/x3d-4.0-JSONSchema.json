@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
-  "title": "X3D V4.0 JSON Schema, generated 2022/07/03 01:03:34",
+  "title": "X3D V4.0 JSON Schema, generated 2022/07/04 17:13:07",
   "description": "Experimental JSON Schema for X3D V4.0",
   "type": "object",
   "properties": {
@@ -19398,8 +19398,10 @@
               "type": "number"
             },
             "@fieldOfView": {
-              "$comment": "MFFloat inputOutput",
+              "$comment": "SFVec4f inputOutput",
               "type": "array",
+              "minItems": 4,
+              "maxItems": 4,
               "prefixItems": [
                 {
                   "default": -1,
@@ -19418,9 +19420,7 @@
                   "type": "number"
                 }
               ],
-              "items": {
-                "type": "number"
-              }
+              "items": false
             },
             "@jump": {
               "default": true,

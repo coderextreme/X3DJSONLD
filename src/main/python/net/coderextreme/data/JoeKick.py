@@ -33,8 +33,8 @@ geometry=
 IndexedLineSet(colorIndex=[0,1,2], colorPerVertex=False, coordIndex=[0,1,-1,0,2,-1,0,3,-1], 
 coord=
 Coordinate(point=[(0,0,0),(1.0,0,0),(0,1.0,0),(0,0,1.0)]), 
-color=
-Color(color=[(1,0,0),(0,0.6,0),(0,0,1)])))])])]),
+color=(
+Color(color=[(1,0,0),(0,0.6,0),(0,0,1)]))))])])]),
 HAnimJoint(name="sacroiliac", DEF="Joe_sacroiliac", center=((0,0.92,0)), skinCoordIndex=[17,19,20,21,22,23,26,27,73,82,89,91,93], skinCoordWeight=[float(1),float(1),float(1),float(1),float(1),float(1),float(1),float(1),float(1),float(1),float(0.35),float(0.35),float(1)], ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimJoint(name="l_hip", DEF="Joe_l_hip", center=((0.1,0.92,0)), skinCoordIndex=[89,90,94,95,96,97], skinCoordWeight=[float(0.65),float(1),float(1),float(1),float(1),float(1)], ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimJoint(name="l_knee", DEF="Joe_l_knee", center=((0.115,0.466,0)), skinCoordIndex=[334,335,336,337,338,339,340,341], skinCoordWeight=[float(1),float(1),float(1),float(1),float(1),float(1),float(1),float(1)], ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
