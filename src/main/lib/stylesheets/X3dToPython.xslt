@@ -2763,7 +2763,15 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
             </xsl:when>
             <xsl:when test="($x3dType = 'MFBool')">
                 <!-- Python boolean values are True and False, comma-separated list -->
-                <xsl:value-of select="translate(translate(translate(string($x3dValue),'f','F'),'t','T'),' ',',')"/>
+                <xsl:variable name="commaSeparatedMFBool" select="translate(normalize-space(translate(translate(translate(string($x3dValue),'f','F'),'t','T'),',',' ')),' ',',')"/>
+                <!-- debug diagnostic
+                <xsl:message>
+                    <xsl:text>*** MFBool handling, $x3dValue='</xsl:text>
+                    <xsl:value-of select="$x3dValue"/>
+                    <xsl:text>, $commaSeparatedMFBool='</xsl:text>
+                    <xsl:value-of select="$commaSeparatedMFBool"/>
+                </xsl:message> -->
+                <xsl:value-of select="$commaSeparatedMFBool"/>
             </xsl:when>
             <xsl:when test="(string($x3dValue) = 'NULL') and ($x3dType = 'SFNode')">
                 <xsl:text>None</xsl:text>
