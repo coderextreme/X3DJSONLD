@@ -1,5 +1,5 @@
 '''
-x3d.py package 4.0.64.1 loaded, have fun with X3D Graphics!
+x3d.py package 4.0.64.2 loaded, have fun with X3D Graphics!
 '''
 from x3d import *
 print(
@@ -9,8 +9,8 @@ Scene=Scene(children=[
 WorldInfo(info=["X3D Humanoid LOA3 skeleton","skin from hanim sites, surface features, and some added points","390 points"], title="X3D HANIM LOA3 Skeleton, 390 point Skin, texcoords, Displacer, teTrans for Joe_ by Joe"),
 NavigationInfo(DEF="Start_NavigationInfo", headlight=False, speed=2.5),
 Background(DEF="blue_Background"),
-SpotLight(DEF="light1", ambientIntensity=0.7, beamWidth=1.5, color=((0.8,0.8,1)), cutOffAngle=0.6, direction=((0,0,0)), location=((0,3,3)), radius=10),
-PointLight(DEF="light2", ambientIntensity=0.7, color=((0.8,0.8,1)), location=((0,10,-7))),
+SpotLight(DEF="light1", ambientIntensity=0.7, beamWidth=1.5, color=[(0.8,0.8,1)], cutOffAngle=0.6, direction=((0,0,0)), location=((0,3,3)), radius=10),
+PointLight(DEF="light2", ambientIntensity=0.7, color=[(0.8,0.8,1)], location=((0,10,-7))),
 #External from the Humanoid viewpoints
 
 Viewpoint(DEF="Scene_InclinedView", centerOfRotation=((0,0.85,0)), description="Scene_Inclined View", orientation=((-0.113,0.993,0.0347,0.671)), position=((1.62,1.05,3.06))),

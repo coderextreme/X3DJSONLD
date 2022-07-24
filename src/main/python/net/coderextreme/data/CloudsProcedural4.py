@@ -1,5 +1,5 @@
 '''
-x3d.py package 4.0.64.1 loaded, have fun with X3D Graphics!
+x3d.py package 4.0.64.2 loaded, have fun with X3D Graphics!
 '''
 from x3d import *
 print(
@@ -133,5 +133,5 @@ field(name="Fog", accessType="initializeOnly", type="SFNode")
 #' +", "'#########################################################      
 #';", '', 'CloudString = CloudStringA + CloudStringG + CloudStringH;', '', '', '', 'newNode = Browser.createVrmlFromString(CloudString);', 'Cirrus.children[i] = newNode[0];', '', '  }', '', '}', '', '', 'function initialize()', '', '{', '', 'cumulus();', '', 'cirrus();', '}', '', '']
 ),
-DirectionalLight(ambientIntensity=1, color=((1,0,0)), direction=((-1,-1,0)), global_=True)]),]))
+DirectionalLight(ambientIntensity=1, color=[(1,0,0)], direction=((-1,-1,0)), global_=True)]),]))
 .XML())
