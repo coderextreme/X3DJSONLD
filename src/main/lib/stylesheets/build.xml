@@ -1004,7 +1004,7 @@ POSSIBILITY OF SUCH DAMAGE.
         </java>
         <echo message="Remove extraneous namespace attributes from result file:"/>
         <replace file="JavaLanguageBinding.Part2.abstracts.html" token=' xmlns:fn="http://www.w3.org/2005/xpath-functions"' value=""  summary="true"/>
-        <replace file="JavaLanguageBinding.Part2.concretes.html" token=' xmlns:fn="http://www.w3.org/2005/xpath-functions"'     value=""  summary="true"/>
+        <replace file="JavaLanguageBinding.Part2.concretes.html" token=' xmlns:fn="http://www.w3.org/2005/xpath-functions"' value=""  summary="true"/>
         <echo message="Produced new X3D Java SAI Appendix B JavaLanguageBinding.Part2.abstracts.html and Appendix C JavaLanguageBinding.Part2.concretes.html"/>
         <mkdir dir="../../specifications/JavaLanguageBinding/Part2"/>
         <mkdir dir="../../specifications/JavaLanguageBinding/images"/>
@@ -2223,6 +2223,10 @@ POSSIBILITY OF SUCH DAMAGE.
     <target name="view.X3DJSAIL.online" description="view X3DJSAIL in web browser (Netbeans only)">
         <nbbrowse url="https://www.web3D.org/specifications/java/X3DJSAIL.html" />
         <!-- TODO implementation-independent approach to browser viewing if possible.  other Ant approachs have to be customized for each OS -->
+    </target>
+
+    <target name="view.stylesheets.sourceforge" description="view online version control in web browser (Netbeans only)">
+        <nbbrowse url="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets" />
     </target>
     
     <!-- TODO fix broken conversion, add saxon version -->
