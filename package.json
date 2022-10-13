@@ -8,7 +8,7 @@
     "webpack-cli": "^4.9.1"
   },
   "dependencies": {
-    "@xmldom/xmldom": ">=0.7.5",
+    "@xmldom/xmldom": ">=0.8.3",
     "ajv": "*",
     "ajv-formats": "*",
     "ajv-i18n": "*",
