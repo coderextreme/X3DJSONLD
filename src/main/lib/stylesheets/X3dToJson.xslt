@@ -597,7 +597,7 @@ POSSIBILITY OF SUCH DAMAGE.
                             ($fieldName = 'leftTexture')        or ($fieldName = 'rightTexture')       or ($fieldName = 'topTexture')         or 
                             ($fieldName = 'appearance')         or ($fieldName = 'body1')              or ($fieldName = 'body2')              or
                             ($fieldName = 'collidable')         or ($fieldName = 'collider')           or
-                            ($fieldName = 'color')              or ($fieldName = 'coord')              or 
+                            ($fieldName = 'color')              or ($fieldName = 'colorRamp')          or ($fieldName = 'coord')              or 
                             ($fieldName = 'controlPoint')       or ($fieldName = 'controlPoints')      or ($fieldName = 'crossSectionCurve')  or
                             ($fieldName = 'emitter')            or ($fieldName = 'fillProperties')     or
                             ($fieldName = 'fogCoord')           or ($fieldName = 'fontStyle')          or ($fieldName = 'geoOrigin')          or
