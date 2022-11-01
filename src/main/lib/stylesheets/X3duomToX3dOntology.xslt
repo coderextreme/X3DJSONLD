@@ -214,8 +214,8 @@ POSSIBILITY OF SUCH DAMAGE.
 
 :X3DStatement a owl:Class ;
   rdfs:label "X3DStatement is the abstract type from which all non-node statements are derived." ;
-  dcterms:reference   "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/concepts.html" ;
-  dcterms:reference   "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-CD1/Part01/components/core.html#AbstractX3DStructure" .
+  dcterms:reference   "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-DIS/Part01/concepts.html" ;
+  dcterms:reference   "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-DIS/Part01/components/core.html#AbstractX3DStructure" .
 #:class :id and :style connected via X3D definitions
 
 </xsl:text>
