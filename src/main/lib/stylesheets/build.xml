@@ -121,9 +121,9 @@ POSSIBILITY OF SUCH DAMAGE.
     <target name="get.saxon" description="get saxon.jar if not checked out" depends="get.saxon.check" unless="${saxon.found}"> 
         <echo message="get tested saxon.jar from project version control if not already checked out locally"/>
         <mkdir dir="${saxon.dir}"/>
-        <get src="http://svn.code.sf.net/p/x3d/code/www.web3d.org/x3d/tools/jar/${saxon.jar}"
+        <get src="https://svn.code.sf.net/p/x3d/code/www.web3d.org/x3d/tools/jar/${saxon.jar}"
              dest="${saxon.dir}/${saxon.jar}" verbose="true" failonerror="false" ignoreerrors="${ignoreSetupDownloadErrors}"/>
-        <get src="http://svn.code.sf.net/p/x3d/code/www.web3d.org/x3d/tools/jar/${xmlresolver.jar}"
+        <get src="https://svn.code.sf.net/p/x3d/code/www.web3d.org/x3d/tools/jar/${xmlresolver.jar}"
              dest="${saxon.dir}/${xmlresolver.jar}" verbose="true" failonerror="false" ignoreerrors="${ignoreSetupDownloadErrors}"/>
     </target>
     <target name="get.saxon.check">
@@ -166,11 +166,9 @@ POSSIBILITY OF SUCH DAMAGE.
         </exec>
         <!-- https://www.saxonica.com/documentation10/#!using-xsl/commandline -->
         <echo>saxon -? help</echo>
-	<!--
-        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." failonerror="true">
+        <java classname="net.sf.saxon.Transform" classpath="${saxon.dir}/${saxon.jar};${saxon.dir}/${xmlresolver.jar};." failonerror="true" fork="${fork}">
             <arg value="-?" description="help information"/>
         </java>
-	-->
         <echo>Check for node.js installation from https://nodejs.org</echo>
         <exec executable="${node.exe}">
             <arg value="--version"/>
@@ -3261,7 +3259,7 @@ POSSIBILITY OF SUCH DAMAGE.
     </target>
 
     <!-- subversion checkout address to download latest x3d configuration files -->
-    <property name="x3d.sourceforge.site" value="http://svn.code.sf.net/p/x3d/code/www.web3d.org"/>
+    <property name="x3d.sourceforge.site" value="https://svn.code.sf.net/p/x3d/code/www.web3d.org"/>
 
     <target name="hudson" description="nightly build" depends="hudson.prepare,build">
         <!-- hudson project description

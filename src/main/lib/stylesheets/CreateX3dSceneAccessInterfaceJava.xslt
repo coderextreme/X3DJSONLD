@@ -36749,7 +36749,7 @@ import org.web3d.x3d.sai.X3DException;
                             if (ite.getCause().toString().contains("java.lang.StackOverflowError"))
                                 continue; // likely problem is regex checking of large attribute value, defer diagnosis and continue loading
 						}
-                        if (ite != null && ite.getMessage() != null && ite.getMessage().contains("java.lang.StackOverflowError"))
+                        if (ite.getMessage().contains("java.lang.StackOverflowError"))
                             continue; // likely problem is regex checking of large attribute value, defer diagnosis and continue loading
 						validationResult.append(errorNotice).append("\n");
 						System.out.println(errorNotice + "\n"); // avoiding System.err due to redirection difficulties
@@ -39691,7 +39691,7 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
                 }
                 if (newValue[i].endsWith("\"") && !newValue[i].endsWith("\\\""))
                 {
-                    newValue[i] = newValue[i].substring(0, newValue[i].length()-1);
+                    newValue[i] = newValue[i].substring(1, newValue[i].length()-1);
                     reduced = true;
                 }
                 if (reduced)

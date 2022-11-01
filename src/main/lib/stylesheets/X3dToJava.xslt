@@ -1252,8 +1252,8 @@ POSSIBILITY OF SUCH DAMAGE.
 					<xsl:apply-templates select="."/><!-- handle this node -->
 					<xsl:text>)</xsl:text>
 				</xsl:when>
-				<xsl:when test="(local-name(..) = 'ParticleSet') and (starts-with($containerField, 'color'))">
-					<!-- ignoring ($containerField = 'colorRamp') -->
+				<xsl:when test="(local-name(..) = 'ParticleSet') and (($containerField = 'color') or ($containerField = 'colorRamp'))">
+					<!-- allows field name ($containerField = 'colorRamp') which was changed to 'color' in X3D4 -->
 					<xsl:text>.addColor(</xsl:text>
 					<xsl:apply-templates select="."/><!-- handle this node -->
 					<xsl:text>)</xsl:text>
