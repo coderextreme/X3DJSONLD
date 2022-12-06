@@ -14,7 +14,7 @@ are met:
       distribution.
     * Neither the names of the Naval Postgraduate School (NPS)
       Modeling Virtual Environments and Simulation (MOVES) Institute
-      (http://www.nps.edu and http://www.MovesInstitute.org)
+      (https://www.nps.edu and https://www.MovesInstitute.org)
       nor the names of its contributors may be used to endorse or
       promote products derived from this software without specific
       prior written permission.
@@ -45,8 +45,8 @@ POSSIBILITY OF SUCH DAMAGE.
 
 Recommended tools:
 - X3D-Edit, https://savage.nps.edu/X3D-Edit
-- SAXON XML Toolkit (and Instant Saxon) from Michael Kay of ICL, http://saxon.sourceforge.net
-- XML Spy http://www.xmlspy.com
+- SAXON XML Toolkit (and Instant Saxon) from Michael Kay of ICL, https://saxon.sourceforge.net
+- XML Spy https://www.xmlspy.com
 -->
 
 <!-- TODO: insert default descriptions, add HAnim decorations, add comprehensive ROUTE visualization,
@@ -78,6 +78,7 @@ Recommended tools:
     <xsl:param name="fixDateFormats"              ><xsl:text>true</xsl:text></xsl:param>
     <xsl:param name="fixMFStringQuotes"           ><xsl:text>true</xsl:text></xsl:param>
     <xsl:param name="fixGeoSystemMetadata"        ><xsl:text>true</xsl:text></xsl:param>
+    <!-- TODO fixHAnimHumanoidMetadataDefault -->
     <xsl:param name="fixMetaNamesMatchDublinCore" ><xsl:text>true</xsl:text></xsl:param>
     <xsl:param name="omitObsoleteAttributes"      ><xsl:text>true</xsl:text></xsl:param><!-- TODO add to X3D-Edit -->
     <!-- prependWorldInfoIfMissing values: true, false, or can also provide name to use -->
@@ -964,11 +965,14 @@ Recommended tools:
                             <xsl:message>
                                 <xsl:text>*** warning: HAnimHumanoid info array values split into matching MetadataSet structure</xsl:text>
                             </xsl:message>
+                            <xsl:text>      </xsl:text>
                             <xsl:comment>
-                                <xsl:text>original HAnimHumanoid info='</xsl:text>
+                                <xsl:text> original HAnimHumanoid info='</xsl:text>
                                 <xsl:value-of select="@info"/>
                                 <xsl:text>'</xsl:text>
                             </xsl:comment>
+                            <xsl:text>&#10;</xsl:text>
+                            <xsl:text>      </xsl:text>
                             <xsl:element name="MetadataSet">
                                 <xsl:attribute name="containerField"><xsl:text>metadata</xsl:text></xsl:attribute>
                                 <xsl:attribute name="name"          ><xsl:text>HAnimHumanoid.info</xsl:text></xsl:attribute>
@@ -993,6 +997,7 @@ Recommended tools:
                                             </xsl:otherwise>
                                         </xsl:choose>
                                     </xsl:variable>
+                                <xsl:text>        </xsl:text>
                                     <xsl:element name="{$elementName}">
                                         <xsl:choose>
                                             <xsl:when test="not(contains($infoNameValuePair,'='))">
@@ -1047,6 +1052,7 @@ Recommended tools:
                                         </xsl:choose>
                                     </xsl:element><!-- $elementName, MetadataString or MetadataFloat etc. -->
                                 </xsl:for-each>
+                                <xsl:text>      </xsl:text>
                             </xsl:element><!-- MetadataSet -->
                             <xsl:text>&#10;</xsl:text>
                         </xsl:if>
@@ -4946,7 +4952,7 @@ Recommended tools:
                 <xsl:when test="(local-name(..)='component') and (local-name()='name') and (string(.)='HAnim' and //X3D[starts-with(@version,'3')])">
                     <xsl:text>H-Anim</xsl:text>
                     <xsl:message>
-                        <xsl:text>*** fix component name for X3D3: change component name='</xsl:text>
+                        <xsl:text>*** fix component name for X3D version 3: change component name='</xsl:text>
                         <xsl:value-of select="."/>
                         <xsl:text>' to name='H-Anim'</xsl:text>
                     </xsl:message>
@@ -4954,7 +4960,7 @@ Recommended tools:
                 <xsl:when test="(local-name(..)='component') and (local-name()='name') and (string(.)='H-Anim' and //X3D[starts-with(@version,'4')])">
                     <xsl:text>HAnim</xsl:text>
                     <xsl:message>
-                        <xsl:text>*** fix component name for X3D4: change component name='</xsl:text>
+                        <xsl:text>*** fix component name for X3D version 4: change component name='</xsl:text>
                         <xsl:value-of select="."/>
                         <xsl:text>' to name='HAnim'</xsl:text>
                     </xsl:message>

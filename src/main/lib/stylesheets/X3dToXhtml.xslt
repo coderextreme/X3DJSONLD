@@ -14,7 +14,7 @@ are met:
       distribution.
     * Neither the names of the Naval Postgraduate School (NPS)
       Modeling Virtual Environments and Simulation (MOVES) Institute
-      (http://www.nps.edu and http://www.MovesInstitute.org)
+      (https://www.nps.edu and https://www.MovesInstitute.org)
       nor the names of its contributors may be used to endorse or
       promote products derived from this software without specific
       prior written permission.
@@ -44,8 +44,8 @@ POSSIBILITY OF SUCH DAMAGE.
 
 Recommended tools:
 - X3D-Edit, https://savage.nps.edu/X3D-Edit
-- SAXON XML Toolkit (and Instant Saxon) from Michael Kay of ICL, http://saxon.sourceforge.net
-- XML Spy http://www.xmlspy.com
+- SAXON XML Toolkit (and Instant Saxon) from Michael Kay of ICL, https://saxon.sourceforge.net
+- XML Spy https://www.xmlspy.com
 -->
 
 <!--	xmlns:fo="http://www.w3.org/1999/XSL/Format"	-->
@@ -155,7 +155,7 @@ b.warning {color: #CC5500}
 b.error {color: #CC0000}
 ]]>
                 </style>
-<!-- http://www.quackit.com/html/codes/tables/html_table_border.cfm -->
+<!-- https://www.quackit.com/html/codes/tables/html_table_border.cfm -->
 <style type="text/css">
 table.curvedEdges { border:10px solid RoyalBlue;-webkit-border-radius:13px;-moz-border-radius:13px;-ms-border-radius:13px;-o-border-radius:13px;border-radius:13px; }
 table.curvedEdges td, table.curvedEdges th { border-bottom:1px dotted black;padding:5px; }
@@ -397,7 +397,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                             < ! - - <xsl:text>&lt;! - - Top-level HAnimSite/Viewpoint nodes that move with the human center but are unaffected by body animation - -&gt;</xsl:text> - - >
                                             <br />
                                             <xsl:for-each select="HAnimSite[string-length(@name) > 0][(@containerField = 'viewpoints')]">
-                                                < ! - - http://p2p.wrox.com/xslt/70832-preceding-sibling-comment.html - - >
+                                                < ! - - https://p2p.wrox.com/xslt/70832-preceding-sibling-comment.html - - >
                                                 <xsl:apply-templates select="preceding-sibling::node()[1][self::comment()]"/>
                                                 <xsl:call-template name="HAnimNode-indent"/>
                                             </xsl:for-each>
@@ -412,7 +412,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                             <br />
                                             <div class="indent">
                                             <xsl:for-each select="*[string-length(@USE) > 0]">
-                                                <!-- http://p2p.wrox.com/xslt/70832-preceding-sibling-comment.html -->
+                                                <!-- https://p2p.wrox.com/xslt/70832-preceding-sibling-comment.html -->
                                                 <xsl:if test="preceding-sibling::node()[1][self::comment()]">
                                                     <xsl:apply-templates select="preceding-sibling::node()[1][self::comment()]"/>
                                                     <br />
@@ -1844,7 +1844,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         </xsl:message>
                     -->
                         <xsl:if test="ds:* | (*/@ds:*)">
-                            <!-- xmlns:ds="http://www.w3.org/2000/09/xmldsig#" -->
+                            <!-- xmlns:ds="https://www.w3.org/2000/09/xmldsig#" -->
                             <span class="attribute">
                                 <xsl:text>xmlns:ds</xsl:text>
                             </span>

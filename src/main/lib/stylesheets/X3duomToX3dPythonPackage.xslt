@@ -2996,7 +2996,7 @@ def assertValidFieldInitializationValue(name, fieldType, value, parent=''):
       <meta name="warning"
             content="Webfonts must be loaded prior to using Text node in X3D scene... see https://x3dom.org/x3dom/example/x3dom_text.html"/>
       <!-- X3DOM needs Web Fonts when an X3D Text node is included -->
-      <!-- adapted from https://x3dom.org/x3dom/example/x3dom_text.html and http://web.mit.edu/jmorzins/www/fonts.html -->
+      <!-- adapted from https://x3dom.org/x3dom/example/x3dom_text.html and https://web.mit.edu/jmorzins/www/fonts.html -->
       <style type="text/css">
 /* ============================================================================= */
 @font-face {
