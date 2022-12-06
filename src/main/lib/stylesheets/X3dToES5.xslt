@@ -13,8 +13,8 @@
 
 Recommended tools:
 - X3D-Edit, https://savage.nps.edu/X3D-Edit
-- SAXON XML Toolkit (and Instant Saxon) from Michael Kay of ICL, http://saxon.sourceforge.net
-- XML Spy http://www.xmlspy.com
+- SAXON XML Toolkit (and Instant Saxon) from Michael Kay of ICL, https://saxon.sourceforge.net
+- XML Spy https://www.xmlspy.com
 -->
 
 <!-- TODO: 
@@ -40,7 +40,7 @@ are met:
       distribution.
     * Neither the names of the Naval Postgraduate School (NPS)
       Modeling Virtual Environments and Simulation (MOVES) Institute
-      (http://www.nps.edu and http://www.MovesInstitute.org)
+      (https://www.nps.edu and https://www.MovesInstitute.org)
       nor the names of its contributors may be used to endorse or
       promote products derived from this software without specific
       prior written permission.
@@ -123,7 +123,7 @@ POSSIBILITY OF SUCH DAMAGE.
     </xsl:variable>
 	
 	<!-- TODO need updated XSLT engine in Netbeans
-	http://www.sixtree.com.au/articles/2013/formatting-dates-and-times-using-xslt-2.0-and-xpath/
+	https://www.sixtree.com.au/articles/2013/formatting-dates-and-times-using-xslt-2.0-and-xpath/
 	https://stackoverflow.com/questions/919692/how-to-execute-xslt-2-0-with-ant
 	-->
 

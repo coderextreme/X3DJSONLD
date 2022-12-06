@@ -11,7 +11,7 @@
 
 Recommended tools:
 - X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit
-- SAXON XML Toolkit (and Instant Saxon) from Michael Kay of ICL, http://saxon.sourceforge.net
+- SAXON XML Toolkit (and Instant Saxon) from Michael Kay of ICL, https://saxon.sourceforge.net
 - XML Spy https://www.altova.com
 
 X3DOM references
@@ -38,7 +38,7 @@ are met:
       distribution.
     * Neither the names of the Naval Postgraduate School (NPS)
       Modeling Virtual Environments and Simulation (MOVES) Institute
-      (https://www.nps.edu and http://www.MovesInstitute.org)
+      (https://www.nps.edu and https://www.MovesInstitute.org)
       nor the names of its contributors may be used to endorse or
       promote products derived from this software without specific
       prior written permission.
@@ -75,8 +75,9 @@ POSSIBILITY OF SUCH DAMAGE.
 <!--<xsl:param name="urlCobweb"                >https://cdn.jsdelivr.net/gh/create3000</xsl:param> no trailing slash / -->
     <xsl:param name="versionCobweb"            >latest/dist</xsl:param>
 <!--<xsl:param name="versionCobweb"            >x_ite@latest/dist</xsl:param>  1/1.28 or 2/2.6 or 3/3.1 or 3/3.2 or 3.3 or 4.0.5 or 4.1.5 4.6.11 or x_ite@latest/dist with no trailing slash / -->
-    <xsl:param name="urlWebsiteX_ITE"          >https://github.com/create3000/x_ite/wiki</xsl:param>
-<!--<xsl:param name="urlWebsiteX_ITE"          >http://create3000.de/x_ite</xsl:param>  redirection likely, so far https not supported -->
+    <xsl:param name="urlWebsiteX_ITE"          >https://create3000.github.io/x_ite</xsl:param>
+<!--<xsl:param name="urlWebsiteX_ITE"          >https://github.com/create3000/x_ite/wiki</xsl:param>-->
+<!--<xsl:param name="urlWebsiteX_ITE"          >https://create3000.de/x_ite</xsl:param>  redirection likely, so far https not supported -->
     <!-- Catalog generator and configuration parameters -->
     <xsl:param name="x3dSceneAvailable"        >true</xsl:param> <!-- .x3d source, same file name -->
     <xsl:param name="x3dDocumentationAvailable">true</xsl:param> <!-- .html pretty print, same file name -->
@@ -408,7 +409,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                         <!-- development version, local -->
                         <script         type="text/javascript"  src="../../content/examples/Basic/DistributedInteractiveSimulation/x3dom/dis.js"/>
                         <!-- development version, online -->
-                        <script         type="text/javascript"  src="http://github.com/mcgredonps/x3dom/dis.js"/>
+                        <script         type="text/javascript"  src="https://github.com/mcgredonps/x3dom/dis.js"/>
                     </xsl:if>
 
                     <!-- Text node support -->
@@ -627,7 +628,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                             <input id="checkBoxOverlayStatistics" type="checkbox" value="Overlay scene statistics" onclick="toggleOverlayStatistics();"/>
                             <!-- initial status of box checked is controlled by whether attribute is present, rather than defined value.  therefore omit:
                                  checked="{$checkedShowStatistics}" 
-                                 reference: http://www.w3schools.com/tags/att_input_checked.asp -->
+                                 reference: https://www.w3schools.com/tags/att_input_checked.asp -->
                             <span title="Overlay scene performance statistics">
                                 <xsl:text>statistics</xsl:text>
                             </span>
@@ -743,7 +744,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                         <xsl:variable name="lower-case-address" select="translate($base-address,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz')"/>
                         <xsl:if test="(string-length($metaIdentifierContent) > 0) and
                                                      (starts-with($lower-case-address,'https://www.web3d.org/x3d/content/examples/') or
-                                                      starts-with($lower-case-address,'http://x3dgraphics.com/examples/') or
+                                                      starts-with($lower-case-address,'https://x3dgraphics.com/examples/') or
                                                       starts-with($lower-case-address,'https://savage.nps.edu/savage/') or
                                                       starts-with($lower-case-address,'https://savagedefense.nps.navy.mil/savagedefense/'))">
                             <tr style="background-color:silver; border-color:silver;">
@@ -2090,7 +2091,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
     <xsl:template name="webFontCss">
         <xsl:comment> X3DOM needs Web Fonts when an X3D Text node is included </xsl:comment>
         <xsl:text>&#10;</xsl:text>
-        <xsl:comment> adapted from https://x3dom.org/x3dom/example/x3dom_text.html and http://web.mit.edu/jmorzins/www/fonts.html </xsl:comment>
+        <xsl:comment> adapted from https://x3dom.org/x3dom/example/x3dom_text.html and https://web.mit.edu/jmorzins/www/fonts.html </xsl:comment>
         <xsl:text>&#10;</xsl:text>
 <style type="text/css"><xsl:text>
 /* ============================================================================= */
@@ -2233,7 +2234,7 @@ function toggleZoom(button) {
         x3d_element.style.width  = new_width;
 }
                     
-    // Browser information table adapted from http://www.w3schools.com/js/js_window_navigator.asp
+    // Browser information table adapted from https://www.w3schools.com/js/js_window_navigator.asp
     
     document.addEventListener("DOMContentLoaded", function()
     {
