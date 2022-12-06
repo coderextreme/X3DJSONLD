@@ -21,7 +21,7 @@ are met:
       distribution.
     * Neither the names of the Naval Postgraduate School (NPS)
       Modeling Virtual Environments and Simulation (MOVES) Institute
-      (http://www.nps.edu and http://www.MovesInstitute.org)
+      (https://www.nps.edu and https://www.MovesInstitute.org)
       nor the names of its contributors may be used to endorse or
       promote products derived from this software without specific
       prior written permission.
@@ -53,12 +53,12 @@ POSSIBILITY OF SUCH DAMAGE.
    <meta name="LatticeXvl creator"	content="Marc Jablonski" />
    <meta name="description" content="XSLT stylesheet to convert X3D files to VRML97 format, using x3d-3.0.dtd form." />
    <meta name="url"         content="https://www.web3d.org/x3d/stylesheets/X3dToVrml97.xslt" />
-   <meta name="svn"         content="http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/X3dToVrml97.xslt?view=markup" />
+   <meta name="svn"         content="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/X3dToVrml97.xslt?view=markup" />
   </head>
 
 Recommended tool:
 
--  SAXON XML Toolkit (and Instant Saxon) from Michael Kay of ICL, http://saxon.sourceforge.net
+-  SAXON XML Toolkit (and Instant Saxon) from Michael Kay of ICL, https://saxon.sourceforge.net
 
 - Can also be used with Apache server
 
@@ -70,7 +70,7 @@ Thanks to Andrew Grieve of Okino for CAD debugging and the disableIndent paramet
   - consistent local url values for EXTERNPROTO substitutions
   - MultiTexture, TextureCoordinateGenerator, TextureBackground
   - still need to check KeySensor, StringSensor, GeoVRML attribute defaults
-  - combine GeoVRML and H-Anim metadata attributes into a single string
+  - combine GeoVRML and HAnim metadata attributes into a single string
   - ensure Double types get translated properly!
   - perform tuple checks on index arrays for contained points, normals and colors
   - check for even number of &quot; characters in url values
@@ -681,7 +681,7 @@ EXTERNPROTO CADPart [
     <xsl:text>    "C:/Program Files/GeoVRML/1.1/protos/GeoCoordinate.wrl#GeoCoordinate"&#10;</xsl:text>
     <xsl:text>    "file:///C|/Program Files/GeoVRML/1.1/protos/GeoCoordinate.wrl#GeoCoordinate"&#10;</xsl:text>
     <xsl:text>    "urn:web3d:geovrml:1.0/protos/GeoCoordinate.wrl#GeoCoordinate"&#10;</xsl:text>
-    <xsl:text>    "http://www.geovrml.org/1.1/protos/GeoCoordinate.wrl#GeoCoordinate"&#10;</xsl:text>
+    <xsl:text>    "https://www.geovrml.org/1.1/protos/GeoCoordinate.wrl#GeoCoordinate"&#10;</xsl:text>
     <xsl:text>  ]&#10;</xsl:text>
   </xsl:if>
   <xsl:if test="//GeoElevationGrid and not(//ExternProtoDeclare[@name='GeoElevationGrid']) and not(//ProtoDeclare[@name='GeoElevationGrid'])">
@@ -709,7 +709,7 @@ EXTERNPROTO CADPart [
     <xsl:text>    "C:/Program Files/GeoVRML/1.1/protos/GeoElevationGrid.wrl#GeoElevationGrid"&#10;</xsl:text>
     <xsl:text>    "file:///C|/Program Files/GeoVRML/1.1/protos/GeoElevationGrid.wrl#GeoElevationGrid"&#10;</xsl:text>
     <xsl:text>    "urn:web3d:geovrml:1.1/protos/GeoElevationGrid.wrl#GeoElevationGrid"&#10;</xsl:text>
-    <xsl:text>    "http://www.geovrml.org/1.1/protos/GeoElevationGrid.wrl#GeoElevationGrid"&#10;</xsl:text>
+    <xsl:text>    "https://www.geovrml.org/1.1/protos/GeoElevationGrid.wrl#GeoElevationGrid"&#10;</xsl:text>
     <xsl:text>  ]&#10;</xsl:text>
   </xsl:if>
   <xsl:if test="(//GeoInline and not(//ExternProtoDeclare[@name='GeoInline']) and not(//ProtoDeclare[@name='GeoInline'])) or
@@ -736,7 +736,7 @@ EXTERNPROTO CADPart [
     <xsl:text>    "C:/Program Files/GeoVRML/1.0/protos/GeoInline.wrl#GeoInline"&#10;</xsl:text>
     <xsl:text>    "file:///C|/Program Files/GeoVRML/1.0/protos/GeoInline.wrl#GeoInline"&#10;</xsl:text>
     <xsl:text>    "urn:web3d:geovrml:1.0/protos/GeoInline.wrl#GeoInline"&#10;</xsl:text>
-    <xsl:text>    "http://www.geovrml.org/1.0/protos/GeoInline.wrl#GeoInline"&#10;</xsl:text>
+    <xsl:text>    "https://www.geovrml.org/1.0/protos/GeoInline.wrl#GeoInline"&#10;</xsl:text>
     <xsl:text>  ]&#10;</xsl:text>
   </xsl:if>
   <xsl:if test="//GeoLocation and not(//ExternProtoDeclare[@name='GeoLocation']) and not(//ProtoDeclare[@name='GeoLocation'])">
@@ -749,7 +749,7 @@ EXTERNPROTO CADPart [
     <xsl:text>    "C:/Program Files/GeoVRML/1.1/protos/GeoLocation.wrl#GeoLocation"&#10;</xsl:text>
     <xsl:text>    "file:///C|/Program Files/GeoVRML/1.1/protos/GeoLocation.wrl#GeoLocation"&#10;</xsl:text>
     <xsl:text>    "urn:web3d:geovrml:1.1/protos/GeoLocation.wrl#GeoLocation"&#10;</xsl:text>
-    <xsl:text>    "http://www.geovrml.org/1.1/protos/GeoLocation.wrl#GeoLocation"&#10;</xsl:text>
+    <xsl:text>    "https://www.geovrml.org/1.1/protos/GeoLocation.wrl#GeoLocation"&#10;</xsl:text>
     <xsl:text>  ]&#10;</xsl:text>
   </xsl:if>
   <xsl:if test="//GeoLOD and not(//ExternProtoDeclare[@name='GeoLOD']) and not(//ProtoDeclare[@name='GeoLOD'])">
@@ -769,7 +769,7 @@ EXTERNPROTO CADPart [
     <xsl:text>    "C:/Program Files/GeoVRML/1.1/protos/GeoLOD.wrl#GeoLOD"&#10;</xsl:text>
     <xsl:text>    "file:///C|/Program Files/GeoVRML/1.1/protos/GeoLOD.wrl#GeoLOD"&#10;</xsl:text>
     <xsl:text>    "urn:web3d:geovrml:1.1/protos/GeoLOD.wrl#GeoLOD"&#10;</xsl:text>
-    <xsl:text>    "http://www.geovrml.org/1.1/protos/GeoLOD.wrl#GeoLOD"&#10;</xsl:text>
+    <xsl:text>    "https://www.geovrml.org/1.1/protos/GeoLOD.wrl#GeoLOD"&#10;</xsl:text>
     <xsl:text>  ]&#10;</xsl:text>
   </xsl:if>
   <xsl:if test="//GeoMetadata and not(//ExternProtoDeclare[@name='GeoMetadata']) and not(//ProtoDeclare[@name='GeoMetadata'])">
@@ -781,7 +781,7 @@ EXTERNPROTO CADPart [
     <xsl:text>    "C:/Program Files/GeoVRML/1.1/protos/GeoMetadata.wrl#GeoMetadata"&#10;</xsl:text>
     <xsl:text>    "file:///C|/Program Files/GeoVRML/1.1/protos/GeoMetadata.wrl#GeoMetadata"&#10;</xsl:text>
     <xsl:text>    "urn:web3d:geovrml:1.1/protos/GeoMetadata.wrl#GeoMetadata"&#10;</xsl:text>
-    <xsl:text>    "http://www.geovrml.org/1.1/protos/GeoMetadata.wrl#GeoMetadata"&#10;</xsl:text>
+    <xsl:text>    "https://www.geovrml.org/1.1/protos/GeoMetadata.wrl#GeoMetadata"&#10;</xsl:text>
     <xsl:text>  ]&#10;</xsl:text>
   </xsl:if>
   <xsl:if test="//GeoOrigin and not(//ExternProtoDeclare[@name='GeoOrigin']) and not(//ProtoDeclare[@name='GeoOrigin'])">
@@ -793,7 +793,7 @@ EXTERNPROTO CADPart [
     <xsl:text>    "C:/Program Files/GeoVRML/1.1/protos/GeoOrigin.wrl#GeoOrigin"&#10;</xsl:text>
     <xsl:text>    "file:///C|/Program Files/GeoVRML/1.1/protos/GeoOrigin.wrl#GeoOrigin"&#10;</xsl:text>
     <xsl:text>    "urn:web3d:geovrml:1.1/protos/GeoOrigin.wrl#GeoOrigin"&#10;</xsl:text>
-    <xsl:text>    "http://www.geovrml.org/1.1/protos/GeoOrigin.wrl#GeoOrigin"&#10;</xsl:text>
+    <xsl:text>    "https://www.geovrml.org/1.1/protos/GeoOrigin.wrl#GeoOrigin"&#10;</xsl:text>
     <xsl:text>  ]&#10;</xsl:text>
   </xsl:if>
   <xsl:if test="//GeoPositionInterpolator and not(//ExternProtoDeclare[@name='GeoPositionInterpolator']) and not(//ProtoDeclare[@name='GeoPositionInterpolator'])">
@@ -809,7 +809,7 @@ EXTERNPROTO CADPart [
     <xsl:text>    "C:/Program Files/GeoVRML/1.1/protos/GeoPositionInterpolator.wrl#GeoPositionInterpolator"&#10;</xsl:text>
     <xsl:text>    "file:///C|/Program Files/GeoVRML/1.1/protos/GeoPositionInterpolator.wrl#GeoPositionInterpolator"&#10;</xsl:text>
     <xsl:text>    "urn:web3d:geovrml:1.1/protos/GeoPositionInterpolator.wrl#GeoPositionInterpolator"&#10;</xsl:text>
-    <xsl:text>    "http://www.geovrml.org/1.1/protos/GeoPositionInterpolator.wrl#GeoPositionInterpolator"&#10;</xsl:text>
+    <xsl:text>    "https://www.geovrml.org/1.1/protos/GeoPositionInterpolator.wrl#GeoPositionInterpolator"&#10;</xsl:text>
     <xsl:text>  ]&#10;</xsl:text>
   </xsl:if>
   <xsl:if test="//GeoTouchSensor and not(//ExternProtoDeclare[@name='GeoTouchSensor']) and not(//ProtoDeclare[@name='GeoTouchSensor'])">
@@ -828,7 +828,7 @@ EXTERNPROTO CADPart [
     <xsl:text>    "C:/Program Files/GeoVRML/1.1/protos/GeoTouchSensor.wrl#GeoTouchSensor"&#10;</xsl:text>
     <xsl:text>    "file:///C|/Program Files/GeoVRML/1.1/protos/GeoTouchSensor.wrl#GeoTouchSensor"&#10;</xsl:text>
     <xsl:text>    "urn:web3d:geovrml:1.1/protos/GeoTouchSensor.wrl#GeoTouchSensor"&#10;</xsl:text>
-    <xsl:text>    "http://www.geovrml.org/1.1/protos/GeoTouchSensor.wrl#GeoTouchSensor"&#10;</xsl:text>
+    <xsl:text>    "https://www.geovrml.org/1.1/protos/GeoTouchSensor.wrl#GeoTouchSensor"&#10;</xsl:text>
     <xsl:text>  ]&#10;</xsl:text>
   </xsl:if>
   <xsl:if test="//GeoViewpoint and not(//ExternProtoDeclare[@name='GeoViewpoint']) and not(//ProtoDeclare[@name='GeoViewpoint'])">
@@ -852,7 +852,7 @@ EXTERNPROTO CADPart [
     <xsl:text>    "C:/Program Files/GeoVRML/1.1/protos/GeoViewpoint.wrl#GeoViewpoint"&#10;</xsl:text>
     <xsl:text>    "file:///C|/Program Files/GeoVRML/1.1/protos/GeoViewpoint.wrl#GeoViewpoint"&#10;</xsl:text>
     <xsl:text>    "urn:web3d:geovrml:1.1/protos/GeoViewpoint.wrl#GeoViewpoint"&#10;</xsl:text>
-    <xsl:text>    "http://www.geovrml.org/1.1/protos/GeoViewpoint.wrl#GeoViewpoint"&#10;</xsl:text>
+    <xsl:text>    "https://www.geovrml.org/1.1/protos/GeoViewpoint.wrl#GeoViewpoint"&#10;</xsl:text>
     <xsl:text>  ]&#10;</xsl:text>
   </xsl:if>
     <!-- ================================================================================================= -->
@@ -882,7 +882,7 @@ EXTERNPROTO XvlShell [
 ]]>
     </xsl:if>
     <!-- ================================================================================================= -->
-    <!-- H-Anim Humanoid Animation http://h-anim.org/Specifications/H-Anim2001 -->
+    <!-- HAnim Humanoid Animation https://h-anim.org/Specifications/H-Anim2001 -->
     <!-- standard www.web3d.org EXTERNPROTO URLs are not needed, since Prototype declarations work OK...
          these can be superceded by a browser, if desired. -->
     <xsl:if test="(//HAnimDisplacer or //ProtoInstance[@name='HAnimDisplacer']) and not(//ExternProtoDeclare[@name='HAnimDisplacer']) and not(//ProtoDeclare[@name='HAnimDisplacer'])">
@@ -910,8 +910,8 @@ PROTO HAnimDisplacer [
       <!-- implement either version the same way
       <xsl:choose>
         <xsl:when test="//HAnimHumanoid[@version='1.1'] or //HAnimHumanoid/humanoidBody">
-          <xsl:text># PROTO version taken from http://H-Anim.org/Specifications/H-Anim1.1/#humanoid&#10;</xsl:text>
-          <xsl:text># EXTERNPROTO version also available via http://www.h-anim.org/Nodes/H-Anim1.1/Humanoid.wrl#Humanoid&#10;</xsl:text>
+          <xsl:text># PROTO version taken from https://H-Anim.org/Specifications/H-Anim1.1/#humanoid&#10;</xsl:text>
+          <xsl:text># EXTERNPROTO version also available via https://www.h-anim.org/Nodes/H-Anim1.1/Humanoid.wrl#Humanoid&#10;</xsl:text>
 <![CDATA[
 PROTO HAnimHumanoid [
     exposedField    SFString   name                  ""
@@ -955,8 +955,8 @@ PROTO HAnimHumanoid [
         </xsl:otherwise>
       </xsl:choose>
 -->
-        <xsl:text># PROTO version taken from http://www.h-anim.org/Models/H-Anim2001/boxman/boxman.wrl&#10;</xsl:text>
-        <xsl:text># EXTERNPROTO version will also be available at http://h-anim.org/Nodes &#10;</xsl:text>
+        <xsl:text># PROTO version taken from https://www.h-anim.org/Models/H-Anim2001/boxman/boxman.wrl&#10;</xsl:text>
+        <xsl:text># EXTERNPROTO version will also be available at https://h-anim.org/Nodes &#10;</xsl:text>
 <![CDATA[
 PROTO HAnimHumanoid [
    exposedField    SFString   name                  ""
@@ -5189,7 +5189,7 @@ EXTERNPROTO TransmitterPdu [
                 <xsl:value-of select="substring-before(//meta[@name='url']/@content,//meta[@name='title']/@content)" />
               </xsl:when>
               <xsl:otherwise>
-                <xsl:text>http://...address.../</xsl:text>
+                <xsl:text>https://...TODO address.../</xsl:text>
               </xsl:otherwise>
             </xsl:choose>
             <xsl:value-of select="translate($url,'&quot;','')" />

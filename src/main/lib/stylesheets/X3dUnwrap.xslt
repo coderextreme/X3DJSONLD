@@ -16,7 +16,7 @@ are met:
       distribution.
     * Neither the names of the Naval Postgraduate School (NPS)
       Modeling Virtual Environments and Simulation (MOVES) Institute
-      (http://www.nps.edu and http://www.MovesInstitute.org)
+      (https://www.nps.edu and https://www.MovesInstitute.org)
       nor the names of its contributors may be used to endorse or
       promote products derived from this software without specific
       prior written permission.
@@ -46,7 +46,7 @@ POSSIBILITY OF SUCH DAMAGE.
 
 Recommended tool:
 
--  SAXON XML Toolkit (and Instant Saxon) from Michael Kay of ICL, http://users.iclway.co.uk/mhkay/saxon
+-  SAXON XML Toolkit (and Instant Saxon) from Michael Kay of ICL, https://users.iclway.co.uk/mhkay/saxon
 
 Can also be used with Apache server.  Point of contact:  Jeff Sonstein.
 

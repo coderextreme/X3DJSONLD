@@ -1,6 +1,6 @@
 <?xml version='1.0'?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
-                xmlns:saxon="http://icl.com/saxon" saxon:trace="no">
+<xsl:stylesheet xmlns:xsl="https://www.w3.org/1999/XSL/Transform" version="2.0"
+                xmlns:saxon="https://icl.com/saxon" saxon:trace="no">
         
     <xsl:variable name="x3dVersion" select="normalize-space(//X3D/@version)"/>
     <xsl:variable name="isX3D3" select="starts-with($x3dVersion,'3')"/>
@@ -20,7 +20,7 @@ are met:
       distribution.
     * Neither the names of the Naval Postgraduate School (NPS)
       Modeling Virtual Environments and Simulation (MOVES) Institute
-      (http://www.nps.edu and http://www.MovesInstitute.org)
+      (https://www.nps.edu and https://www.MovesInstitute.org)
       nor the names of its contributors may be used to endorse or
       promote products derived from this software without specific
       prior written permission.
@@ -40,10 +40,10 @@ POSSIBILITY OF SUCH DAMAGE.
 -->
 <!--***	Edit the topmost stylesheet tag on line 2 of this file to match the xmlns namespace URI for your XSL tool. ***
 	W3C:
-	Saxon:           <xsl:stylesheet xmlns:xsl='http://www.w3.org/1999/XSL/Transform'>
-	IBM XSLEditor:   <xsl:stylesheet xmlns:xsl='http://www.w3.org/XSL/Transform/1.0'>
-	IE 5:            <xsl:stylesheet xmlns:xsl='http://www.w3.org/TR/WD-xsl'>
-	XT:              <xsl:stylesheet xmlns:xsl='http://www.w3.org/XSL/Transform'>
+	Saxon:           <xsl:stylesheet xmlns:xsl='https://www.w3.org/1999/XSL/Transform'>
+	IBM XSLEditor:   <xsl:stylesheet xmlns:xsl='https://www.w3.org/XSL/Transform/1.0'>
+	IE 5:            <xsl:stylesheet xmlns:xsl='https://www.w3.org/TR/WD-xsl'>
+	XT:              <xsl:stylesheet xmlns:xsl='https://www.w3.org/XSL/Transform'>
 -->
 
 <!--
@@ -57,7 +57,7 @@ POSSIBILITY OF SUCH DAMAGE.
 
 Recommended tool:
 
-- SAXON XML Toolkit (and Instant Saxon) from Michael Kay of ICL, http://saxon.sourceforge.net
+- SAXON XML Toolkit (and Instant Saxon) from Michael Kay of ICL, https://saxon.sourceforge.net
 - Can also be used with Apache server
 
 -->  
@@ -77,7 +77,7 @@ Recommended tool:
 <!-- ****** root:  start of file ****** -->
 <xsl:template match="/">
 <xsl:text>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;&gt;&#10;&#10;</xsl:text>
-<!-- weird bug breaks margin spacing when url included:  &quot;http://www.w3.org/TR/html4/loose.dtd&quot;  -->
+<!-- weird bug breaks margin spacing when url included:  &quot;https://www.w3.org/TR/html4/loose.dtd&quot;  -->
 
 <xsl:text>&lt;html&gt;&#10;</xsl:text>
 <xsl:text>&lt;head&gt;&#10;</xsl:text>
@@ -1284,7 +1284,7 @@ Recommended tool:
       <xsl:text>&lt;/PRE&gt;</xsl:text> blah 
     </xsl:when>
     <!-- protect simple text references as is -->
-    <xsl:when test="(local-name(..)='meta') and (../@name='reference') and not(contains(string(.),'http://')) and not(contains(string(.),'https://')) and not(contains(string(.),'file:')) and contains(normalize-space(string(.)),' ')">
+    <xsl:when test="(local-name(..)='meta') and (../@name='reference') and not(contains(string(.),'https://')) and not(contains(string(.),'https://')) and not(contains(string(.),'file:')) and contains(normalize-space(string(.)),' ')">
       <xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/></xsl:when>
     <!-- make single url reference into actual A HREF= link -->
     <xsl:when test="(local-name(..)='meta' and (../@name='url' or ../@name='filename' or ../@name='reference' or ../@name='drawing' or ../@name='image' or ../@name='map' or ../@name='chart' or ../@name='movie' or ../@name='photo' or ../@name='photograph' or ../@name='diagram' or ../@name='source' or contains(../@name,'permission')) and local-name()='content') and not(contains(normalize-space(string(.)),' '))">
@@ -1310,7 +1310,7 @@ Recommended tool:
     <xsl:when test="(local-name(..)='field' or local-name(..)='ProtoDeclare' or local-name(..)='ExternProtoDeclare') and (local-name()='documentation')">
       <xsl:text>&lt;a href="</xsl:text><xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/><xsl:text>"&gt;</xsl:text><xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/><xsl:text>&lt;/a&gt;</xsl:text>
     </xsl:when>
-    <xsl:when test="starts-with(normalize-space(string(.)),'http://') or starts-with(normalize-space(string(.)),'https://')">
+    <xsl:when test="starts-with(normalize-space(string(.)),'https://') or starts-with(normalize-space(string(.)),'https://')">
       <xsl:text>&lt;a href="</xsl:text><xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/><xsl:text>"&gt;</xsl:text><xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/><xsl:text>&lt;/a&gt;</xsl:text>
     </xsl:when>
     <xsl:when test="(local-name(..)='meta' and local-name()='content') and (../@name='mail' or ../@name='email' or ../@name='e-mail' or ../@name='contact')">
@@ -1323,7 +1323,7 @@ Recommended tool:
       <xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/>
       <xsl:text>&lt;/a&gt;</xsl:text>
     </xsl:when>
-    <xsl:when test="(local-name(..)='meta' and local-name()='content') and (../@name='drawing' or ../@name='image' or ../@name='map' or ../@name='chart' or ../@name='movie' or ../@name='photo' or ../@name='photograph') and (contains(string(.),'http://') or contains(string(.),'https://') or contains(string(.),'file://') or not(contains(string(.),' ')))">
+    <xsl:when test="(local-name(..)='meta' and local-name()='content') and (../@name='drawing' or ../@name='image' or ../@name='map' or ../@name='chart' or ../@name='movie' or ../@name='photo' or ../@name='photograph') and (contains(string(.),'https://') or contains(string(.),'https://') or contains(string(.),'file://') or not(contains(string(.),' ')))">
       <xsl:text>&lt;a href="</xsl:text><xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/><xsl:text>"&gt;</xsl:text><xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/><xsl:text>&lt;/a&gt;</xsl:text>
     </xsl:when>
     <xsl:when test="(local-name(..)='meta' and local-name()='generator') and starts-with(.,'Xvl3ToX3d, ')">
@@ -1389,7 +1389,7 @@ Recommended tool:
 <!-- this will need modification if SFURL/MFURL types are created -->
 <xsl:template name="URL-ize-MFString-elements">
   <xsl:param name="list"/>
-  <xsl:variable name="wlist" select="concat(normalize-space($list),' ')"/>
+  <xsl:variable name="wlist" select="concat($list,' ')"/>
   <!-- <xsl:text>&#10;$wlist=[</xsl:text><xsl:value-of select="$wlist" disable-output-escaping="yes"/><xsl:text>]&#10;</xsl:text> -->
   <xsl:choose>
     <xsl:when test="$wlist!=' '">
@@ -1413,7 +1413,7 @@ Recommended tool:
 <!-- follows examples in Michael Kay's _XSLT_, pp. 551-554 -->
 <xsl:template name="format-IS-pairs">
   <xsl:param name="list"/>
-  <xsl:variable name="wlist" select="concat(normalize-space($list),' ')"/>
+  <xsl:variable name="wlist" select="concat($list,' ')"/>
   <!-- <xsl:text>&#10;$wlist=[</xsl:text><xsl:value-of select="$wlist" disable-output-escaping="yes"/><xsl:text>]&#10;</xsl:text> -->
   <xsl:choose>
     <xsl:when test="$wlist!=' '">

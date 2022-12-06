@@ -12,8 +12,8 @@
 
 Recommended tools:
 - X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit
-- SAXON XML Toolkit (and Instant Saxon) from Michael Kay of ICL, http://saxon.sourceforge.net
-- XML Spy http://www.xmlspy.com
+- SAXON XML Toolkit (and Instant Saxon) from Michael Kay of ICL, https://saxon.sourceforge.net
+- XML Spy https://www.xmlspy.com
 -->
  <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:saxon="http://icl.com/saxon" saxon:trace="yes">
 	<xsl:strip-space elements="*"/>
