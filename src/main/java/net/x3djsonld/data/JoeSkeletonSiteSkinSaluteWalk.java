@@ -154,7 +154,9 @@ public class JoeSkeletonSiteSkinSaluteWalk
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html")))
   .setScene(new Scene()
     .addChild(new Group("JointCenters_WorldInfo")
-      .addChild(new WorldInfo().setInfo(new String[] {"By Joe for Joe"}).setTitle("HAnim V1 LOA3 Skeleton Joint centers and Site translations Adapted for approximatrion of ManGLoss Site Location Example and HANIM 200x Default Joint Centers, LOA3")))
+      .addChild(new WorldInfo().setInfo(new String[] {"By Joe for Joe"}).setTitle("HAnim V1 LOA3 Skeleton Joint centers and Site translations 
+Adapted for approximatrion of ManGLoss Site Location Example and 
+HANIM 200x Default Joint Centers, LOA3")))
     .addChild(new Group()
       .addChild(new Transform().setScale(10.0,10.0,10.0).setTranslation(0.0,3.0,0.0)
         .addChild(new Shape("jointbox")
