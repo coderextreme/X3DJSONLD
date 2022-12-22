@@ -1,3 +1,4 @@
 brython
 virtualenv
 x3d
+xmlschema
