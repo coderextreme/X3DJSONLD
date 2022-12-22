@@ -324,6 +324,7 @@ magic("*.stl", "application/octet-stream");
 magic("*.vs", "text/plain");//"x-shader/x-vertex");
 magic("*.fs", "text/plain");//"x-shader/x-fragment");
 magic("*.js", "text/javascript");
+magic("*.py", "text/python");
 magic("*.mjs", "text/javascript");
 magic("*.js.map", "application/json");
 magic("*.csv", "text/csv");

@@ -1,0 +1,39 @@
+Metadata-Version: 2.1
+Name: brython
+Version: 3.11.0
+Summary: Brython is an implementation of Python 3 running in the browser
+Home-page: http://brython.info
+Author: Pierre Quentel
+Author-email: quentel.pierre@orange.fr
+License: BSD
+Keywords: Python browser
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Interpreters
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 3
+
+With Brython you can write browser programs in Python instead of Javascript,
+by inserting Python code in an HTML page by::
+
+    <script type="text/python">
+    ...
+    </script>
+
+Usage::
+
+    pip install brython
+
+Then in an empty folder::
+
+    brython-cli --install
+
+or in a folder with older versions already present::
+
+    brython-cli --update
+
+The package includes a page **demo.html** with examples of use. For more
+information see the `Brython site <http://brython.info>`_.
+
+
