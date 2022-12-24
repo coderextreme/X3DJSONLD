@@ -11,7 +11,7 @@ import org.web3d.x3d.jsail.Scripting.*;
 import org.web3d.x3d.jsail.Shape.*;
 import org.web3d.x3d.jsail.Text.*;
 
-// Javadoc annotations follow, see below for source.
+// Javadoc annotations follow, see below for Java source code.
 /**
  * <p> A process pipeline between three spheres (try typing on spheres and blue. </p>
  <p> Related links: pp3.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
@@ -40,7 +40,7 @@ import org.web3d.x3d.jsail.Text.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 05 May 2017 </td>
+			<td> 5 May 2017 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -87,7 +87,7 @@ public class pp3
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("John Carlson"))
     .addMeta(new meta().setName(meta.NAME_TRANSLATOR ).setContent("John Carlson"))
     .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("5 May 2015"))
-    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("05 May 2017"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("5 May 2017"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("A process pipeline between three spheres (try typing on spheres and blue"))
     .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/x3d/pp3.x3d"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("manual")))

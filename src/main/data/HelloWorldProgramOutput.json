@@ -100,7 +100,7 @@
           },
           {
             "@name":"modified",
-            "@content":"9 January 2022"
+            "@content":"4 July 2022"
           },
           {
             "@name":"generator",
@@ -112,7 +112,7 @@
           },
           {
             "@name":"generator",
-            "@content":"Netbeans http://www.netbeans.org"
+            "@content":"Netbeans https://www.netbeans.org"
           },
           {
             "@name":"creator",
@@ -373,7 +373,7 @@
                               "#comment":"Comment example B, XML character entities: He said, &quot;Immel did it!&quot;"
                             }
                           ],
-                          "-value":[
+                          "-metadata":
                             { "MetadataSet":
                               {
                                 "@name":"EscapedQuotationMarksMetadataSet",
@@ -392,8 +392,7 @@
                                   }
                                 ]
                               }
-                            }
-                          ],
+                            },
                           "-fontStyle":
                             { "FontStyle":
                               {
@@ -634,7 +633,7 @@
             {
               "@name":"ArtDeco02Material",
               "@appinfo":"this is a different Material node",
-              "@url":["http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"],
+              "@url":["https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"],
               "-children":[
                 {
                   "#comment":"[HelloWorldProgram diagnostic] artDeco02ExternProtoDeclare.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file.\""
@@ -785,7 +784,7 @@
             {
               "@name":"MaterialModulator",
               "@appinfo":"mimic a Material node and modulate fields as an animation effect",
-              "@documentation":"http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html",
+              "@documentation":"https://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html",
               "ProtoInterface": {
                   "field": [
                     {
@@ -1020,7 +1019,7 @@
                   "#comment":"testFieldObjects() results"
                 },
                 {
-                  "#comment":"SFBool default=true, true=true, false=false, negate()=true"
+                  "#comment":"SFBool default=false, true=true, false=false, negate()=true"
                 },
                 {
                   "#comment":"MFBool default=, initial=true false true, negate()=false true false"
@@ -1630,7 +1629,7 @@
                               "#comment":"Comment example B, XML character entities: He said, &quot;Immel did it!&quot;"
                             }
                           ],
-                          "-value":[
+                          "-metadata":
                             { "MetadataSet":
                               {
                                 "@name":"EscapedQuotationMarksMetadataSet",
@@ -1649,8 +1648,7 @@
                                   }
                                 ]
                               }
-                            }
-                          ],
+                            },
                           "-fontStyle":
                             { "FontStyle":
                               {
@@ -1891,7 +1889,7 @@
             {
               "@name":"ArtDeco02Material",
               "@appinfo":"this is a different Material node",
-              "@url":["http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"],
+              "@url":["https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"],
               "-children":[
                 {
                   "#comment":"[HelloWorldProgram diagnostic] artDeco02ExternProtoDeclare.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file.\""
@@ -2042,7 +2040,7 @@
             {
               "@name":"MaterialModulator",
               "@appinfo":"mimic a Material node and modulate fields as an animation effect",
-              "@documentation":"http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html",
+              "@documentation":"https://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html",
               "ProtoInterface": {
                   "field": [
                     {
@@ -2277,7 +2275,7 @@
                   "#comment":"testFieldObjects() results"
                 },
                 {
-                  "#comment":"SFBool default=true, true=true, false=false, negate()=true"
+                  "#comment":"SFBool default=false, true=true, false=false, negate()=true"
                 },
                 {
                   "#comment":"MFBool default=, initial=true false true, negate()=false true false"

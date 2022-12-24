@@ -475,7 +475,7 @@ POSSIBILITY OF SUCH DAMAGE.
 		-->
 		
 		<xsl:text><![CDATA[
-// Javadoc annotations follow, see below for source.
+// Javadoc annotations follow, see below for Java source code.
 /**
  * ]]></xsl:text>
 		<xsl:if test="(count(//meta[@name='description']) > 1)">

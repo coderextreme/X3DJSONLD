@@ -10,7 +10,7 @@ import org.web3d.x3d.jsail.PointingDeviceSensor.*;
 import org.web3d.x3d.jsail.Shape.*;
 import org.web3d.x3d.jsail.Time.*;
 
-// Javadoc annotations follow, see below for source.
+// Javadoc annotations follow, see below for Java source code.
 /**
  * <p> The SpinGroup prototype is used to automatically spin a group of three long rectangular boxes. Click on blue crossbar to activate second SpinGroup. </p>
  <p> Related links: <a href="../../../Chapter31Prototypes/Figure31_9SpinGroupPrototype.java">Figure31_9SpinGroupPrototype.java</a> source, <a href="../../../Chapter31Prototypes/Figure31_9SpinGroupPrototypeIndex.html" target="_top">Figure31_9SpinGroupPrototype catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
