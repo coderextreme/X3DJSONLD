@@ -9,7 +9,7 @@ import org.web3d.x3d.jsail.Rendering.*;
 import org.web3d.x3d.jsail.Shape.*;
 import org.web3d.x3d.jsail.Time.*;
 
-// Javadoc annotations follow, see below for source.
+// Javadoc annotations follow, see below for Java source code.
 /**
  * <p> BVH file conversion support: test and visualize various rotations in order to properly configure converter from Euler angles to SFRotation values. </p>
  <p> Related links: <a href="../../../MotionAnimation/RotationTests.java">RotationTests.java</a> source, <a href="../../../MotionAnimation/RotationTestsIndex.html" target="_top">RotationTests catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>

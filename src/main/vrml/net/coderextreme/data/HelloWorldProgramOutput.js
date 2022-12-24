@@ -97,7 +97,7 @@ head1.meta[15] = meta17;
 
 let meta18 = browser.currentScene.createNode("meta");
 meta18.name = "modified";
-meta18.content = "9 January 2022";
+meta18.content = "4 July 2022";
 head1.meta[16] = meta18;
 
 let meta19 = browser.currentScene.createNode("meta");
@@ -112,7 +112,7 @@ head1.meta[18] = meta20;
 
 let meta21 = browser.currentScene.createNode("meta");
 meta21.name = "generator";
-meta21.content = "Netbeans http://www.netbeans.org";
+meta21.content = "Netbeans https://www.netbeans.org";
 head1.meta[19] = meta21;
 
 let meta22 = browser.currentScene.createNode("meta");
@@ -532,7 +532,7 @@ browser.currentScene.children[19] = ProtoDeclare84;
 let ExternProtoDeclare94 = browser.currentScene.createNode("ExternProtoDeclare");
 ExternProtoDeclare94.name = "ArtDeco02Material";
 ExternProtoDeclare94.appinfo = "this is a different Material node";
-ExternProtoDeclare94.url = new MFString(new java.lang.String["http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"]);
+ExternProtoDeclare94.url = new MFString(new java.lang.String["https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"]);
 //[HelloWorldProgram diagnostic] artDeco02ExternProtoDeclare.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file.\"
 let field95 = browser.currentScene.createNode("field");
 field95.name = "description";
@@ -640,7 +640,7 @@ browser.currentScene.children[26] = EXPORT112;
 
 let ProtoDeclare113 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="MaterialModulator" appinfo="mimic a Material node and modulate fields as an animation effect" documentation="http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html" ><ProtoInterface><field name="enabled" accessType="inputOutput" type="SFBool" value="true"></field>
+<ProtoDeclare name="MaterialModulator" appinfo="mimic a Material node and modulate fields as an animation effect" documentation="https://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html" ><ProtoInterface><field name="enabled" accessType="inputOutput" type="SFBool" value="true"></field>
 <field name="diffuseColor" accessType="inputOutput" type="SFColor" value="0 0 0"></field>
 <field name="emissiveColor" accessType="inputOutput" type="SFColor" value="0.05 0.05 0.5"></field>
 <field name="specularColor" accessType="inputOutput" type="SFColor" value="0 0 0"></field>
@@ -690,7 +690,7 @@ function clockTrigger (timeValue)
 </ProtoDeclare>`);
 ProtoDeclare113.name = "MaterialModulator";
 ProtoDeclare113.appinfo = "mimic a Material node and modulate fields as an animation effect";
-ProtoDeclare113.documentation = "http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html";
+ProtoDeclare113.documentation = "https://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html";
 let ProtoInterface114 = browser.currentScene.createNode("ProtoInterface");
 let field115 = browser.currentScene.createNode("field");
 field115.name = "enabled";
@@ -905,7 +905,7 @@ browser.currentScene.children[28] = Group139;
 let Group145 = browser.currentScene.createNode("Group");
 Group145.DEF = "TestFieldObjectsGroup";
 //testFieldObjects() results
-//SFBool default=true, true=true, false=false, negate()=true
+//SFBool default=false, true=true, false=false, negate()=true
 //MFBool default=, initial=true false true, negate()=false true false
 //SFFloat default=0.0, initial=1.0, setValue(2)=2.0, setValue(3.0f)=3.0, setValue(4.0)=4.0
 //MFFloat default=, initial=1 2 3, append(5)=1 2 3 5, inserts(3,4)(0,0)=0 1 2 3 4 5, append(6)=0 1 2 3 4 5 6, size()=7

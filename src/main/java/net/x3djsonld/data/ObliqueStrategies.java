@@ -14,7 +14,7 @@ import org.web3d.x3d.jsail.Shape.*;
 import org.web3d.x3d.jsail.Sound.*;
 import org.web3d.x3d.jsail.Text.*;
 
-// Javadoc annotations follow, see below for source.
+// Javadoc annotations follow, see below for Java source code.
 /**
  * <p> Text scripting and animation example using Oblique Strategies card set by Brian Eno. </p>
  <p> Related links: <a href="../../../Inspiration/ObliqueStrategies.java">ObliqueStrategies.java</a> source, <a href="../../../Inspiration/ObliqueStrategiesIndex.html" target="_top">ObliqueStrategies catalog page</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
