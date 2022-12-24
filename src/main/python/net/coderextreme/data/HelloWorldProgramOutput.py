@@ -47,6 +47,10 @@ material=
 Material(USE="GreenMaterial")), 
 geometry=
 Text(string=["X3D Java","SAI Library","X3DJSAIL"], 
+metadata=(
+MetadataSet(name="EscapedQuotationMarksMetadataSet", value=[
+MetadataString(name="quotesTestC", value=["MFString example C, backslash-escaped quotes: He said, \"Immel did it!\""]),
+MetadataString(name="extraChildTest", value=["checks MetadataSet addValue() method"])])), 
 fontStyle=
 FontStyle(justify=["MIDDLE","MIDDLE"]))),
 Collision(children=[
@@ -96,7 +100,7 @@ TouchSensor(description="within ProtoBody",
 IS=IS(connect=[connect(nodeField="description", protoField="description"),
 connect(nodeField="enabled", protoField="enabled")
 ])),])),
-ExternProtoDeclare(name="ArtDeco02Material", appinfo="this is a different Material node", url=["http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"], field=[field(name="description", accessType="inputOutput", appinfo="tooltip for descriptionField", type="SFString")
+ExternProtoDeclare(name="ArtDeco02Material", appinfo="this is a different Material node", url=["https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"], field=[field(name="description", accessType="inputOutput", appinfo="tooltip for descriptionField", type="SFString")
 ]),
 #Tested ArtDeco01ProtoInstance, ArtDeco02ProtoInstance for improper node type when ProtoInstance is added in wrong place
 
@@ -126,7 +130,7 @@ Cylinder(height=0.001, radius=0.001)),
 Inline(DEF="inlineScene", url=["someOtherScene.x3d","https://www.web3d.org/specifications/java/examples/someOtherScene.x3d"]),
 IMPORT(AS="WorldInfoDEF2", importedDEF="WorldInfoDEF", inlineDEF="inlineScene"),
 EXPORT(AS="WorldInfoDEF3", localDEF="WorldInfoDEF"),
-ProtoDeclare(name="MaterialModulator", appinfo="mimic a Material node and modulate fields as an animation effect", documentation="http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html", 
+ProtoDeclare(name="MaterialModulator", appinfo="mimic a Material node and modulate fields as an animation effect", documentation="https://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html", 
 ProtoInterface=ProtoInterface(field=[field(name="enabled", accessType="inputOutput", type="SFBool", value=True),
 field(name="diffuseColor", accessType="inputOutput", type="SFColor", value=(0,0,0)),
 field(name="emissiveColor", accessType="inputOutput", type="SFColor", value=(0.05,0.05,0.5)),
@@ -184,7 +188,7 @@ Cone(bottom=False, bottomRadius=0.05, height=0.1)),
 Group(DEF="TestFieldObjectsGroup", children=[
 #testFieldObjects() results
 
-#SFBool default=true, true=true, false=false, negate()=true
+#SFBool default=false, true=true, false=false, negate()=true
 
 #MFBool default=, initial=true false true, negate()=false true false
 

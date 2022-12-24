@@ -106,7 +106,7 @@ head1->addMeta(*meta17);
 
 Cmeta* meta18 = new Cmeta();
 meta18->setName("modified");
-meta18->setContent("9 January 2022");
+meta18->setContent("4 July 2022");
 head1->addMeta(*meta18);
 
 Cmeta* meta19 = new Cmeta();
@@ -121,7 +121,7 @@ head1->addMeta(*meta20);
 
 Cmeta* meta21 = new Cmeta();
 meta21->setName("generator");
-meta21->setContent("Netbeans http://www.netbeans.org");
+meta21->setContent("Netbeans https://www.netbeans.org");
 head1->addMeta(*meta21);
 
 Cmeta* meta22 = new Cmeta();
@@ -329,7 +329,7 @@ MetadataString65->setName("extraChildTest");
 MetadataString65->setValue(new CString[1]{"checks MetadataSet addValue() method"}, 1);
 MetadataSet63->addValue(*MetadataString65);
 
-Text62->setValue(*MetadataSet63);
+Text62->setMetadata(*MetadataSet63);
 
 CFontStyle* FontStyle66 = (CFontStyle *)(m_pScene.createNode("FontStyle"));
 FontStyle66->setJustify(new CString[2]{"MIDDLE","MIDDLE"}, 2);
@@ -520,7 +520,7 @@ group->addChildren(*ProtoDeclare84);
 CExternProtoDeclare* ExternProtoDeclare94 = new CExternProtoDeclare();
 ExternProtoDeclare94->setName("ArtDeco02Material");
 ExternProtoDeclare94->setAppinfo("this is a different Material node");
-ExternProtoDeclare94->setUrl(new CString[2]{"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"}, 2);
+ExternProtoDeclare94->setUrl(new CString[2]{"https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"}, 2);
 //[HelloWorldProgram diagnostic] artDeco02ExternProtoDeclare.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file.\"
 Cfield* field95 = new Cfield();
 field95->setName("description");
@@ -616,7 +616,7 @@ group->addChildren(*EXPORT112);
 
 CProtoDeclare ProtoDeclare113 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
-<ProtoDeclare name="MaterialModulator" appinfo="mimic a Material node and modulate fields as an animation effect" documentation="http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html" ><ProtoInterface><field name="enabled" accessType="inputOutput" type="SFBool" value="true"></field>
+<ProtoDeclare name="MaterialModulator" appinfo="mimic a Material node and modulate fields as an animation effect" documentation="https://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html" ><ProtoInterface><field name="enabled" accessType="inputOutput" type="SFBool" value="true"></field>
 <field name="diffuseColor" accessType="inputOutput" type="SFColor" value="0 0 0"></field>
 <field name="emissiveColor" accessType="inputOutput" type="SFColor" value="0.05 0.05 0.5"></field>
 <field name="specularColor" accessType="inputOutput" type="SFColor" value="0 0 0"></field>
@@ -666,7 +666,7 @@ function clockTrigger (timeValue)
 </ProtoDeclare>)foo");
 ProtoDeclare113->setName("MaterialModulator");
 ProtoDeclare113->setAppinfo("mimic a Material node and modulate fields as an animation effect");
-ProtoDeclare113->setDocumentation("http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html");
+ProtoDeclare113->setDocumentation("https://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html");
 CProtoInterface* ProtoInterface114 = new CProtoInterface();
 Cfield* field115 = new Cfield();
 field115->setName("enabled");
@@ -867,7 +867,7 @@ group->addChildren(*Group139);
 CGroup* Group145 = (CGroup *)(m_pScene.createNode("Group"));
 Group145->setDEF("TestFieldObjectsGroup");
 //testFieldObjects() results
-//SFBool default=true, true=true, false=false, negate()=true
+//SFBool default=false, true=true, false=false, negate()=true
 //MFBool default=, initial=true false true, negate()=false true false
 //SFFloat default=0.0, initial=1.0, setValue(2)=2.0, setValue(3.0f)=3.0, setValue(4.0)=4.0
 //MFFloat default=, initial=1 2 3, append(5)=1 2 3 5, inserts(3,4)(0,0)=0 1 2 3 4 5, append(6)=0 1 2 3 4 5 6, size()=7

@@ -172,7 +172,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("9 January 2022")}),
+              content : new SFString("4 July 2022")}),
 
             new meta({
               name : new SFString("generator"),
@@ -184,7 +184,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("generator"),
-              content : new SFString("Netbeans http://www.netbeans.org")}),
+              content : new SFString("Netbeans https://www.netbeans.org")}),
 
             new meta({
               name : new SFString("creator"),
@@ -499,7 +499,7 @@ ecmascript:eval (0
             new ExternProtoDeclare({
               name : new SFString("ArtDeco02Material"),
               appinfo : new SFString("this is a different Material node"),
-              url : new MFString(["http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"]),
+              url : new MFString(["https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"]),
               /*[HelloWorldProgram diagnostic] artDeco02ExternProtoDeclare.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file.\"*/
               field : new MFNode([
                 new field({
@@ -577,7 +577,7 @@ ecmascript:eval (0
             new ProtoDeclare({
               name : new SFString("MaterialModulator"),
               appinfo : new SFString("mimic a Material node and modulate fields as an animation effect"),
-              documentation : new SFString("http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html"),
+              documentation : new SFString("https://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html"),
               ProtoInterface : new SFNode(
                 new ProtoInterface({
                   field : new MFNode([
@@ -746,7 +746,7 @@ ecmascript:eval (0
             new Group({
               DEF : new SFString("TestFieldObjectsGroup"),
               /*testFieldObjects() results*/
-              /*SFBool default=true, true=true, false=false, negate()=true*/
+              /*SFBool default=false, true=true, false=false, negate()=true*/
               /*MFBool default=, initial=true false true, negate()=false true false*/
               /*SFFloat default=0.0, initial=1.0, setValue(2)=2.0, setValue(3.0f)=3.0, setValue(4.0)=4.0*/
               /*MFFloat default=, initial=1 2 3, append(5)=1 2 3 5, inserts(3,4)(0,0)=0 1 2 3 4 5, append(6)=0 1 2 3 4 5 6, size()=7*/

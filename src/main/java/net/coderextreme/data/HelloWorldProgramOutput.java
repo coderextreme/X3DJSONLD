@@ -75,10 +75,10 @@ ProtoInstance ProtoInstance6 = null;
         .addMeta(new meta().setName("reference").setContent("https://www.web3d.org/specifications/java/X3DJSAIL.html"))
         .addMeta(new meta().setName("generator").setContent("HelloWorldProgramOutput.java"))
         .addMeta(new meta().setName("created").setContent("6 September 2016"))
-        .addMeta(new meta().setName("modified").setContent("9 January 2022"))
+        .addMeta(new meta().setName("modified").setContent("4 July 2022"))
         .addMeta(new meta().setName("generator").setContent("X3D Java Scene Access Interface Library (X3DJSAIL)"))
         .addMeta(new meta().setName("generator").setContent("https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"))
-        .addMeta(new meta().setName("generator").setContent("Netbeans http://www.netbeans.org"))
+        .addMeta(new meta().setName("generator").setContent("Netbeans https://www.netbeans.org"))
         .addMeta(new meta().setName("creator").setContent("Don Brutzman"))
         .addMeta(new meta().setName("reference").setContent("https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java/examples/HelloWorldProgramOutput.x3d"))
         .addMeta(new meta().setName("reference").setContent("Console output, ClassicVRML encoding, VRML97 encoding and pretty-print documentation:"))
@@ -123,7 +123,7 @@ ProtoInstance ProtoInstance6 = null;
             .setGeometry(new Text().setString(new MFString7().getArray())
               .addComments("Comment example A, plain quotation marks: He said, \"Immel did it!\"")
               .addComments("Comment example B, XML character entities: He said, &quot;Immel did it!&quot;")
-              .addValue(new MetadataSet().setName("EscapedQuotationMarksMetadataSet")
+              .setMetadata(new MetadataSet().setName("EscapedQuotationMarksMetadataSet")
                 .addValue(new MetadataString().setName("quotesTestC").setValue(new MFString8().getArray()))
                 .addValue(new MetadataString().setName("extraChildTest").setValue(new MFString9().getArray())))
               .setFontStyle(new FontStyle().setJustify(new MFString10().getArray()))))
@@ -198,7 +198,7 @@ ProtoInstance ProtoInstance6 = null;
         .addChild(new Inline().setDEF("inlineScene").setUrl(new MFString17().getArray()))
         .addChild(new IMPORT().setAS("WorldInfoDEF2").setImportedDEF("WorldInfoDEF").setInlineDEF("inlineScene"))
         .addChild(new EXPORT().setAS("WorldInfoDEF3").setLocalDEF("WorldInfoDEF"))
-        .addChild(new ProtoDeclare().setName("MaterialModulator").setAppinfo("mimic a Material node and modulate fields as an animation effect").setDocumentation("http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html")
+        .addChild(new ProtoDeclare().setName("MaterialModulator").setAppinfo("mimic a Material node and modulate fields as an animation effect").setDocumentation("https://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType("SFBool").setName("enabled").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("true"))
             .addField(new field().setType("SFColor").setName("diffuseColor").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
@@ -265,7 +265,7 @@ ProtoInstance ProtoInstance6 = null;
         .addComments("Test success: x3dModel.findElementByNameValue(\"MaterialModulator\", \"ProtoInstance\") found")
         .addChild(new Group().setDEF("TestFieldObjectsGroup")
           .addComments("testFieldObjects() results")
-          .addComments("SFBool default=true, true=true, false=false, negate()=true")
+          .addComments("SFBool default=false, true=true, false=false, negate()=true")
           .addComments("MFBool default=, initial=true false true, negate()=false true false")
           .addComments("SFFloat default=0.0, initial=1.0, setValue(2)=2.0, setValue(3.0f)=3.0, setValue(4.0)=4.0")
           .addComments("MFFloat default=, initial=1 2 3, append(5)=1 2 3 5, inserts(3,4)(0,0)=0 1 2 3 4 5, append(6)=0 1 2 3 4 5 6, size()=7")
@@ -443,7 +443,7 @@ protected class MFColor15 {
 }
 protected class MFString16 {
   protected org.web3d.x3d.jsail.fields.MFString getArray() {
-    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"});
+    return new org.web3d.x3d.jsail.fields.MFString(new java.lang.String[] {"https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"});
   }
 }
 protected class MFString17 {
