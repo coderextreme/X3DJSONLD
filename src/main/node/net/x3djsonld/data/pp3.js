@@ -36,7 +36,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 05 May 2017 </td>
+			<td> 23 Dec 2022 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -105,7 +105,7 @@ pp3.prototype = {
     .addMeta((new autoclass.meta()).setName("creator").setContent("John Carlson"))
     .addMeta((new autoclass.meta()).setName("translator").setContent("John Carlson"))
     .addMeta((new autoclass.meta()).setName("created").setContent("5 May 2015"))
-    .addMeta((new autoclass.meta()).setName("modified").setContent("05 May 2017"))
+    .addMeta((new autoclass.meta()).setName("modified").setContent("23 Dec 2022"))
     .addMeta((new autoclass.meta()).setName("description").setContent("A process pipeline between three spheres (try typing on spheres and blue"))
     .addMeta((new autoclass.meta()).setName("identifier").setContent("https://coderextreme.net/x3d/pp3.x3d"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("manual")))

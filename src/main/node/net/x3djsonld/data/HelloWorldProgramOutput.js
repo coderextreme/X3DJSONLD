@@ -44,7 +44,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 9 January 2022 </td>
+			<td> 4 July 2022 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -56,7 +56,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
-			<td> Netbeans <a href="http://www.netbeans.org" target="_blank">http://www.netbeans.org</a> </td>
+			<td> Netbeans <a href="https://www.netbeans.org" target="_blank">https://www.netbeans.org</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -150,10 +150,10 @@ HelloWorldProgramOutput.prototype = {
     .addMeta((new autoclass.meta()).setName("reference").setContent("https://www.web3d.org/specifications/java/X3DJSAIL.html"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("HelloWorldProgramOutput.java"))
     .addMeta((new autoclass.meta()).setName("created").setContent("6 September 2016"))
-    .addMeta((new autoclass.meta()).setName("modified").setContent("9 January 2022"))
+    .addMeta((new autoclass.meta()).setName("modified").setContent("4 July 2022"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("X3D Java Scene Access Interface Library (X3DJSAIL)"))
     .addMeta((new autoclass.meta()).setName("generator").setContent("https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"))
-    .addMeta((new autoclass.meta()).setName("generator").setContent("Netbeans http://www.netbeans.org"))
+    .addMeta((new autoclass.meta()).setName("generator").setContent("Netbeans https://www.netbeans.org"))
     .addMeta((new autoclass.meta()).setName("creator").setContent("Don Brutzman"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java/examples/HelloWorldProgramOutput.x3d"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("Console output, ClassicVRML encoding, VRML97 encoding and pretty-print documentation:"))
@@ -199,7 +199,7 @@ HelloWorldProgramOutput.prototype = {
         .setGeometry((new autoclass.Text()).setString(new autoclass.MFString("\"X3D Java\" \"SAI Library\" \"X3DJSAIL\""))
           .addComments(" Comment example A, plain quotation marks: He said, \"Immel did it!\" ")
           .addComments(" Comment example B, XML character entities: He said, &quot;Immel did it!&quot; ")
-          .setValue((new autoclass.MetadataSet()).setName("EscapedQuotationMarksMetadataSet")
+          .setMetadata((new autoclass.MetadataSet()).setName("EscapedQuotationMarksMetadataSet")
             .addValue((new autoclass.MetadataString()).setName("quotesTestC").setValue(new autoclass.MFString("\"MFString example C, backslash-escaped quotes: He said, \\\"Immel did it!\\\"\"")))
             .addValue((new autoclass.MetadataString()).setName("extraChildTest").setValue(new autoclass.MFString("\"checks MetadataSet addValue() method\""))))
           .setFontStyle((new autoclass.FontStyle()).setJustify(new autoclass.MFString("\"MIDDLE\" \"MIDDLE\"")))))
@@ -251,7 +251,7 @@ HelloWorldProgramOutput.prototype = {
           .setIS((new autoclass.IS())
             .addConnect((new autoclass.connect()).setNodeField("description").setProtoField("description"))
             .addConnect((new autoclass.connect()).setNodeField("enabled").setProtoField("enabled"))))))
-    .addChild((new autoclass.ExternProtoDeclare()).setName("ArtDeco02Material").setAppinfo("this is a different Material node").setUrl(new autoclass.MFString("\"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material\" \"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material\""))
+    .addChild((new autoclass.ExternProtoDeclare()).setName("ArtDeco02Material").setAppinfo("this is a different Material node").setUrl(new autoclass.MFString("\"https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material\" \"https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material\""))
       .addComments(" [HelloWorldProgram diagnostic] artDeco02ExternProtoDeclare.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file.\" ")
       .addField((new autoclass.field()).setName("description").setType("SFString").setAccessType("inputOutput").setAppinfo("tooltip for descriptionField")))
     .addComments(" Tested ArtDeco01ProtoInstance, ArtDeco02ProtoInstance for improper node type when ProtoInstance is added in wrong place ")
@@ -277,7 +277,7 @@ HelloWorldProgramOutput.prototype = {
     .addChild((new autoclass.Inline("inlineScene")).setUrl(new autoclass.MFString("\"someOtherScene.x3d\" \"https://www.web3d.org/specifications/java/examples/someOtherScene.x3d\"")))
     .addChild((new autoclass.IMPORT()).setImportedDEF("WorldInfoDEF").setInlineDEF("inlineScene").setAS("WorldInfoDEF2"))
     .addChild((new autoclass.EXPORT()).setLocalDEF("WorldInfoDEF").setAS("WorldInfoDEF3"))
-    .addChild((new autoclass.ProtoDeclare()).setName("MaterialModulator").setAppinfo("mimic a Material node and modulate fields as an animation effect").setDocumentation("http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html")
+    .addChild((new autoclass.ProtoDeclare()).setName("MaterialModulator").setAppinfo("mimic a Material node and modulate fields as an animation effect").setDocumentation("https://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html")
       .setProtoInterface((new autoclass.ProtoInterface())
         .addField((new autoclass.field()).setName("enabled").setType("SFBool").setAccessType("inputOutput").setValue("true"))
         .addField((new autoclass.field()).setName("diffuseColor").setType("SFColor").setAccessType("inputOutput").setValue("0 0 0"))
@@ -345,7 +345,7 @@ HelloWorldProgramOutput.prototype = {
     .addComments(" Test success: x3dModel.findElementByNameValue(\"MaterialModulator\", \"ProtoInstance\") found ")
     .addChild((new autoclass.Group("TestFieldObjectsGroup"))
       .addComments(" testFieldObjects() results ")
-      .addComments(" SFBool default=true, true=true, false=false, negate()=true ")
+      .addComments(" SFBool default=false, true=true, false=false, negate()=true ")
       .addComments(" MFBool default=, initial=true false true, negate()=false true false ")
       .addComments(" SFFloat default=0.0, initial=1.0, setValue(2)=2.0, setValue(3.0f)=3.0, setValue(4.0)=4.0 ")
       .addComments(" MFFloat default=, initial=1 2 3, append(5)=1 2 3 5, inserts(3,4)(0,0)=0 1 2 3 4 5, append(6)=0 1 2 3 4 5 6, size()=7 ")
