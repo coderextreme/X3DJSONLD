@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+   <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="https://www.x3dom.org/download/1.8.2/x3dom.css"></link>
+    <script type="text/javascript" src="https://www.x3dom.org/download/1.8.2/x3dom-full.debug.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+   <script type="text/javascript" src="brython.js"></script>
+   <script type="text/javascript" src="brython_stdlib.js"></script>
+</head>
+<body onload="brython(1)">
+<button id="button1">Press Button to Load Scene</button>
+<x3d xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="http://www.web3d.org/specifications/x3d-3.3.xsd" showStat="false" showLog="true" width="300px" height="300px" backend="webgl">
+<scene id="zone1" class="zone"></scene>
+</x3d>
+<script type="text/python" src="Web3dLogo-X3d-animated-logo3.py">
+</script>
+<script type="text/javascript" id="zone2">
+</script>
+</body>
+</html>
