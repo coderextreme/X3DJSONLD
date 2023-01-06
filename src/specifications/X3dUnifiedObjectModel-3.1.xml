@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-3.1.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-3.1.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 3.1 of X3D -->
-<!-- Generated 2022-03-14-07:00 09:36:33.9395294-07:00 -->
+<!-- Generated 2022-07-04-07:00 11:44:00.9683118-07:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                         version="3.1"
                         xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -8226,7 +8226,7 @@
                     type="SFInt32"
                     accessType="inputOutput"
                     default="1"
-                    description="hatchStyle selects a hatch pattern from International Register of Graphical Items."/>
+                    description="hatchStyle selects a hatch pattern from ISO/IEC 9973 International Register of Graphical Items."/>
             <field name="IS"
                     type="SFNode"
                     accessType="inputOutput"
@@ -8495,7 +8495,7 @@
                     additionalEnumerationValuesAllowed="false"
                     simpleType="justifyChoices"
                     baseType="MFString"
-                    description="The justify field determines alignment of the above text layout relative to the origin of the object coordinate system.">
+                    description="The justify field determines horizontal and vertical alignment of text layout, relative to the origin of the object coordinate system.">
                <enumeration value="&#34;MIDDLE&#34;"/>
                <enumeration value="&#34;MIDDLE&#34; &#34;BEGIN&#34;"/>
                <enumeration value="&#34;MIDDLE&#34; &#34;END&#34;"/>
@@ -9894,7 +9894,7 @@
                     additionalEnumerationValuesAllowed="false"
                     simpleType="hanimVersionChoices"
                     baseType="xs:NMTOKEN"
-                    description="HAnimHumanoid version, where value is 1.">
+                    description="HAnimHumanoid version, where allowed value is 2.">
                <enumeration value="1.0"
                              appinfo="International standard HAnim 19774 version 1 approved by ISO in 2006. Note that HAnim version 2.0 has more capabilties, while version 1.0 includes several small incompatibilities. Since no other versions were formally approved, no other values are allowed for earlier HAnim versions."
                              documentation="https://www.web3d.org/documents/specifications/19774/V1.0"/>
