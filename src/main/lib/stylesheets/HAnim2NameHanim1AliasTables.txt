@@ -1,436 +1,127 @@
 ==================================================================================
  HAnim2 name and HAnim1 alias tables for Joint, Segment and Site (feature points)
-
  https://www.web3d.org/x3d/content/examples/HumanoidAnimation/HAnim2NameHanim1AliasTables.txt
 ==================================================================================
-
                 HAnimJoint alias values
-
-HAnim2 name                             HAnim1, others
-
-  1 humanoid_root                           
-  2 sacroiliac                              SIJ,SI joint (CAESAR)
-  3 l_hip                                   
-  4 l_knee                                  
-  5 l_talocrural                            l_ankle
-  6 l_talocalcaneonavicular                 l_talocalcaneal
-  7 l_cuneonavicular_1                      
-  8 l_tarsometatarsal_1                     
-  9 l_metatarsophalangeal_1                 
- 10 l_tarsal_interphalangeal_1              
- 11 l_cuneonavicular_2                      l_cuneonavicular
- 12 l_tarsometatarsal_2                     l_subtalar,l_tarsometatarsal
- 13 l_metatarsophalangeal_2                 l_midtarsal,l_metatarsophalangeal
- 14 l_tarsal_proximal_interphalangeal_2     l_tarsal_proximal_interphalangeal
- 15 l_tarsal_distal_interphalangeal_2       l_tarsal_distal_interphalangeal
- 16 l_cuneonavicular_3                      
- 17 l_tarsometatarsal_3                     
- 18 l_metatarsophalangeal_3                 
- 19 l_tarsal_proximal_interphalangeal_3     
- 20 l_tarsal_distal_interphalangeal_3       
- 21 l_calcaneocuboid                        l_calcaneuscuboid
- 22 l_transversetarsal                      
- 23 l_tarsometatarsal_4                     
- 24 l_metatarsophalangeal_4                 
- 25 l_tarsal_proximal_interphalangeal_4     
- 26 l_tarsal_distal_interphalangeal_4       
- 27 l_tarsometatarsal_5                     
- 28 l_metatarsophalangeal_5                 
- 29 l_tarsal_proximal_interphalangeal_5     
- 30 l_tarsal_distal_interphalangeal_5       
- 31 r_hip                                   
- 32 r_knee                                  
- 33 r_talocrural                            r_ankle
- 34 r_talocalcaneonavicular                 r_talocalcaneal
- 35 r_cuneonavicular_1                      
- 36 r_tarsometatarsal_1                     
- 37 r_metatarsophalangeal_1                 
- 38 r_tarsal_interphalangeal_1              
- 39 r_cuneonavicular_2                      r_cuneonavicular
- 40 r_tarsometatarsal_2                     r_subtalar,r_tarsometatarsal
- 41 r_metatarsophalangeal_2                 r_midtarsal,r_metatarsophalangeal
- 42 r_tarsal_proximal_interphalangeal_2     r_tarsal_proximal_interphalangeal
- 43 r_tarsal_distal_interphalangeal_2       r_metatarsal,r_tarsal_distal_interphalangeal
- 44 r_cuneonavicular_3                      
- 45 r_tarsometatarsal_3                     
- 46 r_metatarsophalangeal_3                 
- 47 r_tarsal_proximal_interphalangeal_3     
- 48 r_tarsal_distal_interphalangeal_3       
- 49 r_calcaneocuboid                        r_calcaneuscuboid
- 50 r_transversetarsal                      
- 51 r_tarsometatarsal_4                     
- 52 r_metatarsophalangeal_4                 
- 53 r_tarsal_proximal_interphalangeal_4     
- 54 r_tarsal_distal_interphalangeal_4       
- 55 r_tarsometatarsal_5                     
- 56 r_metatarsophalangeal_5                 
- 57 r_tarsal_proximal_interphalangeal_5     
- 58 r_tarsal_distal_interphalangeal_5       
- 59 vl5                                     
- 60 vl4                                     
- 61 vl3                                     
- 62 vl2                                     
- 63 vl1                                     
- 64 vt12                                    
- 65 vt11                                    
- 66 vt10                                    
- 67 vt9                                     
- 68 vt8                                     
- 69 vt7                                     
- 70 vt6                                     
- 71 vt5                                     
- 72 vt4                                     
- 73 vt3                                     
- 74 vt2                                     
- 75 vt1                                     
- 76 vc7                                     
- 77 vc6                                     
- 78 vc5                                     
- 79 vc4                                     
- 80 vc3                                     
- 81 vc2                                     
- 82 vc1                                     
- 83 skullbase                               
- 84 l_eyelid_joint                          
- 85 r_eyelid_joint                          
- 86 l_eyeball_joint                         
- 87 r_eyeball_joint                         
- 88 l_eyebrow_joint                         
- 89 r_eyebrow_joint                         
- 90 temporomandibular                       
- 91 l_sternoclavicular                      
- 92 l_acromioclavicular                     
- 93 l_shoulder                              
- 94 l_elbow                                 
- 95 l_radiocarpal                           l_wrist
- 96 l_midcarpal_1                           
- 97 l_carpometacarpal_1                     l_thumb1
- 98 l_metacarpophalangeal_1                 l_thumb2
- 99 l_carpal_interphalangeal_1              l_thumb3
-100 l_midcarpal_2                           
-101 l_carpometacarpal_2                     l_index0,l_carpometacarpal
-102 l_metacarpophalangeal_2                 l_index1,l_metacarpophalangeal
-103 l_carpal_proximal_interphalangeal_2     l_index2,l_carpal_proximal_interphalangeal
-104 l_carpal_distal_interphalangeal_2       l_index3,l_carpal_distal_interphalangeal
-105 l_midcarpal_3                           
-106 l_carpometacarpal_3                     l_middle0
-107 l_metacarpophalangeal_3                 l_middle1
-108 l_carpal_proximal_interphalangeal_3     l_middle2
-109 l_carpal_distal_interphalangeal_3       l_middle3
-110 l_midcarpal_4_5                         
-111 l_carpometacarpal_4                     l_ring0
-112 l_metacarpophalangeal_4                 l_ring1
-113 l_carpal_proximal_interphalangeal_4     l_ring2
-114 l_carpal_distal_interphalangeal_4       l_ring3
-115 l_carpometacarpal_5                     l_pinky0
-116 l_metacarpophalangeal_5                 l_pinky1
-117 l_carpal_proximal_interphalangeal_5     l_pinky2
-118 l_carpal_distal_interphalangeal_5       l_pinky3
-119 r_sternoclavicular                      
-120 r_acromioclavicular                     
-121 r_shoulder                              
-122 r_elbow                                 
-123 r_radiocarpal                           r_wrist
-124 r_midcarpal_1                           
-125 r_carpometacarpal_1                     r_thumb1
-126 r_metacarpophalangeal_1                 r_thumb2
-127 r_carpal_interphalangeal_1              r_thumb3
-128 r_midcarpal_2                           
-129 r_carpometacarpal_2                     r_index0,r_carpometacarpal
-130 r_metacarpophalangeal_2                 r_index1,r_metacarpophalangeal
-131 r_carpal_proximal_interphalangeal_2     r_index2,r_carpal_proximal_interphalangeal
-132 r_carpal_distal_interphalangeal_2       r_index3,r_carpal_distal_interphalangeal
-133 r_midcarpal_3                           
-134 r_carpometacarpal_3                     r_middle0
-135 r_metacarpophalangeal_3                 r_middle1
-136 r_carpal_proximal_interphalangeal_3     r_middle2
-137 r_carpal_distal_interphalangeal_3       r_middle3
-138 r_midcarpal_4_5                         
-139 r_carpometacarpal_4                     r_ring0
-140 r_metacarpophalangeal_4                 r_ring1
-141 r_carpal_proximal_interphalangeal_4     r_ring2
-142 r_carpal_distal_interphalangeal_4       r_ring3
-143 r_carpometacarpal_5                     r_pinky0
-144 r_metacarpophalangeal_5                 r_pinky1
-145 r_carpal_proximal_interphalangeal_5     r_pinky2
-146 r_carpal_distal_interphalangeal_5       r_pinky3
-
+HAnim2 name HAnim1, others 1 humanoid_root 2 sacroiliac SIJ,SI joint (CAESAR) 3 l_hip 4 l_knee 5 l_talocrural l_ankle 6 l_talocalcaneonavicular l_talocalcaneal 7 l_cuneonavicular_1 8 l_tarsometatarsal_1 9 l_metatarsophalangeal_1 10 l_tarsal_interphalangeal_1 11 l_cuneonavicular_2 l_cuneonavicular 12 l_tarsometatarsal_2 l_subtalar,l_tarsometatarsal 13 l_metatarsophalangeal_2 l_midtarsal,l_metatarsophalangeal 14 l_tarsal_proximal_interphalangeal_2 l_tarsal_proximal_interphalangeal 15 l_tarsal_distal_interphalangeal_2 l_tarsal_distal_interphalangeal 16 l_cuneonavicular_3 17 l_tarsometatarsal_3 18 l_metatarsophalangeal_3 19 l_tarsal_proximal_interphalangeal_3 20 l_tarsal_distal_interphalangeal_3 21 l_calcaneocuboid l_calcaneuscuboid 22 l_transversetarsal 23 l_tarsometatarsal_4 24 l_metatarsophalangeal_4 25 l_tarsal_proximal_interphalangeal_4 26 l_tarsal_distal_interphalangeal_4 27 l_tarsometatarsal_5 28 l_metatarsophalangeal_5 29 l_tarsal_proximal_interphalangeal_5 30 l_tarsal_distal_interphalangeal_5 31 r_hip 32 r_knee 33 r_talocrural r_ankle 34 r_talocalcaneonavicular r_talocalcaneal 35 r_cuneonavicular_1 36 r_tarsometatarsal_1 37 r_metatarsophalangeal_1 38 r_tarsal_interphalangeal_1 39 r_cuneonavicular_2 r_cuneonavicular 40 r_tarsometatarsal_2 r_subtalar,r_tarsometatarsal 41 r_metatarsophalangeal_2 r_midtarsal,r_metatarsophalangeal 42 r_tarsal_proximal_interphalangeal_2 r_tarsal_proximal_interphalangeal 43 r_tarsal_distal_interphalangeal_2 r_metatarsal,r_tarsal_distal_interphalangeal 44 r_cuneonavicular_3 45 r_tarsometatarsal_3 46 r_metatarsophalangeal_3 47 r_tarsal_proximal_interphalangeal_3 48 r_tarsal_distal_interphalangeal_3 49 r_calcaneocuboid r_calcaneuscuboid 50 r_transversetarsal 51 r_tarsometatarsal_4 52 r_metatarsophalangeal_4 53 r_tarsal_proximal_interphalangeal_4 54 r_tarsal_distal_interphalangeal_4 55 r_tarsometatarsal_5 56 r_metatarsophalangeal_5 57 r_tarsal_proximal_interphalangeal_5 58 r_tarsal_distal_interphalangeal_5 59 vl5 60 vl4 61 vl3 62 vl2 63 vl1 64 vt12 65 vt11 66 vt10 67 vt9 68 vt8 69 vt7 70 vt6 71 vt5 72 vt4 73 vt3 74 vt2 75 vt1 76 vc7 77 vc6 78 vc5 79 vc4 80 vc3 81 vc2 82 vc1 83 skullbase 84 l_eyelid_joint 85 r_eyelid_joint 86 l_eyeball_joint 87 r_eyeball_joint 88 l_eyebrow_joint 89 r_eyebrow_joint 90 temporomandibular 91 l_sternoclavicular 92 l_acromioclavicular 93 l_shoulder 94 l_elbow 95 l_radiocarpal l_wrist 96 l_midcarpal_1 97 l_carpometacarpal_1 l_thumb1 98 l_metacarpophalangeal_1 l_thumb2 99 l_carpal_interphalangeal_1 l_thumb3
+100 l_midcarpal_2
+101 l_carpometacarpal_2 l_index0,l_carpometacarpal
+102 l_metacarpophalangeal_2 l_index1,l_metacarpophalangeal
+103 l_carpal_proximal_interphalangeal_2 l_index2,l_carpal_proximal_interphalangeal
+104 l_carpal_distal_interphalangeal_2 l_index3,l_carpal_distal_interphalangeal
+105 l_midcarpal_3
+106 l_carpometacarpal_3 l_middle0
+107 l_metacarpophalangeal_3 l_middle1
+108 l_carpal_proximal_interphalangeal_3 l_middle2
+109 l_carpal_distal_interphalangeal_3 l_middle3
+110 l_midcarpal_4_5
+111 l_carpometacarpal_4 l_ring0
+112 l_metacarpophalangeal_4 l_ring1
+113 l_carpal_proximal_interphalangeal_4 l_ring2
+114 l_carpal_distal_interphalangeal_4 l_ring3
+115 l_carpometacarpal_5 l_pinky0
+116 l_metacarpophalangeal_5 l_pinky1
+117 l_carpal_proximal_interphalangeal_5 l_pinky2
+118 l_carpal_distal_interphalangeal_5 l_pinky3
+119 r_sternoclavicular
+120 r_acromioclavicular
+121 r_shoulder
+122 r_elbow
+123 r_radiocarpal r_wrist
+124 r_midcarpal_1
+125 r_carpometacarpal_1 r_thumb1
+126 r_metacarpophalangeal_1 r_thumb2
+127 r_carpal_interphalangeal_1 r_thumb3
+128 r_midcarpal_2
+129 r_carpometacarpal_2 r_index0,r_carpometacarpal
+130 r_metacarpophalangeal_2 r_index1,r_metacarpophalangeal
+131 r_carpal_proximal_interphalangeal_2 r_index2,r_carpal_proximal_interphalangeal
+132 r_carpal_distal_interphalangeal_2 r_index3,r_carpal_distal_interphalangeal
+133 r_midcarpal_3
+134 r_carpometacarpal_3 r_middle0
+135 r_metacarpophalangeal_3 r_middle1
+136 r_carpal_proximal_interphalangeal_3 r_middle2
+137 r_carpal_distal_interphalangeal_3 r_middle3
+138 r_midcarpal_4_5
+139 r_carpometacarpal_4 r_ring0
+140 r_metacarpophalangeal_4 r_ring1
+141 r_carpal_proximal_interphalangeal_4 r_ring2
+142 r_carpal_distal_interphalangeal_4 r_ring3
+143 r_carpometacarpal_5 r_pinky0
+144 r_metacarpophalangeal_5 r_pinky1
+145 r_carpal_proximal_interphalangeal_5 r_pinky2
+146 r_carpal_distal_interphalangeal_5 r_pinky3
 ==================================================================================
-
                 HAnimSegment alias values
-
-HAnim2 name                             HAnim1, others
-
-  1 sacrum                                  
-  2 pelvis                                  
-  3 l_thigh                                 
-  4 l_calf                                  
-  5 l_talus                                 l_hindfoot
-  6 l_navicular                             
-  7 l_cuneiform_1                           
-  8 l_metatarsal_1                          
-  9 l_tarsal_proximal_phalanx_1             
- 10 l_tarsal_distal_phalanx_1               
- 11 l_cuneiform_2                           l_cuneiform
- 12 l_metatarsal_2                          l_midproximal,l_metatarsal
- 13 l_tarsal_proximal_phalanx_2             l_middistal,l_tarsal_proximal_phalanx
- 14 l_tarsal_middle_phalanx_2               l_tarsal_middle_phalanx
- 15 l_tarsal_distal_phalanx_2               l_forefoot,l_tarsal_distal_phalanx
- 16 l_cuneiform_3                           
- 17 l_metatarsal_3                          
- 18 l_tarsal_proximal_phalanx_3             
- 19 l_tarsal_middle_phalanx_3               
- 20 l_tarsal_distal_phalanx_3               
- 21 l_calcaneus                             l_calcaneum
- 22 l_cuboid                                
- 23 l_metatarsal_4                          
- 24 l_tarsal_proximal_phalanx_4             
- 25 l_tarsal_middle_phalanx_4               
- 26 l_tarsal_distal_phalanx_4               
- 27 l_metatarsal_5                          
- 28 l_tarsal_proximal_phalanx_5             
- 29 l_tarsal_middle_phalanx_5               
- 30 l_tarsal_distal_phalanx_5               
- 31 r_thigh                                 
- 32 r_calf                                  
- 33 r_talus                                 r_hindfoot
- 34 r_navicular                             
- 35 r_cuneiform_1                           
- 36 r_metatarsal_1                          
- 37 r_tarsal_proximal_phalanx_1             
- 38 r_tarsal_distal_phalanx_1               
- 39 r_cuneiform_2                           r_cuneiform
- 40 r_metatarsal_2                          r_midproximal
- 41 r_tarsal_proximal_phalanx_2             r_middistal,r_tarsal_proximal_phalanx
- 42 r_tarsal_middle_phalanx_2               r_tarsal_middle_phalanx
- 43 r_tarsal_distal_phalanx_2               r_forefoot,r_tarsal_distal_phalanx
- 44 r_cuneiform_3                           
- 45 r_metatarsal_3                          
- 46 r_tarsal_proximal_phalanx_3             
- 47 r_tarsal_middle_phalanx_3               
- 48 r_tarsal_distal_phalanx_3               
- 49 r_calcaneus                             r_calcaneum
- 50 r_cuboid                                
- 51 r_metatarsal_4                          
- 52 r_tarsal_proximal_phalanx_4             
- 53 r_tarsal_middle_phalanx_4               
- 54 r_tarsal_distal_phalanx_4               
- 55 r_metatarsal_5                          
- 56 r_tarsal_proximal_phalanx_5             
- 57 r_tarsal_middle_phalanx_5               
- 58 r_tarsal_distal_phalanx_5               
- 59 l5                                      
- 60 l4                                      
- 61 l3                                      
- 62 l2                                      
- 63 l1                                      
- 64 t12                                     
- 65 t11                                     
- 66 t10                                     
- 67 t9                                      
- 68 t8                                      
- 69 t7                                      
- 70 t6                                      
- 71 t5                                      
- 72 t4                                      
- 73 t3                                      
- 74 t2                                      
- 75 t1                                      
- 76 c7                                      
- 77 c6                                      
- 78 c5                                      
- 79 c4                                      
- 80 c3                                      
- 81 c2                                      
- 82 c1                                      
- 83 skull                                   head
- 84 l_eyelid                                
- 85 r_eyelid                                
- 86 l_eyeball                               
- 87 r_eyeball                               
- 88 l_eyebrow                               
- 89 r_eyebrow                               
- 90 jaw                                     
- 91 l_clavicle                              
- 92 l_scapula                               
- 93 l_upperarm                              
- 94 l_forearm                               
- 95 l_carpal                                l_hand
- 96 l_trapezium                             
- 97 l_metacarpal_1                          l_thumb_metacarpal
- 98 l_carpal_proximal_phalanx_1             l_thumb_proximal
- 99 l_carpal_distal_phalanx_1               l_thumb_distal
-100 l_trapezoid                             
-101 l_metacarpal_2                          l_index_metacarpal
-102 l_carpal_proximal_phalanx_2             l_index_proximal,l_carpal_proximal_phalanx
-103 l_carpal_middle_phalanx_2               l_index_middle,l_carpal_middle_phalanx
-104 l_carpal_distal_phalanx_2               l_index_distal,l_carpal_distal_phalanx
-105 l_capitate                              
-106 l_metacarpal_3                          l_middle_metacarpal
-107 l_carpal_proximal_phalanx_3             l_middle_proximal
-108 l_carpal_middle_phalanx_3               l_middle_middle
-109 l_carpal_distal_phalanx_3               l_middle_distal
-110 l_hamate                                
-111 l_metacarpal_4                          l_ring_metacarpal
-112 l_carpal_proximal_phalanx_4             l_ring_proximal
-113 l_carpal_middle_phalanx_4               l_ring_middle
-114 l_carpal_distal_phalanx_4               l_ring_distal
-115 l_metacarpal_5                          l_pinky_metacarpal
-116 l_carpal_proximal_phalanx_5             l_pinky_proximal
-117 l_carpal_middle_phalanx_5               l_pinky_middle
-118 l_carpal_distal_phalanx_5               l_pinky_distal
-119 r_clavicle                              
-120 r_scapula                               
-121 r_upperarm                              
-122 r_forearm                               
-123 r_carpal                                r_hand
-124 r_trapezium                             
-125 r_metacarpal_1                          r_thumb_metacarpal
-126 r_carpal_proximal_phalanx_1             r_thumb_proximal
-127 r_carpal_distal_phalanx_1               r_thumb_distal
-128 r_trapezoid                             
-129 r_metacarpal_2                          r_index_metacarpal
-130 r_carpal_proximal_phalanx_2             r_index_proximal,r_carpal_proximal_phalanx
-131 r_carpal_middle_phalanx_2               r_index_middle,r_carpal_middle_phalanx
-132 r_carpal_distal_phalanx_2               r_index_distal,r_carpal_distal_phalanx
-133 r_capitate                              
-134 r_metacarpal_3                          r_middle_metacarpal
-135 r_carpal_proximal_phalanx_3             r_middle_proximal
-136 r_carpal_middle_phalanx_3               r_middle_middle
-137 r_carpal_distal_phalanx_3               r_middle_distal
-138 r_hamate                                
-139 r_metacarpal_4                          r_ring_metacarpal
-140 r_carpal_proximal_phalanx_4             r_ring_proximal
-141 r_carpal_middle_phalanx_4               r_ring_middle
-142 r_carpal_distal_phalanx_4               r_ring_distal
-143 r_metacarpal_5                          r_pinky_metacarpal
-144 r_carpal_proximal_phalanx_5             r_pinky_proximal
-145 r_carpal_middle_phalanx_5               r_pinky_middle
-146 r_carpal_distal_phalanx_5               r_pinky_distal
-
+HAnim2 name HAnim1, others 1 sacrum 2 pelvis 3 l_thigh 4 l_calf 5 l_talus l_hindfoot 6 l_navicular 7 l_cuneiform_1 8 l_metatarsal_1 9 l_tarsal_proximal_phalanx_1 10 l_tarsal_distal_phalanx_1 11 l_cuneiform_2 l_cuneiform 12 l_metatarsal_2 l_midproximal,l_metatarsal 13 l_tarsal_proximal_phalanx_2 l_middistal,l_tarsal_proximal_phalanx 14 l_tarsal_middle_phalanx_2 l_tarsal_middle_phalanx 15 l_tarsal_distal_phalanx_2 l_forefoot,l_tarsal_distal_phalanx 16 l_cuneiform_3 17 l_metatarsal_3 18 l_tarsal_proximal_phalanx_3 19 l_tarsal_middle_phalanx_3 20 l_tarsal_distal_phalanx_3 21 l_calcaneus l_calcaneum 22 l_cuboid 23 l_metatarsal_4 24 l_tarsal_proximal_phalanx_4 25 l_tarsal_middle_phalanx_4 26 l_tarsal_distal_phalanx_4 27 l_metatarsal_5 28 l_tarsal_proximal_phalanx_5 29 l_tarsal_middle_phalanx_5 30 l_tarsal_distal_phalanx_5 31 r_thigh 32 r_calf 33 r_talus r_hindfoot 34 r_navicular 35 r_cuneiform_1 36 r_metatarsal_1 37 r_tarsal_proximal_phalanx_1 38 r_tarsal_distal_phalanx_1 39 r_cuneiform_2 r_cuneiform 40 r_metatarsal_2 r_midproximal 41 r_tarsal_proximal_phalanx_2 r_middistal,r_tarsal_proximal_phalanx 42 r_tarsal_middle_phalanx_2 r_tarsal_middle_phalanx 43 r_tarsal_distal_phalanx_2 r_forefoot,r_tarsal_distal_phalanx 44 r_cuneiform_3 45 r_metatarsal_3 46 r_tarsal_proximal_phalanx_3 47 r_tarsal_middle_phalanx_3 48 r_tarsal_distal_phalanx_3 49 r_calcaneus r_calcaneum 50 r_cuboid 51 r_metatarsal_4 52 r_tarsal_proximal_phalanx_4 53 r_tarsal_middle_phalanx_4 54 r_tarsal_distal_phalanx_4 55 r_metatarsal_5 56 r_tarsal_proximal_phalanx_5 57 r_tarsal_middle_phalanx_5 58 r_tarsal_distal_phalanx_5 59 l5 60 l4 61 l3 62 l2 63 l1 64 t12 65 t11 66 t10 67 t9 68 t8 69 t7 70 t6 71 t5 72 t4 73 t3 74 t2 75 t1 76 c7 77 c6 78 c5 79 c4 80 c3 81 c2 82 c1 83 skull head 84 l_eyelid 85 r_eyelid 86 l_eyeball 87 r_eyeball 88 l_eyebrow 89 r_eyebrow 90 jaw 91 l_clavicle 92 l_scapula 93 l_upperarm 94 l_forearm 95 l_carpal l_hand 96 l_trapezium 97 l_metacarpal_1 l_thumb_metacarpal 98 l_carpal_proximal_phalanx_1 l_thumb_proximal 99 l_carpal_distal_phalanx_1 l_thumb_distal
+100 l_trapezoid
+101 l_metacarpal_2 l_index_metacarpal
+102 l_carpal_proximal_phalanx_2 l_index_proximal,l_carpal_proximal_phalanx
+103 l_carpal_middle_phalanx_2 l_index_middle,l_carpal_middle_phalanx
+104 l_carpal_distal_phalanx_2 l_index_distal,l_carpal_distal_phalanx
+105 l_capitate
+106 l_metacarpal_3 l_middle_metacarpal
+107 l_carpal_proximal_phalanx_3 l_middle_proximal
+108 l_carpal_middle_phalanx_3 l_middle_middle
+109 l_carpal_distal_phalanx_3 l_middle_distal
+110 l_hamate
+111 l_metacarpal_4 l_ring_metacarpal
+112 l_carpal_proximal_phalanx_4 l_ring_proximal
+113 l_carpal_middle_phalanx_4 l_ring_middle
+114 l_carpal_distal_phalanx_4 l_ring_distal
+115 l_metacarpal_5 l_pinky_metacarpal
+116 l_carpal_proximal_phalanx_5 l_pinky_proximal
+117 l_carpal_middle_phalanx_5 l_pinky_middle
+118 l_carpal_distal_phalanx_5 l_pinky_distal
+119 r_clavicle
+120 r_scapula
+121 r_upperarm
+122 r_forearm
+123 r_carpal r_hand
+124 r_trapezium
+125 r_metacarpal_1 r_thumb_metacarpal
+126 r_carpal_proximal_phalanx_1 r_thumb_proximal
+127 r_carpal_distal_phalanx_1 r_thumb_distal
+128 r_trapezoid
+129 r_metacarpal_2 r_index_metacarpal
+130 r_carpal_proximal_phalanx_2 r_index_proximal,r_carpal_proximal_phalanx
+131 r_carpal_middle_phalanx_2 r_index_middle,r_carpal_middle_phalanx
+132 r_carpal_distal_phalanx_2 r_index_distal,r_carpal_distal_phalanx
+133 r_capitate
+134 r_metacarpal_3 r_middle_metacarpal
+135 r_carpal_proximal_phalanx_3 r_middle_proximal
+136 r_carpal_middle_phalanx_3 r_middle_middle
+137 r_carpal_distal_phalanx_3 r_middle_distal
+138 r_hamate
+139 r_metacarpal_4 r_ring_metacarpal
+140 r_carpal_proximal_phalanx_4 r_ring_proximal
+141 r_carpal_middle_phalanx_4 r_ring_middle
+142 r_carpal_distal_phalanx_4 r_ring_distal
+143 r_metacarpal_5 r_pinky_metacarpal
+144 r_carpal_proximal_phalanx_5 r_pinky_proximal
+145 r_carpal_middle_phalanx_5 r_pinky_middle
+146 r_carpal_distal_phalanx_5 r_pinky_distal
 ==================================================================================
-
                 HAnim Feature Point (Site, Displacer) alias values
-
-HAnim2 name                             HAnim1, others
-
-  0 skull_vertex                            skull_tip,vertex
-  1 glabella                                
-  2 sellion                                 
-  3 l_infraorbitale                         
-  4 l_tragion                               
-  5 l_gonion                                
-  6 r_infraorbitale                         
-  7 r_tragion                               
-  8 r_gonion                                
-  9 supramenton                             
- 10 cervicale                               
- 11 adams_apple                             
- 12 suprasternale                           
- 13 substernale                             
- 14 l_clavicle                              l_clavicale
- 15 l_acromion                              
- 16 l_axilla_proximal                       l_axilla_ant
- 17 l_axilla_distal                         l_axilla_post
- 18 l_axilla_posterior_folds                
- 19 r_clavicle                              r_clavicale
- 20 r_acromion                              
- 21 r_axilla_proximal                       r_axilla_ant
- 22 r_axilla_distal                         r_axilla_post
- 23 r_axilla_posterior_folds                
- 24 spine_1_middle_back                     middle back (CAESAR)
- 25 spine_2_lower_back                      lower back (CAESAR)
- 26 waist_preferred_anterior                waist_preferred_ant
- 27 waist_preferred_posterior               waist_preferred_post
- 28 l_rib10                                 l_rib10_midspine
- 29 l_thelion                               Left Bustpoint (CAESAR)
- 30 r_rib10                                 r_rib10_midspine
- 31 r_thelion                               Right Bustpoint (CAESAR)
- 32 l_asis                                  Left Anterior Superior Iliac Spine (CAESAR)
- 33 l_iliocristale                          
- 34 l_psis                                  Left Posterior Superior Iliac Spine (CAESAR)
- 35 r_asis                                  Right Anterior Superior Iliac Spine (CAESAR)
- 36 r_iliocristale                          
- 37 r_psis                                  Right Posterior Superior Iliac Spine (CAESAR)
- 38 crotch                                  
- 39 l_femoral_lateral_epicondyle            l_femoral_lateral_epicn,l_femoral_lateral_epicondyles
- 40 l_femoral_medial_epicondyle             l_femoral_medial_epicn,l_femoral_medial_epicondyles
- 41 l_suprapatella                          l_kneecap
- 42 l_trochanterion                         l_trochanter
- 43 r_femoral_lateral_epicondyle            r_femoral_lateral_epicn,r_femoral_lateral_epicondyles
- 44 r_femoral_medial_epicondyle             r_femoral_medial_epicn,r_femoral_medial_epicondyles
- 45 r_suprapatella                          r_kneecap
- 46 r_trochanterion                         r_trochanter
- 47 l_tibiale                               
- 48 l_medial_malleolus                      
- 49 l_lateral_malleolus                     
- 50 l_sphyrion                              
- 51 r_tibiale                               
- 52 r_medial_malleolus                      
- 53 r_lateral_malleolus                     
- 54 r_sphyrion                              
- 55 l_metatarsal_phalanx_1                  l_metatarsal_pha1
- 56 l_metatarsal_phalanx_5                  l_metatarsal_pha5
- 57 l_dactylion                             
- 58 l_calcaneus_posterior                   l_calcaneous_post
- 59 r_metatarsal_phalanx_1                  r_metatarsal_pha1
- 60 r_metatarsal_phalanx_5                  r_metatarsal_pha5
- 61 r_dactylion                             
- 62 r_calcaneus_posterior                   r_calcaneous_post
- 63 l_humeral_lateral_epicondyle            l_humeral_lateral_epicn,l_humeral_lateral_epicondyles
- 64 l_humeral_medial_epicondyle             l_humeral_medial_epicn,l_humeral_medial_epicondyles
- 65 l_olecranon                             
- 66 r_humeral_lateral_epicondyle            r_humeral_lateral_epicn,r_humeral_lateral_epicondyles
- 67 r_humeral_medial_epicondyle             r_humeral_medial_epicn,r_humeral_medial_epicondyles
- 68 r_olecranon                             
- 69 l_radiale                               
- 70 l_ulnar_styloid                         
- 71 l_radial_styloid                        
- 72 r_radiale                               
- 73 r_ulnar_styloid                         
- 74 r_radial_styloid                        
- 75 l_metacarpal_phalanx_2                  l_metacarpal_pha2,l_metacarpal_phalanx
- 76 l_metacarpal_phalanx_3                  
- 77 l_metacarpal_phalanx_5                  l_metacarpal_pha5
- 78 r_metacarpal_phalanx_2                  r_metacarpal_pha2,r_metacarpal_phalanx
- 79 r_metacarpal_phalanx_3                  
- 80 r_metacarpal_phalanx_5                  r_metacarpal_pha5
- 81 nuchale                                 nuchal
- 82 l_neck_base                             
- 83 r_neck_base                             
- 84 navel                                   belly button (CAESAR)
- 85 l_ectocanthus                           l_canthus
- 86 r_ectocanthus                           r_canthus
- 87 menton                                  chin
- 88 mesosternale                            mesosternum
- 89 opisthocranion                          
- 90 l_knee_crease                           
- 91 r_knee_crease                           
- 92 rear_center_midsagittal_plane           median plane (CAESAR)
- 93 buttocks_standing_wall_contact_point    
- 94 l_chest_midsagittal_plane               
- 95 r_chest_midsagittal_plane               
- 96 l_bideltoid                             
- 97 r_bideltoid                             
-101 l_carpal_distal_phalanx_1               l_thumb_distal
-102 l_carpal_distal_phalanx_2               l_index_distal
-103 l_carpal_distal_phalanx_3               l_middle_distal
-104 l_carpal_distal_phalanx_4               l_ring_distal
-105 l_carpal_distal_phalanx_5               l_pinky_distal
-106 r_carpal_distal_phalanx_1               r_thumb_distal
-107 r_carpal_distal_phalanx_2               r_index_distal
-108 r_carpal_distal_phalanx_3               r_middle_distal
-109 r_carpal_distal_phalanx_4               r_ring_distal
-110 r_carpal_distal_phalanx_5               r_pinky_distal
-111 l_tarsal_distal_phalanx_1               
-112 l_tarsal_distal_phalanx_2               l_digit2
-113 l_tarsal_distal_phalanx_3               
-114 l_tarsal_distal_phalanx_4               
-115 l_tarsal_distal_phalanx_5               l_tarsal_distal_pha5
-116 r_tarsal_distal_phalanx_1               
-117 r_tarsal_distal_phalanx_2               r_digit2
-118 r_tarsal_distal_phalanx_3               
-119 r_tarsal_distal_phalanx_4               
-120 r_tarsal_distal_phalanx_5               r_tarsal_distal_pha5
-
+HAnim2 name HAnim1, others 0 skull_vertex skull_tip,vertex 1 glabella 2 sellion 3 l_infraorbitale 4 l_tragion 5 l_gonion 6 r_infraorbitale 7 r_tragion 8 r_gonion 9 supramenton 10 cervicale 11 adams_apple 12 suprasternale 13 substernale 14 l_clavicle l_clavicale 15 l_acromion 16 l_axilla_proximal l_axilla_ant 17 l_axilla_distal l_axilla_post 18 l_axilla_posterior_folds 19 r_clavicle r_clavicale 20 r_acromion 21 r_axilla_proximal r_axilla_ant 22 r_axilla_distal r_axilla_post 23 r_axilla_posterior_folds 24 spine_1_middle_back middle back (CAESAR) 25 spine_2_lower_back lower back (CAESAR) 26 waist_preferred_anterior waist_preferred_ant 27 waist_preferred_posterior waist_preferred_post 28 l_rib10 l_rib10_midspine 29 l_thelion Left Bustpoint (CAESAR) 30 r_rib10 r_rib10_midspine 31 r_thelion Right Bustpoint (CAESAR) 32 l_asis Left Anterior Superior Iliac Spine (CAESAR) 33 l_iliocristale 34 l_psis Left Posterior Superior Iliac Spine (CAESAR) 35 r_asis Right Anterior Superior Iliac Spine (CAESAR) 36 r_iliocristale 37 r_psis Right Posterior Superior Iliac Spine (CAESAR) 38 crotch 39 l_femoral_lateral_epicondyle l_femoral_lateral_epicn,l_femoral_lateral_epicondyles 40 l_femoral_medial_epicondyle l_femoral_medial_epicn,l_femoral_medial_epicondyles 41 l_suprapatella l_kneecap 42 l_trochanterion l_trochanter 43 r_femoral_lateral_epicondyle r_femoral_lateral_epicn,r_femoral_lateral_epicondyles 44 r_femoral_medial_epicondyle r_femoral_medial_epicn,r_femoral_medial_epicondyles 45 r_suprapatella r_kneecap 46 r_trochanterion r_trochanter 47 l_tibiale 48 l_medial_malleolus 49 l_lateral_malleolus 50 l_sphyrion 51 r_tibiale 52 r_medial_malleolus 53 r_lateral_malleolus 54 r_sphyrion 55 l_metatarsal_phalanx_1 l_metatarsal_pha1 56 l_metatarsal_phalanx_5 l_metatarsal_pha5 57 l_dactylion 58 l_calcaneus_posterior l_calcaneous_post 59 r_metatarsal_phalanx_1 r_metatarsal_pha1 60 r_metatarsal_phalanx_5 r_metatarsal_pha5 61 r_dactylion 62 r_calcaneus_posterior r_calcaneous_post 63 l_humeral_lateral_epicondyle l_humeral_lateral_epicn,l_humeral_lateral_epicondyles 64 l_humeral_medial_epicondyle l_humeral_medial_epicn,l_humeral_medial_epicondyles 65 l_olecranon 66 r_humeral_lateral_epicondyle r_humeral_lateral_epicn,r_humeral_lateral_epicondyles 67 r_humeral_medial_epicondyle r_humeral_medial_epicn,r_humeral_medial_epicondyles 68 r_olecranon 69 l_radiale 70 l_ulnar_styloid 71 l_radial_styloid 72 r_radiale 73 r_ulnar_styloid 74 r_radial_styloid 75 l_metacarpal_phalanx_2 l_metacarpal_pha2,l_metacarpal_phalanx 76 l_metacarpal_phalanx_3 77 l_metacarpal_phalanx_5 l_metacarpal_pha5 78 r_metacarpal_phalanx_2 r_metacarpal_pha2,r_metacarpal_phalanx 79 r_metacarpal_phalanx_3 80 r_metacarpal_phalanx_5 r_metacarpal_pha5 81 nuchale nuchal 82 l_neck_base 83 r_neck_base 84 navel belly button (CAESAR) 85 l_ectocanthus l_canthus 86 r_ectocanthus r_canthus 87 menton chin 88 mesosternale mesosternum 89 opisthocranion 90 l_knee_crease 91 r_knee_crease 92 rear_center_midsagittal_plane median plane (CAESAR) 93 buttocks_standing_wall_contact_point 94 l_chest_midsagittal_plane 95 r_chest_midsagittal_plane 96 l_bideltoid 97 r_bideltoid
+101 l_carpal_distal_phalanx_1 l_thumb_distal
+102 l_carpal_distal_phalanx_2 l_index_distal
+103 l_carpal_distal_phalanx_3 l_middle_distal
+104 l_carpal_distal_phalanx_4 l_ring_distal
+105 l_carpal_distal_phalanx_5 l_pinky_distal
+106 r_carpal_distal_phalanx_1 r_thumb_distal
+107 r_carpal_distal_phalanx_2 r_index_distal
+108 r_carpal_distal_phalanx_3 r_middle_distal
+109 r_carpal_distal_phalanx_4 r_ring_distal
+110 r_carpal_distal_phalanx_5 r_pinky_distal
+111 l_tarsal_distal_phalanx_1
+112 l_tarsal_distal_phalanx_2 l_digit2
+113 l_tarsal_distal_phalanx_3
+114 l_tarsal_distal_phalanx_4
+115 l_tarsal_distal_phalanx_5 l_tarsal_distal_pha5
+116 r_tarsal_distal_phalanx_1
+117 r_tarsal_distal_phalanx_2 r_digit2
+118 r_tarsal_distal_phalanx_3
+119 r_tarsal_distal_phalanx_4
+120 r_tarsal_distal_phalanx_5 r_tarsal_distal_pha5
 ==================================================================================

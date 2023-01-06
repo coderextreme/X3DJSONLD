@@ -1,12 +1,30 @@
-<?xml version='1.0'?>
-<xsl:stylesheet xmlns:xsl="https://www.w3.org/1999/XSL/Transform" version="2.0"
-                xmlns:saxon="https://icl.com/saxon" saxon:trace="no">
-        
-    <xsl:variable name="x3dVersion" select="normalize-space(//X3D/@version)"/>
-    <xsl:variable name="isX3D3" select="starts-with($x3dVersion,'3')"/>
-    <xsl:variable name="isX3D4" select="starts-with($x3dVersion,'4')"/>
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright (c) 2004-2022 held by the author(s).  All rights reserved.
+  <head>
+   <meta name="title"       content="X3dToX3domX_ITE.xslt" />
+   <meta name="author"      content="Don Brutzman" />
+   <meta name="created"     content="25 March 2012" />
+   <meta name="description" content="XSLT stylesheet to convert X3D source into an HTML5 XHTML page containing the embedded X3D scene using X3DOM syntax." />
+   <meta name="identififer" content="https://www.web3d.org/x3d/stylesheets/X3dToX3domX_ITE.xslt" />
+   <meta name="reference"   content="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/X3dToX3domX_ITE.xslt" />
+  </head>
+
+Recommended tools:
+- X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit
+- SAXON XML Toolkit (and Instant Saxon) from Michael Kay of ICL, https://saxon.sourceforge.net
+- XML Spy https://www.altova.com
+
+X3DOM references
+
+- home          https://x3dom.org
+- browser check https://x3dom.org/check
+- documentation https://doc.x3dom.org
+- Download      https://doc.x3dom.org/gettingStarted
+- Node support  https://doc.x3dom.org/author/nodes.html
+
+--> 
+<!--
+Copyright (c) 2001-2023 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -38,246 +56,993 @@ LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
 ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
 -->
-<!--***	Edit the topmost stylesheet tag on line 2 of this file to match the xmlns namespace URI for your XSL tool. ***
-	W3C:
-	Saxon:           <xsl:stylesheet xmlns:xsl='https://www.w3.org/1999/XSL/Transform'>
-	IBM XSLEditor:   <xsl:stylesheet xmlns:xsl='https://www.w3.org/XSL/Transform/1.0'>
-	IE 5:            <xsl:stylesheet xmlns:xsl='https://www.w3.org/TR/WD-xsl'>
-	XT:              <xsl:stylesheet xmlns:xsl='https://www.w3.org/XSL/Transform'>
--->
+<xsl:stylesheet version="2.0" xmlns='http://www.w3.org/1999/xhtml' xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <!-- default parameter values that can be overridden when invoking this stylesheet -->
+    <xsl:param name="player"                   >X3DOM</xsl:param> <!-- supported players: X3DOM and X_ITE (formerly Cobweb) -->
+    <xsl:param name="x3dHeight"                >450px</xsl:param> <!-- default 16x9 aspect ratio -->
+    <xsl:param name="x3dWidth"                 >800px</xsl:param>
+    <!-- X3DOM parameters -->
+    <xsl:param name="showStatistics"           >false</xsl:param>
+    <xsl:param name="showDebugLog"             >false</xsl:param>
+    <xsl:param name="urlX3DOM"                 >https://x3dom.org/download/dev</xsl:param> <!-- no trailing / -->
+    <!-- X_ITE parameters -->
+    <xsl:param name="cache"                    >true</xsl:param>
+	<!-- also in CreateContentCatalogPages.xslt -->
+    <xsl:param name="urlScene"                 ></xsl:param>      <!-- X3D MFString url list -->
+    
+    <xsl:param name="urlX_ITE"                >https://create3000.github.io/code/x_ite</xsl:param> <!-- no trailing slash / -->
+    <xsl:param name="versionX_ITE"            >latest/dist</xsl:param>
+<!--<xsl:param name="versionCobweb"           >x_ite@latest/dist</xsl:param>  1/1.28 or 2/2.6 or 3/3.1 or 3/3.2 or 3.3 or 4.0.5 or 4.1.5 4.6.11 or x_ite@latest/dist with no trailing slash / -->
+    <xsl:param name="urlWebsiteX_ITE"         >https://create3000.github.io/x_ite</xsl:param>
+<!--<xsl:param name="urlWebsiteX_ITE"         >https://github.com/create3000/x_ite/wiki</xsl:param>-->
+<!--<xsl:param name="urlWebsiteX_ITE"         >https://create3000.de/x_ite</xsl:param>  redirection likely, so far https not supported -->
+    <!-- Catalog generator and configuration parameters -->
+    <xsl:param name="x3dSceneAvailable"        >true</xsl:param> <!-- .x3d source, same file name -->
+    <xsl:param name="x3dDocumentationAvailable">true</xsl:param> <!-- .html pretty print, same file name -->
+    <xsl:param name="traceEnabled"             >false</xsl:param>
+    <xsl:param name="styleX_ITE"              >default</xsl:param><!-- simple or default -->
+        
+    <xsl:variable name="x3dVersion" select="normalize-space(//X3D/@version)"/>
+    <xsl:variable name="isX3D3" select="starts-with($x3dVersion,'3')"/>
+    <xsl:variable name="isX3D4" select="starts-with($x3dVersion,'4')"/>
+    
+    <xsl:strip-space elements="*"/>
+    <xsl:output encoding="UTF-8" media-type="text/xml" indent="yes" cdata-section-elements="Script ShaderPart ShaderProgram" omit-xml-declaration="yes" method="xml"/>
 
-<!--
-  <head>
-   <meta name="filename"    content="X3dToHtml.xslt" />
-   <meta name="author"      content="Don Brutzman" />
-   <meta name="revised"     content="6 March 2004" />
-   <meta name="description" content="XSLT stylesheet to convert X3D source into an easily readable HTML page." />
-   <meta name="url"         content="https://www.web3d.org/x3d/content/X3dToHtml.xslt" />
-  </head>
+    <xsl:variable name="rootElementX_ITE">
+        <xsl:choose>
+            <xsl:when test="starts-with($versionX_ITE,'1')">
+                    <xsl:text>X3D</xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+                    <xsl:text>x3d-canvas</xsl:text><!-- formerly X3DCanvas -->
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:variable>
+		
+    <xsl:variable name="lower-case-player" select="translate($player,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz')"/> <!-- XSLT 1 hack -->
 
-Recommended tool:
+    <xsl:variable name="apos">'</xsl:variable>
+    <xsl:variable name="quot">"</xsl:variable>
+    
+    <xsl:variable name="urlX3DOM.dev"             >https://x3dom.org/download/dev</xsl:variable> <!-- no trailing / -->
+    <xsl:variable name="urlX3DOM.release"         >https://x3dom.org/release</xsl:variable>      <!-- no trailing / -->
+    
+    <xsl:variable name="urlSceneQuoted">
+        <xsl:choose>
+            <xsl:when test="not(contains($urlScene,'&quot;'))">
+                <xsl:text>"</xsl:text>
+                <xsl:value-of select="normalize-space($urlScene)"/>
+                <xsl:text>"</xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="normalize-space($urlScene)"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:variable>
+    
+    <xsl:variable name="urlSceneUnquoted">
+        <xsl:choose>
+            <xsl:when test="(contains($urlScene,'&quot;'))">
+                <xsl:value-of select="substring-before(substring-after($urlScene,'&quot;'),'.x3d')"/>
+                <xsl:text>.x3d</xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="normalize-space($urlScene)"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:variable>
 
-- SAXON XML Toolkit (and Instant Saxon) from Michael Kay of ICL, https://saxon.sourceforge.net
-- Can also be used with Apache server
-
--->  
-
-<!-- Problems and bugs:
-
- - autocorrection of String, array field delimiters in ProtoInstances (GeoVrmlExample1)
- - convert to tag form for simplicity
-
-  -->
-  
-<xsl:strip-space elements="*" />
-<xsl:output method="text" encoding="utf-8" media-type="text/html" indent="yes" cdata-section-elements="Script ShaderPart ShaderProgram"/>
-<!-- omit-xml-declaration="no" -->
-
-
-<!-- ****** root:  start of file ****** -->
-<xsl:template match="/">
-<xsl:text>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;&gt;&#10;&#10;</xsl:text>
-<!-- weird bug breaks margin spacing when url included:  &quot;https://www.w3.org/TR/html4/loose.dtd&quot;  -->
-
-<xsl:text>&lt;html&gt;&#10;</xsl:text>
-<xsl:text>&lt;head&gt;&#10;</xsl:text>
-<xsl:text>&lt;title&gt;</xsl:text>
-<xsl:variable name="fileName" select="//head/meta[@name='filename']/@content" />
-<xsl:choose>
-  <xsl:when test="$fileName and $fileName!='*enter FileNameWithNoAbbreviations.x3d here*' ">
-    <xsl:value-of select="//head/meta[@name='filename']/@content"/>
-    <xsl:text> (X3dToHtml)</xsl:text>
-   </xsl:when>
-   <xsl:otherwise><xsl:text> X3dToHtml </xsl:text></xsl:otherwise>
-</xsl:choose>
-<xsl:text>&lt;/title&gt;&#10;</xsl:text>
-<xsl:text>&lt;meta name=&quot;generator&quot;   content=&quot;X3dToHtml.xsl, https://www.web3d.org/x3d/content/X3dToHtml.xsl&quot;&gt;&#10;</xsl:text>
-<xsl:text>&lt;/head&gt;&#10;</xsl:text>
-<xsl:text>&lt;body&gt;&#10;</xsl:text>
-<!-- XML header -->
-<xsl:text>&lt;pre&gt;&#10;</xsl:text>
-<xsl:text>&amp;lt;?xml version="1.0" encoding="UTF-8"?&amp;gt;&#10;</xsl:text>
-<xsl:variable name="wrapped" select="//*[local-name()='appearance' or
-	local-name()='children' or local-name()='choice' or 
-	local-name()='color' or local-name()='coord' or local-name()='fontStyle' or 
-	local-name()='geometry' or local-name()='material' or local-name()='normal' or 
-	local-name()='source' or local-name()='level' or local-name()='texCoord' or 
-	local-name()='texture' or local-name()='textureTransform']" />
-<xsl:choose>
-  <xsl:when test="$wrapped">
-    <xsl:text>&amp;lt;!DOCTYPE X3D PUBLIC "https://www.web3d.org/x3d/content/x3d-compromise.dtd"&#10;</xsl:text>
-    <!-- (no longer used in local doctype)  file://localhost/C: -->
-    <xsl:text>                     "file:///www.web3d.org/x3d/content/x3d-compromise.dtd"&amp;gt;&#10;</xsl:text>
-  </xsl:when>
-  <xsl:otherwise>
-    <xsl:text>&amp;lt;!DOCTYPE X3D PUBLIC "https://www.web3d.org/specifications/x3d-3.0.dtd" "file:///www.web3d.org/specifications/x3d-3.0.dtd"></xsl:text>
-    <!-- <xsl:text>&amp;lt;!DOCTYPE X3D PUBLIC "https://www.web3d.org/specifications/x3d-3.0.dtd" "file:///www.web3d.org/x3d/content/x3d-3.0.dtd"></xsl:text>-->
-    <!-- <xsl:text>&amp;lt;!DOCTYPE X3D PUBLIC "https://www.web3d.org/x3d/content/x3d-compact.dtd"&#10;</xsl:text> -->
-    <!-- <xsl:text>                     "/www.web3d.org/x3d/content/x3d-compact.dtd"&amp;gt;&#10;</xsl:text> -->
-  </xsl:otherwise>
-</xsl:choose>
-<xsl:text>&lt;/pre&gt;&#10;</xsl:text>
-
-<xsl:apply-templates/>
-
-<xsl:text>&#10;&amp;lt;!-- Tag color codes:&#10;</xsl:text>
-<xsl:if test="$wrapped">
-  <xsl:text>&lt;font color=&quot;BLUE&quot;&gt; &amp;lt;field&amp;gt;&lt;/font&gt; </xsl:text>
-</xsl:if>
-<xsl:text>&#10;</xsl:text>
-<xsl:text>&amp;lt;&lt;font color=&quot;navy&quot;&gt;Node&lt;/font&gt;</xsl:text>
-<xsl:if test="//*[@DEF]">
-  <xsl:text>&lt;font color=&quot;green&quot;&gt; DEF&lt;/font&gt;=&apos;</xsl:text>
-  <xsl:text>&lt;font color=&quot;maroon&quot;&gt;NodeName&lt;/font&gt;&apos; </xsl:text>
-</xsl:if>
-<xsl:text>&lt;font color=&quot;green&quot;&gt; attribute&lt;/font&gt;=&apos;</xsl:text>
-<xsl:text>&lt;font color=&quot;teal&quot;&gt;value&lt;/font&gt;&apos;/&amp;gt;</xsl:text>
-<xsl:text>&#10;</xsl:text>
-<xsl:if test="$wrapped">
-  <xsl:text>&lt;font color=&quot;BLUE&quot;&gt; &amp;lt;/field&amp;gt;&lt;/font&gt;</xsl:text>
-</xsl:if>
-<xsl:if test="//*[contains(local-name(),'Proto')]">
-  <xsl:text>&#10;</xsl:text>
-  <xsl:text>&amp;lt;&lt;font color=&quot;purple&quot;&gt; Prototype &lt;/font&gt;</xsl:text>
-  <xsl:text>&lt;font color=&quot;green&quot;&gt; name&lt;/font&gt;='</xsl:text>
-  <xsl:text>&lt;font color=&quot;purple&quot;&gt;ProtoName&lt;/font&gt;'/&amp;gt; </xsl:text>
-  <xsl:if test="//*[starts-with(local-name(),'field')]">
-    <xsl:text>&#10;</xsl:text>
-    <xsl:text>&amp;lt;&lt;font color=&quot;navy&quot;&gt; field &lt;/font&gt;</xsl:text>
-    <xsl:text>&lt;font color=&quot;green&quot;&gt; name&lt;/font&gt;='</xsl:text>
-    <xsl:text>&lt;font color=&quot;purple&quot;&gt;fieldName&lt;/font&gt;'/&amp;gt; </xsl:text>
-  </xsl:if>
-  <xsl:text>&amp;lt;&lt;font color=&quot;purple&quot;&gt;/Prototype &lt;/font&gt;&amp;gt;</xsl:text>
-</xsl:if>
-
-<xsl:text> --&amp;gt;&#10;</xsl:text>
-
-<xsl:text>&lt;/body&gt;&#10;</xsl:text>
-<xsl:text>&lt;/html&gt;&#10;</xsl:text>
-</xsl:template>
-
-
-<!-- ****** recurse through each of the tree node elements ****** -->
-<xsl:template match="*">
-<xsl:if test="local-name(..)='Script' and local-name()='field'"><xsl:text>&#10;</xsl:text></xsl:if>
-<!-- first tag name -->
-<xsl:choose>
-  <xsl:when test="local-name()='ROUTE'">
-    <xsl:text>&amp;lt;&lt;font color=&quot;RED&quot;&gt;</xsl:text>
-  </xsl:when>
-  <xsl:when test="local-name()='ProtoDeclare' or local-name()='ProtoInterface' or local-name()='ProtoBody' or local-name()='ExternProtoDeclare' or local-name()='ProtoInstance' or local-name()='IS' or local-name()='connect'">
-    <xsl:text>&amp;lt;&lt;font color=&quot;purple&quot;&gt;</xsl:text>
-  </xsl:when>
-  <xsl:otherwise>
-    <xsl:text>&amp;lt;&lt;font color=&quot;navy&quot;&gt;</xsl:text>
-  </xsl:otherwise>
-</xsl:choose>
-<xsl:value-of select="local-name()"/>
-<xsl:text>&lt;/font&gt;</xsl:text>
-<!-- next attributes, if any.  first check to output in order if appropriate. -->
-<xsl:if test="@*">
-  <xsl:choose>
-    <xsl:when test="local-name()='component'">
-      <xsl:apply-templates select="@name"/>
-      <xsl:apply-templates select="@*[local-name()!='name']"/>
-    </xsl:when>
-    <xsl:when test="local-name()='meta'">
-      <xsl:apply-templates select="@name"/>
-      <xsl:apply-templates select="@content"/>
-      <xsl:apply-templates select="@*[local-name()!='name' and local-name()!='content']"/>
-        <xsl:if test="@name='warning'">
-          <xsl:message>
-            <xsl:text disable-output-escaping="yes"><![CDATA[<]]>meta name='warning' content='</xsl:text>
-            <xsl:value-of select="normalize-space(@content)"/>
-            <xsl:text disable-output-escaping="yes">'/<![CDATA[>]]></xsl:text>
-          </xsl:message>
+    <xsl:template match="/">
+        
+        <xsl:variable name="fileName">
+            <xsl:choose>
+                <xsl:when test="//head/meta[@name='title']/@content[.!='*enter FileNameWithNoAbbreviations.x3d here*']">
+                    <xsl:value-of select="//head/meta[@name='title']/@content"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <!-- TODO just use first if an MFString array is found -->
+                    <xsl:value-of select="$urlScene"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        
+        <!-- debug diagnostics -->
+        <xsl:if test="($traceEnabled = 'true')">
+            <xsl:message>
+                <xsl:text>X3dToX3domX_ITE.xslt X3D parameters: </xsl:text>
+                <xsl:text>$fileName=</xsl:text>
+                <xsl:value-of select="$fileName"/>
+                <xsl:text>, $player=</xsl:text>
+                <xsl:value-of select="$player"/>
+                <xsl:text>, $x3dHeight=</xsl:text>
+                <xsl:value-of select="$x3dHeight"/>
+                <xsl:text>, $x3dWidth=</xsl:text>
+                <xsl:value-of select="$x3dWidth"/>
+                <xsl:text>, $traceEnabled=</xsl:text>
+                <xsl:value-of select="$traceEnabled"/>
+            </xsl:message>
+            <xsl:message>
+                <xsl:text>X3DOM parameters: </xsl:text>
+                <xsl:text>$showStatistics=</xsl:text>
+                <xsl:value-of select="$showStatistics"/>
+                <xsl:text>, $showDebugLog=</xsl:text>
+                <xsl:value-of select="$showDebugLog"/>
+                <xsl:text>, $urlX3DOM=</xsl:text>
+                <xsl:value-of select="$urlX3DOM"/>
+                <xsl:choose>
+                    <xsl:when test="($urlX3DOM = $urlX3DOM.dev)">
+                        <xsl:text> (developers release)</xsl:text>
+                    </xsl:when>
+                    <xsl:when test="($urlX3DOM = $urlX3DOM.release)">
+                        <xsl:text> (official release)</xsl:text>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:text> (warning: unofficial version)</xsl:text>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:message>
+            <xsl:message>
+                <xsl:text>X_ITE parameters: </xsl:text>
+                <xsl:text>$cache=</xsl:text>
+                <xsl:value-of select="$cache"/>
+                <xsl:text>, $urlScene=</xsl:text>
+                <xsl:value-of select="$urlScene"/>
+                <xsl:text>, $urlX_ITE=</xsl:text>
+                <xsl:value-of select="$urlX_ITE"/>
+                <xsl:text>/</xsl:text>
+                <xsl:value-of select="$versionX_ITE"/>
+                <xsl:text>, $x3dSceneAvailable=</xsl:text>
+                <xsl:value-of select="$x3dSceneAvailable"/>
+                <xsl:text>, $x3dDocumentationAvailable=</xsl:text>
+                <xsl:value-of select="$x3dDocumentationAvailable"/>
+            </xsl:message>
         </xsl:if>
-    </xsl:when>
-    <xsl:when test="local-name()='ROUTE'">
-      <xsl:apply-templates select="@fromNode"/>
-      <xsl:apply-templates select="@fromField"/>
-      <xsl:apply-templates select="@toNode"/>
-      <xsl:apply-templates select="@toField"/>
-    </xsl:when>
-    <xsl:when test="local-name()='ElevationGrid' or local-name()='GeoElevationGrid'">
-      <xsl:apply-templates select="@*[local-name()!='height' and local-name()!='colorIndex']"/>
-      <xsl:apply-templates select="@height"/>
-      <xsl:apply-templates select="@colorIndex"/>
-    </xsl:when>
-    <xsl:when test="local-name()='IndexedFaceSet' or local-name()='IndexedLineSet'">
-      <xsl:apply-templates select="@*[not(contains(local-name(), 'Index'))]"/>
-      <xsl:apply-templates select="@*[contains(local-name(), 'Index')]"/>
-    </xsl:when>
-    <xsl:when test="local-name()='IMPORT'">
-      <xsl:apply-templates select="@inlineDEF"/>
-      <xsl:apply-templates select="@importedDEF"/>
-      <xsl:apply-templates select="@AS"/>
-    </xsl:when>
-    <xsl:when test="local-name()='EXPORT'">
-      <xsl:apply-templates select="@localDEF"/>
-      <xsl:apply-templates select="@AS"/>
-    </xsl:when>
-    <xsl:when test="contains(local-name(),'Proto')">
-      <xsl:apply-templates select="@name"/>
-      <xsl:apply-templates select="@DEF"/>
-      <xsl:apply-templates select="@*[(local-name()!='DEF') and (local-name()!='name')]"/>
-    </xsl:when>
-    <xsl:when test="local-name()='field' or local-name()='fieldValue'">
-      <xsl:apply-templates select="@name"/>
-      <xsl:apply-templates select="@type"/>
-      <xsl:apply-templates select="@value"/>
-      <xsl:apply-templates select="@*[(local-name()!='name') and (local-name()!='type') and (local-name()!='value') and (local-name()!='appInfo') and (local-name()!='documentation')]"/>
-      <xsl:apply-templates select="@appInfo"/>
-      <xsl:apply-templates select="@documentation"/>
-    </xsl:when>
-    <xsl:when test="contains(local-name(),'connect')">
-      <xsl:apply-templates select="@nodeField"/>
-      <!-- IS -->
-      <xsl:apply-templates select="@protoField"/>
-    </xsl:when>
-    <xsl:otherwise>
-      <xsl:apply-templates select="@DEF | @USE | @*[not(contains(local-name(), 'url') or contains(local-name(), 'Url'))]"/>
-      <xsl:apply-templates select="@*[contains(local-name(), 'url') or contains(local-name(), 'Url')]"/>
-    </xsl:otherwise>
-  </xsl:choose>
-</xsl:if>
-<!-- appropriate angle-bracket close of first tag, depending if children node/comment is present -->
-<xsl:choose>                        
-  <xsl:when test="* | comment()"><xsl:text>&amp;gt;&#10;&lt;div style="margin-left:25"&gt;&#10;</xsl:text></xsl:when>
-  <xsl:when test="local-name(..)='Script' and local-name()='field'"><xsl:text>/&amp;gt;</xsl:text></xsl:when>
-  <xsl:otherwise><xsl:text>/&amp;gt;&#10;</xsl:text></xsl:otherwise>
-</xsl:choose>
-<!-- recurse on contained tag/comment -->
-<xsl:apply-templates select="* | comment()"/>
-<!-- add a closing tag if children node/comment is present -->
-<xsl:if test="* or comment()">
-  <xsl:choose>
-    <xsl:when test="local-name()='ProtoDeclare' or local-name()='ProtoInterface' or local-name()='ProtoBody' or local-name()='ExternProtoDeclare' or local-name()='ProtoInstance' or local-name()='IS' or local-name()='connect'">
-      <xsl:text>&lt;/div&gt;&#10;&amp;lt;/&lt;font color=&quot;purple&quot;&gt;</xsl:text>
-    </xsl:when>
-    <xsl:otherwise>
-      <xsl:text>&lt;/div&gt;&#10;&#10;&amp;lt;/&lt;font color=&quot;navy&quot;&gt;</xsl:text>
-    </xsl:otherwise>
-  </xsl:choose>
-  <xsl:value-of select="local-name()"/>
-  <xsl:text>&lt;/font&gt;&amp;gt;&#10;</xsl:text>
-</xsl:if>
-<!-- element complete, insert index (prior to Scene, after X3D) or else break -->
+                    
+        <!-- header -->
+        <!-- https://stackoverflow.com/questions/4666523/xhtml-strict-1-0-target-blank-not-valid -->
+        <xsl:text disable-output-escaping="yes">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</xsl:text>
+        <xsl:text>&#10;</xsl:text>
+
+<!-- special player customization in head -->
 <xsl:choose>
-  <xsl:when test="local-name()='head' or local-name()='X3D' ">
-    <xsl:call-template name="ID-link-index"/>
-  </xsl:when>
-  <xsl:otherwise>
-    <xsl:text>&lt;br /&gt;&#10;</xsl:text>
-  </xsl:otherwise>
+    <xsl:when test="($lower-case-player = 'x_ite') or ($lower-case-player = 'cobweb')">
+        <!-- TODO -->
+    </xsl:when>
+    <xsl:otherwise> <!-- default X3DOM -->
+        <xsl:text>&#10;</xsl:text>
+        <xsl:comment> =================================================================== </xsl:comment>
+        <xsl:text>&#10;</xsl:text>
+        <xsl:comment> embedded X3D scene appears after html/head/script and style entries </xsl:comment>
+        <xsl:text>&#10;</xsl:text>
+        <xsl:comment> =================================================================== </xsl:comment>
+        <xsl:text>&#10;</xsl:text>
+    </xsl:otherwise>
 </xsl:choose>
 
-</xsl:template>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+            <head>
+                <title>
+                    <xsl:choose>
+                        <xsl:when test="$fileName">
+                            <xsl:value-of select="$fileName"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                        </xsl:otherwise>
+                    </xsl:choose>
+					<xsl:text> (X3dToX3domX_ITE.xslt </xsl:text>
+					<xsl:value-of select="$player"/>
+					<xsl:text>)</xsl:text>
+                </title>
+                <xsl:if test="($lower-case-player = 'x3dom')">
+                    <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge" />
+                </xsl:if>
+                <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+            <!-- TD <meta charset="utf-8"/> -->
+                <meta name="generator" content="https://www.web3d.org/x3d/stylesheets/X3dToX3domX_ITE.xslt" />
 
-<!-- ****** recurse through each of the attributes ****** -->
-<xsl:template match="@*">
+              <!--               Getting started with X3DOM: https://doc.x3dom.org/gettingStarted -->
+              <!--                     alternate stylesheet: https://www.x3dom.org/x3dom/example/x3dom.css -->
+                <xsl:text>&#10;</xsl:text>
+                
+                <!-- jQuery availability: https://developers.google.com/speed/libraries https://stackoverflow.com/questions/12608242/latest-jquery-version-on-googles-cdn -->
+                <xsl:variable name="urlJquery">
+                    <xsl:text>https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js</xsl:text>
+                </xsl:variable>
+                <xsl:text>        </xsl:text>
+                <xsl:text disable-output-escaping="yes"><![CDATA[<script type="text/javascript" src="]]></xsl:text><xsl:value-of select="$urlJquery"/><xsl:text disable-output-escaping="yes"><![CDATA["></script>]]></xsl:text>
+                <xsl:text>&#10;</xsl:text>
+              
+                <xsl:choose>
+                  <xsl:when test="($lower-case-player = 'x_ite') or ($lower-case-player = 'cobweb')">
+                    <xsl:text>        </xsl:text>
+                    <xsl:comment> X_ITE developer site: https://create3000.github.io/x_ite </xsl:comment>
+                    <xsl:text>&#10;</xsl:text>
+                    <!-- no longer needed, handled automatically
+                    <xsl:text>        </xsl:text>
+                    <link rel="stylesheet" type="text/css" href="{$urlX_ITE}/{$versionX_ITE}/x_ite.css" />
+                    <xsl:text>&#10;</xsl:text> -->
+                    <xsl:text>        </xsl:text>
+                    <!-- TODO singleton <script /> tag buggy under Firefox -->
+                    <xsl:text disable-output-escaping="yes"><![CDATA[<script type="text/javascript" src="]]></xsl:text><xsl:value-of select="$urlX_ITE"/><xsl:text>/</xsl:text><xsl:value-of select="$versionX_ITE"/><xsl:text disable-output-escaping="yes"><![CDATA[/x_ite.min.js"></script>]]></xsl:text>
+                    <xsl:text>&#10;</xsl:text>
+                    <!-- separate entry apparently no longer needed 
+		    <xsl:text>        </xsl:text>
+                    <xsl:text disable-output-escaping="yes"><![CDATA[<script type="text/javascript" src="]]></xsl:text><xsl:value-of select="$urlX_ITE"/><xsl:text>/</xsl:text><xsl:value-of select="$versionX_ITE"/><xsl:text disable-output-escaping="yes"><![CDATA[/rigid-body-physics.min.js"></script>]]></xsl:text>
+                    <xsl:text>&#10;</xsl:text> -->
+                    <xsl:choose>
+                            <xsl:when test="($styleX_ITE = 'simple')">
+	<style type="text/css">
+<xsl:text>
+#main {
+	width: 768px;
+}
+</xsl:text><xsl:value-of select="$rootElementX_ITE"/><xsl:text> {
+    /* Format 16:9 */
+    width: 100%;
+    height: 432px;
+}
+.references {
+    padding: 5px;
+    background: lightgray;
+}
+.references p {
+    margin: 0;
+}
+</xsl:text>
+</style>
+                            </xsl:when>
+                            <xsl:otherwise>      
+	<style type="text/css">
+		<xsl:text>
+         @import url(https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic);
+         html, body {
+         margin: 0px;
+         padding: 0px;
+         border: 0px;
+         height: 100%;
+         }
+         body {
+         font-family: PT Sans, sans;
+         line-height: 1.3;
+         color: white;
+         background: #313131;
+         }
+         h1, h2 {
+         margin-top: 0px;
+         }
+         a {
+         text-decoration: none;
+         color: #ffe32d;
+         outline: 0;
+         }
+         a:hover {
+         text-decoration: underline;
+         }
+         a:before {
+         display: inline-block;
+         width: 0;
+         height: 0;
+         border-style: solid;
+         border-width: 3px 0 3px 5px;
+         border-color: transparent transparent transparent #ffe32d;
+         }
+         #main {
+         background: #414141;
+         width: 768px;
+         min-height: 100%;
+         border-right: 80px solid #313131;
+         outline: 40px solid #414141;
+         }
+         .frame {
+         }
+         .browser {
+         box-shadow: 0px 2px 12px 1px rgba(0, 0, 0, 0.95);
+         }
+         x3d-canvas {
+         /* Format 16:9 */
+         width: 100%;
+         height: 432px;
+         }
+         .references {
+         padding: 5px;
+         background: black;
+         }
+         .references p {
+         margin: 0;
+         }
+         .x_ite-console {
+         font-family: monospace;
+         margin-bottom: 0px;
+         }
+         .maximize {
+         background: none;
+         border: none;
+         }
+</xsl:text>
+      <!-- https://stackoverflow.com/questions/14698234/ie-uses-courier-font-when-font-family-monospace-is-used -->
+      </style>
+      <xsl:text>&#10;</xsl:text>
+                    </xsl:otherwise>
+                </xsl:choose>
+              </xsl:when>
+              <xsl:otherwise> <!-- default X3DOM head -->
+<!--
+On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
+> Hi Don,
+> for your converter stylesheet I really think that linking to the latest dev version is best.
+> Only if someone wants to provide an x3dom-based Web app, he/she should use a local copy.
+> So, here is the link to all x3dom dev builds: https://www.x3dom.org/download/dev/
+> For the extended Profile (i.e., CAD, Geometry2D etc.) you should use the "x3dom-full.js",
+> otherwise you can use standard x3dom.js
+-->
+                    <xsl:comment> Numbered X3DOM release versions: https://www.x3dom.org/download </xsl:comment>
+                    <xsl:text>&#10;</xsl:text>
+                    <xsl:comment> Developer X3DOM release version: https://www.x3dom.org/download/dev </xsl:comment>
+                    <xsl:text>&#10;</xsl:text>
+                    <link rel="stylesheet" type="text/css" href="{$urlX3DOM}/x3dom.css" />
+                    <xsl:text>&#10;</xsl:text>
+                    <script         type="text/javascript"  src="{$urlX3DOM}/x3dom-full.js"/>
+                    <xsl:text>&#10;</xsl:text>
+                  </xsl:otherwise>
+              </xsl:choose>
+
+<!-- special player customization in head -->
+<xsl:choose>
+    <xsl:when test="($lower-case-player = 'x_ite') or ($lower-case-player = 'cobweb')">
+        <!-- TODO -->
+    </xsl:when>
+    <xsl:otherwise> <!-- default X3DOM -->
+                  
+                    <!-- New X3DOM components development entries are placed placed _after_ X3DOM script link above, so that any updates in x3dom-full.js take precedence -->
+
+                    <!-- development testing example: CAD component by CAD Working Group, successfully completed and integrated into X3DOM -->
+                    <!--
+                    <xsl:if test="//*[starts-with(local-name(),'CAD')] or //QuadSet or //IndexedQuadSet">
+                        <script         type="text/javascript"  src="https://www.web3d.org/x3d/content/examples/Basic/CAD/x3dom/CADGeometry.js"/>
+                    </xsl:if>
+                    -->
+
+                    <!-- development testing example: H-Anim component by H-Anim Working Group
+                    <xsl:if test="//*[starts-with(local-name(),'HAnim')] or //MetadataBoolean">
+                        < ! - - development version, local - - >
+                        <script         type="text/javascript"  src="../../content/examples/Basic/HumanoidAnimation/x3dom/HAnimComponent.js"/>
+                        < ! - - development version, online - - >
+                        <script         type="text/javascript"  src="https://www.web3d.org/x3d/content/examples/Basic/HumanoidAnimation/x3dom/HAnimComponent.js"/>
+                    </xsl:if>
+                    -->
+                    <!-- TODO under development: https://github.com/mcgredonps/x3dom/tree/master/src/nodes/DIS -->
+                    <xsl:if test="//EspduTransform or //*[starts-with(local-name(),'DISEntity')] or //*[contains(local-name(),'Pdu')]">
+                        <!-- development version, local -->
+                        <script         type="text/javascript"  src="../../content/examples/Basic/DistributedInteractiveSimulation/x3dom/dis.js"/>
+                        <!-- development version, online -->
+                        <script         type="text/javascript"  src="https://github.com/mcgredonps/x3dom/dis.js"/>
+                    </xsl:if>
+
+                    <!-- Text node support -->
+                    <meta name="warning" content="Webfonts must be loaded prior to using Text node in X3D scene... see https://x3dom.org/x3dom/example/x3dom_text.html" />
+                    <!-- setup fonts for Text node, in order -->
+                    <xsl:call-template name="webFontCss"/>
+                    <!-- show a font change, with family in middle to confirm that changes are not failing -->
+<style type="text/css" media="screen, print">
+.webfont { font-size:200%; font-family:'TYPEWRITER'; color:green;} /* Conversion TODO font families: SANS SERIF TYPEWRITER */
+</style>
+                    <xsl:call-template name="cssZoomButton"/>
+    </xsl:otherwise>
+</xsl:choose>
+
+                <script type="text/javascript">
+		<xsl:text>
+         var fullscreen = false;
+         
+         function toggleFullscreen ()
+         {
+           fullscreen = !fullscreen;
+           
+           if (fullscreen)
+           {
+             jQuery (".frame")
+               .css ("position", "fixed")
+               .css ("top", "0px")
+               .css ("left", "0px")
+               .css ("bottom", "0px")
+               .css ("right", "0px")
+               .css ("background", "#313131");
+                
+             jQuery (".maximize") .attr ("title", "Reduce frame, show console");
+         
+             jQuery (".browser") .css ("height", "100%");
+             jQuery ("x3d-canvas") .css ("height", "90%");
+           }
+           else
+           {
+             jQuery (".frame")
+               .css ("position", "inherit")
+               .css ("background", "none");
+               
+             jQuery (".maximize") .attr ("title", "Full Frame");
+         
+             jQuery (".browser") .css ("height", "initial");
+             jQuery ("x3d-canvas") .css ("height", "432px");
+           }
+         }
+</xsl:text>
+                </script>
+                <xsl:text>&#10;</xsl:text>
+            </head>
+            <body id="htmlBody" onload="toggleFullscreen ();">
+                <xsl:text>&#10;</xsl:text>
+                    
+<xsl:choose>
+    <xsl:when test="($lower-case-player = 'x_ite') or ($lower-case-player = 'cobweb')">
+        <div id="main" style="margin-left: 40px;">
+            <h2>
+                <xsl:choose>
+                    <xsl:when test="$fileName and X3D/head/meta[@name='identifier']">
+                        <xsl:value-of select="$fileName"/>
+                    </xsl:when>
+                    <xsl:when test="$fileName">
+                        <xsl:value-of select="$fileName"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:text> X3dToX3domX_ITE.xslt stylesheet conversion to XHTML</xsl:text>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </h2>
+
+            <div class="frame">
+                <div class="browser">
+                    <table>
+                        <tr>
+                            <td>
+                                <span class="references">
+                                    <button title="Maximize Frame"
+                                            class="maximize"
+                                            onclick="toggleFullscreen ();">
+                                       <img alt="Maximize Frame"
+                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAYAAACprHcmAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAB3RJTUUH4QQNFQk1i7oCawAAALhJREFUGJWV0TFKA2EQBeBn1iqptBJvEFsVjxR0LyB4txQSRCzEeAexsLCJydr4WWQWwjbGBwPzv3nDP/Mm+EBXscAhggb3xW/wGaxt8Y2rEvZxWTx0wWqn4R3HJTzCW/FrbEZJnpKcJ3lJcpLkOlvMkpwmeU1ykeSxny0Yox2M0WLS73CA7ItRkqbycZJ2UL9JMqm8CeaY4rmWuatvb+u9xBnm/3Ij+PrD527X5178g4fBBRfFQ/cL8YlBv40R0JoAAAAASUVORK5CYII="/>
+                                    </button>
+                                    <!-- debug
+                                    <xsl:message>
+                                        <xsl:text>$urlWebsiteX_ITE={$urlWebsiteX_ITE} value-of=</xsl:text>
+                                        <xsl:value-of select="$urlWebsiteX_ITE"/>
+                                    </xsl:message> -->
+                                    <xsl:element name="a">
+                                        <xsl:attribute name="href">
+                                            <xsl:value-of select="$urlWebsiteX_ITE"/>
+                                        </xsl:attribute>
+                                        <xsl:attribute name="target">
+                                            <xsl:value-of select="_blank"/>
+                                        </xsl:attribute>
+                                        <xsl:attribute name="title">
+                                            <xsl:text>X_ITE website</xsl:text>
+                                        </xsl:attribute>
+                                        <xsl:text>X_ITE X3D Player</xsl:text>
+                                    </xsl:element>
+                                    <xsl:text disable-output-escaping="yes">&amp;nbsp;</xsl:text>
+                                </span>
+                           </td>
+                           <td>
+                               <!-- note that no . precedes class name webfont here! -->
+                               <span class="webfont">
+                                   <xsl:text disable-output-escaping="yes">&amp;nbsp;</xsl:text>
+                                   <xsl:choose>
+                                       <xsl:when test="X3D/head/meta[@name='description']">
+                                           <xsl:value-of select="X3D/head/meta[@name='description']/@content" disable-output-escaping="yes"/><!-- I18N -->
+                                       </xsl:when>
+                                       <xsl:otherwise>
+                                           <xsl:text disable-output-escaping="yes">&amp;nbsp;</xsl:text>
+                                       </xsl:otherwise>
+                                   </xsl:choose>
+                               </span>
+                           </td>
+                       </tr>
+                   </table>
+                   <xsl:text disable-output-escaping="yes">
+&lt;</xsl:text><xsl:value-of select="$rootElementX_ITE"/><xsl:text> src='</xsl:text><xsl:value-of select="$urlSceneUnquoted"/><xsl:text disable-output-escaping="yes">'&gt;
+	&lt;p&gt;&lt;b&gt;Display error: X3D model not shown.&lt;/b&gt;&lt;/p&gt;
+	&lt;p&gt;Your HTML browser does not appear to support all features required by the
+	&lt;a href="</xsl:text><xsl:value-of select="$urlWebsiteX_ITE"/><xsl:text disable-output-escaping="yes">" target="_blank"&gt;X_ITE&lt;/a&gt; X3D player!&lt;/p&gt;
+&lt;/</xsl:text><xsl:value-of select="$rootElementX_ITE"/><xsl:text disable-output-escaping="yes">&gt;
+</xsl:text>
+                    <div class="references">
+                        <xsl:text>Original X3D scene: </xsl:text>
+                        <xsl:element name="a">
+                            <xsl:attribute name="href">
+                                <xsl:value-of select="$urlScene"/>
+                            </xsl:attribute>
+                            <xsl:attribute name="target">
+                                <xsl:value-of select="_blank"/>
+                            </xsl:attribute>
+                            <xsl:attribute name="title">
+                                <xsl:value-of select="$urlScene"/>
+                            </xsl:attribute>
+                            <xsl:value-of select="$urlScene"/>
+                        </xsl:element>
+                    </div>
+                </div><!-- browser -->
+            </div><!-- frame -->
+            <div>
+               <h3>X_ITE Console</h3>
+               <pre class="x_ite-console"></pre>
+            </div>
+        </div><!-- main -->
+    </xsl:when>
+    <xsl:otherwise> <!-- default X3DOM -->
+                <table style="width:96%" id="htmlPageHeader">
+                    <tr>
+                        <td style="text-align:left;">
+                            <h2>
+                                <xsl:choose>
+                                    <xsl:when test="$fileName and X3D/head/meta[@name='identifier']">
+                                        <xsl:value-of select="$fileName"/>
+                                    </xsl:when>
+                                    <xsl:when test="$fileName">
+                                        <xsl:value-of select="$fileName"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:text> X3dToX3domX_ITE.xslt stylesheet conversion to XHTML</xsl:text>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </h2>
+                        </td>
+                        <td id="checkBoxCell" style="text-align:right">
+                            <xsl:text> (</xsl:text>
+                            <xsl:if test="($x3dSceneAvailable = 'true')">
+                                <!-- offer link to available scene -->
+                                <xsl:element name="a">
+                                    <xsl:attribute name="href">
+                                        <xsl:value-of select="X3D/head/meta[@name='identifier']/@content"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="title">
+                                        <xsl:text>View .x3d scene</xsl:text>
+                                    </xsl:attribute>
+                                    <xsl:text>.x3d scene</xsl:text>
+                                </xsl:element>
+                                <xsl:text>, </xsl:text>
+                                <xsl:text>&#10;</xsl:text>
+                            </xsl:if>
+                            <xsl:if test="($x3dDocumentationAvailable = 'true')">
+                                <!-- offer link to available pretty-print documentation -->
+                                <xsl:element name="a">
+                                    <xsl:attribute name="href">
+                                        <!-- throws error if more than one identifier found, added check to QA tests -->
+                                        <xsl:value-of select="concat(substring-before(X3D/head/meta[@name='identifier'][1]/@content,'.x3d'),'.html')"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="title">
+                                        <xsl:text>View .html pretty-print source</xsl:text>
+                                    </xsl:attribute>
+                                    <xsl:text>pretty-print source</xsl:text>
+                                </xsl:element>
+                                <xsl:text>, </xsl:text>
+                                <xsl:text>&#10;</xsl:text>
+                            </xsl:if>
+                            <!-- duplicative link, simple use checkbox
+                            <xsl:element name="a">
+                                <xsl:attribute name="href">
+                                    <xsl:text>#details</xsl:text>
+                                </xsl:attribute>
+                                <xsl:text>details</xsl:text>
+                            </xsl:element>
+                            <xsl:text>, </xsl:text>
+                            <xsl:text>&#10;</xsl:text>
+                            -->
+                            <xsl:variable name="checkedShowStatistics">
+                                <xsl:if test="$showStatistics">
+                                    <xsl:text>checked</xsl:text>
+                                </xsl:if>
+                            </xsl:variable>
+                            <input id="checkBoxOverlayStatistics" type="checkbox" value="Overlay scene statistics" onclick="toggleOverlayStatistics();"/>
+                            <!-- initial status of box checked is controlled by whether attribute is present, rather than defined value.  therefore omit:
+                                 checked="{$checkedShowStatistics}" 
+                                 reference: https://www.w3schools.com/tags/att_input_checked.asp -->
+                            <span title="Overlay scene performance statistics">
+                                <xsl:text>statistics</xsl:text>
+                            </span>
+                            <xsl:text>, </xsl:text>
+                            <xsl:text>&#10;</xsl:text>
+                            <xsl:variable name="checkedShowDebugLog">
+                                <xsl:if test="($showDebugLog = 'true')">
+                                    <!-- note not attribute=value form! -->
+                                    <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox -->
+                                    <xsl:text>checked</xsl:text>
+                                </xsl:if>
+                            </xsl:variable>
+                            <!-- <input id="checkBoxShowDebugLogs" type="checkbox" value="Display debugger logs" onclick="toggleShowDebugLogs();"/>omitted 'check' and so off -->
+                            <xsl:element name="input">
+                                <xsl:attribute name="id"     ><xsl:text>checkBoxShowDebugLogs</xsl:text></xsl:attribute>
+                                <xsl:attribute name="type"   ><xsl:text>checkbox</xsl:text></xsl:attribute>
+                                <xsl:attribute name="value"  ><xsl:text>Display debugger logs</xsl:text></xsl:attribute>
+                                <xsl:attribute name="onclick"><xsl:text>toggleShowDebugLogs();</xsl:text></xsl:attribute>
+                                <xsl:if test="($showDebugLog = 'true')">
+                                    <xsl:attribute name="checked"><xsl:value-of select="$checkedShowDebugLog"/></xsl:attribute>
+                                </xsl:if>
+                            </xsl:element>
+                            <span title="Show meta information and debug logs">
+                                <xsl:text>info &amp; logs</xsl:text>
+                            </span>
+							<xsl:text>, </xsl:text>
+							<a href="https://www.x3dom.org" onclick="target='_blank';">X3DOM Player</a>
+                            <xsl:text>)</xsl:text>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <p>
+                                <!-- note that no . precedes class name webfont here! -->
+                                <span class="webfont">
+                                    <xsl:choose>
+                                        <xsl:when test="X3D/head/meta[@name='description']">
+                                                <xsl:value-of select="X3D/head/meta[@name='description']/@content" disable-output-escaping="yes"/><!-- I18N -->
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                            <xsl:text disable-output-escaping="yes">&amp;nbsp;</xsl:text>
+                                        </xsl:otherwise>
+                                    </xsl:choose>
+                                </span>
+                            </p>
+                        </td>
+                    </tr>
+
+                </table>
+                <xsl:text>&#10;</xsl:text>
+                
+                <!-- X3D scene is inserted here -->
+                <!-- n.b. if the following rule is missing, then nothing else from the X3D scene gets processed!! -->
+                <div>
+                    <xsl:text>&#10;</xsl:text>
+                    <xsl:comment> ================================ </xsl:comment>
+                    <xsl:text>&#10;</xsl:text>
+                    <xsl:comment> embedded X3D scene appears here: </xsl:comment>
+                    <xsl:text>&#10;</xsl:text>
+                    
+                    <xsl:apply-templates select="*" />
+                    
+                    <xsl:text>&#10;</xsl:text>
+                    <xsl:comment> ================================ </xsl:comment>
+                    <xsl:text>&#10;</xsl:text>
+                </div>
+                
+                <xsl:text>&#10;</xsl:text>
+                <!--
+                <table width="96%">
+                    <tr>
+                        <td align="left">
+                            <xsl:text> Details </xsl:text>
+                        </td>
+                        <td align="right">
+                            to
+                            <a href="#htmlBody">
+                                top
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+                -->
+                
+                <div id="details">
+    
+                <!-- Clear CSS float property to resume expected layout behavior -->
+                <!-- vertical whitespace -->
+                <p style="clear:both;">
+                    <xsl:text disable-output-escaping="yes">&amp;nbsp;</xsl:text>
+                </p>
+                <!-- output table of X3D scene metadata -->
+                <table style="border:0px solid; border-spacing:0px; margin:auto; margin-top:20px;margin-left:5%;">
+                    <xsl:if test="//X3D/head/meta">
+                        <tr style="background-color:silver; border-color:silver;">
+                            <th style="text-align:right;">
+                                <xsl:text disable-output-escaping="yes">X3D&amp;nbsp;Scene </xsl:text>
+                            </th>
+                            <th style="text-align:left;">
+                                <xsl:text disable-output-escaping="yes"> &amp;nbsp; </xsl:text>
+                            </th>
+                            <th style="text-align:left;">
+                                <xsl:text> Metadata </xsl:text>
+                            </th>
+                        </tr>
+                        <!-- reference: X3dTidy.xslt -->
+                        <xsl:variable name="metaIdentifierContent" select="normalize-space(//X3D/head/meta[@name='identifier'][1]/@content)"/>
+                        <xsl:variable name="base-address">
+                            <xsl:call-template name="find-base-address">
+                                <xsl:with-param name="url" select="$metaIdentifierContent"/>
+                            </xsl:call-template>
+                        </xsl:variable>
+                        <xsl:variable name="lower-case-address" select="translate($base-address,'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz')"/>
+                        <xsl:if test="(string-length($metaIdentifierContent) > 0) and
+                                                     (starts-with($lower-case-address,'https://www.web3d.org/x3d/content/examples/') or
+                                                      starts-with($lower-case-address,'https://x3dgraphics.com/examples/') or
+                                                      starts-with($lower-case-address,'https://savage.nps.edu/savage/') or
+                                                      starts-with($lower-case-address,'https://savagedefense.nps.navy.mil/savagedefense/'))">
+                            <tr style="background-color:silver; border-color:silver;">
+                                <td style="text-align:right;color:green;">
+                                    <i>
+                                        <xsl:text>archive</xsl:text>
+                                    </i>
+                                </td>
+                                <td>
+									<xsl:text disable-output-escaping="yes"> &amp;nbsp; </xsl:text>
+                                </td>
+                                <td>
+                                    <!-- debug
+                                    <xsl:message>
+                                        <xsl:text>Last character of identifier: '</xsl:text>
+                                        <xsl:value-of select="substring($base-address,string-length($base-address))"/>
+                                        <xsl:text>' and substring: </xsl:text>
+                                        <xsl:value-of select="substring($base-address,1,string-length($base-address)-1)"/>
+                                    </xsl:message>
+                                    -->
+                                    <xsl:variable name="archiveUrl">
+                                        <xsl:choose>
+                                            <xsl:when  test="(substring($base-address,string-length($base-address)) = '/')">
+                                                <!-- strip trailing slash character -->
+                                                <xsl:value-of select="substring($base-address,1,string-length($base-address)-1)"/>
+                                            </xsl:when>
+                                            <xsl:otherwise>
+                                                <xsl:value-of select="$base-address"/>
+                                            </xsl:otherwise>
+                                        </xsl:choose>
+                                    </xsl:variable>
+                                    <i>
+                                        <a href="{$archiveUrl}"><xsl:value-of select="$archiveUrl"/></a>
+                                    </i>
+                                </td>
+                            </tr>
+                        </xsl:if>
+                        <xsl:for-each select="//X3D/head/meta">
+                            <xsl:variable name="attributeName"    select="normalize-space(@name)"/>
+                            <xsl:variable name="attributeContent">
+								<xsl:call-template name="escape-special-characters">
+									<xsl:with-param name="inputValue" select="normalize-space(@content)"/>
+								</xsl:call-template>
+							</xsl:variable>
+                            <tr>
+                                <td style="text-align:right;color:green">
+                                    <xsl:value-of select="$attributeName"/>
+                                </td>
+								<td>
+									<xsl:text disable-output-escaping="yes"> &amp;nbsp; </xsl:text>
+								</td>
+                                <td>
+                                    <xsl:choose>
+                                        <xsl:when test="starts-with($attributeContent,'http') or starts-with($attributeContent,'ftp') or
+                                                        contains($attributeContent,'.txt')    or contains($attributeContent,'.html')  or
+                                                        contains($attributeContent,'.xhtml')  or contains($attributeContent,'.htm')   or
+                                                        contains($attributeContent,'.x3d')    or contains($attributeContent,'.png')   or
+                                                        contains($attributeContent,'.jpg')    or contains($attributeContent,'.mpg')   or
+                                                        contains($attributeContent,'.pdf')    or contains($attributeContent,'.js')    or
+                                                        contains($attributeContent,'.css')    or starts-with($attributeName,'title')   or
+                                                        starts-with($attributeName,'Image')   or starts-with($attributeName,'MovingImage')">
+                                            <a href="{$attributeContent}"><xsl:value-of select="$attributeContent"/></a>
+                                        </xsl:when>
+                                        <xsl:when test="contains($attributeContent,'http')">
+                                            <xsl:variable name="prefix"  select="substring-before($attributeContent,'http')"/>
+                                            <xsl:variable name="address" select="substring-after ($attributeContent,$prefix)"/>
+                                            <xsl:value-of select="$prefix"/><a href="{$address}"><xsl:value-of select="$address"/></a>
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                            <xsl:value-of select="$attributeContent" disable-output-escaping="yes"/>
+                                        </xsl:otherwise>
+                                    </xsl:choose>
+                                </td>
+                            </tr>
+                        </xsl:for-each>
+                        <!-- now script inserts browser information during initialization -->
+                        <tr>
+                            <td colspan="3">
+                                <xsl:text disable-output-escaping="yes">&amp;nbsp;</xsl:text>
+                            </td>
+                        </tr>
+                        <tr style="background-color:silver;border-color:silver;">
+                            <th style="text-align:right;">
+                                <xsl:text disable-output-escaping="yes"> HTML&amp;nbsp;Browser </xsl:text>
+                            </th>
+							<th></th>
+                            <th style="text-align:left;">
+                                <xsl:text> Information </xsl:text>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td style="text-align:right;">
+                                <xsl:text> Browser code name: </xsl:text>
+                            </td>
+							<td></td>
+                            <td id="browserCodeName"/>
+                        </tr>
+                        <tr>
+                            <td style="text-align:right;">
+                                <xsl:text> Browser application name: </xsl:text>
+                            </td>
+							<td></td>
+                            <td id="browserAppName"/>
+                        </tr>
+                        <tr>
+                            <td style="text-align:right;">
+                                <xsl:text> Browser version: </xsl:text>
+                            </td>
+							<td></td>
+                            <td id="browserAppVersion"/>
+                        </tr>
+                        <tr>
+                            <td style="text-align:right;">
+                                <xsl:text> Cookies enabled: </xsl:text>
+                            </td>
+							<td></td>
+                            <td id="browserCookieEnabled"/>
+                        </tr>
+                        <tr>
+                            <td style="text-align:right;">
+                                <xsl:text> Platform: </xsl:text>
+                            </td>
+							<td></td>
+                            <td id="browserPlatform"/>
+                        </tr>
+                        <tr>
+                            <td style="text-align:right;">
+                                <xsl:text> User Agent: </xsl:text>
+                            </td>
+							<td></td>
+                            <td id="browserUserAgent"/>
+                        </tr>
+                        <tr>
+                            <td style="text-align:right;">
+                                <xsl:text> System language: </xsl:text>
+                            </td>
+							<td></td>
+                            <td id="browserSystemLanguage"/>
+                        </tr>
+                    </xsl:if>
+                    
+            <tr>
+                <td colspan="3">
+                <!-- output table of nodes supported by X3DOM border-collapse:collapse;-->
+                <xsl:if test="//X3D//Scene/*">
+                    <div id="htmlPageFooter">
+                    <table border="1" style="float:left; margin:auto; margin-top:20px; border:1px solid black;">
+                        <caption style="text-align:center;background-color:silver;border-color:silver; padding:4px;">
+                            <b>X3DOM node coverage</b>
+                        </caption>
+                        <tr style="text-align:center; padding:4px; border:1px solid black;">
+                            <th>
+                                <xsl:text> Supported nodes found </xsl:text>
+                            </th>
+                            <th>
+                                <xsl:text> Unsupported nodes found </xsl:text>
+                            </th>
+                            <th>
+                                <xsl:text> Partial support</xsl:text>
+                            </th>
+                        </tr>
+                        
+                        <tr style="border:1px solid black;">
+                            <!-- Nodes supported by X3DOM -->
+                            <td style="text-align:left;vertical-align:text-top;padding:4px;">
+								<xsl:for-each select="//X3D//*[not(local-name()='text') and not(local-name()='Text')]">
+									<xsl:sort select="local-name()" order="ascending" case-order="lower-first"/>
+
+									<xsl:variable name="nodeName" select="local-name()"/>
+									<xsl:variable name="supported">
+										<xsl:call-template name="x3dom-supported-node">
+											<xsl:with-param name="name" select="$nodeName"/>
+										</xsl:call-template>
+									</xsl:variable>
+
+									 <!-- debug: 
+									<xsl:text>Testing </xsl:text>
+									<xsl:value-of select="local-name()"/>
+									<xsl:text>... </xsl:text>
+						<xsl:text> (preceding=</xsl:text>
+						<xsl:value-of select="local-name(preceding::node()[1])"/>
+						<xsl:text>)</xsl:text>
+									<br />
+									-->
+									<!-- XSLT preceding:: axis does not include ancestors! -->
+									<xsl:if test="($supported = 'true') and not(preceding::node()[local-name()=$nodeName])
+																		and not( ancestor::node()[local-name()=$nodeName])">
+										<xsl:element name="a">
+											<xsl:attribute name="href">
+												<xsl:text>https://www.web3d.org/x3d/tooltips/X3dTooltips.html#</xsl:text>
+												<xsl:value-of select="$nodeName"/>
+											</xsl:attribute>
+											<xsl:attribute name="target">
+												<xsl:text>_blank</xsl:text>
+											</xsl:attribute>
+											<span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">
+												<xsl:value-of select="$nodeName"/>
+											</span>
+										</xsl:element>
+										<br />
+									</xsl:if>
+								</xsl:for-each>
+                                <xsl:text> </xsl:text>
+                            </td>
+                            <!-- Nodes not supported by X3DOM -->
+                            <td style="text-align:left;vertical-align:text-top;padding:4px;">
+								<xsl:for-each select="//X3D//Scene//*[not(local-name()='text') and not(local-name()='Text')]">
+									<xsl:sort select="local-name()" order="ascending" case-order="lower-first"/>
+
+									<xsl:variable name="nodeName" select="local-name()"/>
+									<xsl:variable name="supported">
+										<xsl:call-template name="x3dom-supported-node">
+											<xsl:with-param name="name" select="$nodeName"/>
+										</xsl:call-template>
+									</xsl:variable>
+
+									<xsl:if test="($supported = 'false') and not(preceding::node()[local-name()=$nodeName])
+																		 and not( ancestor::node()[local-name()=$nodeName])">
+										<xsl:element name="a">
+											<xsl:attribute name="href">
+												<xsl:text>https://www.web3d.org/x3d/tooltips/X3dTooltips.html#</xsl:text>
+												<xsl:value-of select="$nodeName"/>
+											</xsl:attribute>
+											<xsl:attribute name="target">
+												<xsl:text>_blank</xsl:text>
+											</xsl:attribute>
+											<span style="color:red; text-decoration-color:red; moz-text-decoration-color:red;">
+												<xsl:value-of select="$nodeName"/>
+											</span>
+										</xsl:element>
+										<br />
+									</xsl:if>
+								</xsl:for-each>
+                                <xsl:text> </xsl:text>
+                            </td>
+                            <!-- Warnings about X3DOM node support -->
+                            <td style="text-align:left;vertical-align:text-top;padding:4px;">
+                                <xsl:if test="//X3D//Scene//Text">
+                                    <xsl:element name="a">
+										<xsl:attribute name="href">
+											<xsl:text>https://www.web3d.org/x3d/tooltips/X3dTooltips.html#</xsl:text>
+											<xsl:text>Text</xsl:text>
+										</xsl:attribute>
+										<xsl:attribute name="target">
+											<xsl:text>_blank</xsl:text>
+										</xsl:attribute>
+										<span style="color:orange; text-decoration-color:orange; moz-text-decoration-color:orange;">
+											<b><xsl:text>Text</xsl:text></b>
+										</span>
+									</xsl:element>
+									<br />
+                                    <xsl:text>: for example use, see </xsl:text>
+                                    <a href="https://x3dom.org/x3dom/example/x3dom_text.html" onclick="target='x3dom';">X3DOM Text and FontStyle Example</a>
+                                </xsl:if>
+                                <xsl:text> </xsl:text>
+                            </td>
+                        </tr>
+                        <tr style="text-align:center; background-color:silver;border-color:silver; padding:6px;">
+                            <td colspan="3" style="cellpadding:3px">
+                                <xsl:text disable-output-escaping="yes"> &amp;nbsp;&amp;nbsp;&amp;nbsp; </xsl:text>
+                                <!-- anchor target attribute replaced as shown below -->
+                                <xsl:text>References: </xsl:text>
+                                <a href="https://www.x3dom.org/check"                                   onclick="target='_blank';">X3DOM browser check</a>,
+                                <a href="https://www.x3dom.org"                                         onclick="target='_blank';">X3DOM home</a>,
+                                <a href="https://doc.x3dom.org"                                         onclick="target='_blank';">X3DOM documentation</a>,
+                                <a href="https://x3dom.org/x3dom/test/functional/dumpNodeTypeTree.html" onclick="target='_blank';">X3DOM list of supported nodes</a>,
+                                and
+                                <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html"  onclick="target='_blank';">X3D Resources</a>
+                                <!-- apparently old but thorough: https://examples.x3dom.org/simpleExamples.html -->
+                                <xsl:text disable-output-escaping="yes"> &amp;nbsp;&amp;nbsp;&amp;nbsp; </xsl:text>
+                            </td>
+                        </tr>
+                    </table>
+                    <xsl:text>&#10;</xsl:text>   
+                    </div>
+                </xsl:if>
+                <xsl:text>&#10;</xsl:text>    
+                        </td>
+                    </tr>
+                </table>
+                </div>  <!-- id="details" -->    
+                <xsl:text>&#10;</xsl:text>
+    </xsl:otherwise>
+</xsl:choose>
+            </body>
+        </html>
+    </xsl:template>
+	
+    <xsl:template match="@*">
         <!-- eliminate default attribute values, otherwise they will all appear in output  -->
-        <!-- this block of tests is used identically in X3dToXhtml.xslt X3dToHtml.xslt X3dToVrml97.xslt X3dTidy.xslt X3dToX3domX_ITE.xslt X3dUnwrap.xslt X3dWrap.xslt and X3dToJson.xslt -->
+        <!-- this block of tests is used identically in X3dToXhtml.xslt X3dToHtml.xslt X3dToVrml97.xslt X3dTidy.xslt X3dToX3domX_ITE.xslt X3dUnwrap.xslt X3dWrap.xslt X3dToJson.xslt X3dToPython.xslt and X3dToTurtle.xslt -->
         <!-- check values with/without .0 suffix since these are string checks and autogenerated/DOM output might have either -->
         <!-- do not check ProtoInstance fields or natively defined nodes, since they might have different user-defined defaults -->
         <!-- tool-bug workaround:  split big boolean queries into pieces to avoid overloading the Xalan/lotusxml query buffer -->
@@ -438,7 +1203,7 @@ Recommended tool:
                       ((local-name()='enabled' and string(.)='true') or
                       (local-name()='timeOut' and (string(.)='0' or string(.)='0.0')))) and
                       not( local-name(..)='LOD'	and	((local-name()='center' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or (local-name()='forceTransitions' and string(.)='false'))) and
-                      not( ((local-name(..)='Material') or (local-name(..)='TwoSidedMaterial')) and
+                      not(((local-name(..)='Material') or (local-name(..)='TwoSidedMaterial')) and
                       ((local-name()='ambientIntensity' and string(.)='0.2') or
                       (local-name()='diffuseColor' and string(.)='0.8 0.8 0.8') or
                       (local-name()='emissiveColor' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
@@ -457,10 +1222,10 @@ Recommended tool:
                       (local-name()='separateBackColor' and string(.)='false') or
                       (local-name()='backSpecularColor' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                       (local-name()='backTransparency' and (string(.)='0' or string(.)='0.0')))) and
-                      not(ends-with(local-name(..),'Material')	and
-                      ((ends-with(local-name(),'Mapping') and (string-length(string(.)) = 0)) or
+                      not(contains(local-name(..),'Material')	and
+                      ((contains(local-name(),'Mapping') and (string-length(string(.)) = 0)) or
                       (local-name()='baseColor' and ((string(.)='1 1 1') or (string(.)='1. 1. 1.') or (string(.)='1.0 1.0 1.0'))) or
-                      (ends-with(local-name(),'Mapping') and (string-length(string(.)) = 0)) or
+                      (contains(local-name(),'Mapping') and (string-length(string(.)) = 0)) or
                       (local-name()='emissiveColor' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                       (local-name()='metallic' and ((string(.)='1') or (string(.)='1.') or (string(.)='1.0'))) or
                       (local-name()='normalScale' and ((string(.)='1') or (string(.)='1.') or (string(.)='1.0'))) or
@@ -564,7 +1329,7 @@ Recommended tool:
                       (local-name()='pauseTime' and (string(.)='0' or string(.)='0.0')) or
                       (local-name()='resumeTime'  and (string(.)='0' or string(.)='0.0')) or
                       (local-name()='loop' and string(.)='false'))) and
-                      not( contains(local-name(..),'TouchSensor') and
+                      not(contains(local-name(..),'TouchSensor') and
                       local-name()='enabled' and string(.)='true') and
                       not( ((local-name(..)='Transform') or (local-name(..)='EspduTransform') or (local-name(..)='GeoTransform')) and
                       ((local-name()='center' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
@@ -617,8 +1382,6 @@ Recommended tool:
                       select="not( local-name(..)='MultiTexture' and
                       ((local-name()='alpha' and (string(.)='1' or string(.)='1.0')) or
                       (local-name()='color' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')))) and
-                      not( contains(local-name(..),'Texture') and
-                      ((local-name() = 'mapping') and (string-length(string(.)) = 0))) and
                       not( contains(local-name(..),'Texture') and
                       ((local-name() = 'mapping') and (string-length(string(.)) = 0))) and
                       not( local-name(..)='TextureCoordinateGenerator' and
@@ -811,7 +1574,6 @@ Recommended tool:
                       local-name(..)='Billboard' or
                       local-name(..)='Collision' or
                       local-name(..)='Fog' or
-                      local-name(..)='GeoMetadata' or
                       local-name(..)='Group' or
                       local-name(..)='Inline' or
                       local-name(..)='LOD' or
@@ -867,7 +1629,7 @@ Recommended tool:
                        (local-name()='bboxCenter' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                        (local-name()='bboxSize' and (string(.)='-1 -1 -1' or string(.)='-1.0 -1.0 -1.0')) or
                        (local-name()='center' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
-					   (local-name()='rotation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
+		       (local-name()='rotation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
                        (local-name()='scale' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')) or
                        (local-name()='scaleOrientation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
                        (local-name()='translation' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0'))))" />
@@ -914,7 +1676,8 @@ Recommended tool:
                       ((local-name()='category' or local-name()='country' or local-name()='domain' or local-name()='extra' or local-name()='kind' or local-name()='specific' or local-name()='subcategory') and (string(.)='0')))" />
         <xsl:variable name="notDefaultGeo"
                       select="not((starts-with(local-name(..),'Geo') or (local-name(..)='EspduTransform') or contains(local-name(..),'Pdu')) and 
-                      ((local-name()='geoCenter' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                      ((local-name()='containerField' and (string(.)='children')) or
+                       (local-name()='geoCenter' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                        (local-name()='geoCoords' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                        (local-name()='geoSystem' and (translate(string(.),',','')='&quot;GD&quot; &quot;WE&quot;')))) and
                       not(local-name(..)='GeoLOD' 	  and 
@@ -1099,10 +1862,10 @@ Recommended tool:
                       ((local-name()='initialDestination' and (string(.)='0' or string(.)='0.0')) or
                       (local-name()='initialValue' and (string(.)='0' or string(.)='0.0'))))" />
         <xsl:variable name="notDefaultShader"
-                      select="not((local-name(..)='FloatVertexAttribute') and
-                      ((local-name()='numComponents' and (string(.)='4')))) and
-                      not((local-name(..)='ShaderPart' or local-name(..)='ShaderProgram') and
-                      ((local-name()='type' and (string(.)='VERTEX'))))" />
+                      select="not((local-name(..)='FloatVertexAttribute') and ((local-name()='numComponents' and (string(.)='4'))))" />
+		              <!-- retained due to importance:
+                      and
+                      not((local-name(..)='ShaderPart' or local-name(..)='ShaderProgram') and ((local-name()='type' and (string(.)='VERTEX')))) -->
         <xsl:variable name="notDefaultRigidBodyPhysics"
                       select="not((local-name(..)='CollidableOffset' or local-name(..)='CollidableShape') and
                       (((local-name()='enabled') and (string(.)='true')) or
@@ -1201,10 +1964,11 @@ Recommended tool:
         <xsl:variable name="notFieldSpace"
                       select="not(local-name(..)='field'  and	(local-name()='space' or local-name()='xml:space')) and
                       not(local-name(..)='Script' and	(local-name()='space' or local-name()='xml:space'))" />
-  <xsl:variable name="value" select="."/>
-  <xsl:if test="$notImplicitEvent1 and
+        <xsl:if test="$notImplicitEvent1 and
                 $notImplicitEvent2 and
+                $notImplicitEvent3 and
                 $notDefaultFieldValue1 and
+                $notDefaultFieldValue1a and
                 $notDefaultFieldValue2 and
                 $notDefaultFieldValue3 and
                 $notDefaultFieldValue4 and
@@ -1214,6 +1978,12 @@ Recommended tool:
                 $notDefaultFieldValue8 and
                 $notDefaultFieldValue9 and
                 $notDefaultFieldValue10 and
+                $notDefaultCAD         and
+                $notDefaultDIS1        and
+                $notDefaultDIS2        and
+                $notDefaultDIS3        and
+                $notDefaultDIS4        and
+                $notDefaultGeo         and
                 $notDefaultHAnim1      and
                 $notDefaultHAnim2      and
                 $notDefaultNurbs       and
@@ -1228,411 +1998,537 @@ Recommended tool:
                 not(local-name()='containerField' and string(.)='') and
                 not(local-name()='class' and string(.)='') and
                 $notFieldSpace and
+                not(contains(local-name(),'set_')) and
+                not(contains(local-name(),'_changed')) and
                 ." >
-        	<!--and not((local-name(../..)='Script' and local-name(..)='field') and (local-name()='xml:space' or local-name()='space')) -->
-  <!-- valid field found by the preceding checks, now output accordingly  -->
-  <!-- single attributes can stay on same line, skip line otherwise -->
-  <!-- problem:  appears to be counting default attributes in addition to user-defined attributes... -->
-  <xsl:if test="(count (../@*) > 2) or ((count (../@*) = 2) and (string-length(../@*[1]) + string-length(../@*[2]) &gt; 72))">
-    <xsl:text>&#10;  </xsl:text>
-  </xsl:if>
-<!--  <xsl:if test="(local-name(..)='field' or local-name(..)='ProtoDeclare' or local-name()='ProtoInterface' or local-name()='ProtoBody' or local-name(..)='ExternProtoDeclare') and (local-name()='appInfo' or local-name()='documentation')">
-    <xsl:text>&lt;br /&gt;&#10;&amp;nbsp;</xsl:text>
-  </xsl:if> -->
-  <xsl:text> &lt;font color=&quot;green&quot;&gt;</xsl:text>
-  <!-- output actual attribute value.  try to break MFStrings into multiple lines. -->
-  <xsl:value-of select="local-name()"/>
-  <xsl:text>&lt;/font&gt;&lt;b&gt;=&apos;&lt;/b&gt;</xsl:text>
-  <xsl:choose>
-    <xsl:when test="(local-name(..)='meta' and (../@name='generator') and local-name()='content') and starts-with(.,'X3D-Edit, ')">
-      <xsl:variable name="containedUrl" select="substring-after(.,'X3D-Edit, ')"/>
-      <xsl:text>X3D-Edit, </xsl:text>
-      <xsl:text>&lt;a href="</xsl:text><xsl:value-of select="$containedUrl" disable-output-escaping="yes"/><xsl:text>" target="_blank"&gt;</xsl:text><xsl:value-of select="$containedUrl" disable-output-escaping="yes"/><xsl:text>&lt;/a&gt;</xsl:text>
-    </xsl:when>
-    <xsl:when test="(local-name(..)='meta' and (../@name='generator') and local-name()='content') and starts-with(.,'Vrml97ToX3dNist, ')">
-      <xsl:variable name="containedUrl" select="substring-after(.,'Vrml97ToX3dNist, ')"/>
-      <xsl:text>Vrml97ToX3dNist, </xsl:text>
-      <xsl:text>&lt;a href="</xsl:text><xsl:value-of select="$containedUrl" disable-output-escaping="yes"/><xsl:text>" target="_blank"&gt;</xsl:text><xsl:value-of select="$containedUrl" disable-output-escaping="yes"/><xsl:text>&lt;/a&gt;</xsl:text>
-    </xsl:when>
-    <xsl:when test="(local-name(..)='ProtoInstance' and local-name()='name') and (//ProtoDeclare[@name=$value] or //ExternProtoDeclare[@name=$value])">
-      <xsl:text>&lt;a href=&quot;#</xsl:text>
-      <xsl:choose>
-      	<xsl:when test="//ProtoDeclare[@name=$value]">
-      	  <xsl:text>ProtoDeclare_</xsl:text>
-      	</xsl:when>
-      	<xsl:when test="//ExternProtoDeclare[@name=$value]">
-      	  <xsl:text>ExternProtoDeclare_</xsl:text>
-      	</xsl:when>
-      </xsl:choose>
-      <xsl:value-of select="."/>
-      <xsl:text>"&gt;</xsl:text>
-      <xsl:text>&lt;font color=&quot;purple&quot;&gt;</xsl:text>
-      <xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/>
-      <xsl:text>&lt;/font&gt;</xsl:text>
-      <xsl:text>&lt;/a&gt;</xsl:text>
-    </xsl:when>
-    <xsl:when test="local-name()='protoField' and (local-name(..)='connect')">
-      <xsl:text>&lt;font color=&quot;purple&quot;&gt;</xsl:text><xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/><xsl:text>&lt;/font&gt;</xsl:text>
-    </xsl:when>
-    <xsl:when test="(local-name()='nodeField' and local-name(..)='connect' and local-name(../..)='IS' and local-name(../../..)='Script') or (local-name()='name' and local-name(..)='field' and local-name(../..)='Script')">
-      <xsl:text>&lt;font color=&quot;black&quot;&gt;</xsl:text><xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/><xsl:text>&lt;/font&gt;</xsl:text>
-    </xsl:when>
-    <!-- print out urls containing javascript source without further ado -->
-    <xsl:when test="(local-name()='url' and starts-with(normalize-space(string(.)),'javascript:'))">
-      <xsl:text>&lt;PRE&gt;</xsl:text>
-      <xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/>
-      <xsl:text>&lt;/PRE&gt;</xsl:text> blah 
-    </xsl:when>
-    <!-- protect simple text references as is -->
-    <xsl:when test="(local-name(..)='meta') and (../@name='reference') and not(contains(string(.),'https://')) and not(contains(string(.),'https://')) and not(contains(string(.),'file:')) and contains(normalize-space(string(.)),' ')">
-      <xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/></xsl:when>
-    <!-- make single url reference into actual A HREF= link -->
-    <xsl:when test="(local-name(..)='meta' and (../@name='url' or ../@name='filename' or ../@name='reference' or ../@name='drawing' or ../@name='image' or ../@name='map' or ../@name='chart' or ../@name='movie' or ../@name='photo' or ../@name='photograph' or ../@name='diagram' or ../@name='source' or contains(../@name,'permission')) and local-name()='content') and not(contains(normalize-space(string(.)),' '))">
-      <xsl:text>&lt;a href=</xsl:text><xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/><xsl:text>&gt;</xsl:text><xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/><xsl:text>&lt;/a&gt;</xsl:text></xsl:when>
-<!-- <xsl:when test="(local-name(..)='meta' and (../@name='url' or ../@name='filename' or ../@name='reference' or ../@name='drawing' or ../@name='image' or ../@name='map' or ../@name='chart' or ../@name='movie' or ../@name='photo' or ../@name='photograph' or ../@name='diagram' or contains(../@name,'permission')) and local-name()='content') and starts-with(normalize-space(string(.)),'&quot;') and not(contains(normalize-space(string(.)),'&quot; &quot;')) and (contains(string(.),'.') or starts-with(normalize-space(string(.)),'Makefile')) and not(substring(normalize-space(string(.)),string-length(normalize-space(string(.)))) = '.')">
-      <xsl:text>&lt;a href=</xsl:text><xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/><xsl:text>&gt;</xsl:text><xsl:value-of select="substring-before(substring-after(normalize-space(string(.)),'&quot;'),'&quot;')" disable-output-escaping="yes"/><xsl:text>&lt;/a&gt;</xsl:text></xsl:when> -->
-    <!-- break and make multiple url references into actual A HREF= links -->
-    <xsl:when test="(local-name()='url' or contains(local-name(), 'Url'))">
-      <xsl:call-template name="URL-ize-MFString-elements">
-        <xsl:with-param name="list" select="normalize-space(string(.))"/>
-      </xsl:call-template>
-    </xsl:when>
-    <xsl:when test="(local-name(..)='field' or local-name(..)='fieldValue') and (contains(../@name, 'Url') or contains(../@name, 'url')) and (local-name() = 'value')">
-      <xsl:call-template name="URL-ize-MFString-elements">
-        <xsl:with-param name="list" select="normalize-space(string(.))"/>
-      </xsl:call-template>
-    </xsl:when>
-    <xsl:when test="(local-name(..)='meta' and (../@name='url' or ../@name='filename' or ../@name='reference' or ../@name='drawing' or ../@name='image' or ../@name='map' or ../@name='chart' or ../@name='movie' or ../@name='photo' or ../@name='photograph' or ../@name='diagram' or contains(../@name,'permission')) and local-name()='content') and starts-with(normalize-space(string(.)),'&quot;') and contains(normalize-space(string(.)),'&quot; &quot;')">
-      <xsl:call-template name="URL-ize-MFString-elements">
-        <xsl:with-param name="list" select="normalize-space(string(.))"/>
-      </xsl:call-template>
-    </xsl:when>
-    <xsl:when test="(local-name(..)='field' or local-name(..)='ProtoDeclare' or local-name(..)='ExternProtoDeclare') and (local-name()='documentation')">
-      <xsl:text>&lt;a href="</xsl:text><xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/><xsl:text>"&gt;</xsl:text><xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/><xsl:text>&lt;/a&gt;</xsl:text>
-    </xsl:when>
-    <xsl:when test="starts-with(normalize-space(string(.)),'https://') or starts-with(normalize-space(string(.)),'https://')">
-      <xsl:text>&lt;a href="</xsl:text><xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/><xsl:text>"&gt;</xsl:text><xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/><xsl:text>&lt;/a&gt;</xsl:text>
-    </xsl:when>
-    <xsl:when test="(local-name(..)='meta' and local-name()='content') and (../@name='mail' or ../@name='email' or ../@name='e-mail' or ../@name='contact')">
-      <xsl:text>&lt;a href="</xsl:text>
-      <xsl:if test="contains(string(.),'@') and not(contains(string(.),'mailto:'))">
-        <xsl:text>mailto:</xsl:text>
-      </xsl:if>
-      <xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/>
-      <xsl:text>"&gt;</xsl:text>
-      <xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/>
-      <xsl:text>&lt;/a&gt;</xsl:text>
-    </xsl:when>
-    <xsl:when test="(local-name(..)='meta' and local-name()='content') and (../@name='drawing' or ../@name='image' or ../@name='map' or ../@name='chart' or ../@name='movie' or ../@name='photo' or ../@name='photograph') and (contains(string(.),'https://') or contains(string(.),'https://') or contains(string(.),'file://') or not(contains(string(.),' ')))">
-      <xsl:text>&lt;a href="</xsl:text><xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/><xsl:text>"&gt;</xsl:text><xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/><xsl:text>&lt;/a&gt;</xsl:text>
-    </xsl:when>
-    <xsl:when test="(local-name(..)='meta' and local-name()='generator') and starts-with(.,'Xvl3ToX3d, ')">
-      <xsl:variable name="containedUrl" select="substring-after(.,'Xvl3ToX3d, ')"/>
-      <xsl:text>Xvl3ToX3d, </xsl:text>
-      <xsl:text>&lt;a href="</xsl:text><xsl:value-of select="$containedUrl" disable-output-escaping="yes"/><xsl:text>" target="_blank"&gt;</xsl:text><xsl:value-of select="$containedUrl" disable-output-escaping="yes"/><xsl:text>&lt;/a&gt;</xsl:text>
-    </xsl:when>
-    <xsl:when test="(local-name(..)='meta' and local-name()='content' and ../@name='generator') and (contains(string(.),'.') and (not(contains(string(.),' '))))">
-      <xsl:text>&lt;a href="</xsl:text><xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/><xsl:text>"&gt;</xsl:text><xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/><xsl:text>&lt;/a&gt;</xsl:text>
-    </xsl:when>
-    <xsl:when test="local-name()='url'">
-      <xsl:text>&lt;font color=&quot;black&quot;&gt;</xsl:text><xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/><xsl:text>&lt;/font&gt;</xsl:text>
-    </xsl:when>
-    <xsl:when test="local-name()='name' and (local-name(..)='field' or local-name(..)='fieldValue' or local-name(..)='ProtoDeclare' or local-name(..)='ExternProtoDeclare' or local-name(..)='ProtoInstance')">
-      <xsl:if test="(local-name()='name') and (local-name(..)='ProtoDeclare')">
-         <xsl:text>&lt;a name=&quot;ProtoDeclare_</xsl:text><xsl:value-of select="."/><xsl:text>"&gt;</xsl:text>
-      </xsl:if>
-      <xsl:if test="(local-name()='name') and (local-name(..)='ExternProtoDeclare')">
-         <xsl:text>&lt;a name=&quot;ExternProtoDeclare_</xsl:text><xsl:value-of select="."/><xsl:text>"&gt;</xsl:text>
-      </xsl:if>
-      <xsl:text>&lt;font color=&quot;purple&quot;&gt;</xsl:text><xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/><xsl:text>&lt;/font&gt;</xsl:text>
-      <xsl:if test="(local-name()='name') and (local-name(..)='ProtoDeclare' or local-name(..)='ExternProtoDeclare')">
-         <xsl:text>&lt;/a&gt;</xsl:text>
-      </xsl:if>
-    </xsl:when>
-    <xsl:when test="local-name()='DEF'">
-      <xsl:text>&lt;a name=&quot;</xsl:text><xsl:value-of select="."/><xsl:text>"&gt;</xsl:text>
-      <xsl:text>&lt;font color=&quot;maroon&quot;&gt;</xsl:text>
-      <xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/>
-      <xsl:text>&lt;/font&gt;</xsl:text>
-      <xsl:text>&lt;/a&gt;</xsl:text>
-    </xsl:when>
-    <xsl:when test="local-name()='USE' or (local-name(..)='ROUTE' and contains(local-name(),'Node')) or (local-name(..)='USE' and local-name()='node')">
-      <xsl:text>&lt;a href=&quot;#</xsl:text><xsl:value-of select="."/><xsl:text>"&gt;</xsl:text>
-      <xsl:text>&lt;font color=&quot;maroon&quot;&gt;</xsl:text>
-      <xsl:value-of select="normalize-space(string(.))" disable-output-escaping="yes"/>
-      <xsl:text>&lt;/font&gt;</xsl:text>
-      <xsl:text>&lt;/a&gt;</xsl:text>
-    </xsl:when>    
-    <xsl:when test="local-name()='IS'">
-      <xsl:call-template name="format-IS-pairs">
-        <xsl:with-param name="list" select="normalize-space(string(.))"/>
-      </xsl:call-template>
-    </xsl:when>
-    <!-- meta warning -->
-    <xsl:when test="local-name(..)='meta' and (local-name()='name' and string(.)='warning') or (../@*[local-name()='name' and string(.)='warning'])">
-      <!-- remove extraneous space for better formatting, even though this might obscure some content problems/preferences. -->
-      <xsl:text>&lt;b&gt;&lt;font color=&quot;#cc5500&quot;&gt;</xsl:text><xsl:value-of select="normalize-space(string(.))"/><xsl:text>&lt;/font&gt;&lt;/b&gt;</xsl:text>
-    </xsl:when>
-    <xsl:otherwise>
-      <!-- remove extraneous space for better formatting, even though this might obscure some content problems/preferences. -->
-      <xsl:text>&lt;font color=&quot;teal&quot;&gt;</xsl:text><xsl:value-of select="normalize-space(string(.))"/><xsl:text>&lt;/font&gt;</xsl:text>
-    </xsl:otherwise>
- <!-- <xsl:text></xsl:text><xsl:value-of select="normalize-space(string(.))"/></xsl:otherwise> -->
-  </xsl:choose>
-  <xsl:text>&lt;b&gt;&apos;&lt;/b&gt;</xsl:text>
-  <xsl:if test="contains(local-name(), 'Url')"><xsl:text>&lt;br /&gt;&#10;</xsl:text></xsl:if><!--  -->
-</xsl:if>
-</xsl:template>
-
-<!-- ****** URL-ize-MFString-elements:  callable template (recursive function) ****** -->
-<!-- follows examples in Michael Kay's _XSLT_, pp. 551-554 -->
-<!-- this will need modification if SFURL/MFURL types are created -->
-<xsl:template name="URL-ize-MFString-elements">
-  <xsl:param name="list"/>
-  <xsl:variable name="wlist" select="concat($list,' ')"/>
-  <!-- <xsl:text>&#10;$wlist=[</xsl:text><xsl:value-of select="$wlist" disable-output-escaping="yes"/><xsl:text>]&#10;</xsl:text> -->
-  <xsl:choose>
-    <xsl:when test="$wlist!=' '">
-      <xsl:variable name="nextURL"  select="translate(substring-before($wlist,' '),'&quot;','')"/>
-      <xsl:variable name="restURLs" select="substring-after($wlist,' ')"/>
-      <!-- <xsl:text>&#10;$restURLs=[</xsl:text><xsl:value-of select="$restURLs" disable-output-escaping="yes"/><xsl:text>]&#10;</xsl:text> -->
-      <!-- output URL-ized nextURL -->
-      <xsl:text>&quot;&lt;A href=&quot;</xsl:text><xsl:value-of select="normalize-space($nextURL)"/><xsl:text>&quot;&gt;</xsl:text><xsl:value-of select="normalize-space($nextURL)"/><xsl:text>&lt;/A&gt;&quot;</xsl:text>
-      <!-- recurse on remainder of list of URLs -->
-      <xsl:if test="$restURLs!=''">
+					<!-- if attribute includes an apostrophe but not a quote, handle with non-canonical delimiter. -->
+					<xsl:variable name="attributeDelimiter">
+						<xsl:choose>
+							<xsl:when test="contains(string(.),$apos) and not(contains(string(.),$quot))">
+								<xsl:value-of select="$quot"/>
+								<!-- debug
+								<xsl:message>
+									<xsl:text>$attributeDelimiter=</xsl:text>
+									<xsl:value-of select="$quot"/>
+									<xsl:text> since .=</xsl:text>
+									<xsl:value-of select="."/>
+								</xsl:message> -->
+							</xsl:when>
+							<xsl:otherwise>
+								<xsl:value-of select="$apos"/>
+							</xsl:otherwise>
+						</xsl:choose>
+					</xsl:variable>
+					<!-- good attribute found, output it -->
+                    <xsl:text> </xsl:text>
+					<!-- apparently namespace-prefix attributes on X3D element can't be added without inducing error 
+					<xsl:choose>
+						<xsl:when test="(local-name() = 'xsd')">
+							<xsl:text>xmlns:</xsl:text>
+						</xsl:when>
+						<xsl:when test="(local-name() = 'noNamespaceSchemaLocation')">
+							<xsl:text>xsd:</xsl:text>
+						</xsl:when>
+					</xsl:choose>
+					-->
+                    <xsl:value-of select="local-name()"/>
+					<xsl:text>=</xsl:text>
+					<xsl:value-of select="$attributeDelimiter"/>
+					<xsl:call-template name="escape-special-characters">
+						<xsl:with-param name="inputValue" select="."/>
+					</xsl:call-template>
+					<xsl:value-of select="$attributeDelimiter"/>
+        </xsl:if>
+    </xsl:template>
+	
+    <xsl:template match="*">
+			<xsl:if test="local-name() = 'X3D'">
+				<xsl:comment> Conversion note: the following HTML button is overlaid on top of the page </xsl:comment>
+				<xsl:text>&#10;</xsl:text>
+				<button id="toggleZoomButton" onclick="toggleZoom(this); return false;">Zoom</button>
+				<xsl:text>&#10;</xsl:text>
+			</xsl:if>
+            <xsl:text disable-output-escaping="yes">&lt;</xsl:text>
+            <xsl:value-of select="local-name(.)"/>
+            <!-- X3D node attributes -->
+            <xsl:if test="local-name() = 'X3D'">
+                <xsl:text> id='rootX3dElement'</xsl:text>
+                <!-- https://x3dom.org/docs-old/configuration.html -->
+                <xsl:text> showStat='</xsl:text><xsl:value-of select="$showStatistics"/><xsl:text>'</xsl:text>
+                <xsl:text> showLog='</xsl:text><xsl:value-of select="$showDebugLog"/><xsl:text>'</xsl:text>
+                <xsl:text> showProgress='</xsl:text>bar<xsl:text>'</xsl:text>
+                <!--
+                <xsl:text> PrimitiveQuality='</xsl:text>High<xsl:text>'</xsl:text>
+                <xsl:text> x='0px'</xsl:text>
+                <xsl:text> y='0px'</xsl:text>
+                <xsl:text> width='600px'</xsl:text>
+                <xsl:text> height='400px'</xsl:text>
+                <xsl:text> altImg='helloX3D-alt.png'</xsl:text>
+                -->
+                <xsl:text>&#10;</xsl:text>
+            </xsl:if>
+            <xsl:choose>
+                <xsl:when test="@USE">
+                    <xsl:apply-templates select="@USE" />
+                </xsl:when>
+                <xsl:otherwise>
+                    <!--Conversion TODO filter default attributes -->
+                    <xsl:apply-templates select="@*" />
+                </xsl:otherwise>
+            </xsl:choose>
+            <xsl:choose>
+                <xsl:when test="*">
+                    <!-- open element, process children, close element -->
+                    <xsl:text disable-output-escaping="yes">&gt;</xsl:text>
+                    <xsl:text>&#10;</xsl:text>
+                    <xsl:apply-templates select="*" />
+                    <xsl:text disable-output-escaping="yes">&lt;/</xsl:text>
+                    <xsl:value-of select="local-name(.)"/>
+                    <xsl:text disable-output-escaping="yes">&gt;</xsl:text>
+                </xsl:when>
+                <xsl:otherwise>
+                    <!-- singleton element, no children-->
+                    <xsl:text disable-output-escaping="yes">/&gt;</xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
         <xsl:text>&#10;</xsl:text>
-        <xsl:call-template name="URL-ize-MFString-elements">
-          <xsl:with-param name="list" select="$restURLs"/>
-        </xsl:call-template>
-      </xsl:if>
-    </xsl:when>
-  </xsl:choose>
-</xsl:template>
+        <!-- next are X3D node children, following contained head section -->
+    </xsl:template>
+    
+    <xsl:template name="webFontCss">
+        <xsl:comment> X3DOM needs Web Fonts when an X3D Text node is included </xsl:comment>
+        <xsl:text>&#10;</xsl:text>
+        <xsl:comment> adapted from https://x3dom.org/x3dom/example/x3dom_text.html and https://web.mit.edu/jmorzins/www/fonts.html </xsl:comment>
+        <xsl:text>&#10;</xsl:text>
+<style type="text/css"><xsl:text>
+/* ============================================================================= */
+@font-face {
+  font-family: 'SERIF'; /* default original */
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roman'), url('Roman.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'SERIF'; /* default alternate */
+  font-style: normal;
+  font-weight: 700;
+  src: local('Times New Roman'), local('TimesNewRoman'), url('Times New Roman.ttf') format('truetype');
+}
+/* ============================================================================= */
+@font-face {
+  font-family: 'SANS'; /* default original */
+  font-style: normal;
+  font-weight: 400;
+  src: local('Arial'), url('Arial.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'SANS'; /* default alternate */
+  font-style: normal;
+  font-weight: 400;
+  src: local('Helvetica'), url('Helvetica.ttf') format('truetype');
+}
+/* ============================================================================= */
+@font-face {
+  font-family: 'TYPEWRITER'; /* default original */
+  font-style: normal;
+  font-weight: 900;
+  src: local('Courier'), url('Courier.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'TYPEWRITER'; /* default alternate */
+  font-style: normal;
+  font-weight: 900;
+  src: local('Courier New'), url('Courier New.ttf') format('truetype');
+}
+/* ============================================================================= */
+</xsl:text></style>
+    </xsl:template>
+    
+    <xsl:template name="cssZoomButton">
+        <xsl:comment> Button zoom adapted from https://x3dom.org/docs/dev/tutorial/styling.html </xsl:comment>
+        <xsl:text>&#10;</xsl:text>
+<style type="text/css"><xsl:text>
 
-<!-- ****** format-IS-pairs:  callable template (recursive function) ****** -->
-<!-- follows examples in Michael Kay's _XSLT_, pp. 551-554 -->
-<xsl:template name="format-IS-pairs">
-  <xsl:param name="list"/>
-  <xsl:variable name="wlist" select="concat($list,' ')"/>
-  <!-- <xsl:text>&#10;$wlist=[</xsl:text><xsl:value-of select="$wlist" disable-output-escaping="yes"/><xsl:text>]&#10;</xsl:text> -->
-  <xsl:choose>
-    <xsl:when test="$wlist!=' '">
-      <xsl:variable name="nextPair"  select="translate(substring-before($wlist,' '),'&quot;','')"/>
-      <xsl:variable name="restPairs" select="substring-after($wlist,' ')"/>
-      <!-- <xsl:text>&#10;$restPairs=[</xsl:text><xsl:value-of select="$restPairs" disable-output-escaping="yes"/><xsl:text>]&#10;</xsl:text> -->
-      <!-- output linked/fonted IS NodeName.fieldName pair -->
+html {width:100%;height:100%;margin:0;padding:0;}
+body {margin:0;padding:10px;width:100%;height:100%;}
 
-      <xsl:text>&lt;a href=&quot;#</xsl:text><xsl:value-of select="substring-before($nextPair,'.')"/><xsl:text>"&gt;</xsl:text>
-      <xsl:text>&lt;font color=&quot;maroon&quot;&gt;</xsl:text>
-      <xsl:value-of select="substring-before($nextPair,'.')"/>
-      <xsl:text>&lt;/font&gt;</xsl:text>
-      <xsl:text>&lt;/a&gt;</xsl:text>
-      <xsl:text>&lt;b&gt;.&lt;/b&gt;</xsl:text>
-      <xsl:text>&lt;font color=&quot;purple&quot;&gt;</xsl:text>
-      <xsl:value-of select="substring-after($nextPair,'.')"/>
-      <xsl:text>&lt;/font&gt;</xsl:text>
-
-      <!-- recurse on remainder of list of URLs -->
-      <xsl:if test="$restPairs!=''">
-        <xsl:text>&amp;nbsp;&amp;nbsp;&amp;nbsp;&#10;</xsl:text>
-        <xsl:call-template name="format-IS-pairs">
-          <xsl:with-param name="list" select="$restPairs"/>
-        </xsl:call-template>
-      </xsl:if>
-    </xsl:when>
-  </xsl:choose>
-</xsl:template>
-
-<!-- ****** children:  flag wrapper tags ****** -->
-<xsl:template match="appearance | children | choice | color | coord | fontStyle | geometry | level | material | normal | source | texCoord | texture | textureTransform">
-<!-- first, output tag name -->
-<xsl:text>&lt;font color=&quot;BLUE&quot;&gt;&amp;lt;</xsl:text><xsl:value-of select="local-name()"/>
-<!-- appropriate angle-bracket close of first tag -->
-<xsl:choose>
-  <xsl:when test="not(*)"><xsl:text>/&amp;gt;</xsl:text></xsl:when>
-  <xsl:otherwise><xsl:text>&amp;gt;</xsl:text></xsl:otherwise>
-</xsl:choose>
-<!-- insert warning comment after wrapper tag -->
-<!-- <xsl:comment> wrapper tag </xsl:comment> -->
-<!-- prepare format for next tag, insert blockquote if children present -->
-<xsl:choose>
-  <xsl:when test="not(*)"><xsl:text>&#10;&lt;/font&gt;</xsl:text></xsl:when>
-  <xsl:otherwise><xsl:text>&lt;/font&gt;&lt;div style="margin-left:25"&gt;&#10;</xsl:text></xsl:otherwise>
-</xsl:choose>
-<!-- recurse on next tag -->
-<xsl:apply-templates />
-<!-- add a closing tag if children were present -->
-<xsl:if test="*">
-  <xsl:text>&lt;/div&gt;&#10;&#10;&lt;font color=&quot;BLUE&quot;&gt;&amp;lt;/</xsl:text>
-  <xsl:value-of select="local-name()"/>
-  <xsl:text>&amp;gt;&lt;/font&gt;&#10;</xsl:text>
+#rootX3dElement {
+    height: </xsl:text>
+<xsl:value-of select="$x3dHeight"/>
+<xsl:if test="not(contains($x3dHeight,'px'))"><xsl:text>px</xsl:text>
 </xsl:if>
-</xsl:template>
+<xsl:text>;
+    width:  </xsl:text><xsl:value-of select="$x3dWidth"/>
+<xsl:if test="not(contains($x3dHeight,'px'))"><xsl:text>px</xsl:text>
+</xsl:if>
+<xsl:text>;
+    border: none;
+    display: block;
+    position:relative;
+    background:#000;
+}
 
+#toggleZoomButton {
+    position: absolute;
+    float: left;
+    z-index: 1;
+    top: 0px;
+    left: 0px;
+    width: 10em;
+    height: 2em;
+    border: none;
+    background-color: #202021;
+    color: #ccc;
+}
 
-<!-- ****** XML comments ****** -->
-<xsl:template match="comment()">
-<!-- wrap comment in blanks in case it ends with hyphen, since - is not a valid comment terminator -->
-<xsl:text>&amp;lt;!-- </xsl:text><xsl:value-of select="normalize-space(string(.))"/><xsl:text> --&amp;gt;</xsl:text>
-<xsl:text>&#10;</xsl:text><xsl:text> </xsl:text>
-<!-- *** need test for last -->
-<xsl:text>&lt;br /&gt;&#10;</xsl:text>
-</xsl:template>
-	<!--  <xsl:text>&lt;PRE&gt;</xsl:text> -->
-	<!--   <xsl:text>&lt;/PRE&gt;</xsl:text> -->
+#toggleZoomButton:hover {
+    background-color:blue;
+}
+</xsl:text></style>
 
+<xsl:comment> https://x3dom.org/docs/dev/api.html and https://x3dom.org/docs/dev/configuration.html </xsl:comment>
+<!-- Also     https://developer.mozilla.org/en-US/docs/Web/API/window.navigator?redirectlocale=en-US&redirectslug=DOM%2Fwindow.navigator -->
+<!--          https://doc.x3dom.org/documentation/tutorials/css-integration-2 -->
+<xsl:text>&#10;</xsl:text>
 
-<!-- ****** XML processing-instruction ****** -->
-<xsl:template match="processing-instruction()">
-  <xsl:text>&lt;-- </xsl:text><xsl:value-of select="."/><xsl:text> --&gt;&#10;</xsl:text>
-</xsl:template>
+<script type="text/javascript"><xsl:text>
+var zoomed = false;
+var showStatistics = </xsl:text><xsl:value-of select="$showStatistics"/><xsl:text>;
+var showDebugLog   = </xsl:text><xsl:value-of select="$showDebugLog"/><xsl:text>;
 
+function toggleZoom(button) {
 
-<!-- ****** Script node:  preserve CDATA delimiters ****** -->
-<xsl:template match="Script[text() and not (normalize-space(string(.))='' or normalize-space(string(.))=' ')]">
-  <!-- first tag name -->
-  <xsl:text>&amp;lt;&lt;font color=&quot;navy&quot;&gt;</xsl:text><xsl:value-of select="local-name()"/><xsl:text>&lt;/font&gt;</xsl:text>
-  <!-- next attributes, if any -->
-  <xsl:apply-templates select="@*"/>
-  <xsl:text>&amp;gt;&#10;&#10;&lt;div style="margin-left:25"&gt;&#10;</xsl:text>
-  <xsl:apply-templates select="IS | field | comment()"/>
-  <xsl:text>&lt;PRE&gt;&#10;</xsl:text>
-  <xsl:text>&lt;b&gt;&amp;lt;![CDATA[&lt;/b&gt;&#10;</xsl:text>
-      <xsl:for-each select="text()">
+        var new_height;
+        var new_width;
+        var x3d_element;
+        
+        htmlBody       = document.getElementById('htmlBody');
+        htmlPageHeader = document.getElementById('htmlPageHeader');
+        htmlPageFooter = document.getElementById('htmlPageFooter');
+        x3d_element    = document.getElementById('rootX3dElement');
+
+        if (zoomed) // previous value
+        {
+                // unzoom
+                new_height = "</xsl:text><xsl:value-of select="$x3dHeight"/><xsl:text>";
+                new_width  = "</xsl:text><xsl:value-of select="$x3dWidth"/><xsl:text>";
+                button.innerHTML = "Zoom";
+                htmlPageHeader.style.display = "table-row";
+                htmlPageFooter.style.display = "table-row";
+                document.getElementById('checkBoxCell').style="text-align:right";
+                htmlBody.style.padding = "10px";
+                x3d_element.showStat   = showStatistics;
+                x3d_element.showLog    = showDebugLog;
+                x3d_element.runtime.debug(showDebugLog);
+                document.getElementById("details").hidden = (!showDebugLog);
+        } else {
+                // zoom
+                new_height = "100%";
+                new_width  = "100%";
+                button.innerHTML = "Unzoom";
+                htmlPageHeader.style.display = "none";
+                htmlPageFooter.style.display = "none";
+                htmlBody.style.padding = "0px";
+                x3d_element.showStat   = false;
+                x3d_element.showLog    = false;
+                x3d_element.runtime.debug(false);
+                document.getElementById("details").hidden = true;
+                // TODO how to hide browser interface?
+        }
+        zoomed = !zoomed; // toggle
+
+        x3d_element.style.height = new_height;
+        x3d_element.style.width  = new_width;
+}
+                    
+    // Browser information table adapted from https://www.w3schools.com/js/js_window_navigator.asp
+    
+    document.addEventListener("DOMContentLoaded", function()
+    {
+        document.getElementById("browserCodeName"      ).innerHTML = navigator.appCodeName;
+        document.getElementById("browserAppName"       ).innerHTML = navigator.appName;
+        document.getElementById("browserAppVersion"    ).innerHTML = navigator.appVersion;
+        document.getElementById("browserCookieEnabled" ).innerHTML = navigator.cookieEnabled;
+        document.getElementById("browserPlatform"      ).innerHTML = navigator.platform;
+        document.getElementById("browserUserAgent"     ).innerHTML = navigator.userAgent;
+    if (navigator.systemLanguage)
+        document.getElementById("browserSystemLanguage").innerHTML = navigator.systemLanguage;
+    else
+        document.getElementById("browserSystemLanguage").innerHTML = navigator.language;
+    }, false);
+
+function toggleOverlayStatistics()
+{
+        showStatistics = !showStatistics; // toggle
+        x3d_element = document.getElementById('rootX3dElement');
+        x3d_element.runtime.statistics(showStatistics);
+}
+function toggleShowDebugLogs()
+{
+        showDebugLog  = !showDebugLog; // toggle
+        x3d_element = document.getElementById('rootX3dElement');
+        x3d_element.runtime.debug(showDebugLog);
+        document.getElementById("details").hidden = (!showDebugLog);
+}
+</xsl:text></script>
+    </xsl:template>
+    
+    <!-- X3DOM nightly list of supported nodes https://x3dom.org/x3dom/test/functional/dumpNodeTypeTree.html -->
+    <!-- X3DOM spreadsheet inventory           https://www.web3d.org/specifications/X3dNodeInventoryComparison.pdf -->
+    <xsl:template name="x3dom-supported-node">
+        <xsl:param name="name"/>
+        <xsl:variable name="nodename" select="(normalize-space($name))"/><!--Conversion TODO lower-case -->
         <xsl:choose>
-           <xsl:when test="(normalize-space(string(.))='' or normalize-space(string(.))=' ') and preceding::field"></xsl:when><!--<xsl:text>// stripped LF before field&#10;</xsl:text> -->
-           <xsl:when test="(normalize-space(string(.))='' or normalize-space(string(.))=' ') and following::field"></xsl:when><!--<xsl:text>// stripped LF after  field&#10;</xsl:text> -->
-           <!-- *** need to convert '<' to &lt; -->
-           <xsl:otherwise>
-           	<xsl:call-template name="escape-lessthan-characters">
-           	  <xsl:with-param name="inputValue" select="string(.)"/>
-		</xsl:call-template>
-           </xsl:otherwise><!--translate(,'javascript:','')-->
-        </xsl:choose>
-      </xsl:for-each>
-  <!-- <xsl:text>&#10;</xsl:text> -->
-  <xsl:text>&lt;b&gt;]]&amp;gt;&lt;/b&gt;</xsl:text>
-  <xsl:text>&lt;/PRE&gt;&#10;</xsl:text>
-  <xsl:text>&lt;/div&gt;&#10;&amp;lt;/&lt;font color=&quot;navy&quot;&gt;</xsl:text>
-  <xsl:value-of select="local-name()"/>
-  <xsl:text>&lt;/font&gt;&amp;gt;&#10;</xsl:text>
-  <xsl:text>&lt;br /&gt;&#10;</xsl:text>
-</xsl:template>
+            <xsl:when test="( string-length($nodename) > 0) and
+(($nodename='Anchor') or
+ ($nodename='Appearance') or
+ ($nodename='Arc2D') or
+ ($nodename='ArcClose2D') or
+ ($nodename='AudioClip') or
+ ($nodename='Background') or
+ ($nodename='BallJoint') or
+ ($nodename='Billboard') or
+ ($nodename='BlendedVolumeStyle') or
+ ($nodename='BoundaryEnhancementVolumeStyle') or
+ ($nodename='Box') or
+ ($nodename='BooleanFilter') or
+ ($nodename='BooleanSequencer') or
+ ($nodename='BooleanToggle') or
+ ($nodename='BooleanTrigger') or
+ ($nodename='CADAssembly') or 
+ ($nodename='CADFace') or
+ ($nodename='CADLayer') or
+ ($nodename='CADPart') or
+ ($nodename='CartoonVolumeStyle') or
+ ($nodename='Circle2D') or
+ ($nodename='ClipPlane') or
+ ($nodename='CollidableShape') or
+ ($nodename='Collision') or
+ ($nodename='CollisionCollection') or
+ ($nodename='CollisionSensor') or
+ ($nodename='Color') or
+ ($nodename='ColorChaser') or
+ ($nodename='ColorDamper') or
+ ($nodename='ColorInterpolator') or
+ ($nodename='ColorRGBA') or
+ ($nodename='component') or
+ ($nodename='ComposedCubeMapTexture') or
+ ($nodename='ComposedShader') or
+ ($nodename='ComposedTexture3D') or
+ ($nodename='ComposedVolumeStyle') or
+ ($nodename='Cone') or
+ ($nodename='Coordinate') or
+ ($nodename='CoordinateDamper') or
+ ($nodename='CoordinateInterpolator') or
+ ($nodename='Cylinder') or
+ ($nodename='CylinderSensor') or
+ ($nodename='DirectionalLight') or
+ ($nodename='Disk2D') or
+ ($nodename='DoubleAxisHingeJoint') or
+ ($nodename='EdgeEnhancementVolumeStyle') or
+ ($nodename='ElevationGrid') or
+ ($nodename='Extrusion') or
+ ($nodename='field') or
+ ($nodename='FloatVertexAttribute') or
+ ($nodename='Fog') or
+ ($nodename='FontStyle') or
+ ($nodename='GeneratedCubeMapTexture') or
+ ($nodename='GeoCoordinate') or
+ ($nodename='GeoElevationGrid') or
+ ($nodename='GeoLocation') or
+ ($nodename='GeoLOD') or
+ ($nodename='GeoMetadata') or
+ ($nodename='GeoOrigin') or
+ ($nodename='GeoPositionInterpolator') or
+ ($nodename='GeoTransform') or
+ ($nodename='GeoViewpoint') or
+ ($nodename='Group') or
+ ($nodename='HAnimDisplacer') or
+ ($nodename='HAnimHumanoid') or
+ ($nodename='HAnimJoint') or
+ ($nodename='HAnimSegment') or
+ ($nodename='HAnimSite') or
+ ($nodename='head') or
+ ($nodename='ImageTexture') or
+ ($nodename='ImageTexture3D') or
+ ($nodename='IndexedFaceSet') or
+ ($nodename='IndexedLineSet') or
+ ($nodename='IndexedQuadSet ') or
+ ($nodename='IndexedTriangleSet') or
+ ($nodename='IndexedTriangleStripSet') or
+ ($nodename='IntegerSequencer') or
+ ($nodename='IntegerTrigger') or
+ ($nodename='Inline') or
+ ($nodename='IsoSurfaceVolumeData') or
+ ($nodename='LineProperties') or
+ ($nodename='LineSet') or
+ ($nodename='LOD') or
+ ($nodename='Material') or
+ ($nodename='meta') or
+ ($nodename='MetadataBoolean') or
+ ($nodename='MetadataDouble') or
+ ($nodename='MetadataFloat') or
+ ($nodename='MetadataInteger') or
+ ($nodename='MetadataSet') or
+ ($nodename='MetadataString') or
+ ($nodename='MotorJoint') or
+ ($nodename='MovieTexture') or
+ ($nodename='MultiTexture') or
+ ($nodename='MultiTextureCoordinate') or
+ ($nodename='NavigationInfo') or
+ ($nodename='Normal') or
+ ($nodename='NormalInterpolator') or
+ ($nodename='OpacityMapVolumeStyle') or
+ ($nodename='OrientationChaser') or
+ ($nodename='OrientationDamper') or
+ ($nodename='OrientationInterpolator') or
+ ($nodename='OrthoViewpoint') or
+ ($nodename='PixelTexture') or
+ ($nodename='PixelTexture3D') or
+ ($nodename='PlaneSensor') or
+ ($nodename='PointLight') or
+ ($nodename='PointSet') or
+ ($nodename='Polyline2D') or
+ ($nodename='Polypoint2D') or
+ ($nodename='PositionChaser') or
+ ($nodename='PositionChaser2D') or
+ ($nodename='PositionDamper') or
+ ($nodename='PositionDamper2D') or
+ ($nodename='PositionInterpolator') or
+ ($nodename='ProjectionVolumeStyle') or
+ ($nodename='QuadSet ') or
+ ($nodename='Rectangle2D') or
+ ($nodename='RigidBody') or
+ ($nodename='RigidBodyCollection') or
+ ($nodename='ROUTE') or
+ ($nodename='ScalarChaser') or
+ ($nodename='ScalarDamper') or
+ ($nodename='ScalarInterpolator') or
+ ($nodename='Scene') or
+ ($nodename='SegmentedVolumeData') or
+ ($nodename='ShadedVolumeStyle') or
+ ($nodename='ShaderPart') or
+ ($nodename='Shape') or
+ ($nodename='SilhouetteEnhancementVolumeStyle') or
+ ($nodename='SingleAxisHingeJoint') or
+ ($nodename='SliderJoint') or
+ ($nodename='Sound') or
+ ($nodename='Sphere') or
+ ($nodename='SphereSensor') or
+ ($nodename='SplinePositionInterpolator') or
+ ($nodename='SpotLight') or
+ ($nodename='StaticGroup') or
+ ($nodename='Switch') or
+ ($nodename='TexCoordDamper2D') or
+ ($nodename='Text') or
+ ($nodename='TextureCoordinate') or
+ ($nodename='TextureCoordinate3D') or
+ ($nodename='TextureCoordinateGenerator') or
+ ($nodename='TextureProperties') or
+ ($nodename='TextureTransform') or
+ ($nodename='TextureTransform3D') or
+ ($nodename='TextureTransformMatrix3D') or
+ ($nodename='TimeSensor') or
+ ($nodename='Timerigger') or
+ ($nodename='ToneMappedVolumeStyle') or
+ ($nodename='TouchSensor') or
+ ($nodename='Transform') or
+ ($nodename='TriangleSet') or
+ ($nodename='TriangleSet2D') or
+ ($nodename='TwoSidedMaterial') or
+ ($nodename='UniversalJoint') or
+ ($nodename='Viewpoint') or
+ ($nodename='VolumeData') or
+ ($nodename='WorldInfo') or
+ ($nodename='X3D'))">
+                <xsl:text>true</xsl:text>
+            </xsl:when>
+            <xsl:when test="( string-length($nodename) > 0) and
+(($nodename='CADLayer') or
+ ($nodename='CADAssembly') or
+ ($nodename='CADPart') or
+ ($nodename='CADFace') or
+ ($nodename='IndexedQuadSet') or
+ ($nodename='QuadSet'))">
+                <!-- CAD Geometry component -->
+                <xsl:text>true</xsl:text>
+            </xsl:when>
+<!-- x3dom stubs
 
-<xsl:template name="escape-lessthan-characters"> <!-- &#60; is &lt; -->
+ ($nodename='GeoProximitySensor') or
+ ($nodename='Geospatial') or
+ ($nodename='GeoTouchSensor') or
+ 
+ -->
+            <xsl:otherwise>
+                <xsl:text>false</xsl:text>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    
+    <!-- ****** find-base-address:  callable template (recursive function) ****** -->
+    <!-- follows examples in Michael Kay's _XSLT_, first edition, pp. 551-554 -->
+    <xsl:template name="find-base-address">
+        <xsl:param name="url"><xsl:text></xsl:text><!-- default value is empty --></xsl:param>
+        <!-- debug
+        <xsl:message>
+            <xsl:text>$url=</xsl:text>
+            <xsl:value-of select="$url"/>
+        </xsl:message> -->
+        <xsl:choose>
+            <xsl:when test="not(contains($url,'/'))">
+                <!-- return value -->
+                <xsl:value-of select="$url"/>
+            </xsl:when>
+            <xsl:when test="(substring($url,string-length($url),1) = '/')">
+                <!-- return value -->
+                <xsl:value-of select="$url"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <!-- recurse -->
+                <xsl:call-template name="find-base-address">
+                    <xsl:with-param name="url" select="substring($url,1,string-length($url)-1)"/>
+                </xsl:call-template>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+
+    <xsl:template name="escape-special-characters">
         <xsl:param name="inputValue"><xsl:text><!-- default value is empty --></xsl:text></xsl:param>
         <xsl:variable name="inputString" select="string($inputValue)"/>
-  <!-- <xsl:text>//######&#10;</xsl:text> -->
-  <!-- <xsl:text>### inputString received: </xsl:text><xsl:value-of select="$inputString"/><xsl:text>&#10;</xsl:text> -->
-  <xsl:choose>
-    <xsl:when test="contains($inputString,'&#60;')">
-      <xsl:value-of select="substring-before($inputString,'&#60;')"/>
-        <xsl:text>&amp;lt;</xsl:text>
-        <xsl:call-template name="escape-lessthan-characters">
-          <xsl:with-param name="inputValue" select="substring-after($inputString,'&#60;')"/>
-        </xsl:call-template>
-    </xsl:when>
-    <xsl:otherwise>
-      <xsl:value-of select="$inputString"/>
-    </xsl:otherwise>
-  </xsl:choose>
-</xsl:template>
-
-
-<xsl:template name="escape-double-ampersand-characters"> <!-- &#38; is &amp; -->
-  <xsl:param name="inputString" select="0"/>
-  <xsl:text>//###amp###&#10;</xsl:text>
-  <!-- <xsl:text>### inputString received: </xsl:text><xsl:value-of select="$inputString"/><xsl:text>&#10;</xsl:text> -->
-  <xsl:if test="contains($inputString,'&#38;&#38;')">
-    <xsl:value-of select="substring-before($inputString,'&#38;&#38;')"/>
-    <xsl:text>&amp;amp;&amp;amp;</xsl:text>
-      <xsl:call-template name="escape-lessthan-characters">
-        <xsl:with-param name="inputValue" select="substring-after($inputString,'&#38;&#38;')"/>
-      </xsl:call-template>
-    <xsl:if test="substring-after($inputString,'&#38;&#38;')">
-    </xsl:if>
-  </xsl:if>
-</xsl:template>
-
-
-<xsl:template name="ID-link-index">
-<!-- bookmark index:  ExternProtoDeclare, ProtoDeclare, DEF -->
-<xsl:if test="(//*[@DEF]) or (//*[local-name()='ProtoDeclare']) or (//*[local-name()='ExternProtoDeclare'])">
-  <xsl:text>&#10;&#10;&lt;br /&gt;</xsl:text>
-  <!-- DEF -->
-  <xsl:text>&#10;&amp;lt;!-- </xsl:text>
-  <xsl:text>&#10;&lt;center&gt;</xsl:text>
-  <xsl:text>&#10;&lt;hr width="100%"/&gt;&#10;</xsl:text>
-  <xsl:if test="//*[local-name()='ExternProtoDeclare']">
-    <xsl:text>&lt;i&gt;Index&amp;nbsp;for&amp;nbsp;ExternProtoDeclare</xsl:text>
-    <xsl:if test="count(//*[local-name()='ExternProtoDeclare']) > 1">
-      <xsl:text>s</xsl:text>
-    </xsl:if>
-    <xsl:text>&lt;/i&gt;:&amp;nbsp;</xsl:text>
-    <xsl:for-each select="//*[local-name()='ExternProtoDeclare']">
-       <xsl:sort select="@DEF" order="ascending" case-order="upper-first" data-type="text"/>
-       <xsl:text>&lt;a href=&quot;#ExternProtoDeclare_</xsl:text><xsl:value-of select="@name"/><xsl:text>"&gt;</xsl:text>
-       <xsl:text>&lt;font color="purple"&gt;</xsl:text>
-       <xsl:value-of select="@name"/>
-       <xsl:text>&lt;/font&gt;</xsl:text>
-       <xsl:text>&lt;/a&gt;</xsl:text>
-       <xsl:if test="not(position()=last())">
-         <xsl:text>,&#10;</xsl:text>
-       </xsl:if>
-    </xsl:for-each>
-    <xsl:text>.  </xsl:text>
-  </xsl:if>
-  <xsl:if test="//*[local-name()='ProtoDeclare']">
-    <xsl:text>&lt;i&gt;Index&amp;nbsp;for&amp;nbsp;ProtoDeclare</xsl:text>
-    <xsl:if test="count(//*[local-name()='ProtoDeclare']) > 1">
-      <xsl:text>s</xsl:text>
-    </xsl:if>
-    <xsl:text>&lt;/i&gt;:&amp;nbsp;</xsl:text>
-    <xsl:for-each select="//*[local-name()='ProtoDeclare']">
-       <xsl:sort select="@DEF" order="ascending" case-order="upper-first" data-type="text"/>
-       <xsl:text>&lt;a href=&quot;#ProtoDeclare_</xsl:text><xsl:value-of select="@name"/><xsl:text>"&gt;</xsl:text>
-       <xsl:text>&lt;font color="purple"&gt;</xsl:text>
-       <xsl:value-of select="@name"/>
-       <xsl:text>&lt;/font&gt;</xsl:text>
-       <xsl:text>&lt;/a&gt;</xsl:text>
-       <xsl:if test="not(position()=last())">
-         <xsl:text>,&#10;</xsl:text>
-       </xsl:if>
-    </xsl:for-each>
-    <xsl:text>.  </xsl:text>
-    <xsl:if test="//*[local-name()='ExternProtoDeclare']">
-      <xsl:text>&#10;&lt;br /&gt;&#10;</xsl:text>
-    </xsl:if>
-  </xsl:if>
-  <xsl:if test="//*[@DEF]">
-    <xsl:text>&lt;i&gt;Index&amp;nbsp;for&amp;nbsp;DEF</xsl:text>
-    <xsl:if test="count(//*[@DEF]) > 1">
-      <xsl:text>s</xsl:text>
-    </xsl:if>
-    <xsl:text>&lt;/i&gt;:&amp;nbsp;</xsl:text>
-    <xsl:for-each select="//*[@DEF]">
-       <xsl:sort select="@DEF" order="ascending" case-order="upper-first" data-type="text"/>
-       <xsl:text>&lt;a href=&quot;#</xsl:text><xsl:value-of select="@DEF"/><xsl:text>"&gt;</xsl:text>
-       <xsl:text>&lt;font color="maroon"&gt;</xsl:text>
-       <xsl:value-of select="@DEF"/>
-       <xsl:text>&lt;/font&gt;</xsl:text>
-       <xsl:text>&lt;/a&gt;</xsl:text>
-       <xsl:if test="not(position()=last())">
-         <xsl:text>,&#10;</xsl:text>
-       </xsl:if>
-    </xsl:for-each>
-    <xsl:text>.  </xsl:text>
-    <xsl:if test="//*[local-name()='ProtoDeclare'] or //*[local-name()='ExternProtoDeclare']">
-      <xsl:text>&#10;&lt;br /&gt;&#10;</xsl:text>
-    </xsl:if>
-  </xsl:if>
-  <xsl:text>&#10;&lt;hr width="100%" /&gt;</xsl:text>
-  <xsl:text>&#10;&lt;/center&gt;&#10;</xsl:text>
-  <xsl:text>--&amp;gt;</xsl:text>
-</xsl:if>
-<xsl:text>&#10;&lt;br /&gt;&#10;&#10;</xsl:text>
-</xsl:template>
-
+        <!-- debug:  <xsl:text>//######&#10;</xsl:text> -->
+        <!-- debug:  <xsl:text>### inputString received: </xsl:text><xsl:value-of select="$inputString"/><xsl:text>&#10;</xsl:text> -->
+		<xsl:variable name="apos">'</xsl:variable>
+		<xsl:variable name="quot">"</xsl:variable>
+        <xsl:choose>
+            <!-- handle preceding &quot; marks first -->
+            <xsl:when test="contains($inputString,$quot) and not(contains(substring-before($inputString,$quot),'&#60;')) and not(contains(substring-before($inputString,$quot),$apos))">
+                <xsl:value-of select="substring-before($inputString,$quot)"/>
+                <xsl:text disable-output-escaping="yes">&amp;quot;</xsl:text>
+                <xsl:call-template name="escape-special-characters">
+                    <xsl:with-param name="inputValue" select="substring-after($inputString,$quot)"/>
+                </xsl:call-template>
+            </xsl:when>
+            <!-- &#60; is &lt; -->
+            <xsl:when test="contains($inputString,'&#60;') and not(contains(substring-before($inputString,'&#60;'),$quot)) and not(contains(substring-before($inputString,'&#60;'),$apos))">
+                <xsl:value-of select="substring-before($inputString,'&#60;')"/>
+                <xsl:text disable-output-escaping="yes">&amp;lt;</xsl:text>
+                <xsl:call-template name="escape-special-characters">
+                    <xsl:with-param name="inputValue" select="substring-after($inputString,'&#60;')"/>
+                </xsl:call-template>
+            </xsl:when>
+            <!-- &apos; is apostrophe -->
+            <xsl:when test="contains($inputString,$apos) and not(contains(substring-before($inputString,$apos),$quot)) and not(contains(substring-before($inputString,$apos),'&#60;'))">
+                <xsl:value-of select="substring-before($inputString,$apos)"/>
+                <xsl:text disable-output-escaping="yes">&amp;apos;</xsl:text>
+                <xsl:call-template name="escape-special-characters">
+                    <xsl:with-param name="inputValue" select="substring-after($inputString,$apos)"/>
+                </xsl:call-template>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="$inputString"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
 
 </xsl:stylesheet>
-

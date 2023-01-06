@@ -92,7 +92,7 @@ TODO:
 <!-- ===================================================================================== -->
 <!-- Annex  B Node type interfaces -->
   
-<xsl:result-document  href="CLanguageBinding.Part3.abstracts.html" method="html" omit-xml-declaration="yes" encoding="UTF-8" indent="yes">
+<xsl:result-document  href="CLanguageBinding.Part3.nodeTypeInterfaces.html" method="html" omit-xml-declaration="yes" encoding="UTF-8" indent="yes">
 
 <xsl:text disable-output-escaping="yes"><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 ]]></xsl:text>
@@ -110,11 +110,11 @@ TODO:
 	</xsl:element>
 	<xsl:element name="meta">
 		<xsl:attribute name="name"><xsl:text>identifier</xsl:text></xsl:attribute>
-		<xsl:attribute name="content"><xsl:text>https://www.web3d.org/documents/specifications/19777-2/V3.3/Part3/abstracts.html</xsl:text></xsl:attribute>
+		<xsl:attribute name="content"><xsl:text>https://www.web3d.org/documents/specifications/19777-2/V3.3/Part3/nodeTypeInterfaces.html</xsl:text></xsl:attribute>
 	</xsl:element>
 	<xsl:element name="meta">
 		<xsl:attribute name="name"><xsl:text>reference</xsl:text></xsl:attribute>
-		<xsl:attribute name="content"><xsl:text>https://www.web3d.org/x3d/stylesheets/CLanguageBinding.Part3.abstracts.html</xsl:text></xsl:attribute>
+		<xsl:attribute name="content"><xsl:text>https://www.web3d.org/x3d/stylesheets/CLanguageBinding.Part3.nodeTypeInterfaces.html</xsl:text></xsl:attribute>
 	</xsl:element>
         
         <xsl:call-template name="generate-html-meta-tags"/>
@@ -1536,7 +1536,7 @@ A.7.21 URLUnavailableException</h2>
 <!-- ===================================================================================== -->
 <!-- Annex C Node interfaces -->
   
-<xsl:result-document  href="CLanguageBinding.Part3.concretes.html" method="html" omit-xml-declaration="yes" encoding="UTF-8" indent="yes">
+<xsl:result-document  href="CLanguageBinding.Part3.nodeInterfaces.html" method="html" omit-xml-declaration="yes" encoding="UTF-8" indent="yes">
 
 <xsl:text disable-output-escaping="yes"><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 ]]></xsl:text>
@@ -1554,11 +1554,11 @@ A.7.21 URLUnavailableException</h2>
 	</xsl:element>
 	<xsl:element name="meta">
 		<xsl:attribute name="name"><xsl:text>identifier</xsl:text></xsl:attribute>
-		<xsl:attribute name="content"><xsl:text>https://www.web3d.org/documents/specifications/19777-2/V3.3/Part3/concretes.html</xsl:text></xsl:attribute>
+		<xsl:attribute name="content"><xsl:text>https://www.web3d.org/documents/specifications/19777-2/V3.3/Part3/nodeInterfaces.html</xsl:text></xsl:attribute>
 	</xsl:element>
 	<xsl:element name="meta">
 		<xsl:attribute name="name"><xsl:text>reference</xsl:text></xsl:attribute>
-		<xsl:attribute name="content"><xsl:text>https://www.web3d.org/x3d/stylesheets/CLanguageBinding.Part3.concretes.html</xsl:text></xsl:attribute>
+		<xsl:attribute name="content"><xsl:text>https://www.web3d.org/x3d/stylesheets/CLanguageBinding.Part3.nodeInterfaces.html</xsl:text></xsl:attribute>
 	</xsl:element>
         
         <xsl:call-template name="generate-html-meta-tags"/>
@@ -1864,7 +1864,7 @@ A.7.21 URLUnavailableException</h2>
 
 <h2><a name="ClassDerivation"></a>B.2.3 Structure derivation</h2>
 
-<p>	Each node interface shall extend the interfaces defined in  <a href="abstracts.html">Annex A</a> as appropriate
+<p>	Each node interface shall extend the interfaces defined in  <a href="nodeTypeInterfaces.html">Annex A</a> as appropriate
 	for the abstract node requirements for each node type.
 </p>
 <blockquote>
@@ -1884,7 +1884,7 @@ A.7.21 URLUnavailableException</h2>
 
 <h2><a name="MethodDeclarations"></a>B.2.4 Function declarations</h2><p>
 	Within each node interface there shall be functions to read and set the values for every field. The naming convention for each field function shall follow the definition in
-	<a href="abstracts.html#Conventions">A.1.2 Conventions</a> for the abstract
+	<a href="nodeTypeInterfaces.html#Conventions">A.1.2 Conventions</a> for the abstract
 	interfaces. Where fields are already covered by the abstract interface, the concrete
 	interface is not required to redeclare the same functions. The concrete interface shall
 	declare functions that are not defined by the abstract node representation.</p>
@@ -3010,7 +3010,7 @@ A.7.21 URLUnavailableException</h2>
                     <xsl:when test="//xs:complexType[@name = $baseInterface]">
                         <xsl:element name="a">
                             <xsl:attribute name="href">
-                                <!-- abstracts.html -->
+                                <!-- nodeTypeInterfaces.html -->
                                 <xsl:text>#</xsl:text>
                                 <xsl:value-of select="$baseInterface"/>
                             </xsl:attribute>
@@ -3049,7 +3049,7 @@ A.7.21 URLUnavailableException</h2>
                         <xsl:when test="//xs:complexType[@name = $ancestorInterface1]">
                             <xsl:element name="a">
                                 <xsl:attribute name="href">
-                                    <!-- abstracts.html -->
+                                    <!-- nodeTypeInterfaces.html -->
                                     <xsl:text>#</xsl:text>
                                     <xsl:value-of select="$ancestorInterface1"/>
                                 </xsl:attribute>
@@ -3088,7 +3088,7 @@ A.7.21 URLUnavailableException</h2>
                         <xsl:when test="//xs:complexType[@name = $ancestorInterface2]">
                             <xsl:element name="a">
                                 <xsl:attribute name="href">
-                                    <!-- abstracts.html -->
+                                    <!-- nodeTypeInterfaces.html -->
                                     <xsl:text>#</xsl:text>
                                     <xsl:value-of select="$ancestorInterface2"/>
                                 </xsl:attribute>
@@ -3127,7 +3127,7 @@ A.7.21 URLUnavailableException</h2>
                         <xsl:when test="//xs:complexType[@name = $ancestorInterface3]">
                             <xsl:element name="a">
                                 <xsl:attribute name="href">
-                                    <!-- abstracts.html -->
+                                    <!-- nodeTypeInterfaces.html -->
                                     <xsl:text>#</xsl:text>
                                     <xsl:value-of select="$ancestorInterface3"/>
                                 </xsl:attribute>
@@ -3159,7 +3159,7 @@ A.7.21 URLUnavailableException</h2>
                         <xsl:when test="//xs:complexType[@name = $ancestorInterface4]">
                             <xsl:element name="a">
                                 <xsl:attribute name="href">
-                                    <!-- abstracts.html -->
+                                    <!-- nodeTypeInterfaces.html -->
                                     <xsl:text>#</xsl:text>
                                     <xsl:value-of select="$ancestorInterface4"/>
                                 </xsl:attribute>
@@ -3200,11 +3200,11 @@ A.7.21 URLUnavailableException</h2>
                         <xsl:value-of select="$specificationIndexUrl"/>
                         <xsl:text>versionContent.html#</xsl:text>
                         -->
-                        <xsl:text>abstracts.html#</xsl:text>
+                        <xsl:text>nodeTypeInterfaces.html#</xsl:text>
                         <xsl:value-of select="xs:complexType/xs:complexContent/xs:extension/@base"/>
                     </xsl:attribute>
                     <xsl:attribute name="target">
-                        <xsl:text>_abstracts</xsl:text>
+                        <xsl:text>_nodeTypeInterfaces</xsl:text>
                     </xsl:attribute>
                     <xsl:value-of select="xs:complexType/xs:complexContent/xs:extension/@base"/>
                 </xsl:element>
@@ -3217,11 +3217,11 @@ A.7.21 URLUnavailableException</h2>
                         <xsl:value-of select="$specificationIndexUrl"/>
                         <xsl:text>versionContent.html#</xsl:text>
                         -->
-                        <xsl:text>abstracts.html#</xsl:text>
+                        <xsl:text>nodeTypeInterfaces.html#</xsl:text>
                         <xsl:value-of select="@default"/>
                     </xsl:attribute>
                     <xsl:attribute name="target">
-                        <xsl:text>_abstracts</xsl:text>
+                        <xsl:text>_nodeTypeInterfaces</xsl:text>
                     </xsl:attribute>
                     <xsl:value-of select="@default"/>
                 </xsl:element>
@@ -4258,7 +4258,7 @@ node.source {background-color:#f4f4f4;}
     <!-- inheritance test #1: check elements derive from node type interface and not abstract objects; ignore special cases -->
     <xsl:for-each select="//xs:element[string-length(@name) > 0]/xs:complexType/xs:complexContent/
                           *[not(starts-with(@base,'X3D') and ends-with(@base,'Node')) and 
-                            not(@base='SceneGraphStructureStatement') and not(@base='X3DMetadataObject') and not(@base='X3DPrototype') and not(@base='X3DNodeMixedContent')]">
+                            not(@base='SceneGraphStructureStatement') and not(@base='X3DStatement') and not(@base='X3DMetadataObject') and not(@base='X3DPrototype') and not(@base='X3DNodeMixedContent')]">
         <xsl:if test="not(ancestor::xs:element/xs:annotation/xs:appinfo/xs:attribute[@name='additionalInterface' and starts-with(@default,'X3D') and ends-with(@default,'Node')])">
             <xsl:message>
                 <xsl:text>*** Schema error: element type not derived from X3D*Node interface. </xsl:text>

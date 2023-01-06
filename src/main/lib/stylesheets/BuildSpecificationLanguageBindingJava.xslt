@@ -2080,7 +2080,7 @@ declare methods that are not defined by the abstract node representation.</p>
             <a href="https://www.web3d.org/specifications/JavaLanguageBinding/Part2/nodeInterfaces.html">https://www.web3d.org/specifications/JavaLanguageBinding/Part2/nodeInterfaces.html</a>
             <br />
             ISO-approved version online at
-            <a href="https://www.web3d.org/documents/specifications/19777-2/V3.3/Part2/concretes.html">https://www.web3d.org/documents/specifications/19777-2/V3.3/Part2/concretes.html</a>
+            <a href="https://www.web3d.org/documents/specifications/19777-2/V3.3/Part2/nodeInterfaces.html">https://www.web3d.org/documents/specifications/19777-2/V3.3/Part2/nodeInterfaces.html</a>
         </p>
 
 	<xsl:text>&#10;</xsl:text>
@@ -4331,8 +4331,9 @@ node.source {background-color:#f4f4f4;}
     <!-- inheritance test #1: check elements derive from node type interface and not abstract objects; ignore special cases -->
     <xsl:for-each select="//xs:element[string-length(@name) > 0]/xs:complexType/xs:complexContent/
                           *[not(starts-with(@base,'X3D') and ends-with(@base,'Node')) and 
-                            not(@base='SceneGraphStructureStatement') and not(@base='X3DMetadataObject') and not(@base='X3DPrototype') and not(@base='X3DNodeMixedContent')]">
-        <xsl:if test="not(ancestor::xs:element/xs:annotation/xs:appinfo/xs:attribute[@name='additionalInterface' and starts-with(@default,'X3D') and ends-with(@default,'Node')])">
+                            not(@base='SceneGraphStructureStatement') and not(@base='X3DStatement') and not(@base='X3DMetadataObject') and not(@base='X3DPrototype') and not(@base='X3DNodeMixedContent')]">
+        <xsl:if test="not(ancestor::xs:element/xs:annotation/xs:appinfo/xs:attribute[@name='additionalInterface' and starts-with(@default,'X3D') and ends-with(@default,'Node')])
+                      ">
             <xsl:message>
                 <xsl:text>*** Schema error: element type not derived from X3D*Node interface. </xsl:text>
                 <xsl:text>[xs:element name="</xsl:text>
@@ -4372,7 +4373,7 @@ node.source {background-color:#f4f4f4;}
 			</xsl:when>
 			<xsl:when test="count(ancestor::*[(name()='xs:enumeration')]) = 0">
 			  <xsl:message>
-				<xsl:text>*** Schema error: </xsl:text>
+				<xsl:text>*** Schema info: </xsl:text>
 				<xsl:choose>
 					<xsl:when test='ancestor::xs:complexType'>
 						<xsl:text>[xs:complexType name="</xsl:text>

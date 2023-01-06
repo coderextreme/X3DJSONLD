@@ -839,7 +839,7 @@ Additional references of interest:
 		<xsl:param name="saiAbstractSpecificationRelativeUrl"><xsl:text></xsl:text></xsl:param>
 		<xsl:param name="x3dAbstractSpecificationSection"><xsl:text></xsl:text></xsl:param>
 		<xsl:param name="x3dAbstractSpecificationRelativeUrl"><xsl:text></xsl:text></xsl:param>
-		<!-- How to Write Doc Comments for the Javadoc Tool http://www.oracle.com/technetwork/articles/java/index-137868.html -->
+		<!-- How to Write Doc Comments for the Javadoc Tool https://www.oracle.com/technetwork/articles/java/index-137868.html -->
 		<xsl:param name=       "javadocBlock"/> <!-- typically has additional javadoc for each member -->
 		<xsl:param name=     "interfaceBlock"/> <!-- top-level insertion for interface signatures -->
 		<xsl:param name="implementationBlock"/> <!-- top-level insertion for class implementations -->
@@ -969,9 +969,9 @@ Additional references of interest:
             <!-- saxon:line-length="180" 
                  line-length blocked from saxonHE in later editions following 9.7 :(
                  default saxonHE 9.8+ line length appears to be , which is harmful
-                 http://www.saxonica.com/documentation/#!changes/serialization/9.8-9.9
-                 http://www.saxonica.com/documentation/#!extensions/output-extras/serialization-parameters -->
-			<!-- http://www.saxonica.com/documentation9.5/extensions/output-extras/line-length.html -->
+                 https://www.saxonica.com/documentation/#!changes/serialization/9.8-9.9
+                 https://www.saxonica.com/documentation/#!extensions/output-extras/serialization-parameters -->
+			<!-- https://www.saxonica.com/documentation9.5/extensions/output-extras/line-length.html -->
 			<!-- method="html" escapes inserted tooltips -->
 			
 			<xsl:value-of select="$licenseBlock"/>
@@ -1475,20 +1475,20 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 				<xsl:text disable-output-escaping="yes"> Metadata terms for consistent referencing:</xsl:text>
 				<xsl:text>&#10;</xsl:text>
 				<xsl:text disable-output-escaping="yes"> * &lt;ul&gt;&#10;</xsl:text>
-				<xsl:text disable-output-escaping="yes"> * &lt;li&gt; Dublin Core Metadata Initiative (DCMI): &lt;a href="http://www.dublincore.org/documents/dcmi-terms" target="_blank"&gt;Terms&lt;/a&gt; and </xsl:text>
-				<xsl:text disable-output-escaping="yes"> &lt;a href="http://www.dublincore.org/documents/dces" target="_blank"&gt;Element Set&lt;/a&gt; &lt;/li&gt;&#10;</xsl:text>
+				<xsl:text disable-output-escaping="yes"> * &lt;li&gt; Dublin Core Metadata Initiative (DCMI): &lt;a href="https://www.dublincore.org/documents/dcmi-terms" target="_blank"&gt;Terms&lt;/a&gt; and </xsl:text>
+				<xsl:text disable-output-escaping="yes"> &lt;a href="https://www.dublincore.org/documents/dces" target="_blank"&gt;Element Set&lt;/a&gt; &lt;/li&gt;&#10;</xsl:text>
 				<xsl:text disable-output-escaping="yes"> * &lt;li&gt; HTML5 section 4.2.5: &lt;a href="https://www.w3.org/TR/html5/document-metadata.html#the-meta-element" target="_blank"&gt;The meta element&lt;/a&gt; &lt;/li&gt;&#10;</xsl:text>
-				<xsl:text disable-output-escaping="yes"> * &lt;li&gt; HTML4 section 7.4.4: &lt;a href="http://www.w3.org/TR/html4/struct/global.html#h-7.4.4" target="_blank"&gt;Meta data&lt;/a&gt; &lt;/li&gt;&#10;</xsl:text>
-				<xsl:text disable-output-escaping="yes"> * &lt;li&gt; &lt;a href="http://vancouver-webpages.com/META" target="_blank"&gt;Dictionary of HTML META Tags&lt;/a&gt; </xsl:text>
-				<xsl:text disable-output-escaping="yes">   (&lt;a href="http://vancouver-webpages.com/META/about-mk-metas2.html" target="_blank"&gt;About&lt;/a&gt;) &lt;/li&gt;&#10;</xsl:text>
+				<xsl:text disable-output-escaping="yes"> * &lt;li&gt; HTML4 section 7.4.4: &lt;a href="https://www.w3.org/TR/html4/struct/global.html#h-7.4.4" target="_blank"&gt;Meta data&lt;/a&gt; &lt;/li&gt;&#10;</xsl:text>
+				<xsl:text disable-output-escaping="yes"> * &lt;li&gt; &lt;a href="https://vancouver-webpages.com/META" target="_blank"&gt;Dictionary of HTML META Tags&lt;/a&gt; </xsl:text>
+				<xsl:text disable-output-escaping="yes">   (&lt;a href="https://vancouver-webpages.com/META/about-mk-metas2.html" target="_blank"&gt;About&lt;/a&gt;) &lt;/li&gt;&#10;</xsl:text>
 				<xsl:text disable-output-escaping="yes"> * &lt;/ul&gt;&#10;</xsl:text>
 				<xsl:text> * </xsl:text>
 				<xsl:text disable-output-escaping="yes"> Metadata terms for language codes:</xsl:text>
 				<xsl:text>&#10;</xsl:text>
 				<xsl:text disable-output-escaping="yes"> * &lt;ul&gt;&#10;</xsl:text>
 				<xsl:text disable-output-escaping="yes"> * &lt;li&gt; IETF Best Current Practice (BCP) 47: &lt;a href="https://tools.ietf.org/html/bcp47" target="_blank"&gt;Tags for Identifying Languages&lt;/a&gt; &lt;/li&gt;&#10;</xsl:text>
-				<xsl:text disable-output-escaping="yes"> * &lt;li&gt; ISO 639-2: &lt;a href="http://www.loc.gov/standards/iso639-2/langhome.html" target="_blank"&gt;Codes for the Representation of Names of Languages&lt;/a&gt; &lt;/li&gt;&#10;</xsl:text>
-				<xsl:text disable-output-escaping="yes"> * &lt;li&gt; Internet Assigned Numbers Authority (IANA) Protocol Registries: &lt;a href="http://www.iana.org/protocols#index_L" target="_blank"&gt;Language Tags&lt;/a&gt; &lt;/li&gt;&#10;</xsl:text>
+				<xsl:text disable-output-escaping="yes"> * &lt;li&gt; ISO 639-2: &lt;a href="https://www.loc.gov/standards/iso639-2/langhome.html" target="_blank"&gt;Codes for the Representation of Names of Languages&lt;/a&gt; &lt;/li&gt;&#10;</xsl:text>
+				<xsl:text disable-output-escaping="yes"> * &lt;li&gt; Internet Assigned Numbers Authority (IANA) Protocol Registries: &lt;a href="https://www.iana.org/protocols#index_L" target="_blank"&gt;Language Tags&lt;/a&gt; &lt;/li&gt;&#10;</xsl:text>
 				<xsl:text disable-output-escaping="yes"> * &lt;/ul&gt;&#10;</xsl:text>
 				<xsl:text>&#10;</xsl:text>
 				<xsl:text> * </xsl:text>
@@ -1504,9 +1504,9 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 				<xsl:text disable-output-escaping="yes"> * Scale-conversion constants provide correct names and values for common conversion factors. References:</xsl:text>
 				<xsl:text>&#10;</xsl:text>
 				<xsl:text disable-output-escaping="yes"> * &lt;ul&gt;&#10;</xsl:text>
-				<xsl:text disable-output-escaping="yes"> * &lt;li&gt; &lt;a href="http://www.unit-conversion.info" target="_blank"&gt;Unit conversion&lt;/a&gt; website &lt;/li&gt;&#10;</xsl:text>
-				<xsl:text disable-output-escaping="yes"> * &lt;li&gt; &lt;a href="http://en.wikipedia.org/wiki/Newton_%28unit%29#Conversion_factors" target="_blank"&gt;Wikipedia Conversion factors, units of force&lt;/a&gt; &lt;/li&gt;&#10;</xsl:text>
-				<xsl:text disable-output-escaping="yes"> * &lt;li&gt; &lt;a href="http://www.unitsconversion.com.ar/massunitsconversion/index.htm" target="_blank"&gt;Unit conversion&lt;/a&gt; website &lt;/li&gt;&#10;</xsl:text>
+				<xsl:text disable-output-escaping="yes"> * &lt;li&gt; &lt;a href="https://www.unit-conversion.info" target="_blank"&gt;Unit conversion&lt;/a&gt; website &lt;/li&gt;&#10;</xsl:text>
+				<xsl:text disable-output-escaping="yes"> * &lt;li&gt; &lt;a href="https://en.wikipedia.org/wiki/Newton_%28unit%29#Conversion_factors" target="_blank"&gt;Wikipedia Conversion factors, units of force&lt;/a&gt; &lt;/li&gt;&#10;</xsl:text>
+				<xsl:text disable-output-escaping="yes"> * &lt;li&gt; &lt;a href="https://www.unitsconversion.com.ar/massunitsconversion/index.htm" target="_blank"&gt;Unit conversion&lt;/a&gt; website &lt;/li&gt;&#10;</xsl:text>
 				<xsl:text disable-output-escaping="yes"> * &lt;/ul&gt;&#10;</xsl:text>
 				<xsl:text> * </xsl:text>
 				<xsl:text disable-output-escaping="yes">&lt;br&gt;</xsl:text><!-- line break -->
@@ -2614,7 +2614,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 									</xsl:if>
 									<xsl:if test="(string-length(../@simpleType) > 0) and (ends-with(../@simpleType,'Choices') or ends-with(../@simpleType,'Values'))">
 										<xsl:text>&#10;</xsl:text>
-                                                                                <xsl:text disable-output-escaping="yes"><![CDATA[	 * @see <a href="http://web3d.org/specifications/X3dSchemaDocumentation4.0/x3d-4.0_]]></xsl:text> 
+                                                                                <xsl:text disable-output-escaping="yes"><![CDATA[	 * @see <a href="https://web3d.org/specifications/X3dSchemaDocumentation4.0/x3d-4.0_]]></xsl:text> 
 										<xsl:value-of select="../@simpleType"/>
 										<xsl:text>.html</xsl:text>
                                                                                 <xsl:text disable-output-escaping="yes"><![CDATA[">XML Schema: ]]></xsl:text> 
@@ -2622,7 +2622,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
                                                                                 <xsl:text disable-output-escaping="yes"><![CDATA[</a>]]></xsl:text> 
 									</xsl:if>
 									<xsl:if test="(string-length(../@baseType) > 0) and (ends-with(../@baseType,'Choices') or ends-with(../@baseType,'Values'))">
-                                                                                <xsl:text disable-output-escaping="yes"><![CDATA[ * @see <a href="http://web3d.org/specifications/X3dSchemaDocumentation4.0/x3d-4.0_]]></xsl:text> 
+                                                                                <xsl:text disable-output-escaping="yes"><![CDATA[ * @see <a href="https://web3d.org/specifications/X3dSchemaDocumentation4.0/x3d-4.0_]]></xsl:text> 
 										<xsl:value-of select="../@baseType"/>
 										<xsl:text>.html</xsl:text>
                                                                                 <xsl:text disable-output-escaping="yes"><![CDATA[>>XML Schema: ]]></xsl:text> 
@@ -4019,7 +4019,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 										
 	/**
 	 * File extension for Java source code, with dot prepended: <i>.java</i>
-	 * @see <a href="http://www.oracle.com/technetwork/java/javase/overview">Java Platform, Standard Edition (Java SE)</a>
+	 * @see <a href="https://www.oracle.com/technetwork/java/javase/overview">Java Platform, Standard Edition (Java SE)</a>
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Java" target="_blank">X3D Scene Authoring Hints: Java</a>
 	 */
 	public static final String FILE_EXTENSION_JAVA = ".java";
@@ -4060,7 +4060,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 	 * File extension for GZIP compressed file, with dot prepended: <i>.gz</i>
 	 * @see <a href="https://en.wikipedia.org/wiki/Gzip">Wikipedia: gzip file format</a>
 	 * @see <a href="https://docs.oracle.com/javase/8/docs/api/java/util/zip/package-summary.html">Java Package java.util.zip for ZIP and GZIP file formats</a>
-	 * @see <a href="http://www.oracle.com/technetwork/articles/java/compress-1565076.html">Compressing and Decompressing Data Using Java APIs by Qusay H. Mahmoud</a>
+	 * @see <a href="https://www.oracle.com/technetwork/articles/java/compress-1565076.html">Compressing and Decompressing Data Using Java APIs by Qusay H. Mahmoud</a>
 	 */
 	public static final String FILE_EXTENSION_GZIP = ".gz";
 										
@@ -4068,7 +4068,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 	 * File extension for ZIP compressed file, with dot prepended: <i>.zip</i>
 	 * @see <a href="https://en.wikipedia.org/wiki/Zip_(file_format)">Wikipedia: zip file format</a>
 	 * @see <a href="https://docs.oracle.com/javase/8/docs/api/java/util/zip/package-summary.html">Java Package java.util.zip for ZIP and GZIP file formats</a>
-	 * @see <a href="http://www.oracle.com/technetwork/articles/java/compress-1565076.html">Compressing and Decompressing Data Using Java APIs by Qusay H. Mahmoud</a>
+	 * @see <a href="https://www.oracle.com/technetwork/articles/java/compress-1565076.html">Compressing and Decompressing Data Using Java APIs by Qusay H. Mahmoud</a>
 	 */
 	public static final String FILE_EXTENSION_ZIP = ".zip";
 
@@ -4218,8 +4218,8 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 			System.out.println (errorNotice);
 		}
 		
-		// http://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html
-		// http://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html
+		// https://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html
+		// https://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html
 		Charset charset = Charset.forName(ConfigurationProperties.XML_ENCODING_DECLARATION_DEFAULT); // "UTF-8"
 									
 		try
@@ -4296,8 +4296,8 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 			System.out.println (errorNotice);
 		}
 		
-		// http://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html
-		// http://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html
+		// https://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html
+		// https://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html
 		Charset charset = Charset.forName(ConfigurationProperties.XML_ENCODING_DECLARATION_DEFAULT); // "UTF-8"
 		
 		try
@@ -4374,8 +4374,8 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 			System.out.println (errorNotice);
 		}
 		
-		// http://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html
-		// http://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html
+		// https://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html
+		// https://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html
 		Charset charset = Charset.forName(ConfigurationProperties.XML_ENCODING_DECLARATION_DEFAULT); // "UTF-8"
 		
 		try
@@ -4455,8 +4455,8 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 * @see SFString#isNMTOKEN(String)
 	 * @see SFString#meetsX3dInteroperabilityNamingConventions(String)
 	 * @see ConfigurationProperties#X3DJSAIL_JAR_RELEASE_VERSIONS
-	 * @see <a href="http://www.saxonica.com/documentation/index.html#!using-xsl/embedding">Saxonica &gt; Saxon &gt; Using XSLT &gt; Invoking XSLT from an application</a>
-	 * @see <a href="http://saxon.sourceforge.net/#F9.7HE">Saxon-HE 9.7</a>
+	 * @see <a href="https://www.saxonica.com/documentation/index.html#!using-xsl/embedding">Saxonica &gt; Saxon &gt; Using XSLT &gt; Invoking XSLT from an application</a>
+	 * @see <a href="https://saxon.sourceforge.net/#F9.7HE">Saxon-HE 9.7</a>
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/jaxp/xslt/transformingXML.html">Java Tutorials: Transforming XML Data with XSLT</a>
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/jaxp/examples/xslt_samples.zip">Java Tutorials: Transforming XML Data with XSLT, sample files</a>
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/essential/io/file.html#textfiles">Buffered I/O Methods for Text Files</a>
@@ -4468,7 +4468,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 * @param parameterValue2 second stylesheet parameter value
 	 * @return File containing result (if operation succeeds), null otherwise
 	 */
-    // http://docs.oracle.com/javase/8/docs/technotes/guides/javadoc/deprecation/deprecation.html
+    // https://docs.oracle.com/javase/8/docs/technotes/guides/javadoc/deprecation/deprecation.html
     // https://docs.oracle.com/javase/tutorial/java/annotations/predefined.html
     // https://stackoverflow.com/questions/1858021/suppress-deprecated-import-warning-in-java
     @SuppressWarnings("deprecation")
@@ -4509,8 +4509,8 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		if (ConfigurationProperties.isDebugModeActive())
 			errorNotice += "[diagnostic] intermediateX3DFilePath=" + intermediateX3DFilePath.toAbsolutePath() + "\n";
 
-		// http://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html
-		// http://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html
+		// https://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html
+		// https://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html
 		Charset charset = Charset.forName(ConfigurationProperties.XML_ENCODING_DECLARATION_DEFAULT); // "UTF-8"
 										
 		try
@@ -4712,8 +4712,8 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 * @see X3D#toFileX3DOM(String)
 	 * @see X3D#toFileX_ITE(String,String)
 	 * @see X3D#toFileCobweb(String,String)
-	 * @see <a href="http://www.saxonica.com/documentation/index.html#!using-xsl/embedding">Saxonica &gt; Saxon &gt; Using XSLT &gt; Invoking XSLT from an application</a>
-	 * @see <a href="http://saxon.sourceforge.net/#F9.7HE">Saxon-HE 9.7</a>
+	 * @see <a href="https://www.saxonica.com/documentation/index.html#!using-xsl/embedding">Saxonica &gt; Saxon &gt; Using XSLT &gt; Invoking XSLT from an application</a>
+	 * @see <a href="https://saxon.sourceforge.net/#F9.7HE">Saxon-HE 9.7</a>
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/jaxp/xslt/transformingXML.html">Java Tutorials: Transforming XML Data with XSLT</a>
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/jaxp/examples/xslt_samples.zip">Java Tutorials: Transforming XML Data with XSLT, sample files</a>
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/essential/io/file.html#textfiles">Buffered I/O Methods for Text Files</a>
@@ -5189,7 +5189,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	/**
 	 * Serialize scene graph using STYLESHEET_X3DOM (with appropriate parameters) to create a new X_ITE html page as a string.
 	 * @see X3D#toFileX_ITE(String,String)
-	 * @see <a href="http://create3000.de/x_ite" target="_blank">X_ITE open-source X3D player</a>
+	 * @see <a href="https://create3000.de/x_ite" target="_blank">X_ITE open-source X3D player</a>
 	 * @see X3D#FILE_EXTENSION_HTML
 	 * @see X3D#FILE_EXTENSION_XHTML
 	 * @see ConfigurationProperties#STYLESHEET_X3DOM
@@ -5240,8 +5240,8 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 * @see <a href="../../../../../../examples/HelloWorldProgramOutput.json" target="_blank">examples/HelloWorldProgramOutput.json</a>
 	 * @see <a href="https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding">X3D JSON Encoding</a>
 	 * @see <a href="https://www.web3d.org/x3d/stylesheets/X3dToJson.html">X3D to JSON Stylesheet Converter</a>
-	 * @see <a href="http://www.saxonica.com/documentation/index.html#!using-xsl/embedding">Saxonica &gt; Saxon &gt; Using XSLT &gt; Invoking XSLT from an application</a>
-	 * @see <a href="http://saxon.sourceforge.net/#F9.7HE">Saxon-HE 9.7</a>
+	 * @see <a href="https://www.saxonica.com/documentation/index.html#!using-xsl/embedding">Saxonica &gt; Saxon &gt; Using XSLT &gt; Invoking XSLT from an application</a>
+	 * @see <a href="https://saxon.sourceforge.net/#F9.7HE">Saxon-HE 9.7</a>
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/jaxp/xslt/transformingXML.html">Java Tutorials: Transforming XML Data with XSLT</a>
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/jaxp/examples/xslt_samples.zip">Java Tutorials: Transforming XML Data with XSLT, sample files</a>
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/essential/io/file.html#textfiles">Buffered I/O Methods for Text Files</a>
@@ -5269,8 +5269,8 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 * @see ConfigurationProperties#isNormalizeCommentWhitespace()
 	 * @see <a href="../../../../../../lib/stylesheets/X3dToPython.xslt" target="_blank">X3dToPython.xslt</a>
 	 * @see <a href="../../../../../../examples/HelloWorldProgramOutput.py" target="_blank">examples/HelloWorldProgramOutput.py</a>
-	 * @see <a href="http://www.saxonica.com/documentation/index.html#!using-xsl/embedding">Saxonica &gt; Saxon &gt; Using XSLT &gt; Invoking XSLT from an application</a>
-	 * @see <a href="http://saxon.sourceforge.net/#F9.7HE">Saxon-HE 9.7</a>
+	 * @see <a href="https://www.saxonica.com/documentation/index.html#!using-xsl/embedding">Saxonica &gt; Saxon &gt; Using XSLT &gt; Invoking XSLT from an application</a>
+	 * @see <a href="https://saxon.sourceforge.net/#F9.7HE">Saxon-HE 9.7</a>
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/jaxp/xslt/transformingXML.html">Java Tutorials: Transforming XML Data with XSLT</a>
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/jaxp/examples/xslt_samples.zip">Java Tutorials: Transforming XML Data with XSLT, sample files</a>
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/essential/io/file.html#textfiles">Buffered I/O Methods for Text Files</a>
@@ -5311,8 +5311,8 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 * @see <a href="../../../../../../examples/HelloWorldProgramOutput.java" target="_blank">examples/HelloWorldProgramOutput.java</a>
 	 * @see <a href="https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding">X3D JSON Encoding</a>
 	 * @see <a href="https://www.web3d.org/x3d/stylesheets/X3dToJson.html">X3D to JSON Stylesheet Converter</a>
-	 * @see <a href="http://www.saxonica.com/documentation/index.html#!using-xsl/embedding">Saxonica &gt; Saxon &gt; Using XSLT &gt; Invoking XSLT from an application</a>
-	 * @see <a href="http://saxon.sourceforge.net/#F9.7HE">Saxon-HE 9.7</a>
+	 * @see <a href="https://www.saxonica.com/documentation/index.html#!using-xsl/embedding">Saxonica &gt; Saxon &gt; Using XSLT &gt; Invoking XSLT from an application</a>
+	 * @see <a href="https://saxon.sourceforge.net/#F9.7HE">Saxon-HE 9.7</a>
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/jaxp/xslt/transformingXML.html">Java Tutorials: Transforming XML Data with XSLT</a>
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/jaxp/examples/xslt_samples.zip">Java Tutorials: Transforming XML Data with XSLT, sample files</a>
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/essential/io/file.html#textfiles">Buffered I/O Methods for Text Files</a>
@@ -5389,8 +5389,8 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 * @see SFString#meetsX3dInteroperabilityNamingConventions(String)
 	 * @see ConfigurationProperties#STYLESHEET_MODEL_META_TO_MARKDOWN
 	 * @see <a href="https://www.web3d.org/x3d/stylesheets/X3dTidy.html">X3D Tidy for Scene Cleanup, Corrections and Modifications</a>
-	 * @see <a href="http://www.saxonica.com/documentation/index.html#!using-xsl/embedding">Saxonica &gt; Saxon &gt; Using XSLT &gt; Invoking XSLT from an application</a>
-	 * @see <a href="http://saxon.sourceforge.net/#F9.7HE">Saxon-HE 9.7</a>
+	 * @see <a href="https://www.saxonica.com/documentation/index.html#!using-xsl/embedding">Saxonica &gt; Saxon &gt; Using XSLT &gt; Invoking XSLT from an application</a>
+	 * @see <a href="https://saxon.sourceforge.net/#F9.7HE">Saxon-HE 9.7</a>
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/jaxp/xslt/transformingXML.html">Java Tutorials: Transforming XML Data with XSLT</a>
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/jaxp/examples/xslt_samples.zip">Java Tutorials: Transforming XML Data with XSLT, sample files</a>
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/essential/io/file.html#textfiles">Buffered I/O Methods for Text Files</a>
@@ -5438,8 +5438,8 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 * @see SFString#meetsX3dInteroperabilityNamingConventions(String)
 	 * @see ConfigurationProperties#STYLESHEET_X3DTIDY
 	 * @see <a href="https://www.web3d.org/x3d/stylesheets/X3dTidy.html">X3D Tidy for Scene Cleanup, Corrections and Modifications</a>
-	 * @see <a href="http://www.saxonica.com/documentation/index.html#!using-xsl/embedding">Saxonica &gt; Saxon &gt; Using XSLT &gt; Invoking XSLT from an application</a>
-	 * @see <a href="http://saxon.sourceforge.net/#F9.7HE">Saxon-HE 9.7</a>
+	 * @see <a href="https://www.saxonica.com/documentation/index.html#!using-xsl/embedding">Saxonica &gt; Saxon &gt; Using XSLT &gt; Invoking XSLT from an application</a>
+	 * @see <a href="https://saxon.sourceforge.net/#F9.7HE">Saxon-HE 9.7</a>
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/jaxp/xslt/transformingXML.html">Java Tutorials: Transforming XML Data with XSLT</a>
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/jaxp/examples/xslt_samples.zip">Java Tutorials: Transforming XML Data with XSLT, sample files</a>
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/essential/io/file.html#textfiles">Buffered I/O Methods for Text Files</a>
@@ -5486,8 +5486,8 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 * @see SFString#isNMTOKEN(String)
 	 * @see SFString#meetsX3dInteroperabilityNamingConventions(String)
 	 * @see ConfigurationProperties#STYLESHEET_X3DOM
-	 * @see <a href="http://www.saxonica.com/documentation/index.html#!using-xsl/embedding">Saxonica &gt; Saxon &gt; Using XSLT &gt; Invoking XSLT from an application</a>
-	 * @see <a href="http://saxon.sourceforge.net/#F9.7HE">Saxon-HE 9.7</a>
+	 * @see <a href="https://www.saxonica.com/documentation/index.html#!using-xsl/embedding">Saxonica &gt; Saxon &gt; Using XSLT &gt; Invoking XSLT from an application</a>
+	 * @see <a href="https://saxon.sourceforge.net/#F9.7HE">Saxon-HE 9.7</a>
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/jaxp/xslt/transformingXML.html">Java Tutorials: Transforming XML Data with XSLT</a>
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/jaxp/examples/xslt_samples.zip">Java Tutorials: Transforming XML Data with XSLT, sample files</a>
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/essential/io/file.html#textfiles">Buffered I/O Methods for Text Files</a>
@@ -5522,7 +5522,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 										
 	/**
 	 * Create displayable scene page rendered with X_ITE (formerly Cobweb) using STYLESHEET_X3DOM and special settings, by serializing XML syntax within an XHTML file having extension <i>.xhtml</i>.
-	 * @see <a href="http://create3000.de/x_ite" target="_blank">X_ITE open-source X3D player</a>
+	 * @see <a href="https://create3000.de/x_ite" target="_blank">X_ITE open-source X3D player</a>
 	 * @see X3D#toStringX3D()
 	 * @see X3D#toFileX3D(String)
 	 * @see X3D#toFileJava(String)
@@ -5533,8 +5533,8 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 * @see X3D#toFileX_ITE(String,String)
 	 * @see X3D#toFileCobweb(String,String)
 	 * @see ConfigurationProperties#STYLESHEET_X3DOM
-	 * @see <a href="http://www.saxonica.com/documentation/index.html#!using-xsl/embedding">Saxonica &gt; Saxon &gt; Using XSLT &gt; Invoking XSLT from an application</a>
-	 * @see <a href="http://saxon.sourceforge.net/#F9.7HE">Saxon-HE 9.7</a>
+	 * @see <a href="https://www.saxonica.com/documentation/index.html#!using-xsl/embedding">Saxonica &gt; Saxon &gt; Using XSLT &gt; Invoking XSLT from an application</a>
+	 * @see <a href="https://saxon.sourceforge.net/#F9.7HE">Saxon-HE 9.7</a>
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/jaxp/xslt/transformingXML.html">Java Tutorials: Transforming XML Data with XSLT</a>
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/jaxp/examples/xslt_samples.zip">Java Tutorials: Transforming XML Data with XSLT, sample files</a>
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/essential/io/file.html#textfiles">Buffered I/O Methods for Text Files</a>
@@ -5542,7 +5542,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 * @param resultFileName name of file to create and save, can include local directory path, must end with .html (preferred) or .xhtml
 	 * @return File containing result (if operation succeeds), null otherwise
 	 */
-        // http://docs.oracle.com/javase/8/docs/technotes/guides/javadoc/deprecation/deprecation.html
+        // https://docs.oracle.com/javase/8/docs/technotes/guides/javadoc/deprecation/deprecation.html
         // https://docs.oracle.com/javase/tutorial/java/annotations/predefined.html
         // https://stackoverflow.com/questions/1858021/suppress-deprecated-import-warning-in-java
     @SuppressWarnings("deprecation")
@@ -5554,7 +5554,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 										
 	/**
 	 * Create displayable scene page rendered with X_ITE (formerly Cobweb) using STYLESHEET_X3DOM and special settings, by serializing XML syntax within an XHTML file having extension <i>.xhtml</i>.
-	 * @see <a href="http://create3000.de/x_ite" target="_blank">X_ITE open-source X3D player</a>
+	 * @see <a href="https://create3000.de/x_ite" target="_blank">X_ITE open-source X3D player</a>
 	 * @see X3D#toStringX3D()
 	 * @see X3D#toFileX3D(String)
 	 * @see X3D#toFileJava(String)
@@ -5564,8 +5564,8 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 * @see X3D#toFileX3DOM(String)
 	 * @see X3D#toFileX_ITE(String,String)
 	 * @see ConfigurationProperties#STYLESHEET_X3DOM
-	 * @see <a href="http://www.saxonica.com/documentation/index.html#!using-xsl/embedding">Saxonica &gt; Saxon &gt; Using XSLT &gt; Invoking XSLT from an application</a>
-	 * @see <a href="http://saxon.sourceforge.net/#F9.7HE">Saxon-HE 9.7</a>
+	 * @see <a href="https://www.saxonica.com/documentation/index.html#!using-xsl/embedding">Saxonica &gt; Saxon &gt; Using XSLT &gt; Invoking XSLT from an application</a>
+	 * @see <a href="https://saxon.sourceforge.net/#F9.7HE">Saxon-HE 9.7</a>
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/jaxp/xslt/transformingXML.html">Java Tutorials: Transforming XML Data with XSLT</a>
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/jaxp/examples/xslt_samples.zip">Java Tutorials: Transforming XML Data with XSLT, sample files</a>
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/essential/io/file.html#textfiles">Buffered I/O Methods for Text Files</a>
@@ -6238,7 +6238,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 //                options = GrammarOptions.STRICT_OPTIONS;
                     // Strict not going to work: org.openexi.sax.TransmogrifierException:
                     // Attribute "noNamespaceSchemaLocation" of namespace
-                    // "http://www.w3.org/2001/XMLSchema-instance" with value
+                    // "https://www.w3.org/2001/XMLSchema-instance" with value
                     // "https://www.web3d.org/specifications/x3d-3.3.xsd" is not expected.
                     
                     // Therefore, set default
@@ -7506,7 +7506,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 												}
 												return primitives;
 												-->
-												<!-- http://docs.oracle.com/javase/8/docs/api/java/util/List.html#toArray -->
+												<!-- https://docs.oracle.com/javase/8/docs/api/java/util/List.html#toArray -->
 												<!-- https://stackoverflow.com/questions/5615664/coverting-a-boolean-object-array-to-boolean-primitive-array -->
 											</xsl:when>
 											<xsl:when test="(@name = 'DEF') or (@name = 'USE') or (@name = 'id') or (@name = 'class') or ((@name = 'style') and not(ends-with($thisClassName, 'FontStyle')))">
@@ -8080,9 +8080,9 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 								<xsl:text disable-output-escaping="yes">&lt;/i&gt;</xsl:text>
 								<xsl:text> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).</xsl:text>
 								<!-- https://en.wikipedia.org/wiki/Pipeline_(software) -->
-								<!-- http://parlab.eecs.berkeley.edu/wiki/_media/patterns
-								     http://parlab.eecs.berkeley.edu/wiki/_media/patterns/pipeline-v1.pdf -->
-								<!-- http://commons.apache.org/sandbox/commons-pipeline/pipeline_basics.html -->
+								<!-- https://parlab.eecs.berkeley.edu/wiki/_media/patterns
+								     https://parlab.eecs.berkeley.edu/wiki/_media/patterns/pipeline-v1.pdf -->
+								<!-- https://commons.apache.org/sandbox/commons-pipeline/pipeline_basics.html -->
 
 								<xsl:text>&#10;</xsl:text>
 								<xsl:text>	 */</xsl:text><!-- end javadoc -->
@@ -20294,7 +20294,7 @@ shall not include the underlying field's values at that point in time.
 	 * @see <a href="https://www.w3.org/TR/xml11/#NT-Nmtoken">XML 1.1 NMTOKEN</a>
 	 * @see <a href="https://docs.oracle.com/javase/specs/jls/se7/html/jls-3.html#jls-3.2" target="_blank">Java Language Specification: 3 Lexical Structure, 3.2. Lexical Translations</a>
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/i18n/text/unicode.html" target="_blank">Java Tutorials: Unicode</a>
-	 * @see <a href="http://www.oracle.com/us/technologies/java/supplementary-142654.html" target="_blank">Java and Unicode: Supplementary Characters in the Java Platform</a>
+	 * @see <a href="https://www.oracle.com/us/technologies/java/supplementary-142654.html" target="_blank">Java and Unicode: Supplementary Characters in the Java Platform</a>
 	 */
 	public static final boolean isNMTOKEN(String value)
 	{
@@ -20324,7 +20324,7 @@ shall not include the underlying field's values at that point in time.
 	 * @see <a href="https://www.w3.org/TR/xml11/#NT-Nmtoken">XML 1.1 NMTOKEN</a>
 	 * @see <a href="https://docs.oracle.com/javase/specs/jls/se7/html/jls-3.html#jls-3.2" target="_blank">Java Language Specification: 3 Lexical Structure, 3.2. Lexical Translations</a>
 	 * @see <a href="https://docs.oracle.com/javase/tutorial/i18n/text/unicode.html" target="_blank">Java Tutorials: Unicode</a>
-	 * @see <a href="http://www.oracle.com/us/technologies/java/supplementary-142654.html" target="_blank">Java and Unicode: Supplementary Characters in the Java Platform</a>
+	 * @see <a href="https://www.oracle.com/us/technologies/java/supplementary-142654.html" target="_blank">Java and Unicode: Supplementary Characters in the Java Platform</a>
 	 */
 	public static final boolean meetsX3dInteroperabilityNamingConventions(String value)
 	{
@@ -22947,7 +22947,7 @@ TODO: also MFColor.
 		String result = new String();
 		for (String eachValue : value)
 		{
-			// http://www.regexplanet.com/advanced/java/index.html
+			// https://www.regexplanet.com/advanced/java/index.html
 			// https://www.regular-expressions.info/java.html see "backslash-mess"
 			// https://docs.oracle.com/javase/tutorial/java/data/characters.html
 			// append another quoted SFString value to MFString output
@@ -23067,7 +23067,7 @@ TODO: also MFColor.
 			if (!MFString[i].startsWith("\""))
 				result += "\"";
 			// avoid SFString.toStringX3D(MFString[i]) due to additional contrary handling of \" and &
-			// http://www.regexplanet.com/advanced/java/index.html
+			// https://www.regexplanet.com/advanced/java/index.html
 			// https://www.regular-expressions.info/java.html see "backslash-mess"
 			// https://docs.oracle.com/javase/tutorial/java/data/characters.html
 			String escapedValue = MFString[i]
@@ -31399,9 +31399,9 @@ browser instance or there is some other problem.]]></xsl:text>
  * Java programmers need only use concrete objects provided by the <code>org.web3d.x3d.jsail</code> classes.
  *</p>
  * <p> Online:
- *     <a href="http://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>
+ *     <a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>
  *     and 
- *     <a href="http://www.web3d.org/specifications/java/javadoc/index.html" target="_blank">X3DJSAIL Javadoc</a>
+ *     <a href="https://www.web3d.org/specifications/java/javadoc/index.html" target="_blank">X3DJSAIL Javadoc</a>
  * </p>
  * @see java.lang.Package
  * @see <a href="https://stackoverflow.com/questions/22095487/why-is-package-info-java-useful">https://stackoverflow.com/questions/22095487/why-is-package-info-java-useful</a>
@@ -31444,9 +31444,9 @@ package org.web3d.x3d.sai.]]></xsl:text>
  *  used by an X3D Script node.</p>
  *
  * <p> Online:
- *     <a href="http://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>
+ *     <a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>
  *     and 
- *     <a href="http://www.web3d.org/specifications/java/javadoc/index.html" target="_blank">X3DJSAIL Javadoc</a>
+ *     <a href="https://www.web3d.org/specifications/java/javadoc/index.html" target="_blank">X3DJSAIL Javadoc</a>
  * </p>
  * @see java.lang.Package
  * @see <a href="https://stackoverflow.com/questions/22095487/why-is-package-info-java-useful">https://stackoverflow.com/questions/22095487/why-is-package-info-java-useful</a>
@@ -31467,9 +31467,9 @@ package org.web3d.x3d.sai;
  *  This package contains unit tests of specification-defined X3DJSAIL interfaces and utility classes.
  *  
  * <p> Online:
- *     <a href="http://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>
+ *     <a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>
  *     and 
- *     <a href="http://www.web3d.org/specifications/java/javadoc/index.html" target="_blank">X3DJSAIL Javadoc</a>
+ *     <a href="https://www.web3d.org/specifications/java/javadoc/index.html" target="_blank">X3DJSAIL Javadoc</a>
  * </p>
  * @see java.lang.Package
  * @see <a href="https://stackoverflow.com/questions/22095487/why-is-package-info-java-useful">https://stackoverflow.com/questions/22095487/why-is-package-info-java-useful</a>
@@ -31689,9 +31689,9 @@ package org.web3d.x3d.jsail.tests;
  * <p> The X3D Java Scene Access Interface (x3djsail) package provides concrete classes for each X3D node and statement. </p>
  *  
  * <p> Online:
- *     <a href="http://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>
+ *     <a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>
  *     and 
- *     <a href="http://www.web3d.org/specifications/java/javadoc/index.html" target="_blank">X3DJSAIL Javadoc</a>
+ *     <a href="https://www.web3d.org/specifications/java/javadoc/index.html" target="_blank">X3DJSAIL Javadoc</a>
  * </p>
  * @see <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html">X3D Resources</a>
  * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html">X3D Scene Authoring Hints</a>
@@ -31722,9 +31722,9 @@ package org.web3d.x3d.jsail.]]></xsl:text>
  * abstract interfaces that are used for all X3D nodes and statements.</p>
  *
  * <p> Online:
- *     <a href="http://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>
+ *     <a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>
  *     and 
- *     <a href="http://www.web3d.org/specifications/java/javadoc/index.html" target="_blank">X3DJSAIL Javadoc</a>
+ *     <a href="https://www.web3d.org/specifications/java/javadoc/index.html" target="_blank">X3DJSAIL Javadoc</a>
  * </p>
  * @see <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html">X3D Resources</a>
  * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html">X3D Scene Authoring Hints</a>
@@ -31749,9 +31749,9 @@ package org.web3d.x3d.jsail;
  * concrete implementation of X3D field types.
  *
  * <p> Online:
- *     <a href="http://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>
+ *     <a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>
  *     and 
- *     <a href="http://www.web3d.org/specifications/java/javadoc/index.html" target="_blank">X3DJSAIL Javadoc</a>
+ *     <a href="https://www.web3d.org/specifications/java/javadoc/index.html" target="_blank">X3DJSAIL Javadoc</a>
  * </p>
  * @see <a href="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-DIS/Part01/fieldTypes.html">X3D Architecture: Field type reference</a>
  * @see <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html">X3D Resources</a>
@@ -31777,12 +31777,12 @@ package org.web3d.x3d.jsail.fields;
  *  Java utility classes for Efficient XML Interchange (EXI) compression.
  *
  * <p> Online:
- *     <a href="http://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>
+ *     <a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>
  *     and 
- *     <a href="http://www.web3d.org/specifications/java/javadoc/index.html" target="_blank">X3DJSAIL Javadoc</a>
+ *     <a href="https://www.web3d.org/specifications/java/javadoc/index.html" target="_blank">X3DJSAIL Javadoc</a>
  * </p>
- * @see <a href="http://openexi.sourceforge.net">Nagasena for EXI</a>
- * @see <a href="http://exificient.github.io">EXIficient for EXI</a>
+ * @see <a href="https://openexi.sourceforge.net">Nagasena for EXI</a>
+ * @see <a href="https://exificient.github.io">EXIficient for EXI</a>
  * @see <a href="https://www.w3.org/standards/xml/exi">World Wide Web Consortium (W3C) EFFICIENT INTERCHANGE</a>
  * @see <a href="https://www.w3.org/TR/2014/REC-exi-20140211">World Wide Web Consortium (W3C) Efficient XML Interchange (EXI) Format 1.0 (Second Edition)</a>
  * @see <a href="https://www.w3.org/TR/exi-for-json">World Wide Web Consortium (W3C) EXI for JSON (EXI4JSON)</a>
@@ -31807,9 +31807,9 @@ package org.web3d.x3d.util.exi;
  * set of Java utility classes for the X3D Unified Object Model (X3DUOM).
  *
  * <p> Online:
- *     <a href="http://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>
+ *     <a href="https://www.web3d.org/specifications/java/X3DJSAIL.html" target="_blank">X3D Java Scene Access Interface Library (X3DJSAIL)</a>
  *     and 
- *     <a href="http://www.web3d.org/specifications/java/javadoc/index.html" target="_blank">X3DJSAIL Javadoc</a>
+ *     <a href="https://www.web3d.org/specifications/java/javadoc/index.html" target="_blank">X3DJSAIL Javadoc</a>
  * </p>
  * @see <a href="https://www.web3d.org/specifications/X3DUOM.html">X3D Unified Object Model (X3DUOM)</a>
  * @see <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html">X3D Resources</a>
@@ -31883,7 +31883,7 @@ import javax.script.ScriptException;</xsl:text>
 			<xsl:text disable-output-escaping="yes"><![CDATA[
  * Usage: <code>% java -jar X3DJSAIL.4.0.classes.jar -help</code>
  * @see <a href="../../../../../X3DJSAIL.html#CommandLine" target="_blank">X3DJSAIL documentation: Command Line</a>
- * @see <a href="http://docs.oracle.com/javase/8/docs/technotes/guides/jar/jar.html">JAR File Specification</a>
+ * @see <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/jar/jar.html">JAR File Specification</a>
  * @see <a href="https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html">Java Tutorials, Lesson: Packaging Programs in JAR Files</a>
 ]]></xsl:text>
 		</xsl:with-param>
@@ -32083,8 +32083,8 @@ import javax.script.ScriptException;</xsl:text>
         DecimalFormat formatPrecision2 = new DecimalFormat ("#0.00");
 	String  compressionRatio;
             
-        // http://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html
-        // http://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html
+        // https://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html
+        // https://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html
         Charset charset = Charset.forName(ConfigurationProperties.XML_ENCODING_DECLARATION_DEFAULT); // "UTF-8"
 				 
 	        initializeConfigurationSwitches();
@@ -33295,8 +33295,8 @@ import javax.script.ScriptException;</xsl:text>
             }
             fileStylesheetConversion(inputFile, stylesheetName, outputFile.getAbsolutePath());
             
-            // http://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html
-            // http://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html
+            // https://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html
+            // https://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html
 //            Charset charset = Charset.forName(ConfigurationProperties.XML_ENCODING_DECLARATION_DEFAULT); // "UTF-8"
 
 //            byte[] encoded = Files.readAllBytes(Paths.get(outputFile.getAbsolutePath()));
@@ -33365,8 +33365,8 @@ import javax.script.ScriptException;</xsl:text>
 			errorNotice += "[diagnostic] Output file path=" + outputFilePath.toAbsolutePath() + "\n";
 			System.out.println (errorNotice);
 		}
-		// http://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html
-		// http://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html
+		// https://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html
+		// https://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html
 		Charset charset = Charset.forName(ConfigurationProperties.XML_ENCODING_DECLARATION_DEFAULT); // "UTF-8"
         
         File outputFile = outputFilePath.toFile();
@@ -33519,8 +33519,8 @@ import javax.script.ScriptException;</xsl:text>
      */
     protected static String getFileContents (File inputFile)
     {
-        // http://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html
-        // http://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html
+        // https://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html
+        // https://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html
         Charset charset = Charset.forName(ConfigurationProperties.XML_ENCODING_DECLARATION_DEFAULT); // "UTF-8"
 
         try
@@ -33798,25 +33798,25 @@ showing default attribute values, and other custom settings.</p>
 	/** XSLT stylesheet to create Extrusion node cross sections in SVG from X3D scene: <i>../lib/stylesheets/X3dExtrusionCrossSectionToSvg.xslt</i> */
 	public static final String STYLESHEET_ExtrusionCrossSectionSVG   = "X3dExtrusionCrossSectionToSvg.xslt";
 				
-	/** XSLT stylesheet to create X3DOM XHTML page or X3DOM HTML page from X3D scene: <i>../lib/stylesheets/X3dToX3dom.xslt</i>
-	 * @see <a href="../../../../../../lib/stylesheets/X3dToX3dom.xslt" target="_blank">X3dToX3dom.xslt</a>
+	/** XSLT stylesheet to create X3DOM XHTML page or X3DOM HTML page from X3D scene: <i>../lib/stylesheets/X3dToX3domX_ITE.xslt</i>
+	 * @see <a href="../../../../../../lib/stylesheets/X3dToX3domX_ITE.xslt" target="_blank">X3dToX3domX_ITE.xslt</a>
 	 * @see <a href="../../../../../../examples/HelloWorldProgramOutputX_ITE.html" target="_blank">examples/HelloWorldProgramOutputX3dom.html</a>
 	 */
-	public static final String STYLESHEET_X3DOM    = "X3dToX3dom.xslt";
+	public static final String STYLESHEET_X3DOM    = "X3dToX3domX_ITE.xslt";
 				
-	/** XSLT stylesheet to create X_ITE XHTML page or X_ITE HTML page from X3D scene: <i>../lib/stylesheets/X3dToX3dom.xslt</i> 
+	/** XSLT stylesheet to create X_ITE XHTML page or X_ITE HTML page from X3D scene: <i>../lib/stylesheets/X3dToX3domX_ITE.xslt</i> 
             TODO disambiguation needed?
-	 * @see <a href="http://create3000.de/x_ite" target="_blank">X_ITE open-source X3D player</a>
-	 * @see <a href="../../../../../../lib/stylesheets/X3dToX3dom.xslt" target="_blank">X3dToX3dom.xslt</a>
+	 * @see <a href="https://create3000.de/x_ite" target="_blank">X_ITE open-source X3D player</a>
+	 * @see <a href="../../../../../../lib/stylesheets/X3dToX3domX_ITE.xslt" target="_blank">X3dToX3domX_ITE.xslt</a>
 	 * @see <a href="../../../../../../examples/HelloWorldProgramOutputX_ITE.html" target="_blank">examples/HelloWorldProgramOutputX_ITE.html</a>
 	 */
-	public static final String STYLESHEET_X_ITE    = "X3dToX3dom.xslt";
+	public static final String STYLESHEET_X_ITE    = "X3dToX3domX_ITE.xslt";
 				
 	/** XSLT stylesheet Cobweb (now X_ITE)
-	 * @see <a href="http://create3000.de/x_ite" target="_blank">X_ITE open-source X3D player</a>
+	 * @see <a href="https://create3000.de/x_ite" target="_blank">X_ITE open-source X3D player</a>
 	 */
 	@Deprecated
-	public static final String STYLESHEET_COBWEB   = "X3dToX3dom.xslt";
+	public static final String STYLESHEET_COBWEB   = "X3dToX3domX_ITE.xslt";
 				
 	/** XSLT stylesheet to create Java source code (using X3DJSAIL library) from X3D scene: <i>../lib/stylesheets/X3dToJava.xslt</i>.
 	 * TODO: documentation.
@@ -33989,9 +33989,9 @@ showing default attribute values, and other custom settings.</p>
     // ==========================================================================================
 	 
 	/** XSLT transformation engine: SAXON (default).
-	 * @see <a href="http://saxon.sourceforge.net/#F9.7HE">Saxon-HE 9.7</a>
+	 * @see <a href="https://saxon.sourceforge.net/#F9.7HE">Saxon-HE 9.7</a>
 	 * @see <a href="https://sourceforge.net/projects/saxon/files">Saxon distribution</a>
-	 * @see <a href="http://www.saxonica.com/documentation/index.html#!using-xsl/embedding">Saxonica &gt; Saxon &gt; Using XSLT &gt; Invoking XSLT from an application</a>
+	 * @see <a href="https://www.saxonica.com/documentation/index.html#!using-xsl/embedding">Saxonica &gt; Saxon &gt; Using XSLT &gt; Invoking XSLT from an application</a>
 	 */
 	public static final String XSLT_ENGINE_SAXON = "SAXON9HE";
 				
@@ -34030,8 +34030,8 @@ showing default attribute values, and other custom settings.</p>
 	 
 	/** EXI transformation engine: OpenEXI Nagasena.
 	 * <i>Warning:</i> testing in progress.
-	 * @see <a href="http://openexi.sourceforge.net">OpenEXI Nagasena</a>
-	 * @see <a href="http://openexi.sourceforge.net/tutorial">Nagasena Tutorial</a>
+	 * @see <a href="https://openexi.sourceforge.net">OpenEXI Nagasena</a>
+	 * @see <a href="https://openexi.sourceforge.net/tutorial">Nagasena Tutorial</a>
 	 * @see <a href="https://www.youtube.com/watch?v=Rig2z9veUv0">Video: OpenEXI, A Quick Introduction</a>
 	 * @see ConfigurationProperties#getExiEngine()
 	 * @see ConfigurationProperties#setExiEngine(String)
@@ -34296,7 +34296,7 @@ showing default attribute values, and other custom settings.</p>
 	 * @see <a href="https://www.web3d.org/documents/specifications/19776-3/V3.3/Part03/concepts.html#X3DCanonicalForm">X3D Compressed binary encoding, 4.2.3 X3D canonical form</a>
 	 * @see <a href="https://www.w3.org/TR/xml-c14n">Canonical XML</a>
 	 * @see <a href="https://www.w3.org/TR/exi-c14n">Canonical EXI</a>
-	 * @see <a href="http://santuario.apache.org">Apache Santuario</a>
+	 * @see <a href="https://santuario.apache.org">Apache Santuario</a>
 	 * @see <a href="https://www.web3d.org/documents/specifications/19776-3/V3.3/Part03/concepts.html#X3DCanonicalForm" target="blank">X3D Compressed Binary Encoding: X3D Canonical Form</a>
 	 * @see <a href="https://www.web3d.org/x3d/tools/canonical/doc/x3dTools.htm">X3D Canonicalization (C14N) Tool</a>
 	 * @return whether X3D Canonical Form is used. */
@@ -34312,7 +34312,7 @@ showing default attribute values, and other custom settings.</p>
 	 * @see <a href="https://www.web3d.org/documents/specifications/19776-3/V3.3/Part03/concepts.html#X3DCanonicalForm">X3D Compressed binary encoding, 4.2.3 X3D canonical form</a>
 	 * @see <a href="https://www.w3.org/TR/xml-c14n">Canonical XML</a>
 	 * @see <a href="https://www.w3.org/TR/exi-c14n">Canonical EXI</a>
-	 * @see <a href="http://santuario.apache.org">Apache Santuario</a>
+	 * @see <a href="https://santuario.apache.org">Apache Santuario</a>
 	 * @see <a href="https://www.web3d.org/documents/specifications/19776-3/V3.3/Part03/concepts.html#X3DCanonicalForm" target="blank">X3D Compressed Binary Encoding: X3D Canonical Form</a>
 	 * @see <a href="https://www.web3d.org/x3d/tools/canonical/doc/x3dTools.htm">X3D Canonicalization (C14N) Tool</a>
 	 */
@@ -36550,7 +36550,7 @@ import org.web3d.x3d.sai.X3DException;
 					org.w3c.dom.Node currentAttributeNode = attributes.item(i);
 					String attributeName  = currentAttributeNode.getNodeName();
 					String attributeValue = currentAttributeNode.getNodeValue();
-					// http://www.regexplanet.com/advanced/java/index.html
+					// https://www.regexplanet.com/advanced/java/index.html
 					// https://www.regular-expressions.info/java.html see "backslash-mess"
 					// https://docs.oracle.com/javase/tutorial/java/data/characters.html
 					// looks like no conversion needed when reading from DOM!
@@ -36996,10 +36996,10 @@ import org.web3d.x3d.sai.X3DException;</xsl:with-param>
     /** Blender website URL
      * @see #launchBlenderWebPage()
      */     
-    public static final String BLENDER_URL = "http://www.blender.org";
+    public static final String BLENDER_URL = "https://www.blender.org";
 
 	/** Default name of <code>blender</code> executable on local system for command-line blender invocation: <code>blender.exe</code> on Windows, <code>blender</code> otherwise.
-	 * @see <a href="http://www.blender.org" target="_blank">Blender</a>
+	 * @see <a href="https://www.blender.org" target="_blank">Blender</a>
 	 * @see <a href="https://en.wikipedia.org/wiki/Blender_(software)" target="_blank">Wikipedia: Blender (software)</a>
 	 * @see #checkBlenderPath()
 	 * @see #setBlenderPath(String)
@@ -37007,7 +37007,7 @@ import org.web3d.x3d.sai.X3DException;</xsl:with-param>
 	private static final String blenderExecutableName_DEFAULT = "blender";
 	 
 	/** Actual name of <code>blender</code> executable on local system for command-line Blender invocation: <code>blender.exe</code> on Windows, <code>blender</code> otherwise.
-	 * @see <a href="http://www.blender.org" target="_blank">Blender</a>
+	 * @see <a href="https://www.blender.org" target="_blank">Blender</a>
 	 * @see <a href="https://en.wikipedia.org/wiki/Blender_(software)" target="_blank">Wikipedia: Blender (software)</a>
 	 * @see #checkBlenderPath()
 	 * @see #setBlenderPath(String)
@@ -37034,7 +37034,7 @@ import org.web3d.x3d.sai.X3DException;</xsl:with-param>
 	}
 	 
 	/** Blender path on local system for command-line Blender invocation.
-	 * @see <a href="http://www.blender.org" target="_blank">Blender</a>
+	 * @see <a href="https://www.blender.org" target="_blank">Blender</a>
 	 * @see <a href="https://en.wikipedia.org/wiki/Blender_(software)" target="_blank">Wikipedia: Blender (software)</a>
 	 * @see <a href="https://docs.blender.org/manual/en/latest/advanced/command_line/index.html">Blender Manual: Command Line</a>
 	 * @see <a href="https://docs.blender.org/manual/en/dev/advanced/command_line/arguments.html" target="_blank">Blender Manual: Command Line Arguments</a>
@@ -37049,7 +37049,7 @@ import org.web3d.x3d.sai.X3DException;</xsl:with-param>
 	 * @see <a href="../../../../../X3DJSAIL.html#properties" target="_blank">X3DJSAIL documentation: properties</a>
 	 * @see <a href="https://docs.blender.org/manual/en/dev/render/workflows/command_line.html#platforms">Blender command line: platforms</a>
 	 */		
-	public static final String BLENDER_PATH_DEFAULT_WINDOWS = "C:\\Program Files\\Blender Foundation\\Blender 2.93"; // escape \
+	public static final String BLENDER_PATH_DEFAULT_WINDOWS = "C:\\Program Files\\Blender Foundation\\Blender 3.4"; // escape \
 	
 	/** Default Blender path default for macOS operating system, possibly unneeded if <code>blender</code> is in path already.
 	 * <i>Warning:</i> local settings vary, configure path if necessary.
@@ -37419,7 +37419,7 @@ import org.web3d.x3d.sai.X3DException;</xsl:with-param>
     }
 
     /** Open Blender page
-     * @see <a href="http://www.blender.org" target="_blank">Blender</a>
+     * @see <a href="https://www.blender.org" target="_blank">Blender</a>
      * @see <a href="https://en.wikipedia.org/wiki/Blender_(software)" target="_blank">Wikipedia: Blender (software)</a>
      * @see BLENDER_URL
      */
@@ -37771,7 +37771,7 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
  @see <a href="https://stackoverflow.com/questions/tagged/meshlab" target="_blank">StackOverflow: MeshLab</a>	
  @see <a href="https://github.com/TheNerdJedi/MeshlabAuto" target="_blank">GitHub: MeshlabAuto</a>	
  @see <a href="https://github.com/cnr-isti-vclab/meshlab/issues" target="_blank">GitHub: issues</a>
- @see <a href="http://www.meshlab.net/#references" target="_blank">MeshLab References</a>
+ @see <a href="https://www.meshlab.net/#references" target="_blank">MeshLab References</a>
  @see <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/classvars.html">Java Tutorials: Understanding (Static) Class Members</a>
 ]]></xsl:text>
 		</xsl:with-param>
@@ -40191,7 +40191,7 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
             <xsl:text>["TELEPORT","LINEAR","ANIMATE",...] </xsl:text>
         </xsl:when>
         <xsl:when test="(@name = 'GeoOrigin') or (@name = 'geoOrigin')">
-            <!-- http://docs.oracle.com/javase/8/docs/technotes/guides/javadoc/deprecation/deprecation.html -->
+            <!-- https://docs.oracle.com/javase/8/docs/technotes/guides/javadoc/deprecation/deprecation.html -->
             <xsl:text>(deprecated node, optional) </xsl:text>
         </xsl:when>
         <xsl:when test="((@type='SFString') or (@type='MFString')) and (string-length(xs:annotation/xs:documentation) > 0)">
@@ -40517,8 +40517,8 @@ import org.web3d.x3d.jsail.Core.X3D;</xsl:text>
     <xsl:template name="wrap-hyperlinks">
 		<!-- further adapted from X3dTooltipConversions.xslt -->
         <!-- Search and replace urls in text:  adapted (with thanks) from 
-            http://www.dpawson.co.uk/xsl/rev2/regex2.html#d15961e67 by Jeni Tennison using url regex (http://[^ ]+) -->
-        <!-- Justin Saunders http://regexlib.com/REDetails.aspx?regexp_id=37 url regex ((mailto:|(news|(ht|f)tp(s?))://){1}\S+) -->
+            https://www.dpawson.co.uk/xsl/rev2/regex2.html#d15961e67 by Jeni Tennison using url regex (https://[^ ]+) -->
+        <!-- Justin Saunders https://regexlib.com/REDetails.aspx?regexp_id=37 url regex ((mailto:|(news|(ht|f)tp(s?))://){1}\S+) -->
         <xsl:param name="string" select="string(.)"/>
         <!-- wrap html text string with spaces to ensure no mismatches occur -->
         <xsl:variable name="spacedString">
