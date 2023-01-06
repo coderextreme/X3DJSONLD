@@ -1,0 +1,139 @@
+~/X3DJSONLD/src/main/java ~/X3DJSONLD/src/main/shell
+~/X3DJSONLD/src/main/shell
+translating to json
+translating to node.js
+translating to java
+translating to python
+compiling
+~/X3DJSONLD/src/main/java ~/X3DJSONLD/src/main/shell
+running java
+export CLASSPATH=".:/home/coderextreme/pythonSAI/X3DJSAIL.4.0.full.jar:/home/coderextreme/X3DJSONLD/src/main/java:/home/coderextreme/X3DJSONLD/saxon-he-10.6.jar:/home/coderextreme/X3DJSONLD/target/X3DJSONLD-1.0-SNAPSHOT.jar:/home/coderextreme/X3DJSONLD/target/classes:/home/coderextreme/X3DJSONLD/src/main/java"
+$ java net/x3djsonld/data/JoeSkeletonSkinSiteSaluteWalk -validate ../data/JoeSkeletonSkinSiteSaluteWalk.x3d
+Info: HAnimJoint name newValue='HumanoidRoot' includes an unrecognized value not matching any of the optional string tokens.
+Warning: HAnim name values are lower case, check capitalization/spelling of HAnimJoint name='HumanoidRoot'
+Info: HAnimJoint name newValue='l_ankle' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='l_hindfoot' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='l_subtalar' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='l_midproximal' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='l_midtarsal' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='l_middistal' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='l_metatarsal' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='l_forefoot' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='r_ankle' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='r_hindfoot' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='r_subtalar' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='r_midproximal' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='r_midtarsal' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='r_middistal' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='r_metatarsal' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='r_forefoot' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='toPelvis' includes an unrecognized value not matching any of the optional string tokens.
+Warning: HAnim name values are lower case, check capitalization/spelling of HAnimSegment name='toPelvis'
+Info: HAnimSite name newValue='skull_tip' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='l_wrist' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='l_hand' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='l_thumb1' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='l_thumb_metacarpal' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='l_thumb2' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='l_thumb_distal' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='l_thumb3' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='l_thumb_distal' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSite name newValue='l_thumb_distal_tip' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='l_index0' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='l_index_metacarpal' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='l_index1' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='l_index_proximal' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='l_index2' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='l_index_middle' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='l_index3' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='l_index_distal' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSite name newValue='l_index_distal_tip' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='l_middle0' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='l_middle_metacarpal' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='l_middle1' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='l_middle_proximal' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='l_middle2' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='l_middle_middle' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='l_middle3' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='l_middle_distal' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSite name newValue='l_middle_distal_tip' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='l_ring0' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='l_ring_metacarpal' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='l_ring1' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='l_ring_proximal' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='l_ring2' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='l_ring_middle' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='l_ring3' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='l_ring_distal' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSite name newValue='l_ring_distal_tip' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='l_pinky0' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='l_pinky_metacarpal' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='l_pinky1' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='l_pinky_proximal' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='l_pinky2' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='l_pinky_middle' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='l_pinky3' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='l_pinky_distal' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSite name newValue='l_pinky_distal_tip' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='r_wrist' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='r_hand' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='r_thumb1' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='r_thumb_metacarpal' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='r_thumb2' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='r_thumb_proximal' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='r_thumb3' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='r_thumb_distal' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSite name newValue='r_thumb_distal_tip' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='r_index0' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='r_index_metacarpal' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='r_index1' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='r_index_proximal' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='r_index2' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='r_index_middle' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='r_index3' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='r_index_distal' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSite name newValue='r_index_distal_tip' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='r_middle0' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='r_middle_metacarpal' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='r_middle1' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='r_middle_proximal' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='r_middle2' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='r_middle_middle' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='r_middle3' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='r_middle_distal' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSite name newValue='r_middle_distal_tip' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='r_ring0' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='r_ring_metacarpal' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='r_ring1' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='r_ring_proximal' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='r_ring2' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='r_ring_middle' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='r_ring3' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='r_ring_distal' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSite name newValue='r_ring_distal_tip' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='r_pinky0' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='r_pinky_metacarpal' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='r_pinky1' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='r_pinky_proximal' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='r_pinky2' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='r_pinky_middle' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimJoint name newValue='r_pinky3' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSegment name newValue='r_pinky_distal' includes an unrecognized value not matching any of the optional string tokens.
+Info: HAnimSite name newValue='r_pinky_distal_tip' includes an unrecognized value not matching any of the optional string tokens.
+WARNING: "net.x3djsonld.data.JoeSkeletonSkinSiteSaluteWalk" model invocation is attempting to load file "../data/JoeSkeletonSkinSiteSaluteWalk.x3d" instead of simply validating itself... file loading ignored.
+Java program "net.x3djsonld.data.JoeSkeletonSkinSiteSaluteWalk" self-validation test results: Info: HAnimJoint name newValue='HumanoidRoot' includes an unrecognized value not matching any of the optional string tokens.
+Warning: HAnim name values are lower case, check capitalization/spelling of HAnimJoint name='HumanoidRoot'
+
+<meta content='Under development, numerous errors and warnings' name='warning'/>
+<meta content='This is an HAnimV1 loa model, might need to convert to X3D4 to note loa value' name='TODO'/>
+<meta content='Provide feedback to tovrmlx3d converter' name='TODO'/>
+<meta content='HAnimJoint cannot contain X3DChildNode elements, only HAnimJoint HAnimSegmet HAnimSite - improve diagnostics.' name='TODO'/>
+<meta content='ensure name prefix "Joe_" applied to all contained DEF values (not name field), perhaps correction automatically applied by X3DTidy' name='TODO'/>
+ERROR_ILLEGAL_VALUE: HAnimSegment DEF='Joe_sacrum' name='sacrum' illegal parent found: HAnimJoint name='Joe_HumanoidRoot' name='HumanoidRoot'
+~/X3DJSONLD/src/main/shell
+running python
+~/X3DJSONLD/src/main/python ~/X3DJSONLD/src/main/shell
+~/X3DJSONLD/src/main/shell
+running node
+~/X3DJSONLD/src/main/node ~/X3DJSONLD/src/main/shell
+~/X3DJSONLD/src/main/shell
