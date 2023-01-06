@@ -46,10 +46,10 @@ newModel=X3D(class_='x3dModel.class',id_='x3dModel.id',profile='Full',style_='x3
     meta(content='https://www.web3d.org/specifications/java/X3DJSAIL.html',name='reference'),
     meta(content='HelloWorldProgramOutput.java',name='generator'),
     meta(content='6 September 2016',name='created'),
-    meta(content='9 January 2022',name='modified'),
+    meta(content='4 July 2022',name='modified'),
     meta(content='X3D Java Scene Access Interface Library (X3DJSAIL)',name='generator'),
     meta(content='https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java',name='generator'),
-    meta(content='Netbeans http://www.netbeans.org',name='generator'),
+    meta(content='Netbeans https://www.netbeans.org',name='generator'),
     meta(content='Don Brutzman',name='creator'),
     meta(content='https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java/examples/HelloWorldProgramOutput.x3d',name='reference'),
     meta(content='Console output, ClassicVRML encoding, VRML97 encoding and pretty-print documentation:',name='reference'),
@@ -162,7 +162,7 @@ function colorInput (eventValue) // Example source code
             connect=[
             connect(nodeField='description',protoField='description'),
             connect(nodeField='enabled',protoField='enabled')]))])),
-    ExternProtoDeclare(name='ArtDeco02Material',appinfo='this is a different Material node',url=["http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"],
+    ExternProtoDeclare(name='ArtDeco02Material',appinfo='this is a different Material node',url=["https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"],
       #  [HelloWorldProgram diagnostic] artDeco02ExternProtoDeclare.getNodeType()="ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file." 
       field=[
       field(name='description',accessType='inputOutput',appinfo='tooltip for descriptionField',type='SFString')]),
@@ -191,7 +191,7 @@ function colorInput (eventValue) // Example source code
     Inline(DEF='inlineScene',url=["someOtherScene.x3d","https://www.web3d.org/specifications/java/examples/someOtherScene.x3d"]),
     IMPORT(AS='WorldInfoDEF2',importedDEF='WorldInfoDEF',inlineDEF='inlineScene'),
     EXPORT(AS='WorldInfoDEF3',localDEF='WorldInfoDEF'),
-    ProtoDeclare(name='MaterialModulator',appinfo='mimic a Material node and modulate fields as an animation effect',documentation='http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html',
+    ProtoDeclare(name='MaterialModulator',appinfo='mimic a Material node and modulate fields as an animation effect',documentation='https://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html',
       ProtoInterface=ProtoInterface(
         field=[
         field(name='enabled',accessType='inputOutput',type='SFBool',value=True),
@@ -268,7 +268,7 @@ function clockTrigger (timeValue)
     #  Test success: x3dModel.findElementByNameValue("MaterialModulator", "ProtoInstance") found 
     Group(DEF='TestFieldObjectsGroup',
       #  testFieldObjects() results 
-      #  SFBool default=true, true=true, false=false, negate()=true 
+      #  SFBool default=false, true=true, false=false, negate()=true 
       #  MFBool default=, initial=true false true, negate()=false true false 
       #  SFFloat default=0.0, initial=1.0, setValue(2)=2.0, setValue(3.0f)=3.0, setValue(4.0)=4.0 
       #  MFFloat default=, initial=1 2 3, append(5)=1 2 3 5, inserts(3,4)(0,0)=0 1 2 3 4 5, append(6)=0 1 2 3 4 5 6, size()=7 
