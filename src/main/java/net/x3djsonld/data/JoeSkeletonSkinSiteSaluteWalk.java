@@ -17,22 +17,22 @@ import org.web3d.x3d.jsail.Time.*;
 
 // Javadoc annotations follow, see below for Java source code.
 /**
- * <p> Showing skeleton, skin, sites and animation together. </p>
- <p> Related links: JoeSkeletonSiteSkinSaluteWalk.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
+ * <p> Comprehensive example showing skeleton, skin, sites and interpolator animation together. </p>
+ <p> Related links: JoeSkeletonSkinSiteSaluteWalk.java source, <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html" target="_blank">X3D Resources</a>, <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html" target="_blank">X3D Scene Authoring Hints</a>, and <a href="https://www.web3d.org/x3d/content/X3dTooltips.html" target="_blank">X3D Tooltips</a>. </p>
 	<table style="color:black; border:0px solid; border-spacing:10px 0px;">
         <caption>Scene Meta Information</caption>
 		<tr style="background-color:silver; border-color:silver;">
 			<td style="text-align:center; padding:10px 0px;"><i>meta tags</i></td>
-			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.JoeSkeletonSiteSkinSaluteWalk&nbsp; Document Metadata </td>
+			<td style="text-align:left;   padding:10px 0px;">net.x3djsonld.data.JoeSkeletonSkinSiteSaluteWalk&nbsp; Document Metadata </td>
 		</tr>
 
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> title </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/JoeSkeletonSiteSkinSaluteWalk.x3d">JoeSkeletonSiteSkinSaluteWalk.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/JoeSkeletonSkinSaluteSiteWalk.x3d">JoeSkeletonSkinSaluteSiteWalk.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
-			<td> Showing skeleton, skin, sites and animation together. </td>
+			<td> Comprehensive example showing skeleton, skin, sites and interpolator animation together. </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -48,7 +48,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 23 December 2022 </td>
+			<td> 2 January 2023 </td>
 		</tr>
 		<tr style="color:burntorange">
 			<td style="text-align:right; vertical-align: text-top;"> <i> warning </i> </td>
@@ -72,19 +72,55 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/JoeSkeletonSiteSkinSaluteWalk.original.x3dv">JoeSkeletonSiteSkinSaluteWalk.original.x3dv</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/JoeSkeletonSkinSaluteSiteWalk.original.x3dv">JoeSkeletonSkinSaluteSiteWalk.original.x3dv</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/JoeSkeletonSiteSkinSaluteWalk.modified1.x3dv">JoeSkeletonSiteSkinSaluteWalk.modified1.x3dv</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/JoeSkeletonSkinSaluteSiteWalk.modified1.x3dv">JoeSkeletonSkinSaluteSiteWalk.modified1.x3dv</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/JoeSkeletonSiteSkinSaluteWalk.modified2.x3dv">JoeSkeletonSiteSkinSaluteWalk.modified2.x3dv</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/JoeSkeletonSkinSaluteSiteWalk.modified2.x3dv">JoeSkeletonSkinSaluteSiteWalk.modified2.x3dv</a> </td>
 		</tr>
 		<tr>
-			<td style="text-align:right; vertical-align: text-top;"> <i> filename </i> </td>
-			<td> hanimLOA3A8320080320.x3dv 20080627 </td>
+			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/JoeSkeletonSkinSiteSaluteWalk_X3D-Edit.png">JoeSkeletonSkinSiteSaluteWalk_X3D-Edit.png</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> reference </i> </td>
+			<td> JoeSkeletonSkinSiteSaluteWalk_composite.vsdx </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/JoeSkeletonSkinSiteSaluteWalk_composite.2023JAN2.png">JoeSkeletonSkinSiteSaluteWalk_composite.2023JAN2.png</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/JoeSkeletonSkinSiteSaluteWalk_view3dscene.png">JoeSkeletonSkinSiteSaluteWalk_view3dscene.png</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/JoeSkeletonSkinSiteSaluteWalk_X_ITE.png">JoeSkeletonSkinSiteSaluteWalk_X_ITE.png</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/JoeSkeletonSkinSiteSaluteWalk_X3DOM.png">JoeSkeletonSkinSiteSaluteWalk_X3DOM.png</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/JoeSkeletonSkinSiteSaluteWalk_H3DViewer.png">JoeSkeletonSkinSiteSaluteWalk_H3DViewer.png</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/JoeSkeletonSkinSiteSaluteWalk_freeWrl.png">JoeSkeletonSkinSiteSaluteWalk_freeWrl.png</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/JoeSkeletonSkinSiteSaluteWalk_Octaga.png">JoeSkeletonSkinSiteSaluteWalk_Octaga.png</a> </td>
+		</tr>
+		<tr>
+			<td style="text-align:right; vertical-align: text-top;"> <i> Image </i> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/JoeSkeletonSkinSiteSaluteWalk_vivaty.png">JoeSkeletonSkinSiteSaluteWalk_vivaty.png</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -112,7 +148,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> identifier </i> </td>
-			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/JoeSkeletonSiteSkinSaluteWalk.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/JoeSkeletonSiteSkinSaluteWalk.x3d</a> </td>
+			<td> <a href="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/JoeSkeletonSkinSaluteSiteWalk.x3d" target="_blank">https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/JoeSkeletonSkinSaluteSiteWalk.x3d</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> license </i> </td>
@@ -134,10 +170,10 @@ import org.web3d.x3d.jsail.Time.*;
 	* @author Joe D. Williams
  */
 
-public class JoeSkeletonSiteSkinSaluteWalk
+public class JoeSkeletonSkinSiteSaluteWalk
 {
 	/** Default constructor to create this object. */
-	public JoeSkeletonSiteSkinSaluteWalk ()
+	public JoeSkeletonSkinSiteSaluteWalk ()
 	{
 	  initialize();
 	}
@@ -148,50 +184,59 @@ public class JoeSkeletonSiteSkinSaluteWalk
   x3dModel = new X3D().setProfile(X3D.PROFILE_IMMERSIVE).setVersion(X3D.VERSION_4_0)
   .setHead(new head()
     .addComponent(new component().setName("H-Anim").setLevel(2))
-    .addComments(" TODO fix X3D Tooltips entry for HAnim component ")
-    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("JoeSkeletonSiteSkinSaluteWalk.x3d"))
-    .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Showing skeleton, skin, sites and animation together."))
+    .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("JoeSkeletonSkinSaluteSiteWalk.x3d"))
+    .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("Comprehensive example showing skeleton, skin, sites and interpolator animation together."))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Joe D. Williams"))
     .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("9 January 2004"))
     .addMeta(new meta().setName(meta.NAME_TRANSLATED ).setContent("4 December 2022"))
-    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("23 December 2022"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("2 January 2023"))
     .addMeta(new meta().setName(meta.NAME_WARNING    ).setContent("Under development, numerous errors and warnings"))
     .addMeta(new meta().setName(meta.NAME_TODO       ).setContent("This is an HAnimV1 loa model, might need to convert to X3D4 to note loa value"))
     .addMeta(new meta().setName(meta.NAME_TODO       ).setContent("Provide feedback to tovrmlx3d converter"))
     .addMeta(new meta().setName(meta.NAME_TODO       ).setContent("HAnimJoint cannot contain X3DChildNode elements, only HAnimJoint HAnimSegmet HAnimSite - improve diagnostics."))
     .addMeta(new meta().setName(meta.NAME_TODO       ).setContent("ensure name prefix \"Joe_\" applied to all contained DEF values (not name field), perhaps correction automatically applied by X3DTidy"))
-    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("JoeSkeletonSiteSkinSaluteWalk.original.x3dv"))
-    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("JoeSkeletonSiteSkinSaluteWalk.modified1.x3dv"))
-    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("JoeSkeletonSiteSkinSaluteWalk.modified2.x3dv"))
-    .addMeta(new meta().setName("filename").setContent("hanimLOA3A8320080320.x3dv 20080627"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("JoeSkeletonSkinSaluteSiteWalk.original.x3dv"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("JoeSkeletonSkinSaluteSiteWalk.modified1.x3dv"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("JoeSkeletonSkinSaluteSiteWalk.modified2.x3dv"))
+    .addMeta(new meta().setName(meta.NAME_IMAGE      ).setContent("JoeSkeletonSkinSiteSaluteWalk_X3D-Edit.png"))
+    .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("JoeSkeletonSkinSiteSaluteWalk_composite.vsdx"))
+    .addMeta(new meta().setName(meta.NAME_IMAGE      ).setContent("JoeSkeletonSkinSiteSaluteWalk_composite.2023JAN2.png"))
+    .addMeta(new meta().setName(meta.NAME_IMAGE      ).setContent("JoeSkeletonSkinSiteSaluteWalk_view3dscene.png"))
+    .addMeta(new meta().setName(meta.NAME_IMAGE      ).setContent("JoeSkeletonSkinSiteSaluteWalk_X_ITE.png"))
+    .addMeta(new meta().setName(meta.NAME_IMAGE      ).setContent("JoeSkeletonSkinSiteSaluteWalk_X3DOM.png"))
+    .addMeta(new meta().setName(meta.NAME_IMAGE      ).setContent("JoeSkeletonSkinSiteSaluteWalk_H3DViewer.png"))
+    .addMeta(new meta().setName(meta.NAME_IMAGE      ).setContent("JoeSkeletonSkinSiteSaluteWalk_freeWrl.png"))
+    .addMeta(new meta().setName(meta.NAME_IMAGE      ).setContent("JoeSkeletonSkinSiteSaluteWalk_Octaga.png"))
+    .addMeta(new meta().setName(meta.NAME_IMAGE      ).setContent("JoeSkeletonSkinSiteSaluteWalk_vivaty.png"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("tovrmlx3d, https://castle-engine.io/convert.php"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://castle-engine.io/view3dscene.php#section_converting"))
     .addMeta(new meta().setName(meta.NAME_TRANSLATOR ).setContent("Michalis Kamburelis"))
     .addMeta(new meta().setName(meta.NAME_TRANSLATOR ).setContent("Don Brutzman"))
     .addMeta(new meta().setName(meta.NAME_TRANSLATOR ).setContent("Joe D. Williams"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"))
-    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/JoeSkeletonSiteSkinSaluteWalk.x3d"))
+    .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/JoeSkeletonSkinSaluteSiteWalk.x3d"))
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html")))
   .setScene(new Scene()
     .addChild(new WorldInfo().setInfo(new String[] {"By Joe for Joe"}).setTitle("HAnim V1 LOA3 Skeleton Joint centers and Site translations Adapted for approximatrion of ManGLoss Site Location Example and HANIM 200x Default Joint Centers, LOA3"))
     .addChild(new WorldInfo().setInfo(new String[] {"By Joe for Joe"}).setTitle("HAnim V1 LOA3 Skeleton Joint centers Adapted for approximatrion of ManGLoss Site Location Example and ANIM 200x Default Joint Centers, LOA3"))
-    .addChild(new NavigationInfo().setAvatarSize(new double[] {0.25,1.6000000238418579,0.75}).setHeadlight(false))
-    .addChild(new Background().setGroundAngle(new double[] {1.5700000524520874}).setGroundColor(new MFColor(new double[] {0.0,0.10000000149011612,0.0,0.0,0.10000000149011612,0.0})).setSkyColor(new MFColor(new double[] {0.0,0.0,0.10000000149011612})))
-    .addChild(new Transform("cordsysfloor").setScale(0.17499999701976776,0.17499999701976776,0.17499999701976776)
-      .addChild(new Inline().setUrl(new String[] {"JointCoordinateAxes.x3dv"})))
+    .addChild(new NavigationInfo("HeadlightOnRevealsSkinTextureAndColors"))
+    .addChild(new Background().setGroundAngle(new double[] {1.57}).setGroundColor(new MFColor(new double[] {0.0,0.1,0.0,0.0,0.1,0.0})).setSkyColor(new MFColor(new double[] {0.0,0.0,0.1})))
+    .addChild(new Transform("cordsysfloor").setScale(0.175,0.175,0.175)
+      .addChild(new Inline("CoordinateAxes").setUrl(new String[] {"../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","../../../Savage/Tools/Authoring/CoordinateAxes.x3d","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","../../../Savage/Tools/Authoring/CoordinateAxes.wrl","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"})))
+    .addComments(" Authoring hint: these axes are aligned within local coordinate system ")
     .addChild(new Group("ViewpointGroup")
-      .addChild(new Viewpoint().setDescription("Front Up View").setOrientation(-1.0,-1.0,0.0,0.55000001192092896).setPosition(-1.0,2.0,2.5))
-      .addChild(new Viewpoint().setDescription("From Left View").setOrientation(0.30000001192092896,1.0,0.0,-1.5700000524520874).setPosition(-2.5,1.5,0.0))
+      .addChild(new Viewpoint().setDescription("Front Up View").setOrientation(-1.0,-1.0,0.0,0.55).setPosition(-1.0,2.0,2.5))
+      .addChild(new Viewpoint().setDescription("From Left View").setOrientation(0.3,1.0,0.0,-1.57).setPosition(-2.5,1.5,0.0))
       .addChild(new Viewpoint().setDescription("Front Mid View").setPosition(0.0,0.5,1.25))
       .addChild(new Viewpoint().setDescription("Front Feet View").setPosition(0.0,0.0,0.75))
-      .addChild(new Viewpoint().setDescription("From Right View").setOrientation(0.0,1.0,0.0,1.5700000524520874).setPosition(1.0,1.0,0.0))
-      .addChild(new Viewpoint().setDescription("Front Head View").setPosition(0.0,1.6499999761581421,0.75))
+      .addChild(new Viewpoint().setDescription("From Right View").setOrientation(0.0,1.0,0.0,1.57).setPosition(1.0,1.0,0.0))
+      .addChild(new Viewpoint().setDescription("Front Head View").setCenterOfRotation(0.0,1.65,0.0).setPosition(0.0,1.65,0.75))
       .addChild(new Viewpoint().setDescription("Front Mid View").setPosition(0.0,1.0,1.75))
-      .addChild(new Viewpoint().setDescription("Rear View").setOrientation(0.0,1.0,0.0,3.1400001049041748).setPosition(0.0,1.5,-4.0))
-      .addChild(new Viewpoint().setDescription("Top View").setOrientation(1.0,0.0,0.0,-1.5700000524520874).setPosition(0.0,4.0,0.0))
-      .addChild(new Viewpoint().setDescription("Bottom View").setOrientation(1.0,0.0,0.0,1.5700000524520874).setPosition(0.0,-4.0,0.0))
-      .addChild(new Viewpoint().setDescription("Right View").setOrientation(0.0,1.0,0.0,1.5700000524520874).setPosition(4.0,1.5,0.0)))
-    .addChild(new Group()
+      .addChild(new Viewpoint().setDescription("Rear View").setOrientation(0.0,1.0,0.0,3.14).setPosition(0.0,1.5,-4.0))
+      .addChild(new Viewpoint().setDescription("Top View").setOrientation(1.0,0.0,0.0,-1.57).setPosition(0.0,4.0,0.0))
+      .addChild(new Viewpoint().setDescription("Bottom View").setOrientation(1.0,0.0,0.0,1.57).setPosition(0.0,-4.0,0.0))
+      .addChild(new Viewpoint().setDescription("Right View").setOrientation(0.0,1.0,0.0,1.57).setPosition(4.0,1.5,0.0)))
+    .addChild(new Group("VisualizationShapes")
       .addChild(new Transform().setScale(5.0,5.0,5.0).setTranslation(0.0,2.1,0.0)
         .addChild(new Shape("jointbox")
           .setGeometry(new IndexedFaceSet().setCreaseAngle(0.10000000149011612).setCoordIndex(new int[] {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,1,-1,5,2,1,-1,5,3,2,-1,5,4,3,-1,5,1,4,-1})
@@ -208,26 +253,28 @@ public class JoeSkeletonSiteSkinSaluteWalk
       .addChild(new Transform().setScale(0.1,0.1,0.1).setTranslation(0.0,0.2,0.0)
         .addChild(new Shape()
           .setGeometry(new IndexedLineSet().setCoordIndex(new int[] {0,1,-1})
-            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.0,0.0,0.0,0.0,0.000099999997473787516,0.0}))))
+            .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.0,0.0,0.0,0.0,0.0001,0.0}))))
           .setAppearance(new Appearance("SegmentLine")
             .setMaterial(new Material().setDiffuseColor(0.0,1.0,0.0).setEmissiveColor(0.0,1.0,0.0).setSpecularColor(0.0,1.0,0.0)))))
       .addChild(new Transform().setScale(0.1,0.1,0.1).setTranslation(-0.2,0.773,-0.016)
         .addChild(new Shape("skinsphere")
-          .setGeometry(new Sphere().setRadius(0.004999999888241291))
+          .setGeometry(new Sphere().setRadius(0.005))
           .setAppearance(new Appearance()
             .setMaterial(new Material().setAmbientIntensity(0.5).setDiffuseColor(0.0,1.0,0.0).setEmissiveColor(0.0,1.0,0.0).setShininess(1).setSpecularColor(0.0,1.0,0.0))))))
     .addChild(new Group("SpecHumanoid")
       .addChild(new Group("JoeISOHumanoid")
-        .addChild(new HAnimHumanoid("Joe_Human").setName("Human").setInfo(new String[] {humanoidVersion="2.0"}).setVersion("2.0")
+        .addChild(new HAnimHumanoid("Joe_Human").setName("Human").setInfo(new String[] {"humanoidVersion=2.0"}).setVersion("2.0")
+          .addComments(" <LOD containerField='skin'> (Switch whichChoice='0' and LOD parents each already work in view3dscene) ")
           .addSkin(new Shape("SkinShape")
-            .setGeometry(new IndexedFaceSet().setCreaseAngle(3.0999999046325684).setCoordIndex(getIndexedFaceSet_7_69_coordIndex())
-              .setCoord(new Coordinate("TheSkinCoord").setPoint(getTheSkinCoord_8_69_point()))
-              .setColor(new Color().setColor(getColor_8_70_color())))
+            .setGeometry(new IndexedFaceSet().setCreaseAngle(3.1).setCoordIndex(getIndexedFaceSet_7_78_coordIndex())
+              .setCoord(new Coordinate("TheSkinCoord").setPoint(getTheSkinCoord_8_78_point()))
+              .setColor(new Color().setColor(getColor_8_79_color())))
             .setAppearance(new Appearance("SkinAppearance")
-              .setTexture(new ImageTexture().setUrl(new String[] {"zBlueSpiralBkg2.gif"}))
+              .setTexture(new ImageTexture("zBlueSpiralBkg2").setDescription("Blue Spiral Pattern").setUrl(new String[] {"zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"}))
               .setMaterial(new Material("SkinMaterial").setAmbientIntensity(0.6).setDiffuseColor(1.0,1.0,1.0).setShininess(0.6).setTransparency(0.2))))
+          .addComments(" </LOD> ")
           .setSkinCoord(new Coordinate().setUSE("TheSkinCoord"))
-          .addJoints(new HAnimJoint("Joe_HumanoidRoot").setName("HumanoidRoot").setCenter(0.0,0.875,0.0).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
+          .addSkeleton(new HAnimJoint("Joe_HumanoidRoot").setName("HumanoidRoot").setCenter(0.0,0.875,0.0).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
             .addChild(new HAnimSegment("Joe_sacrum").setName("sacrum")
               .addChild(new Transform().setTranslation(0.0,0.875,0.0)
                 .addChild(new Shape().setUSE("jointbox")))
@@ -269,31 +316,31 @@ public class JoeSkeletonSiteSkinSaluteWalk
                     .addChild(new Shape().setUSE("sitebox"))))
                 .addChild(new HAnimSite("Joe_crotch").setName("crotch").setTranslation(0.0,0.87,-0.022)
                   .addChild(new Shape().setUSE("sitebox"))))
-              .addChild(new HAnimJoint("Joe_l_hip").setName("l_hip").setCenter(0.10000000149011612,0.92000001668930054,0.0).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {89,90,94,95,96,97}).setSkinCoordWeight(new double[] {0.64999997615814209,1.0,1.0,1.0,1.0,1.0}).setUlimit(new double[] {0.0,0.0,0.0})
+              .addChild(new HAnimJoint("Joe_l_hip").setName("l_hip").setCenter(0.1,0.92,0.0).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {89,90,94,95,96,97}).setSkinCoordWeight(new double[] {0.65,1.0,1.0,1.0,1.0,1.0}).setUlimit(new double[] {0.0,0.0,0.0})
                 .addChild(new HAnimSegment("Joe_l_thigh").setName("l_thigh")
-                  .addChild(new Transform().setTranslation(0.10000000149011612,0.92000001668930054,0.0)
+                  .addChild(new Transform().setTranslation(0.1,0.92,0.0)
                     .addChild(new Shape().setUSE("jointbox")))
                   .addChild(new Shape()
                     .setGeometry(new IndexedLineSet().setCoordIndex(new int[] {0,1,-1})
-                      .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.10000000149011612,0.92000001668930054,0.0,0.11500000208616257,0.46599999070167542,0.0}))))
+                      .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.1,0.92,0.0,0.115,0.466,0.0}))))
                     .setAppearance(new Appearance().setUSE("SegmentLine")))
-                  .addChild(new Transform().setTranslation(0.10000000149011612,0.89999997615814209,0.077500000596046448)
+                  .addChild(new Transform().setTranslation(0.1,0.9,0.0775)
                     .addChild(new Shape().setUSE("skinsphere")))
-                  .addChild(new Transform().setTranslation(0.079000003635883331,0.92000001668930054,-0.14000000059604645)
+                  .addChild(new Transform().setTranslation(0.079,0.92,-0.14)
                     .addChild(new Shape().setUSE("skinsphere")))
-                  .addChild(new Transform().setTranslation(0.17100000381469727,0.64999997615814209,0.0)
+                  .addChild(new Transform().setTranslation(0.171,0.65,0.0)
                     .addChild(new Shape().setUSE("skinsphere")))
-                  .addChild(new Transform().setTranslation(0.019999999552965164,0.64999997615814209,0.0)
+                  .addChild(new Transform().setTranslation(0.02,0.65,0.0)
                     .addChild(new Shape().setUSE("skinsphere")))
-                  .addChild(new Transform().setTranslation(0.10000000149011612,0.64999997615814209,-0.079999998211860657)
+                  .addChild(new Transform().setTranslation(0.1,0.65,-0.08)
                     .addChild(new Shape().setUSE("skinsphere")))
-                  .addChild(new Transform().setTranslation(0.10000000149011612,0.64999997615814209,0.070000000298023224)
+                  .addChild(new Transform().setTranslation(0.1,0.65,0.07)
                     .addChild(new Shape().setUSE("skinsphere")))
-                  .addChild(new HAnimSite("Joe_l_knee_crease").setName("l_knee_crease").setTranslation(0.11500000208616257,0.46599999070167542,-0.054999999701976776)
+                  .addChild(new HAnimSite("Joe_l_knee_crease").setName("l_knee_crease").setTranslation(0.115,0.466,-0.055)
                     .addChild(new Shape().setUSE("sitebox")))
-                  .addChild(new HAnimSite("Joe_l_femoral_lateral_epicn").setName("l_femoral_lateral_epicn").setTranslation(0.17000000178813934,0.46599999070167542,0.0)
+                  .addChild(new HAnimSite("Joe_l_femoral_lateral_epicn").setName("l_femoral_lateral_epicn").setTranslation(0.17,0.466,0.0)
                     .addChild(new Shape().setUSE("sitebox")))
-                  .addChild(new HAnimSite("Joe_l_femoral_medial_epicn").setName("l_femoral_medial_epicn").setTranslation(0.05000000074505806,0.46599999070167542,0.0)
+                  .addChild(new HAnimSite("Joe_l_femoral_medial_epicn").setName("l_femoral_medial_epicn").setTranslation(0.05,0.466,0.0)
                     .addChild(new Shape().setUSE("sitebox"))))
                 .addChild(new HAnimJoint("Joe_l_knee").setName("l_knee").setCenter(0.11500000208616257,0.46599999070167542,0.0).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {334,335,336,337,338,339,340,341}).setSkinCoordWeight(new double[] {1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0}).setUlimit(new double[] {0.0,0.0,0.0})
                   .addChild(new HAnimSegment("Joe_l_calf").setName("l_calf")
@@ -301,47 +348,47 @@ public class JoeSkeletonSiteSkinSaluteWalk
                       .addChild(new Shape().setUSE("jointbox")))
                     .addChild(new Shape()
                       .setGeometry(new IndexedLineSet().setCoordIndex(new int[] {0,1,-1})
-                        .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.11500000208616257,0.46599999070167542,0.0,0.10000000149011612,0.068999998271465302,0.0}))))
+                        .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.115,0.466,0.0,0.1,0.069,0.0}))))
                       .setAppearance(new Appearance().setUSE("SegmentLine")))
-                    .addChild(new Transform().setTranslation(0.11500000208616257,0.46599999070167542,0.059999998658895493)
+                    .addChild(new Transform().setTranslation(0.115,0.466,0.06)
                       .addChild(new Shape().setUSE("skinsphere")))
-                    .addChild(new Transform().setTranslation(0.11500000208616257,0.46599999070167542,-0.054999999701976776)
+                    .addChild(new Transform().setTranslation(0.115,0.466,-0.055)
                       .addChild(new Shape().setUSE("skinsphere")))
-                    .addChild(new Transform().setTranslation(0.17000000178813934,0.46599999070167542,0.0)
+                    .addChild(new Transform().setTranslation(0.17,0.466,0.0)
                       .addChild(new Shape().setUSE("skinsphere")))
-                    .addChild(new Transform().setTranslation(0.05000000074505806,0.46599999070167542,0.0)
+                    .addChild(new Transform().setTranslation(0.05,0.466,0.0)
                       .addChild(new Shape().setUSE("skinsphere")))
-                    .addChild(new Transform().setTranslation(0.17000000178813934,0.30000001192092896,0.0)
+                    .addChild(new Transform().setTranslation(0.17,0.3,0.0)
                       .addChild(new Shape().setUSE("skinsphere")))
-                    .addChild(new Transform().setTranslation(0.059999998658895493,0.30000001192092896,0.0)
+                    .addChild(new Transform().setTranslation(0.06,0.3,0.0)
                       .addChild(new Shape().setUSE("skinsphere")))
-                    .addChild(new Transform().setTranslation(0.10000000149011612,0.30000001192092896,-0.05000000074505806)
+                    .addChild(new Transform().setTranslation(0.1,0.3,-0.05)
                       .addChild(new Shape().setUSE("skinsphere")))
-                    .addChild(new Transform().setTranslation(0.10000000149011612,0.30000001192092896,0.05000000074505806)
+                    .addChild(new Transform().setTranslation(0.1,0.3,0.05)
                       .addChild(new Shape().setUSE("skinsphere")))
-                    .addChild(new HAnimSite("Joe_l_lateral_malleolus").setName("l_lateral_malleolus").setTranslation(0.15000000596046448,0.070000000298023224,0.0)
+                    .addChild(new HAnimSite("Joe_l_lateral_malleolus").setName("l_lateral_malleolus").setTranslation(0.15,0.07,0.0)
                       .addChild(new Shape().setUSE("sitebox")))
-                    .addChild(new HAnimSite("Joe_l_medial_malleolus").setName("l_medial_malleolus").setTranslation(0.085000000894069672,0.086000002920627594,0.012500000186264515)
+                    .addChild(new HAnimSite("Joe_l_medial_malleolus").setName("l_medial_malleolus").setTranslation(0.085,0.086,0.0125)
                       .addChild(new Shape().setUSE("sitebox"))))
-                  .addChild(new HAnimJoint("Joe_l_ankle").setName("l_ankle").setCenter(0.11500000208616257,0.068999998271465302,0.0).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {342,343,344,345}).setSkinCoordWeight(new double[] {1.0,1.0,1.0,1.0}).setUlimit(new double[] {0.0,0.0,0.0})
+                  .addChild(new HAnimJoint("Joe_l_ankle").setName("l_ankle").setCenter(0.115,0.069,0.0).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {342,343,344,345}).setSkinCoordWeight(new double[] {1.0,1.0,1.0,1.0}).setUlimit(new double[] {0.0,0.0,0.0})
                     .addChild(new HAnimSegment("Joe_l_hindfoot").setName("l_hindfoot")
-                      .addChild(new Transform().setTranslation(0.11500000208616257,0.068999998271465302,0.0)
+                      .addChild(new Transform().setTranslation(0.115,0.069,0.0)
                         .addChild(new Shape().setUSE("jointbox")))
                       .addChild(new Shape()
                         .setGeometry(new IndexedLineSet().setCoordIndex(new int[] {0,1,-1})
-                          .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.10000000149011612,0.068999998271465302,0.0,0.11500000208616257,0.030999999493360519,0.029999999329447746}))))
+                          .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.1,0.069,0.0,0.115,0.031,0.03}))))
                         .setAppearance(new Appearance().setUSE("SegmentLine")))
-                      .addChild(new Transform().setTranslation(0.15000000596046448,0.070000000298023224,0.0)
+                      .addChild(new Transform().setTranslation(0.15,0.07,0.0)
                         .addChild(new Shape().setUSE("skinsphere")))
-                      .addChild(new Transform().setTranslation(0.085000000894069672,0.086000002920627594,0.012500000186264515)
+                      .addChild(new Transform().setTranslation(0.085,0.086,0.0125)
                         .addChild(new Shape().setUSE("skinsphere")))
-                      .addChild(new Transform().setTranslation(0.11500000208616257,0.068999998271465302,-0.045000001788139343)
+                      .addChild(new Transform().setTranslation(0.115,0.069,-0.045)
                         .addChild(new Shape().setUSE("skinsphere")))
-                      .addChild(new Transform().setTranslation(0.11699999868869781,0.097499996423721313,0.061500001698732376)
+                      .addChild(new Transform().setTranslation(0.117,0.0975,0.0615)
                         .addChild(new Shape().setUSE("skinsphere")))
-                      .addChild(new HAnimSite("Joe_l_sphyrion").setName("l_sphyrion").setTranslation(0.090000003576278687,0.056000001728534698,0.012500000186264515)
+                      .addChild(new HAnimSite("Joe_l_sphyrion").setName("l_sphyrion").setTranslation(0.09,0.056,0.0125)
                         .addChild(new Shape().setUSE("sitebox")))
-                      .addChild(new HAnimSite("Joe_l_calcaneous_post").setName("l_calcaneous_post").setTranslation(0.11500000208616257,0.039999999105930328,-0.054999999701976776)
+                      .addChild(new HAnimSite("Joe_l_calcaneous_post").setName("l_calcaneous_post").setTranslation(0.115,0.04,-0.055)
                         .addChild(new Shape().setUSE("sitebox"))))
                     .addChild(new HAnimJoint("Joe_l_subtalar").setName("l_subtalar").setCenter(0.115,0.031,0.03).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {346,347,348,71}).setSkinCoordWeight(new double[] {1.0,1.0,1.0,1.0}).setUlimit(new double[] {0.0,0.0,0.0})
                       .addChild(new HAnimSegment("Joe_l_midproximal").setName("l_midproximal")
@@ -351,19 +398,19 @@ public class JoeSkeletonSiteSkinSaluteWalk
                           .setGeometry(new IndexedLineSet().setCoordIndex(new int[] {0,1,-1})
                             .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.115,0.031,0.03,0.115,0.037,0.09}))))
                           .setAppearance(new Appearance().setUSE("SegmentLine")))
-                        .addChild(new Transform().setTranslation(0.13750000298023224,0.0060000000521540642,-0.029999999329447746)
+                        .addChild(new Transform().setTranslation(0.1375,0.006,-0.03)
                           .addChild(new Shape().setUSE("skinsphere")))
-                        .addChild(new Transform().setTranslation(0.094999998807907104,0.0060000000521540642,-0.029999999329447746)
+                        .addChild(new Transform().setTranslation(0.095,0.006,-0.03)
                           .addChild(new Shape().setUSE("skinsphere")))
-                        .addChild(new Transform().setTranslation(0.11500000208616257,0.014999999664723873,-0.045000001788139343)
+                        .addChild(new Transform().setTranslation(0.115,0.015,-0.045)
                           .addChild(new Shape().setUSE("skinsphere"))))
-                      .addChild(new HAnimJoint("Joe_l_midtarsal").setName("l_midtarsal").setCenter(0.11500000208616257,0.037000000476837158,0.090000003576278687).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {349,350,351,352}).setSkinCoordWeight(new double[] {1.0,1.0,1.0,1.0}).setUlimit(new double[] {0.0,0.0,0.0})
+                      .addChild(new HAnimJoint("Joe_l_midtarsal").setName("l_midtarsal").setCenter(0.115,0.037,0.09).setLlimit(new double[] {0.0,0.0,0.0}).setSkinCoordIndex(new int[] {349,350,351,352}).setSkinCoordWeight(new double[] {1.0,1.0,1.0,1.0}).setUlimit(new double[] {0.0,0.0,0.0})
                         .addChild(new HAnimSegment("Joe_l_middistal").setName("l_middistal")
-                          .addChild(new Transform().setTranslation(0.11500000208616257,0.037000000476837158,0.090000003576278687)
+                          .addChild(new Transform().setTranslation(0.115,0.037,0.09)
                             .addChild(new Shape().setUSE("jointbox")))
                           .addChild(new Shape()
                             .setGeometry(new IndexedLineSet().setCoordIndex(new int[] {0,1,-1})
-                              .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.11500000208616257,0.037000000476837158,0.090000003576278687,0.11500000208616257,0.019999999552965164,0.12200000137090683}))))
+                              .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.115,0.037,0.09,0.115,0.02,0.122}))))
                             .setAppearance(new Appearance().setUSE("SegmentLine")))
                           .addChild(new Transform().setTranslation(0.11500000208616257,0.059999998658895493,0.10000000149011612)
                             .addChild(new Shape().setUSE("skinsphere")))
@@ -1524,7 +1571,7 @@ public class JoeSkeletonSiteSkinSaluteWalk
       .addChild(new OrientationInterpolator("L_metatarsal_ANIMATOR").setKey(new double[] {0.0,0.20000000298023224,0.40000000596046448,0.80000001192092896,1.0}).setKeyValue(new MFRotation(new double[] {-1.0,0.0,0.0,0.30000001192092896,-1.0,0.0,0.0,0.15000000596046448,1.0,0.0,0.0,0.30000001192092896,0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.30000001192092896})))
       .addChild(new OrientationInterpolator("R_HIP_ANIMATOR").setKey(new double[] {0.0,0.125,0.20829999446868896,0.29170000553131104,0.375,0.5,0.66670000553131104,0.79170000553131104,0.91670000553131104,1.0}).setKeyValue(new MFRotation(new double[] {-0.58310002088546753,0.035110000520944595,0.81160002946853638,0.14810000360012054,-0.99500000476837158,0.022959999740123749,0.096739999949932098,0.46830001473426819,-1.0,0.0019000000320374966,0.0079600000753998756,0.4731999933719635,-0.99800002574920654,-0.015799999237060547,-0.061020001769065857,0.50789999961853027,-0.991100013256073,-0.035409998148679733,-0.12860000133514404,0.54189997911453247,-0.91310000419616699,-0.062430001795291901,-0.40299999713897705,0.3361000120639801,-0.43059998750686646,-0.079620003700256348,-0.89899998903274536,0.07038000226020813,1.0,0.0,0.0,0.25709998607635498,0.98909997940063477,-0.028049999848008156,0.14440000057220459,0.38789999485015869,-0.58310002088546753,0.035110000520944595,0.81160002946853638,0.14810000360012054})))
       .addChild(new OrientationInterpolator("R_KNEE_ANIMATOR").setKey(new double[] {0.0,0.125,0.20829999446868896,0.29170000553131104,0.375,0.5,0.66670000553131104,0.79170000553131104,0.91670000553131104,1.0}).setKeyValue(new MFRotation(new double[] {1.0,0.0,0.0,0.85729998350143433,1.0,0.0,0.0,0.89259999990463257,1.0,0.0,0.0,0.53509998321533203,1.0,0.0,0.0,0.17560000717639923,1.0,0.0,0.0,0.11940000206232071,1.0,0.0,0.0,0.31529998779296875,1.0,0.0,0.0,0.093539997935295105,1.0,0.0,0.0,0.085579998791217804,1.0,0.0,0.0,0.24750000238418579,1.0,0.0,0.0,0.85729998350143433})))
-      .addChild(new OrientationInterpolator("R_subtalar_ANIMATOR").setKey(new double[] {0.0,0.22499999403953552,0.25,0.34999999403953552,0.44999998807907104,0.85000002384185791,0.9100000262260437}).setKeyValue(new MFRotation(new double[] {-1.0,0.0,0.0,0.10000000149011612,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.10000000149011612,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.10000000149011612,1.0,0.0,0.0,0.25,-1.0,0.0,0.0,0.10000000149011612})))
+      .addChild(new OrientationInterpolator("R_subtalar_ANIMATOR").setKey(new double[] {0.0,0.225,0.25,0.35,0.45,0.85,0.91}).setKeyValue(new MFRotation(new double[] {-1.0,0.0,0.0,0.1,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.1,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.1,1.0,0.0,0.0,0.25})))
       .addChild(new OrientationInterpolator("R_MIDTARSAL_ANIMATOR").setKey(new double[] {0.0,0.2199999988079071,1.0}).setKeyValue(new MFRotation(new double[] {1.0,0.0,0.0,-0.20000000298023224,0.0,0.0,1.0,0.0,1.0,0.0,0.0,-0.20000000298023224})))
       .addChild(new OrientationInterpolator("R_metatarsal_ANIMATOR").setKey(new double[] {0.0,0.20000000298023224,0.40000000596046448,0.80000001192092896,1.0}).setKeyValue(new MFRotation(new double[] {-1.0,0.0,0.0,0.15000000596046448,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.30000001192092896,-1.0,0.0,0.0,0.30000001192092896,-1.0,0.0,0.0,0.15000000596046448})))
       .addChild(new OrientationInterpolator("VL5_ANIMATOR").setKey(new double[] {0.0,0.20829999446868896,0.375,0.75,0.83329999446868896,1.0}).setKeyValue(new MFRotation(new double[] {0.0,1.0,0.0,0.082599997520446777,-0.01971999928355217,-0.5974000096321106,0.80169999599456787,0.082309998571872711,0.0092960000038146973,-0.96480000019073486,0.26269999146461487,0.17339999973773956,-0.012380000203847885,0.95490002632141113,-0.29679998755455017,0.087319999933242798,-0.0081249997019767761,0.96909999847412109,-0.24629999697208405,0.15800000727176666,0.0,1.0,0.0,0.082599997520446777})))
@@ -1580,17 +1627,17 @@ public class JoeSkeletonSiteSkinSaluteWalk
 	// end of initialize() method
 
 		/** Define subarrays using type int[] */
-		private int[] getIndexedFaceSet_7_69_coordIndex_1()
+		private int[] getIndexedFaceSet_7_78_coordIndex_1()
 		{
 			int[] value = {0,9,5,-1,0,7,9,-1,0,5,1,-1,1,5,2,-1,1,3,7,-1,2,4,3,-1,0,1,7,-1,1,2,3,-1,5,6,2,-1,7,3,8,-1,6,4,2,-1,3,4,8,-1,9,6,5,-1,9,7,8,-1,4,6,10,-1,4,10,12,-1,4,12,8,-1,10,11,12,-1,9,75,24,-1,9,24,74,-1,9,8,75,-1,9,74,6,-1,10,6,74,-1,12,75,8,-1,74,24,29,-1,24,77,29,-1,10,74,29,-1,77,32,29,-1,32,78,29,-1,78,30,29,-1,30,10,29,-1,41,24,75,-1,41,75,12,-1,41,12,42,-1,41,42,80,-1,41,80,44,-1,41,44,79,-1,41,79,24,-1,81,24,79,-1,81,77,24,-1,81,25,77,-1,81,79,25,-1,25,79,44,-1,25,32,77,-1,25,83,32,-1,25,26,83,-1,25,27,26,-1,25,84,27,-1,25,44,84,-1,11,10,30,-1,11,30,13,-1,11,13,15,-1,11,15,14,-1,11,14,42,-1,11,42,12,-1,15,13,16,-1,15,18,14,-1,15,16,76,-1,15,76,18,-1,76,16,17,-1,76,17,82,-1,76,82,19,-1,76,19,18,-1,22,18,19,-1,22,87,18,-1,22,27,84,-1,22,84,87,-1,87,84,85,-1,85,84,44,-1,85,42,14,-1,87,14,18,-1,87,85,14,-1,20,83,26,-1,20,17,16,-1,20,16,88,-1,20,88,83,-1,88,16,13,-1,88,13,86,-1,88,86,83,-1,86,13,30,-1,86,32,83,-1,23,89,22,-1,89,27,22,-1,89,91,27,-1,91,26,27,-1,91,20,26,-1,21,20,91,-1,21,17,20,-1,21,92,17,-1,82,17,92,-1,82,90,19,-1,23,22,19,-1,23,19,90,-1,82,92,101,-1,82,101,99,-1,82,99,93,-1,82,93,95,-1,82,95,97,-1,82,97,90,-1,23,90,97,-1,23,97,94,-1,23,94,89,-1,89,94,96,-1,89,96,95,-1,89,95,93,-1,89,93,91,-1,91,93,99,-1,91,99,100,-1,91,100,98,-1,21,91,98,-1,21,98,101,-1,21,101,92,-1,85,105,42,-1,85,103,105,-1,85,44,103,-1,103,44,104,-1,80,42,105,-1,80,105,102,-1,80,102,104,-1,80,104,44,-1,105,109,102,-1,102,109,47,-1,47,104,102,-1,104,47,45,-1,104,45,103,-1,103,45,46,-1,103,46,109,-1,103,109,105,-1,109,112,110,-1,109,110,47,-1,47,110,111,-1,47,111,45,-1,45,111,113,-1,113,46,45,-1,46,113,112,-1,112,109,46,-1,112,118,110,-1,110,118,115,-1,110,115,111,-1,111,115,117,-1,111,117,113,-1,113,117,116,-1,113,116,112,-1,112,116,118,-1,115,118,119,-1,119,118,122,-1,118,116,122,-1,122,116,120,-1,116,117,120,-1,120,117,121,-1,117,115,121,-1,115,119,121,-1,119,127,123,-1,119,122,127,-1,122,126,127,-1,122,128,126,-1,122,120,128,-1,120,124,128,-1,120,121,124,-1,121,125,124,-1,121,119,125,-1,119,123,125,-1,127,129,123,-1,127,126,129,-1,129,126,141,-1,141,126,143,-1,126,142,143,-1,126,128,142,-1,128,124,130,-1,142,128,130,-1,124,132,130,-1,124,134,132,-1,125,134,124,-1,125,136,134,-1,125,137,136,-1,125,135,137,-1,125,133,135,-1,125,123,133,-1,123,131,133,-1,123,129,131,-1,131,129,138,-1,129,141,138,-1,138,141,144,-1,141,143,144,-1,143,146,144,-1,142,146,143,-1,142,145,146,-1,139,145,142,-1,130,139,142,-1,139,130,132,-1,139,132,154,-1,132,157,154,-1,132,159,157,-1,132,134,159,-1,134,136,159,-1,136,161,159,-1,136,137,161,-1,137,162,161,-1,160,162,137,-1,135,160,137,-1,133,160,135,-1,133,158,160,-1,131,158,133,-1,156,158,131,-1,153,156,131,-1,131,138,153,-1,138,155,153,-1,140,155,138,-1,138,144,140,-1,144,147,140,-1,140,147,145,-1,140,145,139,-1,139,155,140,-1,154,155,139,-1,146,149,144,-1,146,151,149,-1,145,151,146,-1,150,151,145,-1,145,152,150,-1,147,152,145,-1,147,149,152,-1,147,144,149,-1,148,149,151,-1,148,152,149,-1,148,150,152,-1,148,151,150,-1,160,207,162,-1,160,205,207,-1,165,208,205,-1,160,165,205,-1,158,165,160,-1,161,162,207,-1,161,207,206,-1,165,206,208,-1,206,165,161,-1,161,165,159,-1,207,209,211,-1,205,209,207,-1,205,212,209,-1,205,208,212,-1,206,212,208,-1,206,210,212,-1,206,207,210,-1,207,211,210,-1,209,212,213,-1,212,216,213,-1,212,214,216,-1,210,214,212,-1,210,215,214,-1,210,211,215,-1};
 			return value;
 		}
-		private int[] getIndexedFaceSet_7_69_coordIndex_2()
+		private int[] getIndexedFaceSet_7_78_coordIndex_2()
 		{
 			int[] value = {209,215,211,-1,209,213,215,-1,217,213,216,-1,217,215,213,-1,217,214,215,-1,217,216,214,-1,158,194,165,-1,192,194,158,-1,164,195,192,-1,158,164,192,-1,156,164,158,-1,159,194,165,-1,159,194,193,-1,159,193,195,-1,159,195,164,-1,159,164,157,-1,157,164,180,-1,192,198,194,-1,192,196,198,-1,192,195,196,-1,195,199,196,-1,196,199,200,-1,199,203,200,-1,193,199,195,-1,193,197,199,-1,193,198,197,-1,193,194,198,-1,199,201,203,-1,197,201,199,-1,197,198,201,-1,198,202,201,-1,196,202,198,-1,200,202,196,-1,204,202,200,-1,204,201,202,-1,204,203,201,-1,204,200,203,-1,156,181,164,-1,156,179,181,-1,156,182,179,-1,156,163,182,-1,163,180,182,-1,157,180,163,-1,164,181,180,-1,179,182,183,-1,182,186,183,-1,182,184,186,-1,180,184,182,-1,180,181,184,-1,181,185,184,-1,179,185,181,-1,183,185,179,-1,183,186,187,-1,186,190,187,-1,184,190,186,-1,184,188,190,-1,184,185,188,-1,185,189,188,-1,185,183,189,-1,183,187,189,-1,191,189,187,-1,191,188,189,-1,191,190,188,-1,191,187,190,-1,153,163,156,-1,153,168,163,-1,153,166,168,-1,153,169,166,-1,155,169,153,-1,155,167,169,-1,154,167,155,-1,154,163,167,-1,154,157,163,-1,163,168,167,-1,166,169,170,-1,169,173,170,-1,169,171,173,-1,169,167,171,-1,167,168,171,-1,168,172,171,-1,168,170,172,-1,170,168,166,-1,170,173,174,-1,173,177,174,-1,173,175,177,-1,173,171,175,-1,171,172,175,-1,172,176,175,-1,172,174,176,-1,170,174,172,-1,178,176,174,-1,178,175,176,-1,178,177,175,-1,178,174,177,-1,86,30,221,-1,86,221,219,-1,86,219,32,-1,32,219,220,-1,78,32,220,-1,78,220,218,-1,78,218,221,-1,78,221,30,-1,221,225,219,-1,219,225,35,-1,35,33,219,-1,33,220,219,-1,33,34,220,-1,220,34,218,-1,221,218,34,-1,34,225,221,-1,225,226,228,-1,225,228,35,-1,35,228,229,-1,35,229,33,-1,33,229,227,-1,33,227,34,-1,34,227,226,-1,34,226,225,-1,226,234,228,-1,228,234,232,-1,232,229,228,-1,232,233,229,-1,229,233,227,-1,227,233,231,-1,227,231,226,-1,226,231,234,-1,231,235,234,-1,235,238,234,-1,234,238,232,-1,238,236,232,-1,232,236,233,-1,236,237,233,-1,233,237,231,-1,231,237,235,-1,235,239,243,-1,235,243,238,-1,238,243,242,-1,238,242,244,-1,238,244,236,-1,236,244,240,-1,236,240,237,-1,237,240,241,-1,237,241,235,-1,235,241,239,-1,243,239,245,-1,243,245,242,-1,245,257,242,-1,257,259,242,-1,242,259,258,-1,242,258,244,-1,244,246,240,-1,258,246,244,-1,240,246,248,-1,240,248,250,-1,241,240,250,-1,241,250,252,-1,241,252,253,-1,241,253,251,-1,241,251,249,-1,241,249,239,-1,239,249,247,-1,239,247,245,-1,247,254,245,-1,245,254,257,-1,254,260,257,-1,257,260,259,-1,259,260,262,-1,258,259,262,-1,258,262,261,-1,255,258,261,-1,246,258,255,-1,255,248,246,-1,255,270,248,-1,248,270,273,-1,248,273,275,-1,248,275,250,-1,250,275,252,-1,252,275,277,-1,252,277,253,-1,253,277,278,-1,276,253,278,-1,251,253,276,-1,249,251,276,-1,249,276,274,-1,247,249,274,-1,272,247,274,-1,269,247,272,-1,247,269,254,-1,254,269,271,-1,256,254,271,-1,254,256,260,-1,260,256,263,-1,256,261,263,-1,256,255,261,-1,255,256,271,-1,270,255,271,-1,262,260,265,-1,262,265,267,-1,261,262,267,-1,266,261,267,-1,261,266,268,-1,263,261,268,-1,263,268,265,-1,263,265,260,-1,264,267,265,-1,264,265,268,-1,264,268,266,-1,264,266,267,-1,276,278,323,-1,276,323,321,-1,281,321,324,-1,276,321,281,-1,274,276,281,-1,277,323,278,-1,277,322,323,-1,281,324,322,-1,322,277,281,-1,277,275,281,-1,323,327,325,-1,321,323,325,-1,321,325,328,-1,321,328,324,-1,322,324,328,-1,322,328,326,-1,322,326,323,-1,323,326,327,-1,325,329,328,-1,328,329,332,-1,328,332,330,-1,326,328,330,-1,326,330,331,-1,326,331,327,-1,325,327,331,-1,325,331,329,-1,333,332,329,-1,333,329,331,-1,333,331,330,-1,333,330,332,-1,274,281,310,-1,308,274,310,-1,280,308,311,-1,274,308,280,-1,272,274,280,-1,275,310,281,-1,275,309,310,-1,275,311,309,-1,275,280,311,-1,275,273,280,-1,273,296,280,-1,308,310,314,-1};
 			return value;
 		}
-		private int[] getIndexedFaceSet_7_69_coordIndex_3()
+		private int[] getIndexedFaceSet_7_78_coordIndex_3()
 		{
 			int[] value = {308,314,312,-1,308,312,311,-1,311,312,315,-1,312,316,315,-1,315,316,319,-1,309,311,315,-1,309,315,313,-1,309,313,314,-1,309,314,310,-1,315,319,317,-1,313,315,317,-1,313,317,314,-1,314,317,318,-1,312,314,318,-1,316,312,318,-1,320,316,318,-1,320,318,317,-1,320,317,319,-1,320,319,316,-1,272,280,297,-1,272,297,295,-1,272,295,298,-1,272,298,279,-1,279,298,296,-1,273,279,296,-1,280,296,297,-1,295,299,298,-1,298,299,302,-1,298,302,300,-1,296,298,300,-1,296,300,297,-1,297,300,301,-1,295,297,301,-1,299,295,301,-1,299,303,302,-1,302,303,306,-1,300,302,306,-1,300,306,304,-1,300,304,301,-1,301,304,305,-1,301,305,299,-1,299,305,303,-1,307,303,305,-1,307,305,304,-1,307,304,306,-1,307,306,303,-1,269,272,279,-1,269,279,284,-1,269,284,282,-1,269,282,285,-1,271,269,285,-1,271,285,283,-1,270,271,283,-1,270,283,279,-1,270,279,273,-1,279,283,284,-1,282,286,285,-1,285,286,289,-1,285,289,287,-1,285,287,283,-1,283,287,284,-1,284,287,288,-1,284,288,286,-1,286,282,284,-1,286,290,289,-1,289,290,293,-1,289,293,291,-1,289,291,287,-1,287,291,288,-1,288,291,292,-1,288,292,290,-1,286,288,290,-1,294,290,292,-1,294,292,291,-1,294,291,293,-1,294,293,290,-1,97,334,336,-1,97,336,94,-1,94,336,96,-1,336,335,96,-1,96,335,95,-1,95,335,337,-1,95,337,334,-1,95,334,97,-1,334,341,336,-1,336,341,338,-1,336,338,335,-1,335,338,340,-1,335,340,337,-1,337,340,339,-1,337,339,334,-1,334,339,341,-1,341,345,342,-1,341,342,338,-1,338,342,340,-1,340,342,344,-1,340,344,339,-1,339,344,343,-1,339,343,345,-1,339,345,341,-1,345,349,342,-1,342,349,351,-1,342,351,346,-1,342,346,344,-1,71,346,348,-1,71,344,346,-1,71,348,347,-1,71,347,344,-1,344,347,343,-1,343,347,352,-1,343,352,349,-1,343,349,345,-1,349,352,356,-1,349,356,353,-1,349,353,355,-1,349,355,351,-1,354,356,352,-1,354,352,350,-1,354,350,351,-1,354,351,355,-1,353,356,357,-1,353,357,358,-1,353,358,359,-1,353,359,360,-1,353,360,361,-1,353,361,355,-1,354,357,356,-1,350,346,351,-1,348,346,347,-1,350,347,346,-1,350,352,347,-1,354,358,357,-1,354,359,358,-1,354,360,359,-1,354,361,360,-1,354,355,361,-1,101,362,365,-1,101,365,99,-1,99,365,100,-1,100,365,363,-1,100,363,98,-1,98,363,364,-1,98,364,101,-1,101,364,362,-1,362,369,367,-1,362,367,365,-1,365,367,363,-1,363,367,368,-1,363,367,368,-1,363,368,366,-1,363,366,364,-1,364,366,362,-1,362,366,369,-1,369,373,371,-1,369,371,367,-1,367,371,368,-1,368,371,372,-1,368,372,366,-1,366,372,370,-1,366,370,369,-1,369,370,373,-1,373,377,380,-1,373,380,375,-1,373,375,371,-1,371,375,372,-1,372,375,376,-1,372,376,374,-1,372,374,370,-1,370,374,379,-1,373,370,379,-1,373,379,377,-1,377,379,383,-1,377,383,381,-1,377,381,384,-1,377,384,380,-1,381,383,389,-1,381,389,388,-1,381,388,387,-1,381,387,386,-1,381,386,385,-1,381,385,384,-1,376,375,374,-1,378,379,374,-1,378,374,375,-1,378,375,380,-1,382,386,387,-1,382,387,388,-1,382,388,389,-1,382,389,383,-1,382,383,379,-1,382,379,378,-1,382,378,380,-1,382,380,384,-1,382,384,385,-1,382,385,386,-1};
 			return value;
@@ -1598,114 +1645,114 @@ public class JoeSkeletonSiteSkinSaluteWalk
 
 
 		/** Define subarrays using type double[] */
-		private double[] getTheSkinCoord_8_69_point_1()
+		private double[] getTheSkinCoord_8_78_point_1()
 		{
-			double[] value = {0.0,1.7699999809265137,0.0,0.0,1.6649999618530273,0.090000003576278687,-0.032999999821186066,1.6200000047683716,0.086999997496604919,0.032999999821186066,1.6200000047683716,0.086999997496604919,0.0,1.5499999523162842,0.097000002861022949,-0.076999999582767487,1.6399999856948853,-0.0099999997764825821,-0.052700001746416092,1.5800000429153442,0.014999999664723873,0.076999999582767487,1.6399999856948853,-0.0099999997764825821,0.052700001746416092,1.5800000429153442,0.014999999664723873,0.0,1.625,-0.092500001192092896,-0.029999999329447746,1.4600000381469727,0.035000000149011612,0.0,1.440000057220459,0.029999999329447746,0.029999999329447746,1.4600000381469727,0.035000000149011612,-0.11349999904632568,1.3179999589920044,0.094999998807907104,0.11349999904632568,1.3179999589920044,0.094999998807907104,0.0,1.25,0.11299999803304672,-0.086999997496604919,1.190000057220459,0.090000003576278687,-0.093500003218650818,1.0299999713897705,0.075000002980232239,0.086999997496604919,1.190000057220459,0.090000003576278687,0.093500003218650818,1.0299999713897705,0.075000002980232239,-0.14249999821186066,1.065000057220459,0.0032999999821186066,-0.15000000596046448,0.89999997615814209,-0.0099999997764825821,0.14249999821186066,1.065000057220459,0.0032999999821186066,0.15000000596046448,0.89999997615814209,-0.0099999997764825821,0.0,1.5299999713897705,-0.083999998867511749,0.0049000000581145287,1.1907999515533447,-0.11129999905824661,-0.077299997210502625,1.0190000534057617,-0.11999999731779099,0.077299997210502625,1.0190000534057617,-0.11999999731779099,0.004999999888241291,1.0915000438690186,-0.10909999907016754,-0.17800000309944153,1.4824999570846558,-0.0625,-0.17000000178813934,1.3799999952316284,0.0070000002160668373,-0.18840000033378601,0.86760002374649048,-0.035999998450279236,-0.15999999642372131,1.3799999952316284,-0.12700000405311584,-0.20000000298023224,1.1388000249862671,-0.079999998211860657,-0.24400000274181366,1.1388000249862671,-0.039999999105930328,-0.16500000655651093,1.1388000249862671,-0.039999999105930328,-0.23000000417232513,1.1330000162124634,-0.054999999701976776,-0.19769999384880066,0.81690001487731934,-0.017699999734759331,-0.19410000741481781,0.67720001935958862,-0.042300000786781311,-0.21170000731945038,0.85619997978210449,-0.058400001376867294,-0.19290000200271606,0.78899997472763062,-0.10639999806880951,0.17499999701976776,1.4824999570846558,-0.059999998658895493,0.17000000178813934,1.3799999952316284,0.0070000002160668373,0.19009999930858612,0.86449998617172241,-0.041499998420476913,0.15999999642372131,1.3799999952316284,-0.125,0.20000000298023224,1.1388000249862671,-0.079999998211860657,0.16500000655651093,1.1388000249862671,-0.039999999105930328,0.24400000274181366,1.1388000249862671,-0.039999999105930328,0.23000000417232513,1.1330000162124634,-0.054999999701976776,0.20090000331401825,0.81389999389648438,-0.02370000071823597,0.20559999346733093,0.67430001497268677,-0.048200000077486038,0.21420000493526459,0.85290002822875977,-0.064800001680850983,0.19290000200271606,0.78600001335144043,-0.11219999939203262,-0.10000000149011612,0.49129998683929443,-0.029999999329447746,-0.17000000178813934,0.46599999070167542,0.0,-0.05000000074505806,0.46599999070167542,0.0,-0.16500000655651093,0.0099999997764825821,0.11999999731779099,-0.15000000596046448,0.070000000298023224,0.0,-0.085000000894069672,0.086000002920627594,0.012500000186264515,-0.090000003576278687,0.056000001728534698,0.012500000186264515,-0.11500000208616257,0.019999999552965164,0.12200000137090683,-0.11500000208616257,0.039999999105930328,-0.054999999701976776,-0.10999999940395355,0.010999999940395355,0.18999999761581421,0.099299997091293335,0.48809999227523804,-0.030899999663233757,0.17000000178813934,0.46599999070167542,0.0,0.05000000074505806,0.48669999837875366,0.0,0.16500000655651093,0.0099999997764825821,0.11999999731779099,0.15000000596046448,0.070000000298023224,0.0,0.085000000894069672,0.086000002920627594,0.012500000186264515,0.090000003576278687,0.056000001728534698,0.012500000186264515,0.11500000208616257,0.019999999552965164,0.12200000137090683,0.11500000208616257,0.039999999105930328,-0.054999999701976776,0.10999999940395355,0.010999999940395355,0.18999999761581421,0.0,0.875,0.0,-0.064599998295307159,1.5148999691009521,-0.037999998778104782,0.064599998295307159,1.5148999691009521,-0.037999998778104782,0.0,1.0722500085830688,0.090000003576278687,-0.10999999940395355,1.4270000457763672,-0.13750000298023224,-0.23499999940395355,1.4199999570846558,-0.0625,0.10999999940395355,1.4270000457763672,-0.13750000298023224,0.23499999940395355,1.4199999570846558,-0.0625,0.0,1.4099999666213989,-0.14499999582767487,0.0,0.92500001192092896,0.079999998211860657,-0.086999997496604919,1.190000057220459,-0.090000003576278687,0.086999997496604919,1.190000057220459,-0.090000003576278687,0.17200000584125519,1.3200000524520874,-0.029999999329447746,-0.17200000584125519,1.3200000524520874,-0.029999999329447746,0.15000000596046448,1.2300000190734863,-0.014999999664723873,-0.15000000596046448,1.2300000190734863,-0.014999999664723873,0.079000003635883331,0.92000001668930054,-0.14000000059604645,0.10000000149011612,0.89999997615814209,0.076999999582767487,-0.079000003635883331,0.92000001668930054,-0.14000000059604645,-0.10000000149011612,0.89999997615814209,0.075000002980232239,0.0,0.87000000476837158,0.0,0.17100000381469727,0.64999997615814209,0.0,0.019999999552965164,0.64999997615814209,0.0,0.10000000149011612,0.64999997615814209,-0.079999998211860657,0.10000000149011612,0.64999997615814209,0.070000000298023224,-0.17100000381469727,0.64999997615814209,0.0,-0.019999999552965164,0.64999997615814209,0.0};
+			double[] value = {0.0,1.77,0.0,0.0,1.665,0.09,-0.033,1.62,0.087,0.033,1.62,0.087,0.0,1.55,0.097,-0.077,1.64,-0.01,-0.0527,1.58,0.015,0.077,1.64,-0.01,0.0527,1.58,0.015,0.0,1.625,-0.0925,-0.03,1.46,0.035,0.0,1.44,0.03,0.03,1.46,0.035,-0.1135,1.318,0.095,0.1135,1.318,0.095,0.0,1.25,0.113,-0.087,1.19,0.09,-0.0935,1.03,0.075,0.087,1.19,0.09,0.0935,1.03,0.075,-0.1425,1.065,0.0033,-0.15,0.9,-0.01,0.1425,1.065,0.0033,0.15,0.9,-0.01,0.0,1.53,-0.084,0.0049,1.1908,-0.1113,-0.0773,1.019,-0.12,0.0773,1.019,-0.12,0.005,1.0915,-0.1091,-0.178,1.4825,-0.0625,-0.17,1.38,0.007,-0.1884,0.8676,-0.036,-0.16,1.38,-0.127,-0.2,1.1388,-0.08,-0.244,1.1388,-0.04,-0.165,1.1388,-0.04,-0.23,1.133,-0.055,-0.1977,0.8169,-0.0177,-0.1941,0.6772,-0.0423,-0.2117,0.8562,-0.0584,-0.1929,0.789,-0.1064,0.175,1.4825,-0.06,0.17,1.38,0.007,0.1901,0.8645,-0.0415,0.16,1.38,-0.125,0.2,1.1388,-0.08,0.165,1.1388,-0.04,0.244,1.1388,-0.04,0.23,1.133,-0.055,0.2009,0.8139,-0.0237,0.2056,0.6743,-0.0482,0.2142,0.8529,-0.0648,0.1929,0.786,-0.1122,-0.1,0.4913,-0.03,-0.17,0.466,0.0,-0.05,0.466,0.0,-0.165,0.01,0.12,-0.15,0.07,0.0,-0.085,0.086,0.0125,-0.09,0.056,0.0125,-0.115,0.02,0.122,-0.115,0.04,-0.055,-0.11,0.011,0.19,0.0993,0.4881,-0.0309,0.17,0.466,0.0,0.05,0.4867,0.0,0.165,0.01,0.12,0.15,0.07,0.0,0.085,0.086,0.0125,0.09,0.056,0.0125,0.115,0.02,0.122,0.115,0.04,-0.055,0.11,0.011,0.19,0.0,0.875,0.0,-0.0646,1.5149,-0.038,0.0646,1.5149,-0.038,0.0,1.07225,0.09,-0.11,1.427,-0.1375,-0.235,1.42,-0.0625,0.11,1.427,-0.1375,0.235,1.42,-0.0625,0.0,1.41,-0.145,0.0,0.925,0.08,-0.087,1.19,-0.09,0.087,1.19,-0.09,0.172,1.32,-0.03,-0.172,1.32,-0.03,0.15,1.23,-0.015,-0.15,1.23,-0.015,0.079,0.92,-0.14,0.1,0.9,0.077,-0.079,0.92,-0.14,-0.1,0.9,0.075,0.0,0.87,0.0,0.171,0.65,0.0,0.02,0.65,0.0,0.1,0.65,-0.08,0.1,0.65,0.07,-0.171,0.65,0.0,-0.02,0.65,0.0};
 			return value;
 		}
-		private double[] getTheSkinCoord_8_69_point_2()
+		private double[] getTheSkinCoord_8_78_point_2()
 		{
-			double[] value = {-0.10000000149011612,0.64999997615814209,-0.079999998211860657,-0.10000000149011612,0.64999997615814209,0.070000000298023224,0.25,1.2699999809265137,-0.039999999105930328,0.17000000178813934,1.2699999809265137,-0.039999999105930328,0.20000000298023224,1.2699999809265137,-0.090000003576278687,0.20000000298023224,1.2699999809265137,0.019999999552965164,0.24400000274181366,1.1388000249862671,-0.039999999105930328,0.16500000655651093,1.1388000249862671,-0.039999999105930328,0.20000000298023224,1.1388000249862671,-0.079999998211860657,0.20000000298023224,1.1388000249862671,-0.013000000268220901,0.22499999403953552,1.0,-0.0099999997764825821,0.22499999403953552,1.0,-0.070000000298023224,0.18500000238418579,1.0,-0.0099999997764825821,0.18500000238418579,1.0,-0.070000000298023224,0.20000000298023224,1.1388000249862671,-0.039999999105930328,0.22499999403953552,0.92000001668930054,-0.039999999105930328,0.17499999701976776,0.92000001668930054,-0.039999999105930328,0.20000000298023224,0.92000001668930054,-0.064999997615814209,0.20000000298023224,0.92000001668930054,-0.014999999664723873,0.22499999403953552,0.88999998569488525,-0.039999999105930328,0.17499999701976776,0.88999998569488525,-0.039999999105930328,0.20000000298023224,0.88999998569488525,-0.064999997615814209,0.20000000298023224,0.88999998569488525,-0.014999999664723873,0.21799999475479126,0.86000001430511475,-0.039999999105930328,0.18400000035762787,0.86000001430511475,-0.039999999105930328,0.20000000298023224,0.87000000476837158,-0.070000000298023224,0.20000000298023224,0.87000000476837158,0.0,0.20999999344348907,0.85000002384185791,0.0,0.18539999425411224,0.85000002384185791,0.0,0.21199999749660492,0.8399999737739563,-0.014999999664723873,0.18299999833106995,0.8399999737739563,-0.014999999664723873,0.21299999952316284,0.83499997854232788,-0.039999999105930328,0.18999999761581421,0.83499997854232788,-0.039999999105930328,0.210999995470047,0.83499997854232788,-0.064999997615814209,0.19200000166893005,0.83499997854232788,-0.064999997615814209,0.20800000429153442,0.8399999737739563,-0.085000000894069672,0.18999999761581421,0.8399999737739563,-0.085000000894069672,0.20000000298023224,0.8399999737739563,-0.094999998807907104,0.21500000357627869,0.81999999284744263,0.0,0.19300000369548798,0.81499999761581421,0.004999999888241291,0.19799999892711639,0.80000001192092896,0.012000000104308128,0.20999999344348907,0.81999999284744263,0.029999999329447746,0.18999999761581421,0.81999999284744263,0.029999999329447746,0.20000000298023224,0.83499997854232788,0.039000000804662704,0.21199999749660492,0.80000001192092896,0.05000000074505806,0.18799999356269836,0.80000001192092896,0.05000000074505806,0.20000000298023224,0.80699998140335083,0.057000000029802322,0.20000000298023224,0.7929999828338623,0.035000000149011612,0.20000000298023224,0.77399998903274536,0.075999997556209564,0.21199999749660492,0.77999997138977051,0.070000000298023224,0.18799999356269836,0.77999997138977051,0.070000000298023224,0.20000000298023224,0.7850000262260437,0.075000002980232239,0.20000000298023224,0.76999998092651367,0.061999998986721039,0.21500000357627869,0.7929999828338623,-0.014999999664723873,0.18700000643730164,0.7929999828338623,-0.014999999664723873,0.20000000298023224,0.7929999828338623,-0.004999999888241291,0.21500000357627869,0.78799998760223389,-0.039999999105930328,0.18700000643730164,0.78799998760223389,-0.039999999105930328,0.21500000357627869,0.7929999828338623,-0.064999997615814209,0.18700000643730164,0.7929999828338623,-0.064999997615814209,0.20999999344348907,0.79000002145767212,-0.085000000894069672,0.18999999761581421,0.79000002145767212,-0.085000000894069672,0.20000000298023224,0.79000002145767212,-0.094999998807907104,0.18999999761581421,0.76999998092651367,-0.027499999850988388,0.18999999761581421,0.76999998092651367,-0.052499998360872269,0.18999999761581421,0.77999997138977051,-0.077500000596046448,0.21199999749660492,0.74500000476837158,-0.014999999664723873,0.18799999356269836,0.74500000476837158,-0.019999999552965164,0.20000000298023224,0.74500000476837158,-0.025499999523162842,0.20000000298023224,0.74500000476837158,-0.0044999998062849045,0.210999995470047,0.72000002861022949,-0.014999999664723873,0.18899999558925629,0.72000002861022949,-0.014999999664723873,0.20000000298023224,0.72000002861022949,-0.025200000032782555,0.20000000298023224,0.72000002861022949,-0.0048000002279877663,0.20999999344348907,0.69499999284744263,-0.014999999664723873,0.18999999761581421,0.69499999284744263,-0.014999999664723873,0.20000000298023224,0.69499999284744263,-0.02500000037252903,0.20000000298023224,0.69499999284744263,-0.004999999888241291,0.20000000298023224,0.68500000238418579,-0.014999999664723873,0.21500000357627869,0.74000000953674316,-0.039999999105930328,0.18500000238418579,0.74000000953674316,-0.039999999105930328,0.20000000298023224,0.74000000953674316,-0.054999999701976776,0.20000000298023224,0.74000000953674316,-0.02500000037252903,0.20999999344348907,0.71420001983642578,-0.039999999105930328,0.18999999761581421,0.71420001983642578,-0.039999999105930328,0.20000000298023224,0.71420001983642578,-0.05299999937415123,0.20000000298023224,0.71420001983642578,-0.027000000700354576,0.20999999344348907,0.68000000715255737,-0.039999999105930328,0.18999999761581421,0.68000000715255737,-0.039999999105930328,0.20000000298023224,0.68000000715255737,-0.05000000074505806,0.20000000298023224,0.68000000715255737,-0.029999999329447746,0.20000000298023224,0.67000001668930054,-0.039999999105930328,0.21199999749660492,0.74000000953674316,-0.064999997615814209,0.18799999356269836,0.74000000953674316,-0.064999997615814209,0.20000000298023224,0.74000000953674316,-0.075599998235702515,0.20000000298023224,0.74000000953674316,-0.054200001060962677,0.20999999344348907,0.71770000457763672,-0.064999997615814209,0.18999999761581421,0.71770000457763672,-0.064999997615814209,0.20000000298023224,0.71770000457763672,-0.075099997222423553,0.20000000298023224,0.71770000457763672,-0.054900001734495163};
+			double[] value = {-0.1,0.65,-0.08,-0.1,0.65,0.07,0.25,1.27,-0.04,0.17,1.27,-0.04,0.2,1.27,-0.09,0.2,1.27,0.02,0.244,1.1388,-0.04,0.165,1.1388,-0.04,0.2,1.1388,-0.08,0.2,1.1388,-0.013,0.225,1.0,-0.01,0.225,1.0,-0.07,0.185,1.0,-0.01,0.185,1.0,-0.07,0.2,1.1388,-0.04,0.225,0.92,-0.04,0.175,0.92,-0.04,0.2,0.92,-0.065,0.2,0.92,-0.015,0.225,0.89,-0.04,0.175,0.89,-0.04,0.2,0.89,-0.065,0.2,0.89,-0.015,0.218,0.86,-0.04,0.184,0.86,-0.04,0.2,0.87,-0.07,0.2,0.87,0.0,0.21,0.85,0.0,0.1854,0.85,0.0,0.212,0.84,-0.015,0.183,0.84,-0.015,0.213,0.835,-0.04,0.19,0.835,-0.04,0.211,0.835,-0.065,0.192,0.835,-0.065,0.208,0.84,-0.085,0.19,0.84,-0.085,0.2,0.84,-0.095,0.215,0.82,0.0,0.193,0.815,0.005,0.198,0.8,0.012,0.21,0.82,0.03,0.19,0.82,0.03,0.2,0.835,0.039,0.212,0.8,0.05,0.188,0.8,0.05,0.2,0.807,0.057,0.2,0.793,0.035,0.2,0.774,0.076,0.212,0.78,0.07,0.188,0.78,0.07,0.2,0.785,0.075,0.2,0.77,0.062,0.215,0.793,-0.015,0.187,0.793,-0.015,0.2,0.793,-0.005,0.215,0.788,-0.04,0.187,0.788,-0.04,0.215,0.793,-0.065,0.187,0.793,-0.065,0.21,0.79,-0.085,0.19,0.79,-0.085,0.2,0.79,-0.095,0.19,0.77,-0.0275,0.19,0.77,-0.0525,0.19,0.78,-0.0775,0.212,0.745,-0.015,0.188,0.745,-0.02,0.2,0.745,-0.0255,0.2,0.745,-0.0045,0.211,0.72,-0.015,0.189,0.72,-0.015,0.2,0.72,-0.0252,0.2,0.72,-0.0048,0.21,0.695,-0.015,0.19,0.695,-0.015,0.2,0.695,-0.025,0.2,0.695,-0.005,0.2,0.685,-0.015,0.215,0.74,-0.04,0.185,0.74,-0.04,0.2,0.74,-0.055,0.2,0.74,-0.025,0.21,0.7142,-0.04,0.19,0.7142,-0.04,0.2,0.7142,-0.053,0.2,0.7142,-0.027,0.21,0.68,-0.04,0.19,0.68,-0.04,0.2,0.68,-0.05,0.2,0.68,-0.03,0.2,0.67,-0.04,0.212,0.74,-0.065,0.188,0.74,-0.065,0.2,0.74,-0.0756,0.2,0.74,-0.0542,0.21,0.7177,-0.065,0.19,0.7177,-0.065,0.2,0.7177,-0.0751,0.2,0.7177,-0.0549};
 			return value;
 		}
-		private double[] getTheSkinCoord_8_69_point_3()
+		private double[] getTheSkinCoord_8_78_point_3()
 		{
-			double[] value = {0.20999999344348907,0.69499999284744263,-0.064999997615814209,0.18999999761581421,0.69499999284744263,-0.064999997615814209,0.20000000298023224,0.69499999284744263,-0.075000002980232239,0.20000000298023224,0.69499999284744263,-0.054999999701976776,0.20000000298023224,0.68500000238418579,-0.064999997615814209,0.210999995470047,0.75499999523162842,-0.085000000894069672,0.18899999558925629,0.75499999523162842,-0.085000000894069672,0.20000000298023224,0.75499999523162842,-0.095200002193450928,0.20000000298023224,0.75499999523162842,-0.074799999594688416,0.20999999344348907,0.73500001430511475,-0.085000000894069672,0.18999999761581421,0.73500001430511475,-0.085000000894069672,0.20000000298023224,0.73500001430511475,-0.095100000500679016,0.20000000298023224,0.73500001430511475,-0.074900001287460327,0.20999999344348907,0.72000002861022949,-0.085000000894069672,0.18999999761581421,0.72000002861022949,-0.085000000894069672,0.20000000298023224,0.72000002861022949,-0.094999998807907104,0.20000000298023224,0.72000002861022949,-0.075000002980232239,0.20000000298023224,0.70999997854232788,-0.085000000894069672,-0.23000000417232513,1.2300000190734863,-0.039999999105930328,-0.15999999642372131,1.2300000190734863,-0.039999999105930328,-0.20000000298023224,1.2350000143051147,-0.10499999672174454,-0.20000000298023224,1.2350000143051147,0.019999999552965164,-0.24400000274181366,1.1388000249862671,-0.039999999105930328,-0.16500000655651093,1.1388000249862671,-0.039999999105930328,-0.20000000298023224,1.1388000249862671,-0.079999998211860657,-0.20000000298023224,1.1388000249862671,0.013000000268220901,-0.22499999403953552,1.0,-0.0099999997764825821,-0.22499999403953552,1.0,-0.070000000298023224,-0.18500000238418579,1.0,-0.0099999997764825821,-0.18500000238418579,1.0,-0.070000000298023224,-0.20000000298023224,1.1388000249862671,-0.039999999105930328,-0.22499999403953552,0.92000001668930054,-0.039999999105930328,-0.17499999701976776,0.92000001668930054,-0.039999999105930328,-0.20000000298023224,0.92000001668930054,-0.064999997615814209,-0.20000000298023224,0.92000001668930054,-0.014999999664723873,-0.22499999403953552,0.88999998569488525,-0.039999999105930328,-0.17499999701976776,0.88999998569488525,-0.039999999105930328,-0.20000000298023224,0.88999998569488525,-0.064999997615814209,-0.20000000298023224,0.88999998569488525,-0.014999999664723873,-0.21799999475479126,0.86000001430511475,-0.039999999105930328,-0.18400000035762787,0.86000001430511475,-0.039999999105930328,-0.20000000298023224,0.87000000476837158,-0.070000000298023224,-0.20000000298023224,0.87000000476837158,0.0,-0.20999999344348907,0.85000002384185791,0.0,-0.18539999425411224,0.85000002384185791,0.0,-0.21199999749660492,0.8399999737739563,-0.014999999664723873,-0.18299999833106995,0.8399999737739563,-0.014999999664723873,-0.21299999952316284,0.83499997854232788,-0.039999999105930328,-0.18999999761581421,0.83499997854232788,-0.039999999105930328,-0.210999995470047,0.83499997854232788,-0.064999997615814209,-0.19200000166893005,0.83499997854232788,-0.064999997615814209,-0.20800000429153442,0.8399999737739563,-0.085000000894069672,-0.18999999761581421,0.8399999737739563,-0.085000000894069672,-0.20000000298023224,0.8399999737739563,-0.094999998807907104,-0.21500000357627869,0.81999999284744263,0.0,-0.19300000369548798,0.81499999761581421,0.004999999888241291,-0.19799999892711639,0.80000001192092896,0.012000000104308128,-0.20999999344348907,0.81999999284744263,0.029999999329447746,-0.18999999761581421,0.81999999284744263,0.029999999329447746,-0.20000000298023224,0.83499997854232788,0.039000000804662704,-0.21199999749660492,0.80000001192092896,0.05000000074505806,-0.18799999356269836,0.80000001192092896,0.05000000074505806,-0.20000000298023224,0.80699998140335083,0.057000000029802322,-0.20000000298023224,0.7929999828338623,0.035000000149011612,-0.20000000298023224,0.77399998903274536,0.075999997556209564,-0.21199999749660492,0.77999997138977051,0.070000000298023224,-0.18799999356269836,0.77999997138977051,0.070000000298023224,-0.20000000298023224,0.7850000262260437,0.075000002980232239,-0.20000000298023224,0.76999998092651367,0.061999998986721039,-0.21500000357627869,0.7929999828338623,-0.014999999664723873,-0.18700000643730164,0.7929999828338623,-0.014999999664723873,-0.20000000298023224,0.7929999828338623,-0.004999999888241291,-0.21500000357627869,0.78799998760223389,-0.039999999105930328,-0.18700000643730164,0.78799998760223389,-0.039999999105930328,-0.21500000357627869,0.7929999828338623,-0.064999997615814209,-0.18700000643730164,0.7929999828338623,-0.064999997615814209,-0.20999999344348907,0.79000002145767212,-0.085000000894069672,-0.18999999761581421,0.79000002145767212,-0.085000000894069672,-0.20000000298023224,0.79000002145767212,-0.094999998807907104,-0.18999999761581421,0.76999998092651367,-0.027499999850988388,-0.18999999761581421,0.76999998092651367,-0.052499998360872269,-0.18999999761581421,0.77999997138977051,-0.077500000596046448,-0.21199999749660492,0.74500000476837158,-0.014999999664723873,-0.18799999356269836,0.74500000476837158,-0.019999999552965164,-0.20000000298023224,0.74500000476837158,-0.025499999523162842,-0.20000000298023224,0.74500000476837158,-0.0044999998062849045,-0.210999995470047,0.72000002861022949,-0.014999999664723873,-0.18899999558925629,0.72000002861022949,-0.014999999664723873,-0.20000000298023224,0.72000002861022949,-0.025200000032782555,-0.20000000298023224,0.72000002861022949,-0.0048000002279877663,-0.20999999344348907,0.69499999284744263,-0.014999999664723873,-0.18999999761581421,0.69499999284744263,-0.014999999664723873,-0.20000000298023224,0.69499999284744263,-0.02500000037252903,-0.20000000298023224,0.69499999284744263,-0.004999999888241291,-0.20000000298023224,0.68500000238418579,-0.014999999664723873,-0.21500000357627869,0.74000000953674316,-0.039999999105930328,-0.18500000238418579,0.74000000953674316,-0.039999999105930328,-0.20000000298023224,0.74000000953674316,-0.054999999701976776,-0.20000000298023224,0.74000000953674316,-0.02500000037252903,-0.20999999344348907,0.71420001983642578,-0.039999999105930328};
+			double[] value = {0.21,0.695,-0.065,0.19,0.695,-0.065,0.2,0.695,-0.075,0.2,0.695,-0.055,0.2,0.685,-0.065,0.211,0.755,-0.085,0.189,0.755,-0.085,0.2,0.755,-0.0952,0.2,0.755,-0.0748,0.21,0.735,-0.085,0.19,0.735,-0.085,0.2,0.735,-0.0951,0.2,0.735,-0.0749,0.21,0.72,-0.085,0.19,0.72,-0.085,0.2,0.72,-0.095,0.2,0.72,-0.075,0.2,0.71,-0.085,-0.23,1.23,-0.04,-0.16,1.23,-0.04,-0.2,1.235,-0.105,-0.2,1.235,0.02,-0.244,1.1388,-0.04,-0.165,1.1388,-0.04,-0.2,1.1388,-0.08,-0.2,1.1388,0.013,-0.225,1.0,-0.01,-0.225,1.0,-0.07,-0.185,1.0,-0.01,-0.185,1.0,-0.07,-0.2,1.1388,-0.04,-0.225,0.92,-0.04,-0.175,0.92,-0.04,-0.2,0.92,-0.065,-0.2,0.92,-0.015,-0.225,0.89,-0.04,-0.175,0.89,-0.04,-0.2,0.89,-0.065,-0.2,0.89,-0.015,-0.218,0.86,-0.04,-0.184,0.86,-0.04,-0.2,0.87,-0.07,-0.2,0.87,0.0,-0.21,0.85,0.0,-0.1854,0.85,0.0,-0.212,0.84,-0.015,-0.183,0.84,-0.015,-0.213,0.835,-0.04,-0.19,0.835,-0.04,-0.211,0.835,-0.065,-0.192,0.835,-0.065,-0.208,0.84,-0.085,-0.19,0.84,-0.085,-0.2,0.84,-0.095,-0.215,0.82,0.0,-0.193,0.815,0.005,-0.198,0.8,0.012,-0.21,0.82,0.03,-0.19,0.82,0.03,-0.2,0.835,0.039,-0.212,0.8,0.05,-0.188,0.8,0.05,-0.2,0.807,0.057,-0.2,0.793,0.035,-0.2,0.774,0.076,-0.212,0.78,0.07,-0.188,0.78,0.07,-0.2,0.785,0.075,-0.2,0.77,0.062,-0.215,0.793,-0.015,-0.187,0.793,-0.015,-0.2,0.793,-0.005,-0.215,0.788,-0.04,-0.187,0.788,-0.04,-0.215,0.793,-0.065,-0.187,0.793,-0.065,-0.21,0.79,-0.085,-0.19,0.79,-0.085,-0.2,0.79,-0.095,-0.19,0.77,-0.0275,-0.19,0.77,-0.0525,-0.19,0.78,-0.0775,-0.212,0.745,-0.015,-0.188,0.745,-0.02,-0.2,0.745,-0.0255,-0.2,0.745,-0.0045,-0.211,0.72,-0.015,-0.189,0.72,-0.015,-0.2,0.72,-0.0252,-0.2,0.72,-0.0048,-0.21,0.695,-0.015,-0.19,0.695,-0.015,-0.2,0.695,-0.025,-0.2,0.695,-0.005,-0.2,0.685,-0.015,-0.215,0.74,-0.04,-0.185,0.74,-0.04,-0.2,0.74,-0.055,-0.2,0.74,-0.025,-0.21,0.7142,-0.04};
 			return value;
 		}
-		private double[] getTheSkinCoord_8_69_point_4()
+		private double[] getTheSkinCoord_8_78_point_4()
 		{
-			double[] value = {-0.18999999761581421,0.71420001983642578,-0.039999999105930328,-0.20000000298023224,0.71420001983642578,-0.05299999937415123,-0.20000000298023224,0.71420001983642578,-0.027000000700354576,-0.20999999344348907,0.68000000715255737,-0.039999999105930328,-0.18999999761581421,0.68000000715255737,-0.039999999105930328,-0.20000000298023224,0.68000000715255737,-0.05000000074505806,-0.20000000298023224,0.68000000715255737,-0.029999999329447746,-0.20000000298023224,0.67000001668930054,-0.039999999105930328,-0.21199999749660492,0.74000000953674316,-0.064999997615814209,-0.18799999356269836,0.74000000953674316,-0.064999997615814209,-0.20000000298023224,0.74000000953674316,-0.075599998235702515,-0.20000000298023224,0.74000000953674316,-0.054200001060962677,-0.20999999344348907,0.71770000457763672,-0.064999997615814209,-0.18999999761581421,0.71770000457763672,-0.064999997615814209,-0.20000000298023224,0.71770000457763672,-0.075099997222423553,-0.20000000298023224,0.71770000457763672,-0.054900001734495163,-0.20999999344348907,0.69499999284744263,-0.064999997615814209,-0.18999999761581421,0.69499999284744263,-0.064999997615814209,-0.20000000298023224,0.69499999284744263,-0.075000002980232239,-0.20000000298023224,0.69499999284744263,-0.054999999701976776,-0.20000000298023224,0.68500000238418579,-0.064999997615814209,-0.210999995470047,0.75499999523162842,-0.085000000894069672,-0.18899999558925629,0.75499999523162842,-0.085000000894069672,-0.20000000298023224,0.75499999523162842,-0.095200002193450928,-0.20000000298023224,0.75499999523162842,-0.074799999594688416,-0.20999999344348907,0.73500001430511475,-0.085000000894069672,-0.18999999761581421,0.73500001430511475,-0.085000000894069672,-0.20000000298023224,0.73500001430511475,-0.095100000500679016,-0.20000000298023224,0.73500001430511475,-0.074900001287460327,-0.20999999344348907,0.72000002861022949,-0.085000000894069672,-0.18999999761581421,0.72000002861022949,-0.085000000894069672,-0.20000000298023224,0.72000002861022949,-0.094999998807907104,-0.20000000298023224,0.72000002861022949,-0.075000002980232239,-0.20000000298023224,0.70999997854232788,-0.085000000894069672,0.11500000208616257,0.46599999070167542,0.059999998658895493,0.11500000208616257,0.46599999070167542,-0.054999999701976776,0.15000000596046448,0.46599999070167542,0.0,0.05000000074505806,0.46599999070167542,0.0,0.17000000178813934,0.30000001192092896,0.0,0.059999998658895493,0.30000001192092896,0.0,0.10000000149011612,0.30000001192092896,-0.05000000074505806,0.10000000149011612,0.30000001192092896,0.05000000074505806,0.15000000596046448,0.070000000298023224,0.0,0.085000000894069672,0.086000002920627594,0.012500000186264515,0.11500000208616257,0.068999998271465302,-0.045000001788139343,0.11699999868869781,0.097499996423721313,0.061500001698732376,0.13750000298023224,0.0060000000521540642,-0.029999999329447746,0.094999998807907104,0.0060000000521540642,-0.029999999329447746,0.11500000208616257,0.014999999664723873,-0.045000001788139343,0.11500000208616257,0.059999998658895493,0.10000000149011612,0.11500000208616257,0.0,0.070000000298023224,0.16500000655651093,0.0,0.070000000298023224,0.094999998807907104,0.0,0.070000000298023224,0.11500000208616257,0.039999999105930328,0.12999999523162842,0.125,0.0,0.11999999731779099,0.16500000655651093,0.0,0.11999999731779099,0.086999997496604919,0.0,0.12200000137090683,0.090000003576278687,0.012000000104308128,0.18799999356269836,0.10999999940395355,0.010999999940395355,0.18999999761581421,0.12800000607967377,0.010999999940395355,0.18500000238418579,0.14200000464916229,0.010999999940395355,0.17800000309944153,0.15399999916553497,0.0099999997764825821,0.1679999977350235,-0.11500000208616257,0.46599999070167542,0.059999998658895493,-0.11500000208616257,0.46599999070167542,-0.054999999701976776,-0.17000000178813934,0.46599999070167542,0.0,-0.05000000074505806,0.46599999070167542,0.0,-0.17000000178813934,0.30000001192092896,0.0,-0.059999998658895493,0.30000001192092896,0.0,-0.10000000149011612,0.30000001192092896,-0.05000000074505806,-0.10000000149011612,0.30000001192092896,0.05000000074505806,-0.15000000596046448,0.070000000298023224,0.0,-0.085000000894069672,0.086000002920627594,0.012500000186264515,-0.11500000208616257,0.068999998271465302,-0.045000001788139343,-0.11699999868869781,0.097499996423721313,0.061500001698732376,-0.13750000298023224,0.0060000000521540642,-0.029999999329447746,-0.094999998807907104,0.0060000000521540642,-0.029999999329447746,-0.094999998807907104,0.0060000000521540642,-0.029999999329447746,-0.11500000208616257,0.059999998658895493,0.10000000149011612,-0.11500000208616257,0.0,0.070000000298023224,-0.16500000655651093,0.0,0.070000000298023224,-0.094999998807907104,0.0,0.070000000298023224,-0.11500000208616257,0.039999999105930328,0.12999999523162842,-0.125,0.0,0.11999999731779099,-0.16500000655651093,0.0,0.11999999731779099,-0.086999997496604919,0.0,0.12200000137090683,-0.090000003576278687,0.012000000104308128,0.18799999356269836,-0.10999999940395355,0.010999999940395355,0.18999999761581421,-0.12800000607967377,0.010999999940395355,0.18500000238418579,-0.14200000464916229,0.010999999940395355,0.17800000309944153,-0.15399999916553497,0.0099999997764825821,0.1679999977350235};
+			double[] value = {-0.19,0.7142,-0.04,-0.2,0.7142,-0.053,-0.2,0.7142,-0.027,-0.21,0.68,-0.04,-0.19,0.68,-0.04,-0.2,0.68,-0.05,-0.2,0.68,-0.03,-0.2,0.67,-0.04,-0.212,0.74,-0.065,-0.188,0.74,-0.065,-0.2,0.74,-0.0756,-0.2,0.74,-0.0542,-0.21,0.7177,-0.065,-0.19,0.7177,-0.065,-0.2,0.7177,-0.0751,-0.2,0.7177,-0.0549,-0.21,0.695,-0.065,-0.19,0.695,-0.065,-0.2,0.695,-0.075,-0.2,0.695,-0.055,-0.2,0.685,-0.065,-0.211,0.755,-0.085,-0.189,0.755,-0.085,-0.2,0.755,-0.0952,-0.2,0.755,-0.0748,-0.21,0.735,-0.085,-0.19,0.735,-0.085,-0.2,0.735,-0.0951,-0.2,0.735,-0.0749,-0.21,0.72,-0.085,-0.19,0.72,-0.085,-0.2,0.72,-0.095,-0.2,0.72,-0.075,-0.2,0.71,-0.085,0.115,0.466,0.06,0.115,0.466,-0.055,0.15,0.466,0.0,0.05,0.466,0.0,0.17,0.3,0.0,0.06,0.3,0.0,0.1,0.3,-0.05,0.1,0.3,0.05,0.15,0.07,0.0,0.085,0.086,0.0125,0.115,0.069,-0.045,0.117,0.0975,0.0615,0.1375,0.006,-0.03,0.095,0.006,-0.03,0.115,0.015,-0.045,0.115,0.06,0.1,0.115,0.0,0.07,0.165,0.0,0.07,0.095,0.0,0.07,0.115,0.04,0.13,0.125,0.0,0.12,0.165,0.0,0.12,0.087,0.0,0.122,0.09,0.012,0.188,0.11,0.011,0.19,0.128,0.011,0.185,0.142,0.011,0.178,0.154,0.01,0.168,-0.115,0.466,0.06,-0.115,0.466,-0.055,-0.17,0.466,0.0,-0.05,0.466,0.0,-0.17,0.3,0.0,-0.06,0.3,0.0,-0.1,0.3,-0.05,-0.1,0.3,0.05,-0.15,0.07,0.0,-0.085,0.086,0.0125,-0.115,0.069,-0.045,-0.117,0.0975,0.0615,-0.1375,0.006,-0.03,-0.095,0.006,-0.03,-0.095,0.006,-0.03,-0.115,0.06,0.1,-0.115,0.0,0.07,-0.165,0.0,0.07,-0.095,0.0,0.07,-0.115,0.04,0.13,-0.125,0.0,0.12,-0.165,0.0,0.12,-0.087,0.0,0.122,-0.09,0.012,0.188,-0.11,0.011,0.19,-0.128,0.011,0.185,-0.142,0.011,0.178,-0.154,0.01,0.168};
 			return value;
 		}
 
 
 		/** Define subarrays using type double[] */
-		private double[] getColor_8_70_color_1()
+		private double[] getColor_8_79_color_1()
 		{
 			double[] value = {1.0,0.0,0.0,0.0,1.0,1.0,0.0,1.0,0.0,1.0,1.0,0.0,1.0,1.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,0.0,1.0,1.0,0.0,1.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,1.0,0.0,1.0,1.0,0.0,1.0,1.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,1.0,1.0,1.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,1.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,1.0};
 			return value;
 		}
-		private double[] getColor_8_70_color_2()
+		private double[] getColor_8_79_color_2()
 		{
 			double[] value = {1.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,1.0,0.0,1.0,1.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,1.0,0.0,1.0,1.0,0.0,1.0,1.0,0.0,1.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,1.0,1.0,1.0,0.0,0.0};
 			return value;
 		}
-		private double[] getColor_8_70_color_3()
+		private double[] getColor_8_79_color_3()
 		{
 			double[] value = {0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,1.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0};
 			return value;
 		}
-		private double[] getColor_8_70_color_4()
+		private double[] getColor_8_79_color_4()
 		{
 			double[] value = {1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,1.0,0.0,1.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0,0.0,1.0,0.0,1.0,1.0,0.0,1.0,1.0,0.0,1.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0};
 			return value;
 		}
-		private double[] getColor_8_70_color_5()
+		private double[] getColor_8_79_color_5()
 		{
 			double[] value = {1.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,1.0,1.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,1.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0};
 			return value;
 		}
-		private double[] getColor_8_70_color_6()
+		private double[] getColor_8_79_color_6()
 		{
 			double[] value = {0.0,0.0,1.0,0.0,1.0,0.0,1.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0,0.0};
 			return value;
 		}
-		private double[] getColor_8_70_color_7()
+		private double[] getColor_8_79_color_7()
 		{
 			double[] value = {0.0,1.0,0.0,0.0,0.0,1.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,1.0,1.0,1.0,1.0};
 			return value;
 		}
 
-		/** Large attribute array: IndexedFaceSet coordIndex field, scene-graph level=7, element #69, 2780 total numbers.
+		/** Large attribute array: IndexedFaceSet coordIndex field, scene-graph level=7, element #78, 2780 total numbers.
 		 * Reassemble split array as single method to improve readability and runnability.
 		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
 		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
 		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
 		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
 		 */
-		private MFInt32 getIndexedFaceSet_7_69_coordIndex()
+		private MFInt32 getIndexedFaceSet_7_78_coordIndex()
 		{
-			MFInt32 IndexedFaceSet_7_69_coordIndex = new MFInt32()/*2.finalize*/
-				.append(new MFInt32(getIndexedFaceSet_7_69_coordIndex_1()))
-				.append(new MFInt32(getIndexedFaceSet_7_69_coordIndex_2()))
-				.append(new MFInt32(getIndexedFaceSet_7_69_coordIndex_3()));
-			return IndexedFaceSet_7_69_coordIndex;
+			MFInt32 IndexedFaceSet_7_78_coordIndex = new MFInt32()/*2.finalize*/
+				.append(new MFInt32(getIndexedFaceSet_7_78_coordIndex_1()))
+				.append(new MFInt32(getIndexedFaceSet_7_78_coordIndex_2()))
+				.append(new MFInt32(getIndexedFaceSet_7_78_coordIndex_3()));
+			return IndexedFaceSet_7_78_coordIndex;
 		}
-		/** Large attribute array: Coordinate DEF='TheSkinCoord' point field, scene-graph level=8, element #69, 1170 total numbers made up of 390 3-tuple values.
+		/** Large attribute array: Coordinate DEF='TheSkinCoord' point field, scene-graph level=8, element #78, 1170 total numbers made up of 390 3-tuple values.
 		 * Reassemble split array as single method to improve readability and runnability.
 		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
 		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
 		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
 		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
 		 */
-		private MFVec3f getTheSkinCoord_8_69_point()
+		private MFVec3f getTheSkinCoord_8_78_point()
 		{
-			MFVec3f TheSkinCoord_8_69_point = new MFVec3f()/*2.finalize*/
-				.append(new MFVec3f(getTheSkinCoord_8_69_point_1()))
-				.append(new MFVec3f(getTheSkinCoord_8_69_point_2()))
-				.append(new MFVec3f(getTheSkinCoord_8_69_point_3()))
-				.append(new MFVec3f(getTheSkinCoord_8_69_point_4()));
-			return TheSkinCoord_8_69_point;
+			MFVec3f TheSkinCoord_8_78_point = new MFVec3f()/*2.finalize*/
+				.append(new MFVec3f(getTheSkinCoord_8_78_point_1()))
+				.append(new MFVec3f(getTheSkinCoord_8_78_point_2()))
+				.append(new MFVec3f(getTheSkinCoord_8_78_point_3()))
+				.append(new MFVec3f(getTheSkinCoord_8_78_point_4()));
+			return TheSkinCoord_8_78_point;
 		}
-		/** Large attribute array: Color color field, scene-graph level=8, element #70, 2079 total numbers made up of 693 3-tuple values.
+		/** Large attribute array: Color color field, scene-graph level=8, element #79, 2079 total numbers made up of 693 3-tuple values.
 		 * Reassemble split array as single method to improve readability and runnability.
 		 * Provide large array values via separate methods, hoping to avoid 'code too large' Java compilation errors. 
 		 * Individual Java methods (including aggregated initializations) are limited to 64KB.
 		 * @see https://stackoverflow.com/questions/2407912/code-too-large-compilation-error-in-java
 		 * @see https://stackoverflow.com/questions/11437905/java-too-many-constants-jvm-error
 		 */
-		private MFColor getColor_8_70_color()
+		private MFColor getColor_8_79_color()
 		{
-			MFColor Color_8_70_color = new MFColor()/*2.finalize*/
-				.append(new MFColor(getColor_8_70_color_1()))
-				.append(new MFColor(getColor_8_70_color_2()))
-				.append(new MFColor(getColor_8_70_color_3()))
-				.append(new MFColor(getColor_8_70_color_4()))
-				.append(new MFColor(getColor_8_70_color_5()))
-				.append(new MFColor(getColor_8_70_color_6()))
-				.append(new MFColor(getColor_8_70_color_7()));
-			return Color_8_70_color;
+			MFColor Color_8_79_color = new MFColor()/*2.finalize*/
+				.append(new MFColor(getColor_8_79_color_1()))
+				.append(new MFColor(getColor_8_79_color_2()))
+				.append(new MFColor(getColor_8_79_color_3()))
+				.append(new MFColor(getColor_8_79_color_4()))
+				.append(new MFColor(getColor_8_79_color_5()))
+				.append(new MFColor(getColor_8_79_color_6()))
+				.append(new MFColor(getColor_8_79_color_7()));
+			return Color_8_79_color;
 		}
 
 	/** The initialized model object, created within initialize() method. */
@@ -1716,7 +1763,7 @@ public class JoeSkeletonSiteSkinSaluteWalk
 	 * <a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim" target="_blank">shallow copy</a>
 	 * of the X3D model.
 	 * @see <a href="https://www.web3d.org/specifications/java/javadoc/org/web3d/x3d/jsail/Core/X3D.html">X3D</a>
-	 * @return JoeSkeletonSiteSkinSaluteWalk model
+	 * @return JoeSkeletonSkinSiteSaluteWalk model
 	 */
 	public X3D getX3dModel()
 	{	  
@@ -1734,7 +1781,7 @@ public class JoeSkeletonSiteSkinSaluteWalk
      */
     public static void main(String args[])
     {
-        X3D thisExampleX3dModel = new JoeSkeletonSiteSkinSaluteWalk().getX3dModel();
+        X3D thisExampleX3dModel = new JoeSkeletonSkinSiteSaluteWalk().getX3dModel();
 
 		boolean hasArguments = (args != null) && (args.length > 0);
 		boolean validate = true; // default
@@ -1765,13 +1812,13 @@ public class JoeSkeletonSiteSkinSaluteWalk
 			}
 		}
 		if      (argumentsLoadNewModel)
-			System.out.println("WARNING: \"net.x3djsonld.data.JoeSkeletonSiteSkinSaluteWalk\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
+			System.out.println("WARNING: \"net.x3djsonld.data.JoeSkeletonSkinSiteSaluteWalk\" model invocation is attempting to load file \"" + fileName + "\" instead of simply validating itself... file loading ignored.");
 		else if (hasArguments) // if no arguments provided, this method produces usage warning
 			thisExampleX3dModel.handleArguments(args);
 
 		if (validate)
 		{
-			System.out.print("Java program \"net.x3djsonld.data.JoeSkeletonSiteSkinSaluteWalk\" self-validation test results: ");
+			System.out.print("Java program \"net.x3djsonld.data.JoeSkeletonSkinSiteSaluteWalk\" self-validation test results: ");
 			String validationResults = thisExampleX3dModel.validationReport();
             if (validationResults.startsWith("\n"))
                 System.out.println();
