@@ -1498,6 +1498,7 @@ var fieldTypes = {"X3DNode" : {
 	"bboxSize" : "SFVec3f",
 	"bounce" : "SFFloat",
 	"collidables" : "MFNode",
+	"description" : "SFString",
 	"enabled" : "SFBool",
 	"frictionCoefficients" : "SFVec2f",
 	"IS" : "SFNode",
