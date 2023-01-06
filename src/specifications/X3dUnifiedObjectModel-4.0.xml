@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-4.0.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-4.0.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 4.0 of X3D -->
-<!-- Generated 2022-07-03-07:00 19:50:46.8410715-07:00 -->
+<!-- Generated 2022-12-29-08:00 22:42:38.9872011-08:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                         version="4.0"
                         xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -250,9 +250,9 @@
          <enumeration value="watchList"
                        appinfo="parent node is LoadSensor node (X3D3 only, validation allowed in X3D4 for backwards compatibility)"/>
       </SimpleType>
-      <SimpleType name="containerFieldChoicesGroupLODShapeTransform"
+      <SimpleType name="containerFieldChoicesGroupLODShapeTransformSwitch"
                    baseType="xs:NMTOKEN"
-                   appinfo="containerFieldChoicesGroupLODShapeTransform lists the allowed containerField enumeration values for Shape, Transform and LOD nodes: &#34;children&#34; if parent node has abstract type X3DGroupingNode, otherwise &#34;metadata&#34; default."
+                   appinfo="containerFieldChoicesGroupLODShapeTransformSwitch lists the allowed containerField enumeration values for Shape, Transform and LOD nodes: &#34;children&#34; if parent node has abstract type X3DGroupingNode, otherwise &#34;metadata&#34; default."
                    documentation="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField">
          <enumeration value="children"
                        appinfo="parent node has abstract type X3DGroupingNode"/>
@@ -269,6 +269,13 @@
          <enumeration value="joints"
                        appinfo="parent node is HAnimHumanoid, typically as a USE node"/>
          <enumeration value="skeleton" appinfo="parent node is HAnimHumanoid"/>
+      </SimpleType>
+      <SimpleType name="containerFieldChoicesHAnimMotion"
+                   baseType="xs:NMTOKEN"
+                   appinfo="containerFieldChoicesHAnimMotion lists the allowed containerField enumeration values for HAnimMotion node: default &#34;children&#34; if parent node is another HAnimJoint, otherwise &#34;motions&#34; if parent node is HAnimHumanoid."
+                   documentation="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField">
+         <enumeration value="children" appinfo="parent node is a grouping node"/>
+         <enumeration value="segments" appinfo="parent node is HAnimHumanoid"/>
       </SimpleType>
       <SimpleType name="containerFieldChoicesHAnimSegment"
                    baseType="xs:NMTOKEN"
@@ -3388,7 +3395,6 @@
          <enumeration value="detonationResult"/>
          <enumeration value="detune"/>
          <enumeration value="diffuse"/>
-         <enumeration value="diffuseCoefficients"/>
          <enumeration value="diffuseColor"/>
          <enumeration value="diffuseTextureMapping"/>
          <enumeration value="dimensions"/>
@@ -3614,7 +3620,6 @@
          <enumeration value="reference"/>
          <enumeration value="referenceDistance"/>
          <enumeration value="refraction"/>
-         <enumeration value="refresh"/>
          <enumeration value="relativeAntennaLocation"/>
          <enumeration value="release"/>
          <enumeration value="retainedOpacity"/>
@@ -13349,6 +13354,10 @@
                     accessType="inputOutput"
                     acceptableNodeTypes="X3DNBodyCollisionSpaceNode|X3DNBodyCollidableNode"
                     description="CollisionCollection node holds a collection of objects in the collidables field that can be managed as a single entity for resolution of inter-object collisions with other groups of collidable objects."/>
+            <field name="description"
+                    type="SFString"
+                    accessType="inputOutput"
+                    description="Author-provided prose that describes intended purpose of the node."/>
             <field name="enabled"
                     type="SFBool"
                     accessType="inputOutput"
@@ -18109,7 +18118,7 @@
                     additionalEnumerationValuesAllowed="false"
                     simpleType="fontStyleChoices"
                     baseType="xs:NMTOKEN"
-                    description="Pick one of four values for text style (PLAIN | BOLD | ITALIC | BOLDITALIC).">
+                    description="Pick one of four values for text style (PLAIN|BOLD|ITALIC|BOLDITALIC).">
                <enumeration value="PLAIN" appinfo="default plain type."/>
                <enumeration value="BOLD" appinfo="boldface type."/>
                <enumeration value="ITALIC" appinfo="italic type."/>
@@ -19828,7 +19837,8 @@
                     accessType="inputOutput"
                     inheritedFrom="X3DNode"
                     description="The style attribute on each X3D node and statement provides an inline block of CSS source for element styling, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
-            <containerField default="children" type="containerFieldChoicesGroupLODShapeTransform"/>
+            <containerField default="children"
+                             type="containerFieldChoicesGroupLODShapeTransformSwitch"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -20880,7 +20890,13 @@
                <NodeContentModel name="Group"/>
                <NodeContentModel name="Transform"/>
                <NodeContentModel name="Shape"/>
+               <NodeContentModel name="Switch"/>
+               <NodeContentModel name="LOD"/>
                <NodeContentModel name="IndexedFaceSet"/>
+               <NodeContentModel name="IndexedQuadSet"/>
+               <NodeContentModel name="IndexedTriangleFanSet"/>
+               <NodeContentModel name="IndexedTriangleSet"/>
+               <NodeContentModel name="IndexedTriangleStripSet"/>
                <NodeContentModel name="Coordinate"/>
                <NodeContentModel name="CoordinateDouble"/>
                <NodeContentModel name="Normal" minOccurs="0" maxOccurs="2"/>
@@ -21942,7 +21958,7 @@
             <field name="channelsEnabled"
                     type="MFBool"
                     accessType="inputOutput"
-                    description="boolean values for each channels indicating whether enabled."/>
+                    description="boolean values for each channel indicating whether enabled."/>
             <field name="cycleTime"
                     type="SFTime"
                     accessType="outputOnly"
@@ -22060,7 +22076,7 @@
                     accessType="inputOutput"
                     inheritedFrom="X3DNode"
                     description="The style attribute on each X3D node and statement provides an inline block of CSS source for element styling, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
-            <containerField default="motions" type="xs:NMTOKEN"/>
+            <containerField default="children" type="containerFieldChoicesHAnimMotion"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -22068,7 +22084,7 @@
       </ConcreteNode>
       <ConcreteNode name="HAnimSegment">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-DIS/Part01/components/hanim.html#HAnimSegment"
-                               appinfo="HAnimSegment node contains Shape geometry for each body segment.">
+                               appinfo="HAnimSegment node contains Shape geometry for each body segment, providing a visual representation of the skeleton segment.">
             <componentInfo name="HAnim" level="1"/>
             <Inheritance baseType="X3DGroupingNode"/>
             <field name="addChildren"
@@ -26796,7 +26812,8 @@
                     accessType="inputOutput"
                     inheritedFrom="X3DNode"
                     description="The style attribute on each X3D node and statement provides an inline block of CSS source for element styling, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
-            <containerField default="children" type="containerFieldChoicesGroupLODShapeTransform"/>
+            <containerField default="children"
+                             type="containerFieldChoicesGroupLODShapeTransformSwitch"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -34193,7 +34210,7 @@
                     additionalEnumerationValuesAllowed="false"
                     simpleType="fontStyleChoices"
                     baseType="xs:NMTOKEN"
-                    description="Pick one of four values for text style (PLAIN | BOLD | ITALIC | BOLDITALIC).">
+                    description="Pick one of four values for text style (PLAIN|BOLD|ITALIC|BOLDITALIC).">
                <enumeration value="PLAIN" appinfo="default plain type."/>
                <enumeration value="BOLD" appinfo="boldface type."/>
                <enumeration value="ITALIC" appinfo="italic type."/>
@@ -34938,7 +34955,8 @@
                     accessType="inputOutput"
                     inheritedFrom="X3DNode"
                     description="The style attribute on each X3D node and statement provides an inline block of CSS source for element styling, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
-            <containerField default="children" type="containerFieldChoicesGroupLODShapeTransform"/>
+            <containerField default="children"
+                             type="containerFieldChoicesGroupLODShapeTransformSwitch"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="ShapeChildContentModel" minOccurs="0"/>
@@ -37053,7 +37071,8 @@
                     accessType="inputOutput"
                     inheritedFrom="X3DNode"
                     description="The style attribute on each X3D node and statement provides an inline block of CSS source for element styling, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
-            <containerField default="children" type="xs:NMTOKEN"/>
+            <containerField default="children"
+                             type="containerFieldChoicesGroupLODShapeTransformSwitch"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
@@ -38969,7 +38988,8 @@
                     accessType="inputOutput"
                     inheritedFrom="X3DNode"
                     description="The style attribute on each X3D node and statement provides an inline block of CSS source for element styling, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
-            <containerField default="children" type="containerFieldChoicesGroupLODShapeTransform"/>
+            <containerField default="children"
+                             type="containerFieldChoicesGroupLODShapeTransformSwitch"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModel" minOccurs="0" maxOccurs="unbounded"/>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
