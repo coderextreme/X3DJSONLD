@@ -7,8 +7,8 @@ export NASHORNX3DJSONLD=/home/$USERNAME/X3DJSONLD
 export CLASSPATH=".:/home/$USERNAME/pythonSAI/X3DJSAIL.4.0.full.jar:${X3DJSONLD}/src/main/java:${X3DJSONLD}/saxon-he-10.6.jar:${X3DJSONLD}/target/X3DJSONLD-1.0-SNAPSHOT.jar:${X3DJSONLD}/target/classes:${X3DJSONLD}/src/main/java"
 # NASHORN DOES NOT TAKE C:
 export NASHORN_CLASSPATH=".:/home/$USERNAME/pythonSAI/X3DJSAIL.4.0.full.jar:${NASHORNX3DJSONLD}/saxon-he-10.6.jar:${NASHORNX3DJSONLD}/target/X3DJSONLD-1.0-SNAPSHOT.jar:${NASHORNX3DJSONLD}/src/main/nashorn"
-export PYTHONPATH=/usr/bin:/c/Python27:/c/Python27/Scripts
-export PATH="${PYTHONPATH}:${JAVA_HOME}/bin:${JAVA_HOME}/jre/bin/server:${PATH}"
+export PYTHONPATH="{PYTHONPATH};C:\\Python311\\Lib;c:\\x3d-code\\www.web3d.org\\x3d\\stylesheets\\python"
+export PATH="${JAVA_HOME}/bin:${JAVA_HOME}/jre/bin/server:${PATH}"
 
 export PYTHON=python3
 export PIP=pip3
