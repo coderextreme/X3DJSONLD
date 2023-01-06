@@ -40,7 +40,7 @@ import org.web3d.x3d.jsail.Text.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 5 May 2017 </td>
+			<td> 23 Dec 2022 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -87,7 +87,7 @@ public class pp3
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("John Carlson"))
     .addMeta(new meta().setName(meta.NAME_TRANSLATOR ).setContent("John Carlson"))
     .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("5 May 2015"))
-    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("5 May 2017"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("23 Dec 2022"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("A process pipeline between three spheres (try typing on spheres and blue"))
     .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://coderextreme.net/x3d/pp3.x3d"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("manual")))
