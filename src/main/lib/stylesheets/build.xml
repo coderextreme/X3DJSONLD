@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Copyright (c) 2000-2022 held by the author(s).  All rights reserved.
+  Copyright (c) 2000-2023 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -91,9 +91,10 @@ POSSIBILITY OF SUCH DAMAGE.
     <!-- https://sourceforge.net/projects/saxon/files/Saxon-HE/11/Java/ -->
     <!-- https://www.saxonica.com/documentation10/#!about/gettingstarted/gettingstartedjava -->
     <!-- SaxonHE 11 (java.lang.NoClassDefFoundError: org/xmlresolver/Resolver) https://saxonica.plan.io/boards/3/topics/8478?r=8480 -->
+    
     <property name="saxon.dir"        location="java/lib" description="relative path from stylesheets directory"/>
-    <property name="saxon.jar"           value="saxon-he-11.3.jar"/><!-- previously saxon-he-10.6.jar saxon9he.jar -->
-    <property name="xmlresolver.jar"     value="xmlresolver-4.2.0.jar"/><!-- required with saxon-he-11+.jar -->
+    <property name="saxon.jar"           value="saxon-he-11.4.jar"/><!-- previously saxon-he-10.6.jar saxon9he.jar -->
+    <property name="xmlresolver.jar"     value="xmlresolver-4.4.3.jar"/><!-- required with saxon-he-11+.jar -->
     
     <property name=   "node.exe" value="node.exe"/>
 
@@ -433,7 +434,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <copy file="X3dToPython.xslt"                      todir="${X3DJSAIL.lib.dir}/stylesheets" force="true" verbose="true" failonerror="false"/>
         <copy file="X3dToVrml97.xslt"                      todir="${X3DJSAIL.lib.dir}/stylesheets" force="true" verbose="true" failonerror="false"/>
         <copy file="X3dToX3dvClassicVrmlEncoding.xslt"     todir="${X3DJSAIL.lib.dir}/stylesheets" force="true" verbose="true" failonerror="false"/>
-        <copy file="X3dToX3dom.xslt"                       todir="${X3DJSAIL.lib.dir}/stylesheets" force="true" verbose="true" failonerror="false"/>
+        <copy file="X3dToX3domX_ITE.xslt"                       todir="${X3DJSAIL.lib.dir}/stylesheets" force="true" verbose="true" failonerror="false"/>
         <copy file="X3dToHtml.xslt"                        todir="${X3DJSAIL.lib.dir}/stylesheets" force="true" verbose="true" failonerror="false"/>
         <copy file="X3dToXhtml.xslt"                       todir="${X3DJSAIL.lib.dir}/stylesheets" force="true" verbose="true" failonerror="false"/>
         <copy file="X3dTidy.xslt"                          todir="${X3DJSAIL.lib.dir}/stylesheets" force="true" verbose="true" failonerror="false"/>
@@ -1001,14 +1002,14 @@ POSSIBILITY OF SUCH DAMAGE.
             <arg value="-xsl:BuildSpecificationLanguageBindingJava.xslt" description="style-doc"/>
         </java>
         <echo message="Remove extraneous namespace attributes from result file:"/>
-        <replace file="JavaLanguageBinding.Part2.abstracts.html" token=' xmlns:fn="http://www.w3.org/2005/xpath-functions"' value=""  summary="true"/>
-        <replace file="JavaLanguageBinding.Part2.concretes.html" token=' xmlns:fn="http://www.w3.org/2005/xpath-functions"' value=""  summary="true"/>
-        <echo message="Produced new X3D Java SAI Appendix B JavaLanguageBinding.Part2.abstracts.html and Appendix C JavaLanguageBinding.Part2.concretes.html"/>
+        <replace file="JavaLanguageBinding.Part2.nodeTypeInterfaces.html" token=' xmlns:fn="http://www.w3.org/2005/xpath-functions"' value=""  summary="true" failonnoreplacements="false"/>
+        <replace file="JavaLanguageBinding.Part2.nodeInterfaces.html"     token=' xmlns:fn="http://www.w3.org/2005/xpath-functions"' value=""  summary="true" failonnoreplacements="false"/>
+        <echo message="Produced new X3D Java SAI Appendix B JavaLanguageBinding.Part2.nodeTypeInterfaces.html and Appendix C JavaLanguageBinding.Part2.nodeInterfaces.html"/>
         <mkdir dir="../../specifications/JavaLanguageBinding/Part2"/>
         <mkdir dir="../../specifications/JavaLanguageBinding/images"/>
         <echo message="move to subdirectory specifications/JavaLanguageBinding, rename to match specification filenames:"/>
-        <move file="JavaLanguageBinding.Part2.abstracts.html" tofile="../../specifications/JavaLanguageBinding/Part2/abstracts.html" verbose="true" failonerror="false"/>
-        <move file="JavaLanguageBinding.Part2.concretes.html"     tofile="../../specifications/JavaLanguageBinding/Part2/concretes.html"     verbose="true" failonerror="false"/>
+        <move file="JavaLanguageBinding.Part2.nodeTypeInterfaces.html" tofile="../../specifications/JavaLanguageBinding/Part2/nodeTypeInterfaces.html" verbose="true" failonerror="false"/>
+        <move file="JavaLanguageBinding.Part2.nodeInterfaces.html"     tofile="../../specifications/JavaLanguageBinding/Part2/nodeInterfaces.html"     verbose="true" failonerror="false"/>
         <copy file="Web3D_LB.css"      todir="../../specifications/JavaLanguageBinding/Part2/" verbose="true" failonerror="false"/>
         <copy file="images/cube.gif"   todir="../../specifications/JavaLanguageBinding/images" verbose="true" failonerror="false"/>
         <copy file="images/x3dbar.png" todir="../../specifications/JavaLanguageBinding/images" verbose="true" failonerror="false"/>
@@ -1040,14 +1041,14 @@ POSSIBILITY OF SUCH DAMAGE.
             <arg value="-xsl:BuildSpecificationLanguageBindingC.xslt" description="style-doc"/>
         </java>
         <echo message="Remove extraneous namespace attributes from result file:"/>
-        <replace file="CLanguageBinding.Part3.abstracts.html" token=' xmlns:fn="http://www.w3.org/2005/xpath-functions"' value=""  summary="true"/>
-        <replace file="CLanguageBinding.Part3.concretes.html" token=' xmlns:fn="http://www.w3.org/2005/xpath-functions"'     value=""  summary="true"/>
-        <echo message="Produced new X3D C SAI Appendix B CLanguageBinding.Part3.abstracts.html and Appendix C CLanguageBinding.Part3.concretes.html"/>
+        <replace file="CLanguageBinding.Part3.nodeTypeInterfaces.html" token=' xmlns:fn="http://www.w3.org/2005/xpath-functions"' value=""  summary="true" failonnoreplacements="false"/>
+        <replace file="CLanguageBinding.Part3.nodeInterfaces.html" token=' xmlns:fn="http://www.w3.org/2005/xpath-functions"' value=""  summary="true" failonnoreplacements="false"/>
+        <echo message="Produced new X3D C SAI Appendix B CLanguageBinding.Part3.nodeTypeInterfaces.html and Appendix C CLanguageBinding.Part3.nodeInterfaces.html"/>
         <mkdir dir="../../specifications/CLanguageBinding/Part3"/>
         <mkdir dir="../../specifications/CLanguageBinding/images"/>
         <echo message="move to subdirectory specifications/CSharpLanguageBinding, rename to match specification filenames:"/>
-        <move file="CLanguageBinding.Part3.abstracts.html" tofile="../../specifications/CLanguageBinding/Part3/abstracts.html" verbose="true" failonerror="false"/>
-        <move file="CLanguageBinding.Part3.concretes.html"     tofile="../../specifications/CLanguageBinding/Part3/concretes.html"     verbose="true" failonerror="false"/>
+        <move file="CLanguageBinding.Part3.nodeTypeInterfaces.html" tofile="../../specifications/CLanguageBinding/Part3/nodeTypeInterfaces.html" verbose="true" failonerror="false"/>
+        <move file="CLanguageBinding.Part3.nodeInterfaces.html"     tofile="../../specifications/CLanguageBinding/Part3/nodeInterfaces.html"     verbose="true" failonerror="false"/>
         <copy file="Web3D_LB.css"      todir="../../specifications/CLanguageBinding/Part3/" verbose="true" failonerror="false"/>
         <copy file="images/cube.gif"   todir="../../specifications/CLanguageBinding/images" verbose="true" failonerror="false"/>
         <copy file="images/x3dbar.png" todir="../../specifications/CLanguageBinding/images" verbose="true" failonerror="false"/>
@@ -1082,14 +1083,14 @@ POSSIBILITY OF SUCH DAMAGE.
             <arg value="-xsl:BuildSpecificationLanguageBindingCPP.xslt" description="style-doc"/>
         </java>
         <echo message="Remove extraneous namespace attributes from result file:"/>
-        <replace file="CPPLanguageBinding.Part4.abstracts.html" token=' xmlns:fn="http://www.w3.org/2005/xpath-functions"' value=""  summary="true"/>
-        <replace file="CPPLanguageBinding.Part4.concretes.html" token=' xmlns:fn="http://www.w3.org/2005/xpath-functions"'     value=""  summary="true"/>
-        <echo message="Produced new X3D CPP SAI Appendix B CPPLanguageBinding.Part4.abstracts.html and Appendix C CPPLanguageBinding.Part4.concretes.html"/>
+        <replace file="CPPLanguageBinding.Part4.nodeTypeInterfaces.html" token=' xmlns:fn="http://www.w3.org/2005/xpath-functions"' value=""  summary="true" failonnoreplacements="false"/>
+        <replace file="CPPLanguageBinding.Part4.nodeInterfaces.html" token=' xmlns:fn="http://www.w3.org/2005/xpath-functions"' value=""  summary="true" failonnoreplacements="false"/>
+        <echo message="Produced new X3D CPP SAI Appendix B CPPLanguageBinding.Part4.nodeTypeInterfaces.html and Appendix C CPPLanguageBinding.Part4.nodeInterfaces.html"/>
         <mkdir dir="../../specifications/CPPLanguageBinding/Part4"/>
         <mkdir dir="../../specifications/CPPLanguageBinding/images"/>
         <echo message="move to subdirectory specifications/CSharpLanguageBinding, rename to match specification filenames:"/>
-        <move file="CPPLanguageBinding.Part4.abstracts.html" tofile="../../specifications/CPPLanguageBinding/Part4/abstracts.html" verbose="true" failonerror="false"/>
-        <move file="CPPLanguageBinding.Part4.concretes.html"     tofile="../../specifications/CPPLanguageBinding/Part4/concretes.html"     verbose="true" failonerror="false"/>
+        <move file="CPPLanguageBinding.Part4.nodeTypeInterfaces.html" tofile="../../specifications/CPPLanguageBinding/Part4/nodeTypeInterfaces.html" verbose="true" failonerror="false"/>
+        <move file="CPPLanguageBinding.Part4.nodeInterfaces.html"     tofile="../../specifications/CPPLanguageBinding/Part4/nodeInterfaces.html"     verbose="true" failonerror="false"/>
         <copy file="Web3D_LB.css"      todir="../../specifications/CPPLanguageBinding/Part4/" verbose="true" failonerror="false"/>
         <copy file="images/cube.gif"   todir="../../specifications/CPPLanguageBinding/images" verbose="true" failonerror="false"/>
         <copy file="images/x3dbar.png" todir="../../specifications/CPPLanguageBinding/images" verbose="true" failonerror="false"/>
@@ -1101,10 +1102,10 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="==========================================="/>
         
         <!-- the following techniques are unique to netbeans and display results in the browser -->
-        <echo message="file:///../../specifications/CPPLanguageBinding/Part4/abstracts.html"/>
-        <nbbrowse url="file:///../../specifications/CPPLanguageBinding/Part4/abstracts.html"/>
-        <echo message="file:///../../specifications/CPPLanguageBinding/Part4/concretes.html"/>
-        <nbbrowse url="file:///../../specifications/CPPLanguageBinding/Part4/concretes.html"/>
+        <echo message="file:///../../specifications/CPPLanguageBinding/Part4/nodeTypeInterfaces.html"/>
+        <nbbrowse url="file:///../../specifications/CPPLanguageBinding/Part4/nodeTypeInterfaces.html"/>
+        <echo message="file:///../../specifications/CPPLanguageBinding/Part4/nodeInterfaces.html"/>
+        <nbbrowse url="file:///../../specifications/CPPLanguageBinding/Part4/nodeInterfaces.html"/>
         <echo message="==========================================="/>
 
     <!-- 
@@ -1132,14 +1133,14 @@ POSSIBILITY OF SUCH DAMAGE.
             <arg value="-xsl:BuildSpecificationLanguageBindingCSharp.xslt" description="style-doc"/>
         </java>
         <echo message="Remove extraneous namespace attributes from result file:"/>
-        <replace file="CSharpLanguageBinding.Part5.abstracts.html" token=' xmlns:fn="http://www.w3.org/2005/xpath-functions"' value=""  summary="true"/>
-        <replace file="CSharpLanguageBinding.Part5.concretes.html" token=' xmlns:fn="http://www.w3.org/2005/xpath-functions"'     value=""  summary="true"/>
-        <echo message="Produced new X3D CSharp SAI Appendix B CSharpLanguageBinding.Part5.abstracts.html and Appendix C CSharpLanguageBinding.Part5.concretes.html"/>
+        <replace file="CSharpLanguageBinding.Part5.nodeTypeInterfaces.html" token=' xmlns:fn="http://www.w3.org/2005/xpath-functions"' value=""  summary="true" failonnoreplacements="false"/>
+        <replace file="CSharpLanguageBinding.Part5.nodeInterfaces.html" token=' xmlns:fn="http://www.w3.org/2005/xpath-functions"' value=""  summary="true" failonnoreplacements="false"/>
+        <echo message="Produced new X3D CSharp SAI Appendix B CSharpLanguageBinding.Part5.nodeTypeInterfaces.html and Appendix C CSharpLanguageBinding.Part5.nodeInterfaces.html"/>
         <mkdir dir="../../specifications/CSharpLanguageBinding/Part5"/>
         <mkdir dir="../../specifications/CSharpLanguageBinding/images"/>
         <echo message="move to subdirectory specifications/CSharpLanguageBinding, rename to match specification filenames:"/>
-        <move file="CSharpLanguageBinding.Part5.abstracts.html" tofile="../../specifications/CSharpLanguageBinding/Part5/abstracts.html" verbose="true" failonerror="false"/>
-        <move file="CSharpLanguageBinding.Part5.concretes.html"     tofile="../../specifications/CSharpLanguageBinding/Part5/concretes.html"     verbose="true" failonerror="false"/>
+        <move file="CSharpLanguageBinding.Part5.nodeTypeInterfaces.html" tofile="../../specifications/CSharpLanguageBinding/Part5/nodeTypeInterfaces.html" verbose="true" failonerror="false"/>
+        <move file="CSharpLanguageBinding.Part5.nodeInterfaces.html"     tofile="../../specifications/CSharpLanguageBinding/Part5/nodeInterfaces.html"     verbose="true" failonerror="false"/>
         <copy file="Web3D_LB.css"      todir="../../specifications/CSharpLanguageBinding/Part5/" verbose="true" failonerror="false"/>
         <copy file="images/cube.gif"   todir="../../specifications/CSharpLanguageBinding/images" verbose="true" failonerror="false"/>
         <copy file="images/x3dbar.png" todir="../../specifications/CSharpLanguageBinding/images" verbose="true" failonerror="false"/>
@@ -1175,16 +1176,16 @@ POSSIBILITY OF SUCH DAMAGE.
     <target name="view.BuildSpecificationLanguageBindingJava.local" description="view BuildSpecificationLanguageBindingJava appendices in web browser (Netbeans only)">
         <property name="javadocPath" location="${X3DJSAIL.relative.dir}/javadoc/index.html"/>
         <nbbrowse url="file:///${javadocPath}" />
-        <property name="abstractPath" location="../../specifications/JavaLanguageBinding/Part2/abstracts.html"/>
+        <property name="abstractPath" location="../../specifications/JavaLanguageBinding/Part2/nodeTypeInterfaces.html"/>
         <nbbrowse url="file:///${abstractPath}" />
-        <property name="concretePath" location="../../specifications/JavaLanguageBinding/Part2/concretes.html"/>
+        <property name="concretePath" location="../../specifications/JavaLanguageBinding/Part2/nodeInterfaces.html"/>
         <nbbrowse url="file:///${concretePath}" />
         <!-- TODO implementation-independent approach to browser viewing if possible.  other Ant approachs have to be customized for each OS -->
     </target>
 
     <target name="view.BuildSpecificationLanguageBindingJava.online" description="view BuildSpecificationLanguageBindingJava appendices in web browser (Netbeans only)">
-        <nbbrowse url="https://www.web3D.org/documents/specifications/19777-2/V3.3/Part2/abstracts.html" />
-        <nbbrowse url="https://www.web3D.org/documents/specifications/19777-2/V3.3/Part2/concretes.html" />
+        <nbbrowse url="https://www.web3D.org/documents/specifications/19777-2/V3.3/Part2/nodeTypeInterfaces.html" />
+        <nbbrowse url="https://www.web3D.org/documents/specifications/19777-2/V3.3/Part2/nodeInterfaces.html" />
         <!-- TODO implementation-independent approach to browser viewing, if possible.  other Ant approachs have to be customized for each OS -->
     </target>
 
@@ -1376,8 +1377,8 @@ POSSIBILITY OF SUCH DAMAGE.
             <arg value="-xsl:BuildSpecificationXmlEncodingFromSchema.xslt" description="style-doc"/>
         </java>
         <echo message="Remove extraneous namespace attributes from result files:"/>
-        <replace file="EncodingOfNodes.html" token=' xmlns:fn="http://www.w3.org/2005/xpath-functions"'    value=""  summary="true"/>
-        <replace file="EncodingOfStatements.html" token=' xmlns:fn="http://www.w3.org/2005/xpath-functions"'    value=""  summary="true"/>
+        <replace file="EncodingOfNodes.html" token=' xmlns:fn="http://www.w3.org/2005/xpath-functions"'         value=""  summary="true" failonnoreplacements="false"/>
+        <replace file="EncodingOfStatements.html" token=' xmlns:fn="http://www.w3.org/2005/xpath-functions"'    value=""  summary="true" failonnoreplacements="false"/>
         <echo message="Produced new X3D XML Encoding Clause 6: EncodingOfNodes.html and clause 7: Encoding of statements"/>
         <mkdir dir="../../specifications/XmlEncoding/Part01"/>
         <mkdir dir="../../specifications/XmlEncoding/images"/>
@@ -1426,7 +1427,7 @@ POSSIBILITY OF SUCH DAMAGE.
             <arg value="-xsl:BuildSpecificationVrmlEncodingFromSchema.xslt" description="style-doc"/>
         </java>
         <echo message="Remove extraneous namespace attributes from result file:"/>
-        <replace file="VrmlEncodingOfNodes.html" token=' xmlns:fn="http://www.w3.org/2005/xpath-functions"'    value=""  summary="true"/>
+        <replace file="VrmlEncodingOfNodes.html" token=' xmlns:fn="http://www.w3.org/2005/xpath-functions"'    value=""  summary="true" failonnoreplacements="false"/>
         <echo message="Produced new X3D Classic VRML encoding Clause 6: VrmlEncodingOfNodes.html"/>
         <mkdir dir="../../specifications/VrmlEncoding/Part01"/>
         <mkdir dir="../../specifications/VrmlEncoding/images"/>
@@ -1465,7 +1466,7 @@ POSSIBILITY OF SUCH DAMAGE.
                 reloadstylesheet="yes" force="yes">
         </xslt>
         <echo message="Remove extraneous namespace attributes from result file:"/>
-        <replace file="EncodingOfNodes.html" token=' xmlns:fn="http://www.w3.org/2005/xpath-functions"'    value=""  summary="true"/>
+        <replace file="EncodingOfNodes.html" token=' xmlns:fn="http://www.w3.org/2005/xpath-functions"'    value=""  summary="true" failonnoreplacements="false"/>
         <echo message="Produced new X3D XML Encoding Clause 6: EncodingOfNodes.html"/>
     </target>
 
@@ -1496,8 +1497,8 @@ POSSIBILITY OF SUCH DAMAGE.
         <delete dir="test" verbose="true" failonerror="false"/>
         <delete file="EncodingOfNodes.html" verbose="true" failonerror="false"/>
         <delete file="EncodingOfStatements.html" verbose="true" failonerror="false"/>
-        <delete file="JavaLanguageBinding/Part2/abstracts.html" verbose="true" failonerror="false"/>
-        <delete file="JavaLanguageBinding/Part2/concretes.html" verbose="true" failonerror="false"/>
+        <delete file="JavaLanguageBinding/Part2/nodeTypeInterfaces.html" verbose="true" failonerror="false"/>
+        <delete file="JavaLanguageBinding/Part2/nodeInterfaces.html" verbose="true" failonerror="false"/>
         <delete file="VRMLEncodingOfNodes.html" verbose="true" failonerror="false"/>
     </target>
 
@@ -2198,7 +2199,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="expected output: test/BoxMan.xslt.html"/>
     </target>
 
-    <target name="view.test.X3dToX3dom" description="view X3dHAnimHumanoidReport in web browser (Netbeans only)">
+    <target name="view.test.X3dToX3domX_ITE" description="view X3dHAnimHumanoidReport in web browser (Netbeans only)">
         <nbbrowse url="file:///${basedir}/test/HelloWorld.xhtml" />
         <nbbrowse url="file:///${basedir}/test/HAnimSpecificationLOA3Illustrated.xhtml" />
         <nbbrowse url="file:///${basedir}/test/MetadataExamples.xhtml" />
@@ -2909,18 +2910,18 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="expected output: test/Background2.x3d"/>
     </target>
     
-    <target name="test.X3dToX3dom.xslt" depends="test.mkdir" description="Test X3dToVrml97.xslt stylesheet using default Ant xslt task" >
-        <xslt style="X3dToX3dom.xslt" in="${examples.dir}/HelloWorld.x3d"                               out="test/HelloWorld.xhtml"/>
+    <target name="test.X3dToX3domX_ITE.xslt" depends="test.mkdir" description="Test X3dToVrml97.xslt stylesheet using default Ant xslt task" >
+        <xslt style="X3dToX3domX_ITE.xslt" in="${examples.dir}/HelloWorld.x3d"                               out="test/HelloWorld.xhtml"/>
         <!-- HAnim -->
-        <xslt style="X3dToX3dom.xslt" in="${examples.dir}/HumanoidAnimation/HAnimSpecificationLOA3Illustrated.x3d"  out="test/HAnimSpecificationLOA3Illustrated.xhtml"/>
-        <xslt style="X3dToX3dom.xslt" in="${examples.dir}/X3dForWebAuthors/Chapter15Metadata/MetadataExamples.x3d"  out="test/MetadataExamples.xhtml"/>
+        <xslt style="X3dToX3domX_ITE.xslt" in="${examples.dir}/HumanoidAnimation/Characters/JinLOA1.x3d"  out="test/HAnimSpecificationLOA3Illustrated.xhtml"/>
+        <xslt style="X3dToX3domX_ITE.xslt" in="${examples.dir}/X3dForWebAuthors/Chapter15Metadata/WorldInfoExample.x3d"  out="test/WorldInfoExample.xhtml"/>
         
         <!-- CAD
-       <xslt style="X3dToX3dom.xslt" in="${examples.dir}/Basic/CAD/CadTeapot.x3d"                      out="test/CadTeapot.xhtml"/>
-       <xslt style="X3dToX3dom.xslt" in="${examples.dir}/Basic/CAD/IndexedQuadSetExample.x3d"          out="test/IndexedQuadSetExample.xhtml"/>
-       <xslt style="X3dToX3dom.xslt" in="${examples.dir}/Basic/CAD/QuadSetColor.x3d"                   out="test/QuadSetColor.xhtml"/>
-       <xslt style="X3dToX3dom.xslt" in="${examples.dir}/Basic/CAD/IndexedQuadSetTexture.x3d"          out="test/IndexedQuadSetTexture.xhtml"/>
-       <xslt style="X3dToX3dom.xslt" in="${examples.dir}/Basic/CAD/CadDesignPatternExampleBushing.x3d" out="test/CadDesignPatternExampleBushing.xhtml"/>
+       <xslt style="X3dToX3domX_ITE.xslt" in="${examples.dir}/Basic/CAD/CadTeapot.x3d"                      out="test/CadTeapot.xhtml"/>
+       <xslt style="X3dToX3domX_ITE.xslt" in="${examples.dir}/Basic/CAD/IndexedQuadSetExample.x3d"          out="test/IndexedQuadSetExample.xhtml"/>
+       <xslt style="X3dToX3domX_ITE.xslt" in="${examples.dir}/Basic/CAD/QuadSetColor.x3d"                   out="test/QuadSetColor.xhtml"/>
+       <xslt style="X3dToX3domX_ITE.xslt" in="${examples.dir}/Basic/CAD/IndexedQuadSetTexture.x3d"          out="test/IndexedQuadSetTexture.xhtml"/>
+       <xslt style="X3dToX3domX_ITE.xslt" in="${examples.dir}/Basic/CAD/CadDesignPatternExampleBushing.x3d" out="test/CadDesignPatternExampleBushing.xhtml"/>
         -->
     </target>
     
@@ -3204,8 +3205,8 @@ POSSIBILITY OF SUCH DAMAGE.
                 <!--
                 <include name="build.xml"/>
                 <include name="EncodingOfNodes.html"/>
-                <include name="JavaLanguageBinding.Part2.abstracts.html"/>
-                <include name="JavaLanguageBinding.Part2.concretes.html"/>
+                <include name="JavaLanguageBinding.Part2.nodeTypeInterfaces.html"/>
+                <include name="JavaLanguageBinding.Part2.nodeInterfaces.html"/>
                 <include name="X3DEncodings.css"/>
                 <include name="cube.gif"/>
                 <include name="x3d.png"/>
@@ -3225,16 +3226,16 @@ POSSIBILITY OF SUCH DAMAGE.
         </scp>
         <echo  message="results online at https://www.web3D.org/specifications/stylesheets/EncodingOfNodes.html"/>
         <echo  message="           and at https://www.web3D.org/specifications/stylesheets/VrmlEncodingOfNodes.html"/>
-        <echo  message="           and at https://www.web3D.org/specifications/stylesheets/JavaLanguageBinding/Part2/abstracts.html"/>
-        <echo  message="           and at https://www.web3D.org/specifications/stylesheets/JavaLanguageBinding/Part2/concretes.html"/>
+        <echo  message="           and at https://www.web3D.org/specifications/stylesheets/JavaLanguageBinding/Part2/nodeTypeInterfaces.html"/>
+        <echo  message="           and at https://www.web3D.org/specifications/stylesheets/JavaLanguageBinding/Part2/nodeInterfaces.html"/>
         <scp remotetodir="${username.web3d}@${sftpServer.web3d}:${sftpDirectory.web3d.stylesheets}" password="${password.web3d}"
                trust="yes"
              verbose="true" failonerror="false">
             <fileset refid="stylesheetGenerationProducts"/>
         </scp>
         <echo  message="results online at https://www.web3D.org/x3d/stylesheets/EncodingOfNodes.html"/>
-        <echo  message="               at https://www.web3D.org/x3d/stylesheets/JavaLanguageBinding/Part2/abstracts.html"/>
-        <echo  message="           and at https://www.web3D.org/x3d/stylesheets/JavaLanguageBinding/Part2/concretes.html"/>
+        <echo  message="               at https://www.web3D.org/x3d/stylesheets/JavaLanguageBinding/Part2/nodeTypeInterfaces.html"/>
+        <echo  message="           and at https://www.web3D.org/x3d/stylesheets/JavaLanguageBinding/Part2/nodeInterfaces.html"/>
         <echo  message="scp.upload.stylesheets.web3d ssh-sftp task complete"/>
     </target>
 

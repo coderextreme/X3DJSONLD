@@ -624,7 +624,7 @@ Invocation:
 
             <!-- The first test below selects all elements derived by extension that are not statements -->
             <!-- The second test below below is needed to capture those elements that, because of Schema limitations, are defined directly without extension  -->
-	    <xsl:for-each select="//xs:schema/xs:element[(*//xs:extension/@base!='SceneGraphStructureStatement') or (not (*//xs:extension/@base))]">
+	    <xsl:for-each select="//xs:schema/xs:element[(*//xs:extension/@base!='X3DStatement') or (not (*//xs:extension/@base))]">
 	      <xsl:sort select="@name"/>
 	      <!-- html bookmarks -->
 	      <xsl:text>&#160;&#160;</xsl:text>
@@ -668,7 +668,7 @@ Invocation:
 	    <xsl:text>&#10;</xsl:text>
 
 	    <!-- now append index entries for the pertinent content models -->
-            <xsl:for-each select="//xs:schema/xs:group[@name=//xs:schema/xs:element[(*//xs:extension/@base!='SceneGraphStructureStatement') or (not (*//xs:extension/@base))]//xs:group/@ref
+            <xsl:for-each select="//xs:schema/xs:group[@name=//xs:schema/xs:element[(*//xs:extension/@base!='X3DStatement') or (not (*//xs:extension/@base))]//xs:group/@ref
                                                     or @name=//xs:schema/xs:complexType//xs:group/@ref[.!='ChildContentModelSceneGraphStructure']]">
 	      <xsl:sort select="@name"/>
 
@@ -825,7 +825,7 @@ Invocation:
     <xsl:text>&#10;</xsl:text>
 
     <!-- Loop over elements, for each detailed page entry -->
-    <xsl:for-each select="//xs:schema/xs:element[(*//xs:extension/@base!='SceneGraphStructureStatement') or (not (*//xs:extension/@base))]">
+    <xsl:for-each select="//xs:schema/xs:element[(*//xs:extension/@base!='X3DStatement') or (not (*//xs:extension/@base))]">
       <xsl:sort select="@name"/>
             
       <xsl:variable name="nodeName" select="@name"/>
@@ -1153,7 +1153,7 @@ Invocation:
                 <xsl:if test="not((count ($contentModelElements)=1) and ($contentModelElements[1]/@ref='ProtoInstance'))">
                   <xsl:for-each select='$contentModelElements'>
                     <xsl:variable name="contentModelElementName" select="@ref"/>
-                    <xsl:variable name="isStatement" select="//xs:schema/xs:element[@name=$contentModelElementName]//xs:extension[(@base='SceneGraphStructureStatement')]"/>
+                    <xsl:variable name="isStatement" select="//xs:schema/xs:element[@name=$contentModelElementName]//xs:extension[(@base='X3DStatement')]"/>
                     <xsl:variable name="currentPosition" select="position()"/>
             <!--    <xsl:message>
                       <xsl:text>[Found child content node] </xsl:text>
@@ -1605,7 +1605,7 @@ Invocation:
    </xsl:element> <!-- p -->
    <xsl:text>&#10;</xsl:text>
 
-    <xsl:for-each select="//xs:schema/xs:group[@name=//xs:schema/xs:element[(*//xs:extension/@base!='SceneGraphStructureStatement') or (not (*//xs:extension/@base))]//xs:group/@ref
+    <xsl:for-each select="//xs:schema/xs:group[@name=//xs:schema/xs:element[(*//xs:extension/@base!='X3DStatement') or (not (*//xs:extension/@base))]//xs:group/@ref
                                             or @name=//xs:schema/xs:complexType//xs:group/@ref[.!='ChildContentModelSceneGraphStructure']]">
 
       <xsl:sort select="@name"/>
@@ -1901,7 +1901,7 @@ Invocation:
 	    <xsl:element name="br"/>
             <xsl:text>&#10;</xsl:text>
 
-	    <xsl:for-each select="//xs:schema/xs:element[*//xs:extension/@base='SceneGraphStructureStatement']">
+	    <xsl:for-each select="//xs:schema/xs:element[*//xs:extension/@base='X3DStatement']">
               <xsl:sort select="@name"/>
 	      <xsl:text>&#160;&#160;</xsl:text>
 	      <xsl:element name="a">
@@ -2013,7 +2013,7 @@ Invocation:
     </xsl:element> <!-- h1 -->
     <xsl:text>&#10;</xsl:text>
 
-    <xsl:for-each select="//xs:schema/xs:element[*//xs:extension/@base='SceneGraphStructureStatement']">
+    <xsl:for-each select="//xs:schema/xs:element[*//xs:extension/@base='X3DStatement']">
       <xsl:sort select="@name"/>
             
       <xsl:variable name="nodeName" select="@name"/>
@@ -2478,7 +2478,7 @@ Invocation:
 
     <!-- The first test below selects all elements derived by extension that are not statements -->
     <!-- The second test below below is needed to capture those elements that, because of Schema limitations, are defined directly without extension  -->
-    <xsl:for-each select="//xs:schema/xs:element[(*//xs:extension/@base!='useAllIncludingSceneGraphStructureStatement') or (not (*//xs:extension/@base))]">
+    <xsl:for-each select="//xs:schema/xs:element[(*//xs:extension/@base!='useAllIncludingX3DStatement') or (not (*//xs:extension/@base))]">
         <xsl:sort select="lower-case(@name)"/>
 
         <xsl:text disable-output-escaping="yes">&lt;</xsl:text>

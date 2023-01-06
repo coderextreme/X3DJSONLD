@@ -96,7 +96,7 @@ TODO:
 		<!-- ===================================================================================== -->
 		<!-- Annex  B Node type interfaces -->
 
-		<xsl:result-document  href="CPPLanguageBinding.Part4.abstracts.html" method="html" omit-xml-declaration="yes" encoding="UTF-8" indent="yes">
+		<xsl:result-document  href="CPPLanguageBinding.Part4.nodeTypeInterfaces.html" method="html" omit-xml-declaration="yes" encoding="UTF-8" indent="yes">
 
 			<xsl:text disable-output-escaping="yes"><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 ]]></xsl:text>
@@ -119,7 +119,7 @@ TODO:
 							<xsl:text>identifier</xsl:text>
 						</xsl:attribute>
 						<xsl:attribute name="content">
-							<xsl:text>https://www.web3d.org/documents/specifications/19777-4/V3.3/Part4/abstracts.html</xsl:text>
+							<xsl:text>https://www.web3d.org/documents/specifications/19777-4/V3.3/Part4/nodeTypeInterfaces.html</xsl:text>
 						</xsl:attribute>
 					</xsl:element>
 					<xsl:element name="meta">
@@ -127,7 +127,7 @@ TODO:
 							<xsl:text>reference</xsl:text>
 						</xsl:attribute>
 						<xsl:attribute name="content">
-							<xsl:text>https://www.web3d.org/x3d/stylesheets/CPPLanguageBinding.Part4.abstracts.html</xsl:text>
+							<xsl:text>https://www.web3d.org/x3d/stylesheets/CPPLanguageBinding.Part4.nodeTypeInterfaces.html</xsl:text>
 						</xsl:attribute>
 					</xsl:element>
 
@@ -2027,7 +2027,7 @@ public:
 		<!-- ===================================================================================== -->
 		<!-- Annex B Node interfaces -->
 
-		<xsl:result-document  href="CPPLanguageBinding.Part4.concretes.html" method="html" omit-xml-declaration="yes" encoding="UTF-8" indent="yes">
+		<xsl:result-document  href="CPPLanguageBinding.Part4.nodeInterfaces.html" method="html" omit-xml-declaration="yes" encoding="UTF-8" indent="yes">
 
 			<xsl:text disable-output-escaping="yes"><![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 ]]></xsl:text>
@@ -2050,7 +2050,7 @@ public:
 							<xsl:text>identifier</xsl:text>
 						</xsl:attribute>
 						<xsl:attribute name="content">
-							<xsl:text>https://www.web3d.org/documents/specifications/19777-4/V3.3/Part4/concretes.html</xsl:text>
+							<xsl:text>https://www.web3d.org/documents/specifications/19777-4/V3.3/Part4/nodeInterfaces.html</xsl:text>
 						</xsl:attribute>
 					</xsl:element>
 					<xsl:element name="meta">
@@ -2058,7 +2058,7 @@ public:
 							<xsl:text>reference</xsl:text>
 						</xsl:attribute>
 						<xsl:attribute name="content">
-							<xsl:text>https://www.web3d.org/x3d/stylesheets/CPPLanguageBinding.Part4.concretes.html</xsl:text>
+							<xsl:text>https://www.web3d.org/x3d/stylesheets/CPPLanguageBinding.Part4.nodeInterfaces.html</xsl:text>
 						</xsl:attribute>
 					</xsl:element>
 
@@ -2478,7 +2478,7 @@ public:
 					</h2>
 
 					<p>
-						Each concrete node shall extend the classes defined in <a href="abstracts.html">Annex A</a> as appropriate for the abstract node requirements for each node type. For example, the Inline
+						Each concrete node shall extend the classes defined in <a href="nodeTypeInterfaces.html">Annex A</a> as appropriate for the abstract node requirements for each node type. For example, the Inline
 						interface definition is
 					</p>
 					<blockquote>
@@ -2495,7 +2495,7 @@ public:
 					</h2>
 					<p>
 						Within each node class there shall be methods to read and set the values for every field. The naming convention for each field method shall follow the definition in
-						<a href="abstracts.html#Conventions">A.1.2 Conventions</a> for the abstract classes. Where fields are already covered by the abstract class, the concrete
+						<a href="nodeTypeInterfaces.html#Conventions">A.1.2 Conventions</a> for the abstract classes. Where fields are already covered by the abstract class, the concrete
 						class is not required to redeclare the same methods. The concrete class shall declare methods that are not defined by the abstract node representation.
 					</p>
 
@@ -3669,7 +3669,7 @@ public:
 						<xsl:when test="//xs:complexType[@name = $baseInterface]">
 							<xsl:element name="a">
 								<xsl:attribute name="href">
-									<!-- abstracts.html -->
+									<!-- nodeTypeInterfaces.html -->
 									<xsl:text>#</xsl:text>
 									<xsl:value-of select="$baseInterface"/>
 								</xsl:attribute>
@@ -3708,7 +3708,7 @@ public:
 							<xsl:when test="//xs:complexType[@name = $ancestorInterface1]">
 								<xsl:element name="a">
 									<xsl:attribute name="href">
-										<!-- abstracts.html -->
+										<!-- nodeTypeInterfaces.html -->
 										<xsl:text>#</xsl:text>
 										<xsl:value-of select="$ancestorInterface1"/>
 									</xsl:attribute>
@@ -3747,7 +3747,7 @@ public:
 							<xsl:when test="//xs:complexType[@name = $ancestorInterface2]">
 								<xsl:element name="a">
 									<xsl:attribute name="href">
-										<!-- abstracts.html -->
+										<!-- nodeTypeInterfaces.html -->
 										<xsl:text>#</xsl:text>
 										<xsl:value-of select="$ancestorInterface2"/>
 									</xsl:attribute>
@@ -3786,7 +3786,7 @@ public:
 							<xsl:when test="//xs:complexType[@name = $ancestorInterface3]">
 								<xsl:element name="a">
 									<xsl:attribute name="href">
-										<!-- abstracts.html -->
+										<!-- nodeTypeInterfaces.html -->
 										<xsl:text>#</xsl:text>
 										<xsl:value-of select="$ancestorInterface3"/>
 									</xsl:attribute>
@@ -3818,7 +3818,7 @@ public:
 							<xsl:when test="//xs:complexType[@name = $ancestorInterface4]">
 								<xsl:element name="a">
 									<xsl:attribute name="href">
-										<!-- abstracts.html -->
+										<!-- nodeTypeInterfaces.html -->
 										<xsl:text>#</xsl:text>
 										<xsl:value-of select="$ancestorInterface4"/>
 									</xsl:attribute>
@@ -3859,11 +3859,11 @@ public:
                         <xsl:value-of select="$specificationIndexUrl"/>
                         <xsl:text>versionContent.html#</xsl:text>
                         -->
-							<xsl:text>abstracts.html#</xsl:text>
+							<xsl:text>nodeTypeInterfaces.html#</xsl:text>
 							<xsl:value-of select="xs:complexType/xs:complexContent/xs:extension/@base"/>
 						</xsl:attribute>
 						<xsl:attribute name="target">
-							<xsl:text>_abstracts</xsl:text>
+							<xsl:text>_nodeTypeInterfaces</xsl:text>
 						</xsl:attribute>
 						<xsl:value-of select="xs:complexType/xs:complexContent/xs:extension/@base"/>
 					</xsl:element>
@@ -3876,11 +3876,11 @@ public:
                         <xsl:value-of select="$specificationIndexUrl"/>
                         <xsl:text>versionContent.html#</xsl:text>
                         -->
-							<xsl:text>abstracts.html#</xsl:text>
+							<xsl:text>nodeTypeInterfaces.html#</xsl:text>
 							<xsl:value-of select="@default"/>
 						</xsl:attribute>
 						<xsl:attribute name="target">
-							<xsl:text>_abstracts</xsl:text>
+							<xsl:text>_nodeTypeInterfaces</xsl:text>
 						</xsl:attribute>
 						<xsl:value-of select="@default"/>
 					</xsl:element>
@@ -4945,7 +4945,7 @@ node.source {background-color:#f4f4f4;}
 		<!-- inheritance test #1: check elements derive from node type interface and not abstract objects; ignore special cases -->
 		<xsl:for-each select="//xs:element[string-length(@name) > 0]/xs:complexType/xs:complexContent/
                           *[not(starts-with(@base,'X3D') and ends-with(@base,'Node')) and 
-                            not(@base='SceneGraphStructureStatement') and not(@base='X3DMetadataObject') and not(@base='X3DPrototype') and not(@base='X3DNodeMixedContent')]">
+                            not(@base='SceneGraphStructureStatement') and not(@base='X3DStatement') and not(@base='X3DMetadataObject') and not(@base='X3DPrototype') and not(@base='X3DNodeMixedContent')]">
 			<xsl:if test="not(ancestor::xs:element/xs:annotation/xs:appinfo/xs:attribute[@name='additionalInterface' and starts-with(@default,'X3D') and ends-with(@default,'Node')])">
 				<xsl:message>
 					<xsl:text>*** Schema error: element type not derived from X3D*Node interface. </xsl:text>

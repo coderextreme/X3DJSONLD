@@ -17,7 +17,7 @@
   <xsl:param name="LinkDom" select="true()"/>
   
 <!--
-Copyright (c) 2001-2022 held by the author(s).  All rights reserved.
+Copyright (c) 2001-2023 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -31,7 +31,7 @@ are met:
       distribution.
     * Neither the names of the Naval Postgraduate School (NPS)
       Modeling Virtual Environments and Simulation (MOVES) Institute
-      (http://www.nps.edu and http://www.MovesInstitute.org)
+      (https://www.nps.edu and https://www.MovesInstitute.org)
       nor the names of its contributors may be used to endorse or
       promote products derived from this software without specific
       prior written permission.
@@ -66,7 +66,7 @@ POSSIBILITY OF SUCH DAMAGE.
    <meta name="created"     content="14 July 2002" />
    <meta name="description" content="XSL stylesheet to convert X3D Schema to XHTML files for X3D specification." />
    <meta name="identifier"  content="https://www.web3d.org/x3d/stylesheets/BuildSpecificationXmlEncodingFromSchema.xslt" />
-   <meta name="reference"   content="http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/BuildSpecificationXmlEncodingFromSchema.xslt?revision=9169&view=markup" />
+   <meta name="reference"   content="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/BuildSpecificationXmlEncodingFromSchema.xslt?revision=9169&view=markup" />
    <meta name="reference"   content="BuildX3dSceneAccessInterfacesJava.xslt" />
   </head>
 
@@ -1109,6 +1109,7 @@ Invocation:
     </xsl:variable>
     <xsl:value-of select="$divider"/>
     <xsl:text>&#10;</xsl:text>
+    <xsl:text>&#10;</xsl:text>
     
     <xsl:text> HAnim2 name and HAnim1 alias tables for Joint, Segment and Site (feature points)</xsl:text>
     <xsl:text>&#10;</xsl:text>
@@ -1158,6 +1159,7 @@ Invocation:
     <xsl:text>&#10;</xsl:text>
     <xsl:value-of select="$divider"/>
     <xsl:text>&#10;</xsl:text>
+    <xsl:text>&#10;</xsl:text>
     
     <!--
     <xsl:text disable-output-escaping="yes"><![CDATA[      <!- - *** finish: HAnim alias table for HAnim2/HAnim2 generated from X3DUOM by X3duomToX3dDiagnostics.xslt - ->]]></xsl:text>
@@ -1186,6 +1188,7 @@ Invocation:
         <xsl:text>==================================================================================</xsl:text>
     </xsl:variable>
     <xsl:value-of select="$divider"/>
+    <xsl:text>&#10;</xsl:text>
     <xsl:text>&#10;</xsl:text>
     
     <xsl:text> HAnim2 default values for Joint and Site (feature point) nodes</xsl:text>
@@ -1222,6 +1225,7 @@ Invocation:
     </xsl:call-template>
     <xsl:text>&#10;</xsl:text>
     <xsl:value-of select="$divider"/>
+    <xsl:text>&#10;</xsl:text>
     <xsl:text>&#10;</xsl:text>
     
     <!--
@@ -1268,6 +1272,7 @@ Invocation:
     <xsl:param name="enumerationsType"/>
     <xsl:param name="columnWidth" select="round(40)"/>
     
+    <xsl:text>&#10;</xsl:text>
     <xsl:text>                </xsl:text>
     <xsl:value-of select="$tableTitle"/>
     <xsl:text>&#10;</xsl:text>
