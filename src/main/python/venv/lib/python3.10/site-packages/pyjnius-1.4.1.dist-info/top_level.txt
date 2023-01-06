@@ -1,3 +1,0 @@
-jnius
-jnius_config
-setup_sdist
