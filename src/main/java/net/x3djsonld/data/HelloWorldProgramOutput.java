@@ -61,7 +61,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 9 January 2022 </td>
+			<td> 4 July 2022 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
@@ -73,7 +73,7 @@ import org.web3d.x3d.jsail.Time.*;
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> generator </i> </td>
-			<td> Netbeans <a href="http://www.netbeans.org" target="_blank">http://www.netbeans.org</a> </td>
+			<td> Netbeans <a href="https://www.netbeans.org" target="_blank">https://www.netbeans.org</a> </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> creator </i> </td>
@@ -165,10 +165,10 @@ public class HelloWorldProgramOutput
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://www.web3d.org/specifications/java/X3DJSAIL.html"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("HelloWorldProgramOutput.java"))
     .addMeta(new meta().setName(meta.NAME_CREATED    ).setContent("6 September 2016"))
-    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("9 January 2022"))
+    .addMeta(new meta().setName(meta.NAME_MODIFIED   ).setContent("4 July 2022"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D Java Scene Access Interface Library (X3DJSAIL)"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"))
-    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("Netbeans http://www.netbeans.org"))
+    .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("Netbeans https://www.netbeans.org"))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Don Brutzman"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java/examples/HelloWorldProgramOutput.x3d"))
     .addMeta(new meta().setName(meta.NAME_REFERENCE  ).setContent("Console output, ClassicVRML encoding, VRML97 encoding and pretty-print documentation:"))
@@ -266,7 +266,7 @@ function colorInput (eventValue) // Example source code
           .setIS(new IS()
             .addConnect(new connect().setNodeField("description").setProtoField("description"))
             .addConnect(new connect().setNodeField("enabled").setProtoField("enabled"))))))
-    .addChild(new ExternProtoDeclare("ArtDeco02Material").setName("ArtDeco02Material").setAppinfo("this is a different Material node").setUrl(new String[] {"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"})
+    .addChild(new ExternProtoDeclare("ArtDeco02Material").setName("ArtDeco02Material").setAppinfo("this is a different Material node").setUrl(new String[] {"https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"})
       .addComments(" [HelloWorldProgram diagnostic] artDeco02ExternProtoDeclare.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file.\" ")
       .addField(new field().setName("description").setType(field.TYPE_SFSTRING).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("tooltip for descriptionField")))
     .addComments(" Tested ArtDeco01ProtoInstance, ArtDeco02ProtoInstance for improper node type when ProtoInstance is added in wrong place ")
@@ -292,7 +292,7 @@ function colorInput (eventValue) // Example source code
     .addChild(new Inline("inlineScene").setUrl(new String[] {"someOtherScene.x3d","https://www.web3d.org/specifications/java/examples/someOtherScene.x3d"}))
     .addChild(new IMPORT().setImportedDEF("WorldInfoDEF").setInlineDEF("inlineScene").setAS("WorldInfoDEF2"))
     .addChild(new EXPORT().setLocalDEF("WorldInfoDEF").setAS("WorldInfoDEF3"))
-    .addChild(new ProtoDeclare("MaterialModulator").setName("MaterialModulator").setAppinfo("mimic a Material node and modulate fields as an animation effect").setDocumentation("http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html")
+    .addChild(new ProtoDeclare("MaterialModulator").setName("MaterialModulator").setAppinfo("mimic a Material node and modulate fields as an animation effect").setDocumentation("https://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html")
       .setProtoInterface(new ProtoInterface()
         .addField(new field().setName("enabled").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(true))
         .addField(new field().setName("diffuseColor").setType(field.TYPE_SFCOLOR).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFColor(0.0,0.0,0.0)))
@@ -360,7 +360,7 @@ function clockTrigger (timeValue)
     .addComments(" Test success: x3dModel.findElementByNameValue(\"MaterialModulator\", \"ProtoInstance\") found ")
     .addChild(new Group("TestFieldObjectsGroup")
       .addComments(" testFieldObjects() results ")
-      .addComments(" SFBool default=true, true=true, false=false, negate()=true ")
+      .addComments(" SFBool default=false, true=true, false=false, negate()=true ")
       .addComments(" MFBool default=, initial=true false true, negate()=false true false ")
       .addComments(" SFFloat default=0.0, initial=1.0, setValue(2)=2.0, setValue(3.0f)=3.0, setValue(4.0)=4.0 ")
       .addComments(" MFFloat default=, initial=1 2 3, append(5)=1 2 3 5, inserts(3,4)(0,0)=0 1 2 3 4 5, append(6)=0 1 2 3 4 5 6, size()=7 ")
