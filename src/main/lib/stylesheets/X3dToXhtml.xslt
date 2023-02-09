@@ -265,16 +265,21 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         
         <!-- post-processing -->
         <xsl:if test="(local-name()='HAnimHumanoid')">
-            <!-- used in X3dTidy.xslt and X3dToXhtml.xslt -->
+        <!-- used in X3dTidy.xslt and X3dToXhtml.xslt -->
+            <!-- debug
             <xsl:message>
-                <!-- debug
                 <xsl:text>*** output-humanoid-tree HAnimHumanoid commencing</xsl:text>
                 <xsl:text>&#10;</xsl:text>
-                -->
+            </xsl:message>
+            -->
+            <xsl:variable name="output-humanoid-tree-result">
                 <xsl:call-template name="output-humanoid-tree">
                     <xsl:with-param name="currentNode" select="self::node()"/>
                     <xsl:with-param name="treeMargin"><xsl:text></xsl:text></xsl:with-param>
                 </xsl:call-template>
+            </xsl:variable>
+            <xsl:message>
+                <xsl:value-of select="$output-humanoid-tree-result"/>
             </xsl:message>
             <pre>
                 <xsl:call-template name="output-humanoid-tree">
@@ -4449,7 +4454,10 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
     </xsl:template>
     
     <xsl:template name="output-site-list">
-        <xsl:param name="nodeNameOfInterest"><!-- default value is empty --></xsl:param>
+        <!-- one or the other -->
+        <xsl:param name="nodeNameOfInterest"      ><xsl:text></xsl:text><!-- default value is empty --></xsl:param>
+        <xsl:param name="containerFieldOfInterest"><xsl:text></xsl:text><!-- default value is empty --></xsl:param>
+
         <xsl:variable name="superscript">
             <xsl:choose>
                 <xsl:when test="($nodeNameOfInterest = 'HAnimDisplacer')">
@@ -4461,13 +4469,38 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                 <xsl:when test="($nodeNameOfInterest = 'HAnimMotion')">
                     <xsl:text>$</xsl:text>
                 </xsl:when>
+                <xsl:when test="(string-length($containerFieldOfInterest) > 0)">
+                    <xsl:text>@</xsl:text>
+                </xsl:when>
                 <xsl:otherwise>
                     <xsl:text>?</xsl:text>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
         
-        <xsl:if test="(count(*[local-name() = $nodeNameOfInterest][string-length(@USE) = 0]) > 0)">
+        <xsl:variable name="countContainedNodesOfInterest" 
+                    select="count(*[(local-name()    = $nodeNameOfInterest)]         [string-length(@USE) = 0]) + 
+                            count(*[(@containerField = $containerFieldOfInterest)][string-length(@USE) = 0])"/>
+        <!-- debug 
+        <xsl:if test="($countContainedNodesOfInterest > 0)">
+            <xsl:message>
+                <xsl:text>*** $countContainedNodesOfInterest=</xsl:text>
+                <xsl:value-of select="$countContainedNodesOfInterest"/>
+                <xsl:text> for </xsl:text>
+                <xsl:choose>
+                    <xsl:when test="(string-length($nodeNameOfInterest) > 0)">
+                        <xsl:text>$nodeNameOfInterest=</xsl:text>
+                        <xsl:value-of select="$nodeNameOfInterest"/>
+                    </xsl:when>
+                    <xsl:when test="(string-length($containerFieldOfInterest) > 0)">
+                        <xsl:text>$containerFieldOfInterest=</xsl:text>
+                        <xsl:value-of select="$containerFieldOfInterest"/>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:message>
+        </xsl:if>
+        -->
+        <xsl:if test="($countContainedNodesOfInterest > 0)">
             <xsl:text>&#10;</xsl:text>
             <!-- <xsl:text> found HAnim node! </xsl:text> -->
             <xsl:value-of select="$superscript"/>
@@ -4476,52 +4509,94 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
             <xsl:text> </xsl:text>
             <xsl:value-of select="@name"/>
             <xsl:text> holds </xsl:text>
-            <xsl:value-of select="$nodeNameOfInterest"/>
-            <xsl:text></xsl:text>
-            <xsl:if test="(count(HAnimSite) > 1)">
-                <xsl:text> nodes</xsl:text>
-            </xsl:if>
-        </xsl:if>
-        <xsl:variable name="nodeList">
+            <xsl:value-of select="$countContainedNodesOfInterest"/>
+            <xsl:text> </xsl:text>
+            <!-- one or the other -->
             <xsl:choose>
-                <xsl:when test="($nodeNameOfInterest = 'HAnimMotion')">
-                    <!--
-                    <xsl:message>
-                        <xsl:text>*** checking for HAnimMotion </xsl:text>
-                    </xsl:message> -->
-                    <!-- start from top of scene since HAnimMotion might not be included in HAnimHumanoid -->
-                    <!-- TODO not working -->
-                    <xsl:value-of select="/descendant::HAnimMotion[string-length(@USE) = 0]"/>
+                <xsl:when test="(string-length($nodeNameOfInterest) > 0)">
+                    <xsl:value-of select="$nodeNameOfInterest"/>
+                    <xsl:text> node</xsl:text>
                 </xsl:when>
-                <xsl:otherwise>
-                    <!-- starts at HAnimHumanoid -->
-                    <xsl:value-of select="  *[local-name() = $nodeNameOfInterest][string-length(@USE) = 0]"/>
-                </xsl:otherwise>
-            </xsl:choose>
-        </xsl:variable>
-        <xsl:for-each select="$nodeList">
-            <xsl:if test="position() = 1">
-                <xsl:value-of select="$nodeNameOfInterest"/>
-                <xsl:text> list: </xsl:text>
-            </xsl:if>
-            <xsl:choose>
-                <xsl:when test="(string-length(@name) > 0)">
-                    <xsl:text> </xsl:text>
-                    <xsl:value-of select="@name"/>
-                </xsl:when>
-                <xsl:when test="(string-length(@DEF) > 0)">
-                    <xsl:value-of select="local-name()"/>
-                    <xsl:text> DEF='</xsl:text>
-                    <xsl:value-of select="@DEF"/>
+                <xsl:when test="(string-length($containerFieldOfInterest) > 0)">
+                    <xsl:text>containerField='</xsl:text>
+                    <xsl:value-of select="$containerFieldOfInterest"/>
                     <xsl:text>'</xsl:text>
+                    <xsl:text> node</xsl:text>
                 </xsl:when>
-                <xsl:otherwise>
-                    <xsl:text> (</xsl:text>
-                    <xsl:value-of select="local-name()"/>
-                    <xsl:text>, no name or DEF)</xsl:text>
-                </xsl:otherwise>
             </xsl:choose>
-        </xsl:for-each>
+            <xsl:if test="($countContainedNodesOfInterest > 1)">
+                <xsl:text>s</xsl:text>
+            </xsl:if>
+            <xsl:text>: </xsl:text>
+        </xsl:if>
+        <xsl:choose>
+            <xsl:when test="($nodeNameOfInterest = 'HAnimMotion')">
+                <!-- start from top of scene since HAnimMotion might not be included in HAnimHumanoid -->
+                <xsl:for-each select="*[local-name() = 'HAnimMotion']">
+                    <xsl:if test="position() > 1">
+                        <xsl:text>, </xsl:text>
+                    </xsl:if>
+                    <xsl:choose>
+                        <xsl:when test="(string-length(@name) > 0)">
+                            <xsl:value-of select="@name"/>
+                        </xsl:when>
+                        <xsl:when test="(string-length(@DEF) > 0)">
+                            <xsl:value-of select="local-name()"/>
+                            <xsl:text> DEF='</xsl:text>
+                            <xsl:value-of select="@DEF"/>
+                            <xsl:text>'</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="(string-length(@USE) > 0)">
+                            <xsl:text> USE='</xsl:text>
+                            <xsl:value-of select="@DEF"/>
+                            <xsl:text>'</xsl:text>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <!-- TODO not working as expected
+                            <xsl:text>HAnimMotion</xsl:text>
+                            <xsl:message>
+                                <xsl:value-of select="$nodeNameOfInterest"/>
+                                <xsl:text> (local-name()='</xsl:text>
+                                <xsl:value-of select="local-name()"/>
+                                <xsl:text>', no name or DEF)</xsl:text>
+                            </xsl:message> -->
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:for-each>
+            </xsl:when>
+            <xsl:otherwise>
+                <!-- starts at local node -->
+                <xsl:for-each select="*[(local-name() = $nodeNameOfInterest) or (@containerField = $containerFieldOfInterest)][string-length(@USE) = 0]">
+                    <xsl:if test="position() > 1">
+                        <xsl:text>, </xsl:text>
+                    </xsl:if>
+                    <xsl:choose>
+                        <xsl:when test="(string-length(@name) > 0)">
+                            <xsl:value-of select="@name"/>
+                        </xsl:when>
+                        <xsl:when test="(string-length(@DEF) > 0)">
+                            <xsl:value-of select="local-name()"/>
+                            <xsl:text> DEF='</xsl:text>
+                            <xsl:value-of select="@DEF"/>
+                            <xsl:text>'</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="(string-length(@USE) > 0)">
+                            <!-- ignore -->
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="$nodeNameOfInterest"/>
+                            <!-- TODO not working as expected
+                            <xsl:message>
+                                <xsl:value-of select="$nodeNameOfInterest"/>
+                                <xsl:text> (local-name()='</xsl:text>
+                                <xsl:value-of select="local-name()"/>
+                                <xsl:text>', no name or DEF)</xsl:text>
+                            </xsl:message> -->
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:for-each>
+            </xsl:otherwise>
+        </xsl:choose>
         <!-- recurse on other children for completeness, showing HAnimSite nodes -->
         <xsl:for-each select="child::node()[string-length(@USE) = 0][not(local-name() = 'HAnimDisplacer')]">
             <xsl:call-template name="output-site-list">
@@ -4533,7 +4608,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
     <xsl:template name="output-humanoid-tree">
         <!-- used in X3dTidy.xslt and X3dToXhtml.xslt -->
         <xsl:param name="currentNode"><!-- default value is empty --></xsl:param>
-        <xsl:param name="treeMargin">  <!-- default value is empty --></xsl:param>
+        <xsl:param name="treeMargin"> <xsl:text></xsl:text><!-- default value is empty --></xsl:param>
         
         <xsl:variable name="isHAnim1" select="$isX3D3 and ancestor-or-self::*[local-name() = 'HAnimHumanoid'][starts-with(@version,'1') or (string-length(@version) = 0)]"/>
         <xsl:variable name="isHAnim2" select="$isX3D4 and ancestor-or-self::*[local-name() = 'HAnimHumanoid'][starts-with(@version,'2')] and not($isHAnim1 = true())"/>
@@ -4560,10 +4635,29 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     <xsl:value-of select="$describeSelf"/>
                 </xsl:message>
             </xsl:if> -->
+            <xsl:variable name="jointCount"     select="count(descendant::*[local-name() = 'HAnimJoint']    [string-length(@USE) = 0][string-length(@name) > 0])"/>
+            <xsl:variable name="segmentCount"   select="count(descendant::*[local-name() = 'HAnimSegment']  [string-length(@USE) = 0][string-length(@name) > 0])"/>
+            <xsl:variable name="displacerCount" select="count(descendant::*[local-name() = 'HAnimDisplacer'][string-length(@USE) = 0][string-length(@name) > 0])"/>
+            <xsl:variable name="motionCount"    select="count(descendant::*[local-name() = 'HAnimMotion']   [string-length(@USE) = 0][string-length(@name) > 0])"/>
+            <xsl:variable name="siteCount"      select="count(descendant::*[local-name() = 'HAnimSite']     [string-length(@USE) = 0][string-length(@name) > 0])"/>
+            <xsl:variable name="skinCount"      select="count(descendant::*[@containerField = 'skin']       [string-length(@USE) = 0])"/>
+            
             <xsl:if test="(local-name($currentNode)='HAnimHumanoid')">
                 <xsl:text>=============================================================================================================================</xsl:text>
                 <xsl:text>&#10;</xsl:text>
-                <xsl:text>HAnimHumanoid skeleton holds X3D</xsl:text>
+                <xsl:text>HAnimHumanoid</xsl:text>
+                <xsl:choose>
+                    <xsl:when test="(string-length(@DEF) > 0)">
+                        <xsl:text> </xsl:text>
+                        <xsl:value-of select="@DEF"/>
+                    </xsl:when>
+                    <xsl:when test="(string-length(@name) > 0)">
+                        <xsl:text> </xsl:text>
+                        <xsl:value-of select="@name"/>
+                    </xsl:when>
+                </xsl:choose>
+                
+                <xsl:text> skeleton holds X3D</xsl:text>
                 <xsl:value-of select="substring(//X3D/@version,1,1)"/>
                 <xsl:text> HAnim</xsl:text>
                 <xsl:choose>
@@ -4574,15 +4668,52 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:text>1</xsl:text>
                     </xsl:otherwise>
                 </xsl:choose>
-                <xsl:text> triplets, </xsl:text>
+                <xsl:text> joints/segments</xsl:text>
+                <xsl:if test="($siteCount > 0)">
+                    <xsl:text>/sites</xsl:text>
+                </xsl:if>
+                <xsl:choose>
+                    <xsl:when test="($displacerCount > 0) and ($motionCount > 0)">
+                        <xsl:text> with animating displacer and motion nodes</xsl:text>
+                    </xsl:when>
+                    <xsl:when test="($displacerCount = 1)">
+                        <xsl:text> with an animating displacer node</xsl:text>
+                    </xsl:when>
+                    <xsl:when test="($displacerCount > 1)">
+                        <xsl:text> with animating displacer nodes</xsl:text>
+                    </xsl:when>
+                    <xsl:when test="($motionCount = 1)">
+                        <xsl:text> with an animating motion node</xsl:text>
+                    </xsl:when>
+                    <xsl:when test="($motionCount > 1)">
+                        <xsl:text> with animating motion nodes</xsl:text>
+                    </xsl:when>
+                </xsl:choose>
+                <xsl:choose>
+                    <xsl:when test="($skinCount = 1)">
+                        <xsl:text> and a skin node</xsl:text>
+                    </xsl:when>
+                    <xsl:when test="($skinCount > 1)">
+                        <xsl:text> and skin nodes</xsl:text>
+                    </xsl:when>
+                </xsl:choose>
+                <xsl:text>.</xsl:text>
+                <xsl:text>&#10;</xsl:text>
+                <xsl:text>  [key] jointname : segmentname ^ sitename</xsl:text>
+                <xsl:text>&#10;</xsl:text>
+                <xsl:text>[nodes] </xsl:text>
                 <xsl:text>HAnimJoint (</xsl:text>
-                <xsl:value-of select="count(descendant::*[local-name() = 'HAnimJoint']    [string-length(@USE) = 0][string-length(@name) > 0])"/>
-                <xsl:text>) : HAnimSegment (</xsl:text>
-                <xsl:value-of select="count(descendant::*[local-name() = 'HAnimSegment']  [string-length(@USE) = 0][string-length(@name) > 0])"/>
-                <xsl:text>) % HAnimDisplacer (</xsl:text>
-                <xsl:value-of select="count(descendant::*[local-name() = 'HAnimDisplacer'][string-length(@USE) = 0][string-length(@name) > 0])"/>
-                <xsl:text>) ^ HAnimSite (</xsl:text>
-                <xsl:value-of select="count(descendant::*[local-name() = 'HAnimSite']     [string-length(@USE) = 0][string-length(@name) > 0])"/>
+                <xsl:value-of select="$jointCount"/>
+                <xsl:text>), : HAnimSegment (</xsl:text>
+                <xsl:value-of select="$segmentCount"/>
+                <xsl:text>), % HAnimDisplacer (</xsl:text>
+                <xsl:value-of select="$displacerCount"/>
+                <xsl:text>), $ HAnimMotion (</xsl:text>
+                <xsl:value-of select="$motionCount"/>
+                <xsl:text>), ^ HAnimSite (</xsl:text>
+                <xsl:value-of select="$siteCount"/>
+                <xsl:text>), @ skin nodes (</xsl:text>
+                <xsl:value-of select="$skinCount"/>
                 <xsl:text>)</xsl:text>
                 <xsl:text>&#10;</xsl:text>
                 <xsl:text>=============================================================================================================================</xsl:text>
@@ -4603,7 +4734,9 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                             <xsl:text>'</xsl:text>
                             <xsl:if test="(count(*[@containerField='motions']) > 0)">
                                 <xsl:text>&#10;</xsl:text>
-                                <xsl:text>+ motions </xsl:text>
+                                <xsl:text>motions</xsl:text>
+                                <xsl:text>&#10;</xsl:text>
+                                <xsl:text>  </xsl:text>
                                 <xsl:for-each select="*[@containerField='motions']">
                                      <xsl:value-of select="local-name()"/>
                                      <xsl:if test="(string-length(@DEF) > 0) and not(string-length(@name) > 0)">
@@ -4660,6 +4793,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                             <xsl:text>/@name not found)</xsl:text>
                         </xsl:otherwise>
                     </xsl:choose>
+                    <!-- segment list -->
                     <xsl:choose>
                         <xsl:when test="$currentNode/HAnimSegment[string-length(@USE) = 0]"><!-- omit HAnimHumanoid, HAnimJoint from this additional output -->
                             <xsl:text> : </xsl:text>
@@ -4686,6 +4820,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                     <xsl:text>(HAnimSegment/@name not found)</xsl:text>
                                 </xsl:otherwise>
                             </xsl:choose>
+                            <!-- site list -->
                             <xsl:if test="(count(child::node()/HAnimSite[string-length(@USE) = 0]) > 0)">
                                 <xsl:text> ^ </xsl:text>
                                 <xsl:for-each select="child::node()/HAnimSite[string-length(@USE) = 0]">
@@ -4744,15 +4879,14 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                 </xsl:otherwise>
             </xsl:choose>
             <xsl:if test="(local-name($currentNode)='HAnimHumanoid')"><!-- end -->
-                <!-- key listings for HAnimDisplacer, HAnimSite -->
-                <xsl:if test="(count(//HAnimDisplacer) > 0)">
+                <!-- key listings for HAnimDisplacer, HAnimSite, HAnimMotion -->
+                <xsl:if test="(count(//HAnimDisplacer[string-length(@USE) = 0]) > 0)">
                     <xsl:call-template name="output-site-list">
-                    <xsl:with-param name="nodeNameOfInterest"><xsl:text>HAnimDisplacer</xsl:text></xsl:with-param>
+                        <xsl:with-param name="nodeNameOfInterest"><xsl:text>HAnimDisplacer</xsl:text></xsl:with-param>
                     </xsl:call-template>
                     <xsl:text>&#10;</xsl:text>
-                    <xsl:text>&#10;</xsl:text>
                 </xsl:if>
-                <xsl:if test="(count(//HAnimSite) > 0)">
+                <xsl:if test="(count(//HAnimSite[string-length(@USE) = 0]) > 0)">
                     <xsl:call-template name="output-site-list">
                         <xsl:with-param name="nodeNameOfInterest"><xsl:text>HAnimSite</xsl:text></xsl:with-param>
                     </xsl:call-template>
@@ -4761,6 +4895,12 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                 <xsl:if test="(count(/descendant::HAnimMotion) > 0)">
                     <xsl:call-template name="output-site-list">
                         <xsl:with-param name="nodeNameOfInterest"><xsl:text>HAnimMotion</xsl:text></xsl:with-param>
+                    </xsl:call-template>
+                    <xsl:text>&#10;</xsl:text>
+                </xsl:if>
+                <xsl:if test="(count(//*[@containerField = 'skin'][string-length(@USE) = 0]) > 0)">
+                    <xsl:call-template name="output-site-list">
+                        <xsl:with-param name="containerFieldOfInterest"><xsl:text>skin</xsl:text></xsl:with-param>
                     </xsl:call-template>
                     <xsl:text>&#10;</xsl:text>
                 </xsl:if>

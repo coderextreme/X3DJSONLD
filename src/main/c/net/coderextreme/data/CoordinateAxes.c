@@ -34,12 +34,12 @@ head1.meta[4] = meta6;
 
 meta meta7 = createNode("meta");
 meta7.name = "reference";
-meta7.content = "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d";
+meta7.content = "https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d";
 head1.meta[5] = meta7;
 
 meta meta8 = createNode("meta");
 meta8.name = "reference";
-meta8.content = "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxesNSEW.x3d";
+meta8.content = "https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxesNSEW.x3d";
 head1.meta[6] = meta8;
 
 meta meta9 = createNode("meta");
@@ -54,7 +54,7 @@ head1.meta[8] = meta10;
 
 meta meta11 = createNode("meta");
 meta11.name = "identifier";
-meta11.content = "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d";
+meta11.content = "https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d";
 head1.meta[9] = meta11;
 
 meta meta12 = createNode("meta");

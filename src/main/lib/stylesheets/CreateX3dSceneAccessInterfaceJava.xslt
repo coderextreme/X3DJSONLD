@@ -711,7 +711,7 @@ Additional references of interest:
                     <xsl:text>PointingDeviceSensor</xsl:text>
                 </xsl:when>
                 <xsl:when test="($nodeTypeBase = 'X3DTextureProjectorNode')">
-                    <xsl:text>TextureProjector</xsl:text>
+                    <xsl:text>TextureProjection</xsl:text>
                 </xsl:when>
                 <xsl:when test="($nodeTypeBase = 'X3DColorNode')    or ($nodeTypeBase = 'X3DCoordinateNode')        or ($nodeTypeBase = 'X3DNormalNode') or
                                 ($nodeTypeBase = 'X3DGeometryNode') or ($nodeTypeBase = 'X3DGeometricPropertyNode') or ($nodeTypeBase = 'X3DComposedGeometryNode') or
@@ -2608,7 +2608,8 @@ import org.web3d.x3d.jsail.*; // again making sure #4
                                                                         <xsl:if test="(string-length(@alias) > 0)">
 										<xsl:text>&#10;</xsl:text>
 										<xsl:text>	 * @see #</xsl:text>
-										<xsl:text>NAME_</xsl:text>
+                                                                                <xsl:value-of select="upper-case(../@name)"/>
+										<xsl:text>_</xsl:text>
 										<xsl:value-of select="upper-case(@value)"/><!-- NAME -->
 										<xsl:text>_ALIAS </xsl:text>
 									</xsl:if>
@@ -2839,7 +2840,8 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 										<xsl:text> */</xsl:text>
 										<xsl:text>&#10;</xsl:text>
 										<xsl:text>	public static final String </xsl:text><!-- type found in XML schema -->
-										<xsl:text>NAME_</xsl:text>
+										<xsl:value-of select="upper-case($fieldName)"/>
+										<xsl:text>_</xsl:text>
 										<xsl:value-of select="upper-case(@value)"/><!-- NAME -->
 										<xsl:text>_ALIAS = </xsl:text>
 										<xsl:text>"</xsl:text>
@@ -2861,6 +2863,9 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 									<xsl:variable name="enumerationName" select="@value"/>
                                                                         <xsl:variable name="typeName">
                                                                             <xsl:choose>
+                                                                                <xsl:when test="(string-length(../@name) > 0)">
+                                                                                     <xsl:value-of select="../@name"/>
+                                                                                </xsl:when>
                                                                                 <xsl:when test="(string-length(../@simpleType) > 0)">
                                                                                      <xsl:value-of select="substring-before(../@simpleType,'Values')"/>
                                                                                 </xsl:when>
@@ -2924,6 +2929,9 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 									<xsl:variable name="enumerationName" select="@value"/>
                                                                         <xsl:variable name="typeName">
                                                                             <xsl:choose>
+                                                                                <xsl:when test="(string-length(../@name) > 0)">
+                                                                                     <xsl:value-of select="../@name"/>
+                                                                                </xsl:when>
                                                                                 <xsl:when test="(string-length(../@simpleType) > 0)">
                                                                                      <xsl:value-of select="substring-before(../@simpleType,'Values')"/>
                                                                                 </xsl:when>
@@ -2988,6 +2996,9 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 									<xsl:variable name="enumerationName" select="@value"/>
                                                                         <xsl:variable name="typeName">
                                                                             <xsl:choose>
+                                                                                <xsl:when test="(string-length(../@name) > 0)">
+                                                                                     <xsl:value-of select="../@name"/>
+                                                                                </xsl:when>
                                                                                 <xsl:when test="(string-length(../@simpleType) > 0)">
                                                                                      <xsl:value-of select="substring-before(../@simpleType,'Values')"/>
                                                                                 </xsl:when>
@@ -3015,10 +3026,10 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 										<xsl:when test="position()=1">
 											<xsl:text>
 	/** Get alias for this </xsl:text><xsl:value-of select="$typeName"/><xsl:text>
-	 * @param </xsl:text><xsl:value-of select="$typeName"/><xsl:text> of interest
+	 * @param </xsl:text><xsl:value-of select="$typeName"/><xsl:text>Value of interest
 	 * @return alias value, otherwise empty string if not found
 	 */
-	public static String get</xsl:text><xsl:value-of select="$suffixName"/><xsl:text>Alias(String </xsl:text><xsl:value-of select="$typeName"/><xsl:text>)
+	public static String get</xsl:text><xsl:value-of select="$suffixName"/><xsl:text>Alias(String </xsl:text><xsl:value-of select="$typeName"/><xsl:text>Value)
 	{
 		if      </xsl:text>
 										</xsl:when>
@@ -3026,9 +3037,13 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 											<xsl:text>		else if </xsl:text>
 										</xsl:otherwise>
 									</xsl:choose>
-									<xsl:text>(</xsl:text><xsl:value-of select="$typeName"/><xsl:text>.equalsIgnoreCase(NAME_</xsl:text>
+									<xsl:text>(</xsl:text><xsl:value-of select="$typeName"/><xsl:text>Value.equalsIgnoreCase(</xsl:text>
+                                                                        <xsl:value-of select="upper-case(../@name)"/>
+									<xsl:text>_</xsl:text>
 									<xsl:value-of select="upper-case($enumerationName)"/>
-									<xsl:text>)) return NAME_</xsl:text>
+									<xsl:text>)) return </xsl:text>
+                                                                        <xsl:value-of select="upper-case(../@name)"/>
+									<xsl:text>_</xsl:text>
 									<xsl:value-of select="upper-case($enumerationName)"/>
 									<xsl:text>_ALIAS;</xsl:text>
 									<xsl:text>&#10;</xsl:text>
@@ -3052,6 +3067,9 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 									<xsl:variable name="enumerationName" select="@value"/>
                                                                         <xsl:variable name="typeName">
                                                                             <xsl:choose>
+                                                                                <xsl:when test="(string-length(../@name) > 0)">
+                                                                                     <xsl:value-of select="../@name"/>
+                                                                                </xsl:when>
                                                                                 <xsl:when test="(string-length(../@simpleType) > 0)">
                                                                                      <xsl:value-of select="substring-before(../@simpleType,'Values')"/>
                                                                                 </xsl:when>
@@ -3090,9 +3108,13 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 											<xsl:text>		else if </xsl:text>
 										</xsl:otherwise>
 									</xsl:choose>
-									<xsl:text>(</xsl:text><xsl:value-of select="$typeName"/><xsl:text>.equalsIgnoreCase(NAME_</xsl:text>
+									<xsl:text>(</xsl:text><xsl:value-of select="$typeName"/><xsl:text>.equalsIgnoreCase(</xsl:text>
+                                                                        <xsl:value-of select="upper-case(../@name)"/>
+									<xsl:text>_</xsl:text>
 									<xsl:value-of select="upper-case($enumerationName)"/>
-									<xsl:text>)) return NAME_</xsl:text>
+									<xsl:text>)) return </xsl:text>
+                                                                        <xsl:value-of select="upper-case(../@name)"/>
+									<xsl:text>_</xsl:text>
 									<xsl:value-of select="upper-case($enumerationName)"/>
 									<xsl:text>_PARENT;</xsl:text>
 									<xsl:text>&#10;</xsl:text>
@@ -35222,7 +35244,7 @@ import org.web3d.x3d.jsail.Shaders.*;
 import org.web3d.x3d.jsail.Shape.*;
 import org.web3d.x3d.jsail.Sound.*;
 import org.web3d.x3d.jsail.Text.*;
-import org.web3d.x3d.jsail.TextureProjector.*;
+import org.web3d.x3d.jsail.TextureProjection.*;
 import org.web3d.x3d.jsail.Texturing.*;
 import org.web3d.x3d.jsail.Texturing3D.*;
 import org.web3d.x3d.jsail.Time.*;

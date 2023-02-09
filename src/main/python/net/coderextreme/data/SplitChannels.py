@@ -77,14 +77,14 @@ Material(diffuseColor=((0.1,0.1,0.1)), shininess=0.8, specularColor=((0.5,0.6,0.
 geometry=
 Box(size=((1500,10,500))))]),
 ListenerPointSource(trackCurrentView=True),
-StreamAudioDestination(children=[
-Gain(children=[
-ChannelMerger(children=[
-ChannelSelector(children=[
+StreamAudioDestination(channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
+Gain(channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
+ChannelMerger(channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
+ChannelSelector(channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
 Gain(USE="ChannelSplitter")]),
-ChannelSelector(channelSelection=1, children=[
+ChannelSelector(channelSelection=1, channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
 Gain(USE="ChannelSplitter")])])])]),
-ChannelSplitter(DEF="ChannelSplitter", channelCountMode="explicit", children=[
+ChannelSplitter(DEF="ChannelSplitter", channelCountMode="explicit", channelInterpretation="SPEAKERS", children=[
 AudioClip(description="Violin", url=["sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"])]),
 Transform(DEF="Audio3", rotation=((1,0,0,-0.5)), translation=((0,100,0)), children=[
 Shape(

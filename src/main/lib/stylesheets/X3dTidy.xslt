@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright (c) 1995-2022 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2023 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -4485,7 +4485,7 @@ Recommended tools:
                 <xsl:when test="(lower-case(local-name()) = 'forceid') and not(local-name() = 'forceID')"><xsl:text>forceID</xsl:text><xsl:message><xsl:text>*** fix attribute capitalization, change </xsl:text><xsl:value-of select="local-name(.)"/><xsl:text> to forceID</xsl:text></xsl:message></xsl:when>
                 <xsl:when test="(lower-case(local-name()) = 'forceoutput') and not(local-name() = 'forceOutput')"><xsl:text>forceOutput</xsl:text><xsl:message><xsl:text>*** fix attribute capitalization, change </xsl:text><xsl:value-of select="local-name(.)"/><xsl:text> to forceOutput</xsl:text></xsl:message></xsl:when>
                 <xsl:when test="(lower-case(local-name()) = 'forces') and not(local-name() = 'forces')"><xsl:text>forces</xsl:text><xsl:message><xsl:text>*** fix attribute capitalization, change </xsl:text><xsl:value-of select="local-name(.)"/><xsl:text> to forces</xsl:text></xsl:message></xsl:when>
-                <xsl:when test="(lower-case(local-name()) = 'framecount') and not(local-name() = 'frameCount')"><xsl:text>frameCount</xsl:text><xsl:message><xsl:text>*** fix attribute capitalization, change </xsl:text><xsl:value-of select="local-name(.)"/><xsl:text> to frameCount</xsl:text></xsl:message></xsl:when>
+                <xsl:when test="(lower-case(local-name()) = 'totalframecount') and not(local-name() = 'totalFrameCount')"><xsl:text>totalFrameCount</xsl:text><xsl:message><xsl:text>*** fix attribute capitalization, change </xsl:text><xsl:value-of select="local-name(.)"/><xsl:text> to totalFrameCount</xsl:text></xsl:message></xsl:when>
                 <xsl:when test="(lower-case(local-name()) = 'frameduration') and not(local-name() = 'frameDuration')"><xsl:text>frameDuration</xsl:text><xsl:message><xsl:text>*** fix attribute capitalization, change </xsl:text><xsl:value-of select="local-name(.)"/><xsl:text> to frameDuration</xsl:text></xsl:message></xsl:when>
                 <xsl:when test="(lower-case(local-name()) = 'frameincrement') and not(local-name() = 'frameIncrement')"><xsl:text>frameIncrement</xsl:text><xsl:message><xsl:text>*** fix attribute capitalization, change </xsl:text><xsl:value-of select="local-name(.)"/><xsl:text> to frameIncrement</xsl:text></xsl:message></xsl:when>
                 <xsl:when test="(lower-case(local-name()) = 'frameindex') and not(local-name() = 'frameIndex')"><xsl:text>frameIndex</xsl:text><xsl:message><xsl:text>*** fix attribute capitalization, change </xsl:text><xsl:value-of select="local-name(.)"/><xsl:text> to frameIndex</xsl:text></xsl:message></xsl:when>
@@ -4949,18 +4949,32 @@ Recommended tools:
                     </xsl:if>
                 </xsl:when>
                 <!-- fix component values as appropriate -->
+                <xsl:when test="(local-name(..)='component') and (local-name()='name') and (lower-case(string(.))='textureprojector')">
+                    <xsl:text>TextureProjection</xsl:text>
+                    <xsl:message>
+                        <xsl:text>*** change component name='</xsl:text>
+                        <xsl:value-of select="."/>
+                        <xsl:text> to correct component name='TextureProjection'</xsl:text>
+                    </xsl:message>
+                </xsl:when>
+                <!-- X3D3 H-Anim v1 -->
                 <xsl:when test="(local-name(..)='component') and (local-name()='name') and (string(.)='HAnim' and //X3D[starts-with(@version,'3')])">
                     <xsl:text>H-Anim</xsl:text>
                     <xsl:message>
-                        <xsl:text>*** fix component name for X3D version 3: change component name='</xsl:text>
+                        <xsl:text>*** fix component name for X3D version='</xsl:text>
+                        <xsl:value-of select="//X3D/@version"/>
+                        <xsl:text>': change to legacy component name='</xsl:text>
                         <xsl:value-of select="."/>
                         <xsl:text>' to name='H-Anim'</xsl:text>
                     </xsl:message>
                 </xsl:when>
+                <!-- X3D4 HAnim v2 -->
                 <xsl:when test="(local-name(..)='component') and (local-name()='name') and (string(.)='H-Anim' and //X3D[starts-with(@version,'4')])">
                     <xsl:text>HAnim</xsl:text>
                     <xsl:message>
-                        <xsl:text>*** fix component name for X3D version 4: change component name='</xsl:text>
+                        <xsl:text>*** fix component name for X3D version='</xsl:text>
+                        <xsl:value-of select="//X3D/@version"/>
+                        <xsl:text>': change to correct component name='</xsl:text>
                         <xsl:value-of select="."/>
                         <xsl:text>' to name='HAnim'</xsl:text>
                     </xsl:message>

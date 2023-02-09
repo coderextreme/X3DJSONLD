@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
-  "title": "X3D V4.0 JSON Schema, generated 2023/01/06 15:43:42",
+  "title": "X3D V4.0 JSON Schema, generated 2023/02/09 04:45:23",
   "description": "Experimental JSON Schema for X3D V4.0",
   "type": "object",
   "properties": {
@@ -1070,20 +1070,20 @@
             },
             "@channelCountMode": {
               "enum": [
-                "max",
-                "clamped-max",
-                "explicit"
+                "MAX",
+                "CLAMPED_MAX",
+                "EXPLICIT"
               ],
-              "default": "max",
+              "default": "MAX",
               "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@channelInterpretation": {
               "enum": [
-                "speakers",
-                "discrete"
+                "SPEAKERS",
+                "DISCRETE"
               ],
-              "default": "speakers",
+              "default": "SPEAKERS",
               "$comment": "SFString inputOutput",
               "type": "string"
             },
@@ -1760,20 +1760,20 @@
             },
             "@channelCountMode": {
               "enum": [
-                "max",
-                "clamped-max",
-                "explicit"
+                "MAX",
+                "CLAMPED_MAX",
+                "EXPLICIT"
               ],
-              "default": "max",
+              "default": "MAX",
               "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@channelInterpretation": {
               "enum": [
-                "speakers",
-                "discrete"
+                "SPEAKERS",
+                "DISCRETE"
               ],
-              "default": "speakers",
+              "default": "SPEAKERS",
               "$comment": "SFString inputOutput",
               "type": "string"
             },
@@ -2246,20 +2246,20 @@
             },
             "@channelCountMode": {
               "enum": [
-                "max",
-                "clamped-max",
-                "explicit"
+                "MAX",
+                "CLAMPED_MAX",
+                "EXPLICIT"
               ],
-              "default": "max",
+              "default": "MAX",
               "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@channelInterpretation": {
               "enum": [
-                "speakers",
-                "discrete"
+                "SPEAKERS",
+                "DISCRETE"
               ],
-              "default": "speakers",
+              "default": "SPEAKERS",
               "$comment": "SFString inputOutput",
               "type": "string"
             },
@@ -2325,16 +2325,16 @@
             },
             "@type": {
               "enum": [
-                "lowpass",
-                "highpass",
-                "bandpass",
-                "lowshelf",
-                "highshelf",
-                "peaking",
-                "notch",
-                "allpass"
+                "LOWPASS",
+                "HIGHPASS",
+                "BANDPASS",
+                "LOWSHELF",
+                "HIGHSHELF",
+                "PEAKING",
+                "NOTCH",
+                "ALLPASS"
               ],
-              "default": "lowpass",
+              "default": "LOWPASS",
               "$comment": "SFString inputOutput",
               "type": "string"
             },
@@ -3061,20 +3061,20 @@
             },
             "@channelCountMode": {
               "enum": [
-                "max",
-                "clamped-max",
-                "explicit"
+                "MAX",
+                "CLAMPED_MAX",
+                "EXPLICIT"
               ],
-              "default": "max",
+              "default": "MAX",
               "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@channelInterpretation": {
               "enum": [
-                "speakers",
-                "discrete"
+                "SPEAKERS",
+                "DISCRETE"
               ],
-              "default": "speakers",
+              "default": "SPEAKERS",
               "$comment": "SFString inputOutput",
               "type": "string"
             },
@@ -3827,20 +3827,20 @@
             },
             "@channelCountMode": {
               "enum": [
-                "max",
-                "clamped-max",
-                "explicit"
+                "MAX",
+                "CLAMPED_MAX",
+                "EXPLICIT"
               ],
-              "default": "max",
+              "default": "MAX",
               "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@channelInterpretation": {
               "enum": [
-                "speakers",
-                "discrete"
+                "SPEAKERS",
+                "DISCRETE"
               ],
-              "default": "speakers",
+              "default": "SPEAKERS",
               "$comment": "SFString inputOutput",
               "type": "string"
             },
@@ -3925,20 +3925,20 @@
             },
             "@channelCountMode": {
               "enum": [
-                "max",
-                "clamped-max",
-                "explicit"
+                "MAX",
+                "CLAMPED_MAX",
+                "EXPLICIT"
               ],
-              "default": "max",
+              "default": "MAX",
               "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@channelInterpretation": {
               "enum": [
-                "speakers",
-                "discrete"
+                "SPEAKERS",
+                "DISCRETE"
               ],
-              "default": "speakers",
+              "default": "SPEAKERS",
               "$comment": "SFString inputOutput",
               "type": "string"
             },
@@ -4028,20 +4028,20 @@
             },
             "@channelCountMode": {
               "enum": [
-                "max",
-                "clamped-max",
-                "explicit"
+                "MAX",
+                "CLAMPED_MAX",
+                "EXPLICIT"
               ],
-              "default": "max",
+              "default": "MAX",
               "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@channelInterpretation": {
               "enum": [
-                "speakers",
-                "discrete"
+                "SPEAKERS",
+                "DISCRETE"
               ],
-              "default": "speakers",
+              "default": "SPEAKERS",
               "$comment": "SFString inputOutput",
               "type": "string"
             },
@@ -6411,20 +6411,20 @@
             },
             "@channelCountMode": {
               "enum": [
-                "max",
-                "clamped-max",
-                "explicit"
+                "MAX",
+                "CLAMPED_MAX",
+                "EXPLICIT"
               ],
-              "default": "max",
+              "default": "MAX",
               "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@channelInterpretation": {
               "enum": [
-                "speakers",
-                "discrete"
+                "SPEAKERS",
+                "DISCRETE"
               ],
-              "default": "speakers",
+              "default": "SPEAKERS",
               "$comment": "SFString inputOutput",
               "type": "string"
             },
@@ -7250,20 +7250,20 @@
             },
             "@channelCountMode": {
               "enum": [
-                "max",
-                "clamped-max",
-                "explicit"
+                "MAX",
+                "CLAMPED_MAX",
+                "EXPLICIT"
               ],
-              "default": "max",
+              "default": "MAX",
               "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@channelInterpretation": {
               "enum": [
-                "speakers",
-                "discrete"
+                "SPEAKERS",
+                "DISCRETE"
               ],
-              "default": "speakers",
+              "default": "SPEAKERS",
               "$comment": "SFString inputOutput",
               "type": "string"
             },
@@ -8009,20 +8009,20 @@
             },
             "@channelCountMode": {
               "enum": [
-                "max",
-                "clamped-max",
-                "explicit"
+                "MAX",
+                "CLAMPED_MAX",
+                "EXPLICIT"
               ],
-              "default": "max",
+              "default": "MAX",
               "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@channelInterpretation": {
               "enum": [
-                "speakers",
-                "discrete"
+                "SPEAKERS",
+                "DISCRETE"
               ],
-              "default": "speakers",
+              "default": "SPEAKERS",
               "$comment": "SFString inputOutput",
               "type": "string"
             },
@@ -9881,20 +9881,20 @@
             },
             "@channelCountMode": {
               "enum": [
-                "max",
-                "clamped-max",
-                "explicit"
+                "MAX",
+                "CLAMPED_MAX",
+                "EXPLICIT"
               ],
-              "default": "max",
+              "default": "MAX",
               "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@channelInterpretation": {
               "enum": [
-                "speakers",
-                "discrete"
+                "SPEAKERS",
+                "DISCRETE"
               ],
-              "default": "speakers",
+              "default": "SPEAKERS",
               "$comment": "SFString inputOutput",
               "type": "string"
             },
@@ -12445,11 +12445,6 @@
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
             },
-            "@frameCount": {
-              "default": 0,
-              "$comment": "SFInt32 inputOutput",
-              "type": "integer"
-            },
             "@frameDuration": {
               "default": 0.1,
               "$comment": "SFTime inputOutput",
@@ -12485,7 +12480,21 @@
             "-metadata": {
               "$ref": "#/$defs/-X3DMetadataObjectSFNode"
             },
+            "@name": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@skeletalConfiguration": {
+              "default": "BASIC",
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
             "@startFrame": {
+              "default": 0,
+              "$comment": "SFInt32 inputOutput",
+              "type": "integer"
+            },
+            "@totalFrameCount": {
               "default": 0,
               "$comment": "SFInt32 inputOutput",
               "type": "integer"
@@ -20005,13 +20014,13 @@
             },
             "@type": {
               "enum": [
-                "sine",
-                "square",
-                "sawtooth",
-                "triangle",
-                "custom"
+                "SINE",
+                "SQUARE",
+                "SAWTOOTH",
+                "TRIANGLE",
+                "CUSTOM"
               ],
-              "default": "square",
+              "default": "SQUARE",
               "$comment": "SFString inputOutput",
               "type": "string"
             },
@@ -25414,11 +25423,11 @@
             },
             "@distanceModel": {
               "enum": [
-                "linear",
-                "inverse",
-                "exponential"
+                "LINEAR",
+                "INVERSE",
+                "EXPONENTIAL"
               ],
-              "default": "inverse",
+              "default": "INVERSE",
               "$comment": "SFString inputOutput",
               "type": "string"
             },
@@ -26374,20 +26383,20 @@
             },
             "@channelCountMode": {
               "enum": [
-                "max",
-                "clamped-max",
-                "explicit"
+                "MAX",
+                "CLAMPED_MAX",
+                "EXPLICIT"
               ],
-              "default": "max",
+              "default": "MAX",
               "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@channelInterpretation": {
               "enum": [
-                "speakers",
-                "discrete"
+                "SPEAKERS",
+                "DISCRETE"
               ],
-              "default": "speakers",
+              "default": "SPEAKERS",
               "$comment": "SFString inputOutput",
               "type": "string"
             },
@@ -26483,20 +26492,20 @@
             },
             "@channelCountMode": {
               "enum": [
-                "max",
-                "clamped-max",
-                "explicit"
+                "MAX",
+                "CLAMPED_MAX",
+                "EXPLICIT"
               ],
-              "default": "max",
+              "default": "MAX",
               "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@channelInterpretation": {
               "enum": [
-                "speakers",
-                "discrete"
+                "SPEAKERS",
+                "DISCRETE"
               ],
-              "default": "speakers",
+              "default": "SPEAKERS",
               "$comment": "SFString inputOutput",
               "type": "string"
             },
@@ -31176,20 +31185,20 @@
             },
             "@channelCountMode": {
               "enum": [
-                "max",
-                "clamped-max",
-                "explicit"
+                "MAX",
+                "CLAMPED_MAX",
+                "EXPLICIT"
               ],
-              "default": "max",
+              "default": "MAX",
               "$comment": "SFString inputOutput",
               "type": "string"
             },
             "@channelInterpretation": {
               "enum": [
-                "speakers",
-                "discrete"
+                "SPEAKERS",
+                "DISCRETE"
               ],
-              "default": "speakers",
+              "default": "SPEAKERS",
               "$comment": "SFString inputOutput",
               "type": "string"
             },
@@ -31215,11 +31224,11 @@
             },
             "@oversample": {
               "enum": [
-                "none",
-                "2x",
-                "4x"
+                "NONE",
+                "2X",
+                "4X"
               ],
-              "default": "none",
+              "default": "NONE",
               "$comment": "SFString inputOutput",
               "type": "string"
             },
@@ -31499,7 +31508,7 @@
               "ParticleSystems",
               "Picking",
               "PointingDeviceSensor",
-              "TextureProjector",
+              "TextureProjection",
               "Rendering",
               "RigidBodyPhysics",
               "Scripting",

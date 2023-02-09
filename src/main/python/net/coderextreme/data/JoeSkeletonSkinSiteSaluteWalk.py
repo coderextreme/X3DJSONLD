@@ -11,7 +11,7 @@ WorldInfo(info=["By Joe for Joe"], title="HAnim V1 LOA3 Skeleton Joint centers A
 NavigationInfo(DEF="HeadlightOnRevealsSkinTextureAndColors"),
 Background(groundAngle=[float(1.57)], groundColor=[(0,0.1,0),(0,0.1,0)], skyColor=[(0,0,0.1)]),
 Transform(DEF="cordsysfloor", scale=((0.175,0.175,0.175)), children=[
-Inline(DEF="CoordinateAxes", url=["../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","../../../Savage/Tools/Authoring/CoordinateAxes.x3d","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","../../../Savage/Tools/Authoring/CoordinateAxes.wrl","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"])]),
+Inline(DEF="CoordinateAxes", url=["../data/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","../../../Savage/Tools/Authoring/CoordinateAxes.x3d","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","../../../Savage/Tools/Authoring/CoordinateAxes.wrl","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"])]),
 #Authoring hint: these axes are aligned within local coordinate system
 
 Group(DEF="ViewpointGroup", children=[
@@ -80,7 +80,7 @@ Color(color=[(1,0,0),(0,1,1),(0,1,0),(1,1,0),(1,1,0),(1,0,0),(0,1,0),(0,0,1),(0,
 appearance=
 Appearance(DEF="SkinAppearance", 
 texture=
-ImageTexture(DEF="zBlueSpiralBkg2", description="Blue Spiral Pattern", url=["zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"]), 
+ImageTexture(DEF="zBlueSpiralBkg2", description="Blue Spiral Pattern", url=["../resources/images/zBlueSpiralBkg2.gif","zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"]), 
 material=
 Material(DEF="SkinMaterial", ambientIntensity=0.6, diffuseColor=((1,1,1)), shininess=0.6, transparency=0.2)))], 
 skinCoord=(

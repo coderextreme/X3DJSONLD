@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-3.0.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-3.0.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 3.0 of X3D -->
-<!-- Generated 2022-07-04-07:00 11:44:04.5574965-07:00 -->
+<!-- Generated 2023-01-31-08:00 23:33:26.7595314-08:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                         version="3.0"
                         xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -7245,7 +7245,7 @@
                     additionalEnumerationValuesAllowed="false"
                     simpleType="fontStyleChoices"
                     baseType="xs:NMTOKEN"
-                    description="Pick one of four values for text style (PLAIN | BOLD | ITALIC | BOLDITALIC).">
+                    description="Pick one of four values for text style (PLAIN|BOLD|ITALIC|BOLDITALIC).">
                <enumeration value="PLAIN" appinfo="default plain type."/>
                <enumeration value="BOLD" appinfo="boldface type."/>
                <enumeration value="ITALIC" appinfo="italic type."/>
@@ -8802,6 +8802,7 @@
             <containerField default="children" type="containerFieldChoicesHAnimJoint"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
+               <NodeContentModel name="HAnimDisplacer"/>
                <NodeContentModel name="HAnimJoint"/>
                <NodeContentModel name="HAnimSegment"/>
                <NodeContentModel name="ProtoInstance"/>
@@ -8810,7 +8811,7 @@
       </ConcreteNode>
       <ConcreteNode name="HAnimSegment">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/hanim.html#HAnimSegment"
-                               appinfo="HAnimSegment node contains Shape geometry for each body segment.">
+                               appinfo="HAnimSegment node contains Shape geometry for each body segment, providing a visual representation of the skeleton segment.">
             <componentInfo name="H-Anim" level="1"/>
             <Inheritance baseType="X3DGroupingNode"/>
             <field name="addChildren"
@@ -16380,6 +16381,7 @@
             <ContentModel>
                <NodeContentModel name="head" minOccurs="0"/>
                <NodeContentModel name="Scene"/>
+               <NodeContentModel name="ds:Signature" minOccurs="0"/>
             </ContentModel>
          </InterfaceDefinition>
       </ConcreteNode>

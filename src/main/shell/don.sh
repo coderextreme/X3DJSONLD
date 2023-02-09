@@ -7,10 +7,16 @@ export PROCESSORS=${PROCESSORS-8}
 
 . ./classpath
 
+pip3 install x3d
+pip3 install xmlschema
 # python3 ../python/classes.py
 pushd ../java
 javac -cp "${CLASSPATH}" net/coderextreme/RunSaxon.java
 popd
+
+for FILE in $@
+do
+	X3D=`basename $FILE .x3d`
 
 echo translating to json
 (ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java net.coderextreme.RunSaxon ---overwrite ---silent --../lib/stylesheets/X3dToJson.xslt ---
@@ -24,7 +30,7 @@ echo translating to python
 (ls "$@" | grep -v intermediate | grep -v "\.new") | xargs -P $PROCESSORS java net.coderextreme.RunSaxon ---overwrite ---silent --../lib/stylesheets/X3dToPython.xslt -py ---../python/net/x3djsonld/data/
 echo compiling
 pushd ../java
-find ./net/x3djsonld/data -name '*.java' | xargs -L 1 -P $PROCESSORS javac -J-Xss1g -J-Xmx4g
+find ./net/x3djsonld/data -name "${X3D}.java" | xargs -L 1 -P $PROCESSORS javac -J-Xss1g -J-Xmx4g
 echo running java
 echo export CLASSPATH='"'${CLASSPATH}'"'
 for i in `ls "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.\./net\/x3djsonld/' -e 's/\.x3d$//'`
@@ -37,13 +43,15 @@ done
 popd
 # echo running jjs
 # pushd ../nashorn
-# find ./net/x3djsonld/data -name '*.js' | xargs -L 1 -P $PROCESSORS jjs -J-Xss1g -J-Xmx4g -cp "${NASHORN_CLASSPATH}"
+# find ./net/x3djsonld/data -name "${X3D}.js" | xargs -L 1 -P $PROCESSORS jjs -J-Xss1g -J-Xmx4g -cp "${NASHORN_CLASSPATH}"
 # popd
 echo running python
 pushd ../python
-find ./net/x3djsonld/data -name '*.py' | xargs -L 1 -P $PROCESSORS python3
+find ./net/x3djsonld/data -name "${X3D}.py" | xargs -L 1 -P $PROCESSORS python3
 popd
 echo running node
 pushd ../node
-find ./net/x3djsonld/data -name '*.js' | xargs -L 1 -P $PROCESSORS node
+find ./net/x3djsonld/data -name "${X3D}.js" | xargs -L 1 -P $PROCESSORS node
 popd
+
+done

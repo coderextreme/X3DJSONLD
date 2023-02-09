@@ -2,7 +2,7 @@
 
 export PATH=${PATH}:~/apache-maven-3.6.3/bin:~/apache-ant-1.10.9/bin
 # export PYTHONPATH=${PYTHONPATH}:/usr/lib/python3/dist-packages/pkg_resources/:/usr/lib/python3/dist-packages
-source venv/Scripts/activate
+# source venv/Scripts/activate
 
 # bring in source from sourceforget
 pushd /c/x3d-code/www.web3d.org

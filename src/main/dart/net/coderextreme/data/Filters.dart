@@ -166,23 +166,36 @@ var X3D0 =  X3D(
               trackCurrentView_ : true),
 
             StreamAudioDestination(
+              channelCountMode_ : SFString('MAX'),
+              channelInterpretation_ : SFString('SPEAKERS'),
               children_ : [
                 DynamicsCompressor(
+                  channelCountMode_ : SFString('MAX'),
+                  channelInterpretation_ : SFString('SPEAKERS'),
                   children_ : [
                     Gain(
+                      channelCountMode_ : SFString('MAX'),
+                      channelInterpretation_ : SFString('SPEAKERS'),
                       children_ : [
                         SpatialSound(
                           DEF_ : SFString('Audio1'),
+                          distanceModel_ : SFString('INVERSE'),
                           children_ : [
                             Gain(
+                              channelCountMode_ : SFString('MAX'),
+                              channelInterpretation_ : SFString('SPEAKERS'),
                               children_ : [
                                 Analyser(
+                                  channelCountMode_ : SFString('MAX'),
+                                  channelInterpretation_ : SFString('SPEAKERS'),
                                   children_ : [
                                     BiquadFilter(
                                       type_ : SFString("allpass"),
                                       detune_ : 50,
                                       frequency_ : 600,
                                       qualityFactor_ : 30,
+                                      channelCountMode_ : SFString('MAX'),
+                                      channelInterpretation_ : SFString('SPEAKERS'),
                                       children_ : [
                                         AudioClip(
                                           description_ : SFString('Techno beat'),
@@ -191,16 +204,23 @@ var X3D0 =  X3D(
 
                         SpatialSound(
                           DEF_ : SFString('Audio2'),
+                          distanceModel_ : SFString('INVERSE'),
                           children_ : [
                             Gain(
+                              channelCountMode_ : SFString('MAX'),
+                              channelInterpretation_ : SFString('SPEAKERS'),
                               children_ : [
                                 Analyser(
+                                  channelCountMode_ : SFString('MAX'),
+                                  channelInterpretation_ : SFString('SPEAKERS'),
                                   children_ : [
                                     BiquadFilter(
                                       type_ : SFString("allpass"),
                                       detune_ : 15,
                                       frequency_ : 600,
                                       qualityFactor_ : 15,
+                                      channelCountMode_ : SFString('MAX'),
+                                      channelInterpretation_ : SFString('SPEAKERS'),
                                       children_ : [
                                         AudioClip(
                                           description_ : SFString('Simple beat'),
@@ -209,15 +229,22 @@ var X3D0 =  X3D(
 
                         SpatialSound(
                           DEF_ : SFString('Audio3'),
+                          distanceModel_ : SFString('INVERSE'),
                           children_ : [
                             Gain(
+                              channelCountMode_ : SFString('MAX'),
+                              channelInterpretation_ : SFString('SPEAKERS'),
                               children_ : [
                                 Analyser(
+                                  channelCountMode_ : SFString('MAX'),
+                                  channelInterpretation_ : SFString('SPEAKERS'),
                                   children_ : [
                                     BiquadFilter(
                                       type_ : SFString("allpass"),
                                       frequency_ : 1000,
                                       qualityFactor_ : 0,
+                                      channelCountMode_ : SFString('MAX'),
+                                      channelInterpretation_ : SFString('SPEAKERS'),
                                       children_ : [
                                         AudioClip(
                                           description_ : SFString('Wobble loop'),

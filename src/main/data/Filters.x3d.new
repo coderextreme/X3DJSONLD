@@ -44,17 +44,17 @@
 </Shape>
 </Transform>
 <ListenerPointSource trackCurrentView="true"></ListenerPointSource>
-<StreamAudioDestination><DynamicsCompressor><Gain><SpatialSound DEF="Audio1"><Gain><Analyser><BiquadFilter detune="50" frequency="600" qualityFactor="30" type="allpass"><AudioClip description="Techno beat" loop="true" url="&quot;sound/techno_beat.mp3&quot; &quot;https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/techno_beat.mp3&quot;"></AudioClip>
+<StreamAudioDestination channelCountMode="MAX" channelInterpretation="SPEAKERS"><DynamicsCompressor channelCountMode="MAX" channelInterpretation="SPEAKERS"><Gain channelCountMode="MAX" channelInterpretation="SPEAKERS"><SpatialSound DEF="Audio1" distanceModel="INVERSE"><Gain channelCountMode="MAX" channelInterpretation="SPEAKERS"><Analyser channelCountMode="MAX" channelInterpretation="SPEAKERS"><BiquadFilter detune="50" frequency="600" qualityFactor="30" type="allpass" channelCountMode="MAX" channelInterpretation="SPEAKERS"><AudioClip description="Techno beat" loop="true" url="&quot;sound/techno_beat.mp3&quot; &quot;https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/techno_beat.mp3&quot;"></AudioClip>
 </BiquadFilter>
 </Analyser>
 </Gain>
 </SpatialSound>
-<SpatialSound DEF="Audio2"><Gain><Analyser><BiquadFilter detune="15" frequency="600" qualityFactor="15" type="allpass"><AudioClip description="Simple beat" loop="true" url="&quot;sound/beat.mp3&quot; &quot;https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/beat.mp3&quot;"></AudioClip>
+<SpatialSound DEF="Audio2" distanceModel="INVERSE"><Gain channelCountMode="MAX" channelInterpretation="SPEAKERS"><Analyser channelCountMode="MAX" channelInterpretation="SPEAKERS"><BiquadFilter detune="15" frequency="600" qualityFactor="15" type="allpass" channelCountMode="MAX" channelInterpretation="SPEAKERS"><AudioClip description="Simple beat" loop="true" url="&quot;sound/beat.mp3&quot; &quot;https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/beat.mp3&quot;"></AudioClip>
 </BiquadFilter>
 </Analyser>
 </Gain>
 </SpatialSound>
-<SpatialSound DEF="Audio3"><Gain><Analyser><BiquadFilter frequency="1000" qualityFactor="0" type="allpass"><AudioClip description="Wobble loop" loop="true" url="&quot;sound/wobble_loop.mp3&quot; &quot;https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/wobble_loop.mp3&quot;"></AudioClip>
+<SpatialSound DEF="Audio3" distanceModel="INVERSE"><Gain channelCountMode="MAX" channelInterpretation="SPEAKERS"><Analyser channelCountMode="MAX" channelInterpretation="SPEAKERS"><BiquadFilter frequency="1000" qualityFactor="0" type="allpass" channelCountMode="MAX" channelInterpretation="SPEAKERS"><AudioClip description="Wobble loop" loop="true" url="&quot;sound/wobble_loop.mp3&quot; &quot;https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/wobble_loop.mp3&quot;"></AudioClip>
 </BiquadFilter>
 </Analyser>
 </Gain>
