@@ -162,7 +162,7 @@ __all__ = [</xsl:text>
 import re # regular expressions library, built in
 
 #print('====================================', flush=True)
-#print('PyPi x3d package __init__.py diagnostics', flush=True)
+#print('PyPI x3d package __init__.py diagnostics', flush=True)
 try:
     from x3d.x3d import *
 #   print('*** __init__.py successful invocation: from x3d.x3d import *', flush=True)
@@ -706,7 +706,10 @@ def isX3DNode(value):
 
 # Python x3d Package Loading Complete
 
-print("x3d.py package 4.0.64.2 loaded, have fun with X3D Graphics!", flush=True)
+# TODO how to introspect the version number at run time from the object. Specifically,
+# get the magic dictionary __dict__ and then perform standard dictionary lookups on that version key.
+
+print("x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!", flush=True)
 
 ###############################################
 </xsl:text>

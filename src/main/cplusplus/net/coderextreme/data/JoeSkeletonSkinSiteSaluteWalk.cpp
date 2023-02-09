@@ -4,7 +4,7 @@
 #define WINAPI
 #define AFX_EXT_CLASS
 #define EXPORT32
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Concretes.h"
+#include "C:/x3d-code/www.web3d.org/x3d/stylesheets/cpp/concretes.h"
 int main(int argc, char ** argv) {
 CX3DScene m_pScene;
 CBrowser browser = X3D.getBrowser();
@@ -207,7 +207,7 @@ Transform40->setDEF("cordsysfloor");
 Transform40->setScale(new float[3]{0.175,0.175,0.175});
 CInline* Inline41 = (CInline *)(m_pScene.createNode("Inline"));
 Inline41->setDEF("CoordinateAxes");
-Inline41->setUrl(new CString[8]{"../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","../../../Savage/Tools/Authoring/CoordinateAxes.x3d","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","../../../Savage/Tools/Authoring/CoordinateAxes.wrl","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"}, 8);
+Inline41->setUrl(new CString[9]{"../data/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","../../../Savage/Tools/Authoring/CoordinateAxes.x3d","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","../../../Savage/Tools/Authoring/CoordinateAxes.wrl","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"}, 9);
 Transform40->addChildren(*Inline41);
 
 group->addChildren(*Transform40);
@@ -427,7 +427,7 @@ Appearance86->setDEF("SkinAppearance");
 CImageTexture* ImageTexture87 = (CImageTexture *)(m_pScene.createNode("ImageTexture"));
 ImageTexture87->setDEF("zBlueSpiralBkg2");
 ImageTexture87->setDescription("Blue Spiral Pattern");
-ImageTexture87->setUrl(new CString[2]{"zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"}, 2);
+ImageTexture87->setUrl(new CString[3]{"../resources/images/zBlueSpiralBkg2.gif","zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"}, 3);
 Appearance86->setTexture(*ImageTexture87);
 
 CMaterial* Material88 = (CMaterial *)(m_pScene.createNode("Material"));

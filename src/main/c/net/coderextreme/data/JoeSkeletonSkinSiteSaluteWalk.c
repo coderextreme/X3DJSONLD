@@ -201,7 +201,7 @@ Transform40.DEF = "cordsysfloor";
 Transform40.scale = new SFVec3f(new float[0.175,0.175,0.175]);
 Inline Inline41 = createNode("Inline");
 Inline41.DEF = "CoordinateAxes";
-Inline41.url = new MFString(new java.lang.String["../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","../../../Savage/Tools/Authoring/CoordinateAxes.x3d","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","../../../Savage/Tools/Authoring/CoordinateAxes.wrl","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"]);
+Inline41.url = new MFString(new java.lang.String["../data/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","../../../Savage/Tools/Authoring/CoordinateAxes.x3d","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","../../../Savage/Tools/Authoring/CoordinateAxes.wrl","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"]);
 Transform40.children = new MFNode();
 
 Transform40.children[0] = Inline41;
@@ -435,7 +435,7 @@ Appearance86.DEF = "SkinAppearance";
 ImageTexture ImageTexture87 = createNode("ImageTexture");
 ImageTexture87.DEF = "zBlueSpiralBkg2";
 ImageTexture87.description = "Blue Spiral Pattern";
-ImageTexture87.url = new MFString(new java.lang.String["zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"]);
+ImageTexture87.url = new MFString(new java.lang.String["../resources/images/zBlueSpiralBkg2.gif","zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"]);
 Appearance86.texture = ImageTexture87;
 
 Material Material88 = createNode("Material");

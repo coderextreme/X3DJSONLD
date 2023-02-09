@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile="Immersive" version="4.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd">
+<head>
+  <component level='1' name='HAnim'/>
+  <meta content='JohnBoy.x3d' name='title'/>
+  <meta name='identifier' content='http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d'/>
+  <meta name='description' content='An attempt at a standard LOA-4 skeleton'/>
+  <meta name='generator' content='h2.pl'/>
+  <meta name='modified' content="14 Jan 2023/>
+  <meta content='John Carlson' name='creator'/>
+  <meta content='9 November 2020' name='created'/>
+  <meta content='../license.html' name='license'/>
+</head>
+<Scene>
+
+  <Transform scale='1 1 1'> <!-- DEF for markerfor XYZ axes -->
+   <Shape DEF='AxisLinesShape'> <!-- RGB lines showing XYZ axes -->
+    <IndexedLineSet colorIndex='0 1 2' colorPerVertex='false' coordIndex='0 1 -1 0 2 -1 0 3 -1'>
+     <Coordinate point='0 0 0 0.1 0 0 0 0.1 0 0 0 0.1'/>
+     <Color color='1 0 0 0 0.6 0 0 0 1'/>
+    </IndexedLineSet>
+   </Shape>
+  </Transform>
+ 
+<Group> <!-- DEFS for markers of skeleton joints, segments, and sites --> 
+ <Transform translation='0 0 0' scale='1 1 1'>
+<!--
+  <Transform translation='0 2 0' scale='1 1 1'>
+   <Shape DEF='HAnimRootShape'>
+    <Sphere radius='0.02'  />
+     <Appearance>
+      <Material DEF='HAnimRootMaterial' diffuseColor='0.8 0 0' transparency='0.3'/>
+     </Appearance>
+    </Shape>
+  </Transform>
+  -->
+  <Transform translation='0 2.1 0' scale='1 1 1'>
+   <Shape DEF='HAnimJointShape'>
+    <Sphere radius='0.02' />
+     <Appearance>
+      <Material DEF='HAnimJointMaterial' diffuseColor='0 0 0.8' transparency='0.3'/>
+       </Appearance>
+   </Shape>
+  </Transform>
+  <Transform translation='0 2.05 0' scale='1 1 1'>
+   <Shape DEF='HAnimSegmentLine'>
+    <LineSet vertexCount='2'>
+     <ColorRGBA DEF='HAnimSegmentLineColorRGBA' color='1 1 0 1 1 1 0 0.1'/>
+      <Coordinate point='-0.05 0 0 0.05 0 0'/>
+       </LineSet>
+    </Shape>
+  </Transform>
+<!--
+  <Transform translation='0 2.1 0' scale='1 1 1'>
+   <Shape DEF='HAnimSiteShape'>
+    <IndexedFaceSet DEF='DiamondIFS' creaseAngle='0.5' solid='false' coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1'>
+     <ColorRGBA DEF='HAnimSiteColorRGBA' color='1 1 0 1 1 1 0 0.1'/>
+     <Coordinate point='0 0.01 0 -0.01 0 0 0 0 0.01 0.01 0 0 0 0 -0.01 0 -0.01 0'/>
+    </IndexedFaceSet>
+     <Appearance>
+      <Material diffuseColor='1 1 0' transparency='0.3'/>
+     </Appearance>
+   </Shape>
+  </Transform>
+  -->
+ </Transform>
+</Group> 
+
+<NavigationInfo speed='1.5' type='"EXAMINE" "ANY"'/>
+
+<Viewpoint centerOfRotation='0 0 0' description='default'/> 
+
+<HAnimHumanoid DEF='hanim_HAnim'  info='"humanoidVersion=2.0"' name='HAnim' scale='1 1 1' translation='0 0 0' version='2.0'>
+<HAnimJoint DEF='hanim_humanoid_root' name='humanoid_root' containerField='skeleton' center='0.0000 0.8240 0.0277'>
+  <HAnimJoint DEF='hanim_sacroiliac' name='sacroiliac' center='0.0000 0.9149 0.0016'>
+    <HAnimJoint DEF='hanim_l_hip' name='l_hip' center='0.0961 0.9124 -0.0001'>
+      <HAnimJoint DEF='hanim_l_knee' name='l_knee' center='0.1040 0.4867 0.0308'>
+        <HAnimJoint DEF='hanim_l_talocrural' name='l_talocrural' center='0.1101 0.0656 -0.0736'>
+          <HAnimJoint DEF='hanim_l_talocalcaneonavicular' name='l_talocalcaneonavicular' center='0 1 0'>
+            <HAnimJoint DEF='hanim_l_cuneonavicular_1' name='l_cuneonavicular_1' center='0 1 0'>
+              <HAnimJoint DEF='hanim_l_tarsometatarsal_1' name='l_tarsometatarsal_1' center='0 1 0'>
+                <HAnimJoint DEF='hanim_l_metatarsophalangeal_1' name='l_metatarsophalangeal_1' center='0 1 0'>
+                  <HAnimJoint DEF='hanim_l_tarsal_interphalangeal_1' name='l_tarsal_interphalangeal_1' center='0 1 0'>
+                  </HAnimJoint>
+                </HAnimJoint>
+              </HAnimJoint>
+            </HAnimJoint>
+            <HAnimJoint DEF='hanim_l_cuneonavicular_2' name='l_cuneonavicular_2' center='0 1 0'>
+              <HAnimJoint DEF='hanim_l_tarsometatarsal_2' name='l_tarsometatarsal_2' center='0 1 0'>
+                <HAnimJoint DEF='hanim_l_metatarsophalangeal_2' name='l_metatarsophalangeal_2' center='0 1 0'>
+                  <HAnimJoint DEF='hanim_l_tarsal_proximal_interphalangeal_2' name='l_tarsal_proximal_interphalangeal_2' center='0 1 0'>
+                    <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_2' name='l_tarsal_distal_interphalangeal_2' center='0 1 0'>
+                    </HAnimJoint>
+                  </HAnimJoint>
+                </HAnimJoint>
+              </HAnimJoint>
+            </HAnimJoint>
+            <HAnimJoint DEF='hanim_l_cuneonavicular_3' name='l_cuneonavicular_3' center='0 1 0'>
+              <HAnimJoint DEF='hanim_l_tarsometatarsal_3' name='l_tarsometatarsal_3' center='0 1 0'>
+                <HAnimJoint DEF='hanim_l_metatarsophalangeal_3' name='l_metatarsophalangeal_3' center='0 1 0'>
+                  <HAnimJoint DEF='hanim_l_tarsal_proximal_interphalangeal_3' name='l_tarsal_proximal_interphalangeal_3' center='0 1 0'>
+                    <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_3' name='l_tarsal_distal_interphalangeal_3' center='0 1 0'>
+                    </HAnimJoint>
+                  </HAnimJoint>
+                </HAnimJoint>
+              </HAnimJoint>
+            </HAnimJoint>
+          </HAnimJoint>
+          <HAnimJoint DEF='hanim_l_calcaneocuboid' name='l_calcaneocuboid' center='0 1 0'>
+            <HAnimJoint DEF='hanim_l_transversetarsal' name='l_transversetarsal' center='0 1 0'>
+              <HAnimJoint DEF='hanim_l_tarsometatarsal_4' name='l_tarsometatarsal_4' center='0 1 0'>
+                <HAnimJoint DEF='hanim_l_metatarsophalangeal_4' name='l_metatarsophalangeal_4' center='0 1 0'>
+                  <HAnimJoint DEF='hanim_l_tarsal_proximal_interphalangeal_4' name='l_tarsal_proximal_interphalangeal_4' center='0 1 0'>
+                    <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_4' name='l_tarsal_distal_interphalangeal_4' center='0 1 0'>
+                    </HAnimJoint>
+                  </HAnimJoint>
+                </HAnimJoint>
+              </HAnimJoint>
+              <HAnimJoint DEF='hanim_l_tarsometatarsal_5' name='l_tarsometatarsal_5' center='0 1 0'>
+                <HAnimJoint DEF='hanim_l_metatarsophalangeal_5' name='l_metatarsophalangeal_5' center='0 1 0'>
+                  <HAnimJoint DEF='hanim_l_tarsal_proximal_interphalangeal_5' name='l_tarsal_proximal_interphalangeal_5' center='0 1 0'>
+                    <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_5' name='l_tarsal_distal_interphalangeal_5' center='0 1 0'>
+                    </HAnimJoint>
+                  </HAnimJoint>
+                </HAnimJoint>
+              </HAnimJoint>
+            </HAnimJoint>
+          </HAnimJoint>
+        </HAnimJoint>
+      </HAnimJoint>
+    </HAnimJoint>
+    <HAnimJoint DEF='hanim_r_hip' name='r_hip' center='-0.0950 0.9171 0.0029'>
+      <HAnimJoint DEF='hanim_r_knee' name='r_knee' center='-0.0867 0.4913 0.0318'>
+        <HAnimJoint DEF='hanim_r_talocrural' name='r_talocrural' center='-0.0801 0.0712 -0.0766'>
+          <HAnimJoint DEF='hanim_r_talocalcaneonavicular' name='r_talocalcaneonavicular' center='0 1 0'>
+            <HAnimJoint DEF='hanim_r_cuneonavicular_1' name='r_cuneonavicular_1' center='0 1 0'>
+              <HAnimJoint DEF='hanim_r_tarsometatarsal_1' name='r_tarsometatarsal_1' center='0 1 0'>
+                <HAnimJoint DEF='hanim_r_metatarsophalangeal_1' name='r_metatarsophalangeal_1' center='0 1 0'>
+                  <HAnimJoint DEF='hanim_r_tarsal_interphalangeal_1' name='r_tarsal_interphalangeal_1' center='0 1 0'>
+                  </HAnimJoint>
+                </HAnimJoint>
+              </HAnimJoint>
+            </HAnimJoint>
+            <HAnimJoint DEF='hanim_r_cuneonavicular_2' name='r_cuneonavicular_2' center='0 1 0'>
+              <HAnimJoint DEF='hanim_r_tarsometatarsal_2' name='r_tarsometatarsal_2' center='0 1 0'>
+                <HAnimJoint DEF='hanim_r_metatarsophalangeal_2' name='r_metatarsophalangeal_2' center='0 1 0'>
+                  <HAnimJoint DEF='hanim_r_tarsal_proximal_interphalangeal_2' name='r_tarsal_proximal_interphalangeal_2' center='0 1 0'>
+                    <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_2' name='r_tarsal_distal_interphalangeal_2' center='0 1 0'>
+                    </HAnimJoint>
+                  </HAnimJoint>
+                </HAnimJoint>
+              </HAnimJoint>
+            </HAnimJoint>
+            <HAnimJoint DEF='hanim_r_cuneonavicular_3' name='r_cuneonavicular_3' center='0 1 0'>
+              <HAnimJoint DEF='hanim_r_tarsometatarsal_3' name='r_tarsometatarsal_3' center='0 1 0'>
+                <HAnimJoint DEF='hanim_r_metatarsophalangeal_3' name='r_metatarsophalangeal_3' center='0 1 0'>
+                  <HAnimJoint DEF='hanim_r_tarsal_proximal_interphalangeal_3' name='r_tarsal_proximal_interphalangeal_3' center='0 1 0'>
+                    <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_3' name='r_tarsal_distal_interphalangeal_3' center='0 1 0'>
+                    </HAnimJoint>
+                  </HAnimJoint>
+                </HAnimJoint>
+              </HAnimJoint>
+            </HAnimJoint>
+          </HAnimJoint>
+          <HAnimJoint DEF='hanim_r_calcaneocuboid' name='r_calcaneocuboid' center='0 1 0'>
+            <HAnimJoint DEF='hanim_r_transversetarsal' name='r_transversetarsal' center='0 1 0'>
+              <HAnimJoint DEF='hanim_r_tarsometatarsal_4' name='r_tarsometatarsal_4' center='0 1 0'>
+                <HAnimJoint DEF='hanim_r_metatarsophalangeal_4' name='r_metatarsophalangeal_4' center='0 1 0'>
+                  <HAnimJoint DEF='hanim_r_tarsal_proximal_interphalangeal_4' name='r_tarsal_proximal_interphalangeal_4' center='0 1 0'>
+                    <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_4' name='r_tarsal_distal_interphalangeal_4' center='0 1 0'>
+                    </HAnimJoint>
+                  </HAnimJoint>
+                </HAnimJoint>
+              </HAnimJoint>
+              <HAnimJoint DEF='hanim_r_tarsometatarsal_5' name='r_tarsometatarsal_5' center='0 1 0'>
+                <HAnimJoint DEF='hanim_r_metatarsophalangeal_5' name='r_metatarsophalangeal_5' center='0 1 0'>
+                  <HAnimJoint DEF='hanim_r_tarsal_proximal_interphalangeal_5' name='r_tarsal_proximal_interphalangeal_5' center='0 1 0'>
+                    <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_5' name='r_tarsal_distal_interphalangeal_5' center='0 1 0'>
+                    </HAnimJoint>
+                  </HAnimJoint>
+                </HAnimJoint>
+              </HAnimJoint>
+            </HAnimJoint>
+          </HAnimJoint>
+        </HAnimJoint>
+      </HAnimJoint>
+    </HAnimJoint>
+  </HAnimJoint>
+  <HAnimJoint DEF='hanim_vl5' name='vl5' center='0.0028 1.0568 -0.0776'>
+   <HAnimJoint DEF='hanim_vl4' name='vl4' center='0.0035 1.0925 -0.0787'>
+     <HAnimJoint DEF='hanim_vl3' name='vl3' center='0.0041 1.1276 -0.0796'>
+       <HAnimJoint DEF='hanim_vl2' name='vl2' center='0.0045 1.1546 -0.0800'>
+         <HAnimJoint DEF='hanim_vl1' name='vl1' center='0.0048 1.1912 -0.0805'>
+           <HAnimJoint DEF='hanim_vt12' name='vt12' center='0.0051 1.2278 -0.0808'>
+             <HAnimJoint DEF='hanim_vt11' name='vt11' center='0.0053 1.2679 -0.0810'>
+               <HAnimJoint DEF='hanim_vt10' name='vt10' center='0.0056 1.2848 -0.0822'>
+                 <HAnimJoint DEF='hanim_vt9' name='vt9' center='0.0057 1.3126 -0.0838'>
+                   <HAnimJoint DEF='hanim_vt8' name='vt8' center='0.0057 1.3382 -0.0845'>
+                     <HAnimJoint DEF='hanim_vt7' name='vt7' center='0.0058 1.3625 -0.0833'>
+                       <HAnimJoint DEF='hanim_vt6' name='vt6' center='0.0059 1.3866 -0.0800'>
+                         <HAnimJoint DEF='hanim_vt5' name='vt5' center='0.0060 1.4102 -0.0745'>
+                           <HAnimJoint DEF='hanim_vt4' name='vt4' center='0.0061 1.4320 -0.0675'>
+                             <HAnimJoint DEF='hanim_vt3' name='vt3' center='0.0062 1.4583 -0.0570'>
+                               <HAnimJoint DEF='hanim_vt2' name='vt2' center='0.0063 1.4761 -0.0484'>
+                                 <HAnimJoint DEF='hanim_vt1' name='vt1' center='0.0065 1.4951 -0.0387'>
+                                   <HAnimJoint DEF='hanim_vc7' name='vc7' center='0.0066 1.5132 -0.0301'>
+                                      <HAnimJoint DEF='hanim_vc6' name='vc6' center='0.0066 1.5357 -0.0143'>
+                                       <HAnimJoint DEF='hanim_vc5' name='vc5' center='0.0066 1.5520 -0.0082'>
+                                         <HAnimJoint DEF='hanim_vc4' name='vc4' center='0.0066 1.5662 -0.0084'>
+                                           <HAnimJoint DEF='hanim_vc3' name='vc3' center='0.0066 1.5800 -0.0103'>
+                                             <HAnimJoint DEF='hanim_vc2' name='vc2' center='0.0066 1.5928 -0.0103'>
+                                               <HAnimJoint DEF='hanim_vc1' name='vc1' center='0.0066 1.6144 -0.0034'>
+                                                 <HAnimJoint DEF='hanim_skullbase' name='skullbase' center='0.0044 1.6209 0.0236'>
+                                                   <HAnimJoint DEF='hanim_l_eyelid_joint' name='l_eyelid_joint' center='0 1 0'>
+                                                   </HAnimJoint>
+                                                   <HAnimJoint DEF='hanim_r_eyelid_joint' name='r_eyelid_joint' center='0 1 0'>
+                                                   </HAnimJoint>
+                                                   <HAnimJoint DEF='hanim_l_eyeball_joint' name='l_eyeball_joint' center='0 1 0'>
+                                                   </HAnimJoint>
+                                                   <HAnimJoint DEF='hanim_r_eyeball_joint' name='r_eyeball_joint' center='0 1 0'>
+                                                   </HAnimJoint>
+                                                   <HAnimJoint DEF='hanim_l_eyebrow_joint' name='l_eyebrow_joint' center='0 1 0'>
+                                                   </HAnimJoint>
+                                                   <HAnimJoint DEF='hanim_r_eyebrow_joint' name='r_eyebrow_joint' center='0 1 0'>
+                                                   </HAnimJoint>
+                                                   <HAnimJoint DEF='hanim_temporomandibular' name='temporomandibular' center='0 1 0'>
+                                                   </HAnimJoint>
+                                                 </HAnimJoint>
+                                               </HAnimJoint>
+                                             </HAnimJoint>
+                                           </HAnimJoint>
+                                         </HAnimJoint>
+                                       </HAnimJoint>
+                                      </HAnimJoint>
+                                   </HAnimJoint>
+                                   <HAnimJoint DEF='hanim_l_sternoclavicular' name='l_sternoclavicular' center='0.0820 1.4488 -0.0353'>
+                                     <HAnimJoint DEF='hanim_l_acromioclavicular' name='l_acromioclavicular' center='0.0962 1.4269 -0.0424'>
+                                       <HAnimJoint DEF='hanim_l_shoulder' name='l_shoulder' center='0.2029 1.4376 -0.0387'>
+                                         <HAnimJoint DEF='hanim_l_elbow' name='l_elbow' center='0.2014 1.1357 -0.0682'>
+                                           <HAnimJoint DEF='hanim_l_radiocarpal' name='l_radiocarpal' center='0.1984 0.8663 -0.0583'>
+                                             <HAnimJoint DEF='hanim_l_midcarpal_1' name='l_midcarpal_1' center='0 1 0'>
+                                               <HAnimJoint DEF='hanim_l_carpometacarpal_1' name='l_carpometacarpal_1' center='0.1924 0.8472 -0.0534'>
+                                                 <HAnimJoint DEF='hanim_l_metacarpophalangeal_1' name='l_metacarpophalangeal_1' center='0.1951 0.8226 0.0246'>
+                                                   <HAnimJoint DEF='hanim_l_carpal_interphalangeal_1' name='l_carpal_interphalangeal_1' center='0.1955 0.8159 0.0464'>
+                                                   </HAnimJoint>
+                                                 </HAnimJoint>
+                                               </HAnimJoint>
+                                             </HAnimJoint>
+                                             <HAnimJoint DEF='hanim_l_midcarpal_2' name='l_midcarpal_2' center='0 1 0'>
+                                               <HAnimJoint DEF='hanim_l_carpometacarpal_2' name='l_carpometacarpal_2' center='0.1983 0.8024 -0.0280'>
+                                                 <HAnimJoint DEF='hanim_l_metacarpophalangeal_2' name='l_metacarpophalangeal_2' center='0.1983 0.7815 -0.0280'>
+                                                   <HAnimJoint DEF='hanim_l_carpal_proximal_interphalangeal_2' name='l_carpal_proximal_interphalangeal_2' center='0.2017 0.7363 -0.0248'>
+                                                     <HAnimJoint DEF='hanim_l_carpal_distal_interphalangeal_2' name='l_carpal_distal_interphalangeal_2' center='0.2028 0.7139 -0.0236'>
+                                                     </HAnimJoint>
+                                                   </HAnimJoint>
+                                                 </HAnimJoint>
+                                               </HAnimJoint>
+                                             </HAnimJoint>
+                                             <HAnimJoint DEF='hanim_l_midcarpal_3' name='l_midcarpal_3' center='0 1 0'>
+                                               <HAnimJoint DEF='hanim_l_carpometacarpal_3' name='l_carpometacarpal_3' center='0.1987 0.8029 -0.0530'>
+                                                 <HAnimJoint DEF='hanim_l_metacarpophalangeal_3' name='l_metacarpophalangeal_3' center='0.1987 0.7818 -0.0530'>
+                                                   <HAnimJoint DEF='hanim_l_carpal_proximal_interphalangeal_3' name='l_carpal_proximal_interphalangeal_3' center='0.2013 0.7273 -0.0503'>
+                                                     <HAnimJoint DEF='hanim_l_carpal_distal_interphalangeal_3' name='l_carpal_distal_interphalangeal_3' center='0.2026 0.7011 -0.0494'>
+                                                     </HAnimJoint>
+                                                   </HAnimJoint>
+                                                 </HAnimJoint>
+                                               </HAnimJoint>
+                                             </HAnimJoint>
+                                             <HAnimJoint DEF='hanim_l_midcarpal_4_5' name='l_midcarpal_4_5' center='0 1 0'>
+                                               <HAnimJoint DEF='hanim_l_carpometacarpal_4' name='l_carpometacarpal_4' center='0.1956 0.8019 -0.0794'>
+                                                 <HAnimJoint DEF='hanim_l_metacarpophalangeal_4' name='l_metacarpophalangeal_4' center='0.1956 0.7815 -0.0794'>
+                                                   <HAnimJoint DEF='hanim_l_carpal_proximal_interphalangeal_4' name='l_carpal_proximal_interphalangeal_4' center='0.1973 0.7287 -0.0777'>
+                                                     <HAnimJoint DEF='hanim_l_carpal_distal_interphalangeal_4' name='l_carpal_distal_interphalangeal_4' center='0.1983 0.7045 -0.0767'>
+                                                     </HAnimJoint>
+                                                   </HAnimJoint>
+                                                 </HAnimJoint>
+                                               </HAnimJoint>
+                                               <HAnimJoint DEF='hanim_l_carpometacarpal_5' name='l_carpometacarpal_5' center='0.1925 0.8066 -0.1036'>
+                                                 <HAnimJoint DEF='hanim_l_metacarpophalangeal_5' name='l_metacarpophalangeal_5' center='0.1925 0.7866 -0.1036'>
+                                                   <HAnimJoint DEF='hanim_l_carpal_proximal_interphalangeal_5' name='l_carpal_proximal_interphalangeal_5' center='0.1938 0.7452 -0.1024'>
+                                                     <HAnimJoint DEF='hanim_l_carpal_distal_interphalangeal_5' name='l_carpal_distal_interphalangeal_5' center='0.1948 0.7277 -0.1017'>
+                                                     </HAnimJoint>
+                                                   </HAnimJoint>
+                                                 </HAnimJoint>
+                                               </HAnimJoint>
+                                             </HAnimJoint>
+                                           </HAnimJoint>
+                                         </HAnimJoint>
+                                       </HAnimJoint>
+                                     </HAnimJoint>
+                                   </HAnimJoint>
+                                   <HAnimJoint DEF='hanim_r_sternoclavicular' name='r_sternoclavicular' center='-0.0694 1.4600 -0.0330'>
+                                     <HAnimJoint DEF='hanim_r_acromioclavicular' name='r_acromioclavicular' center='-0.0836 1.4281 -0.0401'>
+                                       <HAnimJoint DEF='hanim_r_shoulder' name='r_shoulder' center='-0.1907 1.4407 -0.0325'>
+                                         <HAnimJoint DEF='hanim_r_elbow' name='r_elbow' center='-0.1949 1.1388 -0.0620'>
+                                           <HAnimJoint DEF='hanim_r_radiocarpal' name='r_radiocarpal' center='-0.1959 0.8694 -0.0521'>
+                                             <HAnimJoint DEF='hanim_r_midcarpal_1' name='r_midcarpal_1' center='0 1 0'>
+                                               <HAnimJoint DEF='hanim_r_carpometacarpal_1' name='r_carpometacarpal_1' center='-0.1899 0.8502 -0.0473'>
+                                                 <HAnimJoint DEF='hanim_r_metacarpophalangeal_1' name='r_metacarpophalangeal_1' center='-0.1874 0.8256 0.0306'>
+                                                   <HAnimJoint DEF='hanim_r_carpal_interphalangeal_1' name='r_carpal_interphalangeal_1' center='-0.1864 0.8190 0.0506'>
+                                                   </HAnimJoint>
+                                                 </HAnimJoint>
+                                               </HAnimJoint>
+                                             </HAnimJoint>
+                                             <HAnimJoint DEF='hanim_r_midcarpal_2' name='r_midcarpal_2' center='0 1 0'>
+                                               <HAnimJoint DEF='hanim_r_carpometacarpal_2' name='r_carpometacarpal_2' center='-0.1961 0.8055 -0.0218'>
+                                                 <HAnimJoint DEF='hanim_r_metacarpophalangeal_2' name='r_metacarpophalangeal_2' center='-0.1961 0.7846 -0.0218'>
+                                                   <HAnimJoint DEF='hanim_r_carpal_proximal_interphalangeal_2' name='r_carpal_proximal_interphalangeal_2' center='-0.1954 0.7393 -0.0185'>
+                                                     <HAnimJoint DEF='hanim_r_carpal_distal_interphalangeal_2' name='r_carpal_distal_interphalangeal_2' center='-0.1945 0.7169 -0.0173'>
+                                                     </HAnimJoint>
+                                                   </HAnimJoint>
+                                                 </HAnimJoint>
+                                               </HAnimJoint>
+                                             </HAnimJoint>
+                                             <HAnimJoint DEF='hanim_r_midcarpal_3' name='r_midcarpal_3' center='0 1 0'>
+                                               <HAnimJoint DEF='hanim_r_carpometacarpal_3' name='r_carpometacarpal_3' center='-0.1972 0.8060 -0.0468'>
+                                                 <HAnimJoint DEF='hanim_r_metacarpophalangeal_3' name='r_metacarpophalangeal_3' center='-0.1972 0.7849 -0.0468'>
+                                                   <HAnimJoint DEF='hanim_r_carpal_proximal_interphalangeal_3' name='r_carpal_proximal_interphalangeal_3' center='-0.1950 0.7304 -0.0441'>
+                                                     <HAnimJoint DEF='hanim_r_carpal_distal_interphalangeal_3' name='r_carpal_distal_interphalangeal_3' center='-0.1939 0.7042 -0.0432'>
+                                                     </HAnimJoint>
+                                                   </HAnimJoint>
+                                                 </HAnimJoint>
+                                               </HAnimJoint>
+                                             </HAnimJoint>
+                                             <HAnimJoint DEF='hanim_r_midcarpal_4_5' name='r_midcarpal_4_5' center='0 1 0'>
+                                               <HAnimJoint DEF='hanim_r_carpometacarpal_4' name='r_carpometacarpal_4' center='-0.1951 0.8049 -0.0732'>
+                                                 <HAnimJoint DEF='hanim_r_metacarpophalangeal_4' name='r_metacarpophalangeal_4' center='-0.1951 0.7845 -0.0732'>
+                                                   <HAnimJoint DEF='hanim_r_carpal_proximal_interphalangeal_4' name='r_carpal_proximal_interphalangeal_4' center='-0.1920 0.7318 -0.0716'>
+                                                     <HAnimJoint DEF='hanim_r_carpal_distal_interphalangeal_4' name='r_carpal_distal_interphalangeal_4' center='-0.1908 0.7077 -0.0706'>
+                                                     </HAnimJoint>
+                                                   </HAnimJoint>
+                                                 </HAnimJoint>
+                                               </HAnimJoint>
+                                               <HAnimJoint DEF='hanim_r_carpometacarpal_5' name='r_carpometacarpal_5' center='-0.1926 0.8096 -0.0975'>
+                                                 <HAnimJoint DEF='hanim_r_metacarpophalangeal_5' name='r_metacarpophalangeal_5' center='-0.1926 0.7896 -0.0975'>
+                                                   <HAnimJoint DEF='hanim_r_carpal_proximal_interphalangeal_5' name='r_carpal_proximal_interphalangeal_5' center='-0.1902 0.7483 -0.0963'>
+                                                     <HAnimJoint DEF='hanim_r_carpal_distal_interphalangeal_5' name='r_carpal_distal_interphalangeal_5' center='-0.1908 0.7540 -0.0960'>
+                                                     </HAnimJoint>
+                                                   </HAnimJoint>
+                                                 </HAnimJoint>
+                                               </HAnimJoint>
+                                             </HAnimJoint>
+                                           </HAnimJoint>
+                                         </HAnimJoint>
+                                       </HAnimJoint>
+                                     </HAnimJoint>
+                                   </HAnimJoint>
+                                 </HAnimJoint>
+                               </HAnimJoint>
+                             </HAnimJoint>
+                           </HAnimJoint>
+                         </HAnimJoint>
+                       </HAnimJoint>
+                     </HAnimJoint>
+                   </HAnimJoint>
+                 </HAnimJoint>
+               </HAnimJoint>
+             </HAnimJoint>
+           </HAnimJoint>
+         </HAnimJoint>
+       </HAnimJoint>
+     </HAnimJoint>
+   </HAnimJoint>
+  </HAnimJoint>
+</HAnimJoint>
+<HAnimJoint USE='hanim_humanoid_root' containerField='joints'/>
+<HAnimJoint USE='hanim_sacroiliac' containerField='joints'/>
+<HAnimJoint USE='hanim_l_hip' containerField='joints'/>
+<HAnimJoint USE='hanim_l_knee' containerField='joints'/>
+<HAnimJoint USE='hanim_l_talocrural' containerField='joints'/>
+<HAnimJoint USE='hanim_l_talocalcaneonavicular' containerField='joints'/>
+<HAnimJoint USE='hanim_l_cuneonavicular_1' containerField='joints'/>
+<HAnimJoint USE='hanim_l_tarsometatarsal_1' containerField='joints'/>
+<HAnimJoint USE='hanim_l_metatarsophalangeal_1' containerField='joints'/>
+<HAnimJoint USE='hanim_l_tarsal_interphalangeal_1' containerField='joints'/>
+<HAnimJoint USE='hanim_l_cuneonavicular_2' containerField='joints'/>
+<HAnimJoint USE='hanim_l_tarsometatarsal_2' containerField='joints'/>
+<HAnimJoint USE='hanim_l_metatarsophalangeal_2' containerField='joints'/>
+<HAnimJoint USE='hanim_l_tarsal_proximal_interphalangeal_2' containerField='joints'/>
+<HAnimJoint USE='hanim_l_tarsal_distal_interphalangeal_2' containerField='joints'/>
+<HAnimJoint USE='hanim_l_cuneonavicular_3' containerField='joints'/>
+<HAnimJoint USE='hanim_l_tarsometatarsal_3' containerField='joints'/>
+<HAnimJoint USE='hanim_l_metatarsophalangeal_3' containerField='joints'/>
+<HAnimJoint USE='hanim_l_tarsal_proximal_interphalangeal_3' containerField='joints'/>
+<HAnimJoint USE='hanim_l_tarsal_distal_interphalangeal_3' containerField='joints'/>
+<HAnimJoint USE='hanim_l_calcaneocuboid' containerField='joints'/>
+<HAnimJoint USE='hanim_l_transversetarsal' containerField='joints'/>
+<HAnimJoint USE='hanim_l_tarsometatarsal_4' containerField='joints'/>
+<HAnimJoint USE='hanim_l_metatarsophalangeal_4' containerField='joints'/>
+<HAnimJoint USE='hanim_l_tarsal_proximal_interphalangeal_4' containerField='joints'/>
+<HAnimJoint USE='hanim_l_tarsal_distal_interphalangeal_4' containerField='joints'/>
+<HAnimJoint USE='hanim_l_tarsometatarsal_5' containerField='joints'/>
+<HAnimJoint USE='hanim_l_metatarsophalangeal_5' containerField='joints'/>
+<HAnimJoint USE='hanim_l_tarsal_proximal_interphalangeal_5' containerField='joints'/>
+<HAnimJoint USE='hanim_l_tarsal_distal_interphalangeal_5' containerField='joints'/>
+<HAnimJoint USE='hanim_r_hip' containerField='joints'/>
+<HAnimJoint USE='hanim_r_knee' containerField='joints'/>
+<HAnimJoint USE='hanim_r_talocrural' containerField='joints'/>
+<HAnimJoint USE='hanim_r_talocalcaneonavicular' containerField='joints'/>
+<HAnimJoint USE='hanim_r_cuneonavicular_1' containerField='joints'/>
+<HAnimJoint USE='hanim_r_tarsometatarsal_1' containerField='joints'/>
+<HAnimJoint USE='hanim_r_metatarsophalangeal_1' containerField='joints'/>
+<HAnimJoint USE='hanim_r_tarsal_interphalangeal_1' containerField='joints'/>
+<HAnimJoint USE='hanim_r_cuneonavicular_2' containerField='joints'/>
+<HAnimJoint USE='hanim_r_tarsometatarsal_2' containerField='joints'/>
+<HAnimJoint USE='hanim_r_metatarsophalangeal_2' containerField='joints'/>
+<HAnimJoint USE='hanim_r_tarsal_proximal_interphalangeal_2' containerField='joints'/>
+<HAnimJoint USE='hanim_r_tarsal_distal_interphalangeal_2' containerField='joints'/>
+<HAnimJoint USE='hanim_r_cuneonavicular_3' containerField='joints'/>
+<HAnimJoint USE='hanim_r_tarsometatarsal_3' containerField='joints'/>
+<HAnimJoint USE='hanim_r_metatarsophalangeal_3' containerField='joints'/>
+<HAnimJoint USE='hanim_r_tarsal_proximal_interphalangeal_3' containerField='joints'/>
+<HAnimJoint USE='hanim_r_tarsal_distal_interphalangeal_3' containerField='joints'/>
+<HAnimJoint USE='hanim_r_calcaneocuboid' containerField='joints'/>
+<HAnimJoint USE='hanim_r_transversetarsal' containerField='joints'/>
+<HAnimJoint USE='hanim_r_tarsometatarsal_4' containerField='joints'/>
+<HAnimJoint USE='hanim_r_metatarsophalangeal_4' containerField='joints'/>
+<HAnimJoint USE='hanim_r_tarsal_proximal_interphalangeal_4' containerField='joints'/>
+<HAnimJoint USE='hanim_r_tarsal_distal_interphalangeal_4' containerField='joints'/>
+<HAnimJoint USE='hanim_r_tarsometatarsal_5' containerField='joints'/>
+<HAnimJoint USE='hanim_r_metatarsophalangeal_5' containerField='joints'/>
+<HAnimJoint USE='hanim_r_tarsal_proximal_interphalangeal_5' containerField='joints'/>
+<HAnimJoint USE='hanim_r_tarsal_distal_interphalangeal_5' containerField='joints'/>
+<HAnimJoint USE='hanim_vl5' containerField='joints'/>
+<HAnimJoint USE='hanim_vl4' containerField='joints'/>
+<HAnimJoint USE='hanim_vl3' containerField='joints'/>
+<HAnimJoint USE='hanim_vl2' containerField='joints'/>
+<HAnimJoint USE='hanim_vl1' containerField='joints'/>
+<HAnimJoint USE='hanim_vt12' containerField='joints'/>
+<HAnimJoint USE='hanim_vt11' containerField='joints'/>
+<HAnimJoint USE='hanim_vt10' containerField='joints'/>
+<HAnimJoint USE='hanim_vt9' containerField='joints'/>
+<HAnimJoint USE='hanim_vt8' containerField='joints'/>
+<HAnimJoint USE='hanim_vt7' containerField='joints'/>
+<HAnimJoint USE='hanim_vt6' containerField='joints'/>
+<HAnimJoint USE='hanim_vt5' containerField='joints'/>
+<HAnimJoint USE='hanim_vt4' containerField='joints'/>
+<HAnimJoint USE='hanim_vt3' containerField='joints'/>
+<HAnimJoint USE='hanim_vt2' containerField='joints'/>
+<HAnimJoint USE='hanim_vt1' containerField='joints'/>
+<HAnimJoint USE='hanim_vc7' containerField='joints'/>
+<HAnimJoint USE='hanim_vc6' containerField='joints'/>
+<HAnimJoint USE='hanim_vc5' containerField='joints'/>
+<HAnimJoint USE='hanim_vc4' containerField='joints'/>
+<HAnimJoint USE='hanim_vc3' containerField='joints'/>
+<HAnimJoint USE='hanim_vc2' containerField='joints'/>
+<HAnimJoint USE='hanim_vc1' containerField='joints'/>
+<HAnimJoint USE='hanim_skullbase' containerField='joints'/>
+<HAnimJoint USE='hanim_l_eyelid_joint' containerField='joints'/>
+<HAnimJoint USE='hanim_r_eyelid_joint' containerField='joints'/>
+<HAnimJoint USE='hanim_l_eyeball_joint' containerField='joints'/>
+<HAnimJoint USE='hanim_r_eyeball_joint' containerField='joints'/>
+<HAnimJoint USE='hanim_l_eyebrow_joint' containerField='joints'/>
+<HAnimJoint USE='hanim_r_eyebrow_joint' containerField='joints'/>
+<HAnimJoint USE='hanim_temporomandibular' containerField='joints'/>
+<HAnimJoint USE='hanim_l_sternoclavicular' containerField='joints'/>
+<HAnimJoint USE='hanim_l_acromioclavicular' containerField='joints'/>
+<HAnimJoint USE='hanim_l_shoulder' containerField='joints'/>
+<HAnimJoint USE='hanim_l_elbow' containerField='joints'/>
+<HAnimJoint USE='hanim_l_radiocarpal' containerField='joints'/>
+<HAnimJoint USE='hanim_l_midcarpal_1' containerField='joints'/>
+<HAnimJoint USE='hanim_l_carpometacarpal_1' containerField='joints'/>
+<HAnimJoint USE='hanim_l_metacarpophalangeal_1' containerField='joints'/>
+<HAnimJoint USE='hanim_l_carpal_interphalangeal_1' containerField='joints'/>
+<HAnimJoint USE='hanim_l_midcarpal_2' containerField='joints'/>
+<HAnimJoint USE='hanim_l_carpometacarpal_2' containerField='joints'/>
+<HAnimJoint USE='hanim_l_metacarpophalangeal_2' containerField='joints'/>
+<HAnimJoint USE='hanim_l_carpal_proximal_interphalangeal_2' containerField='joints'/>
+<HAnimJoint USE='hanim_l_carpal_distal_interphalangeal_2' containerField='joints'/>
+<HAnimJoint USE='hanim_l_midcarpal_3' containerField='joints'/>
+<HAnimJoint USE='hanim_l_carpometacarpal_3' containerField='joints'/>
+<HAnimJoint USE='hanim_l_metacarpophalangeal_3' containerField='joints'/>
+<HAnimJoint USE='hanim_l_carpal_proximal_interphalangeal_3' containerField='joints'/>
+<HAnimJoint USE='hanim_l_carpal_distal_interphalangeal_3' containerField='joints'/>
+<HAnimJoint USE='hanim_l_midcarpal_4_5' containerField='joints'/>
+<HAnimJoint USE='hanim_l_carpometacarpal_4' containerField='joints'/>
+<HAnimJoint USE='hanim_l_metacarpophalangeal_4' containerField='joints'/>
+<HAnimJoint USE='hanim_l_carpal_proximal_interphalangeal_4' containerField='joints'/>
+<HAnimJoint USE='hanim_l_carpal_distal_interphalangeal_4' containerField='joints'/>
+<HAnimJoint USE='hanim_l_carpometacarpal_5' containerField='joints'/>
+<HAnimJoint USE='hanim_l_metacarpophalangeal_5' containerField='joints'/>
+<HAnimJoint USE='hanim_l_carpal_proximal_interphalangeal_5' containerField='joints'/>
+<HAnimJoint USE='hanim_l_carpal_distal_interphalangeal_5' containerField='joints'/>
+<HAnimJoint USE='hanim_r_sternoclavicular' containerField='joints'/>
+<HAnimJoint USE='hanim_r_acromioclavicular' containerField='joints'/>
+<HAnimJoint USE='hanim_r_shoulder' containerField='joints'/>
+<HAnimJoint USE='hanim_r_elbow' containerField='joints'/>
+<HAnimJoint USE='hanim_r_radiocarpal' containerField='joints'/>
+<HAnimJoint USE='hanim_r_midcarpal_1' containerField='joints'/>
+<HAnimJoint USE='hanim_r_carpometacarpal_1' containerField='joints'/>
+<HAnimJoint USE='hanim_r_metacarpophalangeal_1' containerField='joints'/>
+<HAnimJoint USE='hanim_r_carpal_interphalangeal_1' containerField='joints'/>
+<HAnimJoint USE='hanim_r_midcarpal_2' containerField='joints'/>
+<HAnimJoint USE='hanim_r_carpometacarpal_2' containerField='joints'/>
+<HAnimJoint USE='hanim_r_metacarpophalangeal_2' containerField='joints'/>
+<HAnimJoint USE='hanim_r_carpal_proximal_interphalangeal_2' containerField='joints'/>
+<HAnimJoint USE='hanim_r_carpal_distal_interphalangeal_2' containerField='joints'/>
+<HAnimJoint USE='hanim_r_midcarpal_3' containerField='joints'/>
+<HAnimJoint USE='hanim_r_carpometacarpal_3' containerField='joints'/>
+<HAnimJoint USE='hanim_r_metacarpophalangeal_3' containerField='joints'/>
+<HAnimJoint USE='hanim_r_carpal_proximal_interphalangeal_3' containerField='joints'/>
+<HAnimJoint USE='hanim_r_carpal_distal_interphalangeal_3' containerField='joints'/>
+<HAnimJoint USE='hanim_r_midcarpal_4_5' containerField='joints'/>
+<HAnimJoint USE='hanim_r_carpometacarpal_4' containerField='joints'/>
+<HAnimJoint USE='hanim_r_metacarpophalangeal_4' containerField='joints'/>
+<HAnimJoint USE='hanim_r_carpal_proximal_interphalangeal_4' containerField='joints'/>
+<HAnimJoint USE='hanim_r_carpal_distal_interphalangeal_4' containerField='joints'/>
+<HAnimJoint USE='hanim_r_carpometacarpal_5' containerField='joints'/>
+<HAnimJoint USE='hanim_r_metacarpophalangeal_5' containerField='joints'/>
+<HAnimJoint USE='hanim_r_carpal_proximal_interphalangeal_5' containerField='joints'/>
+<HAnimJoint USE='hanim_r_carpal_distal_interphalangeal_5' containerField='joints'/>
+</HAnimHumanoid>
+</Scene>
+</X3D>

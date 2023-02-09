@@ -1320,7 +1320,6 @@ Invocation:
     <xsl:param name="enumerationsType"/>
     <xsl:param name="columnWidth" select="round(40)"/>
     
-    <xsl:text>       </xsl:text>
     <xsl:value-of select="$tableTitle"/>
     <xsl:text>&#10;</xsl:text>
     <xsl:text>&#10;</xsl:text>

@@ -21,24 +21,24 @@ AudioClip(description="testing", url=["sound/saxophone.mp3","https://x3dgraphics
 Sound(location=((0,1.6,0)), 
 source=
 MovieTexture(description="testing", url=["bogus.mpg","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/bogus.mpg"])),
-SpatialSound(children=[
-Analyser(children=[
-StreamAudioDestination(children=[
-BiquadFilter(children=[
-ChannelMerger(children=[
-ChannelSelector(children=[
-ChannelSplitter(children=[
-Convolver(children=[
-Delay(children=[
-DynamicsCompressor(children=[
-Gain(children=[
-StreamAudioDestination(children=[
-WaveShaper(children=[
+SpatialSound(distanceModel="INVERSE", children=[
+Analyser(channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
+StreamAudioDestination(channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
+BiquadFilter(channelCountMode="MAX", channelInterpretation="SPEAKERS", type="LOWPASS", children=[
+ChannelMerger(channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
+ChannelSelector(channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
+ChannelSplitter(channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
+Convolver(channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
+Delay(channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
+DynamicsCompressor(channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
+Gain(channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
+StreamAudioDestination(channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
+WaveShaper(channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
 #The following X3DSoundSourceNode nodes have no audio-graph children
 
-BufferAudioSource(),
+BufferAudioSource(channelCountMode="MAX", channelInterpretation="SPEAKERS"),
 ListenerPointSource(),
 MicrophoneSource(),
 OscillatorSource(frequency=440.0),
-StreamAudioSource(),])])])])])])])])])])])])])]))
+StreamAudioSource(channelCountMode="MAX", channelInterpretation="SPEAKERS"),])])])])])])])])])])])])])]))
 .XML())

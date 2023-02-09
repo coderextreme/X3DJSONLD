@@ -4,7 +4,7 @@
 #define WINAPI
 #define AFX_EXT_CLASS
 #define EXPORT32
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Concretes.h"
+#include "C:/x3d-code/www.web3d.org/x3d/stylesheets/cpp/concretes.h"
 int main(int argc, char ** argv) {
 CX3DScene m_pScene;
 CBrowser browser = X3D.getBrowser();
@@ -104,20 +104,48 @@ Sound20->setSource(*MovieTexture21);
 group->addChildren(*Sound20);
 
 CSpatialSound* SpatialSound22 = (CSpatialSound *)(m_pScene.createNode("SpatialSound"));
+SpatialSound22->setDistanceModel("INVERSE");
 CAnalyser* Analyser23 = (CAnalyser *)(m_pScene.createNode("Analyser"));
+Analyser23->setChannelCountMode("MAX");
+Analyser23->setChannelInterpretation("SPEAKERS");
 CStreamAudioDestination* StreamAudioDestination24 = (CStreamAudioDestination *)(m_pScene.createNode("StreamAudioDestination"));
+StreamAudioDestination24->setChannelCountMode("MAX");
+StreamAudioDestination24->setChannelInterpretation("SPEAKERS");
 CBiquadFilter* BiquadFilter25 = (CBiquadFilter *)(m_pScene.createNode("BiquadFilter"));
+BiquadFilter25->setChannelCountMode("MAX");
+BiquadFilter25->setChannelInterpretation("SPEAKERS");
+BiquadFilter25->setType("LOWPASS");
 CChannelMerger* ChannelMerger26 = (CChannelMerger *)(m_pScene.createNode("ChannelMerger"));
+ChannelMerger26->setChannelCountMode("MAX");
+ChannelMerger26->setChannelInterpretation("SPEAKERS");
 CChannelSelector* ChannelSelector27 = (CChannelSelector *)(m_pScene.createNode("ChannelSelector"));
+ChannelSelector27->setChannelCountMode("MAX");
+ChannelSelector27->setChannelInterpretation("SPEAKERS");
 CChannelSplitter* ChannelSplitter28 = (CChannelSplitter *)(m_pScene.createNode("ChannelSplitter"));
+ChannelSplitter28->setChannelCountMode("MAX");
+ChannelSplitter28->setChannelInterpretation("SPEAKERS");
 CConvolver* Convolver29 = (CConvolver *)(m_pScene.createNode("Convolver"));
+Convolver29->setChannelCountMode("MAX");
+Convolver29->setChannelInterpretation("SPEAKERS");
 CDelay* Delay30 = (CDelay *)(m_pScene.createNode("Delay"));
+Delay30->setChannelCountMode("MAX");
+Delay30->setChannelInterpretation("SPEAKERS");
 CDynamicsCompressor* DynamicsCompressor31 = (CDynamicsCompressor *)(m_pScene.createNode("DynamicsCompressor"));
+DynamicsCompressor31->setChannelCountMode("MAX");
+DynamicsCompressor31->setChannelInterpretation("SPEAKERS");
 CGain* Gain32 = (CGain *)(m_pScene.createNode("Gain"));
+Gain32->setChannelCountMode("MAX");
+Gain32->setChannelInterpretation("SPEAKERS");
 CStreamAudioDestination* StreamAudioDestination33 = (CStreamAudioDestination *)(m_pScene.createNode("StreamAudioDestination"));
+StreamAudioDestination33->setChannelCountMode("MAX");
+StreamAudioDestination33->setChannelInterpretation("SPEAKERS");
 CWaveShaper* WaveShaper34 = (CWaveShaper *)(m_pScene.createNode("WaveShaper"));
+WaveShaper34->setChannelCountMode("MAX");
+WaveShaper34->setChannelInterpretation("SPEAKERS");
 //The following X3DSoundSourceNode nodes have no audio-graph children
 CBufferAudioSource* BufferAudioSource35 = (CBufferAudioSource *)(m_pScene.createNode("BufferAudioSource"));
+BufferAudioSource35->setChannelCountMode("MAX");
+BufferAudioSource35->setChannelInterpretation("SPEAKERS");
 WaveShaper34->addChildren(*BufferAudioSource35);
 
 CListenerPointSource* ListenerPointSource36 = (CListenerPointSource *)(m_pScene.createNode("ListenerPointSource"));
@@ -131,6 +159,8 @@ OscillatorSource38->setFrequency(440);
 WaveShaper34->addChildren(*OscillatorSource38);
 
 CStreamAudioSource* StreamAudioSource39 = (CStreamAudioSource *)(m_pScene.createNode("StreamAudioSource"));
+StreamAudioSource39->setChannelCountMode("MAX");
+StreamAudioSource39->setChannelInterpretation("SPEAKERS");
 WaveShaper34->addChildren(*StreamAudioSource39);
 
 StreamAudioDestination33->addChildren(*WaveShaper34);

@@ -49,22 +49,22 @@ Material(diffuseColor=((0.1,0.1,0.1)), shininess=0.8, specularColor=((0.5,0.6,0.
 geometry=
 Cylinder(radius=500))]),
 ListenerPointSource(trackCurrentView=True),
-StreamAudioDestination(children=[
-DynamicsCompressor(children=[
-Gain(children=[
-SpatialSound(DEF="Audio1", children=[
-Gain(children=[
-Analyser(children=[
-BiquadFilter(detune=50.0, frequency=600, qualityFactor=30.0, type="allpass", children=[
+StreamAudioDestination(channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
+DynamicsCompressor(channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
+Gain(channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
+SpatialSound(DEF="Audio1", distanceModel="INVERSE", children=[
+Gain(channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
+Analyser(channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
+BiquadFilter(detune=50.0, frequency=600, qualityFactor=30.0, type="allpass", channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
 AudioClip(description="Techno beat", loop=True, url=["sound/techno_beat.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/techno_beat.mp3"])])])])]),
-SpatialSound(DEF="Audio2", children=[
-Gain(children=[
-Analyser(children=[
-BiquadFilter(detune=15.0, frequency=600, qualityFactor=15.0, type="allpass", children=[
+SpatialSound(DEF="Audio2", distanceModel="INVERSE", children=[
+Gain(channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
+Analyser(channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
+BiquadFilter(detune=15.0, frequency=600, qualityFactor=15.0, type="allpass", channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
 AudioClip(description="Simple beat", loop=True, url=["sound/beat.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/beat.mp3"])])])])]),
-SpatialSound(DEF="Audio3", children=[
-Gain(children=[
-Analyser(children=[
-BiquadFilter(frequency=1000, qualityFactor=0, type="allpass", children=[
+SpatialSound(DEF="Audio3", distanceModel="INVERSE", children=[
+Gain(channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
+Analyser(channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
+BiquadFilter(frequency=1000, qualityFactor=0, type="allpass", channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
 AudioClip(description="Wobble loop", loop=True, url=["sound/wobble_loop.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/wobble_loop.mp3"])])])])])])])])]))
 .XML())

@@ -200,8 +200,10 @@ POSSIBILITY OF SUCH DAMAGE.
         </xsl:if>
                     
         <!-- header -->
-        <!-- https://stackoverflow.com/questions/4666523/xhtml-strict-1-0-target-blank-not-valid -->
-        <xsl:text disable-output-escaping="yes">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</xsl:text>
+        <!-- https://stackoverflow.com/questions/4666523/xhtml-strict-1-0-target-blank-not-valid
+        <xsl:text disable-output-escaping="yes">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</xsl:text> -->
+        <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Quirks_Mode_and_Standards_Mode -->
+        <xsl:text disable-output-escaping="yes">&lt;!DOCTYPE html&gt;</xsl:text>
         <xsl:text>&#10;</xsl:text>
 
 <!-- special player customization in head -->
@@ -238,7 +240,8 @@ POSSIBILITY OF SUCH DAMAGE.
                     <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge" />
                 </xsl:if>
                 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-            <!-- TD <meta charset="utf-8"/> -->
+                <!-- TODO reference; can't have both
+                <meta charset="UTF-8"/> -->
                 <meta name="generator" content="https://www.web3d.org/x3d/stylesheets/X3dToX3domX_ITE.xslt" />
 
               <!--               Getting started with X3DOM: https://doc.x3dom.org/gettingStarted -->
@@ -519,19 +522,19 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                                         </xsl:attribute>
                                         <xsl:text>X_ITE X3D Player</xsl:text>
                                     </xsl:element>
-                                    <xsl:text disable-output-escaping="yes">&amp;nbsp;</xsl:text>
+                                    <xsl:text disable-output-escaping="yes">&#160;<!-- nbsp; --></xsl:text>
                                 </span>
                            </td>
                            <td>
                                <!-- note that no . precedes class name webfont here! -->
                                <span class="webfont">
-                                   <xsl:text disable-output-escaping="yes">&amp;nbsp;</xsl:text>
+                                   <xsl:text disable-output-escaping="yes">&#160;<!-- nbsp; --></xsl:text>
                                    <xsl:choose>
                                        <xsl:when test="X3D/head/meta[@name='description']">
                                            <xsl:value-of select="X3D/head/meta[@name='description']/@content" disable-output-escaping="yes"/><!-- I18N -->
                                        </xsl:when>
                                        <xsl:otherwise>
-                                           <xsl:text disable-output-escaping="yes">&amp;nbsp;</xsl:text>
+                                           <xsl:text disable-output-escaping="yes">&#160;<!-- nbsp; --></xsl:text>
                                        </xsl:otherwise>
                                    </xsl:choose>
                                </span>
@@ -676,7 +679,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                                                 <xsl:value-of select="X3D/head/meta[@name='description']/@content" disable-output-escaping="yes"/><!-- I18N -->
                                         </xsl:when>
                                         <xsl:otherwise>
-                                            <xsl:text disable-output-escaping="yes">&amp;nbsp;</xsl:text>
+                                            <xsl:text disable-output-escaping="yes">&#160;<!-- nbsp; --></xsl:text>
                                         </xsl:otherwise>
                                     </xsl:choose>
                                 </span>
@@ -725,17 +728,17 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                 <!-- Clear CSS float property to resume expected layout behavior -->
                 <!-- vertical whitespace -->
                 <p style="clear:both;">
-                    <xsl:text disable-output-escaping="yes">&amp;nbsp;</xsl:text>
+                    <xsl:text disable-output-escaping="yes">&#160;</xsl:text>
                 </p>
                 <!-- output table of X3D scene metadata -->
                 <table style="border:0px solid; border-spacing:0px; margin:auto; margin-top:20px;margin-left:5%;">
                     <xsl:if test="//X3D/head/meta">
                         <tr style="background-color:silver; border-color:silver;">
                             <th style="text-align:right;">
-                                <xsl:text disable-output-escaping="yes">X3D&amp;nbsp;Scene </xsl:text>
+                                <xsl:text disable-output-escaping="yes">X3D&#160;Scene </xsl:text>
                             </th>
                             <th style="text-align:left;">
-                                <xsl:text disable-output-escaping="yes"> &amp;nbsp; </xsl:text>
+                                <xsl:text disable-output-escaping="yes"> &#160; </xsl:text>
                             </th>
                             <th style="text-align:left;">
                                 <xsl:text> Metadata </xsl:text>
@@ -761,7 +764,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                                     </i>
                                 </td>
                                 <td>
-									<xsl:text disable-output-escaping="yes"> &amp;nbsp; </xsl:text>
+									<xsl:text disable-output-escaping="yes"> &#160; </xsl:text>
                                 </td>
                                 <td>
                                     <!-- debug
@@ -801,7 +804,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                                     <xsl:value-of select="$attributeName"/>
                                 </td>
 								<td>
-									<xsl:text disable-output-escaping="yes"> &amp;nbsp; </xsl:text>
+									<xsl:text disable-output-escaping="yes"> &#160; </xsl:text>
 								</td>
                                 <td>
                                     <xsl:choose>
@@ -830,12 +833,12 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                         <!-- now script inserts browser information during initialization -->
                         <tr>
                             <td colspan="3">
-                                <xsl:text disable-output-escaping="yes">&amp;nbsp;</xsl:text>
+                                <xsl:text disable-output-escaping="yes">&#160;</xsl:text>
                             </td>
                         </tr>
                         <tr style="background-color:silver;border-color:silver;">
                             <th style="text-align:right;">
-                                <xsl:text disable-output-escaping="yes"> HTML&amp;nbsp;Browser </xsl:text>
+                                <xsl:text disable-output-escaping="yes"> HTML&#160;Browser </xsl:text>
                             </th>
 							<th></th>
                             <th style="text-align:left;">
@@ -1011,7 +1014,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                         </tr>
                         <tr style="text-align:center; background-color:silver;border-color:silver; padding:6px;">
                             <td colspan="3" style="cellpadding:3px">
-                                <xsl:text disable-output-escaping="yes"> &amp;nbsp;&amp;nbsp;&amp;nbsp; </xsl:text>
+                                <xsl:text disable-output-escaping="yes"> &#160;&#160;&#160; </xsl:text>
                                 <!-- anchor target attribute replaced as shown below -->
                                 <xsl:text>References: </xsl:text>
                                 <a href="https://www.x3dom.org/check"                                   onclick="target='_blank';">X3DOM browser check</a>,
@@ -1021,7 +1024,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                                 and
                                 <a href="https://www.web3d.org/x3d/content/examples/X3dResources.html"  onclick="target='_blank';">X3D Resources</a>
                                 <!-- apparently old but thorough: https://examples.x3dom.org/simpleExamples.html -->
-                                <xsl:text disable-output-escaping="yes"> &amp;nbsp;&amp;nbsp;&amp;nbsp; </xsl:text>
+                                <xsl:text disable-output-escaping="yes"> &#160;&#160;&#160; </xsl:text>
                             </td>
                         </tr>
                     </table>
