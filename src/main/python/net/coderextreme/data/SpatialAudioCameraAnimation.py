@@ -64,11 +64,11 @@ Text(string=["Saxophone"],
 fontStyle=
 FontStyle(USE="ModelFontStyle")))])])]),
 ListenerPointSource(trackCurrentView=True),
-StreamAudioDestination(children=[
-SpatialSound(DEF="Audio1", children=[
-Gain(children=[
+StreamAudioDestination(channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
+SpatialSound(DEF="Audio1", distanceModel="INVERSE", children=[
+Gain(channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
 AudioClip(description="Violin", loop=True, url=["sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"])])]),
-SpatialSound(DEF="Audio2", children=[
-Gain(children=[
+SpatialSound(DEF="Audio2", distanceModel="INVERSE", children=[
+Gain(channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
 AudioClip(description="Saxophone", loop=True, url=["sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"])])])])]))
 .XML())

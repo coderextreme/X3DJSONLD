@@ -3456,7 +3456,7 @@ POSSIBILITY OF SUCH DAMAGE.
 				($parentElementName='FillProperties' and ($attributeName='hatchStyle')) or
 				($parentElementName='FloatVertexAttribute' and $attributeName='numComponents') or
 				($parentElementName='GeneratedCubeMapTexture' and $attributeName='size') or
-                    ($parentElementName='HAnimMotion' and (($attributeName='frameCount') or ($attributeName='frameIncrement') or ($attributeName='frameIndex') or ($attributeName='startFrame') or ($attributeName='endFrame'))) or
+                    ($parentElementName='HAnimMotion' and (($attributeName='totalFrameCount') or ($attributeName='frameIncrement') or ($attributeName='frameIndex') or ($attributeName='startFrame') or ($attributeName='endFrame'))) or
                     ($parentElementName='IntegerTrigger' and $attributeName='integerKey') or
 				($parentElementName='LayerSet' and ($attributeName='activeLayer')) or
 				($parentElementName='LineProperties' and ($attributeName='linetype')) or

@@ -204,7 +204,7 @@ Recommended tool:
                         <xsl:element name="enumeration">
                             <xsl:attribute name="value" select="@value"/>
                             <xsl:variable name="aliasName" select="xs:annotation/xs:appinfo/xs:attribute[@name='alias']/@default"/>
-                            <xsl:if test="(../@base='SFInt32') and (string-length($aliasName) > 0)">
+                            <xsl:if test="(string-length($aliasName) > 0)">
                                 <xsl:attribute name="alias" select="$aliasName"/>
                             </xsl:if>
                             <!-- translate(@value,'-','') do not remove hyphens from enumerations in X3DUOM (e.g. H-Anim), that can happen in language bindings -->

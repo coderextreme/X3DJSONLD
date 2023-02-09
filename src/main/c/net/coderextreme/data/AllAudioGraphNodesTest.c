@@ -98,20 +98,48 @@ Sound20.source = MovieTexture21;
 children[3] = Sound20;
 
 SpatialSound SpatialSound22 = createNode("SpatialSound");
+SpatialSound22.distanceModel = "INVERSE";
 Analyser Analyser23 = createNode("Analyser");
+Analyser23.channelCountMode = "MAX";
+Analyser23.channelInterpretation = "SPEAKERS";
 StreamAudioDestination StreamAudioDestination24 = createNode("StreamAudioDestination");
+StreamAudioDestination24.channelCountMode = "MAX";
+StreamAudioDestination24.channelInterpretation = "SPEAKERS";
 BiquadFilter BiquadFilter25 = createNode("BiquadFilter");
+BiquadFilter25.channelCountMode = "MAX";
+BiquadFilter25.channelInterpretation = "SPEAKERS";
+BiquadFilter25.type = "LOWPASS";
 ChannelMerger ChannelMerger26 = createNode("ChannelMerger");
+ChannelMerger26.channelCountMode = "MAX";
+ChannelMerger26.channelInterpretation = "SPEAKERS";
 ChannelSelector ChannelSelector27 = createNode("ChannelSelector");
+ChannelSelector27.channelCountMode = "MAX";
+ChannelSelector27.channelInterpretation = "SPEAKERS";
 ChannelSplitter ChannelSplitter28 = createNode("ChannelSplitter");
+ChannelSplitter28.channelCountMode = "MAX";
+ChannelSplitter28.channelInterpretation = "SPEAKERS";
 Convolver Convolver29 = createNode("Convolver");
+Convolver29.channelCountMode = "MAX";
+Convolver29.channelInterpretation = "SPEAKERS";
 Delay Delay30 = createNode("Delay");
+Delay30.channelCountMode = "MAX";
+Delay30.channelInterpretation = "SPEAKERS";
 DynamicsCompressor DynamicsCompressor31 = createNode("DynamicsCompressor");
+DynamicsCompressor31.channelCountMode = "MAX";
+DynamicsCompressor31.channelInterpretation = "SPEAKERS";
 Gain Gain32 = createNode("Gain");
+Gain32.channelCountMode = "MAX";
+Gain32.channelInterpretation = "SPEAKERS";
 StreamAudioDestination StreamAudioDestination33 = createNode("StreamAudioDestination");
+StreamAudioDestination33.channelCountMode = "MAX";
+StreamAudioDestination33.channelInterpretation = "SPEAKERS";
 WaveShaper WaveShaper34 = createNode("WaveShaper");
+WaveShaper34.channelCountMode = "MAX";
+WaveShaper34.channelInterpretation = "SPEAKERS";
 //The following X3DSoundSourceNode nodes have no audio-graph children
 BufferAudioSource BufferAudioSource35 = createNode("BufferAudioSource");
+BufferAudioSource35.channelCountMode = "MAX";
+BufferAudioSource35.channelInterpretation = "SPEAKERS";
 WaveShaper34.children = new MFNode();
 
 WaveShaper34.children[0] = BufferAudioSource35;
@@ -127,6 +155,8 @@ OscillatorSource38.frequency = 440;
 WaveShaper34.children[3] = OscillatorSource38;
 
 StreamAudioSource StreamAudioSource39 = createNode("StreamAudioSource");
+StreamAudioSource39.channelCountMode = "MAX";
+StreamAudioSource39.channelInterpretation = "SPEAKERS";
 WaveShaper34.children[4] = StreamAudioSource39;
 
 StreamAudioDestination33.children = new MFNode();

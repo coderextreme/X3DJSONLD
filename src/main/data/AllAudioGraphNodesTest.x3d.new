@@ -20,11 +20,11 @@
 </Sound>
 <Sound location="0 1.6 0"><MovieTexture containerField="source" description="testing" url="&quot;bogus.mpg&quot; &quot;https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/bogus.mpg&quot;"></MovieTexture>
 </Sound>
-<SpatialSound><Analyser><StreamAudioDestination><BiquadFilter><ChannelMerger><ChannelSelector><ChannelSplitter><Convolver><Delay><DynamicsCompressor><Gain><StreamAudioDestination><WaveShaper><!--The following X3DSoundSourceNode nodes have no audio-graph children--><BufferAudioSource></BufferAudioSource>
+<SpatialSound distanceModel="INVERSE"><Analyser channelCountMode="MAX" channelInterpretation="SPEAKERS"><StreamAudioDestination channelCountMode="MAX" channelInterpretation="SPEAKERS"><BiquadFilter channelCountMode="MAX" channelInterpretation="SPEAKERS" type="LOWPASS"><ChannelMerger channelCountMode="MAX" channelInterpretation="SPEAKERS"><ChannelSelector channelCountMode="MAX" channelInterpretation="SPEAKERS"><ChannelSplitter channelCountMode="MAX" channelInterpretation="SPEAKERS"><Convolver channelCountMode="MAX" channelInterpretation="SPEAKERS"><Delay channelCountMode="MAX" channelInterpretation="SPEAKERS"><DynamicsCompressor channelCountMode="MAX" channelInterpretation="SPEAKERS"><Gain channelCountMode="MAX" channelInterpretation="SPEAKERS"><StreamAudioDestination channelCountMode="MAX" channelInterpretation="SPEAKERS"><WaveShaper channelCountMode="MAX" channelInterpretation="SPEAKERS"><!--The following X3DSoundSourceNode nodes have no audio-graph children--><BufferAudioSource channelCountMode="MAX" channelInterpretation="SPEAKERS"></BufferAudioSource>
 <ListenerPointSource></ListenerPointSource>
 <MicrophoneSource></MicrophoneSource>
 <OscillatorSource frequency="440"></OscillatorSource>
-<StreamAudioSource></StreamAudioSource>
+<StreamAudioSource channelCountMode="MAX" channelInterpretation="SPEAKERS"></StreamAudioSource>
 </WaveShaper>
 </StreamAudioDestination>
 </Gain>

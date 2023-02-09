@@ -2326,7 +2326,9 @@ EXTERNPROTO TransmitterPdu [
   <xsl:if test="(@name='identifier' and ../meta[@name='title']/@content and not(contains(@content,../meta[@name='title']/@content)))">
     <xsl:call-template name="output-warning">
       <xsl:with-param name="warningString">
-        <xsl:text disable-output-escaping="yes">&lt;meta name='identifier'/&gt; title doesn't match &lt;meta name='title' content='</xsl:text>
+        <xsl:text disable-output-escaping="yes">File name doesn't match for &lt;meta name='identifier' content='</xsl:text>
+        <xsl:value-of select="@content"/>
+        <xsl:text disable-output-escaping="yes">'/&gt; and &lt;meta name='title' content='</xsl:text>
         <xsl:value-of select="../meta[@name='title']/@content"/>
         <xsl:text>'/&gt;</xsl:text>
       </xsl:with-param>
@@ -13378,7 +13380,7 @@ EXTERNPROTO TransmitterPdu [
   <xsl:text>&#10;</xsl:text>
   <xsl:if test="($outputDiagnostics='true')">
   <xsl:message>
-    <xsl:text>[Info] </xsl:text>
+    <xsl:text>[info] </xsl:text>
     <xsl:value-of select="$infoString" disable-output-escaping="yes"/>
     
     <!-- no further output needed for X3D meta error/warning/hint, otherwise indicate location -->
@@ -13444,7 +13446,7 @@ EXTERNPROTO TransmitterPdu [
   </xsl:if>
   <xsl:if test="($outputDiagnostics='true')">
   <xsl:message>
-    <xsl:text>[Hint] </xsl:text>
+    <xsl:text>[hint] </xsl:text>
     <xsl:value-of select="$hintString" disable-output-escaping="yes"/>
     <!-- no further output needed for meta error/warning/hint, otherwise indicate location -->
     <xsl:if test="(string-length($node) > 0) and local-name()!='X3D' and (local-name()!='meta') and (local-name()!='ROUTE')">
@@ -13508,9 +13510,11 @@ EXTERNPROTO TransmitterPdu [
   </xsl:if>
   <xsl:if test="($outputDiagnostics='true')">
   <xsl:message>
+    <!--
     <xsl:if test="not(contains(normalize-space($warningString),'meta ') and (contains(normalize-space($warningString),' name=&quot;warning&quot;') or contains($warningString,$metaWarningApos)))">
-      <xsl:text>[Warning] </xsl:text>
     </xsl:if>
+    -->
+    <xsl:text>[warning] </xsl:text>
     <xsl:value-of select="$warningString" disable-output-escaping="yes"/>
     <!-- no further output needed for meta error/warning/hint, otherwise indicate location -->
     <xsl:if test="(string-length($node) > 0) and local-name()!='X3D' and (local-name()!='meta') and (local-name()!='ROUTE')">
@@ -13599,7 +13603,7 @@ EXTERNPROTO TransmitterPdu [
   <xsl:text>&#10;</xsl:text>
   <xsl:if test="($outputDiagnostics='true')">
   <xsl:message>
-    <xsl:text>[Error] </xsl:text>
+    <xsl:text>[error] </xsl:text>
     <xsl:value-of select="$errorString" disable-output-escaping="yes"/>
     <!-- no further output needed for meta error/warning/hint, otherwise indicate location -->
     <xsl:if test="(string-length($node) > 0) and local-name()!='X3D' and (local-name()!='meta') and (local-name()!='component') and (local-name()!='unit') and (local-name()!='EXPORT') and (local-name()!='IMPORT') and (local-name()!='ROUTE')">
@@ -14015,9 +14019,9 @@ EXTERNPROTO TransmitterPdu [
         <xsl:with-param name="infoString">
           <xsl:text disable-output-escaping="yes">&lt;X3D profile='</xsl:text>
           <xsl:value-of select="/X3D/@profile"/>
-          <xsl:text disable-output-escaping="yes">'&gt; differs from computed profile='</xsl:text>
+          <xsl:text disable-output-escaping="yes">'&gt; differs from profile='</xsl:text>
           <xsl:value-of select="$computedProfile"/>
-          <xsl:text>'</xsl:text>
+          <xsl:text>' computed for this model</xsl:text>
           <xsl:choose>
             <xsl:when test="//ProtoInstance and //Inline">
               <xsl:text> (although nodes contained by ProtoInstance or Inline may need the higher profile)</xsl:text>

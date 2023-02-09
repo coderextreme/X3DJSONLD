@@ -164,7 +164,7 @@ var X3D0 =  X3D(
               children_ : [
                 Inline(
                   DEF_ : SFString('CoordinateAxes'),
-                  url_ : MFString([SFString("../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d"), SFString("../../../Savage/Tools/Authoring/CoordinateAxes.x3d"), SFString("https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d"), SFString("https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d"), SFString("../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl"), SFString("../../../Savage/Tools/Authoring/CoordinateAxes.wrl"), SFString("https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl"), SFString("https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl")]))]),
+                  url_ : MFString([SFString("../data/CoordinateAxes.x3d"), SFString("../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d"), SFString("../../../Savage/Tools/Authoring/CoordinateAxes.x3d"), SFString("https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d"), SFString("https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d"), SFString("../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl"), SFString("../../../Savage/Tools/Authoring/CoordinateAxes.wrl"), SFString("https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl"), SFString("https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl")]))]),
           /*Authoring hint: these axes are aligned within local coordinate system*/
 
             Group(
@@ -346,7 +346,7 @@ var X3D0 =  X3D(
                                 ImageTexture(
                                   DEF_ : SFString('zBlueSpiralBkg2'),
                                   description_ : SFString('Blue Spiral Pattern'),
-                                  url_ : MFString([SFString("zBlueSpiralBkg2.gif"), SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif")])),
+                                  url_ : MFString([SFString("../resources/images/zBlueSpiralBkg2.gif"), SFString("zBlueSpiralBkg2.gif"), SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif")])),
                               material_ : 
                                 Material(
                                   DEF_ : SFString('SkinMaterial'),

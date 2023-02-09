@@ -30,11 +30,11 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('reference'),
-              content_ : SFString('http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d')),
+              content_ : SFString('https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d')),
 
             meta(
               name_ : SFString('reference'),
-              content_ : SFString('http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxesNSEW.x3d')),
+              content_ : SFString('https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxesNSEW.x3d')),
 
             meta(
               name_ : SFString('reference'),
@@ -46,7 +46,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('identifier'),
-              content_ : SFString('http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d')),
+              content_ : SFString('https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d')),
 
             meta(
               name_ : SFString('generator'),

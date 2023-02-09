@@ -78,33 +78,61 @@ var X3D0 =  X3D(
                   url_ : MFString([SFString("bogus.mpg"), SFString("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/bogus.mpg")]))),
 
             SpatialSound(
+              distanceModel_ : SFString('INVERSE'),
               children_ : [
                 Analyser(
+                  channelCountMode_ : SFString('MAX'),
+                  channelInterpretation_ : SFString('SPEAKERS'),
                   children_ : [
                     StreamAudioDestination(
+                      channelCountMode_ : SFString('MAX'),
+                      channelInterpretation_ : SFString('SPEAKERS'),
                       children_ : [
                         BiquadFilter(
+                          type_ : SFString("LOWPASS"),
+                          channelCountMode_ : SFString('MAX'),
+                          channelInterpretation_ : SFString('SPEAKERS'),
                           children_ : [
                             ChannelMerger(
+                              channelCountMode_ : SFString('MAX'),
+                              channelInterpretation_ : SFString('SPEAKERS'),
                               children_ : [
                                 ChannelSelector(
+                                  channelCountMode_ : SFString('MAX'),
+                                  channelInterpretation_ : SFString('SPEAKERS'),
                                   children_ : [
                                     ChannelSplitter(
+                                      channelCountMode_ : SFString('MAX'),
+                                      channelInterpretation_ : SFString('SPEAKERS'),
                                       outputs_ : 
                                         Convolver(
+                                          channelCountMode_ : SFString('MAX'),
+                                          channelInterpretation_ : SFString('SPEAKERS'),
                                           children_ : [
                                             Delay(
+                                              channelCountMode_ : SFString('MAX'),
+                                              channelInterpretation_ : SFString('SPEAKERS'),
                                               children_ : [
                                                 DynamicsCompressor(
+                                                  channelCountMode_ : SFString('MAX'),
+                                                  channelInterpretation_ : SFString('SPEAKERS'),
                                                   children_ : [
                                                     Gain(
+                                                      channelCountMode_ : SFString('MAX'),
+                                                      channelInterpretation_ : SFString('SPEAKERS'),
                                                       children_ : [
                                                         StreamAudioDestination(
+                                                          channelCountMode_ : SFString('MAX'),
+                                                          channelInterpretation_ : SFString('SPEAKERS'),
                                                           children_ : [
                                                             WaveShaper(
+                                                              channelCountMode_ : SFString('MAX'),
+                                                              channelInterpretation_ : SFString('SPEAKERS'),
                                                               /*The following X3DSoundSourceNode nodes have no audio-graph children*/
                                                               children_ : [
-                                                                BufferAudioSource(),
+                                                                BufferAudioSource(
+                                                                  channelCountMode_ : SFString('MAX'),
+                                                                  channelInterpretation_ : SFString('SPEAKERS')),
 
                                                                 ListenerPointSource(),
 
@@ -113,5 +141,7 @@ var X3D0 =  X3D(
                                                                 OscillatorSource(
                                                                   frequency_ : 440),
 
-                                                                StreamAudioSource()])])])])])]))])])])])])])]));
+                                                                StreamAudioSource(
+                                                                  channelCountMode_ : SFString('MAX'),
+                                                                  channelInterpretation_ : SFString('SPEAKERS'))])])])])])]))])])])])])])]));
 void main() { exit(0); }

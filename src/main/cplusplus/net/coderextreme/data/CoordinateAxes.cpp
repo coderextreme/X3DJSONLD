@@ -4,7 +4,7 @@
 #define WINAPI
 #define AFX_EXT_CLASS
 #define EXPORT32
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Concretes.h"
+#include "C:/x3d-code/www.web3d.org/x3d/stylesheets/cpp/concretes.h"
 int main(int argc, char ** argv) {
 CX3DScene m_pScene;
 CBrowser browser = X3D.getBrowser();
@@ -41,12 +41,12 @@ head1->addMeta(*meta6);
 
 Cmeta* meta7 = new Cmeta();
 meta7->setName("reference");
-meta7->setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d");
+meta7->setContent("https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d");
 head1->addMeta(*meta7);
 
 Cmeta* meta8 = new Cmeta();
 meta8->setName("reference");
-meta8->setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxesNSEW.x3d");
+meta8->setContent("https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxesNSEW.x3d");
 head1->addMeta(*meta8);
 
 Cmeta* meta9 = new Cmeta();
@@ -61,7 +61,7 @@ head1->addMeta(*meta10);
 
 Cmeta* meta11 = new Cmeta();
 meta11->setName("identifier");
-meta11->setContent("http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d");
+meta11->setContent("https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d");
 head1->addMeta(*meta11);
 
 Cmeta* meta12 = new Cmeta();

@@ -32,12 +32,12 @@ head1.meta[4] = meta6;
 
 let meta7 = browser.currentScene.createNode("meta");
 meta7.name = "reference";
-meta7.content = "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d";
+meta7.content = "https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d";
 head1.meta[5] = meta7;
 
 let meta8 = browser.currentScene.createNode("meta");
 meta8.name = "reference";
-meta8.content = "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxesNSEW.x3d";
+meta8.content = "https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxesNSEW.x3d";
 head1.meta[6] = meta8;
 
 let meta9 = browser.currentScene.createNode("meta");
@@ -52,7 +52,7 @@ head1.meta[8] = meta10;
 
 let meta11 = browser.currentScene.createNode("meta");
 meta11.name = "identifier";
-meta11.content = "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d";
+meta11.content = "https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d";
 head1.meta[9] = meta11;
 
 let meta12 = browser.currentScene.createNode("meta");

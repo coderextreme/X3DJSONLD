@@ -4,7 +4,7 @@
 #define WINAPI
 #define AFX_EXT_CLASS
 #define EXPORT32
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Concretes.h"
+#include "C:/x3d-code/www.web3d.org/x3d/stylesheets/cpp/concretes.h"
 int main(int argc, char ** argv) {
 CX3DScene m_pScene;
 CBrowser browser = X3D.getBrowser();
@@ -216,17 +216,30 @@ ListenerPointSource45->setTrackCurrentView(True);
 group->addChildren(*ListenerPointSource45);
 
 CStreamAudioDestination* StreamAudioDestination46 = (CStreamAudioDestination *)(m_pScene.createNode("StreamAudioDestination"));
+StreamAudioDestination46->setChannelCountMode("MAX");
+StreamAudioDestination46->setChannelInterpretation("SPEAKERS");
 CDynamicsCompressor* DynamicsCompressor47 = (CDynamicsCompressor *)(m_pScene.createNode("DynamicsCompressor"));
+DynamicsCompressor47->setChannelCountMode("MAX");
+DynamicsCompressor47->setChannelInterpretation("SPEAKERS");
 CGain* Gain48 = (CGain *)(m_pScene.createNode("Gain"));
+Gain48->setChannelCountMode("MAX");
+Gain48->setChannelInterpretation("SPEAKERS");
 CSpatialSound* SpatialSound49 = (CSpatialSound *)(m_pScene.createNode("SpatialSound"));
 SpatialSound49->setDEF("Audio1");
+SpatialSound49->setDistanceModel("INVERSE");
 CGain* Gain50 = (CGain *)(m_pScene.createNode("Gain"));
+Gain50->setChannelCountMode("MAX");
+Gain50->setChannelInterpretation("SPEAKERS");
 CAnalyser* Analyser51 = (CAnalyser *)(m_pScene.createNode("Analyser"));
+Analyser51->setChannelCountMode("MAX");
+Analyser51->setChannelInterpretation("SPEAKERS");
 CBiquadFilter* BiquadFilter52 = (CBiquadFilter *)(m_pScene.createNode("BiquadFilter"));
 BiquadFilter52->setDetune(50);
 BiquadFilter52->setFrequency(600);
 BiquadFilter52->setQualityFactor(30);
 BiquadFilter52->setType("allpass");
+BiquadFilter52->setChannelCountMode("MAX");
+BiquadFilter52->setChannelInterpretation("SPEAKERS");
 CAudioClip* AudioClip53 = (CAudioClip *)(m_pScene.createNode("AudioClip"));
 AudioClip53->setDescription("Techno beat");
 AudioClip53->setLoop(True);
@@ -243,13 +256,20 @@ Gain48->addChildren(*SpatialSound49);
 
 CSpatialSound* SpatialSound54 = (CSpatialSound *)(m_pScene.createNode("SpatialSound"));
 SpatialSound54->setDEF("Audio2");
+SpatialSound54->setDistanceModel("INVERSE");
 CGain* Gain55 = (CGain *)(m_pScene.createNode("Gain"));
+Gain55->setChannelCountMode("MAX");
+Gain55->setChannelInterpretation("SPEAKERS");
 CAnalyser* Analyser56 = (CAnalyser *)(m_pScene.createNode("Analyser"));
+Analyser56->setChannelCountMode("MAX");
+Analyser56->setChannelInterpretation("SPEAKERS");
 CBiquadFilter* BiquadFilter57 = (CBiquadFilter *)(m_pScene.createNode("BiquadFilter"));
 BiquadFilter57->setDetune(15);
 BiquadFilter57->setFrequency(600);
 BiquadFilter57->setQualityFactor(15);
 BiquadFilter57->setType("allpass");
+BiquadFilter57->setChannelCountMode("MAX");
+BiquadFilter57->setChannelInterpretation("SPEAKERS");
 CAudioClip* AudioClip58 = (CAudioClip *)(m_pScene.createNode("AudioClip"));
 AudioClip58->setDescription("Simple beat");
 AudioClip58->setLoop(True);
@@ -266,12 +286,19 @@ Gain48->addChildren(*SpatialSound54);
 
 CSpatialSound* SpatialSound59 = (CSpatialSound *)(m_pScene.createNode("SpatialSound"));
 SpatialSound59->setDEF("Audio3");
+SpatialSound59->setDistanceModel("INVERSE");
 CGain* Gain60 = (CGain *)(m_pScene.createNode("Gain"));
+Gain60->setChannelCountMode("MAX");
+Gain60->setChannelInterpretation("SPEAKERS");
 CAnalyser* Analyser61 = (CAnalyser *)(m_pScene.createNode("Analyser"));
+Analyser61->setChannelCountMode("MAX");
+Analyser61->setChannelInterpretation("SPEAKERS");
 CBiquadFilter* BiquadFilter62 = (CBiquadFilter *)(m_pScene.createNode("BiquadFilter"));
 BiquadFilter62->setFrequency(1000);
 BiquadFilter62->setQualityFactor(0);
 BiquadFilter62->setType("allpass");
+BiquadFilter62->setChannelCountMode("MAX");
+BiquadFilter62->setChannelInterpretation("SPEAKERS");
 CAudioClip* AudioClip63 = (CAudioClip *)(m_pScene.createNode("AudioClip"));
 AudioClip63->setDescription("Wobble loop");
 AudioClip63->setLoop(True);
