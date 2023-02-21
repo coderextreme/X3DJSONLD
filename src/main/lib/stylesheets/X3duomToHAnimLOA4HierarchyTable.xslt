@@ -36,18 +36,18 @@
         </xsl:message>
         -->
         
-        <xsl:text>HAnim2 LOA4 Hierarchy from X3DUOM</xsl:text>
+        <xsl:text>HAnim2 LOA4 Hierarchy from X3DUOM: Joint and Segment name pairs</xsl:text>
         <xsl:text>&#10;</xsl:text>
         <xsl:text>https://www.web3d.org/x3d/stylesheets/HAnimLOA4HierarchyTable.txt</xsl:text>
         <xsl:text>&#10;</xsl:text>
         <xsl:text>&#10;</xsl:text>
         <xsl:text>Authoritative reference: HAnim version 2, Part 1: Humanoid animation (HAnim) architecture,</xsl:text>
         <xsl:text>&#10;</xsl:text>
-        <xsl:text>  clause 4 Concepts, section 4.9.6.4 LOA‑4 hierarchy</xsl:text>
+        <xsl:text>  clause 4 Concepts, section 4.9.6.4 LOA-4 hierarchy</xsl:text>
         <xsl:text>&#10;</xsl:text>
         <xsl:text>https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#Hierarchy4</xsl:text>
         <xsl:text>&#10;</xsl:text>
-        <xsl:text>  clause 4 Concepts, Figure 4.7 — LOA‑4 joints</xsl:text>
+        <xsl:text>  clause 4 Concepts, Figure 4.7 -- LOA-4 joints</xsl:text>
         <xsl:text>&#10;</xsl:text>
         <xsl:text>https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#f-LOA4Joints</xsl:text>
         <xsl:text>&#10;</xsl:text>

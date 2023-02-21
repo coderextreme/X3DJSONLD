@@ -1,9 +1,9 @@
 // X3D JSON Prototype and Script preprocessor
 
 // set up XML DOM
-var fs = require("fs");
+import fs from 'node:fs';
 
-var X3DJSONLD = require('./X3DJSONLD.js');
+var X3DJSONLD = require('./X3DJSONLD.mjs');
 var Browser = X3DJSONLD.Browser;
 
 // Bring in prototype expander and script expander

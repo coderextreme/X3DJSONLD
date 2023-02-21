@@ -1,8 +1,8 @@
 var runsaxon = require('./allsaxon');
 var config = require('./config');
-var fs = require("fs");
+import fs from 'node:fs';
 
-function runAndSend(args, callback) {
+export function runAndSend(args, callback) {
 	console.error("calling runsaxon", args);
 	runsaxon(args);
 	while (args[0].startsWith('-')) {
@@ -39,9 +39,4 @@ function runAndSend(args, callback) {
 	}
 	*/
 	console.error("exited run and send", args);
-}
-
-
-if (typeof module === 'object')  {
-	module.exports = runAndSend;
 }

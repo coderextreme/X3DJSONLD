@@ -1,20 +1,17 @@
 "use strict";
 
 var fs = require('fs');
-var mkdirp = require('node-mkdirp');
-var mapToMethod = require('./mapToMethod.js');
 var config = require('./config.js');
+var mkdirp = require('node-mkdirp');
+var mapToMethod = require('./mapToMethod.mjs');
 var mapToMethod2 = require('./mapToMethod2.js');
-var fieldTypes = require('./fieldTypes.js');
-var X3DJSONLD = require('./X3DJSONLD.js');
+var fieldTypes = require('./fieldTypes.mjs');
+var X3DJSONLD = require('./X3DJSONLD.mjs');
 var Script = require('./Script');
-var loadValidate = require("./loadValidate.js");
+import { replaceX3DJSON,loadSchema,loadX3DJS,doValidate } from "./loadValidate.js";
 var xmldom = require('@xmldom/xmldom');
 
-var replaceX3DJSON = loadValidate.replaceX3DJSON;
-var loadSchema = loadValidate.loadSchema;
-var loadX3DJS = loadValidate.loadX3DJS;
-var doValidate = loadValidate.doValidate;
+
 var DOMImplementation = new xmldom.DOMImplementation();
 
 var LOG = Script.LOG;
@@ -34,7 +31,7 @@ for (var par in mapToMethod2) {
 }
 */
 
-function convertJSON(options) {
+export function convertJSON(options) {
 
 	var files = process.argv;
 	for (var f in files) {
@@ -95,13 +92,4 @@ function convertJSON(options) {
 			}
 		});
 	}
-}
-
-if (typeof module === 'object')  {
-	module.exports = {
-		convertJSON: convertJSON,
-		loadSchema: loadSchema,
-		loadX3DJS: loadX3DJS,
-		doValidate: doValidate
-	};
 }

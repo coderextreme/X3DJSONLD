@@ -8,7 +8,7 @@
     <meta content='Chul Hee Jung and Myeong Won Lee' name='translator'/>
     <meta content='31 March 2011' name='created'/>
     <meta content='1 November 2014' name='translated'/>
-    <meta content='23 December 2021' name='modified'/>
+    <meta content='27 January 2023' name='modified'/>
     <meta content='Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model.' name='description'/>
     <meta content='KoreanCharacter00ReadMe.txt' name='reference'/>
     <meta content='KoreanCharacterHumanMotion_Infotech2014_140706.pdf' name='reference'/>
@@ -751,7 +751,7 @@
                                               </HAnimJoint>
                                             </HAnimJoint>
                                           </HAnimJoint>
-                                          <HAnimJoint DEF='hanim_l_acromioclavicular' center='1.710 52.820 -0.612700' name='l_acromioclavicular'>
+                                          <HAnimJoint DEF='hanim_l_sternoclavicular' center='1.710 52.820 -0.612700' name='l_sternoclavicular'>
                                             <HAnimSegment DEF='hanim_l_clavicle' name='l_clavicle'>
                                               <Transform translation='1.710 52.820 -0.612700'>
                                                 <Shape>
@@ -766,7 +766,7 @@
                                                 </Shape>
                                               </Transform>
                                             </HAnimSegment>
-                                            <HAnimJoint DEF='hanim_l_sternoclavicular' center='5.464 52.060001 -0.573200' name='l_sternoclavicular'>
+                                            <HAnimJoint DEF='hanim_l_acromioclavicular' center='5.464 52.060001 -0.573200' name='l_acromioclavicular'>
                                               <HAnimSegment DEF='hanim_l_scapula' name='l_scapula'>
                                                 <Transform translation='5.464 52.060001 -0.573200'>
                                                   <Shape>
@@ -1135,7 +1135,7 @@
                                               </HAnimJoint>
                                             </HAnimJoint>
                                           </HAnimJoint>
-                                          <HAnimJoint DEF='hanim_r_acromioclavicular' center='-1.710 52.820 -0.612700' name='r_acromioclavicular'>
+                                          <HAnimJoint DEF='hanim_r_sternoclavicular' center='-1.710 52.820 -0.612700' name='r_sternoclavicular'>
                                             <HAnimSegment DEF='hanim_r_clavicle' name='r_clavicle'>
                                               <Transform translation='-1.710 52.820 -0.612700'>
                                                 <Shape>
@@ -1150,7 +1150,7 @@
                                                 </Shape>
                                               </Transform>
                                             </HAnimSegment>
-                                            <HAnimJoint DEF='hanim_r_sternoclavicular' center='-5.464 52.060001 -0.573200' name='r_sternoclavicular'>
+                                            <HAnimJoint DEF='hanim_r_acromioclavicular' center='-5.464 52.060001 -0.573200' name='r_acromioclavicular'>
                                               <HAnimSegment DEF='hanim_r_scapula' name='r_scapula'>
                                                 <Transform translation='-5.464 52.060001 -0.573200'>
                                                   <Shape>

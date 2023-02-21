@@ -6,7 +6,6 @@
     <link rel="stylesheet" type="text/css" href="https://www.x3dom.org/download/dev/x3dom.css"></link>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://www.x3dom.org/download/dev/x3dom-full.debug.js"></script>
-   <link rel="stylesheet" type="text/css" href="https://create3000.github.io/code/x_ite/latest/dist/x_ite.css"/>
 <script type="text/javascript" src="https://create3000.github.io/code/x_ite/latest/dist/x_ite.min.js"></script>
     <style type="text/css">
     x3d-canvas {
@@ -35,11 +34,10 @@
 	   </X3D>
     </x3d-canvas>
 </body>
-    <script type="text/javascript" src="../node/X3DJSONLD.js"></script>
-    <script type="text/javascript" src="../node/Script.js"></script>
-    <script type="text/javascript" src="../node/PrototypeExpander.js"></script>
-    <script type="module" src="../node/loader-bundle.js"></script>
-    <script type="text/javascript">
+    <script type="module" src="../../../dist/loader-bundle.mjs"></script>
+    <script type="module">
+    import * as X3DJSONLD from '../node/X3DJSONLD.mjs';
+    import { Scripts } from '../node/Scripts.mjs';
 // From: https://developers.google.com/web/fundamentals/getting-started/primers/promises
 function get(url) {
   // Return a new promise.
