@@ -5,13 +5,11 @@
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <link rel="stylesheet" type="text/css" href="https://www.x3dom.org/download/dev/x3dom.css">
     <script type='text/javascript' src='https://www.x3dom.org/download/dev/x3dom-full.debug.js'> </script>
-<link rel="stylesheet" type="text/css" href="https://create3000.github.io/code/x_ite/latest/dist/x_ite.css"/>
 <script type="text/javascript" src="https://create3000.github.io/code/x_ite/latest/dist/x_ite.min.js"></script>
-<!--
-<script type="text/javascript" src="https://raw.githack.com/andreasplesch/x_ite_dom/master/release/x_ite_dom.1.3.js"></script>
--->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="../node/saxon-js/SaxonJS2.js"></script>
+<!--
+    <script type="text/javascript" src="../../../node_modules/saxon-js/SaxonJS2N.js"></script>
+-->
     <script type="text/javascript">var exports = {};</script>
     <script type="text/javascript" src="https://unpkg.com/exificient.js@0.0.5/dist/exificient.js"></script>
     <style type="text/css">
@@ -424,19 +422,7 @@ Click <a onclick='updateFromPly($("#file option:selected").text());'>here</a> to
 </tr>
 </table>
 </body>
-    <script type="text/javascript" src="../node/JavaScriptSerializer.js"></script>
-    <script type="text/javascript" src="../node/DOM2JSONSerializer.js"></script>
     <script src="../node/Three2Serializer.js"></script>
-    <script type="text/javascript" src="../node/X3DJSONLD.js"></script>
-    <script type="text/javascript" src="../node/PrototypeExpander.js"></script>
-    <script type="text/javascript" src="../node/Script.js"></script>
-    <script type="text/javascript" src="../node/mapToMethod.js"></script>
-    <script type="text/javascript" src="../node/mapToMethod2.js"></script>
-    <script type="text/javascript" src="../node/fieldTypes.js"></script>
-    <script type="text/javascript" src="../node/matrix.js"></script>
-    <script type="text/javascript" src="../node/convertPlyToJson.js"></script>
-    <script type="text/javascript" src="../node/convertStlToJson.js"></script>
-    <script type="text/javascript" src="../node/convertJsonToStl.js"></script>
     <script src="../../../node_modules/three/build/three.js"></script>
     <!--
     <script type="module" src="../../../node_modules/three/examples/jsm/libs/chevrotain.module.min.js"></script>
@@ -445,10 +431,11 @@ Click <a onclick='updateFromPly($("#file option:selected").text());'>here</a> to
     <script src="../node/x3d-loader.js"></script>
     <!--
     <script type="module" src="../node/threex3dloader.mjs"></script>
-    --?
-    <script type="module" src="../node/loader-bundle.js"></script>
+    -->
+    <script type="module" src="../../../dist/loader-bundle.mjs"></script>
     <script type="text/javascript" src="../node/exi.js"></script>
-    <script type="text/javascript">
+    <script type="module">
+	    import loadJson from "../node/loadJson.mjs";
 	$(document).ready(function() {
 		loadJson('../data/flipp.json'); // does load ball.json
 	});

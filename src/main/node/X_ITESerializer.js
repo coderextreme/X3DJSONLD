@@ -3,7 +3,7 @@
 var DOUBLE_SUFFIX = '';
 var FLOAT_SUFFIX = '';
 
-function X_ITESerializer () {
+export function X_ITESerializer () {
 this.code = [];
 this.codeno = 0;
 this.precode = [];
@@ -359,8 +359,3 @@ X_ITESerializer.prototype = {
 		return str;
 	}
 };
-
-
-if (typeof module === 'object')  {
-	module.exports = X_ITESerializer;
-}

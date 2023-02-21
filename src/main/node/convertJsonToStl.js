@@ -1,6 +1,6 @@
 // import { Matrix } from "../node/matrix";
 
-function convertJsonToStl(json) {
+export function convertJsonToStl(json) {
 	var LDNodeList = [];
 	var LDNode = initializeLDNode(json, "X3D");
 	LDNodeList.push(LDNode);
@@ -13,10 +13,6 @@ function convertJsonToStl(json) {
 	} else {
 		return null;
 	}
-}
-
-if (typeof module !== 'undefined') {
-	module.exports = convertJsonToStl;
 }
 
 

@@ -1,2 +1,2 @@
-var fs = require('fs');
+import fs from 'node:fs';
 console.log(JSON.stringify(JSON.parse(fs.readFileSync(process.argv[2])), null, 2));

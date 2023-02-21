@@ -17,7 +17,7 @@ var camera = null;
 var controls = null;
 var renderer = new THREE.WebGLRenderer();
 
-function threeLoadFile(file) {
+export default function threeLoadFile(file) {
 	x3dLoader(THREE);
 	renderer.domElement.addEventListener('dblclick', null, false);
 	scene = null;
@@ -82,7 +82,3 @@ function threeLoadFile(file) {
 }
 
 threeLoadFile(file);
-
-if (typeof module === 'object')  {
-	module.exports = threeLoadFile;
-}
