@@ -1,4 +1,4 @@
-var x3dLoader = function (THREE) {
+export default var x3dLoader = function (THREE) {
 
 	THREE.X3DLoader = function (manager) {
 
@@ -66,7 +66,3 @@ var x3dLoader = function (THREE) {
 	};
 
 };
-
-if (typeof module === 'object')  {
-	module.exports = x3dLoader;
-}

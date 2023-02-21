@@ -43,7 +43,7 @@ done
 popd
 # echo running jjs
 # pushd ../nashorn
-# find ./net/x3djsonld/data -name "${X3D}.js" | xargs -L 1 -P $PROCESSORS jjs -J-Xss1g -J-Xmx4g -cp "${NASHORN_CLASSPATH}"
+# find ./net/x3djsonld/data -name "${X3D}.mjs" | xargs -L 1 -P $PROCESSORS jjs -J-Xss1g -J-Xmx4g -cp "${NASHORN_CLASSPATH}"
 # popd
 echo running python
 pushd ../python
@@ -51,7 +51,7 @@ find ./net/x3djsonld/data -name "${X3D}.py" | xargs -L 1 -P $PROCESSORS python3
 popd
 echo running node
 pushd ../node
-find ./net/x3djsonld/data -name "${X3D}.js" | xargs -L 1 -P $PROCESSORS node
+find ./net/x3djsonld/data -name "${X3D}.mjs" | xargs -L 1 -P $PROCESSORS node
 popd
 
 done

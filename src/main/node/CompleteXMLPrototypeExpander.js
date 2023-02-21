@@ -1,8 +1,8 @@
 // Complete X3D XML to X3D XML Prototype Expander
 
-var fs = require("fs");
+import fs from 'node:fs';
 
-var X3DJSONLD = require('./X3DJSONLD.js');
+var X3DJSONLD = require('./X3DJSONLD.mjs');
 var Browser = X3DJSONLD.Browser;
 
 var PROTOS = require('./PrototypeExpander')
@@ -14,15 +14,15 @@ var convertJSON = require('./convertJSON.js');
 var loadSchema = convertJSON.loadSchema;
 var doValidate = convertJSON.doValidate;
 var loadX3DJS = convertJSON.loadX3DJS;
-var DOM2JSONSerializer = require('./DOM2JSONSerializer.js');
+var DOM2JSONSerializer = require('./DOM2JSONSerializer.mjs');
 var serializer = new DOM2JSONSerializer();
 
 var Script = require('./Script');
 var LOG = Script.LOG;
 
-var mapToMethod = require('./mapToMethod.js');
+var mapToMethod = require('./mapToMethod.mjs');
 var mapToMethod2 = require('./mapToMethod2.js');
-var fieldTypes = require('./fieldTypes.js');
+var fieldTypes = require('./fieldTypes.mjs');
 
 if (typeof mapToMethod2 !== 'undefined') {
 	for (var map in mapToMethod2) {

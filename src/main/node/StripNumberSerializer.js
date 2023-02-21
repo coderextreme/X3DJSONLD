@@ -5,7 +5,7 @@ if (typeof require === 'function') {
 	var XMLSerializer = new xmldom.XMLSerializer();
 }
 
-function StripNumberSerializer() {
+export function StripNumberSerializer() {
 	var fieldTypeMapping = {};
 	var DEFMapping = {};
 	try {
@@ -46,7 +46,7 @@ StripNumberSerializer.prototype = {
 					try {
 						attrType = fieldTypes[element.nodeName][attr];
 					} catch (e) {
-						console.error("Missing", attr, "in fieldTypes.js element", element.nodeName, " = ", fieldTypes[element.nodeName], "setting to SFString");
+						console.error("Missing", attr, "in fieldTypes.mjs element", element.nodeName, " = ", fieldTypes[element.nodeName], "setting to SFString");
 					}
 
 					if (element.attributes[a].nodeValue === 'NULL' &&
@@ -211,9 +211,4 @@ StripNumberSerializer.prototype = {
 		xml += XMLSerializer.serializeToString(element);
 		return xml;
 	}
-}
-
-
-if (typeof module === 'object')  {
-	module.exports = StripNumberSerializer;
 }

@@ -1,7 +1,7 @@
 "use strict";
 
 var parseString = require('xml2js').parseString;
-var fs = require('fs');
+import fs from 'node:fs';
 
 try {
 	var xml = fs.readFileSync("X3DUnifiedObjectModel-4.0.xml");

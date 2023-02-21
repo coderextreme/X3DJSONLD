@@ -9,7 +9,7 @@ var convertJSON = require('./convertJSON.js').convertJSON;
 
 convertJSON([
 	{ 
-	serializer : './DOM2JSONSerializer.js',
+	serializer : './DOM2JSONSerializer.mjs',
 	folder : "../",
 	extension : ".json.new",
 	}

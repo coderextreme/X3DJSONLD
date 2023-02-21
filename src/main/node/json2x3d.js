@@ -5,10 +5,12 @@
 process.argv.shift();
 process.argv.shift();
 
-var convertJSON = require('./convertJSON.js').convertJSON;
+import { convertJSON } from "./convertJSON.mjs";
+
+var convertJSON = convertJSON.convertJSON;
 
 convertJSON([{ 
-	serializer : './DOMSerializer.js',
+	serializer : './DOMSerializer.mjs',
 	folder : "../",
 	extension : ".x3d.new",
 	}]);

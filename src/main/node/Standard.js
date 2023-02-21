@@ -1,5 +1,5 @@
 // I am fairly sure this file converts X3D XML to JSON but not X3D JSON (almost)
-var fs = require('fs');
+import fs from 'node:fs';
 var xml2js = require('xml2js');
 
 function handleAttribute(json, key) {

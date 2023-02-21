@@ -3,13 +3,20 @@
   "version": "10.0.0",
   "private": true,
   "main": "index.js",
+  "browser": {
+    "[module-name]": false
+  },
   "devDependencies": {
+    "ajv-json-loader": "^0.2.0",
+    "json-loader": "^0.5.7",
+    "node-loader": "^2.0.0",
+    "raw-loader": "^4.0.2",
     "webpack": "5.64.1",
     "webpack-cli": "^4.9.1"
   },
   "dependencies": {
     "@xmldom/xmldom": ">=0.8.4",
-    "ajv": "*",
+    "ajv": ">=8.12.0",
     "ajv-formats": "*",
     "ajv-i18n": "*",
     "buffer": "^6.0.3",
@@ -24,12 +31,14 @@
     "stream-http": "*",
     "three": "*",
     "url": "^0.11.0",
+    "x_ite": "*",
+    "x3dom": "*",
     "xml2js": "^0.4.23",
     "xmlhttprequest": "*",
     "xslt3": "*"
   },
   "scripts": {
-    "start": "node app.js",
+    "start": "node app.mjs",
     "postinstall": "bash build.sh",
     "buildthreex3dloader": "browserify src/main/node/threeLoadFile.js > src/main/node/bundle.js",
     "buildloader": "webpack"

@@ -1,4 +1,4 @@
-function renderX3D(THREE, x3d, scene, useImageTexture, useJson) {
+export function renderX3D(THREE, x3d, scene, useImageTexture, useJson) {
     useImageTexture = useImageTexture === false ? false : true;
     scene = scene || new THREE.Scene();
     var defines = {};
@@ -844,8 +844,4 @@ function renderX3D(THREE, x3d, scene, useImageTexture, useJson) {
 
     renderNode(getTree(x3d, useJson), scene);
 
-}
-
-if (typeof module === 'object')  {
-	module.exports = renderX3D;
 }

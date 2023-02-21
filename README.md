@@ -39,7 +39,7 @@ LD_LIBRARY_PATH=/usr/lib/jvm/java-18-openjdk-amd64/lib/server
 
 ```
 npm install
-node app.js
+node run start
 ```
 Then go to http://localhost:3000/index.html in your web browser and select a JSON file in
 the pulldown.  You can try: http://localhost:3000/X3DExamplesViewer.html

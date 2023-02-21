@@ -1,8 +1,8 @@
-import { loadSchema, doValidate, loadX3DJS } from "./loadValidate.js"
+import { loadSchema, doValidate, loadX3DJS } from "./loadValidate.mjs"
 import { convertJsonToStl } from "./convertJsonToStl.mjs";
-// import { SaxonJS } from "./saxon-js/SaxonJS2.js"
+import { SaxonJS2N } from "../../../node_modules/saxon-js/SaxonJS2N.js";
 
-var PROTOS = require('./PrototypeExpander')
+import { PROTOS } from './PrototypeExpander.mjs';
 
 var Browser = X3DJSONLD.Browser;
 //  X3DJSONLD.setProcessURLs(function() {}); // do modify URLs in GUI
@@ -38,7 +38,6 @@ var getFirstBrowserLanguage = function () {
 
 
 
-var module = {};
 // From: https://stackoverflow.com/questions/950087/how-do-i-include-a-javascript-file-in-another-javascript-file
 function loadScript(url, callback)
 {
@@ -59,10 +58,12 @@ function loadScript(url, callback)
 
 var lang = getFirstBrowserLanguage();
 
-var localize;
+export var localize = "en";
 function loadLocalize(lang) {
 	lang = lang.replace(/-.*/, "");
 	return;
+	var module = {};
+	module.exports = null;
 	loadScript("../../../node_modules/ajv-i18n/localize/"+lang+"/index.js", function() {
 		localize = module.exports;
 	});
@@ -288,7 +289,7 @@ function appendInline(element, url, xmlDoc, next) {
 				console.error(e);
 			}
 		} else {
-			console.error("Perhaps you need to include the PrototypeExpander.js?");
+			console.error("Perhaps you need to include the PrototypeExpander.mjs?");
 		}
 		// must validate here because we call an inner method.
 		loadSchema(json, url, doValidate, X3DJSONLD, function() {
@@ -544,7 +545,7 @@ function getXmlString(xml) {
 }
 
 function convertXmlToJson(xmlString, path) {
-	output = SaxonJS.transform({
+	output = SaxonJS2N.transform({
 		stylesheetLocation: "../lib/stylesheets/X3dToJson.sef.json",
 		sourceText: xmlString,
 		destination: "serialized",
@@ -609,7 +610,7 @@ function convertXmlToJson(xmlString, path) {
 		// code for regular browsers
 		if (document.implementation && document.implementation.createDocument)
 		{
-		    var xsltProcessor = Saxon.newXSLT20Processor();
+		    var xsltProcessor = SaxonJS2N.newXSLT20Processor();
 		    xsltProcessor.importStylesheet(demo.xslt);
 		    result = xsltProcessor.transformToFragment(demo.xml, document);
 		}

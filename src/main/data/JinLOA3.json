@@ -34,7 +34,7 @@
           },
           {
             "@name":"modified",
-            "@content":"23 December 2021"
+            "@content":"27 January 2023"
           },
           {
             "@name":"description",
@@ -78,7 +78,7 @@
           },
           {
             "@name":"translated",
-            "@content":"09 February 2023"
+            "@content":"20 February 2023"
           },
           {
             "@name":"generator",
@@ -3195,8 +3195,8 @@
                                                                                                                             },
                                                                                                                             { "HAnimJoint":
                                                                                                                               {
-                                                                                                                                "@name":"l_acromioclavicular",
-                                                                                                                                "@DEF":"hanim_l_acromioclavicular",
+                                                                                                                                "@name":"l_sternoclavicular",
+                                                                                                                                "@DEF":"hanim_l_sternoclavicular",
                                                                                                                                 "@center":[1.710,52.820,-0.612700],
                                                                                                                                 "@ulimit":[0,0,0],
                                                                                                                                 "@llimit":[0,0,0],
@@ -3259,8 +3259,8 @@
                                                                                                                                   },
                                                                                                                                   { "HAnimJoint":
                                                                                                                                     {
-                                                                                                                                      "@name":"l_sternoclavicular",
-                                                                                                                                      "@DEF":"hanim_l_sternoclavicular",
+                                                                                                                                      "@name":"l_acromioclavicular",
+                                                                                                                                      "@DEF":"hanim_l_acromioclavicular",
                                                                                                                                       "@center":[5.464,52.060001,-0.573200],
                                                                                                                                       "@ulimit":[0,0,0],
                                                                                                                                       "@llimit":[0,0,0],
@@ -4803,8 +4803,8 @@
                                                                                                                             },
                                                                                                                             { "HAnimJoint":
                                                                                                                               {
-                                                                                                                                "@name":"r_acromioclavicular",
-                                                                                                                                "@DEF":"hanim_r_acromioclavicular",
+                                                                                                                                "@name":"r_sternoclavicular",
+                                                                                                                                "@DEF":"hanim_r_sternoclavicular",
                                                                                                                                 "@center":[-1.710,52.820,-0.612700],
                                                                                                                                 "@ulimit":[0,0,0],
                                                                                                                                 "@llimit":[0,0,0],
@@ -4867,8 +4867,8 @@
                                                                                                                                   },
                                                                                                                                   { "HAnimJoint":
                                                                                                                                     {
-                                                                                                                                      "@name":"r_sternoclavicular",
-                                                                                                                                      "@DEF":"hanim_r_sternoclavicular",
+                                                                                                                                      "@name":"r_acromioclavicular",
+                                                                                                                                      "@DEF":"hanim_r_acromioclavicular",
                                                                                                                                       "@center":[-5.464,52.060001,-0.573200],
                                                                                                                                       "@ulimit":[0,0,0],
                                                                                                                                       "@llimit":[0,0,0],

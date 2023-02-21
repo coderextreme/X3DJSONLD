@@ -1,4 +1,4 @@
-let fs = require('fs');
+import fs from 'node:fs';
 skeleton = {}
 
 let DOM = fs.readFileSync("../__/specifications/X3dUnifiedObjectModel_4_0.json");
