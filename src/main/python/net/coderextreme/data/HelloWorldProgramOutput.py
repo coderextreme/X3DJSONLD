@@ -1,7 +1,7 @@
-'''
-x3d.py package 4.0.64.2 loaded, have fun with X3D Graphics!
-'''
+# x3d.py package 4.0.64.2 loaded, have fun with X3D Graphics!
+print("<!--")
 from x3d import *
+print("-->")
 print(
 X3D(class_="x3dModel.class", profile="Full", style_="x3dModel.style", version="4.0", 
 head=head(), 
