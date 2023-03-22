@@ -1,11 +1,10 @@
 # Usage:  python3 x3djsonld.py [ file.json ] # optional X3D JSON formatted file, assumes ../data/abox.json if not specified
-print("'''")   # comment out output created by importing x3d (see below)
+print("#", end=" ")   # comment out output created by importing x3d (see below)
 import json
 import sys
 from x3d import *
 from x3d import SFBool
 # from x3d import _X3DBoundedObject
-print("'''")   # comment out output created by importing x3d (see below)
 
 def getField(grandparent, parent):
     fieldInfo = {"fieldClass":list, "fieldType":"list", "tupleSize":1}
@@ -260,9 +259,11 @@ def parseObject(parent, data,indent):
 
 with open('HelloWorldProgramOutput.json' if len(sys.argv) == 1 else sys.argv[1], encoding="cp1252") as json_file:
     data = json.load(json_file)
+    print("print(\"<!--\")")   # comment out output created by importing x3d (see below)
     print("from x3d import *")
     # print("from x3d import SFBool")
     # print("from x3d import _X3DBoundedObject")
+    print("print(\"-->\")")   # comment out output created by importing x3d (see above)
     print("print(", end="")
     print(parseObject("X3D", data, 0))
     print(".XML())")

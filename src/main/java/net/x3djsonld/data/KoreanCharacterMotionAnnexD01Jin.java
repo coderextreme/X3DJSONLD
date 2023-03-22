@@ -356,7 +356,11 @@ public class KoreanCharacterMotionAnnexD01Jin
       .addSegments(new HAnimSegment().setUSE("hanim_r_thigh"))
       .addSegments(new HAnimSegment().setUSE("hanim_l_upperarm"))
       .addSegments(new HAnimSegment().setUSE("hanim_r_upperarm")))
-    .addChild(new HAnimMotion().setChannels("6 Xposition Yposition Zposition Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation").setEnabled(false).setFrameCount(392).setJoints("HumanoidRoot l_hip l_knee l_talocrural r_hip r_knee r_talocrural vl5 IGNORED l_shoulder l_elbow l_radiocarpal IGNORED r_shoulder r_elbow r_radiocarpal IGNORED skullbase").setValues(getHAnimMotion_3_241_values())));
+    .addChild(new HAnimMotion().setChannels("6 Xposition Yposition Zposition Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation 3 Zrotation Xrotation Yrotation").setEnabled(false).setFrameCount("392"
+// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), HAnimMotion frameCount: $isNumeric=true, $attributeType=, value='392']
+).setJoints("HumanoidRoot l_hip l_knee l_talocrural r_hip r_knee r_talocrural vl5 IGNORED l_shoulder l_elbow l_radiocarpal IGNORED r_shoulder r_elbow r_radiocarpal IGNORED skullbase").setSkeletalConfiguration("BASIC"
+// [*** X3dToJava.xslt error: encountered incorrect type (check incorrect capitalization), HAnimMotion skeletalConfiguration: $isNumeric=false, $attributeType=, value='BASIC']
+).setTotalFrameCount(0).setValues(getHAnimMotion_3_241_values())));
     }
 	// end of initialize() method
 

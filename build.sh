@@ -63,6 +63,7 @@ popd
 
 # install needed packages
 npm install xml2js
+npm un ajv-formats && npm i ajv-formats
 
 # maven build
 mvn clean install
