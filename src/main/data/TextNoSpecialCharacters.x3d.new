@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-3.3.xsd" ><head><meta name="title" content="TextSpecialCharacters.x3d"></meta>
+<meta name="description" content="Text node demonstration of quotation, apostrophe, ampersand and backslash characters using X3D MFString escaping for XML character entities"></meta>
+<meta name="creator" content="Don Brutzman"></meta>
+<meta name="created" content="12 July 2008"></meta>
+<meta name="modified" content="2 April 2017"></meta>
+<meta name="reference" content="Character entity references in HTML 4"></meta>
+<meta name="reference" content="http://www.w3.org/TR/REC-html40/sgml/entities.html"></meta>
+<meta name="rights" content="Copyright (c) Don Brutzman and Leonard Daly, 2008"></meta>
+<meta name="identifier" content="http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter02GeometryPrimitives/TextSpecialCharacters.x3d"></meta>
+<meta name="generator" content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"></meta>
+<meta name="license" content="../license.html"></meta>
+</head>
+<Scene><Background skyColor="1 1 1"></Background>
+<Viewpoint description="Default View" position="0 0 15"></Viewpoint>
+<Shape><!--Empty string "" means to skip a line--><!--The ampersand escape characters are based on XML rules--><!--apostrophe ' is &apos; and needs to be escaped in single-quote delimiters used for string='value' attribute--><!--ampersand & is &amp; and needs to be escaped--><!--quotation " is &quot; and isn't needed if single-quote delimiters used for string='value' attribute--><!--quotation " can be used within an X3D string if escaped with backslash \ as \""--><!--backslash \ is used as escape character for " (and itself) in X3D--><!--character entities are listed in HTML specification and are good for any XML--><Text containerField="geometry" DEF="DefaultText" string="&quot;Character entity substitutions:&quot; &quot;empty string \&quot;\&quot; skips a line:&quot; &quot;&quot; &quot;apostrophe ' is &amp;apos;&quot; &quot;ampersand &amp; is &amp;amp;&quot; &quot;quote mark \&quot; is &amp;quot;&quot; &quot;backslash \\ is X3D escape character&quot; &quot;double backslash \\\\ is X3D backslash \\ character&quot; &quot;Pi is pi is pi XML character entity&quot;"><FontStyle DEF="CenteredFontStyle" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
+</Text>
+<Appearance><Material DEF="DefaultMaterial" diffuseColor="0.2 0.2 0.2"></Material>
+</Appearance>
+</Shape>
+</Scene>
+</X3D>
