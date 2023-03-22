@@ -12,7 +12,7 @@ import { DOMParser } from '@xmldom/xmldom';
 import { X3DJSONLD } from './src/main/node/X3DJSONLD.mjs';
 
 import PROTOS from './src/main/node/PrototypeExpander.mjs';
-;
+
 // import { runAndSend } from './src/main/node/runAndSend';
 import DOM2JSONSerializer from "./src/main/node/DOM2JSONSerializer.mjs";
 import mapToMethod from "./src/main/node/mapToMethod.mjs";
@@ -28,11 +28,11 @@ var www = config.x3dcode();
 var app = express();
 
 
-// app.use(express.static('/'));
+app.use(express.static('/'));
 app.use(express.static('dist'));
 app.use(express.static('src/main/data'));
 app.use(express.static('src/main/personal'));
-// app.use(express.static('src/main/node'));
+app.use(express.static('src/main/node'));
 app.use(express.static('src/main/orig'));
 app.use(express.static('src/main/out'));
 app.use(express.static('src/main/schema'));
@@ -330,7 +330,14 @@ magic("*.vs", "text/plain");//"x-shader/x-vertex");
 magic("*.fs", "text/plain");//"x-shader/x-fragment");
 magic("*.js", "text/javascript");
 magic("*.py", "text/python");
-magic("*.mjs", "text/javascript");
+magic("/dist/*.mjs", "text/javascript");
+magic("/src/main/node/loadJson.mjs", "text/javascript");
+magic("/src/main/node/loaderJQuery.mjs", "text/javascript");
+magic("/src/main/node/PrototypeExpander.mjs", "text/javascript");
+magic("/src/main/node/X3DJSONLD.mjs", "text/javascript");
+magic("/src/main/node/loadvAlidate.mjs", "text/javascript");
+magic("/src/main/node/convertJsonToStl.mjs", "text/javascript");
+magic("/src/main/node/matrix.mjs", "text/javascript");
 magic("*.js.map", "application/json");
 magic("*.csv", "text/csv");
 magic("/*.xhtml", "application/xhtml+xml");

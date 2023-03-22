@@ -1,6 +1,6 @@
 ####################################################################################################
 #
-# Now available: developmental python x3d.py package on PyPi for import.
+# Now available: developmental python x3d.py package on PyPI for import.
 #   This approach simplifies Python X3D deployment and use.
 #   https://pypi.org/project/x3d
 #
@@ -26,12 +26,12 @@ newModel=X3D(profile='Immersive',version='4.0',
   head=head(
     children=[
     component(level=1,name='HAnim'),
-    meta(content='JohnBoy.x3d',name='title'),
-    meta(name='identifier',content='http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnBoy.x3d'),
+    meta(content='JohnJoint.x3d',name='title'),
+    meta(name='identifier',content='http://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnJoint.x3d'),
     meta(name='description',content='An attempt at a standard LOA-4 skeleton'),
-    meta(name='generator',content='h2.pl'),
+    meta(name='generator',content='h6.pl'),
     meta(content='John Carlson',name='creator'),
-    meta(content='9 November 2020',name='created'),
+    meta(content='12 January 2023',name='created'),
     meta(content='../license.html',name='license')]),
   Scene=Scene(
     children=[
@@ -87,618 +87,163 @@ newModel=X3D(profile='Immersive',version='4.0',
     NavigationInfo(speed=1.5),
     Viewpoint(description='default'),
     HAnimHumanoid(DEF='hanim_HAnim',info=["humanoidVersion=2.0"],name='HAnim',version='2.0',
-      children=[
+      skeleton=[
       HAnimJoint(DEF='hanim_humanoid_root',name='humanoid_root',center=(0.0000,0.8240,0.0277),ulimit=[0,0,0],llimit=[0,0,0],
         children=[
-        Shape(
-          geometry=LineSet(vertexCount=[2],
-            coord=Coordinate(point=[(0.0000,0.8240,0.0277),(0.0000,0.9149,0.0016)]),
-            #  from humanoid_root to sacroiliac 
-            color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
-        Shape(
-          geometry=LineSet(vertexCount=[2],
-            coord=Coordinate(point=[(0.0000,0.8240,0.0277),(0.0028,1.0568,-0.0776)]),
-            #  from humanoid_root to vl5 
-            color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
         HAnimJoint(DEF='hanim_sacroiliac',name='sacroiliac',center=(0.0000,0.9149,0.0016),ulimit=[0,0,0],llimit=[0,0,0],
           children=[
-          Shape(
-            geometry=LineSet(vertexCount=[2],
-              coord=Coordinate(point=[(0.0000,0.9149,0.0016),(0.0961,0.9124,-0.0001)]),
-              #  from sacroiliac to l_hip 
-              color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
-          Shape(
-            geometry=LineSet(vertexCount=[2],
-              coord=Coordinate(point=[(0.0000,0.9149,0.0016),(-0.0950,0.9171,0.0029)]),
-              #  from sacroiliac to r_hip 
-              color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
           HAnimJoint(DEF='hanim_l_hip',name='l_hip',center=(0.0961,0.9124,-0.0001),ulimit=[0,0,0],llimit=[0,0,0],
             children=[
-            Shape(
-              geometry=LineSet(vertexCount=[2],
-                coord=Coordinate(point=[(0.0961,0.9124,-0.0001),(0.1040,0.4867,0.0308)]),
-                #  from l_hip to l_knee 
-                color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
             HAnimJoint(DEF='hanim_l_knee',name='l_knee',center=(0.1040,0.4867,0.0308),ulimit=[0,0,0],llimit=[0,0,0],
               children=[
-              Shape(
-                geometry=LineSet(vertexCount=[2],
-                  coord=Coordinate(point=[(0.1040,0.4867,0.0308),(0.1101,0.0656,-0.0736)]),
-                  #  from l_knee to l_talocrural 
-                  color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
               HAnimJoint(DEF='hanim_l_talocrural',name='l_talocrural',center=(0.1101,0.0656,-0.0736),ulimit=[0,0,0],llimit=[0,0,0],
                 children=[
-                Shape(
-                  geometry=LineSet(vertexCount=[2],
-                    coord=Coordinate(point=[(0.1101,0.0656,-0.0736),(0,1,0)]),
-                    #  from l_talocrural to l_talocalcaneonavicular 
-                    color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
-                Shape(
-                  geometry=LineSet(vertexCount=[2],
-                    coord=Coordinate(point=[(0.1101,0.0656,-0.0736),(0,1,0)]),
-                    #  from l_talocrural to l_calcaneocuboid 
-                    color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                 HAnimJoint(DEF='hanim_l_talocalcaneonavicular',name='l_talocalcaneonavicular',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                   children=[
-                  Shape(
-                    geometry=LineSet(vertexCount=[1],
-                      coord=Coordinate(point=[(0,1,0)]),
-                      #  from l_talocalcaneonavicular to l_cuneonavicular_1 
-                      color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
-                  Shape(
-                    geometry=LineSet(vertexCount=[1],
-                      coord=Coordinate(point=[(0,1,0)]),
-                      #  from l_talocalcaneonavicular to l_cuneonavicular_2 
-                      color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
-                  Shape(
-                    geometry=LineSet(vertexCount=[1],
-                      coord=Coordinate(point=[(0,1,0)]),
-                      #  from l_talocalcaneonavicular to l_cuneonavicular_3 
-                      color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                   HAnimJoint(DEF='hanim_l_cuneonavicular_1',name='l_cuneonavicular_1',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                     children=[
-                    Shape(
-                      geometry=LineSet(vertexCount=[1],
-                        coord=Coordinate(point=[(0,1,0)]),
-                        #  from l_cuneonavicular_1 to l_tarsometatarsal_1 
-                        color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                     HAnimJoint(DEF='hanim_l_tarsometatarsal_1',name='l_tarsometatarsal_1',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                       children=[
-                      Shape(
-                        geometry=LineSet(vertexCount=[1],
-                          coord=Coordinate(point=[(0,1,0)]),
-                          #  from l_tarsometatarsal_1 to l_metatarsophalangeal_1 
-                          color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                       HAnimJoint(DEF='hanim_l_metatarsophalangeal_1',name='l_metatarsophalangeal_1',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                         children=[
-                        Shape(
-                          geometry=LineSet(vertexCount=[1],
-                            coord=Coordinate(point=[(0,1,0)]),
-                            #  from l_metatarsophalangeal_1 to l_tarsal_interphalangeal_1 
-                            color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                         HAnimJoint(DEF='hanim_l_tarsal_interphalangeal_1',name='l_tarsal_interphalangeal_1',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0])])])]),
                   HAnimJoint(DEF='hanim_l_cuneonavicular_2',name='l_cuneonavicular_2',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                     children=[
-                    Shape(
-                      geometry=LineSet(vertexCount=[1],
-                        coord=Coordinate(point=[(0,1,0)]),
-                        #  from l_cuneonavicular_2 to l_tarsometatarsal_2 
-                        color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                     HAnimJoint(DEF='hanim_l_tarsometatarsal_2',name='l_tarsometatarsal_2',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                       children=[
-                      Shape(
-                        geometry=LineSet(vertexCount=[1],
-                          coord=Coordinate(point=[(0,1,0)]),
-                          #  from l_tarsometatarsal_2 to l_metatarsophalangeal_2 
-                          color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                       HAnimJoint(DEF='hanim_l_metatarsophalangeal_2',name='l_metatarsophalangeal_2',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                         children=[
-                        Shape(
-                          geometry=LineSet(vertexCount=[1],
-                            coord=Coordinate(point=[(0,1,0)]),
-                            #  from l_metatarsophalangeal_2 to l_tarsal_proximal_interphalangeal_2 
-                            color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                         HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_2',name='l_tarsal_proximal_interphalangeal_2',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                           children=[
-                          Shape(
-                            geometry=LineSet(vertexCount=[1],
-                              coord=Coordinate(point=[(0,1,0)]),
-                              #  from l_tarsal_proximal_interphalangeal_2 to l_tarsal_distal_interphalangeal_2 
-                              color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                           HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_2',name='l_tarsal_distal_interphalangeal_2',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0])])])])]),
                   HAnimJoint(DEF='hanim_l_cuneonavicular_3',name='l_cuneonavicular_3',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                     children=[
-                    Shape(
-                      geometry=LineSet(vertexCount=[1],
-                        coord=Coordinate(point=[(0,1,0)]),
-                        #  from l_cuneonavicular_3 to l_tarsometatarsal_3 
-                        color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                     HAnimJoint(DEF='hanim_l_tarsometatarsal_3',name='l_tarsometatarsal_3',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                       children=[
-                      Shape(
-                        geometry=LineSet(vertexCount=[1],
-                          coord=Coordinate(point=[(0,1,0)]),
-                          #  from l_tarsometatarsal_3 to l_metatarsophalangeal_3 
-                          color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                       HAnimJoint(DEF='hanim_l_metatarsophalangeal_3',name='l_metatarsophalangeal_3',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                         children=[
-                        Shape(
-                          geometry=LineSet(vertexCount=[1],
-                            coord=Coordinate(point=[(0,1,0)]),
-                            #  from l_metatarsophalangeal_3 to l_tarsal_proximal_interphalangeal_3 
-                            color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                         HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_3',name='l_tarsal_proximal_interphalangeal_3',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                           children=[
-                          Shape(
-                            geometry=LineSet(vertexCount=[1],
-                              coord=Coordinate(point=[(0,1,0)]),
-                              #  from l_tarsal_proximal_interphalangeal_3 to l_tarsal_distal_interphalangeal_3 
-                              color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                           HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_3',name='l_tarsal_distal_interphalangeal_3',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0])])])])])]),
                 HAnimJoint(DEF='hanim_l_calcaneocuboid',name='l_calcaneocuboid',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                   children=[
-                  Shape(
-                    geometry=LineSet(vertexCount=[1],
-                      coord=Coordinate(point=[(0,1,0)]),
-                      #  from l_calcaneocuboid to l_transversetarsal 
-                      color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                   HAnimJoint(DEF='hanim_l_transversetarsal',name='l_transversetarsal',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                     children=[
-                    Shape(
-                      geometry=LineSet(vertexCount=[1],
-                        coord=Coordinate(point=[(0,1,0)]),
-                        #  from l_transversetarsal to l_tarsometatarsal_4 
-                        color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
-                    Shape(
-                      geometry=LineSet(vertexCount=[1],
-                        coord=Coordinate(point=[(0,1,0)]),
-                        #  from l_transversetarsal to l_tarsometatarsal_5 
-                        color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                     HAnimJoint(DEF='hanim_l_tarsometatarsal_4',name='l_tarsometatarsal_4',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                       children=[
-                      Shape(
-                        geometry=LineSet(vertexCount=[1],
-                          coord=Coordinate(point=[(0,1,0)]),
-                          #  from l_tarsometatarsal_4 to l_metatarsophalangeal_4 
-                          color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                       HAnimJoint(DEF='hanim_l_metatarsophalangeal_4',name='l_metatarsophalangeal_4',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                         children=[
-                        Shape(
-                          geometry=LineSet(vertexCount=[1],
-                            coord=Coordinate(point=[(0,1,0)]),
-                            #  from l_metatarsophalangeal_4 to l_tarsal_proximal_interphalangeal_4 
-                            color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                         HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_4',name='l_tarsal_proximal_interphalangeal_4',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                           children=[
-                          Shape(
-                            geometry=LineSet(vertexCount=[1],
-                              coord=Coordinate(point=[(0,1,0)]),
-                              #  from l_tarsal_proximal_interphalangeal_4 to l_tarsal_distal_interphalangeal_4 
-                              color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                           HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_4',name='l_tarsal_distal_interphalangeal_4',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0])])])]),
                     HAnimJoint(DEF='hanim_l_tarsometatarsal_5',name='l_tarsometatarsal_5',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                       children=[
-                      Shape(
-                        geometry=LineSet(vertexCount=[1],
-                          coord=Coordinate(point=[(0,1,0)]),
-                          #  from l_tarsometatarsal_5 to l_metatarsophalangeal_5 
-                          color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                       HAnimJoint(DEF='hanim_l_metatarsophalangeal_5',name='l_metatarsophalangeal_5',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                         children=[
-                        Shape(
-                          geometry=LineSet(vertexCount=[1],
-                            coord=Coordinate(point=[(0,1,0)]),
-                            #  from l_metatarsophalangeal_5 to l_tarsal_proximal_interphalangeal_5 
-                            color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                         HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_5',name='l_tarsal_proximal_interphalangeal_5',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                           children=[
-                          Shape(
-                            geometry=LineSet(vertexCount=[1],
-                              coord=Coordinate(point=[(0,1,0)]),
-                              #  from l_tarsal_proximal_interphalangeal_5 to l_tarsal_distal_interphalangeal_5 
-                              color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                           HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_5',name='l_tarsal_distal_interphalangeal_5',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0])])])])])])])])]),
           HAnimJoint(DEF='hanim_r_hip',name='r_hip',center=(-0.0950,0.9171,0.0029),ulimit=[0,0,0],llimit=[0,0,0],
             children=[
-            Shape(
-              geometry=LineSet(vertexCount=[2],
-                coord=Coordinate(point=[(-0.0950,0.9171,0.0029),(-0.0867,0.4913,0.0318)]),
-                #  from r_hip to r_knee 
-                color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
             HAnimJoint(DEF='hanim_r_knee',name='r_knee',center=(-0.0867,0.4913,0.0318),ulimit=[0,0,0],llimit=[0,0,0],
               children=[
-              Shape(
-                geometry=LineSet(vertexCount=[2],
-                  coord=Coordinate(point=[(-0.0867,0.4913,0.0318),(-0.0801,0.0712,-0.0766)]),
-                  #  from r_knee to r_talocrural 
-                  color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
               HAnimJoint(DEF='hanim_r_talocrural',name='r_talocrural',center=(-0.0801,0.0712,-0.0766),ulimit=[0,0,0],llimit=[0,0,0],
                 children=[
-                Shape(
-                  geometry=LineSet(vertexCount=[2],
-                    coord=Coordinate(point=[(-0.0801,0.0712,-0.0766),(0,1,0)]),
-                    #  from r_talocrural to r_talocalcaneonavicular 
-                    color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
-                Shape(
-                  geometry=LineSet(vertexCount=[2],
-                    coord=Coordinate(point=[(-0.0801,0.0712,-0.0766),(0,1,0)]),
-                    #  from r_talocrural to r_calcaneocuboid 
-                    color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                 HAnimJoint(DEF='hanim_r_talocalcaneonavicular',name='r_talocalcaneonavicular',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                   children=[
-                  Shape(
-                    geometry=LineSet(vertexCount=[1],
-                      coord=Coordinate(point=[(0,1,0)]),
-                      #  from r_talocalcaneonavicular to r_cuneonavicular_1 
-                      color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
-                  Shape(
-                    geometry=LineSet(vertexCount=[1],
-                      coord=Coordinate(point=[(0,1,0)]),
-                      #  from r_talocalcaneonavicular to r_cuneonavicular_2 
-                      color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
-                  Shape(
-                    geometry=LineSet(vertexCount=[1],
-                      coord=Coordinate(point=[(0,1,0)]),
-                      #  from r_talocalcaneonavicular to r_cuneonavicular_3 
-                      color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                   HAnimJoint(DEF='hanim_r_cuneonavicular_1',name='r_cuneonavicular_1',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                     children=[
-                    Shape(
-                      geometry=LineSet(vertexCount=[1],
-                        coord=Coordinate(point=[(0,1,0)]),
-                        #  from r_cuneonavicular_1 to r_tarsometatarsal_1 
-                        color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                     HAnimJoint(DEF='hanim_r_tarsometatarsal_1',name='r_tarsometatarsal_1',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                       children=[
-                      Shape(
-                        geometry=LineSet(vertexCount=[1],
-                          coord=Coordinate(point=[(0,1,0)]),
-                          #  from r_tarsometatarsal_1 to r_metatarsophalangeal_1 
-                          color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                       HAnimJoint(DEF='hanim_r_metatarsophalangeal_1',name='r_metatarsophalangeal_1',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                         children=[
-                        Shape(
-                          geometry=LineSet(vertexCount=[1],
-                            coord=Coordinate(point=[(0,1,0)]),
-                            #  from r_metatarsophalangeal_1 to r_tarsal_interphalangeal_1 
-                            color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                         HAnimJoint(DEF='hanim_r_tarsal_interphalangeal_1',name='r_tarsal_interphalangeal_1',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0])])])]),
                   HAnimJoint(DEF='hanim_r_cuneonavicular_2',name='r_cuneonavicular_2',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                     children=[
-                    Shape(
-                      geometry=LineSet(vertexCount=[1],
-                        coord=Coordinate(point=[(0,1,0)]),
-                        #  from r_cuneonavicular_2 to r_tarsometatarsal_2 
-                        color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                     HAnimJoint(DEF='hanim_r_tarsometatarsal_2',name='r_tarsometatarsal_2',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                       children=[
-                      Shape(
-                        geometry=LineSet(vertexCount=[1],
-                          coord=Coordinate(point=[(0,1,0)]),
-                          #  from r_tarsometatarsal_2 to r_metatarsophalangeal_2 
-                          color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                       HAnimJoint(DEF='hanim_r_metatarsophalangeal_2',name='r_metatarsophalangeal_2',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                         children=[
-                        Shape(
-                          geometry=LineSet(vertexCount=[1],
-                            coord=Coordinate(point=[(0,1,0)]),
-                            #  from r_metatarsophalangeal_2 to r_tarsal_proximal_interphalangeal_2 
-                            color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                         HAnimJoint(DEF='hanim_r_tarsal_proximal_interphalangeal_2',name='r_tarsal_proximal_interphalangeal_2',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                           children=[
-                          Shape(
-                            geometry=LineSet(vertexCount=[1],
-                              coord=Coordinate(point=[(0,1,0)]),
-                              #  from r_tarsal_proximal_interphalangeal_2 to r_tarsal_distal_interphalangeal_2 
-                              color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                           HAnimJoint(DEF='hanim_r_tarsal_distal_interphalangeal_2',name='r_tarsal_distal_interphalangeal_2',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0])])])])]),
                   HAnimJoint(DEF='hanim_r_cuneonavicular_3',name='r_cuneonavicular_3',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                     children=[
-                    Shape(
-                      geometry=LineSet(vertexCount=[1],
-                        coord=Coordinate(point=[(0,1,0)]),
-                        #  from r_cuneonavicular_3 to r_tarsometatarsal_3 
-                        color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                     HAnimJoint(DEF='hanim_r_tarsometatarsal_3',name='r_tarsometatarsal_3',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                       children=[
-                      Shape(
-                        geometry=LineSet(vertexCount=[1],
-                          coord=Coordinate(point=[(0,1,0)]),
-                          #  from r_tarsometatarsal_3 to r_metatarsophalangeal_3 
-                          color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                       HAnimJoint(DEF='hanim_r_metatarsophalangeal_3',name='r_metatarsophalangeal_3',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                         children=[
-                        Shape(
-                          geometry=LineSet(vertexCount=[1],
-                            coord=Coordinate(point=[(0,1,0)]),
-                            #  from r_metatarsophalangeal_3 to r_tarsal_proximal_interphalangeal_3 
-                            color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                         HAnimJoint(DEF='hanim_r_tarsal_proximal_interphalangeal_3',name='r_tarsal_proximal_interphalangeal_3',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                           children=[
-                          Shape(
-                            geometry=LineSet(vertexCount=[1],
-                              coord=Coordinate(point=[(0,1,0)]),
-                              #  from r_tarsal_proximal_interphalangeal_3 to r_tarsal_distal_interphalangeal_3 
-                              color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                           HAnimJoint(DEF='hanim_r_tarsal_distal_interphalangeal_3',name='r_tarsal_distal_interphalangeal_3',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0])])])])])]),
                 HAnimJoint(DEF='hanim_r_calcaneocuboid',name='r_calcaneocuboid',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                   children=[
-                  Shape(
-                    geometry=LineSet(vertexCount=[1],
-                      coord=Coordinate(point=[(0,1,0)]),
-                      #  from r_calcaneocuboid to r_transversetarsal 
-                      color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                   HAnimJoint(DEF='hanim_r_transversetarsal',name='r_transversetarsal',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                     children=[
-                    Shape(
-                      geometry=LineSet(vertexCount=[1],
-                        coord=Coordinate(point=[(0,1,0)]),
-                        #  from r_transversetarsal to r_tarsometatarsal_4 
-                        color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
-                    Shape(
-                      geometry=LineSet(vertexCount=[1],
-                        coord=Coordinate(point=[(0,1,0)]),
-                        #  from r_transversetarsal to r_tarsometatarsal_5 
-                        color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                     HAnimJoint(DEF='hanim_r_tarsometatarsal_4',name='r_tarsometatarsal_4',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                       children=[
-                      Shape(
-                        geometry=LineSet(vertexCount=[1],
-                          coord=Coordinate(point=[(0,1,0)]),
-                          #  from r_tarsometatarsal_4 to r_metatarsophalangeal_4 
-                          color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                       HAnimJoint(DEF='hanim_r_metatarsophalangeal_4',name='r_metatarsophalangeal_4',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                         children=[
-                        Shape(
-                          geometry=LineSet(vertexCount=[1],
-                            coord=Coordinate(point=[(0,1,0)]),
-                            #  from r_metatarsophalangeal_4 to r_tarsal_proximal_interphalangeal_4 
-                            color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                         HAnimJoint(DEF='hanim_r_tarsal_proximal_interphalangeal_4',name='r_tarsal_proximal_interphalangeal_4',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                           children=[
-                          Shape(
-                            geometry=LineSet(vertexCount=[1],
-                              coord=Coordinate(point=[(0,1,0)]),
-                              #  from r_tarsal_proximal_interphalangeal_4 to r_tarsal_distal_interphalangeal_4 
-                              color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                           HAnimJoint(DEF='hanim_r_tarsal_distal_interphalangeal_4',name='r_tarsal_distal_interphalangeal_4',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0])])])]),
                     HAnimJoint(DEF='hanim_r_tarsometatarsal_5',name='r_tarsometatarsal_5',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                       children=[
-                      Shape(
-                        geometry=LineSet(vertexCount=[1],
-                          coord=Coordinate(point=[(0,1,0)]),
-                          #  from r_tarsometatarsal_5 to r_metatarsophalangeal_5 
-                          color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                       HAnimJoint(DEF='hanim_r_metatarsophalangeal_5',name='r_metatarsophalangeal_5',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                         children=[
-                        Shape(
-                          geometry=LineSet(vertexCount=[1],
-                            coord=Coordinate(point=[(0,1,0)]),
-                            #  from r_metatarsophalangeal_5 to r_tarsal_proximal_interphalangeal_5 
-                            color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                         HAnimJoint(DEF='hanim_r_tarsal_proximal_interphalangeal_5',name='r_tarsal_proximal_interphalangeal_5',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                           children=[
-                          Shape(
-                            geometry=LineSet(vertexCount=[1],
-                              coord=Coordinate(point=[(0,1,0)]),
-                              #  from r_tarsal_proximal_interphalangeal_5 to r_tarsal_distal_interphalangeal_5 
-                              color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                           HAnimJoint(DEF='hanim_r_tarsal_distal_interphalangeal_5',name='r_tarsal_distal_interphalangeal_5',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0])])])])])])])])])]),
         HAnimJoint(DEF='hanim_vl5',name='vl5',center=(0.0028,1.0568,-0.0776),ulimit=[0,0,0],llimit=[0,0,0],
           children=[
-          Shape(
-            geometry=LineSet(vertexCount=[2],
-              coord=Coordinate(point=[(0.0028,1.0568,-0.0776),(0.0035,1.0925,-0.0787)]),
-              #  from vl5 to vl4 
-              color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
           HAnimJoint(DEF='hanim_vl4',name='vl4',center=(0.0035,1.0925,-0.0787),ulimit=[0,0,0],llimit=[0,0,0],
             children=[
-            Shape(
-              geometry=LineSet(vertexCount=[2],
-                coord=Coordinate(point=[(0.0035,1.0925,-0.0787),(0.0041,1.1276,-0.0796)]),
-                #  from vl4 to vl3 
-                color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
             HAnimJoint(DEF='hanim_vl3',name='vl3',center=(0.0041,1.1276,-0.0796),ulimit=[0,0,0],llimit=[0,0,0],
               children=[
-              Shape(
-                geometry=LineSet(vertexCount=[2],
-                  coord=Coordinate(point=[(0.0041,1.1276,-0.0796),(0.0045,1.1546,-0.0800)]),
-                  #  from vl3 to vl2 
-                  color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
               HAnimJoint(DEF='hanim_vl2',name='vl2',center=(0.0045,1.1546,-0.0800),ulimit=[0,0,0],llimit=[0,0,0],
                 children=[
-                Shape(
-                  geometry=LineSet(vertexCount=[2],
-                    coord=Coordinate(point=[(0.0045,1.1546,-0.0800),(0.0048,1.1912,-0.0805)]),
-                    #  from vl2 to vl1 
-                    color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                 HAnimJoint(DEF='hanim_vl1',name='vl1',center=(0.0048,1.1912,-0.0805),ulimit=[0,0,0],llimit=[0,0,0],
                   children=[
-                  Shape(
-                    geometry=LineSet(vertexCount=[2],
-                      coord=Coordinate(point=[(0.0048,1.1912,-0.0805),(0.0051,1.2278,-0.0808)]),
-                      #  from vl1 to vt12 
-                      color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                   HAnimJoint(DEF='hanim_vt12',name='vt12',center=(0.0051,1.2278,-0.0808),ulimit=[0,0,0],llimit=[0,0,0],
                     children=[
-                    Shape(
-                      geometry=LineSet(vertexCount=[2],
-                        coord=Coordinate(point=[(0.0051,1.2278,-0.0808),(0.0053,1.2679,-0.0810)]),
-                        #  from vt12 to vt11 
-                        color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                     HAnimJoint(DEF='hanim_vt11',name='vt11',center=(0.0053,1.2679,-0.0810),ulimit=[0,0,0],llimit=[0,0,0],
                       children=[
-                      Shape(
-                        geometry=LineSet(vertexCount=[2],
-                          coord=Coordinate(point=[(0.0053,1.2679,-0.0810),(0.0056,1.2848,-0.0822)]),
-                          #  from vt11 to vt10 
-                          color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                       HAnimJoint(DEF='hanim_vt10',name='vt10',center=(0.0056,1.2848,-0.0822),ulimit=[0,0,0],llimit=[0,0,0],
                         children=[
-                        Shape(
-                          geometry=LineSet(vertexCount=[2],
-                            coord=Coordinate(point=[(0.0056,1.2848,-0.0822),(0.0057,1.3126,-0.0838)]),
-                            #  from vt10 to vt9 
-                            color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                         HAnimJoint(DEF='hanim_vt9',name='vt9',center=(0.0057,1.3126,-0.0838),ulimit=[0,0,0],llimit=[0,0,0],
                           children=[
-                          Shape(
-                            geometry=LineSet(vertexCount=[2],
-                              coord=Coordinate(point=[(0.0057,1.3126,-0.0838),(0.0057,1.3382,-0.0845)]),
-                              #  from vt9 to vt8 
-                              color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                           HAnimJoint(DEF='hanim_vt8',name='vt8',center=(0.0057,1.3382,-0.0845),ulimit=[0,0,0],llimit=[0,0,0],
                             children=[
-                            Shape(
-                              geometry=LineSet(vertexCount=[2],
-                                coord=Coordinate(point=[(0.0057,1.3382,-0.0845),(0.0058,1.3625,-0.0833)]),
-                                #  from vt8 to vt7 
-                                color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                             HAnimJoint(DEF='hanim_vt7',name='vt7',center=(0.0058,1.3625,-0.0833),ulimit=[0,0,0],llimit=[0,0,0],
                               children=[
-                              Shape(
-                                geometry=LineSet(vertexCount=[2],
-                                  coord=Coordinate(point=[(0.0058,1.3625,-0.0833),(0.0059,1.3866,-0.0800)]),
-                                  #  from vt7 to vt6 
-                                  color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                               HAnimJoint(DEF='hanim_vt6',name='vt6',center=(0.0059,1.3866,-0.0800),ulimit=[0,0,0],llimit=[0,0,0],
                                 children=[
-                                Shape(
-                                  geometry=LineSet(vertexCount=[2],
-                                    coord=Coordinate(point=[(0.0059,1.3866,-0.0800),(0.0060,1.4102,-0.0745)]),
-                                    #  from vt6 to vt5 
-                                    color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                 HAnimJoint(DEF='hanim_vt5',name='vt5',center=(0.0060,1.4102,-0.0745),ulimit=[0,0,0],llimit=[0,0,0],
                                   children=[
-                                  Shape(
-                                    geometry=LineSet(vertexCount=[2],
-                                      coord=Coordinate(point=[(0.0060,1.4102,-0.0745),(0.0061,1.4320,-0.0675)]),
-                                      #  from vt5 to vt4 
-                                      color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                   HAnimJoint(DEF='hanim_vt4',name='vt4',center=(0.0061,1.4320,-0.0675),ulimit=[0,0,0],llimit=[0,0,0],
                                     children=[
-                                    Shape(
-                                      geometry=LineSet(vertexCount=[2],
-                                        coord=Coordinate(point=[(0.0061,1.4320,-0.0675),(0.0062,1.4583,-0.0570)]),
-                                        #  from vt4 to vt3 
-                                        color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                     HAnimJoint(DEF='hanim_vt3',name='vt3',center=(0.0062,1.4583,-0.0570),ulimit=[0,0,0],llimit=[0,0,0],
                                       children=[
-                                      Shape(
-                                        geometry=LineSet(vertexCount=[2],
-                                          coord=Coordinate(point=[(0.0062,1.4583,-0.0570),(0.0063,1.4761,-0.0484)]),
-                                          #  from vt3 to vt2 
-                                          color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                       HAnimJoint(DEF='hanim_vt2',name='vt2',center=(0.0063,1.4761,-0.0484),ulimit=[0,0,0],llimit=[0,0,0],
                                         children=[
-                                        Shape(
-                                          geometry=LineSet(vertexCount=[2],
-                                            coord=Coordinate(point=[(0.0063,1.4761,-0.0484),(0.0065,1.4951,-0.0387)]),
-                                            #  from vt2 to vt1 
-                                            color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                         HAnimJoint(DEF='hanim_vt1',name='vt1',center=(0.0065,1.4951,-0.0387),ulimit=[0,0,0],llimit=[0,0,0],
                                           children=[
-                                          Shape(
-                                            geometry=LineSet(vertexCount=[2],
-                                              coord=Coordinate(point=[(0.0065,1.4951,-0.0387),(0.0066,1.5132,-0.0301)]),
-                                              #  from vt1 to vc7 
-                                              color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
-                                          Shape(
-                                            geometry=LineSet(vertexCount=[2],
-                                              coord=Coordinate(point=[(0.0065,1.4951,-0.0387),(0.0820,1.4488,-0.0353)]),
-                                              #  from vt1 to l_sternoclavicular 
-                                              color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
-                                          Shape(
-                                            geometry=LineSet(vertexCount=[2],
-                                              coord=Coordinate(point=[(0.0065,1.4951,-0.0387),(-0.0694,1.4600,-0.0330)]),
-                                              #  from vt1 to r_sternoclavicular 
-                                              color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                           HAnimJoint(DEF='hanim_vc7',name='vc7',center=(0.0066,1.5132,-0.0301),ulimit=[0,0,0],llimit=[0,0,0],
                                             children=[
-                                            Shape(
-                                              geometry=LineSet(vertexCount=[2],
-                                                coord=Coordinate(point=[(0.0066,1.5132,-0.0301),(0.0066,1.5357,-0.0143)]),
-                                                #  from vc7 to vc6 
-                                                color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                             HAnimJoint(DEF='hanim_vc6',name='vc6',center=(0.0066,1.5357,-0.0143),ulimit=[0,0,0],llimit=[0,0,0],
                                               children=[
-                                              Shape(
-                                                geometry=LineSet(vertexCount=[2],
-                                                  coord=Coordinate(point=[(0.0066,1.5357,-0.0143),(0.0066,1.5520,-0.0082)]),
-                                                  #  from vc6 to vc5 
-                                                  color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                               HAnimJoint(DEF='hanim_vc5',name='vc5',center=(0.0066,1.5520,-0.0082),ulimit=[0,0,0],llimit=[0,0,0],
                                                 children=[
-                                                Shape(
-                                                  geometry=LineSet(vertexCount=[2],
-                                                    coord=Coordinate(point=[(0.0066,1.5520,-0.0082),(0.0066,1.5662,-0.0084)]),
-                                                    #  from vc5 to vc4 
-                                                    color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                 HAnimJoint(DEF='hanim_vc4',name='vc4',center=(0.0066,1.5662,-0.0084),ulimit=[0,0,0],llimit=[0,0,0],
                                                   children=[
-                                                  Shape(
-                                                    geometry=LineSet(vertexCount=[2],
-                                                      coord=Coordinate(point=[(0.0066,1.5662,-0.0084),(0.0066,1.5800,-0.0103)]),
-                                                      #  from vc4 to vc3 
-                                                      color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                   HAnimJoint(DEF='hanim_vc3',name='vc3',center=(0.0066,1.5800,-0.0103),ulimit=[0,0,0],llimit=[0,0,0],
                                                     children=[
-                                                    Shape(
-                                                      geometry=LineSet(vertexCount=[2],
-                                                        coord=Coordinate(point=[(0.0066,1.5800,-0.0103),(0.0066,1.5928,-0.0103)]),
-                                                        #  from vc3 to vc2 
-                                                        color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                     HAnimJoint(DEF='hanim_vc2',name='vc2',center=(0.0066,1.5928,-0.0103),ulimit=[0,0,0],llimit=[0,0,0],
                                                       children=[
-                                                      Shape(
-                                                        geometry=LineSet(vertexCount=[2],
-                                                          coord=Coordinate(point=[(0.0066,1.5928,-0.0103),(0.0066,1.6144,-0.0034)]),
-                                                          #  from vc2 to vc1 
-                                                          color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                       HAnimJoint(DEF='hanim_vc1',name='vc1',center=(0.0066,1.6144,-0.0034),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
-                                                        Shape(
-                                                          geometry=LineSet(vertexCount=[2],
-                                                            coord=Coordinate(point=[(0.0066,1.6144,-0.0034),(0.0044,1.6209,0.0236)]),
-                                                            #  from vc1 to skullbase 
-                                                            color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                         HAnimJoint(DEF='hanim_skullbase',name='skullbase',center=(0.0044,1.6209,0.0236),ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
-                                                          Shape(
-                                                            geometry=LineSet(vertexCount=[2],
-                                                              coord=Coordinate(point=[(0.0044,1.6209,0.0236),(0,1,0)]),
-                                                              #  from skullbase to l_eyelid_joint 
-                                                              color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
-                                                          Shape(
-                                                            geometry=LineSet(vertexCount=[2],
-                                                              coord=Coordinate(point=[(0.0044,1.6209,0.0236),(0,1,0)]),
-                                                              #  from skullbase to r_eyelid_joint 
-                                                              color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
-                                                          Shape(
-                                                            geometry=LineSet(vertexCount=[2],
-                                                              coord=Coordinate(point=[(0.0044,1.6209,0.0236),(0,1,0)]),
-                                                              #  from skullbase to l_eyeball_joint 
-                                                              color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
-                                                          Shape(
-                                                            geometry=LineSet(vertexCount=[2],
-                                                              coord=Coordinate(point=[(0.0044,1.6209,0.0236),(0,1,0)]),
-                                                              #  from skullbase to r_eyeball_joint 
-                                                              color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
-                                                          Shape(
-                                                            geometry=LineSet(vertexCount=[2],
-                                                              coord=Coordinate(point=[(0.0044,1.6209,0.0236),(0,1,0)]),
-                                                              #  from skullbase to l_eyebrow_joint 
-                                                              color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
-                                                          Shape(
-                                                            geometry=LineSet(vertexCount=[2],
-                                                              coord=Coordinate(point=[(0.0044,1.6209,0.0236),(0,1,0)]),
-                                                              #  from skullbase to r_eyebrow_joint 
-                                                              color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
-                                                          Shape(
-                                                            geometry=LineSet(vertexCount=[2],
-                                                              coord=Coordinate(point=[(0.0044,1.6209,0.0236),(0,1,0)]),
-                                                              #  from skullbase to temporomandibular 
-                                                              color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                           HAnimJoint(DEF='hanim_l_eyelid_joint',name='l_eyelid_joint',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0]),
                                                           HAnimJoint(DEF='hanim_r_eyelid_joint',name='r_eyelid_joint',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0]),
                                                           HAnimJoint(DEF='hanim_l_eyeball_joint',name='l_eyeball_joint',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0]),
@@ -708,376 +253,106 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                           HAnimJoint(DEF='hanim_temporomandibular',name='temporomandibular',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0])])])])])])])])]),
                                           HAnimJoint(DEF='hanim_l_sternoclavicular',name='l_sternoclavicular',center=(0.0820,1.4488,-0.0353),ulimit=[0,0,0],llimit=[0,0,0],
                                             children=[
-                                            Shape(
-                                              geometry=LineSet(vertexCount=[2],
-                                                coord=Coordinate(point=[(0.0820,1.4488,-0.0353),(0.0962,1.4269,-0.0424)]),
-                                                #  from l_sternoclavicular to l_acromioclavicular 
-                                                color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                             HAnimJoint(DEF='hanim_l_acromioclavicular',name='l_acromioclavicular',center=(0.0962,1.4269,-0.0424),ulimit=[0,0,0],llimit=[0,0,0],
                                               children=[
-                                              Shape(
-                                                geometry=LineSet(vertexCount=[2],
-                                                  coord=Coordinate(point=[(0.0962,1.4269,-0.0424),(0.2029,1.4376,-0.0387)]),
-                                                  #  from l_acromioclavicular to l_shoulder 
-                                                  color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                               HAnimJoint(DEF='hanim_l_shoulder',name='l_shoulder',center=(0.2029,1.4376,-0.0387),ulimit=[0,0,0],llimit=[0,0,0],
                                                 children=[
-                                                Shape(
-                                                  geometry=LineSet(vertexCount=[2],
-                                                    coord=Coordinate(point=[(0.2029,1.4376,-0.0387),(0.2014,1.1357,-0.0682)]),
-                                                    #  from l_shoulder to l_elbow 
-                                                    color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                 HAnimJoint(DEF='hanim_l_elbow',name='l_elbow',center=(0.2014,1.1357,-0.0682),ulimit=[0,0,0],llimit=[0,0,0],
                                                   children=[
-                                                  Shape(
-                                                    geometry=LineSet(vertexCount=[2],
-                                                      coord=Coordinate(point=[(0.2014,1.1357,-0.0682),(0.1984,0.8663,-0.0583)]),
-                                                      #  from l_elbow to l_radiocarpal 
-                                                      color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                   HAnimJoint(DEF='hanim_l_radiocarpal',name='l_radiocarpal',center=(0.1984,0.8663,-0.0583),ulimit=[0,0,0],llimit=[0,0,0],
                                                     children=[
-                                                    Shape(
-                                                      geometry=LineSet(vertexCount=[2],
-                                                        coord=Coordinate(point=[(0.1984,0.8663,-0.0583),(0,1,0)]),
-                                                        #  from l_radiocarpal to l_midcarpal_1 
-                                                        color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
-                                                    Shape(
-                                                      geometry=LineSet(vertexCount=[2],
-                                                        coord=Coordinate(point=[(0.1984,0.8663,-0.0583),(0,1,0)]),
-                                                        #  from l_radiocarpal to l_midcarpal_2 
-                                                        color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
-                                                    Shape(
-                                                      geometry=LineSet(vertexCount=[2],
-                                                        coord=Coordinate(point=[(0.1984,0.8663,-0.0583),(0,1,0)]),
-                                                        #  from l_radiocarpal to l_midcarpal_3 
-                                                        color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
-                                                    Shape(
-                                                      geometry=LineSet(vertexCount=[2],
-                                                        coord=Coordinate(point=[(0.1984,0.8663,-0.0583),(0,1,0)]),
-                                                        #  from l_radiocarpal to l_midcarpal_4_5 
-                                                        color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                     HAnimJoint(DEF='hanim_l_midcarpal_1',name='l_midcarpal_1',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                                                       children=[
-                                                      Shape(
-                                                        geometry=LineSet(vertexCount=[1],
-                                                          coord=Coordinate(point=[(0.1924,0.8472,-0.0534)]),
-                                                          #  from l_midcarpal_1 to l_carpometacarpal_1 
-                                                          color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                       HAnimJoint(DEF='hanim_l_carpometacarpal_1',name='l_carpometacarpal_1',center=(0.1924,0.8472,-0.0534),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
-                                                        Shape(
-                                                          geometry=LineSet(vertexCount=[2],
-                                                            coord=Coordinate(point=[(0.1924,0.8472,-0.0534),(0.1951,0.8226,0.0246)]),
-                                                            #  from l_carpometacarpal_1 to l_metacarpophalangeal_1 
-                                                            color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                         HAnimJoint(DEF='hanim_l_metacarpophalangeal_1',name='l_metacarpophalangeal_1',center=(0.1951,0.8226,0.0246),ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
-                                                          Shape(
-                                                            geometry=LineSet(vertexCount=[2],
-                                                              coord=Coordinate(point=[(0.1951,0.8226,0.0246),(0.1955,0.8159,0.0464)]),
-                                                              #  from l_metacarpophalangeal_1 to l_carpal_interphalangeal_1 
-                                                              color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                           HAnimJoint(DEF='hanim_l_carpal_interphalangeal_1',name='l_carpal_interphalangeal_1',center=(0.1955,0.8159,0.0464),ulimit=[0,0,0],llimit=[0,0,0])])])]),
                                                     HAnimJoint(DEF='hanim_l_midcarpal_2',name='l_midcarpal_2',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                                                       children=[
-                                                      Shape(
-                                                        geometry=LineSet(vertexCount=[1],
-                                                          coord=Coordinate(point=[(0.1983,0.8024,-0.0280)]),
-                                                          #  from l_midcarpal_2 to l_carpometacarpal_2 
-                                                          color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                       HAnimJoint(DEF='hanim_l_carpometacarpal_2',name='l_carpometacarpal_2',center=(0.1983,0.8024,-0.0280),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
-                                                        Shape(
-                                                          geometry=LineSet(vertexCount=[2],
-                                                            coord=Coordinate(point=[(0.1983,0.8024,-0.0280),(0.1983,0.7815,-0.0280)]),
-                                                            #  from l_carpometacarpal_2 to l_metacarpophalangeal_2 
-                                                            color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                         HAnimJoint(DEF='hanim_l_metacarpophalangeal_2',name='l_metacarpophalangeal_2',center=(0.1983,0.7815,-0.0280),ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
-                                                          Shape(
-                                                            geometry=LineSet(vertexCount=[2],
-                                                              coord=Coordinate(point=[(0.1983,0.7815,-0.0280),(0.2017,0.7363,-0.0248)]),
-                                                              #  from l_metacarpophalangeal_2 to l_carpal_proximal_interphalangeal_2 
-                                                              color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                           HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_2',name='l_carpal_proximal_interphalangeal_2',center=(0.2017,0.7363,-0.0248),ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
-                                                            Shape(
-                                                              geometry=LineSet(vertexCount=[2],
-                                                                coord=Coordinate(point=[(0.2017,0.7363,-0.0248),(0.2028,0.7139,-0.0236)]),
-                                                                #  from l_carpal_proximal_interphalangeal_2 to l_carpal_distal_interphalangeal_2 
-                                                                color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                             HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_2',name='l_carpal_distal_interphalangeal_2',center=(0.2028,0.7139,-0.0236),ulimit=[0,0,0],llimit=[0,0,0])])])])]),
                                                     HAnimJoint(DEF='hanim_l_midcarpal_3',name='l_midcarpal_3',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                                                       children=[
-                                                      Shape(
-                                                        geometry=LineSet(vertexCount=[1],
-                                                          coord=Coordinate(point=[(0.1987,0.8029,-0.0530)]),
-                                                          #  from l_midcarpal_3 to l_carpometacarpal_3 
-                                                          color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                       HAnimJoint(DEF='hanim_l_carpometacarpal_3',name='l_carpometacarpal_3',center=(0.1987,0.8029,-0.0530),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
-                                                        Shape(
-                                                          geometry=LineSet(vertexCount=[2],
-                                                            coord=Coordinate(point=[(0.1987,0.8029,-0.0530),(0.1987,0.7818,-0.0530)]),
-                                                            #  from l_carpometacarpal_3 to l_metacarpophalangeal_3 
-                                                            color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                         HAnimJoint(DEF='hanim_l_metacarpophalangeal_3',name='l_metacarpophalangeal_3',center=(0.1987,0.7818,-0.0530),ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
-                                                          Shape(
-                                                            geometry=LineSet(vertexCount=[2],
-                                                              coord=Coordinate(point=[(0.1987,0.7818,-0.0530),(0.2013,0.7273,-0.0503)]),
-                                                              #  from l_metacarpophalangeal_3 to l_carpal_proximal_interphalangeal_3 
-                                                              color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                           HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_3',name='l_carpal_proximal_interphalangeal_3',center=(0.2013,0.7273,-0.0503),ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
-                                                            Shape(
-                                                              geometry=LineSet(vertexCount=[2],
-                                                                coord=Coordinate(point=[(0.2013,0.7273,-0.0503),(0.2026,0.7011,-0.0494)]),
-                                                                #  from l_carpal_proximal_interphalangeal_3 to l_carpal_distal_interphalangeal_3 
-                                                                color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                             HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_3',name='l_carpal_distal_interphalangeal_3',center=(0.2026,0.7011,-0.0494),ulimit=[0,0,0],llimit=[0,0,0])])])])]),
                                                     HAnimJoint(DEF='hanim_l_midcarpal_4_5',name='l_midcarpal_4_5',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                                                       children=[
-                                                      Shape(
-                                                        geometry=LineSet(vertexCount=[1],
-                                                          coord=Coordinate(point=[(0.1956,0.8019,-0.0794)]),
-                                                          #  from l_midcarpal_4_5 to l_carpometacarpal_4 
-                                                          color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
-                                                      Shape(
-                                                        geometry=LineSet(vertexCount=[1],
-                                                          coord=Coordinate(point=[(0.1925,0.8066,-0.1036)]),
-                                                          #  from l_midcarpal_4_5 to l_carpometacarpal_5 
-                                                          color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                       HAnimJoint(DEF='hanim_l_carpometacarpal_4',name='l_carpometacarpal_4',center=(0.1956,0.8019,-0.0794),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
-                                                        Shape(
-                                                          geometry=LineSet(vertexCount=[2],
-                                                            coord=Coordinate(point=[(0.1956,0.8019,-0.0794),(0.1956,0.7815,-0.0794)]),
-                                                            #  from l_carpometacarpal_4 to l_metacarpophalangeal_4 
-                                                            color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                         HAnimJoint(DEF='hanim_l_metacarpophalangeal_4',name='l_metacarpophalangeal_4',center=(0.1956,0.7815,-0.0794),ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
-                                                          Shape(
-                                                            geometry=LineSet(vertexCount=[2],
-                                                              coord=Coordinate(point=[(0.1956,0.7815,-0.0794),(0.1973,0.7287,-0.0777)]),
-                                                              #  from l_metacarpophalangeal_4 to l_carpal_proximal_interphalangeal_4 
-                                                              color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                           HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_4',name='l_carpal_proximal_interphalangeal_4',center=(0.1973,0.7287,-0.0777),ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
-                                                            Shape(
-                                                              geometry=LineSet(vertexCount=[2],
-                                                                coord=Coordinate(point=[(0.1973,0.7287,-0.0777),(0.1983,0.7045,-0.0767)]),
-                                                                #  from l_carpal_proximal_interphalangeal_4 to l_carpal_distal_interphalangeal_4 
-                                                                color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                             HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_4',name='l_carpal_distal_interphalangeal_4',center=(0.1983,0.7045,-0.0767),ulimit=[0,0,0],llimit=[0,0,0])])])]),
                                                       HAnimJoint(DEF='hanim_l_carpometacarpal_5',name='l_carpometacarpal_5',center=(0.1925,0.8066,-0.1036),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
-                                                        Shape(
-                                                          geometry=LineSet(vertexCount=[2],
-                                                            coord=Coordinate(point=[(0.1925,0.8066,-0.1036),(0.1925,0.7866,-0.1036)]),
-                                                            #  from l_carpometacarpal_5 to l_metacarpophalangeal_5 
-                                                            color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                         HAnimJoint(DEF='hanim_l_metacarpophalangeal_5',name='l_metacarpophalangeal_5',center=(0.1925,0.7866,-0.1036),ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
-                                                          Shape(
-                                                            geometry=LineSet(vertexCount=[2],
-                                                              coord=Coordinate(point=[(0.1925,0.7866,-0.1036),(0.1938,0.7452,-0.1024)]),
-                                                              #  from l_metacarpophalangeal_5 to l_carpal_proximal_interphalangeal_5 
-                                                              color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                           HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_5',name='l_carpal_proximal_interphalangeal_5',center=(0.1938,0.7452,-0.1024),ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
-                                                            Shape(
-                                                              geometry=LineSet(vertexCount=[2],
-                                                                coord=Coordinate(point=[(0.1938,0.7452,-0.1024),(0.1948,0.7277,-0.1017)]),
-                                                                #  from l_carpal_proximal_interphalangeal_5 to l_carpal_distal_interphalangeal_5 
-                                                                color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                             HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_5',name='l_carpal_distal_interphalangeal_5',center=(0.1948,0.7277,-0.1017),ulimit=[0,0,0],llimit=[0,0,0])])])])])])])])])]),
                                           HAnimJoint(DEF='hanim_r_sternoclavicular',name='r_sternoclavicular',center=(-0.0694,1.4600,-0.0330),ulimit=[0,0,0],llimit=[0,0,0],
                                             children=[
-                                            Shape(
-                                              geometry=LineSet(vertexCount=[2],
-                                                coord=Coordinate(point=[(-0.0694,1.4600,-0.0330),(-0.0836,1.4281,-0.0401)]),
-                                                #  from r_sternoclavicular to r_acromioclavicular 
-                                                color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                             HAnimJoint(DEF='hanim_r_acromioclavicular',name='r_acromioclavicular',center=(-0.0836,1.4281,-0.0401),ulimit=[0,0,0],llimit=[0,0,0],
                                               children=[
-                                              Shape(
-                                                geometry=LineSet(vertexCount=[2],
-                                                  coord=Coordinate(point=[(-0.0836,1.4281,-0.0401),(-0.1907,1.4407,-0.0325)]),
-                                                  #  from r_acromioclavicular to r_shoulder 
-                                                  color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                               HAnimJoint(DEF='hanim_r_shoulder',name='r_shoulder',center=(-0.1907,1.4407,-0.0325),ulimit=[0,0,0],llimit=[0,0,0],
                                                 children=[
-                                                Shape(
-                                                  geometry=LineSet(vertexCount=[2],
-                                                    coord=Coordinate(point=[(-0.1907,1.4407,-0.0325),(-0.1949,1.1388,-0.0620)]),
-                                                    #  from r_shoulder to r_elbow 
-                                                    color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                 HAnimJoint(DEF='hanim_r_elbow',name='r_elbow',center=(-0.1949,1.1388,-0.0620),ulimit=[0,0,0],llimit=[0,0,0],
                                                   children=[
-                                                  Shape(
-                                                    geometry=LineSet(vertexCount=[2],
-                                                      coord=Coordinate(point=[(-0.1949,1.1388,-0.0620),(-0.1959,0.8694,-0.0521)]),
-                                                      #  from r_elbow to r_radiocarpal 
-                                                      color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                   HAnimJoint(DEF='hanim_r_radiocarpal',name='r_radiocarpal',center=(-0.1959,0.8694,-0.0521),ulimit=[0,0,0],llimit=[0,0,0],
                                                     children=[
-                                                    Shape(
-                                                      geometry=LineSet(vertexCount=[2],
-                                                        coord=Coordinate(point=[(-0.1959,0.8694,-0.0521),(0,1,0)]),
-                                                        #  from r_radiocarpal to r_midcarpal_1 
-                                                        color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
-                                                    Shape(
-                                                      geometry=LineSet(vertexCount=[2],
-                                                        coord=Coordinate(point=[(-0.1959,0.8694,-0.0521),(0,1,0)]),
-                                                        #  from r_radiocarpal to r_midcarpal_2 
-                                                        color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
-                                                    Shape(
-                                                      geometry=LineSet(vertexCount=[2],
-                                                        coord=Coordinate(point=[(-0.1959,0.8694,-0.0521),(0,1,0)]),
-                                                        #  from r_radiocarpal to r_midcarpal_3 
-                                                        color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
-                                                    Shape(
-                                                      geometry=LineSet(vertexCount=[2],
-                                                        coord=Coordinate(point=[(-0.1959,0.8694,-0.0521),(0,1,0)]),
-                                                        #  from r_radiocarpal to r_midcarpal_4_5 
-                                                        color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                     HAnimJoint(DEF='hanim_r_midcarpal_1',name='r_midcarpal_1',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                                                       children=[
-                                                      Shape(
-                                                        geometry=LineSet(vertexCount=[1],
-                                                          coord=Coordinate(point=[(-0.1899,0.8502,-0.0473)]),
-                                                          #  from r_midcarpal_1 to r_carpometacarpal_1 
-                                                          color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                       HAnimJoint(DEF='hanim_r_carpometacarpal_1',name='r_carpometacarpal_1',center=(-0.1899,0.8502,-0.0473),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
-                                                        Shape(
-                                                          geometry=LineSet(vertexCount=[2],
-                                                            coord=Coordinate(point=[(-0.1899,0.8502,-0.0473),(-0.1874,0.8256,0.0306)]),
-                                                            #  from r_carpometacarpal_1 to r_metacarpophalangeal_1 
-                                                            color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                         HAnimJoint(DEF='hanim_r_metacarpophalangeal_1',name='r_metacarpophalangeal_1',center=(-0.1874,0.8256,0.0306),ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
-                                                          Shape(
-                                                            geometry=LineSet(vertexCount=[2],
-                                                              coord=Coordinate(point=[(-0.1874,0.8256,0.0306),(-0.1864,0.8190,0.0506)]),
-                                                              #  from r_metacarpophalangeal_1 to r_carpal_interphalangeal_1 
-                                                              color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                           HAnimJoint(DEF='hanim_r_carpal_interphalangeal_1',name='r_carpal_interphalangeal_1',center=(-0.1864,0.8190,0.0506),ulimit=[0,0,0],llimit=[0,0,0])])])]),
                                                     HAnimJoint(DEF='hanim_r_midcarpal_2',name='r_midcarpal_2',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                                                       children=[
-                                                      Shape(
-                                                        geometry=LineSet(vertexCount=[1],
-                                                          coord=Coordinate(point=[(-0.1961,0.8055,-0.0218)]),
-                                                          #  from r_midcarpal_2 to r_carpometacarpal_2 
-                                                          color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                       HAnimJoint(DEF='hanim_r_carpometacarpal_2',name='r_carpometacarpal_2',center=(-0.1961,0.8055,-0.0218),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
-                                                        Shape(
-                                                          geometry=LineSet(vertexCount=[2],
-                                                            coord=Coordinate(point=[(-0.1961,0.8055,-0.0218),(-0.1961,0.7846,-0.0218)]),
-                                                            #  from r_carpometacarpal_2 to r_metacarpophalangeal_2 
-                                                            color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                         HAnimJoint(DEF='hanim_r_metacarpophalangeal_2',name='r_metacarpophalangeal_2',center=(-0.1961,0.7846,-0.0218),ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
-                                                          Shape(
-                                                            geometry=LineSet(vertexCount=[2],
-                                                              coord=Coordinate(point=[(-0.1961,0.7846,-0.0218),(-0.1954,0.7393,-0.0185)]),
-                                                              #  from r_metacarpophalangeal_2 to r_carpal_proximal_interphalangeal_2 
-                                                              color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                           HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_2',name='r_carpal_proximal_interphalangeal_2',center=(-0.1954,0.7393,-0.0185),ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
-                                                            Shape(
-                                                              geometry=LineSet(vertexCount=[2],
-                                                                coord=Coordinate(point=[(-0.1954,0.7393,-0.0185),(-0.1945,0.7169,-0.0173)]),
-                                                                #  from r_carpal_proximal_interphalangeal_2 to r_carpal_distal_interphalangeal_2 
-                                                                color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                             HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_2',name='r_carpal_distal_interphalangeal_2',center=(-0.1945,0.7169,-0.0173),ulimit=[0,0,0],llimit=[0,0,0])])])])]),
                                                     HAnimJoint(DEF='hanim_r_midcarpal_3',name='r_midcarpal_3',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                                                       children=[
-                                                      Shape(
-                                                        geometry=LineSet(vertexCount=[1],
-                                                          coord=Coordinate(point=[(-0.1972,0.8060,-0.0468)]),
-                                                          #  from r_midcarpal_3 to r_carpometacarpal_3 
-                                                          color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                       HAnimJoint(DEF='hanim_r_carpometacarpal_3',name='r_carpometacarpal_3',center=(-0.1972,0.8060,-0.0468),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
-                                                        Shape(
-                                                          geometry=LineSet(vertexCount=[2],
-                                                            coord=Coordinate(point=[(-0.1972,0.8060,-0.0468),(-0.1972,0.7849,-0.0468)]),
-                                                            #  from r_carpometacarpal_3 to r_metacarpophalangeal_3 
-                                                            color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                         HAnimJoint(DEF='hanim_r_metacarpophalangeal_3',name='r_metacarpophalangeal_3',center=(-0.1972,0.7849,-0.0468),ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
-                                                          Shape(
-                                                            geometry=LineSet(vertexCount=[2],
-                                                              coord=Coordinate(point=[(-0.1972,0.7849,-0.0468),(-0.1950,0.7304,-0.0441)]),
-                                                              #  from r_metacarpophalangeal_3 to r_carpal_proximal_interphalangeal_3 
-                                                              color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                           HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_3',name='r_carpal_proximal_interphalangeal_3',center=(-0.1950,0.7304,-0.0441),ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
-                                                            Shape(
-                                                              geometry=LineSet(vertexCount=[2],
-                                                                coord=Coordinate(point=[(-0.1950,0.7304,-0.0441),(-0.1939,0.7042,-0.0432)]),
-                                                                #  from r_carpal_proximal_interphalangeal_3 to r_carpal_distal_interphalangeal_3 
-                                                                color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                             HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_3',name='r_carpal_distal_interphalangeal_3',center=(-0.1939,0.7042,-0.0432),ulimit=[0,0,0],llimit=[0,0,0])])])])]),
                                                     HAnimJoint(DEF='hanim_r_midcarpal_4_5',name='r_midcarpal_4_5',center=(0,1,0),ulimit=[0,0,0],llimit=[0,0,0],
                                                       children=[
-                                                      Shape(
-                                                        geometry=LineSet(vertexCount=[1],
-                                                          coord=Coordinate(point=[(-0.1951,0.8049,-0.0732)]),
-                                                          #  from r_midcarpal_4_5 to r_carpometacarpal_4 
-                                                          color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
-                                                      Shape(
-                                                        geometry=LineSet(vertexCount=[1],
-                                                          coord=Coordinate(point=[(-0.1926,0.8096,-0.0975)]),
-                                                          #  from r_midcarpal_4_5 to r_carpometacarpal_5 
-                                                          color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                       HAnimJoint(DEF='hanim_r_carpometacarpal_4',name='r_carpometacarpal_4',center=(-0.1951,0.8049,-0.0732),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
-                                                        Shape(
-                                                          geometry=LineSet(vertexCount=[2],
-                                                            coord=Coordinate(point=[(-0.1951,0.8049,-0.0732),(-0.1951,0.7845,-0.0732)]),
-                                                            #  from r_carpometacarpal_4 to r_metacarpophalangeal_4 
-                                                            color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                         HAnimJoint(DEF='hanim_r_metacarpophalangeal_4',name='r_metacarpophalangeal_4',center=(-0.1951,0.7845,-0.0732),ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
-                                                          Shape(
-                                                            geometry=LineSet(vertexCount=[2],
-                                                              coord=Coordinate(point=[(-0.1951,0.7845,-0.0732),(-0.1920,0.7318,-0.0716)]),
-                                                              #  from r_metacarpophalangeal_4 to r_carpal_proximal_interphalangeal_4 
-                                                              color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                           HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_4',name='r_carpal_proximal_interphalangeal_4',center=(-0.1920,0.7318,-0.0716),ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
-                                                            Shape(
-                                                              geometry=LineSet(vertexCount=[2],
-                                                                coord=Coordinate(point=[(-0.1920,0.7318,-0.0716),(-0.1908,0.7077,-0.0706)]),
-                                                                #  from r_carpal_proximal_interphalangeal_4 to r_carpal_distal_interphalangeal_4 
-                                                                color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                             HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_4',name='r_carpal_distal_interphalangeal_4',center=(-0.1908,0.7077,-0.0706),ulimit=[0,0,0],llimit=[0,0,0])])])]),
                                                       HAnimJoint(DEF='hanim_r_carpometacarpal_5',name='r_carpometacarpal_5',center=(-0.1926,0.8096,-0.0975),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
-                                                        Shape(
-                                                          geometry=LineSet(vertexCount=[2],
-                                                            coord=Coordinate(point=[(-0.1926,0.8096,-0.0975),(-0.1926,0.7896,-0.0975)]),
-                                                            #  from r_carpometacarpal_5 to r_metacarpophalangeal_5 
-                                                            color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                         HAnimJoint(DEF='hanim_r_metacarpophalangeal_5',name='r_metacarpophalangeal_5',center=(-0.1926,0.7896,-0.0975),ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
-                                                          Shape(
-                                                            geometry=LineSet(vertexCount=[2],
-                                                              coord=Coordinate(point=[(-0.1926,0.7896,-0.0975),(-0.1902,0.7483,-0.0963)]),
-                                                              #  from r_metacarpophalangeal_5 to r_carpal_proximal_interphalangeal_5 
-                                                              color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
                                                           HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_5',name='r_carpal_proximal_interphalangeal_5',center=(-0.1902,0.7483,-0.0963),ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
-                                                            Shape(
-                                                              geometry=LineSet(vertexCount=[2],
-                                                                coord=Coordinate(point=[(-0.1902,0.7483,-0.0963),(-0.1908,0.7540,-0.0960)]),
-                                                                #  from r_carpal_proximal_interphalangeal_5 to r_carpal_distal_interphalangeal_5 
-                                                                color=ColorRGBA(USE='HAnimSegmentLineColorRGBA'))),
-                                                            HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_5',name='r_carpal_distal_interphalangeal_5',center=(-0.1908,0.7540,-0.0960),ulimit=[0,0,0],llimit=[0,0,0])])])])])])])])])])])])])])])])])])])])])])])])])])])])],
+                                                            HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_5',name='r_carpal_distal_interphalangeal_5',center=(-0.1908,0.7540,-0.0960),ulimit=[0,0,0],llimit=[0,0,0])])])])])])])])])])])])])])])])])])])])])])])])])])])]),],
       joints=[
       HAnimJoint(USE='hanim_humanoid_root',ulimit=[0,0,0],llimit=[0,0,0]),
       HAnimJoint(USE='hanim_sacroiliac',ulimit=[0,0,0],llimit=[0,0,0]),
@@ -1231,7 +506,7 @@ newModel=X3D(profile='Immersive',version='4.0',
 # Self-test diagnostics
 ####################################################################################################
 
-print('Self-test diagnostics for JohnBoy.py:')
+print('Self-test diagnostics for JohnJoint.py:')
 if        metaDiagnostics(newModel): # built-in utility method in X3D class
     print(metaDiagnostics(newModel)) # display meta info, hint, warning, error, TODO values in this model
 # print('check newModel.XML() serialization...')
@@ -1260,4 +535,4 @@ except Exception as err: # usually SyntaxError
     if newModelJSON: # may have failed to generate
         print(prependLineNumbers(newModelJSON,err.lineno))
 
-print("python JohnBoy.py load and self-test diagnostics complete.")
+print("python JohnJoint.py load and self-test diagnostics complete.")

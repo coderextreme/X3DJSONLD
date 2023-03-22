@@ -1,6 +1,6 @@
 ####################################################################################################
 #
-# Now available: developmental python x3d.py package on PyPi for import.
+# Now available: developmental python x3d.py package on PyPI for import.
 #   This approach simplifies Python X3D deployment and use.
 #   https://pypi.org/project/x3d
 #
@@ -30,11 +30,11 @@ newModel=X3D(profile='Immersive',version='3.3',
     meta(content='14 July 2000',name='created'),
     meta(content='20 October 2019',name='modified'),
     meta(content='X Y Z axis arrows and labels in X3D coordinate system. See CoordinateAxesExample for use as an Inline coordinate-system reference frame.',name='description'),
-    meta(content='http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d',name='reference'),
-    meta(content='http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxesNSEW.x3d',name='reference'),
+    meta(content='https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d',name='reference'),
+    meta(content='https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxesNSEW.x3d',name='reference'),
     meta(content='https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d',name='reference'),
     meta(content='https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxesNSEW.x3d',name='reference'),
-    meta(content='http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d',name='identifier'),
+    meta(content='https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d',name='identifier'),
     meta(content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit',name='generator'),
     meta(content='../license.html',name='license')]),
   Scene=Scene(

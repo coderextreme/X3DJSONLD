@@ -83,13 +83,6 @@ do
 	${NODE} $i
 	popd
 done
-
-for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.new.x3d/' -e 's/-/_/g' -e $ROOTTOLOCAL -e 's/^\/c/../'`
-do
-	X3D=`dirname $i | sed -e 's/_/-/g' -e $LOCALTOROOT `/`basename $i .new.x3d`.x3d
-	echo ${NODE} ${NODEDIR}/xmldiff.mjs $X3D $i
-	${NODE} ${NODEDIR}/xmldiff.mjs $X3D $i
-done
 #for i in `ls -d "$@"| grep -v "\.new"`
 #do
 #echo ../../../node_modules/.bin/xslt3 -xsl:/c/x3d-code/www.web3d.org/x3d/stylesheets/X3dToJson.xslt -s:$i -o:`dirname $i`/`basename $i .x3d`.json2
@@ -101,6 +94,14 @@ done
 for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.json/' -e 's/-/_/g' -e 's/^\/c/../'`
 do
 	PY=`echo $i | sed -e $DATATOPYTHON -e $ROOTTOPYTHON -e 's/.json$/.py/'`
+	X3D=`echo $i | sed -e 's/.json$/.new.x3d/'`
 	echo python ../python/x3djsonld.py $i $PY
-	python ../python/x3djsonld.py $i > $PY && python $PY > /dev/null && echo "$PY" || echo "Error: $PY failed to parse"
+	python ../python/x3djsonld.py $i > $PY && python $PY > $X3D && echo "$PY" "$X3D" || echo "Error: $PY failed to parse"
+done
+
+for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.new.x3d/' -e 's/-/_/g' -e $ROOTTOLOCAL -e 's/^\/c/../'`
+do
+	X3D=`dirname $i | sed -e 's/_/-/g' -e $LOCALTOROOT `/`basename $i .new.x3d`.x3d
+	echo ${NODE} ${NODEDIR}/xmldiff.mjs $X3D $i
+	${NODE} ${NODEDIR}/xmldiff.mjs $X3D $i
 done
