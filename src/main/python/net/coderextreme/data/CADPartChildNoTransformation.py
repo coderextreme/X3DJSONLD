@@ -1,7 +1,7 @@
-'''
-x3d.py package 4.0.64.2 loaded, have fun with X3D Graphics!
-'''
+# x3d.py package 4.0.64.2 loaded, have fun with X3D Graphics!
+print("<!--")
 from x3d import *
+print("-->")
 print(
 X3D(profile="CADInterchange", version="3.1", 
 head=head(), 
