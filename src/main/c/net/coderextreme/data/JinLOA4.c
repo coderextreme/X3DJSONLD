@@ -39,7 +39,7 @@ head1.meta[5] = meta7;
 
 meta meta8 = createNode("meta");
 meta8.name = "modified";
-meta8.content = "23 December 2021";
+meta8.content = "27 January 2023";
 head1.meta[6] = meta8;
 
 meta meta9 = createNode("meta");
@@ -4707,8 +4707,8 @@ HAnimJoint781.children[1] = HAnimJoint791;
 HAnimJoint771.children[1] = HAnimJoint781;
 
 HAnimJoint HAnimJoint931 = createNode("HAnimJoint");
-HAnimJoint931.name = "l_acromioclavicular";
-HAnimJoint931.DEF = "hanim_l_acromioclavicular";
+HAnimJoint931.name = "l_sternoclavicular";
+HAnimJoint931.DEF = "hanim_l_sternoclavicular";
 HAnimJoint931.center = new SFVec3f(new float[1.71,53.720001,-0.6127]);
 HAnimJoint931.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint931.llimit = new MFFloat(new float[0,0,0]);
@@ -4756,8 +4756,8 @@ HAnimJoint931.children = new MFNode();
 HAnimJoint931.children[0] = HAnimSegment932;
 
 HAnimJoint HAnimJoint941 = createNode("HAnimJoint");
-HAnimJoint941.name = "l_sternoclavicular";
-HAnimJoint941.DEF = "hanim_l_sternoclavicular";
+HAnimJoint941.name = "l_acromioclavicular";
+HAnimJoint941.DEF = "hanim_l_acromioclavicular";
 HAnimJoint941.center = new SFVec3f(new float[5.464,52.970001,-0.5732]);
 HAnimJoint941.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint941.llimit = new MFFloat(new float[0,0,0]);
@@ -6135,8 +6135,8 @@ HAnimJoint931.children[1] = HAnimJoint941;
 HAnimJoint771.children[2] = HAnimJoint931;
 
 HAnimJoint HAnimJoint1211 = createNode("HAnimJoint");
-HAnimJoint1211.name = "r_acromioclavicular";
-HAnimJoint1211.DEF = "hanim_r_acromioclavicular";
+HAnimJoint1211.name = "r_sternoclavicular";
+HAnimJoint1211.DEF = "hanim_r_sternoclavicular";
 HAnimJoint1211.center = new SFVec3f(new float[-1.71,53.720001,-0.6127]);
 HAnimJoint1211.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint1211.llimit = new MFFloat(new float[0,0,0]);
@@ -6184,8 +6184,8 @@ HAnimJoint1211.children = new MFNode();
 HAnimJoint1211.children[0] = HAnimSegment1212;
 
 HAnimJoint HAnimJoint1221 = createNode("HAnimJoint");
-HAnimJoint1221.name = "r_sternoclavicular";
-HAnimJoint1221.DEF = "hanim_r_sternoclavicular";
+HAnimJoint1221.name = "r_acromioclavicular";
+HAnimJoint1221.DEF = "hanim_r_acromioclavicular";
 HAnimJoint1221.center = new SFVec3f(new float[-5.464,52.970001,-0.5732]);
 HAnimJoint1221.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint1221.llimit = new MFFloat(new float[0,0,0]);

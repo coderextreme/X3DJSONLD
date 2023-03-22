@@ -1,6 +1,6 @@
 ####################################################################################################
 #
-# Now available: developmental python x3d.py package on PyPi for import.
+# Now available: developmental python x3d.py package on PyPI for import.
 #   This approach simplifies Python X3D deployment and use.
 #   https://pypi.org/project/x3d
 #
@@ -74,37 +74,37 @@ newModel=X3D(profile='Full',version='4.0',
           material=Material(diffuseColor=(0.1,0.1,0.1),shininess=0.8,specularColor=(0.5,0.6,0.7))),
         geometry=Cylinder(radius=500))]),
     ListenerPointSource(id_='ListenerPointSource',trackCurrentView=True),
-    StreamAudioDestination(id_='AudioDestination',
+    StreamAudioDestination(id_='AudioDestination',channelCountMode='MAX',channelInterpretation='SPEAKERS',
       children=[
-      DynamicsCompressor(id_='DynamicsCompressor',
+      DynamicsCompressor(id_='DynamicsCompressor',channelCountMode='MAX',channelInterpretation='SPEAKERS',
         children=[
-        Gain(id_='Gain4',
+        Gain(id_='Gain4',channelCountMode='MAX',channelInterpretation='SPEAKERS',
           children=[
-          SpatialSound(DEF='Audio1',
+          SpatialSound(DEF='Audio1',distanceModel='INVERSE',
             children=[
-            Gain(id_='Gain1',
+            Gain(id_='Gain1',channelCountMode='MAX',channelInterpretation='SPEAKERS',
               children=[
-              Analyser(id_='Analyser1',
+              Analyser(id_='Analyser1',channelCountMode='MAX',channelInterpretation='SPEAKERS',
                 children=[
-                BiquadFilter(detune=50.0,frequency=600,id_='BiquadFilter1',qualityFactor=30.0,type='allpass',
+                BiquadFilter(detune=50.0,frequency=600,id_='BiquadFilter1',qualityFactor=30.0,type='allpass',channelCountMode='MAX',channelInterpretation='SPEAKERS',
                   children=[
                   AudioClip(description='Techno beat',id_='AudioClip1',loop=True,url=["sound/techno_beat.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/techno_beat.mp3"])])])])]),
-          SpatialSound(DEF='Audio2',
+          SpatialSound(DEF='Audio2',distanceModel='INVERSE',
             children=[
-            Gain(id_='Gain2',
+            Gain(id_='Gain2',channelCountMode='MAX',channelInterpretation='SPEAKERS',
               children=[
-              Analyser(id_='Analyser2',
+              Analyser(id_='Analyser2',channelCountMode='MAX',channelInterpretation='SPEAKERS',
                 children=[
-                BiquadFilter(detune=15.0,frequency=600,id_='BiquadFilter2',qualityFactor=15.0,type='allpass',
+                BiquadFilter(detune=15.0,frequency=600,id_='BiquadFilter2',qualityFactor=15.0,type='allpass',channelCountMode='MAX',channelInterpretation='SPEAKERS',
                   children=[
                   AudioClip(description='Simple beat',id_='AudioClip2',loop=True,url=["sound/beat.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/beat.mp3"])])])])]),
-          SpatialSound(DEF='Audio3',
+          SpatialSound(DEF='Audio3',distanceModel='INVERSE',
             children=[
-            Gain(id_='Gain3',
+            Gain(id_='Gain3',channelCountMode='MAX',channelInterpretation='SPEAKERS',
               children=[
-              Analyser(id_='Analyser3',
+              Analyser(id_='Analyser3',channelCountMode='MAX',channelInterpretation='SPEAKERS',
                 children=[
-                BiquadFilter(frequency=1000,id_='BiquadFilter3',qualityFactor=0,type='allpass',
+                BiquadFilter(frequency=1000,id_='BiquadFilter3',qualityFactor=0,type='allpass',channelCountMode='MAX',channelInterpretation='SPEAKERS',
                   children=[
                   AudioClip(description='Wobble loop',id_='AudioClip3',loop=True,url=["sound/wobble_loop.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/wobble_loop.mp3"])])])])])])])])])
 ) # X3D model complete

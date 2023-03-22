@@ -40,7 +40,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 23 December 2021 </td>
+			<td> 27 January 2023 </td>
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> description </i> </td>
@@ -2170,7 +2170,7 @@ JinLOA3.prototype = {
     .addMeta((new autoclass.meta()).setName("translator").setContent("Chul Hee Jung and Myeong Won Lee"))
     .addMeta((new autoclass.meta()).setName("created").setContent("31 March 2011"))
     .addMeta((new autoclass.meta()).setName("translated").setContent("1 November 2014"))
-    .addMeta((new autoclass.meta()).setName("modified").setContent("23 December 2021"))
+    .addMeta((new autoclass.meta()).setName("modified").setContent("27 January 2023"))
     .addMeta((new autoclass.meta()).setName("description").setContent("Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model."))
     .addMeta((new autoclass.meta()).setName("reference").setContent("KoreanCharacter00ReadMe.txt"))
     .addMeta((new autoclass.meta()).setName("reference").setContent("KoreanCharacterHumanMotion_Infotech2014_140706.pdf"))
@@ -2653,7 +2653,7 @@ JinLOA3.prototype = {
                                                                   .setGeometry((new autoclass.IndexedFaceSet()).setCreaseAngle(3.14159).setCoordIndex(this.IndexedFaceSet_34_456_coordIndex).setTexCoordIndex(this.IndexedFaceSet_34_456_texCoordIndex)
                                                                     .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_35_456_point))
                                                                     .setTexCoord((new autoclass.TextureCoordinate()).setPoint(this.TextureCoordinate_35_457_point)))))))))))))))
-                                          .addChild((new autoclass.HAnimJoint("hanim_l_acromioclavicular")).setName("l_acromioclavicular").setCenter(1.710,52.820,-0.612700).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
+                                          .addChild((new autoclass.HAnimJoint("hanim_l_sternoclavicular")).setName("l_sternoclavicular").setCenter(1.710,52.820,-0.612700).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
                                             .addChild((new autoclass.HAnimSegment("hanim_l_clavicle")).setName("l_clavicle")
                                               .addChild((new autoclass.Transform()).setTranslation(1.710,52.820,-0.612700)
                                                 .addChild((new autoclass.Shape())
@@ -2663,7 +2663,7 @@ JinLOA3.prototype = {
                                                   .setGeometry((new autoclass.IndexedFaceSet()).setCreaseAngle(3.14159).setCoordIndex(this.IndexedFaceSet_26_474_coordIndex).setTexCoordIndex(this.IndexedFaceSet_26_474_texCoordIndex)
                                                     .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_27_474_point))
                                                     .setTexCoord((new autoclass.TextureCoordinate()).setPoint(this.TextureCoordinate_27_475_point))))))
-                                            .addChild((new autoclass.HAnimJoint("hanim_l_sternoclavicular")).setName("l_sternoclavicular").setCenter(5.464,52.060001,-0.573200).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
+                                            .addChild((new autoclass.HAnimJoint("hanim_l_acromioclavicular")).setName("l_acromioclavicular").setCenter(5.464,52.060001,-0.573200).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
                                               .addChild((new autoclass.HAnimSegment("hanim_l_scapula")).setName("l_scapula")
                                                 .addChild((new autoclass.Transform()).setTranslation(5.464,52.060001,-0.573200)
                                                   .addChild((new autoclass.Shape())
@@ -2893,7 +2893,7 @@ JinLOA3.prototype = {
                                                                   .setGeometry((new autoclass.IndexedFaceSet()).setCreaseAngle(3.14159).setCoordIndex(this.IndexedFaceSet_34_696_coordIndex).setTexCoordIndex(this.IndexedFaceSet_34_696_texCoordIndex)
                                                                     .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_35_696_point))
                                                                     .setTexCoord((new autoclass.TextureCoordinate()).setPoint(this.TextureCoordinate_35_697_point)))))))))))))))
-                                          .addChild((new autoclass.HAnimJoint("hanim_r_acromioclavicular")).setName("r_acromioclavicular").setCenter(-1.710,52.820,-0.612700).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
+                                          .addChild((new autoclass.HAnimJoint("hanim_r_sternoclavicular")).setName("r_sternoclavicular").setCenter(-1.710,52.820,-0.612700).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
                                             .addChild((new autoclass.HAnimSegment("hanim_r_clavicle")).setName("r_clavicle")
                                               .addChild((new autoclass.Transform()).setTranslation(-1.710,52.820,-0.612700)
                                                 .addChild((new autoclass.Shape())
@@ -2903,7 +2903,7 @@ JinLOA3.prototype = {
                                                   .setGeometry((new autoclass.IndexedFaceSet()).setCreaseAngle(3.14159).setCoordIndex(this.IndexedFaceSet_26_714_coordIndex).setTexCoordIndex(this.IndexedFaceSet_26_714_texCoordIndex)
                                                     .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_27_714_point))
                                                     .setTexCoord((new autoclass.TextureCoordinate()).setPoint(this.TextureCoordinate_27_715_point))))))
-                                            .addChild((new autoclass.HAnimJoint("hanim_r_sternoclavicular")).setName("r_sternoclavicular").setCenter(-5.464,52.060001,-0.573200).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
+                                            .addChild((new autoclass.HAnimJoint("hanim_r_acromioclavicular")).setName("r_acromioclavicular").setCenter(-5.464,52.060001,-0.573200).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
                                               .addChild((new autoclass.HAnimSegment("hanim_r_scapula")).setName("r_scapula")
                                                 .addChild((new autoclass.Transform()).setTranslation(-5.464,52.060001,-0.573200)
                                                   .addChild((new autoclass.Shape())

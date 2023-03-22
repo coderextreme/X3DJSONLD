@@ -1,6 +1,6 @@
 ####################################################################################################
 #
-# Now available: developmental python x3d.py package on PyPi for import.
+# Now available: developmental python x3d.py package on PyPI for import.
 #   This approach simplifies Python X3D deployment and use.
 #   https://pypi.org/project/x3d
 #
@@ -94,19 +94,19 @@ newModel=X3D(profile='Full',version='4.0',
           material=Material(diffuseColor=(0.1,0.1,0.1),shininess=0.8,specularColor=(0.5,0.6,0.7))),
         geometry=Box(size=(1500,10,500)))]),
     ListenerPointSource(id_='ListenerPointSource',trackCurrentView=True),
-    StreamAudioDestination(id_='AudioDestination',
+    StreamAudioDestination(id_='AudioDestination',channelCountMode='MAX',channelInterpretation='SPEAKERS',
       children=[
-      Gain(id_='Gain3',
+      Gain(id_='Gain3',channelCountMode='MAX',channelInterpretation='SPEAKERS',
         children=[
-        ChannelMerger(id_='ChannelMerger',
+        ChannelMerger(id_='ChannelMerger',channelCountMode='MAX',channelInterpretation='SPEAKERS',
           children=[
-          ChannelSelector(id_='ChannelSelector0',
+          ChannelSelector(id_='ChannelSelector0',channelCountMode='MAX',channelInterpretation='SPEAKERS',
             children=[
-            Gain(USE='ChannelSplitter')]),
-          ChannelSelector(channelSelection=1,id_='ChannelSelector1',
+            Gain(USE='ChannelSplitter',channelCountMode='MAX',channelInterpretation='SPEAKERS')]),
+          ChannelSelector(channelSelection=1,id_='ChannelSelector1',channelCountMode='MAX',channelInterpretation='SPEAKERS',
             children=[
-            Gain(USE='ChannelSplitter')])])])]),
-    ChannelSplitter(DEF='ChannelSplitter',channelCountMode='explicit',
+            Gain(USE='ChannelSplitter',channelCountMode='MAX',channelInterpretation='SPEAKERS')])])])]),
+    ChannelSplitter(DEF='ChannelSplitter',channelCountMode='explicit',channelInterpretation='SPEAKERS',
       children=[
       AudioClip(description='Violin',url=["sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"])]),
     Transform(DEF='Audio3',rotation=(1,0,0,-0.5),translation=(0,100,0),

@@ -30,7 +30,7 @@ module.exports = {
       },
       {
         test: /\.mjs$/,
-        use: "raw-loader",
+        use: "babel-loader",
 	exclude: /node_modules/,
       },
       {
@@ -45,11 +45,10 @@ module.exports = {
       },
       {
         test: /\.mjs$/,
-        use: "raw-loader",
+        use: "babel-loader",
 	include: /src\/main\/node/,
       },
     ],
   },
-  target: 'async-node',
   stats : { errorDetails: true },
 };

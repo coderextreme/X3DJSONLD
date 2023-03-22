@@ -1,6 +1,6 @@
 ####################################################################################################
 #
-# Now available: developmental python x3d.py package on PyPi for import.
+# Now available: developmental python x3d.py package on PyPI for import.
 #   This approach simplifies Python X3D deployment and use.
 #   https://pypi.org/project/x3d
 #
@@ -87,16 +87,16 @@ newModel=X3D(profile='Full',version='4.0',
             geometry=Text(string=["Saxophone"],
               fontStyle=FontStyle(USE='ModelFontStyle')))])])]),
     ListenerPointSource(id_='ListenerPointSource',trackCurrentView=True),
-    StreamAudioDestination(id_='AudioDestination',
+    StreamAudioDestination(id_='AudioDestination',channelCountMode='MAX',channelInterpretation='SPEAKERS',
       children=[
-      SpatialSound(DEF='Audio1',id_='SpatialSound1',
+      SpatialSound(DEF='Audio1',id_='SpatialSound1',distanceModel='INVERSE',
         children=[
-        Gain(id_='Gain1',
+        Gain(id_='Gain1',channelCountMode='MAX',channelInterpretation='SPEAKERS',
           children=[
           AudioClip(description='Violin',id_='AudioClip1',loop=True,url=["sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"])])]),
-      SpatialSound(DEF='Audio2',id_='SpatialSound2',
+      SpatialSound(DEF='Audio2',id_='SpatialSound2',distanceModel='INVERSE',
         children=[
-        Gain(id_='Gain2',
+        Gain(id_='Gain2',channelCountMode='MAX',channelInterpretation='SPEAKERS',
           children=[
           AudioClip(description='Saxophone',id_='AudioClip2',loop=True,url=["sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"])])])])])
 ) # X3D model complete

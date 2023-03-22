@@ -136,12 +136,10 @@ for k,v in classes.items():
 for k,v in classes.items():
     code += v.printClass()
 
-code += "};"
+code += "}\n"
 
-code  += "if (typeof module === 'object')  {\n";
-code  += "    module.exports = mapToMethod;\n";
-code  += "}\n";
+code += "export default mapToMethod;\n"
 
-f = open("../node/mapToMethod.js", "w")
+f = open("../node/mapToMethod.mjs", "w")
 f.write(code)
 f.close()

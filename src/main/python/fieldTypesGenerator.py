@@ -30,7 +30,7 @@ class ClassPrinter:
         self.printed = True
         return str
 
-code = "var fieldTypes = {"
+code = "let fieldTypes = {"
 
 soup = xml.etree.ElementTree.parse(open("../../specifications/X3dUnifiedObjectModel-4.0.xml")).getroot()
 
@@ -55,12 +55,10 @@ for st in sts:
 for k,v in classes.items():
     code += v.printClass()
 
-code += "};"
+code += "};\n"
 
-code  += "if (typeof module === 'object')  {\n";
-code  += "    module.exports = fieldTypes;\n";
-code  += "}\n";
+code += "export default fieldTypes;\n";
 
-f = open("../node/fieldTypes.js", "w")
+f = open("../node/fieldTypes.mjs", "w")
 f.write(code)
 f.close()

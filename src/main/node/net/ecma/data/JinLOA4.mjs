@@ -1,6 +1,6 @@
 'use strict';
-import fs from 'fs';
 import { X3D } from './x3d.mjs';
+import fs from 'node:fs';
 import { SFString } from './x3d.mjs';
 import { SFNode } from './x3d.mjs';
 import { head } from './x3d.mjs';
@@ -67,7 +67,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("23 December 2021")}),
+              content : new SFString("27 January 2023")}),
 
             new meta({
               name : new SFString("description"),
@@ -3309,8 +3309,8 @@ var X3D0 =  new X3D({
                                                                                                                                                   point : new MFVec2f([0.2448,0.6067,0.3051,0.6166,0.2959,0.6259,0.2442,0.6234,0.2438,0.6465,0.2546,0.6556,0.2439,0.6556,0.3007,0.651,0.3051,0.6166,0.3007,0.651,0.6104,0.6278,0.6104,0.661,0.6021,0.661,0.2546,0.6556,0.2439,0.6556,0.3007,0.651,0.3007,0.651,0.6021,0.6278,0.6425,0.6334,0.6294,0.6619,0.3051,0.6166,0.3051,0.6166,0.2442,0.6234,0.2438,0.6465,0.2546,0.6556,0.2439,0.6556,0.3007,0.651,0.3051,0.6166,0.3051,0.6166,0.3007,0.651,0.3007,0.651,0.2546,0.6556,0.2439,0.6556,0.3007,0.651,0.6104,0.6278,0.6104,0.661,0.6021,0.661,0.6021,0.6278,0.6425,0.6334,0.6294,0.6619,0.3051,0.6166,0.3051,0.6166])}))}))})])})])})])})])})])})])})])})])})])})])})])}),
 
                                                                                             new HAnimJoint({
-                                                                                              name : new SFString("l_acromioclavicular"),
-                                                                                              DEF : new SFString("hanim_l_acromioclavicular"),
+                                                                                              name : new SFString("l_sternoclavicular"),
+                                                                                              DEF : new SFString("hanim_l_sternoclavicular"),
                                                                                               center : new SFVec3f([1.71,53.720001,-0.6127]),
                                                                                               ulimit : new MFFloat([0,0,0]),
                                                                                               llimit : new MFFloat([0,0,0]),
@@ -3344,8 +3344,8 @@ var X3D0 =  new X3D({
                                                                                                                   point : new MFVec2f([0.1911,0.4797,0.171,0.4832,0.1497,0.4806,0.1519,0.4334,0.1831,0.4416,0.1474,0.4856,0.1708,0.4854,0.1784,0.4249,0.1538,0.4251,0.1963,0.4863,0.19,0.5091,0.1847,0.499,0.172,0.4382,0.1568,0.4457,0.1409,0.4926])}))}))})])})])}),
 
                                                                                                 new HAnimJoint({
-                                                                                                  name : new SFString("l_sternoclavicular"),
-                                                                                                  DEF : new SFString("hanim_l_sternoclavicular"),
+                                                                                                  name : new SFString("l_acromioclavicular"),
+                                                                                                  DEF : new SFString("hanim_l_acromioclavicular"),
                                                                                                   center : new SFVec3f([5.464,52.970001,-0.5732]),
                                                                                                   ulimit : new MFFloat([0,0,0]),
                                                                                                   llimit : new MFFloat([0,0,0]),
@@ -4289,8 +4289,8 @@ var X3D0 =  new X3D({
                                                                                                                                                   point : new MFVec2f([0.7505,0.1465,0.7541,0.1444,0.7513,0.1418,0.7384,0.1404,0.7355,0.1424,0.7377,0.1451,0.7372,0.1554,0.7483,0.1563,0.7507,0.1564,0.9726,0.1318,0.9727,0.1441,0.9847,0.1302,0.9851,0.1424,0.7347,0.1548,0.7409,0.1641,0.7434,0.1641,0.7455,0.1632,0.7469,0.164,0.9746,0.124,0.9828,0.1229,0.9766,0.1225,0.9807,0.1219,0.7351,0.1625,0.7369,0.1626,0.7443,0.165,0.7408,0.1649,0.7387,0.1637,0.7379,0.1643,0.9788,0.1219,0.7512,0.1402,0.7392,0.1389,0.7512,0.14,0.7393,0.1388,0.9694,0.1441,0.988,0.1416,0.9705,0.1317,0.9868,0.1295,0.9727,0.1237,0.9848,0.1221,0.9756,0.1218,0.9787,0.1209,0.9817,0.1209,0.973,0.1475,0.9849,0.146])}))}))})])})])})])})])})])})])})])})])})])})])})])}),
 
                                                                                             new HAnimJoint({
-                                                                                              name : new SFString("r_acromioclavicular"),
-                                                                                              DEF : new SFString("hanim_r_acromioclavicular"),
+                                                                                              name : new SFString("r_sternoclavicular"),
+                                                                                              DEF : new SFString("hanim_r_sternoclavicular"),
                                                                                               center : new SFVec3f([-1.71,53.720001,-0.6127]),
                                                                                               ulimit : new MFFloat([0,0,0]),
                                                                                               llimit : new MFFloat([0,0,0]),
@@ -4324,8 +4324,8 @@ var X3D0 =  new X3D({
                                                                                                                   point : new MFVec2f([0.1911,0.4797,0.171,0.4832,0.1497,0.4806,0.1519,0.4334,0.1831,0.4416,0.1474,0.4856,0.1708,0.4854,0.1784,0.4249,0.1538,0.4251,0.1963,0.4863,0.19,0.5091,0.1847,0.499,0.172,0.4382,0.1568,0.4457,0.1409,0.4926])}))}))})])})])}),
 
                                                                                                 new HAnimJoint({
-                                                                                                  name : new SFString("r_sternoclavicular"),
-                                                                                                  DEF : new SFString("hanim_r_sternoclavicular"),
+                                                                                                  name : new SFString("r_acromioclavicular"),
+                                                                                                  DEF : new SFString("hanim_r_acromioclavicular"),
                                                                                                   center : new SFVec3f([-5.464,52.970001,-0.5732]),
                                                                                                   ulimit : new MFFloat([0,0,0]),
                                                                                                   llimit : new MFFloat([0,0,0]),

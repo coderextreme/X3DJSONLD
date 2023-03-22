@@ -5744,6 +5744,6 @@ let fieldTypes = {"X3DNode" : {
 	"Scene" : "SFNode",
 	"style" : "SFString",
 	"version" : "SFString",
-}
+},
 };
 export default fieldTypes;
