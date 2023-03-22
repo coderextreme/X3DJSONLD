@@ -1,0 +1,20 @@
+<!--
+x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
+-->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'>
+  <Scene>
+    <Background skyColor='1 1 1'/>
+    <Viewpoint description='Default View' position='0 0 15'/>
+    <Shape>
+      <Appearance>
+        <Material DEF='DefaultMaterial' diffuseColor='0.2 0.2 0.2'/>
+      </Appearance>
+      <Text DEF='DefaultText' string='"Character entity substitutions:" "empty string "" skips a line:" "" "apostrophe &apos; is &apos;" "ampersand &amp; is &amp;" "quote mark " is &quot;" "backslash \ is X3D escape character" "double backslash \\ is X3D backslash \ character" "Pi is pi is pi XML character entity"'>
+        <FontStyle DEF='CenteredFontStyle' justify='"MIDDLE" "MIDDLE"'/>
+      </Text>
+    </Shape>
+  </Scene>
+</X3D>
+
