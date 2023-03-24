@@ -50,7 +50,7 @@ def parseArray(lead, trail, grandparent, parent, data, indent, fieldType=None):
     #    print("'''"+str(fieldType)+" "+grandparent+"."+parent+"["+str(tupleSize)+"]'''", file=sys.stderr)
     for d in data:
         if isinstance(d, dict) and d.get("#comment"):
-            out += "\n"+"#" + d.get("#comment") + "\n"
+            out += "\n"+"Comment(value=''' " + d.get("#comment") + " '''),\n"
             continue
         if (tupleSize > 1) and (tuplecount % tupleSize == 0):
             out += "("
@@ -148,9 +148,11 @@ def parseObject(parent, data,indent):
         if els > 0 and parent != "head":
             out += ", "
         els += 1
-        if k.startswith("#"):
-            out += "\n#" + str(v).replace(r"\n", "\n#") + "\n"
+        if k.startswith("#comment"):
+            out += "\nComment(value=''' " + str(v).replace(r"\n", " '''),\nComment(value=''' ))") + " '''),\n"
             # els = 0
+        elif k.startswith("#sourceCode") or k.startswith("#sourceText"):
+            out += 'sourceCode="""' + str(v) + '""",'
         elif isinstance(v, dict):  # JSON object is parse as a dict
             out += "\n"+key
             if key in ("left", "right", "top", "bottom", "front", "back"):
@@ -162,9 +164,9 @@ def parseObject(parent, data,indent):
                 out += "="
             if key in ("head"):
                 out += key+"("
-                #out += "children=["
-                #out += parseObject(k, v,indent+2)
-                #out += "]"
+                out += "children=["
+                out += parseObject(k, v,indent+2)
+                out += "]"
                 out += ")"
             elif key in ("ProtoBody", "Scene", "IS", "ProtoInterface"):
                 out += key+"("
@@ -191,10 +193,11 @@ def parseObject(parent, data,indent):
                 if fieldType.startswith("SF"):
                     out += parseArray("(", ")", parent, key, v,indent+1, fieldType)
                 if fieldType.startswith("MF"):
-                    out += parseArray("[", "]", parent, key, v,indent+1, fieldType)
+                    out += parseArray("", "", parent, key, v,indent+1, fieldType)
             else:
                 out += key+"="
             if key in ("meta", "unit", "component"):
+                out += ""
                 pass
             elif key in ("vertexCount", "range", "children", "url", "frontUrl", "backUrl", "bottomUrl", "topUrl", "leftUrl", "rightUrl", "key", "url", "justify", "string", "field", "fieldValue", "connect", "image", "avatarSize", "skyAngle", "groundAngle", "skinCoordWeight", "skinCoordIndex", "colorIndex", "texCoordIndex", "normalIndex", "coordIndex", "family", "stiffness", "llimit", "ulimit", "info", "physics", "skeleton", "viewpoints", "skin", "displacers", "sites", "segments", "parts", "shaders", "programs"):
                 out += parseArray("[", "]", parent, key, v,indent+1, fieldType)

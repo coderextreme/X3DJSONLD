@@ -45,7 +45,7 @@ class ClassPrinter:
         self.printed = True
         return str
 
-code = "var java = require('java');\n"
+code = "import java from 'java';\n"
 
 code += 'java.options.push("-Djava.awt.headless=true");\n'
 code += 'java.options.push("-Xmx1000m");\n'
@@ -93,14 +93,21 @@ with open("../../specifications/X3dUnifiedObjectModel-4.0.xml") as fp:
     for ft in fts:
         classes[ft['type']] = ClassPrinter(ft, "")
 
-    code += 'module.exports = {\n';
+    code += 'let autoclass;\n';
+    code += 'try {\n';
+    code += 'autoclass = {\n';
     for k,v in classes.items():
         code += v.printClass()
 
-code += 'ConfigurationProperties : java.import("org.web3d.x3d.jsail.ConfigurationProperties"),\n'
-code += 'CommentsBlock : java.import("org.web3d.x3d.jsail.Core.CommentsBlock")\n'
-code += '}\n';
+code += '   ConfigurationProperties : java.import("org.web3d.x3d.jsail.ConfigurationProperties"),\n'
+code += '   CommentsBlock : java.import("org.web3d.x3d.jsail.Core.CommentsBlock")\n'
+code += '   };\n'
+code += '} catch (e) {\n'
+code += '   console.log(e);\n'
+code += '   throw e;\n'
+code += '};\n'
+code += 'export default autoclass;\n';
 
-f = open("../node/X3Dautoclass.js", "w")
+f = open("../node/X3Dautoclass.mjs", "w")
 f.write(code)
 f.close()
