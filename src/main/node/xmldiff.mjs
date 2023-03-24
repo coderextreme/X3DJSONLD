@@ -1,11 +1,9 @@
 "use strict";
 
 import xml2js from 'xml2js';
-try {
-	import fs from 'node:fs';
-} catch (e) {
-	console.log("Problems loading fs. On browser? "+e);
-}
+import fs from 'fs';
+import { globSync } from 'glob';
+
 var parseString = xml2js.parseString;
 
 var program = process.argv[1];
@@ -139,38 +137,33 @@ function compare(obj1, p1, obj2, p2) {
 		
 }
 
-import glob from 'glob';
 try {
 	var right = fs.readFileSync(files[1]);
 	parseString(right, function(err, resultright) {
 		if (err) throw "RIGHT FILE "+err;
-		glob(files[0], function(err, filesglobs) {
-			if (err) {
-				console.error(err);
-			}
-			filesglobs.forEach(function(file) {
-				var left = fs.readFileSync(file);
-				parseString(left, function(err, resultleft) {
-					if (err) throw "LEFT FILE "+err;
-					var ret;
-					var str;
-					[ ret, str ] = compare(resultleft, '', resultright, '');
-					if (!ret) {
-						try {
-							console.log("================================================================================");
-							console.log(program, files[0], files[1]);
-							console.log(str);
-							console.log("Different");
-						} catch (e) {
-							console.error("Quit pipe");
-						}
-						/*
-					} else {
-						console.log("Same");
-						*/
+		var filesglobs = globSync(files[0]);
+		filesglobs.forEach(function(file) {
+			var left = fs.readFileSync(file);
+			parseString(left, function(err, resultleft) {
+				if (err) throw "LEFT FILE "+err;
+				var ret;
+				var str;
+				[ ret, str ] = compare(resultleft, '', resultright, '');
+				if (!ret) {
+					try {
+						console.log("================================================================================");
+						console.log(program, files[0], files[1]);
+						console.log(str);
+						console.log("Different");
+					} catch (e) {
+						console.error("Quit pipe");
 					}
-					process.exit();
-				});
+					/*
+				} else {
+					console.log("Same");
+					*/
+				}
+				process.exit();
 			});
 		});
 	});
