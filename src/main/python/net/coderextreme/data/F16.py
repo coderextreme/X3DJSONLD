@@ -4,7 +4,25 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="3.0", 
-head=head(), 
+head=head(children=[meta(name="title", content="F16.x3d"),
+meta(name="description", content="F-16, The Fighting Falcon, Turkish Air Force (TUAF), Turkey"),
+meta(name="creator", content="Murat ONDER, LTJG, Turkish Navy"),
+meta(name="creator", content="The coordinates of the main body (Except landing gears, nose antenna, flag, weapons, missile holders, cockpit, cockpit seat and fuel tanks) are mostly similar to the model of Soji Yamakawa and used with permission."),
+meta(name="created", content="13 July 2003"),
+meta(name="modified", content="27 November 2015"),
+meta(name="reference", content="http://www.fas.org/man/dod-101/sys/ac/f-16.htm"),
+meta(name="permission", content="Here is a copy of the permission for the usage of the main hull; -----Original Message----- From: Soji Yamakawa [mailto:soji@andrew.cmu.edu] Sent: Tuesday, September 16, 2003 8:00 PM To: Onder, Murat TUR Subject: Re: VRML model points usage permission Sure. No problem. Soji ----- Original Message ----- From: \"Murat Onder\" <monder@nps.navy.mil> To: <Soji_Yamakawa@cmu.edu>; <PEB01130@nifty.ne.jp> Sent: Monday, September 15, 2003 3:50 PM Subject: VRML model points usage permission Hi Sir, I&apos;m a MS student in Naval Postgraduate School. I'm making a model of Turkish F-16 for my project in a VRML course. For the main hull of the F-16, I want to use the coordinate points of your VRML model since I think that model represents well enough F-16. This is going to be only a student project and will not be used for any commercial purposes. Of course I'll make the citation and put the reference links to your page in the meta files of x3d file. I'd like to know if you can give permission to use those points in my model. V/R, Murat Onder LTJG, TU NAVY"),
+meta(name="reference", content="The landing gears are taken from the Savage Archive, from F18 Blue Angel, then modified and re-animated."),
+meta(name="drawing", content="\"Drawing.jpg\" \"../../../Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Drawing.jpg\" \"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Drawing.jpg\""),
+meta(name="Image", content="\"FrontView.jpg\" \"FrontView2.jpg\" \"Missiles.jpg\" \"../../../Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontView.jpg\" \"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontView.jpg\" \"../../../Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontView2.jpg\" \"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontView2.jpg\" \"../../../Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Missiles.jpg\" \"https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Missiles.jpg\""),
+meta(name="identifier", content="https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/F16.x3d"),
+meta(name="subject", content="F16, F-16, Fighting Falcon"),
+meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+meta(name="license", content="../../license.html"),
+meta(name="translated", content="24 March 2023"),
+meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+]), 
 Scene=Scene(children=[
 Transform(DEF="F16Transform", children=[
 Transform(DEF="MainFrameTransform", scale=((3,3,3)), children=[
@@ -112,15 +130,15 @@ Inline(url=["Cockpit.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-F
 Transform(DEF="SeatTransform", rotation=((-1,0,0,-0.1)), scale=((0.9,0.9,0.9)), translation=((0,0,-8.3)), children=[
 Inline(url=["Seat.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Seat.x3d","Seat.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/Seat.wrl"])]),
 Transform(DEF="FrontWheelTransform", center=((0,2.5,0)), rotation=((-1,0,0,1.92)), translation=((0.7,-5.2,-6.5)), children=[
-#Front wheel is taken from the Savage Library, modified and re-animated.(from F18 Blue Angel)
+Comment(value=''' Front wheel is taken from the Savage Library, modified and re-animated.(from F18 Blue Angel) '''),
 
 Inline(url=["FrontWheel.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontWheel.x3d","FrontWheel.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/FrontWheel.wrl"]),]),
 Transform(DEF="RearLeftWheelTransform", center=((0,2.5,0)), rotation=((1,0,1,1.92)), translation=((-2.95,-5,7)), children=[
-#Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel)
+Comment(value=''' Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel) '''),
 
 Inline(url=["RearLeftWheel.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearLeftWheel.x3d","RearLeftWheel.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearLeftWheel.wrl"]),]),
 Transform(DEF="RearRightWheelTransform", center=((0,2.5,0)), rotation=((-1,0,-1,1.92)), translation=((2.95,-5,7)), children=[
-#Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel)
+Comment(value=''' Rear wheels are taken from the Savage Library and re-animated (from F18 Blue Angel) '''),
 
 Inline(url=["RearRightWheel.x3d","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearRightWheel.x3d","RearRightWheel.wrl","https://savage.nps.edu/Savage/AircraftFixedWing/F16-FightingFalcon-Turkey/RearRightWheel.wrl"]),]),
 Transform(DEF="CockpitButtonsTransform", children=[
@@ -199,7 +217,7 @@ OrientationInterpolator(DEF="GearDownInterpolator", key=[float(0),float(0.5),flo
 ROUTE(fromField="touchTime", fromNode="TouchSensorDown", toField="set_startTime", toNode="WheelDown"),
 ROUTE(fromField="fraction_changed", fromNode="WheelDown", toField="set_fraction", toNode="GearDownInterpolator"),
 ROUTE(fromField="value_changed", fromNode="GearDownInterpolator", toField="set_rotation", toNode="FrontWheelTransform"),
-#Animation commands for Rear Right Wheel Starts
+Comment(value=''' Animation commands for Rear Right Wheel Starts '''),
 
 TimeSensor(DEF="RRearUp1", cycleInterval=8),
 TimeSensor(DEF="RRearDown1", cycleInterval=8),
@@ -211,7 +229,7 @@ ROUTE(fromField="fraction_changed", fromNode="RRearDown1", toField="set_fraction
 ROUTE(fromField="fraction_changed", fromNode="RRearUp1", toField="set_fraction", toNode="RRearInterUp1"),
 ROUTE(fromField="value_changed", fromNode="RRearInterDown1", toField="set_rotation", toNode="RearRightWheelTransform"),
 ROUTE(fromField="value_changed", fromNode="RRearInterUp1", toField="set_rotation", toNode="RearRightWheelTransform"),
-#Animation commands for Rear Left Wheel
+Comment(value=''' Animation commands for Rear Left Wheel '''),
 
 TimeSensor(DEF="LRearUp1", cycleInterval=8),
 TimeSensor(DEF="LRearDown1", cycleInterval=8),
@@ -273,6 +291,6 @@ ROUTE(fromField="fraction_changed", fromNode="FireClock", toField="set_fraction"
 ROUTE(fromField="value_changed", fromNode="MissilePath", toField="set_translation", toNode="LeftmostAmraamTransform"),
 Viewpoint(DEF="MissileLaunchView", description="Missile Fire View", orientation=((0.094,-0.994,0.057,1.1716)), position=((-344.3,-142.8,-27.7))),
 ROUTE(fromField="isActive", fromNode="FireSensor", toField="set_bind", toNode="MissileLaunchView"),
-#TODO fix type, add filter
+Comment(value=''' TODO fix type, add filter '''),
 ]))
 .XML())

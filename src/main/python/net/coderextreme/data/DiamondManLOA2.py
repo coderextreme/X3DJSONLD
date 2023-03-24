@@ -4,7 +4,25 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="4.0", 
-head=head(), 
+head=head(children=[component(name="HAnim", level=1),
+meta(name="title", content="DiamondManLOA2.x3d"),
+meta(name="description", content="hanim skeletal structure at level of articulation two, one diamond at the base node for the structure"),
+meta(name="creator", content="Matthew T. Beitler"),
+meta(name="translator", content="Joel S. Pawloski"),
+meta(name="created", content="12 November 2001"),
+meta(name="modified", content="23 December 2021"),
+meta(name="Image", content="DiamondManLOA2.png"),
+meta(name="Image", content="images/BonesAllSkeletonFrontViewLOA2.png"),
+meta(name="motto", content="(a) \"Diamonds are a girl's best friend.\" (b) \"Gosh, it sure is chilly in here.\""),
+meta(name="reference", content="The joint centers of this figure are based on the work of Norman Badler, director of the Center for Human Modeling and Simulation at the University of Pennsylvania. The original document which these joint centers are based on can be found at: http://www.cis.upenn.edu/~badler/anthro/89-71.ps"),
+meta(name="subject", content="human animation, x3d, vrml, animation"),
+meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Templates/DiamondManLOA2.x3d"),
+meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+meta(name="license", content="../license.html"),
+meta(name="translated", content="24 March 2023"),
+meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+]), 
 Scene=Scene(children=[
 WorldInfo(info=["HAnim 2.0 Default Joint Centers, Level Of Articulation (LOA) 2 -------------------------------------------------------- HANIM 1.1 (VRML 2.0) Author name: eMpTy (a.k.a. Matthew T. Beitler) HANIM 1.1 (VRML 2.0) Author email: beitler@graphics.cis.upenn.edu or beitler@acm.org HANIM 1.1 (VRML 2.0) Author homepage: http://www.cis.upenn.edu/~beitler HANIM 1.1 (VRML 2.0) Compliance Date: May 12, 1999 HANIM 1.1 Compliance Information: http://ece.uwaterloo.ca/~HAnim/ Construction Info (joint centers): The joint centers of this figure are based on the work of Norman Badler, director of the Center for Human Modeling and Simulation at the University of Pennsylvania. The original document which these joint centers are based on can be found at: http://www.cis.upenn.edu/~badler/anthro/89-71.ps, .pdf"], title="HANIM 1.1 Default Joint Centers, LOA1"),
 NavigationInfo(speed=1.5),
@@ -435,7 +453,7 @@ Appearance(
 material=
 Material(USE="HAND_FEET_COLOR")))]),
 HAnimSite(name="l_metatarsal_phalanx_5_pt", DEF="hanim_l_metatarsal_phalanx_5_pt", translation=((0.1825,0.007,0.0928)), children=[
-## CAESAR Feature Point #66
+Comment(value=''' # CAESAR Feature Point #66 '''),
 
 Shape(
 geometry=
@@ -447,7 +465,7 @@ Appearance(
 material=
 Material(USE="HAND_FEET_COLOR"))),]),
 HAnimSite(name="l_tarsal_distal_phalanx_2_pt", DEF="hanim_l_tarsal_distal_phalanx_2_pt", translation=((0.1195,0.0079,0.1433)), children=[
-## CAESAR Feature Point #72
+Comment(value=''' # CAESAR Feature Point #72 '''),
 
 Shape(
 geometry=

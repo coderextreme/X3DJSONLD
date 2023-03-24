@@ -4,7 +4,25 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="3.3", 
-head=head(), 
+head=head(children=[[component(name="H-Anim", level=1),
+][meta(name="title", content="RotationTests.x3d"),
+meta(name="description", content="BVH file conversion support: test and visualize various rotations in order to properly configure converter from Euler angles to SFRotation values."),
+meta(name="creator", content="Don Brutzman"),
+meta(name="created", content="17 December 2016"),
+meta(name="modified", content="20 October 2019"),
+meta(name="Image", content="RotationTests.png"),
+meta(name="reference", content="BvhConversion1.x3d"),
+meta(name="warning", content="under development: euler-angle conversions still problematic, single-step animation reveals that animations are not smooth."),
+meta(name="reference", content="../Animation/RotationCalculatorExample.x3d"),
+meta(name="drawing", content="https://savage.nps.edu/X3D-Edit/images/RotationCalculator.png"),
+meta(name="generator", content="Java BVH to X3D Converter, org.web3d.x3d.hanim.bvh package"),
+meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+meta(name="identifier", content="https://x3dgraphics.com/examples/X3dForAdvancedModeling/MotionAnimation/RotationTests.x3d"),
+meta(name="license", content="license.html"),
+meta(name="translated", content="22 March 2023"),
+meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+]]), 
 Scene=Scene(children=[
 #initial 3 rotations from 1.bvh, Zrotation Xrotation Yrotation: -1.829527 -4.400301 -0.381611, 2.832229 5.801149 2.553770, -3.939975 -3.766201 -3.474078
 

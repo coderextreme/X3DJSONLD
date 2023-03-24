@@ -4,7 +4,33 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="4.0", 
-head=head(), 
+head=head(children=[component(name="HAnim", level=1),
+meta(name="title", content="HAnimModelFootRight.x3d"),
+meta(name="description", content="Right foot, using high-fidelity definitions for HAnim version 2.0"),
+meta(name="creator", content="Kwan-Hee YOO, Don Brutzman and Joe Williams"),
+meta(name="created", content="26 January 2015"),
+meta(name="modified", content="23 December 2021"),
+meta(name="warning", content="not yet to scale"),
+meta(name="TODO", content="Update all values to match HAnim2 A.7 Level of articulation four LOA-4"),
+meta(name="TODO", content="Add links to figures"),
+meta(name="TODO", content="Add Viewpoints to enable inspection"),
+meta(name="info", content="TODO describe how to compute and apply offsets for center values whenever attaching this appendage to a body"),
+meta(name="warning", content="TODO will X3D HAnim component add a new level to support LOA-4 functionality?"),
+meta(name="reference", content="https://www.web3d.org/working-groups/humanoid-animation-HAnim"),
+meta(name="reference", content="https://www.web3d.org/documents/specifications/19774/V2.0"),
+meta(name="reference", content="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#TheFeet"),
+meta(name="reference", content="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#f-FootJoints"),
+meta(name="reference", content="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#Hierarchy4"),
+meta(name="reference", content="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/hanim.html"),
+meta(name="subject", content="X3D HAnim humanoid animation"),
+meta(name="TODO", content="Integrate and confirm Segment/Joint names, Viewpoints."),
+meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootRight.x3d"),
+meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+meta(name="license", content="../license.html"),
+meta(name="translated", content="24 March 2023"),
+meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+]), 
 Scene=Scene(children=[
 WorldInfo(title="HAnimModelFootRight.x3d"),
 HAnimHumanoid(name="Foot_Right", DEF="hanim_Foot_Right", loa=4, version="2.0", 
@@ -12,7 +38,7 @@ metadata=(
 MetadataSet(name="HAnimHumanoid.info", reference="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid", value=[
 MetadataString(name="authorName", value=["Kwan-Hee YOO, Don Brutzman and Joe Williams"])])), skeleton=[
 HAnimJoint(name="humanoid_root", DEF="hanim_humanoid_root", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
-#Might consider putting a HAnimSegment here, but that doesn't help with re-use of this foot model
+Comment(value=''' Might consider putting a HAnimSegment here, but that doesn't help with re-use of this foot model '''),
 
 HAnimJoint(name="r_talocrural", DEF="hanim_r_talocrural", description="connection joint of foot to leg above", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_talus", DEF="hanim_r_talus", children=[
@@ -42,7 +68,7 @@ geometry=
 IndexedLineSet(DEF="TCtoCC", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0,0,0),(-0.2,0.3,0)])))]),
-#TCN
+Comment(value=''' TCN '''),
 
 HAnimJoint(name="r_talocalcaneonavicular", DEF="hanim_r_talocalcaneonavicular", center=((0.0,-0.3,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_navicular", DEF="hanim_r_navicular", children=[
@@ -75,7 +101,7 @@ geometry=
 IndexedLineSet(DEF="TCNtoCN3", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0.0,-0.3,0),(-0.1,-0.4,0)])))]),
-#CN1
+Comment(value=''' CN1 '''),
 
 HAnimJoint(name="r_cuneonavicular_1", DEF="hanim_r_cuneonavicular_1", center=((0.1,-0.45,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_cuneiform_1", DEF="hanim_r_cuneiform_1", children=[
@@ -129,7 +155,7 @@ geometry=
 IndexedLineSet(DEF="tiptoe_r_interphalangeal_", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0.1,-1.05,0),(0.1,-1.1,0)])))])])])])]),
-#CN2
+Comment(value=''' CN2 '''),
 
 HAnimJoint(name="r_cuneonavicular_2", DEF="hanim_r_cuneonavicular_2", center=((0.0,-0.45,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_cuneiform_2", DEF="hanim_r_cuneiform_2", children=[
@@ -196,7 +222,7 @@ geometry=
 IndexedLineSet(DEF="tiptoe_r_tarsal_distal_interphalangeal_2", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(-0.05,-1.12,0),(-0.05,-1.16,0)])))])])])])])]),
-#CN3
+Comment(value=''' CN3 '''),
 
 HAnimJoint(name="r_cuneonavicular_3", DEF="hanim_r_cuneonavicular_3", center=((-0.1,-0.4,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_cuneiform_3", DEF="hanim_r_cuneiform_3", children=[
@@ -263,7 +289,7 @@ geometry=
 IndexedLineSet(DEF="tiptoe_r_tarsal_distal_interphalangeal_3", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(-0.15,-1.13,0),(-0.15,-1.16,0)])))])])])])])]),]),
-#CC
+Comment(value=''' CC '''),
 
 HAnimJoint(name="r_calcaneocuboid", DEF="hanim_r_calcaneocuboid", center=((-0.2,0.3,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_calcaneus", DEF="hanim_r_calcaneus", children=[
@@ -278,7 +304,7 @@ geometry=
 IndexedLineSet(DEF="CCtoTT", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(-0.2,0.3,0),(-0.21,-0.3,0)])))]),
-#TT
+Comment(value=''' TT '''),
 
 HAnimJoint(name="r_transversetarsal", DEF="hanim_r_transversetarsal", center=((-0.21,-0.3,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_cuboid", DEF="hanim_r_cuboid", children=[
@@ -302,7 +328,7 @@ geometry=
 IndexedLineSet(DEF="TTtoTMT5", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(-0.21,-0.3,0),(-0.33,-0.52,0)])))]),
-#TMT4
+Comment(value=''' TMT4 '''),
 
 HAnimJoint(name="r_tarsometatarsal_4", DEF="hanim_r_tarsometatarsal_4", center=((-0.25,-0.58,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_metatarsal_4", DEF="hanim_r_metatarsal_4", children=[
@@ -356,7 +382,7 @@ geometry=
 IndexedLineSet(DEF="tiptoe_r_tarsal_distal_interphalangeal_4", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(-0.25,-1.1,0),(-0.25,-1.15,0)])))])])])])]),
-#TMT5
+Comment(value=''' TMT5 '''),
 
 HAnimJoint(name="r_tarsometatarsal_5", DEF="hanim_r_tarsometatarsal_5", center=((-0.33,-0.52,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_metatarsal_5", DEF="hanim_r_metatarsal_5", children=[

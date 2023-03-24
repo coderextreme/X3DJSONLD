@@ -4,7 +4,24 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="4.0", 
-head=head(), 
+head=head(children=[[component(name="HAnim", level=1),
+][meta(name="title", content="JoeKick.x3d"),
+meta(name="description", content="This Joe model is a HAnim version 2 LOA-3 Humanoid with textured skin based on the original HAnim Specification and data from CAESAR models."),
+meta(name="creator", content="Joe Williams"),
+meta(name="created", content="9 January 2004"),
+meta(name="translated", content="12 January 2017"),
+meta(name="modified", content="23 December 2021"),
+meta(name="TODO", content="Record information about skin coordinates (found in comment at end of scene) as a structured MetadataSet containing MetadataString nodes"),
+meta(name="translators", content="Roy Walmsley, Don Brutzman, John Carlson"),
+meta(name="reference", content="../Characters/JoeSkinTexcoordDisplacerKick.x3d"),
+meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/JoeKick.x3d"),
+meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+meta(name="generator", content="BS studio translation from .x3dv by Joe using BS Contact"),
+meta(name="license", content="../license.html"),
+meta(name="translated", content="22 March 2023"),
+meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+]]), 
 Scene=Scene(children=[
 WorldInfo(info=["X3D Humanoid LOA3 skeleton","skin from hanim sites, surface features, and some added points","390 points"], title="X3D HANIM LOA3 Skeleton, 390 point Skin, texcoords, Displacer, teTrans for Joe_ by Joe"),
 NavigationInfo(DEF="Start_NavigationInfo", headlight=False, speed=2.5),

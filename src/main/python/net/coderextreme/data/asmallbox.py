@@ -4,7 +4,15 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="3.3", 
-head=head(), 
+head=head(children=[meta(name="title", content="asmallbox.x3d"),
+meta(name="creator", content="John Carlson"),
+meta(name="generator", content="manual"),
+meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/abox.x3d"),
+meta(name="description", content="a box"),
+meta(name="translated", content="24 March 2023"),
+meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+]), 
 Scene=Scene(children=[
 ProtoDeclare(name="anyShape", 
 ProtoInterface=ProtoInterface(field=[field(name="myShape", accessType="inputOutput", type="MFNode", children=[

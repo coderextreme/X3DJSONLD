@@ -4,7 +4,23 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="3.3", 
-head=head(), 
+head=head(children=[[meta(name="title", content="ViewFrustumPrototype.x3d"),
+meta(name="description", content="Define a view frustum associated with a given pair of Viewpoint and NavigationInfo nodes, provided as a reusable prototype."),
+meta(name="creator", content="Don Brutzman"),
+meta(name="translated", content="16 August 2008"),
+meta(name="modified", content="20 October 2019"),
+meta(name="reference", content="ViewFrustumExample.x3d"),
+meta(name="drawing", content="ViewFrustumComputation.png"),
+meta(name="Image", content="ViewFrustumOverheadView.png"),
+meta(name="Image", content="ViewFrustumObliqueView.png"),
+meta(name="subject", content="view culling frustum"),
+meta(name="identifier", content="http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d"),
+meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+meta(name="license", content="../license.html"),
+meta(name="translated", content="22 March 2023"),
+meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+]]), 
 Scene=Scene(children=[
 WorldInfo(title="ViewFrustumPrototype.x3d"),
 ProtoDeclare(name="ViewFrustum", appinfo="Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes", 

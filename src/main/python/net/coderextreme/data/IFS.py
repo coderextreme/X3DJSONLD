@@ -4,10 +4,22 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="4.0", 
-head=head(), 
+head=head(children=[component(name="HAnim", level=1),
+meta(name="title", content="JohnIFS.x3d"),
+meta(name="identifier", content="http://www.web3d.org/x3d/content/examples/HumanoidAnimation/IFS.x3d"),
+meta(name="description", content="An attempt at a standard LOA-4 skeleton"),
+meta(name="generator", content="h2.pl"),
+meta(name="modified", content="18 Jan 2023"),
+meta(name="creator", content="John Carlson"),
+meta(name="created", content="9 November 2020"),
+meta(name="license", content="../license.html"),
+meta(name="translated", content="24 March 2023"),
+meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+]), 
 Scene=Scene(children=[
 Group(children=[
-#DEFS for markers of skeleton joints, segments, and sites
+Comment(value=''' DEFS for markers of skeleton joints, segments, and sites '''),
 
 Transform(translation=((0,2.1,0)), children=[
 Shape(DEF="HAnimSiteShape", 

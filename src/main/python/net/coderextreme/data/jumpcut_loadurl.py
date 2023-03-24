@@ -4,7 +4,24 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="3.0", 
-head=head(), 
+head=head(children=[[meta(name="title", content="jumpcut_loadurl.x3d"),
+meta(name="reference", content="http://www.nist.gov/vrml.html"),
+meta(name="reference", content="http://www.itl.nist.gov/div897/ctg/vrml/vrml.html"),
+meta(name="creator", content="http://www.itl.nist.gov/div897/ctg/vrml/members.html"),
+meta(name="disclaimer", content="This file was provided by the National Institute of Standards and Technology, and is part of the X3D Conformance Test Suite, available at http://www.nist.gov/vrml.html The information contained within this file is provided for use in establishing conformance to the ISO VRML97 Specification. Conformance to this test does not imply recommendation or endorsement by the National Institute of Standards and Technology. This software can be redistributed and/or modified freely provided that any derivative works bear some notice that they are derived from it, and any modified versions bear some notice that they have been modified."),
+meta(name="info", content="Correct definition and compliance of this conformance scene is maintained by the X3D Working Group, https://www.web3d.org/working-groups/x3d"),
+meta(name="translator", content="Michael Kass NIST, Don Brutzman NPS"),
+meta(name="translated", content="21 January 2001"),
+meta(name="modified", content="20 October 2019"),
+meta(name="description", content="Test jumpcut Viewpoint transition using Script loadUrl method. A NavigationInfo type of ANY is NOT included in the NavigationInfo node field in this world. Consequently, a Script node with a call to the \"loadURL\" method, with a url corresponding to the MFString \"Top_View\" (the name of a Viewpoint in this world) should create a \"jump cut\" transition of views when the Box geometry in this world is indicated by the pointing device. As a result, indicating the Box geometry should result in a Viewpoint transition to the top view of the Box geometry."),
+meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.x3d"),
+meta(name="generator", content="Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"),
+meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+meta(name="license", content="../../license.html"),
+meta(name="translated", content="22 March 2023"),
+meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+]]), 
 Scene=Scene(children=[
 WorldInfo(title="jumpcut_loadurl.x3d"),
 Background(groundAngle=[float(1.57)], groundColor=[(0,0.5,0),(0,0.5,0)], skyColor=[(0,0,1)]),

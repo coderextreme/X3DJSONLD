@@ -4,7 +4,25 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="3.3", 
-head=head(), 
+head=head(children=[[meta(name="title", content="LOA1_WalkAnimation.x3d"),
+meta(name="description", content="Humanoid animation prototype reusable by any Humanoid."),
+meta(name="creator", content="Cindy Ballreich cindy@ballreich.net 3Name3D"),
+meta(name="rights", content="1997 3Name3D / Yglesias, Wallock, Divekar, Inc., all rights reserved."),
+meta(name="translator", content="Don Brutzman"),
+meta(name="translated", content="1 October 2001"),
+meta(name="modified", content="23 May 2020"),
+meta(name="reference", content="http://www.ballreich.net/vrml/HAnim/nancy_HAnim.wrl"),
+meta(name="reference", content="http://HAnim.org/Specifications/HAnim2001"),
+meta(name="reference", content="http://HAnim.org/Models"),
+meta(name="reference", content="http://HAnim.org/Nodes"),
+meta(name="subject", content="Nancy Walk Animation HAnim 2001"),
+meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/LOA1_WalkAnimation.x3d"),
+meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+meta(name="license", content="../license.html"),
+meta(name="translated", content="22 March 2023"),
+meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+]]), 
 Scene=Scene(children=[
 WorldInfo(title="LOA1_WalkAnimation.x3d"),
 ProtoDeclare(name="LOA1_WalkAnimation", 

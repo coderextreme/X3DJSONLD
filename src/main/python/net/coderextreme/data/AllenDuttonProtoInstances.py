@@ -4,7 +4,25 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="3.3", 
-head=head(), 
+head=head(children=[meta(name="title", content="AllenDuttonProtoInstances.x3d"),
+meta(name="description", content="Articulated human model developed from laser-scan data."),
+meta(name="creator", content="Allen Dutton"),
+meta(name="translator", content="Ozan APAYDIN"),
+meta(name="created", content="8 June 2001"),
+meta(name="translated", content="20 November 2001"),
+meta(name="modified", content="4 July 2020"),
+meta(name="warning", content="using ProtoDeclare is only for developmental experimentation, use X3D native tags for Humanoids instead"),
+meta(name="reference", content="AllenDutton.x3d"),
+meta(name="reference", content="http://theses.nps.navy.mil/Thesis_01sep_Dutton.pdf"),
+meta(name="reference", content="http://www.MovesInstitute.org/Theses/AllenDutton.pdf"),
+meta(name="reference", content="http://www.HAnim.org"),
+meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/AllenDuttonProtoInstances.x3d"),
+meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+meta(name="license", content="../license.html"),
+meta(name="translated", content="24 March 2023"),
+meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+]), 
 Scene=Scene(children=[
 WorldInfo(title="AllenDuttonProtoInstances.x3d"),
 ProtoDeclare(name="Joint", appinfo="The Joint node is used as a building block to describe the articulations of the humanoid figure. Each articulation of the humanoid figure is represented by a Joint node each of which is organized into a hierarchy that describes the overall skeleton of the humanoid.", documentation="http://HAnim.org/Specifications/HAnim2001/part1/Joint.html", 
@@ -35,7 +53,7 @@ field(name="bboxSize", accessType="initializeOnly", type="SFVec3f", value=(-1,-1
 field(name="centerOfMass", accessType="inputOutput", type="SFVec3f", value=(0,0,0)),
 field(name="children", accessType="inputOutput", type="MFNode"),
 field(name="coord", accessType="inputOutput", appinfo="contains Coordinate nodes", type="SFNode", children=[
-#NULL node
+Comment(value=''' NULL node '''),
 ]),
 field(name="displacers", accessType="inputOutput", appinfo="contains Displacer nodes", type="MFNode"),
 field(name="mass", accessType="inputOutput", type="SFFloat", value=0),
@@ -82,12 +100,12 @@ connect(nodeField="translation", protoField="translation")
 Group(DEF="HumanoidGroup1", 
 IS=IS(connect=[connect(nodeField="children", protoField="humanoidBody")
 ])),
-#<Group DEF="HumanoidGroup2"> <IS> <connect nodeField="children" protoField="segments"/> </IS> </Group> <Group DEF="HumanoidGroup3"> <IS> <connect nodeField="children" protoField="sites"/> </IS> </Group>
+Comment(value=''' <Group DEF="HumanoidGroup2"> <IS> <connect nodeField="children" protoField="segments"/> </IS> </Group> <Group DEF="HumanoidGroup3"> <IS> <connect nodeField="children" protoField="sites"/> </IS> </Group> '''),
 
 Group(DEF="HumanoidGroup4", 
 IS=IS(connect=[connect(nodeField="children", protoField="viewpoints")
 ])),])])),
-#Start scene graph.
+Comment(value=''' Start scene graph. '''),
 
 ProtoInstance(name="Humanoid", DEF="Humanoid", fieldValue=[fieldValue(name="humanoidBody", children=[
 ProtoInstance(name="Joint", DEF="hanim_humanoid_root", fieldValue=[fieldValue(name="name", value="humanoid_root"),

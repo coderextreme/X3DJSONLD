@@ -4,7 +4,28 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="4.0", 
-head=head(), 
+head=head(children=[component(name="HAnim", level=1),
+meta(name="title", content="JinLOA1.x3d"),
+meta(name="creator", content="Jin Hoon Lee and Min Joo Lee"),
+meta(name="translator", content="Chul Hee Jung and Myeong Won Lee"),
+meta(name="created", content="31 March 2011"),
+meta(name="translated", content="1 November 2014"),
+meta(name="modified", content="23 December 2021"),
+meta(name="TODO", content="rescale smaller than 30m! convert inches to meters? what about motion scaling?"),
+meta(name="description", content="Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model."),
+meta(name="reference", content="KoreanCharacter00ReadMe.txt"),
+meta(name="reference", content="KoreanCharacterHumanMotion_Infotech2014_140706.pdf"),
+meta(name="reference", content="KoreanCharactersIllustrated.pdf"),
+meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/JinLOA1.x3d"),
+meta(name="generator", content="3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview"),
+meta(name="generator", content="Suwon HAnim Converter"),
+meta(name="generator", content="Gnu Image Manipulation Program, http://www.gimp.org"),
+meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+meta(name="license", content="../license.html"),
+meta(name="translated", content="24 March 2023"),
+meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+]), 
 Scene=Scene(children=[
 WorldInfo(title="JinLOA1.x3d"),
 NavigationInfo(speed=1.5),
@@ -101,7 +122,7 @@ texCoord=
 TextureCoordinate(point=[(0.3819,0.171),(0.4216,0.1651),(0.3819,0.171),(0.4216,0.1651),(0.3819,0.171),(0.3819,0.171),(0.4637,0.1714),(0.4216,0.1651),(0.4637,0.1714),(0.4216,0.1651),(0.3819,0.171),(0.3819,0.171),(0.3819,0.171),(0.3819,0.171),(0.4637,0.1714),(0.4637,0.1714),(0.3861,0.1398),(0.4244,0.1312),(0.4394,0.1472),(0.3836,0.1404),(0.3836,0.1404),(0.3861,0.1398),(0.4244,0.1312),(0.4394,0.1472),(0.3836,0.1404),(0.3861,0.1398),(0.4244,0.1312),(0.4394,0.1472),(0.4637,0.1714),(0.4394,0.1472),(0.4244,0.1312),(0.3861,0.1398),(0.3873,0.0706),(0.3871,0.0221),(0.3873,0.0706),(0.3871,0.0221),(0.3871,0.0221),(0.3861,0.1398),(0.3836,0.1404),(0.3873,0.0706),(0.3873,0.0706),(0.3836,0.1404),(0.3861,0.1398),(0.3871,0.0221),(0.3871,0.0221),(0.3871,0.0221),(0.433,0.0595),(0.4411,0.0186),(0.4244,0.1312),(0.433,0.0595),(0.4244,0.1312),(0.4411,0.0186),(0.4411,0.0186),(0.4411,0.0186),(0.3861,0.1398),(0.3836,0.1404),(0.3861,0.1398),(0.4244,0.1312),(0.4244,0.1312),(0.4411,0.0186),(0.433,0.0595),(0.4244,0.1312),(0.4244,0.1312),(0.433,0.0595),(0.4411,0.0186),(0.4411,0.0186)])))])]),
 HAnimJoint(name="l_metatarsophalangeal_2", DEF="hanim_l_metatarsophalangeal_2", center=((3.854,3.64,0.7402)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="l_tarsal_proximal_phalanx_2", DEF="hanim_l_tarsal_proximal_phalanx_2", children=[
-#TODO append _2
+Comment(value=''' TODO append _2 '''),
 
 Transform(translation=((3.854,3.64,0.7402)), children=[
 Shape(
@@ -167,7 +188,7 @@ texCoord=
 TextureCoordinate(point=[(0.3819,0.171),(0.4216,0.1651),(0.3819,0.171),(0.4216,0.1651),(0.3819,0.171),(0.3819,0.171),(0.4637,0.1714),(0.4216,0.1651),(0.4637,0.1714),(0.4216,0.1651),(0.3819,0.171),(0.3819,0.171),(0.3819,0.171),(0.3819,0.171),(0.4637,0.1714),(0.4637,0.1714),(0.3861,0.1398),(0.4244,0.1312),(0.4394,0.1472),(0.3836,0.1404),(0.3836,0.1404),(0.3861,0.1398),(0.4244,0.1312),(0.4394,0.1472),(0.3836,0.1404),(0.3861,0.1398),(0.4244,0.1312),(0.4394,0.1472),(0.4637,0.1714),(0.4394,0.1472),(0.4244,0.1312),(0.3861,0.1398),(0.3873,0.0706),(0.3871,0.0221),(0.3873,0.0706),(0.3871,0.0221),(0.3871,0.0221),(0.3861,0.1398),(0.3836,0.1404),(0.3873,0.0706),(0.3873,0.0706),(0.3836,0.1404),(0.3861,0.1398),(0.3871,0.0221),(0.3871,0.0221),(0.3871,0.0221),(0.433,0.0595),(0.4411,0.0186),(0.4244,0.1312),(0.433,0.0595),(0.4244,0.1312),(0.4411,0.0186),(0.4411,0.0186),(0.4411,0.0186),(0.3861,0.1398),(0.3836,0.1404),(0.3861,0.1398),(0.4244,0.1312),(0.4244,0.1312),(0.4411,0.0186),(0.433,0.0595),(0.4244,0.1312),(0.4244,0.1312),(0.433,0.0595),(0.4411,0.0186),(0.4411,0.0186)])))])]),
 HAnimJoint(name="r_metatarsophalangeal_2", DEF="hanim_r_metatarsophalangeal_2", center=((-3.854,3.64,0.7402)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_tarsal_proximal_phalanx_2", DEF="hanim_r_tarsal_proximal_phalanx_2", children=[
-#TODO append _2
+Comment(value=''' TODO append _2 '''),
 
 Transform(translation=((-3.854,3.64,0.7402)), children=[
 Shape(
