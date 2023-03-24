@@ -1,9 +1,12 @@
+<!--
+x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
+-->
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'>
   <head>
-    <component name='Networking' level='2'/>
-    <component name='Core' level='2'/>
+    <component level='2' name='Networking'/>
+    <component level='2' name='Core'/>
     <meta content='t3.x3d' name='title'/>
     <meta content='http://coderextreme.net/X3DJSONLD/src/main/data/t4.x3d' name='identifier'/>
     <meta content='view3dscene, https://castle-engine.io/view3dscene.php' name='generator'/>
@@ -14,19 +17,22 @@
     <meta content='12 May 2020' name='translated'/>
     <meta content='DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js' name='generator'/>
     <meta content='X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding' name='reference'/>
+    <meta content='24 March 2023' name='translated'/>
+    <meta content='X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html' name='generator'/>
+    <meta content='X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding' name='reference'/>
   </head>
   <Scene>
-    <NavigationInfo avatarSize='200 200 120' speed='3.0' transitionType='"LINEAR"' type='"EXAMINE" "FLY" "WALK"'/>
+    <NavigationInfo avatarSize='200.0 200.0 120.0' speed='3' type='""EXAMINE" "FLY" "WALK""'/>
     <WorldInfo title='Arts Mapper'/>
-    <Viewpoint description='looking North' fieldOfView='0.7853981' orientation='1 0 0 -0.7' position='0 60 110'/>
+    <Viewpoint description='looking North' fieldOfView='0.785398125648499' orientation='1 0 0 -0.699999988079071' position='0 60 110'/>
     <Transform translation='-468 0 315'>
       <Anchor description='High Peak Community Arts' url='"javascript:window.open(&apos;https://coderextreme.net/X3DJSONLD/src/main/data/574.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);" "javascript:window.open(&apos;./data/574.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);"'>
         <Transform>
           <Shape>
             <Appearance>
-              <Material diffuseColor='1 1 1' emissiveColor='0 0.3 1'/>
+              <Material diffuseColor='1 1 1' emissiveColor='0 0.300000011920929 1'/>
             </Appearance>
-            <Sphere radius='5.1'/>
+            <Sphere radius='5.10000002384186'/>
           </Shape>
         </Transform>
       </Anchor>
@@ -34,9 +40,9 @@
         <Transform>
           <Shape>
             <Appearance>
-              <Material diffuseColor='1 1 1' emissiveColor='0.6 0 0.6'/>
+              <Material diffuseColor='1 1 1' emissiveColor='0.600000023841858 0 0.600000023841858'/>
             </Appearance>
-            <Sphere radius='5.1'/>
+            <Sphere radius='5.10000002384186'/>
           </Shape>
         </Transform>
       </Anchor>
@@ -44,9 +50,9 @@
         <Transform>
           <Shape>
             <Appearance>
-              <Material diffuseColor='1 1 1' emissiveColor='0.6 0 0.6'/>
+              <Material diffuseColor='1 1 1' emissiveColor='0.600000023841858 0 0.600000023841858'/>
             </Appearance>
-            <Sphere radius='5.1'/>
+            <Sphere radius='5.10000002384186'/>
           </Shape>
         </Transform>
       </Anchor>
@@ -54,9 +60,9 @@
         <Transform>
           <Shape>
             <Appearance>
-              <Material diffuseColor='1 1 1' emissiveColor='1 0 0.2'/>
+              <Material diffuseColor='1 1 1' emissiveColor='1 0 0.200000002980232'/>
             </Appearance>
-            <Sphere radius='5.1'/>
+            <Sphere radius='5.10000002384186'/>
           </Shape>
         </Transform>
       </Anchor>
@@ -64,9 +70,9 @@
         <Transform>
           <Shape>
             <Appearance>
-              <Material diffuseColor='1 1 1' emissiveColor='0.6 0 0.6'/>
+              <Material diffuseColor='1 1 1' emissiveColor='0.600000023841858 0 0.600000023841858'/>
             </Appearance>
-            <Sphere radius='5.1'/>
+            <Sphere radius='5.10000002384186'/>
           </Shape>
         </Transform>
       </Anchor>
@@ -74,9 +80,9 @@
         <Transform>
           <Shape>
             <Appearance>
-              <Material diffuseColor='1 1 1' emissiveColor='0 0.3 1'/>
+              <Material diffuseColor='1 1 1' emissiveColor='0 0.300000011920929 1'/>
             </Appearance>
-            <Sphere radius='5.1'/>
+            <Sphere radius='5.10000002384186'/>
           </Shape>
         </Transform>
       </Anchor>
@@ -84,9 +90,9 @@
         <Transform>
           <Shape>
             <Appearance>
-              <Material diffuseColor='1 1 1' emissiveColor='0 0.3 1'/>
+              <Material diffuseColor='1 1 1' emissiveColor='0 0.300000011920929 1'/>
             </Appearance>
-            <Sphere radius='5.1'/>
+            <Sphere radius='5.10000002384186'/>
           </Shape>
         </Transform>
       </Anchor>
@@ -94,9 +100,9 @@
         <Transform>
           <Shape>
             <Appearance>
-              <Material diffuseColor='1 1 1' emissiveColor='0 0.3 1'/>
+              <Material diffuseColor='1 1 1' emissiveColor='0 0.300000011920929 1'/>
             </Appearance>
-            <Sphere radius='5.1'/>
+            <Sphere radius='5.10000002384186'/>
           </Shape>
         </Transform>
       </Anchor>
@@ -104,9 +110,9 @@
         <Transform>
           <Shape>
             <Appearance>
-              <Material diffuseColor='1 1 1' emissiveColor='1 0 0.2'/>
+              <Material diffuseColor='1 1 1' emissiveColor='1 0 0.200000002980232'/>
             </Appearance>
-            <Sphere radius='5.1'/>
+            <Sphere radius='5.10000002384186'/>
           </Shape>
         </Transform>
       </Anchor>
@@ -114,9 +120,9 @@
         <Transform>
           <Shape>
             <Appearance>
-              <Material diffuseColor='1 1 1' emissiveColor='0 0.3 1'/>
+              <Material diffuseColor='1 1 1' emissiveColor='0 0.300000011920929 1'/>
             </Appearance>
-            <Sphere radius='5.1'/>
+            <Sphere radius='5.10000002384186'/>
           </Shape>
         </Transform>
       </Anchor>
@@ -124,9 +130,9 @@
         <Transform>
           <Shape>
             <Appearance>
-              <Material diffuseColor='1 1 1' emissiveColor='0 0.3 1'/>
+              <Material diffuseColor='1 1 1' emissiveColor='0 0.300000011920929 1'/>
             </Appearance>
-            <Sphere radius='5.1'/>
+            <Sphere radius='5.10000002384186'/>
           </Shape>
         </Transform>
       </Anchor>
@@ -134,9 +140,9 @@
         <Transform>
           <Shape>
             <Appearance>
-              <Material diffuseColor='1 1 1' emissiveColor='0 0.3 1'/>
+              <Material diffuseColor='1 1 1' emissiveColor='0 0.300000011920929 1'/>
             </Appearance>
-            <Sphere radius='5.1'/>
+            <Sphere radius='5.10000002384186'/>
           </Shape>
         </Transform>
       </Anchor>
@@ -144,9 +150,9 @@
         <Transform>
           <Shape>
             <Appearance>
-              <Material diffuseColor='1 1 1' emissiveColor='0 0.3 1'/>
+              <Material diffuseColor='1 1 1' emissiveColor='0 0.300000011920929 1'/>
             </Appearance>
-            <Sphere radius='5.1'/>
+            <Sphere radius='5.10000002384186'/>
           </Shape>
         </Transform>
       </Anchor>
@@ -154,9 +160,9 @@
         <Transform>
           <Shape>
             <Appearance>
-              <Material diffuseColor='1 1 1' emissiveColor='1 0 0.2'/>
+              <Material diffuseColor='1 1 1' emissiveColor='1 0 0.200000002980232'/>
             </Appearance>
-            <Sphere radius='5.1'/>
+            <Sphere radius='5.10000002384186'/>
           </Shape>
         </Transform>
       </Anchor>
@@ -164,12 +170,13 @@
         <Transform>
           <Shape>
             <Appearance>
-              <Material diffuseColor='1 1 1' emissiveColor='0 0.3 1'/>
+              <Material diffuseColor='1 1 1' emissiveColor='0 0.300000011920929 1'/>
             </Appearance>
-            <Sphere radius='5.1'/>
+            <Sphere radius='5.10000002384186'/>
           </Shape>
         </Transform>
       </Anchor>
     </Transform>
   </Scene>
 </X3D>
+

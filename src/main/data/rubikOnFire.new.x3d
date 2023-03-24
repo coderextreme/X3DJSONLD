@@ -1,3 +1,6 @@
+<!--
+x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
+-->
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'>
@@ -7,14 +10,17 @@
     <meta content='manual' name='generator'/>
     <meta content='https://coderextreme.net/X3DJSONLD/rubikOnFire.x3d' name='identifier'/>
     <meta content='a white rubik cube' name='description'/>
+    <meta content='24 March 2023' name='translated'/>
+    <meta content='X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html' name='generator'/>
+    <meta content='X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding' name='reference'/>
   </head>
   <Scene>
-    <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE"'/>
+    <NavigationInfo type='""EXAMINE""'/>
     <Viewpoint description='Rubiks Cube on Fire' position='0 0 12'/>
     <ProtoDeclare name='anyShape'>
       <ProtoInterface>
-        <field name='xtranslation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
-        <field name='myShape' accessType='inputOutput' type='SFNode'>
+        <field accessType='inputOutput' name='xtranslation' type='SFVec3f' value='0.0 0.0 0.0'/>
+        <field accessType='inputOutput' name='myShape' type='SFNode'>
           <Sphere/>
         </field>
       </ProtoInterface>
@@ -36,8 +42,8 @@
     </ProtoDeclare>
     <ProtoDeclare name='three'>
       <ProtoInterface>
-        <field name='ytranslation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
-        <field name='myShape' accessType='inputOutput' type='SFNode'>
+        <field accessType='inputOutput' name='ytranslation' type='SFVec3f' value='0.0 0.0 0.0'/>
+        <field accessType='inputOutput' name='myShape' type='SFNode'>
           <Sphere/>
         </field>
       </ProtoInterface>
@@ -69,8 +75,8 @@
     </ProtoDeclare>
     <ProtoDeclare name='nine'>
       <ProtoInterface>
-        <field name='ztranslation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
-        <field name='myShape' accessType='inputOutput' type='SFNode'>
+        <field accessType='inputOutput' name='ztranslation' type='SFVec3f' value='0.0 0.0 0.0'/>
+        <field accessType='inputOutput' name='myShape' type='SFNode'>
           <Sphere/>
         </field>
       </ProtoInterface>
@@ -102,8 +108,8 @@
     </ProtoDeclare>
     <ProtoDeclare name='twentyseven'>
       <ProtoInterface>
-        <field name='ttranslation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
-        <field name='myShape' accessType='inputOutput' type='SFNode'>
+        <field accessType='inputOutput' name='ttranslation' type='SFVec3f' value='0.0 0.0 0.0'/>
+        <field accessType='inputOutput' name='myShape' type='SFNode'>
           <Sphere/>
         </field>
       </ProtoInterface>
@@ -141,3 +147,4 @@
     </ProtoInstance>
   </Scene>
 </X3D>
+

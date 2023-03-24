@@ -1,9 +1,11 @@
+<!--
+x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
+-->
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.2//EN" "https://www.web3d.org/specifications/x3d-3.2.dtd">
 <X3D profile='Immersive' version='3.2' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.2.xsd'>
   <head>
-    <!-- meta content='under development' name='warning'/ -->
-    <component name='Shaders' level='1'/>
+    <component name='Shaders'/>
     <meta content='SimpleShader.x3d' name='title'/>
     <meta content='Simple shader example' name='description'/>
     <meta content='John Stewart' name='creator'/>
@@ -23,11 +25,14 @@
     <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
     <meta content='https://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d' name='identifier'/>
     <meta content='../../license.html' name='license'/>
+    <meta content='24 March 2023' name='translated'/>
+    <meta content='X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html' name='generator'/>
+    <meta content='X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding' name='reference'/>
   </head>
   <Scene>
     <ProtoDeclare name='myPrototype'>
       <ProtoInterface>
-        <field name='myInputRange' accessType='initializeOnly' type='SFVec3f' value='0.95 0.44 0.22'/>
+        <field accessType='initializeOnly' name='myInputRange' type='SFVec3f' value='0.95 0.44 0.22'/>
       </ProtoInterface>
       <ProtoBody>
         <Transform DEF='TR'>
@@ -35,15 +40,15 @@
             <Appearance>
               <Material diffuseColor='0.5 0.5 0.9'/>
               <ComposedShader language='GLSL'>
-                <field name='decis' accessType='initializeOnly' type='SFVec3f'/>
                 <IS>
                   <connect nodeField='decis' protoField='myInputRange'/>
                 </IS>
+                <field accessType='initializeOnly' name='decis' type='SFVec3f'/>
                 <ShaderPart/>
                 <ShaderPart type='FRAGMENT'/>
               </ComposedShader>
               <ComposedShader DEF='Cobweb' language='GLSL'>
-                <field name='decis' accessType='initializeOnly' type='SFVec3f' value='0.95 0.77 0.44'/>
+                <field accessType='initializeOnly' name='decis' type='SFVec3f' value='0.95 0.77 0.44'/>
                 <ShaderPart/>
                 <ShaderPart DEF='_1' type='FRAGMENT'/>
               </ComposedShader>
@@ -54,22 +59,21 @@
       </ProtoBody>
     </ProtoDeclare>
     <WorldInfo title='SimpleShader'>
-      <MetadataSet DEF='Titania' name='Titania' containerField='metadata' reference='http://titania.create3000.de'>
-        <MetadataSet DEF='Selection' name='Selection' containerField='value' reference='http://titania.create3000.de'>
-          <MetadataSet DEF='nodes' name='nodes' containerField='value' reference='http://titania.create3000.de'>
-            <!-- NULL -->
-          </MetadataSet>
+      <MetadataSet DEF='Titania' name='Titania' reference='http://titania.create3000.de'>
+        <MetadataSet DEF='Selection' name='Selection' reference='http://titania.create3000.de'>
+          <MetadataSet DEF='nodes' name='nodes' reference='http://titania.create3000.de'/>
         </MetadataSet>
-        <MetadataSet DEF='NavigationInfo' name='NavigationInfo' containerField='value' reference='http://titania.create3000.de'>
-          <MetadataString DEF='type' name='type' containerField='value' reference='http://titania.create3000.de' value='"EXAMINE"'/>
+        <MetadataSet DEF='NavigationInfo' name='NavigationInfo' reference='http://titania.create3000.de'>
+          <MetadataString DEF='type' name='type' reference='http://titania.create3000.de' value='"EXAMINE"'/>
         </MetadataSet>
-        <MetadataSet DEF='Viewpoint' name='Viewpoint' containerField='value' reference='http://titania.create3000.de'>
-          <MetadataDouble DEF='position' name='position' containerField='value' reference='http://titania.create3000.de' value='6.24067728185014 0.00250837343276661 2.92117542307615'/>
-          <MetadataDouble DEF='orientation' name='orientation' containerField='value' reference='http://titania.create3000.de' value='-0.110173424710488 0.990158061907379 -0.0863065984000336 1.21146676119191'/>
-          <MetadataDouble DEF='centerOfRotation' name='centerOfRotation' containerField='value' reference='http://titania.create3000.de' value='-0.808320198626341 -0.358072370409949 0.22817191560906'/>
+        <MetadataSet DEF='Viewpoint' name='Viewpoint' reference='http://titania.create3000.de'>
+          <MetadataDouble DEF='position' name='position' reference='http://titania.create3000.de' value='6.24067728185014 0.00250837343276661 2.92117542307615'/>
+          <MetadataDouble DEF='orientation' name='orientation' reference='http://titania.create3000.de' value='-0.110173424710488 0.990158061907379 -0.0863065984000336 1.21146676119191'/>
+          <MetadataDouble DEF='centerOfRotation' name='centerOfRotation' reference='http://titania.create3000.de' value='-0.808320198626341 -0.358072370409949 0.22817191560906'/>
         </MetadataSet>
       </MetadataSet>
     </WorldInfo>
     <ProtoInstance name='myPrototype'/>
   </Scene>
 </X3D>
+
