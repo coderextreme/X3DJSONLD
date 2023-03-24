@@ -4,9 +4,33 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="3.3", 
-head=head(), 
+head=head(children=[meta(name="title", content="HAnimPrototypes.x3d"),
+meta(name="description", content="Example implementation of X3D Humanoid Animation (HAnim) nodes using X3D prototypes."),
+meta(name="warning", content="These are developmental examples that can assist X3D player implementations and support interoperability. They are not intended for author use in regular X3D scenes."),
+meta(name="warning", content="Developer note: names for these HAnim Prototypes need to be corrected if used internally in an X3D player implementation (e.g. Joint to HAnimJoint)."),
+meta(name="warning", content="Need support for skin"),
+meta(name="creator", content="Ozan APAYDIN, Don Brutzman"),
+meta(name="translator", content="Ozan APAYDIN, Don Brutzman"),
+meta(name="created", content="15 November 2001"),
+meta(name="modified", content="23 May 2020"),
+meta(name="TODO", content="upgrade to match support requirements for HAnim 2.2"),
+meta(name="reference", content="https://www.web3d.org/files/specifications/19774/V1.0/HAnim/HAnim.html"),
+meta(name="reference", content="https://www.web3d.org/files/specifications/19775-1/V3.3/Part01/components/hanim.html"),
+meta(name="reference", content="http://HAnim.org/Models/HAnim2001/boxman/boxman.wrl"),
+meta(name="reference", content="http://HAnim.org/Specifications/HAnim2001"),
+meta(name="reference", content="http://www.HAnim.org"),
+meta(name="reference", content="http://HAnim.org/Models"),
+meta(name="reference", content="http://HAnim.org/Specifications"),
+meta(name="reference", content="InterchangableActorsViaDynamicRoutingPrototypes.x3d"),
+meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/HAnimPrototypes.x3d"),
+meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+meta(name="license", content="../license.html"),
+meta(name="translated", content="24 March 2023"),
+meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+]), 
 Scene=Scene(children=[
-#**********Human Model Protypes*********
+Comment(value=''' **********Human Model Protypes********* '''),
 
 ProtoDeclare(name="Humanoid1_1", appinfo="The Humanoid node serves as overall container for the Joint Segment Site and Viewpoint nodes which define the skeleton geometry and landmarks of the humanoid figure. Additionally the node provides a means for defining information about the author copyright and usage restrictions of the model.", documentation="http://HAnim.org/Specifications/HAnim2001/part1/Humanoid.html", 
 ProtoInterface=ProtoInterface(field=[field(name="name", accessType="inputOutput", type="SFString"),
@@ -27,10 +51,10 @@ field(name="segments", accessType="inputOutput", appinfo="Container field for Se
 field(name="sites", accessType="inputOutput", appinfo="Container field for Site nodes", type="MFNode"),
 field(name="viewpoints", accessType="inputOutput", appinfo="Container field for Viewpoint nodes", type="MFNode"),
 field(name="skinCoord", accessType="inputOutput", appinfo="Hint: HAnim version 2.0", type="SFNode", children=[
-#NULL
+Comment(value=''' NULL '''),
 ]),
 field(name="skinNormal", accessType="inputOutput", appinfo="Hint: HAnim version 2.0", type="SFNode", children=[
-#NULL
+Comment(value=''' NULL '''),
 ])
 ]), 
 ProtoBody=ProtoBody(children=[
@@ -95,7 +119,7 @@ field(name="children", accessType="inputOutput", type="MFNode"),
 field(name="addChildren", accessType="inputOnly", type="MFNode"),
 field(name="removeChildren", accessType="inputOnly", type="MFNode"),
 field(name="coord", accessType="inputOutput", appinfo="contains Coordinate nodes", type="SFNode", children=[
-#NULL
+Comment(value=''' NULL '''),
 ]),
 field(name="displacers", accessType="inputOutput", appinfo="contains Displacer nodes", type="MFNode")
 ]), 

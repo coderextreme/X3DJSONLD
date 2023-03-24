@@ -4,7 +4,21 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Interchange", version="3.0", 
-head=head(), 
+head=head(children=[meta(name="title", content="gridBack.x3d"),
+meta(name="description", content="Checkerboard grid background for X3D/VRML materials selection."),
+meta(name="creator", content="David Roussel"),
+meta(name="translator", content="James Harney, Don Brutzman NPS"),
+meta(name="created", content="8 April 2002"),
+meta(name="modified", content="12 January 2014"),
+meta(name="reference", content="http://vrmlstuff.free.fr/materials"),
+meta(name="subject", content="Universal Media Material Library"),
+meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.json"),
+meta(name="generator", content="Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"),
+meta(name="license", content="../license.html"),
+meta(name="translated", content="24 March 2023"),
+meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+]), 
 Scene=Scene(children=[
 Shape(
 appearance=

@@ -4,7 +4,20 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="3.0", 
-head=head(), 
+head=head(children=[meta(name="title", content="GridXZ_20x20Fixed.x3d"),
+meta(name="creator", content="MV4204 class"),
+meta(name="created", content="3 September 2000"),
+meta(name="modified", content="30 March 2016"),
+meta(name="reference", content="GridXY_20x20Fixed.x3d"),
+meta(name="reference", content="GridYZ_20x20Fixed.x3d"),
+meta(name="description", content="Line grid authoring tool to enable precise visual measurement of objects in 3D space - fixed position. Oriented along XZ plane, size 20m by 20m, default block size 1m by 1m."),
+meta(name="identifier", content="https://savage.nps.edu/Savage/Tools/Authoring/GridXZ_20x20Fixed.x3d"),
+meta(name="generator", content="X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"),
+meta(name="license", content="../../license.html"),
+meta(name="translated", content="24 March 2023"),
+meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+]), 
 Scene=Scene(children=[
 Viewpoint(description="XZ horizontal grid, perpendicular to Y axis (seen from 0 10 25)", orientation=((1,0,0,-0.4)), position=((0,10,25))),
 Transform(DEF="GridLocation", children=[

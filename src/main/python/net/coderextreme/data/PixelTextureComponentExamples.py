@@ -4,7 +4,23 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="3.3", 
-head=head(), 
+head=head(children=[[meta(name="title", content="PixelTextureComponentExamples.x3d"),
+meta(name="description", content="This example shows the five PixelTexture components, with 0 to 4 components each, shown in Table 5-18."),
+meta(name="creator", content="Leonard Daly and Don Brutzman"),
+meta(name="created", content="25 August 2008"),
+meta(name="modified", content="7 January 2014"),
+meta(name="reference", content="http://X3dGraphics.com"),
+meta(name="reference", content="X3D for Web Authors, Table 5.18"),
+meta(name="reference", content="https://www.web3d.org/x3d/content/examples/X3dResources.html"),
+meta(name="rights", content="Copyright (c) 2006, Daly Realism and Don Brutzman"),
+meta(name="subject", content="X3D book, X3D graphics, X3D-Edit, http://www.x3dGraphics.com"),
+meta(name="identifier", content="http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/PixelTextureComponentExamples.x3d"),
+meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+meta(name="license", content="../license.html"),
+meta(name="translated", content="22 March 2023"),
+meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+]]), 
 Scene=Scene(children=[
 Background(skyColor=[(0.1,0.1,0.4)]),
 Viewpoint(description="Table 5.18 SFImage component examples", position=((0,0,14))),

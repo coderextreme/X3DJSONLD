@@ -4,7 +4,15 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Interchange", version="3.3", 
-head=head(), 
+head=head(children=[meta(name="title", content="ifscube.x3d"),
+meta(name="identifier", content="http://coderextreme.net/X3DJSONLD/src/main/data/ifscube.x3d"),
+meta(name="description", content="Template for an Indexed Face Set"),
+meta(name="creator", content="John Carlson"),
+meta(name="created", content="4 April 2017"),
+meta(name="translated", content="24 March 2023"),
+meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+]), 
 Scene=Scene(children=[
 Group(children=[
 Shape(

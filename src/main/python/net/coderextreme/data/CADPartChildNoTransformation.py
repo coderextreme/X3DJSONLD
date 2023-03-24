@@ -4,14 +4,30 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="CADInterchange", version="3.1", 
-head=head(), 
+head=head(children=[component(name="CADGeometry", level=2),
+component(name="EnvironmentalEffects", level=1),
+meta(name="title", content="CADPartChildNoTransformation.x3d"),
+meta(name="description", content="Developer scene to explore Mantis Issue 528, providing a baseline example with no transformation of CADPart children."),
+meta(name="creator", content="Vince Marchetti, Don Brutzman, Hyokwang Lee, Dick Puk"),
+meta(name="translator", content="Vince Marchetti bushing generation using python scripts"),
+meta(name="reference", content="https://www.web3d.org/member-only/mantis/view.php?id=528"),
+meta(name="warning", content="This scene is intended for specification development only."),
+meta(name="created", content="29 June 2012"),
+meta(name="modified", content="20 October 2019"),
+meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/Basic/CAD/CADPartChildNoTransformation.x3d"),
+meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+meta(name="license", content="../license.html"),
+meta(name="translated", content="24 March 2023"),
+meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+]), 
 Scene=Scene(children=[
 WorldInfo(title="CADPartChildNoTransformation.x3d"),
 Background(skyColor=[(0.9607843,1,0.9607843)]),
 Viewpoint(description="Hello CAD bushing", orientation=((1,0,0,-0.321751)), position=((0,5,15))),
 CADAssembly(name="DesignPatternAssembly", children=[
 CADPart(name="CADPartExample", children=[
-#the rotation and translation attributes serve to position the bushing within the assembly
+Comment(value=''' the rotation and translation attributes serve to position the bushing within the assembly '''),
 
 CADFace(name="outerSurface", 
 shape=(

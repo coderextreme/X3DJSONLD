@@ -4,11 +4,25 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="4.0", 
-head=head(), 
+head=head(children=[component(name="Shaders", level=1),
+component(name="CubeMapTexturing", level=1),
+component(name="Texturing", level=1),
+component(name="Rendering", level=1),
+component(name="Shape", level=4),
+component(name="Grouping", level=3),
+meta(name="title", content="geo.x3d"),
+meta(name="creator", content="John Carlson"),
+meta(name="generator", content="manual"),
+meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/geo.x3d"),
+meta(name="description", content="a sphere"),
+meta(name="translated", content="24 March 2023"),
+meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+]), 
 Scene=Scene(children=[
 NavigationInfo(type="\"ANY\" \"EXAMINE\" \"FLY\" \"LOOKAT\""),
 Viewpoint(DEF="Tour", description="Tour Views"),
-#Viewpoint position='0 0 4' description='sphere in road'/
+Comment(value=''' Viewpoint position='0 0 4' description='sphere in road'/ '''),
 
 Background(backUrl=["../resources/images/bBK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"], bottomUrl=["../resources/images/bBT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"], frontUrl=["../resources/images/bFR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"], leftUrl=["../resources/images/bLF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"], rightUrl=["../resources/images/bRT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"], topUrl=["../resources/images/bTP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"]),
 Transform(children=[

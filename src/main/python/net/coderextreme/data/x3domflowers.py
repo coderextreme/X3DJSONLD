@@ -4,7 +4,15 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="3.3", 
-head=head(), 
+head=head(children=[[meta(name="title", content="x3domflowers.x3d"),
+meta(name="creator", content="John Carlson"),
+meta(name="description", content="5 or more prismatic flowers"),
+meta(name="generator", content="X3D-Edit, https://savage.nps.edu/X3D-Edit"),
+meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/src/main/data/x3domflowers.x3d"),
+meta(name="translated", content="22 March 2023"),
+meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+]]), 
 Scene=Scene(children=[
 NavigationInfo(),
 #Images courtesy of Paul Debevec's Light Probe Image Gallery

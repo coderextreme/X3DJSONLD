@@ -4,7 +4,27 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="4.0", 
-head=head(), 
+head=head(children=[[component(name="HAnim", level=1),
+][meta(name="title", content="KoreanCharacter08Da.x3d"),
+meta(name="creator", content="Jin Hoon Lee and Min Joo Lee"),
+meta(name="translator", content="Chul Hee Jung and Myeong Won Lee"),
+meta(name="created", content="31 March 2011"),
+meta(name="translated", content="1 November 2014"),
+meta(name="modified", content="23 December 2021"),
+meta(name="description", content="Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model."),
+meta(name="reference", content="KoreanCharacter00ReadMe.txt"),
+meta(name="reference", content="KoreanCharacterHumanMotion_Infotech2014_140706.pdf"),
+meta(name="reference", content="KoreanCharactersIllustrated.pdf"),
+meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/KoreanCharacter08Da.x3d"),
+meta(name="generator", content="3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview"),
+meta(name="generator", content="Suwon University HAnim Editor"),
+meta(name="generator", content="Gnu Image Manipulation Program, http://www.gimp.org"),
+meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+meta(name="license", content="../license.html"),
+meta(name="translated", content="22 March 2023"),
+meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+]]), 
 Scene=Scene(children=[
 WorldInfo(title="KoreanCharacter08Da.x3d"),
 NavigationInfo(speed=1.5),

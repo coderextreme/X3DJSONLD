@@ -4,7 +4,22 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Full", version="4.0", 
-head=head(), 
+head=head(children=[meta(name="title", content="InlineSoundSource.x3d"),
+meta(name="description", content="This demo is the same with the Single Audio Demo, with the difference that it uses the Inline grouping node. Namely, the scene is an X3D file and all nodes are loaded by Inline node via the \"url\" of X3D file."),
+meta(name="info", content="This work presents an innovative solution of the spatial sound in X3DOM framework, that based on a combinational methodology. Specifically, we suggested the enrichment of X3DOM with spatial sound features, using both the X3D sound nodes and the structure of Web Audio API."),
+meta(name="creator", content="Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman"),
+meta(name="created", content="28 October 2020"),
+meta(name="modified", content="4 August 2021"),
+meta(name="reference", content="CHANGELOG.txt"),
+meta(name="TODO", content="credit for audio files"),
+meta(name="reference", content="https://medialab.hmu.gr/minipages/x3domAudio"),
+meta(name="identifier", content="https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/InlineSoundSource.x3d"),
+meta(name="generator", content="X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"),
+meta(name="license", content="../license.html"),
+meta(name="translated", content="24 March 2023"),
+meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+]), 
 Scene=Scene(children=[
 WorldInfo(title="InlineSoundSource.x3d"),
 NavigationInfo(DEF="NAV"),

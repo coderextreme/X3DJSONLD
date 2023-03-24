@@ -4,9 +4,31 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="3.3", 
-head=head(), 
+head=head(children=[meta(name="title", content="CameraExamples.x3d"),
+meta(name="description", content="Camera, CameraShot and CameraMove examples that demonstrate storyboard capabilities and precise camera operation. This is a developmental effort for potential X3D Specification improvement."),
+meta(name="documentation", content="Two demos are found in the scene, click the \"red text\" on left or right to start. (a) SimpleShotsTest shows Zoom in/out, Pan left/right, Boom up/down, Tilt left/right, with each is defined by a CameraShot collecting a series of CameraMovements. (b) AimPointTest gradually slews the camera view to look at the sliding cube, then follows it around before returning to original viewpoint."),
+meta(name="creator", content="Don Brutzman and Jeff Weekley"),
+meta(name="created", content="18 June 2009"),
+meta(name="modified", content="20 January 2020"),
+meta(name="TODO", content="Schematron rules, backed up by initialize() checks"),
+meta(name="reference", content="BeyondViewpointCameraNodesWeb3D2009.pdf"),
+meta(name="MovingImage", content="CameraExamplesDemo.mp4"),
+meta(name="reference", content="https://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html"),
+meta(name="subject", content="Camera nodes for Viewpoint navigation control"),
+meta(name="reference", content="CameraPrototypes.x3d"),
+meta(name="reference", content="CameraExamplesConsoleLog.txt"),
+meta(name="reference", content="http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.avi"),
+meta(name="reference", content="https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d"),
+meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d"),
+meta(name="reference", content="http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d"),
+meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+meta(name="license", content="../license.html"),
+meta(name="translated", content="24 March 2023"),
+meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+]), 
 Scene=Scene(children=[
-#=============== Camera ==============
+Comment(value=''' =============== Camera ============== '''),
 
 WorldInfo(title="CameraExamples.x3d"),
 ExternProtoDeclare(name="Camera", appinfo="Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images", url=["CameraPrototypes.x3d#Camera","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#Camera","CameraPrototypes.wrl#Camera","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#Camera"], field=[field(name="description", accessType="inputOutput", appinfo="Text description to be displayed for this Camera", type="SFString"),
@@ -33,12 +55,12 @@ field(name="totalDuration", accessType="outputOnly", appinfo="Total duration of 
 field(name="offlineRender", accessType="inputOutput", appinfo="OfflineRender node", type="SFNode"),
 field(name="traceEnabled", accessType="initializeOnly", appinfo="enable console output to trace script computations and prototype progress", type="SFBool")
 ]),
-#=============== CameraShot ==============
+Comment(value=''' =============== CameraShot ============== '''),
 
 ExternProtoDeclare(name="CameraShot", appinfo="CameraShot collects a specific set of CameraMovement animations that make up an individual shot", url=["CameraPrototypes.x3d#CameraShot","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#CameraShot","CameraPrototypes.wrl#CameraShot","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#CameraShot"], field=[field(name="description", accessType="inputOutput", appinfo="Text description to be displayed for this CameraShot", type="SFString"),
 field(name="enabled", accessType="inputOutput", appinfo="Whether this CameraShot can be activated", type="SFBool"),
 field(name="moves", accessType="inputOutput", appinfo="Set of CameraMovement nodes", type="MFNode", children=[
-#initializing CameraMovement nodes are inserted here by scene author using ProtoInstance
+Comment(value=''' initializing CameraMovement nodes are inserted here by scene author using ProtoInstance '''),
 ]),
 field(name="initialPosition", accessType="inputOutput", appinfo="Setup to reinitialize camera position for this shot", type="SFVec3f"),
 field(name="initialOrientation", accessType="inputOutput", appinfo="Setup to reinitialize camera rotation for this shot", type="SFRotation"),
@@ -50,7 +72,7 @@ field(name="shotDuration", accessType="outputOnly", appinfo="Subtotal duration o
 field(name="isActive", accessType="outputOnly", appinfo="Mark start/stop with true/false output respectively useful to trigger external animations", type="SFBool"),
 field(name="traceEnabled", accessType="initializeOnly", appinfo="enable console output to trace script computations and prototype progress", type="SFBool")
 ]),
-#=============== CameraMovement ==============
+Comment(value=''' =============== CameraMovement ============== '''),
 
 ExternProtoDeclare(name="CameraMovement", appinfo="CameraMovement defines a single camera movement animation", url=["CameraPrototypes.x3d#CameraMovement","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#CameraMovement","CameraPrototypes.wrl#CameraMovement","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#CameraMovement"], field=[field(name="description", accessType="inputOutput", appinfo="Text description to be displayed for this CameraMovement", type="SFString"),
 field(name="enabled", accessType="inputOutput", appinfo="Whether this CameraMovement can be activated", type="SFBool"),
@@ -65,7 +87,7 @@ field(name="goalFocusDistance", accessType="inputOutput", appinfo="Distance to f
 field(name="isActive", accessType="outputOnly", appinfo="Mark start/stop with true/false output respectively useful to trigger external animations", type="SFBool"),
 field(name="traceEnabled", accessType="initializeOnly", appinfo="enable console output to trace script computations and prototype progress", type="SFBool")
 ]),
-#=============== OfflineRender ==============
+Comment(value=''' =============== OfflineRender ============== '''),
 
 ExternProtoDeclare(name="OfflineRender", appinfo="OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot)", url=["CameraPrototypes.x3d#OfflineRender","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#OfflineRender","CameraPrototypes.wrl#OfflineRender","https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#OfflineRender"], field=[field(name="description", accessType="inputOutput", appinfo="Text description to be displayed for this OfflineRender", type="SFString"),
 field(name="enabled", accessType="inputOutput", appinfo="Whether this OfflineRender can be activated", type="SFBool"),
@@ -79,17 +101,17 @@ field(name="movieFormat", accessType="initializeOnly", appinfo="Format of render
 field(name="imageFormat", accessType="initializeOnly", appinfo="Format of rendered output images (png jpeg gif tiff etc.) use first supported format", type="MFString"),
 field(name="traceEnabled", accessType="initializeOnly", appinfo="enable console output to trace script computations and prototype progress", type="SFBool")
 ]),
-#=============== Lights, camera, action! ==============
+Comment(value=''' =============== Lights, camera, action! ============== '''),
 
 DirectionalLight(direction=((0,-1,0)), global_=True, intensity=0.8),
 NavigationInfo(type="\"EXAMINE\" \"FLY\" \"ANY\""),
 Viewpoint(description="Camera test scene entry view", position=((0,2,12))),
 Viewpoint(description="Camera test scene from above", orientation=((1,0,0,-1.57079)), position=((0,150,0))),
-#Keep prototype instances in same file while developing, then move later
+Comment(value=''' Keep prototype instances in same file while developing, then move later '''),
 
-#We will create examples matching those in the paper
+Comment(value=''' We will create examples matching those in the paper '''),
 
-#=============== Camera.SimpleShotsTest ==============
+Comment(value=''' =============== Camera.SimpleShotsTest ============== '''),
 
 ProtoInstance(name="Camera", DEF="Camera.SimpleShotsTest", fieldValue=[fieldValue(name="description", value="SimpleShotsTest for camera Zoom Dolly Pan Boom and Tilt"),
 fieldValue(name="headlight", value=True),
@@ -224,10 +246,10 @@ fieldValue(name="goalOrientation", value=[0,0,1,0])
 ]),
 Group(DEF="AnimationGroup.SimpleShots", children=[
 TimeSensor(DEF="CameraTimer.SimpleShots"),
-#initialize clock to match totalDuration of combined Shot Moves
+Comment(value=''' initialize clock to match totalDuration of combined Shot Moves '''),
 
 ROUTE(fromField="totalDuration", fromNode="Camera.SimpleShotsTest", toField="cycleInterval", toNode="CameraTimer.SimpleShots"),
-#TimeSensor animates the CameraClock since that maintains the computed PositionInterpolator and OrientationInterpolator
+Comment(value=''' TimeSensor animates the CameraClock since that maintains the computed PositionInterpolator and OrientationInterpolator '''),
 
 ROUTE(fromField="fraction_changed", fromNode="CameraTimer.SimpleShots", toField="set_fraction", toNode="Camera.SimpleShotsTest"),
 Transform(DEF="Trigger.SimpleShots", translation=((-4,4,0)), children=[
@@ -245,7 +267,7 @@ appearance=
 Appearance(
 material=
 Material(DEF="ArtDeco5", ambientIntensity=0.24, diffuseColor=((0.945455,0.318988,0.321717)), shininess=0.01, specularColor=((0.072727,0.021705,0.010732))))),
-#Simplify intersection test for user selecting text
+Comment(value=''' Simplify intersection test for user selecting text '''),
 
 Shape(DEF="TransparentBox", 
 appearance=
@@ -355,7 +377,7 @@ appearance=
 Appearance(
 material=
 Material()))])])]),
-#=============== Camera.AimPointTest ==============
+Comment(value=''' =============== Camera.AimPointTest ============== '''),
 
 ProtoInstance(name="Camera", DEF="Camera.AimPointTest", fieldValue=[fieldValue(name="description", value="AimPointTest for moving camera tracking moving target"),
 fieldValue(name="position", value=[4,4,10]),
@@ -390,10 +412,10 @@ fieldValue(name="goalOrientation", value=[0,1,0,0])
 ]),
 Group(DEF="AnimationGroup.AimPointTest", children=[
 TimeSensor(DEF="CameraTimer.AimPointTest"),
-#initialize clock to match totalDuration of combined Shot Moves
+Comment(value=''' initialize clock to match totalDuration of combined Shot Moves '''),
 
 ROUTE(fromField="totalDuration", fromNode="Camera.AimPointTest", toField="cycleInterval", toNode="CameraTimer.AimPointTest"),
-#TimeSensor animates the CameraClock since that maintains the computed PositionInterpolator and OrientationInterpolator
+Comment(value=''' TimeSensor animates the CameraClock since that maintains the computed PositionInterpolator and OrientationInterpolator '''),
 
 ROUTE(fromField="fraction_changed", fromNode="CameraTimer.AimPointTest", toField="set_fraction", toNode="Camera.AimPointTest"),
 Transform(DEF="Trigger.AimPointTest", translation=((4,4,0)), children=[
@@ -412,13 +434,13 @@ Appearance(
 material=
 Material(USE="ArtDeco5"))),
 Shape(USE="TransparentBox")]),]),
-#TODO build a test once implemented
+Comment(value=''' TODO build a test once implemented '''),
 
 ProtoInstance(name="OfflineRender"),
-#=============== animate a camera shape to visualize view changes ==============
+Comment(value=''' =============== animate a camera shape to visualize view changes ============== '''),
 
 Transform(DEF="CameraShapeTransform", translation=((0,0.5,0)), children=[
-#move CameraShape using active Camera
+Comment(value=''' move CameraShape using active Camera '''),
 
 ROUTE(fromField="position_changed", fromNode="Camera.SimpleShotsTest", toField="translation", toNode="CameraShapeTransform"),
 ROUTE(fromField="orientation_changed", fromNode="Camera.SimpleShotsTest", toField="rotation", toNode="CameraShapeTransform"),
@@ -436,7 +458,7 @@ appearance=
 Appearance(
 material=
 Material(emissiveColor=((0.8,0.8,0.4)))))]),
-#Display frustum to show camera view within the scene, toggled by user selecting CameraShape
+Comment(value=''' Display frustum to show camera view within the scene, toggled by user selecting CameraShape '''),
 
 ExternProtoDeclare(name="ViewFrustum", appinfo="Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes", url=["../../X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d#ViewFrustum","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d#ViewFrustum","../../X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.wrl#ViewFrustum","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.wrl#ViewFrustum"], field=[field(name="ViewpointNode", accessType="initializeOnly", appinfo="required: insert Viewpoint DEF or USE node for view of interest", type="SFNode"),
 field(name="NavigationInfoNode", accessType="initializeOnly", appinfo="required: insert NavigationInfo DEF or USE node of interest", type="SFNode"),
@@ -459,7 +481,7 @@ fieldValue(name="transparency", value=0.95)
 BooleanToggle(DEF="ViewFrustumToggle"),
 ROUTE(fromField="isActive", fromNode="CameraShapeTouched", toField="set_boolean", toNode="ViewFrustumToggle"),
 ROUTE(fromField="toggle", fromNode="ViewFrustumToggle", toField="set_visible", toNode="ViewFrustumNode"),]),
-#=============== add checkerboard, axes and other things to look at while animating ==============
+Comment(value=''' =============== add checkerboard, axes and other things to look at while animating ============== '''),
 
 Background(skyColor=[(0.282353,0.380392,0.470588)]),
 Transform(rotation=((1,0,0,-1.57079)), scale=((10,10,10)), children=[
@@ -493,7 +515,7 @@ material=
 Material(), 
 texture=
 ImageTexture(url=["../earth-topo.png","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png"])))]),
-#================ CrossHair visualization for center of screen ================
+Comment(value=''' ================ CrossHair visualization for center of screen ================ '''),
 
 ExternProtoDeclare(name="CrossHair", appinfo="CrossHair prototype provides a heads-up display (HUD) crosshair at the view center, which is useful for assessing NavigationInfo lookAt point", url=["../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair","../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair"], field=[field(name="enabled", accessType="initializeOnly", appinfo="whether CrissHair orititype is enabled or not", type="SFBool"),
 field(name="set_enabled", accessType="inputOnly", appinfo="control whether enabled/disabled", type="SFBool"),
@@ -506,13 +528,13 @@ fieldValue(name="markerColor", value=[1,0.5,0]),
 fieldValue(name="scale", value=[1,1,1]),
 fieldValue(name="positionOffsetFromCamera", value=[0,0,-6])
 ]),
-#turn on CrossHairInstance when animated camera viewpoints are bound
+Comment(value=''' turn on CrossHairInstance when animated camera viewpoints are bound '''),
 
 ROUTE(fromField="isBound", fromNode="Camera.SimpleShotsTest", toField="set_enabled", toNode="CrossHairInstance"),
 ROUTE(fromField="isBound", fromNode="Camera.AimPointTest", toField="set_enabled", toNode="CrossHairInstance"),
-#turn off CrossHairInstance when animated camera viewpoints are unbound <BooleanFilter DEF='NegateCrossHair'/> <ROUTE fromField='isBound' fromNode='Camera.SimpleShotsTest' toField='set_boolean' toNode='NegateCrossHair'/> <ROUTE fromField='isBound' fromNode='Camera.AimPointTest' toField='set_boolean' toNode='NegateCrossHair'/> <ROUTE fromField='inputNegate' fromNode='NegateCrossHair' toField='set_enabled' toNode='CrossHairInstance'/>
+Comment(value=''' turn off CrossHairInstance when animated camera viewpoints are unbound <BooleanFilter DEF='NegateCrossHair'/> <ROUTE fromField='isBound' fromNode='Camera.SimpleShotsTest' toField='set_boolean' toNode='NegateCrossHair'/> <ROUTE fromField='isBound' fromNode='Camera.AimPointTest' toField='set_boolean' toNode='NegateCrossHair'/> <ROUTE fromField='inputNegate' fromNode='NegateCrossHair' toField='set_enabled' toNode='CrossHairInstance'/> '''),
 
-#=============== TODO Launch Prototype Example ==============
+Comment(value=''' =============== TODO Launch Prototype Example ============== '''),
 
 Anchor(description="launch CameraExample scene", parameter=("target=_blank"), url=["CameraExample.x3d","https://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.x3d","CameraExample.wrl","https://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.wrl"], children=[
 Transform(translation=((0,-3,0)), children=[

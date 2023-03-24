@@ -4,7 +4,34 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="3.3", 
-head=head(), 
+head=head(children=[component(name="Navigation", level=3),
+component(name="Shaders", level=1),
+component(name="Layering", level=1),
+unit(name="AngleUnitConversion", category="angle", conversionFactor=1.0),
+unit(name="LengthUnitConversion", category="length", conversionFactor=1.0),
+meta(name="title", content="HelloWorldProgramOutputCanonical.x3d"),
+meta(name="description", content="Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface Library (X3DJSAIL)"),
+meta(name="reference", content="http://www.web3d.org/specifications/java/X3DJSAIL.html"),
+meta(name="generator", content="HelloWorldProgramOutput.java"),
+meta(name="created", content="6 September 2016"),
+meta(name="modified", content="27 December 2018"),
+meta(name="generator", content="X3D Java Scene Access Interface Library (X3DJSAIL)"),
+meta(name="generator", content="http://www.web3d.org/specifications/java/examples/HelloWorldProgram.java"),
+meta(name="generator", content="Netbeans http://www.netbeans.org"),
+meta(name="creator", content="Don Brutzman"),
+meta(name="reference", content="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java/examples/HelloWorldProgramOutput.x3d"),
+meta(name="reference", content="Console output, ClassicVRML encoding, VRML97 encoding and pretty-print documentation:"),
+meta(name="reference", content="HelloWorldProgramOutput.txt"),
+meta(name="reference", content="HelloWorldProgramOutput.x3dv"),
+meta(name="reference", content="HelloWorldProgramOutput.wrl"),
+meta(name="reference", content="HelloWorldProgramOutput.html"),
+meta(name="reference", content="https://savage.nps.edu/X3dValidator?url=http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"),
+meta(name="identifier", content="http://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d"),
+meta(name="license", content="../license.html"),
+meta(name="translated", content="24 March 2023"),
+meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+]), 
 Scene=Scene(children=[
 ViewpointGroup(description="Available viewpoints", children=[
 Viewpoint(DEF="DefaultView", description="Hello X3DJSAIL"),
@@ -54,18 +81,18 @@ MetadataString(name="extraChildTest", value=["checks MetadataSetObject addValue(
 fontStyle=
 FontStyle(justify=["MIDDLE","MIDDLE"]))),
 Collision(children=[
-#test containerField='proxy'
+Comment(value=''' test containerField='proxy' '''),
 ], 
 proxy=Shape(DEF="ProxyShape", 
 geometry=
 Text(string=["One, Two, Text","","He said, \"Immel did it!\" \"\""]))),
-#It's a beautiful world
+Comment(value=''' It's a beautiful world '''),
 
-#... for you!
+Comment(value=''' ... for you! '''),
 
-#https://en.wikipedia.org/wiki/Beautiful_World_(Devo_song)
+Comment(value=''' https://en.wikipedia.org/wiki/Beautiful_World_(Devo_song) '''),
 ]),
-#repeatedly spin 180 degrees as a readable special effect
+Comment(value=''' repeatedly spin 180 degrees as a readable special effect '''),
 
 OrientationInterpolator(DEF="SpinInterpolator", key=[float(0),float(0.5),float(1)], keyValue=[(float(0),float(1),float(0),float(4.712389)),(float(0),float(1),float(0),float(0)),(float(0),float(1),float(0),float(1.5707964))]),
 TimeSensor(DEF="SpinClock", cycleInterval=5.0, loop=True),
@@ -75,10 +102,7 @@ Group(DEF="BackgroundGroup", children=[
 Background(DEF="GradualBackground"),
 Script(DEF="colorTypeConversionScript", field=[field(name="colorInput", accessType="inputOnly", type="SFColor"),
 field(name="colorsOutput", accessType="outputOnly", type="MFColor")
-], 
-#['', '', 'ecmascript:', '', 'function colorInput (eventValue) // Example source code', '{', '   colorsOutput = new MFColor(eventValue); // assigning value sends output event', "// Browser.print('colorInput=' + eventValue + ', colorsOutput=' + colorsOutput + '
-#');", '}', '', '']
-),
+], sourceCode="""['', '', 'ecmascript:', '', 'function colorInput (eventValue) // Example source code', '{', '   colorsOutput = new MFColor(eventValue); // assigning value sends output event', "// Browser.print('colorInput=' + eventValue + ', colorsOutput=' + colorsOutput + '\n');", '}', '', '']""",),
 ColorInterpolator(DEF="ColorAnimator", key=[float(0),float(0.5),float(1)], keyValue=[(0.9411765,1,1),(0.29411766,0,0.50980395),(0.9411765,1,1)]),
 TimeSensor(DEF="ColorClock", cycleInterval=60.0, loop=True),
 ROUTE(fromField="colorsOutput", fromNode="colorTypeConversionScript", toField="skyColor", toNode="GradualBackground"),
@@ -89,12 +113,12 @@ ProtoInterface=ProtoInterface(field=[field(name="description", accessType="input
 field(name="enabled", accessType="inputOutput", type="SFBool", value=True)
 ]), 
 ProtoBody=ProtoBody(children=[
-#Initial node of ProtoBody determines prototype node type
+Comment(value=''' Initial node of ProtoBody determines prototype node type '''),
 
 Material(ambientIntensity=0.25, diffuseColor=((0.282435,0.085159,0.134462)), shininess=0.127273, specularColor=((0.276305,0.11431,0.139857))),
-#[HelloWorldProgram diagnostic] should be connected to scene graph: artDeco01ProtoDeclare.getNodeType()="Material"
+Comment(value=''' [HelloWorldProgram diagnostic] should be connected to scene graph: artDeco01ProtoDeclare.getNodeType()="Material" '''),
 
-#presence of follow-on TouchSensor shows that additional nodes are allowed in ProtoBody after initial node, regardless of node types
+Comment(value=''' presence of follow-on TouchSensor shows that additional nodes are allowed in ProtoBody after initial node, regardless of node types '''),
 
 TouchSensor(description="within ProtoBody", 
 IS=IS(connect=[connect(nodeField="description", protoField="description"),
@@ -102,7 +126,7 @@ connect(nodeField="enabled", protoField="enabled")
 ])),])),
 ExternProtoDeclare(name="ArtDeco02Material", appinfo="this is a different Material node", url=["http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"], field=[field(name="description", accessType="inputOutput", appinfo="tooltip for descriptionField", type="SFString")
 ]),
-#Tested ArtDeco01ProtoInstance, ArtDeco02ProtoInstance for improper node type when ProtoInstance is added in wrong place
+Comment(value=''' Tested ArtDeco01ProtoInstance, ArtDeco02ProtoInstance for improper node type when ProtoInstance is added in wrong place '''),
 
 Shape(DEF="TestShape1", 
 appearance=
@@ -148,7 +172,7 @@ connect(nodeField="transparency", protoField="transparency"),
 connect(nodeField="shininess", protoField="shininess"),
 connect(nodeField="ambientIntensity", protoField="ambientIntensity")
 ])),
-#Only first node (the node type) is renderable, others are along for the ride
+Comment(value=''' Only first node (the node type) is renderable, others are along for the ride '''),
 
 Script(DEF="MaterialModulatorScript", field=[field(name="enabled", accessType="inputOutput", type="SFBool"),
 field(name="diffuseColor", accessType="inputOutput", type="SFColor"),
@@ -157,11 +181,8 @@ field(name="clockTrigger", accessType="inputOnly", type="SFTime")
 ], 
 IS=IS(connect=[connect(nodeField="enabled", protoField="enabled"),
 connect(nodeField="diffuseColor", protoField="diffuseColor")
-]), 
-#['', '', 'ecmascript:', 'function initialize ()', '{', '    newColor = diffuseColor; // start with correct color', '}', 'function set_enabled (newValue)', '{', '\tenabled = newValue;', '}', 'function clockTrigger (timeValue)', '{', '    if (!enabled) return;', '    red   = newColor.r;', '    green = newColor.g;', '    blue  = newColor.b;', '', '    // note different modulation rates for each color component, % is modulus operator', '    newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);', '\tif (enabled)', '\t{', "\t\tBrowser.print ('diffuseColor=(' + red + ',' + green + ',' + blue + ') newColor=' + newColor.toString() + '
-#');", '\t}', '}', '', '']
-),])),
-#Test success: declarative statement createDeclarativeShapeTests()
+]), sourceCode="""['', '', 'ecmascript:', 'function initialize ()', '{', '    newColor = diffuseColor; // start with correct color', '}', 'function set_enabled (newValue)', '{', '\tenabled = newValue;', '}', 'function clockTrigger (timeValue)', '{', '    if (!enabled) return;', '    red   = newColor.r;', '    green = newColor.g;', '    blue  = newColor.b;', '', '    // note different modulation rates for each color component, % is modulus operator', '    newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);', '\tif (enabled)', '\t{', "\t\tBrowser.print ('diffuseColor=(' + red + ',' + green + ',' + blue + ') newColor=' + newColor.toString() + '\n');", '\t}', '}', '', '']""",),])),
+Comment(value=''' Test success: declarative statement createDeclarativeShapeTests() '''),
 
 Group(DEF="DeclarativeGroupExample", children=[
 Shape(
@@ -173,36 +194,36 @@ material=
 ProtoInstance(name="MaterialModulator", DEF="MyMaterialModulator")), 
 geometry=
 Cone(bottom=False, bottomRadius=0.05, height=0.1)),
-#Test success: declarativeGroup.addChild() singleton pipeline method
+Comment(value=''' Test success: declarativeGroup.addChild() singleton pipeline method '''),
 ]),
-#Test success: declarative statement addChild()
+Comment(value=''' Test success: declarative statement addChild() '''),
 
-#Test success: x3dModel.findNodeByDEF(DeclarativeAppearanceExample) = <Appearance DEF='DeclarativeAppearanceExample'/> i.e. <Appearance DEF='DeclarativeAppearanceExample'> <!- - DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance - -> <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField='material'/> </Appearance>
+Comment(value=''' Test success: x3dModel.findNodeByDEF(DeclarativeAppearanceExample) = <Appearance DEF='DeclarativeAppearanceExample'/> i.e. <Appearance DEF='DeclarativeAppearanceExample'> <!- - DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance - -> <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField='material'/> </Appearance> '''),
 
-#Test success: x3dModel.findElementByNameValue(findThisNameValue) = <MetadataString DEF='FindableMetadataStringTest' name='findThisNameValue' value='"test case"'/>
+Comment(value=''' Test success: x3dModel.findElementByNameValue(findThisNameValue) = <MetadataString DEF='FindableMetadataStringTest' name='findThisNameValue' value='"test case"'/> '''),
 
-#Test success: x3dModel.findElementByNameValue("ArtDeco01Material", "ProtoDeclare") found
+Comment(value=''' Test success: x3dModel.findElementByNameValue("ArtDeco01Material", "ProtoDeclare") found '''),
 
-#Test success: x3dModel.findElementByNameValue("MaterialModulator", "ProtoDeclare") found
+Comment(value=''' Test success: x3dModel.findElementByNameValue("MaterialModulator", "ProtoDeclare") found '''),
 
-#Test success: x3dModel.findElementByNameValue("MaterialModulator", "ProtoInstance") found
+Comment(value=''' Test success: x3dModel.findElementByNameValue("MaterialModulator", "ProtoInstance") found '''),
 
 Group(DEF="TestFieldObjectsGroup", children=[
-#testFieldObjects() results
+Comment(value=''' testFieldObjects() results '''),
 
-#SFBool default=true, true=true, false=false, negate()=true
+Comment(value=''' SFBool default=true, true=true, false=false, negate()=true '''),
 
-#MFBool default=, initial=true false true, negate()=false true false
+Comment(value=''' MFBool default=, initial=true false true, negate()=false true false '''),
 
-#SFFloat default=0.0, initial=1.0, setValue(2)=2.0, setValue(3.0f)=3.0, setValue(4.0)=4.0
+Comment(value=''' SFFloat default=0.0, initial=1.0, setValue(2)=2.0, setValue(3.0f)=3.0, setValue(4.0)=4.0 '''),
 
-#MFFloat default=, initial=1 2 3, append(5)=1 2 3 5, inserts(3,4)(0,0)=0 1 2 3 4 5, append(6)=0 1 2 3 4 5 6, size()=7
+Comment(value=''' MFFloat default=, initial=1 2 3, append(5)=1 2 3 5, inserts(3,4)(0,0)=0 1 2 3 4 5, append(6)=0 1 2 3 4 5 6, size()=7 '''),
 
-#... get1Value[3]=3.0, remove[1]=0 2 3 4 5 6, set1Value(0,10)=10 2 3 4 5 6, multiply(2)=20 4 6 8 10 12, clear=
+Comment(value=''' ... get1Value[3]=3.0, remove[1]=0 2 3 4 5 6, set1Value(0,10)=10 2 3 4 5 6, multiply(2)=20 4 6 8 10 12, clear= '''),
 
-#SFVec3f default=0 0 0, initial=1 2 3, setValue=4 5 6, multiply(2)=8 10 12, normalize()=0.45584232 0.5698029 0.68376344, regex matches()=true
+Comment(value=''' SFVec3f default=0 0 0, initial=1 2 3, setValue=4 5 6, multiply(2)=8 10 12, normalize()=0.45584232 0.5698029 0.68376344, regex matches()=true '''),
 
-#regex test SFVec3f().matches("1 2 3")=true, regex test SFVec3f().matches("1 2 3 4")=false, regex test (SFRotationObject.matches("0 0 0 0")=true, failure detecting illegal (zero axis) rotation value
+Comment(value=''' regex test SFVec3f().matches("1 2 3")=true, regex test SFVec3f().matches("1 2 3 4")=false, regex test (SFRotationObject.matches("0 0 0 0")=true, failure detecting illegal (zero axis) rotation value '''),
 ]),
 Sound(location=((0,1.6,0)), 
 source=
@@ -210,17 +231,17 @@ AudioClip(description="chimes", url=["chimes.wav","http://www.web3d.org/x3d/cont
 Sound(location=((0,1.6,0)), 
 source=
 MovieTexture(description="mpgsys.mpg from ConformanceNist suite", url=["mpgsys.mpg","http://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"])),
-#Test success: AnchorObject.isNode()=true, siteAnchor.isNode()=true
+Comment(value=''' Test success: AnchorObject.isNode()=true, siteAnchor.isNode()=true '''),
 
-#Test success: AnchorObject.isStatement()=false, siteAnchor.isStatement()=false
+Comment(value=''' Test success: AnchorObject.isStatement()=false, siteAnchor.isStatement()=false '''),
 
-#Test success: ROUTEObject.isNode()=false, orbitPositionROUTE.isNode()=false
+Comment(value=''' Test success: ROUTEObject.isNode()=false, orbitPositionROUTE.isNode()=false '''),
 
-#Test success: ROUTEObject.isStatement()=true, orbitPositionROUTE.isStatement()=true
+Comment(value=''' Test success: ROUTEObject.isStatement()=true, orbitPositionROUTE.isStatement()=true '''),
 
-#Test success: CommentsBlock.isNode()=false, testComments.isNode()=false
+Comment(value=''' Test success: CommentsBlock.isNode()=false, testComments.isNode()=false '''),
 
-#Test failure: CommentsBlock.isStatement()=true, testComments.isStatement()=true
+Comment(value=''' Test failure: CommentsBlock.isStatement()=true, testComments.isStatement()=true '''),
 
 Shape(DEF="ExtrusionShape", 
 appearance=
@@ -230,7 +251,7 @@ Material(transparency=1.0)),
 geometry=
 Extrusion(DEF="ExampleExtrusion")),
 Group(children=[
-#Test MFNode children array as an ordered list consisting of comments, statements, ProtoInstance and nodes
+Comment(value=''' Test MFNode children array as an ordered list consisting of comments, statements, ProtoInstance and nodes '''),
 
 ProtoDeclare(name="NewWorldInfo", 
 ProtoInterface=ProtoInterface(field=[field(name="description", accessType="initializeOnly", type="SFString")
@@ -240,13 +261,13 @@ WorldInfo()])),
 ProtoInstance(name="NewWorldInfo", DEF="Proto1", fieldValue=[fieldValue(name="description", value="testing 1 2 3")
 ]),
 Group(DEF="Node2", children=[
-#intentionally empty
+Comment(value=''' intentionally empty '''),
 ]),
 ProtoInstance(name="NewWorldInfo", DEF="Proto3"),
 Transform(DEF="Node4", children=[
-#intentionally empty
+Comment(value=''' intentionally empty '''),
 ]),
-#Test satisfactorily creates MFNode children array as an ordered list with mixed content
+Comment(value=''' Test satisfactorily creates MFNode children array as an ordered list with mixed content '''),
 ]),
 ProtoDeclare(name="ShaderProto", 
 ProtoBody=ProtoBody(children=[

@@ -4,7 +4,23 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="3.3", 
-head=head(), 
+head=head(children=[[meta(name="title", content="LOA1_SwimmingFlutterKickAnimation.x3d"),
+meta(name="description", content="Humanoid animation prototype reusable by any Humanoid."),
+meta(name="creator", content="Etsuko Lippi"),
+meta(name="created", content="13 December 2001"),
+meta(name="modified", content="23 May 2020"),
+meta(name="warning", content="not yet tested, need to compare with NancyDivingExample interpolators"),
+meta(name="reference", content="http://www.HAnim.org"),
+meta(name="reference", content="http://HAnim.org/Models"),
+meta(name="reference", content="http://HAnim.org/Nodes"),
+meta(name="subject", content="Swimming flutter kick Animation HAnim 2001"),
+meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/LOA1_SwimmingFlutterKickAnimation.x3d"),
+meta(name="generator", content="X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"),
+meta(name="license", content="../license.html"),
+meta(name="translated", content="22 March 2023"),
+meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+]]), 
 Scene=Scene(children=[
 WorldInfo(title="LOA1_SwimmingFlutterKickAnimation.x3d"),
 ProtoDeclare(name="LOA1_DivingAnimation", 

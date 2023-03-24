@@ -4,7 +4,24 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="4.0", 
-head=head(), 
+head=head(children=[component(name="Scripting", level=1),
+component(name="EnvironmentalEffects", level=3),
+component(name="Shaders", level=1),
+component(name="CubeMapTexturing", level=1),
+component(name="Texturing", level=1),
+component(name="Rendering", level=1),
+component(name="Shape", level=4),
+component(name="Grouping", level=3),
+component(name="Core", level=1),
+meta(name="title", content="ball.x3d"),
+meta(name="creator", content="John Carlson"),
+meta(name="generator", content="manual"),
+meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/ball.x3d"),
+meta(name="description", content="a prismatic sphere"),
+meta(name="translated", content="24 March 2023"),
+meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+]), 
 Scene=Scene(children=[
 WorldInfo(title="ball.x3d"),
 NavigationInfo(type="\"ANY\" \"EXAMINE\" \"FLY\" \"LOOKAT\""),

@@ -4,7 +4,20 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Interchange", version="3.3", 
-head=head(), 
+head=head(children=[meta(name="title", content="ArchHalf.x3d"),
+meta(name="description", content="Create a half arch with parameters clearSpanWidth=4; riseHeight=2; depth=3; topAbutmentHeight=0.5; pierWidth=0.5; pierHeight=1. Parameter clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width. Modify them with Transform > scale or editing the IndexedFileSet node. See the reference file ArchModelingDiagrams.pdf and the ArchScript_more_readable.js script to find further information."),
+meta(name="creator", content="Michele Foti, Don Brutzman"),
+meta(name="created", content="15 December 2014"),
+meta(name="modified", content="16 February 2016"),
+meta(name="reference", content="ArchModelingDiagrams.pdf"),
+meta(name="reference", content="https://en.wikipedia.org/wiki/Arch"),
+meta(name="identifier", content="http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchHalf.x3d"),
+meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+meta(name="license", content="../license.html"),
+meta(name="translated", content="24 March 2023"),
+meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+]), 
 Scene=Scene(children=[
 Shape(DEF="Arch", 
 geometry=

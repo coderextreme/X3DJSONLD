@@ -4,7 +4,22 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="3.3", 
-head=head(), 
+head=head(children=[[meta(name="title", content="NancyPrototypes.x3d"),
+meta(name="creator", content="Cindy Ballreich"),
+meta(name="translators", content="Tom Miller and Don Brutzman, NPS"),
+meta(name="created", content="9 July 2000"),
+meta(name="modified", content="4 July 2020"),
+meta(name="description", content="Canonical HAnim 1.1 specification example, using ProtoDeclaration and ProtoInstance instead of native X3D tags. Prototype definitions are a compatible combination of version 1.0 and 2.0 prototype interfaces."),
+meta(name="warning", content="using ProtoDeclare is only for developmental experimentation, use X3D native tags for Humanoids instead"),
+meta(name="reference", content="NancyNativeTags.x3d"),
+meta(name="TODO", content="Material color of neck and arms is ignored/incorrect in Xj3D, possily DEF/USE problem."),
+meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/NancyPrototypes.x3d"),
+meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+meta(name="license", content="../license.html"),
+meta(name="translated", content="22 March 2023"),
+meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+]]), 
 Scene=Scene(children=[
 ProtoDeclare(name="Displacer", appinfo="A Displacer can be used in three different ways: (a) identify the vertices corresponding to a particular feature on a Segment (b) represent a particular muscular action which displaces the vertices in various directions (linearly or radially) and (c) represent a complete configuration of the vertices in a Segment.", documentation="http://HAnim.org/Specifications/HAnim2001/part1/Displacer.html", 
 ProtoInterface=ProtoInterface(field=[field(name="name", accessType="inputOutput", type="SFString"),

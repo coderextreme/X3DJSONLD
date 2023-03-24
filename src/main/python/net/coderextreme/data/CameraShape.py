@@ -4,7 +4,21 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Interactive", version="3.1", 
-head=head(), 
+head=head(children=[meta(name="title", content="CameraShape.x3d"),
+meta(name="description", content="Simple video camera shape"),
+meta(name="creator", content="Jeff Weekley and Don Brutzman"),
+meta(name="created", content="2 June 2009"),
+meta(name="translated", content="2 June 2009"),
+meta(name="modified", content="13 January 2014"),
+meta(name="reference", content="CameraExamples.x3d"),
+meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/Basic/development/SimpleCamera.x3d"),
+meta(name="generator", content="Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"),
+meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+meta(name="license", content="../../license.html"),
+meta(name="translated", content="24 March 2023"),
+meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+]), 
 Scene=Scene(children=[
 WorldInfo(info=["VRML2.0 created with Version 1.3, from Alias Maya 2008"], title="SimpleCamera.x3d"),
 Viewpoint(DEF="CameraShapeView", description="Camera view, over the shoulder", position=((0,0.75,3))),
