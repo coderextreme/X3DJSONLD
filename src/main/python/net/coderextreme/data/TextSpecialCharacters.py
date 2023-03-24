@@ -4,7 +4,7 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="3.3", 
-head=head(children=[[meta(name="title", content="TextSpecialCharacters.x3d"),
+head=head(children=[meta(name="title", content="TextSpecialCharacters.x3d"),
 meta(name="description", content="Text node demonstration of quotation, apostrophe, ampersand and backslash characters using X3D MFString escaping for XML character entities"),
 meta(name="creator", content="Don Brutzman"),
 meta(name="created", content="12 July 2008"),
@@ -15,10 +15,10 @@ meta(name="rights", content="Copyright (c) Don Brutzman and Leonard Daly, 2008")
 meta(name="identifier", content="http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter02GeometryPrimitives/TextSpecialCharacters.x3d"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="22 March 2023"),
+meta(name="translated", content="24 March 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
-]]), 
+]), 
 Scene=Scene(children=[
 Background(skyColor=[(1,1,1)]),
 Viewpoint(description="Default View", position=((0,0,15))),

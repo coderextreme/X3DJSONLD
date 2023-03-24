@@ -4,7 +4,7 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Interchange", version="3.3", 
-head=head(children=[[meta(name="title", content="Table5_18PixelTexture"),
+head=head(children=[meta(name="title", content="Table5_18PixelTexture"),
 meta(name="description", content="PixelTexture example for Table 5.18"),
 meta(name="creator", content="Leonard Daly and Don Brutzman"),
 meta(name="created", content="18 December 2006"),
@@ -16,10 +16,10 @@ meta(name="subject", content="X3D, PixelTexture"),
 meta(name="identifier", content="http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/Table5_18PixelTexture"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="22 March 2023"),
+meta(name="translated", content="24 March 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
-]]), 
+]), 
 Scene=Scene(children=[
 Background(skyColor=[(0,0,1)]),
 Transform(DEF="Checkerboard", translation=((0,0,-10)), children=[

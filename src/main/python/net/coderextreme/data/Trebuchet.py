@@ -4,7 +4,7 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="3.0", 
-head=head(children=[[meta(name="title", content="Trebuchet.x3d"),
+head=head(children=[meta(name="title", content="Trebuchet.x3d"),
 meta(name="description", content="Working model of a 14th century Trebuchet Catapult."),
 meta(name="creator", content="LT Joe Roth"),
 meta(name="created", content="20 June 2001"),
@@ -19,10 +19,10 @@ meta(name="reference", content="https://www.web3d.org/WorkingGroups/media/textur
 meta(name="reference", content="http://www.revemonde.net/UniversalMedia/textures/nature/leaves_5.jpg.htm"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="22 March 2023"),
+meta(name="translated", content="24 March 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
-]]), 
+]), 
 Scene=Scene(children=[
 WorldInfo(title="Trebuchet.x3d"),
 Background(backUrl=["https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_back.jpg"], bottomUrl=["https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_bottom.jpg"], frontUrl=["https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_front.jpg"], groundAngle=[float(1.309),float(1.570796)], groundColor=[(0.1,0.1,0),(0.4,0.25,0.2),(0.6,0.6,0.6)], leftUrl=["https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_left.jpg"], rightUrl=["https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_right.jpg"], skyAngle=[float(1.309),float(1.57079)], skyColor=[(0,0.2,0.7),(0,0.5,1),(1,1,1)], topUrl=["https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_top.jpg"]),
@@ -164,7 +164,7 @@ Transform(DEF="angledsupport2", rotation=((0,0,1,-1)), translation=((5,10,0)), c
 Shape(USE="plank")]),
 Transform(DEF="verticalsupport", rotation=((0,0,1,1.57)), scale=((0.9,1,1)), translation=((0,11,0)), children=[
 Shape(USE="plank"),
-#Main Verticle Support
+Comment(value=''' Main Verticle Support '''),
 ]),
 Transform(DEF="horizontalsupport", scale=((0.4,1,1)), translation=((0,10,0)), children=[
 Shape(USE="plank")]),
@@ -213,9 +213,9 @@ texture=
 ImageTexture(USE="woodTexture")), 
 geometry=
 Sphere(radius=1.5)),
-#knott
+Comment(value=''' knott '''),
 ])]),
-#The Unicorn
+Comment(value=''' The Unicorn '''),
 
 Transform(rotation=((0,0,1,1.2)), scale=((0.2,0.2,0.2)), translation=((-18.3,0.3,0)), children=[
 Shape(
@@ -227,7 +227,7 @@ material=
 Material(specularColor=((1,1,1))))),
 Transform(translation=((0,-2.5,0)), children=[
 Shape(USE="Torus"),
-#The Unicorn
+Comment(value=''' The Unicorn '''),
 
 Transform(translation=((-2,0,0)), children=[
 Shape(
@@ -235,7 +235,7 @@ geometry=
 Sphere(radius=1.5), 
 appearance=
 Appearance(USE="rope")),
-#Knott
+Comment(value=''' Knott '''),
 ]),]),
 Transform(rotation=((0,0,1,1.2)), translation=((15,55,-11)), children=[
 Transform(scale=((5,5,5)), children=[
@@ -328,7 +328,7 @@ appearance=
 Appearance(
 material=
 Material(diffuseColor=((0,0,0)), specularColor=((1,1,1))))),
-#Top Pivot
+Comment(value=''' Top Pivot '''),
 ]),
 Transform(DEF="verticalweight", children=[
 Transform(translation=((4,18,1.8)), children=[
@@ -344,7 +344,7 @@ Box(size=((1,10,0.5))),
 appearance=
 Appearance(USE="wood"))]),
 Transform(translation=((4,14,2.5)), children=[
-#CounterWeight
+Comment(value=''' CounterWeight '''),
 
 Shape(
 geometry=
@@ -374,7 +374,7 @@ material=
 Material(specularColor=((1,1,1)))))])]),
 Transform(translation=((0,0,7)), children=[
 Transform(USE="screw")]),
-#Release Pin
+Comment(value=''' Release Pin '''),
 
 Transform(DEF="Pin", rotation=((1,0,0,-1.57)), translation=((0,0,-3)), children=[
 Transform(USE="screw")]),]),
@@ -470,20 +470,14 @@ Viewpoint(description="Aft")])]),
 Script(DEF="WeightScript", field=[field(name="set_boolean", accessType="inputOnly", type="SFBool"),
 field(name="whichchoice", accessType="outputOnly", type="SFInt32"),
 field(name="CounterWeight", accessType="outputOnly", type="SFFloat")
-], 
-#['', '', 'ecmascript:', '', '', 'function initialize ()', '{', '\twhichchoice =0;', '\tCounterWeight=100;', '}', '', 'function set_boolean ( boolean_input, eventTime)', '{', '', '\tif ( boolean_input== false ) { return; } // ignore the unclick', '        whichchoice = whichchoice +1;', '\tif (whichchoice == 0)CounterWeight=50.00;', '\tif (whichchoice == 1)CounterWeight=500.00;', '\tif (whichchoice == 2)CounterWeight=1000.00;', '\tif (whichchoice == 3)CounterWeight=10000.00;', '        if ( whichchoice ==4 ) { whichchoice = 0; CounterWeight=50; }', '', '', "        Browser.print ('CounterWeight ='+CounterWeight);", '}', '', '']
-),
+], sourceCode="""['', '', 'ecmascript:', '', '', 'function initialize ()', '{', '\twhichchoice =0;', '\tCounterWeight=100;', '}', '', 'function set_boolean ( boolean_input, eventTime)', '{', '', '\tif ( boolean_input== false ) { return; } // ignore the unclick', '        whichchoice = whichchoice +1;', '\tif (whichchoice == 0)CounterWeight=50.00;', '\tif (whichchoice == 1)CounterWeight=500.00;', '\tif (whichchoice == 2)CounterWeight=1000.00;', '\tif (whichchoice == 3)CounterWeight=10000.00;', '        if ( whichchoice ==4 ) { whichchoice = 0; CounterWeight=50; }', '', '', "        Browser.print ('CounterWeight ='+CounterWeight);", '}', '', '']""",),
 Script(DEF="LauncheeScript", field=[field(name="set_boolean", accessType="inputOnly", type="SFBool"),
 field(name="whichchoice", accessType="outputOnly", type="SFInt32"),
 field(name="ProjectileWeight", accessType="outputOnly", type="SFFloat")
-], 
-#['', '', 'ecmascript:', '', 'function set_boolean (boolean_input, eventTime)', '{', '\tif ( boolean_input== false ) { return; } // ignore unclick', '        whichchoice = whichchoice +1;', '        if (whichchoice == 0)ProjectileWeight=10.00;', '        if (whichchoice == 1)ProjectileWeight=1000.00;', '\tif (whichchoice == 2)ProjectileWeight=5;', '', '\tif ( whichchoice ==3 ) { whichchoice = 0; ProjectileWeight=10.00; }', "\tBrowser.print ('Projectile Weight'+ProjectileWeight);", '}', '', '']
-),
+], sourceCode="""['', '', 'ecmascript:', '', 'function set_boolean (boolean_input, eventTime)', '{', '\tif ( boolean_input== false ) { return; } // ignore unclick', '        whichchoice = whichchoice +1;', '        if (whichchoice == 0)ProjectileWeight=10.00;', '        if (whichchoice == 1)ProjectileWeight=1000.00;', '\tif (whichchoice == 2)ProjectileWeight=5;', '', '\tif ( whichchoice ==3 ) { whichchoice = 0; ProjectileWeight=10.00; }', "\tBrowser.print ('Projectile Weight'+ProjectileWeight);", '}', '', '']""",),
 Script(DEF="PigdogMonkScript", field=[field(name="set_boolean", accessType="inputOnly", type="SFBool"),
 field(name="whichchoice", accessType="outputOnly", type="SFInt32")
-], 
-#['', '', 'ecmascript:', '', 'function set_boolean (boolean_input, eventTime)', '{', '\tif ( boolean_input== false ) { return; } // ignore unclick', '', '        whichchoice = whichchoice +1;', '', '        if ( whichchoice ==2 )  whichchoice = 0;', '', '', '}', '', '']
-),
+], sourceCode="""['', '', 'ecmascript:', '', 'function set_boolean (boolean_input, eventTime)', '{', '\tif ( boolean_input== false ) { return; } // ignore unclick', '', '        whichchoice = whichchoice +1;', '', '        if ( whichchoice ==2 )  whichchoice = 0;', '', '', '}', '', '']""",),
 Script(DEF="Mover", field=[field(name="set_fraction", accessType="inputOnly", type="SFFloat"),
 field(name="set_MassCounterWeight", accessType="inputOnly", type="SFFloat"),
 field(name="set_MassProjectileWeight", accessType="inputOnly", type="SFFloat"),
@@ -491,9 +485,7 @@ field(name="MassCounterWeight", accessType="initializeOnly", type="SFFloat", val
 field(name="MassProjectileWeight", accessType="initializeOnly", type="SFFloat", value=1),
 field(name="transparent", accessType="outputOnly", type="SFVec3f"),
 field(name="value_changed", accessType="outputOnly", type="SFVec3f")
-], 
-#['', '', 'ecmascript:', '', 'function initialize ()', '{', '\tMassCounterWeight=100;', '\tMassProjectileWeight=10;', "\tBrowser.print ('MassCounterWeight =' + MassCounterWeight);", "\tBrowser.print ('MassProjectileWeight =' + MassProjectileWeight);", '}', '', 'function set_MassProjectileWeight (value, timestamp)', '{', '\tMassProjectileWeight = value;', "\tBrowser.print ('new MassProjectileWeight =' + MassProjectileWeight);", '}', 'function set_MassCounterWeight (value2, timestamp)', '{', '\tMassCounterWeight = value2;', "\tBrowser.print ('new MassCounterWeight =' + MassCounterWeight);", '}', '', '', 'function set_fraction ( fraction, eventTime )', '{', '\tvar TrebuchetHeight=45;', '\tvar Height =25;', '      \tx = (2*(MassCounterWeight/MassProjectileWeight)*Height*fraction)-.5*TrebuchetHeight;', '\t// start at TrebuchetHeight and keep along z axis (z=zero)', '\ty =  (MassCounterWeight/MassProjectileWeight)*Height*Math.sin(fraction*3.14);', '        z = 0;', '        transparent = new SFVec3f (1,1,1);', '     if (y <1.5*TrebuchetHeight  )if (x<TrebuchetHeight)', '\t\t{', '\t\tx=x-10;', '\t\ty=y+1;', '\t\ttransparent = new SFVec3f(.01, .01, .01);', '\t\t\t}', '', '\tvalue_changed = new SFVec3f (x, y, z);', "\tBrowser.print ('x=' + value_changed[0] + ' y=' + value_changed[1] + ' z=' + value_changed[2]);", '}', '', '']
-)])]),
+], sourceCode="""['', '', 'ecmascript:', '', 'function initialize ()', '{', '\tMassCounterWeight=100;', '\tMassProjectileWeight=10;', "\tBrowser.print ('MassCounterWeight =' + MassCounterWeight);", "\tBrowser.print ('MassProjectileWeight =' + MassProjectileWeight);", '}', '', 'function set_MassProjectileWeight (value, timestamp)', '{', '\tMassProjectileWeight = value;', "\tBrowser.print ('new MassProjectileWeight =' + MassProjectileWeight);", '}', 'function set_MassCounterWeight (value2, timestamp)', '{', '\tMassCounterWeight = value2;', "\tBrowser.print ('new MassCounterWeight =' + MassCounterWeight);", '}', '', '', 'function set_fraction ( fraction, eventTime )', '{', '\tvar TrebuchetHeight=45;', '\tvar Height =25;', '      \tx = (2*(MassCounterWeight/MassProjectileWeight)*Height*fraction)-.5*TrebuchetHeight;', '\t// start at TrebuchetHeight and keep along z axis (z=zero)', '\ty =  (MassCounterWeight/MassProjectileWeight)*Height*Math.sin(fraction*3.14);', '        z = 0;', '        transparent = new SFVec3f (1,1,1);', '     if (y <1.5*TrebuchetHeight  )if (x<TrebuchetHeight)', '\t\t{', '\t\tx=x-10;', '\t\ty=y+1;', '\t\ttransparent = new SFVec3f(.01, .01, .01);', '\t\t\t}', '', '\tvalue_changed = new SFVec3f (x, y, z);', "\tBrowser.print ('x=' + value_changed[0] + ' y=' + value_changed[1] + ' z=' + value_changed[2]);", '}', '', '']""",)])]),
 TimeSensor(DEF="clock", cycleInterval=10),
 PositionInterpolator(DEF="verticalweightpath", key=[float(0),float(0.1),float(0.2),float(0.2),float(0.3),float(0.9)], keyValue=[(1.4,1.6,0),(1.0,-8,0),(-3.5,-12,0),(-3.5,-12,0),(1.2,-8,0),(1.4,1.6,0)]),
 OrientationInterpolator(DEF="flingerangles", key=[float(0),float(0.1),float(0.2),float(0.2),float(0.3),float(0.9)], keyValue=[(float(0),float(0),float(1),float(0.82)),(float(0),float(0),float(1),float(-0.77)),(float(0),float(0),float(1),float(-1.57)),(float(0),float(0),float(1),float(-1.57)),(float(0),float(0),float(1),float(-0.77)),(float(0),float(0),float(1),float(0.82))]),

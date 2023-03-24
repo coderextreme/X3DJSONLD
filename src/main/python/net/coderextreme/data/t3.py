@@ -4,9 +4,9 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="3.3", 
-head=head(children=[[component(name="Networking", level=2),
+head=head(children=[component(name="Networking", level=2),
 component(name="Core", level=2),
-][meta(name="title", content="t3.x3d"),
+meta(name="title", content="t3.x3d"),
 meta(name="identifier", content="http://coderextreme.net/X3DJSONLD/src/main/data/t4.x3d"),
 meta(name="generator", content="view3dscene, https://castle-engine.io/view3dscene.php"),
 meta(name="creator", content="Andreas Plesch and John Carlson"),
@@ -16,10 +16,10 @@ meta(name="license", content="https://www.web3d.org/x3d/content/examples/license
 meta(name="translated", content="12 May 2020"),
 meta(name="generator", content="DOM2JSONSerializer.js, https://github.com/coderextreme/X3DJSONLD/blob/master/src/main/node/DOM2JSONSerializer.js"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding"),
-meta(name="translated", content="22 March 2023"),
+meta(name="translated", content="24 March 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
-]]), 
+]), 
 Scene=Scene(children=[
 NavigationInfo(type="\"EXAMINE\" \"FLY\" \"WALK\"", speed=3, avatarSize=[float(200),float(200),float(120)]),
 WorldInfo(title="Arts Mapper"),

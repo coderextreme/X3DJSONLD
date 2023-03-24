@@ -4,12 +4,12 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Interchange", version="3.0", 
-head=head(children=[[meta(name="generator", content="tovrmlx3d, http://castle-engine.sourceforge.net/view3dscene.php#section_converting"),
+head=head(children=[meta(name="generator", content="tovrmlx3d, http://castle-engine.sourceforge.net/view3dscene.php#section_converting"),
 meta(name="source", content="t1.wrl"),
-meta(name="translated", content="22 March 2023"),
+meta(name="translated", content="24 March 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
-]]), 
+]), 
 Scene=Scene(children=[
 NavigationInfo(type="\"EXAMINE\" \"FLY\" \"WALK\"", speed=3, avatarSize=[float(200),float(200),float(120)]),
 WorldInfo(title="Arts Mapper"),

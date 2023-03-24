@@ -4,7 +4,7 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="3.3", 
-head=head(children=[[meta(name="title", content="ViewFrustumExample.x3d"),
+head=head(children=[meta(name="title", content="ViewFrustumExample.x3d"),
 meta(name="description", content="Display view frustum associated with a given pair of Viewpoint and NavigationInfo nodes, illustrating ProtoInstance reuse of a separately declared prototype."),
 meta(name="creator", content="Don Brutzman"),
 meta(name="translated", content="16 August 2008"),
@@ -19,10 +19,10 @@ meta(name="subject", content="view culling frustum"),
 meta(name="identifier", content="http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumExample.x3d"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="22 March 2023"),
+meta(name="translated", content="24 March 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
-]]), 
+]), 
 Scene=Scene(children=[
 WorldInfo(title="ViewFrustumExample.x3d"),
 Viewpoint(description="ViewFrustum from above, looking down", orientation=((1,0,0,-1.57)), position=((0,40,0))),
@@ -39,10 +39,10 @@ field(name="transparency", accessType="inputOutput", appinfo="transparency of Vi
 field(name="aspectRatio", accessType="inputOutput", appinfo="assumed ratio height/width, default value 0.75", type="SFFloat"),
 field(name="trace", accessType="initializeOnly", appinfo="debug support, default false", type="SFBool")
 ]),
-#Example use
+Comment(value=''' Example use '''),
 
 ProtoInstance(name="ViewFrustum", fieldValue=[fieldValue(name="ViewpointNode", children=[
-#prefer empty description to prevent entry in player's ViewpointList
+Comment(value=''' prefer empty description to prevent entry in player's ViewpointList '''),
 
 Viewpoint(description="ViewFrustum ViewpointNode"),]),
 fieldValue(name="NavigationInfoNode", children=[
@@ -53,7 +53,7 @@ fieldValue(name="frustumColor", value=[0.8,0.8,0.8]),
 fieldValue(name="transparency", value=0.75),
 fieldValue(name="trace", value=True)
 ]),
-#Visualization assists
+Comment(value=''' Visualization assists '''),
 
 Inline(DEF="GridXZ", url=["GridXZ_20x20Fixed.x3d"]),
 Transform(scale=((5,5,5)), children=[
