@@ -4,22 +4,22 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="4.0", 
-head=head(children=[[component(name="EnvironmentalEffects", level=3),
+head=head(children=[component(name="EnvironmentalEffects", level=3),
 component(name="Shaders", level=1),
 component(name="CubeMapTexturing", level=1),
 component(name="Texturing", level=1),
 component(name="Rendering", level=1),
 component(name="Shape", level=1),
 component(name="Grouping", level=1),
-][meta(name="title", content="mirror.x3d"),
+meta(name="title", content="mirror.x3d"),
 meta(name="creator", content="John Carlson"),
 meta(name="generator", content="manual"),
 meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/mirror.x3d"),
 meta(name="description", content="sphere with alternating backgrounds"),
-meta(name="translated", content="22 March 2023"),
+meta(name="translated", content="24 March 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
-]]), 
+]), 
 Scene=Scene(children=[
 Viewpoint(position=((0,5,100)), description="Switch background and images texture"),
 TextureBackground(
@@ -87,9 +87,7 @@ field(name="top_changed", type="MFString", accessType="outputOnly"),
 field(name="bottom_changed", type="MFString", accessType="outputOnly"),
 field(name="set_fraction", type="SFFloat", accessType="inputOnly"),
 field(name="old", type="SFInt32", accessType="inputOutput", value=-1)
-], 
-#['', '', 'ecmascript:', '        function set_fraction( f, tm ) {', '\t    var side = Math.floor(f*frontUrls.length);', '\t    if (side > frontUrls.length-1) {', '\t    \tside = 0;', '\t    }', '\t    if (side != old) {', '\t    \t    Browser.print(f+" "+side);', '\t    \t    old = side;', '\t\t    front_changed[0] = frontUrls[side];', '\t\t    back_changed[0] = backUrls[side];', '\t\t    left_changed[0] = leftUrls[side];', '\t\t    right_changed[0] = rightUrls[side];', '\t\t    top_changed[0] = topUrls[side];', '\t\t    bottom_changed[0] = bottomUrls[side];', '            }', '        }', '', '']
-),
+], sourceCode="""['', '', 'ecmascript:', '        function set_fraction( f, tm ) {', '\t    var side = Math.floor(f*frontUrls.length);', '\t    if (side > frontUrls.length-1) {', '\t    \tside = 0;', '\t    }', '\t    if (side != old) {', '\t    \t    Browser.print(f+" "+side);', '\t    \t    old = side;', '\t\t    front_changed[0] = frontUrls[side];', '\t\t    back_changed[0] = backUrls[side];', '\t\t    left_changed[0] = leftUrls[side];', '\t\t    right_changed[0] = rightUrls[side];', '\t\t    top_changed[0] = topUrls[side];', '\t\t    bottom_changed[0] = bottomUrls[side];', '            }', '        }', '', '']""",),
 TimeSensor(DEF="Clock", cycleInterval=45, loop=True),
 ROUTE(fromNode="Clock", fromField="fraction_changed", toNode="UrlSelector", toField="set_fraction"),
 ROUTE(fromNode="UrlSelector", fromField="front_changed", toNode="frontBackgroundTexture", toField="url"),

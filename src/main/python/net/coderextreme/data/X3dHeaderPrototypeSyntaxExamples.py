@@ -4,12 +4,12 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="3.3", 
-head=head(children=[[component(name="Geospatial", level=1),
+head=head(children=[component(name="Geospatial", level=1),
 component(name="NURBS", level=2),
 component(name="Core", level=2),
 component(name="Navigation", level=1),
 component(name="Text", level=1),
-][meta(name="title", content="X3dHeaderPrototypeSyntaxExamples.x3d"),
+meta(name="title", content="X3dHeaderPrototypeSyntaxExamples.x3d"),
 meta(name="description", content="X3D scene header and prototype syntax examples. This example header indicates that the content is XML encoded, follows the Interactive Profile and explicitly lists additional necessary components. The X3D header may also contain additional semantic information. Used for specification EXAMPLE excerpts in 19776:1 XML Encoding."),
 meta(name="created", content="14 October 2002"),
 meta(name="modified", content="27 May 2017"),
@@ -19,10 +19,10 @@ meta(name="specificationUrl", content="https://www.web3d.org/documents/specifica
 meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/X3dHeaderPrototypeSyntaxExamples.x3d"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="22 March 2023"),
+meta(name="translated", content="24 March 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
-]]), 
+]), 
 Scene=Scene(children=[
 ExternProtoDeclare(name="ViewPositionOrientation", url=["../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation","https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation","../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation","https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation"], field=[field(name="enabled", accessType="inputOutput", type="SFBool"),
 field(name="traceEnabled", accessType="initializeOnly", type="SFBool"),
@@ -39,7 +39,7 @@ ProtoDeclare(name="EmissiveMaterial",
 ProtoInterface=ProtoInterface(field=[field(name="onlyColor", accessType="inputOutput", type="SFColor", value=(1,0,0))
 ]), 
 ProtoBody=ProtoBody(children=[
-#Override default diffuseColor value 0.8 0.8 0.8
+Comment(value=''' Override default diffuseColor value 0.8 0.8 0.8 '''),
 
 Material(diffuseColor=((0,0,0)), 
 IS=IS(connect=[connect(nodeField="emissiveColor", protoField="onlyColor")
@@ -47,7 +47,7 @@ IS=IS(connect=[connect(nodeField="emissiveColor", protoField="onlyColor")
 ProtoDeclare(name="ShiftGroupUp2m", 
 ProtoInterface=ProtoInterface(field=[field(name="children", accessType="inputOutput", type="MFNode", children=[
 Group(DEF="DefaultNodeValue", bboxSize=((2,2,2)), children=[
-#Authors need to override this node when creating the ProtoInstance fieldValue name="children"
+Comment(value=''' Authors need to override this node when creating the ProtoInstance fieldValue name="children" '''),
 ])])
 ]), 
 ProtoBody=ProtoBody(children=[
@@ -56,7 +56,7 @@ Group(
 IS=IS(connect=[connect(nodeField="children", protoField="children")
 ]))])])),
 ProtoInstance(name="ShiftGroupUp2m"),
-#====================
+Comment(value=''' ==================== '''),
 
 Viewpoint(DEF="ExampleSingleElement", description="Hello syntax"),
 Group(DEF="ExampleChildElement", children=[

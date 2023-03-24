@@ -4,8 +4,8 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="4.0", 
-head=head(children=[[component(name="HAnim", level=1),
-][meta(name="title", content="JoeKick.x3d"),
+head=head(children=[component(name="HAnim", level=1),
+meta(name="title", content="JoeKick.x3d"),
 meta(name="description", content="This Joe model is a HAnim version 2 LOA-3 Humanoid with textured skin based on the original HAnim Specification and data from CAESAR models."),
 meta(name="creator", content="Joe Williams"),
 meta(name="created", content="9 January 2004"),
@@ -18,17 +18,17 @@ meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/Huma
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="generator", content="BS studio translation from .x3dv by Joe using BS Contact"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="22 March 2023"),
+meta(name="translated", content="24 March 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
-]]), 
+]), 
 Scene=Scene(children=[
 WorldInfo(info=["X3D Humanoid LOA3 skeleton","skin from hanim sites, surface features, and some added points","390 points"], title="X3D HANIM LOA3 Skeleton, 390 point Skin, texcoords, Displacer, teTrans for Joe_ by Joe"),
 NavigationInfo(DEF="Start_NavigationInfo", headlight=False, speed=2.5),
 Background(DEF="blue_Background"),
 SpotLight(DEF="light1", ambientIntensity=0.7, beamWidth=1.5, color=[(0.8,0.8,1)], cutOffAngle=0.6, direction=((0,0,0)), location=((0,3,3)), radius=10),
 PointLight(DEF="light2", ambientIntensity=0.7, color=[(0.8,0.8,1)], location=((0,10,-7))),
-#External from the Humanoid viewpoints
+Comment(value=''' External from the Humanoid viewpoints '''),
 
 Viewpoint(DEF="Scene_InclinedView", centerOfRotation=((0,0.85,0)), description="Scene_Inclined View", orientation=((-0.113,0.993,0.0347,0.671)), position=((1.62,1.05,3.06))),
 Viewpoint(DEF="Scene_IFrontView", centerOfRotation=((0,0.8,0)), description="Scene_Front View", position=((0,0.8,2.58))),
@@ -261,7 +261,7 @@ HAnimSegment(USE="Joe_sacrum")], sites=[
 HAnimSite(USE="Joe_RootFront_view")])]),
 Group(children=[
 TimeSensor(DEF="KickTimer", cycleInterval=3.73, loop=True),
-#Interpolators
+Comment(value=''' Interpolators '''),
 
 OrientationInterpolator(DEF="HumanoidRoot_RotationInterpolator", key=[float(0),float(0.1),float(0.4),float(0.6),float(1)], keyValue=[(float(1),float(0),float(0),float(0.5)),(float(1),float(0),float(0),float(0.5)),(float(-1),float(0),float(0),float(0.1)),(float(-1),float(0),float(0),float(0.5)),(float(-1),float(0),float(0),float(0.5))]),
 PositionInterpolator(DEF="HumanoidRoot_TranslationInterpolator", key=[float(0),float(0.2),float(0.6),float(1)], keyValue=[(1,0.3,-1),(0.4,-0.04,-0.4),(-0.18,0.1,0),(-0.2,0.15,0.15)]),
@@ -358,7 +358,7 @@ OrientationInterpolator(DEF="r_pinky0_RotationInterpolator", key=[float(0),float
 OrientationInterpolator(DEF="r_pinky1_RotationInterpolator", key=[float(0),float(0.5),float(0.75),float(1)], keyValue=[(float(0),float(0),float(1),float(0)),(float(0),float(0),float(1),float(0)),(float(0),float(0),float(1),float(1.5)),(float(0),float(0),float(1),float(0))]),
 OrientationInterpolator(DEF="r_pinky2_RotationInterpolator", key=[float(0),float(0.5),float(0.75),float(1)], keyValue=[(float(0),float(0),float(1),float(0)),(float(0),float(0),float(1),float(0)),(float(0),float(0),float(1),float(1.5)),(float(0),float(0),float(1),float(0))]),
 OrientationInterpolator(DEF="r_pinky3_RotationInterpolator", key=[float(0),float(0.5),float(0.75),float(1)], keyValue=[(float(0),float(0),float(1),float(0)),(float(0),float(0),float(1),float(0)),(float(0),float(0),float(1),float(1.5)),(float(0),float(0),float(1),float(0))]),]),
-#TimeSensor to Interpolators
+Comment(value=''' TimeSensor to Interpolators '''),
 
 ROUTE(fromField="fraction_changed", fromNode="KickTimer", toField="set_fraction", toNode="HumanoidRoot_RotationInterpolator"),
 ROUTE(fromField="fraction_changed", fromNode="KickTimer", toField="set_fraction", toNode="HumanoidRoot_TranslationInterpolator"),
@@ -455,7 +455,7 @@ ROUTE(fromField="fraction_changed", fromNode="KickTimer", toField="set_fraction"
 ROUTE(fromField="fraction_changed", fromNode="KickTimer", toField="set_fraction", toNode="r_pinky1_RotationInterpolator"),
 ROUTE(fromField="fraction_changed", fromNode="KickTimer", toField="set_fraction", toNode="r_pinky2_RotationInterpolator"),
 ROUTE(fromField="fraction_changed", fromNode="KickTimer", toField="set_fraction", toNode="r_pinky3_RotationInterpolator"),
-#Routes from Interpolators to Joe_ model Joints
+Comment(value=''' Routes from Interpolators to Joe_ model Joints '''),
 
 ROUTE(fromField="value_changed", fromNode="HumanoidRoot_RotationInterpolator", toField="set_rotation", toNode="Joe_humanoid_root"),
 ROUTE(fromField="value_changed", fromNode="HumanoidRoot_TranslationInterpolator", toField="set_translation", toNode="Joe_humanoid_root"),
@@ -574,11 +574,11 @@ IndexedFaceSet(DEF="ball_IndexedFaceSet", coordIndex=[0,1,2,-1,0,2,3,-1,0,3,4,-1
 coord=
 Coordinate(DEF="Ball_Coordinates", point=[(0,0.4675,0),(0,0.4049,-0.2338),(-0.1169,0.4049,-0.2024),(-0.2024,0.4049,-0.1169),(-0.2338,0.4049,0),(-0.2024,0.4049,0.1169),(-0.1169,0.4049,0.2024),(0,0.4049,0.2338),(0.1169,0.4049,0.2024),(0.2024,0.4049,0.1169),(0.2338,0.4049,0),(0.2024,0.4049,-0.1169),(0.1169,0.4049,-0.2024),(0,0.2338,-0.4049),(-0.2024,0.2338,-0.3506),(-0.3506,0.2338,-0.2024),(-0.4049,0.2338,0),(-0.3506,0.2338,0.2024),(-0.2024,0.2338,0.3506),(0,0.2338,0.4049),(0.2024,0.2338,0.3506),(0.3506,0.2338,0.2024),(0.4049,0.2338,0),(0.3506,0.2338,-0.2024),(0.2024,0.2338,-0.3506),(0,0,-0.4675),(-0.2338,0,-0.4049),(-0.4049,0,-0.2338),(-0.4675,0,0),(-0.4049,0,0.2338),(-0.2338,0,0.4049),(0,0,0.4675),(0.2338,0,0.4049),(0.4049,0,0.2338),(0.4675,0,0),(0.4049,0,-0.2338),(0.2338,0,-0.4049),(0,-0.2338,-0.4049),(-0.2024,-0.2338,-0.3506),(-0.3506,-0.2338,-0.2024),(-0.4049,-0.2338,0),(-0.3506,-0.2338,0.2024),(-0.2024,-0.2338,0.3506),(0,-0.2338,0.4049),(0.2024,-0.2338,0.3506),(0.3506,-0.2338,0.2024),(0.4049,-0.2338,0),(0.3506,-0.2338,-0.2024),(0.2024,-0.2338,-0.3506),(0,-0.4049,-0.2338),(-0.1169,-0.4049,-0.2024),(-0.2024,-0.4049,-0.1169),(-0.2338,-0.4049,0),(-0.2024,-0.4049,0.1169),(-0.1169,-0.4049,0.2024),(0,-0.4049,0.2338),(0.1169,-0.4049,0.2024),(0.2024,-0.4049,0.1169),(0.2338,-0.4049,0),(0.2024,-0.4049,-0.1169),(0.1169,-0.4049,-0.2024),(0,-0.4675,0)]))),
 Viewpoint(DEF="ballView_1", description="Ball View")]),
-#Ball Animation interpolators
+Comment(value=''' Ball Animation interpolators '''),
 
 PositionInterpolator(DEF="ball_TranslationInterpolator", key=[float(0),float(0.4),float(0.409),float(1)], keyValue=[(-1,0.4,-1),(0,0.07,0),(0.05,0.06,0.05),(2,4,10)]),
 OrientationInterpolator(DEF="ball_RotationInterpolator", key=[float(0),float(0.4),float(0.41),float(0.71),float(1)], keyValue=[(float(1),float(0),float(1),float(0.25)),(float(-1),float(0),float(-1),float(1.35)),(float(-1),float(1),float(-1),float(3.35)),(float(-1),float(0.2),float(-1),float(3)),(float(-1),float(0.2),float(-1),float(3))]),
-#Ball Animation Routes
+Comment(value=''' Ball Animation Routes '''),
 
 ROUTE(fromField="fraction_changed", fromNode="KickTimer", toField="set_fraction", toNode="ball_TranslationInterpolator"),
 ROUTE(fromField="value_changed", fromNode="ball_TranslationInterpolator", toField="set_translation", toNode="SBall"),

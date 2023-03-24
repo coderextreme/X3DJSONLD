@@ -4,7 +4,7 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="3.0", 
-head=head(children=[[meta(name="title", content="jumpcut_loadurl.x3d"),
+head=head(children=[meta(name="title", content="jumpcut_loadurl.x3d"),
 meta(name="reference", content="http://www.nist.gov/vrml.html"),
 meta(name="reference", content="http://www.itl.nist.gov/div897/ctg/vrml/vrml.html"),
 meta(name="creator", content="http://www.itl.nist.gov/div897/ctg/vrml/members.html"),
@@ -18,10 +18,10 @@ meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/Conf
 meta(name="generator", content="Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../../license.html"),
-meta(name="translated", content="22 March 2023"),
+meta(name="translated", content="24 March 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
-]]), 
+]), 
 Scene=Scene(children=[
 WorldInfo(title="jumpcut_loadurl.x3d"),
 Background(groundAngle=[float(1.57)], groundColor=[(0,0.5,0),(0,0.5,0)], skyColor=[(0,0,1)]),

@@ -4,7 +4,7 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="3.3", 
-head=head(children=[[meta(name="title", content="NancyPrototypes.x3d"),
+head=head(children=[meta(name="title", content="NancyPrototypes.x3d"),
 meta(name="creator", content="Cindy Ballreich"),
 meta(name="translators", content="Tom Miller and Don Brutzman, NPS"),
 meta(name="created", content="9 July 2000"),
@@ -16,10 +16,10 @@ meta(name="TODO", content="Material color of neck and arms is ignored/incorrect 
 meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/NancyPrototypes.x3d"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="22 March 2023"),
+meta(name="translated", content="24 March 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
-]]), 
+]), 
 Scene=Scene(children=[
 ProtoDeclare(name="Displacer", appinfo="A Displacer can be used in three different ways: (a) identify the vertices corresponding to a particular feature on a Segment (b) represent a particular muscular action which displaces the vertices in various directions (linearly or radially) and (c) represent a complete configuration of the vertices in a Segment.", documentation="http://HAnim.org/Specifications/HAnim2001/part1/Displacer.html", 
 ProtoInterface=ProtoInterface(field=[field(name="name", accessType="inputOutput", type="SFString"),
@@ -47,10 +47,10 @@ field(name="segments", accessType="inputOutput", appinfo="Container field for Se
 field(name="sites", accessType="inputOutput", appinfo="Container field for Site nodes", type="MFNode"),
 field(name="viewpoints", accessType="inputOutput", appinfo="Container field for Viewpoint nodes", type="MFNode"),
 field(name="skinCoord", accessType="inputOutput", appinfo="Hint: HAnim version 2.0", type="SFNode", children=[
-#NULL node
+Comment(value=''' NULL node '''),
 ]),
 field(name="skinNormal", accessType="inputOutput", appinfo="Hint: HAnim version 2.0", type="SFNode", children=[
-#NULL node
+Comment(value=''' NULL node '''),
 ])
 ]), 
 ProtoBody=ProtoBody(children=[
@@ -115,7 +115,7 @@ field(name="children", accessType="inputOutput", type="MFNode"),
 field(name="addChildren", accessType="inputOnly", type="MFNode"),
 field(name="removeChildren", accessType="inputOnly", type="MFNode"),
 field(name="coord", accessType="inputOutput", appinfo="contains Coordinate nodes", type="SFNode", children=[
-#NULL node
+Comment(value=''' NULL node '''),
 ]),
 field(name="displacers", accessType="inputOutput", appinfo="contains Displacer nodes", type="MFNode")
 ]), 
@@ -153,7 +153,7 @@ connect(nodeField="children", protoField="children"),
 connect(nodeField="addChildren", protoField="addChildren"),
 connect(nodeField="removeChildren", protoField="removeChildren")
 ]))])),
-#Start scene graph.
+Comment(value=''' Start scene graph. '''),
 
 ProtoInstance(name="Humanoid", DEF="Humanoid", fieldValue=[fieldValue(name="name", value="nancy"),
 fieldValue(name="version", value="1.1"),

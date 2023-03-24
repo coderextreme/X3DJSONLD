@@ -4,7 +4,7 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="3.3", 
-head=head(children=[[meta(name="title", content="ObliqueStrategies.x3d"),
+head=head(children=[meta(name="title", content="ObliqueStrategies.x3d"),
 meta(name="description", content="Text scripting and animation example using Oblique Strategies card set by Brian Eno."),
 meta(name="creator", content="Don Brutzman, John Kelly, Ben Cheng"),
 meta(name="created", content="3 November 2013"),
@@ -35,10 +35,10 @@ meta(name="reference", content="https://cloud.google.com/translate/docs/basic/tr
 meta(name="identifier", content="https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategies.x3d"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="22 March 2023"),
+meta(name="translated", content="24 March 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
-]]), 
+]), 
 Scene=Scene(children=[
 WorldInfo(title="ObliqueStrategies.x3d"),
 NavigationInfo(type="\"NONE\""),
