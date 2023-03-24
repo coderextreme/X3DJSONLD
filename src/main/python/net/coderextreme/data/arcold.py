@@ -4,7 +4,15 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="3.3", 
-head=head(), 
+head=head(children=[meta(name="title", content="arcold.x3d"),
+meta(name="creator", content="John Carlson"),
+meta(name="generator", content="manual"),
+meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/arc.x3d"),
+meta(name="description", content="an attempt to implement an arc in a graph"),
+meta(name="translated", content="24 March 2023"),
+meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+]), 
 Scene=Scene(children=[
 Viewpoint(position=((0,0,5)), description="a moving graph"),
 Background(skyColor=[(0.4,0.4,0.4)]),
@@ -54,15 +62,13 @@ Script(DEF="MB1", field=[field(name="translation", accessType="inputOutput", typ
 field(name="old", accessType="inputOutput", type="SFVec3f", value=(0,0,0)),
 field(name="set_location", accessType="inputOnly", type="SFTime"),
 field(name="keyValue", accessType="outputOnly", type="MFVec3f")
-], 
-#['', '', 'ecmascript:', '\t\tfunction set_location(value) {', '                    old = translation;', '\t\t    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);', '                    keyValue = new MFVec3f([old, translation]);', '\t\t    // Browser.println(translation);', '\t\t}', '', '']
-),
+], sourceCode="""['', '', 'ecmascript:', '\t\tfunction set_location(value) {', '                    old = translation;', '\t\t    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);', '                    keyValue = new MFVec3f([old, translation]);', '\t\t    // Browser.println(translation);', '\t\t}', '', '']""",),
 TimeSensor(DEF="CL1", cycleInterval=3, loop=True),
 ROUTE(fromNode="CL1", fromField="cycleTime", toNode="MB1", toField="set_location"),
 ROUTE(fromNode="CL1", fromField="fraction_changed", toNode="PI1", toField="set_fraction"),
 ROUTE(fromNode="MB1", fromField="keyValue", toNode="PI1", toField="keyValue"),
 ROUTE(fromNode="PI1", fromField="value_changed", toNode="node", toField="set_translation")])])),
-#from doug sanden
+Comment(value=''' from doug sanden '''),
 
 ProtoDeclare(name="x3dconnector", 
 ProtoInterface=ProtoInterface(field=[field(name="startnode", accessType="inputOutput", type="SFNode"),
@@ -86,9 +92,7 @@ connect(nodeField="transnode", protoField="transnode"),
 connect(nodeField="rotscalenode", protoField="rotscalenode"),
 connect(nodeField="set_startpoint", protoField="set_startpoint"),
 connect(nodeField="set_endpoint", protoField="set_endpoint")
-]), 
-#['', '            ecmascript:', '        function recompute(startpoint,endpoint){', "\t    if (typeof endpoint === 'undefined') {", '\t\treturn;', '\t    }', '            var dif = endpoint.subtract(startpoint);', '            var dist = dif.length()*0.5;', '            var dif2 = dif.multiply(0.5);', '            var norm = dif.normalize();', '            var transl = startpoint.add(dif2);', "\t    if (typeof Quaternion !== 'undefined') {", '\t\t    return {', '\t\t\t    scale : new SFVec3f(1.0,dist,1.0),', '\t\t\t    translation : transl,', '\t\t\t    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)', '\t\t    };', '\t    } else {', '\t\t    return {', '\t\t\t    scale : new SFVec3f(1.0,dist,1.0),', '\t\t\t    translation : transl,', '\t\t\t    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)', '\t\t    };', '\t    }', '\t}', '\tfunction recompute_and_route(startpoint, endpoint) {', '\t\tvar trafo = recompute(startpoint, endpoint);', "\t\tif (typeof trafo !== 'undefined') {", '\t\t\ttransnode.translation = trafo.translation;', '\t\t\trotscalenode.rotation = trafo.rotation;', '\t\t\trotscalenode.scale = trafo.scale;', '\t\t} else {', '\t\t\tBrowser.print("recompute returned undefined");', '\t\t}', '\t}', '        function initialize(){', '            recompute_and_route(startnode.translation,endnode.translation);', '        }', '        function set_startpoint(val,t){', '            recompute_and_route(val || startnode.translation,endnode.translation);', '        }', '        function set_endpoint(val,t){', '            recompute_and_route(startnode.translation,val || endnode.translation);', '        }', '', '']
-)])),
+]), sourceCode="""['', '            ecmascript:', '        function recompute(startpoint,endpoint){', "\t    if (typeof endpoint === 'undefined') {", '\t\treturn;', '\t    }', '            var dif = endpoint.subtract(startpoint);', '            var dist = dif.length()*0.5;', '            var dif2 = dif.multiply(0.5);', '            var norm = dif.normalize();', '            var transl = startpoint.add(dif2);', "\t    if (typeof Quaternion !== 'undefined') {", '\t\t    return {', '\t\t\t    scale : new SFVec3f(1.0,dist,1.0),', '\t\t\t    translation : transl,', '\t\t\t    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)', '\t\t    };', '\t    } else {', '\t\t    return {', '\t\t\t    scale : new SFVec3f(1.0,dist,1.0),', '\t\t\t    translation : transl,', '\t\t\t    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)', '\t\t    };', '\t    }', '\t}', '\tfunction recompute_and_route(startpoint, endpoint) {', '\t\tvar trafo = recompute(startpoint, endpoint);', "\t\tif (typeof trafo !== 'undefined') {", '\t\t\ttransnode.translation = trafo.translation;', '\t\t\trotscalenode.rotation = trafo.rotation;', '\t\t\trotscalenode.scale = trafo.scale;', '\t\t} else {', '\t\t\tBrowser.print("recompute returned undefined");', '\t\t}', '\t}', '        function initialize(){', '            recompute_and_route(startnode.translation,endnode.translation);', '        }', '        function set_startpoint(val,t){', '            recompute_and_route(val || startnode.translation,endnode.translation);', '        }', '        function set_endpoint(val,t){', '            recompute_and_route(startnode.translation,val || endnode.translation);', '        }', '', '']""",)])),
 ProtoInstance(name="point", DEF="G1"),
 ProtoInstance(name="point", DEF="G2"),
 ProtoInstance(name="point", DEF="G3"),

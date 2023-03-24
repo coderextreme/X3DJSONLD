@@ -4,7 +4,15 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="3.3", 
-head=head(), 
+head=head(children=[meta(name="title", content="arc2.x3d"),
+meta(name="creator", content="Lost, Doug Sanden I think"),
+meta(name="generator", content="manual"),
+meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/src/main/data/arc1.x3d"),
+meta(name="description", content="a generic proto to connect two objects"),
+meta(name="translated", content="24 March 2023"),
+meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+]), 
 Scene=Scene(children=[
 Viewpoint(position=((0,0,5)), description="Only Viewpoint"),
 Background(skyColor=[(0.4,0.4,0.4)]),
@@ -22,9 +30,7 @@ Script(DEF="DECLpoint_INSTANCE_MB1", field=[field(name="translation", accessType
 field(name="old", accessType="inputOutput", type="SFVec3f", value=(0,0,0)),
 field(name="set_location", accessType="inputOnly", type="SFTime"),
 field(name="keyValue", accessType="inputOutput", type="MFVec3f", value=[(0,0,0),(0,5,0)])
-], 
-#['', '', '', 'ecmascript:', '               function set_location(value) {', '                    old = translation;', '                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);', '                    keyValue = new MFVec3f(old, translation);', '               }', '', '', '']
-),
+], sourceCode="""['', '', '', 'ecmascript:', '               function set_location(value) {', '                    old = translation;', '                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);', '                    keyValue = new MFVec3f(old, translation);', '               }', '', '', '']""",),
 TimeSensor(DEF="DECLpoint_INSTANCE_CL1", cycleInterval=3, loop=True),
 ROUTE(fromNode="DECLpoint_INSTANCE_CL1", fromField="cycleTime", toNode="DECLpoint_INSTANCE_MB1", toField="set_location"),
 ROUTE(fromNode="DECLpoint_INSTANCE_CL1", fromField="fraction_changed", toNode="DECLpoint_INSTANCE_PI1", toField="set_fraction"),
@@ -45,9 +51,7 @@ Script(DEF="DECLpoint_INSTANCE1000_MB1", field=[field(name="translation", access
 field(name="old", accessType="inputOutput", type="SFVec3f", value=(0,0,0)),
 field(name="set_location", accessType="inputOnly", type="SFTime"),
 field(name="keyValue", accessType="inputOutput", type="MFVec3f", value=[(0,0,0),(0,5,0)])
-], 
-#['', '', '', 'ecmascript:', '               function set_location(value) {', '                    old = translation;', '                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);', '                    keyValue = new MFVec3f(old, translation);', '               }', '', '', '']
-),
+], sourceCode="""['', '', '', 'ecmascript:', '               function set_location(value) {', '                    old = translation;', '                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);', '                    keyValue = new MFVec3f(old, translation);', '               }', '', '', '']""",),
 TimeSensor(DEF="DECLpoint_INSTANCE1000_CL1", cycleInterval=3, loop=True),
 ROUTE(fromNode="DECLpoint_INSTANCE1000_CL1", fromField="cycleTime", toNode="DECLpoint_INSTANCE1000_MB1", toField="set_location"),
 ROUTE(fromNode="DECLpoint_INSTANCE1000_CL1", fromField="fraction_changed", toNode="DECLpoint_INSTANCE1000_PI1", toField="set_fraction"),
@@ -73,9 +77,7 @@ field(name="rotscaleC1", accessType="initializeOnly", type="SFNode", children=[
 Transform(USE="rotscaleC1")]),
 field(name="set_startpoint", accessType="inputOnly", type="SFVec3f"),
 field(name="set_endpoint", accessType="inputOnly", type="SFVec3f")
-], 
-#['', '', '            ecmascript:', '        function recompute(startpoint,endpoint){', "\t    if (typeof endpoint === 'undefined') {", '\t\treturn;', '\t    }', '            var dif = endpoint.subtract(startpoint);', '            var dist = dif.length()*0.5;', '            var dif2 = dif.multiply(0.5);', '            var norm = dif.normalize();', '            var transl = startpoint.add(dif2);', "\t    if (typeof Quaternion !== 'undefined') {", '\t\t    return {', '\t\t\t    scale : new SFVec3f(1.0,dist,1.0),', '\t\t\t    translation : transl,', '\t\t\t    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)', '\t\t    };', '\t    } else {', '\t\t    return {', '\t\t\t    scale : new SFVec3f(1.0,dist,1.0),', '\t\t\t    translation : transl,', '\t\t\t    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)', '\t\t    };', '\t    }', '\t}', '\tfunction recompute_and_route(startpoint, endpoint) {', '\t      var trafo = recompute(startpoint, endpoint);', '\t      transC1.translation = trafo.translation;', '\t      rotscaleC1.rotation = trafo.rotation;', '\t      rotscaleC1.scale = trafo.scale;', '\t}', '        function initialize(){', '            recompute_and_route(startnode.translation,endnode.translation);', '        }', '        function set_startpoint(val,t){', '            recompute_and_route(val,endnode.translation);', '        }', '        function set_endpoint(val,t){', '            recompute_and_route(startnode.translation,val);', '        }', '', '', '']
-),
+], sourceCode="""['', '', '            ecmascript:', '        function recompute(startpoint,endpoint){', "\t    if (typeof endpoint === 'undefined') {", '\t\treturn;', '\t    }', '            var dif = endpoint.subtract(startpoint);', '            var dist = dif.length()*0.5;', '            var dif2 = dif.multiply(0.5);', '            var norm = dif.normalize();', '            var transl = startpoint.add(dif2);', "\t    if (typeof Quaternion !== 'undefined') {", '\t\t    return {', '\t\t\t    scale : new SFVec3f(1.0,dist,1.0),', '\t\t\t    translation : transl,', '\t\t\t    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)', '\t\t    };', '\t    } else {', '\t\t    return {', '\t\t\t    scale : new SFVec3f(1.0,dist,1.0),', '\t\t\t    translation : transl,', '\t\t\t    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)', '\t\t    };', '\t    }', '\t}', '\tfunction recompute_and_route(startpoint, endpoint) {', '\t      var trafo = recompute(startpoint, endpoint);', '\t      transC1.translation = trafo.translation;', '\t      rotscaleC1.rotation = trafo.rotation;', '\t      rotscaleC1.scale = trafo.scale;', '\t}', '        function initialize(){', '            recompute_and_route(startnode.translation,endnode.translation);', '        }', '        function set_startpoint(val,t){', '            recompute_and_route(val,endnode.translation);', '        }', '        function set_endpoint(val,t){', '            recompute_and_route(startnode.translation,val);', '        }', '', '', '']""",),
 ROUTE(fromNode="G1", fromField="translation_changed", toNode="DECLx3dconnector_connector1_S1", toField="set_startpoint"),
 ROUTE(fromNode="G2", fromField="translation_changed", toNode="DECLx3dconnector_connector1_S1", toField="set_endpoint")]))
 .XML())

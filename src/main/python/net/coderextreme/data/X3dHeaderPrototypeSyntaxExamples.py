@@ -4,7 +4,25 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="3.3", 
-head=head(), 
+head=head(children=[[component(name="Geospatial", level=1),
+component(name="NURBS", level=2),
+component(name="Core", level=2),
+component(name="Navigation", level=1),
+component(name="Text", level=1),
+][meta(name="title", content="X3dHeaderPrototypeSyntaxExamples.x3d"),
+meta(name="description", content="X3D scene header and prototype syntax examples. This example header indicates that the content is XML encoded, follows the Interactive Profile and explicitly lists additional necessary components. The X3D header may also contain additional semantic information. Used for specification EXAMPLE excerpts in 19776:1 XML Encoding."),
+meta(name="created", content="14 October 2002"),
+meta(name="modified", content="27 May 2017"),
+meta(name="creator", content="Don Brutzman"),
+meta(name="specificationSection", content="X3D encodings, ISO/IEC 19776-1.3, Part 1: XML encoding, 4.3 XML file syntax"),
+meta(name="specificationUrl", content="https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/concepts.html#XMLFileSyntax"),
+meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/X3dHeaderPrototypeSyntaxExamples.x3d"),
+meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+meta(name="license", content="../license.html"),
+meta(name="translated", content="22 March 2023"),
+meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+]]), 
 Scene=Scene(children=[
 ExternProtoDeclare(name="ViewPositionOrientation", url=["../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation","https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation","../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation","https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation"], field=[field(name="enabled", accessType="inputOutput", type="SFBool"),
 field(name="traceEnabled", accessType="initializeOnly", type="SFBool"),

@@ -4,7 +4,23 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="3.3", 
-head=head(), 
+head=head(children=[[meta(name="title", content="NancyDivingProtoInstances.x3d"),
+meta(name="description", content="Nancy having fun scuba diving - developmental model using ProtoInstance instead of HAnim native tags, do not use this pattern."),
+meta(name="warning", content="This is a developmental example, use HAnim native tags as shown in other examples instead of the prototypes and ProtoInstances shown here."),
+meta(name="creator", content="Etsuko Lippi"),
+meta(name="translators", content="Tom Miller and Don Brutzman, NPS"),
+meta(name="created", content="19 November 2001"),
+meta(name="modified", content="4 July 2020"),
+meta(name="TODO", content="left arm motion still has a problem"),
+meta(name="creator", content="Cindy Ballreich cindy@ballreich.net 3Name3D"),
+meta(name="rights", content="1997 3Name3D / Yglesias, Wallock, Divekar, Inc., all rights reserved."),
+meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/NancyDivingProtoInstances.x3d"),
+meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+meta(name="license", content="../license.html"),
+meta(name="translated", content="22 March 2023"),
+meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+]]), 
 Scene=Scene(children=[
 ExternProtoDeclare(name="Joint", appinfo="The Joint node is used as a building block to describe the articulations of the humanoid figure. Each articulation of the humanoid figure is represented by a Joint node each of which is organized into a hierarchy that describes the overall skeleton of the humanoid.", documentation="http://HAnim.org/Specifications/HAnim2001/part1/Joint.html", url=["NancyPrototypes.x3d#Joint","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/NancyPrototypes.x3d#Joint","NancyPrototypes.wrl#Joint","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/NancyPrototypes.wrl#Joint"], field=[field(name="center", accessType="inputOutput", type="SFVec3f"),
 field(name="children", accessType="inputOutput", type="MFNode"),

@@ -4,7 +4,19 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Full", version="4.0", 
-head=head(), 
+head=head(children=[meta(name="title", content="AllAudioGraphNodesTest.x3d"),
+meta(name="description", content="List of all X3D4 audio graph nodes to test infrastructure and validation support. Absence of attributes means that checking and removal of default values is working."),
+meta(name="creator", content="Don Brutzman"),
+meta(name="created", content="25 October 2020"),
+meta(name="modified", content="26 November 2021"),
+meta(name="warning", content="Developmental test, no actual 3D model expected"),
+meta(name="identifier", content="https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/AllAudioGraphNodesTest.x3d"),
+meta(name="generator", content="X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"),
+meta(name="license", content="../license.html"),
+meta(name="translated", content="24 March 2023"),
+meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+]), 
 Scene=Scene(children=[
 WorldInfo(title="AllAudioGraphNodes.x3d"),
 Shape(
@@ -34,7 +46,7 @@ DynamicsCompressor(channelCountMode="MAX", channelInterpretation="SPEAKERS", chi
 Gain(channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
 StreamAudioDestination(channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
 WaveShaper(channelCountMode="MAX", channelInterpretation="SPEAKERS", children=[
-#The following X3DSoundSourceNode nodes have no audio-graph children
+Comment(value=''' The following X3DSoundSourceNode nodes have no audio-graph children '''),
 
 BufferAudioSource(channelCountMode="MAX", channelInterpretation="SPEAKERS"),
 ListenerPointSource(),

@@ -4,7 +4,16 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="3.3", 
-head=head(), 
+head=head(children=[meta(name="creator", content="John W Carlson"),
+meta(name="created", content="December 13 2015"),
+meta(name="title", content="fors.x3d"),
+meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/force.x3d"),
+meta(name="description", content="beginnings of a force directed graph in 3D"),
+meta(name="generator", content="Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"),
+meta(name="translated", content="24 March 2023"),
+meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+]), 
 Scene=Scene(children=[
 ProtoDeclare(name="node", 
 ProtoInterface=ProtoInterface(field=[field(name="position", accessType="inputOutput", type="SFVec3f", value=(0,0,0))
@@ -35,9 +44,7 @@ Script(DEF="MoveBall", field=[field(name="translation", accessType="inputOutput"
 field(name="old", accessType="inputOutput", type="SFVec3f", value=(0,0,0)),
 field(name="set_cycle", accessType="inputOnly", type="SFTime"),
 field(name="keyValue", accessType="outputOnly", type="MFVec3f")
-], 
-#['', '', 'ecmascript:', '\t\t\t\t\tfunction set_cycle(value) {', '                                                old = translation;', '\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);', '                                                keyValue = new MFVec3f([old, translation]);', '\t\t\t\t\t\t// Browser.println(translation);', '\t\t\t\t\t}', '', '']
-),
+], sourceCode="""['', '', 'ecmascript:', '\t\t\t\t\tfunction set_cycle(value) {', '                                                old = translation;', '\t\t\t\t\t\ttranslation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);', '                                                keyValue = new MFVec3f([old, translation]);', '\t\t\t\t\t\t// Browser.println(translation);', '\t\t\t\t\t}', '', '']""",),
 TimeSensor(DEF="nodeClock", cycleInterval=3, loop=True),
 ROUTE(fromNode="nodeClock", fromField="cycleTime", toNode="MoveBall", toField="set_cycle"),
 ROUTE(fromNode="nodeClock", fromField="fraction_changed", toNode="NodePosition", toField="set_fraction"),
@@ -61,9 +68,7 @@ field(name="set_endB", accessType="inputOnly", type="SFVec3f")
 ], 
 IS=IS(connect=[connect(nodeField="set_endA", protoField="set_positionA"),
 connect(nodeField="set_endB", protoField="set_positionB")
-]), 
-#['', '', 'ecmascript:', '', '                function set_endA(value) {', "\t\t    if (typeof spine === 'undefined') {", '\t\t        spine = new MFVec3f([value, value]);', '\t\t    } else {', '\t\t        spine = new MFVec3f([value, spine[1]]);', '\t\t    }', '                }', '', '                function set_endB(value) {', "\t\t    if (typeof spine === 'undefined') {", '\t\t        spine = new MFVec3f([value, value]);', '\t\t    } else {', '\t\t        spine = new MFVec3f([spine[0], value]);', '\t\t    }', '                }', '', '                function set_spine(value) {', '                    spine = value;', '                }', '', '']
-),
+]), sourceCode="""['', '', 'ecmascript:', '', '                function set_endA(value) {', "\t\t    if (typeof spine === 'undefined') {", '\t\t        spine = new MFVec3f([value, value]);', '\t\t    } else {', '\t\t        spine = new MFVec3f([value, spine[1]]);', '\t\t    }', '                }', '', '                function set_endB(value) {', "\t\t    if (typeof spine === 'undefined') {", '\t\t        spine = new MFVec3f([value, value]);', '\t\t    } else {', '\t\t        spine = new MFVec3f([spine[0], value]);', '\t\t    }', '                }', '', '                function set_spine(value) {', '                    spine = value;', '                }', '', '']""",),
 ROUTE(fromNode="MoveCylinder", fromField="spine", toNode="extrusion", toField="set_spine")])),
 Transform(DEF="HoldsContent", scale=((0.1,0.1,0.1)), children=[
 PlaneSensor(DEF="clickGenerator", minPosition=((-50,-50)), maxPosition=((50,50)), description="click on background to add nodes, click on nodes to add links"),

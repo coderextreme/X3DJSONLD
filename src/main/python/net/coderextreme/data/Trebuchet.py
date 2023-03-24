@@ -4,7 +4,25 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="3.0", 
-head=head(), 
+head=head(children=[[meta(name="title", content="Trebuchet.x3d"),
+meta(name="description", content="Working model of a 14th century Trebuchet Catapult."),
+meta(name="creator", content="LT Joe Roth"),
+meta(name="created", content="20 June 2001"),
+meta(name="modified", content="20 October 2019"),
+meta(name="version", content="7.8"),
+meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/Trebuchet.x3d"),
+meta(name="reference", content="http://trebuchet.com"),
+meta(name="reference", content="http://members.home.net/dimona"),
+meta(name="subject", content="trebuchet catapult Monty Python"),
+meta(name="reference", content="Permission granted for use of the VRML chicken I own a copy of Monty Python and the Holy Grail I have requested permission to use for non profit use. No response received. I will use the sound clips under \"Fair Use\" clause of the DMCA"),
+meta(name="reference", content="https://www.web3d.org/WorkingGroups/media/textures/nature/leaves_5.jpg.htm"),
+meta(name="reference", content="http://www.revemonde.net/UniversalMedia/textures/nature/leaves_5.jpg.htm"),
+meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+meta(name="license", content="../license.html"),
+meta(name="translated", content="22 March 2023"),
+meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+]]), 
 Scene=Scene(children=[
 WorldInfo(title="Trebuchet.x3d"),
 Background(backUrl=["https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_back.jpg"], bottomUrl=["https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_bottom.jpg"], frontUrl=["https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_front.jpg"], groundAngle=[float(1.309),float(1.570796)], groundColor=[(0.1,0.1,0),(0.4,0.25,0.2),(0.6,0.6,0.6)], leftUrl=["https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_left.jpg"], rightUrl=["https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_right.jpg"], skyAngle=[float(1.309),float(1.57079)], skyColor=[(0,0.2,0.7),(0,0.5,1),(1,1,1)], topUrl=["https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_top.jpg"]),

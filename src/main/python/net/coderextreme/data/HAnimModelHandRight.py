@@ -4,7 +4,32 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="4.0", 
-head=head(), 
+head=head(children=[component(name="HAnim", level=1),
+meta(name="title", content="HAnimModelHandRight.x3d"),
+meta(name="description", content="Right hand using high-fidelity definitions for HAnim version 2.0"),
+meta(name="creator", content="Kwan-Hee YOO, Don Brutzman and Joe Williams"),
+meta(name="created", content="26 January 2015"),
+meta(name="modified", content="23 December 2021"),
+meta(name="TODO", content="fix visible geometry for thumb and index finger, midcarpal_1 and midcarpal_2"),
+meta(name="Image", content="HAnimModelHandRightSegmentVisualizationError.png"),
+meta(name="error", content="not yet to scale, also relatively flat"),
+meta(name="warning", content="TODO will X3D HAnim component add a new level to support LOA-4 functionality?"),
+meta(name="info", content="TODO describe how to compute and apply offsets for center values whenever attaching this appendage to a body"),
+meta(name="reference", content="https://www.web3d.org/working-groups/humanoid-animation-HAnim"),
+meta(name="reference", content="https://www.web3d.org/documents/specifications/19774/V2.0"),
+meta(name="reference", content="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#TheHands"),
+meta(name="reference", content="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#f-HandJoints"),
+meta(name="reference", content="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#Hierarchy4"),
+meta(name="reference", content="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/hanim.html"),
+meta(name="subject", content="X3D HAnim humanoid animation"),
+meta(name="TODO", content="Integrate and confirm Segment/Joint names, Viewpoints."),
+meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandRight.x3d"),
+meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+meta(name="license", content="../license.html"),
+meta(name="translated", content="24 March 2023"),
+meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+]), 
 Scene=Scene(children=[
 WorldInfo(title="HAnimModelHandRight.x3d"),
 HAnimHumanoid(name="Hand_Right", DEF="hanim_Hand_Right", loa=4, version="2.0", 
@@ -12,7 +37,7 @@ metadata=(
 MetadataSet(name="HAnimHumanoid.info", reference="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid", value=[
 MetadataString(name="authorName", value=["Kwan-Hee YOO, Don Brutzman and Joe Williams"])])), skeleton=[
 HAnimJoint(name="humanoid_root", DEF="hanim_humanoid_root", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
-#Might consider putting a HAnimSegment here, but that doesn't help with re-use of this hand model
+Comment(value=''' Might consider putting a HAnimSegment here, but that doesn't help with re-use of this hand model '''),
 
 HAnimJoint(name="r_radiocarpal", DEF="hanim_r_radiocarpal", description="connection joint of hand to leg above", ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_carpal", DEF="hanim_r_carpal", children=[
@@ -51,7 +76,7 @@ geometry=
 IndexedLineSet(DEF="RCToMC45", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0,0,0),(0.1,0.1,0)])))]),
-#MC1
+Comment(value=''' MC1 '''),
 
 HAnimJoint(name="r_midcarpal_1", DEF="hanim_r_midcarpal_1", center=((-0.14,0.09,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_trapezium", DEF="hanim_r_trapezium", children=[
@@ -72,7 +97,7 @@ geometry=
 IndexedLineSet(DEF="MC12toCMC1", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(-0.1,0.1,0),(-0.2,0.15,0)])))]),
-#thumb finger
+Comment(value=''' thumb finger '''),
 
 HAnimJoint(name="r_carpometacarpal_1", DEF="hanim_r_carpometacarpal_1", center=((-0.2,0.15,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_metacarpal_1", DEF="hanim_r_metacarpal_1", children=[
@@ -113,7 +138,7 @@ geometry=
 IndexedLineSet(DEF="fingertip_r_carpal_interphalangeal_1", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(-0.35,0.4,0),(-0.36,0.45,0)])))])])])]),]),
-#MC2
+Comment(value=''' MC2 '''),
 
 HAnimJoint(name="r_midcarpal_2", DEF="hanim_r_midcarpal_2", center=((-0.07,0.07,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_trapezoid", DEF="hanim_r_trapezoid", children=[
@@ -128,7 +153,7 @@ geometry=
 IndexedLineSet(DEF="MC12toCMC2", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(-0.1,0.1,0),(-0.1,0.2,0)])))]),
-#index finger
+Comment(value=''' index finger '''),
 
 HAnimJoint(name="r_carpometacarpal_2", DEF="hanim_r_carpometacarpal_2", center=((-0.1,0.2,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_metacarpal_2", DEF="hanim_r_metacarpal_2", children=[
@@ -182,7 +207,7 @@ geometry=
 IndexedLineSet(DEF="fingertip_r_carpal_distal_interphalangeal_2", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(-0.24,0.87,0),(-0.26,0.93,0)])))])])])])]),]),
-#MC3
+Comment(value=''' MC3 '''),
 
 HAnimJoint(name="r_midcarpal_3", DEF="hanim_r_midcarpal_3", center=((0.0,0.07,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_capitate", DEF="hanim_r_capitate", children=[
@@ -197,7 +222,7 @@ geometry=
 IndexedLineSet(DEF="MC3toCMC3", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0.0,0.07,0),(0.0,0.2,0)])))]),
-#Middle fingle
+Comment(value=''' Middle fingle '''),
 
 HAnimJoint(name="r_carpometacarpal_3", DEF="hanim_r_carpometacarpal_3", center=((0.0,0.2,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_metacarpal_3", DEF="hanim_r_metacarpal_3", children=[
@@ -251,7 +276,7 @@ geometry=
 IndexedLineSet(DEF="fingertip_r_carpal_distal_interphalangeal_3", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(-0.08,0.96,0),(-0.09,1.05,0)])))])])])])]),]),
-#MC4_5
+Comment(value=''' MC4_5 '''),
 
 HAnimJoint(name="r_midcarpal_4_5", DEF="hanim_r_midcarpal_4_5", center=((0.1,0.1,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_hamate", DEF="hanim_r_hamate", children=[
@@ -275,7 +300,7 @@ geometry=
 IndexedLineSet(DEF="MC45toCMC5", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0.1,0.1,0),(0.15,0.17,0)])))]),
-#ring finger
+Comment(value=''' ring finger '''),
 
 HAnimJoint(name="r_carpometacarpal_4", DEF="hanim_r_carpometacarpal_4", center=((0.1,0.2,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_metacarpal_4", DEF="hanim_r_metacarpal_4", children=[
@@ -329,7 +354,7 @@ geometry=
 IndexedLineSet(DEF="fingertip_r_carpal_distal_interphalangeal_4", coordIndex=[0,1], 
 coord=
 Coordinate(point=[(0.1,0.93,0),(0.1,1.0,0)])))])])])])]),
-#pinky finger
+Comment(value=''' pinky finger '''),
 
 HAnimJoint(name="r_carpometacarpal_5", DEF="hanim_r_carpometacarpal_5", center=((0.15,0.17,0)), ulimit=[float(0),float(0),float(0)], llimit=[float(0),float(0),float(0)], children=[
 HAnimSegment(name="r_metacarpal_5", DEF="hanim_r_metacarpal_5", children=[

@@ -4,7 +4,26 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Interchange", version="3.3", 
-head=head(), 
+head=head(children=[[meta(name="title", content="Teapot.x3d"),
+meta(name="description", content="A watertight (solid) Utah Teapot Model converted from obj format."),
+meta(name="created", content="20 March 2016"),
+meta(name="modified", content="20 October 2019"),
+meta(name="creator", content="Pyarelal Knowles"),
+meta(name="translator", content="Don Brutzman"),
+meta(name="reference", content="wt_teapot.obj"),
+meta(name="reference", content="teapot.ply"),
+meta(name="reference", content="http://goanna.cs.rmit.edu.au/~pknowles/models.html"),
+meta(name="reference", content="https://en.wikipedia.org/wiki/Utah_teapot"),
+meta(name="reference", content="https://en.wikipedia.org/wiki/List_of_common_3D_test_models"),
+meta(name="reference", content="http://www.realtimerendering.com/udacity/?load=demo/unit1-teapot-demo.js"),
+meta(name="identifier", content="https://x3dgraphics.com/examples/X3dForAdvancedModeling/GeometricShapes/Teapot.x3d"),
+meta(name="generator", content="Meshlab X3D Exported, http://meshlab.sourceforge.net"),
+meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+meta(name="license", content="../license.html"),
+meta(name="translated", content="22 March 2023"),
+meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+]]), 
 Scene=Scene(children=[
 WorldInfo(title="Teapot.x3d"),
 Background(skyColor=[(0.2,0.4,0.6)]),

@@ -4,10 +4,25 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="4.0", 
-head=head(), 
+head=head(children=[component(name="Scripting", level=1),
+component(name="Shaders", level=1),
+component(name="CubeMapTexturing", level=1),
+component(name="Texturing", level=1),
+component(name="Rendering", level=1),
+component(name="Shape", level=4),
+component(name="Grouping", level=3),
+meta(name="title", content="flowers.x3d"),
+meta(name="creator", content="John Carlson"),
+meta(name="description", content="5 or more prismatic flowers"),
+meta(name="generator", content="X3D-Edit, https://savage.nps.edu/X3D-Edit"),
+meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/flowers.x3d"),
+meta(name="translated", content="24 March 2023"),
+meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
+]), 
 Scene=Scene(children=[
 NavigationInfo(),
-#Images courtesy of Paul Debevec's Light Probe Image Gallery
+Comment(value=''' Images courtesy of Paul Debevec's Light Probe Image Gallery '''),
 
 Background(backUrl=["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"], bottomUrl=["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"], frontUrl=["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"], leftUrl=["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"], rightUrl=["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"], topUrl=["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"]),
 ProtoDeclare(name="flower", 
@@ -72,9 +87,7 @@ field(name="c", type="SFFloat", accessType="inputOutput", value=3),
 field(name="d", type="SFFloat", accessType="inputOutput", value=3),
 field(name="tdelta", type="SFFloat", accessType="inputOutput", value=0.5),
 field(name="pdelta", type="SFFloat", accessType="inputOutput", value=0.5)
-], 
-#['', '', 'ecmascript:', '', '\t\t\tfunction initialize() {', '\t\t\t    translation = new SFVec3f(0, 0, 0);', '\t\t\t    velocity = new SFVec3f(', '\t\t\t    \tMath.random() - 0.5,', '\t\t\t\tMath.random() - 0.5,', '\t\t\t\tMath.random() - 0.5);', '\t\t\t}', '\t\t\tfunction set_fraction() {', '\t\t\t    translation = new SFVec3f(', '\t\t\t    \ttranslation.x + velocity.x,', '\t\t\t\ttranslation.y + velocity.y,', '\t\t\t\ttranslation.z + velocity.z);', '\t\t\t    for (var j = 0; j <= 2; j++) {', '\t\t\t\t    if (Math.abs(translation.x) > 10) {', '\t\t\t\t\tinitialize();', '\t\t\t\t    } else if (Math.abs(translation.y) > 10) {', '\t\t\t\t\tinitialize();', '\t\t\t\t    } else if (Math.abs(translation.z) > 10) {', '\t\t\t\t\tinitialize();', '\t\t\t\t    } else {', '\t\t\t\t\tvelocity.x += Math.random() * 0.2 - 0.1;', '\t\t\t\t\tvelocity.y += Math.random() * 0.2 - 0.1;', '\t\t\t\t\tvelocity.z += Math.random() * 0.2 - 0.1;', '\t\t\t\t    }', '\t\t\t    }', '\t\t\t    animate_flowers();', '\t\t\t}', '', '\t\t\tfunction animate_flowers(fraction, eventTime) {', '\t\t\t\tvar choice = Math.floor(Math.random() * 4);', '\t\t\t\tswitch (choice) {', '\t\t\t\tcase 0:', '\t\t\t\t\ta += Math.random() * 0.2 - 0.1;', '\t\t\t\t\tbreak;', '\t\t\t\tcase 1:', '\t\t\t\t\tb += Math.random() * 0.2 - 0.1;', '\t\t\t\t\tbreak;', '\t\t\t\tcase 2:', '\t\t\t\t\tc += Math.random() * 2 - 1;', '\t\t\t\t\tbreak;', '\t\t\t\tcase 3:', '\t\t\t\t\td += Math.random() * 2 - 1;', '\t\t\t\t\tbreak;', '\t\t\t\t}', '\t\t\t\ttdelta = tdelta + 0.5;', '\t\t\t\tpdelta = pdelta + 0.5;', '\t\t\t\tif (a > 1) {', '\t\t\t\t\ta =  0.5;', '\t\t\t\t}', '\t\t\t\tif (b > 1) {', '\t\t\t\t\tb =  0.5;', '\t\t\t\t}', '\t\t\t\tif (c < 1) {', '\t\t\t\t\tc =  4;', '\t\t\t\t}', '\t\t\t\tif (d < 1) {', '\t\t\t\t\td =  4;', '\t\t\t\t}', '\t\t\t\tif (c > 10) {', '\t\t\t\t\tc = 4;', '\t\t\t\t}', '\t\t\t\tif (d > 10) {', '\t\t\t\t\td = 4;', '\t\t\t\t}', '\t\t\t}', '', '']
-),
+], sourceCode="""['', '', 'ecmascript:', '', '\t\t\tfunction initialize() {', '\t\t\t    translation = new SFVec3f(0, 0, 0);', '\t\t\t    velocity = new SFVec3f(', '\t\t\t    \tMath.random() - 0.5,', '\t\t\t\tMath.random() - 0.5,', '\t\t\t\tMath.random() - 0.5);', '\t\t\t}', '\t\t\tfunction set_fraction() {', '\t\t\t    translation = new SFVec3f(', '\t\t\t    \ttranslation.x + velocity.x,', '\t\t\t\ttranslation.y + velocity.y,', '\t\t\t\ttranslation.z + velocity.z);', '\t\t\t    for (var j = 0; j <= 2; j++) {', '\t\t\t\t    if (Math.abs(translation.x) > 10) {', '\t\t\t\t\tinitialize();', '\t\t\t\t    } else if (Math.abs(translation.y) > 10) {', '\t\t\t\t\tinitialize();', '\t\t\t\t    } else if (Math.abs(translation.z) > 10) {', '\t\t\t\t\tinitialize();', '\t\t\t\t    } else {', '\t\t\t\t\tvelocity.x += Math.random() * 0.2 - 0.1;', '\t\t\t\t\tvelocity.y += Math.random() * 0.2 - 0.1;', '\t\t\t\t\tvelocity.z += Math.random() * 0.2 - 0.1;', '\t\t\t\t    }', '\t\t\t    }', '\t\t\t    animate_flowers();', '\t\t\t}', '', '\t\t\tfunction animate_flowers(fraction, eventTime) {', '\t\t\t\tvar choice = Math.floor(Math.random() * 4);', '\t\t\t\tswitch (choice) {', '\t\t\t\tcase 0:', '\t\t\t\t\ta += Math.random() * 0.2 - 0.1;', '\t\t\t\t\tbreak;', '\t\t\t\tcase 1:', '\t\t\t\t\tb += Math.random() * 0.2 - 0.1;', '\t\t\t\t\tbreak;', '\t\t\t\tcase 2:', '\t\t\t\t\tc += Math.random() * 2 - 1;', '\t\t\t\t\tbreak;', '\t\t\t\tcase 3:', '\t\t\t\t\td += Math.random() * 2 - 1;', '\t\t\t\t\tbreak;', '\t\t\t\t}', '\t\t\t\ttdelta = tdelta + 0.5;', '\t\t\t\tpdelta = pdelta + 0.5;', '\t\t\t\tif (a > 1) {', '\t\t\t\t\ta =  0.5;', '\t\t\t\t}', '\t\t\t\tif (b > 1) {', '\t\t\t\t\tb =  0.5;', '\t\t\t\t}', '\t\t\t\tif (c < 1) {', '\t\t\t\t\tc =  4;', '\t\t\t\t}', '\t\t\t\tif (d < 1) {', '\t\t\t\t\td =  4;', '\t\t\t\t}', '\t\t\t\tif (c > 10) {', '\t\t\t\t\tc = 4;', '\t\t\t\t}', '\t\t\t\tif (d > 10) {', '\t\t\t\t\td = 4;', '\t\t\t\t}', '\t\t\t}', '', '']""",),
 TimeSensor(DEF="TourTime", cycleInterval=5, loop=True),
 ROUTE(fromNode="TourTime", fromField="fraction_changed", toNode="Animate", toField="set_fraction"),
 ROUTE(fromNode="Animate", fromField="translation_changed", toNode="animate_transform", toField="set_translation"),
