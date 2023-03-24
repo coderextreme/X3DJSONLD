@@ -4,15 +4,15 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="3.3", 
-head=head(children=[[meta(name="title", content="x3dconnector"),
+head=head(children=[meta(name="title", content="x3dconnector"),
 meta(name="creator", content="Lost, Doug Sanden I think"),
 meta(name="generator", content="manual"),
 meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"),
 meta(name="description", content="a generic proto to connect two objects"),
-meta(name="translated", content="22 March 2023"),
+meta(name="translated", content="24 March 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
-]]), 
+]), 
 Scene=Scene(children=[
 Viewpoint(position=((0,0,5)), description="Only Viewpoint"),
 Background(skyColor=[(0.4,0.4,0.4)]),
@@ -67,9 +67,7 @@ connect(nodeField="transnode", protoField="transnode"),
 connect(nodeField="rotscalenode", protoField="rotscalenode"),
 connect(nodeField="set_startpoint", protoField="set_startpoint"),
 connect(nodeField="set_endpoint", protoField="set_endpoint")
-]), 
-#['', '            ecmascript:', '        function recompute(startpoint,endpoint){', "\t    if (typeof endpoint === 'undefined') {", '\t\treturn;', '\t    }', '            var dif = endpoint.subtract(startpoint);', '            var dist = dif.length()*0.5;', '            var dif2 = dif.multiply(0.5);', '            var norm = dif.normalize();', '            var transl = startpoint.add(dif2);', "\t    if (typeof Quaternion !== 'undefined') {", '\t\t    return {', '\t\t\t    scale : new SFVec3f(1.0,dist,1.0),', '\t\t\t    translation : transl,', '\t\t\t    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)', '\t\t    };', '\t    } else {', '\t\t    return {', '\t\t\t    scale : new SFVec3f(1.0,dist,1.0),', '\t\t\t    translation : transl,', '\t\t\t    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)', '\t\t    };', '\t    }', '\t}', '\tfunction recompute_and_route(startpoint, endpoint) {', '\t      var trafo = recompute(startpoint, endpoint);', '\t      if (trafo) {', '\t\t      transnode.translation = trafo.translation;', '\t\t      rotscalenode.rotation = trafo.rotation;', '\t\t      rotscalenode.scale = trafo.scale;', '\t      }', '\t}', '        function initialize(){', '            recompute_and_route(startnode.translation,endnode.translation);', '        }', '        function set_startpoint(val,t){', '            recompute_and_route(val,endnode.translation);', '        }', '        function set_endpoint(val,t){', '            recompute_and_route(startnode.translation,val);', '        }', '', '']
-)])),
+]), sourceCode="""['', '            ecmascript:', '        function recompute(startpoint,endpoint){', "\t    if (typeof endpoint === 'undefined') {", '\t\treturn;', '\t    }', '            var dif = endpoint.subtract(startpoint);', '            var dist = dif.length()*0.5;', '            var dif2 = dif.multiply(0.5);', '            var norm = dif.normalize();', '            var transl = startpoint.add(dif2);', "\t    if (typeof Quaternion !== 'undefined') {", '\t\t    return {', '\t\t\t    scale : new SFVec3f(1.0,dist,1.0),', '\t\t\t    translation : transl,', '\t\t\t    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)', '\t\t    };', '\t    } else {', '\t\t    return {', '\t\t\t    scale : new SFVec3f(1.0,dist,1.0),', '\t\t\t    translation : transl,', '\t\t\t    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)', '\t\t    };', '\t    }', '\t}', '\tfunction recompute_and_route(startpoint, endpoint) {', '\t      var trafo = recompute(startpoint, endpoint);', '\t      if (trafo) {', '\t\t      transnode.translation = trafo.translation;', '\t\t      rotscalenode.rotation = trafo.rotation;', '\t\t      rotscalenode.scale = trafo.scale;', '\t      }', '\t}', '        function initialize(){', '            recompute_and_route(startnode.translation,endnode.translation);', '        }', '        function set_startpoint(val,t){', '            recompute_and_route(val,endnode.translation);', '        }', '        function set_endpoint(val,t){', '            recompute_and_route(startnode.translation,val);', '        }', '', '']""",)])),
 ProtoInstance(name="x3dconnector", DEF="connector1", fieldValue=[fieldValue(name="startnode", children=[
 Transform(USE="G1")]),
 fieldValue(name="endnode", children=[

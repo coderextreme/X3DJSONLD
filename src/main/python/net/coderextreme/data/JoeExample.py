@@ -4,19 +4,17 @@ from x3d import *
 print("-->")
 print(
 X3D(version="3.0", profile="Immersive", 
-head=head(children=[[meta(name="filename", content="Scripting.x3d"),
-meta(name="translated", content="22 March 2023"),
+head=head(children=[meta(name="filename", content="Scripting.x3d"),
+meta(name="translated", content="24 March 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
-]]), 
+]), 
 Scene=Scene(children=[
 Script(DEF="OpenVault", field=[field(name="openVault", type="SFTime", accessType="inputOnly"),
 field(name="combinationEntered", type="SFBool", accessType="inputOnly"),
 field(name="vaultUnlocked", type="SFTime", accessType="outputOnly"),
 field(name="unlocked", type="SFBool", value=False, accessType="initializeOnly")
-], 
-#['', '', '', '', '      ecmascript:', '', '      function combinationEntered (value) {', '', '        unlocked = value;', '', '      }', '', '      function openVault(value) {', '', '      if (unlocked) vaultUnlocked = value;', '', '      }', '', '', '', '']
-),
+], sourceCode="""['', '', '', '', '      ecmascript:', '', '      function combinationEntered (value) {', '', '        unlocked = value;', '', '      }', '', '      function openVault(value) {', '', '      if (unlocked) vaultUnlocked = value;', '', '      }', '', '', '', '']""",),
 Shape(
 appearance=
 Appearance(

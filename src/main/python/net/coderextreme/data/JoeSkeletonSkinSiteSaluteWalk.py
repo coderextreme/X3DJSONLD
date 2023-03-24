@@ -4,8 +4,8 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="4.0", 
-head=head(children=[[component(name="H-Anim", level=2),
-][meta(name="title", content="JoeSkeletonSkinSaluteSiteWalk.x3d"),
+head=head(children=[component(name="H-Anim", level=2),
+meta(name="title", content="JoeSkeletonSkinSaluteSiteWalk.x3d"),
 meta(name="description", content="Comprehensive example showing skeleton, skin, sites and interpolator animation together."),
 meta(name="creator", content="Joe D. Williams"),
 meta(name="created", content="9 January 2004"),
@@ -37,10 +37,10 @@ meta(name="translator", content="Joe D. Williams"),
 meta(name="generator", content="X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"),
 meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/JoeSkeletonSkinSaluteSiteWalk.x3d"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="22 March 2023"),
+meta(name="translated", content="24 March 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
-]]), 
+]), 
 Scene=Scene(children=[
 WorldInfo(info=["By Joe for Joe"], title="HAnim V1 LOA3 Skeleton Joint centers and Site translations Adapted for approximatrion of ManGLoss Site Location Example and HANIM 200x Default Joint Centers, LOA3"),
 WorldInfo(info=["By Joe for Joe"], title="HAnim V1 LOA3 Skeleton Joint centers Adapted for approximatrion of ManGLoss Site Location Example and ANIM 200x Default Joint Centers, LOA3"),
@@ -48,7 +48,7 @@ NavigationInfo(DEF="HeadlightOnRevealsSkinTextureAndColors"),
 Background(groundAngle=[float(1.57)], groundColor=[(0,0.1,0),(0,0.1,0)], skyColor=[(0,0,0.1)]),
 Transform(DEF="cordsysfloor", scale=((0.175,0.175,0.175)), children=[
 Inline(DEF="CoordinateAxes", url=["../data/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","../../../Savage/Tools/Authoring/CoordinateAxes.x3d","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","../../../Savage/Tools/Authoring/CoordinateAxes.wrl","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"])]),
-#Authoring hint: these axes are aligned within local coordinate system
+Comment(value=''' Authoring hint: these axes are aligned within local coordinate system '''),
 
 Group(DEF="ViewpointGroup", children=[
 Viewpoint(description="Front Up View", orientation=((-1,-1,0,0.55)), position=((-1,2,2.5))),

@@ -4,8 +4,8 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="4.0", 
-head=head(children=[[component(name="HAnim", level=1),
-][meta(name="title", content="KoreanCharacter04Young.x3d"),
+head=head(children=[component(name="HAnim", level=1),
+meta(name="title", content="KoreanCharacter04Young.x3d"),
 meta(name="creator", content="Jin Hoon Lee and Min Joo Lee"),
 meta(name="translator", content="Chul Hee Jung and Myeong Won Lee"),
 meta(name="created", content="31 March 2011"),
@@ -21,10 +21,10 @@ meta(name="generator", content="Suwon University HAnim Editor"),
 meta(name="generator", content="Gnu Image Manipulation Program, http://www.gimp.org"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="22 March 2023"),
+meta(name="translated", content="24 March 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
-]]), 
+]), 
 Scene=Scene(children=[
 WorldInfo(title="KoreanCharacter04Young.x3d"),
 NavigationInfo(speed=1.5),

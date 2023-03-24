@@ -4,7 +4,7 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="3.3", 
-head=head(children=[[meta(name="title", content="LOA1_SwimmingFlutterKickAnimation.x3d"),
+head=head(children=[meta(name="title", content="LOA1_SwimmingFlutterKickAnimation.x3d"),
 meta(name="description", content="Humanoid animation prototype reusable by any Humanoid."),
 meta(name="creator", content="Etsuko Lippi"),
 meta(name="created", content="13 December 2001"),
@@ -17,10 +17,10 @@ meta(name="subject", content="Swimming flutter kick Animation HAnim 2001"),
 meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/LOA1_SwimmingFlutterKickAnimation.x3d"),
 meta(name="generator", content="X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="22 March 2023"),
+meta(name="translated", content="24 March 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
-]]), 
+]), 
 Scene=Scene(children=[
 WorldInfo(title="LOA1_SwimmingFlutterKickAnimation.x3d"),
 ProtoDeclare(name="LOA1_DivingAnimation", 
@@ -68,7 +68,7 @@ IS=IS(connect=[connect(nodeField="value_changed", protoField="HumanoidRoot_trans
 OrientationInterpolator(DEF="HUMANOIDROOT_ANIMATOR", key=[float(0.0),float(1.0)], keyValue=[(float(0.0),float(0.0),float(1.0),float(0.0)),(float(0.0),float(0.0),float(1.0),float(0.0))], 
 IS=IS(connect=[connect(nodeField="value_changed", protoField="HumanoidRoot_rotation_changed")
 ])),
-#no SACROILIAC_ANIMATOR
+Comment(value=''' no SACROILIAC_ANIMATOR '''),
 
 OrientationInterpolator(DEF="L_HIP_ANIMATOR", key=[float(0.0),float(0.25),float(0.375),float(0.6667),float(0.7917),float(0.9167),float(1.0)], keyValue=[(float(-0.873),float(0.06094),float(0.484),float(0.2865)),(float(0.9963),float(-0.01057),float(0.08481),float(0.2488)),(float(0.9965),float(0.01591),float(-0.08222),float(0.3836)),(float(-1.0),float(0.0),float(0.0),float(0.5518)),(float(-0.9964),float(0.02231),float(0.0817),float(0.5351)),(float(-0.9809),float(0.04912),float(0.1881),float(0.5204)),(float(-0.873),float(0.06094),float(0.484),float(0.2865))], 
 IS=IS(connect=[connect(nodeField="value_changed", protoField="l_hip_rotation_changed")
@@ -79,7 +79,7 @@ IS=IS(connect=[connect(nodeField="value_changed", protoField="l_knee_rotation_ch
 OrientationInterpolator(DEF="L_ANKLE_ANIMATOR", key=[float(0.0),float(0.125),float(0.2083),float(0.375),float(0.4583),float(0.5),float(0.6667),float(0.75),float(0.7917),float(0.9167),float(1.0)], keyValue=[(float(1.0),float(0.0),float(0.0),float(0.6001)),(float(1.0),float(0.0),float(0.0),float(0.6509)),(float(1.0),float(0.0),float(0.0),float(0.6001)),(float(1.0),float(0.0),float(0.0),float(0.6001)),(float(1.0),float(0.0),float(0.0),float(0.6509)),(float(1.0),float(0.0),float(0.0),float(0.6001)),(float(1.0),float(0.0),float(0.0),float(0.6001)),(float(1.0),float(0.0),float(0.0),float(0.6509)),(float(1.0),float(0.0),float(0.0),float(0.6001)),(float(1.0),float(0.0),float(0.0),float(0.6509)),(float(1.0),float(0.0),float(0.0),float(0.6001))], 
 IS=IS(connect=[connect(nodeField="value_changed", protoField="l_ankle_rotation_changed")
 ])),
-#no L_MIDTARSAL_ANIMATOR
+Comment(value=''' no L_MIDTARSAL_ANIMATOR '''),
 
 OrientationInterpolator(DEF="R_HIP_ANIMATOR", key=[float(0.0),float(0.125),float(0.2083),float(0.2917),float(0.5),float(0.7917),float(0.9167),float(1.0)], keyValue=[(float(-0.5831),float(0.03511),float(0.8116),float(0.1481)),(float(-0.995),float(0.02296),float(0.09674),float(0.4683)),(float(-1.0),float(0.00192),float(0.007964),float(0.4732)),(float(-0.998),float(-0.0158),float(-0.06102),float(0.5079)),(float(-0.9131),float(-0.06243),float(-0.403),float(0.3361)),(float(1.0),float(0.0),float(0.0),float(0.2571)),(float(0.9891),float(-0.02805),float(0.1444),float(0.3879)),(float(-0.5831),float(0.03511),float(0.8116),float(0.1481))], 
 IS=IS(connect=[connect(nodeField="value_changed", protoField="r_hip_rotation_changed")
@@ -90,7 +90,7 @@ IS=IS(connect=[connect(nodeField="value_changed", protoField="r_knee_rotation_ch
 OrientationInterpolator(DEF="R_ANKLE_ANIMATOR", key=[float(0.0),float(0.125),float(0.2083),float(0.375),float(0.4583),float(0.5),float(0.6667),float(0.75),float(0.7917),float(0.9167),float(1.0)], keyValue=[(float(1.0),float(0.0),float(0.0),float(0.8001)),(float(1.0),float(0.0),float(0.0),float(0.8509)),(float(1.0),float(0.0),float(0.0),float(0.8001)),(float(1.0),float(0.0),float(0.0),float(0.8001)),(float(1.0),float(0.0),float(0.0),float(0.8509)),(float(1.0),float(0.0),float(0.0),float(0.8001)),(float(1.0),float(0.0),float(0.0),float(0.8001)),(float(1.0),float(0.0),float(0.0),float(0.8001)),(float(1.0),float(0.0),float(0.0),float(0.8001)),(float(1.0),float(0.0),float(0.0),float(0.8509)),(float(1.0),float(0.0),float(0.0),float(0.86001))], 
 IS=IS(connect=[connect(nodeField="value_changed", protoField="r_ankle_rotation_changed")
 ])),
-#no L_MIDTARSAL_ANIMATOR
+Comment(value=''' no L_MIDTARSAL_ANIMATOR '''),
 
 OrientationInterpolator(DEF="VL5_ANIMATOR", key=[float(0.0),float(0.2083),float(0.375),float(0.75),float(0.8333),float(1.0)], keyValue=[(float(0.0),float(1.0),float(0.0),float(0.0826)),(float(-0.01972),float(-0.5974),float(0.8017),float(0.08231)),(float(0.009296),float(-0.9648),float(0.2627),float(0.1734)),(float(-0.01238),float(0.9549),float(-0.2968),float(0.08732)),(float(-0.008125),float(0.9691),float(-0.2463),float(0.158)),(float(0.0),float(1.0),float(0.0),float(0.0826))], 
 IS=IS(connect=[connect(nodeField="value_changed", protoField="vl5_rotation_changed")

@@ -4,7 +4,7 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="3.3", 
-head=head(children=[[meta(name="title", content="LOA1_StandAnimation.x3d"),
+head=head(children=[meta(name="title", content="LOA1_StandAnimation.x3d"),
 meta(name="description", content="Humanoid animation prototype reusable by any Humanoid."),
 meta(name="creator", content="Cindy Ballreich cindy@ballreich.net 3Name3D, Joe Williams, Don Brutzman"),
 meta(name="rights", content="1997 3Name3D / Yglesias, Wallock, Divekar, Inc., all rights reserved."),
@@ -20,10 +20,10 @@ meta(name="subject", content="Nancy Stand Animation HAnim 2001"),
 meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/LOA1_StandAnimation.x3d"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="22 March 2023"),
+meta(name="translated", content="24 March 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
-]]), 
+]), 
 Scene=Scene(children=[
 WorldInfo(title="LOA1_StandAnimation.x3d"),
 ProtoDeclare(name="LOA1_StandAnimation", 
@@ -141,9 +141,9 @@ ROUTE(fromField="fraction_changed", fromNode="TIMER", toField="set_fraction", to
 ROUTE(fromField="fraction_changed", fromNode="TIMER", toField="set_fraction", toNode="R_SHOULDER_ANIMATOR"),
 ROUTE(fromField="fraction_changed", fromNode="TIMER", toField="set_fraction", toNode="R_ELBOW_ANIMATOR"),
 ROUTE(fromField="fraction_changed", fromNode="TIMER", toField="set_fraction", toNode="R_WRIST_ANIMATOR")])),
-#======================================
+Comment(value=''' ====================================== '''),
 
-#Point to example use in case someone inspects this file
+Comment(value=''' Point to example use in case someone inspects this file '''),
 
 Anchor(description="InterchangableActorsViaDynamicRouting", parameter=("target=_blank"), url=["InterchangableActorsViaDynamicRouting.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.x3d","InterchangableActorsViaDynamicRouting.wrl","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.wrl"], children=[
 Shape(

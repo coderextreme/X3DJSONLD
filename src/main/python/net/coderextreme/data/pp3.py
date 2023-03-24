@@ -4,7 +4,7 @@ from x3d import *
 print("-->")
 print(
 X3D(profile="Immersive", version="3.3", 
-head=head(children=[[meta(name="title", content="pp3.x3d"),
+head=head(children=[meta(name="title", content="pp3.x3d"),
 meta(name="creator", content="John Carlson"),
 meta(name="translator", content="John Carlson"),
 meta(name="created", content="5 May 2015"),
@@ -12,15 +12,15 @@ meta(name="modified", content="23 Dec 2022"),
 meta(name="description", content="A process pipeline between three spheres (try typing on spheres and blue"),
 meta(name="identifier", content="https://coderextreme.net/x3d/pp3.x3d"),
 meta(name="generator", content="manual"),
-meta(name="translated", content="22 March 2023"),
+meta(name="translated", content="24 March 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
-]]), 
+]), 
 Scene=Scene(children=[
 ProtoDeclare(name="Process", 
 ProtoBody=ProtoBody(children=[
 Group(children=[
-#left
+Comment(value=''' left '''),
 
 Transform(scale=((0.5,0.5,0.5)), children=[
 Shape(
@@ -30,9 +30,9 @@ material=
 Material(diffuseColor=((0.7,1,0)), transparency=0.5)), 
 geometry=
 Extrusion(creaseAngle=0.785, crossSection=[(1,0),(0.92,-0.38),(0.71,-0.71),(0.38,-0.92),(0,-1),(-0.38,-0.92),(-0.71,-0.71),(-0.92,-0.38),(-1,0),(-0.92,0.38),(-0.71,0.71),(-0.38,0.92),(0,1),(0.38,0.92),(0.71,0.71),(0.92,0.38),(1,0)], spine=[(-2.5,0,0),(-1.5,0,0)])),
-#<Transform translation="-2.5 0 0"> <Shape> <Text DEF="LeftString" string='"l"'/> </Shape> </Transform> <StringSensor DEF="LeftSensor" enabled="false"/> <TouchSensor DEF="LeftTouch" enabled="true"/>
+Comment(value=''' <Transform translation="-2.5 0 0"> <Shape> <Text DEF="LeftString" string='"l"'/> </Shape> </Transform> <StringSensor DEF="LeftSensor" enabled="false"/> <TouchSensor DEF="LeftTouch" enabled="true"/> '''),
 ]),
-#right
+Comment(value=''' right '''),
 
 Transform(scale=((0.5,0.5,0.5)), children=[
 Shape(
@@ -52,7 +52,7 @@ geometry=
 Text(DEF="RightString", string=["r"]))]),
 StringSensor(DEF="RightSensor", enabled=False),
 TouchSensor(description="touch to activate", DEF="RightTouch")]),
-#up
+Comment(value=''' up '''),
 
 Transform(scale=((0.5,0.5,0.5)), children=[
 Shape(
@@ -72,7 +72,7 @@ geometry=
 Text(DEF="UpString", string=["u"]))]),
 StringSensor(DEF="UpSensor", enabled=False),
 TouchSensor(description="touch to activate", DEF="UpTouch")]),
-#down
+Comment(value=''' down '''),
 
 Transform(scale=((0.5,0.5,0.5)), children=[
 Shape(
@@ -82,9 +82,9 @@ material=
 Material(diffuseColor=((0.7,1,0)), transparency=0.5)), 
 geometry=
 Extrusion(creaseAngle=0.785, crossSection=[(1,0),(0.92,-0.38),(0.71,-0.71),(0.38,-0.92),(0,-1),(-0.38,-0.92),(-0.71,-0.71),(-0.92,-0.38),(-1,0),(-0.92,0.38),(-0.71,0.71),(-0.38,0.92),(0,1),(0.38,0.92),(0.71,0.71),(0.92,0.38),(1,0)], spine=[(0,-2.5,0),(0,-1.5,0)])),
-#<Transform translation="-0.5 -2.5 0"> <Shape> <Text DEF="DownString" string='"d"'/> </Shape> </Transform> <StringSensor DEF="DownSensor" enabled="false"/> <TouchSensor description='touch to activate' DEF="DownTouch" enabled="true"/>
+Comment(value=''' <Transform translation="-0.5 -2.5 0"> <Shape> <Text DEF="DownString" string='"d"'/> </Shape> </Transform> <StringSensor DEF="DownSensor" enabled="false"/> <TouchSensor description='touch to activate' DEF="DownTouch" enabled="true"/> '''),
 ]),
-#center
+Comment(value=''' center '''),
 
 Transform(children=[
 Shape(
@@ -106,19 +106,13 @@ StringSensor(DEF="CenterSensor", enabled=False),
 TouchSensor(description="touch to activate", DEF="CenterTouch")]),]),
 Script(DEF="RightSingleToMultiString", field=[field(name="set_rightstring", accessType="inputOnly", type="SFString"),
 field(name="rightlines", accessType="outputOnly", type="MFString")
-], 
-#['', 'ecmascript:', '', 'function initialize() {', '\trightlines = new MFString("");', '}', '', 'function set_rightstring(rightstr) {', '\trightlines = new MFString(rightstr);', '}', '']
-),
+], sourceCode="""['', 'ecmascript:', '', 'function initialize() {', '\trightlines = new MFString("");', '}', '', 'function set_rightstring(rightstr) {', '\trightlines = new MFString(rightstr);', '}', '']""",),
 Script(DEF="UpSingleToMultiString", field=[field(name="set_upstring", accessType="inputOnly", type="SFString"),
 field(name="uplines", accessType="outputOnly", type="MFString")
-], 
-#['', 'ecmascript:', '', 'function initialize() {', '\tuplines = new MFString("");', '}', '', 'function set_upstring(upstr) {', '\tuplines = new MFString(upstr);', '}', '']
-),
+], sourceCode="""['', 'ecmascript:', '', 'function initialize() {', '\tuplines = new MFString("");', '}', '', 'function set_upstring(upstr) {', '\tuplines = new MFString(upstr);', '}', '']""",),
 Script(DEF="CenterSingleToMultiString", field=[field(name="set_centerstring", accessType="inputOnly", type="SFString"),
 field(name="centerlines", accessType="outputOnly", type="MFString")
-], 
-#['', 'ecmascript:', '', 'function initialize() {', '\tcenterlines = new MFString("");', '}', '', 'function set_centerstring(centerstr) {', '\tcenterlines = new MFString(centerstr);', '}', '']
-),
+], sourceCode="""['', 'ecmascript:', '', 'function initialize() {', '\tcenterlines = new MFString("");', '}', '', 'function set_centerstring(centerstr) {', '\tcenterlines = new MFString(centerstr);', '}', '']""",),
 ROUTE(fromField="enteredText", fromNode="CenterSensor", toField="set_centerstring", toNode="CenterSingleToMultiString"),
 ROUTE(fromField="centerlines", fromNode="CenterSingleToMultiString", toField="set_string", toNode="CenterString"),
 ROUTE(fromField="isOver", fromNode="CenterTouch", toField="set_enabled", toNode="CenterSensor"),
