@@ -1,8 +1,10 @@
+<!--
+x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
+-->
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'>
   <head>
-    <!-- Originally these fundamental prototypes were defined in InterchangableActorsViaDynamicRoutingPrototypes.x3d -->
     <meta content='HAnimPrototypes.x3d' name='title'/>
     <meta content='Example implementation of X3D Humanoid Animation (HAnim) nodes using X3D prototypes.' name='description'/>
     <meta content='These are developmental examples that can assist X3D player implementations and support interoperability. They are not intended for author use in regular X3D scenes.' name='warning'/>
@@ -24,34 +26,36 @@
     <meta content='https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/HAnimPrototypes.x3d' name='identifier'/>
     <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
     <meta content='../license.html' name='license'/>
+    <meta content='24 March 2023' name='translated'/>
+    <meta content='X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html' name='generator'/>
+    <meta content='X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding' name='reference'/>
   </head>
   <Scene>
-    <!-- **********Human Model Protypes********* -->
-    <ProtoDeclare name='Humanoid1_1' appinfo='The Humanoid node serves as overall container for the Joint Segment Site and Viewpoint nodes which define the skeleton geometry and landmarks of the humanoid figure. Additionally the node provides a means for defining information about the author copyright and usage restrictions of the model.' documentation='http://HAnim.org/Specifications/HAnim2001/part1/Humanoid.html'>
+    <!--  **********Human Model Protypes*********  -->
+    <ProtoDeclare appinfo='The Humanoid node serves as overall container for the Joint Segment Site and Viewpoint nodes which define the skeleton geometry and landmarks of the humanoid figure. Additionally the node provides a means for defining information about the author copyright and usage restrictions of the model.' documentation='http://HAnim.org/Specifications/HAnim2001/part1/Humanoid.html' name='Humanoid1_1'>
       <ProtoInterface>
-        <!-- HAnim v1.1 field definitions -->
-        <field name='name' accessType='inputOutput' type='SFString'/>
-        <field name='version' accessType='inputOutput' appinfo='legal values: 1.1 or 2.0' type='SFString' value='1.1'/>
-        <field name='humanoidVersion' accessType='inputOutput' appinfo='Version of the humanoid being modeled. Hint: HAnim version 2.0' type='SFString'/>
-        <field name='info' accessType='inputOutput' type='MFString'/>
-        <field name='translation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
-        <field name='rotation' accessType='inputOutput' type='SFRotation' value='0 0 1 0'/>
-        <field name='center' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
-        <field name='scale' accessType='inputOutput' type='SFVec3f' value='1 1 1'/>
-        <field name='scaleOrientation' accessType='inputOutput' type='SFRotation' value='0 0 1 0'/>
-        <field name='bboxCenter' accessType='initializeOnly' type='SFVec3f' value='0 0 0'/>
-        <field name='bboxSize' accessType='initializeOnly' type='SFVec3f' value='-1 -1 -1'/>
-        <field name='humanoidBody' accessType='inputOutput' appinfo='HAnim 1.1 field container for body head. Hint: replaced by 2.0 skeleton.' documentation='http://HAnim.org/Specifications/HAnim1.1/#humanoid' type='MFNode'/>
-        <field name='skeleton' accessType='inputOutput' appinfo='HAnim 2.0 field container for body geometry Hint: replaces 1.1 humanoidBody' documentation='http://HAnim.org/Specifications/HAnim2001/part1/Humanoid.html' type='MFNode'/>
-        <field name='joints' accessType='inputOutput' appinfo='Container field for Joint nodes' type='MFNode'/>
-        <field name='segments' accessType='inputOutput' appinfo='Container field for Segment nodes' type='MFNode'/>
-        <field name='sites' accessType='inputOutput' appinfo='Container field for Site nodes' type='MFNode'/>
-        <field name='viewpoints' accessType='inputOutput' appinfo='Container field for Viewpoint nodes' type='MFNode'/>
-        <field name='skinCoord' accessType='inputOutput' appinfo='Hint: HAnim version 2.0' type='SFNode'>
-          <!-- NULL -->
+        <field accessType='inputOutput' name='name' type='SFString'/>
+        <field accessType='inputOutput' appinfo='legal values: 1.1 or 2.0' name='version' type='SFString' value='1.1'/>
+        <field accessType='inputOutput' appinfo='Version of the humanoid being modeled. Hint: HAnim version 2.0' name='humanoidVersion' type='SFString'/>
+        <field accessType='inputOutput' name='info' type='MFString'/>
+        <field accessType='inputOutput' name='translation' type='SFVec3f' value='0 0 0'/>
+        <field accessType='inputOutput' name='rotation' type='SFRotation' value='0 0 1 0'/>
+        <field accessType='inputOutput' name='center' type='SFVec3f' value='0 0 0'/>
+        <field accessType='inputOutput' name='scale' type='SFVec3f' value='1 1 1'/>
+        <field accessType='inputOutput' name='scaleOrientation' type='SFRotation' value='0 0 1 0'/>
+        <field accessType='initializeOnly' name='bboxCenter' type='SFVec3f' value='0 0 0'/>
+        <field accessType='initializeOnly' name='bboxSize' type='SFVec3f' value='-1 -1 -1'/>
+        <field accessType='inputOutput' appinfo='HAnim 1.1 field container for body head. Hint: replaced by 2.0 skeleton.' documentation='http://HAnim.org/Specifications/HAnim1.1/#humanoid' name='humanoidBody' type='MFNode'/>
+        <field accessType='inputOutput' appinfo='HAnim 2.0 field container for body geometry Hint: replaces 1.1 humanoidBody' documentation='http://HAnim.org/Specifications/HAnim2001/part1/Humanoid.html' name='skeleton' type='MFNode'/>
+        <field accessType='inputOutput' appinfo='Container field for Joint nodes' name='joints' type='MFNode'/>
+        <field accessType='inputOutput' appinfo='Container field for Segment nodes' name='segments' type='MFNode'/>
+        <field accessType='inputOutput' appinfo='Container field for Site nodes' name='sites' type='MFNode'/>
+        <field accessType='inputOutput' appinfo='Container field for Viewpoint nodes' name='viewpoints' type='MFNode'/>
+        <field accessType='inputOutput' appinfo='Hint: HAnim version 2.0' name='skinCoord' type='SFNode'>
+          <!--  NULL  -->
         </field>
-        <field name='skinNormal' accessType='inputOutput' appinfo='Hint: HAnim version 2.0' type='SFNode'>
-          <!-- NULL -->
+        <field accessType='inputOutput' appinfo='Hint: HAnim version 2.0' name='skinNormal' type='SFNode'>
+          <!--  NULL  -->
         </field>
       </ProtoInterface>
       <ProtoBody>
@@ -83,25 +87,25 @@
         </Transform>
       </ProtoBody>
     </ProtoDeclare>
-    <ProtoDeclare name='Joint' appinfo='The Joint node is used as a building block to describe the articulations of the humanoid figure. Each articulation of the humanoid figure is represented by a Joint node each of which is organized into a hierarchy that describes the overall skeleton of the humanoid.' documentation='http://HAnim.org/Specifications/HAnim2001/part1/Joint.html'>
+    <ProtoDeclare appinfo='The Joint node is used as a building block to describe the articulations of the humanoid figure. Each articulation of the humanoid figure is represented by a Joint node each of which is organized into a hierarchy that describes the overall skeleton of the humanoid.' documentation='http://HAnim.org/Specifications/HAnim2001/part1/Joint.html' name='Joint'>
       <ProtoInterface>
-        <field name='name' accessType='inputOutput' type='SFString'/>
-        <field name='ulimit' accessType='inputOutput' type='MFFloat'/>
-        <field name='llimit' accessType='inputOutput' type='MFFloat'/>
-        <field name='limitOrientation' accessType='inputOutput' type='SFRotation' value='0 0 1 0'/>
-        <field name='skinCoordIndex' accessType='inputOutput' type='MFInt32'/>
-        <field name='skinCoordWeight' accessType='inputOutput' type='MFFloat'/>
-        <field name='stiffness' accessType='inputOutput' type='MFFloat' value='0 0 0'/>
-        <field name='translation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
-        <field name='rotation' accessType='inputOutput' type='SFRotation' value='0 0 1 0'/>
-        <field name='scale' accessType='inputOutput' type='SFVec3f' value='1 1 1'/>
-        <field name='scaleOrientation' accessType='inputOutput' type='SFRotation' value='0 0 1 0'/>
-        <field name='center' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
-        <field name='bboxCenter' accessType='initializeOnly' type='SFVec3f' value='0 0 0'/>
-        <field name='bboxSize' accessType='initializeOnly' type='SFVec3f' value='-1 -1 -1'/>
-        <field name='children' accessType='inputOutput' type='MFNode'/>
-        <field name='addChildren' accessType='inputOnly' type='MFNode'/>
-        <field name='removeChildren' accessType='inputOnly' type='MFNode'/>
+        <field accessType='inputOutput' name='name' type='SFString'/>
+        <field accessType='inputOutput' name='ulimit' type='MFFloat'/>
+        <field accessType='inputOutput' name='llimit' type='MFFloat'/>
+        <field accessType='inputOutput' name='limitOrientation' type='SFRotation' value='0 0 1 0'/>
+        <field accessType='inputOutput' name='skinCoordIndex' type='MFInt32'/>
+        <field accessType='inputOutput' name='skinCoordWeight' type='MFFloat'/>
+        <field accessType='inputOutput' name='stiffness' type='MFFloat' value='0.0 0.0 0.0'/>
+        <field accessType='inputOutput' name='translation' type='SFVec3f' value='0 0 0'/>
+        <field accessType='inputOutput' name='rotation' type='SFRotation' value='0 0 1 0'/>
+        <field accessType='inputOutput' name='scale' type='SFVec3f' value='1 1 1'/>
+        <field accessType='inputOutput' name='scaleOrientation' type='SFRotation' value='0 0 1 0'/>
+        <field accessType='inputOutput' name='center' type='SFVec3f' value='0 0 0'/>
+        <field accessType='initializeOnly' name='bboxCenter' type='SFVec3f' value='0 0 0'/>
+        <field accessType='initializeOnly' name='bboxSize' type='SFVec3f' value='-1 -1 -1'/>
+        <field accessType='inputOutput' name='children' type='MFNode'/>
+        <field accessType='inputOnly' name='addChildren' type='MFNode'/>
+        <field accessType='inputOnly' name='removeChildren' type='MFNode'/>
       </ProtoInterface>
       <ProtoBody>
         <Transform DEF='JointTransform'>
@@ -120,21 +124,21 @@
         </Transform>
       </ProtoBody>
     </ProtoDeclare>
-    <ProtoDeclare name='Segment' appinfo='The Segment node is used describe the attributes of the physical links between the joints of the humanoid figure. Each body part (pelvis thigh calf etc.) of the humanoid figure is represented by a Segment node.' documentation='http://HAnim.org/Specifications/HAnim2001/part1/Segment.html'>
+    <ProtoDeclare appinfo='The Segment node is used describe the attributes of the physical links between the joints of the humanoid figure. Each body part (pelvis thigh calf etc.) of the humanoid figure is represented by a Segment node.' documentation='http://HAnim.org/Specifications/HAnim2001/part1/Segment.html' name='Segment'>
       <ProtoInterface>
-        <field name='name' accessType='inputOutput' type='SFString'/>
-        <field name='mass' accessType='inputOutput' type='SFFloat' value='0.0'/>
-        <field name='centerOfMass' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
-        <field name='momentsOfInertia' accessType='inputOutput' type='MFFloat' value='0 0 0 0 0 0 0 0 0'/>
-        <field name='bboxCenter' accessType='initializeOnly' type='SFVec3f' value='0 0 0'/>
-        <field name='bboxSize' accessType='initializeOnly' type='SFVec3f' value='-1 -1 -1'/>
-        <field name='children' accessType='inputOutput' type='MFNode'/>
-        <field name='addChildren' accessType='inputOnly' type='MFNode'/>
-        <field name='removeChildren' accessType='inputOnly' type='MFNode'/>
-        <field name='coord' accessType='inputOutput' appinfo='contains Coordinate nodes' type='SFNode'>
-          <!-- NULL -->
+        <field accessType='inputOutput' name='name' type='SFString'/>
+        <field accessType='inputOutput' name='mass' type='SFFloat'/>
+        <field accessType='inputOutput' name='centerOfMass' type='SFVec3f' value='0 0 0'/>
+        <field accessType='inputOutput' name='momentsOfInertia' type='MFFloat' value='0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0'/>
+        <field accessType='initializeOnly' name='bboxCenter' type='SFVec3f' value='0 0 0'/>
+        <field accessType='initializeOnly' name='bboxSize' type='SFVec3f' value='-1 -1 -1'/>
+        <field accessType='inputOutput' name='children' type='MFNode'/>
+        <field accessType='inputOnly' name='addChildren' type='MFNode'/>
+        <field accessType='inputOnly' name='removeChildren' type='MFNode'/>
+        <field accessType='inputOutput' appinfo='contains Coordinate nodes' name='coord' type='SFNode'>
+          <!--  NULL  -->
         </field>
-        <field name='displacers' accessType='inputOutput' appinfo='contains Displacer nodes' type='MFNode'/>
+        <field accessType='inputOutput' appinfo='contains Displacer nodes' name='displacers' type='MFNode'/>
       </ProtoInterface>
       <ProtoBody>
         <Group DEF='SegmentGroup'>
@@ -148,19 +152,19 @@
         </Group>
       </ProtoBody>
     </ProtoDeclare>
-    <ProtoDeclare name='Site' appinfo='The Site node can be used for three purposes: (a) to define an "end effector" location which can be used by an inverse kinematics system (b) to define an attachment point for accessories such as jewelry and clothing and (c) to define a location for a virtual camera in the reference frame of a Segment node (such as a view "through the eyes" of the humanoid for use in multi-user worlds).' documentation='http://HAnim.org/Specifications/HAnim2001/part1/Site.html'>
+    <ProtoDeclare appinfo='The Site node can be used for three purposes: (a) to define an "end effector" location which can be used by an inverse kinematics system (b) to define an attachment point for accessories such as jewelry and clothing and (c) to define a location for a virtual camera in the reference frame of a Segment node (such as a view "through the eyes" of the humanoid for use in multi-user worlds).' documentation='http://HAnim.org/Specifications/HAnim2001/part1/Site.html' name='Site'>
       <ProtoInterface>
-        <field name='name' accessType='inputOutput' type='SFString'/>
-        <field name='translation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
-        <field name='rotation' accessType='inputOutput' type='SFRotation' value='0 0 1 0'/>
-        <field name='scale' accessType='inputOutput' type='SFVec3f' value='1 1 1'/>
-        <field name='scaleOrientation' accessType='inputOutput' type='SFRotation' value='0 0 1 0'/>
-        <field name='center' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
-        <field name='bboxCenter' accessType='initializeOnly' type='SFVec3f' value='0 0 0'/>
-        <field name='bboxSize' accessType='initializeOnly' type='SFVec3f' value='-1 -1 -1'/>
-        <field name='children' accessType='inputOutput' type='MFNode'/>
-        <field name='addChildren' accessType='inputOnly' type='MFNode'/>
-        <field name='removeChildren' accessType='inputOnly' type='MFNode'/>
+        <field accessType='inputOutput' name='name' type='SFString'/>
+        <field accessType='inputOutput' name='translation' type='SFVec3f' value='0 0 0'/>
+        <field accessType='inputOutput' name='rotation' type='SFRotation' value='0 0 1 0'/>
+        <field accessType='inputOutput' name='scale' type='SFVec3f' value='1 1 1'/>
+        <field accessType='inputOutput' name='scaleOrientation' type='SFRotation' value='0 0 1 0'/>
+        <field accessType='inputOutput' name='center' type='SFVec3f' value='0 0 0'/>
+        <field accessType='initializeOnly' name='bboxCenter' type='SFVec3f' value='0 0 0'/>
+        <field accessType='initializeOnly' name='bboxSize' type='SFVec3f' value='-1 -1 -1'/>
+        <field accessType='inputOutput' name='children' type='MFNode'/>
+        <field accessType='inputOnly' name='addChildren' type='MFNode'/>
+        <field accessType='inputOnly' name='removeChildren' type='MFNode'/>
       </ProtoInterface>
       <ProtoBody>
         <Transform DEF='SiteTransform'>
@@ -179,11 +183,11 @@
         </Transform>
       </ProtoBody>
     </ProtoDeclare>
-    <ProtoDeclare name='Displacer' appinfo='A Displacer can be used in three different ways: (a) identify the vertices corresponding to a particular feature on a Segment (b) represent a particular muscular action which displaces the vertices in various directions (linearly or radially) and (c) represent a complete configuration of the vertices in a Segment.' documentation='http://HAnim.org/Specifications/HAnim2001/part1/Displacer.html'>
+    <ProtoDeclare appinfo='A Displacer can be used in three different ways: (a) identify the vertices corresponding to a particular feature on a Segment (b) represent a particular muscular action which displaces the vertices in various directions (linearly or radially) and (c) represent a complete configuration of the vertices in a Segment.' documentation='http://HAnim.org/Specifications/HAnim2001/part1/Displacer.html' name='Displacer'>
       <ProtoInterface>
-        <field name='name' accessType='inputOutput' type='SFString'/>
-        <field name='coordIndex' accessType='inputOutput' type='MFInt32'/>
-        <field name='displacements' accessType='inputOutput' type='MFVec3f'/>
+        <field accessType='inputOutput' name='name' type='SFString'/>
+        <field accessType='inputOutput' name='coordIndex' type='MFInt32'/>
+        <field accessType='inputOutput' name='displacements' type='MFVec3f'/>
       </ProtoInterface>
       <ProtoBody>
         <WorldInfo info='"null body node"'/>
@@ -191,13 +195,12 @@
     </ProtoDeclare>
     <Shape>
       <Appearance>
-        <Material ambientIntensity='0.25' diffuseColor='0.795918 0.505869 0.093315' shininess='0.39' specularColor='0.923469 0.428866 0.006369'>
-          <!-- Universal Media Library: Autumn 9 -->
-        </Material>
+        <Material ambientIntensity='0.25' diffuseColor='0.795918 0.505869 0.093315' shininess='0.39' specularColor='0.923469 0.428866 0.006369'/>
       </Appearance>
       <Text string='"Humanoid Animation" "(HAnim) prototype" "implementations"'>
-        <FontStyle family='"SERIF"' justify='"MIDDLE" "MIDDLE"'/>
+        <FontStyle justify='"MIDDLE" "MIDDLE"'/>
       </Text>
     </Shape>
   </Scene>
 </X3D>
+

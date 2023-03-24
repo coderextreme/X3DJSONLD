@@ -1,3 +1,6 @@
+<!--
+x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
+-->
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "https://www.web3d.org/specifications/x3d-3.0.dtd">
 <X3D profile='Immersive' version='3.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.0.xsd'>
@@ -16,11 +19,14 @@
     <meta content='Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html' name='generator'/>
     <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
     <meta content='../../license.html' name='license'/>
+    <meta content='24 March 2023' name='translated'/>
+    <meta content='X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html' name='generator'/>
+    <meta content='X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding' name='reference'/>
   </head>
   <Scene>
     <WorldInfo title='jumpcut_loadurl.x3d'/>
     <Background groundAngle='1.57' groundColor='0 0.5 0 0 0.5 0' skyColor='0 0 1'/>
-    <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE" "WALK" "FLY" "ANY"'/>
+    <NavigationInfo type='""EXAMINE" "WALK" "FLY" "ANY""'/>
     <Viewpoint DEF='Front_View' description='Front View'/>
     <Viewpoint DEF='Top_View' description='Top View' orientation='1 0 0 -1.57' position='0 10 0'/>
     <TouchSensor DEF='STARTER' description='touch to activate'/>
@@ -33,10 +39,11 @@
       </Shape>
     </Transform>
     <Script DEF='MYSCRIPT' url='"jumpcut_loadurl.js" "https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.js"'>
-      <field name='myParameter' accessType='initializeOnly' type='MFString' value='"Top_View"'/>
-      <field name='myUrl' accessType='initializeOnly' type='MFString' value='"jumpcut_loadurl.x3d#Top_View" "https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.x3d#Top_View" "jumpcut_loadurl.wrl#Top_View" "https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.wrl#Top_View"'/>
-      <field name='trigger_event' accessType='inputOnly' type='SFBool'/>
+      <field accessType='initializeOnly' name='myParameter' type='MFString' value='"Top_View"'/>
+      <field accessType='initializeOnly' name='myUrl' type='MFString' value='"jumpcut_loadurl.x3d#Top_View" "https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.x3d#Top_View" "jumpcut_loadurl.wrl#Top_View" "https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.wrl#Top_View"'/>
+      <field accessType='inputOnly' name='trigger_event' type='SFBool'/>
     </Script>
     <ROUTE fromField='isActive' fromNode='STARTER' toField='trigger_event' toNode='MYSCRIPT'/>
   </Scene>
 </X3D>
+

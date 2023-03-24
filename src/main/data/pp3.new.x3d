@@ -1,3 +1,6 @@
+<!--
+x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
+-->
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'>
@@ -10,12 +13,15 @@
     <meta content='A process pipeline between three spheres (try typing on spheres and blue' name='description'/>
     <meta content='https://coderextreme.net/x3d/pp3.x3d' name='identifier'/>
     <meta content='manual' name='generator'/>
+    <meta content='24 March 2023' name='translated'/>
+    <meta content='X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html' name='generator'/>
+    <meta content='X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding' name='reference'/>
   </head>
   <Scene>
     <ProtoDeclare name='Process'>
       <ProtoBody>
         <Group>
-          <!-- left -->
+          <!--  left  -->
           <Transform scale='0.5 0.5 0.5'>
             <Shape>
               <Appearance>
@@ -23,9 +29,9 @@
               </Appearance>
               <Extrusion creaseAngle='0.785' crossSection='1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0' spine='-2.5 0 0 -1.5 0 0'/>
             </Shape>
-            <!-- <Transform translation="-2.5 0 0"> <Shape> <Text DEF="LeftString" string='"l"'/> </Shape> </Transform> <StringSensor DEF="LeftSensor" enabled="false"/> <TouchSensor DEF="LeftTouch" enabled="true"/> -->
+            <!--  <Transform translation="-2.5 0 0"> <Shape> <Text DEF="LeftString" string='"l"'/> </Shape> </Transform> <StringSensor DEF="LeftSensor" enabled="false"/> <TouchSensor DEF="LeftTouch" enabled="true"/>  -->
           </Transform>
-          <!-- right -->
+          <!--  right  -->
           <Transform scale='0.5 0.5 0.5'>
             <Shape>
               <Appearance>
@@ -44,7 +50,7 @@
             <StringSensor DEF='RightSensor' enabled='false'/>
             <TouchSensor DEF='RightTouch' description='touch to activate'/>
           </Transform>
-          <!-- up -->
+          <!--  up  -->
           <Transform scale='0.5 0.5 0.5'>
             <Shape>
               <Appearance>
@@ -63,7 +69,7 @@
             <StringSensor DEF='UpSensor' enabled='false'/>
             <TouchSensor DEF='UpTouch' description='touch to activate'/>
           </Transform>
-          <!-- down -->
+          <!--  down  -->
           <Transform scale='0.5 0.5 0.5'>
             <Shape>
               <Appearance>
@@ -71,9 +77,9 @@
               </Appearance>
               <Extrusion creaseAngle='0.785' crossSection='1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0' spine='0 -2.5 0 0 -1.5 0'/>
             </Shape>
-            <!-- <Transform translation="-0.5 -2.5 0"> <Shape> <Text DEF="DownString" string='"d"'/> </Shape> </Transform> <StringSensor DEF="DownSensor" enabled="false"/> <TouchSensor description='touch to activate' DEF="DownTouch" enabled="true"/> -->
+            <!--  <Transform translation="-0.5 -2.5 0"> <Shape> <Text DEF="DownString" string='"d"'/> </Shape> </Transform> <StringSensor DEF="DownSensor" enabled="false"/> <TouchSensor description='touch to activate' DEF="DownTouch" enabled="true"/>  -->
           </Transform>
-          <!-- center -->
+          <!--  center  -->
           <Transform>
             <Shape>
               <Appearance>
@@ -94,49 +100,19 @@
           </Transform>
         </Group>
         <Script DEF='RightSingleToMultiString'>
-          <field name='set_rightstring' accessType='inputOnly' type='SFString'/>
-          <field name='rightlines' accessType='outputOnly' type='MFString'/>
-<![CDATA[
-ecmascript:
-
-function initialize() {
-	rightlines = new MFString("");
-}
-
-function set_rightstring(rightstr) {
-	rightlines = new MFString(rightstr);
-}
-]]>
+          <field accessType='inputOnly' name='set_rightstring' type='SFString'/>
+          <field accessType='outputOnly' name='rightlines' type='MFString'/>
+        <![CDATA[['', 'ecmascript:', '', 'function initialize() {', '	rightlines = new MFString("");', '}', '', 'function set_rightstring(rightstr) {', '	rightlines = new MFString(rightstr);', '}', '']]]>
         </Script>
         <Script DEF='UpSingleToMultiString'>
-          <field name='set_upstring' accessType='inputOnly' type='SFString'/>
-          <field name='uplines' accessType='outputOnly' type='MFString'/>
-<![CDATA[
-ecmascript:
-
-function initialize() {
-	uplines = new MFString("");
-}
-
-function set_upstring(upstr) {
-	uplines = new MFString(upstr);
-}
-]]>
+          <field accessType='inputOnly' name='set_upstring' type='SFString'/>
+          <field accessType='outputOnly' name='uplines' type='MFString'/>
+        <![CDATA[['', 'ecmascript:', '', 'function initialize() {', '	uplines = new MFString("");', '}', '', 'function set_upstring(upstr) {', '	uplines = new MFString(upstr);', '}', '']]]>
         </Script>
         <Script DEF='CenterSingleToMultiString'>
-          <field name='set_centerstring' accessType='inputOnly' type='SFString'/>
-          <field name='centerlines' accessType='outputOnly' type='MFString'/>
-<![CDATA[
-ecmascript:
-
-function initialize() {
-	centerlines = new MFString("");
-}
-
-function set_centerstring(centerstr) {
-	centerlines = new MFString(centerstr);
-}
-]]>
+          <field accessType='inputOnly' name='set_centerstring' type='SFString'/>
+          <field accessType='outputOnly' name='centerlines' type='MFString'/>
+        <![CDATA[['', 'ecmascript:', '', 'function initialize() {', '	centerlines = new MFString("");', '}', '', 'function set_centerstring(centerstr) {', '	centerlines = new MFString(centerstr);', '}', '']]]>
         </Script>
         <ROUTE fromField='enteredText' fromNode='CenterSensor' toField='set_centerstring' toNode='CenterSingleToMultiString'/>
         <ROUTE fromField='centerlines' fromNode='CenterSingleToMultiString' toField='set_string' toNode='CenterString'/>
@@ -149,7 +125,7 @@ function set_centerstring(centerstr) {
         <ROUTE fromField='isOver' fromNode='UpTouch' toField='set_enabled' toNode='UpSensor'/>
       </ProtoBody>
     </ProtoDeclare>
-    <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE" "ANY"'/>
+    <NavigationInfo/>
     <Viewpoint description='Process pipes' orientation='1 0 0 -0.4' position='0 5 12'/>
     <Transform translation='0 -2.5 0'>
       <ProtoInstance name='Process'/>
@@ -162,3 +138,4 @@ function set_centerstring(centerstr) {
     </Transform>
   </Scene>
 </X3D>
+

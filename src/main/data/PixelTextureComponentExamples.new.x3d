@@ -1,3 +1,6 @@
+<!--
+x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
+-->
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'>
@@ -15,6 +18,9 @@
     <meta content='http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter05AppearanceMaterialTextures/PixelTextureComponentExamples.x3d' name='identifier'/>
     <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
     <meta content='../license.html' name='license'/>
+    <meta content='24 March 2023' name='translated'/>
+    <meta content='X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html' name='generator'/>
+    <meta content='X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding' name='reference'/>
   </head>
   <Scene>
     <Background skyColor='0.1 0.1 0.4'/>
@@ -22,7 +28,7 @@
     <Transform translation='-6 0 0'>
       <Shape>
         <Appearance>
-          <PixelTexture DEF='ZeroComponents' image='8 8 1 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204'/>
+          <PixelTexture DEF='ZeroComponents'/>
         </Appearance>
         <Box/>
       </Shape>
@@ -32,7 +38,7 @@
             <Material diffuseColor='1 1 1'/>
           </Appearance>
           <Text string='"0"'>
-            <FontStyle DEF='CenterJustify' family='"SERIF"' justify='"MIDDLE" "MIDDLE"'/>
+            <FontStyle DEF='CenterJustify' justify='"MIDDLE" "MIDDLE"'/>
           </Text>
         </Shape>
       </Transform>
@@ -40,7 +46,7 @@
     <Transform translation='-3 0 0'>
       <Shape>
         <Appearance>
-          <PixelTexture DEF='OneComponent' image='8 8 1 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204'/>
+          <PixelTexture DEF='OneComponent' image='1 2 1 255 0'/>
         </Appearance>
         <Box/>
       </Shape>
@@ -56,7 +62,7 @@
     <Transform>
       <Shape>
         <Appearance>
-          <PixelTexture DEF='TwoComponents' image='8 8 1 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204'/>
+          <PixelTexture DEF='TwoComponents' image='2 1 2 52479 8823'/>
         </Appearance>
         <Box/>
       </Shape>
@@ -72,8 +78,7 @@
     <Transform translation='3 0 0'>
       <Shape>
         <Appearance>
-          <!-- note 0x000000 = 0 -->
-          <PixelTexture DEF='ThreeComponents' image='8 8 1 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204'/>
+          <PixelTexture DEF='ThreeComponents' image='2 4 3 16711680 65280 0 0 0 0 16777215 16776960'/>
         </Appearance>
         <Box/>
       </Shape>
@@ -89,8 +94,7 @@
     <Transform translation='6 0 0'>
       <Shape>
         <Appearance>
-          <!-- Erroneous value in book: 1 0 0 255, 0 1 0 255, 0 0 1 255, 1 0 0 127, 0 1 0 127, 0 0 1 127 -->
-          <PixelTexture DEF='FourComponents' image='8 8 1 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204 204 0 204 0 204 0 204 0 0 204 0 204 0 204 0 204'/>
+          <PixelTexture DEF='FourComponents' image='3 2 4 4278190335 16711935 65535 4278190207 16711807 65407'/>
         </Appearance>
         <Box/>
       </Shape>
@@ -103,7 +107,7 @@
         </Shape>
       </Transform>
     </Transform>
-    <!-- Background from PixelTextureBW.x3d -->
+    <!--  Background from PixelTextureBW.x3d  -->
     <Transform translation='0 6 -2'>
       <Shape>
         <Appearance>
@@ -114,3 +118,4 @@
     </Transform>
   </Scene>
 </X3D>
+

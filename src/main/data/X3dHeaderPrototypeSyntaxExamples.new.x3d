@@ -1,12 +1,15 @@
+<!--
+x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
+-->
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'>
   <head>
-    <component name='Geospatial' level='1'/>
-    <component name='NURBS' level='2'/>
-    <component name='Core' level='2'/>
-    <component name='Navigation' level='1'/>
-    <component name='Text' level='1'/>
+    <component name='Geospatial'/>
+    <component level='2' name='NURBS'/>
+    <component level='2' name='Core'/>
+    <component name='Navigation'/>
+    <component name='Text'/>
     <meta content='X3dHeaderPrototypeSyntaxExamples.x3d' name='title'/>
     <meta content='X3D scene header and prototype syntax examples. This example header indicates that the content is XML encoded, follows the Interactive Profile and explicitly lists additional necessary components. The X3D header may also contain additional semantic information. Used for specification EXAMPLE excerpts in 19776:1 XML Encoding.' name='description'/>
     <meta content='14 October 2002' name='created'/>
@@ -17,15 +20,18 @@
     <meta content='https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/X3dHeaderPrototypeSyntaxExamples.x3d' name='identifier'/>
     <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
     <meta content='../license.html' name='license'/>
+    <meta content='24 March 2023' name='translated'/>
+    <meta content='X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html' name='generator'/>
+    <meta content='X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding' name='reference'/>
   </head>
   <Scene>
     <ExternProtoDeclare name='ViewPositionOrientation' url='"../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation" "https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation" "../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation" "https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation"'>
-      <field name='enabled' accessType='inputOutput' type='SFBool'/>
-      <field name='traceEnabled' accessType='initializeOnly' type='SFBool'/>
-      <field name='set_traceEnabled' accessType='inputOnly' type='SFBool'/>
-      <field name='position_changed' accessType='outputOnly' type='SFVec3f'/>
-      <field name='orientation_changed' accessType='outputOnly' type='SFRotation'/>
-      <field name='outputViewpointString' accessType='outputOnly' type='MFString'/>
+      <field accessType='inputOutput' name='enabled' type='SFBool'/>
+      <field accessType='initializeOnly' name='traceEnabled' type='SFBool'/>
+      <field accessType='inputOnly' name='set_traceEnabled' type='SFBool'/>
+      <field accessType='outputOnly' name='position_changed' type='SFVec3f'/>
+      <field accessType='outputOnly' name='orientation_changed' type='SFRotation'/>
+      <field accessType='outputOnly' name='outputViewpointString' type='MFString'/>
     </ExternProtoDeclare>
     <ProtoDeclare name='NewWorldInfoNode'>
       <ProtoBody>
@@ -35,12 +41,11 @@
     <ProtoInstance name='NewWorldInfoNode'/>
     <ProtoDeclare name='EmissiveMaterial'>
       <ProtoInterface>
-        <field name='onlyColor' accessType='inputOutput' type='SFColor' value='1 0 0'/>
+        <field accessType='inputOutput' name='onlyColor' type='SFColor' value='1 0 0'/>
       </ProtoInterface>
       <ProtoBody>
-        <!-- Override default diffuseColor value 0.8 0.8 0.8 -->
+        <!--  Override default diffuseColor value 0.8 0.8 0.8  -->
         <Material diffuseColor='0 0 0'>
-          <!-- Connect emissiveColor field of current node to onlyColor field of parent ProtoDeclare. -->
           <IS>
             <connect nodeField='emissiveColor' protoField='onlyColor'/>
           </IS>
@@ -49,9 +54,9 @@
     </ProtoDeclare>
     <ProtoDeclare name='ShiftGroupUp2m'>
       <ProtoInterface>
-        <field name='children' accessType='inputOutput' type='MFNode'>
+        <field accessType='inputOutput' name='children' type='MFNode'>
           <Group DEF='DefaultNodeValue' bboxSize='2 2 2'>
-            <!-- Authors need to override this node when creating the ProtoInstance fieldValue name="children" -->
+            <!--  Authors need to override this node when creating the ProtoInstance fieldValue name="children"  -->
           </Group>
         </field>
       </ProtoInterface>
@@ -66,7 +71,7 @@
       </ProtoBody>
     </ProtoDeclare>
     <ProtoInstance name='ShiftGroupUp2m'/>
-    <!-- ==================== -->
+    <!--  ====================  -->
     <Viewpoint DEF='ExampleSingleElement' description='Hello syntax'/>
     <Group DEF='ExampleChildElement'>
       <Shape>
@@ -80,38 +85,38 @@
       <Group USE='ExampleChildElement'/>
     </Transform>
     <Collision>
-      <Group USE='ExampleChildElement'/>
-      <Shape containerField='proxy'>
-        <!-- note that Collision proxy Shape is not rendered -->
+      <Shape>
         <Appearance>
           <Material/>
         </Appearance>
         <Sphere/>
       </Shape>
+      <Group USE='ExampleChildElement'/>
     </Collision>
     <Transform translation='0 -2.5 0'>
       <Shape>
         <Appearance>
-          <ProtoInstance name='EmissiveMaterial' containerField='material'>
+          <ProtoInstance name='EmissiveMaterial'>
             <fieldValue name='onlyColor' value='0.2 0.6 0.6'/>
           </ProtoInstance>
         </Appearance>
         <Text string='"X3D Header Prototype syntax examples" "(view console for EXTERNPROTO output)"'>
-          <FontStyle family='"SERIF"' justify='"MIDDLE" "MIDDLE"' size='0.6'/>
+          <FontStyle justify='"MIDDLE" "MIDDLE"' size='0.6'/>
         </Text>
       </Shape>
     </Transform>
     <ProtoInstance name='ViewPositionOrientation'>
-      <fieldValue name='enabled' value='true'/>
+      <fieldValue name='enabled' value='True'/>
     </ProtoInstance>
-    <TimeSensor DEF='Clock' cycleInterval='4.0' loop='true'/>
-    <OrientationInterpolator DEF='Spinner' key='0 0.5 1' keyValue='0 1 0 0 0 1 0 3.14159 0 1 0 6.28318'/>
+    <TimeSensor DEF='Clock' cycleInterval='4' loop='true'/>
+    <OrientationInterpolator DEF='Spinner' key='0.0 0.5 1.0' keyValue='0.0 1.0 0.0 0.0 0.0 1.0 0.0 3.14159 0.0 1.0 0.0 6.28318'/>
     <ROUTE fromField='fraction_changed' fromNode='Clock' toField='set_fraction' toNode='Spinner'/>
     <ROUTE fromField='value_changed' fromNode='Spinner' toField='rotation' toNode='TransformExampleUSE'/>
     <Inline DEF='someInline' url='"someUrl.x3d" "https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/someUrl.x3d"'/>
     <IMPORT AS='someInlineRoot' importedDEF='someName' inlineDEF='someInline'/>
-    <PositionInterpolator DEF='StayInPlace' key='0 1' keyValue='0 0 0 0 0 0'/>
+    <PositionInterpolator DEF='StayInPlace' key='0.0 1.0' keyValue='0 0 0 0 0 0'/>
     <ROUTE fromField='fraction_changed' fromNode='Clock' toField='set_fraction' toNode='StayInPlace'/>
     <ROUTE fromField='value_changed' fromNode='StayInPlace' toField='set_translation' toNode='someInlineRoot'/>
   </Scene>
 </X3D>
+

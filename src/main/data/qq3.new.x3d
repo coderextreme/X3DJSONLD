@@ -1,3 +1,6 @@
+<!--
+x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
+-->
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'>
@@ -10,34 +13,37 @@
     <meta content='12 extrusions to test prototype expander' name='description'/>
     <meta content='https://coderextreme.net/x3d/qq3.x3d' name='identifier'/>
     <meta content='manual' name='generator'/>
+    <meta content='24 March 2023' name='translated'/>
+    <meta content='X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html' name='generator'/>
+    <meta content='X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding' name='reference'/>
   </head>
   <Scene>
     <ProtoDeclare name='Process'>
       <ProtoBody>
         <Group>
-          <!-- left -->
+          <!--  left  -->
           <Transform scale='0.5 0.5 0.5'>
             <Shape DEF='ShapeLeftDown'>
               <Appearance>
                 <Material diffuseColor='0.7 1 0'/>
               </Appearance>
-              <Extrusion creaseAngle='0.785' crossSection='1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0' spine='-2.5 0 0 -1.5 0 0'/>
+              <Extrusion creaseAngle='0.785' crossSection='1.0 0.0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0.0 -1.0 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1.0 -0.0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0.0 1.0 0.38 0.92 0.71 0.71 0.92 0.38 1.0 0.0' spine='-2.5 0 0 -1.5 0 0'/>
             </Shape>
           </Transform>
-          <!-- right -->
+          <!--  right  -->
           <Transform scale='0.5 0.5 0.5'>
             <Shape DEF='ShapeUpRight'>
               <Appearance>
                 <Material diffuseColor='0 0.7 1'/>
               </Appearance>
-              <Extrusion creaseAngle='0.785' crossSection='1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0' spine='1.5 0 0 2.5 0 0'/>
+              <Extrusion creaseAngle='0.785' crossSection='1.0 0.0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0.0 -1.0 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1.0 -0.0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0.0 1.0 0.38 0.92 0.71 0.71 0.92 0.38 1.0 0.0' spine='1.5 0 0 2.5 0 0'/>
             </Shape>
           </Transform>
-          <!-- up -->
+          <!--  up  -->
           <Transform scale='0.5 0.5 0.5'>
             <Shape USE='ShapeUpRight'/>
           </Transform>
-          <!-- down -->
+          <!--  down  -->
           <Transform scale='0.5 0.5 0.5'>
             <Shape USE='ShapeLeftDown'/>
           </Transform>
@@ -56,3 +62,4 @@
     </Transform>
   </Scene>
 </X3D>
+

@@ -1,3 +1,6 @@
+<!--
+x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
+-->
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'>
@@ -10,6 +13,9 @@
     <meta content='https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/MaskAndSnorkel.x3d' name='identifier'/>
     <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
     <meta content='../license.html' name='license'/>
+    <meta content='24 March 2023' name='translated'/>
+    <meta content='X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html' name='generator'/>
+    <meta content='X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding' name='reference'/>
   </head>
   <Scene>
     <WorldInfo title='MaskAndSnorkel.x3d'/>
@@ -40,7 +46,7 @@
               <Appearance>
                 <Material DEF='snorkelTube' diffuseColor='0.678 1 0.184' transparency='0.4'/>
               </Appearance>
-              <Extrusion crossSection='0 0.013 0.00494 0.01196 0.00923 0.00923 0.01196 0.00494 0.013 0 0.01196 -0.00494 0.00923 -0.00923 0.00494 -0.01196 0 0.013 -0.00494 -0.01196 -0.00923 -0.00923 -0.01196 -0.00494 -0.013 0 -0.01196 0.00494 -0.00923 0.00923 -0.00494 0.01196 0 0.013' spine='-0.01 -0.04 0 0 0 0 0.03 0.05 0 0.05 0.2 0 0.03 0.4 0.03'/>
+              <Extrusion crossSection='0.0 0.013 0.00494 0.01196 0.00923 0.00923 0.01196 0.00494 0.013 0.0 0.01196 -0.00494 0.00923 -0.00923 0.00494 -0.01196 0.0 0.013 -0.00494 -0.01196 -0.00923 -0.00923 -0.01196 -0.00494 -0.013 -0.0 -0.01196 0.00494 -0.00923 0.00923 -0.00494 0.01196 0.0 0.013' spine='-0.01 -0.04 0 0 0 0 0.03 0.05 0 0.05 0.2 0 0.03 0.4 0.03'/>
             </Shape>
           </Transform>
           <Transform rotation='0 0 1 1.57' scale='0.9 0.9 0.9' translation='0.01 -0.04 -0.02'>
@@ -48,7 +54,7 @@
               <Appearance>
                 <Material DEF='Mouthpiece' diffuseColor='0.678 1 0.8' transparency='0.4'/>
               </Appearance>
-              <Extrusion crossSection='0 0.013 0.00494 0.01196 0.00923 0.00923 0.01196 0.00494 0.013 0 0.01196 -0.00494 0.00923 -0.00923 0.00494 -0.01196 0 0.013 -0.00494 -0.01196 -0.00923 -0.00923 -0.01196 -0.00494 -0.013 0 -0.01196 0.00494 -0.00923 0.00923 -0.00494 0.01196 0 0.013' spine='-0.01 -0.03 0 0 0 0 0.02 0.01 0'/>
+              <Extrusion crossSection='0.0 0.013 0.00494 0.01196 0.00923 0.00923 0.01196 0.00494 0.013 0.0 0.01196 -0.00494 0.00923 -0.00923 0.00494 -0.01196 0.0 0.013 -0.00494 -0.01196 -0.00923 -0.00923 -0.01196 -0.00494 -0.013 -0.0 -0.01196 0.00494 -0.00923 0.00923 -0.00494 0.01196 0.0 0.013' spine='-0.01 -0.03 0 0 0 0 0.02 0.01 0'/>
             </Shape>
           </Transform>
           <Transform rotation='0 0 1 -0.85' scale='0.9 0.9 0.9' translation='0.005 -0.01 -0.02'>
@@ -56,7 +62,7 @@
               <Appearance>
                 <Material USE='Mouthpiece'/>
               </Appearance>
-              <Extrusion crossSection='0 0.013 0.00494 0.01196 0.00923 0.00923 0.01196 0.00494 0.013 0 0.01196 -0.00494 0.00923 -0.00923 0.00494 -0.01196 0 0.013' spine='-0.02 -0.03 0 -0.01 -0.03 0 0 -0.0175 0 0 -0.0135 0 -0.01 0 0 -0.02 0 0'/>
+              <Extrusion crossSection='0.0 0.013 0.00494 0.01196 0.00923 0.00923 0.01196 0.00494 0.013 0.0 0.01196 -0.00494 0.00923 -0.00923 0.00494 -0.01196 0.0 0.013' spine='-0.02 -0.03 0 -0.01 -0.03 0 0 -0.0175 0 0 -0.0135 0 -0.01 0 0 -0.02 0 0'/>
             </Shape>
           </Transform>
         </Transform>
@@ -114,3 +120,4 @@
     </Transform>
   </Scene>
 </X3D>
+
