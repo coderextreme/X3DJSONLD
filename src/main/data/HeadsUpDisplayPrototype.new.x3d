@@ -1,3 +1,6 @@
+<!--
+x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
+-->
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "https://www.web3d.org/specifications/x3d-3.0.dtd">
 <X3D profile='Immersive' version='3.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.0.xsd'>
@@ -11,22 +14,25 @@
     <meta content='https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayPrototype.x3d' name='identifier'/>
     <meta content='X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit' name='generator'/>
     <meta content='../../license.html' name='license'/>
+    <meta content='24 March 2023' name='translated'/>
+    <meta content='X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html' name='generator'/>
+    <meta content='X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding' name='reference'/>
   </head>
   <Scene>
-    <ProtoDeclare name='HeadsUpDisplay' appinfo='HeadsUpDisplay positions child geometry in screen space, movable by the user'>
+    <ProtoDeclare appinfo='HeadsUpDisplay positions child geometry in screen space, movable by the user' name='HeadsUpDisplay'>
       <ProtoInterface>
-        <field name='children' accessType='inputOutput' appinfo='Displayed subscene positioned as a HUD.' type='MFNode'>
-          <!-- default is null array of nodes -->
+        <field accessType='inputOutput' appinfo='Displayed subscene positioned as a HUD.' name='children' type='MFNode'>
+          <!--  default is null array of nodes  -->
         </field>
-        <field name='dragChildren' accessType='inputOutput' appinfo='Additional HUD geometry which can be touched and dragged for repositioning. If this geometry goes offscreen (perhaps due to screen resizing) then it snaps back to original position.' type='MFNode'>
-          <!-- default is null array of nodes -->
+        <field accessType='inputOutput' appinfo='Additional HUD geometry which can be touched and dragged for repositioning. If this geometry goes offscreen (perhaps due to screen resizing) then it snaps back to original position.' name='dragChildren' type='MFNode'>
+          <!--  default is null array of nodes  -->
         </field>
-        <field name='locationOffset' accessType='initializeOnly' appinfo='Modified screen location and distance (for size).' type='SFVec3f' value='-2 -2 0'/>
-        <field name='traceEnabled' accessType='initializeOnly' appinfo='Enable/disable console output for troubleshooting.' type='SFBool' value='false'/>
+        <field accessType='initializeOnly' appinfo='Modified screen location and distance (for size).' name='locationOffset' type='SFVec3f' value='-2 -2 0'/>
+        <field accessType='initializeOnly' appinfo='Enable/disable console output for troubleshooting.' name='traceEnabled' type='SFBool'/>
       </ProtoInterface>
       <ProtoBody>
         <Group>
-          <ProximitySensor DEF='WhereSensor' size='1.0E9 1.0E9 1.0E9'>
+          <ProximitySensor DEF='WhereSensor' size='1000000000 1000000000 1000000000'>
             <IS>
               <connect nodeField='center' protoField='locationOffset'/>
             </IS>
@@ -56,54 +62,18 @@
                     </PlaneSensor>
                     <VisibilitySensor DEF='MovementVisibilitySensor'/>
                     <Script DEF='VisibilityControlScript'>
-                      <field name='traceEnabled' accessType='initializeOnly' type='SFBool'/>
-                      <field name='isVisible' accessType='initializeOnly' type='SFBool' value='true'/>
-                      <field name='planeSensorTranslation' accessType='initializeOnly' type='SFVec3f' value='0 0 0'/>
-                      <field name='setIsVisible' accessType='inputOnly' type='SFBool'/>
-                      <field name='setPlaneSensorIsActive' accessType='inputOnly' type='SFBool'/>
-                      <field name='setPlaneSensorTranslation' accessType='inputOnly' type='SFVec3f'/>
-                      <field name='translationChanged' accessType='outputOnly' type='SFVec3f'/>
-                      <field name='translationOffsetChanged' accessType='outputOnly' type='SFVec3f'/>
                       <IS>
                         <connect nodeField='traceEnabled' protoField='traceEnabled'/>
                       </IS>
-<![CDATA[
-ecmascript:
-
-function tracePrint (text)
-{
-	if (traceEnabled) Browser.print ('[HeadsUpDisplayPrototype VisibilityControlScript] ' + text);
-}
-function setIsVisible (value, timeStamp)
-{
-	isVisible = value;
-	tracePrint('isVisible=' + value);
-}
-function setPlaneSensorIsActive (value, timeStamp)
-{
-	tracePrint('PlaneSensor isActive=' + value);
-
-	if (value == false)
-	{
-		tracePrint('planeSensorTranslation=' + planeSensorTranslation);
-		if (isVisible)
-		{
-			translationChanged = planeSensorTranslation;
-		}
-		else
-		{
-			// fell off screen, reset to center
-			translationChanged = new SFVec3f(0, 0, 0);
-			translationOffsetChanged  = new SFVec3f(0, 0, 0);
-		}
-	}
-}
-function setPlaneSensorTranslation (value, timeStamp)
-{
-	planeSensorTranslation = value;
-	tracePrint('planeSensorTranslation=' + value);
-}
-]]>
+                      <field accessType='initializeOnly' name='traceEnabled' type='SFBool'/>
+                      <field accessType='initializeOnly' name='isVisible' type='SFBool' value='true'/>
+                      <field accessType='initializeOnly' name='planeSensorTranslation' type='SFVec3f' value='0 0 0'/>
+                      <field accessType='inputOnly' name='setIsVisible' type='SFBool'/>
+                      <field accessType='inputOnly' name='setPlaneSensorIsActive' type='SFBool'/>
+                      <field accessType='inputOnly' name='setPlaneSensorTranslation' type='SFVec3f'/>
+                      <field accessType='outputOnly' name='translationChanged' type='SFVec3f'/>
+                      <field accessType='outputOnly' name='translationOffsetChanged' type='SFVec3f'/>
+                    <![CDATA[['', '', 'ecmascript:', '', 'function tracePrint (text)', '{', "	if (traceEnabled) Browser.print ('[HeadsUpDisplayPrototype VisibilityControlScript] ' + text);", '}', 'function setIsVisible (value, timeStamp)', '{', '	isVisible = value;', "	tracePrint('isVisible=' + value);", '}', 'function setPlaneSensorIsActive (value, timeStamp)', '{', "	tracePrint('PlaneSensor isActive=' + value);", '', '	if (value == false)', '	{', "		tracePrint('planeSensorTranslation=' + planeSensorTranslation);", '		if (isVisible)', '		{', '			translationChanged = planeSensorTranslation;', '		}', '		else', '		{', '			// fell off screen, reset to center', '			translationChanged = new SFVec3f(0, 0, 0);', '			translationOffsetChanged  = new SFVec3f(0, 0, 0);', '		}', '	}', '}', 'function setPlaneSensorTranslation (value, timeStamp)', '{', '	planeSensorTranslation = value;', "	tracePrint('planeSensorTranslation=' + value);", '}', '', '']]]>
                     </Script>
                     <ROUTE fromField='isActive' fromNode='PlaneMovementSensor' toField='setPlaneSensorIsActive' toNode='VisibilityControlScript'/>
                     <ROUTE fromField='translation_changed' fromNode='PlaneMovementSensor' toField='setPlaneSensorTranslation' toNode='VisibilityControlScript'/>
@@ -121,7 +91,7 @@ function setPlaneSensorTranslation (value, timeStamp)
         </Group>
       </ProtoBody>
     </ProtoDeclare>
-    <!-- ==================== -->
+    <!--  ====================  -->
     <Background groundColor='0.1 0.1 0.3' skyColor='0.5 0.5 0.1'/>
     <Anchor description='HeadsUpDisplayExample' parameter='"target=_blank"' url='"HeadsUpDisplayExample.x3d" "https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayrExample.x3d" "HeadsUpDisplayExample.wrl" "https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/HeadsUpDisplayExample.wrl"'>
       <Shape>
@@ -129,9 +99,10 @@ function setPlaneSensorTranslation (value, timeStamp)
           <Material diffuseColor='0 1 1' emissiveColor='0 1 1'/>
         </Appearance>
         <Text string='"HeadsUpDisplayPrototype.x3d" "is a Prototype definition file." "" "To see an example scene using this node" "click this text to view" "HeadsUpDisplayExample.x3d"'>
-          <FontStyle family='"SERIF"' justify='"MIDDLE" "MIDDLE"' size='0.8'/>
+          <FontStyle justify='"MIDDLE" "MIDDLE"' size='0.8'/>
         </Text>
       </Shape>
     </Anchor>
   </Scene>
 </X3D>
+

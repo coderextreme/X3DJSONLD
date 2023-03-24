@@ -1,3 +1,6 @@
+<!--
+x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
+-->
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'>
@@ -21,94 +24,95 @@
     <meta content='http://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d' name='reference'/>
     <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
     <meta content='../license.html' name='license'/>
+    <meta content='24 March 2023' name='translated'/>
+    <meta content='X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html' name='generator'/>
+    <meta content='X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding' name='reference'/>
   </head>
   <Scene>
-    <!-- =============== Camera ============== -->
+    <!--  =============== Camera ==============  -->
     <WorldInfo title='CameraExamples.x3d'/>
-    <ExternProtoDeclare name='Camera' appinfo='Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images' url='"CameraPrototypes.x3d#Camera" "https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#Camera" "CameraPrototypes.wrl#Camera" "https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#Camera"'>
-      <!-- Viewpoint-related fields, NavigationInfo-related fields and Camera-unique fields -->
-      <field name='description' accessType='inputOutput' appinfo='Text description to be displayed for this Camera' type='SFString'/>
-      <field name='position' accessType='inputOutput' appinfo='Camera position in local transformation frame, which is default prior to first CameraShot initialPosition getting activated' type='SFVec3f'/>
-      <field name='orientation' accessType='inputOutput' appinfo='Camera rotation in local transformation frame, which is default prior to first CameraShot initialPosition getting activated' type='SFRotation'/>
-      <field name='fieldOfView' accessType='inputOutput' appinfo='pi/4' type='SFFloat'/>
-      <field name='set_fraction' accessType='inputOnly' appinfo='input fraction drives interpolators' type='SFFloat'/>
-      <field name='set_bind' accessType='inputOnly' appinfo='input event binds or unbinds this Camera' type='SFBool'/>
-      <field name='bindTime' accessType='outputOnly' appinfo='output event indicates when this Camera is bound' type='SFTime'/>
-      <field name='isBound' accessType='outputOnly' appinfo='output event indicates whether this Camera is bound or unbound' type='SFBool'/>
-      <field name='nearClipPlane' accessType='inputOutput' appinfo='Vector distance to near clipping plane corresponds to NavigationInfo.avatarSize[0]' type='SFFloat'/>
-      <field name='farClipPlane' accessType='inputOutput' appinfo='Vector distance to far clipping plane corresponds to NavigationInfo.visibilityLimit' type='SFFloat'/>
-      <field name='shots' accessType='inputOutput' appinfo='Array of CameraShot nodes which in turn contain CameraMovement nodes' type='MFNode'/>
-      <field name='headlight' accessType='inputOutput' appinfo='Whether camera headlight is on or off' type='SFBool'/>
-      <field name='headlightColor' accessType='inputOutput' appinfo='Camera headlight color' type='SFColor'/>
-      <field name='headlightIntensity' accessType='inputOutput' appinfo='Camera headlight intensity' type='SFFloat'/>
-      <field name='filterColor' accessType='inputOutput' appinfo='Camera filter color that modifies virtual lens capture' type='SFColor'/>
-      <field name='filterTransparency' accessType='inputOutput' appinfo='Camera filter transparency that modifies virtual lens capture' type='SFFloat'/>
-      <field name='upVector' accessType='inputOutput' appinfo='upVector changes modify camera orientation (and possibly vice versa)' type='SFVec3f'/>
-      <field name='fStop' accessType='inputOutput' appinfo='Focal length divided effective aperture diameter indicating width of focal plane' type='SFFloat'/>
-      <field name='focusDistance' accessType='inputOutput' appinfo='Distance to focal plane of sharpest focus' type='SFFloat'/>
-      <field name='isActive' accessType='outputOnly' appinfo='Mark start/stop with true/false output respectively useful to trigger external animations' type='SFBool'/>
-      <field name='totalDuration' accessType='outputOnly' appinfo='Total duration of contained enabled CameraShot (and thus CameraMovement) move durations' type='SFTime'/>
-      <field name='offlineRender' accessType='inputOutput' appinfo='OfflineRender node' type='SFNode'/>
-      <field name='traceEnabled' accessType='initializeOnly' appinfo='enable console output to trace script computations and prototype progress' type='SFBool'/>
+    <ExternProtoDeclare appinfo='Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images' name='Camera' url='"CameraPrototypes.x3d#Camera" "https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#Camera" "CameraPrototypes.wrl#Camera" "https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#Camera"'>
+      <field accessType='inputOutput' appinfo='Text description to be displayed for this Camera' name='description' type='SFString'/>
+      <field accessType='inputOutput' appinfo='Camera position in local transformation frame, which is default prior to first CameraShot initialPosition getting activated' name='position' type='SFVec3f'/>
+      <field accessType='inputOutput' appinfo='Camera rotation in local transformation frame, which is default prior to first CameraShot initialPosition getting activated' name='orientation' type='SFRotation'/>
+      <field accessType='inputOutput' appinfo='pi/4' name='fieldOfView' type='SFFloat'/>
+      <field accessType='inputOnly' appinfo='input fraction drives interpolators' name='set_fraction' type='SFFloat'/>
+      <field accessType='inputOnly' appinfo='input event binds or unbinds this Camera' name='set_bind' type='SFBool'/>
+      <field accessType='outputOnly' appinfo='output event indicates when this Camera is bound' name='bindTime' type='SFTime'/>
+      <field accessType='outputOnly' appinfo='output event indicates whether this Camera is bound or unbound' name='isBound' type='SFBool'/>
+      <field accessType='inputOutput' appinfo='Vector distance to near clipping plane corresponds to NavigationInfo.avatarSize[0]' name='nearClipPlane' type='SFFloat'/>
+      <field accessType='inputOutput' appinfo='Vector distance to far clipping plane corresponds to NavigationInfo.visibilityLimit' name='farClipPlane' type='SFFloat'/>
+      <field accessType='inputOutput' appinfo='Array of CameraShot nodes which in turn contain CameraMovement nodes' name='shots' type='MFNode'/>
+      <field accessType='inputOutput' appinfo='Whether camera headlight is on or off' name='headlight' type='SFBool'/>
+      <field accessType='inputOutput' appinfo='Camera headlight color' name='headlightColor' type='SFColor'/>
+      <field accessType='inputOutput' appinfo='Camera headlight intensity' name='headlightIntensity' type='SFFloat'/>
+      <field accessType='inputOutput' appinfo='Camera filter color that modifies virtual lens capture' name='filterColor' type='SFColor'/>
+      <field accessType='inputOutput' appinfo='Camera filter transparency that modifies virtual lens capture' name='filterTransparency' type='SFFloat'/>
+      <field accessType='inputOutput' appinfo='upVector changes modify camera orientation (and possibly vice versa)' name='upVector' type='SFVec3f'/>
+      <field accessType='inputOutput' appinfo='Focal length divided effective aperture diameter indicating width of focal plane' name='fStop' type='SFFloat'/>
+      <field accessType='inputOutput' appinfo='Distance to focal plane of sharpest focus' name='focusDistance' type='SFFloat'/>
+      <field accessType='outputOnly' appinfo='Mark start/stop with true/false output respectively useful to trigger external animations' name='isActive' type='SFBool'/>
+      <field accessType='outputOnly' appinfo='Total duration of contained enabled CameraShot (and thus CameraMovement) move durations' name='totalDuration' type='SFTime'/>
+      <field accessType='inputOutput' appinfo='OfflineRender node' name='offlineRender' type='SFNode'/>
+      <field accessType='initializeOnly' appinfo='enable console output to trace script computations and prototype progress' name='traceEnabled' type='SFBool'/>
     </ExternProtoDeclare>
-    <!-- =============== CameraShot ============== -->
-    <ExternProtoDeclare name='CameraShot' appinfo='CameraShot collects a specific set of CameraMovement animations that make up an individual shot' url='"CameraPrototypes.x3d#CameraShot" "https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#CameraShot" "CameraPrototypes.wrl#CameraShot" "https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#CameraShot"'>
-      <field name='description' accessType='inputOutput' appinfo='Text description to be displayed for this CameraShot' type='SFString'/>
-      <field name='enabled' accessType='inputOutput' appinfo='Whether this CameraShot can be activated' type='SFBool'/>
-      <field name='moves' accessType='inputOutput' appinfo='Set of CameraMovement nodes' type='MFNode'>
-        <!-- initializing CameraMovement nodes are inserted here by scene author using ProtoInstance -->
+    <!--  =============== CameraShot ==============  -->
+    <ExternProtoDeclare appinfo='CameraShot collects a specific set of CameraMovement animations that make up an individual shot' name='CameraShot' url='"CameraPrototypes.x3d#CameraShot" "https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#CameraShot" "CameraPrototypes.wrl#CameraShot" "https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#CameraShot"'>
+      <field accessType='inputOutput' appinfo='Text description to be displayed for this CameraShot' name='description' type='SFString'/>
+      <field accessType='inputOutput' appinfo='Whether this CameraShot can be activated' name='enabled' type='SFBool'/>
+      <field accessType='inputOutput' appinfo='Set of CameraMovement nodes' name='moves' type='MFNode'>
+        <!--  initializing CameraMovement nodes are inserted here by scene author using ProtoInstance  -->
       </field>
-      <field name='initialPosition' accessType='inputOutput' appinfo='Setup to reinitialize camera position for this shot' type='SFVec3f'/>
-      <field name='initialOrientation' accessType='inputOutput' appinfo='Setup to reinitialize camera rotation for this shot' type='SFRotation'/>
-      <field name='initialAimPoint' accessType='inputOutput' appinfo='Setup to reinitialize aimpoint (relative location for camera direction) for this shot' type='SFVec3f'/>
-      <field name='initialFieldOfView' accessType='inputOutput' appinfo='pi/4' type='SFFloat'/>
-      <field name='initialFStop' accessType='inputOutput' appinfo='Focal length divided effective aperture diameter indicating width of focal plane' type='SFFloat'/>
-      <field name='initialFocusDistance' accessType='inputOutput' appinfo='Distance to focal plane of sharpest focus' type='SFFloat'/>
-      <field name='shotDuration' accessType='outputOnly' appinfo='Subtotal duration of contained CameraMovement move durations' type='SFTime'/>
-      <field name='isActive' accessType='outputOnly' appinfo='Mark start/stop with true/false output respectively useful to trigger external animations' type='SFBool'/>
-      <field name='traceEnabled' accessType='initializeOnly' appinfo='enable console output to trace script computations and prototype progress' type='SFBool'/>
+      <field accessType='inputOutput' appinfo='Setup to reinitialize camera position for this shot' name='initialPosition' type='SFVec3f'/>
+      <field accessType='inputOutput' appinfo='Setup to reinitialize camera rotation for this shot' name='initialOrientation' type='SFRotation'/>
+      <field accessType='inputOutput' appinfo='Setup to reinitialize aimpoint (relative location for camera direction) for this shot' name='initialAimPoint' type='SFVec3f'/>
+      <field accessType='inputOutput' appinfo='pi/4' name='initialFieldOfView' type='SFFloat'/>
+      <field accessType='inputOutput' appinfo='Focal length divided effective aperture diameter indicating width of focal plane' name='initialFStop' type='SFFloat'/>
+      <field accessType='inputOutput' appinfo='Distance to focal plane of sharpest focus' name='initialFocusDistance' type='SFFloat'/>
+      <field accessType='outputOnly' appinfo='Subtotal duration of contained CameraMovement move durations' name='shotDuration' type='SFTime'/>
+      <field accessType='outputOnly' appinfo='Mark start/stop with true/false output respectively useful to trigger external animations' name='isActive' type='SFBool'/>
+      <field accessType='initializeOnly' appinfo='enable console output to trace script computations and prototype progress' name='traceEnabled' type='SFBool'/>
     </ExternProtoDeclare>
-    <!-- =============== CameraMovement ============== -->
-    <ExternProtoDeclare name='CameraMovement' appinfo='CameraMovement defines a single camera movement animation' url='"CameraPrototypes.x3d#CameraMovement" "https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#CameraMovement" "CameraPrototypes.wrl#CameraMovement" "https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#CameraMovement"'>
-      <field name='description' accessType='inputOutput' appinfo='Text description to be displayed for this CameraMovement' type='SFString'/>
-      <field name='enabled' accessType='inputOutput' appinfo='Whether this CameraMovement can be activated' type='SFBool'/>
-      <field name='duration' accessType='inputOutput' appinfo='Duration in seconds for this move' type='SFFloat'/>
-      <field name='goalPosition' accessType='inputOutput' appinfo='Goal camera position for this move' type='SFVec3f'/>
-      <field name='goalOrientation' accessType='inputOutput' appinfo='Goal camera rotation for this move' type='SFRotation'/>
-      <field name='tracking' accessType='inputOutput' appinfo='Whether or not camera direction is tracking towards the aimPoint' type='SFBool'/>
-      <field name='goalAimPoint' accessType='inputOutput' appinfo='Goal aimPoint for this move, ignored if tracking=false' type='SFVec3f'/>
-      <field name='goalFieldOfView' accessType='inputOutput' appinfo='Goal fieldOfView for this move' type='SFFloat'/>
-      <field name='goalFStop' accessType='inputOutput' appinfo='Focal length divided effective aperture diameter indicating width of focal plane' type='SFFloat'/>
-      <field name='goalFocusDistance' accessType='inputOutput' appinfo='Distance to focal plane of sharpest focus' type='SFFloat'/>
-      <field name='isActive' accessType='outputOnly' appinfo='Mark start/stop with true/false output respectively useful to trigger external animations' type='SFBool'/>
-      <field name='traceEnabled' accessType='initializeOnly' appinfo='enable console output to trace script computations and prototype progress' type='SFBool'/>
+    <!--  =============== CameraMovement ==============  -->
+    <ExternProtoDeclare appinfo='CameraMovement defines a single camera movement animation' name='CameraMovement' url='"CameraPrototypes.x3d#CameraMovement" "https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#CameraMovement" "CameraPrototypes.wrl#CameraMovement" "https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#CameraMovement"'>
+      <field accessType='inputOutput' appinfo='Text description to be displayed for this CameraMovement' name='description' type='SFString'/>
+      <field accessType='inputOutput' appinfo='Whether this CameraMovement can be activated' name='enabled' type='SFBool'/>
+      <field accessType='inputOutput' appinfo='Duration in seconds for this move' name='duration' type='SFFloat'/>
+      <field accessType='inputOutput' appinfo='Goal camera position for this move' name='goalPosition' type='SFVec3f'/>
+      <field accessType='inputOutput' appinfo='Goal camera rotation for this move' name='goalOrientation' type='SFRotation'/>
+      <field accessType='inputOutput' appinfo='Whether or not camera direction is tracking towards the aimPoint' name='tracking' type='SFBool'/>
+      <field accessType='inputOutput' appinfo='Goal aimPoint for this move, ignored if tracking=false' name='goalAimPoint' type='SFVec3f'/>
+      <field accessType='inputOutput' appinfo='Goal fieldOfView for this move' name='goalFieldOfView' type='SFFloat'/>
+      <field accessType='inputOutput' appinfo='Focal length divided effective aperture diameter indicating width of focal plane' name='goalFStop' type='SFFloat'/>
+      <field accessType='inputOutput' appinfo='Distance to focal plane of sharpest focus' name='goalFocusDistance' type='SFFloat'/>
+      <field accessType='outputOnly' appinfo='Mark start/stop with true/false output respectively useful to trigger external animations' name='isActive' type='SFBool'/>
+      <field accessType='initializeOnly' appinfo='enable console output to trace script computations and prototype progress' name='traceEnabled' type='SFBool'/>
     </ExternProtoDeclare>
-    <!-- =============== OfflineRender ============== -->
-    <ExternProtoDeclare name='OfflineRender' appinfo='OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot)' url='"CameraPrototypes.x3d#OfflineRender" "https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#OfflineRender" "CameraPrototypes.wrl#OfflineRender" "https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#OfflineRender"'>
-      <!-- TODO non-photorealistic rendering (NPR) parameters -->
-      <field name='description' accessType='inputOutput' appinfo='Text description to be displayed for this OfflineRender' type='SFString'/>
-      <field name='enabled' accessType='inputOutput' appinfo='Whether this OfflineRender can be activated' type='SFBool'/>
-      <field name='frameRate' accessType='inputOutput' appinfo='Frames per second recorded for this rendering' type='SFFloat'/>
-      <field name='frameSize' accessType='inputOutput' appinfo='Size of frame in number of pixels width and height' type='SFVec2f'/>
-      <field name='pixelAspectRatio' accessType='inputOutput' appinfo='Relative dimensions of pixel height/width typically 1.33 or 1' type='SFFloat'/>
-      <field name='set_startTime' accessType='inputOnly' appinfo='Begin render operation' type='SFTime'/>
-      <field name='progress' accessType='outputOnly' appinfo='Progress performing render operation (0..1)' type='SFFloat'/>
-      <field name='renderCompleteTime' accessType='outputOnly' appinfo='Render operation complete' type='SFTime'/>
-      <field name='movieFormat' accessType='initializeOnly' appinfo='Format of rendered output movie (mpeg mp4 etc.), use first supported format' type='MFString'/>
-      <field name='imageFormat' accessType='initializeOnly' appinfo='Format of rendered output images (png jpeg gif tiff etc.) use first supported format' type='MFString'/>
-      <field name='traceEnabled' accessType='initializeOnly' appinfo='enable console output to trace script computations and prototype progress' type='SFBool'/>
+    <!--  =============== OfflineRender ==============  -->
+    <ExternProtoDeclare appinfo='OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot)' name='OfflineRender' url='"CameraPrototypes.x3d#OfflineRender" "https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d#OfflineRender" "CameraPrototypes.wrl#OfflineRender" "https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.wrl#OfflineRender"'>
+      <field accessType='inputOutput' appinfo='Text description to be displayed for this OfflineRender' name='description' type='SFString'/>
+      <field accessType='inputOutput' appinfo='Whether this OfflineRender can be activated' name='enabled' type='SFBool'/>
+      <field accessType='inputOutput' appinfo='Frames per second recorded for this rendering' name='frameRate' type='SFFloat'/>
+      <field accessType='inputOutput' appinfo='Size of frame in number of pixels width and height' name='frameSize' type='SFVec2f'/>
+      <field accessType='inputOutput' appinfo='Relative dimensions of pixel height/width typically 1.33 or 1' name='pixelAspectRatio' type='SFFloat'/>
+      <field accessType='inputOnly' appinfo='Begin render operation' name='set_startTime' type='SFTime'/>
+      <field accessType='outputOnly' appinfo='Progress performing render operation (0..1)' name='progress' type='SFFloat'/>
+      <field accessType='outputOnly' appinfo='Render operation complete' name='renderCompleteTime' type='SFTime'/>
+      <field accessType='initializeOnly' appinfo='Format of rendered output movie (mpeg mp4 etc.), use first supported format' name='movieFormat' type='MFString'/>
+      <field accessType='initializeOnly' appinfo='Format of rendered output images (png jpeg gif tiff etc.) use first supported format' name='imageFormat' type='MFString'/>
+      <field accessType='initializeOnly' appinfo='enable console output to trace script computations and prototype progress' name='traceEnabled' type='SFBool'/>
     </ExternProtoDeclare>
-    <!-- =============== Lights, camera, action! ============== -->
+    <!--  =============== Lights, camera, action! ==============  -->
     <DirectionalLight direction='0 -1 0' global='true' intensity='0.8'/>
-    <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE" "FLY" "ANY"'/>
+    <NavigationInfo type='""EXAMINE" "FLY" "ANY""'/>
     <Viewpoint description='Camera test scene entry view' position='0 2 12'/>
     <Viewpoint description='Camera test scene from above' orientation='1 0 0 -1.57079' position='0 150 0'/>
-    <!-- Keep prototype instances in same file while developing, then move later -->
-    <!-- We will create examples matching those in the paper -->
-    <!-- =============== Camera.SimpleShotsTest ============== -->
+    <!--  Keep prototype instances in same file while developing, then move later  -->
+    <!--  We will create examples matching those in the paper  -->
+    <!--  =============== Camera.SimpleShotsTest ==============  -->
     <ProtoInstance DEF='Camera.SimpleShotsTest' name='Camera'>
       <fieldValue name='description' value='SimpleShotsTest for camera Zoom Dolly Pan Boom and Tilt'/>
-      <fieldValue name='headlight' value='true'/>
+      <fieldValue name='headlight' value='True'/>
       <fieldValue name='position' value='-4 4 10'/>
       <fieldValue name='shots'>
         <ProtoInstance DEF='Zoom' name='CameraShot'>
@@ -118,19 +122,19 @@
           <fieldValue name='moves'>
             <ProtoInstance name='CameraMovement'>
               <fieldValue name='description' value='Camera Zoom In'/>
-              <fieldValue name='duration' value='3.0'/>
+              <fieldValue name='duration' value='3'/>
               <fieldValue name='goalPosition' value='-50 1 -15'/>
               <fieldValue name='goalOrientation' value='0 1 0 0'/>
             </ProtoInstance>
             <ProtoInstance name='CameraMovement'>
               <fieldValue name='description' value='Camera Zoom Out'/>
-              <fieldValue name='duration' value='3.0'/>
+              <fieldValue name='duration' value='3'/>
               <fieldValue name='goalPosition' value='-50 1 -10'/>
               <fieldValue name='goalOrientation' value='0 1 0 0'/>
             </ProtoInstance>
             <ProtoInstance name='CameraMovement'>
               <fieldValue name='description' value='Camera Pause'/>
-              <fieldValue name='duration' value='1.0'/>
+              <fieldValue name='duration' value='1'/>
               <fieldValue name='goalPosition' value='-50 1 -10'/>
               <fieldValue name='goalOrientation' value='0 1 0 0'/>
             </ProtoInstance>
@@ -143,19 +147,19 @@
           <fieldValue name='moves'>
             <ProtoInstance DEF='DollyMove1' name='CameraMovement'>
               <fieldValue name='description' value='Camera Dolly from Right to Left'/>
-              <fieldValue name='duration' value='3.0'/>
+              <fieldValue name='duration' value='3'/>
               <fieldValue name='goalPosition' value='-45 1 -10'/>
               <fieldValue name='goalOrientation' value='0 1 0 0'/>
             </ProtoInstance>
             <ProtoInstance name='CameraMovement'>
               <fieldValue name='description' value='Camera Dolly from Left to Right'/>
-              <fieldValue name='duration' value='3.0'/>
+              <fieldValue name='duration' value='3'/>
               <fieldValue name='goalPosition' value='-40 1 -10'/>
               <fieldValue name='goalOrientation' value='0 1 0 0'/>
             </ProtoInstance>
             <ProtoInstance name='CameraMovement'>
               <fieldValue name='description' value='Camera Pause'/>
-              <fieldValue name='duration' value='1.0'/>
+              <fieldValue name='duration' value='1'/>
               <fieldValue name='goalPosition' value='-40 1 -10'/>
               <fieldValue name='goalOrientation' value='0 1 0 0'/>
             </ProtoInstance>
@@ -168,25 +172,25 @@
           <fieldValue name='moves'>
             <ProtoInstance DEF='PanLeft' name='CameraMovement'>
               <fieldValue name='description' value='Pan Left'/>
-              <fieldValue name='duration' value='2.0'/>
+              <fieldValue name='duration' value='2'/>
               <fieldValue name='goalPosition' value='-30 1 -10'/>
               <fieldValue name='goalOrientation' value='0 1 0 0.4'/>
             </ProtoInstance>
             <ProtoInstance DEF='PanRight' name='CameraMovement'>
               <fieldValue name='description' value='Pan Right'/>
-              <fieldValue name='duration' value='3.0'/>
+              <fieldValue name='duration' value='3'/>
               <fieldValue name='goalPosition' value='-30 1 -10'/>
               <fieldValue name='goalOrientation' value='0 1 0 -0.4'/>
             </ProtoInstance>
             <ProtoInstance name='CameraMovement'>
               <fieldValue name='description' value='Camera Pan back to Center'/>
-              <fieldValue name='duration' value='2.0'/>
+              <fieldValue name='duration' value='2'/>
               <fieldValue name='goalPosition' value='-30 1 -10'/>
               <fieldValue name='goalOrientation' value='0 1 0 0'/>
             </ProtoInstance>
             <ProtoInstance name='CameraMovement'>
               <fieldValue name='description' value='Camera Pause'/>
-              <fieldValue name='duration' value='2.0'/>
+              <fieldValue name='duration' value='2'/>
               <fieldValue name='goalPosition' value='-30 1 -10'/>
               <fieldValue name='goalOrientation' value='0 1 0 0'/>
             </ProtoInstance>
@@ -199,19 +203,19 @@
           <fieldValue name='moves'>
             <ProtoInstance DEF='CameraBoomUp' name='CameraMovement'>
               <fieldValue name='description' value='Camera Boom Up'/>
-              <fieldValue name='duration' value='3.0'/>
+              <fieldValue name='duration' value='3'/>
               <fieldValue name='goalPosition' value='-20 5 -10'/>
               <fieldValue name='goalOrientation' value='0 1 0 0'/>
             </ProtoInstance>
             <ProtoInstance DEF='BoomDown' name='CameraMovement'>
               <fieldValue name='description' value='Camera Boom Down'/>
-              <fieldValue name='duration' value='3.0'/>
+              <fieldValue name='duration' value='3'/>
               <fieldValue name='goalPosition' value='-20 1 -10'/>
               <fieldValue name='goalOrientation' value='0 1 0 0'/>
             </ProtoInstance>
             <ProtoInstance DEF='BoomPause' name='CameraMovement'>
               <fieldValue name='description' value='Camera Pause'/>
-              <fieldValue name='duration' value='2.0'/>
+              <fieldValue name='duration' value='2'/>
               <fieldValue name='goalPosition' value='-20 1 -10'/>
               <fieldValue name='goalOrientation' value='0 1 0 0'/>
             </ProtoInstance>
@@ -221,47 +225,47 @@
           <fieldValue name='description' value='Camera Tilt'/>
           <fieldValue name='initialPosition' value='-10 1 -10'/>
           <fieldValue name='initialOrientation' value='0 0 1 0'/>
-          <fieldValue name='traceEnabled' value='true'/>
+          <fieldValue name='traceEnabled' value='True'/>
           <fieldValue name='moves'>
             <ProtoInstance name='CameraMovement'>
               <fieldValue name='description' value='Camera Tilt Pause'/>
-              <fieldValue name='duration' value='1.0'/>
+              <fieldValue name='duration' value='1'/>
               <fieldValue name='goalPosition' value='-10 1 -10'/>
               <fieldValue name='goalOrientation' value='0 0 1 0'/>
             </ProtoInstance>
             <ProtoInstance DEF='TiltDown' name='CameraMovement'>
               <fieldValue name='description' value='Camera Tilt Left'/>
-              <fieldValue name='duration' value='3.0'/>
+              <fieldValue name='duration' value='3'/>
               <fieldValue name='goalPosition' value='-10 1 -10'/>
               <fieldValue name='goalOrientation' value='0 0 1 0.785'/>
             </ProtoInstance>
             <ProtoInstance DEF='TiltPause' name='CameraMovement'>
               <fieldValue name='description' value='Camera Tilt Pause'/>
-              <fieldValue name='duration' value='1.0'/>
+              <fieldValue name='duration' value='1'/>
               <fieldValue name='goalPosition' value='-10 1 -10'/>
               <fieldValue name='goalOrientation' value='0 0 1 0.785'/>
             </ProtoInstance>
             <ProtoInstance name='CameraMovement'>
               <fieldValue name='description' value='Camera Tilt Right'/>
-              <fieldValue name='duration' value='3.0'/>
+              <fieldValue name='duration' value='3'/>
               <fieldValue name='goalPosition' value='-10 1 -10'/>
               <fieldValue name='goalOrientation' value='0 0 1 -0.785'/>
             </ProtoInstance>
             <ProtoInstance name='CameraMovement'>
               <fieldValue name='description' value='Camera Tilt Pause'/>
-              <fieldValue name='duration' value='1.0'/>
+              <fieldValue name='duration' value='1'/>
               <fieldValue name='goalPosition' value='-10 1 -10'/>
               <fieldValue name='goalOrientation' value='0 0 1 -0.785'/>
             </ProtoInstance>
             <ProtoInstance DEF='TiltReset' name='CameraMovement'>
               <fieldValue name='description' value='Camera Tilt Reset'/>
-              <fieldValue name='duration' value='1.0'/>
+              <fieldValue name='duration' value='1'/>
               <fieldValue name='goalPosition' value='-10 1 -10'/>
               <fieldValue name='goalOrientation' value='0 0 1 0'/>
             </ProtoInstance>
             <ProtoInstance DEF='TiltUp' name='CameraMovement'>
               <fieldValue name='description' value='Return to home'/>
-              <fieldValue name='duration' value='2.0'/>
+              <fieldValue name='duration' value='2'/>
               <fieldValue name='goalPosition' value='0 2 12'/>
               <fieldValue name='goalOrientation' value='0 0 1 0'/>
             </ProtoInstance>
@@ -271,9 +275,9 @@
     </ProtoInstance>
     <Group DEF='AnimationGroup.SimpleShots'>
       <TimeSensor DEF='CameraTimer.SimpleShots'/>
-      <!-- initialize clock to match totalDuration of combined Shot Moves -->
+      <!--  initialize clock to match totalDuration of combined Shot Moves  -->
       <ROUTE fromField='totalDuration' fromNode='Camera.SimpleShotsTest' toField='cycleInterval' toNode='CameraTimer.SimpleShots'/>
-      <!-- TimeSensor animates the CameraClock since that maintains the computed PositionInterpolator and OrientationInterpolator -->
+      <!--  TimeSensor animates the CameraClock since that maintains the computed PositionInterpolator and OrientationInterpolator  -->
       <ROUTE fromField='fraction_changed' fromNode='CameraTimer.SimpleShots' toField='set_fraction' toNode='Camera.SimpleShotsTest'/>
       <Transform DEF='Trigger.SimpleShots' translation='-4 4 0'>
         <BooleanFilter DEF='TextTouchActive.SimpleShotsFilter'/>
@@ -283,20 +287,18 @@
         <ROUTE fromField='touchTime' fromNode='TextTouch.SimpleShots' toField='startTime' toNode='CameraTimer.SimpleShots'/>
         <Shape>
           <Appearance>
-            <Material DEF='ArtDeco5' ambientIntensity='0.24' diffuseColor='0.945455 0.318988 0.321717' shininess='0.01' specularColor='0.072727 0.021705 0.010732'>
-              <!-- Universal Media Library: ArtDeco 5 -->
-            </Material>
+            <Material DEF='ArtDeco5' ambientIntensity='0.24' diffuseColor='0.945455 0.318988 0.321717' shininess='0.01' specularColor='0.072727 0.021705 0.010732'/>
           </Appearance>
           <Text string='"Click to animate" "SimpleShotsTest"'>
-            <FontStyle family='"SERIF"' justify='"MIDDLE" "MIDDLE"'/>
+            <FontStyle justify='"MIDDLE" "MIDDLE"'/>
           </Text>
         </Shape>
-        <!-- Simplify intersection test for user selecting text -->
+        <!--  Simplify intersection test for user selecting text  -->
         <Shape DEF='TransparentBox'>
           <Appearance>
-            <Material transparency='1.0'/>
+            <Material transparency='1'/>
           </Appearance>
-          <Box size='6 2 1.0E-4'/>
+          <Box size='6 2 0.0001'/>
         </Shape>
       </Transform>
     </Group>
@@ -315,7 +317,7 @@
               <Material/>
             </Appearance>
             <Text string='"Zoom in, out"'>
-              <FontStyle family='"SERIF"' justify='"MIDDLE" "MIDDLE"'/>
+              <FontStyle justify='"MIDDLE" "MIDDLE"'/>
             </Text>
           </Shape>
         </Transform>
@@ -334,7 +336,7 @@
               <Material/>
             </Appearance>
             <Text string='"Dolly left, right"'>
-              <FontStyle family='"SERIF"' justify='"MIDDLE" "MIDDLE"'/>
+              <FontStyle justify='"MIDDLE" "MIDDLE"'/>
             </Text>
           </Shape>
         </Transform>
@@ -353,7 +355,7 @@
               <Material/>
             </Appearance>
             <Text string='"Pan left, right"'>
-              <FontStyle family='"SERIF"' justify='"MIDDLE" "MIDDLE"'/>
+              <FontStyle justify='"MIDDLE" "MIDDLE"'/>
             </Text>
           </Shape>
         </Transform>
@@ -372,7 +374,7 @@
               <Material/>
             </Appearance>
             <Text string='"Boom up, down"'>
-              <FontStyle family='"SERIF"' justify='"MIDDLE" "MIDDLE"'/>
+              <FontStyle justify='"MIDDLE" "MIDDLE"'/>
             </Text>
           </Shape>
         </Transform>
@@ -391,13 +393,13 @@
               <Material/>
             </Appearance>
             <Text string='"Tilt left, right"'>
-              <FontStyle family='"SERIF"' justify='"MIDDLE" "MIDDLE"'/>
+              <FontStyle justify='"MIDDLE" "MIDDLE"'/>
             </Text>
           </Shape>
         </Transform>
       </Transform>
     </Group>
-    <!-- =============== Camera.AimPointTest ============== -->
+    <!--  =============== Camera.AimPointTest ==============  -->
     <ProtoInstance DEF='Camera.AimPointTest' name='Camera'>
       <fieldValue name='description' value='AimPointTest for moving camera tracking moving target'/>
       <fieldValue name='position' value='4 4 10'/>
@@ -408,31 +410,27 @@
           <fieldValue name='initialOrientation' value='0 1 0 0'/>
           <fieldValue name='moves'>
             <ProtoInstance DEF='MoveAimPoint3.1' name='CameraMovement'>
-              <!-- goalAimPoint modified by ROUTE to match moving Box -->
               <fieldValue name='description' value='AimPoint 3.1 moving BoxPath'/>
-              <fieldValue name='tracking' value='true'/>
-              <fieldValue name='duration' value='8.0'/>
+              <fieldValue name='tracking' value='True'/>
+              <fieldValue name='duration' value='8'/>
               <fieldValue name='goalPosition' value='6 6 10'/>
             </ProtoInstance>
             <ProtoInstance DEF='MoveAimPoint3.2' name='CameraMovement'>
-              <!-- goalAimPoint modified by ROUTE to match moving Box -->
               <fieldValue name='description' value='AimPoint 3.2 pan right while tracking'/>
-              <fieldValue name='tracking' value='true'/>
-              <fieldValue name='duration' value='8.0'/>
+              <fieldValue name='tracking' value='True'/>
+              <fieldValue name='duration' value='8'/>
               <fieldValue name='goalPosition' value='40 6 12'/>
             </ProtoInstance>
             <ProtoInstance DEF='MoveAimPoint3.3' name='CameraMovement'>
-              <!-- goalAimPoint modified by ROUTE to match moving Box -->
               <fieldValue name='description' value='AimPoint 3.3 boom up while tracking'/>
-              <fieldValue name='tracking' value='true'/>
-              <fieldValue name='duration' value='3.0'/>
+              <fieldValue name='tracking' value='True'/>
+              <fieldValue name='duration' value='3'/>
               <fieldValue name='goalPosition' value='40 20 13'/>
             </ProtoInstance>
             <ProtoInstance DEF='MoveAimPoint3.4' name='CameraMovement'>
-              <!-- can test tracking or not using these values -->
               <fieldValue name='description' value='AimPoint 3.4 restore camera back to home'/>
-              <fieldValue name='tracking' value='true'/>
-              <fieldValue name='duration' value='5.0'/>
+              <fieldValue name='tracking' value='True'/>
+              <fieldValue name='duration' value='5'/>
               <fieldValue name='goalPosition' value='4 4 10'/>
               <fieldValue name='goalAimPoint' value='4 4 0'/>
               <fieldValue name='goalOrientation' value='0 1 0 0'/>
@@ -443,9 +441,9 @@
     </ProtoInstance>
     <Group DEF='AnimationGroup.AimPointTest'>
       <TimeSensor DEF='CameraTimer.AimPointTest'/>
-      <!-- initialize clock to match totalDuration of combined Shot Moves -->
+      <!--  initialize clock to match totalDuration of combined Shot Moves  -->
       <ROUTE fromField='totalDuration' fromNode='Camera.AimPointTest' toField='cycleInterval' toNode='CameraTimer.AimPointTest'/>
-      <!-- TimeSensor animates the CameraClock since that maintains the computed PositionInterpolator and OrientationInterpolator -->
+      <!--  TimeSensor animates the CameraClock since that maintains the computed PositionInterpolator and OrientationInterpolator  -->
       <ROUTE fromField='fraction_changed' fromNode='CameraTimer.AimPointTest' toField='set_fraction' toNode='Camera.AimPointTest'/>
       <Transform DEF='Trigger.AimPointTest' translation='4 4 0'>
         <BooleanFilter DEF='TextTouchActive.AimPointFilter'/>
@@ -458,17 +456,17 @@
             <Material USE='ArtDeco5'/>
           </Appearance>
           <Text string='"Click to animate" "AimPointTest"'>
-            <FontStyle family='"SERIF"' justify='"MIDDLE" "MIDDLE"'/>
+            <FontStyle justify='"MIDDLE" "MIDDLE"'/>
           </Text>
         </Shape>
         <Shape USE='TransparentBox'/>
       </Transform>
     </Group>
-    <!-- TODO build a test once implemented -->
+    <!--  TODO build a test once implemented  -->
     <ProtoInstance name='OfflineRender'/>
-    <!-- =============== animate a camera shape to visualize view changes ============== -->
+    <!--  =============== animate a camera shape to visualize view changes ==============  -->
     <Transform DEF='CameraShapeTransform' translation='0 0.5 0'>
-      <!-- move CameraShape using active Camera -->
+      <!--  move CameraShape using active Camera  -->
       <ROUTE fromField='position_changed' fromNode='Camera.SimpleShotsTest' toField='translation' toNode='CameraShapeTransform'/>
       <ROUTE fromField='orientation_changed' fromNode='Camera.SimpleShotsTest' toField='rotation' toNode='CameraShapeTransform'/>
       <ROUTE fromField='position' fromNode='Camera.AimPointTest' toField='translation' toNode='CameraShapeTransform'/>
@@ -485,25 +483,25 @@
           </IndexedLineSet>
         </Shape>
       </Transform>
-      <!-- Display frustum to show camera view within the scene, toggled by user selecting CameraShape -->
-      <ExternProtoDeclare name='ViewFrustum' appinfo='Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes' url='"../../X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d#ViewFrustum" "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d#ViewFrustum" "../../X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.wrl#ViewFrustum" "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.wrl#ViewFrustum"'>
-        <field name='ViewpointNode' accessType='initializeOnly' appinfo='required: insert Viewpoint DEF or USE node for view of interest' type='SFNode'/>
-        <field name='NavigationInfoNode' accessType='initializeOnly' appinfo='required: insert NavigationInfo DEF or USE node of interest' type='SFNode'/>
-        <field name='visible' accessType='inputOutput' appinfo='whether or not frustum geometry is rendered' type='SFBool'/>
-        <field name='lineColor' accessType='inputOutput' appinfo='RGB color of ViewFrustum outline, default value 0.9 0.9 0.9' type='SFColor'/>
-        <field name='frustumColor' accessType='inputOutput' appinfo='RGB color of ViewFrustum hull geometry, default value 0.8 0.8 0.8' type='SFColor'/>
-        <field name='transparency' accessType='inputOutput' appinfo='transparency of ViewFrustum hull geometry, default value 0.5' type='SFFloat'/>
-        <field name='aspectRatio' accessType='inputOutput' appinfo='assumed ratio height/width, default value 0.75' type='SFFloat'/>
-        <field name='trace' accessType='initializeOnly' appinfo='debug support, default false' type='SFBool'/>
+      <!--  Display frustum to show camera view within the scene, toggled by user selecting CameraShape  -->
+      <ExternProtoDeclare appinfo='Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes' name='ViewFrustum' url='"../../X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d#ViewFrustum" "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d#ViewFrustum" "../../X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.wrl#ViewFrustum" "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.wrl#ViewFrustum"'>
+        <field accessType='initializeOnly' appinfo='required: insert Viewpoint DEF or USE node for view of interest' name='ViewpointNode' type='SFNode'/>
+        <field accessType='initializeOnly' appinfo='required: insert NavigationInfo DEF or USE node of interest' name='NavigationInfoNode' type='SFNode'/>
+        <field accessType='inputOutput' appinfo='whether or not frustum geometry is rendered' name='visible' type='SFBool'/>
+        <field accessType='inputOutput' appinfo='RGB color of ViewFrustum outline, default value 0.9 0.9 0.9' name='lineColor' type='SFColor'/>
+        <field accessType='inputOutput' appinfo='RGB color of ViewFrustum hull geometry, default value 0.8 0.8 0.8' name='frustumColor' type='SFColor'/>
+        <field accessType='inputOutput' appinfo='transparency of ViewFrustum hull geometry, default value 0.5' name='transparency' type='SFFloat'/>
+        <field accessType='inputOutput' appinfo='assumed ratio height/width, default value 0.75' name='aspectRatio' type='SFFloat'/>
+        <field accessType='initializeOnly' appinfo='debug support, default false' name='trace' type='SFBool'/>
       </ExternProtoDeclare>
       <ProtoInstance DEF='ViewFrustumNode' name='ViewFrustum'>
         <fieldValue name='ViewpointNode'>
           <Viewpoint DEF='FrustumViewpoint' description='viewpoint for ViewFrustum' position='0 0 0'/>
         </fieldValue>
         <fieldValue name='NavigationInfoNode'>
-          <NavigationInfo DEF='TestNavigationInfo' avatarSize='0.25 1.6 0.75' transitionType='"ANIMATE"' type='"EXAMINE" "ANY"' visibilityLimit='100.0'/>
+          <NavigationInfo DEF='TestNavigationInfo' transitionType='"ANIMATE"' visibilityLimit='100'/>
         </fieldValue>
-        <fieldValue name='visible' value='false'/>
+        <fieldValue name='visible'/>
         <fieldValue name='lineColor' value='0.9 0.9 0.9'/>
         <fieldValue name='frustumColor' value='0.8 0.8 0.8'/>
         <fieldValue name='transparency' value='0.95'/>
@@ -512,16 +510,16 @@
       <ROUTE fromField='isActive' fromNode='CameraShapeTouched' toField='set_boolean' toNode='ViewFrustumToggle'/>
       <ROUTE fromField='toggle' fromNode='ViewFrustumToggle' toField='set_visible' toNode='ViewFrustumNode'/>
     </Transform>
-    <!-- =============== add checkerboard, axes and other things to look at while animating ============== -->
+    <!--  =============== add checkerboard, axes and other things to look at while animating ==============  -->
     <Background skyColor='0.282353 0.380392 0.470588'/>
     <Transform rotation='1 0 0 -1.57079' scale='10 10 10'>
       <Shape>
         <Appearance>
-          <Material ambientIntensity='0.01' diffuseColor='1 1 1' shininess='0.05'/>
+          <Material ambientIntensity='0.01' diffuseColor='1.0 1.0 1.0' shininess='0.05'/>
         </Appearance>
         <IndexedFaceSet colorIndex='0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0' colorPerVertex='false' coordIndex='0 8 9 1 -1 1 9 10 2 -1 2 10 11 3 -1 3 11 12 4 -1 4 12 13 5 -1 5 13 14 6 -1 6 14 15 7 -1 8 16 17 9 -1 9 17 18 10 -1 10 18 19 11 -1 11 19 20 12 -1 12 20 21 13 -1 13 21 22 14 -1 14 22 23 15 -1 16 24 25 17 -1 17 25 26 18 -1 18 26 27 19 -1 19 27 28 20 -1 20 28 29 21 -1 21 29 30 22 -1 22 30 31 23 -1 24 32 33 25 -1 25 33 34 26 -1 26 34 35 27 -1 27 35 36 28 -1 28 36 37 29 -1 29 37 38 30 -1 30 38 39 31 -1 32 40 41 33 -1 33 41 42 34 -1 34 42 43 35 -1 35 43 44 36 -1 36 44 45 37 -1 37 45 46 38 -1 38 46 47 39 -1 40 48 49 41 -1 41 49 50 42 -1 42 50 51 43 -1 43 51 52 44 -1 44 52 53 45 -1 45 53 54 46 -1 46 54 55 47 -1 48 56 57 49 -1 49 57 58 50 -1 50 58 59 51 -1 51 59 60 52 -1 52 60 61 53 -1 53 61 62 54 -1 54 62 63 55 -1' normalPerVertex='false' solid='false'>
           <Color color='0.435294 0.741176 0 0 0.560784 0.580392'/>
-          <Coordinate point='-5.25 5.25 0 -3.75 5.25 0 -2.25 5.25 0 -0.75 5.25 0 0.75 5.25 0 2.25 5.25 0 3.75 5.25 0 5.25 5.25 0 -5.25 3.75 0 -3.75 3.75 0 -2.25 3.75 0 -0.75 3.75 0 0.75 3.75 0 2.25 3.75 0 3.75 3.75 0 5.25 3.75 0 -5.25 2.25 0 -3.75 2.25 0 -2.25 2.25 0 -0.75 2.25 0 0.75 2.25 0 2.25 2.25 0 3.75 2.25 0 5.25 2.25 0 -5.25 0.75 0 -3.75 0.75 0 -2.25 0.75 0 -0.75 0.75 0 0.75 0.75 0 2.25 0.75 0 3.75 0.75 0 5.25 0.75 0 -5.25 -0.75 0 -3.75 -0.75 0 -2.25 -0.75 0 -0.75 -0.75 0 0.75 -0.75 0 2.25 -0.75 0 3.75 -0.75 0 5.25 -0.75 0 -5.25 -2.25 0 -3.75 -2.25 0 -2.25 -2.25 0 -0.75 -2.25 0 0.75 -2.25 0 2.25 -2.25 0 3.75 -2.25 0 5.25 -2.25 0 -5.25 -3.75 0 -3.75 -3.75 0 -2.25 -3.75 0 -0.75 -3.75 0 0.75 -3.75 0 2.25 -3.75 0 3.75 -3.75 0 5.25 -3.75 0 -5.25 -5.25 0 -3.75 -5.25 0 -2.25 -5.25 0 -0.75 -5.25 0 0.75 -5.25 0 2.25 -5.25 0 3.75 -5.25 0 5.25 -5.25 0'/>
+          <Coordinate point='-5.25 5.25 0.0 -3.75 5.25 0.0 -2.25 5.25 0.0 -0.75 5.25 0.0 0.75 5.25 0.0 2.25 5.25 0.0 3.75 5.25 0.0 5.25 5.25 0.0 -5.25 3.75 0.0 -3.75 3.75 0.0 -2.25 3.75 0.0 -0.75 3.75 0.0 0.75 3.75 0.0 2.25 3.75 0.0 3.75 3.75 0.0 5.25 3.75 0.0 -5.25 2.25 0.0 -3.75 2.25 0.0 -2.25 2.25 0.0 -0.75 2.25 0.0 0.75 2.25 0.0 2.25 2.25 0.0 3.75 2.25 0.0 5.25 2.25 0.0 -5.25 0.75 0.0 -3.75 0.75 0.0 -2.25 0.75 0.0 -0.75 0.75 0.0 0.75 0.75 0.0 2.25 0.75 0.0 3.75 0.75 0.0 5.25 0.75 0.0 -5.25 -0.75 0.0 -3.75 -0.75 0.0 -2.25 -0.75 0.0 -0.75 -0.75 0.0 0.75 -0.75 0.0 2.25 -0.75 0.0 3.75 -0.75 0.0 5.25 -0.75 0.0 -5.25 -2.25 0.0 -3.75 -2.25 0.0 -2.25 -2.25 0.0 -0.75 -2.25 0.0 0.75 -2.25 0.0 2.25 -2.25 0.0 3.75 -2.25 0.0 5.25 -2.25 0.0 -5.25 -3.75 0.0 -3.75 -3.75 0.0 -2.25 -3.75 0.0 -0.75 -3.75 0.0 0.75 -3.75 0.0 2.25 -3.75 0.0 3.75 -3.75 0.0 5.25 -3.75 0.0 -5.25 -5.25 0.0 -3.75 -5.25 0.0 -2.25 -5.25 0.0 -0.75 -5.25 0.0 0.75 -5.25 0.0 2.25 -5.25 0.0 3.75 -5.25 0.0 5.25 -5.25 0.0'/>
         </IndexedFaceSet>
       </Shape>
     </Transform>
@@ -529,8 +527,8 @@
       <Inline DEF='CoordinateAxes' url='"../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d" "../../Savage/Tools/Authoring/CoordinateAxes.x3d" "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d" "https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d" "../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl" "../../Savage/Tools/Authoring/CoordinateAxes.wrl" "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl" "https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"'/>
     </Transform>
     <Transform DEF='MovingBoxTransform'>
-      <PositionInterpolator DEF='BoxPath' key='0 0.25 0.5 0.75 1' keyValue='-5 1 5 45 1 5 45 1 -45 -5 1 -45 -5 1 5'/>
-      <TimeSensor DEF='BoxTimer' cycleInterval='10.0' loop='true'/>
+      <PositionInterpolator DEF='BoxPath' key='0.0 0.25 0.5 0.75 1.0' keyValue='-5 1 5 45 1 5 45 1 -45 -5 1 -45 -5 1 5'/>
+      <TimeSensor DEF='BoxTimer' cycleInterval='10' loop='true'/>
       <ROUTE fromField='value_changed' fromNode='BoxPath' toField='translation' toNode='MovingBoxTransform'/>
       <ROUTE fromField='value_changed' fromNode='BoxPath' toField='goalAimPoint' toNode='MoveAimPoint3.1'/>
       <ROUTE fromField='value_changed' fromNode='BoxPath' toField='goalAimPoint' toNode='MoveAimPoint3.2'/>
@@ -544,25 +542,25 @@
         <Box/>
       </Shape>
     </Transform>
-    <!-- ================ CrossHair visualization for center of screen ================ -->
-    <ExternProtoDeclare name='CrossHair' appinfo='CrossHair prototype provides a heads-up display (HUD) crosshair at the view center, which is useful for assessing NavigationInfo lookAt point' url='"../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair" "https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair" "../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair" "https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair"'>
-      <field name='enabled' accessType='initializeOnly' appinfo='whether CrissHair orititype is enabled or not' type='SFBool'/>
-      <field name='set_enabled' accessType='inputOnly' appinfo='control whether enabled/disabled' type='SFBool'/>
-      <field name='markerColor' accessType='inputOutput' appinfo='color of CrossHair marker' type='SFColor'/>
-      <field name='scale' accessType='inputOutput' appinfo='size of CrossHair in meters' type='SFVec3f'/>
-      <field name='positionOffsetFromCamera' accessType='inputOutput' appinfo='distance in front of HUD viewpoint' type='SFVec3f'/>
+    <!--  ================ CrossHair visualization for center of screen ================  -->
+    <ExternProtoDeclare appinfo='CrossHair prototype provides a heads-up display (HUD) crosshair at the view center, which is useful for assessing NavigationInfo lookAt point' name='CrossHair' url='"../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair" "https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair" "../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair" "https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair"'>
+      <field accessType='initializeOnly' appinfo='whether CrissHair orititype is enabled or not' name='enabled' type='SFBool'/>
+      <field accessType='inputOnly' appinfo='control whether enabled/disabled' name='set_enabled' type='SFBool'/>
+      <field accessType='inputOutput' appinfo='color of CrossHair marker' name='markerColor' type='SFColor'/>
+      <field accessType='inputOutput' appinfo='size of CrossHair in meters' name='scale' type='SFVec3f'/>
+      <field accessType='inputOutput' appinfo='distance in front of HUD viewpoint' name='positionOffsetFromCamera' type='SFVec3f'/>
     </ExternProtoDeclare>
     <ProtoInstance DEF='CrossHairInstance' name='CrossHair'>
-      <fieldValue name='enabled' value='true'/>
+      <fieldValue name='enabled' value='True'/>
       <fieldValue name='markerColor' value='1 0.5 0'/>
       <fieldValue name='scale' value='1 1 1'/>
       <fieldValue name='positionOffsetFromCamera' value='0 0 -6'/>
     </ProtoInstance>
-    <!-- turn on CrossHairInstance when animated camera viewpoints are bound -->
+    <!--  turn on CrossHairInstance when animated camera viewpoints are bound  -->
     <ROUTE fromField='isBound' fromNode='Camera.SimpleShotsTest' toField='set_enabled' toNode='CrossHairInstance'/>
     <ROUTE fromField='isBound' fromNode='Camera.AimPointTest' toField='set_enabled' toNode='CrossHairInstance'/>
-    <!-- turn off CrossHairInstance when animated camera viewpoints are unbound <BooleanFilter DEF='NegateCrossHair'/> <ROUTE fromField='isBound' fromNode='Camera.SimpleShotsTest' toField='set_boolean' toNode='NegateCrossHair'/> <ROUTE fromField='isBound' fromNode='Camera.AimPointTest' toField='set_boolean' toNode='NegateCrossHair'/> <ROUTE fromField='inputNegate' fromNode='NegateCrossHair' toField='set_enabled' toNode='CrossHairInstance'/> -->
-    <!-- =============== TODO Launch Prototype Example ============== -->
+    <!--  turn off CrossHairInstance when animated camera viewpoints are unbound <BooleanFilter DEF='NegateCrossHair'/> <ROUTE fromField='isBound' fromNode='Camera.SimpleShotsTest' toField='set_boolean' toNode='NegateCrossHair'/> <ROUTE fromField='isBound' fromNode='Camera.AimPointTest' toField='set_boolean' toNode='NegateCrossHair'/> <ROUTE fromField='inputNegate' fromNode='NegateCrossHair' toField='set_enabled' toNode='CrossHairInstance'/>  -->
+    <!--  =============== TODO Launch Prototype Example ==============  -->
     <Anchor description='launch CameraExample scene' parameter='"target=_blank"' url='"CameraExample.x3d" "https://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.x3d" "CameraExample.wrl" "https://www.web3d.org/x3d/content/examples/Basic/development/CameraExample.wrl"'>
       <Transform translation='0 -3 0'>
         <Shape>
@@ -570,10 +568,11 @@
             <Material diffuseColor='1 1 0.2'/>
           </Appearance>
           <Text string='"CameraPrototype" "defines a prototype" "" "Click on this text to see" "CameraExample scene"'>
-            <FontStyle family='"SERIF"' justify='"MIDDLE" "MIDDLE"' size='0.5'/>
+            <FontStyle justify='"MIDDLE" "MIDDLE"' size='0.5'/>
           </Text>
         </Shape>
       </Transform>
     </Anchor>
   </Scene>
 </X3D>
+

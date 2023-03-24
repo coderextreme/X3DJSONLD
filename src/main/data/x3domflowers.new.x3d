@@ -1,3 +1,6 @@
+<!--
+x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
+-->
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.3.xsd'>
@@ -7,15 +10,18 @@
     <meta content='5 or more prismatic flowers' name='description'/>
     <meta content='X3D-Edit, https://savage.nps.edu/X3D-Edit' name='generator'/>
     <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/x3domflowers.x3d' name='identifier'/>
+    <meta content='24 March 2023' name='translated'/>
+    <meta content='X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html' name='generator'/>
+    <meta content='X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding' name='reference'/>
   </head>
   <Scene>
-    <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE" "ANY"'/>
-    <!-- Images courtesy of Paul Debevec's Light Probe Image Gallery -->
+    <NavigationInfo/>
+    <!--  Images courtesy of Paul Debevec's Light Probe Image Gallery  -->
     <Background backUrl='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_back.png"' bottomUrl='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_bottom.png"' frontUrl='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_front.png"' leftUrl='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_left.png"' rightUrl='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_right.png"' topUrl='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/images/all_probes/stpeters_cross/stpeters_top.png"'/>
     <Group>
       <ExternProtoDeclare name='FlowerProto' url='"../data/flowerproto.json#FlowerProto"'>
-        <field name='vertex' accessType='inputOutput' type='MFString'/>
-        <field name='fragment' accessType='inputOutput' type='MFString'/>
+        <field accessType='inputOutput' name='vertex' type='MFString'/>
+        <field accessType='inputOutput' name='fragment' type='MFString'/>
       </ExternProtoDeclare>
       <ProtoDeclare name='flower'>
         <ProtoBody>
@@ -36,3 +42,4 @@
     </Group>
   </Scene>
 </X3D>
+

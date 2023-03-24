@@ -1,3 +1,6 @@
+<!--
+x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
+-->
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
 <X3D profile='Full' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
@@ -14,20 +17,23 @@
     <meta content='https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/SpatialAudioCameraAnimation.x3d' name='identifier'/>
     <meta content='X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit' name='generator'/>
     <meta content='../license.html' name='license'/>
+    <meta content='24 March 2023' name='translated'/>
+    <meta content='X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html' name='generator'/>
+    <meta content='X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding' name='reference'/>
   </head>
   <Scene>
     <WorldInfo title='SpatialAudioCameraAnimation.x3d'/>
-    <NavigationInfo avatarSize='0.25 1.6 0.75' transitionType='"LINEAR"' type='"EXAMINE" "ANY"'/>
+    <NavigationInfo/>
     <Background backUrl='"images/generic/BK1.png" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png"' bottomUrl='"images/generic/DN1.png" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png"' frontUrl='"images/generic/FR1.png" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png"' leftUrl='"images/generic/LF1.png" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/LF1.png"' rightUrl='"images/generic/RT1.png" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/RT1.png"' topUrl='"images/generic/UP1.png" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png"'/>
     <Viewpoint DEF='Camera001' description='Viewpoint is like camera, prepositioned in locations (and directions) of interest. In this example the camera is the "ears of the user". So, if the trackCurrentView field from ListenerPointSource is TRUE then position and orientation matches the users current view' orientation='1 0 0 -0.523599' position='0 2000 3500'/>
     <TimeSensor DEF='TIMER' cycleInterval='33.333332' loop='true'/>
-    <PositionInterpolator DEF='Camera001-POS-INTERP' key='0 0.25 0.5 0.75 1' keyValue='0 2000 3500 0 2000 0 0 2000 -3500 0 2000 0 0 2000 3500'/>
-    <OrientationInterpolator DEF='Camera001-ROT-INTERP' key='0 0.25 0.5 0.75 1' keyValue='1 0 0 -0.523599 0.99999 0.003554 0.002727 -1.309007 0 -0.965926 -0.258819 -3.141593 0.002282 -0.793351 -0.60876 -3.135645 1 -1.0E-6 0 -0.523599'/>
+    <PositionInterpolator DEF='Camera001-POS-INTERP' key='0.0 0.25 0.5 0.75 1.0' keyValue='0 2000 3500 0 2000 0 0 2000 -3500 0 2000 0 0 2000 3500'/>
+    <OrientationInterpolator DEF='Camera001-ROT-INTERP' key='0.0 0.25 0.5 0.75 1.0' keyValue='1.0 0.0 0.0 -0.523599 0.99999 0.003554 0.002727 -1.309007 0.0 -0.965926 -0.258819 -3.141593 0.002282 -0.793351 -0.60876 -3.135645 1.0 -1e-06 0.0 -0.523599'/>
     <ROUTE fromField='fraction_changed' fromNode='TIMER' toField='set_fraction' toNode='Camera001-POS-INTERP'/>
     <ROUTE fromField='value_changed' fromNode='Camera001-POS-INTERP' toField='set_position' toNode='Camera001'/>
     <ROUTE fromField='fraction_changed' fromNode='TIMER' toField='set_fraction' toNode='Camera001-ROT-INTERP'/>
     <ROUTE fromField='value_changed' fromNode='Camera001-ROT-INTERP' toField='set_orientation' toNode='Camera001'/>
-    <Transform DEF='Floor' translation='1.241 0 0.358'>
+    <Transform DEF='Floor' translation='1.241 0.0 0.358'>
       <Shape>
         <Appearance DEF='WireColor'>
           <Material diffuseColor='0.122 0.114 0.125'/>
@@ -35,12 +41,12 @@
         <Box size='2000 1 2000'/>
       </Shape>
     </Transform>
-    <Transform DEF='TransformAudio1' translation='-933.1235 0 -926.25323'>
+    <Transform DEF='TransformAudio1' translation='-933.123474 0 -926.253235'>
       <Shape>
         <Appearance DEF='WireColor_1'>
           <Material diffuseColor='0.690196 0.101961 0.101961'/>
         </Appearance>
-        <Sphere radius='100.0'/>
+        <Sphere radius='100'/>
       </Shape>
       <Billboard>
         <Transform DEF='violin' rotation='1 0 0 -0.5' scale='100 100 100' translation='0 100 0'>
@@ -49,18 +55,18 @@
               <Material ambientIntensity='0.0933' diffuseColor='1 1 1' shininess='0.51' specularColor='0.46 0.46 0.46'/>
             </Appearance>
             <Text string='"Violin"'>
-              <FontStyle DEF='ModelFontStyle' family='"Times" "SERIF"' justify='"BEGIN"' style='BOLD'/>
+              <FontStyle DEF='ModelFontStyle' family='"Times" "SERIF"' style='BOLD'/>
             </Text>
           </Shape>
         </Transform>
       </Billboard>
     </Transform>
-    <Transform DEF='TransformAudio2' translation='933.4756 0 924.4232'>
+    <Transform DEF='TransformAudio2' translation='933.475586 0 924.423218'>
       <Shape>
         <Appearance DEF='WireColor_2'>
           <Material diffuseColor='0.105882 0.694118 0.580392'/>
         </Appearance>
-        <Sphere radius='100.0'/>
+        <Sphere radius='100'/>
       </Shape>
       <Billboard>
         <Transform DEF='saxophone' rotation='1 0 0 -0.5' scale='100 100 100' translation='0 100 0'>
@@ -90,3 +96,4 @@
     </StreamAudioDestination>
   </Scene>
 </X3D>
+
