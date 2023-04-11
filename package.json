@@ -39,7 +39,7 @@
     "url": "^0.11.0",
     "x_ite": "*",
     "x3dom": "*",
-    "xml2js": "^0.4.23",
+    "xml2js": "^0.5.0",
     "xmlhttprequest": "*",
     "xslt3": "*"
   },
