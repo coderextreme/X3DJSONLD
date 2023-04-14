@@ -1,6 +1,6 @@
 var runsaxon = require('./allsaxon');
 var config = require('./config');
-import fs from 'node:fs';
+import fs from 'fs';
 
 export function runAndSend(args, callback) {
 	console.error("calling runsaxon", args);
