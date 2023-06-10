@@ -4,7 +4,7 @@
 #define WINAPI
 #define AFX_EXT_CLASS
 #define EXPORT32
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Concretes.h"
+#include "C:/x3d-code/www.web3d.org/x3d/stylesheets/cpp/concretes.h"
 int main(int argc, char ** argv) {
 CX3DScene m_pScene;
 CBrowser browser = X3D.getBrowser();
@@ -275,9 +275,14 @@ ListenerPointSource55->setTrackCurrentView(True);
 group->addChildren(*ListenerPointSource55);
 
 CStreamAudioDestination* StreamAudioDestination56 = (CStreamAudioDestination *)(m_pScene.createNode("StreamAudioDestination"));
+StreamAudioDestination56->setChannelCountMode("MAX");
+StreamAudioDestination56->setChannelInterpretation("SPEAKERS");
 CSpatialSound* SpatialSound57 = (CSpatialSound *)(m_pScene.createNode("SpatialSound"));
 SpatialSound57->setDEF("Audio1");
+SpatialSound57->setDistanceModel("INVERSE");
 CGain* Gain58 = (CGain *)(m_pScene.createNode("Gain"));
+Gain58->setChannelCountMode("MAX");
+Gain58->setChannelInterpretation("SPEAKERS");
 CAudioClip* AudioClip59 = (CAudioClip *)(m_pScene.createNode("AudioClip"));
 AudioClip59->setDescription("Violin");
 AudioClip59->setLoop(True);
@@ -290,7 +295,10 @@ StreamAudioDestination56->addChildren(*SpatialSound57);
 
 CSpatialSound* SpatialSound60 = (CSpatialSound *)(m_pScene.createNode("SpatialSound"));
 SpatialSound60->setDEF("Audio2");
+SpatialSound60->setDistanceModel("INVERSE");
 CGain* Gain61 = (CGain *)(m_pScene.createNode("Gain"));
+Gain61->setChannelCountMode("MAX");
+Gain61->setChannelInterpretation("SPEAKERS");
 CAudioClip* AudioClip62 = (CAudioClip *)(m_pScene.createNode("AudioClip"));
 AudioClip62->setDescription("Saxophone");
 AudioClip62->setLoop(True);
