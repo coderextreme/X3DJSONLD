@@ -221,7 +221,7 @@
     <ROUTE fromField='fraction_changed' fromNode='LRearUp1' toField='set_fraction' toNode='LRearInterUp1'/>
     <ROUTE fromField='value_changed' fromNode='LRearInterDown1' toField='set_rotation' toNode='RearLeftWheelTransform'/>
     <ROUTE fromField='value_changed' fromNode='LRearInterUp1' toField='set_rotation' toNode='RearLeftWheelTransform'/>
-    <Background groundAngle='1.309 1.570796' groundColor='0 0.3 0.7 0 0.35 0.75 0 0.4 0.8' skyAngle='1.309 1.571' skyColor='0 0.3 0.8 0 0.5 1 1 1 1'/>
+    <Background groundAngle='1.309 1.5708' groundColor='0 0.3 0.7 0 0.35 0.75 0 0.4 0.8' skyAngle='1.309 1.571' skyColor='0 0.3 0.8 0 0.5 1 1 1 1'/>
     <Transform DEF='RightmostAmraamTransform' rotation='-1 0 0 1.57' scale='1.4 1.4 1.4' translation='15.65 0 4.5'>
       <Inline DEF='Amraam' url='"../../Weapons/Missiles/Amraam.x3d" "https://savage.nps.edu/Savage/Weapons/Missiles/Amraam.x3d" "../../Weapons/Missiles/Amraam.wrl" "https://savage.nps.edu/Savage/Weapons/Missiles/Amraam.wrl"'/>
     </Transform>

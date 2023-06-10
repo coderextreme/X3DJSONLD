@@ -68,7 +68,7 @@
           },
           {
             "@name":"translated",
-            "@content":"11 April 2023"
+            "@content":"09 June 2023"
           },
           {
             "@name":"generator",
@@ -1038,7 +1038,7 @@
           },
           { "Background":
             {
-              "@groundAngle":[1.309,1.570796],
+              "@groundAngle":[1.309,1.5708],
               "@groundColor":[0,0.3,0.7,0,0.35,0.75,0,0.4,0.8],
               "@skyAngle":[1.309,1.571],
               "@skyColor":[0,0.3,0.8,0,0.5,1,1,1,1]
