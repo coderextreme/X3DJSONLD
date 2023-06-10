@@ -219,18 +219,28 @@ var X3D0 =  X3D(
               trackCurrentView_ : true),
 
             StreamAudioDestination(
+              channelCountMode_ : SFString('MAX'),
+              channelInterpretation_ : SFString('SPEAKERS'),
               children_ : [
                 Gain(
+                  channelCountMode_ : SFString('MAX'),
+                  channelInterpretation_ : SFString('SPEAKERS'),
                   children_ : [
                     ChannelMerger(
+                      channelCountMode_ : SFString('MAX'),
+                      channelInterpretation_ : SFString('SPEAKERS'),
                       children_ : [
                         ChannelSelector(
+                          channelCountMode_ : SFString('MAX'),
+                          channelInterpretation_ : SFString('SPEAKERS'),
                           children_ : [
                             Gain(
                               USE_ : SFString('ChannelSplitter'))]),
 
                         ChannelSelector(
                           channelSelection_ : 1,
+                          channelCountMode_ : SFString('MAX'),
+                          channelInterpretation_ : SFString('SPEAKERS'),
                           children_ : [
                             Gain(
                               USE_ : SFString('ChannelSplitter'))])])])]),
@@ -238,6 +248,7 @@ var X3D0 =  X3D(
             ChannelSplitter(
               DEF_ : SFString('ChannelSplitter'),
               channelCountMode_ : SFString('explicit'),
+              channelInterpretation_ : SFString('SPEAKERS'),
               outputs_ : 
                 AudioClip(
                   description_ : SFString('Violin'),

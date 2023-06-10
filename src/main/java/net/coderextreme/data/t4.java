@@ -75,9 +75,9 @@ ProtoInstance ProtoInstance17 = null;
         .addMeta(new meta().setName("description").setContent("Test Case for Proto Expander"))
         .addMeta(new meta().setName("license").setContent("https://www.web3d.org/x3d/content/examples/license.html")))
       .setScene(new Scene()
-        .addChild(new NavigationInfo().setType(new java.lang.String[] {"EXAMINE","FLY","WALK"}).setSpeed(3f).setAvatarSize(new MFFloat0().getArray()))
+        .addChild(new NavigationInfo().setType(new java.lang.String[] {"EXAMINE","FLY","WALK"}).setSpeed(3.0000f).setAvatarSize(new MFFloat0().getArray()))
         .addChild(new WorldInfo().setTitle("Arts Mapper"))
-        .addChild(new Viewpoint().setDescription("looking North").setPosition(new float[] {0f,60f,110f}).setOrientation(new float[] {1f,0f,0f,-0.699999988079071f}).setFieldOfView(0.785398125648499f))
+        .addChild(new Viewpoint().setDescription("looking North").setPosition(new float[] {0f,60f,110f}).setOrientation(new float[] {1f,0f,0f,-0.699999988079071f}).setFieldOfView(0.7854f))
         .addChild(new ProtoDeclare().setName("org")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType("SFVec3f").setName("posi").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("0 0 0"))
@@ -91,7 +91,7 @@ ProtoInstance ProtoInstance17 = null;
                   .setMaterial(new Material().setDiffuseColor(new float[] {1f,1f,1f})
                     .setIS(new IS()
                       .addConnect(new connect().setNodeField("emissiveColor").setProtoField("col")))))
-                .setGeometry(new Sphere().setRadius(5.10000002384186f))))))
+                .setGeometry(new Sphere().setRadius(5.1000f))))))
         .addChild(new ProtoDeclare().setName("r")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType("SFVec3f").setName("pos").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("0 0 0")))
@@ -184,7 +184,7 @@ ProtoInstance17
     }
 protected class MFFloat0 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {200f,200f,120f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {200.0000f,200.0000f,120.0000f});
   }
 }
 protected class MFString1 {

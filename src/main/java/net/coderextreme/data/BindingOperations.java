@@ -106,7 +106,7 @@ public class BindingOperations {
           .addChild(new Shape()
             .setGeometry(new Box().setSize(new float[] {7f,1f,0.02f}))
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setTransparency(1f))))
+              .setMaterial(new Material().setTransparency(1.0000f))))
           .addChild(new TouchSensor().setDEF("TextTouchSensor").setDescription("Click to begin animating viewpoint selections"))
           .addChild(new TimeSensor().setDEF("Clock").setCycleInterval(10d))
           .addChild(new ROUTE().setFromField("touchTime").setFromNode("TextTouchSensor").setToField("set_startTime").setToNode("Clock"))
@@ -264,7 +264,7 @@ protected class MFString6 {
 }
 protected class MFFloat7 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.1f,0.2f,0.3f,0.4f,0.5f,0.6f,0.7f,0.8f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.1000f,0.2000f,0.3000f,0.4000f,0.5000f,0.6000f,0.7000f,0.8000f,1.0000f});
   }
 }
 protected class MFInt328 {

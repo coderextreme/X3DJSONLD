@@ -120,12 +120,12 @@ ProtoInstance1
     }
 protected class MFFloat0 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.5f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.5000f,1.0000f});
   }
 }
 protected class MFRotation1 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,1f,0f,0f,0f,1f,0f,3.14f,0f,1f,0f,6.28f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,1.0000f,0.0000f,0.0000f,0.0000f,1.0000f,0.0000f,3.1400f,0.0000f,1.0000f,0.0000f,6.2800f});
   }
 }
 }

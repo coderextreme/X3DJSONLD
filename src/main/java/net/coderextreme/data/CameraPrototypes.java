@@ -914,27 +914,27 @@ public class CameraPrototypes {
     }
 protected class MFFloat0 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,1.0000f});
   }
 }
 protected class MFVec3f1 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0f,0f,0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f});
   }
 }
 protected class MFFloat2 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,1.0000f});
   }
 }
 protected class MFRotation3 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,1f,0f,0f,0f,1f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,1.0000f,0.0000f,0.0000f,0.0000f,1.0000f,0.0000f,0.0000f});
   }
 }
 protected class MFColor4 {
   protected org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.282353f,0.380392f,0.470588f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.2824f,0.3804f,0.4706f});
   }
 }
 protected class MFString5 {

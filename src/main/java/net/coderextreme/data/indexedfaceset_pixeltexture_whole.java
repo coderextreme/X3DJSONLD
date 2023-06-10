@@ -80,7 +80,7 @@ public class indexedfaceset_pixeltexture_whole {
           .setAppearance(new Appearance()
             .setMaterial(new Material())
             .setTexture(new PixelTexture().setImage(new int[] {2,2,4,0xFF0000FF,16711935,0xFFFFFFFF,0xFFFF00FF})))
-          .setGeometry(new IndexedFaceSet().setColorPerVertex(false).setCoordIndex(new MFInt320().getArray()).setCreaseAngle(0.5f).setTexCoordIndex(new MFInt321().getArray())
+          .setGeometry(new IndexedFaceSet().setColorPerVertex(false).setCoordIndex(new MFInt320().getArray()).setCreaseAngle(0.5000f).setTexCoordIndex(new MFInt321().getArray())
             .setColor(new Color().setColor(new MFColor2().getArray()))
             .setCoord(new Coordinate().setPoint(new MFVec3f3().getArray()))
             .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f4().getArray())))))      ;
@@ -98,17 +98,17 @@ protected class MFInt321 {
 }
 protected class MFColor2 {
   protected org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0f,1f,0f,0f,1f,0f,0f,1f,0f,0f,1f,0f,0f,1f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.0000f,1.0000f,0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFVec3f3 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-2f,1f,1f,-2f,-1f,1f,2f,1f,1f,2f,-1f,1f,2f,1f,-1f,2f,-1f,-1f,-2f,1f,-1f,-2f,-1f,-1f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-2.0000f,1.0000f,1.0000f,-2.0000f,-1.0000f,1.0000f,2.0000f,1.0000f,1.0000f,2.0000f,-1.0000f,1.0000f,2.0000f,1.0000f,-1.0000f,2.0000f,-1.0000f,-1.0000f,-2.0000f,1.0000f,-1.0000f,-2.0000f,-1.0000f,-1.0000f});
   }
 }
 protected class MFVec2f4 {
   protected org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {0f,1f,0f,0f,1f,1f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {0.0000f,1.0000f,0.0000f,0.0000f,1.0000f,1.0000f,1.0000f,0.0000f});
   }
 }
 }

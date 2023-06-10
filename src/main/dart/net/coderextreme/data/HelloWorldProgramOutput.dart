@@ -84,7 +84,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('modified'),
-              content_ : SFString('4 July 2022')),
+              content_ : SFString('29 January 2023')),
 
             meta(
               name_ : SFString('generator'),

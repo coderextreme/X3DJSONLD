@@ -54,7 +54,7 @@ public class flower3 {
         .addMeta(new meta().setName("description").setContent("a flower")))
       .setScene(new Scene()
         .addChild(new NavigationInfo())
-        .addChild(new DirectionalLight().setDirection(new float[] {0f,-0.8f,-0.2f}).setIntensity(0.5f))
+        .addChild(new DirectionalLight().setDirection(new float[] {0f,-0.8f,-0.2f}).setIntensity(0.5000f))
         .addChild(new Background().setSkyColor(new MFColor0().getArray()))
         .addChild(new Viewpoint().setDescription("One mathematical orbital").setPosition(new float[] {0f,0f,50f}))
         .addChild(new Transform().setDEF("OrbitTransform").setTranslation(new float[] {8f,0f,0f})
@@ -150,7 +150,7 @@ public class flower3 {
     }
 protected class MFColor0 {
   protected org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {1f,1f,1f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {1.0000f,1.0000f,1.0000f});
   }
 }
 }

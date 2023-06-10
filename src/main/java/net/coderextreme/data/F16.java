@@ -68,55 +68,55 @@ public class F16 {
             .addChild(new Shape().setDEF("Nose")
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {0.25f,0.25f,0.25f})))
-              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt320().getArray()).setCreaseAngle(0.5f).setNormalIndex(new MFInt321().getArray()).setSolid(false)
+              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt320().getArray()).setCreaseAngle(0.5000f).setNormalIndex(new MFInt321().getArray()).setSolid(false)
                 .setCoord(new Coordinate().setDEF("coordinates").setPoint(new MFVec3f2().getArray()))
                 .setNormal(new Normal().setDEF("normalVector").setVector(new MFVec3f3().getArray()))))
             .addChild(new Shape().setDEF("Canopy")
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDiffuseColor(new float[] {0.25f,0.25f,0.25f}).setTransparency(0.8f)))
-              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt324().getArray()).setCreaseAngle(0.5f).setNormalIndex(new MFInt325().getArray()).setSolid(false)
+                .setMaterial(new Material().setDiffuseColor(new float[] {0.25f,0.25f,0.25f}).setTransparency(0.8000f)))
+              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt324().getArray()).setCreaseAngle(0.5000f).setNormalIndex(new MFInt325().getArray()).setSolid(false)
                 .setCoord(new Coordinate().setUSE("coordinates"))
                 .setNormal(new Normal().setUSE("normalVector"))))
             .addChild(new Shape().setDEF("MainBodyAndWingEdges")
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {0.1796f,0.1914f,0.2382f})))
-              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt326().getArray()).setCreaseAngle(0.5f).setNormalIndex(new MFInt327().getArray()).setSolid(false)
+              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt326().getArray()).setCreaseAngle(0.5000f).setNormalIndex(new MFInt327().getArray()).setSolid(false)
                 .setCoord(new Coordinate().setUSE("coordinates"))
                 .setNormal(new Normal().setUSE("normalVector"))))
             .addChild(new Shape().setDEF("ExhaustExitFlatPanel")
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {0.5f,0.5f,0.5f})))
-              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt328().getArray()).setCreaseAngle(0.5f).setNormalIndex(new MFInt329().getArray()).setSolid(false)
+              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt328().getArray()).setCreaseAngle(0.5000f).setNormalIndex(new MFInt329().getArray()).setSolid(false)
                 .setCoord(new Coordinate().setUSE("coordinates"))
                 .setNormal(new Normal().setUSE("normalVector"))))
             .addChild(new Shape().setDEF("ExhaustEntranceFrontBottomPart")
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {0.2304f,0.2304f,0.2304f})))
-              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3210().getArray()).setCreaseAngle(0.5f).setNormalIndex(new MFInt3211().getArray()).setSolid(false)
+              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3210().getArray()).setCreaseAngle(0.5000f).setNormalIndex(new MFInt3211().getArray()).setSolid(false)
                 .setCoord(new Coordinate().setUSE("coordinates"))
                 .setNormal(new Normal().setUSE("normalVector"))))
             .addChild(new Shape().setDEF("ThirdPartFromNoseUnderCanopy")
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {0.6f,0.6f,0.6f})))
-              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3212().getArray()).setCreaseAngle(0.5f).setNormalIndex(new MFInt3213().getArray()).setSolid(false)
+              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3212().getArray()).setCreaseAngle(0.5000f).setNormalIndex(new MFInt3213().getArray()).setSolid(false)
                 .setCoord(new Coordinate().setUSE("coordinates"))
                 .setNormal(new Normal().setUSE("normalVector"))))
             .addChild(new Shape().setDEF("RearExhaustExitPartLastPartOfMainBody")
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDiffuseColor(new float[] {0.37f,0.37f,0.37f}).setShininess(0.5f)))
-              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3214().getArray()).setCreaseAngle(0.5f).setNormalIndex(new MFInt3215().getArray()).setSolid(false)
+                .setMaterial(new Material().setDiffuseColor(new float[] {0.37f,0.37f,0.37f}).setShininess(0.5000f)))
+              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3214().getArray()).setCreaseAngle(0.5000f).setNormalIndex(new MFInt3215().getArray()).setSolid(false)
                 .setCoord(new Coordinate().setUSE("coordinates"))
                 .setNormal(new Normal().setUSE("normalVector"))))
             .addChild(new Shape().setDEF("WingsAndTail")
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setEmissiveColor(new float[] {0.1796f,0.1914f,0.2382f})))
-              .setGeometry(new IndexedFaceSet().setColorPerVertex(false).setCoordIndex(new MFInt3216().getArray()).setCreaseAngle(0.5f).setNormalIndex(new MFInt3217().getArray()).setSolid(false)
+              .setGeometry(new IndexedFaceSet().setColorPerVertex(false).setCoordIndex(new MFInt3216().getArray()).setCreaseAngle(0.5000f).setNormalIndex(new MFInt3217().getArray()).setSolid(false)
                 .setCoord(new Coordinate().setUSE("coordinates"))
                 .setNormal(new Normal().setUSE("normalVector"))))
             .addChild(new Shape().setDEF("SecondPartAfterNose")
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {0.6f,0.6f,0.6f})))
-              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3218().getArray()).setCreaseAngle(0.5f).setNormalIndex(new MFInt3219().getArray()).setSolid(false)
+              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3218().getArray()).setCreaseAngle(0.5000f).setNormalIndex(new MFInt3219().getArray()).setSolid(false)
                 .setCoord(new Coordinate().setUSE("coordinates"))
                 .setNormal(new Normal().setUSE("normalVector")))))
           .addChild(new Transform().setDEF("CockpitTransform").setRotation(new float[] {1f,0f,0f,-0.1f}).setScale(new float[] {0.045f,0.045f,0.045f}).setTranslation(new float[] {0f,1f,-10f})
@@ -135,15 +135,15 @@ public class F16 {
           .addChild(new Transform().setDEF("CockpitButtonsTransform")
             .addChild(new Transform().setDEF("UpButtonTransform").setRotation(new float[] {1f,0f,0f,1.57f}).setScale(new float[] {0.008f,0.008f,0.008f}).setTranslation(new float[] {-0.95f,1.05f,-10f})
               .addChild(new Shape()
-                .setGeometry(new Cylinder().setHeight(1f).setRadius(4f))
+                .setGeometry(new Cylinder().setHeight(1.0000f).setRadius(4.0000f))
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(new float[] {1f,0f,0f}).setShininess(0.8f))))
+                  .setMaterial(new Material().setDiffuseColor(new float[] {1f,0f,0f}).setShininess(0.8000f))))
               .addChild(new TouchSensor().setDEF("TouchSensorUp").setDescription("click for gears up")))
             .addChild(new Transform().setDEF("DownButtonTransform").setRotation(new float[] {1f,0f,0f,1.57f}).setScale(new float[] {0.008f,0.008f,0.008f}).setTranslation(new float[] {-0.83f,1.05f,-10f})
               .addChild(new Shape()
-                .setGeometry(new Cylinder().setHeight(1f).setRadius(4f))
+                .setGeometry(new Cylinder().setHeight(1.0000f).setRadius(4.0000f))
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(new float[] {1f,1f,0f}).setShininess(0.8f))))
+                  .setMaterial(new Material().setDiffuseColor(new float[] {1f,1f,0f}).setShininess(0.8000f))))
               .addChild(new TouchSensor().setDEF("TouchSensorDown").setDescription("click for gears down")))
             .addChild(new Transform().setDEF("GearUpTextTransform").setScale(new float[] {0.06f,0.06f,0.06f}).setTranslation(new float[] {-0.65f,1.55f,-10f})
               .addChild(new Shape()
@@ -157,9 +157,9 @@ public class F16 {
                   .setMaterial(new Material().setDiffuseColor(new float[] {1f,1f,0f})))))
             .addChild(new Transform().setDEF("FireButtonTransform").setRotation(new float[] {1f,0f,0f,1.57f}).setScale(new float[] {0.008f,0.008f,0.008f}).setTranslation(new float[] {0.52f,1.6f,-10f})
               .addChild(new Shape()
-                .setGeometry(new Cylinder().setHeight(1f).setRadius(4f))
+                .setGeometry(new Cylinder().setHeight(1.0000f).setRadius(4.0000f))
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(new float[] {0f,0.75f,0.18f}).setShininess(0.8f))))
+                  .setMaterial(new Material().setDiffuseColor(new float[] {0f,0.75f,0.18f}).setShininess(0.8000f))))
               .addChild(new TouchSensor().setDEF("FireSensor").setDescription("click to fire")))
             .addChild(new Transform().setDEF("FireTextTransform").setScale(new float[] {0.06f,0.06f,0.06f}).setTranslation(new float[] {0.36f,1.5f,-10f})
               .addChild(new Shape()
@@ -174,9 +174,9 @@ public class F16 {
           .addChild(new Viewpoint().setDescription("Cockpit Target View").setOrientation(new float[] {-0.834f,-0.523f,-0.176f,0.0875f}).setPosition(new float[] {0f,2.4f,-7.9f}))
           .addChild(new Transform().setDEF("NoseAntennaTransform").setRotation(new float[] {1f,0f,0f,1.57f}).setTranslation(new float[] {0f,-0.275f,-21f})
             .addChild(new Shape()
-              .setGeometry(new Cylinder().setRadius(0.05f))
+              .setGeometry(new Cylinder().setRadius(0.0500f))
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDiffuseColor(new float[] {0.5f,0.5f,0.5f}).setShininess(0.5f))))))
+                .setMaterial(new Material().setDiffuseColor(new float[] {0.5f,0.5f,0.5f}).setShininess(0.5000f))))))
         .addChild(new TimeSensor().setDEF("WheelUp").setCycleInterval(8d))
         .addChild(new OrientationInterpolator().setDEF("GearUpInterpolator").setKey(new MFFloat29().getArray()).setKeyValue(new MFRotation30().getArray()))
         .addChild(new ROUTE().setFromField("touchTime").setFromNode("TouchSensorUp").setToField("set_startTime").setToNode("WheelUp"))
@@ -271,12 +271,12 @@ protected class MFInt321 {
 }
 protected class MFVec3f2 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.32f,0.36f,-4.91f,-0.38f,0.43f,-4.21f,0f,0.6f,-4.2f,0f,0.5f,-4.9f,-0.5f,0f,-4.9f,-0.6f,0f,-4.2f,1f,0f,5.8f,1f,0f,5.3f,2.8f,-0.4f,6.3f,2.8f,-0.4f,6.61f,0.31f,-0.36f,-4.9f,0.4f,-0.35f,-4.2f,0f,-0.4f,-4.2f,0f,-0.4f,-4.9f,-0.31f,-0.36f,-4.9f,-0.4f,-0.35f,-4.2f,0.5f,0f,-4.9f,0.6f,0f,-4.2f,0.32f,0.36f,-4.91f,0.38f,0.43f,-4.21f,-1f,0f,5.8f,-1f,0f,5.3f,-2.8f,-0.4f,6.3f,-2.8f,-0.4f,6.61f,0f,-0.1f,-7f,-0.31f,-0.36f,-4.9f,-0.5f,0f,-4.9f,0f,-0.1f,-7f,0f,-0.4f,-4.9f,0.31f,-0.36f,-4.9f,0.5f,0f,-4.9f,0.32f,0.36f,-4.91f,-0.27f,0.93f,-3.51f,0f,1.1f,-3.6f,-0.33f,0.5f,-3.41f,-0.34f,0.9f,-1.73f,0f,0.9f,-1f,0f,1.1f,-1.8f,-0.38f,0.64f,-1.68f,0.34f,0.9f,-1.73f,0f,0.9f,-1f,0.38f,0.64f,-1.68f,0.34f,0.9f,-1.73f,0.27f,0.93f,-3.51f,0.33f,0.5f,-3.41f,0f,1.3f,-2.8f,0.45f,1.02f,-2.68f,0.38f,0.64f,-1.68f,0.53f,0.5f,-2.56f,-0.53f,0.5f,-2.56f,-0.45f,1.02f,-2.68f,-0.53f,0.75f,0f,-0.56f,0.66f,2.8f,0f,0.7f,2.8f,0f,0.8f,0f,-1.1f,0.3f,0f,-1f,0.3f,2.8f,-0.37f,0.57f,4.9f,0f,0.59f,4.9f,-0.7f,0.3f,4.9f,-0.7f,0.3f,4.9f,-0.7f,0f,7f,-0.5f,0.49f,7f,-0.5f,0.49f,7f,0f,0.7f,7f,-1.4f,0f,0f,-1.4f,0f,3.9f,-1.4f,0f,3.9f,-1f,0f,3.9f,-1f,0.3f,2.8f,-1f,0.3f,4.9f,-0.59f,0.65f,-0.77f,-0.8f,0.3f,-0.6f,-1.4f,0f,-0.7f,-1f,-0.1f,2.8f,-0.7f,-0.7f,-2.5f,-0.5f,-0.9f,-2.5f,-0.5f,-0.9f,-0.6f,-0.7f,-0.7f,-0.6f,0f,-1f,-2.5f,0f,-1f,-0.6f,-0.72f,-0.12f,-2.5f,-0.8f,-0.3f,-2.5f,-0.8f,-0.3f,-0.6f,-0.8f,-0.3f,-2.5f,-0.8f,-0.3f,-0.6f,-1.4f,0f,0f,-1.4f,0f,-0.7f,-0.7f,-0.1f,4.9f,-1f,-0.1f,4.9f,-0.5f,-0.9f,4.9f,-0.7f,-0.7f,4.9f,0f,-1f,4.9f,-0.7f,-0.1f,4.9f,-0.5f,-0.5f,7f,-0.7f,0f,7f,0f,-0.7f,7f,-1f,0f,7.4f,-2.8f,-0.4f,7.1f,-2.57f,-0.32f,7.42f,-4.9f,0.1f,4f,-5.1f,0.1f,4f,-5.1f,-0.1f,4f,-4.9f,-0.1f,4f,-5.1f,0.1f,1.6f,-5.1f,-0.1f,1.6f,-4.9f,0.1f,2.8f,-4.9f,-0.1f,2.8f,-0.58f,-0.83f,3.6f,-0.72f,-1.4f,3.9f,-0.69f,-1.32f,4.9f,-0.58f,-0.83f,4.9f,0.58f,-0.83f,3.6f,0.72f,-1.4f,3.9f,0.69f,-1.32f,4.9f,0.58f,-0.83f,4.9f,4.9f,-0.1f,2.8f,5.1f,-0.1f,1.6f,5.1f,-0.1f,4f,4.9f,-0.1f,4f,-0.8f,0f,-2.5f,4.9f,0.1f,4f,5.1f,0.1f,4f,5.1f,0.1f,1.6f,4.9f,0.1f,2.8f,0.59f,0.65f,-0.77f,0.8f,0.3f,-0.6f,0.8f,0f,-2.5f,-0.8f,0f,-2.5f,0.8f,-0.3f,-0.6f,0.72f,-0.12f,-2.5f,0.8f,0f,-2.5f,1f,0f,7.4f,2.8f,-0.4f,7.1f,2.57f,-0.32f,7.42f,-0.7f,0f,7.4f,0.5f,-0.9f,4.9f,0.7f,-0.7f,4.9f,0.5f,-0.5f,7f,-4.9f,0f,2.8f,-4.9f,0f,3.9f,0.7f,-0.1f,4.9f,0.7f,0f,7f,1.4f,0f,0f,4.9f,0f,2.8f,4.9f,0f,3.9f,1.4f,0f,3.9f,1.4f,0f,-0.7f,1.4f,0f,-0.7f,0.7f,-0.7f,-0.6f,0.8f,-0.3f,-0.6f,0.5f,-0.9f,-0.6f,1f,-0.1f,4.9f,1f,0.3f,4.9f,0.7f,0f,7.4f,0.7f,0.3f,4.9f,0.7f,-0.1f,4.9f,0.56f,0.66f,2.8f,0.53f,0.75f,0f,1f,0.3f,2.8f,1.1f,0.3f,0f,0.37f,0.57f,4.9f,0.7f,0.3f,4.9f,0.5f,0.49f,7f,0.7f,0f,7f,0.5f,0.49f,7f,1.4f,0f,3.9f,1.4f,0f,0f,1f,0.3f,2.8f,1f,0f,3.9f,1f,-0.1f,2.8f,0.5f,-0.9f,-2.5f,0.7f,-0.7f,-2.5f,0.8f,-0.3f,-2.5f,0.8f,-0.3f,-2.5f,1f,0.3f,3.9f,0.59f,0.65f,-0.77f,0f,0.7f,2.8f,0f,1.4f,4.5f,0f,0.59f,4.9f,0f,3.5f,6.8f,0f,3.5f,8.1f,0f,1.4f,7.3f,0f,0.7f,7f,0f,0.7f,7.3f,-1f,0.3f,3.9f,0f,0.35f,7.7f,-0.25f,0.24f,7.7f,-0.35f,0f,7.7f,-0.25f,-0.25f,7.7f,0f,-0.35f,7.7f,0.25f,-0.25f,7.7f,0.35f,0f,7.7f,0.25f,0.24f,7.7f,0f,-0.2f,-2.5f,0.7f,-0.7f,-2.5f,0.5f,-0.9f,-2.5f,0f,-1f,-2.5f,-0.5f,-0.9f,-2.5f,-0.7f,-0.7f,-2.5f,0f,-0.2f,-2.5f,-0.72f,-0.12f,-2.5f,0.72f,-0.12f,-2.5f,0.25f,0.24f,7.7f,0.35f,0f,7.7f,-0.35f,0f,7.7f,-0.25f,0.24f,7.7f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.3200f,0.3600f,-4.9100f,-0.3800f,0.4300f,-4.2100f,0.0000f,0.6000f,-4.2000f,0.0000f,0.5000f,-4.9000f,-0.5000f,0.0000f,-4.9000f,-0.6000f,0.0000f,-4.2000f,1.0000f,0.0000f,5.8000f,1.0000f,0.0000f,5.3000f,2.8000f,-0.4000f,6.3000f,2.8000f,-0.4000f,6.6100f,0.3100f,-0.3600f,-4.9000f,0.4000f,-0.3500f,-4.2000f,0.0000f,-0.4000f,-4.2000f,0.0000f,-0.4000f,-4.9000f,-0.3100f,-0.3600f,-4.9000f,-0.4000f,-0.3500f,-4.2000f,0.5000f,0.0000f,-4.9000f,0.6000f,0.0000f,-4.2000f,0.3200f,0.3600f,-4.9100f,0.3800f,0.4300f,-4.2100f,-1.0000f,0.0000f,5.8000f,-1.0000f,0.0000f,5.3000f,-2.8000f,-0.4000f,6.3000f,-2.8000f,-0.4000f,6.6100f,0.0000f,-0.1000f,-7.0000f,-0.3100f,-0.3600f,-4.9000f,-0.5000f,0.0000f,-4.9000f,0.0000f,-0.1000f,-7.0000f,0.0000f,-0.4000f,-4.9000f,0.3100f,-0.3600f,-4.9000f,0.5000f,0.0000f,-4.9000f,0.3200f,0.3600f,-4.9100f,-0.2700f,0.9300f,-3.5100f,0.0000f,1.1000f,-3.6000f,-0.3300f,0.5000f,-3.4100f,-0.3400f,0.9000f,-1.7300f,0.0000f,0.9000f,-1.0000f,0.0000f,1.1000f,-1.8000f,-0.3800f,0.6400f,-1.6800f,0.3400f,0.9000f,-1.7300f,0.0000f,0.9000f,-1.0000f,0.3800f,0.6400f,-1.6800f,0.3400f,0.9000f,-1.7300f,0.2700f,0.9300f,-3.5100f,0.3300f,0.5000f,-3.4100f,0.0000f,1.3000f,-2.8000f,0.4500f,1.0200f,-2.6800f,0.3800f,0.6400f,-1.6800f,0.5300f,0.5000f,-2.5600f,-0.5300f,0.5000f,-2.5600f,-0.4500f,1.0200f,-2.6800f,-0.5300f,0.7500f,0.0000f,-0.5600f,0.6600f,2.8000f,0.0000f,0.7000f,2.8000f,0.0000f,0.8000f,0.0000f,-1.1000f,0.3000f,0.0000f,-1.0000f,0.3000f,2.8000f,-0.3700f,0.5700f,4.9000f,0.0000f,0.5900f,4.9000f,-0.7000f,0.3000f,4.9000f,-0.7000f,0.3000f,4.9000f,-0.7000f,0.0000f,7.0000f,-0.5000f,0.4900f,7.0000f,-0.5000f,0.4900f,7.0000f,0.0000f,0.7000f,7.0000f,-1.4000f,0.0000f,0.0000f,-1.4000f,0.0000f,3.9000f,-1.4000f,0.0000f,3.9000f,-1.0000f,0.0000f,3.9000f,-1.0000f,0.3000f,2.8000f,-1.0000f,0.3000f,4.9000f,-0.5900f,0.6500f,-0.7700f,-0.8000f,0.3000f,-0.6000f,-1.4000f,0.0000f,-0.7000f,-1.0000f,-0.1000f,2.8000f,-0.7000f,-0.7000f,-2.5000f,-0.5000f,-0.9000f,-2.5000f,-0.5000f,-0.9000f,-0.6000f,-0.7000f,-0.7000f,-0.6000f,0.0000f,-1.0000f,-2.5000f,0.0000f,-1.0000f,-0.6000f,-0.7200f,-0.1200f,-2.5000f,-0.8000f,-0.3000f,-2.5000f,-0.8000f,-0.3000f,-0.6000f,-0.8000f,-0.3000f,-2.5000f,-0.8000f,-0.3000f,-0.6000f,-1.4000f,0.0000f,0.0000f,-1.4000f,0.0000f,-0.7000f,-0.7000f,-0.1000f,4.9000f,-1.0000f,-0.1000f,4.9000f,-0.5000f,-0.9000f,4.9000f,-0.7000f,-0.7000f,4.9000f,0.0000f,-1.0000f,4.9000f,-0.7000f,-0.1000f,4.9000f,-0.5000f,-0.5000f,7.0000f,-0.7000f,0.0000f,7.0000f,0.0000f,-0.7000f,7.0000f,-1.0000f,0.0000f,7.4000f,-2.8000f,-0.4000f,7.1000f,-2.5700f,-0.3200f,7.4200f,-4.9000f,0.1000f,4.0000f,-5.1000f,0.1000f,4.0000f,-5.1000f,-0.1000f,4.0000f,-4.9000f,-0.1000f,4.0000f,-5.1000f,0.1000f,1.6000f,-5.1000f,-0.1000f,1.6000f,-4.9000f,0.1000f,2.8000f,-4.9000f,-0.1000f,2.8000f,-0.5800f,-0.8300f,3.6000f,-0.7200f,-1.4000f,3.9000f,-0.6900f,-1.3200f,4.9000f,-0.5800f,-0.8300f,4.9000f,0.5800f,-0.8300f,3.6000f,0.7200f,-1.4000f,3.9000f,0.6900f,-1.3200f,4.9000f,0.5800f,-0.8300f,4.9000f,4.9000f,-0.1000f,2.8000f,5.1000f,-0.1000f,1.6000f,5.1000f,-0.1000f,4.0000f,4.9000f,-0.1000f,4.0000f,-0.8000f,0.0000f,-2.5000f,4.9000f,0.1000f,4.0000f,5.1000f,0.1000f,4.0000f,5.1000f,0.1000f,1.6000f,4.9000f,0.1000f,2.8000f,0.5900f,0.6500f,-0.7700f,0.8000f,0.3000f,-0.6000f,0.8000f,0.0000f,-2.5000f,-0.8000f,0.0000f,-2.5000f,0.8000f,-0.3000f,-0.6000f,0.7200f,-0.1200f,-2.5000f,0.8000f,0.0000f,-2.5000f,1.0000f,0.0000f,7.4000f,2.8000f,-0.4000f,7.1000f,2.5700f,-0.3200f,7.4200f,-0.7000f,0.0000f,7.4000f,0.5000f,-0.9000f,4.9000f,0.7000f,-0.7000f,4.9000f,0.5000f,-0.5000f,7.0000f,-4.9000f,0.0000f,2.8000f,-4.9000f,0.0000f,3.9000f,0.7000f,-0.1000f,4.9000f,0.7000f,0.0000f,7.0000f,1.4000f,0.0000f,0.0000f,4.9000f,0.0000f,2.8000f,4.9000f,0.0000f,3.9000f,1.4000f,0.0000f,3.9000f,1.4000f,0.0000f,-0.7000f,1.4000f,0.0000f,-0.7000f,0.7000f,-0.7000f,-0.6000f,0.8000f,-0.3000f,-0.6000f,0.5000f,-0.9000f,-0.6000f,1.0000f,-0.1000f,4.9000f,1.0000f,0.3000f,4.9000f,0.7000f,0.0000f,7.4000f,0.7000f,0.3000f,4.9000f,0.7000f,-0.1000f,4.9000f,0.5600f,0.6600f,2.8000f,0.5300f,0.7500f,0.0000f,1.0000f,0.3000f,2.8000f,1.1000f,0.3000f,0.0000f,0.3700f,0.5700f,4.9000f,0.7000f,0.3000f,4.9000f,0.5000f,0.4900f,7.0000f,0.7000f,0.0000f,7.0000f,0.5000f,0.4900f,7.0000f,1.4000f,0.0000f,3.9000f,1.4000f,0.0000f,0.0000f,1.0000f,0.3000f,2.8000f,1.0000f,0.0000f,3.9000f,1.0000f,-0.1000f,2.8000f,0.5000f,-0.9000f,-2.5000f,0.7000f,-0.7000f,-2.5000f,0.8000f,-0.3000f,-2.5000f,0.8000f,-0.3000f,-2.5000f,1.0000f,0.3000f,3.9000f,0.5900f,0.6500f,-0.7700f,0.0000f,0.7000f,2.8000f,0.0000f,1.4000f,4.5000f,0.0000f,0.5900f,4.9000f,0.0000f,3.5000f,6.8000f,0.0000f,3.5000f,8.1000f,0.0000f,1.4000f,7.3000f,0.0000f,0.7000f,7.0000f,0.0000f,0.7000f,7.3000f,-1.0000f,0.3000f,3.9000f,0.0000f,0.3500f,7.7000f,-0.2500f,0.2400f,7.7000f,-0.3500f,0.0000f,7.7000f,-0.2500f,-0.2500f,7.7000f,0.0000f,-0.3500f,7.7000f,0.2500f,-0.2500f,7.7000f,0.3500f,0.0000f,7.7000f,0.2500f,0.2400f,7.7000f,0.0000f,-0.2000f,-2.5000f,0.7000f,-0.7000f,-2.5000f,0.5000f,-0.9000f,-2.5000f,0.0000f,-1.0000f,-2.5000f,-0.5000f,-0.9000f,-2.5000f,-0.7000f,-0.7000f,-2.5000f,0.0000f,-0.2000f,-2.5000f,-0.7200f,-0.1200f,-2.5000f,0.7200f,-0.1200f,-2.5000f,0.2500f,0.2400f,7.7000f,0.3500f,0.0000f,7.7000f,-0.3500f,0.0000f,7.7000f,-0.2500f,0.2400f,7.7000f});
   }
 }
 protected class MFVec3f3 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.68f,0.714f,-0.166f,-0.689f,0.721f,-0.072f,0f,0.965f,-0.26f,0f,0.985f,-0.175f,-0.99f,-0.016f,-0.138f,-0.999f,-0.022f,-0.037f,0.567f,-0.819f,-0.093f,0.561f,-0.828f,0f,0f,-1f,0f,0f,-0.997f,-0.071f,-0.567f,-0.819f,-0.093f,-0.561f,-0.828f,0f,0.99f,-0.016f,-0.138f,0.999f,-0.022f,-0.037f,0.68f,0.714f,-0.166f,0.689f,0.721f,-0.072f,-0.351f,0.889f,-0.294f,-0.868f,-0.459f,-0.19f,-0.13f,-0.982f,-0.14f,0.13f,-0.982f,-0.14f,0.868f,-0.459f,-0.19f,0.872f,0.431f,-0.231f,-0.834f,0.445f,-0.327f,0f,0.929f,-0.369f,-0.88f,0.401f,-0.256f,-0.799f,0.577f,0.169f,-0.58f,0.798f,0.164f,0f,0.998f,0.065f,-0.862f,0.486f,0.146f,0.886f,0.219f,0.408f,0.799f,0.577f,0.169f,0.834f,0.445f,-0.327f,0.88f,0.401f,-0.256f,0f,0.995f,-0.096f,0.842f,0.534f,-0.08f,0.862f,0.486f,0.146f,0.833f,0.549f,-0.073f,-0.833f,0.549f,-0.073f,-0.842f,0.534f,-0.08f,-0.485f,0.87f,-0.089f,-0.37f,0.929f,0f,0f,1f,0f,0f,1f,-0.01f,-0.592f,0.796f,-0.125f,-0.573f,0.818f,0.05f,-0.37f,0.929f,-0.01f,0f,1f,-0.025f,-0.487f,0.873f,0.036f,-0.923f,0.381f,0.05f,-0.683f,0.704f,0.195f,0f,0.99f,0.14f,-0.707f,0.707f,0f,-0.385f,0.912f,0.141f,0f,0.966f,0.259f,-0.563f,0.826f,-0.037f,-0.661f,0.738f,-0.138f,-0.521f,0.846f,-0.115f,0f,-0.996f,0.09f,-0.773f,-0.436f,-0.461f,-0.42f,-0.781f,-0.463f,-0.474f,-0.881f,0f,-0.871f,-0.492f,0f,0f,-0.891f,-0.455f,-0.917f,0.399f,0f,-0.881f,0.074f,-0.467f,-0.902f,-0.429f,-0.039f,-0.09f,-0.995f,0.05f,-0.451f,-0.892f,0f,-0.28f,-0.959f,0.04f,-0.468f,-0.878f,0.097f,-0.877f,-0.474f,0.085f,0f,-0.997f,0.072f,-0.693f,-0.72f,0.045f,-0.79f,-0.562f,0.244f,-0.968f,0.003f,0.25f,0f,-0.966f,0.257f,0f,0f,1f,-1f,0f,0f,0.987f,0f,-0.16f,1f,0f,0f,-0.831f,-0.551f,-0.08f,0.563f,0.826f,-0.037f,0.661f,0.738f,-0.138f,0.998f,-0.037f,-0.049f,-0.987f,0f,-0.16f,-0.998f,-0.037f,-0.049f,0.831f,-0.551f,-0.08f,0f,-0.999f,0.04f,0f,0.993f,0.12f,0.468f,-0.878f,0.097f,0.877f,-0.474f,0.085f,0.79f,-0.562f,0.244f,-0.419f,-0.897f,-0.14f,0.693f,-0.72f,0.045f,0.968f,0.003f,0.25f,0.521f,0.846f,-0.115f,0.419f,-0.897f,-0.14f,0.871f,-0.492f,0f,0.902f,-0.429f,-0.039f,0.474f,-0.881f,0f,0.37f,0.929f,0f,0.485f,0.87f,-0.089f,0.573f,0.818f,0.05f,0.592f,0.796f,-0.125f,0.37f,0.929f,-0.01f,0.487f,0.873f,0.036f,0.923f,0.381f,0.05f,0.683f,0.704f,0.195f,0.385f,0.912f,0.141f,0.707f,0.707f,0f,0.42f,-0.781f,-0.463f,0.773f,-0.436f,-0.461f,0.917f,0.399f,0f,0.881f,0.074f,-0.467f,0.09f,-0.995f,0.05f,0.451f,-0.892f,0f,0.28f,-0.959f,0.04f,0.42f,0.901f,-0.11f,0f,0.666f,0.746f,-0.481f,0.468f,0.741f,-0.674f,0f,0.738f,-0.475f,-0.475f,0.741f,0f,-0.674f,0.738f,0.475f,-0.475f,0.741f,0.674f,0f,0.738f,0.481f,0.468f,0.741f,0f,0f,-1f,0f,-0.893f,-0.45f,-0.901f,-0.224f,-0.372f,0.901f,-0.224f,-0.372f,0.841f,0.34f,0.421f,-0.841f,0.34f,0.421f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.6800f,0.7140f,-0.1660f,-0.6890f,0.7210f,-0.0720f,0.0000f,0.9650f,-0.2600f,0.0000f,0.9850f,-0.1750f,-0.9900f,-0.0160f,-0.1380f,-0.9990f,-0.0220f,-0.0370f,0.5670f,-0.8190f,-0.0930f,0.5610f,-0.8280f,0.0000f,0.0000f,-1.0000f,0.0000f,0.0000f,-0.9970f,-0.0710f,-0.5670f,-0.8190f,-0.0930f,-0.5610f,-0.8280f,0.0000f,0.9900f,-0.0160f,-0.1380f,0.9990f,-0.0220f,-0.0370f,0.6800f,0.7140f,-0.1660f,0.6890f,0.7210f,-0.0720f,-0.3510f,0.8890f,-0.2940f,-0.8680f,-0.4590f,-0.1900f,-0.1300f,-0.9820f,-0.1400f,0.1300f,-0.9820f,-0.1400f,0.8680f,-0.4590f,-0.1900f,0.8720f,0.4310f,-0.2310f,-0.8340f,0.4450f,-0.3270f,0.0000f,0.9290f,-0.3690f,-0.8800f,0.4010f,-0.2560f,-0.7990f,0.5770f,0.1690f,-0.5800f,0.7980f,0.1640f,0.0000f,0.9980f,0.0650f,-0.8620f,0.4860f,0.1460f,0.8860f,0.2190f,0.4080f,0.7990f,0.5770f,0.1690f,0.8340f,0.4450f,-0.3270f,0.8800f,0.4010f,-0.2560f,0.0000f,0.9950f,-0.0960f,0.8420f,0.5340f,-0.0800f,0.8620f,0.4860f,0.1460f,0.8330f,0.5490f,-0.0730f,-0.8330f,0.5490f,-0.0730f,-0.8420f,0.5340f,-0.0800f,-0.4850f,0.8700f,-0.0890f,-0.3700f,0.9290f,0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,1.0000f,-0.0100f,-0.5920f,0.7960f,-0.1250f,-0.5730f,0.8180f,0.0500f,-0.3700f,0.9290f,-0.0100f,0.0000f,1.0000f,-0.0250f,-0.4870f,0.8730f,0.0360f,-0.9230f,0.3810f,0.0500f,-0.6830f,0.7040f,0.1950f,0.0000f,0.9900f,0.1400f,-0.7070f,0.7070f,0.0000f,-0.3850f,0.9120f,0.1410f,0.0000f,0.9660f,0.2590f,-0.5630f,0.8260f,-0.0370f,-0.6610f,0.7380f,-0.1380f,-0.5210f,0.8460f,-0.1150f,0.0000f,-0.9960f,0.0900f,-0.7730f,-0.4360f,-0.4610f,-0.4200f,-0.7810f,-0.4630f,-0.4740f,-0.8810f,0.0000f,-0.8710f,-0.4920f,0.0000f,0.0000f,-0.8910f,-0.4550f,-0.9170f,0.3990f,0.0000f,-0.8810f,0.0740f,-0.4670f,-0.9020f,-0.4290f,-0.0390f,-0.0900f,-0.9950f,0.0500f,-0.4510f,-0.8920f,0.0000f,-0.2800f,-0.9590f,0.0400f,-0.4680f,-0.8780f,0.0970f,-0.8770f,-0.4740f,0.0850f,0.0000f,-0.9970f,0.0720f,-0.6930f,-0.7200f,0.0450f,-0.7900f,-0.5620f,0.2440f,-0.9680f,0.0030f,0.2500f,0.0000f,-0.9660f,0.2570f,0.0000f,0.0000f,1.0000f,-1.0000f,0.0000f,0.0000f,0.9870f,0.0000f,-0.1600f,1.0000f,0.0000f,0.0000f,-0.8310f,-0.5510f,-0.0800f,0.5630f,0.8260f,-0.0370f,0.6610f,0.7380f,-0.1380f,0.9980f,-0.0370f,-0.0490f,-0.9870f,0.0000f,-0.1600f,-0.9980f,-0.0370f,-0.0490f,0.8310f,-0.5510f,-0.0800f,0.0000f,-0.9990f,0.0400f,0.0000f,0.9930f,0.1200f,0.4680f,-0.8780f,0.0970f,0.8770f,-0.4740f,0.0850f,0.7900f,-0.5620f,0.2440f,-0.4190f,-0.8970f,-0.1400f,0.6930f,-0.7200f,0.0450f,0.9680f,0.0030f,0.2500f,0.5210f,0.8460f,-0.1150f,0.4190f,-0.8970f,-0.1400f,0.8710f,-0.4920f,0.0000f,0.9020f,-0.4290f,-0.0390f,0.4740f,-0.8810f,0.0000f,0.3700f,0.9290f,0.0000f,0.4850f,0.8700f,-0.0890f,0.5730f,0.8180f,0.0500f,0.5920f,0.7960f,-0.1250f,0.3700f,0.9290f,-0.0100f,0.4870f,0.8730f,0.0360f,0.9230f,0.3810f,0.0500f,0.6830f,0.7040f,0.1950f,0.3850f,0.9120f,0.1410f,0.7070f,0.7070f,0.0000f,0.4200f,-0.7810f,-0.4630f,0.7730f,-0.4360f,-0.4610f,0.9170f,0.3990f,0.0000f,0.8810f,0.0740f,-0.4670f,0.0900f,-0.9950f,0.0500f,0.4510f,-0.8920f,0.0000f,0.2800f,-0.9590f,0.0400f,0.4200f,0.9010f,-0.1100f,0.0000f,0.6660f,0.7460f,-0.4810f,0.4680f,0.7410f,-0.6740f,0.0000f,0.7380f,-0.4750f,-0.4750f,0.7410f,0.0000f,-0.6740f,0.7380f,0.4750f,-0.4750f,0.7410f,0.6740f,0.0000f,0.7380f,0.4810f,0.4680f,0.7410f,0.0000f,0.0000f,-1.0000f,0.0000f,-0.8930f,-0.4500f,-0.9010f,-0.2240f,-0.3720f,0.9010f,-0.2240f,-0.3720f,0.8410f,0.3400f,0.4210f,-0.8410f,0.3400f,0.4210f});
   }
 }
 protected class MFInt324 {
@@ -391,7 +391,7 @@ protected class MFString25 {
 }
 protected class MFFloat26 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {5.5f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {5.5000f});
   }
 }
 protected class MFString27 {
@@ -406,82 +406,82 @@ protected class MFString28 {
 }
 protected class MFFloat29 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.5f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.5000f,1.0000f});
   }
 }
 protected class MFRotation30 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1f,0f,0f,0f,1f,0f,0f,-0.79f,1f,0f,0f,-1.92f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1.0000f,0.0000f,0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,-0.7900f,1.0000f,0.0000f,0.0000f,-1.9200f});
   }
 }
 protected class MFFloat31 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.5f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.5000f,1.0000f});
   }
 }
 protected class MFRotation32 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1f,0f,0f,-1.92f,1f,0f,0f,-0.79f,1f,0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1.0000f,0.0000f,0.0000f,-1.9200f,1.0000f,0.0000f,0.0000f,-0.7900f,1.0000f,0.0000f,0.0000f,0.0000f});
   }
 }
 protected class MFFloat33 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.5f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.5000f,1.0000f});
   }
 }
 protected class MFRotation34 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-1f,0f,-1f,0f,-1f,0f,-1f,0.44f,-1f,0f,-1f,1.92f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-1.0000f,0.0000f,-1.0000f,0.0000f,-1.0000f,0.0000f,-1.0000f,0.4400f,-1.0000f,0.0000f,-1.0000f,1.9200f});
   }
 }
 protected class MFFloat35 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.5f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.5000f,1.0000f});
   }
 }
 protected class MFRotation36 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-1f,0f,-1f,1.92f,-1f,0f,-1f,0.44f,-1f,0f,-1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-1.0000f,0.0000f,-1.0000f,1.9200f,-1.0000f,0.0000f,-1.0000f,0.4400f,-1.0000f,0.0000f,-1.0000f,0.0000f});
   }
 }
 protected class MFFloat37 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.5f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.5000f,1.0000f});
   }
 }
 protected class MFRotation38 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1f,0f,1f,0f,1f,0f,1f,0.44f,1f,0f,1f,1.92f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1.0000f,0.0000f,1.0000f,0.0000f,1.0000f,0.0000f,1.0000f,0.4400f,1.0000f,0.0000f,1.0000f,1.9200f});
   }
 }
 protected class MFFloat39 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.5f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.5000f,1.0000f});
   }
 }
 protected class MFRotation40 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1f,0f,1f,1.92f,1f,0f,1f,0.44f,1f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1.0000f,0.0000f,1.0000f,1.9200f,1.0000f,0.0000f,1.0000f,0.4400f,1.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFFloat41 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {1.309f,1.570796f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {1.3090f,1.5708f});
   }
 }
 protected class MFColor42 {
   protected org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0f,0.3f,0.7f,0f,0.35f,0.75f,0f,0.4f,0.8f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.0000f,0.3000f,0.7000f,0.0000f,0.3500f,0.7500f,0.0000f,0.4000f,0.8000f});
   }
 }
 protected class MFFloat43 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {1.309f,1.571f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {1.3090f,1.5710f});
   }
 }
 protected class MFColor44 {
   protected org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0f,0.3f,0.8f,0f,0.5f,1f,1f,1f,1f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.0000f,0.3000f,0.8000f,0.0000f,0.5000f,1.0000f,1.0000f,1.0000f,1.0000f});
   }
 }
 protected class MFString45 {
@@ -531,12 +531,12 @@ protected class MFString53 {
 }
 protected class MFFloat54 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.1f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.1000f,1.0000f});
   }
 }
 protected class MFVec3f55 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-15.65f,0f,4.5f,-15.65f,-2f,4.5f,16f,-50f,-500f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-15.6500f,0.0000f,4.5000f,-15.6500f,-2.0000f,4.5000f,16.0000f,-50.0000f,-500.0000f});
   }
 }
 }

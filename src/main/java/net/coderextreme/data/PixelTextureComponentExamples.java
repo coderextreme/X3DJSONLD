@@ -126,7 +126,7 @@ public class PixelTextureComponentExamples {
     }
 protected class MFColor0 {
   protected org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.1f,0.1f,0.4f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.1000f,0.1000f,0.4000f});
   }
 }
 protected class MFString1 {
