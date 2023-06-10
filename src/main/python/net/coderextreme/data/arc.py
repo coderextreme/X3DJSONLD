@@ -1,4 +1,4 @@
-# x3d.py package 4.0.64.2 loaded, have fun with X3D Graphics!
+# x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
 print("<!--")
 from x3d import *
 print("-->")
@@ -9,7 +9,7 @@ meta(name="creator", content="Lost, Doug Sanden I think"),
 meta(name="generator", content="manual"),
 meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"),
 meta(name="description", content="a generic proto to connect two objects"),
-meta(name="translated", content="24 March 2023"),
+meta(name="translated", content="11 April 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
