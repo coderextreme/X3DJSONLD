@@ -2017,7 +2017,7 @@ let fieldTypes = {"X3DNode" : {
 	"style" : "SFString",
 },
 "DynamicsCompressor" : {
-	"attack" : "SFFloat",
+	"attack" : "SFTime",
 	"channelCount" : "SFInt32",
 	"channelCountMode" : "SFString",
 	"channelInterpretation" : "SFString",
