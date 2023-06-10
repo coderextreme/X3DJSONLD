@@ -1,4 +1,4 @@
-# x3d.py package 4.0.64.2 loaded, have fun with X3D Graphics!
+# x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
 print("<!--")
 from x3d import *
 print("-->")
@@ -28,7 +28,7 @@ meta(name="Image", content="http://HAnim.org/Specifications/HAnim1.1/humanoid_la
 meta(name="identifier", content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Templates/DiamondManLOA0.x3d"),
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="license", content="../license.html"),
-meta(name="translated", content="24 March 2023"),
+meta(name="translated", content="11 April 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
