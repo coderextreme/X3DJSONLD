@@ -54,10 +54,10 @@
 </Billboard>
 </Transform>
 <ListenerPointSource trackCurrentView="true"></ListenerPointSource>
-<StreamAudioDestination><SpatialSound DEF="Audio1"><Gain><AudioClip description="Violin" loop="true" url="&quot;sound/violin.mp3&quot; &quot;https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3&quot;"></AudioClip>
+<StreamAudioDestination channelCountMode="MAX" channelInterpretation="SPEAKERS"><SpatialSound DEF="Audio1" distanceModel="INVERSE"><Gain channelCountMode="MAX" channelInterpretation="SPEAKERS"><AudioClip description="Violin" loop="true" url="&quot;sound/violin.mp3&quot; &quot;https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3&quot;"></AudioClip>
 </Gain>
 </SpatialSound>
-<SpatialSound DEF="Audio2"><Gain><AudioClip description="Saxophone" loop="true" url="&quot;sound/saxophone.mp3&quot; &quot;https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3&quot;"></AudioClip>
+<SpatialSound DEF="Audio2" distanceModel="INVERSE"><Gain channelCountMode="MAX" channelInterpretation="SPEAKERS"><AudioClip description="Saxophone" loop="true" url="&quot;sound/saxophone.mp3&quot; &quot;https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3&quot;"></AudioClip>
 </Gain>
 </SpatialSound>
 </StreamAudioDestination>

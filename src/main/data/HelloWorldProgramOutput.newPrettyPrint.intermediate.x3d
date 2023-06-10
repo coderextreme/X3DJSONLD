@@ -23,10 +23,10 @@
     <meta content='https://www.web3d.org/specifications/java/X3DJSAIL.html' name='reference'/>
     <meta content='HelloWorldProgramOutput.java' name='generator'/>
     <meta content='6 September 2016' name='created'/>
-    <meta content='9 January 2022' name='modified'/>
+    <meta content='29 January 2023' name='modified'/>
     <meta content='X3D Java Scene Access Interface Library (X3DJSAIL)' name='generator'/>
     <meta content='https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java' name='generator'/>
-    <meta content='Netbeans http://www.netbeans.org' name='generator'/>
+    <meta content='Netbeans https://www.netbeans.org' name='generator'/>
     <meta content='Don Brutzman' name='creator'/>
     <meta content='https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java/examples/HelloWorldProgramOutput.x3d' name='reference'/>
     <meta content='Console output, ClassicVRML encoding, VRML97 encoding and pretty-print documentation:' name='reference'/>
@@ -82,6 +82,7 @@
           <!-- Comment example A, plain quotation marks: He said, "Immel did it!" -->
           <!-- Comment example B, XML character entities: He said, &quot;Immel did it!&quot; -->
           <MetadataSet name='EscapedQuotationMarksMetadataSet' containerField='metadata'>
+            <MetadataString name='quotesTestC' value='"MFString example C, backslash-escaped quotes: He said, \"Immel did it!\""'/>
             <MetadataString name='extraChildTest' value='"checks MetadataSet addValue() method"'/>
           </MetadataSet>
           <FontStyle family='"SERIF"' justify='"MIDDLE" "MIDDLE"'/>
@@ -102,7 +103,7 @@
       <!-- https://en.wikipedia.org/wiki/Beautiful_World_(Devo_song) -->
     </Transform>
     <!-- repeatedly spin 180 degrees as a readable special effect -->
-    <OrientationInterpolator DEF='SpinInterpolator' key='0 0.5 1' keyValue='0 1 0 4.712389 0 1 0 0 0 1 0 1.5707964'/>
+    <OrientationInterpolator DEF='SpinInterpolator' key='0 0.5 1' keyValue='0 1 0 4.7124 0 1 0 0 0 1 0 1.5708'/>
     <TimeSensor DEF='SpinClock' cycleInterval='5.0' loop='true'/>
     <ROUTE fromField='fraction_changed' fromNode='SpinClock' toField='set_fraction' toNode='SpinInterpolator'/>
     <ROUTE fromField='value_changed' fromNode='SpinInterpolator' toField='rotation' toNode='TextTransform'/>
@@ -121,7 +122,7 @@ function colorInput (eventValue) // Example source code
 }
 ]]>
       </Script>
-      <ColorInterpolator DEF='ColorAnimator' key='0 0.5 1' keyValue='0.9411765 1 1 0.29411766 0 0.50980395 0.9411765 1 1'>
+      <ColorInterpolator DEF='ColorAnimator' key='0 0.5 1' keyValue='0.9412 1 1 0.2941 0 0.5098 0.9412 1 1'>
         <!-- AZURE to INDIGO and back again -->
       </ColorInterpolator>
       <TimeSensor DEF='ColorClock' cycleInterval='60.0' loop='true'/>
@@ -136,7 +137,7 @@ function colorInput (eventValue) // Example source code
       </ProtoInterface>
       <ProtoBody>
         <!-- Initial node of ProtoBody determines prototype node type -->
-        <Material ambientIntensity='0.25' diffuseColor='0.282435 0.085159 0.134462' shininess='0.127273' specularColor='0.276305 0.11431 0.139857'/>
+        <Material ambientIntensity='0.25' diffuseColor='0.282435 0.085159 0.134462' shininess='0.1273' specularColor='0.276305 0.11431 0.139857'/>
         <!-- [HelloWorldProgram diagnostic] should be connected to scene graph: artDeco01ProtoDeclare.getNodeType()="Material" -->
         <!-- presence of follow-on TouchSensor shows that additional nodes are allowed in ProtoBody after initial node, regardless of node types -->
         <TouchSensor description='within ProtoBody'>
@@ -147,7 +148,7 @@ function colorInput (eventValue) // Example source code
         </TouchSensor>
       </ProtoBody>
     </ProtoDeclare>
-    <ExternProtoDeclare name='ArtDeco02Material' appinfo='this is a different Material node' url='"http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material" "http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"'>
+    <ExternProtoDeclare name='ArtDeco02Material' appinfo='this is a different Material node' url='"https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material" "https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"'>
       <!-- [HelloWorldProgram diagnostic] artDeco02ExternProtoDeclare.getNodeType()="ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file." -->
       <field name='description' accessType='inputOutput' appinfo='tooltip for descriptionField' type='SFString'/>
     </ExternProtoDeclare>
@@ -182,7 +183,7 @@ function colorInput (eventValue) // Example source code
     <Inline DEF='inlineScene' url='"someOtherScene.x3d" "https://www.web3d.org/specifications/java/examples/someOtherScene.x3d"'/>
     <IMPORT AS='WorldInfoDEF2' importedDEF='WorldInfoDEF' inlineDEF='inlineScene'/>
     <EXPORT AS='WorldInfoDEF3' localDEF='WorldInfoDEF'/>
-    <ProtoDeclare name='MaterialModulator' appinfo='mimic a Material node and modulate fields as an animation effect' documentation='http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html'>
+    <ProtoDeclare name='MaterialModulator' appinfo='mimic a Material node and modulate fields as an animation effect' documentation='https://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html'>
       <ProtoInterface>
         <field name='enabled' accessType='inputOutput' type='SFBool' value='true'/>
         <field name='diffuseColor' accessType='inputOutput' type='SFColor' value='0 0 0'/>
@@ -261,7 +262,7 @@ function clockTrigger (timeValue)
     <!-- Test success: x3dModel.findElementByNameValue("MaterialModulator", "ProtoInstance") found -->
     <Group DEF='TestFieldObjectsGroup'>
       <!-- testFieldObjects() results -->
-      <!-- SFBool default=true, true=true, false=false, negate()=true -->
+      <!-- SFBool default=false, true=true, false=false, negate()=true -->
       <!-- MFBool default=, initial=true false true, negate()=false true false -->
       <!-- SFFloat default=0.0, initial=1.0, setValue(2)=2.0, setValue(3.0f)=3.0, setValue(4.0)=4.0 -->
       <!-- MFFloat default=, initial=1 2 3, append(5)=1 2 3 5, inserts(3,4)(0,0)=0 1 2 3 4 5, append(6)=0 1 2 3 4 5 6, size()=7 -->

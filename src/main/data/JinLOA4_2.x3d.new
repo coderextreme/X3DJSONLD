@@ -21,7 +21,7 @@
 <Scene><WorldInfo title="JinLOA4.x3d"></WorldInfo>
 <NavigationInfo speed="1.5"></NavigationInfo>
 <Viewpoint centerOfRotation="0 1 0" description="JinLOA4" position="0 1 3"></Viewpoint>
-<HAnimHumanoid name="JinLOA4" DEF="hanim_JinLOA4" loa="4" scale="1 1 1" version="2.0"><MetadataSet containerField="metadata" name="HAnimHumanoid.info" reference="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid"><MetadataString name="authorName" value="&quot;Jin Hoon Lee and Min Joo Lee, Chul Hee Jung and Myeong Won Lee&quot;" containerField="value"></MetadataString>
+<HAnimHumanoid name="JinLOA4" DEF="hanim_JinLOA4" loa="4" version="2.0"><MetadataSet containerField="metadata" name="HAnimHumanoid.info" reference="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid"><MetadataString name="authorName" value="&quot;Jin Hoon Lee and Min Joo Lee, Chul Hee Jung and Myeong Won Lee&quot;" containerField="value"></MetadataString>
 <MetadataString name="authorEmail" value="&quot;myeongwonlee@gmail.com&quot;"></MetadataString>
 <MetadataString name="creationDate" value="&quot;31 March 2011&quot;"></MetadataString>
 <MetadataString name="gender" value="&quot;female&quot;"></MetadataString>
