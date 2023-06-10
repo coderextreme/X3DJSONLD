@@ -54,13 +54,13 @@ public class flower {
         .addMeta(new meta().setName("description").setContent("a flower")))
       .setScene(new Scene()
         .addChild(new NavigationInfo())
-        .addChild(new DirectionalLight().setDirection(new float[] {0f,-0.8f,-0.2f}).setIntensity(0.5f))
+        .addChild(new DirectionalLight().setDirection(new float[] {0f,-0.8f,-0.2f}).setIntensity(0.5000f))
         .addChild(new Background().setSkyColor(new MFColor0().getArray()))
         .addChild(new Viewpoint().setDescription("One mathematical orbital").setPosition(new float[] {0f,0f,50f}))
         .addChild(new Transform().setTranslation(new float[] {0f,-1f,1f}).setRotation(new float[] {0f,1f,0f,3.1415926f}).setScale(new float[] {1.5f,1.5f,1.5f})
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setTransparency(0.1f).setDiffuseColor(new float[] {0.9f,0.3f,0.3f}).setSpecularColor(new float[] {0.8f,0.8f,0.8f}).setShininess(0.145f)))
+              .setMaterial(new Material().setTransparency(0.1000f).setDiffuseColor(new float[] {0.9f,0.3f,0.3f}).setSpecularColor(new float[] {0.8f,0.8f,0.8f}).setShininess(0.1450f)))
             .setGeometry(new IndexedFaceSet().setCcw(false).setConvex(false).setCoordIndex(new MFInt321().getArray()).setDEF("Orbit")
               .setCoord(new Coordinate().setDEF("OrbitCoordinates").setPoint(new MFVec3f2().getArray())))))
         .addChild(new Script().setDEF("OrbitScript")
@@ -150,7 +150,7 @@ public class flower {
     }
 protected class MFColor0 {
   protected org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {1f,1f,1f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {1.0000f,1.0000f,1.0000f});
   }
 }
 protected class MFInt321 {
@@ -160,7 +160,7 @@ protected class MFInt321 {
 }
 protected class MFVec3f2 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0f,1f,0f,1f,0f,1f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,1.0000f,0.0000f,1.0000f,0.0000f,0.0000f});
   }
 }
 }

@@ -55,7 +55,7 @@ public class ifscube {
       .setScene(new Scene()
         .addChild(new Group()
           .addChild(new Shape()
-            .setGeometry(new IndexedFaceSet().setCreaseAngle(1.57f).setDEF("IndexedFaceSet").setCoordIndex(new MFInt320().getArray()).setNormalIndex(new MFInt321().getArray()).setNormalPerVertex(false).setColorIndex(new MFInt322().getArray())
+            .setGeometry(new IndexedFaceSet().setCreaseAngle(1.5700f).setDEF("IndexedFaceSet").setCoordIndex(new MFInt320().getArray()).setNormalIndex(new MFInt321().getArray()).setNormalPerVertex(false).setColorIndex(new MFInt322().getArray())
               .setCoord(new Coordinate().setPoint(new MFVec3f3().getArray()))
               .setNormal(new Normal().setVector(new MFVec3f4().getArray()))
               .setColor(new Color().setColor(new MFColor5().getArray()))))))      ;
@@ -78,17 +78,17 @@ protected class MFInt322 {
 }
 protected class MFVec3f3 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0f,1f,0f,1f,1f,1f,1f,1f,1f,0f,1f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,1.0000f,1.0000f,1.0000f,1.0000f,1.0000f,1.0000f,0.0000f,1.0000f});
   }
 }
 protected class MFVec3f4 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {1f,0f,0f,-1f,0f,0f,0f,1f,0f,0f,0f,-1f,0f,-1f,0f,0f,0f,1f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {1.0000f,0.0000f,0.0000f,-1.0000f,0.0000f,0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,0.0000f,-1.0000f,0.0000f,-1.0000f,0.0000f,0.0000f,0.0000f,1.0000f});
   }
 }
 protected class MFColor5 {
   protected org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.0000f,1.0000f,0.0000f});
   }
 }
 }

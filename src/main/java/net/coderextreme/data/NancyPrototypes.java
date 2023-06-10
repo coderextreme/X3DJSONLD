@@ -260,7 +260,7 @@ ProtoInstance ProtoInstance66 = null;
         .addComments("Start scene graph.")
         .addChild(ProtoInstance0 = new ProtoInstance().setName("Humanoid").setDEF("Humanoid"))
         .addChild(new WorldInfo().setInfo(new MFString40().getArray()).setTitle("Nancy - an HAnim compliant avatar by 3Name3D"))
-        .addChild(new NavigationInfo().setType(new java.lang.String[] {"EXAMINE"}).setAvatarSize(new MFFloat41().getArray()).setSpeed(0.5f))
+        .addChild(new NavigationInfo().setType(new java.lang.String[] {"EXAMINE"}).setAvatarSize(new MFFloat41().getArray()).setSpeed(0.5000f))
         .addChild(new Group().setDEF("Interface")
           .addChild(new Transform()
             .addChild(new ProximitySensor().setDEF("HudProx").setCenter(new float[] {0f,20f,0f}).setSize(new float[] {500f,100f,500f})))
@@ -273,13 +273,13 @@ ProtoInstance ProtoInstance66 = null;
                     .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3242().getArray())
                       .setCoord(new Coordinate().setPoint(new MFVec3f43().getArray())))
                     .setAppearance(new Appearance()
-                      .setMaterial(new Material().setDEF("text_color").setAmbientIntensity(0f).setDiffuseColor(new float[] {0f,0f,0f}).setEmissiveColor(new float[] {0.819f,0.521f,0.169f}))))
+                      .setMaterial(new Material().setDEF("text_color").setAmbientIntensity(0.0000f).setDiffuseColor(new float[] {0f,0f,0f}).setEmissiveColor(new float[] {0.819f,0.521f,0.169f}))))
                   .addChild(new Transform().setScale(new float[] {84.89f,77.52f,77.52f}).setTranslation(new float[] {0.04092f,1.843f,3.826f})
                     .addChild(new Shape().setDEF("Stand_Back")
                       .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3244().getArray())
                         .setCoord(new Coordinate().setPoint(new MFVec3f45().getArray())))
                       .setAppearance(new Appearance()
-                        .setMaterial(new Material().setDEF("Clear").setAmbientIntensity(0f).setDiffuseColor(new float[] {0f,0f,0f}).setTransparency(1f))))))
+                        .setMaterial(new Material().setDEF("Clear").setAmbientIntensity(0.0000f).setDiffuseColor(new float[] {0f,0f,0f}).setTransparency(1.0000f))))))
                 .addChild(new Transform().setDEF("Walk_Text")
                   .addChild(new TouchSensor().setDEF("Walk_Touch").setDescription("click for behavior"))
                   .addChild(new Shape().setDEF("WALK")
@@ -643,8 +643,8 @@ ProtoInstance3
                       .addFieldValue(new fieldValue().setName("children")
                         .addChild(new Shape()
                           .setAppearance(new Appearance()
-                            .setMaterial(new Material().setDEF("Pants_Color").setAmbientIntensity(0.25f).setDiffuseColor(new float[] {0.054f,0.233f,0.39f})))
-                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt321().getArray()).setCreaseAngle(1.14f)
+                            .setMaterial(new Material().setDEF("Pants_Color").setAmbientIntensity(0.2500f).setDiffuseColor(new float[] {0.054f,0.233f,0.39f})))
+                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt321().getArray()).setCreaseAngle(1.1400f)
                             .setCoord(new Coordinate().setPoint(new MFVec3f2().getArray())))));
 ProtoInstance4
                       .addFieldValue(new fieldValue().setName("name").setValue("l_hip"));
@@ -661,7 +661,7 @@ ProtoInstance5
                             .addChild(new Shape()
                               .setAppearance(new Appearance()
                                 .setMaterial(new Material().setUSE("Pants_Color")))
-                              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt323().getArray()).setCreaseAngle(1.32f)
+                              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt323().getArray()).setCreaseAngle(1.3200f)
                                 .setCoord(new Coordinate().setPoint(new MFVec3f4().getArray())))));
 ProtoInstance6
                           .addFieldValue(new fieldValue().setName("name").setValue("l_knee"));
@@ -678,7 +678,7 @@ ProtoInstance7
                                 .addChild(new Shape()
                                   .setAppearance(new Appearance()
                                     .setMaterial(new Material().setUSE("Pants_Color")))
-                                  .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt325().getArray()).setCreaseAngle(1.57f)
+                                  .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt325().getArray()).setCreaseAngle(1.5700f)
                                     .setCoord(new Coordinate().setPoint(new MFVec3f6().getArray())))));
 ProtoInstance8
                               .addFieldValue(new fieldValue().setName("name").setValue("l_ankle"));
@@ -693,8 +693,8 @@ ProtoInstance9
                                   .addFieldValue(new fieldValue().setName("children")
                                     .addChild(new Shape()
                                       .setAppearance(new Appearance()
-                                        .setMaterial(new Material().setDEF("Shoe_Color").setAmbientIntensity(0.25f)))
-                                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt327().getArray()).setCreaseAngle(1.57f)
+                                        .setMaterial(new Material().setDEF("Shoe_Color").setAmbientIntensity(0.2500f)))
+                                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt327().getArray()).setCreaseAngle(1.5700f)
                                         .setCoord(new Coordinate().setPoint(new MFVec3f8().getArray())))));
 ProtoInstance10
                       .addFieldValue(new fieldValue().setName("name").setValue("r_hip"));
@@ -711,7 +711,7 @@ ProtoInstance11
                             .addChild(new Shape()
                               .setAppearance(new Appearance()
                                 .setMaterial(new Material().setUSE("Pants_Color")))
-                              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt329().getArray()).setCreaseAngle(1.61f)
+                              .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt329().getArray()).setCreaseAngle(1.6100f)
                                 .setCoord(new Coordinate().setPoint(new MFVec3f10().getArray())))));
 ProtoInstance12
                           .addFieldValue(new fieldValue().setName("name").setValue("r_knee"));
@@ -728,7 +728,7 @@ ProtoInstance13
                                 .addChild(new Shape()
                                   .setAppearance(new Appearance()
                                     .setMaterial(new Material().setUSE("Pants_Color")))
-                                  .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3211().getArray()).setCreaseAngle(1.57f)
+                                  .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3211().getArray()).setCreaseAngle(1.5700f)
                                     .setCoord(new Coordinate().setPoint(new MFVec3f12().getArray())))));
 ProtoInstance14
                               .addFieldValue(new fieldValue().setName("name").setValue("r_ankle"));
@@ -744,7 +744,7 @@ ProtoInstance15
                                     .addChild(new Shape()
                                       .setAppearance(new Appearance()
                                         .setMaterial(new Material().setUSE("Shoe_Color")))
-                                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3213().getArray()).setCreaseAngle(1.57f)
+                                      .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3213().getArray()).setCreaseAngle(1.5700f)
                                         .setCoord(new Coordinate().setPoint(new MFVec3f14().getArray())))));
 ProtoInstance16
                   .addFieldValue(new fieldValue().setName("name").setValue("vl1"));
@@ -762,9 +762,9 @@ ProtoInstance17
                       .addFieldValue(new fieldValue().setName("children")
                         .addChild(new Shape()
                           .setAppearance(new Appearance()
-                            .setMaterial(new Material().setDEF("Shirt_Color").setAmbientIntensity(0.25f).setDiffuseColor(new float[] {0.6f,0.0745f,0.1137f}))
+                            .setMaterial(new Material().setDEF("Shirt_Color").setAmbientIntensity(0.2500f).setDiffuseColor(new float[] {0.6f,0.0745f,0.1137f}))
                             .setTexture(new ImageTexture().setDEF("small_logo_Tex").setUrl(new MFString15().getArray())))
-                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3216().getArray().append(new MFInt3217().getArray())).setCreaseAngle(1.59f)
+                          .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3216().getArray().append(new MFInt3217().getArray())).setCreaseAngle(1.5900f)
                             .setCoord(new Coordinate().setPoint(new MFVec3f18().getArray()))
                             .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f19().getArray())))));
 ProtoInstance18
@@ -782,8 +782,8 @@ ProtoInstance19
                             .addChild(new Transform().setDEF("l_upperarm_adjust").setCenter(new float[] {0.182f,1.22f,-0.047f}).setRotation(new float[] {1f,0f,0f,0.119f}).setTranslation(new float[] {0f,0.0004203f,-0.01665f})
                               .addChild(new Shape()
                                 .setAppearance(new Appearance()
-                                  .setMaterial(new Material().setDEF("Skin_Color").setAmbientIntensity(0.25f).setDiffuseColor(new float[] {0.749f,0.601f,0.462f})))
-                                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3220().getArray()).setCreaseAngle(1.65f)
+                                  .setMaterial(new Material().setDEF("Skin_Color").setAmbientIntensity(0.2500f).setDiffuseColor(new float[] {0.749f,0.601f,0.462f})))
+                                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3220().getArray()).setCreaseAngle(1.6500f)
                                   .setCoord(new Coordinate().setPoint(new MFVec3f21().getArray()))))));
 ProtoInstance20
                           .addFieldValue(new fieldValue().setName("name").setValue("l_elbow"));
@@ -801,7 +801,7 @@ ProtoInstance21
                                   .addChild(new Shape()
                                     .setAppearance(new Appearance()
                                       .setMaterial(new Material().setUSE("Skin_Color")))
-                                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3222().getArray()).setCreaseAngle(1.75f)
+                                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3222().getArray()).setCreaseAngle(1.7500f)
                                       .setCoord(new Coordinate().setPoint(new MFVec3f23().getArray()))))));
 ProtoInstance22
                               .addFieldValue(new fieldValue().setName("name").setValue("l_wrist"));
@@ -818,7 +818,7 @@ ProtoInstance23
                                       .addChild(new Shape()
                                         .setAppearance(new Appearance()
                                           .setMaterial(new Material().setUSE("Skin_Color")))
-                                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3224().getArray()).setCreaseAngle(1.48f)
+                                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3224().getArray()).setCreaseAngle(1.4800f)
                                           .setCoord(new Coordinate().setPoint(new MFVec3f25().getArray()))))));
 ProtoInstance24
                       .addFieldValue(new fieldValue().setName("name").setValue("r_shoulder"));
@@ -836,7 +836,7 @@ ProtoInstance25
                               .addChild(new Shape()
                                 .setAppearance(new Appearance()
                                   .setMaterial(new Material().setUSE("Skin_Color")))
-                                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3226().getArray()).setCreaseAngle(1.53f)
+                                .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3226().getArray()).setCreaseAngle(1.5300f)
                                   .setCoord(new Coordinate().setPoint(new MFVec3f27().getArray()))))));
 ProtoInstance26
                           .addFieldValue(new fieldValue().setName("name").setValue("r_elbow"));
@@ -854,7 +854,7 @@ ProtoInstance27
                                   .addChild(new Shape()
                                     .setAppearance(new Appearance()
                                       .setMaterial(new Material().setUSE("Skin_Color")))
-                                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3228().getArray()).setCreaseAngle(1.73f)
+                                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3228().getArray()).setCreaseAngle(1.7300f)
                                       .setCoord(new Coordinate().setPoint(new MFVec3f29().getArray()))))));
 ProtoInstance28
                               .addFieldValue(new fieldValue().setName("name").setValue("r_wrist"));
@@ -871,7 +871,7 @@ ProtoInstance29
                                       .addChild(new Shape()
                                         .setAppearance(new Appearance()
                                           .setMaterial(new Material().setUSE("Skin_Color")))
-                                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3230().getArray()).setCreaseAngle(1.57f)
+                                        .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3230().getArray()).setCreaseAngle(1.5700f)
                                           .setCoord(new Coordinate().setPoint(new MFVec3f31().getArray()))))));
 ProtoInstance30
                       .addFieldValue(new fieldValue().setName("name").setValue("vc4"));
@@ -888,7 +888,7 @@ ProtoInstance31
                             .addChild(new Shape()
                               .setAppearance(new Appearance()
                                 .setMaterial(new Material().setUSE("Skin_Color")))
-                              .setGeometry(new IndexedFaceSet().setDEF("neck").setCoordIndex(new MFInt3232().getArray()).setCreaseAngle(1.91f)
+                              .setGeometry(new IndexedFaceSet().setDEF("neck").setCoordIndex(new MFInt3232().getArray()).setCreaseAngle(1.9100f)
                                 .setCoord(new Coordinate().setPoint(new MFVec3f33().getArray())))));
 ProtoInstance32
                           .addFieldValue(new fieldValue().setName("name").setValue("skullbase"));
@@ -921,7 +921,7 @@ protected class MFInt321 {
 }
 protected class MFVec3f2 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,1.06f,0.0218f,0.0561f,1.07f,0.00726f,0.0851f,1.07f,-0.0115f,0.104f,1.07f,-0.0497f,0.0851f,1.07f,-0.0851f,0.032f,1.06f,-0.0985f,0.0873f,1.04f,0.0078f,0.033f,1.04f,0.0395f,0.123f,1.05f,-0.0405f,0.0609f,1.02f,-0.106f,0.0894f,0.996f,-0.106f,0.143f,1f,-0.0309f,0.117f,1f,0.0164f,0.0314f,0.999f,0.0502f,0.0314f,0.96f,-0.13f,0.156f,0.966f,-0.0405f,0.156f,0.968f,-0.00724f,0.0341f,0.954f,0.0513f,0.115f,0.96f,-0.0916f,0.121f,0.926f,0.0352f,0.0357f,0.92f,0.0497f,0.0314f,0.91f,-0.146f,0.0991f,0.91f,-0.131f,0.169f,0.883f,-0.0448f,0.169f,0.885f,-0.00939f,0.123f,0.873f,0.0384f,0.0926f,0.872f,0.047f,0.0325f,0.873f,0.0287f,0.0293f,0.866f,-0.142f,0.102f,0.869f,-0.131f,0.129f,0.868f,-0.103f,0.0314f,0.84f,-0.125f,0.101f,0.844f,-0.122f,0.133f,0.846f,-0.0878f,0.0653f,0.835f,0.0132f,0.0615f,0.824f,-0.111f,0.0985f,0.823f,-0.101f,0.132f,0.826f,-0.0448f,0.0609f,0.821f,-0.0158f,0.0599f,0.812f,-0.0545f,0f,1.08f,-0.0266f,-0.0561f,1.07f,0.00726f,-0.0851f,1.07f,-0.0115f,-0.104f,1.07f,-0.0497f,-0.0851f,1.07f,-0.0851f,-0.032f,1.06f,-0.0985f,-0.0873f,1.04f,0.0078f,-0.033f,1.04f,0.0395f,-0.123f,1.05f,-0.0405f,-0.0609f,1.02f,-0.106f,0f,1.02f,-0.108f,-0.0894f,0.996f,-0.106f,-0.143f,1f,-0.0309f,-0.144f,1f,-0.011f,-0.117f,1f,0.0164f,-0.0314f,0.999f,0.0502f,0f,0.961f,-0.123f,-0.0314f,0.96f,-0.13f,-0.156f,0.966f,-0.0405f,-0.156f,0.968f,-0.00724f,-0.0341f,0.954f,0.0513f,-0.115f,0.96f,-0.0916f,-0.121f,0.926f,0.0352f,-0.0357f,0.92f,0.0497f,0f,0.91f,-0.127f,-0.0314f,0.91f,-0.146f,-0.0991f,0.91f,-0.131f,-0.167f,0.911f,-0.0448f,-0.167f,0.912f,-0.00671f,0f,0.883f,-0.129f,-0.123f,0.873f,0.0384f,-0.0926f,0.872f,0.047f,-0.0325f,0.873f,0.0287f,-0.0293f,0.866f,-0.142f,-0.102f,0.869f,-0.131f,-0.129f,0.868f,-0.103f,-0.166f,0.863f,-0.0148f,0f,0.863f,-0.00456f,-0.166f,0.862f,-0.0459f,0f,0.858f,-0.1f,-0.0314f,0.84f,-0.125f,-0.101f,0.844f,-0.122f,-0.0653f,0.835f,0.0132f,0f,0.839f,-0.0217f,0f,0.835f,-0.0867f,-0.0615f,0.824f,-0.111f,-0.0985f,0.823f,-0.101f,-0.132f,0.826f,-0.0448f,-0.0609f,0.821f,-0.0158f,0f,0.831f,-0.0626f,-0.0599f,0.812f,-0.0545f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0000f,1.0600f,0.0218f,0.0561f,1.0700f,0.0073f,0.0851f,1.0700f,-0.0115f,0.1040f,1.0700f,-0.0497f,0.0851f,1.0700f,-0.0851f,0.0320f,1.0600f,-0.0985f,0.0873f,1.0400f,0.0078f,0.0330f,1.0400f,0.0395f,0.1230f,1.0500f,-0.0405f,0.0609f,1.0200f,-0.1060f,0.0894f,0.9960f,-0.1060f,0.1430f,1.0000f,-0.0309f,0.1170f,1.0000f,0.0164f,0.0314f,0.9990f,0.0502f,0.0314f,0.9600f,-0.1300f,0.1560f,0.9660f,-0.0405f,0.1560f,0.9680f,-0.0072f,0.0341f,0.9540f,0.0513f,0.1150f,0.9600f,-0.0916f,0.1210f,0.9260f,0.0352f,0.0357f,0.9200f,0.0497f,0.0314f,0.9100f,-0.1460f,0.0991f,0.9100f,-0.1310f,0.1690f,0.8830f,-0.0448f,0.1690f,0.8850f,-0.0094f,0.1230f,0.8730f,0.0384f,0.0926f,0.8720f,0.0470f,0.0325f,0.8730f,0.0287f,0.0293f,0.8660f,-0.1420f,0.1020f,0.8690f,-0.1310f,0.1290f,0.8680f,-0.1030f,0.0314f,0.8400f,-0.1250f,0.1010f,0.8440f,-0.1220f,0.1330f,0.8460f,-0.0878f,0.0653f,0.8350f,0.0132f,0.0615f,0.8240f,-0.1110f,0.0985f,0.8230f,-0.1010f,0.1320f,0.8260f,-0.0448f,0.0609f,0.8210f,-0.0158f,0.0599f,0.8120f,-0.0545f,0.0000f,1.0800f,-0.0266f,-0.0561f,1.0700f,0.0073f,-0.0851f,1.0700f,-0.0115f,-0.1040f,1.0700f,-0.0497f,-0.0851f,1.0700f,-0.0851f,-0.0320f,1.0600f,-0.0985f,-0.0873f,1.0400f,0.0078f,-0.0330f,1.0400f,0.0395f,-0.1230f,1.0500f,-0.0405f,-0.0609f,1.0200f,-0.1060f,0.0000f,1.0200f,-0.1080f,-0.0894f,0.9960f,-0.1060f,-0.1430f,1.0000f,-0.0309f,-0.1440f,1.0000f,-0.0110f,-0.1170f,1.0000f,0.0164f,-0.0314f,0.9990f,0.0502f,0.0000f,0.9610f,-0.1230f,-0.0314f,0.9600f,-0.1300f,-0.1560f,0.9660f,-0.0405f,-0.1560f,0.9680f,-0.0072f,-0.0341f,0.9540f,0.0513f,-0.1150f,0.9600f,-0.0916f,-0.1210f,0.9260f,0.0352f,-0.0357f,0.9200f,0.0497f,0.0000f,0.9100f,-0.1270f,-0.0314f,0.9100f,-0.1460f,-0.0991f,0.9100f,-0.1310f,-0.1670f,0.9110f,-0.0448f,-0.1670f,0.9120f,-0.0067f,0.0000f,0.8830f,-0.1290f,-0.1230f,0.8730f,0.0384f,-0.0926f,0.8720f,0.0470f,-0.0325f,0.8730f,0.0287f,-0.0293f,0.8660f,-0.1420f,-0.1020f,0.8690f,-0.1310f,-0.1290f,0.8680f,-0.1030f,-0.1660f,0.8630f,-0.0148f,0.0000f,0.8630f,-0.0046f,-0.1660f,0.8620f,-0.0459f,0.0000f,0.8580f,-0.1000f,-0.0314f,0.8400f,-0.1250f,-0.1010f,0.8440f,-0.1220f,-0.0653f,0.8350f,0.0132f,0.0000f,0.8390f,-0.0217f,0.0000f,0.8350f,-0.0867f,-0.0615f,0.8240f,-0.1110f,-0.0985f,0.8230f,-0.1010f,-0.1320f,0.8260f,-0.0448f,-0.0609f,0.8210f,-0.0158f,0.0000f,0.8310f,-0.0626f,-0.0599f,0.8120f,-0.0545f});
   }
 }
 protected class MFInt323 {
@@ -931,7 +931,7 @@ protected class MFInt323 {
 }
 protected class MFVec3f4 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0969f,0.804f,-0.0486f,0.101f,0.876f,0.0336f,0.17f,0.894f,-0.00778f,0.17f,0.891f,-0.076f,0.124f,0.858f,-0.129f,0.076f,0.843f,-0.143f,0.025f,0.819f,-0.0889f,0.0507f,0.847f,0.0196f,0.00349f,0.826f,-0.0287f,0.0991f,0.808f,0.0406f,0.161f,0.814f,-0.00187f,0.165f,0.808f,-0.0755f,0.122f,0.788f,-0.126f,0.00993f,0.762f,-0.0937f,0.00993f,0.762f,-0.0309f,0.0491f,0.777f,0.0185f,0.0755f,0.766f,-0.139f,0.13f,0.597f,-0.00618f,0.132f,0.6f,-0.0593f,0.108f,0.603f,-0.105f,0.0722f,0.601f,-0.118f,0.0314f,0.59f,-0.0953f,0.0239f,0.566f,-0.0427f,0.047f,0.566f,0.0051f,0.0878f,0.581f,0.0217f,0.114f,0.499f,-0.0132f,0.116f,0.488f,-0.061f,0.103f,0.567f,-0.0991f,0.0362f,0.557f,-0.0926f,0.025f,0.486f,-0.047f,0.0507f,0.497f,-0.00188f,0.0862f,0.513f,0.018f,0.0733f,0.579f,-0.108f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0969f,0.8040f,-0.0486f,0.1010f,0.8760f,0.0336f,0.1700f,0.8940f,-0.0078f,0.1700f,0.8910f,-0.0760f,0.1240f,0.8580f,-0.1290f,0.0760f,0.8430f,-0.1430f,0.0250f,0.8190f,-0.0889f,0.0507f,0.8470f,0.0196f,0.0035f,0.8260f,-0.0287f,0.0991f,0.8080f,0.0406f,0.1610f,0.8140f,-0.0019f,0.1650f,0.8080f,-0.0755f,0.1220f,0.7880f,-0.1260f,0.0099f,0.7620f,-0.0937f,0.0099f,0.7620f,-0.0309f,0.0491f,0.7770f,0.0185f,0.0755f,0.7660f,-0.1390f,0.1300f,0.5970f,-0.0062f,0.1320f,0.6000f,-0.0593f,0.1080f,0.6030f,-0.1050f,0.0722f,0.6010f,-0.1180f,0.0314f,0.5900f,-0.0953f,0.0239f,0.5660f,-0.0427f,0.0470f,0.5660f,0.0051f,0.0878f,0.5810f,0.0217f,0.1140f,0.4990f,-0.0132f,0.1160f,0.4880f,-0.0610f,0.1030f,0.5670f,-0.0991f,0.0362f,0.5570f,-0.0926f,0.0250f,0.4860f,-0.0470f,0.0507f,0.4970f,-0.0019f,0.0862f,0.5130f,0.0180f,0.0733f,0.5790f,-0.1080f});
   }
 }
 protected class MFInt325 {
@@ -941,7 +941,7 @@ protected class MFInt325 {
 }
 protected class MFVec3f6 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0883f,0.532f,-0.00349f,0.0609f,0.533f,-0.00833f,0.0814f,0.55f,-0.0395f,0.0529f,0.536f,-0.0368f,0.0577f,0.544f,-0.0577f,0.0722f,0.546f,-0.0717f,0.0975f,0.54f,-0.0647f,0.105f,0.539f,-0.0438f,0.104f,0.539f,-0.0223f,0.0862f,0.506f,0.0158f,0.101f,0.51f,-0.0798f,0.0706f,0.51f,-0.101f,0.0406f,0.513f,-0.0744f,0.0368f,0.51f,-0.0357f,0.0556f,0.506f,-0.000272f,0.117f,0.508f,-0.0169f,0.0878f,0.361f,-0.0126f,0.123f,0.363f,-0.04f,0.123f,0.363f,-0.0663f,0.107f,0.367f,-0.107f,0.0588f,0.365f,-0.122f,0.0228f,0.358f,-0.0926f,0.0239f,0.358f,-0.0475f,0.0497f,0.358f,-0.0234f,0.118f,0.311f,-0.0411f,0.118f,0.309f,-0.0685f,0.105f,0.31f,-0.108f,0.0572f,0.308f,-0.123f,0.0201f,0.309f,-0.0937f,0.0191f,0.311f,-0.0508f,0.0475f,0.307f,-0.0282f,0.0883f,0.309f,-0.018f,0.0959f,0.124f,-0.04f,0.0905f,0.12f,-0.0647f,0.0738f,0.117f,-0.0814f,0.0373f,0.121f,-0.0636f,0.0416f,0.124f,-0.0416f,0.0744f,0.13f,-0.0212f,0.0561f,0.13f,-0.0245f,0.0529f,0.121f,-0.0873f,0.0948f,0.0897f,-0.0368f,0.0916f,0.0779f,-0.0604f,0.0717f,0.0854f,-0.0765f,0.0406f,0.0918f,-0.0626f,0.0384f,0.0881f,-0.0363f,0.054f,0.0972f,-0.0175f,0.0765f,0.11f,-0.0169f,0.0486f,0.0999f,-0.0835f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0883f,0.5320f,-0.0035f,0.0609f,0.5330f,-0.0083f,0.0814f,0.5500f,-0.0395f,0.0529f,0.5360f,-0.0368f,0.0577f,0.5440f,-0.0577f,0.0722f,0.5460f,-0.0717f,0.0975f,0.5400f,-0.0647f,0.1050f,0.5390f,-0.0438f,0.1040f,0.5390f,-0.0223f,0.0862f,0.5060f,0.0158f,0.1010f,0.5100f,-0.0798f,0.0706f,0.5100f,-0.1010f,0.0406f,0.5130f,-0.0744f,0.0368f,0.5100f,-0.0357f,0.0556f,0.5060f,-0.0003f,0.1170f,0.5080f,-0.0169f,0.0878f,0.3610f,-0.0126f,0.1230f,0.3630f,-0.0400f,0.1230f,0.3630f,-0.0663f,0.1070f,0.3670f,-0.1070f,0.0588f,0.3650f,-0.1220f,0.0228f,0.3580f,-0.0926f,0.0239f,0.3580f,-0.0475f,0.0497f,0.3580f,-0.0234f,0.1180f,0.3110f,-0.0411f,0.1180f,0.3090f,-0.0685f,0.1050f,0.3100f,-0.1080f,0.0572f,0.3080f,-0.1230f,0.0201f,0.3090f,-0.0937f,0.0191f,0.3110f,-0.0508f,0.0475f,0.3070f,-0.0282f,0.0883f,0.3090f,-0.0180f,0.0959f,0.1240f,-0.0400f,0.0905f,0.1200f,-0.0647f,0.0738f,0.1170f,-0.0814f,0.0373f,0.1210f,-0.0636f,0.0416f,0.1240f,-0.0416f,0.0744f,0.1300f,-0.0212f,0.0561f,0.1300f,-0.0245f,0.0529f,0.1210f,-0.0873f,0.0948f,0.0897f,-0.0368f,0.0916f,0.0779f,-0.0604f,0.0717f,0.0854f,-0.0765f,0.0406f,0.0918f,-0.0626f,0.0384f,0.0881f,-0.0363f,0.0540f,0.0972f,-0.0175f,0.0765f,0.1100f,-0.0169f,0.0486f,0.0999f,-0.0835f});
   }
 }
 protected class MFInt327 {
@@ -951,7 +951,7 @@ protected class MFInt327 {
 }
 protected class MFVec3f8 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0529f,0f,-0.0923f,0.0863f,0f,-0.0862f,0.0727f,0f,-0.0994f,0.0863f,0.0219f,-0.0862f,0.0727f,0.0219f,-0.0994f,0.1f,0f,-0.0594f,0.1f,0.0219f,-0.0594f,0.113f,0f,0.0645f,0.113f,0.0219f,0.0645f,0.112f,0f,0.117f,0.112f,0.0156f,0.117f,0.0701f,0f,0.146f,0.0701f,0.0156f,0.146f,0.0468f,0f,0.153f,0.0468f,0.0156f,0.153f,0.0215f,0f,0.146f,0.0215f,0.0156f,0.146f,0.0165f,0f,0.125f,0.0165f,0.0156f,0.125f,0.0211f,0f,0.0377f,0.0211f,0.0219f,0.0377f,0.0393f,0f,-0.0129f,0.0393f,0.0219f,-0.0129f,0.0433f,0f,-0.0534f,0.0433f,0.0219f,-0.0534f,0.0529f,0.0219f,-0.0923f,0.0305f,0.0253f,0.0938f,0.0505f,0.0253f,0.099f,0.0854f,0.0253f,0.0834f,0.102f,0.0253f,0.0707f,0.0568f,0.0573f,-0.0918f,0.0492f,0.0573f,-0.0497f,0.0435f,0.0573f,-0.0225f,0.0442f,0.0573f,0.0235f,0.0623f,0.0573f,0.0366f,0.0911f,0.0573f,0.0159f,0.0962f,0.0573f,-0.0121f,0.0911f,0.0573f,-0.0482f,0.0758f,0.0573f,-0.0899f,0.0676f,0.0573f,-0.0962f,0.0578f,0.0953f,-0.0896f,0.0489f,0.0953f,-0.0757f,0.0447f,0.0953f,-0.0432f,0.0451f,0.0953f,-0.0128f,0.0624f,0.0953f,-0.00466f,0.0857f,0.0953f,-0.0134f,0.0953f,0.0953f,-0.038f,0.0843f,0.0953f,-0.0803f,0.0761f,0.0953f,-0.0889f,0.0682f,0.0953f,-0.0929f,0.0675f,0.13f,-0.0608f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0529f,0.0000f,-0.0923f,0.0863f,0.0000f,-0.0862f,0.0727f,0.0000f,-0.0994f,0.0863f,0.0219f,-0.0862f,0.0727f,0.0219f,-0.0994f,0.1000f,0.0000f,-0.0594f,0.1000f,0.0219f,-0.0594f,0.1130f,0.0000f,0.0645f,0.1130f,0.0219f,0.0645f,0.1120f,0.0000f,0.1170f,0.1120f,0.0156f,0.1170f,0.0701f,0.0000f,0.1460f,0.0701f,0.0156f,0.1460f,0.0468f,0.0000f,0.1530f,0.0468f,0.0156f,0.1530f,0.0215f,0.0000f,0.1460f,0.0215f,0.0156f,0.1460f,0.0165f,0.0000f,0.1250f,0.0165f,0.0156f,0.1250f,0.0211f,0.0000f,0.0377f,0.0211f,0.0219f,0.0377f,0.0393f,0.0000f,-0.0129f,0.0393f,0.0219f,-0.0129f,0.0433f,0.0000f,-0.0534f,0.0433f,0.0219f,-0.0534f,0.0529f,0.0219f,-0.0923f,0.0305f,0.0253f,0.0938f,0.0505f,0.0253f,0.0990f,0.0854f,0.0253f,0.0834f,0.1020f,0.0253f,0.0707f,0.0568f,0.0573f,-0.0918f,0.0492f,0.0573f,-0.0497f,0.0435f,0.0573f,-0.0225f,0.0442f,0.0573f,0.0235f,0.0623f,0.0573f,0.0366f,0.0911f,0.0573f,0.0159f,0.0962f,0.0573f,-0.0121f,0.0911f,0.0573f,-0.0482f,0.0758f,0.0573f,-0.0899f,0.0676f,0.0573f,-0.0962f,0.0578f,0.0953f,-0.0896f,0.0489f,0.0953f,-0.0757f,0.0447f,0.0953f,-0.0432f,0.0451f,0.0953f,-0.0128f,0.0624f,0.0953f,-0.0047f,0.0857f,0.0953f,-0.0134f,0.0953f,0.0953f,-0.0380f,0.0843f,0.0953f,-0.0803f,0.0761f,0.0953f,-0.0889f,0.0682f,0.0953f,-0.0929f,0.0675f,0.1300f,-0.0608f});
   }
 }
 protected class MFInt329 {
@@ -961,7 +961,7 @@ protected class MFInt329 {
 }
 protected class MFVec3f10 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.0969f,0.804f,-0.0486f,-0.101f,0.876f,0.0336f,-0.17f,0.894f,-0.00778f,-0.17f,0.891f,-0.076f,-0.124f,0.858f,-0.129f,-0.076f,0.843f,-0.143f,-0.025f,0.819f,-0.0889f,-0.0507f,0.847f,0.0196f,-0.00349f,0.826f,-0.0287f,-0.0991f,0.808f,0.0406f,-0.161f,0.814f,-0.00187f,-0.165f,0.808f,-0.0755f,-0.122f,0.788f,-0.126f,-0.00993f,0.762f,-0.0937f,-0.00993f,0.762f,-0.0309f,-0.0491f,0.777f,0.0185f,-0.0755f,0.766f,-0.139f,-0.13f,0.597f,-0.00618f,-0.132f,0.6f,-0.0593f,-0.108f,0.603f,-0.105f,-0.0722f,0.601f,-0.118f,-0.0314f,0.59f,-0.0953f,-0.0239f,0.566f,-0.0427f,-0.047f,0.566f,0.0051f,-0.0878f,0.581f,0.0217f,-0.114f,0.499f,-0.0132f,-0.116f,0.488f,-0.061f,-0.103f,0.567f,-0.0991f,-0.0362f,0.557f,-0.0926f,-0.025f,0.486f,-0.047f,-0.0507f,0.497f,-0.00188f,-0.0862f,0.513f,0.018f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.0969f,0.8040f,-0.0486f,-0.1010f,0.8760f,0.0336f,-0.1700f,0.8940f,-0.0078f,-0.1700f,0.8910f,-0.0760f,-0.1240f,0.8580f,-0.1290f,-0.0760f,0.8430f,-0.1430f,-0.0250f,0.8190f,-0.0889f,-0.0507f,0.8470f,0.0196f,-0.0035f,0.8260f,-0.0287f,-0.0991f,0.8080f,0.0406f,-0.1610f,0.8140f,-0.0019f,-0.1650f,0.8080f,-0.0755f,-0.1220f,0.7880f,-0.1260f,-0.0099f,0.7620f,-0.0937f,-0.0099f,0.7620f,-0.0309f,-0.0491f,0.7770f,0.0185f,-0.0755f,0.7660f,-0.1390f,-0.1300f,0.5970f,-0.0062f,-0.1320f,0.6000f,-0.0593f,-0.1080f,0.6030f,-0.1050f,-0.0722f,0.6010f,-0.1180f,-0.0314f,0.5900f,-0.0953f,-0.0239f,0.5660f,-0.0427f,-0.0470f,0.5660f,0.0051f,-0.0878f,0.5810f,0.0217f,-0.1140f,0.4990f,-0.0132f,-0.1160f,0.4880f,-0.0610f,-0.1030f,0.5670f,-0.0991f,-0.0362f,0.5570f,-0.0926f,-0.0250f,0.4860f,-0.0470f,-0.0507f,0.4970f,-0.0019f,-0.0862f,0.5130f,0.0180f});
   }
 }
 protected class MFInt3211 {
@@ -971,7 +971,7 @@ protected class MFInt3211 {
 }
 protected class MFVec3f12 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.123f,0.363f,-0.0663f,-0.123f,0.363f,-0.04f,-0.118f,0.309f,-0.0685f,-0.118f,0.311f,-0.0411f,-0.117f,0.508f,-0.0169f,-0.107f,0.367f,-0.107f,-0.105f,0.539f,-0.0438f,-0.105f,0.31f,-0.108f,-0.104f,0.539f,-0.0223f,-0.101f,0.51f,-0.0798f,-0.0975f,0.54f,-0.0647f,-0.0948f,0.0897f,-0.0368f,-0.0916f,0.0779f,-0.0604f,-0.0905f,0.12f,-0.0647f,-0.0883f,0.532f,-0.00349f,-0.0883f,0.309f,-0.018f,-0.0878f,0.361f,-0.0126f,-0.0862f,0.506f,0.0158f,-0.0814f,0.55f,-0.0395f,-0.0765f,0.11f,-0.0169f,-0.0744f,0.13f,-0.0212f,-0.0738f,0.117f,-0.0814f,-0.0722f,0.546f,-0.0717f,-0.0717f,0.0854f,-0.0765f,-0.0706f,0.51f,-0.101f,-0.0609f,0.533f,-0.00833f,-0.0588f,0.365f,-0.122f,-0.0577f,0.544f,-0.0577f,-0.0572f,0.308f,-0.123f,-0.0561f,0.13f,-0.0245f,-0.0556f,0.506f,-0.000272f,-0.054f,0.0972f,-0.0175f,-0.0529f,0.536f,-0.0368f,-0.0529f,0.121f,-0.0873f,-0.0497f,0.358f,-0.0234f,-0.0486f,0.0999f,-0.0835f,-0.0475f,0.307f,-0.0282f,-0.0416f,0.124f,-0.0416f,-0.0406f,0.0918f,-0.0626f,-0.0406f,0.513f,-0.0744f,-0.0384f,0.0881f,-0.0363f,-0.0373f,0.121f,-0.0636f,-0.0368f,0.51f,-0.0357f,-0.0239f,0.358f,-0.0475f,-0.0228f,0.358f,-0.0926f,-0.0201f,0.309f,-0.0937f,-0.0191f,0.311f,-0.0508f,-0.0985f,0.125f,-0.0375f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.1230f,0.3630f,-0.0663f,-0.1230f,0.3630f,-0.0400f,-0.1180f,0.3090f,-0.0685f,-0.1180f,0.3110f,-0.0411f,-0.1170f,0.5080f,-0.0169f,-0.1070f,0.3670f,-0.1070f,-0.1050f,0.5390f,-0.0438f,-0.1050f,0.3100f,-0.1080f,-0.1040f,0.5390f,-0.0223f,-0.1010f,0.5100f,-0.0798f,-0.0975f,0.5400f,-0.0647f,-0.0948f,0.0897f,-0.0368f,-0.0916f,0.0779f,-0.0604f,-0.0905f,0.1200f,-0.0647f,-0.0883f,0.5320f,-0.0035f,-0.0883f,0.3090f,-0.0180f,-0.0878f,0.3610f,-0.0126f,-0.0862f,0.5060f,0.0158f,-0.0814f,0.5500f,-0.0395f,-0.0765f,0.1100f,-0.0169f,-0.0744f,0.1300f,-0.0212f,-0.0738f,0.1170f,-0.0814f,-0.0722f,0.5460f,-0.0717f,-0.0717f,0.0854f,-0.0765f,-0.0706f,0.5100f,-0.1010f,-0.0609f,0.5330f,-0.0083f,-0.0588f,0.3650f,-0.1220f,-0.0577f,0.5440f,-0.0577f,-0.0572f,0.3080f,-0.1230f,-0.0561f,0.1300f,-0.0245f,-0.0556f,0.5060f,-0.0003f,-0.0540f,0.0972f,-0.0175f,-0.0529f,0.5360f,-0.0368f,-0.0529f,0.1210f,-0.0873f,-0.0497f,0.3580f,-0.0234f,-0.0486f,0.0999f,-0.0835f,-0.0475f,0.3070f,-0.0282f,-0.0416f,0.1240f,-0.0416f,-0.0406f,0.0918f,-0.0626f,-0.0406f,0.5130f,-0.0744f,-0.0384f,0.0881f,-0.0363f,-0.0373f,0.1210f,-0.0636f,-0.0368f,0.5100f,-0.0357f,-0.0239f,0.3580f,-0.0475f,-0.0228f,0.3580f,-0.0926f,-0.0201f,0.3090f,-0.0937f,-0.0191f,0.3110f,-0.0508f,-0.0985f,0.1250f,-0.0375f});
   }
 }
 protected class MFInt3213 {
@@ -981,7 +981,7 @@ protected class MFInt3213 {
 }
 protected class MFVec3f14 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.0727f,0f,-0.0994f,-0.1f,0f,-0.0594f,-0.0701f,0f,0.146f,-0.0468f,0f,0.153f,-0.0215f,0f,0.146f,-0.0433f,0f,-0.0534f,-0.0529f,0f,-0.0923f,-0.0727f,0.0219f,-0.0994f,-0.0863f,0.0219f,-0.0862f,-0.1f,0.0219f,-0.0594f,-0.108f,0.0219f,-0.00479f,-0.112f,0.0156f,0.117f,-0.0701f,0.0156f,0.146f,-0.0468f,0.0156f,0.153f,-0.0215f,0.0156f,0.146f,-0.0165f,0.017f,0.0777f,-0.0433f,0.0219f,-0.0534f,-0.0529f,0.0219f,-0.0923f,-0.0445f,0.0273f,-0.0189f,-0.0265f,0.0253f,0.0549f,-0.0305f,0.0253f,0.0938f,-0.069f,0.0253f,0.0938f,-0.102f,0.0253f,0.0707f,-0.0568f,0.0573f,-0.0918f,-0.0492f,0.0573f,-0.0497f,-0.0424f,0.0573f,-0.00142f,-0.0478f,0.0573f,0.0341f,-0.0623f,0.0573f,0.0366f,-0.0864f,0.0573f,0.0245f,-0.0962f,0.0573f,-0.0121f,-0.0845f,0.0573f,-0.0764f,-0.0758f,0.0573f,-0.0899f,-0.0676f,0.0573f,-0.0962f,-0.0578f,0.0953f,-0.0896f,-0.0489f,0.0953f,-0.0757f,-0.0459f,0.0953f,-0.0615f,-0.0435f,0.0953f,-0.0292f,-0.0485f,0.0953f,-0.00582f,-0.0624f,0.0953f,-0.00466f,-0.0857f,0.0953f,-0.0134f,-0.0953f,0.0953f,-0.038f,-0.0843f,0.0953f,-0.0803f,-0.0761f,0.0953f,-0.0889f,-0.0682f,0.0953f,-0.0929f,-0.0675f,0.13f,-0.0608f,-0.0165f,0f,0.125f,-0.112f,0f,0.117f,-0.0165f,0f,0.0777f,-0.0393f,0f,-0.0129f,-0.108f,0f,-0.00479f,-0.0863f,0f,-0.0862f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.0727f,0.0000f,-0.0994f,-0.1000f,0.0000f,-0.0594f,-0.0701f,0.0000f,0.1460f,-0.0468f,0.0000f,0.1530f,-0.0215f,0.0000f,0.1460f,-0.0433f,0.0000f,-0.0534f,-0.0529f,0.0000f,-0.0923f,-0.0727f,0.0219f,-0.0994f,-0.0863f,0.0219f,-0.0862f,-0.1000f,0.0219f,-0.0594f,-0.1080f,0.0219f,-0.0048f,-0.1120f,0.0156f,0.1170f,-0.0701f,0.0156f,0.1460f,-0.0468f,0.0156f,0.1530f,-0.0215f,0.0156f,0.1460f,-0.0165f,0.0170f,0.0777f,-0.0433f,0.0219f,-0.0534f,-0.0529f,0.0219f,-0.0923f,-0.0445f,0.0273f,-0.0189f,-0.0265f,0.0253f,0.0549f,-0.0305f,0.0253f,0.0938f,-0.0690f,0.0253f,0.0938f,-0.1020f,0.0253f,0.0707f,-0.0568f,0.0573f,-0.0918f,-0.0492f,0.0573f,-0.0497f,-0.0424f,0.0573f,-0.0014f,-0.0478f,0.0573f,0.0341f,-0.0623f,0.0573f,0.0366f,-0.0864f,0.0573f,0.0245f,-0.0962f,0.0573f,-0.0121f,-0.0845f,0.0573f,-0.0764f,-0.0758f,0.0573f,-0.0899f,-0.0676f,0.0573f,-0.0962f,-0.0578f,0.0953f,-0.0896f,-0.0489f,0.0953f,-0.0757f,-0.0459f,0.0953f,-0.0615f,-0.0435f,0.0953f,-0.0292f,-0.0485f,0.0953f,-0.0058f,-0.0624f,0.0953f,-0.0047f,-0.0857f,0.0953f,-0.0134f,-0.0953f,0.0953f,-0.0380f,-0.0843f,0.0953f,-0.0803f,-0.0761f,0.0953f,-0.0889f,-0.0682f,0.0953f,-0.0929f,-0.0675f,0.1300f,-0.0608f,-0.0165f,0.0000f,0.1250f,-0.1120f,0.0000f,0.1170f,-0.0165f,0.0000f,0.0777f,-0.0393f,0.0000f,-0.0129f,-0.1080f,0.0000f,-0.0048f,-0.0863f,0.0000f,-0.0862f});
   }
 }
 protected class MFString15 {
@@ -1001,12 +1001,12 @@ protected class MFInt3217 {
 }
 protected class MFVec3f18 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.043f,1.25f,0.0614f,0.101f,1.25f,0.0614f,0.103f,1.31f,0.0195f,0.021f,1.32f,0.0276f,0.0572f,1.27f,-0.153f,0.0524f,1.15f,-0.134f,0f,1.19f,-0.14f,0f,1.26f,-0.147f,-0.0572f,1.27f,-0.153f,-0.0228f,1.18f,-0.14f,-0.0524f,1.15f,-0.134f,0f,1.13f,-0.126f,-0.0228f,1.13f,-0.124f,0f,1.31f,-0.146f,-0.0545f,1.35f,-0.138f,0f,1.35f,-0.136f,-0.0593f,1.3f,-0.151f,0.0593f,1.3f,-0.151f,0.0545f,1.35f,-0.138f,-0.0255f,1.3f,-0.146f,0.0975f,1.26f,-0.15f,0.1f,1.3f,-0.148f,-0.1f,1.3f,-0.148f,-0.0975f,1.26f,-0.15f,-0.117f,1.41f,-0.0395f,-0.0674f,1.45f,-0.0314f,-0.0926f,1.41f,-0.0937f,-0.124f,1.4f,-0.0706f,-0.0583f,1.44f,-0.0615f,-0.0228f,1.46f,-0.0872f,-0.0534f,1.42f,-0.112f,-0.0228f,1.42f,0.00351f,-0.0593f,1.43f,-0.0185f,-0.0787f,1.39f,-0.00293f,-0.112f,1.4f,-0.0131f,-0.164f,1.39f,-0.0373f,-0.0153f,1.39f,0.0159f,-0.0953f,1.35f,-0.136f,-0.0545f,1.35f,-0.138f,-0.139f,1.34f,0.00297f,-0.137f,1.34f,-0.0368f,0f,1.35f,-0.136f,-0.156f,1.35f,-0.0915f,-0.132f,1.29f,-0.127f,-0.1f,1.3f,-0.148f,-0.0418f,1.35f,0.0168f,-0.013f,1.37f,0.0167f,-0.151f,1.28f,-0.0878f,-0.136f,1.32f,-0.0406f,-0.124f,1.26f,-0.125f,-0.0975f,1.26f,-0.15f,0.00228f,1.37f,0.0167f,-0.00959f,1.32f,0.0276f,-0.0918f,1.31f,0.0195f,-0.141f,1.25f,-0.0744f,-0.0316f,1.25f,0.0614f,-0.00261f,1.25f,0.0458f,-0.0611f,1.25f,0.0668f,-0.0896f,1.25f,0.0614f,-0.126f,1.24f,0.012f,-0.126f,1.22f,0.0141f,-0.129f,1.17f,-0.0523f,-0.115f,1.16f,-0.105f,-0.0851f,1.18f,-0.134f,-0.0524f,1.15f,-0.134f,-0.083f,1.13f,-0.122f,-0.117f,1.15f,-0.018f,-0.11f,1.1f,-0.0846f,-0.0808f,1.1f,-0.111f,-0.0228f,1.13f,-0.124f,-0.0524f,1.1f,-0.119f,0f,1.13f,-0.126f,-0.0228f,1.1f,-0.116f,-0.0563f,1.15f,0.0377f,-0.00476f,1.18f,0.0458f,-0.0343f,1.18f,0.0485f,-0.0966f,1.15f,-0.00413f,-0.12f,1.1f,-0.0373f,-0.121f,1.07f,-0.0356f,-0.106f,1.07f,-0.0711f,-0.0475f,1.06f,-0.105f,0f,1.08f,0.0556f,-0.0787f,1.08f,0.0347f,-0.103f,1.08f,0.00296f,-0.0975f,1.01f,-0.0873f,-0.134f,0.998f,-0.0314f,-0.0475f,1.02f,-0.109f,-0.0325f,1.02f,0.0529f,0f,1.02f,0.0422f,-0.0975f,1.02f,0.0132f,0.0926f,1.41f,-0.0937f,0.0674f,1.45f,-0.0314f,0.117f,1.41f,-0.0395f,0.124f,1.4f,-0.0706f,0.0583f,1.44f,-0.0615f,0.0534f,1.42f,-0.112f,0.0228f,1.46f,-0.0872f,0f,1.4f,-0.112f,0.0787f,1.39f,-0.00293f,0.0593f,1.43f,-0.0185f,0.0228f,1.42f,0.00351f,0.112f,1.4f,-0.0131f,0.164f,1.39f,-0.0373f,0.0153f,1.39f,0.0159f,0.0953f,1.35f,-0.136f,0.0545f,1.35f,-0.138f,0.139f,1.34f,0.00297f,0.156f,1.35f,-0.0915f,0.132f,1.29f,-0.127f,0.151f,1.28f,-0.0878f,0.1f,1.3f,-0.148f,0.137f,1.34f,-0.0368f,0.147f,1.32f,-0.0406f,0.124f,1.26f,-0.125f,0.0975f,1.26f,-0.15f,0.021f,1.32f,0.0276f,0.0532f,1.35f,0.0168f,0.103f,1.31f,0.0195f,0.135f,1.29f,-0.0406f,0.141f,1.25f,-0.0744f,0.132f,1.18f,-0.083f,0.134f,1.19f,-0.0572f,0.014f,1.25f,0.0458f,0.043f,1.25f,0.0614f,0.101f,1.25f,0.0614f,0.138f,1.24f,0.012f,0.065f,1.23f,0.0743f,0.115f,1.16f,-0.105f,0.0851f,1.18f,-0.134f,0.0524f,1.15f,-0.134f,0.043f,1.2f,0.0641f,0.127f,1.14f,-0.0427f,0.083f,1.13f,-0.122f,0.0162f,1.18f,0.0458f,0.0457f,1.18f,0.0485f,0.117f,1.15f,-0.018f,0.11f,1.1f,-0.0846f,0.0808f,1.1f,-0.111f,0.0524f,1.1f,-0.119f,0.0228f,1.1f,-0.116f,0.108f,1.15f,-0.00413f,0.12f,1.1f,-0.0373f,0.121f,1.07f,-0.0356f,0.106f,1.07f,-0.0711f,0.0475f,1.06f,-0.105f,0.0787f,1.08f,0.0347f,0.0844f,1.15f,0.0297f,0.103f,1.08f,0.00296f,0f,1.07f,-0.11f,0.0975f,1.01f,-0.0873f,0.134f,0.998f,-0.0475f,0.0475f,1.02f,-0.109f,0.0325f,1.02f,0.0529f,0.0975f,1.02f,0.0132f,0f,1.02f,-0.117f,0f,1.44f,-0.0389f,0f,1.01f,-0.0259f,-0.104f,1.19f,0.0423f,-0.0778f,1.19f,0.0642f,-0.078f,1.19f,0.0644f,-0.0493f,1.2f,0.0664f,-0.0281f,1.22f,0.0587f,-0.104f,1.2f,0.0568f,-0.0484f,1.21f,0.0692f,-0.0549f,1.21f,0.0708f,-0.0806f,1.21f,0.0713f,-0.0852f,1.21f,0.0703f,0.116f,1.19f,0.043f,0.114f,1.21f,0.0572f,0.0967f,1.21f,0.0701f,0.11f,1.19f,0.0502f,0.093f,1.19f,0.0622f,0.0832f,1.19f,0.0662f,0.0863f,1.21f,0.0728f,0.0154f,1.21f,0.0458f,-0.00393f,1.21f,0.0458f,-0.0145f,1.2f,0.0512f,0.0534f,1.35f,0.0168f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0430f,1.2500f,0.0614f,0.1010f,1.2500f,0.0614f,0.1030f,1.3100f,0.0195f,0.0210f,1.3200f,0.0276f,0.0572f,1.2700f,-0.1530f,0.0524f,1.1500f,-0.1340f,0.0000f,1.1900f,-0.1400f,0.0000f,1.2600f,-0.1470f,-0.0572f,1.2700f,-0.1530f,-0.0228f,1.1800f,-0.1400f,-0.0524f,1.1500f,-0.1340f,0.0000f,1.1300f,-0.1260f,-0.0228f,1.1300f,-0.1240f,0.0000f,1.3100f,-0.1460f,-0.0545f,1.3500f,-0.1380f,0.0000f,1.3500f,-0.1360f,-0.0593f,1.3000f,-0.1510f,0.0593f,1.3000f,-0.1510f,0.0545f,1.3500f,-0.1380f,-0.0255f,1.3000f,-0.1460f,0.0975f,1.2600f,-0.1500f,0.1000f,1.3000f,-0.1480f,-0.1000f,1.3000f,-0.1480f,-0.0975f,1.2600f,-0.1500f,-0.1170f,1.4100f,-0.0395f,-0.0674f,1.4500f,-0.0314f,-0.0926f,1.4100f,-0.0937f,-0.1240f,1.4000f,-0.0706f,-0.0583f,1.4400f,-0.0615f,-0.0228f,1.4600f,-0.0872f,-0.0534f,1.4200f,-0.1120f,-0.0228f,1.4200f,0.0035f,-0.0593f,1.4300f,-0.0185f,-0.0787f,1.3900f,-0.0029f,-0.1120f,1.4000f,-0.0131f,-0.1640f,1.3900f,-0.0373f,-0.0153f,1.3900f,0.0159f,-0.0953f,1.3500f,-0.1360f,-0.0545f,1.3500f,-0.1380f,-0.1390f,1.3400f,0.0030f,-0.1370f,1.3400f,-0.0368f,0.0000f,1.3500f,-0.1360f,-0.1560f,1.3500f,-0.0915f,-0.1320f,1.2900f,-0.1270f,-0.1000f,1.3000f,-0.1480f,-0.0418f,1.3500f,0.0168f,-0.0130f,1.3700f,0.0167f,-0.1510f,1.2800f,-0.0878f,-0.1360f,1.3200f,-0.0406f,-0.1240f,1.2600f,-0.1250f,-0.0975f,1.2600f,-0.1500f,0.0023f,1.3700f,0.0167f,-0.0096f,1.3200f,0.0276f,-0.0918f,1.3100f,0.0195f,-0.1410f,1.2500f,-0.0744f,-0.0316f,1.2500f,0.0614f,-0.0026f,1.2500f,0.0458f,-0.0611f,1.2500f,0.0668f,-0.0896f,1.2500f,0.0614f,-0.1260f,1.2400f,0.0120f,-0.1260f,1.2200f,0.0141f,-0.1290f,1.1700f,-0.0523f,-0.1150f,1.1600f,-0.1050f,-0.0851f,1.1800f,-0.1340f,-0.0524f,1.1500f,-0.1340f,-0.0830f,1.1300f,-0.1220f,-0.1170f,1.1500f,-0.0180f,-0.1100f,1.1000f,-0.0846f,-0.0808f,1.1000f,-0.1110f,-0.0228f,1.1300f,-0.1240f,-0.0524f,1.1000f,-0.1190f,0.0000f,1.1300f,-0.1260f,-0.0228f,1.1000f,-0.1160f,-0.0563f,1.1500f,0.0377f,-0.0048f,1.1800f,0.0458f,-0.0343f,1.1800f,0.0485f,-0.0966f,1.1500f,-0.0041f,-0.1200f,1.1000f,-0.0373f,-0.1210f,1.0700f,-0.0356f,-0.1060f,1.0700f,-0.0711f,-0.0475f,1.0600f,-0.1050f,0.0000f,1.0800f,0.0556f,-0.0787f,1.0800f,0.0347f,-0.1030f,1.0800f,0.0030f,-0.0975f,1.0100f,-0.0873f,-0.1340f,0.9980f,-0.0314f,-0.0475f,1.0200f,-0.1090f,-0.0325f,1.0200f,0.0529f,0.0000f,1.0200f,0.0422f,-0.0975f,1.0200f,0.0132f,0.0926f,1.4100f,-0.0937f,0.0674f,1.4500f,-0.0314f,0.1170f,1.4100f,-0.0395f,0.1240f,1.4000f,-0.0706f,0.0583f,1.4400f,-0.0615f,0.0534f,1.4200f,-0.1120f,0.0228f,1.4600f,-0.0872f,0.0000f,1.4000f,-0.1120f,0.0787f,1.3900f,-0.0029f,0.0593f,1.4300f,-0.0185f,0.0228f,1.4200f,0.0035f,0.1120f,1.4000f,-0.0131f,0.1640f,1.3900f,-0.0373f,0.0153f,1.3900f,0.0159f,0.0953f,1.3500f,-0.1360f,0.0545f,1.3500f,-0.1380f,0.1390f,1.3400f,0.0030f,0.1560f,1.3500f,-0.0915f,0.1320f,1.2900f,-0.1270f,0.1510f,1.2800f,-0.0878f,0.1000f,1.3000f,-0.1480f,0.1370f,1.3400f,-0.0368f,0.1470f,1.3200f,-0.0406f,0.1240f,1.2600f,-0.1250f,0.0975f,1.2600f,-0.1500f,0.0210f,1.3200f,0.0276f,0.0532f,1.3500f,0.0168f,0.1030f,1.3100f,0.0195f,0.1350f,1.2900f,-0.0406f,0.1410f,1.2500f,-0.0744f,0.1320f,1.1800f,-0.0830f,0.1340f,1.1900f,-0.0572f,0.0140f,1.2500f,0.0458f,0.0430f,1.2500f,0.0614f,0.1010f,1.2500f,0.0614f,0.1380f,1.2400f,0.0120f,0.0650f,1.2300f,0.0743f,0.1150f,1.1600f,-0.1050f,0.0851f,1.1800f,-0.1340f,0.0524f,1.1500f,-0.1340f,0.0430f,1.2000f,0.0641f,0.1270f,1.1400f,-0.0427f,0.0830f,1.1300f,-0.1220f,0.0162f,1.1800f,0.0458f,0.0457f,1.1800f,0.0485f,0.1170f,1.1500f,-0.0180f,0.1100f,1.1000f,-0.0846f,0.0808f,1.1000f,-0.1110f,0.0524f,1.1000f,-0.1190f,0.0228f,1.1000f,-0.1160f,0.1080f,1.1500f,-0.0041f,0.1200f,1.1000f,-0.0373f,0.1210f,1.0700f,-0.0356f,0.1060f,1.0700f,-0.0711f,0.0475f,1.0600f,-0.1050f,0.0787f,1.0800f,0.0347f,0.0844f,1.1500f,0.0297f,0.1030f,1.0800f,0.0030f,0.0000f,1.0700f,-0.1100f,0.0975f,1.0100f,-0.0873f,0.1340f,0.9980f,-0.0475f,0.0475f,1.0200f,-0.1090f,0.0325f,1.0200f,0.0529f,0.0975f,1.0200f,0.0132f,0.0000f,1.0200f,-0.1170f,0.0000f,1.4400f,-0.0389f,0.0000f,1.0100f,-0.0259f,-0.1040f,1.1900f,0.0423f,-0.0778f,1.1900f,0.0642f,-0.0780f,1.1900f,0.0644f,-0.0493f,1.2000f,0.0664f,-0.0281f,1.2200f,0.0587f,-0.1040f,1.2000f,0.0568f,-0.0484f,1.2100f,0.0692f,-0.0549f,1.2100f,0.0708f,-0.0806f,1.2100f,0.0713f,-0.0852f,1.2100f,0.0703f,0.1160f,1.1900f,0.0430f,0.1140f,1.2100f,0.0572f,0.0967f,1.2100f,0.0701f,0.1100f,1.1900f,0.0502f,0.0930f,1.1900f,0.0622f,0.0832f,1.1900f,0.0662f,0.0863f,1.2100f,0.0728f,0.0154f,1.2100f,0.0458f,-0.0039f,1.2100f,0.0458f,-0.0145f,1.2000f,0.0512f,0.0534f,1.3500f,0.0168f});
   }
 }
 protected class MFVec2f19 {
   protected org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {0.1611f,-0.02056f,0.9468f,-0.02056f,0.9739f,0.9344f,-0.137f,1.094f,0.1973f,0.6424f,0.2231f,0.04876f,0.5054f,0.2466f,0.5054f,0.5929f,0.8135f,0.6424f,0.6282f,0.1972f,0.7876f,0.04876f,0.5054f,-0.05018f,0.6282f,-0.05018f,0.5054f,0.8403f,0.7989f,1.038f,0.5054f,1.038f,0.8248f,0.7908f,0.186f,0.7908f,0.2118f,1.038f,0.6427f,0.7908f,-0.01977f,0.5929f,-0.03324f,0.7908f,1.044f,0.7908f,1.031f,0.5929f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {0.1611f,-0.0206f,0.9468f,-0.0206f,0.9739f,0.9344f,-0.1370f,1.0940f,0.1973f,0.6424f,0.2231f,0.0488f,0.5054f,0.2466f,0.5054f,0.5929f,0.8135f,0.6424f,0.6282f,0.1972f,0.7876f,0.0488f,0.5054f,-0.0502f,0.6282f,-0.0502f,0.5054f,0.8403f,0.7989f,1.0380f,0.5054f,1.0380f,0.8248f,0.7908f,0.1860f,0.7908f,0.2118f,1.0380f,0.6427f,0.7908f,-0.0198f,0.5929f,-0.0332f,0.7908f,1.0440f,0.7908f,1.0310f,0.5929f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f});
   }
 }
 protected class MFInt3220 {
@@ -1016,7 +1016,7 @@ protected class MFInt3220 {
 }
 protected class MFVec3f21 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.174f,1.37f,-0.0625f,0.185f,1.38f,-0.0395f,0.156f,1.39f,-0.0464f,0.174f,1.37f,-0.0158f,0.154f,1.37f,-0.0185f,0.157f,1.38f,-0.0733f,0.182f,1.33f,-0.0728f,0.151f,1.33f,-0.0937f,0.15f,1.34f,-0.000787f,0.185f,1.33f,-0.00025f,0.201f,1.33f,-0.0411f,0.189f,1.26f,-0.0808f,0.155f,1.26f,-0.0867f,0.151f,1.26f,-0.000789f,0.19f,1.26f,-0.00401f,0.209f,1.26f,-0.0427f,0.141f,1.26f,-0.0421f,0.203f,1.08f,-0.0744f,0.162f,1.05f,-0.0561f,0.169f,1.08f,-0.00885f,0.208f,1.07f,-0.00133f,0.221f,1.08f,-0.0352f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.1740f,1.3700f,-0.0625f,0.1850f,1.3800f,-0.0395f,0.1560f,1.3900f,-0.0464f,0.1740f,1.3700f,-0.0158f,0.1540f,1.3700f,-0.0185f,0.1570f,1.3800f,-0.0733f,0.1820f,1.3300f,-0.0728f,0.1510f,1.3300f,-0.0937f,0.1500f,1.3400f,-0.0008f,0.1850f,1.3300f,-0.0003f,0.2010f,1.3300f,-0.0411f,0.1890f,1.2600f,-0.0808f,0.1550f,1.2600f,-0.0867f,0.1510f,1.2600f,-0.0008f,0.1900f,1.2600f,-0.0040f,0.2090f,1.2600f,-0.0427f,0.1410f,1.2600f,-0.0421f,0.2030f,1.0800f,-0.0744f,0.1620f,1.0500f,-0.0561f,0.1690f,1.0800f,-0.0089f,0.2080f,1.0700f,-0.0013f,0.2210f,1.0800f,-0.0352f});
   }
 }
 protected class MFInt3222 {
@@ -1026,7 +1026,7 @@ protected class MFInt3222 {
 }
 protected class MFVec3f23 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.177f,1.09f,-0.0609f,0.202f,1.1f,-0.0566f,0.189f,1.1f,-0.0395f,0.213f,1.1f,-0.025f,0.203f,1.1f,-0.0158f,0.182f,1.09f,-0.00563f,0.167f,1.09f,-0.0325f,0.176f,1.08f,-0.0781f,0.16f,1.06f,-0.0373f,0.214f,1.07f,-0.00402f,0.228f,1.07f,-0.0319f,0.208f,1.08f,-0.0765f,0.179f,1.07f,-0.00294f,0.21f,0.818f,-0.0615f,0.201f,0.82f,-0.0405f,0.205f,0.819f,-0.00832f,0.224f,0.818f,-0.00778f,0.237f,0.82f,-0.0282f,0.231f,0.819f,-0.0609f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.1770f,1.0900f,-0.0609f,0.2020f,1.1000f,-0.0566f,0.1890f,1.1000f,-0.0395f,0.2130f,1.1000f,-0.0250f,0.2030f,1.1000f,-0.0158f,0.1820f,1.0900f,-0.0056f,0.1670f,1.0900f,-0.0325f,0.1760f,1.0800f,-0.0781f,0.1600f,1.0600f,-0.0373f,0.2140f,1.0700f,-0.0040f,0.2280f,1.0700f,-0.0319f,0.2080f,1.0800f,-0.0765f,0.1790f,1.0700f,-0.0029f,0.2100f,0.8180f,-0.0615f,0.2010f,0.8200f,-0.0405f,0.2050f,0.8190f,-0.0083f,0.2240f,0.8180f,-0.0078f,0.2370f,0.8200f,-0.0282f,0.2310f,0.8190f,-0.0609f});
   }
 }
 protected class MFInt3224 {
@@ -1036,7 +1036,7 @@ protected class MFInt3224 {
 }
 protected class MFVec3f25 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.211f,0.828f,-0.0434f,0.194f,0.81f,-0.0445f,0.237f,0.82f,-0.0425f,0.236f,0.82f,-0.0237f,0.194f,0.81f,-0.0254f,0.21f,0.828f,-0.0247f,0.252f,0.801f,-0.0424f,0.252f,0.801f,-0.0231f,0.269f,0.765f,-0.0426f,0.268f,0.765f,-0.0225f,0.273f,0.732f,-0.0395f,0.272f,0.732f,-0.0223f,0.27f,0.704f,-0.0342f,0.27f,0.704f,-0.0224f,0.262f,0.703f,-0.0345f,0.261f,0.703f,-0.0227f,0.256f,0.717f,-0.0389f,0.256f,0.717f,-0.023f,0.255f,0.738f,-0.0408f,0.255f,0.738f,-0.023f,0.251f,0.734f,-0.0406f,0.251f,0.734f,-0.0232f,0.251f,0.692f,-0.0232f,0.248f,0.657f,-0.0233f,0.24f,0.645f,-0.0236f,0.226f,0.637f,-0.0241f,0.213f,0.639f,-0.0246f,0.197f,0.652f,-0.0253f,0.188f,0.669f,-0.0256f,0.184f,0.697f,-0.0258f,0.183f,0.73f,-0.0258f,0.187f,0.77f,-0.0257f,0.244f,0.696f,-0.0375f,0.244f,0.692f,-0.0372f,0.242f,0.661f,-0.0345f,0.241f,0.658f,-0.0343f,0.241f,0.656f,-0.0341f,0.231f,0.646f,-0.0336f,0.206f,0.65f,-0.0349f,0.218f,0.644f,-0.034f,0.205f,0.652f,-0.0352f,0.198f,0.667f,-0.0367f,0.195f,0.691f,-0.039f,0.194f,0.696f,-0.0395f,0.193f,0.725f,-0.042f,0.193f,0.731f,-0.0425f,0.197f,0.765f,-0.0449f,0.197f,0.77f,-0.0453f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.2110f,0.8280f,-0.0434f,0.1940f,0.8100f,-0.0445f,0.2370f,0.8200f,-0.0425f,0.2360f,0.8200f,-0.0237f,0.1940f,0.8100f,-0.0254f,0.2100f,0.8280f,-0.0247f,0.2520f,0.8010f,-0.0424f,0.2520f,0.8010f,-0.0231f,0.2690f,0.7650f,-0.0426f,0.2680f,0.7650f,-0.0225f,0.2730f,0.7320f,-0.0395f,0.2720f,0.7320f,-0.0223f,0.2700f,0.7040f,-0.0342f,0.2700f,0.7040f,-0.0224f,0.2620f,0.7030f,-0.0345f,0.2610f,0.7030f,-0.0227f,0.2560f,0.7170f,-0.0389f,0.2560f,0.7170f,-0.0230f,0.2550f,0.7380f,-0.0408f,0.2550f,0.7380f,-0.0230f,0.2510f,0.7340f,-0.0406f,0.2510f,0.7340f,-0.0232f,0.2510f,0.6920f,-0.0232f,0.2480f,0.6570f,-0.0233f,0.2400f,0.6450f,-0.0236f,0.2260f,0.6370f,-0.0241f,0.2130f,0.6390f,-0.0246f,0.1970f,0.6520f,-0.0253f,0.1880f,0.6690f,-0.0256f,0.1840f,0.6970f,-0.0258f,0.1830f,0.7300f,-0.0258f,0.1870f,0.7700f,-0.0257f,0.2440f,0.6960f,-0.0375f,0.2440f,0.6920f,-0.0372f,0.2420f,0.6610f,-0.0345f,0.2410f,0.6580f,-0.0343f,0.2410f,0.6560f,-0.0341f,0.2310f,0.6460f,-0.0336f,0.2060f,0.6500f,-0.0349f,0.2180f,0.6440f,-0.0340f,0.2050f,0.6520f,-0.0352f,0.1980f,0.6670f,-0.0367f,0.1950f,0.6910f,-0.0390f,0.1940f,0.6960f,-0.0395f,0.1930f,0.7250f,-0.0420f,0.1930f,0.7310f,-0.0425f,0.1970f,0.7650f,-0.0449f,0.1970f,0.7700f,-0.0453f});
   }
 }
 protected class MFInt3226 {
@@ -1046,7 +1046,7 @@ protected class MFInt3226 {
 }
 protected class MFVec3f27 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.221f,1.08f,-0.0352f,-0.214f,1.14f,-0.0405f,-0.209f,1.26f,-0.0427f,-0.208f,1.07f,-0.00133f,-0.203f,1.08f,-0.0744f,-0.201f,1.33f,-0.0411f,-0.198f,1.14f,-0.0024f,-0.198f,1.13f,-0.076f,-0.19f,1.26f,-0.00401f,-0.189f,1.26f,-0.0808f,-0.185f,1.38f,-0.0395f,-0.185f,1.33f,-0.00025f,-0.182f,1.33f,-0.0728f,-0.174f,1.37f,-0.0158f,-0.174f,1.37f,-0.0625f,-0.169f,1.08f,-0.00885f,-0.167f,1.13f,-0.0744f,-0.162f,1.05f,-0.0561f,-0.16f,1.13f,-0.000793f,-0.157f,1.38f,-0.0733f,-0.156f,1.39f,-0.0464f,-0.155f,1.26f,-0.0867f,-0.154f,1.37f,-0.0185f,-0.151f,1.26f,-0.000789f,-0.151f,1.33f,-0.0937f,-0.15f,1.34f,-0.000787f,-0.15f,1.13f,-0.0411f,-0.141f,1.26f,-0.0421f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.2210f,1.0800f,-0.0352f,-0.2140f,1.1400f,-0.0405f,-0.2090f,1.2600f,-0.0427f,-0.2080f,1.0700f,-0.0013f,-0.2030f,1.0800f,-0.0744f,-0.2010f,1.3300f,-0.0411f,-0.1980f,1.1400f,-0.0024f,-0.1980f,1.1300f,-0.0760f,-0.1900f,1.2600f,-0.0040f,-0.1890f,1.2600f,-0.0808f,-0.1850f,1.3800f,-0.0395f,-0.1850f,1.3300f,-0.0003f,-0.1820f,1.3300f,-0.0728f,-0.1740f,1.3700f,-0.0158f,-0.1740f,1.3700f,-0.0625f,-0.1690f,1.0800f,-0.0089f,-0.1670f,1.1300f,-0.0744f,-0.1620f,1.0500f,-0.0561f,-0.1600f,1.1300f,-0.0008f,-0.1570f,1.3800f,-0.0733f,-0.1560f,1.3900f,-0.0464f,-0.1550f,1.2600f,-0.0867f,-0.1540f,1.3700f,-0.0185f,-0.1510f,1.2600f,-0.0008f,-0.1510f,1.3300f,-0.0937f,-0.1500f,1.3400f,-0.0008f,-0.1500f,1.1300f,-0.0411f,-0.1410f,1.2600f,-0.0421f});
   }
 }
 protected class MFInt3228 {
@@ -1056,7 +1056,7 @@ protected class MFInt3228 {
 }
 protected class MFVec3f29 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.237f,0.82f,-0.0282f,-0.235f,1.02f,-0.033f,-0.231f,0.819f,-0.0609f,-0.228f,1.07f,-0.0319f,-0.224f,0.818f,-0.00778f,-0.221f,1.01f,-0.0744f,-0.218f,1.01f,-0.00133f,-0.214f,1.07f,-0.00402f,-0.213f,1.1f,-0.025f,-0.21f,0.818f,-0.0615f,-0.208f,1.08f,-0.0765f,-0.205f,0.819f,-0.00832f,-0.203f,1.1f,-0.0158f,-0.202f,1.1f,-0.0566f,-0.201f,0.82f,-0.0405f,-0.189f,1.1f,-0.0395f,-0.183f,1.01f,-0.00831f,-0.183f,1.01f,-0.0781f,-0.182f,1.09f,-0.00563f,-0.179f,1.07f,-0.00294f,-0.177f,1.09f,-0.0609f,-0.176f,1.08f,-0.0781f,-0.167f,1.09f,-0.0325f,-0.166f,1f,-0.0405f,-0.16f,1.06f,-0.0373f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.2370f,0.8200f,-0.0282f,-0.2350f,1.0200f,-0.0330f,-0.2310f,0.8190f,-0.0609f,-0.2280f,1.0700f,-0.0319f,-0.2240f,0.8180f,-0.0078f,-0.2210f,1.0100f,-0.0744f,-0.2180f,1.0100f,-0.0013f,-0.2140f,1.0700f,-0.0040f,-0.2130f,1.1000f,-0.0250f,-0.2100f,0.8180f,-0.0615f,-0.2080f,1.0800f,-0.0765f,-0.2050f,0.8190f,-0.0083f,-0.2030f,1.1000f,-0.0158f,-0.2020f,1.1000f,-0.0566f,-0.2010f,0.8200f,-0.0405f,-0.1890f,1.1000f,-0.0395f,-0.1830f,1.0100f,-0.0083f,-0.1830f,1.0100f,-0.0781f,-0.1820f,1.0900f,-0.0056f,-0.1790f,1.0700f,-0.0029f,-0.1770f,1.0900f,-0.0609f,-0.1760f,1.0800f,-0.0781f,-0.1670f,1.0900f,-0.0325f,-0.1660f,1.0000f,-0.0405f,-0.1600f,1.0600f,-0.0373f});
   }
 }
 protected class MFInt3230 {
@@ -1066,7 +1066,7 @@ protected class MFInt3230 {
 }
 protected class MFVec3f31 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.237f,0.82f,-0.0425f,-0.252f,0.801f,-0.0424f,-0.269f,0.765f,-0.0426f,-0.273f,0.732f,-0.0395f,-0.27f,0.704f,-0.0342f,-0.262f,0.703f,-0.0345f,-0.256f,0.717f,-0.0389f,-0.255f,0.738f,-0.0408f,-0.251f,0.734f,-0.0406f,-0.194f,0.81f,-0.0445f,-0.211f,0.828f,-0.0434f,-0.236f,0.82f,-0.0237f,-0.252f,0.801f,-0.0231f,-0.268f,0.765f,-0.0225f,-0.272f,0.732f,-0.0223f,-0.27f,0.704f,-0.0224f,-0.261f,0.703f,-0.0227f,-0.256f,0.717f,-0.023f,-0.255f,0.738f,-0.023f,-0.251f,0.734f,-0.0232f,-0.251f,0.692f,-0.0232f,-0.248f,0.657f,-0.0233f,-0.24f,0.645f,-0.0236f,-0.226f,0.637f,-0.0241f,-0.213f,0.639f,-0.0246f,-0.197f,0.652f,-0.0253f,-0.188f,0.669f,-0.0256f,-0.184f,0.697f,-0.0258f,-0.183f,0.73f,-0.0258f,-0.187f,0.77f,-0.0257f,-0.194f,0.81f,-0.0254f,-0.21f,0.828f,-0.0247f,-0.221f,0.641f,-0.0336f,-0.21f,0.65f,-0.0348f,-0.206f,0.652f,-0.0352f,-0.198f,0.667f,-0.0368f,-0.193f,0.692f,-0.0392f,-0.192f,0.696f,-0.0396f,-0.231f,0.646f,-0.0336f,-0.238f,0.656f,-0.0342f,-0.24f,0.658f,-0.0344f,-0.24f,0.662f,-0.0347f,-0.243f,0.692f,-0.0372f,-0.243f,0.696f,-0.0376f,-0.192f,0.725f,-0.0421f,-0.192f,0.73f,-0.0426f,-0.195f,0.766f,-0.0451f,-0.196f,0.77f,-0.0454f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.2370f,0.8200f,-0.0425f,-0.2520f,0.8010f,-0.0424f,-0.2690f,0.7650f,-0.0426f,-0.2730f,0.7320f,-0.0395f,-0.2700f,0.7040f,-0.0342f,-0.2620f,0.7030f,-0.0345f,-0.2560f,0.7170f,-0.0389f,-0.2550f,0.7380f,-0.0408f,-0.2510f,0.7340f,-0.0406f,-0.1940f,0.8100f,-0.0445f,-0.2110f,0.8280f,-0.0434f,-0.2360f,0.8200f,-0.0237f,-0.2520f,0.8010f,-0.0231f,-0.2680f,0.7650f,-0.0225f,-0.2720f,0.7320f,-0.0223f,-0.2700f,0.7040f,-0.0224f,-0.2610f,0.7030f,-0.0227f,-0.2560f,0.7170f,-0.0230f,-0.2550f,0.7380f,-0.0230f,-0.2510f,0.7340f,-0.0232f,-0.2510f,0.6920f,-0.0232f,-0.2480f,0.6570f,-0.0233f,-0.2400f,0.6450f,-0.0236f,-0.2260f,0.6370f,-0.0241f,-0.2130f,0.6390f,-0.0246f,-0.1970f,0.6520f,-0.0253f,-0.1880f,0.6690f,-0.0256f,-0.1840f,0.6970f,-0.0258f,-0.1830f,0.7300f,-0.0258f,-0.1870f,0.7700f,-0.0257f,-0.1940f,0.8100f,-0.0254f,-0.2100f,0.8280f,-0.0247f,-0.2210f,0.6410f,-0.0336f,-0.2100f,0.6500f,-0.0348f,-0.2060f,0.6520f,-0.0352f,-0.1980f,0.6670f,-0.0368f,-0.1930f,0.6920f,-0.0392f,-0.1920f,0.6960f,-0.0396f,-0.2310f,0.6460f,-0.0336f,-0.2380f,0.6560f,-0.0342f,-0.2400f,0.6580f,-0.0344f,-0.2400f,0.6620f,-0.0347f,-0.2430f,0.6920f,-0.0372f,-0.2430f,0.6960f,-0.0376f,-0.1920f,0.7250f,-0.0421f,-0.1920f,0.7300f,-0.0426f,-0.1950f,0.7660f,-0.0451f,-0.1960f,0.7700f,-0.0454f});
   }
 }
 protected class MFInt3232 {
@@ -1076,7 +1076,7 @@ protected class MFInt3232 {
 }
 protected class MFVec3f33 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0105f,1.54f,-0.1f,0.0357f,1.54f,-0.0685f,0.0382f,1.55f,-0.0474f,0.0105f,1.55f,-0.0204f,0.0373f,1.4f,-0.0593f,0.0577f,1.4f,-0.0266f,0.0158f,1.4f,0.00512f,0.0132f,1.41f,-0.0824f,-0.0158f,1.4f,0.00512f,-0.0577f,1.4f,-0.0266f,-0.0382f,1.55f,-0.0474f,-0.0105f,1.55f,-0.0204f,-0.0373f,1.4f,-0.0593f,-0.0357f,1.54f,-0.0685f,-0.0132f,1.41f,-0.0824f,-0.0105f,1.54f,-0.1f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0105f,1.5400f,-0.1000f,0.0357f,1.5400f,-0.0685f,0.0382f,1.5500f,-0.0474f,0.0105f,1.5500f,-0.0204f,0.0373f,1.4000f,-0.0593f,0.0577f,1.4000f,-0.0266f,0.0158f,1.4000f,0.0051f,0.0132f,1.4100f,-0.0824f,-0.0158f,1.4000f,0.0051f,-0.0577f,1.4000f,-0.0266f,-0.0382f,1.5500f,-0.0474f,-0.0105f,1.5500f,-0.0204f,-0.0373f,1.4000f,-0.0593f,-0.0357f,1.5400f,-0.0685f,-0.0132f,1.4100f,-0.0824f,-0.0105f,1.5400f,-0.1000f});
   }
 }
 protected class MFInt3234 {
@@ -1101,12 +1101,12 @@ protected class MFInt3237 {
 }
 protected class MFVec3f38 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,1.708f,-0.0435f,0f,1.655f,0.04322f,0f,1.486f,0.02335f,0f,1.694f,0.007789f,0f,1.631f,0.051f,0f,1.524f,-0.102f,0.04f,1.51f,-0.07278f,0.04029f,1.514f,-0.08254f,0.03528f,1.502f,-0.05013f,0.03479f,1.517f,-0.09269f,0.0116f,1.494f,0.03382f,0.01946f,1.52f,0.03421f,0.02204f,1.494f,0.0272f,0.02734f,1.498f,0.02215f,0.02788f,1.528f,0.03084f,0.0338f,1.503f,0.0124f,0.04008f,1.509f,0.002821f,0.05122f,1.518f,-0.02784f,0.05867f,1.544f,-0.03316f,0.06433f,1.563f,-0.03678f,0.06732f,1.583f,-0.03683f,0.06769f,1.617f,-0.03436f,0.06641f,1.637f,-0.03046f,0.06818f,1.637f,-0.04285f,0.06308f,1.666f,-0.04036f,0.05305f,1.685f,-0.03987f,0.03136f,1.7f,-0.0413f,0.02919f,1.688f,0.0091f,0.05272f,1.674f,-0.001657f,0.06061f,1.66f,-0.0101f,0.05254f,1.541f,-0.01363f,0.04099f,1.527f,0.008832f,0.03528f,1.524f,0.02097f,0.05792f,1.557f,-0.004307f,0.04413f,1.539f,0.0149f,0.03746f,1.539f,0.02656f,0.003407f,1.524f,0.04155f,0.01481f,1.526f,0.03912f,0.005112f,1.532f,0.04358f,0.02438f,1.542f,0.03578f,0.02636f,1.55f,0.03808f,0.006135f,1.55f,0.0545f,0f,1.559f,0.05502f,0.02958f,1.651f,0.03965f,0.04847f,1.643f,0.02895f,0.05856f,1.63f,0.01803f,0.06182f,1.614f,0.008199f,0.06194f,1.6f,0.002668f,0.01489f,1.583f,0.04109f,0.05282f,1.569f,0.02821f,0.05767f,1.58f,0.0184f,0.04643f,1.625f,0.03705f,0.0264f,1.628f,0.04807f,0.0556f,1.609f,0.02579f,0.05467f,1.599f,0.02153f,0.05316f,1.589f,0.0207f,0.03603f,1.58f,0.03536f,0.04597f,1.586f,0.02904f,0.02106f,1.592f,0.03748f,0.03428f,1.595f,0.03294f,0.06808f,1.617f,-0.06112f,0.06714f,1.564f,-0.07003f,0.06993f,1.594f,-0.08238f,0.05324f,1.536f,-0.05922f,0.04904f,1.521f,-0.05132f,0.04758f,1.514f,-0.03107f,0.03539f,1.503f,-0.00093f,0.02999f,1.498f,0.006194f,0.02308f,1.492f,0.01628f,0.01772f,1.488f,0.02135f,0.01378f,1.488f,0.02484f,0.04349f,1.512f,-0.03987f,0.02308f,1.499f,-0.02088f,0f,1.487f,-0.018f,0.04795f,1.531f,-0.08973f,0.05739f,1.555f,-0.0982f,0.06815f,1.622f,-0.107f,0.06872f,1.655f,-0.08466f,0.05233f,1.678f,-0.09642f,0.05334f,1.631f,-0.1239f,0.05011f,1.581f,-0.1193f,0.04359f,1.551f,-0.1067f,0.03839f,1.528f,-0.09652f,0.03399f,1.636f,-0.1304f,0.03224f,1.685f,-0.1024f,0f,1.557f,-0.1126f,0.01864f,1.566f,0.04105f,0.0249f,1.58f,0.0387f,0.02735f,1.596f,0.03552f,0.04317f,1.564f,0.03643f,0.01246f,1.577f,0.04276f,0.04354f,1.59f,0.02822f,0.04557f,1.601f,0.03652f,0.0291f,1.603f,0.04274f,0.01856f,1.6f,0.04349f,0f,1.579f,0.04893f,0.01064f,1.558f,0.04476f,0.005501f,1.578f,0.04574f,0.01405f,1.531f,0.04152f,0.01037f,1.544f,0.04266f,0f,1.515f,0.03836f,0.00797f,1.515f,0.03774f,0.01824f,1.55f,0.04063f,-0.0249f,1.58f,0.0387f,-0.04354f,1.59f,0.02822f,-0.0291f,1.603f,0.04274f,-0.04317f,1.564f,0.03643f,-0.04597f,1.586f,0.02904f,-0.05316f,1.589f,0.0207f,-0.01824f,1.55f,0.04063f,-0.01246f,1.577f,0.04276f,-0.006135f,1.55f,0.0545f,-0.01037f,1.544f,0.04266f,-0.02636f,1.55f,0.03808f,-0.03428f,1.595f,0.03294f,-0.02735f,1.596f,0.03552f,-0.03603f,1.58f,0.03536f,-0.05282f,1.569f,0.02821f,-0.05767f,1.58f,0.0184f,-0.01864f,1.566f,0.04105f,-0.01489f,1.583f,0.04109f,-0.0556f,1.609f,0.02579f,-0.04557f,1.601f,0.03652f,-0.02106f,1.592f,0.03748f,-0.01856f,1.6f,0.04349f,-0.005501f,1.578f,0.04574f,-0.01064f,1.558f,0.04476f,0f,1.592f,0.04694f,-0.06182f,1.614f,0.008199f,-0.05467f,1.599f,0.02153f,-0.06194f,1.6f,0.002668f,-0.05792f,1.557f,-0.004307f,-0.04413f,1.539f,0.0149f,-0.03746f,1.539f,0.02656f,-0.04099f,1.527f,0.008832f,-0.03528f,1.524f,0.02097f,-0.02788f,1.528f,0.03084f,0f,1.53f,0.04236f,-0.005112f,1.532f,0.04358f,-0.01481f,1.526f,0.03912f,-0.01946f,1.52f,0.03421f,0f,1.495f,0.0348f,-0.0116f,1.494f,0.03382f,-0.02734f,1.498f,0.02215f,-0.0338f,1.503f,0.0124f,-0.01772f,1.488f,0.02135f,-0.02308f,1.492f,0.01628f,-0.02999f,1.498f,0.006194f,-0.01405f,1.531f,0.04152f,-0.003407f,1.524f,0.04155f,-0.02204f,1.494f,0.0272f,-0.00797f,1.515f,0.03774f,-0.02438f,1.542f,0.03578f,0f,1.543f,0.04432f,0f,1.555f,0.05692f,0.02295f,1.492f,-0.02694f,0.007322f,1.489f,-0.01677f,-0.05254f,1.541f,-0.01363f,-0.04008f,1.509f,0.002821f,-0.05122f,1.518f,-0.02784f,-0.03539f,1.503f,-0.00093f,-0.01378f,1.488f,0.02484f,-0.02308f,1.499f,-0.02088f,-0.04349f,1.512f,-0.03987f,-0.05867f,1.544f,-0.03316f,-0.06433f,1.563f,-0.03678f,-0.06732f,1.583f,-0.03683f,-0.06769f,1.617f,-0.03436f,-0.05856f,1.63f,0.01803f,-0.04847f,1.643f,0.02895f,-0.04643f,1.625f,0.03705f,-0.02958f,1.651f,0.03965f,-0.0264f,1.628f,0.04807f,-0.02919f,1.688f,0.0091f,-0.05272f,1.674f,-0.001657f,-0.06641f,1.637f,-0.03046f,-0.06061f,1.66f,-0.0101f,-0.03136f,1.7f,-0.0413f,-0.05305f,1.685f,-0.03987f,-0.06308f,1.666f,-0.04036f,-0.06818f,1.637f,-0.04285f,-0.06808f,1.617f,-0.06112f,-0.06993f,1.594f,-0.08238f,-0.06714f,1.564f,-0.07003f,-0.05324f,1.536f,-0.05922f,-0.04904f,1.521f,-0.05132f,-0.04795f,1.531f,-0.08973f,-0.05739f,1.555f,-0.0982f,-0.06815f,1.622f,-0.107f,-0.06872f,1.655f,-0.08466f,-0.05233f,1.678f,-0.09642f,-0.03224f,1.685f,-0.1024f,0f,1.69f,-0.1047f,0f,1.64f,-0.1342f,-0.05334f,1.631f,-0.1239f,-0.05011f,1.581f,-0.1193f,-0.04359f,1.551f,-0.1067f,-0.03839f,1.528f,-0.09652f,-0.03528f,1.502f,-0.05013f,-0.04f,1.51f,-0.07278f,-0.04029f,1.514f,-0.08254f,-0.03479f,1.517f,-0.09269f,-0.02295f,1.492f,-0.02694f,-0.007322f,1.489f,-0.01677f,0f,1.588f,-0.1329f,-0.03399f,1.636f,-0.1304f,-0.04758f,1.514f,-0.03107f,-0.03428f,1.595f,0.03294f,-0.02106f,1.592f,0.03748f,-0.02735f,1.596f,0.03552f,-0.0249f,1.58f,0.0387f,-0.01489f,1.583f,0.04109f,-0.04597f,1.586f,0.02904f,-0.04354f,1.59f,0.02822f,-0.03603f,1.58f,0.03536f,-0.05856f,1.63f,0.01803f,-0.06182f,1.614f,0.008199f,-0.02788f,1.528f,0.03084f,-0.005112f,1.532f,0.04358f,-0.01405f,1.531f,0.04152f,-0.00797f,1.515f,0.03774f,-0.01946f,1.52f,0.03421f,-0.05867f,1.544f,-0.03316f,-0.06433f,1.563f,-0.03678f,-0.06732f,1.583f,-0.03683f,-0.06769f,1.617f,-0.03436f,-0.04847f,1.643f,0.02895f,-0.02958f,1.651f,0.03965f,-0.05324f,1.536f,-0.05922f,-0.04795f,1.531f,-0.08973f,-0.03839f,1.528f,-0.09652f,0.02106f,1.592f,0.03748f,0.01489f,1.583f,0.04109f,0.0249f,1.58f,0.0387f,0.03603f,1.58f,0.03536f,0.04354f,1.59f,0.02822f,0.03428f,1.595f,0.03294f,0.02735f,1.596f,0.03552f,0.02788f,1.528f,0.03084f,0.01405f,1.531f,0.04152f,0f,1.53f,0.04236f,0f,1.515f,0.03836f,0.00797f,1.515f,0.03774f,0.01946f,1.52f,0.03421f,0.005112f,1.532f,0.04358f,0f,1.655f,0.04322f,0.02958f,1.651f,0.03965f,0.04847f,1.643f,0.02895f,0.05856f,1.63f,0.01803f,0.06182f,1.614f,0.008199f,0.06769f,1.617f,-0.03436f,0.06732f,1.583f,-0.03683f,0.06433f,1.563f,-0.03678f,0.05867f,1.544f,-0.03316f,0.05324f,1.536f,-0.05922f,0.04795f,1.531f,-0.08973f,0.03839f,1.528f,-0.09652f,0f,1.524f,-0.102f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0000f,1.7080f,-0.0435f,0.0000f,1.6550f,0.0432f,0.0000f,1.4860f,0.0233f,0.0000f,1.6940f,0.0078f,0.0000f,1.6310f,0.0510f,0.0000f,1.5240f,-0.1020f,0.0400f,1.5100f,-0.0728f,0.0403f,1.5140f,-0.0825f,0.0353f,1.5020f,-0.0501f,0.0348f,1.5170f,-0.0927f,0.0116f,1.4940f,0.0338f,0.0195f,1.5200f,0.0342f,0.0220f,1.4940f,0.0272f,0.0273f,1.4980f,0.0221f,0.0279f,1.5280f,0.0308f,0.0338f,1.5030f,0.0124f,0.0401f,1.5090f,0.0028f,0.0512f,1.5180f,-0.0278f,0.0587f,1.5440f,-0.0332f,0.0643f,1.5630f,-0.0368f,0.0673f,1.5830f,-0.0368f,0.0677f,1.6170f,-0.0344f,0.0664f,1.6370f,-0.0305f,0.0682f,1.6370f,-0.0428f,0.0631f,1.6660f,-0.0404f,0.0530f,1.6850f,-0.0399f,0.0314f,1.7000f,-0.0413f,0.0292f,1.6880f,0.0091f,0.0527f,1.6740f,-0.0017f,0.0606f,1.6600f,-0.0101f,0.0525f,1.5410f,-0.0136f,0.0410f,1.5270f,0.0088f,0.0353f,1.5240f,0.0210f,0.0579f,1.5570f,-0.0043f,0.0441f,1.5390f,0.0149f,0.0375f,1.5390f,0.0266f,0.0034f,1.5240f,0.0415f,0.0148f,1.5260f,0.0391f,0.0051f,1.5320f,0.0436f,0.0244f,1.5420f,0.0358f,0.0264f,1.5500f,0.0381f,0.0061f,1.5500f,0.0545f,0.0000f,1.5590f,0.0550f,0.0296f,1.6510f,0.0396f,0.0485f,1.6430f,0.0290f,0.0586f,1.6300f,0.0180f,0.0618f,1.6140f,0.0082f,0.0619f,1.6000f,0.0027f,0.0149f,1.5830f,0.0411f,0.0528f,1.5690f,0.0282f,0.0577f,1.5800f,0.0184f,0.0464f,1.6250f,0.0370f,0.0264f,1.6280f,0.0481f,0.0556f,1.6090f,0.0258f,0.0547f,1.5990f,0.0215f,0.0532f,1.5890f,0.0207f,0.0360f,1.5800f,0.0354f,0.0460f,1.5860f,0.0290f,0.0211f,1.5920f,0.0375f,0.0343f,1.5950f,0.0329f,0.0681f,1.6170f,-0.0611f,0.0671f,1.5640f,-0.0700f,0.0699f,1.5940f,-0.0824f,0.0532f,1.5360f,-0.0592f,0.0490f,1.5210f,-0.0513f,0.0476f,1.5140f,-0.0311f,0.0354f,1.5030f,-0.0009f,0.0300f,1.4980f,0.0062f,0.0231f,1.4920f,0.0163f,0.0177f,1.4880f,0.0214f,0.0138f,1.4880f,0.0248f,0.0435f,1.5120f,-0.0399f,0.0231f,1.4990f,-0.0209f,0.0000f,1.4870f,-0.0180f,0.0479f,1.5310f,-0.0897f,0.0574f,1.5550f,-0.0982f,0.0682f,1.6220f,-0.1070f,0.0687f,1.6550f,-0.0847f,0.0523f,1.6780f,-0.0964f,0.0533f,1.6310f,-0.1239f,0.0501f,1.5810f,-0.1193f,0.0436f,1.5510f,-0.1067f,0.0384f,1.5280f,-0.0965f,0.0340f,1.6360f,-0.1304f,0.0322f,1.6850f,-0.1024f,0.0000f,1.5570f,-0.1126f,0.0186f,1.5660f,0.0411f,0.0249f,1.5800f,0.0387f,0.0273f,1.5960f,0.0355f,0.0432f,1.5640f,0.0364f,0.0125f,1.5770f,0.0428f,0.0435f,1.5900f,0.0282f,0.0456f,1.6010f,0.0365f,0.0291f,1.6030f,0.0427f,0.0186f,1.6000f,0.0435f,0.0000f,1.5790f,0.0489f,0.0106f,1.5580f,0.0448f,0.0055f,1.5780f,0.0457f,0.0140f,1.5310f,0.0415f,0.0104f,1.5440f,0.0427f,0.0000f,1.5150f,0.0384f,0.0080f,1.5150f,0.0377f,0.0182f,1.5500f,0.0406f,-0.0249f,1.5800f,0.0387f,-0.0435f,1.5900f,0.0282f,-0.0291f,1.6030f,0.0427f,-0.0432f,1.5640f,0.0364f,-0.0460f,1.5860f,0.0290f,-0.0532f,1.5890f,0.0207f,-0.0182f,1.5500f,0.0406f,-0.0125f,1.5770f,0.0428f,-0.0061f,1.5500f,0.0545f,-0.0104f,1.5440f,0.0427f,-0.0264f,1.5500f,0.0381f,-0.0343f,1.5950f,0.0329f,-0.0273f,1.5960f,0.0355f,-0.0360f,1.5800f,0.0354f,-0.0528f,1.5690f,0.0282f,-0.0577f,1.5800f,0.0184f,-0.0186f,1.5660f,0.0411f,-0.0149f,1.5830f,0.0411f,-0.0556f,1.6090f,0.0258f,-0.0456f,1.6010f,0.0365f,-0.0211f,1.5920f,0.0375f,-0.0186f,1.6000f,0.0435f,-0.0055f,1.5780f,0.0457f,-0.0106f,1.5580f,0.0448f,0.0000f,1.5920f,0.0469f,-0.0618f,1.6140f,0.0082f,-0.0547f,1.5990f,0.0215f,-0.0619f,1.6000f,0.0027f,-0.0579f,1.5570f,-0.0043f,-0.0441f,1.5390f,0.0149f,-0.0375f,1.5390f,0.0266f,-0.0410f,1.5270f,0.0088f,-0.0353f,1.5240f,0.0210f,-0.0279f,1.5280f,0.0308f,0.0000f,1.5300f,0.0424f,-0.0051f,1.5320f,0.0436f,-0.0148f,1.5260f,0.0391f,-0.0195f,1.5200f,0.0342f,0.0000f,1.4950f,0.0348f,-0.0116f,1.4940f,0.0338f,-0.0273f,1.4980f,0.0221f,-0.0338f,1.5030f,0.0124f,-0.0177f,1.4880f,0.0214f,-0.0231f,1.4920f,0.0163f,-0.0300f,1.4980f,0.0062f,-0.0140f,1.5310f,0.0415f,-0.0034f,1.5240f,0.0415f,-0.0220f,1.4940f,0.0272f,-0.0080f,1.5150f,0.0377f,-0.0244f,1.5420f,0.0358f,0.0000f,1.5430f,0.0443f,0.0000f,1.5550f,0.0569f,0.0230f,1.4920f,-0.0269f,0.0073f,1.4890f,-0.0168f,-0.0525f,1.5410f,-0.0136f,-0.0401f,1.5090f,0.0028f,-0.0512f,1.5180f,-0.0278f,-0.0354f,1.5030f,-0.0009f,-0.0138f,1.4880f,0.0248f,-0.0231f,1.4990f,-0.0209f,-0.0435f,1.5120f,-0.0399f,-0.0587f,1.5440f,-0.0332f,-0.0643f,1.5630f,-0.0368f,-0.0673f,1.5830f,-0.0368f,-0.0677f,1.6170f,-0.0344f,-0.0586f,1.6300f,0.0180f,-0.0485f,1.6430f,0.0290f,-0.0464f,1.6250f,0.0370f,-0.0296f,1.6510f,0.0396f,-0.0264f,1.6280f,0.0481f,-0.0292f,1.6880f,0.0091f,-0.0527f,1.6740f,-0.0017f,-0.0664f,1.6370f,-0.0305f,-0.0606f,1.6600f,-0.0101f,-0.0314f,1.7000f,-0.0413f,-0.0530f,1.6850f,-0.0399f,-0.0631f,1.6660f,-0.0404f,-0.0682f,1.6370f,-0.0428f,-0.0681f,1.6170f,-0.0611f,-0.0699f,1.5940f,-0.0824f,-0.0671f,1.5640f,-0.0700f,-0.0532f,1.5360f,-0.0592f,-0.0490f,1.5210f,-0.0513f,-0.0479f,1.5310f,-0.0897f,-0.0574f,1.5550f,-0.0982f,-0.0682f,1.6220f,-0.1070f,-0.0687f,1.6550f,-0.0847f,-0.0523f,1.6780f,-0.0964f,-0.0322f,1.6850f,-0.1024f,0.0000f,1.6900f,-0.1047f,0.0000f,1.6400f,-0.1342f,-0.0533f,1.6310f,-0.1239f,-0.0501f,1.5810f,-0.1193f,-0.0436f,1.5510f,-0.1067f,-0.0384f,1.5280f,-0.0965f,-0.0353f,1.5020f,-0.0501f,-0.0400f,1.5100f,-0.0728f,-0.0403f,1.5140f,-0.0825f,-0.0348f,1.5170f,-0.0927f,-0.0230f,1.4920f,-0.0269f,-0.0073f,1.4890f,-0.0168f,0.0000f,1.5880f,-0.1329f,-0.0340f,1.6360f,-0.1304f,-0.0476f,1.5140f,-0.0311f,-0.0343f,1.5950f,0.0329f,-0.0211f,1.5920f,0.0375f,-0.0273f,1.5960f,0.0355f,-0.0249f,1.5800f,0.0387f,-0.0149f,1.5830f,0.0411f,-0.0460f,1.5860f,0.0290f,-0.0435f,1.5900f,0.0282f,-0.0360f,1.5800f,0.0354f,-0.0586f,1.6300f,0.0180f,-0.0618f,1.6140f,0.0082f,-0.0279f,1.5280f,0.0308f,-0.0051f,1.5320f,0.0436f,-0.0140f,1.5310f,0.0415f,-0.0080f,1.5150f,0.0377f,-0.0195f,1.5200f,0.0342f,-0.0587f,1.5440f,-0.0332f,-0.0643f,1.5630f,-0.0368f,-0.0673f,1.5830f,-0.0368f,-0.0677f,1.6170f,-0.0344f,-0.0485f,1.6430f,0.0290f,-0.0296f,1.6510f,0.0396f,-0.0532f,1.5360f,-0.0592f,-0.0479f,1.5310f,-0.0897f,-0.0384f,1.5280f,-0.0965f,0.0211f,1.5920f,0.0375f,0.0149f,1.5830f,0.0411f,0.0249f,1.5800f,0.0387f,0.0360f,1.5800f,0.0354f,0.0435f,1.5900f,0.0282f,0.0343f,1.5950f,0.0329f,0.0273f,1.5960f,0.0355f,0.0279f,1.5280f,0.0308f,0.0140f,1.5310f,0.0415f,0.0000f,1.5300f,0.0424f,0.0000f,1.5150f,0.0384f,0.0080f,1.5150f,0.0377f,0.0195f,1.5200f,0.0342f,0.0051f,1.5320f,0.0436f,0.0000f,1.6550f,0.0432f,0.0296f,1.6510f,0.0396f,0.0485f,1.6430f,0.0290f,0.0586f,1.6300f,0.0180f,0.0618f,1.6140f,0.0082f,0.0677f,1.6170f,-0.0344f,0.0673f,1.5830f,-0.0368f,0.0643f,1.5630f,-0.0368f,0.0587f,1.5440f,-0.0332f,0.0532f,1.5360f,-0.0592f,0.0479f,1.5310f,-0.0897f,0.0384f,1.5280f,-0.0965f,0.0000f,1.5240f,-0.1020f});
   }
 }
 protected class MFColor39 {
   protected org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.749f,0.601f,0.462f,0.1735f,0.2602f,0.749f,0.6364f,0.133f,0.1526f,0.4545f,0.2759f,0.1902f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.7490f,0.6010f,0.4620f,0.1735f,0.2602f,0.7490f,0.6364f,0.1330f,0.1526f,0.4545f,0.2759f,0.1902f});
   }
 }
 protected class MFString40 {
@@ -1116,7 +1116,7 @@ protected class MFString40 {
 }
 protected class MFFloat41 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.15f,1.53f,0.75f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.1500f,1.5300f,0.7500f});
   }
 }
 protected class MFInt3242 {
@@ -1126,7 +1126,7 @@ protected class MFInt3242 {
 }
 protected class MFVec3f43 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-3.21f,-0.0154f,0f,-3.15f,-0.0154f,0f,-3.14f,-0.0467f,0f,-3.1f,-0.0601f,0f,-3.05f,-0.051f,0f,-3.04f,-0.0254f,0f,-3.05f,-0.00248f,0f,-3.1f,0.0122f,0f,-3.16f,0.03f,0f,-3.2f,0.0684f,0f,-3.2f,0.133f,0f,-3.16f,0.17f,0f,-3.1f,0.182f,0f,-3.04f,0.171f,0f,-3.01f,0.136f,0f,-3f,0.095f,0f,-3.05f,0.095f,0f,-3.06f,0.125f,0f,-3.1f,0.136f,0f,-3.14f,0.126f,0f,-3.15f,0.103f,0f,-3.14f,0.0815f,0f,-3.1f,0.0689f,0f,-3.04f,0.0512f,0f,-3f,0.0249f,0f,-2.99f,-0.0195f,0f,-3f,-0.0708f,0f,-3.05f,-0.104f,0f,-3.1f,-0.108f,0f,-3.16f,-0.0947f,0f,-3.2f,-0.0586f,0f,-2.86f,-0.102f,0f,-2.9f,-0.102f,0f,-2.94f,-0.0832f,0f,-2.94f,-0.0457f,0f,-2.94f,0.0645f,0f,-2.97f,0.0645f,0f,-2.97f,0.103f,0f,-2.94f,0.103f,0f,-2.94f,0.158f,0f,-2.89f,0.158f,0f,-2.89f,0.103f,0f,-2.86f,0.103f,0f,-2.86f,0.0645f,0f,-2.89f,0.0645f,0f,-2.89f,-0.0483f,0f,-2.88f,-0.0608f,0f,-2.86f,-0.0612f,0f,-2.71f,-0.000798f,0f,-2.71f,-0.0373f,0f,-2.74f,-0.0637f,0f,-2.77f,-0.0624f,0f,-2.78f,-0.0416f,0f,-2.77f,-0.0195f,0f,-2.71f,-0.0754f,0f,-2.74f,-0.103f,0f,-2.79f,-0.106f,0f,-2.82f,-0.0865f,0f,-2.84f,-0.0431f,0f,-2.82f,0.000177f,0f,-2.78f,0.0201f,0f,-2.73f,0.0275f,0f,-2.71f,0.0446f,0f,-2.72f,0.0614f,0f,-2.74f,0.0675f,0f,-2.77f,0.0573f,0f,-2.78f,0.039f,0f,-2.83f,0.039f,0f,-2.82f,0.0765f,0f,-2.78f,0.105f,0f,-2.74f,0.11f,0f,-2.71f,0.107f,0f,-2.67f,0.0849f,0f,-2.66f,0.0526f,0f,-2.66f,-0.0763f,0f,-2.65f,-0.101f,0f,-2.7f,-0.101f,0f,-2.61f,-0.101f,0f,-2.61f,0.103f,0f,-2.56f,0.103f,0f,-2.56f,0.0787f,0f,-2.52f,0.104f,0f,-2.47f,0.105f,0f,-2.43f,0.0743f,0f,-2.43f,0.038f,0f,-2.43f,-0.101f,0f,-2.48f,-0.101f,0f,-2.48f,0.0224f,0f,-2.49f,0.0514f,0f,-2.52f,0.0627f,0f,-2.54f,0.0505f,0f,-2.55f,0.02f,0f,-2.55f,-0.101f,0f,-2.33f,0.0279f,0f,-2.31f,0.0587f,0f,-2.27f,0.0589f,0f,-2.25f,0.0281f,0f,-2.25f,-0.0232f,0f,-2.27f,-0.0563f,0f,-2.31f,-0.057f,0f,-2.33f,-0.0245f,0f,-2.19f,0.175f,0f,-2.19f,-0.101f,0f,-2.25f,-0.101f,0f,-2.25f,-0.073f,0f,-2.26f,-0.0913f,0f,-2.31f,-0.108f,0f,-2.35f,-0.0915f,0f,-2.38f,-0.0424f,0f,-2.39f,0.0243f,0f,-2.37f,0.0809f,0f,-2.32f,0.108f,0f,-2.28f,0.106f,0f,-2.25f,0.0776f,0f,-2.25f,0.175f,0f,-2.48f,0.0224f,0f,-2.43f,0.038f,0f,-2.49f,0.0514f,0f,-2.43f,0.0743f,0f,-2.49f,0.0514f,0f,-2.47f,0.105f,0f,-2.52f,0.0627f,0f,-2.52f,0.104f,0f,-2.54f,0.0505f,0f,-2.56f,0.0787f,0f,-2.55f,0.02f,0f,-2.56f,0.0787f,0f,-2.61f,-0.101f,0f,-2.55f,0.02f,0f,-2.61f,-0.101f,0f,-2.56f,0.0787f,0f,-2.89f,0.103f,0f,-2.94f,0.103f,0f,-2.89f,0.0645f,0f,-2.89f,0.103f,0f,-2.94f,0.103f,0f,-2.94f,0.0645f,0f,-2.89f,0.0645f,0f,-2.94f,0.0645f,0f,-2.89f,-0.0483f,0f,-2.94f,-0.0457f,0f,-2.89f,-0.0483f,0f,-2.94f,-0.0832f,0f,-2.88f,-0.0608f,0f,-2.9f,-0.102f,0f,-3.06f,0.125f,0f,-3.01f,0.136f,0f,-3.06f,0.125f,0f,-3.04f,0.171f,0f,-3.1f,0.136f,0f,-3.1f,0.182f,0f,-3.14f,0.126f,0f,-3.16f,0.17f,0f,-3.15f,0.103f,0f,-3.2f,0.133f,0f,-3.14f,0.0815f,0f,-3.2f,0.0684f,0f,-3.14f,0.0815f,0f,-3.16f,0.03f,0f,-3.1f,0.0689f,0f,-3.1f,0.0122f,0f,-3.04f,0.0512f,0f,-3.05f,-0.00248f,0f,-3f,0.0249f,0f,-3.05f,-0.00248f,0f,-2.99f,-0.0195f,0f,-3.04f,-0.0254f,0f,-3f,-0.0708f,0f,-3.05f,-0.051f,0f,-3.05f,-0.104f,0f,-3.05f,-0.051f,0f,-3.1f,-0.108f,0f,-3.1f,-0.0601f,0f,-3.16f,-0.0947f,0f,-3.14f,-0.0467f,0f,-3.15f,-0.0154f,0f,-3.2f,-0.0586f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-3.2100f,-0.0154f,0.0000f,-3.1500f,-0.0154f,0.0000f,-3.1400f,-0.0467f,0.0000f,-3.1000f,-0.0601f,0.0000f,-3.0500f,-0.0510f,0.0000f,-3.0400f,-0.0254f,0.0000f,-3.0500f,-0.0025f,0.0000f,-3.1000f,0.0122f,0.0000f,-3.1600f,0.0300f,0.0000f,-3.2000f,0.0684f,0.0000f,-3.2000f,0.1330f,0.0000f,-3.1600f,0.1700f,0.0000f,-3.1000f,0.1820f,0.0000f,-3.0400f,0.1710f,0.0000f,-3.0100f,0.1360f,0.0000f,-3.0000f,0.0950f,0.0000f,-3.0500f,0.0950f,0.0000f,-3.0600f,0.1250f,0.0000f,-3.1000f,0.1360f,0.0000f,-3.1400f,0.1260f,0.0000f,-3.1500f,0.1030f,0.0000f,-3.1400f,0.0815f,0.0000f,-3.1000f,0.0689f,0.0000f,-3.0400f,0.0512f,0.0000f,-3.0000f,0.0249f,0.0000f,-2.9900f,-0.0195f,0.0000f,-3.0000f,-0.0708f,0.0000f,-3.0500f,-0.1040f,0.0000f,-3.1000f,-0.1080f,0.0000f,-3.1600f,-0.0947f,0.0000f,-3.2000f,-0.0586f,0.0000f,-2.8600f,-0.1020f,0.0000f,-2.9000f,-0.1020f,0.0000f,-2.9400f,-0.0832f,0.0000f,-2.9400f,-0.0457f,0.0000f,-2.9400f,0.0645f,0.0000f,-2.9700f,0.0645f,0.0000f,-2.9700f,0.1030f,0.0000f,-2.9400f,0.1030f,0.0000f,-2.9400f,0.1580f,0.0000f,-2.8900f,0.1580f,0.0000f,-2.8900f,0.1030f,0.0000f,-2.8600f,0.1030f,0.0000f,-2.8600f,0.0645f,0.0000f,-2.8900f,0.0645f,0.0000f,-2.8900f,-0.0483f,0.0000f,-2.8800f,-0.0608f,0.0000f,-2.8600f,-0.0612f,0.0000f,-2.7100f,-0.0008f,0.0000f,-2.7100f,-0.0373f,0.0000f,-2.7400f,-0.0637f,0.0000f,-2.7700f,-0.0624f,0.0000f,-2.7800f,-0.0416f,0.0000f,-2.7700f,-0.0195f,0.0000f,-2.7100f,-0.0754f,0.0000f,-2.7400f,-0.1030f,0.0000f,-2.7900f,-0.1060f,0.0000f,-2.8200f,-0.0865f,0.0000f,-2.8400f,-0.0431f,0.0000f,-2.8200f,0.0002f,0.0000f,-2.7800f,0.0201f,0.0000f,-2.7300f,0.0275f,0.0000f,-2.7100f,0.0446f,0.0000f,-2.7200f,0.0614f,0.0000f,-2.7400f,0.0675f,0.0000f,-2.7700f,0.0573f,0.0000f,-2.7800f,0.0390f,0.0000f,-2.8300f,0.0390f,0.0000f,-2.8200f,0.0765f,0.0000f,-2.7800f,0.1050f,0.0000f,-2.7400f,0.1100f,0.0000f,-2.7100f,0.1070f,0.0000f,-2.6700f,0.0849f,0.0000f,-2.6600f,0.0526f,0.0000f,-2.6600f,-0.0763f,0.0000f,-2.6500f,-0.1010f,0.0000f,-2.7000f,-0.1010f,0.0000f,-2.6100f,-0.1010f,0.0000f,-2.6100f,0.1030f,0.0000f,-2.5600f,0.1030f,0.0000f,-2.5600f,0.0787f,0.0000f,-2.5200f,0.1040f,0.0000f,-2.4700f,0.1050f,0.0000f,-2.4300f,0.0743f,0.0000f,-2.4300f,0.0380f,0.0000f,-2.4300f,-0.1010f,0.0000f,-2.4800f,-0.1010f,0.0000f,-2.4800f,0.0224f,0.0000f,-2.4900f,0.0514f,0.0000f,-2.5200f,0.0627f,0.0000f,-2.5400f,0.0505f,0.0000f,-2.5500f,0.0200f,0.0000f,-2.5500f,-0.1010f,0.0000f,-2.3300f,0.0279f,0.0000f,-2.3100f,0.0587f,0.0000f,-2.2700f,0.0589f,0.0000f,-2.2500f,0.0281f,0.0000f,-2.2500f,-0.0232f,0.0000f,-2.2700f,-0.0563f,0.0000f,-2.3100f,-0.0570f,0.0000f,-2.3300f,-0.0245f,0.0000f,-2.1900f,0.1750f,0.0000f,-2.1900f,-0.1010f,0.0000f,-2.2500f,-0.1010f,0.0000f,-2.2500f,-0.0730f,0.0000f,-2.2600f,-0.0913f,0.0000f,-2.3100f,-0.1080f,0.0000f,-2.3500f,-0.0915f,0.0000f,-2.3800f,-0.0424f,0.0000f,-2.3900f,0.0243f,0.0000f,-2.3700f,0.0809f,0.0000f,-2.3200f,0.1080f,0.0000f,-2.2800f,0.1060f,0.0000f,-2.2500f,0.0776f,0.0000f,-2.2500f,0.1750f,0.0000f,-2.4800f,0.0224f,0.0000f,-2.4300f,0.0380f,0.0000f,-2.4900f,0.0514f,0.0000f,-2.4300f,0.0743f,0.0000f,-2.4900f,0.0514f,0.0000f,-2.4700f,0.1050f,0.0000f,-2.5200f,0.0627f,0.0000f,-2.5200f,0.1040f,0.0000f,-2.5400f,0.0505f,0.0000f,-2.5600f,0.0787f,0.0000f,-2.5500f,0.0200f,0.0000f,-2.5600f,0.0787f,0.0000f,-2.6100f,-0.1010f,0.0000f,-2.5500f,0.0200f,0.0000f,-2.6100f,-0.1010f,0.0000f,-2.5600f,0.0787f,0.0000f,-2.8900f,0.1030f,0.0000f,-2.9400f,0.1030f,0.0000f,-2.8900f,0.0645f,0.0000f,-2.8900f,0.1030f,0.0000f,-2.9400f,0.1030f,0.0000f,-2.9400f,0.0645f,0.0000f,-2.8900f,0.0645f,0.0000f,-2.9400f,0.0645f,0.0000f,-2.8900f,-0.0483f,0.0000f,-2.9400f,-0.0457f,0.0000f,-2.8900f,-0.0483f,0.0000f,-2.9400f,-0.0832f,0.0000f,-2.8800f,-0.0608f,0.0000f,-2.9000f,-0.1020f,0.0000f,-3.0600f,0.1250f,0.0000f,-3.0100f,0.1360f,0.0000f,-3.0600f,0.1250f,0.0000f,-3.0400f,0.1710f,0.0000f,-3.1000f,0.1360f,0.0000f,-3.1000f,0.1820f,0.0000f,-3.1400f,0.1260f,0.0000f,-3.1600f,0.1700f,0.0000f,-3.1500f,0.1030f,0.0000f,-3.2000f,0.1330f,0.0000f,-3.1400f,0.0815f,0.0000f,-3.2000f,0.0684f,0.0000f,-3.1400f,0.0815f,0.0000f,-3.1600f,0.0300f,0.0000f,-3.1000f,0.0689f,0.0000f,-3.1000f,0.0122f,0.0000f,-3.0400f,0.0512f,0.0000f,-3.0500f,-0.0025f,0.0000f,-3.0000f,0.0249f,0.0000f,-3.0500f,-0.0025f,0.0000f,-2.9900f,-0.0195f,0.0000f,-3.0400f,-0.0254f,0.0000f,-3.0000f,-0.0708f,0.0000f,-3.0500f,-0.0510f,0.0000f,-3.0500f,-0.1040f,0.0000f,-3.0500f,-0.0510f,0.0000f,-3.1000f,-0.1080f,0.0000f,-3.1000f,-0.0601f,0.0000f,-3.1600f,-0.0947f,0.0000f,-3.1400f,-0.0467f,0.0000f,-3.1500f,-0.0154f,0.0000f,-3.2000f,-0.0586f,0.0000f});
   }
 }
 protected class MFInt3244 {
@@ -1136,7 +1136,7 @@ protected class MFInt3244 {
 }
 protected class MFVec3f45 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.02572f,-0.02535f,-0.05f,-0.02578f,-0.02131f,-0.05f,-0.03871f,-0.02131f,-0.05f,-0.03877f,-0.02541f,-0.05f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.0257f,-0.0254f,-0.0500f,-0.0258f,-0.0213f,-0.0500f,-0.0387f,-0.0213f,-0.0500f,-0.0388f,-0.0254f,-0.0500f});
   }
 }
 protected class MFInt3246 {
@@ -1146,7 +1146,7 @@ protected class MFInt3246 {
 }
 protected class MFVec3f47 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-1.88f,-0.101f,0f,-1.96f,0.175f,0f,-1.91f,0.175f,0f,-1.86f,-0.0195f,0f,-1.82f,0.175f,0f,-1.76f,0.175f,0f,-1.72f,-0.0195f,0f,-1.67f,0.175f,0f,-1.61f,0.175f,0f,-1.69f,-0.101f,0f,-1.75f,-0.101f,0f,-1.79f,0.111f,0f,-1.83f,-0.101f,0f,-1.38f,-0.101f,0f,-1.38f,0.175f,0f,-1.32f,0.175f,0f,-1.32f,-0.101f,0f,-1.27f,-0.101f,0f,-1.27f,0.175f,0f,-1.22f,0.175f,0f,-1.22f,0.0304f,0f,-1.16f,0.103f,0f,-1.09f,0.103f,0f,-1.16f,0.0272f,0f,-1.09f,-0.101f,0f,-1.15f,-0.101f,0f,-1.2f,-0.0141f,0f,-1.22f,-0.0363f,0f,-1.22f,-0.101f,0f,-1.48f,-0.0754f,0f,-1.48f,-0.0373f,0f,-1.51f,-0.0637f,0f,-1.51f,-0.103f,0f,-1.47f,-0.101f,0f,-1.42f,-0.101f,0f,-1.43f,-0.0763f,0f,-1.43f,0.0526f,0f,-1.48f,-0.000798f,0f,-1.48f,0.0446f,0f,-1.5f,0.0275f,0f,-1.55f,0.0201f,0f,-1.54f,-0.0195f,0f,-1.59f,0.000177f,0f,-1.61f,-0.0431f,0f,-1.55f,-0.0416f,0f,-1.59f,-0.0865f,0f,-1.54f,-0.0624f,0f,-1.56f,-0.106f,0f,-1.44f,0.0849f,0f,-1.49f,0.0614f,0f,-1.48f,0.107f,0f,-1.51f,0.0675f,0f,-1.52f,0.11f,0f,-1.55f,0.105f,0f,-1.54f,0.0573f,0f,-1.59f,0.0765f,0f,-1.6f,0.039f,0f,-1.55f,0.039f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-1.8800f,-0.1010f,0.0000f,-1.9600f,0.1750f,0.0000f,-1.9100f,0.1750f,0.0000f,-1.8600f,-0.0195f,0.0000f,-1.8200f,0.1750f,0.0000f,-1.7600f,0.1750f,0.0000f,-1.7200f,-0.0195f,0.0000f,-1.6700f,0.1750f,0.0000f,-1.6100f,0.1750f,0.0000f,-1.6900f,-0.1010f,0.0000f,-1.7500f,-0.1010f,0.0000f,-1.7900f,0.1110f,0.0000f,-1.8300f,-0.1010f,0.0000f,-1.3800f,-0.1010f,0.0000f,-1.3800f,0.1750f,0.0000f,-1.3200f,0.1750f,0.0000f,-1.3200f,-0.1010f,0.0000f,-1.2700f,-0.1010f,0.0000f,-1.2700f,0.1750f,0.0000f,-1.2200f,0.1750f,0.0000f,-1.2200f,0.0304f,0.0000f,-1.1600f,0.1030f,0.0000f,-1.0900f,0.1030f,0.0000f,-1.1600f,0.0272f,0.0000f,-1.0900f,-0.1010f,0.0000f,-1.1500f,-0.1010f,0.0000f,-1.2000f,-0.0141f,0.0000f,-1.2200f,-0.0363f,0.0000f,-1.2200f,-0.1010f,0.0000f,-1.4800f,-0.0754f,0.0000f,-1.4800f,-0.0373f,0.0000f,-1.5100f,-0.0637f,0.0000f,-1.5100f,-0.1030f,0.0000f,-1.4700f,-0.1010f,0.0000f,-1.4200f,-0.1010f,0.0000f,-1.4300f,-0.0763f,0.0000f,-1.4300f,0.0526f,0.0000f,-1.4800f,-0.0008f,0.0000f,-1.4800f,0.0446f,0.0000f,-1.5000f,0.0275f,0.0000f,-1.5500f,0.0201f,0.0000f,-1.5400f,-0.0195f,0.0000f,-1.5900f,0.0002f,0.0000f,-1.6100f,-0.0431f,0.0000f,-1.5500f,-0.0416f,0.0000f,-1.5900f,-0.0865f,0.0000f,-1.5400f,-0.0624f,0.0000f,-1.5600f,-0.1060f,0.0000f,-1.4400f,0.0849f,0.0000f,-1.4900f,0.0614f,0.0000f,-1.4800f,0.1070f,0.0000f,-1.5100f,0.0675f,0.0000f,-1.5200f,0.1100f,0.0000f,-1.5500f,0.1050f,0.0000f,-1.5400f,0.0573f,0.0000f,-1.5900f,0.0765f,0.0000f,-1.6000f,0.0390f,0.0000f,-1.5500f,0.0390f,0.0000f});
   }
 }
 protected class MFInt3248 {
@@ -1156,7 +1156,7 @@ protected class MFInt3248 {
 }
 protected class MFVec3f49 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.02381f,-0.02541f,-0.05f,-0.0127f,-0.02541f,-0.05f,-0.01263f,-0.02139f,-0.05f,-0.02381f,-0.02146f,-0.05f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.0238f,-0.0254f,-0.0500f,-0.0127f,-0.0254f,-0.0500f,-0.0126f,-0.0214f,-0.0500f,-0.0238f,-0.0215f,-0.0500f});
   }
 }
 protected class MFInt3250 {
@@ -1166,7 +1166,7 @@ protected class MFInt3250 {
 }
 protected class MFVec3f51 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.829f,-0.101f,0f,-0.829f,0.175f,0f,-0.662f,0.172f,0f,-0.622f,0.148f,0f,-0.607f,0.103f,0f,-0.62f,0.0501f,0f,-0.648f,0.0316f,0f,-0.615f,-0.0063f,0f,-0.611f,-0.0764f,0f,-0.601f,-0.101f,0f,-0.664f,-0.101f,0f,-0.671f,-0.0373f,0f,-0.68f,-0.00372f,0f,-0.712f,0.00648f,0f,-0.772f,0.00648f,0f,-0.772f,-0.101f,0f,-0.772f,0.0546f,0f,-0.772f,0.127f,0f,-0.703f,0.127f,0f,-0.673f,0.118f,0f,-0.663f,0.091f,0f,-0.674f,0.063f,0f,-0.705f,0.0546f,0f,-0.379f,0.103f,0f,-0.379f,-0.101f,0f,-0.432f,-0.101f,0f,-0.432f,-0.0764f,0f,-0.466f,-0.101f,0f,-0.518f,-0.102f,0f,-0.555f,-0.072f,0f,-0.56f,-0.0357f,0f,-0.56f,0.103f,0f,-0.506f,0.103f,0f,-0.506f,-0.0201f,0f,-0.5f,-0.0491f,0f,-0.472f,-0.0604f,0f,-0.443f,-0.0482f,0f,-0.433f,-0.0177f,0f,-0.433f,0.103f,0f,-0.331f,-0.101f,0f,-0.331f,0.103f,0f,-0.278f,0.103f,0f,-0.278f,0.0787f,0f,-0.244f,0.104f,0f,-0.192f,0.105f,0f,-0.154f,0.0743f,0f,-0.149f,0.038f,0f,-0.149f,-0.101f,0f,-0.203f,-0.101f,0f,-0.203f,0.0224f,0f,-0.209f,0.0514f,0f,-0.238f,0.0627f,0f,-0.266f,0.0505f,0f,-0.277f,0.02f,0f,-0.277f,-0.101f,0f,-0.506f,-0.0201f,0f,-0.56f,-0.0357f,0f,-0.5f,-0.0491f,0f,-0.555f,-0.072f,0f,-0.5f,-0.0491f,0f,-0.518f,-0.102f,0f,-0.472f,-0.0604f,0f,-0.466f,-0.101f,0f,-0.443f,-0.0482f,0f,-0.432f,-0.0764f,0f,-0.433f,-0.0177f,0f,-0.432f,-0.0764f,0f,-0.379f,0.103f,0f,-0.433f,-0.0177f,0f,-0.379f,0.103f,0f,-0.432f,-0.0764f,0f,-0.379f,-0.101f,0f,-0.432f,-0.0764f,0f,-0.203f,0.0224f,0f,-0.149f,0.038f,0f,-0.209f,0.0514f,0f,-0.154f,0.0743f,0f,-0.209f,0.0514f,0f,-0.192f,0.105f,0f,-0.238f,0.0627f,0f,-0.244f,0.104f,0f,-0.266f,0.0505f,0f,-0.278f,0.0787f,0f,-0.278f,0.0787f,0f,-0.331f,0.103f,0f,-0.277f,0.02f,0f,-0.331f,-0.101f,0f,-0.277f,0.02f,0f,-0.278f,0.0787f,0f,-0.277f,0.02f,0f,-0.331f,0.103f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.8290f,-0.1010f,0.0000f,-0.8290f,0.1750f,0.0000f,-0.6620f,0.1720f,0.0000f,-0.6220f,0.1480f,0.0000f,-0.6070f,0.1030f,0.0000f,-0.6200f,0.0501f,0.0000f,-0.6480f,0.0316f,0.0000f,-0.6150f,-0.0063f,0.0000f,-0.6110f,-0.0764f,0.0000f,-0.6010f,-0.1010f,0.0000f,-0.6640f,-0.1010f,0.0000f,-0.6710f,-0.0373f,0.0000f,-0.6800f,-0.0037f,0.0000f,-0.7120f,0.0065f,0.0000f,-0.7720f,0.0065f,0.0000f,-0.7720f,-0.1010f,0.0000f,-0.7720f,0.0546f,0.0000f,-0.7720f,0.1270f,0.0000f,-0.7030f,0.1270f,0.0000f,-0.6730f,0.1180f,0.0000f,-0.6630f,0.0910f,0.0000f,-0.6740f,0.0630f,0.0000f,-0.7050f,0.0546f,0.0000f,-0.3790f,0.1030f,0.0000f,-0.3790f,-0.1010f,0.0000f,-0.4320f,-0.1010f,0.0000f,-0.4320f,-0.0764f,0.0000f,-0.4660f,-0.1010f,0.0000f,-0.5180f,-0.1020f,0.0000f,-0.5550f,-0.0720f,0.0000f,-0.5600f,-0.0357f,0.0000f,-0.5600f,0.1030f,0.0000f,-0.5060f,0.1030f,0.0000f,-0.5060f,-0.0201f,0.0000f,-0.5000f,-0.0491f,0.0000f,-0.4720f,-0.0604f,0.0000f,-0.4430f,-0.0482f,0.0000f,-0.4330f,-0.0177f,0.0000f,-0.4330f,0.1030f,0.0000f,-0.3310f,-0.1010f,0.0000f,-0.3310f,0.1030f,0.0000f,-0.2780f,0.1030f,0.0000f,-0.2780f,0.0787f,0.0000f,-0.2440f,0.1040f,0.0000f,-0.1920f,0.1050f,0.0000f,-0.1540f,0.0743f,0.0000f,-0.1490f,0.0380f,0.0000f,-0.1490f,-0.1010f,0.0000f,-0.2030f,-0.1010f,0.0000f,-0.2030f,0.0224f,0.0000f,-0.2090f,0.0514f,0.0000f,-0.2380f,0.0627f,0.0000f,-0.2660f,0.0505f,0.0000f,-0.2770f,0.0200f,0.0000f,-0.2770f,-0.1010f,0.0000f,-0.5060f,-0.0201f,0.0000f,-0.5600f,-0.0357f,0.0000f,-0.5000f,-0.0491f,0.0000f,-0.5550f,-0.0720f,0.0000f,-0.5000f,-0.0491f,0.0000f,-0.5180f,-0.1020f,0.0000f,-0.4720f,-0.0604f,0.0000f,-0.4660f,-0.1010f,0.0000f,-0.4430f,-0.0482f,0.0000f,-0.4320f,-0.0764f,0.0000f,-0.4330f,-0.0177f,0.0000f,-0.4320f,-0.0764f,0.0000f,-0.3790f,0.1030f,0.0000f,-0.4330f,-0.0177f,0.0000f,-0.3790f,0.1030f,0.0000f,-0.4320f,-0.0764f,0.0000f,-0.3790f,-0.1010f,0.0000f,-0.4320f,-0.0764f,0.0000f,-0.2030f,0.0224f,0.0000f,-0.1490f,0.0380f,0.0000f,-0.2090f,0.0514f,0.0000f,-0.1540f,0.0743f,0.0000f,-0.2090f,0.0514f,0.0000f,-0.1920f,0.1050f,0.0000f,-0.2380f,0.0627f,0.0000f,-0.2440f,0.1040f,0.0000f,-0.2660f,0.0505f,0.0000f,-0.2780f,0.0787f,0.0000f,-0.2780f,0.0787f,0.0000f,-0.3310f,0.1030f,0.0000f,-0.2770f,0.0200f,0.0000f,-0.3310f,-0.1010f,0.0000f,-0.2770f,0.0200f,0.0000f,-0.2780f,0.0787f,0.0000f,-0.2770f,0.0200f,0.0000f,-0.3310f,0.1030f,0.0000f});
   }
 }
 protected class MFInt3252 {
@@ -1176,7 +1176,7 @@ protected class MFInt3252 {
 }
 protected class MFVec3f53 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.01009f,-0.02534f,-0.05f,-0.001382f,-0.02541f,-0.05f,-0.001315f,-0.02146f,-0.05f,-0.01022f,-0.02146f,-0.05f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.0101f,-0.0253f,-0.0500f,-0.0014f,-0.0254f,-0.0500f,-0.0013f,-0.0215f,-0.0500f,-0.0102f,-0.0215f,-0.0500f});
   }
 }
 protected class MFInt3254 {
@@ -1186,7 +1186,7 @@ protected class MFInt3254 {
 }
 protected class MFVec3f55 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.108f,0.00195f,0f,0.163f,0.00195f,0f,0.166f,-0.0473f,0f,0.194f,-0.0608f,0f,0.222f,-0.0492f,0f,0.228f,-0.017f,0f,0.228f,0.175f,0f,0.284f,0.175f,0f,0.284f,-0.02f,0f,0.271f,-0.0798f,0f,0.23f,-0.104f,0f,0.193f,-0.108f,0f,0.155f,-0.102f,0f,0.117f,-0.0714f,0f,0.108f,-0.0357f,0f,0.563f,-0.101f,0f,0.563f,0.103f,0f,0.615f,0.103f,0f,0.615f,0.0803f,0f,0.649f,0.105f,0f,0.696f,0.105f,0f,0.728f,0.0788f,0f,0.76f,0.104f,0f,0.811f,0.104f,0f,0.842f,0.081f,0f,0.853f,0.0416f,0f,0.853f,-0.101f,0f,0.799f,-0.101f,0f,0.799f,0.0305f,0f,0.79f,0.0544f,0f,0.767f,0.0616f,0f,0.743f,0.0507f,0f,0.734f,0.0228f,0f,0.734f,-0.101f,0f,0.681f,-0.101f,0f,0.681f,0.0301f,0f,0.673f,0.0532f,0f,0.65f,0.0611f,0f,0.626f,0.0506f,0f,0.617f,0.0224f,0f,0.617f,-0.101f,0f,0.9f,-0.182f,0f,0.9f,0.103f,0f,0.952f,0.103f,0f,0.952f,0.0751f,0f,0.968f,0.0934f,0f,1.01f,0.11f,0f,1.05f,0.103f,0f,1.07f,0.0796f,0f,1.1f,0.0251f,0f,1.1f,-0.0222f,0f,1.07f,-0.0788f,0f,1.03f,-0.106f,0f,0.988f,-0.103f,0f,0.953f,-0.0755f,0f,0.953f,-0.182f,0f,1.04f,-0.000177f,0f,1.03f,-0.0446f,0f,0.999f,-0.0603f,0f,0.966f,-0.0453f,0f,0.953f,-0.000177f,0f,0.963f,0.045f,0f,0.998f,0.063f,0f,1.03f,0.0462f,0f,0.515f,-0.101f,0f,0.462f,-0.0764f,0f,0.462f,-0.101f,0f,0.388f,-0.0201f,0f,0.388f,0.103f,0f,0.334f,0.103f,0f,0.334f,-0.0357f,0f,0.394f,-0.0491f,0f,0.388f,-0.0201f,0f,0.334f,-0.0357f,0f,0.339f,-0.072f,0f,0.394f,-0.0491f,0f,0.339f,-0.072f,0f,0.376f,-0.102f,0f,0.422f,-0.0604f,0f,0.394f,-0.0491f,0f,0.376f,-0.102f,0f,0.428f,-0.101f,0f,0.451f,-0.0482f,0f,0.422f,-0.0604f,0f,0.428f,-0.101f,0f,0.462f,-0.0764f,0f,0.461f,-0.0177f,0f,0.451f,-0.0482f,0f,0.462f,-0.0764f,0f,0.515f,0.103f,0f,0.461f,0.103f,0f,0.461f,-0.0177f,0f,0.515f,0.103f,0f,0.461f,-0.0177f,0f,0.462f,-0.0764f,0f,0.515f,-0.101f,0f,0.515f,0.103f,0f,0.462f,-0.0764f,0f,0.284f,-0.02f,0f,0.228f,-0.017f,0f,0.271f,-0.0798f,0f,0.222f,-0.0492f,0f,0.23f,-0.104f,0f,0.194f,-0.0608f,0f,0.193f,-0.108f,0f,0.194f,-0.0608f,0f,0.155f,-0.102f,0f,0.166f,-0.0473f,0f,0.117f,-0.0714f,0f,0.166f,-0.0473f,0f,0.108f,-0.0357f,0f,0.166f,-0.0473f,0f,0.799f,0.0305f,0f,0.853f,0.0416f,0f,0.79f,0.0544f,0f,0.842f,0.081f,0f,0.79f,0.0544f,0f,0.811f,0.104f,0f,0.767f,0.0616f,0f,0.76f,0.104f,0f,0.743f,0.0507f,0f,0.728f,0.0788f,0f,0.734f,0.0228f,0f,0.728f,0.0788f,0f,0.681f,0.0301f,0f,0.734f,0.0228f,0f,0.673f,0.0532f,0f,0.728f,0.0788f,0f,0.673f,0.0532f,0f,0.696f,0.105f,0f,0.65f,0.0611f,0f,0.649f,0.105f,0f,0.626f,0.0506f,0f,0.615f,0.0803f,0f,0.617f,0.0224f,0f,0.615f,0.0803f,0f,0.563f,-0.101f,0f,0.617f,0.0224f,0f,0.563f,-0.101f,0f,0.615f,0.0803f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.1080f,0.0019f,0.0000f,0.1630f,0.0019f,0.0000f,0.1660f,-0.0473f,0.0000f,0.1940f,-0.0608f,0.0000f,0.2220f,-0.0492f,0.0000f,0.2280f,-0.0170f,0.0000f,0.2280f,0.1750f,0.0000f,0.2840f,0.1750f,0.0000f,0.2840f,-0.0200f,0.0000f,0.2710f,-0.0798f,0.0000f,0.2300f,-0.1040f,0.0000f,0.1930f,-0.1080f,0.0000f,0.1550f,-0.1020f,0.0000f,0.1170f,-0.0714f,0.0000f,0.1080f,-0.0357f,0.0000f,0.5630f,-0.1010f,0.0000f,0.5630f,0.1030f,0.0000f,0.6150f,0.1030f,0.0000f,0.6150f,0.0803f,0.0000f,0.6490f,0.1050f,0.0000f,0.6960f,0.1050f,0.0000f,0.7280f,0.0788f,0.0000f,0.7600f,0.1040f,0.0000f,0.8110f,0.1040f,0.0000f,0.8420f,0.0810f,0.0000f,0.8530f,0.0416f,0.0000f,0.8530f,-0.1010f,0.0000f,0.7990f,-0.1010f,0.0000f,0.7990f,0.0305f,0.0000f,0.7900f,0.0544f,0.0000f,0.7670f,0.0616f,0.0000f,0.7430f,0.0507f,0.0000f,0.7340f,0.0228f,0.0000f,0.7340f,-0.1010f,0.0000f,0.6810f,-0.1010f,0.0000f,0.6810f,0.0301f,0.0000f,0.6730f,0.0532f,0.0000f,0.6500f,0.0611f,0.0000f,0.6260f,0.0506f,0.0000f,0.6170f,0.0224f,0.0000f,0.6170f,-0.1010f,0.0000f,0.9000f,-0.1820f,0.0000f,0.9000f,0.1030f,0.0000f,0.9520f,0.1030f,0.0000f,0.9520f,0.0751f,0.0000f,0.9680f,0.0934f,0.0000f,1.0100f,0.1100f,0.0000f,1.0500f,0.1030f,0.0000f,1.0700f,0.0796f,0.0000f,1.1000f,0.0251f,0.0000f,1.1000f,-0.0222f,0.0000f,1.0700f,-0.0788f,0.0000f,1.0300f,-0.1060f,0.0000f,0.9880f,-0.1030f,0.0000f,0.9530f,-0.0755f,0.0000f,0.9530f,-0.1820f,0.0000f,1.0400f,-0.0002f,0.0000f,1.0300f,-0.0446f,0.0000f,0.9990f,-0.0603f,0.0000f,0.9660f,-0.0453f,0.0000f,0.9530f,-0.0002f,0.0000f,0.9630f,0.0450f,0.0000f,0.9980f,0.0630f,0.0000f,1.0300f,0.0462f,0.0000f,0.5150f,-0.1010f,0.0000f,0.4620f,-0.0764f,0.0000f,0.4620f,-0.1010f,0.0000f,0.3880f,-0.0201f,0.0000f,0.3880f,0.1030f,0.0000f,0.3340f,0.1030f,0.0000f,0.3340f,-0.0357f,0.0000f,0.3940f,-0.0491f,0.0000f,0.3880f,-0.0201f,0.0000f,0.3340f,-0.0357f,0.0000f,0.3390f,-0.0720f,0.0000f,0.3940f,-0.0491f,0.0000f,0.3390f,-0.0720f,0.0000f,0.3760f,-0.1020f,0.0000f,0.4220f,-0.0604f,0.0000f,0.3940f,-0.0491f,0.0000f,0.3760f,-0.1020f,0.0000f,0.4280f,-0.1010f,0.0000f,0.4510f,-0.0482f,0.0000f,0.4220f,-0.0604f,0.0000f,0.4280f,-0.1010f,0.0000f,0.4620f,-0.0764f,0.0000f,0.4610f,-0.0177f,0.0000f,0.4510f,-0.0482f,0.0000f,0.4620f,-0.0764f,0.0000f,0.5150f,0.1030f,0.0000f,0.4610f,0.1030f,0.0000f,0.4610f,-0.0177f,0.0000f,0.5150f,0.1030f,0.0000f,0.4610f,-0.0177f,0.0000f,0.4620f,-0.0764f,0.0000f,0.5150f,-0.1010f,0.0000f,0.5150f,0.1030f,0.0000f,0.4620f,-0.0764f,0.0000f,0.2840f,-0.0200f,0.0000f,0.2280f,-0.0170f,0.0000f,0.2710f,-0.0798f,0.0000f,0.2220f,-0.0492f,0.0000f,0.2300f,-0.1040f,0.0000f,0.1940f,-0.0608f,0.0000f,0.1930f,-0.1080f,0.0000f,0.1940f,-0.0608f,0.0000f,0.1550f,-0.1020f,0.0000f,0.1660f,-0.0473f,0.0000f,0.1170f,-0.0714f,0.0000f,0.1660f,-0.0473f,0.0000f,0.1080f,-0.0357f,0.0000f,0.1660f,-0.0473f,0.0000f,0.7990f,0.0305f,0.0000f,0.8530f,0.0416f,0.0000f,0.7900f,0.0544f,0.0000f,0.8420f,0.0810f,0.0000f,0.7900f,0.0544f,0.0000f,0.8110f,0.1040f,0.0000f,0.7670f,0.0616f,0.0000f,0.7600f,0.1040f,0.0000f,0.7430f,0.0507f,0.0000f,0.7280f,0.0788f,0.0000f,0.7340f,0.0228f,0.0000f,0.7280f,0.0788f,0.0000f,0.6810f,0.0301f,0.0000f,0.7340f,0.0228f,0.0000f,0.6730f,0.0532f,0.0000f,0.7280f,0.0788f,0.0000f,0.6730f,0.0532f,0.0000f,0.6960f,0.1050f,0.0000f,0.6500f,0.0611f,0.0000f,0.6490f,0.1050f,0.0000f,0.6260f,0.0506f,0.0000f,0.6150f,0.0803f,0.0000f,0.6170f,0.0224f,0.0000f,0.6150f,0.0803f,0.0000f,0.5630f,-0.1010f,0.0000f,0.6170f,0.0224f,0.0000f,0.5630f,-0.1010f,0.0000f,0.6150f,0.0803f,0.0000f});
   }
 }
 protected class MFInt3256 {
@@ -1196,727 +1196,727 @@ protected class MFInt3256 {
 }
 protected class MFVec3f57 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.001296f,-0.02541f,-0.05f,0.01335f,-0.02527f,-0.05f,0.01328f,-0.02152f,-0.05f,0.001229f,-0.02146f,-0.05f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0013f,-0.0254f,-0.0500f,0.0134f,-0.0253f,-0.0500f,0.0133f,-0.0215f,-0.0500f,0.0012f,-0.0215f,-0.0500f});
   }
 }
 protected class MFFloat58 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,1.0000f});
   }
 }
 protected class MFRotation59 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFFloat60 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,1.0000f});
   }
 }
 protected class MFRotation61 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFFloat62 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,1.0000f});
   }
 }
 protected class MFRotation63 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFFloat64 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,1.0000f});
   }
 }
 protected class MFRotation65 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFFloat66 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,1.0000f});
   }
 }
 protected class MFRotation67 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFFloat68 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,1.0000f});
   }
 }
 protected class MFRotation69 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFFloat70 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,1.0000f});
   }
 }
 protected class MFRotation71 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFFloat72 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,1.0000f});
   }
 }
 protected class MFRotation73 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFFloat74 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,1.0000f});
   }
 }
 protected class MFRotation75 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFFloat76 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,1.0000f});
   }
 }
 protected class MFRotation77 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFFloat78 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,1.0000f});
   }
 }
 protected class MFRotation79 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFFloat80 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,1.0000f});
   }
 }
 protected class MFRotation81 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFFloat82 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,1.0000f});
   }
 }
 protected class MFRotation83 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFFloat84 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,1.0000f});
   }
 }
 protected class MFRotation85 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFFloat86 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,1.0000f});
   }
 }
 protected class MFRotation87 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFFloat88 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,1.0000f});
   }
 }
 protected class MFRotation89 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFFloat90 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,1.0000f});
   }
 }
 protected class MFRotation91 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFFloat92 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,1.0000f});
   }
 }
 protected class MFVec3f93 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0f,0f,0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f});
   }
 }
 protected class MFFloat94 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.125f,0.2083f,0.375f,0.4583f,0.5f,0.6667f,0.75f,0.7917f,0.9167f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.1250f,0.2083f,0.3750f,0.4583f,0.5000f,0.6667f,0.7500f,0.7917f,0.9167f,1.0000f});
   }
 }
 protected class MFRotation95 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0f,-1f,0f,0f,0.3533f,-1f,0f,0f,0.1072f,1f,0f,0f,0.2612f,1f,0f,0f,0.1268f,-1f,0f,0f,0.01793f,-1f,0f,0f,0.05824f,-1f,0f,0f,0.2398f,-1f,0f,0f,0.35f,-1f,0f,0f,0.3322f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,-1.0000f,0.0000f,0.0000f,0.3533f,-1.0000f,0.0000f,0.0000f,0.1072f,1.0000f,0.0000f,0.0000f,0.2612f,1.0000f,0.0000f,0.0000f,0.1268f,-1.0000f,0.0000f,0.0000f,0.0179f,-1.0000f,0.0000f,0.0000f,0.0582f,-1.0000f,0.0000f,0.0000f,0.2398f,-1.0000f,0.0000f,0.0000f,0.3500f,-1.0000f,0.0000f,0.0000f,0.3322f,0.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFFloat96 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.125f,0.2083f,0.2917f,0.375f,0.5f,0.6667f,0.7917f,0.9167f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.1250f,0.2083f,0.2917f,0.3750f,0.5000f,0.6667f,0.7917f,0.9167f,1.0000f});
   }
 }
 protected class MFRotation97 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1f,0f,0f,0.8573f,1f,0f,0f,0.8926f,1f,0f,0f,0.5351f,1f,0f,0f,0.1756f,1f,0f,0f,0.1194f,1f,0f,0f,0.3153f,1f,0f,0f,0.09354f,1f,0f,0f,0.08558f,1f,0f,0f,0.2475f,1f,0f,0f,0.8573f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1.0000f,0.0000f,0.0000f,0.8573f,1.0000f,0.0000f,0.0000f,0.8926f,1.0000f,0.0000f,0.0000f,0.5351f,1.0000f,0.0000f,0.0000f,0.1756f,1.0000f,0.0000f,0.0000f,0.1194f,1.0000f,0.0000f,0.0000f,0.3153f,1.0000f,0.0000f,0.0000f,0.0935f,1.0000f,0.0000f,0.0000f,0.0856f,1.0000f,0.0000f,0.0000f,0.2475f,1.0000f,0.0000f,0.0000f,0.8573f});
   }
 }
 protected class MFFloat98 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.125f,0.2083f,0.2917f,0.375f,0.5f,0.6667f,0.7917f,0.9167f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.1250f,0.2083f,0.2917f,0.3750f,0.5000f,0.6667f,0.7917f,0.9167f,1.0000f});
   }
 }
 protected class MFRotation99 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-0.5831f,0.03511f,0.8116f,0.1481f,-0.995f,0.02296f,0.09674f,0.4683f,-1f,0.00192f,0.007964f,0.4732f,-0.998f,-0.0158f,-0.06102f,0.5079f,-0.9911f,-0.03541f,-0.1286f,0.5419f,-0.9131f,-0.06243f,-0.403f,0.3361f,-0.4306f,-0.07962f,-0.899f,0.07038f,1f,0f,0f,0.2571f,0.9891f,-0.02805f,0.1444f,0.3879f,-0.5831f,0.03511f,0.8116f,0.1481f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-0.5831f,0.0351f,0.8116f,0.1481f,-0.9950f,0.0230f,0.0967f,0.4683f,-1.0000f,0.0019f,0.0080f,0.4732f,-0.9980f,-0.0158f,-0.0610f,0.5079f,-0.9911f,-0.0354f,-0.1286f,0.5419f,-0.9131f,-0.0624f,-0.4030f,0.3361f,-0.4306f,-0.0796f,-0.8990f,0.0704f,1.0000f,0.0000f,0.0000f,0.2571f,0.9891f,-0.0280f,0.1444f,0.3879f,-0.5831f,0.0351f,0.8116f,0.1481f});
   }
 }
 protected class MFFloat100 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.125f,0.2083f,0.375f,0.6667f,0.9167f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.1250f,0.2083f,0.3750f,0.6667f,0.9167f,1.0000f});
   }
 }
 protected class MFRotation101 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-1f,0f,0f,0.06714f,-1f,0f,0f,0.2152f,-1f,0f,0f,0.3184f,-1f,0f,0f,0.4717f,-1f,0f,0f,0.2912f,1f,0f,0f,0.1222f,-1f,0f,0f,0.06714f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-1.0000f,0.0000f,0.0000f,0.0671f,-1.0000f,0.0000f,0.0000f,0.2152f,-1.0000f,0.0000f,0.0000f,0.3184f,-1.0000f,0.0000f,0.0000f,0.4717f,-1.0000f,0.0000f,0.0000f,0.2912f,1.0000f,0.0000f,0.0000f,0.1222f,-1.0000f,0.0000f,0.0000f,0.0671f});
   }
 }
 protected class MFFloat102 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.2083f,0.375f,0.5f,0.6667f,0.7917f,0.9167f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.2083f,0.3750f,0.5000f,0.6667f,0.7917f,0.9167f,1.0000f});
   }
 }
 protected class MFRotation103 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1f,0f,0f,0.3226f,1f,0f,0f,0.1556f,1f,0f,0f,0.08678f,1f,0f,0f,0.8751f,1f,0f,0f,1.131f,1f,0f,0f,0.09961f,1f,0f,0f,0.3942f,1f,0f,0f,0.3226f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1.0000f,0.0000f,0.0000f,0.3226f,1.0000f,0.0000f,0.0000f,0.1556f,1.0000f,0.0000f,0.0000f,0.0868f,1.0000f,0.0000f,0.0000f,0.8751f,1.0000f,0.0000f,0.0000f,1.1310f,1.0000f,0.0000f,0.0000f,0.0996f,1.0000f,0.0000f,0.0000f,0.3942f,1.0000f,0.0000f,0.0000f,0.3226f});
   }
 }
 protected class MFFloat104 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.25f,0.375f,0.5f,0.6667f,0.7917f,0.9167f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.2500f,0.3750f,0.5000f,0.6667f,0.7917f,0.9167f,1.0000f});
   }
 }
 protected class MFRotation105 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-0.873f,0.06094f,0.484f,0.2865f,0.9963f,-0.01057f,0.08481f,0.2488f,0.9965f,0.01591f,-0.08222f,0.3836f,-0.7018f,-0.03223f,-0.7117f,0.1289f,-1f,0f,0f,0.5518f,-0.9964f,0.02231f,0.0817f,0.5351f,-0.9809f,0.04912f,0.1881f,0.5204f,-0.873f,0.06094f,0.484f,0.2865f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-0.8730f,0.0609f,0.4840f,0.2865f,0.9963f,-0.0106f,0.0848f,0.2488f,0.9965f,0.0159f,-0.0822f,0.3836f,-0.7018f,-0.0322f,-0.7117f,0.1289f,-1.0000f,0.0000f,0.0000f,0.5518f,-0.9964f,0.0223f,0.0817f,0.5351f,-0.9809f,0.0491f,0.1881f,0.5204f,-0.8730f,0.0609f,0.4840f,0.2865f});
   }
 }
 protected class MFFloat106 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.5f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.5000f,1.0000f});
   }
 }
 protected class MFRotation107 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,-1f,0.1056f,0f,0f,1f,0.09018f,0f,0f,-1f,0.1056f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,0.0000f,-1.0000f,0.1056f,0.0000f,0.0000f,1.0000f,0.0902f,0.0000f,0.0000f,-1.0000f,0.1056f});
   }
 }
 protected class MFFloat108 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.375f,0.9167f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.3750f,0.9167f,1.0000f});
   }
 }
 protected class MFRotation109 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-0.8129f,0.4759f,-0.3357f,0.1346f,0.1533f,-0.9878f,0.02582f,0.3902f,-0.5701f,0.7604f,-0.311f,0.366f,-0.8129f,0.4759f,-0.3357f,0.1346f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-0.8129f,0.4759f,-0.3357f,0.1346f,0.1533f,-0.9878f,0.0258f,0.3902f,-0.5701f,0.7604f,-0.3110f,0.3660f,-0.8129f,0.4759f,-0.3357f,0.1346f});
   }
 }
 protected class MFFloat110 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.375f,0.9167f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.3750f,0.9167f,1.0000f});
   }
 }
 protected class MFRotation111 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-1f,0f,0f,0.411508f,-1f,0f,0f,0.0925011f,-1f,0f,0f,0.572568f,-1f,0f,0f,0.411508f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-1.0000f,0.0000f,0.0000f,0.4115f,-1.0000f,0.0000f,0.0000f,0.0925f,-1.0000f,0.0000f,0.0000f,0.5726f,-1.0000f,0.0000f,0.0000f,0.4115f});
   }
 }
 protected class MFFloat112 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.375f,0.9167f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.3750f,0.9167f,1.0000f});
   }
 }
 protected class MFRotation113 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-1f,0f,0f,0.09346f,1f,0f,0f,0.3197f,-1f,0f,0f,0.1564f,-1f,0f,0f,0.09346f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-1.0000f,0.0000f,0.0000f,0.0935f,1.0000f,0.0000f,0.0000f,0.3197f,-1.0000f,0.0000f,0.0000f,0.1564f,-1.0000f,0.0000f,0.0000f,0.0935f});
   }
 }
 protected class MFFloat114 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.375f,0.9167f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.3750f,0.9167f,1.0000f});
   }
 }
 protected class MFRotation115 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,-1f,0f,0.461076f,-0.330195f,-0.927451f,0.175516f,0.538852f,0.0327774f,-0.999314f,-0.0172185f,0.492033f,0f,-1f,0f,0.461076f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,-1.0000f,0.0000f,0.4611f,-0.3302f,-0.9275f,0.1755f,0.5389f,0.0328f,-0.9993f,-0.0172f,0.4920f,0.0000f,-1.0000f,0.0000f,0.4611f});
   }
 }
 protected class MFFloat116 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.375f,0.9167f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.3750f,0.9167f,1.0000f});
   }
 }
 protected class MFRotation117 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-1f,0f,0f,0.0659878f,-1f,0f,0f,0.488383f,-1f,0f,0f,0.0177536f,-1f,0f,0f,0.0659878f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-1.0000f,0.0000f,0.0000f,0.0660f,-1.0000f,0.0000f,0.0000f,0.4884f,-1.0000f,0.0000f,0.0000f,0.0178f,-1.0000f,0.0000f,0.0000f,0.0660f});
   }
 }
 protected class MFFloat118 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.375f,0.9167f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.3750f,0.9167f,1.0000f});
   }
 }
 protected class MFRotation119 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1f,0f,0f,0.1189f,-1f,0f,0f,0.1861f,1f,0f,0f,0.3357f,1f,0f,0f,0.1189f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1.0000f,0.0000f,0.0000f,0.1189f,-1.0000f,0.0000f,0.0000f,0.1861f,1.0000f,0.0000f,0.0000f,0.3357f,1.0000f,0.0000f,0.0000f,0.1189f});
   }
 }
 protected class MFFloat120 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.375f,0.4167f,0.5f,0.5833f,0.6667f,0.75f,0.8333f,0.9167f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.3750f,0.4167f,0.5000f,0.5833f,0.6667f,0.7500f,0.8333f,0.9167f,1.0000f});
   }
 }
 protected class MFRotation121 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,-1f,0f,0.08642f,0f,1f,0f,0.1825f,0f,1f,0f,0.1505f,0f,1f,0f,0.1053f,0f,1f,0f,0.04391f,0f,-1f,0f,0.03119f,0f,-1f,0f,0.07936f,0f,-1f,0f,0.1616f,0f,-1f,0f,0.155f,0f,-1f,0f,0.08642f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,-1.0000f,0.0000f,0.0864f,0.0000f,1.0000f,0.0000f,0.1825f,0.0000f,1.0000f,0.0000f,0.1505f,0.0000f,1.0000f,0.0000f,0.1053f,0.0000f,1.0000f,0.0000f,0.0439f,0.0000f,-1.0000f,0.0000f,0.0312f,0.0000f,-1.0000f,0.0000f,0.0794f,0.0000f,-1.0000f,0.0000f,0.1616f,0.0000f,-1.0000f,0.0000f,0.1550f,0.0000f,-1.0000f,0.0000f,0.0864f});
   }
 }
 protected class MFFloat122 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,1.0000f});
   }
 }
 protected class MFRotation123 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFFloat124 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.2083f,0.375f,0.75f,0.8333f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.2083f,0.3750f,0.7500f,0.8333f,1.0000f});
   }
 }
 protected class MFRotation125 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,1f,0f,0.0826f,-0.01972f,-0.5974f,0.8017f,0.08231f,0.009296f,-0.9648f,0.2627f,0.1734f,-0.01238f,0.9549f,-0.2968f,0.08732f,-0.008125f,0.9691f,-0.2463f,0.158f,0f,1f,0f,0.0826f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,1.0000f,0.0000f,0.0826f,-0.0197f,-0.5974f,0.8017f,0.0823f,0.0093f,-0.9648f,0.2627f,0.1734f,-0.0124f,0.9549f,-0.2968f,0.0873f,-0.0081f,0.9691f,-0.2463f,0.1580f,0.0000f,1.0000f,0.0000f,0.0826f});
   }
 }
 protected class MFFloat126 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,1.0000f});
   }
 }
 protected class MFRotation127 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFFloat128 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.04167f,0.125f,0.1667f,0.2083f,0.25f,0.2917f,0.375f,0.4583f,0.5f,0.5417f,0.5833f,0.625f,0.7083f,0.75f,0.7917f,0.875f,0.9167f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.0417f,0.1250f,0.1667f,0.2083f,0.2500f,0.2917f,0.3750f,0.4583f,0.5000f,0.5417f,0.5833f,0.6250f,0.7083f,0.7500f,0.7917f,0.8750f,0.9167f,1.0000f});
   }
 }
 protected class MFVec3f129 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,-0.00928f,0f,0f,-0.003858f,0f,0f,-0.008847f,0f,0f,-0.01486f,0f,0f,-0.02641f,0f,0f,-0.03934f,0f,0f,-0.0502f,0f,0f,-0.07469f,0f,0f,-0.02732f,0f,0f,-0.01608f,0f,0f,-0.01129f,0f,0f,-0.005819f,0f,0f,-0.002004f,0f,0f,-0.002579f,0f,0f,-0.0143f,0f,0f,-0.03799f,0f,0f,-0.05648f,0f,0f,-0.045f,0f,0f,-0.00928f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0000f,-0.0093f,0.0000f,0.0000f,-0.0039f,0.0000f,0.0000f,-0.0088f,0.0000f,0.0000f,-0.0149f,0.0000f,0.0000f,-0.0264f,0.0000f,0.0000f,-0.0393f,0.0000f,0.0000f,-0.0502f,0.0000f,0.0000f,-0.0747f,0.0000f,0.0000f,-0.0273f,0.0000f,0.0000f,-0.0161f,0.0000f,0.0000f,-0.0113f,0.0000f,0.0000f,-0.0058f,0.0000f,0.0000f,-0.0020f,0.0000f,0.0000f,-0.0026f,0.0000f,0.0000f,-0.0143f,0.0000f,0.0000f,-0.0380f,0.0000f,0.0000f,-0.0565f,0.0000f,0.0000f,-0.0450f,0.0000f,0.0000f,-0.0093f,0.0000f});
   }
 }
 protected class MFFloat130 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.4909f,0.7091f,0.8f,0.8182f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.4909f,0.7091f,0.8000f,0.8182f,1.0000f});
   }
 }
 protected class MFRotation131 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1f,0f,0f,0.2323f,-1f,0f,0f,0.07843f,-1f,0f,0f,0.09676f,-1f,0f,0f,0.3274f,-1f,0f,0f,0.3278f,1f,0f,0f,0.2323f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1.0000f,0.0000f,0.0000f,0.2323f,-1.0000f,0.0000f,0.0000f,0.0784f,-1.0000f,0.0000f,0.0000f,0.0968f,-1.0000f,0.0000f,0.0000f,0.3274f,-1.0000f,0.0000f,0.0000f,0.3278f,1.0000f,0.0000f,0.0000f,0.2323f});
   }
 }
 protected class MFFloat132 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.03636f,0.2182f,0.4909f,0.7455f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.0364f,0.2182f,0.4909f,0.7455f,1.0000f});
   }
 }
 protected class MFRotation133 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1f,0f,0f,0.7004f,1f,0f,0f,1.011f,1f,0f,0f,1.892f,1f,0f,0f,1.188f,1f,0f,0f,0.3964f,1f,0f,0f,0.7004f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1.0000f,0.0000f,0.0000f,0.7004f,1.0000f,0.0000f,0.0000f,1.0110f,1.0000f,0.0000f,0.0000f,1.8920f,1.0000f,0.0000f,0.0000f,1.1880f,1.0000f,0.0000f,0.0000f,0.3964f,1.0000f,0.0000f,0.0000f,0.7004f});
   }
 }
 protected class MFFloat134 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.2182f,0.4909f,0.7455f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.2182f,0.4909f,0.7455f,1.0000f});
   }
 }
 protected class MFRotation135 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.9999f,0.00293f,-0.00989f,0.402f,-1f,0.004977f,-0.00497f,0.5943f,-1f,0.003265f,-0.001752f,1.178f,-0.9999f,0.00815f,-0.01093f,0.3031f,0.9999f,0.00293f,-0.00989f,0.402f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.9999f,0.0029f,-0.0099f,0.4020f,-1.0000f,0.0050f,-0.0050f,0.5943f,-1.0000f,0.0033f,-0.0018f,1.1780f,-0.9999f,0.0081f,-0.0109f,0.3031f,0.9999f,0.0029f,-0.0099f,0.4020f});
   }
 }
 protected class MFFloat136 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.2182f,0.3091f,0.4909f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.2182f,0.3091f,0.4909f,1.0000f});
   }
 }
 protected class MFRotation137 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1f,0f,0f,0.03543f,-1f,0f,0f,0.1037f,-1f,0f,0f,0.4328f,1f,0f,0f,0.1929f,1f,0f,0f,0.03543f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1.0000f,0.0000f,0.0000f,0.0354f,-1.0000f,0.0000f,0.0000f,0.1037f,-1.0000f,0.0000f,0.0000f,0.4328f,1.0000f,0.0000f,0.0000f,0.1929f,1.0000f,0.0000f,0.0000f,0.0354f});
   }
 }
 protected class MFFloat138 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.2182f,0.4909f,0.7455f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.2182f,0.4909f,0.7455f,1.0000f});
   }
 }
 protected class MFRotation139 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1f,0f,0f,1.108f,1f,0f,0f,0.4265f,1f,0f,0f,0.7052f,1f,0f,0f,2.179f,1f,0f,0f,1.108f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1.0000f,0.0000f,0.0000f,1.1080f,1.0000f,0.0000f,0.0000f,0.4265f,1.0000f,0.0000f,0.0000f,0.7052f,1.0000f,0.0000f,0.0000f,2.1790f,1.0000f,0.0000f,0.0000f,1.1080f});
   }
 }
 protected class MFFloat140 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.2182f,0.4909f,0.7455f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.2182f,0.4909f,0.7455f,1.0000f});
   }
 }
 protected class MFRotation141 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-0.9986f,0.03354f,0.04001f,1.212f,-0.9889f,0.1328f,0.06696f,0.4025f,0.9894f,0.1453f,0.009351f,0.4114f,-0.9963f,0.07032f,0.05003f,0.7035f,-0.9986f,0.03354f,0.04001f,1.212f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-0.9986f,0.0335f,0.0400f,1.2120f,-0.9889f,0.1328f,0.0670f,0.4025f,0.9894f,0.1453f,0.0094f,0.4114f,-0.9963f,0.0703f,0.0500f,0.7035f,-0.9986f,0.0335f,0.0400f,1.2120f});
   }
 }
 protected class MFFloat142 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,1.0000f});
   }
 }
 protected class MFRotation143 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.9969f,-0.05444f,0.05596f,0.07687f,0.9969f,-0.05444f,0.05596f,0.07687f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.9969f,-0.0544f,0.0560f,0.0769f,0.9969f,-0.0544f,0.0560f,0.0769f});
   }
 }
 protected class MFFloat144 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,1.0000f});
   }
 }
 protected class MFRotation145 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-0.917742f,-0.237244f,-0.318536f,0.214273f,-0.917742f,-0.237244f,-0.318536f,0.214273f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-0.9177f,-0.2372f,-0.3185f,0.2143f,-0.9177f,-0.2372f,-0.3185f,0.2143f});
   }
 }
 protected class MFFloat146 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.2182f,0.4909f,0.7455f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.2182f,0.4909f,0.7455f,1.0000f});
   }
 }
 protected class MFRotation147 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.9353f,-0.2978f,-0.191f,4.222f,-0.9362f,0.2924f,-0.1952f,1.05f,0.9941f,-0.09719f,-0.04725f,4.512f,-0.9594f,0.2653f,0.09579f,1.525f,0.9353f,-0.2978f,-0.191f,4.222f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.9353f,-0.2978f,-0.1910f,4.2220f,-0.9362f,0.2924f,-0.1952f,1.0500f,0.9941f,-0.0972f,-0.0473f,4.5120f,-0.9594f,0.2653f,0.0958f,1.5250f,0.9353f,-0.2978f,-0.1910f,4.2220f});
   }
 }
 protected class MFFloat148 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.2182f,0.4909f,0.7455f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.2182f,0.4909f,0.7455f,1.0000f});
   }
 }
 protected class MFRotation149 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-1f,0f,0f,0.6979f,0.9094f,0.2062f,-0.3613f,0.4157f,0.9637f,0.1537f,-0.2185f,1.353f,0.4864f,0.08841f,-0.8693f,0.1716f,-1f,0f,0f,0.6979f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-1.0000f,0.0000f,0.0000f,0.6979f,0.9094f,0.2062f,-0.3613f,0.4157f,0.9637f,0.1537f,-0.2185f,1.3530f,0.4864f,0.0884f,-0.8693f,0.1716f,-1.0000f,0.0000f,0.0000f,0.6979f});
   }
 }
 protected class MFFloat150 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,1.0000f});
   }
 }
 protected class MFRotation151 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-0.0240995f,-0.999682f,0.00741506f,0.120409f,-0.0240995f,-0.999682f,0.00741506f,0.120409f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-0.0241f,-0.9997f,0.0074f,0.1204f,-0.0241f,-0.9997f,0.0074f,0.1204f});
   }
 }
 protected class MFFloat152 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.2182f,0.4909f,0.7455f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.2182f,0.4909f,0.7455f,1.0000f});
   }
 }
 protected class MFRotation153 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.9985f,0.03887f,0.03802f,4.689f,-0.965f,-0.1889f,-0.1821f,1.415f,0.9758f,0.1563f,0.1529f,4.666f,-0.9956f,-0.0936f,0.009826f,1.126f,0.9985f,0.03887f,0.03802f,4.689f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.9985f,0.0389f,0.0380f,4.6890f,-0.9650f,-0.1889f,-0.1821f,1.4150f,0.9758f,0.1563f,0.1529f,4.6660f,-0.9956f,-0.0936f,0.0098f,1.1260f,0.9985f,0.0389f,0.0380f,4.6890f});
   }
 }
 protected class MFFloat154 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.2182f,0.4909f,0.7455f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.2182f,0.4909f,0.7455f,1.0000f});
   }
 }
 protected class MFRotation155 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.9907f,-0.07264f,0.115f,1.135f,0.9291f,-0.1222f,0.349f,0.1695f,-0.9892f,0.1364f,-0.05394f,0.5112f,0.9942f,-0.0002052f,0.1073f,0.4975f,0.9907f,-0.07264f,0.115f,1.135f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.9907f,-0.0726f,0.1150f,1.1350f,0.9291f,-0.1222f,0.3490f,0.1695f,-0.9892f,0.1364f,-0.0539f,0.5112f,0.9942f,-0.0002f,0.1073f,0.4975f,0.9907f,-0.0726f,0.1150f,1.1350f});
   }
 }
 protected class MFFloat156 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.4909f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.4909f,1.0000f});
   }
 }
 protected class MFRotation157 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.6517f,-0.7559f,0.06211f,0.2508f,0.6467f,0.7527f,-0.1238f,0.2344f,0.6517f,-0.7559f,0.06211f,0.2508f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.6517f,-0.7559f,0.0621f,0.2508f,0.6467f,0.7527f,-0.1238f,0.2344f,0.6517f,-0.7559f,0.0621f,0.2508f});
   }
 }
 protected class MFFloat158 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,1.0000f});
   }
 }
 protected class MFRotation159 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFFloat160 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.2545f,0.4909f,0.7636f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.2545f,0.4909f,0.7636f,1.0000f});
   }
 }
 protected class MFRotation161 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.7651f,0.6382f,0.08586f,0.2712f,0.9999f,0.002845f,-0.01547f,0.3756f,0.7459f,-0.6505f,-0.1432f,0.2416f,0.9984f,0.05536f,-0.01154f,0.3488f,0.7651f,0.6382f,0.08586f,0.2712f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.7651f,0.6382f,0.0859f,0.2712f,0.9999f,0.0028f,-0.0155f,0.3756f,0.7459f,-0.6505f,-0.1432f,0.2416f,0.9984f,0.0554f,-0.0115f,0.3488f,0.7651f,0.6382f,0.0859f,0.2712f});
   }
 }
 protected class MFFloat162 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,1.0000f});
   }
 }
 protected class MFRotation163 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFFloat164 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.2182f,0.2909f,0.3091f,0.7091f,0.8f,0.8182f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.2182f,0.2909f,0.3091f,0.7091f,0.8000f,0.8182f,1.0000f});
   }
 }
 protected class MFVec3f165 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,-0.0351f,0f,0f,-0.0351f,0f,0f,-0.04087f,0f,0f,-0.04886f,0f,0f,-0.04051f,0f,0f,-0.03666f,0f,0f,-0.03666f,0f,0f,-0.0351f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0000f,-0.0351f,0.0000f,0.0000f,-0.0351f,0.0000f,0.0000f,-0.0409f,0.0000f,0.0000f,-0.0489f,0.0000f,0.0000f,-0.0405f,0.0000f,0.0000f,-0.0367f,0.0000f,0.0000f,-0.0367f,0.0000f,0.0000f,-0.0351f,0.0000f});
   }
 }
 protected class MFFloat166 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.28f,0.32f,0.36f,0.4f,0.44f,0.48f,0.64f,0.76f,0.84f,0.88f,0.92f,0.96f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.2800f,0.3200f,0.3600f,0.4000f,0.4400f,0.4800f,0.6400f,0.7600f,0.8400f,0.8800f,0.9200f,0.9600f,1.0000f});
   }
 }
 protected class MFRotation167 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0f,-1f,0f,0f,0.6735f,-1f,0f,0f,0.6735f,-1f,0f,0f,0.3527f,-1f,0f,0f,0.3038f,-1f,0f,0f,0.07964f,1f,0f,0f,0.3001f,1f,0f,0f,0.6509f,1f,0f,0f,0.3001f,-1f,0f,0f,0.2087f,-1f,0f,0f,0.3756f,-1f,0f,0f,0.3279f,-1f,0f,0f,0.1193f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,-1.0000f,0.0000f,0.0000f,0.6735f,-1.0000f,0.0000f,0.0000f,0.6735f,-1.0000f,0.0000f,0.0000f,0.3527f,-1.0000f,0.0000f,0.0000f,0.3038f,-1.0000f,0.0000f,0.0000f,0.0796f,1.0000f,0.0000f,0.0000f,0.3001f,1.0000f,0.0000f,0.0000f,0.6509f,1.0000f,0.0000f,0.0000f,0.3001f,-1.0000f,0.0000f,0.0000f,0.2087f,-1.0000f,0.0000f,0.0000f,0.3756f,-1.0000f,0.0000f,0.0000f,0.3279f,-1.0000f,0.0000f,0.0000f,0.1193f,0.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFFloat168 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.28f,0.32f,0.48f,0.64f,0.76f,0.88f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.2800f,0.3200f,0.4800f,0.6400f,0.7600f,0.8800f,1.0000f});
   }
 }
 protected class MFRotation169 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0f,1f,0f,0f,2.005f,1f,0f,0f,2.005f,0f,0f,1f,0f,1f,0f,0f,0.9507f,1f,0f,0f,0.5845f,1f,0f,0f,0.9054f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,1.0000f,0.0000f,0.0000f,2.0050f,1.0000f,0.0000f,0.0000f,2.0050f,0.0000f,0.0000f,1.0000f,0.0000f,1.0000f,0.0000f,0.0000f,0.9507f,1.0000f,0.0000f,0.0000f,0.5845f,1.0000f,0.0000f,0.0000f,0.9054f,0.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFFloat170 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.28f,0.32f,0.36f,0.4f,0.44f,0.48f,0.64f,0.76f,0.88f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.2800f,0.3200f,0.3600f,0.4000f,0.4400f,0.4800f,0.6400f,0.7600f,0.8800f,1.0000f});
   }
 }
 protected class MFRotation171 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0f,1f,0f,0f,4.433f,1f,0f,0f,4.433f,1f,0f,0f,4.647f,-1f,0f,0f,0.8943f,-1f,0f,0f,0.3698f,0f,0f,1f,0f,-1f,0f,0f,0.4963f,-1f,0f,0f,0.3829f,-1f,0f,0f,0.5169f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,1.0000f,0.0000f,0.0000f,4.4330f,1.0000f,0.0000f,0.0000f,4.4330f,1.0000f,0.0000f,0.0000f,4.6470f,-1.0000f,0.0000f,0.0000f,0.8943f,-1.0000f,0.0000f,0.0000f,0.3698f,0.0000f,0.0000f,1.0000f,0.0000f,-1.0000f,0.0000f,0.0000f,0.4963f,-1.0000f,0.0000f,0.0000f,0.3829f,-1.0000f,0.0000f,0.0000f,0.5169f,0.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFFloat172 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.28f,0.32f,0.36f,0.4f,0.44f,0.48f,0.64f,0.76f,0.84f,0.88f,0.92f,0.96f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.2800f,0.3200f,0.3600f,0.4000f,0.4400f,0.4800f,0.6400f,0.7600f,0.8400f,0.8800f,0.9200f,0.9600f,1.0000f});
   }
 }
 protected class MFRotation173 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0f,-1f,0f,0f,0.625f,-1f,0f,0f,0.625f,-1f,0f,0f,0.3364f,-1f,0f,0f,0.2742f,-1f,0f,0f,0.05078f,1f,0f,0f,0.2833f,1f,0f,0f,0.6667f,1f,0f,0f,0.2833f,-1f,0f,0f,0.2108f,-1f,0f,0f,0.375f,-1f,0f,0f,0.3146f,-1f,0f,0f,0.1174f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,-1.0000f,0.0000f,0.0000f,0.6250f,-1.0000f,0.0000f,0.0000f,0.6250f,-1.0000f,0.0000f,0.0000f,0.3364f,-1.0000f,0.0000f,0.0000f,0.2742f,-1.0000f,0.0000f,0.0000f,0.0508f,1.0000f,0.0000f,0.0000f,0.2833f,1.0000f,0.0000f,0.0000f,0.6667f,1.0000f,0.0000f,0.0000f,0.2833f,-1.0000f,0.0000f,0.0000f,0.2108f,-1.0000f,0.0000f,0.0000f,0.3750f,-1.0000f,0.0000f,0.0000f,0.3146f,-1.0000f,0.0000f,0.0000f,0.1174f,0.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFFloat174 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.28f,0.32f,0.48f,0.64f,0.76f,0.88f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.2800f,0.3200f,0.4800f,0.6400f,0.7600f,0.8800f,1.0000f});
   }
 }
 protected class MFRotation175 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0f,1f,0f,0f,2.047f,1f,0f,0f,2.047f,0f,0f,1f,0f,1f,0f,0f,1.566f,1f,0f,0f,0.5913f,1f,0f,0f,0.9235f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,1.0000f,0.0000f,0.0000f,2.0470f,1.0000f,0.0000f,0.0000f,2.0470f,0.0000f,0.0000f,1.0000f,0.0000f,1.0000f,0.0000f,0.0000f,1.5660f,1.0000f,0.0000f,0.0000f,0.5913f,1.0000f,0.0000f,0.0000f,0.9235f,0.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFFloat176 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.28f,0.32f,0.36f,0.4f,0.44f,0.48f,0.64f,0.76f,0.88f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.2800f,0.3200f,0.3600f,0.4000f,0.4400f,0.4800f,0.6400f,0.7600f,0.8800f,1.0000f});
   }
 }
 protected class MFRotation177 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0f,1f,0f,0f,4.349f,1f,0f,0f,4.349f,1f,0f,0f,4.615f,-1f,0f,0f,0.9136f,-1f,0f,0f,0.3614f,0f,0f,1f,0f,-1f,0f,0f,0.7869f,-1f,0f,0f,0.3918f,-1f,0f,0f,0.5433f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,1.0000f,0.0000f,0.0000f,4.3490f,1.0000f,0.0000f,0.0000f,4.3490f,1.0000f,0.0000f,0.0000f,4.6150f,-1.0000f,0.0000f,0.0000f,0.9136f,-1.0000f,0.0000f,0.0000f,0.3614f,0.0000f,0.0000f,1.0000f,0.0000f,-1.0000f,0.0000f,0.0000f,0.7869f,-1.0000f,0.0000f,0.0000f,0.3918f,-1.0000f,0.0000f,0.0000f,0.5433f,0.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFFloat178 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.28f,0.32f,0.48f,0.76f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.2800f,0.3200f,0.4800f,0.7600f,1.0000f});
   }
 }
 protected class MFRotation179 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0f,1f,0f,0f,0.1892f,1f,0f,0f,0.1892f,0f,0f,1f,0f,0f,0f,1f,0f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,1.0000f,0.0000f,0.0000f,0.1892f,1.0000f,0.0000f,0.0000f,0.1892f,0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFFloat180 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.28f,0.32f,0.64f,0.76f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.2800f,0.3200f,0.6400f,0.7600f,1.0000f});
   }
 }
 protected class MFRotation181 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0f,-0.0585279f,0.983903f,-0.168849f,1.85956f,-0.0585279f,0.983903f,-0.168849f,1.85956f,-0.00222418f,0.99801f,-0.0630095f,1.46072f,0f,1f,0f,0.497349f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,-0.0585f,0.9839f,-0.1688f,1.8596f,-0.0585f,0.9839f,-0.1688f,1.8596f,-0.0022f,0.9980f,-0.0630f,1.4607f,0.0000f,1.0000f,0.0000f,0.4973f,0.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFFloat182 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.28f,0.32f,0.64f,0.76f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.2800f,0.3200f,0.6400f,0.7600f,1.0000f});
   }
 }
 protected class MFRotation183 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0f,-1f,0f,0f,0.04151f,-1f,0f,0f,0.04151f,-1f,0f,0f,0.5855f,-1f,0f,0f,0.5852f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,-1.0000f,0.0000f,0.0000f,0.0415f,-1.0000f,0.0000f,0.0000f,0.0415f,-1.0000f,0.0000f,0.0000f,0.5855f,-1.0000f,0.0000f,0.0000f,0.5852f,0.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFFloat184 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.28f,0.32f,0.64f,0.76f,0.88f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.2800f,0.3200f,0.6400f,0.7600f,0.8800f,1.0000f});
   }
 }
 protected class MFRotation185 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0f,0.9992f,0.02042f,0.03558f,4.688f,0.9992f,0.02042f,0.03558f,4.688f,0.9989f,-0.04623f,0.005159f,4.079f,-0.8687f,-0.2525f,-0.4261f,1.501f,-0.941f,-0.2893f,-0.1754f,0.4788f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,0.9992f,0.0204f,0.0356f,4.6880f,0.9992f,0.0204f,0.0356f,4.6880f,0.9989f,-0.0462f,0.0052f,4.0790f,-0.8687f,-0.2525f,-0.4261f,1.5010f,-0.9410f,-0.2893f,-0.1754f,0.4788f,0.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFFloat186 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.28f,0.32f,0.64f,0.76f,0.88f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.2800f,0.3200f,0.6400f,0.7600f,0.8800f,1.0000f});
   }
 }
 protected class MFRotation187 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0f,0.0672928f,0.989475f,-0.128107f,4.15574f,0.0672928f,0.989475f,-0.128107f,4.15574f,0.00364942f,0.999901f,0.0135896f,4.5822f,0f,-1f,0f,0.655922f,-0.00050618f,-0.999999f,0.0012782f,1.28397f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,0.0673f,0.9895f,-0.1281f,4.1557f,0.0673f,0.9895f,-0.1281f,4.1557f,0.0036f,0.9999f,0.0136f,4.5822f,0.0000f,-1.0000f,0.0000f,0.6559f,-0.0005f,-1.0000f,0.0013f,1.2840f,0.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFFloat188 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.28f,0.32f,0.64f,0.76f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.2800f,0.3200f,0.6400f,0.7600f,1.0000f});
   }
 }
 protected class MFRotation189 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0f,-1f,0f,0f,0.1229f,-1f,0f,0f,0.1229f,-1f,0f,0f,0.5976f,-1f,0f,0f,0.3917f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,-1.0000f,0.0000f,0.0000f,0.1229f,-1.0000f,0.0000f,0.0000f,0.1229f,-1.0000f,0.0000f,0.0000f,0.5976f,-1.0000f,0.0000f,0.0000f,0.3917f,0.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFFloat190 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.28f,0.32f,0.64f,0.76f,0.88f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.2800f,0.3200f,0.6400f,0.7600f,0.8800f,1.0000f});
   }
 }
 protected class MFRotation191 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0f,-0.9987f,0.02554f,0.04498f,1.57f,-0.9987f,0.02554f,0.04498f,1.57f,1f,0.0004113f,0.003055f,4.114f,-0.8413f,0.3238f,0.4329f,1.453f,-0.877f,0.4198f,0.2337f,0.6009f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,-0.9987f,0.0255f,0.0450f,1.5700f,-0.9987f,0.0255f,0.0450f,1.5700f,1.0000f,0.0004f,0.0031f,4.1140f,-0.8413f,0.3238f,0.4329f,1.4530f,-0.8770f,0.4198f,0.2337f,0.6009f,0.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFFloat192 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.28f,0.32f,0.48f,0.76f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.2800f,0.3200f,0.4800f,0.7600f,1.0000f});
   }
 }
 protected class MFRotation193 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0f,-1f,0f,0f,0.5989f,-1f,0f,0f,0.5989f,-1f,0f,0f,0.3216f,1f,0f,0f,0.06503f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,-1.0000f,0.0000f,0.0000f,0.5989f,-1.0000f,0.0000f,0.0000f,0.5989f,-1.0000f,0.0000f,0.0000f,0.3216f,1.0000f,0.0000f,0.0000f,0.0650f,0.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFFloat194 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.28f,0.32f,0.48f,0.76f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.2800f,0.3200f,0.4800f,0.7600f,1.0000f});
   }
 }
 protected class MFRotation195 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0f,-1f,0f,0f,0.1942f,-1f,0f,0f,0.1942f,0f,0f,1f,0f,1f,0f,0f,0.2284f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,-1.0000f,0.0000f,0.0000f,0.1942f,-1.0000f,0.0000f,0.0000f,0.1942f,0.0000f,0.0000f,1.0000f,0.0000f,1.0000f,0.0000f,0.0000f,0.2284f,0.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFFloat196 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.28f,0.32f,0.48f,0.76f,0.88f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.2800f,0.3200f,0.4800f,0.7600f,0.8800f,1.0000f});
   }
 }
 protected class MFRotation197 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0f,1f,0f,0f,1.038f,1f,0f,0f,1.038f,-1f,0f,0f,0.1057f,1f,0f,0f,0.2171f,1f,0f,0f,0.3465f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,1.0000f,0.0000f,0.0000f,1.0380f,1.0000f,0.0000f,0.0000f,1.0380f,-1.0000f,0.0000f,0.0000f,0.1057f,1.0000f,0.0000f,0.0000f,0.2171f,1.0000f,0.0000f,0.0000f,0.3465f,0.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFFloat198 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.28f,0.32f,0.48f,0.64f,0.76f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.2800f,0.3200f,0.4800f,0.6400f,0.7600f,1.0000f});
   }
 }
 protected class MFRotation199 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0f,1f,0f,0f,0.3273f,1f,0f,0f,0.3273f,0f,0f,1f,0f,0f,0f,1f,0f,0f,0f,1f,0f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,1.0000f,0.0000f,0.0000f,0.3273f,1.0000f,0.0000f,0.0000f,0.3273f,0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFFloat200 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.04f,0.08f,0.12f,0.16f,0.2f,0.24f,0.28f,0.32f,0.36f,0.4f,0.44f,0.48f,0.64f,0.76f,0.8f,0.84f,0.88f,0.92f,0.96f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.0400f,0.0800f,0.1200f,0.1600f,0.2000f,0.2400f,0.2800f,0.3200f,0.3600f,0.4000f,0.4400f,0.4800f,0.6400f,0.7600f,0.8000f,0.8400f,0.8800f,0.9200f,0.9600f,1.0000f});
   }
 }
 protected class MFVec3f201 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0f,0f,0f,-0.01264f,-0.01289f,0f,-0.04712f,-0.03738f,-0.0003345f,-0.1049f,-0.05353f,-0.0005712f,-0.1892f,-0.06561f,-0.0008233f,-0.286f,-0.06276f,-0.0009591f,-0.3795f,-0.05148f,-0.00106f,-0.4484f,-0.03656f,-0.00106f,-0.4484f,-0.03656f,-0.001122f,-0.3269f,-0.1499f,-0.0008616f,-0.13f,-0.06358f,-0.0005128f,-0.03123f,-0.05488f,0.0004779f,0.053f,0.02732f,0.0001728f,0.4148f,0.006873f,0f,0.03045f,0.02148f,0f,-0.01299f,-0.01057f,0f,-0.06932f,-0.01064f,0.0001365f,-0.1037f,-0.005059f,0.0001279f,-0.07198f,-0.007596f,0.000141f,-0.01626f,-0.004935f,0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0000f,0.0000f,0.0000f,0.0000f,-0.0126f,-0.0129f,0.0000f,-0.0471f,-0.0374f,-0.0003f,-0.1049f,-0.0535f,-0.0006f,-0.1892f,-0.0656f,-0.0008f,-0.2860f,-0.0628f,-0.0010f,-0.3795f,-0.0515f,-0.0011f,-0.4484f,-0.0366f,-0.0011f,-0.4484f,-0.0366f,-0.0011f,-0.3269f,-0.1499f,-0.0009f,-0.1300f,-0.0636f,-0.0005f,-0.0312f,-0.0549f,0.0005f,0.0530f,0.0273f,0.0002f,0.4148f,0.0069f,0.0000f,0.0305f,0.0215f,0.0000f,-0.0130f,-0.0106f,0.0000f,-0.0693f,-0.0106f,0.0001f,-0.1037f,-0.0051f,0.0001f,-0.0720f,-0.0076f,0.0001f,-0.0163f,-0.0049f,0.0000f,0.0000f,0.0000f});
   }
 }
 }

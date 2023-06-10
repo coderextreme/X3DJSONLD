@@ -61,7 +61,7 @@ public class TextExamples {
         .addChild(new Transform().setTranslation(new float[] {0f,2f,0f})
           .addChild(new Shape()
             .setGeometry(new Text().setString(new MFString0().getArray())
-              .setFontStyle(new FontStyle().setDEF("testFontStyle").setJustify(new MFString1().getArray()).setSize(0.8f)))
+              .setFontStyle(new FontStyle().setDEF("testFontStyle").setJustify(new MFString1().getArray()).setSize(0.8000f)))
             .setAppearance(new Appearance().setDEF("LightBlueAppearance")
               .setMaterial(new Material().setDiffuseColor(new float[] {0.1f,0.7f,0.7f})))))
         .addChild(new Transform().setTranslation(new float[] {-3f,0f,0f})

@@ -34,7 +34,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('modified'),
-              content_ : SFString('2 January 2023')),
+              content_ : SFString('27 January 2023')),
 
             meta(
               name_ : SFString('warning'),
@@ -164,7 +164,7 @@ var X3D0 =  X3D(
               children_ : [
                 Inline(
                   DEF_ : SFString('CoordinateAxes'),
-                  url_ : MFString([SFString("../data/CoordinateAxes.x3d"), SFString("../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d"), SFString("../../../Savage/Tools/Authoring/CoordinateAxes.x3d"), SFString("https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d"), SFString("https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d"), SFString("../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl"), SFString("../../../Savage/Tools/Authoring/CoordinateAxes.wrl"), SFString("https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl"), SFString("https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl")]))]),
+                  url_ : MFString([SFString("../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d"), SFString("../../../Savage/Tools/Authoring/CoordinateAxes.x3d"), SFString("https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d"), SFString("https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d"), SFString("../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl"), SFString("../../../Savage/Tools/Authoring/CoordinateAxes.wrl"), SFString("https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl"), SFString("https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl")]))]),
           /*Authoring hint: these axes are aligned within local coordinate system*/
 
             Group(
@@ -346,7 +346,7 @@ var X3D0 =  X3D(
                                 ImageTexture(
                                   DEF_ : SFString('zBlueSpiralBkg2'),
                                   description_ : SFString('Blue Spiral Pattern'),
-                                  url_ : MFString([SFString("../resources/images/zBlueSpiralBkg2.gif"), SFString("zBlueSpiralBkg2.gif"), SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif")])),
+                                  url_ : MFString([SFString("zBlueSpiralBkg2.gif"), SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif")])),
                               material_ : 
                                 Material(
                                   DEF_ : SFString('SkinMaterial'),
@@ -359,8 +359,8 @@ var X3D0 =  X3D(
                           USE_ : SFString('TheSkinCoord')),
                       joints_ : [
                         HAnimJoint(
-                          name_ : SFString('HumanoidRoot'),
-                          DEF_ : SFString('Joe_HumanoidRoot'),
+                          name_ : SFString('humanoid_root'),
+                          DEF_ : SFString('Joe_humanoid_root'),
                           center_ : SFVec3f([SFDouble(0), SFDouble(0.875), SFDouble(0)]),
                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
@@ -3369,58 +3369,20 @@ var X3D0 =  X3D(
                                                                                                                                           translation_ : SFVec3f([SFDouble(0.2013999968767166), SFDouble(0.7009000182151794), SFDouble(-0.10119999945163727)]),
                                                                                                                                           children_ : [
                                                                                                                                             Shape(
-                                                                                                                                              USE_ : SFString('sitebox'))])])])])])])])])])])])]),
-
-                                                                                            HAnimJoint(
-                                                                                              name_ : SFString('r_sternoclavicular'),
-                                                                                              DEF_ : SFString('Joe_r_sternoclavicular'),
-                                                                                              center_ : SFVec3f([SFDouble(-0.029999999329447746), SFDouble(1.4600000381469727), SFDouble(0)]),
-                                                                                              skinCoordIndex_ : MFInt32([SFInt32(10)]),
-                                                                                              skinCoordWeight_ : MFFloat([SFFloat(1)]),
-                                                                                              ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                              llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                              children_ : [
-                                                                                                HAnimSegment(
-                                                                                                  name_ : SFString('r_clavicle'),
-                                                                                                  DEF_ : SFString('Joe_r_clavicle'),
-                                                                                                  children_ : [
-                                                                                                    Shape(
-                                                                                                      geometry_ : 
-                                                                                                        IndexedLineSet(
-                                                                                                          coordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(-1)]),
-                                                                                                          coord_ : 
-                                                                                                            Coordinate(
-                                                                                                              point_ : MFVec3f([SFVec3f([-0.029999999329447746,1.4600000381469727,0.019999999552965164]),SFVec3f([-0.09000000357627869,1.409999966621399,-0.09000000357627869])]))),
-                                                                                                      appearance_ : 
-                                                                                                        Appearance(
-                                                                                                          USE_ : SFString('SegmentLine'))),
-
-                                                                                                    Transform(
-                                                                                                      translation_ : SFVec3f([SFDouble(-0.029999999329447746), SFDouble(1.4600000381469727), SFDouble(0.019999999552965164)]),
-                                                                                                      children_ : [
-                                                                                                        Shape(
-                                                                                                          USE_ : SFString('jointbox'))]),
-
-                                                                                                    HAnimSite(
-                                                                                                      name_ : SFString('r_clavicale'),
-                                                                                                      DEF_ : SFString('Joe_r_clavicale'),
-                                                                                                      translation_ : SFVec3f([SFDouble(-0.029999999329447746), SFDouble(1.4600000381469727), SFDouble(0.03500000014901161)]),
-                                                                                                      children_ : [
-                                                                                                        Shape(
-                                                                                                          USE_ : SFString('sitebox'))])]),
+                                                                                                                                              USE_ : SFString('sitebox'))])])])])])])])])])])]),
 
                                                                                                 HAnimJoint(
-                                                                                                  name_ : SFString('r_acromioclavicular'),
-                                                                                                  DEF_ : SFString('Joe_r_acromioclavicular'),
-                                                                                                  center_ : SFVec3f([SFDouble(-0.09000000357627869), SFDouble(1.409999966621399), SFDouble(-0.10999999940395355)]),
-                                                                                                  skinCoordIndex_ : MFInt32([SFInt32(77), SFInt32(29)]),
-                                                                                                  skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(0.8999999761581421)]),
+                                                                                                  name_ : SFString('r_sternoclavicular'),
+                                                                                                  DEF_ : SFString('Joe_r_sternoclavicular'),
+                                                                                                  center_ : SFVec3f([SFDouble(-0.029999999329447746), SFDouble(1.4600000381469727), SFDouble(0)]),
+                                                                                                  skinCoordIndex_ : MFInt32([SFInt32(10)]),
+                                                                                                  skinCoordWeight_ : MFFloat([SFFloat(1)]),
                                                                                                   ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                   llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                   children_ : [
                                                                                                     HAnimSegment(
-                                                                                                      name_ : SFString('r_scapula'),
-                                                                                                      DEF_ : SFString('Joe_r_scapula'),
+                                                                                                      name_ : SFString('r_clavicle'),
+                                                                                                      DEF_ : SFString('Joe_r_clavicle'),
                                                                                                       children_ : [
                                                                                                         Shape(
                                                                                                           geometry_ : 
@@ -3428,418 +3390,313 @@ var X3D0 =  X3D(
                                                                                                               coordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(-1)]),
                                                                                                               coord_ : 
                                                                                                                 Coordinate(
-                                                                                                                  point_ : MFVec3f([SFVec3f([-0.09000000357627869,1.409999966621399,-0.09000000357627869]),SFVec3f([-0.20000000298023224,1.440000057220459,-0.03999999910593033])]))),
+                                                                                                                  point_ : MFVec3f([SFVec3f([-0.029999999329447746,1.4600000381469727,0.019999999552965164]),SFVec3f([-0.09000000357627869,1.409999966621399,-0.09000000357627869])]))),
                                                                                                           appearance_ : 
                                                                                                             Appearance(
                                                                                                               USE_ : SFString('SegmentLine'))),
 
                                                                                                         Transform(
-                                                                                                          translation_ : SFVec3f([SFDouble(-0.09000000357627869), SFDouble(1.409999966621399), SFDouble(-0.09000000357627869)]),
+                                                                                                          translation_ : SFVec3f([SFDouble(-0.029999999329447746), SFDouble(1.4600000381469727), SFDouble(0.019999999552965164)]),
                                                                                                           children_ : [
                                                                                                             Shape(
                                                                                                               USE_ : SFString('jointbox'))]),
 
-                                                                                                        Transform(
-                                                                                                          translation_ : SFVec3f([SFDouble(-0.10999999940395355), SFDouble(1.4270000457763672), SFDouble(-0.13750000298023224)]),
-                                                                                                          children_ : [
-                                                                                                            Shape(
-                                                                                                              USE_ : SFString('skinsphere'))]),
-
                                                                                                         HAnimSite(
-                                                                                                          name_ : SFString('r_acromion'),
-                                                                                                          DEF_ : SFString('Joe_r_acromion'),
-                                                                                                          translation_ : SFVec3f([SFDouble(-0.17800000309944153), SFDouble(1.4824999570846558), SFDouble(-0.0625)]),
-                                                                                                          children_ : [
-                                                                                                            Shape(
-                                                                                                              USE_ : SFString('sitebox'))]),
-
-                                                                                                        HAnimSite(
-                                                                                                          name_ : SFString('r_axilla_ant'),
-                                                                                                          DEF_ : SFString('Joe_r_axilla_ant'),
-                                                                                                          translation_ : SFVec3f([SFDouble(-0.17000000178813934), SFDouble(1.3799999952316284), SFDouble(0.007000000216066837)]),
-                                                                                                          children_ : [
-                                                                                                            Shape(
-                                                                                                              USE_ : SFString('sitebox'))]),
-
-                                                                                                        HAnimSite(
-                                                                                                          name_ : SFString('r_axilla_post'),
-                                                                                                          DEF_ : SFString('Joe_r_axilla_post'),
-                                                                                                          translation_ : SFVec3f([SFDouble(-0.1599999964237213), SFDouble(1.3799999952316284), SFDouble(-0.12700000405311584)]),
+                                                                                                          name_ : SFString('r_clavicale'),
+                                                                                                          DEF_ : SFString('Joe_r_clavicale'),
+                                                                                                          translation_ : SFVec3f([SFDouble(-0.029999999329447746), SFDouble(1.4600000381469727), SFDouble(0.03500000014901161)]),
                                                                                                           children_ : [
                                                                                                             Shape(
                                                                                                               USE_ : SFString('sitebox'))])]),
 
                                                                                                     HAnimJoint(
-                                                                                                      name_ : SFString('r_shoulder'),
-                                                                                                      DEF_ : SFString('Joe_r_shoulder'),
-                                                                                                      center_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(1.440000057220459), SFDouble(-0.03999999910593033)]),
-                                                                                                      skinCoordIndex_ : MFInt32([SFInt32(29), SFInt32(30), SFInt32(32), SFInt32(78), SFInt32(218), SFInt32(219), SFInt32(220), SFInt32(221), SFInt32(86), SFInt32(88)]),
-                                                                                                      skinCoordWeight_ : MFFloat([SFFloat(0.10000000149011612), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(0.30000001192092896), SFFloat(0.20000000298023224)]),
+                                                                                                      name_ : SFString('r_acromioclavicular'),
+                                                                                                      DEF_ : SFString('Joe_r_acromioclavicular'),
+                                                                                                      center_ : SFVec3f([SFDouble(-0.09000000357627869), SFDouble(1.409999966621399), SFDouble(-0.10999999940395355)]),
+                                                                                                      skinCoordIndex_ : MFInt32([SFInt32(77), SFInt32(29)]),
+                                                                                                      skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(0.8999999761581421)]),
                                                                                                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                       llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                       children_ : [
                                                                                                         HAnimSegment(
-                                                                                                          name_ : SFString('r_upperarm'),
-                                                                                                          DEF_ : SFString('Joe_r_upperarm'),
+                                                                                                          name_ : SFString('r_scapula'),
+                                                                                                          DEF_ : SFString('Joe_r_scapula'),
                                                                                                           children_ : [
-                                                                                                            Transform(
-                                                                                                              translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(1.440000057220459), SFDouble(-0.03999999910593033)]),
-                                                                                                              children_ : [
-                                                                                                                Shape(
-                                                                                                                  USE_ : SFString('jointbox'))]),
-
                                                                                                             Shape(
                                                                                                               geometry_ : 
                                                                                                                 IndexedLineSet(
                                                                                                                   coordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(-1)]),
                                                                                                                   coord_ : 
                                                                                                                     Coordinate(
-                                                                                                                      point_ : MFVec3f([SFVec3f([-0.20000000298023224,1.440000057220459,-0.03999999910593033]),SFVec3f([-0.20000000298023224,1.138800024986267,-0.03999999910593033])]))),
+                                                                                                                      point_ : MFVec3f([SFVec3f([-0.09000000357627869,1.409999966621399,-0.09000000357627869]),SFVec3f([-0.20000000298023224,1.440000057220459,-0.03999999910593033])]))),
                                                                                                               appearance_ : 
                                                                                                                 Appearance(
                                                                                                                   USE_ : SFString('SegmentLine'))),
 
                                                                                                             Transform(
+                                                                                                              translation_ : SFVec3f([SFDouble(-0.09000000357627869), SFDouble(1.409999966621399), SFDouble(-0.09000000357627869)]),
+                                                                                                              children_ : [
+                                                                                                                Shape(
+                                                                                                                  USE_ : SFString('jointbox'))]),
+
+                                                                                                            Transform(
+                                                                                                              translation_ : SFVec3f([SFDouble(-0.10999999940395355), SFDouble(1.4270000457763672), SFDouble(-0.13750000298023224)]),
+                                                                                                              children_ : [
+                                                                                                                Shape(
+                                                                                                                  USE_ : SFString('skinsphere'))]),
+
+                                                                                                            HAnimSite(
+                                                                                                              name_ : SFString('r_acromion'),
+                                                                                                              DEF_ : SFString('Joe_r_acromion'),
                                                                                                               translation_ : SFVec3f([SFDouble(-0.17800000309944153), SFDouble(1.4824999570846558), SFDouble(-0.0625)]),
                                                                                                               children_ : [
                                                                                                                 Shape(
-                                                                                                                  USE_ : SFString('skinsphere'))]),
+                                                                                                                  USE_ : SFString('sitebox'))]),
 
-                                                                                                            Transform(
+                                                                                                            HAnimSite(
+                                                                                                              name_ : SFString('r_axilla_ant'),
+                                                                                                              DEF_ : SFString('Joe_r_axilla_ant'),
                                                                                                               translation_ : SFVec3f([SFDouble(-0.17000000178813934), SFDouble(1.3799999952316284), SFDouble(0.007000000216066837)]),
                                                                                                               children_ : [
                                                                                                                 Shape(
-                                                                                                                  USE_ : SFString('skinsphere'))]),
+                                                                                                                  USE_ : SFString('sitebox'))]),
 
-                                                                                                            Transform(
+                                                                                                            HAnimSite(
+                                                                                                              name_ : SFString('r_axilla_post'),
+                                                                                                              DEF_ : SFString('Joe_r_axilla_post'),
                                                                                                               translation_ : SFVec3f([SFDouble(-0.1599999964237213), SFDouble(1.3799999952316284), SFDouble(-0.12700000405311584)]),
-                                                                                                              children_ : [
-                                                                                                                Shape(
-                                                                                                                  USE_ : SFString('skinsphere'))]),
-
-                                                                                                            Transform(
-                                                                                                              translation_ : SFVec3f([SFDouble(-0.23499999940395355), SFDouble(1.4199999570846558), SFDouble(-0.0625)]),
-                                                                                                              children_ : [
-                                                                                                                Shape(
-                                                                                                                  USE_ : SFString('skinsphere'))]),
-
-                                                                                                            Transform(
-                                                                                                              translation_ : SFVec3f([SFDouble(-0.23000000417232513), SFDouble(1.2350000143051147), SFDouble(-0.03999999910593033)]),
-                                                                                                              children_ : [
-                                                                                                                Shape(
-                                                                                                                  USE_ : SFString('skinsphere'))]),
-
-                                                                                                            Transform(
-                                                                                                              translation_ : SFVec3f([SFDouble(-0.1599999964237213), SFDouble(1.2300000190734863), SFDouble(-0.03999999910593033)]),
-                                                                                                              children_ : [
-                                                                                                                Shape(
-                                                                                                                  USE_ : SFString('skinsphere'))]),
-
-                                                                                                            Transform(
-                                                                                                              translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(1.2300000190734863), SFDouble(-0.10499999672174454)]),
-                                                                                                              children_ : [
-                                                                                                                Shape(
-                                                                                                                  USE_ : SFString('skinsphere'))]),
-
-                                                                                                            Transform(
-                                                                                                              translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(1.2350000143051147), SFDouble(0.019999999552965164)]),
-                                                                                                              children_ : [
-                                                                                                                Shape(
-                                                                                                                  USE_ : SFString('skinsphere'))]),
-
-                                                                                                            HAnimSite(
-                                                                                                              name_ : SFString('r_humeral_medial_epicn'),
-                                                                                                              DEF_ : SFString('Joe_r_humeral_medial_epicn'),
-                                                                                                              translation_ : SFVec3f([SFDouble(-0.16500000655651093), SFDouble(1.138800024986267), SFDouble(-0.03999999910593033)]),
-                                                                                                              children_ : [
-                                                                                                                Shape(
-                                                                                                                  USE_ : SFString('sitebox'))]),
-
-                                                                                                            HAnimSite(
-                                                                                                              name_ : SFString('r_radiale'),
-                                                                                                              DEF_ : SFString('Joe_r_radiale'),
-                                                                                                              translation_ : SFVec3f([SFDouble(-0.23000000417232513), SFDouble(1.1330000162124634), SFDouble(-0.054999999701976776)]),
-                                                                                                              children_ : [
-                                                                                                                Shape(
-                                                                                                                  USE_ : SFString('sitebox'))]),
-
-                                                                                                            HAnimSite(
-                                                                                                              name_ : SFString('r_humeral_lateral_epicn'),
-                                                                                                              DEF_ : SFString('Joe_r_humeral_lateral_epicn'),
-                                                                                                              translation_ : SFVec3f([SFDouble(-0.24400000274181366), SFDouble(1.138800024986267), SFDouble(-0.03999999910593033)]),
                                                                                                               children_ : [
                                                                                                                 Shape(
                                                                                                                   USE_ : SFString('sitebox'))])]),
 
                                                                                                         HAnimJoint(
-                                                                                                          name_ : SFString('r_elbow'),
-                                                                                                          DEF_ : SFString('Joe_r_elbow'),
-                                                                                                          center_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(1.138800024986267), SFDouble(-0.03999999910593033)]),
-                                                                                                          skinCoordIndex_ : MFInt32([SFInt32(33), SFInt32(34), SFInt32(35), SFInt32(225), SFInt32(226), SFInt32(227), SFInt32(228), SFInt32(229), SFInt32(231), SFInt32(232), SFInt32(233), SFInt32(234)]),
-                                                                                                          skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
+                                                                                                          name_ : SFString('r_shoulder'),
+                                                                                                          DEF_ : SFString('Joe_r_shoulder'),
+                                                                                                          center_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(1.440000057220459), SFDouble(-0.03999999910593033)]),
+                                                                                                          skinCoordIndex_ : MFInt32([SFInt32(29), SFInt32(30), SFInt32(32), SFInt32(78), SFInt32(218), SFInt32(219), SFInt32(220), SFInt32(221), SFInt32(86), SFInt32(88)]),
+                                                                                                          skinCoordWeight_ : MFFloat([SFFloat(0.10000000149011612), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(0.30000001192092896), SFFloat(0.20000000298023224)]),
                                                                                                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                           children_ : [
                                                                                                             HAnimSegment(
-                                                                                                              name_ : SFString('r_forearm'),
-                                                                                                              DEF_ : SFString('Joe_r_forearm'),
+                                                                                                              name_ : SFString('r_upperarm'),
+                                                                                                              DEF_ : SFString('Joe_r_upperarm'),
                                                                                                               children_ : [
+                                                                                                                Transform(
+                                                                                                                  translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(1.440000057220459), SFDouble(-0.03999999910593033)]),
+                                                                                                                  children_ : [
+                                                                                                                    Shape(
+                                                                                                                      USE_ : SFString('jointbox'))]),
+
                                                                                                                 Shape(
                                                                                                                   geometry_ : 
                                                                                                                     IndexedLineSet(
                                                                                                                       coordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(-1)]),
                                                                                                                       coord_ : 
                                                                                                                         Coordinate(
-                                                                                                                          point_ : MFVec3f([SFVec3f([-0.20000000298023224,1.138800024986267,-0.03999999910593033]),SFVec3f([-0.20000000298023224,0.8899999856948853,-0.03999999910593033])]))),
+                                                                                                                          point_ : MFVec3f([SFVec3f([-0.20000000298023224,1.440000057220459,-0.03999999910593033]),SFVec3f([-0.20000000298023224,1.138800024986267,-0.03999999910593033])]))),
                                                                                                                   appearance_ : 
                                                                                                                     Appearance(
                                                                                                                       USE_ : SFString('SegmentLine'))),
 
                                                                                                                 Transform(
-                                                                                                                  translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(1.138800024986267), SFDouble(-0.03999999910593033)]),
-                                                                                                                  children_ : [
-                                                                                                                    Shape(
-                                                                                                                      USE_ : SFString('jointbox'))]),
-
-                                                                                                                Transform(
-                                                                                                                  translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(1.138800024986267), SFDouble(0.013000000268220901)]),
+                                                                                                                  translation_ : SFVec3f([SFDouble(-0.17800000309944153), SFDouble(1.4824999570846558), SFDouble(-0.0625)]),
                                                                                                                   children_ : [
                                                                                                                     Shape(
                                                                                                                       USE_ : SFString('skinsphere'))]),
 
                                                                                                                 Transform(
-                                                                                                                  translation_ : SFVec3f([SFDouble(-0.22499999403953552), SFDouble(1), SFDouble(-0.009999999776482582)]),
+                                                                                                                  translation_ : SFVec3f([SFDouble(-0.17000000178813934), SFDouble(1.3799999952316284), SFDouble(0.007000000216066837)]),
                                                                                                                   children_ : [
                                                                                                                     Shape(
                                                                                                                       USE_ : SFString('skinsphere'))]),
 
                                                                                                                 Transform(
-                                                                                                                  translation_ : SFVec3f([SFDouble(-0.22499999403953552), SFDouble(1), SFDouble(-0.07000000029802322)]),
+                                                                                                                  translation_ : SFVec3f([SFDouble(-0.1599999964237213), SFDouble(1.3799999952316284), SFDouble(-0.12700000405311584)]),
                                                                                                                   children_ : [
                                                                                                                     Shape(
                                                                                                                       USE_ : SFString('skinsphere'))]),
 
                                                                                                                 Transform(
-                                                                                                                  translation_ : SFVec3f([SFDouble(-0.1850000023841858), SFDouble(1), SFDouble(-0.009999999776482582)]),
+                                                                                                                  translation_ : SFVec3f([SFDouble(-0.23499999940395355), SFDouble(1.4199999570846558), SFDouble(-0.0625)]),
                                                                                                                   children_ : [
                                                                                                                     Shape(
                                                                                                                       USE_ : SFString('skinsphere'))]),
 
                                                                                                                 Transform(
-                                                                                                                  translation_ : SFVec3f([SFDouble(-0.1850000023841858), SFDouble(1), SFDouble(-0.07000000029802322)]),
+                                                                                                                  translation_ : SFVec3f([SFDouble(-0.23000000417232513), SFDouble(1.2350000143051147), SFDouble(-0.03999999910593033)]),
+                                                                                                                  children_ : [
+                                                                                                                    Shape(
+                                                                                                                      USE_ : SFString('skinsphere'))]),
+
+                                                                                                                Transform(
+                                                                                                                  translation_ : SFVec3f([SFDouble(-0.1599999964237213), SFDouble(1.2300000190734863), SFDouble(-0.03999999910593033)]),
+                                                                                                                  children_ : [
+                                                                                                                    Shape(
+                                                                                                                      USE_ : SFString('skinsphere'))]),
+
+                                                                                                                Transform(
+                                                                                                                  translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(1.2300000190734863), SFDouble(-0.10499999672174454)]),
+                                                                                                                  children_ : [
+                                                                                                                    Shape(
+                                                                                                                      USE_ : SFString('skinsphere'))]),
+
+                                                                                                                Transform(
+                                                                                                                  translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(1.2350000143051147), SFDouble(0.019999999552965164)]),
                                                                                                                   children_ : [
                                                                                                                     Shape(
                                                                                                                       USE_ : SFString('skinsphere'))]),
 
                                                                                                                 HAnimSite(
-                                                                                                                  name_ : SFString('r_radial_styloid'),
-                                                                                                                  DEF_ : SFString('Joe_r_radial_styloid'),
-                                                                                                                  translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.8999999761581421), SFDouble(-0.014999999664723873)]),
+                                                                                                                  name_ : SFString('r_humeral_medial_epicn'),
+                                                                                                                  DEF_ : SFString('Joe_r_humeral_medial_epicn'),
+                                                                                                                  translation_ : SFVec3f([SFDouble(-0.16500000655651093), SFDouble(1.138800024986267), SFDouble(-0.03999999910593033)]),
                                                                                                                   children_ : [
                                                                                                                     Shape(
                                                                                                                       USE_ : SFString('sitebox'))]),
 
                                                                                                                 HAnimSite(
-                                                                                                                  name_ : SFString('r_olecranon'),
-                                                                                                                  DEF_ : SFString('Joe_r_olecranon'),
-                                                                                                                  translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(1.138800024986267), SFDouble(-0.07999999821186066)]),
+                                                                                                                  name_ : SFString('r_radiale'),
+                                                                                                                  DEF_ : SFString('Joe_r_radiale'),
+                                                                                                                  translation_ : SFVec3f([SFDouble(-0.23000000417232513), SFDouble(1.1330000162124634), SFDouble(-0.054999999701976776)]),
+                                                                                                                  children_ : [
+                                                                                                                    Shape(
+                                                                                                                      USE_ : SFString('sitebox'))]),
+
+                                                                                                                HAnimSite(
+                                                                                                                  name_ : SFString('r_humeral_lateral_epicn'),
+                                                                                                                  DEF_ : SFString('Joe_r_humeral_lateral_epicn'),
+                                                                                                                  translation_ : SFVec3f([SFDouble(-0.24400000274181366), SFDouble(1.138800024986267), SFDouble(-0.03999999910593033)]),
                                                                                                                   children_ : [
                                                                                                                     Shape(
                                                                                                                       USE_ : SFString('sitebox'))])]),
 
                                                                                                             HAnimJoint(
-                                                                                                              name_ : SFString('r_wrist'),
-                                                                                                              DEF_ : SFString('Joe_r_wrist'),
-                                                                                                              center_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.8899999856948853), SFDouble(-0.03999999910593033)]),
-                                                                                                              skinCoordIndex_ : MFInt32([SFInt32(235), SFInt32(236), SFInt32(237), SFInt32(238), SFInt32(239), SFInt32(240), SFInt32(241), SFInt32(242)]),
-                                                                                                              skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
+                                                                                                              name_ : SFString('r_elbow'),
+                                                                                                              DEF_ : SFString('Joe_r_elbow'),
+                                                                                                              center_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(1.138800024986267), SFDouble(-0.03999999910593033)]),
+                                                                                                              skinCoordIndex_ : MFInt32([SFInt32(33), SFInt32(34), SFInt32(35), SFInt32(225), SFInt32(226), SFInt32(227), SFInt32(228), SFInt32(229), SFInt32(231), SFInt32(232), SFInt32(233), SFInt32(234)]),
+                                                                                                              skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
                                                                                                               ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                               llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                               children_ : [
                                                                                                                 HAnimSegment(
-                                                                                                                  name_ : SFString('r_hand'),
-                                                                                                                  DEF_ : SFString('Joe_r_hand'),
+                                                                                                                  name_ : SFString('r_forearm'),
+                                                                                                                  DEF_ : SFString('Joe_r_forearm'),
                                                                                                                   children_ : [
                                                                                                                     Shape(
                                                                                                                       geometry_ : 
                                                                                                                         IndexedLineSet(
-                                                                                                                          coordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(-1), SFInt32(0), SFInt32(2), SFInt32(-1), SFInt32(0), SFInt32(3), SFInt32(-1), SFInt32(0), SFInt32(4), SFInt32(-1), SFInt32(0), SFInt32(5), SFInt32(-1)]),
+                                                                                                                          coordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(-1)]),
                                                                                                                           coord_ : 
                                                                                                                             Coordinate(
-                                                                                                                              point_ : MFVec3f([SFVec3f([-0.20000000298023224,0.8899999856948853,-0.03999999910593033]),SFVec3f([-0.20000000298023224,0.8500000238418579,0]),SFVec3f([-0.20000000298023224,0.8399999737739563,-0.014999999664723873]),SFVec3f([-0.20000000298023224,0.8349999785423279,-0.03999999910593033]),SFVec3f([-0.20000000298023224,0.8349999785423279,-0.06499999761581421]),SFVec3f([-0.20000000298023224,0.8399999737739563,-0.08500000089406967])]))),
+                                                                                                                              point_ : MFVec3f([SFVec3f([-0.20000000298023224,1.138800024986267,-0.03999999910593033]),SFVec3f([-0.20000000298023224,0.8899999856948853,-0.03999999910593033])]))),
                                                                                                                       appearance_ : 
                                                                                                                         Appearance(
                                                                                                                           USE_ : SFString('SegmentLine'))),
 
                                                                                                                     Transform(
-                                                                                                                      translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.8899999856948853), SFDouble(-0.03999999910593033)]),
+                                                                                                                      translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(1.138800024986267), SFDouble(-0.03999999910593033)]),
                                                                                                                       children_ : [
                                                                                                                         Shape(
                                                                                                                           USE_ : SFString('jointbox'))]),
 
+                                                                                                                    Transform(
+                                                                                                                      translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(1.138800024986267), SFDouble(0.013000000268220901)]),
+                                                                                                                      children_ : [
+                                                                                                                        Shape(
+                                                                                                                          USE_ : SFString('skinsphere'))]),
+
+                                                                                                                    Transform(
+                                                                                                                      translation_ : SFVec3f([SFDouble(-0.22499999403953552), SFDouble(1), SFDouble(-0.009999999776482582)]),
+                                                                                                                      children_ : [
+                                                                                                                        Shape(
+                                                                                                                          USE_ : SFString('skinsphere'))]),
+
+                                                                                                                    Transform(
+                                                                                                                      translation_ : SFVec3f([SFDouble(-0.22499999403953552), SFDouble(1), SFDouble(-0.07000000029802322)]),
+                                                                                                                      children_ : [
+                                                                                                                        Shape(
+                                                                                                                          USE_ : SFString('skinsphere'))]),
+
+                                                                                                                    Transform(
+                                                                                                                      translation_ : SFVec3f([SFDouble(-0.1850000023841858), SFDouble(1), SFDouble(-0.009999999776482582)]),
+                                                                                                                      children_ : [
+                                                                                                                        Shape(
+                                                                                                                          USE_ : SFString('skinsphere'))]),
+
+                                                                                                                    Transform(
+                                                                                                                      translation_ : SFVec3f([SFDouble(-0.1850000023841858), SFDouble(1), SFDouble(-0.07000000029802322)]),
+                                                                                                                      children_ : [
+                                                                                                                        Shape(
+                                                                                                                          USE_ : SFString('skinsphere'))]),
+
                                                                                                                     HAnimSite(
-                                                                                                                      name_ : SFString('r_ulnar_styloid'),
-                                                                                                                      DEF_ : SFString('Joe_r_ulnar_styloid'),
-                                                                                                                      translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.8999999761581421), SFDouble(-0.08500000089406967)]),
+                                                                                                                      name_ : SFString('r_radial_styloid'),
+                                                                                                                      DEF_ : SFString('Joe_r_radial_styloid'),
+                                                                                                                      translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.8999999761581421), SFDouble(-0.014999999664723873)]),
+                                                                                                                      children_ : [
+                                                                                                                        Shape(
+                                                                                                                          USE_ : SFString('sitebox'))]),
+
+                                                                                                                    HAnimSite(
+                                                                                                                      name_ : SFString('r_olecranon'),
+                                                                                                                      DEF_ : SFString('Joe_r_olecranon'),
+                                                                                                                      translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(1.138800024986267), SFDouble(-0.07999999821186066)]),
                                                                                                                       children_ : [
                                                                                                                         Shape(
                                                                                                                           USE_ : SFString('sitebox'))])]),
 
                                                                                                                 HAnimJoint(
-                                                                                                                  name_ : SFString('r_thumb1'),
-                                                                                                                  DEF_ : SFString('Joe_r_thumb1'),
-                                                                                                                  center_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.8500000238418579), SFDouble(0)]),
-                                                                                                                  skinCoordIndex_ : MFInt32([SFInt32(243), SFInt32(244)]),
-                                                                                                                  skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1)]),
+                                                                                                                  name_ : SFString('r_wrist'),
+                                                                                                                  DEF_ : SFString('Joe_r_wrist'),
+                                                                                                                  center_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.8899999856948853), SFDouble(-0.03999999910593033)]),
+                                                                                                                  skinCoordIndex_ : MFInt32([SFInt32(235), SFInt32(236), SFInt32(237), SFInt32(238), SFInt32(239), SFInt32(240), SFInt32(241), SFInt32(242)]),
+                                                                                                                  skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
                                                                                                                   ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                   llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                   children_ : [
                                                                                                                     HAnimSegment(
-                                                                                                                      name_ : SFString('r_thumb_metacarpal'),
-                                                                                                                      DEF_ : SFString('Joe_r_thumb_metacarpal'),
+                                                                                                                      name_ : SFString('r_hand'),
+                                                                                                                      DEF_ : SFString('Joe_r_hand'),
                                                                                                                       children_ : [
                                                                                                                         Shape(
                                                                                                                           geometry_ : 
                                                                                                                             IndexedLineSet(
-                                                                                                                              coordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(-1)]),
+                                                                                                                              coordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(-1), SFInt32(0), SFInt32(2), SFInt32(-1), SFInt32(0), SFInt32(3), SFInt32(-1), SFInt32(0), SFInt32(4), SFInt32(-1), SFInt32(0), SFInt32(5), SFInt32(-1)]),
                                                                                                                               coord_ : 
                                                                                                                                 Coordinate(
-                                                                                                                                  point_ : MFVec3f([SFVec3f([-0.20000000298023224,0.8500000238418579,0]),SFVec3f([-0.20000000298023224,0.8199999928474426,0.029999999329447746])]))),
+                                                                                                                                  point_ : MFVec3f([SFVec3f([-0.20000000298023224,0.8899999856948853,-0.03999999910593033]),SFVec3f([-0.20000000298023224,0.8500000238418579,0]),SFVec3f([-0.20000000298023224,0.8399999737739563,-0.014999999664723873]),SFVec3f([-0.20000000298023224,0.8349999785423279,-0.03999999910593033]),SFVec3f([-0.20000000298023224,0.8349999785423279,-0.06499999761581421]),SFVec3f([-0.20000000298023224,0.8399999737739563,-0.08500000089406967])]))),
                                                                                                                           appearance_ : 
                                                                                                                             Appearance(
                                                                                                                               USE_ : SFString('SegmentLine'))),
 
                                                                                                                         Transform(
-                                                                                                                          translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.8500000238418579), SFDouble(0)]),
-                                                                                                                          children_ : [
-                                                                                                                            Shape(
-                                                                                                                              USE_ : SFString('jointbox'))])]),
-
-                                                                                                                    HAnimJoint(
-                                                                                                                      name_ : SFString('r_thumb2'),
-                                                                                                                      DEF_ : SFString('Joe_r_thumb2'),
-                                                                                                                      center_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.8199999928474426), SFDouble(0.029999999329447746)]),
-                                                                                                                      skinCoordIndex_ : MFInt32([SFInt32(254), SFInt32(255), SFInt32(256), SFInt32(257), SFInt32(258), SFInt32(259)]),
-                                                                                                                      skinCoordWeight_ : MFFloat([SFFloat(0.5), SFFloat(0.5), SFFloat(0.5), SFFloat(1), SFFloat(1), SFFloat(1)]),
-                                                                                                                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                      children_ : [
-                                                                                                                        HAnimSegment(
-                                                                                                                          name_ : SFString('r_thumb_proximal'),
-                                                                                                                          DEF_ : SFString('Joe_r_thumb_proximal'),
-                                                                                                                          children_ : [
-                                                                                                                            Shape(
-                                                                                                                              geometry_ : 
-                                                                                                                                IndexedLineSet(
-                                                                                                                                  coordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(-1)]),
-                                                                                                                                  coord_ : 
-                                                                                                                                    Coordinate(
-                                                                                                                                      point_ : MFVec3f([SFVec3f([-0.20000000298023224,0.8199999928474426,0.029999999329447746]),SFVec3f([-0.20000000298023224,0.800000011920929,0.05000000074505806])]))),
-                                                                                                                              appearance_ : 
-                                                                                                                                Appearance(
-                                                                                                                                  USE_ : SFString('SegmentLine'))),
-
-                                                                                                                            Transform(
-                                                                                                                              translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.8199999928474426), SFDouble(0.029999999329447746)]),
-                                                                                                                              children_ : [
-                                                                                                                                Shape(
-                                                                                                                                  USE_ : SFString('jointbox'))])]),
-
-                                                                                                                        HAnimJoint(
-                                                                                                                          name_ : SFString('r_thumb3'),
-                                                                                                                          DEF_ : SFString('Joe_r_thumb3'),
-                                                                                                                          center_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.800000011920929), SFDouble(0.05000000074505806)]),
-                                                                                                                          skinCoordIndex_ : MFInt32([SFInt32(260), SFInt32(261), SFInt32(262), SFInt32(263), SFInt32(264), SFInt32(265), SFInt32(266), SFInt32(267), SFInt32(268)]),
-                                                                                                                          skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
-                                                                                                                          ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                          llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                          children_ : [
-                                                                                                                            HAnimSegment(
-                                                                                                                              name_ : SFString('r_thumb_distal'),
-                                                                                                                              DEF_ : SFString('Joe_r_thumb_distal'),
-                                                                                                                              children_ : [
-                                                                                                                                Shape(
-                                                                                                                                  geometry_ : 
-                                                                                                                                    IndexedLineSet(
-                                                                                                                                      coordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(-1)]),
-                                                                                                                                      coord_ : 
-                                                                                                                                        Coordinate(
-                                                                                                                                          point_ : MFVec3f([SFVec3f([-0.20000000298023224,0.800000011920929,0.05000000074505806]),SFVec3f([-0.20000000298023224,0.7799999713897705,0.07000000029802322])]))),
-                                                                                                                                  appearance_ : 
-                                                                                                                                    Appearance(
-                                                                                                                                      USE_ : SFString('SegmentLine'))),
-
-                                                                                                                                Transform(
-                                                                                                                                  DEF_ : SFString('Thumbnail'),
-                                                                                                                                  translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7850000262260437), SFDouble(0.07500000298023224)]),
-                                                                                                                                  children_ : [
-                                                                                                                                    Shape(
-                                                                                                                                      USE_ : SFString('skinsphere'))]),
-
-                                                                                                                                Transform(
-                                                                                                                                  translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.800000011920929), SFDouble(0.05000000074505806)]),
-                                                                                                                                  children_ : [
-                                                                                                                                    Shape(
-                                                                                                                                      USE_ : SFString('jointbox'))]),
-
-                                                                                                                                HAnimSite(
-                                                                                                                                  name_ : SFString('r_thumb_distal_tip'),
-                                                                                                                                  DEF_ : SFString('Joe_r_thumb_distal_tip'),
-                                                                                                                                  translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7799999713897705), SFDouble(0.07000000029802322)]),
-                                                                                                                                  children_ : [
-                                                                                                                                    Shape(
-                                                                                                                                      USE_ : SFString('sitebox'))])])])])]),
-
-                                                                                                                HAnimJoint(
-                                                                                                                  name_ : SFString('r_index0'),
-                                                                                                                  DEF_ : SFString('Joe_r_index0'),
-                                                                                                                  center_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.8399999737739563), SFDouble(-0.014999999664723873)]),
-                                                                                                                  skinCoordIndex_ : MFInt32([SFInt32(245), SFInt32(246)]),
-                                                                                                                  skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1)]),
-                                                                                                                  ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                  llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                  children_ : [
-                                                                                                                    HAnimSegment(
-                                                                                                                      name_ : SFString('r_index_metacarpal'),
-                                                                                                                      DEF_ : SFString('Joe_r_index_metacarpal'),
-                                                                                                                      children_ : [
-                                                                                                                        Shape(
-                                                                                                                          geometry_ : 
-                                                                                                                            IndexedLineSet(
-                                                                                                                              coordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(-1)]),
-                                                                                                                              coord_ : 
-                                                                                                                                Coordinate(
-                                                                                                                                  point_ : MFVec3f([SFVec3f([-0.20000000298023224,0.8399999737739563,-0.014999999664723873]),SFVec3f([-0.20000000298023224,0.7929999828338623,-0.014999999664723873])]))),
-                                                                                                                          appearance_ : 
-                                                                                                                            Appearance(
-                                                                                                                              USE_ : SFString('SegmentLine'))),
-
-                                                                                                                        Transform(
-                                                                                                                          translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.8399999737739563), SFDouble(-0.014999999664723873)]),
+                                                                                                                          translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.8899999856948853), SFDouble(-0.03999999910593033)]),
                                                                                                                           children_ : [
                                                                                                                             Shape(
                                                                                                                               USE_ : SFString('jointbox'))]),
 
                                                                                                                         HAnimSite(
-                                                                                                                          name_ : SFString('r_metacarpal_pha2'),
-                                                                                                                          DEF_ : SFString('Joe_r_metacarpal_pha2'),
-                                                                                                                          translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7929999828338623), SFDouble(-0.004999999888241291)]),
+                                                                                                                          name_ : SFString('r_ulnar_styloid'),
+                                                                                                                          DEF_ : SFString('Joe_r_ulnar_styloid'),
+                                                                                                                          translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.8999999761581421), SFDouble(-0.08500000089406967)]),
                                                                                                                           children_ : [
                                                                                                                             Shape(
                                                                                                                               USE_ : SFString('sitebox'))])]),
 
                                                                                                                     HAnimJoint(
-                                                                                                                      name_ : SFString('r_index1'),
-                                                                                                                      DEF_ : SFString('Joe_r_index1'),
-                                                                                                                      center_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7929999828338623), SFDouble(-0.014999999664723873)]),
-                                                                                                                      skinCoordIndex_ : MFInt32([SFInt32(254), SFInt32(255), SFInt32(256), SFInt32(269), SFInt32(270), SFInt32(271), SFInt32(279)]),
-                                                                                                                      skinCoordWeight_ : MFFloat([SFFloat(0.5), SFFloat(0.5), SFFloat(0.5), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(0.5)]),
+                                                                                                                      name_ : SFString('r_thumb1'),
+                                                                                                                      DEF_ : SFString('Joe_r_thumb1'),
+                                                                                                                      center_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.8500000238418579), SFDouble(0)]),
+                                                                                                                      skinCoordIndex_ : MFInt32([SFInt32(243), SFInt32(244)]),
+                                                                                                                      skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1)]),
                                                                                                                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                       llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                       children_ : [
                                                                                                                         HAnimSegment(
-                                                                                                                          name_ : SFString('r_index_proximal'),
-                                                                                                                          DEF_ : SFString('Joe_r_index_proximal'),
+                                                                                                                          name_ : SFString('r_thumb_metacarpal'),
+                                                                                                                          DEF_ : SFString('Joe_r_thumb_metacarpal'),
                                                                                                                           children_ : [
                                                                                                                             Shape(
                                                                                                                               geometry_ : 
@@ -3847,29 +3704,29 @@ var X3D0 =  X3D(
                                                                                                                                   coordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(-1)]),
                                                                                                                                   coord_ : 
                                                                                                                                     Coordinate(
-                                                                                                                                      point_ : MFVec3f([SFVec3f([-0.20000000298023224,0.7929999828338623,-0.014999999664723873]),SFVec3f([-0.20000000298023224,0.7450000047683716,-0.014999999664723873])]))),
+                                                                                                                                      point_ : MFVec3f([SFVec3f([-0.20000000298023224,0.8500000238418579,0]),SFVec3f([-0.20000000298023224,0.8199999928474426,0.029999999329447746])]))),
                                                                                                                               appearance_ : 
                                                                                                                                 Appearance(
                                                                                                                                   USE_ : SFString('SegmentLine'))),
 
                                                                                                                             Transform(
-                                                                                                                              translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7929999828338623), SFDouble(-0.014999999664723873)]),
+                                                                                                                              translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.8500000238418579), SFDouble(0)]),
                                                                                                                               children_ : [
                                                                                                                                 Shape(
                                                                                                                                   USE_ : SFString('jointbox'))])]),
 
                                                                                                                         HAnimJoint(
-                                                                                                                          name_ : SFString('r_index2'),
-                                                                                                                          DEF_ : SFString('Joe_r_index2'),
-                                                                                                                          center_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7450000047683716), SFDouble(-0.014999999664723873)]),
-                                                                                                                          skinCoordIndex_ : MFInt32([SFInt32(282), SFInt32(283), SFInt32(284), SFInt32(285)]),
-                                                                                                                          skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
+                                                                                                                          name_ : SFString('r_thumb2'),
+                                                                                                                          DEF_ : SFString('Joe_r_thumb2'),
+                                                                                                                          center_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.8199999928474426), SFDouble(0.029999999329447746)]),
+                                                                                                                          skinCoordIndex_ : MFInt32([SFInt32(254), SFInt32(255), SFInt32(256), SFInt32(257), SFInt32(258), SFInt32(259)]),
+                                                                                                                          skinCoordWeight_ : MFFloat([SFFloat(0.5), SFFloat(0.5), SFFloat(0.5), SFFloat(1), SFFloat(1), SFFloat(1)]),
                                                                                                                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                           children_ : [
                                                                                                                             HAnimSegment(
-                                                                                                                              name_ : SFString('r_index_middle'),
-                                                                                                                              DEF_ : SFString('Joe_r_index_middle'),
+                                                                                                                              name_ : SFString('r_thumb_proximal'),
+                                                                                                                              DEF_ : SFString('Joe_r_thumb_proximal'),
                                                                                                                               children_ : [
                                                                                                                                 Shape(
                                                                                                                                   geometry_ : 
@@ -3877,29 +3734,29 @@ var X3D0 =  X3D(
                                                                                                                                       coordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(-1)]),
                                                                                                                                       coord_ : 
                                                                                                                                         Coordinate(
-                                                                                                                                          point_ : MFVec3f([SFVec3f([-0.20000000298023224,0.7450000047683716,-0.014999999664723873]),SFVec3f([-0.20000000298023224,0.7200000286102295,-0.014999999664723873])]))),
+                                                                                                                                          point_ : MFVec3f([SFVec3f([-0.20000000298023224,0.8199999928474426,0.029999999329447746]),SFVec3f([-0.20000000298023224,0.800000011920929,0.05000000074505806])]))),
                                                                                                                                   appearance_ : 
                                                                                                                                     Appearance(
                                                                                                                                       USE_ : SFString('SegmentLine'))),
 
                                                                                                                                 Transform(
-                                                                                                                                  translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7450000047683716), SFDouble(-0.014999999664723873)]),
+                                                                                                                                  translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.8199999928474426), SFDouble(0.029999999329447746)]),
                                                                                                                                   children_ : [
                                                                                                                                     Shape(
                                                                                                                                       USE_ : SFString('jointbox'))])]),
 
                                                                                                                             HAnimJoint(
-                                                                                                                              name_ : SFString('r_index3'),
-                                                                                                                              DEF_ : SFString('Joe_r_index3'),
-                                                                                                                              center_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7200000286102295), SFDouble(-0.014999999664723873)]),
-                                                                                                                              skinCoordIndex_ : MFInt32([SFInt32(286), SFInt32(287), SFInt32(288), SFInt32(289), SFInt32(290), SFInt32(291), SFInt32(292), SFInt32(293), SFInt32(294)]),
+                                                                                                                              name_ : SFString('r_thumb3'),
+                                                                                                                              DEF_ : SFString('Joe_r_thumb3'),
+                                                                                                                              center_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.800000011920929), SFDouble(0.05000000074505806)]),
+                                                                                                                              skinCoordIndex_ : MFInt32([SFInt32(260), SFInt32(261), SFInt32(262), SFInt32(263), SFInt32(264), SFInt32(265), SFInt32(266), SFInt32(267), SFInt32(268)]),
                                                                                                                               skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
                                                                                                                               ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                               llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                               children_ : [
                                                                                                                                 HAnimSegment(
-                                                                                                                                  name_ : SFString('r_index_distal'),
-                                                                                                                                  DEF_ : SFString('Joe_r_index_distal'),
+                                                                                                                                  name_ : SFString('r_thumb_distal'),
+                                                                                                                                  DEF_ : SFString('Joe_r_thumb_distal'),
                                                                                                                                   children_ : [
                                                                                                                                     Shape(
                                                                                                                                       geometry_ : 
@@ -3907,67 +3764,44 @@ var X3D0 =  X3D(
                                                                                                                                           coordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(-1)]),
                                                                                                                                           coord_ : 
                                                                                                                                             Coordinate(
-                                                                                                                                              point_ : MFVec3f([SFVec3f([-0.20000000298023224,0.7200000286102295,-0.014999999664723873]),SFVec3f([-0.20000000298023224,0.6949999928474426,-0.014999999664723873])]))),
+                                                                                                                                              point_ : MFVec3f([SFVec3f([-0.20000000298023224,0.800000011920929,0.05000000074505806]),SFVec3f([-0.20000000298023224,0.7799999713897705,0.07000000029802322])]))),
                                                                                                                                       appearance_ : 
                                                                                                                                         Appearance(
                                                                                                                                           USE_ : SFString('SegmentLine'))),
 
                                                                                                                                     Transform(
-                                                                                                                                      translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7200000286102295), SFDouble(-0.014999999664723873)]),
+                                                                                                                                      DEF_ : SFString('Thumbnail'),
+                                                                                                                                      translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7850000262260437), SFDouble(0.07500000298023224)]),
+                                                                                                                                      children_ : [
+                                                                                                                                        Shape(
+                                                                                                                                          USE_ : SFString('skinsphere'))]),
+
+                                                                                                                                    Transform(
+                                                                                                                                      translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.800000011920929), SFDouble(0.05000000074505806)]),
                                                                                                                                       children_ : [
                                                                                                                                         Shape(
                                                                                                                                           USE_ : SFString('jointbox'))]),
 
                                                                                                                                     HAnimSite(
-                                                                                                                                      name_ : SFString('r_index_distal_tip'),
-                                                                                                                                      DEF_ : SFString('Joe_r_index_distal_tip'),
-                                                                                                                                      translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.6949999928474426), SFDouble(-0.014999999664723873)]),
+                                                                                                                                      name_ : SFString('r_thumb_distal_tip'),
+                                                                                                                                      DEF_ : SFString('Joe_r_thumb_distal_tip'),
+                                                                                                                                      translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7799999713897705), SFDouble(0.07000000029802322)]),
                                                                                                                                       children_ : [
                                                                                                                                         Shape(
-                                                                                                                                          USE_ : SFString('sitebox'))])])])])])]),
-
-                                                                                                                HAnimJoint(
-                                                                                                                  name_ : SFString('r_middle0'),
-                                                                                                                  DEF_ : SFString('Joe_r_middle0'),
-                                                                                                                  center_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.8349999785423279), SFDouble(-0.03999999910593033)]),
-                                                                                                                  skinCoordIndex_ : MFInt32([SFInt32(247), SFInt32(248)]),
-                                                                                                                  skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1)]),
-                                                                                                                  ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                  llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                  children_ : [
-                                                                                                                    HAnimSegment(
-                                                                                                                      name_ : SFString('r_middle_metacarpal'),
-                                                                                                                      DEF_ : SFString('Joe_r_middle_metacarpal'),
-                                                                                                                      children_ : [
-                                                                                                                        Shape(
-                                                                                                                          geometry_ : 
-                                                                                                                            IndexedLineSet(
-                                                                                                                              coordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(-1)]),
-                                                                                                                              coord_ : 
-                                                                                                                                Coordinate(
-                                                                                                                                  point_ : MFVec3f([SFVec3f([-0.20000000298023224,0.8349999785423279,-0.03999999910593033]),SFVec3f([-0.20000000298023224,0.7879999876022339,-0.03999999910593033])]))),
-                                                                                                                          appearance_ : 
-                                                                                                                            Appearance(
-                                                                                                                              USE_ : SFString('SegmentLine'))),
-
-                                                                                                                        Transform(
-                                                                                                                          translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.8349999785423279), SFDouble(-0.03999999910593033)]),
-                                                                                                                          children_ : [
-                                                                                                                            Shape(
-                                                                                                                              USE_ : SFString('jointbox'))])]),
+                                                                                                                                          USE_ : SFString('sitebox'))])])])])]),
 
                                                                                                                     HAnimJoint(
-                                                                                                                      name_ : SFString('r_middle1'),
-                                                                                                                      DEF_ : SFString('Joe_r_middle1'),
-                                                                                                                      center_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7879999876022339), SFDouble(-0.03999999910593033)]),
-                                                                                                                      skinCoordIndex_ : MFInt32([SFInt32(272), SFInt32(273), SFInt32(279), SFInt32(280)]),
-                                                                                                                      skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(0.5), SFFloat(0.5)]),
+                                                                                                                      name_ : SFString('r_index0'),
+                                                                                                                      DEF_ : SFString('Joe_r_index0'),
+                                                                                                                      center_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.8399999737739563), SFDouble(-0.014999999664723873)]),
+                                                                                                                      skinCoordIndex_ : MFInt32([SFInt32(245), SFInt32(246)]),
+                                                                                                                      skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1)]),
                                                                                                                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                       llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                       children_ : [
                                                                                                                         HAnimSegment(
-                                                                                                                          name_ : SFString('r_middle_proximal'),
-                                                                                                                          DEF_ : SFString('Joe_r_middle_proximal'),
+                                                                                                                          name_ : SFString('r_index_metacarpal'),
+                                                                                                                          DEF_ : SFString('Joe_r_index_metacarpal'),
                                                                                                                           children_ : [
                                                                                                                             Shape(
                                                                                                                               geometry_ : 
@@ -3975,29 +3809,37 @@ var X3D0 =  X3D(
                                                                                                                                   coordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(-1)]),
                                                                                                                                   coord_ : 
                                                                                                                                     Coordinate(
-                                                                                                                                      point_ : MFVec3f([SFVec3f([-0.20000000298023224,0.7879999876022339,-0.03999999910593033]),SFVec3f([-0.20000000298023224,0.7400000095367432,-0.03999999910593033])]))),
+                                                                                                                                      point_ : MFVec3f([SFVec3f([-0.20000000298023224,0.8399999737739563,-0.014999999664723873]),SFVec3f([-0.20000000298023224,0.7929999828338623,-0.014999999664723873])]))),
                                                                                                                               appearance_ : 
                                                                                                                                 Appearance(
                                                                                                                                   USE_ : SFString('SegmentLine'))),
 
                                                                                                                             Transform(
-                                                                                                                              translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7879999876022339), SFDouble(-0.03999999910593033)]),
+                                                                                                                              translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.8399999737739563), SFDouble(-0.014999999664723873)]),
                                                                                                                               children_ : [
                                                                                                                                 Shape(
-                                                                                                                                  USE_ : SFString('jointbox'))])]),
+                                                                                                                                  USE_ : SFString('jointbox'))]),
+
+                                                                                                                            HAnimSite(
+                                                                                                                              name_ : SFString('r_metacarpal_pha2'),
+                                                                                                                              DEF_ : SFString('Joe_r_metacarpal_pha2'),
+                                                                                                                              translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7929999828338623), SFDouble(-0.004999999888241291)]),
+                                                                                                                              children_ : [
+                                                                                                                                Shape(
+                                                                                                                                  USE_ : SFString('sitebox'))])]),
 
                                                                                                                         HAnimJoint(
-                                                                                                                          name_ : SFString('r_middle2'),
-                                                                                                                          DEF_ : SFString('Joe_r_middle2'),
-                                                                                                                          center_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7400000095367432), SFDouble(-0.03999999910593033)]),
-                                                                                                                          skinCoordIndex_ : MFInt32([SFInt32(295), SFInt32(296), SFInt32(297), SFInt32(298)]),
-                                                                                                                          skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
+                                                                                                                          name_ : SFString('r_index1'),
+                                                                                                                          DEF_ : SFString('Joe_r_index1'),
+                                                                                                                          center_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7929999828338623), SFDouble(-0.014999999664723873)]),
+                                                                                                                          skinCoordIndex_ : MFInt32([SFInt32(254), SFInt32(255), SFInt32(256), SFInt32(269), SFInt32(270), SFInt32(271), SFInt32(279)]),
+                                                                                                                          skinCoordWeight_ : MFFloat([SFFloat(0.5), SFFloat(0.5), SFFloat(0.5), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(0.5)]),
                                                                                                                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                           children_ : [
                                                                                                                             HAnimSegment(
-                                                                                                                              name_ : SFString('r_middle_middle'),
-                                                                                                                              DEF_ : SFString('Joe_r_middle_middle'),
+                                                                                                                              name_ : SFString('r_index_proximal'),
+                                                                                                                              DEF_ : SFString('Joe_r_index_proximal'),
                                                                                                                               children_ : [
                                                                                                                                 Shape(
                                                                                                                                   geometry_ : 
@@ -4005,29 +3847,29 @@ var X3D0 =  X3D(
                                                                                                                                       coordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(-1)]),
                                                                                                                                       coord_ : 
                                                                                                                                         Coordinate(
-                                                                                                                                          point_ : MFVec3f([SFVec3f([-0.20000000298023224,0.7400000095367432,-0.03999999910593033]),SFVec3f([-0.20000000298023224,0.7142000198364258,-0.03999999910593033])]))),
+                                                                                                                                          point_ : MFVec3f([SFVec3f([-0.20000000298023224,0.7929999828338623,-0.014999999664723873]),SFVec3f([-0.20000000298023224,0.7450000047683716,-0.014999999664723873])]))),
                                                                                                                                   appearance_ : 
                                                                                                                                     Appearance(
                                                                                                                                       USE_ : SFString('SegmentLine'))),
 
                                                                                                                                 Transform(
-                                                                                                                                  translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7400000095367432), SFDouble(-0.03999999910593033)]),
+                                                                                                                                  translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7929999828338623), SFDouble(-0.014999999664723873)]),
                                                                                                                                   children_ : [
                                                                                                                                     Shape(
                                                                                                                                       USE_ : SFString('jointbox'))])]),
 
                                                                                                                             HAnimJoint(
-                                                                                                                              name_ : SFString('r_middle3'),
-                                                                                                                              DEF_ : SFString('Joe_r_middle3'),
-                                                                                                                              center_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7142000198364258), SFDouble(-0.03999999910593033)]),
-                                                                                                                              skinCoordIndex_ : MFInt32([SFInt32(299), SFInt32(300), SFInt32(301), SFInt32(302), SFInt32(303), SFInt32(304), SFInt32(305), SFInt32(306), SFInt32(307)]),
-                                                                                                                              skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
+                                                                                                                              name_ : SFString('r_index2'),
+                                                                                                                              DEF_ : SFString('Joe_r_index2'),
+                                                                                                                              center_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7450000047683716), SFDouble(-0.014999999664723873)]),
+                                                                                                                              skinCoordIndex_ : MFInt32([SFInt32(282), SFInt32(283), SFInt32(284), SFInt32(285)]),
+                                                                                                                              skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
                                                                                                                               ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                               llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                               children_ : [
                                                                                                                                 HAnimSegment(
-                                                                                                                                  name_ : SFString('r_middle_distal'),
-                                                                                                                                  DEF_ : SFString('Joe_r_middle_distal'),
+                                                                                                                                  name_ : SFString('r_index_middle'),
+                                                                                                                                  DEF_ : SFString('Joe_r_index_middle'),
                                                                                                                                   children_ : [
                                                                                                                                     Shape(
                                                                                                                                       geometry_ : 
@@ -4035,75 +3877,67 @@ var X3D0 =  X3D(
                                                                                                                                           coordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(-1)]),
                                                                                                                                           coord_ : 
                                                                                                                                             Coordinate(
-                                                                                                                                              point_ : MFVec3f([SFVec3f([-0.20000000298023224,0.7142000198364258,-0.03999999910593033]),SFVec3f([-0.20000000298023224,0.6758000254631042,-0.03999999910593033])]))),
+                                                                                                                                              point_ : MFVec3f([SFVec3f([-0.20000000298023224,0.7450000047683716,-0.014999999664723873]),SFVec3f([-0.20000000298023224,0.7200000286102295,-0.014999999664723873])]))),
                                                                                                                                       appearance_ : 
                                                                                                                                         Appearance(
                                                                                                                                           USE_ : SFString('SegmentLine'))),
 
                                                                                                                                     Transform(
-                                                                                                                                      translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7142000198364258), SFDouble(-0.03999999910593033)]),
+                                                                                                                                      translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7450000047683716), SFDouble(-0.014999999664723873)]),
                                                                                                                                       children_ : [
                                                                                                                                         Shape(
-                                                                                                                                          USE_ : SFString('jointbox'))]),
+                                                                                                                                          USE_ : SFString('jointbox'))])]),
 
-                                                                                                                                    HAnimSite(
-                                                                                                                                      name_ : SFString('r_dactylion'),
-                                                                                                                                      DEF_ : SFString('Joe_r_dactylion'),
-                                                                                                                                      translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.6800000071525574), SFDouble(-0.03999999910593033)]),
+                                                                                                                                HAnimJoint(
+                                                                                                                                  name_ : SFString('r_index3'),
+                                                                                                                                  DEF_ : SFString('Joe_r_index3'),
+                                                                                                                                  center_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7200000286102295), SFDouble(-0.014999999664723873)]),
+                                                                                                                                  skinCoordIndex_ : MFInt32([SFInt32(286), SFInt32(287), SFInt32(288), SFInt32(289), SFInt32(290), SFInt32(291), SFInt32(292), SFInt32(293), SFInt32(294)]),
+                                                                                                                                  skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
+                                                                                                                                  ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
+                                                                                                                                  llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
+                                                                                                                                  children_ : [
+                                                                                                                                    HAnimSegment(
+                                                                                                                                      name_ : SFString('r_index_distal'),
+                                                                                                                                      DEF_ : SFString('Joe_r_index_distal'),
                                                                                                                                       children_ : [
                                                                                                                                         Shape(
-                                                                                                                                          USE_ : SFString('sitebox'))]),
+                                                                                                                                          geometry_ : 
+                                                                                                                                            IndexedLineSet(
+                                                                                                                                              coordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(-1)]),
+                                                                                                                                              coord_ : 
+                                                                                                                                                Coordinate(
+                                                                                                                                                  point_ : MFVec3f([SFVec3f([-0.20000000298023224,0.7200000286102295,-0.014999999664723873]),SFVec3f([-0.20000000298023224,0.6949999928474426,-0.014999999664723873])]))),
+                                                                                                                                          appearance_ : 
+                                                                                                                                            Appearance(
+                                                                                                                                              USE_ : SFString('SegmentLine'))),
 
-                                                                                                                                    HAnimSite(
-                                                                                                                                      name_ : SFString('r_middle_distal_tip'),
-                                                                                                                                      DEF_ : SFString('Joe_r_middle_distal_tip'),
-                                                                                                                                      translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.6800000071525574), SFDouble(-0.03999999910593033)]),
-                                                                                                                                      children_ : [
-                                                                                                                                        Shape(
-                                                                                                                                          USE_ : SFString('sitebox'))])])])])])]),
+                                                                                                                                        Transform(
+                                                                                                                                          translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7200000286102295), SFDouble(-0.014999999664723873)]),
+                                                                                                                                          children_ : [
+                                                                                                                                            Shape(
+                                                                                                                                              USE_ : SFString('jointbox'))]),
 
-                                                                                                                HAnimJoint(
-                                                                                                                  name_ : SFString('r_ring0'),
-                                                                                                                  DEF_ : SFString('Joe_r_ring0'),
-                                                                                                                  center_ : SFVec3f([SFDouble(-0.2), SFDouble(0.835), SFDouble(-0.065)]),
-                                                                                                                  skinCoordIndex_ : MFInt32([SFInt32(249), SFInt32(250)]),
-                                                                                                                  skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1)]),
-                                                                                                                  ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                  llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                  children_ : [
-                                                                                                                    HAnimSegment(
-                                                                                                                      name_ : SFString('r_ring_metacarpal'),
-                                                                                                                      DEF_ : SFString('Joe_r_ring_metacarpal'),
-                                                                                                                      children_ : [
-                                                                                                                        Shape(
-                                                                                                                          geometry_ : 
-                                                                                                                            IndexedLineSet(
-                                                                                                                              coordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(-1)]),
-                                                                                                                              coord_ : 
-                                                                                                                                Coordinate(
-                                                                                                                                  point_ : MFVec3f([SFVec3f([-0.20000000298023224,0.8349999785423279,-0.06499999761581421]),SFVec3f([-0.20000000298023224,0.7929999828338623,-0.06499999761581421])]))),
-                                                                                                                          appearance_ : 
-                                                                                                                            Appearance(
-                                                                                                                              USE_ : SFString('SegmentLine'))),
-
-                                                                                                                        Transform(
-                                                                                                                          translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.8349999785423279), SFDouble(-0.06499999761581421)]),
-                                                                                                                          children_ : [
-                                                                                                                            Shape(
-                                                                                                                              USE_ : SFString('jointbox'))])]),
+                                                                                                                                        HAnimSite(
+                                                                                                                                          name_ : SFString('r_index_distal_tip'),
+                                                                                                                                          DEF_ : SFString('Joe_r_index_distal_tip'),
+                                                                                                                                          translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.6949999928474426), SFDouble(-0.014999999664723873)]),
+                                                                                                                                          children_ : [
+                                                                                                                                            Shape(
+                                                                                                                                              USE_ : SFString('sitebox'))])])])])])]),
 
                                                                                                                     HAnimJoint(
-                                                                                                                      name_ : SFString('r_ring1'),
-                                                                                                                      DEF_ : SFString('Joe_r_ring1'),
-                                                                                                                      center_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7929999828338623), SFDouble(-0.06499999761581421)]),
-                                                                                                                      skinCoordIndex_ : MFInt32([SFInt32(274), SFInt32(275), SFInt32(280), SFInt32(281)]),
-                                                                                                                      skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(0.5), SFFloat(0.5)]),
+                                                                                                                      name_ : SFString('r_middle0'),
+                                                                                                                      DEF_ : SFString('Joe_r_middle0'),
+                                                                                                                      center_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.8349999785423279), SFDouble(-0.03999999910593033)]),
+                                                                                                                      skinCoordIndex_ : MFInt32([SFInt32(247), SFInt32(248)]),
+                                                                                                                      skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1)]),
                                                                                                                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                       llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                       children_ : [
                                                                                                                         HAnimSegment(
-                                                                                                                          name_ : SFString('r_ring_proximal'),
-                                                                                                                          DEF_ : SFString('Joe_r_ring_proximal'),
+                                                                                                                          name_ : SFString('r_middle_metacarpal'),
+                                                                                                                          DEF_ : SFString('Joe_r_middle_metacarpal'),
                                                                                                                           children_ : [
                                                                                                                             Shape(
                                                                                                                               geometry_ : 
@@ -4111,29 +3945,29 @@ var X3D0 =  X3D(
                                                                                                                                   coordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(-1)]),
                                                                                                                                   coord_ : 
                                                                                                                                     Coordinate(
-                                                                                                                                      point_ : MFVec3f([SFVec3f([-0.20000000298023224,0.7929999828338623,-0.06499999761581421]),SFVec3f([-0.20000000298023224,0.7400000095367432,-0.06499999761581421])]))),
+                                                                                                                                      point_ : MFVec3f([SFVec3f([-0.20000000298023224,0.8349999785423279,-0.03999999910593033]),SFVec3f([-0.20000000298023224,0.7879999876022339,-0.03999999910593033])]))),
                                                                                                                               appearance_ : 
                                                                                                                                 Appearance(
                                                                                                                                   USE_ : SFString('SegmentLine'))),
 
                                                                                                                             Transform(
-                                                                                                                              translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7929999828338623), SFDouble(-0.06499999761581421)]),
+                                                                                                                              translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.8349999785423279), SFDouble(-0.03999999910593033)]),
                                                                                                                               children_ : [
                                                                                                                                 Shape(
                                                                                                                                   USE_ : SFString('jointbox'))])]),
 
                                                                                                                         HAnimJoint(
-                                                                                                                          name_ : SFString('r_ring2'),
-                                                                                                                          DEF_ : SFString('Joe_r_ring2'),
-                                                                                                                          center_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7400000095367432), SFDouble(-0.06499999761581421)]),
-                                                                                                                          skinCoordIndex_ : MFInt32([SFInt32(308), SFInt32(309), SFInt32(310), SFInt32(311)]),
-                                                                                                                          skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
+                                                                                                                          name_ : SFString('r_middle1'),
+                                                                                                                          DEF_ : SFString('Joe_r_middle1'),
+                                                                                                                          center_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7879999876022339), SFDouble(-0.03999999910593033)]),
+                                                                                                                          skinCoordIndex_ : MFInt32([SFInt32(272), SFInt32(273), SFInt32(279), SFInt32(280)]),
+                                                                                                                          skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(0.5), SFFloat(0.5)]),
                                                                                                                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                           children_ : [
                                                                                                                             HAnimSegment(
-                                                                                                                              name_ : SFString('r_ring_middle'),
-                                                                                                                              DEF_ : SFString('Joe_r_ring_middle'),
+                                                                                                                              name_ : SFString('r_middle_proximal'),
+                                                                                                                              DEF_ : SFString('Joe_r_middle_proximal'),
                                                                                                                               children_ : [
                                                                                                                                 Shape(
                                                                                                                                   geometry_ : 
@@ -4141,29 +3975,29 @@ var X3D0 =  X3D(
                                                                                                                                       coordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(-1)]),
                                                                                                                                       coord_ : 
                                                                                                                                         Coordinate(
-                                                                                                                                          point_ : MFVec3f([SFVec3f([-0.20000000298023224,0.7400000095367432,-0.06499999761581421]),SFVec3f([-0.20000000298023224,0.7177000045776367,-0.06499999761581421])]))),
+                                                                                                                                          point_ : MFVec3f([SFVec3f([-0.20000000298023224,0.7879999876022339,-0.03999999910593033]),SFVec3f([-0.20000000298023224,0.7400000095367432,-0.03999999910593033])]))),
                                                                                                                                   appearance_ : 
                                                                                                                                     Appearance(
                                                                                                                                       USE_ : SFString('SegmentLine'))),
 
                                                                                                                                 Transform(
-                                                                                                                                  translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7400000095367432), SFDouble(-0.06499999761581421)]),
+                                                                                                                                  translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7879999876022339), SFDouble(-0.03999999910593033)]),
                                                                                                                                   children_ : [
                                                                                                                                     Shape(
                                                                                                                                       USE_ : SFString('jointbox'))])]),
 
                                                                                                                             HAnimJoint(
-                                                                                                                              name_ : SFString('r_ring3'),
-                                                                                                                              DEF_ : SFString('Joe_r_ring3'),
-                                                                                                                              center_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7177000045776367), SFDouble(-0.06499999761581421)]),
-                                                                                                                              skinCoordIndex_ : MFInt32([SFInt32(312), SFInt32(313), SFInt32(314), SFInt32(315), SFInt32(316), SFInt32(317), SFInt32(318), SFInt32(319), SFInt32(320)]),
-                                                                                                                              skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
+                                                                                                                              name_ : SFString('r_middle2'),
+                                                                                                                              DEF_ : SFString('Joe_r_middle2'),
+                                                                                                                              center_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7400000095367432), SFDouble(-0.03999999910593033)]),
+                                                                                                                              skinCoordIndex_ : MFInt32([SFInt32(295), SFInt32(296), SFInt32(297), SFInt32(298)]),
+                                                                                                                              skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
                                                                                                                               ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                               llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                               children_ : [
                                                                                                                                 HAnimSegment(
-                                                                                                                                  name_ : SFString('r_ring_distal'),
-                                                                                                                                  DEF_ : SFString('Joe_r_ring_distal'),
+                                                                                                                                  name_ : SFString('r_middle_middle'),
+                                                                                                                                  DEF_ : SFString('Joe_r_middle_middle'),
                                                                                                                                   children_ : [
                                                                                                                                     Shape(
                                                                                                                                       geometry_ : 
@@ -4171,75 +4005,75 @@ var X3D0 =  X3D(
                                                                                                                                           coordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(-1)]),
                                                                                                                                           coord_ : 
                                                                                                                                             Coordinate(
-                                                                                                                                              point_ : MFVec3f([SFVec3f([-0.20000000298023224,0.7177000045776367,-0.06499999761581421]),SFVec3f([-0.20000000298023224,0.6949999928474426,-0.06499999761581421])]))),
+                                                                                                                                              point_ : MFVec3f([SFVec3f([-0.20000000298023224,0.7400000095367432,-0.03999999910593033]),SFVec3f([-0.20000000298023224,0.7142000198364258,-0.03999999910593033])]))),
                                                                                                                                       appearance_ : 
                                                                                                                                         Appearance(
                                                                                                                                           USE_ : SFString('SegmentLine'))),
 
                                                                                                                                     Transform(
-                                                                                                                                      translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7177000045776367), SFDouble(-0.06499999761581421)]),
+                                                                                                                                      translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7400000095367432), SFDouble(-0.03999999910593033)]),
                                                                                                                                       children_ : [
                                                                                                                                         Shape(
-                                                                                                                                          USE_ : SFString('jointbox'))]),
+                                                                                                                                          USE_ : SFString('jointbox'))])]),
 
-                                                                                                                                    HAnimSite(
-                                                                                                                                      name_ : SFString('r_ring_distal_tip'),
-                                                                                                                                      DEF_ : SFString('Joe_r_ring_distal_tip'),
-                                                                                                                                      translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.6949999928474426), SFDouble(-0.06499999761581421)]),
+                                                                                                                                HAnimJoint(
+                                                                                                                                  name_ : SFString('r_middle3'),
+                                                                                                                                  DEF_ : SFString('Joe_r_middle3'),
+                                                                                                                                  center_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7142000198364258), SFDouble(-0.03999999910593033)]),
+                                                                                                                                  skinCoordIndex_ : MFInt32([SFInt32(299), SFInt32(300), SFInt32(301), SFInt32(302), SFInt32(303), SFInt32(304), SFInt32(305), SFInt32(306), SFInt32(307)]),
+                                                                                                                                  skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
+                                                                                                                                  ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
+                                                                                                                                  llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
+                                                                                                                                  children_ : [
+                                                                                                                                    HAnimSegment(
+                                                                                                                                      name_ : SFString('r_middle_distal'),
+                                                                                                                                      DEF_ : SFString('Joe_r_middle_distal'),
                                                                                                                                       children_ : [
                                                                                                                                         Shape(
-                                                                                                                                          USE_ : SFString('sitebox'))])])])])])]),
+                                                                                                                                          geometry_ : 
+                                                                                                                                            IndexedLineSet(
+                                                                                                                                              coordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(-1)]),
+                                                                                                                                              coord_ : 
+                                                                                                                                                Coordinate(
+                                                                                                                                                  point_ : MFVec3f([SFVec3f([-0.20000000298023224,0.7142000198364258,-0.03999999910593033]),SFVec3f([-0.20000000298023224,0.6758000254631042,-0.03999999910593033])]))),
+                                                                                                                                          appearance_ : 
+                                                                                                                                            Appearance(
+                                                                                                                                              USE_ : SFString('SegmentLine'))),
 
-                                                                                                                HAnimJoint(
-                                                                                                                  name_ : SFString('r_pinky0'),
-                                                                                                                  DEF_ : SFString('Joe_r_pinky0'),
-                                                                                                                  center_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.8399999737739563), SFDouble(-0.08500000089406967)]),
-                                                                                                                  skinCoordIndex_ : MFInt32([SFInt32(251), SFInt32(252), SFInt32(253), SFInt32(281)]),
-                                                                                                                  skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(0.5)]),
-                                                                                                                  ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                  llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
-                                                                                                                  children_ : [
-                                                                                                                    HAnimSegment(
-                                                                                                                      name_ : SFString('r_pinky_metacarpal'),
-                                                                                                                      DEF_ : SFString('Joe_r_pinky_metacarpal'),
-                                                                                                                      children_ : [
-                                                                                                                        Shape(
-                                                                                                                          geometry_ : 
-                                                                                                                            IndexedLineSet(
-                                                                                                                              coordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(-1)]),
-                                                                                                                              coord_ : 
-                                                                                                                                Coordinate(
-                                                                                                                                  point_ : MFVec3f([SFVec3f([-0.20000000298023224,0.8399999737739563,-0.08500000089406967]),SFVec3f([-0.20000000298023224,0.7900000214576721,-0.08500000089406967])]))),
-                                                                                                                          appearance_ : 
-                                                                                                                            Appearance(
-                                                                                                                              USE_ : SFString('SegmentLine'))),
+                                                                                                                                        Transform(
+                                                                                                                                          translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7142000198364258), SFDouble(-0.03999999910593033)]),
+                                                                                                                                          children_ : [
+                                                                                                                                            Shape(
+                                                                                                                                              USE_ : SFString('jointbox'))]),
 
-                                                                                                                        Transform(
-                                                                                                                          translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.8399999737739563), SFDouble(-0.08500000089406967)]),
-                                                                                                                          children_ : [
-                                                                                                                            Shape(
-                                                                                                                              USE_ : SFString('jointbox'))]),
+                                                                                                                                        HAnimSite(
+                                                                                                                                          name_ : SFString('r_dactylion'),
+                                                                                                                                          DEF_ : SFString('Joe_r_dactylion'),
+                                                                                                                                          translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.6800000071525574), SFDouble(-0.03999999910593033)]),
+                                                                                                                                          children_ : [
+                                                                                                                                            Shape(
+                                                                                                                                              USE_ : SFString('sitebox'))]),
 
-                                                                                                                        HAnimSite(
-                                                                                                                          name_ : SFString('r_metacarpal_pha5'),
-                                                                                                                          DEF_ : SFString('Joe_r_metacarpal_pha5'),
-                                                                                                                          translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7900000214576721), SFDouble(-0.0949999988079071)]),
-                                                                                                                          children_ : [
-                                                                                                                            Shape(
-                                                                                                                              USE_ : SFString('sitebox'))])]),
+                                                                                                                                        HAnimSite(
+                                                                                                                                          name_ : SFString('r_middle_distal_tip'),
+                                                                                                                                          DEF_ : SFString('Joe_r_middle_distal_tip'),
+                                                                                                                                          translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.6800000071525574), SFDouble(-0.03999999910593033)]),
+                                                                                                                                          children_ : [
+                                                                                                                                            Shape(
+                                                                                                                                              USE_ : SFString('sitebox'))])])])])])]),
 
                                                                                                                     HAnimJoint(
-                                                                                                                      name_ : SFString('r_pinky1'),
-                                                                                                                      DEF_ : SFString('Joe_r_pinky1'),
-                                                                                                                      center_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7900000214576721), SFDouble(-0.08500000089406967)]),
-                                                                                                                      skinCoordIndex_ : MFInt32([SFInt32(276), SFInt32(277), SFInt32(278)]),
-                                                                                                                      skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1)]),
+                                                                                                                      name_ : SFString('r_ring0'),
+                                                                                                                      DEF_ : SFString('Joe_r_ring0'),
+                                                                                                                      center_ : SFVec3f([SFDouble(-0.2), SFDouble(0.835), SFDouble(-0.065)]),
+                                                                                                                      skinCoordIndex_ : MFInt32([SFInt32(249), SFInt32(250)]),
+                                                                                                                      skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1)]),
                                                                                                                       ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                       llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                       children_ : [
                                                                                                                         HAnimSegment(
-                                                                                                                          name_ : SFString('r_pinky_proximal'),
-                                                                                                                          DEF_ : SFString('Joe_r_pinky_proximal'),
+                                                                                                                          name_ : SFString('r_ring_metacarpal'),
+                                                                                                                          DEF_ : SFString('Joe_r_ring_metacarpal'),
                                                                                                                           children_ : [
                                                                                                                             Shape(
                                                                                                                               geometry_ : 
@@ -4247,29 +4081,29 @@ var X3D0 =  X3D(
                                                                                                                                   coordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(-1)]),
                                                                                                                                   coord_ : 
                                                                                                                                     Coordinate(
-                                                                                                                                      point_ : MFVec3f([SFVec3f([-0.20000000298023224,0.7900000214576721,-0.08500000089406967]),SFVec3f([-0.20000000298023224,0.7549999952316284,-0.08500000089406967])]))),
+                                                                                                                                      point_ : MFVec3f([SFVec3f([-0.20000000298023224,0.8349999785423279,-0.06499999761581421]),SFVec3f([-0.20000000298023224,0.7929999828338623,-0.06499999761581421])]))),
                                                                                                                               appearance_ : 
                                                                                                                                 Appearance(
                                                                                                                                   USE_ : SFString('SegmentLine'))),
 
                                                                                                                             Transform(
-                                                                                                                              translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7900000214576721), SFDouble(-0.08500000089406967)]),
+                                                                                                                              translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.8349999785423279), SFDouble(-0.06499999761581421)]),
                                                                                                                               children_ : [
                                                                                                                                 Shape(
                                                                                                                                   USE_ : SFString('jointbox'))])]),
 
                                                                                                                         HAnimJoint(
-                                                                                                                          name_ : SFString('r_pinky2'),
-                                                                                                                          DEF_ : SFString('Joe_r_pinky2'),
-                                                                                                                          center_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7549999952316284), SFDouble(-0.08500000089406967)]),
-                                                                                                                          skinCoordIndex_ : MFInt32([SFInt32(321), SFInt32(322), SFInt32(323), SFInt32(324)]),
-                                                                                                                          skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
+                                                                                                                          name_ : SFString('r_ring1'),
+                                                                                                                          DEF_ : SFString('Joe_r_ring1'),
+                                                                                                                          center_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7929999828338623), SFDouble(-0.06499999761581421)]),
+                                                                                                                          skinCoordIndex_ : MFInt32([SFInt32(274), SFInt32(275), SFInt32(280), SFInt32(281)]),
+                                                                                                                          skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(0.5), SFFloat(0.5)]),
                                                                                                                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                           children_ : [
                                                                                                                             HAnimSegment(
-                                                                                                                              name_ : SFString('r_pinky_middle'),
-                                                                                                                              DEF_ : SFString('Joe_r_pinky_middle'),
+                                                                                                                              name_ : SFString('r_ring_proximal'),
+                                                                                                                              DEF_ : SFString('Joe_r_ring_proximal'),
                                                                                                                               children_ : [
                                                                                                                                 Shape(
                                                                                                                                   geometry_ : 
@@ -4277,29 +4111,29 @@ var X3D0 =  X3D(
                                                                                                                                       coordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(-1)]),
                                                                                                                                       coord_ : 
                                                                                                                                         Coordinate(
-                                                                                                                                          point_ : MFVec3f([SFVec3f([-0.20000000298023224,0.7549999952316284,-0.08500000089406967]),SFVec3f([-0.20000000298023224,0.7350000143051147,-0.08500000089406967])]))),
+                                                                                                                                          point_ : MFVec3f([SFVec3f([-0.20000000298023224,0.7929999828338623,-0.06499999761581421]),SFVec3f([-0.20000000298023224,0.7400000095367432,-0.06499999761581421])]))),
                                                                                                                                   appearance_ : 
                                                                                                                                     Appearance(
                                                                                                                                       USE_ : SFString('SegmentLine'))),
 
                                                                                                                                 Transform(
-                                                                                                                                  translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7549999952316284), SFDouble(-0.08500000089406967)]),
+                                                                                                                                  translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7929999828338623), SFDouble(-0.06499999761581421)]),
                                                                                                                                   children_ : [
                                                                                                                                     Shape(
                                                                                                                                       USE_ : SFString('jointbox'))])]),
 
                                                                                                                             HAnimJoint(
-                                                                                                                              name_ : SFString('r_pinky3'),
-                                                                                                                              DEF_ : SFString('Joe_r_pinky3'),
-                                                                                                                              center_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7350000143051147), SFDouble(-0.09000000357627869)]),
-                                                                                                                              skinCoordIndex_ : MFInt32([SFInt32(325), SFInt32(326), SFInt32(327), SFInt32(328), SFInt32(329), SFInt32(330), SFInt32(331), SFInt32(332), SFInt32(333)]),
-                                                                                                                              skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
+                                                                                                                              name_ : SFString('r_ring2'),
+                                                                                                                              DEF_ : SFString('Joe_r_ring2'),
+                                                                                                                              center_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7400000095367432), SFDouble(-0.06499999761581421)]),
+                                                                                                                              skinCoordIndex_ : MFInt32([SFInt32(308), SFInt32(309), SFInt32(310), SFInt32(311)]),
+                                                                                                                              skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
                                                                                                                               ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                               llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                                                               children_ : [
                                                                                                                                 HAnimSegment(
-                                                                                                                                  name_ : SFString('r_pinky_distal'),
-                                                                                                                                  DEF_ : SFString('Joe_r_pinky_distal'),
+                                                                                                                                  name_ : SFString('r_ring_middle'),
+                                                                                                                                  DEF_ : SFString('Joe_r_ring_middle'),
                                                                                                                                   children_ : [
                                                                                                                                     Shape(
                                                                                                                                       geometry_ : 
@@ -4307,24 +4141,190 @@ var X3D0 =  X3D(
                                                                                                                                           coordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(-1)]),
                                                                                                                                           coord_ : 
                                                                                                                                             Coordinate(
-                                                                                                                                              point_ : MFVec3f([SFVec3f([-0.20000000298023224,0.7350000143051147,-0.08500000089406967]),SFVec3f([-0.20000000298023224,0.7200000286102295,-0.08500000089406967])]))),
+                                                                                                                                              point_ : MFVec3f([SFVec3f([-0.20000000298023224,0.7400000095367432,-0.06499999761581421]),SFVec3f([-0.20000000298023224,0.7177000045776367,-0.06499999761581421])]))),
                                                                                                                                       appearance_ : 
                                                                                                                                         Appearance(
                                                                                                                                           USE_ : SFString('SegmentLine'))),
 
                                                                                                                                     Transform(
-                                                                                                                                      translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7350000143051147), SFDouble(-0.08500000089406967)]),
+                                                                                                                                      translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7400000095367432), SFDouble(-0.06499999761581421)]),
                                                                                                                                       children_ : [
                                                                                                                                         Shape(
-                                                                                                                                          USE_ : SFString('jointbox'))]),
+                                                                                                                                          USE_ : SFString('jointbox'))])]),
 
-                                                                                                                                    HAnimSite(
-                                                                                                                                      name_ : SFString('r_pinky_distal_tip'),
-                                                                                                                                      DEF_ : SFString('Joe_r_pinky_distal_tip'),
-                                                                                                                                      translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7200000286102295), SFDouble(-0.08500000089406967)]),
+                                                                                                                                HAnimJoint(
+                                                                                                                                  name_ : SFString('r_ring3'),
+                                                                                                                                  DEF_ : SFString('Joe_r_ring3'),
+                                                                                                                                  center_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7177000045776367), SFDouble(-0.06499999761581421)]),
+                                                                                                                                  skinCoordIndex_ : MFInt32([SFInt32(312), SFInt32(313), SFInt32(314), SFInt32(315), SFInt32(316), SFInt32(317), SFInt32(318), SFInt32(319), SFInt32(320)]),
+                                                                                                                                  skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
+                                                                                                                                  ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
+                                                                                                                                  llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
+                                                                                                                                  children_ : [
+                                                                                                                                    HAnimSegment(
+                                                                                                                                      name_ : SFString('r_ring_distal'),
+                                                                                                                                      DEF_ : SFString('Joe_r_ring_distal'),
                                                                                                                                       children_ : [
                                                                                                                                         Shape(
-                                                                                                                                          USE_ : SFString('sitebox'))])])])])])])])])])])])])])])])])])])])])])])])])])])])]),
+                                                                                                                                          geometry_ : 
+                                                                                                                                            IndexedLineSet(
+                                                                                                                                              coordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(-1)]),
+                                                                                                                                              coord_ : 
+                                                                                                                                                Coordinate(
+                                                                                                                                                  point_ : MFVec3f([SFVec3f([-0.20000000298023224,0.7177000045776367,-0.06499999761581421]),SFVec3f([-0.20000000298023224,0.6949999928474426,-0.06499999761581421])]))),
+                                                                                                                                          appearance_ : 
+                                                                                                                                            Appearance(
+                                                                                                                                              USE_ : SFString('SegmentLine'))),
+
+                                                                                                                                        Transform(
+                                                                                                                                          translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7177000045776367), SFDouble(-0.06499999761581421)]),
+                                                                                                                                          children_ : [
+                                                                                                                                            Shape(
+                                                                                                                                              USE_ : SFString('jointbox'))]),
+
+                                                                                                                                        HAnimSite(
+                                                                                                                                          name_ : SFString('r_ring_distal_tip'),
+                                                                                                                                          DEF_ : SFString('Joe_r_ring_distal_tip'),
+                                                                                                                                          translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.6949999928474426), SFDouble(-0.06499999761581421)]),
+                                                                                                                                          children_ : [
+                                                                                                                                            Shape(
+                                                                                                                                              USE_ : SFString('sitebox'))])])])])])]),
+
+                                                                                                                    HAnimJoint(
+                                                                                                                      name_ : SFString('r_pinky0'),
+                                                                                                                      DEF_ : SFString('Joe_r_pinky0'),
+                                                                                                                      center_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.8399999737739563), SFDouble(-0.08500000089406967)]),
+                                                                                                                      skinCoordIndex_ : MFInt32([SFInt32(251), SFInt32(252), SFInt32(253), SFInt32(281)]),
+                                                                                                                      skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(0.5)]),
+                                                                                                                      ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
+                                                                                                                      llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
+                                                                                                                      children_ : [
+                                                                                                                        HAnimSegment(
+                                                                                                                          name_ : SFString('r_pinky_metacarpal'),
+                                                                                                                          DEF_ : SFString('Joe_r_pinky_metacarpal'),
+                                                                                                                          children_ : [
+                                                                                                                            Shape(
+                                                                                                                              geometry_ : 
+                                                                                                                                IndexedLineSet(
+                                                                                                                                  coordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(-1)]),
+                                                                                                                                  coord_ : 
+                                                                                                                                    Coordinate(
+                                                                                                                                      point_ : MFVec3f([SFVec3f([-0.20000000298023224,0.8399999737739563,-0.08500000089406967]),SFVec3f([-0.20000000298023224,0.7900000214576721,-0.08500000089406967])]))),
+                                                                                                                              appearance_ : 
+                                                                                                                                Appearance(
+                                                                                                                                  USE_ : SFString('SegmentLine'))),
+
+                                                                                                                            Transform(
+                                                                                                                              translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.8399999737739563), SFDouble(-0.08500000089406967)]),
+                                                                                                                              children_ : [
+                                                                                                                                Shape(
+                                                                                                                                  USE_ : SFString('jointbox'))]),
+
+                                                                                                                            HAnimSite(
+                                                                                                                              name_ : SFString('r_metacarpal_pha5'),
+                                                                                                                              DEF_ : SFString('Joe_r_metacarpal_pha5'),
+                                                                                                                              translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7900000214576721), SFDouble(-0.0949999988079071)]),
+                                                                                                                              children_ : [
+                                                                                                                                Shape(
+                                                                                                                                  USE_ : SFString('sitebox'))])]),
+
+                                                                                                                        HAnimJoint(
+                                                                                                                          name_ : SFString('r_pinky1'),
+                                                                                                                          DEF_ : SFString('Joe_r_pinky1'),
+                                                                                                                          center_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7900000214576721), SFDouble(-0.08500000089406967)]),
+                                                                                                                          skinCoordIndex_ : MFInt32([SFInt32(276), SFInt32(277), SFInt32(278)]),
+                                                                                                                          skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1)]),
+                                                                                                                          ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
+                                                                                                                          llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
+                                                                                                                          children_ : [
+                                                                                                                            HAnimSegment(
+                                                                                                                              name_ : SFString('r_pinky_proximal'),
+                                                                                                                              DEF_ : SFString('Joe_r_pinky_proximal'),
+                                                                                                                              children_ : [
+                                                                                                                                Shape(
+                                                                                                                                  geometry_ : 
+                                                                                                                                    IndexedLineSet(
+                                                                                                                                      coordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(-1)]),
+                                                                                                                                      coord_ : 
+                                                                                                                                        Coordinate(
+                                                                                                                                          point_ : MFVec3f([SFVec3f([-0.20000000298023224,0.7900000214576721,-0.08500000089406967]),SFVec3f([-0.20000000298023224,0.7549999952316284,-0.08500000089406967])]))),
+                                                                                                                                  appearance_ : 
+                                                                                                                                    Appearance(
+                                                                                                                                      USE_ : SFString('SegmentLine'))),
+
+                                                                                                                                Transform(
+                                                                                                                                  translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7900000214576721), SFDouble(-0.08500000089406967)]),
+                                                                                                                                  children_ : [
+                                                                                                                                    Shape(
+                                                                                                                                      USE_ : SFString('jointbox'))])]),
+
+                                                                                                                            HAnimJoint(
+                                                                                                                              name_ : SFString('r_pinky2'),
+                                                                                                                              DEF_ : SFString('Joe_r_pinky2'),
+                                                                                                                              center_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7549999952316284), SFDouble(-0.08500000089406967)]),
+                                                                                                                              skinCoordIndex_ : MFInt32([SFInt32(321), SFInt32(322), SFInt32(323), SFInt32(324)]),
+                                                                                                                              skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
+                                                                                                                              ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
+                                                                                                                              llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
+                                                                                                                              children_ : [
+                                                                                                                                HAnimSegment(
+                                                                                                                                  name_ : SFString('r_pinky_middle'),
+                                                                                                                                  DEF_ : SFString('Joe_r_pinky_middle'),
+                                                                                                                                  children_ : [
+                                                                                                                                    Shape(
+                                                                                                                                      geometry_ : 
+                                                                                                                                        IndexedLineSet(
+                                                                                                                                          coordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(-1)]),
+                                                                                                                                          coord_ : 
+                                                                                                                                            Coordinate(
+                                                                                                                                              point_ : MFVec3f([SFVec3f([-0.20000000298023224,0.7549999952316284,-0.08500000089406967]),SFVec3f([-0.20000000298023224,0.7350000143051147,-0.08500000089406967])]))),
+                                                                                                                                      appearance_ : 
+                                                                                                                                        Appearance(
+                                                                                                                                          USE_ : SFString('SegmentLine'))),
+
+                                                                                                                                    Transform(
+                                                                                                                                      translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7549999952316284), SFDouble(-0.08500000089406967)]),
+                                                                                                                                      children_ : [
+                                                                                                                                        Shape(
+                                                                                                                                          USE_ : SFString('jointbox'))])]),
+
+                                                                                                                                HAnimJoint(
+                                                                                                                                  name_ : SFString('r_pinky3'),
+                                                                                                                                  DEF_ : SFString('Joe_r_pinky3'),
+                                                                                                                                  center_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7350000143051147), SFDouble(-0.09000000357627869)]),
+                                                                                                                                  skinCoordIndex_ : MFInt32([SFInt32(325), SFInt32(326), SFInt32(327), SFInt32(328), SFInt32(329), SFInt32(330), SFInt32(331), SFInt32(332), SFInt32(333)]),
+                                                                                                                                  skinCoordWeight_ : MFFloat([SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1), SFFloat(1)]),
+                                                                                                                                  ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
+                                                                                                                                  llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
+                                                                                                                                  children_ : [
+                                                                                                                                    HAnimSegment(
+                                                                                                                                      name_ : SFString('r_pinky_distal'),
+                                                                                                                                      DEF_ : SFString('Joe_r_pinky_distal'),
+                                                                                                                                      children_ : [
+                                                                                                                                        Shape(
+                                                                                                                                          geometry_ : 
+                                                                                                                                            IndexedLineSet(
+                                                                                                                                              coordIndex_ : MFInt32([SFInt32(0), SFInt32(1), SFInt32(-1)]),
+                                                                                                                                              coord_ : 
+                                                                                                                                                Coordinate(
+                                                                                                                                                  point_ : MFVec3f([SFVec3f([-0.20000000298023224,0.7350000143051147,-0.08500000089406967]),SFVec3f([-0.20000000298023224,0.7200000286102295,-0.08500000089406967])]))),
+                                                                                                                                          appearance_ : 
+                                                                                                                                            Appearance(
+                                                                                                                                              USE_ : SFString('SegmentLine'))),
+
+                                                                                                                                        Transform(
+                                                                                                                                          translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7350000143051147), SFDouble(-0.08500000089406967)]),
+                                                                                                                                          children_ : [
+                                                                                                                                            Shape(
+                                                                                                                                              USE_ : SFString('jointbox'))]),
+
+                                                                                                                                        HAnimSite(
+                                                                                                                                          name_ : SFString('r_pinky_distal_tip'),
+                                                                                                                                          DEF_ : SFString('Joe_r_pinky_distal_tip'),
+                                                                                                                                          translation_ : SFVec3f([SFDouble(-0.20000000298023224), SFDouble(0.7200000286102295), SFDouble(-0.08500000089406967)]),
+                                                                                                                                          children_ : [
+                                                                                                                                            Shape(
+                                                                                                                                              USE_ : SFString('sitebox'))])])])])])])])])])])])])])])])])])])])])])])])])])])])])]),
 
                         HAnimJoint(
                           USE_ : SFString('Joe_HumanoidRoot')),

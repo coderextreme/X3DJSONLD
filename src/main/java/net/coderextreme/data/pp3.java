@@ -66,15 +66,15 @@ ProtoInstance ProtoInstance2 = null;
               .addChild(new Transform().setScale(new float[] {0.5f,0.5f,0.5f})
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setDiffuseColor(new float[] {0.7f,1f,0f}).setTransparency(0.5f)))
-                  .setGeometry(new Extrusion().setCreaseAngle(0.785f).setCrossSection(new MFVec2f0().getArray()).setSpine(new MFVec3f1().getArray())))
+                    .setMaterial(new Material().setDiffuseColor(new float[] {0.7f,1f,0f}).setTransparency(0.5000f)))
+                  .setGeometry(new Extrusion().setCreaseAngle(0.7850f).setCrossSection(new MFVec2f0().getArray()).setSpine(new MFVec3f1().getArray())))
                 .addComments("<Transform translation=\"-2.5 0 0\"> <Shape> <Text DEF=\"LeftString\" string='\"l\"'/> </Shape> </Transform> <StringSensor DEF=\"LeftSensor\" enabled=\"false\"/> <TouchSensor DEF=\"LeftTouch\" enabled=\"true\"/>"))
               .addComments("right")
               .addChild(new Transform().setScale(new float[] {0.5f,0.5f,0.5f})
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setDiffuseColor(new float[] {0f,0.7f,1f}).setTransparency(0.5f)))
-                  .setGeometry(new Extrusion().setCreaseAngle(0.785f).setCrossSection(new MFVec2f2().getArray()).setSpine(new MFVec3f3().getArray())))
+                    .setMaterial(new Material().setDiffuseColor(new float[] {0f,0.7f,1f}).setTransparency(0.5000f)))
+                  .setGeometry(new Extrusion().setCreaseAngle(0.7850f).setCrossSection(new MFVec2f2().getArray()).setSpine(new MFVec3f3().getArray())))
                 .addChild(new Transform().setTranslation(new float[] {2f,0f,0f})
                   .addChild(new Shape()
                     .setAppearance(new Appearance()
@@ -86,8 +86,8 @@ ProtoInstance ProtoInstance2 = null;
               .addChild(new Transform().setScale(new float[] {0.5f,0.5f,0.5f})
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setDiffuseColor(new float[] {0f,0.7f,1f}).setTransparency(0.5f)))
-                  .setGeometry(new Extrusion().setCreaseAngle(0.785f).setCrossSection(new MFVec2f5().getArray()).setSpine(new MFVec3f6().getArray())))
+                    .setMaterial(new Material().setDiffuseColor(new float[] {0f,0.7f,1f}).setTransparency(0.5000f)))
+                  .setGeometry(new Extrusion().setCreaseAngle(0.7850f).setCrossSection(new MFVec2f5().getArray()).setSpine(new MFVec3f6().getArray())))
                 .addChild(new Transform().setTranslation(new float[] {-0.5f,2f,0f})
                   .addChild(new Shape()
                     .setAppearance(new Appearance()
@@ -99,8 +99,8 @@ ProtoInstance ProtoInstance2 = null;
               .addChild(new Transform().setScale(new float[] {0.5f,0.5f,0.5f})
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setDiffuseColor(new float[] {0.7f,1f,0f}).setTransparency(0.5f)))
-                  .setGeometry(new Extrusion().setCreaseAngle(0.785f).setCrossSection(new MFVec2f8().getArray()).setSpine(new MFVec3f9().getArray())))
+                    .setMaterial(new Material().setDiffuseColor(new float[] {0.7f,1f,0f}).setTransparency(0.5000f)))
+                  .setGeometry(new Extrusion().setCreaseAngle(0.7850f).setCrossSection(new MFVec2f8().getArray()).setSpine(new MFVec3f9().getArray())))
                 .addComments("<Transform translation=\"-0.5 -2.5 0\"> <Shape> <Text DEF=\"DownString\" string='\"d\"'/> </Shape> </Transform> <StringSensor DEF=\"DownSensor\" enabled=\"false\"/> <TouchSensor description='touch to activate' DEF=\"DownTouch\" enabled=\"true\"/>"))
               .addComments("center")
               .addChild(new Transform()
@@ -172,22 +172,22 @@ ProtoInstance ProtoInstance2 = null;
     }
 protected class MFVec2f0 {
   protected org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {1f,0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0f,-1f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1f,0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0f,1f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {1.0000f,0.0000f,0.9200f,-0.3800f,0.7100f,-0.7100f,0.3800f,-0.9200f,0.0000f,-1.0000f,-0.3800f,-0.9200f,-0.7100f,-0.7100f,-0.9200f,-0.3800f,-1.0000f,0.0000f,-0.9200f,0.3800f,-0.7100f,0.7100f,-0.3800f,0.9200f,0.0000f,1.0000f,0.3800f,0.9200f,0.7100f,0.7100f,0.9200f,0.3800f,1.0000f,0.0000f});
   }
 }
 protected class MFVec3f1 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-2.5f,0f,0f,-1.5f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-2.5000f,0.0000f,0.0000f,-1.5000f,0.0000f,0.0000f});
   }
 }
 protected class MFVec2f2 {
   protected org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {1f,0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0f,-1f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1f,0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0f,1f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {1.0000f,0.0000f,0.9200f,-0.3800f,0.7100f,-0.7100f,0.3800f,-0.9200f,0.0000f,-1.0000f,-0.3800f,-0.9200f,-0.7100f,-0.7100f,-0.9200f,-0.3800f,-1.0000f,0.0000f,-0.9200f,0.3800f,-0.7100f,0.7100f,-0.3800f,0.9200f,0.0000f,1.0000f,0.3800f,0.9200f,0.7100f,0.7100f,0.9200f,0.3800f,1.0000f,0.0000f});
   }
 }
 protected class MFVec3f3 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {1.5f,0f,0f,2.5f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {1.5000f,0.0000f,0.0000f,2.5000f,0.0000f,0.0000f});
   }
 }
 protected class MFString4 {
@@ -197,12 +197,12 @@ protected class MFString4 {
 }
 protected class MFVec2f5 {
   protected org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {1f,0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0f,-1f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1f,0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0f,1f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {1.0000f,0.0000f,0.9200f,-0.3800f,0.7100f,-0.7100f,0.3800f,-0.9200f,0.0000f,-1.0000f,-0.3800f,-0.9200f,-0.7100f,-0.7100f,-0.9200f,-0.3800f,-1.0000f,0.0000f,-0.9200f,0.3800f,-0.7100f,0.7100f,-0.3800f,0.9200f,0.0000f,1.0000f,0.3800f,0.9200f,0.7100f,0.7100f,0.9200f,0.3800f,1.0000f,0.0000f});
   }
 }
 protected class MFVec3f6 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,1.5f,0f,0f,2.5f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0000f,1.5000f,0.0000f,0.0000f,2.5000f,0.0000f});
   }
 }
 protected class MFString7 {
@@ -212,12 +212,12 @@ protected class MFString7 {
 }
 protected class MFVec2f8 {
   protected org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {1f,0f,0.92f,-0.38f,0.71f,-0.71f,0.38f,-0.92f,0f,-1f,-0.38f,-0.92f,-0.71f,-0.71f,-0.92f,-0.38f,-1f,0f,-0.92f,0.38f,-0.71f,0.71f,-0.38f,0.92f,0f,1f,0.38f,0.92f,0.71f,0.71f,0.92f,0.38f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {1.0000f,0.0000f,0.9200f,-0.3800f,0.7100f,-0.7100f,0.3800f,-0.9200f,0.0000f,-1.0000f,-0.3800f,-0.9200f,-0.7100f,-0.7100f,-0.9200f,-0.3800f,-1.0000f,0.0000f,-0.9200f,0.3800f,-0.7100f,0.7100f,-0.3800f,0.9200f,0.0000f,1.0000f,0.3800f,0.9200f,0.7100f,0.7100f,0.9200f,0.3800f,1.0000f,0.0000f});
   }
 }
 protected class MFVec3f9 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,-2.5f,0f,0f,-1.5f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0000f,-2.5000f,0.0000f,0.0000f,-1.5000f,0.0000f});
   }
 }
 }

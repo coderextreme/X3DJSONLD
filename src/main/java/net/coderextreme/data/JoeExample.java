@@ -71,7 +71,7 @@ public class JoeExample {
           .setAppearance(new Appearance()
             .setMaterial(new Material().setDiffuseColor(new float[] {1f,0f,0f})))
           .setGeometry(new Sphere()))
-        .addChild(new Sound().setMaxBack(1000f).setMaxFront(1000f).setMinBack(1000f).setMinFront(1000f)
+        .addChild(new Sound().setMaxBack(1000.0000f).setMaxFront(1000.0000f).setMinBack(1000.0000f).setMinFront(1000.0000f)
           .setSource(new AudioClip().setDEF("Click").setStopTime(1d).setDescription("clicking sound").setUrl(new MFString0().getArray())))
         .addChild(new TouchSensor().setDEF("TS"))
         .addChild(new ROUTE().setFromNode("TS").setFromField("isOver").setToNode("OpenVault").setToField("combinationEntered"))

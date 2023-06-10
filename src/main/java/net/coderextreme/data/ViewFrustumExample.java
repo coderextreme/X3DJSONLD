@@ -91,7 +91,7 @@ ProtoInstance0
             .addChild(new Viewpoint().setDescription("ViewFrustum ViewpointNode")));
 ProtoInstance0
           .addFieldValue(new fieldValue().setName("NavigationInfoNode")
-            .addChild(new NavigationInfo().setVisibilityLimit(15f)));
+            .addChild(new NavigationInfo().setVisibilityLimit(15.0000f)));
 ProtoInstance0
           .addFieldValue(new fieldValue().setName("visible").setValue("true"));
 ProtoInstance0

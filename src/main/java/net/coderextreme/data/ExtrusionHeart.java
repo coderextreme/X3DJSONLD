@@ -59,24 +59,24 @@ public class ExtrusionHeart {
         .addChild(new Viewpoint().setDescription("Extrusion Heart").setOrientation(new float[] {1f,0f,0f,1.57f}).setPosition(new float[] {0f,-4f,0f}))
         .addChild(new Transform().setTranslation(new float[] {0f,-0.5f,0f})
           .addChild(new Shape()
-            .setGeometry(new Extrusion().setCreaseAngle(3.14159f).setCrossSection(new MFVec2f0().getArray()).setScale(new MFVec2f1().getArray()).setSolid(false).setSpine(new MFVec3f2().getArray()))
+            .setGeometry(new Extrusion().setCreaseAngle(3.1416f).setCrossSection(new MFVec2f0().getArray()).setScale(new MFVec2f1().getArray()).setSolid(false).setSpine(new MFVec3f2().getArray()))
             .setAppearance(new Appearance()
               .setMaterial(new Material().setDiffuseColor(new float[] {0.8f,0.3f,0.3f}))))))      ;
     return X3D0;
     }
 protected class MFVec2f0 {
   protected org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {0f,0.8f,0.2f,1f,0.7f,0.95f,1f,0.5f,0.8f,0f,0.5f,-0.3f,0f,-0.7f,-0.5f,-0.3f,-0.8f,0f,-1f,0.5f,-0.7f,0.95f,-0.2f,1f,0f,0.8f});
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {0.0000f,0.8000f,0.2000f,1.0000f,0.7000f,0.9500f,1.0000f,0.5000f,0.8000f,0.0000f,0.5000f,-0.3000f,0.0000f,-0.7000f,-0.5000f,-0.3000f,-0.8000f,0.0000f,-1.0000f,0.5000f,-0.7000f,0.9500f,-0.2000f,1.0000f,0.0000f,0.8000f});
   }
 }
 protected class MFVec2f1 {
   protected org.web3d.x3d.jsail.fields.MFVec2f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {0.01f,0.01f,0.8f,0.8f,1f,1f,0.8f,0.8f,0.01f,0.01f});
+    return new org.web3d.x3d.jsail.fields.MFVec2f(new float[] {0.0100f,0.0100f,0.8000f,0.8000f,1.0000f,1.0000f,0.8000f,0.8000f,0.0100f,0.0100f});
   }
 }
 protected class MFVec3f2 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0f,0f,0f,0.1f,0f,0f,0.5f,0f,0f,0.9f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0000f,0.0000f,0.0000f,0.0000f,0.1000f,0.0000f,0.0000f,0.5000f,0.0000f,0.0000f,0.9000f,0.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 }

@@ -184,199 +184,199 @@ public class LOA1_WalkAnimation {
         .addChild(new Anchor().setDescription("InterchangableActorsViaDynamicRouting").setParameter(new MFString38().getArray()).setUrl(new MFString39().getArray())
           .addChild(new Shape()
             .setGeometry(new Text().setString(new MFString40().getArray())
-              .setFontStyle(new FontStyle().setJustify(new MFString41().getArray()).setSize(0.8f)))
+              .setFontStyle(new FontStyle().setJustify(new MFString41().getArray()).setSize(0.8000f)))
             .setAppearance(new Appearance()
               .setMaterial(new Material().setDiffuseColor(new float[] {1f,1f,0.2f}))))))      ;
     return X3D0;
     }
 protected class MFFloat0 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.04167f,0.125f,0.1667f,0.2083f,0.25f,0.2917f,0.375f,0.4583f,0.5f,0.5417f,0.5833f,0.625f,0.7083f,0.75f,0.7917f,0.875f,0.9167f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.0417f,0.1250f,0.1667f,0.2083f,0.2500f,0.2917f,0.3750f,0.4583f,0.5000f,0.5417f,0.5833f,0.6250f,0.7083f,0.7500f,0.7917f,0.8750f,0.9167f,1.0000f});
   }
 }
 protected class MFVec3f1 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,-0.00928f,0f,0f,-0.003858f,0f,0f,-0.008847f,0f,0f,-0.01486f,0f,0f,-0.02641f,0f,0f,-0.03934f,0f,0f,-0.0502f,0f,0f,-0.07469f,0f,0f,-0.02732f,0f,0f,-0.01608f,0f,0f,-0.01129f,0f,0f,-0.005819f,0f,0f,-0.002004f,0f,0f,-0.002579f,0f,0f,-0.0143f,0f,0f,-0.03799f,0f,0f,-0.05648f,0f,0f,-0.045f,0f,0f,-0.00928f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0000f,-0.0093f,0.0000f,0.0000f,-0.0039f,0.0000f,0.0000f,-0.0088f,0.0000f,0.0000f,-0.0149f,0.0000f,0.0000f,-0.0264f,0.0000f,0.0000f,-0.0393f,0.0000f,0.0000f,-0.0502f,0.0000f,0.0000f,-0.0747f,0.0000f,0.0000f,-0.0273f,0.0000f,0.0000f,-0.0161f,0.0000f,0.0000f,-0.0113f,0.0000f,0.0000f,-0.0058f,0.0000f,0.0000f,-0.0020f,0.0000f,0.0000f,-0.0026f,0.0000f,0.0000f,-0.0143f,0.0000f,0.0000f,-0.0380f,0.0000f,0.0000f,-0.0565f,0.0000f,0.0000f,-0.0450f,0.0000f,0.0000f,-0.0093f,0.0000f});
   }
 }
 protected class MFFloat2 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,1.0000f});
   }
 }
 protected class MFRotation3 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,1f,0f,0f,0f,1f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,1.0000f,0.0000f,0.0000f,0.0000f,1.0000f,0.0000f,0.0000f});
   }
 }
 protected class MFFloat4 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.5f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.5000f,1.0000f});
   }
 }
 protected class MFRotation5 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,-1f,0.1056f,0f,0f,1f,0.09018f,0f,0f,-1f,0.1056f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,0.0000f,-1.0000f,0.1056f,0.0000f,0.0000f,1.0000f,0.0902f,0.0000f,0.0000f,-1.0000f,0.1056f});
   }
 }
 protected class MFFloat6 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.25f,0.375f,0.5f,0.6667f,0.7917f,0.9167f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.2500f,0.3750f,0.5000f,0.6667f,0.7917f,0.9167f,1.0000f});
   }
 }
 protected class MFRotation7 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-0.873f,0.06094f,0.484f,0.2865f,0.9963f,-0.01057f,0.08481f,0.2488f,0.9965f,0.01591f,-0.08222f,0.3836f,-0.7018f,-0.03223f,-0.7117f,0.1289f,-1f,0f,0f,0.5518f,-0.9964f,0.02231f,0.0817f,0.5351f,-0.9809f,0.04912f,0.1881f,0.5204f,-0.873f,0.06094f,0.484f,0.2865f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-0.8730f,0.0609f,0.4840f,0.2865f,0.9963f,-0.0106f,0.0848f,0.2488f,0.9965f,0.0159f,-0.0822f,0.3836f,-0.7018f,-0.0322f,-0.7117f,0.1289f,-1.0000f,0.0000f,0.0000f,0.5518f,-0.9964f,0.0223f,0.0817f,0.5351f,-0.9809f,0.0491f,0.1881f,0.5204f,-0.8730f,0.0609f,0.4840f,0.2865f});
   }
 }
 protected class MFFloat8 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.2083f,0.375f,0.5f,0.6667f,0.7917f,0.9167f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.2083f,0.3750f,0.5000f,0.6667f,0.7917f,0.9167f,1.0000f});
   }
 }
 protected class MFRotation9 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1f,0f,0f,0.3226f,1f,0f,0f,0.1556f,1f,0f,0f,0.08678f,1f,0f,0f,0.8751f,1f,0f,0f,1.131f,1f,0f,0f,0.09961f,1f,0f,0f,0.3942f,1f,0f,0f,0.3226f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1.0000f,0.0000f,0.0000f,0.3226f,1.0000f,0.0000f,0.0000f,0.1556f,1.0000f,0.0000f,0.0000f,0.0868f,1.0000f,0.0000f,0.0000f,0.8751f,1.0000f,0.0000f,0.0000f,1.1310f,1.0000f,0.0000f,0.0000f,0.0996f,1.0000f,0.0000f,0.0000f,0.3942f,1.0000f,0.0000f,0.0000f,0.3226f});
   }
 }
 protected class MFFloat10 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.125f,0.2083f,0.375f,0.6667f,0.9167f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.1250f,0.2083f,0.3750f,0.6667f,0.9167f,1.0000f});
   }
 }
 protected class MFRotation11 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-1f,0f,0f,0.06714f,-1f,0f,0f,0.2152f,-1f,0f,0f,0.3184f,-1f,0f,0f,0.4717f,-1f,0f,0f,0.2912f,1f,0f,0f,0.1222f,-1f,0f,0f,0.06714f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-1.0000f,0.0000f,0.0000f,0.0671f,-1.0000f,0.0000f,0.0000f,0.2152f,-1.0000f,0.0000f,0.0000f,0.3184f,-1.0000f,0.0000f,0.0000f,0.4717f,-1.0000f,0.0000f,0.0000f,0.2912f,1.0000f,0.0000f,0.0000f,0.1222f,-1.0000f,0.0000f,0.0000f,0.0671f});
   }
 }
 protected class MFFloat12 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.5f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.5000f,1.0000f});
   }
 }
 protected class MFRotation13 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1f,0f,0f,0f,1f,0f,0f,-0.2f,1f,0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1.0000f,0.0000f,0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,-0.2000f,1.0000f,0.0000f,0.0000f,0.0000f});
   }
 }
 protected class MFFloat14 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.125f,0.2083f,0.2917f,0.375f,0.5f,0.6667f,0.7917f,0.9167f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.1250f,0.2083f,0.2917f,0.3750f,0.5000f,0.6667f,0.7917f,0.9167f,1.0000f});
   }
 }
 protected class MFRotation15 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-0.5831f,0.03511f,0.8116f,0.1481f,-0.995f,0.02296f,0.09674f,0.4683f,-1f,0.00192f,0.007964f,0.4732f,-0.998f,-0.0158f,-0.06102f,0.5079f,-0.9911f,-0.03541f,-0.1286f,0.5419f,-0.9131f,-0.06243f,-0.403f,0.3361f,-0.4306f,-0.07962f,-0.899f,0.07038f,1f,0f,0f,0.2571f,0.9891f,-0.02805f,0.1444f,0.3879f,-0.5831f,0.03511f,0.8116f,0.1481f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-0.5831f,0.0351f,0.8116f,0.1481f,-0.9950f,0.0230f,0.0967f,0.4683f,-1.0000f,0.0019f,0.0080f,0.4732f,-0.9980f,-0.0158f,-0.0610f,0.5079f,-0.9911f,-0.0354f,-0.1286f,0.5419f,-0.9131f,-0.0624f,-0.4030f,0.3361f,-0.4306f,-0.0796f,-0.8990f,0.0704f,1.0000f,0.0000f,0.0000f,0.2571f,0.9891f,-0.0280f,0.1444f,0.3879f,-0.5831f,0.0351f,0.8116f,0.1481f});
   }
 }
 protected class MFFloat16 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.125f,0.2083f,0.2917f,0.375f,0.5f,0.6667f,0.7917f,0.9167f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.1250f,0.2083f,0.2917f,0.3750f,0.5000f,0.6667f,0.7917f,0.9167f,1.0000f});
   }
 }
 protected class MFRotation17 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1f,0f,0f,0.8573f,1f,0f,0f,0.8926f,1f,0f,0f,0.5351f,1f,0f,0f,0.1756f,1f,0f,0f,0.1194f,1f,0f,0f,0.3153f,1f,-1.176e-8f,-4.971e-9f,0.09354f,1f,0f,0f,0.08558f,1f,0f,0f,0.2475f,1f,0f,0f,0.8573f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1.0000f,0.0000f,0.0000f,0.8573f,1.0000f,0.0000f,0.0000f,0.8926f,1.0000f,0.0000f,0.0000f,0.5351f,1.0000f,0.0000f,0.0000f,0.1756f,1.0000f,0.0000f,0.0000f,0.1194f,1.0000f,0.0000f,0.0000f,0.3153f,1.0000f,-0.0000f,-0.0000f,0.0935f,1.0000f,0.0000f,0.0000f,0.0856f,1.0000f,0.0000f,0.0000f,0.2475f,1.0000f,0.0000f,0.0000f,0.8573f});
   }
 }
 protected class MFFloat18 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.125f,0.2083f,0.375f,0.4583f,0.5f,0.6667f,0.75f,0.7917f,0.9167f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.1250f,0.2083f,0.3750f,0.4583f,0.5000f,0.6667f,0.7500f,0.7917f,0.9167f,1.0000f});
   }
 }
 protected class MFRotation19 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,0f,1f,0f,-1f,0f,0f,0.3533f,-1f,0f,0f,0.1072f,1f,0f,0f,0.2612f,1f,-1.641e-7f,1.827e-8f,0.1268f,-1f,0f,0f,0.01793f,-1f,0f,0f,0.05824f,-1f,0f,0f,0.2398f,-1f,0f,0f,0.35f,-1f,0f,0f,0.3322f,0f,0f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,0.0000f,1.0000f,0.0000f,-1.0000f,0.0000f,0.0000f,0.3533f,-1.0000f,0.0000f,0.0000f,0.1072f,1.0000f,0.0000f,0.0000f,0.2612f,1.0000f,-0.0000f,0.0000f,0.1268f,-1.0000f,0.0000f,0.0000f,0.0179f,-1.0000f,0.0000f,0.0000f,0.0582f,-1.0000f,0.0000f,0.0000f,0.2398f,-1.0000f,0.0000f,0.0000f,0.3500f,-1.0000f,0.0000f,0.0000f,0.3322f,0.0000f,0.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFFloat20 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.5f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.5000f,1.0000f});
   }
 }
 protected class MFRotation21 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1f,0f,0f,-0.2f,1f,0f,0f,0f,1f,0f,0f,-0.2f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1.0000f,0.0000f,0.0000f,-0.2000f,1.0000f,0.0000f,0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,-0.2000f});
   }
 }
 protected class MFFloat22 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.2083f,0.375f,0.75f,0.8333f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.2083f,0.3750f,0.7500f,0.8333f,1.0000f});
   }
 }
 protected class MFRotation23 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,1f,0f,0.0826f,-0.01972f,-0.5974f,0.8017f,0.08231f,0.009296f,-0.9648f,0.2627f,0.1734f,-0.01238f,0.9549f,-0.2968f,0.08732f,-0.008125f,0.9691f,-0.2463f,0.158f,0f,1f,0f,0.0826f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,1.0000f,0.0000f,0.0826f,-0.0197f,-0.5974f,0.8017f,0.0823f,0.0093f,-0.9648f,0.2627f,0.1734f,-0.0124f,0.9549f,-0.2968f,0.0873f,-0.0081f,0.9691f,-0.2463f,0.1580f,0.0000f,1.0000f,0.0000f,0.0826f});
   }
 }
 protected class MFFloat24 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.375f,0.4167f,0.5f,0.5833f,0.6667f,0.75f,0.8333f,0.9167f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.3750f,0.4167f,0.5000f,0.5833f,0.6667f,0.7500f,0.8333f,0.9167f,1.0000f});
   }
 }
 protected class MFRotation25 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0f,-1f,0f,0.08642f,0f,1f,0f,0.1825f,0f,1f,0f,0.1505f,0f,1f,0f,0.1053f,0f,1f,0f,0.04391f,0f,-1f,0f,0.03119f,0f,-1f,0f,0.07936f,0f,-1f,0f,0.1616f,0f,-1f,0f,0.155f,0f,-1f,0f,0.08642f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,-1.0000f,0.0000f,0.0864f,0.0000f,1.0000f,0.0000f,0.1825f,0.0000f,1.0000f,0.0000f,0.1505f,0.0000f,1.0000f,0.0000f,0.1053f,0.0000f,1.0000f,0.0000f,0.0439f,0.0000f,-1.0000f,0.0000f,0.0312f,0.0000f,-1.0000f,0.0000f,0.0794f,0.0000f,-1.0000f,0.0000f,0.1616f,0.0000f,-1.0000f,0.0000f,0.1550f,0.0000f,-1.0000f,0.0000f,0.0864f});
   }
 }
 protected class MFFloat26 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.375f,0.9167f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.3750f,0.9167f,1.0000f});
   }
 }
 protected class MFRotation27 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1f,0f,0f,0.1189f,-1f,-5.928e-7f,1.525e-7f,0.1861f,1f,-2.038e-7f,-1.257e-7f,0.3357f,1f,0f,0f,0.1189f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {1.0000f,0.0000f,0.0000f,0.1189f,-1.0000f,-0.0000f,0.0000f,0.1861f,1.0000f,-0.0000f,-0.0000f,0.3357f,1.0000f,0.0000f,0.0000f,0.1189f});
   }
 }
 protected class MFFloat28 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.375f,0.9167f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.3750f,0.9167f,1.0000f});
   }
 }
 protected class MFRotation29 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-1f,-1.58298e-7f,8.15967e-8f,0.0659878f,-1f,-3.28826e-8f,-2.31665e-8f,0.488383f,-1f,0.00000306462f,-0.00000311947f,0.0177536f,-1f,-1.58298e-7f,8.15967e-8f,0.0659878f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-1.0000f,-0.0000f,0.0000f,0.0660f,-1.0000f,-0.0000f,-0.0000f,0.4884f,-1.0000f,0.0000f,-0.0000f,0.0178f,-1.0000f,-0.0000f,0.0000f,0.0660f});
   }
 }
 protected class MFFloat30 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.375f,0.9167f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.3750f,0.9167f,1.0000f});
   }
 }
 protected class MFRotation31 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.00000151276f,-1f,0.0000017724f,0.461076f,-0.330195f,-0.927451f,0.175516f,0.538852f,0.0327774f,-0.999314f,-0.0172185f,0.492033f,0.00000151276f,-1f,0.0000017724f,0.461076f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {0.0000f,-1.0000f,0.0000f,0.4611f,-0.3302f,-0.9275f,0.1755f,0.5389f,0.0328f,-0.9993f,-0.0172f,0.4920f,0.0000f,-1.0000f,0.0000f,0.4611f});
   }
 }
 protected class MFFloat32 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.375f,0.9167f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.3750f,0.9167f,1.0000f});
   }
 }
 protected class MFRotation33 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-1f,-7.689e-7f,-1.48e-7f,0.09346f,1f,5.004e-8f,2.254e-8f,0.3197f,-1f,-1.104e-7f,5.267e-10f,0.1564f,-1f,-7.689e-7f,-1.48e-7f,0.09346f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-1.0000f,-0.0000f,-0.0000f,0.0935f,1.0000f,0.0000f,0.0000f,0.3197f,-1.0000f,-0.0000f,0.0000f,0.1564f,-1.0000f,-0.0000f,-0.0000f,0.0935f});
   }
 }
 protected class MFFloat34 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.375f,0.9167f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.3750f,0.9167f,1.0000f});
   }
 }
 protected class MFRotation35 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-1f,-4.45619e-8f,2.70318e-8f,0.411508f,-1f,8.16742e-7f,-1.09556e-7f,0.0925011f,-1f,-2.47628e-8f,-7.02862e-9f,0.572568f,-1f,-4.45619e-8f,2.70318e-8f,0.411508f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-1.0000f,-0.0000f,0.0000f,0.4115f,-1.0000f,0.0000f,-0.0000f,0.0925f,-1.0000f,-0.0000f,-0.0000f,0.5726f,-1.0000f,-0.0000f,0.0000f,0.4115f});
   }
 }
 protected class MFFloat36 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.375f,0.9167f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.3750f,0.9167f,1.0000f});
   }
 }
 protected class MFRotation37 {
   protected org.web3d.x3d.jsail.fields.MFRotation getArray() {
-    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-0.8129f,0.4759f,-0.3357f,0.1346f,0.1533f,-0.9878f,0.02582f,0.3902f,-0.5701f,0.7604f,-0.311f,0.366f,-0.8129f,0.4759f,-0.3357f,0.1346f});
+    return new org.web3d.x3d.jsail.fields.MFRotation(new float[] {-0.8129f,0.4759f,-0.3357f,0.1346f,0.1533f,-0.9878f,0.0258f,0.3902f,-0.5701f,0.7604f,-0.3110f,0.3660f,-0.8129f,0.4759f,-0.3357f,0.1346f});
   }
 }
 protected class MFString38 {

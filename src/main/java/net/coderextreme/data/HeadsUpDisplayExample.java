@@ -80,7 +80,7 @@ ProtoInstance0
           .addFieldValue(new fieldValue().setName("children")
             .addChild(new Shape()
               .setGeometry(new Text().setString(new MFString5().getArray())
-                .setFontStyle(new FontStyle().setJustify(new MFString6().getArray()).setSize(0.3f)))
+                .setFontStyle(new FontStyle().setJustify(new MFString6().getArray()).setSize(0.3000f)))
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {0.894118f,0.819608f,1f})))));
     return X3D0;
@@ -92,22 +92,22 @@ protected class MFString0 {
 }
 protected class MFFloat1 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.05f,1.52f,1.56f,1.5707f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0500f,1.5200f,1.5600f,1.5707f});
   }
 }
 protected class MFColor2 {
   protected org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.2f,0.2f,0f,0.3f,0.3f,0f,0.5f,0.5f,0.3f,0.1f,0.3f,0.4f,0f,0.2f,0.4f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.2000f,0.2000f,0.0000f,0.3000f,0.3000f,0.0000f,0.5000f,0.5000f,0.3000f,0.1000f,0.3000f,0.4000f,0.0000f,0.2000f,0.4000f});
   }
 }
 protected class MFFloat3 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.04f,0.05f,0.1f,1.309f,1.57f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0400f,0.0500f,0.1000f,1.3090f,1.5700f});
   }
 }
 protected class MFColor4 {
   protected org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.8f,0.8f,0.2f,0.8f,0.8f,0.2f,0.1f,0.1f,0.6f,0.1f,0.1f,0.6f,0.1f,0.25f,0.8f,0.6f,0.6f,0.9f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.8000f,0.8000f,0.2000f,0.8000f,0.8000f,0.2000f,0.1000f,0.1000f,0.6000f,0.1000f,0.1000f,0.6000f,0.1000f,0.2500f,0.8000f,0.6000f,0.6000f,0.9000f});
   }
 }
 protected class MFString5 {
