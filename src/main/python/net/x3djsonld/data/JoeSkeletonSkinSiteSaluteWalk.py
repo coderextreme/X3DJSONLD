@@ -31,7 +31,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     meta(content='Joe D. Williams',name='creator'),
     meta(content='9 January 2004',name='created'),
     meta(content='4 December 2022',name='translated'),
-    meta(content='2 January 2023',name='modified'),
+    meta(content='27 January 2023',name='modified'),
     meta(content='Under development, numerous errors and warnings',name='warning'),
     meta(content='This is an HAnimV1 loa model, might need to convert to X3D4 to note loa value',name='TODO'),
     meta(content='Provide feedback to tovrmlx3d converter',name='TODO'),
@@ -66,7 +66,7 @@ newModel=X3D(profile='Immersive',version='4.0',
     Background(groundAngle=[1.57],groundColor=[(0,0.1,0),(0,0.1,0)],skyColor=[(0,0,0.1)]),
     Transform(DEF='cordsysfloor',scale=(0.175,0.175,0.175),
       children=[
-      Inline(DEF='CoordinateAxes',url=["../data/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","../../../Savage/Tools/Authoring/CoordinateAxes.x3d","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","../../../Savage/Tools/Authoring/CoordinateAxes.wrl","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"])]),
+      Inline(DEF='CoordinateAxes',url=["../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","../../../Savage/Tools/Authoring/CoordinateAxes.x3d","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","../../../Savage/Tools/Authoring/CoordinateAxes.wrl","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"])]),
     #  Authoring hint: these axes are aligned within local coordinate system 
     Group(DEF='ViewpointGroup',
       children=[
@@ -1312,370 +1312,370 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                     Shape(USE='jointbox')]),
                                                                   HAnimSite(DEF='Joe_l_pinky_distal_tip',name='l_pinky_distal_tip',translation=(0.20139999687671661,0.70090001821517944,-0.10119999945163727),
                                                                     children=[
-                                                                    Shape(USE='sitebox')])])])])])])])])])])])]),
-                                            HAnimJoint(DEF='Joe_r_sternoclavicular',center=(-0.029999999329447746,1.4600000381469727,0),name='r_sternoclavicular',skinCoordIndex=[10],skinCoordWeight=[1],ulimit=[0,0,0],llimit=[0,0,0],
-                                              children=[
-                                              HAnimSegment(DEF='Joe_r_clavicle',name='r_clavicle',
+                                                                    Shape(USE='sitebox')])])])])])])])])])])]),
+                                              HAnimJoint(DEF='Joe_r_sternoclavicular',center=(-0.029999999329447746,1.4600000381469727,0),name='r_sternoclavicular',skinCoordIndex=[10],skinCoordWeight=[1],ulimit=[0,0,0],llimit=[0,0,0],
                                                 children=[
-                                                Shape(
-                                                  geometry=IndexedLineSet(coordIndex=[0,1,-1],
-                                                    coord=Coordinate(point=[(-0.029999999329447746,1.4600000381469727,0.019999999552965164),(-0.090000003576278687,1.4099999666213989,-0.090000003576278687)])),
-                                                  appearance=Appearance(USE='SegmentLine')),
-                                                Transform(translation=(-0.029999999329447746,1.4600000381469727,0.019999999552965164),
-                                                  children=[
-                                                  Shape(USE='jointbox')]),
-                                                HAnimSite(DEF='Joe_r_clavicale',name='r_clavicale',translation=(-0.029999999329447746,1.4600000381469727,0.035000000149011612),
-                                                  children=[
-                                                  Shape(USE='sitebox')])]),
-                                              HAnimJoint(DEF='Joe_r_acromioclavicular',center=(-0.090000003576278687,1.4099999666213989,-0.10999999940395355),name='r_acromioclavicular',skinCoordIndex=[77,29],skinCoordWeight=[1,0.89999997615814209],ulimit=[0,0,0],llimit=[0,0,0],
-                                                children=[
-                                                HAnimSegment(DEF='Joe_r_scapula',name='r_scapula',
+                                                HAnimSegment(DEF='Joe_r_clavicle',name='r_clavicle',
                                                   children=[
                                                   Shape(
                                                     geometry=IndexedLineSet(coordIndex=[0,1,-1],
-                                                      coord=Coordinate(point=[(-0.090000003576278687,1.4099999666213989,-0.090000003576278687),(-0.20000000298023224,1.440000057220459,-0.039999999105930328)])),
+                                                      coord=Coordinate(point=[(-0.029999999329447746,1.4600000381469727,0.019999999552965164),(-0.090000003576278687,1.4099999666213989,-0.090000003576278687)])),
                                                     appearance=Appearance(USE='SegmentLine')),
-                                                  Transform(translation=(-0.090000003576278687,1.4099999666213989,-0.090000003576278687),
+                                                  Transform(translation=(-0.029999999329447746,1.4600000381469727,0.019999999552965164),
                                                     children=[
                                                     Shape(USE='jointbox')]),
-                                                  Transform(translation=(-0.10999999940395355,1.4270000457763672,-0.13750000298023224),
-                                                    children=[
-                                                    Shape(USE='skinsphere')]),
-                                                  HAnimSite(DEF='Joe_r_acromion',name='r_acromion',translation=(-0.17800000309944153,1.4824999570846558,-0.0625),
-                                                    children=[
-                                                    Shape(USE='sitebox')]),
-                                                  HAnimSite(DEF='Joe_r_axilla_ant',name='r_axilla_ant',translation=(-0.17000000178813934,1.3799999952316284,0.0070000002160668373),
-                                                    children=[
-                                                    Shape(USE='sitebox')]),
-                                                  HAnimSite(DEF='Joe_r_axilla_post',name='r_axilla_post',translation=(-0.15999999642372131,1.3799999952316284,-0.12700000405311584),
+                                                  HAnimSite(DEF='Joe_r_clavicale',name='r_clavicale',translation=(-0.029999999329447746,1.4600000381469727,0.035000000149011612),
                                                     children=[
                                                     Shape(USE='sitebox')])]),
-                                                HAnimJoint(DEF='Joe_r_shoulder',center=(-0.20000000298023224,1.440000057220459,-0.039999999105930328),name='r_shoulder',skinCoordIndex=[29,30,32,78,218,219,220,221,86,88],skinCoordWeight=[0.10000000149011612,1,1,1,1,1,1,1,0.30000001192092896,0.20000000298023224],ulimit=[0,0,0],llimit=[0,0,0],
+                                                HAnimJoint(DEF='Joe_r_acromioclavicular',center=(-0.090000003576278687,1.4099999666213989,-0.10999999940395355),name='r_acromioclavicular',skinCoordIndex=[77,29],skinCoordWeight=[1,0.89999997615814209],ulimit=[0,0,0],llimit=[0,0,0],
                                                   children=[
-                                                  HAnimSegment(DEF='Joe_r_upperarm',name='r_upperarm',
+                                                  HAnimSegment(DEF='Joe_r_scapula',name='r_scapula',
                                                     children=[
-                                                    Transform(translation=(-0.20000000298023224,1.440000057220459,-0.039999999105930328),
-                                                      children=[
-                                                      Shape(USE='jointbox')]),
                                                     Shape(
                                                       geometry=IndexedLineSet(coordIndex=[0,1,-1],
-                                                        coord=Coordinate(point=[(-0.20000000298023224,1.440000057220459,-0.039999999105930328),(-0.20000000298023224,1.1388000249862671,-0.039999999105930328)])),
+                                                        coord=Coordinate(point=[(-0.090000003576278687,1.4099999666213989,-0.090000003576278687),(-0.20000000298023224,1.440000057220459,-0.039999999105930328)])),
                                                       appearance=Appearance(USE='SegmentLine')),
-                                                    Transform(translation=(-0.17800000309944153,1.4824999570846558,-0.0625),
+                                                    Transform(translation=(-0.090000003576278687,1.4099999666213989,-0.090000003576278687),
+                                                      children=[
+                                                      Shape(USE='jointbox')]),
+                                                    Transform(translation=(-0.10999999940395355,1.4270000457763672,-0.13750000298023224),
                                                       children=[
                                                       Shape(USE='skinsphere')]),
-                                                    Transform(translation=(-0.17000000178813934,1.3799999952316284,0.0070000002160668373),
-                                                      children=[
-                                                      Shape(USE='skinsphere')]),
-                                                    Transform(translation=(-0.15999999642372131,1.3799999952316284,-0.12700000405311584),
-                                                      children=[
-                                                      Shape(USE='skinsphere')]),
-                                                    Transform(translation=(-0.23499999940395355,1.4199999570846558,-0.0625),
-                                                      children=[
-                                                      Shape(USE='skinsphere')]),
-                                                    Transform(translation=(-0.23000000417232513,1.2350000143051147,-0.039999999105930328),
-                                                      children=[
-                                                      Shape(USE='skinsphere')]),
-                                                    Transform(translation=(-0.15999999642372131,1.2300000190734863,-0.039999999105930328),
-                                                      children=[
-                                                      Shape(USE='skinsphere')]),
-                                                    Transform(translation=(-0.20000000298023224,1.2300000190734863,-0.10499999672174454),
-                                                      children=[
-                                                      Shape(USE='skinsphere')]),
-                                                    Transform(translation=(-0.20000000298023224,1.2350000143051147,0.019999999552965164),
-                                                      children=[
-                                                      Shape(USE='skinsphere')]),
-                                                    HAnimSite(DEF='Joe_r_humeral_medial_epicn',name='r_humeral_medial_epicn',translation=(-0.16500000655651093,1.1388000249862671,-0.039999999105930328),
+                                                    HAnimSite(DEF='Joe_r_acromion',name='r_acromion',translation=(-0.17800000309944153,1.4824999570846558,-0.0625),
                                                       children=[
                                                       Shape(USE='sitebox')]),
-                                                    HAnimSite(DEF='Joe_r_radiale',name='r_radiale',translation=(-0.23000000417232513,1.1330000162124634,-0.054999999701976776),
+                                                    HAnimSite(DEF='Joe_r_axilla_ant',name='r_axilla_ant',translation=(-0.17000000178813934,1.3799999952316284,0.0070000002160668373),
                                                       children=[
                                                       Shape(USE='sitebox')]),
-                                                    HAnimSite(DEF='Joe_r_humeral_lateral_epicn',name='r_humeral_lateral_epicn',translation=(-0.24400000274181366,1.1388000249862671,-0.039999999105930328),
+                                                    HAnimSite(DEF='Joe_r_axilla_post',name='r_axilla_post',translation=(-0.15999999642372131,1.3799999952316284,-0.12700000405311584),
                                                       children=[
                                                       Shape(USE='sitebox')])]),
-                                                  HAnimJoint(DEF='Joe_r_elbow',center=(-0.20000000298023224,1.1388000249862671,-0.039999999105930328),name='r_elbow',skinCoordIndex=[33,34,35,225,226,227,228,229,231,232,233,234],skinCoordWeight=[1,1,1,1,1,1,1,1,1,1,1,1],ulimit=[0,0,0],llimit=[0,0,0],
+                                                  HAnimJoint(DEF='Joe_r_shoulder',center=(-0.20000000298023224,1.440000057220459,-0.039999999105930328),name='r_shoulder',skinCoordIndex=[29,30,32,78,218,219,220,221,86,88],skinCoordWeight=[0.10000000149011612,1,1,1,1,1,1,1,0.30000001192092896,0.20000000298023224],ulimit=[0,0,0],llimit=[0,0,0],
                                                     children=[
-                                                    HAnimSegment(DEF='Joe_r_forearm',name='r_forearm',
+                                                    HAnimSegment(DEF='Joe_r_upperarm',name='r_upperarm',
                                                       children=[
-                                                      Shape(
-                                                        geometry=IndexedLineSet(coordIndex=[0,1,-1],
-                                                          coord=Coordinate(point=[(-0.20000000298023224,1.1388000249862671,-0.039999999105930328),(-0.20000000298023224,0.88999998569488525,-0.039999999105930328)])),
-                                                        appearance=Appearance(USE='SegmentLine')),
-                                                      Transform(translation=(-0.20000000298023224,1.1388000249862671,-0.039999999105930328),
+                                                      Transform(translation=(-0.20000000298023224,1.440000057220459,-0.039999999105930328),
                                                         children=[
                                                         Shape(USE='jointbox')]),
-                                                      Transform(translation=(-0.20000000298023224,1.1388000249862671,0.013000000268220901),
+                                                      Shape(
+                                                        geometry=IndexedLineSet(coordIndex=[0,1,-1],
+                                                          coord=Coordinate(point=[(-0.20000000298023224,1.440000057220459,-0.039999999105930328),(-0.20000000298023224,1.1388000249862671,-0.039999999105930328)])),
+                                                        appearance=Appearance(USE='SegmentLine')),
+                                                      Transform(translation=(-0.17800000309944153,1.4824999570846558,-0.0625),
                                                         children=[
                                                         Shape(USE='skinsphere')]),
-                                                      Transform(translation=(-0.22499999403953552,1,-0.0099999997764825821),
+                                                      Transform(translation=(-0.17000000178813934,1.3799999952316284,0.0070000002160668373),
                                                         children=[
                                                         Shape(USE='skinsphere')]),
-                                                      Transform(translation=(-0.22499999403953552,1,-0.070000000298023224),
+                                                      Transform(translation=(-0.15999999642372131,1.3799999952316284,-0.12700000405311584),
                                                         children=[
                                                         Shape(USE='skinsphere')]),
-                                                      Transform(translation=(-0.18500000238418579,1,-0.0099999997764825821),
+                                                      Transform(translation=(-0.23499999940395355,1.4199999570846558,-0.0625),
                                                         children=[
                                                         Shape(USE='skinsphere')]),
-                                                      Transform(translation=(-0.18500000238418579,1,-0.070000000298023224),
+                                                      Transform(translation=(-0.23000000417232513,1.2350000143051147,-0.039999999105930328),
                                                         children=[
                                                         Shape(USE='skinsphere')]),
-                                                      HAnimSite(DEF='Joe_r_radial_styloid',name='r_radial_styloid',translation=(-0.20000000298023224,0.89999997615814209,-0.014999999664723873),
+                                                      Transform(translation=(-0.15999999642372131,1.2300000190734863,-0.039999999105930328),
+                                                        children=[
+                                                        Shape(USE='skinsphere')]),
+                                                      Transform(translation=(-0.20000000298023224,1.2300000190734863,-0.10499999672174454),
+                                                        children=[
+                                                        Shape(USE='skinsphere')]),
+                                                      Transform(translation=(-0.20000000298023224,1.2350000143051147,0.019999999552965164),
+                                                        children=[
+                                                        Shape(USE='skinsphere')]),
+                                                      HAnimSite(DEF='Joe_r_humeral_medial_epicn',name='r_humeral_medial_epicn',translation=(-0.16500000655651093,1.1388000249862671,-0.039999999105930328),
                                                         children=[
                                                         Shape(USE='sitebox')]),
-                                                      HAnimSite(DEF='Joe_r_olecranon',name='r_olecranon',translation=(-0.20000000298023224,1.1388000249862671,-0.079999998211860657),
+                                                      HAnimSite(DEF='Joe_r_radiale',name='r_radiale',translation=(-0.23000000417232513,1.1330000162124634,-0.054999999701976776),
+                                                        children=[
+                                                        Shape(USE='sitebox')]),
+                                                      HAnimSite(DEF='Joe_r_humeral_lateral_epicn',name='r_humeral_lateral_epicn',translation=(-0.24400000274181366,1.1388000249862671,-0.039999999105930328),
                                                         children=[
                                                         Shape(USE='sitebox')])]),
-                                                    HAnimJoint(DEF='Joe_r_wrist',center=(-0.20000000298023224,0.88999998569488525,-0.039999999105930328),name='r_wrist',skinCoordIndex=[235,236,237,238,239,240,241,242],skinCoordWeight=[1,1,1,1,1,1,1,1],ulimit=[0,0,0],llimit=[0,0,0],
+                                                    HAnimJoint(DEF='Joe_r_elbow',center=(-0.20000000298023224,1.1388000249862671,-0.039999999105930328),name='r_elbow',skinCoordIndex=[33,34,35,225,226,227,228,229,231,232,233,234],skinCoordWeight=[1,1,1,1,1,1,1,1,1,1,1,1],ulimit=[0,0,0],llimit=[0,0,0],
                                                       children=[
-                                                      HAnimSegment(DEF='Joe_r_hand',name='r_hand',
+                                                      HAnimSegment(DEF='Joe_r_forearm',name='r_forearm',
                                                         children=[
                                                         Shape(
-                                                          geometry=IndexedLineSet(coordIndex=[0,1,-1,0,2,-1,0,3,-1,0,4,-1,0,5,-1],
-                                                            coord=Coordinate(point=[(-0.20000000298023224,0.88999998569488525,-0.039999999105930328),(-0.20000000298023224,0.85000002384185791,0),(-0.20000000298023224,0.8399999737739563,-0.014999999664723873),(-0.20000000298023224,0.83499997854232788,-0.039999999105930328),(-0.20000000298023224,0.83499997854232788,-0.064999997615814209),(-0.20000000298023224,0.8399999737739563,-0.085000000894069672)])),
+                                                          geometry=IndexedLineSet(coordIndex=[0,1,-1],
+                                                            coord=Coordinate(point=[(-0.20000000298023224,1.1388000249862671,-0.039999999105930328),(-0.20000000298023224,0.88999998569488525,-0.039999999105930328)])),
                                                           appearance=Appearance(USE='SegmentLine')),
-                                                        Transform(translation=(-0.20000000298023224,0.88999998569488525,-0.039999999105930328),
+                                                        Transform(translation=(-0.20000000298023224,1.1388000249862671,-0.039999999105930328),
                                                           children=[
                                                           Shape(USE='jointbox')]),
-                                                        HAnimSite(DEF='Joe_r_ulnar_styloid',name='r_ulnar_styloid',translation=(-0.20000000298023224,0.89999997615814209,-0.085000000894069672),
+                                                        Transform(translation=(-0.20000000298023224,1.1388000249862671,0.013000000268220901),
+                                                          children=[
+                                                          Shape(USE='skinsphere')]),
+                                                        Transform(translation=(-0.22499999403953552,1,-0.0099999997764825821),
+                                                          children=[
+                                                          Shape(USE='skinsphere')]),
+                                                        Transform(translation=(-0.22499999403953552,1,-0.070000000298023224),
+                                                          children=[
+                                                          Shape(USE='skinsphere')]),
+                                                        Transform(translation=(-0.18500000238418579,1,-0.0099999997764825821),
+                                                          children=[
+                                                          Shape(USE='skinsphere')]),
+                                                        Transform(translation=(-0.18500000238418579,1,-0.070000000298023224),
+                                                          children=[
+                                                          Shape(USE='skinsphere')]),
+                                                        HAnimSite(DEF='Joe_r_radial_styloid',name='r_radial_styloid',translation=(-0.20000000298023224,0.89999997615814209,-0.014999999664723873),
+                                                          children=[
+                                                          Shape(USE='sitebox')]),
+                                                        HAnimSite(DEF='Joe_r_olecranon',name='r_olecranon',translation=(-0.20000000298023224,1.1388000249862671,-0.079999998211860657),
                                                           children=[
                                                           Shape(USE='sitebox')])]),
-                                                      HAnimJoint(DEF='Joe_r_thumb1',center=(-0.20000000298023224,0.85000002384185791,0),name='r_thumb1',skinCoordIndex=[243,244],skinCoordWeight=[1,1],ulimit=[0,0,0],llimit=[0,0,0],
+                                                      HAnimJoint(DEF='Joe_r_wrist',center=(-0.20000000298023224,0.88999998569488525,-0.039999999105930328),name='r_wrist',skinCoordIndex=[235,236,237,238,239,240,241,242],skinCoordWeight=[1,1,1,1,1,1,1,1],ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
-                                                        HAnimSegment(DEF='Joe_r_thumb_metacarpal',name='r_thumb_metacarpal',
+                                                        HAnimSegment(DEF='Joe_r_hand',name='r_hand',
                                                           children=[
                                                           Shape(
-                                                            geometry=IndexedLineSet(coordIndex=[0,1,-1],
-                                                              coord=Coordinate(point=[(-0.20000000298023224,0.85000002384185791,0),(-0.20000000298023224,0.81999999284744263,0.029999999329447746)])),
+                                                            geometry=IndexedLineSet(coordIndex=[0,1,-1,0,2,-1,0,3,-1,0,4,-1,0,5,-1],
+                                                              coord=Coordinate(point=[(-0.20000000298023224,0.88999998569488525,-0.039999999105930328),(-0.20000000298023224,0.85000002384185791,0),(-0.20000000298023224,0.8399999737739563,-0.014999999664723873),(-0.20000000298023224,0.83499997854232788,-0.039999999105930328),(-0.20000000298023224,0.83499997854232788,-0.064999997615814209),(-0.20000000298023224,0.8399999737739563,-0.085000000894069672)])),
                                                             appearance=Appearance(USE='SegmentLine')),
-                                                          Transform(translation=(-0.20000000298023224,0.85000002384185791,0),
-                                                            children=[
-                                                            Shape(USE='jointbox')])]),
-                                                        HAnimJoint(DEF='Joe_r_thumb2',center=(-0.20000000298023224,0.81999999284744263,0.029999999329447746),name='r_thumb2',skinCoordIndex=[254,255,256,257,258,259],skinCoordWeight=[0.5,0.5,0.5,1,1,1],ulimit=[0,0,0],llimit=[0,0,0],
-                                                          children=[
-                                                          HAnimSegment(DEF='Joe_r_thumb_proximal',name='r_thumb_proximal',
-                                                            children=[
-                                                            Shape(
-                                                              geometry=IndexedLineSet(coordIndex=[0,1,-1],
-                                                                coord=Coordinate(point=[(-0.20000000298023224,0.81999999284744263,0.029999999329447746),(-0.20000000298023224,0.80000001192092896,0.05000000074505806)])),
-                                                              appearance=Appearance(USE='SegmentLine')),
-                                                            Transform(translation=(-0.20000000298023224,0.81999999284744263,0.029999999329447746),
-                                                              children=[
-                                                              Shape(USE='jointbox')])]),
-                                                          HAnimJoint(DEF='Joe_r_thumb3',center=(-0.20000000298023224,0.80000001192092896,0.05000000074505806),name='r_thumb3',skinCoordIndex=[260,261,262,263,264,265,266,267,268],skinCoordWeight=[1,1,1,1,1,1,1,1,1],ulimit=[0,0,0],llimit=[0,0,0],
-                                                            children=[
-                                                            HAnimSegment(DEF='Joe_r_thumb_distal',name='r_thumb_distal',
-                                                              children=[
-                                                              Shape(
-                                                                geometry=IndexedLineSet(coordIndex=[0,1,-1],
-                                                                  coord=Coordinate(point=[(-0.20000000298023224,0.80000001192092896,0.05000000074505806),(-0.20000000298023224,0.77999997138977051,0.070000000298023224)])),
-                                                                appearance=Appearance(USE='SegmentLine')),
-                                                              Transform(DEF='Thumbnail',translation=(-0.20000000298023224,0.7850000262260437,0.075000002980232239),
-                                                                children=[
-                                                                Shape(USE='skinsphere')]),
-                                                              Transform(translation=(-0.20000000298023224,0.80000001192092896,0.05000000074505806),
-                                                                children=[
-                                                                Shape(USE='jointbox')]),
-                                                              HAnimSite(DEF='Joe_r_thumb_distal_tip',name='r_thumb_distal_tip',translation=(-0.20000000298023224,0.77999997138977051,0.070000000298023224),
-                                                                children=[
-                                                                Shape(USE='sitebox')])])])])]),
-                                                      HAnimJoint(DEF='Joe_r_index0',center=(-0.20000000298023224,0.8399999737739563,-0.014999999664723873),name='r_index0',skinCoordIndex=[245,246],skinCoordWeight=[1,1],ulimit=[0,0,0],llimit=[0,0,0],
-                                                        children=[
-                                                        HAnimSegment(DEF='Joe_r_index_metacarpal',name='r_index_metacarpal',
-                                                          children=[
-                                                          Shape(
-                                                            geometry=IndexedLineSet(coordIndex=[0,1,-1],
-                                                              coord=Coordinate(point=[(-0.20000000298023224,0.8399999737739563,-0.014999999664723873),(-0.20000000298023224,0.7929999828338623,-0.014999999664723873)])),
-                                                            appearance=Appearance(USE='SegmentLine')),
-                                                          Transform(translation=(-0.20000000298023224,0.8399999737739563,-0.014999999664723873),
+                                                          Transform(translation=(-0.20000000298023224,0.88999998569488525,-0.039999999105930328),
                                                             children=[
                                                             Shape(USE='jointbox')]),
-                                                          HAnimSite(DEF='Joe_r_metacarpal_pha2',name='r_metacarpal_pha2',translation=(-0.20000000298023224,0.7929999828338623,-0.004999999888241291),
+                                                          HAnimSite(DEF='Joe_r_ulnar_styloid',name='r_ulnar_styloid',translation=(-0.20000000298023224,0.89999997615814209,-0.085000000894069672),
                                                             children=[
                                                             Shape(USE='sitebox')])]),
-                                                        HAnimJoint(DEF='Joe_r_index1',center=(-0.20000000298023224,0.7929999828338623,-0.014999999664723873),name='r_index1',skinCoordIndex=[254,255,256,269,270,271,279],skinCoordWeight=[0.5,0.5,0.5,1,1,1,0.5],ulimit=[0,0,0],llimit=[0,0,0],
+                                                        HAnimJoint(DEF='Joe_r_thumb1',center=(-0.20000000298023224,0.85000002384185791,0),name='r_thumb1',skinCoordIndex=[243,244],skinCoordWeight=[1,1],ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
-                                                          HAnimSegment(DEF='Joe_r_index_proximal',name='r_index_proximal',
+                                                          HAnimSegment(DEF='Joe_r_thumb_metacarpal',name='r_thumb_metacarpal',
                                                             children=[
                                                             Shape(
                                                               geometry=IndexedLineSet(coordIndex=[0,1,-1],
-                                                                coord=Coordinate(point=[(-0.20000000298023224,0.7929999828338623,-0.014999999664723873),(-0.20000000298023224,0.74500000476837158,-0.014999999664723873)])),
+                                                                coord=Coordinate(point=[(-0.20000000298023224,0.85000002384185791,0),(-0.20000000298023224,0.81999999284744263,0.029999999329447746)])),
                                                               appearance=Appearance(USE='SegmentLine')),
-                                                            Transform(translation=(-0.20000000298023224,0.7929999828338623,-0.014999999664723873),
+                                                            Transform(translation=(-0.20000000298023224,0.85000002384185791,0),
                                                               children=[
                                                               Shape(USE='jointbox')])]),
-                                                          HAnimJoint(DEF='Joe_r_index2',center=(-0.20000000298023224,0.74500000476837158,-0.014999999664723873),name='r_index2',skinCoordIndex=[282,283,284,285],skinCoordWeight=[1,1,1,1],ulimit=[0,0,0],llimit=[0,0,0],
+                                                          HAnimJoint(DEF='Joe_r_thumb2',center=(-0.20000000298023224,0.81999999284744263,0.029999999329447746),name='r_thumb2',skinCoordIndex=[254,255,256,257,258,259],skinCoordWeight=[0.5,0.5,0.5,1,1,1],ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
-                                                            HAnimSegment(DEF='Joe_r_index_middle',name='r_index_middle',
+                                                            HAnimSegment(DEF='Joe_r_thumb_proximal',name='r_thumb_proximal',
                                                               children=[
                                                               Shape(
                                                                 geometry=IndexedLineSet(coordIndex=[0,1,-1],
-                                                                  coord=Coordinate(point=[(-0.20000000298023224,0.74500000476837158,-0.014999999664723873),(-0.20000000298023224,0.72000002861022949,-0.014999999664723873)])),
+                                                                  coord=Coordinate(point=[(-0.20000000298023224,0.81999999284744263,0.029999999329447746),(-0.20000000298023224,0.80000001192092896,0.05000000074505806)])),
                                                                 appearance=Appearance(USE='SegmentLine')),
-                                                              Transform(translation=(-0.20000000298023224,0.74500000476837158,-0.014999999664723873),
+                                                              Transform(translation=(-0.20000000298023224,0.81999999284744263,0.029999999329447746),
                                                                 children=[
                                                                 Shape(USE='jointbox')])]),
-                                                            HAnimJoint(DEF='Joe_r_index3',center=(-0.20000000298023224,0.72000002861022949,-0.014999999664723873),name='r_index3',skinCoordIndex=[286,287,288,289,290,291,292,293,294],skinCoordWeight=[1,1,1,1,1,1,1,1,1],ulimit=[0,0,0],llimit=[0,0,0],
+                                                            HAnimJoint(DEF='Joe_r_thumb3',center=(-0.20000000298023224,0.80000001192092896,0.05000000074505806),name='r_thumb3',skinCoordIndex=[260,261,262,263,264,265,266,267,268],skinCoordWeight=[1,1,1,1,1,1,1,1,1],ulimit=[0,0,0],llimit=[0,0,0],
                                                               children=[
-                                                              HAnimSegment(DEF='Joe_r_index_distal',name='r_index_distal',
+                                                              HAnimSegment(DEF='Joe_r_thumb_distal',name='r_thumb_distal',
                                                                 children=[
                                                                 Shape(
                                                                   geometry=IndexedLineSet(coordIndex=[0,1,-1],
-                                                                    coord=Coordinate(point=[(-0.20000000298023224,0.72000002861022949,-0.014999999664723873),(-0.20000000298023224,0.69499999284744263,-0.014999999664723873)])),
+                                                                    coord=Coordinate(point=[(-0.20000000298023224,0.80000001192092896,0.05000000074505806),(-0.20000000298023224,0.77999997138977051,0.070000000298023224)])),
                                                                   appearance=Appearance(USE='SegmentLine')),
-                                                                Transform(translation=(-0.20000000298023224,0.72000002861022949,-0.014999999664723873),
+                                                                Transform(DEF='Thumbnail',translation=(-0.20000000298023224,0.7850000262260437,0.075000002980232239),
+                                                                  children=[
+                                                                  Shape(USE='skinsphere')]),
+                                                                Transform(translation=(-0.20000000298023224,0.80000001192092896,0.05000000074505806),
                                                                   children=[
                                                                   Shape(USE='jointbox')]),
-                                                                HAnimSite(DEF='Joe_r_index_distal_tip',name='r_index_distal_tip',translation=(-0.20000000298023224,0.69499999284744263,-0.014999999664723873),
+                                                                HAnimSite(DEF='Joe_r_thumb_distal_tip',name='r_thumb_distal_tip',translation=(-0.20000000298023224,0.77999997138977051,0.070000000298023224),
                                                                   children=[
-                                                                  Shape(USE='sitebox')])])])])])]),
-                                                      HAnimJoint(DEF='Joe_r_middle0',center=(-0.20000000298023224,0.83499997854232788,-0.039999999105930328),name='r_middle0',skinCoordIndex=[247,248],skinCoordWeight=[1,1],ulimit=[0,0,0],llimit=[0,0,0],
-                                                        children=[
-                                                        HAnimSegment(DEF='Joe_r_middle_metacarpal',name='r_middle_metacarpal',
+                                                                  Shape(USE='sitebox')])])])])]),
+                                                        HAnimJoint(DEF='Joe_r_index0',center=(-0.20000000298023224,0.8399999737739563,-0.014999999664723873),name='r_index0',skinCoordIndex=[245,246],skinCoordWeight=[1,1],ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
-                                                          Shape(
-                                                            geometry=IndexedLineSet(coordIndex=[0,1,-1],
-                                                              coord=Coordinate(point=[(-0.20000000298023224,0.83499997854232788,-0.039999999105930328),(-0.20000000298023224,0.78799998760223389,-0.039999999105930328)])),
-                                                            appearance=Appearance(USE='SegmentLine')),
-                                                          Transform(translation=(-0.20000000298023224,0.83499997854232788,-0.039999999105930328),
-                                                            children=[
-                                                            Shape(USE='jointbox')])]),
-                                                        HAnimJoint(DEF='Joe_r_middle1',center=(-0.20000000298023224,0.78799998760223389,-0.039999999105930328),name='r_middle1',skinCoordIndex=[272,273,279,280],skinCoordWeight=[1,1,0.5,0.5],ulimit=[0,0,0],llimit=[0,0,0],
-                                                          children=[
-                                                          HAnimSegment(DEF='Joe_r_middle_proximal',name='r_middle_proximal',
+                                                          HAnimSegment(DEF='Joe_r_index_metacarpal',name='r_index_metacarpal',
                                                             children=[
                                                             Shape(
                                                               geometry=IndexedLineSet(coordIndex=[0,1,-1],
-                                                                coord=Coordinate(point=[(-0.20000000298023224,0.78799998760223389,-0.039999999105930328),(-0.20000000298023224,0.74000000953674316,-0.039999999105930328)])),
+                                                                coord=Coordinate(point=[(-0.20000000298023224,0.8399999737739563,-0.014999999664723873),(-0.20000000298023224,0.7929999828338623,-0.014999999664723873)])),
                                                               appearance=Appearance(USE='SegmentLine')),
-                                                            Transform(translation=(-0.20000000298023224,0.78799998760223389,-0.039999999105930328),
+                                                            Transform(translation=(-0.20000000298023224,0.8399999737739563,-0.014999999664723873),
                                                               children=[
-                                                              Shape(USE='jointbox')])]),
-                                                          HAnimJoint(DEF='Joe_r_middle2',center=(-0.20000000298023224,0.74000000953674316,-0.039999999105930328),name='r_middle2',skinCoordIndex=[295,296,297,298],skinCoordWeight=[1,1,1,1],ulimit=[0,0,0],llimit=[0,0,0],
+                                                              Shape(USE='jointbox')]),
+                                                            HAnimSite(DEF='Joe_r_metacarpal_pha2',name='r_metacarpal_pha2',translation=(-0.20000000298023224,0.7929999828338623,-0.004999999888241291),
+                                                              children=[
+                                                              Shape(USE='sitebox')])]),
+                                                          HAnimJoint(DEF='Joe_r_index1',center=(-0.20000000298023224,0.7929999828338623,-0.014999999664723873),name='r_index1',skinCoordIndex=[254,255,256,269,270,271,279],skinCoordWeight=[0.5,0.5,0.5,1,1,1,0.5],ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
-                                                            HAnimSegment(DEF='Joe_r_middle_middle',name='r_middle_middle',
+                                                            HAnimSegment(DEF='Joe_r_index_proximal',name='r_index_proximal',
                                                               children=[
                                                               Shape(
                                                                 geometry=IndexedLineSet(coordIndex=[0,1,-1],
-                                                                  coord=Coordinate(point=[(-0.20000000298023224,0.74000000953674316,-0.039999999105930328),(-0.20000000298023224,0.71420001983642578,-0.039999999105930328)])),
+                                                                  coord=Coordinate(point=[(-0.20000000298023224,0.7929999828338623,-0.014999999664723873),(-0.20000000298023224,0.74500000476837158,-0.014999999664723873)])),
                                                                 appearance=Appearance(USE='SegmentLine')),
-                                                              Transform(translation=(-0.20000000298023224,0.74000000953674316,-0.039999999105930328),
+                                                              Transform(translation=(-0.20000000298023224,0.7929999828338623,-0.014999999664723873),
                                                                 children=[
                                                                 Shape(USE='jointbox')])]),
-                                                            HAnimJoint(DEF='Joe_r_middle3',center=(-0.20000000298023224,0.71420001983642578,-0.039999999105930328),name='r_middle3',skinCoordIndex=[299,300,301,302,303,304,305,306,307],skinCoordWeight=[1,1,1,1,1,1,1,1,1],ulimit=[0,0,0],llimit=[0,0,0],
+                                                            HAnimJoint(DEF='Joe_r_index2',center=(-0.20000000298023224,0.74500000476837158,-0.014999999664723873),name='r_index2',skinCoordIndex=[282,283,284,285],skinCoordWeight=[1,1,1,1],ulimit=[0,0,0],llimit=[0,0,0],
                                                               children=[
-                                                              HAnimSegment(DEF='Joe_r_middle_distal',name='r_middle_distal',
+                                                              HAnimSegment(DEF='Joe_r_index_middle',name='r_index_middle',
                                                                 children=[
                                                                 Shape(
                                                                   geometry=IndexedLineSet(coordIndex=[0,1,-1],
-                                                                    coord=Coordinate(point=[(-0.20000000298023224,0.71420001983642578,-0.039999999105930328),(-0.20000000298023224,0.67580002546310425,-0.039999999105930328)])),
+                                                                    coord=Coordinate(point=[(-0.20000000298023224,0.74500000476837158,-0.014999999664723873),(-0.20000000298023224,0.72000002861022949,-0.014999999664723873)])),
                                                                   appearance=Appearance(USE='SegmentLine')),
-                                                                Transform(translation=(-0.20000000298023224,0.71420001983642578,-0.039999999105930328),
+                                                                Transform(translation=(-0.20000000298023224,0.74500000476837158,-0.014999999664723873),
                                                                   children=[
-                                                                  Shape(USE='jointbox')]),
-                                                                HAnimSite(DEF='Joe_r_dactylion',name='r_dactylion',translation=(-0.20000000298023224,0.68000000715255737,-0.039999999105930328),
+                                                                  Shape(USE='jointbox')])]),
+                                                              HAnimJoint(DEF='Joe_r_index3',center=(-0.20000000298023224,0.72000002861022949,-0.014999999664723873),name='r_index3',skinCoordIndex=[286,287,288,289,290,291,292,293,294],skinCoordWeight=[1,1,1,1,1,1,1,1,1],ulimit=[0,0,0],llimit=[0,0,0],
+                                                                children=[
+                                                                HAnimSegment(DEF='Joe_r_index_distal',name='r_index_distal',
                                                                   children=[
-                                                                  Shape(USE='sitebox')]),
-                                                                HAnimSite(DEF='Joe_r_middle_distal_tip',name='r_middle_distal_tip',translation=(-0.20000000298023224,0.68000000715255737,-0.039999999105930328),
-                                                                  children=[
-                                                                  Shape(USE='sitebox')])])])])])]),
-                                                      HAnimJoint(DEF='Joe_r_ring0',center=(-0.2,0.835,-0.065),name='r_ring0',skinCoordIndex=[249,250],skinCoordWeight=[1,1],ulimit=[0,0,0],llimit=[0,0,0],
-                                                        children=[
-                                                        HAnimSegment(DEF='Joe_r_ring_metacarpal',name='r_ring_metacarpal',
+                                                                  Shape(
+                                                                    geometry=IndexedLineSet(coordIndex=[0,1,-1],
+                                                                      coord=Coordinate(point=[(-0.20000000298023224,0.72000002861022949,-0.014999999664723873),(-0.20000000298023224,0.69499999284744263,-0.014999999664723873)])),
+                                                                    appearance=Appearance(USE='SegmentLine')),
+                                                                  Transform(translation=(-0.20000000298023224,0.72000002861022949,-0.014999999664723873),
+                                                                    children=[
+                                                                    Shape(USE='jointbox')]),
+                                                                  HAnimSite(DEF='Joe_r_index_distal_tip',name='r_index_distal_tip',translation=(-0.20000000298023224,0.69499999284744263,-0.014999999664723873),
+                                                                    children=[
+                                                                    Shape(USE='sitebox')])])])])])]),
+                                                        HAnimJoint(DEF='Joe_r_middle0',center=(-0.20000000298023224,0.83499997854232788,-0.039999999105930328),name='r_middle0',skinCoordIndex=[247,248],skinCoordWeight=[1,1],ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
-                                                          Shape(
-                                                            geometry=IndexedLineSet(coordIndex=[0,1,-1],
-                                                              coord=Coordinate(point=[(-0.20000000298023224,0.83499997854232788,-0.064999997615814209),(-0.20000000298023224,0.7929999828338623,-0.064999997615814209)])),
-                                                            appearance=Appearance(USE='SegmentLine')),
-                                                          Transform(translation=(-0.20000000298023224,0.83499997854232788,-0.064999997615814209),
-                                                            children=[
-                                                            Shape(USE='jointbox')])]),
-                                                        HAnimJoint(DEF='Joe_r_ring1',center=(-0.20000000298023224,0.7929999828338623,-0.064999997615814209),name='r_ring1',skinCoordIndex=[274,275,280,281],skinCoordWeight=[1,1,0.5,0.5],ulimit=[0,0,0],llimit=[0,0,0],
-                                                          children=[
-                                                          HAnimSegment(DEF='Joe_r_ring_proximal',name='r_ring_proximal',
+                                                          HAnimSegment(DEF='Joe_r_middle_metacarpal',name='r_middle_metacarpal',
                                                             children=[
                                                             Shape(
                                                               geometry=IndexedLineSet(coordIndex=[0,1,-1],
-                                                                coord=Coordinate(point=[(-0.20000000298023224,0.7929999828338623,-0.064999997615814209),(-0.20000000298023224,0.74000000953674316,-0.064999997615814209)])),
+                                                                coord=Coordinate(point=[(-0.20000000298023224,0.83499997854232788,-0.039999999105930328),(-0.20000000298023224,0.78799998760223389,-0.039999999105930328)])),
                                                               appearance=Appearance(USE='SegmentLine')),
-                                                            Transform(translation=(-0.20000000298023224,0.7929999828338623,-0.064999997615814209),
+                                                            Transform(translation=(-0.20000000298023224,0.83499997854232788,-0.039999999105930328),
                                                               children=[
                                                               Shape(USE='jointbox')])]),
-                                                          HAnimJoint(DEF='Joe_r_ring2',center=(-0.20000000298023224,0.74000000953674316,-0.064999997615814209),name='r_ring2',skinCoordIndex=[308,309,310,311],skinCoordWeight=[1,1,1,1],ulimit=[0,0,0],llimit=[0,0,0],
+                                                          HAnimJoint(DEF='Joe_r_middle1',center=(-0.20000000298023224,0.78799998760223389,-0.039999999105930328),name='r_middle1',skinCoordIndex=[272,273,279,280],skinCoordWeight=[1,1,0.5,0.5],ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
-                                                            HAnimSegment(DEF='Joe_r_ring_middle',name='r_ring_middle',
+                                                            HAnimSegment(DEF='Joe_r_middle_proximal',name='r_middle_proximal',
                                                               children=[
                                                               Shape(
                                                                 geometry=IndexedLineSet(coordIndex=[0,1,-1],
-                                                                  coord=Coordinate(point=[(-0.20000000298023224,0.74000000953674316,-0.064999997615814209),(-0.20000000298023224,0.71770000457763672,-0.064999997615814209)])),
+                                                                  coord=Coordinate(point=[(-0.20000000298023224,0.78799998760223389,-0.039999999105930328),(-0.20000000298023224,0.74000000953674316,-0.039999999105930328)])),
                                                                 appearance=Appearance(USE='SegmentLine')),
-                                                              Transform(translation=(-0.20000000298023224,0.74000000953674316,-0.064999997615814209),
+                                                              Transform(translation=(-0.20000000298023224,0.78799998760223389,-0.039999999105930328),
                                                                 children=[
                                                                 Shape(USE='jointbox')])]),
-                                                            HAnimJoint(DEF='Joe_r_ring3',center=(-0.20000000298023224,0.71770000457763672,-0.064999997615814209),name='r_ring3',skinCoordIndex=[312,313,314,315,316,317,318,319,320],skinCoordWeight=[1,1,1,1,1,1,1,1,1],ulimit=[0,0,0],llimit=[0,0,0],
+                                                            HAnimJoint(DEF='Joe_r_middle2',center=(-0.20000000298023224,0.74000000953674316,-0.039999999105930328),name='r_middle2',skinCoordIndex=[295,296,297,298],skinCoordWeight=[1,1,1,1],ulimit=[0,0,0],llimit=[0,0,0],
                                                               children=[
-                                                              HAnimSegment(DEF='Joe_r_ring_distal',name='r_ring_distal',
+                                                              HAnimSegment(DEF='Joe_r_middle_middle',name='r_middle_middle',
                                                                 children=[
                                                                 Shape(
                                                                   geometry=IndexedLineSet(coordIndex=[0,1,-1],
-                                                                    coord=Coordinate(point=[(-0.20000000298023224,0.71770000457763672,-0.064999997615814209),(-0.20000000298023224,0.69499999284744263,-0.064999997615814209)])),
+                                                                    coord=Coordinate(point=[(-0.20000000298023224,0.74000000953674316,-0.039999999105930328),(-0.20000000298023224,0.71420001983642578,-0.039999999105930328)])),
                                                                   appearance=Appearance(USE='SegmentLine')),
-                                                                Transform(translation=(-0.20000000298023224,0.71770000457763672,-0.064999997615814209),
+                                                                Transform(translation=(-0.20000000298023224,0.74000000953674316,-0.039999999105930328),
                                                                   children=[
-                                                                  Shape(USE='jointbox')]),
-                                                                HAnimSite(DEF='Joe_r_ring_distal_tip',name='r_ring_distal_tip',translation=(-0.20000000298023224,0.69499999284744263,-0.064999997615814209),
+                                                                  Shape(USE='jointbox')])]),
+                                                              HAnimJoint(DEF='Joe_r_middle3',center=(-0.20000000298023224,0.71420001983642578,-0.039999999105930328),name='r_middle3',skinCoordIndex=[299,300,301,302,303,304,305,306,307],skinCoordWeight=[1,1,1,1,1,1,1,1,1],ulimit=[0,0,0],llimit=[0,0,0],
+                                                                children=[
+                                                                HAnimSegment(DEF='Joe_r_middle_distal',name='r_middle_distal',
                                                                   children=[
-                                                                  Shape(USE='sitebox')])])])])])]),
-                                                      HAnimJoint(DEF='Joe_r_pinky0',center=(-0.20000000298023224,0.8399999737739563,-0.085000000894069672),name='r_pinky0',skinCoordIndex=[251,252,253,281],skinCoordWeight=[1,1,1,0.5],ulimit=[0,0,0],llimit=[0,0,0],
-                                                        children=[
-                                                        HAnimSegment(DEF='Joe_r_pinky_metacarpal',name='r_pinky_metacarpal',
+                                                                  Shape(
+                                                                    geometry=IndexedLineSet(coordIndex=[0,1,-1],
+                                                                      coord=Coordinate(point=[(-0.20000000298023224,0.71420001983642578,-0.039999999105930328),(-0.20000000298023224,0.67580002546310425,-0.039999999105930328)])),
+                                                                    appearance=Appearance(USE='SegmentLine')),
+                                                                  Transform(translation=(-0.20000000298023224,0.71420001983642578,-0.039999999105930328),
+                                                                    children=[
+                                                                    Shape(USE='jointbox')]),
+                                                                  HAnimSite(DEF='Joe_r_dactylion',name='r_dactylion',translation=(-0.20000000298023224,0.68000000715255737,-0.039999999105930328),
+                                                                    children=[
+                                                                    Shape(USE='sitebox')]),
+                                                                  HAnimSite(DEF='Joe_r_middle_distal_tip',name='r_middle_distal_tip',translation=(-0.20000000298023224,0.68000000715255737,-0.039999999105930328),
+                                                                    children=[
+                                                                    Shape(USE='sitebox')])])])])])]),
+                                                        HAnimJoint(DEF='Joe_r_ring0',center=(-0.2,0.835,-0.065),name='r_ring0',skinCoordIndex=[249,250],skinCoordWeight=[1,1],ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
-                                                          Shape(
-                                                            geometry=IndexedLineSet(coordIndex=[0,1,-1],
-                                                              coord=Coordinate(point=[(-0.20000000298023224,0.8399999737739563,-0.085000000894069672),(-0.20000000298023224,0.79000002145767212,-0.085000000894069672)])),
-                                                            appearance=Appearance(USE='SegmentLine')),
-                                                          Transform(translation=(-0.20000000298023224,0.8399999737739563,-0.085000000894069672),
-                                                            children=[
-                                                            Shape(USE='jointbox')]),
-                                                          HAnimSite(DEF='Joe_r_metacarpal_pha5',name='r_metacarpal_pha5',translation=(-0.20000000298023224,0.79000002145767212,-0.094999998807907104),
-                                                            children=[
-                                                            Shape(USE='sitebox')])]),
-                                                        HAnimJoint(DEF='Joe_r_pinky1',center=(-0.20000000298023224,0.79000002145767212,-0.085000000894069672),name='r_pinky1',skinCoordIndex=[276,277,278],skinCoordWeight=[1,1,1],ulimit=[0,0,0],llimit=[0,0,0],
-                                                          children=[
-                                                          HAnimSegment(DEF='Joe_r_pinky_proximal',name='r_pinky_proximal',
+                                                          HAnimSegment(DEF='Joe_r_ring_metacarpal',name='r_ring_metacarpal',
                                                             children=[
                                                             Shape(
                                                               geometry=IndexedLineSet(coordIndex=[0,1,-1],
-                                                                coord=Coordinate(point=[(-0.20000000298023224,0.79000002145767212,-0.085000000894069672),(-0.20000000298023224,0.75499999523162842,-0.085000000894069672)])),
+                                                                coord=Coordinate(point=[(-0.20000000298023224,0.83499997854232788,-0.064999997615814209),(-0.20000000298023224,0.7929999828338623,-0.064999997615814209)])),
                                                               appearance=Appearance(USE='SegmentLine')),
-                                                            Transform(translation=(-0.20000000298023224,0.79000002145767212,-0.085000000894069672),
+                                                            Transform(translation=(-0.20000000298023224,0.83499997854232788,-0.064999997615814209),
                                                               children=[
                                                               Shape(USE='jointbox')])]),
-                                                          HAnimJoint(DEF='Joe_r_pinky2',center=(-0.20000000298023224,0.75499999523162842,-0.085000000894069672),name='r_pinky2',skinCoordIndex=[321,322,323,324],skinCoordWeight=[1,1,1,1],ulimit=[0,0,0],llimit=[0,0,0],
+                                                          HAnimJoint(DEF='Joe_r_ring1',center=(-0.20000000298023224,0.7929999828338623,-0.064999997615814209),name='r_ring1',skinCoordIndex=[274,275,280,281],skinCoordWeight=[1,1,0.5,0.5],ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
-                                                            HAnimSegment(DEF='Joe_r_pinky_middle',name='r_pinky_middle',
+                                                            HAnimSegment(DEF='Joe_r_ring_proximal',name='r_ring_proximal',
                                                               children=[
                                                               Shape(
                                                                 geometry=IndexedLineSet(coordIndex=[0,1,-1],
-                                                                  coord=Coordinate(point=[(-0.20000000298023224,0.75499999523162842,-0.085000000894069672),(-0.20000000298023224,0.73500001430511475,-0.085000000894069672)])),
+                                                                  coord=Coordinate(point=[(-0.20000000298023224,0.7929999828338623,-0.064999997615814209),(-0.20000000298023224,0.74000000953674316,-0.064999997615814209)])),
                                                                 appearance=Appearance(USE='SegmentLine')),
-                                                              Transform(translation=(-0.20000000298023224,0.75499999523162842,-0.085000000894069672),
+                                                              Transform(translation=(-0.20000000298023224,0.7929999828338623,-0.064999997615814209),
                                                                 children=[
                                                                 Shape(USE='jointbox')])]),
-                                                            HAnimJoint(DEF='Joe_r_pinky3',center=(-0.20000000298023224,0.73500001430511475,-0.090000003576278687),name='r_pinky3',skinCoordIndex=[325,326,327,328,329,330,331,332,333],skinCoordWeight=[1,1,1,1,1,1,1,1,1],ulimit=[0,0,0],llimit=[0,0,0],
+                                                            HAnimJoint(DEF='Joe_r_ring2',center=(-0.20000000298023224,0.74000000953674316,-0.064999997615814209),name='r_ring2',skinCoordIndex=[308,309,310,311],skinCoordWeight=[1,1,1,1],ulimit=[0,0,0],llimit=[0,0,0],
                                                               children=[
-                                                              HAnimSegment(DEF='Joe_r_pinky_distal',name='r_pinky_distal',
+                                                              HAnimSegment(DEF='Joe_r_ring_middle',name='r_ring_middle',
                                                                 children=[
                                                                 Shape(
                                                                   geometry=IndexedLineSet(coordIndex=[0,1,-1],
-                                                                    coord=Coordinate(point=[(-0.20000000298023224,0.73500001430511475,-0.085000000894069672),(-0.20000000298023224,0.72000002861022949,-0.085000000894069672)])),
+                                                                    coord=Coordinate(point=[(-0.20000000298023224,0.74000000953674316,-0.064999997615814209),(-0.20000000298023224,0.71770000457763672,-0.064999997615814209)])),
                                                                   appearance=Appearance(USE='SegmentLine')),
-                                                                Transform(translation=(-0.20000000298023224,0.73500001430511475,-0.085000000894069672),
+                                                                Transform(translation=(-0.20000000298023224,0.74000000953674316,-0.064999997615814209),
                                                                   children=[
-                                                                  Shape(USE='jointbox')]),
-                                                                HAnimSite(DEF='Joe_r_pinky_distal_tip',name='r_pinky_distal_tip',translation=(-0.20000000298023224,0.72000002861022949,-0.085000000894069672),
+                                                                  Shape(USE='jointbox')])]),
+                                                              HAnimJoint(DEF='Joe_r_ring3',center=(-0.20000000298023224,0.71770000457763672,-0.064999997615814209),name='r_ring3',skinCoordIndex=[312,313,314,315,316,317,318,319,320],skinCoordWeight=[1,1,1,1,1,1,1,1,1],ulimit=[0,0,0],llimit=[0,0,0],
+                                                                children=[
+                                                                HAnimSegment(DEF='Joe_r_ring_distal',name='r_ring_distal',
                                                                   children=[
-                                                                  Shape(USE='sitebox')])])])])])])])])])])])])])])])])])])])])])])])])])])])]),
+                                                                  Shape(
+                                                                    geometry=IndexedLineSet(coordIndex=[0,1,-1],
+                                                                      coord=Coordinate(point=[(-0.20000000298023224,0.71770000457763672,-0.064999997615814209),(-0.20000000298023224,0.69499999284744263,-0.064999997615814209)])),
+                                                                    appearance=Appearance(USE='SegmentLine')),
+                                                                  Transform(translation=(-0.20000000298023224,0.71770000457763672,-0.064999997615814209),
+                                                                    children=[
+                                                                    Shape(USE='jointbox')]),
+                                                                  HAnimSite(DEF='Joe_r_ring_distal_tip',name='r_ring_distal_tip',translation=(-0.20000000298023224,0.69499999284744263,-0.064999997615814209),
+                                                                    children=[
+                                                                    Shape(USE='sitebox')])])])])])]),
+                                                        HAnimJoint(DEF='Joe_r_pinky0',center=(-0.20000000298023224,0.8399999737739563,-0.085000000894069672),name='r_pinky0',skinCoordIndex=[251,252,253,281],skinCoordWeight=[1,1,1,0.5],ulimit=[0,0,0],llimit=[0,0,0],
+                                                          children=[
+                                                          HAnimSegment(DEF='Joe_r_pinky_metacarpal',name='r_pinky_metacarpal',
+                                                            children=[
+                                                            Shape(
+                                                              geometry=IndexedLineSet(coordIndex=[0,1,-1],
+                                                                coord=Coordinate(point=[(-0.20000000298023224,0.8399999737739563,-0.085000000894069672),(-0.20000000298023224,0.79000002145767212,-0.085000000894069672)])),
+                                                              appearance=Appearance(USE='SegmentLine')),
+                                                            Transform(translation=(-0.20000000298023224,0.8399999737739563,-0.085000000894069672),
+                                                              children=[
+                                                              Shape(USE='jointbox')]),
+                                                            HAnimSite(DEF='Joe_r_metacarpal_pha5',name='r_metacarpal_pha5',translation=(-0.20000000298023224,0.79000002145767212,-0.094999998807907104),
+                                                              children=[
+                                                              Shape(USE='sitebox')])]),
+                                                          HAnimJoint(DEF='Joe_r_pinky1',center=(-0.20000000298023224,0.79000002145767212,-0.085000000894069672),name='r_pinky1',skinCoordIndex=[276,277,278],skinCoordWeight=[1,1,1],ulimit=[0,0,0],llimit=[0,0,0],
+                                                            children=[
+                                                            HAnimSegment(DEF='Joe_r_pinky_proximal',name='r_pinky_proximal',
+                                                              children=[
+                                                              Shape(
+                                                                geometry=IndexedLineSet(coordIndex=[0,1,-1],
+                                                                  coord=Coordinate(point=[(-0.20000000298023224,0.79000002145767212,-0.085000000894069672),(-0.20000000298023224,0.75499999523162842,-0.085000000894069672)])),
+                                                                appearance=Appearance(USE='SegmentLine')),
+                                                              Transform(translation=(-0.20000000298023224,0.79000002145767212,-0.085000000894069672),
+                                                                children=[
+                                                                Shape(USE='jointbox')])]),
+                                                            HAnimJoint(DEF='Joe_r_pinky2',center=(-0.20000000298023224,0.75499999523162842,-0.085000000894069672),name='r_pinky2',skinCoordIndex=[321,322,323,324],skinCoordWeight=[1,1,1,1],ulimit=[0,0,0],llimit=[0,0,0],
+                                                              children=[
+                                                              HAnimSegment(DEF='Joe_r_pinky_middle',name='r_pinky_middle',
+                                                                children=[
+                                                                Shape(
+                                                                  geometry=IndexedLineSet(coordIndex=[0,1,-1],
+                                                                    coord=Coordinate(point=[(-0.20000000298023224,0.75499999523162842,-0.085000000894069672),(-0.20000000298023224,0.73500001430511475,-0.085000000894069672)])),
+                                                                  appearance=Appearance(USE='SegmentLine')),
+                                                                Transform(translation=(-0.20000000298023224,0.75499999523162842,-0.085000000894069672),
+                                                                  children=[
+                                                                  Shape(USE='jointbox')])]),
+                                                              HAnimJoint(DEF='Joe_r_pinky3',center=(-0.20000000298023224,0.73500001430511475,-0.090000003576278687),name='r_pinky3',skinCoordIndex=[325,326,327,328,329,330,331,332,333],skinCoordWeight=[1,1,1,1,1,1,1,1,1],ulimit=[0,0,0],llimit=[0,0,0],
+                                                                children=[
+                                                                HAnimSegment(DEF='Joe_r_pinky_distal',name='r_pinky_distal',
+                                                                  children=[
+                                                                  Shape(
+                                                                    geometry=IndexedLineSet(coordIndex=[0,1,-1],
+                                                                      coord=Coordinate(point=[(-0.20000000298023224,0.73500001430511475,-0.085000000894069672),(-0.20000000298023224,0.72000002861022949,-0.085000000894069672)])),
+                                                                    appearance=Appearance(USE='SegmentLine')),
+                                                                  Transform(translation=(-0.20000000298023224,0.73500001430511475,-0.085000000894069672),
+                                                                    children=[
+                                                                    Shape(USE='jointbox')]),
+                                                                  HAnimSite(DEF='Joe_r_pinky_distal_tip',name='r_pinky_distal_tip',translation=(-0.20000000298023224,0.72000002861022949,-0.085000000894069672),
+                                                                    children=[
+                                                                    Shape(USE='sitebox')])])])])])])])])])])])])])])])])])])])])])])])])])])])])]),
           HAnimJoint(USE='Joe_HumanoidRoot',ulimit=[0,0,0],llimit=[0,0,0])],
           #  <LOD containerField='skin'> (Switch whichChoice='0' and LOD parents each already work in view3dscene) 
           skin=[
@@ -1684,7 +1684,7 @@ newModel=X3D(profile='Immersive',version='4.0',
               coord=Coordinate(DEF='TheSkinCoord',point=[(0,1.77,0),(0,1.665,0.09),(-0.033,1.62,0.087),(0.033,1.62,0.087),(0,1.55,0.097),(-0.077,1.64,-0.01),(-0.0527,1.58,0.015),(0.077,1.64,-0.01),(0.0527,1.58,0.015),(0,1.625,-0.0925),(-0.03,1.46,0.035),(0,1.44,0.03),(0.03,1.46,0.035),(-0.1135,1.318,0.095),(0.1135,1.318,0.095),(0,1.25,0.113),(-0.087,1.19,0.09),(-0.0935,1.03,0.075),(0.087,1.19,0.09),(0.0935,1.03,0.075),(-0.1425,1.065,0.0033),(-0.15,0.9,-0.01),(0.1425,1.065,0.0033),(0.15,0.9,-0.01),(0,1.53,-0.084),(0.0049,1.1908,-0.1113),(-0.0773,1.019,-0.12),(0.0773,1.019,-0.12),(0.005,1.0915,-0.1091),(-0.178,1.4825,-0.0625),(-0.17,1.38,0.007),(-0.1884,0.8676,-0.036),(-0.16,1.38,-0.127),(-0.2,1.1388,-0.08),(-0.244,1.1388,-0.04),(-0.165,1.1388,-0.04),(-0.23,1.133,-0.055),(-0.1977,0.8169,-0.0177),(-0.1941,0.6772,-0.0423),(-0.2117,0.8562,-0.0584),(-0.1929,0.789,-0.1064),(0.175,1.4825,-0.06),(0.17,1.38,0.007),(0.1901,0.8645,-0.0415),(0.16,1.38,-0.125),(0.2,1.1388,-0.08),(0.165,1.1388,-0.04),(0.244,1.1388,-0.04),(0.23,1.133,-0.055),(0.2009,0.8139,-0.0237),(0.2056,0.6743,-0.0482),(0.2142,0.8529,-0.0648),(0.1929,0.786,-0.1122),(-0.1,0.4913,-0.03),(-0.17,0.466,0),(-0.05,0.466,0),(-0.165,0.01,0.12),(-0.15,0.07,0),(-0.085,0.086,0.0125),(-0.09,0.056,0.0125),(-0.115,0.02,0.122),(-0.115,0.04,-0.055),(-0.11,0.011,0.19),(0.0993,0.4881,-0.0309),(0.17,0.466,0),(0.05,0.4867,0),(0.165,0.01,0.12),(0.15,0.07,0),(0.085,0.086,0.0125),(0.09,0.056,0.0125),(0.115,0.02,0.122),(0.115,0.04,-0.055),(0.11,0.011,0.19),(0,0.875,0),(-0.0646,1.5149,-0.038),(0.0646,1.5149,-0.038),(0,1.07225,0.09),(-0.11,1.427,-0.1375),(-0.235,1.42,-0.0625),(0.11,1.427,-0.1375),(0.235,1.42,-0.0625),(0,1.41,-0.145),(0,0.925,0.08),(-0.087,1.19,-0.09),(0.087,1.19,-0.09),(0.172,1.32,-0.03),(-0.172,1.32,-0.03),(0.15,1.23,-0.015),(-0.15,1.23,-0.015),(0.079,0.92,-0.14),(0.1,0.9,0.077),(-0.079,0.92,-0.14),(-0.1,0.9,0.075),(0,0.87,0),(0.171,0.65,0),(0.02,0.65,0),(0.1,0.65,-0.08),(0.1,0.65,0.07),(-0.171,0.65,0),(-0.02,0.65,0),(-0.1,0.65,-0.08),(-0.1,0.65,0.07),(0.25,1.27,-0.04),(0.17,1.27,-0.04),(0.2,1.27,-0.09),(0.2,1.27,0.02),(0.244,1.1388,-0.04),(0.165,1.1388,-0.04),(0.2,1.1388,-0.08),(0.2,1.1388,-0.013),(0.225,1,-0.01),(0.225,1,-0.07),(0.185,1,-0.01),(0.185,1,-0.07),(0.2,1.1388,-0.04),(0.225,0.92,-0.04),(0.175,0.92,-0.04),(0.2,0.92,-0.065),(0.2,0.92,-0.015),(0.225,0.89,-0.04),(0.175,0.89,-0.04),(0.2,0.89,-0.065),(0.2,0.89,-0.015),(0.218,0.86,-0.04),(0.184,0.86,-0.04),(0.2,0.87,-0.07),(0.2,0.87,0),(0.21,0.85,0),(0.1854,0.85,0),(0.212,0.84,-0.015),(0.183,0.84,-0.015),(0.213,0.835,-0.04),(0.19,0.835,-0.04),(0.211,0.835,-0.065),(0.192,0.835,-0.065),(0.208,0.84,-0.085),(0.19,0.84,-0.085),(0.2,0.84,-0.095),(0.215,0.82,0),(0.193,0.815,0.005),(0.198,0.8,0.012),(0.21,0.82,0.03),(0.19,0.82,0.03),(0.2,0.835,0.039),(0.212,0.8,0.05),(0.188,0.8,0.05),(0.2,0.807,0.057),(0.2,0.793,0.035),(0.2,0.774,0.076),(0.212,0.78,0.07),(0.188,0.78,0.07),(0.2,0.785,0.075),(0.2,0.77,0.062),(0.215,0.793,-0.015),(0.187,0.793,-0.015),(0.2,0.793,-0.005),(0.215,0.788,-0.04),(0.187,0.788,-0.04),(0.215,0.793,-0.065),(0.187,0.793,-0.065),(0.21,0.79,-0.085),(0.19,0.79,-0.085),(0.2,0.79,-0.095),(0.19,0.77,-0.0275),(0.19,0.77,-0.0525),(0.19,0.78,-0.0775),(0.212,0.745,-0.015),(0.188,0.745,-0.02),(0.2,0.745,-0.0255),(0.2,0.745,-0.0045),(0.211,0.72,-0.015),(0.189,0.72,-0.015),(0.2,0.72,-0.0252),(0.2,0.72,-0.0048),(0.21,0.695,-0.015),(0.19,0.695,-0.015),(0.2,0.695,-0.025),(0.2,0.695,-0.005),(0.2,0.685,-0.015),(0.215,0.74,-0.04),(0.185,0.74,-0.04),(0.2,0.74,-0.055),(0.2,0.74,-0.025),(0.21,0.7142,-0.04),(0.19,0.7142,-0.04),(0.2,0.7142,-0.053),(0.2,0.7142,-0.027),(0.21,0.68,-0.04),(0.19,0.68,-0.04),(0.2,0.68,-0.05),(0.2,0.68,-0.03),(0.2,0.67,-0.04),(0.212,0.74,-0.065),(0.188,0.74,-0.065),(0.2,0.74,-0.0756),(0.2,0.74,-0.0542),(0.21,0.7177,-0.065),(0.19,0.7177,-0.065),(0.2,0.7177,-0.0751),(0.2,0.7177,-0.0549),(0.21,0.695,-0.065),(0.19,0.695,-0.065),(0.2,0.695,-0.075),(0.2,0.695,-0.055),(0.2,0.685,-0.065),(0.211,0.755,-0.085),(0.189,0.755,-0.085),(0.2,0.755,-0.0952),(0.2,0.755,-0.0748),(0.21,0.735,-0.085),(0.19,0.735,-0.085),(0.2,0.735,-0.0951),(0.2,0.735,-0.0749),(0.21,0.72,-0.085),(0.19,0.72,-0.085),(0.2,0.72,-0.095),(0.2,0.72,-0.075),(0.2,0.71,-0.085),(-0.23,1.23,-0.04),(-0.16,1.23,-0.04),(-0.2,1.235,-0.105),(-0.2,1.235,0.02),(-0.244,1.1388,-0.04),(-0.165,1.1388,-0.04),(-0.2,1.1388,-0.08),(-0.2,1.1388,0.013),(-0.225,1,-0.01),(-0.225,1,-0.07),(-0.185,1,-0.01),(-0.185,1,-0.07),(-0.2,1.1388,-0.04),(-0.225,0.92,-0.04),(-0.175,0.92,-0.04),(-0.2,0.92,-0.065),(-0.2,0.92,-0.015),(-0.225,0.89,-0.04),(-0.175,0.89,-0.04),(-0.2,0.89,-0.065),(-0.2,0.89,-0.015),(-0.218,0.86,-0.04),(-0.184,0.86,-0.04),(-0.2,0.87,-0.07),(-0.2,0.87,0),(-0.21,0.85,0),(-0.1854,0.85,0),(-0.212,0.84,-0.015),(-0.183,0.84,-0.015),(-0.213,0.835,-0.04),(-0.19,0.835,-0.04),(-0.211,0.835,-0.065),(-0.192,0.835,-0.065),(-0.208,0.84,-0.085),(-0.19,0.84,-0.085),(-0.2,0.84,-0.095),(-0.215,0.82,0),(-0.193,0.815,0.005),(-0.198,0.8,0.012),(-0.21,0.82,0.03),(-0.19,0.82,0.03),(-0.2,0.835,0.039),(-0.212,0.8,0.05),(-0.188,0.8,0.05),(-0.2,0.807,0.057),(-0.2,0.793,0.035),(-0.2,0.774,0.076),(-0.212,0.78,0.07),(-0.188,0.78,0.07),(-0.2,0.785,0.075),(-0.2,0.77,0.062),(-0.215,0.793,-0.015),(-0.187,0.793,-0.015),(-0.2,0.793,-0.005),(-0.215,0.788,-0.04),(-0.187,0.788,-0.04),(-0.215,0.793,-0.065),(-0.187,0.793,-0.065),(-0.21,0.79,-0.085),(-0.19,0.79,-0.085),(-0.2,0.79,-0.095),(-0.19,0.77,-0.0275),(-0.19,0.77,-0.0525),(-0.19,0.78,-0.0775),(-0.212,0.745,-0.015),(-0.188,0.745,-0.02),(-0.2,0.745,-0.0255),(-0.2,0.745,-0.0045),(-0.211,0.72,-0.015),(-0.189,0.72,-0.015),(-0.2,0.72,-0.0252),(-0.2,0.72,-0.0048),(-0.21,0.695,-0.015),(-0.19,0.695,-0.015),(-0.2,0.695,-0.025),(-0.2,0.695,-0.005),(-0.2,0.685,-0.015),(-0.215,0.74,-0.04),(-0.185,0.74,-0.04),(-0.2,0.74,-0.055),(-0.2,0.74,-0.025),(-0.21,0.7142,-0.04),(-0.19,0.7142,-0.04),(-0.2,0.7142,-0.053),(-0.2,0.7142,-0.027),(-0.21,0.68,-0.04),(-0.19,0.68,-0.04),(-0.2,0.68,-0.05),(-0.2,0.68,-0.03),(-0.2,0.67,-0.04),(-0.212,0.74,-0.065),(-0.188,0.74,-0.065),(-0.2,0.74,-0.0756),(-0.2,0.74,-0.0542),(-0.21,0.7177,-0.065),(-0.19,0.7177,-0.065),(-0.2,0.7177,-0.0751),(-0.2,0.7177,-0.0549),(-0.21,0.695,-0.065),(-0.19,0.695,-0.065),(-0.2,0.695,-0.075),(-0.2,0.695,-0.055),(-0.2,0.685,-0.065),(-0.211,0.755,-0.085),(-0.189,0.755,-0.085),(-0.2,0.755,-0.0952),(-0.2,0.755,-0.0748),(-0.21,0.735,-0.085),(-0.19,0.735,-0.085),(-0.2,0.735,-0.0951),(-0.2,0.735,-0.0749),(-0.21,0.72,-0.085),(-0.19,0.72,-0.085),(-0.2,0.72,-0.095),(-0.2,0.72,-0.075),(-0.2,0.71,-0.085),(0.115,0.466,0.06),(0.115,0.466,-0.055),(0.15,0.466,0),(0.05,0.466,0),(0.17,0.3,0),(0.06,0.3,0),(0.1,0.3,-0.05),(0.1,0.3,0.05),(0.15,0.07,0),(0.085,0.086,0.0125),(0.115,0.069,-0.045),(0.117,0.0975,0.0615),(0.1375,0.006,-0.03),(0.095,0.006,-0.03),(0.115,0.015,-0.045),(0.115,0.06,0.1),(0.115,0,0.07),(0.165,0,0.07),(0.095,0,0.07),(0.115,0.04,0.13),(0.125,0,0.12),(0.165,0,0.12),(0.087,0,0.122),(0.09,0.012,0.188),(0.11,0.011,0.19),(0.128,0.011,0.185),(0.142,0.011,0.178),(0.154,0.01,0.168),(-0.115,0.466,0.06),(-0.115,0.466,-0.055),(-0.17,0.466,0),(-0.05,0.466,0),(-0.17,0.3,0),(-0.06,0.3,0),(-0.1,0.3,-0.05),(-0.1,0.3,0.05),(-0.15,0.07,0),(-0.085,0.086,0.0125),(-0.115,0.069,-0.045),(-0.117,0.0975,0.0615),(-0.1375,0.006,-0.03),(-0.095,0.006,-0.03),(-0.095,0.006,-0.03),(-0.115,0.06,0.1),(-0.115,0,0.07),(-0.165,0,0.07),(-0.095,0,0.07),(-0.115,0.04,0.13),(-0.125,0,0.12),(-0.165,0,0.12),(-0.087,0,0.122),(-0.09,0.012,0.188),(-0.11,0.011,0.19),(-0.128,0.011,0.185),(-0.142,0.011,0.178),(-0.154,0.01,0.168)]),
               color=Color(color=[(1,0,0),(0,1,1),(0,1,0),(1,1,0),(1,1,0),(1,0,0),(0,1,0),(0,0,1),(0,1,1),(0,1,1),(1,1,0),(1,1,0),(1,1,0),(1,1,0),(0,1,0),(0,0,1),(0,1,0),(1,0,0),(0,1,0),(1,0,1),(1,0,0),(1,0,0),(1,1,0),(1,1,0),(1,1,1),(1,0,0),(0,1,0),(0,1,0),(1,1,0),(0,1,0),(1,1,0),(1,1,1),(0,1,0),(1,1,0),(0,1,0),(1,1,0),(0,1,0),(1,0,0),(0,1,0),(1,1,0),(0,1,0),(1,1,0),(0,0,1),(0,0,1),(0,1,0),(1,1,0),(0,0,1),(1,1,0),(0,1,0),(0,0,1),(1,1,0),(0,1,0),(1,1,0),(0,1,0),(0,0,1),(1,1,0),(0,1,0),(0,1,0),(1,1,0),(0,0,1),(0,1,0),(1,1,0),(0,0,1),(0,1,0),(1,1,0),(0,0,1),(0,1,0),(1,1,0),(0,0,1),(0,0,1),(0,0,1),(0,1,0),(0,0,1),(0,1,0),(1,1,0),(0,0,1),(0,1,0),(1,1,0),(0,0,1),(0,0,1),(0,1,0),(1,1,0),(0,1,0),(1,1,0),(1,1,0),(0,1,0),(1,1,0),(0,0,1),(1,1,0),(0,0,1),(0,0,1),(0,0,1),(1,1,0),(0,1,0),(0,0,1),(1,1,0),(1,1,0),(0,0,1),(0,1,0),(0,0,1),(1,1,0),(0,1,0),(1,1,0),(0,1,0),(1,1,0),(0,0,1),(1,1,0),(0,1,0),(1,1,0),(0,1,0),(1,1,0),(0,0,1),(0,1,0),(1,1,0),(0,1,0),(1,1,0),(1,1,0),(0,1,0),(1,1,0),(1,0,1),(1,1,0),(0,1,0),(0,1,0),(1,1,0),(0,0,1),(1,1,0),(0,1,0),(0,0,1),(0,1,0),(1,1,0),(0,0,1),(0,1,0),(1,1,0),(0,1,0),(1,1,0),(0,0,1),(1,0,1),(1,0,1),(1,0,1),(1,0,1),(0,1,0),(1,0,0),(0,1,0),(1,0,0),(0,1,0),(1,0,0),(0,1,0),(1,0,0),(0,0,1),(0,1,0),(1,0,0),(0,0,1),(0,1,0),(1,0,0),(0,0,1),(0,1,0),(0,1,0),(1,0,0),(1,0,1),(0,1,0),(1,0,0),(0,0,1),(0,1,0),(1,0,0),(0,0,1),(0,1,0),(1,0,0),(0,0,1),(0,1,1),(1,0,0),(0,0,1),(0,1,0),(1,0,0),(0,0,1),(0,1,0),(1,0,0),(0,0,1),(0,1,0),(1,0,0),(1,0,1),(0,1,0),(1,0,0),(0,0,1),(0,1,0),(1,0,0),(0,0,1),(0,1,0),(1,0,0),(0,0,1),(0,1,0),(1,0,1),(0,0,1),(0,1,0),(1,0,0),(0,0,1),(1,0,0),(0,1,0),(0,0,1),(0,1,1),(1,0,0),(0,0,1),(0,1,0),(1,0,0),(0,0,1),(0,1,0),(1,0,0),(0,0,1),(1,1,0),(1,0,0),(0,0,1),(0,1,1),(1,0,0),(1,0,1),(0,1,0),(1,0,0),(1,0,1),(0,1,0),(1,0,0),(0,0,1),(0,1,0),(1,0,0),(1,0,1),(0,0,1),(0,1,0),(1,0,0),(1,0,1),(0,1,0),(0,1,0),(1,0,0),(1,0,1),(0,0,1),(0,1,0),(1,0,0),(1,0,1),(0,0,1),(0,1,0),(1,0,0),(1,0,1),(0,0,1),(0,1,0),(1,0,0),(1,0,1),(0,0,1),(0,1,0),(1,0,0),(1,0,1),(0,0,1),(0,1,0),(1,0,0),(1,0,1),(0,0,1),(0,1,0),(1,0,1),(0,1,0),(1,0,0),(1,0,1),(0,0,1),(0,1,1),(1,0,0),(1,0,1),(0,0,1),(0,1,0),(1,0,0),(1,0,1),(0,0,1),(0,1,0),(1,0,0),(1,0,1),(0,0,1),(0,1,0),(1,0,0),(0,1,0),(0,0,1),(0,1,0),(1,1,0),(1,0,1),(0,0,1),(0,1,0),(1,0,0),(1,0,1),(0,0,1),(0,1,0),(1,0,0),(1,0,1),(0,0,1),(0,1,0),(1,0,0),(1,0,1),(1,1,0),(0,1,0),(1,0,0),(1,0,1),(0,0,1),(0,1,0),(1,0,0),(1,0,1),(1,0,1),(0,1,0),(1,0,0),(0,1,0),(1,0,1),(0,1,0),(1,0,0),(0,0,1),(0,0,1),(0,1,0),(1,0,0),(1,0,1),(0,0,1),(0,1,0),(1,0,1),(0,1,0),(1,0,0),(1,0,1),(0,0,1),(0,1,0),(1,0,0),(1,0,1),(0,0,1),(0,1,0),(1,0,0),(1,0,1),(0,0,1),(0,1,1),(1,0,0),(1,0,1),(1,0,1),(0,1,0),(1,0,0),(1,0,1),(0,0,1),(0,1,0),(1,0,0),(1,0,1),(0,0,1),(0,1,0),(1,0,0),(1,0,1),(0,0,1),(0,1,0),(0,1,0),(1,1,0),(0,1,0),(1,1,0),(1,0,1),(1,1,0),(0,1,0),(1,1,0),(0,0,1),(0,1,0),(1,1,0),(0,0,1),(1,1,0),(0,1,0),(1,1,0),(0,1,0),(0,1,0),(0,0,1),(1,1,0),(0,1,0),(1,1,0),(0,1,0),(0,0,1),(1,1,0),(1,0,1),(1,0,1),(1,0,1),(1,0,1),(0,1,0),(1,0,0),(0,1,0),(1,0,0),(0,1,0),(1,0,0),(0,1,0),(1,0,0),(0,0,1),(0,1,0),(1,0,0),(0,0,1),(0,1,0),(1,0,0),(0,0,1),(0,1,0),(0,1,0),(1,0,0),(1,0,1),(0,1,0),(1,0,0),(0,0,1),(0,1,0),(1,0,0),(0,0,1),(0,1,0),(1,0,0),(0,0,1),(0,1,1),(1,0,0),(0,0,1),(0,1,0),(1,0,0),(0,0,1),(0,1,0),(1,0,0),(0,0,1),(0,1,0),(1,0,0),(1,0,1),(0,1,0),(1,0,0),(0,0,1),(0,1,0),(1,0,0),(0,0,1),(0,1,0),(1,0,0),(0,0,1),(0,1,0),(1,0,1),(0,0,1),(0,1,0),(1,0,0),(0,0,1),(1,0,0),(0,1,0),(0,0,1),(0,1,1),(1,0,0),(0,0,1),(0,1,0),(1,0,0),(0,0,1),(0,1,0),(1,0,0),(0,0,1),(1,1,0),(1,0,0),(0,0,1),(0,1,1),(1,0,0),(1,0,1),(0,1,0),(1,0,0),(1,0,1),(0,1,0),(1,0,0),(0,0,1),(0,1,0),(1,0,0),(1,0,1),(0,0,1),(0,1,0),(1,0,0),(1,0,1),(0,1,0),(0,1,0),(1,0,0),(1,0,1),(0,0,1),(0,1,0),(1,0,0),(1,0,1),(0,0,1),(0,1,0),(1,0,0),(1,0,1),(0,0,1),(0,1,0),(1,0,0),(1,0,1),(0,0,1),(0,1,0),(1,0,0),(1,0,1),(0,0,1),(0,1,0),(1,0,0),(1,0,1),(0,0,1),(0,1,0),(1,0,1),(0,1,0),(1,0,0),(1,0,1),(0,0,1),(0,1,1),(1,0,0),(1,0,1),(0,0,1),(0,1,0),(1,0,0),(1,0,1),(0,0,1),(0,1,0),(1,0,0),(1,0,1),(0,0,1),(0,1,0),(1,0,0),(0,1,0),(0,0,1),(0,1,0),(1,1,0),(1,0,1),(0,0,1),(0,1,0),(1,0,0),(1,0,1),(0,0,1),(0,1,0),(1,0,0),(1,0,1),(0,0,1),(0,1,0),(1,0,0),(1,0,1),(1,1,0),(0,1,0),(1,0,0),(1,0,1),(0,0,1),(0,1,0),(1,0,0),(1,0,1),(1,0,1),(0,1,0),(1,0,0),(0,1,0),(1,0,1),(0,1,0),(1,0,0),(0,0,1),(0,0,1),(0,1,0),(1,0,0),(1,0,1),(0,0,1),(0,1,0),(1,0,1),(0,1,0),(1,0,0),(1,0,1),(0,0,1),(0,1,0),(1,0,0),(1,0,1),(0,0,1),(0,1,0),(1,0,0),(1,0,1),(0,0,1),(0,1,1),(1,0,0),(1,0,1),(1,0,1),(0,1,0),(1,0,0),(1,0,1),(0,0,1),(0,1,0),(1,0,0),(1,0,1),(0,0,1),(0,1,0),(1,0,0),(1,0,1),(0,0,1),(0,1,0),(0,1,0),(1,0,1),(0,1,0),(1,0,1),(1,1,0),(0,0,1),(0,1,0),(0,0,1),(1,1,0),(0,1,0),(1,1,0),(0,1,0),(1,1,0),(0,1,0),(1,1,0),(0,1,0),(0,1,0),(1,1,0),(1,0,1),(0,1,0),(1,1,0),(0,1,0),(1,1,0),(0,0,1),(1,1,0),(0,1,0),(1,1,0),(0,0,1),(0,1,0),(1,1,0),(0,0,1),(1,1,0),(0,1,0),(0,0,1),(1,0,1),(0,1,0),(1,1,0),(0,1,0),(1,1,0),(0,0,1),(0,1,0),(1,1,0),(0,1,0),(1,1,0),(1,0,1),(0,1,0),(0,1,0),(1,1,0),(0,1,0),(1,1,0),(0,1,0),(1,1,0),(1,1,0),(0,1,0),(1,1,0),(0,1,0),(1,1,0),(1,0,1),(0,1,0),(1,0,1),(0,1,0),(1,0,1),(0,1,0),(1,0,1),(0,1,0),(1,0,1),(1,1,0),(0,0,1),(0,1,0),(0,0,1),(1,1,0),(0,1,0),(1,1,0),(0,1,0),(1,1,0),(0,1,0),(1,1,0),(0,1,0),(0,1,0),(1,1,0),(1,0,1),(0,1,0),(1,1,0),(0,1,0),(1,1,0),(0,0,1),(1,1,0),(0,1,0),(1,1,0),(0,0,1),(0,1,0),(1,1,0),(0,0,1),(1,1,0),(0,1,0),(0,0,1),(1,0,1),(0,1,0),(1,1,0),(0,1,0),(1,1,0),(0,0,1),(0,1,0),(1,1,0),(0,1,0),(1,1,0),(1,0,1),(0,1,0),(0,1,0),(1,1,0),(0,1,0),(1,1,0),(0,1,0),(1,1,0),(1,1,0),(0,1,0),(1,1,0),(0,1,0),(1,1,0),(1,0,1),(0,1,0),(1,0,1),(0,1,0),(1,0,1),(1,1,1)])),
             appearance=Appearance(DEF='SkinAppearance',
-              texture=ImageTexture(DEF='zBlueSpiralBkg2',description='Blue Spiral Pattern',url=["../resources/images/zBlueSpiralBkg2.gif","zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"]),
+              texture=ImageTexture(DEF='zBlueSpiralBkg2',description='Blue Spiral Pattern',url=["zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"]),
               material=Material(DEF='SkinMaterial',ambientIntensity=0.6,diffuseColor=(1,1,1),shininess=0.6,transparency=0.2))),],
           #  </LOD> 
           skinCoord=Coordinate(USE='TheSkinCoord'),
