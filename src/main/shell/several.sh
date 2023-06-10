@@ -7,7 +7,7 @@ export PROCESSORS=${PROCESSORS-8}
 
 . ./classpath
 
-# python3 ../python/classes.py
+# py ../python/classes.py
 
 STYLESHEETDIR=../lib/stylesheets
 DATATOJAVA='s/\/data\//\/java\/net\/coderextreme\/data\//' 
@@ -37,7 +37,7 @@ ls -d "$@" | grep -v intermediate | grep -v "\.new" | xargs -P $PROCESSORS java 
 for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.x3d.new/' -e 's/-/_/g' -e $ROOTTOLOCAL -e 's/^\/c/../'`
 do
 	X3D=`dirname $i | sed -e 's/_/-/g' -e $LOCALTOROOT `/`basename $i .x3d.new`.x3d 
-	${NODE} ${NODEDIR}/xmldiff.mjs $X3D $i
+	${NODE} --trace-warnings ${NODEDIR}/xmldiff.mjs $X3D $i
 done
 
 for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.java/' -e 's/-/_/g' -e 's/^\/c/../' -e $EXTOJAVA -e $DATATOJAVA -e $ROOTTOJAVA | xargs ls -d`
@@ -59,13 +59,13 @@ done
 for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.new.json/' -e 's/-/_/g' -e $ROOTTOLOCAL -e 's/^\/c/../'`
 do
 	JSON=`dirname $i | sed -e 's/_/-/g' -e $LOCALTOROOT `/`basename $i .new.json`.json
-	${NODE} ${NODEDIR}/jsondiff.mjs $JSON $i
+	${NODE} --trace-warnings ${NODEDIR}/jsondiff.mjs $JSON $i
 done
 
 for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" |  sed -e 's/\.x3d$/.newPrettyPrint.intermediate.x3d/' -e 's/-/_/g' -e $ROOTTOLOCAL -e 's/^\/c/../'`
 do
 	X3D=`dirname $i | sed -e 's/_/-/g' -e $LOCALTOROOT `/`basename $i .newPrettyPrint.intermediate.x3d`.x3d 
-	${NODE} ${NODEDIR}/xmldiff.mjs $X3D $i
+	${NODE} --trace-warnings ${NODEDIR}/xmldiff.mjs $X3D $i
 done
 
 #for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.mjs/' -e 's/-/_/g' -e 's/^\/c/../' -e $EXTONASH -e $DATATONASH -e $ROOTTONASH | xargs ls -d`
@@ -80,7 +80,7 @@ for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$
 do
 	pushd ../node
 	echo $i
-	${NODE} $i
+	${NODE} --trace-warnings $i
 	popd
 done
 #for i in `ls -d "$@"| grep -v "\.new"`
@@ -95,13 +95,13 @@ for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$
 do
 	PY=`echo $i | sed -e $DATATOPYTHON -e $ROOTTOPYTHON -e 's/.json$/.py/'`
 	X3D=`echo $i | sed -e 's/.json$/.new.x3d/'`
-	echo python ../python/x3djsonld.py $i $PY
-	python ../python/x3djsonld.py $i > $PY && python $PY > $X3D && echo "$PY" "$X3D" || echo "Error: $PY failed to parse"
+	echo py ../python/x3djsonld.py $i $PY
+	py ../python/x3djsonld.py $i > $PY && py $PY > $X3D && echo "$PY" "$X3D" || echo "Error: $PY failed to parse"
 done
 
 for i in `ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d$/.new.x3d/' -e 's/-/_/g' -e $ROOTTOLOCAL -e 's/^\/c/../'`
 do
 	X3D=`dirname $i | sed -e 's/_/-/g' -e $LOCALTOROOT `/`basename $i .new.x3d`.x3d
-	echo ${NODE} ${NODEDIR}/xmldiff.mjs $X3D $i
-	${NODE} ${NODEDIR}/xmldiff.mjs $X3D $i
+	echo ${NODE} --trace-warnings ${NODEDIR}/xmldiff.mjs $X3D $i
+	${NODE} --trace-warnings ${NODEDIR}/xmldiff.mjs $X3D $i
 done

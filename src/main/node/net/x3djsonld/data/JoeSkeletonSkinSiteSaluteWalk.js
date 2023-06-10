@@ -40,7 +40,7 @@ var autoclass = require('./X3Dautoclass');
 		</tr>
 		<tr>
 			<td style="text-align:right; vertical-align: text-top;"> <i> modified </i> </td>
-			<td> 2 January 2023 </td>
+			<td> 27 January 2023 </td>
 		</tr>
 		<tr style="color:burntorange">
 			<td style="text-align:right; vertical-align: text-top;"> <i> warning </i> </td>
@@ -384,77 +384,77 @@ JoeSkeletonSkinSiteSaluteWalk.prototype = {
 	/** Large attribute array: Coordinate point field, scene-graph level=36, element #891, 6 total numbers made up of 2 3-tuple values */
 	this.Coordinate_36_891_point = new autoclass.MFVec3f(java.newArray("float", [0.19480000436306,0.72769999504089355,-0.10170000046491623,0.20139999687671661,0.70090001821517944,-0.10119999945163727]));
 
-	/** Large attribute array: Coordinate point field, scene-graph level=27, element #910, 6 total numbers made up of 2 3-tuple values */
-	this.Coordinate_27_910_point = new autoclass.MFVec3f(java.newArray("float", [-0.029999999329447746,1.4600000381469727,0.019999999552965164,-0.090000003576278687,1.4099999666213989,-0.090000003576278687]));
+	/** Large attribute array: Coordinate point field, scene-graph level=28, element #909, 6 total numbers made up of 2 3-tuple values */
+	this.Coordinate_28_909_point = new autoclass.MFVec3f(java.newArray("float", [-0.029999999329447746,1.4600000381469727,0.019999999552965164,-0.090000003576278687,1.4099999666213989,-0.090000003576278687]));
 
-	/** Large attribute array: Coordinate point field, scene-graph level=28, element #919, 6 total numbers made up of 2 3-tuple values */
-	this.Coordinate_28_919_point = new autoclass.MFVec3f(java.newArray("float", [-0.090000003576278687,1.4099999666213989,-0.090000003576278687,-0.20000000298023224,1.440000057220459,-0.039999999105930328]));
+	/** Large attribute array: Coordinate point field, scene-graph level=29, element #918, 6 total numbers made up of 2 3-tuple values */
+	this.Coordinate_29_918_point = new autoclass.MFVec3f(java.newArray("float", [-0.090000003576278687,1.4099999666213989,-0.090000003576278687,-0.20000000298023224,1.440000057220459,-0.039999999105930328]));
 
-	/** Large attribute array: Coordinate point field, scene-graph level=29, element #936, 6 total numbers made up of 2 3-tuple values */
-	this.Coordinate_29_936_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,1.440000057220459,-0.039999999105930328,-0.20000000298023224,1.1388000249862671,-0.039999999105930328]));
+	/** Large attribute array: Coordinate point field, scene-graph level=30, element #935, 6 total numbers made up of 2 3-tuple values */
+	this.Coordinate_30_935_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,1.440000057220459,-0.039999999105930328,-0.20000000298023224,1.1388000249862671,-0.039999999105930328]));
 
-	/** Large attribute array: Coordinate point field, scene-graph level=30, element #963, 6 total numbers made up of 2 3-tuple values */
-	this.Coordinate_30_963_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,1.1388000249862671,-0.039999999105930328,-0.20000000298023224,0.88999998569488525,-0.039999999105930328]));
+	/** Large attribute array: Coordinate point field, scene-graph level=31, element #962, 6 total numbers made up of 2 3-tuple values */
+	this.Coordinate_31_962_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,1.1388000249862671,-0.039999999105930328,-0.20000000298023224,0.88999998569488525,-0.039999999105930328]));
 
-	/** Large attribute array: Coordinate point field, scene-graph level=31, element #984, 18 total numbers made up of 6 3-tuple values */
-	this.Coordinate_31_984_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,0.88999998569488525,-0.039999999105930328,-0.20000000298023224,0.85000002384185791,0.0,-0.20000000298023224,0.8399999737739563,-0.014999999664723873,-0.20000000298023224,0.83499997854232788,-0.039999999105930328,-0.20000000298023224,0.83499997854232788,-0.064999997615814209,-0.20000000298023224,0.8399999737739563,-0.085000000894069672]));
+	/** Large attribute array: Coordinate point field, scene-graph level=32, element #983, 18 total numbers made up of 6 3-tuple values */
+	this.Coordinate_32_983_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,0.88999998569488525,-0.039999999105930328,-0.20000000298023224,0.85000002384185791,0.0,-0.20000000298023224,0.8399999737739563,-0.014999999664723873,-0.20000000298023224,0.83499997854232788,-0.039999999105930328,-0.20000000298023224,0.83499997854232788,-0.064999997615814209,-0.20000000298023224,0.8399999737739563,-0.085000000894069672]));
 
-	/** Large attribute array: Coordinate point field, scene-graph level=32, element #993, 6 total numbers made up of 2 3-tuple values */
-	this.Coordinate_32_993_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,0.85000002384185791,0.0,-0.20000000298023224,0.81999999284744263,0.029999999329447746]));
+	/** Large attribute array: Coordinate point field, scene-graph level=33, element #992, 6 total numbers made up of 2 3-tuple values */
+	this.Coordinate_33_992_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,0.85000002384185791,0.0,-0.20000000298023224,0.81999999284744263,0.029999999329447746]));
 
-	/** Large attribute array: Coordinate point field, scene-graph level=33, element #1000, 6 total numbers made up of 2 3-tuple values */
-	this.Coordinate_33_1000_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,0.81999999284744263,0.029999999329447746,-0.20000000298023224,0.80000001192092896,0.05000000074505806]));
+	/** Large attribute array: Coordinate point field, scene-graph level=34, element #999, 6 total numbers made up of 2 3-tuple values */
+	this.Coordinate_34_999_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,0.81999999284744263,0.029999999329447746,-0.20000000298023224,0.80000001192092896,0.05000000074505806]));
 
-	/** Large attribute array: Coordinate point field, scene-graph level=34, element #1007, 6 total numbers made up of 2 3-tuple values */
-	this.Coordinate_34_1007_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,0.80000001192092896,0.05000000074505806,-0.20000000298023224,0.77999997138977051,0.070000000298023224]));
+	/** Large attribute array: Coordinate point field, scene-graph level=35, element #1006, 6 total numbers made up of 2 3-tuple values */
+	this.Coordinate_35_1006_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,0.80000001192092896,0.05000000074505806,-0.20000000298023224,0.77999997138977051,0.070000000298023224]));
 
-	/** Large attribute array: Coordinate point field, scene-graph level=32, element #1021, 6 total numbers made up of 2 3-tuple values */
-	this.Coordinate_32_1021_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,0.8399999737739563,-0.014999999664723873,-0.20000000298023224,0.7929999828338623,-0.014999999664723873]));
+	/** Large attribute array: Coordinate point field, scene-graph level=33, element #1020, 6 total numbers made up of 2 3-tuple values */
+	this.Coordinate_33_1020_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,0.8399999737739563,-0.014999999664723873,-0.20000000298023224,0.7929999828338623,-0.014999999664723873]));
 
-	/** Large attribute array: Coordinate point field, scene-graph level=33, element #1030, 6 total numbers made up of 2 3-tuple values */
-	this.Coordinate_33_1030_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,0.7929999828338623,-0.014999999664723873,-0.20000000298023224,0.74500000476837158,-0.014999999664723873]));
+	/** Large attribute array: Coordinate point field, scene-graph level=34, element #1029, 6 total numbers made up of 2 3-tuple values */
+	this.Coordinate_34_1029_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,0.7929999828338623,-0.014999999664723873,-0.20000000298023224,0.74500000476837158,-0.014999999664723873]));
 
-	/** Large attribute array: Coordinate point field, scene-graph level=34, element #1037, 6 total numbers made up of 2 3-tuple values */
-	this.Coordinate_34_1037_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,0.74500000476837158,-0.014999999664723873,-0.20000000298023224,0.72000002861022949,-0.014999999664723873]));
+	/** Large attribute array: Coordinate point field, scene-graph level=35, element #1036, 6 total numbers made up of 2 3-tuple values */
+	this.Coordinate_35_1036_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,0.74500000476837158,-0.014999999664723873,-0.20000000298023224,0.72000002861022949,-0.014999999664723873]));
 
-	/** Large attribute array: Coordinate point field, scene-graph level=35, element #1044, 6 total numbers made up of 2 3-tuple values */
-	this.Coordinate_35_1044_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,0.72000002861022949,-0.014999999664723873,-0.20000000298023224,0.69499999284744263,-0.014999999664723873]));
+	/** Large attribute array: Coordinate point field, scene-graph level=36, element #1043, 6 total numbers made up of 2 3-tuple values */
+	this.Coordinate_36_1043_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,0.72000002861022949,-0.014999999664723873,-0.20000000298023224,0.69499999284744263,-0.014999999664723873]));
 
-	/** Large attribute array: Coordinate point field, scene-graph level=32, element #1057, 6 total numbers made up of 2 3-tuple values */
-	this.Coordinate_32_1057_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,0.83499997854232788,-0.039999999105930328,-0.20000000298023224,0.78799998760223389,-0.039999999105930328]));
+	/** Large attribute array: Coordinate point field, scene-graph level=33, element #1056, 6 total numbers made up of 2 3-tuple values */
+	this.Coordinate_33_1056_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,0.83499997854232788,-0.039999999105930328,-0.20000000298023224,0.78799998760223389,-0.039999999105930328]));
 
-	/** Large attribute array: Coordinate point field, scene-graph level=33, element #1064, 6 total numbers made up of 2 3-tuple values */
-	this.Coordinate_33_1064_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,0.78799998760223389,-0.039999999105930328,-0.20000000298023224,0.74000000953674316,-0.039999999105930328]));
+	/** Large attribute array: Coordinate point field, scene-graph level=34, element #1063, 6 total numbers made up of 2 3-tuple values */
+	this.Coordinate_34_1063_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,0.78799998760223389,-0.039999999105930328,-0.20000000298023224,0.74000000953674316,-0.039999999105930328]));
 
-	/** Large attribute array: Coordinate point field, scene-graph level=34, element #1071, 6 total numbers made up of 2 3-tuple values */
-	this.Coordinate_34_1071_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,0.74000000953674316,-0.039999999105930328,-0.20000000298023224,0.71420001983642578,-0.039999999105930328]));
+	/** Large attribute array: Coordinate point field, scene-graph level=35, element #1070, 6 total numbers made up of 2 3-tuple values */
+	this.Coordinate_35_1070_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,0.74000000953674316,-0.039999999105930328,-0.20000000298023224,0.71420001983642578,-0.039999999105930328]));
 
-	/** Large attribute array: Coordinate point field, scene-graph level=35, element #1078, 6 total numbers made up of 2 3-tuple values */
-	this.Coordinate_35_1078_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,0.71420001983642578,-0.039999999105930328,-0.20000000298023224,0.67580002546310425,-0.039999999105930328]));
+	/** Large attribute array: Coordinate point field, scene-graph level=36, element #1077, 6 total numbers made up of 2 3-tuple values */
+	this.Coordinate_36_1077_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,0.71420001983642578,-0.039999999105930328,-0.20000000298023224,0.67580002546310425,-0.039999999105930328]));
 
-	/** Large attribute array: Coordinate point field, scene-graph level=32, element #1093, 6 total numbers made up of 2 3-tuple values */
-	this.Coordinate_32_1093_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,0.83499997854232788,-0.064999997615814209,-0.20000000298023224,0.7929999828338623,-0.064999997615814209]));
+	/** Large attribute array: Coordinate point field, scene-graph level=33, element #1092, 6 total numbers made up of 2 3-tuple values */
+	this.Coordinate_33_1092_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,0.83499997854232788,-0.064999997615814209,-0.20000000298023224,0.7929999828338623,-0.064999997615814209]));
 
-	/** Large attribute array: Coordinate point field, scene-graph level=33, element #1100, 6 total numbers made up of 2 3-tuple values */
-	this.Coordinate_33_1100_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,0.7929999828338623,-0.064999997615814209,-0.20000000298023224,0.74000000953674316,-0.064999997615814209]));
+	/** Large attribute array: Coordinate point field, scene-graph level=34, element #1099, 6 total numbers made up of 2 3-tuple values */
+	this.Coordinate_34_1099_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,0.7929999828338623,-0.064999997615814209,-0.20000000298023224,0.74000000953674316,-0.064999997615814209]));
 
-	/** Large attribute array: Coordinate point field, scene-graph level=34, element #1107, 6 total numbers made up of 2 3-tuple values */
-	this.Coordinate_34_1107_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,0.74000000953674316,-0.064999997615814209,-0.20000000298023224,0.71770000457763672,-0.064999997615814209]));
+	/** Large attribute array: Coordinate point field, scene-graph level=35, element #1106, 6 total numbers made up of 2 3-tuple values */
+	this.Coordinate_35_1106_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,0.74000000953674316,-0.064999997615814209,-0.20000000298023224,0.71770000457763672,-0.064999997615814209]));
 
-	/** Large attribute array: Coordinate point field, scene-graph level=35, element #1114, 6 total numbers made up of 2 3-tuple values */
-	this.Coordinate_35_1114_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,0.71770000457763672,-0.064999997615814209,-0.20000000298023224,0.69499999284744263,-0.064999997615814209]));
+	/** Large attribute array: Coordinate point field, scene-graph level=36, element #1113, 6 total numbers made up of 2 3-tuple values */
+	this.Coordinate_36_1113_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,0.71770000457763672,-0.064999997615814209,-0.20000000298023224,0.69499999284744263,-0.064999997615814209]));
 
-	/** Large attribute array: Coordinate point field, scene-graph level=32, element #1127, 6 total numbers made up of 2 3-tuple values */
-	this.Coordinate_32_1127_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,0.8399999737739563,-0.085000000894069672,-0.20000000298023224,0.79000002145767212,-0.085000000894069672]));
+	/** Large attribute array: Coordinate point field, scene-graph level=33, element #1126, 6 total numbers made up of 2 3-tuple values */
+	this.Coordinate_33_1126_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,0.8399999737739563,-0.085000000894069672,-0.20000000298023224,0.79000002145767212,-0.085000000894069672]));
 
-	/** Large attribute array: Coordinate point field, scene-graph level=33, element #1136, 6 total numbers made up of 2 3-tuple values */
-	this.Coordinate_33_1136_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,0.79000002145767212,-0.085000000894069672,-0.20000000298023224,0.75499999523162842,-0.085000000894069672]));
+	/** Large attribute array: Coordinate point field, scene-graph level=34, element #1135, 6 total numbers made up of 2 3-tuple values */
+	this.Coordinate_34_1135_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,0.79000002145767212,-0.085000000894069672,-0.20000000298023224,0.75499999523162842,-0.085000000894069672]));
 
-	/** Large attribute array: Coordinate point field, scene-graph level=34, element #1143, 6 total numbers made up of 2 3-tuple values */
-	this.Coordinate_34_1143_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,0.75499999523162842,-0.085000000894069672,-0.20000000298023224,0.73500001430511475,-0.085000000894069672]));
+	/** Large attribute array: Coordinate point field, scene-graph level=35, element #1142, 6 total numbers made up of 2 3-tuple values */
+	this.Coordinate_35_1142_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,0.75499999523162842,-0.085000000894069672,-0.20000000298023224,0.73500001430511475,-0.085000000894069672]));
 
-	/** Large attribute array: Coordinate point field, scene-graph level=35, element #1150, 6 total numbers made up of 2 3-tuple values */
-	this.Coordinate_35_1150_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,0.73500001430511475,-0.085000000894069672,-0.20000000298023224,0.72000002861022949,-0.085000000894069672]));
+	/** Large attribute array: Coordinate point field, scene-graph level=36, element #1149, 6 total numbers made up of 2 3-tuple values */
+	this.Coordinate_36_1149_point = new autoclass.MFVec3f(java.newArray("float", [-0.20000000298023224,0.73500001430511475,-0.085000000894069672,-0.20000000298023224,0.72000002861022949,-0.085000000894069672]));
 
 	/** Large attribute array: OrientationInterpolator DEF='Pitch' keyValue field, scene-graph level=3, element #1280, 24 total numbers made up of 6 4-tuple values */
 	this.Pitch_3_1280_keyValue = new autoclass.MFRotation(java.newArray("float", [1.0,0.0,0.0,0.0,1.0,0.0,0.0,1.2560000419616699,1.0,0.0,0.0,2.5120000839233398,1.0,0.0,0.0,3.7679998874664307,1.0,0.0,0.0,5.0240001678466797,1.0,0.0,0.0,6.2800002098083496]));
@@ -641,7 +641,7 @@ JoeSkeletonSkinSiteSaluteWalk.prototype = {
     .addMeta((new autoclass.meta()).setName("creator").setContent("Joe D. Williams"))
     .addMeta((new autoclass.meta()).setName("created").setContent("9 January 2004"))
     .addMeta((new autoclass.meta()).setName("translated").setContent("4 December 2022"))
-    .addMeta((new autoclass.meta()).setName("modified").setContent("2 January 2023"))
+    .addMeta((new autoclass.meta()).setName("modified").setContent("27 January 2023"))
     .addMeta((new autoclass.meta()).setName("warning").setContent("Under development, numerous errors and warnings"))
     .addMeta((new autoclass.meta()).setName("TODO").setContent("This is an HAnimV1 loa model, might need to convert to X3D4 to note loa value"))
     .addMeta((new autoclass.meta()).setName("TODO").setContent("Provide feedback to tovrmlx3d converter"))
@@ -674,7 +674,7 @@ JoeSkeletonSkinSiteSaluteWalk.prototype = {
     .addChild((new autoclass.NavigationInfo("HeadlightOnRevealsSkinTextureAndColors")))
     .addChild((new autoclass.Background()).setGroundAngle(java.newArray("float", [1.57])).setGroundColor(new autoclass.MFColor(java.newArray("float", [0.0,0.1,0.0,0.0,0.1,0.0]))).setSkyColor(new autoclass.MFColor(java.newArray("float", [0.0,0.0,0.1]))))
     .addChild((new autoclass.Transform("cordsysfloor")).setScale(0.175,0.175,0.175)
-      .addChild((new autoclass.Inline("CoordinateAxes")).setUrl(new autoclass.MFString("\"../data/CoordinateAxes.x3d\" \"../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d\" \"../../../Savage/Tools/Authoring/CoordinateAxes.x3d\" \"https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d\" \"https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d\" \"../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl\" \"../../../Savage/Tools/Authoring/CoordinateAxes.wrl\" \"https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl\" \"https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl\""))))
+      .addChild((new autoclass.Inline("CoordinateAxes")).setUrl(new autoclass.MFString("\"../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d\" \"../../../Savage/Tools/Authoring/CoordinateAxes.x3d\" \"https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d\" \"https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d\" \"../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl\" \"../../../Savage/Tools/Authoring/CoordinateAxes.wrl\" \"https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl\" \"https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl\""))))
     .addComments(" Authoring hint: these axes are aligned within local coordinate system ")
     .addChild((new autoclass.Group("ViewpointGroup"))
       .addChild((new autoclass.Viewpoint()).setDescription("Front Up View").setOrientation(-1.0,-1.0,0.0,0.55).setPosition(-1.0,2.0,2.5))
@@ -722,7 +722,7 @@ JoeSkeletonSkinSiteSaluteWalk.prototype = {
               .setCoord((new autoclass.Coordinate("TheSkinCoord")).setPoint(this.TheSkinCoord_8_78_point))
               .setColor((new autoclass.Color()).setColor(this.Color_8_79_color)))
             .setAppearance((new autoclass.Appearance("SkinAppearance"))
-              .setTexture((new autoclass.ImageTexture("zBlueSpiralBkg2")).setDescription("Blue Spiral Pattern").setUrl(new autoclass.MFString("\"../resources/images/zBlueSpiralBkg2.gif\" \"zBlueSpiralBkg2.gif\" \"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif\"")))
+              .setTexture((new autoclass.ImageTexture("zBlueSpiralBkg2")).setDescription("Blue Spiral Pattern").setUrl(new autoclass.MFString("\"zBlueSpiralBkg2.gif\" \"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif\"")))
               .setMaterial((new autoclass.Material("SkinMaterial")).setAmbientIntensity(0.6).setDiffuseColor(1.0,1.0,1.0).setShininess(0.6).setTransparency(0.2))))
           .addComments(" </LOD> ")
           .setSkinCoord((new autoclass.Coordinate()))
@@ -1566,265 +1566,265 @@ JoeSkeletonSkinSiteSaluteWalk.prototype = {
                                                                   .addChild((new autoclass.Transform()).setTranslation(0.1948,0.7277,-0.1017)
                                                                     .addChild((new autoclass.Shape())))
                                                                   .addChild((new autoclass.HAnimSite("Joe_l_pinky_distal_tip")).setName("l_pinky_distal_tip").setTranslation(0.20139999687671661,0.70090001821517944,-0.10119999945163727)
-                                                                    .addChild((new autoclass.Shape()))))))))))))))
-                                            .addChild((new autoclass.HAnimJoint("Joe_r_sternoclavicular")).setName("r_sternoclavicular").setCenter(-0.029999999329447746,1.4600000381469727,0.0).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [10])).setSkinCoordWeight(java.newArray("float", [1.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
-                                              .addChild((new autoclass.HAnimSegment("Joe_r_clavicle")).setName("r_clavicle")
-                                                .addChild((new autoclass.Shape())
-                                                  .setGeometry((new autoclass.IndexedLineSet()).setCoordIndex(java.newArray("int", [0,1,-1]))
-                                                    .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_27_910_point)))
-                                                  .setAppearance((new autoclass.Appearance())))
-                                                .addChild((new autoclass.Transform()).setTranslation(-0.029999999329447746,1.4600000381469727,0.019999999552965164)
-                                                  .addChild((new autoclass.Shape())))
-                                                .addChild((new autoclass.HAnimSite("Joe_r_clavicale")).setName("r_clavicale").setTranslation(-0.029999999329447746,1.4600000381469727,0.035000000149011612)
-                                                  .addChild((new autoclass.Shape()))))
-                                              .addChild((new autoclass.HAnimJoint("Joe_r_acromioclavicular")).setName("r_acromioclavicular").setCenter(-0.090000003576278687,1.4099999666213989,-0.10999999940395355).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [77,29])).setSkinCoordWeight(java.newArray("float", [1.0,0.89999997615814209])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
-                                                .addChild((new autoclass.HAnimSegment("Joe_r_scapula")).setName("r_scapula")
+                                                                    .addChild((new autoclass.Shape())))))))))))))
+                                              .addChild((new autoclass.HAnimJoint("Joe_r_sternoclavicular")).setName("r_sternoclavicular").setCenter(-0.029999999329447746,1.4600000381469727,0.0).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [10])).setSkinCoordWeight(java.newArray("float", [1.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
+                                                .addChild((new autoclass.HAnimSegment("Joe_r_clavicle")).setName("r_clavicle")
                                                   .addChild((new autoclass.Shape())
                                                     .setGeometry((new autoclass.IndexedLineSet()).setCoordIndex(java.newArray("int", [0,1,-1]))
-                                                      .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_28_919_point)))
+                                                      .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_28_909_point)))
                                                     .setAppearance((new autoclass.Appearance())))
-                                                  .addChild((new autoclass.Transform()).setTranslation(-0.090000003576278687,1.4099999666213989,-0.090000003576278687)
+                                                  .addChild((new autoclass.Transform()).setTranslation(-0.029999999329447746,1.4600000381469727,0.019999999552965164)
                                                     .addChild((new autoclass.Shape())))
-                                                  .addChild((new autoclass.Transform()).setTranslation(-0.10999999940395355,1.4270000457763672,-0.13750000298023224)
-                                                    .addChild((new autoclass.Shape())))
-                                                  .addChild((new autoclass.HAnimSite("Joe_r_acromion")).setName("r_acromion").setTranslation(-0.17800000309944153,1.4824999570846558,-0.0625)
-                                                    .addChild((new autoclass.Shape())))
-                                                  .addChild((new autoclass.HAnimSite("Joe_r_axilla_ant")).setName("r_axilla_ant").setTranslation(-0.17000000178813934,1.3799999952316284,0.0070000002160668373)
-                                                    .addChild((new autoclass.Shape())))
-                                                  .addChild((new autoclass.HAnimSite("Joe_r_axilla_post")).setName("r_axilla_post").setTranslation(-0.15999999642372131,1.3799999952316284,-0.12700000405311584)
+                                                  .addChild((new autoclass.HAnimSite("Joe_r_clavicale")).setName("r_clavicale").setTranslation(-0.029999999329447746,1.4600000381469727,0.035000000149011612)
                                                     .addChild((new autoclass.Shape()))))
-                                                .addChild((new autoclass.HAnimJoint("Joe_r_shoulder")).setName("r_shoulder").setCenter(-0.20000000298023224,1.440000057220459,-0.039999999105930328).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [29,30,32,78,218,219,220,221,86,88])).setSkinCoordWeight(java.newArray("float", [0.10000000149011612,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.30000001192092896,0.20000000298023224])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
-                                                  .addChild((new autoclass.HAnimSegment("Joe_r_upperarm")).setName("r_upperarm")
-                                                    .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,1.440000057220459,-0.039999999105930328)
-                                                      .addChild((new autoclass.Shape())))
+                                                .addChild((new autoclass.HAnimJoint("Joe_r_acromioclavicular")).setName("r_acromioclavicular").setCenter(-0.090000003576278687,1.4099999666213989,-0.10999999940395355).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [77,29])).setSkinCoordWeight(java.newArray("float", [1.0,0.89999997615814209])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
+                                                  .addChild((new autoclass.HAnimSegment("Joe_r_scapula")).setName("r_scapula")
                                                     .addChild((new autoclass.Shape())
                                                       .setGeometry((new autoclass.IndexedLineSet()).setCoordIndex(java.newArray("int", [0,1,-1]))
-                                                        .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_29_936_point)))
+                                                        .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_29_918_point)))
                                                       .setAppearance((new autoclass.Appearance())))
-                                                    .addChild((new autoclass.Transform()).setTranslation(-0.17800000309944153,1.4824999570846558,-0.0625)
+                                                    .addChild((new autoclass.Transform()).setTranslation(-0.090000003576278687,1.4099999666213989,-0.090000003576278687)
                                                       .addChild((new autoclass.Shape())))
-                                                    .addChild((new autoclass.Transform()).setTranslation(-0.17000000178813934,1.3799999952316284,0.0070000002160668373)
+                                                    .addChild((new autoclass.Transform()).setTranslation(-0.10999999940395355,1.4270000457763672,-0.13750000298023224)
                                                       .addChild((new autoclass.Shape())))
-                                                    .addChild((new autoclass.Transform()).setTranslation(-0.15999999642372131,1.3799999952316284,-0.12700000405311584)
+                                                    .addChild((new autoclass.HAnimSite("Joe_r_acromion")).setName("r_acromion").setTranslation(-0.17800000309944153,1.4824999570846558,-0.0625)
                                                       .addChild((new autoclass.Shape())))
-                                                    .addChild((new autoclass.Transform()).setTranslation(-0.23499999940395355,1.4199999570846558,-0.0625)
+                                                    .addChild((new autoclass.HAnimSite("Joe_r_axilla_ant")).setName("r_axilla_ant").setTranslation(-0.17000000178813934,1.3799999952316284,0.0070000002160668373)
                                                       .addChild((new autoclass.Shape())))
-                                                    .addChild((new autoclass.Transform()).setTranslation(-0.23000000417232513,1.2350000143051147,-0.039999999105930328)
-                                                      .addChild((new autoclass.Shape())))
-                                                    .addChild((new autoclass.Transform()).setTranslation(-0.15999999642372131,1.2300000190734863,-0.039999999105930328)
-                                                      .addChild((new autoclass.Shape())))
-                                                    .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,1.2300000190734863,-0.10499999672174454)
-                                                      .addChild((new autoclass.Shape())))
-                                                    .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,1.2350000143051147,0.019999999552965164)
-                                                      .addChild((new autoclass.Shape())))
-                                                    .addChild((new autoclass.HAnimSite("Joe_r_humeral_medial_epicn")).setName("r_humeral_medial_epicn").setTranslation(-0.16500000655651093,1.1388000249862671,-0.039999999105930328)
-                                                      .addChild((new autoclass.Shape())))
-                                                    .addChild((new autoclass.HAnimSite("Joe_r_radiale")).setName("r_radiale").setTranslation(-0.23000000417232513,1.1330000162124634,-0.054999999701976776)
-                                                      .addChild((new autoclass.Shape())))
-                                                    .addChild((new autoclass.HAnimSite("Joe_r_humeral_lateral_epicn")).setName("r_humeral_lateral_epicn").setTranslation(-0.24400000274181366,1.1388000249862671,-0.039999999105930328)
+                                                    .addChild((new autoclass.HAnimSite("Joe_r_axilla_post")).setName("r_axilla_post").setTranslation(-0.15999999642372131,1.3799999952316284,-0.12700000405311584)
                                                       .addChild((new autoclass.Shape()))))
-                                                  .addChild((new autoclass.HAnimJoint("Joe_r_elbow")).setName("r_elbow").setCenter(-0.20000000298023224,1.1388000249862671,-0.039999999105930328).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [33,34,35,225,226,227,228,229,231,232,233,234])).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
-                                                    .addChild((new autoclass.HAnimSegment("Joe_r_forearm")).setName("r_forearm")
+                                                  .addChild((new autoclass.HAnimJoint("Joe_r_shoulder")).setName("r_shoulder").setCenter(-0.20000000298023224,1.440000057220459,-0.039999999105930328).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [29,30,32,78,218,219,220,221,86,88])).setSkinCoordWeight(java.newArray("float", [0.10000000149011612,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.30000001192092896,0.20000000298023224])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
+                                                    .addChild((new autoclass.HAnimSegment("Joe_r_upperarm")).setName("r_upperarm")
+                                                      .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,1.440000057220459,-0.039999999105930328)
+                                                        .addChild((new autoclass.Shape())))
                                                       .addChild((new autoclass.Shape())
                                                         .setGeometry((new autoclass.IndexedLineSet()).setCoordIndex(java.newArray("int", [0,1,-1]))
-                                                          .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_30_963_point)))
+                                                          .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_30_935_point)))
                                                         .setAppearance((new autoclass.Appearance())))
-                                                      .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,1.1388000249862671,-0.039999999105930328)
+                                                      .addChild((new autoclass.Transform()).setTranslation(-0.17800000309944153,1.4824999570846558,-0.0625)
                                                         .addChild((new autoclass.Shape())))
-                                                      .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,1.1388000249862671,0.013000000268220901)
+                                                      .addChild((new autoclass.Transform()).setTranslation(-0.17000000178813934,1.3799999952316284,0.0070000002160668373)
                                                         .addChild((new autoclass.Shape())))
-                                                      .addChild((new autoclass.Transform()).setTranslation(-0.22499999403953552,1.0,-0.0099999997764825821)
+                                                      .addChild((new autoclass.Transform()).setTranslation(-0.15999999642372131,1.3799999952316284,-0.12700000405311584)
                                                         .addChild((new autoclass.Shape())))
-                                                      .addChild((new autoclass.Transform()).setTranslation(-0.22499999403953552,1.0,-0.070000000298023224)
+                                                      .addChild((new autoclass.Transform()).setTranslation(-0.23499999940395355,1.4199999570846558,-0.0625)
                                                         .addChild((new autoclass.Shape())))
-                                                      .addChild((new autoclass.Transform()).setTranslation(-0.18500000238418579,1.0,-0.0099999997764825821)
+                                                      .addChild((new autoclass.Transform()).setTranslation(-0.23000000417232513,1.2350000143051147,-0.039999999105930328)
                                                         .addChild((new autoclass.Shape())))
-                                                      .addChild((new autoclass.Transform()).setTranslation(-0.18500000238418579,1.0,-0.070000000298023224)
+                                                      .addChild((new autoclass.Transform()).setTranslation(-0.15999999642372131,1.2300000190734863,-0.039999999105930328)
                                                         .addChild((new autoclass.Shape())))
-                                                      .addChild((new autoclass.HAnimSite("Joe_r_radial_styloid")).setName("r_radial_styloid").setTranslation(-0.20000000298023224,0.89999997615814209,-0.014999999664723873)
+                                                      .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,1.2300000190734863,-0.10499999672174454)
                                                         .addChild((new autoclass.Shape())))
-                                                      .addChild((new autoclass.HAnimSite("Joe_r_olecranon")).setName("r_olecranon").setTranslation(-0.20000000298023224,1.1388000249862671,-0.079999998211860657)
+                                                      .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,1.2350000143051147,0.019999999552965164)
+                                                        .addChild((new autoclass.Shape())))
+                                                      .addChild((new autoclass.HAnimSite("Joe_r_humeral_medial_epicn")).setName("r_humeral_medial_epicn").setTranslation(-0.16500000655651093,1.1388000249862671,-0.039999999105930328)
+                                                        .addChild((new autoclass.Shape())))
+                                                      .addChild((new autoclass.HAnimSite("Joe_r_radiale")).setName("r_radiale").setTranslation(-0.23000000417232513,1.1330000162124634,-0.054999999701976776)
+                                                        .addChild((new autoclass.Shape())))
+                                                      .addChild((new autoclass.HAnimSite("Joe_r_humeral_lateral_epicn")).setName("r_humeral_lateral_epicn").setTranslation(-0.24400000274181366,1.1388000249862671,-0.039999999105930328)
                                                         .addChild((new autoclass.Shape()))))
-                                                    .addChild((new autoclass.HAnimJoint("Joe_r_wrist")).setName("r_wrist").setCenter(-0.20000000298023224,0.88999998569488525,-0.039999999105930328).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [235,236,237,238,239,240,241,242])).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
-                                                      .addChild((new autoclass.HAnimSegment("Joe_r_hand")).setName("r_hand")
+                                                    .addChild((new autoclass.HAnimJoint("Joe_r_elbow")).setName("r_elbow").setCenter(-0.20000000298023224,1.1388000249862671,-0.039999999105930328).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [33,34,35,225,226,227,228,229,231,232,233,234])).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
+                                                      .addChild((new autoclass.HAnimSegment("Joe_r_forearm")).setName("r_forearm")
                                                         .addChild((new autoclass.Shape())
-                                                          .setGeometry((new autoclass.IndexedLineSet()).setCoordIndex(java.newArray("int", [0,1,-1,0,2,-1,0,3,-1,0,4,-1,0,5,-1]))
-                                                            .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_31_984_point)))
+                                                          .setGeometry((new autoclass.IndexedLineSet()).setCoordIndex(java.newArray("int", [0,1,-1]))
+                                                            .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_31_962_point)))
                                                           .setAppearance((new autoclass.Appearance())))
-                                                        .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,0.88999998569488525,-0.039999999105930328)
+                                                        .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,1.1388000249862671,-0.039999999105930328)
                                                           .addChild((new autoclass.Shape())))
-                                                        .addChild((new autoclass.HAnimSite("Joe_r_ulnar_styloid")).setName("r_ulnar_styloid").setTranslation(-0.20000000298023224,0.89999997615814209,-0.085000000894069672)
+                                                        .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,1.1388000249862671,0.013000000268220901)
+                                                          .addChild((new autoclass.Shape())))
+                                                        .addChild((new autoclass.Transform()).setTranslation(-0.22499999403953552,1.0,-0.0099999997764825821)
+                                                          .addChild((new autoclass.Shape())))
+                                                        .addChild((new autoclass.Transform()).setTranslation(-0.22499999403953552,1.0,-0.070000000298023224)
+                                                          .addChild((new autoclass.Shape())))
+                                                        .addChild((new autoclass.Transform()).setTranslation(-0.18500000238418579,1.0,-0.0099999997764825821)
+                                                          .addChild((new autoclass.Shape())))
+                                                        .addChild((new autoclass.Transform()).setTranslation(-0.18500000238418579,1.0,-0.070000000298023224)
+                                                          .addChild((new autoclass.Shape())))
+                                                        .addChild((new autoclass.HAnimSite("Joe_r_radial_styloid")).setName("r_radial_styloid").setTranslation(-0.20000000298023224,0.89999997615814209,-0.014999999664723873)
+                                                          .addChild((new autoclass.Shape())))
+                                                        .addChild((new autoclass.HAnimSite("Joe_r_olecranon")).setName("r_olecranon").setTranslation(-0.20000000298023224,1.1388000249862671,-0.079999998211860657)
                                                           .addChild((new autoclass.Shape()))))
-                                                      .addChild((new autoclass.HAnimJoint("Joe_r_thumb1")).setName("r_thumb1").setCenter(-0.20000000298023224,0.85000002384185791,0.0).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [243,244])).setSkinCoordWeight(java.newArray("float", [1.0,1.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
-                                                        .addChild((new autoclass.HAnimSegment("Joe_r_thumb_metacarpal")).setName("r_thumb_metacarpal")
+                                                      .addChild((new autoclass.HAnimJoint("Joe_r_wrist")).setName("r_wrist").setCenter(-0.20000000298023224,0.88999998569488525,-0.039999999105930328).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [235,236,237,238,239,240,241,242])).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
+                                                        .addChild((new autoclass.HAnimSegment("Joe_r_hand")).setName("r_hand")
                                                           .addChild((new autoclass.Shape())
-                                                            .setGeometry((new autoclass.IndexedLineSet()).setCoordIndex(java.newArray("int", [0,1,-1]))
-                                                              .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_32_993_point)))
+                                                            .setGeometry((new autoclass.IndexedLineSet()).setCoordIndex(java.newArray("int", [0,1,-1,0,2,-1,0,3,-1,0,4,-1,0,5,-1]))
+                                                              .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_32_983_point)))
                                                             .setAppearance((new autoclass.Appearance())))
-                                                          .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,0.85000002384185791,0.0)
-                                                            .addChild((new autoclass.Shape()))))
-                                                        .addChild((new autoclass.HAnimJoint("Joe_r_thumb2")).setName("r_thumb2").setCenter(-0.20000000298023224,0.81999999284744263,0.029999999329447746).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [254,255,256,257,258,259])).setSkinCoordWeight(java.newArray("float", [0.5,0.5,0.5,1.0,1.0,1.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
-                                                          .addChild((new autoclass.HAnimSegment("Joe_r_thumb_proximal")).setName("r_thumb_proximal")
-                                                            .addChild((new autoclass.Shape())
-                                                              .setGeometry((new autoclass.IndexedLineSet()).setCoordIndex(java.newArray("int", [0,1,-1]))
-                                                                .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_33_1000_point)))
-                                                              .setAppearance((new autoclass.Appearance())))
-                                                            .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,0.81999999284744263,0.029999999329447746)
-                                                              .addChild((new autoclass.Shape()))))
-                                                          .addChild((new autoclass.HAnimJoint("Joe_r_thumb3")).setName("r_thumb3").setCenter(-0.20000000298023224,0.80000001192092896,0.05000000074505806).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [260,261,262,263,264,265,266,267,268])).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
-                                                            .addChild((new autoclass.HAnimSegment("Joe_r_thumb_distal")).setName("r_thumb_distal")
-                                                              .addChild((new autoclass.Shape())
-                                                                .setGeometry((new autoclass.IndexedLineSet()).setCoordIndex(java.newArray("int", [0,1,-1]))
-                                                                  .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_34_1007_point)))
-                                                                .setAppearance((new autoclass.Appearance())))
-                                                              .addChild((new autoclass.Transform("Thumbnail")).setTranslation(-0.20000000298023224,0.7850000262260437,0.075000002980232239)
-                                                                .addChild((new autoclass.Shape())))
-                                                              .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,0.80000001192092896,0.05000000074505806)
-                                                                .addChild((new autoclass.Shape())))
-                                                              .addChild((new autoclass.HAnimSite("Joe_r_thumb_distal_tip")).setName("r_thumb_distal_tip").setTranslation(-0.20000000298023224,0.77999997138977051,0.070000000298023224)
-                                                                .addChild((new autoclass.Shape())))))))
-                                                      .addChild((new autoclass.HAnimJoint("Joe_r_index0")).setName("r_index0").setCenter(-0.20000000298023224,0.8399999737739563,-0.014999999664723873).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [245,246])).setSkinCoordWeight(java.newArray("float", [1.0,1.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
-                                                        .addChild((new autoclass.HAnimSegment("Joe_r_index_metacarpal")).setName("r_index_metacarpal")
-                                                          .addChild((new autoclass.Shape())
-                                                            .setGeometry((new autoclass.IndexedLineSet()).setCoordIndex(java.newArray("int", [0,1,-1]))
-                                                              .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_32_1021_point)))
-                                                            .setAppearance((new autoclass.Appearance())))
-                                                          .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,0.8399999737739563,-0.014999999664723873)
+                                                          .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,0.88999998569488525,-0.039999999105930328)
                                                             .addChild((new autoclass.Shape())))
-                                                          .addChild((new autoclass.HAnimSite("Joe_r_metacarpal_pha2")).setName("r_metacarpal_pha2").setTranslation(-0.20000000298023224,0.7929999828338623,-0.004999999888241291)
+                                                          .addChild((new autoclass.HAnimSite("Joe_r_ulnar_styloid")).setName("r_ulnar_styloid").setTranslation(-0.20000000298023224,0.89999997615814209,-0.085000000894069672)
                                                             .addChild((new autoclass.Shape()))))
-                                                        .addChild((new autoclass.HAnimJoint("Joe_r_index1")).setName("r_index1").setCenter(-0.20000000298023224,0.7929999828338623,-0.014999999664723873).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [254,255,256,269,270,271,279])).setSkinCoordWeight(java.newArray("float", [0.5,0.5,0.5,1.0,1.0,1.0,0.5])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
-                                                          .addChild((new autoclass.HAnimSegment("Joe_r_index_proximal")).setName("r_index_proximal")
+                                                        .addChild((new autoclass.HAnimJoint("Joe_r_thumb1")).setName("r_thumb1").setCenter(-0.20000000298023224,0.85000002384185791,0.0).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [243,244])).setSkinCoordWeight(java.newArray("float", [1.0,1.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
+                                                          .addChild((new autoclass.HAnimSegment("Joe_r_thumb_metacarpal")).setName("r_thumb_metacarpal")
                                                             .addChild((new autoclass.Shape())
                                                               .setGeometry((new autoclass.IndexedLineSet()).setCoordIndex(java.newArray("int", [0,1,-1]))
-                                                                .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_33_1030_point)))
+                                                                .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_33_992_point)))
                                                               .setAppearance((new autoclass.Appearance())))
-                                                            .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,0.7929999828338623,-0.014999999664723873)
+                                                            .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,0.85000002384185791,0.0)
                                                               .addChild((new autoclass.Shape()))))
-                                                          .addChild((new autoclass.HAnimJoint("Joe_r_index2")).setName("r_index2").setCenter(-0.20000000298023224,0.74500000476837158,-0.014999999664723873).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [282,283,284,285])).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
-                                                            .addChild((new autoclass.HAnimSegment("Joe_r_index_middle")).setName("r_index_middle")
+                                                          .addChild((new autoclass.HAnimJoint("Joe_r_thumb2")).setName("r_thumb2").setCenter(-0.20000000298023224,0.81999999284744263,0.029999999329447746).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [254,255,256,257,258,259])).setSkinCoordWeight(java.newArray("float", [0.5,0.5,0.5,1.0,1.0,1.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
+                                                            .addChild((new autoclass.HAnimSegment("Joe_r_thumb_proximal")).setName("r_thumb_proximal")
                                                               .addChild((new autoclass.Shape())
                                                                 .setGeometry((new autoclass.IndexedLineSet()).setCoordIndex(java.newArray("int", [0,1,-1]))
-                                                                  .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_34_1037_point)))
+                                                                  .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_34_999_point)))
                                                                 .setAppearance((new autoclass.Appearance())))
-                                                              .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,0.74500000476837158,-0.014999999664723873)
+                                                              .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,0.81999999284744263,0.029999999329447746)
                                                                 .addChild((new autoclass.Shape()))))
-                                                            .addChild((new autoclass.HAnimJoint("Joe_r_index3")).setName("r_index3").setCenter(-0.20000000298023224,0.72000002861022949,-0.014999999664723873).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [286,287,288,289,290,291,292,293,294])).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
-                                                              .addChild((new autoclass.HAnimSegment("Joe_r_index_distal")).setName("r_index_distal")
+                                                            .addChild((new autoclass.HAnimJoint("Joe_r_thumb3")).setName("r_thumb3").setCenter(-0.20000000298023224,0.80000001192092896,0.05000000074505806).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [260,261,262,263,264,265,266,267,268])).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
+                                                              .addChild((new autoclass.HAnimSegment("Joe_r_thumb_distal")).setName("r_thumb_distal")
                                                                 .addChild((new autoclass.Shape())
                                                                   .setGeometry((new autoclass.IndexedLineSet()).setCoordIndex(java.newArray("int", [0,1,-1]))
-                                                                    .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_35_1044_point)))
+                                                                    .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_35_1006_point)))
                                                                   .setAppearance((new autoclass.Appearance())))
-                                                                .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,0.72000002861022949,-0.014999999664723873)
+                                                                .addChild((new autoclass.Transform("Thumbnail")).setTranslation(-0.20000000298023224,0.7850000262260437,0.075000002980232239)
                                                                   .addChild((new autoclass.Shape())))
-                                                                .addChild((new autoclass.HAnimSite("Joe_r_index_distal_tip")).setName("r_index_distal_tip").setTranslation(-0.20000000298023224,0.69499999284744263,-0.014999999664723873)
-                                                                  .addChild((new autoclass.Shape()))))))))
-                                                      .addChild((new autoclass.HAnimJoint("Joe_r_middle0")).setName("r_middle0").setCenter(-0.20000000298023224,0.83499997854232788,-0.039999999105930328).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [247,248])).setSkinCoordWeight(java.newArray("float", [1.0,1.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
-                                                        .addChild((new autoclass.HAnimSegment("Joe_r_middle_metacarpal")).setName("r_middle_metacarpal")
-                                                          .addChild((new autoclass.Shape())
-                                                            .setGeometry((new autoclass.IndexedLineSet()).setCoordIndex(java.newArray("int", [0,1,-1]))
-                                                              .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_32_1057_point)))
-                                                            .setAppearance((new autoclass.Appearance())))
-                                                          .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,0.83499997854232788,-0.039999999105930328)
-                                                            .addChild((new autoclass.Shape()))))
-                                                        .addChild((new autoclass.HAnimJoint("Joe_r_middle1")).setName("r_middle1").setCenter(-0.20000000298023224,0.78799998760223389,-0.039999999105930328).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [272,273,279,280])).setSkinCoordWeight(java.newArray("float", [1.0,1.0,0.5,0.5])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
-                                                          .addChild((new autoclass.HAnimSegment("Joe_r_middle_proximal")).setName("r_middle_proximal")
+                                                                .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,0.80000001192092896,0.05000000074505806)
+                                                                  .addChild((new autoclass.Shape())))
+                                                                .addChild((new autoclass.HAnimSite("Joe_r_thumb_distal_tip")).setName("r_thumb_distal_tip").setTranslation(-0.20000000298023224,0.77999997138977051,0.070000000298023224)
+                                                                  .addChild((new autoclass.Shape())))))))
+                                                        .addChild((new autoclass.HAnimJoint("Joe_r_index0")).setName("r_index0").setCenter(-0.20000000298023224,0.8399999737739563,-0.014999999664723873).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [245,246])).setSkinCoordWeight(java.newArray("float", [1.0,1.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
+                                                          .addChild((new autoclass.HAnimSegment("Joe_r_index_metacarpal")).setName("r_index_metacarpal")
                                                             .addChild((new autoclass.Shape())
                                                               .setGeometry((new autoclass.IndexedLineSet()).setCoordIndex(java.newArray("int", [0,1,-1]))
-                                                                .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_33_1064_point)))
+                                                                .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_33_1020_point)))
                                                               .setAppearance((new autoclass.Appearance())))
-                                                            .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,0.78799998760223389,-0.039999999105930328)
+                                                            .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,0.8399999737739563,-0.014999999664723873)
+                                                              .addChild((new autoclass.Shape())))
+                                                            .addChild((new autoclass.HAnimSite("Joe_r_metacarpal_pha2")).setName("r_metacarpal_pha2").setTranslation(-0.20000000298023224,0.7929999828338623,-0.004999999888241291)
                                                               .addChild((new autoclass.Shape()))))
-                                                          .addChild((new autoclass.HAnimJoint("Joe_r_middle2")).setName("r_middle2").setCenter(-0.20000000298023224,0.74000000953674316,-0.039999999105930328).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [295,296,297,298])).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
-                                                            .addChild((new autoclass.HAnimSegment("Joe_r_middle_middle")).setName("r_middle_middle")
+                                                          .addChild((new autoclass.HAnimJoint("Joe_r_index1")).setName("r_index1").setCenter(-0.20000000298023224,0.7929999828338623,-0.014999999664723873).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [254,255,256,269,270,271,279])).setSkinCoordWeight(java.newArray("float", [0.5,0.5,0.5,1.0,1.0,1.0,0.5])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
+                                                            .addChild((new autoclass.HAnimSegment("Joe_r_index_proximal")).setName("r_index_proximal")
                                                               .addChild((new autoclass.Shape())
                                                                 .setGeometry((new autoclass.IndexedLineSet()).setCoordIndex(java.newArray("int", [0,1,-1]))
-                                                                  .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_34_1071_point)))
+                                                                  .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_34_1029_point)))
                                                                 .setAppearance((new autoclass.Appearance())))
-                                                              .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,0.74000000953674316,-0.039999999105930328)
+                                                              .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,0.7929999828338623,-0.014999999664723873)
                                                                 .addChild((new autoclass.Shape()))))
-                                                            .addChild((new autoclass.HAnimJoint("Joe_r_middle3")).setName("r_middle3").setCenter(-0.20000000298023224,0.71420001983642578,-0.039999999105930328).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [299,300,301,302,303,304,305,306,307])).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
-                                                              .addChild((new autoclass.HAnimSegment("Joe_r_middle_distal")).setName("r_middle_distal")
+                                                            .addChild((new autoclass.HAnimJoint("Joe_r_index2")).setName("r_index2").setCenter(-0.20000000298023224,0.74500000476837158,-0.014999999664723873).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [282,283,284,285])).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
+                                                              .addChild((new autoclass.HAnimSegment("Joe_r_index_middle")).setName("r_index_middle")
                                                                 .addChild((new autoclass.Shape())
                                                                   .setGeometry((new autoclass.IndexedLineSet()).setCoordIndex(java.newArray("int", [0,1,-1]))
-                                                                    .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_35_1078_point)))
+                                                                    .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_35_1036_point)))
                                                                   .setAppearance((new autoclass.Appearance())))
-                                                                .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,0.71420001983642578,-0.039999999105930328)
-                                                                  .addChild((new autoclass.Shape())))
-                                                                .addChild((new autoclass.HAnimSite("Joe_r_dactylion")).setName("r_dactylion").setTranslation(-0.20000000298023224,0.68000000715255737,-0.039999999105930328)
-                                                                  .addChild((new autoclass.Shape())))
-                                                                .addChild((new autoclass.HAnimSite("Joe_r_middle_distal_tip")).setName("r_middle_distal_tip").setTranslation(-0.20000000298023224,0.68000000715255737,-0.039999999105930328)
-                                                                  .addChild((new autoclass.Shape()))))))))
-                                                      .addChild((new autoclass.HAnimJoint("Joe_r_ring0")).setName("r_ring0").setCenter(-0.2,0.835,-0.065).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [249,250])).setSkinCoordWeight(java.newArray("float", [1.0,1.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
-                                                        .addChild((new autoclass.HAnimSegment("Joe_r_ring_metacarpal")).setName("r_ring_metacarpal")
-                                                          .addChild((new autoclass.Shape())
-                                                            .setGeometry((new autoclass.IndexedLineSet()).setCoordIndex(java.newArray("int", [0,1,-1]))
-                                                              .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_32_1093_point)))
-                                                            .setAppearance((new autoclass.Appearance())))
-                                                          .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,0.83499997854232788,-0.064999997615814209)
-                                                            .addChild((new autoclass.Shape()))))
-                                                        .addChild((new autoclass.HAnimJoint("Joe_r_ring1")).setName("r_ring1").setCenter(-0.20000000298023224,0.7929999828338623,-0.064999997615814209).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [274,275,280,281])).setSkinCoordWeight(java.newArray("float", [1.0,1.0,0.5,0.5])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
-                                                          .addChild((new autoclass.HAnimSegment("Joe_r_ring_proximal")).setName("r_ring_proximal")
+                                                                .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,0.74500000476837158,-0.014999999664723873)
+                                                                  .addChild((new autoclass.Shape()))))
+                                                              .addChild((new autoclass.HAnimJoint("Joe_r_index3")).setName("r_index3").setCenter(-0.20000000298023224,0.72000002861022949,-0.014999999664723873).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [286,287,288,289,290,291,292,293,294])).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
+                                                                .addChild((new autoclass.HAnimSegment("Joe_r_index_distal")).setName("r_index_distal")
+                                                                  .addChild((new autoclass.Shape())
+                                                                    .setGeometry((new autoclass.IndexedLineSet()).setCoordIndex(java.newArray("int", [0,1,-1]))
+                                                                      .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_36_1043_point)))
+                                                                    .setAppearance((new autoclass.Appearance())))
+                                                                  .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,0.72000002861022949,-0.014999999664723873)
+                                                                    .addChild((new autoclass.Shape())))
+                                                                  .addChild((new autoclass.HAnimSite("Joe_r_index_distal_tip")).setName("r_index_distal_tip").setTranslation(-0.20000000298023224,0.69499999284744263,-0.014999999664723873)
+                                                                    .addChild((new autoclass.Shape()))))))))
+                                                        .addChild((new autoclass.HAnimJoint("Joe_r_middle0")).setName("r_middle0").setCenter(-0.20000000298023224,0.83499997854232788,-0.039999999105930328).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [247,248])).setSkinCoordWeight(java.newArray("float", [1.0,1.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
+                                                          .addChild((new autoclass.HAnimSegment("Joe_r_middle_metacarpal")).setName("r_middle_metacarpal")
                                                             .addChild((new autoclass.Shape())
                                                               .setGeometry((new autoclass.IndexedLineSet()).setCoordIndex(java.newArray("int", [0,1,-1]))
-                                                                .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_33_1100_point)))
+                                                                .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_33_1056_point)))
                                                               .setAppearance((new autoclass.Appearance())))
-                                                            .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,0.7929999828338623,-0.064999997615814209)
+                                                            .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,0.83499997854232788,-0.039999999105930328)
                                                               .addChild((new autoclass.Shape()))))
-                                                          .addChild((new autoclass.HAnimJoint("Joe_r_ring2")).setName("r_ring2").setCenter(-0.20000000298023224,0.74000000953674316,-0.064999997615814209).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [308,309,310,311])).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
-                                                            .addChild((new autoclass.HAnimSegment("Joe_r_ring_middle")).setName("r_ring_middle")
+                                                          .addChild((new autoclass.HAnimJoint("Joe_r_middle1")).setName("r_middle1").setCenter(-0.20000000298023224,0.78799998760223389,-0.039999999105930328).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [272,273,279,280])).setSkinCoordWeight(java.newArray("float", [1.0,1.0,0.5,0.5])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
+                                                            .addChild((new autoclass.HAnimSegment("Joe_r_middle_proximal")).setName("r_middle_proximal")
                                                               .addChild((new autoclass.Shape())
                                                                 .setGeometry((new autoclass.IndexedLineSet()).setCoordIndex(java.newArray("int", [0,1,-1]))
-                                                                  .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_34_1107_point)))
+                                                                  .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_34_1063_point)))
                                                                 .setAppearance((new autoclass.Appearance())))
-                                                              .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,0.74000000953674316,-0.064999997615814209)
+                                                              .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,0.78799998760223389,-0.039999999105930328)
                                                                 .addChild((new autoclass.Shape()))))
-                                                            .addChild((new autoclass.HAnimJoint("Joe_r_ring3")).setName("r_ring3").setCenter(-0.20000000298023224,0.71770000457763672,-0.064999997615814209).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [312,313,314,315,316,317,318,319,320])).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
-                                                              .addChild((new autoclass.HAnimSegment("Joe_r_ring_distal")).setName("r_ring_distal")
+                                                            .addChild((new autoclass.HAnimJoint("Joe_r_middle2")).setName("r_middle2").setCenter(-0.20000000298023224,0.74000000953674316,-0.039999999105930328).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [295,296,297,298])).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
+                                                              .addChild((new autoclass.HAnimSegment("Joe_r_middle_middle")).setName("r_middle_middle")
                                                                 .addChild((new autoclass.Shape())
                                                                   .setGeometry((new autoclass.IndexedLineSet()).setCoordIndex(java.newArray("int", [0,1,-1]))
-                                                                    .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_35_1114_point)))
+                                                                    .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_35_1070_point)))
                                                                   .setAppearance((new autoclass.Appearance())))
-                                                                .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,0.71770000457763672,-0.064999997615814209)
-                                                                  .addChild((new autoclass.Shape())))
-                                                                .addChild((new autoclass.HAnimSite("Joe_r_ring_distal_tip")).setName("r_ring_distal_tip").setTranslation(-0.20000000298023224,0.69499999284744263,-0.064999997615814209)
-                                                                  .addChild((new autoclass.Shape()))))))))
-                                                      .addChild((new autoclass.HAnimJoint("Joe_r_pinky0")).setName("r_pinky0").setCenter(-0.20000000298023224,0.8399999737739563,-0.085000000894069672).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [251,252,253,281])).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,0.5])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
-                                                        .addChild((new autoclass.HAnimSegment("Joe_r_pinky_metacarpal")).setName("r_pinky_metacarpal")
-                                                          .addChild((new autoclass.Shape())
-                                                            .setGeometry((new autoclass.IndexedLineSet()).setCoordIndex(java.newArray("int", [0,1,-1]))
-                                                              .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_32_1127_point)))
-                                                            .setAppearance((new autoclass.Appearance())))
-                                                          .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,0.8399999737739563,-0.085000000894069672)
-                                                            .addChild((new autoclass.Shape())))
-                                                          .addChild((new autoclass.HAnimSite("Joe_r_metacarpal_pha5")).setName("r_metacarpal_pha5").setTranslation(-0.20000000298023224,0.79000002145767212,-0.094999998807907104)
-                                                            .addChild((new autoclass.Shape()))))
-                                                        .addChild((new autoclass.HAnimJoint("Joe_r_pinky1")).setName("r_pinky1").setCenter(-0.20000000298023224,0.79000002145767212,-0.085000000894069672).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [276,277,278])).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
-                                                          .addChild((new autoclass.HAnimSegment("Joe_r_pinky_proximal")).setName("r_pinky_proximal")
+                                                                .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,0.74000000953674316,-0.039999999105930328)
+                                                                  .addChild((new autoclass.Shape()))))
+                                                              .addChild((new autoclass.HAnimJoint("Joe_r_middle3")).setName("r_middle3").setCenter(-0.20000000298023224,0.71420001983642578,-0.039999999105930328).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [299,300,301,302,303,304,305,306,307])).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
+                                                                .addChild((new autoclass.HAnimSegment("Joe_r_middle_distal")).setName("r_middle_distal")
+                                                                  .addChild((new autoclass.Shape())
+                                                                    .setGeometry((new autoclass.IndexedLineSet()).setCoordIndex(java.newArray("int", [0,1,-1]))
+                                                                      .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_36_1077_point)))
+                                                                    .setAppearance((new autoclass.Appearance())))
+                                                                  .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,0.71420001983642578,-0.039999999105930328)
+                                                                    .addChild((new autoclass.Shape())))
+                                                                  .addChild((new autoclass.HAnimSite("Joe_r_dactylion")).setName("r_dactylion").setTranslation(-0.20000000298023224,0.68000000715255737,-0.039999999105930328)
+                                                                    .addChild((new autoclass.Shape())))
+                                                                  .addChild((new autoclass.HAnimSite("Joe_r_middle_distal_tip")).setName("r_middle_distal_tip").setTranslation(-0.20000000298023224,0.68000000715255737,-0.039999999105930328)
+                                                                    .addChild((new autoclass.Shape()))))))))
+                                                        .addChild((new autoclass.HAnimJoint("Joe_r_ring0")).setName("r_ring0").setCenter(-0.2,0.835,-0.065).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [249,250])).setSkinCoordWeight(java.newArray("float", [1.0,1.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
+                                                          .addChild((new autoclass.HAnimSegment("Joe_r_ring_metacarpal")).setName("r_ring_metacarpal")
                                                             .addChild((new autoclass.Shape())
                                                               .setGeometry((new autoclass.IndexedLineSet()).setCoordIndex(java.newArray("int", [0,1,-1]))
-                                                                .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_33_1136_point)))
+                                                                .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_33_1092_point)))
                                                               .setAppearance((new autoclass.Appearance())))
-                                                            .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,0.79000002145767212,-0.085000000894069672)
+                                                            .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,0.83499997854232788,-0.064999997615814209)
                                                               .addChild((new autoclass.Shape()))))
-                                                          .addChild((new autoclass.HAnimJoint("Joe_r_pinky2")).setName("r_pinky2").setCenter(-0.20000000298023224,0.75499999523162842,-0.085000000894069672).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [321,322,323,324])).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
-                                                            .addChild((new autoclass.HAnimSegment("Joe_r_pinky_middle")).setName("r_pinky_middle")
+                                                          .addChild((new autoclass.HAnimJoint("Joe_r_ring1")).setName("r_ring1").setCenter(-0.20000000298023224,0.7929999828338623,-0.064999997615814209).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [274,275,280,281])).setSkinCoordWeight(java.newArray("float", [1.0,1.0,0.5,0.5])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
+                                                            .addChild((new autoclass.HAnimSegment("Joe_r_ring_proximal")).setName("r_ring_proximal")
                                                               .addChild((new autoclass.Shape())
                                                                 .setGeometry((new autoclass.IndexedLineSet()).setCoordIndex(java.newArray("int", [0,1,-1]))
-                                                                  .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_34_1143_point)))
+                                                                  .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_34_1099_point)))
                                                                 .setAppearance((new autoclass.Appearance())))
-                                                              .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,0.75499999523162842,-0.085000000894069672)
+                                                              .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,0.7929999828338623,-0.064999997615814209)
                                                                 .addChild((new autoclass.Shape()))))
-                                                            .addChild((new autoclass.HAnimJoint("Joe_r_pinky3")).setName("r_pinky3").setCenter(-0.20000000298023224,0.73500001430511475,-0.090000003576278687).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [325,326,327,328,329,330,331,332,333])).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
-                                                              .addChild((new autoclass.HAnimSegment("Joe_r_pinky_distal")).setName("r_pinky_distal")
+                                                            .addChild((new autoclass.HAnimJoint("Joe_r_ring2")).setName("r_ring2").setCenter(-0.20000000298023224,0.74000000953674316,-0.064999997615814209).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [308,309,310,311])).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
+                                                              .addChild((new autoclass.HAnimSegment("Joe_r_ring_middle")).setName("r_ring_middle")
                                                                 .addChild((new autoclass.Shape())
                                                                   .setGeometry((new autoclass.IndexedLineSet()).setCoordIndex(java.newArray("int", [0,1,-1]))
-                                                                    .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_35_1150_point)))
+                                                                    .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_35_1106_point)))
                                                                   .setAppearance((new autoclass.Appearance())))
-                                                                .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,0.73500001430511475,-0.085000000894069672)
-                                                                  .addChild((new autoclass.Shape())))
-                                                                .addChild((new autoclass.HAnimSite("Joe_r_pinky_distal_tip")).setName("r_pinky_distal_tip").setTranslation(-0.20000000298023224,0.72000002861022949,-0.085000000894069672)
-                                                                  .addChild((new autoclass.Shape()))))))))))))))))))))))))))))))
+                                                                .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,0.74000000953674316,-0.064999997615814209)
+                                                                  .addChild((new autoclass.Shape()))))
+                                                              .addChild((new autoclass.HAnimJoint("Joe_r_ring3")).setName("r_ring3").setCenter(-0.20000000298023224,0.71770000457763672,-0.064999997615814209).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [312,313,314,315,316,317,318,319,320])).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
+                                                                .addChild((new autoclass.HAnimSegment("Joe_r_ring_distal")).setName("r_ring_distal")
+                                                                  .addChild((new autoclass.Shape())
+                                                                    .setGeometry((new autoclass.IndexedLineSet()).setCoordIndex(java.newArray("int", [0,1,-1]))
+                                                                      .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_36_1113_point)))
+                                                                    .setAppearance((new autoclass.Appearance())))
+                                                                  .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,0.71770000457763672,-0.064999997615814209)
+                                                                    .addChild((new autoclass.Shape())))
+                                                                  .addChild((new autoclass.HAnimSite("Joe_r_ring_distal_tip")).setName("r_ring_distal_tip").setTranslation(-0.20000000298023224,0.69499999284744263,-0.064999997615814209)
+                                                                    .addChild((new autoclass.Shape()))))))))
+                                                        .addChild((new autoclass.HAnimJoint("Joe_r_pinky0")).setName("r_pinky0").setCenter(-0.20000000298023224,0.8399999737739563,-0.085000000894069672).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [251,252,253,281])).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,0.5])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
+                                                          .addChild((new autoclass.HAnimSegment("Joe_r_pinky_metacarpal")).setName("r_pinky_metacarpal")
+                                                            .addChild((new autoclass.Shape())
+                                                              .setGeometry((new autoclass.IndexedLineSet()).setCoordIndex(java.newArray("int", [0,1,-1]))
+                                                                .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_33_1126_point)))
+                                                              .setAppearance((new autoclass.Appearance())))
+                                                            .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,0.8399999737739563,-0.085000000894069672)
+                                                              .addChild((new autoclass.Shape())))
+                                                            .addChild((new autoclass.HAnimSite("Joe_r_metacarpal_pha5")).setName("r_metacarpal_pha5").setTranslation(-0.20000000298023224,0.79000002145767212,-0.094999998807907104)
+                                                              .addChild((new autoclass.Shape()))))
+                                                          .addChild((new autoclass.HAnimJoint("Joe_r_pinky1")).setName("r_pinky1").setCenter(-0.20000000298023224,0.79000002145767212,-0.085000000894069672).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [276,277,278])).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
+                                                            .addChild((new autoclass.HAnimSegment("Joe_r_pinky_proximal")).setName("r_pinky_proximal")
+                                                              .addChild((new autoclass.Shape())
+                                                                .setGeometry((new autoclass.IndexedLineSet()).setCoordIndex(java.newArray("int", [0,1,-1]))
+                                                                  .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_34_1135_point)))
+                                                                .setAppearance((new autoclass.Appearance())))
+                                                              .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,0.79000002145767212,-0.085000000894069672)
+                                                                .addChild((new autoclass.Shape()))))
+                                                            .addChild((new autoclass.HAnimJoint("Joe_r_pinky2")).setName("r_pinky2").setCenter(-0.20000000298023224,0.75499999523162842,-0.085000000894069672).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [321,322,323,324])).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
+                                                              .addChild((new autoclass.HAnimSegment("Joe_r_pinky_middle")).setName("r_pinky_middle")
+                                                                .addChild((new autoclass.Shape())
+                                                                  .setGeometry((new autoclass.IndexedLineSet()).setCoordIndex(java.newArray("int", [0,1,-1]))
+                                                                    .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_35_1142_point)))
+                                                                  .setAppearance((new autoclass.Appearance())))
+                                                                .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,0.75499999523162842,-0.085000000894069672)
+                                                                  .addChild((new autoclass.Shape()))))
+                                                              .addChild((new autoclass.HAnimJoint("Joe_r_pinky3")).setName("r_pinky3").setCenter(-0.20000000298023224,0.73500001430511475,-0.090000003576278687).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setSkinCoordIndex(java.newArray("int", [325,326,327,328,329,330,331,332,333])).setSkinCoordWeight(java.newArray("float", [1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0]))
+                                                                .addChild((new autoclass.HAnimSegment("Joe_r_pinky_distal")).setName("r_pinky_distal")
+                                                                  .addChild((new autoclass.Shape())
+                                                                    .setGeometry((new autoclass.IndexedLineSet()).setCoordIndex(java.newArray("int", [0,1,-1]))
+                                                                      .setCoord((new autoclass.Coordinate()).setPoint(this.Coordinate_36_1149_point)))
+                                                                    .setAppearance((new autoclass.Appearance())))
+                                                                  .addChild((new autoclass.Transform()).setTranslation(-0.20000000298023224,0.73500001430511475,-0.085000000894069672)
+                                                                    .addChild((new autoclass.Shape())))
+                                                                  .addChild((new autoclass.HAnimSite("Joe_r_pinky_distal_tip")).setName("r_pinky_distal_tip").setTranslation(-0.20000000298023224,0.72000002861022949,-0.085000000894069672)
+                                                                    .addChild((new autoclass.Shape())))))))))))))))))))))))))))))))
           .addJoints((new autoclass.HAnimJoint()).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
           .addJoints((new autoclass.HAnimJoint()).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))
           .addJoints((new autoclass.HAnimJoint()).setLlimit(java.newArray("float", [0.0,0.0,0.0])).setUlimit(java.newArray("float", [0.0,0.0,0.0])))

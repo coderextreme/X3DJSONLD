@@ -862,3 +862,5 @@ KoreanCharacterMotionAnnexD01Jin.prototype = {
       .addSegments((new autoclass.HAnimSegment()))
       .addSegments((new autoclass.HAnimSegment()))
       .addSegments((new autoclass.HAnimSegment()))
+      .addSegments((new autoclass.HAnimSegment()))
+      .addSegments((new a

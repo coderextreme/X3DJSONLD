@@ -6,7 +6,7 @@ java.asyncOptions = {
   promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below
   ifReadOnlySuffix: "_alt"
 };
-var autoclass = require('../../../X3Dautoclass');
+var autoclass = require('../../../X3Dautoclass.mjs');
 var ConfigurationProperties = autoclass.ConfigurationProperties;
 ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;

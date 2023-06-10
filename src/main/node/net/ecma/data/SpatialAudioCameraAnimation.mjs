@@ -1,6 +1,6 @@
 'use strict';
-import fs from 'fs';
 import { X3D } from './x3d.mjs';
+import fs from 'fs';
 import { SFString } from './x3d.mjs';
 import { SFNode } from './x3d.mjs';
 import { head } from './x3d.mjs';
@@ -253,11 +253,16 @@ var X3D0 =  new X3D({
               trackCurrentView : new SFBool(true)}),
 
             new StreamAudioDestination({
+              channelCountMode : new SFString("MAX"),
+              channelInterpretation : new SFString("SPEAKERS"),
               children : new MFNode([
                 new SpatialSound({
                   DEF : new SFString("Audio1"),
+                  distanceModel : new SFString("INVERSE"),
                   children : new MFNode([
                     new Gain({
+                      channelCountMode : new SFString("MAX"),
+                      channelInterpretation : new SFString("SPEAKERS"),
                       children : new MFNode([
                         new AudioClip({
                           description : new SFString("Violin"),
@@ -266,8 +271,11 @@ var X3D0 =  new X3D({
 
                 new SpatialSound({
                   DEF : new SFString("Audio2"),
+                  distanceModel : new SFString("INVERSE"),
                   children : new MFNode([
                     new Gain({
+                      channelCountMode : new SFString("MAX"),
+                      channelInterpretation : new SFString("SPEAKERS"),
                       children : new MFNode([
                         new AudioClip({
                           description : new SFString("Saxophone"),

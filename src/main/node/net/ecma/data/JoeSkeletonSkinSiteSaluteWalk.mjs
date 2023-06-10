@@ -1,6 +1,6 @@
 'use strict';
-import fs from 'fs';
 import { X3D } from './x3d.mjs';
+import fs from 'fs';
 import { SFString } from './x3d.mjs';
 import { SFNode } from './x3d.mjs';
 import { head } from './x3d.mjs';
@@ -78,7 +78,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("2 January 2023")}),
+              content : new SFString("27 January 2023")}),
 
             new meta({
               name : new SFString("warning"),
@@ -208,7 +208,7 @@ var X3D0 =  new X3D({
               children : new MFNode([
                 new Inline({
                   DEF : new SFString("CoordinateAxes"),
-                  url : new MFString(["../data/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","../../../Savage/Tools/Authoring/CoordinateAxes.x3d","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","../../../Savage/Tools/Authoring/CoordinateAxes.wrl","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"])})])}),
+                  url : new MFString(["../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","../../../Savage/Tools/Authoring/CoordinateAxes.x3d","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","../../../Savage/Tools/Authoring/CoordinateAxes.wrl","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"])})])}),
           /*Authoring hint: these axes are aligned within local coordinate system*/
 
             new Group({
@@ -390,7 +390,7 @@ var X3D0 =  new X3D({
                                 new ImageTexture({
                                   DEF : new SFString("zBlueSpiralBkg2"),
                                   description : new SFString("Blue Spiral Pattern"),
-                                  url : new MFString(["../resources/images/zBlueSpiralBkg2.gif","zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"])})),
+                                  url : new MFString(["zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"])})),
                               material : new SFNode(
                                 new Material({
                                   DEF : new SFString("SkinMaterial"),
@@ -403,8 +403,8 @@ var X3D0 =  new X3D({
                           USE : new SFString("TheSkinCoord")})),
                       joints : new MFNode([
                         new HAnimJoint({
-                          name : new SFString("HumanoidRoot"),
-                          DEF : new SFString("Joe_HumanoidRoot"),
+                          name : new SFString("humanoid_root"),
+                          DEF : new SFString("Joe_humanoid_root"),
                           center : new SFVec3f([0,0.875,0]),
                           ulimit : new MFFloat([0,0,0]),
                           llimit : new MFFloat([0,0,0]),
@@ -3413,58 +3413,20 @@ var X3D0 =  new X3D({
                                                                                                                                           translation : new SFVec3f([0.2013999968767166,0.7009000182151794,-0.10119999945163727]),
                                                                                                                                           children : new MFNode([
                                                                                                                                             new Shape({
-                                                                                                                                              USE : new SFString("sitebox")})])})])})])})])})])})])})])})])})])})])})])})])}),
-
-                                                                                            new HAnimJoint({
-                                                                                              name : new SFString("r_sternoclavicular"),
-                                                                                              DEF : new SFString("Joe_r_sternoclavicular"),
-                                                                                              center : new SFVec3f([-0.029999999329447746,1.4600000381469727,0]),
-                                                                                              skinCoordIndex : new MFInt32([10]),
-                                                                                              skinCoordWeight : new MFFloat([1]),
-                                                                                              ulimit : new MFFloat([0,0,0]),
-                                                                                              llimit : new MFFloat([0,0,0]),
-                                                                                              children : new MFNode([
-                                                                                                new HAnimSegment({
-                                                                                                  name : new SFString("r_clavicle"),
-                                                                                                  DEF : new SFString("Joe_r_clavicle"),
-                                                                                                  children : new MFNode([
-                                                                                                    new Shape({
-                                                                                                      geometry : new SFNode(
-                                                                                                        new IndexedLineSet({
-                                                                                                          coordIndex : new MFInt32([0,1,-1]),
-                                                                                                          coord : new SFNode(
-                                                                                                            new Coordinate({
-                                                                                                              point : new MFVec3f([-0.029999999329447746,1.4600000381469727,0.019999999552965164,-0.09000000357627869,1.409999966621399,-0.09000000357627869])}))})),
-                                                                                                      appearance : new SFNode(
-                                                                                                        new Appearance({
-                                                                                                          USE : new SFString("SegmentLine")}))}),
-
-                                                                                                    new Transform({
-                                                                                                      translation : new SFVec3f([-0.029999999329447746,1.4600000381469727,0.019999999552965164]),
-                                                                                                      children : new MFNode([
-                                                                                                        new Shape({
-                                                                                                          USE : new SFString("jointbox")})])}),
-
-                                                                                                    new HAnimSite({
-                                                                                                      name : new SFString("r_clavicale"),
-                                                                                                      DEF : new SFString("Joe_r_clavicale"),
-                                                                                                      translation : new SFVec3f([-0.029999999329447746,1.4600000381469727,0.03500000014901161]),
-                                                                                                      children : new MFNode([
-                                                                                                        new Shape({
-                                                                                                          USE : new SFString("sitebox")})])})])}),
+                                                                                                                                              USE : new SFString("sitebox")})])})])})])})])})])})])})])})])})])})])})])}),
 
                                                                                                 new HAnimJoint({
-                                                                                                  name : new SFString("r_acromioclavicular"),
-                                                                                                  DEF : new SFString("Joe_r_acromioclavicular"),
-                                                                                                  center : new SFVec3f([-0.09000000357627869,1.409999966621399,-0.10999999940395355]),
-                                                                                                  skinCoordIndex : new MFInt32([77,29]),
-                                                                                                  skinCoordWeight : new MFFloat([1,0.8999999761581421]),
+                                                                                                  name : new SFString("r_sternoclavicular"),
+                                                                                                  DEF : new SFString("Joe_r_sternoclavicular"),
+                                                                                                  center : new SFVec3f([-0.029999999329447746,1.4600000381469727,0]),
+                                                                                                  skinCoordIndex : new MFInt32([10]),
+                                                                                                  skinCoordWeight : new MFFloat([1]),
                                                                                                   ulimit : new MFFloat([0,0,0]),
                                                                                                   llimit : new MFFloat([0,0,0]),
                                                                                                   children : new MFNode([
                                                                                                     new HAnimSegment({
-                                                                                                      name : new SFString("r_scapula"),
-                                                                                                      DEF : new SFString("Joe_r_scapula"),
+                                                                                                      name : new SFString("r_clavicle"),
+                                                                                                      DEF : new SFString("Joe_r_clavicle"),
                                                                                                       children : new MFNode([
                                                                                                         new Shape({
                                                                                                           geometry : new SFNode(
@@ -3472,418 +3434,313 @@ var X3D0 =  new X3D({
                                                                                                               coordIndex : new MFInt32([0,1,-1]),
                                                                                                               coord : new SFNode(
                                                                                                                 new Coordinate({
-                                                                                                                  point : new MFVec3f([-0.09000000357627869,1.409999966621399,-0.09000000357627869,-0.20000000298023224,1.440000057220459,-0.03999999910593033])}))})),
+                                                                                                                  point : new MFVec3f([-0.029999999329447746,1.4600000381469727,0.019999999552965164,-0.09000000357627869,1.409999966621399,-0.09000000357627869])}))})),
                                                                                                           appearance : new SFNode(
                                                                                                             new Appearance({
                                                                                                               USE : new SFString("SegmentLine")}))}),
 
                                                                                                         new Transform({
-                                                                                                          translation : new SFVec3f([-0.09000000357627869,1.409999966621399,-0.09000000357627869]),
+                                                                                                          translation : new SFVec3f([-0.029999999329447746,1.4600000381469727,0.019999999552965164]),
                                                                                                           children : new MFNode([
                                                                                                             new Shape({
                                                                                                               USE : new SFString("jointbox")})])}),
 
-                                                                                                        new Transform({
-                                                                                                          translation : new SFVec3f([-0.10999999940395355,1.4270000457763672,-0.13750000298023224]),
-                                                                                                          children : new MFNode([
-                                                                                                            new Shape({
-                                                                                                              USE : new SFString("skinsphere")})])}),
-
                                                                                                         new HAnimSite({
-                                                                                                          name : new SFString("r_acromion"),
-                                                                                                          DEF : new SFString("Joe_r_acromion"),
-                                                                                                          translation : new SFVec3f([-0.17800000309944153,1.4824999570846558,-0.0625]),
-                                                                                                          children : new MFNode([
-                                                                                                            new Shape({
-                                                                                                              USE : new SFString("sitebox")})])}),
-
-                                                                                                        new HAnimSite({
-                                                                                                          name : new SFString("r_axilla_ant"),
-                                                                                                          DEF : new SFString("Joe_r_axilla_ant"),
-                                                                                                          translation : new SFVec3f([-0.17000000178813934,1.3799999952316284,0.007000000216066837]),
-                                                                                                          children : new MFNode([
-                                                                                                            new Shape({
-                                                                                                              USE : new SFString("sitebox")})])}),
-
-                                                                                                        new HAnimSite({
-                                                                                                          name : new SFString("r_axilla_post"),
-                                                                                                          DEF : new SFString("Joe_r_axilla_post"),
-                                                                                                          translation : new SFVec3f([-0.1599999964237213,1.3799999952316284,-0.12700000405311584]),
+                                                                                                          name : new SFString("r_clavicale"),
+                                                                                                          DEF : new SFString("Joe_r_clavicale"),
+                                                                                                          translation : new SFVec3f([-0.029999999329447746,1.4600000381469727,0.03500000014901161]),
                                                                                                           children : new MFNode([
                                                                                                             new Shape({
                                                                                                               USE : new SFString("sitebox")})])})])}),
 
                                                                                                     new HAnimJoint({
-                                                                                                      name : new SFString("r_shoulder"),
-                                                                                                      DEF : new SFString("Joe_r_shoulder"),
-                                                                                                      center : new SFVec3f([-0.20000000298023224,1.440000057220459,-0.03999999910593033]),
-                                                                                                      skinCoordIndex : new MFInt32([29,30,32,78,218,219,220,221,86,88]),
-                                                                                                      skinCoordWeight : new MFFloat([0.10000000149011612,1,1,1,1,1,1,1,0.30000001192092896,0.20000000298023224]),
+                                                                                                      name : new SFString("r_acromioclavicular"),
+                                                                                                      DEF : new SFString("Joe_r_acromioclavicular"),
+                                                                                                      center : new SFVec3f([-0.09000000357627869,1.409999966621399,-0.10999999940395355]),
+                                                                                                      skinCoordIndex : new MFInt32([77,29]),
+                                                                                                      skinCoordWeight : new MFFloat([1,0.8999999761581421]),
                                                                                                       ulimit : new MFFloat([0,0,0]),
                                                                                                       llimit : new MFFloat([0,0,0]),
                                                                                                       children : new MFNode([
                                                                                                         new HAnimSegment({
-                                                                                                          name : new SFString("r_upperarm"),
-                                                                                                          DEF : new SFString("Joe_r_upperarm"),
+                                                                                                          name : new SFString("r_scapula"),
+                                                                                                          DEF : new SFString("Joe_r_scapula"),
                                                                                                           children : new MFNode([
-                                                                                                            new Transform({
-                                                                                                              translation : new SFVec3f([-0.20000000298023224,1.440000057220459,-0.03999999910593033]),
-                                                                                                              children : new MFNode([
-                                                                                                                new Shape({
-                                                                                                                  USE : new SFString("jointbox")})])}),
-
                                                                                                             new Shape({
                                                                                                               geometry : new SFNode(
                                                                                                                 new IndexedLineSet({
                                                                                                                   coordIndex : new MFInt32([0,1,-1]),
                                                                                                                   coord : new SFNode(
                                                                                                                     new Coordinate({
-                                                                                                                      point : new MFVec3f([-0.20000000298023224,1.440000057220459,-0.03999999910593033,-0.20000000298023224,1.138800024986267,-0.03999999910593033])}))})),
+                                                                                                                      point : new MFVec3f([-0.09000000357627869,1.409999966621399,-0.09000000357627869,-0.20000000298023224,1.440000057220459,-0.03999999910593033])}))})),
                                                                                                               appearance : new SFNode(
                                                                                                                 new Appearance({
                                                                                                                   USE : new SFString("SegmentLine")}))}),
 
                                                                                                             new Transform({
+                                                                                                              translation : new SFVec3f([-0.09000000357627869,1.409999966621399,-0.09000000357627869]),
+                                                                                                              children : new MFNode([
+                                                                                                                new Shape({
+                                                                                                                  USE : new SFString("jointbox")})])}),
+
+                                                                                                            new Transform({
+                                                                                                              translation : new SFVec3f([-0.10999999940395355,1.4270000457763672,-0.13750000298023224]),
+                                                                                                              children : new MFNode([
+                                                                                                                new Shape({
+                                                                                                                  USE : new SFString("skinsphere")})])}),
+
+                                                                                                            new HAnimSite({
+                                                                                                              name : new SFString("r_acromion"),
+                                                                                                              DEF : new SFString("Joe_r_acromion"),
                                                                                                               translation : new SFVec3f([-0.17800000309944153,1.4824999570846558,-0.0625]),
                                                                                                               children : new MFNode([
                                                                                                                 new Shape({
-                                                                                                                  USE : new SFString("skinsphere")})])}),
+                                                                                                                  USE : new SFString("sitebox")})])}),
 
-                                                                                                            new Transform({
+                                                                                                            new HAnimSite({
+                                                                                                              name : new SFString("r_axilla_ant"),
+                                                                                                              DEF : new SFString("Joe_r_axilla_ant"),
                                                                                                               translation : new SFVec3f([-0.17000000178813934,1.3799999952316284,0.007000000216066837]),
                                                                                                               children : new MFNode([
                                                                                                                 new Shape({
-                                                                                                                  USE : new SFString("skinsphere")})])}),
+                                                                                                                  USE : new SFString("sitebox")})])}),
 
-                                                                                                            new Transform({
+                                                                                                            new HAnimSite({
+                                                                                                              name : new SFString("r_axilla_post"),
+                                                                                                              DEF : new SFString("Joe_r_axilla_post"),
                                                                                                               translation : new SFVec3f([-0.1599999964237213,1.3799999952316284,-0.12700000405311584]),
-                                                                                                              children : new MFNode([
-                                                                                                                new Shape({
-                                                                                                                  USE : new SFString("skinsphere")})])}),
-
-                                                                                                            new Transform({
-                                                                                                              translation : new SFVec3f([-0.23499999940395355,1.4199999570846558,-0.0625]),
-                                                                                                              children : new MFNode([
-                                                                                                                new Shape({
-                                                                                                                  USE : new SFString("skinsphere")})])}),
-
-                                                                                                            new Transform({
-                                                                                                              translation : new SFVec3f([-0.23000000417232513,1.2350000143051147,-0.03999999910593033]),
-                                                                                                              children : new MFNode([
-                                                                                                                new Shape({
-                                                                                                                  USE : new SFString("skinsphere")})])}),
-
-                                                                                                            new Transform({
-                                                                                                              translation : new SFVec3f([-0.1599999964237213,1.2300000190734863,-0.03999999910593033]),
-                                                                                                              children : new MFNode([
-                                                                                                                new Shape({
-                                                                                                                  USE : new SFString("skinsphere")})])}),
-
-                                                                                                            new Transform({
-                                                                                                              translation : new SFVec3f([-0.20000000298023224,1.2300000190734863,-0.10499999672174454]),
-                                                                                                              children : new MFNode([
-                                                                                                                new Shape({
-                                                                                                                  USE : new SFString("skinsphere")})])}),
-
-                                                                                                            new Transform({
-                                                                                                              translation : new SFVec3f([-0.20000000298023224,1.2350000143051147,0.019999999552965164]),
-                                                                                                              children : new MFNode([
-                                                                                                                new Shape({
-                                                                                                                  USE : new SFString("skinsphere")})])}),
-
-                                                                                                            new HAnimSite({
-                                                                                                              name : new SFString("r_humeral_medial_epicn"),
-                                                                                                              DEF : new SFString("Joe_r_humeral_medial_epicn"),
-                                                                                                              translation : new SFVec3f([-0.16500000655651093,1.138800024986267,-0.03999999910593033]),
-                                                                                                              children : new MFNode([
-                                                                                                                new Shape({
-                                                                                                                  USE : new SFString("sitebox")})])}),
-
-                                                                                                            new HAnimSite({
-                                                                                                              name : new SFString("r_radiale"),
-                                                                                                              DEF : new SFString("Joe_r_radiale"),
-                                                                                                              translation : new SFVec3f([-0.23000000417232513,1.1330000162124634,-0.054999999701976776]),
-                                                                                                              children : new MFNode([
-                                                                                                                new Shape({
-                                                                                                                  USE : new SFString("sitebox")})])}),
-
-                                                                                                            new HAnimSite({
-                                                                                                              name : new SFString("r_humeral_lateral_epicn"),
-                                                                                                              DEF : new SFString("Joe_r_humeral_lateral_epicn"),
-                                                                                                              translation : new SFVec3f([-0.24400000274181366,1.138800024986267,-0.03999999910593033]),
                                                                                                               children : new MFNode([
                                                                                                                 new Shape({
                                                                                                                   USE : new SFString("sitebox")})])})])}),
 
                                                                                                         new HAnimJoint({
-                                                                                                          name : new SFString("r_elbow"),
-                                                                                                          DEF : new SFString("Joe_r_elbow"),
-                                                                                                          center : new SFVec3f([-0.20000000298023224,1.138800024986267,-0.03999999910593033]),
-                                                                                                          skinCoordIndex : new MFInt32([33,34,35,225,226,227,228,229,231,232,233,234]),
-                                                                                                          skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1,1,1,1]),
+                                                                                                          name : new SFString("r_shoulder"),
+                                                                                                          DEF : new SFString("Joe_r_shoulder"),
+                                                                                                          center : new SFVec3f([-0.20000000298023224,1.440000057220459,-0.03999999910593033]),
+                                                                                                          skinCoordIndex : new MFInt32([29,30,32,78,218,219,220,221,86,88]),
+                                                                                                          skinCoordWeight : new MFFloat([0.10000000149011612,1,1,1,1,1,1,1,0.30000001192092896,0.20000000298023224]),
                                                                                                           ulimit : new MFFloat([0,0,0]),
                                                                                                           llimit : new MFFloat([0,0,0]),
                                                                                                           children : new MFNode([
                                                                                                             new HAnimSegment({
-                                                                                                              name : new SFString("r_forearm"),
-                                                                                                              DEF : new SFString("Joe_r_forearm"),
+                                                                                                              name : new SFString("r_upperarm"),
+                                                                                                              DEF : new SFString("Joe_r_upperarm"),
                                                                                                               children : new MFNode([
+                                                                                                                new Transform({
+                                                                                                                  translation : new SFVec3f([-0.20000000298023224,1.440000057220459,-0.03999999910593033]),
+                                                                                                                  children : new MFNode([
+                                                                                                                    new Shape({
+                                                                                                                      USE : new SFString("jointbox")})])}),
+
                                                                                                                 new Shape({
                                                                                                                   geometry : new SFNode(
                                                                                                                     new IndexedLineSet({
                                                                                                                       coordIndex : new MFInt32([0,1,-1]),
                                                                                                                       coord : new SFNode(
                                                                                                                         new Coordinate({
-                                                                                                                          point : new MFVec3f([-0.20000000298023224,1.138800024986267,-0.03999999910593033,-0.20000000298023224,0.8899999856948853,-0.03999999910593033])}))})),
+                                                                                                                          point : new MFVec3f([-0.20000000298023224,1.440000057220459,-0.03999999910593033,-0.20000000298023224,1.138800024986267,-0.03999999910593033])}))})),
                                                                                                                   appearance : new SFNode(
                                                                                                                     new Appearance({
                                                                                                                       USE : new SFString("SegmentLine")}))}),
 
                                                                                                                 new Transform({
-                                                                                                                  translation : new SFVec3f([-0.20000000298023224,1.138800024986267,-0.03999999910593033]),
-                                                                                                                  children : new MFNode([
-                                                                                                                    new Shape({
-                                                                                                                      USE : new SFString("jointbox")})])}),
-
-                                                                                                                new Transform({
-                                                                                                                  translation : new SFVec3f([-0.20000000298023224,1.138800024986267,0.013000000268220901]),
+                                                                                                                  translation : new SFVec3f([-0.17800000309944153,1.4824999570846558,-0.0625]),
                                                                                                                   children : new MFNode([
                                                                                                                     new Shape({
                                                                                                                       USE : new SFString("skinsphere")})])}),
 
                                                                                                                 new Transform({
-                                                                                                                  translation : new SFVec3f([-0.22499999403953552,1,-0.009999999776482582]),
+                                                                                                                  translation : new SFVec3f([-0.17000000178813934,1.3799999952316284,0.007000000216066837]),
                                                                                                                   children : new MFNode([
                                                                                                                     new Shape({
                                                                                                                       USE : new SFString("skinsphere")})])}),
 
                                                                                                                 new Transform({
-                                                                                                                  translation : new SFVec3f([-0.22499999403953552,1,-0.07000000029802322]),
+                                                                                                                  translation : new SFVec3f([-0.1599999964237213,1.3799999952316284,-0.12700000405311584]),
                                                                                                                   children : new MFNode([
                                                                                                                     new Shape({
                                                                                                                       USE : new SFString("skinsphere")})])}),
 
                                                                                                                 new Transform({
-                                                                                                                  translation : new SFVec3f([-0.1850000023841858,1,-0.009999999776482582]),
+                                                                                                                  translation : new SFVec3f([-0.23499999940395355,1.4199999570846558,-0.0625]),
                                                                                                                   children : new MFNode([
                                                                                                                     new Shape({
                                                                                                                       USE : new SFString("skinsphere")})])}),
 
                                                                                                                 new Transform({
-                                                                                                                  translation : new SFVec3f([-0.1850000023841858,1,-0.07000000029802322]),
+                                                                                                                  translation : new SFVec3f([-0.23000000417232513,1.2350000143051147,-0.03999999910593033]),
+                                                                                                                  children : new MFNode([
+                                                                                                                    new Shape({
+                                                                                                                      USE : new SFString("skinsphere")})])}),
+
+                                                                                                                new Transform({
+                                                                                                                  translation : new SFVec3f([-0.1599999964237213,1.2300000190734863,-0.03999999910593033]),
+                                                                                                                  children : new MFNode([
+                                                                                                                    new Shape({
+                                                                                                                      USE : new SFString("skinsphere")})])}),
+
+                                                                                                                new Transform({
+                                                                                                                  translation : new SFVec3f([-0.20000000298023224,1.2300000190734863,-0.10499999672174454]),
+                                                                                                                  children : new MFNode([
+                                                                                                                    new Shape({
+                                                                                                                      USE : new SFString("skinsphere")})])}),
+
+                                                                                                                new Transform({
+                                                                                                                  translation : new SFVec3f([-0.20000000298023224,1.2350000143051147,0.019999999552965164]),
                                                                                                                   children : new MFNode([
                                                                                                                     new Shape({
                                                                                                                       USE : new SFString("skinsphere")})])}),
 
                                                                                                                 new HAnimSite({
-                                                                                                                  name : new SFString("r_radial_styloid"),
-                                                                                                                  DEF : new SFString("Joe_r_radial_styloid"),
-                                                                                                                  translation : new SFVec3f([-0.20000000298023224,0.8999999761581421,-0.014999999664723873]),
+                                                                                                                  name : new SFString("r_humeral_medial_epicn"),
+                                                                                                                  DEF : new SFString("Joe_r_humeral_medial_epicn"),
+                                                                                                                  translation : new SFVec3f([-0.16500000655651093,1.138800024986267,-0.03999999910593033]),
                                                                                                                   children : new MFNode([
                                                                                                                     new Shape({
                                                                                                                       USE : new SFString("sitebox")})])}),
 
                                                                                                                 new HAnimSite({
-                                                                                                                  name : new SFString("r_olecranon"),
-                                                                                                                  DEF : new SFString("Joe_r_olecranon"),
-                                                                                                                  translation : new SFVec3f([-0.20000000298023224,1.138800024986267,-0.07999999821186066]),
+                                                                                                                  name : new SFString("r_radiale"),
+                                                                                                                  DEF : new SFString("Joe_r_radiale"),
+                                                                                                                  translation : new SFVec3f([-0.23000000417232513,1.1330000162124634,-0.054999999701976776]),
+                                                                                                                  children : new MFNode([
+                                                                                                                    new Shape({
+                                                                                                                      USE : new SFString("sitebox")})])}),
+
+                                                                                                                new HAnimSite({
+                                                                                                                  name : new SFString("r_humeral_lateral_epicn"),
+                                                                                                                  DEF : new SFString("Joe_r_humeral_lateral_epicn"),
+                                                                                                                  translation : new SFVec3f([-0.24400000274181366,1.138800024986267,-0.03999999910593033]),
                                                                                                                   children : new MFNode([
                                                                                                                     new Shape({
                                                                                                                       USE : new SFString("sitebox")})])})])}),
 
                                                                                                             new HAnimJoint({
-                                                                                                              name : new SFString("r_wrist"),
-                                                                                                              DEF : new SFString("Joe_r_wrist"),
-                                                                                                              center : new SFVec3f([-0.20000000298023224,0.8899999856948853,-0.03999999910593033]),
-                                                                                                              skinCoordIndex : new MFInt32([235,236,237,238,239,240,241,242]),
-                                                                                                              skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1]),
+                                                                                                              name : new SFString("r_elbow"),
+                                                                                                              DEF : new SFString("Joe_r_elbow"),
+                                                                                                              center : new SFVec3f([-0.20000000298023224,1.138800024986267,-0.03999999910593033]),
+                                                                                                              skinCoordIndex : new MFInt32([33,34,35,225,226,227,228,229,231,232,233,234]),
+                                                                                                              skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1,1,1,1]),
                                                                                                               ulimit : new MFFloat([0,0,0]),
                                                                                                               llimit : new MFFloat([0,0,0]),
                                                                                                               children : new MFNode([
                                                                                                                 new HAnimSegment({
-                                                                                                                  name : new SFString("r_hand"),
-                                                                                                                  DEF : new SFString("Joe_r_hand"),
+                                                                                                                  name : new SFString("r_forearm"),
+                                                                                                                  DEF : new SFString("Joe_r_forearm"),
                                                                                                                   children : new MFNode([
                                                                                                                     new Shape({
                                                                                                                       geometry : new SFNode(
                                                                                                                         new IndexedLineSet({
-                                                                                                                          coordIndex : new MFInt32([0,1,-1,0,2,-1,0,3,-1,0,4,-1,0,5,-1]),
+                                                                                                                          coordIndex : new MFInt32([0,1,-1]),
                                                                                                                           coord : new SFNode(
                                                                                                                             new Coordinate({
-                                                                                                                              point : new MFVec3f([-0.20000000298023224,0.8899999856948853,-0.03999999910593033,-0.20000000298023224,0.8500000238418579,0,-0.20000000298023224,0.8399999737739563,-0.014999999664723873,-0.20000000298023224,0.8349999785423279,-0.03999999910593033,-0.20000000298023224,0.8349999785423279,-0.06499999761581421,-0.20000000298023224,0.8399999737739563,-0.08500000089406967])}))})),
+                                                                                                                              point : new MFVec3f([-0.20000000298023224,1.138800024986267,-0.03999999910593033,-0.20000000298023224,0.8899999856948853,-0.03999999910593033])}))})),
                                                                                                                       appearance : new SFNode(
                                                                                                                         new Appearance({
                                                                                                                           USE : new SFString("SegmentLine")}))}),
 
                                                                                                                     new Transform({
-                                                                                                                      translation : new SFVec3f([-0.20000000298023224,0.8899999856948853,-0.03999999910593033]),
+                                                                                                                      translation : new SFVec3f([-0.20000000298023224,1.138800024986267,-0.03999999910593033]),
                                                                                                                       children : new MFNode([
                                                                                                                         new Shape({
                                                                                                                           USE : new SFString("jointbox")})])}),
 
+                                                                                                                    new Transform({
+                                                                                                                      translation : new SFVec3f([-0.20000000298023224,1.138800024986267,0.013000000268220901]),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new Shape({
+                                                                                                                          USE : new SFString("skinsphere")})])}),
+
+                                                                                                                    new Transform({
+                                                                                                                      translation : new SFVec3f([-0.22499999403953552,1,-0.009999999776482582]),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new Shape({
+                                                                                                                          USE : new SFString("skinsphere")})])}),
+
+                                                                                                                    new Transform({
+                                                                                                                      translation : new SFVec3f([-0.22499999403953552,1,-0.07000000029802322]),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new Shape({
+                                                                                                                          USE : new SFString("skinsphere")})])}),
+
+                                                                                                                    new Transform({
+                                                                                                                      translation : new SFVec3f([-0.1850000023841858,1,-0.009999999776482582]),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new Shape({
+                                                                                                                          USE : new SFString("skinsphere")})])}),
+
+                                                                                                                    new Transform({
+                                                                                                                      translation : new SFVec3f([-0.1850000023841858,1,-0.07000000029802322]),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new Shape({
+                                                                                                                          USE : new SFString("skinsphere")})])}),
+
                                                                                                                     new HAnimSite({
-                                                                                                                      name : new SFString("r_ulnar_styloid"),
-                                                                                                                      DEF : new SFString("Joe_r_ulnar_styloid"),
-                                                                                                                      translation : new SFVec3f([-0.20000000298023224,0.8999999761581421,-0.08500000089406967]),
+                                                                                                                      name : new SFString("r_radial_styloid"),
+                                                                                                                      DEF : new SFString("Joe_r_radial_styloid"),
+                                                                                                                      translation : new SFVec3f([-0.20000000298023224,0.8999999761581421,-0.014999999664723873]),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new Shape({
+                                                                                                                          USE : new SFString("sitebox")})])}),
+
+                                                                                                                    new HAnimSite({
+                                                                                                                      name : new SFString("r_olecranon"),
+                                                                                                                      DEF : new SFString("Joe_r_olecranon"),
+                                                                                                                      translation : new SFVec3f([-0.20000000298023224,1.138800024986267,-0.07999999821186066]),
                                                                                                                       children : new MFNode([
                                                                                                                         new Shape({
                                                                                                                           USE : new SFString("sitebox")})])})])}),
 
                                                                                                                 new HAnimJoint({
-                                                                                                                  name : new SFString("r_thumb1"),
-                                                                                                                  DEF : new SFString("Joe_r_thumb1"),
-                                                                                                                  center : new SFVec3f([-0.20000000298023224,0.8500000238418579,0]),
-                                                                                                                  skinCoordIndex : new MFInt32([243,244]),
-                                                                                                                  skinCoordWeight : new MFFloat([1,1]),
+                                                                                                                  name : new SFString("r_wrist"),
+                                                                                                                  DEF : new SFString("Joe_r_wrist"),
+                                                                                                                  center : new SFVec3f([-0.20000000298023224,0.8899999856948853,-0.03999999910593033]),
+                                                                                                                  skinCoordIndex : new MFInt32([235,236,237,238,239,240,241,242]),
+                                                                                                                  skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1]),
                                                                                                                   ulimit : new MFFloat([0,0,0]),
                                                                                                                   llimit : new MFFloat([0,0,0]),
                                                                                                                   children : new MFNode([
                                                                                                                     new HAnimSegment({
-                                                                                                                      name : new SFString("r_thumb_metacarpal"),
-                                                                                                                      DEF : new SFString("Joe_r_thumb_metacarpal"),
+                                                                                                                      name : new SFString("r_hand"),
+                                                                                                                      DEF : new SFString("Joe_r_hand"),
                                                                                                                       children : new MFNode([
                                                                                                                         new Shape({
                                                                                                                           geometry : new SFNode(
                                                                                                                             new IndexedLineSet({
-                                                                                                                              coordIndex : new MFInt32([0,1,-1]),
+                                                                                                                              coordIndex : new MFInt32([0,1,-1,0,2,-1,0,3,-1,0,4,-1,0,5,-1]),
                                                                                                                               coord : new SFNode(
                                                                                                                                 new Coordinate({
-                                                                                                                                  point : new MFVec3f([-0.20000000298023224,0.8500000238418579,0,-0.20000000298023224,0.8199999928474426,0.029999999329447746])}))})),
+                                                                                                                                  point : new MFVec3f([-0.20000000298023224,0.8899999856948853,-0.03999999910593033,-0.20000000298023224,0.8500000238418579,0,-0.20000000298023224,0.8399999737739563,-0.014999999664723873,-0.20000000298023224,0.8349999785423279,-0.03999999910593033,-0.20000000298023224,0.8349999785423279,-0.06499999761581421,-0.20000000298023224,0.8399999737739563,-0.08500000089406967])}))})),
                                                                                                                           appearance : new SFNode(
                                                                                                                             new Appearance({
                                                                                                                               USE : new SFString("SegmentLine")}))}),
 
                                                                                                                         new Transform({
-                                                                                                                          translation : new SFVec3f([-0.20000000298023224,0.8500000238418579,0]),
-                                                                                                                          children : new MFNode([
-                                                                                                                            new Shape({
-                                                                                                                              USE : new SFString("jointbox")})])})])}),
-
-                                                                                                                    new HAnimJoint({
-                                                                                                                      name : new SFString("r_thumb2"),
-                                                                                                                      DEF : new SFString("Joe_r_thumb2"),
-                                                                                                                      center : new SFVec3f([-0.20000000298023224,0.8199999928474426,0.029999999329447746]),
-                                                                                                                      skinCoordIndex : new MFInt32([254,255,256,257,258,259]),
-                                                                                                                      skinCoordWeight : new MFFloat([0.5,0.5,0.5,1,1,1]),
-                                                                                                                      ulimit : new MFFloat([0,0,0]),
-                                                                                                                      llimit : new MFFloat([0,0,0]),
-                                                                                                                      children : new MFNode([
-                                                                                                                        new HAnimSegment({
-                                                                                                                          name : new SFString("r_thumb_proximal"),
-                                                                                                                          DEF : new SFString("Joe_r_thumb_proximal"),
-                                                                                                                          children : new MFNode([
-                                                                                                                            new Shape({
-                                                                                                                              geometry : new SFNode(
-                                                                                                                                new IndexedLineSet({
-                                                                                                                                  coordIndex : new MFInt32([0,1,-1]),
-                                                                                                                                  coord : new SFNode(
-                                                                                                                                    new Coordinate({
-                                                                                                                                      point : new MFVec3f([-0.20000000298023224,0.8199999928474426,0.029999999329447746,-0.20000000298023224,0.800000011920929,0.05000000074505806])}))})),
-                                                                                                                              appearance : new SFNode(
-                                                                                                                                new Appearance({
-                                                                                                                                  USE : new SFString("SegmentLine")}))}),
-
-                                                                                                                            new Transform({
-                                                                                                                              translation : new SFVec3f([-0.20000000298023224,0.8199999928474426,0.029999999329447746]),
-                                                                                                                              children : new MFNode([
-                                                                                                                                new Shape({
-                                                                                                                                  USE : new SFString("jointbox")})])})])}),
-
-                                                                                                                        new HAnimJoint({
-                                                                                                                          name : new SFString("r_thumb3"),
-                                                                                                                          DEF : new SFString("Joe_r_thumb3"),
-                                                                                                                          center : new SFVec3f([-0.20000000298023224,0.800000011920929,0.05000000074505806]),
-                                                                                                                          skinCoordIndex : new MFInt32([260,261,262,263,264,265,266,267,268]),
-                                                                                                                          skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1]),
-                                                                                                                          ulimit : new MFFloat([0,0,0]),
-                                                                                                                          llimit : new MFFloat([0,0,0]),
-                                                                                                                          children : new MFNode([
-                                                                                                                            new HAnimSegment({
-                                                                                                                              name : new SFString("r_thumb_distal"),
-                                                                                                                              DEF : new SFString("Joe_r_thumb_distal"),
-                                                                                                                              children : new MFNode([
-                                                                                                                                new Shape({
-                                                                                                                                  geometry : new SFNode(
-                                                                                                                                    new IndexedLineSet({
-                                                                                                                                      coordIndex : new MFInt32([0,1,-1]),
-                                                                                                                                      coord : new SFNode(
-                                                                                                                                        new Coordinate({
-                                                                                                                                          point : new MFVec3f([-0.20000000298023224,0.800000011920929,0.05000000074505806,-0.20000000298023224,0.7799999713897705,0.07000000029802322])}))})),
-                                                                                                                                  appearance : new SFNode(
-                                                                                                                                    new Appearance({
-                                                                                                                                      USE : new SFString("SegmentLine")}))}),
-
-                                                                                                                                new Transform({
-                                                                                                                                  DEF : new SFString("Thumbnail"),
-                                                                                                                                  translation : new SFVec3f([-0.20000000298023224,0.7850000262260437,0.07500000298023224]),
-                                                                                                                                  children : new MFNode([
-                                                                                                                                    new Shape({
-                                                                                                                                      USE : new SFString("skinsphere")})])}),
-
-                                                                                                                                new Transform({
-                                                                                                                                  translation : new SFVec3f([-0.20000000298023224,0.800000011920929,0.05000000074505806]),
-                                                                                                                                  children : new MFNode([
-                                                                                                                                    new Shape({
-                                                                                                                                      USE : new SFString("jointbox")})])}),
-
-                                                                                                                                new HAnimSite({
-                                                                                                                                  name : new SFString("r_thumb_distal_tip"),
-                                                                                                                                  DEF : new SFString("Joe_r_thumb_distal_tip"),
-                                                                                                                                  translation : new SFVec3f([-0.20000000298023224,0.7799999713897705,0.07000000029802322]),
-                                                                                                                                  children : new MFNode([
-                                                                                                                                    new Shape({
-                                                                                                                                      USE : new SFString("sitebox")})])})])})])})])})])}),
-
-                                                                                                                new HAnimJoint({
-                                                                                                                  name : new SFString("r_index0"),
-                                                                                                                  DEF : new SFString("Joe_r_index0"),
-                                                                                                                  center : new SFVec3f([-0.20000000298023224,0.8399999737739563,-0.014999999664723873]),
-                                                                                                                  skinCoordIndex : new MFInt32([245,246]),
-                                                                                                                  skinCoordWeight : new MFFloat([1,1]),
-                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                  llimit : new MFFloat([0,0,0]),
-                                                                                                                  children : new MFNode([
-                                                                                                                    new HAnimSegment({
-                                                                                                                      name : new SFString("r_index_metacarpal"),
-                                                                                                                      DEF : new SFString("Joe_r_index_metacarpal"),
-                                                                                                                      children : new MFNode([
-                                                                                                                        new Shape({
-                                                                                                                          geometry : new SFNode(
-                                                                                                                            new IndexedLineSet({
-                                                                                                                              coordIndex : new MFInt32([0,1,-1]),
-                                                                                                                              coord : new SFNode(
-                                                                                                                                new Coordinate({
-                                                                                                                                  point : new MFVec3f([-0.20000000298023224,0.8399999737739563,-0.014999999664723873,-0.20000000298023224,0.7929999828338623,-0.014999999664723873])}))})),
-                                                                                                                          appearance : new SFNode(
-                                                                                                                            new Appearance({
-                                                                                                                              USE : new SFString("SegmentLine")}))}),
-
-                                                                                                                        new Transform({
-                                                                                                                          translation : new SFVec3f([-0.20000000298023224,0.8399999737739563,-0.014999999664723873]),
+                                                                                                                          translation : new SFVec3f([-0.20000000298023224,0.8899999856948853,-0.03999999910593033]),
                                                                                                                           children : new MFNode([
                                                                                                                             new Shape({
                                                                                                                               USE : new SFString("jointbox")})])}),
 
                                                                                                                         new HAnimSite({
-                                                                                                                          name : new SFString("r_metacarpal_pha2"),
-                                                                                                                          DEF : new SFString("Joe_r_metacarpal_pha2"),
-                                                                                                                          translation : new SFVec3f([-0.20000000298023224,0.7929999828338623,-0.004999999888241291]),
+                                                                                                                          name : new SFString("r_ulnar_styloid"),
+                                                                                                                          DEF : new SFString("Joe_r_ulnar_styloid"),
+                                                                                                                          translation : new SFVec3f([-0.20000000298023224,0.8999999761581421,-0.08500000089406967]),
                                                                                                                           children : new MFNode([
                                                                                                                             new Shape({
                                                                                                                               USE : new SFString("sitebox")})])})])}),
 
                                                                                                                     new HAnimJoint({
-                                                                                                                      name : new SFString("r_index1"),
-                                                                                                                      DEF : new SFString("Joe_r_index1"),
-                                                                                                                      center : new SFVec3f([-0.20000000298023224,0.7929999828338623,-0.014999999664723873]),
-                                                                                                                      skinCoordIndex : new MFInt32([254,255,256,269,270,271,279]),
-                                                                                                                      skinCoordWeight : new MFFloat([0.5,0.5,0.5,1,1,1,0.5]),
+                                                                                                                      name : new SFString("r_thumb1"),
+                                                                                                                      DEF : new SFString("Joe_r_thumb1"),
+                                                                                                                      center : new SFVec3f([-0.20000000298023224,0.8500000238418579,0]),
+                                                                                                                      skinCoordIndex : new MFInt32([243,244]),
+                                                                                                                      skinCoordWeight : new MFFloat([1,1]),
                                                                                                                       ulimit : new MFFloat([0,0,0]),
                                                                                                                       llimit : new MFFloat([0,0,0]),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimSegment({
-                                                                                                                          name : new SFString("r_index_proximal"),
-                                                                                                                          DEF : new SFString("Joe_r_index_proximal"),
+                                                                                                                          name : new SFString("r_thumb_metacarpal"),
+                                                                                                                          DEF : new SFString("Joe_r_thumb_metacarpal"),
                                                                                                                           children : new MFNode([
                                                                                                                             new Shape({
                                                                                                                               geometry : new SFNode(
@@ -3891,29 +3748,29 @@ var X3D0 =  new X3D({
                                                                                                                                   coordIndex : new MFInt32([0,1,-1]),
                                                                                                                                   coord : new SFNode(
                                                                                                                                     new Coordinate({
-                                                                                                                                      point : new MFVec3f([-0.20000000298023224,0.7929999828338623,-0.014999999664723873,-0.20000000298023224,0.7450000047683716,-0.014999999664723873])}))})),
+                                                                                                                                      point : new MFVec3f([-0.20000000298023224,0.8500000238418579,0,-0.20000000298023224,0.8199999928474426,0.029999999329447746])}))})),
                                                                                                                               appearance : new SFNode(
                                                                                                                                 new Appearance({
                                                                                                                                   USE : new SFString("SegmentLine")}))}),
 
                                                                                                                             new Transform({
-                                                                                                                              translation : new SFVec3f([-0.20000000298023224,0.7929999828338623,-0.014999999664723873]),
+                                                                                                                              translation : new SFVec3f([-0.20000000298023224,0.8500000238418579,0]),
                                                                                                                               children : new MFNode([
                                                                                                                                 new Shape({
                                                                                                                                   USE : new SFString("jointbox")})])})])}),
 
                                                                                                                         new HAnimJoint({
-                                                                                                                          name : new SFString("r_index2"),
-                                                                                                                          DEF : new SFString("Joe_r_index2"),
-                                                                                                                          center : new SFVec3f([-0.20000000298023224,0.7450000047683716,-0.014999999664723873]),
-                                                                                                                          skinCoordIndex : new MFInt32([282,283,284,285]),
-                                                                                                                          skinCoordWeight : new MFFloat([1,1,1,1]),
+                                                                                                                          name : new SFString("r_thumb2"),
+                                                                                                                          DEF : new SFString("Joe_r_thumb2"),
+                                                                                                                          center : new SFVec3f([-0.20000000298023224,0.8199999928474426,0.029999999329447746]),
+                                                                                                                          skinCoordIndex : new MFInt32([254,255,256,257,258,259]),
+                                                                                                                          skinCoordWeight : new MFFloat([0.5,0.5,0.5,1,1,1]),
                                                                                                                           ulimit : new MFFloat([0,0,0]),
                                                                                                                           llimit : new MFFloat([0,0,0]),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimSegment({
-                                                                                                                              name : new SFString("r_index_middle"),
-                                                                                                                              DEF : new SFString("Joe_r_index_middle"),
+                                                                                                                              name : new SFString("r_thumb_proximal"),
+                                                                                                                              DEF : new SFString("Joe_r_thumb_proximal"),
                                                                                                                               children : new MFNode([
                                                                                                                                 new Shape({
                                                                                                                                   geometry : new SFNode(
@@ -3921,29 +3778,29 @@ var X3D0 =  new X3D({
                                                                                                                                       coordIndex : new MFInt32([0,1,-1]),
                                                                                                                                       coord : new SFNode(
                                                                                                                                         new Coordinate({
-                                                                                                                                          point : new MFVec3f([-0.20000000298023224,0.7450000047683716,-0.014999999664723873,-0.20000000298023224,0.7200000286102295,-0.014999999664723873])}))})),
+                                                                                                                                          point : new MFVec3f([-0.20000000298023224,0.8199999928474426,0.029999999329447746,-0.20000000298023224,0.800000011920929,0.05000000074505806])}))})),
                                                                                                                                   appearance : new SFNode(
                                                                                                                                     new Appearance({
                                                                                                                                       USE : new SFString("SegmentLine")}))}),
 
                                                                                                                                 new Transform({
-                                                                                                                                  translation : new SFVec3f([-0.20000000298023224,0.7450000047683716,-0.014999999664723873]),
+                                                                                                                                  translation : new SFVec3f([-0.20000000298023224,0.8199999928474426,0.029999999329447746]),
                                                                                                                                   children : new MFNode([
                                                                                                                                     new Shape({
                                                                                                                                       USE : new SFString("jointbox")})])})])}),
 
                                                                                                                             new HAnimJoint({
-                                                                                                                              name : new SFString("r_index3"),
-                                                                                                                              DEF : new SFString("Joe_r_index3"),
-                                                                                                                              center : new SFVec3f([-0.20000000298023224,0.7200000286102295,-0.014999999664723873]),
-                                                                                                                              skinCoordIndex : new MFInt32([286,287,288,289,290,291,292,293,294]),
+                                                                                                                              name : new SFString("r_thumb3"),
+                                                                                                                              DEF : new SFString("Joe_r_thumb3"),
+                                                                                                                              center : new SFVec3f([-0.20000000298023224,0.800000011920929,0.05000000074505806]),
+                                                                                                                              skinCoordIndex : new MFInt32([260,261,262,263,264,265,266,267,268]),
                                                                                                                               skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1]),
                                                                                                                               ulimit : new MFFloat([0,0,0]),
                                                                                                                               llimit : new MFFloat([0,0,0]),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimSegment({
-                                                                                                                                  name : new SFString("r_index_distal"),
-                                                                                                                                  DEF : new SFString("Joe_r_index_distal"),
+                                                                                                                                  name : new SFString("r_thumb_distal"),
+                                                                                                                                  DEF : new SFString("Joe_r_thumb_distal"),
                                                                                                                                   children : new MFNode([
                                                                                                                                     new Shape({
                                                                                                                                       geometry : new SFNode(
@@ -3951,67 +3808,44 @@ var X3D0 =  new X3D({
                                                                                                                                           coordIndex : new MFInt32([0,1,-1]),
                                                                                                                                           coord : new SFNode(
                                                                                                                                             new Coordinate({
-                                                                                                                                              point : new MFVec3f([-0.20000000298023224,0.7200000286102295,-0.014999999664723873,-0.20000000298023224,0.6949999928474426,-0.014999999664723873])}))})),
+                                                                                                                                              point : new MFVec3f([-0.20000000298023224,0.800000011920929,0.05000000074505806,-0.20000000298023224,0.7799999713897705,0.07000000029802322])}))})),
                                                                                                                                       appearance : new SFNode(
                                                                                                                                         new Appearance({
                                                                                                                                           USE : new SFString("SegmentLine")}))}),
 
                                                                                                                                     new Transform({
-                                                                                                                                      translation : new SFVec3f([-0.20000000298023224,0.7200000286102295,-0.014999999664723873]),
+                                                                                                                                      DEF : new SFString("Thumbnail"),
+                                                                                                                                      translation : new SFVec3f([-0.20000000298023224,0.7850000262260437,0.07500000298023224]),
+                                                                                                                                      children : new MFNode([
+                                                                                                                                        new Shape({
+                                                                                                                                          USE : new SFString("skinsphere")})])}),
+
+                                                                                                                                    new Transform({
+                                                                                                                                      translation : new SFVec3f([-0.20000000298023224,0.800000011920929,0.05000000074505806]),
                                                                                                                                       children : new MFNode([
                                                                                                                                         new Shape({
                                                                                                                                           USE : new SFString("jointbox")})])}),
 
                                                                                                                                     new HAnimSite({
-                                                                                                                                      name : new SFString("r_index_distal_tip"),
-                                                                                                                                      DEF : new SFString("Joe_r_index_distal_tip"),
-                                                                                                                                      translation : new SFVec3f([-0.20000000298023224,0.6949999928474426,-0.014999999664723873]),
+                                                                                                                                      name : new SFString("r_thumb_distal_tip"),
+                                                                                                                                      DEF : new SFString("Joe_r_thumb_distal_tip"),
+                                                                                                                                      translation : new SFVec3f([-0.20000000298023224,0.7799999713897705,0.07000000029802322]),
                                                                                                                                       children : new MFNode([
                                                                                                                                         new Shape({
-                                                                                                                                          USE : new SFString("sitebox")})])})])})])})])})])})])}),
-
-                                                                                                                new HAnimJoint({
-                                                                                                                  name : new SFString("r_middle0"),
-                                                                                                                  DEF : new SFString("Joe_r_middle0"),
-                                                                                                                  center : new SFVec3f([-0.20000000298023224,0.8349999785423279,-0.03999999910593033]),
-                                                                                                                  skinCoordIndex : new MFInt32([247,248]),
-                                                                                                                  skinCoordWeight : new MFFloat([1,1]),
-                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                  llimit : new MFFloat([0,0,0]),
-                                                                                                                  children : new MFNode([
-                                                                                                                    new HAnimSegment({
-                                                                                                                      name : new SFString("r_middle_metacarpal"),
-                                                                                                                      DEF : new SFString("Joe_r_middle_metacarpal"),
-                                                                                                                      children : new MFNode([
-                                                                                                                        new Shape({
-                                                                                                                          geometry : new SFNode(
-                                                                                                                            new IndexedLineSet({
-                                                                                                                              coordIndex : new MFInt32([0,1,-1]),
-                                                                                                                              coord : new SFNode(
-                                                                                                                                new Coordinate({
-                                                                                                                                  point : new MFVec3f([-0.20000000298023224,0.8349999785423279,-0.03999999910593033,-0.20000000298023224,0.7879999876022339,-0.03999999910593033])}))})),
-                                                                                                                          appearance : new SFNode(
-                                                                                                                            new Appearance({
-                                                                                                                              USE : new SFString("SegmentLine")}))}),
-
-                                                                                                                        new Transform({
-                                                                                                                          translation : new SFVec3f([-0.20000000298023224,0.8349999785423279,-0.03999999910593033]),
-                                                                                                                          children : new MFNode([
-                                                                                                                            new Shape({
-                                                                                                                              USE : new SFString("jointbox")})])})])}),
+                                                                                                                                          USE : new SFString("sitebox")})])})])})])})])})])}),
 
                                                                                                                     new HAnimJoint({
-                                                                                                                      name : new SFString("r_middle1"),
-                                                                                                                      DEF : new SFString("Joe_r_middle1"),
-                                                                                                                      center : new SFVec3f([-0.20000000298023224,0.7879999876022339,-0.03999999910593033]),
-                                                                                                                      skinCoordIndex : new MFInt32([272,273,279,280]),
-                                                                                                                      skinCoordWeight : new MFFloat([1,1,0.5,0.5]),
+                                                                                                                      name : new SFString("r_index0"),
+                                                                                                                      DEF : new SFString("Joe_r_index0"),
+                                                                                                                      center : new SFVec3f([-0.20000000298023224,0.8399999737739563,-0.014999999664723873]),
+                                                                                                                      skinCoordIndex : new MFInt32([245,246]),
+                                                                                                                      skinCoordWeight : new MFFloat([1,1]),
                                                                                                                       ulimit : new MFFloat([0,0,0]),
                                                                                                                       llimit : new MFFloat([0,0,0]),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimSegment({
-                                                                                                                          name : new SFString("r_middle_proximal"),
-                                                                                                                          DEF : new SFString("Joe_r_middle_proximal"),
+                                                                                                                          name : new SFString("r_index_metacarpal"),
+                                                                                                                          DEF : new SFString("Joe_r_index_metacarpal"),
                                                                                                                           children : new MFNode([
                                                                                                                             new Shape({
                                                                                                                               geometry : new SFNode(
@@ -4019,29 +3853,37 @@ var X3D0 =  new X3D({
                                                                                                                                   coordIndex : new MFInt32([0,1,-1]),
                                                                                                                                   coord : new SFNode(
                                                                                                                                     new Coordinate({
-                                                                                                                                      point : new MFVec3f([-0.20000000298023224,0.7879999876022339,-0.03999999910593033,-0.20000000298023224,0.7400000095367432,-0.03999999910593033])}))})),
+                                                                                                                                      point : new MFVec3f([-0.20000000298023224,0.8399999737739563,-0.014999999664723873,-0.20000000298023224,0.7929999828338623,-0.014999999664723873])}))})),
                                                                                                                               appearance : new SFNode(
                                                                                                                                 new Appearance({
                                                                                                                                   USE : new SFString("SegmentLine")}))}),
 
                                                                                                                             new Transform({
-                                                                                                                              translation : new SFVec3f([-0.20000000298023224,0.7879999876022339,-0.03999999910593033]),
+                                                                                                                              translation : new SFVec3f([-0.20000000298023224,0.8399999737739563,-0.014999999664723873]),
                                                                                                                               children : new MFNode([
                                                                                                                                 new Shape({
-                                                                                                                                  USE : new SFString("jointbox")})])})])}),
+                                                                                                                                  USE : new SFString("jointbox")})])}),
+
+                                                                                                                            new HAnimSite({
+                                                                                                                              name : new SFString("r_metacarpal_pha2"),
+                                                                                                                              DEF : new SFString("Joe_r_metacarpal_pha2"),
+                                                                                                                              translation : new SFVec3f([-0.20000000298023224,0.7929999828338623,-0.004999999888241291]),
+                                                                                                                              children : new MFNode([
+                                                                                                                                new Shape({
+                                                                                                                                  USE : new SFString("sitebox")})])})])}),
 
                                                                                                                         new HAnimJoint({
-                                                                                                                          name : new SFString("r_middle2"),
-                                                                                                                          DEF : new SFString("Joe_r_middle2"),
-                                                                                                                          center : new SFVec3f([-0.20000000298023224,0.7400000095367432,-0.03999999910593033]),
-                                                                                                                          skinCoordIndex : new MFInt32([295,296,297,298]),
-                                                                                                                          skinCoordWeight : new MFFloat([1,1,1,1]),
+                                                                                                                          name : new SFString("r_index1"),
+                                                                                                                          DEF : new SFString("Joe_r_index1"),
+                                                                                                                          center : new SFVec3f([-0.20000000298023224,0.7929999828338623,-0.014999999664723873]),
+                                                                                                                          skinCoordIndex : new MFInt32([254,255,256,269,270,271,279]),
+                                                                                                                          skinCoordWeight : new MFFloat([0.5,0.5,0.5,1,1,1,0.5]),
                                                                                                                           ulimit : new MFFloat([0,0,0]),
                                                                                                                           llimit : new MFFloat([0,0,0]),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimSegment({
-                                                                                                                              name : new SFString("r_middle_middle"),
-                                                                                                                              DEF : new SFString("Joe_r_middle_middle"),
+                                                                                                                              name : new SFString("r_index_proximal"),
+                                                                                                                              DEF : new SFString("Joe_r_index_proximal"),
                                                                                                                               children : new MFNode([
                                                                                                                                 new Shape({
                                                                                                                                   geometry : new SFNode(
@@ -4049,29 +3891,29 @@ var X3D0 =  new X3D({
                                                                                                                                       coordIndex : new MFInt32([0,1,-1]),
                                                                                                                                       coord : new SFNode(
                                                                                                                                         new Coordinate({
-                                                                                                                                          point : new MFVec3f([-0.20000000298023224,0.7400000095367432,-0.03999999910593033,-0.20000000298023224,0.7142000198364258,-0.03999999910593033])}))})),
+                                                                                                                                          point : new MFVec3f([-0.20000000298023224,0.7929999828338623,-0.014999999664723873,-0.20000000298023224,0.7450000047683716,-0.014999999664723873])}))})),
                                                                                                                                   appearance : new SFNode(
                                                                                                                                     new Appearance({
                                                                                                                                       USE : new SFString("SegmentLine")}))}),
 
                                                                                                                                 new Transform({
-                                                                                                                                  translation : new SFVec3f([-0.20000000298023224,0.7400000095367432,-0.03999999910593033]),
+                                                                                                                                  translation : new SFVec3f([-0.20000000298023224,0.7929999828338623,-0.014999999664723873]),
                                                                                                                                   children : new MFNode([
                                                                                                                                     new Shape({
                                                                                                                                       USE : new SFString("jointbox")})])})])}),
 
                                                                                                                             new HAnimJoint({
-                                                                                                                              name : new SFString("r_middle3"),
-                                                                                                                              DEF : new SFString("Joe_r_middle3"),
-                                                                                                                              center : new SFVec3f([-0.20000000298023224,0.7142000198364258,-0.03999999910593033]),
-                                                                                                                              skinCoordIndex : new MFInt32([299,300,301,302,303,304,305,306,307]),
-                                                                                                                              skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1]),
+                                                                                                                              name : new SFString("r_index2"),
+                                                                                                                              DEF : new SFString("Joe_r_index2"),
+                                                                                                                              center : new SFVec3f([-0.20000000298023224,0.7450000047683716,-0.014999999664723873]),
+                                                                                                                              skinCoordIndex : new MFInt32([282,283,284,285]),
+                                                                                                                              skinCoordWeight : new MFFloat([1,1,1,1]),
                                                                                                                               ulimit : new MFFloat([0,0,0]),
                                                                                                                               llimit : new MFFloat([0,0,0]),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimSegment({
-                                                                                                                                  name : new SFString("r_middle_distal"),
-                                                                                                                                  DEF : new SFString("Joe_r_middle_distal"),
+                                                                                                                                  name : new SFString("r_index_middle"),
+                                                                                                                                  DEF : new SFString("Joe_r_index_middle"),
                                                                                                                                   children : new MFNode([
                                                                                                                                     new Shape({
                                                                                                                                       geometry : new SFNode(
@@ -4079,75 +3921,67 @@ var X3D0 =  new X3D({
                                                                                                                                           coordIndex : new MFInt32([0,1,-1]),
                                                                                                                                           coord : new SFNode(
                                                                                                                                             new Coordinate({
-                                                                                                                                              point : new MFVec3f([-0.20000000298023224,0.7142000198364258,-0.03999999910593033,-0.20000000298023224,0.6758000254631042,-0.03999999910593033])}))})),
+                                                                                                                                              point : new MFVec3f([-0.20000000298023224,0.7450000047683716,-0.014999999664723873,-0.20000000298023224,0.7200000286102295,-0.014999999664723873])}))})),
                                                                                                                                       appearance : new SFNode(
                                                                                                                                         new Appearance({
                                                                                                                                           USE : new SFString("SegmentLine")}))}),
 
                                                                                                                                     new Transform({
-                                                                                                                                      translation : new SFVec3f([-0.20000000298023224,0.7142000198364258,-0.03999999910593033]),
+                                                                                                                                      translation : new SFVec3f([-0.20000000298023224,0.7450000047683716,-0.014999999664723873]),
                                                                                                                                       children : new MFNode([
                                                                                                                                         new Shape({
-                                                                                                                                          USE : new SFString("jointbox")})])}),
+                                                                                                                                          USE : new SFString("jointbox")})])})])}),
 
-                                                                                                                                    new HAnimSite({
-                                                                                                                                      name : new SFString("r_dactylion"),
-                                                                                                                                      DEF : new SFString("Joe_r_dactylion"),
-                                                                                                                                      translation : new SFVec3f([-0.20000000298023224,0.6800000071525574,-0.03999999910593033]),
+                                                                                                                                new HAnimJoint({
+                                                                                                                                  name : new SFString("r_index3"),
+                                                                                                                                  DEF : new SFString("Joe_r_index3"),
+                                                                                                                                  center : new SFVec3f([-0.20000000298023224,0.7200000286102295,-0.014999999664723873]),
+                                                                                                                                  skinCoordIndex : new MFInt32([286,287,288,289,290,291,292,293,294]),
+                                                                                                                                  skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1]),
+                                                                                                                                  ulimit : new MFFloat([0,0,0]),
+                                                                                                                                  llimit : new MFFloat([0,0,0]),
+                                                                                                                                  children : new MFNode([
+                                                                                                                                    new HAnimSegment({
+                                                                                                                                      name : new SFString("r_index_distal"),
+                                                                                                                                      DEF : new SFString("Joe_r_index_distal"),
                                                                                                                                       children : new MFNode([
                                                                                                                                         new Shape({
-                                                                                                                                          USE : new SFString("sitebox")})])}),
+                                                                                                                                          geometry : new SFNode(
+                                                                                                                                            new IndexedLineSet({
+                                                                                                                                              coordIndex : new MFInt32([0,1,-1]),
+                                                                                                                                              coord : new SFNode(
+                                                                                                                                                new Coordinate({
+                                                                                                                                                  point : new MFVec3f([-0.20000000298023224,0.7200000286102295,-0.014999999664723873,-0.20000000298023224,0.6949999928474426,-0.014999999664723873])}))})),
+                                                                                                                                          appearance : new SFNode(
+                                                                                                                                            new Appearance({
+                                                                                                                                              USE : new SFString("SegmentLine")}))}),
 
-                                                                                                                                    new HAnimSite({
-                                                                                                                                      name : new SFString("r_middle_distal_tip"),
-                                                                                                                                      DEF : new SFString("Joe_r_middle_distal_tip"),
-                                                                                                                                      translation : new SFVec3f([-0.20000000298023224,0.6800000071525574,-0.03999999910593033]),
-                                                                                                                                      children : new MFNode([
-                                                                                                                                        new Shape({
-                                                                                                                                          USE : new SFString("sitebox")})])})])})])})])})])})])}),
+                                                                                                                                        new Transform({
+                                                                                                                                          translation : new SFVec3f([-0.20000000298023224,0.7200000286102295,-0.014999999664723873]),
+                                                                                                                                          children : new MFNode([
+                                                                                                                                            new Shape({
+                                                                                                                                              USE : new SFString("jointbox")})])}),
 
-                                                                                                                new HAnimJoint({
-                                                                                                                  name : new SFString("r_ring0"),
-                                                                                                                  DEF : new SFString("Joe_r_ring0"),
-                                                                                                                  center : new SFVec3f([-0.2,0.835,-0.065]),
-                                                                                                                  skinCoordIndex : new MFInt32([249,250]),
-                                                                                                                  skinCoordWeight : new MFFloat([1,1]),
-                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                  llimit : new MFFloat([0,0,0]),
-                                                                                                                  children : new MFNode([
-                                                                                                                    new HAnimSegment({
-                                                                                                                      name : new SFString("r_ring_metacarpal"),
-                                                                                                                      DEF : new SFString("Joe_r_ring_metacarpal"),
-                                                                                                                      children : new MFNode([
-                                                                                                                        new Shape({
-                                                                                                                          geometry : new SFNode(
-                                                                                                                            new IndexedLineSet({
-                                                                                                                              coordIndex : new MFInt32([0,1,-1]),
-                                                                                                                              coord : new SFNode(
-                                                                                                                                new Coordinate({
-                                                                                                                                  point : new MFVec3f([-0.20000000298023224,0.8349999785423279,-0.06499999761581421,-0.20000000298023224,0.7929999828338623,-0.06499999761581421])}))})),
-                                                                                                                          appearance : new SFNode(
-                                                                                                                            new Appearance({
-                                                                                                                              USE : new SFString("SegmentLine")}))}),
-
-                                                                                                                        new Transform({
-                                                                                                                          translation : new SFVec3f([-0.20000000298023224,0.8349999785423279,-0.06499999761581421]),
-                                                                                                                          children : new MFNode([
-                                                                                                                            new Shape({
-                                                                                                                              USE : new SFString("jointbox")})])})])}),
+                                                                                                                                        new HAnimSite({
+                                                                                                                                          name : new SFString("r_index_distal_tip"),
+                                                                                                                                          DEF : new SFString("Joe_r_index_distal_tip"),
+                                                                                                                                          translation : new SFVec3f([-0.20000000298023224,0.6949999928474426,-0.014999999664723873]),
+                                                                                                                                          children : new MFNode([
+                                                                                                                                            new Shape({
+                                                                                                                                              USE : new SFString("sitebox")})])})])})])})])})])})])}),
 
                                                                                                                     new HAnimJoint({
-                                                                                                                      name : new SFString("r_ring1"),
-                                                                                                                      DEF : new SFString("Joe_r_ring1"),
-                                                                                                                      center : new SFVec3f([-0.20000000298023224,0.7929999828338623,-0.06499999761581421]),
-                                                                                                                      skinCoordIndex : new MFInt32([274,275,280,281]),
-                                                                                                                      skinCoordWeight : new MFFloat([1,1,0.5,0.5]),
+                                                                                                                      name : new SFString("r_middle0"),
+                                                                                                                      DEF : new SFString("Joe_r_middle0"),
+                                                                                                                      center : new SFVec3f([-0.20000000298023224,0.8349999785423279,-0.03999999910593033]),
+                                                                                                                      skinCoordIndex : new MFInt32([247,248]),
+                                                                                                                      skinCoordWeight : new MFFloat([1,1]),
                                                                                                                       ulimit : new MFFloat([0,0,0]),
                                                                                                                       llimit : new MFFloat([0,0,0]),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimSegment({
-                                                                                                                          name : new SFString("r_ring_proximal"),
-                                                                                                                          DEF : new SFString("Joe_r_ring_proximal"),
+                                                                                                                          name : new SFString("r_middle_metacarpal"),
+                                                                                                                          DEF : new SFString("Joe_r_middle_metacarpal"),
                                                                                                                           children : new MFNode([
                                                                                                                             new Shape({
                                                                                                                               geometry : new SFNode(
@@ -4155,29 +3989,29 @@ var X3D0 =  new X3D({
                                                                                                                                   coordIndex : new MFInt32([0,1,-1]),
                                                                                                                                   coord : new SFNode(
                                                                                                                                     new Coordinate({
-                                                                                                                                      point : new MFVec3f([-0.20000000298023224,0.7929999828338623,-0.06499999761581421,-0.20000000298023224,0.7400000095367432,-0.06499999761581421])}))})),
+                                                                                                                                      point : new MFVec3f([-0.20000000298023224,0.8349999785423279,-0.03999999910593033,-0.20000000298023224,0.7879999876022339,-0.03999999910593033])}))})),
                                                                                                                               appearance : new SFNode(
                                                                                                                                 new Appearance({
                                                                                                                                   USE : new SFString("SegmentLine")}))}),
 
                                                                                                                             new Transform({
-                                                                                                                              translation : new SFVec3f([-0.20000000298023224,0.7929999828338623,-0.06499999761581421]),
+                                                                                                                              translation : new SFVec3f([-0.20000000298023224,0.8349999785423279,-0.03999999910593033]),
                                                                                                                               children : new MFNode([
                                                                                                                                 new Shape({
                                                                                                                                   USE : new SFString("jointbox")})])})])}),
 
                                                                                                                         new HAnimJoint({
-                                                                                                                          name : new SFString("r_ring2"),
-                                                                                                                          DEF : new SFString("Joe_r_ring2"),
-                                                                                                                          center : new SFVec3f([-0.20000000298023224,0.7400000095367432,-0.06499999761581421]),
-                                                                                                                          skinCoordIndex : new MFInt32([308,309,310,311]),
-                                                                                                                          skinCoordWeight : new MFFloat([1,1,1,1]),
+                                                                                                                          name : new SFString("r_middle1"),
+                                                                                                                          DEF : new SFString("Joe_r_middle1"),
+                                                                                                                          center : new SFVec3f([-0.20000000298023224,0.7879999876022339,-0.03999999910593033]),
+                                                                                                                          skinCoordIndex : new MFInt32([272,273,279,280]),
+                                                                                                                          skinCoordWeight : new MFFloat([1,1,0.5,0.5]),
                                                                                                                           ulimit : new MFFloat([0,0,0]),
                                                                                                                           llimit : new MFFloat([0,0,0]),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimSegment({
-                                                                                                                              name : new SFString("r_ring_middle"),
-                                                                                                                              DEF : new SFString("Joe_r_ring_middle"),
+                                                                                                                              name : new SFString("r_middle_proximal"),
+                                                                                                                              DEF : new SFString("Joe_r_middle_proximal"),
                                                                                                                               children : new MFNode([
                                                                                                                                 new Shape({
                                                                                                                                   geometry : new SFNode(
@@ -4185,29 +4019,29 @@ var X3D0 =  new X3D({
                                                                                                                                       coordIndex : new MFInt32([0,1,-1]),
                                                                                                                                       coord : new SFNode(
                                                                                                                                         new Coordinate({
-                                                                                                                                          point : new MFVec3f([-0.20000000298023224,0.7400000095367432,-0.06499999761581421,-0.20000000298023224,0.7177000045776367,-0.06499999761581421])}))})),
+                                                                                                                                          point : new MFVec3f([-0.20000000298023224,0.7879999876022339,-0.03999999910593033,-0.20000000298023224,0.7400000095367432,-0.03999999910593033])}))})),
                                                                                                                                   appearance : new SFNode(
                                                                                                                                     new Appearance({
                                                                                                                                       USE : new SFString("SegmentLine")}))}),
 
                                                                                                                                 new Transform({
-                                                                                                                                  translation : new SFVec3f([-0.20000000298023224,0.7400000095367432,-0.06499999761581421]),
+                                                                                                                                  translation : new SFVec3f([-0.20000000298023224,0.7879999876022339,-0.03999999910593033]),
                                                                                                                                   children : new MFNode([
                                                                                                                                     new Shape({
                                                                                                                                       USE : new SFString("jointbox")})])})])}),
 
                                                                                                                             new HAnimJoint({
-                                                                                                                              name : new SFString("r_ring3"),
-                                                                                                                              DEF : new SFString("Joe_r_ring3"),
-                                                                                                                              center : new SFVec3f([-0.20000000298023224,0.7177000045776367,-0.06499999761581421]),
-                                                                                                                              skinCoordIndex : new MFInt32([312,313,314,315,316,317,318,319,320]),
-                                                                                                                              skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1]),
+                                                                                                                              name : new SFString("r_middle2"),
+                                                                                                                              DEF : new SFString("Joe_r_middle2"),
+                                                                                                                              center : new SFVec3f([-0.20000000298023224,0.7400000095367432,-0.03999999910593033]),
+                                                                                                                              skinCoordIndex : new MFInt32([295,296,297,298]),
+                                                                                                                              skinCoordWeight : new MFFloat([1,1,1,1]),
                                                                                                                               ulimit : new MFFloat([0,0,0]),
                                                                                                                               llimit : new MFFloat([0,0,0]),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimSegment({
-                                                                                                                                  name : new SFString("r_ring_distal"),
-                                                                                                                                  DEF : new SFString("Joe_r_ring_distal"),
+                                                                                                                                  name : new SFString("r_middle_middle"),
+                                                                                                                                  DEF : new SFString("Joe_r_middle_middle"),
                                                                                                                                   children : new MFNode([
                                                                                                                                     new Shape({
                                                                                                                                       geometry : new SFNode(
@@ -4215,75 +4049,75 @@ var X3D0 =  new X3D({
                                                                                                                                           coordIndex : new MFInt32([0,1,-1]),
                                                                                                                                           coord : new SFNode(
                                                                                                                                             new Coordinate({
-                                                                                                                                              point : new MFVec3f([-0.20000000298023224,0.7177000045776367,-0.06499999761581421,-0.20000000298023224,0.6949999928474426,-0.06499999761581421])}))})),
+                                                                                                                                              point : new MFVec3f([-0.20000000298023224,0.7400000095367432,-0.03999999910593033,-0.20000000298023224,0.7142000198364258,-0.03999999910593033])}))})),
                                                                                                                                       appearance : new SFNode(
                                                                                                                                         new Appearance({
                                                                                                                                           USE : new SFString("SegmentLine")}))}),
 
                                                                                                                                     new Transform({
-                                                                                                                                      translation : new SFVec3f([-0.20000000298023224,0.7177000045776367,-0.06499999761581421]),
+                                                                                                                                      translation : new SFVec3f([-0.20000000298023224,0.7400000095367432,-0.03999999910593033]),
                                                                                                                                       children : new MFNode([
                                                                                                                                         new Shape({
-                                                                                                                                          USE : new SFString("jointbox")})])}),
+                                                                                                                                          USE : new SFString("jointbox")})])})])}),
 
-                                                                                                                                    new HAnimSite({
-                                                                                                                                      name : new SFString("r_ring_distal_tip"),
-                                                                                                                                      DEF : new SFString("Joe_r_ring_distal_tip"),
-                                                                                                                                      translation : new SFVec3f([-0.20000000298023224,0.6949999928474426,-0.06499999761581421]),
+                                                                                                                                new HAnimJoint({
+                                                                                                                                  name : new SFString("r_middle3"),
+                                                                                                                                  DEF : new SFString("Joe_r_middle3"),
+                                                                                                                                  center : new SFVec3f([-0.20000000298023224,0.7142000198364258,-0.03999999910593033]),
+                                                                                                                                  skinCoordIndex : new MFInt32([299,300,301,302,303,304,305,306,307]),
+                                                                                                                                  skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1]),
+                                                                                                                                  ulimit : new MFFloat([0,0,0]),
+                                                                                                                                  llimit : new MFFloat([0,0,0]),
+                                                                                                                                  children : new MFNode([
+                                                                                                                                    new HAnimSegment({
+                                                                                                                                      name : new SFString("r_middle_distal"),
+                                                                                                                                      DEF : new SFString("Joe_r_middle_distal"),
                                                                                                                                       children : new MFNode([
                                                                                                                                         new Shape({
-                                                                                                                                          USE : new SFString("sitebox")})])})])})])})])})])})])}),
+                                                                                                                                          geometry : new SFNode(
+                                                                                                                                            new IndexedLineSet({
+                                                                                                                                              coordIndex : new MFInt32([0,1,-1]),
+                                                                                                                                              coord : new SFNode(
+                                                                                                                                                new Coordinate({
+                                                                                                                                                  point : new MFVec3f([-0.20000000298023224,0.7142000198364258,-0.03999999910593033,-0.20000000298023224,0.6758000254631042,-0.03999999910593033])}))})),
+                                                                                                                                          appearance : new SFNode(
+                                                                                                                                            new Appearance({
+                                                                                                                                              USE : new SFString("SegmentLine")}))}),
 
-                                                                                                                new HAnimJoint({
-                                                                                                                  name : new SFString("r_pinky0"),
-                                                                                                                  DEF : new SFString("Joe_r_pinky0"),
-                                                                                                                  center : new SFVec3f([-0.20000000298023224,0.8399999737739563,-0.08500000089406967]),
-                                                                                                                  skinCoordIndex : new MFInt32([251,252,253,281]),
-                                                                                                                  skinCoordWeight : new MFFloat([1,1,1,0.5]),
-                                                                                                                  ulimit : new MFFloat([0,0,0]),
-                                                                                                                  llimit : new MFFloat([0,0,0]),
-                                                                                                                  children : new MFNode([
-                                                                                                                    new HAnimSegment({
-                                                                                                                      name : new SFString("r_pinky_metacarpal"),
-                                                                                                                      DEF : new SFString("Joe_r_pinky_metacarpal"),
-                                                                                                                      children : new MFNode([
-                                                                                                                        new Shape({
-                                                                                                                          geometry : new SFNode(
-                                                                                                                            new IndexedLineSet({
-                                                                                                                              coordIndex : new MFInt32([0,1,-1]),
-                                                                                                                              coord : new SFNode(
-                                                                                                                                new Coordinate({
-                                                                                                                                  point : new MFVec3f([-0.20000000298023224,0.8399999737739563,-0.08500000089406967,-0.20000000298023224,0.7900000214576721,-0.08500000089406967])}))})),
-                                                                                                                          appearance : new SFNode(
-                                                                                                                            new Appearance({
-                                                                                                                              USE : new SFString("SegmentLine")}))}),
+                                                                                                                                        new Transform({
+                                                                                                                                          translation : new SFVec3f([-0.20000000298023224,0.7142000198364258,-0.03999999910593033]),
+                                                                                                                                          children : new MFNode([
+                                                                                                                                            new Shape({
+                                                                                                                                              USE : new SFString("jointbox")})])}),
 
-                                                                                                                        new Transform({
-                                                                                                                          translation : new SFVec3f([-0.20000000298023224,0.8399999737739563,-0.08500000089406967]),
-                                                                                                                          children : new MFNode([
-                                                                                                                            new Shape({
-                                                                                                                              USE : new SFString("jointbox")})])}),
+                                                                                                                                        new HAnimSite({
+                                                                                                                                          name : new SFString("r_dactylion"),
+                                                                                                                                          DEF : new SFString("Joe_r_dactylion"),
+                                                                                                                                          translation : new SFVec3f([-0.20000000298023224,0.6800000071525574,-0.03999999910593033]),
+                                                                                                                                          children : new MFNode([
+                                                                                                                                            new Shape({
+                                                                                                                                              USE : new SFString("sitebox")})])}),
 
-                                                                                                                        new HAnimSite({
-                                                                                                                          name : new SFString("r_metacarpal_pha5"),
-                                                                                                                          DEF : new SFString("Joe_r_metacarpal_pha5"),
-                                                                                                                          translation : new SFVec3f([-0.20000000298023224,0.7900000214576721,-0.0949999988079071]),
-                                                                                                                          children : new MFNode([
-                                                                                                                            new Shape({
-                                                                                                                              USE : new SFString("sitebox")})])})])}),
+                                                                                                                                        new HAnimSite({
+                                                                                                                                          name : new SFString("r_middle_distal_tip"),
+                                                                                                                                          DEF : new SFString("Joe_r_middle_distal_tip"),
+                                                                                                                                          translation : new SFVec3f([-0.20000000298023224,0.6800000071525574,-0.03999999910593033]),
+                                                                                                                                          children : new MFNode([
+                                                                                                                                            new Shape({
+                                                                                                                                              USE : new SFString("sitebox")})])})])})])})])})])})])}),
 
                                                                                                                     new HAnimJoint({
-                                                                                                                      name : new SFString("r_pinky1"),
-                                                                                                                      DEF : new SFString("Joe_r_pinky1"),
-                                                                                                                      center : new SFVec3f([-0.20000000298023224,0.7900000214576721,-0.08500000089406967]),
-                                                                                                                      skinCoordIndex : new MFInt32([276,277,278]),
-                                                                                                                      skinCoordWeight : new MFFloat([1,1,1]),
+                                                                                                                      name : new SFString("r_ring0"),
+                                                                                                                      DEF : new SFString("Joe_r_ring0"),
+                                                                                                                      center : new SFVec3f([-0.2,0.835,-0.065]),
+                                                                                                                      skinCoordIndex : new MFInt32([249,250]),
+                                                                                                                      skinCoordWeight : new MFFloat([1,1]),
                                                                                                                       ulimit : new MFFloat([0,0,0]),
                                                                                                                       llimit : new MFFloat([0,0,0]),
                                                                                                                       children : new MFNode([
                                                                                                                         new HAnimSegment({
-                                                                                                                          name : new SFString("r_pinky_proximal"),
-                                                                                                                          DEF : new SFString("Joe_r_pinky_proximal"),
+                                                                                                                          name : new SFString("r_ring_metacarpal"),
+                                                                                                                          DEF : new SFString("Joe_r_ring_metacarpal"),
                                                                                                                           children : new MFNode([
                                                                                                                             new Shape({
                                                                                                                               geometry : new SFNode(
@@ -4291,29 +4125,29 @@ var X3D0 =  new X3D({
                                                                                                                                   coordIndex : new MFInt32([0,1,-1]),
                                                                                                                                   coord : new SFNode(
                                                                                                                                     new Coordinate({
-                                                                                                                                      point : new MFVec3f([-0.20000000298023224,0.7900000214576721,-0.08500000089406967,-0.20000000298023224,0.7549999952316284,-0.08500000089406967])}))})),
+                                                                                                                                      point : new MFVec3f([-0.20000000298023224,0.8349999785423279,-0.06499999761581421,-0.20000000298023224,0.7929999828338623,-0.06499999761581421])}))})),
                                                                                                                               appearance : new SFNode(
                                                                                                                                 new Appearance({
                                                                                                                                   USE : new SFString("SegmentLine")}))}),
 
                                                                                                                             new Transform({
-                                                                                                                              translation : new SFVec3f([-0.20000000298023224,0.7900000214576721,-0.08500000089406967]),
+                                                                                                                              translation : new SFVec3f([-0.20000000298023224,0.8349999785423279,-0.06499999761581421]),
                                                                                                                               children : new MFNode([
                                                                                                                                 new Shape({
                                                                                                                                   USE : new SFString("jointbox")})])})])}),
 
                                                                                                                         new HAnimJoint({
-                                                                                                                          name : new SFString("r_pinky2"),
-                                                                                                                          DEF : new SFString("Joe_r_pinky2"),
-                                                                                                                          center : new SFVec3f([-0.20000000298023224,0.7549999952316284,-0.08500000089406967]),
-                                                                                                                          skinCoordIndex : new MFInt32([321,322,323,324]),
-                                                                                                                          skinCoordWeight : new MFFloat([1,1,1,1]),
+                                                                                                                          name : new SFString("r_ring1"),
+                                                                                                                          DEF : new SFString("Joe_r_ring1"),
+                                                                                                                          center : new SFVec3f([-0.20000000298023224,0.7929999828338623,-0.06499999761581421]),
+                                                                                                                          skinCoordIndex : new MFInt32([274,275,280,281]),
+                                                                                                                          skinCoordWeight : new MFFloat([1,1,0.5,0.5]),
                                                                                                                           ulimit : new MFFloat([0,0,0]),
                                                                                                                           llimit : new MFFloat([0,0,0]),
                                                                                                                           children : new MFNode([
                                                                                                                             new HAnimSegment({
-                                                                                                                              name : new SFString("r_pinky_middle"),
-                                                                                                                              DEF : new SFString("Joe_r_pinky_middle"),
+                                                                                                                              name : new SFString("r_ring_proximal"),
+                                                                                                                              DEF : new SFString("Joe_r_ring_proximal"),
                                                                                                                               children : new MFNode([
                                                                                                                                 new Shape({
                                                                                                                                   geometry : new SFNode(
@@ -4321,29 +4155,29 @@ var X3D0 =  new X3D({
                                                                                                                                       coordIndex : new MFInt32([0,1,-1]),
                                                                                                                                       coord : new SFNode(
                                                                                                                                         new Coordinate({
-                                                                                                                                          point : new MFVec3f([-0.20000000298023224,0.7549999952316284,-0.08500000089406967,-0.20000000298023224,0.7350000143051147,-0.08500000089406967])}))})),
+                                                                                                                                          point : new MFVec3f([-0.20000000298023224,0.7929999828338623,-0.06499999761581421,-0.20000000298023224,0.7400000095367432,-0.06499999761581421])}))})),
                                                                                                                                   appearance : new SFNode(
                                                                                                                                     new Appearance({
                                                                                                                                       USE : new SFString("SegmentLine")}))}),
 
                                                                                                                                 new Transform({
-                                                                                                                                  translation : new SFVec3f([-0.20000000298023224,0.7549999952316284,-0.08500000089406967]),
+                                                                                                                                  translation : new SFVec3f([-0.20000000298023224,0.7929999828338623,-0.06499999761581421]),
                                                                                                                                   children : new MFNode([
                                                                                                                                     new Shape({
                                                                                                                                       USE : new SFString("jointbox")})])})])}),
 
                                                                                                                             new HAnimJoint({
-                                                                                                                              name : new SFString("r_pinky3"),
-                                                                                                                              DEF : new SFString("Joe_r_pinky3"),
-                                                                                                                              center : new SFVec3f([-0.20000000298023224,0.7350000143051147,-0.09000000357627869]),
-                                                                                                                              skinCoordIndex : new MFInt32([325,326,327,328,329,330,331,332,333]),
-                                                                                                                              skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1]),
+                                                                                                                              name : new SFString("r_ring2"),
+                                                                                                                              DEF : new SFString("Joe_r_ring2"),
+                                                                                                                              center : new SFVec3f([-0.20000000298023224,0.7400000095367432,-0.06499999761581421]),
+                                                                                                                              skinCoordIndex : new MFInt32([308,309,310,311]),
+                                                                                                                              skinCoordWeight : new MFFloat([1,1,1,1]),
                                                                                                                               ulimit : new MFFloat([0,0,0]),
                                                                                                                               llimit : new MFFloat([0,0,0]),
                                                                                                                               children : new MFNode([
                                                                                                                                 new HAnimSegment({
-                                                                                                                                  name : new SFString("r_pinky_distal"),
-                                                                                                                                  DEF : new SFString("Joe_r_pinky_distal"),
+                                                                                                                                  name : new SFString("r_ring_middle"),
+                                                                                                                                  DEF : new SFString("Joe_r_ring_middle"),
                                                                                                                                   children : new MFNode([
                                                                                                                                     new Shape({
                                                                                                                                       geometry : new SFNode(
@@ -4351,24 +4185,190 @@ var X3D0 =  new X3D({
                                                                                                                                           coordIndex : new MFInt32([0,1,-1]),
                                                                                                                                           coord : new SFNode(
                                                                                                                                             new Coordinate({
-                                                                                                                                              point : new MFVec3f([-0.20000000298023224,0.7350000143051147,-0.08500000089406967,-0.20000000298023224,0.7200000286102295,-0.08500000089406967])}))})),
+                                                                                                                                              point : new MFVec3f([-0.20000000298023224,0.7400000095367432,-0.06499999761581421,-0.20000000298023224,0.7177000045776367,-0.06499999761581421])}))})),
                                                                                                                                       appearance : new SFNode(
                                                                                                                                         new Appearance({
                                                                                                                                           USE : new SFString("SegmentLine")}))}),
 
                                                                                                                                     new Transform({
-                                                                                                                                      translation : new SFVec3f([-0.20000000298023224,0.7350000143051147,-0.08500000089406967]),
+                                                                                                                                      translation : new SFVec3f([-0.20000000298023224,0.7400000095367432,-0.06499999761581421]),
                                                                                                                                       children : new MFNode([
                                                                                                                                         new Shape({
-                                                                                                                                          USE : new SFString("jointbox")})])}),
+                                                                                                                                          USE : new SFString("jointbox")})])})])}),
 
-                                                                                                                                    new HAnimSite({
-                                                                                                                                      name : new SFString("r_pinky_distal_tip"),
-                                                                                                                                      DEF : new SFString("Joe_r_pinky_distal_tip"),
-                                                                                                                                      translation : new SFVec3f([-0.20000000298023224,0.7200000286102295,-0.08500000089406967]),
+                                                                                                                                new HAnimJoint({
+                                                                                                                                  name : new SFString("r_ring3"),
+                                                                                                                                  DEF : new SFString("Joe_r_ring3"),
+                                                                                                                                  center : new SFVec3f([-0.20000000298023224,0.7177000045776367,-0.06499999761581421]),
+                                                                                                                                  skinCoordIndex : new MFInt32([312,313,314,315,316,317,318,319,320]),
+                                                                                                                                  skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1]),
+                                                                                                                                  ulimit : new MFFloat([0,0,0]),
+                                                                                                                                  llimit : new MFFloat([0,0,0]),
+                                                                                                                                  children : new MFNode([
+                                                                                                                                    new HAnimSegment({
+                                                                                                                                      name : new SFString("r_ring_distal"),
+                                                                                                                                      DEF : new SFString("Joe_r_ring_distal"),
                                                                                                                                       children : new MFNode([
                                                                                                                                         new Shape({
-                                                                                                                                          USE : new SFString("sitebox")})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])}),
+                                                                                                                                          geometry : new SFNode(
+                                                                                                                                            new IndexedLineSet({
+                                                                                                                                              coordIndex : new MFInt32([0,1,-1]),
+                                                                                                                                              coord : new SFNode(
+                                                                                                                                                new Coordinate({
+                                                                                                                                                  point : new MFVec3f([-0.20000000298023224,0.7177000045776367,-0.06499999761581421,-0.20000000298023224,0.6949999928474426,-0.06499999761581421])}))})),
+                                                                                                                                          appearance : new SFNode(
+                                                                                                                                            new Appearance({
+                                                                                                                                              USE : new SFString("SegmentLine")}))}),
+
+                                                                                                                                        new Transform({
+                                                                                                                                          translation : new SFVec3f([-0.20000000298023224,0.7177000045776367,-0.06499999761581421]),
+                                                                                                                                          children : new MFNode([
+                                                                                                                                            new Shape({
+                                                                                                                                              USE : new SFString("jointbox")})])}),
+
+                                                                                                                                        new HAnimSite({
+                                                                                                                                          name : new SFString("r_ring_distal_tip"),
+                                                                                                                                          DEF : new SFString("Joe_r_ring_distal_tip"),
+                                                                                                                                          translation : new SFVec3f([-0.20000000298023224,0.6949999928474426,-0.06499999761581421]),
+                                                                                                                                          children : new MFNode([
+                                                                                                                                            new Shape({
+                                                                                                                                              USE : new SFString("sitebox")})])})])})])})])})])})])}),
+
+                                                                                                                    new HAnimJoint({
+                                                                                                                      name : new SFString("r_pinky0"),
+                                                                                                                      DEF : new SFString("Joe_r_pinky0"),
+                                                                                                                      center : new SFVec3f([-0.20000000298023224,0.8399999737739563,-0.08500000089406967]),
+                                                                                                                      skinCoordIndex : new MFInt32([251,252,253,281]),
+                                                                                                                      skinCoordWeight : new MFFloat([1,1,1,0.5]),
+                                                                                                                      ulimit : new MFFloat([0,0,0]),
+                                                                                                                      llimit : new MFFloat([0,0,0]),
+                                                                                                                      children : new MFNode([
+                                                                                                                        new HAnimSegment({
+                                                                                                                          name : new SFString("r_pinky_metacarpal"),
+                                                                                                                          DEF : new SFString("Joe_r_pinky_metacarpal"),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new Shape({
+                                                                                                                              geometry : new SFNode(
+                                                                                                                                new IndexedLineSet({
+                                                                                                                                  coordIndex : new MFInt32([0,1,-1]),
+                                                                                                                                  coord : new SFNode(
+                                                                                                                                    new Coordinate({
+                                                                                                                                      point : new MFVec3f([-0.20000000298023224,0.8399999737739563,-0.08500000089406967,-0.20000000298023224,0.7900000214576721,-0.08500000089406967])}))})),
+                                                                                                                              appearance : new SFNode(
+                                                                                                                                new Appearance({
+                                                                                                                                  USE : new SFString("SegmentLine")}))}),
+
+                                                                                                                            new Transform({
+                                                                                                                              translation : new SFVec3f([-0.20000000298023224,0.8399999737739563,-0.08500000089406967]),
+                                                                                                                              children : new MFNode([
+                                                                                                                                new Shape({
+                                                                                                                                  USE : new SFString("jointbox")})])}),
+
+                                                                                                                            new HAnimSite({
+                                                                                                                              name : new SFString("r_metacarpal_pha5"),
+                                                                                                                              DEF : new SFString("Joe_r_metacarpal_pha5"),
+                                                                                                                              translation : new SFVec3f([-0.20000000298023224,0.7900000214576721,-0.0949999988079071]),
+                                                                                                                              children : new MFNode([
+                                                                                                                                new Shape({
+                                                                                                                                  USE : new SFString("sitebox")})])})])}),
+
+                                                                                                                        new HAnimJoint({
+                                                                                                                          name : new SFString("r_pinky1"),
+                                                                                                                          DEF : new SFString("Joe_r_pinky1"),
+                                                                                                                          center : new SFVec3f([-0.20000000298023224,0.7900000214576721,-0.08500000089406967]),
+                                                                                                                          skinCoordIndex : new MFInt32([276,277,278]),
+                                                                                                                          skinCoordWeight : new MFFloat([1,1,1]),
+                                                                                                                          ulimit : new MFFloat([0,0,0]),
+                                                                                                                          llimit : new MFFloat([0,0,0]),
+                                                                                                                          children : new MFNode([
+                                                                                                                            new HAnimSegment({
+                                                                                                                              name : new SFString("r_pinky_proximal"),
+                                                                                                                              DEF : new SFString("Joe_r_pinky_proximal"),
+                                                                                                                              children : new MFNode([
+                                                                                                                                new Shape({
+                                                                                                                                  geometry : new SFNode(
+                                                                                                                                    new IndexedLineSet({
+                                                                                                                                      coordIndex : new MFInt32([0,1,-1]),
+                                                                                                                                      coord : new SFNode(
+                                                                                                                                        new Coordinate({
+                                                                                                                                          point : new MFVec3f([-0.20000000298023224,0.7900000214576721,-0.08500000089406967,-0.20000000298023224,0.7549999952316284,-0.08500000089406967])}))})),
+                                                                                                                                  appearance : new SFNode(
+                                                                                                                                    new Appearance({
+                                                                                                                                      USE : new SFString("SegmentLine")}))}),
+
+                                                                                                                                new Transform({
+                                                                                                                                  translation : new SFVec3f([-0.20000000298023224,0.7900000214576721,-0.08500000089406967]),
+                                                                                                                                  children : new MFNode([
+                                                                                                                                    new Shape({
+                                                                                                                                      USE : new SFString("jointbox")})])})])}),
+
+                                                                                                                            new HAnimJoint({
+                                                                                                                              name : new SFString("r_pinky2"),
+                                                                                                                              DEF : new SFString("Joe_r_pinky2"),
+                                                                                                                              center : new SFVec3f([-0.20000000298023224,0.7549999952316284,-0.08500000089406967]),
+                                                                                                                              skinCoordIndex : new MFInt32([321,322,323,324]),
+                                                                                                                              skinCoordWeight : new MFFloat([1,1,1,1]),
+                                                                                                                              ulimit : new MFFloat([0,0,0]),
+                                                                                                                              llimit : new MFFloat([0,0,0]),
+                                                                                                                              children : new MFNode([
+                                                                                                                                new HAnimSegment({
+                                                                                                                                  name : new SFString("r_pinky_middle"),
+                                                                                                                                  DEF : new SFString("Joe_r_pinky_middle"),
+                                                                                                                                  children : new MFNode([
+                                                                                                                                    new Shape({
+                                                                                                                                      geometry : new SFNode(
+                                                                                                                                        new IndexedLineSet({
+                                                                                                                                          coordIndex : new MFInt32([0,1,-1]),
+                                                                                                                                          coord : new SFNode(
+                                                                                                                                            new Coordinate({
+                                                                                                                                              point : new MFVec3f([-0.20000000298023224,0.7549999952316284,-0.08500000089406967,-0.20000000298023224,0.7350000143051147,-0.08500000089406967])}))})),
+                                                                                                                                      appearance : new SFNode(
+                                                                                                                                        new Appearance({
+                                                                                                                                          USE : new SFString("SegmentLine")}))}),
+
+                                                                                                                                    new Transform({
+                                                                                                                                      translation : new SFVec3f([-0.20000000298023224,0.7549999952316284,-0.08500000089406967]),
+                                                                                                                                      children : new MFNode([
+                                                                                                                                        new Shape({
+                                                                                                                                          USE : new SFString("jointbox")})])})])}),
+
+                                                                                                                                new HAnimJoint({
+                                                                                                                                  name : new SFString("r_pinky3"),
+                                                                                                                                  DEF : new SFString("Joe_r_pinky3"),
+                                                                                                                                  center : new SFVec3f([-0.20000000298023224,0.7350000143051147,-0.09000000357627869]),
+                                                                                                                                  skinCoordIndex : new MFInt32([325,326,327,328,329,330,331,332,333]),
+                                                                                                                                  skinCoordWeight : new MFFloat([1,1,1,1,1,1,1,1,1]),
+                                                                                                                                  ulimit : new MFFloat([0,0,0]),
+                                                                                                                                  llimit : new MFFloat([0,0,0]),
+                                                                                                                                  children : new MFNode([
+                                                                                                                                    new HAnimSegment({
+                                                                                                                                      name : new SFString("r_pinky_distal"),
+                                                                                                                                      DEF : new SFString("Joe_r_pinky_distal"),
+                                                                                                                                      children : new MFNode([
+                                                                                                                                        new Shape({
+                                                                                                                                          geometry : new SFNode(
+                                                                                                                                            new IndexedLineSet({
+                                                                                                                                              coordIndex : new MFInt32([0,1,-1]),
+                                                                                                                                              coord : new SFNode(
+                                                                                                                                                new Coordinate({
+                                                                                                                                                  point : new MFVec3f([-0.20000000298023224,0.7350000143051147,-0.08500000089406967,-0.20000000298023224,0.7200000286102295,-0.08500000089406967])}))})),
+                                                                                                                                          appearance : new SFNode(
+                                                                                                                                            new Appearance({
+                                                                                                                                              USE : new SFString("SegmentLine")}))}),
+
+                                                                                                                                        new Transform({
+                                                                                                                                          translation : new SFVec3f([-0.20000000298023224,0.7350000143051147,-0.08500000089406967]),
+                                                                                                                                          children : new MFNode([
+                                                                                                                                            new Shape({
+                                                                                                                                              USE : new SFString("jointbox")})])}),
+
+                                                                                                                                        new HAnimSite({
+                                                                                                                                          name : new SFString("r_pinky_distal_tip"),
+                                                                                                                                          DEF : new SFString("Joe_r_pinky_distal_tip"),
+                                                                                                                                          translation : new SFVec3f([-0.20000000298023224,0.7200000286102295,-0.08500000089406967]),
+                                                                                                                                          children : new MFNode([
+                                                                                                                                            new Shape({
+                                                                                                                                              USE : new SFString("sitebox")})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])})])}),
 
                         new HAnimJoint({
                           USE : new SFString("Joe_HumanoidRoot")}),
