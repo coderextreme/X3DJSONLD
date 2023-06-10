@@ -77,7 +77,7 @@ ProtoInstance ProtoInstance6 = null;
           .addChild(ProtoInstance5 = new ProtoInstance().setName("flower"))
           .addChild(ProtoInstance6 = new ProtoInstance().setName("flower"))
           .addChild(new TimeSensor().setDEF("SongTime").setLoop(true))
-          .addChild(new Sound().setMaxBack(100f).setMaxFront(100f).setMinBack(20f).setMinFront(20f)
+          .addChild(new Sound().setMaxBack(100.0000f).setMaxFront(100.0000f).setMinBack(20.0000f).setMinFront(20.0000f)
             .setSource(new AudioClip().setDEF("AudioClip").setDescription("Chandubabamusic #1").setUrl(new MFString7().getArray())))
           .addChild(new ROUTE().setFromField("cycleTime").setFromNode("SongTime").setToField("startTime").setToNode("AudioClip"))))      ;
 ProtoInstance0

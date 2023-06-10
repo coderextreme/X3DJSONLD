@@ -173,7 +173,7 @@ ProtoInstance ProtoInstance34 = null;
           .addField(new field().setType("SFBool").setName("traceEnabled").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("enable console output to trace script computations and prototype progress"))
           .addComments("TODO non-photorealistic rendering (NPR) parameters"))
         .addComments("=============== Lights, camera, action! ==============")
-        .addChild(new DirectionalLight().setDirection(new float[] {0f,-1f,0f}).setGlobal(true).setIntensity(0.8f))
+        .addChild(new DirectionalLight().setDirection(new float[] {0f,-1f,0f}).setGlobal(true).setIntensity(0.8000f))
         .addChild(new NavigationInfo().setType(new java.lang.String[] {"EXAMINE","FLY","ANY"}))
         .addChild(new Viewpoint().setDescription("Camera test scene entry view").setPosition(new float[] {0f,2f,12f}))
         .addChild(new Viewpoint().setDescription("Camera test scene from above").setOrientation(new float[] {1f,0f,0f,-1.57079f}).setPosition(new float[] {0f,150f,0f}))
@@ -197,12 +197,12 @@ ProtoInstance ProtoInstance34 = null;
               .setGeometry(new Text().setString(new MFString4().getArray())
                 .setFontStyle(new FontStyle().setJustify(new MFString5().getArray())))
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setDEF("ArtDeco5").setAmbientIntensity(0.24f).setDiffuseColor(new float[] {0.945455f,0.318988f,0.321717f}).setShininess(0.01f).setSpecularColor(new float[] {0.072727f,0.021705f,0.010732f})
+                .setMaterial(new Material().setDEF("ArtDeco5").setAmbientIntensity(0.2400f).setDiffuseColor(new float[] {0.945455f,0.318988f,0.321717f}).setShininess(0.0100f).setSpecularColor(new float[] {0.072727f,0.021705f,0.010732f})
                   .addComments("Universal Media Library: ArtDeco 5"))))
             .addComments("Simplify intersection test for user selecting text")
             .addChild(new Shape().setDEF("TransparentBox")
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setTransparency(1f)))
+                .setMaterial(new Material().setTransparency(1.0000f)))
               .setGeometry(new Box().setSize(new float[] {6f,2f,0.0001f})))))
         .addChild(new Group().setDEF("SimpleShotsTargets")
           .addChild(new Transform().setDEF("TargetBoxZoom").setTranslation(new float[] {-50f,1f,-20f})
@@ -321,7 +321,7 @@ ProtoInstance ProtoInstance34 = null;
         .addChild(new Transform().setRotation(new float[] {1f,0f,0f,-1.57079f}).setScale(new float[] {10f,10f,10f})
           .addChild(new Shape()
             .setAppearance(new Appearance()
-              .setMaterial(new Material().setAmbientIntensity(0.01f).setDiffuseColor(new float[] {1f,1f,1f}).setShininess(0.05f)))
+              .setMaterial(new Material().setAmbientIntensity(0.0100f).setDiffuseColor(new float[] {1f,1f,1f}).setShininess(0.0500f)))
             .setGeometry(new IndexedFaceSet().setColorIndex(new MFInt3229().getArray()).setColorPerVertex(false).setCoordIndex(new MFInt3230().getArray()).setNormalPerVertex(false).setSolid(false)
               .setCoord(new Coordinate().setPoint(new MFVec3f31().getArray()))
               .setColor(new Color().setColor(new MFColor32().getArray())))))
@@ -357,7 +357,7 @@ ProtoInstance ProtoInstance34 = null;
           .addChild(new Transform().setTranslation(new float[] {0f,-3f,0f})
             .addChild(new Shape()
               .setGeometry(new Text().setString(new MFString40().getArray())
-                .setFontStyle(new FontStyle().setJustify(new MFString41().getArray()).setSize(0.5f)))
+                .setFontStyle(new FontStyle().setJustify(new MFString41().getArray()).setSize(0.5000f)))
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {1f,1f,0.2f})))))))      ;
 ProtoInstance0
@@ -659,7 +659,7 @@ ProtoInstance33
               .addChild(new Viewpoint().setDEF("FrustumViewpoint").setDescription("viewpoint for ViewFrustum").setPosition(new float[] {0f,0f,0f})));
 ProtoInstance33
             .addFieldValue(new fieldValue().setName("NavigationInfoNode")
-              .addChild(new NavigationInfo().setDEF("TestNavigationInfo").setTransitionType(new MFString27().getArray()).setVisibilityLimit(100f)));
+              .addChild(new NavigationInfo().setDEF("TestNavigationInfo").setTransitionType(new MFString27().getArray()).setVisibilityLimit(100.0000f)));
 ProtoInstance33
             .addFieldValue(new fieldValue().setName("visible").setValue("false"));
 ProtoInstance33
@@ -805,7 +805,7 @@ protected class MFInt3224 {
 }
 protected class MFVec3f25 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0f,0f,0f,0f,-100f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,-100.0000f});
   }
 }
 protected class MFString26 {
@@ -820,7 +820,7 @@ protected class MFString27 {
 }
 protected class MFColor28 {
   protected org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.282353f,0.380392f,0.470588f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.2824f,0.3804f,0.4706f});
   }
 }
 protected class MFInt3229 {
@@ -835,12 +835,12 @@ protected class MFInt3230 {
 }
 protected class MFVec3f31 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-5.25f,5.25f,0f,-3.75f,5.25f,0f,-2.25f,5.25f,0f,-0.75f,5.25f,0f,0.75f,5.25f,0f,2.25f,5.25f,0f,3.75f,5.25f,0f,5.25f,5.25f,0f,-5.25f,3.75f,0f,-3.75f,3.75f,0f,-2.25f,3.75f,0f,-0.75f,3.75f,0f,0.75f,3.75f,0f,2.25f,3.75f,0f,3.75f,3.75f,0f,5.25f,3.75f,0f,-5.25f,2.25f,0f,-3.75f,2.25f,0f,-2.25f,2.25f,0f,-0.75f,2.25f,0f,0.75f,2.25f,0f,2.25f,2.25f,0f,3.75f,2.25f,0f,5.25f,2.25f,0f,-5.25f,0.75f,0f,-3.75f,0.75f,0f,-2.25f,0.75f,0f,-0.75f,0.75f,0f,0.75f,0.75f,0f,2.25f,0.75f,0f,3.75f,0.75f,0f,5.25f,0.75f,0f,-5.25f,-0.75f,0f,-3.75f,-0.75f,0f,-2.25f,-0.75f,0f,-0.75f,-0.75f,0f,0.75f,-0.75f,0f,2.25f,-0.75f,0f,3.75f,-0.75f,0f,5.25f,-0.75f,0f,-5.25f,-2.25f,0f,-3.75f,-2.25f,0f,-2.25f,-2.25f,0f,-0.75f,-2.25f,0f,0.75f,-2.25f,0f,2.25f,-2.25f,0f,3.75f,-2.25f,0f,5.25f,-2.25f,0f,-5.25f,-3.75f,0f,-3.75f,-3.75f,0f,-2.25f,-3.75f,0f,-0.75f,-3.75f,0f,0.75f,-3.75f,0f,2.25f,-3.75f,0f,3.75f,-3.75f,0f,5.25f,-3.75f,0f,-5.25f,-5.25f,0f,-3.75f,-5.25f,0f,-2.25f,-5.25f,0f,-0.75f,-5.25f,0f,0.75f,-5.25f,0f,2.25f,-5.25f,0f,3.75f,-5.25f,0f,5.25f,-5.25f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-5.2500f,5.2500f,0.0000f,-3.7500f,5.2500f,0.0000f,-2.2500f,5.2500f,0.0000f,-0.7500f,5.2500f,0.0000f,0.7500f,5.2500f,0.0000f,2.2500f,5.2500f,0.0000f,3.7500f,5.2500f,0.0000f,5.2500f,5.2500f,0.0000f,-5.2500f,3.7500f,0.0000f,-3.7500f,3.7500f,0.0000f,-2.2500f,3.7500f,0.0000f,-0.7500f,3.7500f,0.0000f,0.7500f,3.7500f,0.0000f,2.2500f,3.7500f,0.0000f,3.7500f,3.7500f,0.0000f,5.2500f,3.7500f,0.0000f,-5.2500f,2.2500f,0.0000f,-3.7500f,2.2500f,0.0000f,-2.2500f,2.2500f,0.0000f,-0.7500f,2.2500f,0.0000f,0.7500f,2.2500f,0.0000f,2.2500f,2.2500f,0.0000f,3.7500f,2.2500f,0.0000f,5.2500f,2.2500f,0.0000f,-5.2500f,0.7500f,0.0000f,-3.7500f,0.7500f,0.0000f,-2.2500f,0.7500f,0.0000f,-0.7500f,0.7500f,0.0000f,0.7500f,0.7500f,0.0000f,2.2500f,0.7500f,0.0000f,3.7500f,0.7500f,0.0000f,5.2500f,0.7500f,0.0000f,-5.2500f,-0.7500f,0.0000f,-3.7500f,-0.7500f,0.0000f,-2.2500f,-0.7500f,0.0000f,-0.7500f,-0.7500f,0.0000f,0.7500f,-0.7500f,0.0000f,2.2500f,-0.7500f,0.0000f,3.7500f,-0.7500f,0.0000f,5.2500f,-0.7500f,0.0000f,-5.2500f,-2.2500f,0.0000f,-3.7500f,-2.2500f,0.0000f,-2.2500f,-2.2500f,0.0000f,-0.7500f,-2.2500f,0.0000f,0.7500f,-2.2500f,0.0000f,2.2500f,-2.2500f,0.0000f,3.7500f,-2.2500f,0.0000f,5.2500f,-2.2500f,0.0000f,-5.2500f,-3.7500f,0.0000f,-3.7500f,-3.7500f,0.0000f,-2.2500f,-3.7500f,0.0000f,-0.7500f,-3.7500f,0.0000f,0.7500f,-3.7500f,0.0000f,2.2500f,-3.7500f,0.0000f,3.7500f,-3.7500f,0.0000f,5.2500f,-3.7500f,0.0000f,-5.2500f,-5.2500f,0.0000f,-3.7500f,-5.2500f,0.0000f,-2.2500f,-5.2500f,0.0000f,-0.7500f,-5.2500f,0.0000f,0.7500f,-5.2500f,0.0000f,2.2500f,-5.2500f,0.0000f,3.7500f,-5.2500f,0.0000f,5.2500f,-5.2500f,0.0000f});
   }
 }
 protected class MFColor32 {
   protected org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.435294f,0.741176f,0f,0f,0.560784f,0.580392f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.4353f,0.7412f,0.0000f,0.0000f,0.5608f,0.5804f});
   }
 }
 protected class MFString33 {
@@ -850,12 +850,12 @@ protected class MFString33 {
 }
 protected class MFFloat34 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.25f,0.5f,0.75f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.2500f,0.5000f,0.7500f,1.0000f});
   }
 }
 protected class MFVec3f35 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-5f,1f,5f,45f,1f,5f,45f,1f,-45f,-5f,1f,-45f,-5f,1f,5f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-5.0000f,1.0000f,5.0000f,45.0000f,1.0000f,5.0000f,45.0000f,1.0000f,-45.0000f,-5.0000f,1.0000f,-45.0000f,-5.0000f,1.0000f,5.0000f});
   }
 }
 protected class MFString36 {

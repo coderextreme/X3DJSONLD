@@ -69,16 +69,16 @@ public class JohnJoint {
             .addComments("<Transform translation='0 2 0' scale='1 1 1'> <Shape DEF='HAnimRootShape'> <Sphere radius='0.02' /> <Appearance> <Material DEF='HAnimRootMaterial' diffuseColor='0.8 0 0' transparency='0.3'/> </Appearance> </Shape> </Transform>")
             .addChild(new Transform().setTranslation(new float[] {0f,2.1f,0f})
               .addChild(new Shape().setDEF("HAnimJointShape")
-                .setGeometry(new Sphere().setRadius(0.02f))
+                .setGeometry(new Sphere().setRadius(0.0200f))
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDEF("HAnimJointMaterial").setDiffuseColor(new float[] {0f,0f,0.8f}).setTransparency(0.3f)))))
+                  .setMaterial(new Material().setDEF("HAnimJointMaterial").setDiffuseColor(new float[] {0f,0f,0.8f}).setTransparency(0.3000f)))))
             .addChild(new Transform().setTranslation(new float[] {0f,2.05f,0f})
               .addChild(new Shape().setDEF("HAnimSegmentLine")
                 .setGeometry(new LineSet().setVertexCount(new MFInt324().getArray())
                   .setColor(new ColorRGBA().setDEF("HAnimSegmentLineColorRGBA").setColor(new MFColorRGBA5().getArray()))
                   .setCoord(new Coordinate().setPoint(new MFVec3f6().getArray())))))
             .addComments("<Transform translation='0 2.1 0' scale='1 1 1'> <Shape DEF='HAnimSiteShape'> <IndexedFaceSet DEF='DiamondIFS' creaseAngle='0.5' solid='false' coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1'> <ColorRGBA DEF='HAnimSiteColorRGBA' color='1 1 0 1 1 1 0 0.1'/> <Coordinate point='0 0.01 0 -0.01 0 0 0 0 0.01 0.01 0 0 0 0 -0.01 0 -0.01 0'/> </IndexedFaceSet> <Appearance> <Material diffuseColor='1 1 0' transparency='0.3'/> </Appearance> </Shape> </Transform>")))
-        .addChild(new NavigationInfo().setSpeed(1.5f))
+        .addChild(new NavigationInfo().setSpeed(1.5000f))
         .addChild(new Viewpoint().setDescription("default")))      ;
     return X3D0;
     }
@@ -94,12 +94,12 @@ protected class MFInt321 {
 }
 protected class MFVec3f2 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0f,0f,0.1f,0f,0f,0f,0.1f,0f,0f,0f,0.1f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0000f,0.0000f,0.0000f,0.1000f,0.0000f,0.0000f,0.0000f,0.1000f,0.0000f,0.0000f,0.0000f,0.1000f});
   }
 }
 protected class MFColor3 {
   protected org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {1f,0f,0f,0f,0.6f,0f,0f,0f,1f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {1.0000f,0.0000f,0.0000f,0.0000f,0.6000f,0.0000f,0.0000f,0.0000f,1.0000f});
   }
 }
 protected class MFInt324 {
@@ -109,12 +109,12 @@ protected class MFInt324 {
 }
 protected class MFColorRGBA5 {
   protected org.web3d.x3d.jsail.fields.MFColorRGBA getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColorRGBA(new float[] {1f,1f,0f,1f,1f,1f,0f,0.1f});
+    return new org.web3d.x3d.jsail.fields.MFColorRGBA(new float[] {1.0000f,1.0000f,0.0000f,1.0000f,1.0000f,1.0000f,0.0000f,0.1000f});
   }
 }
 protected class MFVec3f6 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.05f,0f,0f,0.05f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-0.0500f,0.0000f,0.0000f,0.0500f,0.0000f,0.0000f});
   }
 }
 }

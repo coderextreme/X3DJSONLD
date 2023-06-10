@@ -56,7 +56,7 @@ public class skeleton {
         .addMeta(new meta().setName("created").setContent("12 June 2020"))
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
-        .addChild(new NavigationInfo().setSpeed(1.5f))
+        .addChild(new NavigationInfo().setSpeed(1.5000f))
         .addChild(new Viewpoint().setCenterOfRotation(new float[] {0f,1f,0f}).setDescription("JohnBoy").setPosition(new float[] {0f,1f,3f})))      ;
     return X3D0;
     }

@@ -63,7 +63,7 @@ public class InlineSoundSource {
         .addChild(new WorldInfo().setTitle("InlineSoundSource.x3d"))
         .addChild(new NavigationInfo().setDEF("NAV"))
         .addChild(new Background().setBackUrl(new MFString0().getArray()).setBottomUrl(new MFString1().getArray()).setFrontUrl(new MFString2().getArray()).setLeftUrl(new MFString3().getArray()).setRightUrl(new MFString4().getArray()).setTopUrl(new MFString5().getArray()))
-        .addChild(new Viewpoint().setDEF("Camera001").setDescription("Camera001").setFarDistance(0f).setNearDistance(1f).setOrientation(new float[] {1f,0f,0f,-0.523599f}).setPosition(new float[] {0f,2000f,3500f}))
+        .addChild(new Viewpoint().setDEF("Camera001").setDescription("Camera001").setFarDistance(0.0000f).setNearDistance(1.0000f).setOrientation(new float[] {1f,0f,0f,-0.523599f}).setPosition(new float[] {0f,2000f,3500f}))
         .addChild(new Transform().setDEF("Floor").setTranslation(new float[] {1.241f,0f,0.358f})
           .addChild(new Shape()
             .setAppearance(new Appearance().setDEF("WireColor")
@@ -112,12 +112,12 @@ protected class MFInt326 {
 }
 protected class MFVec3f7 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-1000f,0f,1000f,-1000f,0f,-1000f,1000f,0f,-1000f,1000f,0f,-1000f,1000f,0f,1000f,-1000f,0f,1000f,-1000f,8.031588f,1000f,1000f,8.031588f,1000f,1000f,8.031588f,-1000f,1000f,8.031588f,-1000f,-1000f,8.031588f,-1000f,-1000f,8.031588f,1000f,-1000f,0f,1000f,1000f,0f,1000f,1000f,8.031588f,1000f,1000f,8.031588f,1000f,-1000f,8.031588f,1000f,-1000f,0f,1000f,1000f,0f,1000f,1000f,0f,-1000f,1000f,8.031588f,-1000f,1000f,8.031588f,-1000f,1000f,8.031588f,1000f,1000f,0f,1000f,1000f,0f,-1000f,-1000f,0f,-1000f,-1000f,8.031588f,-1000f,-1000f,8.031588f,-1000f,1000f,8.031588f,-1000f,1000f,0f,-1000f,-1000f,0f,-1000f,-1000f,0f,1000f,-1000f,8.031588f,1000f,-1000f,8.031588f,1000f,-1000f,8.031588f,-1000f,-1000f,0f,-1000f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {-1000.0000f,0.0000f,1000.0000f,-1000.0000f,0.0000f,-1000.0000f,1000.0000f,0.0000f,-1000.0000f,1000.0000f,0.0000f,-1000.0000f,1000.0000f,0.0000f,1000.0000f,-1000.0000f,0.0000f,1000.0000f,-1000.0000f,8.0316f,1000.0000f,1000.0000f,8.0316f,1000.0000f,1000.0000f,8.0316f,-1000.0000f,1000.0000f,8.0316f,-1000.0000f,-1000.0000f,8.0316f,-1000.0000f,-1000.0000f,8.0316f,1000.0000f,-1000.0000f,0.0000f,1000.0000f,1000.0000f,0.0000f,1000.0000f,1000.0000f,8.0316f,1000.0000f,1000.0000f,8.0316f,1000.0000f,-1000.0000f,8.0316f,1000.0000f,-1000.0000f,0.0000f,1000.0000f,1000.0000f,0.0000f,1000.0000f,1000.0000f,0.0000f,-1000.0000f,1000.0000f,8.0316f,-1000.0000f,1000.0000f,8.0316f,-1000.0000f,1000.0000f,8.0316f,1000.0000f,1000.0000f,0.0000f,1000.0000f,1000.0000f,0.0000f,-1000.0000f,-1000.0000f,0.0000f,-1000.0000f,-1000.0000f,8.0316f,-1000.0000f,-1000.0000f,8.0316f,-1000.0000f,1000.0000f,8.0316f,-1000.0000f,1000.0000f,0.0000f,-1000.0000f,-1000.0000f,0.0000f,-1000.0000f,-1000.0000f,0.0000f,1000.0000f,-1000.0000f,8.0316f,1000.0000f,-1000.0000f,8.0316f,1000.0000f,-1000.0000f,8.0316f,-1000.0000f,-1000.0000f,0.0000f,-1000.0000f});
   }
 }
 protected class MFVec3f8 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,-1f,0f,0f,-1f,0f,0f,-1f,0f,0f,-1f,0f,0f,-1f,0f,0f,-1f,0f,0f,1f,0f,0f,1f,0f,0f,1f,0f,0f,1f,0f,0f,1f,0f,0f,1f,0f,0f,0f,1f,0f,0f,1f,0f,0f,1f,0f,0f,1f,0f,0f,1f,0f,0f,1f,1f,0f,0f,1f,0f,0f,1f,0f,0f,1f,0f,0f,1f,0f,0f,1f,0f,0f,0f,0f,-1f,0f,0f,-1f,0f,0f,-1f,0f,0f,-1f,0f,0f,-1f,0f,0f,-1f,-1f,0f,0f,-1f,0f,0f,-1f,0f,0f,-1f,0f,0f,-1f,0f,0f,-1f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0000f,-1.0000f,0.0000f,0.0000f,-1.0000f,0.0000f,0.0000f,-1.0000f,0.0000f,0.0000f,-1.0000f,0.0000f,0.0000f,-1.0000f,0.0000f,0.0000f,-1.0000f,0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,1.0000f,1.0000f,0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,1.0000f,0.0000f,0.0000f,0.0000f,0.0000f,-1.0000f,0.0000f,0.0000f,-1.0000f,0.0000f,0.0000f,-1.0000f,0.0000f,0.0000f,-1.0000f,0.0000f,0.0000f,-1.0000f,0.0000f,0.0000f,-1.0000f,-1.0000f,0.0000f,0.0000f,-1.0000f,0.0000f,0.0000f,-1.0000f,0.0000f,0.0000f,-1.0000f,0.0000f,0.0000f,-1.0000f,0.0000f,0.0000f,-1.0000f,0.0000f,0.0000f});
   }
 }
 protected class MFString9 {

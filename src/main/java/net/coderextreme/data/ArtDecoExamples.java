@@ -141,7 +141,7 @@ ProtoInstance ProtoInstance34 = null;
             .addChild(new TimeSensor().setDEF("Close_Time").setCycleInterval(12d).setLoop(true))
             .addChild(new Viewpoint().setDEF("Close").setDescription("Close Front").setPosition(new float[] {0f,0f,6f})))
           .addChild(new DirectionalLight().setDirection(new float[] {1f,-1f,-1f}))
-          .addChild(new DirectionalLight().setDirection(new float[] {0f,1f,-0.5f}).setIntensity(0.5f))
+          .addChild(new DirectionalLight().setDirection(new float[] {0f,1f,-0.5f}).setIntensity(0.5000f))
           .addChild(new Anchor().setDescription("Back to front view").setUrl(new MFString37().getArray())
             .addChild(new Transform().setTranslation(new float[] {0f,0f,-0.5f})
               .addChild(new Inline().setUrl(new MFString38().getArray()))))
@@ -151,14 +151,14 @@ ProtoInstance ProtoInstance34 = null;
               .addChild(new Shape()
                 .setAppearance(new Appearance()
                   .setMaterial(ProtoInstance0 = new ProtoInstance().setName("ArtDeco00")))
-                .setGeometry(new Sphere().setDEF("Ball").setRadius(0.5f))))
+                .setGeometry(new Sphere().setDEF("Ball").setRadius(0.5000f))))
             .addChild(new Transform().setTranslation(new float[] {0f,0.3f,0.5f})
               .addChild(new Anchor().setDescription("ArtDeco00").setParameter(new MFString40().getArray()).setUrl(new MFString41().getArray())
                 .addChild(new Shape()
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setDEF("TextMat").setDiffuseColor(new float[] {1f,1f,1f})))
                   .setGeometry(new Text().setString(new MFString42().getArray())
-                    .setFontStyle(new FontStyle().setDEF("Style").setFamily(new MFString43().getArray()).setJustify(new MFString44().getArray()).setSize(0.3f).setStyle("BOLD")))))))
+                    .setFontStyle(new FontStyle().setDEF("Style").setFamily(new MFString43().getArray()).setJustify(new MFString44().getArray()).setSize(0.3000f).setStyle("BOLD")))))))
           .addChild(new Viewpoint().setDEF("View01").setDescription("ArtDeco01").setPosition(new float[] {-2.25f,3.75f,3f}))
           .addChild(new Transform().setTranslation(new float[] {-2.25f,3.75f,0f})
             .addChild(new Anchor().setDescription("ArtDeco01 view").setUrl(new MFString45().getArray())
@@ -816,12 +816,12 @@ protected class MFString34 {
 }
 protected class MFFloat35 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0.25f,0.5f,0.75f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.2500f,0.5000f,0.7500f,1.0000f});
   }
 }
 protected class MFVec3f36 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,2.5f,0f,0f,0f,0f,0f,-2.5f,0f,0f,0f,0f,0f,2.5f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0000f,2.5000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,-2.5000f,0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,2.5000f,0.0000f});
   }
 }
 protected class MFString37 {

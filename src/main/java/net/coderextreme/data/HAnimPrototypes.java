@@ -205,7 +205,7 @@ public class HAnimPrototypes {
           .setGeometry(new Text().setString(new MFString1().getArray())
             .setFontStyle(new FontStyle().setJustify(new MFString2().getArray())))
           .setAppearance(new Appearance()
-            .setMaterial(new Material().setAmbientIntensity(0.25f).setDiffuseColor(new float[] {0.795918f,0.505869f,0.093315f}).setShininess(0.39f).setSpecularColor(new float[] {0.923469f,0.428866f,0.006369f})
+            .setMaterial(new Material().setAmbientIntensity(0.2500f).setDiffuseColor(new float[] {0.795918f,0.505869f,0.093315f}).setShininess(0.3900f).setSpecularColor(new float[] {0.923469f,0.428866f,0.006369f})
               .addComments("Universal Media Library: Autumn 9")))))      ;
     return X3D0;
     }

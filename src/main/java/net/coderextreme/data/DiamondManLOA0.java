@@ -73,7 +73,7 @@ public class DiamondManLOA0 {
         .addMeta(new meta().setName("license").setContent("../license.html")))
       .setScene(new Scene()
         .addChild(new WorldInfo().setInfo(new MFString0().getArray()).setTitle("HANIM 2.0 Default Joint Centers, LOA0"))
-        .addChild(new NavigationInfo().setSpeed(1.5f))
+        .addChild(new NavigationInfo().setSpeed(1.5000f))
         .addChild(new Viewpoint().setCenterOfRotation(new float[] {0f,1f,0f}).setDescription("Diamond Man, LOA 0").setPosition(new float[] {0f,1f,3f}))
         .addChild(new HAnimHumanoid().setName("humanoid").setDEF("hanim_humanoid").setLoa(0).setVersion("2.0")
           .addComments("original HAnimHumanoid info='\"authorEmail=beitler@graphics.cis.upenn.edu beitler@acm.org\" \"authorName=Matthew T. Beitler\" \"copyright=Copyright 1999 Matthew T. Beitler\" \"creationDate=05/12/99\" \"humanoidVersion=JointCenters 1.1 LOA0\" \"usageRestrictions=PERMISSION TO FULLY USE THIS SCENE GRAPH IS GRANTED PROVIDED THIS COPYRIGHT INFORMATION AND DOCUMENTATION OF THE ORIGINAL AUTHOR IS INCLUDED. This humanoid scene graph is provided _as-is_ and without warranty of any kind express implied or otherwise including without limitation any warranty of merchantability or fitness for a particular purpose.\"'")
@@ -89,7 +89,7 @@ public class DiamondManLOA0 {
               .addChild(new HAnimSegment().setName("pelvis").setDEF("hanim_pelvis")
                 .addChild(new Transform().setTranslation(new float[] {0f,0.9149f,0.0016f})
                   .addChild(new Shape().setDEF("DiamondShape")
-                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3211().getArray()).setCreaseAngle(0.5f)
+                    .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3211().getArray()).setCreaseAngle(0.5000f)
                       .setCoord(new Coordinate().setPoint(new MFVec3f12().getArray())))
                     .setAppearance(new Appearance()
                       .setMaterial(new Material().setDiffuseColor(new float[] {1f,1f,0f}))))))))
@@ -140,22 +140,22 @@ protected class MFString6 {
 }
 protected class MFFloat7 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.0000f,0.0000f});
   }
 }
 protected class MFFloat8 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.0000f,0.0000f});
   }
 }
 protected class MFFloat9 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.0000f,0.0000f});
   }
 }
 protected class MFFloat10 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,0f,0f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,0.0000f,0.0000f});
   }
 }
 protected class MFInt3211 {
@@ -165,7 +165,7 @@ protected class MFInt3211 {
 }
 protected class MFVec3f12 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0.01f,0f,-0.01f,0f,0f,0f,0f,0.01f,0.01f,0f,0f,0f,0f,-0.01f,0f,-0.01f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0000f,0.0100f,0.0000f,-0.0100f,0.0000f,0.0000f,0.0000f,0.0000f,0.0100f,0.0100f,0.0000f,0.0000f,0.0000f,0.0000f,-0.0100f,0.0000f,-0.0100f,0.0000f});
   }
 }
 }

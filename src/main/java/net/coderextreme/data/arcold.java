@@ -73,19 +73,19 @@ ProtoInstance ProtoInstance12 = null;
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {0.2f,0.7f,0.7f})))
-              .setGeometry(new Cylinder().setRadius(0.1f)))))
+              .setGeometry(new Cylinder().setRadius(0.1000f)))))
         .addChild(new Transform().setDEF("trans2")
           .addChild(new Transform().setDEF("rotscale2")
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {0.2f,0.7f,0.7f})))
-              .setGeometry(new Cylinder().setRadius(0.1f)))))
+              .setGeometry(new Cylinder().setRadius(0.1000f)))))
         .addChild(new Transform().setDEF("trans3")
           .addChild(new Transform().setDEF("rotscale3")
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {0.2f,0.7f,0.7f})))
-              .setGeometry(new Cylinder().setRadius(0.1f)))))
+              .setGeometry(new Cylinder().setRadius(0.1000f)))))
         .addChild(new ProtoDeclare().setName("point")
           .setProtoInterface(new ProtoInterface()
             .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0")))
@@ -94,7 +94,7 @@ ProtoInstance ProtoInstance12 = null;
               .setIS(new IS()
                 .addConnect(new connect().setNodeField("translation").setProtoField("translation")))
               .addChild(new Shape()
-                .setGeometry(new Sphere().setRadius(0.1f))
+                .setGeometry(new Sphere().setRadius(0.1000f))
                 .setAppearance(new Appearance()
                   .setMaterial(new Material().setDiffuseColor(new float[] {1f,0f,0f}))))
               .addChild(new PositionInterpolator().setDEF("PI1").setKey(new MFFloat1().getArray()).setKeyValue(new MFVec3f2().getArray()))
@@ -235,17 +235,17 @@ ProtoInstance10
     }
 protected class MFColor0 {
   protected org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.4f,0.4f,0.4f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.4000f,0.4000f,0.4000f});
   }
 }
 protected class MFFloat1 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,1.0000f});
   }
 }
 protected class MFVec3f2 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0f,0f,0f,5f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0000f,0.0000f,0.0000f,0.0000f,5.0000f,0.0000f});
   }
 }
 }

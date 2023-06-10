@@ -82,17 +82,17 @@ public class jumpcut_loadurl {
     }
 protected class MFFloat0 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {1.57f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {1.5700f});
   }
 }
 protected class MFColor1 {
   protected org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0f,0.5f,0f,0f,0.5f,0f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.0000f,0.5000f,0.0000f,0.0000f,0.5000f,0.0000f});
   }
 }
 protected class MFColor2 {
   protected org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0f,0f,1f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.0000f,0.0000f,1.0000f});
   }
 }
 protected class MFString3 {

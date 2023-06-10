@@ -94,7 +94,7 @@ public class ObliqueStrategies {
               .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt324().getArray()).setSolid(false)
                 .setCoord(new Coordinate().setPoint(new MFVec3f5().getArray())))
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setAmbientIntensity(0.245763f).setDiffuseColor(new float[] {0.34773f,0.090909f,0.005289f}).setShininess(0.07f).setSpecularColor(new float[] {0.336735f,0.051091f,0.051091f}).setTransparency(0.8f))))))
+                .setMaterial(new Material().setAmbientIntensity(0.2458f).setDiffuseColor(new float[] {0.34773f,0.090909f,0.005289f}).setShininess(0.0700f).setSpecularColor(new float[] {0.336735f,0.051091f,0.051091f}).setTransparency(0.8000f))))))
         .addChild(new Script().setDEF("TextScript").setUrl(new MFString6().getArray())
           .addComments("initialize() method includes unit test to printAllStrategies() to console")
           .addComments("TODO insert field definitions here (index string_changed previous next random) and then animate!")
@@ -113,7 +113,7 @@ public class ObliqueStrategies {
             .setAppearance(new Appearance()
               .setMaterial(new Material().setDiffuseColor(new float[] {1f,1f,1f}))))
           .addChild(new ROUTE().setFromField("string_changed").setFromNode("TextScript").setToField("string").setToNode("CardText"))
-          .addChild(new Sound().setDEF("CardSoundSpatialization").setMaxBack(100f).setMaxFront(100f).setMinBack(20f).setMinFront(20f)
+          .addChild(new Sound().setDEF("CardSoundSpatialization").setMaxBack(100.0000f).setMaxFront(100.0000f).setMinBack(20.0000f).setMinFront(20.0000f)
             .addComments("Make sure the sound source AudioClip is audible at the user location")
             .addComments("Not all X3D players seem to use the .mp3")
             .addComments("&#38; is ampersand character, avoids escaping problems and inconsistencies in browsers and X3D players")
@@ -135,7 +135,7 @@ public class ObliqueStrategies {
               .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3211().getArray()).setSolid(false)
                 .setCoord(new Coordinate().setPoint(new MFVec3f12().getArray())))
               .setAppearance(new Appearance()
-                .setMaterial(new Material().setTransparency(1f))))))
+                .setMaterial(new Material().setTransparency(1.0000f))))))
         .addChild(new Transform().setScale(new float[] {0.4f,0.4f,0.4f}).setTranslation(new float[] {3.5f,2.5f,0f})
           .addChild(new TouchSensor().setDEF("NextTextClickedSensor").setDescription("Select to see next strategy"))
           .addChild(new ROUTE().setFromField("isActive").setFromNode("NextTextClickedSensor").setToField("selectNextCard").setToNode("TextScript"))
@@ -167,7 +167,7 @@ public class ObliqueStrategies {
     }
 protected class MFColor0 {
   protected org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.419608f,0.427451f,1f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.4196f,0.4275f,1.0000f});
   }
 }
 protected class MFString1 {
@@ -192,7 +192,7 @@ protected class MFInt324 {
 }
 protected class MFVec3f5 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {1f,1f,0f,1f,-1f,0f,-1f,-1f,0f,-1f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {1.0000f,1.0000f,0.0000f,1.0000f,-1.0000f,0.0000f,-1.0000f,-1.0000f,0.0000f,-1.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFString6 {
@@ -227,7 +227,7 @@ protected class MFInt3211 {
 }
 protected class MFVec3f12 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {1f,1f,0f,1f,-1f,0f,-1f,-1f,0f,-1f,1f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {1.0000f,1.0000f,0.0000f,1.0000f,-1.0000f,0.0000f,-1.0000f,-1.0000f,0.0000f,-1.0000f,1.0000f,0.0000f});
   }
 }
 protected class MFString13 {

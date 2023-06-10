@@ -57,7 +57,7 @@ public class arc3 {
         .addChild(new Background().setSkyColor(new MFColor0().getArray()))
         .addChild(new Transform().setDEF("DECLpoint_G1_node")
           .addChild(new Shape()
-            .setGeometry(new Sphere().setRadius(0.1f))
+            .setGeometry(new Sphere().setRadius(0.1000f))
             .setAppearance(new Appearance()
               .setMaterial(new Material().setDiffuseColor(new float[] {1f,0f,0f}))))
           .addChild(new PositionInterpolator().setDEF("DECLpoint_G1_PI1").setKey(new MFFloat1().getArray()).setKeyValue(new MFVec3f2().getArray()))
@@ -80,7 +80,7 @@ public class arc3 {
           .addChild(new ROUTE().setFromNode("DECLpoint_G1_PI1").setFromField("value_changed").setToNode("DECLpoint_G1_node").setToField("set_translation")))
         .addChild(new Transform().setDEF("DECLpoint_G2_node")
           .addChild(new Shape()
-            .setGeometry(new Sphere().setRadius(0.1f))
+            .setGeometry(new Sphere().setRadius(0.1000f))
             .setAppearance(new Appearance()
               .setMaterial(new Material().setDiffuseColor(new float[] {1f,0f,0f}))))
           .addChild(new PositionInterpolator().setDEF("DECLpoint_G2_PI1").setKey(new MFFloat3().getArray()).setKeyValue(new MFVec3f4().getArray()))
@@ -106,8 +106,8 @@ public class arc3 {
             .addChild(new Transform().setDEF("DECLx3dconnector_connector1_rotscale")
               .addChild(new Shape()
                 .setAppearance(new Appearance()
-                  .setMaterial(new Material().setDiffuseColor(new float[] {0.2f,0.7f,0.7f}).setTransparency(0.5f)))
-                .setGeometry(new Cylinder().setRadius(0.05f)))))
+                  .setMaterial(new Material().setDiffuseColor(new float[] {0.2f,0.7f,0.7f}).setTransparency(0.5000f)))
+                .setGeometry(new Cylinder().setRadius(0.0500f)))))
           .addChild(new Script().setDEF("DECLx3dconnector_connector1_S1")
             .addField(new field().setType("SFNode").setName("startnode").setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
               .addChild(new Group().setUSE("DECLpoint_G1_node")))
@@ -171,27 +171,27 @@ public class arc3 {
     }
 protected class MFColor0 {
   protected org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.4f,0.4f,0.4f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.4000f,0.4000f,0.4000f});
   }
 }
 protected class MFFloat1 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,1.0000f});
   }
 }
 protected class MFVec3f2 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0f,0f,0f,5f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0000f,0.0000f,0.0000f,0.0000f,5.0000f,0.0000f});
   }
 }
 protected class MFFloat3 {
   protected org.web3d.x3d.jsail.fields.MFFloat getArray() {
-    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0f,1f});
+    return new org.web3d.x3d.jsail.fields.MFFloat(new float[] {0.0000f,1.0000f});
   }
 }
 protected class MFVec3f4 {
   protected org.web3d.x3d.jsail.fields.MFVec3f getArray() {
-    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0f,0f,0f,0f,5f,0f});
+    return new org.web3d.x3d.jsail.fields.MFVec3f(new float[] {0.0000f,0.0000f,0.0000f,0.0000f,5.0000f,0.0000f});
   }
 }
 }

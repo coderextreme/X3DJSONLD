@@ -215,11 +215,16 @@ var X3D0 =  X3D(
               trackCurrentView_ : true),
 
             StreamAudioDestination(
+              channelCountMode_ : SFString('MAX'),
+              channelInterpretation_ : SFString('SPEAKERS'),
               children_ : [
                 SpatialSound(
                   DEF_ : SFString('Audio1'),
+                  distanceModel_ : SFString('INVERSE'),
                   children_ : [
                     Gain(
+                      channelCountMode_ : SFString('MAX'),
+                      channelInterpretation_ : SFString('SPEAKERS'),
                       children_ : [
                         AudioClip(
                           description_ : SFString('Violin'),
@@ -228,8 +233,11 @@ var X3D0 =  X3D(
 
                 SpatialSound(
                   DEF_ : SFString('Audio2'),
+                  distanceModel_ : SFString('INVERSE'),
                   children_ : [
                     Gain(
+                      channelCountMode_ : SFString('MAX'),
+                      channelInterpretation_ : SFString('SPEAKERS'),
                       children_ : [
                         AudioClip(
                           description_ : SFString('Saxophone'),

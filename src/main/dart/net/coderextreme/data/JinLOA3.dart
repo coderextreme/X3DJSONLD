@@ -34,7 +34,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('modified'),
-              content_ : SFString('23 December 2021')),
+              content_ : SFString('27 January 2023')),
 
             meta(
               name_ : SFString('description'),
@@ -1738,8 +1738,8 @@ var X3D0 =  X3D(
                                                                                                                                               point_ : MFVec2f([SFVec2f([0.2448,0.6067]),SFVec2f([0.3051,0.6166]),SFVec2f([0.2959,0.6259]),SFVec2f([0.2442,0.6234]),SFVec2f([0.2438,0.6465]),SFVec2f([0.2546,0.6556]),SFVec2f([0.2439,0.6556]),SFVec2f([0.3007,0.651]),SFVec2f([0.3051,0.6166]),SFVec2f([0.3007,0.651]),SFVec2f([0.6104,0.6278]),SFVec2f([0.6104,0.661]),SFVec2f([0.6021,0.661]),SFVec2f([0.2546,0.6556]),SFVec2f([0.2439,0.6556]),SFVec2f([0.3007,0.651]),SFVec2f([0.3007,0.651]),SFVec2f([0.6021,0.6278]),SFVec2f([0.6425,0.6334]),SFVec2f([0.6294,0.6619]),SFVec2f([0.3051,0.6166]),SFVec2f([0.3051,0.6166]),SFVec2f([0.2442,0.6234]),SFVec2f([0.2438,0.6465]),SFVec2f([0.2546,0.6556]),SFVec2f([0.2439,0.6556]),SFVec2f([0.3007,0.651]),SFVec2f([0.3051,0.6166]),SFVec2f([0.3051,0.6166]),SFVec2f([0.3007,0.651]),SFVec2f([0.3007,0.651]),SFVec2f([0.2546,0.6556]),SFVec2f([0.2439,0.6556]),SFVec2f([0.3007,0.651]),SFVec2f([0.6104,0.6278]),SFVec2f([0.6104,0.661]),SFVec2f([0.6021,0.661]),SFVec2f([0.6021,0.6278]),SFVec2f([0.6425,0.6334]),SFVec2f([0.6294,0.6619]),SFVec2f([0.3051,0.6166]),SFVec2f([0.3051,0.6166])]))))])])])])])])])])])])]),
 
                                                                                         HAnimJoint(
-                                                                                          name_ : SFString('l_acromioclavicular'),
-                                                                                          DEF_ : SFString('hanim_l_acromioclavicular'),
+                                                                                          name_ : SFString('l_sternoclavicular'),
+                                                                                          DEF_ : SFString('hanim_l_sternoclavicular'),
                                                                                           center_ : SFVec3f([SFDouble(1.71), SFDouble(52.82), SFDouble(-0.6127)]),
                                                                                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
@@ -1773,8 +1773,8 @@ var X3D0 =  X3D(
                                                                                                               point_ : MFVec2f([SFVec2f([0.1911,0.4797]),SFVec2f([0.171,0.4832]),SFVec2f([0.1497,0.4806]),SFVec2f([0.1519,0.4334]),SFVec2f([0.1831,0.4416]),SFVec2f([0.1474,0.4856]),SFVec2f([0.1708,0.4854]),SFVec2f([0.1784,0.4249]),SFVec2f([0.1538,0.4251]),SFVec2f([0.1963,0.4863]),SFVec2f([0.19,0.5091]),SFVec2f([0.1847,0.499]),SFVec2f([0.172,0.4382]),SFVec2f([0.1568,0.4457]),SFVec2f([0.1409,0.4926])]))))])]),
 
                                                                                             HAnimJoint(
-                                                                                              name_ : SFString('l_sternoclavicular'),
-                                                                                              DEF_ : SFString('hanim_l_sternoclavicular'),
+                                                                                              name_ : SFString('l_acromioclavicular'),
+                                                                                              DEF_ : SFString('hanim_l_acromioclavicular'),
                                                                                               center_ : SFVec3f([SFDouble(5.464), SFDouble(52.060001), SFDouble(-0.5732)]),
                                                                                               ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                               llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
@@ -2578,8 +2578,8 @@ var X3D0 =  X3D(
                                                                                                                                               point_ : MFVec2f([SFVec2f([0.4049,0.6227]),SFVec2f([0.4021,0.6229]),SFVec2f([0.4017,0.6225]),SFVec2f([0.4045,0.6223]),SFVec2f([0.4072,0.6236]),SFVec2f([0.4053,0.624]),SFVec2f([0.4068,0.6232]),SFVec2f([0.4044,0.623]),SFVec2f([0.4016,0.6232]),SFVec2f([0.3997,0.6236]),SFVec2f([0.4001,0.624]),SFVec2f([0.4025,0.6242]),SFVec2f([0.4086,0.6291]),SFVec2f([0.4066,0.6295]),SFVec2f([0.4082,0.6286]),SFVec2f([0.4055,0.6284]),SFVec2f([0.4022,0.6286]),SFVec2f([0.4001,0.6291]),SFVec2f([0.4005,0.6296]),SFVec2f([0.4032,0.6297]),SFVec2f([0.4082,0.6302]),SFVec2f([0.4064,0.6306]),SFVec2f([0.4078,0.6299]),SFVec2f([0.4056,0.6298]),SFVec2f([0.4028,0.63]),SFVec2f([0.401,0.6304]),SFVec2f([0.4014,0.6307]),SFVec2f([0.4036,0.6308]),SFVec2f([0.4047,0.6309])]))))])])])])])])])])])])]),
 
                                                                                         HAnimJoint(
-                                                                                          name_ : SFString('r_acromioclavicular'),
-                                                                                          DEF_ : SFString('hanim_r_acromioclavicular'),
+                                                                                          name_ : SFString('r_sternoclavicular'),
+                                                                                          DEF_ : SFString('hanim_r_sternoclavicular'),
                                                                                           center_ : SFVec3f([SFDouble(-1.71), SFDouble(52.82), SFDouble(-0.6127)]),
                                                                                           ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                           llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
@@ -2613,8 +2613,8 @@ var X3D0 =  X3D(
                                                                                                               point_ : MFVec2f([SFVec2f([0.1911,0.4797]),SFVec2f([0.171,0.4832]),SFVec2f([0.1497,0.4806]),SFVec2f([0.1519,0.4334]),SFVec2f([0.1831,0.4416]),SFVec2f([0.1474,0.4856]),SFVec2f([0.1708,0.4854]),SFVec2f([0.1784,0.4249]),SFVec2f([0.1538,0.4251]),SFVec2f([0.1963,0.4863]),SFVec2f([0.19,0.5091]),SFVec2f([0.1847,0.499]),SFVec2f([0.172,0.4382]),SFVec2f([0.1568,0.4457]),SFVec2f([0.1409,0.4926])]))))])]),
 
                                                                                             HAnimJoint(
-                                                                                              name_ : SFString('r_sternoclavicular'),
-                                                                                              DEF_ : SFString('hanim_r_sternoclavicular'),
+                                                                                              name_ : SFString('r_acromioclavicular'),
+                                                                                              DEF_ : SFString('hanim_r_acromioclavicular'),
                                                                                               center_ : SFVec3f([SFDouble(-5.464), SFDouble(52.060001), SFDouble(-0.5732)]),
                                                                                               ulimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),
                                                                                               llimit_ : MFFloat([SFFloat(0), SFFloat(0), SFFloat(0)]),

@@ -68,17 +68,17 @@ public class Filters {
           .addChild(new Shape()
             .setAppearance(new Appearance().setDEF("audio_emit")
               .setMaterial(new Material().setDiffuseColor(new float[] {0.1f,0.1f,0.1f}).setEmissiveColor(new float[] {0.8f,0.8f,0.8f}).setSpecularColor(new float[] {0.01f,0.01f,0.01f})))
-            .setGeometry(new Sphere().setRadius(30f))))
+            .setGeometry(new Sphere().setRadius(30.0000f))))
         .addChild(new Transform().setDEF("TransformAudio2").setTranslation(new float[] {0f,50f,0f})
           .addChild(new Shape()
             .setAppearance(new Appearance().setDEF("audio_emit2")
               .setMaterial(new Material().setDiffuseColor(new float[] {0.1f,0.1f,0.1f}).setEmissiveColor(new float[] {0.8f,0.8f,0.8f}).setSpecularColor(new float[] {0.01f,0.01f,0.01f})))
-            .setGeometry(new Sphere().setRadius(30f))))
+            .setGeometry(new Sphere().setRadius(30.0000f))))
         .addChild(new Transform().setDEF("TransformAudio3").setTranslation(new float[] {200f,50f,0f})
           .addChild(new Shape()
             .setAppearance(new Appearance().setDEF("audio_emit3")
               .setMaterial(new Material().setDiffuseColor(new float[] {0.1f,0.1f,0.1f}).setEmissiveColor(new float[] {0.8f,0.8f,0.8f}).setSpecularColor(new float[] {0.01f,0.01f,0.01f})))
-            .setGeometry(new Sphere().setRadius(30f))))
+            .setGeometry(new Sphere().setRadius(30.0000f))))
         .addChild(new Transform().setDEF("AnimData").setTranslation(new float[] {0f,50f,0f}))
         .addChild(new Transform().setDEF("AnimDataBoxH").setTranslation(new float[] {0f,100f,0f}))
         .addChild(new Transform().setDEF("AnimDataBoxM").setTranslation(new float[] {15f,100f,0f}))
@@ -88,8 +88,8 @@ public class Filters {
         .addChild(new Transform()
           .addChild(new Shape()
             .setAppearance(new Appearance().setDEF("floor")
-              .setMaterial(new Material().setDiffuseColor(new float[] {0.1f,0.1f,0.1f}).setShininess(0.8f).setSpecularColor(new float[] {0.5f,0.6f,0.7f})))
-            .setGeometry(new Cylinder().setRadius(500f))))
+              .setMaterial(new Material().setDiffuseColor(new float[] {0.1f,0.1f,0.1f}).setShininess(0.8000f).setSpecularColor(new float[] {0.5f,0.6f,0.7f})))
+            .setGeometry(new Cylinder().setRadius(500.0000f))))
         .addChild(new ListenerPointSource().setTrackCurrentView(true))
         .addChild(new StreamAudioDestination().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
           .addChild(new DynamicsCompressor().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
@@ -97,23 +97,23 @@ public class Filters {
               .addChild(new SpatialSound().setDEF("Audio1").setDistanceModel("INVERSE")
                 .addChild(new Gain().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
                   .addChild(new Analyser().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
-                    .addChild(new BiquadFilter().setType("allpass").setDetune(50f).setFrequency(600f).setQualityFactor(30f).setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
+                    .addChild(new BiquadFilter().setType("allpass").setDetune(50.0000f).setFrequency(600.0000f).setQualityFactor(30.0000f).setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
                       .addChild(new AudioClip().setDescription("Techno beat").setLoop(true).setUrl(new MFString1().getArray()))))))
               .addChild(new SpatialSound().setDEF("Audio2").setDistanceModel("INVERSE")
                 .addChild(new Gain().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
                   .addChild(new Analyser().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
-                    .addChild(new BiquadFilter().setType("allpass").setDetune(15f).setFrequency(600f).setQualityFactor(15f).setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
+                    .addChild(new BiquadFilter().setType("allpass").setDetune(15.0000f).setFrequency(600.0000f).setQualityFactor(15.0000f).setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
                       .addChild(new AudioClip().setDescription("Simple beat").setLoop(true).setUrl(new MFString2().getArray()))))))
               .addChild(new SpatialSound().setDEF("Audio3").setDistanceModel("INVERSE")
                 .addChild(new Gain().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
                   .addChild(new Analyser().setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
-                    .addChild(new BiquadFilter().setType("allpass").setFrequency(1000f).setQualityFactor(0f).setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
+                    .addChild(new BiquadFilter().setType("allpass").setFrequency(1000.0000f).setQualityFactor(0.0000f).setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
                       .addChild(new AudioClip().setDescription("Wobble loop").setLoop(true).setUrl(new MFString3().getArray()))))))))))      ;
     return X3D0;
     }
 protected class MFColor0 {
   protected org.web3d.x3d.jsail.fields.MFColor getArray() {
-    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.2f,0.2f,0.2f});
+    return new org.web3d.x3d.jsail.fields.MFColor(new float[] {0.2000f,0.2000f,0.2000f});
   }
 }
 protected class MFString1 {
