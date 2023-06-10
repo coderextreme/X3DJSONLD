@@ -19,7 +19,7 @@ meta(name="generator", content="Java BVH to X3D Converter, org.web3d.x3d.hanim.b
 meta(name="generator", content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
 meta(name="identifier", content="https://x3dgraphics.com/examples/X3dForAdvancedModeling/MotionAnimation/RotationTests.x3d"),
 meta(name="license", content="license.html"),
-meta(name="translated", content="24 March 2023"),
+meta(name="translated", content="09 June 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 

@@ -10,7 +10,7 @@ meta(name="generator", content="manual"),
 meta(name="identifier", content="https://coderextreme.net/X3DJSONLD/x3dconnectorProto.x3d"),
 meta(name="description", content="a generic proto to connect two objects"),
 meta(name="license", content="https://www.web3d.org/x3d/content/examples/license.html"),
-meta(name="translated", content="24 March 2023"),
+meta(name="translated", content="09 June 2023"),
 meta(name="generator", content="X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
 meta(name="reference", content="X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding")
 ]), 
