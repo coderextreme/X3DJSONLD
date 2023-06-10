@@ -4,7 +4,7 @@
 #define WINAPI
 #define AFX_EXT_CLASS
 #define EXPORT32
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Concretes.h"
+#include "C:/x3d-code/www.web3d.org/x3d/stylesheets/cpp/concretes.h"
 int main(int argc, char ** argv) {
 CX3DScene m_pScene;
 CBrowser browser = X3D.getBrowser();
@@ -46,7 +46,7 @@ head1->addMeta(*meta7);
 
 Cmeta* meta8 = new Cmeta();
 meta8->setName("modified");
-meta8->setContent("20 September 2020");
+meta8->setContent("27 January 2023");
 head1->addMeta(*meta8);
 
 Cmeta* meta9 = new Cmeta();
@@ -180,9 +180,9 @@ Group30->setDEF("Joe_Humanoid");
 CHAnimHumanoid* HAnimHumanoid31 = (CHAnimHumanoid *)(m_pScene.createNode("HAnimHumanoid"));
 HAnimHumanoid31->setName("Human");
 HAnimHumanoid31->setDEF("Joe_Human");
-HAnimHumanoid31->setVersion("1.0");
+HAnimHumanoid31->setVersion("2.0");
 CHAnimJoint* HAnimJoint32 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint32->setName("HumanoidRoot");
+HAnimJoint32->setName("humanoid_root");
 HAnimJoint32->setDEF("Joe_HumanoidRoot");
 HAnimJoint32->setCenter(new float[3]{0,0.875,0});
 HAnimJoint32->setUlimit(new float[3]{0,0,0}, 3);
@@ -611,6 +611,8 @@ HAnimJoint74->addChildren(*HAnimJoint75);
 
 HAnimJoint73->addChildren(*HAnimJoint74);
 
+HAnimJoint72->addChildren(*HAnimJoint73);
+
 CHAnimJoint* HAnimJoint89 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint89->setName("l_sternoclavicular");
 HAnimJoint89->setDEF("Joe_l_sternoclavicular");
@@ -849,7 +851,7 @@ HAnimJoint90->addChildren(*HAnimJoint91);
 
 HAnimJoint89->addChildren(*HAnimJoint90);
 
-HAnimJoint73->addChildren(*HAnimJoint89);
+HAnimJoint72->addChildren(*HAnimJoint89);
 
 CHAnimJoint* HAnimJoint113 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
 HAnimJoint113->setName("r_sternoclavicular");
@@ -1089,9 +1091,7 @@ HAnimJoint114->addChildren(*HAnimJoint115);
 
 HAnimJoint113->addChildren(*HAnimJoint114);
 
-HAnimJoint73->addChildren(*HAnimJoint113);
-
-HAnimJoint72->addChildren(*HAnimJoint73);
+HAnimJoint72->addChildren(*HAnimJoint113);
 
 HAnimJoint71->addChildren(*HAnimJoint72);
 
