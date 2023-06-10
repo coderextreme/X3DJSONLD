@@ -45,8 +45,8 @@ Background Background9 = createNode("Background");
 Background9.skyColor = new MFColor(new float[0.4,0.4,0.4]);
 children[1] = Background9;
 
-ProtoDeclare ProtoDeclare10 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
+ProtoDeclare ProtoDeclare10 = browser.createX3DFromString(`<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
 <ProtoDeclare name="point" ><ProtoInterface><field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
 </ProtoInterface>
 <ProtoBody><Transform DEF="node"><IS><connect nodeField="translation" protoField="translation"></connect>
@@ -206,8 +206,8 @@ ProtoDeclare10.protoBody = ProtoBody13;
 
 children[2] = ProtoDeclare10;
 
-ProtoDeclare ProtoDeclare32 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
+ProtoDeclare ProtoDeclare32 = browser.createX3DFromString(`<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
 <ProtoDeclare name="x3dconnector" ><ProtoInterface><field name="startnode" accessType="initializeOnly" type="SFNode"></field>
 <field name="endnode" accessType="initializeOnly" type="SFNode"></field>
 <field name="set_startpoint" accessType="inputOnly" type="SFVec3f"></field>
