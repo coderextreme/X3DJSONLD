@@ -1,5 +1,6 @@
 var mapToMethod2 = {
 	"Shape" : {
+		"MetadataString" : "addMetadata",
 		"ProtoInstance" : "setGeometry"
 	},
 	"HAnimJoint" : {
