@@ -95,7 +95,7 @@
           },
           {
             "@name":"translated",
-            "@content":"11 April 2023"
+            "@content":"09 June 2023"
           },
           {
             "@name":"generator",
@@ -276,7 +276,7 @@
                                 "@name":"position",
                                 "@DEF":"position",
                                 "@reference":"http://titania.create3000.de",
-                                "@value":[6.24067728185014,0.00250837343276661,2.92117542307615]
+                                "@value":[6.2407,0.0025,2.9212]
                               }
                             },
                             { "MetadataDouble":
@@ -284,7 +284,7 @@
                                 "@name":"orientation",
                                 "@DEF":"orientation",
                                 "@reference":"http://titania.create3000.de",
-                                "@value":[-0.110173424710488,0.990158061907379,-0.0863065984000336,1.21146676119191]
+                                "@value":[-0.1102,0.9902,-0.0863,1.2115]
                               }
                             },
                             { "MetadataDouble":
@@ -292,7 +292,7 @@
                                 "@name":"centerOfRotation",
                                 "@DEF":"centerOfRotation",
                                 "@reference":"http://titania.create3000.de",
-                                "@value":[-0.808320198626341,-0.358072370409949,0.22817191560906]
+                                "@value":[-0.8083,-0.3581,0.2282]
                               }
                             }
                           ]

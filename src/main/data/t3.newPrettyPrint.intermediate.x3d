@@ -18,7 +18,7 @@
   <Scene>
     <NavigationInfo avatarSize='200 200 120' speed='3.0' transitionType='"LINEAR"' type='"EXAMINE" "FLY" "WALK"'/>
     <WorldInfo title='Arts Mapper'/>
-    <Viewpoint description='looking North' fieldOfView='0.7853981' orientation='1 0 0 -0.7' position='0 60 110'/>
+    <Viewpoint description='looking North' orientation='1 0 0 -0.7' position='0 60 110'/>
     <Transform translation='-468 0 315'>
       <Anchor description='High Peak Community Arts' url='"javascript:window.open(&apos;https://coderextreme.net/X3DJSONLD/src/main/data/574.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);" "javascript:window.open(&apos;./data/574.html&apos;,&apos;details&apos;,&apos;height=550,width=400,top=50,left=50,menubar=no,status=no,toolbar=no,titlebar=no&apos;);"'>
         <Transform>
