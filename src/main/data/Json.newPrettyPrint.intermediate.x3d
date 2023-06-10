@@ -85,6 +85,7 @@
           <!-- Comment example A, plain quotation marks: He said, "Immel did it!" -->
           <!-- Comment example B, XML character entities: He said, &quot;Immel did it!&quot; -->
           <MetadataSet name='EscapedQuotationMarksMetadataSet' containerField='metadata'>
+            <MetadataString name='quotesTestC' value='"MFString example C, backslash-escaped quotes: He said, \"Immel did it!\""'/>
             <MetadataString name='extraChildTest' value='"checks MetadataSetObject addValue() method"'/>
           </MetadataSet>
           <FontStyle family='"SERIF"' justify='"MIDDLE" "MIDDLE"'/>
@@ -105,7 +106,7 @@
       <!-- https://en.wikipedia.org/wiki/Beautiful_World_(Devo_song) -->
     </Transform>
     <!-- repeatedly spin 180 degrees as a readable special effect -->
-    <OrientationInterpolator DEF='SpinInterpolator' key='0 0.5 1' keyValue='0 1 0 4.712389 0 1 0 0 0 1 0 1.5707964'/>
+    <OrientationInterpolator DEF='SpinInterpolator' key='0 0.5 1' keyValue='0 1 0 4.7124 0 1 0 0 0 1 0 1.5708'/>
     <TimeSensor DEF='SpinClock' cycleInterval='5.0' loop='true'/>
     <ROUTE fromField='fraction_changed' fromNode='SpinClock' toField='set_fraction' toNode='SpinInterpolator'/>
     <ROUTE fromField='value_changed' fromNode='SpinInterpolator' toField='rotation' toNode='TextTransform'/>
@@ -124,7 +125,7 @@ function colorInput (eventValue) // Example source code
 }
 ]]>
       </Script>
-      <ColorInterpolator DEF='ColorAnimator' key='0 0.5 1' keyValue='0.9411765 1 1 0.29411766 0 0.50980395 0.9411765 1 1'>
+      <ColorInterpolator DEF='ColorAnimator' key='0 0.5 1' keyValue='0.9412 1 1 0.2941 0 0.5098 0.9412 1 1'>
         <!-- AZURE to INDIGO and back again -->
       </ColorInterpolator>
       <TimeSensor DEF='ColorClock' cycleInterval='60.0' loop='true'/>
@@ -139,7 +140,7 @@ function colorInput (eventValue) // Example source code
       </ProtoInterface>
       <ProtoBody>
         <!-- Initial node of ProtoBody determines prototype node type -->
-        <Material ambientIntensity='0.25' diffuseColor='0.282435 0.085159 0.134462' shininess='0.127273' specularColor='0.276305 0.11431 0.139857'/>
+        <Material ambientIntensity='0.25' diffuseColor='0.282435 0.085159 0.134462' shininess='0.1273' specularColor='0.276305 0.11431 0.139857'/>
         <!-- [HelloWorldProgram diagnostic] should be connected to scene graph: artDeco01ProtoDeclare.getNodeType()="Material" -->
         <!-- presence of follow-on TouchSensor shows that additional nodes are allowed in ProtoBody after initial node, regardless of node types -->
         <TouchSensor description='within ProtoBody'>

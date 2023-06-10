@@ -146,6 +146,9 @@ POSSIBILITY OF SUCH DAMAGE.
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
+        <xsl:variable name="x3dWorldInfoTitle">
+            <xsl:value-of select="//WorldInfo[1]/@title"/>
+        </xsl:variable>
         
         <!-- debug diagnostics -->
         <xsl:if test="($traceEnabled = 'true')">
@@ -222,19 +225,36 @@ POSSIBILITY OF SUCH DAMAGE.
     </xsl:otherwise>
 </xsl:choose>
 
+        <xsl:variable name="htmlTitle">
+            <xsl:if test="(string-length($x3dWorldInfoTitle) > 0)">
+                <xsl:value-of select="$x3dWorldInfoTitle"/>
+            </xsl:if>
+            <xsl:if test="(string-length($fileName) > 0) and not($fileName = $x3dWorldInfoTitle)">
+                <xsl:text>, </xsl:text>
+                <xsl:value-of select="$fileName"/>
+                <xsl:if test="(string-length($x3dWorldInfoTitle) > 0) and ends-with($x3dWorldInfoTitle,'.x3d') and not(contains($x3dWorldInfoTitle,' '))">
+                    <xsl:message>
+                        <xsl:text>*** Warning, possible mismatch between WorldInfo/@title=</xsl:text>
+                        <xsl:value-of select="$x3dWorldInfoTitle"/>
+                        <xsl:text> and filename=</xsl:text>
+                        <xsl:value-of select="$fileName"/>
+                        <xsl:text> ?</xsl:text>
+                    </xsl:message>
+                </xsl:if>
+            </xsl:if>
+            <xsl:text> (</xsl:text>
+            <xsl:value-of select="$player"/>
+            <!-- <xsl:text> X3dToX3domX_ITE.xslt</xsl:text> -->
+            <xsl:text>)</xsl:text>
+        </xsl:variable>
+        <xsl:message>
+            <xsl:text>$htmlTitle=</xsl:text>
+            <xsl:value-of select="$htmlTitle"/>
+        </xsl:message>
         <html xmlns="http://www.w3.org/1999/xhtml">
             <head>
                 <title>
-                    <xsl:choose>
-                        <xsl:when test="$fileName">
-                            <xsl:value-of select="$fileName"/>
-                        </xsl:when>
-                        <xsl:otherwise>
-                        </xsl:otherwise>
-                    </xsl:choose>
-					<xsl:text> (X3dToX3domX_ITE.xslt </xsl:text>
-					<xsl:value-of select="$player"/>
-					<xsl:text>)</xsl:text>
+                    <xsl:value-of select="$htmlTitle"/>
                 </title>
                 <xsl:if test="($lower-case-player = 'x3dom')">
                     <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge" />
@@ -260,6 +280,11 @@ POSSIBILITY OF SUCH DAMAGE.
                   <xsl:when test="($lower-case-player = 'x_ite') or ($lower-case-player = 'cobweb')">
                     <xsl:text>        </xsl:text>
                     <xsl:comment> X_ITE developer site: https://create3000.github.io/x_ite </xsl:comment>
+                    <xsl:text>&#10;</xsl:text>
+                    <xsl:text>        </xsl:text>
+                    <link rel="icon" type="image/png"               href="https://create3000.github.io/x_ite/assets/img/favicons/favicon-32x32.png"/>
+                    <link rel="icon" type="image/png" sizes="32x32" href="https://create3000.github.io/x_ite/assets/img/favicons/favicon-32x32.png"/>
+                    <link rel="icon" type="image/png" sizes="16x16" href="https://create3000.github.io/x_ite/assets/img/favicons/favicon-16x16.png"/>
                     <xsl:text>&#10;</xsl:text>
                     <!-- no longer needed, handled automatically
                     <xsl:text>        </xsl:text>
@@ -386,7 +411,12 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                     <link rel="stylesheet" type="text/css" href="{$urlX3DOM}/x3dom.css" />
                     <xsl:text>&#10;</xsl:text>
                     <script         type="text/javascript"  src="{$urlX3DOM}/x3dom-full.js"/>
+                    <xsl:text>&#10;</xsl:text><xsl:text>        </xsl:text>
+                    <link rel="icon" type="image/png"               href="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/tools/X3dEdit4.0/X3dEditModuleSuite/X3dSourceFilePalette/src/org/web3d/x3d/resources/x3dom-whiteOnblue160.png?format=raw"/>
+                    <link rel="icon" type="image/png" sizes="32x32" href="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/tools/X3dEdit4.0/X3dEditModuleSuite/X3dSourceFilePalette/src/org/web3d/x3d/resources/x3dom-whiteOnblue32.png?format=raw"/>
+                    <link rel="icon" type="image/png" sizes="24x24" href="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/tools/X3dEdit4.0/X3dEditModuleSuite/X3dSourceFilePalette/src/org/web3d/x3d/resources/x3dom-whiteOnblue24.png?format=raw"/>
                     <xsl:text>&#10;</xsl:text>
+                    
                   </xsl:otherwise>
               </xsl:choose>
 
@@ -913,7 +943,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                                 <xsl:text> Unsupported nodes found </xsl:text>
                             </th>
                             <th>
-                                <xsl:text> Partial support</xsl:text>
+                                <xsl:text> Partially supported nodes</xsl:text>
                             </th>
                         </tr>
                         
