@@ -40,7 +40,7 @@
           },
           {
             "@name":"translated",
-            "@content":"11 April 2023"
+            "@content":"09 June 2023"
           },
           {
             "@name":"generator",
@@ -81,7 +81,7 @@
                     "-geometry":
                       { "Extrusion":
                         {
-                          "@creaseAngle":3.14159,
+                          "@creaseAngle":3.1416,
                           "@crossSection":[0,0.8,0.2,1,0.7,0.95,1,0.5,0.8,0,0.5,-0.3,0,-0.7,-0.5,-0.3,-0.8,0,-1,0.5,-0.7,0.95,-0.2,1,0,0.8],
                           "@scale":[0.01,0.01,0.8,0.8,1,1,0.8,0.8,0.01,0.01],
                           "@solid":false,

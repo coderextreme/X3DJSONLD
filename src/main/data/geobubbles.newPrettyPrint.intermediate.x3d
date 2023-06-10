@@ -23,7 +23,7 @@
       </Shape>
     </Transform>
     <TimeSensor DEF='TourTime' cycleInterval='5.0' loop='true'/>
-    <GeoPositionInterpolator DEF='TourPosition' geoSystem='"GD" "WE"' key='0 1' keyValue='0.0015708 0 4 0 0.0015708 4'/>
+    <GeoPositionInterpolator DEF='TourPosition' geoSystem='"GD" "WE"' key='0 1' keyValue='0.0016 0 4 0 0.0016 4'/>
     <Script DEF='RandomTourTime'>
       <field name='set_cycle' accessType='inputOnly' type='SFTime'/>
       <field name='val' accessType='inputOutput' type='SFFloat' value='0.0'/>
