@@ -4,7 +4,7 @@
 #define WINAPI
 #define AFX_EXT_CLASS
 #define EXPORT32
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Concretes.h"
+#include "C:/x3d-code/www.web3d.org/x3d/stylesheets/cpp/concretes.h"
 int main(int argc, char ** argv) {
 CX3DScene m_pScene;
 CBrowser browser = X3D.getBrowser();
@@ -133,8 +133,8 @@ ExternProtoDeclare18->addField(*field24);
 
 group->addChildren(*ExternProtoDeclare18);
 
-CProtoDeclare ProtoDeclare25 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
+CProtoDeclare ProtoDeclare25 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
 <ProtoDeclare name="NewWorldInfoNode" ><ProtoBody><WorldInfo DEF="ExamplePrototypeBody"></WorldInfo>
 </ProtoBody>
 </ProtoDeclare>)foo");
@@ -152,8 +152,8 @@ CProtoInstance* ProtoInstance28 = (CProtoInstance *)(m_pScene.createNode("ProtoI
 ProtoInstance28->setName("NewWorldInfoNode");
 group->addChildren(*ProtoInstance28);
 
-CProtoDeclare ProtoDeclare29 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
+CProtoDeclare ProtoDeclare29 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
 <ProtoDeclare name="EmissiveMaterial" ><ProtoInterface><field name="onlyColor" accessType="inputOutput" type="SFColor" value="1 0 0"></field>
 </ProtoInterface>
 <ProtoBody><!--Override default diffuseColor value 0.8 0.8 0.8--><Material diffuseColor="0 0 0"><!--Connect emissiveColor field of current node to onlyColor field of parent ProtoDeclare.--><IS><connect nodeField="emissiveColor" protoField="onlyColor"></connect>
@@ -191,8 +191,8 @@ ProtoDeclare29->setProtoBody(*ProtoBody32);
 
 group->addChildren(*ProtoDeclare29);
 
-CProtoDeclare ProtoDeclare36 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="undefined"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
+CProtoDeclare ProtoDeclare36 = browser.createX3DFromString(R"foo(<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
 <ProtoDeclare name="ShiftGroupUp2m" ><ProtoInterface><field name="children" accessType="inputOutput" type="MFNode"><Group DEF="DefaultNodeValue" bboxSize="2 2 2"><!--Authors need to override this node when creating the ProtoInstance fieldValue name="children"--></Group>
 </field>
 </ProtoInterface>

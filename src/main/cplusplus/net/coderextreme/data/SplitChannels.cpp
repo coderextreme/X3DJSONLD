@@ -4,7 +4,7 @@
 #define WINAPI
 #define AFX_EXT_CLASS
 #define EXPORT32
-#include "C:/x3d-code/www.web3d.org/x3d/languages/cpp/Concretes.h"
+#include "C:/x3d-code/www.web3d.org/x3d/stylesheets/cpp/concretes.h"
 int main(int argc, char ** argv) {
 CX3DScene m_pScene;
 CBrowser browser = X3D.getBrowser();
@@ -284,9 +284,17 @@ ListenerPointSource60->setTrackCurrentView(True);
 group->addChildren(*ListenerPointSource60);
 
 CStreamAudioDestination* StreamAudioDestination61 = (CStreamAudioDestination *)(m_pScene.createNode("StreamAudioDestination"));
+StreamAudioDestination61->setChannelCountMode("MAX");
+StreamAudioDestination61->setChannelInterpretation("SPEAKERS");
 CGain* Gain62 = (CGain *)(m_pScene.createNode("Gain"));
+Gain62->setChannelCountMode("MAX");
+Gain62->setChannelInterpretation("SPEAKERS");
 CChannelMerger* ChannelMerger63 = (CChannelMerger *)(m_pScene.createNode("ChannelMerger"));
+ChannelMerger63->setChannelCountMode("MAX");
+ChannelMerger63->setChannelInterpretation("SPEAKERS");
 CChannelSelector* ChannelSelector64 = (CChannelSelector *)(m_pScene.createNode("ChannelSelector"));
+ChannelSelector64->setChannelCountMode("MAX");
+ChannelSelector64->setChannelInterpretation("SPEAKERS");
 CGain* Gain65 = (CGain *)(m_pScene.createNode("Gain"));
 Gain65->setUSE("ChannelSplitter");
 ChannelSelector64->addChildren(*Gain65);
@@ -295,6 +303,8 @@ ChannelMerger63->addChildren(*ChannelSelector64);
 
 CChannelSelector* ChannelSelector66 = (CChannelSelector *)(m_pScene.createNode("ChannelSelector"));
 ChannelSelector66->setChannelSelection(1);
+ChannelSelector66->setChannelCountMode("MAX");
+ChannelSelector66->setChannelInterpretation("SPEAKERS");
 CGain* Gain67 = (CGain *)(m_pScene.createNode("Gain"));
 Gain67->setUSE("ChannelSplitter");
 ChannelSelector66->addChildren(*Gain67);
@@ -310,6 +320,7 @@ group->addChildren(*StreamAudioDestination61);
 CChannelSplitter* ChannelSplitter68 = (CChannelSplitter *)(m_pScene.createNode("ChannelSplitter"));
 ChannelSplitter68->setDEF("ChannelSplitter");
 ChannelSplitter68->setChannelCountMode("explicit");
+ChannelSplitter68->setChannelInterpretation("SPEAKERS");
 CAudioClip* AudioClip69 = (CAudioClip *)(m_pScene.createNode("AudioClip"));
 AudioClip69->setDescription("Violin");
 AudioClip69->setUrl(new CString[2]{"sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"}, 2);

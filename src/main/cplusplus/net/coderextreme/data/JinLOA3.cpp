@@ -46,7 +46,7 @@ head1->addMeta(*meta7);
 
 Cmeta* meta8 = new Cmeta();
 meta8->setName("modified");
-meta8->setContent("23 December 2021");
+meta8->setContent("27 January 2023");
 head1->addMeta(*meta8);
 
 Cmeta* meta9 = new Cmeta();
@@ -2195,8 +2195,8 @@ HAnimJoint341->addChildren(*HAnimJoint351);
 HAnimJoint331->addChildren(*HAnimJoint341);
 
 CHAnimJoint* HAnimJoint491 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint491->setName("l_acromioclavicular");
-HAnimJoint491->setDEF("hanim_l_acromioclavicular");
+HAnimJoint491->setName("l_sternoclavicular");
+HAnimJoint491->setDEF("hanim_l_sternoclavicular");
 HAnimJoint491->setCenter(new float[3]{1.71,52.82,-0.6127});
 HAnimJoint491->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint491->setLlimit(new float[3]{0,0,0}, 3);
@@ -2238,8 +2238,8 @@ HAnimSegment492->addChildren(*Transform493);
 HAnimJoint491->addChildren(*HAnimSegment492);
 
 CHAnimJoint* HAnimJoint501 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint501->setName("l_sternoclavicular");
-HAnimJoint501->setDEF("hanim_l_sternoclavicular");
+HAnimJoint501->setName("l_acromioclavicular");
+HAnimJoint501->setDEF("hanim_l_acromioclavicular");
 HAnimJoint501->setCenter(new float[3]{5.464,52.060001,-0.5732});
 HAnimJoint501->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint501->setLlimit(new float[3]{0,0,0}, 3);
@@ -3275,8 +3275,8 @@ HAnimJoint491->addChildren(*HAnimJoint501);
 HAnimJoint331->addChildren(*HAnimJoint491);
 
 CHAnimJoint* HAnimJoint731 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint731->setName("r_acromioclavicular");
-HAnimJoint731->setDEF("hanim_r_acromioclavicular");
+HAnimJoint731->setName("r_sternoclavicular");
+HAnimJoint731->setDEF("hanim_r_sternoclavicular");
 HAnimJoint731->setCenter(new float[3]{-1.71,52.82,-0.6127});
 HAnimJoint731->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint731->setLlimit(new float[3]{0,0,0}, 3);
@@ -3318,8 +3318,8 @@ HAnimSegment732->addChildren(*Transform733);
 HAnimJoint731->addChildren(*HAnimSegment732);
 
 CHAnimJoint* HAnimJoint741 = (CHAnimJoint *)(m_pScene.createNode("HAnimJoint"));
-HAnimJoint741->setName("r_sternoclavicular");
-HAnimJoint741->setDEF("hanim_r_sternoclavicular");
+HAnimJoint741->setName("r_acromioclavicular");
+HAnimJoint741->setDEF("hanim_r_acromioclavicular");
 HAnimJoint741->setCenter(new float[3]{-5.464,52.060001,-0.5732});
 HAnimJoint741->setUlimit(new float[3]{0,0,0}, 3);
 HAnimJoint741->setLlimit(new float[3]{0,0,0}, 3);
