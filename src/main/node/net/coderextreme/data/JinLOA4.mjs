@@ -1,6 +1,6 @@
-var java = require('java');
-import { util } from 'util' assert { type: 'json' };
-import { promisify } from 'util' assert { type: 'json' };
+import java from 'java';
+import util from 'util';
+import promisify from 'util';
 java.asyncOptions = {
   asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks
   syncSuffix: "",              // Sync methods use the base name(!!)
@@ -8,7 +8,7 @@ java.asyncOptions = {
   promisify: promisify, // Needs Node.js version 8 or greater, see comment below
   ifReadOnlySuffix: "_alt"
 };
-var autoclass = require('../../../X3Dautoclass');
+import autoclass from '../../../X3Dautoclass.mjs';
 var ConfigurationProperties = autoclass.ConfigurationProperties;
 ConfigurationProperties.showDefaultAttributes = false;
 ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_JAVA;

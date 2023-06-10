@@ -1,6 +1,6 @@
 'use strict';
-import fs from 'fs';
 import { X3D } from './x3d.mjs';
+import fs from 'fs';
 import { SFString } from './x3d.mjs';
 import { SFNode } from './x3d.mjs';
 import { head } from './x3d.mjs';
@@ -172,7 +172,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("4 July 2022")}),
+              content : new SFString("29 January 2023")}),
 
             new meta({
               name : new SFString("generator"),
