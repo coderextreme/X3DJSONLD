@@ -22,7 +22,7 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
     <meta content='Gnu Image Manipulation Program, http://www.gimp.org' name='generator'/>
     <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
     <meta content='../license.html' name='license'/>
-    <meta content='24 March 2023' name='translated'/>
+    <meta content='09 June 2023' name='translated'/>
     <meta content='X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html' name='generator'/>
     <meta content='X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding' name='reference'/>
   </head>
@@ -30,7 +30,7 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
     <WorldInfo title='JinLOA4.x3d'/>
     <NavigationInfo speed='1.5'/>
     <Viewpoint centerOfRotation='0 1 0' description='JinLOA4' position='0 1 3'/>
-    <HAnimHumanoid DEF='hanim_JinLOA4' loa='4' name='JinLOA4' scale='0.0225 0.0225 0.0225'>
+    <HAnimHumanoid DEF='hanim_JinLOA4' loa='4' name='JinLOA4'>
       <MetadataSet name='HAnimHumanoid.info' reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid'>
         <MetadataString name='authorName' value='"Jin Hoon Lee and Min Joo Lee, Chul Hee Jung and Myeong Won Lee"'/>
         <MetadataString name='authorEmail' value='"myeongwonlee@gmail.com"'/>
@@ -331,9 +331,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
       <HAnimSegment USE='hanim_r_trapezoid'/>
       <HAnimSegment USE='hanim_l_upperarm'/>
       <HAnimSegment USE='hanim_r_upperarm'/>
-      <HAnimJoint DEF='hanim_humanoid_root' center='0 0.8259749775 -0.015921' name='humanoid_root'>
+      <HAnimJoint DEF='hanim_humanoid_root' center='-0.008499999999999952 1.0797302137294733 -0.24309999999999998' name='humanoid_root'>
         <HAnimSegment DEF='hanim_sacrum' name='sacrum'>
-          <Transform translation='0 0.8259749775 -0.015921'>
+          <Transform translation='-0.008499999999999952 1.0797302137294733 -0.24309999999999998'>
             <Shape>
               <Appearance>
                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -346,9 +346,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
             </Shape>
           </Transform>
         </HAnimSegment>
-        <HAnimJoint DEF='hanim_sacroiliac' center='0 0.707175 -0.015921' name='sacroiliac'>
+        <HAnimJoint DEF='hanim_sacroiliac' center='-0.008499999999999952 0.9228056676129409 -0.24309999999999998' name='sacroiliac'>
           <HAnimSegment DEF='hanim_pelvis' name='pelvis'>
-            <Transform translation='0 0.707175 -0.015921'>
+            <Transform translation='-0.008499999999999952 0.9228056676129409 -0.24309999999999998'>
               <Shape>
                 <Appearance>
                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -361,9 +361,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
               </Shape>
             </Transform>
           </HAnimSegment>
-          <HAnimJoint DEF='hanim_l_hip' center='0.09465749999999999 0.8266500449999999 -0.01834875' name='l_hip'>
+          <HAnimJoint DEF='hanim_l_hip' center='4.1985 1.0806219197993292 -0.351' name='l_hip'>
             <HAnimSegment DEF='hanim_l_thigh' name='l_thigh'>
-              <Transform translation='0.09465749999999999 0.8266500449999999 -0.01834875'>
+              <Transform translation='4.1985 1.0806219197993292 -0.351'>
                 <Shape>
                   <Appearance>
                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -376,9 +376,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                 </Shape>
               </Transform>
             </HAnimSegment>
-            <HAnimJoint DEF='hanim_l_knee' center='0.09260999999999998 0.40882500000000005 -0.01943775' name='l_knee'>
+            <HAnimJoint DEF='hanim_l_knee' center='4.1075 0.5287109942038704 -0.3994' name='l_knee'>
               <HAnimSegment DEF='hanim_l_calf' name='l_calf'>
-                <Transform translation='0.09260999999999998 0.40882500000000005 -0.01943775'>
+                <Transform translation='4.1075 0.5287109942038704 -0.3994'>
                   <Shape>
                     <Appearance>
                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -391,9 +391,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                   </Shape>
                 </Transform>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_l_talocrural' center='0.08882999999999999 0.095445 -0.01045125' name='l_talocrural'>
+              <HAnimJoint DEF='hanim_l_talocrural' center='3.9395 0.11476298430631864 0' name='l_talocrural'>
                 <HAnimSegment DEF='hanim_l_talus' name='l_talus'>
-                  <Transform translation='0.08882999999999999 0.095445 -0.01045125'>
+                  <Transform translation='3.9395 0.11476298430631864 0'>
                     <Shape>
                       <Appearance>
                         <Material diffuseColor='0.588 0.588 0.588'/>
@@ -406,9 +406,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                     </Shape>
                   </Transform>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_l_talocalcaneonavicular' center='0.0783 0.036899999999999995 0.0048645' name='l_talocalcaneonavicular'>
+                <HAnimJoint DEF='hanim_l_talocalcaneonavicular' center='3.4715 0.03743007780478005 0.6807000000000001' name='l_talocalcaneonavicular'>
                   <HAnimSegment DEF='hanim_l_navicular' name='l_navicular'>
-                    <Transform translation='0.0783 0.036899999999999995 0.0048645'>
+                    <Transform translation='3.4715 0.03743007780478005 0.6807000000000001'>
                       <Shape>
                         <Appearance>
                           <Material diffuseColor='0.588 0.588 0.588'/>
@@ -421,9 +421,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                       </Shape>
                     </Transform>
                   </HAnimSegment>
-                  <HAnimJoint DEF='hanim_l_cuneonavicular_1' center='0.06736500000000001 0.0321075 0.018391499999999998' name='l_cuneonavicular_1'>
+                  <HAnimJoint DEF='hanim_l_cuneonavicular_1' center='2.9855 0.031099597756806294 1.2819' name='l_cuneonavicular_1'>
                     <HAnimSegment DEF='hanim_l_cuneiform_1' name='l_cuneiform_1'>
-                      <Transform translation='0.06736500000000001 0.0321075 0.018391499999999998'>
+                      <Transform translation='2.9855 0.031099597756806294 1.2819'>
                         <Shape>
                           <Appearance>
                             <Material diffuseColor='0.588 0.588 0.588'/>
@@ -436,9 +436,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                         </Shape>
                       </Transform>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_l_tarsometatarsal_1' center='0.06462 0.023242499999999996 0.04419' name='l_tarsometatarsal_1'>
+                    <HAnimJoint DEF='hanim_l_tarsometatarsal_1' center='2.8635 0.019389695696235113 2.4285' name='l_tarsometatarsal_1'>
                       <HAnimSegment DEF='hanim_l_metatarsal_1' name='l_metatarsal_1'>
-                        <Transform translation='0.06462 0.023242499999999996 0.04419'>
+                        <Transform translation='2.8635 0.019389695696235113 2.4285'>
                           <Shape>
                             <Appearance>
                               <Material diffuseColor='0.588 0.588 0.588'/>
@@ -451,9 +451,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                           </Shape>
                         </Transform>
                       </HAnimSegment>
-                      <HAnimJoint DEF='hanim_l_metatarsophalangeal_1' center='0.0621225 0.01442475 0.09362249999999998' name='l_metatarsophalangeal_1'>
+                      <HAnimJoint DEF='hanim_l_metatarsophalangeal_1' center='2.7525000000000004 0.007742206819235512 4.6255' name='l_metatarsophalangeal_1'>
                         <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_1' name='l_tarsal_proximal_phalanx_1'>
-                          <Transform translation='0.0621225 0.01442475 0.09362249999999998'>
+                          <Transform translation='2.7525000000000004 0.007742206819235512 4.6255'>
                             <Shape>
                               <Appearance>
                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -466,9 +466,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                             </Shape>
                           </Transform>
                         </HAnimSegment>
-                        <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_1' center='0.0621225 0.0121365 0.1153125' name='l_tarsal_distal_interphalangeal_1'>
+                        <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_1' center='2.7525000000000004 0.004719625500555083 5.5895' name='l_tarsal_distal_interphalangeal_1'>
                           <HAnimSegment DEF='hanim_l_tarsal_distal_phalanx_1' name='l_tarsal_distal_phalanx_1'>
-                            <Transform translation='0.0621225 0.0121365 0.1153125'>
+                            <Transform translation='2.7525000000000004 0.004719625500555083 5.5895'>
                               <Shape>
                                 <Appearance>
                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -485,9 +485,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                       </HAnimJoint>
                     </HAnimJoint>
                   </HAnimJoint>
-                  <HAnimJoint DEF='hanim_l_cuneonavicular_2' center='0.0814275 0.033525 0.02142675' name='l_cuneonavicular_2'>
+                  <HAnimJoint DEF='hanim_l_cuneonavicular_2' center='3.6105 0.032971993263953454 1.4168' name='l_cuneonavicular_2'>
                     <HAnimSegment DEF='hanim_l_cuneiform_2' name='l_cuneiform_2'>
-                      <Transform translation='0.0814275 0.033525 0.02142675'>
+                      <Transform translation='3.6105 0.032971993263953454 1.4168'>
                         <Shape>
                           <Appearance>
                             <Material diffuseColor='0.588 0.588 0.588'/>
@@ -500,9 +500,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                         </Shape>
                       </Transform>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_l_tarsometatarsal_2' center='0.08019 0.026099999999999998 0.041062499999999995' name='l_tarsometatarsal_2'>
+                    <HAnimJoint DEF='hanim_l_tarsometatarsal_2' center='3.5555000000000003 0.02316420727413496 2.2895' name='l_tarsometatarsal_2'>
                       <HAnimSegment DEF='hanim_l_metatarsal_2' name='l_metatarsal_2'>
-                        <Transform translation='0.08019 0.026099999999999998 0.041062499999999995'>
+                        <Transform translation='3.5555000000000003 0.02316420727413496 2.2895'>
                           <Shape>
                             <Appearance>
                               <Material diffuseColor='0.588 0.588 0.588'/>
@@ -515,9 +515,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                           </Shape>
                         </Transform>
                       </HAnimSegment>
-                      <HAnimJoint DEF='hanim_l_metatarsophalangeal_2' center='0.08253 0.014975999999999998 0.09782999999999999' name='l_metatarsophalangeal_2'>
+                      <HAnimJoint DEF='hanim_l_metatarsophalangeal_2' center='3.6595000000000004 0.008470360627570521 4.8125' name='l_metatarsophalangeal_2'>
                         <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_2' name='l_tarsal_proximal_phalanx_2'>
-                          <Transform translation='0.08253 0.014975999999999998 0.09782999999999999'>
+                          <Transform translation='3.6595000000000004 0.008470360627570521 4.8125'>
                             <Shape>
                               <Appearance>
                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -530,9 +530,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                             </Shape>
                           </Transform>
                         </HAnimSegment>
-                        <HAnimJoint DEF='hanim_l_tarsal_proximal_interphalangeal_2' center='0.0843075 0.01264725 0.1140075' name='l_tarsal_proximal_interphalangeal_2'>
+                        <HAnimJoint DEF='hanim_l_tarsal_proximal_interphalangeal_2' center='3.7385 0.0053942822944001755 5.5315' name='l_tarsal_proximal_interphalangeal_2'>
                           <HAnimSegment DEF='hanim_l_tarsal_middle_phalanx_2' name='l_tarsal_middle_phalanx_2'>
-                            <Transform translation='0.0843075 0.01264725 0.1140075'>
+                            <Transform translation='3.7385 0.0053942822944001755 5.5315'>
                               <Shape>
                                 <Appearance>
                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -545,9 +545,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                               </Shape>
                             </Transform>
                           </HAnimSegment>
-                          <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_2' center='0.0843075 0.00982575 0.12343499999999999' name='l_tarsal_distal_interphalangeal_2'>
+                          <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_2' center='3.7385 0.0016673236182691443 5.9505' name='l_tarsal_distal_interphalangeal_2'>
                             <HAnimSegment DEF='hanim_l_tarsal_distal_phalanx_2' name='l_tarsal_distal_phalanx_2'>
-                              <Transform translation='0.0843075 0.00982575 0.12343499999999999'>
+                              <Transform translation='3.7385 0.0016673236182691443 5.9505'>
                                 <Shape>
                                   <Appearance>
                                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -565,9 +565,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                       </HAnimJoint>
                     </HAnimJoint>
                   </HAnimJoint>
-                  <HAnimJoint DEF='hanim_l_cuneonavicular_3' center='0.09296999999999998 0.033389999999999996 0.019818' name='l_cuneonavicular_3'>
+                  <HAnimJoint DEF='hanim_l_cuneonavicular_3' center='4.1235 0.032793669882320395 1.3453' name='l_cuneonavicular_3'>
                     <HAnimSegment DEF='hanim_l_cuneiform_3' name='l_cuneiform_3'>
-                      <Transform translation='0.09296999999999998 0.033389999999999996 0.019818'>
+                      <Transform translation='4.1235 0.032793669882320395 1.3453'>
                         <Shape>
                           <Appearance>
                             <Material diffuseColor='0.588 0.588 0.588'/>
@@ -580,9 +580,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                         </Shape>
                       </Transform>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_l_tarsometatarsal_3' center='0.09459 0.026099999999999998 0.039397499999999995' name='l_tarsometatarsal_3'>
+                    <HAnimJoint DEF='hanim_l_tarsometatarsal_3' center='4.1955 0.02316420727413496 2.2155' name='l_tarsometatarsal_3'>
                       <HAnimSegment DEF='hanim_l_metatarsal_3' name='l_metatarsal_3'>
-                        <Transform translation='0.09459 0.026099999999999998 0.039397499999999995'>
+                        <Transform translation='4.1955 0.02316420727413496 2.2155'>
                           <Shape>
                             <Appearance>
                               <Material diffuseColor='0.588 0.588 0.588'/>
@@ -595,9 +595,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                           </Shape>
                         </Transform>
                       </HAnimSegment>
-                      <HAnimJoint DEF='hanim_l_metatarsophalangeal_3' center='0.09648 0.015057 0.0954225' name='l_metatarsophalangeal_3'>
+                      <HAnimJoint DEF='hanim_l_metatarsophalangeal_3' center='4.2795000000000005 0.008577354656550362 4.7055' name='l_metatarsophalangeal_3'>
                         <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_3' name='l_tarsal_proximal_phalanx_3'>
-                          <Transform translation='0.09648 0.015057 0.0954225'>
+                          <Transform translation='4.2795000000000005 0.008577354656550362 4.7055'>
                             <Shape>
                               <Appearance>
                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -610,9 +610,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                             </Shape>
                           </Transform>
                         </HAnimSegment>
-                        <HAnimJoint DEF='hanim_l_tarsal_proximal_interphalangeal_3' center='0.098865 0.011922750000000001 0.110475' name='l_tarsal_proximal_interphalangeal_3'>
+                        <HAnimJoint DEF='hanim_l_tarsal_proximal_interphalangeal_3' center='4.3855 0.004437280146302734 5.3745' name='l_tarsal_proximal_interphalangeal_3'>
                           <HAnimSegment DEF='hanim_l_tarsal_middle_phalanx_3' name='l_tarsal_middle_phalanx_3'>
-                            <Transform translation='0.098865 0.011922750000000001 0.110475'>
+                            <Transform translation='4.3855 0.004437280146302734 5.3745'>
                               <Shape>
                                 <Appearance>
                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -625,9 +625,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                               </Shape>
                             </Transform>
                           </HAnimSegment>
-                          <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_3' center='0.10041749999999999 0.00982575 0.1197' name='l_tarsal_distal_interphalangeal_3'>
+                          <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_3' center='4.4545 0.0016673236182691443 5.7845' name='l_tarsal_distal_interphalangeal_3'>
                             <HAnimSegment DEF='hanim_l_tarsal_distal_phalanx_3' name='l_tarsal_distal_phalanx_3'>
-                              <Transform translation='0.10041749999999999 0.00982575 0.1197'>
+                              <Transform translation='4.4545 0.0016673236182691443 5.7845'>
                                 <Shape>
                                   <Appearance>
                                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -646,9 +646,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                     </HAnimJoint>
                   </HAnimJoint>
                 </HAnimJoint>
-                <HAnimJoint DEF='hanim_l_calcaneocuboid' center='0.0891 0.0579825 -0.025965' name='l_calcaneocuboid'>
+                <HAnimJoint DEF='hanim_l_calcaneocuboid' center='3.9515000000000002 0.06527824590314349 -0.6894999999999999' name='l_calcaneocuboid'>
                   <HAnimSegment DEF='hanim_l_calcaneus' name='l_calcaneus'>
-                    <Transform translation='0.0891 0.0579825 -0.025965'>
+                    <Transform translation='3.9515000000000002 0.06527824590314349 -0.6894999999999999'>
                       <Shape>
                         <Appearance>
                           <Material diffuseColor='0.588 0.588 0.588'/>
@@ -661,9 +661,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                       </Shape>
                     </Transform>
                   </HAnimSegment>
-                  <HAnimJoint DEF='hanim_l_transversetarsal' center='0.1106325 0.03528 0.002089125' name='l_transversetarsal'>
+                  <HAnimJoint DEF='hanim_l_transversetarsal' center='4.9085 0.03529019722518329 0.55735' name='l_transversetarsal'>
                     <HAnimSegment DEF='hanim_l_cuboid' name='l_cuboid'>
-                      <Transform translation='0.1106325 0.03528 0.002089125'>
+                      <Transform translation='4.9085 0.03529019722518329 0.55735'>
                         <Shape>
                           <Appearance>
                             <Material diffuseColor='0.588 0.588 0.588'/>
@@ -676,9 +676,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                         </Shape>
                       </Transform>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_l_tarsometatarsal_4' center='0.10649249999999999 0.0245475 0.03843' name='l_tarsometatarsal_4'>
+                    <HAnimJoint DEF='hanim_l_tarsometatarsal_4' center='4.7245 0.021113488385354727 2.1725' name='l_tarsometatarsal_4'>
                       <HAnimSegment DEF='hanim_l_metatarsal_4' name='l_metatarsal_4'>
-                        <Transform translation='0.10649249999999999 0.0245475 0.03843'>
+                        <Transform translation='4.7245 0.021113488385354727 2.1725'>
                           <Shape>
                             <Appearance>
                               <Material diffuseColor='0.588 0.588 0.588'/>
@@ -691,9 +691,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                           </Shape>
                         </Transform>
                       </HAnimSegment>
-                      <HAnimJoint DEF='hanim_l_metatarsophalangeal_4' center='0.10986749999999999 0.01435275 0.09116999999999999' name='l_metatarsophalangeal_4'>
+                      <HAnimJoint DEF='hanim_l_metatarsophalangeal_4' center='4.8745 0.007647101015697879 4.5165' name='l_metatarsophalangeal_4'>
                         <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_4' name='l_tarsal_proximal_phalanx_4'>
-                          <Transform translation='0.10986749999999999 0.01435275 0.09116999999999999'>
+                          <Transform translation='4.8745 0.007647101015697879 4.5165'>
                             <Shape>
                               <Appearance>
                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -706,9 +706,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                             </Shape>
                           </Transform>
                         </HAnimSegment>
-                        <HAnimJoint DEF='hanim_l_tarsal_proximal_interphalangeal_4' center='0.11416499999999999 0.0122445 0.10631249999999999' name='l_tarsal_proximal_interphalangeal_4'>
+                        <HAnimJoint DEF='hanim_l_tarsal_proximal_interphalangeal_4' center='5.0655 0.004862284205861535 5.1895' name='l_tarsal_proximal_interphalangeal_4'>
                           <HAnimSegment DEF='hanim_l_tarsal_middle_phalanx_4' name='l_tarsal_middle_phalanx_4'>
-                            <Transform translation='0.11416499999999999 0.0122445 0.10631249999999999'>
+                            <Transform translation='5.0655 0.004862284205861535 5.1895'>
                               <Shape>
                                 <Appearance>
                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -721,9 +721,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                               </Shape>
                             </Transform>
                           </HAnimSegment>
-                          <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_4' center='0.1156725 0.009368999999999999 0.11369249999999999' name='l_tarsal_distal_interphalangeal_4'>
+                          <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_4' center='5.1325 0.0010639961770772795 5.5175' name='l_tarsal_distal_interphalangeal_4'>
                             <HAnimSegment DEF='hanim_l_tarsal_distal_phalanx_4' name='l_tarsal_distal_phalanx_4'>
-                              <Transform translation='0.1156725 0.009368999999999999 0.11369249999999999'>
+                              <Transform translation='5.1325 0.0010639961770772795 5.5175'>
                                 <Shape>
                                   <Appearance>
                                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -740,9 +740,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                         </HAnimJoint>
                       </HAnimJoint>
                     </HAnimJoint>
-                    <HAnimJoint DEF='hanim_l_tarsometatarsal_5' center='0.120825 0.02094525 0.03474' name='l_tarsometatarsal_5'>
+                    <HAnimJoint DEF='hanim_l_tarsometatarsal_5' center='5.3615 0.016355226152112483 2.0085' name='l_tarsometatarsal_5'>
                       <HAnimSegment DEF='hanim_l_metatarsal_5' name='l_metatarsal_5'>
-                        <Transform translation='0.120825 0.02094525 0.03474'>
+                        <Transform translation='5.3615 0.016355226152112483 2.0085'>
                           <Shape>
                             <Appearance>
                               <Material diffuseColor='0.588 0.588 0.588'/>
@@ -755,9 +755,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                           </Shape>
                         </Transform>
                       </HAnimSegment>
-                      <HAnimJoint DEF='hanim_l_metatarsophalangeal_5' center='0.124065 0.013671 0.0865575' name='l_metatarsophalangeal_5'>
+                      <HAnimJoint DEF='hanim_l_metatarsophalangeal_5' center='5.5055000000000005 0.0067465679384509075 4.3115' name='l_metatarsophalangeal_5'>
                         <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_5' name='l_tarsal_proximal_phalanx_5'>
-                          <Transform translation='0.124065 0.013671 0.0865575'>
+                          <Transform translation='5.5055000000000005 0.0067465679384509075 4.3115'>
                             <Shape>
                               <Appearance>
                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -770,9 +770,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                             </Shape>
                           </Transform>
                         </HAnimSegment>
-                        <HAnimJoint DEF='hanim_l_tarsal_proximal_interphalangeal_5' center='0.1263825 0.01085625 0.09414' name='l_tarsal_proximal_interphalangeal_5'>
+                        <HAnimJoint DEF='hanim_l_tarsal_proximal_interphalangeal_5' center='5.6085 0.00302852543140153 4.6485' name='l_tarsal_proximal_interphalangeal_5'>
                           <HAnimSegment DEF='hanim_l_tarsal_middle_phalanx_5' name='l_tarsal_middle_phalanx_5'>
-                            <Transform translation='0.1263825 0.01085625 0.09414'>
+                            <Transform translation='5.6085 0.00302852543140153 4.6485'>
                               <Shape>
                                 <Appearance>
                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -785,9 +785,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                               </Shape>
                             </Transform>
                           </HAnimSegment>
-                          <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_5' center='0.1272825 0.0085635 0.10187999999999998' name='l_tarsal_distal_interphalangeal_5'>
+                          <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_5' center='5.6485 0 4.9925' name='l_tarsal_distal_interphalangeal_5'>
                             <HAnimSegment DEF='hanim_l_tarsal_distal_phalanx_5' name='l_tarsal_distal_phalanx_5'>
-                              <Transform translation='0.1272825 0.0085635 0.10187999999999998'>
+                              <Transform translation='5.6485 0 4.9925'>
                                 <Shape>
                                   <Appearance>
                                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -809,9 +809,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
               </HAnimJoint>
             </HAnimJoint>
           </HAnimJoint>
-          <HAnimJoint DEF='hanim_r_hip' center='-0.09465749999999999 0.8266500449999999 -0.01834875' name='r_hip'>
+          <HAnimJoint DEF='hanim_r_hip' center='-4.2155 1.0806219197993292 -0.351' name='r_hip'>
             <HAnimSegment DEF='hanim_r_thigh' name='r_thigh'>
-              <Transform translation='-0.09465749999999999 0.8266500449999999 -0.01834875'>
+              <Transform translation='-4.2155 1.0806219197993292 -0.351'>
                 <Shape>
                   <Appearance>
                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -824,9 +824,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                 </Shape>
               </Transform>
             </HAnimSegment>
-            <HAnimJoint DEF='hanim_r_knee' center='-0.09260999999999998 0.40882500000000005 -0.01943775' name='r_knee'>
+            <HAnimJoint DEF='hanim_r_knee' center='-4.124499999999999 0.5287109942038704 -0.3994' name='r_knee'>
               <HAnimSegment DEF='hanim_r_calf' name='r_calf'>
-                <Transform translation='-0.09260999999999998 0.40882500000000005 -0.01943775'>
+                <Transform translation='-4.124499999999999 0.5287109942038704 -0.3994'>
                   <Shape>
                     <Appearance>
                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -839,9 +839,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                   </Shape>
                 </Transform>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_r_talocrural' center='-0.0884475 0.095445 -0.01045125' name='r_talocrural'>
+              <HAnimJoint DEF='hanim_r_talocrural' center='-3.9395 0.11476298430631864 0' name='r_talocrural'>
                 <HAnimSegment DEF='hanim_r_talus' name='r_talus'>
-                  <Transform translation='-0.0884475 0.095445 -0.01045125'>
+                  <Transform translation='-3.9395 0.11476298430631864 0'>
                     <Shape>
                       <Appearance>
                         <Material diffuseColor='0.588 0.588 0.588'/>
@@ -854,9 +854,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                     </Shape>
                   </Transform>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_r_talocalcaneonavicular' center='-0.07794 0.036899999999999995 0.0048645' name='r_talocalcaneonavicular'>
+                <HAnimJoint DEF='hanim_r_talocalcaneonavicular' center='-3.4725 0.03743007780478005 0.6807000000000001' name='r_talocalcaneonavicular'>
                   <HAnimSegment DEF='hanim_r_navicular' name='r_navicular'>
-                    <Transform translation='-0.07794 0.036899999999999995 0.0048645'>
+                    <Transform translation='-3.4725 0.03743007780478005 0.6807000000000001'>
                       <Shape>
                         <Appearance>
                           <Material diffuseColor='0.588 0.588 0.588'/>
@@ -869,9 +869,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                       </Shape>
                     </Transform>
                   </HAnimSegment>
-                  <HAnimJoint DEF='hanim_r_cuneonavicular_1' center='-0.0669825 0.0321075 0.018391499999999998' name='r_cuneonavicular_1'>
+                  <HAnimJoint DEF='hanim_r_cuneonavicular_1' center='-2.9855 0.031099597756806294 1.2819' name='r_cuneonavicular_1'>
                     <HAnimSegment DEF='hanim_r_cuneiform_1' name='r_cuneiform_1'>
-                      <Transform translation='-0.0669825 0.0321075 0.018391499999999998'>
+                      <Transform translation='-2.9855 0.031099597756806294 1.2819'>
                         <Shape>
                           <Appearance>
                             <Material diffuseColor='0.588 0.588 0.588'/>
@@ -884,9 +884,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                         </Shape>
                       </Transform>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_r_tarsometatarsal_1' center='-0.06426 0.023242499999999996 0.04419' name='r_tarsometatarsal_1'>
+                    <HAnimJoint DEF='hanim_r_tarsometatarsal_1' center='-2.8644999999999996 0.019389695696235113 2.4285' name='r_tarsometatarsal_1'>
                       <HAnimSegment DEF='hanim_r_metatarsal_1' name='r_metatarsal_1'>
-                        <Transform translation='-0.06426 0.023242499999999996 0.04419'>
+                        <Transform translation='-2.8644999999999996 0.019389695696235113 2.4285'>
                           <Shape>
                             <Appearance>
                               <Material diffuseColor='0.588 0.588 0.588'/>
@@ -899,9 +899,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                           </Shape>
                         </Transform>
                       </HAnimSegment>
-                      <HAnimJoint DEF='hanim_r_metatarsophalangeal_1' center='-0.0617625 0.01442475 0.09362249999999998' name='r_metatarsophalangeal_1'>
+                      <HAnimJoint DEF='hanim_r_metatarsophalangeal_1' center='-2.7535 0.007742206819235512 4.6255' name='r_metatarsophalangeal_1'>
                         <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_1' name='r_tarsal_proximal_phalanx_1'>
-                          <Transform translation='-0.0617625 0.01442475 0.09362249999999998'>
+                          <Transform translation='-2.7535 0.007742206819235512 4.6255'>
                             <Shape>
                               <Appearance>
                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -914,9 +914,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                             </Shape>
                           </Transform>
                         </HAnimSegment>
-                        <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_1' center='-0.06174 0.0121365 0.1153125' name='r_tarsal_distal_interphalangeal_1'>
+                        <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_1' center='-2.7525000000000004 0.004719625500555083 5.5895' name='r_tarsal_distal_interphalangeal_1'>
                           <HAnimSegment DEF='hanim_r_tarsal_distal_phalanx_1' name='r_tarsal_distal_phalanx_1'>
-                            <Transform translation='-0.06174 0.0121365 0.1153125'>
+                            <Transform translation='-2.7525000000000004 0.004719625500555083 5.5895'>
                               <Shape>
                                 <Appearance>
                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -933,9 +933,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                       </HAnimJoint>
                     </HAnimJoint>
                   </HAnimJoint>
-                  <HAnimJoint DEF='hanim_r_cuneonavicular_2' center='-0.08104499999999999 0.033525 0.02142675' name='r_cuneonavicular_2'>
+                  <HAnimJoint DEF='hanim_r_cuneonavicular_2' center='-3.6105 0.032971993263953454 1.4168' name='r_cuneonavicular_2'>
                     <HAnimSegment DEF='hanim_r_cuneiform_2' name='r_cuneiform_2'>
-                      <Transform translation='-0.08104499999999999 0.033525 0.02142675'>
+                      <Transform translation='-3.6105 0.032971993263953454 1.4168'>
                         <Shape>
                           <Appearance>
                             <Material diffuseColor='0.588 0.588 0.588'/>
@@ -948,9 +948,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                         </Shape>
                       </Transform>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_r_tarsometatarsal_2' center='-0.07983 0.026099999999999998 0.041062499999999995' name='r_tarsometatarsal_2'>
+                    <HAnimJoint DEF='hanim_r_tarsometatarsal_2' center='-3.5564999999999998 0.02316420727413496 2.2895' name='r_tarsometatarsal_2'>
                       <HAnimSegment DEF='hanim_r_metatarsal_2' name='r_metatarsal_2'>
-                        <Transform translation='-0.07983 0.026099999999999998 0.041062499999999995'>
+                        <Transform translation='-3.5564999999999998 0.02316420727413496 2.2895'>
                           <Shape>
                             <Appearance>
                               <Material diffuseColor='0.588 0.588 0.588'/>
@@ -963,9 +963,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                           </Shape>
                         </Transform>
                       </HAnimSegment>
-                      <HAnimJoint DEF='hanim_r_metatarsophalangeal_2' center='-0.0821475 0.014975999999999998 0.09782999999999999' name='r_metatarsophalangeal_2'>
+                      <HAnimJoint DEF='hanim_r_metatarsophalangeal_2' center='-3.6594999999999995 0.008470360627570521 4.8125' name='r_metatarsophalangeal_2'>
                         <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_2' name='r_tarsal_proximal_phalanx_2'>
-                          <Transform translation='-0.0821475 0.014975999999999998 0.09782999999999999'>
+                          <Transform translation='-3.6594999999999995 0.008470360627570521 4.8125'>
                             <Shape>
                               <Appearance>
                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -978,9 +978,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                             </Shape>
                           </Transform>
                         </HAnimSegment>
-                        <HAnimJoint DEF='hanim_r_tarsal_proximal_interphalangeal_2' center='-0.083925 0.01264725 0.1140075' name='r_tarsal_proximal_interphalangeal_2'>
+                        <HAnimJoint DEF='hanim_r_tarsal_proximal_interphalangeal_2' center='-3.7385 0.0053942822944001755 5.5315' name='r_tarsal_proximal_interphalangeal_2'>
                           <HAnimSegment DEF='hanim_r_tarsal_middle_phalanx_2' name='r_tarsal_middle_phalanx_2'>
-                            <Transform translation='-0.083925 0.01264725 0.1140075'>
+                            <Transform translation='-3.7385 0.0053942822944001755 5.5315'>
                               <Shape>
                                 <Appearance>
                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -993,9 +993,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                               </Shape>
                             </Transform>
                           </HAnimSegment>
-                          <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_2' center='-0.083925 0.00982575 0.12343499999999999' name='r_tarsal_distal_interphalangeal_2'>
+                          <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_2' center='-3.7385 0.0016673236182691443 5.9505' name='r_tarsal_distal_interphalangeal_2'>
                             <HAnimSegment DEF='hanim_r_tarsal_distal_phalanx_2' name='r_tarsal_distal_phalanx_2'>
-                              <Transform translation='-0.083925 0.00982575 0.12343499999999999'>
+                              <Transform translation='-3.7385 0.0016673236182691443 5.9505'>
                                 <Shape>
                                   <Appearance>
                                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1013,9 +1013,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                       </HAnimJoint>
                     </HAnimJoint>
                   </HAnimJoint>
-                  <HAnimJoint DEF='hanim_r_cuneonavicular_3' center='-0.09260999999999998 0.033389999999999996 0.019818' name='r_cuneonavicular_3'>
+                  <HAnimJoint DEF='hanim_r_cuneonavicular_3' center='-4.124499999999999 0.032793669882320395 1.3453' name='r_cuneonavicular_3'>
                     <HAnimSegment DEF='hanim_r_cuneiform_3' name='r_cuneiform_3'>
-                      <Transform translation='-0.09260999999999998 0.033389999999999996 0.019818'>
+                      <Transform translation='-4.124499999999999 0.032793669882320395 1.3453'>
                         <Shape>
                           <Appearance>
                             <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1028,9 +1028,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                         </Shape>
                       </Transform>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_r_tarsometatarsal_3' center='-0.09423 0.026099999999999998 0.039397499999999995' name='r_tarsometatarsal_3'>
+                    <HAnimJoint DEF='hanim_r_tarsometatarsal_3' center='-4.1964999999999995 0.02316420727413496 2.2155' name='r_tarsometatarsal_3'>
                       <HAnimSegment DEF='hanim_r_metatarsal_3' name='r_metatarsal_3'>
-                        <Transform translation='-0.09423 0.026099999999999998 0.039397499999999995'>
+                        <Transform translation='-4.1964999999999995 0.02316420727413496 2.2155'>
                           <Shape>
                             <Appearance>
                               <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1043,9 +1043,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                           </Shape>
                         </Transform>
                       </HAnimSegment>
-                      <HAnimJoint DEF='hanim_r_metatarsophalangeal_3' center='-0.09609749999999999 0.015057 0.0954225' name='r_metatarsophalangeal_3'>
+                      <HAnimJoint DEF='hanim_r_metatarsophalangeal_3' center='-4.2795 0.008577354656550362 4.7055' name='r_metatarsophalangeal_3'>
                         <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_3' name='r_tarsal_proximal_phalanx_3'>
-                          <Transform translation='-0.09609749999999999 0.015057 0.0954225'>
+                          <Transform translation='-4.2795 0.008577354656550362 4.7055'>
                             <Shape>
                               <Appearance>
                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1058,9 +1058,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                             </Shape>
                           </Transform>
                         </HAnimSegment>
-                        <HAnimJoint DEF='hanim_r_tarsal_proximal_interphalangeal_3' center='-0.098505 0.011922750000000001 0.110475' name='r_tarsal_proximal_interphalangeal_3'>
+                        <HAnimJoint DEF='hanim_r_tarsal_proximal_interphalangeal_3' center='-4.3865 0.004437280146302734 5.3745' name='r_tarsal_proximal_interphalangeal_3'>
                           <HAnimSegment DEF='hanim_r_tarsal_middle_phalanx_3' name='r_tarsal_middle_phalanx_3'>
-                            <Transform translation='-0.098505 0.011922750000000001 0.110475'>
+                            <Transform translation='-4.3865 0.004437280146302734 5.3745'>
                               <Shape>
                                 <Appearance>
                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1073,9 +1073,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                               </Shape>
                             </Transform>
                           </HAnimSegment>
-                          <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_3' center='-0.10003499999999999 0.00982575 0.1197' name='r_tarsal_distal_interphalangeal_3'>
+                          <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_3' center='-4.4544999999999995 0.0016673236182691443 5.7845' name='r_tarsal_distal_interphalangeal_3'>
                             <HAnimSegment DEF='hanim_r_tarsal_distal_phalanx_3' name='r_tarsal_distal_phalanx_3'>
-                              <Transform translation='-0.10003499999999999 0.00982575 0.1197'>
+                              <Transform translation='-4.4544999999999995 0.0016673236182691443 5.7845'>
                                 <Shape>
                                   <Appearance>
                                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1094,9 +1094,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                     </HAnimJoint>
                   </HAnimJoint>
                 </HAnimJoint>
-                <HAnimJoint DEF='hanim_r_calcaneocuboid' center='-0.0887175 0.0579825 -0.025965' name='r_calcaneocuboid'>
+                <HAnimJoint DEF='hanim_r_calcaneocuboid' center='-3.9515000000000002 0.06527824590314349 -0.6894999999999999' name='r_calcaneocuboid'>
                   <HAnimSegment DEF='hanim_r_calcaneus' name='r_calcaneus'>
-                    <Transform translation='-0.0887175 0.0579825 -0.025965'>
+                    <Transform translation='-3.9515000000000002 0.06527824590314349 -0.6894999999999999'>
                       <Shape>
                         <Appearance>
                           <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1109,9 +1109,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                       </Shape>
                     </Transform>
                   </HAnimSegment>
-                  <HAnimJoint DEF='hanim_r_transversetarsal' center='-0.1102725 0.03528 0.002089125' name='r_transversetarsal'>
+                  <HAnimJoint DEF='hanim_r_transversetarsal' center='-4.9094999999999995 0.03529019722518329 0.55735' name='r_transversetarsal'>
                     <HAnimSegment DEF='hanim_r_cuboid' name='r_cuboid'>
-                      <Transform translation='-0.1102725 0.03528 0.002089125'>
+                      <Transform translation='-4.9094999999999995 0.03529019722518329 0.55735'>
                         <Shape>
                           <Appearance>
                             <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1124,9 +1124,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                         </Shape>
                       </Transform>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_r_tarsometatarsal_4' center='-0.10613249999999999 0.0245475 0.03843' name='r_tarsometatarsal_4'>
+                    <HAnimJoint DEF='hanim_r_tarsometatarsal_4' center='-4.725499999999999 0.021113488385354727 2.1725' name='r_tarsometatarsal_4'>
                       <HAnimSegment DEF='hanim_r_metatarsal_4' name='r_metatarsal_4'>
-                        <Transform translation='-0.10613249999999999 0.0245475 0.03843'>
+                        <Transform translation='-4.725499999999999 0.021113488385354727 2.1725'>
                           <Shape>
                             <Appearance>
                               <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1139,9 +1139,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                           </Shape>
                         </Transform>
                       </HAnimSegment>
-                      <HAnimJoint DEF='hanim_r_metatarsophalangeal_4' center='-0.1095075 0.01435275 0.09116999999999999' name='r_metatarsophalangeal_4'>
+                      <HAnimJoint DEF='hanim_r_metatarsophalangeal_4' center='-4.8755 0.007647101015697879 4.5165' name='r_metatarsophalangeal_4'>
                         <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_4' name='r_tarsal_proximal_phalanx_4'>
-                          <Transform translation='-0.1095075 0.01435275 0.09116999999999999'>
+                          <Transform translation='-4.8755 0.007647101015697879 4.5165'>
                             <Shape>
                               <Appearance>
                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1154,9 +1154,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                             </Shape>
                           </Transform>
                         </HAnimSegment>
-                        <HAnimJoint DEF='hanim_r_tarsal_proximal_interphalangeal_4' center='-0.11378250000000001 0.0122445 0.10631249999999999' name='r_tarsal_proximal_interphalangeal_4'>
+                        <HAnimJoint DEF='hanim_r_tarsal_proximal_interphalangeal_4' center='-5.0655 0.004862284205861535 5.1895' name='r_tarsal_proximal_interphalangeal_4'>
                           <HAnimSegment DEF='hanim_r_tarsal_middle_phalanx_4' name='r_tarsal_middle_phalanx_4'>
-                            <Transform translation='-0.11378250000000001 0.0122445 0.10631249999999999'>
+                            <Transform translation='-5.0655 0.004862284205861535 5.1895'>
                               <Shape>
                                 <Appearance>
                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1169,9 +1169,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                               </Shape>
                             </Transform>
                           </HAnimSegment>
-                          <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_4' center='-0.1153125 0.009368999999999999 0.11369249999999999' name='r_tarsal_distal_interphalangeal_4'>
+                          <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_4' center='-5.1335 0.0010639961770772795 5.5175' name='r_tarsal_distal_interphalangeal_4'>
                             <HAnimSegment DEF='hanim_r_tarsal_distal_phalanx_4' name='r_tarsal_distal_phalanx_4'>
-                              <Transform translation='-0.1153125 0.009368999999999999 0.11369249999999999'>
+                              <Transform translation='-5.1335 0.0010639961770772795 5.5175'>
                                 <Shape>
                                   <Appearance>
                                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1188,9 +1188,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                         </HAnimJoint>
                       </HAnimJoint>
                     </HAnimJoint>
-                    <HAnimJoint DEF='hanim_r_tarsometatarsal_5' center='-0.1204425 0.02094525 0.03474' name='r_tarsometatarsal_5'>
+                    <HAnimJoint DEF='hanim_r_tarsometatarsal_5' center='-5.3614999999999995 0.016355226152112483 2.0085' name='r_tarsometatarsal_5'>
                       <HAnimSegment DEF='hanim_r_metatarsal_5' name='r_metatarsal_5'>
-                        <Transform translation='-0.1204425 0.02094525 0.03474'>
+                        <Transform translation='-5.3614999999999995 0.016355226152112483 2.0085'>
                           <Shape>
                             <Appearance>
                               <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1203,9 +1203,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                           </Shape>
                         </Transform>
                       </HAnimSegment>
-                      <HAnimJoint DEF='hanim_r_metatarsophalangeal_5' center='-0.12368249999999999 0.013671 0.0865575' name='r_metatarsophalangeal_5'>
+                      <HAnimJoint DEF='hanim_r_metatarsophalangeal_5' center='-5.5055 0.0067465679384509075 4.3115' name='r_metatarsophalangeal_5'>
                         <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_5' name='r_tarsal_proximal_phalanx_5'>
-                          <Transform translation='-0.12368249999999999 0.013671 0.0865575'>
+                          <Transform translation='-5.5055 0.0067465679384509075 4.3115'>
                             <Shape>
                               <Appearance>
                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1218,9 +1218,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                             </Shape>
                           </Transform>
                         </HAnimSegment>
-                        <HAnimJoint DEF='hanim_r_tarsal_proximal_interphalangeal_5' center='-0.126 0.01085625 0.09414' name='r_tarsal_proximal_interphalangeal_5'>
+                        <HAnimJoint DEF='hanim_r_tarsal_proximal_interphalangeal_5' center='-5.608499999999999 0.00302852543140153 4.6485' name='r_tarsal_proximal_interphalangeal_5'>
                           <HAnimSegment DEF='hanim_r_tarsal_middle_phalanx_5' name='r_tarsal_middle_phalanx_5'>
-                            <Transform translation='-0.126 0.01085625 0.09414'>
+                            <Transform translation='-5.608499999999999 0.00302852543140153 4.6485'>
                               <Shape>
                                 <Appearance>
                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1233,9 +1233,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                               </Shape>
                             </Transform>
                           </HAnimSegment>
-                          <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_5' center='-0.1269225 0.0085635 0.10187999999999998' name='r_tarsal_distal_interphalangeal_5'>
+                          <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_5' center='-5.6495 0 4.9925' name='r_tarsal_distal_interphalangeal_5'>
                             <HAnimSegment DEF='hanim_r_tarsal_distal_phalanx_5' name='r_tarsal_distal_phalanx_5'>
-                              <Transform translation='-0.1269225 0.0085635 0.10187999999999998'>
+                              <Transform translation='-5.6495 0 4.9925'>
                                 <Shape>
                                   <Appearance>
                                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1257,9 +1257,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
               </HAnimJoint>
             </HAnimJoint>
           </HAnimJoint>
-          <HAnimJoint DEF='hanim_vl5' center='0 0.9254250224999999 -0.01376325' name='vl5'>
+          <HAnimJoint DEF='hanim_vl5' center='-0.008499999999999952 1.2110951643069572 -0.1472' name='vl5'>
             <HAnimSegment DEF='hanim_l5' name='l5'>
-              <Transform translation='0 0.9254250224999999 -0.01376325'>
+              <Transform translation='-0.008499999999999952 1.2110951643069572 -0.1472'>
                 <Shape>
                   <Appearance>
                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1272,9 +1272,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                 </Shape>
               </Transform>
             </HAnimSegment>
-            <HAnimJoint DEF='hanim_vl4' center='0 0.9497249775000001 -0.01376325' name='vl4'>
+            <HAnimJoint DEF='hanim_vl4' center='-0.008499999999999952 1.2431933135597817 -0.1472' name='vl4'>
               <HAnimSegment DEF='hanim_l4' name='l4'>
-                <Transform translation='0 0.9497249775000001 -0.01376325'>
+                <Transform translation='-0.008499999999999952 1.2431933135597817 -0.1472'>
                   <Shape>
                     <Appearance>
                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1287,9 +1287,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                   </Shape>
                 </Transform>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_vl3' center='0 0.9659249999999999 -0.01376325' name='vl3'>
+              <HAnimJoint DEF='hanim_vl3' center='-0.008499999999999952 1.2645921490763128 -0.1472' name='vl3'>
                 <HAnimSegment DEF='hanim_l3' name='l3'>
-                  <Transform translation='0 0.9659249999999999 -0.01376325'>
+                  <Transform translation='-0.008499999999999952 1.2645921490763128 -0.1472'>
                     <Shape>
                       <Appearance>
                         <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1302,9 +1302,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                     </Shape>
                   </Transform>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_vl2' center='0 0.9823499999999998 -0.01376325' name='vl2'>
+                <HAnimJoint DEF='hanim_vl2' center='-0.008499999999999952 1.2862881605083354 -0.1472' name='vl2'>
                   <HAnimSegment DEF='hanim_l2' name='l2'>
-                    <Transform translation='0 0.9823499999999998 -0.01376325'>
+                    <Transform translation='-0.008499999999999952 1.2862881605083354 -0.1472'>
                       <Shape>
                         <Appearance>
                           <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1317,9 +1317,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                       </Shape>
                     </Transform>
                   </HAnimSegment>
-                  <HAnimJoint DEF='hanim_vl1' center='0 0.999675 -0.01376325' name='vl1'>
+                  <HAnimJoint DEF='hanim_vl1' center='-0.008499999999999952 1.3091729944845787 -0.1472' name='vl1'>
                     <HAnimSegment DEF='hanim_l1' name='l1'>
-                      <Transform translation='0 0.999675 -0.01376325'>
+                      <Transform translation='-0.008499999999999952 1.3091729944845787 -0.1472'>
                         <Shape>
                           <Appearance>
                             <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1332,9 +1332,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                         </Shape>
                       </Transform>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_vt12' center='0 1.0230750225 -0.01376325' name='vt12'>
+                    <HAnimJoint DEF='hanim_vt12' center='-0.008499999999999952 1.3400824103548734 -0.1472' name='vt12'>
                       <HAnimSegment DEF='hanim_t12' name='t12'>
-                        <Transform translation='0 1.0230750225 -0.01376325'>
+                        <Transform translation='-0.008499999999999952 1.3400824103548734 -0.1472'>
                           <Shape>
                             <Appearance>
                               <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1347,9 +1347,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                           </Shape>
                         </Transform>
                       </HAnimSegment>
-                      <HAnimJoint DEF='hanim_vt11' center='0 1.0467 -0.01376325' name='vt11'>
+                      <HAnimJoint DEF='hanim_vt11' center='-0.008499999999999952 1.3712889724200958 -0.1472' name='vt11'>
                         <HAnimSegment DEF='hanim_t11' name='t11'>
-                          <Transform translation='0 1.0467 -0.01376325'>
+                          <Transform translation='-0.008499999999999952 1.3712889724200958 -0.1472'>
                             <Shape>
                               <Appearance>
                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1362,9 +1362,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                             </Shape>
                           </Transform>
                         </HAnimSegment>
-                        <HAnimJoint DEF='hanim_vt10' center='0 1.0637999775 -0.01378575' name='vt10'>
+                        <HAnimJoint DEF='hanim_vt10' center='-0.008499999999999952 1.3938765710397203 -0.1482' name='vt10'>
                           <HAnimSegment DEF='hanim_t10' name='t10'>
-                            <Transform translation='0 1.0637999775 -0.01378575'>
+                            <Transform translation='-0.008499999999999952 1.3938765710397203 -0.1482'>
                               <Shape>
                                 <Appearance>
                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1377,9 +1377,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                               </Shape>
                             </Transform>
                           </HAnimSegment>
-                          <HAnimJoint DEF='hanim_vt9' center='0 1.078425 -0.01376325' name='vt9'>
+                          <HAnimJoint DEF='hanim_vt9' center='-0.008499999999999952 1.4131949671038657 -0.1472' name='vt9'>
                             <HAnimSegment DEF='hanim_t9' name='t9'>
-                              <Transform translation='0 1.078425 -0.01376325'>
+                              <Transform translation='-0.008499999999999952 1.4131949671038657 -0.1472'>
                                 <Shape>
                                   <Appearance>
                                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1392,9 +1392,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                 </Shape>
                               </Transform>
                             </HAnimSegment>
-                            <HAnimJoint DEF='hanim_vt8' center='0 1.093050045 -0.01376325' name='vt8'>
+                            <HAnimJoint DEF='hanim_vt8' center='-0.008499999999999952 1.432513392888575 -0.1472' name='vt8'>
                               <HAnimSegment DEF='hanim_t8' name='t8'>
-                                <Transform translation='0 1.093050045 -0.01376325'>
+                                <Transform translation='-0.008499999999999952 1.432513392888575 -0.1472'>
                                   <Shape>
                                     <Appearance>
                                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1407,9 +1407,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                   </Shape>
                                 </Transform>
                               </HAnimSegment>
-                              <HAnimJoint DEF='hanim_vt7' center='0 1.1087999775 -0.01376325' name='vt7'>
+                              <HAnimJoint DEF='hanim_vt7' center='-0.008499999999999952 1.4533176982507414 -0.1472' name='vt7'>
                                 <HAnimSegment DEF='hanim_t7' name='t7'>
-                                  <Transform translation='0 1.1087999775 -0.01376325'>
+                                  <Transform translation='-0.008499999999999952 1.4533176982507414 -0.1472'>
                                     <Shape>
                                       <Appearance>
                                         <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1422,9 +1422,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                     </Shape>
                                   </Transform>
                                 </HAnimSegment>
-                                <HAnimJoint DEF='hanim_vt6' center='0 1.121624955 -0.01376325' name='vt6'>
+                                <HAnimJoint DEF='hanim_vt6' center='-0.008499999999999952 1.470258389785319 -0.1472' name='vt6'>
                                   <HAnimSegment DEF='hanim_t6' name='t6'>
-                                    <Transform translation='0 1.121624955 -0.01376325'>
+                                    <Transform translation='-0.008499999999999952 1.470258389785319 -0.1472'>
                                       <Shape>
                                         <Appearance>
                                           <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1437,9 +1437,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                       </Shape>
                                     </Transform>
                                   </HAnimSegment>
-                                  <HAnimJoint DEF='hanim_vt5' center='0 1.1371500225 -0.01376325' name='vt5'>
+                                  <HAnimJoint DEF='hanim_vt5' center='-0.008499999999999952 1.490765667834812 -0.1472' name='vt5'>
                                     <HAnimSegment DEF='hanim_t5' name='t5'>
-                                      <Transform translation='0 1.1371500225 -0.01376325'>
+                                      <Transform translation='-0.008499999999999952 1.490765667834812 -0.1472'>
                                         <Shape>
                                           <Appearance>
                                             <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1452,9 +1452,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                         </Shape>
                                       </Transform>
                                     </HAnimSegment>
-                                    <HAnimJoint DEF='hanim_vt4' center='0 1.1524500225 -0.01376325' name='vt4'>
+                                    <HAnimJoint DEF='hanim_vt4' center='-0.008499999999999952 1.5109756510865595 -0.1472' name='vt4'>
                                       <HAnimSegment DEF='hanim_t4' name='t4'>
-                                        <Transform translation='0 1.1524500225 -0.01376325'>
+                                        <Transform translation='-0.008499999999999952 1.5109756510865595 -0.1472'>
                                           <Shape>
                                             <Appearance>
                                               <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1467,9 +1467,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                           </Shape>
                                         </Transform>
                                       </HAnimSegment>
-                                      <HAnimJoint DEF='hanim_vt3' center='0 1.1709000225 -0.01376325' name='vt3'>
+                                      <HAnimJoint DEF='hanim_vt3' center='-0.008499999999999952 1.535346513243078 -0.1472' name='vt3'>
                                         <HAnimSegment DEF='hanim_t3' name='t3'>
-                                          <Transform translation='0 1.1709000225 -0.01376325'>
+                                          <Transform translation='-0.008499999999999952 1.535346513243078 -0.1472'>
                                             <Shape>
                                               <Appearance>
                                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1482,9 +1482,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                             </Shape>
                                           </Transform>
                                         </HAnimSegment>
-                                        <HAnimJoint DEF='hanim_vt2' center='0 1.1956499775 -0.01378575' name='vt2'>
+                                        <HAnimJoint DEF='hanim_vt2' center='-0.008499999999999952 1.5680390737680125 -0.1482' name='vt2'>
                                           <HAnimSegment DEF='hanim_t2' name='t2'>
-                                            <Transform translation='0 1.1956499775 -0.01378575'>
+                                            <Transform translation='-0.008499999999999952 1.5680390737680125 -0.1482'>
                                               <Shape>
                                                 <Appearance>
                                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1497,9 +1497,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                               </Shape>
                                             </Transform>
                                           </HAnimSegment>
-                                          <HAnimJoint DEF='hanim_vt1' center='0 1.2195000225 -0.01376325' name='vt1'>
+                                          <HAnimJoint DEF='hanim_vt1' center='-0.008499999999999952 1.599542930630981 -0.1472' name='vt1'>
                                             <HAnimSegment DEF='hanim_t1' name='t1'>
-                                              <Transform translation='0 1.2195000225 -0.01376325'>
+                                              <Transform translation='-0.008499999999999952 1.599542930630981 -0.1472'>
                                                 <Shape>
                                                   <Appearance>
                                                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1512,9 +1512,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                 </Shape>
                                               </Transform>
                                             </HAnimSegment>
-                                            <HAnimJoint DEF='hanim_vc7' center='0 1.245374955 -0.015063749999999999' name='vc7'>
+                                            <HAnimJoint DEF='hanim_vc7' center='-0.008499999999999952 1.6337214896156271 -0.20499999999999996' name='vc7'>
                                               <HAnimSegment DEF='hanim_c7' name='c7'>
-                                                <Transform translation='0 1.245374955 -0.015063749999999999'>
+                                                <Transform translation='-0.008499999999999952 1.6337214896156271 -0.20499999999999996'>
                                                   <Shape>
                                                     <Appearance>
                                                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1527,9 +1527,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                   </Shape>
                                                 </Transform>
                                               </HAnimSegment>
-                                              <HAnimJoint DEF='hanim_vc6' center='0 1.2575249775 -0.015063749999999999' name='vc6'>
+                                              <HAnimJoint DEF='hanim_vc6' center='-0.008499999999999952 1.6497706236831666 -0.20499999999999996' name='vc6'>
                                                 <HAnimSegment DEF='hanim_c6' name='c6'>
-                                                  <Transform translation='0 1.2575249775 -0.015063749999999999'>
+                                                  <Transform translation='-0.008499999999999952 1.6497706236831666 -0.20499999999999996'>
                                                     <Shape>
                                                       <Appearance>
                                                         <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1542,9 +1542,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                     </Shape>
                                                   </Transform>
                                                 </HAnimSegment>
-                                                <HAnimJoint DEF='hanim_vc5' center='0 1.2698999775 -0.015063749999999999' name='vc5'>
+                                                <HAnimJoint DEF='hanim_vc5' center='-0.008499999999999952 1.6661169336661974 -0.20499999999999996' name='vc5'>
                                                   <HAnimSegment DEF='hanim_c5' name='c5'>
-                                                    <Transform translation='0 1.2698999775 -0.015063749999999999'>
+                                                    <Transform translation='-0.008499999999999952 1.6661169336661974 -0.20499999999999996'>
                                                       <Shape>
                                                         <Appearance>
                                                           <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1557,9 +1557,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                       </Shape>
                                                     </Transform>
                                                   </HAnimSegment>
-                                                  <HAnimJoint DEF='hanim_vc4' center='0 1.2822750449999998 -0.015063749999999999' name='vc4'>
+                                                  <HAnimJoint DEF='hanim_vc4' center='-0.008499999999999952 1.6824633328109189 -0.20499999999999996' name='vc4'>
                                                     <HAnimSegment DEF='hanim_c4' name='c4'>
-                                                      <Transform translation='0 1.2822750449999998 -0.015063749999999999'>
+                                                      <Transform translation='-0.008499999999999952 1.6824633328109189 -0.20499999999999996'>
                                                         <Shape>
                                                           <Appearance>
                                                             <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1572,9 +1572,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                         </Shape>
                                                       </Transform>
                                                     </HAnimSegment>
-                                                    <HAnimJoint DEF='hanim_vc3' center='0 1.2951000225 -0.015063749999999999' name='vc3'>
+                                                    <HAnimJoint DEF='hanim_vc3' center='-0.008499999999999952 1.6994040243454964 -0.20499999999999996' name='vc3'>
                                                       <HAnimSegment DEF='hanim_c3' name='c3'>
-                                                        <Transform translation='0 1.2951000225 -0.015063749999999999'>
+                                                        <Transform translation='-0.008499999999999952 1.6994040243454964 -0.20499999999999996'>
                                                           <Shape>
                                                             <Appearance>
                                                               <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1587,9 +1587,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                           </Shape>
                                                         </Transform>
                                                       </HAnimSegment>
-                                                      <HAnimJoint DEF='hanim_vc2' center='0 1.306800045 -0.015063749999999999' name='vc2'>
+                                                      <HAnimJoint DEF='hanim_vc2' center='-0.008499999999999952 1.7148587471409256 -0.20499999999999996' name='vc2'>
                                                         <HAnimSegment DEF='hanim_c2' name='c2'>
-                                                          <Transform translation='0 1.306800045 -0.015063749999999999'>
+                                                          <Transform translation='-0.008499999999999952 1.7148587471409256 -0.20499999999999996'>
                                                             <Shape>
                                                               <Appearance>
                                                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1602,9 +1602,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                             </Shape>
                                                           </Transform>
                                                         </HAnimSegment>
-                                                        <HAnimJoint DEF='hanim_vc1' center='0 1.3184999549999998 -0.015063749999999999' name='vc1'>
+                                                        <HAnimJoint DEF='hanim_vc1' center='-0.008499999999999952 1.7303133213335367 -0.20499999999999996' name='vc1'>
                                                           <HAnimSegment DEF='hanim_c1' name='c1'>
-                                                            <Transform translation='0 1.3184999549999998 -0.015063749999999999'>
+                                                            <Transform translation='-0.008499999999999952 1.7303133213335367 -0.20499999999999996'>
                                                               <Shape>
                                                                 <Appearance>
                                                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1617,9 +1617,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                               </Shape>
                                                             </Transform>
                                                           </HAnimSegment>
-                                                          <HAnimJoint DEF='hanim_skullbase' center='0 1.31265 -0.01544175' name='skullbase'>
+                                                          <HAnimJoint DEF='hanim_skullbase' center='-0.008499999999999952 1.7225860342372314 -0.2218' name='skullbase'>
                                                             <HAnimSegment DEF='hanim_skull' name='skull'>
-                                                              <Transform translation='0 1.31265 -0.01544175'>
+                                                              <Transform translation='-0.008499999999999952 1.7225860342372314 -0.2218'>
                                                                 <Shape>
                                                                   <Appearance>
                                                                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1632,9 +1632,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                                 </Shape>
                                                               </Transform>
                                                             </HAnimSegment>
-                                                            <HAnimJoint DEF='hanim_l_eyelid_joint' center='0.0505125 1.4242499775 0.03294' name='l_eyelid_joint'>
+                                                            <HAnimJoint DEF='hanim_l_eyelid_joint' center='2.2365000000000004 1.87 1.9285' name='l_eyelid_joint'>
                                                               <HAnimSegment DEF='hanim_l_eyelid' name='l_eyelid'>
-                                                                <Transform translation='0.0505125 1.4242499775 0.03294'>
+                                                                <Transform translation='2.2365000000000004 1.87 1.9285'>
                                                                   <Shape>
                                                                     <Appearance>
                                                                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1648,9 +1648,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                                 </Transform>
                                                               </HAnimSegment>
                                                             </HAnimJoint>
-                                                            <HAnimJoint DEF='hanim_r_eyelid_joint' center='-0.0505125 1.4242499775 0.03294' name='r_eyelid_joint'>
+                                                            <HAnimJoint DEF='hanim_r_eyelid_joint' center='-2.2535 1.87 1.9285' name='r_eyelid_joint'>
                                                               <HAnimSegment DEF='hanim_r_eyelid' name='r_eyelid'>
-                                                                <Transform translation='-0.0505125 1.4242499775 0.03294'>
+                                                                <Transform translation='-2.2535 1.87 1.9285'>
                                                                   <Shape>
                                                                     <Appearance>
                                                                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1664,9 +1664,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                                 </Transform>
                                                               </HAnimSegment>
                                                             </HAnimJoint>
-                                                            <HAnimJoint DEF='hanim_l_eyeball_joint' center='0.0481275 1.4048999775 0.0830475' name='l_eyeball_joint'>
+                                                            <HAnimJoint DEF='hanim_l_eyeball_joint' center='2.1304999999999996 1.844440315299261 4.1555' name='l_eyeball_joint'>
                                                               <HAnimSegment DEF='hanim_l_eyeball' name='l_eyeball'>
-                                                                <Transform translation='0.0481275 1.4048999775 0.0830475'>
+                                                                <Transform translation='2.1304999999999996 1.844440315299261 4.1555'>
                                                                   <Shape>
                                                                     <Appearance>
                                                                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1680,9 +1680,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                                 </Transform>
                                                               </HAnimSegment>
                                                             </HAnimJoint>
-                                                            <HAnimJoint DEF='hanim_r_eyeball_joint' center='-0.0481275 1.4048999775 0.0830475' name='r_eyeball_joint'>
+                                                            <HAnimJoint DEF='hanim_r_eyeball_joint' center='-2.1475 1.844440315299261 4.1555' name='r_eyeball_joint'>
                                                               <HAnimSegment DEF='hanim_r_eyeball' name='r_eyeball'>
-                                                                <Transform translation='-0.0481275 1.4048999775 0.0830475'>
+                                                                <Transform translation='-2.1475 1.844440315299261 4.1555'>
                                                                   <Shape>
                                                                     <Appearance>
                                                                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1696,9 +1696,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                                 </Transform>
                                                               </HAnimSegment>
                                                             </HAnimJoint>
-                                                            <HAnimJoint DEF='hanim_l_eyebrow_joint' center='0.0217485 1.4139 0.1069425' name='l_eyebrow_joint'>
+                                                            <HAnimJoint DEF='hanim_l_eyebrow_joint' center='0.9581000000000001 1.856328570462029 5.2175' name='l_eyebrow_joint'>
                                                               <HAnimSegment DEF='hanim_l_eyebrow' name='l_eyebrow'>
-                                                                <Transform translation='0.0217485 1.4139 0.1069425'>
+                                                                <Transform translation='0.9581000000000001 1.856328570462029 5.2175'>
                                                                   <Shape>
                                                                     <Appearance>
                                                                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1712,9 +1712,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                                 </Transform>
                                                               </HAnimSegment>
                                                             </HAnimJoint>
-                                                            <HAnimJoint DEF='hanim_r_eyebrow_joint' center='-0.0217485 1.4139 0.1069425' name='r_eyebrow_joint'>
+                                                            <HAnimJoint DEF='hanim_r_eyebrow_joint' center='-0.9751 1.856328570462029 5.2175' name='r_eyebrow_joint'>
                                                               <HAnimSegment DEF='hanim_r_eyebrow' name='r_eyebrow'>
-                                                                <Transform translation='-0.0217485 1.4139 0.1069425'>
+                                                                <Transform translation='-0.9751 1.856328570462029 5.2175'>
                                                                   <Shape>
                                                                     <Appearance>
                                                                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1728,9 +1728,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                                 </Transform>
                                                               </HAnimSegment>
                                                             </HAnimJoint>
-                                                            <HAnimJoint DEF='hanim_temporomandibular' center='0 1.3128749549999998 0.01537875' name='temporomandibular'>
+                                                            <HAnimJoint DEF='hanim_temporomandibular' center='-0.008499999999999952 1.722883180432159 1.1480000000000001' name='temporomandibular'>
                                                               <HAnimSegment DEF='hanim_jaw' name='jaw'>
-                                                                <Transform translation='0 1.3128749549999998 0.01537875'>
+                                                                <Transform translation='-0.008499999999999952 1.722883180432159 1.1480000000000001'>
                                                                   <Shape>
                                                                     <Appearance>
                                                                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1752,9 +1752,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                 </HAnimJoint>
                                               </HAnimJoint>
                                             </HAnimJoint>
-                                            <HAnimJoint DEF='hanim_l_sternoclavicular' center='0.038474999999999995 1.2087000225 -0.01378575' name='l_sternoclavicular'>
+                                            <HAnimJoint DEF='hanim_l_sternoclavicular' center='1.7015 1.5852770601003359 -0.1482' name='l_sternoclavicular'>
                                               <HAnimSegment DEF='hanim_l_clavicle' name='l_clavicle'>
-                                                <Transform translation='0.038474999999999995 1.2087000225 -0.01378575'>
+                                                <Transform translation='1.7015 1.5852770601003359 -0.1482'>
                                                   <Shape>
                                                     <Appearance>
                                                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1767,9 +1767,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                   </Shape>
                                                 </Transform>
                                               </HAnimSegment>
-                                              <HAnimJoint DEF='hanim_l_acromioclavicular' center='0.12294000000000001 1.1918250225 -0.012897' name='l_acromioclavicular'>
+                                              <HAnimJoint DEF='hanim_l_acromioclavicular' center='5.455500000000001 1.562986637396203 -0.10870000000000002' name='l_acromioclavicular'>
                                                 <HAnimSegment DEF='hanim_l_scapula' name='l_scapula'>
-                                                  <Transform translation='0.12294000000000001 1.1918250225 -0.012897'>
+                                                  <Transform translation='5.455500000000001 1.562986637396203 -0.10870000000000002'>
                                                     <Shape>
                                                       <Appearance>
                                                         <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1782,9 +1782,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                     </Shape>
                                                   </Transform>
                                                 </HAnimSegment>
-                                                <HAnimJoint DEF='hanim_l_shoulder' center='0.16506 1.1785500224999998 -0.003267' name='l_shoulder'>
+                                                <HAnimJoint DEF='hanim_l_shoulder' center='7.327500000000001 1.5454515048689517 0.31930000000000003' name='l_shoulder'>
                                                   <HAnimSegment DEF='hanim_l_upperarm' name='l_upperarm'>
-                                                    <Transform translation='0.16506 1.1785500224999998 -0.003267'>
+                                                    <Transform translation='7.327500000000001 1.5454515048689517 0.31930000000000003'>
                                                       <Shape>
                                                         <Appearance>
                                                           <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1797,9 +1797,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                       </Shape>
                                                     </Transform>
                                                   </HAnimSegment>
-                                                  <HAnimJoint DEF='hanim_l_elbow' center='0.1820925 0.9287999774999999 -0.005629499999999999' name='l_elbow'>
+                                                  <HAnimJoint DEF='hanim_l_elbow' center='8.0845 1.2155531894066565 0.21430000000000005' name='l_elbow'>
                                                     <HAnimSegment DEF='hanim_l_forearm' name='l_forearm'>
-                                                      <Transform translation='0.1820925 0.9287999774999999 -0.005629499999999999'>
+                                                      <Transform translation='8.0845 1.2155531894066565 0.21430000000000005'>
                                                         <Shape>
                                                           <Appearance>
                                                             <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1812,9 +1812,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                         </Shape>
                                                       </Transform>
                                                     </HAnimSegment>
-                                                    <HAnimJoint DEF='hanim_l_radiocarpal' center='0.181935 0.7242749775 -0.00502425' name='l_radiocarpal'>
+                                                    <HAnimJoint DEF='hanim_l_radiocarpal' center='8.0775 0.9453932662325654 0.24120000000000003' name='l_radiocarpal'>
                                                       <HAnimSegment DEF='hanim_l_carpal' name='l_carpal'>
-                                                        <Transform translation='0.181935 0.7242749775 -0.00502425'>
+                                                        <Transform translation='8.0775 0.9453932662325654 0.24120000000000003'>
                                                           <Shape>
                                                             <Appearance>
                                                               <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1827,9 +1827,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                           </Shape>
                                                         </Transform>
                                                       </HAnimSegment>
-                                                      <HAnimJoint DEF='hanim_l_midcarpal_1' center='0.1812825 0.7060499775 0.019327499999999997' name='l_midcarpal_1'>
+                                                      <HAnimJoint DEF='hanim_l_midcarpal_1' center='8.0485 0.9213196097121018 1.3235000000000001' name='l_midcarpal_1'>
                                                         <HAnimSegment DEF='hanim_l_trapezium' name='l_trapezium'>
-                                                          <Transform translation='0.1812825 0.7060499775 0.019327499999999997'>
+                                                          <Transform translation='8.0485 0.9213196097121018 1.3235000000000001'>
                                                             <Shape>
                                                               <Appearance>
                                                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1842,9 +1842,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                             </Shape>
                                                           </Transform>
                                                         </HAnimSegment>
-                                                        <HAnimJoint DEF='hanim_l_carpometacarpal_1' center='0.180495 0.6925500225 0.0259875' name='l_carpometacarpal_1'>
+                                                        <HAnimJoint DEF='hanim_l_carpometacarpal_1' center='8.0135 0.9034873309899225 1.6195' name='l_carpometacarpal_1'>
                                                           <HAnimSegment DEF='hanim_l_metacarpal_1' name='l_metacarpal_1'>
-                                                            <Transform translation='0.180495 0.6925500225 0.0259875'>
+                                                            <Transform translation='8.0135 0.9034873309899225 1.6195'>
                                                               <Shape>
                                                                 <Appearance>
                                                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1857,9 +1857,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                               </Shape>
                                                             </Transform>
                                                           </HAnimSegment>
-                                                          <HAnimJoint DEF='hanim_l_metacarpophalangeal_1' center='0.18103499999999997 0.67275 0.035775' name='l_metacarpophalangeal_1'>
+                                                          <HAnimJoint DEF='hanim_l_metacarpophalangeal_1' center='8.0375 0.8773332052965095 2.0545' name='l_metacarpophalangeal_1'>
                                                             <HAnimSegment DEF='hanim_l_carpal_proximal_phalanx_1' name='l_carpal_proximal_phalanx_1'>
-                                                              <Transform translation='0.18103499999999997 0.67275 0.035775'>
+                                                              <Transform translation='8.0375 0.8773332052965095 2.0545'>
                                                                 <Shape>
                                                                   <Appearance>
                                                                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1872,9 +1872,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                                 </Shape>
                                                               </Transform>
                                                             </HAnimSegment>
-                                                            <HAnimJoint DEF='hanim_l_carpal_interphalangeal_1' center='0.182655 0.654075 0.04965749999999999' name='l_carpal_interphalangeal_1'>
+                                                            <HAnimJoint DEF='hanim_l_carpal_interphalangeal_1' center='8.1095 0.8526651375039358 2.6715' name='l_carpal_interphalangeal_1'>
                                                               <HAnimSegment DEF='hanim_l_carpal_distal_phalanx_1' name='l_carpal_distal_phalanx_1'>
-                                                                <Transform translation='0.182655 0.654075 0.04965749999999999'>
+                                                                <Transform translation='8.1095 0.8526651375039358 2.6715'>
                                                                   <Shape>
                                                                     <Appearance>
                                                                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1891,9 +1891,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                           </HAnimJoint>
                                                         </HAnimJoint>
                                                       </HAnimJoint>
-                                                      <HAnimJoint DEF='hanim_l_midcarpal_2' center='0.1812825 0.70695 0.00841725' name='l_midcarpal_2'>
+                                                      <HAnimJoint DEF='hanim_l_midcarpal_2' center='8.0485 0.9225084619768859 0.8386' name='l_midcarpal_2'>
                                                         <HAnimSegment DEF='hanim_l_trapezoid' name='l_trapezoid'>
-                                                          <Transform translation='0.1812825 0.70695 0.00841725'>
+                                                          <Transform translation='8.0485 0.9225084619768859 0.8386'>
                                                             <Shape>
                                                               <Appearance>
                                                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1906,9 +1906,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                             </Shape>
                                                           </Transform>
                                                         </HAnimSegment>
-                                                        <HAnimJoint DEF='hanim_l_carpometacarpal_2' center='0.1812825 0.6875999775 0.009729' name='l_carpometacarpal_2'>
+                                                        <HAnimJoint DEF='hanim_l_carpometacarpal_2' center='8.0485 0.8969487475555831 0.8969' name='l_carpometacarpal_2'>
                                                           <HAnimSegment DEF='hanim_l_metacarpal_2' name='l_metacarpal_2'>
-                                                            <Transform translation='0.1812825 0.6875999775 0.009729'>
+                                                            <Transform translation='8.0485 0.8969487475555831 0.8969'>
                                                               <Shape>
                                                                 <Appearance>
                                                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1921,9 +1921,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                               </Shape>
                                                             </Transform>
                                                           </HAnimSegment>
-                                                          <HAnimJoint DEF='hanim_l_metacarpophalangeal_2' center='0.183735 0.6372 0.015075' name='l_metacarpophalangeal_2'>
+                                                          <HAnimJoint DEF='hanim_l_metacarpophalangeal_2' center='8.1575 0.830374714799803 1.1345' name='l_metacarpophalangeal_2'>
                                                             <HAnimSegment DEF='hanim_l_carpal_proximal_phalanx_2' name='l_carpal_proximal_phalanx_2'>
-                                                              <Transform translation='0.183735 0.6372 0.015075'>
+                                                              <Transform translation='8.1575 0.830374714799803 1.1345'>
                                                                 <Shape>
                                                                   <Appearance>
                                                                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1936,9 +1936,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                                 </Shape>
                                                               </Transform>
                                                             </HAnimSegment>
-                                                            <HAnimJoint DEF='hanim_l_carpal_proximal_interphalangeal_2' center='0.18171 0.6068249775 0.014183999999999999' name='l_carpal_proximal_interphalangeal_2'>
+                                                            <HAnimJoint DEF='hanim_l_carpal_proximal_interphalangeal_2' center='8.0675 0.7902519242118 1.0949' name='l_carpal_proximal_interphalangeal_2'>
                                                               <HAnimSegment DEF='hanim_l_carpal_middle_phalanx_2' name='l_carpal_middle_phalanx_2'>
-                                                                <Transform translation='0.18171 0.6068249775 0.014183999999999999'>
+                                                                <Transform translation='8.0675 0.7902519242118 1.0949'>
                                                                   <Shape>
                                                                     <Appearance>
                                                                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1951,9 +1951,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                                   </Shape>
                                                                 </Transform>
                                                               </HAnimSegment>
-                                                              <HAnimJoint DEF='hanim_l_carpal_distal_interphalangeal_2' center='0.18067499999999997 0.5816250000000001 0.01338525' name='l_carpal_distal_interphalangeal_2'>
+                                                              <HAnimJoint DEF='hanim_l_carpal_distal_interphalangeal_2' center='8.0215 0.7569649226941918 1.0594000000000001' name='l_carpal_distal_interphalangeal_2'>
                                                                 <HAnimSegment DEF='hanim_l_carpal_distal_phalanx_2' name='l_carpal_distal_phalanx_2'>
-                                                                  <Transform translation='0.18067499999999997 0.5816250000000001 0.01338525'>
+                                                                  <Transform translation='8.0215 0.7569649226941918 1.0594000000000001'>
                                                                     <Shape>
                                                                       <Appearance>
                                                                         <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1971,9 +1971,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                           </HAnimJoint>
                                                         </HAnimJoint>
                                                       </HAnimJoint>
-                                                      <HAnimJoint DEF='hanim_l_midcarpal_3' center='0.18108 0.708525 -0.004797' name='l_midcarpal_3'>
+                                                      <HAnimJoint DEF='hanim_l_midcarpal_3' center='8.0395 0.9245889014292714 0.2513' name='l_midcarpal_3'>
                                                         <HAnimSegment DEF='hanim_l_capitate' name='l_capitate'>
-                                                          <Transform translation='0.18108 0.708525 -0.004797'>
+                                                          <Transform translation='8.0395 0.9245889014292714 0.2513'>
                                                             <Shape>
                                                               <Appearance>
                                                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1986,9 +1986,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                             </Shape>
                                                           </Transform>
                                                         </HAnimSegment>
-                                                        <HAnimJoint DEF='hanim_l_carpometacarpal_3' center='0.18108 0.6858 -0.00625275' name='l_carpometacarpal_3'>
+                                                        <HAnimJoint DEF='hanim_l_carpometacarpal_3' center='8.0395 0.8945711321877058 0.18660000000000004' name='l_carpometacarpal_3'>
                                                           <HAnimSegment DEF='hanim_l_metacarpal_3' name='l_metacarpal_3'>
-                                                            <Transform translation='0.18108 0.6858 -0.00625275'>
+                                                            <Transform translation='8.0395 0.8945711321877058 0.18660000000000004'>
                                                               <Shape>
                                                                 <Appearance>
                                                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2001,9 +2001,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                               </Shape>
                                                             </Transform>
                                                           </HAnimSegment>
-                                                          <HAnimJoint DEF='hanim_l_metacarpophalangeal_3' center='0.18369 0.6349499775 -0.00391725' name='l_metacarpophalangeal_3'>
+                                                          <HAnimJoint DEF='hanim_l_metacarpophalangeal_3' center='8.1555 0.8274026287186883 0.2904' name='l_metacarpophalangeal_3'>
                                                             <HAnimSegment DEF='hanim_l_carpal_proximal_phalanx_3' name='l_carpal_proximal_phalanx_3'>
-                                                              <Transform translation='0.18369 0.6349499775 -0.00391725'>
+                                                              <Transform translation='8.1555 0.8274026287186883 0.2904'>
                                                                 <Shape>
                                                                   <Appearance>
                                                                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2016,9 +2016,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                                 </Shape>
                                                               </Transform>
                                                             </HAnimSegment>
-                                                            <HAnimJoint DEF='hanim_l_carpal_proximal_interphalangeal_3' center='0.18171 0.6032249775 -0.003537' name='l_carpal_proximal_interphalangeal_3'>
+                                                            <HAnimJoint DEF='hanim_l_carpal_proximal_interphalangeal_3' center='8.0675 0.7854966340349183 0.3073' name='l_carpal_proximal_interphalangeal_3'>
                                                               <HAnimSegment DEF='hanim_l_carpal_middle_phalanx_3' name='l_carpal_middle_phalanx_3'>
-                                                                <Transform translation='0.18171 0.6032249775 -0.003537'>
+                                                                <Transform translation='8.0675 0.7854966340349183 0.3073'>
                                                                   <Shape>
                                                                     <Appearance>
                                                                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2031,9 +2031,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                                   </Shape>
                                                                 </Transform>
                                                               </HAnimSegment>
-                                                              <HAnimJoint DEF='hanim_l_carpal_distal_interphalangeal_3' center='0.18067499999999997 0.575325 -0.0037597499999999996' name='l_carpal_distal_interphalangeal_3'>
+                                                              <HAnimJoint DEF='hanim_l_carpal_distal_interphalangeal_3' center='8.0215 0.7486431648846488 0.2974' name='l_carpal_distal_interphalangeal_3'>
                                                                 <HAnimSegment DEF='hanim_l_carpal_distal_phalanx_3' name='l_carpal_distal_phalanx_3'>
-                                                                  <Transform translation='0.18067499999999997 0.575325 -0.0037597499999999996'>
+                                                                  <Transform translation='8.0215 0.7486431648846488 0.2974'>
                                                                     <Shape>
                                                                       <Appearance>
                                                                         <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2051,9 +2051,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                           </HAnimJoint>
                                                         </HAnimJoint>
                                                       </HAnimJoint>
-                                                      <HAnimJoint DEF='hanim_l_midcarpal_4_5' center='0.18108 0.7058250224999999 -0.025739999999999996' name='l_midcarpal_4_5'>
+                                                      <HAnimJoint DEF='hanim_l_midcarpal_4_5' center='8.0395 0.9210224635171738 -0.6794999999999999' name='l_midcarpal_4_5'>
                                                         <HAnimSegment DEF='hanim_l_hamate' name='l_hamate'>
-                                                          <Transform translation='0.18108 0.7058250224999999 -0.025739999999999996'>
+                                                          <Transform translation='8.0395 0.9210224635171738 -0.6794999999999999'>
                                                             <Shape>
                                                               <Appearance>
                                                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2066,9 +2066,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                             </Shape>
                                                           </Transform>
                                                         </HAnimSegment>
-                                                        <HAnimJoint DEF='hanim_l_carpometacarpal_4' center='0.18108 0.68625 -0.01991925' name='l_carpometacarpal_4'>
+                                                        <HAnimJoint DEF='hanim_l_carpometacarpal_4' center='8.0395 0.895165543459816 -0.42079999999999995' name='l_carpometacarpal_4'>
                                                           <HAnimSegment DEF='hanim_l_metacarpal_4' name='l_metacarpal_4'>
-                                                            <Transform translation='0.18108 0.68625 -0.01991925'>
+                                                            <Transform translation='8.0395 0.895165543459816 -0.42079999999999995'>
                                                               <Shape>
                                                                 <Appearance>
                                                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2081,9 +2081,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                               </Shape>
                                                             </Transform>
                                                           </HAnimSegment>
-                                                          <HAnimJoint DEF='hanim_l_metacarpophalangeal_4' center='0.18369 0.63405 -0.021440249999999998' name='l_metacarpophalangeal_4'>
+                                                          <HAnimJoint DEF='hanim_l_metacarpophalangeal_4' center='8.1555 0.8262138358950314 -0.48839999999999995' name='l_metacarpophalangeal_4'>
                                                             <HAnimSegment DEF='hanim_l_carpal_proximal_phalanx_4' name='l_carpal_proximal_phalanx_4'>
-                                                              <Transform translation='0.18369 0.63405 -0.021440249999999998'>
+                                                              <Transform translation='8.1555 0.8262138358950314 -0.48839999999999995'>
                                                                 <Shape>
                                                                   <Appearance>
                                                                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2096,9 +2096,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                                 </Shape>
                                                               </Transform>
                                                             </HAnimSegment>
-                                                            <HAnimJoint DEF='hanim_l_carpal_proximal_interphalangeal_4' center='0.18171 0.6065999774999999 -0.020645999999999998' name='l_carpal_proximal_interphalangeal_4'>
+                                                            <HAnimJoint DEF='hanim_l_carpal_proximal_interphalangeal_4' center='8.0675 0.7899547185757448 -0.45309999999999995' name='l_carpal_proximal_interphalangeal_4'>
                                                               <HAnimSegment DEF='hanim_l_carpal_middle_phalanx_4' name='l_carpal_middle_phalanx_4'>
-                                                                <Transform translation='0.18171 0.6065999774999999 -0.020645999999999998'>
+                                                                <Transform translation='8.0675 0.7899547185757448 -0.45309999999999995'>
                                                                   <Shape>
                                                                     <Appearance>
                                                                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2111,9 +2111,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                                   </Shape>
                                                                 </Transform>
                                                               </HAnimSegment>
-                                                              <HAnimJoint DEF='hanim_l_carpal_distal_interphalangeal_4' center='0.18067499999999997 0.5807249775 -0.0197775' name='l_carpal_distal_interphalangeal_4'>
+                                                              <HAnimJoint DEF='hanim_l_carpal_distal_interphalangeal_4' center='8.0215 0.7557760704294078 -0.4145' name='l_carpal_distal_interphalangeal_4'>
                                                                 <HAnimSegment DEF='hanim_l_carpal_distal_phalanx_4' name='l_carpal_distal_phalanx_4'>
-                                                                  <Transform translation='0.18067499999999997 0.5807249775 -0.0197775'>
+                                                                  <Transform translation='8.0215 0.7557760704294078 -0.4145'>
                                                                     <Shape>
                                                                       <Appearance>
                                                                         <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2131,9 +2131,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                           </HAnimJoint>
                                                         </HAnimJoint>
                                                       </HAnimJoint>
-                                                      <HAnimJoint DEF='hanim_l_carpometacarpal_5' center='0.1816425 0.688275 -0.0327825' name='l_carpometacarpal_5'>
+                                                      <HAnimJoint DEF='hanim_l_carpometacarpal_5' center='8.0645 0.8978403941843119 -0.9925' name='l_carpometacarpal_5'>
                                                         <HAnimSegment DEF='hanim_l_metacarpal_5' name='l_metacarpal_5'>
-                                                          <Transform translation='0.1816425 0.688275 -0.0327825'>
+                                                          <Transform translation='8.0645 0.8978403941843119 -0.9925'>
                                                             <Shape>
                                                               <Appearance>
                                                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2146,9 +2146,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                             </Shape>
                                                           </Transform>
                                                         </HAnimSegment>
-                                                        <HAnimJoint DEF='hanim_l_metacarpophalangeal_5' center='0.18333 0.6381000225 -0.0370575' name='l_metacarpophalangeal_5'>
+                                                        <HAnimJoint DEF='hanim_l_metacarpophalangeal_5' center='8.1395 0.831563567064587 -1.1825' name='l_metacarpophalangeal_5'>
                                                           <HAnimSegment DEF='hanim_l_carpal_proximal_phalanx_5' name='l_carpal_proximal_phalanx_5'>
-                                                            <Transform translation='0.18333 0.6381000225 -0.0370575'>
+                                                            <Transform translation='8.1395 0.831563567064587 -1.1825'>
                                                               <Shape>
                                                                 <Appearance>
                                                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2161,9 +2161,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                               </Shape>
                                                             </Transform>
                                                           </HAnimSegment>
-                                                          <HAnimJoint DEF='hanim_l_carpal_proximal_interphalangeal_5' center='0.181665 0.621 -0.0371475' name='l_carpal_proximal_interphalangeal_5'>
+                                                          <HAnimJoint DEF='hanim_l_carpal_proximal_interphalangeal_5' center='8.0655 0.8089759090038352 -1.1865' name='l_carpal_proximal_interphalangeal_5'>
                                                             <HAnimSegment DEF='hanim_l_carpal_middle_phalanx_5' name='l_carpal_middle_phalanx_5'>
-                                                              <Transform translation='0.181665 0.621 -0.0371475'>
+                                                              <Transform translation='8.0655 0.8089759090038352 -1.1865'>
                                                                 <Shape>
                                                                   <Appearance>
                                                                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2176,9 +2176,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                                 </Shape>
                                                               </Transform>
                                                             </HAnimSegment>
-                                                            <HAnimJoint DEF='hanim_l_carpal_distal_interphalangeal_5' center='0.18080999999999997 0.602325 -0.0369675' name='l_carpal_distal_interphalangeal_5'>
+                                                            <HAnimJoint DEF='hanim_l_carpal_distal_interphalangeal_5' center='8.0275 0.7843078412112614 -1.1785' name='l_carpal_distal_interphalangeal_5'>
                                                               <HAnimSegment DEF='hanim_l_carpal_distal_phalanx_5' name='l_carpal_distal_phalanx_5'>
-                                                                <Transform translation='0.18080999999999997 0.602325 -0.0369675'>
+                                                                <Transform translation='8.0275 0.7843078412112614 -1.1785'>
                                                                   <Shape>
                                                                     <Appearance>
                                                                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2200,9 +2200,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                 </HAnimJoint>
                                               </HAnimJoint>
                                             </HAnimJoint>
-                                            <HAnimJoint DEF='hanim_r_sternoclavicular' center='-0.038474999999999995 1.2087000225 -0.01378575' name='r_sternoclavicular'>
+                                            <HAnimJoint DEF='hanim_r_sternoclavicular' center='-1.7185 1.5852770601003359 -0.1482' name='r_sternoclavicular'>
                                               <HAnimSegment DEF='hanim_r_clavicle' name='r_clavicle'>
-                                                <Transform translation='-0.038474999999999995 1.2087000225 -0.01378575'>
+                                                <Transform translation='-1.7185 1.5852770601003359 -0.1482'>
                                                   <Shape>
                                                     <Appearance>
                                                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2215,9 +2215,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                   </Shape>
                                                 </Transform>
                                               </HAnimSegment>
-                                              <HAnimJoint DEF='hanim_r_acromioclavicular' center='-0.12294000000000001 1.1918250225 -0.012897' name='r_acromioclavicular'>
+                                              <HAnimJoint DEF='hanim_r_acromioclavicular' center='-5.4725 1.562986637396203 -0.10870000000000002' name='r_acromioclavicular'>
                                                 <HAnimSegment DEF='hanim_r_scapula' name='r_scapula'>
-                                                  <Transform translation='-0.12294000000000001 1.1918250225 -0.012897'>
+                                                  <Transform translation='-5.4725 1.562986637396203 -0.10870000000000002'>
                                                     <Shape>
                                                       <Appearance>
                                                         <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2230,9 +2230,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                     </Shape>
                                                   </Transform>
                                                 </HAnimSegment>
-                                                <HAnimJoint DEF='hanim_r_shoulder' center='-0.1647 1.1785500224999998 -0.003267' name='r_shoulder'>
+                                                <HAnimJoint DEF='hanim_r_shoulder' center='-7.3285 1.5454515048689517 0.31930000000000003' name='r_shoulder'>
                                                   <HAnimSegment DEF='hanim_r_upperarm' name='r_upperarm'>
-                                                    <Transform translation='-0.1647 1.1785500224999998 -0.003267'>
+                                                    <Transform translation='-7.3285 1.5454515048689517 0.31930000000000003'>
                                                       <Shape>
                                                         <Appearance>
                                                           <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2245,9 +2245,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                       </Shape>
                                                     </Transform>
                                                   </HAnimSegment>
-                                                  <HAnimJoint DEF='hanim_r_elbow' center='-0.1817325 0.9287999774999999 -0.005629499999999999' name='r_elbow'>
+                                                  <HAnimJoint DEF='hanim_r_elbow' center='-8.0855 1.2155531894066565 0.21430000000000005' name='r_elbow'>
                                                     <HAnimSegment DEF='hanim_r_forearm' name='r_forearm'>
-                                                      <Transform translation='-0.1817325 0.9287999774999999 -0.005629499999999999'>
+                                                      <Transform translation='-8.0855 1.2155531894066565 0.21430000000000005'>
                                                         <Shape>
                                                           <Appearance>
                                                             <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2260,9 +2260,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                         </Shape>
                                                       </Transform>
                                                     </HAnimSegment>
-                                                    <HAnimJoint DEF='hanim_r_radiocarpal' center='-0.181575 0.7242749775 -0.005022' name='r_radiocarpal'>
+                                                    <HAnimJoint DEF='hanim_r_radiocarpal' center='-8.0785 0.9453932662325654 0.24130000000000001' name='r_radiocarpal'>
                                                       <HAnimSegment DEF='hanim_r_carpal' name='r_carpal'>
-                                                        <Transform translation='-0.181575 0.7242749775 -0.005022'>
+                                                        <Transform translation='-8.0785 0.9453932662325654 0.24130000000000001'>
                                                           <Shape>
                                                             <Appearance>
                                                               <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2275,9 +2275,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                           </Shape>
                                                         </Transform>
                                                       </HAnimSegment>
-                                                      <HAnimJoint DEF='hanim_r_midcarpal_1' center='-0.18096749999999998 0.7060499775 0.019327499999999997' name='r_midcarpal_1'>
+                                                      <HAnimJoint DEF='hanim_r_midcarpal_1' center='-8.051499999999999 0.9213196097121018 1.3235000000000001' name='r_midcarpal_1'>
                                                         <HAnimSegment DEF='hanim_r_trapezium' name='r_trapezium'>
-                                                          <Transform translation='-0.18096749999999998 0.7060499775 0.019327499999999997'>
+                                                          <Transform translation='-8.051499999999999 0.9213196097121018 1.3235000000000001'>
                                                             <Shape>
                                                               <Appearance>
                                                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2290,9 +2290,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                             </Shape>
                                                           </Transform>
                                                         </HAnimSegment>
-                                                        <HAnimJoint DEF='hanim_r_carpometacarpal_1' center='-0.180135 0.6925500225 0.0259875' name='r_carpometacarpal_1'>
+                                                        <HAnimJoint DEF='hanim_r_carpometacarpal_1' center='-8.0145 0.9034873309899225 1.6195' name='r_carpometacarpal_1'>
                                                           <HAnimSegment DEF='hanim_r_metacarpal_1' name='r_metacarpal_1'>
-                                                            <Transform translation='-0.180135 0.6925500225 0.0259875'>
+                                                            <Transform translation='-8.0145 0.9034873309899225 1.6195'>
                                                               <Shape>
                                                                 <Appearance>
                                                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2305,9 +2305,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                               </Shape>
                                                             </Transform>
                                                           </HAnimSegment>
-                                                          <HAnimJoint DEF='hanim_r_metacarpophalangeal_1' center='-0.1806525 0.67275 0.035775' name='r_metacarpophalangeal_1'>
+                                                          <HAnimJoint DEF='hanim_r_metacarpophalangeal_1' center='-8.0375 0.8773332052965095 2.0545' name='r_metacarpophalangeal_1'>
                                                             <HAnimSegment DEF='hanim_r_carpal_proximal_phalanx_1' name='r_carpal_proximal_phalanx_1'>
-                                                              <Transform translation='-0.1806525 0.67275 0.035775'>
+                                                              <Transform translation='-8.0375 0.8773332052965095 2.0545'>
                                                                 <Shape>
                                                                   <Appearance>
                                                                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2320,9 +2320,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                                 </Shape>
                                                               </Transform>
                                                             </HAnimSegment>
-                                                            <HAnimJoint DEF='hanim_r_carpal_interphalangeal_1' center='-0.1822725 0.654075 0.04965749999999999' name='r_carpal_interphalangeal_1'>
+                                                            <HAnimJoint DEF='hanim_r_carpal_interphalangeal_1' center='-8.1095 0.8526651375039358 2.6715' name='r_carpal_interphalangeal_1'>
                                                               <HAnimSegment DEF='hanim_r_carpal_distal_phalanx_1' name='r_carpal_distal_phalanx_1'>
-                                                                <Transform translation='-0.1822725 0.654075 0.04965749999999999'>
+                                                                <Transform translation='-8.1095 0.8526651375039358 2.6715'>
                                                                   <Shape>
                                                                     <Appearance>
                                                                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2339,9 +2339,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                           </HAnimJoint>
                                                         </HAnimJoint>
                                                       </HAnimJoint>
-                                                      <HAnimJoint DEF='hanim_r_midcarpal_2' center='-0.18096749999999998 0.70695 0.00841725' name='r_midcarpal_2'>
+                                                      <HAnimJoint DEF='hanim_r_midcarpal_2' center='-8.051499999999999 0.9225084619768859 0.8386' name='r_midcarpal_2'>
                                                         <HAnimSegment DEF='hanim_r_trapezoid' name='r_trapezoid'>
-                                                          <Transform translation='-0.18096749999999998 0.70695 0.00841725'>
+                                                          <Transform translation='-8.051499999999999 0.9225084619768859 0.8386'>
                                                             <Shape>
                                                               <Appearance>
                                                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2354,9 +2354,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                             </Shape>
                                                           </Transform>
                                                         </HAnimSegment>
-                                                        <HAnimJoint DEF='hanim_r_carpometacarpal_2' center='-0.18089999999999998 0.6875999775 0.009729' name='r_carpometacarpal_2'>
+                                                        <HAnimJoint DEF='hanim_r_carpometacarpal_2' center='-8.048499999999999 0.8969487475555831 0.8969' name='r_carpometacarpal_2'>
                                                           <HAnimSegment DEF='hanim_r_metacarpal_2' name='r_metacarpal_2'>
-                                                            <Transform translation='-0.18089999999999998 0.6875999775 0.009729'>
+                                                            <Transform translation='-8.048499999999999 0.8969487475555831 0.8969'>
                                                               <Shape>
                                                                 <Appearance>
                                                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2369,9 +2369,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                               </Shape>
                                                             </Transform>
                                                           </HAnimSegment>
-                                                          <HAnimJoint DEF='hanim_r_metacarpophalangeal_2' center='-0.18335249999999997 0.6372 0.015075' name='r_metacarpophalangeal_2'>
+                                                          <HAnimJoint DEF='hanim_r_metacarpophalangeal_2' center='-8.157499999999999 0.830374714799803 1.1345' name='r_metacarpophalangeal_2'>
                                                             <HAnimSegment DEF='hanim_r_carpal_proximal_phalanx_2' name='r_carpal_proximal_phalanx_2'>
-                                                              <Transform translation='-0.18335249999999997 0.6372 0.015075'>
+                                                              <Transform translation='-8.157499999999999 0.830374714799803 1.1345'>
                                                                 <Shape>
                                                                   <Appearance>
                                                                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2384,9 +2384,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                                 </Shape>
                                                               </Transform>
                                                             </HAnimSegment>
-                                                            <HAnimJoint DEF='hanim_r_carpal_proximal_interphalangeal_2' center='-0.18132749999999997 0.6068249775 0.014183999999999999' name='r_carpal_proximal_interphalangeal_2'>
+                                                            <HAnimJoint DEF='hanim_r_carpal_proximal_interphalangeal_2' center='-8.067499999999999 0.7902519242118 1.0949' name='r_carpal_proximal_interphalangeal_2'>
                                                               <HAnimSegment DEF='hanim_r_carpal_middle_phalanx_2' name='r_carpal_middle_phalanx_2'>
-                                                                <Transform translation='-0.18132749999999997 0.6068249775 0.014183999999999999'>
+                                                                <Transform translation='-8.067499999999999 0.7902519242118 1.0949'>
                                                                   <Shape>
                                                                     <Appearance>
                                                                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2399,9 +2399,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                                   </Shape>
                                                                 </Transform>
                                                               </HAnimSegment>
-                                                              <HAnimJoint DEF='hanim_r_carpal_distal_interphalangeal_2' center='-0.1802925 0.5816250000000001 0.01338525' name='r_carpal_distal_interphalangeal_2'>
+                                                              <HAnimJoint DEF='hanim_r_carpal_distal_interphalangeal_2' center='-8.0215 0.7569649226941918 1.0594000000000001' name='r_carpal_distal_interphalangeal_2'>
                                                                 <HAnimSegment DEF='hanim_r_carpal_distal_phalanx_2' name='r_carpal_distal_phalanx_2'>
-                                                                  <Transform translation='-0.1802925 0.5816250000000001 0.01338525'>
+                                                                  <Transform translation='-8.0215 0.7569649226941918 1.0594000000000001'>
                                                                     <Shape>
                                                                       <Appearance>
                                                                         <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2419,9 +2419,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                           </HAnimJoint>
                                                         </HAnimJoint>
                                                       </HAnimJoint>
-                                                      <HAnimJoint DEF='hanim_r_midcarpal_3' center='-0.18072 0.708525 -0.004797' name='r_midcarpal_3'>
+                                                      <HAnimJoint DEF='hanim_r_midcarpal_3' center='-8.0405 0.9245889014292714 0.2513' name='r_midcarpal_3'>
                                                         <HAnimSegment DEF='hanim_r_capitate' name='r_capitate'>
-                                                          <Transform translation='-0.18072 0.708525 -0.004797'>
+                                                          <Transform translation='-8.0405 0.9245889014292714 0.2513'>
                                                             <Shape>
                                                               <Appearance>
                                                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2434,9 +2434,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                             </Shape>
                                                           </Transform>
                                                         </HAnimSegment>
-                                                        <HAnimJoint DEF='hanim_r_carpometacarpal_3' center='-0.18072 0.6858 -0.00625275' name='r_carpometacarpal_3'>
+                                                        <HAnimJoint DEF='hanim_r_carpometacarpal_3' center='-8.0405 0.8945711321877058 0.18660000000000004' name='r_carpometacarpal_3'>
                                                           <HAnimSegment DEF='hanim_r_metacarpal_3' name='r_metacarpal_3'>
-                                                            <Transform translation='-0.18072 0.6858 -0.00625275'>
+                                                            <Transform translation='-8.0405 0.8945711321877058 0.18660000000000004'>
                                                               <Shape>
                                                                 <Appearance>
                                                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2449,9 +2449,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                               </Shape>
                                                             </Transform>
                                                           </HAnimSegment>
-                                                          <HAnimJoint DEF='hanim_r_metacarpophalangeal_3' center='-0.1833075 0.6349499775 -0.00391725' name='r_metacarpophalangeal_3'>
+                                                          <HAnimJoint DEF='hanim_r_metacarpophalangeal_3' center='-8.1555 0.8274026287186883 0.2904' name='r_metacarpophalangeal_3'>
                                                             <HAnimSegment DEF='hanim_r_carpal_proximal_phalanx_3' name='r_carpal_proximal_phalanx_3'>
-                                                              <Transform translation='-0.1833075 0.6349499775 -0.00391725'>
+                                                              <Transform translation='-8.1555 0.8274026287186883 0.2904'>
                                                                 <Shape>
                                                                   <Appearance>
                                                                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2464,9 +2464,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                                 </Shape>
                                                               </Transform>
                                                             </HAnimSegment>
-                                                            <HAnimJoint DEF='hanim_r_carpal_proximal_interphalangeal_3' center='-0.18132749999999997 0.6032249775 -0.003537' name='r_carpal_proximal_interphalangeal_3'>
+                                                            <HAnimJoint DEF='hanim_r_carpal_proximal_interphalangeal_3' center='-8.067499999999999 0.7854966340349183 0.3073' name='r_carpal_proximal_interphalangeal_3'>
                                                               <HAnimSegment DEF='hanim_r_carpal_middle_phalanx_3' name='r_carpal_middle_phalanx_3'>
-                                                                <Transform translation='-0.18132749999999997 0.6032249775 -0.003537'>
+                                                                <Transform translation='-8.067499999999999 0.7854966340349183 0.3073'>
                                                                   <Shape>
                                                                     <Appearance>
                                                                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2479,9 +2479,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                                   </Shape>
                                                                 </Transform>
                                                               </HAnimSegment>
-                                                              <HAnimJoint DEF='hanim_r_carpal_distal_interphalangeal_3' center='-0.1802925 0.575325 -0.0037597499999999996' name='r_carpal_distal_interphalangeal_3'>
+                                                              <HAnimJoint DEF='hanim_r_carpal_distal_interphalangeal_3' center='-8.0215 0.7486431648846488 0.2974' name='r_carpal_distal_interphalangeal_3'>
                                                                 <HAnimSegment DEF='hanim_r_carpal_distal_phalanx_3' name='r_carpal_distal_phalanx_3'>
-                                                                  <Transform translation='-0.1802925 0.575325 -0.0037597499999999996'>
+                                                                  <Transform translation='-8.0215 0.7486431648846488 0.2974'>
                                                                     <Shape>
                                                                       <Appearance>
                                                                         <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2499,9 +2499,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                           </HAnimJoint>
                                                         </HAnimJoint>
                                                       </HAnimJoint>
-                                                      <HAnimJoint DEF='hanim_r_midcarpal_4_5' center='-0.18072 0.7058250224999999 -0.025739999999999996' name='r_midcarpal_4_5'>
+                                                      <HAnimJoint DEF='hanim_r_midcarpal_4_5' center='-8.0405 0.9210224635171738 -0.6794999999999999' name='r_midcarpal_4_5'>
                                                         <HAnimSegment DEF='hanim_r_hamate' name='r_hamate'>
-                                                          <Transform translation='-0.18072 0.7058250224999999 -0.025739999999999996'>
+                                                          <Transform translation='-8.0405 0.9210224635171738 -0.6794999999999999'>
                                                             <Shape>
                                                               <Appearance>
                                                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2514,9 +2514,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                             </Shape>
                                                           </Transform>
                                                         </HAnimSegment>
-                                                        <HAnimJoint DEF='hanim_r_carpometacarpal_4' center='-0.18072 0.68625 -0.01991925' name='r_carpometacarpal_4'>
+                                                        <HAnimJoint DEF='hanim_r_carpometacarpal_4' center='-8.0405 0.895165543459816 -0.42079999999999995' name='r_carpometacarpal_4'>
                                                           <HAnimSegment DEF='hanim_r_metacarpal_4' name='r_metacarpal_4'>
-                                                            <Transform translation='-0.18072 0.68625 -0.01991925'>
+                                                            <Transform translation='-8.0405 0.895165543459816 -0.42079999999999995'>
                                                               <Shape>
                                                                 <Appearance>
                                                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2529,9 +2529,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                               </Shape>
                                                             </Transform>
                                                           </HAnimSegment>
-                                                          <HAnimJoint DEF='hanim_r_metacarpophalangeal_4' center='-0.1833075 0.63405 -0.021440249999999998' name='r_metacarpophalangeal_4'>
+                                                          <HAnimJoint DEF='hanim_r_metacarpophalangeal_4' center='-8.1555 0.8262138358950314 -0.48839999999999995' name='r_metacarpophalangeal_4'>
                                                             <HAnimSegment DEF='hanim_r_carpal_proximal_phalanx_4' name='r_carpal_proximal_phalanx_4'>
-                                                              <Transform translation='-0.1833075 0.63405 -0.021440249999999998'>
+                                                              <Transform translation='-8.1555 0.8262138358950314 -0.48839999999999995'>
                                                                 <Shape>
                                                                   <Appearance>
                                                                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2544,9 +2544,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                                 </Shape>
                                                               </Transform>
                                                             </HAnimSegment>
-                                                            <HAnimJoint DEF='hanim_r_carpal_proximal_interphalangeal_4' center='-0.18132749999999997 0.6065999774999999 -0.020645999999999998' name='r_carpal_proximal_interphalangeal_4'>
+                                                            <HAnimJoint DEF='hanim_r_carpal_proximal_interphalangeal_4' center='-8.067499999999999 0.7899547185757448 -0.45309999999999995' name='r_carpal_proximal_interphalangeal_4'>
                                                               <HAnimSegment DEF='hanim_r_carpal_middle_phalanx_4' name='r_carpal_middle_phalanx_4'>
-                                                                <Transform translation='-0.18132749999999997 0.6065999774999999 -0.020645999999999998'>
+                                                                <Transform translation='-8.067499999999999 0.7899547185757448 -0.45309999999999995'>
                                                                   <Shape>
                                                                     <Appearance>
                                                                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2559,9 +2559,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                                   </Shape>
                                                                 </Transform>
                                                               </HAnimSegment>
-                                                              <HAnimJoint DEF='hanim_r_carpal_distal_interphalangeal_4' center='-0.1802925 0.5807249775 -0.0197775' name='r_carpal_distal_interphalangeal_4'>
+                                                              <HAnimJoint DEF='hanim_r_carpal_distal_interphalangeal_4' center='-8.0215 0.7557760704294078 -0.4145' name='r_carpal_distal_interphalangeal_4'>
                                                                 <HAnimSegment DEF='hanim_r_carpal_distal_phalanx_4' name='r_carpal_distal_phalanx_4'>
-                                                                  <Transform translation='-0.1802925 0.5807249775 -0.0197775'>
+                                                                  <Transform translation='-8.0215 0.7557760704294078 -0.4145'>
                                                                     <Shape>
                                                                       <Appearance>
                                                                         <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2579,9 +2579,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                           </HAnimJoint>
                                                         </HAnimJoint>
                                                       </HAnimJoint>
-                                                      <HAnimJoint DEF='hanim_r_carpometacarpal_5' center='-0.18125999999999998 0.688275 -0.0327825' name='r_carpometacarpal_5'>
+                                                      <HAnimJoint DEF='hanim_r_carpometacarpal_5' center='-8.064499999999999 0.8978403941843119 -0.9925' name='r_carpometacarpal_5'>
                                                         <HAnimSegment DEF='hanim_r_metacarpal_5' name='r_metacarpal_5'>
-                                                          <Transform translation='-0.18125999999999998 0.688275 -0.0327825'>
+                                                          <Transform translation='-8.064499999999999 0.8978403941843119 -0.9925'>
                                                             <Shape>
                                                               <Appearance>
                                                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2594,9 +2594,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                             </Shape>
                                                           </Transform>
                                                         </HAnimSegment>
-                                                        <HAnimJoint DEF='hanim_r_metacarpophalangeal_5' center='-0.18297 0.6381000225 -0.0370575' name='r_metacarpophalangeal_5'>
+                                                        <HAnimJoint DEF='hanim_r_metacarpophalangeal_5' center='-8.1405 0.831563567064587 -1.1825' name='r_metacarpophalangeal_5'>
                                                           <HAnimSegment DEF='hanim_r_carpal_proximal_phalanx_5' name='r_carpal_proximal_phalanx_5'>
-                                                            <Transform translation='-0.18297 0.6381000225 -0.0370575'>
+                                                            <Transform translation='-8.1405 0.831563567064587 -1.1825'>
                                                               <Shape>
                                                                 <Appearance>
                                                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2609,9 +2609,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                               </Shape>
                                                             </Transform>
                                                           </HAnimSegment>
-                                                          <HAnimJoint DEF='hanim_r_carpal_proximal_interphalangeal_5' center='-0.181305 0.621 -0.0371475' name='r_carpal_proximal_interphalangeal_5'>
+                                                          <HAnimJoint DEF='hanim_r_carpal_proximal_interphalangeal_5' center='-8.0665 0.8089759090038352 -1.1865' name='r_carpal_proximal_interphalangeal_5'>
                                                             <HAnimSegment DEF='hanim_r_carpal_middle_phalanx_5' name='r_carpal_middle_phalanx_5'>
-                                                              <Transform translation='-0.181305 0.621 -0.0371475'>
+                                                              <Transform translation='-8.0665 0.8089759090038352 -1.1865'>
                                                                 <Shape>
                                                                   <Appearance>
                                                                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2624,9 +2624,9 @@ x3d.py package 4.0.64.4 loaded, have fun with X3D Graphics!
                                                                 </Shape>
                                                               </Transform>
                                                             </HAnimSegment>
-                                                            <HAnimJoint DEF='hanim_r_carpal_distal_interphalangeal_5' center='-0.18044999999999997 0.602325 -0.0369675' name='r_carpal_distal_interphalangeal_5'>
+                                                            <HAnimJoint DEF='hanim_r_carpal_distal_interphalangeal_5' center='-8.0285 0.7843078412112614 -1.1785' name='r_carpal_distal_interphalangeal_5'>
                                                               <HAnimSegment DEF='hanim_r_carpal_distal_phalanx_5' name='r_carpal_distal_phalanx_5'>
-                                                                <Transform translation='-0.18044999999999997 0.602325 -0.0369675'>
+                                                                <Transform translation='-8.0285 0.7843078412112614 -1.1785'>
                                                                   <Shape>
                                                                     <Appearance>
                                                                       <Material diffuseColor='0.588 0.588 0.588'/>
