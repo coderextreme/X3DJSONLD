@@ -283,9 +283,14 @@ ListenerPointSource55.trackCurrentView = True;
 children[14] = ListenerPointSource55;
 
 StreamAudioDestination StreamAudioDestination56 = createNode("StreamAudioDestination");
+StreamAudioDestination56.channelCountMode = "MAX";
+StreamAudioDestination56.channelInterpretation = "SPEAKERS";
 SpatialSound SpatialSound57 = createNode("SpatialSound");
 SpatialSound57.DEF = "Audio1";
+SpatialSound57.distanceModel = "INVERSE";
 Gain Gain58 = createNode("Gain");
+Gain58.channelCountMode = "MAX";
+Gain58.channelInterpretation = "SPEAKERS";
 AudioClip AudioClip59 = createNode("AudioClip");
 AudioClip59.description = "Violin";
 AudioClip59.loop = True;
@@ -304,7 +309,10 @@ StreamAudioDestination56.children[0] = SpatialSound57;
 
 SpatialSound SpatialSound60 = createNode("SpatialSound");
 SpatialSound60.DEF = "Audio2";
+SpatialSound60.distanceModel = "INVERSE";
 Gain Gain61 = createNode("Gain");
+Gain61.channelCountMode = "MAX";
+Gain61.channelInterpretation = "SPEAKERS";
 AudioClip AudioClip62 = createNode("AudioClip");
 AudioClip62.description = "Saxophone";
 AudioClip62.loop = True;

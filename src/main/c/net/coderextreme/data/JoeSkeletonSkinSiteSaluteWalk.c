@@ -39,7 +39,7 @@ head1.meta[5] = meta7;
 
 meta meta8 = createNode("meta");
 meta8.name = "modified";
-meta8.content = "2 January 2023";
+meta8.content = "27 January 2023";
 head1.meta[6] = meta8;
 
 meta meta9 = createNode("meta");
@@ -201,7 +201,7 @@ Transform40.DEF = "cordsysfloor";
 Transform40.scale = new SFVec3f(new float[0.175,0.175,0.175]);
 Inline Inline41 = createNode("Inline");
 Inline41.DEF = "CoordinateAxes";
-Inline41.url = new MFString(new java.lang.String["../data/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","../../../Savage/Tools/Authoring/CoordinateAxes.x3d","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","../../../Savage/Tools/Authoring/CoordinateAxes.wrl","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"]);
+Inline41.url = new MFString(new java.lang.String["../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","../../../Savage/Tools/Authoring/CoordinateAxes.x3d","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","../../../Savage/Tools/Authoring/CoordinateAxes.wrl","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.wrl"]);
 Transform40.children = new MFNode();
 
 Transform40.children[0] = Inline41;
@@ -435,7 +435,7 @@ Appearance86.DEF = "SkinAppearance";
 ImageTexture ImageTexture87 = createNode("ImageTexture");
 ImageTexture87.DEF = "zBlueSpiralBkg2";
 ImageTexture87.description = "Blue Spiral Pattern";
-ImageTexture87.url = new MFString(new java.lang.String["../resources/images/zBlueSpiralBkg2.gif","zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"]);
+ImageTexture87.url = new MFString(new java.lang.String["zBlueSpiralBkg2.gif","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/zBlueSpiralBkg2.gif"]);
 Appearance86.texture = ImageTexture87;
 
 Material Material88 = createNode("Material");
@@ -457,8 +457,8 @@ Coordinate89.USE = "TheSkinCoord";
 HAnimHumanoid81.skinCoord = Coordinate89;
 
 HAnimJoint HAnimJoint90 = createNode("HAnimJoint");
-HAnimJoint90.name = "HumanoidRoot";
-HAnimJoint90.DEF = "Joe_HumanoidRoot";
+HAnimJoint90.name = "humanoid_root";
+HAnimJoint90.DEF = "Joe_humanoid_root";
 HAnimJoint90.center = new SFVec3f(new float[0,0.875,0]);
 HAnimJoint90.ulimit = new MFFloat(new float[0,0,0]);
 HAnimJoint90.llimit = new MFFloat(new float[0,0,0]);
@@ -4984,8 +4984,6 @@ HAnimJoint681.children[1] = HAnimJoint691;
 
 HAnimJoint565.children[2] = HAnimJoint681;
 
-HAnimJoint557.children[1] = HAnimJoint565;
-
 HAnimJoint HAnimJoint931 = createNode("HAnimJoint");
 HAnimJoint931.name = "r_sternoclavicular";
 HAnimJoint931.DEF = "Joe_r_sternoclavicular";
@@ -6407,7 +6405,9 @@ HAnimJoint941.children[1] = HAnimJoint957;
 
 HAnimJoint931.children[1] = HAnimJoint941;
 
-HAnimJoint557.children[2] = HAnimJoint931;
+HAnimJoint565.children[3] = HAnimJoint931;
+
+HAnimJoint557.children[1] = HAnimJoint565;
 
 HAnimJoint549.children[1] = HAnimJoint557;
 
