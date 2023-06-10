@@ -39,7 +39,7 @@ head1.meta[5] = meta7;
 
 meta meta8 = createNode("meta");
 meta8.name = "modified";
-meta8.content = "20 September 2020";
+meta8.content = "27 January 2023";
 head1.meta[6] = meta8;
 
 meta meta9 = createNode("meta");
@@ -174,9 +174,9 @@ Group30.DEF = "Joe_Humanoid";
 HAnimHumanoid HAnimHumanoid31 = createNode("HAnimHumanoid");
 HAnimHumanoid31.name = "Human";
 HAnimHumanoid31.DEF = "Joe_Human";
-HAnimHumanoid31.version = "1.0";
+HAnimHumanoid31.version = "2.0";
 HAnimJoint HAnimJoint32 = createNode("HAnimJoint");
-HAnimJoint32.name = "HumanoidRoot";
+HAnimJoint32.name = "humanoid_root";
 HAnimJoint32.DEF = "Joe_HumanoidRoot";
 HAnimJoint32.center = new SFVec3f(new float[0,0.875,0]);
 HAnimJoint32.ulimit = new MFFloat(new float[0,0,0]);
@@ -653,6 +653,10 @@ HAnimJoint73.children = new MFNode();
 
 HAnimJoint73.children[0] = HAnimJoint74;
 
+HAnimJoint72.children = new MFNode();
+
+HAnimJoint72.children[0] = HAnimJoint73;
+
 HAnimJoint HAnimJoint89 = createNode("HAnimJoint");
 HAnimJoint89.name = "l_sternoclavicular";
 HAnimJoint89.DEF = "Joe_l_sternoclavicular";
@@ -929,7 +933,7 @@ HAnimJoint89.children = new MFNode();
 
 HAnimJoint89.children[0] = HAnimJoint90;
 
-HAnimJoint73.children[1] = HAnimJoint89;
+HAnimJoint72.children[1] = HAnimJoint89;
 
 HAnimJoint HAnimJoint113 = createNode("HAnimJoint");
 HAnimJoint113.name = "r_sternoclavicular";
@@ -1207,11 +1211,7 @@ HAnimJoint113.children = new MFNode();
 
 HAnimJoint113.children[0] = HAnimJoint114;
 
-HAnimJoint73.children[2] = HAnimJoint113;
-
-HAnimJoint72.children = new MFNode();
-
-HAnimJoint72.children[0] = HAnimJoint73;
+HAnimJoint72.children[2] = HAnimJoint113;
 
 HAnimJoint71.children = new MFNode();
 

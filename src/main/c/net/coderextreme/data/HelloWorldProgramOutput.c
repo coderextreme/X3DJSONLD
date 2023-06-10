@@ -99,7 +99,7 @@ head1.meta[15] = meta17;
 
 meta meta18 = createNode("meta");
 meta18.name = "modified";
-meta18.content = "4 July 2022";
+meta18.content = "29 January 2023";
 head1.meta[16] = meta18;
 
 meta meta19 = createNode("meta");
@@ -461,8 +461,8 @@ Group74.children[6] = ROUTE83;
 
 children[18] = Group74;
 
-ProtoDeclare ProtoDeclare84 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
+ProtoDeclare ProtoDeclare84 = browser.createX3DFromString(`<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
 <ProtoDeclare name="ArtDeco01Material" appinfo="tooltip: ArtDeco01Material prototype is a Material node" ><ProtoInterface><field name="description" accessType="inputOutput" appinfo="tooltip for descriptionField" type="SFString" value="ArtDeco01Material prototype is a Material node"></field>
 <field name="enabled" accessType="inputOutput" type="SFBool" value="true"></field>
 </ProtoInterface>
@@ -640,8 +640,8 @@ EXPORT112.AS = "WorldInfoDEF3";
 EXPORT112.localDEF = "WorldInfoDEF";
 children[26] = EXPORT112;
 
-ProtoDeclare ProtoDeclare113 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
+ProtoDeclare ProtoDeclare113 = browser.createX3DFromString(`<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
 <ProtoDeclare name="MaterialModulator" appinfo="mimic a Material node and modulate fields as an animation effect" documentation="https://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html" ><ProtoInterface><field name="enabled" accessType="inputOutput" type="SFBool" value="true"></field>
 <field name="diffuseColor" accessType="inputOutput" type="SFColor" value="0 0 0"></field>
 <field name="emissiveColor" accessType="inputOutput" type="SFColor" value="0.05 0.05 0.5"></field>
@@ -871,7 +871,9 @@ MetadataString MetadataString141 = createNode("MetadataString");
 MetadataString141.name = "findThisNameValue";
 MetadataString141.DEF = "FindableMetadataStringTest";
 MetadataString141.value = new MFString(new java.lang.String["test case"]);
-Shape140.metadata = MetadataString141;
+Shape140.metadata = new SFNode();
+
+Shape140.metadata[0] = MetadataString141;
 
 Appearance Appearance142 = createNode("Appearance");
 Appearance142.DEF = "DeclarativeAppearanceExample";
@@ -965,8 +967,8 @@ children[32] = Shape150;
 
 Group Group154 = createNode("Group");
 //Test MFNode children array as an ordered list consisting of comments, statements, ProtoInstance and nodes
-ProtoDeclare ProtoDeclare155 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
+ProtoDeclare ProtoDeclare155 = browser.createX3DFromString(`<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
 <ProtoDeclare name="NewWorldInfo" ><ProtoInterface><field name="description" accessType="initializeOnly" type="SFString"></field>
 </ProtoInterface>
 <ProtoBody><WorldInfo></WorldInfo>
@@ -1026,8 +1028,8 @@ Group154.children[4] = Transform164;
 //Test satisfactorily creates MFNode children array as an ordered list with mixed content
 children[33] = Group154;
 
-ProtoDeclare ProtoDeclare165 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
+ProtoDeclare ProtoDeclare165 = browser.createX3DFromString(`<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
 <ProtoDeclare name="ShaderProto" ><ProtoBody><ProgramShader></ProgramShader>
 </ProtoBody>
 </ProtoDeclare>`);

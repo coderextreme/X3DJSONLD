@@ -471,8 +471,8 @@ Group77.children[6] = ROUTE86;
 
 children[18] = Group77;
 
-ProtoDeclare ProtoDeclare87 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
+ProtoDeclare ProtoDeclare87 = browser.createX3DFromString(`<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
 <ProtoDeclare name="ArtDeco01Material" appinfo="tooltip: ArtDeco01Material prototype is a Material node" ><ProtoInterface><field name="description" accessType="inputOutput" appinfo="tooltip for descriptionField" type="SFString" value="ArtDeco01Material prototype is a Material node"></field>
 <field name="enabled" accessType="inputOutput" type="SFBool" value="true"></field>
 </ProtoInterface>
@@ -650,8 +650,8 @@ EXPORT115.AS = "WorldInfoDEF3";
 EXPORT115.localDEF = "WorldInfoDEF";
 children[26] = EXPORT115;
 
-ProtoDeclare ProtoDeclare116 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
+ProtoDeclare ProtoDeclare116 = browser.createX3DFromString(`<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
 <ProtoDeclare name="MaterialModulator" appinfo="mimic a Material node and modulate fields as an animation effect" documentation="http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html" ><ProtoInterface><field name="enabled" accessType="inputOutput" type="SFBool" value="true"></field>
 <field name="diffuseColor" accessType="inputOutput" type="SFColor" value="0 0 0"></field>
 <field name="emissiveColor" accessType="inputOutput" type="SFColor" value="0.05 0.05 0.5"></field>
@@ -881,7 +881,9 @@ MetadataString MetadataString144 = createNode("MetadataString");
 MetadataString144.name = "findThisNameValue";
 MetadataString144.DEF = "FindableMetadataStringTest";
 MetadataString144.value = new MFString(new java.lang.String["test case"]);
-Shape143.metadata = MetadataString144;
+Shape143.metadata = new SFNode();
+
+Shape143.metadata[0] = MetadataString144;
 
 Appearance Appearance145 = createNode("Appearance");
 Appearance145.DEF = "DeclarativeAppearanceExample";
@@ -975,8 +977,8 @@ children[32] = Shape153;
 
 Group Group157 = createNode("Group");
 //Test MFNode children array as an ordered list consisting of comments, statements, ProtoInstance and nodes
-ProtoDeclare ProtoDeclare158 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
+ProtoDeclare ProtoDeclare158 = browser.createX3DFromString(`<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
 <ProtoDeclare name="NewWorldInfo" ><ProtoInterface><field name="description" accessType="initializeOnly" type="SFString"></field>
 </ProtoInterface>
 <ProtoBody><WorldInfo></WorldInfo>
@@ -1019,8 +1021,8 @@ Group157.children[2] = Transform164;
 //Test satisfactorily creates MFNode children array as an ordered list with mixed content
 children[33] = Group157;
 
-ProtoDeclare ProtoDeclare165 = browser.createX3DFromString(`<?xml version="1.0" encoding="undefined"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D undefined//EN" "https://www.web3d.org/specifications/x3d-undefined.dtd">
+ProtoDeclare ProtoDeclare165 = browser.createX3DFromString(`<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
 <ProtoDeclare name="ShaderProto" ><ProtoBody><ProgramShader></ProgramShader>
 </ProtoBody>
 </ProtoDeclare>`);
