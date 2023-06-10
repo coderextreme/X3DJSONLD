@@ -1070,7 +1070,7 @@ Recommended tools:
                             <xsl:element name="MetadataSet">
                                 <xsl:attribute name="containerField"><xsl:text>metadata</xsl:text></xsl:attribute>
                                 <xsl:attribute name="name"          ><xsl:text>GeoMetadata.summary</xsl:text></xsl:attribute>
-                                <xsl:attribute name="reference"     ><xsl:text>https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-DIS/Part01/components/geospatial.html#GeoMetadata</xsl:text></xsl:attribute>
+                                <xsl:attribute name="reference"     ><xsl:text>https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/components/geospatial.html#GeoMetadata</xsl:text></xsl:attribute>
                                 
                                 <xsl:for-each select="tokenize(@summary, '&quot;\s*(,)?\s*&quot;')">
                                     <xsl:sort select="normalize-space(string(.))" order="ascending"/>
@@ -5578,7 +5578,7 @@ Recommended tools:
                     </xsl:message>
                     <xsl:text>https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid</xsl:text>
                 </xsl:when>
-                <xsl:when test="(local-name(..) = 'MetadataSet') and (local-name() = 'reference') and (../@name  = 'GeoMetadata.summary') and not(. = 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-DIS/Part01/components/geospatial.html#GeoMetadata')">
+                <xsl:when test="(local-name(..) = 'MetadataSet') and (local-name() = 'reference') and (../@name  = 'GeoMetadata.summary') and not(. = 'https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/components/geospatial.html#GeoMetadata')">
                     <xsl:message>
                         <xsl:text disable-output-escaping="yes">*** error: &lt;MetadataSet DEF='</xsl:text>
                         <xsl:value-of select="../@DEF"/>
@@ -5587,10 +5587,10 @@ Recommended tools:
                         <xsl:text>'/&gt; has incorrect reference='</xsl:text>
                         <xsl:value-of select="../@reference"/>
                         <xsl:text> and so replacing with '</xsl:text>
-                    <xsl:text>https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-DIS/Part01/components/geospatial.html#GeoMetadata</xsl:text>
+                    <xsl:text>https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/components/geospatial.html#GeoMetadata</xsl:text>
                         <xsl:text>'</xsl:text>
                     </xsl:message>
-                    <xsl:text>https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-DIS/Part01/components/geospatial.html#GeoMetadata</xsl:text>
+                    <xsl:text>https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-IS.proof/Part01/components/geospatial.html#GeoMetadata</xsl:text>
                 </xsl:when>
                 <!-- TODO more fields: change apostrophes to quotation marks in selected MFString enumerations -->
                 <xsl:when test="(local-name(..)='FontStyle') and (local-name()='justify') and not(contains(string(.),$quot))">

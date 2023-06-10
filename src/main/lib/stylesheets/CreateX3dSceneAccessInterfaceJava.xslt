@@ -3989,6 +3989,13 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 	public static final String FILE_EXTENSION_MARKDOWN = ".md";
 										
 	/**
+	 * File extension for MIDI encoding, with dot prepended: <i>.midi</i>
+	 * @see <a href="https://www.midi.org">MIDI Association</a>
+	 * @see <a href="https://en.wikipedia.org/wiki/MIDI">Wikipedia: MIDI</a>
+	 */
+	public static final String FILE_EXTENSION_MIDI = ".midi";
+										
+	/**
 	 * File extension for PLY file format (Polygon File Format, or Stanford Triangle Format) with dot prepended: <i>.ply</i>.
 	 * @see <a href="https://en.wikipedia.org/wiki/PLY_(file_format)">Wikipedia: PLY (file format)</a>
 	 */
@@ -37065,20 +37072,21 @@ import org.web3d.x3d.sai.X3DException;</xsl:with-param>
 	private static String blenderPath = "";
 		
 	/** Default Blender path default for Windows 7 or 10 operating system, possibly unneeded if <code>blender</code> is in path already.
-	 * <i>Warning:</i> local settings vary, configure path if necessary.
+	 * Can also set <code>BLENDER_PATH</code> environment variable in operating system.
+         * <i>Warning:</i> local settings vary, configure path if necessary.
 	 * @see #checkBlenderPath()
 	 * @see #setBlenderPath(String)
 	 * @see <a href="../../../../../X3DJSAIL.html#properties" target="_blank">X3DJSAIL documentation: properties</a>
-	 * @see <a href="https://docs.blender.org/manual/en/dev/render/workflows/command_line.html#platforms">Blender command line: platforms</a>
+	 * @see <a href="https://docs.blender.org/manual/en/dev/advanced/command_line/index.html">Blender Command Line</a>
 	 */		
-	public static final String BLENDER_PATH_DEFAULT_WINDOWS = "C:\\Program Files\\Blender Foundation\\Blender 3.4"; // escape \
+	public static final String BLENDER_PATH_DEFAULT_WINDOWS = "C:\\Program Files\\Blender Foundation\\Blender 3.5"; // escape \
 	
 	/** Default Blender path default for macOS operating system, possibly unneeded if <code>blender</code> is in path already.
 	 * <i>Warning:</i> local settings vary, configure path if necessary.
 	 * @see #checkBlenderPath()
 	 * @see #setBlenderPath(String)
 	 * @see <a href="../../../../../X3DJSAIL.html#properties" target="_blank">X3DJSAIL documentation: properties</a>
-	 * @see <a href="https://docs.blender.org/manual/en/dev/render/workflows/command_line.html#platforms">Blender command line: platforms</a>
+	 * @see <a href="https://docs.blender.org/manual/en/dev/advanced/command_line/index.html">Blender Command Line</a>
 	 */		
 	public static final String BLENDER_PATH_DEFAULT_MACOS = "/Applications/blender.app/Contents/MacOS/blender";
     // thanks Mike Bailey, Terry Norbraten and Han Chen
@@ -37088,7 +37096,7 @@ import org.web3d.x3d.sai.X3DException;</xsl:with-param>
 	 * @see #checkBlenderPath()
 	 * @see #setBlenderPath(String)
 	 * @see <a href="../../../../../X3DJSAIL.html#properties" target="_blank">X3DJSAIL documentation: properties</a>
-	 * @see <a href="https://docs.blender.org/manual/en/dev/render/workflows/command_line.html#platforms">Blender command line: platforms</a>
+	 * @see <a href="https://docs.blender.org/manual/en/dev/advanced/command_line/index.html">Blender Command Line</a>
 	 */		
 	public static final String BLENDER_PATH_DEFAULT_LINUX = "/usr/bin/blender"; // used on modelexchange.nps.edu
 				
@@ -37571,6 +37579,7 @@ import org.web3d.x3d.sai.X3DException;</xsl:with-param>
      * @return whether successful
      * @see <a href="https://www.MeshLab.net" target="_blank">MeshLab</a>
      * @see <a href="https://en.wikipedia.org/wiki/MeshLab" target="_blank">Wikipedia: MeshLab</a>
+     * @see <a href="https://github.com/cnr-isti-vclab/PyMeshLab" target="_blank">PyMeshLab</a> for Python
      */
     public static boolean convertModel (String inputFileName, String outputFileName)
     {
@@ -37584,6 +37593,7 @@ import org.web3d.x3d.sai.X3DException;</xsl:with-param>
      * @return whether successful
      * @see <a href="https://www.MeshLab.net" target="_blank">MeshLab</a>
      * @see <a href="https://en.wikipedia.org/wiki/MeshLab" target="_blank">Wikipedia: MeshLab</a>
+     * @see <a href="https://github.com/cnr-isti-vclab/PyMeshLab" target="_blank">PyMeshLab</a> for Python
      */
     public static boolean convertModel (String path, String inputFileName, String outputFileName)
     {
@@ -37782,6 +37792,7 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
  @see <a href="https://en.wikipedia.org/wiki/STL_(file_format)" target="_blank">STL (file format)</a>
  @see <a href="https://www.MeshLab.net" target="_blank">MeshLab</a>	
  @see <a href="https://en.wikipedia.org/wiki/MeshLab" target="_blank">Wikipedia: MeshLab</a>
+ @see <a href="https://github.com/cnr-isti-vclab/PyMeshLab" target="_blank">PyMeshLab</a> for Python
  @see <a href="https://sourceforge.net/p/meshlab/discussion/499533/thread/c266b0c3" target="_blank">SourceForge: meshlab in command-line?</a>
  @see <a href="https://sourceforge.net/p/meshlab/discussion/499533/thread/86cf0d34" target="_blank">SourceForge: Automating Meshlab conversion </a>
  @see <a href="https://github.com/cnr-isti-vclab/meshlab/blob/master/src/meshlabserver/meshlabserver.txt" target="_blank">GitHub: meshlabserver.txt command-line help</a>
@@ -37817,6 +37828,7 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
     /** Default name of <code>meshlabserver</code> executable on local system for command-line MeshLab invocation: <code>meshlabserver.exe</code> on Windows, <code>meshlabserver</code> otherwise.
      * @see <a href="https://www.MeshLab.net" target="_blank">MeshLab</a>
      * @see <a href="https://en.wikipedia.org/wiki/MeshLab" target="_blank">Wikipedia: MeshLab</a>
+     * @see <a href="https://github.com/cnr-isti-vclab/PyMeshLab" target="_blank">PyMeshLab</a> for Python
      * @see <a href="https://stackoverflow.com/questions/65825861/where-is-meshlabserver-exe-in-2020-12"><https://stackoverflow.com/questions/65825861/where-is-meshlabserver-exe-in-2020-12</a>
 	 * @see #checkMeshLabPath()
 	 * @see #setMeshLabPath(String)
@@ -37826,6 +37838,7 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
 	/** Actual name of <code>meshlabserver</code> executable on local system for command-line MeshLab invocation: <code>meshlabserver.exe</code> on Windows, <code>meshlabserver</code> otherwise.
      * @see <a href="https://www.MeshLab.net" target="_blank">MeshLab</a>
      * @see <a href="https://en.wikipedia.org/wiki/MeshLab" target="_blank">Wikipedia: MeshLab</a>
+     * @see <a href="https://github.com/cnr-isti-vclab/PyMeshLab" target="_blank">PyMeshLab</a> for Python
 	 * @see #checkMeshLabPath()
 	 * @see #setMeshLabPath(String)
 	 */
@@ -37861,16 +37874,19 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
 	/** MeshLab path on local system for command-line MeshLab invocation.
          * @see <a href="https://www.MeshLab.net" target="_blank">MeshLab</a>
          * @see <a href="https://en.wikipedia.org/wiki/MeshLab" target="_blank">Wikipedia: MeshLab</a>
+         * @see <a href="https://github.com/cnr-isti-vclab/PyMeshLab" target="_blank">PyMeshLab</a> for Python
 	 */
 	private static String meshLabPath = "";
 		
-	/** Default MeshLab path default for Windows 7 or 10 operating system, possibly unneeded if <code>meshlabserver</code> is in path already.
-	 * <i>Warning:</i> local settings vary, configure path if necessary.
+	/** Default MeshLab path default for Windows operating system.
+         * Can also set <code>MESHLAB_PATH</code> environment variable in operating system.
+         * <i>Warning:</i> local settings vary, configure path if necessary.
 	 * @see #checkMeshLabPath()
 	 * @see #setMeshLabPath(String)
 	 * @see <a href="../../../../../X3DJSAIL.html#properties" target="_blank">X3DJSAIL documentation: properties</a>
          * @see <a href="https://www.MeshLab.net" target="_blank">MeshLab</a>
          * @see <a href="https://en.wikipedia.org/wiki/MeshLab" target="_blank">Wikipedia: MeshLab</a>
+         * @see <a href="https://github.com/cnr-isti-vclab/PyMeshLab" target="_blank">PyMeshLab</a> for Python
 	 */		
 	public static final String MESHLAB_PATH_DEFAULT_WINDOWS = "C:\\Program Files\\VCG\\MeshLab"; // escape \
 	
@@ -37881,6 +37897,7 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
 	 * @see <a href="../../../../../X3DJSAIL.html#properties" target="_blank">X3DJSAIL documentation: properties</a>
          * @see <a href="https://www.MeshLab.net" target="_blank">MeshLab</a>
          * @see <a href="https://en.wikipedia.org/wiki/MeshLab" target="_blank">Wikipedia: MeshLab</a>
+         * @see <a href="https://github.com/cnr-isti-vclab/PyMeshLab" target="_blank">PyMeshLab</a> for Python
 	 */		
 	public static final String MESHLAB_PATH_DEFAULT_MACOS = "/Applications/meshlab.app/Contents/MacOS/meshlabserver"; // TODO confirm/correct
 
@@ -37891,6 +37908,7 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
 	 * @see <a href="../../../../../X3DJSAIL.html#properties" target="_blank">X3DJSAIL documentation: properties</a>
          * @see <a href="https://www.MeshLab.net" target="_blank">MeshLab</a>
          * @see <a href="https://en.wikipedia.org/wiki/MeshLab" target="_blank">Wikipedia: MeshLab</a>
+         * @see <a href="https://github.com/cnr-isti-vclab/PyMeshLab" target="_blank">PyMeshLab</a> for Python
 	 */		
 	public static final String MESHLAB_PATH_DEFAULT_LINUX = "/usr/bin/meshlab"; // TODO confirm/correct
 				
@@ -37931,10 +37949,11 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
     /**
      * Check MeshLab local path and also executable name, reset to operating system defaults if necessary.
      * Executable name: <code>meshlabserver.exe</code> on Windows, <code>meshlabserver</code> otherwise.
-    * @see #checkMeshLabPath()
-    * @see #setMeshLabPath(String)
+     * @see #checkMeshLabPath()
+     * @see #setMeshLabPath(String)
      * @see <a href="https://www.MeshLab.net" target="_blank">MeshLab</a>
      * @see <a href="https://en.wikipedia.org/wiki/MeshLab" target="_blank">Wikipedia: MeshLab</a>
+     * @see <a href="https://github.com/cnr-isti-vclab/PyMeshLab" target="_blank">PyMeshLab</a> for Python
      * @see #getMeshLabServerExecutableName()
      * @see #setMeshLabServerExecutableName(String)
      */
@@ -37995,6 +38014,7 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
      * @return console results
      * @see <a href="https://www.MeshLab.net" target="_blank">MeshLab</a>
      * @see <a href="https://en.wikipedia.org/wiki/MeshLab" target="_blank">Wikipedia: MeshLab</a>
+     * @see <a href="https://github.com/cnr-isti-vclab/PyMeshLab" target="_blank">PyMeshLab</a> for Python
      * @see <a href="https://stackoverflow.com/questions/3630281/is-it-possible-to-capture-a-windows-pop-up-message-box-from-inside-a-java-program">StackOverflow: possible to capture pop-up message box?</a>
      * @see <a href="https://stackoverflow.com/questions/31776546/why-does-runtime-execstring-work-for-some-but-not-all-commands/" target="_blank">Why does Runtime.exec(String) work for some but not all commands?</a>
      * @see <a href="https://stackoverflow.com/questions/13008526/runtime-getruntime-execcmd-hanging" target="_blank">StackOverflow: Runtime.getRuntime().exec(cmd) hanging</a>
@@ -38039,6 +38059,7 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
      * @return whether successful
      * @see <a href="https://www.MeshLab.net" target="_blank">MeshLab</a>
      * @see <a href="https://en.wikipedia.org/wiki/MeshLab" target="_blank">Wikipedia: MeshLab</a>
+     * @see <a href="https://github.com/cnr-isti-vclab/PyMeshLab" target="_blank">PyMeshLab</a> for Python
      */
     public static boolean convertModel (String inputFileName, String outputFileName)
     {
@@ -38052,6 +38073,7 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
      * @return whether successful
      * @see <a href="https://www.MeshLab.net" target="_blank">MeshLab</a>
      * @see <a href="https://en.wikipedia.org/wiki/MeshLab" target="_blank">Wikipedia: MeshLab</a>
+     * @see <a href="https://github.com/cnr-isti-vclab/PyMeshLab" target="_blank">PyMeshLab</a> for Python
      */
     public static boolean convertModel (String path, String inputFileName, String outputFileName)
     {
@@ -38102,6 +38124,7 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
      * @return result, null if unsuccessful
      * @see <a href="https://www.MeshLab.net" target="_blank">MeshLab</a>
      * @see <a href="https://en.wikipedia.org/wiki/MeshLab" target="_blank">Wikipedia: MeshLab</a>
+     * @see <a href="https://github.com/cnr-isti-vclab/PyMeshLab" target="_blank">PyMeshLab</a> for Python
      */
     public static X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ importModel (String fileName)
     {
@@ -38114,6 +38137,7 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
      * @return result, null if unsuccessful
      * @see <a href="https://www.MeshLab.net" target="_blank">MeshLab</a>
      * @see <a href="https://en.wikipedia.org/wiki/MeshLab" target="_blank">Wikipedia: MeshLab</a>
+     * @see <a href="https://github.com/cnr-isti-vclab/PyMeshLab" target="_blank">PyMeshLab</a> for Python
      */
     public static X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ importModel (String path, String fileName)
     {
@@ -38148,6 +38172,7 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
      * @return result, null if unsuccessful
      * @see <a href="https://www.MeshLab.net" target="_blank">MeshLab</a>
      * @see <a href="https://en.wikipedia.org/wiki/MeshLab" target="_blank">Wikipedia: MeshLab</a>
+     * @see <a href="https://github.com/cnr-isti-vclab/PyMeshLab" target="_blank">PyMeshLab</a> for Python
      */
     public X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ importSTL (String path, String fileName)
     {              
@@ -38164,6 +38189,7 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
      * @see <a href="https://en.wikipedia.org/wiki/STL_(file_format)" target="_blank">STL (file format)</a>
      * @see <a href="https://www.MeshLab.net" target="_blank">MeshLab</a>
      * @see <a href="https://en.wikipedia.org/wiki/MeshLab" target="_blank">Wikipedia: MeshLab</a>
+    * @see <a href="https://github.com/cnr-isti-vclab/PyMeshLab" target="_blank">PyMeshLab</a> for Python
      */
     public static boolean exportModelToFile (X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ modelToExport, String path, String fileName)
     {              
@@ -38180,6 +38206,7 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
      * @see <a href="https://en.wikipedia.org/wiki/STL_(file_format)" target="_blank">STL (file format)</a>
      * @see <a href="https://www.MeshLab.net" target="_blank">MeshLab</a>
      * @see <a href="https://en.wikipedia.org/wiki/MeshLab" target="_blank">Wikipedia: MeshLab</a>
+    * @see <a href="https://github.com/cnr-isti-vclab/PyMeshLab" target="_blank">PyMeshLab</a> for Python
      */
     public static boolean exportSTLtoFile (X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ modelToExport, String path, String fileName)
     {
@@ -38203,6 +38230,7 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
      * @see <a href="https://en.wikipedia.org/wiki/STL_(file_format)" target="_blank">STL (file format)</a>
      * @see <a href="https://www.MeshLab.net" target="_blank">MeshLab</a>
      * @see <a href="https://en.wikipedia.org/wiki/MeshLab" target="_blank">Wikipedia: MeshLab</a>
+    * @see <a href="https://github.com/cnr-isti-vclab/PyMeshLab" target="_blank">PyMeshLab</a> for Python
      */
     public static String getMeshLabAnalytics (X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ modelOfInterest)
     {
@@ -38215,6 +38243,7 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
      * @return MeshLab output
      * @see <a href="https://www.MeshLab.net" target="_blank">MeshLab</a>
      * @see <a href="https://en.wikipedia.org/wiki/MeshLab" target="_blank">Wikipedia: MeshLab</a>
+     * @see <a href="https://github.com/cnr-isti-vclab/PyMeshLab" target="_blank">PyMeshLab</a> for Python
      */
     public static MetadataSet getMeshLabAnalyticsX3dMetadataSet (X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ modelOfInterest)
     {
@@ -38226,6 +38255,7 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
      * @return MeshLab version.
      * @see <a href="https://www.MeshLab.net" target="_blank">MeshLab</a>
      * @see <a href="https://en.wikipedia.org/wiki/MeshLab" target="_blank">Wikipedia: MeshLab</a>
+     * @see <a href="https://github.com/cnr-isti-vclab/PyMeshLab" target="_blank">PyMeshLab</a> for Python
      */
     public static String getMeshLabVersion()
     {
@@ -38238,6 +38268,7 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
      * @return whether MeshLab is found.
      * @see <a href="https://www.MeshLab.net" target="_blank">MeshLab</a>
      * @see <a href="https://en.wikipedia.org/wiki/MeshLab" target="_blank">Wikipedia: MeshLab</a>
+     * @see <a href="https://github.com/cnr-isti-vclab/PyMeshLab" target="_blank">PyMeshLab</a> for Python
      */
     public static boolean hasMeshLab()
     {
@@ -38254,6 +38285,7 @@ import org.web3d.x3d.sai.InvalidFieldValueException;</xsl:with-param>
      * @return MeshLab help message.
      * @see <a href="https://www.MeshLab.net" target="_blank">MeshLab</a>
      * @see <a href="https://en.wikipedia.org/wiki/MeshLab" target="_blank">Wikipedia: MeshLab</a>
+     * @see <a href="https://github.com/cnr-isti-vclab/PyMeshLab" target="_blank">PyMeshLab</a> for Python
      */
     public static String getMeshLabHelp()
     {
