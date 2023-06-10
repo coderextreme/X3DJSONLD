@@ -27,7 +27,7 @@ cp /c/x3d-code/www.web3d.org/x3d/stylesheets/*.xslt src/main/lib/stylesheets
 
 node_modules/.bin/xslt3 -t -xsl:src/main/lib/stylesheets/X3dToJson.xslt -export:src/main/lib/stylesheets/X3dToJson.sef.json -nogo
 
-# install python3 packages
+# install python3.11 packages
 # sudo apt-get install python3-bs4
 # sudo apt-get install python3-lxml
 pip3 install bs4
@@ -44,16 +44,16 @@ pip3 install x3d
 # bash generateSchema.sh
 # popd
 pushd src/main/python
-python3 generateSchemas.py
+py generateSchemas.py
 popd
 
 # generate helpful JavaScript classes
 pushd src/main/python
-python3 autoclass.py
-# python3 classes.py
-python3 nodeclasses.py
-python3 fieldTypesGenerator.py
-python3 mapToMethodGenerator.py
+py autoclass.py
+# py classes.py
+py nodeclasses.py
+py fieldTypesGenerator.py
+py mapToMethodGenerator.py
 popd
 
 # copy to another location
