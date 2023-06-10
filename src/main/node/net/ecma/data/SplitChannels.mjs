@@ -1,6 +1,6 @@
 'use strict';
-import fs from 'fs';
 import { X3D } from './x3d.mjs';
+import fs from 'fs';
 import { SFString } from './x3d.mjs';
 import { SFNode } from './x3d.mjs';
 import { head } from './x3d.mjs';
@@ -252,18 +252,28 @@ var X3D0 =  new X3D({
               trackCurrentView : new SFBool(true)}),
 
             new StreamAudioDestination({
+              channelCountMode : new SFString("MAX"),
+              channelInterpretation : new SFString("SPEAKERS"),
               children : new MFNode([
                 new Gain({
+                  channelCountMode : new SFString("MAX"),
+                  channelInterpretation : new SFString("SPEAKERS"),
                   children : new MFNode([
                     new ChannelMerger({
+                      channelCountMode : new SFString("MAX"),
+                      channelInterpretation : new SFString("SPEAKERS"),
                       children : new MFNode([
                         new ChannelSelector({
+                          channelCountMode : new SFString("MAX"),
+                          channelInterpretation : new SFString("SPEAKERS"),
                           children : new MFNode([
                             new Gain({
                               USE : new SFString("ChannelSplitter")})])}),
 
                         new ChannelSelector({
                           channelSelection : new SFInt32(1),
+                          channelCountMode : new SFString("MAX"),
+                          channelInterpretation : new SFString("SPEAKERS"),
                           children : new MFNode([
                             new Gain({
                               USE : new SFString("ChannelSplitter")})])})])})])})])}),
@@ -271,6 +281,7 @@ var X3D0 =  new X3D({
             new ChannelSplitter({
               DEF : new SFString("ChannelSplitter"),
               channelCountMode : new SFString("explicit"),
+              channelInterpretation : new SFString("SPEAKERS"),
               outputs : new SFNode(
                 new AudioClip({
                   description : new SFString("Violin"),

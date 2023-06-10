@@ -9,7 +9,7 @@ export PROCESSORS=${PROCESSORS-8}
 
 pip3 install x3d
 pip3 install xmlschema
-# python3 ../python/classes.py
+# py ../python/classes.py
 pushd ../java
 javac -cp "${CLASSPATH}" net/coderextreme/RunSaxon.java
 popd
@@ -47,7 +47,7 @@ popd
 # popd
 echo running python
 pushd ../python
-find ./net/x3djsonld/data -name "${X3D}.py" | xargs -L 1 -P $PROCESSORS python3
+find ./net/x3djsonld/data -name "${X3D}.py" | xargs -L 1 -P $PROCESSORS py
 popd
 echo running node
 pushd ../node

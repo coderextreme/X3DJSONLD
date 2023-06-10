@@ -7,7 +7,7 @@ export PROCESSORS=${PROCESSORS-8}
 
 . ./classpath
 
-# python3 ../python/classes.py
+# py ../python/classes.py
 
 LOCALTOROOT='s/^\.\.\/x3d-code/\/c\/x3d-code/'
 ROOTTOLOCAL='s/www.web3d.org/www_web3d_org/' 

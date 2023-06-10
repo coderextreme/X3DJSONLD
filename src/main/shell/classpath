@@ -10,7 +10,7 @@ export NASHORN_CLASSPATH=".:/home/$USERNAME/pythonSAI/X3DJSAIL.4.0.full.jar:${NA
 export PYTHONPATH="{PYTHONPATH};C:\\Python311\\Lib;c:\\x3d-code\\www.web3d.org\\x3d\\stylesheets\\python"
 export PATH="${JAVA_HOME}/bin:${JAVA_HOME}/jre/bin/server:${PATH}"
 
-export PYTHON=python3
+export PYTHON=py
 export PIP=pip3
 export NODE=node
 export NODEDIR=/home/$USERNAME/X3DJSONLD/src/main/node

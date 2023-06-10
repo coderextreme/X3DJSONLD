@@ -1,6 +1,6 @@
 'use strict';
-import fs from 'fs';
 import { X3D } from './x3d.mjs';
+import fs from 'fs';
 import { SFString } from './x3d.mjs';
 import { SFNode } from './x3d.mjs';
 import { head } from './x3d.mjs';
