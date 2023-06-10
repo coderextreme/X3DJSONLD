@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile='Full' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+  <head>
+    <component level='3' name='Navigation'/>
+    <component name='Shaders'/>
+    <component level='2' name='CADGeometry'/>
+    <component level='2' name='DIS'/>
+    <component name='H-Anim'/>
+    <component name='Grouping'/>
+    <component name='Layering'/>
+    <unit category='angle' name='AngleUnitConversion'/>
+    <unit category='length' name='LengthUnitConversion'/>
+    <unit category='force' conversionFactor='4.4482' name='ForceFromPoundsToNewtons'/>
+    <meta content='HelloWorldProgramOutput.x3d' name='title'/>
+    <meta content='continued development and testing in progress' name='info'/>
+    <meta content='Example HelloWorldProgram creates an X3D model using the X3D Java Scene Access Interface Library (X3DJSAIL)' name='description'/>
+    <meta content='https://www.web3d.org/specifications/java/X3DJSAIL.html' name='reference'/>
+    <meta content='HelloWorldProgramOutput.java' name='generator'/>
+    <meta content='6 September 2016' name='created'/>
+    <meta content='29 January 2023' name='modified'/>
+    <meta content='X3D Java Scene Access Interface Library (X3DJSAIL)' name='generator'/>
+    <meta content='https://www.web3d.org/specifications/java/examples/HelloWorldProgram.java' name='generator'/>
+    <meta content='Netbeans https://www.netbeans.org' name='generator'/>
+    <meta content='Don Brutzman' name='creator'/>
+    <meta content='https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/java/examples/HelloWorldProgramOutput.x3d' name='reference'/>
+    <meta content='Console output, ClassicVRML encoding, VRML97 encoding and pretty-print documentation:' name='reference'/>
+    <meta content='HelloWorldProgramOutput.txt' name='reference'/>
+    <meta content='HelloWorldProgramOutput.x3dv' name='reference'/>
+    <meta content='HelloWorldProgramOutput.wrl' name='reference'/>
+    <meta content='HelloWorldProgramOutput.html' name='reference'/>
+    <meta content='https://savage.nps.edu/X3dValidator?url=https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d' name='reference'/>
+    <meta content='https://www.web3d.org/specifications/java/examples/HelloWorldProgramOutput.x3d' name='identifier'/>
+    <meta content='../license.html' name='license'/>
+    <meta content='22 March 2023' name='translated'/>
+    <meta content='X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html' name='generator'/>
+    <meta content='X3D JSON encoding: https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding' name='reference'/>
+  </head>
+  <Scene>
+    <ViewpointGroup description='Available viewpoints'>
+      <Viewpoint DEF='DefaultView' description='Hello X3DJSAIL'/>
+      <Viewpoint DEF='TopDownView' description='top-down view from above' orientation='1 0 0 -1.570796' position='0 100 0'/>
+    </ViewpointGroup>
+    <NavigationInfo type='""EXAMINE" "FLY" "ANY""'/>
+    <WorldInfo DEF='WorldInfoDEF' class='worldInfoNode.class' style='worldInfoNode.style' title='HelloWorldProgram produced by X3D Java SAI Library (X3DJSAIL)'/>
+    <WorldInfo USE='WorldInfoDEF'/>
+    <WorldInfo USE='WorldInfoDEF'/>
+    <MetadataString DEF='scene.addChildMetadata' name='test' value='"Top-level root Metadata node beneath Scene needs to be one of &apos;-children&apos; in JSON encoding"'/>
+    <LayerSet DEF='scene.addChildLayerSetTest'/>
+    <Transform DEF='LogoGeometryTransform' translation='0 1.5 0'>
+      <Anchor DEF='siteAnchor' description='select for X3D Java SAI Library (X3DJSAIL) description' url='"../X3DJSAIL.html" "https://www.web3d.org/specifications/java/X3DJSAIL.html"'>
+        <Shape DEF='BoxShape'>
+          <Appearance>
+            <Material DEF='GreenMaterial' diffuseColor='0 1 1' emissiveColor='0.8 0 0' transparency='0.1'/>
+            <ImageTexture url='"images/X3dJavaSceneAccessInterfaceSaiLibrary.png" "https://www.web3d.org/specifications/java/examples/images/X3dJavaSceneAccessInterfaceSaiLibrary.png"'/>
+          </Appearance>
+          <Box DEF='test-NMTOKEN_regex.0123456789' class='untextured'/>
+        </Shape>
+      </Anchor>
+    </Transform>
+    <Shape DEF='LineShape'>
+      <Appearance>
+        <Material emissiveColor='0.6 0.19607843 0.8'/>
+      </Appearance>
+      <IndexedLineSet coordIndex='0 1 2 3 4 0'>
+        <Coordinate point='0 1.5 0 2 1.5 0 2 1.5 -2 -2 1.5 -2 -2 1.5 0 0 1.5 0'/>
+      </IndexedLineSet>
+    </Shape>
+    <PositionInterpolator DEF='BoxPathAnimator' key='0.0 0.125 0.375 0.625 0.875 1.0' keyValue='0 1.5 0 2 1.5 0 2 1.5 -2 -2 1.5 -2 -2 1.5 0 0 1.5 0'/>
+    <TimeSensor DEF='OrbitClock' cycleInterval='8.0' loop='true'/>
+    <ROUTE fromField='fraction_changed' fromNode='OrbitClock' toField='set_fraction' toNode='BoxPathAnimator'/>
+    <ROUTE fromField='value_changed' fromNode='BoxPathAnimator' toField='set_translation' toNode='LogoGeometryTransform'/>
+    <Transform DEF='TextTransform' translation='0 -1.5 0'>
+      <Shape>
+        <Appearance>
+          <Material USE='GreenMaterial'/>
+        </Appearance>
+        <Text string='"X3D Java" "SAI Library" "X3DJSAIL"'>
+          <FontStyle justify='"MIDDLE" "MIDDLE"'/>
+          <MetadataSet name='EscapedQuotationMarksMetadataSet'>
+            <MetadataString name='quotesTestC' value='"MFString example C, backslash-escaped quotes: He said, "Immel did it!""'/>
+            <MetadataString name='extraChildTest' value='"checks MetadataSet addValue() method"'/>
+          </MetadataSet>
+        </Text>
+      </Shape>
+      <Collision>
+        <Shape DEF='ProxyShape'>
+          <Text string='"One, Two, Text" "" "He said, "Immel did it!" """'/>
+        </Shape>
+        <!--  test containerField='proxy'  -->
+      </Collision>
+      <!--  It's a beautiful world  -->
+      <!--  ... for you!  -->
+      <!--  https://en.wikipedia.org/wiki/Beautiful_World_(Devo_song)  -->
+    </Transform>
+    <!--  repeatedly spin 180 degrees as a readable special effect  -->
+    <OrientationInterpolator DEF='SpinInterpolator' key='0.0 0.5 1.0' keyValue='0.0 1.0 0.0 4.712389 0.0 1.0 0.0 0.0 0.0 1.0 0.0 1.5707964'/>
+    <TimeSensor DEF='SpinClock' cycleInterval='5.0' loop='true'/>
+    <ROUTE fromField='fraction_changed' fromNode='SpinClock' toField='set_fraction' toNode='SpinInterpolator'/>
+    <ROUTE fromField='value_changed' fromNode='SpinInterpolator' toField='rotation' toNode='TextTransform'/>
+    <Group DEF='BackgroundGroup'>
+      <Background DEF='GradualBackground'/>
+      <Script DEF='colorTypeConversionScript'>
+        <field accessType='inputOnly' name='colorInput' type='SFColor'/>
+        <field accessType='outputOnly' name='colorsOutput' type='MFColor'/>
+      <![CDATA[['', '', 'ecmascript:', '', 'function colorInput (eventValue) // Example source code', '{', '   colorsOutput = new MFColor(eventValue); // assigning value sends output event', "// Browser.print('colorInput=' + eventValue + ', colorsOutput=' + colorsOutput + '
+');", '}', '', '']]]>
+      </Script>
+      <ColorInterpolator DEF='ColorAnimator' key='0.0 0.5 1.0' keyValue='0.9411765 1 1 0.29411766 0 0.50980395 0.9411765 1 1'/>
+      <TimeSensor DEF='ColorClock' cycleInterval='60.0' loop='true'/>
+      <ROUTE fromField='colorsOutput' fromNode='colorTypeConversionScript' toField='skyColor' toNode='GradualBackground'/>
+      <ROUTE fromField='value_changed' fromNode='ColorAnimator' toField='colorInput' toNode='colorTypeConversionScript'/>
+      <ROUTE fromField='fraction_changed' fromNode='ColorClock' toField='set_fraction' toNode='ColorAnimator'/>
+    </Group>
+    <ProtoDeclare appinfo='tooltip: ArtDeco01Material prototype is a Material node' name='ArtDeco01Material'>
+      <ProtoInterface>
+        <field accessType='inputOutput' appinfo='tooltip for descriptionField' name='description' type='SFString' value='ArtDeco01Material prototype is a Material node'/>
+        <field accessType='inputOutput' name='enabled' type='SFBool' value='true'/>
+      </ProtoInterface>
+      <ProtoBody>
+        <!--  Initial node of ProtoBody determines prototype node type  -->
+        <Material ambientIntensity='0.25' diffuseColor='0.282435 0.085159 0.134462' shininess='0.127273' specularColor='0.276305 0.11431 0.139857'/>
+        <!--  [HelloWorldProgram diagnostic] should be connected to scene graph: artDeco01ProtoDeclare.getNodeType()="Material"  -->
+        <!--  presence of follow-on TouchSensor shows that additional nodes are allowed in ProtoBody after initial node, regardless of node types  -->
+        <TouchSensor description='within ProtoBody'>
+          <IS>
+            <connect nodeField='description' protoField='description'/>
+            <connect nodeField='enabled' protoField='enabled'/>
+          </IS>
+        </TouchSensor>
+      </ProtoBody>
+    </ProtoDeclare>
+    <ExternProtoDeclare appinfo='this is a different Material node' name='ArtDeco02Material' url='"https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material" "https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"'>
+      <field accessType='inputOutput' appinfo='tooltip for descriptionField' name='description' type='SFString'/>
+    </ExternProtoDeclare>
+    <!--  Tested ArtDeco01ProtoInstance, ArtDeco02ProtoInstance for improper node type when ProtoInstance is added in wrong place  -->
+    <Shape DEF='TestShape1'>
+      <Appearance DEF='TestAppearance1'>
+        <ProtoInstance name='ArtDeco01Material'>
+          <fieldValue name='description' value='ArtDeco01Material can substitute for a Material node'/>
+        </ProtoInstance>
+      </Appearance>
+      <Sphere radius='0.001'/>
+    </Shape>
+    <Shape DEF='TestShape2'>
+      <Appearance DEF='TestAppearance2'>
+        <ProtoInstance DEF='ArtDeco02MaterialDEF' name='ArtDeco02Material'>
+          <fieldValue name='description' value='ArtDeco02Material can substitute for another Material node'/>
+        </ProtoInstance>
+      </Appearance>
+      <Cone bottomRadius='0.001' height='0.001'/>
+    </Shape>
+    <Shape DEF='TestShape3'>
+      <Appearance DEF='TestAppearance3'>
+        <ProtoInstance USE='ArtDeco02MaterialDEF'/>
+      </Appearance>
+      <Cylinder height='0.001' radius='0.001'/>
+    </Shape>
+    <Inline DEF='inlineScene' url='"someOtherScene.x3d" "https://www.web3d.org/specifications/java/examples/someOtherScene.x3d"'/>
+    <IMPORT AS='WorldInfoDEF2' importedDEF='WorldInfoDEF' inlineDEF='inlineScene'/>
+    <EXPORT AS='WorldInfoDEF3' localDEF='WorldInfoDEF'/>
+    <ProtoDeclare appinfo='mimic a Material node and modulate fields as an animation effect' documentation='https://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html' name='MaterialModulator'>
+      <ProtoInterface>
+        <field accessType='inputOutput' name='enabled' type='SFBool' value='true'/>
+        <field accessType='inputOutput' name='diffuseColor' type='SFColor' value='0 0 0'/>
+        <field accessType='inputOutput' name='emissiveColor' type='SFColor' value='0.05 0.05 0.5'/>
+        <field accessType='inputOutput' name='specularColor' type='SFColor' value='0 0 0'/>
+        <field accessType='inputOutput' name='transparency' type='SFFloat'/>
+        <field accessType='inputOutput' name='shininess' type='SFFloat'/>
+        <field accessType='inputOutput' name='ambientIntensity' type='SFFloat'/>
+      </ProtoInterface>
+      <ProtoBody>
+        <Material DEF='MaterialNode'>
+          <IS>
+            <connect nodeField='diffuseColor' protoField='diffuseColor'/>
+            <connect nodeField='emissiveColor' protoField='emissiveColor'/>
+            <connect nodeField='specularColor' protoField='specularColor'/>
+            <connect nodeField='transparency' protoField='transparency'/>
+            <connect nodeField='shininess' protoField='shininess'/>
+            <connect nodeField='ambientIntensity' protoField='ambientIntensity'/>
+          </IS>
+        </Material>
+        <!--  Only first node (the node type) is renderable, others are along for the ride  -->
+        <Script DEF='MaterialModulatorScript'>
+          <IS>
+            <connect nodeField='enabled' protoField='enabled'/>
+            <connect nodeField='diffuseColor' protoField='diffuseColor'/>
+          </IS>
+          <field accessType='inputOutput' name='enabled' type='SFBool'/>
+          <field accessType='inputOutput' name='diffuseColor' type='SFColor'/>
+          <field accessType='outputOnly' name='newColor' type='SFColor'/>
+          <field accessType='inputOnly' name='clockTrigger' type='SFTime'/>
+        <![CDATA[['', '', 'ecmascript:', 'function initialize ()', '{', '    newColor = diffuseColor; // start with correct color', '}', 'function set_enabled (newValue)', '{', '	enabled = newValue;', '}', 'function clockTrigger (timeValue)', '{', '    if (!enabled) return;', '    red   = newColor.r;', '    green = newColor.g;', '    blue  = newColor.b;', '', '    // note different modulation rates for each color component, % is modulus operator', '    newColor = new SFColor ((red + 0.02) % 1, (green + 0.03) % 1, (blue + 0.04) % 1);', '	if (enabled)', '	{', "		Browser.print ('diffuseColor=(' + red + ',' + green + ',' + blue + ') newColor=' + newColor.toString() + '
+');", '	}', '}', '', '']]]>
+        </Script>
+      </ProtoBody>
+    </ProtoDeclare>
+    <!--  Test success: declarative statement createDeclarativeShapeTests()  -->
+    <Group DEF='DeclarativeGroupExample'>
+      <Shape>
+        <Appearance DEF='DeclarativeAppearanceExample'>
+          <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator'/>
+        </Appearance>
+        <Cone bottom='false' bottomRadius='0.05' height='0.1'/>
+      </Shape>
+      <!--  Test success: declarativeGroup.addChild() singleton pipeline method  -->
+    </Group>
+    <!--  Test success: declarative statement addChild()  -->
+    <!--  Test success: x3dModel.findNodeByDEF(DeclarativeAppearanceExample) = <Appearance DEF='DeclarativeAppearanceExample'/> i.e. <Appearance DEF='DeclarativeAppearanceExample'> <!- - DeclarativeMaterialExample gets overridden by subsequently added MaterialModulator ProtoInstance - -> <ProtoInstance DEF='MyMaterialModulator' name='MaterialModulator' containerField='material'/> </Appearance>  -->
+    <!--  Test success: x3dModel.findElementByNameValue(findThisNameValue) = <MetadataString DEF='FindableMetadataStringTest' name='findThisNameValue' value='"test case"'/>  -->
+    <!--  Test success: x3dModel.findElementByNameValue("ArtDeco01Material", "ProtoDeclare") found  -->
+    <!--  Test success: x3dModel.findElementByNameValue("MaterialModulator", "ProtoDeclare") found  -->
+    <!--  Test success: x3dModel.findElementByNameValue("MaterialModulator", "ProtoInstance") found  -->
+    <Group DEF='TestFieldObjectsGroup'>
+      <!--  testFieldObjects() results  -->
+      <!--  SFBool default=false, true=true, false=false, negate()=true  -->
+      <!--  MFBool default=, initial=true false true, negate()=false true false  -->
+      <!--  SFFloat default=0.0, initial=1.0, setValue(2)=2.0, setValue(3.0f)=3.0, setValue(4.0)=4.0  -->
+      <!--  MFFloat default=, initial=1 2 3, append(5)=1 2 3 5, inserts(3,4)(0,0)=0 1 2 3 4 5, append(6)=0 1 2 3 4 5 6, size()=7  -->
+      <!--  ... get1Value[3]=3.0, remove[1]=0 2 3 4 5 6, set1Value(0,10)=10 2 3 4 5 6, multiply(2)=20 4 6 8 10 12, clear=  -->
+      <!--  SFVec3f default=0 0 0, initial=1 2 3, setValue=4 5 6, multiply(2)=8 10 12, normalize()=0.45584232 0.5698029 0.68376344, regex matches()=true  -->
+      <!--  regex test SFVec3f().matches("1 2 3")=true, regex test SFVec3f().matches("1 2 3 4")=false, regex test (SFRotation.matches("0 0 0 0")=true, failure detecting illegal (zero axis) rotation value  -->
+    </Group>
+    <Sound location='0 1.6 0'>
+      <AudioClip description='chimes' url='"chimes.wav" "https://www.web3d.org/x3d/content/examples/ConformanceNist/Sounds/AudioClip/chimes.wav"'/>
+    </Sound>
+    <Sound location='0 1.6 0'>
+      <MovieTexture description='mpgsys.mpg from ConformanceNist suite' url='"mpgsys.mpg" "https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/MovieTexture/mpgsys.mpg"'/>
+    </Sound>
+    <!--  Test success: Anchor.isNode()=true, siteAnchor.isNode()=true  -->
+    <!--  Test success: Anchor.isStatement()=false, siteAnchor.isStatement()=false  -->
+    <!--  Test success: ROUTE.isNode()=false, orbitPositionROUTE.isNode()=false  -->
+    <!--  Test success: ROUTE.isStatement()=true, orbitPositionROUTE.isStatement()=true  -->
+    <!--  Test success: CommentsBlock.isNode()=false, testComments.isNode()=false  -->
+    <!--  Test failure: CommentsBlock.isStatement()=true, testComments.isStatement()=true  -->
+    <Shape DEF='ExtrusionShape'>
+      <Appearance DEF='TransparentAppearance'>
+        <Material transparency='1.0'/>
+      </Appearance>
+      <Extrusion DEF='ExampleExtrusion'/>
+    </Shape>
+    <Group>
+      <!--  Test MFNode children array as an ordered list consisting of comments, statements, ProtoInstance and nodes  -->
+      <ProtoDeclare name='NewWorldInfo'>
+        <ProtoInterface>
+          <field accessType='initializeOnly' name='description' type='SFString'/>
+        </ProtoInterface>
+        <ProtoBody>
+          <WorldInfo/>
+        </ProtoBody>
+      </ProtoDeclare>
+      <ProtoInstance DEF='Proto1' name='NewWorldInfo'>
+        <fieldValue name='description' value='testing 1 2 3'/>
+      </ProtoInstance>
+      <Group DEF='Node2'>
+        <!--  intentionally empty  -->
+      </Group>
+      <ProtoInstance DEF='Proto3' name='NewWorldInfo'/>
+      <Transform DEF='Node4'>
+        <!--  intentionally empty  -->
+      </Transform>
+      <!--  Test satisfactorily creates MFNode children array as an ordered list with mixed content  -->
+    </Group>
+    <ProtoDeclare name='ShaderProto'>
+      <ProtoBody>
+        <ProgramShader/>
+      </ProtoBody>
+    </ProtoDeclare>
+    <Shape>
+      <Appearance>
+        <ProgramShader DEF='TestShader1'>
+          <ShaderProgram DEF='TestShader2'/>
+        </ProgramShader>
+        <ProtoInstance DEF='TestShader3' name='ShaderProto'/>
+        <ComposedShader DEF='TestShader4'>
+          <ShaderPart DEF='TestShader5'/>
+        </ComposedShader>
+      </Appearance>
+    </Shape>
+    <Transform DEF='SpecialtyNodes'>
+      <CADLayer>
+        <CADAssembly>
+          <CADPart>
+            <CADFace/>
+          </CADPart>
+        </CADAssembly>
+      </CADLayer>
+      <EspduTransform/>
+      <ReceiverPdu/>
+      <SignalPdu/>
+      <TransmitterPdu/>
+      <DISEntityManager>
+        <DISEntityTypeMapping/>
+      </DISEntityManager>
+    </Transform>
+    <EspduTransform>
+      <WorldInfo/>
+    </EspduTransform>
+    <ReceiverPdu/>
+    <SignalPdu/>
+    <TransmitterPdu/>
+    <DISEntityManager>
+      <DISEntityTypeMapping/>
+    </DISEntityManager>
+    <LoadSensor>
+      <!--  Contained nodes typically must be USE references for nodes previously DEFined in the scene  -->
+      <!--  The following nodes are test cases for all X3DUrlObject nodes  -->
+      <Anchor USE='siteAnchor'/>
+      <Inline USE='inlineScene'/>
+      <DISEntityTypeMapping/>
+      <GeoMetadata/>
+      <AudioClip/>
+      <ImageCubeMapTexture/>
+      <ImageTexture3D/>
+      <ImageTexture/>
+      <MovieTexture/>
+      <Script/>
+      <PackagedShader/>
+      <ShaderPart/>
+      <ShaderProgram/>
+    </LoadSensor>
+  </Scene>
+</X3D>
+

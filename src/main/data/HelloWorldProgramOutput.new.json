@@ -100,7 +100,7 @@
           },
           {
             "@name":"modified",
-            "@content":"9 January 2022"
+            "@content":"29 January 2023"
           },
           {
             "@name":"generator",
@@ -112,7 +112,7 @@
           },
           {
             "@name":"generator",
-            "@content":"Netbeans http://www.netbeans.org"
+            "@content":"Netbeans https://www.netbeans.org"
           },
           {
             "@name":"creator",
@@ -156,7 +156,7 @@
           },
           {
             "@name":"translated",
-            "@content":"23 December 2022"
+            "@content":"09 June 2023"
           },
           {
             "@name":"generator",
@@ -375,6 +375,12 @@
                                 "-value":[
                                   { "MetadataString":
                                     {
+                                      "@name":"quotesTestC",
+                                      "@value":["MFString example C, backslash-escaped quotes: He said, \"Immel did it!\""]
+                                    }
+                                  },
+                                  { "MetadataString":
+                                    {
                                       "@name":"extraChildTest",
                                       "@value":["checks MetadataSet addValue() method"]
                                     }
@@ -446,7 +452,7 @@
             {
               "@DEF":"SpinInterpolator",
               "@key":[0,0.5,1],
-              "@keyValue":[0,1,0,4.712389,0,1,0,0,0,1,0,1.5707964]
+              "@keyValue":[0,1,0,4.7124,0,1,0,0,0,1,0,1.5708]
             }
           },
           { "TimeSensor":
@@ -515,7 +521,7 @@
                   {
                     "@DEF":"ColorAnimator",
                     "@key":[0,0.5,1],
-                    "@keyValue":[0.9411765,1,1,0.29411766,0,0.50980395,0.9411765,1,1],
+                    "@keyValue":[0.9412,1,1,0.2941,0,0.5098,0.9412,1,1],
                     "-children":[
                       {
                         "#comment":"AZURE to INDIGO and back again"
@@ -587,7 +593,7 @@
                       {
                         "@ambientIntensity":0.25,
                         "@diffuseColor":[0.282435,0.085159,0.134462],
-                        "@shininess":0.127273,
+                        "@shininess":0.1273,
                         "@specularColor":[0.276305,0.11431,0.139857]
                       }
                     },
@@ -622,7 +628,7 @@
             {
               "@name":"ArtDeco02Material",
               "@appinfo":"this is a different Material node",
-              "@url":["http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","http://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"],
+              "@url":["https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3d#ArtDeco02Material","https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ArtDecoPrototypesExcerpt.x3dv#ArtDeco02Material"],
               "-children":[
                 {
                   "#comment":"[HelloWorldProgram diagnostic] artDeco02ExternProtoDeclare.getNodeType()=\"ERROR_UNKNOWN_EXTERNPROTODECLARE_NODE_TYPE: ExternProtoDeclare name='ArtDeco02Material' type cannot be remotely accessed at run time. TODO X3DJSAIL needs to add further capability that retrieves the ExternProtoDeclare file.\""
@@ -773,7 +779,7 @@
             {
               "@name":"MaterialModulator",
               "@appinfo":"mimic a Material node and modulate fields as an animation effect",
-              "@documentation":"http://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html",
+              "@documentation":"https://x3dgraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/MaterialModulatorIndex.html",
               "ProtoInterface": {
                   "field": [
                     {
@@ -1008,7 +1014,7 @@
                   "#comment":"testFieldObjects() results"
                 },
                 {
-                  "#comment":"SFBool default=true, true=true, false=false, negate()=true"
+                  "#comment":"SFBool default=false, true=true, false=false, negate()=true"
                 },
                 {
                   "#comment":"MFBool default=, initial=true false true, negate()=false true false"

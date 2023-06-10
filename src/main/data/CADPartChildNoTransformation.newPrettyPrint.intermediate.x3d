@@ -18,7 +18,7 @@
   </head>
   <Scene>
     <WorldInfo title='CADPartChildNoTransformation.x3d'/>
-    <Background skyColor='0.9607843 1 0.9607843'/>
+    <Background skyColor='0.9608 1 0.9608'/>
     <Viewpoint description='Hello CAD bushing' orientation='1 0 0 -0.321751' position='0 5 15'/>
     <CADAssembly name='DesignPatternAssembly'>
       <CADPart name='CADPartExample'>
