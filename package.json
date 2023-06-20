@@ -29,7 +29,6 @@
     "express": "*",
     "glob": "*",
     "https-browserify": "*",
-    "java": "https://github.com/joeferner/node-java.git",
     "jsonlint": "https://github.com/prantlf/jsonlint.git",
     "mutation-observer": "*",
     "node-mkdirp": "*",
@@ -39,13 +38,13 @@
     "url": "^0.11.0",
     "x_ite": "*",
     "x3dom": "*",
-    "xml2js": "^0.4.23",
+    "xml2js": "^0.6.0",
     "xmlhttprequest": "*",
     "xslt3": "*"
   },
   "scripts": {
     "start": "node app.mjs",
-    "postinstall": "bash build.sh",
+    "postinstall": "rem bash build.sh",
     "buildthreex3dloader": "browserify src/main/node/threeLoadFile.js > src/main/node/bundle.js",
     "buildloader": "webpack"
   }
