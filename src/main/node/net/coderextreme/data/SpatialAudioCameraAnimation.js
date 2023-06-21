@@ -67,13 +67,13 @@ ConfigurationProperties.setStripTrailingZeroes(true);
                   .setMaterial((new autoclass.Material()).setAmbientIntensity(java.newFloat(0.0933)).setDiffuseColor(java.newArray("float", [java.newFloat(1), java.newFloat(1), java.newFloat(1)])).setShininess(java.newFloat(0.51)).setSpecularColor(java.newArray("float", [java.newFloat(0.46), java.newFloat(0.46), java.newFloat(0.46)]))))
                 .setGeometry((new autoclass.Text()).setString(java.newArray("java.lang.String", ["Saxophone"]))
                   .setFontStyle((new autoclass.FontStyle()).setFamily(java.newArray("java.lang.String", ["Times"])).setStyle("BOLD")))))))
-        .addChild((new autoclass.ListenerPointSource()).setTrackCurrentView(true))
-        .addChild((new autoclass.StreamAudioDestination())
-          .addChild((new autoclass.SpatialSound()).setDEF("Audio1")
-            .addChild((new autoclass.Gain())
+        .addChild((new autoclass.ListenerPointSource()).setTrackCurrentView(true).setDopplerEnabled("false"))
+        .addChild((new autoclass.StreamAudioDestination()).setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
+          .addChild((new autoclass.SpatialSound()).setDEF("Audio1").setDistanceModel("INVERSE").setDopplerEnabled("false")
+            .addChild((new autoclass.Gain()).setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
               .addChild((new autoclass.AudioClip()).setLoop(true).setPauseTime(-1).setResumeTime(-1).setStopTime(-1).setUrl(java.newArray("java.lang.String", ["sound/violin.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"])))))
-          .addChild((new autoclass.SpatialSound()).setDEF("Audio2")
-            .addChild((new autoclass.Gain())
+          .addChild((new autoclass.SpatialSound()).setDEF("Audio2").setDistanceModel("INVERSE").setDopplerEnabled("false")
+            .addChild((new autoclass.Gain()).setChannelCountMode("MAX").setChannelInterpretation("SPEAKERS")
               .addChild((new autoclass.AudioClip()).setLoop(true).setPauseTime(-1).setResumeTime(-1).setStopTime(-1).setUrl(java.newArray("java.lang.String", ["sound/saxophone.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"])))))))      ;
     X3D0.toFileX3D("../data/SpatialAudioCameraAnimation.new.x3d");
     process.exit(0);

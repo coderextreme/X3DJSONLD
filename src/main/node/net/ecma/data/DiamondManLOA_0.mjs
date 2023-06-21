@@ -186,12 +186,16 @@ var X3D0 =  new X3D({
                   name : new SFString("HumanoidRoot"),
                   DEF : new SFString("hanim_HumanoidRoot"),
                   center : new SFVec3f([0,0.824,0.0277]),
+                  ulimit : new SFVec3f([0,0,0]),
+                  llimit : new SFVec3f([0,0,0]),
                   stiffness : new SFVec3f([0,0,0]),
                   children : new MFNode([
                     new HAnimJoint({
                       name : new SFString("sacroiliac"),
                       DEF : new SFString("hanim_sacroiliac"),
                       center : new SFVec3f([0,0.9149,0.0016]),
+                      ulimit : new SFVec3f([0,0,0]),
+                      llimit : new SFVec3f([0,0,0]),
                       stiffness : new SFVec3f([0,0,0]),
                       children : new MFNode([
                         new HAnimSegment({

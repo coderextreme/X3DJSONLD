@@ -7,6 +7,10 @@ var X3D0 =  X3D(
       version_ : SFString('3.3'),
       head_ : 
         head(
+          component_ : 
+            component(
+              name_ : SFString('Scripting'),
+              level_ : 1),
           meta_ : [
             meta(
               name_ : SFString('title'),

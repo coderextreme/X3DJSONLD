@@ -213,14 +213,21 @@ var X3D0 =  X3D(
                                   style_ : SFString('BOLD'))))])])]),
 
             ListenerPointSource(
-              trackCurrentView_ : true),
+              trackCurrentView_ : true,
+              dopplerEnabled_ : "false"),
 
             StreamAudioDestination(
+              channelCountMode_ : SFString('MAX'),
+              channelInterpretation_ : SFString('SPEAKERS'),
               children_ : [
                 SpatialSound(
                   DEF_ : SFString('Audio1'),
+                  distanceModel_ : SFString('INVERSE'),
+                  dopplerEnabled_ : "false",
                   children_ : [
                     Gain(
+                      channelCountMode_ : SFString('MAX'),
+                      channelInterpretation_ : SFString('SPEAKERS'),
                       children_ : [
                         AudioClip(
                           loop_ : true,
@@ -231,8 +238,12 @@ var X3D0 =  X3D(
 
                 SpatialSound(
                   DEF_ : SFString('Audio2'),
+                  distanceModel_ : SFString('INVERSE'),
+                  dopplerEnabled_ : "false",
                   children_ : [
                     Gain(
+                      channelCountMode_ : SFString('MAX'),
+                      channelInterpretation_ : SFString('SPEAKERS'),
                       children_ : [
                         AudioClip(
                           loop_ : true,

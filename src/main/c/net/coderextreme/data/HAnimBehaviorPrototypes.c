@@ -101,9 +101,9 @@ ProtoDeclare ProtoDeclare20 = browser.createX3DFromString(`<?xml version="1.0" e
 <field name="enabled" accessType="inputOutput" appinfo="is this behavior enabled?" type="SFBool" value="true"></field>
 <field name="cycleInterval" accessType="inputOutput" appinfo="how long do these interpolators take to execute?" type="SFTime" value="1"></field>
 <field name="loop" accessType="inputOutput" appinfo="whether or not this behavior loops (e.g. walking) or is single shot (e.g. shake hands)." type="SFBool" value="false"></field>
-<field name="startTime" accessType="inputOutput" appinfo="when time now >= startTime isActive becomes true and TimeSensor becomes active" type="SFTime" value="0"/>
+<field name="startTime" accessType="inputOutput" appinfo="when time now &gt;= startTime isActive becomes true and TimeSensor becomes active" type="SFTime" value="0"></field>
 <field name="stopTime" accessType="inputOutput" appinfo="when stopTime becomes &lt;= time now isActive becomes false and TimeSensor becomes inactive" type="SFTime" value="0"></field>
-<field name="pauseTime" accessType="inputOutput" appinfo="when time now >= pauseTime isPaused becomes true and TimeSensor becomes paused" type="SFTime" value="0"/>
+<field name="pauseTime" accessType="inputOutput" appinfo="when time now &gt;= pauseTime isPaused becomes true and TimeSensor becomes paused" type="SFTime" value="0"></field>
 <field name="resumeTime" accessType="inputOutput" appinfo="when resumeTime becomes &lt;= time now isPaused becomes false and TimeSensor becomes inactive" type="SFTime" value="0"></field>
 <field name="cycleTime" accessType="outputOnly" appinfo="cycleTime sends a time outputOnly at startTime and also at the beginning of each new cycle" type="SFTime"></field>
 <field name="isActive" accessType="outputOnly" appinfo="isActive true/false events are sent when TimeSensor starts/stops running" type="SFBool"></field>

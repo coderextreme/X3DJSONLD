@@ -96,27 +96,27 @@ ComposedCubeMapTexture22.setDEF("texture")
 ImageTexture23 = ImageTexture()
 ImageTexture23.setUrl(["../resources/images/bBK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png"])
 
-ComposedCubeMapTexture22.setBackTexture(ImageTexture23)
+ComposedCubeMapTexture22.setBack(ImageTexture23)
 ImageTexture24 = ImageTexture()
 ImageTexture24.setUrl(["../resources/images/bBT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png"])
 
-ComposedCubeMapTexture22.setBottomTexture(ImageTexture24)
+ComposedCubeMapTexture22.setBottom(ImageTexture24)
 ImageTexture25 = ImageTexture()
 ImageTexture25.setUrl(["../resources/images/bFR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png"])
 
-ComposedCubeMapTexture22.setFrontTexture(ImageTexture25)
+ComposedCubeMapTexture22.setFront(ImageTexture25)
 ImageTexture26 = ImageTexture()
 ImageTexture26.setUrl(["../resources/images/bLF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png"])
 
-ComposedCubeMapTexture22.setLeftTexture(ImageTexture26)
+ComposedCubeMapTexture22.setLeft(ImageTexture26)
 ImageTexture27 = ImageTexture()
 ImageTexture27.setUrl(["../resources/images/bRT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png"])
 
-ComposedCubeMapTexture22.setRightTexture(ImageTexture27)
+ComposedCubeMapTexture22.setRight(ImageTexture27)
 ImageTexture28 = ImageTexture()
 ImageTexture28.setUrl(["../resources/images/bTP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png"])
 
-ComposedCubeMapTexture22.setTopTexture(ImageTexture28)
+ComposedCubeMapTexture22.setTop(ImageTexture28)
 
 Appearance20.setTexture(ComposedCubeMapTexture22)
 ComposedShader29 = ComposedShader()
