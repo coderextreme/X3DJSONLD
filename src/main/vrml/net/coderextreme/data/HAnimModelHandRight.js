@@ -139,17 +139,23 @@ MetadataSet27.value = new MFNode();
 
 MetadataSet27.value[0] = MetadataString28;
 
-HAnimHumanoid26.metadata = MetadataSet27;
+HAnimHumanoid26.metadata = new SFNode();
+
+HAnimHumanoid26.metadata[0] = MetadataSet27;
 
 let HAnimJoint29 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint29.name = "humanoid_root";
 HAnimJoint29.DEF = "hanim_humanoid_root";
+HAnimJoint29.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint29.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint29.stiffness = new SFVec3f(new float[0,0,0]);
 //Might consider putting a HAnimSegment here, but that doesn't help with re-use of this hand model
 let HAnimJoint30 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint30.name = "r_radiocarpal";
 HAnimJoint30.DEF = "hanim_r_radiocarpal";
 HAnimJoint30.description = "connection joint of hand to leg above";
+HAnimJoint30.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint30.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint30.stiffness = new SFVec3f(new float[0,0,0]);
 let HAnimSegment31 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment31.name = "r_carpal";
@@ -243,6 +249,8 @@ let HAnimJoint52 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint52.name = "r_midcarpal_1";
 HAnimJoint52.DEF = "hanim_r_midcarpal_1";
 HAnimJoint52.center = new SFVec3f(new float[-0.14,0.09,0]);
+HAnimJoint52.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint52.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint52.stiffness = new SFVec3f(new float[0,0,0]);
 let HAnimSegment53 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment53.name = "r_trapezium";
@@ -299,6 +307,8 @@ let HAnimJoint64 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint64.name = "r_carpometacarpal_1";
 HAnimJoint64.DEF = "hanim_r_carpometacarpal_1";
 HAnimJoint64.center = new SFVec3f(new float[-0.2,0.15,0]);
+HAnimJoint64.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint64.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint64.stiffness = new SFVec3f(new float[0,0,0]);
 let HAnimSegment65 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment65.name = "r_metacarpal_1";
@@ -342,6 +352,8 @@ let HAnimJoint73 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint73.name = "r_metacarpophalangeal_1";
 HAnimJoint73.DEF = "hanim_r_metacarpophalangeal_1";
 HAnimJoint73.center = new SFVec3f(new float[-0.3,0.3,0]);
+HAnimJoint73.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint73.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint73.stiffness = new SFVec3f(new float[0,0,0]);
 let HAnimSegment74 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment74.name = "r_carpal_proximal_phalanx_1";
@@ -385,6 +397,8 @@ let HAnimJoint82 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint82.name = "r_carpal_interphalangeal_1";
 HAnimJoint82.DEF = "hanim_r_carpal_interphalangeal_1";
 HAnimJoint82.center = new SFVec3f(new float[-0.35,0.4,0]);
+HAnimJoint82.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint82.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint82.stiffness = new SFVec3f(new float[0,0,0]);
 let HAnimSegment83 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment83.name = "r_carpal_distal_phalanx_1";
@@ -437,6 +451,8 @@ let HAnimJoint91 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint91.name = "r_midcarpal_2";
 HAnimJoint91.DEF = "hanim_r_midcarpal_2";
 HAnimJoint91.center = new SFVec3f(new float[-0.07,0.07,0]);
+HAnimJoint91.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint91.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint91.stiffness = new SFVec3f(new float[0,0,0]);
 let HAnimSegment92 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment92.name = "r_trapezoid";
@@ -481,6 +497,8 @@ let HAnimJoint100 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint100.name = "r_carpometacarpal_2";
 HAnimJoint100.DEF = "hanim_r_carpometacarpal_2";
 HAnimJoint100.center = new SFVec3f(new float[-0.1,0.2,0]);
+HAnimJoint100.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint100.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint100.stiffness = new SFVec3f(new float[0,0,0]);
 let HAnimSegment101 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment101.name = "r_metacarpal_2";
@@ -524,6 +542,8 @@ let HAnimJoint109 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint109.name = "r_metacarpophalangeal_2";
 HAnimJoint109.DEF = "hanim_r_metacarpophalangeal_2";
 HAnimJoint109.center = new SFVec3f(new float[-0.15,0.5,0]);
+HAnimJoint109.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint109.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint109.stiffness = new SFVec3f(new float[0,0,0]);
 let HAnimSegment110 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment110.name = "r_carpal_proximal_phalanx_2";
@@ -567,6 +587,8 @@ let HAnimJoint118 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint118.name = "r_carpal_proximal_interphalangeal_2";
 HAnimJoint118.DEF = "hanim_r_carpal_proximal_interphalangeal_2";
 HAnimJoint118.center = new SFVec3f(new float[-0.2,0.7,0]);
+HAnimJoint118.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint118.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint118.stiffness = new SFVec3f(new float[0,0,0]);
 let HAnimSegment119 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment119.name = "r_carpal_middle_phalanx_2";
@@ -610,6 +632,8 @@ let HAnimJoint127 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint127.name = "r_carpal_distal_interphalangeal_2";
 HAnimJoint127.DEF = "hanim_r_carpal_distal_interphalangeal_2";
 HAnimJoint127.center = new SFVec3f(new float[-0.24,0.87,0]);
+HAnimJoint127.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint127.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint127.stiffness = new SFVec3f(new float[0,0,0]);
 let HAnimSegment128 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment128.name = "r_carpal_distal_phalanx_2";
@@ -664,6 +688,8 @@ let HAnimJoint136 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint136.name = "r_midcarpal_3";
 HAnimJoint136.DEF = "hanim_r_midcarpal_3";
 HAnimJoint136.center = new SFVec3f(new float[0,0.07,0]);
+HAnimJoint136.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint136.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint136.stiffness = new SFVec3f(new float[0,0,0]);
 let HAnimSegment137 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment137.name = "r_capitate";
@@ -708,6 +734,8 @@ let HAnimJoint145 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint145.name = "r_carpometacarpal_3";
 HAnimJoint145.DEF = "hanim_r_carpometacarpal_3";
 HAnimJoint145.center = new SFVec3f(new float[0,0.2,0]);
+HAnimJoint145.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint145.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint145.stiffness = new SFVec3f(new float[0,0,0]);
 let HAnimSegment146 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment146.name = "r_metacarpal_3";
@@ -751,6 +779,8 @@ let HAnimJoint154 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint154.name = "r_metacarpophalangeal_3";
 HAnimJoint154.DEF = "hanim_r_metacarpophalangeal_3";
 HAnimJoint154.center = new SFVec3f(new float[-0.03,0.5,0]);
+HAnimJoint154.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint154.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint154.stiffness = new SFVec3f(new float[0,0,0]);
 let HAnimSegment155 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment155.name = "r_carpal_proximal_phalanx_3";
@@ -794,6 +824,8 @@ let HAnimJoint163 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint163.name = "r_carpal_proximal_interphalangeal_3";
 HAnimJoint163.DEF = "hanim_r_carpal_proximal_interphalangeal_3";
 HAnimJoint163.center = new SFVec3f(new float[-0.05,0.75,0]);
+HAnimJoint163.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint163.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint163.stiffness = new SFVec3f(new float[0,0,0]);
 let HAnimSegment164 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment164.name = "r_carpal_middle_phalanx_3";
@@ -837,6 +869,8 @@ let HAnimJoint172 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint172.name = "r_carpal_distal_interphalangeal_3";
 HAnimJoint172.DEF = "hanim_r_carpal_distal_interphalangeal_3";
 HAnimJoint172.center = new SFVec3f(new float[-0.08,0.96,0]);
+HAnimJoint172.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint172.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint172.stiffness = new SFVec3f(new float[0,0,0]);
 let HAnimSegment173 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment173.name = "r_carpal_distal_phalanx_3";
@@ -891,6 +925,8 @@ let HAnimJoint181 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint181.name = "r_midcarpal_4_5";
 HAnimJoint181.DEF = "hanim_r_midcarpal_4_5";
 HAnimJoint181.center = new SFVec3f(new float[0.1,0.1,0]);
+HAnimJoint181.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint181.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint181.stiffness = new SFVec3f(new float[0,0,0]);
 let HAnimSegment182 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment182.name = "r_hamate";
@@ -954,6 +990,8 @@ let HAnimJoint195 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint195.name = "r_carpometacarpal_4";
 HAnimJoint195.DEF = "hanim_r_carpometacarpal_4";
 HAnimJoint195.center = new SFVec3f(new float[0.1,0.2,0]);
+HAnimJoint195.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint195.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint195.stiffness = new SFVec3f(new float[0,0,0]);
 let HAnimSegment196 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment196.name = "r_metacarpal_4";
@@ -997,6 +1035,8 @@ let HAnimJoint204 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint204.name = "r_metacarpophalangeal_4";
 HAnimJoint204.DEF = "hanim_r_metacarpophalangeal_4";
 HAnimJoint204.center = new SFVec3f(new float[0.1,0.47,0]);
+HAnimJoint204.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint204.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint204.stiffness = new SFVec3f(new float[0,0,0]);
 let HAnimSegment205 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment205.name = "r_carpal_proximal_phalanx_4";
@@ -1040,6 +1080,8 @@ let HAnimJoint213 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint213.name = "r_carpal_proximal_interphalangeal_4";
 HAnimJoint213.DEF = "hanim_r_carpal_proximal_interphalangeal_4";
 HAnimJoint213.center = new SFVec3f(new float[0.1,0.7,0]);
+HAnimJoint213.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint213.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint213.stiffness = new SFVec3f(new float[0,0,0]);
 let HAnimSegment214 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment214.name = "r_carpal_middle_phalanx_4";
@@ -1083,6 +1125,8 @@ let HAnimJoint222 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint222.name = "r_carpal_distal_interphalangeal_4";
 HAnimJoint222.DEF = "hanim_r_carpal_distal_interphalangeal_4";
 HAnimJoint222.center = new SFVec3f(new float[0.1,0.93,0]);
+HAnimJoint222.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint222.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint222.stiffness = new SFVec3f(new float[0,0,0]);
 let HAnimSegment223 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment223.name = "r_carpal_distal_phalanx_4";
@@ -1135,6 +1179,8 @@ let HAnimJoint231 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint231.name = "r_carpometacarpal_5";
 HAnimJoint231.DEF = "hanim_r_carpometacarpal_5";
 HAnimJoint231.center = new SFVec3f(new float[0.15,0.17,0]);
+HAnimJoint231.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint231.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint231.stiffness = new SFVec3f(new float[0,0,0]);
 let HAnimSegment232 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment232.name = "r_metacarpal_5";
@@ -1178,6 +1224,8 @@ let HAnimJoint240 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint240.name = "r_metacarpophalangeal_5";
 HAnimJoint240.DEF = "hanim_r_metacarpophalangeal_5";
 HAnimJoint240.center = new SFVec3f(new float[0.2,0.4,0]);
+HAnimJoint240.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint240.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint240.stiffness = new SFVec3f(new float[0,0,0]);
 let HAnimSegment241 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment241.name = "r_carpal_proximal_phalanx_5";
@@ -1221,6 +1269,8 @@ let HAnimJoint249 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint249.name = "r_carpal_proximal_interphalangeal_5";
 HAnimJoint249.DEF = "hanim_r_carpal_proximal_interphalangeal_5";
 HAnimJoint249.center = new SFVec3f(new float[0.23,0.63,0]);
+HAnimJoint249.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint249.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint249.stiffness = new SFVec3f(new float[0,0,0]);
 let HAnimSegment250 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment250.name = "r_carpal_middle_phalanx_5";
@@ -1264,6 +1314,8 @@ let HAnimJoint258 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint258.name = "r_carpal_distal_interphalangeal_5";
 HAnimJoint258.DEF = "hanim_r_carpal_distal_interphalangeal_5";
 HAnimJoint258.center = new SFVec3f(new float[0.25,0.79,0]);
+HAnimJoint258.ulimit = new SFVec3f(new float[0,0,0]);
+HAnimJoint258.llimit = new SFVec3f(new float[0,0,0]);
 HAnimJoint258.stiffness = new SFVec3f(new float[0,0,0]);
 let HAnimSegment259 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment259.name = "r_carpal_distal_phalanx_5";
@@ -1317,205 +1369,203 @@ HAnimJoint29.children = new MFNode();
 
 HAnimJoint29.children[0] = HAnimJoint30;
 
-HAnimHumanoid26.joints = new MFNode();
-
-HAnimHumanoid26.joints[0] = HAnimJoint29;
+HAnimHumanoid26.joints[1] = HAnimJoint29;
 
 let HAnimJoint267 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint267.USE = "hanim_humanoid_root";
-HAnimHumanoid26.joints[1] = HAnimJoint267;
+HAnimHumanoid26.joints[2] = HAnimJoint267;
 
 let HAnimJoint268 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint268.USE = "hanim_r_carpal_distal_interphalangeal_2";
-HAnimHumanoid26.joints[2] = HAnimJoint268;
+HAnimHumanoid26.joints[3] = HAnimJoint268;
 
 let HAnimJoint269 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint269.USE = "hanim_r_carpal_distal_interphalangeal_3";
-HAnimHumanoid26.joints[3] = HAnimJoint269;
+HAnimHumanoid26.joints[4] = HAnimJoint269;
 
 let HAnimJoint270 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint270.USE = "hanim_r_carpal_distal_interphalangeal_4";
-HAnimHumanoid26.joints[4] = HAnimJoint270;
+HAnimHumanoid26.joints[5] = HAnimJoint270;
 
 let HAnimJoint271 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint271.USE = "hanim_r_carpal_distal_interphalangeal_5";
-HAnimHumanoid26.joints[5] = HAnimJoint271;
+HAnimHumanoid26.joints[6] = HAnimJoint271;
 
 let HAnimJoint272 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint272.USE = "hanim_r_carpal_interphalangeal_1";
-HAnimHumanoid26.joints[6] = HAnimJoint272;
+HAnimHumanoid26.joints[7] = HAnimJoint272;
 
 let HAnimJoint273 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint273.USE = "hanim_r_carpal_proximal_interphalangeal_2";
-HAnimHumanoid26.joints[7] = HAnimJoint273;
+HAnimHumanoid26.joints[8] = HAnimJoint273;
 
 let HAnimJoint274 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint274.USE = "hanim_r_carpal_proximal_interphalangeal_3";
-HAnimHumanoid26.joints[8] = HAnimJoint274;
+HAnimHumanoid26.joints[9] = HAnimJoint274;
 
 let HAnimJoint275 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint275.USE = "hanim_r_carpal_proximal_interphalangeal_4";
-HAnimHumanoid26.joints[9] = HAnimJoint275;
+HAnimHumanoid26.joints[10] = HAnimJoint275;
 
 let HAnimJoint276 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint276.USE = "hanim_r_carpal_proximal_interphalangeal_5";
-HAnimHumanoid26.joints[10] = HAnimJoint276;
+HAnimHumanoid26.joints[11] = HAnimJoint276;
 
 let HAnimJoint277 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint277.USE = "hanim_r_carpometacarpal_1";
-HAnimHumanoid26.joints[11] = HAnimJoint277;
+HAnimHumanoid26.joints[12] = HAnimJoint277;
 
 let HAnimJoint278 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint278.USE = "hanim_r_carpometacarpal_2";
-HAnimHumanoid26.joints[12] = HAnimJoint278;
+HAnimHumanoid26.joints[13] = HAnimJoint278;
 
 let HAnimJoint279 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint279.USE = "hanim_r_carpometacarpal_3";
-HAnimHumanoid26.joints[13] = HAnimJoint279;
+HAnimHumanoid26.joints[14] = HAnimJoint279;
 
 let HAnimJoint280 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint280.USE = "hanim_r_carpometacarpal_4";
-HAnimHumanoid26.joints[14] = HAnimJoint280;
+HAnimHumanoid26.joints[15] = HAnimJoint280;
 
 let HAnimJoint281 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint281.USE = "hanim_r_carpometacarpal_5";
-HAnimHumanoid26.joints[15] = HAnimJoint281;
+HAnimHumanoid26.joints[16] = HAnimJoint281;
 
 let HAnimJoint282 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint282.USE = "hanim_r_metacarpophalangeal_1";
-HAnimHumanoid26.joints[16] = HAnimJoint282;
+HAnimHumanoid26.joints[17] = HAnimJoint282;
 
 let HAnimJoint283 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint283.USE = "hanim_r_metacarpophalangeal_2";
-HAnimHumanoid26.joints[17] = HAnimJoint283;
+HAnimHumanoid26.joints[18] = HAnimJoint283;
 
 let HAnimJoint284 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint284.USE = "hanim_r_metacarpophalangeal_3";
-HAnimHumanoid26.joints[18] = HAnimJoint284;
+HAnimHumanoid26.joints[19] = HAnimJoint284;
 
 let HAnimJoint285 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint285.USE = "hanim_r_metacarpophalangeal_4";
-HAnimHumanoid26.joints[19] = HAnimJoint285;
+HAnimHumanoid26.joints[20] = HAnimJoint285;
 
 let HAnimJoint286 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint286.USE = "hanim_r_metacarpophalangeal_5";
-HAnimHumanoid26.joints[20] = HAnimJoint286;
+HAnimHumanoid26.joints[21] = HAnimJoint286;
 
 let HAnimJoint287 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint287.USE = "hanim_r_midcarpal_1";
-HAnimHumanoid26.joints[21] = HAnimJoint287;
+HAnimHumanoid26.joints[22] = HAnimJoint287;
 
 let HAnimJoint288 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint288.USE = "hanim_r_midcarpal_2";
-HAnimHumanoid26.joints[22] = HAnimJoint288;
+HAnimHumanoid26.joints[23] = HAnimJoint288;
 
 let HAnimJoint289 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint289.USE = "hanim_r_midcarpal_3";
-HAnimHumanoid26.joints[23] = HAnimJoint289;
+HAnimHumanoid26.joints[24] = HAnimJoint289;
 
 let HAnimJoint290 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint290.USE = "hanim_r_midcarpal_4_5";
-HAnimHumanoid26.joints[24] = HAnimJoint290;
+HAnimHumanoid26.joints[25] = HAnimJoint290;
 
 let HAnimJoint291 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint291.USE = "hanim_r_radiocarpal";
-HAnimHumanoid26.joints[25] = HAnimJoint291;
+HAnimHumanoid26.joints[26] = HAnimJoint291;
 
 let HAnimSegment292 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment292.USE = "hanim_r_capitate";
-HAnimHumanoid26.segments[26] = HAnimSegment292;
+HAnimHumanoid26.segments[27] = HAnimSegment292;
 
 let HAnimSegment293 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment293.USE = "hanim_r_carpal";
-HAnimHumanoid26.segments[27] = HAnimSegment293;
+HAnimHumanoid26.segments[28] = HAnimSegment293;
 
 let HAnimSegment294 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment294.USE = "hanim_r_carpal_distal_phalanx_1";
-HAnimHumanoid26.segments[28] = HAnimSegment294;
+HAnimHumanoid26.segments[29] = HAnimSegment294;
 
 let HAnimSegment295 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment295.USE = "hanim_r_carpal_distal_phalanx_2";
-HAnimHumanoid26.segments[29] = HAnimSegment295;
+HAnimHumanoid26.segments[30] = HAnimSegment295;
 
 let HAnimSegment296 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment296.USE = "hanim_r_carpal_distal_phalanx_3";
-HAnimHumanoid26.segments[30] = HAnimSegment296;
+HAnimHumanoid26.segments[31] = HAnimSegment296;
 
 let HAnimSegment297 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment297.USE = "hanim_r_carpal_distal_phalanx_4";
-HAnimHumanoid26.segments[31] = HAnimSegment297;
+HAnimHumanoid26.segments[32] = HAnimSegment297;
 
 let HAnimSegment298 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment298.USE = "hanim_r_carpal_distal_phalanx_5";
-HAnimHumanoid26.segments[32] = HAnimSegment298;
+HAnimHumanoid26.segments[33] = HAnimSegment298;
 
 let HAnimSegment299 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment299.USE = "hanim_r_carpal_middle_phalanx_2";
-HAnimHumanoid26.segments[33] = HAnimSegment299;
+HAnimHumanoid26.segments[34] = HAnimSegment299;
 
 let HAnimSegment300 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment300.USE = "hanim_r_carpal_middle_phalanx_3";
-HAnimHumanoid26.segments[34] = HAnimSegment300;
+HAnimHumanoid26.segments[35] = HAnimSegment300;
 
 let HAnimSegment301 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment301.USE = "hanim_r_carpal_middle_phalanx_4";
-HAnimHumanoid26.segments[35] = HAnimSegment301;
+HAnimHumanoid26.segments[36] = HAnimSegment301;
 
 let HAnimSegment302 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment302.USE = "hanim_r_carpal_middle_phalanx_5";
-HAnimHumanoid26.segments[36] = HAnimSegment302;
+HAnimHumanoid26.segments[37] = HAnimSegment302;
 
 let HAnimSegment303 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment303.USE = "hanim_r_carpal_proximal_phalanx_1";
-HAnimHumanoid26.segments[37] = HAnimSegment303;
+HAnimHumanoid26.segments[38] = HAnimSegment303;
 
 let HAnimSegment304 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment304.USE = "hanim_r_carpal_proximal_phalanx_2";
-HAnimHumanoid26.segments[38] = HAnimSegment304;
+HAnimHumanoid26.segments[39] = HAnimSegment304;
 
 let HAnimSegment305 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment305.USE = "hanim_r_carpal_proximal_phalanx_3";
-HAnimHumanoid26.segments[39] = HAnimSegment305;
+HAnimHumanoid26.segments[40] = HAnimSegment305;
 
 let HAnimSegment306 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment306.USE = "hanim_r_carpal_proximal_phalanx_4";
-HAnimHumanoid26.segments[40] = HAnimSegment306;
+HAnimHumanoid26.segments[41] = HAnimSegment306;
 
 let HAnimSegment307 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment307.USE = "hanim_r_carpal_proximal_phalanx_5";
-HAnimHumanoid26.segments[41] = HAnimSegment307;
+HAnimHumanoid26.segments[42] = HAnimSegment307;
 
 let HAnimSegment308 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment308.USE = "hanim_r_hamate";
-HAnimHumanoid26.segments[42] = HAnimSegment308;
+HAnimHumanoid26.segments[43] = HAnimSegment308;
 
 let HAnimSegment309 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment309.USE = "hanim_r_metacarpal_1";
-HAnimHumanoid26.segments[43] = HAnimSegment309;
+HAnimHumanoid26.segments[44] = HAnimSegment309;
 
 let HAnimSegment310 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment310.USE = "hanim_r_metacarpal_2";
-HAnimHumanoid26.segments[44] = HAnimSegment310;
+HAnimHumanoid26.segments[45] = HAnimSegment310;
 
 let HAnimSegment311 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment311.USE = "hanim_r_metacarpal_3";
-HAnimHumanoid26.segments[45] = HAnimSegment311;
+HAnimHumanoid26.segments[46] = HAnimSegment311;
 
 let HAnimSegment312 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment312.USE = "hanim_r_metacarpal_4";
-HAnimHumanoid26.segments[46] = HAnimSegment312;
+HAnimHumanoid26.segments[47] = HAnimSegment312;
 
 let HAnimSegment313 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment313.USE = "hanim_r_metacarpal_5";
-HAnimHumanoid26.segments[47] = HAnimSegment313;
+HAnimHumanoid26.segments[48] = HAnimSegment313;
 
 let HAnimSegment314 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment314.USE = "hanim_r_trapezium";
-HAnimHumanoid26.segments[48] = HAnimSegment314;
+HAnimHumanoid26.segments[49] = HAnimSegment314;
 
 let HAnimSegment315 = browser.currentScene.createNode("HAnimSegment");
 HAnimSegment315.USE = "hanim_r_trapezoid";
-HAnimHumanoid26.segments[49] = HAnimSegment315;
+HAnimHumanoid26.segments[50] = HAnimSegment315;
 
 browser.currentScene.children[1] = HAnimHumanoid26;
 

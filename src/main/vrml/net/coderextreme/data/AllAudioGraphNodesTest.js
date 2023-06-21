@@ -74,34 +74,67 @@ Shape13.appearance = Appearance15;
 browser.currentScene.children[1] = Shape13;
 
 let SpatialSound18 = browser.currentScene.createNode("SpatialSound");
+SpatialSound18.distanceModel = "INVERSE";
+SpatialSound18.dopplerEnabled = "false";
 let Analyser19 = browser.currentScene.createNode("Analyser");
+Analyser19.channelCountMode = "MAX";
+Analyser19.channelInterpretation = "SPEAKERS";
 let AudioDestination20 = browser.currentScene.createNode("AudioDestination");
+AudioDestination20.channelCountMode = "MAX";
+AudioDestination20.channelInterpretation = "SPEAKERS";
 let BiquadFilter21 = browser.currentScene.createNode("BiquadFilter");
+BiquadFilter21.channelCountMode = "MAX";
+BiquadFilter21.channelInterpretation = "SPEAKERS";
+BiquadFilter21.type = "LOWPASS";
 let ChannelMerger22 = browser.currentScene.createNode("ChannelMerger");
+ChannelMerger22.channelCountMode = "MAX";
+ChannelMerger22.channelInterpretation = "SPEAKERS";
 let ChannelSelector23 = browser.currentScene.createNode("ChannelSelector");
+ChannelSelector23.channelCountMode = "MAX";
+ChannelSelector23.channelInterpretation = "SPEAKERS";
 let ChannelSplitter24 = browser.currentScene.createNode("ChannelSplitter");
+ChannelSplitter24.channelCountMode = "MAX";
+ChannelSplitter24.channelInterpretation = "SPEAKERS";
 let Convolver25 = browser.currentScene.createNode("Convolver");
+Convolver25.channelCountMode = "MAX";
+Convolver25.channelInterpretation = "SPEAKERS";
 let Delay26 = browser.currentScene.createNode("Delay");
+Delay26.channelCountMode = "MAX";
+Delay26.channelInterpretation = "SPEAKERS";
 let DynamicsCompressor27 = browser.currentScene.createNode("DynamicsCompressor");
+DynamicsCompressor27.channelCountMode = "MAX";
+DynamicsCompressor27.channelInterpretation = "SPEAKERS";
 let Gain28 = browser.currentScene.createNode("Gain");
+Gain28.channelCountMode = "MAX";
+Gain28.channelInterpretation = "SPEAKERS";
 let StreamAudioDestination29 = browser.currentScene.createNode("StreamAudioDestination");
+StreamAudioDestination29.channelCountMode = "MAX";
+StreamAudioDestination29.channelInterpretation = "SPEAKERS";
 let WaveShaper30 = browser.currentScene.createNode("WaveShaper");
+WaveShaper30.channelCountMode = "MAX";
+WaveShaper30.channelInterpretation = "SPEAKERS";
 //The following X3DSoundSourceNode nodes have no audio-graph children
 let BufferAudioSource31 = browser.currentScene.createNode("BufferAudioSource");
+BufferAudioSource31.channelCountMode = "MAX";
+BufferAudioSource31.channelInterpretation = "SPEAKERS";
 WaveShaper30.children = new MFNode();
 
 WaveShaper30.children[0] = BufferAudioSource31;
 
 let ListenerPointSource32 = browser.currentScene.createNode("ListenerPointSource");
+ListenerPointSource32.dopplerEnabled = "false";
 WaveShaper30.children[1] = ListenerPointSource32;
 
 let MicrophoneSource33 = browser.currentScene.createNode("MicrophoneSource");
 WaveShaper30.children[2] = MicrophoneSource33;
 
 let OscillatorSource34 = browser.currentScene.createNode("OscillatorSource");
+OscillatorSource34.frequency = 440;
 WaveShaper30.children[3] = OscillatorSource34;
 
 let StreamAudioSource35 = browser.currentScene.createNode("StreamAudioSource");
+StreamAudioSource35.channelCountMode = "MAX";
+StreamAudioSource35.channelInterpretation = "SPEAKERS";
 WaveShaper30.children[4] = StreamAudioSource35;
 
 StreamAudioDestination29.children = new MFNode();

@@ -279,12 +279,19 @@ browser.currentScene.children[13] = Transform43;
 
 let ListenerPointSource55 = browser.currentScene.createNode("ListenerPointSource");
 ListenerPointSource55.trackCurrentView = True;
+ListenerPointSource55.dopplerEnabled = "false";
 browser.currentScene.children[14] = ListenerPointSource55;
 
 let StreamAudioDestination56 = browser.currentScene.createNode("StreamAudioDestination");
+StreamAudioDestination56.channelCountMode = "MAX";
+StreamAudioDestination56.channelInterpretation = "SPEAKERS";
 let SpatialSound57 = browser.currentScene.createNode("SpatialSound");
 SpatialSound57.DEF = "Audio1";
+SpatialSound57.distanceModel = "INVERSE";
+SpatialSound57.dopplerEnabled = "false";
 let Gain58 = browser.currentScene.createNode("Gain");
+Gain58.channelCountMode = "MAX";
+Gain58.channelInterpretation = "SPEAKERS";
 let AudioClip59 = browser.currentScene.createNode("AudioClip");
 AudioClip59.loop = True;
 AudioClip59.pauseTime = -1;
@@ -305,7 +312,11 @@ StreamAudioDestination56.children[0] = SpatialSound57;
 
 let SpatialSound60 = browser.currentScene.createNode("SpatialSound");
 SpatialSound60.DEF = "Audio2";
+SpatialSound60.distanceModel = "INVERSE";
+SpatialSound60.dopplerEnabled = "false";
 let Gain61 = browser.currentScene.createNode("Gain");
+Gain61.channelCountMode = "MAX";
+Gain61.channelInterpretation = "SPEAKERS";
 let AudioClip62 = browser.currentScene.createNode("AudioClip");
 AudioClip62.loop = True;
 AudioClip62.pauseTime = -1;
