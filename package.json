@@ -1,13 +1,14 @@
 {
   "name": "X3DJSONLD",
-"version": "10.0.0",
+  "version": "10.0.0",
   "private": true,
   "main": "index.js",
   "devDependencies": {
-    "webpack": "5.64.1",
+    "webpack": "^5.87.0",
     "webpack-cli": "^4.9.1"
   },
   "dependencies": {
+    "@xmldom/xmldom": "^0.8.8",
     "ajv": "8.8.1",
     "ajv-formats": "^2.1.1",
     "ajv-i18n": "*",
@@ -16,7 +17,6 @@
     "express": "*",
     "glob": "*",
     "https-browserify": "*",
-    "java": "^0.12.2",
     "jsonlint": "https://github.com/prantlf/jsonlint.git",
     "mutation-observer": "*",
     "node-mkdirp": "*",
@@ -24,14 +24,13 @@
     "stream-http": "*",
     "three": "*",
     "url": "^0.11.0",
-    "xml2js": "^0.4.23",
-    "xmldom": "git://github.com/xmldom/xmldom.git#v0.7.0",
+    "xml2js": "^0.6.0",
     "xmlhttprequest": "*",
     "xslt3": "*"
   },
   "scripts": {
     "start": "node app.js",
-    "postinstall": "bash build.sh",
+    "postinstall": "rem bash build.sh",
     "buildthreex3dloader": "browserify src/main/node/threeLoadFile.js > src/main/node/bundle.js",
     "buildloader": "./node_modules/.bin/webpack"
   }
